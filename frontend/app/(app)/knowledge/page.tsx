@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, Beaker, Zap, Dna, BookOpen, PenLine } from "lucide-react";
+import { ArrowLeft, Beaker, Zap, Dna, BookOpen, PenLine, Sparkles } from "lucide-react";
 
 const knowledgeSections = [
   {
@@ -62,6 +62,25 @@ export default function KnowledgePage() {
           Practice numerical problems, study labeled diagrams, and master grammar &amp; writing — all in one place.
         </p>
       </div>
+
+      <Link
+        href="/knowledge/pro"
+        className="group flex items-center gap-4 rounded-2xl border border-primary/30 bg-primary/[0.06] p-5 transition-all hover:-translate-y-0.5 hover:border-primary/50 hover:shadow-lg"
+      >
+        <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-primary/15">
+          <Sparkles className="h-6 w-6 text-primary" />
+        </div>
+        <div className="min-w-0 flex-1">
+          <h2 className="text-base font-bold text-foreground group-hover:text-primary transition-colors">
+            Pro Knowledge Pages
+          </h2>
+          <p className="mt-0.5 text-xs leading-relaxed text-muted-foreground">
+            Every chapter of every section expanded into five dedicated pages — theory at three levels,
+            formula vault with symbol meanings, special cases, tricks and traps.
+          </p>
+        </div>
+        <ArrowLeft className="h-4 w-4 shrink-0 rotate-180 text-muted-foreground transition-colors group-hover:text-primary" />
+      </Link>
 
       <div className="grid gap-4 sm:grid-cols-2">
         {knowledgeSections.map((s) => {

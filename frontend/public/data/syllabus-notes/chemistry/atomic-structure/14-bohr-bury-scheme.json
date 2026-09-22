@@ -1,81 +1,68 @@
 {
-  "title": "Bohr–Bury Scheme (1921) — Subshell & Shell Capacity Rules",
+  "title": "The Bohr–Bury Scheme of Electronic Configuration",
   "unitSlug": "atomic-structure",
   "topicSlug": "defects-of-bohr-s-theory",
   "topicTitle": "Defects of Bohr's theory",
-  "relevance": 76,
+  "relevance": 85,
   "notes": [
-    "Detailed notes on 14 bohr bury scheme within the atomic structure unit."
+    "### Focus of this tab",
+    "The Bohr–Bury scheme (1921) — the shell-filling rules that Bohr's model alone could not give. It explains how the periodic table was first built from orbits and where it needed repair (a defect of the Bohr framework).",
+    "### The three Bohr–Bury rules",
+    "1. **Capacity rule:** the maximum number of electrons in a shell n is 2n² — K 2, L 8, M 18, N 32.",
+    "2. **Octet rule (valence shells):** the outermost shell cannot hold more than 8 electrons; when it has 8 (noble-gas configuration: He duplet, Ne octet) the shell is stable and a new shell begins.",
+    "3. **Filling order:** shells fill roughly in order of increasing energy; within a shell, electrons enter before a new shell starts — except that 4s begins filling before 3d is complete (the (n + l) order in modern language).",
+    "### What the scheme achieved",
+    "• Explained chemical inertness of the noble gases (closed shells) and the valency pattern of the main groups.",
+    "• Connected atomic number with the periodic law: element 11 (Na) starts the third shell, so period 3 begins — the periodicity of properties follows from shell structure.",
+    "• Predicted the electron configurations up to about Z = 20 reliably (K, Ca).",
+    "### Where the scheme fails (defects of the Bohr framework)",
+    "• No subshell concept: it cannot explain why 4s fills before 3d, the 8/18/32 period lengths beyond period 3, or the s/p/d/f blocks.",
+    "• It ignores electron–electron repulsion and exchange energy, so anomalies like Cr ([Ar]3d⁵4s¹) and Cu ([Ar]3d¹⁰4s¹) are impossible for it.",
+    "• Orbits are still definite paths — the uncertainty principle and orbital shapes are outside the scheme; 'subshell energy order' needs penetration and shielding, i.e. the quantum-mechanical model.",
+    "### Bridge to the modern picture",
+    "The 2n² capacity survives in modern form as Σ2(2l + 1) over the subshells of shell n; the octet rule survives as the special stability of filled s + p valence sets; and the filling order is the Madelung (n + l) rule. The Bohr–Bury scheme is thus the correct skeleton with the wrong (orbital-free) flesh."
   ],
   "confusion": [
-    "❌ Misconception about 14 bohr bury scheme. ✅ Scientific explanation."
+    "❌ The M shell can hold 18 electrons before the N shell starts. ✅ The outermost shell is capped at 8; after 8 electrons in M, filling of N begins.",
+    "❌ The Bohr–Bury scheme is a quantum-mechanical theory. ✅ It is a shell-filling rule set from the Bohr orbit picture; subshells and orbital shapes are absent.",
+    "❌ 2n² applies to the outermost shell. ✅ 2n² is the *capacity*; the octet rule (8) restricts the valence shell's occupancy."
   ],
   "practice": [
-    "Practice exercise for 14 bohr bury scheme."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 14 bohr bury scheme."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 14 bohr bury scheme."
-  ],
-  "practiceQuestions": [
-    "Practice question for 14 bohr bury scheme."
+    "State the Bohr–Bury scheme with the 2n² and octet rules.",
+    "Write the Bohr–Bury configuration of calcium (Z = 20) and point out where the scheme needs 4s before 3d.",
+    "Why does the scheme fail for chromium and copper?",
+    "Show how the octet rule explains the inertness of argon."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 14 bohr bury scheme)"
+    "$$\\text{shell capacity}=2n^{2}:\\ K\\ 2,\\ L\\ 8,\\ M\\ 18,\\ N\\ 32;\\qquad \\text{valence shell}\\le 8$$"
   ],
-  "keyPoints": [
-    "Core point for 14 bohr bury scheme."
+  "universalFacts": [
+    "The scheme is credited to Bohr (1921) and Charles Bury (1921) independently.",
+    "It correctly predicted the closure of shells at Z = 2, 10, 18 — matching the noble gases known then.",
+    "Its failure beyond Ca (Z = 20) is the historical trigger for introducing subshells."
   ],
-  "summary": "Summary of 14 bohr bury scheme.",
-  "specialNotes": [
-    "Specialized insight for 14 bohr bury scheme."
-  ],
-  "importantStatements": [
-    "Key statement for 14 bohr bury scheme."
+  "examples": [
+    "**Problem:** Where does the Bohr–Bury scheme first fail? **Solution:** at potassium (Z = 19): the 2n²/sequence rules put the 19th electron in the M shell, but experiment and the (n + l) rule place it in 4s — the first sign that subshell energies, not shells, control filling."
   ],
   "importantNotes": [
-    "Important note regarding 14 bohr bury scheme."
+    "Present the scheme as a historical rule set, then contrast it with the (n + l) order and Hund/Pauli rules.",
+    "The octet rule is for the valence shell only — quote both numbers (2n² and 8) when asked."
   ],
-  "examShortTricks": [
-    "Recall the formula for Bohr–Bury Scheme (1921) — Subshell & Shell Capacity Rules."
-  ],
-  "examNotes": [
-    "Focus on Bohr–Bury Scheme (1921) — Subshell & Shell Capacity Rules problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 14 bohr bury scheme?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 14 bohr bury scheme."
-  ],
-  "importantTasks": [
-    "Task for studying 14 bohr bury scheme."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "14-bohr-bury-scheme",
   "mcqs": [
     {
-      "question": "Question about 14 bohr bury scheme?",
+      "question": "According to the Bohr–Bury scheme, the maximum electrons in the outermost shell is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "2n²",
+        "8",
+        "18",
+        "32"
       ],
-      "answer": "A"
+      "answer": "B"
     }
-  ]
+  ],
+  "visualType": "bohr-bury",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "14-bohr-bury-scheme.json"
 }

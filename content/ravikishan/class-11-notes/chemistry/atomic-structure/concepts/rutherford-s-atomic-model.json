@@ -1,218 +1,68 @@
 {
-  "title": "Rutherford's Atomic Model",
+  "title": "Rutherford's Nuclear Model — Features, Successes and Drawbacks (Summary Tab)",
   "unitSlug": "atomic-structure",
-  "topicSlug": "rutherford-s-atomic-model",
-  "topicTitle": "Rutherford's Atomic Model",
-  "relevance": 55,
+  "topicSlug": "rutherford-s-atomic-model-and-its-limitations",
+  "topicTitle": "Rutherford's atomic model and its limitations",
+  "relevance": 85,
   "notes": [
-    "Rutherford's model: nucleus existence via α-scattering.",
-    "Bohr's model: quantized energy levels, atomic stability.",
-    "Wave-particle duality (de Broglie), Uncertainty Principle (Heisenberg)."
+    "### Focus of this tab",
+    "A compact revision summary of the nuclear atom — the six features, three successes and five drawbacks in tabular form, ideal for last-minute revision. The detailed experiment and limitations are in the main and companion tabs.",
+    "### Features (six points)",
+    "1. Atom is electrically neutral and mostly empty space.",
+    "2. A tiny, dense, positively charged nucleus (r ≈ 10⁻¹⁵ m) sits at the centre and holds ≈99.9% of the mass.",
+    "3. Nuclear volume ≈ 10⁻¹⁵ of atomic volume (r_atom ≈ 10⁻¹⁰ m).",
+    "4. Electrons revolve in circular orbits; Coulomb attraction supplies the centripetal force.",
+    "5. Number of electrons = number of protons → neutrality.",
+    "6. Nuclear charge is characteristic of the element — the seed of the atomic-number concept.",
+    "### Successes (three points)",
+    "• Explained the α-scattering observations quantitatively (including the sin⁻⁴ law).",
+    "• Established the nucleus and the division of the atom into nucleus + electron shell — the birth of nuclear physics.",
+    "• Led to Moseley's atomic number, the discovery of the proton (1919) and neutron (1932), and the modern periodic law.",
+    "### Drawbacks (five points)",
+    "1. Instability: an orbiting (accelerated) electron must radiate and spiral into the nucleus in ≈10⁻⁸ s.",
+    "2. No explanation of line spectra — a spiralling electron would radiate continuously.",
+    "3. No arrangement of electrons: shells, energies and electron numbers are unspecified, so periodicity and valency are unexplained.",
+    "4. Purely classical: circular orbits and a point nucleus are assumptions; no quantisation means no orbital radii or energies.",
+    "5. Ignores the neutron, electron–electron interaction and bonding — fails for multi-electron atoms."
   ],
   "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks).",
-    "❌ Atomic number equals mass number. ✅ Atomic number = protons; mass number = protons + neutrons.",
-    "❌ Bohr model explains all atoms. ✅ Bohr model works only for hydrogen-like (one-electron) systems."
+    "❌ Rutherford's model places electrons in fixed energy levels. ✅ That is Bohr's addition; Rutherford allowed any circular orbit.",
+    "❌ The model was rejected as useless. ✅ It explained scattering perfectly; it failed only beyond that scope (stability, spectra)."
   ],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice calculating de Broglie wavelength for electrons, protons, and alpha particles.",
-    "Practice calculating energy of photon from frequency and wavelength."
-  ],
-  "universalFacts": [
-    "Nucleus contains 99.9% of atom mass but <0.01% of its volume."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "If nucleus were the size of a marble, atom would be the size of a football stadium."
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice calculating de Broglie wavelength for electrons, protons, and alpha particles."
+    "State any six features of Rutherford's nuclear model.",
+    "Give two successes and four limitations of the model with reasons.",
+    "Which single feature of the model leads directly to the idea of atomic number?"
   ],
   "formulas": [
-    "E=hν",
-    "λ=h/mv",
-    "ΔxΔp≥h/4π"
+    "$$\\frac{r_{\\text{nucleus}}}{r_{\\text{atom}}}\\approx10^{-5};\\qquad \\rho_{\\text{nucleus}}\\approx10^{17}\\ \\text{kg m}^{-3}$$"
   ],
-  "keyPoints": [
-    "Core point for rutherford s atomic model."
+  "universalFacts": [
+    "99.9% of the atomic mass sits in a volume 10⁻¹⁵ of the atom's — the densest matter known outside neutron stars.",
+    "Rutherford announced the nuclear model in 1911 and explained it fully in his 1911 Philosophical Magazine paper."
   ],
-  "summary": "The atomic structure evolved from Thomson's plum pudding model to Bohr's quantized model and finally to the quantum mechanical model, explaining spectral lines and stability.",
-  "specialNotes": [
-    "Specialized insight for rutherford s atomic model."
-  ],
-  "importantStatements": [
-    "Key statement for rutherford s atomic model."
+  "examples": [
+    "**Problem:** Give the one-sentence essence of the model. **Solution:** 'The atom consists of a tiny massive positive nucleus around which electrons revolve, the whole being mostly empty space and held together electrostatically.'"
   ],
   "importantNotes": [
-    "Important note regarding rutherford s atomic model."
+    "Use this tab for quick revision; quote the limitations with reasons in full-length answers.",
+    "Feature 6 (characteristic nuclear charge) is the bridge to Moseley's atomic number."
   ],
-  "examShortTricks": [
-    "Recall the formula for Rutherford's Atomic Model."
-  ],
-  "examNotes": [
-    "Focus on Rutherford's Atomic Model problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about rutherford s atomic model?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for rutherford s atomic model."
-  ],
-  "importantTasks": [
-    "Task for studying rutherford s atomic model."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "rutherford-s-atomic-model",
   "mcqs": [
     {
-      "question": "Who proposed the dual nature of matter?",
+      "question": "Almost the entire mass of an atom resides in the:",
       "options": [
-        "Planck",
-        "de Broglie",
-        "Bohr",
-        "Heisenberg"
-      ],
-      "answer": "B"
-    },
-    {
-      "question": "The radius of the nth orbit of hydrogen atom is proportional to:",
-      "options": [
-        "n",
-        "n²",
-        "n³",
-        "n⁴"
+        "Electron shells",
+        "Nucleus",
+        "Empty space",
+        "Valence electrons"
       ],
       "answer": "B"
     }
   ],
-  "exercises": [
-    {
-      "id": "ex-1",
-      "question": "Calculate the de Broglie wavelength of an electron moving at 10⁶ m/s.",
-      "steps": [
-        "Formula: λ = h / (m * v)",
-        "Given: h = 6.626 x 10⁻³⁴ J·s, m = 9.11 x 10⁻³¹ kg, v = 10⁶ m/s",
-        "Calculation: λ = 6.626e-34 / (9.11e-31 * 1e6)",
-        "Result: ~7.27 x 10⁻¹⁰ m (or 0.727 nm)"
-      ],
-      "answer": "0.727 nm"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "RutherfordScatteringSim",
-    "description": "Interactive visualization of α-particle deflection by the nucleus."
-  },
-  "visualType": "rutherford-alpha-scattering"
+  "visualType": "rutherford-scattering",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "rutherford-s-atomic-model.json"
 }

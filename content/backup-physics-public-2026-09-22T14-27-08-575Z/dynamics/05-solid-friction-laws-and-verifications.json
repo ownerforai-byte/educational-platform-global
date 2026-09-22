@@ -1,0 +1,171 @@
+{
+  "title": "Solid Friction — Laws and Verification",
+  "unitSlug": "dynamics",
+  "topicSlug": "solid-friction-laws-and-verifications",
+  "topicTitle": "Solid friction: laws of solid friction and their verifications",
+  "relevance": 100,
+  "notes": [
+    "**Friction:** the force that opposes relative motion (or impending motion) between two surfaces in contact. It arises from microscopic irregularities and molecular adhesion between surfaces.",
+    "**Coefficient of friction $\\mu$:** $\\mu = \\frac{F}{R}$, where $F$ is the limiting frictional force and $R$ is the normal reaction. $\\mu$ is dimensionless — it is a ratio of two forces.",
+    "**Laws of friction:** (1) Friction acts opposite to the direction of impending motion. (2) Limiting friction $F_s = \\mu_s R$, proportional to the normal reaction. (3) Friction is independent of the apparent area of contact (for a given normal force). (4) Friction depends on the nature and condition of the surfaces in contact.",
+    "**Static vs kinetic friction:** static friction adjusts up to a maximum $F_{s,max} = \\mu_s R$; kinetic friction is approximately constant at $F_k = \\mu_k R$, where typically $\\mu_s > \\mu_k$. This is why it is harder to start moving an object than to keep it moving.",
+    "**Angle of friction $\\lambda$:** the angle between the resultant contact force and the normal reaction when limiting friction is reached. $\\tan\\lambda = \\mu_s$. When the incline angle equals the angle of friction, the body is on the point of sliding.",
+    "**Angle of repose:** the maximum angle of an incline at which a body just rests on the plane without sliding. It equals the angle of friction: $\\theta_{repose} = \\lambda = \\tan^{-1}\\mu_s$.",
+    "**Verification of area independence:** experiments show that for a given normal force, doubling the contact area halves the pressure but leaves the frictional force unchanged because the increased number of molecular interactions compensates.",
+    "**Rolling friction:** much smaller than sliding friction because rolling deforms surfaces less and the contact time per point is shorter. Ball bearings use this principle to reduce friction.",
+    "**Units check:** $\\mu = F/R$ — both numerator and denominator are forces, so $\\mu$ is dimensionless. Friction force $F = \\mu R$ has units of newtons."
+  ],
+  "confusion": [
+    "Friction is NOT always opposite to the direction of motion — it is opposite to the direction of relative motion (or impending relative motion) between the two surfaces. For example, when you walk, friction on your foot points forward (in the direction of motion), preventing your foot from slipping backward.",
+    "The friction force is NOT always $\\mu R$. This formula gives the LIMITING (maximum static) friction. For static friction, $f_s \\leq \\mu_s R$, and the actual value adjusts to match the applied force up to the maximum.",
+    "Friction being independent of area is an approximation that holds for rigid bodies with moderate contact pressures. For very soft materials (like rubber tyres) or very high pressures, the relationship becomes more complex.",
+    "$\\mu_s > \\mu_k$ is generally true but not universal. Some materials (like Teflon on Teflon) have nearly equal coefficients, and certain combinations can even have $\\mu_k > \\mu_s$ under specific conditions.",
+    "The normal reaction $R$ is NOT always equal to $mg$. On an inclined plane, $R = mg\\cos\\theta$. If an additional vertical force is applied, $R$ changes accordingly. Always determine $R$ from force equilibrium in the direction perpendicular to the surface."
+  ],
+  "practice": [
+    "A 10 kg box rests on a horizontal floor. The coefficient of static friction is 0.5. Find the minimum horizontal force needed to start the box moving. Solution: $R = mg = 10 \\times 9.8 = 98$ N. Limiting friction $F_s = \\mu_s R = 0.5 \\times 98 = 49$ N. Minimum force to start motion = 49 N.",
+    "A 5 kg block slides down an incline of angle 30° at constant velocity. Find the coefficient of kinetic friction. Solution: At constant velocity, acceleration is zero, so forces are balanced: $mg\\sin\\theta = \\mu_k mg\\cos\\theta$. $\\mu_k = \\tan\\theta = \\tan 30° = \\frac{1}{\\sqrt{3}} \\approx 0.577$.",
+    "A 20 kg crate is pushed across a floor with a coefficient of kinetic friction of 0.3. If the crate moves at constant speed, find the applied force. Solution: $R = mg = 20 \\times 9.8 = 196$ N. $F_k = \\mu_k R = 0.3 \\times 196 = 58.8$ N. Since velocity is constant, applied force = friction force = 58.8 N.",
+    "An inclined plane is raised until a block just begins to slide at angle 35°. Find the coefficient of static friction and the angle of friction. Solution: At the point of sliding, $\\mu_s = \\tan\\theta = \\tan 35° \\approx 0.700$. The angle of friction $\\lambda = \\tan^{-1}(\\mu_s) = 35°$. The angle of repose equals the angle of friction.",
+    "A 8 kg block is on a horizontal surface ($\\mu_s = 0.6$, $\\mu_k = 0.4$). A horizontal force of 30 N is applied. Find the friction force and acceleration. Solution: $R = mg = 8 \\times 9.8 = 78.4$ N. $F_{s,max} = 0.6 \\times 78.4 = 47.04$ N. Since applied force (30 N) < $F_{s,max}$ (47.04 N), the block does not move. Friction force = 30 N (equal and opposite to applied force). Acceleration = 0."
+  ],
+  "universalFacts": [
+    "The laws of friction were first systematically studied by Leonardo da Vinci (1452–1519), but they were rediscovered and formalized by Guillaume Amontons in 1699 and further refined by Charles-Augustin de Coulomb in 1785.",
+    "The coefficient of friction for rubber on dry concrete is about 1.0, while for ice on steel it is only about 0.03 — a factor of 33 difference, explaining why ice skating is possible.",
+    "Friction generates heat: the work done against friction is converted into thermal energy. This is why brakes get hot and why meteoroids burn up in the atmosphere.",
+    "In ideal mathematical models, friction is treated as independent of contact area and sliding speed. In reality, both factors can affect friction, especially for rubber, polymers, and at very high or very low speeds.",
+    "The friction force can do positive, negative, or zero work depending on the reference frame. In the frame of the surface, friction on a sliding object does negative work; in the frame of a moving conveyor belt, friction can do positive work on an object placed on it."
+  ],
+  "animation3D": "dynamics",
+  "motionGraphics": "dynamics",
+  "examples": [
+    "Example 1: Real-world application of Solid friction: laws of solid friction and their verifications",
+    "Example 2: Practical demonstration of Solid friction: laws of solid friction and their verifications concepts",
+    "Example 3: Numerical problem on Solid friction: laws of solid friction and their verifications",
+    "Example 4: Diagram-based question on Solid friction: laws of solid friction and their verifications",
+    "Example 5: Application in daily life involving Solid friction: laws of solid friction and their verifications"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain Solid friction: laws of solid friction and their verifications with suitable example.",
+    "Q2. Solve problems related to Solid friction: laws of solid friction and their verifications.",
+    "Q3. Differentiate between various aspects of Solid friction: laws of solid friction and their verifications.",
+    "Q4. Derive the key formula related to Solid friction: laws of solid friction and their verifications.",
+    "Q5. What are the applications of Solid friction: laws of solid friction and their verifications?"
+  ],
+  "formulas": [
+    "Key Formula 1: Definition formula for Solid friction: laws of solid friction and their verifications",
+    "Key Formula 2: Mathematical expression of Solid friction: laws of solid friction and their verifications",
+    "Key Formula 3: Application formula for Solid friction: laws of solid friction and their verifications",
+    "Key Formula 4: Derivation result for Solid friction: laws of solid friction and their verifications",
+    "Key Formula 5: Important relation in Solid friction: laws of solid friction and their verifications"
+  ],
+  "keyPoints": [
+    "Key Point 1: Fundamental definition of Solid friction: laws of solid friction and their verifications",
+    "Key Point 2: Essential theorem or principle related to Solid friction: laws of solid friction and their verifications",
+    "Key Point 3: Important condition or constraint for Solid friction: laws of solid friction and their verifications",
+    "Key Point 4: Common applications of Solid friction: laws of solid friction and their verifications",
+    "Key Point 5: Connection to other topics in Science"
+  ],
+  "summary": "Solid friction: laws of solid friction and their verifications is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Solid friction: laws of solid friction and their verifications applies",
+    "Note 2: Solid friction: laws of solid friction and their verifications connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Solid friction: laws of solid friction and their verifications",
+    "Note 4: Remember the units and dimensions involved in Solid friction: laws of solid friction and their verifications",
+    "Note 5: Solid friction: laws of solid friction and their verifications frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Solid friction: laws of solid friction and their verifications",
+    "Statement 2: Theorem related to Solid friction: laws of solid friction and their verifications",
+    "Statement 3: Condition for Solid friction: laws of solid friction and their verifications to be valid",
+    "Statement 4: Principle governing Solid friction: laws of solid friction and their verifications",
+    "Statement 5: Corollary or consequence of Solid friction: laws of solid friction and their verifications"
+  ],
+  "importantNotes": [
+    "Note 1: Solid friction: laws of solid friction and their verifications is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Solid friction: laws of solid friction and their verifications",
+    "Note 3: Solid friction: laws of solid friction and their verifications has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Solid friction: laws of solid friction and their verifications",
+    "Note 5: Cross-check your answers using alternative methods for Solid friction: laws of solid friction and their verifications"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Solid friction: laws of solid friction and their verifications formula",
+    "Trick 2: Elimination technique for Solid friction: laws of solid friction and their verifications MCQs",
+    "Trick 3: Dimensional analysis shortcut for Solid friction: laws of solid friction and their verifications",
+    "Trick 4: Memory aid for Solid friction: laws of solid friction and their verifications formulas",
+    "Trick 5: Time-saving approach for Solid friction: laws of solid friction and their verifications problems"
+  ],
+  "examNotes": [
+    "Exam Tip 1: Focus on numerical problems from Solid friction: laws of solid friction and their verifications",
+    "Exam Tip 2: Practice previous year questions on Solid friction: laws of solid friction and their verifications",
+    "Exam Tip 3: Solid friction: laws of solid friction and their verifications carries significant marks in exams",
+    "Exam Tip 4: Learn the derivations for Solid friction: laws of solid friction and their verifications thoroughly",
+    "Exam Tip 5: Review common mistakes related to Solid friction: laws of solid friction and their verifications"
+  ],
+  "mcs": [
+    {
+      "question": "Which of the following best describes Solid friction: laws of solid friction and their verifications?",
+      "options": [
+        "Option A describing ${title}",
+        "Option B with similar concept",
+        "Option C related term",
+        "Option D unrelated concept"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The primary application of Solid friction: laws of solid friction and their verifications is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Solid friction: laws of solid friction and their verifications, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Solid friction: laws of solid friction and their verifications?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Solid friction: laws of solid friction and their verifications is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Solid friction: laws of solid friction and their verifications",
+    "Concept 2: Key theorem or principle in Solid friction: laws of solid friction and their verifications",
+    "Concept 3: Important application area of Solid friction: laws of solid friction and their verifications",
+    "Concept 4: Fundamental relationship in Solid friction: laws of solid friction and their verifications",
+    "Concept 5: Connection between Solid friction: laws of solid friction and their verifications and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Solid friction: laws of solid friction and their verifications",
+    "Task 2: Derive the main formula for Solid friction: laws of solid friction and their verifications",
+    "Task 3: Create a concept map for Solid friction: laws of solid friction and their verifications",
+    "Task 4: Practice previous year exam questions on Solid friction: laws of solid friction and their verifications",
+    "Task 5: Explain Solid friction: laws of solid friction and their verifications to a peer or study group"
+  ]
+}

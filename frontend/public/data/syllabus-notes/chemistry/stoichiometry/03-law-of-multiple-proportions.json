@@ -1,81 +1,66 @@
 {
-  "title": "Law of Multiple Proportions — Statement",
+  "title": "Law of Multiple Proportions — Dalton's Law with Worked Data",
   "unitSlug": "stoichiometry",
   "topicSlug": "laws-of-stoichiometry",
   "topicTitle": "Laws of stoichiometry",
-  "relevance": 80,
+  "relevance": 85,
   "notes": [
-    "Detailed notes on 03 law of multiple proportions within the stoichiometry unit."
+    "### Focus of this tab",
+    "Dalton's own law: the full statement, the standard data sets (CO/CO₂, H₂O/H₂O₂, nitrogen oxides) and the method of showing whole-number ratios — the NEB calculation pattern.",
+    "### Statement and history",
+    "'When two elements combine to form more than one compound, the masses of one element that combine with a fixed mass of the other are in the ratio of small whole numbers.' Proposed by John Dalton (1803) — in fact the law is the strongest historical evidence for his atomic theory, since whole-number ratios are what whole atoms give.",
+    "### Standard data sets",
+    "• **Carbon oxides:** in CO, 12 g C combines with 16 g O; in CO₂, 12 g C with 32 g O. Fixed carbon → oxygen ratio 16 : 32 = 1 : 2.",
+    "• **Hydrogen oxides:** H₂O (2 g H : 16 g O) and H₂O₂ (2 g H : 32 g O) → 1 : 2.",
+    "• **Sulphur oxides:** SO₂ (32 g S : 32 g O) and SO₃ (32 g S : 48 g O) → 2 : 3.",
+    "• **Nitrogen oxides:** N₂O, NO, N₂O₃, NO₂, N₂O₅ — with a fixed mass of nitrogen, oxygen masses stand in 1 : 2 : 3 : 4 : 5.",
+    "• **Iron chlorides:** FeCl₂ and FeCl₃ — chlorine ratio 2 : 3 for fixed iron.",
+    "### The calculation method (do it in this order)",
+    "(1) Choose a fixed mass of one element (usually 1 g or the atomic mass). (2) Compute the mass of the other element combined with that fixed mass in each compound (divide/multiply proportionally). (3) Divide the masses by the smallest to get the simple ratio; multiply up if fractions appear.",
+    "### Why it works and where it stops",
+    "Atoms combine as whole units: one C with one or two O atoms — hence 1 : 2. The law needs accurate analysis (small errors destroy the whole-number pattern), applies to *pure* compounds of the same two elements, and says nothing about structure or bonding."
   ],
   "confusion": [
-    "❌ Misconception about 03 law of multiple proportions. ✅ Scientific explanation."
+    "❌ The law compares masses of both elements. ✅ One element's mass is held fixed; the other's varies in whole-number ratios.",
+    "❌ CO and CO₂ show definite proportions. ✅ Each compound separately follows definite proportions; the *pair* demonstrates multiple proportions.",
+    "❌ Any ratio qualifies as 'small whole number'. ✅ It must be genuinely integral (1 : 2, 2 : 3); 1 : 1.49 signals analytical error."
   ],
   "practice": [
-    "Practice exercise for 03 law of multiple proportions."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 03 law of multiple proportions."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 03 law of multiple proportions."
-  ],
-  "practiceQuestions": [
-    "Practice question for 03 law of multiple proportions."
+    "State the law of multiple proportions and verify it with CO and CO₂ data.",
+    "Two oxides of a metal contain 50% and 40% oxygen. Show that the data obey the law.",
+    "Explain how the law supports Dalton's atomic theory.",
+    "Why does the law fail for non-stoichiometric compounds?"
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 03 law of multiple proportions)"
+    "$$\\frac{m_{O}\\ (\\text{in oxide 2})}{m_{O}\\ (\\text{in oxide 1})}=\\frac{\\text{simple integer}}{1}\\ (\\text{fixed mass of the other element})$$"
   ],
-  "keyPoints": [
-    "Core point for 03 law of multiple proportions."
+  "universalFacts": [
+    "The law was published in Dalton's 'New System of Chemical Philosophy' (1808).",
+    "Nitrogen's five oxides give the textbook 1 : 2 : 3 : 4 : 5 ladder.",
+    "The law historically convinced chemists that atoms combine in whole numbers."
   ],
-  "summary": "Summary of 03 law of multiple proportions.",
-  "specialNotes": [
-    "Specialized insight for 03 law of multiple proportions."
-  ],
-  "importantStatements": [
-    "Key statement for 03 law of multiple proportions."
+  "examples": [
+    "**Problem:** Two oxides of metal M contain 50% and 40% oxygen respectively. Show multiple proportions. **Solution:** per 100 g: oxide 1 has 50 g M : 50 g O → per 1 g M, 1 g O; oxide 2 has 60 g M : 40 g O → per 1 g M, 0.667 g O. Ratio of oxygen masses = 1 : 0.667 = 3 : 2 — a simple whole-number ratio."
   ],
   "importantNotes": [
-    "Important note regarding 03 law of multiple proportions."
+    "Fix the mass of one element before comparing — the most common methodological mark.",
+    "Present the final ratio in smallest whole numbers (3 : 2, not 1.5 : 1)."
   ],
-  "examShortTricks": [
-    "Recall the formula for Law of Multiple Proportions — Statement."
-  ],
-  "examNotes": [
-    "Focus on Law of Multiple Proportions — Statement problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 03 law of multiple proportions?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 03 law of multiple proportions."
-  ],
-  "importantTasks": [
-    "Task for studying 03 law of multiple proportions."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "03-law-of-multiple-proportions",
   "mcqs": [
     {
-      "question": "Question about 03 law of multiple proportions?",
+      "question": "The law of multiple proportions was given by:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Proust",
+        "Dalton",
+        "Gay-Lussac",
+        "Avogadro"
       ],
-      "answer": "A"
+      "answer": "B"
     }
-  ]
+  ],
+  "visualType": "multiple-proportions",
+  "tabGroup": "Stoichiometry-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "03-law-of-multiple-proportions.json"
 }

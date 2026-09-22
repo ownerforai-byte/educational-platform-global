@@ -106,6 +106,23 @@ export function createLeaderLayer(mount: HTMLElement): {
   chipScaleRO.observe(mount);
 
   let chipScaleVersion = 0;
+  // Chips are measured once and cached (a rAF-time getBoundingClientRect is
+  // layout thrashing). But the very first frames can measure a chip before
+  // its fonts/text have laid out, freezing a wrong width in the cache — which
+  // then lets the declutter pack overlapping chips. Re-measure a couple of
+  // times after mount, once layout has certainly settled.
+  const remeasureTimers: ReturnType<typeof setTimeout>[] = [];
+  const scheduleRemeasure = (ms: number) => {
+    if (typeof window === "undefined") return;
+    remeasureTimers.push(
+      setTimeout(() => {
+        chipScaleVersion++;
+        window.dispatchEvent(new CustomEvent("leader-line-resize"));
+      }, ms),
+    );
+  };
+  scheduleRemeasure(420);
+  scheduleRemeasure(1400);
   // Cached chip measurement boxes (smoothness): chip sizes only change on
   // mount resize / scale change, so avoid a per-frame getBoundingClientRect
   // (a forced layout read inside rAF = layout thrashing). Cache is keyed by
@@ -115,11 +132,21 @@ export function createLeaderLayer(mount: HTMLElement): {
     const cached = chipBoxCache.get(inner);
     if (cached && cached.v === chipScaleVersion) return cached;
     const box = inner.getBoundingClientRect();
-    const size = {
-      v: chipScaleVersion,
-      w: box?.width || el?.offsetWidth || 96,
-      h: box?.height || el?.offsetHeight || 44,
-    };
+    // Take the widest honest reading available: a chip whose second line is
+    // longer than its first can report a box narrower than its content for a
+    // frame, and an under-measured chip is exactly what lets the declutter
+    // push a real, wider chip past the canvas edge.
+    const w = Math.max(box?.width || 0, inner.scrollWidth || 0, el?.scrollWidth || 0);
+    const h = Math.max(box?.height || 0, inner.scrollHeight || 0, el?.offsetHeight || 0);
+    // A zero/absurd measurement means the chip was read before its text had
+    // laid out. Caching that value would tell the declutter the chip is
+    // narrow — and it would happily wedge the real (wider) chip off-canvas.
+    // Re-read until the measurement is plausible instead of trusting it.
+    if (w < 8 || h < 8) {
+      const fallback = { v: chipScaleVersion, w: cached?.w || 96, h: cached?.h || 44 };
+      return fallback;
+    }
+    const size = { v: chipScaleVersion, w, h };
     chipBoxCache.set(inner, size);
     return size;
   };
@@ -346,7 +373,12 @@ export function createLeaderLayer(mount: HTMLElement): {
         it.oy = cy - it.sy;
       }
     };
-    for (let iter = 0; iter < 80; iter++) {
+    // Convergence budget: the relax ↔ clamp alternation needs more passes
+    // on genuinely dense scenes (nine-phyla row, 8-system anatomy) where a
+    // boundary clamp can keep re-creating collisions. The loop exits early
+    // the moment nothing moves, so a generous cap costs nothing on the
+    // scenes that already converge in a handful of passes.
+    for (let iter = 0; iter < 260; iter++) {
       let moved = false;
       for (let i = 0; i < items.length; i++) {
         for (let j = i + 1; j < items.length; j++) {
@@ -503,7 +535,10 @@ export function createLeaderLayer(mount: HTMLElement): {
       const angle = Math.atan2(ty - my, tx - mx);
       const nx = Math.cos(angle);
       const ny = Math.sin(angle);
-      setAttr(e.tick, "d", `M ${(tx - ny * tickHalf).toFixed(1)} ${(ty + nx * tickHalf).toFixed(1)} L ${tx.toFixed(1)} ${ty.toFixed(1)} L ${(tx + ny * tickHalf).toFixed(1)} ${(ty - nx * tickHalf).toFixed(1)}`);
+      // ONE straight stroke across the shaft. A two-stroke chevron back to
+      // the tip is geometrically an arrowhead — it reads as an arrow no
+      // matter what it is called, and the house rule is arrow-free leaders.
+      setAttr(e.tick, "d", `M ${(tx - ny * tickHalf).toFixed(1)} ${(ty + nx * tickHalf).toFixed(1)} L ${(tx + ny * tickHalf).toFixed(1)} ${(ty - nx * tickHalf).toFixed(1)}`);
       setAttr(e.tick, "stroke", l.color);
       setAttr(e.tick, "stroke-width", String(tickW));
 
@@ -545,6 +580,8 @@ export function createLeaderLayer(mount: HTMLElement): {
 
   function dispose() {
     clearHold();
+    remeasureTimers.forEach((t) => clearTimeout(t));
+    remeasureTimers.length = 0;
     chipScaleRO.disconnect();
     if (svg.parentNode) svg.parentNode.removeChild(svg);
     stateStore.clear();

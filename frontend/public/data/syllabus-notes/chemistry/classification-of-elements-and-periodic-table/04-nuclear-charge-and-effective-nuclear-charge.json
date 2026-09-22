@@ -1,0 +1,62 @@
+{
+  "title": "Nuclear Charge and Effective Nuclear Charge",
+  "unitSlug": "classification-of-elements-and-periodic-table",
+  "topicSlug": "nuclear-charge-and-effective-nuclear-charge",
+  "topicTitle": "Nuclear charge and effective nuclear charge",
+  "relevance": 100,
+  "notes": [
+    "### 1. Nuclear charge",
+    "The nuclear charge is the total positive charge of the nucleus, +Ze, where Z is the atomic number and e = 1.602 × 10⁻¹⁹ C. Since only protons carry it, Z = number of protons (K has Z = 19, charge +19e). Nuclear charge increases by one unit across each period and is the true identity of an element (Moseley), which is why the modern periodic table is based on Z rather than atomic mass.",
+    "### 2. Shielding and effective nuclear charge",
+    "A valence electron does not feel the full +Ze attraction because inner electrons repel it and screen part of the nuclear charge. The net attraction is the **effective nuclear charge** $Z_{\\text{eff}}=Z-S$, where S is the shielding (screening) constant of the other electrons. Z_eff is always less than Z, and it is the real controlling variable behind every periodic trend.",
+    "### 3. Slater's rules for S",
+    "Groups: (1s)(2s,2p)(3s,3p)(3d)(4s,4p)… For the electron of interest, electrons in the same group shield by 0.35 each (1s pair: 0.30); the n − 1 shell shields by 0.85 each; n − 2 and lower shells shield fully (1.00 each); higher-energy groups shield nothing.",
+    "**Worked pattern:** Cl (1s²)(2s²2p⁶)(3s²3p⁶), a 3p electron: S = 0.35(6) + 0.85(8) + 1.00(2) = 10.9 → Z_eff = 17 − 10.9 = 6.1. Cu 3d electron: S = 0.35(9) + 1.00(8) + 1.00(8) + 1.00(2) = 21.15 → Z_eff = 29 − 21.15 = 7.85.",
+    "### 4. Trends in Z_eff (with reasons)",
+    "• **Across a period:** Z rises by 1 per element while electrons enter the same shell, so S increases only ≈0.35 each; hence Z_eff increases markedly and pulls the shell inwards.",
+    "• **Down a group:** a new shell is added farther out and inner shells screen strongly, so Z_eff rises only slightly while n increases — size therefore increases.",
+    "• **Subshell order:** Z_eff follows ns > np > nd > nf because penetration decreases in that order; this gives the ns < np < nd energy order and the block structure of the table.",
+    "### 5. Applications",
+    "• Explains all periodic trends — atomic and ionic radii, ionisation energy, electron affinity, electronegativity and metallic character.",
+    "• Explains anomalies that a naive 'Z grows' argument misses: the small drops in ionisation energy from Be to B and N to O (penetration, pairing), and the lanthanide contraction (poor 4f shielding makes Hf ≈ Zr in size).",
+    "• Used in interpreting photoelectron/X-ray spectra (Moseley's law), effective atomic number in complexes, and why core electrons are chemically inert while valence electrons (small Z_eff) are easily removed.",
+    "### 6. Limitations",
+    "Z_eff is not measurable — it is a model parameter, and different schemes (Slater 1930; Clementi–Raimondi 1963; Clementi) give different numbers because their shielding rules differ. Slater's rules ignore orbital shape details, give one value for all s and p electrons of a group, and are poor for d and f electrons and heavy atoms. Shielding is really the result of electron–electron correlation, handled numerically by Hartree–Fock methods; the concept predicts trends, not individual chemical behaviour."
+  ],
+  "confusion": [
+    "❌ Z_eff equals the number of valence electrons. ✅ Z_eff = Z − S, the net nuclear charge felt after shielding.",
+    "❌ Shielding grows as fast as Z across a period. ✅ Same-shell electrons shield only ≈0.35 each, so Z_eff rises across a period.",
+    "❌ Inner electrons shield valence electrons fully (1.00). ✅ Only n − 2 and lower shells shield fully; the n − 1 shell shields by 0.85.",
+    "❌ Z_eff is larger for 3d than for 4s. ✅ Penetration is ns > np > nd, so Z_eff(4s) > Z_eff(3d).",
+    "❌ Z_eff is a measured quantity. ✅ It is a computed parameter; measurements give ionisation energies and atomic sizes."
+  ],
+  "practice": [
+    "Define nuclear charge and effective nuclear charge; derive Z_eff = Z − S.",
+    "Calculate Z_eff for the valence electron of sodium and of chlorine using Slater's rules.",
+    "Explain why Z_eff increases across a period but changes only slightly down a group.",
+    "Why does Z_eff follow ns > np > nd? Relate it to orbital penetration.",
+    "Use Z_eff to explain the trend Na < Mg < Al in ionisation energy.",
+    "State the limitations of Slater's rules."
+  ],
+  "formulas": [
+    "$$\\text{nuclear charge}=+Ze,\\qquad Z_{\\text{eff}}=Z-S$$",
+    "$$S=0.35\\,n_{\\text{same}}+0.85\\,n_{(n-1)}+1.00\\,n_{\\le (n-2)}$$",
+    "$$Z_{\\text{eff}}(ns)>Z_{\\text{eff}}(np)>Z_{\\text{eff}}(nd)>Z_{\\text{eff}}(nf)$$"
+  ],
+  "universalFacts": [
+    "Na: S = 8.8 → Z_eff = 2.2; Cl: S = 10.9 → Z_eff = 6.1 — the period trend in one line.",
+    "In Cu, Z_eff(3d) ≈ 7.85 while Z_eff(4s) ≈ 3.7.",
+    "Slater's rules date from 1930; Clementi–Raimondi (1963) values are more accurate."
+  ],
+  "examples": [
+    "**Problem:** Z_eff for the 3s electron of sodium (1s²2s²2p⁶3s¹). **Solution:** S = 0.85 × 8 + 1.00 × 2 = 8.8 → Z_eff = 11 − 8.8 = 2.2.",
+    "**Problem:** Compare Z_eff for a 3p electron in Cl and a 4s electron in K. **Solution:** Cl → 6.1; K → S = 8.8, Z_eff = 19 − 8.8 = 10.2. K's electron lies in a larger shell (n = 4), so size depends on both n and Z_eff."
+  ],
+  "importantNotes": [
+    "Anchor the two numbers: same-group electrons shield 0.35 each and the (n − 1) shell shields 0.85 each.",
+    "Never say 'more protons means larger Z_eff' without the shielding argument — the marks are for screening.",
+    "Z_eff explains trends, not individual reactions; state that if limitations are asked."
+  ],
+  "visualType": "effective-nuclear-charge",
+  "tabGroup": "Periodic-Table-Trends-Learner-Notes"
+}

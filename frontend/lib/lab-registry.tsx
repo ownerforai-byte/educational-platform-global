@@ -20,6 +20,7 @@ import { Biology3DSuite } from "@/components/lab/biology-3d-suite";
 import { CellOrganellesExplorer3D } from "@/components/lab/cell-organelles-explorer-3d";
 import { Biology3DDiversitySuite } from "@/components/lab/biology-3d-diversity-suite";
 import { BiologySyllabusSuite3D } from "@/components/lab/biology-syllabus-suite-3d";
+import { BiologyFaunalDiversity3D } from "@/components/lab/biology-faunal-3d";
 import { Physics3DVectors } from "@/components/lab/physics-3d-vectors";
 import {
   MathModern3D,
@@ -1351,13 +1352,13 @@ export const LAB_REGISTRY: LabMeta[] = [
   {
     id: "bio-3d-faunal",
     title: "Faunal Diversity 3D",
-    description: "Real WebGL: animal-kingdom species bars & threatened-species scene (Biodiversity in the Biology Syllabus Suite).",
+    description: "Real WebGL anatomy: Paramecium ultrastructure & conjugation, Plasmodium life cycle, nine phyla body plans, and Earthworm & Frog systems (digestive, excretory, nervous, reproductive) — leader-line labels + reveal bar on every scene.",
     category: "biology",
     type: "3d" as const,
     status: "new",
     color: "#22c55e",
     unit: "Unit: Diversity",
-    component: BiologySyllabusSuite3D,
+    component: BiologyFaunalDiversity3D,
   },
   {
     id: "bio-3d-floral",

@@ -1,0 +1,64 @@
+{
+  "title": "Efflorescent, Deliquescent and Hygroscopic Solids; Crystallization, Crystal Growth and Water of Crystallization",
+  "unitSlug": "states-of-matter",
+  "topicSlug": "efflorescent-deliquescent-and-hygroscopic-solids-crystallization-and-crystal-growth-water-of-cry",
+  "topicTitle": "Efflorescent, deliquescent and hygroscopic solids; crystallization and crystal growth; water of crystallization",
+  "relevance": 100,
+  "notes": [
+    "### 1. Water of crystallisation — the concept behind the three classes",
+    "Water of crystallisation is water chemically combined in a fixed stoichiometric ratio inside a crystal lattice (not merely adsorbed). Examples: CuSO₄·5H₂O (blue vitriol), Na₂CO₃·10H₂O (washing soda), Na₂SO₄·10H₂O (Glauber's salt), MgCl₂·6H₂O, CaSO₄·2H₂O (gypsum), FeSO₄·7H₂O. It is usually driven off by heating, and the loss of mass gives the number of water molecules per formula unit (gravimetric determination); the anhydrous salt often differs in colour and crystal shape.",
+    "### 2. Efflorescent solids",
+    "Efflorescent substances lose their water of crystallisation (wholly or partly) spontaneously in dry air and crumble to a powder, because the vapour pressure of the hydrate exceeds the water-vapour pressure of the atmosphere. Examples: Na₂SO₄·10H₂O → Na₂SO₄ (white powder); Na₂CO₃·10H₂O → Na₂CO₃·H₂O; CuSO₄·5H₂O fades from blue towards pale blue/white; alum. Hot, dry weather speeds it up, so such salts must be stored in sealed containers.",
+    "### 3. Deliquescent and hygroscopic solids",
+    "**Deliquescent** solids absorb moisture from the air, dissolve in it and form a saturated solution (a puddle) — CaCl₂, MgCl₂, NaOH, KOH, FeCl₃·6H₂O, ZnCl₂. **Hygroscopic** substances absorb or adsorb moisture and become damp without dissolving — concentrated H₂SO₄, P₄O₁₀, CaO (quicklime), CuO, silica gel, glycerol. Hygroscopic materials are used as **drying agents/desiccants** (silica-gel sachets, conc. H₂SO₄ in desiccators, quicklime in packaging). Whether a salt deliquesces depends on humidity: the air must exceed its deliquescence relative humidity (NaCl ≈ 75% RH, CaCl₂ ≈ 30% RH), so a 'deliquescent' salt may simply effloresce or remain unchanged in dry air.",
+    "### 4. Crystallization and crystal growth",
+    "**Crystallisation** is the formation of a pure solid in crystalline form from a solution, melt or vapour: the solution is saturated and then supersaturated by cooling or slow evaporation, after which **nucleation** begins and **crystal growth** follows. Good crystals need slow, steady growth — slow cooling, a clean solution, a suitable solvent, undisturbed conditions and sometimes a seed crystal. Large single crystals are grown by slow evaporation (sugar, alum, KDP), by the Czochralski pulling technique from a melt (silicon and germanium for electronics), by zone refining, or from the vapour (sublimation and chemical vapour transport).",
+    "### 5. Applications",
+    "• Recrystallisation is the standard laboratory purification technique; soluble impurities stay behind in the mother liquor.",
+    "• Industrial crystallisation produces salt, sugar, urea, fertilisers and pharmaceutical crystals, where crystal habit and size control tablet manufacture and food texture.",
+    "• Single-crystal growth supplies semiconductor wafers, quartz oscillators, laser and detector crystals and gemstones; crystallisation is also used in water softening (scale removal) and freeze-drying.",
+    "• Desiccants and drying agents (silica gel, CaCl₂, P₄O₁₀, H₂SO₄) protect instruments and goods from moisture and are essential for analytical weighing, while anti-caking agents stop efflorescent salts from caking.",
+    "### 6. Limitations",
+    "• The three terms describe behaviour, not a rigorous classification: the same substance can deliquesce in humid air and effloresce in dry air (Na₂SO₄ and Na₂CO₃ hydrates both do), because humidity, temperature and the hydrate's vapour pressure decide the outcome.",
+    "• Efflorescence may stop at a lower hydrate rather than reach the anhydrous salt, so equations assuming complete dehydration can be wrong.",
+    "• Deliquescence occurs only above the substance's critical relative humidity; below it the solid merely adsorbs a little water.",
+    "• Determining water of crystallisation by heating fails if the substance decomposes or hydrolyses (MgCl₂·6H₂O loses HCl and water when heated strongly) or if the sample also picks up atmospheric moisture.",
+    "• Crystallisation cannot remove impurities that co-crystallise as mixed (isomorphous) crystals, is slow, and always loses some product in the mother liquor, lowering the yield."
+  ],
+  "confusion": [
+    "❌ Efflorescent, deliquescent and hygroscopic mean the same. ✅ Efflorescent solids *lose* water to the air, deliquescent solids *absorb water and dissolve*, hygroscopic solids *absorb water and become damp*.",
+    "❌ Deliquescence happens in any weather. ✅ It requires air humidity above the deliquescence relative humidity (≈30% for CaCl₂, ≈75% for NaCl).",
+    "❌ Water of crystallisation is moisture sticking to a crystal. ✅ It is chemically combined in a definite ratio and forms part of the crystal structure.",
+    "❌ Any solid that becomes damp is deliquescent. ✅ Hygroscopic solids only become moist; deliquescent solids dissolve into a solution.",
+    "❌ Fast cooling gives the best crystals. ✅ Slow, undisturbed growth gives larger, purer crystals; rapid cooling gives many small crystals."
+  ],
+  "practice": [
+    "Distinguish efflorescent, deliquescent and hygroscopic substances with two examples of each.",
+    "Explain water of crystallisation and describe how it is determined experimentally.",
+    "Why does washing soda turn to powder on standing in dry air? Write the equation.",
+    "Define crystallisation and describe the steps and conditions needed for good crystals.",
+    "Give four applications of crystallisation and crystal growth in industry and the laboratory.",
+    "State the limitations of the efflorescent/deliquescent/hygroscopic classification."
+  ],
+  "formulas": [
+    "$$\\text{Efflorescence: }Na_{2}SO_{4}\\cdot10H_{2}O(s)\\rightarrow Na_{2}SO_{4}(s)+10H_{2}O(g)$$",
+    "$$\\text{Dehydration: }CuSO_{4}\\cdot5H_{2}O(\\text{blue})\\rightarrow CuSO_{4}(\\text{white})+5H_{2}O$$",
+    "$$n_{\\text{water}}=\\frac{\\text{mass lost on heating}/18}{\\text{moles of anhydrous salt}}$$"
+  ],
+  "universalFacts": [
+    "CuSO₄·5H₂O turns white on heating and blue again on adding water — the classic reversible hydration test.",
+    "Deliquescence relative humidity: about 30% for CaCl₂ and 75% for NaCl.",
+    "Silica gel can absorb roughly 40% of its own mass of water and is regenerated by heating."
+  ],
+  "examples": [
+    "**Problem:** 2.86 g of hydrated sodium carbonate loses 1.62 g on strong heating; the anhydrous salt has M = 106 g mol⁻¹. Find n. **Solution:** anhydrous mass = 1.24 g → 0.0117 mol; water = 1.62/18 = 0.09 mol → n = 0.09/0.0117 ≈ 7.7, i.e. ≈ 8 (illustrating that heating experiments need care, since washing soda is normally the decahydrate).",
+    "**Problem:** Why is CaCl₂ unsuitable for drying ammonia? **Solution:** CaCl₂ is deliquescent but forms the addition compound CaCl₂·8NH₃, so it would remove ammonia as well; conc. H₂SO₄ or quicklime is used instead."
+  ],
+  "importantNotes": [
+    "Keep one example of each class ready: efflorescent — Na₂SO₄·10H₂O; deliquescent — CaCl₂; hygroscopic — conc. H₂SO₄ or silica gel.",
+    "Tie efflorescence and deliquescence to humidity: both depend on the vapour-pressure balance between hydrate and atmosphere.",
+    "State that crystallisation is used for purification and that slow growth yields large, pure crystals."
+  ],
+  "visualType": "crystallization",
+  "tabGroup": "States-Of-Matter-Learner-Notes"
+}

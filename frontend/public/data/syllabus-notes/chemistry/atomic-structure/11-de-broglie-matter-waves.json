@@ -1,81 +1,66 @@
 {
-  "title": "de Broglie Matter Waves & the Einstein–Planck Synthesis",
+  "title": "de Broglie Matter Waves — Equation, Derivation and Experimental Proof",
   "unitSlug": "atomic-structure",
   "topicSlug": "elementary-idea-of-quantum-mechanical-model-de-broglie-s-wave-equation",
   "topicTitle": "Elementary idea of quantum mechanical model: de Broglie's wave equation",
-  "relevance": 75,
+  "relevance": 90,
   "notes": [
-    "Detailed notes on 11 de broglie matter waves within the atomic structure unit."
+    "### Focus of this tab",
+    "The derivation of λ = h/mv from the photon equations and the experimental proof — the two parts of de Broglie's idea that complete the main note.",
+    "### Derivation from the photon picture",
+    "For a photon: $E=h\\nu$ and $E=mc^{2}$ (equivalence of energy and mass). Equating: $mc^{2}=h\\nu=h\\frac{c}{\\lambda}$ → $\\lambda=\\frac{h}{mc}=\\frac{h}{p}$. de Broglie's 1924 leap: the same relation must hold for **matter**, so a particle of momentum p = mv has wavelength $\\lambda=\\frac{h}{mv}$. For accelerated electrons, $\\lambda=\\frac{h}{\\sqrt{2meV}}=\\frac{12.27}{\\sqrt{V}}\\ \\text{Å}$ (V in volts).",
+    "### Why the wave nature is only microscopic",
+    "λ ∝ 1/m: a 1 g body at 1 m s⁻¹ has λ ≈ 6.6 × 10⁻³¹ m (undetectable), while a 100 V electron has λ ≈ 1.23 Å — the size of atomic spacings, so crystals diffract electrons. Wave behaviour is not absent for large bodies; it is unobservable.",
+    "### Experimental proof (Davisson–Germer, 1927)",
+    "Electrons accelerated through ≈54 V strike a single nickel crystal; the detector records a maximum at φ = 50°. Bragg's law gives the wavelength: nλ = 2d sin θ with d = 0.091 nm → λ ≈ 0.165 nm; the de Broglie value for 54 V is λ = 12.27/√54 ≈ 1.67 Å = 0.167 nm — agreement within experiment. G. P. Thomson's high-energy electron diffraction through thin films confirmed it independently (both shared the 1937 Nobel Prize).",
+    "### Consequences that matter for chemistry",
+    "• Justifies Bohr's quantisation: nλ = 2πr → mvr = nh/2π.",
+    "• Basis of the Schrödinger equation and the orbital concept.",
+    "• Electron diffraction and the electron microscope (λ ≈ 0.005 nm at 50 kV → atomic resolution); neutron diffraction for structure determination.",
+    "• Quantum tunnelling and matter-wave interferometry (atom interferometers, BEC) are direct technologies of matter waves."
   ],
   "confusion": [
-    "❌ Misconception about 11 de broglie matter waves. ✅ Scientific explanation."
+    "❌ de Broglie waves travel at the speed of light. ✅ They travel with the particle (v ≪ c); the phase velocity even exceeds c, while the group velocity equals v.",
+    "❌ The derivation needs relativistic mass. ✅ For non-relativistic particles λ = h/mv directly; the photon derivation only motivates the form.",
+    "❌ Davisson–Germer proved light has particle nature. ✅ It proved *electrons* have wave nature — the converse of the photoelectric effect."
   ],
   "practice": [
-    "Practice exercise for 11 de broglie matter waves."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 11 de broglie matter waves."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 11 de broglie matter waves."
-  ],
-  "practiceQuestions": [
-    "Practice question for 11 de broglie matter waves."
+    "Derive de Broglie's relation from the photon equations E = hν and E = mc².",
+    "Calculate λ for an electron accelerated through 100 V and through 50 V.",
+    "Describe the Davisson–Germer experiment and show how it verifies λ = h/mv.",
+    "Why is the wave nature of a cricket ball unobservable?"
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 11 de broglie matter waves)"
+    "$$\\lambda=\\frac{h}{mv}=\\frac{h}{p}=\\frac{h}{\\sqrt{2mKE}}$$",
+    "$$\\lambda=\\frac{h}{\\sqrt{2meV}}=\\frac{12.27}{\\sqrt{V}}\\ \\text{Å};\\qquad n\\lambda=2\\pi r$$"
   ],
-  "keyPoints": [
-    "Core point for 11 de broglie matter waves."
+  "universalFacts": [
+    "de Broglie received the 1929 Nobel Prize for his 1924 thesis — the first Nobel awarded for a PhD thesis.",
+    "λ(54 V electron) ≈ 1.67 Å matched the Davisson–Germer Bragg analysis (d = 0.091 nm, φ = 50°).",
+    "Electron microscopes reach ≈0.1 nm resolution because λ(electron) is ~10⁵ times shorter than visible light."
   ],
-  "summary": "Summary of 11 de broglie matter waves.",
-  "specialNotes": [
-    "Specialized insight for 11 de broglie matter waves."
-  ],
-  "importantStatements": [
-    "Key statement for 11 de broglie matter waves."
+  "examples": [
+    "**Problem:** λ of an electron with KE = 13.6 eV. **Solution:** λ = 12.27/√13.6 ≈ 3.33 Å — exactly one circumference of the first Bohr orbit, linking the two topics."
   ],
   "importantNotes": [
-    "Important note regarding 11 de broglie matter waves."
+    "Quote both the general form λ = h/mv and the electron form 12.27/√V Å.",
+    "Name Davisson–Germer as the experimental proof with the year 1927."
   ],
-  "examShortTricks": [
-    "Recall the formula for de Broglie Matter Waves & the Einstein–Planck Synthesis."
-  ],
-  "examNotes": [
-    "Focus on de Broglie Matter Waves & the Einstein–Planck Synthesis problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 11 de broglie matter waves?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 11 de broglie matter waves."
-  ],
-  "importantTasks": [
-    "Task for studying 11 de broglie matter waves."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "11-de-broglie-matter-waves",
   "mcqs": [
     {
-      "question": "Question about 11 de broglie matter waves?",
+      "question": "The de Broglie wavelength of a particle is inversely proportional to its:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Mass only",
+        "Velocity only",
+        "Momentum",
+        "Kinetic energy squared"
       ],
-      "answer": "A"
+      "answer": "C"
     }
-  ]
+  ],
+  "visualType": "de-broglie",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "11-de-broglie-matter-waves.json"
 }

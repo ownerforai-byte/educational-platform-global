@@ -1,0 +1,175 @@
+{
+  "title": "Conservation of Linear Momentum",
+  "unitSlug": "dynamics",
+  "topicSlug": "conservation-linear-momentum",
+  "topicTitle": "Conservation of Linear Momentum",
+  "relevance": 100,
+  "duplicateType": 2,
+  "tabGroup": "conservation-linear-momentum",
+  "animation3D": "dynamics",
+  "motionGraphics": "dynamics",
+  "enrichedContent": {
+    "notes": [
+      "**Law of Conservation of Linear Momentum:** In an isolated system (no external net force), the total linear momentum remains constant: $\\sum \\vec{p}_i = \\sum \\vec{p}_f$. This is a fundamental law derived from the homogeneity of space (Noether's theorem). It is a direct consequence of the fact that the laws of physics are the same at all points in space.",
+      "**Isolated System:** A system where the net external force is zero. Internal forces (like collision forces) do not change the total momentum because they act in equal and opposite pairs (Newton's 3rd law). The system can be as small as two colliding particles or as large as the entire universe.",
+      "**Coefficient of Restitution (e):** A measure of elasticity in collisions: $e = (v_2 - v_1) / (u_1 - u_2)$. $e=1$ (perfectly elastic), $0 < e < 1$ (inelastic), $e=0$ (perfectly inelastic). This coefficient depends on the materials of the colliding objects and their surface properties.",
+      "**Collisions:** Events where momentum is conserved. Elastic collisions also conserve kinetic energy; inelastic collisions do not (energy is lost to heat, sound, deformation).",
+      "**Explosions:** A reverse collision where an object breaks apart. Momentum is conserved, but kinetic energy increases (internal energy is converted to motion).",
+      "**Recoil:** A classic application. A gun firing a bullet: $M_g V_g + m_b v_b = 0$ (initially at rest).",
+      "**NEB exam focus:** State the law; apply it to 1D and 2D collisions; distinguish between elastic and inelastic collisions; solve recoil and explosion problems."
+    ],
+    "confusion": [
+      "❌ 'Momentum is conserved only in elastic collisions.' ✅ Momentum is conserved in ALL collisions (elastic or inelastic) as long as the system is isolated.",
+      "❌ 'Kinetic energy is always conserved in collisions.' ✅ Only in perfectly elastic collisions. In inelastic collisions, KE is lost.",
+      "❌ 'Internal forces change the total momentum.' ✅ Internal forces (like collision forces) cancel out in pairs (Newton's 3rd law) and do not change the total momentum of the system.",
+      "❌ 'Conservation of momentum applies to individual objects.' ✅ It applies to the SYSTEM of objects."
+    ],
+    "practice": [
+      "A 2 kg ball at 5 m/s hits a 3 kg ball at rest. If they stick together, find the final velocity. — $v = 2$ m/s.",
+      "A 5 kg rifle fires a 20 g bullet at 400 m/s. Find the recoil velocity. — $v = 1.6$ m/s.",
+      "A 1000 kg car at 10 m/s hits a 2000 kg truck at rest. If they stick, find the final speed. — $v = 3.33$ m/s."
+    ],
+    "universalFacts": [
+      "The law of conservation of momentum is one of the fundamental laws of physics, derived from the homogeneity of space (Noether's theorem).",
+      "It holds true from subatomic particle collisions in accelerators to the motion of galaxies.",
+      "Rocket propulsion is a direct application: expelling mass backward to gain forward momentum. The thrust force is $F = v_e (dm/dt)$. This is the Tsiolkovsky rocket equation principle.",
+      "In a system of particles, the center of mass moves with constant velocity if the net external force is zero, even if the particles themselves are colliding and changing velocities. The total momentum of the system is $P = M V_{cm}$, where $M$ is the total mass and $V_{cm}$ is the velocity of the center of mass.",
+      "**Center of Mass (CM) Frame:** In the CM frame, the total momentum is always zero, which simplifies the analysis of complex collisions. In this frame, the collision is seen as a symmetric event where the particles approach and recede from the CM with equal and opposite momenta.",
+      "**Collisions in 2D:** Momentum is conserved in both x and y directions independently: $\\sum p_{ix} = \\sum p_{fx}$ and $\\sum p_{iy} = \\sum p_{fy}$. This is essential for analyzing oblique collisions."
+    ],
+    "examples": [
+      "Example 1 (1D collision): $m_1 u_1 + m_2 u_2 = (m_1 + m_2) v$ for perfectly inelastic.",
+      "Example 2 (Explosion): A shell at rest breaks into two pieces $m_1, m_2$ with velocities $v_1, v_2$ such that $m_1 v_1 + m_2 v_2 = 0$."
+    ],
+    "practiceQuestions": [
+      "Q1. State the law of conservation of linear momentum.",
+      "Q2. Distinguish between elastic and inelastic collisions.",
+      "Q3. A 1 kg object moving at 10 m/s hits a 1 kg object at rest. If they stick, find the final velocity.",
+      "Q4. Explain why a rocket can accelerate in space."
+    ],
+    "formulas": [
+      "Conservation: $\\sum \\vec{p}_i = \\sum \\vec{p}_f$",
+      "1D Collision: $m_1 u_1 + m_2 u_2 = m_1 v_1 + m_2 v_2$",
+      "Perfectly Inelastic: $m_1 u_1 + m_2 u_2 = (m_1 + m_2) v$"
+    ],
+    "keyPoints": [
+      "Isolated system = no external force.",
+      "Momentum is always conserved in collisions.",
+      "Kinetic energy is conserved ONLY in elastic collisions.",
+      "Recoil and explosions are momentum conservation problems."
+    ],
+    "summary": "The law of conservation of linear momentum states that the total momentum of an isolated system remains constant. It is a powerful tool for solving collision, explosion, and recoil problems. While momentum is conserved in all collisions, kinetic energy is only conserved in perfectly elastic ones.",
+    "specialNotes": [
+      "Note 1: Always define the system clearly.",
+      "Note 2: Use vector notation for 2D problems.",
+      "Note 3: In inelastic collisions, KE is lost to heat/sound."
+    ],
+    "importantStatements": [
+      "Statement 1: Total momentum of an isolated system is constant.",
+      "Statement 2: Momentum is conserved in all collisions."
+    ],
+    "importantNotes": [
+      "Note 1: Isolated system is key.",
+      "Note 2: Elastic vs Inelastic distinction."
+    ],
+    "examShortTricks": [
+      "Trick 1: If objects stick, use $m_1 u_1 + m_2 u_2 = (m_1 + m_2) v$.",
+      "Trick 2: Recoil: $V = -mv/M$.",
+      "Trick 3: Explosion: $m_1 v_1 = -m_2 v_2$."
+    ],
+    "examNotes": [
+      "Exam Tip 1: Always state 'Assuming an isolated system' in theory answers.",
+      "Exam Tip 2: Check if the collision is elastic or inelastic before assuming KE conservation."
+    ],
+    "mcs": [
+      "Added new rich content for mcs."
+    ],
+    "importantConcepts": [
+      "Added new rich content for important Concepts."
+    ],
+    "importantTasks": [
+      "Added new rich content for important Tasks."
+    ],
+    "exercises": [],
+    "visualization": {}
+  },
+  "originalContent": {
+    "notes": [
+      "**Law of Conservation of Linear Momentum:** In an isolated system (no external net force), the total linear momentum remains constant: $\\sum \\vec{p}_i = \\sum \\vec{p}_f$. This is a fundamental law derived from the homogeneity of space (Noether's theorem). It is a direct consequence of the fact that the laws of physics are the same at all points in space.",
+      "**Isolated System:** A system where the net external force is zero. Internal forces (like collision forces) do not change the total momentum because they act in equal and opposite pairs (Newton's 3rd law). The system can be as small as two colliding particles or as large as the entire universe.",
+      "**Coefficient of Restitution (e):** A measure of elasticity in collisions: $e = (v_2 - v_1) / (u_1 - u_2)$. $e=1$ (perfectly elastic), $0 < e < 1$ (inelastic), $e=0$ (perfectly inelastic). This coefficient depends on the materials of the colliding objects and their surface properties.",
+      "**Collisions:** Events where momentum is conserved. Elastic collisions also conserve kinetic energy; inelastic collisions do not (energy is lost to heat, sound, deformation).",
+      "**Explosions:** A reverse collision where an object breaks apart. Momentum is conserved, but kinetic energy increases (internal energy is converted to motion).",
+      "**Recoil:** A classic application. A gun firing a bullet: $M_g V_g + m_b v_b = 0$ (initially at rest).",
+      "**NEB exam focus:** State the law; apply it to 1D and 2D collisions; distinguish between elastic and inelastic collisions; solve recoil and explosion problems."
+    ],
+    "confusion": [
+      "❌ 'Momentum is conserved only in elastic collisions.' ✅ Momentum is conserved in ALL collisions (elastic or inelastic) as long as the system is isolated.",
+      "❌ 'Kinetic energy is always conserved in collisions.' ✅ Only in perfectly elastic collisions. In inelastic collisions, KE is lost.",
+      "❌ 'Internal forces change the total momentum.' ✅ Internal forces (like collision forces) cancel out in pairs (Newton's 3rd law) and do not change the total momentum of the system.",
+      "❌ 'Conservation of momentum applies to individual objects.' ✅ It applies to the SYSTEM of objects."
+    ],
+    "practice": [
+      "A 2 kg ball at 5 m/s hits a 3 kg ball at rest. If they stick together, find the final velocity. — $v = 2$ m/s.",
+      "A 5 kg rifle fires a 20 g bullet at 400 m/s. Find the recoil velocity. — $v = 1.6$ m/s.",
+      "A 1000 kg car at 10 m/s hits a 2000 kg truck at rest. If they stick, find the final speed. — $v = 3.33$ m/s."
+    ],
+    "universalFacts": [
+      "The law of conservation of momentum is one of the fundamental laws of physics, derived from the homogeneity of space (Noether's theorem).",
+      "It holds true from subatomic particle collisions in accelerators to the motion of galaxies.",
+      "Rocket propulsion is a direct application: expelling mass backward to gain forward momentum. The thrust force is $F = v_e (dm/dt)$. This is the Tsiolkovsky rocket equation principle.",
+      "In a system of particles, the center of mass moves with constant velocity if the net external force is zero, even if the particles themselves are colliding and changing velocities. The total momentum of the system is $P = M V_{cm}$, where $M$ is the total mass and $V_{cm}$ is the velocity of the center of mass.",
+      "**Center of Mass (CM) Frame:** In the CM frame, the total momentum is always zero, which simplifies the analysis of complex collisions. In this frame, the collision is seen as a symmetric event where the particles approach and recede from the CM with equal and opposite momenta.",
+      "**Collisions in 2D:** Momentum is conserved in both x and y directions independently: $\\sum p_{ix} = \\sum p_{fx}$ and $\\sum p_{iy} = \\sum p_{fy}$. This is essential for analyzing oblique collisions."
+    ],
+    "examples": [
+      "Example 1 (1D collision): $m_1 u_1 + m_2 u_2 = (m_1 + m_2) v$ for perfectly inelastic.",
+      "Example 2 (Explosion): A shell at rest breaks into two pieces $m_1, m_2$ with velocities $v_1, v_2$ such that $m_1 v_1 + m_2 v_2 = 0$."
+    ],
+    "practiceQuestions": [
+      "Q1. State the law of conservation of linear momentum.",
+      "Q2. Distinguish between elastic and inelastic collisions.",
+      "Q3. A 1 kg object moving at 10 m/s hits a 1 kg object at rest. If they stick, find the final velocity.",
+      "Q4. Explain why a rocket can accelerate in space."
+    ],
+    "formulas": [
+      "Conservation: $\\sum \\vec{p}_i = \\sum \\vec{p}_f$",
+      "1D Collision: $m_1 u_1 + m_2 u_2 = m_1 v_1 + m_2 v_2$",
+      "Perfectly Inelastic: $m_1 u_1 + m_2 u_2 = (m_1 + m_2) v$"
+    ],
+    "keyPoints": [
+      "Isolated system = no external force.",
+      "Momentum is always conserved in collisions.",
+      "Kinetic energy is conserved ONLY in elastic collisions.",
+      "Recoil and explosions are momentum conservation problems."
+    ],
+    "summary": "The law of conservation of linear momentum states that the total momentum of an isolated system remains constant. It is a powerful tool for solving collision, explosion, and recoil problems. While momentum is conserved in all collisions, kinetic energy is only conserved in perfectly elastic ones.",
+    "specialNotes": [
+      "Note 1: Always define the system clearly.",
+      "Note 2: Use vector notation for 2D problems.",
+      "Note 3: In inelastic collisions, KE is lost to heat/sound."
+    ],
+    "importantStatements": [
+      "Statement 1: Total momentum of an isolated system is constant.",
+      "Statement 2: Momentum is conserved in all collisions."
+    ],
+    "importantNotes": [
+      "Note 1: Isolated system is key.",
+      "Note 2: Elastic vs Inelastic distinction."
+    ],
+    "examShortTricks": [
+      "Trick 1: If objects stick, use $m_1 u_1 + m_2 u_2 = (m_1 + m_2) v$.",
+      "Trick 2: Recoil: $V = -mv/M$.",
+      "Trick 3: Explosion: $m_1 v_1 = -m_2 v_2$."
+    ],
+    "examNotes": [
+      "Exam Tip 1: Always state 'Assuming an isolated system' in theory answers.",
+      "Exam Tip 2: Check if the collision is elastic or inelastic before assuming KE conservation."
+    ],
+    "mcs": [],
+    "importantConcepts": [],
+    "importantTasks": [],
+    "exercises": [],
+    "visualization": {}
+  }
+}

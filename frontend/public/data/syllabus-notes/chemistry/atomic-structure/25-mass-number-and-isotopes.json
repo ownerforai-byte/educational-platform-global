@@ -1,81 +1,66 @@
 {
-  "title": "Mass Number (A) & Isotopes",
+  "title": "Mass Number and Isotopes",
   "unitSlug": "atomic-structure",
-  "topicSlug": "orbitals-and-shape-of-s-and-p-orbitals-only",
-  "topicTitle": "Orbitals and shape of s and p orbitals only",
-  "relevance": 77,
+  "topicSlug": "discovery-of-neutron-and-fundamental-particles",
+  "topicTitle": "Discovery Of Neutron And Fundamental Particles",
+  "relevance": 80,
   "notes": [
-    "Detailed notes on 25 mass number and isotopes within the atomic structure unit."
+    "### Focus of this tab",
+    "Mass number A, the isotope concept it makes possible, and the average-atomic-mass calculation — the accounting that sits on top of the fundamental particles.",
+    "### Mass number",
+    "A = number of protons + number of neutrons = Z + N. It is always a whole number because it counts particles; the *atomic mass* measured for an element is usually not a whole number because it is a weighted average over isotopes (e.g. Cl = 35.45 u). Notation ᴬZX places A upper-left, Z lower-left.",
+    "### Isotopes (same Z, different A)",
+    "• Hydrogen: ¹H protium, ²H deuterium (D, in heavy water D₂O), ³H tritium (radioactive) — the only element whose isotopes have separate names.",
+    "• Carbon: ¹²C (98.9%, the amu standard), ¹³C (NMR), ¹⁴C (dating). Chlorine: ³⁵Cl (75%), ³⁷Cl (25%). Uranium: ²³⁵U (fissile, 0.7%), ²³⁸U (99.3%).",
+    "• Chemical properties are almost identical (same electron configuration); physical properties differ with mass (density, diffusion rate, spectra — the D line shift identified deuterium).",
+    "### Average atomic mass (the numerical pattern)",
+    "Average = Σ(abundance × isotopic mass). Cl: 0.75 × 35 + 0.25 × 37 = 35.5 u. Ne: 0.905 × 20 + 0.0027 × 21 + 0.0923 × 22 ≈ 20.18 u. Working backwards: given the average and one abundance, the second isotopic mass can be found.",
+    "### Separation and uses",
+    "Because isotopes differ only in mass, separation uses mass-dependent processes: gaseous diffusion (UF₆) or centrifugation for ²³⁵U, electrolysis/distillation for D₂O. Uses: ¹⁴C dating, ¹³¹I thyroid therapy, ⁶⁰Co radiotherapy, D₂O as a neutron moderator, tracer studies in metabolism.",
+    "### Relation to Dalton's theory",
+    "Isotopes violate Dalton's postulate that all atoms of an element are identical in mass; the nuclear model plus the neutron explains them — same proton count, different neutron count."
   ],
   "confusion": [
-    "❌ Misconception about 25 mass number and isotopes. ✅ Scientific explanation."
+    "❌ Mass number is the atomic mass. ✅ A is a whole-number particle count; atomic mass is the weighted average in u.",
+    "❌ Isotopes have different chemical properties. ✅ Nearly identical chemically; they differ in mass and nuclear stability.",
+    "❌ ²³⁵U and ²³⁸U are isobars. ✅ They are isotopes (same Z = 92); isobars need equal A."
   ],
   "practice": [
-    "Practice exercise for 25 mass number and isotopes."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 25 mass number and isotopes."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 25 mass number and isotopes."
-  ],
-  "practiceQuestions": [
-    "Practice question for 25 mass number and isotopes."
+    "Define mass number and write the notation of an element with Z and A.",
+    "Why is the atomic mass of chlorine 35.5 and not a whole number?",
+    "List the three isotopes of hydrogen with one use of deuterium.",
+    "An element has 90% of an isotope of mass 20 and 10% of mass 22; find the average atomic mass and identify the element."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 25 mass number and isotopes)"
+    "$$A=Z+N;\\qquad \\text{average mass}=\\sum(\\text{abundance}\\times\\text{isotopic mass})$$"
   ],
-  "keyPoints": [
-    "Core point for 25 mass number and isotopes."
+  "universalFacts": [
+    "¹²C defines the unified mass unit: 1 u = 1/12 mass of a ¹²C atom = 1.66 × 10⁻²⁷ kg.",
+    "Heavy water (D₂O) is used as moderator-cum-coolant in CANDU reactors.",
+    "Uranium enrichment to ≈3–5% ²³⁵U is what reactor fuel requires (weapons need ≈90%)."
   ],
-  "summary": "Summary of 25 mass number and isotopes.",
-  "specialNotes": [
-    "Specialized insight for 25 mass number and isotopes."
-  ],
-  "importantStatements": [
-    "Key statement for 25 mass number and isotopes."
+  "examples": [
+    "**Problem:** An element of average mass 10.8 consists of isotopes 10 and 11. Find abundances. **Solution:** let x be the 10-isotope fraction: 10x + 11(1 − x) = 10.8 → x = 0.2 → 20% mass-10 (boron)."
   ],
   "importantNotes": [
-    "Important note regarding 25 mass number and isotopes."
+    "Keep 'mass number' (integer count) and 'atomic mass' (average in u) strictly separate.",
+    "Attach the isotope discussion to Dalton's limitation — it is the standard link."
   ],
-  "examShortTricks": [
-    "Recall the formula for Mass Number (A) & Isotopes."
-  ],
-  "examNotes": [
-    "Focus on Mass Number (A) & Isotopes problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 25 mass number and isotopes?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 25 mass number and isotopes."
-  ],
-  "importantTasks": [
-    "Task for studying 25 mass number and isotopes."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "25-mass-number-and-isotopes",
   "mcqs": [
     {
-      "question": "Question about 25 mass number and isotopes?",
+      "question": "The number of neutrons in ⁴¹Ca (Z = 20) is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "20",
+        "21",
+        "41",
+        "61"
       ],
-      "answer": "A"
+      "answer": "B"
     }
-  ]
+  ],
+  "visualType": "isotopes",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "25-mass-number-and-isotopes.json"
 }

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { FlaskConical } from "lucide-react";
 import type { UnitVM } from "../types";
 
 type OfficialSyllabusPanelProps = {
@@ -21,6 +22,10 @@ export function OfficialSyllabusPanel({
   highlightTopicSlug,
   compact = false,
 }: OfficialSyllabusPanelProps) {
+  const parts = (basePath || "").split("/").filter(Boolean);
+  const subjectSlug = parts[parts.length - 1] || "";
+  const isScience = ["physics", "chemistry", "biology"].includes(subjectSlug);
+
   if (units.length === 0) {
     return (
       <Card id="syllabus">
@@ -37,7 +42,18 @@ export function OfficialSyllabusPanel({
   return (
     <Card id="syllabus" className="border-primary/30 bg-primary/5">
       <CardHeader>
-        <CardTitle className="text-lg">{heading}</CardTitle>
+        <div className="flex flex-wrap items-center justify-between gap-2">
+          <CardTitle className="text-lg">{heading}</CardTitle>
+          {isScience && (
+            <Link
+              href={`/practical/${subjectSlug}`}
+              className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-2.5 py-1 text-xs font-semibold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500 hover:text-white transition-colors"
+            >
+              <FlaskConical className="h-3.5 w-3.5" />
+              <span>{subjectSlug.charAt(0).toUpperCase() + subjectSlug.slice(1)} Practicals</span>
+            </Link>
+          )}
+        </div>
         {description ? (
           <p className="text-sm font-normal text-muted-foreground">{description}</p>
         ) : null}

@@ -68,8 +68,21 @@ console.log(`\nTOTAL note files: ${grandFiles} | WITH real content: ${filledNote
 const rkm = readJSON(path.join(base, "ravikishan", "manifest.json"));
 console.log("ravikishan/manifest.json:", Array.isArray(rkm) ? `array len ${rkm.length}` : rkm ? `object, keys=${Object.keys(rkm).length}` : "MISSING/INVALID");
 
-const ex = readJSON(path.join(base, "exams"));
-console.log("exams/: ", Array.isArray(ex) ? `array len ${ex.length}` : ex === null ? "INVALID JSON" : "object dir");
+const exDir = path.join(base, "exams");
+if (fs.existsSync(exDir) && fs.statSync(exDir).isDirectory()) {
+  const exFiles = fs.readdirSync(exDir).filter((f) => f.endsWith(".json"));
+  let exOk = 0;
+  const exBad = [];
+  for (const f of exFiles) {
+    const j = readJSON(path.join(exDir, f));
+    if (j && Array.isArray(j.questions)) exOk++;
+    else exBad.push(f);
+  }
+  console.log(`exams/: directory with ${exFiles.length} exam files — ${exOk} valid, ${exBad.length} invalid${exBad.length ? " (" + exBad.join(", ") + ")" : ""}`);
+} else {
+  const ex = readJSON(exDir);
+  console.log("exams/: ", Array.isArray(ex) ? `array len ${ex.length}` : ex === null ? "INVALID JSON" : "object dir");
+}
 
 const reDir = path.join(base, "r-export");
 console.log("r-export/ contents:", fs.readdirSync(reDir).map((f) => f).join(", "));

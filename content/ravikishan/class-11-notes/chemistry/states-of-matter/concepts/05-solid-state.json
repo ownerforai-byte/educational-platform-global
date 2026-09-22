@@ -1,215 +1,66 @@
 {
-  "title": "Solid State",
+  "title": "Solid State: Types of Solids, Amorphous and Crystalline Solids",
   "unitSlug": "states-of-matter",
-  "topicSlug": "solid-state",
-  "topicTitle": "Solid State",
-  "relevance": 30,
+  "topicSlug": "solid-state-types-of-solids-amorphous-and-crystalline-solids",
+  "topicTitle": "Solid state: types of solids, amorphous and crystalline solids",
+  "relevance": 100,
   "notes": [
-    "Ideal gas: PV=nRT.",
-    "Kinetic theory explains gas properties.",
-    "Real gases: van der Waals equation.",
-    "Liquid properties: surface tension, viscosity."
+    "### 1. Meaning of the solid state",
+    "A solid has a definite shape and volume because its constituent particles are held in fixed mean positions by strong intermolecular (or interatomic/ionic) forces. The particles can only vibrate about their positions, so solids are rigid, practically incompressible and diffuse extremely slowly. Solids are classified by the *arrangement* of particles (crystalline vs amorphous) and by the *nature of the binding force* (ionic, covalent, molecular, metallic, hydrogen-bonded).",
+    "### 2. Crystalline solids",
+    "The particles are arranged in a regular, repeating three-dimensional pattern called a **crystal lattice**, which extends over a long range (long-range order). Properties: definite geometrical shape (crystal habit), sharp melting point, cleavage along definite planes, anisotropic physical properties (refractive index, thermal expansion, conductivity differ along different directions) and a characteristic X-ray diffraction pattern. Examples: NaCl, KCl, sugar, quartz, diamond, ice, alum, copper.",
+    "### 3. Types of crystalline solids (by binding force)",
+    "• **Ionic:** ions held by strong electrostatic forces (NaCl, CaF₂) — hard, brittle, high melting point, non-conducting as solids but conducting when molten or in solution, soluble in polar solvents.",
+    "• **Covalent (network/atomic):** atoms joined by a continuous network of covalent bonds (diamond, graphite, SiC, quartz) — extremely hard, very high melting point, usually insulators or semiconductors (graphite conducts).",
+    "• **Molecular:** molecules held by weak van der Waals forces or hydrogen bonds (iodine, dry ice, naphthalene, sugar, ice) — soft, low melting point, volatile, poor conductors.",
+    "• **Metallic:** positive ion cores in a sea of delocalised electrons (Na, Cu, Fe) — lustrous, malleable, ductile, good conductors of heat and electricity, melting points from very low (Hg, Ga) to very high (W).",
+    "### 4. Amorphous solids",
+    "Amorphous solids have only short-range order — the particles are randomly arranged over long distances, so there is no definite lattice. Properties: no definite geometrical shape, no sharp melting point (they soften gradually over a temperature range and have a glass-transition temperature Tg), isotropic properties, irregular cleavage and a broad diffuse X-ray pattern. They are described as pseudo-solids or **supercooled liquids** because their particles can flow very slowly. Examples: glass, rubber, plastics, amorphous sulfur and selenium, cellophane.",
+    "### 5. Crystalline versus amorphous (comparison points)",
+    "Melting point: sharp vs gradual; order: long-range vs short-range; shape: definite geometry vs irregular; cleavage: definite planes vs irregular; physical properties: anisotropic vs isotropic; X-ray diffraction: sharp lines vs broad halos; thermodynamic stability: stable vs metastable; examples: NaCl, diamond vs glass, rubber.",
+    "### 6. Isotropy and anisotropy",
+    "A substance is isotropic when a physical property has the same value in all directions (amorphous solids, liquids, gases) and anisotropic when the property depends on direction (single crystals). For example the refractive index of quartz differs along different crystallographic axes, and graphite conducts electricity along its layers but not across them.",
+    "### 7. Applications",
+    "• **Single crystals** are grown for technology — Czochralski-pulled silicon and germanium for semiconductors, quartz for oscillators and watches, sapphire for optical windows, and organic crystals for lasers and detectors.",
+    "• Ionic and molecular crystals are the basis of the salt, sugar, fertiliser and pharmaceutical industries (recrystallisation is the standard purification method; crystal polymorphism controls drug dissolution).",
+    "• Amorphous solids find wide use precisely because of their isotropic, easy-to-shape nature — window and container glass, optical fibres, plastics, rubber, amorphous silicon solar cells and metallic glasses.",
+    "• Diamond, SiC and quartz illustrate structure-property relations: giant covalent lattices give extreme hardness and high melting points used in abrasives, cutting tools and refractories.",
+    "### 8. Limitations",
+    "The crystalline/amorphous division is not sharp: most materials are polycrystalline or semi-crystalline (plastics, silk, cotton, metals) with both ordered and disordered regions, so the perfect crystal is an idealisation. Anisotropy appears only in single crystals — a polycrystalline aggregate usually behaves isotropically in bulk. The classification by binding force is itself approximate, since many crystals show mixed bonding (graphite: covalent + van der Waals; ice: covalent + hydrogen bonding), and amorphous solids are **metastable**, so their properties drift with time (glass devitrification) and depend on thermal history rather than on composition alone."
   ],
   "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
+    "❌ Amorphous solids are true solids with a very high viscosity. ✅ They are regarded as pseudo-solids or supercooled liquids because they lack long-range order and flow over long times.",
+    "❌ All solids have sharp melting points. ✅ Amorphous solids soften over a range (glass-transition temperature); only crystalline solids melt sharply.",
+    "❌ Isotropy means the same as anisotropy. ✅ Isotropic = same property in all directions (amorphous); anisotropic = direction-dependent (single crystals).",
+    "❌ Graphite is a molecular solid. ✅ Graphite is a covalent network with strong covalent layers held by weak van der Waals forces — which explains its lubricity and conductivity.",
+    "❌ Metals melt at high temperature because they are covalently bonded. ✅ Metallic bonding strength varies widely; Hg melts at −39 °C while W melts at 3422 °C."
   ],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 05 solid state."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "V of 2mol at 27°C, 2atm: V=24.63L",
-    "vrms of O₂ at 300K: 484 m/s"
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "Distinguish between crystalline and amorphous solids on any six points.",
+    "Classify crystalline solids according to the nature of the binding force and give two examples of each type.",
+    "Define isotropy and anisotropy and explain why amorphous solids are isotropic.",
+    "Explain why diamond is extremely hard and why glass softens over a range of temperature.",
+    "Compare the melting behaviour and X-ray diffraction patterns of crystalline and amorphous solids.",
+    "State the limitations of the crystalline/amorphous classification."
   ],
   "formulas": [
-    "PV = nRT",
-    "PV = (m/M)RT",
-    "vrms = √(3RT/M)",
-    "P = P° × χ(solvent)"
+    "$$\\text{Glass-transition temperature }T_{g}:\\ \\text{softening region of an amorphous solid}$$",
+    "$$\\text{Bragg's law (X-ray identification of crystals): }n\\lambda=2d\\sin\\theta$$"
   ],
-  "keyPoints": [
-    "Core point for 05 solid state."
+  "universalFacts": [
+    "Quartz, diamond and graphite are allotropic forms of giant covalent crystals; graphite is anisotropic (conducts along layers).",
+    "Glass is a supercooled liquid — very old window glass is measurably thicker at the bottom because of slow flow.",
+    "Amorphous silicon is used in thin-film solar cells and LCD backplanes, where its cheaper deposition outweighs its lower efficiency."
   ],
-  "summary": "Matter exists in three states: solid, liquid, and gas, each with distinct properties governed by intermolecular forces.",
-  "specialNotes": [
-    "Specialized insight for 05 solid state."
-  ],
-  "importantStatements": [
-    "Key statement for 05 solid state."
+  "examples": [
+    "**Problem:** Why does glass not show a sharp melting point on heating? **Solution:** amorphous solids lack a periodic lattice, so bonds break over a range of energies — the material softens gradually between the glass-transition and melting regions instead of melting at one temperature.",
+    "**Problem:** Graphite conducts electricity while diamond does not, though both are carbon. **Solution:** in graphite each carbon uses three of four valence electrons in σ bonds; the fourth electron is delocalised between layers enabling conduction, whereas in diamond all four electrons are localised in σ bonds."
   ],
   "importantNotes": [
-    "Important note regarding 05 solid state."
+    "Answer the crystalline vs amorphous question as a six-point comparison — order, melting point, shape, cleavage, isotropy, X-ray pattern.",
+    "For each type of crystalline solid, link the binding force to at least two consequences (hardness, melting point, conductivity, solubility).",
+    "Mention that amorphous solids are metastable and that polycrystalline materials lie between the two extremes."
   ],
-  "examShortTricks": [
-    "Recall the formula for Solid State."
-  ],
-  "examNotes": [
-    "Focus on Solid State problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 05 solid state?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 05 solid state."
-  ],
-  "importantTasks": [
-    "Task for studying 05 solid state."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "05-solid-state",
-  "mcqs": [
-    {
-      "question": "Which gas has the highest rms speed at same temperature?",
-      "options": [
-        "O₂",
-        "N₂",
-        "H₂",
-        "CO₂"
-      ],
-      "answer": "C"
-    },
-    {
-      "question": "Surface tension decreases with:",
-      "options": [
-        "Increase in temperature",
-        "Decrease in temperature",
-        "Constant temperature",
-        "None"
-      ],
-      "answer": "A"
-    }
-  ],
-  "exercises": [
-    {
-      "id": "1",
-      "question": "Volume of 2mol at 27°C, 2atm",
-      "steps": [
-        "V=nRT/P",
-        "V=(2×0.0821×300)/2",
-        "V=24.63L"
-      ],
-      "answer": "24.63 L"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "GasLawSim",
-    "desc": "Interactive gas law demonstrator"
-  },
-  "visualType": "crystal-lattices"
+  "visualType": "solid-state",
+  "tabGroup": "States-Of-Matter-Learner-Notes"
 }

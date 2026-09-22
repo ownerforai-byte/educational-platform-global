@@ -1,0 +1,73 @@
+{
+  "title": "Calculations Based on the Mole Concept",
+  "unitSlug": "stoichiometry",
+  "topicSlug": "calculations-based-on-mole-concept",
+  "topicTitle": "Calculations based on mole concept",
+  "relevance": 100,
+  "notes": [
+    "### 1. Meaning and the conversion web",
+    "Every mole-based calculation is a journey through one connected set of conversions: $n=\\frac{m}{M}$ (mass), $n=\\frac{N}{N_{A}}$ (particles), $n=\\frac{V}{22.4\\ \\text{L}}$ (gas volume at STP) or $n=\\frac{PV}{RT}$ (any conditions), and $n=M_{\\text{conc}}\\times V_{\\text{L}}$ (solution). The balanced equation supplies the **mole ratio** that links the substance given to the substance required.",
+    "### 2. Standard procedure (five steps)",
+    "(1) Write the balanced chemical equation. (2) Convert all given data into moles using the appropriate relation, checking units. (3) Apply the mole ratio from the equation to get moles of the required substance. (4) Convert those moles back into the required unit (g, L, molecules, molarity). (5) Check the result for reasonableness, units and limiting reactant.",
+    "### 3. Standard types of problems",
+    "• **Mass–mass:** how many grams of a product come from a given mass of reactant (e.g. CaCO₃ → CaO + CO₂).",
+    "• **Mass–volume and volume–volume:** using 22.4 L at STP or Gay-Lussac volume ratios for gaseous reactions.",
+    "• **Particle-count problems:** number of molecules/atoms/ions in a given mass, volume or number of moles.",
+    "• **Solution problems:** molarity, dilution (M₁V₁ = M₂V₂), titration and molar mass from titration data.",
+    "• **Percentage composition, purity and hydrate problems:** using % composition, % purity and water of crystallisation.",
+    "### 4. Worked problems (NEB standard pattern)",
+    "**Example 1:** Mass of CO₂ from 25 g of CaCO₃. CaCO₃ → CaO + CO₂. n(CaCO₃) = 25/100 = 0.25 mol → n(CO₂) = 0.25 mol → mass = 0.25 × 44 = 11 g.",
+    "**Example 2:** Volume of O₂ at STP needed to burn 4.0 g of CH₄. CH₄ + 2O₂ → CO₂ + 2H₂O; n(CH₄) = 0.25 mol → n(O₂) = 0.50 mol → V = 0.5 × 22.4 = 11.2 L.",
+    "**Example 3:** Molecules in 5.6 L of SO₂ at STP. n = 0.25 mol → 0.25 × 6.022 × 10²³ = 1.506 × 10²³ molecules (and 1.506 × 10²³ S atoms, 3.01 × 10²³ O atoms).",
+    "**Example 4:** Molarity of a solution of 4.0 g NaOH in 250 mL. n = 4/40 = 0.10 mol; M = n/V(L) = 0.10/0.250 = 0.40 mol L⁻¹.",
+    "**Example 5:** Percentage yield data — 100 g of CaCO₃ gives 44 g of CO₂ theoretically; if only 35.2 g is obtained, the yield is (35.2/44) × 100 = 80%.",
+    "**Example 6:** Number of molecules in one drop (0.05 mL) of water. mass = 0.05 g; n = 0.05/18 = 2.78 × 10⁻³ mol; molecules = 2.78 × 10⁻³ × 6.022 × 10²³ ≈ 1.67 × 10²¹.",
+    "### 5. Applications",
+    "• Laboratory work: deciding exactly what mass of a solid to weigh or what volume of a solution/gas to measure for a preparation, and calculating the amount of reagent required for a titration or a gravimetric analysis.",
+    "• Industry: scaling up from gram quantities in the laboratory to tonnes in a plant (reactant costing, material balance, reactor sizing), and predicting by-product and effluent loads.",
+    "• Environmental and energy calculations: CO₂ released per kilogram of fuel burnt, oxygen demand of a wastewater sample, and stoichiometric air requirement of a fuel; also greenhouse-gas accounting (44 g CO₂ per mole of carbon burnt).",
+    "• Medicine, agriculture and food technology: converting doses expressed in moles/molarity into masses, calculating fertiliser requirements as nutrient moles per hectare, and standardising solutions used in quality control.",
+    "### 6. Limitations",
+    "• The calculations assume a single, complete and correctly balanced reaction with pure reactants: side reactions, reversible reactions, catalysts, impure samples and incomplete conversions invalidate the simple answer unless % yield and % purity corrections are applied.",
+    "• The 22.4 L molar volume applies only to gases at STP behaving ideally; other conditions need PV = nRT, and dissociating gases need extra treatment.",
+    "• Rounding and significant-figure errors accumulate through the m → n → n′ → m chain, especially when relative atomic masses are rounded to whole numbers.",
+    "• The method gives no information about reaction rate, mechanism, thermal effects or the energy cost — a stoichiometrically perfect calculation can describe a reaction that is impossibly slow or violently exothermic.",
+    "• Real samples contain moisture and impurities, so the calculated mass is only valid for the pure substance stated in the equation."
+  ],
+  "confusion": [
+    "❌ You can compare masses directly in a stoichiometric problem. ✅ Always convert to moles first, use the mole ratio, then convert back.",
+    "❌ 22.4 L applies to any gas under any conditions. ✅ Only at STP (273.15 K, 1 atm) and for gases that behave ideally.",
+    "❌ Percentage composition and percentage yield are the same. ✅ Composition is the mass % of elements in a formula; yield is the ratio of actual to theoretical product obtained.",
+    "❌ A result in moles is the final answer of a stoichiometry problem. ✅ The question usually asks for mass, volume, molecules or concentration, so the final conversion is compulsory.",
+    "❌ Balanced equations are unnecessary if moles are known. ✅ The mole ratio comes only from the balanced equation; an unbalanced equation gives a wrong answer."
+  ],
+  "practice": [
+    "Calculate the mass of CaO obtained by heating 50 g of CaCO₃ (CaCO₃ → CaO + CO₂).",
+    "Find the volume of CO₂ at STP produced by burning 6 g of carbon and the number of molecules obtained.",
+    "How many grams of NaOH are needed to neutralise 250 mL of 0.2 M HCl?",
+    "Calculate the number of molecules and the total number of atoms in 0.1 mol of glucose (C₆H₁₂O₆).",
+    "What mass of water is produced when 2 mol H₂ reacts with excess O₂, and how many molecules is that?",
+    "State the limitations of mole-concept calculations."
+  ],
+  "formulas": [
+    "$$n=\\frac{m}{M},\\quad n=\\frac{N}{N_{A}},\\quad n=\\frac{V_{\\text{STP}}}{22.4},\\quad n=\\frac{PV}{RT},\\quad n=M_{\\text{conc}}V_{\\text{L}}$$",
+    "$$\\text{for a gas at STP: }m=\\frac{V}{22.4}\\times M;\\qquad N=\\frac{m}{M}N_{A}$$",
+    "$$\\%\\text{yield}=\\frac{\\text{actual yield}}{\\text{theoretical yield}}\\times100$$"
+  ],
+  "universalFacts": [
+    "One mole of any gas at STP = 22.4 L; one mole of any substance = 6.022 × 10²³ entities.",
+    "Molar masses worth memorising: H₂O 18, CO₂ 44, NaOH 40, CaCO₃ 100, H₂SO₄ 98, NaCl 58.5 g mol⁻¹.",
+    "1 drop of water (≈0.05 mL) contains about 1.7 × 10²¹ molecules — the scale that makes the mole concept necessary."
+  ],
+  "examples": [
+    "**Problem:** 50 g of CaCO₃ is heated; find the mass of CaO and the volume of CO₂ at STP. **Solution:** n(CaCO₃) = 50/100 = 0.5 mol → n(CaO) = 0.5 mol → mass = 0.5 × 56 = 28 g; n(CO₂) = 0.5 mol → V = 0.5 × 22.4 = 11.2 L.",
+    "**Problem:** Volume of 0.2 M HCl needed to neutralise 4 g NaOH. **Solution:** n(NaOH) = 4/40 = 0.1 mol; HCl + NaOH → NaCl + H₂O so 0.1 mol HCl is required; V = n/M = 0.1/0.2 = 0.5 L = 500 mL."
+  ],
+  "importantNotes": [
+    "Write the balanced equation first and mark the mole ratio above it — a habit that prevents nearly all stoichiometry mistakes.",
+    "Keep a unit check at every step (mol × g mol⁻¹ = g; mol × 22.4 L mol⁻¹ = L).",
+    "State the assumptions (complete reaction, pure substance, gases at STP) whenever they are used."
+  ],
+  "visualType": "mole-concept",
+  "tabGroup": "Stoichiometry-Learner-Notes"
+}

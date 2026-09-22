@@ -1,81 +1,66 @@
 {
-  "title": "The Electron — Discovery & Properties of Cathode Rays",
+  "title": "Discovery of the Electron — Cathode Rays",
   "unitSlug": "atomic-structure",
-  "topicSlug": "orbitals-and-shape-of-s-and-p-orbitals-only",
-  "topicTitle": "Orbitals and shape of s and p orbitals only",
+  "topicSlug": "discovery-of-electron-and-its-properties",
+  "topicTitle": "Discovery Of Electron And Its Properties",
   "relevance": 80,
   "notes": [
-    "Detailed notes on 21 electron and cathode rays within the atomic structure unit."
+    "### Focus of this tab",
+    "The discovery of the electron through cathode-ray experiments — the first subatomic particle, and the starting point of every atomic model. (It sits in this unit as the experimental foundation of electronic structure.)",
+    "### The cathode-ray tube experiments",
+    "• A gas at low pressure (≈10⁻² atm) in a discharge tube with ≈10 000 V across the electrodes emits rays from the cathode that travel in straight lines (shadow of the Maltese cross), carry momentum (paddle-wheel rotation) and heat the target.",
+    "• **Electric field:** the rays bend toward the positive plate → negatively charged.",
+    "• **Magnetic field:** they bend in the direction expected for negative charges.",
+    "• The deflection is independent of the gas and cathode material → the particle is a universal constituent of all matter.",
+    "### Thomson's measurements (1897)",
+    "Crossed E and B fields (velocity selector): undeflected when Eq = Bqv → v = E/B. Then switching off B gives the deflection, yielding e/m = 1.76 × 10¹¹ C kg⁻¹ — about 1837 times larger than the hydrogen ion's e/m. Since the charge is later shown to be the same unit charge, the particle must be ≈1837 times lighter than hydrogen: a new particle, the electron.",
+    "### Millikan's oil-drop experiment (1909)",
+    "Balancing the electric force against the weight of a charged oil drop gave the charge of a single electron: e = 1.602 × 10⁻¹⁹ C (quantised — all drops carry integer multiples of e). Combined with e/m, the electron mass is m = 9.109 × 10⁻³¹ kg (0.000549 u).",
+    "### Why this matters for the atomic models",
+    "Once atoms contain light negative electrons, something positive must balance them — the direct motivation for Thomson's plum-pudding model and then Rutherford's nucleus. The electron also completes the electronic-structure story: its arrangement in orbitals is what this unit's quantum numbers describe."
   ],
   "confusion": [
-    "❌ Misconception about 21 electron and cathode rays. ✅ Scientific explanation."
+    "❌ Cathode rays are electromagnetic waves. ✅ They are streams of charged particles — waves are not deflected by E/B fields.",
+    "❌ The cathode-ray properties depend on the gas used. ✅ They are independent of gas and electrode material, which is why the particle is universal.",
+    "❌ Millikan measured e/m. ✅ He measured e alone; Thomson had already measured e/m."
   ],
   "practice": [
-    "Practice exercise for 21 electron and cathode rays."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 21 electron and cathode rays."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 21 electron and cathode rays."
-  ],
-  "practiceQuestions": [
-    "Practice question for 21 electron and cathode rays."
+    "List five properties of cathode rays and the conclusion drawn from each.",
+    "How did Thomson determine e/m with crossed electric and magnetic fields?",
+    "Describe Millikan's oil-drop experiment and its result.",
+    "Why does the identical e/m for different cathode materials prove a universal particle?"
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 21 electron and cathode rays)"
+    "$$\\frac{e}{m}=1.76\\times10^{11}\\ \\text{C kg}^{-1};\\quad e=1.602\\times10^{-19}\\ \\text{C};\\quad m_{e}=9.109\\times10^{-31}\\ \\text{kg}$$",
+    "$$Eq=Bqv\\ (\\text{velocity selector condition})$$"
   ],
-  "keyPoints": [
-    "Core point for 21 electron and cathode rays."
+  "universalFacts": [
+    "The electron is ≈1837 times lighter than a hydrogen atom — the lightest known charged particle.",
+    "Thomson received the 1906 Nobel Prize; Millikan the 1923 Nobel Prize.",
+    "Cathode rays travel in straight lines but are deflected by fields — the basis of the old CRT television."
   ],
-  "summary": "Summary of 21 electron and cathode rays.",
-  "specialNotes": [
-    "Specialized insight for 21 electron and cathode rays."
-  ],
-  "importantStatements": [
-    "Key statement for 21 electron and cathode rays."
+  "examples": [
+    "**Problem:** An electron beam passes undeflected through E = 3.4 × 10⁴ V/m and B = 2 × 10⁻³ T. Find its speed. **Solution:** v = E/B = 1.7 × 10⁷ m s⁻¹."
   ],
   "importantNotes": [
-    "Important note regarding 21 electron and cathode rays."
+    "Distinguish the three milestones: cathode rays (nature), e/m (Thomson), e (Millikan).",
+    "Link the electron's discovery to the need for positive charge in the atom."
   ],
-  "examShortTricks": [
-    "Recall the formula for The Electron — Discovery & Properties of Cathode Rays."
-  ],
-  "examNotes": [
-    "Focus on The Electron — Discovery & Properties of Cathode Rays problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 21 electron and cathode rays?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 21 electron and cathode rays."
-  ],
-  "importantTasks": [
-    "Task for studying 21 electron and cathode rays."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "21-electron-and-cathode-rays",
   "mcqs": [
     {
-      "question": "Question about 21 electron and cathode rays?",
+      "question": "The charge-to-mass ratio of the electron is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "1.76 × 10¹¹ C kg⁻¹",
+        "9.1 × 10⁻³¹ C kg⁻¹",
+        "1.6 × 10⁻¹⁹ C kg⁻¹",
+        "1.76 × 10⁻¹¹ C kg⁻¹"
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "visualType": "cathode-ray",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "21-electron-and-cathode-rays.json"
 }

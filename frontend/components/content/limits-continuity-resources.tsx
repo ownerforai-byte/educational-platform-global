@@ -13,7 +13,13 @@ import {
   FileText,
   TrendingUp,
   Activity,
+  Target,
+  Lightbulb,
+  Play,
 } from "lucide-react";
+import { MathMarkdown } from "@/components/content/math-markdown";
+import { LimitsAdditionalVisual } from "./additional-questions-visuals";
+import { Schematic } from "./schematic-frame";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -83,60 +89,34 @@ function LimitVisual() {
         </div>
       </div>
       <div className="flex justify-center">
-        <svg
-          viewBox={`0 0 ${w} ${h2}`}
-          className="w-full max-w-lg border rounded-lg bg-slate-950"
+        <Schematic
+          w={w} h={h2} ox={ox} oy={oy} scale={scale}
+          tickStep={1}
+          yLabel="f(x)"
+          legend={[
+            { color: "#38bdf8", label: "f(x) = x + 2 (x ≠ target)" },
+            { color: "#f97316", label: "hole at x = target" },
+            { color: "#a855f7", label: "x − h / x + h" },
+          ]}
         >
-          {/* Axes */}
-          <line x1={0} y1={oy} x2={w} y2={oy} stroke="#475569" strokeWidth="1" />
-          <line x1={ox} y1={0} x2={ox} y2={h2} stroke="#475569" strokeWidth="1" />
-          <text x={w - 10} y={oy - 5} fill="#64748b" fontSize="10">x</text>
-          <text x={ox + 5} y={12} fill="#64748b" fontSize="10">f(x)</text>
-
           {/* Graph line */}
           {graphPoints.length > 1 && (
-            <polyline
-              points={graphPoints.join(" ")}
-              fill="none"
-              stroke="#38bdf8"
-              strokeWidth="2"
-            />
+            <polyline points={graphPoints.join(" ")} fill="none" stroke="#38bdf8" strokeWidth="2" />
           )}
-
           {/* Hole at target */}
           <circle cx={holeX} cy={holeY} r="5" fill="none" stroke="#f97316" strokeWidth="2" />
-
           {/* Target vertical dashed line */}
-          <line
-            x1={holeX}
-            y1={holeY + 10}
-            x2={holeX}
-            y2={h2}
-            stroke="#f97316"
-            strokeWidth="1"
-            strokeDasharray="4 4"
-            opacity="0.5"
-          />
-
-          {/* Approach lines */}
+          <line x1={holeX} y1={holeY + 10} x2={holeX} y2={h2} stroke="#f97316" strokeWidth="1" strokeDasharray="4 4" opacity="0.5" />
+          {/* Approach */}
           <line x1={leftX} y1={leftY} x2={rightX} y2={rightY} stroke="#22d3ee" strokeWidth="1.5" strokeDasharray="3 3" opacity="0.7" />
           <circle cx={leftX} cy={leftY} r="4" fill="#a855f7" />
           <circle cx={rightX} cy={rightY} r="4" fill="#a855f7" />
-
           {/* Labels */}
-          <text x={holeX - 5} y={holeY - 10} fill="#f97316" fontSize="10" fontWeight="600">
-            hole
-          </text>
-          <text x={leftX - 15} y={leftY - 8} fill="#a855f7" fontSize="9">
-            x−h
-          </text>
-          <text x={rightX + 5} y={rightY - 8} fill="#a855f7" fontSize="9">
-            x+h
-          </text>
-          <text x={holeX + 8} y={oy + 15} fill="#f97316" fontSize="10">
-            x={target}
-          </text>
-        </svg>
+          <text x={holeX - 5} y={holeY - 10} fill="#f97316" fontSize="10" fontWeight="600">hole</text>
+          <text x={leftX - 15} y={leftY - 8} fill="#a855f7" fontSize="9">x−h</text>
+          <text x={rightX + 5} y={rightY - 8} fill="#a855f7" fontSize="9">x+h</text>
+          <text x={holeX + 8} y={oy + 15} fill="#f97316" fontSize="10">x = {target}</text>
+        </Schematic>
       </div>
       <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">
         <strong className="text-foreground">How limits work:</strong> As h → 0,
@@ -216,49 +196,28 @@ function ContinuityVisual() {
         ))}
       </div>
       <div className="flex justify-center">
-        <svg
-          viewBox={`0 0 ${w} ${h2}`}
-          className="w-full max-w-lg border rounded-lg bg-slate-950"
+        <Schematic
+          w={w} h={h2} ox={ox} oy={oy} scale={scale}
+          tickStep={1}
+          yLabel="f(x)"
+          legend={[
+            { color: "#38bdf8", label: "f(x)" },
+            { color: "#f97316", label: "discontinuity" },
+            { color: "#ef4444", label: "asymptote", dashed: true },
+          ]}
         >
-          {/* Axes */}
-          <line x1={0} y1={oy} x2={w} y2={oy} stroke="#475569" strokeWidth="1" />
-          <line x1={ox} y1={0} x2={ox} y2={h2} stroke="#475569" strokeWidth="1" />
-          <text x={w - 10} y={oy - 5} fill="#64748b" fontSize="10">x</text>
-          <text x={ox + 5} y={12} fill="#64748b" fontSize="10">f(x)</text>
-
           {/* Asymptote line for infinite type */}
           {discontinuityType === "infinite" && (
-            <line
-              x1={targetX}
-              y1={0}
-              x2={targetX}
-              y2={h2}
-              stroke="#ef4444"
-              strokeWidth="1.5"
-              strokeDasharray="6 3"
-              opacity="0.7"
-            />
+            <line x1={targetX} y1={0} x2={targetX} y2={h2} stroke="#ef4444" strokeWidth="1.5" strokeDasharray="6 3" opacity="0.7" />
           )}
-
           {/* Graph left */}
           {graphPointsL.length > 1 && (
-            <polyline
-              points={graphPointsL.join(" ")}
-              fill="none"
-              stroke="#38bdf8"
-              strokeWidth="2"
-            />
+            <polyline points={graphPointsL.join(" ")} fill="none" stroke="#38bdf8" strokeWidth="2" />
           )}
           {/* Graph right */}
           {graphPointsR.length > 1 && (
-            <polyline
-              points={graphPointsR.join(" ")}
-              fill="none"
-              stroke="#38bdf8"
-              strokeWidth="2"
-            />
+            <polyline points={graphPointsR.join(" ")} fill="none" stroke="#38bdf8" strokeWidth="2" />
           )}
-
           {/* Discontinuity markers */}
           {discontinuityType === "removable" && (
             <circle cx={targetX} cy={toSvgY(3)} r="5" fill="none" stroke="#f97316" strokeWidth="2" />
@@ -269,23 +228,10 @@ function ContinuityVisual() {
               <circle cx={targetX} cy={toSvgY(1)} r="4" fill="#22d3ee" />
             </>
           )}
-
           {/* Vertical dashed at discontinuity */}
-          <line
-            x1={targetX}
-            y1={targetX > 0 ? 0 : h2}
-            x2={targetX}
-            y2={h2}
-            stroke="#94a3b8"
-            strokeWidth="1"
-            strokeDasharray="3 3"
-            opacity="0.4"
-          />
-
-          <text x={targetX - 5} y={oy + 15} fill="#f97316" fontSize="10">
-            x=2
-          </text>
-        </svg>
+          <line x1={targetX} y1={0} x2={targetX} y2={h2} stroke="#94a3b8" strokeWidth="1" strokeDasharray="3 3" opacity="0.4" />
+          <text x={targetX - 5} y={oy + 15} fill="#f97316" fontSize="10">x=2</text>
+        </Schematic>
       </div>
       <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">
         <strong className="text-foreground capitalize">{discontinuityType} discontinuity at x = 2:</strong>{" "}
@@ -488,6 +434,107 @@ export function LimitsContinuityResources() {
           </Tabs>
         </CardContent>
       </Card>
+
+
+
+
+
+{/* Solved Solutions & Extra Hard Questions */}
+      <Card className="border-amber-200 dark:border-amber-800 bg-gradient-to-br from-amber-50/50 to-transparent dark:from-amber-950/20">
+        <CardHeader className="pb-3">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-amber-100 dark:bg-amber-900/40 rounded-lg">
+              <Target className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+            </div>
+            <div>
+              <CardTitle className="text-lg">Solved Solutions &amp; Extra Hard Questions</CardTitle>
+              <p className="text-sm text-muted-foreground mt-0.5">
+                Concept notes, standard limits, and harder limit &amp; continuity problems
+              </p>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent className="space-y-5">
+          <div>
+            <h4 className="text-sm font-semibold mb-2 flex items-center gap-2 text-amber-600 dark:text-amber-400">
+              <Lightbulb className="w-4 h-4" /> Concept &amp; Meaning
+            </h4>
+            <MathMarkdown
+              className="text-xs text-muted-foreground bg-amber-50/40 dark:bg-amber-950/20 p-3 rounded-lg border border-amber-200/50 dark:border-amber-900/40"
+              content={`The <strong>limit</strong> of $f(x)$ as $x \\to a$ is the value $f(x)$ approaches as $x$ gets arbitrarily close to $a$ (without reaching it). A limit exists when the left-hand limit (LHL) equals the right-hand limit (RHL). A function is <strong>continuous</strong> at $x = a$ when (1) $f(a)$ is defined, (2) $\\lim_{x \\to a} f(x)$ exists, and (3) $\\lim_{x \\to a} f(x) = f(a)$.`}
+            />
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold mb-2 flex items-center gap-2 text-green-600 dark:text-green-400">
+              <BookOpen className="w-4 h-4" /> Solved Solution — Standard Limits &amp; L'Hôpital
+            </h4>
+            <MathMarkdown
+              className="text-xs bg-green-50/40 dark:bg-green-950/20 p-3 rounded-lg border border-green-200/50 dark:border-green-900/40"
+              content={`**Problem 1:** Evaluate $\\lim_{x \\to 0} \\frac{\\sin 3x}{5x}$.
+
+$\\frac{\\sin 3x}{5x} = \\frac{3}{5}\\cdot\\frac{\\sin 3x}{3x} \\to \\frac{3}{5}\\cdot 1 = \\boxed{\\frac{3}{5}}$
+
+**Problem 2 (L'Hôpital):** Evaluate $\\lim_{x \\to 0} \\frac{e^{2x} - 1}{x}$.
+
+The form is $\\frac{0}{0}$. Differentiate top and bottom:
+$$\\lim_{x \\to 0} \\frac{2e^{2x}}{1} = \\boxed{2}$$`}
+            />
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold mb-2 flex items-center gap-2 text-purple-600 dark:text-purple-400">
+              <Target className="w-4 h-4" /> Extra Hard Questions
+            </h4>
+            <div className="space-y-2">
+              {[
+                { q: "Evaluate $\\lim_{x \\to 0} \\frac{\\sin 5x - 5\\sin x}{x^3}$.", hint: "Use Taylor: $\\sin x = x - x^3/6 + \\cdots$ and $\\sin 5x = 5x - 125x^3/6 + \\cdots$.", ans: "$\\frac{(5x - 125x^3/6) - (5x - 5x^3/6)}{x^3} = \\frac{-120x^3/6}{x^3} = \\boxed{-20}$." },
+                { q: "Evaluate $\\lim_{x \\to 0} \\frac{x - \\sin x}{x^3}$.", hint: "$\\sin x = x - x^3/6 + x^5/120 - \\cdots$.", ans: "$\\frac{x^3/6 + O(x^5)}{x^3} = \\boxed{1/6}$." },
+                { q: "Show $\\lim_{x \\to \\infty}\\left(1 + \\frac{2}{x}\\right)^x = e^2$ using the standard limit.", hint: "Rewrite as $\\left[\\left(1 + \\frac{1}{t}\\right)^t\\right]^2$ with $t = x/2$.", ans: "$\\left[\\lim_{t \\to \\infty}\\left(1 + \\frac{1}{t}\\right)^t\\right]^2 = e^2$ &check;." },
+                { q: "Show $f(x) = \\frac{x^2 - 4}{x - 2}$ is discontinuous at $x = 2$ but the discontinuity is removable. What value makes it continuous?", hint: "Simplify for $x \\neq 2$ and find the limit.", ans: "$f(x) = x + 2$ for $x \\neq 2$; limit $= 4$. Assign $f(2) = 4$ to make it continuous." },
+                { q: "Evaluate $\\lim_{x \\to 0} \\frac{(1+x)^n - (1-x)^n}{2x}$ for a positive integer n.", hint: "Use the binomial expansions of $(1+x)^n$ and $(1-x)^n$.", ans: "Numerator $= 2nx + \\cdots$; dividing by $2x$ gives $\\boxed{n}$." },
+              ].map((item, i) => (
+                <details key={i} className="rounded-lg border bg-background/60 p-3">
+                  <summary className="text-sm cursor-pointer list-none flex items-start gap-2">
+                    <span className="text-purple-500 font-semibold shrink-0">Q{i + 1}.</span>
+                    <MathMarkdown content={item.q} className="flex-1 text-xs" />
+                  </summary>
+                  <div className="mt-2 space-y-2 text-xs pl-6">
+                    <MathMarkdown
+                      content={"**Hint:** " + item.hint}
+                      className="text-muted-foreground"
+                    />
+                    <MathMarkdown
+                      content={"**Answer:** " + item.ans}
+                      className="text-green-700 dark:text-green-400 bg-green-50/40 dark:bg-green-950/20 p-2 rounded-lg border border-green-200/50 dark:border-green-900/40"
+                    />
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+
+      {/* Additional Question Visuals */}
+      <Card className="border-amber-200 dark:border-amber-800 bg-gradient-to-br from-amber-50/50 to-transparent dark:from-amber-950/20">
+        <CardHeader className="pb-3">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-amber-100 dark:bg-amber-900/40 rounded-lg">
+              <Play className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+            </div>
+            <div>
+              <CardTitle className="text-lg">Additional-Question Visuals — Limits & Continuity</CardTitle>
+              <p className="text-sm text-muted-foreground mt-0.5">Interactive visuals for the extra hard questions above</p>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <LimitsAdditionalVisual />
+        </CardContent>
+      </Card>
+
     </div>
   );
 }

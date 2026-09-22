@@ -1,81 +1,82 @@
 {
-  "title": "Rutherford's Atomic Model — The Alpha-Particle Scattering Experiment",
+  "title": "α-Particle Scattering — Experimental Detail and Numericals",
   "unitSlug": "atomic-structure",
   "topicSlug": "rutherford-s-atomic-model-and-its-limitations",
   "topicTitle": "Rutherford's atomic model and its limitations",
-  "relevance": 87,
+  "relevance": 90,
   "notes": [
-    "Detailed notes on 01 rutherford alpha particle scattering within the atomic structure unit."
+    "### Focus of this tab",
+    "A close-up of the α-scattering experiment itself: the apparatus, the counting data, and the two quantitative results (distance of closest approach and the scattering law) that NEB numericals are built on. The full model and its limitations are in the main note.",
+    "### Apparatus, quantity by quantity",
+    "• α-source: radium C (polonium) in a lead block — lead absorbs all radiation except the fine beam escaping the collimator hole; α-particles emerge with KE ≈ 5.5 MeV and speed ≈ 1.6 × 10⁷ m s⁻¹.",
+    "• Foil: gold, ≈ 4 × 10⁻⁵ cm (≈ 10⁻⁷ m) thick ≈ 1000 atomic layers; gold is chosen because it is the most malleable metal and Z = 79 gives maximum deflection (∝ Z).",
+    "• Detector: circular ZnS screen; every α-hit gives a scintillation counted through a low-power microscope that can rotate about the foil through 0°–180°.",
+    "• Enclosure evacuated so α-particles are not absorbed by air (their range in air is only a few cm).",
+    "### The counting data (Geiger–Marsden)",
+    "• Nearly all α-particles (≈ 99.86%) pass straight through — no deflection.",
+    "• About 1 in 8000 is deflected by more than 90°; about 1 in 10⁴–10⁶ comes straight back (θ ≈ 180°).",
+    "• The probability of scattering at angle θ falls as sin⁻⁴(θ/2) — from 0° to 180° the count falls by about 10 orders of magnitude.",
+    "### Distance of closest approach (numerical pattern)",
+    "At the turning point all kinetic energy is stored as electrostatic potential energy: $\\frac{1}{2}mv^{2}=\\frac{2Ze^{2}}{4\\pi\\varepsilon_{0}r_{0}}$, giving $r_{0}=\\frac{2Ze^{2}}{4\\pi\\varepsilon_{0}(KE)}$. For 5.5 MeV α on gold r₀ ≈ 4.1 × 10⁻¹⁴ m — about 40 nuclear radii, so the α-particle never touches the nucleus and the nucleus acts as a point charge. This number is an **upper limit** of the nuclear size, which is why the experiment 'measures' the nucleus without seeing it.",
+    "### Impact parameter (the other half of the story)",
+    "The scattering angle is fixed by the impact parameter b (the perpendicular distance the α-particle's initial line would pass from the nucleus): $b=\\frac{kZe^{2}}{KE}\\cot\\frac{\\theta}{2}$. Head-on approach (b = 0) gives θ = 180° (back-scattering); large b gives tiny θ — the geometric origin of the sin⁻⁴ law.",
+    "### What each observation proves",
+    "• Undeflected majority → atom mostly empty space.",
+    "• Large-angle deflection → a concentrated positive charge much heavier than the α-particle (a light electron cannot turn a 7300-times-heavier projectile).",
+    "• Back-scattering → the positive charge and mass are concentrated in a volume 10⁻¹⁵ of the atom."
   ],
   "confusion": [
-    "❌ Misconception about 01 rutherford alpha particle scattering. ✅ Scientific explanation."
+    "❌ The foil must be thick for good scattering. ✅ It must be extremely thin (≈1000 atoms) so an α-particle meets at most a few nuclei; a thick foil would absorb the particles.",
+    "❌ Electrons deflect the α-particles. ✅ Electron mass is ≈1/7300 of the α-mass, so momentum transfer is negligible; only the nucleus can scatter.",
+    "❌ r₀ is the nuclear radius. ✅ It is the distance of closest approach — an upper limit; the nuclear radius is ≈10⁻¹⁵ m, ten times smaller."
   ],
   "practice": [
-    "Practice exercise for 01 rutherford alpha particle scattering."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 01 rutherford alpha particle scattering."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 01 rutherford alpha particle scattering."
-  ],
-  "practiceQuestions": [
-    "Practice question for 01 rutherford alpha particle scattering."
+    "Draw the α-scattering arrangement and explain the function of the lead block, gold foil and ZnS screen.",
+    "Calculate r₀ for a 5.5 MeV α-particle against a gold nucleus (Z = 79).",
+    "How does the Rutherford scattering law explain the rarity of 180° scattering?",
+    "Why is the experiment performed in vacuum?"
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 01 rutherford alpha particle scattering)"
+    "$$r_{0}=\\frac{2Ze^{2}}{4\\pi\\varepsilon_{0}\\,KE},\\qquad N(\\theta)\\propto\\frac{1}{\\sin^{4}(\\theta/2)}$$",
+    "$$b=\\frac{kZe^{2}}{KE}\\cot\\frac{\\theta}{2}$$"
   ],
-  "keyPoints": [
-    "Core point for 01 rutherford alpha particle scattering."
+  "universalFacts": [
+    "≈1 in 8000 α-particles was deflected by more than 90°; the count falls by ~10 orders of magnitude from 0° to 180°.",
+    "For 5.5 MeV α on gold, r₀ ≈ 4.1 × 10⁻¹⁴ m ≈ 40 nuclear radii.",
+    "Scattering probability scales as Z² of the foil and as 1/(KE)² of the α-particle."
   ],
-  "summary": "Summary of 01 rutherford alpha particle scattering.",
-  "specialNotes": [
-    "Specialized insight for 01 rutherford alpha particle scattering."
-  ],
-  "importantStatements": [
-    "Key statement for 01 rutherford alpha particle scattering."
+  "examples": [
+    "**Problem:** α-particles of 4 MeV approach silver (Z = 47). Find r₀. **Solution:** r₀ = 2kZe²/KE = (2 × 9×10⁹ × 47 × (1.6×10⁻¹⁹)²)/(4 × 1.6×10⁻¹³) ≈ 3.4 × 10⁻¹⁴ m — the measurement is a nucleus-size upper limit, not the radius itself."
   ],
   "importantNotes": [
-    "Important note regarding 01 rutherford alpha particle scattering."
+    "State clearly that r₀ is an upper limit to nuclear size — a favourite distinction question.",
+    "Connect each observation to its conclusion; the marks are for the inference chain, not the apparatus list."
   ],
-  "examShortTricks": [
-    "Recall the formula for Rutherford's Atomic Model — The Alpha-Particle Scattering Experiment."
-  ],
-  "examNotes": [
-    "Focus on Rutherford's Atomic Model — The Alpha-Particle Scattering Experiment problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 01 rutherford alpha particle scattering?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 01 rutherford alpha particle scattering."
-  ],
-  "importantTasks": [
-    "Task for studying 01 rutherford alpha particle scattering."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "01-rutherford-alpha-particle-scattering",
   "mcqs": [
     {
-      "question": "Question about 01 rutherford alpha particle scattering?",
+      "question": "The distance of closest approach of an α-particle to a nucleus is proportional to:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "KE",
+        "1/KE",
+        "Z/KE",
+        "Z²/KE"
       ],
-      "answer": "A"
+      "answer": "B"
+    },
+    {
+      "question": "In the α-scattering experiment, the fraction of particles scattered through more than 90° is about:",
+      "options": [
+        "1 in 100",
+        "1 in 8000",
+        "1 in 10",
+        "1 in 10¹²"
+      ],
+      "answer": "B"
     }
-  ]
+  ],
+  "visualType": "rutherford-scattering",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "01-rutherford-alpha-particle-scattering.json"
 }

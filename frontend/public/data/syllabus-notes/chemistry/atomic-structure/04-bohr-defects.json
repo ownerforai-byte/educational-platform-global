@@ -1,81 +1,62 @@
 {
-  "title": "Defects of Bohr's Theory",
+  "title": "Defects (Limitations) of Bohr's Theory",
   "unitSlug": "atomic-structure",
-  "topicSlug": "bohr-defects",
-  "topicTitle": "Defects of Bohr's Theory",
-  "relevance": 88,
+  "topicSlug": "defects-of-bohr-s-theory",
+  "topicTitle": "Defects of Bohr's theory",
+  "relevance": 100,
   "notes": [
-    "Detailed notes on 04 bohr defects within the atomic structure unit."
+    "### 1. Meaning",
+    "Bohr's model is **semi-classical**: it keeps classical circular orbits and Coulomb mechanics but bolts on an unexplained quantum condition (mvr = nh/2π). Its defects are exactly where classical thinking and the single-electron assumption break down.",
+    "### 2. Works only for one-electron species",
+    "It succeeds for H, He⁺, Li²⁺, Be³⁺ but fails for He, Li and every multi-electron atom: electron–electron repulsion and the screening (shielding) of nuclear charge by inner electrons are ignored, so calculated energies do not match experiment.",
+    "### 3. Cannot explain fine structure (line splitting)",
+    "High-resolution spectra show that many 'single' lines are doublets or multiplets (sodium D lines at 589.0/589.6 nm; Hα itself is a doublet). Bohr's model contains no relativity and no electron spin, so it cannot explain fine structure; Sommerfeld's elliptical orbits and later Dirac's relativistic theory were needed.",
+    "### 4. Cannot explain the Zeeman and Stark effects",
+    "Lines split in a magnetic field (Zeeman) and in an electric field (Stark). The model has no orbital magnetic moment or orientation concept and no magnetic quantum number, so it cannot predict these splittings.",
+    "### 5. Cannot explain intensities or selection rules",
+    "It gives the possible wavelengths but not their relative strengths, nor why many conceivable transitions are never observed. Line intensities need transition probabilities from quantum mechanics.",
+    "### 6. Contradicts the uncertainty principle",
+    "Bohr's orbit assigns the electron a definite radius **and** a definite speed at the same time — a definite trajectory. Heisenberg's Δx·Δp ≥ h/4π forbids this, so a well-defined orbit is inadmissible in principle.",
+    "### 7. Contradicts wave–particle duality",
+    "The model treats the electron purely as a particle in a path. de Broglie's matter waves, electron diffraction and the Schrödinger equation replace orbits with **orbitals** (probability distributions).",
+    "### 8. Ad hoc postulates and no chemistry",
+    "The quantisation condition is imposed rather than derived; the model gives no orbital shapes, no account of chemical bonding, no molecular (band) spectra, and only the crude Bohr–Bury scheme for periodicity.",
+    "### 9. No probability interpretation, no subshell structure",
+    "It cannot describe electron density ('where the electron is most likely'), degeneracy of subshells, hybridisation or directional bonds — all of which need the four quantum numbers of the quantum-mechanical model.",
+    "### 10. Rescue and replacement",
+    "Sommerfeld (1916) used elliptical orbits and the azimuthal quantum number for fine structure; de Broglie (1924), Heisenberg (1927) and Schrödinger (1926) produced the quantum-mechanical model, which removes every defect listed above."
   ],
   "confusion": [
-    "❌ Misconception about 04 bohr defects. ✅ Scientific explanation."
+    "❌ Bohr's theory is completely wrong and useless. ✅ It is quantitatively excellent for one-electron species (H, He⁺) and is still used there; the defects appear beyond that scope.",
+    "❌ Fine structure arises because of many electrons. ✅ It arises from relativistic effects and electron spin even in a one-electron atom.",
+    "❌ The uncertainty principle reflects imperfect instruments. ✅ It is a fundamental limit of nature, not a measurement limitation.",
+    "❌ Bohr failed because orbits are not circular. ✅ The fatal objection is that a definite orbit (simultaneous r and p) cannot exist; probability orbitals replace them.",
+    "❌ Zeeman splitting is explained by Bohr's model. ✅ It requires the magnetic quantum number and orbital magnetic moment of the quantum-mechanical model."
   ],
   "practice": [
-    "Practice exercise for 04 bohr defects."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 04 bohr defects."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 04 bohr defects."
-  ],
-  "practiceQuestions": [
-    "Practice question for 04 bohr defects."
+    "State the defects of Bohr's theory, giving the physical reason for each.",
+    "Why does Bohr's theory fail for multi-electron atoms? Use screening and electron–electron repulsion.",
+    "How does Heisenberg's uncertainty principle destroy the concept of a Bohr orbit?",
+    "Distinguish the Zeeman and Stark effects and explain why Bohr's model cannot explain them.",
+    "Describe the modifications by Sommerfeld and Schrödinger that corrected Bohr's model."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 04 bohr defects)"
+    "$$\\Delta x\\,\\Delta p\\ge\\frac{h}{4\\pi}$$ (forbids definite orbits)",
+    "$$Z_{\\text{eff}}=Z-S$$ (screening, ignored by Bohr's model — cause of failure for multi-electron atoms)"
   ],
-  "keyPoints": [
-    "Core point for 04 bohr defects."
+  "universalFacts": [
+    "Sommerfeld (1916) added elliptical orbits and the azimuthal quantum number to explain fine structure.",
+    "Schrödinger's wave equation (1926) replaced orbits with orbitals and remains the working theory of the atom.",
+    "Sodium D lines (589.0 and 589.6 nm) are the standard example of fine structure unexplained by Bohr's model."
   ],
-  "summary": "Summary of 04 bohr defects.",
-  "specialNotes": [
-    "Specialized insight for 04 bohr defects."
-  ],
-  "importantStatements": [
-    "Key statement for 04 bohr defects."
+  "examples": [
+    "**Problem:** Why is the ground-state radius of He⁺ half that of hydrogen? **Solution:** r₁ = 0.529 n²/Z Å = 0.529/2 = 0.2645 Å — the formula works because He⁺ has one electron, and fails for neutral helium.",
+    "**Problem:** Show a Bohr orbit violates the uncertainty principle for H (n = 1). **Solution:** a fixed r gives Δx ≈ 0 and a definite speed gives Δp ≈ 0, so Δx·Δp → 0 < h/4π — impossible; hence the orbit is not a real trajectory."
   ],
   "importantNotes": [
-    "Important note regarding 04 bohr defects."
+    "Answer in this order: one-electron only → fine structure → Zeeman/Stark → intensities → uncertainty principle → wave–particle duality → ad hoc postulates.",
+    "Do not mix 'defects of Bohr's theory' with 'limitations of Rutherford's model' — marks are lost by quoting the wrong list."
   ],
-  "examShortTricks": [
-    "Recall the formula for Defects of Bohr's Theory."
-  ],
-  "examNotes": [
-    "Focus on Defects of Bohr's Theory problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 04 bohr defects?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 04 bohr defects."
-  ],
-  "importantTasks": [
-    "Task for studying 04 bohr defects."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "04-bohr-defects",
-  "mcqs": [
-    {
-      "question": "Question about 04 bohr defects?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ]
+  "visualType": "bohr-model",
+  "tabGroup": "Atomic-Structure-Learner-Notes"
 }

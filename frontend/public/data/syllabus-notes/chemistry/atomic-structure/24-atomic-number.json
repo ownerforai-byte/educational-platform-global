@@ -1,81 +1,65 @@
 {
-  "title": "Atomic Number (Z)",
+  "title": "Atomic Number — Meaning, Moseley's Evidence and Uses",
   "unitSlug": "atomic-structure",
   "topicSlug": "rutherford-s-atomic-model-and-its-limitations",
   "topicTitle": "Rutherford's atomic model and its limitations",
-  "relevance": 74,
+  "relevance": 80,
   "notes": [
-    "Detailed notes on 24 atomic number within the atomic structure unit."
+    "### Focus of this tab",
+    "The atomic number Z: its definition, the X-ray evidence that made it the true identity of an element, and its uses. It belongs logically with Rutherford's model because Z is the nuclear charge his experiment revealed.",
+    "### Definition and meaning",
+    "The atomic number Z is the number of protons in the nucleus — equivalently the nuclear charge in units of +e, or the number of electrons in the neutral atom. It is written as a left subscript (₁₁Na). In 1920 Rutherford named the nuclear charge 'atomic number'; it is now the defining property of an element.",
+    "### Moseley's X-ray evidence (1913)",
+    "Henry Moseley bombarded metal targets with fast cathode rays and measured the characteristic X-ray frequencies: $\\sqrt{\\nu}=a(Z-b)$. Plotting √ν against Z gives a straight line, but √ν against atomic mass does not — proving that Z, not atomic mass, is the fundamental quantity. This (i) corrected the anomalous pairs (Ar/K, Co/Ni, Te/I), (ii) gave isotopes one place in the table, (iii) fixed hydrogen's position, and (iv) predicted missing elements by gaps in the line.",
+    "### Uses of Z",
+    "• Identifies the element and fixes its position in the modern periodic table (periods by shell filling, groups by valence configuration).",
+    "• Gives the electron count of a neutral atom (e⁻ = Z) and the neutron count (n = A − Z).",
+    "• Enters Bohr-type formulas: rₙ ∝ n²/Z, Eₙ ∝ −Z²/n², ν of spectral lines ∝ Z² (used for He⁺, Li²⁺).",
+    "• In medicine/engineering Z governs X-ray absorption (bone vs tissue imaging) and shielding choices (lead, Z = 82).",
+    "### Relation to the other identifiers",
+    "Mass number A = Z + N (whole number); atomic mass is the weighted average over isotopes (e.g. Cl = 35.5 u from 75% ³⁵Cl + 25% ³⁷Cl). Only Z is unique to a chemical element — that is why the modern periodic law is stated in terms of Z."
   ],
   "confusion": [
-    "❌ Misconception about 24 atomic number. ✅ Scientific explanation."
+    "❌ Atomic number is the number of neutrons. ✅ It is the number of protons (nuclear charge); neutrons = A − Z.",
+    "❌ Elements are defined by atomic mass. ✅ Moseley showed the identity is Z; mass varies with isotopic composition.",
+    "❌ An ion has a different atomic number from its atom. ✅ Z never changes in chemistry — only the electron count does (Na and Na⁺ both Z = 11)."
   ],
   "practice": [
-    "Practice exercise for 24 atomic number."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 24 atomic number."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 24 atomic number."
-  ],
-  "practiceQuestions": [
-    "Practice question for 24 atomic number."
+    "Define atomic number and describe Moseley's experiment that established it.",
+    "Write Moseley's law and explain how it corrected Mendeleev's anomalous pairs.",
+    "An atom has Z = 20 and A = 40; find p, n, e and write its mass number.",
+    "Why does the plot of √ν versus atomic mass fail to be a straight line?"
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 24 atomic number)"
+    "$$\\sqrt{\\nu}=a(Z-b),\\qquad Z=p=e^{-}(\\text{neutral atom}),\\qquad n=A-Z$$"
   ],
-  "keyPoints": [
-    "Core point for 24 atomic number."
+  "universalFacts": [
+    "Moseley died at Gallipoli in 1915 at 27, shortly after establishing atomic number.",
+    "The 'missing' Z = 43 (technetium) and 61 (promethium) were later found — their X-ray lines had been predicted by gaps.",
+    "Beryllium's low Z = 4 makes it the window material of X-ray tubes (low absorption)."
   ],
-  "summary": "Summary of 24 atomic number.",
-  "specialNotes": [
-    "Specialized insight for 24 atomic number."
-  ],
-  "importantStatements": [
-    "Key statement for 24 atomic number."
+  "examples": [
+    "**Problem:** An element has A = 23 and 12 neutrons. Identify it. **Solution:** Z = 23 − 12 = 11 → sodium (Na); in the neutral atom it has 11 electrons."
   ],
   "importantNotes": [
-    "Important note regarding 24 atomic number."
+    "Always connect Z to the nuclear charge Rutherford measured — the two ideas belong together.",
+    "Quote Moseley's law with the square root of frequency, not frequency itself."
   ],
-  "examShortTricks": [
-    "Recall the formula for Atomic Number (Z)."
-  ],
-  "examNotes": [
-    "Focus on Atomic Number (Z) problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 24 atomic number?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 24 atomic number."
-  ],
-  "importantTasks": [
-    "Task for studying 24 atomic number."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "24-atomic-number",
   "mcqs": [
     {
-      "question": "Question about 24 atomic number?",
+      "question": "Moseley's law relates the X-ray frequency to:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Atomic mass",
+        "Atomic number",
+        "Mass number",
+        "Neutron number"
       ],
-      "answer": "A"
+      "answer": "B"
     }
-  ]
+  ],
+  "visualType": "atomic-particles",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "24-atomic-number.json"
 }

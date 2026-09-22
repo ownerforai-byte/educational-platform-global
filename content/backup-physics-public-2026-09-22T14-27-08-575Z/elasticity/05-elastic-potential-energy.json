@@ -1,0 +1,183 @@
+{
+  "title": "Elastic Potential Energy",
+  "unitSlug": "elasticity",
+  "topicSlug": "elastic-potential-energy",
+  "topicTitle": "Elastic potential energy",
+  "relevance": 100,
+  "duplicateType": 2,
+  "tabGroup": "elastic-potential-energy",
+  "animation3D": "elasticity",
+  "motionGraphics": "elasticity",
+  "enrichedContent": {
+    "notes": [
+      "**Elastic Potential Energy (U):** The energy stored in a deformed elastic body (like a spring or stretched wire) due to the work done against internal restoring forces. For a spring, $U = \\frac{1}{2}kx^2$.",
+      "**Energy Density (u):** The elastic potential energy stored per unit volume. For a wire under tension, $u = \\frac{1}{2} \\times \\text{stress} \\times \\text{strain} = \\frac{1}{2} \\sigma \\epsilon = \\frac{1}{2} \\frac{\\sigma^2}{E} = \\frac{1}{2} E \\epsilon^2$.",
+      "**Work Done:** The work done to stretch a spring by $x$ is the area under the $F-x$ graph: $W = \\int_0^x F dx = \\int_0^x kx dx = \\frac{1}{2}kx^2$.",
+      "**Hysteresis:** In some materials, the loading and unloading stress-strain curves do not coincide. The area enclosed by the loop represents energy dissipated as heat per unit volume per cycle. This is crucial for shock absorbers and rubber components.",
+      "**NEB exam focus:** Derive $U = \\frac{1}{2}kx^2$; calculate energy stored in springs and wires; understand energy density; explain hysteresis loops."
+    ],
+    "confusion": [
+      "❌ 'Energy stored is $kx^2$.' ✅ It is $\\frac{1}{2}kx^2$ — the factor of 1/2 comes from the average force $\\bar{F} = (0+kx)/2 = kx/2$.",
+      "❌ 'Energy density is $\\sigma \\epsilon$.' ✅ It is $\\frac{1}{2} \\sigma \\epsilon$ — again, the 1/2 factor from the triangular area under the stress-strain curve.",
+      "❌ 'Hysteresis loop area is energy stored.' ✅ It is energy DISSIPATED (lost as heat) per cycle.",
+      "❌ 'Elastic potential energy is only for springs.' ✅ It applies to any elastic deformation (wires, beams, bulk compression) where work is done against restoring forces."
+    ],
+    "practice": [
+      "A spring (k = 500 N/m) is stretched by 10 cm. Find the stored energy.",
+      "A steel wire (L = 2 m, A = 1 mm², E = 2×10¹¹ Pa) is stretched by 1 mm. Find the stored energy and energy density.",
+      "A rubber band is stretched and released. Explain why it gets warm (hysteresis).",
+      "Calculate the work done to stretch a spring from x = 5 cm to x = 15 cm (k = 200 N/m).",
+      "A load of 10 kg is hung from a wire (E = 2×10¹¹ Pa, L = 2 m, A = 1 mm²). Find the energy stored."
+    ],
+    "universalFacts": [
+      "The $\\frac{1}{2}kx^2$ formula is a specific case of the general potential energy $U = \\int F dx$.",
+      "Hysteresis is the reason rubber bands heat up when stretched and released rapidly.",
+      "Energy density is a key parameter in material selection for applications requiring high energy storage (e.g., bow strings, catapults).",
+      "The area under the stress-strain curve up to the fracture point is a measure of the material's toughness."
+    ],
+    "examples": [
+      "Spring: k = 400 N/m, x = 0.05 m → $U = 0.5 \\times 400 \\times (0.05)^2 = 0.5$ J.",
+      "Wire: $\\sigma = 10^8$ Pa, $\\epsilon = 5 \\times 10^{-4} \\rightarrow u = 0.5 \\times 10^8 \\times 5 \\times 10^{-4} = 2.5 \\times 10^4$ J/m³.",
+      "Work: Stretching from 0.1 m to 0.2 m (k=100) → $W = 0.5 \\times 100 \\times (0.2^2 - 0.1^2) = 1.5$ J."
+    ],
+    "practiceQuestions": [
+      "Q1. Derive the expression for the elastic potential energy of a stretched spring.",
+      "Q2. Define energy density and show that $u = \\frac{1}{2} \\sigma \\epsilon$.",
+      "Q3. A spring (k = 200 N/m) is stretched by 5 cm. Find the energy stored.",
+      "Q4. A wire of length 2 m and area 1 mm² is stretched by 2 mm. Find the energy stored (E = 2×10¹¹ Pa).",
+      "Q5. Explain the significance of the area of a hysteresis loop."
+    ],
+    "formulas": [
+      "Spring energy: $U = \\frac{1}{2}kx^2 = \\frac{1}{2}Fx$",
+      "Energy density: $u = \\frac{1}{2} \\sigma \\epsilon = \\frac{1}{2} \\frac{\\sigma^2}{E} = \\frac{1}{2} E \\epsilon^2$",
+      "Work done: $W = \\Delta U = \\frac{1}{2}k(x_2^2 - x_1^2)$"
+    ],
+    "keyPoints": [
+      "Elastic potential energy is the work done against restoring forces.",
+      "For a spring, $U = \\frac{1}{2}kx^2$.",
+      "Energy density $u = \\frac{1}{2} \\sigma \\epsilon$.",
+      "Hysteresis loop area = energy dissipated per unit volume per cycle.",
+      "Toughness = area under the stress-strain curve up to fracture."
+    ],
+    "summary": "Elastic potential energy is stored in deformed bodies. For a spring, $U = \\frac{1}{2}kx^2$. For a material under stress, energy density $u = \\frac{1}{2} \\sigma \\epsilon$. Hysteresis loops represent energy dissipation, while the area under the stress-strain curve represents toughness.",
+    "specialNotes": [
+      "Always use consistent SI units (N, m, J, Pa).",
+      "The 1/2 factor is crucial — it arises from the linear force-displacement relationship.",
+      "Hysteresis is important for materials subjected to cyclic loading (e.g., tires, engine mounts).",
+      "NEB often asks for the derivation of $U = \\frac{1}{2}kx^2$ or the energy density formula."
+    ],
+    "importantStatements": [
+      "Elastic potential energy is the work done to deform an elastic body.",
+      "Energy density is the energy stored per unit volume.",
+      "Hysteresis loop area represents energy dissipated as heat."
+    ],
+    "importantNotes": [
+      "Energy density $u = \\frac{1}{2} \\sigma \\epsilon$ is valid only within the elastic limit.",
+      "Hysteresis is a characteristic of non-linear, dissipative elastic materials.",
+      "Toughness is the total energy a material can absorb before fracture."
+    ],
+    "examShortTricks": [
+      "Energy shortcut: $U = \\frac{1}{2}Fx$ — if you know force and extension, no need for k.",
+      "Energy density: $u = \\frac{1}{2} \\sigma^2 / E$ — useful if you know stress and Young's modulus.",
+      "Hysteresis: loop area = energy lost — larger loop means more damping."
+    ],
+    "examNotes": [
+      "Be prepared to derive $U = \\frac{1}{2}kx^2$ using integration.",
+      "Understand the difference between energy stored (elastic) and energy dissipated (hysteresis)."
+    ],
+    "mcs": [
+      "Added new rich content for mcs."
+    ],
+    "importantConcepts": [
+      "Added new rich content for important Concepts."
+    ],
+    "importantTasks": [
+      "Added new rich content for important Tasks."
+    ],
+    "exercises": [],
+    "visualization": {}
+  },
+  "originalContent": {
+    "notes": [
+      "**Elastic Potential Energy (U):** The energy stored in a deformed elastic body (like a spring or stretched wire) due to the work done against internal restoring forces. For a spring, $U = \\frac{1}{2}kx^2$.",
+      "**Energy Density (u):** The elastic potential energy stored per unit volume. For a wire under tension, $u = \\frac{1}{2} \\times \\text{stress} \\times \\text{strain} = \\frac{1}{2} \\sigma \\epsilon = \\frac{1}{2} \\frac{\\sigma^2}{E} = \\frac{1}{2} E \\epsilon^2$.",
+      "**Work Done:** The work done to stretch a spring by $x$ is the area under the $F-x$ graph: $W = \\int_0^x F dx = \\int_0^x kx dx = \\frac{1}{2}kx^2$.",
+      "**Hysteresis:** In some materials, the loading and unloading stress-strain curves do not coincide. The area enclosed by the loop represents energy dissipated as heat per unit volume per cycle. This is crucial for shock absorbers and rubber components.",
+      "**NEB exam focus:** Derive $U = \\frac{1}{2}kx^2$; calculate energy stored in springs and wires; understand energy density; explain hysteresis loops."
+    ],
+    "confusion": [
+      "❌ 'Energy stored is $kx^2$.' ✅ It is $\\frac{1}{2}kx^2$ — the factor of 1/2 comes from the average force $\\bar{F} = (0+kx)/2 = kx/2$.",
+      "❌ 'Energy density is $\\sigma \\epsilon$.' ✅ It is $\\frac{1}{2} \\sigma \\epsilon$ — again, the 1/2 factor from the triangular area under the stress-strain curve.",
+      "❌ 'Hysteresis loop area is energy stored.' ✅ It is energy DISSIPATED (lost as heat) per cycle.",
+      "❌ 'Elastic potential energy is only for springs.' ✅ It applies to any elastic deformation (wires, beams, bulk compression) where work is done against restoring forces."
+    ],
+    "practice": [
+      "A spring (k = 500 N/m) is stretched by 10 cm. Find the stored energy.",
+      "A steel wire (L = 2 m, A = 1 mm², E = 2×10¹¹ Pa) is stretched by 1 mm. Find the stored energy and energy density.",
+      "A rubber band is stretched and released. Explain why it gets warm (hysteresis).",
+      "Calculate the work done to stretch a spring from x = 5 cm to x = 15 cm (k = 200 N/m).",
+      "A load of 10 kg is hung from a wire (E = 2×10¹¹ Pa, L = 2 m, A = 1 mm²). Find the energy stored."
+    ],
+    "universalFacts": [
+      "The $\\frac{1}{2}kx^2$ formula is a specific case of the general potential energy $U = \\int F dx$.",
+      "Hysteresis is the reason rubber bands heat up when stretched and released rapidly.",
+      "Energy density is a key parameter in material selection for applications requiring high energy storage (e.g., bow strings, catapults).",
+      "The area under the stress-strain curve up to the fracture point is a measure of the material's toughness."
+    ],
+    "examples": [
+      "Spring: k = 400 N/m, x = 0.05 m → $U = 0.5 \\times 400 \\times (0.05)^2 = 0.5$ J.",
+      "Wire: $\\sigma = 10^8$ Pa, $\\epsilon = 5 \\times 10^{-4} \\rightarrow u = 0.5 \\times 10^8 \\times 5 \\times 10^{-4} = 2.5 \\times 10^4$ J/m³.",
+      "Work: Stretching from 0.1 m to 0.2 m (k=100) → $W = 0.5 \\times 100 \\times (0.2^2 - 0.1^2) = 1.5$ J."
+    ],
+    "practiceQuestions": [
+      "Q1. Derive the expression for the elastic potential energy of a stretched spring.",
+      "Q2. Define energy density and show that $u = \\frac{1}{2} \\sigma \\epsilon$.",
+      "Q3. A spring (k = 200 N/m) is stretched by 5 cm. Find the energy stored.",
+      "Q4. A wire of length 2 m and area 1 mm² is stretched by 2 mm. Find the energy stored (E = 2×10¹¹ Pa).",
+      "Q5. Explain the significance of the area of a hysteresis loop."
+    ],
+    "formulas": [
+      "Spring energy: $U = \\frac{1}{2}kx^2 = \\frac{1}{2}Fx$",
+      "Energy density: $u = \\frac{1}{2} \\sigma \\epsilon = \\frac{1}{2} \\frac{\\sigma^2}{E} = \\frac{1}{2} E \\epsilon^2$",
+      "Work done: $W = \\Delta U = \\frac{1}{2}k(x_2^2 - x_1^2)$"
+    ],
+    "keyPoints": [
+      "Elastic potential energy is the work done against restoring forces.",
+      "For a spring, $U = \\frac{1}{2}kx^2$.",
+      "Energy density $u = \\frac{1}{2} \\sigma \\epsilon$.",
+      "Hysteresis loop area = energy dissipated per unit volume per cycle.",
+      "Toughness = area under the stress-strain curve up to fracture."
+    ],
+    "summary": "Elastic potential energy is stored in deformed bodies. For a spring, $U = \\frac{1}{2}kx^2$. For a material under stress, energy density $u = \\frac{1}{2} \\sigma \\epsilon$. Hysteresis loops represent energy dissipation, while the area under the stress-strain curve represents toughness.",
+    "specialNotes": [
+      "Always use consistent SI units (N, m, J, Pa).",
+      "The 1/2 factor is crucial — it arises from the linear force-displacement relationship.",
+      "Hysteresis is important for materials subjected to cyclic loading (e.g., tires, engine mounts).",
+      "NEB often asks for the derivation of $U = \\frac{1}{2}kx^2$ or the energy density formula."
+    ],
+    "importantStatements": [
+      "Elastic potential energy is the work done to deform an elastic body.",
+      "Energy density is the energy stored per unit volume.",
+      "Hysteresis loop area represents energy dissipated as heat."
+    ],
+    "importantNotes": [
+      "Energy density $u = \\frac{1}{2} \\sigma \\epsilon$ is valid only within the elastic limit.",
+      "Hysteresis is a characteristic of non-linear, dissipative elastic materials.",
+      "Toughness is the total energy a material can absorb before fracture."
+    ],
+    "examShortTricks": [
+      "Energy shortcut: $U = \\frac{1}{2}Fx$ — if you know force and extension, no need for k.",
+      "Energy density: $u = \\frac{1}{2} \\sigma^2 / E$ — useful if you know stress and Young's modulus.",
+      "Hysteresis: loop area = energy lost — larger loop means more damping."
+    ],
+    "examNotes": [
+      "Be prepared to derive $U = \\frac{1}{2}kx^2$ using integration.",
+      "Understand the difference between energy stored (elastic) and energy dissipated (hysteresis)."
+    ],
+    "mcs": [],
+    "importantConcepts": [],
+    "importantTasks": [],
+    "exercises": [],
+    "visualization": {}
+  }
+}

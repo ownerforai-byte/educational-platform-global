@@ -1,219 +1,70 @@
 {
-  "title": "Kinetic Theory of Gases",
+  "title": "Gaseous State: Kinetic Theory of Gases and its Postulates",
   "unitSlug": "states-of-matter",
-  "topicSlug": "kinetic-theory-gas",
-  "topicTitle": "Kinetic Theory of Gases",
-  "relevance": 60,
+  "topicSlug": "gaseous-state-kinetic-theory-of-gas-and-its-postulates",
+  "topicTitle": "Gaseous state: Kinetic theory of gas and its postulates",
+  "relevance": 100,
   "notes": [
-    "Ideal gas: PV=nRT.",
-    "Kinetic theory explains gas properties.",
-    "Real gases: van der Waals equation.",
-    "Liquid properties: surface tension, viscosity."
+    "### 1. Meaning and purpose",
+    "The kinetic theory of gases (Clausius, Maxwell, Boltzmann) explains the measurable behaviour of a gas — pressure, volume, temperature and diffusion — in terms of the motion of its molecules. It converts the empirical gas laws into a mechanical model: pressure arises from molecular collisions with the walls, and temperature measures the average molecular kinetic energy.",
+    "### 2. Postulates (state them in order)",
+    "• A gas consists of a very large number of extremely small molecules moving randomly and continuously in straight lines.",
+    "• The actual volume of the molecules is negligible compared with the volume of the container — the gas is mostly empty space.",
+    "• Molecules exert no force of attraction or repulsion on one another except during collision; intermolecular attraction is neglected.",
+    "• Collisions between molecules, and between molecules and the walls, are perfectly elastic — no kinetic energy is lost.",
+    "• Molecules are rigid, perfectly spherical and identical for a given gas; the duration of a collision is negligible compared with the time between collisions.",
+    "• Pressure is produced by molecules striking the walls, and temperature is proportional to the average kinetic energy of the molecules: KE = (3/2)kT per molecule = (3/2)RT per mole.",
+    "### 3. Results derived from the postulates",
+    "• Pressure equation: $PV=\\frac{1}{3}mn\\bar{c}^{2}$ for n molecules of mass m and mean square speed c̄².",
+    "• With KE ∝ T this gives the ideal gas equation $PV=nRT$ and hence the laws of Boyle and Charles.",
+    "• Speeds: $v_{rms}=\\sqrt{\\frac{3RT}{M}}$, $\\bar{c}=\\sqrt{\\frac{8RT}{\\pi M}}$, $v_{mp}=\\sqrt{\\frac{2RT}{M}}$, so v_mp < c̄ < v_rms.",
+    "• Effusion and diffusion give Graham's law and Avogadro's law; a mixture gives Dalton's law of partial pressures.",
+    "### 4. Meaning of the molecular speeds",
+    "At 300 K the rms speed of O₂ is ≈483 m s⁻¹ and of H₂ ≈1930 m s⁻¹ — hundreds of metres per second, yet diffusion appears sluggish because molecules collide extremely often (mean free path ≈10⁻⁷ m at 1 atm) and follow a zig-zag path. The Maxwell–Boltzmann distribution shows a wide spread of speeds; as T rises the curve flattens and its peak shifts to higher speed.",
+    "### 5. Applications",
+    "• Explains gas pressure, the gas laws, Dalton's partial pressures, Graham's diffusion and effusion, and allows calculation of rms speeds, mean free path and collision frequency.",
+    "• Used in the gaseous-diffusion enrichment of uranium (UF₆), vacuum technology and leak testing, and in atmospheric models — the escape of H₂ and He from Earth's atmosphere follows from their high molecular speeds.",
+    "• Basis of statistical mechanics, gas thermometry, thermal conductivity of gases and the van der Waals corrections for real gases.",
+    "### 6. Limitations of the kinetic theory",
+    "1. Molecules have finite volume, so at high pressure the free volume is smaller than the container volume and the theory's own assumption fails (real PV > nRT).",
+    "2. Intermolecular attractive forces exist; they make a real gas more compressible at moderate pressure and are responsible for liquefaction — neither is in the model.",
+    "3. Collisions are not perfectly elastic and molecules are not rigid spheres; polyatomic gases store energy in rotation and vibration, which the simple theory ignores (so it cannot give their specific heats correctly).",
+    "4. It presumes a Maxwell–Boltzmann distribution and neglects quantum and relativistic effects (important for very light gases at low temperature).",
+    "5. It cannot describe the liquid state, critical phenomena or any structured/condensed behaviour, and it fails near the critical temperature where the ideal-gas picture collapses."
   ],
   "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks).",
-    "❌ Ideal gas has intermolecular forces. ✅ Ideal gas assumes no intermolecular forces and negligible molecular volume."
+    "❌ Molecules keep moving at the rms speed. ✅ Speeds obey a Maxwell–Boltzmann distribution; the rms value is only an average measure.",
+    "❌ Kinetic theory says molecules never interact. ✅ Interaction is neglected *except during collisions* — this idealisation is exactly what limits the model.",
+    "❌ Collisions destroy kinetic energy. ✅ Collisions are elastic; energy is redistributed, not lost.",
+    "❌ Pressure is a continuous push by molecules. ✅ Pressure is the average rate of momentum transfer during wall collisions.",
+    "❌ The theory is equally valid at 200 atm. ✅ Ideal-gas assumptions break down at high pressure and low temperature."
   ],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice solving combined gas law and ideal gas law problems.",
-    "Practice calculating partial pressures using Dalton's law."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 02 kinetic theory gas."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "V of 2mol at 27°C, 2atm: V=24.63L",
-    "vrms of O₂ at 300K: 484 m/s"
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice solving combined gas law and ideal gas law problems."
+    "State the postulates of the kinetic theory and identify the idealisations among them.",
+    "Derive PV = (1/3)mnc̄² and use it to obtain the ideal gas equation.",
+    "Obtain expressions for rms, average and most probable speeds and arrange them in order.",
+    "Calculate the rms speed of oxygen molecules at 300 K (M = 32 g mol⁻¹).",
+    "Explain why hydrogen escapes the Earth's atmosphere more easily than oxygen.",
+    "State the limitations of the kinetic theory of gases."
   ],
   "formulas": [
-    "PV = nRT",
-    "PV = (m/M)RT",
-    "vrms = √(3RT/M)",
-    "P = P° × χ(solvent)"
+    "$$PV=\\frac{1}{3}mn\\bar{c}^{2},\\qquad KE=\\frac{3}{2}kT\\ (\\text{molecule})=\\frac{3}{2}RT\\ (\\text{mole})$$",
+    "$$v_{rms}=\\sqrt{\\frac{3RT}{M}},\\quad \\bar{c}=\\sqrt{\\frac{8RT}{\\pi M}},\\quad v_{mp}=\\sqrt{\\frac{2RT}{M}}$$",
+    "$$M=\\frac{3RT}{v_{rms}^{2}}$$"
   ],
-  "keyPoints": [
-    "Core point for 02 kinetic theory gas."
+  "universalFacts": [
+    "Maxwell–Boltzmann curve: the fraction of molecules at a given speed falls exponentially at high speed; heating shifts the peak to higher speed.",
+    "Mean free path at 1 atm, 300 K ≈ 10⁻⁷ m — about a thousand molecular diameters.",
+    "v_mp : c̄ : v_rms = √2 : √(8/π) : √3 ≈ 1 : 1.128 : 1.225."
   ],
-  "summary": "Matter exists in three states: solid, liquid, and gas, each with distinct properties governed by intermolecular forces.",
-  "specialNotes": [
-    "Specialized insight for 02 kinetic theory gas."
-  ],
-  "importantStatements": [
-    "Key statement for 02 kinetic theory gas."
+  "examples": [
+    "**Problem:** rms speed of O₂ at 300 K. **Solution:** M = 0.032 kg mol⁻¹; v_rms = √(3 × 8.314 × 300/0.032) ≈ 483 m s⁻¹.",
+    "**Problem:** Ratio of rms speeds of H₂ and O₂ at the same temperature. **Solution:** v ∝ 1/√M → v(H₂)/v(O₂) = √(32/2) = 4; hydrogen molecules are four times faster, hence its escape from the atmosphere."
   ],
   "importantNotes": [
-    "Important note regarding 02 kinetic theory gas."
+    "Quote at least six postulates and identify which are idealisations — 'negligible molecular volume' and 'no intermolecular forces' generate all the limitations.",
+    "Use R = 8.314 J K⁻¹ mol⁻¹ with SI units (kg, m³, Pa) in every speed calculation."
   ],
-  "examShortTricks": [
-    "Recall the formula for Kinetic Theory of Gases."
-  ],
-  "examNotes": [
-    "Focus on Kinetic Theory of Gases problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 02 kinetic theory gas?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 02 kinetic theory gas."
-  ],
-  "importantTasks": [
-    "Task for studying 02 kinetic theory gas."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "02-kinetic-theory-gas",
-  "mcqs": [
-    {
-      "question": "Which gas has the highest rms speed at same temperature?",
-      "options": [
-        "O₂",
-        "N₂",
-        "H₂",
-        "CO₂"
-      ],
-      "answer": "C"
-    },
-    {
-      "question": "Surface tension decreases with:",
-      "options": [
-        "Increase in temperature",
-        "Decrease in temperature",
-        "Constant temperature",
-        "None"
-      ],
-      "answer": "A"
-    }
-  ],
-  "exercises": [
-    {
-      "id": "1",
-      "question": "Volume of 2mol at 27°C, 2atm",
-      "steps": [
-        "V=nRT/P",
-        "V=(2×0.0821×300)/2",
-        "V=24.63L"
-      ],
-      "answer": "24.63 L"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "GasLawSim",
-    "desc": "Interactive gas law demonstrator"
-  },
-  "visualType": "kinetic-theory-gases"
+  "visualType": "kinetic-theory-gas-derive",
+  "tabGroup": "States-Of-Matter-Learner-Notes"
 }

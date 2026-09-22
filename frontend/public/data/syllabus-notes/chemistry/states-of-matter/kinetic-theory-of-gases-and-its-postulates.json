@@ -1,81 +1,67 @@
 {
-  "title": "Kinetic Theory of Gases and Its Postulates",
+  "title": "Kinetic Theory of Gases — Postulates Mapped to Consequences",
   "unitSlug": "states-of-matter",
-  "topicSlug": "kinetic-theory-of-gases-and-its-postulates",
-  "topicTitle": "Kinetic Theory of Gases and Its Postulates",
-  "relevance": 60,
+  "topicSlug": "gaseous-state",
+  "topicTitle": "Gaseous State",
+  "relevance": 90,
   "notes": [
-    "Detailed notes on kinetic theory of gases and its postulates within the states of matter unit."
+    "### Focus of this tab",
+    "The postulate → consequence mapping: each idealisation of the kinetic theory, what it explains, and which real-gas failure it causes. A different cut through the material from the main postulates note.",
+    "### Postulate → consequence → failure table",
+    "• 'Molecules are point masses (negligible volume)' → explains compressibility and large empty space → fails at high pressure (free volume < container volume, real PV > nRT).",
+    "• 'No intermolecular attraction except during collision' → explains indefinite expansion and Dalton's partial pressures → fails near liquefaction (attraction lowers observed pressure, real Z < 1) and is the reason gases condense at all.",
+    "• 'Collisions perfectly elastic' → kinetic energy redistributed, not lost; gas temperature stays constant in a rigid container → fails slightly (real collisions excite vibrations; polyatomic gases need internal degrees of freedom for their specific heats).",
+    "• 'Random straight-line motion, huge numbers' → statistics (Maxwell–Boltzmann distribution) explains steady macroscopic pressure from microscopic chaos → fails for very low densities where molecule counts fluctuate.",
+    "• 'KE ∝ T' → defines absolute temperature microscopically: KE = (3/2)kT per molecule, (3/2)RT per mole → explains why T must be kelvin and why all gases share the same R.",
+    "### The central derivation chain",
+    "$PV=\\frac{1}{3}mn\\bar{c}^{2}$ (pressure from momentum transfer) + KE ∝ T (postulate) → $PV=nRT$ → Boyle's, Charles' and Avogadro's laws fall out immediately. One set of postulates explains *all* the gas laws at once — the model's greatest virtue.",
+    "### What the model explains beyond the laws",
+    "Graham's diffusion/effusion (r ∝ 1/√M), Dalton's partial pressures (independent molecules), Graham's law of effusion, viscosity (momentum transfer between layers) and Brownian-motion style randomness of molecular speeds.",
+    "### Where the idealisations bite (recap for exams)",
+    "High P: molecular volume matters. Low T / near Tc: attraction matters. Polyatomic gases: rotation/vibration. Very light gases at low T: quantum effects. Liquid state: attraction and volume together — outside the model entirely."
   ],
   "confusion": [
-    "❌ Misconception about kinetic theory of gases and its postulates. ✅ Scientific explanation."
+    "❌ 'Negligible molecular volume' is a minor technicality. ✅ It is one of the two postulates whose failure defines all real-gas deviation (the other is no attraction).",
+    "❌ Kinetic theory explains why gases liquefy. ✅ It cannot — liquefaction comes from the attractive forces it assumes away; that requires the van der Waals model.",
+    "❌ Elastic collisions mean molecules never exchange energy. ✅ They exchange freely but the *total* KE is conserved."
   ],
   "practice": [
-    "Practice exercise for kinetic theory of gases and its postulates."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for kinetic theory of gases and its postulates."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of kinetic theory of gases and its postulates."
-  ],
-  "practiceQuestions": [
-    "Practice question for kinetic theory of gases and its postulates."
+    "State the postulates of the kinetic theory and identify the two idealisations responsible for real-gas deviation.",
+    "Show how PV = (1/3)mnc̄² leads to PV = nRT.",
+    "Map each gas law to the postulates that explain it.",
+    "Why does the kinetic theory fail for polyatomic gases' specific heats?"
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for kinetic theory of gases and its postulates)"
+    "$$PV=\\tfrac{1}{3}mn\\bar{c}^{2},\\qquad KE=\\tfrac{3}{2}kT\\ (\\text{molecule})=\\tfrac{3}{2}RT\\ (\\text{mole})$$",
+    "$$\\text{idealisations: point molecules + no attraction}$$"
   ],
-  "keyPoints": [
-    "Core point for kinetic theory of gases and its postulates."
+  "universalFacts": [
+    "Every postulate is an idealisation — the model is defined by what it ignores.",
+    "The pressure equation was derived by Clausius (1857); Maxwell gave the speed distribution in 1860.",
+    "The two failed idealisations reappear as the van der Waals constants b (volume) and a (attraction)."
   ],
-  "summary": "Summary of kinetic theory of gases and its postulates.",
-  "specialNotes": [
-    "Specialized insight for kinetic theory of gases and its postulates."
-  ],
-  "importantStatements": [
-    "Key statement for kinetic theory of gases and its postulates."
+  "examples": [
+    "**Problem:** Which postulate fails when a gas is compressed to 200 atm? **Solution:** 'molecular volume is negligible' — the molecules' own volume is no longer negligible against the container volume, so the free space shrinks and observed pressure exceeds the ideal prediction (Z > 1)."
   ],
   "importantNotes": [
-    "Important note regarding kinetic theory of gases and its postulates."
+    "Learn the postulates as a cause–effect chain; examiners award marks for linking postulate → law → limitation.",
+    "Quote the two 'failure postulates' explicitly in any limitations answer."
   ],
-  "examShortTricks": [
-    "Recall the formula for Kinetic Theory of Gases and Its Postulates."
-  ],
-  "examNotes": [
-    "Focus on Kinetic Theory of Gases and Its Postulates problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about kinetic theory of gases and its postulates?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for kinetic theory of gases and its postulates."
-  ],
-  "importantTasks": [
-    "Task for studying kinetic theory of gases and its postulates."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "kinetic-theory-of-gases-and-its-postulates",
   "mcqs": [
     {
-      "question": "Question about kinetic theory of gases and its postulates?",
+      "question": "In kinetic theory, the pressure of a gas is proportional to:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "c̄",
+        "c̄²",
+        "1/c̄²",
+        "√c̄"
       ],
-      "answer": "A"
+      "answer": "B"
     }
-  ]
+  ],
+  "visualType": "kinetic-theory-gas-derive",
+  "tabGroup": "States-Of-Matter-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "kinetic-theory-of-gases-and-its-postulates.json"
 }

@@ -4,6 +4,7 @@ import { loadData } from "@/lib/data-loader";
 import { SubjectSearch } from "@/components/layout/subject-search";
 import { getImportedNotesBySubject } from "@/lib/imported-notes";
 import { noteRoute } from "@/lib/note-routes";
+import { FlaskConical, ArrowRight, Sparkles, Zap, BookOpen } from "lucide-react";
 
 const SUBJECT_EMOJI: Record<string, string> = {
   "11/Biology": "🌿",
@@ -94,6 +95,41 @@ export default async function NotesPage() {
         <p className="mt-2 text-muted-foreground">
           Imported notes from Ravikishan&apos;s export, organized by class, subject, and chapter.
         </p>
+      </div>
+
+      {/* Practical Lab & Virtual Apparatus Cross-Link Banner */}
+      <div className="rounded-2xl border border-emerald-500/40 bg-gradient-to-r from-emerald-500/10 via-card to-card p-6 shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="space-y-1">
+          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+            <FlaskConical className="h-4 w-4" />
+            <span>Hands-On Science Practicals &amp; Viva Voce</span>
+          </div>
+          <h2 className="text-lg sm:text-xl font-extrabold text-foreground">
+            Complete NEB Practical Lab Manuals &amp; Simulators
+          </h2>
+          <p className="text-xs text-muted-foreground max-w-2xl">
+            Looking for Physics, Chemistry, or Biology practical experiments? Access virtual apparatus simulations, observation calculation sheets, and examiner viva Q&amp;As.
+          </p>
+          <div className="flex flex-wrap gap-2 pt-2 text-xs font-semibold">
+            <Link href="/practical/physics" className="px-2.5 py-1 rounded-lg bg-sky-500/15 text-sky-600 dark:text-sky-400 hover:bg-sky-500/25 transition-colors">
+              ⚡ Physics Practical
+            </Link>
+            <Link href="/practical/chemistry" className="px-2.5 py-1 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400 hover:bg-amber-500/25 transition-colors">
+              🧪 Chemistry Practical
+            </Link>
+            <Link href="/practical/biology" className="px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/25 transition-colors">
+              🌿 Biology Practical
+            </Link>
+          </div>
+        </div>
+
+        <Link
+          href="/practical"
+          className="shrink-0 inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-xs font-bold text-white shadow-md hover:bg-emerald-500 transition-all"
+        >
+          <span>Open Practical Hub</span>
+          <ArrowRight className="h-4 w-4" />
+        </Link>
       </div>
 
       {/* Interactive Search & Subject Filter */}

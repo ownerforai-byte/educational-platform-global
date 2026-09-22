@@ -1,219 +1,69 @@
 {
-  "title": "Real Gas Deviation",
+  "title": "Deviation of Real Gases from Ideality",
   "unitSlug": "states-of-matter",
-  "topicSlug": "real-gas-deviation",
-  "topicTitle": "Real Gas Deviation",
-  "relevance": 30,
+  "topicSlug": "deviation-of-real-gas-from-ideality-solving-related-numerical-problems-based-on-gas-laws",
+  "topicTitle": "Deviation of real gas from ideality (solving related numerical problems based on gas laws)",
+  "relevance": 100,
   "notes": [
-    "Ideal gas: PV=nRT.",
-    "Kinetic theory explains gas properties.",
-    "Real gases: van der Waals equation.",
-    "Liquid properties: surface tension, viscosity."
+    "### 1. Meaning of deviation",
+    "A real gas obeys PV = nRT only approximately; the departure from that equation is called deviation from ideal behaviour. It arises because the two postulates of the kinetic theory are only idealisations — molecules do occupy volume, and intermolecular attractive forces do exist (otherwise no gas could ever be liquefied). Deviation is largest at **high pressure and low temperature**, and smallest for small, non-polar molecules such as H₂ and He.",
+    "### 2. Compressibility factor Z",
+    "$Z=\\frac{PV}{nRT}$ (or Z = PV/RT for one mole) measures deviation: Z = 1 for an ideal gas, **Z < 1** when attraction dominates (moderate pressure, gas easier to compress than ideal), **Z > 1** when the finite molecular volume dominates (high pressure, gas harder to compress than ideal). Plotting Z against P shows that H₂ stays above 1 and rises steadily, while CO₂ dips below 1, crosses 1 and then rises — the classic experimental proof of deviation.",
+    "### 3. Explanation of the two effects",
+    "• **Attraction effect:** neighbouring molecules pull a molecule away from the wall, so it strikes with less momentum — the observed pressure is less than the ideal value (P_obs < P_ideal), which makes Z < 1.",
+    "• **Volume effect:** the molecules themselves and their excluded volume reduce the free space, so the observed volume is greater than ideal (V_obs > V_ideal), making Z > 1.",
+    "These two competing effects explain why Z may be less than 1 at moderate pressure and greater than 1 at high pressure, and why there is a temperature (Boyle temperature) at which Z ≈ 1 over a wide range of moderate pressures.",
+    "### 4. van der Waals equation (corrections applied)",
+    "$\\left(P+\\frac{an^{2}}{V^{2}}\\right)(V-nb)=nRT$ for n moles, or $\\left(P+\\frac{a}{V^{2}}\\right)(V-b)=RT$ for one mole. The constant **a** measures the strength of intermolecular attraction (pressure correction an²/V²) and **b** is the effective (excluded) molar volume due to finite molecular size — roughly four times the actual molecular volume. Larger a means easier liquefaction; larger b means a bulkier molecule.",
+    "### 5. Critical constants and continuity of state",
+    "Above the critical temperature Tc a gas cannot be liquefied by pressure alone; at the critical point the densities of liquid and vapour become equal. For a van der Waals gas: $V_{c}=3b$, $P_{c}=\\frac{a}{27b^{2}}$, $T_{c}=\\frac{8a}{27Rb}$ and the predicted critical compressibility factor $Z_{c}=\\frac{P_{c}V_{c}}{RT_{c}}=\\frac{3}{8}=0.375$. The reduced variables $P_{r}=P/P_{c}$, $V_{r}=V/V_{c}$, $T_{r}=T/T_{c}$ give the principle of corresponding states: all gases with the same reduced T and P have the same reduced volume.",
+    "### 6. Other equations of state",
+    "Dieterici's equation $P(V-b)=RT\\,e^{-a/RTV}$ and the virial equation $PV=RT(1+B/V+C/V^{2}+\\dots)$ improve the description; the virial coefficients are obtained from experiment. The van der Waals equation remains the standard NEB-level treatment because it explains liquefaction and the critical point qualitatively with only two constants.",
+    "### 7. Applications",
+    "• **Liquefaction and refrigeration:** below Tc, attractive forces (the 'a' term) allow liquefaction; the Joule–Thomson effect and Linde's method produce liquid N₂, O₂, He and LPG/CNG storage systems.",
+    "• **Comparing gases:** a and b from tables rank gases by ease of liquefaction (SO₂ > CO₂ > N₂ > H₂), and Z charts guide compressor and pipeline design.",
+    "• **Supercritical fluids:** above Tc and Pc, CO₂ becomes a supercritical solvent used for decaffeination and dry cleaning — an application of critical constants.",
+    "• **Safety and storage:** knowing Tc explains why cylinders must be kept cool and why liquefied petroleum gas remains liquid under pressure.",
+    "### 8. Numerical work",
+    "Typical problems: compute Z from P, V, T; compare gases for near-ideal behaviour (smallest a and b, e.g. He); use the van der Waals equation to find P or V; and obtain Tc, Pc, Vc from a and b (or vice versa).",
+    "### 9. Limitations of the van der Waals equation",
+    "It is a qualitative improvement, not an exact theory: a and b are treated as constants although they vary with temperature; molecular shape, polarity and association (hydrogen bonding in water, ammonia) are ignored; the predicted Zc = 0.375 exceeds the measured values (0.23–0.31 for most gases); the equation does not reproduce isotherms precisely near the critical point and has no term for attractive forces acting over different ranges. Better results need more elaborate equations of state or computer simulation."
   ],
   "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks).",
-    "❌ Ideal gas has intermolecular forces. ✅ Ideal gas assumes no intermolecular forces and negligible molecular volume."
+    "❌ A real gas always has Z > 1. ✅ Z < 1 at moderate pressure (attraction dominates) and Z > 1 at high pressure (molecular volume dominates); hydrogen is a special case with Z > 1 throughout.",
+    "❌ Deviation from ideality increases as temperature rises. ✅ It decreases with rising temperature and increases at high pressure and low temperature.",
+    "❌ The constant b is the molecular volume. ✅ b is the excluded volume per mole, about four times the actual molecular volume.",
+    "❌ Gases can always be liquefied by increasing pressure. ✅ Above the critical temperature no amount of pressure can liquefy a gas.",
+    "❌ Zc = 0.375 is exact for all gases. ✅ It is the van der Waals *prediction*; experiment gives 0.23–0.31, which is a limitation of the equation."
   ],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice solving combined gas law and ideal gas law problems.",
-    "Practice calculating partial pressures using Dalton's law."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 03 real gas deviation."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "V of 2mol at 27°C, 2atm: V=24.63L",
-    "vrms of O₂ at 300K: 484 m/s"
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice solving combined gas law and ideal gas law problems."
+    "What is meant by deviation of a real gas from ideality? Explain with a graph of Z versus P.",
+    "Explain the two corrections applied by van der Waals and write the corrected equation.",
+    "Define Tc, Pc and Vc and derive Vc = 3b, Pc = a/27b², Tc = 8a/27Rb.",
+    "Calculate Z for 1 mol of a gas occupying 0.5 L at 300 K and 50 atm and comment on the deviation.",
+    "Which of H₂, N₂ and SO₂ is closest to ideal behaviour and why?",
+    "State the limitations of the van der Waals equation."
   ],
   "formulas": [
-    "PV = nRT",
-    "PV = (m/M)RT",
-    "vrms = √(3RT/M)",
-    "P = P° × χ(solvent)"
+    "$$Z=\\frac{PV}{nRT}\\ \\ (Z=1\\ \\text{ideal},\\ Z<1\\ \\text{attraction},\\ Z>1\\ \\text{finite volume})$$",
+    "$$\\left(P+\\frac{an^{2}}{V^{2}}\\right)(V-nb)=nRT$$",
+    "$$V_{c}=3b,\\quad P_{c}=\\frac{a}{27b^{2}},\\quad T_{c}=\\frac{8a}{27Rb},\\quad Z_{c}=\\frac{P_{c}V_{c}}{RT_{c}}=\\frac{3}{8}$$",
+    "$$P_{r}=\\frac{P}{P_{c}},\\quad V_{r}=\\frac{V}{V_{c}},\\quad T_{r}=\\frac{T}{T_{c}}$$"
   ],
-  "keyPoints": [
-    "Core point for 03 real gas deviation."
+  "universalFacts": [
+    "Zc(observed) for most gases lies between 0.23 and 0.31, below the van der Waals value 0.375.",
+    "Hydrogen and helium have the smallest a and b values and stay closest to ideal behaviour; SO₂ and CO₂ deviate most among common gases.",
+    "Critical temperatures: He −268 °C, N₂ −147 °C, CO₂ 31 °C, water 374 °C — the reason He is the hardest gas to liquefy."
   ],
-  "summary": "Matter exists in three states: solid, liquid, and gas, each with distinct properties governed by intermolecular forces.",
-  "specialNotes": [
-    "Specialized insight for 03 real gas deviation."
-  ],
-  "importantStatements": [
-    "Key statement for 03 real gas deviation."
+  "examples": [
+    "**Problem:** Compute Z for 1 mol of gas at 300 K occupying 0.5 L at 50 atm. **Solution:** Z = PV/RT = (50 × 0.5)/(0.0821 × 300) ≈ 1.015 → slightly greater than 1, so the finite molecular volume effect dominates.",
+    "**Problem:** For a gas with a = 3.6 L² atm mol⁻² and b = 0.043 L mol⁻¹, find Tc and Pc. **Solution:** Tc = 8a/27Rb = (8 × 3.6)/(27 × 0.0821 × 0.043) ≈ 302 K; Pc = a/27b² = 3.6/(27 × 0.043²) ≈ 72 atm."
   ],
   "importantNotes": [
-    "Important note regarding 03 real gas deviation."
+    "Explain the sign of Z before quoting numbers: Z < 1 means attraction dominates, Z > 1 means molecular volume dominates.",
+    "Keep a in L² atm mol⁻² (or Pa m⁶ mol⁻²) with matching R; unit mismatch is the commonest numerical error.",
+    "State that the van der Waals equation explains the critical point only approximately — Zc = 0.375 versus experimental 0.23–0.31."
   ],
-  "examShortTricks": [
-    "Recall the formula for Real Gas Deviation."
-  ],
-  "examNotes": [
-    "Focus on Real Gas Deviation problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 03 real gas deviation?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 03 real gas deviation."
-  ],
-  "importantTasks": [
-    "Task for studying 03 real gas deviation."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "03-real-gas-deviation",
-  "mcqs": [
-    {
-      "question": "Which gas has the highest rms speed at same temperature?",
-      "options": [
-        "O₂",
-        "N₂",
-        "H₂",
-        "CO₂"
-      ],
-      "answer": "C"
-    },
-    {
-      "question": "Surface tension decreases with:",
-      "options": [
-        "Increase in temperature",
-        "Decrease in temperature",
-        "Constant temperature",
-        "None"
-      ],
-      "answer": "A"
-    }
-  ],
-  "exercises": [
-    {
-      "id": "1",
-      "question": "Volume of 2mol at 27°C, 2atm",
-      "steps": [
-        "V=nRT/P",
-        "V=(2×0.0821×300)/2",
-        "V=24.63L"
-      ],
-      "answer": "24.63 L"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "GasLawSim",
-    "desc": "Interactive gas law demonstrator"
-  },
-  "visualType": "real-gas-behavior"
+  "visualType": "real-gas-deviation",
+  "tabGroup": "States-Of-Matter-Learner-Notes"
 }

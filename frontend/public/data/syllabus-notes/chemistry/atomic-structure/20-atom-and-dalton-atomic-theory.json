@@ -1,81 +1,79 @@
 {
-  "title": "The Atom & Dalton's Atomic Theory",
+  "title": "From Dalton's Atom to the Nuclear Atom — the Historical Chain",
   "unitSlug": "atomic-structure",
   "topicSlug": "rutherford-s-atomic-model-and-its-limitations",
   "topicTitle": "Rutherford's atomic model and its limitations",
-  "relevance": 83,
+  "relevance": 80,
   "notes": [
-    "Detailed notes on 20 atom and dalton atomic theory within the atomic structure unit."
+    "### Focus of this tab",
+    "The discovery chain that produced the nuclear atom — Dalton → electron → proton → neutron → Thomson → Rutherford — so that 'Rutherford's model and its limitations' can be answered with its historical context.",
+    "### The particles, in order of discovery",
+    "• **Electron** (J. J. Thomson, 1897): cathode rays are deflected by E and B fields; e/m = 1.76 × 10¹¹ C kg⁻¹, identical for all cathode materials → universal negative particle.",
+    "• **Proton** (E. Goldstein's anode/canal rays, 1886, identified as a particle by Thomson 1907; named by Rutherford 1919–20): positive rays bend oppositely in fields; the lightest positive particle (from hydrogen) has charge +e and mass 1836 × electron mass. Rutherford produced it deliberately: ¹⁴N + ⁴He → ¹⁷O + ¹p (first nuclear transmutation).",
+    "• **Neutron** (James Chadwick, 1932): beryllium bombarded by α-particles emits a neutral, highly penetrating radiation: ⁹Be + ⁴He → ¹²C + ¹n; mass ≈ 1.675 × 10⁻²⁷ kg, slightly heavier than the proton, charge 0.",
+    "### How each discovery reshaped the atom model",
+    "• Dalton's indivisible atom (1803) fell once electrons and protons emerged — atoms have internal structure.",
+    "• Thomson (1904) embedded electrons in diffuse positive charge — failed on α-scattering.",
+    "• Rutherford (1911) put the positive charge and mass in a tiny nucleus with electrons around it — failed on stability and line spectra.",
+    "• The neutron completed the nuclear picture: nuclei contain Z protons and A − Z neutrons, explaining isotopes (same Z, different N) that Dalton's 'identical atoms' postulate could not.",
+    "### Particle data table (memorise)",
+    "Electron: charge −1.602 × 10⁻¹⁹ C, mass 9.109 × 10⁻³¹ kg (0.000549 u, 1/1837 of H atom). Proton: +1.602 × 10⁻¹⁹ C, 1.673 × 10⁻²⁷ kg (1.00728 u). Neutron: 0, 1.675 × 10⁻²⁷ kg (1.00867 u). Charge/mass ratio of the electron is the largest, which is why electron beams are easiest to deflect.",
+    "### Why the neutron took so long",
+    "A neutral particle leaves no track in electric or magnetic fields and is not detected by ionisation chambers — it was first mistaken for γ-radiation. Chadwick's insight was to use the recoiling protons ejected from paraffin wax to measure its mass by momentum conservation."
   ],
   "confusion": [
-    "❌ Misconception about 20 atom and dalton atomic theory. ✅ Scientific explanation."
+    "❌ Goldstein discovered the proton in 1886. ✅ Goldstein discovered canal (anode) rays; the proton as the lightest positive particle was characterised later and named by Rutherford.",
+    "❌ The neutron is lighter than the proton. ✅ It is slightly heavier (1.675 vs 1.673 × 10⁻²⁷ kg), which is why free neutrons β-decay.",
+    "❌ Electrons contribute most of the atomic mass. ✅ They contribute ≈0.05%; nearly all mass is nuclear."
   ],
   "practice": [
-    "Practice exercise for 20 atom and dalton atomic theory."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 20 atom and dalton atomic theory."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 20 atom and dalton atomic theory."
-  ],
-  "practiceQuestions": [
-    "Practice question for 20 atom and dalton atomic theory."
+    "Order the discoveries of electron, proton and neutron with the experimenter and the key evidence for each.",
+    "Write the nuclear reaction Rutherford used to produce the proton.",
+    "Why was the neutron so hard to detect?",
+    "Tabulate charge, mass and discoverer of the three fundamental particles.",
+    "Explain how the discovery of isotopes contradicted Dalton's atomic theory."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 20 atom and dalton atomic theory)"
+    "$$^{14}\\text{N}+^{4}\\text{He}\\rightarrow^{17}\\text{O}+^{1}\\text{p},\\qquad ^{9}\\text{Be}+^{4}\\text{He}\\rightarrow^{12}\\text{C}+^{1}\\text{n}$$",
+    "$$A=Z+N;\\qquad m_{e}=9.109\\times10^{-31}\\ \\text{kg},\\ m_{p}=1.673\\times10^{-27}\\ \\text{kg},\\ m_{n}=1.675\\times10^{-27}\\ \\text{kg}$$"
   ],
-  "keyPoints": [
-    "Core point for 20 atom and dalton atomic theory."
+  "universalFacts": [
+    "Chadwick's 1932 neutron discovery completed the particle trio and earned the 1935 Nobel Prize.",
+    "The proton is 1836 times heavier than the electron; the neutron is 1839 times heavier.",
+    "Cathode-ray e/m is independent of the gas and electrode material — electrons are in all matter."
   ],
-  "summary": "Summary of 20 atom and dalton atomic theory.",
-  "specialNotes": [
-    "Specialized insight for 20 atom and dalton atomic theory."
-  ],
-  "importantStatements": [
-    "Key statement for 20 atom and dalton atomic theory."
+  "examples": [
+    "**Problem:** An atom has Z = 17 and A = 35. Find p, n, e. **Solution:** protons = 17, electrons = 17 (neutral atom), neutrons = A − Z = 18 — the isotope ³⁵Cl."
   ],
   "importantNotes": [
-    "Important note regarding 20 atom and dalton atomic theory."
+    "Keep the discovery order strict: electron (1897) → proton (named 1919–20) → neutron (1932).",
+    "Mass number A = protons + neutrons; atomic number Z = protons = electrons in a neutral atom."
   ],
-  "examShortTricks": [
-    "Recall the formula for The Atom & Dalton's Atomic Theory."
-  ],
-  "examNotes": [
-    "Focus on The Atom & Dalton's Atomic Theory problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 20 atom and dalton atomic theory?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 20 atom and dalton atomic theory."
-  ],
-  "importantTasks": [
-    "Task for studying 20 atom and dalton atomic theory."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "20-atom-and-dalton-atomic-theory",
   "mcqs": [
     {
-      "question": "Question about 20 atom and dalton atomic theory?",
+      "question": "The neutron was discovered by:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Rutherford",
+        "Chadwick",
+        "Thomson",
+        "Goldstein"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An atom with Z = 17 and A = 35 contains:",
+      "options": [
+        "17 p, 18 n, 17 e",
+        "18 p, 17 n, 18 e",
+        "17 p, 17 n, 18 e",
+        "35 p, 17 n, 35 e"
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "visualType": "atomic-particles",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "20-atom-and-dalton-atomic-theory.json"
 }

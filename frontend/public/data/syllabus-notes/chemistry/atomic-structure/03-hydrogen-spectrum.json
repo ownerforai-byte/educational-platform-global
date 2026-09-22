@@ -1,81 +1,61 @@
 {
-  "title": "Hydrogen Spectrum",
+  "title": "Spectrum of the Hydrogen Atom",
   "unitSlug": "atomic-structure",
-  "topicSlug": "hydrogen-spectrum",
-  "topicTitle": "Hydrogen Spectrum",
-  "relevance": 85,
+  "topicSlug": "spectrum-of-hydrogen-atom",
+  "topicTitle": "Spectrum of hydrogen atom",
+  "relevance": 100,
   "notes": [
-    "Detailed notes on 03 hydrogen spectrum within the atomic structure unit."
+    "### 1. Meaning of 'spectrum'",
+    "A spectrum is the ordered display of the wavelengths in a beam of radiation after dispersion by a prism or grating. An **emission** spectrum is bright lines on a dark background (excited atoms emitting); an **absorption** spectrum is dark lines on a continuous background (cool atoms removing their own characteristic wavelengths). Atomic spectra are *line* spectra — band spectra come from molecules, continuous spectra from incandescent solids.",
+    "### 2. Origin of the hydrogen spectrum",
+    "Each line is one electron transition: the electron falls from n₂ to n₁ and emits one photon, hν = E₂ − E₁ = 13.6(1/n₁² − 1/n₂²) eV for hydrogen. Since the levels are discrete, only discrete wavelengths appear — hence a line spectrum rather than a continuous one.",
+    "### 3. The spectral series of hydrogen",
+    "• **Lyman** (n₁ = 1): to the ground level — ultraviolet; first line 121.6 nm, series limit 91.2 nm.",
+    "• **Balmer** (n₁ = 2): the only *visible* series — Hα 656.3 nm (red), Hβ 486.1 nm, Hγ 434.0 nm, Hδ 410.2 nm; limit 364.6 nm.",
+    "• **Paschen** (n₁ = 3), **Brackett** (n₁ = 4) and **Pfund** (n₁ = 5): infrared.",
+    "• Lines within a series crowd together and converge at the series limit; beyond it the spectrum becomes continuous because the atom is ionised.",
+    "### 4. Rydberg equation and the Rydberg constant",
+    "$$\\bar{\\nu}=\\frac{1}{\\lambda}=RZ^{2}\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right),\\qquad n_{2}>n_{1}$$ with R = 1.097 × 10⁷ m⁻¹ = 109 678 cm⁻¹ for hydrogen (Z = 1). Bohr's theory *derived* R = 2π²me⁴/h³c, turning Rydberg's empirical formula into theory — the model's greatest success.",
+    "### 5. Applications",
+    "• Spectral analysis identifies elements: each element has a unique line pattern, used in chemistry labs, metallurgy, forensics and pollution monitoring.",
+    "• Astronomy: composition, temperature and motion (Doppler shift) of stars are read from hydrogen lines; the 21 cm hydrogen line maps interstellar gas.",
+    "• Technology: atomic emission/absorption spectroscopy (AAS, ICP), flame tests, He–Ne gas lasers (632.8 nm) and spectrometer calibration all rest on hydrogen-like energy levels.",
+    "• Frank–Hertz and discharge-tube experiments confirm discrete energy levels and the Bohr energy expression.",
+    "### 6. Limitations of this treatment",
+    "The Bohr/Rydberg picture gives series positions but not line *fine structure* (Hα is really a doublet), relative intensities, or splitting in magnetic (Zeeman) and electric (Stark) fields; beyond hydrogen it needs multi-electron and relativistic corrections."
   ],
   "confusion": [
-    "❌ Misconception about 03 hydrogen spectrum. ✅ Scientific explanation."
+    "❌ The Balmer series lies in the ultraviolet. ✅ Balmer (n₁ = 2) is visible; Lyman (n₁ = 1) is UV and Paschen onward are IR.",
+    "❌ A ground-state hydrogen atom can emit a line. ✅ Emission needs excitation first; the ground state can only absorb.",
+    "❌ Within a series the lines get farther apart. ✅ They crowd together and converge at the series limit.",
+    "❌ Absorption lines mean the atom lost energy. ✅ The atom absorbs exactly the photons matching its level gaps, so those wavelengths are missing from the transmitted beam.",
+    "❌ Every line requires n₂ − n₁ = 1. ✅ Any n₂ > n₁ gives a line; the number of lines from level n is n(n − 1)/2."
   ],
   "practice": [
-    "Practice exercise for 03 hydrogen spectrum."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 03 hydrogen spectrum."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 03 hydrogen spectrum."
-  ],
-  "practiceQuestions": [
-    "Practice question for 03 hydrogen spectrum."
+    "Explain the origin of the line spectrum of hydrogen using Bohr's postulates.",
+    "Write the Rydberg equation and compute the wavelength of the first Balmer line.",
+    "Name the hydrogen series lying in the visible region and give the regions of the others.",
+    "Calculate the wave number and photon energy for the n = 4 → 2 transition in hydrogen.",
+    "How many spectral lines are possible when an excited hydrogen atom de-excites from n = 5?"
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 03 hydrogen spectrum)"
+    "$$\\frac{1}{\\lambda}=RZ^{2}\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right),\\quad R=1.097\\times10^{7}\\ \\text{m}^{-1}$$",
+    "$$h\\nu=\\Delta E=E_{2}-E_{1},\\qquad \\lambda(\\text{nm})=\\frac{1240}{\\Delta E(\\text{eV})}$$",
+    "$$\\text{number of lines from level } n=\\frac{n(n-1)}{2}$$"
   ],
-  "keyPoints": [
-    "Core point for 03 hydrogen spectrum."
+  "universalFacts": [
+    "Hα = 656.3 nm (red) is the first Balmer line; Lyman limit = 91.2 nm; Balmer limit = 364.6 nm.",
+    "R = 1.097 × 10⁷ m⁻¹ = 109 678 cm⁻¹ for hydrogen.",
+    "The Balmer series was discovered first (1885) because it alone lies in the visible region."
   ],
-  "summary": "Summary of 03 hydrogen spectrum.",
-  "specialNotes": [
-    "Specialized insight for 03 hydrogen spectrum."
-  ],
-  "importantStatements": [
-    "Key statement for 03 hydrogen spectrum."
+  "examples": [
+    "**Problem:** Wavelength of the first Balmer line (n = 3 → 2). **Solution:** 1/λ = 1.097×10⁷(1/4 − 1/9) = 1.524×10⁶ m⁻¹ → λ = 656 nm (Hα).",
+    "**Problem:** Energy of the photon for n = 4 → 2. **Solution:** ΔE = 13.6(1/4 − 1/16) = 2.55 eV; λ = 1240/2.55 ≈ 486 nm (Hβ)."
   ],
   "importantNotes": [
-    "Important note regarding 03 hydrogen spectrum."
+    "Remember the series-to-region mapping: Lyman UV, Balmer visible, Paschen/Brackett/Pfund IR — a standard one-mark question.",
+    "Convert cm⁻¹ to m⁻¹ (× 100) before using R in SI; unit slips are the commonest error here."
   ],
-  "examShortTricks": [
-    "Recall the formula for Hydrogen Spectrum."
-  ],
-  "examNotes": [
-    "Focus on Hydrogen Spectrum problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 03 hydrogen spectrum?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 03 hydrogen spectrum."
-  ],
-  "importantTasks": [
-    "Task for studying 03 hydrogen spectrum."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "03-hydrogen-spectrum",
-  "mcqs": [
-    {
-      "question": "Question about 03 hydrogen spectrum?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ]
+  "visualType": "hydrogen-spectrum",
+  "tabGroup": "Atomic-Structure-Learner-Notes"
 }

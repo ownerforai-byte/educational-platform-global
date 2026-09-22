@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft, BookOpen } from "lucide-react";
+import { ProSectionBanner } from "@/features/knowledge/pro/renderers";
 
 const TOPICS = [
   {
@@ -118,6 +119,8 @@ export default function ByakaranPage() {
           <p className="text-xs text-muted-foreground">NEB Class 11 & 12 — Nepali grammar reference</p>
         </div>
       </div>
+
+      <ProSectionBanner sectionId="byakaran" />
 
       <div className="space-y-3">
         {TOPICS.map((topic, i) => (

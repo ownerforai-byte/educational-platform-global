@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import { ArrowLeft, Beaker, ChevronDown, ChevronUp } from "lucide-react";
+import { ProSectionBanner } from "@/features/knowledge/pro/renderers";
 
 const TOPICS = [
   {
@@ -106,6 +107,8 @@ export default function NumericalChemistryPage() {
           <p className="text-xs text-muted-foreground">Practice calculations for NEB exams</p>
         </div>
       </div>
+
+      <ProSectionBanner sectionId="numerical-chemistry" />
 
       <div className="space-y-3">
         {TOPICS.map((topic, i) => (

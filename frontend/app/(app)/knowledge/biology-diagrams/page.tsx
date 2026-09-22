@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { ArrowLeft, Dna } from "lucide-react";
+import { ProSectionBanner } from "@/features/knowledge/pro/renderers";
 
 const DIAGRAMS = [
   // Class 11
@@ -109,6 +110,8 @@ export default function BiologyDiagramsPage() {
           <p className="text-xs text-muted-foreground">NEB XI & XII — Labeled diagrams for exam preparation</p>
         </div>
       </div>
+
+      <ProSectionBanner sectionId="biology-diagrams" />
 
       <div className="space-y-6">
         {DIAGRAMS.map((section) => (

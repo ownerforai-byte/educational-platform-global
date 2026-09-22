@@ -1,0 +1,347 @@
+{
+  "title": "Gravitational Potential and Potential Energy",
+  "unitSlug": "gravitation",
+  "topicSlug": "gravitational-potential-energy",
+  "topicTitle": "Gravitational Potential and Potential Energy",
+  "relevance": 100,
+  "duplicateType": 2,
+  "tabGroup": "gravitational-potential-and-potential-energy",
+  "animation3D": "gravitation",
+  "motionGraphics": "gravitation",
+  "enrichedContent": {
+    "notes": [
+      "**Gravitational potential V:** the work done per unit mass in bringing a test mass from infinity to a point, without acceleration. For a point mass M: $V = -\\frac{GM}{r}$. At infinity $V = 0$, and everywhere else V is negative because gravity does positive work as the mass approaches — the field does the work, so potential decreases.",
+      "**Gravitational potential energy U:** the work done against gravity in assembling a system; for two masses separated by r: $U = -\\frac{GMm}{r}$. It is the energy of the whole system, not of one mass alone. U is negative because the system is bound — you must supply $GMm/r$ of energy to separate the masses to infinity.",
+      "**Why the minus sign matters:** potential energy is defined with zero at infinity. Since the force is attractive, energy is released (and PE decreases) as masses come together. A satellite in orbit at radius r has $U = -\\frac{GMm}{r}$ — its total mechanical energy is $E = K + U = -\\frac{GMm}{2r}$, which is negative, confirming a bound orbit.",
+      "**Near Earth's surface:** for small heights h above the surface, $U = mgh$. This is the constant-g approximation of $-\\frac{GMm}{r}$: since $\\Delta(1/r) \\approx -h/R^2$, the change matches $mgh$. Use $mgh$ only for $h \\ll R$; use $-\\frac{GMm}{r}$ for large altitudes (satellites, rockets).",
+      "**Worked example — escape energy:** to launch a mass m from Earth's surface (R) to infinity you must supply $GMm/R$. Numerically for m = 1 kg: $\\frac{6.67\\times 10^{-11}\\times 5.97\\times 10^{24}}{6.37\\times 10^6} \\approx 6.25\\times 10^{7} \\text{ J} \\approx 62.5 \\text{ MJ}$ per kg. This energy corresponds to the escape speed 11.2 km/s.",
+      "**Potential vs potential energy vs field:** field $g = -\\frac{dV}{dr}$ (the force per unit mass, a vector); potential V is a scalar (J/kg); potential energy $U = mV$. The field is the negative gradient of the potential: $g = -\\frac{dV}{dr}$ radially.",
+      "**Equipotential surfaces:** surfaces of constant V. Moving along an equipotential surface requires zero work; the field is always perpendicular to these surfaces. For a point mass, equipotentials are concentric spheres.",
+      "**Superposition:** for multiple masses, $V = \\sum\\left(-\\frac{GM_i}{r_i}\\right)$ and $U = \\sum\\left(-\\frac{GM_i m}{r_i}\\right)$ — potentials add as scalars, which is much simpler than adding force vectors."
+    ],
+    "confusion": [
+      "❌ 'Potential and potential energy are the same.' ✅ Potential V is work per unit mass (J/kg); potential energy $U = mV$ (J). V belongs to a point in the field; U belongs to the mass–field system.",
+      "❌ 'Negative energy is unphysical.' ✅ Negative potential energy simply means the system is BOUND — energy must be added to separate it. It is a matter of the reference at infinity.",
+      "❌ '$U = mgh$ and $U = -\\frac{GMm}{r}$ disagree.' ✅ They agree for small heights: $mgh$ is the CHANGE in $-\\frac{GMm}{r}$ near the surface. Use the right one for the régime.",
+      "❌ 'Potential is maximum at Earth's surface.' ✅ Potential is most negative at the surface ($-\\frac{GM}{R}$) and rises toward zero with altitude — at infinity it reaches the (higher) value 0.",
+      "❌ 'Doubling the distance doubles the potential energy.' ✅ $U = -\\frac{GMm}{r}$ — doubling r halves the magnitude, so U becomes $-\\frac{GMm}{2r}$ (less negative).",
+      "❌ 'A satellite far away has lots of potential energy.' ✅ A far-away satellite has potential energy near ZERO (least negative, but $U \\approx 0$). It needs enormous kinetic energy (orbital speed) that comes from the launch energy."
+    ],
+    "practice": [
+      "Find V and g at a point 2R above Earth's centre.",
+      "Calculate the potential energy of a 1000 kg satellite at $r = 6.8\\times 10^{6} \\text{ m}$.",
+      "Find the energy required to move a 500 kg mass from R to 3R.",
+      "Show that for a circular orbit $E_{\\text{total}} = U/2 = -\\frac{GMm}{2r}$.",
+      "Derive the escape speed from setting $K + U = 0$ at infinity.",
+      "Find the work needed to place a 10 kg mass at infinity from Earth's surface."
+    ],
+    "universalFacts": [
+      "Gravitational potential energy is exactly the 'missing' energy that binds systems — this is why the binding energy of Earth + satellite equals $|U|$.",
+      "The concept of potential is useful because it is scalar: complex many-body problems reduce to addition rather than vector resolution.",
+      "Near a black hole, gravitational potential becomes so deep ($-\\frac{GM}{r}$) that even light cannot escape — the origin of the event horizon.",
+      "Gravitational potential determines whether planets retain atmospheres: gas molecules with thermal speeds above the local escape speed leak away.",
+      "The Voyager probes were launched using the escape-energy budget — their final trajectory traced the potential wells of the Sun and giant planets."
+    ],
+    "examples": [
+      "V at Earth's surface: $V = -\\frac{GM}{R} = -6.25\\times 10^{7} \\text{ J/kg}$.",
+      "U of 1000 kg satellite at $r = 6.8\\times 10^{6} \\text{ m}$: $U = -\\frac{GMm}{r} = -5.9\\times 10^{10} \\text{ J}$.",
+      "Escape energy per kg: $GM/R = 6.25\\times 10^{7} \\text{ J} \\approx 17 \\text{ kWh}$ per kg.",
+      "Near surface: a 2 kg mass lifted 10 m gains $U = mgh = 196 \\text{ J}$.",
+      "Total energy of circular orbit: $E = -\\frac{GMm}{2r}$ — negative, so the orbit is bound."
+    ],
+    "practiceQuestions": [
+      "Calculate the gravitational potential at a point $3\\times 10^{7} \\text{ m}$ from the centre of Earth ($M = 6\\times 10^{24} \\text{ kg}$).",
+      "Find the gravitational potential energy of a 1500 kg satellite at an altitude of 2000 km above Earth.",
+      "How much energy is required to move a 3000 kg spacecraft from Earth's surface to infinity?",
+      "A 700 kg probe is moved from $r = 8\\times 10^{6} \\text{ m}$ to $r = 5\\times 10^{6} \\text{ m}$. Find the change in its potential energy.",
+      "Derive that for a circular orbit $v^2 = \\frac{GM}{r}$ and hence $E = -\\frac{GMm}{2r}$.",
+      "At what height is the gravitational potential of Earth equal to $-3\\times 10^{7} \\text{ J/kg}$?"
+    ],
+    "formulas": [
+      "Gravitational potential: $V = -\\frac{GM}{r}$ (J/kg)",
+      "Gravitational potential energy: $U = mV = -\\frac{GMm}{r}$ (J)",
+      "Near the surface: $U = mgh$ ($h \\ll R$)",
+      "Field from potential: $g = -\\frac{dV}{dr}$",
+      "Total orbital energy: $E = -\\frac{GMm}{2r} = U/2$"
+    ],
+    "keyPoints": [
+      "$V = -\\frac{GM}{r}$ is negative, approaching zero at infinity.",
+      "$U = -\\frac{GMm}{r}$ is the energy of the (bound) system, negative for attraction.",
+      "Near Earth's surface $U = mgh$ is the appropriate approximation.",
+      "Potential and field connect: $g = -\\frac{dV}{dr}$.",
+      "Total energy of a circular orbit is negative: $E = -\\frac{GMm}{2r}$."
+    ],
+    "summary": "Gravitational potential $V = -\\frac{GM}{r}$ is the work per unit mass to bring a test mass from infinity; potential energy $U = -\\frac{GMm}{r}$ is the negative binding energy of two masses. Near the surface $U \\approx mgh$. The field relates to the potential by $g = -\\frac{dV}{dr}$, and circular orbits have total energy $E = -\\frac{GMm}{2r}$, confirming their bound nature.",
+    "specialNotes": [
+      "Both V and U are defined with reference zero at infinity — that is why they are negative.",
+      "Use $U = mgh$ only for small heights ($h \\ll R$); use $-\\frac{GMm}{r}$ for space-scale problems.",
+      "Potential is a scalar — use scalar addition with multiple masses.",
+      "The escape energy equals $|U|$ at the surface: $GMm/R$.",
+      "NEB may ask 'derive $U = -\\frac{GMm}{r}$ starting from $F = \\frac{GMm}{r^2}$' — know the integration step."
+    ],
+    "importantStatements": [
+      "Gravitational potential at a point is the work done per unit mass in bringing a mass from infinity to that point: $V = -\\frac{GM}{r}$.",
+      "Gravitational potential energy of two masses is $U = -\\frac{GMm}{r}$, taking zero at infinity.",
+      "For small heights near Earth's surface, $U = mgh$.",
+      "The gravitational field is the negative gradient of the potential: $g = -\\frac{dV}{dr}$.",
+      "A satellite in a circular orbit has total energy $E = -\\frac{GMm}{2r}$ (bound system)."
+    ],
+    "importantNotes": [
+      "$V = -\\frac{GM}{r}$ (potential) and $U = -\\frac{GMm}{r}$ (potential energy) both take zero at infinity — hence negative for attracted masses.",
+      "Near Earth's surface use $U = mgh$; for space-scale distances use the inverse-r form.",
+      "The field is the negative slope of the potential: $g = -\\frac{dV}{dr}$.",
+      "Binding energy of a two-mass system $= |U| = GMm/r$.",
+      "Total energy of a circular orbit ($E = -\\frac{GMm}{2r}$) is negative — a signature of a bound state."
+    ],
+    "examShortTricks": [
+      "Escape-energy shortcut: energy to infinity = $GMm/R = mgR$ (since $g = \\frac{GM}{R^2}$).",
+      "Orbital energy memory: $E = -\\frac{GMm}{2r} = U/2$ means $K = -U/2$.",
+      "V at surface $\\approx -6.25\\times 10^{7} \\text{ J/kg}$ for Earth — compare planets by this value.",
+      "When moving closer to a mass, U becomes MORE negative (energy is released).",
+      "Use $mgh$ only when the height is small compared with Earth's radius — a quick sanity check."
+    ],
+    "examNotes": [
+      "Derivation of $U = -\\frac{GMm}{r}$ from integrating $F = \\frac{GMm}{r^2}$ is a standard question.",
+      "Numericals on satellite total energy and escape energy are frequently asked.",
+      "Conceptual MCQ: why is potential energy negative? → because zero is at infinity and gravity is attractive.",
+      "Linking $g = -\\frac{dV}{dr}$ to a $V$–$r$ graph slope appears in higher-level questions.",
+      "Compare $U = mgh$ with $-\\frac{GMm}{r}$: know when each applies."
+    ],
+    "mcs": [
+      {
+        "question": "The gravitational potential at a point at distance r from mass M is:",
+        "options": [
+          "$GM/r$",
+          "$-\\frac{GM}{r}$",
+          "$GM/r^2$",
+          "$-GM/r^2$"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Gravitational potential energy of two masses m and M at distance r is:",
+        "options": [
+          "$+\\frac{GMm}{r}$",
+          "$-\\frac{GMm}{r}$",
+          "$GMm/r^2$",
+          "$-GMm/r^2$"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "As a satellite moves from a higher orbit to a lower one, its potential energy:",
+        "options": [
+          "increases",
+          "decreases (becomes more negative)",
+          "stays the same",
+          "becomes zero"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The total energy of a satellite in a circular orbit is:",
+        "options": [
+          "$+\\frac{GMm}{2r}$",
+          "$-\\frac{GMm}{2r}$",
+          "$GMm/r$",
+          "zero"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "U = mgh is valid when:",
+        "options": [
+          "h is very large",
+          "$h \\ll R$",
+          "g varies with height",
+          "any height"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Gravitational potential $V = -\\frac{GM}{r}$ is scalar work per unit mass.",
+      "Gravitational potential energy $U = -\\frac{GMm}{r}$ equals the negative binding energy.",
+      "Near the surface $U = mgh$; far away use $-\\frac{GMm}{r}$.",
+      "$g = -\\frac{dV}{dr}$ links the vector field to the scalar potential.",
+      "Circular orbits are bound: $E_{\\text{total}} = -\\frac{GMm}{2r} = U/2$."
+    ],
+    "importantTasks": [
+      "Derive $V$ and $U$ starting from $F = \\frac{GMm}{r^2}$ by integration.",
+      "Solve 5 numericals for V and U at various distances.",
+      "Compute the escape energy for Earth, Moon, and Mars.",
+      "Show $K = -U/2$ for a circular orbit.",
+      "Sketch the $V$–$r$ and $U$–$r$ graphs, labelling zero at infinity."
+    ],
+    "exercises": [],
+    "visualization": {}
+  },
+  "originalContent": {
+    "notes": [
+      "**Gravitational potential V:** the work done per unit mass in bringing a test mass from infinity to a point, without acceleration. For a point mass M: $V = -\\frac{GM}{r}$. At infinity $V = 0$, and everywhere else V is negative because gravity does positive work as the mass approaches — the field does the work, so potential decreases.",
+      "**Gravitational potential energy U:** the work done against gravity in assembling a system; for two masses separated by r: $U = -\\frac{GMm}{r}$. It is the energy of the whole system, not of one mass alone. U is negative because the system is bound — you must supply $GMm/r$ of energy to separate the masses to infinity.",
+      "**Why the minus sign matters:** potential energy is defined with zero at infinity. Since the force is attractive, energy is released (and PE decreases) as masses come together. A satellite in orbit at radius r has $U = -\\frac{GMm}{r}$ — its total mechanical energy is $E = K + U = -\\frac{GMm}{2r}$, which is negative, confirming a bound orbit.",
+      "**Near Earth's surface:** for small heights h above the surface, $U = mgh$. This is the constant-g approximation of $-\\frac{GMm}{r}$: since $\\Delta(1/r) \\approx -h/R^2$, the change matches $mgh$. Use $mgh$ only for $h \\ll R$; use $-\\frac{GMm}{r}$ for large altitudes (satellites, rockets).",
+      "**Worked example — escape energy:** to launch a mass m from Earth's surface (R) to infinity you must supply $GMm/R$. Numerically for m = 1 kg: $\\frac{6.67\\times 10^{-11}\\times 5.97\\times 10^{24}}{6.37\\times 10^6} \\approx 6.25\\times 10^{7} \\text{ J} \\approx 62.5 \\text{ MJ}$ per kg. This energy corresponds to the escape speed 11.2 km/s.",
+      "**Potential vs potential energy vs field:** field $g = -\\frac{dV}{dr}$ (the force per unit mass, a vector); potential V is a scalar (J/kg); potential energy $U = mV$. The field is the negative gradient of the potential: $g = -\\frac{dV}{dr}$ radially.",
+      "**Equipotential surfaces:** surfaces of constant V. Moving along an equipotential surface requires zero work; the field is always perpendicular to these surfaces. For a point mass, equipotentials are concentric spheres.",
+      "**Superposition:** for multiple masses, $V = \\sum\\left(-\\frac{GM_i}{r_i}\\right)$ and $U = \\sum\\left(-\\frac{GM_i m}{r_i}\\right)$ — potentials add as scalars, which is much simpler than adding force vectors."
+    ],
+    "confusion": [
+      "❌ 'Potential and potential energy are the same.' ✅ Potential V is work per unit mass (J/kg); potential energy $U = mV$ (J). V belongs to a point in the field; U belongs to the mass–field system.",
+      "❌ 'Negative energy is unphysical.' ✅ Negative potential energy simply means the system is BOUND — energy must be added to separate it. It is a matter of the reference at infinity.",
+      "❌ '$U = mgh$ and $U = -\\frac{GMm}{r}$ disagree.' ✅ They agree for small heights: $mgh$ is the CHANGE in $-\\frac{GMm}{r}$ near the surface. Use the right one for the régime.",
+      "❌ 'Potential is maximum at Earth's surface.' ✅ Potential is most negative at the surface ($-\\frac{GM}{R}$) and rises toward zero with altitude — at infinity it reaches the (higher) value 0.",
+      "❌ 'Doubling the distance doubles the potential energy.' ✅ $U = -\\frac{GMm}{r}$ — doubling r halves the magnitude, so U becomes $-\\frac{GMm}{2r}$ (less negative).",
+      "❌ 'A satellite far away has lots of potential energy.' ✅ A far-away satellite has potential energy near ZERO (least negative, but $U \\approx 0$). It needs enormous kinetic energy (orbital speed) that comes from the launch energy."
+    ],
+    "practice": [
+      "Find V and g at a point 2R above Earth's centre.",
+      "Calculate the potential energy of a 1000 kg satellite at $r = 6.8\\times 10^{6} \\text{ m}$.",
+      "Find the energy required to move a 500 kg mass from R to 3R.",
+      "Show that for a circular orbit $E_{\\text{total}} = U/2 = -\\frac{GMm}{2r}$.",
+      "Derive the escape speed from setting $K + U = 0$ at infinity.",
+      "Find the work needed to place a 10 kg mass at infinity from Earth's surface."
+    ],
+    "universalFacts": [
+      "Gravitational potential energy is exactly the 'missing' energy that binds systems — this is why the binding energy of Earth + satellite equals $|U|$.",
+      "The concept of potential is useful because it is scalar: complex many-body problems reduce to addition rather than vector resolution.",
+      "Near a black hole, gravitational potential becomes so deep ($-\\frac{GM}{r}$) that even light cannot escape — the origin of the event horizon.",
+      "Gravitational potential determines whether planets retain atmospheres: gas molecules with thermal speeds above the local escape speed leak away.",
+      "The Voyager probes were launched using the escape-energy budget — their final trajectory traced the potential wells of the Sun and giant planets."
+    ],
+    "examples": [
+      "V at Earth's surface: $V = -\\frac{GM}{R} = -6.25\\times 10^{7} \\text{ J/kg}$.",
+      "U of 1000 kg satellite at $r = 6.8\\times 10^{6} \\text{ m}$: $U = -\\frac{GMm}{r} = -5.9\\times 10^{10} \\text{ J}$.",
+      "Escape energy per kg: $GM/R = 6.25\\times 10^{7} \\text{ J} \\approx 17 \\text{ kWh}$ per kg.",
+      "Near surface: a 2 kg mass lifted 10 m gains $U = mgh = 196 \\text{ J}$.",
+      "Total energy of circular orbit: $E = -\\frac{GMm}{2r}$ — negative, so the orbit is bound."
+    ],
+    "practiceQuestions": [
+      "Calculate the gravitational potential at a point $3\\times 10^{7} \\text{ m}$ from the centre of Earth ($M = 6\\times 10^{24} \\text{ kg}$).",
+      "Find the gravitational potential energy of a 1500 kg satellite at an altitude of 2000 km above Earth.",
+      "How much energy is required to move a 3000 kg spacecraft from Earth's surface to infinity?",
+      "A 700 kg probe is moved from $r = 8\\times 10^{6} \\text{ m}$ to $r = 5\\times 10^{6} \\text{ m}$. Find the change in its potential energy.",
+      "Derive that for a circular orbit $v^2 = \\frac{GM}{r}$ and hence $E = -\\frac{GMm}{2r}$.",
+      "At what height is the gravitational potential of Earth equal to $-3\\times 10^{7} \\text{ J/kg}$?"
+    ],
+    "formulas": [
+      "Gravitational potential: $V = -\\frac{GM}{r}$ (J/kg)",
+      "Gravitational potential energy: $U = mV = -\\frac{GMm}{r}$ (J)",
+      "Near the surface: $U = mgh$ ($h \\ll R$)",
+      "Field from potential: $g = -\\frac{dV}{dr}$",
+      "Total orbital energy: $E = -\\frac{GMm}{2r} = U/2$"
+    ],
+    "keyPoints": [
+      "$V = -\\frac{GM}{r}$ is negative, approaching zero at infinity.",
+      "$U = -\\frac{GMm}{r}$ is the energy of the (bound) system, negative for attraction.",
+      "Near Earth's surface $U = mgh$ is the appropriate approximation.",
+      "Potential and field connect: $g = -\\frac{dV}{dr}$.",
+      "Total energy of a circular orbit is negative: $E = -\\frac{GMm}{2r}$."
+    ],
+    "summary": "Gravitational potential $V = -\\frac{GM}{r}$ is the work per unit mass to bring a test mass from infinity; potential energy $U = -\\frac{GMm}{r}$ is the negative binding energy of two masses. Near the surface $U \\approx mgh$. The field relates to the potential by $g = -\\frac{dV}{dr}$, and circular orbits have total energy $E = -\\frac{GMm}{2r}$, confirming their bound nature.",
+    "specialNotes": [
+      "Both V and U are defined with reference zero at infinity — that is why they are negative.",
+      "Use $U = mgh$ only for small heights ($h \\ll R$); use $-\\frac{GMm}{r}$ for space-scale problems.",
+      "Potential is a scalar — use scalar addition with multiple masses.",
+      "The escape energy equals $|U|$ at the surface: $GMm/R$.",
+      "NEB may ask 'derive $U = -\\frac{GMm}{r}$ starting from $F = \\frac{GMm}{r^2}$' — know the integration step."
+    ],
+    "importantStatements": [
+      "Gravitational potential at a point is the work done per unit mass in bringing a mass from infinity to that point: $V = -\\frac{GM}{r}$.",
+      "Gravitational potential energy of two masses is $U = -\\frac{GMm}{r}$, taking zero at infinity.",
+      "For small heights near Earth's surface, $U = mgh$.",
+      "The gravitational field is the negative gradient of the potential: $g = -\\frac{dV}{dr}$.",
+      "A satellite in a circular orbit has total energy $E = -\\frac{GMm}{2r}$ (bound system)."
+    ],
+    "importantNotes": [
+      "$V = -\\frac{GM}{r}$ (potential) and $U = -\\frac{GMm}{r}$ (potential energy) both take zero at infinity — hence negative for attracted masses.",
+      "Near Earth's surface use $U = mgh$; for space-scale distances use the inverse-r form.",
+      "The field is the negative slope of the potential: $g = -\\frac{dV}{dr}$.",
+      "Binding energy of a two-mass system $= |U| = GMm/r$.",
+      "Total energy of a circular orbit ($E = -\\frac{GMm}{2r}$) is negative — a signature of a bound state."
+    ],
+    "examShortTricks": [
+      "Escape-energy shortcut: energy to infinity = $GMm/R = mgR$ (since $g = \\frac{GM}{R^2}$).",
+      "Orbital energy memory: $E = -\\frac{GMm}{2r} = U/2$ means $K = -U/2$.",
+      "V at surface $\\approx -6.25\\times 10^{7} \\text{ J/kg}$ for Earth — compare planets by this value.",
+      "When moving closer to a mass, U becomes MORE negative (energy is released).",
+      "Use $mgh$ only when the height is small compared with Earth's radius — a quick sanity check."
+    ],
+    "examNotes": [
+      "Derivation of $U = -\\frac{GMm}{r}$ from integrating $F = \\frac{GMm}{r^2}$ is a standard question.",
+      "Numericals on satellite total energy and escape energy are frequently asked.",
+      "Conceptual MCQ: why is potential energy negative? → because zero is at infinity and gravity is attractive.",
+      "Linking $g = -\\frac{dV}{dr}$ to a $V$–$r$ graph slope appears in higher-level questions.",
+      "Compare $U = mgh$ with $-\\frac{GMm}{r}$: know when each applies."
+    ],
+    "mcs": [
+      {
+        "question": "The gravitational potential at a point at distance r from mass M is:",
+        "options": [
+          "$GM/r$",
+          "$-\\frac{GM}{r}$",
+          "$GM/r^2$",
+          "$-GM/r^2$"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Gravitational potential energy of two masses m and M at distance r is:",
+        "options": [
+          "$+\\frac{GMm}{r}$",
+          "$-\\frac{GMm}{r}$",
+          "$GMm/r^2$",
+          "$-GMm/r^2$"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "As a satellite moves from a higher orbit to a lower one, its potential energy:",
+        "options": [
+          "increases",
+          "decreases (becomes more negative)",
+          "stays the same",
+          "becomes zero"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "The total energy of a satellite in a circular orbit is:",
+        "options": [
+          "$+\\frac{GMm}{2r}$",
+          "$-\\frac{GMm}{2r}$",
+          "$GMm/r$",
+          "zero"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "U = mgh is valid when:",
+        "options": [
+          "h is very large",
+          "$h \\ll R$",
+          "g varies with height",
+          "any height"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Gravitational potential $V = -\\frac{GM}{r}$ is scalar work per unit mass.",
+      "Gravitational potential energy $U = -\\frac{GMm}{r}$ equals the negative binding energy.",
+      "Near the surface $U = mgh$; far away use $-\\frac{GMm}{r}$.",
+      "$g = -\\frac{dV}{dr}$ links the vector field to the scalar potential.",
+      "Circular orbits are bound: $E_{\\text{total}} = -\\frac{GMm}{2r} = U/2$."
+    ],
+    "importantTasks": [
+      "Derive $V$ and $U$ starting from $F = \\frac{GMm}{r^2}$ by integration.",
+      "Solve 5 numericals for V and U at various distances.",
+      "Compute the escape energy for Earth, Moon, and Mars.",
+      "Show $K = -U/2$ for a circular orbit.",
+      "Sketch the $V$–$r$ and $U$–$r$ graphs, labelling zero at infinity."
+    ],
+    "exercises": [],
+    "visualization": {}
+  }
+}

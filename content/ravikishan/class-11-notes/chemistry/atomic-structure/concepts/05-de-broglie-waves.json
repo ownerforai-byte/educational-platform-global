@@ -1,213 +1,60 @@
 {
-  "title": "de Broglie Matter Waves",
+  "title": "Elementary Idea of the Quantum Mechanical Model — de Broglie's Wave Equation",
   "unitSlug": "atomic-structure",
-  "topicSlug": "de-broglie-waves",
-  "topicTitle": "de Broglie Matter Waves",
-  "relevance": 75,
+  "topicSlug": "elementary-idea-of-quantum-mechanical-model-de-broglie-s-wave-equation",
+  "topicTitle": "Elementary idea of quantum mechanical model: de Broglie's wave equation",
+  "relevance": 100,
   "notes": [
-    "Rutherford's model: nucleus existence via α-scattering.",
-    "Bohr's model: quantized energy levels, atomic stability.",
-    "Wave-particle duality (de Broglie), Uncertainty Principle (Heisenberg)."
+    "### 1. Meaning — dual nature of matter",
+    "Light behaves both as a wave and as a stream of particles (photons). In 1924 Louis de Broglie proposed the converse for matter: every moving material particle has a wave associated with it. These waves are called **matter waves** or de Broglie waves, and the hypothesis is the bridge from Bohr's orbits to the quantum-mechanical model.",
+    "### 2. de Broglie's wave equation",
+    "For a particle of mass m moving with speed v, wavelength $\\lambda=\\frac{h}{mv}=\\frac{h}{p}$; using kinetic energy, $\\lambda=\\frac{h}{\\sqrt{2mKE}}$; for an electron accelerated through a potential difference V volts, $\\lambda=\\frac{h}{\\sqrt{2meV}}=\\sqrt{\\frac{150}{V}}\\ \\text{Å}\\approx\\frac{12.27}{\\sqrt{V}}\\ \\text{Å}$. Derivation sketch: from $E=mc^{2}$ and $E=h\\nu$ for a photon, $\\lambda=h/p$ is obtained and applied to matter.",
+    "### 3. Meaning of the numbers",
+    "λ ∝ 1/m and ∝ 1/v: a 1 g mass moving at 1 m s⁻¹ has λ ≈ 6.6 × 10⁻³¹ m — unobservably small, which is why cricket balls show no wave nature. A 100 V electron has λ ≈ 1.23 Å, comparable with atomic spacings, so crystals diffract electrons. Wave behaviour is therefore a *microscopic* phenomenon.",
+    "### 4. Experimental proof",
+    "Davisson and Germer (1927) diffracted slow electrons from a nickel crystal and obtained a diffraction pattern whose maxima obey nλ = d sin θ; G. P. Thomson obtained similar patterns with high-speed electrons. Electron diffraction is the direct proof of matter waves.",
+    "### 5. How de Broglie's idea repairs Bohr's model",
+    "If the electron forms a standing wave round the orbit, the circumference must contain a whole number of wavelengths: nλ = 2πr. Substituting λ = h/mv gives mvr = nh/2π — Bohr's *unexplained* quantisation postulate now has a physical meaning. Modern quantum mechanics (Schrödinger, 1926) replaced the orbit by a wave function ψ, whose square |ψ|² gives the probability density of finding the electron — the **orbital**.",
+    "### 6. Applications",
+    "• Electron microscopes use the tiny λ of accelerated electrons to resolve objects far smaller than light allows; electron and neutron diffraction determine crystal and molecular structures.",
+    "• Explains quantisation of energy levels, the origin of quantum numbers, quantum tunnelling (STM, tunnel diodes, alpha decay) and the whole wave-mechanical picture of the atom.",
+    "• Underlies semiconductor physics, quantum dots, lasers and matter-wave interferometry (atom interferometers, BEC experiments).",
+    "### 7. Limitations of the elementary treatment",
+    "λ = h/mv is non-relativistic (for v close to c use λ = h/√(p² + (mv)²/c²) type corrections); the wave function is a *probability amplitude*, not a mechanical wave in a medium; the simple equation applies to a single free particle and needs the Schrödinger equation in a potential; the wavelength of everyday objects is far too small to detect."
   ],
   "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
+    "❌ Matter waves are electromagnetic waves. ✅ They are probability (matter) waves carrying no charge; they are not E–B oscillations.",
+    "❌ Heavier bodies have longer wavelengths. ✅ λ = h/mv — larger mass means a *shorter* (unobservable) wavelength.",
+    "❌ de Broglie's hypothesis was accepted immediately on publication. ✅ It became convincing only after the Davisson–Germer electron-diffraction experiment (1927).",
+    "❌ de Broglie's waves replace Bohr's quantisation with nothing. ✅ They *justify* it through the standing-wave condition nλ = 2πr.",
+    "❌ An electron microscope uses electron particles and light waves together. ✅ It uses the electron's short de Broglie wavelength, not visible light."
   ],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 05 de broglie waves."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Calculate de Broglie wavelength of electron at 10⁶ m/s: λ ≈ 0.727 nm"
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "State and explain de Broglie's wave equation; derive λ = h/mv for a material particle.",
+    "Explain why the wave nature of matter is not observed for ordinary objects.",
+    "Show that the standing-wave condition nλ = 2πr leads to Bohr's quantisation of angular momentum.",
+    "Calculate the de Broglie wavelength of an electron accelerated through 100 V.",
+    "Describe the Davisson–Germer experiment as evidence for matter waves and give two applications of electron waves."
   ],
   "formulas": [
-    "E=hν",
-    "λ=h/mv",
-    "ΔxΔp≥h/4π"
+    "$$\\lambda=\\frac{h}{mv}=\\frac{h}{p}=\\frac{h}{\\sqrt{2mKE}}$$",
+    "$$\\lambda_{\\text{electron}}=\\frac{h}{\\sqrt{2meV}}=\\frac{12.27}{\\sqrt{V}}\\ \\text{Å}\\quad (V\\text{ in volts})$$",
+    "$$n\\lambda=2\\pi r\\;\\Rightarrow\\;mvr=\\frac{nh}{2\\pi}$$"
   ],
-  "keyPoints": [
-    "Core point for 05 de broglie waves."
+  "universalFacts": [
+    "de Broglie proposed matter waves in his 1924 PhD thesis and won the 1929 Nobel Prize in Physics.",
+    "Davisson and Germer confirmed electron diffraction in 1927 (Nobel Prize 1937).",
+    "λ for a 100 V electron ≈ 1.23 Å; a 1 g body at 1 m s⁻¹ has λ ≈ 6.6 × 10⁻³¹ m — undetectable."
   ],
-  "summary": "The atomic structure evolved from Thomson's plum pudding model to Bohr's quantized model and finally to the quantum mechanical model, explaining spectral lines and stability.",
-  "specialNotes": [
-    "Specialized insight for 05 de broglie waves."
-  ],
-  "importantStatements": [
-    "Key statement for 05 de broglie waves."
+  "examples": [
+    "**Problem:** de Broglie wavelength of an electron moving at 10⁶ m s⁻¹. **Solution:** λ = 6.626×10⁻³⁴/(9.11×10⁻³¹ × 10⁶) = 7.27 × 10⁻¹⁰ m = 0.727 nm.",
+    "**Problem:** Wavelength of a 1.0 g bullet moving at 300 m s⁻¹. **Solution:** λ = 6.626×10⁻³⁴/(10⁻³ × 300) = 2.2 × 10⁻³³ m — many orders of magnitude smaller than any aperture, so no diffraction is observed."
   ],
   "importantNotes": [
-    "Important note regarding 05 de broglie waves."
+    "Quotes the two key results for the exam: λ = h/mv and λ(electron) = 12.27/√V Å.",
+    "Matter waves are not electromagnetic — say 'probability wave', not 'light wave'.",
+    "Keep mass in kg, speed in m s⁻¹ and h = 6.626 × 10⁻³⁴ J s to avoid order-of-magnitude errors."
   ],
-  "examShortTricks": [
-    "Recall the formula for de Broglie Matter Waves."
-  ],
-  "examNotes": [
-    "Focus on de Broglie Matter Waves problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 05 de broglie waves?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 05 de broglie waves."
-  ],
-  "importantTasks": [
-    "Task for studying 05 de broglie waves."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "05-de-broglie-waves",
-  "mcqs": [
-    {
-      "question": "Who proposed the dual nature of matter?",
-      "options": [
-        "Planck",
-        "de Broglie",
-        "Bohr",
-        "Heisenberg"
-      ],
-      "answer": "B"
-    },
-    {
-      "question": "The radius of the nth orbit of hydrogen atom is proportional to:",
-      "options": [
-        "n",
-        "n²",
-        "n³",
-        "n⁴"
-      ],
-      "answer": "B"
-    }
-  ],
-  "exercises": [
-    {
-      "id": "ex-1",
-      "question": "Calculate the de Broglie wavelength of an electron moving at 10⁶ m/s.",
-      "steps": [
-        "Formula: λ = h / (m * v)",
-        "Given: h = 6.626 x 10⁻³⁴ J·s, m = 9.11 x 10⁻³¹ kg, v = 10⁶ m/s",
-        "Calculation: λ = 6.626e-34 / (9.11e-31 * 1e6)",
-        "Result: ~7.27 x 10⁻¹⁰ m (or 0.727 nm)"
-      ],
-      "answer": "0.727 nm"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "RutherfordScatteringSim",
-    "description": "Interactive visualization of α-particle deflection by the nucleus."
-  },
-  "visualType": "de-broglie-matter-waves"
+  "visualType": "de-broglie",
+  "tabGroup": "Atomic-Structure-Learner-Notes"
 }

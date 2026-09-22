@@ -13,7 +13,13 @@ import {
   Calculator,
   TrendingUp,
   MoveHorizontal,
+  Target,
+  Lightbulb,
+  Play,
 } from "lucide-react";
+import { MathMarkdown } from "@/components/content/math-markdown";
+import { QuadraticAdditionalVisual } from "./additional-questions-visuals";
+import { Schematic } from "./schematic-frame";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -90,91 +96,41 @@ function ParabolaVisual() {
       </div>
 
       <div className="flex justify-center">
-        <svg
-          viewBox={`0 0 ${w} ${h2}`}
-          className="w-full max-w-lg border rounded-lg bg-slate-950"
+        <Schematic
+          w={w} h={h2} ox={ox} oy={oy} scale={scale}
+          tickStep={1}
+          legend={[
+            { color: "#38bdf8", label: "y = ax² + bx + c" },
+            { color: "#6366f1", label: "axis of symmetry", dashed: true },
+            { color: "#f97316", label: "vertex" },
+            { color: "#facc15", label: "y-intercept" },
+            { color: "#10b981", label: "roots" },
+          ]}
+          xLabel="x" yLabel="y"
         >
-          {/* Axes */}
-          <line x1={0} y1={oy} x2={w} y2={oy} stroke="#475569" strokeWidth="1" />
-          <line x1={ox} y1={0} x2={ox} y2={h2} stroke="#475569" strokeWidth="1" />
-          <text x={w - 10} y={oy - 5} fill="#64748b" fontSize="10">x</text>
-          <text x={ox + 5} y={12} fill="#64748b" fontSize="10">y</text>
-
-          {/* Axis of symmetry (dashed line) */}
-          <line
-            x1={axisX}
-            y1={0}
-            x2={axisX}
-            y2={h2}
-            stroke="#6366f1"
-            strokeWidth="1"
-            strokeDasharray="4 4"
-            opacity="0.6"
-          />
-
-          {/* Graph line */}
+          {/* Axis of symmetry (dashed) */}
+          <line x1={axisX} y1={0} x2={axisX} y2={h2} stroke="#6366f1" strokeWidth="1" strokeDasharray="4 4" opacity="0.6" />
+          {/* Parabola */}
           {graphPoints.length > 1 && (
-            <polyline
-              points={graphPoints.join(" ")}
-              fill="none"
-              stroke="#38bdf8"
-              strokeWidth="2"
-            />
+            <polyline points={graphPoints.join(" ")} fill="none" stroke="#38bdf8" strokeWidth="2" />
           )}
-
-          {/* Vertex point (highlighted) */}
-          <circle
-            cx={toSvgX(vertexX)}
-            cy={toSvgY(vertexY)}
-            r="6"
-            fill="#f97316"
-            stroke="#ffffff"
-            strokeWidth="2"
-          />
-
-          {/* Roots (x-intercepts) */}
+          {/* y-intercept */}
+          <circle cx={toSvgX(0)} cy={toSvgY(c[0])} r="4" fill="#facc15" stroke="#fff" strokeWidth="1" />
+          {/* Vertex */}
+          <circle cx={toSvgX(vertexX)} cy={toSvgY(vertexY)} r="6" fill="#f97316" stroke="#fff" strokeWidth="2" />
+          {/* Roots */}
           {roots.map((root, index) => (
-            <circle
-              key={index}
-              cx={toSvgX(root.x)}
-              cy={toSvgY(root.y)}
-              r="5"
-              fill={root.color}
-              stroke="#ffffff"
-              strokeWidth="1.5"
-            />
+            <circle key={index} cx={toSvgX(root.x)} cy={toSvgY(root.y)} r="5" fill={root.color} stroke="#fff" strokeWidth="1.5" />
           ))}
-
           {/* Labels */}
-          <text
-            x={axisX - 5}
-            y={oy + 15}
-            fill="#6366f1"
-            fontSize="10"
-          >
-            x = {vertexX.toFixed(2)}
-          </text>
+          <text x={axisX + 4} y={h2 - 6} fill="#6366f1" fontSize="9">{`x = `}{vertexX.toFixed(2)}</text>
           {roots.length > 0 && (
-            <text
-              x={toSvgX(roots[0].x) - 15}
-              y={toSvgY(roots[0].y) - 10}
-              fill="#10b981"
-              fontSize="9"
-            >
-              x₁ = {root1.toFixed(2)}
-            </text>
+            <text x={toSvgX(roots[0].x) - 4} y={toSvgY(0) - 10} fill="#10b981" fontSize="9">{`x₁ = `}{root1.toFixed(2)}</text>
           )}
           {roots.length > 1 && (
-            <text
-              x={toSvgX(roots[1].x) + 5}
-              y={toSvgY(roots[1].y) - 10}
-              fill="#10b981"
-              fontSize="9"
-            >
-              x₂ = {root2.toFixed(2)}
-            </text>
+            <text x={toSvgX(roots[1].x) + 4} y={toSvgY(0) - 10} fill="#10b981" fontSize="9">{`x₂ = `}{root2.toFixed(2)}</text>
           )}
-        </svg>
+        </Schematic>
       </div>
 
       <div className="grid grid-cols-2 gap-4 text-xs">
@@ -526,6 +482,109 @@ export function QuadraticEquationResources() {
           </Tabs>
         </CardContent>
       </Card>
+
+
+
+
+
+{/* Solved Solutions & Extra Hard Questions */}
+      <Card className="border-amber-200 dark:border-amber-800 bg-gradient-to-br from-amber-50/50 to-transparent dark:from-amber-950/20">
+        <CardHeader className="pb-3">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-amber-100 dark:bg-amber-900/40 rounded-lg">
+              <Target className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+            </div>
+            <div>
+              <CardTitle className="text-lg">Solved Solutions &amp; Extra Hard Questions</CardTitle>
+              <p className="text-sm text-muted-foreground mt-0.5">
+                Concept notes, step-by-step solutions, and advanced problems for Quadratic Equations
+              </p>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent className="space-y-5">
+          <div>
+            <h4 className="text-sm font-semibold mb-2 flex items-center gap-2 text-amber-600 dark:text-amber-400">
+              <Lightbulb className="w-4 h-4" /> Concept &amp; Meaning
+            </h4>
+            <MathMarkdown
+              className="text-xs text-muted-foreground bg-amber-50/40 dark:bg-amber-950/20 p-3 rounded-lg border border-amber-200/50 dark:border-amber-900/40"
+              content={`A <strong>quadratic equation</strong> has the form $ax^2 + bx + c = 0$ with $a \\neq 0$; its graph is a parabola. The <strong>discriminant</strong> $D = b^2 - 4ac$ sets the nature of the roots: $D > 0$ means two distinct real roots, $D = 0$ means one repeated real root, $D < 0$ means two complex conjugate roots. <strong>Vieta's formulas</strong> link roots to coefficients without solving: sum $\\alpha + \\beta = -b/a$ and product $\\alpha\\beta = c/a$.`}
+            />
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold mb-2 flex items-center gap-2 text-green-600 dark:text-green-400">
+              <BookOpen className="w-4 h-4" /> Solved Solution — Building a Quadratic from Its Roots
+            </h4>
+            <MathMarkdown
+              className="text-xs bg-green-50/40 dark:bg-green-950/20 p-3 rounded-lg border border-green-200/50 dark:border-green-900/40"
+              content={`**Problem:** Find the quadratic equation with roots $\\alpha = 2 + \\sqrt{3}$ and $\\beta = 2 - \\sqrt{3}$.
+
+**Solution:**
+Sum: $\\alpha + \\beta = (2+\\sqrt{3}) + (2-\\sqrt{3}) = 4$
+Product: $\\alpha\\beta = (2+\\sqrt{3})(2-\\sqrt{3}) = 4 - 3 = 1$
+
+The quadratic is $x^2 - (\\alpha+\\beta)x + \\alpha\\beta = 0$:
+$$\\boxed{x^2 - 4x + 1 = 0}$$
+
+**Verification:** $D = 16 - 4 = 12 > 0$ &rarr; two distinct real roots &check;.`}
+            />
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold mb-2 flex items-center gap-2 text-purple-600 dark:text-purple-400">
+              <Target className="w-4 h-4" /> Extra Hard Questions
+            </h4>
+            <div className="space-y-2">
+              {[
+                { q: "Find all real values of k for which $kx^2 - 3x + 1 = 0$ has two distinct real roots.", hint: "Two distinct real roots means D &gt; 0 AND a &ne; 0.", ans: "$D = 9 - 4k &gt; 0$ &rarr; $k &lt; 9/4$; also $k \\neq 0$. So $k \\in (-\\infty,0) \\cup (0, 9/4)$." },
+                { q: "Prove: if $a + b + c = 0$, then $x = 1$ is always a root of $ax^2 + bx + c = 0$.", hint: "Substitute $x = 1$ and use the given condition.", ans: "$a(1)^2 + b(1) + c = a + b + c = 0$ &check;, so $(x - 1)$ is a factor." },
+                { q: "Solve the biquadratic $x^4 - 5x^2 + 4 = 0$ and list all four roots.", hint: "Substitute $u = x^2$ to reduce to a quadratic in u.", ans: "$u^2 - 5u + 4 = 0$ &rarr; $u = 1, 4$ &rarr; $x = \\pm 1, \\pm 2$ (four real roots)." },
+                { q: "Find the values of m for which $mx^2 + (2m+1)x + m + 1 = 0$ has equal roots.", hint: "Equal roots means D = 0.", ans: "$D = (2m+1)^2 - 4m(m+1) = 1$ for all m, so $D=0$ is impossible: no real m gives equal roots." },
+                { q: "If $\\alpha, \\beta$ are the roots of $x^2 - 3x + 1 = 0$, form the quadratic whose roots are $\\alpha^2/\\beta$ and $\\beta^2/\\alpha$.", hint: "Use sum/product of $\\alpha, \\beta$ to get the new sum and product.", ans: "New sum $= (\\alpha^3+\\beta^3)/(\\alpha\\beta) = ((\\alpha+\\beta)^3 - 3\\alpha\\beta(\\alpha+\\beta))/(\\alpha\\beta) = 18$; new product $= \\alpha\\beta = 1$. So $x^2 - 18x + 1 = 0$." },
+              ].map((item, i) => (
+                <details key={i} className="rounded-lg border bg-background/60 p-3">
+                  <summary className="text-sm cursor-pointer list-none flex items-start gap-2">
+                    <span className="text-purple-500 font-semibold shrink-0">Q{i + 1}.</span>
+                    <MathMarkdown content={item.q} className="flex-1 text-xs" />
+                  </summary>
+                  <div className="mt-2 space-y-2 text-xs pl-6">
+                    <MathMarkdown
+                      content={"**Hint:** " + item.hint}
+                      className="text-muted-foreground"
+                    />
+                    <MathMarkdown
+                      content={"**Answer:** " + item.ans}
+                      className="text-green-700 dark:text-green-400 bg-green-50/40 dark:bg-green-950/20 p-2 rounded-lg border border-green-200/50 dark:border-green-900/40"
+                    />
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+
+      {/* Additional Question Visuals */}
+      <Card className="border-amber-200 dark:border-amber-800 bg-gradient-to-br from-amber-50/50 to-transparent dark:from-amber-950/20">
+        <CardHeader className="pb-3">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-amber-100 dark:bg-amber-900/40 rounded-lg">
+              <Play className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+            </div>
+            <div>
+              <CardTitle className="text-lg">Additional-Question Visuals — Quadratic Equation</CardTitle>
+              <p className="text-sm text-muted-foreground mt-0.5">Interactive visuals for the extra hard questions above</p>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <QuadraticAdditionalVisual />
+        </CardContent>
+      </Card>
+
     </div>
   );
 }

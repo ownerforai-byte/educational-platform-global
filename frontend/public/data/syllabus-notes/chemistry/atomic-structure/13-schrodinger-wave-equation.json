@@ -1,81 +1,65 @@
 {
-  "title": "Schrödinger's Wave Equation & the Orbit→Orbital Shift",
+  "title": "Schrödinger's Wave Equation — Elementary Idea",
   "unitSlug": "atomic-structure",
   "topicSlug": "elementary-idea-of-quantum-mechanical-model-de-broglie-s-wave-equation",
   "topicTitle": "Elementary idea of quantum mechanical model: de Broglie's wave equation",
-  "relevance": 78,
+  "relevance": 85,
   "notes": [
-    "Detailed notes on 13 schrodinger wave equation within the atomic structure unit."
+    "### Focus of this tab",
+    "The equation that turned de Broglie's matter waves into the quantum-mechanical model — what ψ means, what solving it gives, and how the four quantum numbers appear.",
+    "### The equation (elementary form)",
+    "For a particle moving in one dimension: $-\\frac{h^{2}}{8\\pi^{2}m}\\frac{d^{2}\\psi}{dx^{2}}+V\\psi=E\\psi$, i.e. $\\hat{H}\\psi=E\\psi$ — a wave equation in which the 'wave property' comes from de Broglie (through the momentum operator) and the energy from classical mechanics. For the hydrogen atom V is the Coulomb potential, and the equation is solved in spherical coordinates $(r,\\theta,\\phi)$.",
+    "### What ψ and ψ² mean",
+    "ψ itself has no direct physical meaning; the measurable quantity is **|ψ|², the probability density** — the chance of finding the electron in a unit volume at that point. Max Born supplied this interpretation. The total probability over all space is normalised to 1 (∫|ψ|²dV = 1). Regions where ψ = 0 are **nodes**.",
+    "### What solving the hydrogen atom gives",
+    "• A set of allowed wave functions ψₙ,ₗ,ₘ (orbitals) labelled by three quantum numbers — n (size/energy), l (shape), m (orientation) — that arise automatically from the boundary conditions (ψ must be single-valued, finite and vanish at infinity).",
+    "• Energies $E_{n}=-13.6/n^{2}$ eV, agreeing with Bohr — but degeneracy appears: for n = 2 the solutions 2s and 2p have the same energy, which Bohr cannot give.",
+    "• Probability distributions instead of paths: the electron cloud, radial probability maxima (0.529 Å for 1s), and orbital shapes (spherical s, dumbbell p).",
+    "### Why this replaces Bohr",
+    "The uncertainty principle forbids definite orbits; Schrödinger's equation never uses a trajectory. It works for multi-electron atoms (approximately, with effective nuclear charge), explains fine structure when spin is added, and predicts molecular bonding — every defect of Bohr's theory is repaired."
   ],
   "confusion": [
-    "❌ Misconception about 13 schrodinger wave equation. ✅ Scientific explanation."
+    "❌ ψ is a measurable wave like a light wave. ✅ ψ is a probability amplitude; only |ψ|² is physically meaningful.",
+    "❌ Quantum numbers are put in by hand. ✅ They emerge from solving the equation with boundary conditions.",
+    "❌ Solving the equation gives exact paths. ✅ It gives probability distributions; trajectories do not exist."
   ],
   "practice": [
-    "Practice exercise for 13 schrodinger wave equation."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 13 schrodinger wave equation."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 13 schrodinger wave equation."
-  ],
-  "practiceQuestions": [
-    "Practice question for 13 schrodinger wave equation."
+    "Write the time-independent Schrödinger equation for a particle in one dimension and explain each term.",
+    "What is the physical significance of ψ and ψ²?",
+    "How do the quantum numbers arise from the solution for the hydrogen atom?",
+    "Give two results of the quantum-mechanical model that Bohr's model cannot provide."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 13 schrodinger wave equation)"
+    "$$\\hat{H}\\psi=E\\psi,\\qquad \\frac{d^{2}\\psi}{dx^{2}}+\\frac{8\\pi^{2}m}{h^{2}}(E-V)\\psi=0$$",
+    "$$\\int|\\psi|^{2}dV=1\\ (\\text{normalisation});\\qquad |\\psi|^{2}=\\text{probability density}$$"
   ],
-  "keyPoints": [
-    "Core point for 13 schrodinger wave equation."
+  "universalFacts": [
+    "Schrödinger published the equation in 1926 and received the Nobel Prize in 1933 (shared with Dirac).",
+    "The hydrogen solution reproduces Bohr's −13.6/n² eV energies exactly, plus the degeneracy Bohr missed.",
+    "The name 'orbital' replaced 'orbit' because ψ² gives a probability cloud, not a path."
   ],
-  "summary": "Summary of 13 schrodinger wave equation.",
-  "specialNotes": [
-    "Specialized insight for 13 schrodinger wave equation."
-  ],
-  "importantStatements": [
-    "Key statement for 13 schrodinger wave equation."
+  "examples": [
+    "**Problem:** Why does the equation give discrete energies? **Solution:** acceptable ψ must be continuous, single-valued and normalisable; these boundary conditions are satisfied only for special values of E — the same logic that quantises a vibrating guitar string."
   ],
   "importantNotes": [
-    "Important note regarding 13 schrodinger wave equation."
+    "State that ψ has no physical meaning by itself; the probability interpretation is Born's.",
+    "Mention the boundary conditions — they are the reason for quantisation."
   ],
-  "examShortTricks": [
-    "Recall the formula for Schrödinger's Wave Equation & the Orbit→Orbital Shift."
-  ],
-  "examNotes": [
-    "Focus on Schrödinger's Wave Equation & the Orbit→Orbital Shift problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 13 schrodinger wave equation?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 13 schrodinger wave equation."
-  ],
-  "importantTasks": [
-    "Task for studying 13 schrodinger wave equation."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "13-schrodinger-wave-equation",
   "mcqs": [
     {
-      "question": "Question about 13 schrodinger wave equation?",
+      "question": "The physically significant quantity in the quantum-mechanical model is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "ψ",
+        "ψ²",
+        "E",
+        "V"
       ],
-      "answer": "A"
+      "answer": "B"
     }
-  ]
+  ],
+  "visualType": "schrodinger",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "13-schrodinger-wave-equation.json"
 }

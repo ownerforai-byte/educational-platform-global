@@ -12,7 +12,13 @@ import {
   FileText,
   TrendingUp,
   Calculator,
+  Target,
+  Lightbulb,
+  Play,
 } from "lucide-react";
+import { MathMarkdown } from "@/components/content/math-markdown";
+import { DerivativesAdditionalVisual } from "./additional-questions-visuals";
+import { Schematic } from "./schematic-frame";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -122,86 +128,38 @@ function DerivativeGraphVisual() {
         </div>
       </div>
       <div className="flex justify-center">
-        <svg
-          viewBox={`0 0 ${w} ${h}`}
-          className="w-full max-w-lg border rounded-lg bg-slate-950"
+        <Schematic
+          w={w} h={h} ox={ox} oy={oy} scale={scale}
+          tickStep={1}
+          legend={[
+            { color: color, label: "f(x)" },
+            { color: derivativeColor, label: "f′(x)", dashed: true },
+            { color: "#f97316", label: "tangent at x", dashed: true },
+          ]}
+          xLabel="x" yLabel="y"
         >
-          {/* Axes */}
-          <line x1={0} y1={oy} x2={w} y2={oy} stroke="#475569" strokeWidth="1" />
-          <line x1={ox} y1={0} x2={ox} y2={h} stroke="#475569" strokeWidth="1" />
-          <text x={w - 10} y={oy - 5} fill="#64748b" fontSize="10">x</text>
-          <text x={ox + 5} y={12} fill="#64748b" fontSize="10">y</text>
-
           {/* Function curve */}
           {funcPoints.length > 1 && (
-            <polyline
-              points={funcPoints.join(" ")}
-              fill="none"
-              stroke={color}
-              strokeWidth="2"
-            />
+            <polyline points={funcPoints.join(" ")} fill="none" stroke={color} strokeWidth="2" />
           )}
-
           {/* Derivative curve */}
           {derivPoints.length > 1 && (
-            <polyline
-              points={derivPoints.join(" ")}
-              fill="none"
-              stroke={derivativeColor}
-              strokeWidth="2"
-              strokeDasharray="4 2"
-            />
+            <polyline points={derivPoints.join(" ")} fill="none" stroke={derivativeColor} strokeWidth="2" strokeDasharray="4 2" />
           )}
-
           {/* Tangent line */}
           <line
-            x1={toSvgX(tangentX1)}
-            y1={toSvgY(tangentY1)}
-            x2={toSvgX(tangentX2)}
-            y2={toSvgY(tangentY2)}
-            stroke="#f97316"
-            strokeWidth="2"
-            strokeDasharray="3 3"
+            x1={toSvgX(tangentX1)} y1={toSvgY(tangentY1)}
+            x2={toSvgX(tangentX2)} y2={toSvgY(tangentY2)}
+            stroke="#f97316" strokeWidth="2" strokeDasharray="3 3"
           />
-
           {/* Point on function */}
-          <circle
-            cx={toSvgX(pointX)}
-            cy={toSvgY(tangentY)}
-            r="5"
-            fill={color}
-            stroke="#fff"
-            strokeWidth="2"
-          />
-
+          <circle cx={toSvgX(pointX)} cy={toSvgY(tangentY)} r="5" fill={color} stroke="#fff" strokeWidth="2" />
           {/* Point on derivative */}
-          <circle
-            cx={toSvgX(pointX)}
-            cy={toSvgY(tangentSlope)}
-            r="4"
-            fill={derivativeColor}
-            stroke="#fff"
-            strokeWidth="1.5"
-          />
-
+          <circle cx={toSvgX(pointX)} cy={toSvgY(tangentSlope)} r="4" fill={derivativeColor} stroke="#fff" strokeWidth="1.5" />
           {/* Labels */}
-          <text
-            x={toSvgX(pointX) + 8}
-            y={toSvgY(tangentY) - 8}
-            fill={color}
-            fontSize="10"
-          >
-            ({pointX}, {tangentY.toFixed(1)})
-          </text>
-          <text
-            x={toSvgX(pointX) + 8}
-            y={toSvgY(tangentSlope) - 8}
-            fill={derivativeColor}
-            fontSize="10"
-          >
-            ({pointX}, {tangentSlope.toFixed(1)})
-          </text>
-        </svg>
+          <text x={toSvgX(pointX) + 8} y={toSvgY(tangentY) - 8} fill={color} fontSize="10">{`(${pointX}, ${tangentY.toFixed(1)})`}</text>
+          <text x={toSvgX(pointX) + 8} y={toSvgY(tangentSlope) + 14} fill={derivativeColor} fontSize="10">{`(${pointX}, ${tangentSlope.toFixed(1)})`}</text>
+        </Schematic>
       </div>
       <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">
         <strong className="text-foreground">Derivative Visualization:</strong> The blue curve shows f(x) and the purple dashed curve shows f&prime;(x). At x = {pointX}, the tangent line (orange dashed) has slope {tangentSlope.toFixed(3)}, which is the value of the derivative at that point.
@@ -546,6 +504,123 @@ export function DifferentiationResources() {
           </Tabs>
         </CardContent>
       </Card>
+
+
+
+
+
+{/* Solved Solutions & Extra Hard Questions */}
+      <Card className="border-amber-200 dark:border-amber-800 bg-gradient-to-br from-amber-50/50 to-transparent dark:from-amber-950/20">
+        <CardHeader className="pb-3">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-amber-100 dark:bg-amber-900/40 rounded-lg">
+              <Target className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+            </div>
+            <div>
+              <CardTitle className="text-lg">Solved Solutions &amp; Extra Hard Questions</CardTitle>
+              <p className="text-sm text-muted-foreground mt-0.5">
+                Concept notes, differentiation rules, and harder derivative problems
+              </p>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent className="space-y-5">
+          <div>
+            <h4 className="text-sm font-semibold mb-2 flex items-center gap-2 text-amber-600 dark:text-amber-400">
+              <Lightbulb className="w-4 h-4" /> Concept &amp; Meaning
+            </h4>
+            <MathMarkdown
+              className="text-xs text-muted-foreground bg-amber-50/40 dark:bg-amber-950/20 p-3 rounded-lg border border-amber-200/50 dark:border-amber-900/40"
+              content={`The <strong>derivative</strong> $f'(x)$ is the instantaneous rate of change of $f$ at $x$ — geometrically, the slope of the tangent line at that point. It is defined as $f'(x) = \\lim_{h \\to 0} \\dfrac{f(x+h)-f(x)}{h}$. Key rules: <strong>Power</strong> $(x^n)' = nx^{n-1}$, <strong>Product</strong> $(uv)' = u'v + uv'$, <strong>Quotient</strong> $(u/v)' = (u'v-uv')/v^2$, and <strong>Chain</strong> $\\dfrac{d}{dx}[f(g(x))] = f'(g(x))\\cdot g'(x)$.`}
+            />
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold mb-2 flex items-center gap-2 text-green-600 dark:text-green-400">
+              <BookOpen className="w-4 h-4" /> Solved Solution — Differentiate $y = x^2 \\sin x \\; e^x$
+            </h4>
+            <MathMarkdown
+              className="text-xs bg-green-50/40 dark:bg-green-950/20 p-3 rounded-lg border border-green-200/50 dark:border-green-900/40"
+              content={`**Product rule (three factors):** Let $u = x^2$, $v = \\sin x$, $w = e^x$.
+
+$u' = 2x$,  $v' = \\cos x$,  $w' = e^x$
+
+$(uvw)' = u'vw + uv'w + uvw'$
+$$= 2x\\sin x\\,e^x + x^2\\cos x\\,e^x + x^2\\sin x\\,e^x$$
+$$= \\boxed{e^x\\,x\\,(x + \\sin x + x\\cos x)}$`}
+            />
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold mb-2 flex items-center gap-2 text-green-600 dark:text-green-400">
+              <BookOpen className="w-4 h-4" /> Solved Solution — Derivative by First Principles
+            </h4>
+            <MathMarkdown
+              className="text-xs bg-green-50/40 dark:bg-green-950/20 p-3 rounded-lg border border-green-200/50 dark:border-green-900/40"
+              content={`**Problem:** Differentiate $f(x) = x^3$ from first principles.
+
+$f'(x) = \\lim_{h \\to 0} \\dfrac{(x+h)^3 - x^3}{h}$
+
+$(x+h)^3 = x^3 + 3x^2h + 3xh^2 + h^3$
+
+$$f'(x) = \\lim_{h \\to 0} \\dfrac{3x^2h + 3xh^2 + h^3}{h} = \\lim_{h \\to 0}(3x^2 + 3xh + h^2) = \\boxed{3x^2}$`}
+            />
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold mb-2 flex items-center gap-2 text-purple-600 dark:text-purple-400">
+              <Target className="w-4 h-4" /> Extra Hard Questions
+            </h4>
+            <div className="space-y-2">
+              {[
+                { q: "Differentiate $y = x^x$ for $x > 0$.", hint: "Use logarithmic differentiation: take $\\ln$ of both sides, then differentiate implicitly.", ans: "$\\ln y = x\\ln x$. Differentiating: $\\frac{1}{y}\\,y' = \\ln x + 1$, so $y' = \\boxed{x^x(\\ln x + 1)}$." },
+                { q: "Differentiate $y = \\tan^{-1}\\!\\left(\\dfrac{\\sqrt{1+x^2}-1}{x}\\right)$.", hint: "Set $x = \\tan\\theta$; then $\\sqrt{1+x^2} = \\sec\\theta$ and the argument simplifies to $\\tan(\\theta/2)$.", ans: "$y = \\frac{1}{2}\\tan^{-1}x$, so $\\dfrac{dy}{dx} = \\boxed{\\dfrac{1}{2(1+x^2)}}$." },
+                { q: "Prove the Leibniz second-derivative rule: $\\dfrac{d^2}{dx^2}[fg] = f''g + 2f'g' + fg''$.", hint: "Differentiate $(fg)' = f'g + fg'$ one more time using the product rule.", ans: "$(f'g + fg')' = f''g + f'g' + f'g' + fg'' = f''g + 2f'g' + fg''$ &check;." },
+                { q: "Differentiate $y = \\log\\!\\left[\\tan\\!\\left(\\dfrac{\\pi}{4} + \\dfrac{x}{2}\\right)\\right]$ with respect to $x$.", hint: "Chain rule: outer $\\ln$, middle $\\tan$, inner $\\pi/4 + x/2$.", ans: "$\\frac{dy}{dx} = \\dfrac{1}{\\sin(\\pi/2 + x)} = \\dfrac{1}{\\cos x} = \\boxed{\\sec x}$." },
+                { q: "Find the value of $a$ for which $f(x) = \\begin{cases}\\dfrac{x^2-4}{x-2},& x\\neq2\\\\a,& x=2\\end{cases}$ is continuous at $x = 2$.", hint: "Simplify the quotient for $x \\neq 2$ and match $a$ to the limit.", ans: "$\\dfrac{x^2-4}{x-2} = x+2$; limit as $x\\to2$ is 4. So $\\boxed{a = 4}$." },
+                { q: "Find the maximum and minimum of $f(x) = x^3 - 12x + 2$ on $[-3, 3]$ using derivatives.", hint: "Find critical points from $f'(x) = 0$, then compare values at endpoints and critical points.", ans: "$f'(x) = 3x^2 - 12 = 0$ &rarr; $x = \\pm2$. $f(-3) = 17$, $f(-2) = 14$, $f(2) = -14$, $f(3) = -13$. Max $= 17$ at $x = -3$; Min $= -14$ at $x = 2$." },
+              ].map((item, i) => (
+                <details key={i} className="rounded-lg border bg-background/60 p-3">
+                  <summary className="text-sm cursor-pointer list-none flex items-start gap-2">
+                    <span className="text-purple-500 font-semibold shrink-0">Q{i + 1}.</span>
+                    <MathMarkdown content={item.q} className="flex-1 text-xs" />
+                  </summary>
+                  <div className="mt-2 space-y-2 text-xs pl-6">
+                    <MathMarkdown
+                      content={"**Hint:** " + item.hint}
+                      className="text-muted-foreground"
+                    />
+                    <MathMarkdown
+                      content={"**Answer:** " + item.ans}
+                      className="text-green-700 dark:text-green-400 bg-green-50/40 dark:bg-green-950/20 p-2 rounded-lg border border-green-200/50 dark:border-green-900/40"
+                    />
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+
+      {/* Additional Question Visuals */}
+      <Card className="border-amber-200 dark:border-amber-800 bg-gradient-to-br from-amber-50/50 to-transparent dark:from-amber-950/20">
+        <CardHeader className="pb-3">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-amber-100 dark:bg-amber-900/40 rounded-lg">
+              <Play className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+            </div>
+            <div>
+              <CardTitle className="text-lg">Additional-Question Visuals — Differentiation</CardTitle>
+              <p className="text-sm text-muted-foreground mt-0.5">Interactive visuals for the extra hard questions above</p>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <DerivativesAdditionalVisual />
+        </CardContent>
+      </Card>
+
     </div>
   );
 }

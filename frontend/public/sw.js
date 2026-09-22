@@ -9,8 +9,8 @@
  * Add route patterns to SW_ROUTES to cache additional pages.
  */
 
-const CACHE_NAME = "neb-vault-v3";
-const DATA_CACHE = "neb-data-v3";
+const CACHE_NAME = "neb-vault-v4";
+const DATA_CACHE = "neb-data-v4";
 
 /** Pages to pre-cache on install (core app shell). */
 const SW_ROUTES = [
@@ -63,6 +63,16 @@ self.addEventListener("fetch", (event) => {
 
   // Skip non-GET requests
   if (request.method !== "GET") return;
+
+  // Skip cross-origin requests entirely (Google Fonts CDN, external APIs):
+  // cache.put() throws on opaque responses, which would turn every font/CDN
+  // fetch into respondWith(undefined) — a guaranteed network error. Letting
+  // them pass through unhandled gives the browser default behaviour.
+  try {
+    if (new URL(request.url).origin !== self.location.origin) return;
+  } catch {
+    return;
+  }
 
   // API calls: network-first, fallback to cache
   if (request.url.includes("/api/")) {

@@ -1,213 +1,68 @@
 {
-  "title": "Bohr–Bury Scheme (1921) — Subshell & Shell Capacity Rules",
+  "title": "The Bohr–Bury Scheme of Electronic Configuration",
   "unitSlug": "atomic-structure",
   "topicSlug": "defects-of-bohr-s-theory",
   "topicTitle": "Defects of Bohr's theory",
-  "relevance": 76,
+  "relevance": 85,
   "notes": [
-    "Rutherford's model: nucleus existence via α-scattering.",
-    "Bohr's model: quantized energy levels, atomic stability.",
-    "Wave-particle duality (de Broglie), Uncertainty Principle (Heisenberg)."
+    "### Focus of this tab",
+    "The Bohr–Bury scheme (1921) — the shell-filling rules that Bohr's model alone could not give. It explains how the periodic table was first built from orbits and where it needed repair (a defect of the Bohr framework).",
+    "### The three Bohr–Bury rules",
+    "1. **Capacity rule:** the maximum number of electrons in a shell n is 2n² — K 2, L 8, M 18, N 32.",
+    "2. **Octet rule (valence shells):** the outermost shell cannot hold more than 8 electrons; when it has 8 (noble-gas configuration: He duplet, Ne octet) the shell is stable and a new shell begins.",
+    "3. **Filling order:** shells fill roughly in order of increasing energy; within a shell, electrons enter before a new shell starts — except that 4s begins filling before 3d is complete (the (n + l) order in modern language).",
+    "### What the scheme achieved",
+    "• Explained chemical inertness of the noble gases (closed shells) and the valency pattern of the main groups.",
+    "• Connected atomic number with the periodic law: element 11 (Na) starts the third shell, so period 3 begins — the periodicity of properties follows from shell structure.",
+    "• Predicted the electron configurations up to about Z = 20 reliably (K, Ca).",
+    "### Where the scheme fails (defects of the Bohr framework)",
+    "• No subshell concept: it cannot explain why 4s fills before 3d, the 8/18/32 period lengths beyond period 3, or the s/p/d/f blocks.",
+    "• It ignores electron–electron repulsion and exchange energy, so anomalies like Cr ([Ar]3d⁵4s¹) and Cu ([Ar]3d¹⁰4s¹) are impossible for it.",
+    "• Orbits are still definite paths — the uncertainty principle and orbital shapes are outside the scheme; 'subshell energy order' needs penetration and shielding, i.e. the quantum-mechanical model.",
+    "### Bridge to the modern picture",
+    "The 2n² capacity survives in modern form as Σ2(2l + 1) over the subshells of shell n; the octet rule survives as the special stability of filled s + p valence sets; and the filling order is the Madelung (n + l) rule. The Bohr–Bury scheme is thus the correct skeleton with the wrong (orbital-free) flesh."
   ],
   "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
+    "❌ The M shell can hold 18 electrons before the N shell starts. ✅ The outermost shell is capped at 8; after 8 electrons in M, filling of N begins.",
+    "❌ The Bohr–Bury scheme is a quantum-mechanical theory. ✅ It is a shell-filling rule set from the Bohr orbit picture; subshells and orbital shapes are absent.",
+    "❌ 2n² applies to the outermost shell. ✅ 2n² is the *capacity*; the octet rule (8) restricts the valence shell's occupancy."
   ],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 14 bohr bury scheme."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Calculate de Broglie wavelength of electron at 10⁶ m/s: λ ≈ 0.727 nm"
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "State the Bohr–Bury scheme with the 2n² and octet rules.",
+    "Write the Bohr–Bury configuration of calcium (Z = 20) and point out where the scheme needs 4s before 3d.",
+    "Why does the scheme fail for chromium and copper?",
+    "Show how the octet rule explains the inertness of argon."
   ],
   "formulas": [
-    "E=hν",
-    "λ=h/mv",
-    "ΔxΔp≥h/4π"
+    "$$\\text{shell capacity}=2n^{2}:\\ K\\ 2,\\ L\\ 8,\\ M\\ 18,\\ N\\ 32;\\qquad \\text{valence shell}\\le 8$$"
   ],
-  "keyPoints": [
-    "Core point for 14 bohr bury scheme."
+  "universalFacts": [
+    "The scheme is credited to Bohr (1921) and Charles Bury (1921) independently.",
+    "It correctly predicted the closure of shells at Z = 2, 10, 18 — matching the noble gases known then.",
+    "Its failure beyond Ca (Z = 20) is the historical trigger for introducing subshells."
   ],
-  "summary": "The atomic structure evolved from Thomson's plum pudding model to Bohr's quantized model and finally to the quantum mechanical model, explaining spectral lines and stability.",
-  "specialNotes": [
-    "Specialized insight for 14 bohr bury scheme."
-  ],
-  "importantStatements": [
-    "Key statement for 14 bohr bury scheme."
+  "examples": [
+    "**Problem:** Where does the Bohr–Bury scheme first fail? **Solution:** at potassium (Z = 19): the 2n²/sequence rules put the 19th electron in the M shell, but experiment and the (n + l) rule place it in 4s — the first sign that subshell energies, not shells, control filling."
   ],
   "importantNotes": [
-    "Important note regarding 14 bohr bury scheme."
+    "Present the scheme as a historical rule set, then contrast it with the (n + l) order and Hund/Pauli rules.",
+    "The octet rule is for the valence shell only — quote both numbers (2n² and 8) when asked."
   ],
-  "examShortTricks": [
-    "Recall the formula for Bohr–Bury Scheme (1921) — Subshell & Shell Capacity Rules."
-  ],
-  "examNotes": [
-    "Focus on Bohr–Bury Scheme (1921) — Subshell & Shell Capacity Rules problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 14 bohr bury scheme?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 14 bohr bury scheme."
-  ],
-  "importantTasks": [
-    "Task for studying 14 bohr bury scheme."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "14-bohr-bury-scheme",
   "mcqs": [
     {
-      "question": "Who proposed the dual nature of matter?",
+      "question": "According to the Bohr–Bury scheme, the maximum electrons in the outermost shell is:",
       "options": [
-        "Planck",
-        "de Broglie",
-        "Bohr",
-        "Heisenberg"
-      ],
-      "answer": "B"
-    },
-    {
-      "question": "The radius of the nth orbit of hydrogen atom is proportional to:",
-      "options": [
-        "n",
-        "n²",
-        "n³",
-        "n⁴"
+        "2n²",
+        "8",
+        "18",
+        "32"
       ],
       "answer": "B"
     }
   ],
-  "exercises": [
-    {
-      "id": "ex-1",
-      "question": "Calculate the de Broglie wavelength of an electron moving at 10⁶ m/s.",
-      "steps": [
-        "Formula: λ = h / (m * v)",
-        "Given: h = 6.626 x 10⁻³⁴ J·s, m = 9.11 x 10⁻³¹ kg, v = 10⁶ m/s",
-        "Calculation: λ = 6.626e-34 / (9.11e-31 * 1e6)",
-        "Result: ~7.27 x 10⁻¹⁰ m (or 0.727 nm)"
-      ],
-      "answer": "0.727 nm"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "RutherfordScatteringSim",
-    "description": "Interactive visualization of α-particle deflection by the nucleus."
-  },
-  "visualType": "defects-of-bohr-model"
+  "visualType": "bohr-bury",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "14-bohr-bury-scheme.json"
 }

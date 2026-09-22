@@ -1,80 +1,65 @@
 {
-  "title": "03 AVOGADRO LAW",
+  "title": "Avogadro's Law and its Deductions (Molecular Mass, Vapour Density, Volume and Number of Particles)",
   "unitSlug": "stoichiometry",
-  "topicSlug": "03-avogadro-law",
-  "topicTitle": "03 avogadro law",
+  "topicSlug": "avogadro-s-law-and-some-deductions-molecular-mass-and-vapour-density-molecular-mass-and-volume-o",
+  "topicTitle": "Avogadro's law and some deductions: molecular mass and vapour density, molecular mass and volume of gas, molecular mass and number of particles",
+  "relevance": 100,
   "notes": [
-    "Detailed notes on 03 avogadro law within the stoichiometry unit."
+    "### 1. Meaning and statement",
+    "Avogadro's law (Amedeo Avogadro, 1811, published as a hypothesis) states: equal volumes of all gases, under the same conditions of temperature and pressure, contain equal numbers of molecules. Hence for a gas $V\\propto n$ at constant T and P, and volume ratio = mole ratio. One mole of any gas contains the Avogadro number N_A = 6.022 × 10²³ molecules and occupies a molar volume of 22.4 dm³ (22.4 L) at STP (273.15 K, 1 atm) or ≈24 L at RTP. The law resolved the confusion between atoms and molecules that had blocked Dalton's theory and Gay-Lussac's volume results.",
+    "### 2. Deduction 1 — molecular mass and vapour density",
+    "**Vapour density (VD)** of a gas is the ratio of the mass of a certain volume of the gas to the mass of the same volume of hydrogen under identical conditions. Because equal volumes contain equal numbers of molecules, masses are in the ratio of molecular masses, and with hydrogen as the standard (M = 2): $VD=\\frac{M}{2}$, so **molecular mass = 2 × vapour density**. Example: VD of CO₂ = 22 → M = 44 g mol⁻¹. (With air as reference, M = 28.94 × relative density.)",
+    "### 3. Deduction 2 — molecular mass and volume of gas",
+    "Since 1 mol of any gas occupies 22.4 L at STP, the mass of 22.4 L of a gas at STP equals its molar mass in grams. Hence $n=\\frac{V\\ (\\text{at STP})}{22.4\\ \\text{L mol}^{-1}}$ and $M=\\frac{\\text{mass of the gas}}{\\text{volume at STP}}\\times22.4$. Conversely, the volume occupied by a known mass m is $V=\\frac{m}{M}\\times22.4$ L at STP. This is the basis of all gas-volume stoichiometry.",
+    "### 4. Deduction 3 — molecular mass and number of particles",
+    "One mole contains N_A = 6.022 × 10²³ particles, so $n=\\frac{N}{N_{A}}$, the mass of one molecule $=\\frac{M}{N_{A}}$ (e.g. 3.0 × 10⁻²³ g for water), and the volume of one molecule follows from the molar volume. Gram-molecular mass is the mass in grams numerically equal to the molecular mass, and it always contains 6.022 × 10²³ molecules (gram-atomic mass contains the same number of atoms).",
+    "### 5. Applications",
+    "• **Atomicity of gases:** comparing volumes of a gas with the volumes of its elements (e.g. 2 volumes H₂ + 1 volume O₂ → 2 volumes H₂O vapour) shows that H₂, O₂ and N₂ are diatomic while O₃ and P₄ are polyatomic.",
+    "• **Molecular mass of gases and volatile liquids:** by vapour density (M = 2 × VD) or by Victor Meyer's and Dumas' methods, and by the limiting-density/effusion methods.",
+    "• **Molar-volume stoichiometry:** volume–volume and mass–volume calculations for gases at STP; determination of the molar volume of a gas and of Avogadro's constant.",
+    "• **Establishing formulas:** Avogadro's law plus Gay-Lussac's volume law fixed the formulas H₂O, NH₃, CO₂ and HCl (which Dalton's theory alone could not).",
+    "### 6. Limitations",
+    "• Avogadro's law applies to **gases only** — it says nothing about the volume of liquids or solids, whose molar volumes differ greatly.",
+    "• It assumes ideal behaviour; real gases deviate at high pressure and low temperature, so the simple 22.4 L molar volume is approximate except near STP (for NH₃ or CO₂ it can be in error by a few per cent).",
+    "• It fails for gases that **dissociate or associate** in the vapour state: PCl₅, N₂O₄ and NH₄Cl give anomalously high or low vapour densities, and a correction factor (degree of dissociation/association) is needed.",
+    "• It provides no information about the size, shape or mass of individual molecules; 'equal numbers of molecules' says nothing about molecular structure.",
+    "• The law was ignored for nearly half a century because Berzelius and Dalton did not accept the atom–molecule distinction — a reminder that it depends on the concept of a molecule, not merely on measurement.",
+    "• The molar volume figures are defined at specified T and P (22.4 L at STP, 24 L at RTP), so results must always state the conditions."
   ],
   "confusion": [
-    "❌ Misconception about 03 avogadro law. ✅ Scientific explanation."
-  ],
-  "examples": [
-    "Real-world example of 03 avogadro law."
-  ],
-  "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 03 avogadro law)"
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 03 avogadro law."
-  ],
-  "importantNotes": [
-    "Important note regarding 03 avogadro law."
-  ],
-  "importantStatements": [
-    "Key statement for 03 avogadro law."
-  ],
-  "importantTasks": [
-    "Task for studying 03 avogadro law."
-  ],
-  "keyPoints": [
-    "Core point for 03 avogadro law."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 03 avogadro law?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
+    "❌ Equal volumes of any two gases have equal masses. ✅ They have equal *numbers of molecules*; masses differ because molecular masses differ.",
+    "❌ Vapour density is the same as density. ✅ Vapour density is a *relative* quantity measured with respect to hydrogen (or air); density is an absolute mass per unit volume.",
+    "❌ 1 mole of every gas occupies 22.4 L under all conditions. ✅ Only at STP (273.15 K, 1 atm); at other conditions use PV = nRT.",
+    "❌ Molecular mass equals vapour density. ✅ Molecular mass = 2 × vapour density (for the hydrogen reference).",
+    "❌ Avogadro's law can be applied to a dissociating gas without correction. ✅ Dissociation/association changes the number of particles, so an apparent (abnormal) vapour density results."
   ],
   "practice": [
-    "Practice exercise for 03 avogadro law."
+    "State Avogadro's law and deduce the relation between molecular mass and vapour density.",
+    "Show that the mass of 22.4 L of any gas at STP equals its molar mass in grams.",
+    "Calculate the molecular mass of a gas whose vapour density is 30.",
+    "The vapour density of an oxide of nitrogen is 46; find its molecular formula if it contains 30.4% nitrogen.",
+    "Explain how Avogadro's law established that hydrogen and oxygen are diatomic.",
+    "State the limitations of Avogadro's law."
   ],
-  "practiceQuestions": [
-    "Practice question for 03 avogadro law."
+  "formulas": [
+    "$$V\\propto n\\ \\text{at constant }T,P;\\qquad \\frac{V_{1}}{n_{1}}=\\frac{V_{2}}{n_{2}}$$",
+    "$$M=2\\times VD\\ (\\text{H}_{2}\\ \\text{reference});\\qquad M=28.94\\times VD\\ (\\text{air reference})$$",
+    "$$n=\\frac{V\\ (\\text{STP})}{22.4\\ \\text{L}},\\qquad n=\\frac{N}{N_{A}},\\qquad V_{\\text{molar}}=22.4\\ \\text{L at STP}$$"
   ],
-  "specialNotes": [
-    "Specialized insight for 03 avogadro law."
-  ],
-  "summary": "Summary of 03 avogadro law.",
   "universalFacts": [
-    "Universal scientific fact for 03 avogadro law."
+    "Avogadro number N_A = 6.022 × 10²³ mol⁻¹ (exactly 6.02214076 × 10²³ since the 2019 SI revision).",
+    "Molar volume: 22.4 L at STP (0 °C, 1 atm) and 24.0 L at RTP (25 °C, 1 bar).",
+    "Avogadro's hypothesis (1811) was accepted only after Cannizzaro (1858) explained it, and one mole of water is just 18 mL of liquid — yet it contains 6.022 × 10²³ molecules."
   ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "duplicateType": 2,
-  "tabGroup": "03-avogadro-law",
-  "examShortTricks": [
-    "Trick 1"
+  "examples": [
+    "**Problem:** VD of a gas is 22; find its molar mass and the mass of 5.6 L at STP. **Solution:** M = 2 × 22 = 44 g mol⁻¹; n = 5.6/22.4 = 0.25 mol → mass = 0.25 × 44 = 11 g.",
+    "**Problem:** Calculate the number of molecules in 11.2 L of CH₄ at STP and the number of hydrogen atoms present. **Solution:** n = 11.2/22.4 = 0.5 mol → molecules = 0.5 × 6.022 × 10²³ = 3.011 × 10²³; H atoms = 4 × that = 1.204 × 10²⁴."
   ],
-  "examNotes": [
-    "Exam note 1."
+  "importantNotes": [
+    "Quote both numbers with the law: N_A = 6.022 × 10²³ mol⁻¹ and molar volume = 22.4 L at STP.",
+    "Say 'equal number of molecules', never 'equal masses' — the distinction is the whole content of the law.",
+    "Remember the abnormal vapour density correction for dissociating gases such as PCl₅ and N₂O₄."
   ],
-  "mcqs": [
-    {
-      "question": "Question about 03 avogadro law?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ]
+  "visualType": "avogadros-law-deduction",
+  "tabGroup": "Stoichiometry-Learner-Notes"
 }

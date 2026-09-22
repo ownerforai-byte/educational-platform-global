@@ -14,6 +14,7 @@ import {
   Activity,
   TrendingUp,
 } from "lucide-react";
+import { Schematic } from "./schematic-frame";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -90,16 +91,15 @@ function SymmetryVisual() {
       </div>
 
       <div className="flex justify-center">
-        <svg
-          viewBox={`0 0 ${w} ${h2}`}
-          className="w-full max-w-lg border rounded-lg bg-slate-950"
+        <Schematic
+          w={w} h={h2} ox={ox} oy={oy} scale={scale}
+          tickStep={1}
+          yLabel="f(x)"
+          legend={[
+            { color: "#f97316", label: "axis of symmetry", dashed: true },
+            { color: "#38bdf8", label: "curve" },
+          ]}
         >
-          {/* Axes */}
-          <line x1={0} y1={oy} x2={w} y2={oy} stroke="#475569" strokeWidth="1" />
-          <line x1={ox} y1={0} x2={ox} y2={h2} stroke="#475569" strokeWidth="1" />
-          <text x={w - 10} y={oy - 5} fill="#64748b" fontSize="10">x</text>
-          <text x={ox + 5} y={12} fill="#64748b" fontSize="10">f(x)</text>
-
           {/* Symmetry axis */}
           {showSymmetryAxis && (
             <line
@@ -112,20 +112,11 @@ function SymmetryVisual() {
               strokeDasharray="6 3"
             />
           )}
-
           {/* Graph line */}
           {graphPoints.length > 1 && (
-            <polyline
-              points={graphPoints.join(" ")}
-              fill="none"
-              stroke="#38bdf8"
-              strokeWidth="2"
-            />
+            <polyline points={graphPoints.join(" ")} fill="none" stroke="#38bdf8" strokeWidth="2" />
           )}
-
-          {/* Origin */}
-          <circle cx={ox} cy={oy} r="2" fill="#64748b" />
-        </svg>
+        </Schematic>
       </div>
 
       <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">
@@ -226,61 +217,32 @@ function MonotonicityVisual() {
       </div>
 
       <div className="flex justify-center">
-        <svg
-          viewBox={`0 0 ${w} ${h2}`}
-          className="w-full max-w-lg border rounded-lg bg-slate-950"
+        <Schematic
+          w={w} h={h2} ox={ox} oy={oy} scale={scale}
+          tickStep={1}
+          yLabel="f(x)"
+          legend={[
+            { color: "#22c55e", label: "increasing" },
+            { color: "#ef4444", label: "decreasing" },
+            { color: "#f97316", label: "critical point" },
+          ]}
         >
-          {/* Axes */}
-          <line x1={0} y1={oy} x2={w} y2={oy} stroke="#475569" strokeWidth="1" />
-          <line x1={ox} y1={0} x2={ox} y2={h2} stroke="#475569" strokeWidth="1" />
-          <text x={w - 10} y={oy - 5} fill="#64748b" fontSize="10">x</text>
-          <text x={ox + 5} y={12} fill="#64748b" fontSize="10">f(x)</text>
-
           {/* Increasing segments (green) */}
           {increasingPath.length > 1 && (
-            <polyline
-              points={increasingPath.join(" ")}
-              fill="none"
-              stroke="#22c55e"
-              strokeWidth="2.5"
-            />
+            <polyline points={increasingPath.join(" ")} fill="none" stroke="#22c55e" strokeWidth="2.5" />
           )}
-
           {/* Decreasing segments (red) */}
           {decreasingPath.length > 1 && (
-            <polyline
-              points={decreasingPath.join(" ")}
-              fill="none"
-              stroke="#ef4444"
-              strokeWidth="2.5"
-            />
+            <polyline points={decreasingPath.join(" ")} fill="none" stroke="#ef4444" strokeWidth="2.5" />
           )}
-
           {/* Critical points */}
           {criticalPoints.map((cp, idx) => (
             <g key={idx}>
-              <circle
-                cx={toSvgX(cp)}
-                cy={toSvgY(f(cp))}
-                r="4"
-                fill="#f97316"
-                stroke="#ffffff"
-                strokeWidth="1"
-              />
-              <text
-                x={toSvgX(cp) + 6}
-                y={toSvgY(f(cp)) - 6}
-                fill="#f97316"
-                fontSize="9"
-              >
-                CP
-              </text>
+              <circle cx={toSvgX(cp)} cy={toSvgY(f(cp))} r="4" fill="#f97316" stroke="#ffffff" strokeWidth="1" />
+              <text x={toSvgX(cp) + 6} y={toSvgY(f(cp)) - 6} fill="#f97316" fontSize="9">CP</text>
             </g>
           ))}
-
-          {/* Origin */}
-          <circle cx={ox} cy={oy} r="2" fill="#64748b" />
-        </svg>
+        </Schematic>
       </div>
 
       <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { ArrowLeft, BookOpen, PenLine } from "lucide-react";
 import { WRITING_COUNTS, getWritingTypesByCategory } from "@/features/knowledge/writing";
+import { ProSectionBanner } from "@/features/knowledge/pro/renderers";
 
 const TOPICS = [
   {
@@ -116,6 +117,8 @@ export default function GrammarPage() {
           <p className="text-xs text-muted-foreground">NEB Class 11 &amp; 12 — Comprehensive grammar reference</p>
         </div>
       </div>
+
+      <ProSectionBanner sectionId="grammar" />
 
       <div className="space-y-3">
         {TOPICS.map((topic, i) => (

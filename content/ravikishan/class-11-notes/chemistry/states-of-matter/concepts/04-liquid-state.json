@@ -1,215 +1,65 @@
 {
-  "title": "Liquid State",
+  "title": "Liquid State: Physical Properties of Liquids",
   "unitSlug": "states-of-matter",
-  "topicSlug": "liquid-state",
-  "topicTitle": "Liquid State",
-  "relevance": 30,
+  "topicSlug": "liquid-state-physical-properties-of-liquids-evaporation-and-condensation-vapour-pressure-and-boi",
+  "topicTitle": "Liquid state: physical properties of liquids — evaporation and condensation, vapour pressure and boiling point, surface tension and viscosity (qualitative idea only)",
+  "relevance": 100,
   "notes": [
-    "Ideal gas: PV=nRT.",
-    "Kinetic theory explains gas properties.",
-    "Real gases: van der Waals equation.",
-    "Liquid properties: surface tension, viscosity."
+    "### 1. Meaning of the liquid state",
+    "A liquid has a definite volume but no definite shape: molecules are close together (short intermolecular distances) and slide over one another, so a liquid can flow, is practically incompressible and shows short-range order only. Intermolecular forces are strong enough to hold the molecules together but not strong enough to fix them in a lattice, as in a solid.",
+    "### 2. Evaporation and condensation",
+    "**Evaporation** is the escape of high-energy molecules from the *surface* of a liquid into the vapour phase at any temperature below the boiling point. It is endothermic (the liquid cools — earthen pots, sweating, petrichor), and its rate increases with temperature, surface area, wind/movement and dryness of the air, and decreases with humidity. **Condensation** is the reverse change of vapour to liquid, releasing the same latent heat; when the rates become equal a dynamic equilibrium is established and the vapour is said to be saturated (dew point for atmospheric condensation).",
+    "### 3. Vapour pressure and boiling point",
+    "Vapour pressure is the pressure exerted by the vapour when it is in dynamic equilibrium with its liquid at a given temperature. It depends only on the nature of the liquid and the temperature — **not** on the amount of liquid or the size of the container. Volatile liquids have high vapour pressure (ether, acetone, alcohol); water has 23.8 mm Hg at 25 °C and 760 mm Hg at 100 °C. Vapour pressure rises steeply with temperature; the quantitative relation is the Clausius–Clapeyron equation.",
+    "**Boiling** occurs when the vapour pressure of the liquid becomes equal to the external (atmospheric) pressure; the temperature at that point is the boiling point, and heat supplied thereafter goes into converting liquid to vapour (latent heat of vaporisation) so the temperature stays constant. Consequences: boiling point rises with external pressure (pressure cooker) and falls in the mountains/vacuum (water boils below 100 °C at high altitude; vacuum distillation for heat-sensitive liquids).",
+    "### 4. Surface tension",
+    "Molecules in the bulk are pulled equally in all directions, but a surface molecule experiences a net inward pull, so the surface behaves like a stretched membrane and tends to minimise its area. Surface tension γ is the force per unit length acting along the surface (γ = F/l), with units N m⁻¹ or J m⁻². It decreases as temperature rises (becoming zero at the critical temperature) and is lowered by soaps and detergents. Consequences: spherical drops, capillary rise in narrow tubes (used by plants and blotting paper), meniscus shapes (water concave, mercury convex), flotation of light insects and needles, and the functioning of detergents and wetting agents.",
+    "### 5. Viscosity",
+    "Viscosity is the internal friction (resistance to flow) between adjacent layers of a liquid moving with different speeds; the coefficient of viscosity η has units N s m⁻² (Pa s) or poise (P), with 1 P = 0.1 Pa s. Viscosity arises from intermolecular attraction and decreases rapidly as temperature rises (for gases it increases). Examples: honey and glycerol flow slowly (high η), water and ether flow easily; engine oils are graded by SAE numbers according to their viscosity, and lubricating oil must be chosen for the operating temperature.",
+    "### 6. Other physical properties (brief)",
+    "Liquids are practically incompressible (very high bulk modulus), diffuse slowly compared with gases, conduct heat but not electricity (except molten salts/metals), and expand slightly on heating. Their thermal conductivity makes them useful as coolants (water, oil) and their low compressibility is the basis of hydraulic brakes and hydraulic lifts.",
+    "### 7. Applications",
+    "• **Vapour pressure and boiling:** distillation and fractional distillation, steam distillation, vacuum distillation of heat-sensitive liquids (petroleum fractions, glycerine), autoclaves and pressure cookers, and the working of refrigerants.",
+    "• **Evaporation:** cooling by evaporation (earthen pots, desert coolers, sweating), drying of paints and wet clothes, and evaporative humidifiers.",
+    "• **Surface tension:** detergents and soaps (lowering γ improves wetting and emulsification), waterproofing agents, flotation of insects, capillary rise in xylem and blotting paper, and mercury barometers where the convex meniscus must be corrected.",
+    "• **Viscosity:** selection of lubricating oils and greases for machines, engine-oil grades (SAE 30 etc.), flow of blood in vessels and the effect of temperature on it, pipeline transport of oil, and viscosity measurements to determine molar mass of polymers.",
+    "### 8. Limitations",
+    "There is no simple equation of state for liquids — the kinetic model that works for gases fails because liquids show short-range order and strong interactions; surface tension and viscosity are interpreted qualitatively (values depend on the measurement method and on impurities); vapour pressure is reduced by non-volatile solutes (Raoult's law), so impure samples give wrong boiling points, and the Clausius–Clapeyron treatment assumes that ΔH_vap is constant over the range (an approximation). Many real liquids are non-Newtonian (blood, paint, ketchup), so a single viscosity value is misleading, and near the critical temperature all these properties change drastically, which no simple description covers."
   ],
   "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
+    "❌ Evaporation happens only at the boiling point. ✅ It occurs at every temperature from the liquid surface; boiling is evaporation throughout the bulk at the boiling point.",
+    "❌ Vapour pressure depends on how much liquid is present. ✅ It depends only on the liquid's nature and the temperature (and on the presence of solutes).",
+    "❌ Surface tension makes the surface a real skin. ✅ It is an inward pull on surface molecules that makes the surface behave like a stretched membrane.",
+    "❌ Glycerine is more viscous than water because it is denser. ✅ Viscosity comes from stronger intermolecular (H-bonding) attraction, not from density.",
+    "❌ A liquid boils when the vapour pressure exceeds the atmospheric pressure. ✅ Boiling starts when vapour pressure *equals* the external pressure (an overshoot just makes it boil faster)."
   ],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 04 liquid state."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "V of 2mol at 27°C, 2atm: V=24.63L",
-    "vrms of O₂ at 300K: 484 m/s"
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "Distinguish between evaporation and boiling.",
+    "Define vapour pressure and explain why it does not depend on the amount of liquid.",
+    "Explain why water boils below 100 °C on a mountain and above 100 °C in a pressure cooker.",
+    "Define surface tension and explain its molecular origin with two examples.",
+    "Define viscosity, give its SI unit, and explain why it decreases with rise in temperature.",
+    "State the limitations of the simple description of liquid properties."
   ],
   "formulas": [
-    "PV = nRT",
-    "PV = (m/M)RT",
-    "vrms = √(3RT/M)",
-    "P = P° × χ(solvent)"
+    "$$\\gamma=\\frac{F}{l}\\ (\\text{N m}^{-1});\\qquad \\eta\\ \\text{in Pa s}\\ (1\\ \\text{poise}=0.1\\ \\text{Pa s})$$",
+    "$$\\text{Clausius–Clapeyron: }\\ln\\frac{P_{2}}{P_{1}}=\\frac{\\Delta H_{\\text{vap}}}{R}\\left(\\frac{1}{T_{1}}-\\frac{1}{T_{2}}\\right)$$",
+    "$$\\text{Capillary rise: }h=\\frac{2\\gamma\\cos\\theta}{r\\rho g}$$"
   ],
-  "keyPoints": [
-    "Core point for 04 liquid state."
+  "universalFacts": [
+    "Vapour pressure of water: 23.8 mm Hg at 25 °C, 760 mm Hg at 100 °C (normal boiling point).",
+    "Surface tension of water ≈ 72 mN m⁻¹ at 25 °C, falling to zero at the critical temperature (374 °C).",
+    "Viscosity of water ≈ 1.0 × 10⁻³ Pa s at 20 °C; glycerol ≈ 1.5 Pa s — about a thousand times greater."
   ],
-  "summary": "Matter exists in three states: solid, liquid, and gas, each with distinct properties governed by intermolecular forces.",
-  "specialNotes": [
-    "Specialized insight for 04 liquid state."
-  ],
-  "importantStatements": [
-    "Key statement for 04 liquid state."
+  "examples": [
+    "**Problem:** Why does a wet cloth dry faster on a windy day? **Solution:** wind removes the vapour layer above the surface, keeping the vapour pressure below saturation so the net evaporation rate stays high; higher temperature and larger exposed area act in the same direction.",
+    "**Problem:** Estimate the boiling point of water at 8000 m where the pressure is about 0.36 atm. **Solution:** the boiling temperature is reached when vapour pressure equals 0.36 atm ≈ 274 mm Hg; from vapour-pressure tables this corresponds to about 72 °C — hence cooking takes much longer at altitude."
   ],
   "importantNotes": [
-    "Important note regarding 04 liquid state."
+    "Remember the three marks-carrying definitions: vapour pressure (equilibrium), boiling point (vapour pressure = external pressure), surface tension (force per unit length).",
+    "For liquids, viscosity *decreases* with temperature, whereas for gases it increases — a standard one-mark comparison.",
+    "Syllabus asks for qualitative treatment only: describe causes, trends and applications, not derivations."
   ],
-  "examShortTricks": [
-    "Recall the formula for Liquid State."
-  ],
-  "examNotes": [
-    "Focus on Liquid State problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 04 liquid state?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 04 liquid state."
-  ],
-  "importantTasks": [
-    "Task for studying 04 liquid state."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "04-liquid-state",
-  "mcqs": [
-    {
-      "question": "Which gas has the highest rms speed at same temperature?",
-      "options": [
-        "O₂",
-        "N₂",
-        "H₂",
-        "CO₂"
-      ],
-      "answer": "C"
-    },
-    {
-      "question": "Surface tension decreases with:",
-      "options": [
-        "Increase in temperature",
-        "Decrease in temperature",
-        "Constant temperature",
-        "None"
-      ],
-      "answer": "A"
-    }
-  ],
-  "exercises": [
-    {
-      "id": "1",
-      "question": "Volume of 2mol at 27°C, 2atm",
-      "steps": [
-        "V=nRT/P",
-        "V=(2×0.0821×300)/2",
-        "V=24.63L"
-      ],
-      "answer": "24.63 L"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "GasLawSim",
-    "desc": "Interactive gas law demonstrator"
-  },
-  "visualType": "liquid-crystals"
+  "visualType": "liquid-state",
+  "tabGroup": "States-Of-Matter-Learner-Notes"
 }

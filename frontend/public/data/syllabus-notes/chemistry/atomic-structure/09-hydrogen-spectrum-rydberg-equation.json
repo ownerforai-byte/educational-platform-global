@@ -1,81 +1,68 @@
 {
-  "title": "The Hydrogen Spectrum — Rydberg Equation",
+  "title": "Rydberg Equation — Derivation from Bohr's Model and Numericals",
   "unitSlug": "atomic-structure",
   "topicSlug": "spectrum-of-hydrogen-atom",
   "topicTitle": "Spectrum of hydrogen atom",
   "relevance": 85,
   "notes": [
-    "Detailed notes on 09 hydrogen spectrum rydberg equation within the atomic structure unit."
+    "### Focus of this tab",
+    "How the Rydberg equation follows from Bohr's theory, what the Rydberg constant means, and the standard numerical patterns built on it.",
+    "### Derivation (short form)",
+    "Photon energy for a jump n₂ → n₁: $h\\nu=E_{2}-E_{1}=\\frac{2\\pi^{2}me^{4}Z^{2}}{h^{2}}\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right)$. With $\\nu=c/\\lambda$ and $\\bar{\\nu}=1/\\lambda=\\nu/c$: $\\bar{\\nu}=RZ^{2}\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right)$ where $R=\\frac{2\\pi^{2}me^{4}}{h^{3}c}=1.097\\times10^{7}\\ \\text{m}^{-1}$. The empirical Balmer/Rydberg formula thus *emerged* from theory — Bohr's greatest success.",
+    "### Meaning of R",
+    "R is the wave number of the hydrogen series limit (n₁ = 1, n₂ → ∞): $\\bar{\\nu}_{limit}=R$, λ = 91.2 nm. Because m appears in R, the constant is slightly isotope-dependent (reduced-mass correction): R(²H) ≈ R(¹H) × 1.00027 — the basis of measuring deuterium in heavy water spectroscopically.",
+    "### Numerical patterns",
+    "• Wavelength of a given line: pick n₁ (series) and n₂ (upper level); compute $\\bar{\\nu}$, invert for λ.",
+    "• Series limit: set n₂ → ∞ → $\\bar{\\nu}=RZ^{2}/n_{1}^{2}$.",
+    "• First line of a series: n₂ = n₁ + 1.",
+    "• Identification: given λ and a series, solve for n₂; given two lines, form their difference to get a third line (Ritz combination principle).",
+    "• Hydrogen-like ions: multiply by Z² (He⁺ Balmer lines are 4× the wave number of hydrogen's).",
+    "### Units trap",
+    "R is quoted both as 1.097 × 10⁷ m⁻¹ and 109 677 cm⁻¹. Convert before mixing: 1 cm⁻¹ = 100 m⁻¹; λ(nm) = 10⁷/ν̄(cm⁻¹)."
   ],
   "confusion": [
-    "❌ Misconception about 09 hydrogen spectrum rydberg equation. ✅ Scientific explanation."
+    "❌ R is an empirical fitted constant with no origin. ✅ Bohr derived it from m, e, h and c — a theoretical prediction confirmed by experiment.",
+    "❌ ν̄ is the frequency. ✅ It is the wave number (1/λ); frequency ν = c·ν̄.",
+    "❌ The same R applies unchanged to He⁺. ✅ Multiply by Z² (and apply the reduced-mass correction for precision)."
   ],
   "practice": [
-    "Practice exercise for 09 hydrogen spectrum rydberg equation."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 09 hydrogen spectrum rydberg equation."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 09 hydrogen spectrum rydberg equation."
-  ],
-  "practiceQuestions": [
-    "Practice question for 09 hydrogen spectrum rydberg equation."
+    "Derive the Rydberg equation from Bohr's energy levels.",
+    "Calculate the wavelength of the second line of the Balmer series (4 → 2).",
+    "Find the series limit of the Brackett series.",
+    "A line of He⁺ has the same wavelength as a Balmer line of H; relate their quantum numbers using the Z² factor."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 09 hydrogen spectrum rydberg equation)"
+    "$$R=\\frac{2\\pi^{2}me^{4}}{h^{3}c}=1.097\\times10^{7}\\ \\text{m}^{-1}=109677\\ \\text{cm}^{-1}$$",
+    "$$\\bar{\\nu}=RZ^{2}\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right);\\qquad \\lambda(\\text{nm})=\\frac{10^{7}}{\\bar{\\nu}(\\text{cm}^{-1})}$$"
   ],
-  "keyPoints": [
-    "Core point for 09 hydrogen spectrum rydberg equation."
+  "universalFacts": [
+    "R was known experimentally to 6 figures before Bohr — the theory matched without fitting.",
+    "The reduced-mass shift of the D line (²H) versus H line identified deuterium in 1932.",
+    "Ritz's combination principle: the wave number of one line equals the sum/difference of two others sharing a level."
   ],
-  "summary": "Summary of 09 hydrogen spectrum rydberg equation.",
-  "specialNotes": [
-    "Specialized insight for 09 hydrogen spectrum rydberg equation."
-  ],
-  "importantStatements": [
-    "Key statement for 09 hydrogen spectrum rydberg equation."
+  "examples": [
+    "**Problem:** λ of the Hβ line (4 → 2). **Solution:** ν̄ = 1.097×10⁷(1/4 − 1/16) = 1.097×10⁷ × 0.1875 = 2.057×10⁶ m⁻¹ → λ = 486 nm.",
+    "**Problem:** Wave number of the Paschen limit. **Solution:** ν̄ = R/9 = 1.22×10⁶ m⁻¹ → λ = 820.4 nm."
   ],
   "importantNotes": [
-    "Important note regarding 09 hydrogen spectrum rydberg equation."
+    "Keep R in one unit system throughout a calculation; the cm⁻¹↔m⁻¹ factor of 100 is the classic slip.",
+    "For He⁺, Li²⁺ multiply by Z² before inverting for λ."
   ],
-  "examShortTricks": [
-    "Recall the formula for The Hydrogen Spectrum — Rydberg Equation."
-  ],
-  "examNotes": [
-    "Focus on The Hydrogen Spectrum — Rydberg Equation problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 09 hydrogen spectrum rydberg equation?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 09 hydrogen spectrum rydberg equation."
-  ],
-  "importantTasks": [
-    "Task for studying 09 hydrogen spectrum rydberg equation."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "09-hydrogen-spectrum-rydberg-equation",
   "mcqs": [
     {
-      "question": "Question about 09 hydrogen spectrum rydberg equation?",
+      "question": "The Rydberg constant in SI units is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "1.097 × 10⁷ m⁻¹",
+        "1.097 × 10⁵ m⁻¹",
+        "6.626 × 10⁻³⁴ m⁻¹",
+        "1.097 × 10⁷ cm⁻¹"
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "visualType": "hydrogen-spectrum",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "09-hydrogen-spectrum-rydberg-equation.json"
 }

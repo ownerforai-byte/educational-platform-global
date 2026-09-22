@@ -1,54 +1,68 @@
 [
   {
     "unitSlug": "bhasha-ra-vyakarana",
-    "noteCount": 1,
+    "topicSlug": "aagantuk-shabda",
+    "title": "आगन्तुक शब्द (Loanwords)",
+    "noteCount": 3,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "shabda-srot.json"
+    "filename": "aagantuk-shabda.json",
+    "hasMcqs": false,
+    "universalFactsCount": 2
   },
   {
     "unitSlug": "bhasha-ra-vyakarana",
-    "topicSlug": "aagantuk-shabda",
-    "title": "आगन्तुक शब्द (Loanwords)",
-    "noteCount": 1,
+    "topicSlug": "shabda-srot",
+    "title": "शव्द-स्रोत (Word Sources)",
+    "noteCount": 19,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "aagantuk-shabda.json"
+    "filename": "shabda-srot.json",
+    "hasMcqs": false,
+    "universalFactsCount": 6
   },
   {
     "unitSlug": "bhasha-ra-vyakarana",
     "topicSlug": "swar-varna",
     "title": "स्वर वर्ण (Vowel Letters)",
-    "noteCount": 1,
+    "noteCount": 3,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "swar-varna.json"
+    "filename": "swar-varna.json",
+    "hasMcqs": false,
+    "universalFactsCount": 2
   },
   {
     "unitSlug": "bhasha-ra-vyakarana",
     "topicSlug": "tadbhav-shabda",
     "title": "तद्भव शब्द (Tadbhava Words)",
-    "noteCount": 1,
+    "noteCount": 3,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "tadbhav-shabda.json"
+    "filename": "tadbhav-shabda.json",
+    "hasMcqs": false,
+    "universalFactsCount": 2
   },
   {
     "unitSlug": "bhasha-ra-vyakarana",
     "topicSlug": "vyanjan-vargikaran",
     "title": "व्यञ्जन वर्गीकरण (Consonant Classification)",
-    "noteCount": 1,
+    "noteCount": 3,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "vyanjan-vargikaran.json"
+    "filename": "vyanjan-vargikaran.json",
+    "hasMcqs": false,
+    "universalFactsCount": 2
   },
   {
     "unitSlug": "bhasha-ra-vyakarana",
     "topicSlug": "vyanjan-varna",
     "title": "व्यञ्जन वर्ण (Consonant Letters)",
-    "noteCount": 1,
+    "noteCount": 3,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "vyanjan-varna.json"
+    "filename": "vyanjan-varna.json",
+    "hasMcqs": false,
+    "universalFactsCount": 2
   }
 ]

@@ -1,219 +1,70 @@
 {
-  "title": "Boyle's Law (Gas Laws)",
+  "title": "Boyle's Law in Detail — Isotherms, Numericals and Limitations",
   "unitSlug": "states-of-matter",
-  "topicSlug": "boyles-law-gas-laws-",
-  "topicTitle": "Boyle's Law (Gas Laws)",
-  "relevance": 60,
+  "topicSlug": "gas-laws",
+  "topicTitle": "Gas Laws",
+  "relevance": 85,
   "notes": [
-    "Ideal gas: PV=nRT.",
-    "Kinetic theory explains gas properties.",
-    "Real gases: van der Waals equation.",
-    "Liquid properties: surface tension, viscosity."
+    "### Focus of this tab",
+    "The first gas law in full: statement, graphs, molecular explanation, numericals and where it breaks — the pattern to reproduce for Charles' and Avogadro's laws.",
+    "### Statement (1662, Robert Boyle)",
+    "At constant temperature, the volume of a fixed mass of gas is inversely proportional to its pressure: V ∝ 1/P, i.e. PV = constant, or P₁V₁ = P₂V₂. Conditions: fixed mass, constant T, ideal behaviour (low P).",
+    "### Graphical forms (all three are examinable)",
+    "• P versus V: rectangular hyperbola (each temperature gives one hyperbola — an isotherm; higher T curves lie farther from the origin).",
+    "• P versus 1/V: straight line through the origin, slope = nRT.",
+    "• PV versus P: horizontal straight line for an ideal gas; real gases show a dip (attraction) then a rise (volume effect) — the first visible sign of non-ideality.",
+    "### Molecular explanation",
+    "Halving the volume doubles the number density of molecules, so wall collisions per unit area per second double, doubling the pressure — the inverse relation is pure collision statistics at fixed average molecular speed (fixed T).",
+    "### Numericals",
+    "• V₂ = P₁V₁/P₂: 500 cm³ at 700 mm Hg → at 1400 mm Hg: 250 cm³.",
+    "• Density application: since m fixed, d ∝ P at constant T — a compressed gas is proportionally denser.",
+    "• Bubble problem: an air bubble rising from depth doubles its volume as pressure halves (plus water-column corrections with 10 m water ≈ 1 atm).",
+    "### Limitations",
+    "• Ideal-gas law: fails at high pressure (PV rises above nRT) and near liquefaction; gases with strong attraction (CO₂, SO₂, NH₃) deviate most; H₂ and He deviate least.",
+    "• Requires fixed mass and constant temperature — a temperature change during compression invalidates it.",
+    "• Cannot be extrapolated to the liquid state; below the critical temperature compression produces condensation, not further Boyle-law shrinkage."
   ],
   "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks).",
-    "❌ Ideal gas has intermolecular forces. ✅ Ideal gas assumes no intermolecular forces and negligible molecular volume."
+    "❌ PV = constant for any gas under any conditions. ✅ Only for fixed mass at constant temperature and ideal behaviour.",
+    "❌ Doubling pressure halves the temperature. ✅ Boyle's law holds T constant; the P–T relation is Gay-Lussac's law.",
+    "❌ The P–V graph is a straight line. ✅ It is a hyperbola; the straight line appears for P versus 1/V."
   ],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice solving combined gas law and ideal gas law problems.",
-    "Practice calculating partial pressures using Dalton's law."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for boyles law gas laws ."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "V of 2mol at 27°C, 2atm: V=24.63L",
-    "vrms of O₂ at 300K: 484 m/s"
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice solving combined gas law and ideal gas law problems."
+    "State Boyle's law and sketch its P–V and P–1/V graphs.",
+    "A gas occupies 600 cm³ at 760 mm Hg; find its volume at 1520 mm Hg (T constant).",
+    "Explain Boyle's law using the kinetic theory.",
+    "Why does a real gas deviate from Boyle's law at high pressure?"
   ],
   "formulas": [
-    "PV = nRT",
-    "PV = (m/M)RT",
-    "vrms = √(3RT/M)",
-    "P = P° × χ(solvent)"
+    "$$P_{1}V_{1}=P_{2}V_{2}\\ (\\text{fixed mass, constant }T);\\qquad d\\propto P\\ (\\text{constant }T)$$"
   ],
-  "keyPoints": [
-    "Core point for boyles law gas laws ."
+  "universalFacts": [
+    "Boyle published the law in 1662 — the first quantitative gas law.",
+    "At constant T the product PV equals nRT for every ideal gas; its graph versus P is flat.",
+    "Real-gas Boyle plots dip below the ideal line at moderate pressure — evidence of intermolecular attraction."
   ],
-  "summary": "Matter exists in three states: solid, liquid, and gas, each with distinct properties governed by intermolecular forces.",
-  "specialNotes": [
-    "Specialized insight for boyles law gas laws ."
-  ],
-  "importantStatements": [
-    "Key statement for boyles law gas laws ."
+  "examples": [
+    "**Problem:** A diver's air bubble of 5 mL forms at 4 atm (depth ≈30 m). What volume at the surface (1 atm), ignoring temperature change? **Solution:** V₂ = P₁V₁/P₂ = 4 × 5/1 = 20 mL — a fourfold expansion, the classic Boyle's law safety example."
   ],
   "importantNotes": [
-    "Important note regarding boyles law gas laws ."
+    "State the two conditions (fixed mass, constant T) every time the law is quoted.",
+    "Draw the PV-vs-P horizontal line with the real-gas dip to show mastery beyond the ideal law."
   ],
-  "examShortTricks": [
-    "Recall the formula for Boyle's Law (Gas Laws)."
-  ],
-  "examNotes": [
-    "Focus on Boyle's Law (Gas Laws) problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about boyles law gas laws ?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for boyles law gas laws ."
-  ],
-  "importantTasks": [
-    "Task for studying boyles law gas laws ."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "boyles-law-gas-laws-",
   "mcqs": [
     {
-      "question": "Which gas has the highest rms speed at same temperature?",
+      "question": "At constant temperature, a plot of PV against P for an ideal gas is:",
       "options": [
-        "O₂",
-        "N₂",
-        "H₂",
-        "CO₂"
+        "A rising straight line",
+        "A horizontal straight line",
+        "A hyperbola",
+        "A parabola"
       ],
-      "answer": "C"
-    },
-    {
-      "question": "Surface tension decreases with:",
-      "options": [
-        "Increase in temperature",
-        "Decrease in temperature",
-        "Constant temperature",
-        "None"
-      ],
-      "answer": "A"
+      "answer": "B"
     }
   ],
-  "exercises": [
-    {
-      "id": "1",
-      "question": "Volume of 2mol at 27°C, 2atm",
-      "steps": [
-        "V=nRT/P",
-        "V=(2×0.0821×300)/2",
-        "V=24.63L"
-      ],
-      "answer": "24.63 L"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "GasLawSim",
-    "desc": "Interactive gas law demonstrator"
-  },
-  "visualType": "gas-laws"
+  "visualType": "boyles-law",
+  "tabGroup": "States-Of-Matter-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "boyles-law-gas-laws-.json"
 }

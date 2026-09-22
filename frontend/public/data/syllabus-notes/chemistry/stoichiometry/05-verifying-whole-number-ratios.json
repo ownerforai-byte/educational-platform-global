@@ -1,81 +1,66 @@
 {
-  "title": "Law of Multiple Proportions — Verifying a Simple Whole-Number Ratio",
+  "title": "Verifying Whole-Number Ratios from Experimental Data",
   "unitSlug": "stoichiometry",
   "topicSlug": "laws-of-stoichiometry",
   "topicTitle": "Laws of stoichiometry",
   "relevance": 80,
   "notes": [
-    "Detailed notes on 05 verifying whole number ratios within the stoichiometry unit."
+    "### Focus of this tab",
+    "The computational skill behind all the combination laws: converting raw percentage/mass data into whole-number ratios — the shared method of definite, multiple and reciprocal proportions, and of empirical-formula work.",
+    "### The standard five-step method",
+    "(1) Take the percentage of each element as mass in 100 g (or use the given masses). (2) Divide each mass by the atomic mass of that element → moles. (3) Divide all values by the smallest. (4) If the ratios are still fractional (e.g. 1 : 1.5, 1 : 1.33, 1 : 1.67), multiply the whole set by 2, 3 or 4 respectively to clear fractions. (5) Interpret: the whole-number ratio is the atomic ratio in the compound.",
+    "### Worked pattern 1 — a binary oxide",
+    "An oxide contains 60% metal and 40% oxygen (atomic mass of metal = 48). Metal = 60/48 = 1.25; O = 40/16 = 2.5. Divide by 1.25 → M : O = 1 : 2 → formula MO₂. (With 70% metal it would be 1.46 : 1.875 → 1 : 1.28… → careful: re-check data, since real ratios must resolve.)",
+    "### Worked pattern 2 — two oxides checked against multiple proportions",
+    "Oxide A: 46.7% N; oxide B: 30.4% N. Per gram of nitrogen: A has 46.7/53.3 = 0.876 g O; B has 30.4/69.6 = 0.437 g O. Ratio 0.876 : 0.437 = 2 : 1 — a whole-number ratio, so the data obey the law of multiple proportions (NO₂-type and NO-type oxides).",
+    "### Recognising the intended multiplier",
+    "• ×2 for halves: 1 : 1.5, 1 : 2.5.",
+    "• ×3 for thirds: 1 : 1.33, 1 : 1.67, 1 : 2.33.",
+    "• ×4 for quarters: 1 : 1.25, 1 : 1.75.",
+    "### Error awareness (limitations of the method)",
+    "Real analytical data carry errors, so ratios like 1 : 1.48 may 'want' to be 1 : 1.5 while 1 : 1.35 may be measurement noise around 1 : 1.33. Judgement (and significant figures) decide; non-stoichiometric compounds (Fe₀.₉₃O) will never resolve exactly, and the method assumes the compound is a true formula compound."
   ],
   "confusion": [
-    "❌ Misconception about 05 verifying whole number ratios. ✅ Scientific explanation."
+    "❌ Any near-integer ratio may be rounded freely. ✅ Round only with analytical justification; 1 : 1.9 is not 1 : 2 in a berthollide.",
+    "❌ The ratio is of masses. ✅ After dividing by atomic masses, the ratio is of *atoms* (moles), not grams.",
+    "❌ Multiplying changes the formula. ✅ Scaling the whole ratio set preserves it (2 : 4 is the same as 1 : 2)."
   ],
   "practice": [
-    "Practice exercise for 05 verifying whole number ratios."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 05 verifying whole number ratios."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 05 verifying whole number ratios."
-  ],
-  "practiceQuestions": [
-    "Practice question for 05 verifying whole number ratios."
+    "Describe the five-step method of converting percentage composition into a whole-number atomic ratio.",
+    "An oxide of a metal (atomic mass 56) contains 69.9% metal. Find its formula.",
+    "Two oxides of nitrogen contain 30.4% and 46.7% nitrogen. Verify the law of multiple proportions.",
+    "Which multipliers clear the ratios 1 : 1.33 and 1 : 1.25?"
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 05 verifying whole number ratios)"
+    "$$n=\\frac{\\%\\text{ element}}{100\\times A_{\\text{element}}};\\qquad \\text{divide all by the smallest, then clear fractions}$$"
   ],
-  "keyPoints": [
-    "Core point for 05 verifying whole number ratios."
+  "universalFacts": [
+    "This is exactly the arithmetic that produces empirical formulas from combustion data.",
+    "Cannizzaro used whole-number ratios of molecular weights to sort atomic masses in 1858.",
+    "The 'divide by smallest' step is the single most-omitted step in exam scripts."
   ],
-  "summary": "Summary of 05 verifying whole number ratios.",
-  "specialNotes": [
-    "Specialized insight for 05 verifying whole number ratios."
-  ],
-  "importantStatements": [
-    "Key statement for 05 verifying whole number ratios."
+  "examples": [
+    "**Problem:** A hydrocarbon gives C : H mass ratio 6 : 1. Find the empirical formula. **Solution:** C = 6/12 = 0.5; H = 1/1 = 1 → divide by 0.5 → C : H = 1 : 2 → CH₂."
   ],
   "importantNotes": [
-    "Important note regarding 05 verifying whole number ratios."
+    "Always divide by atomic masses before comparing — comparing raw masses is the classic wrong method.",
+    "State the multiplier used when clearing fractions (×2, ×3, ×4)."
   ],
-  "examShortTricks": [
-    "Recall the formula for Law of Multiple Proportions — Verifying a Simple Whole-Number Ratio."
-  ],
-  "examNotes": [
-    "Focus on Law of Multiple Proportions — Verifying a Simple Whole-Number Ratio problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 05 verifying whole number ratios?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 05 verifying whole number ratios."
-  ],
-  "importantTasks": [
-    "Task for studying 05 verifying whole number ratios."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "05-verifying-whole-number-ratios",
   "mcqs": [
     {
-      "question": "Question about 05 verifying whole number ratios?",
+      "question": "A compound has 75% carbon and 25% hydrogen. Its empirical formula is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "CH₂",
+        "CH₄",
+        "C₂H₆",
+        "CH₃"
       ],
-      "answer": "A"
+      "answer": "B"
     }
-  ]
+  ],
+  "visualType": "empirical-formula",
+  "tabGroup": "Stoichiometry-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "05-verifying-whole-number-ratios.json"
 }

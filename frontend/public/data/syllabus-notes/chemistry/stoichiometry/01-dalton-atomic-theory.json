@@ -1,80 +1,67 @@
 {
-  "title": "01 DALTON ATOMIC THEORY",
+  "title": "Dalton's Atomic Theory and its Postulates",
   "unitSlug": "stoichiometry",
-  "topicSlug": "01-dalton-atomic-theory",
-  "topicTitle": "01 dalton atomic theory",
+  "topicSlug": "dalton-s-atomic-theory-and-its-postulates",
+  "topicTitle": "Dalton's atomic theory and its postulates",
+  "relevance": 100,
   "notes": [
-    "Detailed notes on 01 dalton atomic theory within the stoichiometry unit."
+    "### 1. Meaning and background",
+    "John Dalton (1803–1808, *A New System of Chemical Philosophy*) proposed the first quantitative atomic theory. Its purpose was to explain the experimentally discovered laws of chemical combination (conservation of mass, definite proportions, multiple proportions) by assuming that matter is made of discrete, indestructible particles called **atoms**. The theory marks the birth of modern chemistry because it turned qualitative ideas about matter into a testable, quantitative model.",
+    "### 2. Postulates (state them in order)",
+    "• Matter is composed of extremely small, indivisible particles called atoms.",
+    "• Atoms of the same element are identical in mass, size and chemical properties; atoms of different elements have different masses and properties.",
+    "• Atoms cannot be created, destroyed or divided by chemical reactions — a chemical change only rearranges atoms (this explains the conservation of mass).",
+    "• Atoms of different elements combine in fixed, simple whole-number ratios to form compounds (this explains the law of definite proportions and the law of multiple proportions).",
+    "• The atom is the smallest particle that can take part in a chemical reaction; in a compound, atoms are held together by chemical attraction.",
+    "• Atoms of one element cannot be converted into atoms of another element by ordinary chemical means.",
+    "### 3. Successes (why it was accepted)",
+    "It explained the law of conservation of mass, the law of definite (constant) proportions and the law of multiple proportions by pure logic, provided the basis for balancing equations and hence for all stoichiometric calculation, introduced the idea of atomic (relative) masses, and prepared the ground for the mole concept and Avogadro's molecular hypothesis.",
+    "### 4. Applications",
+    "• Quantitative chemistry: balanced equations, mole calculations, limiting-reactant and yield problems all rest on atoms being conserved and combining in fixed ratios.",
+    "• Determination of atomic and molecular masses; formulation of the atomic mass unit and relative atomic mass scale.",
+    "• Basis of the modern atomic model (with the modifications listed below), of stoichiometry-based industry (fertilisers, metallurgy, cement, pharmaceuticals) and of chemical analysis by mass balance.",
+    "### 5. Limitations and modifications (exam-critical)",
+    "1. **Atoms are divisible:** the discovery of the electron (Thomson, 1897), proton (Rutherford, 1919) and neutron (Chadwick, 1932) showed that atoms contain subatomic particles and can be split.",
+    "2. **Not all atoms of an element are identical:** isotopes (¹²C, ¹³C, ¹⁴C; ³⁵Cl, ³⁷Cl) have the same chemical properties but different masses.",
+    "3. **Atoms of different elements can have the same mass:** isobars such as ⁴⁰Ar and ⁴⁰Ca.",
+    "4. **Atoms of one element can be changed into another:** nuclear reactions and transmutation (¹⁴N + α → ¹⁷O + p; radioactivity, fission and fusion) achieve exactly what Dalton denied.",
+    "5. **Mass is not strictly conserved** in nuclear processes — the mass defect appears as energy according to E = mc², so the conservation-of-mass postulate is only valid for ordinary chemical reactions.",
+    "6. **It did not explain** the nature of the force holding atoms together (chemical bonding), the structure of the atom, the law of gaseous volumes and the law of reciprocal proportions; it also could not account for allotropes, giant molecules or the existence of diatomic element molecules (H₂, O₂, N₂) until Avogadro's molecular concept.",
+    "**Summing up:** Dalton's core idea — that matter is atomic and that reactions rearrange atoms — is still valid; his absolute statements about indivisibility, identical masses and non-convertibility are the parts that modern chemistry and physics have modified."
   ],
   "confusion": [
-    "❌ Misconception about 01 dalton atomic theory. ✅ Scientific explanation."
-  ],
-  "examples": [
-    "Real-world example of 01 dalton atomic theory."
-  ],
-  "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 01 dalton atomic theory)"
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 01 dalton atomic theory."
-  ],
-  "importantNotes": [
-    "Important note regarding 01 dalton atomic theory."
-  ],
-  "importantStatements": [
-    "Key statement for 01 dalton atomic theory."
-  ],
-  "importantTasks": [
-    "Task for studying 01 dalton atomic theory."
-  ],
-  "keyPoints": [
-    "Core point for 01 dalton atomic theory."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 01 dalton atomic theory?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
+    "❌ Dalton's atomic theory is completely wrong today. ✅ Its core (matter is atomic and reactions only rearrange atoms) is fully valid; only its absolute claims about indivisibility, identical masses and non-convertibility have been modified.",
+    "❌ Atoms of the same element always have the same mass. ✅ Isotopes such as ³⁵Cl and ³⁷Cl differ in mass while remaining chemically similar.",
+    "❌ Dalton explained the law of gaseous volumes. ✅ That was Gay-Lussac (1809), and Avogadro's hypothesis was needed to interpret it — Dalton's theory by itself could not accommodate it.",
+    "❌ Nuclear reactions obey Dalton's postulates. ✅ They violate them: atoms are split, elements change and mass is converted into energy.",
+    "❌ Dalton's theory explained chemical bonding. ✅ It assumed atoms are held together by 'chemical attraction' without explaining its nature."
   ],
   "practice": [
-    "Practice exercise for 01 dalton atomic theory."
+    "State the postulates of Dalton's atomic theory.",
+    "How did Dalton's theory explain the law of conservation of mass and the law of definite proportions?",
+    "Discuss the limitations of Dalton's atomic theory in the light of modern discoveries.",
+    "Which postulate of Dalton's theory is contradicted by (a) isotopes, (b) isobars, (c) nuclear reactions? Explain each.",
+    "Explain how Avogadro's hypothesis removed a major difficulty of Dalton's theory.",
+    "Give three applications of Dalton's atomic theory in modern chemistry."
   ],
-  "practiceQuestions": [
-    "Practice question for 01 dalton atomic theory."
+  "formulas": [
+    "$$\\text{Law of definite proportions: }\\ %\\text{element}=\\frac{\\text{mass of element in compound}}{\\text{molar mass of compound}}\\times100$$",
+    "$$\\text{Mass defect (nuclear): }\\ \\Delta m=\\frac{E}{c^{2}}\\ \\Rightarrow\\ \\text{chemical mass is not strictly conserved in nuclear change}$$"
   ],
-  "specialNotes": [
-    "Specialized insight for 01 dalton atomic theory."
-  ],
-  "summary": "Summary of 01 dalton atomic theory.",
   "universalFacts": [
-    "Universal scientific fact for 01 dalton atomic theory."
+    "Dalton published his atomic theory in *A New System of Chemical Philosophy* (1808) and also proposed the first table of relative atomic masses.",
+    "Isotopes: ³⁵Cl (75%) and ³⁷Cl (25%) give the average atomic mass 35.5 u.",
+    "Isobars: ⁴⁰Ar and ⁴⁰Ca have the same mass number but different atomic numbers."
   ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "duplicateType": 2,
-  "tabGroup": "01-dalton-atomic-theory",
-  "examShortTricks": [
-    "Trick 1"
+  "examples": [
+    "**Problem:** Carbon forms CO and CO₂. Show that these data obey the law of multiple proportions. **Solution:** in CO, 12 g C combines with 16 g O; in CO₂, 12 g C combines with 32 g O. The masses of oxygen for a fixed mass of carbon are 16 : 32 = 1 : 2, a simple whole-number ratio.",
+    "**Problem:** Why does the mass of a sealed tube containing AgNO₃ and NaCl solutions remain constant after mixing and precipitation? **Solution:** the reacting atoms are only rearranged into AgCl and NaNO₃, so the total mass is unchanged — a direct verification of the law of conservation of mass."
   ],
-  "examNotes": [
-    "Exam note 1."
+  "importantNotes": [
+    "Answer the limitations question historically: electron/proton/neutron → isotopes → isobars → transmutation → mass–energy conversion.",
+    "Distinguish 'conservation of mass is valid for chemical reactions but not nuclear reactions' — a common precision point.",
+    "Remember that Dalton's theory, not Lavoisier's, is the one that *predicted* multiple proportions."
   ],
-  "mcqs": [
-    {
-      "question": "Question about 01 dalton atomic theory?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ]
+  "visualType": "dalton-atomic-theory",
+  "tabGroup": "Stoichiometry-Learner-Notes"
 }

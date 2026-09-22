@@ -1,81 +1,69 @@
 {
-  "title": "Real Gas Deviation",
+  "title": "Deviation of Real Gases from Ideality",
   "unitSlug": "states-of-matter",
-  "topicSlug": "real-gas-deviation",
-  "topicTitle": "Real Gas Deviation",
-  "relevance": 30,
+  "topicSlug": "deviation-of-real-gas-from-ideality-solving-related-numerical-problems-based-on-gas-laws",
+  "topicTitle": "Deviation of real gas from ideality (solving related numerical problems based on gas laws)",
+  "relevance": 100,
   "notes": [
-    "Detailed notes on 03 real gas deviation within the states of matter unit."
+    "### 1. Meaning of deviation",
+    "A real gas obeys PV = nRT only approximately; the departure from that equation is called deviation from ideal behaviour. It arises because the two postulates of the kinetic theory are only idealisations — molecules do occupy volume, and intermolecular attractive forces do exist (otherwise no gas could ever be liquefied). Deviation is largest at **high pressure and low temperature**, and smallest for small, non-polar molecules such as H₂ and He.",
+    "### 2. Compressibility factor Z",
+    "$Z=\\frac{PV}{nRT}$ (or Z = PV/RT for one mole) measures deviation: Z = 1 for an ideal gas, **Z < 1** when attraction dominates (moderate pressure, gas easier to compress than ideal), **Z > 1** when the finite molecular volume dominates (high pressure, gas harder to compress than ideal). Plotting Z against P shows that H₂ stays above 1 and rises steadily, while CO₂ dips below 1, crosses 1 and then rises — the classic experimental proof of deviation.",
+    "### 3. Explanation of the two effects",
+    "• **Attraction effect:** neighbouring molecules pull a molecule away from the wall, so it strikes with less momentum — the observed pressure is less than the ideal value (P_obs < P_ideal), which makes Z < 1.",
+    "• **Volume effect:** the molecules themselves and their excluded volume reduce the free space, so the observed volume is greater than ideal (V_obs > V_ideal), making Z > 1.",
+    "These two competing effects explain why Z may be less than 1 at moderate pressure and greater than 1 at high pressure, and why there is a temperature (Boyle temperature) at which Z ≈ 1 over a wide range of moderate pressures.",
+    "### 4. van der Waals equation (corrections applied)",
+    "$\\left(P+\\frac{an^{2}}{V^{2}}\\right)(V-nb)=nRT$ for n moles, or $\\left(P+\\frac{a}{V^{2}}\\right)(V-b)=RT$ for one mole. The constant **a** measures the strength of intermolecular attraction (pressure correction an²/V²) and **b** is the effective (excluded) molar volume due to finite molecular size — roughly four times the actual molecular volume. Larger a means easier liquefaction; larger b means a bulkier molecule.",
+    "### 5. Critical constants and continuity of state",
+    "Above the critical temperature Tc a gas cannot be liquefied by pressure alone; at the critical point the densities of liquid and vapour become equal. For a van der Waals gas: $V_{c}=3b$, $P_{c}=\\frac{a}{27b^{2}}$, $T_{c}=\\frac{8a}{27Rb}$ and the predicted critical compressibility factor $Z_{c}=\\frac{P_{c}V_{c}}{RT_{c}}=\\frac{3}{8}=0.375$. The reduced variables $P_{r}=P/P_{c}$, $V_{r}=V/V_{c}$, $T_{r}=T/T_{c}$ give the principle of corresponding states: all gases with the same reduced T and P have the same reduced volume.",
+    "### 6. Other equations of state",
+    "Dieterici's equation $P(V-b)=RT\\,e^{-a/RTV}$ and the virial equation $PV=RT(1+B/V+C/V^{2}+\\dots)$ improve the description; the virial coefficients are obtained from experiment. The van der Waals equation remains the standard NEB-level treatment because it explains liquefaction and the critical point qualitatively with only two constants.",
+    "### 7. Applications",
+    "• **Liquefaction and refrigeration:** below Tc, attractive forces (the 'a' term) allow liquefaction; the Joule–Thomson effect and Linde's method produce liquid N₂, O₂, He and LPG/CNG storage systems.",
+    "• **Comparing gases:** a and b from tables rank gases by ease of liquefaction (SO₂ > CO₂ > N₂ > H₂), and Z charts guide compressor and pipeline design.",
+    "• **Supercritical fluids:** above Tc and Pc, CO₂ becomes a supercritical solvent used for decaffeination and dry cleaning — an application of critical constants.",
+    "• **Safety and storage:** knowing Tc explains why cylinders must be kept cool and why liquefied petroleum gas remains liquid under pressure.",
+    "### 8. Numerical work",
+    "Typical problems: compute Z from P, V, T; compare gases for near-ideal behaviour (smallest a and b, e.g. He); use the van der Waals equation to find P or V; and obtain Tc, Pc, Vc from a and b (or vice versa).",
+    "### 9. Limitations of the van der Waals equation",
+    "It is a qualitative improvement, not an exact theory: a and b are treated as constants although they vary with temperature; molecular shape, polarity and association (hydrogen bonding in water, ammonia) are ignored; the predicted Zc = 0.375 exceeds the measured values (0.23–0.31 for most gases); the equation does not reproduce isotherms precisely near the critical point and has no term for attractive forces acting over different ranges. Better results need more elaborate equations of state or computer simulation."
   ],
   "confusion": [
-    "❌ Misconception about 03 real gas deviation. ✅ Scientific explanation."
+    "❌ A real gas always has Z > 1. ✅ Z < 1 at moderate pressure (attraction dominates) and Z > 1 at high pressure (molecular volume dominates); hydrogen is a special case with Z > 1 throughout.",
+    "❌ Deviation from ideality increases as temperature rises. ✅ It decreases with rising temperature and increases at high pressure and low temperature.",
+    "❌ The constant b is the molecular volume. ✅ b is the excluded volume per mole, about four times the actual molecular volume.",
+    "❌ Gases can always be liquefied by increasing pressure. ✅ Above the critical temperature no amount of pressure can liquefy a gas.",
+    "❌ Zc = 0.375 is exact for all gases. ✅ It is the van der Waals *prediction*; experiment gives 0.23–0.31, which is a limitation of the equation."
   ],
   "practice": [
-    "Practice exercise for 03 real gas deviation."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 03 real gas deviation."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 03 real gas deviation."
-  ],
-  "practiceQuestions": [
-    "Practice question for 03 real gas deviation."
+    "What is meant by deviation of a real gas from ideality? Explain with a graph of Z versus P.",
+    "Explain the two corrections applied by van der Waals and write the corrected equation.",
+    "Define Tc, Pc and Vc and derive Vc = 3b, Pc = a/27b², Tc = 8a/27Rb.",
+    "Calculate Z for 1 mol of a gas occupying 0.5 L at 300 K and 50 atm and comment on the deviation.",
+    "Which of H₂, N₂ and SO₂ is closest to ideal behaviour and why?",
+    "State the limitations of the van der Waals equation."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 03 real gas deviation)"
+    "$$Z=\\frac{PV}{nRT}\\ \\ (Z=1\\ \\text{ideal},\\ Z<1\\ \\text{attraction},\\ Z>1\\ \\text{finite volume})$$",
+    "$$\\left(P+\\frac{an^{2}}{V^{2}}\\right)(V-nb)=nRT$$",
+    "$$V_{c}=3b,\\quad P_{c}=\\frac{a}{27b^{2}},\\quad T_{c}=\\frac{8a}{27Rb},\\quad Z_{c}=\\frac{P_{c}V_{c}}{RT_{c}}=\\frac{3}{8}$$",
+    "$$P_{r}=\\frac{P}{P_{c}},\\quad V_{r}=\\frac{V}{V_{c}},\\quad T_{r}=\\frac{T}{T_{c}}$$"
   ],
-  "keyPoints": [
-    "Core point for 03 real gas deviation."
+  "universalFacts": [
+    "Zc(observed) for most gases lies between 0.23 and 0.31, below the van der Waals value 0.375.",
+    "Hydrogen and helium have the smallest a and b values and stay closest to ideal behaviour; SO₂ and CO₂ deviate most among common gases.",
+    "Critical temperatures: He −268 °C, N₂ −147 °C, CO₂ 31 °C, water 374 °C — the reason He is the hardest gas to liquefy."
   ],
-  "summary": "Summary of 03 real gas deviation.",
-  "specialNotes": [
-    "Specialized insight for 03 real gas deviation."
-  ],
-  "importantStatements": [
-    "Key statement for 03 real gas deviation."
+  "examples": [
+    "**Problem:** Compute Z for 1 mol of gas at 300 K occupying 0.5 L at 50 atm. **Solution:** Z = PV/RT = (50 × 0.5)/(0.0821 × 300) ≈ 1.015 → slightly greater than 1, so the finite molecular volume effect dominates.",
+    "**Problem:** For a gas with a = 3.6 L² atm mol⁻² and b = 0.043 L mol⁻¹, find Tc and Pc. **Solution:** Tc = 8a/27Rb = (8 × 3.6)/(27 × 0.0821 × 0.043) ≈ 302 K; Pc = a/27b² = 3.6/(27 × 0.043²) ≈ 72 atm."
   ],
   "importantNotes": [
-    "Important note regarding 03 real gas deviation."
+    "Explain the sign of Z before quoting numbers: Z < 1 means attraction dominates, Z > 1 means molecular volume dominates.",
+    "Keep a in L² atm mol⁻² (or Pa m⁶ mol⁻²) with matching R; unit mismatch is the commonest numerical error.",
+    "State that the van der Waals equation explains the critical point only approximately — Zc = 0.375 versus experimental 0.23–0.31."
   ],
-  "examShortTricks": [
-    "Recall the formula for Real Gas Deviation."
-  ],
-  "examNotes": [
-    "Focus on Real Gas Deviation problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 03 real gas deviation?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 03 real gas deviation."
-  ],
-  "importantTasks": [
-    "Task for studying 03 real gas deviation."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "03-real-gas-deviation",
-  "mcqs": [
-    {
-      "question": "Question about 03 real gas deviation?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ]
+  "visualType": "real-gas-deviation",
+  "tabGroup": "States-Of-Matter-Learner-Notes"
 }

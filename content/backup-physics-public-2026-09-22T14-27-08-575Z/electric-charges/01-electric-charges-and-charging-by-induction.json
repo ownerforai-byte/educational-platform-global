@@ -1,0 +1,216 @@
+{
+  "title": "Electric Charges and Charging by Induction",
+  "unitSlug": "electric-charges",
+  "topicSlug": "electric-charges-and-charging-by-induction",
+  "topicTitle": "Electric charges; charging by induction",
+  "relevance": 100,
+  "animation3D": "electric-charges",
+  "motionGraphics": "electric-charges",
+  "duplicateType": 1,
+  "enrichedContent": {
+    "notes": [
+      "**Electric Charge:** An intrinsic property of matter causing electromagnetic force. Quantized: $q = ne$ ($e \\approx 1.6 \\times 10^{-19}$ C). Conserved in isolated systems.",
+      "**Charging by Induction:** A method to charge a conductor without contact. A charged object brought near a neutral conductor polarizes it; grounding the far side allows charge to flow, leaving the conductor with an opposite charge.",
+      "**Properties:** Additivity of charges, conservation of charge, quantization of charge."
+    ],
+    "confusion": [
+      "❌ 'Induction creates charge.' ✅ No, it redistributes existing charge; the total charge of the system is conserved.",
+      "❌ 'Grounding always removes electrons.' ✅ Grounding allows electrons to flow to/from the earth to neutralize the potential, depending on the inducing charge."
+    ],
+    "practice": [
+      "Calculate the number of electrons in 1 C of charge.",
+      "Describe the steps to charge a metal sphere positively using a negatively charged rod."
+    ],
+    "universalFacts": [
+      "Millikan's oil-drop experiment proved the quantization of charge.",
+      "Charge is invariant under relativistic motion (a charge's value doesn't change with speed).",
+      "Induction is the principle behind electrostatic precipitators and photocopiers."
+    ],
+    "examples": [
+      "Rubbing a glass rod with silk (glass becomes positive, silk negative).",
+      "Attracting small paper bits with a charged comb (polarization/induction).",
+      "Lightning as a massive discharge of accumulated charge."
+    ],
+    "practiceQuestions": [
+      "If a body has 10^19 excess electrons, what is its charge?",
+      "Explain why a charged balloon sticks to a wall.",
+      "Can a body have a charge of 3.2 x 10^-18 C? Why?"
+    ],
+    "formulas": [
+      "Quantization: q = ±ne",
+      "Total charge conservation: Σq_initial = Σq_final"
+    ],
+    "keyPoints": [
+      "Charge is quantized (integer multiples of e).",
+      "Charge is conserved in isolated systems.",
+      "Induction requires a conductor and grounding.",
+      "Polarization occurs in both conductors and insulators."
+    ],
+    "summary": "Electric charge is a fundamental, quantized, and conserved property. Charging by induction allows creating opposite charges on conductors without physical contact, relying on polarization and grounding.",
+    "specialNotes": [
+      "Always specify the sign of the charge.",
+      "Induction requires a conducting path to ground for permanent charging.",
+      "Insulators can be polarized but not easily charged by induction."
+    ],
+    "importantStatements": [
+      "The total charge of an isolated system is constant.",
+      "Electric charge is quantized: q = ne.",
+      "Charging by induction results in a charge opposite to the inducing charge.",
+      "Like charges repel, unlike charges attract.",
+      "A neutral object can be attracted to a charged object due to polarization."
+    ],
+    "importantNotes": [
+      "Quantization is negligible at macroscopic scales.",
+      "Induction is a temporary effect unless grounding is used.",
+      "Electrostatic force is much stronger than gravitational force."
+    ],
+    "examShortTricks": [
+      "For quantization problems, always use n = q/e.",
+      "Induction: inducing charge and induced charge are always opposite.",
+      "Grounding: electrons flow to/from the earth to neutralize the potential."
+    ],
+    "examNotes": [
+      "Understand the difference between conduction (contact) and induction (no contact).",
+      "Be able to draw the steps of charging by induction.",
+      "Quantization problems are frequent."
+    ],
+    "mcs": [
+      {
+        "question": "The smallest unit of charge is:",
+        "options": [
+          "1 C",
+          "1.6 x 10^-19 C",
+          "9.1 x 10^-31 C",
+          "Zero"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Charging by induction results in:",
+        "options": [
+          "Same charge",
+          "Opposite charge",
+          "No charge",
+          "Neutralization"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Quantization of charge (q=ne).",
+      "Conservation of charge.",
+      "Charging by induction process.",
+      "Polarization."
+    ],
+    "importantTasks": [
+      "Practice drawing the induction process steps.",
+      "Solve 5 numerical problems on quantization.",
+      "Explain polarization in insulators."
+    ],
+    "exercises": [],
+    "visualization": {}
+  },
+  "originalContent": {
+    "notes": [
+      "**Electric Charge:** An intrinsic property of matter causing electromagnetic force. Quantized: $q = ne$ ($e \\approx 1.6 \\times 10^{-19}$ C). Conserved in isolated systems.",
+      "**Charging by Induction:** A method to charge a conductor without contact. A charged object brought near a neutral conductor polarizes it; grounding the far side allows charge to flow, leaving the conductor with an opposite charge.",
+      "**Properties:** Additivity of charges, conservation of charge, quantization of charge."
+    ],
+    "confusion": [
+      "❌ 'Induction creates charge.' ✅ No, it redistributes existing charge; the total charge of the system is conserved.",
+      "❌ 'Grounding always removes electrons.' ✅ Grounding allows electrons to flow to/from the earth to neutralize the potential, depending on the inducing charge."
+    ],
+    "practice": [
+      "Calculate the number of electrons in 1 C of charge.",
+      "Describe the steps to charge a metal sphere positively using a negatively charged rod."
+    ],
+    "universalFacts": [
+      "Millikan's oil-drop experiment proved the quantization of charge.",
+      "Charge is invariant under relativistic motion (a charge's value doesn't change with speed).",
+      "Induction is the principle behind electrostatic precipitators and photocopiers."
+    ],
+    "examples": [
+      "Rubbing a glass rod with silk (glass becomes positive, silk negative).",
+      "Attracting small paper bits with a charged comb (polarization/induction).",
+      "Lightning as a massive discharge of accumulated charge."
+    ],
+    "practiceQuestions": [
+      "If a body has 10^19 excess electrons, what is its charge?",
+      "Explain why a charged balloon sticks to a wall.",
+      "Can a body have a charge of 3.2 x 10^-18 C? Why?"
+    ],
+    "formulas": [
+      "Quantization: q = ±ne",
+      "Total charge conservation: Σq_initial = Σq_final"
+    ],
+    "keyPoints": [
+      "Charge is quantized (integer multiples of e).",
+      "Charge is conserved in isolated systems.",
+      "Induction requires a conductor and grounding.",
+      "Polarization occurs in both conductors and insulators."
+    ],
+    "summary": "Electric charge is a fundamental, quantized, and conserved property. Charging by induction allows creating opposite charges on conductors without physical contact, relying on polarization and grounding.",
+    "specialNotes": [
+      "Always specify the sign of the charge.",
+      "Induction requires a conducting path to ground for permanent charging.",
+      "Insulators can be polarized but not easily charged by induction."
+    ],
+    "importantStatements": [
+      "The total charge of an isolated system is constant.",
+      "Electric charge is quantized: q = ne.",
+      "Charging by induction results in a charge opposite to the inducing charge.",
+      "Like charges repel, unlike charges attract.",
+      "A neutral object can be attracted to a charged object due to polarization."
+    ],
+    "importantNotes": [
+      "Quantization is negligible at macroscopic scales.",
+      "Induction is a temporary effect unless grounding is used.",
+      "Electrostatic force is much stronger than gravitational force."
+    ],
+    "examShortTricks": [
+      "For quantization problems, always use n = q/e.",
+      "Induction: inducing charge and induced charge are always opposite.",
+      "Grounding: electrons flow to/from the earth to neutralize the potential."
+    ],
+    "examNotes": [
+      "Understand the difference between conduction (contact) and induction (no contact).",
+      "Be able to draw the steps of charging by induction.",
+      "Quantization problems are frequent."
+    ],
+    "mcs": [
+      {
+        "question": "The smallest unit of charge is:",
+        "options": [
+          "1 C",
+          "1.6 x 10^-19 C",
+          "9.1 x 10^-31 C",
+          "Zero"
+        ],
+        "answer": "B"
+      },
+      {
+        "question": "Charging by induction results in:",
+        "options": [
+          "Same charge",
+          "Opposite charge",
+          "No charge",
+          "Neutralization"
+        ],
+        "answer": "B"
+      }
+    ],
+    "importantConcepts": [
+      "Quantization of charge (q=ne).",
+      "Conservation of charge.",
+      "Charging by induction process.",
+      "Polarization."
+    ],
+    "importantTasks": [
+      "Practice drawing the induction process steps.",
+      "Solve 5 numerical problems on quantization.",
+      "Explain polarization in insulators."
+    ],
+    "exercises": [],
+    "visualization": {}
+  }
+}

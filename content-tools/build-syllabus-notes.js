@@ -67,8 +67,12 @@ function buildSubject(subject) {
       if (!data) continue;
       const isVariant = Boolean(data.duplicateType && data.tabGroup);
       const paired = isVariant && originals.has(data.tabGroup);
+      // Preserve the authored duplicateType; fall back to 1 only for
+      // un-marked (original) files. Variants stay variants even when their
+      // tabGroup does not pair with an original in the same unit — the UI
+      // still renders them as additional tabs via tabGroup.
       const duplicateType = isVariant
-        ? (paired ? data.duplicateType : 1)
+        ? data.duplicateType
         : 1;
       const topicSlug = isVariant && paired ? data.tabGroup : data.topicSlug;
 
@@ -85,10 +89,16 @@ function buildSubject(subject) {
         unitSlug: unit,
         topicSlug,
         title: data.title || data.topicTitle || topicSlug,
-        noteCount: 1,
+        noteCount: Array.isArray(data.notes) ? data.notes.length : 0,
         source: "ravikishan",
         duplicateType,
         filename,
+        // Enriched fields for richer UI rendering
+        ...(data.tabGroup ? { tabGroup: data.tabGroup } : {}),
+        hasMcqs: Boolean(data.mcqs && data.mcqs.length > 0),
+        universalFactsCount: Array.isArray(data.universalFacts)
+          ? data.universalFacts.length
+          : 0,
       });
     }
   }

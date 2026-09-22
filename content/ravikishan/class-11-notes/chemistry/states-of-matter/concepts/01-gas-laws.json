@@ -1,219 +1,70 @@
 {
-  "title": "Gas Laws",
+  "title": "Gas Laws: Boyle's, Charles', Avogadro's, Combined Gas Equation, Dalton's Law of Partial Pressure and Graham's Law of Diffusion",
   "unitSlug": "states-of-matter",
-  "topicSlug": "gas-laws",
-  "topicTitle": "Gas Laws",
-  "relevance": 30,
+  "topicSlug": "gas-laws-boyle-s-law-charles-law-avogadro-s-law-combined-gas-equation-dalton-s-law-of-partial-pr",
+  "topicTitle": "Gas laws: Boyle's law, Charles' law, Avogadro's law, combined gas equation, Dalton's law of partial pressure, Graham's law of diffusion",
+  "relevance": 100,
   "notes": [
-    "Ideal gas: PV=nRT.",
-    "Kinetic theory explains gas properties.",
-    "Real gases: van der Waals equation.",
-    "Liquid properties: surface tension, viscosity."
+    "### 1. Meaning",
+    "The gas laws are the experimentally established relations between the pressure (P), volume (V), absolute temperature (T) and amount (n) of a fixed mass of gas. They hold for an ideal gas, i.e. at low pressure and high temperature where molecular volume and intermolecular forces are negligible.",
+    "### 2. Boyle's law (1662)",
+    "At constant temperature the volume of a fixed mass of gas is inversely proportional to its pressure: V ∝ 1/P, so PV = constant (P₁V₁ = P₂V₂). Graphically, P versus V is a rectangular hyperbola and P versus 1/V is a straight line through the origin; each curve is called an isotherm. Molecular meaning: compressing the gas raises the number of collisions per unit area per unit time, which increases pressure.",
+    "### 3. Charles' law (1787; published 1802)",
+    "At constant pressure the volume of a fixed mass of gas is directly proportional to its absolute temperature: V ∝ T, so V₁/T₁ = V₂/T₂ (isobar). A V–t(°C) plot is a straight line meeting the temperature axis at −273.15 °C, the origin of the absolute (Kelvin) scale. The same logic at constant **volume** gives the pressure law (Gay-Lussac): P ∝ T, P₁/T₁ = P₂/T₂ (isochore).",
+    "### 4. Avogadro's law (1811)",
+    "Equal volumes of all gases under the same conditions of temperature and pressure contain equal numbers of molecules: V ∝ n at constant T and P. Consequences: molar volume of any gas at STP = 22.4 dm³ (22.4 L) and at RTP ≈ 24 dm³; 1 mol contains 6.022 × 10²³ molecules; vapour density and molecular mass can be calculated from gas volumes.",
+    "### 5. Combined gas equation and the ideal gas equation",
+    "Combining Boyle, Charles and Avogadro for a fixed mass: $\\frac{P_{1}V_{1}}{T_{1}}=\\frac{P_{2}V_{2}}{T_{2}}$ and finally $PV=nRT$, where R = 8.314 J K⁻¹ mol⁻¹ = 0.0821 L atm K⁻¹ mol⁻¹ = 2 cal K⁻¹ mol⁻¹. R is the work done by one mole of an ideal gas per kelvin of expansion at constant pressure (universal gas constant).",
+    "### 6. Dalton's law of partial pressures (1801)",
+    "The total pressure of a mixture of non-reacting gases is the sum of the partial pressures each gas would exert alone in the same volume: P_total = P₁ + P₂ + P₃ + …; and P_i = x_i P_total where x_i is the mole fraction. Applications: gases collected over water (P_dry = P_total − aqueous tension), scuba and anaesthetic gas mixtures, and vapour-pressure corrections in the laboratory.",
+    "### 7. Graham's law of diffusion (1833)",
+    "The rate of diffusion (or effusion) of a gas is inversely proportional to the square root of its density or molar mass at the same T and P: $\\frac{r_{1}}{r_{2}}=\\sqrt{\\frac{d_{2}}{d_{1}}}=\\sqrt{\\frac{M_{2}}{M_{1}}}$. Applications: separation of isotopes (²³⁵UF₆/²³⁸UF₆ diffusion), leak detection, determination of molar mass, and explaining why a balloon filled with H₂ deflates faster than one with O₂.",
+    "### 8. Applications",
+    "• Calculating unknown P, V, T in experiments and industry (gas cylinders, LPG pressure, tyre pressure with temperature change, weather balloons, airbags).",
+    "• Dalton's law is used for gases collected over water, in scuba-diving and anaesthesia gas mixtures, and in atmospheric humidity calculations; the combined gas equation underlies gas-flow and compression-ratio engineering.",
+    "• Graham's law is used industrially to separate isotopes (²³⁵UF₆ from ²³⁸UF₆) and in the laboratory to determine molar masses and to detect leaks; Avogadro's law is the basis of molar-volume calculations and hence of all volumetric analysis of gases.",
+    "### 9. Limitations",
+    "• All the laws are **ideal-gas** laws: they are obeyed closely only at low pressure and high temperature; real gases deviate (and the deviation is strongest near the critical temperature, which is why gases cannot be liquefied merely by compression above T_c).",
+    "• Each law needs a fixed mass of gas and holds P, or V, or T constant — applying two at once to a changing mass gives wrong answers.",
+    "• Dalton's law applies only to non-reacting, non-associated ideal gases; it fails for reacting mixtures (NH₃ + HCl → NH₄Cl) and for gases that dissolve appreciably in the liquid present.",
+    "• Graham's law is strictly valid for gases at equal temperature and pressure and for effusion through a small hole; it needs correction for high pressures, for heavier/polyatomic molecules and for diffusion through porous media.",
+    "• Avogadro's law assumes equal molecular behaviour, though real molecules of different size and polarity behave differently; and the combined equation cannot represent a real gas — the van der Waals equation is required."
   ],
   "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks).",
-    "❌ Ideal gas has intermolecular forces. ✅ Ideal gas assumes no intermolecular forces and negligible molecular volume."
+    "❌ Boyle's law means PV is always constant. ✅ Only for a *fixed mass* at *constant temperature*; PV changes when T or n changes.",
+    "❌ Doubling the Celsius temperature doubles the volume. ✅ Charles' law uses kelvin: 10 °C → 40 °C is a 293 → 313 K change, not a ×4 change.",
+    "❌ Dalton's law works for any gas mixture. ✅ It requires non-reacting gases; NH₃ and HCl react, so partial pressures are not additive.",
+    "❌ Graham's law compares diffusion rates directly with molar masses. ✅ Rates compare as the inverse square root of molar mass (or density).",
+    "❌ Gases obey PV = nRT exactly. ✅ Real gases obey it only at low P and high T; deviation is measured by the compressibility factor Z."
   ],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice solving combined gas law and ideal gas law problems.",
-    "Practice calculating partial pressures using Dalton's law."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 01 gas laws."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "V of 2mol at 27°C, 2atm: V=24.63L",
-    "vrms of O₂ at 300K: 484 m/s"
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude.",
-    "Practice solving combined gas law and ideal gas law problems."
+    "State Boyle's, Charles' and Avogadro's laws and sketch their graphical representations.",
+    "A gas occupies 500 cm³ at 27 °C and 700 mm Hg. Find its volume at STP.",
+    "Derive the combined gas equation from Boyle's, Charles' and Avogadro's laws and hence obtain PV = nRT.",
+    "State Dalton's law of partial pressures and explain how it is used when a gas is collected over water.",
+    "State Graham's law of diffusion and use it to find the ratio of diffusion rates of O₂ and H₂.",
+    "State the limitations of the gas laws."
   ],
   "formulas": [
-    "PV = nRT",
-    "PV = (m/M)RT",
-    "vrms = √(3RT/M)",
-    "P = P° × χ(solvent)"
+    "$$\\text{Boyle: }P_{1}V_{1}=P_{2}V_{2};\\qquad \\text{Charles: }\\frac{V_{1}}{T_{1}}=\\frac{V_{2}}{T_{2}};\\qquad \\text{Gay-Lussac: }\\frac{P_{1}}{T_{1}}=\\frac{P_{2}}{T_{2}}$$",
+    "$$\\text{Combined: }\\frac{P_{1}V_{1}}{T_{1}}=\\frac{P_{2}V_{2}}{T_{2}};\\qquad \\text{Ideal: }PV=nRT$$",
+    "$$P_{\\text{total}}=P_{1}+P_{2}+\\dots;\\qquad P_{i}=x_{i}P_{\\text{total}}$$",
+    "$$\\frac{r_{1}}{r_{2}}=\\sqrt{\\frac{d_{2}}{d_{1}}}=\\sqrt{\\frac{M_{2}}{M_{1}}}$$"
   ],
-  "keyPoints": [
-    "Core point for 01 gas laws."
+  "universalFacts": [
+    "Molar volume of any gas = 22.4 L at STP (0 °C, 1 atm) and ≈24 L at RTP (25 °C, 1 bar).",
+    "R = 8.314 J K⁻¹ mol⁻¹ = 0.0821 L atm K⁻¹ mol⁻¹ = 1.987 cal K⁻¹ mol⁻¹.",
+    "Absolute zero = −273.15 °C = 0 K; Charles' plot extrapolates to zero volume there."
   ],
-  "summary": "Matter exists in three states: solid, liquid, and gas, each with distinct properties governed by intermolecular forces.",
-  "specialNotes": [
-    "Specialized insight for 01 gas laws."
-  ],
-  "importantStatements": [
-    "Key statement for 01 gas laws."
+  "examples": [
+    "**Problem:** 500 cm³ of a gas at 27 °C and 700 mm Hg — find the volume at STP. **Solution:** V₂ = P₁V₁T₂/(P₂T₁) = (700 × 500 × 273)/(760 × 300) ≈ 419 cm³.",
+    "**Problem:** Ratio of diffusion rates of H₂ and O₂. **Solution:** r(H₂)/r(O₂) = √(32/2) = 4, i.e. hydrogen diffuses four times faster."
   ],
   "importantNotes": [
-    "Important note regarding 01 gas laws."
+    "Always convert temperature to kelvin and keep pressure units consistent before substituting in the combined gas equation.",
+    "State the three conditions in every law: fixed mass, one variable constant, ideal-gas behaviour.",
+    "Cite the limitation near the critical point — liquefaction by compression alone fails above T_c."
   ],
-  "examShortTricks": [
-    "Recall the formula for Gas Laws."
-  ],
-  "examNotes": [
-    "Focus on Gas Laws problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 01 gas laws?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 01 gas laws."
-  ],
-  "importantTasks": [
-    "Task for studying 01 gas laws."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "01-gas-laws",
-  "mcqs": [
-    {
-      "question": "Which gas has the highest rms speed at same temperature?",
-      "options": [
-        "O₂",
-        "N₂",
-        "H₂",
-        "CO₂"
-      ],
-      "answer": "C"
-    },
-    {
-      "question": "Surface tension decreases with:",
-      "options": [
-        "Increase in temperature",
-        "Decrease in temperature",
-        "Constant temperature",
-        "None"
-      ],
-      "answer": "A"
-    }
-  ],
-  "exercises": [
-    {
-      "id": "1",
-      "question": "Volume of 2mol at 27°C, 2atm",
-      "steps": [
-        "V=nRT/P",
-        "V=(2×0.0821×300)/2",
-        "V=24.63L"
-      ],
-      "answer": "24.63 L"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "GasLawSim",
-    "desc": "Interactive gas law demonstrator"
-  },
-  "visualType": "gas-laws"
+  "visualType": "gas-laws",
+  "tabGroup": "States-Of-Matter-Learner-Notes"
 }

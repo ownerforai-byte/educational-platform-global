@@ -2,7 +2,7 @@
 
 import { useEffect, useState, Suspense } from "react";
 import Link from "next/link";
-import { PanelLeftClose, PanelLeftOpen, Atom, Pin, PinOff, ChevronDown } from "lucide-react";
+import { PanelLeftClose, PanelLeftOpen, Atom, Pin, PinOff, ChevronDown, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "./mobile-nav";
 import { SidebarNavigation } from "./sidebar-navigation";
@@ -111,8 +111,19 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
           {/* Center spacer */}
           <div className="flex-1" />
 
-          {/* Right: pin toggle + theme studio + credit badge + auth links */}
+          {/* Right: pin toggle + theme studio + search + credit badge + auth links */}
           <div className="flex items-center gap-1.5 shrink-0">
+            {/* Quick Search Shortcut */}
+            <Link
+              href="/search"
+              className="hidden sm:inline-flex items-center gap-1.5 px-2.5 h-8 rounded-xl border border-border/80 bg-card hover:bg-muted/60 text-xs font-semibold text-muted-foreground hover:text-foreground transition-all shadow-sm whitespace-nowrap"
+              title="Global search across all subjects, notes, theorems, derivations, and labs"
+            >
+              <Search className="h-3.5 w-3.5 text-muted-foreground" />
+              <span>Search</span>
+              <kbd className="text-[9px] font-mono px-1 py-0.5 rounded bg-muted border border-border/60">⌘K</kbd>
+            </Link>
+
             {/* Pin / Unpin button */}
             <Button
               variant="ghost"

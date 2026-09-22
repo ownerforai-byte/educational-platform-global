@@ -1,81 +1,65 @@
 {
-  "title": "Bohr's Atomic Model — Defects and Limitations",
+  "title": "Defects of Bohr's Theory — Quick Revision List",
   "unitSlug": "atomic-structure",
   "topicSlug": "defects-of-bohr-s-theory",
   "topicTitle": "Defects of Bohr's theory",
-  "relevance": 88,
+  "relevance": 80,
   "notes": [
-    "Detailed notes on 05 bohr defects within the atomic structure unit."
+    "### Focus of this tab",
+    "A compressed revision list of Bohr's defects, each with its one-line reason — the fast recall version. The fully argued list is in the main defects note.",
+    "### The eight defects (with one-line reasons)",
+    "1. **One-electron only** — electron–electron repulsion and screening (Z_eff) are ignored; fails for He, Li, all multi-electron atoms.",
+    "2. **No fine structure** — no relativity, no spin; cannot explain doublets (Na D 589.0/589.6 nm; Hα doublet).",
+    "3. **No Zeeman/Stark splitting** — no magnetic quantum number or orbital magnetic moment; cannot explain splitting in magnetic/electric fields.",
+    "4. **No line intensities or selection rules** — gives possible wavelengths, not probabilities of transitions.",
+    "5. **Contradicts the uncertainty principle** — definite r and p simultaneously is impossible (Δx·Δp ≥ h/4π); orbits cannot be real trajectories.",
+    "6. **Ignores wave–particle duality** — treats the electron as a particle in a path; de Broglie/Schrödinger replace orbits by orbitals.",
+    "7. **Ad hoc postulates** — mvr = nh/2π is imposed, not derived (de Broglie's standing waves later justified it).",
+    "8. **No probability, no chemistry** — cannot give electron density, orbital shapes, subshell structure, bonding or molecular spectra; only the crude Bohr–Bury scheme for periodicity.",
+    "### The rescue timeline",
+    "1916 Sommerfeld (elliptical orbits, azimuthal quantum number → fine structure) → 1924 de Broglie (matter waves) → 1925 Pauli/Uhlenbeck–Goudsmit (spin) → 1926 Schrödinger (wave equation, orbitals) → 1927 Heisenberg (uncertainty). Each repair targets one defect above."
   ],
   "confusion": [
-    "❌ Misconception about 05 bohr defects. ✅ Scientific explanation."
+    "❌ Bohr's theory failed completely. ✅ It is exact for one-electron species (H, He⁺) — defects appear only beyond that scope.",
+    "❌ Fine structure needs many electrons. ✅ It comes from spin and relativity even in hydrogen.",
+    "❌ Defect 5 means measurements are inaccurate. ✅ It is a fundamental limit of nature, not an instrument problem."
   ],
   "practice": [
-    "Practice exercise for 05 bohr defects."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 05 bohr defects."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 05 bohr defects."
-  ],
-  "practiceQuestions": [
-    "Practice question for 05 bohr defects."
+    "List the defects of Bohr's theory with a one-line reason for each.",
+    "Which defect does the uncertainty principle expose, and how?",
+    "Match each defect with the later theory that repaired it.",
+    "Why does Bohr's model fail for helium but work for He⁺?"
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 05 bohr defects)"
+    "$$\\Delta x\\,\\Delta p\\ge\\frac{h}{4\\pi}\\ (\\text{forbids definite orbits});\\qquad Z_{\\text{eff}}=Z-S\\ (\\text{screening, absent from Bohr})$$"
   ],
-  "keyPoints": [
-    "Core point for 05 bohr defects."
+  "universalFacts": [
+    "Sodium D lines 589.0/589.6 nm — the standard fine-structure exhibit.",
+    "Sommerfeld's elliptical orbits introduced the azimuthal quantum number l in 1916.",
+    "Schrödinger's 1926 equation removed orbits in favour of orbitals and repaired every defect at once."
   ],
-  "summary": "Summary of 05 bohr defects.",
-  "specialNotes": [
-    "Specialized insight for 05 bohr defects."
-  ],
-  "importantStatements": [
-    "Key statement for 05 bohr defects."
+  "examples": [
+    "**Problem:** Why can Bohr's model not predict the relative brightness of Hα and Hβ? **Solution:** intensities depend on transition probabilities (population of levels and dipole strengths) — concepts absent from the model; quantum mechanics supplies them."
   ],
   "importantNotes": [
-    "Important note regarding 05 bohr defects."
+    "Do not confuse this list with Rutherford's limitations — the examiner checks scope.",
+    "Order the answer: one-electron limit → fine structure → Zeeman/Stark → intensities → uncertainty → duality → ad hoc postulates → chemistry."
   ],
-  "examShortTricks": [
-    "Recall the formula for Bohr's Atomic Model — Defects and Limitations."
-  ],
-  "examNotes": [
-    "Focus on Bohr's Atomic Model — Defects and Limitations problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 05 bohr defects?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 05 bohr defects."
-  ],
-  "importantTasks": [
-    "Task for studying 05 bohr defects."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "05-bohr-defects",
   "mcqs": [
     {
-      "question": "Question about 05 bohr defects?",
+      "question": "Bohr's theory cannot explain the splitting of spectral lines in a magnetic field, known as the:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Stark effect",
+        "Zeeman effect",
+        "Raman effect",
+        "Photoelectric effect"
       ],
-      "answer": "A"
+      "answer": "B"
     }
-  ]
+  ],
+  "visualType": "bohr-model",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "05-bohr-defects.json"
 }

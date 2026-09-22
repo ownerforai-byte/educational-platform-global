@@ -1,81 +1,69 @@
 {
-  "title": "Electron Spin Notation (↑ ↓) & Shell Mapping Matrices",
+  "title": "Electron Spin, Box Notation and Shell Mapping",
   "unitSlug": "atomic-structure",
   "topicSlug": "orbitals-and-shape-of-s-and-p-orbitals-only",
   "topicTitle": "Orbitals and shape of s and p orbitals only",
-  "relevance": 77,
+  "relevance": 80,
   "notes": [
-    "Detailed notes on 19 electron spin notation and shell mapping within the atomic structure unit."
+    "### Focus of this tab",
+    "Spin quantum number and the box-arrow notation, mapped onto the shell structure — the drawing skills needed for configuration and orbital-diagram questions.",
+    "### The spin quantum number",
+    "mₛ = +½ (↑) or −½ (↓) for every electron, independent of n, l, m. Spin angular momentum is √(3/4)ħ. Consequences: an orbital holds at most 2 electrons (Pauli); a shell holds 2n²; a subshell holds 2(2l + 1).",
+    "### Box notation rules",
+    "• One box per orbital; label the subshell above (2p: three boxes).",
+    "• Aufbau: fill orbitals in increasing (n + l) order.",
+    "• Hund: in degenerate boxes, one up-arrow per box before any pairing.",
+    "• Pauli: two arrows in one box must be opposite (↑↓).",
+    "### Shell mapping (putting orbitals into shells)",
+    "K shell: 1s (2 e⁻). L: 2s, 2p (2 + 6 = 8). M: 3s, 3p, 3d (2 + 6 + 10 = 18). N: 4s, 4p, 4d, 4f (2 + 6 + 10 + 14 = 32). Filling order across shells: 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s, 4d, 5p …",
+    "### Worked box diagrams",
+    "• N (Z = 7): 1s ↑↓ | 2s ↑↓ | 2p ↑ ↑ ↑ → 3 unpaired electrons, paramagnetic.",
+    "• O (Z = 8): 2p ↑↓ ↑ ↑ → 2 unpaired.",
+    "• Cr (Z = 24): [Ar] 3d ↑ ↑ ↑ ↑ ↑ with 4s ↑ — the half-filled exception.",
+    "### What the diagrams predict",
+    "Unpaired electrons → paramagnetism, μ = √(u(u + 2)) BM; paired → diamagnetic. The diagram also shows why carbon forms two covalent bonds after promotion (two half-filled p orbitals) and why the noble gases are inert (all boxes paired)."
   ],
   "confusion": [
-    "❌ Misconception about 19 electron spin notation and shell mapping. ✅ Scientific explanation."
+    "❌ Arrows in the same box may point the same way. ✅ Pauli forbids it — opposite spins only.",
+    "❌ Pairing starts in the first p box. ✅ Hund's rule: each degenerate box gets one electron first.",
+    "❌ Spin affects the shape of orbitals. ✅ Spin changes capacity and magnetism, not the shape given by l."
   ],
   "practice": [
-    "Practice exercise for 19 electron spin notation and shell mapping."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 19 electron spin notation and shell mapping."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 19 electron spin notation and shell mapping."
-  ],
-  "practiceQuestions": [
-    "Practice question for 19 electron spin notation and shell mapping."
+    "Draw box diagrams for N, O and Ne and count unpaired electrons.",
+    "State the three rules (Aufbau, Pauli, Hund) that govern box diagrams.",
+    "Map the orbitals of the M shell with their capacities.",
+    "Predict whether Fe³⁺ is paramagnetic using box notation."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 19 electron spin notation and shell mapping)"
+    "$$\\mu=\\sqrt{u(u+2)}\\ \\text{BM};\\qquad \\text{shell capacities }2,\\ 8,\\ 18,\\ 32$$"
   ],
-  "keyPoints": [
-    "Core point for 19 electron spin notation and shell mapping."
+  "universalFacts": [
+    "Nitrogen's three unpaired 2p electrons explain its triple-bond tendency and paramagnetism.",
+    "Box diagrams are also called orbital diagrams; arrows denote mₛ = ±½.",
+    "The 4s orbital fills before 3d but empties first in ion formation."
   ],
-  "summary": "Summary of 19 electron spin notation and shell mapping.",
-  "specialNotes": [
-    "Specialized insight for 19 electron spin notation and shell mapping."
-  ],
-  "importantStatements": [
-    "Key statement for 19 electron spin notation and shell mapping."
+  "examples": [
+    "**Problem:** Draw the box diagram for V (Z = 23). **Solution:** [Ar] 4s ↑↓, 3d ↑ ↑ ↑ → three unpaired d electrons, μ ≈ √15 ≈ 3.87 BM."
   ],
   "importantNotes": [
-    "Important note regarding 19 electron spin notation and shell mapping."
+    "Always draw boxes for degenerate orbitals separately; merging them loses the Hund's rule marks.",
+    "Relate unpaired-electron count directly to magnetic behaviour in the answer."
   ],
-  "examShortTricks": [
-    "Recall the formula for Electron Spin Notation (↑ ↓) & Shell Mapping Matrices."
-  ],
-  "examNotes": [
-    "Focus on Electron Spin Notation (↑ ↓) & Shell Mapping Matrices problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 19 electron spin notation and shell mapping?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 19 electron spin notation and shell mapping."
-  ],
-  "importantTasks": [
-    "Task for studying 19 electron spin notation and shell mapping."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "19-electron-spin-notation-and-shell-mapping",
   "mcqs": [
     {
-      "question": "Question about 19 electron spin notation and shell mapping?",
+      "question": "The number of unpaired electrons in an oxygen atom is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "0",
+        "1",
+        "2",
+        "4"
       ],
-      "answer": "A"
+      "answer": "C"
     }
-  ]
+  ],
+  "visualType": "electronic-configuration",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "19-electron-spin-notation-and-shell-mapping.json"
 }

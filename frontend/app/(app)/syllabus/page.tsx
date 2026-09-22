@@ -9,6 +9,7 @@ import {
   GraduationCap,
   Sparkles,
   Calendar,
+  FlaskConical,
 } from "lucide-react";
 
 export const metadata = {
@@ -53,6 +54,41 @@ export default function SyllabusPage() {
         </p>
       </div>
 
+      {/* Practical Lab Manuals Cross-Link Banner */}
+      <div className="rounded-3xl border border-emerald-500/40 bg-gradient-to-r from-emerald-500/10 via-card to-card p-6 shadow-md flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+        <div className="space-y-1">
+          <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400">
+            <FlaskConical className="h-4 w-4" />
+            <span>NEB Science Practical Curriculum</span>
+          </div>
+          <h2 className="text-lg sm:text-xl font-extrabold text-foreground">
+            Looking for Practical Syllabi &amp; Lab Manuals?
+          </h2>
+          <p className="text-xs text-muted-foreground max-w-2xl">
+            Access certified NEB Class 11 &amp; 12 practical experiment records, apparatus simulators, observation calculation tools, and examiner viva voce questions.
+          </p>
+          <div className="flex flex-wrap gap-2 pt-2 text-xs font-semibold">
+            <Link href="/practical/physics" className="px-2.5 py-1 rounded-lg bg-sky-500/15 text-sky-600 dark:text-sky-400 hover:bg-sky-500/25 transition-colors">
+              ⚡ Physics Practical
+            </Link>
+            <Link href="/practical/chemistry" className="px-2.5 py-1 rounded-lg bg-amber-500/15 text-amber-600 dark:text-amber-400 hover:bg-amber-500/25 transition-colors">
+              🧪 Chemistry Practical
+            </Link>
+            <Link href="/practical/biology" className="px-2.5 py-1 rounded-lg bg-emerald-500/15 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/25 transition-colors">
+              🌿 Biology Practical
+            </Link>
+          </div>
+        </div>
+
+        <Link
+          href="/practical"
+          className="shrink-0 inline-flex items-center gap-2 rounded-xl bg-emerald-600 px-4 py-2.5 text-xs font-bold text-white shadow-md hover:bg-emerald-500 transition-all"
+        >
+          <span>Open Practical Suite</span>
+          <ArrowRight className="h-4 w-4" />
+        </Link>
+      </div>
+
       {/* Subjects Grid */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {[...subjectMap.entries()].map(([slug, data]) => {
@@ -62,6 +98,8 @@ export default function SyllabusPage() {
             bg: "from-primary/10 via-card to-card",
             badge: "bg-primary/15 text-primary",
           };
+
+          const isScience = ["physics", "chemistry", "biology"].includes(slug);
 
           return (
             <div
@@ -101,14 +139,24 @@ export default function SyllabusPage() {
                 </div>
               </div>
 
-              <div className="mt-6 pt-4 border-t border-border/50">
+              <div className="mt-6 pt-4 border-t border-border/50 flex items-center justify-between gap-2">
                 <Link
                   href={`/syllabus/${slug}`}
-                  className="flex items-center justify-between text-xs font-bold text-primary hover:underline"
+                  className="flex items-center gap-1 text-xs font-bold text-primary hover:underline"
                 >
-                  <span>Explore Syllabus &amp; Revisions</span>
-                  <ArrowRight className="h-4 w-4" />
+                  <span>Theory Syllabus</span>
+                  <ArrowRight className="h-3.5 w-3.5" />
                 </Link>
+
+                {isScience && (
+                  <Link
+                    href={`/practical/${slug}`}
+                    className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500 hover:text-white transition-all"
+                  >
+                    <FlaskConical className="h-3 w-3" />
+                    <span>Practicals</span>
+                  </Link>
+                )}
               </div>
             </div>
           );

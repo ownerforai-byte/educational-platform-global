@@ -1,0 +1,63 @@
+{
+  "title": "Ideal Gas and the Ideal Gas Equation: Universal Gas Constant and its Significance",
+  "unitSlug": "states-of-matter",
+  "topicSlug": "ideal-gas-and-ideal-gas-equation-universal-gas-constant-and-its-significance",
+  "topicTitle": "Ideal gas and ideal gas equation; universal gas constant and its significance",
+  "relevance": 100,
+  "notes": [
+    "### 1. Meaning of an ideal gas",
+    "An ideal (perfect) gas is a hypothetical gas that obeys the gas laws and PV = nRT exactly under all conditions. Its molecules are point masses with no volume and no intermolecular forces, and collisions are perfectly elastic. No real gas is ideal, but every gas approaches ideal behaviour at **low pressure and high temperature**.",
+    "### 2. The ideal gas equation",
+    "From Boyle (V ∝ 1/P), Charles (V ∝ T) and Avogadro (V ∝ n): $V\\propto\\frac{nT}{P}$, hence $PV=nRT$. Useful forms: $PV=\\frac{m}{M}RT$ (mass m, molar mass M), $PM=dRT$ (density d) and $P=CRT$ for molar concentration C.",
+    "### 3. Meaning and value of R (universal gas constant)",
+    "For one mole of an ideal gas R = PV/T is the same for every gas — hence *universal*. Physically R is the work done when 1 mol of ideal gas expands at constant pressure per kelvin of temperature rise. Values: R = 8.314 J K⁻¹ mol⁻¹ = 8.314 × 10⁷ erg K⁻¹ mol⁻¹ = 0.0821 L atm K⁻¹ mol⁻¹ = 2 cal K⁻¹ mol⁻¹. Related constant: Boltzmann constant k = R/N_A = 1.38 × 10⁻²³ J K⁻¹ (R is per mole, k is per molecule).",
+    "### 4. Significance of R",
+    "• Independent of the nature of the gas, it links P, V, T, n with energy — the bridge between the gas laws and thermodynamics (ΔH = ΔU + ΔnRT).",
+    "• Mean kinetic energy of 1 mol of any gas = (3/2)RT; R also appears in the Arrhenius equation and in Cp − Cv = R.",
+    "• It fixes the molar volume: from V = RT/P, 1 mol occupies 22.4 L at STP.",
+    "### 5. Applications",
+    "• Determining molar mass and density of gases and volatile liquids (Dumas and Victor Meyer methods) using PM = dRT.",
+    "• Calculating gas volumes for stoichiometry, cylinder contents and gas storage, and calibrating flow meters and gas thermometers.",
+    "• Basis of chemical-engineering calculations (compressor design, pipelines, airbags), of the kinetic theory and of thermodynamic work terms for gases.",
+    "### 6. Limitations",
+    "• PV = nRT is exact only for an ideal gas; real gases deviate measurably, and grossly at high pressure or near the critical temperature.",
+    "• Both central assumptions are unattainable — molecules always have finite size and always attract one another (otherwise no gas could be liquefied).",
+    "• It cannot describe condensation, critical phenomena or the liquid state, and fails for associating (H-bonded) or highly polar gases even at ordinary pressure.",
+    "• R is constant only for an ideal gas; for a real gas PV/T varies with pressure, so the van der Waals equation or Z = PV/nRT corrections are needed."
+  ],
+  "confusion": [
+    "❌ An ideal gas is merely a light gas such as hydrogen. ✅ Ideality is about behaviour (no forces, no molecular volume), not mass; hydrogen merely approaches it best.",
+    "❌ R changes from gas to gas. ✅ R is universal; only the real-gas constants a and b differ between gases.",
+    "❌ R and k are the same constant. ✅ k = R/N_A is the per-molecule (Boltzmann) constant.",
+    "❌ PV = nRT works at 100 atm without error. ✅ Deviation becomes severe (Z ≠ 1) and the van der Waals equation is required."
+  ],
+  "practice": [
+    "Define an ideal gas and derive the ideal gas equation from the gas laws.",
+    "Explain why R is called universal and give its value in three sets of units.",
+    "Calculate the molar mass of a gas of density 1.25 g L⁻¹ at 27 °C and 1 atm.",
+    "Find the volume occupied by 8 g of oxygen at 27 °C and 750 mm Hg.",
+    "Discuss the significance of R in the kinetic theory and in thermodynamics.",
+    "State the limitations of the ideal gas equation."
+  ],
+  "formulas": [
+    "$$PV=nRT,\\qquad PV=\\frac{m}{M}RT,\\qquad PM=dRT,\\qquad P=CRT$$",
+    "$$R=8.314\\ \\text{J K}^{-1}\\text{mol}^{-1}=0.0821\\ \\text{L atm K}^{-1}\\text{mol}^{-1}=2\\ \\text{cal K}^{-1}\\text{mol}^{-1}$$",
+    "$$k=\\frac{R}{N_{A}}=1.38\\times10^{-23}\\ \\text{J K}^{-1},\\quad KE_{\\text{molar}}=\\frac{3}{2}RT,\\quad C_{p}-C_{v}=R$$"
+  ],
+  "universalFacts": [
+    "1 mol of ideal gas occupies 22.4 L at STP (273 K, 1 atm) and 22.7 L at 273 K, 1 bar.",
+    "R = 8.314 J K⁻¹ mol⁻¹ = 0.0821 L atm K⁻¹ mol⁻¹ = 1.987 cal K⁻¹ mol⁻¹.",
+    "Cp − Cv = R shows the molar heat capacity at constant pressure always exceeds that at constant volume."
+  ],
+  "examples": [
+    "**Problem:** Molar mass of a gas with d = 1.25 g L⁻¹ at 27 °C and 1 atm. **Solution:** M = dRT/P = (1.25 × 0.0821 × 300)/1 ≈ 30.8 g mol⁻¹.",
+    "**Problem:** Volume of 8 g O₂ at 27 °C and 750 mm Hg. **Solution:** n = 0.25 mol; V = nRT/P = (0.25 × 0.0821 × 300)/(750/760) ≈ 6.24 L."
+  ],
+  "importantNotes": [
+    "Convert T to kelvin and match R to the units used (8.314 with Pa and m³; 0.0821 with atm and L).",
+    "Describe 'ideal' as a limiting concept: real gases approach it as P → 0 and T → ∞.",
+    "Quote R's physical significance (work per mole per kelvin), not only its numerical value."
+  ],
+  "visualType": "ideal-gas",
+  "tabGroup": "States-Of-Matter-Learner-Notes"
+}

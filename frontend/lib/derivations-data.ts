@@ -20,6 +20,13 @@ import { PHYSICS_WAVE2B_DERIVATIONS } from "@/lib/derivations-wave2-physics-b";
 import { PHYSICS_WAVE2C_DERIVATIONS } from "@/lib/derivations-wave2-physics-c";
 import { CHEM_BIO_WAVE2_DERIVATIONS } from "@/lib/derivations-wave2-chem-bio";
 import { MATH_WAVE2_DERIVATIONS } from "@/lib/derivations-wave2-math";
+import { THEOREM_FILL_PHYSICS_1 } from "@/lib/theorem-fill-physics-1";
+import { THEOREM_FILL_PHYSICS_2 } from "@/lib/theorem-fill-physics-2";
+import { THEOREM_FILL_CHEM_1 } from "@/lib/theorem-fill-chem-1";
+import { THEOREM_FILL_CHEM_1B } from "@/lib/theorem-fill-chem-2b";
+import { THEOREM_FILL_CHEM_2 } from "@/lib/theorem-fill-chem-2";;
+import { THEOREM_FILL_BIO_MATH } from "@/lib/theorem-fill-bio-math";
+import { THEOREM_FILL_FINAL } from "@/lib/theorem-fill-final";
 
 export type { SpecialCase };
 
@@ -1417,4 +1424,11 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
   ...PHYSICS_WAVE2C_DERIVATIONS,
   ...CHEM_BIO_WAVE2_DERIVATIONS,
   ...MATH_WAVE2_DERIVATIONS,
+  ...THEOREM_FILL_PHYSICS_1,
+  ...THEOREM_FILL_PHYSICS_2,
+  ...THEOREM_FILL_CHEM_1,
+  ...THEOREM_FILL_CHEM_1B,
+  ...THEOREM_FILL_CHEM_2,
+  ...THEOREM_FILL_BIO_MATH,
+  ...THEOREM_FILL_FINAL,
 ];

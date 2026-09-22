@@ -13,6 +13,7 @@ import {
   Calculator,
   TrendingUp,
 } from "lucide-react";
+import { Schematic } from "./schematic-frame";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -63,40 +64,17 @@ function ArgandDiagramVisual() {
       </div>
 
       <div className="flex justify-center">
-        <svg
-          viewBox={`0 0 ${w} ${h2}`}
-          className="w-full max-w-lg border rounded-lg bg-slate-950"
+        <Schematic
+          w={w} h={h2} ox={ox} oy={oy} scale={scale}
+          tickStep={1}
+          xLabel="Re" yLabel="Im"
+          legend={[
+            { color: "#38bdf8", label: "z" },
+            { color: "#a855f7", label: "z̄ (conjugate)" },
+            { color: "#10b981", label: "arg(r)" },
+            { color: "#64748b", label: "|z| circle", dashed: true },
+          ]}
         >
-          <line x1={0} y1={oy} x2={w} y2={oy} stroke="#475569" strokeWidth="1" />
-          <line x1={ox} y1={0} x2={ox} y2={h2} stroke="#475569" strokeWidth="1" />
-          <text x={w - 10} y={oy - 5} fill="#64748b" fontSize="10">Re</text>
-          <text x={ox + 5} y={12} fill="#64748b" fontSize="10">Im</text>
-
-          {Array.from({ length: 10 }, (_, i) => i - 5).map((v) => (
-            <line
-              key={`grid-x-${v}`}
-              x1={toSvgX(v)}
-              y1={0}
-              x2={toSvgX(v)}
-              y2={h2}
-              stroke="#334155"
-              strokeWidth="0.5"
-              opacity="0.3"
-            />
-          ))}
-          {Array.from({ length: 10 }, (_, i) => i - 5).map((v) => (
-            <line
-              key={`grid-y-${v}`}
-              x1={0}
-              y1={toSvgY(v)}
-              x2={w}
-              y2={toSvgY(v)}
-              stroke="#334155"
-              strokeWidth="0.5"
-              opacity="0.3"
-            />
-          ))}
-
           <circle
             cx={ox}
             cy={oy}
@@ -107,7 +85,6 @@ function ArgandDiagramVisual() {
             strokeDasharray="3 3"
             opacity="0.5"
           />
-
           <line
             x1={ox}
             y1={oy}
@@ -117,10 +94,8 @@ function ArgandDiagramVisual() {
             strokeWidth="2"
             opacity="0.7"
           />
-
           <circle cx={pointX} cy={pointY} r="6" fill="#38bdf8" stroke="#ffffff" strokeWidth="2" />
           <circle cx={conjX} cy={conjY} r="5" fill="#a855f7" stroke="#ffffff" strokeWidth="1.5" />
-
           <line
             x1={pointX}
             y1={pointY}
@@ -131,7 +106,6 @@ function ArgandDiagramVisual() {
             strokeDasharray="4 4"
             opacity="0.6"
           />
-
           <text x={pointX + 8} y={pointY - 8} fill="#38bdf8" fontSize="10">
             z = {real.toFixed(1)} + {imaginary.toFixed(1)}i
           </text>
@@ -141,7 +115,7 @@ function ArgandDiagramVisual() {
           <text x={ox + 10} y={oy + 15} fill="#10b981" fontSize="10">
             |z| = {modulus.toFixed(2)}
           </text>
-        </svg>
+        </Schematic>
       </div>
 
       <div className="grid grid-cols-2 gap-4 text-xs">

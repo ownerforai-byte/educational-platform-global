@@ -1,81 +1,65 @@
 {
-  "title": "Limiting Reactant",
+  "title": "Limiting Reactant and Excess Reactant",
   "unitSlug": "stoichiometry",
-  "topicSlug": "limiting-reactant",
-  "topicTitle": "Limiting Reactant",
+  "topicSlug": "limiting-reactant-and-excess-reactant",
+  "topicTitle": "Limiting reactant and excess reactant",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 05 limiting reactant within the stoichiometry unit."
+    "### 1. Meaning",
+    "The **limiting reactant (limiting reagent)** is the reactant completely consumed in a reaction, and it therefore determines the maximum amount of product that can form (the theoretical yield). The other reactant, part of which is left over when the reaction stops, is the **excess reactant**. The idea is needed whenever the reactants are not mixed in exactly the stoichiometric ratio of the balanced equation.",
+    "### 2. How to identify the limiting reactant",
+    "Method 1 (standard): convert the given masses/volumes of all reactants into moles, divide each by its stoichiometric coefficient, and the smallest quotient identifies the limiting reactant. Method 2: compare the moles *required* (from the mole ratio) with the moles *available*; the reactant for which the requirement exceeds the supply is limiting.",
+    "### 3. Worked example — ammonia synthesis",
+    "N₂ + 3H₂ → 2NH₃. With 2 mol N₂ and 3 mol H₂: for N₂ the quotient is 2/1 = 2, for H₂ it is 3/3 = 1 → **H₂ is limiting**. Hydrogen needs only 1 mol N₂, so 1 mol N₂ stays unused (excess), and NH₃ formed = (2/3) × 3 = 2 mol = 34 g.",
+    "### 4. Worked example — combustion (mass basis)",
+    "CH₄ + 2O₂ → CO₂ + 2H₂O, with 8 g CH₄ (0.5 mol) and 24 g O₂ (0.75 mol): quotients 0.5 for CH₄ and 0.75/2 = 0.375 for O₂ → **O₂ is limiting**. It consumes 0.375 mol CH₄, so 0.125 mol CH₄ (2 g) remains excess and 0.375 mol CO₂ (16.5 g) is formed.",
+    "### 5. Applications",
+    "• Laboratory and industry: fixing reactant quantities for a target product mass, material balances in the Haber process, contact process and lime kiln, and choosing which reactant to use in excess on the basis of cost, hazards and equilibrium considerations.",
+    "• Combustion engineering: excess air is supplied to burn fuel completely (avoiding CO and soot), while excessive excess air wastes heat and promotes NOₓ formation.",
+    "• Pharmaceutical and fine-chemical synthesis: the cheaper or more easily handled reagent is taken in excess to drive the expensive intermediate to completion, and by-product amounts are predicted from the limiting reagent.",
+    "• Analytical and environmental work: computing the maximum pollutant that can be produced, and in titrations, where the equivalence point marks the stoichiometric balance of acid and base.",
+    "### 6. Meaning of 'extent of reaction'",
+    "The limiting reactant fixes how far the reaction can proceed: while it remains, the reaction continues; once it is consumed, a simple irreversible reaction stops. This is why the theoretical yield is always calculated from the limiting reactant, and why excess reactant is added deliberately in practice.",
+    "### 7. Limitations",
+    "• The concept requires a known single reaction with fixed stoichiometry; with side reactions, reversibility or equilibrium the idea must be replaced by the equilibrium constant, conversion and selectivity.",
+    "• Comparison must be made in **moles**; comparing masses directly (5 g H₂ with 5 g O₂) leads to wrong conclusions.",
+    "• In a kinetically controlled reaction the slowest step may govern the rate even though the reagent is stoichiometrically in excess — the limiting reagent is not automatically the rate-determining species.",
+    "• When a reactant acts as the solvent or medium (water, large excess of acid), the concept loses meaning.",
+    "• The yield computed from the limiting reactant is an upper limit only; actual yields are lower because of incomplete reaction, side products and handling losses."
   ],
   "confusion": [
-    "❌ Misconception about 05 limiting reactant. ✅ Scientific explanation."
+    "❌ The reactant present in the smallest mass is limiting. ✅ The limiting reactant is found in *moles* divided by the stoichiometric coefficient, not by mass.",
+    "❌ The limiting reactant is the one that runs out last. ✅ It is used up first and stops the reaction; the other reactant is in excess.",
+    "❌ Excess reactant also becomes product. ✅ Only the consumed part reacts; the remainder is unreacted excess.",
+    "❌ Every reaction has a limiting reactant. ✅ Only when the reactants are not in the exact stoichiometric mole ratio.",
+    "❌ Limiting-reactant reasoning gives the actual yield of a reversible reaction. ✅ It gives the maximum possible yield; the equilibrium position decides the actual extent."
   ],
   "practice": [
-    "Practice exercise for 05 limiting reactant."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 05 limiting reactant."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 05 limiting reactant."
-  ],
-  "practiceQuestions": [
-    "Practice question for 05 limiting reactant."
+    "Define limiting reactant and excess reactant with an example.",
+    "Explain how the limiting reactant is identified from mole ratios.",
+    "N₂ + 3H₂ → 2NH₃: 3 mol N₂ and 6 mol H₂ are mixed. Find the limiting reactant, the mass of NH₃ formed and the excess left.",
+    "Calculate the mass of water formed when 4 g H₂ reacts with 32 g O₂ and identify the excess reactant.",
+    "Why is excess air supplied in combustion, and what are the disadvantages of too much excess air?",
+    "State the limitations of the limiting-reactant concept."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 05 limiting reactant)"
+    "$$\\text{Limiting reactant}:\\ \\text{smallest }\\frac{n_{\\text{reactant}}}{\\nu_{\\text{reactant}}}\\ (\\nu=\\text{stoichiometric coefficient})$$",
+    "$$n_{\\text{product}}=\\frac{\\nu_{\\text{product}}}{\\nu_{\\text{limiting}}}\\times n_{\\text{limiting}},\\qquad \\text{theoretical yield}=n_{\\text{product}}M_{\\text{product}}$$"
   ],
-  "keyPoints": [
-    "Core point for 05 limiting reactant."
+  "universalFacts": [
+    "In the Haber process the industrial ratio N₂ : H₂ is chosen with a slight excess of nitrogen because hydrogen is costlier and excess hydrogen lowers equilibrium conversion.",
+    "Burning methane with 10% excess air ensures complete combustion of carbon but increases NOₓ and heat loss — the classical trade-off.",
+    "In a titration the limiting reactant changes at the equivalence point, which is why an indicator is needed to detect it."
   ],
-  "summary": "Summary of 05 limiting reactant.",
-  "specialNotes": [
-    "Specialized insight for 05 limiting reactant."
-  ],
-  "importantStatements": [
-    "Key statement for 05 limiting reactant."
+  "examples": [
+    "**Problem:** 3 mol N₂ and 6 mol H₂ with N₂ + 3H₂ → 2NH₃. **Solution:** quotients 3/1 = 3 (N₂) and 6/3 = 2 (H₂) → H₂ limiting. NH₃ = (2/3) × 6 = 4 mol = 68 g; N₂ consumed = 2 mol, so 1 mol N₂ (28 g) remains excess.",
+    "**Problem:** 4 g H₂ + 32 g O₂ (2H₂ + O₂ → 2H₂O). **Solution:** n(H₂) = 2 mol, n(O₂) = 1 mol; quotients 1 and 1 → exact stoichiometric mixture, no excess, and 2 mol H₂O = 36 g forms."
   ],
   "importantNotes": [
-    "Important note regarding 05 limiting reactant."
+    "Convert every quantity to moles before comparing coefficients — the commonest source of error.",
+    "Always state which reactant limits *and* how much excess remains; that is where most marks are given.",
+    "Note explicitly that the theoretical yield is computed from the limiting reactant alone."
   ],
-  "examShortTricks": [
-    "Recall the formula for Limiting Reactant."
-  ],
-  "examNotes": [
-    "Focus on Limiting Reactant problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 05 limiting reactant?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 05 limiting reactant."
-  ],
-  "importantTasks": [
-    "Task for studying 05 limiting reactant."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "05-limiting-reactant",
-  "mcqs": [
-    {
-      "question": "Question about 05 limiting reactant?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ]
+  "visualType": "limiting-reactant",
+  "tabGroup": "Stoichiometry-Learner-Notes"
 }

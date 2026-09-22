@@ -1,81 +1,68 @@
 {
-  "title": "Bohr's Atomic Model — Absorption vs Emission",
+  "title": "Absorption and Emission Spectra — Bohr's Explanation",
   "unitSlug": "atomic-structure",
   "topicSlug": "postulates-of-bohr-s-atomic-model-and-its-application",
   "topicTitle": "Postulates of Bohr's atomic model and its application",
-  "relevance": 83,
+  "relevance": 85,
   "notes": [
-    "Detailed notes on 06 bohr absorption vs emission within the atomic structure unit."
+    "### Focus of this tab",
+    "How Bohr's frequency condition produces the two kinds of line spectra, why absorption lines and emission lines fall at the *same* wavelengths, and where each spectrum is used. Complements the main postulates tab.",
+    "### Emission spectrum (bright lines)",
+    "Atoms are excited — by a flame, discharge tube, or collision — to higher levels n₂. The electron falls back to a lower level n₁ and emits one photon per jump with $h\\nu=E_{2}-E_{1}$. The spectrum is a set of bright lines on a dark background: each line = one allowed transition. In a discharge tube both atoms and electrons collide, so many levels are populated and several series appear at once.",
+    "### Absorption spectrum (dark lines)",
+    "Cool gas (ground-state atoms) is placed in front of a continuous white-light source. The atoms absorb only those photons whose energy exactly equals a level gap from the populated (usually ground) state: the transmitted light is missing those wavelengths — dark lines on a bright continuum. Fraunhofer's solar lines are exactly this: the cool solar atmosphere absorbing against the hot photosphere.",
+    "### Why the lines coincide",
+    "The same energy difference E₂ − E₁ is involved in both directions, so absorption and emission lines fall at identical wavelengths (Kirchhoff's law). The *pattern* differs, though: absorption requires the lower level to be populated, so absorption lines start mainly from the ground state (only the Lyman series in cold hydrogen gas), while emission can populate every series (Lyman, Balmer, Paschen …).",
+    "### Energy-level diagram language",
+    "Vertical arrows up = absorption; arrows down = emission. The ground level is the zero-height reference; higher levels crowd together as n grows; the n = ∞ limit is the ionisation continuum. Every allowed jump must obey the selection Δn = any (Bohr) — quantum mechanics later restricts it by Δl = ±1.",
+    "### Applications",
+    "• Chemical analysis: every element's line pattern is unique → qualitative and quantitative spectroscopy (flame tests, AAS, ICP).",
+    "• Astronomy: composition, temperature and Doppler velocity of stars from line positions and shifts; redshift of galaxies.",
+    "• Lasers: population inversion and stimulated emission between discrete levels (He–Ne 632.8 nm).",
+    "• Neon signs, fireworks and street lamps: line colours of excited atoms (Ne red-orange, Na yellow D-line 589 nm)."
   ],
   "confusion": [
-    "❌ Misconception about 06 bohr absorption vs emission. ✅ Scientific explanation."
+    "❌ Absorption lines are produced when atoms emit energy. ✅ They appear when atoms *remove* matching photons from a continuous beam.",
+    "❌ Absorption and emission lines occur at different wavelengths. ✅ They coincide; only the pattern/populated series differ.",
+    "❌ A ground-state hydrogen atom can emit any Balmer line. ✅ Emission requires prior excitation; a ground-state atom can only absorb (Lyman lines)."
   ],
   "practice": [
-    "Practice exercise for 06 bohr absorption vs emission."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 06 bohr absorption vs emission."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 06 bohr absorption vs emission."
-  ],
-  "practiceQuestions": [
-    "Practice question for 06 bohr absorption vs emission."
+    "Distinguish between emission and absorption spectra with one example each.",
+    "Explain, using Bohr's frequency condition, why absorption and emission lines coincide.",
+    "Why does the absorption spectrum of cold hydrogen show only the Lyman series?",
+    "What are Fraunhofer lines and how are they explained?"
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 06 bohr absorption vs emission)"
+    "$$h\\nu=E_{2}-E_{1}=13.6\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right)\\ \\text{eV}$$",
+    "$$\\text{emission: }n_{2}\\rightarrow n_{1}\\ (\\downarrow);\\qquad \\text{absorption: }n_{1}\\rightarrow n_{2}\\ (\\uparrow)$$"
   ],
-  "keyPoints": [
-    "Core point for 06 bohr absorption vs emission."
+  "universalFacts": [
+    "The Na D-line at 589 nm is the classic emission/absorption pair — street lamps and the sodium flame test share it.",
+    "Fraunhofer catalogued over 570 solar absorption lines in 1814, decades before Bohr explained them.",
+    "Neon signs glow red-orange from Ne emission lines — pure line spectra in commercial use."
   ],
-  "summary": "Summary of 06 bohr absorption vs emission.",
-  "specialNotes": [
-    "Specialized insight for 06 bohr absorption vs emission."
-  ],
-  "importantStatements": [
-    "Key statement for 06 bohr absorption vs emission."
+  "examples": [
+    "**Problem:** Which line does a hydrogen atom absorb when illuminated with 102.6 nm light? **Solution:** ΔE = 1240/102.6 = 12.09 eV = 13.6(1 − 1/n₂²) → n₂ = 3: the Lyman-β absorption line (1 → 3)."
   ],
   "importantNotes": [
-    "Important note regarding 06 bohr absorption vs emission."
+    "Draw the energy-level diagram with arrows up (absorption) and down (emission) — it is nearly a guaranteed mark.",
+    "State the population condition for absorption lines (lower level must be occupied)."
   ],
-  "examShortTricks": [
-    "Recall the formula for Bohr's Atomic Model — Absorption vs Emission."
-  ],
-  "examNotes": [
-    "Focus on Bohr's Atomic Model — Absorption vs Emission problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 06 bohr absorption vs emission?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 06 bohr absorption vs emission."
-  ],
-  "importantTasks": [
-    "Task for studying 06 bohr absorption vs emission."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "06-bohr-absorption-vs-emission",
   "mcqs": [
     {
-      "question": "Question about 06 bohr absorption vs emission?",
+      "question": "Fraunhofer lines in the solar spectrum are:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Emission lines",
+        "Absorption lines",
+        "Band spectra",
+        "Continuous radiation"
       ],
-      "answer": "A"
+      "answer": "B"
     }
-  ]
+  ],
+  "visualType": "bohr-model",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "06-bohr-absorption-vs-emission.json"
 }

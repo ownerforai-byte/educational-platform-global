@@ -94,7 +94,12 @@ function Vectors2DVisual() {
       </div>
 
       <div className="flex justify-center">
-        <svg viewBox={`0 0 ${w} ${h}`} className="w-full max-w-lg border rounded-lg bg-slate-950">
+        <div className="flex flex-wrap gap-x-3 gap-y-1 text-[11px] mb-2">
+        <span className="inline-flex items-center gap-1.5"><span className="inline-block w-4 h-0.5 rounded" style={{ background: "#3b82f6" }}></span><span className="text-muted-foreground">a⃗</span></span>
+        <span className="inline-flex items-center gap-1.5"><span className="inline-block w-4 h-0.5 rounded" style={{ background: "#ef4444" }}></span><span className="text-muted-foreground">b⃗</span></span>
+        <span className="inline-flex items-center gap-1.5"><span className="inline-block w-4 h-0.5 rounded" style={{ background: "#22c55e" }}></span><span className="text-muted-foreground">a⃗ + b⃗</span></span>
+      </div>
+<svg viewBox={`0 0 ${w} ${h}`} className="w-full max-w-lg border rounded-lg bg-slate-950">
           <defs>
             <marker id="arrow-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
               <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b82f6" />
@@ -246,7 +251,11 @@ function DotProductVisual() {
       </div>
 
       <div className="flex justify-center">
-        <svg viewBox={`0 0 ${w} ${h}`} className="w-full max-w-lg border rounded-lg bg-slate-950">
+        <div className="flex flex-wrap gap-x-3 gap-y-1 text-[11px] mb-2">
+        <span className="inline-flex items-center gap-1.5"><span className="inline-block w-4 h-0.5 rounded" style={{ background: "#3b82f6" }}></span><span className="text-muted-foreground">a⃗</span></span>
+        <span className="inline-flex items-center gap-1.5"><span className="inline-block w-4 h-0.5 rounded" style={{ background: "#ef4444" }}></span><span className="text-muted-foreground">b⃗</span></span>
+      </div>
+<svg viewBox={`0 0 ${w} ${h}`} className="w-full max-w-lg border rounded-lg bg-slate-950">
           <defs>
             <marker id="arrow-dp-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
               <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b82f6" />
@@ -421,7 +430,12 @@ function LinearDependenceVisual() {
       </div>
 
       <div className="flex justify-center">
-        <svg viewBox={`0 0 ${w} ${h}`} className="w-full max-w-lg border rounded-lg bg-slate-950">
+        <div className="flex flex-wrap gap-x-3 gap-y-1 text-[11px] mb-2">
+        <span className="inline-flex items-center gap-1.5"><span className="inline-block w-4 h-0.5 rounded" style={{ background: "#3b82f6" }}></span><span className="text-muted-foreground">v₁</span></span>
+        <span className="inline-flex items-center gap-1.5"><span className="inline-block w-4 h-0.5 rounded" style={{ background: "#ef4444" }}></span><span className="text-muted-foreground">v₂</span></span>
+        <span className="inline-flex items-center gap-1.5"><span className="inline-block w-4 h-0.5 rounded" style={{ background: "#22c55e" }}></span><span className="text-muted-foreground">v₃</span></span>
+      </div>
+<svg viewBox={`0 0 ${w} ${h}`} className="w-full max-w-lg border rounded-lg bg-slate-950">
           <defs>
             <marker id="arrow-ldep-blue" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
               <path d="M 0 0 L 10 5 L 0 10 z" fill="#3b82f6" />

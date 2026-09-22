@@ -1,215 +1,79 @@
 {
-  "title": "The Hydrogen Spectrum — Origin & Spectral Series",
+  "title": "Origin of Spectral Lines and the Five Series of Hydrogen",
   "unitSlug": "atomic-structure",
   "topicSlug": "spectrum-of-hydrogen-atom",
   "topicTitle": "Spectrum of hydrogen atom",
   "relevance": 85,
   "notes": [
-    "Rutherford's model: nucleus existence via α-scattering.",
-    "Bohr's model: quantized energy levels, atomic stability.",
-    "Wave-particle duality (de Broglie), Uncertainty Principle (Heisenberg)."
+    "### Focus of this tab",
+    "A series-by-series reference table for the hydrogen spectrum, plus the line-counting rule — the data side of the main spectrum note.",
+    "### The five series at a glance",
+    "• **Lyman** (n₁ = 1): UV. First line 121.6 nm (2→1); series limit 91.2 nm. Discovered by Lyman, 1906.",
+    "• **Balmer** (n₁ = 2): visible. Hα 656.3 nm (3→2), Hβ 486.1 nm (4→2), Hγ 434.0 nm (5→2), Hδ 410.2 nm (6→2); limit 364.6 nm. Discovered by Balmer, 1885.",
+    "• **Paschen** (n₁ = 3): near IR. First line 1875 nm (4→3); limit 820.4 nm. Discovered 1908.",
+    "• **Brackett** (n₁ = 4): IR. First line 4051 nm (5→4); limit 1458 nm. Discovered 1922.",
+    "• **Pfund** (n₁ = 5): far IR. First line 7460 nm (6→5); limit 2279 nm. Discovered 1924. (A sixth, Humphreys, n₁ = 6, lies in the far IR.)",
+    "### Counting lines",
+    "• From a single excited level n: the number of different lines = n(n − 1)/2 (e.g. n = 4 → 6 lines: 3 Lyman + 2 Balmer + 1 Paschen).",
+    "• In one series, from level n to fixed n₁: n − n₁ lines (e.g. Balmer lines down from n = 4: two lines).",
+    "### Line spacing within a series",
+    "Successive lines crowd together and converge at the series limit (n₂ → ∞): $\\bar{\\nu}_{limit}=R/n_{1}^{2}$. The Balmer limit 364.6 nm marks the end of visible lines; beyond it the atom ionises and the spectrum becomes continuous.",
+    "### Wavelength ↔ energy conversions",
+    "$\\Delta E(\\text{eV})=\\frac{1240}{\\lambda(\\text{nm})}$ and $\\Delta E=13.6(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}})$. Every line position follows from these two relations; the wavelength of any hydrogen-like ion scales as 1/Z² (He⁺ lines are 4× more energetic, shifted to ¼ wavelength)."
   ],
   "confusion": [
-    "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
-    "❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons.",
-    "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals).",
-    "❌ Heisenberg uncertainty means we cannot measure position and momentum precisely simultaneously — not that we lack good instruments.",
-    "❌ de Broglie wavelength applies only to light. ✅ All matter has wave nature; detectable mainly for small masses like electrons.",
-    "❌ Quantum number l can be any integer. ✅ l ranges from 0 to n−1.",
-    "❌ Magnetic quantum number ml determines energy. ✅ ml determines orbital orientation, not energy (in absence of magnetic field).",
-    "❌ Spin quantum number ms can be ±½ or any value. ✅ ms is always +½ or −½.",
-    "❌ Aufbau principle means filling from bottom to top of the diagram. ✅ Fill lowest-energy orbitals first: 1s→2s→2p→3s→3p→4s→3d→4p→...",
-    "❌ Pauli exclusion allows two electrons per orbital with any spin. ✅ Two electrons in same orbital must have opposite spins.",
-    "❌ Hund's rule means pair electrons before spreading. ✅ Electrons fill degenerate orbitals singly first with parallel spins.",
-    "❌ The mole is just a number like dozen. ✅ 1 mole = 6.022×10²³ particles (Avogadro constant) — a bridge between atomic and macroscopic scales.",
-    "❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is in amu; molar mass is in g/mol — numerically equal but different units.",
-    "❌ Limiting reagent is the reactant with smallest mass. ✅ Limiting reagent is the one that produces the least product (determined by moles, not mass).",
-    "❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying.",
-    "❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent).",
-    "❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize.",
-    "❌ pH can be negative. ✅ pH < 0 is possible for concentrations >1M (e.g., 2M HCl has pH ≈ −0.3).",
-    "❌ Kc changes when concentration changes. ✅ Kc is constant at constant temperature; only temperature changes K.",
-    "❌ Adding catalyst shifts equilibrium position. ✅ Catalyst speeds both forward and backward reactions equally; no shift in equilibrium.",
-    "❌ High pressure always favors products. ✅ High pressure favors side with fewer gas moles (Le Chatelier).",
-    "❌ Exothermic reactions are spontaneous. ✅ Spontaneity depends on ΔG = ΔH − TΔS, not just ΔH.",
-    "❌ Endothermic reactions cannot be spontaneous. ✅ Endothermic reactions can be spontaneous if TΔS > ΔH (e.g., ice melting above 0°C).",
-    "❌ ΔH and ΔU are always the same. ✅ ΔH = ΔU + PΔV; they differ when gas moles change.",
-    "❌ Heat (q) and work (w) are state functions. ✅ q and w are path functions; only ΔU, ΔH, ΔS, ΔG are state functions.",
-    "❌ Oxidation and reduction happen separately. ✅ Oxidation and reduction always occur together (redox).",
-    "❌ Oxidizing agent gets oxidized. ✅ Oxidizing agent accepts electrons and gets reduced.",
-    "❌ Reducing agent gets reduced. ✅ Reducing agent donates electrons and gets oxidized.",
-    "❌ Faraday's laws apply only to metals. ✅ Faraday's laws apply to any substance deposited/dissolved at electrodes.",
-    "❌ Real gases obey PV=nRT at all conditions. ✅ Real gases deviate at high pressure and low temperature.",
-    "❌ van der Waals constants a and b are same for all gases. ✅ a (attraction) and b (volume) are gas-specific.",
-    "❌ Surface tension increases with temperature. ✅ Surface tension decreases as temperature increases.",
-    "❌ Viscosity decreases with temperature for liquids. ✅ Viscosity of liquids decreases with T; gases increase with T.",
-    "❌ Colligative properties depend on nature of solute. ✅ Colligative properties depend only on number of particles, not identity.",
-    "❌ Raoult's law applies to all solutions. ✅ Raoult's law is exact for ideal solutions; approximate for dilute real solutions.",
-    "❌ Osmotic pressure is a colligative property. ✅ Yes — π = CRT depends on solute particle concentration."
+    "❌ The Balmer series starts from n = 1. ✅ Balmer lines end at n₁ = 2; the lower level defines the series, not the upper one.",
+    "❌ The number of lines from level n is n − 1. ✅ That counts one series only; the total is n(n − 1)/2.",
+    "❌ The series limit is the strongest line. ✅ It is the *convergence* point where lines merge into the ionisation continuum."
   ],
   "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic)."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 08 hydrogen spectrum origin and series."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Calculate de Broglie wavelength of electron at 10⁶ m/s: λ ≈ 0.727 nm"
-  ],
-  "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic)."
+    "Tabulate the five series of hydrogen with their regions, first members and series limits.",
+    "How many spectral lines are emitted when an electron de-excites from n = 6 to the ground state?",
+    "Calculate the series limit of the Paschen series.",
+    "Name the series whose lines fall in the visible region and identify its first line."
   ],
   "formulas": [
-    "E=hν",
-    "λ=h/mv",
-    "ΔxΔp≥h/4π"
+    "$$\\bar{\\nu}=R\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right),\\qquad \\bar{\\nu}_{limit}=\\frac{R}{n_{1}^{2}}$$",
+    "$$\\text{lines from level }n=\\frac{n(n-1)}{2}$$"
   ],
-  "keyPoints": [
-    "Core point for 08 hydrogen spectrum origin and series."
+  "universalFacts": [
+    "Balmer (1885) found the visible series before the electron was discovered — a purely empirical formula at first.",
+    "The Lyman limit 91.2 nm marks the ionisation threshold of ground-state hydrogen.",
+    "Hα at 656.3 nm is the reddest strong line in astronomy — used to map hydrogen nebulae."
   ],
-  "summary": "The atomic structure evolved from Thomson's plum pudding model to Bohr's quantized model and finally to the quantum mechanical model, explaining spectral lines and stability.",
-  "specialNotes": [
-    "Specialized insight for 08 hydrogen spectrum origin and series."
-  ],
-  "importantStatements": [
-    "Key statement for 08 hydrogen spectrum origin and series."
+  "examples": [
+    "**Problem:** Lines from n = 5 to ground. **Solution:** 5(5−1)/2 = 10 lines — 4 Lyman, 3 Balmer, 2 Paschen, 1 Brackett.",
+    "**Problem:** Shortest Balmer wavelength. **Solution:** the series limit, n₂ → ∞: λ = 1/(R/4) = 4/R = 364.6 nm."
   ],
   "importantNotes": [
-    "Important note regarding 08 hydrogen spectrum origin and series."
+    "Memorise the three visible-region Balmer wavelengths (656, 486, 434 nm) — they recur in numericals.",
+    "Series is named by its *lower* level n₁; the upper level varies."
   ],
-  "examShortTricks": [
-    "Recall the formula for The Hydrogen Spectrum — Origin & Spectral Series."
-  ],
-  "examNotes": [
-    "Focus on The Hydrogen Spectrum — Origin & Spectral Series problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 08 hydrogen spectrum origin and series?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 08 hydrogen spectrum origin and series."
-  ],
-  "importantTasks": [
-    "Task for studying 08 hydrogen spectrum origin and series."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "08-hydrogen-spectrum-origin-and-series",
   "mcqs": [
     {
-      "question": "Who proposed the dual nature of matter?",
+      "question": "The first line of the Balmer series is produced by the transition:",
       "options": [
-        "Planck",
-        "de Broglie",
-        "Bohr",
-        "Heisenberg"
+        "2 → 1",
+        "3 → 2",
+        "4 → 2",
+        "3 → 1"
       ],
       "answer": "B"
     },
     {
-      "question": "The radius of the nth orbit of hydrogen atom is proportional to:",
+      "question": "The series limit of the Lyman series corresponds to:",
       "options": [
-        "n",
-        "n²",
-        "n³",
-        "n⁴"
+        "91.2 nm",
+        "121.6 nm",
+        "364.6 nm",
+        "656.3 nm"
       ],
-      "answer": "B"
+      "answer": "A"
     }
   ],
-  "exercises": [
-    {
-      "id": "ex-1",
-      "question": "Calculate the de Broglie wavelength of an electron moving at 10⁶ m/s.",
-      "steps": [
-        "Formula: λ = h / (m * v)",
-        "Given: h = 6.626 x 10⁻³⁴ J·s, m = 9.11 x 10⁻³¹ kg, v = 10⁶ m/s",
-        "Calculation: λ = 6.626e-34 / (9.11e-31 * 1e6)",
-        "Result: ~7.27 x 10⁻¹⁰ m (or 0.727 nm)"
-      ],
-      "answer": "0.727 nm"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "RutherfordScatteringSim",
-    "description": "Interactive visualization of α-particle deflection by the nucleus."
-  },
-  "visualType": "hydrogen-spectrum"
+  "visualType": "hydrogen-spectrum",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "08-hydrogen-spectrum-origin-and-series.json"
 }

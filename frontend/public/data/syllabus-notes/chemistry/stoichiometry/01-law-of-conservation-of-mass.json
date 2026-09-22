@@ -1,81 +1,66 @@
 {
-  "title": "Law of Conservation of Mass — Statement",
+  "title": "Law of Conservation of Mass — Statement, Verification and Applications",
   "unitSlug": "stoichiometry",
   "topicSlug": "laws-of-stoichiometry",
   "topicTitle": "Laws of stoichiometry",
-  "relevance": 80,
+  "relevance": 85,
   "notes": [
-    "Detailed notes on 01 law of conservation of mass within the stoichiometry unit."
+    "### Focus of this tab",
+    "The first law of chemical combination in depth — statement, historical verification, microscopic explanation and its one important limitation.",
+    "### Statement and history",
+    "'In a chemical reaction, matter can neither be created nor destroyed; the total mass of the reactants equals the total mass of the products.' Established by Antoine Lavoisier (1774) from careful weighings — e.g. mercury calx (HgO) heated in a sealed retort gave mercury and oxygen with no loss of mass — the work that made chemistry quantitative.",
+    "### Experimental verification (Landolt, 1893)",
+    "Landolt placed two reacting solutions (AgNO₃ and NaCl) in separate limbs of an H-shaped sealed tube, weighed it, inverted to mix, waited for complete precipitation (AgCl), and reweighed — mass unchanged within 1 part in 10⁷. Modern verification uses any precipitation, neutralisation or redox reaction carried out in a sealed system.",
+    "### Microscopic explanation",
+    "A reaction only rearranges atoms: bonds break and form, but no atom disappears or appears (Dalton's third postulate). The equation must therefore be balanced — atom counts, and hence masses, are equal on both sides. This is why balancing is the first step of every stoichiometric calculation.",
+    "### What must be included in the weighing",
+    "All gaseous reactants/products (CO₂ escaping an open flask breaks the balance), the solvent, the precipitate, and the container. The classic school error: burning magnesium on an open balance shows a mass *gain* — oxygen has entered; in a sealed flask the mass is constant.",
+    "### Limitation (important)",
+    "The law holds for **chemical** reactions only. In nuclear reactions (fission, fusion, radioactivity) a measurable mass defect converts to energy: E = Δmc² — mass and energy are jointly conserved. Even in chemistry the energy change has a mass equivalent, but it is ≈10⁻¹⁰ of the reacting mass, far below weighing precision.",
+    "### Applications",
+    "Balancing equations; material balances in industry (input = output accounting for ammonia, cement, steel plants); gravimetric analysis; detecting loss of product (leaks, volatilisation); and every 'how much product' calculation in stoichiometry."
   ],
   "confusion": [
-    "❌ Misconception about 01 law of conservation of mass. ✅ Scientific explanation."
+    "❌ Magnesium burning in air contradicts the law because the ash is heavier. ✅ The extra mass is the oxygen that combined; in a closed system the total is constant.",
+    "❌ The law applies to nuclear reactions. ✅ It is limited to chemical reactions; nuclear processes show mass–energy equivalence.",
+    "❌ A balanced equation conserves molecules. ✅ It conserves atoms and mass; molecular counts may change (N₂ + 3H₂ → 2NH₃: 4 molecules → 2)."
   ],
   "practice": [
-    "Practice exercise for 01 law of conservation of mass."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 01 law of conservation of mass."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 01 law of conservation of mass."
-  ],
-  "practiceQuestions": [
-    "Practice question for 01 law of conservation of mass."
+    "State the law of conservation of mass and describe Landolt's verification.",
+    "Explain the law using Dalton's atomic theory.",
+    "Why must a chemical equation be balanced? Illustrate with the reaction of hydrogen and oxygen.",
+    "State the limitation of the law of conservation of mass."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 01 law of conservation of mass)"
+    "$$\\sum m_{\\text{reactants}}=\\sum m_{\\text{products}};\\qquad E=\\Delta mc^{2}\\ (\\text{nuclear limit})$$"
   ],
-  "keyPoints": [
-    "Core point for 01 law of conservation of mass."
+  "universalFacts": [
+    "Landolt's sealed-tube experiments confirmed conservation to 1 part in 10⁷.",
+    "Lavoisier's mercury(II) oxide decomposition was the founding quantitative experiment of chemistry.",
+    "In the burning of 12 g of carbon, exactly 44 g of CO₂ is formed — conservation in one line."
   ],
-  "summary": "Summary of 01 law of conservation of mass.",
-  "specialNotes": [
-    "Specialized insight for 01 law of conservation of mass."
-  ],
-  "importantStatements": [
-    "Key statement for 01 law of conservation of mass."
+  "examples": [
+    "**Problem:** 2.16 g of Ag₂O is completely decomposed; 2.00 g of silver remains. Find the mass of oxygen evolved. **Solution:** m(O₂) = 2.16 − 2.00 = 0.16 g — the mass balance of the law applied directly."
   ],
   "importantNotes": [
-    "Important note regarding 01 law of conservation of mass."
+    "Use 'total mass of reactants = total mass of products' verbatim in the statement.",
+    "Quote Landolt's sealed tube as the verification and E = Δmc² as the limitation."
   ],
-  "examShortTricks": [
-    "Recall the formula for Law of Conservation of Mass — Statement."
-  ],
-  "examNotes": [
-    "Focus on Law of Conservation of Mass — Statement problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 01 law of conservation of mass?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 01 law of conservation of mass."
-  ],
-  "importantTasks": [
-    "Task for studying 01 law of conservation of mass."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "01-law-of-conservation-of-mass",
   "mcqs": [
     {
-      "question": "Question about 01 law of conservation of mass?",
+      "question": "The law of conservation of mass was established by:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Dalton",
+        "Lavoisier",
+        "Proust",
+        "Landolt"
       ],
-      "answer": "A"
+      "answer": "B"
     }
-  ]
+  ],
+  "visualType": "conservation-of-mass",
+  "tabGroup": "Stoichiometry-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "01-law-of-conservation-of-mass.json"
 }

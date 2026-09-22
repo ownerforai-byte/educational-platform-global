@@ -21,6 +21,8 @@ import type { LabMeta } from "@/lib/types/lab";
 import { LabLearningSection } from "@/components/lab/learning-section";
 import { AnimationFrame, ArrowLabel } from "@/components/lab/annotation/arrow-label";
 import { LAB_ANNOTATIONS } from "@/lib/lab-annotations";
+import { LabStudio } from "@/components/lab/lab-studio";
+import { getLabStudio } from "@/lib/lab-studios";
 
 /** Legacy route-tree slugs → canonical registry ids. */
 const LEGACY_ALIASES: Record<string, string> = {
@@ -100,6 +102,8 @@ export default function LabPage() {
     };
     return config[lab?.category ?? "physics"] ?? { label: "Lab", color: "#64748b" };
   }, [lab]);
+
+  const studio = useMemo(() => getLabStudio(lab?.id), [lab?.id]);
 
   if (!lab) {
     return (
@@ -187,6 +191,14 @@ export default function LabPage() {
                 <ArrowLabel key={`${lab.id}-${i}`} {...ann} delay={0.3 + i * 0.25} />
               ))}
             </AnimationFrame>
+
+            {/*
+              * Live studio — an additional, photoreal model of the same
+              * subject, placed below the lab's own component. Purely
+              * additive: the original lab above is untouched, and a lab with
+              * no authored spec renders nothing here.
+              */}
+            {studio && <LabStudio spec={studio} />}
           </div>
         </div>
 

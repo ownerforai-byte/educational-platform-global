@@ -1,210 +1,75 @@
 {
-  "title": "The Neutron — Discovery & Fundamental Particle Characteristics",
+  "title": "The Neutron and the Fundamental Particles Table",
   "unitSlug": "atomic-structure",
-  "topicSlug": "orbitals-and-shape-of-s-and-p-orbitals-only",
-  "topicTitle": "Orbitals and shape of s and p orbitals only",
-  "relevance": 77,
+  "topicSlug": "discovery-of-neutron-and-fundamental-particles",
+  "topicTitle": "Discovery Of Neutron And Fundamental Particles",
+  "relevance": 85,
   "notes": [
-    "Rutherford's model: nucleus existence via α-scattering.",
-    "Bohr's model: quantized energy levels, atomic stability.",
-    "Wave-particle duality (de Broglie), Uncertainty Principle (Heisenberg)."
+    "### Focus of this tab",
+    "Chadwick's discovery of the neutron and the complete subatomic-particle data table that the nuclear atom needs (electron, proton, neutron with charge, mass, discoverer and location).",
+    "### Why a third particle had to exist",
+    "Mass problem: helium (Z = 2) should weigh 2 protons ≈ 2 u, but weighs 4 u. Charge problem: nitrogen (A = 14, Z = 7) would need 7 electrons inside the nucleus under a proton-only model, making the atom's magnetism and the electron's confinement impossible (uncertainty: electrons cannot be confined to 10⁻¹⁵ m). A neutral, massive particle was required.",
+    "### Chadwick's experiment (1932)",
+    "Polonium's α-particles hit beryllium and released a highly penetrating, neutral radiation: $^{9}\\text{Be}+^{4}\\text{He}\\rightarrow\\,^{12}\\text{C}+^{1}\\text{n}$. The radiation knocked protons out of paraffin wax; by conservation of momentum and energy the unknown particle's mass was calculated as ≈1.15–1.16 u — close to the proton's. Being neutral, it was unaffected by E/B fields and could pass through centimetres of lead.",
+    "### The fundamental particles table (memorise)",
+    "• Electron (e⁻): charge −1.602 × 10⁻¹⁹ C (−1 unit), mass 9.109 × 10⁻³¹ kg = 0.000549 u = 1/1837 of H; discovered by J. J. Thomson (1897); location: revolving in orbitals outside the nucleus.",
+    "• Proton (p): +1.602 × 10⁻¹⁹ C (+1), 1.673 × 10⁻²⁷ kg = 1.00728 u; Goldstein's rays/identified by Thomson, named by Rutherford (1919–20); location: nucleus.",
+    "• Neutron (n): 0, 1.675 × 10⁻²⁷ kg = 1.00867 u (heaviest of the three); Chadwick (1932); location: nucleus. Free neutrons β-decay (half-life ≈ 11 min) because they are slightly heavier than a proton plus an electron.",
+    "### What the trio explains",
+    "Isotopes (same Z, different N), radioactivity (nuclear instability), nuclear stability (N/Z ratio ≈ 1 for light nuclei, rising to ≈1.5 for heavy), fission/fusion energy, and the notation ᴬZX that summarises every nuclide."
   ],
   "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
+    "❌ The neutron is lighter than the proton. ✅ It is heavier (1.675 vs 1.673 × 10⁻²⁷ kg) — hence free-neutron β-decay.",
+    "❌ The neutron was discovered before the proton was named. ✅ Proton named 1919–20; neutron 1932.",
+    "❌ Neutrons carry a small charge. ✅ Exactly zero charge; that is why they penetrate deeply and leave no ion tracks."
   ],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Carbon (1s² 2s² 2p²): two unpaired electrons in separate p-orbitals (Hund's rule)."
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "Explain the mass and charge problems that predicted the neutron's existence.",
+    "Describe Chadwick's beryllium experiment with the nuclear equation.",
+    "Complete the fundamental-particles table (particle, charge, mass, discoverer, location).",
+    "Why is the N/Z ratio higher in heavy stable nuclei?"
   ],
   "formulas": [
-    "E=hν",
-    "λ=h/mv",
-    "ΔxΔp≥h/4π"
+    "$$^{9}\\text{Be}+^{4}\\text{He}\\rightarrow^{12}\\text{C}+^{1}\\text{n};\\qquad A=Z+N$$",
+    "$$m_{n}=1.675\\times10^{-27}\\ \\text{kg}>m_{p}+m_{e}\\ \\Rightarrow\\ \\text{free neutron decays}$$"
   ],
-  "keyPoints": [
-    "Core point for 23 neutron and fundamental particles."
+  "universalFacts": [
+    "Chadwick received the 1935 Nobel Prize for the neutron; it made the fission chain reaction conceivable.",
+    "Neutron half-life outside the nucleus ≈ 10.7 min.",
+    "The neutron's magnetic moment is not zero (−1.91 nuclear magnetons) despite zero charge — evidence of internal quark structure."
   ],
-  "summary": "The atomic structure evolved from Thomson's plum pudding model to Bohr's quantized model and finally to the quantum mechanical model, explaining spectral lines and stability.",
-  "specialNotes": [
-    "Specialized insight for 23 neutron and fundamental particles."
-  ],
-  "importantStatements": [
-    "Key statement for 23 neutron and fundamental particles."
+  "examples": [
+    "**Problem:** An atom has Z = 6 and A = 14. Give p, n, e and its isotope name. **Solution:** 6 protons, 8 neutrons, 6 electrons — carbon-14 (¹⁴C), the dating isotope."
   ],
   "importantNotes": [
-    "Important note regarding 23 neutron and fundamental particles."
+    "The table (charge, mass, discoverer, location) is a guaranteed short-question — memorise all four columns.",
+    "Use the uncertainty principle (electron cannot fit in the nucleus) as the conceptual argument for the neutron."
   ],
-  "examShortTricks": [
-    "Recall the formula for The Neutron — Discovery & Fundamental Particle Characteristics."
-  ],
-  "examNotes": [
-    "Focus on The Neutron — Discovery & Fundamental Particle Characteristics problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 23 neutron and fundamental particles?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 23 neutron and fundamental particles."
-  ],
-  "importantTasks": [
-    "Task for studying 23 neutron and fundamental particles."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "23-neutron-and-fundamental-particles",
   "mcqs": [
     {
-      "question": "Who proposed the dual nature of matter?",
+      "question": "The particle with almost the same mass as a proton but zero charge is the:",
       "options": [
-        "Planck",
-        "de Broglie",
-        "Bohr",
-        "Heisenberg"
+        "Electron",
+        "Positron",
+        "Neutron",
+        "Neutrino"
       ],
-      "answer": "B"
+      "answer": "C"
     },
     {
-      "question": "The radius of the nth orbit of hydrogen atom is proportional to:",
+      "question": "Neutrons were discovered using bombardment of:",
       "options": [
-        "n",
-        "n²",
-        "n³",
-        "n⁴"
+        "Nitrogen with protons",
+        "Beryllium with α-particles",
+        "Gold with electrons",
+        "Hydrogen with γ-rays"
       ],
       "answer": "B"
     }
   ],
-  "exercises": [
-    {
-      "id": "ex-1",
-      "question": "Calculate the de Broglie wavelength of an electron moving at 10⁶ m/s.",
-      "steps": [
-        "Formula: λ = h / (m * v)",
-        "Given: h = 6.626 x 10⁻³⁴ J·s, m = 9.11 x 10⁻³¹ kg, v = 10⁶ m/s",
-        "Calculation: λ = 6.626e-34 / (9.11e-31 * 1e6)",
-        "Result: ~7.27 x 10⁻¹⁰ m (or 0.727 nm)"
-      ],
-      "answer": "0.727 nm"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "RutherfordScatteringSim",
-    "description": "Interactive visualization of α-particle deflection by the nucleus."
-  },
-  "visualType": "orbital-shapes-s-p"
+  "visualType": "atomic-particles",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "23-neutron-and-fundamental-particles.json"
 }

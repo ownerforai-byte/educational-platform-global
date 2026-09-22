@@ -1,272 +1,66 @@
 {
-  "title": "Law of Multiple Proportions",
+  "title": "Law of Multiple Proportions — Dalton's Law with Worked Data",
   "unitSlug": "stoichiometry",
-  "topicSlug": "law-of-multiple-proportions",
-  "topicTitle": "Law of Multiple Proportions",
-  "relevance": 100,
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
+  "topicSlug": "laws-of-stoichiometry",
+  "topicTitle": "Laws of stoichiometry",
+  "relevance": 85,
+  "notes": [
+    "### Focus of this tab",
+    "Dalton's own law: the full statement, the standard data sets (CO/CO₂, H₂O/H₂O₂, nitrogen oxides) and the method of showing whole-number ratios — the NEB calculation pattern.",
+    "### Statement and history",
+    "'When two elements combine to form more than one compound, the masses of one element that combine with a fixed mass of the other are in the ratio of small whole numbers.' Proposed by John Dalton (1803) — in fact the law is the strongest historical evidence for his atomic theory, since whole-number ratios are what whole atoms give.",
+    "### Standard data sets",
+    "• **Carbon oxides:** in CO, 12 g C combines with 16 g O; in CO₂, 12 g C with 32 g O. Fixed carbon → oxygen ratio 16 : 32 = 1 : 2.",
+    "• **Hydrogen oxides:** H₂O (2 g H : 16 g O) and H₂O₂ (2 g H : 32 g O) → 1 : 2.",
+    "• **Sulphur oxides:** SO₂ (32 g S : 32 g O) and SO₃ (32 g S : 48 g O) → 2 : 3.",
+    "• **Nitrogen oxides:** N₂O, NO, N₂O₃, NO₂, N₂O₅ — with a fixed mass of nitrogen, oxygen masses stand in 1 : 2 : 3 : 4 : 5.",
+    "• **Iron chlorides:** FeCl₂ and FeCl₃ — chlorine ratio 2 : 3 for fixed iron.",
+    "### The calculation method (do it in this order)",
+    "(1) Choose a fixed mass of one element (usually 1 g or the atomic mass). (2) Compute the mass of the other element combined with that fixed mass in each compound (divide/multiply proportionally). (3) Divide the masses by the smallest to get the simple ratio; multiply up if fractions appear.",
+    "### Why it works and where it stops",
+    "Atoms combine as whole units: one C with one or two O atoms — hence 1 : 2. The law needs accurate analysis (small errors destroy the whole-number pattern), applies to *pure* compounds of the same two elements, and says nothing about structure or bonding."
+  ],
+  "confusion": [
+    "❌ The law compares masses of both elements. ✅ One element's mass is held fixed; the other's varies in whole-number ratios.",
+    "❌ CO and CO₂ show definite proportions. ✅ Each compound separately follows definite proportions; the *pair* demonstrates multiple proportions.",
+    "❌ Any ratio qualifies as 'small whole number'. ✅ It must be genuinely integral (1 : 2, 2 : 3); 1 : 1.49 signals analytical error."
+  ],
+  "practice": [
+    "State the law of multiple proportions and verify it with CO and CO₂ data.",
+    "Two oxides of a metal contain 50% and 40% oxygen. Show that the data obey the law.",
+    "Explain how the law supports Dalton's atomic theory.",
+    "Why does the law fail for non-stoichiometric compounds?"
+  ],
+  "formulas": [
+    "$$\\frac{m_{O}\\ (\\text{in oxide 2})}{m_{O}\\ (\\text{in oxide 1})}=\\frac{\\text{simple integer}}{1}\\ (\\text{fixed mass of the other element})$$"
+  ],
+  "universalFacts": [
+    "The law was published in Dalton's 'New System of Chemical Philosophy' (1808).",
+    "Nitrogen's five oxides give the textbook 1 : 2 : 3 : 4 : 5 ladder.",
+    "The law historically convinced chemists that atoms combine in whole numbers."
+  ],
+  "examples": [
+    "**Problem:** Two oxides of metal M contain 50% and 40% oxygen respectively. Show multiple proportions. **Solution:** per 100 g: oxide 1 has 50 g M : 50 g O → per 1 g M, 1 g O; oxide 2 has 60 g M : 40 g O → per 1 g M, 0.667 g O. Ratio of oxygen masses = 1 : 0.667 = 3 : 2 — a simple whole-number ratio."
+  ],
+  "importantNotes": [
+    "Fix the mass of one element before comparing — the most common methodological mark.",
+    "Present the final ratio in smallest whole numbers (3 : 2, not 1.5 : 1)."
+  ],
+  "mcqs": [
+    {
+      "question": "The law of multiple proportions was given by:",
+      "options": [
+        "Proust",
+        "Dalton",
+        "Gay-Lussac",
+        "Avogadro"
+      ],
+      "answer": "B"
+    }
+  ],
+  "visualType": "multiple-proportions",
+  "tabGroup": "Stoichiometry-Learner-Notes",
+  "source": "ravikishan",
   "duplicateType": 2,
-  "tabGroup": "law-of-multiple-proportions",
-  "visualType": "stoichiometry",
-  "enrichedContent": {
-    "notes": [
-      "**Statement:** When two elements combine to form more than one compound, the masses of one element that combine with a fixed mass of the other element are in the ratio of small whole numbers.",
-      "**Formulated by:** John Dalton (1803). This law provided crucial experimental evidence supporting his atomic theory, demonstrating that atoms combine in discrete, indivisible units.",
-      "**Classic Example — Carbon Oxides:** In carbon monoxide (CO), 12 g of carbon combines with 16 g of oxygen. In carbon dioxide (CO₂), 12 g of carbon combines with 32 g of oxygen. The oxygen masses (16:32) simplify to the whole-number ratio 1:2.",
-      "**Nitrogen Oxides Example:** NO (14g N : 16g O), NO₂ (14g N : 32g O), N₂O (28g N : 16g O), N₂O₃ (28g N : 48g O), N₂O₅ (28g N : 80g O). All show simple whole-number ratios when normalized to fixed nitrogen mass.",
-      "**Mathematical Expression:** For compounds AₐBᵦ and AₓBʸ, the mass ratio of B per fixed mass of A equals (ᵦ/ₐ) : (ʸ/ₓ), which reduces to a simple whole-number ratio.",
-      "**Verification Procedure:** (1) Calculate mass of element B per gram of element A in each compound. (2) Divide each value by the smallest result. (3) Check if the quotients are whole numbers or close to them.",
-      "**Theoretical Significance:** This law demonstrates that elements combine in discrete, indivisible units (atoms), providing empirical validation for atomic theory and explaining why compounds have fixed compositions."
-    ],
-    "confusion": [
-      "❌ 'This law applies to all types of compounds.' ✅ It applies specifically to two elements forming multiple compounds.",
-      "❌ 'The ratio of masses is always 1:1.' ✅ The ratio depends on the specific compounds — it is always a simple whole number, but not necessarily 1:1.",
-      "❌ 'This law proves atoms exist.' ✅ It is consistent with atomic theory but is an empirical observation — it does not independently prove atoms exist.",
-      "❌ 'Water and hydrogen peroxide violate this law.' ✅ No — H₂O (H:O = 1:8) and H₂O₂ (H:O = 1:16) give a ratio of 1:2, which is a whole number.",
-      "❌ 'The law of definite proportions and multiple proportions are contradictory.' ✅ They are complementary — definite proportions describe one compound; multiple proportions describe several compounds of the same elements."
-    ],
-    "practice": [
-      "Calculate the mass ratios of oxygen that combine with 1 g of carbon in CO and CO₂.",
-      "Show that SO₂ and SO₃ obey the Law of Multiple Proportions.",
-      "Two compounds of nitrogen and oxygen contain 63.6% and 46.4% oxygen respectively. Verify the law.",
-      "Calculate the ratio of masses of hydrogen that combine with 1 g of carbon in CH₄ and C₂H₆.",
-      "State the Law of Multiple Proportions and illustrate it with three oxides of iron."
-    ],
-    "universalFacts": [
-      "The Law of Multiple Proportions was proposed by John Dalton in 1803.",
-      "It is also called Dalton's Law of Multiple Proportions.",
-      "This law explains why elements form different compounds with each other.",
-      "It was the first evidence that atoms combine in whole number ratios.",
-      "The law is only applicable when two elements form more than one compound."
-    ],
-    "examples": [
-      "Carbon oxides: CO (C:O = 12:16) and CO₂ (C:O = 12:32). Fixed C = 12g, O ratios = 16:32 = 1:2.",
-      "Nitrogen oxides: N₂O, NO, NO₂ show oxygen ratios of 1:2:4 for fixed nitrogen.",
-      "Sulfur oxides: SO₂ (S:O = 32:32) and SO₃ (S:O = 32:48). Fixed S = 32g, O ratios = 32:48 = 2:3.",
-      "Phosphorus chlorides: PCl₃ and PCl₅."
-    ],
-    "practiceQuestions": [
-      "State and explain the Law of Multiple Proportions with examples.",
-      "Verify the law using data for nitrogen oxides.",
-      "Calculate the ratio of masses of oxygen in two compounds of carbon and oxygen.",
-      "How does this law support atomic theory?"
-    ],
-    "formulas": [
-      "For compounds AX and AY: m_Y(first)/m_Y(second) = small whole number",
-      "Ratio = (Mass of B in compound 1) / (Mass of B in compound 2) for fixed mass of A",
-      "If compound 1 has formula A_xB_y and compound 2 has A_xB_z, ratio = y:z"
-    ],
-    "keyPoints": [
-      "Two elements forming multiple compounds → Law applies.",
-      "Fix mass of one element, compare masses of other element.",
-      "Ratios are always small whole numbers.",
-      "Provides evidence for atomic theory."
-    ],
-    "summary": "The Law of Multiple Proportions states that when two elements form more than one compound, the masses of one element that combine with a fixed mass of the other are in simple whole-number ratios. Formulated by Dalton in 1803, it provides strong evidence for atomic theory.",
-    "specialNotes": [
-      "This law is only applicable when two elements form MORE THAN ONE compound.",
-      "If only one compound is formed, this law cannot be verified.",
-      "NEB tests this with numerical problems on oxide/chloride data."
-    ],
-    "importantStatements": [
-      "When two elements combine to form more than one compound, the masses of one element that combine with a fixed mass of the other element are in the ratio of small whole numbers.",
-      "This law is direct evidence for the existence of atoms."
-    ],
-    "importantNotes": [
-      "The law works because atoms combine in discrete, whole-number ratios.",
-      "It is a consequence of the particulate nature of matter.",
-      "Dalton used this law to support his atomic theory."
-    ],
-    "examShortTricks": [
-      "Check: Do two elements form more than one compound? If yes, law applies.",
-      "Fix mass of element A, find masses of B in each compound.",
-      "Calculate ratio and simplify to whole numbers.",
-      "Example: CO and CO₂ → Fix C=12, O ratios = 16:32 = 1:2."
-    ],
-    "examNotes": [
-      "This law is a guaranteed short-answer question in NEB.",
-      "Be prepared to state the law, give examples, and verify it with data.",
-      "It is often confused with the Law of Definite Proportions — remember the difference.",
-      "This law supports Dalton's atomic theory — mention this in your answer."
-    ],
-    "mcs": [
-      {
-        "question": "The Law of Multiple Proportions was proposed by:",
-        "options": [
-          "Proust",
-          "Dalton",
-          "Lavoisier",
-          "Avogadro"
-        ],
-        "answer": "B"
-      },
-      {
-        "question": "Which pair of compounds can verify the Law of Multiple Proportions?",
-        "options": [
-          "H₂O and H₂O₂",
-          "NaCl and KCl",
-          "CO and NaCl",
-          "H₂O and CO₂"
-        ],
-        "answer": "A"
-      },
-      {
-        "question": "In CO and CO₂, the ratio of masses of oxygen combining with fixed mass of carbon is:",
-        "options": [
-          "1:2",
-          "2:1",
-          "1:1",
-          "1:3"
-        ],
-        "answer": "A"
-      }
-    ],
-    "importantConcepts": [
-      "Law of Multiple Proportions: Whole-number mass ratios.",
-      "Atomic Theory Evidence: Discrete combining units.",
-      "Distinction from Definite Proportions: Multiple vs. single compounds.",
-      "Verification Methodology: Normalizing mass ratios.",
-      "Chemical Formula Implications: AₐBᵦ stoichiometry."
-    ],
-    "importantTasks": [
-      "Verify the Law of Multiple Proportions for CO and CO₂.",
-      "Calculate mass ratios for three oxides of nitrogen.",
-      "Explain how this law supports atomic theory.",
-      "Compare this law with the Law of Definite Proportions.",
-      "Solve 5 numerical problems verifying this law."
-    ],
-    "exercises": [],
-    "visualization": {}
-  },
-  "originalContent": {
-    "notes": [
-      "**Statement:** When two elements combine to form more than one compound, the masses of one element that combine with a fixed mass of the other element are in the ratio of small whole numbers.",
-      "**Formulated by:** John Dalton (1803). This law provided crucial experimental evidence supporting his atomic theory, demonstrating that atoms combine in discrete, indivisible units.",
-      "**Classic Example — Carbon Oxides:** In carbon monoxide (CO), 12 g of carbon combines with 16 g of oxygen. In carbon dioxide (CO₂), 12 g of carbon combines with 32 g of oxygen. The oxygen masses (16:32) simplify to the whole-number ratio 1:2.",
-      "**Nitrogen Oxides Example:** NO (14g N : 16g O), NO₂ (14g N : 32g O), N₂O (28g N : 16g O), N₂O₃ (28g N : 48g O), N₂O₅ (28g N : 80g O). All show simple whole-number ratios when normalized to fixed nitrogen mass.",
-      "**Mathematical Expression:** For compounds AₐBᵦ and AₓBʸ, the mass ratio of B per fixed mass of A equals (ᵦ/ₐ) : (ʸ/ₓ), which reduces to a simple whole-number ratio.",
-      "**Verification Procedure:** (1) Calculate mass of element B per gram of element A in each compound. (2) Divide each value by the smallest result. (3) Check if the quotients are whole numbers or close to them.",
-      "**Theoretical Significance:** This law demonstrates that elements combine in discrete, indivisible units (atoms), providing empirical validation for atomic theory and explaining why compounds have fixed compositions."
-    ],
-    "confusion": [
-      "❌ 'This law applies to all types of compounds.' ✅ It applies specifically to two elements forming multiple compounds.",
-      "❌ 'The ratio of masses is always 1:1.' ✅ The ratio depends on the specific compounds — it is always a simple whole number, but not necessarily 1:1.",
-      "❌ 'This law proves atoms exist.' ✅ It is consistent with atomic theory but is an empirical observation — it does not independently prove atoms exist.",
-      "❌ 'Water and hydrogen peroxide violate this law.' ✅ No — H₂O (H:O = 1:8) and H₂O₂ (H:O = 1:16) give a ratio of 1:2, which is a whole number.",
-      "❌ 'The law of definite proportions and multiple proportions are contradictory.' ✅ They are complementary — definite proportions describe one compound; multiple proportions describe several compounds of the same elements."
-    ],
-    "practice": [
-      "Calculate the mass ratios of oxygen that combine with 1 g of carbon in CO and CO₂.",
-      "Show that SO₂ and SO₃ obey the Law of Multiple Proportions.",
-      "Two compounds of nitrogen and oxygen contain 63.6% and 46.4% oxygen respectively. Verify the law.",
-      "Calculate the ratio of masses of hydrogen that combine with 1 g of carbon in CH₄ and C₂H₆.",
-      "State the Law of Multiple Proportions and illustrate it with three oxides of iron."
-    ],
-    "universalFacts": [
-      "The Law of Multiple Proportions was proposed by John Dalton in 1803.",
-      "It is also called Dalton's Law of Multiple Proportions.",
-      "This law explains why elements form different compounds with each other.",
-      "It was the first evidence that atoms combine in whole number ratios.",
-      "The law is only applicable when two elements form more than one compound."
-    ],
-    "examples": [
-      "Carbon oxides: CO (C:O = 12:16) and CO₂ (C:O = 12:32). Fixed C = 12g, O ratios = 16:32 = 1:2.",
-      "Nitrogen oxides: N₂O, NO, NO₂ show oxygen ratios of 1:2:4 for fixed nitrogen.",
-      "Sulfur oxides: SO₂ (S:O = 32:32) and SO₃ (S:O = 32:48). Fixed S = 32g, O ratios = 32:48 = 2:3.",
-      "Phosphorus chlorides: PCl₃ and PCl₅."
-    ],
-    "practiceQuestions": [
-      "State and explain the Law of Multiple Proportions with examples.",
-      "Verify the law using data for nitrogen oxides.",
-      "Calculate the ratio of masses of oxygen in two compounds of carbon and oxygen.",
-      "How does this law support atomic theory?"
-    ],
-    "formulas": [
-      "For compounds AX and AY: m_Y(first)/m_Y(second) = small whole number",
-      "Ratio = (Mass of B in compound 1) / (Mass of B in compound 2) for fixed mass of A",
-      "If compound 1 has formula A_xB_y and compound 2 has A_xB_z, ratio = y:z"
-    ],
-    "keyPoints": [
-      "Two elements forming multiple compounds → Law applies.",
-      "Fix mass of one element, compare masses of other element.",
-      "Ratios are always small whole numbers.",
-      "Provides evidence for atomic theory."
-    ],
-    "summary": "The Law of Multiple Proportions states that when two elements form more than one compound, the masses of one element that combine with a fixed mass of the other are in simple whole-number ratios. Formulated by Dalton in 1803, it provides strong evidence for atomic theory.",
-    "specialNotes": [
-      "This law is only applicable when two elements form MORE THAN ONE compound.",
-      "If only one compound is formed, this law cannot be verified.",
-      "NEB tests this with numerical problems on oxide/chloride data."
-    ],
-    "importantStatements": [
-      "When two elements combine to form more than one compound, the masses of one element that combine with a fixed mass of the other element are in the ratio of small whole numbers.",
-      "This law is direct evidence for the existence of atoms."
-    ],
-    "importantNotes": [
-      "The law works because atoms combine in discrete, whole-number ratios.",
-      "It is a consequence of the particulate nature of matter.",
-      "Dalton used this law to support his atomic theory."
-    ],
-    "examShortTricks": [
-      "Check: Do two elements form more than one compound? If yes, law applies.",
-      "Fix mass of element A, find masses of B in each compound.",
-      "Calculate ratio and simplify to whole numbers.",
-      "Example: CO and CO₂ → Fix C=12, O ratios = 16:32 = 1:2."
-    ],
-    "examNotes": [
-      "This law is a guaranteed short-answer question in NEB.",
-      "Be prepared to state the law, give examples, and verify it with data.",
-      "It is often confused with the Law of Definite Proportions — remember the difference.",
-      "This law supports Dalton's atomic theory — mention this in your answer."
-    ],
-    "mcs": [
-      {
-        "question": "The Law of Multiple Proportions was proposed by:",
-        "options": [
-          "Proust",
-          "Dalton",
-          "Lavoisier",
-          "Avogadro"
-        ],
-        "answer": "B"
-      },
-      {
-        "question": "Which pair of compounds can verify the Law of Multiple Proportions?",
-        "options": [
-          "H₂O and H₂O₂",
-          "NaCl and KCl",
-          "CO and NaCl",
-          "H₂O and CO₂"
-        ],
-        "answer": "A"
-      },
-      {
-        "question": "In CO and CO₂, the ratio of masses of oxygen combining with fixed mass of carbon is:",
-        "options": [
-          "1:2",
-          "2:1",
-          "1:1",
-          "1:3"
-        ],
-        "answer": "A"
-      }
-    ],
-    "importantConcepts": [
-      "Law of Multiple Proportions: Whole-number mass ratios.",
-      "Atomic Theory Evidence: Discrete combining units.",
-      "Distinction from Definite Proportions: Multiple vs. single compounds.",
-      "Verification Methodology: Normalizing mass ratios.",
-      "Chemical Formula Implications: AₐBᵦ stoichiometry."
-    ],
-    "importantTasks": [
-      "Verify the Law of Multiple Proportions for CO and CO₂.",
-      "Calculate mass ratios for three oxides of nitrogen.",
-      "Explain how this law supports atomic theory.",
-      "Compare this law with the Law of Definite Proportions.",
-      "Solve 5 numerical problems verifying this law."
-    ],
-    "exercises": [],
-    "visualization": {}
-  }
+  "filename": "03-law-of-multiple-proportions.json"
 }

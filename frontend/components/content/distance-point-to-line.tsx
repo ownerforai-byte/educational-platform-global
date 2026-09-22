@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Schematic } from "./schematic-frame";
 
 export function DistancePointToLineVisual() {
   const [a, setA] = useState(2);
@@ -91,18 +92,16 @@ export function DistancePointToLineVisual() {
       </div>
 
       {/* Visualization */}
-      <div className="flex justify-center">
-        <svg viewBox={`0 0 ${w} ${h}`} className="w-full max-w-md border rounded-lg bg-slate-950">
-          {/* Grid */}
-          {Array.from({ length: 13 }, (_, i) => (
-            <g key={i}>
-              <line x1={ox + i * scale - 6 * scale} y1={0} x2={ox + i * scale - 6 * scale} y2={h} stroke="#1e293b" strokeWidth="0.5" />
-              <line x1={0} y1={oy + i * scale - 6 * scale} x2={w} y2={oy + i * scale - 6 * scale} stroke="#1e293b" strokeWidth="0.5" />
-            </g>
-          ))}
-          {/* Axes */}
-          <line x1={0} y1={oy} x2={w} y2={oy} stroke="#475569" strokeWidth="1" />
-          <line x1={ox} y1={0} x2={ox} y2={h} stroke="#475569" strokeWidth="1" />
+      <Schematic
+          w={w} h={h} ox={ox} oy={oy} scale={scale}
+          tickStep={1}
+          xLabel="x" yLabel="y"
+          legend={[
+            { color: "#f97316", label: "line  ax + by + c = 0" },
+            { color: "#22d3ee", label: "point P(x₀, y₀)" },
+            { color: "#fbbf24", label: "perpendicular foot" },
+          ]}
+        >
           {/* Line */}
           {linePoints.length > 1 && (
             <polyline points={linePoints.join(" ")} fill="none" stroke="#f97316" strokeWidth="2.5" />
@@ -110,22 +109,22 @@ export function DistancePointToLineVisual() {
           {/* Point */}
           <circle cx={ox + x0 * scale} cy={oy - y0 * scale} r="5" fill="#22d3ee" />
           <text x={ox + x0 * scale + 8} y={oy - y0 * scale - 8} fill="#22d3ee" fontSize="11" fontWeight="600">
-            P(x₀,y₀)
+            P(x₀, y₀)
           </text>
-          {/* Perpendicular */}
+          {/* Perpendicular to foot */}
           <line x1={ox + x0 * scale} y1={oy - y0 * scale} x2={ox + projX * scale} y2={oy - projY * scale} stroke="#22d3ee" strokeWidth="1.5" strokeDasharray="4 3" />
-          {/* Projection point */}
-          <circle cx={ox + projX * scale} cy={oy - projY * scale} r="3" fill="#fbbf24" />
+          {/* Foot */}
+          <circle cx={ox + projX * scale} cy={oy - projY * scale} r="3.5" fill="#fbbf24" />
           {/* Right angle marker */}
           <polygon
             points={`${ox + projX * scale},${oy - projY * scale} ${ox + projX * scale + 6},${oy - projY * scale} ${ox + projX * scale},${oy - projY * scale - 6}`}
             fill="none" stroke="#fbbf24" strokeWidth="1"
           />
-          {/* Labels */}
-          <text x={5} y={h - 5} fill="#f97316" fontSize="10">Line: {a}x + {b}y + {c} = 0</text>
-          <text x={5} y={h - 18} fill="#22d3ee" fontSize="10">d = {d.toFixed(3)}</text>
-        </svg>
-      </div>
+          {/* Distance label */}
+          <text x={(ox + x0 * scale + ox + projX * scale) / 2 + 8} y={(oy - y0 * scale + oy - projY * scale) / 2} fill="#fbbf24" fontSize="10" fontWeight="600">
+            d = {d.toFixed(2)}
+          </text>
+        </Schematic>
 
       {/* Formula display */}
       <div className="p-3 rounded-lg bg-muted/30 text-sm">

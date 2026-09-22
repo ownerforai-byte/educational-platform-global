@@ -2,6 +2,11 @@
 
 import React, { useState } from "react";
 import { Sparkles, Sliders, Eye, RotateCcw, CheckCircle2 } from "lucide-react";
+import { renderTheoremFillVisualA } from "@/components/derivations/theorem-fill-visuals-a";
+import { renderTheoremFillVisualB } from "@/components/derivations/theorem-fill-visuals-b";
+import { renderTheoremFillVisualC } from "@/components/derivations/theorem-fill-visuals-c";
+import { renderTheoremFillVisualD } from "@/components/derivations/theorem-fill-visuals-d";
+import { renderTheoremFillVisualE } from "@/components/derivations/theorem-fill-visuals-e";
 
 interface DerivationVisualProps {
   visualType: string;
@@ -21,6 +26,16 @@ export function DerivationVisual({
 
   // Render specific SVG by visualType
   const renderVisualContent = () => {
+    // Theorem-fill chain: 69 curated "coming soon" topics carry dedicated
+    // visuals in the common renderer modules; fall through to the main
+    // switch for every pre-existing visualType.
+    const chainedFill =
+      renderTheoremFillVisualA(visualType, showAnnotations) ??
+      renderTheoremFillVisualB(visualType, showAnnotations) ??
+      renderTheoremFillVisualC(visualType, showAnnotations) ??
+      renderTheoremFillVisualD(visualType, showAnnotations) ??
+      renderTheoremFillVisualE(visualType, showAnnotations);
+    if (chainedFill) return chainedFill;
 <defs>
         <linearGradient id="grad-primary" x1="0%" y1="0%" x2="100%" y2="100%">
           <stop offset="0%" stopColor="#0ea5e9"/>
@@ -6470,6 +6485,22 @@ case "avogadros-law-deduction":
 
   return (
     <div className={`rounded-2xl border border-border/80 bg-card overflow-hidden shadow-sm ${className}`}>
+      {/* Shared SVG defs sprite: the arrow markers referenced via url(#…)
+          across every visual (the old inline <defs> was dead JSX code that
+          never rendered). Rendered once, hidden, document-wide. */}
+      <svg aria-hidden="true" focusable="false" style={{ position: "absolute", width: 0, height: 0, overflow: "hidden" }}>
+        <defs>
+          <marker id="arrow-end" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 Z" fill="#38bdf8" />
+          </marker>
+          <marker id="arrow-end-gold" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 Z" fill="#f59e0b" />
+          </marker>
+          <marker id="arrow" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="8" markerHeight="8" orient="auto">
+            <path d="M 0 0 L 10 5 L 0 10 Z" fill="#f59e0b" />
+          </marker>
+        </defs>
+      </svg>
       {/* Visual Header */}
       <div className="flex items-center justify-between px-4 py-2.5 bg-muted/40 border-b border-border/60 text-xs">
         <div className="flex items-center gap-2 font-bold text-foreground">

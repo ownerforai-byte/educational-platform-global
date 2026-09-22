@@ -1,260 +1,67 @@
 {
-  "title": "Dalton's Atomic Theory",
+  "title": "Dalton's Atomic Theory and its Postulates",
   "unitSlug": "stoichiometry",
-  "topicSlug": "dalton-atomic-theory",
-  "topicTitle": "Dalton's Atomic Theory",
+  "topicSlug": "dalton-s-atomic-theory-and-its-postulates",
+  "topicTitle": "Dalton's atomic theory and its postulates",
   "relevance": 100,
-  "tabGroup": "dalton-atomic-theory",
-  "visualType": "atomic-theory",
-  "enrichedContent": {
-    "notes": [
-      "**Dalton's Postulates (1803):** (1) Matter is composed of indivisible, indestructible atoms. (2) Atoms of a given element are identical in mass and chemical properties. (3) Atoms of different elements possess distinct masses and properties. (4) Compounds are formed by the combination of atoms in fixed, simple whole-number ratios (Law of Multiple Proportions). (5) Chemical reactions involve the rearrangement, separation, or combination of atoms; atoms are neither created nor destroyed (Law of Conservation of Mass).",
-      "**Limitations:** (1) Atoms are divisible into subatomic particles (protons, neutrons, electrons). (2) Isotopes: Atoms of the same element can have different masses due to varying neutron counts. (3) Isobars: Atoms of different elements can have the same mass. (4) Does not account for chemical bonding or the nature of interatomic forces. (5) Does not explain why atoms combine (valency).",
-      "**Significance:** Established the first scientific framework for atomic theory, providing a theoretical basis for the laws of chemical combination (Conservation of Mass, Definite Proportions, Multiple Proportions).",
-      "**Modern Perspective:** Atoms are the smallest unit of an element retaining its chemical identity. The concept of 'indivisibility' is redefined as 'chemical indivisibility'—atoms remain intact during chemical reactions, though they can be altered in nuclear processes.",
-      "**Extended Detail:** Dalton's model was the first to use the term 'atom' (from Greek 'atomos', meaning indivisible) in a scientific context, bridging the gap between philosophical speculation and empirical science."
-    ],
-    "confusion": [
-      "❌ 'Atoms are indivisible.' ✅ Atoms are composed of subatomic particles (protons, neutrons, electrons) and can be split in nuclear reactions.",
-      "❌ 'All atoms of an element are identical.' ✅ Isotopes of the same element have different numbers of neutrons and thus different masses.",
-      "❌ 'Dalton's theory is completely wrong.' ✅ It is a foundational model that correctly explains chemical combination laws, even if it lacks modern subatomic detail.",
-      "❌ 'Atoms are solid spheres.' ✅ Atoms are mostly empty space with a dense nucleus and electron clouds.",
-      "❌ 'Chemical reactions create new atoms.' ✅ Reactions only rearrange existing atoms; the total number and type of atoms remain constant (Law of Conservation of Mass)."
-    ],
-    "practice": [
-      "List the five main postulates of Dalton's atomic theory.",
-      "Explain why Dalton's theory failed to explain isotopes.",
-      "Describe how Dalton's theory explains the Law of Conservation of Mass.",
-      "Compare Dalton's atom with the modern atomic model.",
-      "Identify which postulates of Dalton's theory are still considered valid today."
-    ],
-    "universalFacts": [
-      "Dalton's theory (1803) marked the transition from alchemy to modern chemistry.",
-      "The law of multiple proportions was specifically predicted by Dalton's theory.",
-      "Dalton's atomic theory is the basis for the modern concept of the mole.",
-      "Even though some postulates are outdated, the core idea that matter is composed of discrete atoms remains the cornerstone of chemistry.",
-      "Dalton was the first to assign relative atomic masses to elements."
-    ],
-    "examples": [
-      "Combination: Carbon + Oxygen → Carbon Monoxide (1:1 ratio) or Carbon Dioxide (1:2 ratio).",
-      "Isotope example: Carbon-12 and Carbon-14 are both Carbon atoms but have different masses.",
-      "Rearrangement: H₂ + O₂ → H₂O (atoms are rearranged, not created)."
-    ],
-    "practiceQuestions": [
-      "State the main postulates of Dalton's atomic theory.",
-      "Which of Dalton's postulates were proven incorrect by the discovery of isotopes?",
-      "How does Dalton's theory explain the Law of Definite Proportions?",
-      "Why is Dalton's theory considered a milestone in the history of chemistry?",
-      "What are the limitations of Dalton's atomic theory?"
-    ],
-    "formulas": [
-      "No direct mathematical formula, but it underpins: Law of Conservation of Mass (Σm_reactants = Σm_products)",
-      "Law of Definite Proportions (mass ratio = constant)"
-    ],
-    "keyPoints": [
-      "Matter is made of atoms.",
-      "Atoms of an element are identical (mostly).",
-      "Compounds are fixed ratios of atoms.",
-      "Chemical reactions rearrange atoms.",
-      "Dalton's theory explains chemical combination laws."
-    ],
-    "summary": "Dalton's atomic theory (1803) proposed that matter is composed of indivisible atoms, which combine in fixed ratios to form compounds. While some postulates (indivisibility, identical masses) were refined by modern discoveries like isotopes and subatomic particles, the theory remains the foundation of modern chemistry and explains the laws of chemical combination.",
-    "specialNotes": [
-      "Dalton's theory is a 'model' — it was useful for its time and still explains basic chemical behavior.",
-      "Always distinguish between 'chemical indivisibility' (atoms in reactions) and 'physical divisibility' (subatomic particles).",
-      "NEB questions often ask for the postulates and the limitations of the theory."
-    ],
-    "importantStatements": [
-      "Atoms are the smallest unit of an element that participates in chemical reactions.",
-      "Chemical reactions involve the rearrangement of atoms.",
-      "Compounds are formed by the combination of atoms in simple whole-number ratios.",
-      "Dalton's theory provided the first scientific explanation for the laws of chemical combination."
-    ],
-    "importantNotes": [
-      "Dalton's theory is the starting point for understanding stoichiometry.",
-      "Isotopes are the primary reason why Dalton's 'identical mass' postulate is not strictly true.",
-      "The theory is still valid for explaining chemical reactions at the macroscopic level."
-    ],
-    "examShortTricks": [
-      "Remember: Dalton = Atoms, Indivisible, Fixed Ratios, Rearrangement.",
-      "Limitations: Isotopes (mass), Subatomic particles (divisibility), Bonding (forces).",
-      "Significance: Laws of chemical combination (Mass, Definite, Multiple proportions)."
-    ],
-    "examNotes": [
-      "Dalton's theory is a frequent short-answer question.",
-      "Be prepared to list the postulates and explain why some are now considered incorrect.",
-      "Focus on how the theory explains the laws of chemical combination."
-    ],
-    "mcs": [
-      {
-        "question": "Which of the following is NOT a postulate of Dalton's atomic theory?",
-        "options": [
-          "Matter is made of atoms.",
-          "Atoms are indivisible.",
-          "Atoms of the same element are identical.",
-          "Atoms are composed of protons, neutrons, and electrons."
-        ],
-        "answer": "D"
-      },
-      {
-        "question": "Which discovery proved that atoms are divisible?",
-        "options": [
-          "Discovery of isotopes",
-          "Discovery of subatomic particles",
-          "Law of conservation of mass",
-          "Law of definite proportions"
-        ],
-        "answer": "B"
-      },
-      {
-        "question": "Dalton's theory explains which of the following?",
-        "options": [
-          "Law of conservation of mass",
-          "Law of definite proportions",
-          "Law of multiple proportions",
-          "All of the above"
-        ],
-        "answer": "D"
-      }
-    ],
-    "importantConcepts": [
-      "Dalton's Atomic Theory: Postulates and foundational principles.",
-      "Limitations: Isotopes, subatomic particles, and chemical bonding.",
-      "Significance: Theoretical basis for laws of chemical combination.",
-      "Modern Atomic Model: Refinements and contemporary understanding.",
-      "Stoichiometric implications of Dalton's theory."
-    ],
-    "importantTasks": [
-      "List the five main postulates of Dalton's atomic theory.",
-      "Explain why Dalton's theory failed to explain isotopes.",
-      "Describe how Dalton's theory explains the Law of Conservation of Mass.",
-      "Compare Dalton's atom with the modern atomic model.",
-      "Identify which postulates of Dalton's theory are still considered valid today."
-    ]
-  },
-  "originalContent": {
-    "notes": [
-      "**Dalton's Postulates (1803):** (1) Matter is composed of indivisible, indestructible atoms. (2) Atoms of a given element are identical in mass and chemical properties. (3) Atoms of different elements possess distinct masses and properties. (4) Compounds are formed by the combination of atoms in fixed, simple whole-number ratios (Law of Multiple Proportions). (5) Chemical reactions involve the rearrangement, separation, or combination of atoms; atoms are neither created nor destroyed (Law of Conservation of Mass).",
-      "**Limitations:** (1) Atoms are divisible into subatomic particles (protons, neutrons, electrons). (2) Isotopes: Atoms of the same element can have different masses due to varying neutron counts. (3) Isobars: Atoms of different elements can have the same mass. (4) Does not account for chemical bonding or the nature of interatomic forces. (5) Does not explain why atoms combine (valency).",
-      "**Significance:** Established the first scientific framework for atomic theory, providing a theoretical basis for the laws of chemical combination (Conservation of Mass, Definite Proportions, Multiple Proportions).",
-      "**Modern Perspective:** Atoms are the smallest unit of an element retaining its chemical identity. The concept of 'indivisibility' is redefined as 'chemical indivisibility'—atoms remain intact during chemical reactions, though they can be altered in nuclear processes."
-    ],
-    "confusion": [
-      "❌ 'Atoms are indivisible.' ✅ Atoms are composed of subatomic particles (protons, neutrons, electrons) and can be split in nuclear reactions.",
-      "❌ 'All atoms of an element are identical.' ✅ Isotopes of the same element have different numbers of neutrons and thus different masses.",
-      "❌ 'Dalton's theory is completely wrong.' ✅ It is a foundational model that correctly explains chemical combination laws, even if it lacks modern subatomic detail.",
-      "❌ 'Atoms are solid spheres.' ✅ Atoms are mostly empty space with a dense nucleus and electron clouds.",
-      "❌ 'Chemical reactions create new atoms.' ✅ Reactions only rearrange existing atoms; the total number and type of atoms remain constant (Law of Conservation of Mass)."
-    ],
-    "practice": [
-      "List the five main postulates of Dalton's atomic theory.",
-      "Explain why Dalton's theory failed to explain isotopes.",
-      "Describe how Dalton's theory explains the Law of Conservation of Mass.",
-      "Compare Dalton's atom with the modern atomic model.",
-      "Identify which postulates of Dalton's theory are still considered valid today."
-    ],
-    "universalFacts": [
-      "Dalton's theory (1803) marked the transition from alchemy to modern chemistry.",
-      "The law of multiple proportions was specifically predicted by Dalton's theory.",
-      "Dalton's atomic theory is the basis for the modern concept of the mole.",
-      "Even though some postulates are outdated, the core idea that matter is composed of discrete atoms remains the cornerstone of chemistry.",
-      "Dalton was the first to assign relative atomic masses to elements."
-    ],
-    "examples": [
-      "Combination: Carbon + Oxygen → Carbon Monoxide (1:1 ratio) or Carbon Dioxide (1:2 ratio).",
-      "Isotope example: Carbon-12 and Carbon-14 are both Carbon atoms but have different masses.",
-      "Rearrangement: H₂ + O₂ → H₂O (atoms are rearranged, not created)."
-    ],
-    "practiceQuestions": [
-      "State the main postulates of Dalton's atomic theory.",
-      "Which of Dalton's postulates were proven incorrect by the discovery of isotopes?",
-      "How does Dalton's theory explain the Law of Definite Proportions?",
-      "Why is Dalton's theory considered a milestone in the history of chemistry?",
-      "What are the limitations of Dalton's atomic theory?"
-    ],
-    "formulas": [
-      "No direct mathematical formula, but it underpins: Law of Conservation of Mass (Σm_reactants = Σm_products)",
-      "Law of Definite Proportions (mass ratio = constant)"
-    ],
-    "keyPoints": [
-      "Matter is made of atoms.",
-      "Atoms of an element are identical (mostly).",
-      "Compounds are fixed ratios of atoms.",
-      "Chemical reactions rearrange atoms.",
-      "Dalton's theory explains chemical combination laws."
-    ],
-    "summary": "Dalton's atomic theory (1803) proposed that matter is composed of indivisible atoms, which combine in fixed ratios to form compounds. While some postulates (indivisibility, identical masses) were refined by modern discoveries like isotopes and subatomic particles, the theory remains the foundation of modern chemistry and explains the laws of chemical combination.",
-    "specialNotes": [
-      "Dalton's theory is a 'model' — it was useful for its time and still explains basic chemical behavior.",
-      "Always distinguish between 'chemical indivisibility' (atoms in reactions) and 'physical divisibility' (subatomic particles).",
-      "NEB questions often ask for the postulates and the limitations of the theory."
-    ],
-    "importantStatements": [
-      "Atoms are the smallest unit of an element that participates in chemical reactions.",
-      "Chemical reactions involve the rearrangement of atoms.",
-      "Compounds are formed by the combination of atoms in simple whole-number ratios.",
-      "Dalton's theory provided the first scientific explanation for the laws of chemical combination."
-    ],
-    "importantNotes": [
-      "Dalton's theory is the starting point for understanding stoichiometry.",
-      "Isotopes are the primary reason why Dalton's 'identical mass' postulate is not strictly true.",
-      "The theory is still valid for explaining chemical reactions at the macroscopic level."
-    ],
-    "examShortTricks": [
-      "Remember: Dalton = Atoms, Indivisible, Fixed Ratios, Rearrangement.",
-      "Limitations: Isotopes (mass), Subatomic particles (divisibility), Bonding (forces).",
-      "Significance: Laws of chemical combination (Mass, Definite, Multiple proportions)."
-    ],
-    "examNotes": [
-      "Dalton's theory is a frequent short-answer question.",
-      "Be prepared to list the postulates and explain why some are now considered incorrect.",
-      "Focus on how the theory explains the laws of chemical combination."
-    ],
-    "mcs": [
-      {
-        "question": "Which of the following is NOT a postulate of Dalton's atomic theory?",
-        "options": [
-          "Matter is made of atoms.",
-          "Atoms are indivisible.",
-          "Atoms of the same element are identical.",
-          "Atoms are composed of protons, neutrons, and electrons."
-        ],
-        "answer": "D"
-      },
-      {
-        "question": "Which discovery proved that atoms are divisible?",
-        "options": [
-          "Discovery of isotopes",
-          "Discovery of subatomic particles",
-          "Law of conservation of mass",
-          "Law of definite proportions"
-        ],
-        "answer": "B"
-      },
-      {
-        "question": "Dalton's theory explains which of the following?",
-        "options": [
-          "Law of conservation of mass",
-          "Law of definite proportions",
-          "Law of multiple proportions",
-          "All of the above"
-        ],
-        "answer": "D"
-      }
-    ],
-    "importantConcepts": [
-      "Dalton's Atomic Theory: Postulates and foundational principles.",
-      "Limitations: Isotopes, subatomic particles, and chemical bonding.",
-      "Significance: Theoretical basis for laws of chemical combination.",
-      "Modern Atomic Model: Refinements and contemporary understanding.",
-      "Stoichiometric implications of Dalton's theory."
-    ],
-    "importantTasks": [
-      "List the five main postulates of Dalton's atomic theory.",
-      "Explain why Dalton's theory failed to explain isotopes.",
-      "Describe how Dalton's theory explains the Law of Conservation of Mass.",
-      "Compare Dalton's atom with the modern atomic model.",
-      "Identify which postulates of Dalton's theory are still considered valid today."
-    ]
-  }
+  "notes": [
+    "### 1. Meaning and background",
+    "John Dalton (1803–1808, *A New System of Chemical Philosophy*) proposed the first quantitative atomic theory. Its purpose was to explain the experimentally discovered laws of chemical combination (conservation of mass, definite proportions, multiple proportions) by assuming that matter is made of discrete, indestructible particles called **atoms**. The theory marks the birth of modern chemistry because it turned qualitative ideas about matter into a testable, quantitative model.",
+    "### 2. Postulates (state them in order)",
+    "• Matter is composed of extremely small, indivisible particles called atoms.",
+    "• Atoms of the same element are identical in mass, size and chemical properties; atoms of different elements have different masses and properties.",
+    "• Atoms cannot be created, destroyed or divided by chemical reactions — a chemical change only rearranges atoms (this explains the conservation of mass).",
+    "• Atoms of different elements combine in fixed, simple whole-number ratios to form compounds (this explains the law of definite proportions and the law of multiple proportions).",
+    "• The atom is the smallest particle that can take part in a chemical reaction; in a compound, atoms are held together by chemical attraction.",
+    "• Atoms of one element cannot be converted into atoms of another element by ordinary chemical means.",
+    "### 3. Successes (why it was accepted)",
+    "It explained the law of conservation of mass, the law of definite (constant) proportions and the law of multiple proportions by pure logic, provided the basis for balancing equations and hence for all stoichiometric calculation, introduced the idea of atomic (relative) masses, and prepared the ground for the mole concept and Avogadro's molecular hypothesis.",
+    "### 4. Applications",
+    "• Quantitative chemistry: balanced equations, mole calculations, limiting-reactant and yield problems all rest on atoms being conserved and combining in fixed ratios.",
+    "• Determination of atomic and molecular masses; formulation of the atomic mass unit and relative atomic mass scale.",
+    "• Basis of the modern atomic model (with the modifications listed below), of stoichiometry-based industry (fertilisers, metallurgy, cement, pharmaceuticals) and of chemical analysis by mass balance.",
+    "### 5. Limitations and modifications (exam-critical)",
+    "1. **Atoms are divisible:** the discovery of the electron (Thomson, 1897), proton (Rutherford, 1919) and neutron (Chadwick, 1932) showed that atoms contain subatomic particles and can be split.",
+    "2. **Not all atoms of an element are identical:** isotopes (¹²C, ¹³C, ¹⁴C; ³⁵Cl, ³⁷Cl) have the same chemical properties but different masses.",
+    "3. **Atoms of different elements can have the same mass:** isobars such as ⁴⁰Ar and ⁴⁰Ca.",
+    "4. **Atoms of one element can be changed into another:** nuclear reactions and transmutation (¹⁴N + α → ¹⁷O + p; radioactivity, fission and fusion) achieve exactly what Dalton denied.",
+    "5. **Mass is not strictly conserved** in nuclear processes — the mass defect appears as energy according to E = mc², so the conservation-of-mass postulate is only valid for ordinary chemical reactions.",
+    "6. **It did not explain** the nature of the force holding atoms together (chemical bonding), the structure of the atom, the law of gaseous volumes and the law of reciprocal proportions; it also could not account for allotropes, giant molecules or the existence of diatomic element molecules (H₂, O₂, N₂) until Avogadro's molecular concept.",
+    "**Summing up:** Dalton's core idea — that matter is atomic and that reactions rearrange atoms — is still valid; his absolute statements about indivisibility, identical masses and non-convertibility are the parts that modern chemistry and physics have modified."
+  ],
+  "confusion": [
+    "❌ Dalton's atomic theory is completely wrong today. ✅ Its core (matter is atomic and reactions only rearrange atoms) is fully valid; only its absolute claims about indivisibility, identical masses and non-convertibility have been modified.",
+    "❌ Atoms of the same element always have the same mass. ✅ Isotopes such as ³⁵Cl and ³⁷Cl differ in mass while remaining chemically similar.",
+    "❌ Dalton explained the law of gaseous volumes. ✅ That was Gay-Lussac (1809), and Avogadro's hypothesis was needed to interpret it — Dalton's theory by itself could not accommodate it.",
+    "❌ Nuclear reactions obey Dalton's postulates. ✅ They violate them: atoms are split, elements change and mass is converted into energy.",
+    "❌ Dalton's theory explained chemical bonding. ✅ It assumed atoms are held together by 'chemical attraction' without explaining its nature."
+  ],
+  "practice": [
+    "State the postulates of Dalton's atomic theory.",
+    "How did Dalton's theory explain the law of conservation of mass and the law of definite proportions?",
+    "Discuss the limitations of Dalton's atomic theory in the light of modern discoveries.",
+    "Which postulate of Dalton's theory is contradicted by (a) isotopes, (b) isobars, (c) nuclear reactions? Explain each.",
+    "Explain how Avogadro's hypothesis removed a major difficulty of Dalton's theory.",
+    "Give three applications of Dalton's atomic theory in modern chemistry."
+  ],
+  "formulas": [
+    "$$\\text{Law of definite proportions: }\\ %\\text{element}=\\frac{\\text{mass of element in compound}}{\\text{molar mass of compound}}\\times100$$",
+    "$$\\text{Mass defect (nuclear): }\\ \\Delta m=\\frac{E}{c^{2}}\\ \\Rightarrow\\ \\text{chemical mass is not strictly conserved in nuclear change}$$"
+  ],
+  "universalFacts": [
+    "Dalton published his atomic theory in *A New System of Chemical Philosophy* (1808) and also proposed the first table of relative atomic masses.",
+    "Isotopes: ³⁵Cl (75%) and ³⁷Cl (25%) give the average atomic mass 35.5 u.",
+    "Isobars: ⁴⁰Ar and ⁴⁰Ca have the same mass number but different atomic numbers."
+  ],
+  "examples": [
+    "**Problem:** Carbon forms CO and CO₂. Show that these data obey the law of multiple proportions. **Solution:** in CO, 12 g C combines with 16 g O; in CO₂, 12 g C combines with 32 g O. The masses of oxygen for a fixed mass of carbon are 16 : 32 = 1 : 2, a simple whole-number ratio.",
+    "**Problem:** Why does the mass of a sealed tube containing AgNO₃ and NaCl solutions remain constant after mixing and precipitation? **Solution:** the reacting atoms are only rearranged into AgCl and NaNO₃, so the total mass is unchanged — a direct verification of the law of conservation of mass."
+  ],
+  "importantNotes": [
+    "Answer the limitations question historically: electron/proton/neutron → isotopes → isobars → transmutation → mass–energy conversion.",
+    "Distinguish 'conservation of mass is valid for chemical reactions but not nuclear reactions' — a common precision point.",
+    "Remember that Dalton's theory, not Lavoisier's, is the one that *predicted* multiple proportions."
+  ],
+  "visualType": "dalton-atomic-theory",
+  "tabGroup": "Stoichiometry-Learner-Notes"
 }

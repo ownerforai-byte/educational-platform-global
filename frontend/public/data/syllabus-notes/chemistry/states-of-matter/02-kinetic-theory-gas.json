@@ -1,81 +1,70 @@
 {
-  "title": "Kinetic Theory of Gases",
+  "title": "Gaseous State: Kinetic Theory of Gases and its Postulates",
   "unitSlug": "states-of-matter",
-  "topicSlug": "kinetic-theory-gas",
-  "topicTitle": "Kinetic Theory of Gases",
-  "relevance": 60,
+  "topicSlug": "gaseous-state-kinetic-theory-of-gas-and-its-postulates",
+  "topicTitle": "Gaseous state: Kinetic theory of gas and its postulates",
+  "relevance": 100,
   "notes": [
-    "Detailed notes on 02 kinetic theory gas within the states of matter unit."
+    "### 1. Meaning and purpose",
+    "The kinetic theory of gases (Clausius, Maxwell, Boltzmann) explains the measurable behaviour of a gas — pressure, volume, temperature and diffusion — in terms of the motion of its molecules. It converts the empirical gas laws into a mechanical model: pressure arises from molecular collisions with the walls, and temperature measures the average molecular kinetic energy.",
+    "### 2. Postulates (state them in order)",
+    "• A gas consists of a very large number of extremely small molecules moving randomly and continuously in straight lines.",
+    "• The actual volume of the molecules is negligible compared with the volume of the container — the gas is mostly empty space.",
+    "• Molecules exert no force of attraction or repulsion on one another except during collision; intermolecular attraction is neglected.",
+    "• Collisions between molecules, and between molecules and the walls, are perfectly elastic — no kinetic energy is lost.",
+    "• Molecules are rigid, perfectly spherical and identical for a given gas; the duration of a collision is negligible compared with the time between collisions.",
+    "• Pressure is produced by molecules striking the walls, and temperature is proportional to the average kinetic energy of the molecules: KE = (3/2)kT per molecule = (3/2)RT per mole.",
+    "### 3. Results derived from the postulates",
+    "• Pressure equation: $PV=\\frac{1}{3}mn\\bar{c}^{2}$ for n molecules of mass m and mean square speed c̄².",
+    "• With KE ∝ T this gives the ideal gas equation $PV=nRT$ and hence the laws of Boyle and Charles.",
+    "• Speeds: $v_{rms}=\\sqrt{\\frac{3RT}{M}}$, $\\bar{c}=\\sqrt{\\frac{8RT}{\\pi M}}$, $v_{mp}=\\sqrt{\\frac{2RT}{M}}$, so v_mp < c̄ < v_rms.",
+    "• Effusion and diffusion give Graham's law and Avogadro's law; a mixture gives Dalton's law of partial pressures.",
+    "### 4. Meaning of the molecular speeds",
+    "At 300 K the rms speed of O₂ is ≈483 m s⁻¹ and of H₂ ≈1930 m s⁻¹ — hundreds of metres per second, yet diffusion appears sluggish because molecules collide extremely often (mean free path ≈10⁻⁷ m at 1 atm) and follow a zig-zag path. The Maxwell–Boltzmann distribution shows a wide spread of speeds; as T rises the curve flattens and its peak shifts to higher speed.",
+    "### 5. Applications",
+    "• Explains gas pressure, the gas laws, Dalton's partial pressures, Graham's diffusion and effusion, and allows calculation of rms speeds, mean free path and collision frequency.",
+    "• Used in the gaseous-diffusion enrichment of uranium (UF₆), vacuum technology and leak testing, and in atmospheric models — the escape of H₂ and He from Earth's atmosphere follows from their high molecular speeds.",
+    "• Basis of statistical mechanics, gas thermometry, thermal conductivity of gases and the van der Waals corrections for real gases.",
+    "### 6. Limitations of the kinetic theory",
+    "1. Molecules have finite volume, so at high pressure the free volume is smaller than the container volume and the theory's own assumption fails (real PV > nRT).",
+    "2. Intermolecular attractive forces exist; they make a real gas more compressible at moderate pressure and are responsible for liquefaction — neither is in the model.",
+    "3. Collisions are not perfectly elastic and molecules are not rigid spheres; polyatomic gases store energy in rotation and vibration, which the simple theory ignores (so it cannot give their specific heats correctly).",
+    "4. It presumes a Maxwell–Boltzmann distribution and neglects quantum and relativistic effects (important for very light gases at low temperature).",
+    "5. It cannot describe the liquid state, critical phenomena or any structured/condensed behaviour, and it fails near the critical temperature where the ideal-gas picture collapses."
   ],
   "confusion": [
-    "❌ Misconception about 02 kinetic theory gas. ✅ Scientific explanation."
+    "❌ Molecules keep moving at the rms speed. ✅ Speeds obey a Maxwell–Boltzmann distribution; the rms value is only an average measure.",
+    "❌ Kinetic theory says molecules never interact. ✅ Interaction is neglected *except during collisions* — this idealisation is exactly what limits the model.",
+    "❌ Collisions destroy kinetic energy. ✅ Collisions are elastic; energy is redistributed, not lost.",
+    "❌ Pressure is a continuous push by molecules. ✅ Pressure is the average rate of momentum transfer during wall collisions.",
+    "❌ The theory is equally valid at 200 atm. ✅ Ideal-gas assumptions break down at high pressure and low temperature."
   ],
   "practice": [
-    "Practice exercise for 02 kinetic theory gas."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 02 kinetic theory gas."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 02 kinetic theory gas."
-  ],
-  "practiceQuestions": [
-    "Practice question for 02 kinetic theory gas."
+    "State the postulates of the kinetic theory and identify the idealisations among them.",
+    "Derive PV = (1/3)mnc̄² and use it to obtain the ideal gas equation.",
+    "Obtain expressions for rms, average and most probable speeds and arrange them in order.",
+    "Calculate the rms speed of oxygen molecules at 300 K (M = 32 g mol⁻¹).",
+    "Explain why hydrogen escapes the Earth's atmosphere more easily than oxygen.",
+    "State the limitations of the kinetic theory of gases."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 02 kinetic theory gas)"
+    "$$PV=\\frac{1}{3}mn\\bar{c}^{2},\\qquad KE=\\frac{3}{2}kT\\ (\\text{molecule})=\\frac{3}{2}RT\\ (\\text{mole})$$",
+    "$$v_{rms}=\\sqrt{\\frac{3RT}{M}},\\quad \\bar{c}=\\sqrt{\\frac{8RT}{\\pi M}},\\quad v_{mp}=\\sqrt{\\frac{2RT}{M}}$$",
+    "$$M=\\frac{3RT}{v_{rms}^{2}}$$"
   ],
-  "keyPoints": [
-    "Core point for 02 kinetic theory gas."
+  "universalFacts": [
+    "Maxwell–Boltzmann curve: the fraction of molecules at a given speed falls exponentially at high speed; heating shifts the peak to higher speed.",
+    "Mean free path at 1 atm, 300 K ≈ 10⁻⁷ m — about a thousand molecular diameters.",
+    "v_mp : c̄ : v_rms = √2 : √(8/π) : √3 ≈ 1 : 1.128 : 1.225."
   ],
-  "summary": "Summary of 02 kinetic theory gas.",
-  "specialNotes": [
-    "Specialized insight for 02 kinetic theory gas."
-  ],
-  "importantStatements": [
-    "Key statement for 02 kinetic theory gas."
+  "examples": [
+    "**Problem:** rms speed of O₂ at 300 K. **Solution:** M = 0.032 kg mol⁻¹; v_rms = √(3 × 8.314 × 300/0.032) ≈ 483 m s⁻¹.",
+    "**Problem:** Ratio of rms speeds of H₂ and O₂ at the same temperature. **Solution:** v ∝ 1/√M → v(H₂)/v(O₂) = √(32/2) = 4; hydrogen molecules are four times faster, hence its escape from the atmosphere."
   ],
   "importantNotes": [
-    "Important note regarding 02 kinetic theory gas."
+    "Quote at least six postulates and identify which are idealisations — 'negligible molecular volume' and 'no intermolecular forces' generate all the limitations.",
+    "Use R = 8.314 J K⁻¹ mol⁻¹ with SI units (kg, m³, Pa) in every speed calculation."
   ],
-  "examShortTricks": [
-    "Recall the formula for Kinetic Theory of Gases."
-  ],
-  "examNotes": [
-    "Focus on Kinetic Theory of Gases problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 02 kinetic theory gas?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 02 kinetic theory gas."
-  ],
-  "importantTasks": [
-    "Task for studying 02 kinetic theory gas."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "02-kinetic-theory-gas",
-  "mcqs": [
-    {
-      "question": "Question about 02 kinetic theory gas?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ]
+  "visualType": "kinetic-theory-gas-derive",
+  "tabGroup": "States-Of-Matter-Learner-Notes"
 }

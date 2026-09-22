@@ -1,220 +1,80 @@
 {
-  "title": "Isobars, Isotones & Isodiaphers",
+  "title": "Isotopes, Isobars, Isotones and Isodiaphers",
   "unitSlug": "atomic-structure",
   "topicSlug": "rutherford-s-atomic-model-and-its-limitations",
   "topicTitle": "Rutherford's atomic model and its limitations",
-  "relevance": 70,
+  "relevance": 80,
   "notes": [
-    "Rutherford's model: nucleus existence via α-scattering.",
-    "Bohr's model: quantized energy levels, atomic stability.",
-    "Wave-particle duality (de Broglie), Uncertainty Principle (Heisenberg)."
+    "### Focus of this tab",
+    "The family of 'same/different' atom pairs that the nuclear model makes possible — definitions, examples and exam traps. These follow directly from the concepts of Z and A.",
+    "### Definitions with examples",
+    "• **Isotopes** (same Z, different A): ¹H, ²H, ³H; ³⁵Cl/³⁷Cl; ¹²C/¹³C/¹⁴C; ²³⁵U/²³⁸U. Same chemical properties (same electronic configuration), different physical properties and different mass.",
+    "• **Isobars** (same A, different Z): ⁴⁰Ar (18 p) and ⁴⁰Ca (20 p); ¹⁴C and ¹⁴N. Different elements, same mass number — different chemical properties.",
+    "• **Isotones** (same neutron number N = A − Z): ³⁶S, ³⁷Cl, ³⁸Ar, ³⁹K, ⁴⁰Ca (all N = 20); ³H and ⁴Li (N = 2).",
+    "• **Isodiaphers** (same difference N − Z): ²³⁹U and ²³⁵Th (N − Z = 51); ²³⁵U and ²³¹Th.",
+    "• (Bonus) **Isoelectronic species** (same electron count): N³⁻, O²⁻, F⁻, Ne, Na⁺, Mg²⁺, Al³⁺ — all 10 electrons.",
+    "### Why they exist",
+    "Rutherford's nucleus separates identity (Z) from mass (A = Z + N). Once the neutron was found (1932), atoms of one element could differ in mass (isotopes) and atoms of different elements could share a mass number (isobars) — resolving the contradictions that Dalton's 'identical atoms' postulate created.",
+    "### Chemical versus nuclear behaviour",
+    "Isotopes are chemically almost identical (the electrons decide chemistry) but differ in nuclear stability (¹⁴C decays, ¹²C does not) — the basis of carbon dating, radioisotope tracers (¹³¹I in thyroid studies, ⁶⁰Co in radiotherapy) and isotope separation by mass (gaseous diffusion of UF₆). Isobars, being different elements, are chemically completely different.",
+    "### Average atomic mass (numerical pattern)",
+    "Average mass = Σ(fractional abundance × isotopic mass). Chlorine: 0.75 × 35 + 0.25 × 37 = 35.5 u; neon: 0.905 × 20 + 0.0027 × 21 + 0.0923 × 22 ≈ 20.18 u. The fractional pattern explains why most atomic masses are not whole numbers — Dalton's 'identical atoms in whole-number ratios' fails here."
   ],
   "confusion": [
-    "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
-    "❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons.",
-    "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals).",
-    "❌ Heisenberg uncertainty means we cannot measure position and momentum precisely simultaneously — not that we lack good instruments.",
-    "❌ de Broglie wavelength applies only to light. ✅ All matter has wave nature; detectable mainly for small masses like electrons.",
-    "❌ Quantum number l can be any integer. ✅ l ranges from 0 to n−1.",
-    "❌ Magnetic quantum number ml determines energy. ✅ ml determines orbital orientation, not energy (in absence of magnetic field).",
-    "❌ Spin quantum number ms can be ±½ or any value. ✅ ms is always +½ or −½.",
-    "❌ Aufbau principle means filling from bottom to top of the diagram. ✅ Fill lowest-energy orbitals first: 1s→2s→2p→3s→3p→4s→3d→4p→...",
-    "❌ Pauli exclusion allows two electrons per orbital with any spin. ✅ Two electrons in same orbital must have opposite spins.",
-    "❌ Hund's rule means pair electrons before spreading. ✅ Electrons fill degenerate orbitals singly first with parallel spins.",
-    "❌ The mole is just a number like dozen. ✅ 1 mole = 6.022×10²³ particles (Avogadro constant) — a bridge between atomic and macroscopic scales.",
-    "❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is in amu; molar mass is in g/mol — numerically equal but different units.",
-    "❌ Limiting reagent is the reactant with smallest mass. ✅ Limiting reagent is the one that produces the least product (determined by moles, not mass).",
-    "❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying.",
-    "❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent).",
-    "❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize.",
-    "❌ pH can be negative. ✅ pH < 0 is possible for concentrations >1M (e.g., 2M HCl has pH ≈ −0.3).",
-    "❌ Kc changes when concentration changes. ✅ Kc is constant at constant temperature; only temperature changes K.",
-    "❌ Adding catalyst shifts equilibrium position. ✅ Catalyst speeds both forward and backward reactions equally; no shift in equilibrium.",
-    "❌ High pressure always favors products. ✅ High pressure favors side with fewer gas moles (Le Chatelier).",
-    "❌ Exothermic reactions are spontaneous. ✅ Spontaneity depends on ΔG = ΔH − TΔS, not just ΔH.",
-    "❌ Endothermic reactions cannot be spontaneous. ✅ Endothermic reactions can be spontaneous if TΔS > ΔH (e.g., ice melting above 0°C).",
-    "❌ ΔH and ΔU are always the same. ✅ ΔH = ΔU + PΔV; they differ when gas moles change.",
-    "❌ Heat (q) and work (w) are state functions. ✅ q and w are path functions; only ΔU, ΔH, ΔS, ΔG are state functions.",
-    "❌ Oxidation and reduction happen separately. ✅ Oxidation and reduction always occur together (redox).",
-    "❌ Oxidizing agent gets oxidized. ✅ Oxidizing agent accepts electrons and gets reduced.",
-    "❌ Reducing agent gets reduced. ✅ Reducing agent donates electrons and gets oxidized.",
-    "❌ Faraday's laws apply only to metals. ✅ Faraday's laws apply to any substance deposited/dissolved at electrodes.",
-    "❌ Real gases obey PV=nRT at all conditions. ✅ Real gases deviate at high pressure and low temperature.",
-    "❌ van der Waals constants a and b are same for all gases. ✅ a (attraction) and b (volume) are gas-specific.",
-    "❌ Surface tension increases with temperature. ✅ Surface tension decreases as temperature increases.",
-    "❌ Viscosity decreases with temperature for liquids. ✅ Viscosity of liquids decreases with T; gases increase with T.",
-    "❌ Colligative properties depend on nature of solute. ✅ Colligative properties depend only on number of particles, not identity.",
-    "❌ Raoult's law applies to all solutions. ✅ Raoult's law is exact for ideal solutions; approximate for dilute real solutions.",
-    "❌ Osmotic pressure is a colligative property. ✅ Yes — π = CRT depends on solute particle concentration.",
-    "❌ Atomic number equals mass number. ✅ Atomic number = protons; mass number = protons + neutrons.",
-    "❌ Bohr model explains all atoms. ✅ Bohr model works only for hydrogen-like (one-electron) systems."
+    "❌ Isotopes have different chemical properties. ✅ Nearly identical chemically; they differ in mass and nuclear stability.",
+    "❌ Isobars are atoms of the same element. ✅ Same A but different Z — different elements entirely.",
+    "❌ Isotones are defined by equal protons. ✅ Equal neutron number (N = A − Z).",
+    "❌ ¹²C and ¹⁴C belong to different elements. ✅ Both are carbon (Z = 6); ¹⁴C is simply radioactive."
   ],
   "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice calculating de Broglie wavelength for electrons, protons, and alpha particles.",
-    "Practice calculating energy of photon from frequency and wavelength."
-  ],
-  "universalFacts": [
-    "Nucleus contains 99.9% of atom mass but <0.01% of its volume."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "If nucleus were the size of a marble, atom would be the size of a football stadium."
-  ],
-  "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice calculating de Broglie wavelength for electrons, protons, and alpha particles."
+    "Define isotopes, isobars, isotones and isodiaphers with one example each.",
+    "Which postulate of Dalton's atomic theory is contradicted by isotopes?",
+    "Chlorine has 75% ³⁵Cl and 25% ³⁷Cl; calculate its average atomic mass.",
+    "Find the relation between ³⁶S, ³⁷Cl and ³⁸Ar (same N = 20) and name the class.",
+    "Give two practical uses of isotopes in medicine or industry."
   ],
   "formulas": [
-    "E=hν",
-    "λ=h/mv",
-    "ΔxΔp≥h/4π"
+    "$$\\text{average atomic mass}=\\sum(\\text{abundance}\\times\\text{isotopic mass}),\\qquad N=A-Z$$",
+    "$$\\text{isotopes: }Z_{1}=Z_{2};\\quad \\text{isobars: }A_{1}=A_{2};\\quad \\text{isotones: }N_{1}=N_{2};\\quad \\text{isodiaphers: }(N-Z)_{1}=(N-Z)_{2}$$"
   ],
-  "keyPoints": [
-    "Core point for 26 isobars isotones isodiaphers."
+  "universalFacts": [
+    "Carbon dating uses the ¹⁴C/¹²C ratio (half-life 5730 years).",
+    "³⁵Cl/³⁷Cl in a 3 : 1 ratio gives the familiar 35.5 u average mass.",
+    "Radio-iodine ¹³¹I concentrates in the thyroid because it is chemically indistinguishable from ordinary iodine."
   ],
-  "summary": "The atomic structure evolved from Thomson's plum pudding model to Bohr's quantized model and finally to the quantum mechanical model, explaining spectral lines and stability.",
-  "specialNotes": [
-    "Specialized insight for 26 isobars isotones isodiaphers."
-  ],
-  "importantStatements": [
-    "Key statement for 26 isobars isotones isodiaphers."
+  "examples": [
+    "**Problem:** Boron is 20% ¹⁰B and 80% ¹¹B. Find its atomic mass. **Solution:** 0.20 × 10 + 0.80 × 11 = 10.8 u — matching the tabulated 10.81 u.",
+    "**Problem:** Show that ¹⁴C and ¹⁴N are isobars. **Solution:** ¹⁴C: Z = 6, N = 8, A = 14; ¹⁴N: Z = 7, N = 7, A = 14 — same A, different Z."
   ],
   "importantNotes": [
-    "Important note regarding 26 isobars isotones isodiaphers."
+    "State the defining quantity first (Z, A, N, N − Z) — the four names are easy to mix up.",
+    "Connect isotopes back to Dalton's limitation: identical atoms of an element is the false postulate."
   ],
-  "examShortTricks": [
-    "Recall the formula for Isobars, Isotones & Isodiaphers."
-  ],
-  "examNotes": [
-    "Focus on Isobars, Isotones & Isodiaphers problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 26 isobars isotones isodiaphers?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 26 isobars isotones isodiaphers."
-  ],
-  "importantTasks": [
-    "Task for studying 26 isobars isotones isodiaphers."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "26-isobars-isotones-isodiaphers",
   "mcqs": [
     {
-      "question": "Who proposed the dual nature of matter?",
+      "question": "³⁶S, ³⁷Cl, ³⁸Ar and ³⁹K are examples of:",
       "options": [
-        "Planck",
-        "de Broglie",
-        "Bohr",
-        "Heisenberg"
+        "Isotopes",
+        "Isobars",
+        "Isotones",
+        "Isodiaphers"
       ],
-      "answer": "B"
+      "answer": "C"
     },
     {
-      "question": "The radius of the nth orbit of hydrogen atom is proportional to:",
+      "question": "Isotopes of an element differ in the number of:",
       "options": [
-        "n",
-        "n²",
-        "n³",
-        "n⁴"
+        "Protons",
+        "Electrons",
+        "Neutrons",
+        "Valence shells"
       ],
-      "answer": "B"
+      "answer": "C"
     }
   ],
-  "exercises": [
-    {
-      "id": "ex-1",
-      "question": "Calculate the de Broglie wavelength of an electron moving at 10⁶ m/s.",
-      "steps": [
-        "Formula: λ = h / (m * v)",
-        "Given: h = 6.626 x 10⁻³⁴ J·s, m = 9.11 x 10⁻³¹ kg, v = 10⁶ m/s",
-        "Calculation: λ = 6.626e-34 / (9.11e-31 * 1e6)",
-        "Result: ~7.27 x 10⁻¹⁰ m (or 0.727 nm)"
-      ],
-      "answer": "0.727 nm"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "RutherfordScatteringSim",
-    "description": "Interactive visualization of α-particle deflection by the nucleus."
-  },
-  "visualType": "rutherford-alpha-scattering"
+  "visualType": "isotopes",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "26-isobars-isotones-isodiaphers.json"
 }

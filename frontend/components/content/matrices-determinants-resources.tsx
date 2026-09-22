@@ -13,7 +13,12 @@ import {
   FileText,
   TrendingUp,
   Calculator,
+  Target,
+  Lightbulb,
+  Play,
 } from "lucide-react";
+import { MathMarkdown } from "@/components/content/math-markdown";
+import { MatricesDetAdditionalVisual } from "./additional-questions-visuals";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -595,9 +600,113 @@ export function MatricesDeterminantsResources() {
                 </ul>
               </div>
             ))}
+
           </div>
         </CardContent>
       </Card>
+
+
+
+
+
+{/* Solved Solutions & Extra Hard Questions */}
+      <Card className="border-amber-200 dark:border-amber-800 bg-gradient-to-br from-amber-50/50 to-transparent dark:from-amber-950/20">
+        <CardHeader className="pb-3">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-amber-100 dark:bg-amber-900/40 rounded-lg">
+              <Target className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+            </div>
+            <div>
+              <CardTitle className="text-lg">Solved Solutions &amp; Extra Hard Questions</CardTitle>
+              <p className="text-sm text-muted-foreground mt-0.5">
+                Concept notes, worked solutions, and tougher practice problems for Matrices &amp; Determinants
+              </p>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent className="space-y-5">
+          <div>
+            <h4 className="text-sm font-semibold mb-2 flex items-center gap-2 text-amber-600 dark:text-amber-400">
+              <Lightbulb className="w-4 h-4" /> Concept &amp; Meaning
+            </h4>
+            <div className="text-xs text-muted-foreground bg-amber-50/40 dark:bg-amber-950/20 p-3 rounded-lg border border-amber-200/50 dark:border-amber-900/40">
+              A <strong className="text-foreground">matrix</strong> is a rectangular array of numbers
+              (elements) arranged in rows and columns. Its <em>order</em> is m&times;n (m rows, n columns).
+              A <strong className="text-foreground">determinant</strong> is a single scalar value computed
+              only from a square matrix, written |A| or det(A). The determinant tells you whether a system of
+              linear equations has a unique solution (non-zero) or not (zero &rarr; singular, no inverse).
+            </div>
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold mb-2 flex items-center gap-2 text-green-600 dark:text-green-400">
+              <BookOpen className="w-4 h-4" /> Solved Solution — 3&times;3 Determinant
+            </h4>
+            <MathMarkdown
+              className="text-xs bg-green-50/40 dark:bg-green-950/20 p-3 rounded-lg border border-green-200/50 dark:border-green-900/40"
+              content={`**Problem:** Find $\\det(A)$ where $A = \\begin{bmatrix}2 & 1 & 3 \\\\ 0 & -1 & 2 \\\\ 1 & 4 & 5\\end{bmatrix}$.
+
+**Cofactor expansion along Row 1:**
+$$\\det(A) = 2\\begin{vmatrix}-1&2\\\\4&5\\end{vmatrix} - 1\\begin{vmatrix}0&2\\\\1&5\\end{vmatrix} + 3\\begin{vmatrix}0&-1\\\\1&4\\end{vmatrix}$$
+$$= 2[(-1)(5)-(2)(4)] - 1[(0)(5)-(2)(1)] + 3[(0)(4)-(-1)(1)]$$
+$$= 2(-13) - 1(-2) + 3(1) = -26 + 2 + 3 = \\boxed{-21}$$
+
+Since $\\det(A) = -21 \\neq 0$, matrix A is **non-singular** and its inverse exists.`}
+            />
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold mb-2 flex items-center gap-2 text-purple-600 dark:text-purple-400">
+              <Target className="w-4 h-4" /> Extra Hard Questions
+            </h4>
+            <div className="space-y-2">
+              {[
+                { q: "If A is a 3&times;3 matrix with det(A) = 4, find det(2A) and det(A<sup>-1</sup>).", hint: "Use det(kA) = k<sup>n</sup>&middot;det(A) for an n&times;n matrix, and det(A<sup>-1</sup>) = 1/det(A).", ans: "det(2A) = 2<sup>3</sup>&middot;4 = 32.  det(A<sup>-1</sup>) = 1/4." },
+                { q: "Prove that if A is symmetric (A<sup>T</sup> = A), then A<sup>-1</sup> (when it exists) is also symmetric.", hint: "Start from A<sup>T</sup> = A and take the transpose of A&middot;A<sup>-1</sup> = I.", ans: "(A<sup>-1</sup>)<sup>T</sup> = (A<sup>T</sup>)<sup>-1</sup> = A<sup>-1</sup>, so A<sup>-1</sup> is symmetric." },
+                { q: "Verify that (AB)<sup>-1</sup> = B<sup>-1</sup>A<sup>-1</sup> for A = [[1,2],[3,4]] and B = [[0,1],[1,0]].", hint: "Compute AB, then compute B<sup>-1</sup>A<sup>-1</sup> separately and compare with (AB)<sup>-1</sup>.", ans: "Both equal [[-1/4, 1/2],[3/4, -1/4]]. The order reverses — you cannot write (AB)<sup>-1</sup> = A<sup>-1</sup>B<sup>-1</sup> in general." },
+                { q: "Show that det(A + B) is NOT generally equal to det(A) + det(B), with a counter-example.", hint: "Pick two 2&times;2 identity matrices.", ans: "A = I, B = I: det(A+B) = det(2I) = 4, but det(A) + det(B) = 1 + 1 = 2. Not equal." },
+              ].map((item, i) => (
+                <details key={i} className="rounded-lg border bg-background/60 p-3">
+                  <summary className="text-sm cursor-pointer list-none flex items-start gap-2">
+                    <span className="text-purple-500 font-semibold shrink-0">Q{i + 1}.</span>
+                    <MathMarkdown content={item.q} className="flex-1 text-xs" />
+                  </summary>
+                  <div className="mt-2 space-y-2 text-xs pl-6">
+                    <MathMarkdown
+                      content={"**Hint:** " + item.hint}
+                      className="text-muted-foreground"
+                    />
+                    <MathMarkdown
+                      content={"**Answer:** " + item.ans}
+                      className="text-green-700 dark:text-green-400 bg-green-50/40 dark:bg-green-950/20 p-2 rounded-lg border border-green-200/50 dark:border-green-900/40"
+                    />
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+
+      {/* Additional Question Visuals */}
+      <Card className="border-amber-200 dark:border-amber-800 bg-gradient-to-br from-amber-50/50 to-transparent dark:from-amber-950/20">
+        <CardHeader className="pb-3">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-amber-100 dark:bg-amber-900/40 rounded-lg">
+              <Play className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+            </div>
+            <div>
+              <CardTitle className="text-lg">Additional-Question Visuals — Matrices & Determinants</CardTitle>
+              <p className="text-sm text-muted-foreground mt-0.5">Interactive visuals for the extra hard questions above</p>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <MatricesDetAdditionalVisual />
+        </CardContent>
+      </Card>
+
     </div>
   );
 }

@@ -1,81 +1,70 @@
 {
-  "title": "Boyle's Law (Gas Laws)",
+  "title": "Boyle's Law in Detail — Isotherms, Numericals and Limitations",
   "unitSlug": "states-of-matter",
-  "topicSlug": "boyles-law-gas-laws-",
-  "topicTitle": "Boyle's Law (Gas Laws)",
-  "relevance": 60,
+  "topicSlug": "gas-laws",
+  "topicTitle": "Gas Laws",
+  "relevance": 85,
   "notes": [
-    "Detailed notes on boyles law gas laws  within the states of matter unit."
+    "### Focus of this tab",
+    "The first gas law in full: statement, graphs, molecular explanation, numericals and where it breaks — the pattern to reproduce for Charles' and Avogadro's laws.",
+    "### Statement (1662, Robert Boyle)",
+    "At constant temperature, the volume of a fixed mass of gas is inversely proportional to its pressure: V ∝ 1/P, i.e. PV = constant, or P₁V₁ = P₂V₂. Conditions: fixed mass, constant T, ideal behaviour (low P).",
+    "### Graphical forms (all three are examinable)",
+    "• P versus V: rectangular hyperbola (each temperature gives one hyperbola — an isotherm; higher T curves lie farther from the origin).",
+    "• P versus 1/V: straight line through the origin, slope = nRT.",
+    "• PV versus P: horizontal straight line for an ideal gas; real gases show a dip (attraction) then a rise (volume effect) — the first visible sign of non-ideality.",
+    "### Molecular explanation",
+    "Halving the volume doubles the number density of molecules, so wall collisions per unit area per second double, doubling the pressure — the inverse relation is pure collision statistics at fixed average molecular speed (fixed T).",
+    "### Numericals",
+    "• V₂ = P₁V₁/P₂: 500 cm³ at 700 mm Hg → at 1400 mm Hg: 250 cm³.",
+    "• Density application: since m fixed, d ∝ P at constant T — a compressed gas is proportionally denser.",
+    "• Bubble problem: an air bubble rising from depth doubles its volume as pressure halves (plus water-column corrections with 10 m water ≈ 1 atm).",
+    "### Limitations",
+    "• Ideal-gas law: fails at high pressure (PV rises above nRT) and near liquefaction; gases with strong attraction (CO₂, SO₂, NH₃) deviate most; H₂ and He deviate least.",
+    "• Requires fixed mass and constant temperature — a temperature change during compression invalidates it.",
+    "• Cannot be extrapolated to the liquid state; below the critical temperature compression produces condensation, not further Boyle-law shrinkage."
   ],
   "confusion": [
-    "❌ Misconception about boyles law gas laws . ✅ Scientific explanation."
+    "❌ PV = constant for any gas under any conditions. ✅ Only for fixed mass at constant temperature and ideal behaviour.",
+    "❌ Doubling pressure halves the temperature. ✅ Boyle's law holds T constant; the P–T relation is Gay-Lussac's law.",
+    "❌ The P–V graph is a straight line. ✅ It is a hyperbola; the straight line appears for P versus 1/V."
   ],
   "practice": [
-    "Practice exercise for boyles law gas laws ."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for boyles law gas laws ."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of boyles law gas laws ."
-  ],
-  "practiceQuestions": [
-    "Practice question for boyles law gas laws ."
+    "State Boyle's law and sketch its P–V and P–1/V graphs.",
+    "A gas occupies 600 cm³ at 760 mm Hg; find its volume at 1520 mm Hg (T constant).",
+    "Explain Boyle's law using the kinetic theory.",
+    "Why does a real gas deviate from Boyle's law at high pressure?"
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for boyles law gas laws )"
+    "$$P_{1}V_{1}=P_{2}V_{2}\\ (\\text{fixed mass, constant }T);\\qquad d\\propto P\\ (\\text{constant }T)$$"
   ],
-  "keyPoints": [
-    "Core point for boyles law gas laws ."
+  "universalFacts": [
+    "Boyle published the law in 1662 — the first quantitative gas law.",
+    "At constant T the product PV equals nRT for every ideal gas; its graph versus P is flat.",
+    "Real-gas Boyle plots dip below the ideal line at moderate pressure — evidence of intermolecular attraction."
   ],
-  "summary": "Summary of boyles law gas laws .",
-  "specialNotes": [
-    "Specialized insight for boyles law gas laws ."
-  ],
-  "importantStatements": [
-    "Key statement for boyles law gas laws ."
+  "examples": [
+    "**Problem:** A diver's air bubble of 5 mL forms at 4 atm (depth ≈30 m). What volume at the surface (1 atm), ignoring temperature change? **Solution:** V₂ = P₁V₁/P₂ = 4 × 5/1 = 20 mL — a fourfold expansion, the classic Boyle's law safety example."
   ],
   "importantNotes": [
-    "Important note regarding boyles law gas laws ."
+    "State the two conditions (fixed mass, constant T) every time the law is quoted.",
+    "Draw the PV-vs-P horizontal line with the real-gas dip to show mastery beyond the ideal law."
   ],
-  "examShortTricks": [
-    "Recall the formula for Boyle's Law (Gas Laws)."
-  ],
-  "examNotes": [
-    "Focus on Boyle's Law (Gas Laws) problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about boyles law gas laws ?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for boyles law gas laws ."
-  ],
-  "importantTasks": [
-    "Task for studying boyles law gas laws ."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "boyles-law-gas-laws-",
   "mcqs": [
     {
-      "question": "Question about boyles law gas laws ?",
+      "question": "At constant temperature, a plot of PV against P for an ideal gas is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "A rising straight line",
+        "A horizontal straight line",
+        "A hyperbola",
+        "A parabola"
       ],
-      "answer": "A"
+      "answer": "B"
     }
-  ]
+  ],
+  "visualType": "boyles-law",
+  "tabGroup": "States-Of-Matter-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "boyles-law-gas-laws-.json"
 }

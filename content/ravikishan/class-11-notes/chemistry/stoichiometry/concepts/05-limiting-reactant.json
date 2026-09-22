@@ -1,268 +1,65 @@
 {
-  "title": "Limiting Reactant",
+  "title": "Limiting Reactant and Excess Reactant",
   "unitSlug": "stoichiometry",
-  "topicSlug": "limiting-reactant",
-  "topicTitle": "Limiting Reactant",
+  "topicSlug": "limiting-reactant-and-excess-reactant",
+  "topicTitle": "Limiting reactant and excess reactant",
   "relevance": 100,
-  "animation3D": "chemistry-limiting",
-  "motionGraphics": "chemistry-limiting",
-  "duplicateType": 1,
-  "tabGroup": "05-limiting-reactant",
+  "notes": [
+    "### 1. Meaning",
+    "The **limiting reactant (limiting reagent)** is the reactant completely consumed in a reaction, and it therefore determines the maximum amount of product that can form (the theoretical yield). The other reactant, part of which is left over when the reaction stops, is the **excess reactant**. The idea is needed whenever the reactants are not mixed in exactly the stoichiometric ratio of the balanced equation.",
+    "### 2. How to identify the limiting reactant",
+    "Method 1 (standard): convert the given masses/volumes of all reactants into moles, divide each by its stoichiometric coefficient, and the smallest quotient identifies the limiting reactant. Method 2: compare the moles *required* (from the mole ratio) with the moles *available*; the reactant for which the requirement exceeds the supply is limiting.",
+    "### 3. Worked example — ammonia synthesis",
+    "N₂ + 3H₂ → 2NH₃. With 2 mol N₂ and 3 mol H₂: for N₂ the quotient is 2/1 = 2, for H₂ it is 3/3 = 1 → **H₂ is limiting**. Hydrogen needs only 1 mol N₂, so 1 mol N₂ stays unused (excess), and NH₃ formed = (2/3) × 3 = 2 mol = 34 g.",
+    "### 4. Worked example — combustion (mass basis)",
+    "CH₄ + 2O₂ → CO₂ + 2H₂O, with 8 g CH₄ (0.5 mol) and 24 g O₂ (0.75 mol): quotients 0.5 for CH₄ and 0.75/2 = 0.375 for O₂ → **O₂ is limiting**. It consumes 0.375 mol CH₄, so 0.125 mol CH₄ (2 g) remains excess and 0.375 mol CO₂ (16.5 g) is formed.",
+    "### 5. Applications",
+    "• Laboratory and industry: fixing reactant quantities for a target product mass, material balances in the Haber process, contact process and lime kiln, and choosing which reactant to use in excess on the basis of cost, hazards and equilibrium considerations.",
+    "• Combustion engineering: excess air is supplied to burn fuel completely (avoiding CO and soot), while excessive excess air wastes heat and promotes NOₓ formation.",
+    "• Pharmaceutical and fine-chemical synthesis: the cheaper or more easily handled reagent is taken in excess to drive the expensive intermediate to completion, and by-product amounts are predicted from the limiting reagent.",
+    "• Analytical and environmental work: computing the maximum pollutant that can be produced, and in titrations, where the equivalence point marks the stoichiometric balance of acid and base.",
+    "### 6. Meaning of 'extent of reaction'",
+    "The limiting reactant fixes how far the reaction can proceed: while it remains, the reaction continues; once it is consumed, a simple irreversible reaction stops. This is why the theoretical yield is always calculated from the limiting reactant, and why excess reactant is added deliberately in practice.",
+    "### 7. Limitations",
+    "• The concept requires a known single reaction with fixed stoichiometry; with side reactions, reversibility or equilibrium the idea must be replaced by the equilibrium constant, conversion and selectivity.",
+    "• Comparison must be made in **moles**; comparing masses directly (5 g H₂ with 5 g O₂) leads to wrong conclusions.",
+    "• In a kinetically controlled reaction the slowest step may govern the rate even though the reagent is stoichiometrically in excess — the limiting reagent is not automatically the rate-determining species.",
+    "• When a reactant acts as the solvent or medium (water, large excess of acid), the concept loses meaning.",
+    "• The yield computed from the limiting reactant is an upper limit only; actual yields are lower because of incomplete reaction, side products and handling losses."
+  ],
+  "confusion": [
+    "❌ The reactant present in the smallest mass is limiting. ✅ The limiting reactant is found in *moles* divided by the stoichiometric coefficient, not by mass.",
+    "❌ The limiting reactant is the one that runs out last. ✅ It is used up first and stops the reaction; the other reactant is in excess.",
+    "❌ Excess reactant also becomes product. ✅ Only the consumed part reacts; the remainder is unreacted excess.",
+    "❌ Every reaction has a limiting reactant. ✅ Only when the reactants are not in the exact stoichiometric mole ratio.",
+    "❌ Limiting-reactant reasoning gives the actual yield of a reversible reaction. ✅ It gives the maximum possible yield; the equilibrium position decides the actual extent."
+  ],
+  "practice": [
+    "Define limiting reactant and excess reactant with an example.",
+    "Explain how the limiting reactant is identified from mole ratios.",
+    "N₂ + 3H₂ → 2NH₃: 3 mol N₂ and 6 mol H₂ are mixed. Find the limiting reactant, the mass of NH₃ formed and the excess left.",
+    "Calculate the mass of water formed when 4 g H₂ reacts with 32 g O₂ and identify the excess reactant.",
+    "Why is excess air supplied in combustion, and what are the disadvantages of too much excess air?",
+    "State the limitations of the limiting-reactant concept."
+  ],
+  "formulas": [
+    "$$\\text{Limiting reactant}:\\ \\text{smallest }\\frac{n_{\\text{reactant}}}{\\nu_{\\text{reactant}}}\\ (\\nu=\\text{stoichiometric coefficient})$$",
+    "$$n_{\\text{product}}=\\frac{\\nu_{\\text{product}}}{\\nu_{\\text{limiting}}}\\times n_{\\text{limiting}},\\qquad \\text{theoretical yield}=n_{\\text{product}}M_{\\text{product}}$$"
+  ],
+  "universalFacts": [
+    "In the Haber process the industrial ratio N₂ : H₂ is chosen with a slight excess of nitrogen because hydrogen is costlier and excess hydrogen lowers equilibrium conversion.",
+    "Burning methane with 10% excess air ensures complete combustion of carbon but increases NOₓ and heat loss — the classical trade-off.",
+    "In a titration the limiting reactant changes at the equivalence point, which is why an indicator is needed to detect it."
+  ],
+  "examples": [
+    "**Problem:** 3 mol N₂ and 6 mol H₂ with N₂ + 3H₂ → 2NH₃. **Solution:** quotients 3/1 = 3 (N₂) and 6/3 = 2 (H₂) → H₂ limiting. NH₃ = (2/3) × 6 = 4 mol = 68 g; N₂ consumed = 2 mol, so 1 mol N₂ (28 g) remains excess.",
+    "**Problem:** 4 g H₂ + 32 g O₂ (2H₂ + O₂ → 2H₂O). **Solution:** n(H₂) = 2 mol, n(O₂) = 1 mol; quotients 1 and 1 → exact stoichiometric mixture, no excess, and 2 mol H₂O = 36 g forms."
+  ],
+  "importantNotes": [
+    "Convert every quantity to moles before comparing coefficients — the commonest source of error.",
+    "Always state which reactant limits *and* how much excess remains; that is where most marks are given.",
+    "Note explicitly that the theoretical yield is computed from the limiting reactant alone."
+  ],
   "visualType": "limiting-reactant",
-  "enrichedContent": {
-    "notes": [
-      "**Limiting Reactant (LR):** The reactant that is entirely consumed first in a chemical reaction, thereby determining the maximum theoretical yield of product. Once the LR is exhausted, the reaction ceases regardless of remaining excess reactants.",
-      "**Excess Reactant:** Any reactant present in an amount greater than stoichiometrically required to react completely with the limiting reactant. The unreacted portion remains after the reaction reaches completion.",
-      "**Identification Method:** Convert all reactant amounts to moles, then divide by their respective stoichiometric coefficients from the balanced equation. The reactant with the smallest resulting value is the limiting reactant.",
-      "**Theoretical Yield:** The maximum amount of product that can be formed from the limiting reactant, calculated using stoichiometric mole ratios from the balanced chemical equation.",
-      "**Practical Significance:** Industrial processes often use excess of cheaper reactants to ensure complete consumption of expensive limiting reactants, optimizing cost efficiency and maximizing yield."
-    ],
-    "confusion": [
-      "❌ The reactant with the smallest mass is always the limiting reactant. ✅ The limiting reactant is determined by the mole ratio from the balanced equation, not just the initial mass.",
-      "❌ The limiting reactant is always the one with the smallest stoichiometric coefficient. ✅ It depends on both the stoichiometric coefficient and the initial amount of each reactant."
-    ],
-    "practice": [
-      "Given 5 moles of $H_2$ and 2 moles of $O_2$, identify the LR for $2H_2 + O_2 \\rightarrow 2H_2O$.",
-      "Calculate the amount of excess reactant remaining after the reaction."
-    ],
-    "universalFacts": [
-      "The limiting reactant determines the maximum amount of product formed.",
-      "It is completely consumed in the reaction and limits the extent of reaction.",
-      "The concept is fundamental to yield calculations in industrial chemistry.",
-      "All reactants other than the limiting reactant are in excess.",
-      "Understanding limiting reactant is essential for optimizing chemical processes."
-    ],
-    "examples": [
-      "2H₂ + O₂ → 2H₂O: If 4g H₂ reacts with 32g O₂, H₂ is limiting (requires 32g O₂ but has excess).",
-      "N₂ + 3H₂ → 2NH₃: If 28g N₂ reacts with 6g H₂, H₂ is limiting (requires 84g N₂).",
-      "CaCO₃ → CaO + CO₂: If 50g CaCO₃ is heated, calculate yield.",
-      "Zn + 2HCl → ZnCl₂ + H₂: Limiting reactant determines H₂ volume."
-    ],
-    "practiceQuestions": [
-      "Define limiting reactant and explain its significance.",
-      "Identify the limiting reactant when 10g of A reacts with 15g of B.",
-      "Calculate the theoretical yield when 5g of CaCO₃ is heated.",
-      "Find the amount of excess reactant remaining after reaction."
-    ],
-    "formulas": [
-      "Moles = Mass / Molar mass",
-      "Limiting reactant = reactant giving minimum moles of product",
-      "Theoretical yield = moles of limiting reactant × stoichiometric ratio × molar mass of product",
-      "% Yield = (Actual yield / Theoretical yield) × 100",
-      "Excess reactant remaining = Initial - Consumed"
-    ],
-    "keyPoints": [
-      "Limiting reactant is completely consumed.",
-      "It determines the maximum product formed.",
-      "Other reactants are in excess.",
-      "Always convert to moles before comparing."
-    ],
-    "summary": "The limiting reactant is the reactant that is completely consumed in a chemical reaction, thus determining the maximum amount of product that can be formed. Identifying the limiting reactant is essential for accurate stoichiometric calculations.",
-    "specialNotes": [
-      "The limiting reactant concept is crucial for yield calculations.",
-      "In NEB exams, always show mole ratio comparison.",
-      "Industrial processes optimize by controlling limiting reactant."
-    ],
-    "importantStatements": [
-      "The limiting reactant is the reactant that is completely consumed first and determines the extent of reaction.",
-      "The amount of product formed depends on the limiting reactant.",
-      "Reactants in excess remain unconsumed after the reaction."
-    ],
-    "importantNotes": [
-      "To find limiting reactant: Convert all masses to moles.",
-      "Use mole ratio from balanced equation.",
-      "The reactant giving least product is limiting.",
-      "Calculate excess reactant remaining."
-    ],
-    "examShortTricks": [
-      "Step 1: Write balanced equation.",
-      "Step 2: Convert all masses to moles.",
-      "Step 3: Divide moles by coefficient.",
-      "Step 4: Smallest value = limiting reactant.",
-      "Step 5: Calculate product from limiting reactant."
-    ],
-    "examNotes": [
-      "Limiting reactant problems are a staple in stoichiometry exams.",
-      "Practice identifying the LR from different types of data (mass, volume, moles).",
-      "Be able to calculate the amount of excess reactant remaining."
-    ],
-    "mcs": [
-      {
-        "question": "The limiting reactant in a chemical reaction is the one that:",
-        "options": [
-          "Produces the maximum amount of product",
-          "Is completely consumed first",
-          "Is present in excess",
-          "Is a catalyst"
-        ],
-        "answer": "B"
-      },
-      {
-        "question": "In the reaction 2H₂ + O₂ → 2H₂O, if 4g H₂ reacts with 32g O₂, which is limiting?",
-        "options": [
-          "H₂",
-          "O₂",
-          "Both are limiting",
-          "Neither is limiting"
-        ],
-        "answer": "A"
-      },
-      {
-        "question": "The theoretical yield is calculated based on:",
-        "options": [
-          "Excess reactant",
-          "Limiting reactant",
-          "Catalyst",
-          "Solvent"
-        ],
-        "answer": "B"
-      }
-    ],
-    "importantConcepts": [
-      "Limiting Reactant: Yield-determining reagent.",
-      "Excess Reactant: Unconsumed reagent after reaction.",
-      "Theoretical Yield: Maximum product from LR.",
-      "Stoichiometric Identification: Mole ratio comparison.",
-      "Industrial Applications: Cost optimization strategies."
-    ],
-    "importantTasks": [
-      "Identify the limiting reactant from given amounts.",
-      "Calculate the theoretical yield of a product.",
-      "Calculate the amount of excess reactant remaining."
-    ],
-    "exercises": [],
-    "visualization": {
-      "type": "simulation",
-      "component": "LimitingReactantSim",
-      "desc": "Interactive limiting reactant simulator"
-    }
-  },
-  "originalContent": {
-    "notes": [
-      "**Limiting Reactant (LR):** The reactant that is entirely consumed first in a chemical reaction, thereby determining the maximum theoretical yield of product. Once the LR is exhausted, the reaction ceases regardless of remaining excess reactants.",
-      "**Excess Reactant:** Any reactant present in an amount greater than stoichiometrically required to react completely with the limiting reactant. The unreacted portion remains after the reaction reaches completion.",
-      "**Identification Method:** Convert all reactant amounts to moles, then divide by their respective stoichiometric coefficients from the balanced equation. The reactant with the smallest resulting value is the limiting reactant.",
-      "**Theoretical Yield:** The maximum amount of product that can be formed from the limiting reactant, calculated using stoichiometric mole ratios from the balanced chemical equation.",
-      "**Practical Significance:** Industrial processes often use excess of cheaper reactants to ensure complete consumption of expensive limiting reactants, optimizing cost efficiency and maximizing yield."
-    ],
-    "confusion": [
-      "❌ The reactant with the smallest mass is always the limiting reactant. ✅ The limiting reactant is determined by the mole ratio from the balanced equation, not just the initial mass.",
-      "❌ The limiting reactant is always the one with the smallest stoichiometric coefficient. ✅ It depends on both the stoichiometric coefficient and the initial amount of each reactant."
-    ],
-    "practice": [
-      "Given 5 moles of $H_2$ and 2 moles of $O_2$, identify the LR for $2H_2 + O_2 \\rightarrow 2H_2O$.",
-      "Calculate the amount of excess reactant remaining after the reaction."
-    ],
-    "universalFacts": [
-      "The limiting reactant determines the maximum amount of product formed.",
-      "It is completely consumed in the reaction and limits the extent of reaction.",
-      "The concept is fundamental to yield calculations in industrial chemistry.",
-      "All reactants other than the limiting reactant are in excess.",
-      "Understanding limiting reactant is essential for optimizing chemical processes."
-    ],
-    "examples": [
-      "2H₂ + O₂ → 2H₂O: If 4g H₂ reacts with 32g O₂, H₂ is limiting (requires 32g O₂ but has excess).",
-      "N₂ + 3H₂ → 2NH₃: If 28g N₂ reacts with 6g H₂, H₂ is limiting (requires 84g N₂).",
-      "CaCO₃ → CaO + CO₂: If 50g CaCO₃ is heated, calculate yield.",
-      "Zn + 2HCl → ZnCl₂ + H₂: Limiting reactant determines H₂ volume."
-    ],
-    "practiceQuestions": [
-      "Define limiting reactant and explain its significance.",
-      "Identify the limiting reactant when 10g of A reacts with 15g of B.",
-      "Calculate the theoretical yield when 5g of CaCO₃ is heated.",
-      "Find the amount of excess reactant remaining after reaction."
-    ],
-    "formulas": [
-      "Moles = Mass / Molar mass",
-      "Limiting reactant = reactant giving minimum moles of product",
-      "Theoretical yield = moles of limiting reactant × stoichiometric ratio × molar mass of product",
-      "% Yield = (Actual yield / Theoretical yield) × 100",
-      "Excess reactant remaining = Initial - Consumed"
-    ],
-    "keyPoints": [
-      "Limiting reactant is completely consumed.",
-      "It determines the maximum product formed.",
-      "Other reactants are in excess.",
-      "Always convert to moles before comparing."
-    ],
-    "summary": "The limiting reactant is the reactant that is completely consumed in a chemical reaction, thus determining the maximum amount of product that can be formed. Identifying the limiting reactant is essential for accurate stoichiometric calculations.",
-    "specialNotes": [
-      "The limiting reactant concept is crucial for yield calculations.",
-      "In NEB exams, always show mole ratio comparison.",
-      "Industrial processes optimize by controlling limiting reactant."
-    ],
-    "importantStatements": [
-      "The limiting reactant is the reactant that is completely consumed first and determines the extent of reaction.",
-      "The amount of product formed depends on the limiting reactant.",
-      "Reactants in excess remain unconsumed after the reaction."
-    ],
-    "importantNotes": [
-      "To find limiting reactant: Convert all masses to moles.",
-      "Use mole ratio from balanced equation.",
-      "The reactant giving least product is limiting.",
-      "Calculate excess reactant remaining."
-    ],
-    "examShortTricks": [
-      "Step 1: Write balanced equation.",
-      "Step 2: Convert all masses to moles.",
-      "Step 3: Divide moles by coefficient.",
-      "Step 4: Smallest value = limiting reactant.",
-      "Step 5: Calculate product from limiting reactant."
-    ],
-    "examNotes": [
-      "Limiting reactant problems are a staple in stoichiometry exams.",
-      "Practice identifying the LR from different types of data (mass, volume, moles).",
-      "Be able to calculate the amount of excess reactant remaining."
-    ],
-    "mcs": [
-      {
-        "question": "The limiting reactant in a chemical reaction is the one that:",
-        "options": [
-          "Produces the maximum amount of product",
-          "Is completely consumed first",
-          "Is present in excess",
-          "Is a catalyst"
-        ],
-        "answer": "B"
-      },
-      {
-        "question": "In the reaction 2H₂ + O₂ → 2H₂O, if 4g H₂ reacts with 32g O₂, which is limiting?",
-        "options": [
-          "H₂",
-          "O₂",
-          "Both are limiting",
-          "Neither is limiting"
-        ],
-        "answer": "A"
-      },
-      {
-        "question": "The theoretical yield is calculated based on:",
-        "options": [
-          "Excess reactant",
-          "Limiting reactant",
-          "Catalyst",
-          "Solvent"
-        ],
-        "answer": "B"
-      }
-    ],
-    "importantConcepts": [
-      "Limiting Reactant: Yield-determining reagent.",
-      "Excess Reactant: Unconsumed reagent after reaction.",
-      "Theoretical Yield: Maximum product from LR.",
-      "Stoichiometric Identification: Mole ratio comparison.",
-      "Industrial Applications: Cost optimization strategies."
-    ],
-    "importantTasks": [
-      "Identify the limiting reactant from given amounts.",
-      "Calculate the theoretical yield of a product.",
-      "Calculate the amount of excess reactant remaining."
-    ],
-    "exercises": [],
-    "visualization": {
-      "type": "simulation",
-      "component": "LimitingReactantSim",
-      "desc": "Interactive limiting reactant simulator"
-    }
-  }
+  "tabGroup": "Stoichiometry-Learner-Notes"
 }

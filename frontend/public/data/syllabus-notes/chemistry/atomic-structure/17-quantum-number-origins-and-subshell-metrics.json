@@ -1,81 +1,67 @@
 {
-  "title": "Quantum Number Origins — Principal, Azimuthal & Subshell Metrics",
+  "title": "Quantum Numbers — Origins and Subshell Metrics",
   "unitSlug": "atomic-structure",
   "topicSlug": "quantum-numbers",
   "topicTitle": "Quantum numbers",
   "relevance": 85,
   "notes": [
-    "Detailed notes on 17 quantum number origins and subshell metrics within the atomic structure unit."
+    "### Focus of this tab",
+    "Where the quantum numbers come from mathematically and the counting metrics (orbitals, capacities, designations) in one table.",
+    "### Origins",
+    "• n, l and m arise as **separation constants** when the Schrödinger equation for the hydrogen atom is solved in spherical coordinates — the radial equation gives n, the angular equations give l and m. They are not assumptions; they are forced by the boundary conditions.",
+    "• mₛ does **not** come from the Schrödinger equation: it enters through the relativistic Dirac equation (1928) and was inferred earlier (1925, Uhlenbeck–Goudsmit) from the Stern–Gerlach experiment and spectral doublets.",
+    "### The metrics table",
+    "Shell n: orbitals n², electrons 2n² (K 1/2, L 4/8, M 9/18, N 16/32). Subshell l: orbitals 2l + 1 (s 1, p 3, d 5, f 7), electrons 2(2l + 1) (s 2, p 6, d 10, f 14). Nodes: radial n − l − 1, angular l, total n − 1. Orbital designation nl (1s, 2p, 3d, 4f).",
+    "### Energy order within a shell",
+    "For hydrogen all subshells of a shell are degenerate (E depends only on n). In multi-electron atoms penetration makes $E_{ns}<E_{np}<E_{nd}<E_{nf}$, and across shells the (n + l) Madelung order governs filling — the two facts the Bohr–Bury scheme could not express.",
+    "### Counting patterns (exam drills)",
+    "• Electrons with n = 4, l = 2 → 4d: 2(2·2+1) = 10.",
+    "• Orbitals with n = 3 → 9 = 3² (1 s + 3 p + 5 d).",
+    "• Electrons with n = 3 and m = 0 → 6 (one each in 3s, 3p, 3d, doubled by spin).",
+    "• Unpaired electrons in a subshell from Hund's rule → paramagnetism; fully paired → diamagnetism."
   ],
   "confusion": [
-    "❌ Misconception about 17 quantum number origins and subshell metrics. ✅ Scientific explanation."
+    "❌ mₛ comes from solving the Schrödinger equation. ✅ Only n, l, m do; spin needs the Dirac equation.",
+    "❌ 2n² counts orbitals. ✅ It counts electrons; orbitals in a shell number n².",
+    "❌ All subshells of a shell have equal energy in every atom. ✅ True only for hydrogen; multi-electron atoms order them by penetration."
   ],
   "practice": [
-    "Practice exercise for 17 quantum number origins and subshell metrics."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 17 quantum number origins and subshell metrics."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 17 quantum number origins and subshell metrics."
-  ],
-  "practiceQuestions": [
-    "Practice question for 17 quantum number origins and subshell metrics."
+    "Show how n, l and m arise from solving the Schrödinger equation.",
+    "Tabulate orbitals and electron capacities for the K, L, M and N shells.",
+    "How many orbitals and electrons are possible for n = 4?",
+    "Why is the 4s orbital filled before 3d in potassium?"
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 17 quantum number origins and subshell metrics)"
+    "$$\\text{orbitals: shell }n^{2},\\ \\text{subshell }2l+1;\\qquad \\text{electrons: }2n^{2},\\ 2(2l+1)$$",
+    "$$\\text{radial nodes}=n-l-1,\\quad \\text{angular nodes}=l,\\quad \\text{total}=n-1$$"
   ],
-  "keyPoints": [
-    "Core point for 17 quantum number origins and subshell metrics."
+  "universalFacts": [
+    "The 4f subshell (l = 3) holds 14 electrons — the width of the lanthanide series.",
+    "Stern–Gerlach (1922) split a silver atomic beam into two — the first spin evidence.",
+    "Degeneracy of the n = 2 level in hydrogen: 4 orbitals (2s + three 2p)."
   ],
-  "summary": "Summary of 17 quantum number origins and subshell metrics.",
-  "specialNotes": [
-    "Specialized insight for 17 quantum number origins and subshell metrics."
-  ],
-  "importantStatements": [
-    "Key statement for 17 quantum number origins and subshell metrics."
+  "examples": [
+    "**Problem:** Count orbitals with n = 4, l = 3 and the electrons they hold. **Solution:** 2l + 1 = 7 orbitals (4f), holding 14 electrons; nodes: radial 0, angular 3."
   ],
   "importantNotes": [
-    "Important note regarding 17 quantum number origins and subshell metrics."
+    "Memorise the three counting numbers: 2l + 1 (orbitals), 2(2l + 1) (subshell electrons), 2n² (shell electrons).",
+    "Attribute spin to Dirac/Stern–Gerlach, not to Schrödinger."
   ],
-  "examShortTricks": [
-    "Recall the formula for Quantum Number Origins — Principal, Azimuthal & Subshell Metrics."
-  ],
-  "examNotes": [
-    "Focus on Quantum Number Origins — Principal, Azimuthal & Subshell Metrics problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 17 quantum number origins and subshell metrics?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 17 quantum number origins and subshell metrics."
-  ],
-  "importantTasks": [
-    "Task for studying 17 quantum number origins and subshell metrics."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "17-quantum-number-origins-and-subshell-metrics",
   "mcqs": [
     {
-      "question": "Question about 17 quantum number origins and subshell metrics?",
+      "question": "The number of orbitals in the M shell (n = 3) is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "3",
+        "6",
+        "9",
+        "18"
       ],
-      "answer": "A"
+      "answer": "C"
     }
-  ]
+  ],
+  "visualType": "quantum-numbers",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "17-quantum-number-origins-and-subshell-metrics.json"
 }

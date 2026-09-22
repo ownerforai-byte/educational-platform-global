@@ -1,81 +1,71 @@
 {
-  "title": "Law of Definite (Constant) Proportions — Statement",
+  "title": "Law of Definite (Constant) Proportions — Statement, Examples and Limitations",
   "unitSlug": "stoichiometry",
   "topicSlug": "laws-of-stoichiometry",
   "topicTitle": "Laws of stoichiometry",
-  "relevance": 80,
+  "relevance": 85,
   "notes": [
-    "Detailed notes on 02 law of definite proportions within the stoichiometry unit."
+    "### Focus of this tab",
+    "The second law of chemical combination: Proust's law of definite proportions with its classic percentage data, the calculations it supports, and the compounds that break it.",
+    "### Statement and history",
+    "'A chemical compound always contains the same elements combined in the same fixed proportion by mass, regardless of its source or method of preparation.' Established by Joseph Proust (1799) against Berthollet, who believed composition could vary continuously with conditions.",
+    "### The classic data",
+    "• Water: from river, sea, rain or synthesised from H₂ + O₂ — H : O = 1 : 8 by mass (11.1% H, 88.9% O).",
+    "• Carbon dioxide: 27.27% C, 72.73% O (C : O = 3 : 8) whether from burning carbon, respiration or limestone decomposition.",
+    "• Copper oxide: 79.9% Cu, 20.1% O whether prepared by heating copper in air or reducing CuO in hydrogen.",
+    "### Why it holds",
+    "A pure compound has a fixed formula (H₂O, CO₂, CuO): fixed atom counts and fixed atomic masses give a fixed mass ratio — a direct consequence of Dalton's theory (the law was actually strong evidence *for* atoms).",
+    "### Calculations it supports",
+    "• Percentage composition: % element = (mass of element in formula ÷ molar mass) × 100.",
+    "• Mass of element in a given sample: sample mass × (%/100) — e.g. oxygen in 90 g of water = 90 × (8/9) = 80 g.",
+    "• Purity analysis: a brass sample or an ore is assayed by comparing its metal percentage with the theoretical value for the pure compound.",
+    "### Limitations (where the law fails)",
+    "1. **Non-stoichiometric (berthollide) compounds:** Fe₀.₉₃O, FeS₁₋ₓ, Cu₂₋ₓO — composition varies within a small range; the law needs a true formula compound.",
+    "2. **Isotopic variation:** D₂O (heavy water) has H : O = 2 : 8, not 1 : 8 — the same 'compound' differs when isotopes change.",
+    "3. **Mixtures, solutions and alloys** vary continuously in composition — the law is for pure compounds only.",
+    "4. Polymers and associated molecules with variable chain length have no single fixed composition."
   ],
   "confusion": [
-    "❌ Misconception about 02 law of definite proportions. ✅ Scientific explanation."
+    "❌ The law means elements always combine in the same proportion. ✅ It applies to a given *compound*; the same two elements may form several compounds (CO, CO₂) with different ratios — that is multiple proportions.",
+    "❌ Heavy water is a counterexample to chemistry being consistent. ✅ It shows the law depends on the isotope chosen — D₂O and H₂O are different compounds.",
+    "❌ The law applies to brass or steel. ✅ Alloys are mixtures with variable composition; only pure compounds are covered."
   ],
   "practice": [
-    "Practice exercise for 02 law of definite proportions."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 02 law of definite proportions."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 02 law of definite proportions."
-  ],
-  "practiceQuestions": [
-    "Practice question for 02 law of definite proportions."
+    "State the law of definite proportions and illustrate with data for water from two sources.",
+    "Calculate the percentage of nitrogen in NH₃ and the mass of nitrogen in 100 g of it.",
+    "Explain how non-stoichiometric compounds limit the law.",
+    "Distinguish the law of definite proportions from the law of multiple proportions with CO and CO₂."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 02 law of definite proportions)"
+    "$$\\%\\text{element}=\\frac{\\text{mass of element in one mole}}{\\text{molar mass}}\\times100;\\qquad \\text{H:O in water}=1:8$$"
   ],
-  "keyPoints": [
-    "Core point for 02 law of definite proportions."
+  "universalFacts": [
+    "Proust's law was contested by Berthollet until careful analysis of artificial and natural carbonates settled it.",
+    "CuO is always 79.9% copper by mass, whatever its origin.",
+    "The 1 : 8 hydrogen–oxygen mass ratio reappears in every electrolysis and combustion calculation."
   ],
-  "summary": "Summary of 02 law of definite proportions.",
-  "specialNotes": [
-    "Specialized insight for 02 law of definite proportions."
-  ],
-  "importantStatements": [
-    "Key statement for 02 law of definite proportions."
+  "examples": [
+    "**Problem:** 1.0 g of a metal oxide contains 0.72 g of metal. If the metal's equivalent behaviour repeats, find the % oxygen. **Solution:** O = 0.28 g → 28% oxygen — a fixed composition the law predicts for this oxide."
   ],
   "importantNotes": [
-    "Important note regarding 02 law of definite proportions."
+    "Say 'proportion *by mass*' — volume ratios belong to Gay-Lussac's law.",
+    "Always name the source-independence (natural or synthetic) when stating the law."
   ],
-  "examShortTricks": [
-    "Recall the formula for Law of Definite (Constant) Proportions — Statement."
-  ],
-  "examNotes": [
-    "Focus on Law of Definite (Constant) Proportions — Statement problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 02 law of definite proportions?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 02 law of definite proportions."
-  ],
-  "importantTasks": [
-    "Task for studying 02 law of definite proportions."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "02-law-of-definite-proportions",
   "mcqs": [
     {
-      "question": "Question about 02 law of definite proportions?",
+      "question": "The law of definite proportions was proposed by:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Dalton",
+        "Proust",
+        "Lavoisier",
+        "Richter"
       ],
-      "answer": "A"
+      "answer": "B"
     }
-  ]
+  ],
+  "visualType": "definite-proportions",
+  "tabGroup": "Stoichiometry-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "02-law-of-definite-proportions.json"
 }

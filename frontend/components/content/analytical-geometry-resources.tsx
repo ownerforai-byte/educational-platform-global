@@ -13,7 +13,11 @@ import {
   FileText,
   Play,
   RotateCcw,
+  Target,
+  Lightbulb,
 } from "lucide-react";
+import { MathMarkdown } from "@/components/content/math-markdown";
+import { AnalyticGeomAdditionalVisual } from "./additional-questions-visuals";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -185,11 +189,23 @@ function ConicVisual() {
         />
         <span className="text-sm font-semibold text-orange-500">{type}</span>
       </div>
+      <div className="flex flex-wrap gap-x-3 gap-y-1 text-[11px] mb-2">
+        <span className="inline-flex items-center gap-1.5"><span className="inline-block w-4 h-0.5 rounded bg-sky-400" /><span className="text-muted-foreground">Double cone</span></span>
+        <span className="inline-flex items-center gap-1.5"><span className="inline-block w-4 h-0.5 rounded bg-yellow-400" /><span className="text-muted-foreground">Slicing plane</span></span>
+        <span className="inline-flex items-center gap-1.5"><span className="inline-block w-4 h-0.5 rounded bg-orange-500" /><span className="text-muted-foreground">Conic section</span></span>
+      </div>
       <div className="flex justify-center">
         <svg
           viewBox={`0 0 ${w} ${h}`}
           className="w-full max-w-md border rounded-lg bg-slate-950"
         >
+          {/* Subtle grid */}
+          {Array.from({ length: 9 }, (_, i) => (
+            <line key={"gc" + i} x1={i * 40} y1={0} x2={i * 40} y2={h} stroke="#1e293b" strokeWidth={0.5} />
+          ))}
+          {Array.from({ length: 7 }, (_, i) => (
+            <line key={"gr" + i} x1={0} y1={i * 40} x2={w} y2={i * 40} stroke="#1e293b" strokeWidth={0.5} />
+          ))}
           {/* Cone outlines */}
           <path d={coneTop} stroke="#38bdf8" strokeWidth="1.5" fill="none" opacity="0.6" />
           <path d={coneBot} stroke="#38bdf8" strokeWidth="1.5" fill="none" opacity="0.6" />
@@ -427,6 +443,110 @@ export function AnalyticalGeometryResources() {
           </Tabs>
         </CardContent>
       </Card>
+
+
+
+
+
+{/* Solved Solutions & Extra Hard Questions */}
+      <Card className="border-amber-200 dark:border-amber-800 bg-gradient-to-br from-amber-50/50 to-transparent dark:from-amber-950/20">
+        <CardHeader className="pb-3">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-amber-100 dark:bg-amber-900/40 rounded-lg">
+              <Target className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+            </div>
+            <div>
+              <CardTitle className="text-lg">Solved Solutions &amp; Extra Hard Questions</CardTitle>
+              <p className="text-sm text-muted-foreground mt-0.5">
+                Concept notes, line &amp; circle equations, and tougher analytic-geometry problems
+              </p>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent className="space-y-5">
+          <div>
+            <h4 className="text-sm font-semibold mb-2 flex items-center gap-2 text-amber-600 dark:text-amber-400">
+              <Lightbulb className="w-4 h-4" /> Concept &amp; Meaning
+            </h4>
+            <MathMarkdown
+              className="text-xs text-muted-foreground bg-amber-50/40 dark:bg-amber-950/20 p-3 rounded-lg border border-amber-200/50 dark:border-amber-900/40"
+              content={`<strong>Analytical geometry</strong> applies algebra to geometry. Lines have degree 1; a circle has equal $x^2$ and $y^2$ coefficients and no $xy$ term; conics (parabola, ellipse, hyperbola) are degree 2. The <strong>slope-intercept form</strong> $y = mx + c$ is the most useful line equation. Two lines are <em>parallel</em> when $m_1 = m_2$ and <em>perpendicular</em> when $m_1 m_2 = -1$.`}
+            />
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold mb-2 flex items-center gap-2 text-green-600 dark:text-green-400">
+              <BookOpen className="w-4 h-4" /> Solved Solution — Line Through Two Points &amp; Point-to-Line Distance
+            </h4>
+            <MathMarkdown
+              className="text-xs bg-green-50/40 dark:bg-green-950/20 p-3 rounded-lg border border-green-200/50 dark:border-green-900/40"
+              content={`**Part 1 — Line through A(2,3) and B(5,7):**
+
+Slope: $m = \\dfrac{7-3}{5-2} = \\dfrac{4}{3}$
+
+Point-slope form through A: $y - 3 = \\dfrac{4}{3}(x - 2)$
+$$3y - 9 = 4x - 8 \\;\\Rightarrow\\; \\boxed{4x - 3y + 1 = 0}$$
+
+**Part 2 — Distance of P(1,1) from $4x - 3y + 1 = 0$:**
+
+$d = \\dfrac{|4(1) - 3(1) + 1|}{\\sqrt{4^2 + (-3)^2}} = \\dfrac{|2|}{5} = \\boxed{\\tfrac{2}{5}}$`}
+            />
+          </div>
+
+          <div>
+            <h4 className="text-sm font-semibold mb-2 flex items-center gap-2 text-purple-600 dark:text-purple-400">
+              <Target className="w-4 h-4" /> Extra Hard Questions
+            </h4>
+            <div className="space-y-2">
+              {[
+                { q: "Find the equation of the circle passing through (0,0), (4,0) and (0,4).", hint: "Use the general circle $x^2+y^2+2gx+2fy+c=0$ and substitute all three points.", ans: "From (0,0): c = 0. From (4,0): 16+8g = 0 &rarr; g = -2. From (0,4): 16+8f = 0 &rarr; f = -2. Circle: $x^2+y^2-4x-4y=0$, centre (2,2), radius $2\\sqrt{2}$." },
+                { q: "Find the angle between the two lines represented by $6x^2 - xy - 2y^2 = 0$.", hint: "For $ax^2+2hxy+by^2=0$, $\\tan\\theta = \\dfrac{2\\sqrt{h^2-ab}}{a+b}$.", ans: "Here a = 6, 2h = -1 &rarr; h = -1/2, b = -2. $\\tan\\theta = \\dfrac{2\\sqrt{\\tfrac{1}{4}+12}}{4} = \\dfrac{2\\cdot \\tfrac{7}{2}}{4} = \\dfrac{7}{4}$, so $\\theta = \\tan^{-1}(7/4)$." },
+                { q: "Show that the pair of lines $x^2 - 6xy + 8y^2 = 0$ is $y = x/2$ and $y = x/4$.", hint: "Factor the homogeneous quadratic.", ans: "$x^2-6xy+8y^2 = (x-2y)(x-4y) = 0$ &rarr; $x = 2y$ (i.e. $y=x/2$) or $x = 4y$ (i.e. $y=x/4$). Both pass through the origin &check;." },
+                { q: "Find the equation of the parabola with vertex at the origin, axis along the x-axis, passing through (2,4).", hint: "Standard form $y^2 = 4ax$; substitute the point to find a.", ans: "$4^2 = 4a(2)$ &rarr; $16 = 8a$ &rarr; $a = 2$. Parabola: $\\boxed{y^2 = 8x}$." },
+                { q: "Find the equation of the line through the intersection of $3x-4y+5=0$ and $2x+3y-7=0$ that also passes through (1,2).", hint: "Solve the two lines for their intersection, then use the two-point form.", ans: "Intersection: solving gives (1,2) — which is the same point, so any line through (1,2) works; the family is $3x-4y+5 + \\lambda(2x+3y-7)=0$ passing through (1,2) when $\\lambda=0$." },
+                { q: "Find the equation of the chord of contact (polar) of the parabola $y^2 = 4ax$ from the point $(x_1, y_1)$.", hint: "The polar of $S=0$ from $(x_1,y_1)$ is $T=0$.", ans: "For $y^2 = 4ax$ the polar is $yy_1 - 2a(x + x_1) = 0$, i.e. $\\boxed{yy_1 = 2a(x+x_1)}$." },
+              ].map((item, i) => (
+                <details key={i} className="rounded-lg border bg-background/60 p-3">
+                  <summary className="text-sm cursor-pointer list-none flex items-start gap-2">
+                    <span className="text-purple-500 font-semibold shrink-0">Q{i + 1}.</span>
+                    <MathMarkdown content={item.q} className="flex-1 text-xs" />
+                  </summary>
+                  <div className="mt-2 space-y-2 text-xs pl-6">
+                    <MathMarkdown
+                      content={"**Hint:** " + item.hint}
+                      className="text-muted-foreground"
+                    />
+                    <MathMarkdown
+                      content={"**Answer:** " + item.ans}
+                      className="text-green-700 dark:text-green-400 bg-green-50/40 dark:bg-green-950/20 p-2 rounded-lg border border-green-200/50 dark:border-green-900/40"
+                    />
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </CardContent>
+      </Card>
+
+
+      {/* Additional Question Visuals */}
+      <Card className="border-amber-200 dark:border-amber-800 bg-gradient-to-br from-amber-50/50 to-transparent dark:from-amber-950/20">
+        <CardHeader className="pb-3">
+          <div className="flex items-center gap-3">
+            <div className="p-2 bg-amber-100 dark:bg-amber-900/40 rounded-lg">
+              <Play className="w-5 h-5 text-amber-600 dark:text-amber-400" />
+            </div>
+            <div>
+              <CardTitle className="text-lg">Additional-Question Visuals — Analytical Geometry</CardTitle>
+              <p className="text-sm text-muted-foreground mt-0.5">Interactive visuals for the extra hard questions above</p>
+            </div>
+          </div>
+        </CardHeader>
+        <CardContent>
+          <AnalyticGeomAdditionalVisual />
+        </CardContent>
+      </Card>
+
     </div>
   );
 }

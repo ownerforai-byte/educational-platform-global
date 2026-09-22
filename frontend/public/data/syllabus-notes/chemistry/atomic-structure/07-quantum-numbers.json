@@ -2,80 +2,63 @@
   "title": "Quantum Numbers",
   "unitSlug": "atomic-structure",
   "topicSlug": "quantum-numbers",
-  "topicTitle": "Quantum Numbers",
+  "topicTitle": "Quantum numbers",
   "relevance": 100,
   "notes": [
-    "Detailed notes on 07 quantum numbers within the atomic structure unit."
+    "### 1. Meaning",
+    "Solving the Schrödinger equation for the hydrogen atom yields a set of numbers that completely describe the state of an electron. These are the **quantum numbers** — effectively the 'address' of an electron in an atom. Four numbers are needed: principal (n), azimuthal or angular-momentum (l), magnetic (m or mₗ) and spin (s or mₛ).",
+    "### 2. Principal quantum number (n)",
+    "Determines the **shell** (energy level) and, in effect, the size: r ∝ n². Values n = 1, 2, 3, … ∞; the shell letters are K, L, M, N …; maximum capacity of a shell = 2n² electrons (n = 1 → 2, n = 2 → 8, n = 3 → 18, n = 4 → 32). It corresponds to Bohr's orbit number but is now a quantum label, not a path.",
+    "### 3. Azimuthal quantum number (l)",
+    "Determines the **subshell** and the *shape* of the orbital. Values l = 0, 1, 2, 3 … (n − 1), i.e. (n − 1) subshells per shell; the letters are s (l = 0), p (1), d (2), f (3). Orbital angular momentum = $\\sqrt{l(l+1)}\\,\\frac{h}{2\\pi}$. Within a shell the energies follow the order s < p < d < f, and a subshell holds 2(2l + 1) electrons (s 2, p 6, d 10, f 14).",
+    "### 4. Magnetic quantum number (mₗ)",
+    "Determines the **orientation** of the orbital in space (equivalently the component of angular momentum along a chosen axis). Values run from −l through 0 to +l, i.e. (2l + 1) values: one s orbital, three p orbitals (px, py, pz), five d orbitals, seven f orbitals. All orbitals of a subshell are degenerate (equal energy) in a free atom and split in a magnetic field — the origin of the Zeeman effect.",
+    "### 5. Spin quantum number (mₛ)",
+    "Describes the intrinsic spin of the electron; values +1/2 (↑) or −1/2 (↓). Introduced from the Stern–Gerlach experiment and the doublet structure of spectra (Uhlenbeck and Goudsmit, 1925). Because of it each orbital holds at most two electrons, giving the total capacities 2, 6, 10, 14 and 2n² per shell.",
+    "### 6. Orbitals, subshells and shells at a glance",
+    "n = 1: 1s (2e⁻, 1 orbital). n = 2: 2s + 2p (8e⁻, 4 orbitals). n = 3: 3s + 3p + 3d (18e⁻, 9 orbitals). n = 4: 4s + 4p + 4d + 4f (32e⁻, 16 orbitals). In general, orbitals in a shell = n², electrons = 2n², and an orbital is written n l (e.g. 3p).",
+    "### 7. Applications",
+    "• They define **electronic configuration**, the order of filling, and hence the position of an element in the periodic table and its block (s, p, d, f).",
+    "• They predict **magnetic behaviour**: unpaired electrons (Hund's rule follows from spin) give paramagnetism; fully paired species are diamagnetic.",
+    "• They explain spectral fine structure, the Zeeman and Stark effects, spin-orbit coupling, MRI/NMR (nuclear spin), lasers and selection rules.",
+    "• They let us test validity of a given set (e.g. l = n is forbidden) and count orbitals, unpaired electrons and quantum states in a subshell.",
+    "### 8. Limitations",
+    "Quantum numbers describe one electron at a time (not a pair or an atom as a whole); they do not give an electron's position, only the probability; the exact energies for multi-electron atoms need Z_eff and electron–electron interaction; mₛ comes from relativistic Dirac theory and is not contained in the simple Schrödinger solution; and spin–orbit coupling requires the total angular-momentum quantum number J, which is beyond Bohr's picture."
   ],
   "confusion": [
-    "❌ Misconception about 07 quantum numbers. ✅ Scientific explanation."
+    "❌ n determines shape and l determines size. ✅ n → size/energy (shell); l → shape (subshell).",
+    "❌ l can equal n. ✅ l = 0 to n − 1, so 1s has l = 0 and 2p has l = 1.",
+    "❌ mₗ is the spin quantum number. ✅ mₗ gives orientation; spin is mₛ = ±1/2.",
+    "❌ A p subshell holds 3 electrons. ✅ It has 2l + 1 = 3 *orbitals*, so it holds up to 6 electrons.",
+    "❌ Orbital angular momentum is l(h/2π). ✅ It is √(l(l+1))h/2π."
   ],
   "practice": [
-    "Practice exercise for 07 quantum numbers."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 07 quantum numbers."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 07 quantum numbers."
-  ],
-  "practiceQuestions": [
-    "Practice question for 07 quantum numbers."
+    "Define the four quantum numbers and give their permitted values.",
+    "Write the quantum numbers of the 3p electrons and of a 3d electron in the ground state.",
+    "Calculate the maximum number of electrons in the M shell and in a 4f subshell.",
+    "How many orbitals and electrons are there in the n = 3 shell? Justify with quantum numbers.",
+    "Which of these sets is impossible: (a) n = 2, l = 2 (b) n = 3, l = 2, m = −2 (c) n = 2, l = 1, m = 0, s = +1/2?",
+    "Explain how the magnetic quantum number accounts for the Zeeman effect."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 07 quantum numbers)"
+    "$$l=0,1,2,\\dots,(n-1);\\qquad m=-l,\\dots,0,\\dots,+l;\\qquad m_{s}=\\pm\\tfrac{1}{2}$$",
+    "$$\\text{orbitals in a subshell}=2l+1;\\qquad \\text{electrons}=2(2l+1)$$",
+    "$$\\text{orbitals in a shell}=n^{2};\\qquad \\text{electrons}=2n^{2}$$",
+    "$$L=\\sqrt{l(l+1)}\\,\\frac{h}{2\\pi}$$"
   ],
-  "keyPoints": [
-    "Core point for 07 quantum numbers."
+  "universalFacts": [
+    "s, p, d, f stand for sharp, principal, diffuse, fundamental — the old spectroscopic series names.",
+    "Shell capacities: K 2, L 8, M 18, N 32 (2n²); subshell capacities: s 2, p 6, d 10, f 14.",
+    "Spin was proposed in 1925 (Uhlenbeck and Goudsmit) after the Stern–Gerlach experiment (1922)."
   ],
-  "summary": "Summary of 07 quantum numbers.",
-  "specialNotes": [
-    "Specialized insight for 07 quantum numbers."
-  ],
-  "importantStatements": [
-    "Key statement for 07 quantum numbers."
+  "examples": [
+    "**Problem:** Maximum number of electrons with n = 4 and l = 2? **Solution:** 4d subshell: 2(2l + 1) = 2(5) = 10 electrons.",
+    "**Problem:** How many electrons in an atom can have n = 3, m = 0? **Solution:** For n = 3: 3s (m = 0 only), 3p (m = 0 available), 3d (m = 0 available) → 1 + 2 + 2 = 6 electrons."
   ],
   "importantNotes": [
-    "Important note regarding 07 quantum numbers."
+    "Remember the two counting rules: 2l + 1 orbitals per subshell and 2n² electrons per shell.",
+    "Check validity sets in the order n ≥ 1, l ≤ n − 1, |m| ≤ l, mₛ = ±1/2 — a favourite one-mark question."
   ],
-  "examShortTricks": [
-    "Recall the formula for Quantum Numbers."
-  ],
-  "examNotes": [
-    "Focus on Quantum Numbers problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 07 quantum numbers?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 07 quantum numbers."
-  ],
-  "importantTasks": [
-    "Task for studying 07 quantum numbers."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "07-quantum-numbers",
-  "mcqs": [
-    {
-      "question": "Question about 07 quantum numbers?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ]
+  "visualType": "quantum-numbers",
+  "tabGroup": "Atomic-Structure-Learner-Notes"
 }

@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useCallback, useMemo, useState } from "react";
+import { matchConceptSchematic } from "@/components/lab/schematic-concepts";
 
 export interface DiagramAnnotation {
   id: string;
@@ -55,6 +56,18 @@ export function SchematicDiagram({
 
     const specific = true;
     const sharedViewBox = "0 0 900 520";
+
+    // Concept registry: give each topic its OWN schematic instead of
+    // the constant inclined-plane fallback. Matched by subject + topic keywords.
+    const concept = matchConceptSchematic(normalizedSubject, topicSlug, topicTitle, unitId);
+    if (concept) {
+      return {
+        viewBox: sharedViewBox,
+        specific: true,
+        annotations: concept.annotations,
+        renderSvg: concept.renderSvg,
+      };
+    }
 
     if (
       normalizedSubject === "biology" &&

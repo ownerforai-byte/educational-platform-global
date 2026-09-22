@@ -1,81 +1,60 @@
 {
-  "title": "de Broglie Matter Waves",
+  "title": "Elementary Idea of the Quantum Mechanical Model — de Broglie's Wave Equation",
   "unitSlug": "atomic-structure",
-  "topicSlug": "de-broglie-waves",
-  "topicTitle": "de Broglie Matter Waves",
-  "relevance": 75,
+  "topicSlug": "elementary-idea-of-quantum-mechanical-model-de-broglie-s-wave-equation",
+  "topicTitle": "Elementary idea of quantum mechanical model: de Broglie's wave equation",
+  "relevance": 100,
   "notes": [
-    "Detailed notes on 05 de broglie waves within the atomic structure unit."
+    "### 1. Meaning — dual nature of matter",
+    "Light behaves both as a wave and as a stream of particles (photons). In 1924 Louis de Broglie proposed the converse for matter: every moving material particle has a wave associated with it. These waves are called **matter waves** or de Broglie waves, and the hypothesis is the bridge from Bohr's orbits to the quantum-mechanical model.",
+    "### 2. de Broglie's wave equation",
+    "For a particle of mass m moving with speed v, wavelength $\\lambda=\\frac{h}{mv}=\\frac{h}{p}$; using kinetic energy, $\\lambda=\\frac{h}{\\sqrt{2mKE}}$; for an electron accelerated through a potential difference V volts, $\\lambda=\\frac{h}{\\sqrt{2meV}}=\\sqrt{\\frac{150}{V}}\\ \\text{Å}\\approx\\frac{12.27}{\\sqrt{V}}\\ \\text{Å}$. Derivation sketch: from $E=mc^{2}$ and $E=h\\nu$ for a photon, $\\lambda=h/p$ is obtained and applied to matter.",
+    "### 3. Meaning of the numbers",
+    "λ ∝ 1/m and ∝ 1/v: a 1 g mass moving at 1 m s⁻¹ has λ ≈ 6.6 × 10⁻³¹ m — unobservably small, which is why cricket balls show no wave nature. A 100 V electron has λ ≈ 1.23 Å, comparable with atomic spacings, so crystals diffract electrons. Wave behaviour is therefore a *microscopic* phenomenon.",
+    "### 4. Experimental proof",
+    "Davisson and Germer (1927) diffracted slow electrons from a nickel crystal and obtained a diffraction pattern whose maxima obey nλ = d sin θ; G. P. Thomson obtained similar patterns with high-speed electrons. Electron diffraction is the direct proof of matter waves.",
+    "### 5. How de Broglie's idea repairs Bohr's model",
+    "If the electron forms a standing wave round the orbit, the circumference must contain a whole number of wavelengths: nλ = 2πr. Substituting λ = h/mv gives mvr = nh/2π — Bohr's *unexplained* quantisation postulate now has a physical meaning. Modern quantum mechanics (Schrödinger, 1926) replaced the orbit by a wave function ψ, whose square |ψ|² gives the probability density of finding the electron — the **orbital**.",
+    "### 6. Applications",
+    "• Electron microscopes use the tiny λ of accelerated electrons to resolve objects far smaller than light allows; electron and neutron diffraction determine crystal and molecular structures.",
+    "• Explains quantisation of energy levels, the origin of quantum numbers, quantum tunnelling (STM, tunnel diodes, alpha decay) and the whole wave-mechanical picture of the atom.",
+    "• Underlies semiconductor physics, quantum dots, lasers and matter-wave interferometry (atom interferometers, BEC experiments).",
+    "### 7. Limitations of the elementary treatment",
+    "λ = h/mv is non-relativistic (for v close to c use λ = h/√(p² + (mv)²/c²) type corrections); the wave function is a *probability amplitude*, not a mechanical wave in a medium; the simple equation applies to a single free particle and needs the Schrödinger equation in a potential; the wavelength of everyday objects is far too small to detect."
   ],
   "confusion": [
-    "❌ Misconception about 05 de broglie waves. ✅ Scientific explanation."
+    "❌ Matter waves are electromagnetic waves. ✅ They are probability (matter) waves carrying no charge; they are not E–B oscillations.",
+    "❌ Heavier bodies have longer wavelengths. ✅ λ = h/mv — larger mass means a *shorter* (unobservable) wavelength.",
+    "❌ de Broglie's hypothesis was accepted immediately on publication. ✅ It became convincing only after the Davisson–Germer electron-diffraction experiment (1927).",
+    "❌ de Broglie's waves replace Bohr's quantisation with nothing. ✅ They *justify* it through the standing-wave condition nλ = 2πr.",
+    "❌ An electron microscope uses electron particles and light waves together. ✅ It uses the electron's short de Broglie wavelength, not visible light."
   ],
   "practice": [
-    "Practice exercise for 05 de broglie waves."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 05 de broglie waves."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 05 de broglie waves."
-  ],
-  "practiceQuestions": [
-    "Practice question for 05 de broglie waves."
+    "State and explain de Broglie's wave equation; derive λ = h/mv for a material particle.",
+    "Explain why the wave nature of matter is not observed for ordinary objects.",
+    "Show that the standing-wave condition nλ = 2πr leads to Bohr's quantisation of angular momentum.",
+    "Calculate the de Broglie wavelength of an electron accelerated through 100 V.",
+    "Describe the Davisson–Germer experiment as evidence for matter waves and give two applications of electron waves."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 05 de broglie waves)"
+    "$$\\lambda=\\frac{h}{mv}=\\frac{h}{p}=\\frac{h}{\\sqrt{2mKE}}$$",
+    "$$\\lambda_{\\text{electron}}=\\frac{h}{\\sqrt{2meV}}=\\frac{12.27}{\\sqrt{V}}\\ \\text{Å}\\quad (V\\text{ in volts})$$",
+    "$$n\\lambda=2\\pi r\\;\\Rightarrow\\;mvr=\\frac{nh}{2\\pi}$$"
   ],
-  "keyPoints": [
-    "Core point for 05 de broglie waves."
+  "universalFacts": [
+    "de Broglie proposed matter waves in his 1924 PhD thesis and won the 1929 Nobel Prize in Physics.",
+    "Davisson and Germer confirmed electron diffraction in 1927 (Nobel Prize 1937).",
+    "λ for a 100 V electron ≈ 1.23 Å; a 1 g body at 1 m s⁻¹ has λ ≈ 6.6 × 10⁻³¹ m — undetectable."
   ],
-  "summary": "Summary of 05 de broglie waves.",
-  "specialNotes": [
-    "Specialized insight for 05 de broglie waves."
-  ],
-  "importantStatements": [
-    "Key statement for 05 de broglie waves."
+  "examples": [
+    "**Problem:** de Broglie wavelength of an electron moving at 10⁶ m s⁻¹. **Solution:** λ = 6.626×10⁻³⁴/(9.11×10⁻³¹ × 10⁶) = 7.27 × 10⁻¹⁰ m = 0.727 nm.",
+    "**Problem:** Wavelength of a 1.0 g bullet moving at 300 m s⁻¹. **Solution:** λ = 6.626×10⁻³⁴/(10⁻³ × 300) = 2.2 × 10⁻³³ m — many orders of magnitude smaller than any aperture, so no diffraction is observed."
   ],
   "importantNotes": [
-    "Important note regarding 05 de broglie waves."
+    "Quotes the two key results for the exam: λ = h/mv and λ(electron) = 12.27/√V Å.",
+    "Matter waves are not electromagnetic — say 'probability wave', not 'light wave'.",
+    "Keep mass in kg, speed in m s⁻¹ and h = 6.626 × 10⁻³⁴ J s to avoid order-of-magnitude errors."
   ],
-  "examShortTricks": [
-    "Recall the formula for de Broglie Matter Waves."
-  ],
-  "examNotes": [
-    "Focus on de Broglie Matter Waves problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 05 de broglie waves?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 05 de broglie waves."
-  ],
-  "importantTasks": [
-    "Task for studying 05 de broglie waves."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "05-de-broglie-waves",
-  "mcqs": [
-    {
-      "question": "Question about 05 de broglie waves?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ]
+  "visualType": "de-broglie",
+  "tabGroup": "Atomic-Structure-Learner-Notes"
 }

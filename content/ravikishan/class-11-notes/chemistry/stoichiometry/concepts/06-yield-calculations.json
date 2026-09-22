@@ -1,342 +1,72 @@
 {
-  "title": "Yield Calculations (Theoretical, Actual, and Percent Yield)",
+  "title": "Theoretical Yield, Experimental Yield and Percentage Yield",
   "unitSlug": "stoichiometry",
-  "topicSlug": "yield-calculations",
-  "topicTitle": "Yield Calculations",
+  "topicSlug": "theoretical-yield-experimental-yield-and-yield",
+  "topicTitle": "Theoretical yield, experimental yield and % yield",
   "relevance": 100,
-  "animation3D": "chemistry-yield",
-  "motionGraphics": "chemistry-yield",
-  "visualType": "percent-yield",
-  "enrichedContent": {
-    "notes": [
-      "**Theoretical Yield:** The maximum amount of product that can be formed from a given amount of limiting reactant, calculated using stoichiometric mole ratios from the balanced chemical equation. It represents the ideal, perfect-case scenario.",
-      "**Actual Yield:** The measured amount of product actually obtained from a chemical reaction in the laboratory or industrial setting. It is always less than or equal to the theoretical yield due to practical limitations.",
-      "**Percent Yield Formula:** Percent Yield = (Actual Yield / Theoretical Yield) × 100%. This metric quantifies the efficiency of a reaction and is crucial for process optimization.",
-      "**Factors Reducing Yield:** (1) Incomplete reactions—equilibrium limitations prevent 100% conversion. (2) Side reactions—competing pathways produce unwanted byproducts. (3) Physical losses during transfer, filtration, crystallization, or purification. (4) Experimental errors in measurement and technique.",
-      "**Yield Optimization:** Industrial processes employ excess reactants, catalysts, optimal temperature/pressure, and efficient separation techniques to maximize percent yield and minimize waste.",
-      "**Atom Economy:** A green chemistry metric calculating the percentage of reactant atoms incorporated into the desired product, calculated as (molar mass of product / sum of molar masses of all reactants) × 100%."
-    ],
-    "confusion": [
-      "❌ Percent yield can exceed 100%. ✅ Values >100% indicate impure product, incomplete drying (water adds mass), or measurement errors—not a violation of conservation laws.",
-      "❌ Theoretical yield is always achieved in practice. ✅ Theoretical yield is never fully achieved; typical laboratory yields range from 40-95% depending on reaction complexity.",
-      "❌ Percent yield and atom economy are the same. ✅ Percent yield measures actual vs. theoretical; atom economy measures inherent efficiency based on reaction stoichiometry.",
-      "❌ High percent yield means high purity. ✅ Percent yield measures quantity, not purity. A wet product may have high yield but low purity."
-    ],
-    "practice": [
-      "Calculate percent yield if theoretical yield is 10.0g but actual yield is 8.5g.",
-      "Determine theoretical yield of AgCl when 5.0g of NaCl reacts with excess AgNO₃.",
-      "If 15.0g of CaCO₃ produces 6.0g of CaO, calculate the percent yield.",
-      "Calculate atom economy for the reaction: 2Mg + O₂ → 2MgO.",
-      "A reaction with 80% yield produces 12.0g of product. What was the theoretical yield?"
-    ],
-    "universalFacts": [
-      "Theoretical yield is the maximum product calculated from stoichiometry.",
-      "Actual yield is the product actually obtained from experiment.",
-      "Percent yield = (Actual yield / Theoretical yield) × 100%.",
-      "Yield is always less than 100% due to side reactions, incomplete reactions, and losses.",
-      "High yield indicates efficient reaction conditions."
-    ],
-    "examples": [
-      "If theoretical yield of CaO from 50g CaCO₃ is 28g and actual yield is 25g, % yield = 89.3%.",
-      "Synthesis of NH₃: Theoretical = 34g, Actual = 28g, % yield = 82.4%.",
-      "Precipitation reactions often give high yields (>90%).",
-      "Organic synthesis may have yields of 50-80%."
-    ],
-    "practiceQuestions": [
-      "Calculate the percent yield if 25g of product is obtained from theoretical yield of 30g.",
-      "Find the actual yield when % yield is 75% and theoretical yield is 40g.",
-      "Calculate theoretical yield of AgCl from 10g NaCl and excess AgNO₃.",
-      "Determine % yield if 15g of product is obtained from 18g theoretical."
-    ],
-    "formulas": [
-      "% Yield = (Actual yield / Theoretical yield) × 100%",
-      "Theoretical yield = moles limiting reactant × stoichiometric ratio × Molar mass",
-      "Actual yield = (% Yield × Theoretical yield) / 100",
-      "Moles = Mass / Molar mass",
-      "Theoretical yield (mass) = n × M"
-    ],
-    "keyPoints": [
-      "Theoretical yield = calculated from stoichiometry.",
-      "Actual yield = measured experimentally.",
-      "% Yield indicates efficiency of reaction.",
-      "Yield < 100% is normal due to practical losses."
-    ],
-    "summary": "Yield calculations quantify reaction efficiency through theoretical yield (calculated from stoichiometry), actual yield (measured experimentally), and percent yield (their ratio). Factors such as incomplete reactions, side reactions, and physical losses reduce actual yield. Atom economy provides a green chemistry perspective on inherent reaction efficiency.",
-    "specialNotes": [
-      "Percent yield is a key concept in NEB examinations.",
-      "Always show units in yield calculations.",
-      "Yield calculations require balanced chemical equations."
-    ],
-    "importantStatements": [
-      "Percent yield measures the efficiency of a chemical reaction.",
-      "Theoretical yield is calculated assuming 100% conversion of limiting reactant.",
-      "Actual yield is always less than theoretical yield in practice."
-    ],
-    "importantNotes": [
-      "Factors affecting yield: side reactions, incomplete reactions, mechanical losses, evaporation.",
-      "Industrial processes aim for high yield to minimize waste.",
-      "Yield calculations are fundamental to stoichiometry."
-    ],
-    "examShortTricks": [
-      "Remember: % Yield = (Actual/Theoretical) × 100.",
-      "Find theoretical from limiting reactant first.",
-      "Then apply percentage formula.",
-      "Check: % Yield should be ≤ 100%."
-    ],
-    "examNotes": [
-      "Yield calculations are a guaranteed NEB topic — practice multiple problems.",
-      "Be prepared to identify the limiting reactant before calculating yield.",
-      "Distinguish between percent yield (efficiency) and atom economy (inherent design).",
-      "Show all steps: balanced equation → moles → theoretical yield → percent yield."
-    ],
-    "mcs": [
-      {
-        "question": "Percent yield is calculated as:",
-        "options": [
-          "(Theoretical/Actual) × 100",
-          "(Actual/Theoretical) × 100",
-          "(Actual - Theoretical) × 100",
-          "(Theoretical - Actual) × 100"
-        ],
-        "answer": "B"
-      },
-      {
-        "question": "If theoretical yield is 50g and actual yield is 40g, the percent yield is:",
-        "options": [
-          "80%",
-          "125%",
-          "50%",
-          "20%"
-        ],
-        "answer": "A"
-      },
-      {
-        "question": "Why is percent yield usually less than 100%?",
-        "options": [
-          "Side reactions and losses",
-          "Reaction goes to completion",
-          "Limiting reactant is excess",
-          "Products are pure"
-        ],
-        "answer": "A"
-      }
-    ],
-    "importantConcepts": [
-      "Theoretical Yield: Maximum possible product from stoichiometry.",
-      "Actual Yield: Experimentally measured product mass.",
-      "Percent Yield: Efficiency metric = (actual/theoretical) × 100%.",
-      "Atom Economy: Inherent efficiency based on reaction design.",
-      "Yield-Limiting Reactant Relationship: LR determines theoretical yield."
-    ],
-    "importantTasks": [
-      "Calculate theoretical yield from given reactant masses.",
-      "Determine percent yield from experimental data.",
-      "Identify factors affecting yield in practical scenarios.",
-      "Calculate atom economy for given reactions.",
-      "Solve multi-step yield problems involving limiting reactants."
-    ],
-    "exercises": [
-      {
-        "id": "1",
-        "question": "Mass of NaCl from 23g Na",
-        "steps": [
-          "n(Na)=23/23=1 mol",
-          "Na+Cl₂→NaCl (balanced: 2Na+Cl₂→2NaCl)",
-          "m(NaCl)=1×58.5=58.5 g"
-        ],
-        "answer": "58.5 g"
-      },
-      {
-        "id": "2",
-        "question": "Volume of CO₂ from 50g CaCO₃ at STP",
-        "steps": [
-          "n(CaCO₃)=50/100=0.5 mol",
-          "CaCO₃→CaO+CO₂",
-          "V(CO₂)=0.5×22.4=11.2 L"
-        ],
-        "answer": "11.2 L"
-      },
-      {
-        "id": "3",
-        "question": "Percent yield: 25g CaCO₃ → 10.5g CaO",
-        "steps": [
-          "n(CaCO₃)=25/100=0.25 mol",
-          "Theoretical CaO = 0.25×56=14.0g",
-          "Percent yield = (10.5/14.0)×100%=75%"
-        ],
-        "answer": "75%"
-      }
-    ],
-    "visualization": {
-      "type": "simulation",
-      "component": "MoleCalculator",
-      "desc": "Interactive mole-mass-volume calculator"
-    }
-  },
-  "originalContent": {
-    "notes": [
-      "**Theoretical Yield:** The maximum amount of product that can be formed from a given amount of limiting reactant, calculated using stoichiometric mole ratios from the balanced chemical equation. It represents the ideal, perfect-case scenario.",
-      "**Actual Yield:** The measured amount of product actually obtained from a chemical reaction in the laboratory or industrial setting. It is always less than or equal to the theoretical yield due to practical limitations.",
-      "**Percent Yield Formula:** Percent Yield = (Actual Yield / Theoretical Yield) × 100%. This metric quantifies the efficiency of a reaction and is crucial for process optimization.",
-      "**Factors Reducing Yield:** (1) Incomplete reactions—equilibrium limitations prevent 100% conversion. (2) Side reactions—competing pathways produce unwanted byproducts. (3) Physical losses during transfer, filtration, crystallization, or purification. (4) Experimental errors in measurement and technique.",
-      "**Yield Optimization:** Industrial processes employ excess reactants, catalysts, optimal temperature/pressure, and efficient separation techniques to maximize percent yield and minimize waste.",
-      "**Atom Economy:** A green chemistry metric calculating the percentage of reactant atoms incorporated into the desired product, calculated as (molar mass of product / sum of molar masses of all reactants) × 100%."
-    ],
-    "confusion": [
-      "❌ Percent yield can exceed 100%. ✅ Values >100% indicate impure product, incomplete drying (water adds mass), or measurement errors—not a violation of conservation laws.",
-      "❌ Theoretical yield is always achieved in practice. ✅ Theoretical yield is never fully achieved; typical laboratory yields range from 40-95% depending on reaction complexity.",
-      "❌ Percent yield and atom economy are the same. ✅ Percent yield measures actual vs. theoretical; atom economy measures inherent efficiency based on reaction stoichiometry.",
-      "❌ High percent yield means high purity. ✅ Percent yield measures quantity, not purity. A wet product may have high yield but low purity."
-    ],
-    "practice": [
-      "Calculate percent yield if theoretical yield is 10.0g but actual yield is 8.5g.",
-      "Determine theoretical yield of AgCl when 5.0g of NaCl reacts with excess AgNO₃.",
-      "If 15.0g of CaCO₃ produces 6.0g of CaO, calculate the percent yield.",
-      "Calculate atom economy for the reaction: 2Mg + O₂ → 2MgO.",
-      "A reaction with 80% yield produces 12.0g of product. What was the theoretical yield?"
-    ],
-    "universalFacts": [
-      "Theoretical yield is the maximum product calculated from stoichiometry.",
-      "Actual yield is the product actually obtained from experiment.",
-      "Percent yield = (Actual yield / Theoretical yield) × 100%.",
-      "Yield is always less than 100% due to side reactions, incomplete reactions, and losses.",
-      "High yield indicates efficient reaction conditions."
-    ],
-    "examples": [
-      "If theoretical yield of CaO from 50g CaCO₃ is 28g and actual yield is 25g, % yield = 89.3%.",
-      "Synthesis of NH₃: Theoretical = 34g, Actual = 28g, % yield = 82.4%.",
-      "Precipitation reactions often give high yields (>90%).",
-      "Organic synthesis may have yields of 50-80%."
-    ],
-    "practiceQuestions": [
-      "Calculate the percent yield if 25g of product is obtained from theoretical yield of 30g.",
-      "Find the actual yield when % yield is 75% and theoretical yield is 40g.",
-      "Calculate theoretical yield of AgCl from 10g NaCl and excess AgNO₃.",
-      "Determine % yield if 15g of product is obtained from 18g theoretical."
-    ],
-    "formulas": [
-      "% Yield = (Actual yield / Theoretical yield) × 100%",
-      "Theoretical yield = moles limiting reactant × stoichiometric ratio × Molar mass",
-      "Actual yield = (% Yield × Theoretical yield) / 100",
-      "Moles = Mass / Molar mass",
-      "Theoretical yield (mass) = n × M"
-    ],
-    "keyPoints": [
-      "Theoretical yield = calculated from stoichiometry.",
-      "Actual yield = measured experimentally.",
-      "% Yield indicates efficiency of reaction.",
-      "Yield < 100% is normal due to practical losses."
-    ],
-    "summary": "Yield calculations quantify reaction efficiency through theoretical yield (calculated from stoichiometry), actual yield (measured experimentally), and percent yield (their ratio). Factors such as incomplete reactions, side reactions, and physical losses reduce actual yield. Atom economy provides a green chemistry perspective on inherent reaction efficiency.",
-    "specialNotes": [
-      "Percent yield is a key concept in NEB examinations.",
-      "Always show units in yield calculations.",
-      "Yield calculations require balanced chemical equations."
-    ],
-    "importantStatements": [
-      "Percent yield measures the efficiency of a chemical reaction.",
-      "Theoretical yield is calculated assuming 100% conversion of limiting reactant.",
-      "Actual yield is always less than theoretical yield in practice."
-    ],
-    "importantNotes": [
-      "Factors affecting yield: side reactions, incomplete reactions, mechanical losses, evaporation.",
-      "Industrial processes aim for high yield to minimize waste.",
-      "Yield calculations are fundamental to stoichiometry."
-    ],
-    "examShortTricks": [
-      "Remember: % Yield = (Actual/Theoretical) × 100.",
-      "Find theoretical from limiting reactant first.",
-      "Then apply percentage formula.",
-      "Check: % Yield should be ≤ 100%."
-    ],
-    "examNotes": [
-      "Yield calculations are a guaranteed NEB topic — practice multiple problems.",
-      "Be prepared to identify the limiting reactant before calculating yield.",
-      "Distinguish between percent yield (efficiency) and atom economy (inherent design).",
-      "Show all steps: balanced equation → moles → theoretical yield → percent yield."
-    ],
-    "mcs": [
-      {
-        "question": "Percent yield is calculated as:",
-        "options": [
-          "(Theoretical/Actual) × 100",
-          "(Actual/Theoretical) × 100",
-          "(Actual - Theoretical) × 100",
-          "(Theoretical - Actual) × 100"
-        ],
-        "answer": "B"
-      },
-      {
-        "question": "If theoretical yield is 50g and actual yield is 40g, the percent yield is:",
-        "options": [
-          "80%",
-          "125%",
-          "50%",
-          "20%"
-        ],
-        "answer": "A"
-      },
-      {
-        "question": "Why is percent yield usually less than 100%?",
-        "options": [
-          "Side reactions and losses",
-          "Reaction goes to completion",
-          "Limiting reactant is excess",
-          "Products are pure"
-        ],
-        "answer": "A"
-      }
-    ],
-    "importantConcepts": [
-      "Theoretical Yield: Maximum possible product from stoichiometry.",
-      "Actual Yield: Experimentally measured product mass.",
-      "Percent Yield: Efficiency metric = (actual/theoretical) × 100%.",
-      "Atom Economy: Inherent efficiency based on reaction design.",
-      "Yield-Limiting Reactant Relationship: LR determines theoretical yield."
-    ],
-    "importantTasks": [
-      "Calculate theoretical yield from given reactant masses.",
-      "Determine percent yield from experimental data.",
-      "Identify factors affecting yield in practical scenarios.",
-      "Calculate atom economy for given reactions.",
-      "Solve multi-step yield problems involving limiting reactants."
-    ],
-    "exercises": [
-      {
-        "id": "1",
-        "question": "Mass of NaCl from 23g Na",
-        "steps": [
-          "n(Na)=23/23=1 mol",
-          "Na+Cl₂→NaCl (balanced: 2Na+Cl₂→2NaCl)",
-          "m(NaCl)=1×58.5=58.5 g"
-        ],
-        "answer": "58.5 g"
-      },
-      {
-        "id": "2",
-        "question": "Volume of CO₂ from 50g CaCO₃ at STP",
-        "steps": [
-          "n(CaCO₃)=50/100=0.5 mol",
-          "CaCO₃→CaO+CO₂",
-          "V(CO₂)=0.5×22.4=11.2 L"
-        ],
-        "answer": "11.2 L"
-      },
-      {
-        "id": "3",
-        "question": "Percent yield: 25g CaCO₃ → 10.5g CaO",
-        "steps": [
-          "n(CaCO₃)=25/100=0.25 mol",
-          "Theoretical CaO = 0.25×56=14.0g",
-          "Percent yield = (10.5/14.0)×100%=75%"
-        ],
-        "answer": "75%"
-      }
-    ],
-    "visualization": {
-      "type": "simulation",
-      "component": "MoleCalculator",
-      "desc": "Interactive mole-mass-volume calculator"
-    }
-  }
+  "notes": [
+    "### 1. Meaning of the three quantities",
+    "**Theoretical yield** is the maximum amount of product calculated from the balanced equation using the limiting reactant (assuming complete reaction and no losses). **Experimental (actual) yield** is the amount of pure product actually isolated in the experiment. **Percentage yield** compares them: $\\%\\text{yield}=\\frac{\\text{actual yield}}{\\text{theoretical yield}}\\times100$. Related terms: conversion (fraction of reactant consumed), selectivity (fraction converted to the desired product) and atom economy (mass of desired product ÷ mass of all reactants × 100).",
+    "### 2. Why the actual yield is lower than the theoretical yield",
+    "• The reaction is **incomplete** — the limiting reactant is not fully consumed in the time allowed.",
+    "• The reaction is **reversible**, so it stops at an equilibrium position (this is exactly the case in the Haber process).",
+    "• **Side reactions** produce by-products (organic syntheses especially).",
+    "• **Mechanical losses** during filtration, decantation, transfer, crystallisation, evaporation and drying, plus product remaining dissolved in the mother liquor (solubility loss).",
+    "• Product may be **volatile, thermally unstable or hygroscopic**, and impurities may interfere with the reaction.",
+    "• Weighing, reading and calculation errors of the experimenter.",
+    "A yield greater than 100% always indicates experimental error: the product is wet or impure, or unreacted starting material has been weighed as product.",
+    "### 3. Worked examples",
+    "**Example 1:** CaCO₃ → CaO + CO₂. From 100 g CaCO₃ the theoretical yield of CaO is 56 g; if 47.6 g is obtained, % yield = 47.6/56 × 100 = 85%.",
+    "**Example 2:** C₂H₄ + H₂O → C₂H₅OH. 7.0 g of ethene (0.25 mol) should give 0.25 mol = 11.5 g of ethanol; an actual yield of 9.2 g gives 80%.",
+    "**Example 3:** Aspirin synthesis: 5.0 g of salicylic acid (M = 138) gives a theoretical 6.5 g of aspirin (M = 180, 1:1 mole ratio); a student isolating 5.2 g reports (5.2/6.5) × 100 = 80%.",
+    "### 4. Meaning and use of atom economy",
+    "Percentage yield measures how much of the *intended* product is recovered, whereas atom economy measures how much of the *reactant mass* ends up in the desired product (substitution and elimination reactions with by-products have poor atom economy). Green chemistry prefers high atom economy because it minimises waste, an idea quantified by the E-factor (mass of waste ÷ mass of product). Both concepts are needed to judge whether a process is efficient and environmentally acceptable.",
+    "### 5. Applications",
+    "• Industrial economics: yield determines raw-material cost, plant capacity and profitability. In the Haber process only about 15% of the gas reacts per pass, so unreacted gas is recycled to raise the overall yield; the contact process similarly recycles SO₂.",
+    "• Laboratory synthesis (aspirin, soap, esters, dyes, polymers): the percentage yield is the standard measure of how successful a procedure was, and it is compared with literature values.",
+    "• Green chemistry: atom economy and the E-factor (waste ÷ product) supplement % yield to judge environmental performance — a high-yield reaction with a poor atom economy still generates much waste.",
+    "• Pharmaceutical and food quality control: yield data with assays (purity) are used for batch release, cost estimation and process optimisation, and yield losses indicate equipment or procedural faults.",
+    "### 6. Limitations",
+    "• Percentage yield does not measure **purity** — a 100% yield can be an impure or wet product; a separate assay (%, melting point, chromatography) is needed.",
+    "• The theoretical value is only as good as its assumptions: the correct limiting reactant, the correct balanced equation and a single principal reaction must all be established first.",
+    "• A value greater than 100% is always an error (impure/wet product, unreacted starting material, weighing mistake) and should never be reported as a good result.",
+    "• For reversible reactions the theoretical yield calculated from stoichiometry is not attainable at all; the equilibrium yield depends on K, temperature, pressure and recycling — the practical yield must be measured.",
+    "• Percentage yield says nothing about energy consumption, solvent use, hazards or waste, so it cannot by itself establish that a process is efficient or green; and it cannot be predicted theoretically — it must be determined experimentally."
+  ],
+  "confusion": [
+    "❌ A 100% yield means a pure product. ✅ Purity is a separate property; yields above 100% are the usual sign of an impure or wet product.",
+    "❌ Percentage yield is calculated from the reactant taken in excess. ✅ It is calculated from the limiting reactant, which fixes the theoretical yield.",
+    "❌ The theoretical yield is what you actually get. ✅ It is the maximum possible amount; the actual yield is always lower for practical reasons.",
+    "❌ Yield and atom economy measure the same thing. ✅ Yield is about recovery of product; atom economy is about how much of the reactant mass ends up in the desired product.",
+    "❌ Yield can be predicted by stoichiometry alone. ✅ Stoichiometry gives only the theoretical maximum; the actual yield depends on kinetics, equilibrium and technique."
+  ],
+  "practice": [
+    "Define theoretical yield, experimental yield and percentage yield with a formula for each.",
+    "List six reasons why the actual yield of a reaction is less than the theoretical yield.",
+    "100 g of CaCO₃ on heating gives 47.6 g of CaO. Calculate the percentage yield.",
+    "0.25 mol of ethene is hydrated to ethanol but only 9.2 g is obtained. Calculate the percentage yield. (M(C₂H₅OH) = 46 g mol⁻¹)",
+    "Explain why a student may report a yield greater than 100% and how the error can be corrected.",
+    "Distinguish between percentage yield and atom economy and state the limitations of each."
+  ],
+  "formulas": [
+    "$$\\%\\text{yield}=\\frac{\\text{experimental (actual) yield}}{\\text{theoretical yield}}\\times100$$",
+    "$$\\text{theoretical yield }(g)=n_{\\text{limiting}}\\times\\frac{\\nu_{\\text{product}}}{\\nu_{\\text{limiting}}}\\times M_{\\text{product}}$$",
+    "$$\\text{atom economy}=\\frac{M_{\\text{desired product}}}{\\sum M_{\\text{all reactants}}}\\times100,\\qquad \\%\\text{purity}=\\frac{\\text{mass of pure substance}}{\\text{total mass of sample}}\\times100$$"
+  ],
+  "universalFacts": [
+    "Haber process: about 15% conversion per pass with recycling; the overall yield is raised by recycling unreacted N₂ and H₂.",
+    "Typical undergraduate yields: aspirin 70–85%, soap 80–90%, esterification (equilibrium-limited) 60–70%.",
+    "Atom economy of addition reactions is 100%, whereas substitution reactions lose part of the reactant mass as by-product."
+  ],
+  "examples": [
+    "**Problem:** 100 g CaCO₃ gives 47.6 g CaO. Find the % yield. **Solution:** n(CaCO₃) = 1 mol → theoretical CaO = 56 g; % yield = 47.6/56 × 100 = 85%.",
+    "**Problem:** 7.0 g of ethene (0.25 mol) is hydrated to give 9.2 g ethanol. Find the % yield. **Solution:** theoretical ethanol = 0.25 × 46 = 11.5 g; % yield = 9.2/11.5 × 100 = 80%."
+  ],
+  "importantNotes": [
+    "Always quote the limiting reactant when explaining the theoretical yield — it is the only reactant that fixes it.",
+    "Mention purity separately: yield ≠ purity, and >100% means an impure or wet sample.",
+    "For reversible processes (Haber, esterification) state that equilibrium limits the yield and recycling is used to improve the overall figure."
+  ],
+  "visualType": "yield-calculations",
+  "tabGroup": "Stoichiometry-Learner-Notes"
 }

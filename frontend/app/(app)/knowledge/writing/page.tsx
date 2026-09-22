@@ -6,6 +6,7 @@ import {
   WRITING_COUNTS,
   getWritingTypesByCategory,
 } from "@/features/knowledge/writing";
+import { ProSectionBanner } from "@/features/knowledge/pro/renderers";
 
 const CATEGORY_ICONS: Record<string, typeof PenLine> = {
   "Paragraphs & Essays": PenLine,
@@ -46,6 +47,8 @@ export default function WritingPage() {
           </p>
         </div>
       </div>
+
+      <ProSectionBanner sectionId="writing" />
 
       {/* Grammar — routed separately */}
       <Link

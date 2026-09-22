@@ -175,13 +175,23 @@ export function CurriculumTracksHub({ class11, class12 }: CurriculumTracksHubPro
                   Syllabus
                 </Link>
 
-                <Link
-                  href={`/lab?subject=${subject.slug}`}
-                  className="flex items-center justify-center gap-1.5 rounded-xl border border-border/60 bg-card hover:bg-muted/70 text-muted-foreground hover:text-foreground py-2 px-3 text-xs font-medium transition-colors"
-                >
-                  <FlaskConical className="h-3.5 w-3.5 text-sky-400" />
-                  Subject Lab
-                </Link>
+                {["physics", "chemistry", "biology"].includes(subject.slug) ? (
+                  <Link
+                    href={`/practical/${subject.slug}`}
+                    className="flex items-center justify-center gap-1.5 rounded-xl border border-emerald-500/40 bg-emerald-500/10 hover:bg-emerald-500 hover:text-white text-emerald-600 dark:text-emerald-400 py-2 px-3 text-xs font-semibold transition-all shadow-sm"
+                  >
+                    <FlaskConical className="h-3.5 w-3.5" />
+                    Practicals
+                  </Link>
+                ) : (
+                  <Link
+                    href={`/lab?subject=${subject.slug}`}
+                    className="flex items-center justify-center gap-1.5 rounded-xl border border-border/60 bg-card hover:bg-muted/70 text-muted-foreground hover:text-foreground py-2 px-3 text-xs font-medium transition-colors"
+                  >
+                    <FlaskConical className="h-3.5 w-3.5 text-sky-400" />
+                    Subject Lab
+                  </Link>
+                )}
               </div>
             </div>
           );
@@ -189,7 +199,7 @@ export function CurriculumTracksHub({ class11, class12 }: CurriculumTracksHubPro
       </div>
 
       {/* Curriculum Secondary Portals Banner */}
-      <div className="mt-8 rounded-3xl border border-border/70 bg-gradient-to-r from-card via-muted/30 to-card p-5 grid grid-cols-2 sm:grid-cols-4 gap-3">
+      <div className="mt-8 rounded-3xl border border-border/70 bg-gradient-to-r from-card via-muted/30 to-card p-5 grid grid-cols-2 sm:grid-cols-5 gap-3">
         <Link
           href="/levels"
           className="group flex flex-col p-3.5 rounded-2xl border border-border/50 bg-card hover:border-primary/40 hover:shadow-sm transition-all"
@@ -213,6 +223,17 @@ export function CurriculumTracksHub({ class11, class12 }: CurriculumTracksHubPro
         </Link>
 
         <Link
+          href="/practical"
+          className="group flex flex-col p-3.5 rounded-2xl border border-emerald-500/30 bg-emerald-500/5 hover:border-emerald-500/60 hover:bg-emerald-500/10 hover:shadow-sm transition-all"
+        >
+          <div className="flex items-center gap-2 text-xs font-semibold text-foreground group-hover:text-emerald-500">
+            <FlaskConical className="h-4 w-4 text-emerald-500" />
+            Practical Labs
+          </div>
+          <p className="text-[11px] text-muted-foreground mt-1">Virtual apparatus, calculations &amp; viva voce</p>
+        </Link>
+
+        <Link
           href="/legend"
           className="group flex flex-col p-3.5 rounded-2xl border border-border/50 bg-card hover:border-primary/40 hover:shadow-sm transition-all"
         >
@@ -225,7 +246,7 @@ export function CurriculumTracksHub({ class11, class12 }: CurriculumTracksHubPro
 
         <Link
           href="/syllabus"
-          className="group flex flex-col p-3.5 rounded-2xl border border-border/50 bg-card hover:border-primary/40 hover:shadow-sm transition-all"
+          className="group flex flex-col p-3.5 rounded-2xl border border-border/50 bg-card hover:border-primary/40 hover:shadow-sm transition-all col-span-2 sm:col-span-1"
         >
           <div className="flex items-center gap-2 text-xs font-semibold text-foreground group-hover:text-primary">
             <FileText className="h-4 w-4 text-sky-400" />

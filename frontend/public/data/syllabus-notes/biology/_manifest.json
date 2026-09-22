@@ -3,181 +3,236 @@
     "unitSlug": "biomolecules-and-cell-biology",
     "topicSlug": "biomolecules-functions",
     "title": "Biomolecules: Classification, Structure & Physiological Functions",
-    "noteCount": 1,
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "01-biomolecules-functions.json"
+    "filename": "01-biomolecules-functions.json",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "biomolecules-and-cell-biology",
     "topicSlug": "biomolecules-introduction-and-functions-of-carbohydrates-proteins-lipids-nucleic-acids-minerals-enzymes-and-water",
     "title": "Biomolecules — Introduction and Functions",
-    "noteCount": 1,
+    "noteCount": 7,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-biomolecules-introduction-and-functions.json"
+    "duplicateType": 2,
+    "filename": "01-biomolecules-introduction-and-functions.json",
+    "tabGroup": "01-biomolecules-introduction-and-functions",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "biomolecules-and-cell-biology",
     "topicSlug": "cell-division",
     "title": "Cell Division",
-    "noteCount": 1,
+    "noteCount": 8,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "04-cell-division.json"
+    "duplicateType": 2,
+    "filename": "04-cell-division.json",
+    "tabGroup": "04-cell-division",
+    "hasMcqs": true,
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "biomolecules-and-cell-biology",
     "topicSlug": "cell-division-concept-of-cell-cycle-types-of-cell-division-and-significances",
     "title": "Cell Division — Cycle, Mitosis and Meiosis",
-    "noteCount": 1,
+    "noteCount": 12,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "04-cell-division-concept-of-cell-cycle-types-of-cell-division-and-significances.json"
+    "duplicateType": 2,
+    "filename": "04-cell-division-concept-of-cell-cycle-types-of-cell-division-and-significances.json",
+    "tabGroup": "04-cell-division-concept-of-cell-cycle-types-of-cell-division-and-significances",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "biomolecules-and-cell-biology",
     "topicSlug": "cell-introduction",
     "title": "Cell: Introduction",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-cell-introduction.json"
-  },
-  {
-    "unitSlug": "biomolecules-and-cell-biology",
-    "topicSlug": "cell-introduction-of-cell-concepts-of-prokaryotic-and-eukaryotic-cells",
-    "title": "Cell — Prokaryotic and Eukaryotic",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-cell-introduction-prokaryotic-and-eukaryotic.json"
-  },
-  {
-    "unitSlug": "biomolecules-and-cell-biology",
-    "topicSlug": "cell-introduction-of-cell-concepts-of-prokaryotic-and-eukaryotic-cells",
-    "title": "Cell — Prokaryotic and Eukaryotic",
-    "noteCount": 1,
+    "noteCount": 6,
     "source": "ravikishan",
     "duplicateType": 2,
-    "filename": "02-cell-introduction-prokaryotic-and-eukaryotic-2-2.json"
+    "filename": "02-cell-introduction.json",
+    "tabGroup": "02-cell-introduction",
+    "hasMcqs": true,
+    "universalFactsCount": 3
+  },
+  {
+    "unitSlug": "biomolecules-and-cell-biology",
+    "topicSlug": "cell-introduction-of-cell-concepts-of-prokaryotic-and-eukaryotic-cells",
+    "title": "Cell — Prokaryotic and Eukaryotic",
+    "noteCount": 6,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "02-cell-introduction-prokaryotic-and-eukaryotic.json",
+    "hasMcqs": true,
+    "universalFactsCount": 3
+  },
+  {
+    "unitSlug": "biomolecules-and-cell-biology",
+    "topicSlug": "cell-introduction-of-cell-concepts-of-prokaryotic-and-eukaryotic-cells",
+    "title": "Cell — Prokaryotic and Eukaryotic",
+    "noteCount": 8,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "02-cell-introduction-prokaryotic-and-eukaryotic-2-2.json",
+    "tabGroup": "cell-introduction-of-cell-concepts-of-prokaryotic-and-eukaryotic-cells",
+    "hasMcqs": false,
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "biomolecules-and-cell-biology",
     "topicSlug": "detail-structure-of-eukaryotic-cells",
     "title": "Eukaryotic Cell Organelles",
-    "noteCount": 1,
+    "noteCount": 14,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "03-detail-structure-of-eukaryotic-cells.json"
+    "duplicateType": 2,
+    "filename": "03-detail-structure-of-eukaryotic-cells.json",
+    "tabGroup": "03-detail-structure-of-eukaryotic-cells",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "biomolecules-and-cell-biology",
     "topicSlug": "eukaryotic-cell-structure",
     "title": "Eukaryotic Cell Structure",
-    "noteCount": 1,
+    "noteCount": 11,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "03-eukaryotic-cell-structure.json"
+    "duplicateType": 2,
+    "filename": "03-eukaryotic-cell-structure.json",
+    "tabGroup": "03-eukaryotic-cell-structure",
+    "hasMcqs": true,
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "biota-and-environment",
     "topicSlug": "animal-adaptation",
     "title": "Animal Adaptation",
-    "noteCount": 1,
+    "noteCount": 9,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-animal-adaptation.json"
+    "duplicateType": 2,
+    "filename": "01-animal-adaptation.json",
+    "tabGroup": "01-animal-adaptation",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "biota-and-environment",
     "topicSlug": "animal-adaptation-aquatic-terrestrial-and-volant-adaptation",
     "title": "Animal Adaptations — Aquatic, Terrestrial and Volant",
-    "noteCount": 1,
+    "noteCount": 9,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-animal-adaptation-aquatic-terrestrial-and-volant-adaptation.json"
+    "duplicateType": 2,
+    "filename": "01-animal-adaptation-aquatic-terrestrial-and-volant-adaptation.json",
+    "tabGroup": "01-animal-adaptation-aquatic-terrestrial-and-volant-adaptation",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "biota-and-environment",
     "topicSlug": "animal-behavior",
     "title": "Animal Behavior",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-animal-behavior.json"
-  },
-  {
-    "unitSlug": "biota-and-environment",
-    "topicSlug": "animal-behavior-reflex-action-taxes-dominance-and-leadership-fish-and-bird-migration",
-    "title": "Animal Behaviour and Migration",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-animal-behavior-reflex-action-taxes-dominance-and-leadership-fish-and-bird-migration.json"
-  },
-  {
-    "unitSlug": "biota-and-environment",
-    "topicSlug": "animal-behavior-reflex-action-taxes-dominance-and-leadership-fish-and-bird-migration",
-    "title": "Animal Behaviour and Migration",
-    "noteCount": 1,
+    "noteCount": 9,
     "source": "ravikishan",
     "duplicateType": 2,
-    "filename": "02-animal-behavior-reflex-action-taxes-dominance-and-leadership-fish-and-bird-migration-2-2.json"
+    "filename": "02-animal-behavior.json",
+    "tabGroup": "02-animal-behavior",
+    "hasMcqs": true,
+    "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "biota-and-environment",
+    "topicSlug": "animal-behavior-reflex-action-taxes-dominance-and-leadership-fish-and-bird-migration",
+    "title": "Animal Behaviour and Migration",
+    "noteCount": 9,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "02-animal-behavior-reflex-action-taxes-dominance-and-leadership-fish-and-bird-migration.json",
+    "hasMcqs": true,
+    "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "biota-and-environment",
+    "topicSlug": "animal-behavior-reflex-action-taxes-dominance-and-leadership-fish-and-bird-migration",
+    "title": "Animal Behaviour and Migration",
+    "noteCount": 8,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "02-animal-behavior-reflex-action-taxes-dominance-and-leadership-fish-and-bird-migration-2-2.json",
+    "tabGroup": "animal-behavior-reflex-action-taxes-dominance-and-leadership-fish-and-bird-migration",
+    "hasMcqs": false,
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "biota-and-environment",
     "topicSlug": "environmental-pollution",
     "title": "Environmental Pollution",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "03-environmental-pollution.json"
-  },
-  {
-    "unitSlug": "biota-and-environment",
-    "topicSlug": "environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution-pesticides-and-their-effects",
-    "title": "Environmental Pollution and Pesticides",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "03-environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution-pesticides-and-their-effects.json"
-  },
-  {
-    "unitSlug": "biota-and-environment",
-    "topicSlug": "environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution-pesticides-and-their-effects",
-    "title": "Environmental Pollution and Pesticides",
-    "noteCount": 1,
+    "noteCount": 10,
     "source": "ravikishan",
     "duplicateType": 2,
-    "filename": "03-environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution-pesticides-and-their-effects-2-2.json"
+    "filename": "03-environmental-pollution.json",
+    "tabGroup": "03-environmental-pollution",
+    "hasMcqs": true,
+    "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "biota-and-environment",
+    "topicSlug": "environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution-pesticides-and-their-effects",
+    "title": "Environmental Pollution and Pesticides",
+    "noteCount": 10,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "03-environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution-pesticides-and-their-effects.json",
+    "hasMcqs": true,
+    "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "biota-and-environment",
+    "topicSlug": "environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution-pesticides-and-their-effects",
+    "title": "Environmental Pollution and Pesticides",
+    "noteCount": 8,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "03-environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution-pesticides-and-their-effects-2-2.json",
+    "tabGroup": "environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution-pesticides-and-their-effects",
+    "hasMcqs": false,
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "conservation-biology",
     "topicSlug": "biodiversity-conservation",
     "title": "Biodiversity and Conservation",
-    "noteCount": 1,
+    "noteCount": 11,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-biodiversity-conservation.json"
+    "duplicateType": 2,
+    "filename": "01-biodiversity-conservation.json",
+    "tabGroup": "01-biodiversity-conservation",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "conservation-biology",
     "topicSlug": "conservation-biology-concept-of-biodiversity-biodiversity-conservation",
     "title": "Conservation Biology â€” Biodiversity and Protected Areas",
-    "noteCount": 1,
+    "noteCount": 11,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "01-conservation-biology-concept-of-biodiversity-biodiversity-conservation.json"
+    "filename": "01-conservation-biology-concept-of-biodiversity-biodiversity-conservation.json",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "conservation-biology",
     "topicSlug": "conservation-biology-concept-of-biodiversity-biodiversity-conservation",
     "title": "Conservation Biology â€” Biodiversity and Protected Areas",
-    "noteCount": 1,
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 2,
-    "filename": "01-conservation-biology-concept-of-biodiversity-biodiversity-conservation-2-2.json"
+    "filename": "01-conservation-biology-concept-of-biodiversity-biodiversity-conservation-2-2.json",
+    "tabGroup": "conservation-biology-concept-of-biodiversity-biodiversity-conservation",
+    "hasMcqs": false,
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "conservation-biology",
@@ -186,61 +241,57 @@
     "noteCount": 1,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "02-national-parks-wildlife-reserves-conservation-areas-biodiversity-hotspots-wetland-and-ramsar-sites-wildlife-importance-causes-of-extinction-and-conservation-strategies-iucn-categories-of-threatened-species-endangered-species-in-nepal.json"
+    "filename": "02-national-parks-wildlife-reserves-conservation-areas-biodiversity-hotspots-wetland-and-ramsar-sites-wildlife-importance-causes-of-extinction-and-conservation-strategies-iucn-categories-of-threatened-species-endangered-species-in-nepal.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
   },
   {
     "unitSlug": "conservation-biology",
     "topicSlug": "national-parks-wildlife-reserves-conservation-areas-biodiversity-hotspots-wetland-and-ramsar-sites",
     "title": "Protected Areas, Biodiversity Hotspots and Endangered Species",
-    "noteCount": 1,
+    "noteCount": 11,
     "source": "ravikishan",
     "duplicateType": 2,
-    "filename": "02-protected-areas-conservation-2.json"
+    "filename": "02-protected-areas-conservation-2.json",
+    "tabGroup": "national-parks-wildlife-reserves-conservation-areas-biodiversity-hotspots-wetland-and-ramsar-sites",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "conservation-biology",
     "topicSlug": "national-parks-wildlife-reserves-conservation-areas-biodiversity-hotspots-wetland-and-ramsar-sites",
     "title": "Protected Areas, Biodiversity Hotspots and Endangered Species",
-    "noteCount": 1,
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 3,
-    "filename": "02-national-parks-wildlife-reserves-conservation-areas-biodiversity-hotspots-wetland-and-ramsar-sites-wildlife-importance-causes-of-extinction-and-conservation-strategies-iucn-categories-of-threatened-species-endangered-species-in-nepal-2-3.json"
+    "filename": "02-national-parks-wildlife-reserves-conservation-areas-biodiversity-hotspots-wetland-and-ramsar-sites-wildlife-importance-causes-of-extinction-and-conservation-strategies-iucn-categories-of-threatened-species-endangered-species-in-nepal-2-3.json",
+    "tabGroup": "national-parks-wildlife-reserves-conservation-areas-biodiversity-hotspots-wetland-and-ramsar-sites",
+    "hasMcqs": false,
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "conservation-biology",
     "topicSlug": "protected-areas",
     "title": "Protected Areas and Wildlife",
-    "noteCount": 1,
+    "noteCount": 11,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-protected-areas.json"
+    "duplicateType": 2,
+    "filename": "02-protected-areas.json",
+    "tabGroup": "02-protected-areas",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "ecology",
     "topicSlug": "biogeochemical-cycles",
     "title": "Biogeochemical Cycles",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "03-biogeochemical-cycles.json"
-  },
-  {
-    "unitSlug": "ecology",
-    "topicSlug": "biogeochemical-cycles-carbon-and-nitrogen-cycles-concept-of-succession",
-    "title": "Biogeochemical Cycles and Ecological Succession",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "03-biogeochemical-cycles-carbon-and-nitrogen-cycles-concept-of-succession.json"
-  },
-  {
-    "unitSlug": "ecology",
-    "topicSlug": "biogeochemical-cycles-carbon-and-nitrogen-cycles-concept-of-succession",
-    "title": "Biogeochemical Cycles and Ecological Succession",
-    "noteCount": 1,
+    "noteCount": 10,
     "source": "ravikishan",
     "duplicateType": 2,
-    "filename": "03-biogeochemical-cycles-succession-2.json"
+    "filename": "03-biogeochemical-cycles.json",
+    "tabGroup": "03-biogeochemical-cycles",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "ecology",
@@ -248,35 +299,46 @@
     "title": "Biogeochemical Cycles and Ecological Succession",
     "noteCount": 1,
     "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "03-biogeochemical-cycles-carbon-and-nitrogen-cycles-concept-of-succession.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "ecology",
+    "topicSlug": "biogeochemical-cycles-carbon-and-nitrogen-cycles-concept-of-succession",
+    "title": "Biogeochemical Cycles and Ecological Succession",
+    "noteCount": 10,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "03-biogeochemical-cycles-succession-2.json",
+    "tabGroup": "biogeochemical-cycles-carbon-and-nitrogen-cycles-concept-of-succession",
+    "hasMcqs": true,
+    "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "ecology",
+    "topicSlug": "biogeochemical-cycles-carbon-and-nitrogen-cycles-concept-of-succession",
+    "title": "Biogeochemical Cycles and Ecological Succession",
+    "noteCount": 8,
+    "source": "ravikishan",
     "duplicateType": 3,
-    "filename": "03-biogeochemical-cycles-carbon-and-nitrogen-cycles-concept-of-succession-2-3.json"
+    "filename": "03-biogeochemical-cycles-carbon-and-nitrogen-cycles-concept-of-succession-2-3.json",
+    "tabGroup": "biogeochemical-cycles-carbon-and-nitrogen-cycles-concept-of-succession",
+    "hasMcqs": false,
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "ecology",
     "topicSlug": "ecological-adaptation",
     "title": "Ecological Adaptation",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "04-ecological-adaptation.json"
-  },
-  {
-    "unitSlug": "ecology",
-    "topicSlug": "ecological-adaptation-concept-of-adaptation-hydrophytes-and-xerophytes",
-    "title": "Ecological Adaptations — Hydrophytes and Xerophytes",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "04-ecological-adaptation-concept-of-adaptation-hydrophytes-and-xerophytes.json"
-  },
-  {
-    "unitSlug": "ecology",
-    "topicSlug": "ecological-adaptation-concept-of-adaptation-hydrophytes-and-xerophytes",
-    "title": "Ecological Adaptations — Hydrophytes and Xerophytes",
-    "noteCount": 1,
+    "noteCount": 9,
     "source": "ravikishan",
     "duplicateType": 2,
-    "filename": "04-ecological-adaptation-hydrophytes-xerophytes-2.json"
+    "filename": "04-ecological-adaptation.json",
+    "tabGroup": "04-ecological-adaptation",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "ecology",
@@ -284,26 +346,57 @@
     "title": "Ecological Adaptations — Hydrophytes and Xerophytes",
     "noteCount": 1,
     "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "04-ecological-adaptation-concept-of-adaptation-hydrophytes-and-xerophytes.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "ecology",
+    "topicSlug": "ecological-adaptation-concept-of-adaptation-hydrophytes-and-xerophytes",
+    "title": "Ecological Adaptations — Hydrophytes and Xerophytes",
+    "noteCount": 9,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "04-ecological-adaptation-hydrophytes-xerophytes-2.json",
+    "tabGroup": "ecological-adaptation-concept-of-adaptation-hydrophytes-and-xerophytes",
+    "hasMcqs": true,
+    "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "ecology",
+    "topicSlug": "ecological-adaptation-concept-of-adaptation-hydrophytes-and-xerophytes",
+    "title": "Ecological Adaptations — Hydrophytes and Xerophytes",
+    "noteCount": 8,
+    "source": "ravikishan",
     "duplicateType": 3,
-    "filename": "04-ecological-adaptation-concept-of-adaptation-hydrophytes-and-xerophytes-2-3.json"
+    "filename": "04-ecological-adaptation-concept-of-adaptation-hydrophytes-and-xerophytes-2-3.json",
+    "tabGroup": "ecological-adaptation-concept-of-adaptation-hydrophytes-and-xerophytes",
+    "hasMcqs": false,
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "ecology",
     "topicSlug": "ecological-imbalances",
     "title": "Ecological Imbalances",
-    "noteCount": 1,
+    "noteCount": 10,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "05-ecological-imbalances.json"
+    "duplicateType": 2,
+    "filename": "05-ecological-imbalances.json",
+    "tabGroup": "05-ecological-imbalances",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "ecology",
     "topicSlug": "ecological-imbalances-greenhouse-effects-and-climate-change-depletion-of-ozone-layer-acid-rain-and-biological-invasion",
     "title": "Ecological Imbalances — Pollution and Climate Change",
-    "noteCount": 1,
+    "noteCount": 10,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "05-ecological-imbalances-climate-change.json"
+    "filename": "05-ecological-imbalances-climate-change.json",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "ecology",
@@ -312,43 +405,34 @@
     "noteCount": 1,
     "source": "ravikishan",
     "duplicateType": 2,
-    "filename": "05-ecological-imbalances-greenhouse-effects-and-climate-change-depletion-of-ozone-layer-acid-rain-and-biological-invasion-2.json"
+    "filename": "05-ecological-imbalances-greenhouse-effects-and-climate-change-depletion-of-ozone-layer-acid-rain-and-biological-invasion-2.json",
+    "tabGroup": "ecological-imbalances-greenhouse-effects-and-climate-change-depletion-of-ozone-layer-acid-rain-and-biological-invasion",
+    "hasMcqs": true,
+    "universalFactsCount": 1
   },
   {
     "unitSlug": "ecology",
     "topicSlug": "ecological-imbalances-greenhouse-effects-and-climate-change-depletion-of-ozone-layer-acid-rain-and-biological-invasion",
     "title": "Ecological Imbalances — Pollution and Climate Change",
-    "noteCount": 1,
+    "noteCount": 8,
     "source": "ravikishan",
     "duplicateType": 3,
-    "filename": "05-ecological-imbalances-greenhouse-effects-and-climate-change-depletion-of-ozone-layer-acid-rain-and-biological-invasion-2-3.json"
+    "filename": "05-ecological-imbalances-greenhouse-effects-and-climate-change-depletion-of-ozone-layer-acid-rain-and-biological-invasion-2-3.json",
+    "tabGroup": "ecological-imbalances-greenhouse-effects-and-climate-change-depletion-of-ozone-layer-acid-rain-and-biological-invasion",
+    "hasMcqs": false,
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "ecology",
     "topicSlug": "ecosystem-ecology",
     "title": "Ecosystem Ecology",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-ecosystem-ecology.json"
-  },
-  {
-    "unitSlug": "ecology",
-    "topicSlug": "ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions-concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem",
-    "title": "Ecology — Concepts and Ecosystems",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions-concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem.json"
-  },
-  {
-    "unitSlug": "ecology",
-    "topicSlug": "ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions-concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem",
-    "title": "Ecology — Concepts and Ecosystems",
-    "noteCount": 1,
+    "noteCount": 9,
     "source": "ravikishan",
     "duplicateType": 2,
-    "filename": "01-ecosystem-ecology-detailed-2.json"
+    "filename": "01-ecosystem-ecology.json",
+    "tabGroup": "01-ecosystem-ecology",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "ecology",
@@ -356,8 +440,34 @@
     "title": "Ecology — Concepts and Ecosystems",
     "noteCount": 1,
     "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "01-ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions-concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "ecology",
+    "topicSlug": "ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions-concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem",
+    "title": "Ecology — Concepts and Ecosystems",
+    "noteCount": 9,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "01-ecosystem-ecology-detailed-2.json",
+    "tabGroup": "ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions-concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem",
+    "hasMcqs": true,
+    "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "ecology",
+    "topicSlug": "ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions-concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem",
+    "title": "Ecology — Concepts and Ecosystems",
+    "noteCount": 8,
+    "source": "ravikishan",
     "duplicateType": 3,
-    "filename": "01-ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions-concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem-2-3.json"
+    "filename": "01-ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions-concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem-2-3.json",
+    "tabGroup": "ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions-concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem",
+    "hasMcqs": false,
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "ecology",
@@ -366,439 +476,575 @@
     "noteCount": 1,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "02-food-chain-food-web-trophic-level-ecological-pyramids-productivity.json"
+    "filename": "02-food-chain-food-web-trophic-level-ecological-pyramids-productivity.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
   },
   {
     "unitSlug": "ecology",
     "topicSlug": "food-chain-food-web-trophic-level-ecological-pyramids-productivity",
     "title": "Food Chain, Food Web and Ecological Pyramids",
-    "noteCount": 1,
+    "noteCount": 10,
     "source": "ravikishan",
     "duplicateType": 2,
-    "filename": "02-food-chain-web-productivity-2.json"
+    "filename": "02-food-chain-web-productivity-2.json",
+    "tabGroup": "food-chain-food-web-trophic-level-ecological-pyramids-productivity",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "ecology",
     "topicSlug": "food-chain-food-web-trophic-level-ecological-pyramids-productivity",
     "title": "Food Chain, Food Web and Ecological Pyramids",
-    "noteCount": 1,
+    "noteCount": 8,
     "source": "ravikishan",
     "duplicateType": 3,
-    "filename": "02-food-chain-food-web-trophic-level-ecological-pyramids-productivity-2-3.json"
+    "filename": "02-food-chain-food-web-trophic-level-ecological-pyramids-productivity-2-3.json",
+    "tabGroup": "food-chain-food-web-trophic-level-ecological-pyramids-productivity",
+    "hasMcqs": false,
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "ecology",
     "topicSlug": "food-chain-web",
     "title": "Food Chain and Food Web",
-    "noteCount": 1,
+    "noteCount": 10,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-food-chain-web.json"
+    "duplicateType": 2,
+    "filename": "02-food-chain-web.json",
+    "tabGroup": "02-food-chain-web",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "evolutionary-biology",
     "topicSlug": "evidences-evolution",
     "title": "Evidences of Evolution",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-evidences-evolution.json"
-  },
-  {
-    "unitSlug": "evolutionary-biology",
-    "topicSlug": "evidences-of-evolution-morphological-anatomical-paleontological-embryological-and-biochemical",
-    "title": "Evidences of Evolution",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-evidences-of-evolution-morphological-anatomical-paleontological-embryological-and-biochemical.json"
-  },
-  {
-    "unitSlug": "evolutionary-biology",
-    "topicSlug": "evidences-of-evolution-morphological-anatomical-paleontological-embryological-and-biochemical",
-    "title": "Evidences of Evolution",
-    "noteCount": 1,
+    "noteCount": 8,
     "source": "ravikishan",
     "duplicateType": 2,
-    "filename": "02-evidences-of-evolution-morphological-anatomical-paleontological-embryological-and-biochemical-2-2.json"
+    "filename": "02-evidences-evolution.json",
+    "tabGroup": "02-evidences-evolution",
+    "hasMcqs": true,
+    "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "evolutionary-biology",
+    "topicSlug": "evidences-of-evolution-morphological-anatomical-paleontological-embryological-and-biochemical",
+    "title": "Evidences of Evolution",
+    "noteCount": 8,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "02-evidences-of-evolution-morphological-anatomical-paleontological-embryological-and-biochemical.json",
+    "hasMcqs": true,
+    "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "evolutionary-biology",
+    "topicSlug": "evidences-of-evolution-morphological-anatomical-paleontological-embryological-and-biochemical",
+    "title": "Evidences of Evolution",
+    "noteCount": 7,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "02-evidences-of-evolution-morphological-anatomical-paleontological-embryological-and-biochemical-2-2.json",
+    "tabGroup": "evidences-of-evolution-morphological-anatomical-paleontological-embryological-and-biochemical",
+    "hasMcqs": false,
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "evolutionary-biology",
     "topicSlug": "human-evolution",
     "title": "Human Evolution",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "04-human-evolution.json"
-  },
-  {
-    "unitSlug": "evolutionary-biology",
-    "topicSlug": "life-and-its-origin-oparin-haldane-theory-miller-and-urey-s-experiment",
-    "title": "Evolutionary Biology — Origin and Evidence",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-life-and-its-origin-oparin-haldane-theory-miller-and-urey-s-experiment.json"
-  },
-  {
-    "unitSlug": "evolutionary-biology",
-    "topicSlug": "life-and-its-origin-oparin-haldane-theory-miller-and-urey-s-experiment",
-    "title": "Evolutionary Biology — Origin and Evidence",
-    "noteCount": 1,
+    "noteCount": 8,
     "source": "ravikishan",
     "duplicateType": 2,
-    "filename": "01-life-and-its-origin-oparin-haldane-theory-miller-and-urey-s-experiment-2-2.json"
+    "filename": "04-human-evolution.json",
+    "tabGroup": "04-human-evolution",
+    "hasMcqs": true,
+    "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "evolutionary-biology",
+    "topicSlug": "life-and-its-origin-oparin-haldane-theory-miller-and-urey-s-experiment",
+    "title": "Evolutionary Biology — Origin and Evidence",
+    "noteCount": 7,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "01-life-and-its-origin-oparin-haldane-theory-miller-and-urey-s-experiment.json",
+    "hasMcqs": true,
+    "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "evolutionary-biology",
+    "topicSlug": "life-and-its-origin-oparin-haldane-theory-miller-and-urey-s-experiment",
+    "title": "Evolutionary Biology — Origin and Evidence",
+    "noteCount": 8,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "01-life-and-its-origin-oparin-haldane-theory-miller-and-urey-s-experiment-2-2.json",
+    "tabGroup": "life-and-its-origin-oparin-haldane-theory-miller-and-urey-s-experiment",
+    "hasMcqs": false,
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "evolutionary-biology",
     "topicSlug": "origin-life",
     "title": "Origin of Life",
-    "noteCount": 1,
+    "noteCount": 7,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-origin-life.json"
+    "duplicateType": 2,
+    "filename": "01-origin-life.json",
+    "tabGroup": "01-origin-life",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "evolutionary-biology",
     "topicSlug": "theories-evolution",
     "title": "Theories of Evolution",
-    "noteCount": 1,
+    "noteCount": 6,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "03-theories-evolution.json"
+    "duplicateType": 2,
+    "filename": "03-theories-evolution.json",
+    "tabGroup": "03-theories-evolution",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "evolutionary-biology",
     "topicSlug": "theories-of-evolution-lamarckism-darwinism-and-concept-of-neo-darwinism",
     "title": "Theories of Evolution",
-    "noteCount": 1,
+    "noteCount": 6,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "03-theories-of-evolution-lamarckism-darwinism-and-concept-of-neo-darwinism.json"
+    "filename": "03-theories-of-evolution-lamarckism-darwinism-and-concept-of-neo-darwinism.json",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "evolutionary-biology",
     "topicSlug": "theories-of-evolution-lamarckism-darwinism-and-concept-of-neo-darwinism",
     "title": "Theories of Evolution",
-    "noteCount": 1,
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 2,
-    "filename": "03-theories-of-evolution-lamarckism-darwinism-and-concept-of-neo-darwinism-2-2.json"
+    "filename": "03-theories-of-evolution-lamarckism-darwinism-and-concept-of-neo-darwinism-2-2.json",
+    "tabGroup": "theories-of-evolution-lamarckism-darwinism-and-concept-of-neo-darwinism",
+    "hasMcqs": false,
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "faunal-diversity",
     "topicSlug": "animalia-level-of-organization-body-plan-body-symmetry-body-cavity-and-segmentation-diagnostic-features-and-classification-of-phyla",
     "title": "Animal Kingdom — Diagnostic Features and Classification",
-    "noteCount": 1,
+    "noteCount": 8,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "02-animalia-level-of-organization-body-plan-body-symmetry-body-cavity-and-segmentation-in-animals-diagnostic-features-and-classification-of-phyla-up-to-class.json"
+    "filename": "02-animalia-level-of-organization-body-plan-body-symmetry-body-cavity-and-segmentation-in-animals-diagnostic-features-and-classification-of-phyla-up-to-class.json",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "faunal-diversity",
     "topicSlug": "animalia-level-of-organization-body-plan-body-symmetry-body-cavity-and-segmentation-diagnostic-features-and-classification-of-phyla",
     "title": "Animal Kingdom — Diagnostic Features and Classification",
-    "noteCount": 1,
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 2,
-    "filename": "02-animalia-level-of-organization-body-plan-body-symmetry-body-cavity-and-segmentation-in-animals-diagnostic-features-and-classification-of-phyla-up-to-class-2-2.json"
+    "filename": "02-animalia-level-of-organization-body-plan-body-symmetry-body-cavity-and-segmentation-in-animals-diagnostic-features-and-classification-of-phyla-up-to-class-2-2.json",
+    "tabGroup": "animalia-level-of-organization-body-plan-body-symmetry-body-cavity-and-segmentation-diagnostic-features-and-classification-of-phyla",
+    "hasMcqs": false,
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "faunal-diversity",
     "topicSlug": "animalia-phyla",
     "title": "Animalia: Phyla Classification",
-    "noteCount": 1,
+    "noteCount": 8,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-animalia-phyla.json"
+    "duplicateType": 2,
+    "filename": "02-animalia-phyla.json",
+    "tabGroup": "02-animalia-phyla",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "faunal-diversity",
     "topicSlug": "earthworm",
     "title": "Earthworm",
-    "noteCount": 1,
+    "noteCount": 7,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "03-earthworm.json"
+    "duplicateType": 2,
+    "filename": "03-earthworm.json",
+    "tabGroup": "03-earthworm",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "faunal-diversity",
     "topicSlug": "earthworm-excretory-nervous-and-reproductive-systems",
     "title": "Earthworm — Excretory, Nervous and Reproductive Systems",
-    "noteCount": 1,
+    "noteCount": 7,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "04-earthworm-excretory-nervous-and-reproductive-systems.json"
+    "duplicateType": 2,
+    "filename": "04-earthworm-excretory-nervous-and-reproductive-systems.json",
+    "tabGroup": "04-earthworm-excretory-nervous-and-reproductive-systems",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "faunal-diversity",
     "topicSlug": "frog",
     "title": "Frog",
-    "noteCount": 1,
+    "noteCount": 9,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "04-frog.json"
+    "duplicateType": 2,
+    "filename": "04-frog.json",
+    "tabGroup": "04-frog",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "faunal-diversity",
     "topicSlug": "frog-digestive-system-circulatory-system-respiratory-system",
     "title": "Frog — Digestive, Circulatory and Respiratory Systems",
-    "noteCount": 1,
+    "noteCount": 7,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "06-frog-digestive-system-blood-vascular-system-structure-and-working-mechanism-of-heart-respiratory-system-respiratory-organs-and-physiology-of-respiration.json"
+    "duplicateType": 2,
+    "filename": "06-frog-digestive-system-blood-vascular-system-structure-and-working-mechanism-of-heart-respiratory-system-respiratory-organs-and-physiology-of-respiration.json",
+    "tabGroup": "06-frog-digestive-system-blood-vascular-system-structure-and-working-mechanism-of-heart-respiratory-system-respiratory-organs-and-physiology-of-respiration",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "faunal-diversity",
     "topicSlug": "frog-habit-and-habitat-external-features",
     "title": "Frog — Habit, Habitat and External Features",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "05-frog-habit-and-habitat-external-features.json"
-  },
-  {
-    "unitSlug": "faunal-diversity",
-    "topicSlug": "frog-reproductive-system-male-and-female-reproductive-organs",
-    "title": "Frog — Reproductive System",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "07-frog-reproductive-system-male-and-female-reproductive-organs.json"
-  },
-  {
-    "unitSlug": "faunal-diversity",
-    "topicSlug": "frog-reproductive-system-male-and-female-reproductive-organs",
-    "title": "Frog — Reproductive System",
-    "noteCount": 1,
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 2,
-    "filename": "07-frog-reproductive-system-male-and-female-reproductive-organs-2-2.json"
+    "filename": "05-frog-habit-and-habitat-external-features.json",
+    "tabGroup": "05-frog-habit-and-habitat-external-features",
+    "hasMcqs": true,
+    "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "faunal-diversity",
+    "topicSlug": "frog-reproductive-system-male-and-female-reproductive-organs",
+    "title": "Frog — Reproductive System",
+    "noteCount": 8,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "07-frog-reproductive-system-male-and-female-reproductive-organs.json",
+    "hasMcqs": true,
+    "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "faunal-diversity",
+    "topicSlug": "frog-reproductive-system-male-and-female-reproductive-organs",
+    "title": "Frog — Reproductive System",
+    "noteCount": 5,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "07-frog-reproductive-system-male-and-female-reproductive-organs-2-2.json",
+    "tabGroup": "frog-reproductive-system-male-and-female-reproductive-organs",
+    "hasMcqs": false,
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "faunal-diversity",
     "topicSlug": "protista-outline-classification-protozoa-diagnostic-features-and-classification-up-to-class-with-examples",
     "title": "Faunal Diversity — Animal Kingdom Classification",
-    "noteCount": 1,
+    "noteCount": 39,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "01-protista-outline-classification-protozoa-diagnostic-features-and-classification-up-to-class-with-examples.json"
+    "filename": "01-protista-outline-classification-protozoa-diagnostic-features-and-classification-up-to-class-with-examples.json",
+    "hasMcqs": true,
+    "universalFactsCount": 12
   },
   {
     "unitSlug": "faunal-diversity",
     "topicSlug": "protista-protozoa",
     "title": "Protista and Protozoa",
-    "noteCount": 1,
+    "noteCount": 7,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-protista-protozoa.json"
+    "duplicateType": 2,
+    "filename": "01-protista-protozoa.json",
+    "tabGroup": "01-protista-protozoa",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "floral-diversity",
     "topicSlug": "algae",
     "title": "Algae",
-    "noteCount": 1,
+    "noteCount": 6,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "03-algae.json"
+    "duplicateType": 2,
+    "filename": "03-algae.json",
+    "tabGroup": "03-algae",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "floral-diversity",
     "topicSlug": "angiosperm-morphology-of-root-stem-leaves-inflorescences-flowers-and-fruit-taxonomic-study-definition-taxonomic-hierarchy-classification-systems-of-angiosperms-angiosperm-families-with-economic-importance-brassicaceae-fabaceae-solanaceae-and-liliaceae",
     "title": "Angiosperm â€” Morphology and Taxonomic Study",
-    "noteCount": 1,
+    "noteCount": 10,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "07-angiosperm-morphology-and-taxonomic-study.json"
+    "duplicateType": 2,
+    "filename": "07-angiosperm-morphology-and-taxonomic-study.json",
+    "tabGroup": "07-angiosperm-morphology-and-taxonomic-study",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "floral-diversity",
     "topicSlug": "angiosperms",
     "title": "Angiosperms",
-    "noteCount": 1,
+    "noteCount": 10,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "07-angiosperms.json"
+    "duplicateType": 2,
+    "filename": "07-angiosperms.json",
+    "tabGroup": "07-angiosperms",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "floral-diversity",
     "topicSlug": "bryophyta-general-introduction-characteristic-features-of-liverworts-hornworts-and-moss-morphological-structure-and-reproduction-of-marchantia-economic-importance-of-bryophytes",
     "title": "Bryophyta — Liverworts, Hornworts and Mosses",
-    "noteCount": 1,
+    "noteCount": 11,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "04-bryophytes-detailed.json"
+    "duplicateType": 2,
+    "filename": "04-bryophytes-detailed.json",
+    "tabGroup": "04-bryophyta-general-introduction-characteristic-features-of-liverworts-hornworts-and-moss-morphological-structure-and-reproduction-of-marchantia-economic-importance-of-bryophytes",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "floral-diversity",
     "topicSlug": "bryophytes",
     "title": "Bryophytes",
-    "noteCount": 1,
+    "noteCount": 8,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "04-bryophytes.json"
+    "duplicateType": 2,
+    "filename": "04-bryophytes.json",
+    "tabGroup": "04-bryophytes",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "floral-diversity",
     "topicSlug": "fungi",
     "title": "Fungi",
-    "noteCount": 1,
+    "noteCount": 6,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-fungi.json"
+    "duplicateType": 2,
+    "filename": "02-fungi.json",
+    "tabGroup": "02-fungi",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "floral-diversity",
     "topicSlug": "fungi-general-introduction-characteristic-features-of-phycomycetes-ascomycetes-basidiomycetes-and-deuteromycetes",
     "title": "Fungi â€” General Features and Types",
-    "noteCount": 1,
+    "noteCount": 6,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-fungi-general-introduction-and-characteristic-features.json"
+    "duplicateType": 2,
+    "filename": "02-fungi-general-introduction-and-characteristic-features.json",
+    "tabGroup": "02-fungi-general-introduction-and-characteristic-features",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "floral-diversity",
     "topicSlug": "gymnosperm-general-introduction-characteristic-features-of-gymnosperms-morphology-and-reproduction-of-pinus-economic-importance-of-gymnosperm",
     "title": "Gymnosperm â€” Pinus Structure and Reproduction",
-    "noteCount": 1,
+    "noteCount": 11,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "06-gymnosperms-detailed.json"
+    "duplicateType": 2,
+    "filename": "06-gymnosperms-detailed.json",
+    "tabGroup": "06-gymnosperm-general-introduction-characteristic-features-of-gymnosperms-morphology-and-reproduction-of-pinus-economic-importance-of-gymnosperm",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "floral-diversity",
     "topicSlug": "gymnosperms",
     "title": "Gymnosperms",
-    "noteCount": 1,
+    "noteCount": 7,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "06-gymnosperms.json"
+    "duplicateType": 2,
+    "filename": "06-gymnosperms.json",
+    "tabGroup": "06-gymnosperms",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "floral-diversity",
     "topicSlug": "life-classification",
     "title": "Three Domains and Classification",
-    "noteCount": 1,
+    "noteCount": 7,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-life-classification.json"
+    "duplicateType": 2,
+    "filename": "01-life-classification.json",
+    "tabGroup": "01-life-classification",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "floral-diversity",
     "topicSlug": "pteridophyta-general-introduction-characteristic-features-of-pteridophytes-morphological-structure-and-reproduction-of-dryopteris-economic-importance-of-pteridophytes",
     "title": "Pteridophyta — Ferns and Allies",
-    "noteCount": 1,
+    "noteCount": 14,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "05-pteridophytes-detailed.json"
+    "duplicateType": 2,
+    "filename": "05-pteridophytes-detailed.json",
+    "tabGroup": "05-pteridophyta-general-introduction-characteristic-features-of-pteridophytes-morphological-structure-and-reproduction-of-dryopteris-economic-importance-of-pteridophytes",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "floral-diversity",
     "topicSlug": "pteridophytes",
     "title": "Pteridophytes",
-    "noteCount": 1,
+    "noteCount": 7,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "05-pteridophytes.json"
+    "duplicateType": 2,
+    "filename": "05-pteridophytes.json",
+    "tabGroup": "05-pteridophytes",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "introduction-to-biology",
     "topicSlug": "introduction-to-biology-scope-and-fields-of-biology",
     "title": "Introduction to Biology — Scope and Fields",
-    "noteCount": 1,
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "01-introduction-to-biology-scope-and-fields-of-biology.json"
+    "filename": "01-introduction-to-biology-scope-and-fields-of-biology.json",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "introduction-to-biology",
     "topicSlug": "introduction-to-biology-scope-and-fields-of-biology",
     "title": "Introduction to Biology — Scope and Fields",
-    "noteCount": 1,
+    "noteCount": 8,
     "source": "ravikishan",
     "duplicateType": 2,
-    "filename": "01-introduction-to-biology-scope-and-fields-of-biology-2-2.json"
+    "filename": "01-introduction-to-biology-scope-and-fields-of-biology-2-2.json",
+    "tabGroup": "introduction-to-biology-scope-and-fields-of-biology",
+    "hasMcqs": false,
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "introduction-to-biology",
     "topicSlug": "relation-of-biology-with-other-sciences",
     "title": "Relation of Biology with Other Sciences",
-    "noteCount": 1,
+    "noteCount": 8,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "02-relation-of-biology-with-other-sciences.json"
+    "filename": "02-relation-of-biology-with-other-sciences.json",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "introduction-to-biology",
     "topicSlug": "relation-of-biology-with-other-sciences",
     "title": "Relation of Biology with Other Sciences",
-    "noteCount": 1,
+    "noteCount": 8,
     "source": "ravikishan",
     "duplicateType": 2,
-    "filename": "02-relation-of-biology-with-other-sciences-2-2.json"
+    "filename": "02-relation-of-biology-with-other-sciences-2-2.json",
+    "tabGroup": "relation-of-biology-with-other-sciences",
+    "hasMcqs": false,
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "introduction-to-biology",
     "topicSlug": "relation-other-sciences",
     "title": "Relation with Other Sciences",
-    "noteCount": 1,
+    "noteCount": 8,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-relation-other-sciences.json"
+    "duplicateType": 2,
+    "filename": "02-relation-other-sciences.json",
+    "tabGroup": "02-relation-other-sciences",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "introduction-to-biology",
     "topicSlug": "scope-fields-biology",
     "title": "Scope and Fields of Biology",
-    "noteCount": 1,
+    "noteCount": 7,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-scope-fields-biology.json"
+    "duplicateType": 2,
+    "filename": "01-scope-fields-biology.json",
+    "tabGroup": "01-scope-fields-biology",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "introductory-microbiology",
     "topicSlug": "biotech-microbiology",
     "title": "Biotechnology in Microbiology",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "03-biotech-microbiology.json"
-  },
-  {
-    "unitSlug": "introductory-microbiology",
-    "topicSlug": "impacts-of-biotechnology-in-the-field-of-microbiology",
-    "title": "Impacts of Biotechnology in Microbiology",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-impacts-of-biotechnology-in-the-field-of-microbiology.json"
-  },
-  {
-    "unitSlug": "introductory-microbiology",
-    "topicSlug": "impacts-of-biotechnology-in-the-field-of-microbiology",
-    "title": "Impacts of Biotechnology in Microbiology",
-    "noteCount": 1,
+    "noteCount": 18,
     "source": "ravikishan",
     "duplicateType": 2,
-    "filename": "02-impacts-of-biotechnology-in-the-field-of-microbiology-2-2.json"
+    "filename": "03-biotech-microbiology.json",
+    "tabGroup": "03-biotech-microbiology",
+    "hasMcqs": true,
+    "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "introductory-microbiology",
+    "topicSlug": "impacts-of-biotechnology-in-the-field-of-microbiology",
+    "title": "Impacts of Biotechnology in Microbiology",
+    "noteCount": 18,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "02-impacts-of-biotechnology-in-the-field-of-microbiology.json",
+    "hasMcqs": true,
+    "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "introductory-microbiology",
+    "topicSlug": "impacts-of-biotechnology-in-the-field-of-microbiology",
+    "title": "Impacts of Biotechnology in Microbiology",
+    "noteCount": 8,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "02-impacts-of-biotechnology-in-the-field-of-microbiology-2-2.json",
+    "tabGroup": "impacts-of-biotechnology-in-the-field-of-microbiology",
+    "hasMcqs": false,
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "introductory-microbiology",
     "topicSlug": "monera-bacteria",
     "title": "Monera and Bacteria",
-    "noteCount": 1,
+    "noteCount": 7,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-monera-bacteria.json"
+    "duplicateType": 2,
+    "filename": "01-monera-bacteria.json",
+    "tabGroup": "01-monera-bacteria",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "introductory-microbiology",
     "topicSlug": "monera-general-introduction-structure-of-bacterial-cell-mode-of-nutrition-bacterial-growth-cyanobacteria-virus-general-introduction-structure-and-importance-of-virus-bacteriophage",
     "title": "Introductory Microbiology — Bacteria and Viruses",
-    "noteCount": 1,
+    "noteCount": 14,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "01-monera-detailed.json"
+    "filename": "01-monera-detailed.json",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "introductory-microbiology",
@@ -807,60 +1053,80 @@
     "noteCount": 1,
     "source": "ravikishan",
     "duplicateType": 2,
-    "filename": "01-monera-general-introduction-structure-of-bacterial-cell-mode-of-nutrition-bacterial-growth-cyanobacteria-virus-general-introduction-structure-and-importance-of-virus-bacteriophage-2.json"
+    "filename": "01-monera-general-introduction-structure-of-bacterial-cell-mode-of-nutrition-bacterial-growth-cyanobacteria-virus-general-introduction-structure-and-importance-of-virus-bacteriophage-2.json",
+    "tabGroup": "monera-general-introduction-structure-of-bacterial-cell-mode-of-nutrition-bacterial-growth-cyanobacteria-virus-general-introduction-structure-and-importance-of-virus-bacteriophage",
+    "hasMcqs": true,
+    "universalFactsCount": 1
   },
   {
     "unitSlug": "introductory-microbiology",
     "topicSlug": "monera-general-introduction-structure-of-bacterial-cell-mode-of-nutrition-bacterial-growth-cyanobacteria-virus-general-introduction-structure-and-importance-of-virus-bacteriophage",
     "title": "Introductory Microbiology — Bacteria and Viruses",
-    "noteCount": 1,
+    "noteCount": 8,
     "source": "ravikishan",
     "duplicateType": 3,
-    "filename": "01-monera-general-introduction-structure-of-bacterial-cell-mode-of-nutrition-bacterial-growth-cyanobacteria-virus-general-introduction-structure-and-importance-of-virus-bacteriophage-2-3.json"
+    "filename": "01-monera-general-introduction-structure-of-bacterial-cell-mode-of-nutrition-bacterial-growth-cyanobacteria-virus-general-introduction-structure-and-importance-of-virus-bacteriophage-2-3.json",
+    "tabGroup": "monera-general-introduction-structure-of-bacterial-cell-mode-of-nutrition-bacterial-growth-cyanobacteria-virus-general-introduction-structure-and-importance-of-virus-bacteriophage",
+    "hasMcqs": false,
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "introductory-microbiology",
     "topicSlug": "virus",
     "title": "Virus",
-    "noteCount": 1,
+    "noteCount": 8,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-virus.json"
+    "duplicateType": 2,
+    "filename": "02-virus.json",
+    "tabGroup": "02-virus",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "vegetation",
     "topicSlug": "conservation-in-situ-ex-situ",
     "title": "In-situ and Ex-situ Conservation",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-conservation-in-situ-ex-situ.json"
-  },
-  {
-    "unitSlug": "vegetation",
-    "topicSlug": "vegetation-introduction-types-of-vegetation-in-nepal-in-situ-and-ex-situ-conservation-natural-environment-vegetation-and-human-activities",
-    "title": "Vegetation — Types and Conservation",
-    "noteCount": 1,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-vegetation-introduction-types-of-vegetation-in-nepal-in-situ-and-ex-situ-conservation-natural-environment-vegetation-and-human-activities.json"
-  },
-  {
-    "unitSlug": "vegetation",
-    "topicSlug": "vegetation-introduction-types-of-vegetation-in-nepal-in-situ-and-ex-situ-conservation-natural-environment-vegetation-and-human-activities",
-    "title": "Vegetation — Types and Conservation",
-    "noteCount": 1,
+    "noteCount": 11,
     "source": "ravikishan",
     "duplicateType": 2,
-    "filename": "01-vegetation-introduction-types-of-vegetation-in-nepal-in-situ-and-ex-situ-conservation-natural-environment-vegetation-and-human-activities-2-2.json"
+    "filename": "02-conservation-in-situ-ex-situ.json",
+    "tabGroup": "02-conservation-in-situ-ex-situ",
+    "hasMcqs": true,
+    "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "vegetation",
+    "topicSlug": "vegetation-introduction-types-of-vegetation-in-nepal-in-situ-and-ex-situ-conservation-natural-environment-vegetation-and-human-activities",
+    "title": "Vegetation — Types and Conservation",
+    "noteCount": 12,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "01-vegetation-introduction-types-of-vegetation-in-nepal-in-situ-and-ex-situ-conservation-natural-environment-vegetation-and-human-activities.json",
+    "hasMcqs": true,
+    "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "vegetation",
+    "topicSlug": "vegetation-introduction-types-of-vegetation-in-nepal-in-situ-and-ex-situ-conservation-natural-environment-vegetation-and-human-activities",
+    "title": "Vegetation — Types and Conservation",
+    "noteCount": 8,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "01-vegetation-introduction-types-of-vegetation-in-nepal-in-situ-and-ex-situ-conservation-natural-environment-vegetation-and-human-activities-2-2.json",
+    "tabGroup": "vegetation-introduction-types-of-vegetation-in-nepal-in-situ-and-ex-situ-conservation-natural-environment-vegetation-and-human-activities",
+    "hasMcqs": false,
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "vegetation",
     "topicSlug": "vegetation-types",
     "title": "Types of Vegetation in Nepal",
-    "noteCount": 1,
+    "noteCount": 12,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-vegetation-types.json"
+    "duplicateType": 2,
+    "filename": "01-vegetation-types.json",
+    "tabGroup": "01-vegetation-types",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   }
 ]

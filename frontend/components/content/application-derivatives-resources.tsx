@@ -14,6 +14,7 @@ import {
   TrendingUp,
   Activity,
 } from "lucide-react";
+import { Schematic } from "./schematic-frame";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -97,79 +98,38 @@ function TangentNormalVisual() {
         </div>
       </div>
       <div className="flex justify-center">
-        <svg
-          viewBox={`0 0 ${w} ${h2}`}
-          className="w-full max-w-lg border rounded-lg bg-slate-950"
+        <Schematic
+          w={w} h={h2} ox={ox} oy={oy} scale={scale}
+          tickStep={1}
+          yLabel="f(x)"
+          legend={[
+            { color: "#38bdf8", label: "curve" },
+            { color: "#22d3ee", label: "tangent", dashed: true },
+            { color: "#a855f7", label: "normal", dashed: true },
+            { color: "#f97316", label: "point" },
+          ]}
         >
-          {/* Axes */}
-          <line x1={0} y1={oy} x2={w} y2={oy} stroke="#475569" strokeWidth="1" />
-          <line x1={ox} y1={0} x2={ox} y2={h2} stroke="#475569" strokeWidth="1" />
-          <text x={w - 10} y={oy - 5} fill="#64748b" fontSize="10">x</text>
-          <text x={ox + 5} y={12} fill="#64748b" fontSize="10">f(x)</text>
-
           {/* Graph curve */}
           {graphPoints.length > 1 && (
-            <polyline
-              points={graphPoints.join(" ")}
-              fill="none"
-              stroke="#38bdf8"
-              strokeWidth="2"
-            />
+            <polyline points={graphPoints.join(" ")} fill="none" stroke="#38bdf8" strokeWidth="2" />
           )}
-
           {/* Tangent line */}
           {tangentPoints.length > 1 && (
-            <polyline
-              points={tangentPoints.join(" ")}
-              fill="none"
-              stroke="#22d3ee"
-              strokeWidth="1.5"
-              strokeDasharray="6 3"
-              opacity="0.9"
-            />
+            <polyline points={tangentPoints.join(" ")} fill="none" stroke="#22d3ee" strokeWidth="1.5" strokeDasharray="6 3" opacity="0.9" />
           )}
-
           {/* Normal line */}
           {normalPoints.length > 1 && (
-            <polyline
-              points={normalPoints.join(" ")}
-              fill="none"
-              stroke="#a855f7"
-              strokeWidth="1.5"
-              strokeDasharray="6 3"
-              opacity="0.9"
-            />
+            <polyline points={normalPoints.join(" ")} fill="none" stroke="#a855f7" strokeWidth="1.5" strokeDasharray="6 3" opacity="0.9" />
           )}
-
           {/* Point on curve */}
           <circle cx={ptX} cy={ptY} r="5" fill="#f97316" />
-
           {/* Labels */}
           <text x={ptX + 8} y={ptY - 8} fill="#f97316" fontSize="10" fontWeight="600">
             ({x0.toFixed(1)}, {wy.toFixed(1)})
           </text>
-          <text x={ptX + 10} y={ptY + 14} fill="#22d3ee" fontSize="9">
-            tangent
-          </text>
-          <text x={ptX - 35} y={ptY - 12} fill="#a855f7" fontSize="9">
-            normal
-          </text>
-
-          {/* Axis ticks */}
-          {[-1, 0, 1, 2, 3, 4, 5].map((v) => (
-            <text key={v} x={toSvgX(v)} y={oy + 12} fill="#64748b" fontSize="9" textAnchor="middle">
-              {v}
-            </text>
-          ))}
-          {[0, 1, 2, 3, 4, 9, 16, 20].map((v) => {
-            if (v > 20) return null;
-            return (
-              <text key={v} x={ox - 5} y={toSvgY(v) + 4} fill="#64748b" fontSize="9" textAnchor="end">
-                {v}
-              </text>
-            );
-          })}
-        </svg>
+          <text x={ptX + 10} y={ptY + 14} fill="#22d3ee" fontSize="9">tangent</text>
+          <text x={ptX - 35} y={ptY - 12} fill="#a855f7" fontSize="9">normal</text>
+        </Schematic>
       </div>
       <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">
         <strong className="text-foreground">Tangent line:</strong> y − f(x₀) = f'(x₀)(x − x₀) &nbsp;|&nbsp;
@@ -246,49 +206,30 @@ function MaxMinVisual() {
         </div>
       </div>
       <div className="flex justify-center">
-        <svg
-          viewBox={`0 0 ${w} ${h2}`}
-          className="w-full max-w-lg border rounded-lg bg-slate-950"
+        <Schematic
+          w={w} h={h2} ox={ox} oy={oy} scale={scale}
+          tickStep={1}
+          yLabel="f(x)"
+          legend={[
+            { color: "#38bdf8", label: "f(x)" },
+            { color: "#22c55e", label: "increasing" },
+            { color: "#ef4444", label: "decreasing" },
+            { color: "#f59e0b", label: "local max" },
+            { color: "#8b5cf6", label: "local min" },
+          ]}
         >
-          {/* Axes */}
-          <line x1={0} y1={oy} x2={w} y2={oy} stroke="#475569" strokeWidth="1" />
-          <line x1={ox} y1={0} x2={ox} y2={h2} stroke="#475569" strokeWidth="1" />
-          <text x={w - 10} y={oy - 5} fill="#64748b" fontSize="10">x</text>
-          <text x={ox + 5} y={12} fill="#64748b" fontSize="10">f(x)</text>
-
           {/* Decreasing regions */}
           {decreasingPoints.length > 1 && (
-            <polyline
-              points={decreasingPoints.join(" ")}
-              fill="none"
-              stroke="#ef4444"
-              strokeWidth="3"
-              opacity="0.7"
-            />
+            <polyline points={decreasingPoints.join(" ")} fill="none" stroke="#ef4444" strokeWidth="3" opacity="0.7" />
           )}
-
           {/* Increasing regions */}
           {increasingPoints.length > 1 && (
-            <polyline
-              points={increasingPoints.join(" ")}
-              fill="none"
-              stroke="#22c55e"
-              strokeWidth="3"
-              opacity="0.7"
-            />
+            <polyline points={increasingPoints.join(" ")} fill="none" stroke="#22c55e" strokeWidth="3" opacity="0.7" />
           )}
-
           {/* Overall curve (subtle) */}
           {graphPoints.length > 1 && (
-            <polyline
-              points={graphPoints.join(" ")}
-              fill="none"
-              stroke="#38bdf8"
-              strokeWidth="1.5"
-              opacity="0.5"
-            />
+            <polyline points={graphPoints.join(" ")} fill="none" stroke="#38bdf8" strokeWidth="1.5" opacity="0.5" />
           )}
-
           {/* Critical points */}
           {showCritical && critPoints.map((cx, idx) => {
             const cy = f(cx);
@@ -301,10 +242,6 @@ function MaxMinVisual() {
                 <text x={svgX} y={svgY - 12} fill={isMax ? "#f59e0b" : "#8b5cf6"} fontSize="9" fontWeight="600" textAnchor="middle">
                   {isMax ? "Local Max" : "Local Min"}
                 </text>
-                <text x={svgX} y={svgY + 18} fill="#94a3b8" fontSize="8" textAnchor="middle">
-                  x = {cx.toFixed(2)}
-                </text>
-                {/* Vertical dashed to axis */}
                 <line
                   x1={svgX}
                   y1={svgY}
@@ -318,14 +255,7 @@ function MaxMinVisual() {
               </g>
             );
           })}
-
-          {/* x-axis labels */}
-          {[-3, -2, -1, 0, 1, 2, 3].map((v) => (
-            <text key={v} x={toSvgX(v)} y={oy + 12} fill="#64748b" fontSize="9" textAnchor="middle">
-              {v}
-            </text>
-          ))}
-        </svg>
+        </Schematic>
       </div>
       <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">
         <strong className="text-foreground">First Derivative Test:</strong>{" "}

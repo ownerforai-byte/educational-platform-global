@@ -1,81 +1,65 @@
 {
-  "title": "p-Orbital Geometry & the Four Quantum Numbers",
+  "title": "The Four Quantum Numbers and the 2p Electron",
   "unitSlug": "atomic-structure",
   "topicSlug": "quantum-numbers",
   "topicTitle": "Quantum numbers",
-  "relevance": 100,
+  "relevance": 85,
   "notes": [
-    "Detailed notes on 16 p orbital and four quantum numbers within the atomic structure unit."
+    "### Focus of this tab",
+    "The four quantum numbers through one concrete example — the 2p electron of carbon — the fastest route to the 'write the quantum numbers' question. Definitions and the full metric table are in the main note and the metrics tab.",
+    "### The example worked through",
+    "Carbon (Z = 6): 1s² 2s² 2p². Take a 2p electron: n = 2 (L shell, second energy level); l = 1 (p subshell, dumbbell shape); m = −1, 0 or +1 (which of px, py, pz the orbital is); mₛ = +½ or −½ (spin). Hund's rule puts the two 2p electrons in different p orbitals with parallel spins, so a valid full set for the first is n = 2, l = 1, m = −1, mₛ = +½ and for the second n = 2, l = 1, m = 0, mₛ = +½.",
+    "### What each number fixes",
+    "• **n:** shell, size and energy (r ∝ n²; capacity 2n²).",
+    "• **l:** subshell and shape (s spherical, p dumbbell, d clover, f complex); angular momentum √(l(l+1))·h/2π; permitted values 0 … n − 1.",
+    "• **m:** orientation in space; 2l + 1 values; explains Zeeman splitting.",
+    "• **mₛ:** spin ±½; Pauli exclusion follows — no two electrons share all four numbers.",
+    "### The validity ladder (check in this order)",
+    "n ≥ 1 → l ≤ n − 1 → |m| ≤ l → mₛ = ±½. So (n = 2, l = 2) is invalid (l = n), (n = 3, l = 2, m = −3) is invalid (|m| > l), and (n = 2, l = 1, m = 0, mₛ = ±½) is valid.",
+    "### Degeneracy and pairing",
+    "The three p orbitals are degenerate in a free atom; a magnetic field splits them (Zeeman). Filling follows Hund's rule: singly with parallel spins first — the origin of carbon's two unpaired 2p electrons and hence its divalent/paramagnetic behaviour."
   ],
   "confusion": [
-    "❌ Misconception about 16 p orbital and four quantum numbers. ✅ Scientific explanation."
+    "❌ mₛ determines the orbital orientation. ✅ mₗ gives orientation; mₛ gives spin.",
+    "❌ l can take the value n. ✅ l runs 0 to n − 1.",
+    "❌ Two 2p electrons of carbon must have opposite spins. ✅ Hund's rule: parallel spins in different degenerate orbitals first."
   ],
   "practice": [
-    "Practice exercise for 16 p orbital and four quantum numbers."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 16 p orbital and four quantum numbers."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 16 p orbital and four quantum numbers."
-  ],
-  "practiceQuestions": [
-    "Practice question for 16 p orbital and four quantum numbers."
+    "Write all four quantum numbers for each of the two 2p electrons of carbon.",
+    "State the quantum numbers for a 3d electron and count its m values.",
+    "Which of these sets are impossible: (2,2,0,+½), (3,2,−2,−½), (2,1,0,0)?",
+    "How does the magnetic quantum number explain the Zeeman effect?"
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 16 p orbital and four quantum numbers)"
+    "$$l=0,1,\\dots,n-1;\\quad m=-l,\\dots,+l;\\quad m_{s}=\\pm\\tfrac{1}{2};\\quad L=\\sqrt{l(l+1)}\\,h/2\\pi$$"
   ],
-  "keyPoints": [
-    "Core point for 16 p orbital and four quantum numbers."
+  "universalFacts": [
+    "Carbon's two unpaired 2p electrons make atomic carbon paramagnetic.",
+    "The letters s, p, d, f come from the old spectroscopic terms sharp, principal, diffuse, fundamental.",
+    "Pauli's exclusion principle is the reason any orbital holds at most two electrons."
   ],
-  "summary": "Summary of 16 p orbital and four quantum numbers.",
-  "specialNotes": [
-    "Specialized insight for 16 p orbital and four quantum numbers."
-  ],
-  "importantStatements": [
-    "Key statement for 16 p orbital and four quantum numbers."
+  "examples": [
+    "**Problem:** How many electrons in an atom can have n = 3 and m = 0? **Solution:** 3s (1 orbital, m = 0), 3p (one of three orbitals has m = 0), 3d (one of five) → 1 + 2 + 2 = 6 electrons."
   ],
   "importantNotes": [
-    "Important note regarding 16 p orbital and four quantum numbers."
+    "Answer 'write the quantum numbers' questions by naming the element and configuration first, then the set per electron.",
+    "Check validity with the ladder n → l → m → mₛ."
   ],
-  "examShortTricks": [
-    "Recall the formula for p-Orbital Geometry & the Four Quantum Numbers."
-  ],
-  "examNotes": [
-    "Focus on p-Orbital Geometry & the Four Quantum Numbers problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 16 p orbital and four quantum numbers?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 16 p orbital and four quantum numbers."
-  ],
-  "importantTasks": [
-    "Task for studying 16 p orbital and four quantum numbers."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "16-p-orbital-and-four-quantum-numbers",
   "mcqs": [
     {
-      "question": "Question about 16 p orbital and four quantum numbers?",
+      "question": "For a 3d electron, l and the number of m values are:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "l = 2, five m values",
+        "l = 3, seven m values",
+        "l = 1, three m values",
+        "l = 2, three m values"
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "visualType": "quantum-numbers",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "16-p-orbital-and-four-quantum-numbers.json"
 }

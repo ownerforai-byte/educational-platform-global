@@ -235,6 +235,15 @@ export function ClassSubjectsGrid({ classSlug, className }: ClassSubjectsGridPro
                     <GraduationCap className="h-3 w-3 text-amber-500" />
                     <span>Proofs</span>
                   </Link>
+                  {["physics", "chemistry", "biology"].includes(subject.slug) && (
+                    <Link
+                      href={`/practical/${subject.slug}`}
+                      className="inline-flex items-center gap-1 rounded-xl bg-background/80 hover:bg-emerald-500/10 hover:text-emerald-500 px-2.5 py-1 text-xs font-semibold text-foreground/90 border border-border/60 transition-colors"
+                    >
+                      <FlaskConical className="h-3 w-3 text-emerald-500" />
+                      <span>Practicals</span>
+                    </Link>
+                  )}
                   {conf.hasLabs && (
                     <Link
                       href={conf.labHref || "/lab"}

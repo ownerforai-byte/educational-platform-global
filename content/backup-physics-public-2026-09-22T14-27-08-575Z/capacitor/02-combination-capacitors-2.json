@@ -1,0 +1,174 @@
+{
+  "title": "Combination of Capacitors",
+  "unitSlug": "capacitor",
+  "topicSlug": "combination-capacitors",
+  "topicTitle": "Combination of Capacitors",
+  "relevance": 100,
+  "notes": [
+    "**Series combination:** same charge $Q$ on each capacitor. $1/C_{eq} = 1/C_1 + 1/C_2 + \\ldots$. Equivalent capacitance is less than the smallest individual capacitance.",
+    "**Parallel combination:** same voltage $V$ across each capacitor. $C_{eq} = C_1 + C_2 + \\ldots$. Equivalent capacitance is greater than the largest individual capacitance.",
+    "**Why series reduces capacitance:** the effective plate separation increases because the dielectrics are stacked, weakening the overall field.",
+    "**Why parallel increases capacitance:** the effective plate area increases because the plates are side by side, allowing more charge storage at the same voltage.",
+    "**Mixed combinations:** reduce step by step. Identify simple series or parallel groups, find their equivalent, and repeat.",
+    "**Voltage division in series:** for two capacitors in series, $V_1 = V \\cdot C_2/(C_1 + C_2)$ and $V_2 = V \\cdot C_1/(C_1 + C_2)$. The smaller capacitor gets the larger voltage.",
+    "**Charge division in parallel:** for two capacitors in parallel, $Q_1 = Q \\cdot C_1/(C_1 + C_2)$ and $Q_2 = Q \\cdot C_2/(C_1 + C_2)$. The larger capacitor stores more charge.",
+    "**Energy in combinations:** total energy is conserved but may redistribute. In series, the smaller capacitor stores more energy ($U = Q^2/(2C)$). In parallel, the larger capacitor stores more energy ($U = CV^2/2$).",
+    "**Three equal capacitors $C$ in series:** $C_{eq} = C/3$. Three equal capacitors in parallel: $C_{eq} = 3C$. These are common benchmark results.",
+    "**Star-to-delta transformation:** for complex networks that are neither purely series nor parallel, star-delta transformations can simplify the circuit, analogous to resistor networks."
+  ],
+  "confusion": [
+    "In series, the equivalent capacitance is always less than any individual capacitor. Do not confuse this with resistors in series, where resistance adds up. Capacitors in series combine like resistors in parallel.",
+    "In parallel, the equivalent capacitance is always greater than any individual capacitor. This is the same rule as resistors in parallel — the rules are reversed between the two.",
+    "In a series combination, charge is the same on every capacitor, but voltage divides inversely with capacitance. The smaller capacitor has the larger voltage drop.",
+    "In a parallel combination, voltage is the same across every capacitor, but charge divides directly with capacitance. The larger capacitor stores more charge.",
+    "When capacitors with different initial charges are connected, charge redistributes until voltages equalize. Energy is not conserved in this process — some is lost as heat or radiation."
+  ],
+  "practice": [
+    "Three capacitors $2\\,\\mu$F, $4\\,\\mu$F, and $6\\,\\mu$F are connected in series across a 12 V battery. Find the equivalent capacitance, charge on each, and voltage across each. Solution: $1/C_{eq} = 1/2 + 1/4 + 1/6 = 6/12 + 3/12 + 2/12 = 11/12$, so $C_{eq} = 12/11 \\approx 1.09\\,\\mu$F. Charge $Q = C_{eq}V = 1.09 \\times 12 = 13.09\\,\\mu$C. $V_1 = 13.09/2 = 6.55$ V, $V_2 = 13.09/4 = 3.27$ V, $V_3 = 13.09/6 = 2.18$ V. Check: $6.55 + 3.27 + 2.18 = 12$ V.",
+    "Two capacitors $3\\,\\mu$F and $6\\,\\mu$F are connected in parallel across 12 V. Find the total capacitance, total charge, and charge on each. Solution: $C_{eq} = 3 + 6 = 9\\,\\mu$F. Total charge $Q = 9 \\times 12 = 108\\,\\mu$C. $Q_1 = 3 \\times 12 = 36\\,\\mu$C, $Q_2 = 6 \\times 12 = 72\\,\\mu$C.",
+    "Find the equivalent capacitance between points A and B when a $2\\,\\mu$F capacitor is in series with a parallel combination of $3\\,\\mu$F and $6\\,\\mu$F. Solution: Parallel part: $C_p = 3 + 6 = 9\\,\\mu$F. Series with $2\\,\\mu$F: $1/C_{eq} = 1/2 + 1/9 = 9/18 + 2/18 = 11/18$, so $C_{eq} = 18/11 \\approx 1.64\\,\\mu$F.",
+    "Two capacitors $C_1 = 4\\,\\mu$F and $C_2 = 12\\,\\mu$F are charged separately to 12 V, then disconnected. They are connected positive-to-negative. Find the final voltage and energy loss. Solution: Initial charges: $Q_1 = 48\\,\\mu$C, $Q_2 = 144\\,\\mu$C. Net charge $= 144 - 48 = 96\\,\\mu$C. Final $V = 96/(4+12) = 6$ V. Initial energy: $\\frac{1}{2}(4 \\times 144 + 12 \\times 144) \\times 10^{-6} = 1.152 \\times 10^{-3}$ J. Final energy: $\\frac{1}{2}(16) \\times 36 \\times 10^{-6} = 0.288 \\times 10^{-3}$ J. Energy loss: $0.864$ mJ.",
+    "Five identical capacitors each of capacitance $C$ are connected in a bridge configuration between points A and B. Find the equivalent capacitance if the bridge is balanced. Solution: In a balanced bridge, the middle capacitor carries no current and can be ignored. The equivalent is $C_{eq} = C$."
+  ],
+  "universalFacts": [
+    "Capacitors in series combine inversely, just like resistors in parallel. Capacitors in parallel combine directly, just like resistors in series. The rules are always opposite.",
+    "In a series combination, the same charge resides on every capacitor, but the voltage across each is inversely proportional to its capacitance.",
+    "In a parallel combination, the same voltage appears across every capacitor, but the charge on each is directly proportional to its capacitance.",
+    "When connecting capacitors of different initial voltages, always check polarity. Connecting positive to positive is safe; connecting positive to negative causes charge cancellation and energy loss.",
+    "The energy stored in a capacitor network is the sum of energies in individual capacitors: $U_{total} = \\sum \\frac{1}{2}C_i V_i^2$."
+  ],
+  "animation3D": "capacitor",
+  "motionGraphics": "capacitor",
+  "examples": [
+    "Example 1: Real-world application of Combination of capacitors",
+    "Example 2: Practical demonstration of Combination of capacitors concepts",
+    "Example 3: Numerical problem on Combination of capacitors",
+    "Example 4: Diagram-based question on Combination of capacitors",
+    "Example 5: Application in daily life involving Combination of capacitors"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain Combination of capacitors with suitable example.",
+    "Q2. Solve problems related to Combination of capacitors.",
+    "Q3. Differentiate between various aspects of Combination of capacitors.",
+    "Q4. Derive the key formula related to Combination of capacitors.",
+    "Q5. What are the applications of Combination of capacitors?"
+  ],
+  "formulas": [
+    "Key Formula 1: Definition formula for Combination of capacitors",
+    "Key Formula 2: Mathematical expression of Combination of capacitors",
+    "Key Formula 3: Application formula for Combination of capacitors",
+    "Key Formula 4: Derivation result for Combination of capacitors",
+    "Key Formula 5: Important relation in Combination of capacitors"
+  ],
+  "keyPoints": [
+    "Key Point 1: Fundamental definition of Combination of capacitors",
+    "Key Point 2: Essential theorem or principle related to Combination of capacitors",
+    "Key Point 3: Important condition or constraint for Combination of capacitors",
+    "Key Point 4: Common applications of Combination of capacitors",
+    "Key Point 5: Connection to other topics in Science"
+  ],
+  "summary": "Combination of capacitors is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Combination of capacitors applies",
+    "Note 2: Combination of capacitors connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Combination of capacitors",
+    "Note 4: Remember the units and dimensions involved in Combination of capacitors",
+    "Note 5: Combination of capacitors frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Combination of capacitors",
+    "Statement 2: Theorem related to Combination of capacitors",
+    "Statement 3: Condition for Combination of capacitors to be valid",
+    "Statement 4: Principle governing Combination of capacitors",
+    "Statement 5: Corollary or consequence of Combination of capacitors"
+  ],
+  "importantNotes": [
+    "Note 1: Combination of capacitors is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Combination of capacitors",
+    "Note 3: Combination of capacitors has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Combination of capacitors",
+    "Note 5: Cross-check your answers using alternative methods for Combination of capacitors"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Combination of capacitors formula",
+    "Trick 2: Elimination technique for Combination of capacitors MCQs",
+    "Trick 3: Dimensional analysis shortcut for Combination of capacitors",
+    "Trick 4: Memory aid for Combination of capacitors formulas",
+    "Trick 5: Time-saving approach for Combination of capacitors problems"
+  ],
+  "examNotes": [
+    "Exam Tip 1: Focus on numerical problems from Combination of capacitors",
+    "Exam Tip 2: Practice previous year questions on Combination of capacitors",
+    "Exam Tip 3: Combination of capacitors carries significant marks in exams",
+    "Exam Tip 4: Learn the derivations for Combination of capacitors thoroughly",
+    "Exam Tip 5: Review common mistakes related to Combination of capacitors"
+  ],
+  "mcs": [
+    {
+      "question": "Which of the following best describes Combination of capacitors?",
+      "options": [
+        "Option A describing ${title}",
+        "Option B with similar concept",
+        "Option C related term",
+        "Option D unrelated concept"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The primary application of Combination of capacitors is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Combination of capacitors, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Combination of capacitors?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Combination of capacitors is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Combination of capacitors",
+    "Concept 2: Key theorem or principle in Combination of capacitors",
+    "Concept 3: Important application area of Combination of capacitors",
+    "Concept 4: Fundamental relationship in Combination of capacitors",
+    "Concept 5: Connection between Combination of capacitors and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Combination of capacitors",
+    "Task 2: Derive the main formula for Combination of capacitors",
+    "Task 3: Create a concept map for Combination of capacitors",
+    "Task 4: Practice previous year exam questions on Combination of capacitors",
+    "Task 5: Explain Combination of capacitors to a peer or study group"
+  ],
+  "duplicateType": 2,
+  "tabGroup": "combination-of-capacitors"
+}

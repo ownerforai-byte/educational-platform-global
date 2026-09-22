@@ -1,81 +1,60 @@
 {
-  "title": "Aufbau, Pauli and Hund's Rules",
+  "title": "Aufbau Principle, Pauli's Exclusion Principle, Hund's Rule and Electronic Configurations (up to Z = 30)",
   "unitSlug": "atomic-structure",
-  "topicSlug": "aufbau-pauli-hund",
-  "topicTitle": "Aufbau, Pauli and Hund's Rules",
-  "relevance": 87,
+  "topicSlug": "aufbau-principle-pauli-s-exclusion-principle-hund-s-rule-and-electronic-configurations-of-atoms-",
+  "topicTitle": "Aufbau principle, Pauli's exclusion principle, Hund's rule and electronic configurations of atoms and ions (up to atomic no. 30)",
+  "relevance": 100,
   "notes": [
-    "Detailed notes on 09 aufbau pauli hund within the atomic structure unit."
+    "### 1. Meaning",
+    "These three rules distribute electrons among the orbitals of an atom in its ground state: Aufbau fixes the *order* of filling, Pauli fixes the *capacity* of an orbital, and Hund fixes *how degenerate orbitals are filled*.",
+    "### 2. Aufbau principle and the (n + l) rule",
+    "Electrons fill the available orbital of lowest energy first. Order is given by the **Madelung (n + l) rule**: smaller (n + l) first; for equal (n + l), smaller n first. Thus 4s (n + l = 4) fills before 3d (n + l = 5), giving 1s < 2s < 2p < 3s < 3p < 4s < 3d < 4p < 5s < 4d < 5p < 6s < 4f < 5d < 6p < 7s < 5f < 6d < 7p.",
+    "### 3. Pauli's exclusion principle",
+    "No two electrons in an atom can have all four quantum numbers identical; equivalently an orbital holds at most two electrons with opposite spins (↑↓). Consequences: subshell capacities 2, 6, 10, 14; shell capacity 2n².",
+    "### 4. Hund's rule of maximum multiplicity",
+    "Electrons enter degenerate orbitals (same n and l, e.g. the three 2p) singly with parallel spins before pairing; pairing starts only after every degenerate orbital has one electron. Reason: pairing costs Coulomb repulsion energy while parallel spins gain exchange energy. Example: N 2p³ = ↑ ↑ ↑ (three unpaired); O 2p⁴ = ↑↓ ↑ ↑ (two unpaired).",
+    "### 5. Extra stability of half-filled and fully-filled subshells",
+    "d⁵, d¹⁰, p³ and p⁶ arrangements gain exchange energy and symmetry, which explains the anomalies at Z = 24 and 29: Cr = [Ar]3d⁵4s¹ (not 3d⁴4s²) and Cu = [Ar]3d¹⁰4s¹ (not 3d⁹4s²). Similar anomalies occur at Nb, Mo, Ru, Rh, Pd, Ag, Pt and Au.",
+    "### 6. Electronic configurations, Z = 1–30 (noble-gas shorthand)",
+    "H 1s¹ · He 1s² · Li [He]2s¹ · Be [He]2s² · B [He]2s²2p¹ · C 2p² · N 2p³ · O 2p⁴ · F 2p⁵ · Ne 2p⁶ · Na [Ne]3s¹ · Mg 3s² · Al 3s²3p¹ · Si 3p² · P 3p³ · S 3p⁴ · Cl 3p⁵ · Ar 3p⁶ · K [Ar]4s¹ · Ca 4s² · Sc 3d¹4s² · Ti 3d²4s² · V 3d³4s² · Cr 3d⁵4s¹ · Mn 3d⁵4s² · Fe 3d⁶4s² · Co 3d⁷4s² · Ni 3d⁸4s² · Cu 3d¹⁰4s¹ · Zn 3d¹⁰4s².",
+    "### 7. Configurations of ions",
+    "Electrons are removed from the highest-n (outermost) shell first even though 4s filled before 3d: Fe ([Ar]3d⁶4s²) → Fe²⁺ ([Ar]3d⁶) → Fe³⁺ ([Ar]3d⁵, half-filled and extra stable); Cu ([Ar]3d¹⁰4s¹) → Cu⁺ ([Ar]3d¹⁰); Mn → Mn²⁺ ([Ar]3d⁵). This explains why Fe³⁺ and Mn²⁺ are the commonest oxidation states of those metals.",
+    "### 8. Applications",
+    "• Predicts valency, oxidation states and magnetic behaviour (Fe³⁺: 5 unpaired → paramagnetic; Zn²⁺: 3d¹⁰ → diamagnetic; Cu²⁺: 1 unpaired) and the colours of transition-metal ions.",
+    "• Explains the structure of the periodic table — s, p, d, f blocks and period lengths 2, 8, 8, 18, 18, 32 — and is the basis of hybridisation and complex chemistry.",
+    "### 9. Limitations",
+    "The (n + l) rule is only approximate — the many anomalous configurations of Cr, Cu, Nb, Mo, Ru, Rh, Pd, Ag, Pt, Au and of the lanthanides/actinides show that electron repulsion, exchange energy and relativistic effects decide the real order; the orbital energy order changes with Z and inside ions or ligand fields; Hund's rule has exceptions in excited states; Aufbau fails for heavy elements; and none of the rules predicts reactivity or reaction rates."
   ],
   "confusion": [
-    "❌ Misconception about 09 aufbau pauli hund. ✅ Scientific explanation."
+    "❌ 4s is always lower in energy than 3d. ✅ It fills first in neutral atoms, but in ions the 4s electrons are removed first (Fe²⁺ = 3d⁶).",
+    "❌ Pauli's principle forbids two electrons in one orbital. ✅ They may share an orbital if their spins are opposite (different mₛ).",
+    "❌ Hund's rule says electrons pair as soon as possible. ✅ Pairing begins only after every degenerate orbital holds one electron.",
+    "❌ Cr is [Ar]3d⁴4s². ✅ It is [Ar]3d⁵4s¹ because the half-filled d subshell wins on exchange energy."
   ],
   "practice": [
-    "Practice exercise for 09 aufbau pauli hund."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 09 aufbau pauli hund."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 09 aufbau pauli hund."
-  ],
-  "practiceQuestions": [
-    "Practice question for 09 aufbau pauli hund."
+    "State Aufbau's principle, Pauli's exclusion principle and Hund's rule with one example each.",
+    "Apply the (n + l) rule to arrange 3d, 4s, 4p, 3p and 5s in order of filling.",
+    "Give the configurations of Z = 24, 26 and 29 and explain the anomalies.",
+    "Write Fe, Fe²⁺ and Fe³⁺ configurations and explain why Fe³⁺ is extra stable.",
+    "How many unpaired electrons occur in Mn²⁺ and Cu²⁺? State the magnetic behaviour of each."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 09 aufbau pauli hund)"
+    "$$\\text{Aufbau: smaller }(n+l)\\text{ first; tie} \\rightarrow \\text{smaller }n$$",
+    "$$\\text{subshell capacity}=2(2l+1),\\qquad \\text{shell capacity}=2n^{2}$$",
+    "$$\\mu=\\sqrt{n(n+2)}\\ \\text{BM},\\quad n=\\text{unpaired electrons}$$"
   ],
-  "keyPoints": [
-    "Core point for 09 aufbau pauli hund."
+  "universalFacts": [
+    "Cr (24) = [Ar]3d⁵4s¹ and Cu (29) = [Ar]3d¹⁰4s¹ are the only anomalies within Z ≤ 30.",
+    "Fe³⁺ = [Ar]3d⁵ (5 unpaired); Zn²⁺ = [Ar]3d¹⁰ (0 unpaired)."
   ],
-  "summary": "Summary of 09 aufbau pauli hund.",
-  "specialNotes": [
-    "Specialized insight for 09 aufbau pauli hund."
-  ],
-  "importantStatements": [
-    "Key statement for 09 aufbau pauli hund."
+  "examples": [
+    "**Problem:** Configuration and magnetic behaviour of Cu²⁺. **Solution:** Cu = [Ar]3d¹⁰4s¹ → Cu²⁺ = [Ar]3d⁹ → one unpaired electron → paramagnetic, μ ≈ 1.73 BM.",
+    "**Problem:** How many Zn electrons have l = 2? **Solution:** Zn = [Ar]3d¹⁰4s² — the 3d subshell (l = 2) holds 10 electrons."
   ],
   "importantNotes": [
-    "Important note regarding 09 aufbau pauli hund."
+    "For ions always remove electrons from the highest-n shell first (4s before 3d) — a standard exam trap.",
+    "Explain the Cr/Cu anomalies with exchange energy and half-filled stability, not as arbitrary exceptions."
   ],
-  "examShortTricks": [
-    "Recall the formula for Aufbau, Pauli and Hund's Rules."
-  ],
-  "examNotes": [
-    "Focus on Aufbau, Pauli and Hund's Rules problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 09 aufbau pauli hund?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 09 aufbau pauli hund."
-  ],
-  "importantTasks": [
-    "Task for studying 09 aufbau pauli hund."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "09-aufbau-pauli-hund",
-  "mcqs": [
-    {
-      "question": "Question about 09 aufbau pauli hund?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ]
+  "visualType": "electronic-configuration",
+  "tabGroup": "Atomic-Structure-Learner-Notes"
 }

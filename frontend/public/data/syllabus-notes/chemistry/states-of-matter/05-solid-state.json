@@ -1,81 +1,66 @@
 {
-  "title": "Solid State",
+  "title": "Solid State: Types of Solids, Amorphous and Crystalline Solids",
   "unitSlug": "states-of-matter",
-  "topicSlug": "solid-state",
-  "topicTitle": "Solid State",
-  "relevance": 30,
+  "topicSlug": "solid-state-types-of-solids-amorphous-and-crystalline-solids",
+  "topicTitle": "Solid state: types of solids, amorphous and crystalline solids",
+  "relevance": 100,
   "notes": [
-    "Detailed notes on 05 solid state within the states of matter unit."
+    "### 1. Meaning of the solid state",
+    "A solid has a definite shape and volume because its constituent particles are held in fixed mean positions by strong intermolecular (or interatomic/ionic) forces. The particles can only vibrate about their positions, so solids are rigid, practically incompressible and diffuse extremely slowly. Solids are classified by the *arrangement* of particles (crystalline vs amorphous) and by the *nature of the binding force* (ionic, covalent, molecular, metallic, hydrogen-bonded).",
+    "### 2. Crystalline solids",
+    "The particles are arranged in a regular, repeating three-dimensional pattern called a **crystal lattice**, which extends over a long range (long-range order). Properties: definite geometrical shape (crystal habit), sharp melting point, cleavage along definite planes, anisotropic physical properties (refractive index, thermal expansion, conductivity differ along different directions) and a characteristic X-ray diffraction pattern. Examples: NaCl, KCl, sugar, quartz, diamond, ice, alum, copper.",
+    "### 3. Types of crystalline solids (by binding force)",
+    "• **Ionic:** ions held by strong electrostatic forces (NaCl, CaF₂) — hard, brittle, high melting point, non-conducting as solids but conducting when molten or in solution, soluble in polar solvents.",
+    "• **Covalent (network/atomic):** atoms joined by a continuous network of covalent bonds (diamond, graphite, SiC, quartz) — extremely hard, very high melting point, usually insulators or semiconductors (graphite conducts).",
+    "• **Molecular:** molecules held by weak van der Waals forces or hydrogen bonds (iodine, dry ice, naphthalene, sugar, ice) — soft, low melting point, volatile, poor conductors.",
+    "• **Metallic:** positive ion cores in a sea of delocalised electrons (Na, Cu, Fe) — lustrous, malleable, ductile, good conductors of heat and electricity, melting points from very low (Hg, Ga) to very high (W).",
+    "### 4. Amorphous solids",
+    "Amorphous solids have only short-range order — the particles are randomly arranged over long distances, so there is no definite lattice. Properties: no definite geometrical shape, no sharp melting point (they soften gradually over a temperature range and have a glass-transition temperature Tg), isotropic properties, irregular cleavage and a broad diffuse X-ray pattern. They are described as pseudo-solids or **supercooled liquids** because their particles can flow very slowly. Examples: glass, rubber, plastics, amorphous sulfur and selenium, cellophane.",
+    "### 5. Crystalline versus amorphous (comparison points)",
+    "Melting point: sharp vs gradual; order: long-range vs short-range; shape: definite geometry vs irregular; cleavage: definite planes vs irregular; physical properties: anisotropic vs isotropic; X-ray diffraction: sharp lines vs broad halos; thermodynamic stability: stable vs metastable; examples: NaCl, diamond vs glass, rubber.",
+    "### 6. Isotropy and anisotropy",
+    "A substance is isotropic when a physical property has the same value in all directions (amorphous solids, liquids, gases) and anisotropic when the property depends on direction (single crystals). For example the refractive index of quartz differs along different crystallographic axes, and graphite conducts electricity along its layers but not across them.",
+    "### 7. Applications",
+    "• **Single crystals** are grown for technology — Czochralski-pulled silicon and germanium for semiconductors, quartz for oscillators and watches, sapphire for optical windows, and organic crystals for lasers and detectors.",
+    "• Ionic and molecular crystals are the basis of the salt, sugar, fertiliser and pharmaceutical industries (recrystallisation is the standard purification method; crystal polymorphism controls drug dissolution).",
+    "• Amorphous solids find wide use precisely because of their isotropic, easy-to-shape nature — window and container glass, optical fibres, plastics, rubber, amorphous silicon solar cells and metallic glasses.",
+    "• Diamond, SiC and quartz illustrate structure-property relations: giant covalent lattices give extreme hardness and high melting points used in abrasives, cutting tools and refractories.",
+    "### 8. Limitations",
+    "The crystalline/amorphous division is not sharp: most materials are polycrystalline or semi-crystalline (plastics, silk, cotton, metals) with both ordered and disordered regions, so the perfect crystal is an idealisation. Anisotropy appears only in single crystals — a polycrystalline aggregate usually behaves isotropically in bulk. The classification by binding force is itself approximate, since many crystals show mixed bonding (graphite: covalent + van der Waals; ice: covalent + hydrogen bonding), and amorphous solids are **metastable**, so their properties drift with time (glass devitrification) and depend on thermal history rather than on composition alone."
   ],
   "confusion": [
-    "❌ Misconception about 05 solid state. ✅ Scientific explanation."
+    "❌ Amorphous solids are true solids with a very high viscosity. ✅ They are regarded as pseudo-solids or supercooled liquids because they lack long-range order and flow over long times.",
+    "❌ All solids have sharp melting points. ✅ Amorphous solids soften over a range (glass-transition temperature); only crystalline solids melt sharply.",
+    "❌ Isotropy means the same as anisotropy. ✅ Isotropic = same property in all directions (amorphous); anisotropic = direction-dependent (single crystals).",
+    "❌ Graphite is a molecular solid. ✅ Graphite is a covalent network with strong covalent layers held by weak van der Waals forces — which explains its lubricity and conductivity.",
+    "❌ Metals melt at high temperature because they are covalently bonded. ✅ Metallic bonding strength varies widely; Hg melts at −39 °C while W melts at 3422 °C."
   ],
   "practice": [
-    "Practice exercise for 05 solid state."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 05 solid state."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 05 solid state."
-  ],
-  "practiceQuestions": [
-    "Practice question for 05 solid state."
+    "Distinguish between crystalline and amorphous solids on any six points.",
+    "Classify crystalline solids according to the nature of the binding force and give two examples of each type.",
+    "Define isotropy and anisotropy and explain why amorphous solids are isotropic.",
+    "Explain why diamond is extremely hard and why glass softens over a range of temperature.",
+    "Compare the melting behaviour and X-ray diffraction patterns of crystalline and amorphous solids.",
+    "State the limitations of the crystalline/amorphous classification."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 05 solid state)"
+    "$$\\text{Glass-transition temperature }T_{g}:\\ \\text{softening region of an amorphous solid}$$",
+    "$$\\text{Bragg's law (X-ray identification of crystals): }n\\lambda=2d\\sin\\theta$$"
   ],
-  "keyPoints": [
-    "Core point for 05 solid state."
+  "universalFacts": [
+    "Quartz, diamond and graphite are allotropic forms of giant covalent crystals; graphite is anisotropic (conducts along layers).",
+    "Glass is a supercooled liquid — very old window glass is measurably thicker at the bottom because of slow flow.",
+    "Amorphous silicon is used in thin-film solar cells and LCD backplanes, where its cheaper deposition outweighs its lower efficiency."
   ],
-  "summary": "Summary of 05 solid state.",
-  "specialNotes": [
-    "Specialized insight for 05 solid state."
-  ],
-  "importantStatements": [
-    "Key statement for 05 solid state."
+  "examples": [
+    "**Problem:** Why does glass not show a sharp melting point on heating? **Solution:** amorphous solids lack a periodic lattice, so bonds break over a range of energies — the material softens gradually between the glass-transition and melting regions instead of melting at one temperature.",
+    "**Problem:** Graphite conducts electricity while diamond does not, though both are carbon. **Solution:** in graphite each carbon uses three of four valence electrons in σ bonds; the fourth electron is delocalised between layers enabling conduction, whereas in diamond all four electrons are localised in σ bonds."
   ],
   "importantNotes": [
-    "Important note regarding 05 solid state."
+    "Answer the crystalline vs amorphous question as a six-point comparison — order, melting point, shape, cleavage, isotropy, X-ray pattern.",
+    "For each type of crystalline solid, link the binding force to at least two consequences (hardness, melting point, conductivity, solubility).",
+    "Mention that amorphous solids are metastable and that polycrystalline materials lie between the two extremes."
   ],
-  "examShortTricks": [
-    "Recall the formula for Solid State."
-  ],
-  "examNotes": [
-    "Focus on Solid State problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 05 solid state?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 05 solid state."
-  ],
-  "importantTasks": [
-    "Task for studying 05 solid state."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "05-solid-state",
-  "mcqs": [
-    {
-      "question": "Question about 05 solid state?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ]
+  "visualType": "solid-state",
+  "tabGroup": "States-Of-Matter-Learner-Notes"
 }

@@ -1,260 +1,66 @@
 {
-  "title": "Verifying Whole Number Ratios (Law of Multiple Proportions)",
+  "title": "Verifying Whole-Number Ratios from Experimental Data",
   "unitSlug": "stoichiometry",
-  "topicSlug": "verifying-whole-number-ratios",
-  "topicTitle": "Verifying Whole Number Ratios",
-  "relevance": 100,
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
+  "topicSlug": "laws-of-stoichiometry",
+  "topicTitle": "Laws of stoichiometry",
+  "relevance": 80,
+  "notes": [
+    "### Focus of this tab",
+    "The computational skill behind all the combination laws: converting raw percentage/mass data into whole-number ratios — the shared method of definite, multiple and reciprocal proportions, and of empirical-formula work.",
+    "### The standard five-step method",
+    "(1) Take the percentage of each element as mass in 100 g (or use the given masses). (2) Divide each mass by the atomic mass of that element → moles. (3) Divide all values by the smallest. (4) If the ratios are still fractional (e.g. 1 : 1.5, 1 : 1.33, 1 : 1.67), multiply the whole set by 2, 3 or 4 respectively to clear fractions. (5) Interpret: the whole-number ratio is the atomic ratio in the compound.",
+    "### Worked pattern 1 — a binary oxide",
+    "An oxide contains 60% metal and 40% oxygen (atomic mass of metal = 48). Metal = 60/48 = 1.25; O = 40/16 = 2.5. Divide by 1.25 → M : O = 1 : 2 → formula MO₂. (With 70% metal it would be 1.46 : 1.875 → 1 : 1.28… → careful: re-check data, since real ratios must resolve.)",
+    "### Worked pattern 2 — two oxides checked against multiple proportions",
+    "Oxide A: 46.7% N; oxide B: 30.4% N. Per gram of nitrogen: A has 46.7/53.3 = 0.876 g O; B has 30.4/69.6 = 0.437 g O. Ratio 0.876 : 0.437 = 2 : 1 — a whole-number ratio, so the data obey the law of multiple proportions (NO₂-type and NO-type oxides).",
+    "### Recognising the intended multiplier",
+    "• ×2 for halves: 1 : 1.5, 1 : 2.5.",
+    "• ×3 for thirds: 1 : 1.33, 1 : 1.67, 1 : 2.33.",
+    "• ×4 for quarters: 1 : 1.25, 1 : 1.75.",
+    "### Error awareness (limitations of the method)",
+    "Real analytical data carry errors, so ratios like 1 : 1.48 may 'want' to be 1 : 1.5 while 1 : 1.35 may be measurement noise around 1 : 1.33. Judgement (and significant figures) decide; non-stoichiometric compounds (Fe₀.₉₃O) will never resolve exactly, and the method assumes the compound is a true formula compound."
+  ],
+  "confusion": [
+    "❌ Any near-integer ratio may be rounded freely. ✅ Round only with analytical justification; 1 : 1.9 is not 1 : 2 in a berthollide.",
+    "❌ The ratio is of masses. ✅ After dividing by atomic masses, the ratio is of *atoms* (moles), not grams.",
+    "❌ Multiplying changes the formula. ✅ Scaling the whole ratio set preserves it (2 : 4 is the same as 1 : 2)."
+  ],
+  "practice": [
+    "Describe the five-step method of converting percentage composition into a whole-number atomic ratio.",
+    "An oxide of a metal (atomic mass 56) contains 69.9% metal. Find its formula.",
+    "Two oxides of nitrogen contain 30.4% and 46.7% nitrogen. Verify the law of multiple proportions.",
+    "Which multipliers clear the ratios 1 : 1.33 and 1 : 1.25?"
+  ],
+  "formulas": [
+    "$$n=\\frac{\\%\\text{ element}}{100\\times A_{\\text{element}}};\\qquad \\text{divide all by the smallest, then clear fractions}$$"
+  ],
+  "universalFacts": [
+    "This is exactly the arithmetic that produces empirical formulas from combustion data.",
+    "Cannizzaro used whole-number ratios of molecular weights to sort atomic masses in 1858.",
+    "The 'divide by smallest' step is the single most-omitted step in exam scripts."
+  ],
+  "examples": [
+    "**Problem:** A hydrocarbon gives C : H mass ratio 6 : 1. Find the empirical formula. **Solution:** C = 6/12 = 0.5; H = 1/1 = 1 → divide by 0.5 → C : H = 1 : 2 → CH₂."
+  ],
+  "importantNotes": [
+    "Always divide by atomic masses before comparing — comparing raw masses is the classic wrong method.",
+    "State the multiplier used when clearing fractions (×2, ×3, ×4)."
+  ],
+  "mcqs": [
+    {
+      "question": "A compound has 75% carbon and 25% hydrogen. Its empirical formula is:",
+      "options": [
+        "CH₂",
+        "CH₄",
+        "C₂H₆",
+        "CH₃"
+      ],
+      "answer": "B"
+    }
+  ],
+  "visualType": "empirical-formula",
+  "tabGroup": "Stoichiometry-Learner-Notes",
+  "source": "ravikishan",
   "duplicateType": 2,
-  "tabGroup": "verifying-whole-number-ratios",
-  "visualType": "laws-of-stoichiometry",
-  "enrichedContent": {
-    "notes": [
-      "**Law of Multiple Proportions Verification:** When two elements combine to form more than one compound, the masses of one element that combine with a fixed mass of the other element are in ratios of small whole numbers. This law provides direct evidence for the atomic theory.",
-      "**Verification Method:** (1) Determine the mass of each element in each compound. (2) Fix the mass of one element. (3) Calculate the mass of the other element per fixed mass. (4) Find the ratio of these masses—it should be a simple whole number.",
-      "**Classic Example — Carbon Oxides:** In CO: 12g C combines with 16g O (ratio O/C = 1.33). In CO₂: 12g C combines with 32g O (ratio O/C = 2.67). The ratio of oxygen masses = 16:32 = 1:2.",
-      "**Nitrogen Oxides Verification:** NO (14g N : 16g O), NO₂ (14g N : 32g O), N₂O (28g N : 16g O). Normalized to 14g N: NO has 16g O, NO₂ has 32g O, N₂O has 8g O. Ratios: 8:16:32 = 1:2:4.",
-      "**Theoretical Basis:** This law arises because atoms combine in discrete, whole-number ratios. If element A combines with element B in compounds AB and AB₂, the mass of B per atom of A follows the ratio 1:2.",
-      "**Common Compounds to Verify:** (a) Copper oxides: Cu₂O (Cu:O = 4:1) vs CuO (Cu:O = 2:1), (b) Iron oxides: FeO vs Fe₂O₃ vs Fe₃O₄, (c) Sulfur oxides: SO₂ vs SO₃."
-    ],
-    "confusion": [
-      "❌ This law applies to all compounds. ✅ Only applies when TWO elements form MORE THAN ONE compound.",
-      "❌ The ratio must always be 1:1. ✅ The ratio can be any simple whole number (1:2, 2:3, 3:4, etc.).",
-      "❌ Experimental data will always give exact whole numbers. ✅ Real experimental data may have small errors; ratios should be close to whole numbers (e.g., 1.98 ≈ 2).",
-      "❌ This is the same as the Law of Definite Proportions. ✅ Definite proportions applies to ONE compound; multiple proportions applies to MULTIPLE compounds of the same elements."
-    ],
-    "practice": [
-      "Calculate the mass ratio of oxygen in H₂O (1:8) and H₂O₂ (1:16) to verify the law.",
-      "Verify the Law of Multiple Proportions for SO₂ (S:O = 1:1) and SO₃ (S:O = 1:1.5).",
-      "Two oxides of nitrogen contain 36.4% and 69.6% oxygen respectively. Verify the law.",
-      "Show that Cu₂O and CuO obey the Law of Multiple Proportions using atomic masses Cu=63.5, O=16.",
-      "Given mass percentages for C₂H₆ and C₄H₁₀, verify the law for hydrogen-to-carbon ratios."
-    ],
-    "universalFacts": [
-      "Whole number ratios are fundamental to chemical combination.",
-      "This verification supports the atomic theory of matter.",
-      "Experimental data consistently shows simple whole number ratios.",
-      "The law of multiple proportions is based on this observation.",
-      "This principle is used to determine empirical formulas."
-    ],
-    "examples": [
-      "H₂O: H:O mass ratio = 1:8 (simple whole number ratio).",
-      "CO₂: C:O mass ratio = 3:8.",
-      "NH₃: N:H mass ratio = 14:3.",
-      "CH₄: C:H mass ratio = 3:1."
-    ],
-    "practiceQuestions": [
-      "Verify whole number ratios for water and ammonia.",
-      "Calculate the empirical formula from percentage composition data.",
-      "Show that the Law of Multiple Proportions is based on whole number ratios."
-    ],
-    "formulas": [
-      "Empirical formula: mole ratio of elements in simplest whole numbers",
-      "Mole ratio = (Mass of element / Atomic mass) for each element",
-      "Divide by smallest mole value to get whole number ratio",
-      "Molecular formula = (Empirical formula)_n where n = Molecular mass/Empirical mass"
-    ],
-    "keyPoints": [
-      "All compounds have whole number atom ratios.",
-      "Empirical formula gives simplest ratio.",
-      "Molecular formula may be multiple of empirical formula.",
-      "Whole number ratios support atomic theory."
-    ],
-    "summary": "The Law of Multiple Proportions states that when two elements form multiple compounds, the masses of one element combining with a fixed mass of the other are in simple whole-number ratios. This law, formulated by Dalton in 1803, provides direct evidence for atomic theory by demonstrating that atoms combine in discrete, countable units.",
-    "specialNotes": [
-      "This concept is essential for solving empirical formula problems.",
-      "NEB frequently asks to determine empirical formulas from data.",
-      "Round ratios to nearest whole numbers (multiply if needed)."
-    ],
-    "importantStatements": [
-      "Atoms combine in simple whole number ratios to form compounds.",
-      "The empirical formula represents the simplest whole number ratio of atoms in a compound.",
-      "Whole number ratios are evidence for the particulate nature of matter."
-    ],
-    "importantNotes": [
-      "When calculating empirical formulas, divide mole ratios by the smallest value.",
-      "If ratios are not whole numbers, multiply by appropriate factor.",
-      "Common multipliers: ×2 for 0.5, ×3 for 0.33 or 0.67, ×4 for 0.25."
-    ],
-    "examShortTricks": [
-      "Step 1: Convert % to grams.",
-      "Step 2: Convert grams to moles.",
-      "Step 3: Divide by smallest mole value.",
-      "Step 4: Multiply to get whole numbers if needed.",
-      "Step 5: Write empirical formula."
-    ],
-    "examNotes": [
-      "This law is a guaranteed NEB short-answer question—master verification procedures.",
-      "Be prepared to calculate mass ratios from percentage composition data.",
-      "Distinguish clearly from the Law of Definite Proportions in your answers.",
-      "Always show normalization to fixed mass in your calculations."
-    ],
-    "mcs": [
-      {
-        "question": "The empirical formula of a compound represents:",
-        "options": [
-          "Actual number of atoms",
-          "Simplest whole number ratio",
-          "Molecular mass",
-          "Structural arrangement"
-        ],
-        "answer": "B"
-      },
-      {
-        "question": "If the mole ratio of elements in a compound is 1:2:3, the empirical formula is:",
-        "options": [
-          "ABC",
-          "A₁B₂C₃",
-          "A₂B₄C₆",
-          "Cannot be determined"
-        ],
-        "answer": "B"
-      }
-    ],
-    "importantConcepts": [
-      "Law of Multiple Proportions: Verification methodology.",
-      "Atomic Theory Evidence: Discrete combining units.",
-      "Mass Ratio Normalization: Fixed mass comparisons.",
-      "Distinction from Definite Proportions: Multiple vs. single compounds.",
-      "Common Compound Pairs: CO/CO₂, NO/NO₂, H₂O/H₂O₂, SO₂/SO₃."
-    ],
-    "importantTasks": [
-      "Verify the Law of Multiple Proportions for CO and CO₂ using mass data.",
-      "Calculate mass ratios for nitrogen oxides (NO, NO₂, N₂O).",
-      "Explain how this law supports atomic theory.",
-      "Compare and contrast with the Law of Definite Proportions.",
-      "Solve 5 verification problems with percentage composition data."
-    ],
-    "exercises": [],
-    "visualization": {
-      "type": "simulation",
-      "component": "MoleCalculator",
-      "desc": "Interactive mole-mass-volume calculator"
-    }
-  },
-  "originalContent": {
-    "notes": [
-      "**Law of Multiple Proportions Verification:** When two elements combine to form more than one compound, the masses of one element that combine with a fixed mass of the other element are in ratios of small whole numbers. This law provides direct evidence for the atomic theory.",
-      "**Verification Method:** (1) Determine the mass of each element in each compound. (2) Fix the mass of one element. (3) Calculate the mass of the other element per fixed mass. (4) Find the ratio of these masses—it should be a simple whole number.",
-      "**Classic Example — Carbon Oxides:** In CO: 12g C combines with 16g O (ratio O/C = 1.33). In CO₂: 12g C combines with 32g O (ratio O/C = 2.67). The ratio of oxygen masses = 16:32 = 1:2.",
-      "**Nitrogen Oxides Verification:** NO (14g N : 16g O), NO₂ (14g N : 32g O), N₂O (28g N : 16g O). Normalized to 14g N: NO has 16g O, NO₂ has 32g O, N₂O has 8g O. Ratios: 8:16:32 = 1:2:4.",
-      "**Theoretical Basis:** This law arises because atoms combine in discrete, whole-number ratios. If element A combines with element B in compounds AB and AB₂, the mass of B per atom of A follows the ratio 1:2.",
-      "**Common Compounds to Verify:** (a) Copper oxides: Cu₂O (Cu:O = 4:1) vs CuO (Cu:O = 2:1), (b) Iron oxides: FeO vs Fe₂O₃ vs Fe₃O₄, (c) Sulfur oxides: SO₂ vs SO₃."
-    ],
-    "confusion": [
-      "❌ This law applies to all compounds. ✅ Only applies when TWO elements form MORE THAN ONE compound.",
-      "❌ The ratio must always be 1:1. ✅ The ratio can be any simple whole number (1:2, 2:3, 3:4, etc.).",
-      "❌ Experimental data will always give exact whole numbers. ✅ Real experimental data may have small errors; ratios should be close to whole numbers (e.g., 1.98 ≈ 2).",
-      "❌ This is the same as the Law of Definite Proportions. ✅ Definite proportions applies to ONE compound; multiple proportions applies to MULTIPLE compounds of the same elements."
-    ],
-    "practice": [
-      "Calculate the mass ratio of oxygen in H₂O (1:8) and H₂O₂ (1:16) to verify the law.",
-      "Verify the Law of Multiple Proportions for SO₂ (S:O = 1:1) and SO₃ (S:O = 1:1.5).",
-      "Two oxides of nitrogen contain 36.4% and 69.6% oxygen respectively. Verify the law.",
-      "Show that Cu₂O and CuO obey the Law of Multiple Proportions using atomic masses Cu=63.5, O=16.",
-      "Given mass percentages for C₂H₆ and C₄H₁₀, verify the law for hydrogen-to-carbon ratios."
-    ],
-    "universalFacts": [
-      "Whole number ratios are fundamental to chemical combination.",
-      "This verification supports the atomic theory of matter.",
-      "Experimental data consistently shows simple whole number ratios.",
-      "The law of multiple proportions is based on this observation.",
-      "This principle is used to determine empirical formulas."
-    ],
-    "examples": [
-      "H₂O: H:O mass ratio = 1:8 (simple whole number ratio).",
-      "CO₂: C:O mass ratio = 3:8.",
-      "NH₃: N:H mass ratio = 14:3.",
-      "CH₄: C:H mass ratio = 3:1."
-    ],
-    "practiceQuestions": [
-      "Verify whole number ratios for water and ammonia.",
-      "Calculate the empirical formula from percentage composition data.",
-      "Show that the Law of Multiple Proportions is based on whole number ratios."
-    ],
-    "formulas": [
-      "Empirical formula: mole ratio of elements in simplest whole numbers",
-      "Mole ratio = (Mass of element / Atomic mass) for each element",
-      "Divide by smallest mole value to get whole number ratio",
-      "Molecular formula = (Empirical formula)_n where n = Molecular mass/Empirical mass"
-    ],
-    "keyPoints": [
-      "All compounds have whole number atom ratios.",
-      "Empirical formula gives simplest ratio.",
-      "Molecular formula may be multiple of empirical formula.",
-      "Whole number ratios support atomic theory."
-    ],
-    "summary": "The Law of Multiple Proportions states that when two elements form multiple compounds, the masses of one element combining with a fixed mass of the other are in simple whole-number ratios. This law, formulated by Dalton in 1803, provides direct evidence for atomic theory by demonstrating that atoms combine in discrete, countable units.",
-    "specialNotes": [
-      "This concept is essential for solving empirical formula problems.",
-      "NEB frequently asks to determine empirical formulas from data.",
-      "Round ratios to nearest whole numbers (multiply if needed)."
-    ],
-    "importantStatements": [
-      "Atoms combine in simple whole number ratios to form compounds.",
-      "The empirical formula represents the simplest whole number ratio of atoms in a compound.",
-      "Whole number ratios are evidence for the particulate nature of matter."
-    ],
-    "importantNotes": [
-      "When calculating empirical formulas, divide mole ratios by the smallest value.",
-      "If ratios are not whole numbers, multiply by appropriate factor.",
-      "Common multipliers: ×2 for 0.5, ×3 for 0.33 or 0.67, ×4 for 0.25."
-    ],
-    "examShortTricks": [
-      "Step 1: Convert % to grams.",
-      "Step 2: Convert grams to moles.",
-      "Step 3: Divide by smallest mole value.",
-      "Step 4: Multiply to get whole numbers if needed.",
-      "Step 5: Write empirical formula."
-    ],
-    "examNotes": [
-      "This law is a guaranteed NEB short-answer question—master verification procedures.",
-      "Be prepared to calculate mass ratios from percentage composition data.",
-      "Distinguish clearly from the Law of Definite Proportions in your answers.",
-      "Always show normalization to fixed mass in your calculations."
-    ],
-    "mcs": [
-      {
-        "question": "The empirical formula of a compound represents:",
-        "options": [
-          "Actual number of atoms",
-          "Simplest whole number ratio",
-          "Molecular mass",
-          "Structural arrangement"
-        ],
-        "answer": "B"
-      },
-      {
-        "question": "If the mole ratio of elements in a compound is 1:2:3, the empirical formula is:",
-        "options": [
-          "ABC",
-          "A₁B₂C₃",
-          "A₂B₄C₆",
-          "Cannot be determined"
-        ],
-        "answer": "B"
-      }
-    ],
-    "importantConcepts": [
-      "Law of Multiple Proportions: Verification methodology.",
-      "Atomic Theory Evidence: Discrete combining units.",
-      "Mass Ratio Normalization: Fixed mass comparisons.",
-      "Distinction from Definite Proportions: Multiple vs. single compounds.",
-      "Common Compound Pairs: CO/CO₂, NO/NO₂, H₂O/H₂O₂, SO₂/SO₃."
-    ],
-    "importantTasks": [
-      "Verify the Law of Multiple Proportions for CO and CO₂ using mass data.",
-      "Calculate mass ratios for nitrogen oxides (NO, NO₂, N₂O).",
-      "Explain how this law supports atomic theory.",
-      "Compare and contrast with the Law of Definite Proportions.",
-      "Solve 5 verification problems with percentage composition data."
-    ],
-    "exercises": [],
-    "visualization": {
-      "type": "simulation",
-      "component": "MoleCalculator",
-      "desc": "Interactive mole-mass-volume calculator"
-    }
-  }
+  "filename": "05-verifying-whole-number-ratios.json"
 }

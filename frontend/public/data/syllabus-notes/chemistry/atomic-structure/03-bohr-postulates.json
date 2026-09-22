@@ -1,81 +1,74 @@
 {
-  "title": "Bohr's Atomic Model — Postulates",
+  "title": "Bohr's Postulates — Concise Statement and Meaning",
   "unitSlug": "atomic-structure",
   "topicSlug": "postulates-of-bohr-s-atomic-model-and-its-application",
   "topicTitle": "Postulates of Bohr's atomic model and its application",
-  "relevance": 87,
+  "relevance": 85,
   "notes": [
-    "Detailed notes on 03 bohr postulates within the atomic structure unit."
+    "### Focus of this tab",
+    "The four postulates, stated cleanly with the physical meaning of each — the fastest way to secure full marks on the 'state the postulates' question. Derivations and applications are in the main note and the companion application tab.",
+    "### Postulate 1 — stationary orbits",
+    "The electron in a hydrogen atom revolves only in certain fixed circular orbits around the nucleus. While in such an orbit it does **not** emit or absorb energy, although it is accelerating. Each orbit is a *stationary state* with a definite energy. Meaning: this postulate suspends classical electrodynamics inside the atom.",
+    "### Postulate 2 — quantisation of angular momentum",
+    "Only those orbits are permitted for which the angular momentum is an integral multiple of h/2π: $mvr=\\frac{nh}{2\\pi}$, n = 1, 2, 3, … The integer n is the principal quantum number. Meaning: the allowed orbits are discrete because the angular momentum comes in packets of ħ.",
+    "### Postulate 3 — frequency (energy) condition",
+    "Energy is emitted or absorbed only when the electron jumps between orbits: $h\\nu=E_{2}-E_{1}$ (emission when it falls to a lower level, absorption when it is raised). Meaning: this is exactly Planck's quantum hypothesis applied to atoms, and it is what produces sharp spectral lines.",
+    "### Postulate 4 — force condition",
+    "The Coulomb attraction of the nucleus provides the centripetal force for the circular motion: $\\frac{mv^{2}}{r}=\\frac{kZe^{2}}{r^{2}}$. Meaning: the mechanics is classical; only the *allowed states* are quantum — a hybrid (semi-classical) model.",
+    "### Vocabulary attached to the postulates",
+    "Ground state: lowest energy orbit (n = 1). Excited state: any higher orbit. Ionisation: complete removal of the electron (n = ∞). Binding energy: −Eₙ, the energy holding the electron. All definitions follow directly from the postulates."
   ],
   "confusion": [
-    "❌ Misconception about 03 bohr postulates. ✅ Scientific explanation."
+    "❌ Stationary orbit means the electron is at rest. ✅ It revolves, but the orbit is stationary *in energy* (non-radiating).",
+    "❌ Bohr's postulates were derived from classical mechanics. ✅ They were imposed; only the force condition is classical.",
+    "❌ The frequency condition applies to the electron's own motion. ✅ It concerns the emitted/absorbed photon only."
   ],
   "practice": [
-    "Practice exercise for 03 bohr postulates."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 03 bohr postulates."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 03 bohr postulates."
-  ],
-  "practiceQuestions": [
-    "Practice question for 03 bohr postulates."
+    "State the four postulates of Bohr's atomic model and explain the physical meaning of each.",
+    "Which postulate accounts for the stability of the atom and which for the line spectrum?",
+    "Define ground state, excited state and ionisation in terms of Bohr's orbits.",
+    "Show that postulate 2 together with postulate 4 fixes the orbit radii."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 03 bohr postulates)"
+    "$$mvr=\\frac{nh}{2\\pi},\\qquad \\frac{mv^{2}}{r}=\\frac{kZe^{2}}{r^{2}},\\qquad h\\nu=E_{2}-E_{1}$$"
   ],
-  "keyPoints": [
-    "Core point for 03 bohr postulates."
+  "universalFacts": [
+    "Bohr's model was published in 1913 — one year after Bohr joined Rutherford in Manchester.",
+    "The postulates apply strictly to one-electron species: H, He⁺, Li²⁺, Be³⁺.",
+    "Postulate 2 was later *derived* by de Broglie (standing matter waves) — turning an assumption into a consequence."
   ],
-  "summary": "Summary of 03 bohr postulates.",
-  "specialNotes": [
-    "Specialized insight for 03 bohr postulates."
-  ],
-  "importantStatements": [
-    "Key statement for 03 bohr postulates."
+  "examples": [
+    "**Problem:** Why do the postulates make the atom stable? **Solution:** in a stationary orbit (postulate 1) the electron accelerates without radiating, so it neither loses energy nor spirals in — stability is postulated, not explained classically."
   ],
   "importantNotes": [
-    "Important note regarding 03 bohr postulates."
+    "Quote the four postulates in order; examiners look for 'stationary orbit', 'mvr = nh/2π' and 'hν = E₂ − E₁' verbatim.",
+    "Say 'one-electron species' when quoting applicability — the commonest precision slip."
   ],
-  "examShortTricks": [
-    "Recall the formula for Bohr's Atomic Model — Postulates."
-  ],
-  "examNotes": [
-    "Focus on Bohr's Atomic Model — Postulates problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 03 bohr postulates?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 03 bohr postulates."
-  ],
-  "importantTasks": [
-    "Task for studying 03 bohr postulates."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "03-bohr-postulates",
   "mcqs": [
     {
-      "question": "Question about 03 bohr postulates?",
+      "question": "Bohr's quantisation condition for angular momentum is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "mvr = nh",
+        "mvr = nh/2π",
+        "mvr = n²h",
+        "mvr = h/2πn"
       ],
-      "answer": "A"
+      "answer": "B"
+    },
+    {
+      "question": "While revolving in a stationary orbit, the electron:",
+      "options": [
+        "Radiates continuously",
+        "Absorbs energy",
+        "Neither radiates nor absorbs",
+        "Emits a line spectrum"
+      ],
+      "answer": "C"
     }
-  ]
+  ],
+  "visualType": "bohr-model",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "03-bohr-postulates.json"
 }

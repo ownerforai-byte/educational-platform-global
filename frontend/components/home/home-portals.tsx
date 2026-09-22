@@ -12,6 +12,7 @@ import {
   Brain,
   ArrowUpRight,
   Atom,
+  ListTree,
 } from "lucide-react";
 
 interface PortalLink {
@@ -32,6 +33,22 @@ interface Portal {
 }
 
 const PORTALS: Portal[] = [
+  {
+    title: "Everything Index",
+    badge: "ALL PAGES · ONE HEAD PAGE",
+    desc: "Every page on the platform in one list — a short opening, the name, and its link printed directly below.",
+    href: "/index",
+    icon: ListTree,
+    iconClass: "text-sky-500 bg-sky-500/10 border-sky-500/25",
+    gradientClass: "from-sky-500/[0.08] via-card to-card",
+    chipClass: "hover:border-sky-500/50 hover:shadow-sky-500/10",
+    links: [
+      { label: "All 3D Labs", href: "/lab/3d" },
+      { label: "Graph Bank", href: "/graphs" },
+      { label: "Pro Knowledge", href: "/knowledge/pro" },
+      { label: "Derivations", href: "/derivations" },
+    ],
+  },
   {
     title: "Curriculum & Notes",
     badge: "NEB CURRICULUM",

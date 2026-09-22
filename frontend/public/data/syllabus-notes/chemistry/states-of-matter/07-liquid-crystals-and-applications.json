@@ -1,0 +1,69 @@
+{
+  "title": "Liquid Crystals and their Applications",
+  "unitSlug": "states-of-matter",
+  "topicSlug": "liquid-crystals-and-their-applications",
+  "topicTitle": "Liquid crystals and their applications",
+  "relevance": 100,
+  "notes": [
+    "### 1. Meaning",
+    "Liquid crystals are substances that are simultaneously partly ordered like a crystal and partly mobile like a liquid — a mesophase intermediate between the crystalline solid and the isotropic liquid. They flow and take the shape of the container, yet their rod- or disc-shaped molecules retain positional/orientational order, so their optical, electrical and mechanical properties are **anisotropic** (direction-dependent). F. Reinitzer first observed this behaviour in cholesteryl benzoate (1888).",
+    "### 2. Characteristics",
+    "• Molecules are elongated (rod-like) or flat and disc-like with flexible end chains; shape anisotropy produces the ordered mesophase.",
+    "• Partial order gives birefringence (two refractive indices), anisotropic dielectric constant, viscosity, elasticity and magnetic susceptibility.",
+    "• Order-disorder change occurs over a narrow, well-defined **temperature range** — below it a solid, above it an ordinary liquid.",
+    "• **Thermotropic** LCs form on temperature change (displays); **lyotropic** LCs form in solution when concentration changes (soap, detergents, cell membranes).",
+    "### 3. Classified mesophases",
+    "• **Nematic:** molecules parallel, positions random — the display material.",
+    "• **Smectic:** parallel molecules arranged in layers (soaps, some polymers).",
+    "• **Cholesteric (chiral nematic):** layers twisted into a helix, strongly temperature-sensitive colours used in thermometers and mood strips.",
+    "### 4. How an LCD works",
+    "A thin nematic layer is sandwiched between transparent conducting electrodes and crossed polarisers. In the twisted-nematic cell the molecules untwist when a voltage is applied, changing the polarisation of the transmitted light, so each pixel switches from bright to dark. Millions of such cells form the pixels of calculators, watches, phones, monitors and televisions.",
+    "### 5. Applications",
+    "• **Displays:** LCD televisions, monitors, laptops, phones, digital watches, calculators and instrument panels — the largest use of liquid crystals.",
+    "• **Temperature measurement and mapping:** thermochromic LCs change colour with temperature — fever strips, aquarium thermometers, mood strips, non-destructive thermal mapping of electronic circuits and hot-spot detection in medicine and industry.",
+    "• **Sensors and optics:** pressure-sensitive LC films, optical switches and light valves, privacy glass, laser-beam steering and tunable lenses.",
+    "• **Materials:** liquid-crystal polymers such as Kevlar give very strong, stiff fibres (protective clothing, aerospace composites); LCs are also used in chromatography, lubricants and detergents.",
+    "### 6. Limitations",
+    "• The useful mesophase exists only in a narrow temperature window, so devices must stay within their rated range — LCDs fail in extreme cold and darken in strong heat.",
+    "• They are passive (non-emissive) and need a backlight, so brightness, contrast and viewing angle are limited compared with emissive displays.",
+    "• Response is slower than emissive technologies and polarisers absorb much of the light, so efficiency is moderate.",
+    "• They are sensitive to UV light, shock, contamination and moisture; some mesogens are chemically unstable or toxic and must be sealed carefully.",
+    "• The rigid-rod model explains mesophases only qualitatively; quantitative transition temperatures need statistical theories (Maier–Saupe, Onsager)."
+  ],
+  "confusion": [
+    "❌ Liquid crystals are crystals that have partly melted. ✅ They form a distinct mesophase: molecules flow yet keep orientational order.",
+    "❌ Liquid crystals emit light. ✅ LCDs modulate transmitted light from a backlight — they are non-emissive.",
+    "❌ They are liquids containing suspended crystal particles. ✅ The order is molecular and inherent to the phase.",
+    "❌ Liquid crystal displays work by melting. ✅ They work by electric-field reorientation of molecules within the same mesophase.",
+    "❌ A liquid crystal thermometer measures heat capacity. ✅ It uses the temperature dependence of the helical pitch, which shifts the reflected colour."
+  ],
+  "practice": [
+    "Define a liquid crystal and explain why it is intermediate between a solid and a liquid.",
+    "Distinguish thermotropic from lyotropic liquid crystals and describe nematic, smectic and cholesteric mesophases.",
+    "Explain the working of a twisted-nematic liquid crystal display.",
+    "List four applications of liquid crystals in everyday life and industry.",
+    "Explain how liquid crystals measure temperature and map thermal hot spots.",
+    "State the limitations of liquid-crystal materials in devices."
+  ],
+  "formulas": [
+    "$$\\text{Order parameter }S=\\tfrac{1}{2}\\left\\langle 3\\cos^{2}\\theta-1\\right\\rangle\\ (S=0\\ \\text{isotropic},\\ S=1\\ \\text{perfect crystal})$$",
+    "$$\\text{Birefringence: }n_{\\parallel}\\neq n_{\\perp},\\qquad \\varepsilon_{\\parallel}\\neq\\varepsilon_{\\perp}$$",
+    "$$\\text{Cholesteric reflection: }\\lambda_{\\max}=n\\,p\\ (p=\\text{helical pitch, temperature dependent})$$"
+  ],
+  "universalFacts": [
+    "Cholesteryl benzoate (Reinitzer, 1888) was the first liquid crystal studied.",
+    "Display nematic LCs are usually cyanobiphenyl homologues with a mesophase range of only a few tens of degrees.",
+    "Kevlar, a liquid-crystal polymer, has a strength-to-weight ratio several times that of steel."
+  ],
+  "examples": [
+    "**Problem:** Why does an LCD watch darken in a very hot car? **Solution:** heating pushes the material above its mesophase range, the ordered phase is lost, polarisation can no longer be controlled and the display becomes unreadable.",
+    "**Problem:** A thermochromic LC strip shows red at 30 °C and blue at 35 °C. Why? **Solution:** the helical pitch shortens with rising temperature, so the reflected (Bragg) wavelength moves from red towards blue — a visual thermometer."
+  ],
+  "importantNotes": [
+    "Describe the mesophase with both halves: 'ordered like a crystal, mobile like a liquid'.",
+    "Name birefringence/anisotropy as the property that makes display technology possible.",
+    "Quote the narrow temperature window as the main practical limitation."
+  ],
+  "visualType": "liquid-crystals",
+  "tabGroup": "States-Of-Matter-Learner-Notes"
+}

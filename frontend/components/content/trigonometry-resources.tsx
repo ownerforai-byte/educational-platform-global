@@ -116,131 +116,147 @@ function UnitCircleVisual() {
       </div>
 
       <div className="flex justify-center">
-        <svg viewBox="0 0 400 300" className="w-full max-w-md border rounded-lg bg-slate-950">
-          {/* Axes */}
-          <line x1={20} y1={cy} x2={280} y2={cy} stroke="#475569" strokeWidth="1.5" />
-          <line x1={cx} y1={20} x2={cx} y2={280} stroke="#475569" strokeWidth="1.5" />
-          <text x={270} y={cy - 6} fill="#64748b" fontSize="10">x</text>
-          <text x={cx + 6} y={28} fill="#64748b" fontSize="10">y</text>
+          <svg viewBox="0 0 400 300" className="w-full max-w-md border rounded-lg bg-slate-950">
+            {/* Subtle grid */}
+            {Array.from({ length: 20 }, (_, i) => (
+              <line key={"tgv" + i} x1={i * 20} y1={0} x2={i * 20} y2={300} stroke="#1e293b" strokeWidth="0.4" />
+            ))}
+            {Array.from({ length: 15 }, (_, i) => (
+              <line key={"tgh" + i} x1={0} y1={i * 20} x2={400} y2={i * 20} stroke="#1e293b" strokeWidth="0.4" />
+            ))}
+            {/* Legend */}
+            <g fontSize="8">
+              <circle cx={20} cy={20} r={3} fill={cosColor} /><text x={26} y={23} fill="#94a3b8">cos</text>
+              <circle cx={20} cy={34} r={3} fill={sinColor} /><text x={26} y={37} fill="#94a3b8">sin</text>
+              <circle cx={70} cy={20} r={3} fill={tanColor} /><text x={76} y={23} fill="#94a3b8">tan</text>
+              <circle cx={70} cy={34} r={3} fill="#38bdf8" /><text x={76} y={37} fill="#94a3b8">point</text>
+            </g>
+            {/* Axes */}
+            <line x1={20} y1={cy} x2={280} y2={cy} stroke="#475569" strokeWidth="1.5" />
+            <line x1={cx} y1={20} x2={cx} y2={280} stroke="#475569" strokeWidth="1.5" />
+            <polygon points={`280,${cy} 272,${cy - 3} 272,${cy + 3}`} fill="#475569" />
+            <polygon points={`${cx},20 ${cx - 3},28 ${cx + 3},28`} fill="#475569" />
+            <text x={270} y={cy - 6} fill="#64748b" fontSize="10">x</text>
+            <text x={cx + 6} y={28} fill="#64748b" fontSize="10">y</text>
 
-          {/* Circle */}
-          <circle cx={cx} cy={cy} r={r} fill="none" stroke="#8b5cf6" strokeWidth="1.5" />
+            {/* Circle */}
+            <circle cx={cx} cy={cy} r={r} fill="none" stroke="#8b5cf6" strokeWidth="1.5" />
 
-          {/* Angle arc */}
-          {angle > 0 && (
-            <path
-              d={(() => {
-                const startAngle = 0;
-                const endAngle = -rad;
-                const largeArc = angle > 180 ? 1 : 0;
-                const endX = cx + 20 * Math.cos(endAngle);
-                const endY = cy - 20 * Math.sin(endAngle);
-                return `M ${cx + 20} ${cy} A 20 20 0 ${largeArc} 0 ${endX} ${endY}`;
-              })()}
-              fill="none"
-              stroke="#fbbf24"
-              strokeWidth="2"
-              opacity="0.8"
-            />
-          )}
+            {/* Angle arc */}
+            {angle > 0 && (
+              <path
+                d={(() => {
+                  const startAngle = 0;
+                  const endAngle = -rad;
+                  const largeArc = angle > 180 ? 1 : 0;
+                  const endX = cx + 20 * Math.cos(endAngle);
+                  const endY = cy - 20 * Math.sin(endAngle);
+                  return `M ${cx + 20} ${cy} A 20 20 0 ${largeArc} 0 ${endX} ${endY}`;
+                })()}
+                fill="none"
+                stroke="#fbbf24"
+                strokeWidth="2"
+                opacity="0.8"
+              />
+            )}
 
-          {/* Cos line (horizontal projection) */}
-          <line
-            x1={cx}
-            y1={cy}
-            x2={pointX}
-            y2={cy}
-            stroke={cosColor}
-            strokeWidth="2.5"
-            opacity="0.8"
-          />
-          <text x={(cx + pointX) / 2 - 8} y={cy + 14} fill={cosColor} fontSize="9">
-            cos={cosVal.toFixed(2)}
-          </text>
-
-          {/* Sin line (vertical projection) */}
-          <line
-            x1={pointX}
-            y1={cy}
-            x2={pointX}
-            y2={pointY}
-            stroke={sinColor}
-            strokeWidth="2.5"
-            opacity="0.8"
-          />
-          <text x={pointX + 6} y={(cy + pointY) / 2} fill={sinColor} fontSize="9">
-            sin={sinVal.toFixed(2)}
-          </text>
-
-          {/* Tan line */}
-          {Math.abs(tanVal) < 5 && (
+            {/* Cos line (horizontal projection) */}
             <line
-              x1={cx + r}
+              x1={cx}
               y1={cy}
-              x2={cx + r}
-              y2={cy - tanVal * r}
-              stroke={tanColor}
-              strokeWidth="2"
-              strokeDasharray="4 2"
+              x2={pointX}
+              y2={cy}
+              stroke={cosColor}
+              strokeWidth="2.5"
               opacity="0.8"
             />
-          )}
+            <text x={(cx + pointX) / 2 - 8} y={cy + 14} fill={cosColor} fontSize="9">
+              cos={cosVal.toFixed(2)}
+            </text>
 
-          {/* Point on circle */}
-          <circle cx={pointX} cy={pointY} r="5" fill="#38bdf8" stroke="#ffffff" strokeWidth="2" />
+            {/* Sin line (vertical projection) */}
+            <line
+              x1={pointX}
+              y1={cy}
+              x2={pointX}
+              y2={pointY}
+              stroke={sinColor}
+              strokeWidth="2.5"
+              opacity="0.8"
+            />
+            <text x={pointX + 6} y={(cy + pointY) / 2} fill={sinColor} fontSize="9">
+              sin={sinVal.toFixed(2)}
+            </text>
 
-          {/* Radial line */}
-          <line x1={cx} y1={cy} x2={pointX} y2={pointY} stroke="#38bdf8" strokeWidth="1.5" opacity="0.6" />
+            {/* Tan line */}
+            {Math.abs(tanVal) < 5 && (
+              <line
+                x1={cx + r}
+                y1={cy}
+                x2={cx + r}
+                y2={cy - tanVal * r}
+                stroke={tanColor}
+                strokeWidth="2"
+                strokeDasharray="4 2"
+                opacity="0.8"
+              />
+            )}
 
-          {/* Quadrant labels */}
-          <text x={cx + r + 8} y={cy - 10} fill="#94a3b8" fontSize="9">QI</text>
-          <text x={cx - r - 28} y={cy - 10} fill="#94a3b8" fontSize="9">QII</text>
-          <text x={cx - r - 28} y={cy + 18} fill="#94a3b8" fontSize="9">QIII</text>
-          <text x={cx + r + 8} y={cy + 18} fill="#94a3b8" fontSize="9">QIV</text>
+            {/* Point on circle */}
+            <circle cx={pointX} cy={pointY} r="5" fill="#38bdf8" stroke="#ffffff" strokeWidth="2" />
 
-          {/* Wave inset */}
-          <rect x={waveOx} y={waveOy} width={waveW} height={waveH} fill="#1e293b" stroke="#475569" strokeWidth="0.5" rx="4" />
-          <text x={waveOx + 4} y={waveOy + 10} fill="#94a3b8" fontSize="7">wave projection</text>
+            {/* Radial line */}
+            <line x1={cx} y1={cy} x2={pointX} y2={pointY} stroke="#38bdf8" strokeWidth="1.5" opacity="0.6" />
 
-          {/* Sin wave */}
-          <path
-            d={Array.from({ length: waveW }, (_, i) => {
-              const x = waveOx + i;
-              const theta = (i / waveW) * 2 * Math.PI;
-              const y = waveOy + waveH / 2 - Math.sin(theta) * (waveH / 2 - 4);
-              return `${i === 0 ? "M" : "L"} ${x} ${y}`;
-            }).join(" ")}
-            fill="none"
-            stroke={sinColor}
-            strokeWidth="1"
-            opacity="0.7"
-          />
+            {/* Quadrant labels */}
+            <text x={cx + r + 8} y={cy - 10} fill="#94a3b8" fontSize="9">QI</text>
+            <text x={cx - r - 28} y={cy - 10} fill="#94a3b8" fontSize="9">QII</text>
+            <text x={cx - r - 28} y={cy + 18} fill="#94a3b8" fontSize="9">QIII</text>
+            <text x={cx + r + 8} y={cy + 18} fill="#94a3b8" fontSize="9">QIV</text>
 
-          {/* Cos wave */}
-          <path
-            d={Array.from({ length: waveW }, (_, i) => {
-              const x = waveOx + i;
-              const theta = (i / waveW) * 2 * Math.PI;
-              const y = waveOy + waveH / 2 - Math.cos(theta) * (waveH / 2 - 4);
-              return `${i === 0 ? "M" : "L"} ${x} ${y}`;
-            }).join(" ")}
-            fill="none"
-            stroke={cosColor}
-            strokeWidth="1"
-            opacity="0.7"
-          />
+            {/* Wave inset */}
+            <rect x={waveOx} y={waveOy} width={waveW} height={waveH} fill="#1e293b" stroke="#475569" strokeWidth="0.5" rx="4" />
+            <text x={waveOx + 4} y={waveOy + 10} fill="#94a3b8" fontSize="7">wave projection</text>
 
-          {/* Current position marker on waves */}
-          {(() => {
-            const markerX = waveOx + ((rad % (2 * Math.PI)) / (2 * Math.PI)) * waveW;
-            return (
-              <>
-                <circle cx={markerX} cy={waveOy + waveH / 2 - sinVal * (waveH / 2 - 4)} r="2.5" fill={sinColor} />
-                <circle cx={markerX} cy={waveOy + waveH / 2 - cosVal * (waveH / 2 - 4)} r="2.5" fill={cosColor} />
-              </>
-            );
-          })()}
-        </svg>
+            {/* Sin wave */}
+            <path
+              d={Array.from({ length: waveW }, (_, i) => {
+                const x = waveOx + i;
+                const theta = (i / waveW) * 2 * Math.PI;
+                const y = waveOy + waveH / 2 - Math.sin(theta) * (waveH / 2 - 4);
+                return `${i === 0 ? "M" : "L"} ${x} ${y}`;
+              }).join(" ")}
+              fill="none"
+              stroke={sinColor}
+              strokeWidth="1"
+              opacity="0.7"
+            />
+
+            {/* Cos wave */}
+            <path
+              d={Array.from({ length: waveW }, (_, i) => {
+                const x = waveOx + i;
+                const theta = (i / waveW) * 2 * Math.PI;
+                const y = waveOy + waveH / 2 - Math.cos(theta) * (waveH / 2 - 4);
+                return `${i === 0 ? "M" : "L"} ${x} ${y}`;
+              }).join(" ")}
+              fill="none"
+              stroke={cosColor}
+              strokeWidth="1"
+              opacity="0.7"
+            />
+
+            {/* Current position marker on waves */}
+            {(() => {
+              const markerX = waveOx + ((rad % (2 * Math.PI)) / (2 * Math.PI)) * waveW;
+              return (
+                <>
+                  <circle cx={markerX} cy={waveOy + waveH / 2 - sinVal * (waveH / 2 - 4)} r="2.5" fill={sinColor} />
+                  <circle cx={markerX} cy={waveOy + waveH / 2 - cosVal * (waveH / 2 - 4)} r="2.5" fill={cosColor} />
+                </>
+              );
+            })()}
+          </svg>
       </div>
 
       <div className="grid grid-cols-3 gap-3 text-sm">
@@ -375,40 +391,47 @@ function InverseTrigVisual() {
 
       <div className="flex justify-center">
         <svg viewBox={`0 0 ${w} ${h}`} className="w-full max-w-sm border rounded-lg bg-slate-950">
-          {/* Axes */}
-          <line x1={ox} y1={oy} x2={w - 10} y2={oy} stroke="#475569" strokeWidth="1" />
-          <line x1={ox} y1={oy - 80} x2={ox} y2={oy + 5} stroke="#475569" strokeWidth="1" />
-          <text x={w - 15} y={oy + 14} fill="#64748b" fontSize="9">x</text>
-          <text x={ox + 6} y={oy - 75} fill="#64748b" fontSize="9">y</text>
+            {/* Subtle grid */}
+            {Array.from({ length: 7 }, (_, i) => (
+              <line key={"gvi" + i} x1={i * 45} y1={0} x2={i * 45} y2={h} stroke="#1e293b" strokeWidth="0.4" />
+            ))}
+            {Array.from({ length: 5 }, (_, i) => (
+              <line key={"ghi" + i} x1={0} y1={i * 45} x2={w} y2={i * 45} stroke="#1e293b" strokeWidth="0.4" />
+            ))}
+            {/* Axes */}
+            <line x1={ox} y1={oy} x2={w - 10} y2={oy} stroke="#475569" strokeWidth="1" />
+            <line x1={ox} y1={oy - 80} x2={ox} y2={oy + 5} stroke="#475569" strokeWidth="1" />
+            <text x={w - 15} y={oy + 14} fill="#64748b" fontSize="9">x</text>
+            <text x={ox + 6} y={oy - 75} fill="#64748b" fontSize="9">y</text>
 
-          {/* Domain boundaries */}
-          <line x1={toSvgX(-1)} y1={oy - 80} x2={toSvgX(-1)} y2={oy + 5} stroke="#ef4444" strokeWidth="0.5" strokeDasharray="3 3" opacity="0.5" />
-          <line x1={toSvgX(1)} y1={oy - 80} x2={toSvgX(1)} y2={oy + 5} stroke="#ef4444" strokeWidth="0.5" strokeDasharray="3 3" opacity="0.5" />
-          <text x={toSvgX(-1) - 8} y={oy + 14} fill="#ef4444" fontSize="7">-1</text>
-          <text x={toSvgX(1) - 4} y={oy + 14} fill="#ef4444" fontSize="7">1</text>
+            {/* Domain boundaries */}
+            <line x1={toSvgX(-1)} y1={oy - 80} x2={toSvgX(-1)} y2={oy + 5} stroke="#ef4444" strokeWidth="0.5" strokeDasharray="3 3" opacity="0.5" />
+            <line x1={toSvgX(1)} y1={oy - 80} x2={toSvgX(1)} y2={oy + 5} stroke="#ef4444" strokeWidth="0.5" strokeDasharray="3 3" opacity="0.5" />
+            <text x={toSvgX(-1) - 8} y={oy + 14} fill="#ef4444" fontSize="7">-1</text>
+            <text x={toSvgX(1) - 4} y={oy + 14} fill="#ef4444" fontSize="7">1</text>
 
-          {/* Range boundaries */}
-          <line x1={ox} y1={toSvgY(Math.PI / 2)} x2={w - 10} y2={toSvgY(Math.PI / 2)} stroke="#94a3b8" strokeWidth="0.5" strokeDasharray="2 2" opacity="0.4" />
-          <line x1={ox} y1={toSvgY(-Math.PI / 2)} x2={w - 10} y2={toSvgY(-Math.PI / 2)} stroke="#94a3b8" strokeWidth="0.5" strokeDasharray="2 2" opacity="0.4" />
-          <text x={ox - 4} y={toSvgY(Math.PI / 2) + 3} fill="#94a3b8" fontSize="7">π/2</text>
-          <text x={ox - 4} y={toSvgY(-Math.PI / 2) + 3} fill="#94a3b8" fontSize="7">-π/2</text>
+            {/* Range boundaries */}
+            <line x1={ox} y1={toSvgY(Math.PI / 2)} x2={w - 10} y2={toSvgY(Math.PI / 2)} stroke="#94a3b8" strokeWidth="0.5" strokeDasharray="2 2" opacity="0.4" />
+            <line x1={ox} y1={toSvgY(-Math.PI / 2)} x2={w - 10} y2={toSvgY(-Math.PI / 2)} stroke="#94a3b8" strokeWidth="0.5" strokeDasharray="2 2" opacity="0.4" />
+            <text x={ox - 4} y={toSvgY(Math.PI / 2) + 3} fill="#94a3b8" fontSize="7">π/2</text>
+            <text x={ox - 4} y={toSvgY(-Math.PI / 2) + 3} fill="#94a3b8" fontSize="7">-π/2</text>
 
-          {/* All three curves */}
-          {fnPath(Math.asin, "#3b82f6")}
-          {fnPath(Math.acos, "#10b981")}
-          {fnPath(Math.atan, "#f59e0b")}
+            {/* All three curves */}
+            {fnPath(Math.asin, "#3b82f6")}
+            {fnPath(Math.acos, "#10b981")}
+            {fnPath(Math.atan, "#f59e0b")}
 
-          {/* Current point */}
-          <circle cx={pointSvgX} cy={pointSvgY} r="4" fill={activeFn === "sin" ? "#3b82f6" : activeFn === "cos" ? "#10b981" : "#f59e0b"} stroke="#fff" strokeWidth="1.5" />
+            {/* Current point */}
+            <circle cx={pointSvgX} cy={pointSvgY} r="4" fill={activeFn === "sin" ? "#3b82f6" : activeFn === "cos" ? "#10b981" : "#f59e0b"} stroke="#fff" strokeWidth="1.5" />
 
-          {/* Legend */}
-          <circle cx={15} cy={15} r="4" fill="#3b82f6" />
-          <text x={22} y={18} fill="#94a3b8" fontSize="8">sin⁻¹</text>
-          <circle cx={60} cy={15} r="4" fill="#10b981" />
-          <text x={67} y={18} fill="#94a3b8" fontSize="8">cos⁻¹</text>
-          <circle cx={105} cy={15} r="4" fill="#f59e0b" />
-          <text x={112} y={18} fill="#94a3b8" fontSize="8">tan⁻¹</text>
-        </svg>
+            {/* Legend */}
+            <circle cx={15} cy={15} r="4" fill="#3b82f6" />
+            <text x={22} y={18} fill="#94a3b8" fontSize="8">sin⁻¹</text>
+            <circle cx={60} cy={15} r="4" fill="#10b981" />
+            <text x={67} y={18} fill="#94a3b8" fontSize="8">cos⁻¹</text>
+            <circle cx={105} cy={15} r="4" fill="#f59e0b" />
+            <text x={112} y={18} fill="#94a3b8" fontSize="8">tan⁻¹</text>
+          </svg>
       </div>
 
       <div className="p-3 rounded-lg border bg-background/60">
@@ -516,41 +539,48 @@ function TrigEquationsVisual() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
         {/* Circle diagram */}
         <div className="flex justify-center">
-          <svg viewBox="0 0 200 200" className="w-full max-w-[200px] border rounded-lg bg-slate-950">
-            <circle cx={ccx} cy={ccy} r={circleR} fill="none" stroke="#8b5cf6" strokeWidth="1.5" />
-            <line x1={10} y1={ccy} x2={190} y2={ccy} stroke="#475569" strokeWidth="0.5" />
-            <line x1={ccx} y1={10} x2={ccx} y2={190} stroke="#475569" strokeWidth="0.5" />
+        <svg viewBox="0 0 200 200" className="w-full max-w-[200px] border rounded-lg bg-slate-950">
+              {/* Subtle grid */}
+              {Array.from({ length: 9 }, (_, i) => (
+                <line key={"gvs" + i} x1={i * 25} y1={0} x2={i * 25} y2={200} stroke="#1e293b" strokeWidth="0.4" />
+              ))}
+              {Array.from({ length: 9 }, (_, i) => (
+                <line key={"ghs" + i} x1={0} y1={i * 25} x2={200} y2={i * 25} stroke="#1e293b" strokeWidth="0.4" />
+              ))}
+              <circle cx={ccx} cy={ccy} r={circleR} fill="none" stroke="#8b5cf6" strokeWidth="1.5" />
+              <line x1={10} y1={ccy} x2={190} y2={ccy} stroke="#475569" strokeWidth="0.5" />
+              <line x1={ccx} y1={10} x2={ccx} y2={190} stroke="#475569" strokeWidth="0.5" />
 
-            {/* Solutions as points */}
-            {(() => {
-              const pts: { x: number; y: number; label: string }[] = [];
-              const degs =
-                activeEq === "sin"
-                  ? [alphaDeg, 180 - alphaDeg]
-                  : activeEq === "cos"
-                    ? [alphaDeg, 360 - alphaDeg]
-                    : [alphaDeg, alphaDeg + 180];
-              degs.forEach((d) => {
-                const rad = (d * Math.PI) / 180;
-                pts.push({
-                  x: ccx + circleR * Math.cos(rad),
-                  y: ccy - circleR * Math.sin(rad),
-                  label: `${d.toFixed(0)}°`,
+              {/* Solutions as points */}
+              {(() => {
+                const pts: { x: number; y: number; label: string }[] = [];
+                const degs =
+                  activeEq === "sin"
+                    ? [alphaDeg, 180 - alphaDeg]
+                    : activeEq === "cos"
+                      ? [alphaDeg, 360 - alphaDeg]
+                      : [alphaDeg, alphaDeg + 180];
+                degs.forEach((d) => {
+                  const rad = (d * Math.PI) / 180;
+                  pts.push({
+                    x: ccx + circleR * Math.cos(rad),
+                    y: ccy - circleR * Math.sin(rad),
+                    label: `${d.toFixed(0)}°`,
+                  });
                 });
-              });
-              return pts.map((p, i) => (
-                <g key={i}>
-                  <circle cx={p.x} cy={p.y} r="5" fill={color} stroke="#fff" strokeWidth="1.5" />
-                  <text x={p.x + 8} y={p.y - 4} fill={color} fontSize="8">
-                    {p.label}
-                  </text>
-                </g>
-              ));
-            })()}
+                return pts.map((p, i) => (
+                  <g key={i}>
+                    <circle cx={p.x} cy={p.y} r="5" fill={color} stroke="#fff" strokeWidth="1.5" />
+                    <text x={p.x + 8} y={p.y - 4} fill={color} fontSize="8">
+                      {p.label}
+                    </text>
+                  </g>
+                ));
+              })()}
 
-            <text x={ccx + circleR + 5} y={ccy + 3} fill="#94a3b8" fontSize="8">θ</text>
-            <text x={5} y={ccy - 5} fill="#94a3b8" fontSize="8">0</text>
-          </svg>
+              <text x={ccx + circleR + 5} y={ccy + 3} fill="#94a3b8" fontSize="8">θ</text>
+              <text x={5} y={ccy - 5} fill="#94a3b8" fontSize="8">0</text>
+            </svg>
         </div>
 
         {/* Solution display */}

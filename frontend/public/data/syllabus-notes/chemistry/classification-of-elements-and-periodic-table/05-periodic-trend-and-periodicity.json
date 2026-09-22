@@ -1,0 +1,67 @@
+{
+  "title": "Periodic Trend and Periodicity: Radii, Ionization Energy, Electron Affinity, Electronegativity, Metallic Character",
+  "unitSlug": "classification-of-elements-and-periodic-table",
+  "topicSlug": "periodic-trend-and-periodicity-atomic-radii-ionic-radii-ionization-energy-electron-affinity-elec",
+  "topicTitle": "Periodic trend and periodicity: atomic radii, ionic radii, ionization energy, electron affinity, electronegativity, metallic characters (general trend and explanation only)",
+  "relevance": 100,
+  "notes": [
+    "### 1. Meaning of periodicity",
+    "Periodicity is the recurrence of similar physical and chemical properties at regular intervals when elements are arranged in order of atomic number. Its cause is the periodic repetition of the *valence-shell electronic configuration*: trends across a period follow from increasing Z_eff, trends down a group from increasing n and increasing shielding.",
+    "### 2. Atomic radii",
+    "Radius is measured as covalent radius (half the bond length in a homonuclear molecule), metallic radius (half the distance between neighbouring metal atoms) or van der Waals radius (from non-bonded contacts — the largest). **Across a period the radius decreases** (Li 152 → F 64 pm) because nuclear charge rises faster than shielding; **down a group it increases** (Li → Cs) because a new shell is added. Period 4 shows a normal contraction after the d-block, and the 5d series follows the 4d series closely — the lanthanide contraction (poor 4f shielding).",
+    "### 3. Ionic radii",
+    "• A cation is smaller than its parent atom (Na 186 pm → Na⁺ 95 pm); an anion is larger (Cl 99 pm → Cl⁻ 181 pm) because added electrons increase repulsion while the nuclear charge is unchanged.",
+    "• Down a group the ionic radius increases for the same charge (Li⁺ < Na⁺ < K⁺ < Rb⁺ < Cs⁺); across a period ions of the same charge get smaller.",
+    "• **Isoelectronic series** (same number of electrons): radius decreases as nuclear charge increases, N³⁻ > O²⁻ > F⁻ > Ne > Na⁺ > Mg²⁺ > Al³⁺; for one element Fe³⁺ < Fe²⁺.",
+    "### 4. Ionisation energy (IE)",
+    "The minimum energy needed to remove the most loosely bound electron from an isolated gaseous atom; measured in kJ mol⁻¹ or eV per atom (H: 1312 kJ mol⁻¹ = 13.6 eV). **It increases across a period** (Li 520 → Ne 2081 kJ mol⁻¹) because Z_eff rises and size falls, and **decreases down a group** as size increases. Anomalies: Be > B and N > O (2s² stability; 2p pairing repulsion in oxygen), repeated as Mg > Al and P > S. Successive IEs always increase (IE₁ < IE₂ < IE₃), and a large jump marks the end of a shell — Na IE₁ = 496, IE₂ = 4562 kJ mol⁻¹.",
+    "### 5. Electron affinity (EA)",
+    "The energy change when a gaseous atom gains an electron, X(g) + e⁻ → X⁻(g); EA is often reported as the energy *released*, so state the sign convention in answers. It generally becomes more exothermic **across a period** and less so **down a group** as size and shielding increase. Chlorine has a higher EA than fluorine (349 vs 328 kJ mol⁻¹) because F's very small 2p shell causes extra electron–electron repulsion. Noble gases have ~zero or positive EA, and Be and N have very small values because of filled/half-filled stability.",
+    "### 6. Electronegativity (EN)",
+    "The tendency of an atom in a molecule to attract the shared electron pair. Pauling's scale takes F = 4.0 (highest), O = 3.5, N = 3.0, H = 2.1, Cs ≈ 0.7; the Mulliken scale uses (IE + EA)/2. **EN increases across a period and decreases down a group**; noble gases are assigned little or no value. Bond polarity follows from ΔEN: > 1.7 usually ionic, < 0.5 essentially non-polar covalent (HF, ΔEN = 1.9, is polar covalent).",
+    "### 7. Metallic and non-metallic character",
+    "Metallic character **decreases across a period** (Na → Cl) and **increases down a group** (Li → Cs): metals lose electrons easily (low IE), non-metals gain them (high IE, high EA/EN). Consequences: oxide character moves from basic → amphoteric → acidic across a period, and the diagonal pairs (Li–Mg, Be–Al, B–Si) show metallic character reappearing diagonally.",
+    "### 8. Applications",
+    "• Reactivity predictions: alkali metals become more reactive down the group (low IE); halogen oxidising power falls from F to I (high EA/EN mainly for F and Cl).",
+    "• Explains the acidic/basic character of oxides, the amphoteric behaviour of Al₂O₃ and the change from ionic NaCl to covalent AlCl₃ across period 3.",
+    "• Used in materials selection (semiconductors Si, Ge), in predicting bond polarity and dipole moments, and in understanding ion sizes for crystal packing and complex formation.",
+    "### 9. Limitations of the trends",
+    "All the trends are *general*, not exact: the Be/B, N/O, Mg/Al and P/S breaks come from penetration and pairing, and the d- and f-blocks show many irregularities (Cr, Cu, lanthanide contraction, poor 4f shielding, relativistic effects in heavy elements). Radii are not directly measurable and covalent, metallic and van der Waals values differ by 0.5–1 Å, so only one consistent type may be compared. Electron affinity depends on the stated convention, and electronegativity values differ between scales (Pauling, Mulliken, Allred–Rochow), with noble-gas values ill-defined. Above all, trends are qualitative — quantitative prediction needs quantum calculations or Z_eff with accurate shielding."
+  ],
+  "confusion": [
+    "❌ Atomic radius increases across a period. ✅ It decreases because Z_eff rises faster than shielding.",
+    "❌ An anion is smaller than its parent atom. ✅ It is larger — added electrons increase repulsion while nuclear charge stays the same.",
+    "❌ IE increases smoothly across a period. ✅ Be > B and N > O (also Mg > Al, P > S) are standard breaks from 2s² stability and 2p pairing.",
+    "❌ Fluorine has the highest electron affinity. ✅ Chlorine does (349 vs 328 kJ mol⁻¹) because of extra repulsion in F's tiny 2p shell.",
+    "❌ Electronegativity is directly measurable. ✅ It is a derived, scale-dependent parameter (Pauling, Mulliken, Allred–Rochow)."
+  ],
+  "practice": [
+    "Define atomic radius and explain the period and group trends using Z_eff.",
+    "Arrange N³⁻, O²⁻, F⁻, Na⁺ and Mg²⁺ in order of increasing radius and justify the order.",
+    "Define ionisation energy and account for the Be > B and N > O anomalies.",
+    "Why is the electron affinity of chlorine greater than that of fluorine?",
+    "Define electronegativity and use ΔEN to classify the bonds in HF, HCl and CH₄.",
+    "Explain the variation of metallic character across a period and down a group with examples."
+  ],
+  "formulas": [
+    "$$IE:\\ X(g)\\rightarrow X^{+}(g)+e^{-},\\qquad EA:\\ X(g)+e^{-}\\rightarrow X^{-}(g)$$",
+    "$$\\text{electronegativity (Mulliken)}\\approx\\frac{IE+EA}{2}$$",
+    "$$\\Delta EN>1.7\\ \\text{ionic},\\quad 0.5<\\Delta EN<1.7\\ \\text{polar covalent},\\quad \\Delta EN<0.5\\ \\text{non-polar}$$"
+  ],
+  "universalFacts": [
+    "H IE₁ = 1312 kJ mol⁻¹ (13.6 eV); He has the highest IE₁ (2372 kJ mol⁻¹); Cs one of the lowest (~376 kJ mol⁻¹).",
+    "F is the most electronegative element (Pauling 4.0); Cs/Fr least (~0.7).",
+    "Isoelectronic radii: N³⁻ > O²⁻ > F⁻ > Na⁺ > Mg²⁺ > Al³⁺."
+  ],
+  "examples": [
+    "**Problem:** Arrange Mg²⁺, Na⁺, F⁻, O²⁻ in decreasing size. **Solution:** they are isoelectronic (10 electrons), so the smallest nuclear charge gives the largest radius → O²⁻ (Z = 8) > F⁻ (9) > Na⁺ (11) > Mg²⁺ (12).",
+    "**Problem:** Which has the higher first ionisation energy, Be or B? **Solution:** Be (899 kJ mol⁻¹) > B (801 kJ mol⁻¹), since Be's 2s² is a filled subshell and its electron penetrates closer to the nucleus than B's 2p electron."
+  ],
+  "importantNotes": [
+    "Explain every trend with Z_eff (across) and n plus shielding (down) — the mark is for the reason, not the direction.",
+    "Quote the anomaly pairs Be–B, N–O, Mg–Al and P–S with reasons; they are frequently examined.",
+    "State the radius type and the electronegativity scale whenever numbers are quoted."
+  ],
+  "visualType": "periodic-trends",
+  "tabGroup": "Periodic-Table-Trends-Learner-Notes"
+}

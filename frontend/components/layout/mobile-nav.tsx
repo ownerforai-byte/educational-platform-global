@@ -24,6 +24,12 @@ import {
   LineChart,
   Compass,
   Search,
+  Lightbulb,
+  FileText,
+  Box,
+  Bookmark,
+  UserCheck,
+  Coins,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
 
@@ -41,15 +47,25 @@ interface MobileSection {
 
 const mobileSections: MobileSection[] = [
   {
+    id: "primary",
+    title: "Quick Access",
+    items: [
+      { href: "/", label: "Home Dashboard", icon: Home },
+      { href: "/search", label: "Search Index", icon: Search, badge: "Ctrl+K", badgeClass: "bg-muted text-muted-foreground border border-border/80" },
+      { href: "/levels", label: "Curriculum Levels", icon: Compass, badge: "5 Tracks", badgeClass: "bg-sky-500/15 text-sky-500" },
+    ],
+  },
+  {
     id: "curriculum",
     title: "Curriculum & Notes",
     items: [
-      { href: "/", label: "Home", icon: Home },
       { href: "/class-11-notes", label: "Class 11 Hub", icon: BookOpen, badge: "XI", badgeClass: "bg-sky-500/15 text-sky-500" },
       { href: "/class-12-notes", label: "Class 12 Hub", icon: BookOpen, badge: "XII", badgeClass: "bg-violet-500/15 text-violet-500" },
-      { href: "/subjects", label: "All 6 Subjects", icon: Layers },
-      { href: "/syllabus", label: "Official Syllabus", icon: GraduationCap },
-      { href: "/levels", label: "Curriculum Levels", icon: Compass },
+      { href: "/subjects", label: "All 6 Subjects", icon: Layers, badge: "Core", badgeClass: "bg-emerald-500/15 text-emerald-500" },
+      { href: "/syllabus", label: "Official CDC Syllabus", icon: GraduationCap },
+      { href: "/practical", label: "Practical Lab Manuals", icon: FlaskConical, badge: "Labs", badgeClass: "bg-emerald-500/15 text-emerald-500" },
+      { href: "/legend", label: "Concept Legends & Facts", icon: Lightbulb, badge: "Facts", badgeClass: "bg-amber-500/15 text-amber-500" },
+      { href: "/notes", label: "Notes Archive", icon: FileText, badge: "Archive", badgeClass: "bg-blue-500/15 text-blue-500" },
     ],
   },
   {
@@ -57,12 +73,13 @@ const mobileSections: MobileSection[] = [
     title: "STEM Labs & Rigor",
     items: [
       { href: "/lab", label: "Virtual 3D Labs", icon: FlaskConical, badge: "3D", badgeClass: "bg-violet-500/15 text-violet-500" },
+      { href: "/lab/3d", label: "3D Simulations Hub", icon: Box, badge: "96+", badgeClass: "bg-indigo-500/15 text-indigo-500" },
       { href: "/lab/bio-3d-organelles", label: "Cell Organelles 3D", icon: Sparkles, badge: "13 Org", badgeClass: "bg-emerald-500/15 text-emerald-500" },
       { href: "/periodic-table", label: "Periodic Table & CEE", icon: Atom, badge: "118", badgeClass: "bg-cyan-500/15 text-cyan-500" },
       { href: "/theorems", label: "Theorems & Proofs", icon: Binary, badge: "Rigor", badgeClass: "bg-amber-500/15 text-amber-500" },
       { href: "/derivations", label: "Formula Derivations", icon: Layers, badge: "Steps", badgeClass: "bg-rose-500/15 text-rose-500" },
-      { href: "/graphs", label: "Graph Bank", icon: LineChart },
-      { href: "/mindmap", label: "Visual Mindmaps", icon: Workflow },
+      { href: "/graphs", label: "Science Graph Bank", icon: LineChart, badge: "Charts", badgeClass: "bg-indigo-500/15 text-indigo-500" },
+      { href: "/mindmap", label: "Visual Mindmaps", icon: Workflow, badge: "Maps", badgeClass: "bg-purple-500/15 text-purple-500" },
     ],
   },
   {
@@ -70,17 +87,29 @@ const mobileSections: MobileSection[] = [
     title: "AI & Assessment",
     items: [
       { href: "/chat", label: "AI Study Assistant", icon: Sparkles, badge: "AI", badgeClass: "bg-fuchsia-500/15 text-fuchsia-500" },
-      { href: "/ai-quiz", label: "Practice Quizzes", icon: HelpCircle, badge: "NEB", badgeClass: "bg-blue-500/15 text-blue-500" },
+      { href: "/ai-quiz", label: "Adaptive AI Quiz", icon: HelpCircle, badge: "Adaptive", badgeClass: "bg-blue-500/15 text-blue-500" },
+      { href: "/quiz", label: "Practice Quiz Bank", icon: Target, badge: "PYQ", badgeClass: "bg-teal-500/15 text-teal-500" },
       { href: "/exam-countdown", label: "Exam Countdown", icon: Target, badge: "NEB", badgeClass: "bg-amber-500/15 text-amber-500" },
     ],
   },
   {
     id: "extended",
-    title: "Extended & GK",
+    title: "Knowledge & Prep",
     items: [
-      { href: "/knowledge", label: "Knowledge Hub", icon: BookOpen },
-      { href: "/loksewa", label: "Loksewa GK", icon: Users, badge: "GK" },
-      { href: "/world-knowledge", label: "World Knowledge", icon: Globe },
+      { href: "/knowledge", label: "Knowledge Hub", icon: BookOpen, badge: "Concepts", badgeClass: "bg-sky-500/15 text-sky-500" },
+      { href: "/lessons", label: "Lessons Library", icon: GraduationCap, badge: "Theory", badgeClass: "bg-indigo-500/15 text-indigo-500" },
+      { href: "/loksewa", label: "Loksewa GK", icon: Users, badge: "GK", badgeClass: "bg-orange-500/15 text-orange-500" },
+      { href: "/world-knowledge", label: "World Knowledge", icon: Globe, badge: "Global", badgeClass: "bg-emerald-500/15 text-emerald-500" },
+      { href: "/resources", label: "Resource Vault", icon: Bookmark, badge: "Vault", badgeClass: "bg-pink-500/15 text-pink-500" },
+    ],
+  },
+  {
+    id: "account",
+    title: "Student Desk",
+    items: [
+      { href: "/progress", label: "My Progress", icon: UserCheck, badge: "Stats" },
+      { href: "/bookmarks", label: "Saved Bookmarks", icon: Bookmark, badge: "Saved" },
+      { href: "/credits", label: "Credits & Plan", icon: Coins, badge: "Wallet" },
     ],
   },
 ];
@@ -136,7 +165,7 @@ export function MobileNav() {
                   <span className="text-sm font-extrabold text-white">R</span>
                 </div>
                 <div className="flex flex-col">
-                  <span className="font-bold text-sm tracking-tight leading-tight">NEB Study Vault</span>
+                  <span className="font-bold text-sm tracking-tight leading-tight">Ravikisan&apos;s Platform</span>
                   <span className="text-[10px] text-muted-foreground">Class 11 &amp; 12 Global</span>
                 </div>
               </Link>
@@ -242,3 +271,4 @@ export function MobileNav() {
     </>
   );
 }
+

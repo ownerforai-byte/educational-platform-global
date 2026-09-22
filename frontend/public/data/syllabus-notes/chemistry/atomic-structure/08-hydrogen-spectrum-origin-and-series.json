@@ -1,81 +1,79 @@
 {
-  "title": "The Hydrogen Spectrum — Origin & Spectral Series",
+  "title": "Origin of Spectral Lines and the Five Series of Hydrogen",
   "unitSlug": "atomic-structure",
   "topicSlug": "spectrum-of-hydrogen-atom",
   "topicTitle": "Spectrum of hydrogen atom",
   "relevance": 85,
   "notes": [
-    "Detailed notes on 08 hydrogen spectrum origin and series within the atomic structure unit."
+    "### Focus of this tab",
+    "A series-by-series reference table for the hydrogen spectrum, plus the line-counting rule — the data side of the main spectrum note.",
+    "### The five series at a glance",
+    "• **Lyman** (n₁ = 1): UV. First line 121.6 nm (2→1); series limit 91.2 nm. Discovered by Lyman, 1906.",
+    "• **Balmer** (n₁ = 2): visible. Hα 656.3 nm (3→2), Hβ 486.1 nm (4→2), Hγ 434.0 nm (5→2), Hδ 410.2 nm (6→2); limit 364.6 nm. Discovered by Balmer, 1885.",
+    "• **Paschen** (n₁ = 3): near IR. First line 1875 nm (4→3); limit 820.4 nm. Discovered 1908.",
+    "• **Brackett** (n₁ = 4): IR. First line 4051 nm (5→4); limit 1458 nm. Discovered 1922.",
+    "• **Pfund** (n₁ = 5): far IR. First line 7460 nm (6→5); limit 2279 nm. Discovered 1924. (A sixth, Humphreys, n₁ = 6, lies in the far IR.)",
+    "### Counting lines",
+    "• From a single excited level n: the number of different lines = n(n − 1)/2 (e.g. n = 4 → 6 lines: 3 Lyman + 2 Balmer + 1 Paschen).",
+    "• In one series, from level n to fixed n₁: n − n₁ lines (e.g. Balmer lines down from n = 4: two lines).",
+    "### Line spacing within a series",
+    "Successive lines crowd together and converge at the series limit (n₂ → ∞): $\\bar{\\nu}_{limit}=R/n_{1}^{2}$. The Balmer limit 364.6 nm marks the end of visible lines; beyond it the atom ionises and the spectrum becomes continuous.",
+    "### Wavelength ↔ energy conversions",
+    "$\\Delta E(\\text{eV})=\\frac{1240}{\\lambda(\\text{nm})}$ and $\\Delta E=13.6(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}})$. Every line position follows from these two relations; the wavelength of any hydrogen-like ion scales as 1/Z² (He⁺ lines are 4× more energetic, shifted to ¼ wavelength)."
   ],
   "confusion": [
-    "❌ Misconception about 08 hydrogen spectrum origin and series. ✅ Scientific explanation."
+    "❌ The Balmer series starts from n = 1. ✅ Balmer lines end at n₁ = 2; the lower level defines the series, not the upper one.",
+    "❌ The number of lines from level n is n − 1. ✅ That counts one series only; the total is n(n − 1)/2.",
+    "❌ The series limit is the strongest line. ✅ It is the *convergence* point where lines merge into the ionisation continuum."
   ],
   "practice": [
-    "Practice exercise for 08 hydrogen spectrum origin and series."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 08 hydrogen spectrum origin and series."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 08 hydrogen spectrum origin and series."
-  ],
-  "practiceQuestions": [
-    "Practice question for 08 hydrogen spectrum origin and series."
+    "Tabulate the five series of hydrogen with their regions, first members and series limits.",
+    "How many spectral lines are emitted when an electron de-excites from n = 6 to the ground state?",
+    "Calculate the series limit of the Paschen series.",
+    "Name the series whose lines fall in the visible region and identify its first line."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 08 hydrogen spectrum origin and series)"
+    "$$\\bar{\\nu}=R\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right),\\qquad \\bar{\\nu}_{limit}=\\frac{R}{n_{1}^{2}}$$",
+    "$$\\text{lines from level }n=\\frac{n(n-1)}{2}$$"
   ],
-  "keyPoints": [
-    "Core point for 08 hydrogen spectrum origin and series."
+  "universalFacts": [
+    "Balmer (1885) found the visible series before the electron was discovered — a purely empirical formula at first.",
+    "The Lyman limit 91.2 nm marks the ionisation threshold of ground-state hydrogen.",
+    "Hα at 656.3 nm is the reddest strong line in astronomy — used to map hydrogen nebulae."
   ],
-  "summary": "Summary of 08 hydrogen spectrum origin and series.",
-  "specialNotes": [
-    "Specialized insight for 08 hydrogen spectrum origin and series."
-  ],
-  "importantStatements": [
-    "Key statement for 08 hydrogen spectrum origin and series."
+  "examples": [
+    "**Problem:** Lines from n = 5 to ground. **Solution:** 5(5−1)/2 = 10 lines — 4 Lyman, 3 Balmer, 2 Paschen, 1 Brackett.",
+    "**Problem:** Shortest Balmer wavelength. **Solution:** the series limit, n₂ → ∞: λ = 1/(R/4) = 4/R = 364.6 nm."
   ],
   "importantNotes": [
-    "Important note regarding 08 hydrogen spectrum origin and series."
+    "Memorise the three visible-region Balmer wavelengths (656, 486, 434 nm) — they recur in numericals.",
+    "Series is named by its *lower* level n₁; the upper level varies."
   ],
-  "examShortTricks": [
-    "Recall the formula for The Hydrogen Spectrum — Origin & Spectral Series."
-  ],
-  "examNotes": [
-    "Focus on The Hydrogen Spectrum — Origin & Spectral Series problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 08 hydrogen spectrum origin and series?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 08 hydrogen spectrum origin and series."
-  ],
-  "importantTasks": [
-    "Task for studying 08 hydrogen spectrum origin and series."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "08-hydrogen-spectrum-origin-and-series",
   "mcqs": [
     {
-      "question": "Question about 08 hydrogen spectrum origin and series?",
+      "question": "The first line of the Balmer series is produced by the transition:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "2 → 1",
+        "3 → 2",
+        "4 → 2",
+        "3 → 1"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The series limit of the Lyman series corresponds to:",
+      "options": [
+        "91.2 nm",
+        "121.6 nm",
+        "364.6 nm",
+        "656.3 nm"
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "visualType": "hydrogen-spectrum",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "08-hydrogen-spectrum-origin-and-series.json"
 }

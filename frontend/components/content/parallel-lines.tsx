@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Schematic } from "./schematic-frame";
 
 export function ParallelLinesVisual() {
   const [a, setA] = useState(1);
@@ -75,11 +76,16 @@ export function ParallelLinesVisual() {
         </div>
       </div>
 
-      <div className="flex justify-center">
-        <svg viewBox={`0 0 ${w} ${h}`} className="w-full max-w-md border rounded-lg bg-slate-950">
-          {/* Axes */}
-          <line x1={0} y1={oy} x2={w} y2={oy} stroke="#475569" strokeWidth="0.5" />
-          <line x1={ox} y1={0} x2={ox} y2={h} stroke="#475569" strokeWidth="0.5" />
+      <Schematic
+          w={w} h={h} ox={ox} oy={oy} scale={scale}
+          tickStep={1}
+          xLabel="x" yLabel="y"
+          legend={[
+            { color: "#3b82f6", label: "line 1  (C₁)" },
+            { color: "#ef4444", label: "line 2  (C₂)" },
+            { color: "#fbbf24", label: "distance d" },
+          ]}
+        >
           {/* Line 1 */}
           {line1Points.length > 1 && (
             <polyline points={line1Points.join(" ")} fill="none" stroke="#3b82f6" strokeWidth="2.5" />
@@ -88,8 +94,12 @@ export function ParallelLinesVisual() {
           {line2Points.length > 1 && (
             <polyline points={line2Points.join(" ")} fill="none" stroke="#ef4444" strokeWidth="2.5" />
           )}
-          {/* Distance indicator - perpendicular from line 1 to line 2 */}
-          <line x1={ox + ptOnLine1_x * scale} y1={oy - ptOnLine1_y * scale} x2={ox + footX * scale} y2={oy - footY * scale} stroke="#fbbf24" strokeWidth="2" strokeDasharray="4 3" />
+          {/* Perpendicular distance segment */}
+          <line
+            x1={ox + ptOnLine1_x * scale} y1={oy - ptOnLine1_y * scale}
+            x2={ox + footX * scale} y2={oy - footY * scale}
+            stroke="#fbbf24" strokeWidth="2" strokeDasharray="4 3"
+          />
           <circle cx={ox + ptOnLine1_x * scale} cy={oy - ptOnLine1_y * scale} r="3" fill="#3b82f6" />
           <circle cx={ox + footX * scale} cy={oy - footY * scale} r="3" fill="#ef4444" />
           {/* Right angle marker */}
@@ -97,8 +107,8 @@ export function ParallelLinesVisual() {
             points={`${ox + footX * scale},${oy - footY * scale} ${ox + footX * scale + 6},${oy - footY * scale} ${ox + footX * scale},${oy - footY * scale - 6}`}
             fill="none" stroke="#fbbf24" strokeWidth="1"
           />
-        </svg>
-      </div>
+          <text x={5} y={h - 8} fill="#fbbf24" fontSize="10" fontWeight="600">d = {d.toFixed(3)}</text>
+        </Schematic>
 
       <div className="p-3 rounded-lg bg-muted/30 text-sm">
         <p><strong>Formula:</strong> d = |C₁ − C₂| / √(A² + B²)</p>

@@ -1,210 +1,69 @@
 {
-  "title": "Electron Spin Notation (↑ ↓) & Shell Mapping Matrices",
+  "title": "Electron Spin, Box Notation and Shell Mapping",
   "unitSlug": "atomic-structure",
   "topicSlug": "orbitals-and-shape-of-s-and-p-orbitals-only",
   "topicTitle": "Orbitals and shape of s and p orbitals only",
-  "relevance": 77,
+  "relevance": 80,
   "notes": [
-    "Rutherford's model: nucleus existence via α-scattering.",
-    "Bohr's model: quantized energy levels, atomic stability.",
-    "Wave-particle duality (de Broglie), Uncertainty Principle (Heisenberg)."
+    "### Focus of this tab",
+    "Spin quantum number and the box-arrow notation, mapped onto the shell structure — the drawing skills needed for configuration and orbital-diagram questions.",
+    "### The spin quantum number",
+    "mₛ = +½ (↑) or −½ (↓) for every electron, independent of n, l, m. Spin angular momentum is √(3/4)ħ. Consequences: an orbital holds at most 2 electrons (Pauli); a shell holds 2n²; a subshell holds 2(2l + 1).",
+    "### Box notation rules",
+    "• One box per orbital; label the subshell above (2p: three boxes).",
+    "• Aufbau: fill orbitals in increasing (n + l) order.",
+    "• Hund: in degenerate boxes, one up-arrow per box before any pairing.",
+    "• Pauli: two arrows in one box must be opposite (↑↓).",
+    "### Shell mapping (putting orbitals into shells)",
+    "K shell: 1s (2 e⁻). L: 2s, 2p (2 + 6 = 8). M: 3s, 3p, 3d (2 + 6 + 10 = 18). N: 4s, 4p, 4d, 4f (2 + 6 + 10 + 14 = 32). Filling order across shells: 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s, 4d, 5p …",
+    "### Worked box diagrams",
+    "• N (Z = 7): 1s ↑↓ | 2s ↑↓ | 2p ↑ ↑ ↑ → 3 unpaired electrons, paramagnetic.",
+    "• O (Z = 8): 2p ↑↓ ↑ ↑ → 2 unpaired.",
+    "• Cr (Z = 24): [Ar] 3d ↑ ↑ ↑ ↑ ↑ with 4s ↑ — the half-filled exception.",
+    "### What the diagrams predict",
+    "Unpaired electrons → paramagnetism, μ = √(u(u + 2)) BM; paired → diamagnetic. The diagram also shows why carbon forms two covalent bonds after promotion (two half-filled p orbitals) and why the noble gases are inert (all boxes paired)."
   ],
   "confusion": [
-    "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic cells have them.",
-    "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is single-stranded with ribose and uracil.",
-    "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter cells.",
-    "❌ Meiosis produces identical cells. ✅ Meiosis produces 4 genetically diverse haploid gametes.",
-    "❌ Crossing over occurs in mitosis. ✅ Crossing over occurs in Prophase I of meiosis only.",
-    "❌ All enzymes are proteins. ✅ Most enzymes are proteins; some RNA molecules (ribozymes) also have catalytic activity.",
-    "❌ ATP is the only energy currency. ✅ GTP, UTP, and CTP also serve as energy carriers in specific pathways.",
-    "❌ Photosynthesis occurs in all plant cells. ✅ Photosynthesis occurs only in cells containing chloroplasts (mainly mesophyll).",
-    "❌ Respiration and photosynthesis are opposite processes with same equation. ✅ They are complementary but occur in different organelles and under different conditions.",
-    "❌ Oxygen is produced during respiration. ✅ Oxygen is consumed in aerobic respiration; produced during photosynthesis.",
-    "❌ Food chain shows all feeding relationships. ✅ Food chain is linear; food web shows interconnected feeding relationships.",
-    "❌ 90% of energy is transferred to next trophic level. ✅ Only ~10% energy transfers; ~90% lost as heat.",
-    "❌ Biomagnification decreases toxin concentration up the food chain. ✅ Biomagnification increases toxin concentration at higher trophic levels.",
-    "❌ Carbon cycle only involves plants and animals. ✅ Carbon cycle involves atmosphere, oceans, fossils, rocks, and decomposers.",
-    "❌ Nitrogen fixation only occurs in bacteria. ✅ Some lightning and industrial processes (Haber) also fix nitrogen.",
-    "❌ All fungi are harmful. ✅ Many fungi are beneficial (decomposers, mycorrhizae, food, antibiotics like penicillin).",
-    "❌ Viruses are living organisms. ✅ Viruses are acellular — they cannot reproduce without a host and lack metabolism.",
-    "❌ Bacteria are always harmful. ✅ Most bacteria are harmless or beneficial (gut flora, nitrogen fixation, decomposition).",
-    "❌ Gram-positive and Gram-negative differ only in color. ✅ Gram-positive has thick peptidoglycan layer; Gram-negative has thin layer + outer membrane.",
-    "❌ Natural selection creates perfect organisms. ✅ Natural selection favors traits suited to current environment; environments change.",
-    "❌ Evolution is goal-oriented. ✅ Evolution has no goal; it acts on random variation filtered by selection.",
-    "❌ Homologous and analogous structures mean the same thing. ✅ Homologous = common ancestry (divergent); Analogous = similar function, different origin (convergent).",
-    "❌ Fossils are preserved bones only. ✅ Fossils include impressions, trace fossils, amber-preserved organisms, and molecular fossils.",
-    "❌ Lamarckism is completely wrong. ✅ Lamarck's inheritance of acquired characteristics is largely rejected, but epigenetics shows some environmental effects can be inherited.",
-    "❌ Five-kingdom classification is outdated. ✅ Six-kingdom (adding Archaea) and phylogenetic systems are more current, but five-kingdom remains useful for education.",
-    "❌ Binomial nomenclature names change frequently. ✅ Names are stable once formally published; changes require formal revision by taxonomic authorities.",
-    "❌ All algae are aquatic. ✅ Some algae live in soil, on tree bark, or in symbiotic relationships (lichens).",
-    "❌ Bryophytes have vascular tissue. ✅ Bryophytes (mosses, liverworts, hornworts) lack true vascular tissue (xylem/phloem).",
-    "❌ Gymnosperms produce flowers. ✅ Gymnosperms have naked seeds in cones; angiosperms produce flowers and enclosed seeds.",
-    "❌ Double fertilization occurs in gymnosperms. ✅ Double fertilization (zygote + endosperm) is unique to angiosperms.",
-    "❌ Earthworms have an open circulatory system. ✅ Earthworms have a closed circulatory system with dorsal and ventral vessels.",
-    "❌ Frogs breathe only through lungs. ✅ Frogs use cutaneous respiration (skin), buccal cavity, and lungs.",
-    "❌ Conservation only means protecting animals. ✅ Conservation includes genetic, species, and ecosystem diversity; in-situ and ex-situ strategies.",
-    "❌ In-situ and ex-situ conservation are the same. ✅ In-situ = conservation in natural habitat (national parks); Ex-situ = conservation outside habitat (zoos, seed banks)."
+    "❌ Arrows in the same box may point the same way. ✅ Pauli forbids it — opposite spins only.",
+    "❌ Pairing starts in the first p box. ✅ Hund's rule: each degenerate box gets one electron first.",
+    "❌ Spin affects the shape of orbitals. ✅ Spin changes capacity and magnetism, not the shape given by l."
   ],
   "practice": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Carbon (1s² 2s² 2p²): two unpaired electrons in separate p-orbitals (Hund's rule)."
-  ],
-  "practiceQuestions": [
-    "Practice identifying organelles and their functions in electron micrographs.",
-    "Practice distinguishing prokaryotic from eukaryotic cells.",
-    "Practice drawing and labeling the fluid mosaic model of the cell membrane.",
-    "Practice explaining the steps of mitosis with diagrams.",
-    "Practice explaining the stages of meiosis and comparing with mitosis.",
-    "Practice calculating chromosome numbers at different stages of cell division.",
-    "Practice drawing chemical structures of carbohydrates, proteins, lipids, and nucleic acids.",
-    "Practice explaining the central dogma: DNA → RNA → protein.",
-    "Practice writing complementary DNA and RNA strands.",
-    "Practice explaining the steps of transcription and translation.",
-    "Practice drawing food chains and food webs for different ecosystems.",
-    "Practice constructing ecological pyramids (energy, biomass, numbers).",
-    "Practice tracing carbon and nitrogen cycles with all major steps.",
-    "Practice defining and giving examples of symbiotic relationships (mutualism, commensalism, parasitism).",
-    "Practice identifying adaptations of hydrophytes, xerophytes, and mesophytes.",
-    "Practice classifying organisms into five kingdoms with diagnostic features.",
-    "Practice writing binomial names for common organisms.",
-    "Practice creating dichotomous keys for plant and animal identification.",
-    "Practice distinguishing homologous from analogous structures with examples.",
-    "Practice drawing and labeling the evolutionary tree of humans.",
-    "Practice identifying plant groups from specimen descriptions.",
-    "Practice describing the life cycle of bryophytes, pteridophytes, gymnosperms, and angiosperms.",
-    "Practice explaining double fertilization with diagrams.",
-    "Practice identifying animal phyla from morphological features.",
-    "Practice describing the external and internal anatomy of earthworm and frog.",
-    "Practice explaining systems of earthworm (digestive, circulatory, nervous, excretory, reproductive).",
-    "Practice explaining systems of frog (digestive, circulatory, respiratory, excretory, nervous).",
-    "Practice identifying aquatic, terrestrial, and volant adaptations in animals.",
-    "Practice listing sources and effects of air, water, and soil pollution.",
-    "Practice describing control measures for different types of pollution.",
-    "Practice mapping Nepal's national parks and protected areas.",
-    "Practice listing IUCN categories with examples of endangered species in Nepal.",
-    "Practice comparing in-situ and ex-situ conservation strategies.",
-    "Practice identifying vegetation zones in Nepal by altitude."
+    "Draw box diagrams for N, O and Ne and count unpaired electrons.",
+    "State the three rules (Aufbau, Pauli, Hund) that govern box diagrams.",
+    "Map the orbitals of the M shell with their capacities.",
+    "Predict whether Fe³⁺ is paramagnetic using box notation."
   ],
   "formulas": [
-    "E=hν",
-    "λ=h/mv",
-    "ΔxΔp≥h/4π"
+    "$$\\mu=\\sqrt{u(u+2)}\\ \\text{BM};\\qquad \\text{shell capacities }2,\\ 8,\\ 18,\\ 32$$"
   ],
-  "keyPoints": [
-    "Core point for 19 electron spin notation and shell mapping."
+  "universalFacts": [
+    "Nitrogen's three unpaired 2p electrons explain its triple-bond tendency and paramagnetism.",
+    "Box diagrams are also called orbital diagrams; arrows denote mₛ = ±½.",
+    "The 4s orbital fills before 3d but empties first in ion formation."
   ],
-  "summary": "The atomic structure evolved from Thomson's plum pudding model to Bohr's quantized model and finally to the quantum mechanical model, explaining spectral lines and stability.",
-  "specialNotes": [
-    "Specialized insight for 19 electron spin notation and shell mapping."
-  ],
-  "importantStatements": [
-    "Key statement for 19 electron spin notation and shell mapping."
+  "examples": [
+    "**Problem:** Draw the box diagram for V (Z = 23). **Solution:** [Ar] 4s ↑↓, 3d ↑ ↑ ↑ → three unpaired d electrons, μ ≈ √15 ≈ 3.87 BM."
   ],
   "importantNotes": [
-    "Important note regarding 19 electron spin notation and shell mapping."
+    "Always draw boxes for degenerate orbitals separately; merging them loses the Hund's rule marks.",
+    "Relate unpaired-electron count directly to magnetic behaviour in the answer."
   ],
-  "examShortTricks": [
-    "Recall the formula for Electron Spin Notation (↑ ↓) & Shell Mapping Matrices."
-  ],
-  "examNotes": [
-    "Focus on Electron Spin Notation (↑ ↓) & Shell Mapping Matrices problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 19 electron spin notation and shell mapping?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 19 electron spin notation and shell mapping."
-  ],
-  "importantTasks": [
-    "Task for studying 19 electron spin notation and shell mapping."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "19-electron-spin-notation-and-shell-mapping",
   "mcqs": [
     {
-      "question": "Who proposed the dual nature of matter?",
+      "question": "The number of unpaired electrons in an oxygen atom is:",
       "options": [
-        "Planck",
-        "de Broglie",
-        "Bohr",
-        "Heisenberg"
+        "0",
+        "1",
+        "2",
+        "4"
       ],
-      "answer": "B"
-    },
-    {
-      "question": "The radius of the nth orbit of hydrogen atom is proportional to:",
-      "options": [
-        "n",
-        "n²",
-        "n³",
-        "n⁴"
-      ],
-      "answer": "B"
+      "answer": "C"
     }
   ],
-  "exercises": [
-    {
-      "id": "ex-1",
-      "question": "Calculate the de Broglie wavelength of an electron moving at 10⁶ m/s.",
-      "steps": [
-        "Formula: λ = h / (m * v)",
-        "Given: h = 6.626 x 10⁻³⁴ J·s, m = 9.11 x 10⁻³¹ kg, v = 10⁶ m/s",
-        "Calculation: λ = 6.626e-34 / (9.11e-31 * 1e6)",
-        "Result: ~7.27 x 10⁻¹⁰ m (or 0.727 nm)"
-      ],
-      "answer": "0.727 nm"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "RutherfordScatteringSim",
-    "description": "Interactive visualization of α-particle deflection by the nucleus."
-  },
-  "visualType": "orbital-shapes-s-p"
+  "visualType": "electronic-configuration",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "19-electron-spin-notation-and-shell-mapping.json"
 }

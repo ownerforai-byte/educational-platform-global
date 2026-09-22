@@ -1,81 +1,65 @@
 {
-  "title": "Rutherford's Atomic Model — The Stability Crisis (Flaw)",
+  "title": "The Stability Crisis of Rutherford's Atom",
   "unitSlug": "atomic-structure",
   "topicSlug": "rutherford-s-atomic-model-and-its-limitations",
   "topicTitle": "Rutherford's atomic model and its limitations",
-  "relevance": 87,
+  "relevance": 85,
   "notes": [
-    "Detailed notes on 02 rutherford stability crisis within the atomic structure unit."
+    "### Focus of this tab",
+    "The stability defect worked out quantitatively: how long the classical Rutherford atom would survive, and why that number forces quantisation. The full limitations list is in the main note.",
+    "### The classical argument",
+    "An electron moving in a circle is in accelerated motion (its velocity vector changes direction continuously). Maxwell's electromagnetic theory requires every accelerated charged body to radiate electromagnetic energy of frequency equal to its revolution frequency. Radiating means losing energy, so the electron must spiral inward.",
+    "### The spiral-in time",
+    "Using classical electrodynamics for hydrogen (r = 0.529 Å), the energy loss rate gives a collapse time of about $t\\approx1.6\\times10^{-11}\\ \\text{s}$ — commonly quoted as ≈10⁻⁸ s or less in textbooks. Either way it is far shorter than any observable lifetime: classical atoms would vanish in a flash.",
+    "### Two observable failures follow",
+    "• **No stable atoms:** matter could not exist, yet atoms are billions of years old.",
+    "• **Continuous spectrum:** as the electron spirals, its revolution frequency (and hence the radiated frequency) changes continuously, so the atom should emit a continuous spectrum. Experiment shows hydrogen emits sharp discrete lines (656.3 nm, 486.1 nm, …).",
+    "### Bohr's escape (what had to be assumed)",
+    "Bohr (1913) imposed two non-classical rules: (1) electrons move only in certain **stationary orbits** in which they do *not* radiate, and (2) radiation is emitted only during a jump, with $h\\nu=E_{2}-E_{1}$. Both rules violate classical electrodynamics — that is precisely the price of saving the atom, and it opened the road to quantum mechanics.",
+    "### Why this matters for the exam",
+    "The stability crisis is the *reason* Bohr's first postulate exists. A complete answer always links: accelerated charge radiates → energy loss → spiral in → (i) no stability, (ii) continuous spectrum → both contradicted by experiment → quantisation required."
   ],
   "confusion": [
-    "❌ Misconception about 02 rutherford stability crisis. ✅ Scientific explanation."
+    "❌ An electron radiates because it moves fast. ✅ Uniform motion radiates nothing; it is the *acceleration* (changing direction in a circle) that radiates.",
+    "❌ The electron spirals in slowly over years. ✅ Classical theory gives a collapse in ≈10⁻¹¹–10⁻⁸ s — effectively instantaneous.",
+    "❌ Bohr removed radiation altogether. ✅ Radiation still occurs during jumps; only radiation *within* a stationary orbit is forbidden."
   ],
   "practice": [
-    "Practice exercise for 02 rutherford stability crisis."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 02 rutherford stability crisis."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 02 rutherford stability crisis."
-  ],
-  "practiceQuestions": [
-    "Practice question for 02 rutherford stability crisis."
+    "Use Maxwell's electromagnetic theory to show that Rutherford's atom is unstable.",
+    "What two experimental facts does the classical atom fail to explain?",
+    "State the two Bohr postulates that resolve the stability crisis and point out where classical physics is violated."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 02 rutherford stability crisis)"
+    "$$\\text{accelerated charge} \\Rightarrow \\text{radiation},\\qquad \\nu_{\\text{radiated}}=\\nu_{\\text{revolution}}\\ (\\text{classical})$$",
+    "$$t_{\\text{collapse}}\\approx10^{-11}-10^{-8}\\ \\text{s}\\ (\\text{classical hydrogen})$$"
   ],
-  "keyPoints": [
-    "Core point for 02 rutherford stability crisis."
+  "universalFacts": [
+    "The classical collapse time for the hydrogen ground orbit is about 1.6 × 10⁻¹¹ s.",
+    "The discrete 656.3 nm Hα line is the experimental fact the classical atom cannot produce.",
+    "Bohr's 1913 postulates were the first successful breach of classical electrodynamics inside the atom."
   ],
-  "summary": "Summary of 02 rutherford stability crisis.",
-  "specialNotes": [
-    "Specialized insight for 02 rutherford stability crisis."
-  ],
-  "importantStatements": [
-    "Key statement for 02 rutherford stability crisis."
+  "examples": [
+    "**Problem:** Why does a spiralling electron give a continuous spectrum? **Solution:** the revolution frequency ν_rev = v/2πr changes continuously as r shrinks; classical radiation copies this frequency, so all frequencies in a range are emitted — contradicting the observed sharp lines."
   ],
   "importantNotes": [
-    "Important note regarding 02 rutherford stability crisis."
+    "Always give both consequences (no stability + continuous spectrum); quoting only one loses marks.",
+    "State that the postulates are *postulates* — Bohr could not derive them classically."
   ],
-  "examShortTricks": [
-    "Recall the formula for Rutherford's Atomic Model — The Stability Crisis (Flaw)."
-  ],
-  "examNotes": [
-    "Focus on Rutherford's Atomic Model — The Stability Crisis (Flaw) problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 02 rutherford stability crisis?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 02 rutherford stability crisis."
-  ],
-  "importantTasks": [
-    "Task for studying 02 rutherford stability crisis."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "02-rutherford-stability-crisis",
   "mcqs": [
     {
-      "question": "Question about 02 rutherford stability crisis?",
+      "question": "According to classical theory, an orbiting electron should:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Radiate continuously and spiral inward",
+        "Radiate only when jumping",
+        "Never radiate",
+        "Absorb energy continuously"
       ],
       "answer": "A"
     }
-  ]
+  ],
+  "visualType": "rutherford-scattering",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "02-rutherford-stability-crisis.json"
 }

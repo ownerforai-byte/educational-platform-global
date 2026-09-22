@@ -1,81 +1,68 @@
 {
-  "title": "Law of Reciprocal Proportions — Statement",
+  "title": "Law of Reciprocal (Equivalent) Proportions — Richter's Law",
   "unitSlug": "stoichiometry",
   "topicSlug": "laws-of-stoichiometry",
   "topicTitle": "Laws of stoichiometry",
-  "relevance": 80,
+  "relevance": 85,
   "notes": [
-    "Detailed notes on 04 law of reciprocal proportions within the stoichiometry unit."
+    "### Focus of this tab",
+    "The law of reciprocal proportions (Richter, 1792; also called the law of equivalent proportions) — statement, the reference-element method, worked verification and its link to equivalent masses.",
+    "### Statement",
+    "'The masses of two elements which combine separately with a fixed mass of a third element are either the same as, or simple multiples of, the masses in which they combine with each other.' It is the law that connects compounds sharing a common third element.",
+    "### The standard verification (H as reference)",
+    "• Water H₂O: H : O = 1 : 8.",
+    "• Methane CH₄: H : C = 1 : 3, i.e. C : H = 3 : 1 — 3 g C combines with 1 g H.",
+    "• Carbon dioxide CO₂: C : O = 12 : 32 = 3 : 8.",
+    "Check: with a fixed mass of H (1 g), the masses of C and O that combine are 3 g and 8 g. The ratio C : O = 3 : 8 — exactly the ratio in which C and O combine in CO₂. The law is verified.",
+    "### Second pattern (oxygen as reference)",
+    "In SO₂, S : O = 32 : 32 = 1 : 1; in H₂O, H : O = 1 : 8. With a fixed mass of O (say 8 g), H = 1 g and S = 8 g combine. In H₂S the actual ratio is H : S = 1 : 16 = 1 : 16, which is a simple multiple (×2) of the predicted 8 : 1 → the law holds in 'simple multiple' form.",
+    "### Connection to equivalent masses",
+    "The 'masses combining with a fixed mass of the reference element' are precisely the **equivalent masses** (H = 1.008, O = 8, C = 3 when valency 4 is chosen...). The law is the logical basis of the equivalent-mass concept and of the classical method of determining equivalent masses by analysis.",
+    "### Limitations",
+    "It applies to pure compounds and exact analyses; like multiple proportions it fails for berthollides; and it requires the three elements actually to form the relevant binary compounds (e.g. some noble gases form none). It is also the hardest of the laws to verify experimentally because the data must be very accurate."
   ],
   "confusion": [
-    "❌ Misconception about 04 law of reciprocal proportions. ✅ Scientific explanation."
+    "❌ This law compares two compounds of the same two elements. ✅ That is multiple proportions; reciprocal proportions links three elements through two compounds.",
+    "❌ The ratio must be identical. ✅ It may be the same or a *simple multiple* — the 'simple multiple' clause is part of the statement.",
+    "❌ The reference element must be hydrogen. ✅ Any common third element works; hydrogen and oxygen are just the textbook choices."
   ],
   "practice": [
-    "Practice exercise for 04 law of reciprocal proportions."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 04 law of reciprocal proportions."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 04 law of reciprocal proportions."
-  ],
-  "practiceQuestions": [
-    "Practice question for 04 law of reciprocal proportions."
+    "State the law of reciprocal proportions and verify it with H₂O, CH₄ and CO₂.",
+    "How is the law related to the concept of equivalent mass?",
+    "Verify the law using H₂O, SO₂ and H₂S.",
+    "State the limitations of the law of reciprocal proportions."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 04 law of reciprocal proportions)"
+    "$$\\frac{m_{C}\\ (\\text{with fixed H})}{m_{O}\\ (\\text{with fixed H})}=\\frac{m_{C}}{m_{O}}\\ (\\text{in }CO_{2})\\quad\\text{or a simple multiple}$$",
+    "$$\\text{equivalent mass}=\\frac{\\text{atomic mass}}{\\text{valency}}$$"
   ],
-  "keyPoints": [
-    "Core point for 04 law of reciprocal proportions."
+  "universalFacts": [
+    "Richter published the law in 1792 — before Dalton's atomic theory (1803).",
+    "Equivalent masses derived from this law underpin the classical titration and electrochemical (Faraday) calculations.",
+    "The law is also called the law of equivalent proportions for this reason."
   ],
-  "summary": "Summary of 04 law of reciprocal proportions.",
-  "specialNotes": [
-    "Specialized insight for 04 law of reciprocal proportions."
-  ],
-  "importantStatements": [
-    "Key statement for 04 law of reciprocal proportions."
+  "examples": [
+    "**Problem:** Given C : H = 3 : 1 in CH₄ and H : O = 1 : 8 in H₂O, predict C : O in carbon's oxide. **Solution:** fix H = 1 g → C = 3 g, O = 8 g → predicted C : O = 3 : 8. Experiment gives 3 : 8 in CO₂ — verified (and 3 : 4 would be a simple multiple form, as in CO)."
   ],
   "importantNotes": [
-    "Important note regarding 04 law of reciprocal proportions."
+    "Keep the three compounds clearly identified: two with the reference element, one with the pair being compared.",
+    "Remember the 'simple multiple' clause — verification need not be equality."
   ],
-  "examShortTricks": [
-    "Recall the formula for Law of Reciprocal Proportions — Statement."
-  ],
-  "examNotes": [
-    "Focus on Law of Reciprocal Proportions — Statement problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 04 law of reciprocal proportions?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 04 law of reciprocal proportions."
-  ],
-  "importantTasks": [
-    "Task for studying 04 law of reciprocal proportions."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "04-law-of-reciprocal-proportions",
   "mcqs": [
     {
-      "question": "Question about 04 law of reciprocal proportions?",
+      "question": "The law of reciprocal proportions is also known as the law of:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Multiple proportions",
+        "Equivalent proportions",
+        "Gaseous volumes",
+        "Constant composition"
       ],
-      "answer": "A"
+      "answer": "B"
     }
-  ]
+  ],
+  "visualType": "reciprocal-proportions",
+  "tabGroup": "Stoichiometry-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "04-law-of-reciprocal-proportions.json"
 }

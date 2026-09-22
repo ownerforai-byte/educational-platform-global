@@ -14,6 +14,7 @@ import {
   TrendingUp,
   Activity,
 } from "lucide-react";
+import { Schematic } from "./schematic-frame";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -112,16 +113,15 @@ function AntiderivativeVisual() {
         </div>
       </div>
       <div className="flex justify-center">
-        <svg
-          viewBox={`0 0 ${w} ${h2}`}
-          className="w-full max-w-lg border rounded-lg bg-slate-950"
+        <Schematic
+          w={w} h={h2} ox={ox} oy={oy} scale={scaleX} scaleX={scaleX} scaleY={scaleY}
+          tickStep={1}
+          yLabel="F(x)"
+          legend={[
+            { color: "#38bdf8", label: "f(x) = x²" },
+            { color: "#a855f7", label: "F(x) = x³/3 + C" },
+          ]}
         >
-          {/* Axes */}
-          <line x1={0} y1={oy} x2={w} y2={oy} stroke="#475569" strokeWidth="1" />
-          <line x1={ox} y1={0} x2={ox} y2={h2} stroke="#475569" strokeWidth="1" />
-          <text x={w - 10} y={oy - 5} fill="#64748b" fontSize="10">x</text>
-          <text x={ox + 5} y={12} fill="#64748b" fontSize="10">F(x)</text>
-
           {/* All antiderivative curves */}
           {CPoints.map((pts, i) => {
             const c = cValues[i];
@@ -137,18 +137,10 @@ function AntiderivativeVisual() {
               />
             );
           })}
-
           {/* f(x) = x² curve (derivative) */}
           {graphPointsF.length > 1 && (
-            <polyline
-              points={graphPointsF.join(" ")}
-              fill="none"
-              stroke="#38bdf8"
-              strokeWidth="2"
-              opacity="0.7"
-            />
+            <polyline points={graphPointsF.join(" ")} fill="none" stroke="#38bdf8" strokeWidth="2" opacity="0.7" />
           )}
-
           {/* Shaded area between a and b */}
           {(() => {
             const areaPts: string[] = [];
@@ -159,8 +151,6 @@ function AntiderivativeVisual() {
               }
             }
             if (areaPts.length > 1) {
-              const lastPt = areaPts[areaPts.length - 1].split(",").map(Number);
-              const firstPt = areaPts[0].split(",").map(Number);
               return (
                 <>
                   <polygon
@@ -173,31 +163,22 @@ function AntiderivativeVisual() {
                     fillOpacity="0.15"
                     stroke="none"
                   />
-                  <polyline
-                    points={areaPts.join(" ")}
-                    fill="none"
-                    stroke="#a855f7"
-                    strokeWidth="2"
-                  />
+                  <polyline points={areaPts.join(" ")} fill="none" stroke="#a855f7" strokeWidth="2" />
                 </>
               );
             }
             return null;
           })()}
-
           {/* Bounds markers */}
           <line x1={aX} y1={oy} x2={aX} y2={toSvgY(F(a, constant))} stroke="#f97316" strokeWidth="1.5" strokeDasharray="4 2" />
           <line x1={bX} y1={oy} x2={bX} y2={toSvgY(F(b, constant))} stroke="#f97316" strokeWidth="1.5" strokeDasharray="4 2" />
           <text x={aX - 5} y={oy + 15} fill="#f97316" fontSize="10">a={a}</text>
           <text x={bX - 5} y={oy + 15} fill="#f97316" fontSize="10">b={b}</text>
-
-          {/* Labels */}
-          <text x={w - 80} y={20} fill="#38bdf8" fontSize="9">f(x)=x²</text>
-          <text x={w - 80} y={32} fill="#a855f7" fontSize="9">F(x)=x³/3+C</text>
+          {/* Value label */}
           <text x={10} y={16} fill="#64748b" fontSize="10" fontWeight="600">
             Area = {integralValue.toFixed(2)}
           </text>
-        </svg>
+        </Schematic>
       </div>
       <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">
         <strong className="text-foreground">Family of antiderivatives:</strong>{" "}
@@ -279,16 +260,15 @@ function AreaUnderCurveVisual() {
         </div>
       </div>
       <div className="flex justify-center">
-        <svg
-          viewBox={`0 0 ${w} ${h2}`}
-          className="w-full max-w-lg border rounded-lg bg-slate-950"
+        <Schematic
+          w={w} h={h2} ox={ox} oy={oy} scale={scaleX} scaleX={scaleX} scaleY={scaleY}
+          tickStep={1}
+          yLabel="f(x)"
+          legend={[
+            { color: "#38bdf8", label: "f(x) = x²" },
+            { color: "#a855f7", label: "shaded area" },
+          ]}
         >
-          {/* Axes */}
-          <line x1={0} y1={oy} x2={w} y2={oy} stroke="#475569" strokeWidth="1" />
-          <line x1={ox} y1={0} x2={ox} y2={h2} stroke="#475569" strokeWidth="1" />
-          <text x={w - 10} y={oy - 5} fill="#64748b" fontSize="10">x</text>
-          <text x={ox + 5} y={12} fill="#64748b" fontSize="10">f(x)</text>
-
           {/* Shaded area */}
           {areaPts.length > 1 && (
             <polygon
@@ -301,28 +281,20 @@ function AreaUnderCurveVisual() {
               fillOpacity="0.2"
             />
           )}
-
           {/* f(x) = x² curve */}
           {graphPoints.length > 1 && (
-            <polyline
-              points={graphPoints.join(" ")}
-              fill="none"
-              stroke="#38bdf8"
-              strokeWidth="2"
-            />
+            <polyline points={graphPoints.join(" ")} fill="none" stroke="#38bdf8" strokeWidth="2" />
           )}
-
           {/* Bounds */}
           <line x1={aX} y1={oy} x2={aX} y2={toSvgY(f(a))} stroke="#f97316" strokeWidth="1.5" strokeDasharray="4 2" />
           <line x1={bX} y1={oy} x2={bX} y2={toSvgY(f(b))} stroke="#f97316" strokeWidth="1.5" strokeDasharray="4 2" />
           <text x={aX - 5} y={oy + 15} fill="#f97316" fontSize="10">a={a}</text>
           <text x={bX - 5} y={oy + 15} fill="#f97316" fontSize="10">b={b}</text>
-
           {/* Value label */}
           <text x={10} y={16} fill="#64748b" fontSize="10" fontWeight="600">
             Area = {areaValue.toFixed(3)}
           </text>
-        </svg>
+        </Schematic>
       </div>
       <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">
         <strong className="text-foreground">Area under the curve:</strong>{" "}

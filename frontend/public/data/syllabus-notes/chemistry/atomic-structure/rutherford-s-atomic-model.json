@@ -1,81 +1,68 @@
 {
-  "title": "Rutherford's Atomic Model",
+  "title": "Rutherford's Nuclear Model — Features, Successes and Drawbacks (Summary Tab)",
   "unitSlug": "atomic-structure",
-  "topicSlug": "rutherford-s-atomic-model",
-  "topicTitle": "Rutherford's Atomic Model",
-  "relevance": 55,
+  "topicSlug": "rutherford-s-atomic-model-and-its-limitations",
+  "topicTitle": "Rutherford's atomic model and its limitations",
+  "relevance": 85,
   "notes": [
-    "Detailed notes on rutherford s atomic model within the atomic structure unit."
+    "### Focus of this tab",
+    "A compact revision summary of the nuclear atom — the six features, three successes and five drawbacks in tabular form, ideal for last-minute revision. The detailed experiment and limitations are in the main and companion tabs.",
+    "### Features (six points)",
+    "1. Atom is electrically neutral and mostly empty space.",
+    "2. A tiny, dense, positively charged nucleus (r ≈ 10⁻¹⁵ m) sits at the centre and holds ≈99.9% of the mass.",
+    "3. Nuclear volume ≈ 10⁻¹⁵ of atomic volume (r_atom ≈ 10⁻¹⁰ m).",
+    "4. Electrons revolve in circular orbits; Coulomb attraction supplies the centripetal force.",
+    "5. Number of electrons = number of protons → neutrality.",
+    "6. Nuclear charge is characteristic of the element — the seed of the atomic-number concept.",
+    "### Successes (three points)",
+    "• Explained the α-scattering observations quantitatively (including the sin⁻⁴ law).",
+    "• Established the nucleus and the division of the atom into nucleus + electron shell — the birth of nuclear physics.",
+    "• Led to Moseley's atomic number, the discovery of the proton (1919) and neutron (1932), and the modern periodic law.",
+    "### Drawbacks (five points)",
+    "1. Instability: an orbiting (accelerated) electron must radiate and spiral into the nucleus in ≈10⁻⁸ s.",
+    "2. No explanation of line spectra — a spiralling electron would radiate continuously.",
+    "3. No arrangement of electrons: shells, energies and electron numbers are unspecified, so periodicity and valency are unexplained.",
+    "4. Purely classical: circular orbits and a point nucleus are assumptions; no quantisation means no orbital radii or energies.",
+    "5. Ignores the neutron, electron–electron interaction and bonding — fails for multi-electron atoms."
   ],
   "confusion": [
-    "❌ Misconception about rutherford s atomic model. ✅ Scientific explanation."
+    "❌ Rutherford's model places electrons in fixed energy levels. ✅ That is Bohr's addition; Rutherford allowed any circular orbit.",
+    "❌ The model was rejected as useless. ✅ It explained scattering perfectly; it failed only beyond that scope (stability, spectra)."
   ],
   "practice": [
-    "Practice exercise for rutherford s atomic model."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for rutherford s atomic model."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of rutherford s atomic model."
-  ],
-  "practiceQuestions": [
-    "Practice question for rutherford s atomic model."
+    "State any six features of Rutherford's nuclear model.",
+    "Give two successes and four limitations of the model with reasons.",
+    "Which single feature of the model leads directly to the idea of atomic number?"
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for rutherford s atomic model)"
+    "$$\\frac{r_{\\text{nucleus}}}{r_{\\text{atom}}}\\approx10^{-5};\\qquad \\rho_{\\text{nucleus}}\\approx10^{17}\\ \\text{kg m}^{-3}$$"
   ],
-  "keyPoints": [
-    "Core point for rutherford s atomic model."
+  "universalFacts": [
+    "99.9% of the atomic mass sits in a volume 10⁻¹⁵ of the atom's — the densest matter known outside neutron stars.",
+    "Rutherford announced the nuclear model in 1911 and explained it fully in his 1911 Philosophical Magazine paper."
   ],
-  "summary": "Summary of rutherford s atomic model.",
-  "specialNotes": [
-    "Specialized insight for rutherford s atomic model."
-  ],
-  "importantStatements": [
-    "Key statement for rutherford s atomic model."
+  "examples": [
+    "**Problem:** Give the one-sentence essence of the model. **Solution:** 'The atom consists of a tiny massive positive nucleus around which electrons revolve, the whole being mostly empty space and held together electrostatically.'"
   ],
   "importantNotes": [
-    "Important note regarding rutherford s atomic model."
+    "Use this tab for quick revision; quote the limitations with reasons in full-length answers.",
+    "Feature 6 (characteristic nuclear charge) is the bridge to Moseley's atomic number."
   ],
-  "examShortTricks": [
-    "Recall the formula for Rutherford's Atomic Model."
-  ],
-  "examNotes": [
-    "Focus on Rutherford's Atomic Model problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about rutherford s atomic model?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for rutherford s atomic model."
-  ],
-  "importantTasks": [
-    "Task for studying rutherford s atomic model."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "rutherford-s-atomic-model",
   "mcqs": [
     {
-      "question": "Question about rutherford s atomic model?",
+      "question": "Almost the entire mass of an atom resides in the:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Electron shells",
+        "Nucleus",
+        "Empty space",
+        "Valence electrons"
       ],
-      "answer": "A"
+      "answer": "B"
     }
-  ]
+  ],
+  "visualType": "rutherford-scattering",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "rutherford-s-atomic-model.json"
 }

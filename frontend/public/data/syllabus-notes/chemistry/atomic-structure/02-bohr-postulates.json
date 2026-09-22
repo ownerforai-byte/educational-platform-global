@@ -1,81 +1,64 @@
 {
-  "title": "Bohr's Postulates",
+  "title": "Postulates of Bohr's Atomic Model and their Applications",
   "unitSlug": "atomic-structure",
-  "topicSlug": "bohr-postulates",
-  "topicTitle": "Bohr's Postulates",
-  "relevance": 87,
+  "topicSlug": "postulates-of-bohr-s-atomic-model-and-its-application",
+  "topicTitle": "Postulates of Bohr's atomic model and its application",
+  "relevance": 100,
   "notes": [
-    "Detailed notes on 02 bohr postulates within the atomic structure unit."
+    "### 1. Meaning — why a new model was needed",
+    "Rutherford's nuclear model could not explain (i) why the revolving electron does not fall into the nucleus and (ii) why hydrogen gives discrete spectral lines. In 1913 Niels Bohr combined classical mechanics with Planck's quantum theory for the hydrogen atom and other one-electron species (He⁺, Li²⁺).",
+    "### 2. Postulates of Bohr's model (state them in order)",
+    "• **Stationary orbits:** the electron revolves only in certain permitted circular orbits (stationary states) of definite energy and does **not** radiate while in such an orbit.",
+    "• **Quantisation of angular momentum:** only orbits with mvr = nh/2π are allowed, n = 1, 2, 3, … (n = principal quantum number).",
+    "• **Frequency condition:** energy is absorbed or emitted only during a jump between orbits, hν = |E₂ − E₁| (emission on falling, absorption on rising).",
+    "• **Force condition:** the Coulomb attraction provides the centripetal force, mv²/r = kZe²/r² — used with the quantisation rule to find r and E.",
+    "### 3. Results derived from the postulates",
+    "• Orbit radius: $r_{n}=0.529\\,\\frac{n^{2}}{Z}$ Å; the first Bohr orbit of hydrogen (0.529 Å = 52.9 pm) is the **Bohr radius**.",
+    "• Orbital speed: $v_{n}=2.18\\times10^{6}\\,\\frac{Z}{n}$ m s⁻¹ (for H, ground state = c/137, so the motion is non-relativistic).",
+    "• Energy: $E_{n}=-13.6\\,\\frac{Z^{2}}{n^{2}}$ eV = $-2.18\\times10^{-18}\\frac{Z^{2}}{n^{2}}$ J, with $KE=-E_{n}$ and $PE=2E_{n}$; total energy is **negative** because the zero of energy is at infinite separation.",
+    "• Rydberg constant follows from the model: $R=\\frac{2\\pi^{2}me^{4}}{h^{3}c}=1.097\\times10^{7}$ m⁻¹.",
+    "### 4. Applications",
+    "• **Hydrogen spectrum:** gives the wave number of every line, $\\bar{\\nu}=RZ^{2}(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}})$, and identifies the Lyman, Balmer, Paschen, Brackett and Pfund series.",
+    "• **Ionisation energy/enthalpy:** IE of H = 13.6 eV = 1312 kJ mol⁻¹; for He⁺ (Z = 2) it is 54.4 eV, and so on for Li²⁺, Be³⁺.",
+    "• **Atomic size and stability:** explains radii of the order 10⁻¹⁰ m growing as n², and shows why the atom does not collapse — stationary orbits do not radiate.",
+    "• **Spectra of hydrogen-like ions** (He⁺, Li²⁺) and energy-level diagrams still used in spectroscopy and astrophysics for highly ionised plasmas.",
+    "### 5. Successes and the edge of validity",
+    "Successes: atomic stability, hydrogen line spectrum and its series limits, the Rydberg constant, ionisation energy and orbital radii. It stops working for more than one electron and cannot explain fine structure, line intensities or the Zeeman and Stark effects (see 'Defects of Bohr's Theory')."
   ],
   "confusion": [
-    "❌ Misconception about 02 bohr postulates. ✅ Scientific explanation."
+    "❌ 'Stationary orbit' means the electron is at rest. ✅ The electron moves, but the orbit is stationary *in energy* — it does not radiate.",
+    "❌ Bohr orbits and orbitals are the same. ✅ Orbits are fixed 2D circular paths of definite radius/energy; orbitals are 3D probability regions from the Schrödinger equation.",
+    "❌ A bound electron has positive energy. ✅ Its energy is negative (zero at infinite separation).",
+    "❌ Bohr's model works for all atoms. ✅ Only for one-electron species: H, He⁺, Li²⁺, Be³⁺.",
+    "❌ The electron radiates while revolving in an allowed orbit. ✅ Radiation occurs only during a jump."
   ],
   "practice": [
-    "Practice exercise for 02 bohr postulates."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 02 bohr postulates."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 02 bohr postulates."
-  ],
-  "practiceQuestions": [
-    "Practice question for 02 bohr postulates."
+    "State the postulates of Bohr's model and derive the radius of the nth orbit.",
+    "Derive En = −13.6 Z²/n² eV and hence calculate the ionisation energy of He⁺.",
+    "Show that KE = −E and PE = 2E for an electron in a Bohr orbit.",
+    "Calculate the radius and velocity of the electron in the second orbit of hydrogen.",
+    "Explain, using Bohr's postulates, why the hydrogen atom is stable and why its spectrum is a line spectrum."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 02 bohr postulates)"
+    "$$mvr=\\frac{nh}{2\\pi},\\qquad \\frac{mv^{2}}{r}=\\frac{kZe^{2}}{r^{2}}$$",
+    "$$r_{n}=0.529\\frac{n^{2}}{Z}\\ \\text{Å},\\qquad v_{n}=2.18\\times10^{6}\\frac{Z}{n}\\ \\text{m s}^{-1}$$",
+    "$$E_{n}=-13.6\\frac{Z^{2}}{n^{2}}\\ \\text{eV}=-2.18\\times10^{-18}\\frac{Z^{2}}{n^{2}}\\ \\text{J}$$",
+    "$$h\\nu=E_{2}-E_{1},\\qquad \\bar{\\nu}=RZ^{2}\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right)$$"
   ],
-  "keyPoints": [
-    "Core point for 02 bohr postulates."
+  "universalFacts": [
+    "Bohr radius a₀ = 0.529 Å = 52.9 pm; ground-state speed of the H electron = 2.18 × 10⁶ m s⁻¹ = c/137.",
+    "Ionisation energy of H = 13.6 eV = 1312 kJ mol⁻¹; ionisation energy of He⁺ = 54.4 eV.",
+    "Ground-state energy of hydrogen = −13.6 eV, and level spacing decreases as 1/n² increases."
   ],
-  "summary": "Summary of 02 bohr postulates.",
-  "specialNotes": [
-    "Specialized insight for 02 bohr postulates."
-  ],
-  "importantStatements": [
-    "Key statement for 02 bohr postulates."
+  "examples": [
+    "**Problem:** Radius and energy of the electron in the n = 2 orbit of Li²⁺. **Solution:** r₂ = 0.529 × 2²/3 = 0.705 Å = 70.5 pm; E₂ = −13.6 × 3²/2² = −30.6 eV.",
+    "**Problem:** Energy to excite H from n = 1 to n = 3? **Solution:** ΔE = 13.6(1 − 1/9) = 12.09 eV; λ = 1240/12.09 ≈ 102.6 nm (Lyman series)."
   ],
   "importantNotes": [
-    "Important note regarding 02 bohr postulates."
+    "Quote all four postulates; the marks sit on 'stationary orbit', 'mvr = nh/2π' and 'hν = E₂ − E₁'.",
+    "Negative total energy signals a bound state — always mention that the zero of energy is taken at infinite separation.",
+    "Keep Z = 1 for hydrogen: forgetting Z is the commonest numerical error in rn, vn and En."
   ],
-  "examShortTricks": [
-    "Recall the formula for Bohr's Postulates."
-  ],
-  "examNotes": [
-    "Focus on Bohr's Postulates problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 02 bohr postulates?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 02 bohr postulates."
-  ],
-  "importantTasks": [
-    "Task for studying 02 bohr postulates."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "02-bohr-postulates",
-  "mcqs": [
-    {
-      "question": "Question about 02 bohr postulates?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ]
+  "visualType": "bohr-model",
+  "tabGroup": "Atomic-Structure-Learner-Notes"
 }

@@ -1,81 +1,67 @@
 {
-  "title": "Heisenberg's Uncertainty Principle (1927)",
+  "title": "Heisenberg's Uncertainty Principle — Statement, Forms and Numericals",
   "unitSlug": "atomic-structure",
   "topicSlug": "heisenberg-s-uncertainty-principle-and-concept-of-probability",
   "topicTitle": "Heisenberg's Uncertainty Principle and concept of probability",
   "relevance": 85,
   "notes": [
-    "Detailed notes on 12 heisenberg uncertainty principle within the atomic structure unit."
+    "### Focus of this tab",
+    "The three standard forms of the principle and the two numerical patterns NEB asks (electron in an atom; electron in the nucleus). The probability interpretation is in the main note.",
+    "### The three forms",
+    "• Position–momentum: $\\Delta x\\,\\Delta p\\ge\\frac{h}{4\\pi}$, or with velocity $\\Delta x\\,\\Delta v\\ge\\frac{h}{4\\pi m}$.",
+    "• Energy–time: $\\Delta E\\,\\Delta t\\ge\\frac{h}{4\\pi}$ — an excited state living Δt has a minimum energy spread ΔE, which broadens spectral lines (natural line width).",
+    "• Angular momentum–angle: $\\Delta L\\,\\Delta\\theta\\ge\\frac{h}{4\\pi}$.",
+    "### Numerical pattern 1 — electron localised to atomic size",
+    "Δx = 10⁻¹⁰ m: Δv ≥ h/(4πmΔx) = 6.626×10⁻³⁴/(4π × 9.11×10⁻³¹ × 10⁻¹⁰) ≈ 5.8 × 10⁵ m s⁻¹. This is comparable with the electron's own speed (2.2 × 10⁶ m s⁻¹), so a definite orbit is impossible — the standard argument against Bohr orbits.",
+    "### Numerical pattern 2 — electron inside the nucleus",
+    "Δx = 10⁻¹⁴ m (nuclear size): Δp ≈ h/(4πΔx) ≈ 5.3 × 10⁻¹⁸ kg m s⁻¹ → KE ≈ (Δp)²/2m ≈ 1.5 × 10⁻⁴ J ≈ 10⁹ eV. Nuclear binding energies are ~10⁷ eV, so the electron cannot be confined in the nucleus — proof that electrons are not nuclear constituents (β-particles are created at emission).",
+    "### Relation to the probability concept",
+    "Because r and p cannot both be sharp, the electron's state is described by ψ with |ψ|² = probability density. The 1s radial probability peaks at 0.529 Å — Bohr's radius reappears as the *most probable* distance. 'Electron cloud', boundary surfaces and atomic radii averages all follow from this probabilistic description.",
+    "### Limits of the principle",
+    "It matters only for microscopic particles: for a 1 g body at Δx = 10⁻¹⁰ m, Δv ≈ 10⁻²⁴ m s⁻¹ — utterly negligible, so classical mechanics remains valid for everyday objects."
   ],
   "confusion": [
-    "❌ Misconception about 12 heisenberg uncertainty principle. ✅ Scientific explanation."
+    "❌ The principle sets a limit on *both* quantities individually. ✅ Only the *product* of the two uncertainties is bounded; either one alone can be exact.",
+    "❌ ΔE·Δt means energy conservation is violated. ✅ It permits transient fluctuations within ΔE for times shorter than Δt — the basis of virtual processes and tunnelling.",
+    "❌ A better microscope can beat the limit. ✅ The limit is fundamental, not technical."
   ],
   "practice": [
-    "Practice exercise for 12 heisenberg uncertainty principle."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 12 heisenberg uncertainty principle."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 12 heisenberg uncertainty principle."
-  ],
-  "practiceQuestions": [
-    "Practice question for 12 heisenberg uncertainty principle."
+    "State the uncertainty principle and write its three forms.",
+    "Estimate the minimum uncertainty in the velocity of an electron confined to 10⁻¹⁰ m.",
+    "Use the principle to prove that electrons cannot exist inside the nucleus.",
+    "How does the principle justify the probability description of the electron?"
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 12 heisenberg uncertainty principle)"
+    "$$\\Delta x\\,\\Delta p\\ge\\frac{h}{4\\pi};\\quad \\Delta E\\,\\Delta t\\ge\\frac{h}{4\\pi};\\quad \\Delta L\\,\\Delta\\theta\\ge\\frac{h}{4\\pi}$$",
+    "$$KE\\approx\\frac{(\\Delta p)^{2}}{2m}$$"
   ],
-  "keyPoints": [
-    "Core point for 12 heisenberg uncertainty principle."
+  "universalFacts": [
+    "ħ = h/2π = 1.055 × 10⁻³⁴ J s; the bound is often written Δx·Δp ≥ ħ/2 (numerically equal to h/4π).",
+    "Natural line width of an excited state (Δt ≈ 10⁻⁸ s): ΔE ≈ 10⁻⁸ eV — the origin of the intrinsic sharpness limit of spectral lines.",
+    "Tunnelling (STM, α-decay) is the practical use of the energy–time form."
   ],
-  "summary": "Summary of 12 heisenberg uncertainty principle.",
-  "specialNotes": [
-    "Specialized insight for 12 heisenberg uncertainty principle."
-  ],
-  "importantStatements": [
-    "Key statement for 12 heisenberg uncertainty principle."
+  "examples": [
+    "**Problem:** Δx = 5 × 10⁻¹¹ m for an electron — find Δv. **Solution:** Δv = h/(4πmΔx) = 6.626×10⁻³⁴/(4π × 9.11×10⁻³¹ × 5×10⁻¹¹) ≈ 1.2 × 10⁶ m s⁻¹ — over half the orbital speed, confirming the orbit picture's collapse."
   ],
   "importantNotes": [
-    "Important note regarding 12 heisenberg uncertainty principle."
+    "Write the form the question asks for (momentum or velocity); mixing m into the denominator wrongly is the common error.",
+    "Conclude numericals with the physical meaning (no definite orbit / no electron in the nucleus)."
   ],
-  "examShortTricks": [
-    "Recall the formula for Heisenberg's Uncertainty Principle (1927)."
-  ],
-  "examNotes": [
-    "Focus on Heisenberg's Uncertainty Principle (1927) problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 12 heisenberg uncertainty principle?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 12 heisenberg uncertainty principle."
-  ],
-  "importantTasks": [
-    "Task for studying 12 heisenberg uncertainty principle."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "12-heisenberg-uncertainty-principle",
   "mcqs": [
     {
-      "question": "Question about 12 heisenberg uncertainty principle?",
+      "question": "The uncertainty principle is significant for:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Moving cars",
+        "Microscopic particles like electrons",
+        "Planets",
+        "All objects equally"
       ],
-      "answer": "A"
+      "answer": "B"
     }
-  ]
+  ],
+  "visualType": "heisenberg-uncertainty",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "12-heisenberg-uncertainty-principle.json"
 }

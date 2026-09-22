@@ -1,81 +1,65 @@
 {
-  "title": "Negative Electronic Energy & the Bohr Mechanical Model Critique",
+  "title": "Negative Electronic Energy and the Zero of Energy",
   "unitSlug": "atomic-structure",
   "topicSlug": "postulates-of-bohr-s-atomic-model-and-its-application",
   "topicTitle": "Postulates of Bohr's atomic model and its application",
   "relevance": 80,
   "notes": [
-    "Detailed notes on 10 negative electronic energy and bohr critique within the atomic structure unit."
+    "### Focus of this tab",
+    "Why Bohr energies are negative, what the zero of energy means, and the three energy relations (E, KE, PE) that follow from the force condition.",
+    "### Where the negative sign comes from",
+    "Bohr takes the zero of energy at infinite separation — the electron just free of the atom, at rest. Any bound orbit is *below* that reference, so all bound-state energies are negative: $E_{n}=-13.6\\,Z^{2}/n^{2}$ eV. The magnitude |E| is the binding energy — exactly the energy that must be supplied to free the electron (ionisation).",
+    "### The three relations",
+    "From the Coulomb force condition, $\\frac{mv^{2}}{r}=\\frac{kZe^{2}}{r^{2}}$ gives $KE=\\frac{kZe^{2}}{2r}$ and $PE=-\\frac{kZe^{2}}{r}$. Therefore: **KE = −E** and **PE = 2E = −2|E|**, with E = KE + PE. Check for hydrogen ground state: E = −13.6 eV, KE = +13.6 eV, PE = −27.2 eV. As n grows: E → 0⁻, KE → 0, PE → 0⁻ (a loosely bound, slow electron).",
+    "### Reading the numbers",
+    "• n = 1: E = −13.6 eV (most tightly bound, v = c/137).",
+    "• n = 2: E = −3.4 eV; n = 3: −1.51 eV; n = 4: −0.85 eV — level differences shrink as 1/n², hence the converging spectral series.",
+    "• n = ∞: E = 0 — ionisation; the electron is free.",
+    "### Why the sign matters in chemistry",
+    "Ionisation energy = |Eₙ| (positive number supplied); electron affinity and bond energies follow the same convention (energy *released* on going to a bound state is positive when reported as 'released'). Mixing the two sign conventions is the standard source of error — always state which convention you use."
   ],
   "confusion": [
-    "❌ Misconception about 10 negative electronic energy and bohr critique. ✅ Scientific explanation."
+    "❌ Negative energy means the calculation is wrong. ✅ It is a *bound state* referenced to infinite separation.",
+    "❌ KE is also negative. ✅ KE = −E is positive (½mv²); only total E and PE are negative.",
+    "❌ The electron loses mass when bound. ✅ Mass–energy differences are negligible here (13.6 eV vs 511 keV rest mass)."
   ],
   "practice": [
-    "Practice exercise for 10 negative electronic energy and bohr critique."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 10 negative electronic energy and bohr critique."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 10 negative electronic energy and bohr critique."
-  ],
-  "practiceQuestions": [
-    "Practice question for 10 negative electronic energy and bohr critique."
+    "Why are the energies of bound electrons negative?",
+    "Show that PE = 2E and KE = −E for a Bohr orbit.",
+    "Calculate E, KE and PE for the n = 2 orbit of hydrogen.",
+    "Explain why the level spacing decreases as n increases."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 10 negative electronic energy and bohr critique)"
+    "$$E_{n}=-13.6\\frac{Z^{2}}{n^{2}}\\ \\text{eV};\\qquad KE=-E_{n};\\qquad PE=2E_{n}$$",
+    "$$\\text{IE from level }n=|E_{n}|=13.6\\frac{Z^{2}}{n^{2}}\\ \\text{eV}$$"
   ],
-  "keyPoints": [
-    "Core point for 10 negative electronic energy and bohr critique."
+  "universalFacts": [
+    "Hydrogen ground state: E = −13.6 eV, KE = +13.6 eV, PE = −27.2 eV.",
+    "The virial theorem for Coulomb systems (2KE + PE = 0) is the general reason behind PE = 2E.",
+    "IE of hydrogen in molar units is 1312 kJ mol⁻¹ — the value measured calorimetrically."
   ],
-  "summary": "Summary of 10 negative electronic energy and bohr critique.",
-  "specialNotes": [
-    "Specialized insight for 10 negative electronic energy and bohr critique."
-  ],
-  "importantStatements": [
-    "Key statement for 10 negative electronic energy and bohr critique."
+  "examples": [
+    "**Problem:** Photon energy to move H from n = 2 to n = ∞? **Solution:** 0 − (−3.4) = 3.4 eV — the second ionisation step of the excited atom; the photon must supply at least 3.4 eV (λ ≈ 364.6 nm, the Balmer limit)."
   ],
   "importantNotes": [
-    "Important note regarding 10 negative electronic energy and bohr critique."
+    "Always define the zero of energy (infinite separation) when explaining negative energies.",
+    "Report ionisation energy as a positive magnitude; keep Eₙ negative."
   ],
-  "examShortTricks": [
-    "Recall the formula for Negative Electronic Energy & the Bohr Mechanical Model Critique."
-  ],
-  "examNotes": [
-    "Focus on Negative Electronic Energy & the Bohr Mechanical Model Critique problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 10 negative electronic energy and bohr critique?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 10 negative electronic energy and bohr critique."
-  ],
-  "importantTasks": [
-    "Task for studying 10 negative electronic energy and bohr critique."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "10-negative-electronic-energy-and-bohr-critique",
   "mcqs": [
     {
-      "question": "Question about 10 negative electronic energy and bohr critique?",
+      "question": "For an electron in a Bohr orbit, PE equals:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "E",
+        "−E",
+        "2E",
+        "−2E"
       ],
-      "answer": "A"
+      "answer": "C"
     }
-  ]
+  ],
+  "visualType": "bohr-model",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "10-negative-electronic-energy-and-bohr-critique.json"
 }

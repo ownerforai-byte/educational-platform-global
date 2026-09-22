@@ -1,239 +1,71 @@
 {
-  "title": "Law of Definite Proportions (Constant Composition)",
+  "title": "Law of Definite (Constant) Proportions — Statement, Examples and Limitations",
   "unitSlug": "stoichiometry",
   "topicSlug": "laws-of-stoichiometry",
   "topicTitle": "Laws of stoichiometry",
-  "relevance": 90,
-  "enrichedContent": {
-    "notes": [
-      "A pure chemical compound always contains the same elements in the same fixed proportion by mass, regardless of its source or preparation method.",
-      "Example: Water (H₂O) always has a mass ratio of H:O = 1:8, whether obtained from a river, rain, or synthesized in a lab.",
-      "This law is fundamental to writing chemical formulas and performing stoichiometric calculations.",
-      "It implies that the composition of a compound is independent of the method of preparation or the origin of the sample."
-    ],
-    "confusion": [
-      "❌ Mixtures follow this law. ✅ No, mixtures have variable composition and can be separated by physical means.",
-      "❌ Isotopes violate this law. ✅ No, compounds formed with different isotopes are still the same compound for stoichiometry, as the chemical properties are identical."
-    ],
-    "practice": [
-      "Calculate the mass percent of elements in NaCl.",
-      "Verify the law for two samples of CO₂."
-    ],
-    "universalFacts": [
-      "The Law of Definite Proportions was discovered by Joseph Proust in 1794.",
-      "This law is also known as the Law of Constant Composition.",
-      "It applies to all pure chemical compounds regardless of their source.",
-      "This law was crucial for the development of modern atomic theory.",
-      "Water from any source always contains hydrogen and oxygen in a 1:8 mass ratio."
-    ],
-    "examples": [
-      "Water (H₂O): Always contains H:O = 1:8 by mass (2g H + 16g O).",
-      "Carbon dioxide (CO₂): Always contains C:O = 3:8 by mass (12g C + 32g O).",
-      "Sodium chloride (NaCl): Always contains Na:Cl = 23:35.5 by mass.",
-      "Ammonia (NH₃): Always contains N:H = 14:3 by mass."
-    ],
-    "practiceQuestions": [
-      "State the Law of Definite Proportions with examples.",
-      "How does this law help in determining the chemical formula of a compound?",
-      "Verify the Law of Definite Proportions for water using experimental data.",
-      "Explain why this law is important in stoichiometry."
-    ],
-    "formulas": [
-      "Mass percent = (Mass of element / Total mass of compound) × 100",
-      "For H₂O: %H = (2/18) × 100 = 11.11%, %O = (16/18) × 100 = 88.89%"
-    ],
-    "keyPoints": [
-      "Pure compounds have fixed elemental composition by mass.",
-      "The ratio is independent of the source or method of preparation.",
-      "This law supports the existence of atoms combining in fixed ratios.",
-      "Used to verify chemical purity of compounds."
-    ],
-    "summary": "The Law of Definite Proportions states that a pure compound always contains the same elements in the same fixed proportion by mass.",
-    "specialNotes": [
-      "This law holds for all compounds but has exceptions for non-stoichiometric compounds (berthollides).",
-      "The law is fundamental to writing and balancing chemical equations.",
-      "NEB frequently tests this law with numerical problems on mass percent."
-    ],
-    "importantStatements": [
-      "A given chemical compound always contains its constituent elements in fixed ratio by mass.",
-      "The composition of a pure compound is constant regardless of its source.",
-      "This law is based on the idea that atoms combine in fixed whole-number ratios."
-    ],
-    "importantNotes": [
-      "The law applies to ionic and covalent compounds equally.",
-      "It is derived from the atomic nature of matter.",
-      "Modern quantum chemistry provides the theoretical basis for this law."
-    ],
-    "examShortTricks": [
-      "Remember: Proust's Law = Fixed Ratio.",
-      "Test: Calculate mass percent of each element in compound.",
-      "If two samples give same mass ratio, they are same compound."
-    ],
-    "examNotes": [
-      "Frequently tested in NEB as a short answer question.",
-      "Be prepared to state the law and give examples."
-    ],
-    "mcs": [
-      {
-        "question": "Who discovered the Law of Definite Proportions?",
-        "options": [
-          "Dalton",
-          "Proust",
-          "Lavoisier",
-          "Avogadro"
-        ],
-        "answer": "B"
-      },
-      {
-        "question": "In water, the mass ratio of hydrogen to oxygen is:",
-        "options": [
-          "1:16",
-          "1:8",
-          "2:1",
-          "8:1"
-        ],
-        "answer": "B"
-      },
-      {
-        "question": "The Law of Definite Proportions is also known as:",
-        "options": [
-          "Law of Conservation of Mass",
-          "Law of Constant Composition",
-          "Law of Multiple Proportions",
-          "Law of Reciprocal Proportions"
-        ],
-        "answer": "B"
-      },
-      {
-        "question": "Which of the following follows the Law of Definite Proportions?",
-        "options": [
-          "Air",
-          "Soil",
-          "Pure water",
-          "Sea water"
-        ],
-        "answer": "C"
-      }
-    ],
-    "importantConcepts": [],
-    "importantTasks": [],
-    "exercises": [],
-    "visualization": {}
-  },
-  "originalContent": {
-    "notes": [
-      "A pure chemical compound always contains the same elements in the same fixed proportion by mass, regardless of its source or preparation method.",
-      "Example: Water (H₂O) always has a mass ratio of H:O = 1:8, whether obtained from a river, rain, or synthesized in a lab.",
-      "This law is fundamental to writing chemical formulas and performing stoichiometric calculations.",
-      "It implies that the composition of a compound is independent of the method of preparation or the origin of the sample."
-    ],
-    "confusion": [
-      "❌ Mixtures follow this law. ✅ No, mixtures have variable composition and can be separated by physical means.",
-      "❌ Isotopes violate this law. ✅ No, compounds formed with different isotopes are still the same compound for stoichiometry, as the chemical properties are identical."
-    ],
-    "practice": [
-      "Calculate the mass percent of elements in NaCl.",
-      "Verify the law for two samples of CO₂."
-    ],
-    "universalFacts": [
-      "The Law of Definite Proportions was discovered by Joseph Proust in 1794.",
-      "This law is also known as the Law of Constant Composition.",
-      "It applies to all pure chemical compounds regardless of their source.",
-      "This law was crucial for the development of modern atomic theory.",
-      "Water from any source always contains hydrogen and oxygen in a 1:8 mass ratio."
-    ],
-    "examples": [
-      "Water (H₂O): Always contains H:O = 1:8 by mass (2g H + 16g O).",
-      "Carbon dioxide (CO₂): Always contains C:O = 3:8 by mass (12g C + 32g O).",
-      "Sodium chloride (NaCl): Always contains Na:Cl = 23:35.5 by mass.",
-      "Ammonia (NH₃): Always contains N:H = 14:3 by mass."
-    ],
-    "practiceQuestions": [
-      "State the Law of Definite Proportions with examples.",
-      "How does this law help in determining the chemical formula of a compound?",
-      "Verify the Law of Definite Proportions for water using experimental data.",
-      "Explain why this law is important in stoichiometry."
-    ],
-    "formulas": [
-      "Mass percent = (Mass of element / Total mass of compound) × 100",
-      "For H₂O: %H = (2/18) × 100 = 11.11%, %O = (16/18) × 100 = 88.89%"
-    ],
-    "keyPoints": [
-      "Pure compounds have fixed elemental composition by mass.",
-      "The ratio is independent of the source or method of preparation.",
-      "This law supports the existence of atoms combining in fixed ratios.",
-      "Used to verify chemical purity of compounds."
-    ],
-    "summary": "The Law of Definite Proportions states that a pure compound always contains the same elements in the same fixed proportion by mass.",
-    "specialNotes": [
-      "This law holds for all compounds but has exceptions for non-stoichiometric compounds (berthollides).",
-      "The law is fundamental to writing and balancing chemical equations.",
-      "NEB frequently tests this law with numerical problems on mass percent."
-    ],
-    "importantStatements": [
-      "A given chemical compound always contains its constituent elements in fixed ratio by mass.",
-      "The composition of a pure compound is constant regardless of its source.",
-      "This law is based on the idea that atoms combine in fixed whole-number ratios."
-    ],
-    "importantNotes": [
-      "The law applies to ionic and covalent compounds equally.",
-      "It is derived from the atomic nature of matter.",
-      "Modern quantum chemistry provides the theoretical basis for this law."
-    ],
-    "examShortTricks": [
-      "Remember: Proust's Law = Fixed Ratio.",
-      "Test: Calculate mass percent of each element in compound.",
-      "If two samples give same mass ratio, they are same compound."
-    ],
-    "examNotes": [
-      "Frequently tested in NEB as a short answer question.",
-      "Be prepared to state the law and give examples."
-    ],
-    "mcs": [
-      {
-        "question": "Who discovered the Law of Definite Proportions?",
-        "options": [
-          "Dalton",
-          "Proust",
-          "Lavoisier",
-          "Avogadro"
-        ],
-        "answer": "B"
-      },
-      {
-        "question": "In water, the mass ratio of hydrogen to oxygen is:",
-        "options": [
-          "1:16",
-          "1:8",
-          "2:1",
-          "8:1"
-        ],
-        "answer": "B"
-      },
-      {
-        "question": "The Law of Definite Proportions is also known as:",
-        "options": [
-          "Law of Conservation of Mass",
-          "Law of Constant Composition",
-          "Law of Multiple Proportions",
-          "Law of Reciprocal Proportions"
-        ],
-        "answer": "B"
-      },
-      {
-        "question": "Which of the following follows the Law of Definite Proportions?",
-        "options": [
-          "Air",
-          "Soil",
-          "Pure water",
-          "Sea water"
-        ],
-        "answer": "C"
-      }
-    ],
-    "importantConcepts": [],
-    "importantTasks": [],
-    "exercises": [],
-    "visualization": {}
-  }
+  "relevance": 85,
+  "notes": [
+    "### Focus of this tab",
+    "The second law of chemical combination: Proust's law of definite proportions with its classic percentage data, the calculations it supports, and the compounds that break it.",
+    "### Statement and history",
+    "'A chemical compound always contains the same elements combined in the same fixed proportion by mass, regardless of its source or method of preparation.' Established by Joseph Proust (1799) against Berthollet, who believed composition could vary continuously with conditions.",
+    "### The classic data",
+    "• Water: from river, sea, rain or synthesised from H₂ + O₂ — H : O = 1 : 8 by mass (11.1% H, 88.9% O).",
+    "• Carbon dioxide: 27.27% C, 72.73% O (C : O = 3 : 8) whether from burning carbon, respiration or limestone decomposition.",
+    "• Copper oxide: 79.9% Cu, 20.1% O whether prepared by heating copper in air or reducing CuO in hydrogen.",
+    "### Why it holds",
+    "A pure compound has a fixed formula (H₂O, CO₂, CuO): fixed atom counts and fixed atomic masses give a fixed mass ratio — a direct consequence of Dalton's theory (the law was actually strong evidence *for* atoms).",
+    "### Calculations it supports",
+    "• Percentage composition: % element = (mass of element in formula ÷ molar mass) × 100.",
+    "• Mass of element in a given sample: sample mass × (%/100) — e.g. oxygen in 90 g of water = 90 × (8/9) = 80 g.",
+    "• Purity analysis: a brass sample or an ore is assayed by comparing its metal percentage with the theoretical value for the pure compound.",
+    "### Limitations (where the law fails)",
+    "1. **Non-stoichiometric (berthollide) compounds:** Fe₀.₉₃O, FeS₁₋ₓ, Cu₂₋ₓO — composition varies within a small range; the law needs a true formula compound.",
+    "2. **Isotopic variation:** D₂O (heavy water) has H : O = 2 : 8, not 1 : 8 — the same 'compound' differs when isotopes change.",
+    "3. **Mixtures, solutions and alloys** vary continuously in composition — the law is for pure compounds only.",
+    "4. Polymers and associated molecules with variable chain length have no single fixed composition."
+  ],
+  "confusion": [
+    "❌ The law means elements always combine in the same proportion. ✅ It applies to a given *compound*; the same two elements may form several compounds (CO, CO₂) with different ratios — that is multiple proportions.",
+    "❌ Heavy water is a counterexample to chemistry being consistent. ✅ It shows the law depends on the isotope chosen — D₂O and H₂O are different compounds.",
+    "❌ The law applies to brass or steel. ✅ Alloys are mixtures with variable composition; only pure compounds are covered."
+  ],
+  "practice": [
+    "State the law of definite proportions and illustrate with data for water from two sources.",
+    "Calculate the percentage of nitrogen in NH₃ and the mass of nitrogen in 100 g of it.",
+    "Explain how non-stoichiometric compounds limit the law.",
+    "Distinguish the law of definite proportions from the law of multiple proportions with CO and CO₂."
+  ],
+  "formulas": [
+    "$$\\%\\text{element}=\\frac{\\text{mass of element in one mole}}{\\text{molar mass}}\\times100;\\qquad \\text{H:O in water}=1:8$$"
+  ],
+  "universalFacts": [
+    "Proust's law was contested by Berthollet until careful analysis of artificial and natural carbonates settled it.",
+    "CuO is always 79.9% copper by mass, whatever its origin.",
+    "The 1 : 8 hydrogen–oxygen mass ratio reappears in every electrolysis and combustion calculation."
+  ],
+  "examples": [
+    "**Problem:** 1.0 g of a metal oxide contains 0.72 g of metal. If the metal's equivalent behaviour repeats, find the % oxygen. **Solution:** O = 0.28 g → 28% oxygen — a fixed composition the law predicts for this oxide."
+  ],
+  "importantNotes": [
+    "Say 'proportion *by mass*' — volume ratios belong to Gay-Lussac's law.",
+    "Always name the source-independence (natural or synthetic) when stating the law."
+  ],
+  "mcqs": [
+    {
+      "question": "The law of definite proportions was proposed by:",
+      "options": [
+        "Dalton",
+        "Proust",
+        "Lavoisier",
+        "Richter"
+      ],
+      "answer": "B"
+    }
+  ],
+  "visualType": "definite-proportions",
+  "tabGroup": "Stoichiometry-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "02-law-of-definite-proportions.json"
 }

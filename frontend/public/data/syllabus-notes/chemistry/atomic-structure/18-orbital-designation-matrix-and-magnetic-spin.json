@@ -1,81 +1,66 @@
 {
-  "title": "Orbital Designation Matrix — Magnetic & Spin Quantum Numbers",
+  "title": "Orbital Designation Matrix and the Spin Quantum Number",
   "unitSlug": "atomic-structure",
   "topicSlug": "quantum-numbers",
   "topicTitle": "Quantum numbers",
-  "relevance": 100,
+  "relevance": 80,
   "notes": [
-    "Detailed notes on 18 orbital designation matrix and magnetic spin within the atomic structure unit."
+    "### Focus of this tab",
+    "How (n, l, m) triples map onto orbital designations, and what the spin quantum number adds — including the box-and-arrow notation used in configuration questions.",
+    "### The designation matrix",
+    "• l = 0 → s, 1 orbital (m = 0): 1s, 2s, 3s, 4s …",
+    "• l = 1 → p, 3 orbitals (m = −1, 0, +1): 2p, 3p, 4p … each written px, py, pz.",
+    "• l = 2 → d, 5 orbitals (m = −2 … +2): 3d, 4d … (dxy, dyz, dxz, dx²−y², dz²).",
+    "• l = 3 → f, 7 orbitals (m = −3 … +3): 4f, 5f …",
+    "The full designation combines n and the subshell letter (3p) or, fully, (n, l, m) — e.g. (3, 1, 0) is the 3pz orbital.",
+    "### The spin quantum number",
+    "mₛ = +½ (↑) or −½ (↓). Electron spin is an intrinsic angular momentum with magnitude √(3/4)·h/2π = √3/2 ħ — it is not literally a spinning ball, but the name survives. Evidence: Stern–Gerlach (silver atoms split into two beams) and doublet structure of alkali spectra. With spin, each orbital (defined by n, l, m) holds exactly two electrons of opposite spin — Pauli's exclusion principle.",
+    "### Box-and-arrow notation (configuration drawing)",
+    "Draw one box per orbital; fill per Aufbau/Pauli/Hund. Nitrogen: 2p ↑ ↑ ↑ (three boxes, parallel arrows); oxygen: 2p ↑↓ ↑ ↑. The notation encodes unpaired-electron counts, hence magnetic behaviour: N has 3 unpaired (paramagnetic), Ne has 0 (diamagnetic).",
+    "### Magnetic behaviour from the matrix",
+    "Count unpaired electrons u: spin-only magnetic moment μ = √(u(u + 2)) BM. Fe³⁺ (3d⁵): u = 5 → μ ≈ 5.92 BM; Cu²⁺ (3d⁹): u = 1 → 1.73 BM; Zn²⁺ (3d¹⁰): u = 0 → diamagnetic."
   ],
   "confusion": [
-    "❌ Misconception about 18 orbital designation matrix and magnetic spin. ✅ Scientific explanation."
+    "❌ Spin means the electron literally spins on its axis. ✅ Spin is an intrinsic quantum property; the classical picture is only an analogy.",
+    "❌ The five d orbitals have five different energies in a free atom. ✅ They are degenerate; ligand or magnetic fields split them.",
+    "❌ A full designation needs only n and l. ✅ A complete state needs all four numbers (n, l, m, mₛ)."
   ],
   "practice": [
-    "Practice exercise for 18 orbital designation matrix and magnetic spin."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 18 orbital designation matrix and magnetic spin."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 18 orbital designation matrix and magnetic spin."
-  ],
-  "practiceQuestions": [
-    "Practice question for 18 orbital designation matrix and magnetic spin."
+    "Draw the designation matrix for l = 0, 1, 2, 3 with m values and orbital capacities.",
+    "Explain the Stern–Gerlach experiment as evidence for spin.",
+    "Using box notation, show the 2p electrons of N and O and count unpaired electrons.",
+    "Calculate the spin-only magnetic moment of Mn²⁺ (3d⁵)."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 18 orbital designation matrix and magnetic spin)"
+    "$$\\mu=\\sqrt{u(u+2)}\\ \\text{BM},\\qquad s=\\tfrac{1}{2},\\ |s|=\\sqrt{s(s+1)}\\,\\hbar=\\tfrac{\\sqrt{3}}{2}\\hbar$$"
   ],
-  "keyPoints": [
-    "Core point for 18 orbital designation matrix and magnetic spin."
+  "universalFacts": [
+    "The five d orbitals carry the spectroscopic labels dxy, dyz, dxz, dx²−y², dz².",
+    "Silver's single unpaired 5s electron produced exactly two Stern–Gerlach beams.",
+    "Pauli stated his exclusion principle in 1925, before spin was formally introduced."
   ],
-  "summary": "Summary of 18 orbital designation matrix and magnetic spin.",
-  "specialNotes": [
-    "Specialized insight for 18 orbital designation matrix and magnetic spin."
-  ],
-  "importantStatements": [
-    "Key statement for 18 orbital designation matrix and magnetic spin."
+  "examples": [
+    "**Problem:** Give the designation of an electron with (n, l, m, mₛ) = (4, 2, −1, +½). **Solution:** n = 4, l = 2 → 4d; m = −1 selects one of the five d orbitals; mₛ = +½ — an up-spin electron in a 4d orbital."
   ],
   "importantNotes": [
-    "Important note regarding 18 orbital designation matrix and magnetic spin."
+    "Use box notation whenever a configuration question asks about unpaired electrons or magnetism.",
+    "Pauli's principle is stated in terms of the four quantum numbers — quote all four."
   ],
-  "examShortTricks": [
-    "Recall the formula for Orbital Designation Matrix — Magnetic & Spin Quantum Numbers."
-  ],
-  "examNotes": [
-    "Focus on Orbital Designation Matrix — Magnetic & Spin Quantum Numbers problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 18 orbital designation matrix and magnetic spin?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 18 orbital designation matrix and magnetic spin."
-  ],
-  "importantTasks": [
-    "Task for studying 18 orbital designation matrix and magnetic spin."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "18-orbital-designation-matrix-and-magnetic-spin",
   "mcqs": [
     {
-      "question": "Question about 18 orbital designation matrix and magnetic spin?",
+      "question": "The spin-only magnetic moment of Cu²⁺ (3d⁹) is about:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "0 BM",
+        "1.73 BM",
+        "2.83 BM",
+        "5.92 BM"
       ],
-      "answer": "A"
+      "answer": "B"
     }
-  ]
+  ],
+  "visualType": "quantum-numbers",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "18-orbital-designation-matrix-and-magnetic-spin.json"
 }

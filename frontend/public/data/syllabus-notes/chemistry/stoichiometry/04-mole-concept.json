@@ -1,80 +1,64 @@
 {
-  "title": "04 MOLE CONCEPT",
+  "title": "Mole and its Relation with Mass, Volume and Number of Particles",
   "unitSlug": "stoichiometry",
-  "topicSlug": "04-mole-concept",
-  "topicTitle": "04 mole concept",
+  "topicSlug": "mole-and-its-relation-with-mass-volume-and-number-of-particles",
+  "topicTitle": "Mole and its relation with mass, volume and number of particles",
+  "relevance": 100,
   "notes": [
-    "Detailed notes on 04 mole concept within the stoichiometry unit."
+    "### 1. Meaning of the mole",
+    "A mole is the SI unit of amount of substance. It is the amount of substance that contains exactly the same number of elementary entities (atoms, molecules, ions, electrons, formula units) as there are atoms in 12 g of carbon-12, that is **6.022 × 10²³** entities — the Avogadro number N_A. The mole is simply a counting unit, like 'dozen' or 'score', but on a scale suited to atoms and molecules: it links the invisible particle world with weighable masses.",
+    "### 2. Relation with mass",
+    "$n=\\frac{m}{M}$, where m is the mass in grams and M the molar mass (g mol⁻¹). Molar mass = relative atomic/molecular mass expressed in g mol⁻¹: 1 atom of carbon has a mass of 12 u (1 u = 1.66 × 10⁻²⁷ kg = 1/12 the mass of one ¹²C atom), while 1 mole of carbon atoms has a mass of 12 g. Gram-atomic mass and gram-molecular mass are the mass of one mole of atoms and of molecules respectively. Example: 44 g of CO₂ = 1 mol = 6.022 × 10²³ molecules.",
+    "### 3. Relation with number of particles",
+    "$n=\\frac{N}{N_{A}}$; N = n × N_A. The number of *atoms* must be counted with care: 1 mol of H₂SO₄ contains 2 mol H atoms, 1 mol S, 4 mol O (7 mol of atoms in total, 6.022 × 10²³ H₂SO₄ molecules), while 1 mol of H₂ contains 2 × 6.022 × 10²³ atoms. Ions, electrons and formula units can also be counted in moles (1 mol of NaCl gives 1 mol Na⁺ + 1 mol Cl⁻).",
+    "### 4. Relation with volume (gases)",
+    "For gases the mole relates to volume through Avogadro's law: 1 mol of any gas at STP (273.15 K, 1 atm) occupies 22.4 L, so $n=\\frac{V\\ (\\text{at STP})}{22.4}$; at RTP (25 °C, 1 bar) the molar volume is ≈24.0 L. For any other conditions the ideal gas equation is used: $n=\\frac{PV}{RT}$. Concentration extends the idea to solutions: $n=M_{\\text{conc}}\\times V_{\\text{L}}$ (molarity × volume in litres).",
+    "### 5. Applications",
+    "• Core of every stoichiometric calculation: converting masses, gas volumes and numbers of particles into moles and back, so that the mole ratio of a balanced equation can be applied.",
+    "• Determination of relative atomic and molecular masses, molar volumes, vapour densities and Avogadro's constant; standardisation of solutions and titrations.",
+    "• Industry and pharmacy: calculating exact reactant quantities and costs for ammonia, sulphuric acid, cement or drug manufacture; agriculture: fertiliser dosage; environment: calculating CO₂ (44 g mol⁻¹) and pollutant emissions per tonne of fuel; medicine: expressing doses and concentrations in moles.",
+    "### 6. Limitations",
+    "• The mole counts *specified entities*: '1 mol of oxygen' is ambiguous (O atoms or O₂ molecules?), so the entity must always be named; the mole is meaningless without it.",
+    "• Since the 2019 SI revision N_A is a defined number (6.02214076 × 10²³) rather than being tied to 12 g of ¹²C, so the earlier 'gram-atom' style definitions are outdated.",
+    "• Molar masses are based on **standard atomic weights**, which are average values for the natural isotopic composition and therefore carry an uncertainty (and vary slightly for elements such as boron, lithium and lead whose isotopic abundances differ with source). Exact work needs isotope-specific molar masses.",
+    "• The relation n = V/22.4 L holds only for gases at STP that behave ideally; for real gases and for other conditions PV = nRT must be used, and for associating gases the particle count differs from the formula count.",
+    "• The mole expresses *amount*, not concentration — molarity, molality and mole fraction are different measures; molarity in particular is temperature-dependent because volume changes with temperature.",
+    "• Mole-based stoichiometry cannot predict how fast a reaction goes, in which direction it proceeds, or what yield it gives; those come from kinetics, thermodynamics and equilibrium."
   ],
   "confusion": [
-    "❌ Misconception about 04 mole concept. ✅ Scientific explanation."
-  ],
-  "examples": [
-    "Real-world example of 04 mole concept."
-  ],
-  "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 04 mole concept)"
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 04 mole concept."
-  ],
-  "importantNotes": [
-    "Important note regarding 04 mole concept."
-  ],
-  "importantStatements": [
-    "Key statement for 04 mole concept."
-  ],
-  "importantTasks": [
-    "Task for studying 04 mole concept."
-  ],
-  "keyPoints": [
-    "Core point for 04 mole concept."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 04 mole concept?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
+    "❌ One mole of oxygen means 6.022 × 10²³ oxygen atoms always. ✅ It depends on the entity: 1 mol O atoms = 16 g, but 1 mol O₂ molecules = 32 g and contains 2 × 6.022 × 10²³ atoms.",
+    "❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is a relative number in u; molar mass is the mass of one mole in g mol⁻¹ (numerically equal for most purposes).",
+    "❌ One mole of a gas always occupies 22.4 L. ✅ Only at STP and only for an ideal gas.",
+    "❌ The mole is a mass unit. ✅ It is the SI unit of *amount of substance*; it is converted to mass through the molar mass.",
+    "❌ Avogadro's number can be measured to any precision. ✅ It is now a defined constant exactly equal to 6.02214076 × 10²³ mol⁻¹."
   ],
   "practice": [
-    "Practice exercise for 04 mole concept."
+    "Define the mole and explain why it is called a counting unit.",
+    "Derive the relations n = m/M, n = N/N_A and n = V/22.4.",
+    "Calculate the mass of 3.011 × 10²³ molecules of CO₂ and the number of oxygen atoms in it.",
+    "How many moles and molecules are present in 4.9 g of H₂SO₄?",
+    "What volume at STP is occupied by 8 g of oxygen? How many molecules does it contain?",
+    "State the limitations of the mole concept."
   ],
-  "practiceQuestions": [
-    "Practice question for 04 mole concept."
+  "formulas": [
+    "$$n=\\frac{m}{M}=\\frac{N}{N_{A}}=\\frac{V\\ (\\text{STP})}{22.4\\ \\text{L}}=\\frac{PV}{RT}=M_{\\text{conc}}\\times V_{\\text{L}}$$",
+    "$$N_{A}=6.022\\times10^{23}\\ \\text{mol}^{-1};\\qquad 1\\ \\text{u}=1.66\\times10^{-27}\\ \\text{kg}$$",
+    "$$\\text{mass of one molecule}=\\frac{M}{N_{A}}$$"
   ],
-  "specialNotes": [
-    "Specialized insight for 04 mole concept."
-  ],
-  "summary": "Summary of 04 mole concept.",
   "universalFacts": [
-    "Universal scientific fact for 04 mole concept."
+    "1 mole of water = 18 g = 18 mL of liquid, yet contains 6.022 × 10²³ molecules.",
+    "1 mole of any gas at STP = 22.4 L; at RTP ≈ 24 L.",
+    "Gram-atomic mass of any element contains 6.022 × 10²³ atoms; gram-molecular mass contains the same number of molecules."
   ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "duplicateType": 2,
-  "tabGroup": "04-mole-concept",
-  "examShortTricks": [
-    "Trick 1"
+  "examples": [
+    "**Problem:** Number of moles and molecules in 4.9 g of H₂SO₄ (M = 98 g mol⁻¹). **Solution:** n = 4.9/98 = 0.05 mol; molecules = 0.05 × 6.022 × 10²³ = 3.011 × 10²²; total atoms = 7 × 3.011 × 10²² ≈ 2.1 × 10²³.",
+    "**Problem:** Volume at STP and number of molecules in 8 g of oxygen. **Solution:** n = 8/32 = 0.25 mol; V = 0.25 × 22.4 = 5.6 L; molecules = 0.25 × 6.022 × 10²³ = 1.506 × 10²³."
   ],
-  "examNotes": [
-    "Exam note 1."
+  "importantNotes": [
+    "Always name the entity ('atoms', 'molecules', 'ions') when using the mole — a standard precision point.",
+    "Use the four-way conversion web m ↔ n ↔ N ↔ V (STP) as the working framework of every numerical.",
+    "For gases away from STP switch to PV = nRT rather than misusing 22.4 L."
   ],
-  "mcqs": [
-    {
-      "question": "Question about 04 mole concept?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ]
+  "visualType": "mole-concept",
+  "tabGroup": "Stoichiometry-Learner-Notes"
 }

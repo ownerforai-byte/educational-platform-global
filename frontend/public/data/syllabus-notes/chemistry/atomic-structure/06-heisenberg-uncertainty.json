@@ -1,81 +1,57 @@
 {
-  "title": "Heisenberg Uncertainty Principle",
+  "title": "Heisenberg's Uncertainty Principle and the Concept of Probability",
   "unitSlug": "atomic-structure",
-  "topicSlug": "heisenberg-uncertainty",
-  "topicTitle": "Heisenberg Uncertainty Principle",
-  "relevance": 85,
+  "topicSlug": "heisenberg-s-uncertainty-principle-and-concept-of-probability",
+  "topicTitle": "Heisenberg's Uncertainty Principle and concept of probability",
+  "relevance": 100,
   "notes": [
-    "Detailed notes on 06 heisenberg uncertainty within the atomic structure unit."
+    "### 1. Meaning and statement",
+    "Werner Heisenberg (1927) showed that for a microscopic particle it is impossible to determine simultaneously and exactly both its position and its momentum: $\\Delta x\\cdot\\Delta p\\ge\\frac{h}{4\\pi}$, or $\\Delta x\\cdot\\Delta v\\ge\\frac{h}{4\\pi m}$. Other conjugate pairs obey the same pattern: $\\Delta E\\cdot\\Delta t\\ge\\frac{h}{4\\pi}$ and $\\Delta L\\cdot\\Delta\\theta\\ge\\frac{h}{4\\pi}$.",
+    "### 2. Why it happens",
+    "To locate an electron we must 'illuminate' it with radiation of wavelength comparable to its size; such a photon collides with the electron and changes its momentum by an unknown amount, while using longer-wavelength radiation blurs the position. The disturbance is a property of matter, not an experimental defect — the γ-ray microscope is the standard illustration.",
+    "### 3. Consequence: the concept of probability",
+    "A definite orbit needs exact r and p simultaneously, which the principle forbids. The electron's location can only be described by a wave function ψ, where |ψ|² dV is the **probability** of finding the electron in volume dV — the electron-cloud or **orbital** picture. The radial probability peak for the 1s orbital lies at 0.529 Å: the same number Bohr obtained, now interpreted as a most-probable distance instead of a fixed radius.",
+    "### 4. Applications",
+    "• **Atomic stability and size:** an electron confined to a nucleus (Δx ≈ 10⁻¹⁵ m) would need Δp ≈ 10⁻¹⁹ kg m s⁻¹, i.e. KE of the order 10¹⁰ eV — impossible; hence electrons cannot sit inside nuclei and atoms are ≈10⁻¹⁰ m across, which also explains why the electron does not fall into the nucleus.",
+    "• **Natural line width:** an excited state living Δt ≈ 10⁻⁸ s has ΔE ≥ h/4πΔt, so spectral lines are broadened; the same relation explains tunnelling and virtual-particle processes.",
+    "• **Zero-point energy** of confined particles, resolution limits of electron microscopes, quantum-dot behaviour and NMR line widths all follow from the principle, and all quantum-mechanical predictions (average radii, orbital shapes) are probabilistic.",
+    "### 5. Limitations and cautions",
+    "The relation matters only for microscopic particles — for a 1 g body the product is utterly negligible, so classical mechanics holds. It forbids *simultaneous* exact knowledge, not knowledge of one quantity: perfect momentum knowledge leaves position completely undefined. Interpretations differ (Copenhagen versus measurement-disturbance readings), so it is safest to state it as a property of quantum ensembles; it is not a statement about instrument precision and does not mean measurement is impossible."
   ],
   "confusion": [
-    "❌ Misconception about 06 heisenberg uncertainty. ✅ Scientific explanation."
+    "❌ The principle is due to clumsy instruments. ✅ It is fundamental; better instruments cannot beat h/4π.",
+    "❌ It says nothing about the electron can be known. ✅ Either quantity may be exact; only the *product* of uncertainties is bounded below.",
+    "❌ It applies equally to a moving cricket ball. ✅ For macroscopic bodies the uncertainty product is negligible, so classical physics applies.",
+    "❌ The principle proves electrons do not exist in atoms. ✅ It replaces fixed orbits by probability distributions (orbitals) described by |ψ|².",
+    "❌ ΔE·Δt ≥ h/4π is a different law. ✅ It is the energy–time form of the same principle, explaining natural line broadening."
   ],
   "practice": [
-    "Practice exercise for 06 heisenberg uncertainty."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 06 heisenberg uncertainty."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 06 heisenberg uncertainty."
-  ],
-  "practiceQuestions": [
-    "Practice question for 06 heisenberg uncertainty."
+    "State and explain Heisenberg's uncertainty principle; why is it not a limit of instruments?",
+    "Show that a definite Bohr orbit is inconsistent with the uncertainty principle.",
+    "Explain the concept of probability and the meaning of |ψ|² in the quantum-mechanical atom.",
+    "An electron is confined to 10⁻¹⁰ m; estimate the minimum uncertainty in its velocity.",
+    "Use ΔE·Δt ≥ h/4π to explain line broadening for an excited-state lifetime of 10⁻⁸ s.",
+    "Show numerically why an electron cannot exist inside a nucleus of radius 10⁻¹⁵ m."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 06 heisenberg uncertainty)"
+    "$$\\Delta x\\cdot\\Delta p\\ge\\frac{h}{4\\pi},\\qquad \\Delta x\\cdot\\Delta v\\ge\\frac{h}{4\\pi m}$$",
+    "$$\\Delta E\\cdot\\Delta t\\ge\\frac{h}{4\\pi},\\qquad \\Delta L\\cdot\\Delta\\theta\\ge\\frac{h}{4\\pi}$$",
+    "$$\\Delta p=m\\Delta v,\\qquad KE=\\frac{(\\Delta p)^{2}}{2m}$$"
   ],
-  "keyPoints": [
-    "Core point for 06 heisenberg uncertainty."
+  "universalFacts": [
+    "Heisenberg published the principle in 1927 and received the 1932 Nobel Prize in Physics.",
+    "ħ = h/2π = 1.054 × 10⁻³⁴ J s; the bound is often written Δx·Δp ≥ ħ/2.",
+    "The most probable distance of the 1s electron is 0.529 Å — the value Bohr called the first-orbit radius."
   ],
-  "summary": "Summary of 06 heisenberg uncertainty.",
-  "specialNotes": [
-    "Specialized insight for 06 heisenberg uncertainty."
-  ],
-  "importantStatements": [
-    "Key statement for 06 heisenberg uncertainty."
+  "examples": [
+    "**Problem:** Minimum velocity uncertainty for an electron localised within 10⁻¹⁰ m. **Solution:** Δv ≥ h/(4πmΔx) = 6.626×10⁻³⁴/(4π × 9.11×10⁻³¹ × 10⁻¹⁰) ≈ 5.8 × 10⁵ m s⁻¹ — comparable to the electron's own speed, so the orbit picture collapses.",
+    "**Problem:** Can an electron be confined in a nucleus of radius 10⁻¹⁵ m? **Solution:** Δp ≈ h/(4πΔx) ≈ 5.3 × 10⁻²⁰ kg m s⁻¹ → KE ≈ (Δp)²/2m ≈ 10¹⁰ eV, far beyond nuclear binding energies; β-particles are therefore created during decay, not stored in the nucleus."
   ],
   "importantNotes": [
-    "Important note regarding 06 heisenberg uncertainty."
+    "Write both forms: Δx·Δp ≥ h/4π and Δx·Δv ≥ h/4πm — questions often ask about velocity.",
+    "Use the principle to justify atomic size (~10⁻¹⁰ m) and stability; these are standard 3-mark applications.",
+    "State clearly that the limit is fundamental, not instrumental."
   ],
-  "examShortTricks": [
-    "Recall the formula for Heisenberg Uncertainty Principle."
-  ],
-  "examNotes": [
-    "Focus on Heisenberg Uncertainty Principle problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 06 heisenberg uncertainty?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 06 heisenberg uncertainty."
-  ],
-  "importantTasks": [
-    "Task for studying 06 heisenberg uncertainty."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "06-heisenberg-uncertainty",
-  "mcqs": [
-    {
-      "question": "Question about 06 heisenberg uncertainty?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ]
+  "visualType": "heisenberg-uncertainty",
+  "tabGroup": "Atomic-Structure-Learner-Notes"
 }

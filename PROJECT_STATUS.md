@@ -272,3 +272,51 @@ Full details: `MIGRATION_COMPLETE.md`. Summary:
   deploy target + stale CI, root `app/` kept until cutover.
 - Old root `app/` implementation retained intentionally until cutover; duplication mapped
   in `frontend/MIGRATION_FILE_MAP.md`.
+
+## CONTENT ADDITION (2026-09-21) — Class 11 Chemistry: complete syllabus notes for 4 units
+
+Owner: Cline (coding agent). Scope: `content/ravikishan/class-11-notes/chemistry/**` +
+rebuilt `frontend/public/data/syllabus-notes/chemistry/**`.
+
+- 29 syllabus-mapped concept notes authored (web-researched; each note = meaning → concepts
+  → equations → applications → **limitations** → exam pointers, in conceptual order, plus
+  `confusion` misconceptions, `practice`, `formulas`, `universalFacts`, worked `examples`,
+  `importantNotes`):
+  - **Atomic Structure** (9/9 syllabus topics): Rutherford model + limitations, Bohr
+    postulates + applications, hydrogen spectrum, defects of Bohr's theory, de Broglie /
+    quantum-mechanical model, Heisenberg uncertainty + probability, quantum numbers,
+    s/p orbital shapes, Aufbau/Pauli/Hund + configurations to Z = 30. Overwrote the
+    canonical `01-…09-…` files and set their `topicSlug` to the official syllabus slugs
+    (previous files were boilerplate placeholders).
+  - **Classification of Elements and Periodic Table**: rewrote `03` as
+    `iupac-classification-of-elements`; added `04-nuclear-charge-and-effective-nuclear-charge`
+    (Slater's rules) and `05-periodic-trend-and-periodicity` (radii, IE, EA, EN, metallic
+    character + trend limitations). Files 01–02 were already high quality and left intact.
+  - **States of Matter** (9/9): kinetic theory + postulates/limitations, gas laws
+    (Boyle/Charles/Avogadro/combined/Dalton/Graham), ideal gas + universal gas constant,
+    real-gas deviation (Z, van der Waals, critical constants), liquid state, liquid
+    crystals + applications, solid state types, efflorescent/deliquescent/hygroscopic +
+    crystallisation, unit lattice/unit cell. Five canonical files rewritten, four added.
+  - **Stoichiometry** (8/8): Dalton's theory + postulates/limitations, laws of
+    stoichiometry (+ limitations incl. non-stoichiometric compounds), Avogadro's law +
+    deductions, mole concept, calculations based on the mole concept (new),
+    limiting/excess reactant, theoretical/experimental/% yield (+ atom economy),
+    empirical & molecular formula.
+- Every `topicSlug` matches `slugifySyllabusTopic(<official syllabus topic title>)`, so
+  each note renders directly in the Class 11 Chemistry topic workspace
+  (`TopicVerticalNotes`).
+- Rebuilt runtime data with `node content-tools/build-syllabus-notes.js chemistry`
+  (run as `.cjs` copy because the root `package.json` declares `"type": "module"`; the
+  original CommonJS `.js` script fails under ESM — pre-existing issue, unchanged):
+  `chemistry: 174 manifest entries, 174 files copied, 0 skipped`.
+- Verification: all 29 JSON files parse with required fields; `topicSlug` validated
+  against `frontend/lib/syllabus.ts`; `node scripts/validate-frontend-data.mjs` →
+  chemistry 174 manifest entries / 0 broken; `npx vitest run
+  tests/lib/high-yield-topic-facts.test.ts` in `frontend/` → 14/14 passed.
+- Known pre-existing issues (not introduced here, not fixed): `frontend/public/data/exams/`
+  contains invalid JSON per the validator; stale duplicate `-2.json` files remain in
+  `public/data/syllabus-notes/chemistry/**` because the build script does not clean
+  orphaned outputs; older low-quality concept files in atomic-structure /
+  states-of-matter / stoichiometry remain in place and may appear as extra tabs next to
+  the new canonical notes.
+

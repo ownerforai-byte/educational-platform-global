@@ -1,81 +1,66 @@
 {
   "title": "Laws of Stoichiometry",
   "unitSlug": "stoichiometry",
-  "topicSlug": "laws-stoichiometry",
-  "topicTitle": "Laws of Stoichiometry",
-  "relevance": 80,
+  "topicSlug": "laws-of-stoichiometry",
+  "topicTitle": "Laws of stoichiometry",
+  "relevance": 100,
   "notes": [
-    "Detailed notes on 02 laws stoichiometry within the stoichiometry unit."
+    "### 1. Meaning",
+    "Stoichiometry is the study of the quantitative relations between the amounts of reactants and products in a chemical reaction, derived from the balance of atoms. The **laws of chemical combination** (laws of stoichiometry) are the experimental generalisations on which those calculations rest: conservation of mass, definite proportions, multiple proportions, reciprocal proportions and gaseous volumes (with Avogadro's law completing the set).",
+    "### 2. Law of conservation of mass (Lavoisier, 1774)",
+    "In a chemical reaction matter is neither created nor destroyed: the total mass of the reactants equals the total mass of the products. Verified by Landolt in sealed tubes (and by many reactions, e.g. AgNO₃ + NaCl → AgCl + NaNO₃). It follows from atoms being merely rearranged; gases, precipitates and the mass of the container must all be accounted for. This law is the reason every chemical equation must be balanced.",
+    "### 3. Law of definite (constant) proportions (Proust, 1799)",
+    "A given chemical compound always contains the same elements combined in the same fixed ratio by mass, no matter how it was prepared, its source or its purity. Water obtained from any source has H : O = 1 : 8 by mass; CO₂ always has C : O = 3 : 8. It is a consequence of a fixed number of atoms in the formula unit.",
+    "### 4. Law of multiple proportions (Dalton, 1803)",
+    "If two elements combine to form more than one compound, the masses of one element that combine with a fixed mass of the other are in the ratio of small whole numbers. Examples: CO and CO₂ (fixed 12 g C combines with 16 g and 32 g O → 1 : 2); H₂O and H₂O₂ (fixed 2 g H with 16 g and 32 g O → 1 : 2); NO, N₂O, NO₂, N₂O₅ with a fixed mass of N give oxygen masses in 1 : 2 : 4 : 5. This law gave the strongest support for the atomic theory.",
+    "### 5. Law of reciprocal (equivalent) proportions (Richter, 1792)",
+    "The masses of two elements that combine separately with a fixed mass of a third element are in a simple ratio to the masses in which they combine with each other. Example with hydrogen as the reference: H : O = 1 : 8 in water and H : C = 1 : 3 in methane; therefore in carbon dioxide C : O = 3 : 8, exactly the simple ratio predicted — the law that led to the concept of equivalent mass.",
+    "### 6. Law of gaseous volumes (Gay-Lussac, 1809)",
+    "When gases react, they do so in volumes that bear a simple whole-number ratio to one another and to the volumes of gaseous products, at the same temperature and pressure: H₂ + Cl₂ → 2HCl (1 : 1 : 2); N₂ + 3H₂ → 2NH₃ (1 : 3 : 2). This law inspired Avogadro's hypothesis — equal volumes of gases contain equal numbers of molecules — and is used for all volume–volume stoichiometry.",
+    "### 7. Meaning and applications",
+    "The laws convert qualitative chemistry into arithmetic: balancing equations (conservation of mass and atoms), finding percentage composition (definite proportions), deciding formulas of oxides and hydrides (multiple and reciprocal proportions), and performing gas-volume calculations in reactions (gaseous volumes with Avogadro's law). Practical uses: industrial material balances for ammonia, sulphuric acid and cement plants, analysis of ores and alloys, calculation of reactant quantities and costs, fuel combustion and pollution control, and every titration or gravimetric analysis performed in a laboratory.",
+    "### 8. Limitations",
+    "• The law of conservation of mass fails in nuclear reactions, where a small mass defect appears as energy (E = mc²); even chemically it needs all gaseous products to be captured.",
+    "• The law of definite proportions does not hold for non-stoichiometric (berthollide) compounds such as Fe₀.₉₃O or the iron sulphides, where composition varies within a range; isotopic substitution (D₂O vs H₂O) also changes the mass ratio.",
+    "• These laws apply to pure compounds and chemical reactions, never to mixtures, solutions or alloys, whose composition can be varied continuously.",
+    "• The law of multiple proportions requires very accurate analysis — small errors in percentage composition hide or create apparent ratios; it is a description, not an explanation of atomic structure.",
+    "• Reciprocal proportions and gaseous-volume laws demand accurate measurement; the volume law is strictly valid only for gases behaving ideally at the same T and P, and it fails for dissociating or associating vapours (PCl₅, NH₄Cl).",
+    "• None of the laws says anything about reaction rate, mechanism, equilibrium or side reactions — they give only the mass/volume bookkeeping of a completed reaction."
   ],
   "confusion": [
-    "❌ Misconception about 02 laws stoichiometry. ✅ Scientific explanation."
+    "❌ The laws of stoichiometry explain why reactions occur. ✅ They describe the quantitative relationships; the reason lies in atomic structure and bonding.",
+    "❌ Definite proportions holds for every compound. ✅ Non-stoichiometric compounds (Fe₀.₉₃O, FeS₁₊ₓ) violate it, and isotopic variants change the mass ratio.",
+    "❌ Multiple proportions and reciprocal proportions are the same law. ✅ Multiple proportions compares two compounds of the same two elements; reciprocal proportions compares two compounds sharing a third element.",
+    "❌ Gay-Lussac's volume law needs no conditions. ✅ Volumes must be measured at the same temperature and pressure, and the gases must behave ideally.",
+    "❌ Conservation of mass means mass is always conserved everywhere. ✅ It holds for chemical reactions but not for nuclear reactions (mass–energy equivalence)."
   ],
   "practice": [
-    "Practice exercise for 02 laws stoichiometry."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 02 laws stoichiometry."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 02 laws stoichiometry."
-  ],
-  "practiceQuestions": [
-    "Practice question for 02 laws stoichiometry."
+    "State the five laws of chemical combination and illustrate each with one example.",
+    "Explain how the law of multiple proportions supported Dalton's atomic theory.",
+    "Carbon and oxygen form CO and CO₂. Show that the data obey the law of multiple proportions.",
+    "State the law of reciprocal proportions and verify it using H₂O, CH₄ and CO₂.",
+    "20 mL of hydrogen reacts with 10 mL of oxygen to give 20 mL of water vapour. Which law does this illustrate? Justify.",
+    "State the limitations of the laws of stoichiometry."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 02 laws stoichiometry)"
+    "$$\\text{Conservation of mass: }\\sum m_{\\text{reactants}}=\\sum m_{\\text{products}}$$",
+    "$$\\text{Gaseous volumes: }\\frac{V_{1}}{n_{1}}=\\frac{V_{2}}{n_{2}}\\ \\text{(same }T,P\\text{)},\\quad 2H_{2}+O_{2}\\rightarrow2H_{2}O\\ (2:1:2)$$",
+    "$$\\%\\text{element}=\\frac{n\\times A_{\\text{element}}}{M_{\\text{compound}}}\\times100$$"
   ],
-  "keyPoints": [
-    "Core point for 02 laws stoichiometry."
+  "universalFacts": [
+    "Lavoisier (1774) established conservation of mass; Proust (1799) definite proportions; Dalton (1803) multiple proportions; Richter (1792) reciprocal proportions; Gay-Lussac (1809) gaseous volumes.",
+    "CO₂ always contains 27.3% carbon and 72.7% oxygen by mass, whatever its source.",
+    "Beryllium oxide, BeO, obeys the law of definite proportions, while iron(II) oxide Fe₁₋ₓO does not."
   ],
-  "summary": "Summary of 02 laws stoichiometry.",
-  "specialNotes": [
-    "Specialized insight for 02 laws stoichiometry."
-  ],
-  "importantStatements": [
-    "Key statement for 02 laws stoichiometry."
+  "examples": [
+    "**Problem:** Two oxides of nitrogen contain 46.7% and 30.4% oxygen. Show that the data obey the law of multiple proportions. **Solution:** with a fixed mass of nitrogen (53.3 g and 69.6 g nitrogen per unit), the oxygen masses are 46.7 and 30.4 → ratio 46.7/30.4 ≈ 1.54 ≈ 3 : 2, a simple whole-number ratio (these correspond to NO₂ and NO type oxides).",
+    "**Problem:** 10 mL of a hydrocarbon burns in 50 mL of oxygen to give 30 mL CO₂ and 40 mL H₂O vapour (same conditions). Find its formula. **Solution:** volume ratio = mole ratio → C : H = 30 : 80 → 3 : 8, hence C₃H₈; the result is obtained purely from the law of gaseous volumes."
   ],
   "importantNotes": [
-    "Important note regarding 02 laws stoichiometry."
+    "In long answers, pair each law with the name and year: Lavoisier 1774, Proust 1799, Dalton 1803, Richter 1792, Gay-Lussac 1809.",
+    "Always mention that the volume law requires the same T and P and that the laws are idealisations with the stated exceptions.",
+    "For 'limitations' questions, quote at least one counter-example: non-stoichiometric Fe₀.₉₃O and nuclear mass defect."
   ],
-  "examShortTricks": [
-    "Recall the formula for Laws of Stoichiometry."
-  ],
-  "examNotes": [
-    "Focus on Laws of Stoichiometry problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 02 laws stoichiometry?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 02 laws stoichiometry."
-  ],
-  "importantTasks": [
-    "Task for studying 02 laws stoichiometry."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "02-laws-stoichiometry",
-  "mcqs": [
-    {
-      "question": "Question about 02 laws stoichiometry?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ]
+  "visualType": "laws-stoichiometry",
+  "tabGroup": "Stoichiometry-Learner-Notes"
 }

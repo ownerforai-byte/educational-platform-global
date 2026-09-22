@@ -1,81 +1,80 @@
 {
-  "title": "Isobars, Isotones & Isodiaphers",
+  "title": "Isotopes, Isobars, Isotones and Isodiaphers",
   "unitSlug": "atomic-structure",
   "topicSlug": "rutherford-s-atomic-model-and-its-limitations",
   "topicTitle": "Rutherford's atomic model and its limitations",
-  "relevance": 70,
+  "relevance": 80,
   "notes": [
-    "Detailed notes on 26 isobars isotones isodiaphers within the atomic structure unit."
+    "### Focus of this tab",
+    "The family of 'same/different' atom pairs that the nuclear model makes possible — definitions, examples and exam traps. These follow directly from the concepts of Z and A.",
+    "### Definitions with examples",
+    "• **Isotopes** (same Z, different A): ¹H, ²H, ³H; ³⁵Cl/³⁷Cl; ¹²C/¹³C/¹⁴C; ²³⁵U/²³⁸U. Same chemical properties (same electronic configuration), different physical properties and different mass.",
+    "• **Isobars** (same A, different Z): ⁴⁰Ar (18 p) and ⁴⁰Ca (20 p); ¹⁴C and ¹⁴N. Different elements, same mass number — different chemical properties.",
+    "• **Isotones** (same neutron number N = A − Z): ³⁶S, ³⁷Cl, ³⁸Ar, ³⁹K, ⁴⁰Ca (all N = 20); ³H and ⁴Li (N = 2).",
+    "• **Isodiaphers** (same difference N − Z): ²³⁹U and ²³⁵Th (N − Z = 51); ²³⁵U and ²³¹Th.",
+    "• (Bonus) **Isoelectronic species** (same electron count): N³⁻, O²⁻, F⁻, Ne, Na⁺, Mg²⁺, Al³⁺ — all 10 electrons.",
+    "### Why they exist",
+    "Rutherford's nucleus separates identity (Z) from mass (A = Z + N). Once the neutron was found (1932), atoms of one element could differ in mass (isotopes) and atoms of different elements could share a mass number (isobars) — resolving the contradictions that Dalton's 'identical atoms' postulate created.",
+    "### Chemical versus nuclear behaviour",
+    "Isotopes are chemically almost identical (the electrons decide chemistry) but differ in nuclear stability (¹⁴C decays, ¹²C does not) — the basis of carbon dating, radioisotope tracers (¹³¹I in thyroid studies, ⁶⁰Co in radiotherapy) and isotope separation by mass (gaseous diffusion of UF₆). Isobars, being different elements, are chemically completely different.",
+    "### Average atomic mass (numerical pattern)",
+    "Average mass = Σ(fractional abundance × isotopic mass). Chlorine: 0.75 × 35 + 0.25 × 37 = 35.5 u; neon: 0.905 × 20 + 0.0027 × 21 + 0.0923 × 22 ≈ 20.18 u. The fractional pattern explains why most atomic masses are not whole numbers — Dalton's 'identical atoms in whole-number ratios' fails here."
   ],
   "confusion": [
-    "❌ Misconception about 26 isobars isotones isodiaphers. ✅ Scientific explanation."
+    "❌ Isotopes have different chemical properties. ✅ Nearly identical chemically; they differ in mass and nuclear stability.",
+    "❌ Isobars are atoms of the same element. ✅ Same A but different Z — different elements entirely.",
+    "❌ Isotones are defined by equal protons. ✅ Equal neutron number (N = A − Z).",
+    "❌ ¹²C and ¹⁴C belong to different elements. ✅ Both are carbon (Z = 6); ¹⁴C is simply radioactive."
   ],
   "practice": [
-    "Practice exercise for 26 isobars isotones isodiaphers."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 26 isobars isotones isodiaphers."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 26 isobars isotones isodiaphers."
-  ],
-  "practiceQuestions": [
-    "Practice question for 26 isobars isotones isodiaphers."
+    "Define isotopes, isobars, isotones and isodiaphers with one example each.",
+    "Which postulate of Dalton's atomic theory is contradicted by isotopes?",
+    "Chlorine has 75% ³⁵Cl and 25% ³⁷Cl; calculate its average atomic mass.",
+    "Find the relation between ³⁶S, ³⁷Cl and ³⁸Ar (same N = 20) and name the class.",
+    "Give two practical uses of isotopes in medicine or industry."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 26 isobars isotones isodiaphers)"
+    "$$\\text{average atomic mass}=\\sum(\\text{abundance}\\times\\text{isotopic mass}),\\qquad N=A-Z$$",
+    "$$\\text{isotopes: }Z_{1}=Z_{2};\\quad \\text{isobars: }A_{1}=A_{2};\\quad \\text{isotones: }N_{1}=N_{2};\\quad \\text{isodiaphers: }(N-Z)_{1}=(N-Z)_{2}$$"
   ],
-  "keyPoints": [
-    "Core point for 26 isobars isotones isodiaphers."
+  "universalFacts": [
+    "Carbon dating uses the ¹⁴C/¹²C ratio (half-life 5730 years).",
+    "³⁵Cl/³⁷Cl in a 3 : 1 ratio gives the familiar 35.5 u average mass.",
+    "Radio-iodine ¹³¹I concentrates in the thyroid because it is chemically indistinguishable from ordinary iodine."
   ],
-  "summary": "Summary of 26 isobars isotones isodiaphers.",
-  "specialNotes": [
-    "Specialized insight for 26 isobars isotones isodiaphers."
-  ],
-  "importantStatements": [
-    "Key statement for 26 isobars isotones isodiaphers."
+  "examples": [
+    "**Problem:** Boron is 20% ¹⁰B and 80% ¹¹B. Find its atomic mass. **Solution:** 0.20 × 10 + 0.80 × 11 = 10.8 u — matching the tabulated 10.81 u.",
+    "**Problem:** Show that ¹⁴C and ¹⁴N are isobars. **Solution:** ¹⁴C: Z = 6, N = 8, A = 14; ¹⁴N: Z = 7, N = 7, A = 14 — same A, different Z."
   ],
   "importantNotes": [
-    "Important note regarding 26 isobars isotones isodiaphers."
+    "State the defining quantity first (Z, A, N, N − Z) — the four names are easy to mix up.",
+    "Connect isotopes back to Dalton's limitation: identical atoms of an element is the false postulate."
   ],
-  "examShortTricks": [
-    "Recall the formula for Isobars, Isotones & Isodiaphers."
-  ],
-  "examNotes": [
-    "Focus on Isobars, Isotones & Isodiaphers problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 26 isobars isotones isodiaphers?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 26 isobars isotones isodiaphers."
-  ],
-  "importantTasks": [
-    "Task for studying 26 isobars isotones isodiaphers."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "26-isobars-isotones-isodiaphers",
   "mcqs": [
     {
-      "question": "Question about 26 isobars isotones isodiaphers?",
+      "question": "³⁶S, ³⁷Cl, ³⁸Ar and ³⁹K are examples of:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Isotopes",
+        "Isobars",
+        "Isotones",
+        "Isodiaphers"
       ],
-      "answer": "A"
+      "answer": "C"
+    },
+    {
+      "question": "Isotopes of an element differ in the number of:",
+      "options": [
+        "Protons",
+        "Electrons",
+        "Neutrons",
+        "Valence shells"
+      ],
+      "answer": "C"
     }
-  ]
+  ],
+  "visualType": "isotopes",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "26-isobars-isotones-isodiaphers.json"
 }

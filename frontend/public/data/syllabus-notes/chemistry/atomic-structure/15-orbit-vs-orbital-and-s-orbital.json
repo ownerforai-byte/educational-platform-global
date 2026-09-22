@@ -1,81 +1,68 @@
 {
-  "title": "Orbit vs Orbital — 10-Point Delta Table & the s-Orbital",
+  "title": "Orbit versus Orbital — and the Spherical s Orbital",
   "unitSlug": "atomic-structure",
   "topicSlug": "orbitals-and-shape-of-s-and-p-orbitals-only",
   "topicTitle": "Orbitals and shape of s and p orbitals only",
-  "relevance": 80,
+  "relevance": 85,
   "notes": [
-    "Detailed notes on 15 orbit vs orbital and s orbital within the atomic structure unit."
+    "### Focus of this tab",
+    "The orbit–orbital distinction in tabular form plus the s-orbital details (radial probability distribution) that the main note covers briefly.",
+    "### Orbit versus orbital (six-row table)",
+    "• Origin: Bohr's model / Schrödinger's equation.",
+    "• Nature: fixed 2D circular path / 3D probability region.",
+    "• Definiteness: exact radius and momentum / neither is definite (Δx·Δp ≥ h/4π).",
+    "• Number: one orbit per n / n² orbitals per shell.",
+    "• Direction: non-directional concept / s spherical, p directional.",
+    "• Status: contradicted by experiment / the accepted modern picture.",
+    "### The s orbital in detail",
+    "• Shape: sphere — electron density depends only on distance r, not direction (non-directional, hence s orbitals give no directionality in bonding).",
+    "• Radial probability distribution: the chance of finding the electron between r and r + dr peaks at the most probable distance — 0.529 Å for 1s. For 2s the curve has two maxima separated by a radial node where probability is exactly zero.",
+    "• Nodes: 1s none; 2s one spherical node at r = 2a₀ ≈ 1.06 Å; 3s two; in general (n − 1) spherical nodes. There are no nodal planes for s.",
+    "• Size and energy: both increase with n (1s < 2s < 3s), and higher s orbitals penetrate closer to the nucleus than p of the same shell — the origin of the ns < np energy order.",
+    "### Why s orbitals matter chemically",
+    "Spherical symmetry makes s orbitals the 'all-direction' bond formers (H uses 1s in every bond), the mixing component of every hybrid (sp, sp², sp³), and the reason the noble-gas electron clouds (filled s and p) are spherically symmetric — the chemical basis of their inertness."
   ],
   "confusion": [
-    "❌ Misconception about 15 orbit vs orbital and s orbital. ✅ Scientific explanation."
+    "❌ 2s is just a bigger 1s. ✅ 2s also has an inner radial node and a second probability maximum — qualitatively different.",
+    "❌ The electron sits on the surface of the drawn sphere. ✅ The sphere is a probability boundary; the density decays continuously outward.",
+    "❌ s orbitals can be directional after hybridisation. ✅ Pure s is spherical; directionality appears only in hybrid orbitals (sp, sp², sp³)."
   ],
   "practice": [
-    "Practice exercise for 15 orbit vs orbital and s orbital."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 15 orbit vs orbital and s orbital."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 15 orbit vs orbital and s orbital."
-  ],
-  "practiceQuestions": [
-    "Practice question for 15 orbit vs orbital and s orbital."
+    "Distinguish orbit from orbital in a six-point table.",
+    "Draw the radial probability curve of the 1s and 2s orbitals and mark the nodes.",
+    "How many radial nodes does a 3s orbital have? Where is the first?",
+    "Why do s orbitals give non-directional bonds?"
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 15 orbit vs orbital and s orbital)"
+    "$$\\text{radial nodes}=n-1\\ (s);\\qquad P(r)=4\\pi r^{2}|\\psi|^{2}\\ (\\text{radial probability})$$"
   ],
-  "keyPoints": [
-    "Core point for 15 orbit vs orbital and s orbital."
+  "universalFacts": [
+    "The 1s radial probability maximum lies at exactly a₀ = 0.529 Å.",
+    "The 2s radial node lies at r = 2a₀ ≈ 1.06 Å — probability is zero there.",
+    "s orbitals are the only subshells present in every shell (n = 1 to ∞)."
   ],
-  "summary": "Summary of 15 orbit vs orbital and s orbital.",
-  "specialNotes": [
-    "Specialized insight for 15 orbit vs orbital and s orbital."
-  ],
-  "importantStatements": [
-    "Key statement for 15 orbit vs orbital and s orbital."
+  "examples": [
+    "**Problem:** Compare the probability of finding the 1s electron at r = a₀ and r = 0. **Solution:** the *radial probability* 4πr²|ψ|² vanishes at r = 0 (the r² factor) and peaks at a₀ — even though |ψ|² itself is largest at the nucleus; the two curves answer different questions."
   ],
   "importantNotes": [
-    "Important note regarding 15 orbit vs orbital and s orbital."
+    "Distinguish |ψ|² (probability density, maximal at the nucleus for 1s) from radial probability (maximal at a₀) — a classic subtlety.",
+    "Use the six-row table form for the orbit-vs-orbital question."
   ],
-  "examShortTricks": [
-    "Recall the formula for Orbit vs Orbital — 10-Point Delta Table & the s-Orbital."
-  ],
-  "examNotes": [
-    "Focus on Orbit vs Orbital — 10-Point Delta Table & the s-Orbital problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 15 orbit vs orbital and s orbital?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 15 orbit vs orbital and s orbital."
-  ],
-  "importantTasks": [
-    "Task for studying 15 orbit vs orbital and s orbital."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "15-orbit-vs-orbital-and-s-orbital",
   "mcqs": [
     {
-      "question": "Question about 15 orbit vs orbital and s orbital?",
+      "question": "The number of radial nodes in a 2s orbital is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "0",
+        "1",
+        "2",
+        "3"
       ],
-      "answer": "A"
+      "answer": "B"
     }
-  ]
+  ],
+  "visualType": "orbitals",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "15-orbit-vs-orbital-and-s-orbital.json"
 }

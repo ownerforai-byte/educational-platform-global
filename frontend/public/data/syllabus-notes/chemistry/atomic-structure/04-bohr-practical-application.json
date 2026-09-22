@@ -1,81 +1,72 @@
 {
-  "title": "Bohr's Atomic Model — Practical Application to Hydrogen-Like Species",
+  "title": "Applying Bohr's Model — Radii, Speeds and Energies (Worked Pattern)",
   "unitSlug": "atomic-structure",
   "topicSlug": "postulates-of-bohr-s-atomic-model-and-its-application",
   "topicTitle": "Postulates of Bohr's atomic model and its application",
-  "relevance": 87,
+  "relevance": 90,
   "notes": [
-    "Detailed notes on 04 bohr practical application within the atomic structure unit."
+    "### Focus of this tab",
+    "The application machinery of Bohr's postulates: how each standard numerical is produced from the formulas, with the n-, Z- and mass-dependences made explicit. Use this tab to drill the calculation patterns.",
+    "### The four workhorse formulas",
+    "Radius: $r_{n}=0.529\\frac{n^{2}}{Z}$ Å. Speed: $v_{n}=2.18\\times10^{6}\\frac{Z}{n}$ m s⁻¹. Energy: $E_{n}=-13.6\\frac{Z^{2}}{n^{2}}$ eV $=-1312\\frac{Z^{2}}{n^{2}}$ kJ mol⁻¹. Wave number: $\\bar{\\nu}=RZ^{2}(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}})$, R = 1.097 × 10⁷ m⁻¹.",
+    "### Dependences to memorise",
+    "• r ∝ n²/Z (larger orbit for larger n, smaller for larger Z).",
+    "• v ∝ Z/n (fastest in the innermost orbit of the heaviest one-electron ion).",
+    "• E ∝ −Z²/n² (energy spacing shrinks as 1/n³ in difference form: ΔE ≈ 2 × 13.6 Z²/n³ for adjacent high levels).",
+    "• λ of a line ∝ n³/(Z²) roughly for adjacent-level transitions.",
+    "### Standard numerical patterns",
+    "• Radius of the nth orbit of a one-electron ion: substitute n and Z (He⁺ Z = 2, Li²⁺ Z = 3).",
+    "• Ionisation energy: IE = 13.6 Z²/n² eV (from the level n to ∞). For H ground state 13.6 eV = 1312 kJ mol⁻¹; for He⁺ (n = 1, Z = 2) 54.4 eV.",
+    "• Excitation energy: ΔE = 13.6 Z²(1/n₁² − 1/n₂²) eV; convert with λ(nm) = 1240/ΔE(eV).",
+    "• Velocity ratio: v(n₁, Z₁)/v(n₂, Z₂) = (Z₁/n₁)/(Z₂/n₂).",
+    "### Two results worth memorising",
+    "• The ground-state speed of the H electron is c/137 ≈ 2.19 × 10⁶ m s⁻¹ — non-relativistic, validating the model.",
+    "• The energy of the nth level approaches 0 as n → ∞, and the level spacing → 0: that is why spectral lines crowd toward the series limit."
   ],
   "confusion": [
-    "❌ Misconception about 04 bohr practical application. ✅ Scientific explanation."
+    "❌ rₙ ∝ n/Z. ✅ rₙ = 0.529 n²/Z Å — the n-dependence is squared.",
+    "❌ Ionisation energy from level n is 13.6 Z²/n² eV multiplied by n. ✅ It is exactly 13.6 Z²/n² eV (removal from that level to ∞).",
+    "❌ Speed increases with n. ✅ v decreases as 1/n; outer electrons move slower."
   ],
   "practice": [
-    "Practice exercise for 04 bohr practical application."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 04 bohr practical application."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 04 bohr practical application."
-  ],
-  "practiceQuestions": [
-    "Practice question for 04 bohr practical application."
+    "Calculate the radius of the 2nd Bohr orbit of He⁺ and compare it with the 1st orbit of H.",
+    "Find the energy needed to ionise Li²⁺ from its ground state.",
+    "Compute the speed of the electron in the 3rd orbit of Be³⁺ (Z = 4).",
+    "An electron falls from n = 4 to n = 2 in hydrogen; find the wavelength of the emitted photon.",
+    "Show that the ratio of speeds in the 1st orbits of H and He⁺ is 1 : 2."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 04 bohr practical application)"
+    "$$r_{n}=0.529\\frac{n^{2}}{Z}\\ \\text{Å},\\qquad v_{n}=2.18\\times10^{6}\\frac{Z}{n}\\ \\text{m s}^{-1}$$",
+    "$$E_{n}=-13.6\\frac{Z^{2}}{n^{2}}\\ \\text{eV},\\qquad IE_{n}=13.6\\frac{Z^{2}}{n^{2}}\\ \\text{eV}$$",
+    "$$\\lambda(\\text{nm})=\\frac{1240}{\\Delta E(\\text{eV})}$$"
   ],
-  "keyPoints": [
-    "Core point for 04 bohr practical application."
+  "universalFacts": [
+    "r₁(H) = 0.529 Å; r₁(He⁺) = 0.265 Å; r₁(Li²⁺) = 0.176 Å — all scale as 1/Z.",
+    "IE(H) = 13.6 eV; IE(He⁺) = 54.4 eV; IE(Li²⁺) = 122.4 eV — the Z² scaling in action.",
+    "v₁(H) = c/137 = 2.19 × 10⁶ m s⁻¹."
   ],
-  "summary": "Summary of 04 bohr practical application.",
-  "specialNotes": [
-    "Specialized insight for 04 bohr practical application."
-  ],
-  "importantStatements": [
-    "Key statement for 04 bohr practical application."
+  "examples": [
+    "**Problem:** Energy to excite He⁺ from n = 1 to n = 2. **Solution:** ΔE = 13.6 × 2² × (1 − 1/4) = 13.6 × 4 × 0.75 = 40.8 eV — three times the corresponding H value, because of the Z² factor."
   ],
   "importantNotes": [
-    "Important note regarding 04 bohr practical application."
+    "Never forget Z in r, v, E for ions — substitute Z = 2, 3, 4 explicitly.",
+    "Negative E means a bound electron; report ionisation energy as a positive number."
   ],
-  "examShortTricks": [
-    "Recall the formula for Bohr's Atomic Model — Practical Application to Hydrogen-Like Species."
-  ],
-  "examNotes": [
-    "Focus on Bohr's Atomic Model — Practical Application to Hydrogen-Like Species problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 04 bohr practical application?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 04 bohr practical application."
-  ],
-  "importantTasks": [
-    "Task for studying 04 bohr practical application."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "04-bohr-practical-application",
   "mcqs": [
     {
-      "question": "Question about 04 bohr practical application?",
+      "question": "The radius of the 2nd Bohr orbit of Li²⁺ is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "0.529 Å",
+        "0.705 Å",
+        "1.058 Å",
+        "1.587 Å"
       ],
-      "answer": "A"
+      "answer": "B"
     }
-  ]
+  ],
+  "visualType": "bohr-model",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "04-bohr-practical-application.json"
 }

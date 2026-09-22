@@ -1,81 +1,81 @@
 {
-  "title": "Thomson's Plum Pudding (Watermelon) Model",
+  "title": "Thomson's Plum-Pudding Model and its Failure",
   "unitSlug": "atomic-structure",
   "topicSlug": "rutherford-s-atomic-model-and-its-limitations",
   "topicTitle": "Rutherford's atomic model and its limitations",
-  "relevance": 79,
+  "relevance": 85,
   "notes": [
-    "Detailed notes on 27 thomson plum pudding model within the atomic structure unit."
+    "### Focus of this tab",
+    "The model Rutherford disproved. Knowing exactly what Thomson's atom predicted — and which prediction failed — shows why the α-scattering result was so decisive.",
+    "### Background: the electron came first",
+    "J. J. Thomson discovered the electron in 1897 from cathode-ray studies: cathode rays are deflected by electric and magnetic fields, so they are negatively charged particles, and their charge-to-mass ratio e/m = 1.76 × 10¹¹ C kg⁻¹ is the same for every cathode material — electrons are universal constituents of all atoms. Since atoms are neutral, positive charge had to exist somewhere.",
+    "### The plum-pudding (watermelon) model, 1904",
+    "• The atom is a sphere of positive charge with radius ≈10⁻¹⁰ m — the size of the whole atom.",
+    "• Electrons are embedded in it like plums in a pudding (or seeds in a watermelon), arranged to minimise their mutual repulsion.",
+    "• Total positive charge = total negative charge → the atom is neutral.",
+    "• Mass is spread uniformly through the sphere; electrons are held by electrostatic forces and can oscillate about their positions — which is how Thomson tried to explain light emission.",
+    "### Predictions versus the α-scattering result",
+    "• Prediction: positive charge is diffuse, so an α-particle (mass 4 u, charge +2e) passing through should experience many small, cumulative deflections — large-angle scattering should be vanishingly rare.",
+    "• Observation: ≈1 in 8000 α-particles is deflected by more than 90°, and some bounce straight back.",
+    "• Conclusion: the model is untenable — the positive charge must be concentrated in a tiny, massive nucleus. Rutherford said it was 'as if you fired a 15-inch shell at a piece of tissue paper and it came back and hit you'.",
+    "### Why the model still mattered",
+    "• It was the first model built on measured particles (e/m, charge of the electron from Millikan's oil-drop experiment, 1909).",
+    "• It correctly demanded neutrality and electron arrangement, and it could explain single small-angle scattering.",
+    "• Its failure set the two requirements every later model must meet: explain atomic stability and discrete line spectra.",
+    "### The chain of models (exam framing)",
+    "Dalton (indivisible atom) → Thomson (electrons in diffuse positive sphere) → Rutherford (nuclear atom) → Bohr (quantised orbits) → quantum-mechanical model (orbitals). Each model keeps the successes of the previous one and repairs one specific failure."
   ],
   "confusion": [
-    "❌ Misconception about 27 thomson plum pudding model. ✅ Scientific explanation."
+    "❌ Thomson discovered the proton along with the electron. ✅ Only the electron (1897); the proton was identified by Rutherford in 1919.",
+    "❌ The plum-pudding model explained the line spectrum of hydrogen. ✅ It could not; oscillating electrons would give a continuous spectrum.",
+    "❌ Thomson's model placed the nucleus at the centre. ✅ It had no nucleus at all — positive charge was spread over the whole atom."
   ],
   "practice": [
-    "Practice exercise for 27 thomson plum pudding model."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 27 thomson plum pudding model."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 27 thomson plum pudding model."
-  ],
-  "practiceQuestions": [
-    "Practice question for 27 thomson plum pudding model."
+    "Describe Thomson's model of the atom and state its main postulates.",
+    "Which observation of the α-scattering experiment contradicts Thomson's model, and why?",
+    "How did the discovery of the electron lead to the need for a positive constituent in the atom?",
+    "Compare Dalton's, Thomson's and Rutherford's models in a table (charge distribution, mass distribution, success, failure)."
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 27 thomson plum pudding model)"
+    "$$\\frac{e}{m}=1.76\\times10^{11}\\ \\text{C kg}^{-1}\\ (\\text{electron}),\\qquad e=1.602\\times10^{-19}\\ \\text{C}$$"
   ],
-  "keyPoints": [
-    "Core point for 27 thomson plum pudding model."
+  "universalFacts": [
+    "Thomson's e/m value is identical for every cathode material — the evidence that electrons are universal building blocks.",
+    "Rutherford's '15-inch shell' remark refers to the improbability of back-scattering in a diffuse-charge atom.",
+    "The oil-drop experiment (Millikan, 1909) fixed the electron's charge, completing Thomson's picture."
   ],
-  "summary": "Summary of 27 thomson plum pudding model.",
-  "specialNotes": [
-    "Specialized insight for 27 thomson plum pudding model."
-  ],
-  "importantStatements": [
-    "Key statement for 27 thomson plum pudding model."
+  "examples": [
+    "**Problem:** Why could small-angle scattering be explained by Thomson's model? **Solution:** a uniform positive charge density gives each passing α-particle a small, smoothly varying electrostatic impulse; summed over ≈1000 atoms the net deflection stays small — consistent with most α-particles passing nearly straight through."
   ],
   "importantNotes": [
-    "Important note regarding 27 thomson plum pudding model."
+    "Frame Thomson's model as the *hypothesis under test* in the α-scattering experiment.",
+    "Do not confuse the plum-pudding model with Dalton's indivisible atom — Dalton had no substructure at all."
   ],
-  "examShortTricks": [
-    "Recall the formula for Thomson's Plum Pudding (Watermelon) Model."
-  ],
-  "examNotes": [
-    "Focus on Thomson's Plum Pudding (Watermelon) Model problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 27 thomson plum pudding model?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 27 thomson plum pudding model."
-  ],
-  "importantTasks": [
-    "Task for studying 27 thomson plum pudding model."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "27-thomson-plum-pudding-model",
   "mcqs": [
     {
-      "question": "Question about 27 thomson plum pudding model?",
+      "question": "Thomson's model of the atom is often called:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "Nuclear model",
+        "Plum-pudding model",
+        "Planetary model",
+        "Shell model"
       ],
-      "answer": "A"
+      "answer": "B"
+    },
+    {
+      "question": "The plum-pudding model failed primarily because it could not explain:",
+      "options": [
+        "Isotopes",
+        "Large-angle α-scattering",
+        "Cathode rays",
+        "The e/m ratio"
+      ],
+      "answer": "B"
     }
-  ]
+  ],
+  "visualType": "thomson-model",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "27-thomson-plum-pudding-model.json"
 }

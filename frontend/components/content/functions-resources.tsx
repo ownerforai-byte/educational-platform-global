@@ -15,6 +15,7 @@ import {
   TrendingUp,
   Activity,
 } from "lucide-react";
+import { Schematic } from "./schematic-frame";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -117,29 +118,21 @@ function FunctionGraphVisual() {
       </div>
 
       <div className="flex justify-center">
-        <svg
-          viewBox={`0 0 ${w} ${h2}`}
-          className="w-full max-w-lg border rounded-lg bg-slate-950"
+        <Schematic
+          w={w} h={h2} ox={ox} oy={oy} scale={scale}
+          tickStep={1}
+          yLabel="f(x)"
+          legend={[
+            { color: "#22d3ee", label: "f(x)" },
+          ]}
         >
-          {/* Axes */}
-          <line x1={0} y1={oy} x2={w} y2={oy} stroke="#475569" strokeWidth="1" />
-          <line x1={ox} y1={0} x2={ox} y2={h2} stroke="#475569" strokeWidth="1" />
-          <text x={w - 10} y={oy - 5} fill="#64748b" fontSize="10">x</text>
-          <text x={ox + 5} y={12} fill="#64748b" fontSize="10">f(x)</text>
-
           {/* Graph line */}
           {graphPoints.length > 1 && (
-            <polyline
-              points={graphPoints.join(" ")}
-              fill="none"
-              stroke="#22d3ee"
-              strokeWidth="2"
-            />
+            <polyline points={graphPoints.join(" ")} fill="none" stroke="#22d3ee" strokeWidth="2" />
           )}
-
           {/* Origin */}
           <circle cx={ox} cy={oy} r="2" fill="#64748b" />
-        </svg>
+        </Schematic>
       </div>
 
       <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">
@@ -215,16 +208,16 @@ function InverseFunctionVisual() {
       </div>
 
       <div className="flex justify-center">
-        <svg
-          viewBox={`0 0 ${w} ${h2}`}
-          className="w-full max-w-lg border rounded-lg bg-slate-950"
+        <Schematic
+          w={w} h={h2} ox={ox} oy={oy} scale={scale}
+          tickStep={1}
+          yLabel="f(x)"
+          legend={[
+            { color: "#64748b", label: "y = x", dashed: true },
+            { color: "#38bdf8", label: "f(x)" },
+            { color: "#a855f7", label: "f⁻¹(x)" },
+          ]}
         >
-          {/* Axes */}
-          <line x1={0} y1={oy} x2={w} y2={oy} stroke="#475569" strokeWidth="1" />
-          <line x1={ox} y1={0} x2={ox} y2={h2} stroke="#475569" strokeWidth="1" />
-          <text x={w - 10} y={oy - 5} fill="#64748b" fontSize="10">x</text>
-          <text x={ox + 5} y={12} fill="#64748b" fontSize="10">f(x)</text>
-
           {/* Diagonal line y=x */}
           <line
             x1={ox}
@@ -239,22 +232,12 @@ function InverseFunctionVisual() {
 
           {/* Function f(x) */}
           {funcPoints.length > 1 && (
-            <polyline
-              points={funcPoints.join(" ")}
-              fill="none"
-              stroke="#38bdf8"
-              strokeWidth="2"
-            />
+            <polyline points={funcPoints.join(" ")} fill="none" stroke="#38bdf8" strokeWidth="2" />
           )}
 
           {/* Inverse function f⁻¹(x) */}
           {showInverse && inversePoints.length > 1 && (
-            <polyline
-              points={inversePoints.join(" ")}
-              fill="none"
-              stroke="#a855f7"
-              strokeWidth="2"
-            />
+            <polyline points={inversePoints.join(" ")} fill="none" stroke="#a855f7" strokeWidth="2" />
           )}
 
           {/* Trace point on function */}
@@ -272,10 +255,7 @@ function InverseFunctionVisual() {
               </text>
             </>
           )}
-
-          {/* Origin */}
-          <circle cx={ox} cy={oy} r="2" fill="#64748b" />
-        </svg>
+        </Schematic>
       </div>
 
       <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">

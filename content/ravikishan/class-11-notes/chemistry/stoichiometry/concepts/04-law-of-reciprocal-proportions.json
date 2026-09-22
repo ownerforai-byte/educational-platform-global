@@ -1,254 +1,68 @@
 {
-  "title": "Law of Reciprocal Proportions",
+  "title": "Law of Reciprocal (Equivalent) Proportions — Richter's Law",
   "unitSlug": "stoichiometry",
-  "topicSlug": "law-of-reciprocal-proportions",
-  "topicTitle": "Law of Reciprocal Proportions",
-  "relevance": 100,
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
+  "topicSlug": "laws-of-stoichiometry",
+  "topicTitle": "Laws of stoichiometry",
+  "relevance": 85,
+  "notes": [
+    "### Focus of this tab",
+    "The law of reciprocal proportions (Richter, 1792; also called the law of equivalent proportions) — statement, the reference-element method, worked verification and its link to equivalent masses.",
+    "### Statement",
+    "'The masses of two elements which combine separately with a fixed mass of a third element are either the same as, or simple multiples of, the masses in which they combine with each other.' It is the law that connects compounds sharing a common third element.",
+    "### The standard verification (H as reference)",
+    "• Water H₂O: H : O = 1 : 8.",
+    "• Methane CH₄: H : C = 1 : 3, i.e. C : H = 3 : 1 — 3 g C combines with 1 g H.",
+    "• Carbon dioxide CO₂: C : O = 12 : 32 = 3 : 8.",
+    "Check: with a fixed mass of H (1 g), the masses of C and O that combine are 3 g and 8 g. The ratio C : O = 3 : 8 — exactly the ratio in which C and O combine in CO₂. The law is verified.",
+    "### Second pattern (oxygen as reference)",
+    "In SO₂, S : O = 32 : 32 = 1 : 1; in H₂O, H : O = 1 : 8. With a fixed mass of O (say 8 g), H = 1 g and S = 8 g combine. In H₂S the actual ratio is H : S = 1 : 16 = 1 : 16, which is a simple multiple (×2) of the predicted 8 : 1 → the law holds in 'simple multiple' form.",
+    "### Connection to equivalent masses",
+    "The 'masses combining with a fixed mass of the reference element' are precisely the **equivalent masses** (H = 1.008, O = 8, C = 3 when valency 4 is chosen...). The law is the logical basis of the equivalent-mass concept and of the classical method of determining equivalent masses by analysis.",
+    "### Limitations",
+    "It applies to pure compounds and exact analyses; like multiple proportions it fails for berthollides; and it requires the three elements actually to form the relevant binary compounds (e.g. some noble gases form none). It is also the hardest of the laws to verify experimentally because the data must be very accurate."
+  ],
+  "confusion": [
+    "❌ This law compares two compounds of the same two elements. ✅ That is multiple proportions; reciprocal proportions links three elements through two compounds.",
+    "❌ The ratio must be identical. ✅ It may be the same or a *simple multiple* — the 'simple multiple' clause is part of the statement.",
+    "❌ The reference element must be hydrogen. ✅ Any common third element works; hydrogen and oxygen are just the textbook choices."
+  ],
+  "practice": [
+    "State the law of reciprocal proportions and verify it with H₂O, CH₄ and CO₂.",
+    "How is the law related to the concept of equivalent mass?",
+    "Verify the law using H₂O, SO₂ and H₂S.",
+    "State the limitations of the law of reciprocal proportions."
+  ],
+  "formulas": [
+    "$$\\frac{m_{C}\\ (\\text{with fixed H})}{m_{O}\\ (\\text{with fixed H})}=\\frac{m_{C}}{m_{O}}\\ (\\text{in }CO_{2})\\quad\\text{or a simple multiple}$$",
+    "$$\\text{equivalent mass}=\\frac{\\text{atomic mass}}{\\text{valency}}$$"
+  ],
+  "universalFacts": [
+    "Richter published the law in 1792 — before Dalton's atomic theory (1803).",
+    "Equivalent masses derived from this law underpin the classical titration and electrochemical (Faraday) calculations.",
+    "The law is also called the law of equivalent proportions for this reason."
+  ],
+  "examples": [
+    "**Problem:** Given C : H = 3 : 1 in CH₄ and H : O = 1 : 8 in H₂O, predict C : O in carbon's oxide. **Solution:** fix H = 1 g → C = 3 g, O = 8 g → predicted C : O = 3 : 8. Experiment gives 3 : 8 in CO₂ — verified (and 3 : 4 would be a simple multiple form, as in CO)."
+  ],
+  "importantNotes": [
+    "Keep the three compounds clearly identified: two with the reference element, one with the pair being compared.",
+    "Remember the 'simple multiple' clause — verification need not be equality."
+  ],
+  "mcqs": [
+    {
+      "question": "The law of reciprocal proportions is also known as the law of:",
+      "options": [
+        "Multiple proportions",
+        "Equivalent proportions",
+        "Gaseous volumes",
+        "Constant composition"
+      ],
+      "answer": "B"
+    }
+  ],
+  "visualType": "reciprocal-proportions",
+  "tabGroup": "Stoichiometry-Learner-Notes",
+  "source": "ravikishan",
   "duplicateType": 2,
-  "tabGroup": "law-of-reciprocal-proportions",
-  "visualType": "stoichiometry",
-  "enrichedContent": {
-    "notes": [
-      "**Statement:** When two different elements (A and B) separately combine with a fixed mass of a third element (C), the ratio of their masses in compounds with C is either the same as or a simple multiple of the ratio of their masses when they combine directly with each other.",
-      "**Formulated by:** Jeremias Richter in 1792. Known as Richter's Law of Reciprocal Proportions, it was the first quantitative law relating three elements.",
-      "**Example:** Carbon combines with oxygen (CO₂: C:O = 12:32 = 3:8) and hydrogen combines with oxygen (H₂O: H:O = 2:16 = 1:8). In methane (CH₄), carbon and hydrogen combine in ratio 12:4 = 3:1. The ratio of C:H combining with O is 3:(1/8) = 24:1, which relates to the direct C:H ratio (3:1) by a simple factor.",
-      "**Mathematical Formulation:** If mass(A)/mass(C) = a and mass(B)/mass(C) = b in their respective compounds with C, then when A and B combine directly, mass(A)/mass(B) = (a/b) × n, where n is a small whole number.",
-      "**Significance:** This law complements the Laws of Definite and Multiple Proportions, providing empirical evidence for fixed combining capacities (valency) of elements.",
-      "**Scope Limitation:** Applies only to compounds containing exactly three elements—does not generalize to more complex systems.",
-      "**Verification Example:** In H₂O, H:O = 1:8. In H₂S, H:S = 1:16. In SO₂, S:O = 1:1. The ratio of S to O combining with H (16:8 = 2:1) relates to their direct combination in SO₂ (1:1) by the simple factor of 2."
-    ],
-    "confusion": [
-      "❌ 'This law applies to any number of elements.' ✅ It applies only to compounds containing exactly THREE elements.",
-      "❌ 'The ratio is always 1:1.' ✅ The ratio is a SIMPLE relationship, but not necessarily 1:1.",
-      "❌ 'This law proves atoms exist.' ✅ Like the other proportion laws, it is consistent with atomic theory but is an empirical observation.",
-      "❌ 'This law is the same as the Law of Multiple Proportions.' ✅ No — the Law of Multiple Proportions describes two elements forming multiple compounds; this law describes three elements where two combine with a third.",
-      "❌ 'This law is not important for NEB.' ✅ While less frequently tested, it is part of the stoichiometry syllabus."
-    ],
-    "practice": [
-      "Verify the Law of Reciprocal Proportions using H₂O, H₂S, and SO₂.",
-      "Calculate the mass ratios for C, H, and O in CH₄, H₂O, and CO₂.",
-      "State the law and illustrate it with three compounds.",
-      "Show that N₂O₃, NO₂, and NH₃ obey the law.",
-      "Compare this law with the Law of Multiple Proportions."
-    ],
-    "universalFacts": [
-      "The Law of Reciprocal Proportions was proposed by Jeremias Richter in 1792.",
-      "It is also called Richter's Law.",
-      "This law relates the proportions in which two elements combine with a third element.",
-      "It was later incorporated into Dalton's atomic theory.",
-      "The law is based on equivalent weights of elements."
-    ],
-    "examples": [
-      "Hydrogen combines with sulfur (H₂S: 2g H + 32g S) and oxygen (H₂O: 2g H + 16g O). Fixed H = 2g, S:O = 32:16 = 2:1. In SO₂, S:O = 32:32 = 1:1, which is a simple multiple of 2:1.",
-      "Carbon combines with hydrogen (CH₄: 12g C + 4g H) and oxygen (CO₂: 12g C + 32g O). Fixed C = 12g, H:O = 4:32 = 1:8. In CS₂, C:S = 12:64, showing simple proportion.",
-      "Nitrogen combines with hydrogen (NH₃: 14g N + 3g H) and oxygen (NO: 14g N + 16g O). Fixed N = 14g, H:O = 3:16."
-    ],
-    "practiceQuestions": [
-      "State and explain the Law of Reciprocal Proportions.",
-      "Verify the law using data for hydrogen, sulfur, and oxygen.",
-      "Explain the significance of this law in chemistry.",
-      "Calculate the reciprocal proportion for given data."
-    ],
-    "formulas": [
-      "If A combines with B in ratio a:b and A combines with C in ratio a:c, then",
-      "B and C should combine in ratio b:c or simple multiple thereof",
-      "Equivalent weight = Atomic weight / Valency",
-      "For H₂S: Eq. wt. of S = 32/2 = 16",
-      "For H₂O: Eq. wt. of O = 16/2 = 8"
-    ],
-    "keyPoints": [
-      "Two elements combining separately with a fixed mass of third element.",
-      "The ratio of their masses in the first compound is simple multiple of ratio in second compound.",
-      "Based on equivalent weights.",
-      "Connects the combining capacity of elements."
-    ],
-    "summary": "The Law of Reciprocal Proportions states that when two elements combine with a third, the ratio of their masses in compounds with the third element is related to their direct combining ratio. Formulated by Richter in 1792, it applies to three-element compounds and complements the other proportion laws.",
-    "specialNotes": [
-      "This law is less commonly tested than other stoichiometric laws.",
-      "It is primarily of historical significance.",
-      "The law introduces the concept of equivalent weight."
-    ],
-    "importantStatements": [
-      "When two elements combine separately with a fixed mass of a third element, the ratio of their masses is either the same or a simple multiple of the ratio of their masses when they combine with each other.",
-      "This law is based on the concept of equivalent weights."
-    ],
-    "importantNotes": [
-      "The law works because elements combine in fixed ratios of their equivalent weights.",
-      "Equivalent weight is the combining capacity relative to hydrogen.",
-      "Modern chemistry uses this concept in acid-base and redox reactions."
-    ],
-    "examShortTricks": [
-      "Step 1: Find mass ratio of A:B and A:C.",
-      "Step 2: Compare ratios of B and C.",
-      "Step 3: Check if ratio in B-C compound is simple multiple.",
-      "Example: H-S (32:2) and H-O (16:2), ratio S:O = 2:1. In SO₂, S:O = 32:32 = 1:1."
-    ],
-    "examNotes": [
-      "This law is less frequently tested but may appear as a short-answer question.",
-      "Be prepared to state the law and give one example.",
-      "Do not confuse it with the Law of Multiple Proportions.",
-      "Briefly mention the historical significance."
-    ],
-    "mcs": [
-      {
-        "question": "The Law of Reciprocal Proportions was proposed by:",
-        "options": [
-          "Dalton",
-          "Proust",
-          "Richter",
-          "Avogadro"
-        ],
-        "answer": "C"
-      },
-      {
-        "question": "If A combines with B in ratio 1:4 and A combines with C in ratio 1:8, the ratio of B to C in BC compound should be:",
-        "options": [
-          "1:2",
-          "2:1",
-          "1:8",
-          "4:1"
-        ],
-        "answer": "A"
-      }
-    ],
-    "importantConcepts": [
-      "Law of Reciprocal Proportions: Three-element systems.",
-      "Direct vs. Indirect Combining Ratios.",
-      "Complementary Proportion Laws: Definite, Multiple, Reciprocal.",
-      "Valency Concept: Fixed combining capacities.",
-      "Historical Development: Richter's contribution to stoichiometry."
-    ],
-    "importantTasks": [
-      "State the Law of Reciprocal Proportions with an example.",
-      "Verify the law using H₂O, H₂S, and SO₂.",
-      "Compare this law with the Law of Multiple Proportions.",
-      "Explain why this law only applies to three-element compounds.",
-      "Solve 3 numerical problems verifying this law."
-    ],
-    "exercises": [],
-    "visualization": {}
-  },
-  "originalContent": {
-    "notes": [
-      "**Statement:** When two different elements (A and B) separately combine with a fixed mass of a third element (C), the ratio of their masses in compounds with C is either the same as or a simple multiple of the ratio of their masses when they combine directly with each other.",
-      "**Formulated by:** Jeremias Richter in 1792. Known as Richter's Law of Reciprocal Proportions, it was the first quantitative law relating three elements.",
-      "**Example:** Carbon combines with oxygen (CO₂: C:O = 12:32 = 3:8) and hydrogen combines with oxygen (H₂O: H:O = 2:16 = 1:8). In methane (CH₄), carbon and hydrogen combine in ratio 12:4 = 3:1. The ratio of C:H combining with O is 3:(1/8) = 24:1, which relates to the direct C:H ratio (3:1) by a simple factor.",
-      "**Mathematical Formulation:** If mass(A)/mass(C) = a and mass(B)/mass(C) = b in their respective compounds with C, then when A and B combine directly, mass(A)/mass(B) = (a/b) × n, where n is a small whole number.",
-      "**Significance:** This law complements the Laws of Definite and Multiple Proportions, providing empirical evidence for fixed combining capacities (valency) of elements.",
-      "**Scope Limitation:** Applies only to compounds containing exactly three elements—does not generalize to more complex systems.",
-      "**Verification Example:** In H₂O, H:O = 1:8. In H₂S, H:S = 1:16. In SO₂, S:O = 1:1. The ratio of S to O combining with H (16:8 = 2:1) relates to their direct combination in SO₂ (1:1) by the simple factor of 2."
-    ],
-    "confusion": [
-      "❌ 'This law applies to any number of elements.' ✅ It applies only to compounds containing exactly THREE elements.",
-      "❌ 'The ratio is always 1:1.' ✅ The ratio is a SIMPLE relationship, but not necessarily 1:1.",
-      "❌ 'This law proves atoms exist.' ✅ Like the other proportion laws, it is consistent with atomic theory but is an empirical observation.",
-      "❌ 'This law is the same as the Law of Multiple Proportions.' ✅ No — the Law of Multiple Proportions describes two elements forming multiple compounds; this law describes three elements where two combine with a third.",
-      "❌ 'This law is not important for NEB.' ✅ While less frequently tested, it is part of the stoichiometry syllabus."
-    ],
-    "practice": [
-      "Verify the Law of Reciprocal Proportions using H₂O, H₂S, and SO₂.",
-      "Calculate the mass ratios for C, H, and O in CH₄, H₂O, and CO₂.",
-      "State the law and illustrate it with three compounds.",
-      "Show that N₂O₃, NO₂, and NH₃ obey the law.",
-      "Compare this law with the Law of Multiple Proportions."
-    ],
-    "universalFacts": [
-      "The Law of Reciprocal Proportions was proposed by Jeremias Richter in 1792.",
-      "It is also called Richter's Law.",
-      "This law relates the proportions in which two elements combine with a third element.",
-      "It was later incorporated into Dalton's atomic theory.",
-      "The law is based on equivalent weights of elements."
-    ],
-    "examples": [
-      "Hydrogen combines with sulfur (H₂S: 2g H + 32g S) and oxygen (H₂O: 2g H + 16g O). Fixed H = 2g, S:O = 32:16 = 2:1. In SO₂, S:O = 32:32 = 1:1, which is a simple multiple of 2:1.",
-      "Carbon combines with hydrogen (CH₄: 12g C + 4g H) and oxygen (CO₂: 12g C + 32g O). Fixed C = 12g, H:O = 4:32 = 1:8. In CS₂, C:S = 12:64, showing simple proportion.",
-      "Nitrogen combines with hydrogen (NH₃: 14g N + 3g H) and oxygen (NO: 14g N + 16g O). Fixed N = 14g, H:O = 3:16."
-    ],
-    "practiceQuestions": [
-      "State and explain the Law of Reciprocal Proportions.",
-      "Verify the law using data for hydrogen, sulfur, and oxygen.",
-      "Explain the significance of this law in chemistry.",
-      "Calculate the reciprocal proportion for given data."
-    ],
-    "formulas": [
-      "If A combines with B in ratio a:b and A combines with C in ratio a:c, then",
-      "B and C should combine in ratio b:c or simple multiple thereof",
-      "Equivalent weight = Atomic weight / Valency",
-      "For H₂S: Eq. wt. of S = 32/2 = 16",
-      "For H₂O: Eq. wt. of O = 16/2 = 8"
-    ],
-    "keyPoints": [
-      "Two elements combining separately with a fixed mass of third element.",
-      "The ratio of their masses in the first compound is simple multiple of ratio in second compound.",
-      "Based on equivalent weights.",
-      "Connects the combining capacity of elements."
-    ],
-    "summary": "The Law of Reciprocal Proportions states that when two elements combine with a third, the ratio of their masses in compounds with the third element is related to their direct combining ratio. Formulated by Richter in 1792, it applies to three-element compounds and complements the other proportion laws.",
-    "specialNotes": [
-      "This law is less commonly tested than other stoichiometric laws.",
-      "It is primarily of historical significance.",
-      "The law introduces the concept of equivalent weight."
-    ],
-    "importantStatements": [
-      "When two elements combine separately with a fixed mass of a third element, the ratio of their masses is either the same or a simple multiple of the ratio of their masses when they combine with each other.",
-      "This law is based on the concept of equivalent weights."
-    ],
-    "importantNotes": [
-      "The law works because elements combine in fixed ratios of their equivalent weights.",
-      "Equivalent weight is the combining capacity relative to hydrogen.",
-      "Modern chemistry uses this concept in acid-base and redox reactions."
-    ],
-    "examShortTricks": [
-      "Step 1: Find mass ratio of A:B and A:C.",
-      "Step 2: Compare ratios of B and C.",
-      "Step 3: Check if ratio in B-C compound is simple multiple.",
-      "Example: H-S (32:2) and H-O (16:2), ratio S:O = 2:1. In SO₂, S:O = 32:32 = 1:1."
-    ],
-    "examNotes": [
-      "This law is less frequently tested but may appear as a short-answer question.",
-      "Be prepared to state the law and give one example.",
-      "Do not confuse it with the Law of Multiple Proportions.",
-      "Briefly mention the historical significance."
-    ],
-    "mcs": [
-      {
-        "question": "The Law of Reciprocal Proportions was proposed by:",
-        "options": [
-          "Dalton",
-          "Proust",
-          "Richter",
-          "Avogadro"
-        ],
-        "answer": "C"
-      },
-      {
-        "question": "If A combines with B in ratio 1:4 and A combines with C in ratio 1:8, the ratio of B to C in BC compound should be:",
-        "options": [
-          "1:2",
-          "2:1",
-          "1:8",
-          "4:1"
-        ],
-        "answer": "A"
-      }
-    ],
-    "importantConcepts": [
-      "Law of Reciprocal Proportions: Three-element systems.",
-      "Direct vs. Indirect Combining Ratios.",
-      "Complementary Proportion Laws: Definite, Multiple, Reciprocal.",
-      "Valency Concept: Fixed combining capacities.",
-      "Historical Development: Richter's contribution to stoichiometry."
-    ],
-    "importantTasks": [
-      "State the Law of Reciprocal Proportions with an example.",
-      "Verify the law using H₂O, H₂S, and SO₂.",
-      "Compare this law with the Law of Multiple Proportions.",
-      "Explain why this law only applies to three-element compounds.",
-      "Solve 3 numerical problems verifying this law."
-    ],
-    "exercises": [],
-    "visualization": {}
-  }
+  "filename": "04-law-of-reciprocal-proportions.json"
 }

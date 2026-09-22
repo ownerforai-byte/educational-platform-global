@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { Schematic } from "./schematic-frame";
 
 export function AngleBetweenLinesVisual() {
   const [m1, setM1] = useState(0.5);
@@ -74,11 +75,16 @@ export function AngleBetweenLinesVisual() {
         </div>
       </div>
 
-      <div className="flex justify-center">
-        <svg viewBox={`0 0 ${w} ${h}`} className="w-full max-w-md border rounded-lg bg-slate-950">
-          {/* Axes */}
-          <line x1={0} y1={oy} x2={w} y2={oy} stroke="#475569" strokeWidth="0.5" />
-          <line x1={ox} y1={0} x2={ox} y2={h} stroke="#475569" strokeWidth="0.5" />
+      <Schematic
+          w={w} h={h} ox={ox} oy={oy} scale={scale}
+          tickStep={1}
+          xLabel="x" yLabel="y"
+          legend={[
+            { color: "#3b82f6", label: "line 1  (m₁)" },
+            { color: "#ef4444", label: "line 2  (m₂)" },
+            { color: "#fbbf24", label: "intersection" },
+          ]}
+        >
           {/* Line 1 */}
           {line1Points.length > 1 && (
             <polyline points={line1Points.join(" ")} fill="none" stroke="#3b82f6" strokeWidth="2.5" />
@@ -87,13 +93,21 @@ export function AngleBetweenLinesVisual() {
           {line2Points.length > 1 && (
             <polyline points={line2Points.join(" ")} fill="none" stroke="#ef4444" strokeWidth="2.5" />
           )}
+          {/* Angle arc at intersection */}
+          <path
+            d={`M ${ox + ix * scale + 26} ${oy - iy * scale} A 26 26 0 0 0 ${ox + ix * scale + 20} ${oy - iy * scale + 15}`}
+            fill="none" stroke="#a78bfa" strokeWidth="1.5"
+          />
           {/* Intersection */}
           <circle cx={ox + ix * scale} cy={oy - iy * scale} r="4" fill="#fbbf24" />
           <text x={ox + ix * scale + 8} y={oy - iy * scale - 8} fill="#fbbf24" fontSize="10" fontWeight="600">
-            Intersection
+            ({ix.toFixed(1)}, {iy.toFixed(1)})
           </text>
-        </svg>
-      </div>
+          {/* Angle readout */}
+          <text x={w - 8} y={h - 8} fill="#a78bfa" fontSize="11" fontWeight="700" textAnchor="end">
+            θ = {angle.toFixed(1)}°
+          </text>
+        </Schematic>
 
       <div className="p-3 rounded-lg bg-muted/30 text-sm">
         <p><strong>Formula:</strong> tan θ = |(m₂ − m₁)/(1 + m₁m₂)</p>

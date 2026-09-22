@@ -186,6 +186,27 @@ export function getSyllabusTheoremItems(
     }
   }
 
+  // Dedupe by topicSlug: merged syllabus sources can list the same official
+  // topic more than once. Keep the first covered entry if any is covered,
+  // otherwise keep the first occurrence - a topic must never render twice
+  // (or appear as an empty duplicate next to its covered twin).
+  const seenTopic = new Map<string, number>();
+  const deduped: SyllabusTheoremItem[] = [];
+  for (const item of items) {
+    const prev = seenTopic.get(item.topicSlug);
+    if (prev === undefined) {
+      seenTopic.set(item.topicSlug, deduped.length);
+      deduped.push(item);
+      continue;
+    }
+    const existing = deduped[prev];
+    if (!existing.hasCuratedContent && item.hasCuratedContent) {
+      deduped[prev] = item;
+    }
+  }
+  items.length = 0;
+  items.push(...deduped);
+
   registryCache.set(cacheKey, items);
   return items;
 }

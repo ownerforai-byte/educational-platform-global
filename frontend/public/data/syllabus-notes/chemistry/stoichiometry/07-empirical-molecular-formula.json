@@ -1,80 +1,69 @@
 {
-  "title": "07 EMPIRICAL MOLECULAR FORMULA",
+  "title": "Calculation of Empirical and Molecular Formula from Percentage Composition",
   "unitSlug": "stoichiometry",
-  "topicSlug": "07-empirical-molecular-formula",
-  "topicTitle": "07 empirical molecular formula",
+  "topicSlug": "calculation-of-empirical-and-molecular-formula-from-composition-solving-related-numerical-proble",
+  "topicTitle": "Calculation of empirical and molecular formula from % composition (solving related numerical problems)",
+  "relevance": 100,
   "notes": [
-    "Detailed notes on 07 empirical molecular formula within the stoichiometry unit."
+    "### 1. Meaning of the two formulas",
+    "The **empirical formula** gives the simplest whole-number ratio of the atoms of each element present in a compound (CH₂O for glucose). The **molecular formula** gives the actual number of each kind of atom in one molecule (C₆H₁₂O₆ for glucose). They are related by an integer n: molecular formula = (empirical formula)ₙ, where $n=\\frac{\\text{molecular mass}}{\\text{empirical formula mass}}$, always a whole number (1, 2, 3 …).",
+    "### 2. Standard procedure from percentage composition",
+    "(1) Take the percentage of each element as its mass in 100 g of the compound. (2) Divide each mass by the atomic mass of that element to obtain the number of moles. (3) Divide all the mole values by the smallest one. (4) If the ratios are not whole numbers, multiply them by a suitable small integer (2, 3, …) to get the simplest whole-number ratio — this is the empirical formula. (5) Calculate the empirical formula mass and use n = molecular mass/empirical formula mass to write the molecular formula.",
+    "### 3. Worked example (percentage composition)",
+    "A compound contains 40% C, 6.67% H and 53.33% O with molecular mass 180. Moles: C = 40/12 = 3.33, H = 6.67/1 = 6.67, O = 53.33/16 = 3.33. Divide by 3.33 → C : H : O = 1 : 2 : 1 → empirical formula CH₂O, formula mass 30. n = 180/30 = 6, so the molecular formula is C₆H₁₂O₆ (glucose).",
+    "### 4. Combustion analysis (organic compounds)",
+    "An organic compound is burnt completely in excess oxygen; the CO₂ absorbed in KOH solution gives the mass of carbon (mass C = mass CO₂ × 12/44) and the H₂O absorbed in anhydrous CaCl₂ gives the mass of hydrogen (mass H = mass H₂O × 2/18). Any remaining mass is usually oxygen determined **by difference**. The masses of C and H are then converted to moles exactly as above, the formula is determined, and the molecular mass (from vapour density, M = 2 × VD) gives n.",
+    "### 5. Related calculations",
+    "• **Percentage composition from a formula** (the reverse calculation): % element = (n × atomic mass of element ÷ molar mass of compound) × 100.",
+    "• **Hydrated salts:** the water of crystallisation is found from the mass lost on heating and is included in the ratio (e.g. CuSO₄·5H₂O).",
+    "• **Equivalent/mole-ratio problems:** reacting masses or volumes are converted to moles and reduced to the simplest ratio to obtain a formula (e.g. determining x in FeₓOᵧ from oxidation data).",
+    "### 6. Applications",
+    "• Identification and characterisation of unknown organic and inorganic compounds in research and quality control.",
+    "• Pharmaceutical analysis (confirming that a drug matches its declared formula) and forensic/clinical analysis of unknown samples.",
+    "• Fuel, polymer, fertiliser and cement analysis, where the elemental composition fixes properties such as calorific value, degree of unsaturation or nutrient content.",
+    "• Foundation of instrumental methods — mass spectrometry gives the molecular mass, so an empirical formula from combustion analysis plus an MS molecular ion gives the molecular formula directly.",
+    "### 7. Limitations",
+    "• Rounding is dangerous: if the smallest quotient gives ratios near 0.5 (e.g. 1 : 1.5), the whole set must be multiplied by 2 (or 3 for 1 : 1.33 : 1.67) — stopping early gives the wrong formula.",
+    "• The result depends entirely on the accuracy of the percentage analysis. Errors propagate, especially for the element found 'by difference' (usually oxygen), which accumulates the errors of all the others.",
+    "• The empirical formula does **not** identify the compound. Many different compounds share one empirical formula — CH₂O represents formaldehyde, acetic acid, lactic acid and glucose — so the molecular mass (or mass-spectrometric data) is essential to fix the molecular formula.",
+    "• Molecular masses obtained from vapour density assume ideal-gas behaviour; association or dissociation (carboxylic acids, PCl₅, N₂O₄) gives an apparent molecular mass and hence a wrong n.",
+    "• The method suits pure, well-defined compounds. For non-stoichiometric compounds, polymers with a distribution of chain lengths, hydrates of variable composition and mixtures, no single empirical formula exists.",
+    "• Combustion analysis cannot distinguish elements present in small amounts (nitrogen, halogens, sulfur) unless special absorption trains or instrumental methods (CHN analyser) are used, and hygroscopic or volatile samples give poor data."
   ],
   "confusion": [
-    "❌ Misconception about 07 empirical molecular formula. ✅ Scientific explanation."
-  ],
-  "examples": [
-    "Real-world example of 07 empirical molecular formula."
-  ],
-  "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 07 empirical molecular formula)"
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 07 empirical molecular formula."
-  ],
-  "importantNotes": [
-    "Important note regarding 07 empirical molecular formula."
-  ],
-  "importantStatements": [
-    "Key statement for 07 empirical molecular formula."
-  ],
-  "importantTasks": [
-    "Task for studying 07 empirical molecular formula."
-  ],
-  "keyPoints": [
-    "Core point for 07 empirical molecular formula."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 07 empirical molecular formula?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
+    "❌ Empirical and molecular formula are the same for every compound. ✅ They coincide only when n = 1; for glucose the empirical formula is CH₂O but the molecular formula is C₆H₁₂O₆.",
+    "❌ The empirical formula can be found without the molecular mass. ✅ It can — but the molecular formula needs the molecular mass (or vapour density) to give n.",
+    "❌ A ratio of 1 : 1.5 is acceptable as an empirical formula. ✅ Ratios must be whole numbers, so multiply by 2 to obtain 2 : 3.",
+    "❌ Oxygen must always be estimated directly. ✅ In combustion analysis oxygen is normally found by difference (total mass − mass of C − mass of H).",
+    "❌ Two compounds with the same empirical formula are the same substance. ✅ They may be isomers or entirely different compounds with different molecular masses."
   ],
   "practice": [
-    "Practice exercise for 07 empirical molecular formula."
+    "Define empirical and molecular formula and derive the relation between them.",
+    "A compound contains 40% C, 6.67% H and 53.33% O and has molecular mass 180. Determine its empirical and molecular formula.",
+    "0.2 g of an organic compound on combustion gives 0.44 g CO₂ and 0.18 g H₂O. Find its empirical formula.",
+    "An oxide of nitrogen contains 30.4% nitrogen and has vapour density 46. Find its molecular formula.",
+    "A hydrated salt contains 36.1% water of crystallisation and its anhydrous salt has molar mass 120 g mol⁻¹. Find the number of water molecules per formula unit.",
+    "Explain why an empirical formula alone cannot identify a compound, with a suitable example."
   ],
-  "practiceQuestions": [
-    "Practice question for 07 empirical molecular formula."
+  "formulas": [
+    "$$\\text{molecular formula}=(\\text{empirical formula})_{n},\\qquad n=\\frac{\\text{molecular mass}}{\\text{empirical formula mass}}$$",
+    "$$n(\\text{element})=\\frac{\\%\\text{element}}{100}\\times\\frac{1}{A_{\\text{element}}};\\qquad \\text{divide all values by the smallest}$$",
+    "$$\\text{mass of C}=\\text{mass of }CO_{2}\\times\\frac{12}{44},\\qquad \\text{mass of H}=\\text{mass of }H_{2}O\\times\\frac{2}{18}$$"
   ],
-  "specialNotes": [
-    "Specialized insight for 07 empirical molecular formula."
-  ],
-  "summary": "Summary of 07 empirical molecular formula.",
   "universalFacts": [
-    "Universal scientific fact for 07 empirical molecular formula."
+    "Glucose, fructose, formaldehyde, acetic acid and lactic acid all have the empirical formula CH₂O but different molecular formulas.",
+    "Molecular mass from vapour density: M = 2 × VD (hydrogen reference).",
+    "Modern instruments (CHN analysers and mass spectrometers) determine the empirical and molecular formula in minutes, but the arithmetic logic remains the same as the classical combustion-train method."
   ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "duplicateType": 2,
-  "tabGroup": "07-empirical-molecular-formula",
-  "examShortTricks": [
-    "Trick 1"
+  "examples": [
+    "**Problem:** 0.2 g of an organic compound gives 0.44 g CO₂ and 0.18 g H₂O. Find the empirical formula. **Solution:** mass C = 0.44 × 12/44 = 0.12 g (0.01 mol); mass H = 0.18 × 2/18 = 0.02 g (0.02 mol); oxygen by difference = 0.2 − 0.12 − 0.02 = 0.06 g = 0.00375 mol. Divide by 0.00375 → C : H : O = 2.67 : 5.33 : 1 → ×3 → 8 : 16 : 3, so the empirical formula is C₈H₁₆O₃ — illustrating how careful the ratio step must be.",
+    "**Problem:** An oxide of nitrogen contains 30.4% N and has VD = 46. **Solution:** N = 30.4/14 = 2.17, O = 69.6/16 = 4.35 → divide by 2.17 → 1 : 2, empirical formula NO₂, formula mass 46; n = 92/46 = 2 → molecular formula N₂O₄."
   ],
-  "examNotes": [
-    "Exam note 1."
+  "importantNotes": [
+    "Learn the sequence exactly: percentage → mass → moles → divide by the smallest → whole numbers → n → molecular formula.",
+    "Never leave a fractional ratio; multiply to whole numbers before computing the formula mass.",
+    "Remember the by-difference rule for oxygen and the conversion factors 12/44 for carbon and 2/18 for hydrogen."
   ],
-  "mcqs": [
-    {
-      "question": "Question about 07 empirical molecular formula?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ]
+  "visualType": "empirical-molecular-formula",
+  "tabGroup": "Stoichiometry-Learner-Notes"
 }

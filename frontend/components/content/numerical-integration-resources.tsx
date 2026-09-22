@@ -14,6 +14,7 @@ import {
   TrendingUp,
   Activity,
 } from "lucide-react";
+import { Schematic } from "./schematic-frame";
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
@@ -129,16 +130,16 @@ function TrapezoidalVisual() {
         </div>
       </div>
       <div className="flex justify-center">
-        <svg
-          viewBox={`0 0 ${w} ${h2}`}
-          className="w-full max-w-lg border rounded-lg bg-slate-950"
+        <Schematic
+          w={w} h={h2} ox={ox} oy={oy} scale={scale}
+          tickStep={2}
+          showTicks={false}
+          yLabel="f(x)"
+          legend={[
+            { color: "#38bdf8", label: "curve" },
+            { color: "#a855f7", label: "trapezoids" },
+          ]}
         >
-          {/* Axes */}
-          <line x1={0} y1={oy} x2={w} y2={oy} stroke="#475569" strokeWidth="1" />
-          <line x1={ox} y1={0} x2={ox} y2={h2} stroke="#475569" strokeWidth="1" />
-          <text x={w - 10} y={oy - 5} fill="#64748b" fontSize="10">x</text>
-          <text x={ox + 5} y={12} fill="#64748b" fontSize="10">f(x)</text>
-
           {/* X-axis ticks */}
           {Array.from({ length: Math.ceil((b - a) / 0.5) + 1 }).map((_, i) => {
             const x = a + i * 0.5;
@@ -152,20 +153,12 @@ function TrapezoidalVisual() {
               </g>
             );
           })}
-
           {/* Curve */}
           {curvePoints.length > 1 && (
-            <polyline
-              points={curvePoints.join(" ")}
-              fill="none"
-              stroke="#38bdf8"
-              strokeWidth="2"
-            />
+            <polyline points={curvePoints.join(" ")} fill="none" stroke="#38bdf8" strokeWidth="2" />
           )}
-
           {/* Trapezoids */}
           {trapezoids}
-
           {/* Vertical lines at divisions */}
           {Array.from({ length: n }).map((_, i) => {
             const x = a + i * h;
@@ -182,22 +175,15 @@ function TrapezoidalVisual() {
               />
             );
           })}
-
           {/* Points on curve */}
           {Array.from({ length: n + 1 }).map((_, i) => {
             const x = a + i * h;
             const y = f(x);
             return (
-              <circle
-                key={`point-${i}`}
-                cx={toSvgX(x)}
-                cy={toSvgY(y)}
-                r="3"
-                fill="#a855f7"
-              />
+              <circle key={`point-${i}`} cx={toSvgX(x)} cy={toSvgY(y)} r="3" fill="#a855f7" />
             );
           })}
-        </svg>
+        </Schematic>
       </div>
       <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">
         <strong className="text-foreground">Trapezoidal Rule:</strong> As n increases, the trapezoids better approximate the area under the curve.
@@ -337,16 +323,16 @@ function SimpsonVisual() {
         </div>
       </div>
       <div className="flex justify-center">
-        <svg
-          viewBox={`0 0 ${w} ${h2}`}
-          className="w-full max-w-lg border rounded-lg bg-slate-950"
+        <Schematic
+          w={w} h={h2} ox={ox} oy={oy} scale={scale}
+          tickStep={2}
+          showTicks={false}
+          yLabel="f(x)"
+          legend={[
+            { color: "#38bdf8", label: "curve" },
+            { color: "#a855f7", label: "Simpson parabolas" },
+          ]}
         >
-          {/* Axes */}
-          <line x1={0} y1={oy} x2={w} y2={oy} stroke="#475569" strokeWidth="1" />
-          <line x1={ox} y1={0} x2={ox} y2={h2} stroke="#475569" strokeWidth="1" />
-          <text x={w - 10} y={oy - 5} fill="#64748b" fontSize="10">x</text>
-          <text x={ox + 5} y={12} fill="#64748b" fontSize="10">f(x)</text>
-
           {/* X-axis ticks */}
           {Array.from({ length: Math.ceil((b - a) / 0.5) + 1 }).map((_, i) => {
             const x = a + i * 0.5;
@@ -360,23 +346,14 @@ function SimpsonVisual() {
               </g>
             );
           })}
-
           {/* Actual curve */}
           {curvePoints.length > 1 && (
-            <polyline
-              points={curvePoints.join(" ")}
-              fill="none"
-              stroke="#38bdf8"
-              strokeWidth="2"
-            />
+            <polyline points={curvePoints.join(" ")} fill="none" stroke="#38bdf8" strokeWidth="2" />
           )}
-
           {/* Simpson parabolas */}
           {parabolas}
-
           {/* Points */}
           {points}
-
           {/* Vertical lines at divisions */}
           {Array.from({ length: panel }).map((_, i) => {
             const x = a + i * h;
@@ -393,7 +370,7 @@ function SimpsonVisual() {
               />
             );
           })}
-        </svg>
+        </Schematic>
       </div>
       <div className="text-xs text-muted-foreground bg-muted/30 p-3 rounded-lg">
         <strong className="text-foreground">Simpson's 1/3 Rule:</strong> Uses parabolic arcs to approximate the curve. More accurate than trapezoidal rule for smooth functions.

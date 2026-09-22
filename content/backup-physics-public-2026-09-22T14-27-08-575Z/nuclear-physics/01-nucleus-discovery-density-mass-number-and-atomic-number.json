@@ -1,0 +1,176 @@
+{
+  "title": "Nucleus: Discovery, Density and Composition",
+  "unitSlug": "nuclear-physics",
+  "topicSlug": "nucleus-discovery-density-mass-number-and-atomic-number",
+  "topicTitle": "Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+  "relevance": 100,
+  "notes": [
+    "**Rutherford's gold foil experiment (1911):** α particles (⁴He²⁺) were fired at a thin gold foil. Most passed straight through, but some were scattered at large angles. Rutherford concluded atoms have a tiny, dense, positively charged nucleus at the center.",
+    "**Unexpected result:** Rutherford expected, based on J.J. Thomson's 'plum pudding' model, that α particles would experience only slight deflection. The large-angle scattering (some α particles bounced back nearly 180°) proved the positive charge (and most of the mass) was concentrated in a tiny, dense region — the nucleus.",
+    "**Size of nucleus:** The nucleus is roughly 10⁴ times smaller in radius than the atom. For a gold atom (radius ∼125 pm), the nucleus radius is ∼7 fm (femtometers = 10⁻¹⁵ m). The nucleus occupies a volume of about 10⁻¹² of the atom's volume.",
+    "**Nuclear density:** The density of nuclear matter is nearly constant for all nuclei. This can be derived from R = R₀A^(1/3), where A is the mass number. Since m_nucleus ≈ Am_u (atomic mass unit), density ρ = M_nucleus/V_nucleus = Am_u / (4/3 π R₀³A) = 3m_u/(4πR₀³). The A's cancel out!",
+    "**Nuclear density value:** Using R₀ ≈ 1.2 fm and m_u ≈ 1.66 × 10⁻²⁷ kg, the nuclear density ρ_nuc ≈ 2.3 × 10¹⁷ kg/m³. This is about 2.3 × 10¹⁴ times denser than ordinary matter — a sugar-cube-sized amount of neutron star material would weigh about 100 million tons on Earth.",
+    "**Mass number (A):** A = Z + N, the total number of protons (Z) plus neutrons (N) in the nucleus. Written as a superscript before the element name: ⁵⁶Fe, ²³⁵U. It approximates the atomic mass in atomic mass units (though the actual mass is slightly less due to mass defect).",
+    "**Atomic number (Z):** The number of protons in the nucleus, which determines the chemical element. All atoms of hydrogen have Z = 1, all helium atoms have Z = 2, all carbon atoms have Z = 6. Z also equals the number of orbiting electrons in a neutral atom.",
+    "**Neutron number (N):** N = A − Z, the number of neutrons in the nucleus. Neutrons contribute to the strong nuclear force that holds the nucleus together but do not affect the chemical properties of the element. They also add mass without adding Coulomb repulsion.",
+    "**Isotopes:** Atoms of the same element (same Z) but different neutron numbers (different N, different A). Example: hydrogen has three isotopes — protium (¹H, N=0), deuterium (²H, N=1), and tritium (³H, N=2). They have the same chemistry but different nuclear properties.",
+    "**Nuclear radius formula:** R = R₀A^(1/3), where R₀ ≈ 1.2 × 10⁻¹⁵ m is a constant. This shows that nuclear radius scales as the cube root of mass number — a consequence of the constant density. The nuclear force is short-range (1-2 fm), so adding a nucleon adds it to the surface.",
+    "**Rutherford scattering formula:** The number of α particles scattered at angle θ is proportional to 1/sin⁴(θ/2). This sharp angular dependence confirmed the concentrated-charge, small-radius nature of the nucleus. The formula matched Rutherford's theoretical predictions precisely.",
+    "**Discovery of neutron (1932):** James Chadwick discovered the neutron by bombarding beryllium with α particles. The neutral, massive particles (neutrons) could knock out protons from paraffin wax. This confirmed the proton-neutron model of the nucleus.",
+    "**Nuclear composition:** Nuclei contain Z protons (positively charged) and N neutrons (neutral), held together by the strong nuclear force. The strong force is short-range (fewer than 2-3 fm) but extremely powerful — overcoming the electrostatic repulsion between protons.",
+    "**Density calculation example:** For a carbon-12 nucleus (A = 12): R = 1.2 × 12^(1/3) = 1.2 × 2.29 = 2.75 fm. Mass = 12 × 1.66 × 10⁻²⁷ kg = 1.99 × 10⁻²⁶ kg. Volume = 4/3 π(2.75 × 10⁻¹⁵)³ = 8.72 × 10⁻⁴⁴ m³. Density = 1.99×10⁻²⁶/8.72×10⁻⁴⁴ = 2.28 × 10¹⁷ kg/m³. Same as uranium — confirming constant density."
+  ],
+  "confusion": [
+    "The nucleus is NOT the same as the atom — the nucleus is the tiny dense central part (protons and neutrons), while the atom includes the orbiting electrons. A nucleus is about 10,000 times smaller in radius than the atom it belongs to.",
+    "Nuclear density is NOT the same as atomic density. Atomic density (mass/volume of the entire atom) is about 10³ kg/m³ (like water or solid materials). Nuclear density (mass/volume of just the nucleus) is about 10¹⁷ kg/m³ — unimaginably denser.",
+    "Mass number A approximates atomic mass in atomic mass units, but is NOT exactly equal. For example, ¹²C has A = 12 and atomic mass exactly 12 u (by definition), but most nuclei have actual mass slightly less than A due to binding energy (mass defect).",
+    "The nuclear radius formula R = R₀A^(1/3) shows that doubling the mass number (e.g., from helium A=4 to beryllium A=8) does NOT double the radius — it increases it by 2^(1/3) ≈ 1.26. This cubic-root scaling confirms the constant density hypothesis.",
+    "Atomic number Z determines the element, but ISOTOPES of the same element have the same Z but different A. You cannot tell isotopes apart chemically, but they differ greatly in their nuclear stability (e.g., ¹H is stable; ³H is radioactive with a 12-year half-life)."
+  ],
+  "practice": [
+    "Calculate the radius, diameter, and density of a carbon-12 nucleus (A = 12). Use R₀ = 1.2 fm. Solution: R = 1.2 × 12^(1/3) = 1.2 × 2.289 = 2.747 fm. Diameter = 2R = 5.494 fm. Mass = 12 × 1.66×10⁻²⁷ = 1.993×10⁻²⁶ kg. Volume = 4/3 πR³ = 4/3 π(2.747×10⁻¹⁵)³ = 8.67×10⁻⁴⁴ m³. Density = 1.993×10⁻²⁶/8.67×10⁻⁴⁴ = 2.30×10¹⁷ kg/m³.",
+    "A uranium-238 nucleus (A = 238, radius ≈ 7.4 fm) has density equal to a carbon-12 nucleus (A = 12, radius ≈ 2.7 fm). Prove this mathematically using R = R₀A^(1/3). Solution: ρ_C = M_C/V_C = (12m_u)/(4/3 π( R₀12^(1/3))³) = 12m_u/(4/3 π R₀³ × 12) = m_u/(4/3 π R₀³). ρ_U = 238m_u/(4/3 π( R₀238^(1/3))³) = 238m_u/(4/3 π R₀³ × 238) = m_u/(4/3 π R₀³). They are EQUAL — confirming constant density.",
+    "The radius of a gold nucleus (A = 197) is measured at 7.4 fm. What is the value of R₀? Solution: R = R₀A^(1/3) → R₀ = R/A^(1/3) = 7.4/197^(1/3). 197^(1/3) = 5.82. R₀ = 7.4/5.82 = 1.27 fm. This is close to the standard value of 1.2 fm, with differences due to experimental measurement uncertainties.",
+    "A copper sample contains two stable isotopes: ⁶³Cu (69.3% abundant, A=63) and ⁶⁵Cu (30.7% abundant, A=65). Find the average atomic mass in u and the average nuclear radius. Solution: Average mass = 0.693×63 + 0.307×65 = 43.66 + 20.0 = 63.7 u. Average radius = 1.2 × 63.7^(1/3) = 1.2 × 3.99 = 4.79 fm. (Note: isotopes have same Z=29 but slightly different nuclear radii due to different neutron count.)",
+    "If a nucleus has 50 protons and 75 neutrons, what is its isotope, and what is its radius? Use R₀ = 1.2 fm. Solution: Z = 50 → element is tin (Sn). A = 50 + 75 = 125 → isotope is ¹²⁵Sn. Radius R = 1.2 × 125^(1/3) = 1.2 × 5.0 = 6.0 fm. Density = 125m_u/(4/3 π R³) ≈ 2.3×10¹⁷ kg/m³ (same for all nuclei)."
+  ],
+  "universalFacts": [
+    "The density of nuclear matter (∼2.3 × 10¹⁷ kg/m³) is so extreme that a single teaspoon of it would weigh about 6 billion tons on Earth. This is the density of neutron stars — objects with the mass of the Sun compressed into a city-sized sphere.",
+    "Rutherford's gold foil experiment took place in Geiger and Marsden's lab at the University of Manchester in 1909. Only about 1 in 8000 α particles was scattered at angles greater than 90° — but that one in 8000 was the key evidence.",
+    "The nuclear radius scales as A^(1/3) — this is a key piece of evidence that the strong nuclear force has a short range (about 1-2 femtometers). If the force were longer range, nuclei would be smaller and denser.",
+    "Atomic number Z determines all chemical properties (because chemistry is governed by electron configuration), while the number of neutrons N affects only nuclear stability and decay modes (isotopes differ in this).",
+    "All atoms of an element have identically sized nuclei only if they are the same isotope. Isotopes of the same element have slightly different nuclear radii because the additional neutrons increase A and thus R = R₀A^(1/3)."
+  ],
+  "animation3D": "nuclear-physics",
+  "motionGraphics": "nuclear-physics",
+  "examples": [
+    "Example 1: Real-world application of Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Example 2: Practical demonstration of Nucleus: discovery of nucleus; nuclear density; mass number; atomic number concepts",
+    "Example 3: Numerical problem on Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Example 4: Diagram-based question on Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Example 5: Application in daily life involving Nucleus: discovery of nucleus; nuclear density; mass number; atomic number"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain Nucleus: discovery of nucleus; nuclear density; mass number; atomic number with suitable example.",
+    "Q2. Solve problems related to Nucleus: discovery of nucleus; nuclear density; mass number; atomic number.",
+    "Q3. Differentiate between various aspects of Nucleus: discovery of nucleus; nuclear density; mass number; atomic number.",
+    "Q4. Derive the key formula related to Nucleus: discovery of nucleus; nuclear density; mass number; atomic number.",
+    "Q5. What are the applications of Nucleus: discovery of nucleus; nuclear density; mass number; atomic number?"
+  ],
+  "formulas": [
+    "Key Formula 1: Definition formula for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Key Formula 2: Mathematical expression of Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Key Formula 3: Application formula for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Key Formula 4: Derivation result for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Key Formula 5: Important relation in Nucleus: discovery of nucleus; nuclear density; mass number; atomic number"
+  ],
+  "keyPoints": [
+    "Key Point 1: Fundamental definition of Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Key Point 2: Essential theorem or principle related to Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Key Point 3: Important condition or constraint for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Key Point 4: Common applications of Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Key Point 5: Connection to other topics in Science"
+  ],
+  "summary": "Nucleus: discovery of nucleus; nuclear density; mass number; atomic number is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Nucleus: discovery of nucleus; nuclear density; mass number; atomic number applies",
+    "Note 2: Nucleus: discovery of nucleus; nuclear density; mass number; atomic number connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Note 4: Remember the units and dimensions involved in Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Note 5: Nucleus: discovery of nucleus; nuclear density; mass number; atomic number frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Statement 2: Theorem related to Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Statement 3: Condition for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number to be valid",
+    "Statement 4: Principle governing Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Statement 5: Corollary or consequence of Nucleus: discovery of nucleus; nuclear density; mass number; atomic number"
+  ],
+  "importantNotes": [
+    "Note 1: Nucleus: discovery of nucleus; nuclear density; mass number; atomic number is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Note 3: Nucleus: discovery of nucleus; nuclear density; mass number; atomic number has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Note 5: Cross-check your answers using alternative methods for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Nucleus: discovery of nucleus; nuclear density; mass number; atomic number formula",
+    "Trick 2: Elimination technique for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number MCQs",
+    "Trick 3: Dimensional analysis shortcut for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Trick 4: Memory aid for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number formulas",
+    "Trick 5: Time-saving approach for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number problems"
+  ],
+  "examNotes": [
+    "Exam Tip 1: Focus on numerical problems from Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Exam Tip 2: Practice previous year questions on Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Exam Tip 3: Nucleus: discovery of nucleus; nuclear density; mass number; atomic number carries significant marks in exams",
+    "Exam Tip 4: Learn the derivations for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number thoroughly",
+    "Exam Tip 5: Review common mistakes related to Nucleus: discovery of nucleus; nuclear density; mass number; atomic number"
+  ],
+  "mcs": [
+    {
+      "question": "Which of the following best describes Nucleus: discovery of nucleus; nuclear density; mass number; atomic number?",
+      "options": [
+        "Option A describing ${title}",
+        "Option B with similar concept",
+        "Option C related term",
+        "Option D unrelated concept"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The primary application of Nucleus: discovery of nucleus; nuclear density; mass number; atomic number is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Nucleus: discovery of nucleus; nuclear density; mass number; atomic number, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Nucleus: discovery of nucleus; nuclear density; mass number; atomic number?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Nucleus: discovery of nucleus; nuclear density; mass number; atomic number is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Concept 2: Key theorem or principle in Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Concept 3: Important application area of Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Concept 4: Fundamental relationship in Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Concept 5: Connection between Nucleus: discovery of nucleus; nuclear density; mass number; atomic number and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Task 2: Derive the main formula for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Task 3: Create a concept map for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Task 4: Practice previous year exam questions on Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Task 5: Explain Nucleus: discovery of nucleus; nuclear density; mass number; atomic number to a peer or study group"
+  ]
+}

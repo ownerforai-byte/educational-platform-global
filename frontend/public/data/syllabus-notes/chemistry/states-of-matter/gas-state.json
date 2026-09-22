@@ -1,81 +1,69 @@
 {
-  "title": "Gas State",
+  "title": "The Gaseous State — Characteristics and Measurable Properties",
   "unitSlug": "states-of-matter",
-  "topicSlug": "gas-state",
-  "topicTitle": "Gas State",
-  "relevance": 30,
+  "topicSlug": "gaseous-state",
+  "topicTitle": "Gaseous State",
+  "relevance": 80,
   "notes": [
-    "Detailed notes on gas state within the states of matter unit."
+    "### Focus of this tab",
+    "What defines a gas and the four measurable variables (P, V, T, n) whose relationships the gas laws and kinetic theory explain — the orientation before the postulates.",
+    "### Defining characteristics of the gaseous state",
+    "• No fixed shape or volume — a gas fills its container completely.",
+    "• Very low density compared with liquids/solids (air ≈ 1.3 kg m⁻³ vs water 1000 kg m⁻³); highly compressible; diffuse rapidly.",
+    "• Molecules are far apart (intermolecular distances ≈ 10 molecular diameters at STP) with negligible attraction — hence expansion and compressibility.",
+    "• Exerts pressure uniformly in all directions (momentum transfer on wall collisions).",
+    "• Mixes completely and homogeneously (diffusion, effusion through pinholes).",
+    "### The four state variables",
+    "• **Pressure (P):** force per unit area; units Pa (N m⁻²), atm (1 atm = 101325 Pa = 760 mm Hg), bar (1 bar = 10⁵ Pa); measured with barometers/manometers.",
+    "• **Volume (V):** space occupied; 1 m³ = 1000 L = 10⁶ cm³ (mL).",
+    "• **Temperature (T):** kelvin only in gas laws; T(K) = t(°C) + 273.15.",
+    "• **Amount (n):** moles; links to mass via molar mass and to particles via N_A.",
+    "### What the gas laws connect",
+    "Boyle (P–V at fixed T), Charles (V–T at fixed P), Gay-Lussac (P–T at fixed V), Avogadro (V–n at fixed P, T), combined equation and PV = nRT. Each law fixes two variables and studies the other two — the 'constant-holding' logic of all gas-law experiments.",
+    "### Why gases need a molecular model",
+    "The measured regularities (PV = nRT for all gases at low P) are too universal to be accidental: they point to a common microscopic structure. The kinetic theory supplies it — postulates → PV = ⅓mnc̄² → PV = nRT — and its idealisations (point molecules, no attraction) mark exactly where real gases deviate."
   ],
   "confusion": [
-    "❌ Misconception about gas state. ✅ Scientific explanation."
+    "❌ Gases have negligible mass. ✅ They have small but definite mass — 22.4 L of air weighs about 29 g at STP.",
+    "❌ Temperature in gas laws may be taken in °C. ✅ Absolute (kelvin) temperature only; 0 °C is 273.15 K.",
+    "❌ A gas exerts pressure only downward. ✅ Pressure is isotropic — equal in every direction."
   ],
   "practice": [
-    "Practice exercise for gas state."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for gas state."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of gas state."
-  ],
-  "practiceQuestions": [
-    "Practice question for gas state."
+    "List the four measurable properties of a gas and their SI units.",
+    "State three characteristics that distinguish gases from liquids and solids.",
+    "Convert 750 mm Hg into Pa and bar.",
+    "Why do gases fill the entire container while liquids do not?"
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for gas state)"
+    "$$1\\ \\text{atm}=101325\\ \\text{Pa}=760\\ \\text{mm Hg}=1.01325\\ \\text{bar};\\qquad T(\\text{K})=t(\\degree\\text{C})+273.15$$"
   ],
-  "keyPoints": [
-    "Core point for gas state."
+  "universalFacts": [
+    "Air is a mixture (78% N₂, 21% O₂, ~1% Ar/CO₂) that behaves nearly ideally at 1 atm — the everyday ideal gas.",
+    "One mole of any gas at STP occupies 22.4 L and, for air, weighs ≈28.97 g (average molar mass).",
+    "The mean free path at 1 atm is ≈10⁻⁷ m — molecules travel ~1000 diameters between collisions."
   ],
-  "summary": "Summary of gas state.",
-  "specialNotes": [
-    "Specialized insight for gas state."
-  ],
-  "importantStatements": [
-    "Key statement for gas state."
+  "examples": [
+    "**Problem:** Express 2.5 atm in mm Hg and Pa. **Solution:** 2.5 × 760 = 1900 mm Hg; 2.5 × 101325 = 253 312 Pa ≈ 2.53 × 10⁵ Pa."
   ],
   "importantNotes": [
-    "Important note regarding gas state."
+    "Fix the four variables (P, V, T, n) in mind before the laws — every law is a two-at-a-time relation among them.",
+    "Use kelvin always; the °C slip is the classic numerical error."
   ],
-  "examShortTricks": [
-    "Recall the formula for Gas State."
-  ],
-  "examNotes": [
-    "Focus on Gas State problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about gas state?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for gas state."
-  ],
-  "importantTasks": [
-    "Task for studying gas state."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "gas-state",
   "mcqs": [
     {
-      "question": "Question about gas state?",
+      "question": "1 atmosphere equals:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "10⁵ Pa",
+        "101325 Pa",
+        "760 Pa",
+        "1 bar exactly"
       ],
-      "answer": "A"
+      "answer": "B"
     }
-  ]
+  ],
+  "visualType": "gas-state",
+  "tabGroup": "States-Of-Matter-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "gas-state.json"
 }

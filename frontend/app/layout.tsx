@@ -5,6 +5,7 @@ import { QueryProvider } from "@/providers/query-provider";
 import { AuthProvider } from "@/providers/auth-provider";
 import { ServiceWorkerRegistrar } from "@/components/pwa/service-worker-registrar";
 import { OfflineBanner } from "@/components/pwa/offline-banner";
+import { RawEventRejectionGuard } from "@/components/dev/raw-event-rejection-guard";
 import { DevContrastAudit } from "@/lib/color-contrast";
 
 export const metadata: Metadata = {
@@ -46,6 +47,7 @@ export default function RootLayout({
         <QueryProvider>
           <ThemeProvider defaultTheme="system" storageKey="neb-theme">
             <AuthProvider>
+              <RawEventRejectionGuard />
               <ServiceWorkerRegistrar />
               <OfflineBanner />
               {/* Task 2: dev-only WCAG contrast audit — logs theme/pair/ratio warnings. */}

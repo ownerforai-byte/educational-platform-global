@@ -1,81 +1,65 @@
 {
-  "title": "Bohr's Atomic Model — Quantization of Angular Momentum",
+  "title": "Quantisation of Angular Momentum — Bohr's Postulate and de Broglie's Proof",
   "unitSlug": "atomic-structure",
   "topicSlug": "defects-of-bohr-s-theory",
   "topicTitle": "Defects of Bohr's theory",
-  "relevance": 88,
+  "relevance": 85,
   "notes": [
-    "Detailed notes on 07 bohr quantization of angular momentum within the atomic structure unit."
+    "### Focus of this tab",
+    "The single postulate mvr = nh/2π — how Bohr used it, why it was 'ad hoc', and how de Broglie's standing waves turned it into a consequence (this bridge is also where the defects discussion begins).",
+    "### Bohr's use of the postulate",
+    "Combined with the classical force condition $\\frac{mv^{2}}{r}=\\frac{kZe^{2}}{r^{2}}$, the quantisation rule fixes the allowed orbits: eliminating v gives $r_{n}=\\frac{n^{2}h^{2}\\varepsilon_{0}}{\\pi m e^{2}Z}$ (numerically 0.529 n²/Z Å) and $v_{n}=\\frac{2\\pi ke^{2}Z}{nh}$. Without the rule, classical mechanics permits a continuum of orbits and no discrete spectrum.",
+    "### Why it was a defect",
+    "The rule was *imposed*, not derived — no classical argument forces the angular momentum to come in packets of ħ. Critics (and Bohr himself) treated it as an arbitrary rule that happened to work. This is defect 'ad hoc postulates' in the limitations list.",
+    "### de Broglie's rescue (1924)",
+    "If the electron is a wave of wavelength λ = h/mv, a stable orbit must be a **standing wave**: the circumference must contain a whole number of wavelengths, nλ = 2πr. Substituting λ gives n(h/mv) = 2πr → mvr = nh/2π — Bohr's condition *derived*, not assumed. For other orbits the wave interferes destructively with itself and the state is forbidden.",
+    "### The remaining problem",
+    "Even with de Broglie's justification, the orbit picture keeps a definite trajectory (definite r and p), which the uncertainty principle forbids — so the standing-wave argument is the *bridge* from Bohr to Schrödinger, not the destination: the wave must be treated in three dimensions, giving orbitals.",
+    "### Check the numbers",
+    "n = 1: mvr = h/2π = 1.055 × 10⁻³⁴ J s. Circumference 2πr₁ = 3.32 × 10⁻¹⁰ m and λ = h/mv = 3.32 × 10⁻¹⁰ m — exactly one wavelength fits the first orbit; n = 2 fits two, and so on. The integer n literally counts the waves around the orbit."
   ],
   "confusion": [
-    "❌ Misconception about 07 bohr quantization of angular momentum. ✅ Scientific explanation."
+    "❌ Bohr derived his quantisation from classical mechanics. ✅ He postulated it; de Broglie justified it in 1924.",
+    "❌ A non-integer number of waves still gives a stable orbit. ✅ Destructive interference destroys the wave; only nλ = 2πr orbits survive.",
+    "❌ Standing waves remove the uncertainty objection. ✅ They justify quantisation but keep the trajectory idea; Schrödinger's orbitals are needed for that."
   ],
   "practice": [
-    "Practice exercise for 07 bohr quantization of angular momentum."
-  ],
-  "universalFacts": [
-    "Universal scientific fact for 07 bohr quantization of angular momentum."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Real-world example of 07 bohr quantization of angular momentum."
-  ],
-  "practiceQuestions": [
-    "Practice question for 07 bohr quantization of angular momentum."
+    "Show that the standing-wave condition nλ = 2πr leads to Bohr's quantisation of angular momentum.",
+    "Verify numerically that exactly one de Broglie wavelength fits the first Bohr orbit of hydrogen.",
+    "Why was mvr = nh/2π considered a defect of the theory?",
+    "How does the uncertainty principle still limit the standing-wave picture?"
   ],
   "formulas": [
-    "$F = m \\cdot a$ (relevant formula for 07 bohr quantization of angular momentum)"
+    "$$n\\lambda=2\\pi r\\ \\text{with }\\lambda=\\frac{h}{mv}\\ \\Rightarrow\\ mvr=\\frac{nh}{2\\pi}$$",
+    "$$\\lambda=\\frac{h}{mv}=\\frac{3.32\\times10^{-10}\\ \\text{m for }n=1\\ (\\text{H})}{}$$"
   ],
-  "keyPoints": [
-    "Core point for 07 bohr quantization of angular momentum."
+  "universalFacts": [
+    "One full matter wave fits the n = 1 orbit of hydrogen; n counts the waves.",
+    "de Broglie proposed matter waves in his 1924 thesis; the Davisson–Germer diffraction (1927) confirmed them.",
+    "Bohr's postulate predates de Broglie's derivation by 11 years — the clearest example of a successful ad hoc rule in physics."
   ],
-  "summary": "Summary of 07 bohr quantization of angular momentum.",
-  "specialNotes": [
-    "Specialized insight for 07 bohr quantization of angular momentum."
-  ],
-  "importantStatements": [
-    "Key statement for 07 bohr quantization of angular momentum."
+  "examples": [
+    "**Problem:** Compute the electron's de Broglie wavelength in the n = 1 orbit (v = 2.18 × 10⁶ m s⁻¹). **Solution:** λ = h/mv = 6.626×10⁻³⁴/(9.11×10⁻³¹ × 2.18×10⁶) = 3.33 × 10⁻¹⁰ m = 2πr₁ (r₁ = 0.529 Å) — the standing-wave condition verified."
   ],
   "importantNotes": [
-    "Important note regarding 07 bohr quantization of angular momentum."
+    "This tab is the standard answer to 'justify Bohr's second postulate'.",
+    "State clearly that the justification is de Broglie's, not Bohr's own."
   ],
-  "examShortTricks": [
-    "Recall the formula for Bohr's Atomic Model — Quantization of Angular Momentum."
-  ],
-  "examNotes": [
-    "Focus on Bohr's Atomic Model — Quantization of Angular Momentum problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 07 bohr quantization of angular momentum?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 07 bohr quantization of angular momentum."
-  ],
-  "importantTasks": [
-    "Task for studying 07 bohr quantization of angular momentum."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "07-bohr-quantization-of-angular-momentum",
   "mcqs": [
     {
-      "question": "Question about 07 bohr quantization of angular momentum?",
+      "question": "The standing-wave condition for a stable orbit is:",
       "options": [
-        "A",
-        "B",
-        "C",
-        "D"
+        "nλ = πr",
+        "nλ = 2πr",
+        "λ = 2πr/n²",
+        "nλ = 4πr"
       ],
-      "answer": "A"
+      "answer": "B"
     }
-  ]
+  ],
+  "visualType": "bohr-model",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "07-bohr-quantization-of-angular-momentum.json"
 }

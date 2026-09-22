@@ -1,220 +1,68 @@
 {
-  "title": "Bohr's Atomic Model — Absorption vs Emission",
+  "title": "Absorption and Emission Spectra — Bohr's Explanation",
   "unitSlug": "atomic-structure",
   "topicSlug": "postulates-of-bohr-s-atomic-model-and-its-application",
   "topicTitle": "Postulates of Bohr's atomic model and its application",
-  "relevance": 83,
+  "relevance": 85,
   "notes": [
-    "Rutherford's model: nucleus existence via α-scattering.",
-    "Bohr's model: quantized energy levels, atomic stability.",
-    "Wave-particle duality (de Broglie), Uncertainty Principle (Heisenberg)."
+    "### Focus of this tab",
+    "How Bohr's frequency condition produces the two kinds of line spectra, why absorption lines and emission lines fall at the *same* wavelengths, and where each spectrum is used. Complements the main postulates tab.",
+    "### Emission spectrum (bright lines)",
+    "Atoms are excited — by a flame, discharge tube, or collision — to higher levels n₂. The electron falls back to a lower level n₁ and emits one photon per jump with $h\\nu=E_{2}-E_{1}$. The spectrum is a set of bright lines on a dark background: each line = one allowed transition. In a discharge tube both atoms and electrons collide, so many levels are populated and several series appear at once.",
+    "### Absorption spectrum (dark lines)",
+    "Cool gas (ground-state atoms) is placed in front of a continuous white-light source. The atoms absorb only those photons whose energy exactly equals a level gap from the populated (usually ground) state: the transmitted light is missing those wavelengths — dark lines on a bright continuum. Fraunhofer's solar lines are exactly this: the cool solar atmosphere absorbing against the hot photosphere.",
+    "### Why the lines coincide",
+    "The same energy difference E₂ − E₁ is involved in both directions, so absorption and emission lines fall at identical wavelengths (Kirchhoff's law). The *pattern* differs, though: absorption requires the lower level to be populated, so absorption lines start mainly from the ground state (only the Lyman series in cold hydrogen gas), while emission can populate every series (Lyman, Balmer, Paschen …).",
+    "### Energy-level diagram language",
+    "Vertical arrows up = absorption; arrows down = emission. The ground level is the zero-height reference; higher levels crowd together as n grows; the n = ∞ limit is the ionisation continuum. Every allowed jump must obey the selection Δn = any (Bohr) — quantum mechanics later restricts it by Δl = ±1.",
+    "### Applications",
+    "• Chemical analysis: every element's line pattern is unique → qualitative and quantitative spectroscopy (flame tests, AAS, ICP).",
+    "• Astronomy: composition, temperature and Doppler velocity of stars from line positions and shifts; redshift of galaxies.",
+    "• Lasers: population inversion and stimulated emission between discrete levels (He–Ne 632.8 nm).",
+    "• Neon signs, fireworks and street lamps: line colours of excited atoms (Ne red-orange, Na yellow D-line 589 nm)."
   ],
   "confusion": [
-    "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
-    "❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons.",
-    "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals).",
-    "❌ Heisenberg uncertainty means we cannot measure position and momentum precisely simultaneously — not that we lack good instruments.",
-    "❌ de Broglie wavelength applies only to light. ✅ All matter has wave nature; detectable mainly for small masses like electrons.",
-    "❌ Quantum number l can be any integer. ✅ l ranges from 0 to n−1.",
-    "❌ Magnetic quantum number ml determines energy. ✅ ml determines orbital orientation, not energy (in absence of magnetic field).",
-    "❌ Spin quantum number ms can be ±½ or any value. ✅ ms is always +½ or −½.",
-    "❌ Aufbau principle means filling from bottom to top of the diagram. ✅ Fill lowest-energy orbitals first: 1s→2s→2p→3s→3p→4s→3d→4p→...",
-    "❌ Pauli exclusion allows two electrons per orbital with any spin. ✅ Two electrons in same orbital must have opposite spins.",
-    "❌ Hund's rule means pair electrons before spreading. ✅ Electrons fill degenerate orbitals singly first with parallel spins.",
-    "❌ The mole is just a number like dozen. ✅ 1 mole = 6.022×10²³ particles (Avogadro constant) — a bridge between atomic and macroscopic scales.",
-    "❌ Molar mass and molecular mass are the same thing. ✅ Molecular mass is in amu; molar mass is in g/mol — numerically equal but different units.",
-    "❌ Limiting reagent is the reactant with smallest mass. ✅ Limiting reagent is the one that produces the least product (determined by moles, not mass).",
-    "❌ % yield can exceed 100%. ✅ % yield >100% indicates impure product or incomplete drying.",
-    "❌ Molarity and molality are the same. ✅ Molarity = mol/L solution (changes with T); Molality = mol/kg solvent (temperature-independent).",
-    "❌ A strong acid completely ionizes in water. ✅ Strong acids (HCl, HNO₃, H₂SO₄) are ~100% ionized; weak acids partially ionize.",
-    "❌ pH can be negative. ✅ pH < 0 is possible for concentrations >1M (e.g., 2M HCl has pH ≈ −0.3).",
-    "❌ Kc changes when concentration changes. ✅ Kc is constant at constant temperature; only temperature changes K.",
-    "❌ Adding catalyst shifts equilibrium position. ✅ Catalyst speeds both forward and backward reactions equally; no shift in equilibrium.",
-    "❌ High pressure always favors products. ✅ High pressure favors side with fewer gas moles (Le Chatelier).",
-    "❌ Exothermic reactions are spontaneous. ✅ Spontaneity depends on ΔG = ΔH − TΔS, not just ΔH.",
-    "❌ Endothermic reactions cannot be spontaneous. ✅ Endothermic reactions can be spontaneous if TΔS > ΔH (e.g., ice melting above 0°C).",
-    "❌ ΔH and ΔU are always the same. ✅ ΔH = ΔU + PΔV; they differ when gas moles change.",
-    "❌ Heat (q) and work (w) are state functions. ✅ q and w are path functions; only ΔU, ΔH, ΔS, ΔG are state functions.",
-    "❌ Oxidation and reduction happen separately. ✅ Oxidation and reduction always occur together (redox).",
-    "❌ Oxidizing agent gets oxidized. ✅ Oxidizing agent accepts electrons and gets reduced.",
-    "❌ Reducing agent gets reduced. ✅ Reducing agent donates electrons and gets oxidized.",
-    "❌ Faraday's laws apply only to metals. ✅ Faraday's laws apply to any substance deposited/dissolved at electrodes.",
-    "❌ Real gases obey PV=nRT at all conditions. ✅ Real gases deviate at high pressure and low temperature.",
-    "❌ van der Waals constants a and b are same for all gases. ✅ a (attraction) and b (volume) are gas-specific.",
-    "❌ Surface tension increases with temperature. ✅ Surface tension decreases as temperature increases.",
-    "❌ Viscosity decreases with temperature for liquids. ✅ Viscosity of liquids decreases with T; gases increase with T.",
-    "❌ Colligative properties depend on nature of solute. ✅ Colligative properties depend only on number of particles, not identity.",
-    "❌ Raoult's law applies to all solutions. ✅ Raoult's law is exact for ideal solutions; approximate for dilute real solutions.",
-    "❌ Osmotic pressure is a colligative property. ✅ Yes — π = CRT depends on solute particle concentration.",
-    "❌ Atomic number equals mass number. ✅ Atomic number = protons; mass number = protons + neutrons.",
-    "❌ Bohr model explains all atoms. ✅ Bohr model works only for hydrogen-like (one-electron) systems."
+    "❌ Absorption lines are produced when atoms emit energy. ✅ They appear when atoms *remove* matching photons from a continuous beam.",
+    "❌ Absorption and emission lines occur at different wavelengths. ✅ They coincide; only the pattern/populated series differ.",
+    "❌ A ground-state hydrogen atom can emit any Balmer line. ✅ Emission requires prior excitation; a ground-state atom can only absorb (Lyman lines)."
   ],
   "practice": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice calculating de Broglie wavelength for electrons, protons, and alpha particles.",
-    "Practice calculating energy of photon from frequency and wavelength."
-  ],
-  "universalFacts": [
-    "Bohr model won him the 1922 Nobel Prize in Physics."
-  ],
-  "animation3D": "chemistry",
-  "motionGraphics": "chemistry",
-  "examples": [
-    "Calculate wavelength of photon emitted when electron jumps from n=3 to n=2 (Balmer series): λ = 656 nm (red light)"
-  ],
-  "practiceQuestions": [
-    "Practice drawing Lewis structures for ionic and covalent compounds.",
-    "Practice using the mole concept to convert between mass, moles, and particles.",
-    "Practice identifying limiting reagents in stoichiometric calculations.",
-    "Practice calculating percent yield from experimental data.",
-    "Practice converting between molarity and molality.",
-    "Practice writing equilibrium expressions (Kc and Kp) from balanced equations.",
-    "Practice applying Le Chatelier's principle to predict equilibrium shifts.",
-    "Practice calculating pH of strong acid and strong base solutions.",
-    "Practice using pH, pOH, Ka, and Kb relationships.",
-    "Practice calculating ΔH using Hess's law and standard enthalpies of formation.",
-    "Practice determining spontaneity using ΔG = ΔH − TΔS.",
-    "Practice assigning oxidation numbers in compounds and ions.",
-    "Practice balancing redox reactions by ion-electron method.",
-    "Practice calculating cell potential using standard electrode potentials.",
-    "Practice using Faraday's laws to calculate mass deposited during electrolysis.",
-    "Practice applying ideal gas law to find P, V, T, or n.",
-    "Practice calculating rms speed and average kinetic energy of gases.",
-    "Practice distinguishing ideal from real gas behavior using compressibility factor.",
-    "Practice calculating molarity and molality from given data.",
-    "Practice applying Raoult's law to ideal solutions.",
-    "Practice calculating colligative properties (ΔTb, ΔTf, π).",
-    "Practice predicting molecular geometry using VSEPR theory.",
-    "Practice identifying hybridization from molecular geometry.",
-    "Practice drawing resonance structures for common molecules.",
-    "Practice naming alkanes, alkenes, and alkynes using IUPAC rules.",
-    "Practice identifying functional groups in organic molecules.",
-    "Practice writing mechanisms for free radical substitution of alkanes.",
-    "Practice writing mechanisms for electrophilic addition to alkenes.",
-    "Practice predicting products of electrophilic substitution on benzene.",
-    "Practice calculating empirical and molecular formulas from composition data.",
-    "Practice solving gas law problems combining multiple variables.",
-    "Practice calculating bond energy from reaction enthalpies.",
-    "Practice using Born-Haber cycles to calculate lattice energy.",
-    "Practice identifying types of solid-state structures (ionic, molecular, covalent, metallic).",
-    "Practice calculating de Broglie wavelength for electrons, protons, and alpha particles."
+    "Distinguish between emission and absorption spectra with one example each.",
+    "Explain, using Bohr's frequency condition, why absorption and emission lines coincide.",
+    "Why does the absorption spectrum of cold hydrogen show only the Lyman series?",
+    "What are Fraunhofer lines and how are they explained?"
   ],
   "formulas": [
-    "E=hν",
-    "λ=h/mv",
-    "ΔxΔp≥h/4π"
+    "$$h\\nu=E_{2}-E_{1}=13.6\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right)\\ \\text{eV}$$",
+    "$$\\text{emission: }n_{2}\\rightarrow n_{1}\\ (\\downarrow);\\qquad \\text{absorption: }n_{1}\\rightarrow n_{2}\\ (\\uparrow)$$"
   ],
-  "keyPoints": [
-    "Core point for 06 bohr absorption vs emission."
+  "universalFacts": [
+    "The Na D-line at 589 nm is the classic emission/absorption pair — street lamps and the sodium flame test share it.",
+    "Fraunhofer catalogued over 570 solar absorption lines in 1814, decades before Bohr explained them.",
+    "Neon signs glow red-orange from Ne emission lines — pure line spectra in commercial use."
   ],
-  "summary": "The atomic structure evolved from Thomson's plum pudding model to Bohr's quantized model and finally to the quantum mechanical model, explaining spectral lines and stability.",
-  "specialNotes": [
-    "Specialized insight for 06 bohr absorption vs emission."
-  ],
-  "importantStatements": [
-    "Key statement for 06 bohr absorption vs emission."
+  "examples": [
+    "**Problem:** Which line does a hydrogen atom absorb when illuminated with 102.6 nm light? **Solution:** ΔE = 1240/102.6 = 12.09 eV = 13.6(1 − 1/n₂²) → n₂ = 3: the Lyman-β absorption line (1 → 3)."
   ],
   "importantNotes": [
-    "Important note regarding 06 bohr absorption vs emission."
+    "Draw the energy-level diagram with arrows up (absorption) and down (emission) — it is nearly a guaranteed mark.",
+    "State the population condition for absorption lines (lower level must be occupied)."
   ],
-  "examShortTricks": [
-    "Recall the formula for Bohr's Atomic Model — Absorption vs Emission."
-  ],
-  "examNotes": [
-    "Focus on Bohr's Atomic Model — Absorption vs Emission problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Question about 06 bohr absorption vs emission?",
-      "options": [
-        "A",
-        "B",
-        "C",
-        "D"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Key concept 1 for 06 bohr absorption vs emission."
-  ],
-  "importantTasks": [
-    "Task for studying 06 bohr absorption vs emission."
-  ],
-  "duplicateType": 2,
-  "tabGroup": "06-bohr-absorption-vs-emission",
   "mcqs": [
     {
-      "question": "Who proposed the dual nature of matter?",
+      "question": "Fraunhofer lines in the solar spectrum are:",
       "options": [
-        "Planck",
-        "de Broglie",
-        "Bohr",
-        "Heisenberg"
-      ],
-      "answer": "B"
-    },
-    {
-      "question": "The radius of the nth orbit of hydrogen atom is proportional to:",
-      "options": [
-        "n",
-        "n²",
-        "n³",
-        "n⁴"
+        "Emission lines",
+        "Absorption lines",
+        "Band spectra",
+        "Continuous radiation"
       ],
       "answer": "B"
     }
   ],
-  "exercises": [
-    {
-      "id": "ex-1",
-      "question": "Calculate the de Broglie wavelength of an electron moving at 10⁶ m/s.",
-      "steps": [
-        "Formula: λ = h / (m * v)",
-        "Given: h = 6.626 x 10⁻³⁴ J·s, m = 9.11 x 10⁻³¹ kg, v = 10⁶ m/s",
-        "Calculation: λ = 6.626e-34 / (9.11e-31 * 1e6)",
-        "Result: ~7.27 x 10⁻¹⁰ m (or 0.727 nm)"
-      ],
-      "answer": "0.727 nm"
-    }
-  ],
-  "visualization": {
-    "type": "simulation",
-    "component": "RutherfordScatteringSim",
-    "description": "Interactive visualization of α-particle deflection by the nucleus."
-  },
-  "visualType": "bohr-hydrogen-atom"
+  "visualType": "bohr-model",
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "source": "ravikishan",
+  "duplicateType": 2,
+  "filename": "06-bohr-absorption-vs-emission.json"
 }

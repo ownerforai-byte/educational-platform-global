@@ -1,0 +1,66 @@
+{
+  "title": "Introduction to Unit Crystal Lattice and Unit Cell",
+  "unitSlug": "states-of-matter",
+  "topicSlug": "introduction-to-unit-crystal-lattice-and-unit-cell",
+  "topicTitle": "Introduction to unit crystal lattice and unit cell",
+  "relevance": 100,
+  "notes": [
+    "### 1. Meaning",
+    "A **crystal lattice** is the regular three-dimensional arrangement of points (lattice points) in space at which the constituent particles of a crystal lie. A **unit cell** is the smallest repeating portion of that lattice which, when repeated in three dimensions, generates the whole crystal — it is the building block or 'brick' of the crystal. Lattice + the atoms/ions/molecules at its points = the crystal structure.",
+    "### 2. Lattice parameters and crystal systems",
+    "A unit cell is described by six parameters: the three edge lengths a, b, c and the three interaxial angles α, β, γ. Depending on their relative values, crystals fall into **7 crystal systems** (cubic, tetragonal, orthorhombic, monoclinic, triclinic, hexagonal and rhombohedral) which give **14 Bravais lattices** when the four possible cell centreings are included.",
+    "### 3. Types of unit cell",
+    "• **Primitive (simple) cell:** particles only at the eight corners.",
+    "• **Body-centred cell (BCC):** corners + one particle at the body centre.",
+    "• **Face-centred cell (FCC):** corners + one particle at the centre of each of the six faces.",
+    "• **End/base-centred cell:** corners + particles at the centres of two opposite faces.",
+    "### 4. Share of each particle and atoms per cell",
+    "Because a cell shares its particles with neighbours: a corner particle contributes 1/8, one on an edge 1/4, one on a face 1/2 and one at the body centre 1. Hence the effective number of atoms per unit cell, Z, is 1 for simple cubic, 2 for BCC and 4 for FCC.",
+    "### 5. Geometry of the three cubic cells",
+    "• Simple cubic: coordination number 6, a = 2r, packing efficiency 52.4% (polonium, rarely found).",
+    "• Body-centred cubic: coordination number 8, √3a = 4r, packing efficiency 68% (Na, K, Fe, Cr, W).",
+    "• Face-centred cubic (cubic close-packed): coordination number 12, √2a = 4r, packing efficiency 74% (Cu, Ag, Au, Al, Pb) — the densest possible packing of spheres.",
+    "Density of a crystal follows from the cell contents: $\\rho=\\frac{ZM}{a^{3}N_{A}}$ where M is the molar mass and a the edge length.",
+    "### 6. Meaning and applications of the unit cell",
+    "The unit cell turns the microscopic structure into measurable quantities: from the edge length (measured by X-ray diffraction) and the cell contents, the **density** and the **Avogadro constant** can be determined; the cell also explains why FCC metals (Cu, Al) are soft and ductile while BCC metals (Fe, W) are stronger, why some crystals cleave along definite planes, and how doping works — substitutional or interstitial foreign atoms in the silicon lattice create n-type and p-type semiconductors.",
+    "Other applications: identification and purity testing of minerals, alloys and pharmaceutical polymorphs by X-ray diffraction; design of alloys and ceramics; gemstone identification; and understanding of ionic conductivity and diffusion in solids.",
+    "### 7. Limitations",
+    "The ideal lattice model is an idealisation: real crystals contain point defects (Schottky and Frenkel defects, vacancies, interstitials) and extended defects (dislocations, grain boundaries) that control important properties such as ionic conductivity, mechanical strength and colour, but are absent from the perfect-cell picture. The hard-sphere model treats atoms as rigid touching spheres, whereas electron density is diffuse and atoms are not hard spheres, so packing-efficiency values are approximate. The model describes only periodic structures — quasicrystals and modulated structures have no single repeating cell, and in solid solutions or alloys the cell parameters vary continuously with composition rather than having a fixed value for a 'unit cell'. Finally, the unit cell gives no direct information about bonding or electronic band structure."
+  ],
+  "confusion": [
+    "❌ A unit cell is the same as a crystal lattice. ✅ The lattice is the array of points; the unit cell is the smallest repeating block of that lattice with its contents.",
+    "❌ A corner atom belongs entirely to one unit cell. ✅ It is shared by eight cells, so it contributes only 1/8.",
+    "❌ BCC and FCC have the same number of atoms per cell. ✅ BCC has Z = 2, FCC has Z = 4 and simple cubic Z = 1.",
+    "❌ The closest packing of equal spheres reaches 100%. ✅ The maximum (FCC/HCP) is 74%; simple cubic reaches only 52.4%.",
+    "❌ Unit cell dimensions cannot be measured. ✅ They are measured routinely from X-ray diffraction patterns using Bragg's law."
+  ],
+  "practice": [
+    "Define crystal lattice, unit cell and lattice parameters.",
+    "List the seven crystal systems and state the relationship between the number of Bravais lattices and them.",
+    "Calculate the number of atoms per unit cell for simple cubic, BCC and FCC lattices, showing the share of corner, face and body-centre particles.",
+    "Derive the relation between edge length and atomic radius for BCC and FCC cells.",
+    "The edge length of a FCC unit cell of copper is 361 pm; calculate the density of copper (M = 63.5 g mol⁻¹).",
+    "State the limitations of the ideal unit-cell model."
+  ],
+  "formulas": [
+    "$$\\text{Particles per cell: corner }\\frac{1}{8},\\ \\text{edge }\\frac{1}{4},\\ \\text{face }\\frac{1}{2},\\ \\text{body }1$$",
+    "$$\\text{SC: }a=2r,\\ Z=1,\\ 52.4\\%;\\quad \\text{BCC: }\\sqrt{3}a=4r,\\ Z=2,\\ 68\\%;\\quad \\text{FCC: }\\sqrt{2}a=4r,\\ Z=4,\\ 74\\%$$",
+    "$$\\rho=\\frac{ZM}{a^{3}N_{A}},\\qquad n\\lambda=2d\\sin\\theta\\ (\\text{Bragg})$$"
+  ],
+  "universalFacts": [
+    "Seven crystal systems combine with four centering types to give 14 Bravais lattices.",
+    "Coordination numbers: simple cubic 6, BCC 8, FCC (and HCP) 12.",
+    "Polonium is the standard 'real-life' example of a simple cubic metal; NaCl crystallises in a face-centred cubic array of ions."
+  ],
+  "examples": [
+    "**Problem:** Copper (FCC, a = 361 pm, M = 63.5 g mol⁻¹) — find the density. **Solution:** Z = 4; ρ = ZM/(a³N_A) = (4 × 63.5)/((3.61×10⁻⁸ cm)³ × 6.022×10²³) ≈ 8.97 g cm⁻³, matching the known value for copper.",
+    "**Problem:** Show that the radius of an atom in a BCC lattice is r = √3a/4. **Solution:** along the body diagonal of length √3a, the atoms touch: √3a = 4r, hence r = √3a/4 ≈ 0.433a."
+  ],
+  "importantNotes": [
+    "Quote the sharing fractions (1/8, 1/4, 1/2, 1) and Z values 1, 2, 4 — these are the most frequently asked points.",
+    "Use consistent units in the density formula: a³ in cm³ with N_A per mole gives g cm⁻³.",
+    "For any structural question, identify the lattice type first, then the values Z, r and packing efficiency follow."
+  ],
+  "visualType": "unit-cell",
+  "tabGroup": "States-Of-Matter-Learner-Notes"
+}
