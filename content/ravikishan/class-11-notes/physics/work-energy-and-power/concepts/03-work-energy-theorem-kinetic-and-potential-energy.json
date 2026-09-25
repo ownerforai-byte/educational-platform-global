@@ -43,6 +43,29 @@
   ],
   "animation3D": "work-energy-and-power",
   "motionGraphics": "work-energy-and-power",
+  "nepali": {
+    "notes": [
+      "**कार्य (Work) को परिभाषा (स्थिर बल):** $W = F s \\cos\\theta$, जहाँ $F$ स्थिर बलको परिमाण हो, $s$ विस्थापन हो, र $\\theta$ बल र विस्थापन वेक्टर बिचको कोण हो। कार्य एक अदिश (scalar) मात्रा हो - यसमा परिमाण छ तर दिशा छैन।",
+      "**कार्यको चिन्ह (Sign):** कार्य **सकारात्मक (positive)** हुन्छ जब $0^\\circ \\le \\theta < 90^\\circ$ (बलको घटक विस्थापनको दिशामा)। कार्य **शून्य (zero)** हुन्छ जब $\\theta = 90^\\circ$ (बल विस्थापनको लम्बको, जस्तै: केन्द्राभिमुख बल, समतल सतहमा सामान्य बल)। कार्य **नकारात्मक (negative)** हुन्छ जब $90^\\circ < \\theta \\le 180^\\circ$ (बल विस्थापनको विपरीत, जस्तै: गतिज घर्षण, उठाउदा गुरुत्वाकर्षण)।",
+      "**स्थिर बलबाट कार्य:** $W = F s \\cos\\theta$ (सरल गुणनफल)। **परिवर्ती बलबाट कार्य:** $W = \\int F(x) dx$ (वक्रतलको क्षेत्रफल)। दुवै सामान्य परिभाषा $W = \\int \\vec{F} \\cdot d\\vec{r}$ को विशेष अवस्थाहरू हुन्।"
+    ],
+    "importantStatements": [
+      "कार्य भनेको बलले विस्थापन गर्ने क्रममा गरिएको ऊर्जा हस्तान्तरण हो।",
+      "एक जुल (1 J) भनेको 1 न्यूटन बलले 1 मिटर विस्थापन गर्ने क्रममा गरिएको कार्य हो।",
+      "कार्य-ऊर्जा प्रमेय: $W_{\\text{net}} = \\Delta K = \\frac{1}{2}mv_f^2 - \\frac{1}{2}mv_i^2$।"
+    ]
+  },
+  "grammar": {
+    "notes": [
+      "Work (noun): energy transfer by force. Uncountable in physics context.",
+      "Work (verb): to exert force causing displacement.",
+      "Work done (passive): the work performed by a force."
+    ],
+    "importantStatements": [
+      "In physics, 'work' has a precise mathematical definition: $W = \\int \\vec{F} \\cdot d\\vec{r}$.",
+      "The everyday meaning of 'work' (effort, employment) differs from the physics definition."
+    ]
+  },
   "duplicateType": 2,
   "tabGroup": "work-done-by-constant-and-variable-force"
 }
