@@ -81,5 +81,30 @@
   "importantTasks": [
     "Solve 5 problems on Power."
   ],
+  "nepali": {
+    "notes": [
+      "**शक्ति (Power):** कक्षा ११ को अवधारणा।",
+      "**किन:** यो अन्य विषयहरूसँग जोडिन्छ।",
+      "**अध्ययन:** परिभाषाहरू, सूत्रहरू सिक्नुहोस्, अभ्यास गर्नुहोस्।"
+    ],
+    "importantStatements": [
+      "शक्ति भनेको कार्य गर्ने दर हो: P = dW/dt = F·v।",
+      "शक्तिको SI एकाइ वाट (W) हो: 1 W = 1 J/s।",
+      "स्थिर बल र वेगको लागि: P = Fv cos θ (डट उत्पादन)।",
+      "औसत शक्ति = कुल कार्य / कुल समय; तत्काल शक्ति = त्यस क्षणमा F·v।",
+      "घूर्णन गतिमा: P = τω (टर्क × कोणीय वेग)।"
+    ]
+  },
+  "grammar": {
+    "notes": [
+      "Power (noun): rate of doing work. Plural: powers.",
+      "Powerful (adjective): having great power."
+    ],
+    "importantStatements": [
+      "In physics, 'power' is a scalar quantity, not a vector.",
+      "The term 'power' is often used in common parlance, but has a precise scientific definition."
+    ]
+  },
+
   "duplicateType": 1
 }
