@@ -1,6 +1,7 @@
 import { getTheoremIndex } from "@/lib/theorems";
 import { getDerivationIndex } from "@/lib/derivations";
 import { HomeCommandCenter } from "@/components/home/home-command-center";
+import { HomeIntroduction } from "@/components/home/home-introduction";
 import { HomePortals } from "@/components/home/home-portals";
 
 export const metadata = {
@@ -37,6 +38,9 @@ export default async function HomePage() {
         totalTheorems={theoremEntries.length}
         totalDerivations={derivationEntries.length}
       />
+
+      {/* Welcome introduction: the platform story + 4-step learning journey */}
+      <HomeIntroduction />
 
       {/* Compact gateway: every other section lives on its own hub page */}
       <HomePortals />
