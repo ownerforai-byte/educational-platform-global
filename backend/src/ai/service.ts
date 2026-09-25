@@ -1,4 +1,5 @@
 import { supabaseAdmin } from "../db/supabase";
+import { PUBLIC_SITE_URL } from "../config/env";
 import { getSearchService } from "./search-engine";
 
 /**
@@ -6,7 +7,7 @@ import { getSearchService } from "./search-engine";
  * provider attribution headers. Set FRONTEND_URL in backend/.env (no trailing
  * slash). Falls back to the deployed frontend URL when unset.
  */
-const SITE = (process.env.FRONTEND_URL || "https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app").replace(/\/$/, "");
+const SITE = (process.env.FRONTEND_URL || PUBLIC_SITE_URL).replace(/\/$/, "");
 
 export type SupportedProvider = "openrouter" | "internal" | "agnes";
  

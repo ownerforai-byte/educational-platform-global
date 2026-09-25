@@ -1,5 +1,6 @@
 ﻿import { Router, Request, Response } from "express";
 import { createAIService } from "../ai/service";
+import { PUBLIC_SITE_URL } from "../config/env";
 import { supabaseAdmin } from "../db/supabase";
 
 interface DbClass {
@@ -129,7 +130,7 @@ router.post("/", async (req: Request, res: Response) => {
       .select("key, value")
       .eq("key", "officialLink");
 
-    const officialLink = settingsData?.[0]?.value ?? (process.env.FRONTEND_URL || "https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app");
+    const officialLink = settingsData?.[0]?.value ?? (process.env.FRONTEND_URL || PUBLIC_SITE_URL);
 
     res.json({
       query,

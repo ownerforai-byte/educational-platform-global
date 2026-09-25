@@ -104,7 +104,7 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     // Guard: the keyword-based internal engine would echo links/quick-takes
     // instead of rewriting — treat those as "no LLM available".
     const looksInternal =
-      text.includes("ravikisan-7phkshvvk-ownerforai-byte") ||
+      text.includes("ravikisan.vercel.app") ||
       text.startsWith("Quick take:") ||
       text.includes("isn't in the vault");
     if (!text || looksInternal) {
