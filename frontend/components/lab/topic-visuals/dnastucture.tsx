@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -36,19 +37,43 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
-function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
+function addLabel(scene: THREE.Scene, meshes: THREE.Object3D[], labelSprites: THREE.Sprite[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
   const dir = targetPos.clone().sub(labelPos).normalize();
   const len = labelPos.distanceTo(targetPos);
-  meshes.push(new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14) as any);
+  const line = new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14);
+  scene.add(line);
+  meshes.push(line);
   const lp = labelPos.clone().sub(dir.clone().multiplyScalar(0.45));
-  meshes.push(mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85));
+  const s = mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85);
+  scene.add(s);
+  meshes.push(s);
+  labelSprites.push(s);
 }
 
 export function DNAStructureVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [rotationSpeed, setRotationSpeed] = useState(0.5);
+  const [turns, setTurns] = useState(2);
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const bpPerTurn = 22 / turns;
+  const winding = turns <= 1.2 ? "Extended — few turns, grooves wide open" : turns <= 2.2 ? "B-DNA look — the Watson–Crick standard" : "Over-wound — compact, supercoiled-like packing";
+
+  const presets: ScenePreset[] = [
+    { name: "Unwound ladder", hint: "One full turn: easy to count rungs and see base pairing.", apply: () => { setTurns(1); setRunId((r) => r + 1); } },
+    { name: "B-DNA classic", hint: "The physiological form — right-handed, ~10.5 bp per turn.", apply: () => { setTurns(2); setRunId((r) => r + 1); } },
+    { name: "Supercoiled tight", hint: "DNA is over-wound in cells by topoisomerases to fit in chromatin.", apply: () => { setTurns(3.5); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setTurns(2);
+    setRotationSpeed(0.5);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -58,6 +83,7 @@ export function DNAStructureVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -78,7 +104,7 @@ export function DNAStructureVisual() {
       controls.autoRotateSpeed = rotationSpeed;
       controls.minDistance = 4;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dl = new THREE.DirectionalLight(0xffffff, 0.9);
@@ -109,7 +135,7 @@ export function DNAStructureVisual() {
       // Create backbone and base pairs
       for (let i = 0; i < totalPairs; i++) {
         const t = i / totalPairs;
-        const angle = t * Math.PI * 4;
+        const angle = t * Math.PI * 2 * turns;
         const y = (t - 0.5) * 6;
 
         // Left backbone strand
@@ -136,7 +162,7 @@ export function DNAStructureVisual() {
 
         // Connecting backbone tube segment
         const nextT = (i + 1) / totalPairs;
-        const nextAngle = nextT * Math.PI * 4;
+        const nextAngle = nextT * Math.PI * 2 * turns;
         const nextY = (nextT - 0.5) * 6;
         const nlx = Math.cos(nextAngle) * 1.2;
         const nlz = Math.sin(nextAngle) * 1.2;
@@ -188,7 +214,7 @@ export function DNAStructureVisual() {
       const labelInterval = Math.floor(totalPairs / 4);
       for (let i = 0; i < totalPairs; i += labelInterval) {
         const t = i / totalPairs;
-        const angle = t * Math.PI * 4;
+        const angle = t * Math.PI * 2 * turns;
         const y = (t - 0.5) * 6;
         const lx = Math.cos(angle) * 1.2;
         const lz = Math.sin(angle) * 1.2;
@@ -197,21 +223,23 @@ export function DNAStructureVisual() {
         // Label one base pair
         const labelPos = new THREE.Vector3(lx + 1.5, y, lz);
         const targetPos = new THREE.Vector3(lx, y, lz);
-        addLabel(meshes, `${bp.left}=${bp.right}`, BASE_COLORS[bp.left as keyof typeof BASE_COLORS], labelPos, targetPos);
+        addLabel(scene, meshes, labelSprites, `${bp.left}=${bp.right}`, BASE_COLORS[bp.left as keyof typeof BASE_COLORS], labelPos, targetPos);
       }
 
       // Backbone label
-      addLabel(meshes, "Sugar-Phosphate Backbone", 0x94a3b8,
+      addLabel(scene, meshes, labelSprites, "Sugar-Phosphate Backbone", 0x94a3b8,
         new THREE.Vector3(2.5, 2.5, 2),
         new THREE.Vector3(Math.cos(Math.PI * 2) * 1.2, 2, Math.sin(Math.PI * 2) * 1.2));
-      addLabel(meshes, "Complementary Base Pairs\n(A=T, G≡C)", 0xfbbf24,
+      addLabel(scene, meshes, labelSprites, "Complementary Base Pairs\n(A=T, G≡C)", 0xfbbf24,
         new THREE.Vector3(-3.5, 0, 2.5),
         new THREE.Vector3(0, 0, 0));
-      addLabel(meshes, "Hydrogen Bonds", 0xfbbf24,
+      addLabel(scene, meshes, labelSprites, "Hydrogen Bonds", 0xfbbf24,
         new THREE.Vector3(2.5, -2, -2),
         new THREE.Vector3(0, -2, 0));
 
       push(mkSprite("DNA — Double Helix Structure", "#fbbf24", new THREE.Vector3(0, 4.0, 0), 0.85));
+
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -250,7 +278,7 @@ export function DNAStructureVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [rotationSpeed, isWebGL]);
+  }, [rotationSpeed, turns, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="DNA Structure" description="3D double helix with base pair annotations." />;
@@ -265,6 +293,14 @@ export function DNAStructureVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-blue-500/50 bg-blue-500/10 text-blue-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Rotation Speed">
           <div className="flex gap-3 mt-2">
             <div className="w-24">
@@ -278,6 +314,14 @@ export function DNAStructureVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid items={[
+          { label: "Winding", value: winding, highlight: true },
+          { label: "Helical turns", value: `${turns} × over 22 bp shown` },
+          { label: "≈ bp per turn", value: bpPerTurn.toFixed(1) },
+          { label: "Base pairing", value: "A=T (2 H-bonds) · G≡C (3 H-bonds)" },
+          { label: "Strands", value: "Antiparallel 5'→3' / 3'→5'" },
+        ]} />
 
         <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-blue-400">Key Concepts</p>

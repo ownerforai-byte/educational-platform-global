@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
@@ -36,7 +37,35 @@ export function VBTVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [overlap, setOverlap] = useState<OverlapType>("sigma");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const OVERLAP_INFO: Record<OverlapType, { mode: string; overlap: string; strength: string; foundIn: string }> = {
+    sigma: { mode: "Head-on (s–s)", overlap: "along bond axis", strength: "Strong", foundIn: "Every single bond" },
+    pi: { mode: "Side-by-side (p–p)", overlap: "above/below axis", strength: "Weaker", foundIn: "Double & triple bonds" },
+  };
+  const info = OVERLAP_INFO[overlap];
+
+  const DEFAULTS = { overlap: "sigma" as OverlapType };
+  const presets: ScenePreset[] = [
+    {
+      name: "σ (sigma) bond",
+      hint: "Head-on overlap on the bond axis — the strongest covalent bond.",
+      apply: () => { setOverlap("sigma"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "π (pi) bond",
+      hint: "p orbitals overlap sideways, above and below the nodal plane.",
+      apply: () => { setOverlap("pi"); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setOverlap(DEFAULTS.overlap);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -46,6 +75,7 @@ export function VBTVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -66,7 +96,7 @@ export function VBTVisual() {
       controls.autoRotateSpeed = 0.3;
       controls.minDistance = 3;
       controls.maxDistance = 15;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -74,6 +104,7 @@ export function VBTVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
       const clearDynamic = () => {
         while (meshes.length > 2) {
           const m = meshes.pop()!;
@@ -118,7 +149,7 @@ export function VBTVisual() {
         push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(axisPoints), new THREE.LineBasicMaterial({ color: 0x94a3b8, transparent: true, opacity: 0.5 })));
 
         // Label
-        push(mkSprite("s-s Sigma (sigma) Bond: Head-on overlap", "#22c55e", new THREE.Vector3(0, -2.0, 0), 0.9));
+        addLabel(mkSprite("s-s Sigma (sigma) Bond: Head-on overlap", "#22c55e", new THREE.Vector3(0, -2.0, 0), 0.9));
       };
 
       const buildPi = () => {
@@ -170,11 +201,13 @@ export function VBTVisual() {
         const axisPoints = [new THREE.Vector3(-2.5, 0, 0), new THREE.Vector3(2.5, 0, 0)];
         push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(axisPoints), new THREE.LineBasicMaterial({ color: 0x94a3b8, transparent: true, opacity: 0.5 })));
 
-        push(mkSprite("p-p Pi (pi) Bond: Side-by-side overlap", "#f472b6", new THREE.Vector3(0, -2.0, 0), 0.9));
+        addLabel(mkSprite("p-p Pi (pi) Bond: Side-by-side overlap", "#f472b6", new THREE.Vector3(0, -2.0, 0), 0.9));
       };
 
       const builders: Record<OverlapType, () => void> = { sigma: buildSigma, pi: buildPi };
+      labelSprites.length = 0;
       builders[overlap]();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -211,7 +244,7 @@ export function VBTVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [overlap, isWebGL]);
+  }, [overlap, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Valence Bond Theory" description="Orbital overlap visualization — requires WebGL." />;
@@ -226,6 +259,13 @@ export function VBTVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-pink-500/50 bg-pink-500/10 text-pink-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
         <CollapsibleControls label="Bond Type">
           <div className="flex gap-2 mt-1">
             {([
@@ -247,6 +287,14 @@ export function VBTVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+        <ReadoutGrid
+          items={[
+            { label: "Overlap mode", value: info.mode },
+            { label: "Overlap region", value: info.overlap },
+            { label: "Strength", value: info.strength, highlight: true },
+            { label: "Found in", value: info.foundIn },
+          ]}
+        />
         <div className="rounded-lg border border-pink-500/30 bg-pink-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-pink-400">Key Concepts</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">

@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -37,13 +38,80 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
+function addLabel(scene: THREE.Scene, meshes: THREE.Object3D[], labelSprites: THREE.Sprite[], text: string, color: number, pos: THREE.Vector3, scale = 0.8) {
+  const s = mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, pos, scale);
+  scene.add(s);
+  meshes.push(s);
+  labelSprites.push(s);
+}
+
 type SetOp = "union" | "intersection" | "complement" | "subset" | "difference";
+
+const LS_INFO: Record<SetOp, { sym: string; name: string; def: string; identity: string; expr: string; result: number[] }> = {
+  union: {
+    sym: "A ∪ B",
+    name: "Union",
+    def: "All elements that are in A, in B, or in both.",
+    identity: "n(A ∪ B) = n(A) + n(B) − n(A ∩ B)",
+    expr: "{ x : x ∈ A or x ∈ B }",
+    result: [1, 2, 3, 4, 5, 6],
+  },
+  intersection: {
+    sym: "A ∩ B",
+    name: "Intersection",
+    def: "Elements common to both A and B.",
+    identity: "A ∩ B = B ∩ A  (commutative)",
+    expr: "{ x : x ∈ A and x ∈ B }",
+    result: [3, 4],
+  },
+  complement: {
+    sym: "A′",
+    name: "Complement",
+    def: "Everything in the universal set U that is not in A.",
+    identity: "De Morgan: (A ∪ B)′ = A′ ∩ B′",
+    expr: "{ x : x ∈ U and x ∉ A }",
+    result: [5, 6, 7, 8],
+  },
+  subset: {
+    sym: "A ⊆ B",
+    name: "Subset",
+    def: "A is a subset of B when every element of A also lies in B.",
+    identity: "A ⊆ B ⟺ A ∩ B = A ⟺ A ∪ B = B",
+    expr: "∀x (x ∈ A ⇒ x ∈ B)",
+    result: [3, 4],
+  },
+  difference: {
+    sym: "A − B",
+    name: "Difference",
+    def: "Elements in A but not in B (also written A \\ B).",
+    identity: "A − B = A ∩ B′",
+    expr: "{ x : x ∈ A and x ∉ B }",
+    result: [1, 2],
+  },
+};
 
 export function LogicSetVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [op, setOp] = useState<SetOp>("union");
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const info = LS_INFO[op];
+
+  const presets: ScenePreset[] = [
+    { name: "A ∪ B", hint: "Union — everything in either set", apply: () => { setOp("union"); setRunId((r) => r + 1); } },
+    { name: "A ∩ B", hint: "Intersection — the shared overlap", apply: () => { setOp("intersection"); setRunId((r) => r + 1); } },
+    { name: "A′", hint: "Complement — outside A", apply: () => { setOp("complement"); setRunId((r) => r + 1); } },
+    { name: "A − B", hint: "Difference — in A but not B", apply: () => { setOp("difference"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setOp("union");
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -53,6 +121,7 @@ export function LogicSetVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -69,7 +138,7 @@ export function LogicSetVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
       controls.autoRotate = false;
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
@@ -112,14 +181,13 @@ export function LogicSetVisual() {
         );
         push(U);
         push(mkSprite("U", "#94a3b8", new THREE.Vector3(-5.3, 4.3, 0), 0.6));
-
         // Two overlapping ellipses for A and B
         const ellipseA = drawEllipse(-1.5, 0, 2.5, 3.2, 0xef4444, 0.3);
         const ellipseB = drawEllipse(1.5, 0, 2.5, 3.2, 0x3b82f6, 0.3);
 
         // Labels
-        push(mkSprite("A", "#f87171", new THREE.Vector3(-3.5, 2.5, 0.02), 0.8));
-        push(mkSprite("B", "#60a5fa", new THREE.Vector3(3.5, 2.5, 0.02), 0.8));
+        addLabel(scene, meshes, labelSprites, "A", 0xf87171, new THREE.Vector3(-3.5, 2.5, 0.02), 0.8);
+        addLabel(scene, meshes, labelSprites, "B", 0x60a5fa, new THREE.Vector3(3.5, 2.5, 0.02), 0.8);
 
         // Highlight region based on operation
         let highlightColor: number, labelText: string;
@@ -190,10 +258,11 @@ export function LogicSetVisual() {
           (ellipseA.material as THREE.MeshBasicMaterial).opacity = 0.55;
         }
 
-        push(mkSprite(labelText, `#${highlightColor.toString(16).padStart(6, "0")}`, new THREE.Vector3(0, -4.2, 0.02), 0.9));
+        addLabel(scene, meshes, labelSprites, labelText, highlightColor, new THREE.Vector3(0, -4.2, 0.02), 0.9);
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -231,7 +300,7 @@ export function LogicSetVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [op, isWebGL]);
+  }, [op, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Logic & Sets" description="Venn diagram visualization — requires WebGL." />;
@@ -246,6 +315,14 @@ export function LogicSetVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-orange-500/50 bg-orange-500/10 text-orange-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Set Operation">
           <div className="flex flex-wrap gap-2 mt-2">
             {(["union", "intersection", "complement", "subset", "difference"] as SetOp[]).map((o) => (
@@ -265,6 +342,16 @@ export function LogicSetVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Example sets", value: "A = {1,2,3,4}   B = {3,4,5,6}   U = {1..8}" },
+            { label: info.sym, value: `{${info.result.join(", ")}}`, highlight: true },
+            { label: "n(A ∪ B) = n(A)+n(B)−n(A ∩ B)", value: "6 = 4 + 4 − 2" },
+            { label: "Definition", value: info.expr },
+            { label: "Identity / law", value: info.identity },
+          ]}
+        />
 
         <div className="rounded-lg border border-orange-500/30 bg-orange-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-orange-400">Key Concepts</p>

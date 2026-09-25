@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, PlaybackBar, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
@@ -32,11 +33,122 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 type DiffType = "smooth" | "corner" | "cusp" | "vertical_tangent";
 
+const DIFF_INFO: Record<DiffType, { concept: string; formula: string; slopes: string; verdict: string; fact: string; tip: string }> = {
+  smooth: {
+    concept: "Unique tangent line at every point",
+    formula: "f(x) = 0.2x² − 1, f′(x) = 0.4x",
+    slopes: "Secant slopes settle onto one limit everywhere",
+    verdict: "Differentiable on all of ℝ",
+    fact: "Every polynomial is differentiable at every real number — this parabola is the model case.",
+    tip: "Zoom into a smooth curve and it straightens out into its tangent line.",
+  },
+  corner: {
+    concept: "Corner at x = 0",
+    formula: "f(x) = |x| − 2",
+    slopes: "Left derivative = −1, right derivative = +1",
+    verdict: "f′(0) does not exist — one-sided slopes disagree",
+    fact: "|x| is continuous at 0 yet has no derivative there — continuity alone is not enough.",
+    tip: "Differentiable ⇒ continuous, but the converse fails exactly at corners.",
+  },
+  cusp: {
+    concept: "Cusp at x = 0",
+    formula: "f(x) = 1.2·|x|^(2/3) − 2",
+    slopes: "Slope → −∞ (left branch), +∞ (right branch)",
+    verdict: "f′(0) does not exist — difference quotient diverges",
+    fact: "y = x^(2/3) draws a sharp beak at the origin: the tangent flips from side to side.",
+    tip: "The difference quotient 1.2h^(−1/3) grows without bound as h → 0.",
+  },
+  vertical_tangent: {
+    concept: "Vertical tangent at x = 0",
+    formula: "f(x) = 2·∛x",
+    slopes: "f′ → +∞ from BOTH sides",
+    verdict: "Not differentiable at 0 — no finite derivative",
+    fact: "f′(x) = (2/3)x^(−2/3): unbounded as x → 0, which is why the tangent turns vertical.",
+    tip: "Writing f′(0) = ∞ describes the geometry; differentiability demands a finite limit.",
+  },
+};
+
+const absF = (x: number) => Math.abs(x) - 2;
+const cuspF = (x: number) => 1.2 * Math.pow(Math.abs(x), 2 / 3) - 2;
+const cubeF = (x: number) => 2 * Math.cbrt(x);
+
 export function Differentiability3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [diffType, setDiffType] = useState<DiffType>("smooth");
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+  const [playing, setPlaying] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  const playingRef = useRef(true);
+  const speedRef = useRef(1);
+  useEffect(() => { speedRef.current = speed; playingRef.current = playing; }, [speed, playing]);
+
+  const info = DIFF_INFO[diffType];
+
+  const presets: ScenePreset[] = [
+    { name: "Smooth parabola", hint: "Tangent slides — differentiable everywhere", apply: () => { setDiffType("smooth"); setRunId((r) => r + 1); } },
+    { name: "Corner |x|", hint: "LHD = −1 ≠ RHD = +1", apply: () => { setDiffType("corner"); setRunId((r) => r + 1); } },
+    { name: "Cusp x^(2/3)", hint: "Slopes blow up to ±∞", apply: () => { setDiffType("cusp"); setRunId((r) => r + 1); } },
+    { name: "Vertical tangent ∛x", hint: "f′ → +∞ from both sides", apply: () => { setDiffType("vertical_tangent"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setDiffType("smooth");
+    setShowLabels(true);
+    setPlaying(true);
+    setSpeed(1);
+    setRunId((r) => r + 1);
+  };
+
+  const readoutItems = (() => {
+    if (diffType === "smooth") {
+      const f = (x: number) => 0.2 * x * x - 1;
+      const dq = (f(2 + 1e-3) - f(2)) / 1e-3;
+      return [
+        { label: "f(x)", value: "0.2x² − 1" },
+        { label: "f′(x)", value: "0.4x" },
+        { label: "Secant slope, x = 2, h = 0.001", value: dq.toFixed(4) },
+        { label: "f′(2) — exact", value: 0.8, highlight: true },
+        { label: "Verdict", value: "Differentiable everywhere" },
+        { label: "Watch", value: "Tangent slides along the curve and never breaks" },
+      ];
+    }
+    if (diffType === "corner") {
+      const h = 0.001;
+      const lq = (absF(-h) - absF(0)) / -h; // −1
+      const rq = (absF(h) - absF(0)) / h;   // +1
+      return [
+        { label: "f(x)", value: "|x| − 2" },
+        { label: "Left derivative at 0", value: lq.toFixed(3) },
+        { label: "Right derivative at 0", value: `+${rq.toFixed(3)}` },
+        { label: "f′(0)", value: "Does not exist (−1 ≠ +1)", highlight: true },
+        { label: "Continuity", value: "Continuous at 0 — yet not differentiable" },
+        { label: "Theorem", value: "Differentiable ⇒ continuous; converse fails here" },
+      ];
+    }
+    if (diffType === "cusp") {
+      const dq = (h: number) => (cuspF(h) - cuspF(0)) / h; // = 1.2·h^(−1/3)
+      return [
+        { label: "f(x)", value: "1.2·|x|^(2/3) − 2" },
+        { label: "f(0)", value: "−2 (defined)" },
+        { label: "Diff. quotient, h = 0.001", value: dq(0.001).toFixed(1) },
+        { label: "Diff. quotient, h = 10⁻⁶", value: dq(1e-6).toFixed(0) },
+        { label: "f′(0)", value: "Does not exist — quotient → ∞", highlight: true },
+        { label: "Shape", value: "Cusp: tangent flips vertical between branches" },
+      ];
+    }
+    const dq = (h: number) => (cubeF(h) - cubeF(0)) / h; // = 2·h^(−2/3)
+    return [
+      { label: "f(x)", value: "2·∛x" },
+      { label: "f(0)", value: "0 (defined)" },
+      { label: "Diff. quotient, h = 0.001", value: dq(0.001).toFixed(0) },
+      { label: "Diff. quotient, h = 10⁻⁶", value: dq(1e-6).toFixed(0) },
+      { label: "f′(0)", value: "∞ — vertical tangent, not finite", highlight: true },
+      { label: "Continuity", value: "Continuous at 0, derivative still fails" },
+    ];
+  })();
 
 
   useEffect(() => {
@@ -48,6 +160,7 @@ export function Differentiability3D() {
     let frameId: number;
     let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -66,7 +179,7 @@ export function Differentiability3D() {
       controls.enableDamping = true;
       controls.minDistance = 5;
       controls.maxDistance = 25;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
 
@@ -93,11 +206,11 @@ export function Differentiability3D() {
           new THREE.LineBasicMaterial({ color: 0x34d399, transparent: true, opacity: 0.7 })
         );
         push(tangentLine);
-        push(mkSprite("f exists everywhere", "#34d399", new THREE.Vector3(0, -3.5, 0)));
+        push(mkSprite("f′ exists everywhere", "#34d399", new THREE.Vector3(0, -3.5, 0)));
 
         const animate = () => {
           frameId = requestAnimationFrame(animate);
-          animTime += 0.02;
+          if (playingRef.current) animTime += 0.02 * speedRef.current;
           const tx = Math.sin(animTime) * 4;
           const ty = 0.2 * tx * tx - 1;
           tangent.position.set(tx, ty, 0);
@@ -134,7 +247,7 @@ export function Differentiability3D() {
           new THREE.LineBasicMaterial({ color: 0x34d399, transparent: true, opacity: 0.7 })
         );
         push(rightTangent);
-        push(mkSprite("left=-1, right=+1", "#f59e0b", new THREE.Vector3(0, -3.5, 0)));
+        push(mkSprite("LHD = −1, RHD = +1", "#f59e0b", new THREE.Vector3(0, -3.5, 0)));
         push(mkSprite("NOT differentiable", "#f43f5e", new THREE.Vector3(0, -4.2, 0)));
       } else if (diffType === "cusp") {
         push(mkSprite("Cusp: x^(2/3)", "#ec4899", new THREE.Vector3(0, 4.5, 0)));
@@ -170,9 +283,12 @@ export function Differentiability3D() {
         );
         tangentPt.position.set(0, 0, 0);
         push(tangentPt);
-        push(mkSprite("f(0)=inf", "#a78bfa", new THREE.Vector3(1.5, 1.5, 0)));
+        push(mkSprite("f′(0) → ∞", "#a78bfa", new THREE.Vector3(1.5, 1.5, 0)));
         push(mkSprite("NOT differentiable", "#f43f5e", new THREE.Vector3(0, -3, 0)));
       }
+
+      meshes.forEach((m) => { if (m instanceof THREE.Sprite) labelSprites.push(m); });
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       if (diffType !== "smooth") {
         const animate = () => {
@@ -204,7 +320,7 @@ export function Differentiability3D() {
 
     const cleanupPromise = cleanup();
     return () => { cleanupPromise.then((d) => d?.()); };
-  }, [diffType, isWebGL]);
+  }, [diffType, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Differentiability" description="Cusp and corner visualizations — requires WebGL." />;
@@ -226,6 +342,14 @@ export function Differentiability3D() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-amber-500/50 bg-amber-500/10 text-amber-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Function Type">
           <div className="flex flex-wrap gap-2 mt-2">
             {curveOptions.map(([key, label]) => (
@@ -238,13 +362,18 @@ export function Differentiability3D() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <PlaybackBar playing={playing} onPlayToggle={() => setPlaying((p) => !p)} speed={speed} onSpeedChange={setSpeed} onReset={resetAll} />
+
+        <ReadoutGrid items={readoutItems} />
+
         <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-amber-400">Differentiability Rules</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">
             <p><strong className="text-foreground">Smooth curve:</strong> Unique tangent line at every point</p>
-            <p><strong className="text-foreground">Corner:</strong> Left and right derivatives differ</p>
-            <p><strong className="text-foreground">Cusp:</strong> Derivative approaches inf from different directions</p>
-            <p><strong className="text-foreground">Vertical tangent:</strong> f = inf — not differentiable</p>
+            <p><strong className="text-foreground">Corner:</strong> Left and right derivatives differ (|x| at 0: −1 vs +1)</p>
+            <p><strong className="text-foreground">Cusp:</strong> Derivative diverges to ±∞ from the two sides</p>
+            <p><strong className="text-foreground">Vertical tangent:</strong> f′ → ∞ — no finite derivative, not differentiable</p>
+            <p><strong className="text-foreground">This scene:</strong> {info.concept} — {info.verdict}.</p>
           </div>
         </div>
       </CardContent>

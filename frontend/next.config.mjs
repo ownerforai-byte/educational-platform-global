@@ -65,6 +65,8 @@ const nextConfig = {
     return config;
   },
   async rewrites() {
+    // Backend origin — rn01.onrender.com is the live deployment (verified 200
+    // on /health). Override with NEXT_PUBLIC_API_URL for local/other targets.
     const apiBaseUrl = process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com";
     return [
       {

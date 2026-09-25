@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -36,18 +37,47 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
-function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
+function addLabel(scene: THREE.Scene, meshes: THREE.Object3D[], labelSprites: THREE.Sprite[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
   const dir = targetPos.clone().sub(labelPos).normalize();
   const len = labelPos.distanceTo(targetPos);
-  meshes.push(new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14) as any);
+  const line = new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14);
+  scene.add(line);
+  meshes.push(line);
   const lp = labelPos.clone().sub(dir.clone().multiplyScalar(0.45));
-  meshes.push(mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85));
+  const s = mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85);
+  scene.add(s);
+  meshes.push(s);
+  labelSprites.push(s);
 }
+
+type FlowerFocus = "all" | "accessory" | "essential";
 
 export function AngiospermVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
+  const [focus, setFocus] = useState<FlowerFocus>("all");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const FOCUS_INFO: Record<FlowerFocus, { whorls: string; calyx: string; corolla: string; androecium: string; gynoecium: string }> = {
+    all: { whorls: "4 whorls on receptacle", calyx: "Calyx = sepals (protection)", corolla: "Corolla = petals (attraction)", androecium: "Androecium = stamens (male)", gynoecium: "Gynoecium = carpels (female)" },
+    accessory: { whorls: "Accessory whorls highlighted", calyx: "Sepals: green, protect the bud", corolla: "Petals: bright + nectar to lure pollinators", androecium: "Dimmed — stamens are reproductive", gynoecium: "Dimmed — carpels are reproductive" },
+    essential: { whorls: "Reproductive whorls highlighted", calyx: "Dimmed — non-essential", corolla: "Dimmed — non-essential", androecium: "Stamen = filament + anther (pollen)", gynoecium: "Carpel = stigma + style + ovary (ovules)" },
+  };
+  const info = FOCUS_INFO[focus];
+
+  const presets: ScenePreset[] = [
+    { name: "Whole flower", hint: "All four whorls: calyx, corolla, androecium, gynoecium.", apply: () => { setFocus("all"); setRunId((r) => r + 1); } },
+    { name: "Accessory parts", hint: "Sepals + petals attract and protect but make no gametes.", apply: () => { setFocus("accessory"); setRunId((r) => r + 1); } },
+    { name: "Reproductive parts", hint: "Stamens and carpels — the essential whorls of a flower.", apply: () => { setFocus("essential"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setFocus("all");
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -57,6 +87,7 @@ export function AngiospermVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -76,7 +107,7 @@ export function AngiospermVisual() {
       controls.autoRotate = false;
       controls.minDistance = 4;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dl = new THREE.DirectionalLight(0xffffff, 0.9);
@@ -144,7 +175,7 @@ export function AngiospermVisual() {
           sp.pos.y + Math.cos(sp.rot[0]) * 0.25,
           sp.pos.z
         );
-        stamens.push(filament);
+        stamens.push(filament, anther);
       }
 
       // Carpel (female) — stigma, style, ovary
@@ -194,16 +225,30 @@ export function AngiospermVisual() {
 
       push(mkSprite("Angiosperm — Flower Anatomy", "#fbbf24", new THREE.Vector3(0, 3.5, 0), 0.85));
 
-      addLabel(meshes, "Sepal", 0x22c55e, new THREE.Vector3(3.5, 0.5, 2), sepalPositions[0]);
-      addLabel(meshes, "Petal (Corolla)", 0xef4444, new THREE.Vector3(3.5, 1.2, -2), petalPositions[0]);
-      addLabel(meshes, "Anther", 0xfbbf24, new THREE.Vector3(-3.5, 2.2, 2), stamenPositions[0].pos.clone().add(new THREE.Vector3(0, 0.25, 0)));
-      addLabel(meshes, "Filament", 0x4ade80, new THREE.Vector3(-3.5, 1.8, -2), stamenPositions[0].pos);
-      addLabel(meshes, "Stigma", 0xfbbf24, new THREE.Vector3(0, 3.0, 2.5), stigma.position);
-      addLabel(meshes, "Style", 0x4ade80, new THREE.Vector3(2.5, 2.0, 2.5), style.position);
-      addLabel(meshes, "Ovary", 0x22c55e, new THREE.Vector3(-2.5, 1.2, -2.5), ovary.position);
-      addLabel(meshes, "Ovule", 0x92400e, new THREE.Vector3(2.5, 0.8, 2.5), ovulePositions[0]);
-      addLabel(meshes, "Pedicel", 0x22c55e, new THREE.Vector3(3, -0.2, 2), pedicel.position);
-      addLabel(meshes, "Receptacle", 0x16a34a, new THREE.Vector3(-3, -0.2, -2), receptacle.position);
+      addLabel(scene, meshes, labelSprites, "Sepal", 0x22c55e, new THREE.Vector3(3.5, 0.5, 2), sepalPositions[0]);
+      addLabel(scene, meshes, labelSprites, "Petal (Corolla)", 0xef4444, new THREE.Vector3(3.5, 1.2, -2), petalPositions[0]);
+      addLabel(scene, meshes, labelSprites, "Anther", 0xfbbf24, new THREE.Vector3(-3.5, 2.2, 2), stamenPositions[0].pos.clone().add(new THREE.Vector3(0, 0.25, 0)));
+      addLabel(scene, meshes, labelSprites, "Filament", 0x4ade80, new THREE.Vector3(-3.5, 1.8, -2), stamenPositions[0].pos);
+      addLabel(scene, meshes, labelSprites, "Stigma", 0xfbbf24, new THREE.Vector3(0, 3.0, 2.5), stigma.position);
+      addLabel(scene, meshes, labelSprites, "Style", 0x4ade80, new THREE.Vector3(2.5, 2.0, 2.5), style.position);
+      addLabel(scene, meshes, labelSprites, "Ovary", 0x22c55e, new THREE.Vector3(-2.5, 1.2, -2.5), ovary.position);
+      addLabel(scene, meshes, labelSprites, "Ovule", 0x92400e, new THREE.Vector3(2.5, 0.8, 2.5), ovulePositions[0]);
+      addLabel(scene, meshes, labelSprites, "Pedicel", 0x22c55e, new THREE.Vector3(3, -0.2, 2), pedicel.position);
+      addLabel(scene, meshes, labelSprites, "Receptacle", 0x16a34a, new THREE.Vector3(-3, -0.2, -2), receptacle.position);
+
+      const accessoryParts: THREE.Mesh[] = [...sepals, ...petals];
+      const essentialParts: THREE.Mesh[] = [...stamens, ovary, style, stigma];
+      const origOpacity = new Map<THREE.Mesh, number>();
+      [...accessoryParts, ...essentialParts].forEach((p) => origOpacity.set(p, (p.material as THREE.MeshPhongMaterial).opacity));
+      const dimmed = focus === "essential" ? accessoryParts : focus === "accessory" ? essentialParts : [];
+      [...accessoryParts, ...essentialParts].forEach((p) => {
+        const mat = p.material as THREE.MeshPhongMaterial;
+        const isDim = dimmed.includes(p);
+        mat.transparent = true;
+        mat.opacity = isDim ? 0.12 : origOpacity.get(p) ?? 1;
+      });
+
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -241,7 +286,7 @@ export function AngiospermVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [isWebGL]);
+  }, [focus, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Angiosperm Morphology" description="3D flower anatomy diagram." />;
@@ -256,9 +301,24 @@ export function AngiospermVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-pink-500/50 bg-pink-500/10 text-pink-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid items={[
+          { label: "Arrangement", value: info.whorls, highlight: true },
+          { label: "Calyx", value: info.calyx },
+          { label: "Corolla", value: info.corolla },
+          { label: "Androecium", value: info.androecium },
+          { label: "Gynoecium", value: info.gynoecium },
+        ]} />
 
         <div className="rounded-lg border border-pink-500/30 bg-pink-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-pink-400">Key Concepts</p>

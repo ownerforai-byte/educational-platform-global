@@ -33,6 +33,27 @@ function isMissingTable(error: { message?: string } | null): boolean {
   );
 }
 
+/**
+ * Insert rows with one retry. Supabase's PostgREST replica can briefly lack a
+ * brand-new auth user's FK row right after signup, failing the insert with a
+ * transient 23503 ("key is not present in table users"). A short retry closes
+ * that window so a user's very first chat save always succeeds.
+ */
+async function insertWithRetry(
+  rows: Array<{ user_id: string; session: string; role: string; content: string }>
+): Promise<{ error: { message: string } | null }> {
+  let last: { error: { message: string } | null } = { error: null };
+  for (let attempt = 0; attempt < 3; attempt++) {
+    const result = await supabaseAdmin.from("chat_messages").insert(rows);
+    if (!result.error) return { error: null };
+    last = result;
+    const code = (result.error as { code?: string }).code ?? "";
+    if (code !== "23503" && !result.error.message.includes("23503")) break;
+    await new Promise((resolve) => setTimeout(resolve, 750 * (attempt + 1)));
+  }
+  return last;
+}
+
 /** GET /api/chat-history?session=default&limit=200 — newest-last. */
 router.get("/", requireAuth, async (req: Request, res: Response) => {
   const user = (req as Request & { user: { id: string } }).user;
@@ -76,13 +97,15 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     content: m.content,
   }));
 
-  const { error } = await supabaseAdmin.from("chat_messages").insert(rows);
+  const { error } = await insertWithRetry(rows);
 
   if (error) {
     if (isMissingTable(error)) {
       res.json({ saved: 0, migrated: false });
       return;
     }
+    const err = error as { code?: string; details?: unknown };
+    console.error("[chat-history] save failed:", err.code, error.message, JSON.stringify(err.details ?? ""));
     res.status(500).json({ error: "Failed to save chat history" });
     return;
   }

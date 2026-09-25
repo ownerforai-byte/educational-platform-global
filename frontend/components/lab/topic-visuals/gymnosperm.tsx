@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -36,18 +37,47 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
-function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
+function addLabel(scene: THREE.Scene, meshes: THREE.Object3D[], labelSprites: THREE.Sprite[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
   const dir = targetPos.clone().sub(labelPos).normalize();
   const len = labelPos.distanceTo(targetPos);
-  meshes.push(new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14) as any);
+  const line = new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14);
+  scene.add(line);
+  meshes.push(line);
   const lp = labelPos.clone().sub(dir.clone().multiplyScalar(0.45));
-  meshes.push(mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85));
+  const s = mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85);
+  scene.add(s);
+  meshes.push(s);
+  labelSprites.push(s);
 }
+
+type GymFocus = "all" | "reproductive" | "vegetative";
 
 export function GymnospermVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
+  const [focus, setFocus] = useState<GymFocus>("all");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const FOCUS_INFO: Record<GymFocus, { focus: string; a: string; b: string; adaptation: string; tip: string }> = {
+    all: { focus: "Whole Pinus — 2n sporophyte plant", a: "Tall evergreen trunk; conical crown of needle leaves", b: "Dimorphic cones: male at branch tips, female woody", adaptation: "Xerophytic needles — thick cuticle, sunken stomata", tip: "\"Gymnos\" = naked — seeds on cone scales, never in an ovary" },
+    reproductive: { focus: "Reproduction — cones & naked seeds", a: "Male cone → winged pollen carried by wind", b: "Female cone → ovules naked on megasporophyll scales", adaptation: "Pollen has air sacs; pollination is anemophilous", tip: "The cone does NOT become a fruit — after fertilisation ovule → winged seed" },
+    vegetative: { focus: "Vegetative body — stem & needles", a: "Needle leaves in fascicles (bundles of 2) with basal sheath", b: "Crown layers reduce snow load — conical evergreen habit", adaptation: "Reduced leaf surface minimises transpiration in cold/drought", tip: "Pine = timber, paper, resin and turpentine; pine nuts are edible seeds" },
+  };
+  const info = FOCUS_INFO[focus];
+
+  const presets: ScenePreset[] = [
+    { name: "Whole pine", hint: "Complete sporophyte plant with both cone types.", apply: () => { setFocus("all"); setRunId((r) => r + 1); } },
+    { name: "Reproduction", hint: "Isolate the cones and the winged seed.", apply: () => { setFocus("reproductive"); setRunId((r) => r + 1); } },
+    { name: "Vegetative body", hint: "Trunk, crown and needle fascicles only.", apply: () => { setFocus("vegetative"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setFocus("all");
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -57,6 +87,7 @@ export function GymnospermVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -76,7 +107,7 @@ export function GymnospermVisual() {
       controls.autoRotate = false;
       controls.minDistance = 4;
       controls.maxDistance = 22;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dl = new THREE.DirectionalLight(0xffffff, 0.9);
@@ -93,6 +124,7 @@ export function GymnospermVisual() {
       trunk.position.set(0, -1, 0);
 
       // Crown (foliage layers)
+      const crowns: THREE.Object3D[] = [];
       for (let i = 0; i < 4; i++) {
         const layerY = 1.5 + i * 1.0;
         const layerR = 2.0 - i * 0.35;
@@ -101,9 +133,11 @@ export function GymnospermVisual() {
           new THREE.MeshPhongMaterial({ color: 0x1a5c2a }),
         ));
         crown.position.set(0, layerY, 0);
+        crowns.push(crown);
       }
 
       // Needle leaves (clusters of 2)
+      const needleParts: THREE.Object3D[] = [];
       const needlePositions = [
         { pos: new THREE.Vector3(1.5, 2.5, 0.8), rot: [0.2, 0.5, 0.8] },
         { pos: new THREE.Vector3(-1.2, 3.0, -0.5), rot: [0.3, -0.4, -0.6] },
@@ -120,6 +154,7 @@ export function GymnospermVisual() {
           needle.position.set(j * 0.05, 0.5, 0);
           needle.rotation.z = (j - 0.5) * 0.15;
           needleGroup.add(needle);
+          needleParts.push(needle);
         }
         needleGroup.position.copy(np.pos);
         needleGroup.rotation.set(np.rot[0], np.rot[1], np.rot[2]);
@@ -142,6 +177,7 @@ export function GymnospermVisual() {
       femaleCone.position.set(-0.5, 2.8, -0.8);
 
       // Cone scales
+      const coneScales: THREE.Object3D[] = [];
       for (let i = 0; i < 6; i++) {
         const angle = (i / 6) * Math.PI * 2;
         const scale = push(new THREE.Mesh(
@@ -154,6 +190,7 @@ export function GymnospermVisual() {
           -0.8 + Math.sin(angle) * 0.4
         );
         scale.rotation.y = angle;
+        coneScales.push(scale);
       }
 
       // Seeds (with wing)
@@ -171,12 +208,29 @@ export function GymnospermVisual() {
 
       push(mkSprite("Gymnosperm — Pinus (Pine) Morphology", "#fbbf24", new THREE.Vector3(0, 4.8, 0), 0.85));
 
-      addLabel(meshes, "Needle Leaves (in pairs)", 0x2d8a4e, new THREE.Vector3(3.5, 4, 2), needlePositions[0].pos);
-      addLabel(meshes, "Female Cone (Ovuliferous)", 0x92400e, new THREE.Vector3(-3.5, 3, 2), femaleCone.position);
-      addLabel(meshes, "Male Cone (Staminate)", 0xd97706, new THREE.Vector3(3, 4.5, -2), maleCone.position);
-      addLabel(meshes, "Seed with Wing", 0x451a03, new THREE.Vector3(-3.5, 1.5, 2.5), seedPos);
-      addLabel(meshes, "Trunk", 0x5d3a1a, new THREE.Vector3(3.5, -1, -2), trunk.position);
-      addLabel(meshes, "Crown (Foliage)", 0x1a5c2a, new THREE.Vector3(3.5, 2, 0), new THREE.Vector3(0, 2.5, 0));
+      addLabel(scene, meshes, labelSprites, "Needle Leaves (in pairs)", 0x2d8a4e, new THREE.Vector3(3.5, 4, 2), needlePositions[0].pos);
+      addLabel(scene, meshes, labelSprites, "Female Cone (Ovuliferous)", 0x92400e, new THREE.Vector3(-3.5, 3, 2), femaleCone.position);
+      addLabel(scene, meshes, labelSprites, "Male Cone (Staminate)", 0xd97706, new THREE.Vector3(3, 4.5, -2), maleCone.position);
+      addLabel(scene, meshes, labelSprites, "Seed with Wing", 0x451a03, new THREE.Vector3(-3.5, 1.5, 2.5), seedPos);
+      addLabel(scene, meshes, labelSprites, "Trunk", 0x5d3a1a, new THREE.Vector3(3.5, -1, -2), trunk.position);
+      addLabel(scene, meshes, labelSprites, "Crown (Foliage)", 0x1a5c2a, new THREE.Vector3(3.5, 2, 0), new THREE.Vector3(0, 2.5, 0));
+
+      labelSprites.forEach((s) => (s.visible = showLabels));
+
+      // Focus dimming: highlight reproductive or vegetative structures
+      const allParts: THREE.Object3D[] = [trunk, ...crowns, ...needleParts, maleCone, femaleCone, ...coneScales, seed, seedWing];
+      const GROUPS: Record<Exclude<GymFocus, "all">, THREE.Object3D[]> = {
+        reproductive: [maleCone, femaleCone, ...coneScales, seed, seedWing],
+        vegetative: [trunk, ...crowns, ...needleParts],
+      };
+      const highlighted = focus === "all" ? allParts : GROUPS[focus];
+      allParts.forEach((p) => {
+        const mat = (p as THREE.Mesh).material as THREE.MeshPhongMaterial;
+        if (!mat) return;
+        const keep = (mat as any).__origOpacity ?? ((mat as any).__origOpacity = mat.opacity);
+        mat.transparent = true;
+        mat.opacity = highlighted.includes(p) ? keep : 0.12;
+      });
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -214,7 +268,7 @@ export function GymnospermVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [isWebGL]);
+  }, [focus, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Gymnosperm (Pinus)" description="3D pine morphology diagram." />;
@@ -229,9 +283,25 @@ export function GymnospermVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-green-500/50 bg-green-500/10 text-green-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid items={[
+          { label: "In focus", value: info.focus, highlight: true },
+          { label: "Structure", value: info.a },
+          { label: "Also shown", value: info.b },
+          { label: "Adaptation", value: info.adaptation },
+          { label: "Exam tip", value: info.tip },
+        ]} />
 
         <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-green-400">Key Concepts</p>

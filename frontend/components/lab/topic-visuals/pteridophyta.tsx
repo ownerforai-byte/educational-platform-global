@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -36,18 +37,63 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
-function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
+function addLabel(scene: THREE.Scene, meshes: THREE.Object3D[], labelSprites: THREE.Sprite[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
   const dir = targetPos.clone().sub(labelPos).normalize();
   const len = labelPos.distanceTo(targetPos);
-  meshes.push(new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14) as any);
+  const line = new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14);
+  scene.add(line);
+  meshes.push(line);
   const lp = labelPos.clone().sub(dir.clone().multiplyScalar(0.45));
-  meshes.push(mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85));
+  const s = mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85);
+  scene.add(s);
+  meshes.push(s);
+  labelSprites.push(s);
 }
+
+type PterFocus = "all" | "vegetative" | "reproductive";
+
+const FOCUS_INFO: Record<PterFocus, { parts: string; function_: string; fact: string; tip: string }> = {
+  all: {
+    parts: "Whole sporophyte plant",
+    function_: "The dominant, diploid (2n) generation of a seedless vascular plant",
+    fact: "Pteridophytes were the first land plants with true vascular tissue (xylem + phloem)",
+    tip: "Mnemonic: 'vascular but seedless' — vessels yes, seeds no; spores instead",
+  },
+  vegetative: {
+    parts: "Rhizome · roots · stipe · frond · pinnae",
+    function_: "Photosynthesis plus water/mineral uptake through true vessels",
+    fact: "The rhizome is the real stem — buds on it can clone the whole fern",
+    tip: "Young fronds unroll from the tip as fiddleheads (croziers) — a classic NEB diagram point",
+  },
+  reproductive: {
+    parts: "Sori on frond underside + indusium cover",
+    function_: "Each sorus packs sporangia that release haploid spores",
+    fact: "One frond can shed millions of spores; the sporophyte generation dominates",
+    tip: "Spores grow into the free-living gametophyte 'prothallus' — a separate independent plant",
+  },
+};
 
 export function PteridophytaVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [focus, setFocus] = useState<PterFocus>("all");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const info = FOCUS_INFO[focus];
+
+  const presets: ScenePreset[] = [
+    { name: "Whole plant", hint: "All organs labelled", apply: () => { setFocus("all"); setRunId((r) => r + 1); } },
+    { name: "Vegetative organs", hint: "Rhizome to frond", apply: () => { setFocus("vegetative"); setRunId((r) => r + 1); } },
+    { name: "Reproductive: sori", hint: "Spore clusters + indusium", apply: () => { setFocus("reproductive"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setFocus("all");
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -57,6 +103,7 @@ export function PteridophytaVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -76,7 +123,7 @@ export function PteridophytaVisual() {
       controls.autoRotate = false;
       controls.minDistance = 4;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dl = new THREE.DirectionalLight(0xffffff, 0.9);
@@ -84,6 +131,10 @@ export function PteridophytaVisual() {
       scene.add(dl);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+
+      const rootParts: THREE.Object3D[] = [];
+      const pinnaParts: THREE.Object3D[] = [];
+      const sorParts: THREE.Object3D[] = [];
 
       // Rhizome (underground stem)
       const rhizome = push(new THREE.Mesh(
@@ -103,6 +154,7 @@ export function PteridophytaVisual() {
         root.position.set(Math.cos(angle) * 0.8, -2.8, Math.sin(angle) * 0.8);
         root.rotation.z = Math.cos(angle) * 0.6;
         root.rotation.x = Math.sin(angle) * 0.6;
+        rootParts.push(root);
       }
 
       // Stipe (leaf stalk)
@@ -130,6 +182,7 @@ export function PteridophytaVisual() {
         pinna.position.set(Math.cos(angle) * r, 1.8 + (i % 3) * 0.3, Math.sin(angle) * r);
         pinna.rotation.y = -angle;
         pinna.rotation.z = 0.2;
+        pinnaParts.push(pinna);
       }
 
       // Sori (spore clusters) on underside
@@ -146,6 +199,7 @@ export function PteridophytaVisual() {
         ));
         sor.position.copy(sp);
         sor.position.y -= 0.03;
+        sorParts.push(sor);
       }
 
       // Indusium (protective covering over sorus)
@@ -157,13 +211,29 @@ export function PteridophytaVisual() {
 
       push(mkSprite("Pteridophyta — Dryopteris Morphology", "#fbbf24", new THREE.Vector3(0, 4.0, 0), 0.85));
 
-      addLabel(meshes, "Frond (Leaf)", 0x2d7a3a, new THREE.Vector3(-3.5, 3, 2), frond.position);
-      addLabel(meshes, "Stipe (Leaf Stalk)", 0x4a7c59, new THREE.Vector3(3.5, 1, 2), stipe.position);
-      addLabel(meshes, "Rhizome (Underground Stem)", 0x5d3a1a, new THREE.Vector3(3.5, -2.5, -2), rhizome.position);
-      addLabel(meshes, "Roots", 0x8b7355, new THREE.Vector3(-3.5, -3.5, 1), new THREE.Vector3(0.8, -2.8, 0));
-      addLabel(meshes, "Sorus (Spore Cluster)", 0xd97706, new THREE.Vector3(3, 1, -3), sorPositionss[0]);
-      addLabel(meshes, "Indusium", 0x92400e, new THREE.Vector3(-3, 1.2, 3), indusium.position);
-      addLabel(meshes, "Pinna (Leaflet)", 0x3d9a4a, new THREE.Vector3(-3.5, 2, -2), new THREE.Vector3(1.5, 2.0, 0));
+      addLabel(scene, meshes, labelSprites, "Frond (Leaf)", 0x2d7a3a, new THREE.Vector3(-3.5, 3, 2), frond.position);
+      addLabel(scene, meshes, labelSprites, "Stipe (Leaf Stalk)", 0x4a7c59, new THREE.Vector3(3.5, 1, 2), stipe.position);
+      addLabel(scene, meshes, labelSprites, "Rhizome (Underground Stem)", 0x5d3a1a, new THREE.Vector3(3.5, -2.5, -2), rhizome.position);
+      addLabel(scene, meshes, labelSprites, "Roots", 0x8b7355, new THREE.Vector3(-3.5, -3.5, 1), new THREE.Vector3(0.8, -2.8, 0));
+      addLabel(scene, meshes, labelSprites, "Sorus (Spore Cluster)", 0xd97706, new THREE.Vector3(3, 1, -3), sorPositionss[0]);
+      addLabel(scene, meshes, labelSprites, "Indusium", 0x92400e, new THREE.Vector3(-3, 1.2, 3), indusium.position);
+      addLabel(scene, meshes, labelSprites, "Pinna (Leaflet)", 0x3d9a4a, new THREE.Vector3(-3.5, 2, -2), new THREE.Vector3(1.5, 2.0, 0));
+
+      const allParts: THREE.Object3D[] = [rhizome, stipe, frond, indusium, ...rootParts, ...pinnaParts, ...sorParts];
+      const GROUPS: Record<PterFocus, THREE.Object3D[]> = {
+        all: allParts,
+        vegetative: [rhizome, stipe, frond, ...rootParts, ...pinnaParts],
+        reproductive: [...sorParts, indusium],
+      };
+      const highlighted = GROUPS[focus];
+      allParts.forEach((p) => {
+        const mat = (p as THREE.Mesh).material as THREE.MeshPhongMaterial;
+        if (!mat) return;
+        const keep = (mat as any).__origOpacity ?? ((mat as any).__origOpacity = mat.opacity);
+        mat.transparent = true;
+        mat.opacity = highlighted.includes(p) ? keep : 0.12;
+      });
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -201,7 +271,7 @@ export function PteridophytaVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [isWebGL]);
+  }, [focus, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Pteridophyta (Dryopteris)" description="3D fern morphology diagram." />;
@@ -216,9 +286,26 @@ export function PteridophytaVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-green-500/50 bg-green-500/10 text-green-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Focus", value: info.parts, highlight: true },
+            { label: "What it does", value: info.function_ },
+            { label: "Reality check", value: info.fact },
+            { label: "Exam tip", value: info.tip },
+          ]}
+        />
 
         <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-green-400">Key Concepts</p>
@@ -227,7 +314,7 @@ export function PteridophytaVisual() {
             <p><strong className="text-foreground">Frond:</strong> Large, divided leaf (lamina) — the photosynthetic organ.</p>
             <p><strong className="text-foreground">Stipe:</strong> Leaf stalk connecting frond to rhizome.</p>
             <p><strong className="text-foreground">Sorus:</strong> Cluster of sporangia on the underside of frond; produces spores.</p>
-            <p><strong className="text-foreground">Indusium:</strong> Protective covering over sorus;撕开后释放孢子.</p>
+            <p><strong className="text-foreground">Indusium:</strong> Kidney-shaped protective flap covering the sorus; lifts as spores mature to release them.</p>
             <p><strong className="text-foreground">Dominant phase:</strong> Sporophyte (diploid) is the conspicuous, independent plant.</p>
           </div>
         </div>

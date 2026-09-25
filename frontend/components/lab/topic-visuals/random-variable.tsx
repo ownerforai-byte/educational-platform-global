@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 /* ============================================================
@@ -39,6 +40,23 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 type DistType = "discrete" | "continuous";
 
+const RV_INFO: Record<DistType, { head: string; rule: string; meaning: string; example: string; pitfall: string }> = {
+  discrete: {
+    head: "Discrete RV · Binomial PMF bars",
+    rule: "Σ P(X=k) = 1,  E[X] = Σ k·P(X=k) = np",
+    meaning: "X takes countable values (0, 1, …, n); each bar height is P(X=k) = C(n,k)·pᵏ·(1−p)ⁿ⁻ᵏ",
+    example: "For n = 10, p = 0.4: E[X] = 4, Var(X) = np(1−p) = 2.4, σ ≈ 1.55",
+    pitfall: "E[X] need not be a possible value of X — it is the long-run average",
+  },
+  continuous: {
+    head: "Continuous RV · Normal PDF curve",
+    rule: "∫ f(x)dx = 1,  P(a < X < b) = area under f between a and b",
+    meaning: "X takes any value in an interval; f(x) itself is not a probability — only areas are",
+    example: "For N(5, 2): μ ± σ = [3, 7] holds ≈68%, μ ± 2σ = [1, 9] holds ≈95% of the area",
+    pitfall: "P(X = c) = 0 for any single point c — probabilities come from intervals",
+  },
+};
+
 export function RandomVariableVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
@@ -46,6 +64,28 @@ export function RandomVariableVisual() {
   const [n, setN] = useState(10);
   const [p, setP] = useState(0.4);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const info = RV_INFO[distType];
+
+  const presets: ScenePreset[] = [
+    { name: "Binomial B(10, 0.4)", hint: "Discrete PMF bars, μ = 4", apply: () => { setDistType("discrete"); setN(10); setP(0.4); setRunId((r) => r + 1); } },
+    { name: "Binomial B(20, 0.5)", hint: "Symmetric PMF, μ = 10", apply: () => { setDistType("discrete"); setN(20); setP(0.5); setRunId((r) => r + 1); } },
+    { name: "Normal N(5, 2)", hint: "Continuous bell curve", apply: () => { setDistType("continuous"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setDistType("discrete");
+    setN(10);
+    setP(0.4);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
+
+  const rvMean = n * p;
+  const rvVar = n * p * (1 - p);
+  const rvSd = Math.sqrt(rvVar);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -60,6 +100,7 @@ export function RandomVariableVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -77,13 +118,13 @@ export function RandomVariableVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
       controls.autoRotate = false;
       controls.maxPolarAngle = Math.PI / 2.2;
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 
-      const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); if (o instanceof THREE.Sprite) labelSprites.push(o); return o; };
 
       push(new THREE.GridHelper(20, 20, 0x334155, 0x1e293b));
 
@@ -142,6 +183,7 @@ export function RandomVariableVisual() {
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -179,7 +221,7 @@ export function RandomVariableVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [distType, n, p, isWebGL]);
+  }, [distType, n, p, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Random Variable" description="Distribution visualization — requires WebGL." />;
@@ -194,6 +236,14 @@ export function RandomVariableVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-blue-500/50 bg-blue-500/10 text-blue-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Distribution Type">
           <div className="flex gap-2 mt-2">
             <button onClick={() => setDistType("discrete")} className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${distType === "discrete" ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}>Discrete (Binomial)</button>
@@ -213,6 +263,24 @@ export function RandomVariableVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={distType === "discrete" ? [
+            { label: "Distribution", value: info.head, highlight: true },
+            { label: "E[X] = np", value: rvMean.toFixed(2) },
+            { label: "Var(X) = np(1−p)", value: rvVar.toFixed(2) },
+            { label: "σ = √Var(X)", value: rvSd.toFixed(2) },
+            { label: "Mode ≈ ⌊(n+1)p⌋", value: Math.floor((n + 1) * p) },
+            { label: "PMF check", value: "Σ P(X=k) = 1" },
+          ] : [
+            { label: "Distribution", value: info.head, highlight: true },
+            { label: "Mean μ", value: 5 },
+            { label: "SD σ", value: 2 },
+            { label: "Peak f(μ) = 1/(σ√2π)", value: (1 / (2 * Math.sqrt(2 * Math.PI))).toFixed(3) },
+            { label: "μ ± σ interval", value: "[3, 7] holds ≈68%" },
+            { label: "PDF check", value: "Total area = 1" },
+          ]}
+        />
 
         <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-blue-400">Key Concepts</p>

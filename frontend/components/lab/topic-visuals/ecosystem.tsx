@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -36,19 +37,45 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
-function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
+function addLabel(scene: THREE.Scene, meshes: THREE.Object3D[], labelSprites: THREE.Sprite[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
   const dir = targetPos.clone().sub(labelPos).normalize();
   const len = labelPos.distanceTo(targetPos);
-  meshes.push(new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14) as any);
+  const line = new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14);
+  scene.add(line);
+  meshes.push(line);
   const lp = labelPos.clone().sub(dir.clone().multiplyScalar(0.45));
-  meshes.push(mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85));
+  const s = mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85);
+  scene.add(s);
+  meshes.push(s);
+  labelSprites.push(s);
 }
 
 export function EcosystemVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [mode, setMode] = useState<"chain" | "web" | "pyramid">("pyramid");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const MODE_INFO: Record<typeof mode, { title: string; levels: string; feature: string; tip: string }> = {
+    pyramid: { title: "Ecological Pyramid", levels: "4 levels — producers → apex predator", feature: "Each level holds only ~1/10 of the energy below it", tip: "Pyramid of energy is ALWAYS upright; numbers/biomass can invert" },
+    chain: { title: "Food Chain", levels: "5 links — Grass → Grasshopper → Frog → Snake → Eagle", feature: "One linear feeding pathway; each level has one occupant", tip: "Arrows show the direction of energy flow, not \"who eats whom\"" },
+    web: { title: "Food Web", levels: "7 species joined by 9 feeding links", feature: "Interconnected chains — realistic networks, not straight lines", tip: "Webs buffer disturbance: losing one species rarely collapses the system" },
+  };
+  const info = MODE_INFO[mode];
+
+  const presets: ScenePreset[] = [
+    { name: "Energy pyramid", hint: "See why top predators are rare — the 10% law in geometry.", apply: () => { setMode("pyramid"); setRunId((r) => r + 1); } },
+    { name: "Grass to eagle", hint: "A classic 5-link grazing chain — follow the energy arrows.", apply: () => { setMode("chain"); setRunId((r) => r + 1); } },
+    { name: "Web of life", hint: "Most species eat and are eaten by several others.", apply: () => { setMode("web"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setMode("pyramid");
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -58,6 +85,7 @@ export function EcosystemVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -77,7 +105,7 @@ export function EcosystemVisual() {
       controls.autoRotate = false;
       controls.minDistance = 4;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dl = new THREE.DirectionalLight(0xffffff, 0.9);
@@ -85,6 +113,7 @@ export function EcosystemVisual() {
       scene.add(dl);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addSprite = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
 
       const update = () => {
         while (meshes.length > 80) {
@@ -114,8 +143,8 @@ export function EcosystemVisual() {
             level.position.set(0, lvl.y, 0);
 
             // Label
-            push(mkSprite(lvl.name, `#${lvl.color.toString(16).padStart(6, "0")}`, new THREE.Vector3(-3.5, lvl.y, 0), 0.8));
-            push(mkSprite(lvl.energy, "#7dd3fc", new THREE.Vector3(3.5, lvl.y, 0), 0.7));
+            addSprite(mkSprite(lvl.name, `#${lvl.color.toString(16).padStart(6, "0")}`, new THREE.Vector3(-3.5, lvl.y, 0), 0.8));
+            addSprite(mkSprite(lvl.energy, "#7dd3fc", new THREE.Vector3(3.5, lvl.y, 0), 0.7));
 
             // Energy flow arrow between levels
             if (i < levels.length - 1) {
@@ -123,7 +152,7 @@ export function EcosystemVisual() {
               const toY = levels[i + 1].y - 0.4;
               const arrowDir = new THREE.Vector3(0, 1, 0);
               const arrowPos = new THREE.Vector3(lvl.width / 2 + 0.8, (fromY + toY) / 2, 0);
-              addLabel(meshes, "↓ 90% energy lost", 0x94a3b8,
+              addLabel(scene, meshes, labelSprites, "↓ 90% energy lost", 0x94a3b8,
                 new THREE.Vector3(lvl.width / 2 + 1.5, (fromY + toY) / 2 + 0.3, 0),
                 arrowPos);
             }
@@ -138,7 +167,7 @@ export function EcosystemVisual() {
             new THREE.MeshPhongMaterial({ color: 0x92400e }),
           ));
           decomposer.position.set(0, -3.8, 0);
-          addLabel(meshes, "Decomposers", 0x92400e, new THREE.Vector3(-2.5, -4.2, 2), decomposer.position);
+          addLabel(scene, meshes, labelSprites, "Decomposers", 0x92400e, new THREE.Vector3(-2.5, -4.2, 2), decomposer.position);
         } else if (mode === "chain") {
           // Food chain: Grass → Grasshopper → Frog → Snake → Eagle
           const chain = [
@@ -155,7 +184,7 @@ export function EcosystemVisual() {
               new THREE.MeshPhongMaterial({ color: c.color, shininess: 50 }),
             ));
             node.position.copy(c.pos);
-            push(mkSprite(c.name, `#${c.color.toString(16).padStart(6, "0")}`, new THREE.Vector3(c.pos.x, c.pos.y + 1.2, 0), 0.75));
+            addSprite(mkSprite(c.name, `#${c.color.toString(16).padStart(6, "0")}`, new THREE.Vector3(c.pos.x, c.pos.y + 1.2, 0), 0.75));
 
             // Arrow to next
             if (c.pos.x < 4) {
@@ -163,7 +192,7 @@ export function EcosystemVisual() {
               const arrowDir = next.pos.clone().sub(c.pos).normalize();
               const mid = c.pos.clone().add(next.pos).multiplyScalar(0.5);
               const arrowLabelPos = new THREE.Vector3(mid.x, mid.y + 0.5, 1.5);
-              addLabel(meshes, "eaten by", 0x94a3b8, arrowLabelPos, mid.clone().add(new THREE.Vector3(0, 0, 0.5)));
+              addLabel(scene, meshes, labelSprites, "eaten by", 0x94a3b8, arrowLabelPos, mid.clone().add(new THREE.Vector3(0, 0, 0.5)));
             }
           }
 
@@ -173,7 +202,7 @@ export function EcosystemVisual() {
             new THREE.MeshPhongMaterial({ color: 0xfbbf24, emissive: 0xfbbf24, emissiveIntensity: 0.5 }),
           ));
           sun.position.set(-5, 2.5, 0);
-          addLabel(meshes, "Sun (Energy Source)", 0xfbbf24, new THREE.Vector3(-4.5, 3.5, 2), sun.position);
+          addLabel(scene, meshes, labelSprites, "Sun (Energy Source)", 0xfbbf24, new THREE.Vector3(-4.5, 3.5, 2), sun.position);
           const sunArrow = push(new LiveLeaderLine(new THREE.Vector3(1, -0.6, 0), new THREE.Vector3(-4.5, 2.5, 0), 1.5, 0xfbbf24, 0.15, 0.08) as any);
 
           // Decomposer arrow
@@ -182,7 +211,7 @@ export function EcosystemVisual() {
             new THREE.MeshPhongMaterial({ color: 0x92400e }),
           ));
           decomp.position.set(0, -2, 0);
-          addLabel(meshes, "Decomposers\n(break down all levels)", 0x92400e, new THREE.Vector3(0, -3, 2), decomp.position);
+          addLabel(scene, meshes, labelSprites, "Decomposers\n(break down all levels)", 0x92400e, new THREE.Vector3(0, -3, 2), decomp.position);
 
           push(mkSprite("Food Chain — Energy Flow", "#fbbf24", new THREE.Vector3(0, 3.2, 0), 0.85));
         } else {
@@ -204,7 +233,7 @@ export function EcosystemVisual() {
               new THREE.MeshPhongMaterial({ color: n.color }),
             ));
             node.position.copy(n.pos);
-            push(mkSprite(n.name, `#${n.color.toString(16).padStart(6, "0")}`, new THREE.Vector3(n.pos.x, n.pos.y + 0.7, 0), 0.65));
+            addSprite(mkSprite(n.name, `#${n.color.toString(16).padStart(6, "0")}`, new THREE.Vector3(n.pos.x, n.pos.y + 0.7, 0), 0.65));
           }
 
           // Food web connections
@@ -225,13 +254,14 @@ export function EcosystemVisual() {
             new THREE.MeshPhongMaterial({ color: 0xfbbf24, emissive: 0xfbbf24, emissiveIntensity: 0.4 }),
           ));
           sun.position.set(0, 3, 0);
-          addLabel(meshes, "Sun", 0xfbbf24, new THREE.Vector3(-1, 3.8, 2), sun.position);
+          addLabel(scene, meshes, labelSprites, "Sun", 0xfbbf24, new THREE.Vector3(-1, 3.8, 2), sun.position);
 
           push(mkSprite("Food Web — Interconnected Feeding Relationships", "#fbbf24", new THREE.Vector3(0, -3, 0), 0.8));
         }
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -269,7 +299,7 @@ export function EcosystemVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [mode, isWebGL]);
+  }, [mode, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Ecosystem (Food Chain & Web)" description="3D trophic level diagrams." />;
@@ -284,6 +314,14 @@ export function EcosystemVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-green-500/50 bg-green-500/10 text-green-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="View Mode">
           <div className="flex flex-wrap gap-2 mt-2">
             {(["chain", "web", "pyramid"] as const).map((m) => (
@@ -300,6 +338,14 @@ export function EcosystemVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid items={[
+          { label: "View", value: info.title, highlight: true },
+          { label: "Trophic structure", value: info.levels },
+          { label: "Energy transfer", value: "~10% per level (Lindeman's law)" },
+          { label: "Signature feature", value: info.feature },
+          { label: "Exam tip", value: info.tip },
+        ]} />
 
         <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-green-400">Key Concepts</p>

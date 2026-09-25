@@ -8,6 +8,12 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  PlaybackBar,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -40,6 +46,54 @@ export function WaveOpticsVisual() {
   const [wavelength, setWavelength] = useState(0.5);
   const [slitSep, setSlitSep] = useState(2);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [animating, setAnimating] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  const speedRef = useRef(1);
+  speedRef.current = speed;
+  const [showWavefronts, setShowWavefronts] = useState(true);
+  const [showFringes, setShowFringes] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  // Live readouts — slit-to-screen distance in scene units (x = −3 → x = 4)
+  const screenD = 7;
+  const slitWidth = 0.5;
+  const beta = (wavelength * screenD) / slitSep; // fringe width β = λD/d
+  const nMax = Math.floor((slitSep * 3) / screenD / wavelength); // highest bright order on screen
+
+  const DEFAULTS = { mode: "double-slit" as const, wavelength: 0.5, slitSep: 2 };
+  const presets: ScenePreset[] = [
+    {
+      name: "Default double slit",
+      hint: "Young's experiment with balanced fringe spacing.",
+      apply: () => { setMode("double-slit"); setWavelength(0.5); setSlitSep(2); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Wide fringes",
+      hint: "Long λ, slits close together — fat, well-separated fringes (β = λD/d).",
+      apply: () => { setMode("double-slit"); setWavelength(0.9); setSlitSep(1); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Fine fringes",
+      hint: "Short λ, widely separated slits — many tightly-packed fringes.",
+      apply: () => { setMode("double-slit"); setWavelength(0.3); setSlitSep(3.5); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Single-slit diffraction",
+      hint: "One slit — broad central maximum with weak side lobes (I = I₀(sinβ/β)²).",
+      apply: () => { setMode("single-slit"); setWavelength(0.5); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setMode(DEFAULTS.mode);
+    setWavelength(DEFAULTS.wavelength);
+    setSlitSep(DEFAULTS.slitSep);
+    setSpeed(1);
+    setShowWavefronts(true);
+    setShowFringes(true);
+    setAnimating(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -49,6 +103,7 @@ export function WaveOpticsVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
     let time = 0;
 
     const init = async () => {
@@ -69,7 +124,12 @@ export function WaveOpticsVisual() {
       controls.autoRotate = false;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -77,6 +137,7 @@ export function WaveOpticsVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
 
       // Slits barrier
       const barrier = push(new THREE.Mesh(
@@ -112,7 +173,7 @@ export function WaveOpticsVisual() {
       ));
       screen.position.set(4, 0, 0);
       screen.rotation.y = Math.PI / 2;
-      push(mkSprite("Screen", "#475569", new THREE.Vector3(4, 3.5, 0), 0.6));
+      addLabel(mkSprite("Screen", "#475569", new THREE.Vector3(4, 3.5, 0), 0.6));
 
       // Wavefronts from slits
       const wavefronts: THREE.Mesh[] = [];
@@ -124,6 +185,7 @@ export function WaveOpticsVisual() {
         )) as THREE.Mesh;
         wf.position.set(-2.8, mode === "double-slit" ? slitSep / 2 : 0, 0);
         wf.rotation.y = Math.PI / 2;
+        wf.visible = showWavefronts;
         wavefronts.push(wf);
       }
       if (mode === "double-slit") {
@@ -134,6 +196,7 @@ export function WaveOpticsVisual() {
           )) as THREE.Mesh;
           wf.position.set(-2.8, -slitSep / 2, 0);
           wf.rotation.y = Math.PI / 2;
+          wf.visible = showWavefronts;
           wavefronts.push(wf);
         }
       }
@@ -161,6 +224,7 @@ export function WaveOpticsVisual() {
         ));
         stripe.position.set(4.05, y, 0);
         stripe.rotation.y = Math.PI / 2;
+        stripe.visible = showFringes;
       }
 
       // Long arrow labels
@@ -168,20 +232,20 @@ export function WaveOpticsVisual() {
       const lambdaTarget = new THREE.Vector3(0.5, 0, 0);
       const lambdaDir = lambdaTarget.clone().sub(lambdaLabelPos).normalize();
       push(new LiveLeaderLine(lambdaDir, lambdaLabelPos, lambdaLabelPos.distanceTo(lambdaTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
-      push(mkSprite(`λ = ${wavelength} μm (wavelength)`, "#a78bfa", lambdaLabelPos.clone().sub(lambdaDir.multiplyScalar(0.5)), 0.75));
+      addLabel(mkSprite(`λ = ${wavelength} μm (wavelength)`, "#a78bfa", lambdaLabelPos.clone().sub(lambdaDir.multiplyScalar(0.5)), 0.75));
 
       const dLabelPos = new THREE.Vector3(-3, mode === "double-slit" ? slitSep / 2 + 1 : 1, 0);
       const dTarget = new THREE.Vector3(-3, mode === "double-slit" ? -slitSep / 2 : 0, 0);
       const dDir = dTarget.clone().sub(dLabelPos).normalize();
       push(new LiveLeaderLine(dDir, dLabelPos, dLabelPos.distanceTo(dTarget) * 0.9, 0x34d399, 0.15, 0.1));
-      push(mkSprite(`d = ${slitSep} (slit separation)`, "#34d399", dLabelPos.clone().sub(dDir.multiplyScalar(0.5)), 0.75));
+      addLabel(mkSprite(`d = ${slitSep} (slit separation)`, "#34d399", dLabelPos.clone().sub(dDir.multiplyScalar(0.5)), 0.75));
 
       // Fringe pattern formula label
       const formulaLabelPos = new THREE.Vector3(2, 3.5, 0);
       const formulaTarget = new THREE.Vector3(0, 0, 0);
       const formulaDir = formulaTarget.clone().sub(formulaLabelPos).normalize();
       push(new LiveLeaderLine(formulaDir, formulaLabelPos, formulaLabelPos.distanceTo(formulaTarget) * 0.9, 0xef4444, 0.15, 0.1));
-      push(mkSprite(
+      addLabel(mkSprite(
         mode === "double-slit" ? "β = λD/d (fringe width)" : "I = I₀(sinβ/β)² (diffraction)",
         "#ef4444", formulaLabelPos.clone().sub(formulaDir.multiplyScalar(0.5)), 0.7
       ));
@@ -201,7 +265,9 @@ export function WaveOpticsVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
-        time += 0.05;
+        if (animating) {
+          time += 0.05 * speedRef.current;
+        }
         wavefronts.forEach((wf, i) => {
           const r = ((time * 0.3 + i * wavelength * 0.8) % (numWavefronts * wavelength * 0.8)) / (numWavefronts * wavelength * 0.8);
           wf.scale.setScalar(r + 0.1);
@@ -241,7 +307,7 @@ export function WaveOpticsVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [mode, wavelength, slitSep, isWebGL]);
+  }, [mode, wavelength, slitSep, isWebGL, animating, runId, showWavefronts, showFringes]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Wave Optics" description="Double-slit interference and single-slit diffraction patterns." />;
@@ -294,9 +360,46 @@ export function WaveOpticsVisual() {
           </div>
         </CollapsibleControls>
 
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <PlaybackBar
+            playing={animating}
+            onPlayToggle={() => setAnimating(!animating)}
+            speed={speed}
+            onSpeedChange={setSpeed}
+            onReset={resetAll}
+          />
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowWavefronts((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showWavefronts ? "border-cyan-500/50 bg-cyan-500/10 text-cyan-400" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Wavefronts
+            </button>
+            <button
+              onClick={() => setShowFringes((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showFringes ? "border-primary/50 bg-primary/10 text-primary" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Fringes
+            </button>
+          </div>
+        </div>
+
+        <ScenePresets presets={presets} />
+
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Wavelength λ", value: wavelength.toFixed(2), unit: "μm" },
+            { label: "Slit separation d", value: slitSep.toFixed(1), unit: mode === "single-slit" ? "(n/a)" : "" },
+            { label: "Fringe width β", value: beta.toFixed(2), unit: "μm·u", highlight: mode === "double-slit" },
+            mode === "double-slit"
+              ? { label: "Bright fringes on screen", value: 2 * nMax + 1 }
+              : { label: "1st minimum sinθ", value: (wavelength / slitWidth).toFixed(2) },
+          ]}
+        />
 
         <div className="rounded-lg border border-cyan-500/30 bg-cyan-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-cyan-400">Key Concepts</p>

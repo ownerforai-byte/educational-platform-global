@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -41,7 +42,43 @@ export function ElectrolysisVisual() {
   const vizTargetRef = useRef<VizTarget>({});
   const [electrolyte, setElectrolyte] = useState<"molten-nacl" | "aq-cuSO4" | "water">("aq-cuSO4");
   const [isOn, setIsOn] = useState(true);
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  type ElectrolyteType = "molten-nacl" | "aq-cuSO4" | "water";
+
+  const ELEC_INFO: Record<ElectrolyteType, { electrolyte: string; ions: string; cathode: string; anode: string }> = {
+    "aq-cuSO4": { electrolyte: "CuSO₄(aq)", ions: "Cu²⁺ and SO₄²⁻", cathode: "Cu²⁺ + 2e⁻ → Cu(s)", anode: "2SO₄²⁻ → S₂O₈²⁻ + 2e⁻" },
+    "molten-nacl": { electrolyte: "Molten NaCl", ions: "Na⁺ and Cl⁻ (free mobile)", cathode: "Na⁺ + e⁻ → Na(l)", anode: "2Cl⁻ → Cl₂(g) + 2e⁻" },
+    water: { electrolyte: "Acidified water", ions: "H⁺ and OH⁻", cathode: "2H⁺ + 2e⁻ → H₂(g)", anode: "4OH⁻ → O₂ + 2H₂O + 4e⁻" },
+  };
+  const info = ELEC_INFO[electrolyte];
+
+  const presets: ScenePreset[] = [
+    {
+      name: "CuSO₄ solution",
+      hint: "Blue vitriol: copper plates onto the cathode while Cu²⁺ is reduced.",
+      apply: () => { setElectrolyte("aq-cuSO4"); setIsOn(true); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Molten NaCl",
+      hint: "Only Na⁺ and Cl⁻ present — sodium metal and chlorine gas form.",
+      apply: () => { setElectrolyte("molten-nacl"); setIsOn(true); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Acidified water",
+      hint: "Water splits into H₂ at the cathode and O₂ at the anode (2:1 by volume).",
+      apply: () => { setElectrolyte("water"); setIsOn(true); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setElectrolyte("aq-cuSO4");
+    setIsOn(true);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -52,6 +89,7 @@ export function ElectrolysisVisual() {
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
     const ionMeshes: THREE.Group[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -71,7 +109,7 @@ export function ElectrolysisVisual() {
       controls.autoRotate = false;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -79,8 +117,10 @@ export function ElectrolysisVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { s.visible = showLabels; push(s); labelSprites.push(s); return s; };
 
       const clearDynamic = () => {
+        labelSprites.length = 0;
         while (meshes.length > 8) {
           const m = meshes.pop()!;
           scene.remove(m);
@@ -137,14 +177,14 @@ export function ElectrolysisVisual() {
         const aDir = anodeTarget.clone().sub(anodeLabel).normalize();
         const aLen = anodeLabel.distanceTo(anodeTarget);
         push(new LiveLeaderLine(aDir, anodeLabel, aLen * 0.85, 0xef4444, 0.28, 0.12));
-        push(mkSprite("ANODE (+) — Oxidation", "#ef4444", anodeLabel.clone().sub(aDir.multiplyScalar(0.5)), 0.7));
+        addLabel(mkSprite("ANODE (+) — Oxidation", "#ef4444", anodeLabel.clone().sub(aDir.multiplyScalar(0.5)), 0.7));
 
         const cathLabel = new THREE.Vector3(3.5, 2.5, 0);
         const cathTarget = cathode.position.clone();
         const cDir = cathTarget.clone().sub(cathLabel).normalize();
         const cLen = cathLabel.distanceTo(cathTarget);
         push(new LiveLeaderLine(cDir, cathLabel, cLen * 0.85, 0x22c55e, 0.28, 0.12));
-        push(mkSprite("CATHODE (−) — Reduction", "#22c55e", cathLabel.clone().sub(cDir.multiplyScalar(0.5)), 0.7));
+        addLabel(mkSprite("CATHODE (−) — Reduction", "#22c55e", cathLabel.clone().sub(cDir.multiplyScalar(0.5)), 0.7));
 
         // Battery
         const battery = push(new THREE.Mesh(
@@ -152,7 +192,7 @@ export function ElectrolysisVisual() {
           new THREE.MeshPhongMaterial({ color: 0x1e293b, emissive: 0x0f172a }),
         ));
         battery.position.set(0, 2.2, D/2 + 0.3);
-        push(mkSprite("DC Power Source", "#fbbf24", new THREE.Vector3(0, 2.7, D/2 + 0.3), 0.55));
+        addLabel(mkSprite("DC Power Source", "#fbbf24", new THREE.Vector3(0, 2.7, D/2 + 0.3), 0.55));
 
         // Wire
         push(new THREE.Line(
@@ -199,7 +239,7 @@ export function ElectrolysisVisual() {
           });
 
           // Half-reactions
-          push(mkSprite("Anode: 2SO₄²⁻ → S₂O₈²⁻ + 2e⁻  |  Cathode: Cu²⁺ + 2e⁻ → Cu(s)", "#7dd3fc", new THREE.Vector3(0, -2.2, 0), 0.55));
+          addLabel(mkSprite("Anode: 2SO₄²⁻ → S₂O₈²⁻ + 2e⁻  |  Cathode: Cu²⁺ + 2e⁻ → Cu(s)", "#7dd3fc", new THREE.Vector3(0, -2.2, 0), 0.55));
         }
         else if (electrolyte === "molten-nacl") {
           // Na⁺ and Cl⁻ in molten state
@@ -216,7 +256,7 @@ export function ElectrolysisVisual() {
             scene.add(g);
             ionMeshes.push(g);
           }
-          push(mkSprite("Molten NaCl: Na⁺ → Na at cathode  |  Cl⁻ → Cl₂ at anode", "#fbbf24", new THREE.Vector3(0, -2.2, 0), 0.55));
+          addLabel(mkSprite("Molten NaCl: Na⁺ → Na at cathode  |  Cl⁻ → Cl₂ at anode", "#fbbf24", new THREE.Vector3(0, -2.2, 0), 0.55));
         }
         else {
           // Water electrolysis: H⁺ and OH⁻
@@ -233,11 +273,11 @@ export function ElectrolysisVisual() {
             scene.add(g);
             ionMeshes.push(g);
           }
-          push(mkSprite("2H₂O → 2H₂(g) + O₂(g)  |  Cathode: 2H⁺ + 2e⁻ → H₂  |  Anode: 4OH⁻ → O₂ + 2H₂O + 4e⁻", "#22d3ee", new THREE.Vector3(0, -2.2, 0), 0.5));
+          addLabel(mkSprite("2H₂O → 2H₂(g) + O₂(g)  |  Cathode: 2H⁺ + 2e⁻ → H₂  |  Anode: 4OH⁻ → O₂ + 2H₂O + 4e⁻", "#22d3ee", new THREE.Vector3(0, -2.2, 0), 0.5));
         }
 
         // Faraday's law label
-        push(mkSprite("Faraday's Law: m = (Q × M) / (n × F)  where F = 96485 C/mol", "#a78bfa", new THREE.Vector3(0, 3.2, 0), 0.6));
+        addLabel(mkSprite("Faraday's Law: m = (Q × M) / (n × F)  where F = 96485 C/mol", "#a78bfa", new THREE.Vector3(0, 3.2, 0), 0.6));
       };
 
       updateScene(0);
@@ -284,7 +324,7 @@ export function ElectrolysisVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [electrolyte, isOn, isWebGL]);
+  }, [electrolyte, isOn, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Electrolysis" description="Electrolytic cell visualization — requires WebGL." />;
@@ -299,6 +339,13 @@ export function ElectrolysisVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-red-500/50 bg-red-500/10 text-red-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
         <CollapsibleControls label="Electrolyte">
           <div className="flex flex-wrap gap-2 mt-1">
             {([
@@ -334,6 +381,14 @@ export function ElectrolysisVisual() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <ReadoutGrid
+          items={[
+            { label: "Electrolyte", value: info.electrolyte },
+            { label: "Mobile ions", value: info.ions },
+            { label: "Cathode (reduction)", value: info.cathode, highlight: true },
+            { label: "Anode (oxidation)", value: info.anode },
+          ]}
+        />
         <div className="rounded-lg border border-red-500/30 bg-red-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-red-400">Key Concepts</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">

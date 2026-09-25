@@ -9,6 +9,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -42,6 +43,44 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 type VectorMode = "addition" | "scalar" | "collinear" | "coplanar" | "linear-combo";
 
+const DOT_INFO: Record<VectorMode, { concept: string; formula: string; interpretation: string; fact: string; tip: string }> = {
+  addition: {
+    concept: "Dot product and the cosine rule",
+    formula: "|a + b|² = |a|² + |b|² + 2a·b",
+    interpretation: "The cross term 2a·b measures how much of b points along a.",
+    fact: "Pythagoras |a + b|² = |a|² + |b|² holds only when a·b = 0, i.e. a ⊥ b.",
+    tip: "Expand (a + b)·(a + b) using a·a = |a|² — a dot product is a number, not a vector.",
+  },
+  scalar: {
+    concept: "Scalars factor out of the dot product",
+    formula: "(ka)·b = k(a·b) = a·(kb)",
+    interpretation: "Stretching a by k multiplies every projection contribution by k.",
+    fact: "A negative k flips the angle to 180° − θ, so the sign of a·b reverses.",
+    tip: "The dot product is bilinear: it distributes over addition and pulls scalars out.",
+  },
+  collinear: {
+    concept: "Cauchy–Schwarz inequality",
+    formula: "|a·b| ≤ |a||b|, equality ⇔ a = kB",
+    interpretation: "For parallel vectors cosθ = ±1, so the dot product reaches its maximum magnitude.",
+    fact: "θ = 0° gives a·b = |a||b|; θ = 180° gives a·b = −|a||b|.",
+    tip: "If |a·b| = |a||b| you have found a dependence — the vectors are collinear.",
+  },
+  coplanar: {
+    concept: "Orthogonality via the dot product",
+    formula: "c·(a×b) = 0 ⇔ a, b, c coplanar",
+    interpretation: "c has no component along the plane normal n = a×b, so it lies in the plane of a and b.",
+    fact: "This test is the scalar triple product [a b c] — it equals a 3×3 determinant.",
+    tip: "To test coplanarity, dot the third vector with the cross product of the first two.",
+  },
+  "linear-combo": {
+    concept: "Coefficients by projection",
+    formula: "If v = c₁a + c₂b with a ⊥ b, then c₁ = (v·a)/(a·a)",
+    interpretation: "Dotting with a kills the perpendicular term and isolates c₁.",
+    fact: "This is the same idea behind Fourier coefficients and least-squares fitting.",
+    tip: "Orthogonal bases make projections trivial — dot with each basis vector in turn.",
+  },
+};
+
 export function VectorDot3DVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
@@ -51,6 +90,34 @@ export function VectorDot3DVisual() {
   const [c, setC] = useState({ x: 0, y: 2, z: 2 });
   const [k, setK] = useState(2);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const info = DOT_INFO[mode];
+  const dotAB = a.x * b.x + a.y * b.y + a.z * b.z;
+  const magA = Math.hypot(a.x, a.y, a.z);
+  const magB = Math.hypot(b.x, b.y, b.z);
+  const thetaDeg = magA > 0 && magB > 0
+    ? (Math.acos(Math.min(1, Math.max(-1, dotAB / (magA * magB)))) * 180) / Math.PI
+    : NaN;
+  const compB = magB > 0 ? dotAB / magB : NaN;
+
+  const presets: ScenePreset[] = [
+    { name: "Right angle (a·b = 0)", hint: "θ = 90°, so |a + b|² = |a|² + |b|²", apply: () => { setMode("addition"); setA({ x: 2, y: 1, z: 0 }); setB({ x: -1, y: 2, z: 0 }); setRunId((r) => r + 1); } },
+    { name: "Exact 60° angle", hint: "a = (1,1,0), b = (2,0,2): cosθ = 1/2", apply: () => { setMode("addition"); setA({ x: 1, y: 1, z: 0 }); setB({ x: 2, y: 0, z: 2 }); setRunId((r) => r + 1); } },
+    { name: "Collinear (θ = 0°)", hint: "A = 2B ⇒ a·b = |a||b| — Cauchy–Schwarz equality", apply: () => { setMode("collinear"); setA({ x: 2, y: 0, z: 0 }); setB({ x: 1, y: 0, z: 0 }); setRunId((r) => r + 1); } },
+    { name: "Coplanar triple", hint: "All z-components zero ⇒ c·(a×b) = 0", apply: () => { setMode("coplanar"); setC({ x: 1, y: 2, z: 0 }); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setMode("addition");
+    setA({ x: 3, y: 1, z: 0 });
+    setB({ x: 1, y: 3, z: 0 });
+    setC({ x: 0, y: 2, z: 2 });
+    setK(2);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -63,6 +130,7 @@ export function VectorDot3DVisual() {
     let animTime = 0;
     let animPhase = 0;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -83,7 +151,7 @@ export function VectorDot3DVisual() {
       controls.autoRotateSpeed = 0.3;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.6));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -112,7 +180,8 @@ export function VectorDot3DVisual() {
         const len = to.clone().sub(from).length();
         push(new LiveLeaderLine(dir, from, len, color, 0.2, 0.12));
         const mid = from.clone().add(to).multiplyScalar(0.5);
-        push(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, mid.clone().add(new THREE.Vector3(0, 0.6, 0)), 0.8));
+        const s = push(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, mid.clone().add(new THREE.Vector3(0, 0.6, 0)), 0.8));
+        labelSprites.push(s);
       };
 
       const update = () => {
@@ -140,7 +209,7 @@ export function VectorDot3DVisual() {
           (meshes[meshes.length - 1] as any).computeLineDistances();
           drawArrow(new THREE.Vector3(0, 0, 0), sum, 0xf97316, "A + B");
           // Triangle method: B from tip of A
-          push(mkSprite("Triangle: A then B â†’ R", "#7dd3fc", new THREE.Vector3(-4, 4, 0), 0.8));
+          push(mkSprite("Triangle: A then B → R", "#7dd3fc", new THREE.Vector3(-4, 4, 0), 0.8));
         } else if (mode === "scalar") {
           // kA
           const scaled = A.clone().multiplyScalar(k);
@@ -153,7 +222,7 @@ export function VectorDot3DVisual() {
           drawArrow(new THREE.Vector3(0, 0, 0), A, 0xef4444, "A");
           drawArrow(new THREE.Vector3(0, 0, 0), bScaled, 0x22c55e, "2B");
           drawArrow(new THREE.Vector3(0, 0, 0), B, 0x3b82f6, "B");
-          push(mkSprite("Collinear: A = 2B â†’ same line through origin", "#a78bfa", new THREE.Vector3(-4, 4, 0), 0.85));
+          push(mkSprite("Collinear: A = 2B → same line through origin", "#a78bfa", new THREE.Vector3(-4, 4, 0), 0.85));
         } else if (mode === "coplanar") {
           // Three vectors coplanar if scalar triple product = 0
           drawArrow(new THREE.Vector3(0, 0, 0), A, 0xef4444, "A");
@@ -175,12 +244,13 @@ export function VectorDot3DVisual() {
           const result = A.clone().multiplyScalar(c1).add(B.clone().multiplyScalar(c2));
           drawArrow(new THREE.Vector3(0, 0, 0), A, 0xef4444, "A");
           drawArrow(new THREE.Vector3(0, 0, 0), B, 0x22c55e, "B");
-          drawArrow(new THREE.Vector3(0, 0, 0), result, 0xf97316, `câ‚A+câ‚‚B`);
+          drawArrow(new THREE.Vector3(0, 0, 0), result, 0xf97316, `c₁A+c₂B`);
           push(mkSprite(`Linear combo: 1.5A + 0.8B`, "#fb923c", new THREE.Vector3(-4, 4, 0), 0.85));
         }
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -221,7 +291,7 @@ export function VectorDot3DVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [mode, a, b, c, k, isWebGL]);
+  }, [mode, a, b, c, k, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Dot Product 3D" description="Interactive 3D vector visualization — requires WebGL." />;
@@ -236,11 +306,19 @@ export function VectorDot3DVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-blue-500/50 bg-blue-500/10 text-blue-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Vector Mode">
           <Tabs value={mode} onValueChange={(v) => setMode(v as VectorMode)} className="mt-1">
             <TabsList className="grid w-full grid-cols-5">
               <TabsTrigger value="addition" className="text-xs">Addition</TabsTrigger>
-              <TabsTrigger value="scalar" className="text-xs">Scalar Ã— v</TabsTrigger>
+              <TabsTrigger value="scalar" className="text-xs">Scalar × v</TabsTrigger>
               <TabsTrigger value="collinear" className="text-xs">Collinear</TabsTrigger>
               <TabsTrigger value="coplanar" className="text-xs">Coplanar</TabsTrigger>
               <TabsTrigger value="linear-combo" className="text-xs">Linear Combo</TabsTrigger>
@@ -285,13 +363,25 @@ export function VectorDot3DVisual() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <ReadoutGrid
+          items={[
+            { label: "a · b", value: dotAB.toFixed(2), highlight: true },
+            { label: "|a|", value: magA.toFixed(2) },
+            { label: "|b|", value: magB.toFixed(2) },
+            { label: "Angle θ", value: Number.isNaN(thetaDeg) ? "—" : `${thetaDeg.toFixed(1)}°` },
+            { label: "comp_b a = a·b̂", value: Number.isNaN(compB) ? "—" : compB.toFixed(2) },
+            { label: info.concept, value: info.formula },
+          ]}
+        />
+
         <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-blue-400">Key Definitions</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">
+            <p><strong className="text-foreground">Dot product:</strong> a·b = |a||b|cosθ — a scalar; positive for acute θ, zero at 90°, negative for obtuse θ.</p>
             <p><strong className="text-foreground">Collinear vectors:</strong> A and B are collinear if A = kB for some scalar k.</p>
-            <p><strong className="text-foreground">Coplanar vectors:</strong> Three vectors are coplanar if their scalar triple product A·(BÃ—C) = 0.</p>
-            <p><strong className="text-foreground">Linear combination:</strong> v = câ‚a + câ‚‚b + câ‚ƒc for scalars câ‚, câ‚‚, câ‚ƒ.</p>
-            <p><strong className="text-foreground">Linearly independent:</strong> No non-trivial combination gives the zero vector.</p>
+            <p><strong className="text-foreground">Coplanar vectors:</strong> Three vectors are coplanar if their scalar triple product A·(B×C) = 0.</p>
+            <p><strong className="text-foreground">Linear combination:</strong> v = c₁a + c₂b + c₃c for scalars c₁, c₂, c₃.</p>
+            <p><strong className="text-foreground">{info.concept}:</strong> {info.interpretation} {info.tip}</p>
           </div>
         </div>
       </CardContent>

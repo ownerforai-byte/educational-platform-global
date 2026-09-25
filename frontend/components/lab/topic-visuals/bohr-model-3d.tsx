@@ -8,6 +8,12 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  PlaybackBar,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -39,7 +45,59 @@ export function BohrModelVisual() {
   const [Z, setZ] = useState(1);
   const [n, setN] = useState(3);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [animating, setAnimating] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  const [showLabels, setShowLabels] = useState(true);
+  const [showOrbits, setShowOrbits] = useState(true);
+  const [runId, setRunId] = useState(0);
+  // Speed lives in a ref so changing it never tears down the WebGL scene.
+  const speedRef = useRef(1);
+  speedRef.current = speed;
 
+  const a0 = 0.0529; // Bohr radius in nm
+  const orbitRadius = (n * n * a0) / Z; // nm
+  const energyLevel = (-13.6 * Z * Z) / (n * n); // eV
+  const transitionDE = n > 1 ? 13.6 * Z * Z * (1 - 1 / (n * n)) : 0; // eV, n→1
+  const transitionWL = transitionDE > 0 ? 1240 / transitionDE : 0; // nm
+
+  const DEFAULTS = { Z: 1, n: 3 };
+  const presets: ScenePreset[] = [
+    {
+      name: "Hydrogen ground (n=1)",
+      hint: "Lowest orbit — E = −13.6 eV, the most tightly bound state.",
+      apply: () => { setZ(1); setN(1); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Balmer (H, n=3)",
+      hint: "n=3 → n=2 falls in the visible — the red Hα line of hydrogen.",
+      apply: () => { setZ(1); setN(3); setRunId((r) => r + 1); },
+    },
+    {
+      name: "He⁺ ion (Z=2, n=2)",
+      hint: "One-proton-extra nucleus pulls orbits in by Z and deepens energies by Z².",
+      apply: () => { setZ(2); setN(2); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Li²⁺ (Z=3, n=4)",
+      hint: "Hydrogen-like lithium — highly excited orbit far from the nucleus.",
+      apply: () => { setZ(3); setN(4); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Near ionization (H, n=5)",
+      hint: "E approaches 0 — one more step and the electron escapes.",
+      apply: () => { setZ(1); setN(5); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setZ(DEFAULTS.Z);
+    setN(DEFAULTS.n);
+    setSpeed(1);
+    setShowLabels(true);
+    setShowOrbits(true);
+    setAnimating(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     const container = containerRef.current;
@@ -48,6 +106,8 @@ export function BohrModelVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
+    const orbitLines: THREE.Object3D[] = [];
     let electronAngle = 0;
 
     const init = async () => {
@@ -68,7 +128,12 @@ export function BohrModelVisual() {
       controls.autoRotate = false;
       controls.minDistance = 3;
       controls.maxDistance = 25;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -76,13 +141,14 @@ export function BohrModelVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
 
       // Nucleus
       const nucleus = push(new THREE.Mesh(
         new THREE.SphereGeometry(0.3, 24, 24),
         new THREE.MeshBasicMaterial({ color: 0xef4444 }),
       )) as THREE.Mesh;
-      push(mkSprite(`Nucleus (Z=${Z})`, "#ef4444", new THREE.Vector3(0, 0.8, 0), 0.7));
+      addLabel(mkSprite(`Nucleus (Z=${Z})`, "#ef4444", new THREE.Vector3(0, 0.8, 0), 0.7));
 
       // Energy levels (orbits)
       for (let i = 1; i <= n; i++) {
@@ -98,6 +164,8 @@ export function BohrModelVisual() {
         ));
         orbit.rotation.x = Math.PI * 0.1;
         orbit.rotation.z = Math.PI * 0.05;
+        orbit.visible = showOrbits;
+        orbitLines.push(orbit);
 
         // Energy level label
         const energy = -13.6 * (Z * Z) / (i * i);
@@ -105,7 +173,7 @@ export function BohrModelVisual() {
         const targetPos = new THREE.Vector3(radius, 0, 0);
         const dir = targetPos.clone().sub(labelPos).normalize();
         push(new LiveLeaderLine(dir, labelPos, labelPos.distanceTo(targetPos) * 0.9, 0xa78bfa, 0.15, 0.1));
-        push(mkSprite(`n=${i}: E = ${energy.toFixed(1)} eV`, "#a78bfa", labelPos.clone().sub(dir.multiplyScalar(0.5)), 0.7));
+        addLabel(mkSprite(`n=${i}: E = ${energy.toFixed(1)} eV`, "#a78bfa", labelPos.clone().sub(dir.multiplyScalar(0.5)), 0.7));
       }
 
       // Electron on selected orbit
@@ -120,14 +188,14 @@ export function BohrModelVisual() {
       const velTarget = new THREE.Vector3(electronRadius * Math.cos(electronAngle), electronRadius * Math.sin(electronAngle), 0);
       const velDir = velTarget.clone().sub(velLabelPos).normalize();
       push(new LiveLeaderLine(velDir, velLabelPos, velLabelPos.distanceTo(velTarget) * 0.9, 0x22d3ee, 0.2, 0.1));
-      push(mkSprite("v (velocity)", "#22d3ee", velLabelPos.clone().sub(velDir.multiplyScalar(0.5)), 0.75));
+      addLabel(mkSprite("v (velocity)", "#22d3ee", velLabelPos.clone().sub(velDir.multiplyScalar(0.5)), 0.75));
 
       // Angular momentum quantization label
       const amLabelPos = new THREE.Vector3(-electronRadius - 2, electronRadius + 1, 0);
       const amTarget = new THREE.Vector3(0, 0, 0);
       const amDir = amTarget.clone().sub(amLabelPos).normalize();
       push(new LiveLeaderLine(amDir, amLabelPos, amLabelPos.distanceTo(amTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
-      push(mkSprite("mvr = nh/2π (quantization)", "#fbbf24", amLabelPos.clone().sub(amDir.multiplyScalar(0.5)), 0.7));
+      addLabel(mkSprite("mvr = nh/2π (quantization)", "#fbbf24", amLabelPos.clone().sub(amDir.multiplyScalar(0.5)), 0.7));
 
       const update = () => {
         while (meshes.length > 40) {
@@ -140,16 +208,20 @@ export function BohrModelVisual() {
         }
       };
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
+      orbitLines.forEach((o) => (o.visible = showOrbits));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
-        electronAngle += 0.03;
-        electron.position.set(
-          electronRadius * Math.cos(electronAngle),
-          electronRadius * Math.sin(electronAngle),
-          0
-        );
+        if (animating) {
+          electronAngle += 0.03 * speedRef.current;
+          electron.position.set(
+            electronRadius * Math.cos(electronAngle),
+            electronRadius * Math.sin(electronAngle),
+            0
+          );
+        }
         renderer.render(scene, camera);
       };
       animate();
@@ -184,7 +256,7 @@ export function BohrModelVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [Z, n, isWebGL]);
+  }, [Z, n, isWebGL, runId, animating, showLabels, showOrbits]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Bohr Model" description="Electron orbits with energy level labels." />;
@@ -214,9 +286,44 @@ export function BohrModelVisual() {
           </div>
         </CollapsibleControls>
 
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <PlaybackBar
+            playing={animating}
+            onPlayToggle={() => setAnimating(!animating)}
+            speed={speed}
+            onSpeedChange={setSpeed}
+            onReset={resetAll}
+          />
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-primary/50 bg-primary/10 text-primary" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Labels
+            </button>
+            <button
+              onClick={() => setShowOrbits((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showOrbits ? "border-purple-500/50 bg-purple-500/10 text-purple-400" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Orbits
+            </button>
+          </div>
+        </div>
+
+        <ScenePresets presets={presets} />
+
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Orbit radius rₙ", value: orbitRadius.toFixed(4), unit: "nm" },
+            { label: "Energy level Eₙ", value: energyLevel.toFixed(2), unit: "eV", highlight: n === 1 },
+            { label: "Transition λ (n→1)", value: transitionWL > 0 ? transitionWL.toFixed(1) : "—", unit: transitionWL > 0 ? "nm" : undefined },
+            { label: "Angular momentum", value: `${n}ħ` },
+          ]}
+        />
 
         <div className="rounded-lg border border-purple-500/30 bg-purple-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-purple-400">Key Concepts</p>

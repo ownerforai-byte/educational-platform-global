@@ -257,13 +257,13 @@ export function AIChatInterface() {
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h2 className="text-base font-bold text-foreground">Ravikisan AI Tutor</h2>
+              <h2 className="text-base font-bold text-foreground">Ravikisan's AI Tutor</h2>
               <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-primary/15 text-primary">
                 Professor Mode
               </span>
             </div>
             <p className="text-xs text-muted-foreground">
-              NEB Class 11 &amp; 12 syllabus-grounded assistant with LaTeX math &amp; CEE insights
+              👋, I am the captain here. Feel free to clear your doubts.
             </p>
           </div>
         </div>

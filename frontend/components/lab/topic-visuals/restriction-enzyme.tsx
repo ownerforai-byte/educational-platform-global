@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -36,19 +37,56 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
-function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
+function addLabel(scene: THREE.Scene, meshes: THREE.Object3D[], labelSprites: THREE.Sprite[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
   const dir = targetPos.clone().sub(labelPos).normalize();
   const len = labelPos.distanceTo(targetPos);
-  meshes.push(new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14) as any);
+  const line = new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14);
+  scene.add(line);
+  meshes.push(line);
   const lp = labelPos.clone().sub(dir.clone().multiplyScalar(0.45));
-  meshes.push(mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85));
+  const s = mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85);
+  scene.add(s);
+  meshes.push(s);
+  labelSprites.push(s);
 }
+
+const CUT_INFO: Record<"before" | "after", { status: string; site: string; action: string; fact: string; tip: string }> = {
+  before: {
+    status: "Intact double-stranded DNA",
+    site: "EcoRI site GAATTC — a palindromic 6-base sequence",
+    action: "Enzyme scans the helix and binds only its recognition site",
+    fact: "EcoRI needs Mg²⁺ as a cofactor — no magnesium, no cutting",
+    tip: "Recognition palindromes read the same 5'→3' on both strands",
+  },
+  after: {
+    status: "Two fragments with complementary sticky ends",
+    site: "Cut falls between G and A on each strand",
+    action: "5'-AATT overhangs can re-pair with ANY DNA cut by the same enzyme",
+    fact: "Vector + gene cut with the same enzyme ligate together — the basis of cloning",
+    tip: "Sticky ends only hydrogen-bond; DNA ligase seals the backbone permanently",
+  },
+};
 
 export function RestrictionEnzymeVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [cut, setCut] = useState(false);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const info = CUT_INFO[cut ? "after" : "before"];
+
+  const presets: ScenePreset[] = [
+    { name: "Intact DNA", hint: "Find the EcoRI site", apply: () => { setCut(false); setRunId((r) => r + 1); } },
+    { name: "Cut with EcoRI", hint: "Sticky ends + gel bands", apply: () => { setCut(true); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setCut(false);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -58,6 +96,7 @@ export function RestrictionEnzymeVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -77,7 +116,7 @@ export function RestrictionEnzymeVisual() {
       controls.autoRotate = false;
       controls.minDistance = 4;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dl = new THREE.DirectionalLight(0xffffff, 0.9);
@@ -126,9 +165,9 @@ export function RestrictionEnzymeVisual() {
           site.position.set(0.5, 0, 0);
 
           push(mkSprite("EcoRI Recognition Site: 5'-GAATTC-3'", "#a78bfa", new THREE.Vector3(0, 1.5, 0), 0.7));
-          addLabel(meshes, "Restriction Site", 0xa78bfa, new THREE.Vector3(2.5, 0.8, 2.5), site.position);
-          addLabel(meshes, "DNA Strand 5'→3'", 0xef4444, new THREE.Vector3(-3, 1.0, 2), top.position);
-          addLabel(meshes, "DNA Strand 3'→5'", 0x3b82f6, new THREE.Vector3(-3, -1.0, 2), bottom.position);
+          addLabel(scene, meshes, labelSprites, "Restriction Site", 0xa78bfa, new THREE.Vector3(2.5, 0.8, 2.5), site.position);
+          addLabel(scene, meshes, labelSprites, "DNA Strand 5'→3'", 0xef4444, new THREE.Vector3(-3, 1.0, 2), top.position);
+          addLabel(scene, meshes, labelSprites, "DNA Strand 3'→5'", 0x3b82f6, new THREE.Vector3(-3, -1.0, 2), bottom.position);
         } else {
           // Cut DNA — two fragments
           // Fragment 1 (left)
@@ -178,11 +217,11 @@ export function RestrictionEnzymeVisual() {
           enzyme.rotation.z = Math.PI / 2;
 
           push(mkSprite("Cut by EcoRI — Sticky Ends Generated", "#fbbf24", new THREE.Vector3(0, 1.8, 0), 0.75));
-          addLabel(meshes, "Fragment 1", 0x22d3ee, new THREE.Vector3(-3, 1.2, 2), f1top.position);
-          addLabel(meshes, "Fragment 2", 0x22d3ee, new THREE.Vector3(3, 1.2, 2), f2top.position);
-          addLabel(meshes, "Sticky End (5' overhang)", 0xfbbf24, new THREE.Vector3(1, 0.8, 2.5), overhang1.position);
-          addLabel(meshes, "Sticky End (complement)", 0x22c55e, new THREE.Vector3(-1, -0.8, -2.5), overhang2.position);
-          addLabel(meshes, "Restriction Enzyme\n(EcoRI)", 0xf97316, new THREE.Vector3(0.5, 1.5, -2.5), enzyme.position);
+          addLabel(scene, meshes, labelSprites, "Fragment 1", 0x22d3ee, new THREE.Vector3(-3, 1.2, 2), f1top.position);
+          addLabel(scene, meshes, labelSprites, "Fragment 2", 0x22d3ee, new THREE.Vector3(3, 1.2, 2), f2top.position);
+          addLabel(scene, meshes, labelSprites, "Sticky End (5' overhang)", 0xfbbf24, new THREE.Vector3(1, 0.8, 2.5), overhang1.position);
+          addLabel(scene, meshes, labelSprites, "Sticky End (complement)", 0x22c55e, new THREE.Vector3(-1, -0.8, -2.5), overhang2.position);
+          addLabel(scene, meshes, labelSprites, "Restriction Enzyme\n(EcoRI)", 0xf97316, new THREE.Vector3(0.5, 1.5, -2.5), enzyme.position);
 
           // Gel electrophoresis representation
           const gelX = 3.5;
@@ -199,11 +238,12 @@ export function RestrictionEnzymeVisual() {
             new THREE.MeshPhongMaterial({ color: 0x475569 }),
           ));
           gelBox.position.set(gelX - 0.3, -0.2, 0);
-          addLabel(meshes, "Gel Electrophoresis\n(Size separation)", 0x7dd3fc, new THREE.Vector3(4.5, 1.0, 2), new THREE.Vector3(gelX, 0, 0));
+          addLabel(scene, meshes, labelSprites, "Gel Electrophoresis\n(Size separation)", 0x7dd3fc, new THREE.Vector3(4.5, 1.0, 2), new THREE.Vector3(gelX, 0, 0));
         }
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -241,7 +281,7 @@ export function RestrictionEnzymeVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [cut, isWebGL]);
+  }, [cut, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Restriction Enzyme Cutting" description="3D DNA cutting and gel electrophoresis." />;
@@ -256,6 +296,14 @@ export function RestrictionEnzymeVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-purple-500/50 bg-purple-500/10 text-purple-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Action">
           <div className="flex gap-2 mt-2">
             <button
@@ -270,6 +318,16 @@ export function RestrictionEnzymeVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "State", value: info.status, highlight: true },
+            { label: "Recognition site", value: info.site },
+            { label: "What the enzyme does", value: info.action },
+            { label: "Reality check", value: info.fact },
+            { label: "Exam tip", value: info.tip },
+          ]}
+        />
 
         <div className="rounded-lg border border-purple-500/30 bg-purple-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-purple-400">Key Concepts</p>

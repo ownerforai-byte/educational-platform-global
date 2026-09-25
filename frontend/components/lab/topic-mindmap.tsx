@@ -26,6 +26,7 @@ import {
   Code2,
 } from "lucide-react";
 import { MathMarkdown } from "@/components/content/math-markdown";
+import { getUnitConcept } from "@/lib/visual-concept-map";
 
 export interface MindMapLeafNode {
   id: string;
@@ -122,6 +123,15 @@ export function TopicMindMap({
   // Determine branches, sub-branches and educational KaTeX facts based on subject and topic
   const rawBranches: MindMapBranch[] = useMemo(() => {
     const s = subjectSlug.toLowerCase();
+
+    // ─────────────────────────────────────────────────────────────
+    // 0. UNIT-CONCEPT REGISTRY — topic-aware branches. Every syllabus
+    // unit with authored concept data gets its own 3-branch mindmap
+    // (definitions → laws → applications), overriding the subject-level
+    // generic trees below.
+    // ─────────────────────────────────────────────────────────────
+    const unitConcept = getUnitConcept(unitId || "", topicSlug, topicTitle);
+    if (unitConcept) return unitConcept.branches;
 
     // ─────────────────────────────────────────────────────────────
     // 1. BIOLOGY TOPICS
@@ -1830,7 +1840,7 @@ export function TopicMindMap({
         nodes: [],
       },
     ];
-  }, [subjectSlug]);
+  }, [subjectSlug, unitId, topicSlug, topicTitle]);
 
   // Flatten nodes for canvas and compute filtered branches
   const branches: MindMapBranch[] = useMemo(() => {

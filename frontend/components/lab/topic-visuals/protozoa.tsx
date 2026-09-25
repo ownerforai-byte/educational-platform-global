@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -36,21 +37,62 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
-function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
+function addLabel(scene: THREE.Scene, meshes: THREE.Object3D[], labelSprites: THREE.Sprite[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
   const dir = targetPos.clone().sub(labelPos).normalize();
   const len = labelPos.distanceTo(targetPos);
-  meshes.push(new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14) as any);
+  const line = new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14);
+  scene.add(line);
+  meshes.push(line);
   const lp = labelPos.clone().sub(dir.clone().multiplyScalar(0.45));
-  meshes.push(mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85));
+  const s = mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85);
+  scene.add(s);
+  meshes.push(s);
+  labelSprites.push(s);
 }
 
 type Organism = "paramecium" | "plasmodium";
+
+const ORG_INFO: Record<Organism, { head: string; locomotion: string; feeding: string; osmoreg: string; reproduction: string; fact: string; tip: string }> = {
+  paramecium: {
+    head: "Paramecium caudatum · Class Ciliata",
+    locomotion: "~10,000 cilia beating in coordinated waves",
+    feeding: "Oral groove sweeps in bacteria → food vacuoles digest while circulating",
+    osmoreg: "Two contractile vacuoles pump out freshwater",
+    reproduction: "Asexual: transverse binary fission · Sexual: conjugation (micronuclei exchange)",
+    fact: "In freshwater it must expel its own body volume in water every couple of minutes",
+    tip: "Macronucleus runs day-to-day metabolism; micronucleus handles heredity at conjugation",
+  },
+  plasmodium: {
+    head: "Plasmodium vivax · Class Sporozoa",
+    locomotion: "Amoeboid pseudopodia in tissue stages; gliding sporozoites",
+    feeding: "Absorbs digested haemoglobin straight through the body surface",
+    osmoreg: "None needed — lives inside the host's isotropic fluids",
+    reproduction: "Asexual schizogony in humans · sexual sporogony in Anopheles gut",
+    fact: "P. falciparum still kills ~600,000 people a year, mostly under-5s in Africa",
+    tip: "No fixed shape, no contractile vacuole — parasitic protozoans lose locomotory organelles",
+  },
+};
 
 export function ProtozoaVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [organism, setOrganism] = useState<Organism>("paramecium");
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const info = ORG_INFO[organism];
+
+  const presets: ScenePreset[] = [
+    { name: "Paramecium — the ciliated filter-feeder", hint: "Cilia + 2 vacuole systems", apply: () => { setOrganism("paramecium"); setRunId((r) => r + 1); } },
+    { name: "Plasmodium — the malaria parasite", hint: "No organelles, all absorption", apply: () => { setOrganism("plasmodium"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setOrganism("paramecium");
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -60,6 +102,7 @@ export function ProtozoaVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -79,7 +122,7 @@ export function ProtozoaVisual() {
       controls.autoRotate = false;
       controls.minDistance = 4;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dl = new THREE.DirectionalLight(0xffffff, 0.9);
@@ -174,13 +217,13 @@ export function ProtozoaVisual() {
 
           push(mkSprite("Paramecium caudatum — Ciliated Protozoan", "#fbbf24", new THREE.Vector3(0, 3.5, 0), 0.85));
 
-          addLabel(meshes, "Cilia", 0x38bdf8, new THREE.Vector3(3.5, 1.5, 2), new THREE.Vector3(0, 0.6, 0.95));
-          addLabel(meshes, "Macronucleus", 0xa78bfa, new THREE.Vector3(-3.5, 1.5, 2), macroNuc.position);
-          addLabel(meshes, "Micronucleus", 0x7c3aed, new THREE.Vector3(-3.5, 2.5, -1.5), microNuc.position);
-          addLabel(meshes, "Oral Groove (Cytopharynx)", 0x22d3ee, new THREE.Vector3(3.5, -1.5, 2), groove.position);
-          addLabel(meshes, "Contractile Vacuole", 0xfbbf24, new THREE.Vector3(-3.5, 2, -2), cv1.position);
-          addLabel(meshes, "Food Vacuole", 0x22c55e, new THREE.Vector3(3, -1, -2.5), foodVac.position);
-          addLabel(meshes, "Anal Pore (Cytopeigne)", 0xef4444, new THREE.Vector3(3.5, 0, 2.5), analPore.position);
+          addLabel(scene, meshes, labelSprites, "Cilia", 0x38bdf8, new THREE.Vector3(3.5, 1.5, 2), new THREE.Vector3(0, 0.6, 0.95));
+          addLabel(scene, meshes, labelSprites, "Macronucleus", 0xa78bfa, new THREE.Vector3(-3.5, 1.5, 2), macroNuc.position);
+          addLabel(scene, meshes, labelSprites, "Micronucleus", 0x7c3aed, new THREE.Vector3(-3.5, 2.5, -1.5), microNuc.position);
+          addLabel(scene, meshes, labelSprites, "Oral Groove (Cytopharynx)", 0x22d3ee, new THREE.Vector3(3.5, -1.5, 2), groove.position);
+          addLabel(scene, meshes, labelSprites, "Contractile Vacuole", 0xfbbf24, new THREE.Vector3(-3.5, 2, -2), cv1.position);
+          addLabel(scene, meshes, labelSprites, "Food Vacuole", 0x22c55e, new THREE.Vector3(3, -1, -2.5), foodVac.position);
+          addLabel(scene, meshes, labelSprites, "Anal Pore (Cytopeigne)", 0xef4444, new THREE.Vector3(3.5, 0, 2.5), analPore.position);
         } else {
           // Plasmodium vivax — amoeboid shape
           const body = push(new THREE.Mesh(
@@ -225,15 +268,16 @@ export function ProtozoaVisual() {
           }
 
           push(mkSprite("Plasmodium vivax — Sporozoan Protozoan", "#fbbf24", new THREE.Vector3(0, 3.5, 0), 0.85));
-          addLabel(meshes, "Pseudopodia", 0xd946ef, new THREE.Vector3(3.5, 1, 2), new THREE.Vector3(0.8, 0.8, 0));
-          addLabel(meshes, "Nucleus", 0xa78bfa, new THREE.Vector3(-3.5, 1.5, -2), nuc.position);
-          addLabel(meshes, "Food Vacuoles", 0x22c55e, new THREE.Vector3(3.5, -1.5, 2), new THREE.Vector3(0, 0.3, -0.2));
-          addLabel(meshes, "Ectoplasm", 0xe879f9, new THREE.Vector3(-3.5, -1, 2), new THREE.Vector3(-0.5, -0.3, 0));
-          addLabel(meshes, "Endoplasm", 0xd946ef, new THREE.Vector3(3, -2, -2), new THREE.Vector3(0, 0, 0));
+          addLabel(scene, meshes, labelSprites, "Pseudopodia", 0xd946ef, new THREE.Vector3(3.5, 1, 2), new THREE.Vector3(0.8, 0.8, 0));
+          addLabel(scene, meshes, labelSprites, "Nucleus", 0xa78bfa, new THREE.Vector3(-3.5, 1.5, -2), nuc.position);
+          addLabel(scene, meshes, labelSprites, "Food Vacuoles", 0x22c55e, new THREE.Vector3(3.5, -1.5, 2), new THREE.Vector3(0, 0.3, -0.2));
+          addLabel(scene, meshes, labelSprites, "Ectoplasm", 0xe879f9, new THREE.Vector3(-3.5, -1, 2), new THREE.Vector3(-0.5, -0.3, 0));
+          addLabel(scene, meshes, labelSprites, "Endoplasm", 0xd946ef, new THREE.Vector3(3, -2, -2), new THREE.Vector3(0, 0, 0));
         }
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -271,7 +315,7 @@ export function ProtozoaVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [organism, isWebGL]);
+  }, [organism, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Protozoa (Paramecium & Plasmodium)" description="3D protozoan structure diagrams." />;
@@ -286,6 +330,14 @@ export function ProtozoaVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-cyan-500/50 bg-cyan-500/10 text-cyan-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Organism">
           <div className="flex flex-wrap gap-2 mt-2">
             {(["paramecium", "plasmodium"] as const).map((o) => (
@@ -302,6 +354,17 @@ export function ProtozoaVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Organism", value: info.head, highlight: true },
+            { label: "Locomotion", value: info.locomotion },
+            { label: "Feeding", value: info.feeding },
+            { label: "Osmoregulation", value: info.osmoreg },
+            { label: "Reproduction", value: info.reproduction },
+            { label: "Reality check", value: info.fact },
+          ]}
+        />
 
         <div className="rounded-lg border border-cyan-500/30 bg-cyan-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-cyan-400">Key Concepts</p>

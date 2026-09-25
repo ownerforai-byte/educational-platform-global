@@ -8,6 +8,11 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, scale = 0.3) {
@@ -33,6 +38,42 @@ export default function OpticsReflection3d() {
   const [mode, setMode] = useState<"concave" | "convex">("concave");
   const [angle, setAngle] = useState(45);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [showNormals, setShowNormals] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const DEFAULTS = { mode: "concave" as const, angle: 45 };
+
+  const presets: ScenePreset[] = [
+    {
+      name: "Normal incidence (0°)",
+      hint: "Ray along the normal — reflects straight back on itself.",
+      apply: () => { setMode("concave"); setAngle(0); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Concave 45°",
+      hint: "Classic setup — θᵢ = θᵣ = 45°, ray turns by 90°.",
+      apply: () => { setMode("concave"); setAngle(45); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Convex 60°",
+      hint: "Diverging mirror — reflected ray spreads away from the axis.",
+      apply: () => { setMode("convex"); setAngle(60); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Grazing (80°)",
+      hint: "Near-parallel to the surface — reflection still obeys θᵢ = θᵣ.",
+      apply: () => { setMode("concave"); setAngle(80); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setMode(DEFAULTS.mode);
+    setAngle(DEFAULTS.angle);
+    setShowLabels(true);
+    setShowNormals(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     if (!isWebGL || !containerRef.current) return;
@@ -48,11 +89,18 @@ export default function OpticsReflection3d() {
     renderer.setSize(w, h);
     container.appendChild(renderer.domElement);
 
+    const labelSprites: THREE.Sprite[] = [];
+
     let controls: any;
     import("three/addons/controls/OrbitControls.js").then((mod) => {
       controls = new mod.OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
       controls.dampingFactor = 0.08;
     });
 
@@ -82,11 +130,14 @@ export default function OpticsReflection3d() {
     ]);
     const normalMat = new THREE.LineBasicMaterial({ color: 0xa5b4fc, linewidth: 2 });
     const normalLine = new THREE.Line(normalGeo, normalMat);
+    normalLine.visible = showNormals;
     scene.add(normalLine);
 
     const normalLabel = mkSprite("Normal", "#a5b4fc");
     scene.add(normalLabel);
     normalLabel.position.set(0.3, 0.3, -1.5);
+    normalLabel.visible = showLabels && showNormals;
+    labelSprites.push(normalLabel);
 
     const surfaceLine = new THREE.Line(
       new THREE.BufferGeometry().setFromPoints([
@@ -119,10 +170,15 @@ export default function OpticsReflection3d() {
       scene.add(reflRay);
 
       scene.add(mkSprite("Incident", "#f59e0b"));
-      (scene.children[scene.children.length - 1] as THREE.Sprite).position.set(-1.5, 0.5, -1);
+      const incLabel = scene.children[scene.children.length - 1] as THREE.Sprite;
+      incLabel.position.set(-1.5, 0.5, -1);
+      incLabel.visible = showLabels;
+      labelSprites.push(incLabel);
       const spec = mkSprite("Reflected", "#22d3ee");
       scene.add(spec);
       spec.position.set(1.5, 0.5, -1);
+      spec.visible = showLabels;
+      labelSprites.push(spec);
       return { ray, reflRay, spec };
     };
 
@@ -155,7 +211,7 @@ export default function OpticsReflection3d() {
       renderer.dispose();
       controls?.dispose();
     };
-  }, [mode, angle, isWebGL]);
+  }, [mode, angle, isWebGL, runId, showLabels, showNormals]);
 
   if (!isWebGL) return <WebGLFallback title="Reflection" />;
 
@@ -173,6 +229,39 @@ export default function OpticsReflection3d() {
         <div ref={containerRef} className="h-[clamp(320px,60vh,640px)] w-full rounded-md overflow-hidden mb-4">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-purple-500/50 bg-purple-500/10 text-purple-300" : "border-purple-900 bg-purple-900/40 text-purple-400/60"}`}
+            >
+              Labels
+            </button>
+            <button
+              onClick={() => setShowNormals((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showNormals ? "border-indigo-400/50 bg-indigo-400/10 text-indigo-300" : "border-purple-900 bg-purple-900/40 text-purple-400/60"}`}
+            >
+              Normal
+            </button>
+            <button
+              onClick={resetAll}
+              className="px-2.5 py-1 rounded-md text-xs font-medium border border-purple-900 bg-purple-900/40 text-purple-300 hover:bg-purple-800/50 transition-colors"
+              title="Reset to defaults"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+        <ReadoutGrid
+          className="mb-4"
+          items={[
+            { label: "Angle of incidence θᵢ", value: angle, unit: "°" },
+            { label: "Angle of reflection θᵣ", value: angle, unit: "°", highlight: true },
+            { label: "Glancing angle (90° − θ)", value: 90 - angle, unit: "°" },
+            { label: "Mirror type", value: mode === "concave" ? "Concave (converging)" : "Convex (diverging)" },
+          ]}
+        />
         <CollapsibleControls label="Mirror Configuration">
           <div className="space-y-4">
             <div className="flex gap-2">

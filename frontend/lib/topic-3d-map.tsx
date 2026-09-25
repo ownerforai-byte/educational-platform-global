@@ -2,6 +2,7 @@
 
 import React from "react";
 import { ChapterAnimation } from "@/components/lab/chapter-animation";
+import { EntranceInsight } from "@/components/lab/entrance-insight";
 import { StraightLineVisual } from "@/components/lab/topic-visuals/straight-line";
 import { CoordinatesSpaceVisual } from "@/components/lab/topic-visuals/coordinates-space";
 import { VectorOperationsVisual } from "@/components/lab/topic-visuals/vector-operations";
@@ -139,15 +140,24 @@ import { PoissonDistVisual } from "@/components/lab/topic-visuals/poisson-dist";
 type LabComponentMap = Record<string, () => React.ReactNode>;
 
 const make = (slug: string, title: string, unit?: string, subject?: string) => {
-  const TopicLab = () =>
-    React.createElement(ChapterAnimation, { topicSlug: slug, topicTitle: title, unitSlug: unit, subjectSlug: subject });
+  const TopicLab = () => (
+    <>
+      {React.createElement(ChapterAnimation, { topicSlug: slug, topicTitle: title, unitSlug: unit, subjectSlug: subject })}
+      <EntranceInsight topic={title} />
+    </>
+  );
   TopicLab.displayName = `TopicLab(${slug})`;
   return TopicLab;
 };
 
 /** Create a topic-specific 3D visual component. */
 const makeTopic = (Component: React.FC, title: string) => {
-  const TopicLab = () => <Component />;
+  const TopicLab = () => (
+    <>
+      <Component />
+      <EntranceInsight topic={title} />
+    </>
+  );
   TopicLab.displayName = `TopicLab(${title})`;
   return TopicLab;
 };

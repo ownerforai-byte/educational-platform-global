@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
@@ -32,11 +33,105 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 type StandardLimit = "sinx_over_x" | "e_def" | "power_rule" | "log_limit";
 
+const STD_INFO: Record<StandardLimit, { concept: string; formula: string; derivation: string; fact: string; tip: string }> = {
+  sinx_over_x: {
+    concept: "Geometric squeeze — arc and chord trap the ratio",
+    formula: "lim(x→0) sin x / x = 1",
+    derivation: "Squeeze theorem: cos x ≤ sin x / x ≤ 1 near 0, and cos x → 1.",
+    fact: "This limit IS the slope of sin x at 0 — it births (sin x)′ = cos x.",
+    tip: "Only true for radians; in degrees the limit becomes π/180.",
+  },
+  e_def: {
+    concept: "A monotone bounded sequence settling on e",
+    formula: "lim(n→∞) (1 + 1/n)ⁿ = e ≈ 2.71828",
+    derivation: "(1 + 1/n)ⁿ increases with n yet stays below 3 — so it converges.",
+    fact: "e was born from compound interest: 100% growth compounded n times.",
+    tip: "Each extra decimal of e needs roughly 10× larger n — convergence is slow.",
+  },
+  power_rule: {
+    concept: "Difference quotient of x³ at x = 2",
+    formula: "lim(h→0) [(2+h)³ − 2³] / h = 3·2² = 12",
+    derivation: "Expand (2+h)³: the h cancels, leaving 12 + 6h + h² → 12.",
+    fact: "The plotted curve IS f′(2) computed with a shrinking h — calculus in one picture.",
+    tip: "This generalises to the power rule: lim(h→0) [(x+h)ⁿ − xⁿ]/h = n·xⁿ⁻¹.",
+  },
+  log_limit: {
+    concept: "Slope of ln x at x = 1 in disguise",
+    formula: "lim(x→0) ln(1+x) / x = 1",
+    derivation: "Substitute 1 + x = eᵗ: the ratio becomes t / (eᵗ − 1) → 1.",
+    fact: "ln(1+x) ≈ x for tiny x — the linearisation behind calculators' log keys.",
+    tip: "Mirror image of sin x / x → 1; both say 'the curve is its tangent near the point'.",
+  },
+};
+
 export function LimitsStandard3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [limitType, setLimitType] = useState<StandardLimit>("sinx_over_x");
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const info = STD_INFO[limitType];
+
+  const presets: ScenePreset[] = [
+    { name: "sin x / x → 1", hint: "Squeeze theorem, radians required", apply: () => { setLimitType("sinx_over_x"); setRunId((r) => r + 1); } },
+    { name: "(1 + 1/n)ⁿ → e", hint: "Monotone bounded convergence", apply: () => { setLimitType("e_def"); setRunId((r) => r + 1); } },
+    { name: "Power rule at x = 2", hint: "lim of the difference quotient = 12", apply: () => { setLimitType("power_rule"); setRunId((r) => r + 1); } },
+    { name: "ln(1+x)/x → 1", hint: "Log limit, twin of sin x / x", apply: () => { setLimitType("log_limit"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setLimitType("sinx_over_x");
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
+
+  const stdReadouts = (() => {
+    if (limitType === "sinx_over_x") {
+      const x = 0.001;
+      return [
+        { label: "Formula", value: info.formula },
+        { label: "sin(0.001) / 0.001", value: (Math.sin(x) / x).toFixed(7) },
+        { label: "Lower squeeze cos(0.001)", value: Math.cos(x).toFixed(7) },
+        { label: "Limit", value: 1, highlight: true },
+        { label: "Proof idea", value: info.derivation },
+        { label: "Caution", value: "Radians only — in degrees the limit is π/180" },
+      ];
+    }
+    if (limitType === "e_def") {
+      const v10 = Math.pow(1 + 1 / 10, 10);
+      const v1000 = Math.pow(1 + 1 / 1000, 1000);
+      return [
+        { label: "Formula", value: info.formula },
+        { label: "n = 10", value: v10.toFixed(6) },
+        { label: "n = 1000", value: v1000.toFixed(6) },
+        { label: "e = lim(n→∞)", value: Math.E.toFixed(6), highlight: true },
+        { label: "|error at n = 1000|", value: Math.abs(v1000 - Math.E).toFixed(6) },
+        { label: "Why it converges", value: "Increasing and bounded above by 3" },
+      ];
+    }
+    if (limitType === "power_rule") {
+      const dq = (h: number) => (Math.pow(2 + h, 3) - 8) / h;
+      return [
+        { label: "Formula", value: "lim(h→0) [(2+h)³ − 2³] / h" },
+        { label: "h = 0.01", value: dq(0.01).toFixed(4) },
+        { label: "h = −0.01", value: dq(-0.01).toFixed(4) },
+        { label: "Limit = 3·2²", value: 12, highlight: true },
+        { label: "General rule", value: "lim(h→0) [(x+h)ⁿ − xⁿ]/h = n·xⁿ⁻¹" },
+        { label: "Meaning", value: "This limit is exactly f′(2) for f(x) = x³" },
+      ];
+    }
+    const lp = (x: number) => Math.log(1 + x) / x;
+    return [
+      { label: "Formula", value: info.formula },
+      { label: "x = 0.001", value: lp(0.001).toFixed(6) },
+      { label: "x = −0.001", value: lp(-0.001).toFixed(6) },
+      { label: "Limit", value: 1, highlight: true },
+      { label: "Proof idea", value: info.derivation },
+      { label: "Payoff", value: "ln(1+x) ≈ x for tiny x — the tangent line at x = 1" },
+    ];
+  })();
 
 
   useEffect(() => {
@@ -48,6 +143,7 @@ export function LimitsStandard3D() {
     let frameId: number;
     let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -66,7 +162,7 @@ export function LimitsStandard3D() {
       controls.enableDamping = true;
       controls.minDistance = 5;
       controls.maxDistance = 25;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       scene.add(new THREE.DirectionalLight(0xffffff, 0.5));
@@ -78,10 +174,10 @@ export function LimitsStandard3D() {
       push(grid);
 
       const titles: Record<StandardLimit, string> = {
-        sinx_over_x: "lim(x->0) sin(x)/x = 1",
-        e_def: "lim(n->inf) (1 + 1/n)^n = e",
-        power_rule: "lim(h->0) [(x+h)^n - x^n]/h",
-        log_limit: "lim(x->0) ln(1+x)/x = 1",
+        sinx_over_x: "lim(x→0) sin x / x = 1",
+        e_def: "lim(n→∞) (1 + 1/n)ⁿ = e",
+        power_rule: "lim(h→0) [(x+h)ⁿ − xⁿ] / h = n·xⁿ⁻¹",
+        log_limit: "lim(x→0) ln(1+x) / x = 1",
       };
       push(mkSprite(titles[limitType], "#a78bfa", new THREE.Vector3(0, 4.2, 0)));
 
@@ -145,6 +241,9 @@ export function LimitsStandard3D() {
         push(mkSprite("limit = 1", "#34d399", new THREE.Vector3(0, -1.5, 0)));
       }
 
+      meshes.forEach((m) => { if (m instanceof THREE.Sprite) labelSprites.push(m); });
+      labelSprites.forEach((s) => (s.visible = showLabels));
+
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         animTime += 0.01;
@@ -173,17 +272,17 @@ export function LimitsStandard3D() {
 
     const cleanupPromise = cleanup();
     return () => { cleanupPromise.then((d) => d?.()); };
-  }, [limitType, isWebGL]);
+  }, [limitType, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Standard Limits" description="Visual proofs of fundamental limit formulas — requires WebGL." />;
   }
 
   const limitOptions: [string, string][] = [
-    ["sinx_over_x", "sin(x)/x -> 1"],
-    ["e_def", "(1+1/n)^n -> e"],
+    ["sinx_over_x", "sin x / x → 1"],
+    ["e_def", "(1 + 1/n)ⁿ → e"],
     ["power_rule", "Power Rule Def."],
-    ["log_limit", "ln(1+x)/x -> 1"],
+    ["log_limit", "ln(1+x) / x → 1"],
   ];
 
   return (
@@ -195,6 +294,14 @@ export function LimitsStandard3D() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-purple-500/50 bg-purple-500/10 text-purple-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Standard Limit">
           <div className="flex flex-wrap gap-2 mt-2">
             {limitOptions.map(([key, label]) => (
@@ -207,13 +314,16 @@ export function LimitsStandard3D() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <ReadoutGrid items={stdReadouts} />
+
         <div className="rounded-lg border border-purple-500/30 bg-purple-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-purple-400">Key Standard Limits</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">
-            <p><strong className="text-foreground">sin(x)/x {'->'} 1</strong> as x {'->'} 0</p>
-            <p><strong className="text-foreground">(1+1/n)^n {'->'} e</strong> as n {'->'} inf</p>
-            <p><strong className="text-foreground">ln(1+x)/x {'->'} 1</strong> as x {'->'} 0</p>
-            <p><strong className="text-foreground">Power rule:</strong> nx^(n-1) from limit definition</p>
+            <p><strong className="text-foreground">sin x / x {'→'} 1</strong> as x {'→'} 0 (radians)</p>
+            <p><strong className="text-foreground">(1 + 1/n)ⁿ {'→'} e</strong> as n {'→'} ∞</p>
+            <p><strong className="text-foreground">ln(1+x) / x {'→'} 1</strong> as x {'→'} 0</p>
+            <p><strong className="text-foreground">Power rule:</strong> n·xⁿ⁻¹ from the limit definition of f′(x)</p>
+            <p><strong className="text-foreground">This scene:</strong> {info.concept}.</p>
           </div>
         </div>
       </CardContent>

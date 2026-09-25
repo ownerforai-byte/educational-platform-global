@@ -91,6 +91,7 @@ export default function GraphsPage() {
                           axes={g.axes}
                           height={170}
                           showLegend={false}
+                          angleAxis={g.angleAxis}
                         />
                       </div>
                       <div className="p-4 space-y-1.5">

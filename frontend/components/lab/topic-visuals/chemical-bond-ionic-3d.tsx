@@ -6,6 +6,11 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
@@ -36,7 +41,34 @@ export function IonicBondVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [view, setView] = useState<LatticeView>("unit-cell");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const DEFAULTS = { view: "unit-cell" as LatticeView };
+  const presets: ScenePreset[] = [
+    {
+      name: "Unit cell",
+      hint: "The repeating FCC motif — 4 Na⁺ and 4 Cl⁻ per cell.",
+      apply: () => { setView("unit-cell"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Extended lattice",
+      hint: "A larger surface view showing how the pattern repeats in 3D.",
+      apply: () => { setView("extended"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Ion sizes",
+      hint: "Cl⁻ is much larger than Na⁺ — anions gain an electron shell.",
+      apply: () => { setView("ion-sizes"); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setView(DEFAULTS.view);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -46,6 +78,7 @@ export function IonicBondVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -66,7 +99,7 @@ export function IonicBondVisual() {
       controls.autoRotateSpeed = 0.4;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -74,6 +107,12 @@ export function IonicBondVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const syncLabels = () => {
+        labelSprites.length = 0;
+        scene.traverse((o) => {
+          if ((o as THREE.Sprite).isSprite) { labelSprites.push(o as THREE.Sprite); (o as THREE.Sprite).visible = showLabels; }
+        });
+      };
       const clearDynamic = () => {
         while (meshes.length > 2) {
           const m = meshes.pop()!;
@@ -130,6 +169,7 @@ export function IonicBondVisual() {
           }
         }
         push(mkSprite("Na⁺ (blue)  Cl⁻ (green)  Electrostatic lattice", "#94a3b8", new THREE.Vector3(0, -3.5, 0), 0.9));
+        syncLabels();
       };
 
       const buildExtended = () => {
@@ -158,6 +198,7 @@ export function IonicBondVisual() {
           }
         }
         push(mkSprite("Extended NaCl Crystal Lattice — Surface View", "#94a3b8", new THREE.Vector3(0, -3.5, 0), 0.9));
+        syncLabels();
       };
 
       if (view === "extended") buildExtended();
@@ -199,7 +240,7 @@ export function IonicBondVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [view, isWebGL]);
+  }, [view, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Ionic Bond" description="NaCl lattice visualization — requires WebGL." />;
@@ -214,6 +255,25 @@ export function IonicBondVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-green-500/50 bg-green-500/10 text-green-300" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Labels
+            </button>
+            <button
+              onClick={resetAll}
+              className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors"
+              title="Reset to defaults"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Lattice View">
           <div className="flex gap-2 mt-1">
             {([
@@ -236,6 +296,16 @@ export function IonicBondVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Coordination number", value: 6, highlight: true },
+            { label: "Na⁺ ionic radius", value: 102, unit: "pm" },
+            { label: "Cl⁻ ionic radius", value: 181, unit: "pm" },
+            { label: "View mode", value: view === "unit-cell" ? "Unit cell" : view === "extended" ? "Extended" : "Ion sizes" },
+          ]}
+        />
+
         <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-green-400">Key Concepts</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">

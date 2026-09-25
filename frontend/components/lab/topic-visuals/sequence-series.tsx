@@ -9,6 +9,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 /* ============================================================
@@ -41,6 +42,24 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 type SeqType = "arithmetic" | "geometric" | "harmonic";
 
+const SEQ_INFO: Record<SeqType, { term: string; sum: string; convergence: string }> = {
+  arithmetic: {
+    term: "aₙ = a + (n−1)d — constant difference d between consecutive terms",
+    sum: "Sₙ = n/2 · [2a + (n−1)d]",
+    convergence: "Series diverges (unless d = 0): partial sums grow quadratically in n",
+  },
+  geometric: {
+    term: "aₙ = a·rⁿ⁻¹ — constant ratio r between consecutive terms",
+    sum: "Sₙ = a(rⁿ − 1)/(r − 1) for r ≠ 1;  S∞ = a/(1 − r) when |r| < 1",
+    convergence: "|r| < 1 → Sₙ → a/(1−r);  |r| ≥ 1 → the series diverges",
+  },
+  harmonic: {
+    term: "aₙ = 1/n — reciprocals of the natural numbers",
+    sum: "Hₙ = 1 + ½ + ⅓ + ⋯ + 1/n ≈ ln n + 0.5772 (Euler–Mascheroni constant)",
+    convergence: "Diverges — but only logarithmically, extremely slowly",
+  },
+};
+
 export function SequenceSeriesVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
@@ -49,6 +68,40 @@ export function SequenceSeriesVisual() {
   const [dOrR, setDOrR] = useState(2);
   const [terms, setTerms] = useState(10);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const info = SEQ_INFO[seqType];
+
+  const nTerms = Math.min(Math.max(Math.round(terms) || 3, 1), 60);
+  const termList: number[] = [];
+  if (seqType === "arithmetic") { for (let i = 0; i < nTerms; i++) termList.push(a + i * dOrR); }
+  else if (seqType === "geometric") { for (let i = 0; i < nTerms; i++) termList.push(a * Math.pow(dOrR, i)); }
+  else { for (let i = 1; i <= nTerms; i++) termList.push(1 / i); }
+  const seriesSum = termList.reduce((s, v) => s + v, 0);
+  const lastTerm = termList[termList.length - 1];
+  const closedSum =
+    seqType === "arithmetic" ? (nTerms * (2 * a + (nTerms - 1) * dOrR)) / 2
+    : seqType === "geometric" && dOrR !== 1 ? (a * (Math.pow(dOrR, nTerms) - 1)) / (dOrR - 1)
+    : seriesSum;
+  const infSum = seqType === "geometric" && Math.abs(dOrR) < 1 ? a / (1 - dOrR) : null;
+  const fmtSeq = (v: number) => (isFinite(v) ? v.toFixed(3) : "∞");
+
+  const presets: ScenePreset[] = [
+    { name: "GP r = ½ — converges", hint: "S∞ = a/(1−r) = 2", apply: () => { setSeqType("geometric"); setA(1); setDOrR(0.5); setTerms(12); setRunId((r) => r + 1); } },
+    { name: "GP r = 2 — diverges", hint: "Terms double forever: |r| ≥ 1", apply: () => { setSeqType("geometric"); setA(1); setDOrR(2); setTerms(10); setRunId((r) => r + 1); } },
+    { name: "AP 2, 5, 8, …", hint: "Arithmetic progression with d = 3", apply: () => { setSeqType("arithmetic"); setA(2); setDOrR(3); setTerms(10); setRunId((r) => r + 1); } },
+    { name: "Harmonic 1/n", hint: "Diverges like ln n", apply: () => { setSeqType("harmonic"); setTerms(15); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setSeqType("geometric");
+    setA(1);
+    setDOrR(2);
+    setTerms(10);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     const container = containerRef.current;
@@ -74,6 +127,7 @@ export function SequenceSeriesVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -91,7 +145,7 @@ export function SequenceSeriesVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
       controls.autoRotate = false;
       controls.maxPolarAngle = Math.PI / 2.2;
 
@@ -124,21 +178,24 @@ export function SequenceSeriesVisual() {
 
         // Sum indicator
         const sum = ts.reduce((s, v) => s + v, 0);
-        push(mkSprite(`S${terms} = ${sum.toFixed(2)}`, "#fbbf24", new THREE.Vector3(0, maxVal + 1.5, 0), 0.9));
+        labelSprites.push(push(mkSprite(`S${terms} = ${sum.toFixed(2)}`, "#fbbf24", new THREE.Vector3(0, maxVal + 1.5, 0), 0.9)));
 
-        // AM-GM-HM relation display
+        // AM-GM-HM relation display (inequality holds for positive reals)
         if (seqType === "arithmetic" || seqType === "geometric") {
           const first3 = ts.slice(0, 3);
-          const am = first3.reduce((s, v) => s + v, 0) / 3;
-          const hm = 3 / first3.reduce((s, v) => s + 1 / v, 0);
-          let gm = 1;
-          first3.forEach(v => { gm *= v; });
-          gm = Math.pow(gm, 1 / 3);
-          push(mkSprite(`AM=${am.toFixed(2)} ≥ GM=${gm.toFixed(2)} ≥ HM=${hm.toFixed(2)}`, "#a78bfa", new THREE.Vector3(0, -0.8, 0), 0.8));
+          if (first3.length === 3 && first3.every((v) => v > 0)) {
+            const am = first3.reduce((s, v) => s + v, 0) / 3;
+            const hm = 3 / first3.reduce((s, v) => s + 1 / v, 0);
+            let gm = 1;
+            first3.forEach(v => { gm *= v; });
+            gm = Math.pow(gm, 1 / 3);
+            labelSprites.push(push(mkSprite(`AM=${am.toFixed(2)} ≥ GM=${gm.toFixed(2)} ≥ HM=${hm.toFixed(2)}`, "#a78bfa", new THREE.Vector3(0, -0.8, 0), 0.8)));
+          }
         }
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -175,7 +232,7 @@ export function SequenceSeriesVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [seqType, a, dOrR, terms, isWebGL]);
+  }, [seqType, a, dOrR, terms, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Sequences & Series" description="3D sequence visualization — requires WebGL." />;
@@ -190,6 +247,14 @@ export function SequenceSeriesVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-emerald-500/50 bg-emerald-500/10 text-emerald-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Sequence Type">
           <Tabs value={seqType} onValueChange={(v) => setSeqType(v as SeqType)} className="mt-1">
             <TabsList className="grid w-full grid-cols-3">
@@ -215,6 +280,17 @@ export function SequenceSeriesVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "General term", value: info.term },
+            { label: `a(${nTerms}) — last term shown`, value: fmtSeq(lastTerm) },
+            { label: `S(${nTerms}) by formula`, value: fmtSeq(closedSum), highlight: true },
+            { label: `S(${nTerms}) by adding bars`, value: fmtSeq(seriesSum) },
+            { label: "Infinite sum S∞", value: infSum !== null ? infSum.toFixed(3) : info.convergence },
+            { label: "Sum formula", value: info.sum },
+          ]}
+        />
 
         <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-400">Formulas</p>

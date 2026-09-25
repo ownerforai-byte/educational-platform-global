@@ -6,6 +6,11 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
@@ -36,7 +41,49 @@ export function VSEPRVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [shape, setShape] = useState<Shape>("tetrahedral");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const SHAPE_INFO: Record<Shape, { angle: string; notation: string; example: string }> = {
+    linear: { angle: "180°", notation: "AX₂", example: "CO₂" },
+    "trigonal-planar": { angle: "120°", notation: "AX₃", example: "BF₃" },
+    tetrahedral: { angle: "109.5°", notation: "AX₄", example: "CH₄" },
+    bent: { angle: "104.5°", notation: "AX₂E₂", example: "H₂O" },
+    "trigonal-pyramidal": { angle: "107°", notation: "AX₃E", example: "NH₃" },
+    octahedral: { angle: "90°", notation: "AX₆", example: "SF₆" },
+  };
+  const info = SHAPE_INFO[shape];
+
+  const DEFAULTS = { shape: "tetrahedral" as Shape };
+  const presets: ScenePreset[] = [
+    {
+      name: "Linear (AX₂)",
+      hint: "Two domains repel to opposite sides — 180° apart.",
+      apply: () => { setShape("linear"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Tetrahedral (AX₄)",
+      hint: "Four domains point to a cube's corners — 109.5° between bonds.",
+      apply: () => { setShape("tetrahedral"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Bent (AX₂E₂)",
+      hint: "Two lone pairs compress the H–O–H angle below tetrahedral.",
+      apply: () => { setShape("bent"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Octahedral (AX₆)",
+      hint: "Six domains — 90° apart in 3D, like the axes of a sphere.",
+      apply: () => { setShape("octahedral"); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setShape(DEFAULTS.shape);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -46,6 +93,7 @@ export function VSEPRVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -66,7 +114,7 @@ export function VSEPRVisual() {
       controls.autoRotateSpeed = 0.5;
       controls.minDistance = 3;
       controls.maxDistance = 15;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -74,6 +122,12 @@ export function VSEPRVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const syncLabels = () => {
+        labelSprites.length = 0;
+        scene.traverse((o) => {
+          if ((o as THREE.Sprite).isSprite) { labelSprites.push(o as THREE.Sprite); (o as THREE.Sprite).visible = showLabels; }
+        });
+      };
       const clearDynamic = () => {
         while (meshes.length > 2) {
           const m = meshes.pop()!;
@@ -321,6 +375,7 @@ export function VSEPRVisual() {
       };
 
       builders[shape]();
+      syncLabels();
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -357,7 +412,7 @@ export function VSEPRVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [shape, isWebGL]);
+  }, [shape, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="VSEPR Theory" description="Molecular shapes visualization — requires WebGL." />;
@@ -372,6 +427,13 @@ export function VSEPRVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-violet-500/50 bg-violet-500/10 text-violet-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
         <CollapsibleControls label="Molecular Geometry">
           <div className="grid grid-cols-3 gap-2 mt-1">
             {([
@@ -397,6 +459,14 @@ export function VSEPRVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+        <ReadoutGrid
+          items={[
+            { label: "Bond angle", value: info.angle, highlight: true },
+            { label: "VSEPR notation", value: info.notation },
+            { label: "Example", value: info.example },
+            { label: "Geometry", value: shape.replace(/-/g, " ") },
+          ]}
+        />
         <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-violet-400">Key Concepts</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">

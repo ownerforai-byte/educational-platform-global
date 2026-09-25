@@ -15,6 +15,8 @@ import {
   Waves,
   Gauge,
   GitCompareArrows,
+  Globe,
+  Star,
 } from "lucide-react";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { GraphExplorer, SERIES_COLORS } from "@/components/graphs/graph-explorer";
@@ -191,6 +193,42 @@ export function GraphDetailView({
           ))}
         </ul>
       </section>
+
+      {/* In reality — where this graph shows up in the real world */}
+      {detail.reality && detail.reality.length > 0 && (
+        <section className="space-y-2.5 rounded-2xl border border-sky-500/25 bg-sky-500/[0.05] p-5">
+          <h2 className="flex items-center gap-2 text-sm font-bold text-foreground">
+            <Globe className="h-4 w-4 text-sky-500" />
+            In reality — where you meet this graph
+          </h2>
+          <ul className="space-y-1.5">
+            {detail.reality.map((t, i) => (
+              <li key={i} className="text-sm text-muted-foreground flex gap-2 leading-relaxed">
+                <span className="text-sky-500 font-bold shrink-0">◦</span>
+                <span>{t}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      {/* Key facts — memorable conceptual nuggets */}
+      {detail.facts && detail.facts.length > 0 && (
+        <section className="space-y-2.5 rounded-2xl border border-amber-500/25 bg-amber-500/[0.05] p-5">
+          <h2 className="flex items-center gap-2 text-sm font-bold text-foreground">
+            <Star className="h-4 w-4 text-amber-500" />
+            Key facts — remember these
+          </h2>
+          <ul className="space-y-1.5">
+            {detail.facts.map((t, i) => (
+              <li key={i} className="text-sm text-muted-foreground flex gap-2 leading-relaxed">
+                <span className="text-amber-500 font-bold shrink-0">★</span>
+                <span>{t}</span>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
 
       {/* How to read: slope / area / intercept */}
       {g.howToRead &&

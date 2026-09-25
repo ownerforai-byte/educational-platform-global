@@ -8,6 +8,12 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  PlaybackBar,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -37,8 +43,53 @@ export function CapacitorVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [charge, setCharge] = useState(5);
+  const [capacitance, setCapacitance] = useState(2);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [animating, setAnimating] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  const [showLabels, setShowLabels] = useState(true);
+  const [showField, setShowField] = useState(true);
+  const [runId, setRunId] = useState(0);
+  // Speed lives in a ref so changing it never tears down the WebGL scene.
+  const speedRef = useRef(1);
+  speedRef.current = speed;
 
+  const voltage = charge / capacitance; // V (Q in μC, C in μF)
+  const energyUJ = (charge * charge) / (2 * capacitance); // μJ
+
+  const DEFAULTS = { charge: 5, capacitance: 2 };
+  const presets: ScenePreset[] = [
+    {
+      name: "Default (2 μF)",
+      hint: "5 μC on a 2 μF capacitor — 2.5 V across the plates.",
+      apply: () => { setCharge(5); setCapacitance(2); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Large capacitor",
+      hint: "10 μF — same charge spreads out, voltage drops.",
+      apply: () => { setCharge(8); setCapacitance(10); setRunId((r) => r + 1); },
+    },
+    {
+      name: "High voltage (0.5 μF)",
+      hint: "Small capacitance at 10 μC — V = Q/C = 20 V.",
+      apply: () => { setCharge(10); setCapacitance(0.5); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Energy storage",
+      hint: "Max charge, moderate C — compare stored energy U = Q²/2C.",
+      apply: () => { setCharge(10); setCapacitance(2); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setCharge(DEFAULTS.charge);
+    setCapacitance(DEFAULTS.capacitance);
+    setSpeed(1);
+    setShowLabels(true);
+    setShowField(true);
+    setAnimating(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     const container = containerRef.current;
@@ -47,6 +98,8 @@ export function CapacitorVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
+    const fieldObjs: THREE.Object3D[] = [];
     let animPhase = 0;
 
     const init = async () => {
@@ -67,7 +120,12 @@ export function CapacitorVisual() {
       controls.autoRotate = false;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -75,6 +133,8 @@ export function CapacitorVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { s.visible = showLabels; push(s); labelSprites.push(s); return s; };
+      const addField = <T extends THREE.Object3D>(o: T): T => { o.visible = showField; push(o); fieldObjs.push(o); return o; };
 
       // Positive plate (right)
       const posPlate = push(new THREE.Mesh(
@@ -82,7 +142,7 @@ export function CapacitorVisual() {
         new THREE.MeshBasicMaterial({ color: 0xef4444 }),
       )) as THREE.Mesh;
       posPlate.position.set(1.5, 0, 0);
-      push(mkSprite("+Q", "#ef4444", new THREE.Vector3(2.2, 0, 0), 0.8));
+      addLabel(mkSprite("+Q", "#ef4444", new THREE.Vector3(2.2, 0, 0), 0.8));
 
       // Negative plate (left)
       const negPlate = push(new THREE.Mesh(
@@ -90,52 +150,50 @@ export function CapacitorVisual() {
         new THREE.MeshBasicMaterial({ color: 0x3b82f6 }),
       )) as THREE.Mesh;
       negPlate.position.set(-1.5, 0, 0);
-      push(mkSprite("−Q", "#3b82f6", new THREE.Vector3(-2.2, 0, 0), 0.8));
+      addLabel(mkSprite("−Q", "#3b82f6", new THREE.Vector3(-2.2, 0, 0), 0.8));
 
       // Electric field lines (from + to −)
       const fieldLines: THREE.Line[] = [];
       for (let y = -1.2; y <= 1.2; y += 0.4) {
         const pts: THREE.Vector3[] = [new THREE.Vector3(1.3, y, 0), new THREE.Vector3(-1.3, y, 0)];
-        const line = push(new THREE.Line(
+        const line = addField(new THREE.Line(
           new THREE.BufferGeometry().setFromPoints(pts),
           new THREE.LineBasicMaterial({ color: 0xfbbf24, transparent: true, opacity: 0.7 }),
         )) as THREE.Line;
         fieldLines.push(line);
-        meshes.push(line);
       }
       // Arrow heads on field lines
       for (let y = -1.2; y <= 1.2; y += 0.8) {
-        const arrowHead = push(new THREE.Mesh(
+        const arrowHead = addField(new THREE.Mesh(
           new THREE.ConeGeometry(0.08, 0.2, 8),
           new THREE.MeshBasicMaterial({ color: 0xfbbf24 }),
         )) as THREE.Mesh;
         arrowHead.position.set(0, y, 0);
         arrowHead.rotation.z = -Math.PI / 2;
         fieldLines.push(arrowHead as any);
-        meshes.push(arrowHead);
       }
-      push(mkSprite("E field (E = V/d)", "#fbbf24", new THREE.Vector3(0, 2.2, 0), 0.75));
+      addLabel(mkSprite("E field (E = V/d)", "#fbbf24", new THREE.Vector3(0, 2.2, 0), 0.75));
 
       // Long arrow label for charge
       const chargeLabelPos = new THREE.Vector3(0, -2.5, 0);
       const chargeTarget = new THREE.Vector3(0, 0, 0);
       const chargeDir = chargeTarget.clone().sub(chargeLabelPos).normalize();
       push(new LiveLeaderLine(chargeDir, chargeLabelPos, chargeLabelPos.distanceTo(chargeTarget) * 0.9, 0x22d3ee, 0.15, 0.1));
-      push(mkSprite(`Q = ${charge} μC`, "#22d3ee", chargeLabelPos.clone().sub(chargeDir.multiplyScalar(0.5)), 0.8));
+      addLabel(mkSprite(`Q = ${charge} μC`, "#22d3ee", chargeLabelPos.clone().sub(chargeDir.multiplyScalar(0.5)), 0.8));
 
       // Voltage label
       const vLabelPos = new THREE.Vector3(3.5, 0, 0);
       const vTarget = new THREE.Vector3(1.5, 0, 0);
       const vDir = vTarget.clone().sub(vLabelPos).normalize();
       push(new LiveLeaderLine(vDir, vLabelPos, vLabelPos.distanceTo(vTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
-      push(mkSprite("V (potential difference)", "#a78bfa", vLabelPos.clone().sub(vDir.multiplyScalar(0.5)), 0.7));
+      addLabel(mkSprite(`V = Q/C = ${voltage.toFixed(1)} V`, "#a78bfa", vLabelPos.clone().sub(vDir.multiplyScalar(0.5)), 0.7));
 
       // Capacitance formula label
       const CLabelPos = new THREE.Vector3(-3.5, 0, 0);
       const CTarget = new THREE.Vector3(-1.5, 0, 0);
       const CDir = CTarget.clone().sub(CLabelPos).normalize();
       push(new LiveLeaderLine(CDir, CLabelPos, CLabelPos.distanceTo(CTarget) * 0.9, 0x34d399, 0.15, 0.1));
-      push(mkSprite("C = Q/V", "#34d399", CLabelPos.clone().sub(CDir.multiplyScalar(0.5)), 0.75));
+      addLabel(mkSprite(`C = ${capacitance} μF`, "#34d399", CLabelPos.clone().sub(CDir.multiplyScalar(0.5)), 0.75));
 
       // Electron flow animation
       const electrons: THREE.Mesh[] = [];
@@ -163,11 +221,13 @@ export function CapacitorVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
-        animPhase += 0.03;
-        electrons.forEach((e) => {
-          const phase = e.userData.phase + animPhase;
-          e.position.set(Math.cos(phase) * 2.5, Math.sin(phase) * 1.5, 0);
-        });
+        if (animating) {
+          animPhase += 0.03 * speedRef.current;
+          electrons.forEach((e) => {
+            const phase = e.userData.phase + animPhase;
+            e.position.set(Math.cos(phase) * 2.5, Math.sin(phase) * 1.5, 0);
+          });
+        }
         renderer.render(scene, camera);
       };
       animate();
@@ -202,7 +262,7 @@ export function CapacitorVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [charge, isWebGL]);
+  }, [charge, capacitance, isWebGL, animating, runId, showLabels, showField]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Capacitor" description="Parallel plate capacitor with electric field lines." />;
@@ -224,12 +284,52 @@ export function CapacitorVisual() {
               <Input type="range" min={1} max={10} step={0.5} value={charge} onChange={(e) => setCharge(Number(e.target.value))} className="mt-1 w-full" />
               <p className="text-xs font-mono text-primary mt-1">{charge} μC</p>
             </div>
+            <div className="w-28">
+              <Label className="text-xs text-muted-foreground">Capacitance C (μF):</Label>
+              <Input type="range" min={0.5} max={10} step={0.5} value={capacitance} onChange={(e) => setCapacitance(Number(e.target.value))} className="mt-1 w-full" />
+              <p className="text-xs font-mono text-primary mt-1">{capacitance} μF</p>
+            </div>
           </div>
         </CollapsibleControls>
+
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <PlaybackBar
+            playing={animating}
+            onPlayToggle={() => setAnimating(!animating)}
+            speed={speed}
+            onSpeedChange={setSpeed}
+            onReset={resetAll}
+          />
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-primary/50 bg-primary/10 text-primary" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Labels
+            </button>
+            <button
+              onClick={() => setShowField((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showField ? "border-yellow-500/50 bg-yellow-500/10 text-yellow-400" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Field lines
+            </button>
+          </div>
+        </div>
+
+        <ScenePresets presets={presets} />
 
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Capacitance C", value: capacitance, unit: "μF" },
+            { label: "Voltage V = Q/C", value: voltage.toFixed(2), unit: "V", highlight: true },
+            { label: "Stored energy U", value: energyUJ.toFixed(1), unit: "μJ" },
+            { label: "Charge Q", value: charge, unit: "μC" },
+          ]}
+        />
 
         <div className="rounded-lg border border-yellow-500/30 bg-yellow-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-yellow-400">Key Concepts</p>

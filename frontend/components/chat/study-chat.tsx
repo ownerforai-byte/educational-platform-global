@@ -42,7 +42,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
     {
       role: "assistant",
       content:
-        "I am assistant of this platform, feel free to share your thoughts to get real experience 👋",
+        "👋, I am the captain here. Feel free to clear your doubts.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -143,7 +143,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
       {
         role: "assistant",
         content:
-          "I am assistant of this platform, feel free to share your thoughts to get real experience 👋",
+          "👋, I am the captain here. Feel free to clear your doubts.",
       },
     ]);
     setError(null);
@@ -166,7 +166,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
           <Bot className="h-5 w-5 text-primary" />
         </div>
         <div className="flex-1 min-w-0">
-          <h2 className="text-xs font-bold leading-none">Ravikishan Study Assistant</h2>
+          <h2 className="text-xs font-bold leading-none">Ravikisan's AI Tutor</h2>
           <p className="text-[10px] text-muted-foreground mt-1 flex items-center gap-1.5">
             <span className="inline-flex h-1.5 w-1.5 rounded-full bg-green-500" />
             Online · answers + points you to notes, labs &amp; PYQs

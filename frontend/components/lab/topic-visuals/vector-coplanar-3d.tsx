@@ -9,6 +9,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -42,6 +43,44 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 type VectorMode = "addition" | "scalar" | "collinear" | "coplanar" | "linear-combo";
 
+const MODE_INFO: Record<VectorMode, { concept: string; formula: string; interpretation: string; fact: string; tip: string }> = {
+  addition: {
+    concept: "Triangle & parallelogram laws of addition",
+    formula: "A + B = (Ax+Bx, Ay+By, Az+Bz)",
+    interpretation: "Put the tail of B at the head of A (triangle law); the resultant joins the free tail to the free head — the diagonal of the parallelogram on A and B.",
+    fact: "A + B always lies in the plane of A and B — the sum of two coplanar-side vectors can never escape their plane.",
+    tip: "NEB favourite: two forces P and Q with angle θ between them give a resultant R = √(P² + Q² + 2PQ·cosθ) — the parallelogram law in formula form.",
+  },
+  scalar: {
+    concept: "Scalar (magnitude) multiplication",
+    formula: "kA = (kAx, kAy, kAz), |kA| = |k|·|A|",
+    interpretation: "k stretches or shrinks the vector along its own line of action; a negative k flips it to the opposite direction.",
+    fact: "kA stays in any plane that already contains A — scaling never breaks coplanarity.",
+    tip: "The unit vector in A's direction is Â = A/|A| — it is just scalar multiplication with k = 1/|A|.",
+  },
+  collinear: {
+    concept: "Collinear (parallel) vectors",
+    formula: "A ∥ B ⟺ A = kB for some scalar k ⟺ A × B = 0",
+    interpretation: "Both vectors share the same line of action, so their components are in proportion: Ax/Bx = Ay/By = Az/Bz.",
+    fact: "Collinear vectors are trivially coplanar with any third vector — infinitely many planes share one line, so the STP always vanishes with two parallel rows.",
+    tip: "To prove points P, Q, R are collinear, form the displacement vectors PQ and QR and show PQ = k·QR.",
+  },
+  coplanar: {
+    concept: "Coplanar vectors & the scalar triple product",
+    formula: "A·(B × C) = 0",
+    interpretation: "The scalar triple product is the volume of the parallelepiped built on A, B, C — zero volume means all three flatten into one plane.",
+    fact: "The scalar triple product is cyclic-invariant: A·(B×C) = B·(C×A) = C·(A×B); swapping two vectors only flips its sign.",
+    tip: "NEB test in determinant form: |ax ay az; bx by bz; cx cy cz| = 0 ⇔ the three vectors are coplanar.",
+  },
+  "linear-combo": {
+    concept: "Linear combination & span",
+    formula: "R = c₁A + c₂B (scene uses c₁ = 1.5, c₂ = 0.8)",
+    interpretation: "Combining scaled copies of A and B always lands in the plane containing both — that plane is their span.",
+    fact: "C is coplanar with A and B exactly when C = c₁A + c₂B for some scalars — being in the span IS being coplanar.",
+    tip: "If c₁A + c₂B + c₃C = 0 forces c₁ = c₂ = c₃ = 0, the vectors are linearly independent; any other solution means dependence.",
+  },
+};
+
 export function VectorCoplanar3DVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
@@ -51,7 +90,33 @@ export function VectorCoplanar3DVisual() {
   const [c, setC] = useState({ x: 0, y: 2, z: 2 });
   const [k, setK] = useState(2);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
 
+  const info = MODE_INFO[mode];
+
+  const va = new THREE.Vector3(a.x, a.y, a.z);
+  const vb = new THREE.Vector3(b.x, b.y, b.z);
+  const vc = new THREE.Vector3(c.x, c.y, c.z);
+  const vCross = va.clone().cross(vb);
+  const vSTP = va.dot(vb.clone().cross(vc));
+
+  const presets: ScenePreset[] = [
+    { name: "Flat triple: STP = 0", hint: "All three in the xy-plane ⇒ A·(B×C) = 0", apply: () => { setMode("coplanar"); setA({ x: 3, y: 1, z: 0 }); setB({ x: 1, y: 3, z: 0 }); setC({ x: 2, y: 2, z: 0 }); setRunId((r) => r + 1); } },
+    { name: "Dependent: C = A + B", hint: "One vector a combo of the other two ⇒ coplanar", apply: () => { setMode("coplanar"); setA({ x: 2, y: 1, z: 0 }); setB({ x: 0, y: 2, z: 1 }); setC({ x: 2, y: 3, z: 1 }); setRunId((r) => r + 1); } },
+    { name: "Cube edges: STP ≠ 0", hint: "Mutually perpendicular edges span real volume (non-coplanar)", apply: () => { setMode("coplanar"); setA({ x: 2, y: 0, z: 0 }); setB({ x: 0, y: 2, z: 0 }); setC({ x: 0, y: 0, z: 2 }); setRunId((r) => r + 1); } },
+    { name: "Base plane of A, B", hint: "The drawn plane is spanned by A × B as its normal", apply: () => { setMode("coplanar"); setA({ x: 3, y: 1, z: 0 }); setB({ x: 1, y: 3, z: 0 }); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setMode("addition");
+    setA({ x: 3, y: 1, z: 0 });
+    setB({ x: 1, y: 3, z: 0 });
+    setC({ x: 0, y: 2, z: 2 });
+    setK(2);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     const container = containerRef.current;
@@ -63,6 +128,7 @@ export function VectorCoplanar3DVisual() {
     let animTime = 0;
     let animPhase = 0;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -83,7 +149,7 @@ export function VectorCoplanar3DVisual() {
       controls.autoRotateSpeed = 0.3;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.6));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -112,7 +178,8 @@ export function VectorCoplanar3DVisual() {
         const len = to.clone().sub(from).length();
         push(new LiveLeaderLine(dir, from, len, color, 0.2, 0.12));
         const mid = from.clone().add(to).multiplyScalar(0.5);
-        push(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, mid.clone().add(new THREE.Vector3(0, 0.6, 0)), 0.8));
+        const s = push(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, mid.clone().add(new THREE.Vector3(0, 0.6, 0)), 0.8));
+        labelSprites.push(s);
       };
 
       const update = () => {
@@ -140,26 +207,26 @@ export function VectorCoplanar3DVisual() {
           (meshes[meshes.length - 1] as any).computeLineDistances();
           drawArrow(new THREE.Vector3(0, 0, 0), sum, 0xf97316, "A + B");
           // Triangle method: B from tip of A
-          push(mkSprite("Triangle: A then B â†’ R", "#7dd3fc", new THREE.Vector3(-4, 4, 0), 0.8));
+          labelSprites.push(push(mkSprite("Triangle: A then B â†’ R", "#7dd3fc", new THREE.Vector3(-4, 4, 0), 0.8)));
         } else if (mode === "scalar") {
           // kA
           const scaled = A.clone().multiplyScalar(k);
           drawArrow(new THREE.Vector3(0, 0, 0), A, 0xef4444, "A");
           drawArrow(new THREE.Vector3(0, 0, 0), scaled, 0xf97316, `kA (${k})`);
-          push(mkSprite(`k·A = (${(k * a.x).toFixed(1)}, ${(k * a.y).toFixed(1)}, ${(k * a.z).toFixed(1)})`, "#fb923c", new THREE.Vector3(-4, 4, 0), 0.8));
+          labelSprites.push(push(mkSprite(`k·A = (${(k * a.x).toFixed(1)}, ${(k * a.y).toFixed(1)}, ${(k * a.z).toFixed(1)})`, "#fb923c", new THREE.Vector3(-4, 4, 0), 0.8)));
         } else if (mode === "collinear") {
           // Two vectors collinear if A = kB
           const bScaled = B.clone().multiplyScalar(2);
           drawArrow(new THREE.Vector3(0, 0, 0), A, 0xef4444, "A");
           drawArrow(new THREE.Vector3(0, 0, 0), bScaled, 0x22c55e, "2B");
           drawArrow(new THREE.Vector3(0, 0, 0), B, 0x3b82f6, "B");
-          push(mkSprite("Collinear: A = 2B â†’ same line through origin", "#a78bfa", new THREE.Vector3(-4, 4, 0), 0.85));
+          labelSprites.push(push(mkSprite("Collinear: A = 2B â†’ same line through origin", "#a78bfa", new THREE.Vector3(-4, 4, 0), 0.85)));
         } else if (mode === "coplanar") {
           // Three vectors coplanar if scalar triple product = 0
           drawArrow(new THREE.Vector3(0, 0, 0), A, 0xef4444, "A");
           drawArrow(new THREE.Vector3(0, 0, 0), B, 0x22c55e, "B");
           drawArrow(new THREE.Vector3(0, 0, 0), C, 0x3b82f6, "C");
-          push(mkSprite("Coplanar: A, B, C lie in same plane", "#7dd3fc", new THREE.Vector3(-4, 4, 0), 0.85));
+          labelSprites.push(push(mkSprite("Coplanar: A, B, C lie in same plane", "#7dd3fc", new THREE.Vector3(-4, 4, 0), 0.85)));
           // Show plane
           const normal = A.clone().cross(B).normalize();
           const plane = new THREE.Mesh(
@@ -176,11 +243,12 @@ export function VectorCoplanar3DVisual() {
           drawArrow(new THREE.Vector3(0, 0, 0), A, 0xef4444, "A");
           drawArrow(new THREE.Vector3(0, 0, 0), B, 0x22c55e, "B");
           drawArrow(new THREE.Vector3(0, 0, 0), result, 0xf97316, `câ‚A+câ‚‚B`);
-          push(mkSprite(`Linear combo: 1.5A + 0.8B`, "#fb923c", new THREE.Vector3(-4, 4, 0), 0.85));
+          labelSprites.push(push(mkSprite(`Linear combo: 1.5A + 0.8B`, "#fb923c", new THREE.Vector3(-4, 4, 0), 0.85)));
         }
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -221,7 +289,7 @@ export function VectorCoplanar3DVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [mode, a, b, c, k, isWebGL]);
+  }, [mode, a, b, c, k, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Coplanar Vectors 3D" description="Interactive 3D vector visualization — requires WebGL." />;
@@ -236,6 +304,14 @@ export function VectorCoplanar3DVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-blue-500/50 bg-blue-500/10 text-blue-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Vector Mode">
           <Tabs value={mode} onValueChange={(v) => setMode(v as VectorMode)} className="mt-1">
             <TabsList className="grid w-full grid-cols-5">
@@ -284,6 +360,17 @@ export function VectorCoplanar3DVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: info.concept, value: info.formula, highlight: true },
+            { label: "Coplanarity test", value: Math.abs(vSTP) < 1e-9 ? "A·(B×C) = 0 ⇒ one plane" : "A·(B×C) ≠ 0 ⇒ span all of space" },
+            { label: "Scalar triple product A·(B×C)", value: vSTP.toFixed(2) },
+            { label: "Parallelepiped volume", value: Math.abs(vSTP).toFixed(2), unit: "cu units" },
+            { label: "Base area |A × B|", value: vCross.length().toFixed(2), unit: "sq units" },
+            { label: "Height of C above A, B plane", value: vCross.length() > 1e-9 ? (Math.abs(vSTP) / vCross.length()).toFixed(2) : "n/a (A ∥ B)" },
+          ]}
+        />
 
         <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-blue-400">Key Definitions</p>

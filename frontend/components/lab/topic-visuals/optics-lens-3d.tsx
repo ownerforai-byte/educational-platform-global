@@ -8,6 +8,11 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, scale = 0.3) {
@@ -34,6 +39,60 @@ export default function OpticsLens3d() {
   const [focalLength, setFocalLength] = useState(2);
   const [objDistance, setObjDistance] = useState(4);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [showRays, setShowRays] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  // Live readouts from current params (same sign convention as the scene)
+  const imgDistance = lensType === "convex"
+    ? 1 / (1 / focalLength - 1 / objDistance)
+    : -1 / (1 / focalLength + 1 / objDistance);
+  const magnification = imgDistance / -objDistance;
+  const lensPower = 1 / focalLength;
+  const imgFinite = Number.isFinite(imgDistance);
+  const imgNature = !imgFinite
+    ? "Image at ∞ (object at F)"
+    : imgDistance > 0
+      ? "Real, inverted"
+      : "Virtual, upright";
+
+  const DEFAULTS = { lensType: "convex" as const, focalLength: 2, objDistance: 4 };
+  const presets: ScenePreset[] = [
+    {
+      name: "Object at 2F",
+      hint: "u = 2f — image forms at 2F, same size, real and inverted.",
+      apply: () => { setLensType("convex"); setFocalLength(2); setObjDistance(4); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Beyond 2F",
+      hint: "u > 2f — diminished, real image between F and 2F (camera lens).",
+      apply: () => { setLensType("convex"); setFocalLength(2); setObjDistance(6); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Between F and lens",
+      hint: "u < f — virtual, upright, magnified (magnifying glass).",
+      apply: () => { setLensType("convex"); setFocalLength(2); setObjDistance(1); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Near F",
+      hint: "u ≈ f — rays exit nearly parallel; image pushed far away.",
+      apply: () => { setLensType("convex"); setFocalLength(2); setObjDistance(2.2); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Concave lens",
+      hint: "Diverging lens — always virtual, upright, diminished image.",
+      apply: () => { setLensType("concave"); setFocalLength(2); setObjDistance(4); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setLensType(DEFAULTS.lensType);
+    setFocalLength(DEFAULTS.focalLength);
+    setObjDistance(DEFAULTS.objDistance);
+    setShowLabels(true);
+    setShowRays(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     if (!isWebGL || !containerRef.current) return;
@@ -49,11 +108,24 @@ export default function OpticsLens3d() {
     renderer.setSize(w, h);
     container.appendChild(renderer.domElement);
 
+    const labelSprites: THREE.Sprite[] = [];
+    const addLabel = (s: THREE.Sprite): THREE.Sprite => {
+      scene.add(s);
+      s.visible = showLabels;
+      labelSprites.push(s);
+      return s;
+    };
+
     let controls: any;
     import("three/addons/controls/OrbitControls.js").then((mod) => {
       controls = new mod.OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
       controls.dampingFactor = 0.08;
     });
 
@@ -116,6 +188,7 @@ export default function OpticsLens3d() {
         ]),
         new THREE.LineBasicMaterial({ color: 0xf59e0b })
       );
+      ray1.visible = showRays;
       scene.add(ray1);
 
       ray2 = new THREE.Line(
@@ -125,20 +198,17 @@ export default function OpticsLens3d() {
         ]),
         new THREE.LineBasicMaterial({ color: 0x22d3ee })
       );
+      ray2.visible = showRays;
       scene.add(ray2);
 
-      const sp1 = mkSprite("F", "#f59e0b");
-      scene.add(sp1);
+      const sp1 = addLabel(mkSprite("F", "#f59e0b"));
       sp1.position.set(f, -0.5, 0);
-      const spF2 = mkSprite("F'", "#22d3ee");
-      scene.add(spF2);
+      const spF2 = addLabel(mkSprite("F'", "#22d3ee"));
       spF2.position.set(-f, -0.5, 0);
-      const spO = mkSprite("O", "#f472b6");
-      scene.add(spO);
+      const spO = addLabel(mkSprite("O", "#f472b6"));
       spO.position.set(-objDistance, 1.8, 0);
-      const spI = mkSprite("I", "#34d399");
-      scene.add(spI);
-      spI.position.set(v, -0.5, 0);
+      const spI = addLabel(mkSprite("I", "#34d399"));
+      spI.position.set(Number.isFinite(v) ? v : 5.5, -0.5, 0);
 
       return { ray1, ray2 };
     };
@@ -171,7 +241,7 @@ export default function OpticsLens3d() {
       renderer.dispose();
       controls?.dispose();
     };
-  }, [lensType, focalLength, objDistance, isWebGL]);
+  }, [lensType, focalLength, objDistance, isWebGL, runId, showLabels, showRays]);
 
   if (!isWebGL) return <WebGLFallback title="Lenses" />;
 
@@ -189,6 +259,39 @@ export default function OpticsLens3d() {
         <div ref={containerRef} className="h-[clamp(320px,60vh,640px)] w-full rounded-md overflow-hidden mb-4">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-blue-500/50 bg-blue-500/10 text-blue-300" : "border-blue-900 bg-blue-900/40 text-blue-400/60"}`}
+            >
+              Labels
+            </button>
+            <button
+              onClick={() => setShowRays((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showRays ? "border-amber-400/50 bg-amber-400/10 text-amber-300" : "border-blue-900 bg-blue-900/40 text-blue-400/60"}`}
+            >
+              Rays
+            </button>
+            <button
+              onClick={resetAll}
+              className="px-2.5 py-1 rounded-md text-xs font-medium border border-blue-900 bg-blue-900/40 text-blue-300 hover:bg-blue-800/50 transition-colors"
+              title="Reset to defaults"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+        <ReadoutGrid
+          className="mb-4"
+          items={[
+            { label: "Image distance v", value: imgFinite ? imgDistance.toFixed(2) : "∞", unit: imgFinite ? "units" : undefined, highlight: !imgFinite },
+            { label: "Magnification m", value: imgFinite ? magnification.toFixed(2) : "∞" },
+            { label: "Lens power P = 1/f", value: lensPower.toFixed(2), unit: "D (f in m)" },
+            { label: "Image nature", value: imgNature, highlight: imgFinite && imgDistance < 0 },
+          ]}
+        />
         <CollapsibleControls label="Lens Configuration">
           <div className="space-y-4">
             <div className="flex gap-2">

@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, PlaybackBar, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -40,7 +41,47 @@ export function GalvanicCellVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [voltage, setVoltage] = useState(1.10);
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+  const [playing, setPlaying] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  const speedRef = useRef(1);
+  const playingRef = useRef(true);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const readouts = [
+    { label: "Anode (oxidation)", value: "Zn → Zn²⁺ + 2e⁻" },
+    { label: "Cathode (reduction)", value: "Cu²⁺ + 2e⁻ → Cu" },
+    { label: "Cell EMF (E°cell)", value: `${voltage.toFixed(2)} V`, highlight: true },
+    { label: "Electron path", value: "Zn rod → wire → Cu rod" },
+    { label: "Salt bridge", value: "K⁺ → cathode · NO₃⁻ → anode" },
+  ];
+
+  const presets: ScenePreset[] = [
+    {
+      name: "Standard Daniel cell",
+      hint: "E°cell = 0.34 − (−0.76) = 1.10 V for Zn|Zn²⁺ ‖ Cu²⁺|Cu.",
+      apply: () => { setVoltage(1.1); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Weak cell (0.70 V)",
+      hint: "Dilute Cu²⁺ lowers the EMF (Nernst equation) — electrons drift slower.",
+      apply: () => { setVoltage(0.7); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Strong cell (1.60 V)",
+      hint: "Higher ion concentrations push the measured voltage above standard.",
+      apply: () => { setVoltage(1.6); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setVoltage(1.1);
+    setPlaying(true);
+    setSpeed(1);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -51,6 +92,8 @@ export function GalvanicCellVisual() {
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
     const electronMeshes: THREE.Group[] = [];
+    const labelSprites: THREE.Sprite[] = [];
+    const simClock = { t: 0, last: Date.now() * 0.001 };
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -70,7 +113,7 @@ export function GalvanicCellVisual() {
       controls.autoRotate = false;
       controls.minDistance = 4;
       controls.maxDistance = 25;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -78,8 +121,10 @@ export function GalvanicCellVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { s.visible = showLabels; push(s); labelSprites.push(s); return s; };
 
       const updateScene = (t: number) => {
+        labelSprites.length = 0;
         while (meshes.length > 10) {
           const m = meshes.pop()!;
           scene.remove(m);
@@ -159,7 +204,7 @@ export function GalvanicCellVisual() {
           new THREE.MeshPhongMaterial({ color: 0x1e293b, emissive: 0x0f172a }),
         ));
         vm.position.set(0, 2.15, 0.5);
-        push(mkSprite(`V = ${voltage.toFixed(2)} V`, "#fbbf24", new THREE.Vector3(0, 2.7, 0.5), 0.65));
+        addLabel(mkSprite(`V = ${voltage.toFixed(2)} V`, "#fbbf24", new THREE.Vector3(0, 2.7, 0.5), 0.65));
 
         // LONG ARROW LABELS
         // Anode label
@@ -168,7 +213,7 @@ export function GalvanicCellVisual() {
         const aDir = anodeTarget.clone().sub(anodeLabel).normalize();
         const aLen = anodeLabel.distanceTo(anodeTarget);
         push(new LiveLeaderLine(aDir, anodeLabel, aLen * 0.8, 0xef4444, 0.28, 0.12));
-        push(mkSprite("ANODE: Zn → Zn²⁺ + 2e⁻ (oxidation)", "#ef4444", anodeLabel.clone().sub(aDir.multiplyScalar(0.5)), 0.65));
+        addLabel(mkSprite("ANODE: Zn → Zn²⁺ + 2e⁻ (oxidation)", "#ef4444", anodeLabel.clone().sub(aDir.multiplyScalar(0.5)), 0.65));
 
         // Cathode label
         const cathLabel = new THREE.Vector3(rightX + 2.0, 2.0, 0);
@@ -176,7 +221,7 @@ export function GalvanicCellVisual() {
         const cDir = cathTarget.clone().sub(cathLabel).normalize();
         const cLen = cathLabel.distanceTo(cathTarget);
         push(new LiveLeaderLine(cDir, cathLabel, cLen * 0.8, 0x22c55e, 0.28, 0.12));
-        push(mkSprite("CATHODE: Cu²⁺ + 2e⁻ → Cu (reduction)", "#22c55e", cathLabel.clone().sub(cDir.multiplyScalar(0.5)), 0.65));
+        addLabel(mkSprite("CATHODE: Cu²⁺ + 2e⁻ → Cu (reduction)", "#22c55e", cathLabel.clone().sub(cDir.multiplyScalar(0.5)), 0.65));
 
         // Electron flow arrow
         const eFlowLabel = new THREE.Vector3(0, 2.8, 0);
@@ -184,7 +229,7 @@ export function GalvanicCellVisual() {
         const eDir = eFlowTarget.clone().sub(eFlowLabel).normalize();
         const eLen = eFlowLabel.distanceTo(eFlowTarget);
         push(new LiveLeaderLine(eDir, eFlowLabel, eLen * 0.7, 0xf97316, 0.25, 0.12));
-        push(mkSprite("e⁻ flow: Zn → Cu (through wire)", "#f97316", eFlowLabel.clone().sub(eDir.multiplyScalar(0.5)), 0.65));
+        addLabel(mkSprite("e⁻ flow: Zn → Cu (through wire)", "#f97316", eFlowLabel.clone().sub(eDir.multiplyScalar(0.5)), 0.65));
 
         // Ion flow in salt bridge
         const ionFlowLabel = new THREE.Vector3(0, -2.0, 0);
@@ -192,7 +237,7 @@ export function GalvanicCellVisual() {
         const iDir = ionFlowTarget.clone().sub(ionFlowLabel).normalize();
         const iLen = ionFlowLabel.distanceTo(ionFlowTarget);
         push(new LiveLeaderLine(iDir, ionFlowLabel, iLen * 0.7, 0xa855f7, 0.25, 0.12));
-        push(mkSprite("Salt bridge: K⁺ → cathode, NO₃⁻ → anode", "#a855f7", ionFlowLabel.clone().sub(iDir.multiplyScalar(0.5)), 0.6));
+        addLabel(mkSprite("Salt bridge: K⁺ → cathode, NO₃⁻ → anode", "#a855f7", ionFlowLabel.clone().sub(iDir.multiplyScalar(0.5)), 0.6));
 
         // Animated electrons along wire
         const numElectrons = 8;
@@ -216,7 +261,12 @@ export function GalvanicCellVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
-        updateScene(Date.now() * 0.001);
+        const now = Date.now() * 0.001;
+        if (playingRef.current) {
+          simClock.t += Math.min(now - simClock.last, 0.1) * speedRef.current * (0.5 + voltage * 0.5);
+        }
+        simClock.last = now;
+        updateScene(simClock.t);
         renderer.render(scene, camera);
       };
       animate();
@@ -254,7 +304,9 @@ export function GalvanicCellVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [voltage, isWebGL]);
+  }, [voltage, isWebGL, runId, showLabels]);
+
+  useEffect(() => { speedRef.current = speed; playingRef.current = playing; }, [speed, playing]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Galvanic Cell" description="Daniel cell visualization — requires WebGL." />;
@@ -269,6 +321,13 @@ export function GalvanicCellVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-green-500/50 bg-green-500/10 text-green-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
         <CollapsibleControls label="Cell Voltage">
           <div className="w-40 mt-1">
             <label className="text-xs text-muted-foreground">E°cell = {voltage.toFixed(2)} V</label>
@@ -284,6 +343,8 @@ export function GalvanicCellVisual() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <PlaybackBar playing={playing} onPlayToggle={() => setPlaying((p) => !p)} speed={speed} onSpeedChange={setSpeed} onReset={() => setRunId((r) => r + 1)} />
+        <ReadoutGrid items={readouts} />
         <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-green-400">Daniel Cell</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">

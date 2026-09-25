@@ -20,6 +20,7 @@ import { DETAIL_MATH_1 } from "@/lib/graphs-detail-math-1";
 import { DETAIL_MATH_2 } from "@/lib/graphs-detail-math-2";
 import { COMPARE_PHYSICS } from "@/lib/graphs-compare-physics";
 import { COMPARE_CHEM_BIO_MATH } from "@/lib/graphs-compare-chem-bio-math";
+import { GRAPH_REALITY_FACTS } from "@/lib/graphs-facts";
 
 export type { ShapeName };
 
@@ -58,6 +59,10 @@ export interface GraphDetailInfo {
   happens: string[];
   /** LIMITS — where the graph/model stops being trustworthy. */
   limits: string[];
+  /** IN REALITY — where this graph shows up in the real world. */
+  reality?: string[];
+  /** KEY FACTS — memorable, conceptual, exam-worthy nuggets. */
+  facts?: string[];
   /** Comparison layer for multi-condition graphs (all shown at once). */
   compare?: GraphCompareNote;
 }
@@ -95,6 +100,16 @@ export interface GraphEntry {
   output: string;
   specialCases: GraphSpecialCase[];
   traps?: string[];
+  /**
+   * Trigonometric angle axis: spans one full period in degrees and labels
+   * the standard angles (0°, 30°, 45°, 60°, 90°…) in degrees and radians.
+   */
+  angleAxis?: {
+    /** Full period span in degrees (e.g. 180 for tan/cot, 360 for sin/cos). */
+    periodDeg: number;
+    /** Which standard angles to label on the x-axis. */
+    ticksDeg: number[];
+  };
 }
 
 export const GRAPH_SUBJECTS: { slug: GraphSubject; label: string }[] = [
@@ -132,7 +147,14 @@ const GRAPH_COMPARES: Record<string, GraphCompareNote> = {
  */
 export function getGraphDetail(g: GraphEntry): GraphDetailInfo {
   const authored = GRAPH_DETAILS[g.id];
-  if (authored) return { ...authored, compare: GRAPH_COMPARES[g.id] ?? authored.compare };
+  const rf = GRAPH_REALITY_FACTS[g.id];
+  if (authored)
+    return {
+      ...authored,
+      compare: GRAPH_COMPARES[g.id] ?? authored.compare,
+      reality: rf?.reality ?? authored.reality ?? [],
+      facts: rf?.facts ?? authored.facts ?? [],
+    };
   const gives: string[] = [];
   if (g.howToRead?.slope) gives.push(`Slope gives: ${g.howToRead.slope}.`);
   if (g.howToRead?.area) gives.push(`Area under curve gives: ${g.howToRead.area}.`);
@@ -143,6 +165,8 @@ export function getGraphDetail(g: GraphEntry): GraphDetailInfo {
     happens: [g.output],
     limits: [],
     compare: GRAPH_COMPARES[g.id],
+    reality: rf?.reality ?? [],
+    facts: rf?.facts ?? [],
   };
 }
 

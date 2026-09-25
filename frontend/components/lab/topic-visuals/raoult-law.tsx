@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -40,7 +41,38 @@ export function RaoultLawVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [moleFraction, setMoleFraction] = useState(0.3);
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const P0 = 100;
+  const Xt = 1 - moleFraction;
+  const Ps = P0 * Xt;
+  const deltaP = P0 - Ps;
+
+  const presets: ScenePreset[] = [
+    {
+      name: "Dilute solution",
+      hint: "X_solute = 0.1 — small VP lowering, nearly ideal behavior.",
+      apply: () => { setMoleFraction(0.1); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Half solute",
+      hint: "X_solute = 0.5 — vapor pressure halves: P = P° × 0.5.",
+      apply: () => { setMoleFraction(0.5); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Concentrated",
+      hint: "X_solute = 0.85 — dramatic lowering; boiling point rises a lot.",
+      apply: () => { setMoleFraction(0.85); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setMoleFraction(0.3);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -50,6 +82,7 @@ export function RaoultLawVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -69,11 +102,12 @@ export function RaoultLawVisual() {
       controls.autoRotate = false;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
 
       const P0 = 100; // pure solvent vapor pressure (arbitrary units)
 
@@ -97,8 +131,8 @@ export function RaoultLawVisual() {
         // Axes
         push(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(ox, oy, 0), new THREE.Vector3(ox + sx * 1.2, oy, 0)]), new THREE.LineBasicMaterial({ color: 0x475569 })));
         push(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(ox, oy, 0), new THREE.Vector3(ox, oy + sy * 12, 0)]), new THREE.LineBasicMaterial({ color: 0x475569 })));
-        push(mkSprite("X_solute", "#94a3b8", new THREE.Vector3(ox + sx * 1.25, oy - 0.3, 0), 0.6));
-        push(mkSprite("Vapor Pressure", "#94a3b8", new THREE.Vector3(ox - 0.5, oy + sy * 12.5, 0), 0.6));
+        addLabel(mkSprite("X_solute", "#94a3b8", new THREE.Vector3(ox + sx * 1.25, oy - 0.3, 0), 0.6));
+        addLabel(mkSprite("Vapor Pressure", "#94a3b8", new THREE.Vector3(ox - 0.5, oy + sy * 12.5, 0), 0.6));
 
         // Raoult's law line: P_solution = X_solvent × P°_solvent
         const linePts: THREE.Vector3[] = [];
@@ -119,14 +153,14 @@ export function RaoultLawVisual() {
         const p0Dir = p0Target.clone().sub(p0Label).normalize();
         const p0Len = p0Label.distanceTo(p0Target);
         push(new LiveLeaderLine(p0Dir, p0Label, p0Len * 0.8, 0xfbbf24, 0.25, 0.12));
-        push(mkSprite(`P°_solvent = ${P0} units`, "#fbbf24", p0Label.clone().sub(p0Dir.multiplyScalar(0.5)), 0.65));
+        addLabel(mkSprite(`P°_solvent = ${P0} units`, "#fbbf24", p0Label.clone().sub(p0Dir.multiplyScalar(0.5)), 0.65));
 
         const psLabel = new THREE.Vector3(currX + 0.8, currY + 0.4, 0);
         const psTarget = new THREE.Vector3(currX, currY, 0);
         const psDir = psTarget.clone().sub(psLabel).normalize();
         const psLen = psLabel.distanceTo(psTarget);
         push(new LiveLeaderLine(psDir, psLabel, psLen * 0.8, 0x22c55e, 0.25, 0.12));
-        push(mkSprite(`P_solution = ${Ps.toFixed(1)} units`, "#22c55e", psLabel.clone().sub(psDir.multiplyScalar(0.5)), 0.65));
+        addLabel(mkSprite(`P_solution = ${Ps.toFixed(1)} units`, "#22c55e", psLabel.clone().sub(psDir.multiplyScalar(0.5)), 0.65));
 
         // Delta P (vapor pressure lowering)
         const dpLabel = new THREE.Vector3(ox - 1.5, (oy + P0 * sy * 0.5 + currY) / 2, 0);
@@ -136,13 +170,15 @@ export function RaoultLawVisual() {
         const dpDir = dpMid.clone().sub(dpLabel).normalize();
         const dpLen = dpLabel.distanceTo(dpMid);
         push(new LiveLeaderLine(dpDir, dpLabel, dpLen * 0.7, 0xf97316, 0.25, 0.12));
-        push(mkSprite(`ΔP = ${deltaP.toFixed(1)} (VP lowering)`, "#f97316", dpLabel.clone().sub(dpDir.multiplyScalar(0.5)), 0.65));
+        addLabel(mkSprite(`ΔP = ${deltaP.toFixed(1)} (VP lowering)`, "#f97316", dpLabel.clone().sub(dpDir.multiplyScalar(0.5)), 0.65));
 
         // Formula
-        push(mkSprite(`ΔP/P° = X_solute = ${Xs.toFixed(2)}   |   P = P° × X_solvent = ${Ps.toFixed(1)}`, "#7dd3fc", new THREE.Vector3(0, -3.5, 0), 0.6));
+        addLabel(mkSprite(`ΔP/P° = X_solute = ${Xs.toFixed(2)}   |   P = P° × X_solvent = ${Ps.toFixed(1)}`, "#7dd3fc", new THREE.Vector3(0, -3.5, 0), 0.6));
       };
 
+      labelSprites.length = 0;
       updateScene();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -180,7 +216,7 @@ export function RaoultLawVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [moleFraction, isWebGL]);
+  }, [moleFraction, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Raoult's Law" description="Vapor pressure lowering diagram — requires WebGL." />;
@@ -195,6 +231,13 @@ export function RaoultLawVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-blue-500/50 bg-blue-500/10 text-blue-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
         <CollapsibleControls label="Solute Mole Fraction (X_solute)">
           <div className="w-48 mt-1">
             <label className="text-xs text-muted-foreground">X_solute = {moleFraction.toFixed(2)}</label>
@@ -209,6 +252,14 @@ export function RaoultLawVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid items={[
+          { label: "X_solute", value: moleFraction.toFixed(2) },
+          { label: "X_solvent", value: Xt.toFixed(2) },
+          { label: "P° solvent", value: `${P0}`, unit: "units" },
+          { label: "P solution", value: Ps.toFixed(1), unit: "units", highlight: true },
+          { label: "ΔP (lowering)", value: deltaP.toFixed(1), unit: "units" },
+        ]} />
 
         <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-blue-400">Raoult's Law</p>

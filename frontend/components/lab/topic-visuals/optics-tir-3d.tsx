@@ -8,6 +8,11 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, scale = 0.3) {
@@ -34,6 +39,53 @@ export default function OpticsTIR3d() {
   const [n2, setN2] = useState(1.0);
   const [incAngle, setIncAngle] = useState(42);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [showNormals, setShowNormals] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  // Live readouts from current params
+  const criticalDeg = n1 > n2 ? (Math.asin(n2 / n1) * 180) / Math.PI : NaN;
+  const isTIR = Number.isFinite(criticalDeg) && incAngle > criticalDeg;
+  const sinT2 = (n1 / n2) * Math.sin((incAngle * Math.PI) / 180);
+  const refrDeg = sinT2 <= 1 ? (Math.asin(sinT2) * 180) / Math.PI : NaN;
+
+  const DEFAULTS = { n1: 1.5, n2: 1.0, incAngle: 42 };
+  const presets: ScenePreset[] = [
+    {
+      name: "Glass → Air (at θc)",
+      hint: "θᵢ ≈ θc = 41.8° — refracted ray skims the surface (90°).",
+      apply: () => { setN1(1.5); setN2(1.0); setIncAngle(42); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Glass → Air (TIR)",
+      hint: "θᵢ = 50° > θc — total internal reflection, no light escapes.",
+      apply: () => { setN1(1.5); setN2(1.0); setIncAngle(50); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Water → Air",
+      hint: "θc ≈ 48.8° — why fish see the world through a 97° window.",
+      apply: () => { setN1(1.33); setN2(1.0); setIncAngle(60); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Diamond → Air",
+      hint: "θc ≈ 24.4° — tiny critical angle traps light, giving diamond its sparkle.",
+      apply: () => { setN1(2.42); setN2(1.0); setIncAngle(30); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Below critical (refracts)",
+      hint: "θᵢ = 20° < θc — most light refracts out, faint partial reflection.",
+      apply: () => { setN1(1.5); setN2(1.0); setIncAngle(20); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setN1(DEFAULTS.n1);
+    setN2(DEFAULTS.n2);
+    setIncAngle(DEFAULTS.incAngle);
+    setShowLabels(true);
+    setShowNormals(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     if (!isWebGL || !containerRef.current) return;
@@ -49,11 +101,24 @@ export default function OpticsTIR3d() {
     renderer.setSize(w, h);
     container.appendChild(renderer.domElement);
 
+    const labelSprites: THREE.Sprite[] = [];
+    const addLabel = (s: THREE.Sprite): THREE.Sprite => {
+      scene.add(s);
+      s.visible = showLabels;
+      labelSprites.push(s);
+      return s;
+    };
+
     let controls: any;
     import("three/addons/controls/OrbitControls.js").then((mod) => {
       controls = new mod.OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
       controls.dampingFactor = 0.08;
     });
 
@@ -127,11 +192,12 @@ export default function OpticsTIR3d() {
         ]),
         new THREE.LineBasicMaterial({ color: 0xa5b4fc, linewidth: 2 })
       );
+      normalLine.visible = showNormals;
       scene.add(normalLine);
 
-      normalLabel = mkSprite("Normal", "#a5b4fc");
-      scene.add(normalLabel);
+      normalLabel = addLabel(mkSprite("Normal", "#a5b4fc"));
       normalLabel.position.set(0.3, 2, 0);
+      normalLabel.visible = showLabels && showNormals;
 
       // Surface texture lines
       for (let i = -3; i <= 3; i++) {
@@ -145,11 +211,9 @@ export default function OpticsTIR3d() {
         textureLines.push(texLine);
       }
 
-      const sp1 = mkSprite(isTIR ? "TIR!" : "Refracted", isTIR ? "#22d3ee" : "#fbbf24");
-      scene.add(sp1);
+      const sp1 = addLabel(mkSprite(isTIR ? "TIR!" : "Refracted", isTIR ? "#22d3ee" : "#fbbf24"));
       sp1.position.set(2, 0.8, 0);
-      const spCrit = mkSprite("θc=" + criticalAngle.toFixed(1) + "°", "#fb923c");
-      scene.add(spCrit);
+      const spCrit = addLabel(mkSprite("θc=" + criticalAngle.toFixed(1) + "°", "#fb923c"));
       spCrit.position.set(-2, -1.5, 0);
       return { incRay, normalLine };
     };
@@ -182,7 +246,7 @@ export default function OpticsTIR3d() {
       renderer.dispose();
       controls?.dispose();
     };
-  }, [n1, n2, incAngle, isWebGL]);
+  }, [n1, n2, incAngle, isWebGL, runId, showLabels, showNormals]);
 
   if (!isWebGL) return <WebGLFallback title="Total Internal Reflection" />;
 
@@ -200,6 +264,39 @@ export default function OpticsTIR3d() {
         <div ref={containerRef} className="h-[clamp(320px,60vh,640px)] w-full rounded-md overflow-hidden mb-4">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-orange-500/50 bg-orange-500/10 text-orange-300" : "border-orange-900 bg-orange-900/40 text-orange-400/60"}`}
+            >
+              Labels
+            </button>
+            <button
+              onClick={() => setShowNormals((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showNormals ? "border-indigo-400/50 bg-indigo-400/10 text-indigo-300" : "border-orange-900 bg-orange-900/40 text-orange-400/60"}`}
+            >
+              Normal
+            </button>
+            <button
+              onClick={resetAll}
+              className="px-2.5 py-1 rounded-md text-xs font-medium border border-orange-900 bg-orange-900/40 text-orange-300 hover:bg-orange-800/50 transition-colors"
+              title="Reset to defaults"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+        <ReadoutGrid
+          className="mb-4"
+          items={[
+            { label: "Critical angle θc", value: Number.isFinite(criticalDeg) ? criticalDeg.toFixed(1) : "—", unit: Number.isFinite(criticalDeg) ? "°" : undefined },
+            { label: "Angle of incidence θ₁", value: incAngle, unit: "°" },
+            { label: "Regime", value: isTIR ? "Total internal reflection" : Number.isFinite(criticalDeg) ? "Refraction (+ partial reflection)" : "No TIR possible (n₁ ≤ n₂)", highlight: isTIR },
+            { label: "Angle of refraction θ₂", value: Number.isFinite(refrDeg) ? refrDeg.toFixed(1) : "— (TIR)", unit: Number.isFinite(refrDeg) ? "°" : undefined },
+          ]}
+        />
         <CollapsibleControls label="TIR Parameters">
           <div className="space-y-4">
             <div className="space-y-2">

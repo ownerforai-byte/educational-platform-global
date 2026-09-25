@@ -9,6 +9,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -42,6 +43,44 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 type VectorMode = "addition" | "scalar" | "collinear" | "coplanar" | "linear-combo";
 
+const MODE_INFO: Record<VectorMode, { concept: string; formula: string; interpretation: string; fact: string; tip: string }> = {
+  addition: {
+    concept: "Resultant by the parallelogram / triangle law",
+    formula: "R = A + B = (Ax+Bx, Ay+By, Az+Bz)",
+    interpretation: "Two forces, velocities or displacements acting together add as the adjacent sides of a parallelogram; the diagonal is the resultant.",
+    fact: "Resolving into components is the reverse trick: F = Fxî + Fyĵ + Fzk̂ — addition of perpendicular pieces rebuilds the same vector.",
+    tip: "Classic NEB application: a boat crossing a river — resultant velocity = velocity of boat + velocity of stream (head-to-tail triangle).",
+  },
+  scalar: {
+    concept: "Scalar multiplication of a physical vector",
+    formula: "kA = (kAx, kAy, kAz), |kA| = |k|·|A|",
+    interpretation: "Doubling a force doubles its magnitude along the same line of action; k negative reverses the sense (e.g. reaction −F).",
+    fact: "Work W = F·s and impulse F·Δt are scalars built from vectors — magnitude scaling shows up everywhere in mechanics.",
+    tip: "The unit vector in A's direction is Â = A/|A| — it is just scalar multiplication with k = 1/|A|.",
+  },
+  collinear: {
+    concept: "Collinear (parallel) vectors",
+    formula: "A ∥ B ⟺ A = kB for some scalar k ⟺ A × B = 0",
+    interpretation: "Both vectors share the same line of action, so their components are in proportion: Ax/Bx = Ay/By = Az/Bz.",
+    fact: "In 3-D geometry, parallel lines are detected exactly this way: their direction vectors must satisfy d₁ = k·d₂.",
+    tip: "To prove points P, Q, R are collinear, form the displacement vectors PQ and QR and show PQ = k·QR.",
+  },
+  coplanar: {
+    concept: "Coplanarity & scalar triple product (volumes)",
+    formula: "A·(B × C) = 0",
+    interpretation: "The scalar triple product is the volume of the parallelepiped built on A, B, C — zero volume means all three flatten into one plane.",
+    fact: "|A·(B×C)| is exactly the volume a parallelepiped needs — coplanar edges give a squashed, zero-volume box.",
+    tip: "Concurrent forces in equilibrium that lie in one plane are coplanar vectors — their STP must vanish.",
+  },
+  "linear-combo": {
+    concept: "Linear combination (resolution of vectors)",
+    formula: "R = c₁A + c₂B (scene uses c₁ = 1.5, c₂ = 0.8)",
+    interpretation: "Combining scaled copies of A and B always lands in the plane containing both — that plane is their span.",
+    fact: "Any vector in space resolves uniquely as xî + yĵ + zk̂ — a linear combination of the standard basis (position vector OP = r).",
+    tip: "NEB questions like 'express MN in terms of a, b, c' are pure linear-combination exercises — hunt for the path and add along it.",
+  },
+};
+
 export function VectorApplications3DVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
@@ -51,7 +90,37 @@ export function VectorApplications3DVisual() {
   const [c, setC] = useState({ x: 0, y: 2, z: 2 });
   const [k, setK] = useState(2);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
 
+  const info = MODE_INFO[mode];
+
+  const fmtV = (v: THREE.Vector3) => `(${v.x.toFixed(1)}, ${v.y.toFixed(1)}, ${v.z.toFixed(1)})`;
+  const va = new THREE.Vector3(a.x, a.y, a.z);
+  const vb = new THREE.Vector3(b.x, b.y, b.z);
+  const vc = new THREE.Vector3(c.x, c.y, c.z);
+  const vSum = va.clone().add(vb);
+  const vCross = va.clone().cross(vb);
+  const vSTP = va.dot(vb.clone().cross(vc));
+
+  const presets: ScenePreset[] = [
+    { name: "Resultant force A + B", hint: "Two forces add as adjacent sides of a parallelogram", apply: () => { setMode("addition"); setA({ x: 3, y: 1, z: 0 }); setB({ x: 1, y: 3, z: 0 }); setRunId((r) => r + 1); } },
+    { name: "Scale a force k = 1.5", hint: "kA keeps the line of action, multiplies magnitude", apply: () => { setMode("scalar"); setK(1.5); setRunId((r) => r + 1); } },
+    { name: "Parallel members B = 2A", hint: "Parallel lines share one direction vector: A × B = 0", apply: () => { setMode("collinear"); setA({ x: 2, y: 1, z: 0 }); setB({ x: 4, y: 2, z: 0 }); setRunId((r) => r + 1); } },
+    { name: "Flat box: volume = 0", hint: "Coplanar edges ⇒ A·(B×C) = 0, no 3-D box", apply: () => { setMode("coplanar"); setA({ x: 3, y: 1, z: 0 }); setB({ x: 1, y: 3, z: 0 }); setC({ x: 2, y: 2, z: 0 }); setRunId((r) => r + 1); } },
+    { name: "Cube edges: real volume", hint: "Volume of a parallelepiped = |A·(B×C)|", apply: () => { setMode("coplanar"); setA({ x: 2, y: 0, z: 0 }); setB({ x: 0, y: 2, z: 0 }); setC({ x: 0, y: 0, z: 2 }); setRunId((r) => r + 1); } },
+    { name: "Resolve: 1.5A + 0.8B", hint: "Any vector in the A–B plane is a linear combination of them", apply: () => { setMode("linear-combo"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setMode("addition");
+    setA({ x: 3, y: 1, z: 0 });
+    setB({ x: 1, y: 3, z: 0 });
+    setC({ x: 0, y: 2, z: 2 });
+    setK(2);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     const container = containerRef.current;
@@ -63,6 +132,7 @@ export function VectorApplications3DVisual() {
     let animTime = 0;
     let animPhase = 0;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -83,7 +153,7 @@ export function VectorApplications3DVisual() {
       controls.autoRotateSpeed = 0.3;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.6));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -112,7 +182,8 @@ export function VectorApplications3DVisual() {
         const len = to.clone().sub(from).length();
         push(new LiveLeaderLine(dir, from, len, color, 0.2, 0.12));
         const mid = from.clone().add(to).multiplyScalar(0.5);
-        push(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, mid.clone().add(new THREE.Vector3(0, 0.6, 0)), 0.8));
+        const s = push(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, mid.clone().add(new THREE.Vector3(0, 0.6, 0)), 0.8));
+        labelSprites.push(s);
       };
 
       const update = () => {
@@ -140,26 +211,26 @@ export function VectorApplications3DVisual() {
           (meshes[meshes.length - 1] as any).computeLineDistances();
           drawArrow(new THREE.Vector3(0, 0, 0), sum, 0xf97316, "A + B");
           // Triangle method: B from tip of A
-          push(mkSprite("Triangle: A then B â†’ R", "#7dd3fc", new THREE.Vector3(-4, 4, 0), 0.8));
+          labelSprites.push(push(mkSprite("Triangle: A then B â†’ R", "#7dd3fc", new THREE.Vector3(-4, 4, 0), 0.8)));
         } else if (mode === "scalar") {
           // kA
           const scaled = A.clone().multiplyScalar(k);
           drawArrow(new THREE.Vector3(0, 0, 0), A, 0xef4444, "A");
           drawArrow(new THREE.Vector3(0, 0, 0), scaled, 0xf97316, `kA (${k})`);
-          push(mkSprite(`k·A = (${(k * a.x).toFixed(1)}, ${(k * a.y).toFixed(1)}, ${(k * a.z).toFixed(1)})`, "#fb923c", new THREE.Vector3(-4, 4, 0), 0.8));
+          labelSprites.push(push(mkSprite(`k·A = (${(k * a.x).toFixed(1)}, ${(k * a.y).toFixed(1)}, ${(k * a.z).toFixed(1)})`, "#fb923c", new THREE.Vector3(-4, 4, 0), 0.8)));
         } else if (mode === "collinear") {
           // Two vectors collinear if A = kB
           const bScaled = B.clone().multiplyScalar(2);
           drawArrow(new THREE.Vector3(0, 0, 0), A, 0xef4444, "A");
           drawArrow(new THREE.Vector3(0, 0, 0), bScaled, 0x22c55e, "2B");
           drawArrow(new THREE.Vector3(0, 0, 0), B, 0x3b82f6, "B");
-          push(mkSprite("Collinear: A = 2B â†’ same line through origin", "#a78bfa", new THREE.Vector3(-4, 4, 0), 0.85));
+          labelSprites.push(push(mkSprite("Collinear: A = 2B â†’ same line through origin", "#a78bfa", new THREE.Vector3(-4, 4, 0), 0.85)));
         } else if (mode === "coplanar") {
           // Three vectors coplanar if scalar triple product = 0
           drawArrow(new THREE.Vector3(0, 0, 0), A, 0xef4444, "A");
           drawArrow(new THREE.Vector3(0, 0, 0), B, 0x22c55e, "B");
           drawArrow(new THREE.Vector3(0, 0, 0), C, 0x3b82f6, "C");
-          push(mkSprite("Coplanar: A, B, C lie in same plane", "#7dd3fc", new THREE.Vector3(-4, 4, 0), 0.85));
+          labelSprites.push(push(mkSprite("Coplanar: A, B, C lie in same plane", "#7dd3fc", new THREE.Vector3(-4, 4, 0), 0.85)));
           // Show plane
           const normal = A.clone().cross(B).normalize();
           const plane = new THREE.Mesh(
@@ -176,11 +247,12 @@ export function VectorApplications3DVisual() {
           drawArrow(new THREE.Vector3(0, 0, 0), A, 0xef4444, "A");
           drawArrow(new THREE.Vector3(0, 0, 0), B, 0x22c55e, "B");
           drawArrow(new THREE.Vector3(0, 0, 0), result, 0xf97316, `câ‚A+câ‚‚B`);
-          push(mkSprite(`Linear combo: 1.5A + 0.8B`, "#fb923c", new THREE.Vector3(-4, 4, 0), 0.85));
+          labelSprites.push(push(mkSprite(`Linear combo: 1.5A + 0.8B`, "#fb923c", new THREE.Vector3(-4, 4, 0), 0.85)));
         }
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -221,7 +293,7 @@ export function VectorApplications3DVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [mode, a, b, c, k, isWebGL]);
+  }, [mode, a, b, c, k, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Vector Applications 3D" description="Interactive 3D vector visualization — requires WebGL." />;
@@ -236,6 +308,14 @@ export function VectorApplications3DVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-blue-500/50 bg-blue-500/10 text-blue-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Vector Mode">
           <Tabs value={mode} onValueChange={(v) => setMode(v as VectorMode)} className="mt-1">
             <TabsList className="grid w-full grid-cols-5">
@@ -284,6 +364,17 @@ export function VectorApplications3DVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: info.concept, value: info.formula, highlight: true },
+            { label: "Resultant A + B", value: fmtV(vSum) },
+            { label: `k·A (k = ${k})`, value: fmtV(va.clone().multiplyScalar(k)) },
+            { label: "Parallelogram area |A × B|", value: vCross.length().toFixed(2), unit: "sq units" },
+            { label: "Triangle area ½|A × B|", value: (vCross.length() / 2).toFixed(2), unit: "sq units" },
+            { label: "Box volume |A · (B × C)|", value: Math.abs(vSTP).toFixed(2), unit: "cu units" },
+          ]}
+        />
 
         <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-blue-400">Key Definitions</p>

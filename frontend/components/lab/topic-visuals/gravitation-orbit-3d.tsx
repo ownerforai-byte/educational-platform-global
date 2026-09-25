@@ -8,6 +8,12 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  PlaybackBar,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -39,6 +45,53 @@ export function GravitationVisual() {
   const [mass, setMass] = useState(100);
   const [orbitalRadius, setOrbitalRadius] = useState(5);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [animating, setAnimating] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  const speedRef = useRef(1);
+  speedRef.current = speed;
+  const [showOrbit, setShowOrbit] = useState(true);
+  const [showVectors, setShowVectors] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  // Scene units with G = 1 (satellite mass m = 1)
+  const vOrb = Math.sqrt(mass / orbitalRadius);
+  const period = 2 * Math.PI * Math.sqrt(orbitalRadius ** 3 / mass);
+  const vEsc = Math.sqrt((2 * mass) / orbitalRadius);
+  const fGrav = mass / orbitalRadius ** 2;
+
+  const DEFAULTS = { mass: 100, orbitalRadius: 5 };
+  const presets: ScenePreset[] = [
+    {
+      name: "Default orbit",
+      hint: "Mid-size planet at a comfortable orbital radius.",
+      apply: () => { setMass(100); setOrbitalRadius(5); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Low orbit",
+      hint: "Close in — fast orbital velocity, short period (v = √(GM/r)).",
+      apply: () => { setMass(100); setOrbitalRadius(3); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Distant orbit",
+      hint: "Far out — slow satellite, long period (Kepler: T² ∝ r³).",
+      apply: () => { setMass(200); setOrbitalRadius(8); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Massive planet",
+      hint: "Huge M — strong gravity, high orbital and escape velocities.",
+      apply: () => { setMass(400); setOrbitalRadius(5); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setMass(DEFAULTS.mass);
+    setOrbitalRadius(DEFAULTS.orbitalRadius);
+    setSpeed(1);
+    setShowOrbit(true);
+    setShowVectors(true);
+    setAnimating(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -48,6 +101,8 @@ export function GravitationVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
+    const vectorObjs: THREE.Object3D[] = [];
     let satAngle = 0;
 
     const init = async () => {
@@ -69,7 +124,12 @@ export function GravitationVisual() {
       controls.autoRotate = false;
       controls.minDistance = 5;
       controls.maxDistance = 30;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.6));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -77,6 +137,8 @@ export function GravitationVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
+      const addVector = <T extends THREE.Object3D>(o: T): T => { push(o); vectorObjs.push(o); o.visible = showVectors; return o; };
 
       // Stars background
       const starGeo = new THREE.BufferGeometry();
@@ -92,7 +154,7 @@ export function GravitationVisual() {
         new THREE.SphereGeometry(1.5, 32, 32),
         new THREE.MeshBasicMaterial({ color: 0x3b82f6 }),
       )) as THREE.Mesh;
-      push(mkSprite("Planet (M)", "#3b82f6", new THREE.Vector3(0, 2.2, 0), 0.7));
+      addLabel(mkSprite(`Planet (M = ${mass})`, "#3b82f6", new THREE.Vector3(0, 2.2, 0), 0.7));
 
       // Orbital path
       const orbitPts: THREE.Vector3[] = [];
@@ -100,29 +162,30 @@ export function GravitationVisual() {
         const a = (i / 100) * 2 * Math.PI;
         orbitPts.push(new THREE.Vector3(orbitalRadius * Math.cos(a), 0, orbitalRadius * Math.sin(a)));
       }
-      push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(orbitPts), new THREE.LineBasicMaterial({ color: 0x334155, transparent: true, opacity: 0.6 })));
+      const orbitLine = push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(orbitPts), new THREE.LineBasicMaterial({ color: 0x334155, transparent: true, opacity: 0.6 }))) as THREE.Line;
+      orbitLine.visible = showOrbit;
 
       // Gravitational force arrow (toward center)
       const satX = orbitalRadius;
       const gfLabelPos = new THREE.Vector3(satX + 3, 2, 0);
       const gfTarget = new THREE.Vector3(satX, 0, 0);
       const gfDir = gfTarget.clone().sub(gfLabelPos).normalize();
-      push(new LiveLeaderLine(gfDir, gfLabelPos, gfLabelPos.distanceTo(gfTarget) * 0.9, 0xef4444, 0.2, 0.12));
-      push(mkSprite(`F_g = GMm/r²`, "#ef4444", gfLabelPos.clone().sub(gfDir.multiplyScalar(0.5)), 0.75));
+      addVector(new LiveLeaderLine(gfDir, gfLabelPos, gfLabelPos.distanceTo(gfTarget) * 0.9, 0xef4444, 0.2, 0.12));
+      addLabel(mkSprite(`F_g = GMm/r²`, "#ef4444", gfLabelPos.clone().sub(gfDir.multiplyScalar(0.5)), 0.75));
 
       // Orbital velocity arrow (tangential)
       const ovLabelPos = new THREE.Vector3(satX, 0, orbitalRadius + 3);
       const ovTarget = new THREE.Vector3(satX, 0, orbitalRadius);
       const ovDir = ovTarget.clone().sub(ovLabelPos).normalize();
-      push(new LiveLeaderLine(ovDir, ovLabelPos, ovLabelPos.distanceTo(ovTarget) * 0.9, 0x22d3ee, 0.2, 0.1));
-      push(mkSprite("v_orb (tangential)", "#22d3ee", ovLabelPos.clone().sub(ovDir.multiplyScalar(0.5)), 0.75));
+      addVector(new LiveLeaderLine(ovDir, ovLabelPos, ovLabelPos.distanceTo(ovTarget) * 0.9, 0x22d3ee, 0.2, 0.1));
+      addLabel(mkSprite("v_orb (tangential)", "#22d3ee", ovLabelPos.clone().sub(ovDir.multiplyScalar(0.5)), 0.75));
 
       // Radius label
       const rLabelPos = new THREE.Vector3(orbitalRadius / 2, 1.5, 0);
       const rTarget = new THREE.Vector3(orbitalRadius, 0, 0);
       const rDir = rTarget.clone().sub(rLabelPos).normalize();
-      push(new LiveLeaderLine(rDir, rLabelPos, rLabelPos.distanceTo(rTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
-      push(mkSprite(`r = ${orbitalRadius} units`, "#fbbf24", rLabelPos.clone().sub(rDir.multiplyScalar(0.5)), 0.7));
+      addVector(new LiveLeaderLine(rDir, rLabelPos, rLabelPos.distanceTo(rTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
+      addLabel(mkSprite(`r = ${orbitalRadius} units`, "#fbbf24", rLabelPos.clone().sub(rDir.multiplyScalar(0.5)), 0.7));
 
       // Satellite
       const satellite = push(new THREE.Mesh(
@@ -134,8 +197,8 @@ export function GravitationVisual() {
       const evLabelPos = new THREE.Vector3(-orbitalRadius - 3, 2, 0);
       const evTarget = new THREE.Vector3(0, 0, 0);
       const evDir = evTarget.clone().sub(evLabelPos).normalize();
-      push(new LiveLeaderLine(evDir, evLabelPos, evLabelPos.distanceTo(evTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
-      push(mkSprite(`v_escape = √(2GM/r)`, "#a78bfa", evLabelPos.clone().sub(evDir.multiplyScalar(0.5)), 0.7));
+      addVector(new LiveLeaderLine(evDir, evLabelPos, evLabelPos.distanceTo(evTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
+      addLabel(mkSprite(`v_escape = √(2GM/r)`, "#a78bfa", evLabelPos.clone().sub(evDir.multiplyScalar(0.5)), 0.7));
 
       const update = () => {
         while (meshes.length > 30) {
@@ -152,7 +215,10 @@ export function GravitationVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
-        satAngle += 0.015;
+        if (animating) {
+          // Kepler-consistent angular rate: ω = √(GM/r³), G = 1
+          satAngle += 0.02 * Math.sqrt(mass / orbitalRadius ** 3) * speedRef.current;
+        }
         satellite.position.set(orbitalRadius * Math.cos(satAngle), 0, orbitalRadius * Math.sin(satAngle));
         renderer.render(scene, camera);
       };
@@ -188,7 +254,7 @@ export function GravitationVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [orbitalRadius, isWebGL]);
+  }, [orbitalRadius, mass, isWebGL, animating, runId, showOrbit, showVectors]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Gravitation" description="Orbiting satellite with gravitational force arrows." />;
@@ -210,12 +276,52 @@ export function GravitationVisual() {
               <Input type="range" min={3} max={8} step={0.5} value={orbitalRadius} onChange={(e) => setOrbitalRadius(Number(e.target.value))} className="mt-1 w-full" />
               <p className="text-xs font-mono text-primary mt-1">{orbitalRadius.toFixed(1)}</p>
             </div>
+            <div className="w-28">
+              <Label className="text-xs text-muted-foreground">Planet mass M:</Label>
+              <Input type="range" min={50} max={400} step={10} value={mass} onChange={(e) => setMass(Number(e.target.value))} className="mt-1 w-full" />
+              <p className="text-xs font-mono text-primary mt-1">{mass}</p>
+            </div>
           </div>
         </CollapsibleControls>
+
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <PlaybackBar
+            playing={animating}
+            onPlayToggle={() => setAnimating(!animating)}
+            speed={speed}
+            onSpeedChange={setSpeed}
+            onReset={resetAll}
+          />
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowOrbit((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showOrbit ? "border-primary/50 bg-primary/10 text-primary" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Orbit path
+            </button>
+            <button
+              onClick={() => setShowVectors((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showVectors ? "border-red-500/50 bg-red-500/10 text-red-400" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Vectors
+            </button>
+          </div>
+        </div>
+
+        <ScenePresets presets={presets} />
 
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Orbital velocity v", value: vOrb.toFixed(2), unit: "u/s" },
+            { label: "Period T", value: period.toFixed(2), unit: "s" },
+            { label: "Escape velocity v_e", value: vEsc.toFixed(2), unit: "u/s", highlight: vEsc > 10 },
+            { label: "Gravity F_g", value: fGrav.toFixed(2), unit: "N (m=1)" },
+          ]}
+        />
 
         <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-blue-400">Key Concepts</p>

@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
@@ -32,11 +33,111 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 type ContinuityType = "continuous" | "removable" | "jump" | "infinite";
 
+/** The scene always examines continuity at x = A. */
+const A = 2;
+const CONT_LIM = 1.5 * Math.sin(A);      // limit & value of 1.5·sin x at x = 2
+const REMOVAL_FA = CONT_LIM + 1.5;       // removable mode parks f(2) above the hole
+const JUMP_L = 0.5 * Math.sin(A) + 1;    // left branch of the jump curve at x = 2
+const JUMP_R = 0.5 * Math.sin(A) - 1;    // right branch of the jump curve at x = 2
+
+const CONT_INFO: Record<ContinuityType, { concept: string; formula: string; condition: string; verdict: string; fact: string; tip: string }> = {
+  continuous: {
+    concept: "Continuous at x = 2",
+    formula: "f(x) = 1.5·sin x",
+    condition: "LHL = RHL = f(2)",
+    verdict: `lim(x→2) f = f(2) = ${CONT_LIM.toFixed(4)}`,
+    fact: "sin, cos, eˣ and every polynomial pass this test at every real number.",
+    tip: "No holes, no jumps, no asymptotes — the pen never leaves the paper.",
+  },
+  removable: {
+    concept: "Removable discontinuity (hole)",
+    formula: "f(x) = 1.5·sin x (x ≠ 2); f(2) parked elsewhere",
+    condition: "Limit exists but ≠ f(2)",
+    verdict: `lim(x→2) f = ${CONT_LIM.toFixed(4)} but f(2) = ${REMOVAL_FA.toFixed(4)}`,
+    fact: "Redefined at one point, the curve is whole again — hence 'removable'.",
+    tip: "The limit ignores the isolated point: it watches nearby x, never x = 2 itself.",
+  },
+  jump: {
+    concept: "Jump discontinuity",
+    formula: "f(x) = 0.5·sin x + 1 (x < 2); 0.5·sin x − 1 (x > 2)",
+    condition: "LHL ≠ RHL",
+    verdict: `LHL = ${JUMP_L.toFixed(4)}, RHL = ${JUMP_R.toFixed(4)} → limit DNE`,
+    fact: "Postage tariffs and ⌊x⌋ are textbook jump functions — step height 2 here.",
+    tip: "Both one-sided limits exist; continuity fails because they disagree.",
+  },
+  infinite: {
+    concept: "Infinite discontinuity (vertical asymptote)",
+    formula: "f(x) = 2/(x − 2) + 0.5",
+    condition: "f → −∞ (left), +∞ (right)",
+    verdict: "lim(x→2) f does not exist — branches diverge in opposite directions",
+    fact: "The denominator's zero at x = 2 predicts the asymptote before you plot anything.",
+    tip: "'= ∞' describes the manner of failure; a (finite) limit still does not exist.",
+  },
+};
+
 export function Continuity3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [ctype, setCtype] = useState<ContinuityType>("continuous");
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const info = CONT_INFO[ctype];
+
+  const presets: ScenePreset[] = [
+    { name: "Continuous", hint: "lim = f(2) — no break", apply: () => { setCtype("continuous"); setRunId((r) => r + 1); } },
+    { name: "Removable hole", hint: "Limit exists, value misplaced", apply: () => { setCtype("removable"); setRunId((r) => r + 1); } },
+    { name: "Jump", hint: "LHL ≠ RHL → DNE", apply: () => { setCtype("jump"); setRunId((r) => r + 1); } },
+    { name: "Infinite", hint: "Vertical asymptote at x = 2", apply: () => { setCtype("infinite"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setCtype("continuous");
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
+
+  const readoutItems = (() => {
+    if (ctype === "continuous") {
+      return [
+        { label: "f(x)", value: "1.5·sin x" },
+        { label: "LHL (x→2⁻)", value: CONT_LIM.toFixed(4) },
+        { label: "RHL (x→2⁺)", value: CONT_LIM.toFixed(4) },
+        { label: "f(2)", value: CONT_LIM.toFixed(4) },
+        { label: "lim(x→2) f(x)", value: CONT_LIM.toFixed(4), highlight: true },
+        { label: "Test", value: "LHL = RHL = f(2) → continuous" },
+      ];
+    }
+    if (ctype === "removable") {
+      return [
+        { label: "f(x), x ≠ 2", value: "1.5·sin x" },
+        { label: "LHL (x→2⁻)", value: CONT_LIM.toFixed(4) },
+        { label: "RHL (x→2⁺)", value: CONT_LIM.toFixed(4) },
+        { label: "f(2) as plotted", value: REMOVAL_FA.toFixed(4) },
+        { label: "lim(x→2) f(x)", value: CONT_LIM.toFixed(4), highlight: true },
+        { label: "Fix", value: `Redefine f(2) = ${CONT_LIM.toFixed(4)} to remove the hole` },
+      ];
+    }
+    if (ctype === "jump") {
+      return [
+        { label: "Left branch", value: "0.5·sin x + 1 (x < 2)" },
+        { label: "Right branch", value: "0.5·sin x − 1 (x > 2)" },
+        { label: "LHL (x→2⁻)", value: JUMP_L.toFixed(4) },
+        { label: "RHL (x→2⁺)", value: JUMP_R.toFixed(4) },
+        { label: "lim(x→2) f(x)", value: "Does not exist", highlight: true },
+        { label: "Jump size", value: `RHL − LHL = ${(JUMP_R - JUMP_L).toFixed(2)}` },
+      ];
+    }
+    return [
+      { label: "f(x)", value: "2/(x − 2) + 0.5" },
+      { label: "LHL (x→2⁻)", value: "−∞" },
+      { label: "RHL (x→2⁺)", value: "+∞" },
+      { label: "f(2)", value: "undefined (division by zero)" },
+      { label: "lim(x→2) f(x)", value: "Does not exist", highlight: true },
+      { label: "Feature", value: "Vertical asymptote x = 2" },
+    ];
+  })();
 
 
   useEffect(() => {
@@ -48,6 +149,7 @@ export function Continuity3D() {
     let frameId: number;
     let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -66,7 +168,7 @@ export function Continuity3D() {
       controls.enableDamping = true;
       controls.minDistance = 5;
       controls.maxDistance = 25;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
 
@@ -76,7 +178,7 @@ export function Continuity3D() {
       grid.rotation.x = Math.PI / 2;
       push(grid);
 
-      const a = 2;
+      const a = A;
 
       if (ctype === "continuous") {
         push(mkSprite("Continuous: lim = f(a)", "#34d399", new THREE.Vector3(0, 4.5, 0)));
@@ -93,7 +195,7 @@ export function Continuity3D() {
         push(dot);
         push(mkSprite("lim = f(a)", "#34d399", new THREE.Vector3(a + 1, Math.sin(a) * 1.5 + 1, 0)));
       } else if (ctype === "removable") {
-        push(mkSprite("Removable: lim != f(a)", "#f59e0b", new THREE.Vector3(0, 4.5, 0)));
+        push(mkSprite("Removable: lim ≠ f(a)", "#f59e0b", new THREE.Vector3(0, 4.5, 0)));
         const pts: THREE.Vector3[] = [];
         for (let x = -6; x <= 6; x += 0.05) {
           if (Math.abs(x - a) < 0.15) continue;
@@ -109,9 +211,9 @@ export function Continuity3D() {
         );
         dot.position.set(a, Math.sin(a) * 1.5 + 1.5, 0);
         push(dot);
-        push(mkSprite("hole != defined point", "#f59e0b", new THREE.Vector3(a + 1, Math.sin(a) * 1.5 + 0.5, 0)));
+        push(mkSprite("hole ≠ defined point", "#f59e0b", new THREE.Vector3(a + 1, Math.sin(a) * 1.5 + 0.5, 0)));
       } else if (ctype === "jump") {
-        push(mkSprite("Jump: LHL != RHS", "#ec4899", new THREE.Vector3(0, 4.5, 0)));
+        push(mkSprite("Jump: LHL ≠ RHL", "#ec4899", new THREE.Vector3(0, 4.5, 0)));
         const leftPts: THREE.Vector3[] = [];
         const rightPts: THREE.Vector3[] = [];
         for (let x = -6; x < a - 0.05; x += 0.05) leftPts.push(new THREE.Vector3(x, Math.sin(x) * 0.5 + 1, 0));
@@ -124,7 +226,7 @@ export function Continuity3D() {
         const rightHole = new THREE.Mesh(new THREE.RingGeometry(0.12, 0.2, 32), new THREE.MeshBasicMaterial({ color: 0xec4899, side: THREE.DoubleSide }));
         rightHole.position.set(a + 0.05, Math.sin(a + 0.05) * 0.5 - 1, 0);
         push(rightHole);
-        push(mkSprite("LHL != RHS", "#ec4899", new THREE.Vector3(a, -2, 0)));
+        push(mkSprite("LHL ≠ RHL", "#ec4899", new THREE.Vector3(a, -2, 0)));
       } else {
         push(mkSprite("Infinite: Vertical Asymptote", "#f43f5e", new THREE.Vector3(0, 4.5, 0)));
         const leftPts: THREE.Vector3[] = [];
@@ -139,8 +241,11 @@ export function Continuity3D() {
         );
         asymp.computeLineDistances();
         push(asymp);
-        push(mkSprite("lim -> inf", "#f43f5e", new THREE.Vector3(a + 1, 3, 0)));
+        push(mkSprite("lim(x→2⁺) = +∞", "#f43f5e", new THREE.Vector3(a + 1, 3, 0)));
       }
+
+      meshes.forEach((m) => { if (m instanceof THREE.Sprite) labelSprites.push(m); });
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -170,7 +275,7 @@ export function Continuity3D() {
 
     const cleanupPromise = cleanup();
     return () => { cleanupPromise.then((d) => d?.()); };
-  }, [ctype, isWebGL]);
+  }, [ctype, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Continuity" description="Continuous vs discontinuous functions — requires WebGL." />;
@@ -185,6 +290,14 @@ export function Continuity3D() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-emerald-500/50 bg-emerald-500/10 text-emerald-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Continuity Type">
           <div className="flex flex-wrap gap-2 mt-2">
             {(["continuous", "removable", "jump", "infinite"] as ContinuityType[]).map((t) => (
@@ -199,13 +312,16 @@ export function Continuity3D() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <ReadoutGrid items={readoutItems} />
+
         <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-400">Continuity Criteria</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">
-            <p><strong className="text-foreground">Continuous:</strong> lim(x{'->'}a) f(x) = f(a)</p>
+            <p><strong className="text-foreground">Continuous:</strong> lim(x→a) f(x) = f(a)</p>
             <p><strong className="text-foreground">Removable:</strong> limit exists but f(a) is undefined or different</p>
-            <p><strong className="text-foreground">Jump:</strong> left-hand limit {'!='} right-hand limit</p>
-            <p><strong className="text-foreground">Infinite:</strong> function approaches inf near a</p>
+            <p><strong className="text-foreground">Jump:</strong> left-hand limit ≠ right-hand limit</p>
+            <p><strong className="text-foreground">Infinite:</strong> f(x) grows without bound near a — vertical asymptote</p>
+            <p><strong className="text-foreground">This scene:</strong> {info.concept} — {info.verdict}.</p>
           </div>
         </div>
       </CardContent>

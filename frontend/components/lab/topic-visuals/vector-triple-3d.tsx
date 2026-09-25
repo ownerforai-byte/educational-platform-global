@@ -9,6 +9,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -42,6 +43,44 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 type VectorMode = "addition" | "scalar" | "collinear" | "coplanar" | "linear-combo";
 
+const TRIPLE_INFO: Record<VectorMode, { concept: string; formula: string; interpretation: string; fact: string; tip: string }> = {
+  addition: {
+    concept: "Triple product is linear in every slot",
+    formula: "(a₁ + a₂)·(b×c) = a₁·(b×c) + a₂·(b×c)",
+    interpretation: "The determinant test [a b c] splits cleanly across sums in any row.",
+    fact: "Swapping two vectors flips the sign: b·(a×c) = −a·(b×c).",
+    tip: "Cyclic rotation keeps the value: a·(b×c) = b·(c×a) = c·(a×b).",
+  },
+  scalar: {
+    concept: "Scalars scale the volume",
+    formula: "(ka)·(b×c) = k[a b c]",
+    interpretation: "Stretching one edge of the parallelepiped by k stretches its volume by k.",
+    fact: "Volume itself is |a·(b×c)| — the absolute value of the signed triple product.",
+    tip: "A negative triple product just means the trio is left-handed.",
+  },
+  collinear: {
+    concept: "A repeated vector kills the triple product",
+    formula: "a·(a×c) = 0 because (a×c) ⊥ a",
+    interpretation: "Two equal (hence collinear) rows make the determinant vanish.",
+    fact: "[a a b] = 0 and [a b b] = 0 hold for every choice of the remaining vector.",
+    tip: "Use repeated-vector zeros to simplify messy triple-product expansions.",
+  },
+  coplanar: {
+    concept: "Coplanarity test",
+    formula: "a·(b×c) = 0 ⇔ a, b, c coplanar",
+    interpretation: "Zero signed volume means the parallelepiped squashes flat.",
+    fact: "[a b c] is the 3×3 determinant of the component matrix.",
+    tip: "Neat result: a, b, c coplanar ⇔ a×b, b×c, c×a are collinear (all ⊥ one plane).",
+  },
+  "linear-combo": {
+    concept: "Box geometry from cross and dot",
+    formula: "V = |(a×b)·c| = base area × height",
+    interpretation: "Height is the projection of c onto the normal n̂ = (a×b)/|a×b|.",
+    fact: "The same trick gives the distance from a point to a plane.",
+    tip: "If c = sa + tb, then c lies in the span of a and b, so V = 0.",
+  },
+};
+
 export function VectorTriple3DVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
@@ -51,6 +90,46 @@ export function VectorTriple3DVisual() {
   const [c, setC] = useState({ x: 0, y: 2, z: 2 });
   const [k, setK] = useState(2);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const info = TRIPLE_INFO[mode];
+  const crossAB = {
+    x: a.y * b.z - a.z * b.y,
+    y: a.z * b.x - a.x * b.z,
+    z: a.x * b.y - a.y * b.x,
+  };
+  const crossBC = {
+    x: b.y * c.z - b.z * c.y,
+    y: b.z * c.x - b.x * c.z,
+    z: b.x * c.y - b.y * c.x,
+  };
+  const stp = a.x * crossBC.x + a.y * crossBC.y + a.z * crossBC.z;
+  const stpCyclic = b.x * (c.y * a.z - c.z * a.y) + b.y * (c.z * a.x - c.x * a.z) + b.z * (c.x * a.y - c.y * a.x);
+  const baseArea = Math.hypot(crossAB.x, crossAB.y, crossAB.z);
+  const height = baseArea > 0 ? Math.abs(stp) / baseArea : NaN;
+  const vectorTriple = {
+    x: crossAB.y * c.z - crossAB.z * c.y,
+    y: crossAB.z * c.x - crossAB.x * c.z,
+    z: crossAB.x * c.y - crossAB.y * c.x,
+  };
+
+  const presets: ScenePreset[] = [
+    { name: "Unit cube (V = 1)", hint: "i, j, k edges: [a b c] = 1 — not coplanar", apply: () => { setMode("coplanar"); setA({ x: 1, y: 0, z: 0 }); setB({ x: 0, y: 1, z: 0 }); setC({ x: 0, y: 0, z: 1 }); setRunId((r) => r + 1); } },
+    { name: "Flat box (V = 0)", hint: "All z = 0: the triple product vanishes ⇒ coplanar", apply: () => { setMode("coplanar"); setA({ x: 3, y: 1, z: 0 }); setB({ x: 1, y: 3, z: 0 }); setC({ x: 1, y: 2, z: 0 }); setRunId((r) => r + 1); } },
+    { name: "Sheared box (V = 24)", hint: "a=(2,0,0), b=(1,3,0), c=(0,1,4): det = 24", apply: () => { setMode("coplanar"); setA({ x: 2, y: 0, z: 0 }); setB({ x: 1, y: 3, z: 0 }); setC({ x: 0, y: 1, z: 4 }); setRunId((r) => r + 1); } },
+    { name: "Repeated vector", hint: "a = b ⇒ a·(a×c) = 0, whatever c is", apply: () => { setMode("coplanar"); setA({ x: 1, y: 1, z: 0 }); setB({ x: 1, y: 1, z: 0 }); setC({ x: 0, y: 1, z: 1 }); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setMode("addition");
+    setA({ x: 3, y: 1, z: 0 });
+    setB({ x: 1, y: 3, z: 0 });
+    setC({ x: 0, y: 2, z: 2 });
+    setK(2);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -63,6 +142,7 @@ export function VectorTriple3DVisual() {
     let animTime = 0;
     let animPhase = 0;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -83,7 +163,7 @@ export function VectorTriple3DVisual() {
       controls.autoRotateSpeed = 0.3;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.6));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -112,7 +192,8 @@ export function VectorTriple3DVisual() {
         const len = to.clone().sub(from).length();
         push(new LiveLeaderLine(dir, from, len, color, 0.2, 0.12));
         const mid = from.clone().add(to).multiplyScalar(0.5);
-        push(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, mid.clone().add(new THREE.Vector3(0, 0.6, 0)), 0.8));
+        const s = push(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, mid.clone().add(new THREE.Vector3(0, 0.6, 0)), 0.8));
+        labelSprites.push(s);
       };
 
       const update = () => {
@@ -140,7 +221,7 @@ export function VectorTriple3DVisual() {
           (meshes[meshes.length - 1] as any).computeLineDistances();
           drawArrow(new THREE.Vector3(0, 0, 0), sum, 0xf97316, "A + B");
           // Triangle method: B from tip of A
-          push(mkSprite("Triangle: A then B â†’ R", "#7dd3fc", new THREE.Vector3(-4, 4, 0), 0.8));
+          push(mkSprite("Triangle: A then B → R", "#7dd3fc", new THREE.Vector3(-4, 4, 0), 0.8));
         } else if (mode === "scalar") {
           // kA
           const scaled = A.clone().multiplyScalar(k);
@@ -153,13 +234,13 @@ export function VectorTriple3DVisual() {
           drawArrow(new THREE.Vector3(0, 0, 0), A, 0xef4444, "A");
           drawArrow(new THREE.Vector3(0, 0, 0), bScaled, 0x22c55e, "2B");
           drawArrow(new THREE.Vector3(0, 0, 0), B, 0x3b82f6, "B");
-          push(mkSprite("Collinear: A = 2B â†’ same line through origin", "#a78bfa", new THREE.Vector3(-4, 4, 0), 0.85));
+          push(mkSprite("Collinear: A = 2B → same line through origin", "#a78bfa", new THREE.Vector3(-4, 4, 0), 0.85));
         } else if (mode === "coplanar") {
           // Three vectors coplanar if scalar triple product = 0
           drawArrow(new THREE.Vector3(0, 0, 0), A, 0xef4444, "A");
           drawArrow(new THREE.Vector3(0, 0, 0), B, 0x22c55e, "B");
           drawArrow(new THREE.Vector3(0, 0, 0), C, 0x3b82f6, "C");
-          push(mkSprite("Coplanar: A, B, C lie in same plane", "#7dd3fc", new THREE.Vector3(-4, 4, 0), 0.85));
+          push(mkSprite("Plane of A and B — is A·(B×C) = 0?", "#7dd3fc", new THREE.Vector3(-4, 4, 0), 0.85));
           // Show plane
           const normal = A.clone().cross(B).normalize();
           const plane = new THREE.Mesh(
@@ -175,12 +256,13 @@ export function VectorTriple3DVisual() {
           const result = A.clone().multiplyScalar(c1).add(B.clone().multiplyScalar(c2));
           drawArrow(new THREE.Vector3(0, 0, 0), A, 0xef4444, "A");
           drawArrow(new THREE.Vector3(0, 0, 0), B, 0x22c55e, "B");
-          drawArrow(new THREE.Vector3(0, 0, 0), result, 0xf97316, `câ‚A+câ‚‚B`);
+          drawArrow(new THREE.Vector3(0, 0, 0), result, 0xf97316, `c₁A+c₂B`);
           push(mkSprite(`Linear combo: 1.5A + 0.8B`, "#fb923c", new THREE.Vector3(-4, 4, 0), 0.85));
         }
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -221,7 +303,7 @@ export function VectorTriple3DVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [mode, a, b, c, k, isWebGL]);
+  }, [mode, a, b, c, k, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Triple Products 3D" description="Interactive 3D vector visualization — requires WebGL." />;
@@ -236,11 +318,19 @@ export function VectorTriple3DVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-blue-500/50 bg-blue-500/10 text-blue-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Vector Mode">
           <Tabs value={mode} onValueChange={(v) => setMode(v as VectorMode)} className="mt-1">
             <TabsList className="grid w-full grid-cols-5">
               <TabsTrigger value="addition" className="text-xs">Addition</TabsTrigger>
-              <TabsTrigger value="scalar" className="text-xs">Scalar Ã— v</TabsTrigger>
+              <TabsTrigger value="scalar" className="text-xs">Scalar × v</TabsTrigger>
               <TabsTrigger value="collinear" className="text-xs">Collinear</TabsTrigger>
               <TabsTrigger value="coplanar" className="text-xs">Coplanar</TabsTrigger>
               <TabsTrigger value="linear-combo" className="text-xs">Linear Combo</TabsTrigger>
@@ -285,13 +375,26 @@ export function VectorTriple3DVisual() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <ReadoutGrid
+          items={[
+            { label: "a·(b×c) — scalar triple product", value: stp.toFixed(2), highlight: true },
+            { label: "Parallelepiped volume |a·(b×c)|", value: Math.abs(stp).toFixed(2) },
+            { label: "b·(c×a) — cyclic check", value: stpCyclic.toFixed(2) },
+            { label: "Base area |a×b|", value: baseArea.toFixed(2) },
+            { label: "Height = V / base", value: Number.isNaN(height) ? "—" : height.toFixed(2) },
+            { label: "(a×b)×c — vector triple", value: `(${vectorTriple.x.toFixed(1)}, ${vectorTriple.y.toFixed(1)}, ${vectorTriple.z.toFixed(1)})` },
+            { label: "Coplanarity test", value: Math.abs(stp) < 1e-9 ? "a·(b×c) = 0 ⇒ coplanar" : "a·(b×c) ≠ 0 ⇒ not coplanar" },
+          ]}
+        />
+
         <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-blue-400">Key Definitions</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">
+            <p><strong className="text-foreground">Scalar triple product:</strong> a·(b×c) = det[a b c] — the signed volume of the parallelepiped spanned by a, b, c.</p>
+            <p><strong className="text-foreground">Vector triple product:</strong> (a×b)×c = (a·c)b − (b·c)a — a vector lying in the plane of a and b.</p>
             <p><strong className="text-foreground">Collinear vectors:</strong> A and B are collinear if A = kB for some scalar k.</p>
-            <p><strong className="text-foreground">Coplanar vectors:</strong> Three vectors are coplanar if their scalar triple product A·(BÃ—C) = 0.</p>
-            <p><strong className="text-foreground">Linear combination:</strong> v = câ‚a + câ‚‚b + câ‚ƒc for scalars câ‚, câ‚‚, câ‚ƒ.</p>
-            <p><strong className="text-foreground">Linearly independent:</strong> No non-trivial combination gives the zero vector.</p>
+            <p><strong className="text-foreground">Coplanar vectors:</strong> Three vectors are coplanar if their scalar triple product A·(B×C) = 0.</p>
+            <p><strong className="text-foreground">{info.concept}:</strong> {info.interpretation} {info.tip}</p>
           </div>
         </div>
       </CardContent>

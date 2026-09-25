@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -36,15 +37,47 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
-function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
+function addLabel(scene: THREE.Scene, meshes: THREE.Object3D[], labelSprites: THREE.Sprite[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
   const dir = targetPos.clone().sub(labelPos).normalize();
   const len = labelPos.distanceTo(targetPos);
-  meshes.push(new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14) as any);
+  const line = new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14);
+  scene.add(line);
+  meshes.push(line);
   const lp = labelPos.clone().sub(dir.clone().multiplyScalar(0.45));
-  meshes.push(mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85));
+  const s = mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85);
+  scene.add(s);
+  meshes.push(s);
+  labelSprites.push(s);
 }
 
 type PcrStep = "denature" | "anneal" | "extend";
+
+const STEP_INFO: Record<PcrStep, { stepName: string; temp: string; what: string; who: string; fact: string; tip: string }> = {
+  denature: {
+    stepName: "Denaturation",
+    temp: "94–96°C",
+    what: "Both strands separate as H-bonds break",
+    who: "Heat energy — template can be any dsDNA",
+    fact: "GC-rich DNA melts nearer 98°C; short templates separate fine at 94°C",
+    tip: "Every cycle starts here — original AND new strands all denature",
+  },
+  anneal: {
+    stepName: "Annealing",
+    temp: "50–65°C",
+    what: "Primers hydrogen-bond to each template strand",
+    who: "Two primers: forward + reverse (18–25 nt)",
+    fact: "Temperature = primer melting temp − ~5°C; too cool and primers stick non-specifically",
+    tip: "Primers define the target region — they set what gets copied",
+  },
+  extend: {
+    stepName: "Extension",
+    temp: "72°C",
+    what: "Taq polymerase builds new strands 5'→3'",
+    who: "Taq DNA polymerase + free dNTPs",
+    fact: "Taq comes from Thermus aquaticus, a hot-spring bacterium",
+    tip: "~1 minute of extension per 1 kb of target",
+  },
+};
 
 export function PCRVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -52,6 +85,23 @@ export function PCRVisual() {
   const [step, setStep] = useState<PcrStep>("denature");
   const [isWebGL] = useState(() => isWebGLAvailable());
   const [cycle, setCycle] = useState(1);
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const info = STEP_INFO[step];
+
+  const presets: ScenePreset[] = [
+    { name: "1 · Denature 94°C", hint: "Strands fall apart", apply: () => { setStep("denature"); setRunId((r) => r + 1); } },
+    { name: "2 · Anneal ~55°C", hint: "Primers find their match", apply: () => { setStep("anneal"); setRunId((r) => r + 1); } },
+    { name: "3 · Extend 72°C", hint: "Taq builds new DNA", apply: () => { setStep("extend"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setStep("denature");
+    setCycle(1);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -61,6 +111,7 @@ export function PCRVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -80,7 +131,7 @@ export function PCRVisual() {
       controls.autoRotate = false;
       controls.minDistance = 4;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dl = new THREE.DirectionalLight(0xffffff, 0.9);
@@ -136,10 +187,10 @@ export function PCRVisual() {
           heat2.position.set(2.3, 0.85, 0);
 
           push(mkSprite(`Step 1: Denaturation — ${temp}`, "#fbbf24", new THREE.Vector3(0, 2.0, 0), 0.8));
-          addLabel(meshes, "Template Strand (coding)", 0xef4444, new THREE.Vector3(-2, 1.2, 2), topStrand.position);
-          addLabel(meshes, "Template Strand (template)", 0x3b82f6, new THREE.Vector3(-2, -1.2, 2), bottomStrand.position);
-          addLabel(meshes, "H-bonds broken", 0xfbbf24, new THREE.Vector3(2, 0.5, 2.5), new THREE.Vector3(0, 0, 0));
-          addLabel(meshes, "Heat (94-96°C)", 0xef4444, new THREE.Vector3(2.5, 1.5, -2), heat.position);
+          addLabel(scene, meshes, labelSprites, "Template Strand (coding)", 0xef4444, new THREE.Vector3(-2, 1.2, 2), topStrand.position);
+          addLabel(scene, meshes, labelSprites, "Template Strand (template)", 0x3b82f6, new THREE.Vector3(-2, -1.2, 2), bottomStrand.position);
+          addLabel(scene, meshes, labelSprites, "H-bonds broken", 0xfbbf24, new THREE.Vector3(2, 0.5, 2.5), new THREE.Vector3(0, 0, 0));
+          addLabel(scene, meshes, labelSprites, "Heat (94-96°C)", 0xef4444, new THREE.Vector3(2.5, 1.5, -2), heat.position);
         } else if (step === "anneal") {
           // Single strands with primers bound
           const topStrand = push(new THREE.Mesh(
@@ -167,9 +218,9 @@ export function PCRVisual() {
           revPrimer.position.set(1.0, 0.2, -0.15);
 
           push(mkSprite(`Step 2: Annealing — ${temp}`, "#fbbf24", new THREE.Vector3(0, 2.0, 0), 0.8));
-          addLabel(meshes, "Forward Primer", 0x22c55e, new THREE.Vector3(-2.5, -1.0, 2.5), fwdPrimer.position);
-          addLabel(meshes, "Reverse Primer", 0xf97316, new THREE.Vector3(2.5, 1.0, -2.5), revPrimer.position);
-          addLabel(meshes, "Primer binds to\ntemplate strand", 0x22d3ee, new THREE.Vector3(0, -1.5, 2.5), new THREE.Vector3(0, -0.2, 0));
+          addLabel(scene, meshes, labelSprites, "Forward Primer", 0x22c55e, new THREE.Vector3(-2.5, -1.0, 2.5), fwdPrimer.position);
+          addLabel(scene, meshes, labelSprites, "Reverse Primer", 0xf97316, new THREE.Vector3(2.5, 1.0, -2.5), revPrimer.position);
+          addLabel(scene, meshes, labelSprites, "Primer binds to\ntemplate strand", 0x22d3ee, new THREE.Vector3(0, -1.5, 2.5), new THREE.Vector3(0, -0.2, 0));
         } else {
           // Extension — new strands being synthesized
           const templateTop = push(new THREE.Mesh(
@@ -213,10 +264,10 @@ export function PCRVisual() {
           }
 
           push(mkSprite(`Step 3: Extension — ${temp}`, "#fbbf24", new THREE.Vector3(0, 2.0, 0), 0.8));
-          addLabel(meshes, "New Strand (5'→3')", 0xef4444, new THREE.Vector3(-2.5, 1.2, 2), newTop.position);
-          addLabel(meshes, "DNA Polymerase", 0xa78bfa, new THREE.Vector3(2, 0.8, 2.5), polymerase.position);
-          addLabel(meshes, "dNTPs\n(building blocks)", 0x22d3ee, new THREE.Vector3(2, -0.5, -2.5), new THREE.Vector3(1.0, 0.2, 0.2));
-          addLabel(meshes, "Complementary base pairing\n(A-T, G-C)", 0xfbbf24, new THREE.Vector3(-2, -1.5, 2), newBottom.position);
+          addLabel(scene, meshes, labelSprites, "New Strand (5'→3')", 0xef4444, new THREE.Vector3(-2.5, 1.2, 2), newTop.position);
+          addLabel(scene, meshes, labelSprites, "DNA Polymerase", 0xa78bfa, new THREE.Vector3(2, 0.8, 2.5), polymerase.position);
+          addLabel(scene, meshes, labelSprites, "dNTPs\n(building blocks)", 0x22d3ee, new THREE.Vector3(2, -0.5, -2.5), new THREE.Vector3(1.0, 0.2, 0.2));
+          addLabel(scene, meshes, labelSprites, "Complementary base pairing\n(A-T, G-C)", 0xfbbf24, new THREE.Vector3(-2, -1.5, 2), newBottom.position);
         }
 
         // Cycle counter
@@ -224,6 +275,7 @@ export function PCRVisual() {
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -261,7 +313,7 @@ export function PCRVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [step, cycle, isWebGL]);
+  }, [step, cycle, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="PCR Process" description="3D polymerase chain reaction visualization." />;
@@ -278,6 +330,14 @@ export function PCRVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-orange-500/50 bg-orange-500/10 text-orange-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="PCR Step">
           <div className="flex flex-wrap gap-2 mt-2">
             {steps.map((s) => (
@@ -302,6 +362,17 @@ export function PCRVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Step", value: `${info.stepName} — ${info.temp}`, highlight: true },
+            { label: "What happens", value: info.what },
+            { label: "Molecules at work", value: info.who },
+            { label: "Amplification", value: `Cycle ${cycle}: 2^${cycle} = ${Math.pow(2, cycle).toLocaleString()} copies` },
+            { label: "Reality check", value: info.fact },
+            { label: "Exam tip", value: info.tip },
+          ]}
+        />
 
         <div className="rounded-lg border border-orange-500/30 bg-orange-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-orange-400">Key Concepts</p>

@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -45,6 +46,34 @@ export function StaticsVisual() {
   const [f1, setF1] = useState({ mag: 5, angle: 30 });
   const [f2, setF2] = useState({ mag: 4, angle: 120 });
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  // Resultant of the two coplanar concurrent forces (component method —
+  // equivalent to R = √(F₁² + F₂² + 2F₁F₂cosθ) with θ the included angle)
+  const rad1 = (f1.angle * Math.PI) / 180;
+  const rad2 = (f2.angle * Math.PI) / 180;
+  const sumX = f1.mag * Math.cos(rad1) + f2.mag * Math.cos(rad2);
+  const sumY = f1.mag * Math.sin(rad1) + f2.mag * Math.sin(rad2);
+  const rMag = Math.hypot(sumX, sumY);
+  const rDirDeg = ((Math.atan2(sumY, sumX) * 180) / Math.PI + 360) % 360;
+  const betweenRaw = (((f2.angle - f1.angle) % 360) + 360) % 360;
+  const betweenDeg = betweenRaw > 180 ? 360 - betweenRaw : betweenRaw;
+  const equilibrantDeg = (rDirDeg + 180) % 360;
+
+  const presets: ScenePreset[] = [
+    { name: "Perpendicular pair (5 N, 4 N)", hint: "θ = 90° — R = √(F₁² + F₂²) = √41 ≈ 6.4 N.", apply: () => { setF1({ mag: 5, angle: 0 }); setF2({ mag: 4, angle: 90 }); setRunId((r) => r + 1); } },
+    { name: "Equal forces at 120°", hint: "Two equal forces inclined 120° give a resultant equal to either force.", apply: () => { setF1({ mag: 5, angle: 30 }); setF2({ mag: 5, angle: 150 }); setRunId((r) => r + 1); } },
+    { name: "Equilibrium pair", hint: "Equal and opposite forces — R = 0, body stays in equilibrium.", apply: () => { setF1({ mag: 6, angle: 30 }); setF2({ mag: 6, angle: 210 }); setRunId((r) => r + 1); } },
+    { name: "Same direction (max R)", hint: "θ = 0° — resultants add algebraically: R = F₁ + F₂.", apply: () => { setF1({ mag: 5, angle: 45 }); setF2({ mag: 4, angle: 45 }); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setF1({ mag: 5, angle: 30 });
+    setF2({ mag: 4, angle: 120 });
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -54,6 +83,7 @@ export function StaticsVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -70,19 +100,20 @@ export function StaticsVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
       controls.autoRotate = false;
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
 
       const drawArrow = (from: THREE.Vector3, to: THREE.Vector3, color: number, label: string) => {
         const dir = to.clone().sub(from).normalize();
         const len = to.distanceTo(from);
         push(new LiveLeaderLine(dir, from, len, color, 0.2, 0.12));
         const mid = from.clone().add(to).multiplyScalar(0.5);
-        push(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, mid.clone().add(dir.clone().multiplyScalar(len * 0.5)).add(new THREE.Vector3(0, 0.5, 0)), 0.75));
+        addLabel(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, mid.clone().add(dir.clone().multiplyScalar(len * 0.5)).add(new THREE.Vector3(0, 0.5, 0)), 0.75));
       };
 
       const update = () => {
@@ -94,8 +125,6 @@ export function StaticsVisual() {
           else if (m instanceof THREE.ArrowHelper) m.dispose();
         }
 
-        const rad1 = f1.angle * Math.PI / 180;
-        const rad2 = f2.angle * Math.PI / 180;
         const origin = new THREE.Vector3(0, 0, 0);
 
         // Force vectors from origin
@@ -113,16 +142,17 @@ export function StaticsVisual() {
         (meshes[meshes.length - 1] as any).computeLineDistances();
 
         // Resultant
-        const rMag = paraEnd.length();
+        const rMagLocal = paraEnd.length();
         const rAngle = Math.atan2(paraEnd.y, paraEnd.x) * 180 / Math.PI;
-        drawArrow(origin, paraEnd, 0x22d3ee, `R=${rMag.toFixed(1)}`);
+        drawArrow(origin, paraEnd, 0x22d3ee, `R=${rMagLocal.toFixed(1)}`);
 
         // Angle labels
-        push(mkSprite(`θ₁=${f1.angle}°  θ₂=${f2.angle}°`, "#a78bfa", new THREE.Vector3(-5.5, 5.5, 0), 0.8));
-        push(mkSprite(`R = √(F₁²+F₂²+2F₁F₂cosθ)  θ = ${rAngle.toFixed(1)}°`, "#fbbf24", new THREE.Vector3(0, -5.5, 0), 0.8));
+        addLabel(mkSprite(`θ₁=${f1.angle}°  θ₂=${f2.angle}°`, "#a78bfa", new THREE.Vector3(-5.5, 5.5, 0), 0.8));
+        addLabel(mkSprite(`R = √(F₁²+F₂²+2F₁F₂cosθ)  θ = ${rAngle.toFixed(1)}°`, "#fbbf24", new THREE.Vector3(0, -5.5, 0), 0.8));
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -161,7 +191,7 @@ export function StaticsVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [f1, f2, isWebGL]);
+  }, [f1, f2, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Statics" description="Force parallelogram visualization — requires WebGL." />;
@@ -176,6 +206,14 @@ export function StaticsVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-cyan-500/50 bg-cyan-500/10 text-cyan-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Force F₁">
           <div className="flex gap-3 mt-2">
             <div className="w-16"><Label className="text-xs text-muted-foreground">Magnitude:</Label><Input type="number" step="0.5" value={f1.mag} onChange={(e) => setF1({ ...f1, mag: Number(e.target.value) })} className="mt-1" /></div>
@@ -193,6 +231,17 @@ export function StaticsVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Included angle θ", value: betweenDeg.toFixed(0), unit: "°" },
+            { label: "ΣFx (horizontal)", value: sumX.toFixed(2), unit: "N" },
+            { label: "ΣFy (vertical)", value: sumY.toFixed(2), unit: "N" },
+            { label: "Resultant R", value: rMag.toFixed(2), unit: "N", highlight: true },
+            { label: "Direction of R", value: rDirDeg.toFixed(1), unit: "° from +x" },
+            { label: "Equilibrant", value: rMag < 1e-9 ? "R = 0 — system is in equilibrium" : `${rMag.toFixed(2)} N at ${equilibrantDeg.toFixed(1)}°` },
+          ]}
+        />
 
         <div className="rounded-lg border border-cyan-500/30 bg-cyan-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-cyan-400">Key Concepts</p>

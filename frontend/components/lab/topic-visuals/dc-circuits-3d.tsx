@@ -8,6 +8,12 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  PlaybackBar,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -39,7 +45,52 @@ export function DCCircuitsVisual() {
   const [voltage, setVoltage] = useState(12);
   const [resistance, setResistance] = useState(6);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [animating, setAnimating] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  const [showLabels, setShowLabels] = useState(true);
+  const [showElectrons, setShowElectrons] = useState(true);
+  const [runId, setRunId] = useState(0);
+  // Speed lives in a ref so changing it never tears down the WebGL scene.
+  const speedRef = useRef(1);
+  speedRef.current = speed;
 
+  const current = voltage / resistance; // A
+  const power = voltage * current; // W
+  const energyPerMin = power * 60; // J
+
+  const DEFAULTS = { voltage: 12, resistance: 6 };
+  const presets: ScenePreset[] = [
+    {
+      name: "Default (12 V, 6 Ω)",
+      hint: "2 A current, 24 W dissipated.",
+      apply: () => { setVoltage(12); setResistance(6); setRunId((r) => r + 1); },
+    },
+    {
+      name: "High current (2 Ω)",
+      hint: "24 V across 2 Ω — 12 A, electrons race around the loop.",
+      apply: () => { setVoltage(24); setResistance(2); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Low current (20 Ω)",
+      hint: "6 V across 20 Ω — only 0.3 A, slow drift.",
+      apply: () => { setVoltage(6); setResistance(20); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Bright bulb (3 Ω)",
+      hint: "12 V across 3 Ω — 48 W of heat and light.",
+      apply: () => { setVoltage(12); setResistance(3); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setVoltage(DEFAULTS.voltage);
+    setResistance(DEFAULTS.resistance);
+    setSpeed(1);
+    setShowLabels(true);
+    setShowElectrons(true);
+    setAnimating(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     const container = containerRef.current;
@@ -48,6 +99,8 @@ export function DCCircuitsVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
+    const electronObjs: THREE.Object3D[] = [];
     let electronTime = 0;
 
     const init = async () => {
@@ -68,7 +121,12 @@ export function DCCircuitsVisual() {
       controls.autoRotate = false;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -76,6 +134,8 @@ export function DCCircuitsVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { s.visible = showLabels; push(s); labelSprites.push(s); return s; };
+      const addElectron = <T extends THREE.Object3D>(o: T): T => { o.visible = showElectrons; push(o); electronObjs.push(o); return o; };
 
       const V = voltage;
       const R = resistance;
@@ -98,7 +158,7 @@ export function DCCircuitsVisual() {
         new THREE.MeshBasicMaterial({ color: 0xef4444 }),
       )) as THREE.Mesh;
       battery.position.set(-W / 2, 0, 0);
-      push(mkSprite("Battery", "#ef4444", new THREE.Vector3(-W / 2 - 1.2, 0, 0), 0.7));
+      addLabel(mkSprite("Battery", "#ef4444", new THREE.Vector3(-W / 2 - 1.2, 0, 0), 0.7));
 
       // Battery terminals
       const posTerm = push(new THREE.Mesh(
@@ -106,14 +166,14 @@ export function DCCircuitsVisual() {
         new THREE.MeshBasicMaterial({ color: 0xef4444 }),
       ));
       posTerm.position.set(-W / 2, H / 2 - 0.3, 0);
-      push(mkSprite("+", "#ef4444", new THREE.Vector3(-W / 2, H / 2 + 0.5, 0), 0.8));
+      addLabel(mkSprite("+", "#ef4444", new THREE.Vector3(-W / 2, H / 2 + 0.5, 0), 0.8));
 
       const negTerm = push(new THREE.Mesh(
         new THREE.BoxGeometry(0.1, 0.3, 0.3),
         new THREE.MeshBasicMaterial({ color: 0x3b82f6 }),
       ));
       negTerm.position.set(-W / 2, -H / 2 + 0.15, 0);
-      push(mkSprite("−", "#3b82f6", new THREE.Vector3(-W / 2, -H / 2 - 0.5, 0), 0.8));
+      addLabel(mkSprite("−", "#3b82f6", new THREE.Vector3(-W / 2, -H / 2 - 0.5, 0), 0.8));
 
       // Resistor (zigzag)
       const resPts: THREE.Vector3[] = [];
@@ -124,26 +184,26 @@ export function DCCircuitsVisual() {
         resPts.push(new THREE.Vector3(x, y, 0));
       }
       push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(resPts), new THREE.LineBasicMaterial({ color: 0xfbbf24 })));
-      push(mkSprite(`R = ${R} Ω`, "#fbbf24", new THREE.Vector3(0, H / 2 + 0.8, 0), 0.7));
+      addLabel(mkSprite(`R = ${R} Ω`, "#fbbf24", new THREE.Vector3(0, H / 2 + 0.8, 0), 0.7));
 
       // Current direction arrows with long labels
       const currentLabelPos = new THREE.Vector3(W / 2 + 2, H / 2, 0);
       const currentTarget = new THREE.Vector3(W / 2, H / 2, 0);
       const curDir = currentTarget.clone().sub(currentLabelPos).normalize();
       push(new LiveLeaderLine(curDir, currentLabelPos, currentLabelPos.distanceTo(currentTarget) * 0.9, 0x22d3ee, 0.2, 0.1));
-      push(mkSprite(`I = V/R = ${I.toFixed(1)} A`, "#22d3ee", currentLabelPos.clone().sub(curDir.multiplyScalar(0.5)), 0.75));
+      addLabel(mkSprite(`I = V/R = ${I.toFixed(1)} A`, "#22d3ee", currentLabelPos.clone().sub(curDir.multiplyScalar(0.5)), 0.75));
 
       // Voltage drop label
       const vLabelPos = new THREE.Vector3(W / 2 + 2, -H / 2, 0);
       const vTarget = new THREE.Vector3(W / 2, -H / 2, 0);
       const vDir = vTarget.clone().sub(vLabelPos).normalize();
       push(new LiveLeaderLine(vDir, vLabelPos, vLabelPos.distanceTo(vTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
-      push(mkSprite(`V = IR = ${V} V`, "#a78bfa", vLabelPos.clone().sub(vDir.multiplyScalar(0.5)), 0.75));
+      addLabel(mkSprite(`V = IR = ${V} V`, "#a78bfa", vLabelPos.clone().sub(vDir.multiplyScalar(0.5)), 0.75));
 
       // Moving electrons
       const electrons: THREE.Mesh[] = [];
       for (let i = 0; i < 12; i++) {
-        const e = push(new THREE.Mesh(
+        const e = addElectron(new THREE.Mesh(
           new THREE.SphereGeometry(0.1, 8, 8),
           new THREE.MeshBasicMaterial({ color: 0x3b82f6 }),
         )) as THREE.Mesh;
@@ -166,7 +226,7 @@ export function DCCircuitsVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
-        electronTime += 0.02 * I;
+        if (animating) electronTime += 0.02 * I * speedRef.current;
         electrons.forEach((e) => {
           const t = (e.userData.t + electronTime) % 1;
           // Trace along rectangular path
@@ -213,7 +273,7 @@ export function DCCircuitsVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [voltage, resistance, isWebGL]);
+  }, [voltage, resistance, isWebGL, animating, runId, showLabels, showElectrons]);
 
   if (!isWebGL) {
     return <WebGLFallback title="DC Circuits" description="Current flow animation in a simple circuit." />;
@@ -243,9 +303,44 @@ export function DCCircuitsVisual() {
           </div>
         </CollapsibleControls>
 
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <PlaybackBar
+            playing={animating}
+            onPlayToggle={() => setAnimating(!animating)}
+            speed={speed}
+            onSpeedChange={setSpeed}
+            onReset={resetAll}
+          />
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-primary/50 bg-primary/10 text-primary" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Labels
+            </button>
+            <button
+              onClick={() => setShowElectrons((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showElectrons ? "border-blue-500/50 bg-blue-500/10 text-blue-400" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Electrons
+            </button>
+          </div>
+        </div>
+
+        <ScenePresets presets={presets} />
+
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Current I = V/R", value: current.toFixed(2), unit: "A", highlight: true },
+            { label: "Power P = VI", value: power.toFixed(1), unit: "W" },
+            { label: "Energy per minute", value: energyPerMin.toFixed(0), unit: "J" },
+            { label: "Resistance R", value: resistance, unit: "Ω" },
+          ]}
+        />
 
         <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-green-400">Key Concepts</p>

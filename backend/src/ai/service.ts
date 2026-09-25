@@ -1,6 +1,13 @@
 import { supabaseAdmin } from "../db/supabase";
 import { getSearchService } from "./search-engine";
 
+/**
+ * Public origin of the frontend, used for links embedded in AI replies and
+ * provider attribution headers. Set FRONTEND_URL in backend/.env (no trailing
+ * slash). Falls back to the deployed frontend URL when unset.
+ */
+const SITE = (process.env.FRONTEND_URL || "https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app").replace(/\/$/, "");
+
 export type SupportedProvider = "openrouter" | "internal" | "agnes";
  
 export interface AIChatMessage {
@@ -230,7 +237,7 @@ async function extractSyllabusHints(
 
 // ── Shared: Search system prompt (used by all providers) ────────────────────
 
-const SEARCH_SYSTEM_PROMPT = `You are Ravikisan Study Assistant — a warm, wise mentor for NEB Science students (https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/).
+const SEARCH_SYSTEM_PROMPT = `You are Ravikisan's AI Tutor — a warm, wise mentor for NEB Science students (${SITE}/).
 
 **YOUR VOICE:** Speak like a mentor who genuinely cares about science students. Be deep, human, and inspirational — not robotic. Use real-life analogies from nature, technology, and everyday science. A student should feel like they're talking to someone who believes in them.
 
@@ -238,14 +245,14 @@ const SEARCH_SYSTEM_PROMPT = `You are Ravikisan Study Assistant — a warm, wise
 
 For STUDY topics (Physics, Chemistry, Biology, Math, Computer Science):
 - First link to relevant content ON the platform:
-  - NEB Class 11/12 Science notes → https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/class-11 or /class-12
-  - Labs (3D/theory) → https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/lab
-  - Subjects overview → https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/subjects
-  - Loksewa prep → https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/loksewa
-  - World knowledge & current affairs → https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/world-knowledge
-  - R Notes by Ravishankit → https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/r-notes
-  - PYQs & practice → https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/subjects
-  - Numerical problems → https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/knowledge/numerical-physics or /knowledge/numerical-chemistry
+  - NEB Class 11/12 Science notes → ${SITE}/class-11 or /class-12
+  - Labs (3D/theory) → ${SITE}/lab
+  - Subjects overview → ${SITE}/subjects
+  - Loksewa prep → ${SITE}/loksewa
+  - World knowledge & current affairs → ${SITE}/world-knowledge
+  - R Notes by Ravishankit → ${SITE}/r-notes
+  - PYQs & practice → ${SITE}/subjects
+  - Numerical problems → ${SITE}/knowledge/numerical-physics or /knowledge/numerical-chemistry
 - Then, if relevant, add an official external link (NASA for space/physics, WHO for health/biology, government portals for policy, Khan Academy for supplementary learning, Wikipedia for general knowledge, etc.)
 
 For NON-STUDY / human topics (motivation, STEM career advice, mental health, relationships, current events, entertainment, etc.):
@@ -346,7 +353,6 @@ class InternalProvider implements AIProvider {
     const lastUser = [...messages].reverse().find((m) => m.role === "user");
     const query = lastUser?.content ?? "";
     const results = this.match(query, 5);
-    const SITE = "https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app";
 
     if (!results.length) {
       // Answer-first shape: honest answer now, verified internet link at the end.
@@ -435,7 +441,7 @@ class InternalProvider implements AIProvider {
       return {
         results: [],
         fallbackMessage:
-          `Hey, that one isn't in the vault just yet — but you're not stuck.\n\n• Browse all subjects at https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/subjects\n• Try biomolecules, gravitation, or algebra — solid starting points with full notes ready for you.\n• Practice past papers at https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/subjects\n\nKeep showing up. That's where the real growth happens.`,
+          `Hey, that one isn't in the vault just yet — but you're not stuck.\n\n• Browse all subjects at ${SITE}/subjects\n• Try biomolecules, gravitation, or algebra — solid starting points with full notes ready for you.\n• Practice past papers at ${SITE}/subjects\n\nKeep showing up. That's where the real growth happens.`,
       };
     }
 
@@ -582,7 +588,7 @@ class OpenRouterProvider implements AIProvider {
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${this.apiKey}`,
-        "HTTP-Referer": "https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/",
+        "HTTP-Referer": `${SITE}/`,
         "X-Title": "Ravikisan",
       },
       body: JSON.stringify({
@@ -712,7 +718,7 @@ class AgnesProvider implements AIProvider {
 - Loksewa: /loksewa
 - World Knowledge: /world-knowledge
 - R Notes: /r-notes
-- PYQs: https://ravikisan-7phkshvvk-ownerforai-byte.vercel.app/subjects
+- PYQs: ${SITE}/subjects
 - Numericals: /knowledge/numerical-physics, /knowledge/numerical-chemistry
 
 NEVER hallucinate features. Only reference real platform sections.`;

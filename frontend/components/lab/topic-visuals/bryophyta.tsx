@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -36,18 +37,48 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
-function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
+function addLabel(scene: THREE.Scene, meshes: THREE.Object3D[], labelSprites: THREE.Sprite[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
   const dir = targetPos.clone().sub(labelPos).normalize();
   const len = labelPos.distanceTo(targetPos);
-  meshes.push(new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14) as any);
+  const line = new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14);
+  scene.add(line);
+  meshes.push(line);
   const lp = labelPos.clone().sub(dir.clone().multiplyScalar(0.45));
-  meshes.push(mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85));
+  const s = mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85);
+  scene.add(s);
+  meshes.push(s);
+  labelSprites.push(s);
 }
+
+type BryFocus = "all" | "vegetative" | "asexual" | "sexual";
 
 export function BryophytaVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
+  const [focus, setFocus] = useState<BryFocus>("all");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const FOCUS_INFO: Record<BryFocus, { generation: string; body: string; anchor: string; asexual: string; sexual: string }> = {
+    all: { generation: "Gametophyte (n) dominant", body: "Thallus: dorsiventral, no vascular tissue", anchor: "Rhizoids anchor + absorb", asexual: "Gemma cups = asexual propagules", sexual: "Archegoniophore ♀ · Antheridiophore ♂" },
+    vegetative: { generation: "Botany stage — no gametes", body: "Flat dichotomously-branched thallus", anchor: "Rhizoids + scales on the underside", asexual: "Dimmed — cup structures", sexual: "Dimmed — reproductive stalks" },
+    asexual: { generation: "Asexual propagation", body: "Thallus surface carries the cups", anchor: "Dimmed — rhizoids", asexual: "Gemmae: 2-notched buds splashed out of cups", sexual: "Dimmed — reproductive stalks" },
+    sexual: { generation: "Sexual reproduction (n gametes)", body: "Gametangiophores raised on stalks", anchor: "Dimmed — rhizoids", asexual: "Dimmed — gemma cups", sexual: "Archegonia (venter + neck) · antheridia on disk undersides" },
+  };
+  const info = FOCUS_INFO[focus];
+
+  const presets: ScenePreset[] = [
+    { name: "Whole Marchantia", hint: "Thallus, rhizoids, gemma cups and both reproductive stalks.", apply: () => { setFocus("all"); setRunId((r) => r + 1); } },
+    { name: "Asexual: gemma cups", hint: "Rain-splash dispersal — each gemma grows into a new thallus.", apply: () => { setFocus("asexual"); setRunId((r) => r + 1); } },
+    { name: "Sexual: archegoniophore", hint: "Umbrella-shaped ♀ stalk; archegonia hang from its underside.", apply: () => { setFocus("sexual"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setFocus("all");
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -57,6 +88,11 @@ export function BryophytaVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
+    const veins: THREE.Object3D[] = [];
+    const rhizoids: THREE.Object3D[] = [];
+    const asexualParts: THREE.Object3D[] = [];
+    const sexualParts: THREE.Object3D[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -77,7 +113,7 @@ export function BryophytaVisual() {
       controls.autoRotate = false;
       controls.minDistance = 4;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dl = new THREE.DirectionalLight(0xffffff, 0.9);
@@ -111,6 +147,7 @@ export function BryophytaVisual() {
         vein.position.set(Math.cos(angle) * 1.2, 0.14, Math.sin(angle) * 1.2);
         vein.rotation.y = -angle;
         vein.rotation.z = Math.PI / 2;
+        veins.push(vein);
       }
 
       // Rhizoids (below thallus)
@@ -123,6 +160,7 @@ export function BryophytaVisual() {
         ));
         rhizoid.position.set(Math.cos(angle) * r, -0.25, Math.sin(angle) * r);
         rhizoid.rotation.z = (Math.random() - 0.5) * 0.3;
+        rhizoids.push(rhizoid);
       }
 
       // Gemma cups (small cups on thallus surface)
@@ -137,6 +175,7 @@ export function BryophytaVisual() {
           new THREE.MeshPhongMaterial({ color: 0x4ade80, side: THREE.DoubleSide }),
         ));
         cup.position.copy(gp);
+        asexualParts.push(cup);
         // Gemmae (small green balls inside)
         for (let j = 0; j < 3; j++) {
           const gemma = push(new THREE.Mesh(
@@ -144,6 +183,7 @@ export function BryophytaVisual() {
             new THREE.MeshPhongMaterial({ color: 0x22c55e }),
           ));
           gemma.position.set(gp.x + (j - 1) * 0.08, gp.y + 0.05, gp.z);
+          asexualParts.push(gemma);
         }
       }
 
@@ -166,6 +206,7 @@ export function BryophytaVisual() {
           new THREE.MeshPhongMaterial({ color: 0x4ade80 }),
         ));
         lobe.position.set(1.8 + Math.cos(a) * 0.4, 1.35, Math.sin(a) * 0.4);
+        sexualParts.push(lobe);
       }
 
       // Antheridiophore (male structure)
@@ -179,15 +220,29 @@ export function BryophytaVisual() {
         new THREE.MeshPhongMaterial({ color: 0x16a34a }),
       ));
       anthHead.position.set(-1.5, 1.04, 0.8);
+      sexualParts.push(archStem, archHead, anthStem, anthHead);
 
       push(mkSprite("Bryophyta — Marchantia Morphology", "#fbbf24", new THREE.Vector3(0, 3.5, 0), 0.85));
 
-      addLabel(meshes, "Thallus (Body)", 0x2d5a27, new THREE.Vector3(-3.5, 0.5, 2), new THREE.Vector3(0, 0.1, 0));
-      addLabel(meshes, "Rhizoids", 0x8b7355, new THREE.Vector3(-3.5, -0.8, -2), new THREE.Vector3(1, -0.25, 0));
-      addLabel(meshes, "Gemma Cup", 0x4ade80, new THREE.Vector3(3.5, 0.8, 2), gemmaPositions[0]);
-      addLabel(meshes, "Archegoniophore (Female)", 0x22c55e, new THREE.Vector3(3.5, 2.5, 1), archHead.position);
-      addLabel(meshes, "Antheridiophore (Male)", 0x22c55e, new THREE.Vector3(-3.5, 2, -1.5), anthHead.position);
-      addLabel(meshes, "Thallus Veins", 0x3d7a35, new THREE.Vector3(-3, 0.3, 3), new THREE.Vector3(0, 0.14, 0));
+      addLabel(scene, meshes, labelSprites, "Thallus (Body)", 0x2d5a27, new THREE.Vector3(-3.5, 0.5, 2), new THREE.Vector3(0, 0.1, 0));
+      addLabel(scene, meshes, labelSprites, "Rhizoids", 0x8b7355, new THREE.Vector3(-3.5, -0.8, -2), new THREE.Vector3(1, -0.25, 0));
+      addLabel(scene, meshes, labelSprites, "Gemma Cup", 0x4ade80, new THREE.Vector3(3.5, 0.8, 2), gemmaPositions[0]);
+      addLabel(scene, meshes, labelSprites, "Archegoniophore (Female)", 0x22c55e, new THREE.Vector3(3.5, 2.5, 1), archHead.position);
+      addLabel(scene, meshes, labelSprites, "Antheridiophore (Male)", 0x22c55e, new THREE.Vector3(-3.5, 2, -1.5), anthHead.position);
+      addLabel(scene, meshes, labelSprites, "Thallus Veins", 0x3d7a35, new THREE.Vector3(-3, 0.3, 3), new THREE.Vector3(0, 0.14, 0));
+
+      const vegetativeParts: THREE.Object3D[] = [thallus, ...veins, ...rhizoids];
+      const allParts = [...vegetativeParts, ...asexualParts, ...sexualParts];
+      const highlighted = focus === "all" ? allParts : focus === "vegetative" ? vegetativeParts : focus === "asexual" ? asexualParts : sexualParts;
+      allParts.forEach((p) => {
+        const mat = (p as THREE.Mesh).material as THREE.MeshPhongMaterial;
+        if (!mat) return;
+        const keep = (mat as any).__origOpacity ?? ((mat as any).__origOpacity = mat.opacity);
+        mat.transparent = true;
+        mat.opacity = highlighted.includes(p) ? keep : 0.12;
+      });
+
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -225,7 +280,7 @@ export function BryophytaVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [isWebGL]);
+  }, [focus, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Bryophyta (Marchantia)" description="3D liverwort morphology diagram." />;
@@ -240,9 +295,24 @@ export function BryophytaVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-green-500/50 bg-green-500/10 text-green-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid items={[
+          { label: "Life stage", value: info.generation, highlight: true },
+          { label: "Plant body", value: info.body },
+          { label: "Anchorage", value: info.anchor },
+          { label: "Asexual", value: info.asexual },
+          { label: "Sexual", value: info.sexual },
+        ]} />
 
         <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-green-400">Key Concepts</p>

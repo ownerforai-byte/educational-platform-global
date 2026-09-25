@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -36,18 +37,49 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
-function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
+function addLabel(scene: THREE.Scene, meshes: THREE.Object3D[], labelSprites: THREE.Sprite[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
   const dir = targetPos.clone().sub(labelPos).normalize();
   const len = labelPos.distanceTo(targetPos);
-  meshes.push(new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14) as any);
+  const line = new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14);
+  scene.add(line);
+  meshes.push(line);
   const lp = labelPos.clone().sub(dir.clone().multiplyScalar(0.45));
-  meshes.push(mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85));
+  const s = mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85);
+  scene.add(s);
+  meshes.push(s);
+  labelSprites.push(s);
 }
+
+type ImmFocus = "all" | "recognition" | "phagocytosis" | "memory";
 
 export function ImmuneSystemVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
+  const [focus, setFocus] = useState<ImmFocus>("all");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const FOCUS_INFO: Record<ImmFocus, { stage: string; players: string; action: string; fact: string; tip: string }> = {
+    all: { stage: "Adaptive (humoral) response — overview", players: "Pathogen · antibody · macrophage · lymphocytes", action: "Antibodies neutralise and coat; phagocytes engulf; memory forms", fact: "One antibody type binds one specific epitope — lock and key", tip: "B cells → antibodies (humoral); T cells → cell-mediated" },
+    recognition: { stage: "Step 1 — specific recognition", players: "Epitopes on pathogen + variable region at Y tips", action: "Antigen-binding site fits its complementary epitope", fact: "IgG is Y-shaped: heavy + light chains, variable vs constant regions", tip: "Lock-key specificity is why one antibody guards against one pathogen" },
+    phagocytosis: { stage: "Step 2 — opsonisation & engulfment", players: "Fc tails + macrophage receptors, pseudopodia", action: "Coated pathogen is gripped and engulfed", fact: "The Fc stem is the \"eat me\" handle phagocytes grab onto", tip: "Opsonisation is the bridge between adaptive and innate immunity" },
+    memory: { stage: "Step 3 — memory for the next encounter", players: "Memory B cells + T helper cells", action: "Same antigen later → faster, stronger secondary response", fact: "Memory cells persist for years — the very basis of vaccination", tip: "Secondary response is quicker because memory clones already exist" },
+  };
+  const info = FOCUS_INFO[focus];
+
+  const presets: ScenePreset[] = [
+    { name: "Full response", hint: "See every player of the humoral response at once.", apply: () => { setFocus("all"); setRunId((r) => r + 1); } },
+    { name: "1 · Recognition", hint: "The Y-tips lock onto exactly one epitope.", apply: () => { setFocus("recognition"); setRunId((r) => r + 1); } },
+    { name: "2 · Eat me", hint: "Antibody-coated pathogen is engulfed by the macrophage.", apply: () => { setFocus("phagocytosis"); setRunId((r) => r + 1); } },
+    { name: "3 · Memory", hint: "The cells that make vaccines work.", apply: () => { setFocus("memory"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setFocus("all");
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -57,6 +89,7 @@ export function ImmuneSystemVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -76,7 +109,7 @@ export function ImmuneSystemVisual() {
       controls.autoRotate = false;
       controls.minDistance = 4;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dl = new THREE.DirectionalLight(0xffffff, 0.9);
@@ -93,6 +126,7 @@ export function ImmuneSystemVisual() {
       pathogen.position.set(-2.5, 0, 0);
 
       // Antigens (protrusions on pathogen)
+      const antigenParts: THREE.Object3D[] = [];
       for (let i = 0; i < 6; i++) {
         const angle = (i / 6) * Math.PI * 2;
         const antigen = push(new THREE.Mesh(
@@ -109,6 +143,7 @@ export function ImmuneSystemVisual() {
           Math.sin(angle) * 2,
           0
         ));
+        antigenParts.push(antigen);
       }
 
       // Y-shaped antibody
@@ -158,6 +193,7 @@ export function ImmuneSystemVisual() {
       macrophage.position.set(2.5, -1.5, 0);
 
       // Pseudopodia extending toward pathogen-antibody complex
+      const pseudopodParts: THREE.Object3D[] = [];
       for (let i = 0; i < 4; i++) {
         const pseudo = push(new THREE.Mesh(
           new THREE.ConeGeometry(0.1, 0.5, 6),
@@ -170,6 +206,7 @@ export function ImmuneSystemVisual() {
           -1.5 + Math.sin(angle) * 1.5,
           0
         ));
+        pseudopodParts.push(pseudo);
       }
 
       // Memory B cells
@@ -189,15 +226,33 @@ export function ImmuneSystemVisual() {
       // Labels
       push(mkSprite("Immune Response — Antigen-Antibody Interaction", "#fbbf24", new THREE.Vector3(0, 3.5, 0), 0.85));
 
-      addLabel(meshes, "Pathogen (Antigen)", 0xef4444, new THREE.Vector3(-4.5, 1.5, 2), pathogen.position);
-      addLabel(meshes, "Antigen (epitope)", 0xfbbf24, new THREE.Vector3(-4, 0.8, 2.5), new THREE.Vector3(-2.5, 0.8, 0));
-      addLabel(meshes, "Antibody (Y-shape)", 0x3b82f6, new THREE.Vector3(1.5, 1.8, 2.5), new THREE.Vector3(0, 0.4, 0));
-      addLabel(meshes, "Antigen-Binding Site\n(Variable region)", 0xfbbf24, new THREE.Vector3(-1, 1.5, -2.5), bindingL.position);
-      addLabel(meshes, "Fc Region\n(Constant region)", 0x3b82f6, new THREE.Vector3(1, -0.8, 2.5), new THREE.Vector3(0, -0.3, 0));
-      addLabel(meshes, "Macrophage\n(Phagocyte)", 0xa78bfa, new THREE.Vector3(4, -2.5, 2), macrophage.position);
-      addLabel(meshes, "Memory B Cell", 0x22d3ee, new THREE.Vector3(4, 2.5, -2), memB.position);
-      addLabel(meshes, "T Helper Cell", 0xf97316, new THREE.Vector3(-4, 2.5, 2), tHelper.position);
-      addLabel(meshes, "Opsonization\n(coating for phagocytosis)", 0x7dd3fc, new THREE.Vector3(-1, -1.5, -3), new THREE.Vector3(-0.5, -0.5, 0));
+      addLabel(scene, meshes, labelSprites, "Pathogen (Antigen)", 0xef4444, new THREE.Vector3(-4.5, 1.5, 2), pathogen.position);
+      addLabel(scene, meshes, labelSprites, "Antigen (epitope)", 0xfbbf24, new THREE.Vector3(-4, 0.8, 2.5), new THREE.Vector3(-2.5, 0.8, 0));
+      addLabel(scene, meshes, labelSprites, "Antibody (Y-shape)", 0x3b82f6, new THREE.Vector3(1.5, 1.8, 2.5), new THREE.Vector3(0, 0.4, 0));
+      addLabel(scene, meshes, labelSprites, "Antigen-Binding Site\n(Variable region)", 0xfbbf24, new THREE.Vector3(-1, 1.5, -2.5), bindingL.position);
+      addLabel(scene, meshes, labelSprites, "Fc Region\n(Constant region)", 0x3b82f6, new THREE.Vector3(1, -0.8, 2.5), new THREE.Vector3(0, -0.3, 0));
+      addLabel(scene, meshes, labelSprites, "Macrophage\n(Phagocyte)", 0xa78bfa, new THREE.Vector3(4, -2.5, 2), macrophage.position);
+      addLabel(scene, meshes, labelSprites, "Memory B Cell", 0x22d3ee, new THREE.Vector3(4, 2.5, -2), memB.position);
+      addLabel(scene, meshes, labelSprites, "T Helper Cell", 0xf97316, new THREE.Vector3(-4, 2.5, 2), tHelper.position);
+      addLabel(scene, meshes, labelSprites, "Opsonization\n(coating for phagocytosis)", 0x7dd3fc, new THREE.Vector3(-1, -1.5, -3), new THREE.Vector3(-0.5, -0.5, 0));
+
+      labelSprites.forEach((s) => (s.visible = showLabels));
+
+      // Focus dimming: walk through recognition → phagocytosis → memory
+      const allParts: THREE.Object3D[] = [pathogen, ...antigenParts, bindingL, bindingR, macrophage, ...pseudopodParts, memB, tHelper];
+      const GROUPS: Record<Exclude<ImmFocus, "all">, THREE.Object3D[]> = {
+        recognition: [pathogen, ...antigenParts, bindingL, bindingR],
+        phagocytosis: [pathogen, ...antigenParts, bindingL, bindingR, macrophage, ...pseudopodParts],
+        memory: [memB, tHelper],
+      };
+      const highlighted = focus === "all" ? allParts : GROUPS[focus];
+      allParts.forEach((p) => {
+        const mat = (p as THREE.Mesh).material as THREE.MeshPhongMaterial;
+        if (!mat) return;
+        const keep = (mat as any).__origOpacity ?? ((mat as any).__origOpacity = mat.opacity);
+        mat.transparent = true;
+        mat.opacity = highlighted.includes(p) ? keep : 0.12;
+      });
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -235,7 +290,7 @@ export function ImmuneSystemVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [isWebGL]);
+  }, [focus, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Immune System" description="3D antigen-antibody interaction diagram." />;
@@ -250,9 +305,25 @@ export function ImmuneSystemVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-red-500/50 bg-red-500/10 text-red-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid items={[
+          { label: "Stage", value: info.stage, highlight: true },
+          { label: "Players", value: info.players },
+          { label: "What happens", value: info.action },
+          { label: "Did you know", value: info.fact },
+          { label: "Exam tip", value: info.tip },
+        ]} />
 
         <div className="rounded-lg border border-red-500/30 bg-red-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-red-400">Key Concepts</p>

@@ -7,6 +7,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -86,7 +87,41 @@ export function PeriodicTableVisual() {
   const vizTargetRef = useRef<VizTarget>({});
   const [mode, setMode] = useState<TrendMode>("radius");
   const [filter, setFilter] = useState<FilterMode>("all");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const TREND_INFO: Record<TrendMode, { trend: string; across: string; downGroup: string; driver: string; extreme: string }> = {
+    radius: { trend: "Atomic radius", across: "Decreases → across a period", downGroup: "Increases ↓ down a group", driver: "New shells ↓ vs rising Z_eff →", extreme: "Largest here: K (227 pm) · Smallest: He (32 pm)" },
+    ionization: { trend: "1st ionization energy", across: "Increases → across a period", downGroup: "Decreases ↓ down a group", driver: "Tighter hold → easier removal ↓", extreme: "Highest: He (2372 kJ/mol) · Lowest: K (419 kJ/mol)" },
+    electronegativity: { trend: "Electronegativity", across: "Increases → across a period", downGroup: "Decreases ↓ down a group", driver: "Pull on shared e⁻ pair", extreme: "Max: F (3.98) · Noble gases ≈ 0" },
+  };
+  const info = TREND_INFO[mode];
+
+  const presets: ScenePreset[] = [
+    {
+      name: "Atomic radius",
+      hint: "Sphere size = atom size — watch it shrink left→right as Z_eff grows.",
+      apply: () => { setMode("radius"); setFilter("all"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Ionization energy",
+      hint: "Energy to rip off one electron — peaks at the noble gases.",
+      apply: () => { setMode("ionization"); setFilter("all"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Electronegativity",
+      hint: "Pauling scale; fluorine (3.98) is the most electronegative element.",
+      apply: () => { setMode("electronegativity"); setFilter("all"); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setMode("radius");
+    setFilter("all");
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -96,6 +131,7 @@ export function PeriodicTableVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -116,11 +152,12 @@ export function PeriodicTableVisual() {
       controls.autoRotate = false;
       controls.minDistance = 5;
       controls.maxDistance = 25;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
 
       const trends: Record<TrendMode, { key: keyof typeof ELEMENT_DATA[0]; min: number; max: number; color: string }> = {
         radius: { key: "r", min: 32, max: 227, color: "#f97316" },
@@ -176,7 +213,7 @@ export function PeriodicTableVisual() {
           sphere.position.set(x, y, 0);
 
           // Symbol label
-          push(mkSprite(el.sym, `#${color.getHexString()}`, new THREE.Vector3(x, y + size + 0.5, 0.01), 0.55));
+          addLabel(mkSprite(el.sym, `#${color.getHexString()}`, new THREE.Vector3(x, y + size + 0.5, 0.01), 0.55));
 
           // Arrow from sphere to feature annotation
           if (idx % 4 === 0 && val > 0) {
@@ -185,7 +222,7 @@ export function PeriodicTableVisual() {
             const arrowLen = annotPos.distanceTo(new THREE.Vector3(x, y, 0));
             push(new LiveLeaderLine(arrowDir, annotPos, arrowLen * 0.7, color.getHex(), 0.22, 0.1));
             const valStr = trend.key === "r" ? `${val} pm` : trend.key === "ie" ? `${val} kJ/mol` : `${val}`;
-            push(mkSprite(`${el.sym}: ${valStr}`, `#${color.getHexString()}`, annotPos.clone().sub(arrowDir.multiplyScalar(0.5)), 0.5));
+            addLabel(mkSprite(`${el.sym}: ${valStr}`, `#${color.getHexString()}`, annotPos.clone().sub(arrowDir.multiplyScalar(0.5)), 0.5));
           }
         });
 
@@ -196,11 +233,13 @@ export function PeriodicTableVisual() {
           electronegativity: { right: "EN → Increases", down: "↓ Decreases", desc: "Increases down? No — increases up & right (F is highest)" },
         };
         const tl = trendLabels[mode];
-        push(mkSprite(tl.right, "#fbbf24", new THREE.Vector3(5.5, offsetY - 0.5, 0.01), 0.6));
-        push(mkSprite(tl.down, "#fbbf24", new THREE.Vector3(-5.5, offsetY - 2.5, 0.01), 0.6));
+        addLabel(mkSprite(tl.right, "#fbbf24", new THREE.Vector3(5.5, offsetY - 0.5, 0.01), 0.6));
+        addLabel(mkSprite(tl.down, "#fbbf24", new THREE.Vector3(-5.5, offsetY - 2.5, 0.01), 0.6));
       };
 
+      labelSprites.length = 0;
       updateScene();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -238,7 +277,7 @@ export function PeriodicTableVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [mode, filter, isWebGL]);
+  }, [mode, filter, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Periodic Trends" description="Periodic table trend visualization — requires WebGL." />;
@@ -253,6 +292,13 @@ export function PeriodicTableVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-amber-500/50 bg-amber-500/10 text-amber-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
         <CollapsibleControls label="Trend Type">
           <Tabs value={mode} onValueChange={(v) => setMode(v as TrendMode)} className="mt-1">
             <TabsList className="grid w-full grid-cols-3">
@@ -280,6 +326,14 @@ export function PeriodicTableVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid items={[
+          { label: "Trend", value: info.trend, highlight: true },
+          { label: "Across a period →", value: info.across },
+          { label: "Down a group ↓", value: info.downGroup },
+          { label: "Driver", value: info.driver },
+          { label: "Extremes", value: info.extreme },
+        ]} />
 
         <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-amber-400">Periodic Trends</p>

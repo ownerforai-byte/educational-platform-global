@@ -8,6 +8,12 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  PlaybackBar,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -40,6 +46,54 @@ export function WaveMotionVisual() {
   const [wavelength, setWavelength] = useState(3);
   const [amplitude, setAmplitude] = useState(1);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [animating, setAnimating] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  const speedRef = useRef(1);
+  speedRef.current = speed;
+  const [showEquilibrium, setShowEquilibrium] = useState(true);
+  const [showVectors, setShowVectors] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  // Live readouts — the animation advances phase at ~1.8 time-units/s at 60 fps,
+  // so the drawn wave has f ≈ 1.8 Hz and v = fλ.
+  const waveFreq = 1.8;
+  const waveSpeed = waveFreq * wavelength;
+  const waveK = (2 * Math.PI) / wavelength;
+
+  const DEFAULTS = { waveType: "transverse" as const, wavelength: 3, amplitude: 1 };
+  const presets: ScenePreset[] = [
+    {
+      name: "Default transverse",
+      hint: "Mid-range wavelength and amplitude — the classic sine shape.",
+      apply: () => { setWaveType("transverse"); setWavelength(3); setAmplitude(1); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Long wavelength",
+      hint: "Stretched-out wave — low wave number k = 2π/λ, fast wave speed.",
+      apply: () => { setWaveType("transverse"); setWavelength(6); setAmplitude(0.8); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Short & tall",
+      hint: "Tight wavelength with a big amplitude — steep, energetic wave.",
+      apply: () => { setWaveType("transverse"); setWavelength(1.5); setAmplitude(2); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Longitudinal (sound)",
+      hint: "Particles oscillate along propagation — compressions and rarefactions.",
+      apply: () => { setWaveType("longitudinal"); setWavelength(4); setAmplitude(1.2); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setWaveType(DEFAULTS.waveType);
+    setWavelength(DEFAULTS.wavelength);
+    setAmplitude(DEFAULTS.amplitude);
+    setSpeed(1);
+    setShowEquilibrium(true);
+    setShowVectors(true);
+    setAnimating(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -49,6 +103,8 @@ export function WaveMotionVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
+    const vectorObjs: THREE.Object3D[] = [];
     let time = 0;
 
     const init = async () => {
@@ -70,7 +126,12 @@ export function WaveMotionVisual() {
       controls.autoRotate = false;
       controls.minDistance = 5;
       controls.maxDistance = 25;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -78,14 +139,17 @@ export function WaveMotionVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
+      const addVector = <T extends THREE.Object3D>(o: T): T => { push(o); vectorObjs.push(o); o.visible = showVectors; return o; };
 
       // Equilibrium line
-      push(new THREE.Line(
+      const eqLine = push(new THREE.Line(
         new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-10, 0, 0), new THREE.Vector3(10, 0, 0)]),
         new THREE.LineDashedMaterial({ color: 0x475569, dashSize: 0.3, gapSize: 0.2 }),
       ) as any);
-      (meshes[meshes.length - 1] as any).computeLineDistances();
-      push(mkSprite("Equilibrium", "#475569", new THREE.Vector3(8, 0.4, 0), 0.6));
+      (eqLine as any).computeLineDistances();
+      eqLine.visible = showEquilibrium;
+      addLabel(mkSprite("Equilibrium", "#475569", new THREE.Vector3(8, 0.4, 0), 0.6));
 
       // Wave particles
       const particles: THREE.Mesh[] = [];
@@ -103,21 +167,21 @@ export function WaveMotionVisual() {
       const λLabelPos = new THREE.Vector3(0, -2.5, 0);
       const λTarget = new THREE.Vector3(wavelength, 0, 0);
       const λDir = λTarget.clone().sub(λLabelPos).normalize();
-      push(new LiveLeaderLine(λDir, λLabelPos, λLabelPos.distanceTo(λTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
-      push(mkSprite(`λ = ${wavelength} m (wavelength)`, "#fbbf24", λLabelPos.clone().sub(λDir.multiplyScalar(0.5)), 0.8));
+      addVector(new LiveLeaderLine(λDir, λLabelPos, λLabelPos.distanceTo(λTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
+      addLabel(mkSprite(`λ = ${wavelength} m (wavelength)`, "#fbbf24", λLabelPos.clone().sub(λDir.multiplyScalar(0.5)), 0.8));
 
       const ALabelPos = new THREE.Vector3(wavelength / 2, amplitude + 1, 0);
       const ATarget = new THREE.Vector3(wavelength / 2, 0, 0);
       const ADir = ATarget.clone().sub(ALabelPos).normalize();
-      push(new LiveLeaderLine(ADir, ALabelPos, ALabelPos.distanceTo(ATarget) * 0.9, 0xa78bfa, 0.15, 0.1));
-      push(mkSprite(`A = ${amplitude} m (amplitude)`, "#a78bfa", ALabelPos.clone().sub(ADir.multiplyScalar(0.5)), 0.75));
+      addVector(new LiveLeaderLine(ADir, ALabelPos, ALabelPos.distanceTo(ATarget) * 0.9, 0xa78bfa, 0.15, 0.1));
+      addLabel(mkSprite(`A = ${amplitude} m (amplitude)`, "#a78bfa", ALabelPos.clone().sub(ADir.multiplyScalar(0.5)), 0.75));
 
       // Wave type label
       const typeLabelPos = new THREE.Vector3(-5, 3.5, 0);
       const typeTarget = new THREE.Vector3(0, 0, 0);
       const typeDir = typeTarget.clone().sub(typeLabelPos).normalize();
-      push(new LiveLeaderLine(typeDir, typeLabelPos, typeLabelPos.distanceTo(typeTarget) * 0.9, 0x22d3ee, 0.15, 0.1));
-      push(mkSprite(
+      addVector(new LiveLeaderLine(typeDir, typeLabelPos, typeLabelPos.distanceTo(typeTarget) * 0.9, 0x22d3ee, 0.15, 0.1));
+      addLabel(mkSprite(
         waveType === "transverse" ? "Transverse: displacement ⟂ propagation" : "Longitudinal: displacement ∥ propagation",
         "#22d3ee", typeLabelPos.clone().sub(typeDir.multiplyScalar(0.5)), 0.7
       ));
@@ -126,8 +190,8 @@ export function WaveMotionVisual() {
       const eqLabelPos = new THREE.Vector3(5, 3.5, 0);
       const eqTarget = new THREE.Vector3(0, 0, 0);
       const eqDir = eqTarget.clone().sub(eqLabelPos).normalize();
-      push(new LiveLeaderLine(eqDir, eqLabelPos, eqLabelPos.distanceTo(eqTarget) * 0.9, 0x34d399, 0.15, 0.1));
-      push(mkSprite("y = A sin(kx − ωt)", "#34d399", eqLabelPos.clone().sub(eqDir.multiplyScalar(0.5)), 0.75));
+      addVector(new LiveLeaderLine(eqDir, eqLabelPos, eqLabelPos.distanceTo(eqTarget) * 0.9, 0x34d399, 0.15, 0.1));
+      addLabel(mkSprite("y = A sin(kx − ωt)", "#34d399", eqLabelPos.clone().sub(eqDir.multiplyScalar(0.5)), 0.75));
 
       const update = () => {
         while (meshes.length > 60) {
@@ -144,7 +208,9 @@ export function WaveMotionVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
-        time += 0.03;
+        if (animating) {
+          time += 0.03 * speedRef.current;
+        }
         particles.forEach((p) => {
           const i = p.userData.idx;
           const x = -10 + (i / numParticles) * 20;
@@ -190,7 +256,7 @@ export function WaveMotionVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [waveType, wavelength, amplitude, isWebGL]);
+  }, [waveType, wavelength, amplitude, isWebGL, animating, runId, showEquilibrium, showVectors]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Wave Motion" description="Transverse and longitudinal wave animations." />;
@@ -227,9 +293,44 @@ export function WaveMotionVisual() {
           </div>
         </CollapsibleControls>
 
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <PlaybackBar
+            playing={animating}
+            onPlayToggle={() => setAnimating(!animating)}
+            speed={speed}
+            onSpeedChange={setSpeed}
+            onReset={resetAll}
+          />
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowEquilibrium((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showEquilibrium ? "border-primary/50 bg-primary/10 text-primary" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Equilibrium
+            </button>
+            <button
+              onClick={() => setShowVectors((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showVectors ? "border-amber-500/50 bg-amber-500/10 text-amber-400" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Arrows
+            </button>
+          </div>
+        </div>
+
+        <ScenePresets presets={presets} />
+
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Wavelength λ", value: wavelength.toFixed(1), unit: "m" },
+            { label: "Amplitude A", value: amplitude.toFixed(1), unit: "m" },
+            { label: "Wave number k", value: waveK.toFixed(2), unit: "rad/m" },
+            { label: "Wave speed v = fλ", value: waveSpeed.toFixed(1), unit: "m/s", highlight: waveType === "longitudinal" },
+          ]}
+        />
 
         <div className="rounded-lg border border-cyan-500/30 bg-cyan-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-cyan-400">Key Concepts</p>

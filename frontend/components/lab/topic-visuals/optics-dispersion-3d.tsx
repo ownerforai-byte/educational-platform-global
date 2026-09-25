@@ -8,6 +8,11 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, scale = 0.3) {
@@ -36,6 +41,51 @@ export default function OpticsDispersion3d() {
   const [prismAngle, setPrismAngle] = useState(60);
   const [incAngle, setIncAngle] = useState(50);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [showRays, setShowRays] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  // Live readouts — minimum-deviation estimate for red (n≈1.51) and violet (n≈1.53)
+  const apexRad = (prismAngle * Math.PI) / 180;
+  const minDev = (n: number) => {
+    const s = n * Math.sin(apexRad / 2);
+    return s <= 1 ? (2 * Math.asin(s) - apexRad) * (180 / Math.PI) : NaN;
+  };
+  const devRed = minDev(1.51);
+  const devViolet = minDev(1.53);
+  const angularSpread = devRed - devViolet;
+
+  const DEFAULTS = { prismAngle: 60, incAngle: 50 };
+  const presets: ScenePreset[] = [
+    {
+      name: "Equilateral (60°)",
+      hint: "Standard 60° crown-glass prism — balanced spread.",
+      apply: () => { setPrismAngle(60); setIncAngle(50); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Wide prism (90°)",
+      hint: "Large apex angle — maximum separation of colors.",
+      apply: () => { setPrismAngle(90); setIncAngle(40); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Shallow prism (30°)",
+      hint: "Thin prism — small spread, δ ≈ (n − 1)A per color.",
+      apply: () => { setPrismAngle(30); setIncAngle(60); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Steep incidence (75°)",
+      hint: "Near-grazing entry — strong bending at the first face.",
+      apply: () => { setPrismAngle(60); setIncAngle(75); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setPrismAngle(DEFAULTS.prismAngle);
+    setIncAngle(DEFAULTS.incAngle);
+    setShowLabels(true);
+    setShowRays(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     if (!isWebGL || !containerRef.current) return;
@@ -51,11 +101,24 @@ export default function OpticsDispersion3d() {
     renderer.setSize(w, h);
     container.appendChild(renderer.domElement);
 
+    const labelSprites: THREE.Sprite[] = [];
+    const addLabel = (s: THREE.Sprite): THREE.Sprite => {
+      scene.add(s);
+      s.visible = showLabels;
+      labelSprites.push(s);
+      return s;
+    };
+
     let controls: any;
     import("three/addons/controls/OrbitControls.js").then((mod) => {
       controls = new mod.OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
       controls.dampingFactor = 0.08;
     });
 
@@ -91,6 +154,7 @@ export default function OpticsDispersion3d() {
       ]),
       new THREE.LineBasicMaterial({ color: 0xffffff })
     );
+    whiteRay.visible = showRays;
     scene.add(whiteRay);
 
     const spread = 0.6;
@@ -105,28 +169,24 @@ export default function OpticsDispersion3d() {
         ]),
         new THREE.LineBasicMaterial({ color })
       );
+      ray.visible = showRays;
       scene.add(ray);
-      const sp = mkSprite(rainbowLabels[i], color);
-      scene.add(sp);
+      const sp = addLabel(mkSprite(rainbowLabels[i], color));
       sp.position.set(endX + 0.3, endY, 0);
       return ray;
     });
 
-    const spLabel = mkSprite("White Light", "#ffffff");
-    scene.add(spLabel);
+    const spLabel = addLabel(mkSprite("White Light", "#ffffff"));
     spLabel.position.set(-2.5, 0.6, 0);
-    const spSpec = mkSprite("Spectrum", "#f0abfc");
-    scene.add(spSpec);
+    const spSpec = addLabel(mkSprite("Spectrum", "#f0abfc"));
     spSpec.position.set(2.5, 1.2, 0);
 
     // Wavelength legend
-    const wlLegend = mkSprite("380-750nm", "#a78bfa");
-    scene.add(wlLegend);
+    const wlLegend = addLabel(mkSprite("380-750nm", "#a78bfa"));
     wlLegend.position.set(0, -2, 0);
 
     // Prism material label
-    const matLabel = mkSprite("Glass (n~1.52)", "#34d399");
-    scene.add(matLabel);
+    const matLabel = addLabel(mkSprite("Glass (n~1.52)", "#34d399"));
     matLabel.position.set(0, -1.8, 0);
 
     const incArc: THREE.Line | null = null;
@@ -161,7 +221,7 @@ export default function OpticsDispersion3d() {
       renderer.dispose();
       controls?.dispose();
     };
-  }, [prismAngle, isWebGL]);
+  }, [prismAngle, incAngle, isWebGL, runId, showLabels, showRays]);
 
   if (!isWebGL) return <WebGLFallback title="Dispersion" />;
 
@@ -179,6 +239,40 @@ export default function OpticsDispersion3d() {
         <div ref={containerRef} className="h-[clamp(320px,60vh,640px)] w-full rounded-md overflow-hidden mb-4">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-purple-500/50 bg-purple-500/10 text-purple-300" : "border-purple-900 bg-purple-900/40 text-purple-400/60"}`}
+            >
+              Labels
+            </button>
+            <button
+              onClick={() => setShowRays((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showRays ? "border-fuchsia-400/50 bg-fuchsia-400/10 text-fuchsia-300" : "border-purple-900 bg-purple-900/40 text-purple-400/60"}`}
+            >
+              Rays
+            </button>
+            <button
+              onClick={resetAll}
+              className="px-2.5 py-1 rounded-md text-xs font-medium border border-purple-900 bg-purple-900/40 text-purple-300 hover:bg-purple-800/50 transition-colors"
+              title="Reset to defaults"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+        <ReadoutGrid
+          className="mb-4"
+          items={[
+            { label: "Apex angle A", value: prismAngle, unit: "°" },
+            { label: "Angle of incidence θᵢ", value: incAngle, unit: "°" },
+            { label: "δₘ red (n=1.51)", value: Number.isFinite(devRed) ? devRed.toFixed(1) : "—", unit: Number.isFinite(devRed) ? "°" : undefined },
+            { label: "δₘ violet (n=1.53)", value: Number.isFinite(devViolet) ? devViolet.toFixed(1) : "—", unit: Number.isFinite(devViolet) ? "°" : undefined, highlight: Number.isFinite(devViolet) },
+            { label: "Angular spread (δV − δR)", value: Number.isFinite(angularSpread) ? angularSpread.toFixed(2) : "—", unit: Number.isFinite(angularSpread) ? "°" : undefined },
+          ]}
+        />
         <CollapsibleControls label="Prism Parameters">
           <div className="space-y-4">
             <div className="space-y-2">

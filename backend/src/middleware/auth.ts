@@ -53,6 +53,26 @@ export async function loadProfileRole(userId: string): Promise<UserRole | null> 
   }
 }
 
+/**
+ * Load the display name from the user's `profiles` row (best-effort).
+ * Returns null when the profile is missing or has no name set.
+ */
+export async function loadProfileFullName(userId: string): Promise<string | null> {
+  try {
+    const { data: profile, error } = await supabaseAdmin
+      .from("profiles")
+      .select("full_name")
+      .eq("id", userId)
+      .maybeSingle();
+
+    if (error) return null;
+    const name = profile?.full_name;
+    return typeof name === "string" && name.trim() ? name.trim() : null;
+  } catch {
+    return null;
+  }
+}
+
 export const OWNER_EMAILS = new Set([
   "harindarsah98172@gmail.com",
   "yashsah231@gmail.com",
@@ -91,12 +111,15 @@ export async function getUserFromRequest(req: Request): Promise<SessionUser | nu
       if (error) console.warn("[Auth] Token validation failed:", error.message);
       return null;
     }
-    const role = await loadProfileRole(data.user.id);
+    const [role, profileName] = await Promise.all([
+      loadProfileRole(data.user.id),
+      loadProfileFullName(data.user.id),
+    ]);
     return buildSessionUser(
       data.user.id,
       data.user.email ?? "",
       role,
-      (data.user.user_metadata?.full_name as string) ?? null,
+      profileName ?? (data.user.user_metadata?.full_name as string) ?? null,
     );
   } catch (err) {
     console.error("[Auth] Unexpected error during getUserFromRequest:", err);

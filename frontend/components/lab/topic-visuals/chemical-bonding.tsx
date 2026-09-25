@@ -7,6 +7,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -43,7 +44,41 @@ export function ChemicalBondingVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [mode, setMode] = useState<BondMode>("covalent");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const MODE_INFO: Record<BondMode, { bond: string; example: string; keyValue: string; note: string }> = {
+    ionic: { bond: "Ionic (NaCl)", example: "Sodium chloride lattice", keyValue: "Lattice energy ≈ 787 kJ/mol", note: "Electrons transferred, ions attract" },
+    covalent: { bond: "Covalent (H₂O)", example: "Water molecule", keyValue: "H–O–H angle ≈ 104.5°", note: "Shared pairs + 2 lone pairs → bent" },
+    vsepr: { bond: "VSEPR shapes", example: "CO₂, BF₃, CH₄", keyValue: "Angles 180° / 120° / 109.5°", note: "Electron pairs repel → shape" },
+  };
+  const info = MODE_INFO[mode];
+
+  const DEFAULTS = { mode: "covalent" as BondMode };
+  const presets: ScenePreset[] = [
+    {
+      name: "Ionic lattice (NaCl)",
+      hint: "A 3-D crystal of alternating Na⁺ and Cl⁻ ions held by electrostatic attraction.",
+      apply: () => { setMode("ionic"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Covalent H₂O",
+      hint: "Oxygen shares electron pairs with two H atoms; two lone pairs bend the molecule.",
+      apply: () => { setMode("covalent"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "VSEPR shapes",
+      hint: "Compare linear CO₂, trigonal-planar BF₃ and tetrahedral CH₄ side by side.",
+      apply: () => { setMode("vsepr"); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setMode(DEFAULTS.mode);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -53,6 +88,7 @@ export function ChemicalBondingVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -73,7 +109,7 @@ export function ChemicalBondingVisual() {
       controls.autoRotateSpeed = 0.3;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -81,6 +117,7 @@ export function ChemicalBondingVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
 
       const clearDynamic = () => {
         while (meshes.length > 3) {
@@ -143,16 +180,16 @@ export function ChemicalBondingVisual() {
           const dir1 = target1.clone().sub(labelPos1).normalize();
           const arrowLen1 = labelPos1.distanceTo(target1);
           push(new LiveLeaderLine(dir1, labelPos1, arrowLen1 * 0.8, 0x6366f1, 0.25, 0.12));
-          push(mkSprite("Na⁺ (cation)", "#6366f1", labelPos1.clone().sub(dir1.multiplyScalar(0.5)), 0.7));
+          addLabel(mkSprite("Na⁺ (cation)", "#6366f1", labelPos1.clone().sub(dir1.multiplyScalar(0.5)), 0.7));
 
           const labelPos2 = new THREE.Vector3(-3, -1, 0);
           const target2 = new THREE.Vector3(-spacing, -spacing, 0);
           const dir2 = target2.clone().sub(labelPos2).normalize();
           const arrowLen2 = labelPos2.distanceTo(target2);
           push(new LiveLeaderLine(dir2, labelPos2, arrowLen2 * 0.8, 0x22c55e, 0.25, 0.12));
-          push(mkSprite("Cl⁻ (anion)", "#22c55e", labelPos2.clone().sub(dir2.multiplyScalar(0.5)), 0.7));
+          addLabel(mkSprite("Cl⁻ (anion)", "#22c55e", labelPos2.clone().sub(dir2.multiplyScalar(0.5)), 0.7));
 
-          push(mkSprite("Ionic Lattice — electrostatic attraction between oppositely charged ions", "#fbbf24", new THREE.Vector3(0, 3.5, 0), 0.65));
+          addLabel(mkSprite("Ionic Lattice — electrostatic attraction between oppositely charged ions", "#fbbf24", new THREE.Vector3(0, 3.5, 0), 0.65));
         }
         else if (mode === "covalent") {
           // H₂O molecule — bent shape
@@ -201,28 +238,28 @@ export function ChemicalBondingVisual() {
           const dirO = targetO.clone().sub(labelO).normalize();
           const arrowLenO = labelO.distanceTo(targetO);
           push(new LiveLeaderLine(dirO, labelO, arrowLenO * 0.85, 0xef4444, 0.25, 0.12));
-          push(mkSprite("Oxygen — central atom (sp³ hybridized)", "#ef4444", labelO.clone().sub(dirO.multiplyScalar(0.5)), 0.7));
+          addLabel(mkSprite("Oxygen — central atom (sp³ hybridized)", "#ef4444", labelO.clone().sub(dirO.multiplyScalar(0.5)), 0.7));
 
           const labelH1 = new THREE.Vector3(-2.5, 1.8, 0);
           const targetH1 = H1.clone();
           const dirH1 = targetH1.clone().sub(labelH1).normalize();
           const arrowLenH1 = labelH1.distanceTo(targetH1);
           push(new LiveLeaderLine(dirH1, labelH1, arrowLenH1 * 0.85, 0xf5f5f5, 0.22, 0.1));
-          push(mkSprite("H — covalent bond (shared e⁻ pair)", "#f5f5f5", labelH1.clone().sub(dirH1.multiplyScalar(0.5)), 0.65));
+          addLabel(mkSprite("H — covalent bond (shared e⁻ pair)", "#f5f5f5", labelH1.clone().sub(dirH1.multiplyScalar(0.5)), 0.65));
 
           const labelAngle = new THREE.Vector3(2.5, -0.5, 0);
           const targetAngle = new THREE.Vector3(0, 0.4, 0);
           const dirAngle = targetAngle.clone().sub(labelAngle).normalize();
           const arrowLenAngle = labelAngle.distanceTo(targetAngle);
           push(new LiveLeaderLine(dirAngle, labelAngle, arrowLenAngle * 0.8, 0x22d3ee, 0.25, 0.12));
-          push(mkSprite("H-O-H angle ≈ 104.5° (bent shape)", "#22d3ee", labelAngle.clone().sub(dirAngle.multiplyScalar(0.5)), 0.7));
+          addLabel(mkSprite("H-O-H angle ≈ 104.5° (bent shape)", "#22d3ee", labelAngle.clone().sub(dirAngle.multiplyScalar(0.5)), 0.7));
 
           const labelLP = new THREE.Vector3(0, -1.8, 0.8);
           const targetLP = new THREE.Vector3(-0.3, -0.5, 0.3);
           const dirLP = targetLP.clone().sub(labelLP).normalize();
           const arrowLenLP = labelLP.distanceTo(targetLP);
           push(new LiveLeaderLine(dirLP, labelLP, arrowLenLP * 0.8, 0xfbbf24, 0.22, 0.1));
-          push(mkSprite("Lone pairs (2) — cause bent geometry", "#fbbf24", labelLP.clone().sub(dirLP.multiplyScalar(0.5)), 0.65));
+          addLabel(mkSprite("Lone pairs (2) — cause bent geometry", "#fbbf24", labelLP.clone().sub(dirLP.multiplyScalar(0.5)), 0.65));
         }
         else if (mode === "vsepr") {
           // VSEPR shapes: linear, trigonal planar, tetrahedral, bent, trigonal pyramidal
@@ -278,12 +315,14 @@ export function ChemicalBondingVisual() {
             const d = tp.clone().sub(lp).normalize();
             const al = lp.distanceTo(tp);
             push(new LiveLeaderLine(d, lp, al * 0.8, 0xfbbf24, 0.25, 0.12));
-            push(mkSprite(shape.name, "#fbbf24", lp.clone().sub(d.multiplyScalar(0.5)), 0.7));
+            addLabel(mkSprite(shape.name, "#fbbf24", lp.clone().sub(d.multiplyScalar(0.5)), 0.7));
           });
         }
       };
 
+      labelSprites.length = 0;
       updateScene();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -321,7 +360,7 @@ export function ChemicalBondingVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [mode, isWebGL]);
+  }, [mode, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Chemical Bonding" description="Ionic, covalent bonding & VSEPR — requires WebGL." />;
@@ -336,6 +375,13 @@ export function ChemicalBondingVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-blue-500/50 bg-blue-500/10 text-blue-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
         <CollapsibleControls label="Bond Type">
           <Tabs value={mode} onValueChange={(v) => setMode(v as BondMode)} className="mt-1">
             <TabsList className="grid w-full grid-cols-3">
@@ -350,6 +396,14 @@ export function ChemicalBondingVisual() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <ReadoutGrid
+          items={[
+            { label: "Bond type", value: info.bond },
+            { label: "Example", value: info.example },
+            { label: "Key value", value: info.keyValue, highlight: true },
+            { label: "Note", value: info.note },
+          ]}
+        />
         <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-blue-400">Key Concepts</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">

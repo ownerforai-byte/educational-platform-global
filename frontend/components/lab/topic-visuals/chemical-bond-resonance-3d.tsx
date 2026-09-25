@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
@@ -36,7 +37,47 @@ export function ResonanceVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [view, setView] = useState<ResonanceView>("ozone");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const VIEW_INFO: Record<ResonanceView, { species: string; forms: number; bondOrder: string; note: string }> = {
+    ozone: { species: "O₃", forms: 2, bondOrder: "1.5", note: "O=O–O ↔ O–O=O" },
+    carbonate: { species: "CO₃²⁻", forms: 3, bondOrder: "1.33", note: "3 equivalent forms" },
+    benzene: { species: "C₆H₆", forms: 6, bondOrder: "1.5", note: "π ring delocalized" },
+    hybrid: { species: "O₃ (actual)", forms: 2, bondOrder: "1.5", note: "one blended structure" },
+  };
+  const info = VIEW_INFO[view];
+
+  const DEFAULTS = { view: "ozone" as ResonanceView };
+  const presets: ScenePreset[] = [
+    {
+      name: "O₃ resonance",
+      hint: "Two equivalent drawings — the real molecule is neither, but both at once.",
+      apply: () => { setView("ozone"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "CO₃²⁻ resonance",
+      hint: "Three equivalent forms — every C–O bond is identical (1.33 bond order).",
+      apply: () => { setView("carbonate"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "C₆H₆ π ring",
+      hint: "Benzene's six π electrons circulate freely around the whole ring.",
+      apply: () => { setView("benzene"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Resonance hybrid",
+      hint: "The true structure — one and a half bonds everywhere, shown as a cloud.",
+      apply: () => { setView("hybrid"); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setView(DEFAULTS.view);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -46,6 +87,7 @@ export function ResonanceVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -66,7 +108,7 @@ export function ResonanceVisual() {
       controls.autoRotateSpeed = 0.3;
       controls.minDistance = 3;
       controls.maxDistance = 15;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -74,6 +116,13 @@ export function ResonanceVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+
+      const syncLabels = () => {
+        labelSprites.length = 0;
+        scene.traverse((o) => {
+          if ((o as THREE.Sprite).isSprite) { labelSprites.push(o as THREE.Sprite); (o as THREE.Sprite).visible = showLabels; }
+        });
+      };
       const clearDynamic = () => {
         while (meshes.length > 2) {
           const m = meshes.pop()!;
@@ -261,6 +310,7 @@ export function ResonanceVisual() {
       };
 
       builders[view]();
+      syncLabels();
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -297,7 +347,7 @@ export function ResonanceVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [view, isWebGL]);
+  }, [view, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Resonance" description="Resonance structures visualization — requires WebGL." />;
@@ -312,6 +362,13 @@ export function ResonanceVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-amber-500/50 bg-amber-500/10 text-amber-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
         <CollapsibleControls label="Resonance Structure">
           <div className="grid grid-cols-4 gap-2 mt-1">
             {([
@@ -335,6 +392,14 @@ export function ResonanceVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+        <ReadoutGrid
+          items={[
+            { label: "Species", value: info.species },
+            { label: "Resonance forms", value: info.forms },
+            { label: "Bond order", value: info.bondOrder, highlight: true },
+            { label: "Note", value: info.note },
+          ]}
+        />
         <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-amber-400">Key Concepts</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">

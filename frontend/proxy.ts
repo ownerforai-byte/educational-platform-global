@@ -67,7 +67,7 @@ function setSecurityHeaders(response: NextResponse) {
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "img-src 'self' data: https:",
       "font-src 'self' data: https://fonts.gstatic.com",
-      `connect-src 'self' ${process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com"} https://rn01.onrender.com https://tsvbksfegvdjwczzfdcx.supabase.co wss: ws:`,
+      `connect-src 'self' ${process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com"} https://tsvbksfegvdjwczzfdcx.supabase.co wss: ws:`,
       "frame-src 'none'",
       "worker-src 'self' blob:",
     ].join("; ") + ";",

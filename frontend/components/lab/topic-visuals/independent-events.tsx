@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 /* ============================================================
@@ -45,10 +46,34 @@ export function IndependentEventsVisual() {
   const [pB, setPB] = useState(0.3);
   const [isIndependent, setIsIndependent] = useState(true);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
 
+  const presets: ScenePreset[] = [
+    { name: "Independent pair", hint: "P(A∩B) = P(A)·P(B) = 0.12", apply: () => { setPA(0.4); setPB(0.3); setIsIndependent(true); setRunId((r) => r + 1); } },
+    { name: "Dependent pair", hint: "Overlap inflated → P(A∩B) ≠ P(A)·P(B)", apply: () => { setPA(0.4); setPB(0.3); setIsIndependent(false); setRunId((r) => r + 1); } },
+    { name: "Two fair coins", hint: "P(A) = P(B) = 0.5 → P(A∩B) = 0.25", apply: () => { setPA(0.5); setPB(0.5); setIsIndependent(true); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setPA(0.4);
+    setPB(0.3);
+    setIsIndependent(true);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
   const pAB_indep = pA * pB;
-  const pAB_actual = isIndependent ? pAB_indep : pAB_indep * 1.8; // Artificially increase to show dependence
+  // Dependent case inflates the overlap, clamped so P(A∩B) ≤ min(P(A), P(B)) stays valid
+  const pAB_actual = isIndependent ? pAB_indep : Math.min(pAB_indep * 1.8, Math.min(pA, pB));
+
+  const fmt3 = (v: number) => (Number.isFinite(v) ? v.toFixed(3) : "—");
+  const pAgivenB = pB > 0 ? pAB_actual / pB : NaN;
+  const pBgivenA = pA > 0 ? pAB_actual / pA : NaN;
+  const pUnion = pA + pB - pAB_actual;
+  const verdict = isIndependent
+    ? "Independent — P(A|B) = P(A), P(B|A) = P(B)"
+    : "Dependent — P(A∩B) ≠ P(A)·P(B)";
 
   useEffect(() => {
     const container = containerRef.current;
@@ -57,6 +82,7 @@ export function IndependentEventsVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -73,12 +99,12 @@ export function IndependentEventsVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
       controls.autoRotate = false;
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 
-      const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); if (o instanceof THREE.Sprite) labelSprites.push(o); return o; };
 
       // Two separate diagrams side by side
       // Left: Independent case
@@ -127,23 +153,58 @@ export function IndependentEventsVisual() {
       )).position.set(5, 0, 0.01);
       (meshes[meshes.length - 1] as THREE.Mesh).scale.set(Math.sqrt(pB) * 1.3, Math.sqrt(pB) * 1.3, 1);
 
-      // Intersection highlight
+      // Intersection highlight — actual overlap (inflated in the dependent case)
       const interFill = push(new THREE.Mesh(
         new THREE.CircleGeometry(1, 64),
         new THREE.MeshBasicMaterial({ color: 0xfbbf24, transparent: true, opacity: 0.4, side: THREE.DoubleSide }),
       ));
       interFill.position.set(4, 0, 0.02);
-      interFill.scale.set(Math.sqrt(overlapArea) * 1.5, Math.sqrt(overlapArea) * 1.2, 1);
+      interFill.scale.set(Math.sqrt(pAB_actual) * 1.5, Math.sqrt(pAB_actual) * 1.2, 1);
 
-      push(mkSprite(`P(A∩B) = ${overlapArea.toFixed(3)}`, "#fbbf24", new THREE.Vector3(4, -3, 0), 0.7));
+      push(mkSprite(`P(A∩B) = ${pAB_actual.toFixed(3)}`, "#fbbf24", new THREE.Vector3(4, -3, 0), 0.7));
 
       // Key formula
       push(mkSprite(isIndependent ? "P(A∩B) = P(A)·P(B)  ✓" : "P(A∩B) ≠ P(A)·P(B)  ✗", isIndependent ? "#22c55e" : "#ef4444", new THREE.Vector3(0, -4.2, 0), 0.8));
+
+      labelSprites.forEach((s) => (s.visible = showLabels));
+
+      const animate = () => {
+        frameId = requestAnimationFrame(animate);
+        controls.update();
+        renderer.render(scene, camera);
+      };
+      animate();
+
+      const handleResize = () => {
+        if (!container) return;
+        camera.aspect = container.clientWidth / container.clientHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(container.clientWidth, container.clientHeight);
+      };
+      window.addEventListener("resize", handleResize);
+      // Re-fit the canvas whenever the container itself resizes (screen fit)
+      const resizeObserver = new ResizeObserver(() => handleResize());
+      resizeObserver.observe(container);
+
+      return () => {
+        cancelAnimationFrame(frameId);
+        window.removeEventListener("resize", handleResize);
+        resizeObserver?.disconnect();
+        if (renderer.domElement.parentNode) renderer.domElement.parentNode.removeChild(renderer.domElement);
+        meshes.forEach((m) => {
+          scene.remove(m);
+          if (m instanceof THREE.Mesh) { m.geometry?.dispose(); const mat = m.material; if (Array.isArray(mat)) mat.forEach((x) => x.dispose()); else (Array.isArray(mat) ? mat : [mat]).forEach((x) => x.dispose()); }
+          else if (m instanceof THREE.Line) { m.geometry?.dispose(); (m.material as THREE.Material).dispose(); }
+          else if (m instanceof THREE.Sprite) { const sm = m.material; sm.map?.dispose?.(); sm.dispose(); }
+        });
+        renderer.dispose();
+        controls.dispose?.();
+      };
     };
 
     const cleanup = init();
-    return () => { cleanup.then((d: any) => d?.()); };
-  }, [pA, pB, isIndependent, pAB_indep, isWebGL]);
+    return () => { cleanup.then((d) => d?.()); };
+  }, [pA, pB, isIndependent, pAB_indep, pAB_actual, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Independent Events" description="Independence visualization — requires WebGL." />;
@@ -158,6 +219,14 @@ export function IndependentEventsVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-green-500/50 bg-green-500/10 text-green-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Probabilities">
           <div className="flex gap-3 mt-2">
             <div className="w-16"><Label className="text-xs text-muted-foreground">P(A):</Label><Input type="number" step="0.05" min={0} max={1} value={pA} onChange={(e) => setPA(Number(e.target.value))} className="mt-1" /></div>
@@ -175,6 +244,17 @@ export function IndependentEventsVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "P(A) · P(B) (independence product)", value: fmt3(pAB_indep) },
+            { label: "Shown P(A∩B)", value: fmt3(pAB_actual), highlight: true },
+            { label: "P(A|B) = P(A∩B)/P(B)", value: fmt3(pAgivenB) },
+            { label: "P(B|A) = P(A∩B)/P(A)", value: fmt3(pBgivenA) },
+            { label: "P(A ∪ B)", value: fmt3(pUnion) },
+            { label: "Verdict", value: verdict },
+          ]}
+        />
 
         <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-green-400">Independence</p>

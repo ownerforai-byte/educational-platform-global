@@ -8,6 +8,12 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  PlaybackBar,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -39,6 +45,53 @@ export function SHMVisual() {
   const [amplitude, setAmplitude] = useState(3);
   const [frequency, setFrequency] = useState(1);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [animating, setAnimating] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  const speedRef = useRef(1);
+  speedRef.current = speed;
+  const [showTrail, setShowTrail] = useState(true);
+  const [showVectors, setShowVectors] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  // Live readouts
+  const omega = 2 * Math.PI * frequency;
+  const period = 1 / frequency;
+  const vMax = amplitude * omega;
+  const aMax = amplitude * omega * omega;
+
+  const DEFAULTS = { amplitude: 3, frequency: 1 };
+  const presets: ScenePreset[] = [
+    {
+      name: "Default (A=3, f=1)",
+      hint: "A comfortable one-hertz oscillation.",
+      apply: () => { setAmplitude(3); setFrequency(1); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Slow & large",
+      hint: "Big amplitude, low frequency — long period, easy to trace.",
+      apply: () => { setAmplitude(5); setFrequency(0.3); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Fast & small",
+      hint: "Tiny amplitude, high frequency — rapid vibration.",
+      apply: () => { setAmplitude(1); setFrequency(2.5); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Gentle swing",
+      hint: "Small and slow — minimal energy (E = ½kA²).",
+      apply: () => { setAmplitude(1.5); setFrequency(0.5); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setAmplitude(DEFAULTS.amplitude);
+    setFrequency(DEFAULTS.frequency);
+    setSpeed(1);
+    setShowTrail(true);
+    setShowVectors(true);
+    setAnimating(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -48,6 +101,8 @@ export function SHMVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
+    const vectorObjs: THREE.Object3D[] = [];
     let time = 0;
 
     const init = async () => {
@@ -68,7 +123,12 @@ export function SHMVisual() {
       controls.autoRotate = false;
       controls.minDistance = 5;
       controls.maxDistance = 25;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -76,6 +136,8 @@ export function SHMVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
+      const addVector = <T extends THREE.Object3D>(o: T): T => { push(o); vectorObjs.push(o); o.visible = showVectors; return o; };
 
       // Equilibrium line
       push(new THREE.Line(
@@ -83,7 +145,7 @@ export function SHMVisual() {
         new THREE.LineDashedMaterial({ color: 0x475569, dashSize: 0.3, gapSize: 0.2 }),
       ) as any);
       (meshes[meshes.length - 1] as any).computeLineDistances();
-      push(mkSprite("Equilibrium (x = 0)", "#475569", new THREE.Vector3(6, 0.4, 0), 0.6));
+      addLabel(mkSprite("Equilibrium (x = 0)", "#475569", new THREE.Vector3(6, 0.4, 0), 0.6));
 
       // Spring (zigzag)
       const springGroup = new THREE.Group();
@@ -97,7 +159,7 @@ export function SHMVisual() {
         new THREE.MeshBasicMaterial({ color: 0x475569 }),
       ));
       wall.position.set(-7, 1.5, 0);
-      push(mkSprite("Wall", "#475569", new THREE.Vector3(-7, 4.2, 0), 0.6));
+      addLabel(mkSprite("Wall", "#475569", new THREE.Vector3(-7, 4.2, 0), 0.6));
 
       // Mass block
       const mass = push(new THREE.Mesh(
@@ -110,22 +172,22 @@ export function SHMVisual() {
       const ampLabelPos = new THREE.Vector3(-3, 4, 0);
       const ampTarget = new THREE.Vector3(-3 + amplitude, 0.6, 0);
       const ampDir = ampTarget.clone().sub(ampLabelPos).normalize();
-      push(new LiveLeaderLine(ampDir, ampLabelPos, ampLabelPos.distanceTo(ampTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
-      push(mkSprite(`Amp = ${amplitude} m`, "#fbbf24", ampLabelPos.clone().sub(ampDir.multiplyScalar(0.5)), 0.75));
+      addVector(new LiveLeaderLine(ampDir, ampLabelPos, ampLabelPos.distanceTo(ampTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
+      addLabel(mkSprite(`Amp = ${amplitude} m`, "#fbbf24", ampLabelPos.clone().sub(ampDir.multiplyScalar(0.5)), 0.75));
 
       // Rest position label
       const restLabelPos = new THREE.Vector3(-3, -2, 0);
       const restTarget = new THREE.Vector3(-3, 0.6, 0);
       const restDir = restTarget.clone().sub(restLabelPos).normalize();
-      push(new LiveLeaderLine(restDir, restLabelPos, restLabelPos.distanceTo(restTarget) * 0.9, 0x64748b, 0.15, 0.1));
-      push(mkSprite("Rest position", "#64748b", restLabelPos.clone().sub(restDir.multiplyScalar(0.5)), 0.7));
+      addVector(new LiveLeaderLine(restDir, restLabelPos, restLabelPos.distanceTo(restTarget) * 0.9, 0x64748b, 0.15, 0.1));
+      addLabel(mkSprite("Rest position", "#64748b", restLabelPos.clone().sub(restDir.multiplyScalar(0.5)), 0.7));
 
       // Force label
       const forceLabelPos = new THREE.Vector3(5, 3, 0);
       const forceTarget = new THREE.Vector3(0, 0.6, 0);
       const forceDir = forceTarget.clone().sub(forceLabelPos).normalize();
-      push(new LiveLeaderLine(forceDir, forceLabelPos, forceLabelPos.distanceTo(forceTarget) * 0.9, 0xef4444, 0.15, 0.1));
-      push(mkSprite("F = −kx (restoring force)", "#ef4444", forceLabelPos.clone().sub(forceDir.multiplyScalar(0.5)), 0.7));
+      addVector(new LiveLeaderLine(forceDir, forceLabelPos, forceLabelPos.distanceTo(forceTarget) * 0.9, 0xef4444, 0.15, 0.1));
+      addLabel(mkSprite("F = −kx (restoring force)", "#ef4444", forceLabelPos.clone().sub(forceDir.multiplyScalar(0.5)), 0.7));
 
       // Graph area (right side)
       const graphX = 5;
@@ -136,9 +198,9 @@ export function SHMVisual() {
       }
       push(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(graphX - 4, 0, -1), new THREE.Vector3(graphX + 4, 0, -1)]), new THREE.LineBasicMaterial({ color: 0x475569 })));
       push(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(graphX, -4, -1), new THREE.Vector3(graphX, 4, -1)]), new THREE.LineBasicMaterial({ color: 0x475569 })));
-      push(mkSprite("x(t) = A cos(ωt)", "#22d3ee", new THREE.Vector3(graphX + 2, 3.5, -1), 0.7));
-      push(mkSprite("t", "#475569", new THREE.Vector3(graphX + 4, -0.5, -1), 0.6));
-      push(mkSprite("x", "#475569", new THREE.Vector3(graphX - 0.5, 4, -1), 0.6));
+      addLabel(mkSprite("x(t) = A cos(ωt)", "#22d3ee", new THREE.Vector3(graphX + 2, 3.5, -1), 0.7));
+      addLabel(mkSprite("t", "#475569", new THREE.Vector3(graphX + 4, -0.5, -1), 0.6));
+      addLabel(mkSprite("x", "#475569", new THREE.Vector3(graphX - 0.5, 4, -1), 0.6));
 
       // Trail dots for wave
       const trailPts: THREE.Vector3[] = [];
@@ -146,6 +208,7 @@ export function SHMVisual() {
         new THREE.BufferGeometry(),
         new THREE.LineBasicMaterial({ color: 0x22d3ee }),
       )) as THREE.Line;
+      waveLine.visible = showTrail;
 
       const update = () => {
         while (meshes.length > 80) {
@@ -163,7 +226,9 @@ export function SHMVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
-        time += 0.03 * frequency;
+        if (animating) {
+          time += 0.03 * frequency * speedRef.current;
+        }
         const displacement = amplitude * Math.cos(2 * Math.PI * frequency * time);
 
         mass.position.x = -3 + displacement;
@@ -191,9 +256,11 @@ export function SHMVisual() {
         meshes.push(springLine);
 
         // Wave trail
-        trailPts.unshift(new THREE.Vector3(graphX + (displacement / amplitude) * 4, 0, -0.98));
-        if (trailPts.length > 300) trailPts.pop();
-        (waveLine.geometry as THREE.BufferGeometry).setFromPoints(trailPts);
+        if (showTrail) {
+          trailPts.unshift(new THREE.Vector3(graphX + (displacement / amplitude) * 4, 0, -0.98));
+          if (trailPts.length > 300) trailPts.pop();
+          (waveLine.geometry as THREE.BufferGeometry).setFromPoints(trailPts);
+        }
 
         renderer.render(scene, camera);
       };
@@ -229,7 +296,7 @@ export function SHMVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [amplitude, frequency, isWebGL]);
+  }, [amplitude, frequency, isWebGL, animating, runId, showTrail, showVectors]);
 
   if (!isWebGL) {
     return <WebGLFallback title="SHM Visual" description="Spring-mass system with Hooke's law visualization." />;
@@ -259,9 +326,44 @@ export function SHMVisual() {
           </div>
         </CollapsibleControls>
 
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <PlaybackBar
+            playing={animating}
+            onPlayToggle={() => setAnimating(!animating)}
+            speed={speed}
+            onSpeedChange={setSpeed}
+            onReset={resetAll}
+          />
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowTrail((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showTrail ? "border-cyan-500/50 bg-cyan-500/10 text-cyan-400" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              x(t) graph
+            </button>
+            <button
+              onClick={() => setShowVectors((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showVectors ? "border-red-500/50 bg-red-500/10 text-red-400" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Arrows
+            </button>
+          </div>
+        </div>
+
+        <ScenePresets presets={presets} />
+
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Period T", value: period.toFixed(2), unit: "s" },
+            { label: "Angular freq ω", value: omega.toFixed(2), unit: "rad/s" },
+            { label: "Max speed v_max", value: vMax.toFixed(2), unit: "m/s" },
+            { label: "Max accel a_max", value: aMax.toFixed(1), unit: "m/s²", highlight: aMax > 100 },
+          ]}
+        />
 
         <div className="rounded-lg border border-cyan-500/30 bg-cyan-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-cyan-400">Key Concepts</p>

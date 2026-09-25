@@ -1,5 +1,17 @@
 import { supabaseAdmin } from "../db/supabase";
 
+/** Normalized auth failure surfaced to route handlers. */
+export class AuthProviderError extends Error {
+  status: number;
+  code: string | null;
+  constructor(message: string, status = 400, code: string | null = null) {
+    super(message);
+    this.name = "AuthProviderError";
+    this.status = status;
+    this.code = code;
+  }
+}
+
 /**
  * Supabase auth service — thin, focused wrappers over the admin client.
  *
@@ -44,7 +56,10 @@ export async function signUp(input: SignUpInput): Promise<SignUpResult> {
   });
 
   if (error) {
-    return { user: null, session: null, needsEmailConfirmation: true, error: error.message };
+    // Surface the real reason (rate limit, invalid email, weak password…)
+    // instead of a generic message — otherwise clients can't react (e.g. the
+    // 429 over_email_send_rate_limit that blocked all signups on 2026-09-24).
+    throw new AuthProviderError(error.message, error.status ?? 400, error.code ?? null);
   }
 
   // Session already returned → confirmed.

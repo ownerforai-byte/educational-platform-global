@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 /* ============================================================
@@ -38,12 +39,74 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
+type DeFamily = "exp-pm" | "trig" | "exp-23" | "lines";
+
+const FORM_INFO: Record<DeFamily, { general: string; d1: string; d2: string; de: string; note: string; eval: (x: number, k1: number, k2: number) => number; d1eval: (x: number, k1: number, k2: number) => number }> = {
+  "exp-pm": {
+    general: "y = c₁eˣ + c₂e⁻ˣ",
+    d1: "y′ = c₁eˣ − c₂e⁻ˣ",
+    d2: "y″ = c₁eˣ + c₂e⁻ˣ = y",
+    de: "y″ − y = 0",
+    note: "Differentiate twice; y″ reproduces y, so both constants vanish at once.",
+    eval: (x, k1, k2) => k1 * Math.exp(x) + k2 * Math.exp(-x),
+    d1eval: (x, k1, k2) => k1 * Math.exp(x) - k2 * Math.exp(-x),
+  },
+  trig: {
+    general: "y = c₁cos x + c₂sin x",
+    d1: "y′ = −c₁sin x + c₂cos x",
+    d2: "y″ = −c₁cos x − c₂sin x = −y",
+    de: "y″ + y = 0",
+    note: "Simple harmonic motion DE — characteristic roots r = ±i.",
+    eval: (x, k1, k2) => k1 * Math.cos(x) + k2 * Math.sin(x),
+    d1eval: (x, k1, k2) => -k1 * Math.sin(x) + k2 * Math.cos(x),
+  },
+  "exp-23": {
+    general: "y = c₁e²ˣ + c₂e³ˣ",
+    d1: "y′ = 2c₁e²ˣ + 3c₂e³ˣ",
+    d2: "y″ = 4c₁e²ˣ + 9c₂e³ˣ",
+    de: "y″ − 5y′ + 6y = 0",
+    note: "Characteristic equation r² − 5r + 6 = 0 factors as (r − 2)(r − 3) = 0.",
+    eval: (x, k1, k2) => k1 * Math.exp(2 * x) + k2 * Math.exp(3 * x),
+    d1eval: (x, k1, k2) => 2 * k1 * Math.exp(2 * x) + 3 * k2 * Math.exp(3 * x),
+  },
+  lines: {
+    general: "y = c₁x + c₂ (family of straight lines)",
+    d1: "y′ = c₁",
+    d2: "y″ = 0",
+    de: "y″ = 0",
+    note: "Two arbitrary constants → a second-order DE whose solutions are all lines.",
+    eval: (x, k1, k2) => k1 * x + k2,
+    d1eval: (_x, k1) => k1,
+  },
+};
+
 export function FormationDEVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
+  const [family, setFamily] = useState<DeFamily>("exp-pm");
   const [c1, setC1] = useState(1);
   const [c2, setC2] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const info = FORM_INFO[family];
+  const fmtD = (v: number) => (isFinite(v) ? v.toFixed(2) : "∞");
+
+  const presets: ScenePreset[] = [
+    { name: "y″ − y = 0", hint: "From y = c₁eˣ + c₂e⁻ˣ", apply: () => { setFamily("exp-pm"); setC1(1); setC2(0); setRunId((r) => r + 1); } },
+    { name: "y″ + y = 0", hint: "From y = c₁cos x + c₂sin x", apply: () => { setFamily("trig"); setC1(1); setC2(0); setRunId((r) => r + 1); } },
+    { name: "y″ − 5y′ + 6y = 0", hint: "From y = c₁e²ˣ + c₂e³ˣ", apply: () => { setFamily("exp-23"); setC1(1); setC2(0.5); setRunId((r) => r + 1); } },
+    { name: "y″ = 0", hint: "From the family of lines y = c₁x + c₂", apply: () => { setFamily("lines"); setC1(1); setC2(1); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setFamily("exp-pm");
+    setC1(1);
+    setC2(0);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -53,6 +116,7 @@ export function FormationDEVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -69,7 +133,7 @@ export function FormationDEVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
       controls.autoRotate = false;
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
@@ -93,7 +157,8 @@ export function FormationDEVisual() {
           else if (m instanceof THREE.Sprite) { (m.material as THREE.SpriteMaterial).map?.dispose?.(); m.material.dispose(); }
         }
 
-        // Family of curves: y = c1*e^x + c2*e^(-x) (general solution with 2 constants)
+        // Family of curves for the selected general solution (2 arbitrary constants)
+        const curveFn = info.eval;
         const colors = [0xef4444, 0x3b82f6, 0x22c55e, 0xfbbf24, 0xa78bfa, 0xf97316];
         for (let i = 0; i < 6; i++) {
           const cc1 = c1 + (i - 2) * 0.5;
@@ -101,7 +166,7 @@ export function FormationDEVisual() {
           const pts: THREE.Vector3[] = [];
           for (let j = 0; j <= 200; j++) {
             const x = -8 + (j / 200) * 16;
-            const y = cc1 * Math.exp(x) + cc2 * Math.exp(-x);
+            const y = curveFn(x, cc1, cc2);
             if (isFinite(y) && Math.abs(y) < 12) {
               pts.push(new THREE.Vector3(x, y, 0.02));
             }
@@ -113,19 +178,20 @@ export function FormationDEVisual() {
         const mainPts: THREE.Vector3[] = [];
         for (let j = 0; j <= 200; j++) {
           const x = -8 + (j / 200) * 16;
-          const y = c1 * Math.exp(x) + c2 * Math.exp(-x);
+          const y = curveFn(x, c1, c2);
           if (isFinite(y) && Math.abs(y) < 12) {
             mainPts.push(new THREE.Vector3(x, y, 0.05));
           }
         }
         push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(mainPts), new THREE.LineBasicMaterial({ color: 0x22d3ee, linewidth: 3 })));
 
-        push(mkSprite(`y = c₁eˣ + c₂e⁻ˣ   →   y'' - y = 0`, "#fbbf24", new THREE.Vector3(0, 8.5, 0), 0.85));
-        push(mkSprite(`2 arbitrary constants → 2nd order DE`, "#a78bfa", new THREE.Vector3(0, 7.5, 0), 0.75));
-        push(mkSprite(`c₁=${c1.toFixed(1)}, c₂=${c2.toFixed(1)}`, "#7dd3fc", new THREE.Vector3(-7, -8.5, 0), 0.7));
+        labelSprites.push(push(mkSprite(`${info.general}   →   ${info.de}`, "#fbbf24", new THREE.Vector3(0, 8.5, 0), 0.85)));
+        labelSprites.push(push(mkSprite(`2 arbitrary constants → 2nd order DE`, "#a78bfa", new THREE.Vector3(0, 7.5, 0), 0.75)));
+        labelSprites.push(push(mkSprite(`c₁=${c1.toFixed(1)}, c₂=${c2.toFixed(1)}`, "#7dd3fc", new THREE.Vector3(-7, -8.5, 0), 0.7)));
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -163,7 +229,7 @@ export function FormationDEVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [c1, c2, isWebGL]);
+  }, [family, c1, c2, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Formation of DE" description="Family of curves — requires WebGL." />;
@@ -178,6 +244,30 @@ export function FormationDEVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-violet-500/50 bg-violet-500/10 text-violet-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
+        <CollapsibleControls label="General Solution (curve family)">
+          <div className="flex flex-wrap gap-2 mt-2">
+            {(["exp-pm", "trig", "exp-23", "lines"] as DeFamily[]).map((fam) => (
+              <button
+                key={fam}
+                onClick={() => setFamily(fam)}
+                className={`px-3 py-1.5 rounded-md text-xs font-medium transition-colors ${
+                  family === fam ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"
+                }`}
+              >
+                {FORM_INFO[fam].de}
+              </button>
+            ))}
+          </div>
+        </CollapsibleControls>
+
         <CollapsibleControls label="Constants (family of curves)">
           <div className="flex gap-3 mt-2">
             <div className="w-16"><Label className="text-xs text-muted-foreground">c₁:</Label><Input type="number" step="0.5" value={c1} onChange={(e) => setC1(Number(e.target.value))} className="mt-1" /></div>
@@ -189,13 +279,25 @@ export function FormationDEVisual() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <ReadoutGrid
+          items={[
+            { label: "Family of curves", value: info.general },
+            { label: "First derivative", value: info.d1 },
+            { label: "Second derivative", value: info.d2 },
+            { label: "Formed DE", value: info.de, highlight: true },
+            { label: `Particular curve (c₁=${c1.toFixed(1)}, c₂=${c2.toFixed(1)})`, value: `y(0) = ${fmtD(info.eval(0, c1, c2))}, y′(0) = ${fmtD(info.d1eval(0, c1, c2))}` },
+            { label: "Elimination", value: info.note },
+          ]}
+        />
+
         <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
-          <p className="text-xs font-semibold uppercase tracking-wide text-violet-400">Key Idea</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-violet-400">Key Idea · {info.general}</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">
             <p><strong className="text-foreground">Rule:</strong> To eliminate n arbitrary constants, differentiate n times to get n+1 equations, then eliminate constants.</p>
-            <p><strong className="text-foreground">Example:</strong> y = c₁eˣ + c₂e⁻ˣ → y' = c₁eˣ − c₂e⁻ˣ → y'' = c₁eˣ + c₂e⁻ˣ → y'' = y → <strong className="text-foreground">y'' − y = 0</strong></p>
+            <p><strong className="text-foreground">Example:</strong> {info.general} → {info.d1} → {info.d2} → <strong className="text-foreground">{info.de}</strong></p>
             <p><strong className="text-foreground">Order of DE</strong> = number of arbitrary constants eliminated</p>
             <p><strong className="text-foreground">Each curve</strong> in the family corresponds to specific values of c₁, c₂.</p>
+            <p><strong className="text-foreground">Note:</strong> {info.note}</p>
           </div>
         </div>
       </CardContent>

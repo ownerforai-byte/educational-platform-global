@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
@@ -30,13 +31,35 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
+const LOG_STEPS: { title: string; math: string; note: string }[] = [
+  { title: "Take ln of both sides", math: "ln y = x·ln x", note: "ln turns the variable exponent x into a product — the whole point of the method" },
+  { title: "Differentiate implicitly", math: "y'/y = 1 + ln x", note: "d/dx[x·ln x] = 1·ln x + x·(1/x) = ln x + 1 by the product rule" },
+  { title: "Solve for y'", math: "y' = x^x·(1 + ln x)", note: "Multiply both sides by y, then substitute y = x^x back in" },
+  { title: "Verify numerically", math: "at x = 2: y' = 4·(1 + ln 2) ≈ 6.77", note: "Matches the difference quotient ((2.001^2.001 − 2^2)/0.001 ≈ 6.78)" },
+];
+
 export function DerivativeLogarithmic3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [step, setStep] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
-  const totalSteps = 4;
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+  const totalSteps = LOG_STEPS.length;
 
+  const currentStep = LOG_STEPS[step] ?? LOG_STEPS[0];
+
+  const presets: ScenePreset[] = LOG_STEPS.map((s, i) => ({
+    name: `Step ${i + 1}: ${s.title}`,
+    hint: s.math,
+    apply: () => { setStep(i); setRunId((r) => r + 1); },
+  }));
+
+  const resetAll = () => {
+    setStep(0);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     const container = containerRef.current;
@@ -47,6 +70,7 @@ export function DerivativeLogarithmic3D() {
     let frameId: number;
     let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -65,26 +89,24 @@ export function DerivativeLogarithmic3D() {
       controls.enableDamping = true;
       controls.minDistance = 5;
       controls.maxDistance = 25;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on && (s.userData.gate ?? true))) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const pushLabel = (text: string, color: string, pos: THREE.Vector3, gate = true, scale = 1.0) => {
+        const s = push(mkSprite(text, color, pos, scale));
+        s.userData.gate = gate;
+        labelSprites.push(s);
+        return s;
+      };
 
-      push(mkSprite("Logarithmic Differentiation", "#a78bfa", new THREE.Vector3(0, 4.5, 0)));
-      push(mkSprite("Example: y = x^x", "#60a5fa", new THREE.Vector3(-3.5, 3.8, 0)));
-      const step1Label = mkSprite("Step 1: ln(y) = x.ln(x)", "#f59e0b", new THREE.Vector3(-3.5, 2.8, 0));
-      step1Label.visible = step >= 0;
-      push(step1Label);
-      const step2Label = mkSprite("Step 2: (1/y).y = ln(x)+1", "#34d399", new THREE.Vector3(-3.5, 1.8, 0));
-      step2Label.visible = step >= 1;
-      push(step2Label);
-      const step3Label = mkSprite("Step 3: y = x^x(ln(x)+1)", "#ec4899", new THREE.Vector3(-3.5, 0.8, 0));
-      step3Label.visible = step >= 2;
-      push(step3Label);
-      const step4Label = mkSprite("Step 4: Verify numerically", "#60a5fa", new THREE.Vector3(-3.5, -0.2, 0));
-      step4Label.visible = step >= 3;
-      push(step4Label);
+      pushLabel("Logarithmic Differentiation", "#a78bfa", new THREE.Vector3(0, 4.5, 0));
+      pushLabel("Example: y = x^x", "#60a5fa", new THREE.Vector3(-3.5, 3.8, 0));
+      pushLabel("Step 1: ln(y) = x·ln(x)", "#f59e0b", new THREE.Vector3(-3.5, 2.8, 0), step >= 0);
+      pushLabel("Step 2: (1/y)·y' = ln(x)+1", "#34d399", new THREE.Vector3(-3.5, 1.8, 0), step >= 1);
+      pushLabel("Step 3: y' = x^x·(ln(x)+1)", "#ec4899", new THREE.Vector3(-3.5, 0.8, 0), step >= 2);
+      pushLabel("Step 4: Verify numerically", "#60a5fa", new THREE.Vector3(-3.5, -0.2, 0), step >= 3);
 
       const yPts: THREE.Vector3[] = [];
       const dyPts: THREE.Vector3[] = [];
@@ -101,14 +123,12 @@ export function DerivativeLogarithmic3D() {
       push(yCurve);
       push(dyCurve);
 
-      const legend1 = mkSprite("y = x^x", "#60a5fa", new THREE.Vector3(3, -1, 0), 0.7);
-      legend1.visible = step >= 3;
-      push(legend1);
-      const legend2 = mkSprite("y = x^x(ln x + 1)", "#34d399", new THREE.Vector3(3, -1.8, 0), 0.7);
-      legend2.visible = step >= 3;
-      push(legend2);
+      pushLabel("y = x^x", "#60a5fa", new THREE.Vector3(3, -1, 0), step >= 3, 0.7);
+      pushLabel("y' = x^x(ln x + 1)", "#34d399", new THREE.Vector3(3, -1.8, 0), step >= 3, 0.7);
 
-      push(mkSprite("Key: ln(a^b) = b.ln(a)", "#a78bfa", new THREE.Vector3(0, -3.2, 0)));
+      pushLabel("Key: ln(a^b) = b·ln(a)", "#a78bfa", new THREE.Vector3(0, -3.2, 0));
+
+      labelSprites.forEach((s) => (s.visible = showLabels && (s.userData.gate ?? true)));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -138,7 +158,7 @@ export function DerivativeLogarithmic3D() {
 
     const cleanupPromise = cleanup();
     return () => { cleanupPromise.then((d) => d?.()); };
-  }, [step, isWebGL]);
+  }, [step, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Logarithmic Differentiation" description="ln both sides visualization — requires WebGL." />;
@@ -153,6 +173,14 @@ export function DerivativeLogarithmic3D() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-indigo-500/50 bg-indigo-500/10 text-indigo-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Solution Steps">
           <div className="flex flex-wrap gap-2 mt-2">
             {Array.from({ length: totalSteps }, (_, i) => (
@@ -167,13 +195,23 @@ export function DerivativeLogarithmic3D() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <ReadoutGrid
+          items={[
+            { label: "Function", value: "y = x^x — base and exponent both vary" },
+            { label: "Step " + (step + 1) + ": " + currentStep.title, value: currentStep.math, highlight: true },
+            { label: "Why it works", value: currentStep.note },
+            { label: "Final result", value: "y' = x^x·(1 + ln x)" },
+            { label: "Built on", value: "d/dx[ln x] = 1/x and ln(a^b) = b·ln a" },
+          ]}
+        />
+
         <div className="rounded-lg border border-indigo-500/30 bg-indigo-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-indigo-400">Logarithmic Differentiation</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">
             <p><strong className="text-foreground">When to use:</strong> Functions like y = x^x where both base and exponent vary.</p>
-            <p><strong className="text-foreground">Step 1:</strong> Take ln of both sides: ln(y) = g(x).ln(f(x))</p>
-            <p><strong className="text-foreground">Step 2:</strong> Differentiate implicitly: y/y = derivative</p>
-            <p><strong className="text-foreground">Step 3:</strong> Solve: y = y . [derivative]</p>
+            <p><strong className="text-foreground">Step 1:</strong> Take ln of both sides: ln(y) = g(x)·ln(f(x))</p>
+            <p><strong className="text-foreground">Step 2:</strong> Differentiate implicitly: y&apos;/y = derivative of g·ln f</p>
+            <p><strong className="text-foreground">Step 3:</strong> Solve: y&apos; = y·[derivative]</p>
           </div>
         </div>
       </CardContent>

@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -38,11 +39,59 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 type ProteinLevel = "primary" | "secondary" | "tertiary" | "quaternary";
 
+const LEVEL_INFO: Record<ProteinLevel, { shape: string; bonds: string; example: string; fact: string; tip: string }> = {
+  primary: {
+    shape: "Linear chain, N-terminus → C-terminus",
+    bonds: "Peptide bonds (—CO—NH—), covalent",
+    example: "Lysozyme: exactly 129 amino acids in one defined order",
+    fact: "Sickle-cell anaemia is one changed residue (Glu→Val) in the primary structure",
+    tip: "Primary structure is the only level defined purely by the gene's DNA sequence",
+  },
+  secondary: {
+    shape: "Local folds: α-helix / β-pleated sheet",
+    bonds: "H-bonds between backbone C=O and N-H groups",
+    example: "α-keratin in hair · β-sheets in silk fibroin",
+    fact: "α-helix has 3.6 residues per turn — each H-bond closes a 13-atom ring",
+    tip: "Secondary-level H-bonds involve the BACKBONE, not the R-group side chains",
+  },
+  tertiary: {
+    shape: "Whole 3D globular fold of one chain",
+    bonds: "R-group interactions: H-bonds, ionic, hydrophobic, disulfide (S-S)",
+    example: "Myoglobin — one globular chain that stores O₂ in muscle",
+    fact: "Hydrophobic residues bury themselves inside; polar ones face the water",
+    tip: "Denaturation destroys tertiary shape and function — the primary sequence stays intact",
+  },
+  quaternary: {
+    shape: "Assembly of ≥2 polypeptide subunits",
+    bonds: "Same interactions as tertiary, but between separate chains",
+    example: "Haemoglobin: 2α + 2β subunits, each carrying a haem group",
+    fact: "Cooperativity: O₂ binding to one subunit reshapes the others",
+    tip: "Only proteins with two or more chains have quaternary structure",
+  },
+};
+
 export function ProteinStructureVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [level, setLevel] = useState<ProteinLevel>("primary");
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const info = LEVEL_INFO[level];
+
+  const presets: ScenePreset[] = [
+    { name: "Primary — the sequence", hint: "Peptide-bonded chain", apply: () => { setLevel("primary"); setRunId((r) => r + 1); } },
+    { name: "Secondary — α-helix", hint: "Backbone H-bonds", apply: () => { setLevel("secondary"); setRunId((r) => r + 1); } },
+    { name: "Tertiary — the fold", hint: "R-group interactions", apply: () => { setLevel("tertiary"); setRunId((r) => r + 1); } },
+    { name: "Quaternary — subunits", hint: "Haemoglobin-style assembly", apply: () => { setLevel("quaternary"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setLevel("primary");
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -52,6 +101,7 @@ export function ProteinStructureVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelObjs: THREE.Object3D[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -72,7 +122,7 @@ export function ProteinStructureVisual() {
       controls.autoRotateSpeed = 0.3;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelObjs.forEach((o) => (o.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -80,6 +130,7 @@ export function ProteinStructureVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addHidden = <T extends THREE.Object3D>(o: T): T => { push(o); labelObjs.push(o); return o; };
 
       const updateScene = () => {
         while (meshes.length > 10) {
@@ -105,7 +156,7 @@ export function ProteinStructureVisual() {
             sphere.position.set(x, 0, 0);
 
             // Amino acid label
-            push(mkSprite(aaName, `#${colors[i].toString(16).padStart(6, "0")}`, new THREE.Vector3(x, 0.6, 0), 0.55));
+            addHidden(mkSprite(aaName, `#${colors[i].toString(16).padStart(6, "0")}`, new THREE.Vector3(x, 0.6, 0), 0.55));
 
             // Peptide bond indicator
             if (i < aa.length - 1) {
@@ -123,14 +174,14 @@ export function ProteinStructureVisual() {
               const pbTarget = new THREE.Vector3(midX, 0, 0);
               const pbDir = pbTarget.clone().sub(pbLabel).normalize();
               const pbLen = pbLabel.distanceTo(pbTarget);
-              push(new LiveLeaderLine(pbDir, pbLabel, pbLen * 0.7, 0xfbbf24, 0.25, 0.12));
-              push(mkSprite("Peptide bond (—CO—NH—)", "#fbbf24", pbLabel.clone().sub(pbDir.multiplyScalar(0.5)), 0.6));
+              addHidden(new LiveLeaderLine(pbDir, pbLabel, pbLen * 0.7, 0xfbbf24, 0.25, 0.12));
+              addHidden(mkSprite("Peptide bond (—CO—NH—)", "#fbbf24", pbLabel.clone().sub(pbDir.clone().multiplyScalar(0.5)), 0.6));
             }
           });
 
           // N-terminal and C-terminal labels
-          push(mkSprite("N-terminus (NH₂)", "#7dd3fc", new THREE.Vector3(-4, -0.8, 0), 0.55));
-          push(mkSprite("C-terminus (COOH)", "#fb923c", new THREE.Vector3(4, -0.8, 0), 0.55));
+          addHidden(mkSprite("N-terminus (NH₂)", "#7dd3fc", new THREE.Vector3(-4, -0.8, 0), 0.55));
+          addHidden(mkSprite("C-terminus (COOH)", "#fb923c", new THREE.Vector3(4, -0.8, 0), 0.55));
         }
         else if (level === "secondary") {
           // Alpha helix (simplified)
@@ -179,8 +230,8 @@ export function ProteinStructureVisual() {
           const hBondTarget = new THREE.Vector3(0.5, 0.5, 0);
           const hbDir = hBondTarget.clone().sub(hBondLabel).normalize();
           const hbLen = hBondLabel.distanceTo(hBondTarget);
-          push(new LiveLeaderLine(hbDir, hBondLabel, hbLen * 0.7, 0x22c55e, 0.25, 0.12));
-          push(mkSprite("H-bond: C=O···H-N (4 residues apart)", "#22c55e", hBondLabel.clone().sub(hbDir.multiplyScalar(0.5)), 0.65));
+          addHidden(new LiveLeaderLine(hbDir, hBondLabel, hbLen * 0.7, 0x22c55e, 0.25, 0.12));
+          addHidden(mkSprite("H-bond: C=O···H-N (4 residues apart)", "#22c55e", hBondLabel.clone().sub(hbDir.clone().multiplyScalar(0.5)), 0.65));
 
           push(mkSprite("α-helix: right-handed, 3.6 residues/turn", "#fbbf24", new THREE.Vector3(0, -2.8, 0), 0.65));
         }
@@ -223,8 +274,8 @@ export function ProteinStructureVisual() {
           const disulfideTarget = new THREE.Vector3(-0.75, 0.0, 0.15);
           const dsDir = disulfideTarget.clone().sub(disulfideLabel).normalize();
           const dsLen = disulfideLabel.distanceTo(disulfideTarget);
-          push(new LiveLeaderLine(dsDir, disulfideLabel, dsLen * 0.6, 0xfbbf24, 0.25, 0.12));
-          push(mkSprite("Disulfide bridge (S-S) stabilizes tertiary structure", "#fbbf24", disulfideLabel.clone().sub(dsDir.multiplyScalar(0.5)), 0.6));
+          addHidden(new LiveLeaderLine(dsDir, disulfideLabel, dsLen * 0.6, 0xfbbf24, 0.25, 0.12));
+          addHidden(mkSprite("Disulfide bridge (S-S) stabilizes tertiary structure", "#fbbf24", disulfideLabel.clone().sub(dsDir.clone().multiplyScalar(0.5)), 0.6));
 
           push(mkSprite("Tertiary: 3D folding via H-bonds, ionic, hydrophobic, disulfide", "#7dd3fc", new THREE.Vector3(0, -2.8, 0), 0.6));
         }
@@ -243,7 +294,7 @@ export function ProteinStructureVisual() {
               new THREE.MeshPhongMaterial({ color: sub.color, emissive: sub.color, emissiveIntensity: 0.15, transparent: true, opacity: 0.7 }),
             ));
             sphere.position.copy(sub.center);
-            push(mkSprite(sub.name + " subunit", `#${sub.color.toString(16).padStart(6, "0")}`, sub.center.clone().add(new THREE.Vector3(0, 0.9, 0)), 0.6));
+            addHidden(mkSprite(sub.name + " subunit", `#${sub.color.toString(16).padStart(6, "0")}`, sub.center.clone().add(new THREE.Vector3(0, 0.9, 0)), 0.6));
           });
 
           // Interaction lines between subunits
@@ -265,12 +316,13 @@ export function ProteinStructureVisual() {
           const qTarget = new THREE.Vector3(0, 0, 0);
           const qDir = qTarget.clone().sub(qLabel).normalize();
           const qLen = qLabel.distanceTo(qTarget);
-          push(new LiveLeaderLine(qDir, qLabel, qLen * 0.7, 0xa855f7, 0.25, 0.12));
-          push(mkSprite("Subunit interactions: H-bonds, ionic, hydrophobic", "#a855f7", qLabel.clone().sub(qDir.multiplyScalar(0.5)), 0.65));
+          addHidden(new LiveLeaderLine(qDir, qLabel, qLen * 0.7, 0xa855f7, 0.25, 0.12));
+          addHidden(mkSprite("Subunit interactions: H-bonds, ionic, hydrophobic", "#a855f7", qLabel.clone().sub(qDir.clone().multiplyScalar(0.5)), 0.65));
         }
       };
 
       updateScene();
+      labelObjs.forEach((o) => (o.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -308,7 +360,7 @@ export function ProteinStructureVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [level, isWebGL]);
+  }, [level, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Protein Structure" description="Protein folding levels — requires WebGL." />;
@@ -323,6 +375,14 @@ export function ProteinStructureVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-pink-500/50 bg-pink-500/10 text-pink-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Structural Level">
           <div className="flex flex-wrap gap-2 mt-1">
             {([
@@ -347,6 +407,16 @@ export function ProteinStructureVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Level shown", value: info.shape, highlight: true },
+            { label: "Bonds at this level", value: info.bonds },
+            { label: "Classic example", value: info.example },
+            { label: "Reality check", value: info.fact },
+            { label: "Exam tip", value: info.tip },
+          ]}
+        />
 
         <div className="rounded-lg border border-pink-500/30 bg-pink-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-pink-400">Protein Structure Levels</p>

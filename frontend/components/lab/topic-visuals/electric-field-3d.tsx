@@ -8,6 +8,12 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  PlaybackBar,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -39,7 +45,53 @@ export function ElectricFieldVisual() {
   const [chargeType, setChargeType] = useState<"positive" | "negative">("positive");
   const [chargeMag, setChargeMag] = useState(5);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [animating, setAnimating] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  const [showLabels, setShowLabels] = useState(true);
+  const [showField, setShowField] = useState(true);
+  const [runId, setRunId] = useState(0);
+  // Speed lives in a ref so changing it never tears down the WebGL scene.
+  const speedRef = useRef(1);
+  speedRef.current = speed;
 
+  const isPos = chargeType === "positive";
+  const qSigned = isPos ? chargeMag : -chargeMag; // μC
+  const eAt = (r: number) => (9e3 * Math.abs(qSigned)) / (r * r); // N/C
+  const vAt = (r: number) => (9e3 * qSigned) / r; // V
+
+  const DEFAULTS = { chargeType: "positive" as const, chargeMag: 5 };
+  const presets: ScenePreset[] = [
+    {
+      name: "Standard +5 μC",
+      hint: "Default positive point charge — field lines radiate outward.",
+      apply: () => { setChargeType("positive"); setChargeMag(5); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Strong +10 μC",
+      hint: "Double the charge — double the field at every distance.",
+      apply: () => { setChargeType("positive"); setChargeMag(10); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Weak −2 μC",
+      hint: "Small negative charge — field lines point inward, weak E.",
+      apply: () => { setChargeType("negative"); setChargeMag(2); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Strong −8 μC",
+      hint: "Large negative charge — strong inward field, negative potential.",
+      apply: () => { setChargeType("negative"); setChargeMag(8); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setChargeType(DEFAULTS.chargeType);
+    setChargeMag(DEFAULTS.chargeMag);
+    setSpeed(1);
+    setShowLabels(true);
+    setShowField(true);
+    setAnimating(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     const container = containerRef.current;
@@ -50,6 +102,8 @@ export function ElectricFieldVisual() {
     let frameId: number;
     let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
+    const fieldObjs: THREE.Object3D[] = [];
     let fieldParticle: THREE.Mesh;
 
     const init = async () => {
@@ -70,7 +124,12 @@ export function ElectricFieldVisual() {
       controls.autoRotate = false;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -78,16 +137,18 @@ export function ElectricFieldVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { s.visible = showLabels; push(s); labelSprites.push(s); return s; };
+      const addField = <T extends THREE.Object3D>(o: T): T => { o.visible = showField; push(o); fieldObjs.push(o); return o; };
 
-      const isPos = chargeType === "positive";
-      const chargeColor = isPos ? 0xef4444 : 0x3b82f6;
+      const isPosCharge = chargeType === "positive";
+      const chargeColor = isPosCharge ? 0xef4444 : 0x3b82f6;
 
       // Central charge
       const chargeMesh = push(new THREE.Mesh(
         new THREE.SphereGeometry(0.4, 24, 24),
         new THREE.MeshBasicMaterial({ color: chargeColor }),
       )) as THREE.Mesh;
-      push(mkSprite(isPos ? "+q" : "−q", isPos ? "#ef4444" : "#3b82f6", new THREE.Vector3(0, 1.2, 0), 0.8));
+      addLabel(mkSprite(isPosCharge ? "+q" : "−q", isPosCharge ? "#ef4444" : "#3b82f6", new THREE.Vector3(0, 1.2, 0), 0.8));
       fieldParticle = push(new THREE.Mesh(
         new THREE.SphereGeometry(0.12, 12, 12),
         new THREE.MeshBasicMaterial({ color: 0x22d3ee }),
@@ -107,12 +168,11 @@ export function ElectricFieldVisual() {
           const z = r * Math.sin(phi) * Math.sin(theta);
           pts.push(new THREE.Vector3(x, y, z));
         }
-        const line = push(new THREE.Line(
+        const line = addField(new THREE.Line(
           new THREE.BufferGeometry().setFromPoints(pts),
           new THREE.LineBasicMaterial({ color: 0xfbbf24, transparent: true, opacity: 0.6 }),
         )) as THREE.Line;
         fieldLines.push(line);
-        meshes.push(line);
       }
 
       // Arrow heads on field lines (pointing outward for +q, inward for -q)
@@ -122,15 +182,14 @@ export function ElectricFieldVisual() {
         const midPt = new THREE.Vector3(positions.getX(midIdx), positions.getY(midIdx), positions.getZ(midIdx));
         const nextPt = new THREE.Vector3(positions.getX(midIdx + 1), positions.getY(midIdx + 1), positions.getZ(midIdx + 1));
         const dir = nextPt.clone().sub(midPt).normalize();
-        if (!isPos) dir.negate();
-        const arrowHead = push(new THREE.Mesh(
+        if (!isPosCharge) dir.negate();
+        const arrowHead = addField(new THREE.Mesh(
           new THREE.ConeGeometry(0.1, 0.3, 8),
           new THREE.MeshBasicMaterial({ color: 0xfbbf24 }),
         )) as THREE.Mesh;
         arrowHead.position.copy(midPt);
         arrowHead.quaternion.setFromUnitVectors(new THREE.Vector3(0, 1, 0), dir);
         fieldLines.push(arrowHead as any);
-        meshes.push(arrowHead);
       });
 
       // Long arrow labels
@@ -138,19 +197,19 @@ export function ElectricFieldVisual() {
       const ETarget = new THREE.Vector3(2, 0, 0);
       const EDir = ETarget.clone().sub(ELabelPos).normalize();
       push(new LiveLeaderLine(EDir, ELabelPos, ELabelPos.distanceTo(ETarget) * 0.9, 0x22d3ee, 0.15, 0.1));
-      push(mkSprite("E (field direction)", "#22d3ee", ELabelPos.clone().sub(EDir.multiplyScalar(0.5)), 0.8));
+      addLabel(mkSprite("E (field direction)", "#22d3ee", ELabelPos.clone().sub(EDir.multiplyScalar(0.5)), 0.8));
 
       const RLabelPos = new THREE.Vector3(-4.5, 0, 0);
       const RTarget = new THREE.Vector3(-2, 0, 0);
       const RDir = RTarget.clone().sub(RLabelPos).normalize();
       push(new LiveLeaderLine(RDir, RLabelPos, RLabelPos.distanceTo(RTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
-      push(mkSprite("r (distance from charge)", "#a78bfa", RLabelPos.clone().sub(RDir.multiplyScalar(0.5)), 0.75));
+      addLabel(mkSprite("r (distance from charge)", "#a78bfa", RLabelPos.clone().sub(RDir.multiplyScalar(0.5)), 0.75));
 
       const QLabelPos = new THREE.Vector3(0, -3.5, 0);
       const QTarget = new THREE.Vector3(0, 0, 0);
       const QDir = QTarget.clone().sub(QLabelPos).normalize();
       push(new LiveLeaderLine(QDir, QLabelPos, QLabelPos.distanceTo(QTarget) * 0.9, 0x34d399, 0.15, 0.1));
-      push(mkSprite(`q = ${chargeMag} μC`, "#34d399", QLabelPos.clone().sub(QDir.multiplyScalar(0.5)), 0.8));
+      addLabel(mkSprite(`q = ${chargeMag} μC`, "#34d399", QLabelPos.clone().sub(QDir.multiplyScalar(0.5)), 0.8));
 
       // Equipotential sphere (dashed)
       const equipotPts: THREE.Vector3[] = [];
@@ -160,7 +219,7 @@ export function ElectricFieldVisual() {
       }
       push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(equipotPts), new THREE.LineDashedMaterial({ color: 0x64748b, dashSize: 0.2, gapSize: 0.15 })));
       (meshes[meshes.length - 1] as any).computeLineDistances();
-      push(mkSprite("Equipotential surface", "#64748b", new THREE.Vector3(3.2, 0.5, 0), 0.65));
+      addLabel(mkSprite("Equipotential surface", "#64748b", new THREE.Vector3(3.2, 0.5, 0), 0.65));
 
       const update = () => {
         while (meshes.length > 80) {
@@ -177,11 +236,13 @@ export function ElectricFieldVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
-        animTime += 0.02;
-        if (fieldParticle) {
-          const angle = animTime * 2;
-          const r = 1.5 + Math.sin(animTime) * 0.5;
-          fieldParticle.position.set(r * Math.cos(angle), r * Math.sin(angle), 0);
+        if (animating) {
+          animTime += 0.02 * speedRef.current;
+          if (fieldParticle) {
+            const angle = animTime * 2;
+            const r = 1.5 + Math.sin(animTime) * 0.5;
+            fieldParticle.position.set(r * Math.cos(angle), r * Math.sin(angle), 0);
+          }
         }
         renderer.render(scene, camera);
       };
@@ -217,7 +278,7 @@ export function ElectricFieldVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [chargeType, chargeMag, isWebGL]);
+  }, [chargeType, chargeMag, isWebGL, animating, runId, showLabels, showField]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Electric Field" description="Point charge with radial electric field arrows." />;
@@ -260,9 +321,44 @@ export function ElectricFieldVisual() {
           </div>
         </CollapsibleControls>
 
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <PlaybackBar
+            playing={animating}
+            onPlayToggle={() => setAnimating(!animating)}
+            speed={speed}
+            onSpeedChange={setSpeed}
+            onReset={resetAll}
+          />
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-primary/50 bg-primary/10 text-primary" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Labels
+            </button>
+            <button
+              onClick={() => setShowField((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showField ? "border-yellow-500/50 bg-yellow-500/10 text-yellow-400" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Field lines
+            </button>
+          </div>
+        </div>
+
+        <ScenePresets presets={presets} />
+
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "E at r = 1 m", value: eAt(1).toFixed(0), unit: "N/C", highlight: true },
+            { label: "E at r = 2 m", value: eAt(2).toFixed(0), unit: "N/C" },
+            { label: "V at r = 2 m", value: vAt(2).toFixed(0), unit: "V" },
+            { label: "Field direction", value: isPos ? "Outward (+q)" : "Inward (−q)" },
+          ]}
+        />
 
         <div className="rounded-lg border border-yellow-500/30 bg-yellow-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-yellow-400">Key Concepts</p>

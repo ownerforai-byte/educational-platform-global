@@ -50,7 +50,7 @@ const VALID_TOKEN = "valid-access-token";
 
 function makeQueryChain(result: { data: unknown; error: unknown }) {
   const chain: Record<string, unknown> = {};
-  for (const method of ["select", "eq", "order", "single", "maybeSingle", "limit", "upsert"]) {
+  for (const method of ["select", "eq", "order", "single", "maybeSingle", "limit", "upsert", "update", "insert", "delete"]) {
     chain[method] = () => chain;
   }
   chain.then = (

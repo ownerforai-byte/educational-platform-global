@@ -2,6 +2,7 @@
 
 import React, { useCallback, useMemo, useRef, useState } from "react";
 import { matchConceptSchematic } from "@/components/lab/schematic-concepts";
+import { getUnitConcept } from "@/lib/visual-concept-map";
 
 export interface DiagramAnnotation {
   id: string;
@@ -85,6 +86,19 @@ export function SchematicDiagram({
         specific: true,
         annotations: concept.annotations,
         renderSvg: concept.renderSvg,
+      };
+    }
+
+    // Unit concept registry: every syllabus unit carries its own annotated
+    // schematic, so a topic never falls back to the generic drawing unless
+    // its unit is genuinely unauthored.
+    const unitConcept = getUnitConcept(unitId, topicSlug, topicTitle);
+    if (unitConcept) {
+      return {
+        viewBox: sharedViewBox,
+        specific: true,
+        annotations: unitConcept.annotations,
+        renderSvg: unitConcept.renderSvg,
       };
     }
 

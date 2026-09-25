@@ -5,6 +5,7 @@ import {
   signInWithPassword,
   signUp,
   signOut,
+  AuthProviderError,
 } from "../auth/supabase";
 import {
   SESSION_COOKIE,
@@ -65,18 +66,38 @@ async function resolveSessionUser(userId: string, email: string): Promise<Sessio
   return buildSessionUser(userId, email, role);
 }
 
-async function buildExtendedUser(userId: string, email: string, role: string | null): Promise<ExtendedSessionUser> {
+async function buildExtendedUser(
+  userId: string,
+  email: string,
+  role: string | null,
+  fullName?: string | null,
+): Promise<ExtendedSessionUser> {
   const isOwner = isOwnerEmail(email) || role === "OWNER";
+
+  // Persist the display name on signup/first login (the profiles trigger only
+  // copies it from raw_user_meta_data; refresh flows may not have it).
+  if (typeof fullName === "string" && fullName.trim().length > 0) {
+    await supabaseAdmin
+      .from("profiles")
+      .update({ full_name: fullName.trim() })
+      .eq("id", userId);
+  }
+
   const profile = await supabaseAdmin
     .from("profiles")
-    .select("credits, credits_limit, premium_status, premium_approved_at")
+    .select("full_name, credits, credits_limit, premium_status, premium_approved_at")
     .eq("id", userId)
     .maybeSingle();
+
+  const persistedName =
+    typeof profile?.data?.full_name === "string" && profile.data.full_name.trim()
+      ? profile.data.full_name.trim()
+      : null;
 
   return {
     id: userId,
     email,
-    fullName: null,
+    fullName: fullName ?? persistedName,
     role: isOwner ? "OWNER" : ((role as ExtendedSessionUser["role"]) ?? null),
     credits: isOwner ? 999999 : (profile?.data?.credits ?? 0),
     creditsLimit: isOwner ? 999999 : (profile?.data?.credits_limit ?? 100),
@@ -132,30 +153,49 @@ router.post("/signup", async (req: Request, res: Response) => {
     return;
   }
 
-  const result = await signUp(parsed.data);
+  try {
+    const result = await signUp(parsed.data);
 
-  if (result.error) {
-    res.status(400).json({ error: "Something went wrong. Please try again." });
-    return;
+    if (result.error) {
+      res.status(400).json({ error: "Something went wrong. Please try again." });
+      return;
+    }
+
+    if (result.needsEmailConfirmation || !result.user || !result.session) {
+      const body: SignupResponse = {
+        user: null,
+        accessToken: null,
+        message: "Check your email to confirm your account before logging in.",
+      };
+      res.status(202).json(body);
+      return;
+    }
+
+    const user = await resolveSessionUser(result.user.id, result.user.email);
+    const extended = await buildExtendedUser(
+      user.id,
+      user.email,
+      user.role,
+      parsed.data.fullName ?? null,
+    );
+
+    setSessionCookie(res, result.session.access_token, result.session.expires_in);
+
+    const body: SignupResponse = { user: extended, accessToken: result.session.access_token };
+    res.json(body);
+  } catch (err) {
+    if (err instanceof AuthProviderError) {
+      const tooMany = err.code === "over_email_send_rate_limit" || err.status === 429;
+      res.status(err.status === 429 ? 429 : err.status || 400).json({
+        error: tooMany
+          ? "Too many signup attempts right now — please wait a minute and try again."
+          : err.message,
+        code: err.code ?? undefined,
+      });
+      return;
+    }
+    throw err;
   }
-
-  if (result.needsEmailConfirmation || !result.user || !result.session) {
-    const body: SignupResponse = {
-      user: null,
-      accessToken: null,
-      message: "Check your email to confirm your account before logging in.",
-    };
-    res.status(202).json(body);
-    return;
-  }
-
-  const user = await resolveSessionUser(result.user.id, result.user.email);
-  const extended = await buildExtendedUser(user.id, user.email, user.role);
-
-  setSessionCookie(res, result.session.access_token, result.session.expires_in);
-
-  const body: SignupResponse = { user: extended, accessToken: result.session.access_token };
-  res.json(body);
 });
 
 /**

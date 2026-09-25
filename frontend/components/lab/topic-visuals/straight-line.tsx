@@ -9,6 +9,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, PlaybackBar, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 /* ============================================================
@@ -39,7 +40,45 @@ function mkLabel(text: string, color: string, x: number, y: number, scale = 1.0)
   return sprite;
 }
 
+function addLabel(scene: THREE.Scene, meshes: THREE.Object3D[], labelSprites: THREE.Sprite[], text: string, color: number, x: number, y: number, scale = 0.6) {
+  const s = mkLabel(text, `#${color.toString(16).padStart(6, "0")}`, x, y, scale);
+  scene.add(s);
+  meshes.push(s);
+  labelSprites.push(s);
+}
+
 type LineForm = "slope" | "intercept" | "two-point" | "general";
+
+const SL_INFO: Record<LineForm, { head: string; eq: string; slope: string; interceptNote: string; example: string }> = {
+  slope: {
+    head: "Slope–intercept form",
+    eq: "y = mx + c",
+    slope: "m = tan θ, the gradient (rise over run).",
+    interceptNote: "c is the y-intercept: the point (0, c).",
+    example: "y = 2x + 1 has slope 2 and crosses the y-axis at 1.",
+  },
+  intercept: {
+    head: "Intercept form",
+    eq: "x/a + y/b = 1",
+    slope: "m = −b/a.",
+    interceptNote: "a and b are the x- and y-intercepts.",
+    example: "x/3 + y/6 = 1 cuts the axes at (3, 0) and (0, 6).",
+  },
+  "two-point": {
+    head: "Two-point form",
+    eq: "y − y₁ = m(x − x₁),  m = (y₂ − y₁)/(x₂ − x₁)",
+    slope: "Slope from the two given points.",
+    interceptNote: "Vertical line (x₁ = x₂) has undefined slope: x = x₁.",
+    example: "Through (−1, 2) and (3, 4): m = 1/2, so y − 2 = ½(x + 1).",
+  },
+  general: {
+    head: "General form",
+    eq: "ax + by + c = 0",
+    slope: "m = −a/b  (b ≠ 0).",
+    interceptNote: "x-intercept −c/a, y-intercept −c/b.",
+    example: "2x − 3y + 6 = 0 → slope 2/3, y-intercept 2.",
+  },
+};
 
 export function StraightLineVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -55,6 +94,37 @@ export function StraightLineVisual() {
   const [b, setB] = useState(-2);
   const [cc, setCc] = useState(2);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+  const [playing, setPlaying] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  const speedRef = useRef(1);
+  const playingRef = useRef(true);
+
+  useEffect(() => { speedRef.current = speed; playingRef.current = playing; }, [speed, playing]);
+
+  const info = SL_INFO[form];
+
+  const defaults = { m: 1, c: 0, x1: -2, y1: -1, x2: 2, y2: 3, a: 1, b: -2, cc: 2 };
+
+  const presets: ScenePreset[] = [
+    { name: "y = 2x − 3", hint: "Positive slope, negative y-intercept", apply: () => { setForm("slope"); setM(2); setC(-3); setRunId((r) => r + 1); } },
+    { name: "Horizontal y = 2", hint: "Zero slope: m = 0", apply: () => { setForm("slope"); setM(0); setC(2); setRunId((r) => r + 1); } },
+    { name: "Intercept x/4 + y/3 = 1", hint: "Cuts the axes at (4, 0) and (0, 3)", apply: () => { setForm("intercept"); setA(4); setB(3); setRunId((r) => r + 1); } },
+    { name: "Through (−2, −1) & (2, 3)", hint: "Two-point form: slope 1, intercept 1", apply: () => { setForm("two-point"); setX1(-2); setY1(-1); setX2(2); setY2(3); setRunId((r) => r + 1); } },
+    { name: "General 2x − 3y + 6 = 0", hint: "Slope = −a/b = 2/3", apply: () => { setForm("general"); setA(2); setB(-3); setCc(6); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setForm("slope");
+    setM(defaults.m); setC(defaults.c);
+    setX1(defaults.x1); setY1(defaults.y1); setX2(defaults.x2); setY2(defaults.y2);
+    setA(defaults.a); setB(defaults.b); setCc(defaults.cc);
+    setShowLabels(true);
+    setPlaying(true);
+    setSpeed(1);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -66,7 +136,10 @@ export function StraightLineVisual() {
     let frameId: number;
     let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
     let movingPoint: THREE.Mesh;
+    const segA = new THREE.Vector2(-10, 0);
+    const segB = new THREE.Vector2(10, 0);
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -87,7 +160,7 @@ export function StraightLineVisual() {
       controls.enableZoom = true;
       controls.minDistance = 5;
       controls.maxDistance = 30;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
 
@@ -186,10 +259,14 @@ export function StraightLineVisual() {
         const lineMesh = push(new THREE.Line(lineGeo, new THREE.LineBasicMaterial({ color, linewidth: 3 })));
         lineMesh.userData.isLine = true;
 
+        // Endpoints of the drawn segment (used by the traveling point)
+        segA.set(pts[0][0], pts[0][1]);
+        segB.set(pts[1][0], pts[1][1]);
+
         // Slope triangle indicator
         const midX = (pts[0][0] + pts[1][0]) / 2;
         const midY = (pts[0][1] + pts[1][1]) / 2;
-        push(mkLabel(label, `#${color.toString(16).padStart(6, "0")}`, midX + 1.5, midY + 1, 0.6));
+        addLabel(scene, meshes, labelSprites, label, color, midX + 1.5, midY + 1, 0.6);
         (push(new THREE.Mesh(
           new THREE.SphereGeometry(0.12, 8, 8),
           new THREE.MeshBasicMaterial({ color: 0x22d3ee }),
@@ -198,19 +275,23 @@ export function StraightLineVisual() {
           new THREE.SphereGeometry(0.15, 12, 12),
           new THREE.MeshBasicMaterial({ color: 0xf97316 }),
         )) as THREE.Mesh;
+        movingPoint.position.set(midX, midY, 0.04);
         (meshes[meshes.length - 1] as any).userData.isLabel = false;
       };
 
       updateLine();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
-        animTime += 0.016;
-        const t = (Math.sin(animTime * 0.8) + 1) / 2;
-        if (movingPoint) {
-          movingPoint.position.x = -10 + t * 20;
-          movingPoint.position.y = m * movingPoint.position.x + c;
+        if (playingRef.current) {
+          animTime += 0.016 * speedRef.current;
+          const t = (Math.sin(animTime * 0.8) + 1) / 2;
+          if (movingPoint) {
+            movingPoint.position.x = segA.x + (segB.x - segA.x) * t;
+            movingPoint.position.y = segA.y + (segB.y - segA.y) * t;
+          }
         }
         renderer.render(scene, camera);
       };
@@ -245,7 +326,7 @@ export function StraightLineVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [form, m, c, a, b, cc, x1, y1, x2, y2, isWebGL]);
+  }, [form, m, c, a, b, cc, x1, y1, x2, y2, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Straight Line Visual" description="Interactive 2D line explorer — requires WebGL." />;
@@ -260,6 +341,14 @@ export function StraightLineVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-cyan-500/50 bg-cyan-500/10 text-cyan-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Line Form">
           <Tabs value={form} onValueChange={(v) => setForm(v as LineForm)}>
             <TabsList className="grid w-full grid-cols-4">
@@ -303,11 +392,41 @@ export function StraightLineVisual() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <PlaybackBar playing={playing} onPlayToggle={() => setPlaying((p) => !p)} speed={speed} onSpeedChange={setSpeed} onReset={resetAll} />
+
+        <ReadoutGrid
+          items={(() => {
+            let slope: number | null = null;
+            let yInt: number | null = null;
+            let xInt: number | null = null;
+            if (form === "slope") {
+              slope = m; yInt = c; xInt = m !== 0 ? -c / m : null;
+            } else if (form === "intercept") {
+              const aV = a || 1, bV = b || 1;
+              slope = -bV / aV; yInt = bV; xInt = aV;
+            } else if (form === "two-point") {
+              const dx = x2 - x1, dy = y2 - y1;
+              if (Math.abs(dx) < 1e-9) { xInt = x1; }
+              else { slope = dy / dx; yInt = y1 - slope * x1; xInt = slope !== 0 ? -yInt / slope : null; }
+            } else {
+              if (Math.abs(b) < 1e-9) { xInt = Math.abs(a) > 1e-9 ? -cc / a : null; }
+              else { slope = -a / b; yInt = -cc / b; xInt = Math.abs(a) > 1e-9 ? -cc / a : null; }
+            }
+            const angle = slope === null ? "90° (vertical)" : `${(Math.atan(slope) * 180 / Math.PI).toFixed(1)}°`;
+            return [
+              { label: "Form", value: `${info.head}: ${info.eq}`, highlight: true },
+              { label: "Slope m", value: slope === null ? "undefined (vertical)" : slope.toFixed(3) },
+              { label: "Inclination θ = tan⁻¹m", value: angle },
+              { label: "y-intercept", value: yInt === null ? "—" : `(0, ${yInt.toFixed(2)})` },
+              { label: "x-intercept", value: xInt === null ? "—" : `(${xInt.toFixed(2)}, 0)` },
+            ];
+          })()}
+        />
+
         <div className="rounded-lg border border-cyan-500/30 bg-cyan-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-cyan-500">Key Concepts</p>
           <ul className="mt-2 space-y-1.5 text-xs text-muted-foreground">
-            <li><strong className="text-foreground">Slope (m):</strong> Rise over run — steepness and direction of the line.</li>
-            <li><strong className="text-foreground">y-intercept (c):</strong> Where the line crosses the y-axis (x = 0).</li>
+            <li><strong className="text-foreground">{info.head}:</strong> {info.eq} — {info.slope} {info.interceptNote} Example: {info.example}</li>
             <li><strong className="text-foreground">Angle between two lines:</strong> tan θ = |(m₂ − m₁)/(1 + m₁m₂)|</li>
             <li><strong className="text-foreground">Perpendicular:</strong> m₁ · m₂ = −1</li>
             <li><strong className="text-foreground">Parallel:</strong> m₁ = m₂</li>

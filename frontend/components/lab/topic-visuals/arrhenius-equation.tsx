@@ -6,6 +6,11 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -42,7 +47,43 @@ export function ArrheniusEquationVisual() {
   const [Ea, setEa] = useState(50);
   const [isEndothermic, setIsEndothermic] = useState(true);
   const [hasCat, setHasCat] = useState(false);
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const EaCat = hasCat ? Math.round(Ea * 0.6) : Ea;
+
+  const DEFAULTS = { Ea: 50, isEndothermic: true, hasCat: false };
+  const presets: ScenePreset[] = [
+    {
+      name: "Slow (high Ea)",
+      hint: "A tall barrier — few collisions have enough energy, so k is small.",
+      apply: () => { setEa(120); setHasCat(false); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Fast (low Ea)",
+      hint: "A low barrier — most collisions succeed, so the reaction is fast.",
+      apply: () => { setEa(30); setHasCat(false); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Catalyzed",
+      hint: "Catalyst opens an alternative path with lower Ea — same ΔH, faster rate.",
+      apply: () => { setEa(80); setHasCat(true); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Exothermic",
+      hint: "Products sit below reactants — energy released as heat.",
+      apply: () => { setEa(50); setIsEndothermic(false); setHasCat(false); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setEa(DEFAULTS.Ea);
+    setIsEndothermic(DEFAULTS.isEndothermic);
+    setHasCat(DEFAULTS.hasCat);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -52,6 +93,7 @@ export function ArrheniusEquationVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -71,11 +113,12 @@ export function ArrheniusEquationVisual() {
       controls.autoRotate = false;
       controls.minDistance = 4;
       controls.maxDistance = 25;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
 
       const updateScene = () => {
         while (meshes.length > 8) {
@@ -85,6 +128,7 @@ export function ArrheniusEquationVisual() {
           else if (m instanceof THREE.Sprite) { (m.material as THREE.SpriteMaterial).map?.dispose?.(); m.material.dispose(); }
           else if (m instanceof THREE.Line) { m.geometry?.dispose(); (m.material as THREE.Material).dispose(); }
         }
+        labelSprites.length = 0;
 
         const ox = -6, oy = -3;
         const sx = 1.2, sy = 0.5;
@@ -92,8 +136,8 @@ export function ArrheniusEquationVisual() {
         // Axes
         push(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(ox, oy, 0), new THREE.Vector3(ox + sx * 10, oy, 0)]), new THREE.LineBasicMaterial({ color: 0x475569 })));
         push(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(ox, oy, 0), new THREE.Vector3(ox, oy + sy * 8, 0)]), new THREE.LineBasicMaterial({ color: 0x475569 })));
-        push(mkSprite("Reaction Coordinate", "#94a3b8", new THREE.Vector3(ox + sx * 10.5, oy - 0.3, 0), 0.6));
-        push(mkSprite("Energy (E)", "#94a3b8", new THREE.Vector3(ox - 0.5, oy + sy * 8.5, 0), 0.6));
+        addLabel(mkSprite("Reaction Coordinate", "#94a3b8", new THREE.Vector3(ox + sx * 10.5, oy - 0.3, 0), 0.6));
+        addLabel(mkSprite("Energy (E)", "#94a3b8", new THREE.Vector3(ox - 0.5, oy + sy * 8.5, 0), 0.6));
 
         const deltaH = isEndothermic ? 30 : -30;
         const EaCat = hasCat ? Ea * 0.6 : Ea;
@@ -127,7 +171,7 @@ export function ArrheniusEquationVisual() {
           new THREE.LineDashedMaterial({ color: 0x3b82f6, dashSize: 0.15, gapSize: 0.1 }),
         ) as any);
         ((meshes[meshes.length - 1] as any) as THREE.Line).computeLineDistances();
-        push(mkSprite("Reactants", "#3b82f6", new THREE.Vector3(ox + 0.3, reactY - 0.4, 0), 0.6));
+        addLabel(mkSprite("Reactants", "#3b82f6", new THREE.Vector3(ox + 0.3, reactY - 0.4, 0), 0.6));
 
         // Product energy level
         const prodY = oy + deltaH * sy * 0.4;
@@ -136,7 +180,7 @@ export function ArrheniusEquationVisual() {
           new THREE.LineDashedMaterial({ color: 0xef4444, dashSize: 0.15, gapSize: 0.1 }),
         ) as any);
         ((meshes[meshes.length - 1] as any) as THREE.Line).computeLineDistances();
-        push(mkSprite("Products", "#ef4444", new THREE.Vector3(ox + 9.7, prodY - 0.4, 0), 0.6));
+        addLabel(mkSprite("Products", "#ef4444", new THREE.Vector3(ox + 9.7, prodY - 0.4, 0), 0.6));
 
         // Transition state (peak)
         const peakIdx = Math.floor(50);
@@ -149,7 +193,7 @@ export function ArrheniusEquationVisual() {
         const eaDir = eaTarget.clone().sub(eaLabel).normalize();
         const eaLen = eaLabel.distanceTo(eaTarget);
         push(new LiveLeaderLine(eaDir, eaLabel, eaLen * 0.85, 0xf97316, 0.28, 0.12));
-        push(mkSprite(`Ea = ${Ea} kJ/mol`, "#f97316", eaLabel.clone().sub(eaDir.multiplyScalar(0.5)), 0.7));
+        addLabel(mkSprite(`Ea = ${Ea} kJ/mol`, "#f97316", eaLabel.clone().sub(eaDir.multiplyScalar(0.5)), 0.7));
 
         // Ea(cat) arrow
         if (hasCat) {
@@ -159,7 +203,7 @@ export function ArrheniusEquationVisual() {
           const eacDir = eacTarget.clone().sub(eacLabel).normalize();
           const eacLen = eacLabel.distanceTo(eacTarget);
           push(new LiveLeaderLine(eacDir, eacLabel, eacLen * 0.85, 0x22c55e, 0.28, 0.12));
-          push(mkSprite(`Ea(cat) = ${EaCat.toFixed(0)} kJ/mol`, "#22c55e", eacLabel.clone().sub(eacDir.multiplyScalar(0.5)), 0.65));
+          addLabel(mkSprite(`Ea(cat) = ${EaCat.toFixed(0)} kJ/mol`, "#22c55e", eacLabel.clone().sub(eacDir.multiplyScalar(0.5)), 0.65));
         }
 
         // ΔH arrow
@@ -169,10 +213,12 @@ export function ArrheniusEquationVisual() {
         const dhLen = dhLabel.distanceTo(dhTarget);
         push(new LiveLeaderLine(dhDir, dhLabel, dhLen * 0.8, isEndothermic ? 0xef4444 : 0x22c55e, 0.25, 0.12));
         const dhSign = isEndothermic ? "+" : "";
-        push(mkSprite(`ΔH = ${dhSign}${deltaH} kJ/mol`, isEndothermic ? "#ef4444" : "#22c55e", dhLabel.clone().sub(dhDir.multiplyScalar(0.5)), 0.65));
+        addLabel(mkSprite(`ΔH = ${dhSign}${deltaH} kJ/mol`, isEndothermic ? "#ef4444" : "#22c55e", dhLabel.clone().sub(dhDir.multiplyScalar(0.5)), 0.65));
 
         // Arrhenius equation
-        push(mkSprite("Arrhenius:  k = Ae^(−Ea/RT)  — lower Ea → faster reaction", "#a78bfa", new THREE.Vector3(0, -4.0, 0), 0.6));
+        addLabel(mkSprite("Arrhenius:  k = Ae^(−Ea/RT)  — lower Ea → faster reaction", "#a78bfa", new THREE.Vector3(0, -4.0, 0), 0.6));
+
+        labelSprites.forEach((s) => (s.visible = showLabels));
       };
 
       updateScene();
@@ -213,7 +259,7 @@ export function ArrheniusEquationVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [Ea, isEndothermic, hasCat, isWebGL]);
+  }, [Ea, isEndothermic, hasCat, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Arrhenius Equation" description="Activation energy profile — requires WebGL." />;
@@ -228,6 +274,25 @@ export function ArrheniusEquationVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-orange-500/50 bg-orange-500/10 text-orange-300" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Labels
+            </button>
+            <button
+              onClick={resetAll}
+              className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors"
+              title="Reset to defaults"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Parameters">
           <div className="flex flex-wrap gap-4 mt-2">
             <div>
@@ -254,6 +319,15 @@ export function ArrheniusEquationVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Activation energy Ea", value: Ea, unit: "kJ/mol" },
+            { label: "Ea with catalyst", value: EaCat, unit: "kJ/mol", highlight: hasCat },
+            { label: "ΔH (enthalpy)", value: (isEndothermic ? "+30" : "−30"), unit: "kJ/mol" },
+            { label: "Reaction type", value: isEndothermic ? "Endothermic" : "Exothermic" },
+          ]}
+        />
 
         <div className="rounded-lg border border-orange-500/30 bg-orange-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-orange-400">Arrhenius Equation</p>

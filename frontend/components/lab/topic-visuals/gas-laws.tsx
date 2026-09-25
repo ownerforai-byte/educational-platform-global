@@ -7,6 +7,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -45,8 +46,42 @@ export function GasLawsVisual() {
   const [mode, setMode] = useState<GasLawMode>("boyle");
   const [nMoles, setNMoles] = useState(1);
   const [temperature, setTemperature] = useState(300);
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
-  const [time, setTime] = useState(0);
+
+  const LAW_INFO: Record<GasLawMode, { law: string; relation: string; equation: string; graph: string }> = {
+    boyle: { law: "Boyle's Law", relation: "P ∝ 1/V at constant T", equation: "P₁V₁ = P₂V₂", graph: "Hyperbolic isotherm" },
+    charles: { law: "Charles's Law", relation: "V ∝ T at constant P", equation: "V₁/T₁ = V₂/T₂", graph: "Straight line via origin" },
+    combined: { law: "Ideal Gas Law", relation: "PV = nRT", equation: "R = 8.314 J/(mol·K)", graph: "Stack of isotherms" },
+  };
+  const info = LAW_INFO[mode];
+
+  const presets: ScenePreset[] = [
+    {
+      name: "Compress at fixed T",
+      hint: "Boyle: shrinking volume at constant temperature raises pressure along the hyperbola.",
+      apply: () => { setMode("boyle"); setNMoles(1); setTemperature(300); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Heat at fixed P",
+      hint: "Charles: at constant pressure, volume grows linearly with Kelvin temperature.",
+      apply: () => { setMode("charles"); setNMoles(1); setTemperature(300); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Full PV = nRT family",
+      hint: "Combined: every isotherm is a PV = const curve; hotter curves sit higher.",
+      apply: () => { setMode("combined"); setNMoles(1); setTemperature(300); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setMode("boyle");
+    setNMoles(1);
+    setTemperature(300);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -56,6 +91,7 @@ export function GasLawsVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -75,11 +111,12 @@ export function GasLawsVisual() {
       controls.autoRotate = false;
       controls.minDistance = 5;
       controls.maxDistance = 25;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { s.visible = showLabels; push(s); labelSprites.push(s); return s; };
 
       const R = 8.314; // J/(mol·K)
 
@@ -106,11 +143,12 @@ export function GasLawsVisual() {
         const arrY = push(new THREE.Mesh(new THREE.ConeGeometry(0.08, 0.25, 8), new THREE.MeshBasicMaterial({ color: 0x475569 })));
         arrY.position.set(origin.x, origin.y + scaleY * 10, 0);
 
-        push(mkSprite(xLabel, "#94a3b8", new THREE.Vector3(origin.x + scaleX * 10.5, origin.y - 0.3, 0), 0.6));
-        push(mkSprite(yLabel, "#94a3b8", new THREE.Vector3(origin.x - 0.5, origin.y + scaleY * 10.5, 0), 0.6));
+        addLabel(mkSprite(xLabel, "#94a3b8", new THREE.Vector3(origin.x + scaleX * 10.5, origin.y - 0.3, 0), 0.6));
+        addLabel(mkSprite(yLabel, "#94a3b8", new THREE.Vector3(origin.x - 0.5, origin.y + scaleY * 10.5, 0), 0.6));
       };
 
       const updateScene = (t: number) => {
+        labelSprites.length = 0;
         while (meshes.length > 10) {
           const m = meshes.pop()!;
           scene.remove(m);
@@ -142,7 +180,7 @@ export function GasLawsVisual() {
           const dir = targetPos.clone().sub(labelPos).normalize();
           const arrowLen = labelPos.distanceTo(targetPos);
           push(new LiveLeaderLine(dir, labelPos, arrowLen * 0.8, 0xf97316, 0.25, 0.12));
-          push(mkSprite(` Boyle's Law: P ∝ 1/V  (T constant)`, "#f97316", labelPos.clone().sub(dir.multiplyScalar(0.5)), 0.7));
+          addLabel(mkSprite(` Boyle's Law: P ∝ 1/V  (T constant)`, "#f97316", labelPos.clone().sub(dir.multiplyScalar(0.5)), 0.7));
 
           // Multiple isotherms
           [temperature * 0.7, temperature, temperature * 1.3].forEach((T, i) => {
@@ -178,7 +216,7 @@ export function GasLawsVisual() {
           const dir = targetPos.clone().sub(labelPos).normalize();
           const arrowLen = labelPos.distanceTo(targetPos);
           push(new LiveLeaderLine(dir, labelPos, arrowLen * 0.8, 0x22c55e, 0.25, 0.12));
-          push(mkSprite(` Charles's Law: V ∝ T  (P constant)`, "#22c55e", labelPos.clone().sub(dir.multiplyScalar(0.5)), 0.7));
+          addLabel(mkSprite(` Charles's Law: V ∝ T  (P constant)`, "#22c55e", labelPos.clone().sub(dir.multiplyScalar(0.5)), 0.7));
         }
         else if (mode === "combined") {
           // PV = nRT surface — show 3D
@@ -213,11 +251,11 @@ export function GasLawsVisual() {
           const dir = targetPos.clone().sub(labelPos).normalize();
           const arrowLen = labelPos.distanceTo(targetPos);
           push(new LiveLeaderLine(dir, labelPos, arrowLen * 0.8, 0xef4444, 0.25, 0.12));
-          push(mkSprite(` Combined: PV = nRT`, "#ef4444", labelPos.clone().sub(dir.multiplyScalar(0.5)), 0.75));
+          addLabel(mkSprite(` Combined: PV = nRT`, "#ef4444", labelPos.clone().sub(dir.multiplyScalar(0.5)), 0.75));
         }
 
         // State variables display
-        push(mkSprite(
+        addLabel(mkSprite(
           `n=${nMoles} mol  T=${temperature}K  R=8.314 J/mol·K`,
           "#7dd3fc",
           new THREE.Vector3(0, 4.2, 0),
@@ -225,13 +263,11 @@ export function GasLawsVisual() {
         ));
       };
 
-      updateScene(time);
+      updateScene(0);
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
-        setTime((prev) => prev + 0.016);
-        updateScene(Date.now() * 0.001);
         renderer.render(scene, camera);
       };
       animate();
@@ -265,7 +301,7 @@ export function GasLawsVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [mode, nMoles, temperature, time, isWebGL]);
+  }, [mode, nMoles, temperature, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Gas Laws" description="PV diagram animations — requires WebGL." />;
@@ -280,6 +316,13 @@ export function GasLawsVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-orange-500/50 bg-orange-500/10 text-orange-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
         <CollapsibleControls label="Gas Law">
           <Tabs value={mode} onValueChange={(v) => setMode(v as GasLawMode)} className="mt-1">
             <TabsList className="grid w-full grid-cols-3">
@@ -307,6 +350,15 @@ export function GasLawsVisual() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <ReadoutGrid
+          items={[
+            { label: "Law shown", value: info.law, highlight: true },
+            { label: "Relation", value: info.relation },
+            { label: "Equation", value: info.equation },
+            { label: "Graph shape", value: info.graph },
+            { label: "Current state", value: `n = ${nMoles} mol · T = ${temperature} K` },
+          ]}
+        />
         <div className="rounded-lg border border-orange-500/30 bg-orange-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-orange-400">Key Equations</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">

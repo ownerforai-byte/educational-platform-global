@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 /* ============================================================
@@ -38,7 +39,38 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
+function addLabel(scene: THREE.Scene, meshes: THREE.Object3D[], labelSprites: THREE.Sprite[], text: string, color: number, pos: THREE.Vector3, scale = 0.75) {
+  const s = mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, pos, scale);
+  scene.add(s);
+  meshes.push(s);
+  labelSprites.push(s);
+}
+
 type EqType = "sin" | "cos" | "tan";
+
+const TE_INFO: Record<EqType, { head: string; principal: string; general: string; period: string; note: string }> = {
+  sin: {
+    head: "sin θ = k",
+    principal: "α = sin⁻¹k, with α ∈ [−π/2, π/2]",
+    general: "θ = nπ + (−1)ⁿ α,  n ∈ ℤ",
+    period: "Curve repeats every 2π (360°).",
+    note: "For 0 ≤ θ < 360°: if k > 0 solutions lie in quadrants I & II; if k < 0 in III & IV.",
+  },
+  cos: {
+    head: "cos θ = k",
+    principal: "α = cos⁻¹k, with α ∈ [0, π]",
+    general: "θ = 2nπ ± α,  n ∈ ℤ",
+    period: "Curve repeats every 2π (360°).",
+    note: "Symmetric about the x-axis: cos θ = cos(−θ), so solutions come as ±α per turn.",
+  },
+  tan: {
+    head: "tan θ = k",
+    principal: "α = tan⁻¹k, with α ∈ (−π/2, π/2)",
+    general: "θ = nπ + α,  n ∈ ℤ",
+    period: "Curve repeats every π (180°) — the shortest period of the three.",
+    note: "Defined for all real k; vertical asymptotes where cos θ = 0.",
+  },
+};
 
 export function TrigEquationsVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
@@ -47,6 +79,23 @@ export function TrigEquationsVisual() {
   const [k, setK] = useState(0.5);
   const [range, setRange] = useState(360);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const info = TE_INFO[eqType];
+
+  const presets: ScenePreset[] = [
+    { name: "sin θ = 1/2", hint: "30° and 150° in one turn", apply: () => { setEqType("sin"); setK(0.5); setRange(360); setRunId((r) => r + 1); } },
+    { name: "cos θ = −1/2", hint: "120° and 240° — quadrant II & III", apply: () => { setEqType("cos"); setK(-0.5); setRange(360); setRunId((r) => r + 1); } },
+    { name: "tan θ = 1", hint: "π-periodic: 45° and 225°", apply: () => { setEqType("tan"); setK(1); setRange(360); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setEqType("sin");
+    setK(0.5); setRange(360);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -56,6 +105,7 @@ export function TrigEquationsVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -72,7 +122,7 @@ export function TrigEquationsVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
       controls.autoRotate = false;
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
@@ -100,9 +150,11 @@ export function TrigEquationsVisual() {
           else if (m instanceof THREE.Sprite) { (m.material as THREE.SpriteMaterial).map?.dispose?.(); m.material.dispose(); }
         }
 
-        const absK = Math.min(Math.abs(k), 1);
-        const baseAngle = eqType === "sin" ? Math.asin(absK) : eqType === "cos" ? Math.acos(absK) : Math.atan(absK);
-        const baseDeg = baseAngle * 180 / Math.PI;
+        // Principal value α using the SIGNED k — correct for k < 0 too
+        const alphaDeg = eqType === "sin" ? Math.asin(Math.max(-1, Math.min(1, k))) * 180 / Math.PI
+          : eqType === "cos" ? Math.acos(Math.max(-1, Math.min(1, k))) * 180 / Math.PI
+          : Math.atan(k) * 180 / Math.PI;
+        const norm = (d: number, period: number) => ((d % period) + period) % period;
 
         // Plot y = sin/cos/tan(θ) over [0, range]
         const curvePts: THREE.Vector3[] = [];
@@ -128,49 +180,41 @@ export function TrigEquationsVisual() {
         ));
         push(mkSprite(`y = ${k.toFixed(2)}`, "#fb923c", new THREE.Vector3(9.5, k * 2.5, 0), 0.6));
 
-        // Find and mark intersection points
-        const solutions: { deg: number; rad: string }[] = [];
-        const nPeriods = Math.floor(range / 360);
-        const fullRange = nPeriods > 0 ? 360 : range;
+        // Find and mark intersection points (θ ∈ [0, range])
+        const solutions: { deg: number }[] = [];
+        const period = eqType === "tan" ? 180 : 360;
+        let bases: number[];
+        if (eqType === "sin") bases = [norm(alphaDeg, 360), norm(180 - alphaDeg, 360)];
+        else if (eqType === "cos") bases = [norm(alphaDeg, 360), norm(-alphaDeg, 360)];
+        else bases = [norm(alphaDeg, 180)];
+        const uniq = Array.from(new Set(bases.map((d) => d.toFixed(4))));
+        uniq.forEach((bs) => {
+          const b0 = parseFloat(bs);
+          for (let t = b0; t <= range + 1e-6; t += period) solutions.push({ deg: t });
+        });
 
-        for (let p = 0; p <= nPeriods; p++) {
-          const offset = p * 360;
-          if (eqType === "sin") {
-            if (absK <= 1) {
-              solutions.push({ deg: offset + baseDeg, rad: `${baseDeg.toFixed(1)}°` });
-              if (baseDeg > 0 && 180 - baseDeg > 0) solutions.push({ deg: offset + 180 - baseDeg, rad: `${(180 - baseDeg).toFixed(1)}°` });
-            }
-          } else if (eqType === "cos") {
-            if (absK <= 1) {
-              solutions.push({ deg: offset + baseDeg, rad: `${baseDeg.toFixed(1)}°` });
-              solutions.push({ deg: offset + 360 - baseDeg, rad: `${(360 - baseDeg).toFixed(1)}°` });
-            }
-          } else {
-            solutions.push({ deg: offset + baseDeg, rad: `${baseDeg.toFixed(1)}°` });
-            solutions.push({ deg: offset + 180 + baseDeg, rad: `${(180 + baseDeg).toFixed(1)}°` });
-          }
-        }
-
-        solutions.forEach((sol, idx) => {
+        solutions.forEach((sol) => {
           const x = sol.deg * Math.PI / 180 * 3;
           const y = eqType === "sin" ? Math.sin(sol.deg * Math.PI / 180) :
                     eqType === "cos" ? Math.cos(sol.deg * Math.PI / 180) :
                     Math.tan(sol.deg * Math.PI / 180);
-          if (Math.abs(y - k) < 0.01 && Math.abs(y) < 8) {
+          if (Math.abs(y - k) < 0.02 && Math.abs(y) < 8 && x <= 10) {
             const dot = push(new THREE.Mesh(new THREE.SphereGeometry(0.18, 12, 12), new THREE.MeshBasicMaterial({ color: 0xef4444 })));
             dot.position.set(x, y * 2.5, 0.05);
-            push(mkSprite(`θ=${sol.deg.toFixed(0)}°`, "#f87171", dot.position.clone().add(new THREE.Vector3(0, 0.7, 0)), 0.65));
+            addLabel(scene, meshes, labelSprites, `θ=${sol.deg.toFixed(0)}°`, 0xf87171, dot.position.clone().add(new THREE.Vector3(0, 0.7, 0)), 0.65);
           }
         });
 
-        // General solution
-        const genSol = eqType === "sin" ? `θ = nπ + ${(baseDeg.toFixed(1))}° or θ = nπ + ${(180 - baseDeg).toFixed(1)}°` :
-                       eqType === "cos" ? `θ = 2nπ ± ${(baseDeg.toFixed(1))}°` :
-                       `θ = nπ + ${(baseDeg.toFixed(1))}°`;
-        push(mkSprite("General: " + genSol, "#a78bfa", new THREE.Vector3(0, -8, 0), 0.7));
+        // General solution (n ∈ ℤ)
+        const a1 = alphaDeg.toFixed(1);
+        const genSol = eqType === "sin" ? `θ = nπ + (−1)ⁿ·(${a1}°)` :
+                       eqType === "cos" ? `θ = 2nπ ± (${a1}°)` :
+                       `θ = nπ + (${a1}°)`;
+        addLabel(scene, meshes, labelSprites, "General: " + genSol, 0xa78bfa, new THREE.Vector3(0, -8, 0), 0.7);
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -208,7 +252,7 @@ export function TrigEquationsVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [eqType, k, range, isWebGL]);
+  }, [eqType, k, range, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Trigonometric Equations" description="Equation solver visualization — requires WebGL." />;
@@ -223,6 +267,14 @@ export function TrigEquationsVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-orange-500/50 bg-orange-500/10 text-orange-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Equation Type">
           <div className="flex flex-wrap gap-2 mt-2">
             {(["sin", "cos", "tan"] as EqType[]).map((t) => (
@@ -250,9 +302,32 @@ export function TrigEquationsVisual() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <ReadoutGrid
+          items={(() => {
+            const kc = eqType === "tan" ? k : Math.max(-1, Math.min(1, k));
+            const alphaRad = eqType === "sin" ? Math.asin(kc) : eqType === "cos" ? Math.acos(kc) : Math.atan(k);
+            const alphaDeg = (alphaRad * 180) / Math.PI;
+            const norm = (d: number, p: number) => ((d % p) + p) % p;
+            const within = eqType === "sin"
+              ? [norm(alphaDeg, 360), norm(180 - alphaDeg, 360)].sort((s, t) => s - t)
+              : eqType === "cos"
+              ? [norm(alphaDeg, 360), norm(-alphaDeg, 360)].sort((s, t) => s - t)
+              : [norm(alphaDeg, 180)];
+            const fn = eqType === "sin" ? "sin" : eqType === "cos" ? "cos" : "tan";
+            return [
+              { label: "Equation", value: `${fn} θ = ${k.toFixed(2)}`, highlight: true },
+              { label: "Principal α", value: `${alphaDeg.toFixed(1)}°`, unit: `= ${alphaRad.toFixed(3)} rad` },
+              { label: "General solution", value: info.general },
+              { label: `Solutions in [0, ${range}°)`, value: within.map((d) => `${d.toFixed(0)}°`).join(", ") },
+              { label: "Period", value: info.period },
+            ];
+          })()}
+        />
+
         <div className="rounded-lg border border-orange-500/30 bg-orange-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-orange-400">General Solutions</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">
+            <p><strong className="text-foreground">{info.head}:</strong> {info.general}, where {info.principal.toLowerCase()}.</p>
             <p><strong className="text-foreground">sin θ = k:</strong> θ = nπ + α or θ = nπ − α, where α = sin⁻¹k</p>
             <p><strong className="text-foreground">cos θ = k:</strong> θ = 2nπ ± α, where α = cos⁻¹k</p>
             <p><strong className="text-foreground">tan θ = k:</strong> θ = nπ + α, where α = tan⁻¹k</p>

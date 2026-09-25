@@ -8,6 +8,12 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  PlaybackBar,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -40,7 +46,55 @@ export function CoulombsLawVisual() {
   const [q2, setQ2] = useState(-3);
   const [distance, setDistance] = useState(4);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [animating, setAnimating] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  const [showLabels, setShowLabels] = useState(true);
+  const [showField, setShowField] = useState(true);
+  const [runId, setRunId] = useState(0);
+  // Speed lives in a ref so changing it never tears down the WebGL scene.
+  const speedRef = useRef(1);
+  speedRef.current = speed;
 
+  const k = 9e9;
+  const forceN = (k * Math.abs(q1 * q2) * 1e-12) / (distance * distance);
+  const isAttractive = q1 * q2 < 0;
+  const eDueQ1 = (k * Math.abs(q1) * 1e-6) / (distance * distance); // N/C at q₂
+  const energyMJ = (9 * q1 * q2) / distance; // mJ
+
+  const DEFAULTS = { q1: 5, q2: -3, distance: 4 };
+  const presets: ScenePreset[] = [
+    {
+      name: "Attraction ±5 μC",
+      hint: "Equal opposite charges at 3 m — a clean attractive pair.",
+      apply: () => { setQ1(5); setQ2(-5); setDistance(3); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Strong repulsion",
+      hint: "Like charges close together — large repulsive force.",
+      apply: () => { setQ1(8); setQ2(8); setDistance(2); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Weak & far apart",
+      hint: "Small charges at 8 m — inverse-square law makes F tiny.",
+      apply: () => { setQ1(2); setQ2(-1); setDistance(8); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Symmetric ±10 μC",
+      hint: "Maximum charges at 5 m — compare with the close pair.",
+      apply: () => { setQ1(10); setQ2(-10); setDistance(5); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setQ1(DEFAULTS.q1);
+    setQ2(DEFAULTS.q2);
+    setDistance(DEFAULTS.distance);
+    setSpeed(1);
+    setShowLabels(true);
+    setShowField(true);
+    setAnimating(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     const container = containerRef.current;
@@ -51,6 +105,8 @@ export function CoulombsLawVisual() {
     let frameId: number;
     let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
+    const fieldObjs: THREE.Object3D[] = [];
     let forceArrow: THREE.ArrowHelper;
 
     const init = async () => {
@@ -71,7 +127,12 @@ export function CoulombsLawVisual() {
       controls.autoRotate = false;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -79,6 +140,8 @@ export function CoulombsLawVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { s.visible = showLabels; push(s); labelSprites.push(s); return s; };
+      const addField = <T extends THREE.Object3D>(o: T): T => { o.visible = showField; push(o); fieldObjs.push(o); return o; };
 
       const k = 9e9;
       const forceMag = Math.abs(k * q1 * q2 / (distance * distance)) * 0.001;
@@ -92,7 +155,7 @@ export function CoulombsLawVisual() {
         new THREE.MeshBasicMaterial({ color: c1Color }),
       )) as THREE.Mesh;
       c1.position.set(-distance / 2, 0, 0);
-      push(mkSprite(`${q1 > 0 ? "+" : ""}${q1} μC`, c1Color === 0xef4444 ? "#ef4444" : "#3b82f6", new THREE.Vector3(-distance / 2, 1.2, 0), 0.8));
+      addLabel(mkSprite(`${q1 > 0 ? "+" : ""}${q1} μC`, c1Color === 0xef4444 ? "#ef4444" : "#3b82f6", new THREE.Vector3(-distance / 2, 1.2, 0), 0.8));
 
       // Charge 2 (right)
       const c2Color = q2 > 0 ? 0xef4444 : 0x3b82f6;
@@ -101,7 +164,7 @@ export function CoulombsLawVisual() {
         new THREE.MeshBasicMaterial({ color: c2Color }),
       )) as THREE.Mesh;
       c2.position.set(distance / 2, 0, 0);
-      push(mkSprite(`${q2 > 0 ? "+" : ""}${q2} μC`, c2Color === 0xef4444 ? "#ef4444" : "#3b82f6", new THREE.Vector3(distance / 2, 1.2, 0), 0.8));
+      addLabel(mkSprite(`${q2 > 0 ? "+" : ""}${q2} μC`, c2Color === 0xef4444 ? "#ef4444" : "#3b82f6", new THREE.Vector3(distance / 2, 1.2, 0), 0.8));
 
       // Force arrows on charges
       const forceDir1 = isAttractive ? new THREE.Vector3(1, 0, 0) : new THREE.Vector3(-1, 0, 0);
@@ -115,21 +178,21 @@ export function CoulombsLawVisual() {
       const fTarget = new THREE.Vector3(0, 0, 0);
       const fDir = fTarget.clone().sub(fLabelPos).normalize();
       push(new LiveLeaderLine(fDir, fLabelPos, fLabelPos.distanceTo(fTarget) * 0.9, forceColor, 0.15, 0.1));
-      push(mkSprite(`F = ${forceMag.toFixed(2)} N (${isAttractive ? "attractive" : "repulsive"})`, "#34d399", fLabelPos.clone().sub(fDir.multiplyScalar(0.5)), 0.75));
+      addLabel(mkSprite(`F = ${forceMag.toFixed(2)} N (${isAttractive ? "attractive" : "repulsive"})`, "#34d399", fLabelPos.clone().sub(fDir.multiplyScalar(0.5)), 0.75));
 
       // Distance label
       const dLabelPos = new THREE.Vector3(0, -2.5, 0);
       const dTarget = new THREE.Vector3(distance / 2, 0, 0);
       const dDir = dTarget.clone().sub(dLabelPos).normalize();
       push(new LiveLeaderLine(dDir, dLabelPos, dLabelPos.distanceTo(dTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
-      push(mkSprite(`r = ${distance} m`, "#fbbf24", dLabelPos.clone().sub(dDir.multiplyScalar(0.5)), 0.8));
+      addLabel(mkSprite(`r = ${distance} m`, "#fbbf24", dLabelPos.clone().sub(dDir.multiplyScalar(0.5)), 0.8));
 
       // Coulomb's law formula label
       const formulaLabelPos = new THREE.Vector3(-4.5, 2, 0);
       const formulaTarget = new THREE.Vector3(0, 0, 0);
       const formulaDir = formulaTarget.clone().sub(formulaLabelPos).normalize();
       push(new LiveLeaderLine(formulaDir, formulaLabelPos, formulaLabelPos.distanceTo(formulaTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
-      push(mkSprite("F = kq₁q₂/r²", "#a78bfa", formulaLabelPos.clone().sub(formulaDir.multiplyScalar(0.5)), 0.8));
+      addLabel(mkSprite("F = kq₁q₂/r²", "#a78bfa", formulaLabelPos.clone().sub(formulaDir.multiplyScalar(0.5)), 0.8));
 
       // Field lines from q1 to q2 (if attractive) or away (if repulsive)
       const numLines = 8;
@@ -144,7 +207,7 @@ export function CoulombsLawVisual() {
           pts.push(new THREE.Vector3(x, y, z));
         }
         const color = isAttractive ? 0x34d399 : 0xef4444;
-        push(new THREE.Line(
+        addField(new THREE.Line(
           new THREE.BufferGeometry().setFromPoints(pts),
           new THREE.LineBasicMaterial({ color, transparent: true, opacity: 0.4 }),
         ));
@@ -165,10 +228,12 @@ export function CoulombsLawVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
-        animTime += 0.03;
-        const oscillation = Math.sin(animTime * 3) * 0.3;
-        if (forceArrow) {
-          forceArrow.setLength(Math.max(0.5, forceMag + oscillation), 0.2, 0.12);
+        if (animating) {
+          animTime += 0.03 * speedRef.current;
+          const oscillation = Math.sin(animTime * 3) * 0.3;
+          if (forceArrow) {
+            forceArrow.setLength(Math.max(0.5, forceMag + oscillation), 0.2, 0.12);
+          }
         }
         renderer.render(scene, camera);
       };
@@ -204,7 +269,7 @@ export function CoulombsLawVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [q1, q2, distance, isWebGL]);
+  }, [q1, q2, distance, isWebGL, animating, runId, showLabels, showField]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Coulomb's Law" description="Two point charges with force and field line visualization." />;
@@ -239,9 +304,44 @@ export function CoulombsLawVisual() {
           </div>
         </CollapsibleControls>
 
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <PlaybackBar
+            playing={animating}
+            onPlayToggle={() => setAnimating(!animating)}
+            speed={speed}
+            onSpeedChange={setSpeed}
+            onReset={resetAll}
+          />
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-primary/50 bg-primary/10 text-primary" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Labels
+            </button>
+            <button
+              onClick={() => setShowField((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showField ? "border-yellow-500/50 bg-yellow-500/10 text-yellow-400" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Field lines
+            </button>
+          </div>
+        </div>
+
+        <ScenePresets presets={presets} />
+
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Force F", value: forceN.toExponential(2), unit: "N", highlight: true },
+            { label: "Force type", value: q1 * q2 === 0 ? "None (q = 0)" : isAttractive ? "Attractive" : "Repulsive" },
+            { label: "E from q₁ at r", value: eDueQ1.toFixed(0), unit: "N/C" },
+            { label: "Potential energy U", value: energyMJ.toFixed(1), unit: "mJ" },
+          ]}
+        />
 
         <div className="rounded-lg border border-red-500/30 bg-red-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-red-400">Key Concepts</p>

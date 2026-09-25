@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -23,7 +24,7 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   ctx.fillRect(4, 4, 504, 88);
   ctx.strokeStyle = color;
   ctx.lineWidth = 2;
-  ctx.strokeRect(4, 4, 504, 504);
+  ctx.strokeRect(4, 4, 504, 88);
   ctx.font = "bold 30px monospace";
   ctx.textAlign = "center";
   ctx.textBaseline = "middle";
@@ -36,18 +37,47 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
-function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
+function addLabel(scene: THREE.Scene, meshes: THREE.Object3D[], labelSprites: THREE.Sprite[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
   const dir = targetPos.clone().sub(labelPos).normalize();
   const len = labelPos.distanceTo(targetPos);
-  meshes.push(new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14) as any);
+  const line = new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14);
+  scene.add(line);
+  meshes.push(line);
   const lp = labelPos.clone().sub(dir.clone().multiplyScalar(0.45));
-  meshes.push(mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85));
+  const s = mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85);
+  scene.add(s);
+  meshes.push(s);
+  labelSprites.push(s);
 }
+
+type EvoFocus = "all" | "land" | "mammals";
 
 export function EvolutionVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
+  const [focus, setFocus] = useState<EvoFocus>("all");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const FOCUS_INFO: Record<EvoFocus, { lineage: string; transition: string; derived: string; evidence: string; tip: string }> = {
+    all: { lineage: "Whole tree of vertebrates", transition: "Water → land → air, ~500 Myr of divergence", derived: "Shared (homologous) structures at every node", evidence: "Fossils, comparative anatomy, embryology, DNA", tip: "Nodes = common ancestors; tips = living lineages" },
+    land: { lineage: "Fish → Amphibians → Reptiles", transition: "Tetrapod limbs and lungs opened the land (~370 Myr)", derived: "Limbs, ribs, stronger skull — from lobe-finned fish", evidence: "Tiktaalik fossil bridges fish and amphibians", tip: "Amniotic egg freed reptiles from water for reproduction" },
+    mammals: { lineage: "Mammal radiation (Rodents, Primates, Carnivora)", transition: "Endothermy and live birth after the dinosaur extinction", derived: "Hair, mammary glands, three middle-ear bones", evidence: "Molecular clocks group all mammals ~220 Myr back", tip: "Humans share the Primate node — we descend FROM apes, not apes from us" },
+  };
+  const info = FOCUS_INFO[focus];
+
+  const presets: ScenePreset[] = [
+    { name: "Whole tree", hint: "Every lineage at once — read nodes, branches and tips.", apply: () => { setFocus("all"); setRunId((r) => r + 1); } },
+    { name: "Conquest of land", hint: "Highlight the fish → amphibian → reptile transition.", apply: () => { setFocus("land"); setRunId((r) => r + 1); } },
+    { name: "Rise of mammals", hint: "Follow the mammal branch — hair, milk, warm blood.", apply: () => { setFocus("mammals"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setFocus("all");
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -57,6 +87,7 @@ export function EvolutionVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -76,7 +107,7 @@ export function EvolutionVisual() {
       controls.autoRotate = false;
       controls.minDistance = 5;
       controls.maxDistance = 22;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dl = new THREE.DirectionalLight(0xffffff, 0.9);
@@ -84,6 +115,7 @@ export function EvolutionVisual() {
       scene.add(dl);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addSprite = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
 
       // Root (common ancestor)
       const root = push(new THREE.Mesh(
@@ -125,6 +157,7 @@ export function EvolutionVisual() {
         { angle: 0.4, label: "Reptiles", color: 0xf97316, yOff: 0.6 },
       ];
       const subTips: { pos: THREE.Vector3; label: string }[] = [];
+      const landParts: THREE.Object3D[] = [];
       for (const sb of subBranches) {
         const sub = push(new THREE.Mesh(
           new THREE.CylinderGeometry(0.025, 0.025, 1.0, 6),
@@ -138,6 +171,8 @@ export function EvolutionVisual() {
         ));
         tip.position.set(-0.8 + Math.sin(sb.angle) * 1.0, 1.0 + sb.yOff + 0.5, 0);
         subTips.push({ pos: tip.position.clone(), label: sb.label });
+        addSprite(mkSprite(sb.label, `#${sb.color.toString(16).padStart(6, "0")}`, tip.position.clone().add(new THREE.Vector3(0.9, 0.35, 0)), 0.6));
+        landParts.push(sub, tip);
       }
 
       // Main trunk continues to mammals
@@ -154,6 +189,7 @@ export function EvolutionVisual() {
         { angle: 0.3, label: "Carnivora", color: 0x22d3ee },
       ];
       const mammalTips: { pos: THREE.Vector3; label: string }[] = [];
+      const mammalParts: THREE.Object3D[] = [];
       for (const mb of mammalBranches) {
         const sub = push(new THREE.Mesh(
           new THREE.CylinderGeometry(0.025, 0.025, 0.8, 6),
@@ -167,6 +203,8 @@ export function EvolutionVisual() {
         ));
         tip.position.set(0 + Math.sin(mb.angle) * 0.7, -1.2 - 0.4, 0);
         mammalTips.push({ pos: tip.position.clone(), label: mb.label });
+        addSprite(mkSprite(mb.label, `#${mb.color.toString(16).padStart(6, "0")}`, tip.position.clone().add(new THREE.Vector3(0.9, -0.3, 0)), 0.6));
+        mammalParts.push(sub, tip);
       }
 
       // Adaptation labels with arrows
@@ -178,7 +216,7 @@ export function EvolutionVisual() {
         { pos: new THREE.Vector3(2, -1.5, -2), target: mammalTips[0].pos, text: "Hair, mammary glands", color: 0xfbbf24 },
       ];
       for (const ad of adaptations) {
-        addLabel(meshes, ad.text, ad.color, ad.pos, ad.target);
+        addLabel(scene, meshes, labelSprites, ad.text, ad.color, ad.pos, ad.target);
       }
 
       // Key evolutionary milestones
@@ -195,10 +233,26 @@ export function EvolutionVisual() {
           new THREE.MeshPhongMaterial({ color: ms.color }),
         ));
         dot.position.set(-5.5, ms.y, 0);
-        push(mkSprite(ms.text, `#${ms.color.toString(16).padStart(6, "0")}`, new THREE.Vector3(-6.5, ms.y, 0), 0.6));
+        addSprite(mkSprite(ms.text, `#${ms.color.toString(16).padStart(6, "0")}`, new THREE.Vector3(-6.5, ms.y, 0), 0.6));
       }
 
       push(mkSprite("Evolutionary Tree — Major Adaptations", "#fbbf24", new THREE.Vector3(0, 3.5, 0), 0.85));
+      labelSprites.forEach((s) => (s.visible = showLabels));
+
+      // Focus dimming: highlight the selected lineage, fade the rest
+      const allParts: THREE.Object3D[] = [root, trunk, branch1, branch1Tip, branch2, ...landParts, trunk2, ...mammalParts];
+      const GROUPS: Record<Exclude<EvoFocus, "all">, THREE.Object3D[]> = {
+        land: [root, trunk, branch2, ...landParts],
+        mammals: [root, trunk, trunk2, ...mammalParts],
+      };
+      const highlighted = focus === "all" ? allParts : GROUPS[focus];
+      allParts.forEach((p) => {
+        const mat = (p as THREE.Mesh).material as THREE.MeshPhongMaterial;
+        if (!mat) return;
+        const keep = (mat as any).__origOpacity ?? ((mat as any).__origOpacity = mat.opacity);
+        mat.transparent = true;
+        mat.opacity = highlighted.includes(p) ? keep : 0.12;
+      });
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -236,7 +290,7 @@ export function EvolutionVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [isWebGL]);
+  }, [focus, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Evolutionary Biology" description="3D phylogenetic tree with adaptation labels." />;
@@ -251,9 +305,25 @@ export function EvolutionVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-purple-500/50 bg-purple-500/10 text-purple-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid items={[
+          { label: "Lineage in focus", value: info.lineage, highlight: true },
+          { label: "Key transition", value: info.transition },
+          { label: "Shared derived traits", value: info.derived },
+          { label: "Evidence", value: info.evidence },
+          { label: "Exam tip", value: info.tip },
+        ]} />
 
         <div className="rounded-lg border border-purple-500/30 bg-purple-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-purple-400">Key Concepts</p>

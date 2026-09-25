@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
@@ -36,7 +37,56 @@ export function BondCharacteristicsVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [property, setProperty] = useState<BondProperty>("length");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const DEFAULTS = { property: "length" as BondProperty };
+  const presets: ScenePreset[] = [
+    {
+      name: "Bond length",
+      hint: "Triple bonds are shortest — more shared electrons pull nuclei closer.",
+      apply: () => { setProperty("length"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Bond energy",
+      hint: "Breaking C≡C costs the most energy — strongest covalent bond here.",
+      apply: () => { setProperty("energy"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Bond order",
+      hint: "Count the shared pairs: H–H single, O=O double, N≡N triple.",
+      apply: () => { setProperty("order"); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setProperty(DEFAULTS.property);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
+
+  const readouts =
+    property === "length"
+      ? [
+          { label: "C–C length", value: 1.54, unit: "Å" },
+          { label: "C=C length", value: 1.34, unit: "Å" },
+          { label: "C≡C length", value: 1.2, unit: "Å", highlight: true },
+          { label: "Shorter bond", value: "Stronger" },
+        ]
+      : property === "energy"
+      ? [
+          { label: "C–C energy", value: 347, unit: "kJ/mol" },
+          { label: "C=C energy", value: 614, unit: "kJ/mol" },
+          { label: "C≡C energy", value: 839, unit: "kJ/mol", highlight: true },
+          { label: "Strongest bond", value: "C≡C" },
+        ]
+      : [
+          { label: "H–H order", value: 1 },
+          { label: "O=O order", value: 2 },
+          { label: "N≡N order", value: 3, highlight: true },
+          { label: "Higher order", value: "Shorter + stronger" },
+        ];
 
 
   useEffect(() => {
@@ -46,6 +96,7 @@ export function BondCharacteristicsVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
     const animData = { time: 0 };
 
     const init = async () => {
@@ -66,7 +117,7 @@ export function BondCharacteristicsVisual() {
       controls.autoRotate = false;
       controls.minDistance = 3;
       controls.maxDistance = 15;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.9));
       const dir = new THREE.DirectionalLight(0xffffff, 0.8);
@@ -74,6 +125,7 @@ export function BondCharacteristicsVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
       const clearDynamic = () => {
         while (meshes.length > 2) {
           const m = meshes.pop()!;
@@ -134,10 +186,10 @@ export function BondCharacteristicsVisual() {
           ];
           push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(indicatorPts), new THREE.LineBasicMaterial({ color: 0x94a3b8 })));
 
-          push(mkSprite(`${bond.label}: ${bond.length} Angstroms`, "#f8fafc", new THREE.Vector3(length / 2 + 0.6, y, 0), 0.7));
+          addLabel(mkSprite(`${bond.label}: ${bond.length} Angstroms`, "#f8fafc", new THREE.Vector3(length / 2 + 0.6, y, 0), 0.7));
         });
 
-        push(mkSprite("Bond Length: C-C > C=C > C≡C (shorter = stronger)", "#94a3b8", new THREE.Vector3(0, -2.5, 0), 0.9));
+        addLabel(mkSprite("Bond Length: C-C > C=C > C≡C (shorter = stronger)", "#94a3b8", new THREE.Vector3(0, -2.5, 0), 0.9));
       };
 
       const buildBondEnergy = () => {
@@ -170,14 +222,14 @@ export function BondCharacteristicsVisual() {
           bar.position.set(x, barHeight / 2 - 1.5, 0);
 
           // Value label
-          push(mkSprite(`${bond.label}: ${bond.energy} kJ/mol`, "#f8fafc", new THREE.Vector3(x, barHeight - 0.8, 0), 0.7));
+          addLabel(mkSprite(`${bond.label}: ${bond.energy} kJ/mol`, "#f8fafc", new THREE.Vector3(x, barHeight - 0.8, 0), 0.7));
         });
 
         // Axis
         const axisPts = [new THREE.Vector3(-3, -1.5, 0), new THREE.Vector3(3, -1.5, 0)];
         push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(axisPts), new THREE.LineBasicMaterial({ color: 0x94a3b8 })));
 
-        push(mkSprite("Bond Energy: C≡C > C=C > C-C (stronger = more energy)", "#22c55e", new THREE.Vector3(0, -3.0, 0), 0.9));
+        addLabel(mkSprite("Bond Energy: C≡C > C=C > C-C (stronger = more energy)", "#22c55e", new THREE.Vector3(0, -3.0, 0), 0.9));
       };
 
       const buildBondOrder = () => {
@@ -219,14 +271,16 @@ export function BondCharacteristicsVisual() {
             b3.rotateZ(Math.PI / 2);
           }
 
-          push(mkSprite(`${mol.label} · Bond Order = ${mol.order}`, "#f8fafc", new THREE.Vector3(1.5, y, 0), 0.8));
+          addLabel(mkSprite(`${mol.label} · Bond Order = ${mol.order}`, "#f8fafc", new THREE.Vector3(1.5, y, 0), 0.8));
         });
 
-        push(mkSprite("Bond Order: Higher order = shorter, stronger bond", "#60a5fa", new THREE.Vector3(0, -3.0, 0), 0.9));
+        addLabel(mkSprite("Bond Order: Higher order = shorter, stronger bond", "#60a5fa", new THREE.Vector3(0, -3.0, 0), 0.9));
       };
 
       const builders: Record<BondProperty, () => void> = { length: buildBondLength, energy: buildBondEnergy, order: buildBondOrder };
+      labelSprites.length = 0;
       builders[property]();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -263,7 +317,7 @@ export function BondCharacteristicsVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [property, isWebGL]);
+  }, [property, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Bond Characteristics" description="Bond length/energy visualization — requires WebGL." />;
@@ -278,6 +332,13 @@ export function BondCharacteristicsVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-cyan-500/50 bg-cyan-500/10 text-cyan-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
         <CollapsibleControls label="Bond Property">
           <div className="flex gap-2 mt-1">
             {([
@@ -300,6 +361,7 @@ export function BondCharacteristicsVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+        <ReadoutGrid items={readouts} />
         <div className="rounded-lg border border-cyan-500/30 bg-cyan-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-cyan-400">Key Concepts</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">

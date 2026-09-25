@@ -8,6 +8,12 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  PlaybackBar,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -37,8 +43,57 @@ export function GaussLawVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [chargeType, setChargeType] = useState<"point" | "sphere" | "line">("point");
+  const [chargeMag, setChargeMag] = useState(5);
+  const [gaussRadius, setGaussRadius] = useState(3);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [animating, setAnimating] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  const [showLabels, setShowLabels] = useState(true);
+  const [showField, setShowField] = useState(true);
+  const [runId, setRunId] = useState(0);
+  // Speed lives in a ref so changing it never tears down the WebGL scene.
+  const speedRef = useRef(1);
+  speedRef.current = speed;
 
+  const EPS0 = 8.854e-12;
+  const flux = (chargeMag * 1e-6) / EPS0; // N·m²/C
+  const eSurface = (9e3 * chargeMag) / (gaussRadius * gaussRadius); // N/C
+  const surfArea = 4 * Math.PI * gaussRadius * gaussRadius; // m²
+
+  const DEFAULTS = { chargeType: "point" as const, chargeMag: 5, gaussRadius: 3 };
+  const presets: ScenePreset[] = [
+    {
+      name: "Point charge",
+      hint: "Default — a +5 μC point charge inside a 3 m Gaussian sphere.",
+      apply: () => { setChargeType("point"); setChargeMag(5); setGaussRadius(3); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Charged sphere",
+      hint: "Uniformly charged sphere — flux still depends only on q_enc.",
+      apply: () => { setChargeType("sphere"); setChargeMag(8); setGaussRadius(4); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Line charge",
+      hint: "Thin charged line — cylindrical symmetry case.",
+      apply: () => { setChargeType("line"); setChargeMag(3); setGaussRadius(2); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Large surface",
+      hint: "Bigger Gaussian sphere — same flux, weaker E at the surface.",
+      apply: () => { setChargeType("point"); setChargeMag(10); setGaussRadius(5); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setChargeType(DEFAULTS.chargeType);
+    setChargeMag(DEFAULTS.chargeMag);
+    setGaussRadius(DEFAULTS.gaussRadius);
+    setSpeed(1);
+    setShowLabels(true);
+    setShowField(true);
+    setAnimating(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     const container = containerRef.current;
@@ -47,6 +102,8 @@ export function GaussLawVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
+    const fieldObjs: THREE.Object3D[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -63,11 +120,16 @@ export function GaussLawVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      controls.autoRotate = true;
-      controls.autoRotateSpeed = 0.5;
+      controls.autoRotate = animating;
+      controls.autoRotateSpeed = 0.5 * speedRef.current;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -75,17 +137,19 @@ export function GaussLawVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { s.visible = showLabels; push(s); labelSprites.push(s); return s; };
+      const addField = <T extends THREE.Object3D>(o: T): T => { o.visible = showField; push(o); fieldObjs.push(o); return o; };
 
       // Central charge
       const charge = push(new THREE.Mesh(
         new THREE.SphereGeometry(0.3, 24, 24),
         new THREE.MeshBasicMaterial({ color: 0xef4444 }),
       )) as THREE.Mesh;
-      push(mkSprite("+q", "#ef4444", new THREE.Vector3(0, 1, 0), 0.8));
+      addLabel(mkSprite(`+${chargeMag} μC`, "#ef4444", new THREE.Vector3(0, 1, 0), 0.8));
 
       // Gaussian surface (sphere)
       const gaussianSphere = push(new THREE.Mesh(
-        new THREE.SphereGeometry(3, 32, 32),
+        new THREE.SphereGeometry(gaussRadius, 32, 32),
         new THREE.MeshBasicMaterial({
           color: 0x22d3ee,
           transparent: true,
@@ -100,37 +164,37 @@ export function GaussLawVisual() {
         const theta = (i / numLines) * Math.PI * 2;
         const phi = Math.acos(2 * Math.random() - 1);
         const pts: THREE.Vector3[] = [];
-        for (let r = 0.5; r <= 4; r += 0.15) {
+        for (let r = 0.5; r <= gaussRadius + 1; r += 0.15) {
           pts.push(new THREE.Vector3(
             r * Math.sin(phi) * Math.cos(theta),
             r * Math.sin(phi) * Math.sin(theta),
             r * Math.cos(phi)
           ));
         }
-        push(new THREE.Line(
+        addField(new THREE.Line(
           new THREE.BufferGeometry().setFromPoints(pts),
           new THREE.LineBasicMaterial({ color: 0xfbbf24, transparent: true, opacity: 0.5 }),
         ));
       }
 
       // Flux arrow labels
-      const fluxLabelPos = new THREE.Vector3(4.5, 0, 0);
-      const fluxTarget = new THREE.Vector3(3, 0, 0);
+      const fluxLabelPos = new THREE.Vector3(gaussRadius + 1.5, 0, 0);
+      const fluxTarget = new THREE.Vector3(gaussRadius, 0, 0);
       const fluxDir = fluxTarget.clone().sub(fluxLabelPos).normalize();
       push(new LiveLeaderLine(fluxDir, fluxLabelPos, fluxLabelPos.distanceTo(fluxTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
-      push(mkSprite("Φ_E = ∮E·dA = q/ε₀", "#a78bfa", fluxLabelPos.clone().sub(fluxDir.multiplyScalar(0.5)), 0.8));
+      addLabel(mkSprite("Φ_E = ∮E·dA = q/ε₀", "#a78bfa", fluxLabelPos.clone().sub(fluxDir.multiplyScalar(0.5)), 0.8));
 
-      const ELabelPos = new THREE.Vector3(0, 4.5, 0);
-      const ETarget = new THREE.Vector3(0, 3, 0);
+      const ELabelPos = new THREE.Vector3(0, gaussRadius + 1.5, 0);
+      const ETarget = new THREE.Vector3(0, gaussRadius, 0);
       const EDir = ETarget.clone().sub(ELabelPos).normalize();
       push(new LiveLeaderLine(EDir, ELabelPos, ELabelPos.distanceTo(ETarget) * 0.9, 0x34d399, 0.15, 0.1));
-      push(mkSprite("E = q/(4πε₀r²)", "#34d399", ELabelPos.clone().sub(EDir.multiplyScalar(0.5)), 0.8));
+      addLabel(mkSprite("E = q/(4πε₀r²)", "#34d399", ELabelPos.clone().sub(EDir.multiplyScalar(0.5)), 0.8));
 
-      const ALabelPos = new THREE.Vector3(-4.5, 0, 0);
-      const ATarget = new THREE.Vector3(-3, 0, 0);
+      const ALabelPos = new THREE.Vector3(-(gaussRadius + 1.5), 0, 0);
+      const ATarget = new THREE.Vector3(-gaussRadius, 0, 0);
       const ADir = ATarget.clone().sub(ALabelPos).normalize();
       push(new LiveLeaderLine(ADir, ALabelPos, ALabelPos.distanceTo(ATarget) * 0.9, 0x22d3ee, 0.15, 0.1));
-      push(mkSprite("dA (area element)", "#22d3ee", ALabelPos.clone().sub(ADir.multiplyScalar(0.5)), 0.75));
+      addLabel(mkSprite("dA (area element)", "#22d3ee", ALabelPos.clone().sub(ADir.multiplyScalar(0.5)), 0.75));
 
       const update = () => {
         while (meshes.length > 40) {
@@ -146,6 +210,7 @@ export function GaussLawVisual() {
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
+        controls.autoRotateSpeed = 0.5 * speedRef.current;
         controls.update();
         renderer.render(scene, camera);
       };
@@ -181,7 +246,7 @@ export function GaussLawVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [chargeType, isWebGL]);
+  }, [chargeType, chargeMag, gaussRadius, isWebGL, animating, runId, showLabels, showField]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Gauss's Law" description="Electric flux through Gaussian surface." />;
@@ -202,11 +267,59 @@ export function GaussLawVisual() {
             <button onClick={() => setChargeType("sphere")} className={`px-3 py-1.5 rounded-md text-xs font-medium ${chargeType === "sphere" ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"}`}>Charged Sphere</button>
             <button onClick={() => setChargeType("line")} className={`px-3 py-1.5 rounded-md text-xs font-medium ${chargeType === "line" ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground"}`}>Line Charge</button>
           </div>
+          <div className="flex flex-wrap gap-4 mt-2">
+            <div className="w-28">
+              <Label className="text-xs text-muted-foreground">Enclosed q (μC):</Label>
+              <Input type="range" min={1} max={10} step={0.5} value={chargeMag} onChange={(e) => setChargeMag(Number(e.target.value))} className="mt-1 w-full" />
+              <p className="text-xs font-mono text-primary mt-1">{chargeMag} μC</p>
+            </div>
+            <div className="w-28">
+              <Label className="text-xs text-muted-foreground">Surface radius r (m):</Label>
+              <Input type="range" min={1} max={5} step={0.5} value={gaussRadius} onChange={(e) => setGaussRadius(Number(e.target.value))} className="mt-1 w-full" />
+              <p className="text-xs font-mono text-primary mt-1">{gaussRadius} m</p>
+            </div>
+          </div>
         </CollapsibleControls>
+
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <PlaybackBar
+            playing={animating}
+            onPlayToggle={() => setAnimating(!animating)}
+            speed={speed}
+            onSpeedChange={setSpeed}
+            onReset={resetAll}
+            resetLabel="Reset"
+          />
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-primary/50 bg-primary/10 text-primary" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Labels
+            </button>
+            <button
+              onClick={() => setShowField((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showField ? "border-yellow-500/50 bg-yellow-500/10 text-yellow-400" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Field lines
+            </button>
+          </div>
+        </div>
+
+        <ScenePresets presets={presets} />
 
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Enclosed charge q", value: chargeMag, unit: "μC" },
+            { label: "Flux Φ_E = q/ε₀", value: flux.toExponential(2), unit: "N·m²/C", highlight: true },
+            { label: "E at surface", value: eSurface.toFixed(0), unit: "N/C" },
+            { label: "Surface area 4πr²", value: surfArea.toFixed(1), unit: "m²" },
+          ]}
+        />
 
         <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-blue-400">Key Concepts</p>

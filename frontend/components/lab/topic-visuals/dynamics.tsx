@@ -1,4 +1,4 @@
-﻿"use client";
+"use client";
 
 import { useRef, useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, PlaybackBar, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -41,6 +42,24 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 type DynMode = "straight" | "gravity" | "inclined";
 
+const DYN_INFO: Record<DynMode, { title: string; formulas: string; note: string }> = {
+  straight: {
+    title: "Uniformly accelerated motion in a straight line",
+    formulas: "v = u + at · s = ut + ½at² · v² = u² + 2as",
+    note: "Valid only for constant acceleration. The s–t graph is a parabola, the v–t graph a straight line, and the area under the v–t graph gives the displacement.",
+  },
+  gravity: {
+    title: "Free fall under gravity (a = g = 9.8 m/s²)",
+    formulas: "v = gt · h = ½gt² · v² = 2gh",
+    note: "Neglecting air resistance, all bodies fall with the same acceleration regardless of mass; time to drop from height H is √(2H/g).",
+  },
+  inclined: {
+    title: "Motion down a smooth inclined plane",
+    formulas: "a = g sinθ · normal reaction N = mg cosθ",
+    note: "Only the component of weight along the plane accelerates the body; with friction the acceleration is a = g(sinθ − μcosθ).",
+  },
+};
+
 export function DynamicsVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
@@ -50,7 +69,36 @@ export function DynamicsVisual() {
   const [t, setT] = useState(5);
   const [angle, setAngle] = useState(30);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+  const [playing, setPlaying] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  // Playback state lives in refs so changing it never tears down the WebGL scene.
+  const speedRef = useRef(1);
+  const playingRef = useRef(true);
+  useEffect(() => {
+    speedRef.current = speed;
+    playingRef.current = playing;
+  }, [speed, playing]);
 
+  const info = DYN_INFO[mode];
+  const g0 = 9.8;
+
+  const presets: ScenePreset[] = [
+    { name: "Start from rest (u = 0, a = 2)", hint: "s = ½at² — 25 m in the first 5 s.", apply: () => { setMode("straight"); setU(0); setA(2); setT(5); setRunId((r) => r + 1); } },
+    { name: "Braking to rest (u = 20, a = −4)", hint: "v = u + at → v = 0 exactly at t = 5 s; stopping distance 50 m.", apply: () => { setMode("straight"); setU(20); setA(-4); setT(5); setRunId((r) => r + 1); } },
+    { name: "Free fall from 10 m", hint: "g = 9.8 m/s² — hits the ground after √(2h/g) ≈ 1.43 s at 14 m/s.", apply: () => { setMode("gravity"); setRunId((r) => r + 1); } },
+    { name: "Smooth 30° incline", hint: "a = g sin 30° = 4.9 m/s² — half the acceleration of free fall.", apply: () => { setMode("inclined"); setAngle(30); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setMode("straight");
+    setU(0); setA(2); setT(5); setAngle(30);
+    setShowLabels(true);
+    setPlaying(true);
+    setSpeed(1);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     const container = containerRef.current;
@@ -59,6 +107,7 @@ export function DynamicsVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -75,18 +124,52 @@ export function DynamicsVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
       controls.autoRotate = false;
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
+
+      // Sprite whose canvas text is redrawn each animation frame
+      const mkLiveSprite = (pos: THREE.Vector3, scale: number, color: string, text: string) => {
+        const canvas = document.createElement("canvas");
+        canvas.width = 512;
+        canvas.height = 96;
+        const ctx = canvas.getContext("2d")!;
+        const tex = new THREE.CanvasTexture(canvas);
+        const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthTest: false }));
+        s.position.copy(pos);
+        s.scale.set(3.0 * scale, 0.56 * scale, 1);
+        const draw = (next: string) => {
+          ctx.clearRect(0, 0, 512, 96);
+          ctx.fillStyle = "rgba(15, 23, 42, 0.9)";
+          ctx.fillRect(4, 4, 504, 88);
+          ctx.strokeStyle = color;
+          ctx.lineWidth = 2;
+          ctx.strokeRect(4, 4, 504, 88);
+          ctx.font = "bold 30px monospace";
+          ctx.textAlign = "center";
+          ctx.textBaseline = "middle";
+          ctx.fillStyle = color;
+          ctx.fillText(next, 256, 48);
+          tex.needsUpdate = true;
+        };
+        draw(text);
+        push(s);
+        labelSprites.push(s);
+        return { sprite: s, draw };
+      };
 
       const animatedArrows: LiveLeaderLine[] = [];
+      // Set by update() per mode; called every frame with scaled dt while playing.
+      let applyMotion: ((dt: number) => void) | null = null;
 
       const update = () => {
         animatedArrows.forEach((a) => { scene.remove(a.group); a.dispose(); });
         animatedArrows.length = 0;
+        applyMotion = null;
         while (meshes.length > 25) {
           const m = meshes.pop()!;
           scene.remove(m);
@@ -94,9 +177,10 @@ export function DynamicsVisual() {
           else if (m instanceof THREE.Line) { m.geometry?.dispose(); (m.material as THREE.Material).dispose(); }
           else if (m instanceof THREE.Sprite) { (m.material as THREE.SpriteMaterial).map?.dispose?.(); m.material.dispose(); }
         }
+        labelSprites.length = 0;
 
         if (mode === "straight") {
-          // x-t, v-t, a-t graphs
+          // x-t graph of x = ut + ½at² with a particle sliding along it
           const graphW = 6, graphH = 4;
           const ox = -7, oy = -5;
           const sx = graphW / 10, sy = graphH / 10;
@@ -104,8 +188,8 @@ export function DynamicsVisual() {
           // Axes
           push(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(ox, oy, 0), new THREE.Vector3(ox + graphW, oy, 0)]), new THREE.LineBasicMaterial({ color: 0x94a3b8 })));
           push(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(ox, oy, 0), new THREE.Vector3(ox, oy + graphH, 0)]), new THREE.LineBasicMaterial({ color: 0x94a3b8 })));
-          push(mkSprite("t", "#94a3b8", new THREE.Vector3(ox + graphW + 0.3, oy, 0), 0.5));
-          push(mkSprite("x", "#94a3b8", new THREE.Vector3(ox, oy + graphH + 0.3, 0), 0.5));
+          addLabel(mkSprite("t", "#94a3b8", new THREE.Vector3(ox + graphW + 0.3, oy, 0), 0.5));
+          addLabel(mkSprite("x", "#94a3b8", new THREE.Vector3(ox, oy + graphH + 0.3, 0), 0.5));
 
           // x = ut + 0.5at²
           const pts: THREE.Vector3[] = [];
@@ -116,43 +200,54 @@ export function DynamicsVisual() {
           }
           push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({ color: 0x22d3ee, linewidth: 2 })));
 
-          // Moving particle
-          const tt = ((performance.now() / 1000) % t) ;
-          const xx = u * tt + 0.5 * a * tt * tt;
-          const dot = push(new THREE.Mesh(new THREE.SphereGeometry(0.2, 12, 12), new THREE.MeshBasicMaterial({ color: 0xef4444 })));
-          dot.position.set(ox + tt * sx, oy + xx * sy * 0.5, 0.05);
-
-          // Readout
-          const v = u + a * tt;
-          push(mkSprite(`x = ${xx.toFixed(1)}m  v = ${v.toFixed(1)}m/s  at t=${tt.toFixed(1)}s`, "#fbbf24", new THREE.Vector3(0, 6, 0), 0.8));
+          // Moving particle (loops over the first t seconds)
+          const dot = push(new THREE.Mesh(new THREE.SphereGeometry(0.2, 12, 12), new THREE.MeshBasicMaterial({ color: 0xef4444 }))) as THREE.Mesh;
+          const readout = mkLiveSprite(new THREE.Vector3(0, 6, 0), 0.8, "#fbbf24", "—");
+          const period = Math.max(1, t);
+          let te = 0;
+          applyMotion = (dt: number) => {
+            te = (te + dt) % period;
+            const xi = u * te + 0.5 * a * te * te;
+            const vi = u + a * te;
+            dot.position.set(ox + te * sx, oy + xi * sy * 0.5, 0.05);
+            readout.draw(`x = ${xi.toFixed(1)} m   v = ${vi.toFixed(1)} m/s   at t = ${te.toFixed(1)} s`);
+          };
+          applyMotion(0);
 
           // Equations
-          push(mkSprite("x = ut + ½at²    v = u + at    v² = u² + 2as", "#a78bfa", new THREE.Vector3(0, -6.5, 0), 0.7));
+          addLabel(mkSprite("x = ut + ½at²    v = u + at    v² = u² + 2as", "#a78bfa", new THREE.Vector3(0, -6.5, 0), 0.7));
         } else if (mode === "gravity") {
-          // Projectile / free fall
-          const g = 9.8;
+          // Free fall from h0 = 10 m (g = 9.8 m/s²)
           const h0 = 10;
-          const pts: THREE.Vector3[] = [];
+          const g = 9.8;
+          const tFall = Math.sqrt((2 * h0) / g);
           const groundY = -4;
+
+          const pts: THREE.Vector3[] = [];
           for (let i = 0; i <= 100; i++) {
-            const ti = (i / 100) * Math.sqrt(2 * h0 / g) * 3;
+            const ti = (i / 100) * tFall;
             const yi = h0 - 0.5 * g * ti * ti;
-            if (yi < groundY) break;
             pts.push(new THREE.Vector3(0, yi * 0.6 + groundY, 0.02));
           }
           push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({ color: 0xef4444, linewidth: 3 })));
           // Ground
           push(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-3, groundY, 0), new THREE.Vector3(3, groundY, 0)]), new THREE.LineBasicMaterial({ color: 0x22c55e, linewidth: 2 })));
-          // Ball
-          const tt = ((performance.now() / 800) % 3);
-          const ballY = Math.max(h0 * 0.6 + groundY, groundY) - 0.5 * g * tt * tt * 0.6;
-          const ball = push(new THREE.Mesh(new THREE.SphereGeometry(0.2, 12, 12), new THREE.MeshBasicMaterial({ color: 0xf97316 })));
-          ball.position.set(0, Math.max(ballY, groundY + 0.2), 0.05);
-          // Height label
-          push(mkSprite(`h = ${Math.max(0, h0 - 0.5 * g * tt * tt).toFixed(1)}m`, "#fbbf24", new THREE.Vector3(1.5, Math.max(ballY, groundY) + 0.8, 0), 0.7));
-          push(mkSprite("Free fall: v = gt,  h = ½gt²", "#a78bfa", new THREE.Vector3(0, 6, 0), 0.8));
+
+          // Ball (loops: drop, land, restart)
+          const ball = push(new THREE.Mesh(new THREE.SphereGeometry(0.2, 12, 12), new THREE.MeshBasicMaterial({ color: 0xf97316 }))) as THREE.Mesh;
+          const readout = mkLiveSprite(new THREE.Vector3(2, 5, 0), 0.7, "#fbbf24", "—");
+          let te = 0;
+          applyMotion = (dt: number) => {
+            te = (te + dt) % tFall;
+            const h = h0 - 0.5 * g * te * te;
+            ball.position.set(0, h * 0.6 + groundY, 0.05);
+            readout.draw(`h = ${h.toFixed(1)} m   v = gt = ${(g * te).toFixed(1)} m/s`);
+          };
+          applyMotion(0);
+
+          addLabel(mkSprite(`Free fall: v = gt, h = ½gt² — lands at v = √(2gh) ≈ ${Math.sqrt(2 * g * h0).toFixed(1)} m/s`, "#a78bfa", new THREE.Vector3(0, 6.5, 0), 0.8));
         } else if (mode === "inclined") {
-          // Inclined plane
+          // Inclined plane with weight and normal-force leader lines
           const rad = angle * Math.PI / 180;
           const planeLen = 7;
           const planeTop = new THREE.Vector3(-planeLen * Math.cos(rad), planeLen * Math.sin(rad) - 3, 0);
@@ -167,8 +262,8 @@ export function DynamicsVisual() {
           // Angle arc
           const arcPts: THREE.Vector3[] = [];
           for (let i = 0; i <= 20; i++) {
-            const t = (i / 20) * rad;
-            arcPts.push(new THREE.Vector3(planeBot.x - 1 * Math.cos(t), planeBot.y + 1 * Math.sin(t), 0.03));
+            const ta = (i / 20) * rad;
+            arcPts.push(new THREE.Vector3(planeBot.x - 1 * Math.cos(ta), planeBot.y + 1 * Math.sin(ta), 0.03));
           }
           push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(arcPts), new THREE.LineBasicMaterial({ color: 0xfbbf24 })));
           // Block on plane
@@ -177,27 +272,32 @@ export function DynamicsVisual() {
           block.position.copy(blockPos);
           block.rotation.z = rad;
           // Force arrows (dynamic)
-          const weight = new THREE.Vector3(0, -1.5, 0);
-          const weightArrow = new LiveLeaderLine(new THREE.Vector3(0, -1, 0).normalize(), blockPos.clone(), 1.2, 0xef4444, 0.15, 0.1);
+          const weightArrow = new LiveLeaderLine(new THREE.Vector3(0, -1, 0), blockPos.clone(), 1.2, 0xef4444, 0.15, 0.1);
           scene.add(weightArrow.group);
           animatedArrows.push(weightArrow);
-          push(mkSprite("mgâ†“", "#f87171", blockPos.clone().add(new THREE.Vector3(0, -1.8, 0)), 0.65));
+          addLabel(mkSprite("mg ↓", "#f87171", blockPos.clone().add(new THREE.Vector3(0, -1.8, 0)), 0.65));
           const normalDir = new THREE.Vector3(-Math.sin(rad), Math.cos(rad), 0);
           const normalArrow = new LiveLeaderLine(normalDir, blockPos.clone(), 1.2, 0x60a5fa, 0.15, 0.1);
           scene.add(normalArrow.group);
           animatedArrows.push(normalArrow);
-          push(mkSprite("NâŠ¥", "#60a5fa", blockPos.clone().add(normalDir.clone().multiplyScalar(1.3)), 0.65));
+          addLabel(mkSprite("N ⊥ plane", "#60a5fa", blockPos.clone().add(normalDir.clone().multiplyScalar(1.3)), 0.65));
           // Readout
-          push(mkSprite(`Î¸ = ${angle}°   g sin Î¸ = ${(9.8 * Math.sin(rad)).toFixed(1)} m/s²   g cos Î¸ = ${(9.8 * Math.cos(rad)).toFixed(1)}`, "#fbbf24", new THREE.Vector3(-3, 6, 0), 0.75));
+          addLabel(mkSprite(`θ = ${angle}°   g sin θ = ${(9.8 * Math.sin(rad)).toFixed(1)} m/s²   g cos θ = ${(9.8 * Math.cos(rad)).toFixed(1)}`, "#fbbf24", new THREE.Vector3(-3, 6, 0), 0.75));
         }
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
+      let last = performance.now();
       const animate = () => {
         frameId = requestAnimationFrame(animate);
-        const time = performance.now() / 1000;
+        const now = performance.now();
+        const dt = Math.min(0.05, (now - last) / 1000);
+        last = now;
+        const time = now / 1000;
         animatedArrows.forEach((arrow) => arrow.update(time));
+        if (playingRef.current && applyMotion) applyMotion(dt * speedRef.current);
         controls.update();
         renderer.render(scene, camera);
       };
@@ -233,7 +333,7 @@ export function DynamicsVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [mode, u, a, t, angle, isWebGL]);
+  }, [mode, u, a, t, angle, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Dynamics" description="Motion visualization — requires WebGL." />;
@@ -248,6 +348,14 @@ export function DynamicsVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-orange-500/50 bg-orange-500/10 text-orange-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Motion Type">
           <div className="flex flex-wrap gap-2 mt-2">
             {(["straight", "gravity", "inclined"] as DynMode[]).map((m) => (
@@ -284,13 +392,50 @@ export function DynamicsVisual() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <PlaybackBar
+          playing={playing}
+          onPlayToggle={() => setPlaying((p) => !p)}
+          speed={speed}
+          onSpeedChange={setSpeed}
+          onReset={resetAll}
+        />
+
+        <ReadoutGrid
+          items={
+            mode === "straight"
+              ? [
+                  { label: "Mode", value: DYN_INFO.straight.title, highlight: true },
+                  { label: "v after t = 5 s (v = u + at)", value: (u + a * t).toFixed(1), unit: "m/s" },
+                  { label: "s in first t s (s = ut + ½at²)", value: (u * t + 0.5 * a * t * t).toFixed(1), unit: "m" },
+                  { label: "v² − u² = 2as check", value: (2 * a * (u * t + 0.5 * a * t * t)).toFixed(1), unit: "m²/s²" },
+                  { label: "Average velocity (u + v)/2", value: (u + 0.5 * a * t).toFixed(1), unit: "m/s" },
+                ]
+              : mode === "gravity"
+                ? [
+                    { label: "Mode", value: DYN_INFO.gravity.title, highlight: true },
+                    { label: "Drop height", value: 10, unit: "m" },
+                    { label: "Time to land √(2h/g)", value: Math.sqrt(20 / g0).toFixed(2), unit: "s" },
+                    { label: "Impact speed √(2gh)", value: Math.sqrt(2 * g0 * 10).toFixed(1), unit: "m/s" },
+                    { label: "Distance fallen in 1st second", value: (0.5 * g0 * 1 * 1).toFixed(1), unit: "m" },
+                  ]
+                : [
+                    { label: "Mode", value: DYN_INFO.inclined.title, highlight: true },
+                    { label: "Down-plane accel g sinθ", value: (g0 * Math.sin((angle * Math.PI) / 180)).toFixed(2), unit: "m/s²" },
+                    { label: "Normal component g cosθ", value: (g0 * Math.cos((angle * Math.PI) / 180)).toFixed(2), unit: "m/s²" },
+                    { label: "Speed after sliding 3 m (v² = 2as)", value: Math.sqrt(2 * g0 * Math.sin((angle * Math.PI) / 180) * 3).toFixed(1), unit: "m/s" },
+                    { label: "Time to slide 3 m from rest", value: Math.sqrt(6 / (g0 * Math.sin((angle * Math.PI) / 180))).toFixed(2), unit: "s" },
+                  ]
+          }
+        />
+
         <div className="rounded-lg border border-orange-500/30 bg-orange-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-orange-400">Equations of Motion</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">
+            <p><strong className="text-foreground">{info.title}:</strong> {info.formulas}</p>
+            <p>{info.note}</p>
             <p><strong className="text-foreground">v = u + at</strong></p>
             <p><strong className="text-foreground">s = ut + ½at²</strong></p>
             <p><strong className="text-foreground">v² = u² + 2as</strong></p>
-            <p><strong className="text-foreground">Inclined plane:</strong> a = g sin Î¸ (smooth), a = g(sin Î¸ âˆ’ Î¼ cos Î¸) (rough)</p>
           </div>
         </div>
       </CardContent>

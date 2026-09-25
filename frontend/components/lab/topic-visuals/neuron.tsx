@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, PlaybackBar, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -36,18 +37,57 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
-function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
+function addLabel(scene: THREE.Scene, meshes: THREE.Object3D[], labelSprites: THREE.Sprite[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
   const dir = targetPos.clone().sub(labelPos).normalize();
   const len = labelPos.distanceTo(targetPos);
-  meshes.push(new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14) as any);
+  const line = new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14);
+  scene.add(line);
+  meshes.push(line);
   const lp = labelPos.clone().sub(dir.clone().multiplyScalar(0.45));
-  meshes.push(mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85));
+  const s = mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85);
+  scene.add(s);
+  meshes.push(s);
+  labelSprites.push(s);
 }
+
+type NeuronFocus = "all" | "receive" | "conduct" | "transmit";
 
 export function NeuronVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
+  const [focus, setFocus] = useState<NeuronFocus>("all");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+  const [playing, setPlaying] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  const speedRef = useRef(1);
+  const playingRef = useRef(true);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  useEffect(() => { speedRef.current = speed; playingRef.current = playing; }, [speed, playing]);
+
+  const FOCUS_INFO: Record<NeuronFocus, { part: string; role: string; signal: string; fact: string, tip: string }> = {
+    all: { part: "Whole neuron (nerve cell)", role: "Structural & functional unit of the nervous system", signal: "Impulse route: dendrite → soma → axon → terminal", fact: "You have ~86 billion neurons, each firing roughly 5–50 times per second", tip: "Signal direction in the body is dendrite → axon; experiments can force it backwards" },
+    receive: { part: "Dendrites + soma", role: "Receives and integrates thousands of incoming signals", signal: "Graded potentials sum at the axon hillock", fact: "Dendritic spines multiply the receiving surface — learning literally grows them", tip: "Cross the threshold and the action potential fires all-or-none" },
+    conduct: { part: "Myelinated axon + Nodes of Ranvier", role: "Rapid conduction away from the soma", signal: "Saltatory conduction: the impulse leaps node to node", fact: "Myelin boosts speed from ~1 m/s to ~120 m/s", tip: "Schwann cells make myelin in PNS; oligodendrocytes in CNS — MS attacks it" },
+    transmit: { part: "Synaptic knob, cleft & postsynaptic membrane", role: "Chemical transmission to the next cell", signal: "Ca²⁺ in → vesicles fuse → neurotransmitter diffuses across", fact: "The synapse adds ~0.5 ms delay — the slow step in a reflex arc", tip: "Acetylcholine at the neuromuscular junction; acetylcholinesterase ends the signal" },
+  };
+  const info = FOCUS_INFO[focus];
+
+  const presets: ScenePreset[] = [
+    { name: "Whole neuron", hint: "Every part lit — the classic labelled diagram.", apply: () => { setFocus("all"); setRunId((r) => r + 1); } },
+    { name: "1 · Receiving", hint: "Dendrites and soma only — where signals arrive and sum.", apply: () => { setFocus("receive"); setRunId((r) => r + 1); } },
+    { name: "2 · Conducting", hint: "Follow the impulse leap along the myelinated axon.", apply: () => { setFocus("conduct"); setRunId((r) => r + 1); } },
+    { name: "3 · Transmitting", hint: "The synapse — vesicles, cleft and postsynaptic membrane.", apply: () => { setFocus("transmit"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setFocus("all");
+    setShowLabels(true);
+    setPlaying(true);
+    setSpeed(1);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -57,6 +97,7 @@ export function NeuronVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -76,7 +117,7 @@ export function NeuronVisual() {
       controls.autoRotate = false;
       controls.minDistance = 5;
       controls.maxDistance = 22;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dl = new THREE.DirectionalLight(0xffffff, 0.9);
@@ -84,6 +125,12 @@ export function NeuronVisual() {
       scene.add(dl);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+
+      const dendriteParts: THREE.Object3D[] = [];
+      const myelinParts: THREE.Object3D[] = [];
+      const ranvierParts: THREE.Object3D[] = [];
+      const terminalParts: THREE.Object3D[] = [];
+      const vesicleParts: THREE.Object3D[] = [];
 
       // Cell body (soma)
       const soma = push(new THREE.Mesh(
@@ -114,6 +161,7 @@ export function NeuronVisual() {
         ));
         dendrite.position.set(-1 + Math.cos(d.angle) * d.length * 0.5, Math.sin(d.angle) * d.length * 0.5, 0);
         dendrite.rotation.z = d.angle;
+        dendriteParts.push(dendrite);
         // Branch
         const branch = push(new THREE.Mesh(
           new THREE.CylinderGeometry(0.02, 0.03, 0.4, 4),
@@ -125,6 +173,7 @@ export function NeuronVisual() {
           0
         );
         branch.rotation.z = d.angle + 0.5;
+        dendriteParts.push(branch);
       }
 
       // Axon (long fiber)
@@ -143,6 +192,7 @@ export function NeuronVisual() {
         ));
         myelin.position.set(0.5 + i * 0.6, 0, 0);
         myelin.rotation.z = Math.PI / 2;
+        myelinParts.push(myelin);
       }
 
       // Nodes of Ranvier (gaps between myelin)
@@ -152,6 +202,7 @@ export function NeuronVisual() {
           new THREE.MeshPhongMaterial({ color: 0xf97316 }),
         ));
         node.position.set(0.85 + i * 0.6, 0, 0);
+        ranvierParts.push(node);
       }
 
       // Axon terminals (button endings)
@@ -161,6 +212,7 @@ export function NeuronVisual() {
           new THREE.MeshPhongMaterial({ color: 0x22c55e }),
         ));
         terminal.position.set(3.5 + i * 0.2, (i - 1) * 0.3, 0);
+        terminalParts.push(terminal);
       }
 
       // Synaptic knob
@@ -191,24 +243,59 @@ export function NeuronVisual() {
           new THREE.MeshPhongMaterial({ color: 0xfbbf24 }),
         ));
         vesicle.position.set(3.55 + Math.random() * 0.1, (Math.random() - 0.5) * 0.2, (Math.random() - 0.5) * 0.15);
+        vesicleParts.push(vesicle);
       }
 
       push(mkSprite("Neuron — Structure & Synapse", "#fbbf24", new THREE.Vector3(0, 2.8, 0), 0.85));
 
-      addLabel(meshes, "Dendrite\n(receives signals)", 0xa78bfa, new THREE.Vector3(-3.5, 2.0, 2), new THREE.Vector3(-1.5, 0.8, 0));
-      addLabel(meshes, "Cell Body (Soma)\ncontains nucleus", 0x7c3aed, new THREE.Vector3(-3.5, 0, 3), soma.position);
-      addLabel(meshes, "Nucleus", 0x4c1d95, new THREE.Vector3(-2.5, 1.0, -2.5), nucleus.position);
-      addLabel(meshes, "Axon\n(conducts impulse)", 0x3b82f6, new THREE.Vector3(2, 2.0, -2.5), axon.position);
-      addLabel(meshes, "Myelin Sheath\n(insulation)", 0xfbbf24, new THREE.Vector3(-1, -2.0, 2.5), new THREE.Vector3(1.5, 0, 0));
-      addLabel(meshes, "Node of Ranvier\n(saltatory conduction)", 0xf97316, new THREE.Vector3(2, -2.5, -2), new THREE.Vector3(2.2, 0, 0));
-      addLabel(meshes, "Axon Terminal", 0x22c55e, new THREE.Vector3(4, 1.5, 2.5), new THREE.Vector3(3.5, 0, 0));
-      addLabel(meshes, "Synaptic Knob", 0x22d3ee, new THREE.Vector3(4.5, -1.0, 2), synapticKnob.position);
-      addLabel(meshes, "Synaptic Cleft", 0x94a3b8, new THREE.Vector3(4.5, 0.5, -2.5), cleft.position);
-      addLabel(meshes, "Neurotransmitter Vesicles", 0xfbbf24, new THREE.Vector3(3.5, 1.5, 2.5), new THREE.Vector3(3.58, 0.05, 0));
-      addLabel(meshes, "Postsynaptic Membrane", 0x64748b, new THREE.Vector3(5, 0, 2.5), postSyn.position);
+      addLabel(scene, meshes, labelSprites, "Dendrite\n(receives signals)", 0xa78bfa, new THREE.Vector3(-3.5, 2.0, 2), new THREE.Vector3(-1.5, 0.8, 0));
+      addLabel(scene, meshes, labelSprites, "Cell Body (Soma)\ncontains nucleus", 0x7c3aed, new THREE.Vector3(-3.5, 0, 3), soma.position);
+      addLabel(scene, meshes, labelSprites, "Nucleus", 0x4c1d95, new THREE.Vector3(-2.5, 1.0, -2.5), nucleus.position);
+      addLabel(scene, meshes, labelSprites, "Axon\n(conducts impulse)", 0x3b82f6, new THREE.Vector3(2, 2.0, -2.5), axon.position);
+      addLabel(scene, meshes, labelSprites, "Myelin Sheath\n(insulation)", 0xfbbf24, new THREE.Vector3(-1, -2.0, 2.5), new THREE.Vector3(1.5, 0, 0));
+      addLabel(scene, meshes, labelSprites, "Node of Ranvier\n(saltatory conduction)", 0xf97316, new THREE.Vector3(2, -2.5, -2), new THREE.Vector3(2.2, 0, 0));
+      addLabel(scene, meshes, labelSprites, "Axon Terminal", 0x22c55e, new THREE.Vector3(4, 1.5, 2.5), new THREE.Vector3(3.5, 0, 0));
+      addLabel(scene, meshes, labelSprites, "Synaptic Knob", 0x22d3ee, new THREE.Vector3(4.5, -1.0, 2), synapticKnob.position);
+      addLabel(scene, meshes, labelSprites, "Synaptic Cleft", 0x94a3b8, new THREE.Vector3(4.5, 0.5, -2.5), cleft.position);
+      addLabel(scene, meshes, labelSprites, "Neurotransmitter Vesicles", 0xfbbf24, new THREE.Vector3(3.5, 1.5, 2.5), new THREE.Vector3(3.58, 0.05, 0));
+      addLabel(scene, meshes, labelSprites, "Postsynaptic Membrane", 0x64748b, new THREE.Vector3(5, 0, 2.5), postSyn.position);
 
+      // Traveling action-potential pulse (dendrite → axon terminal → synapse)
+      const pulse = push(new THREE.Mesh(
+        new THREE.SphereGeometry(0.12, 10, 8),
+        new THREE.MeshPhongMaterial({ color: 0xfde047, emissive: 0xfde047, emissiveIntensity: 1.2, transparent: true, opacity: 0.95 }),
+      ));
+      pulse.position.set(-1.6, 0.4, 0);
+
+      labelSprites.forEach((s) => (s.visible = showLabels));
+
+      // Focus dimming: receive → conduct → transmit
+      const allParts: THREE.Object3D[] = [soma, nucleus, ...dendriteParts, axon, ...myelinParts, ...ranvierParts, ...terminalParts, synapticKnob, cleft, postSyn, ...vesicleParts];
+      const GROUPS: Record<Exclude<NeuronFocus, "all">, THREE.Object3D[]> = {
+        receive: [soma, nucleus, ...dendriteParts],
+        conduct: [soma, axon, ...myelinParts, ...ranvierParts],
+        transmit: [axon, ...terminalParts, synapticKnob, cleft, postSyn, ...vesicleParts],
+      };
+      const highlighted = focus === "all" ? allParts : GROUPS[focus];
+      allParts.forEach((p) => {
+        const mat = (p as THREE.Mesh).material as THREE.MeshPhongMaterial;
+        if (!mat) return;
+        const keep = (mat as any).__origOpacity ?? ((mat as any).__origOpacity = mat.opacity);
+        mat.transparent = true;
+        mat.opacity = highlighted.includes(p) ? keep : 0.12;
+      });
+
+      let pulseT = 0;
       const animate = () => {
         frameId = requestAnimationFrame(animate);
+        if (playingRef.current) {
+          pulseT += 0.006 * speedRef.current;
+          if (pulseT > 1) pulseT -= 1;
+          const x = -1.6 + pulseT * 6.4;
+          pulse.position.set(x, x < -1 ? 0.4 : 0, 0);
+          const mat = pulse.material as THREE.MeshPhongMaterial;
+          mat.opacity = 0.55 + 0.4 * Math.abs(Math.sin(pulseT * Math.PI * 6));
+        }
         controls.update();
         renderer.render(scene, camera);
       };
@@ -243,7 +330,7 @@ export function NeuronVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [isWebGL]);
+  }, [focus, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Neuron Structure" description="3D neuron with labeled parts." />;
@@ -258,9 +345,27 @@ export function NeuronVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-purple-500/50 bg-purple-500/10 text-purple-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <PlaybackBar playing={playing} onPlayToggle={() => setPlaying((p) => !p)} speed={speed} onSpeedChange={setSpeed} onReset={resetAll} />
+
+        <ReadoutGrid items={[
+          { label: "In focus", value: info.part, highlight: true },
+          { label: "Role", value: info.role },
+          { label: "Signal event", value: info.signal },
+          { label: "Did you know", value: info.fact },
+          { label: "Exam tip", value: info.tip },
+        ]} />
 
         <div className="rounded-lg border border-purple-500/30 bg-purple-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-purple-400">Key Concepts</p>

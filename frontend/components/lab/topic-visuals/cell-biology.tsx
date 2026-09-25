@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -36,19 +37,53 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
-function addLabel(meshes: THREE.Object3D[], scene: THREE.Scene, text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
+function addLabel(scene: THREE.Scene, meshes: THREE.Object3D[], labelSprites: THREE.Sprite[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
   const dir = targetPos.clone().sub(labelPos).normalize();
   const len = labelPos.distanceTo(targetPos);
-  meshes.push(new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14) as any);
+  const line = new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14);
+  scene.add(line);
+  meshes.push(line);
   const labelP = labelPos.clone().sub(dir.clone().multiplyScalar(0.45));
-  meshes.push(mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, labelP, 0.85));
+  const s = mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, labelP, 0.85);
+  scene.add(s);
+  meshes.push(s);
+  labelSprites.push(s);
 }
+
+type CellFocus = "all" | "energy" | "protein" | "control" | "boundary";
+
+const FOCUS_INFO: Record<CellFocus, { team: string; one: string; two: string; three: string; four: string }> = {
+  all: { team: "All organelles visible", one: "Nucleus stores DNA & runs the cell", two: "Mitochondria = ATP via respiration", three: "Chloroplast = sugars via photosynthesis", four: "ER · Golgi · ribosomes handle protein traffic" },
+  energy: { team: "Energy-converting organelles", one: "Mitochondria: aerobic respiration → ATP", two: "Chloroplast: light → glucose (thylakoid grana)", three: "Both have own DNA + double membrane", four: "Other organelles dimmed for focus" },
+  protein: { team: "Protein synthesis & packaging", one: "Ribosomes: translate mRNA into protein", two: "Rough ER: folds & transports proteins", three: "Golgi: modifies, sorts, packages", four: "Vesicles shuttle cargo ER → Golgi → membrane" },
+  control: { team: "Control & information center", one: "Nucleus: holds chromatin (DNA + histones)", two: "Nucleolus: assembles ribosomal subunits", three: "Nuclear pores: mRNA exits, proteins enter", four: "Other organelles dimmed for focus" },
+  boundary: { team: "Boundaries, storage & cleanup", one: "Cell membrane: selective barrier (phospholipid bilayer)", two: "Cell wall: cellulose — plant only", three: "Vacuole: water, turgor pressure & storage", four: "Lysosomes: hydrolytic enzyme digestion" },
+};
 
 export function CellBiologyVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [rotationSpeed, setRotationSpeed] = useState(0.3);
+  const [focus, setFocus] = useState<CellFocus>("all");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const info = FOCUS_INFO[focus];
+
+  const presets: ScenePreset[] = [
+    { name: "Whole cell", hint: "Animal + plant organelles together, all labeled.", apply: () => { setFocus("all"); setRunId((r) => r + 1); } },
+    { name: "Power plants", hint: "Mitochondria and chloroplast — the cell's energy converters.", apply: () => { setFocus("energy"); setRunId((r) => r + 1); } },
+    { name: "Protein pipeline", hint: "Ribosome → rough ER → Golgi: make, fold, ship.", apply: () => { setFocus("protein"); setRunId((r) => r + 1); } },
+    { name: "Nucleus focus", hint: "Control center: chromatin inside, nucleolus making ribosomes.", apply: () => { setFocus("control"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setFocus("all");
+    setRotationSpeed(0.3);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -58,6 +93,7 @@ export function CellBiologyVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -78,7 +114,7 @@ export function CellBiologyVisual() {
       controls.autoRotateSpeed = rotationSpeed;
       controls.minDistance = 5;
       controls.maxDistance = 22;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.65));
       const dl = new THREE.DirectionalLight(0xffffff, 0.9);
@@ -131,17 +167,21 @@ export function CellBiologyVisual() {
 
       // ER (network of tubes)
       const erGroup = new THREE.Group();
+      const erTubes: THREE.Mesh[] = [];
       for (let i = 0; i < 8; i++) {
         const angle = (i / 8) * Math.PI * 2;
         const r = 1.6 + Math.random() * 0.4;
-        const tube = push(new THREE.Mesh(
+        const tube = new THREE.Mesh(
           new THREE.TorusGeometry(r, 0.08, 8, 24, Math.PI * 1.2),
           new THREE.MeshPhongMaterial({ color: 0x22d3ee, transparent: true, opacity: 0.7 }),
-        ));
+        );
         tube.position.set(0.5, 0.3, 0);
         tube.rotation.set(Math.random() * 0.5, angle, Math.random() * 0.5);
         erGroup.add(tube);
+        erTubes.push(tube);
+        meshes.push(tube);
       }
+      scene.add(erGroup);
 
       // Golgi body
       const golgi = push(new THREE.Mesh(
@@ -198,6 +238,7 @@ export function CellBiologyVisual() {
       chloroplast.position.set(-2.8, -0.5, -1.5);
       chloroplast.rotation.set(0.3, 0.8, 0.4);
       // Thylakoid stacks inside
+      const thylakoids: THREE.Mesh[] = [];
       for (let i = 0; i < 4; i++) {
         const thylakoid = push(new THREE.Mesh(
           new THREE.CylinderGeometry(0.2, 0.2, 0.04, 12),
@@ -205,6 +246,7 @@ export function CellBiologyVisual() {
         ));
         thylakoid.position.set(-2.8, -0.5 + (i - 1.5) * 0.12, -1.5);
         thylakoid.rotation.set(0.3, 0.8, 0.4);
+        thylakoids.push(thylakoid);
       }
 
       // Central vacuole
@@ -216,22 +258,40 @@ export function CellBiologyVisual() {
 
       // Long arrow labels — CRITICAL: each structure has a long arrow from label to target
       const R = 0xffffff;
-      addLabel(meshes, scene, "Nucleus", 0xa78bfa, new THREE.Vector3(3.5, 3, 2), nucleus.position);
-      addLabel(meshes, scene, "Nucleolus", 0x7c3aed, new THREE.Vector3(2.5, 3.5, -1.5), nucleolus.position);
-      addLabel(meshes, scene, "Mitochondria", 0xf97316, new THREE.Vector3(-4, 3.5, 2), mitoPositions[0].pos);
-      addLabel(meshes, scene, "Mitochondria", 0xf97316, new THREE.Vector3(4, -3, -2), mitoPositions[1].pos);
-      addLabel(meshes, scene, "Endoplasmic Reticulum", 0x22d3ee, new THREE.Vector3(3, 3, -2.5), new THREE.Vector3(0.5, 0.3, 0));
-      addLabel(meshes, scene, "Golgi Body", 0xfbbf24, new THREE.Vector3(4, 3.5, 0), golgi.position);
-      addLabel(meshes, scene, "Lysosome", 0xef4444, new THREE.Vector3(-4, -3, 2), lysoPositions[0]);
-      addLabel(meshes, scene, "Lysosome", 0xef4444, new THREE.Vector3(4, -3.5, 1), lysoPositions[1]);
-      addLabel(meshes, scene, "Ribosome", 0x34d399, new THREE.Vector3(-4, 2, 3), ribosomePositions[0]);
-      addLabel(meshes, scene, "Chloroplast", 0x22c55e, new THREE.Vector3(-4.5, 1, -3), chloroplast.position);
-      addLabel(meshes, scene, "Central Vacuole", 0x93c5fd, new THREE.Vector3(-4, -2, 3), vacuole.position);
-      addLabel(meshes, scene, "Cell Membrane", 0x7dd3fc, new THREE.Vector3(4, 0, 3.5), cellMembrane.position);
-      addLabel(meshes, scene, "Cell Wall", 0x4ade80, new THREE.Vector3(4.2, 1, -3.5), cellWall.position);
+      addLabel(scene, meshes, labelSprites, "Nucleus", 0xa78bfa, new THREE.Vector3(3.5, 3, 2), nucleus.position);
+      addLabel(scene, meshes, labelSprites, "Nucleolus", 0x7c3aed, new THREE.Vector3(2.5, 3.5, -1.5), nucleolus.position);
+      addLabel(scene, meshes, labelSprites, "Mitochondria", 0xf97316, new THREE.Vector3(-4, 3.5, 2), mitoPositions[0].pos);
+      addLabel(scene, meshes, labelSprites, "Mitochondria", 0xf97316, new THREE.Vector3(4, -3, -2), mitoPositions[1].pos);
+      addLabel(scene, meshes, labelSprites, "Endoplasmic Reticulum", 0x22d3ee, new THREE.Vector3(3, 3, -2.5), new THREE.Vector3(0.5, 0.3, 0));
+      addLabel(scene, meshes, labelSprites, "Golgi Body", 0xfbbf24, new THREE.Vector3(4, 3.5, 0), golgi.position);
+      addLabel(scene, meshes, labelSprites, "Lysosome", 0xef4444, new THREE.Vector3(-4, -3, 2), lysoPositions[0]);
+      addLabel(scene, meshes, labelSprites, "Lysosome", 0xef4444, new THREE.Vector3(4, -3.5, 1), lysoPositions[1]);
+      addLabel(scene, meshes, labelSprites, "Ribosome", 0x34d399, new THREE.Vector3(-4, 2, 3), ribosomePositions[0]);
+      addLabel(scene, meshes, labelSprites, "Chloroplast", 0x22c55e, new THREE.Vector3(-4.5, 1, -3), chloroplast.position);
+      addLabel(scene, meshes, labelSprites, "Central Vacuole", 0x93c5fd, new THREE.Vector3(-4, -2, 3), vacuole.position);
+      addLabel(scene, meshes, labelSprites, "Cell Membrane", 0x7dd3fc, new THREE.Vector3(4, 0, 3.5), cellMembrane.position);
+      addLabel(scene, meshes, labelSprites, "Cell Wall", 0x4ade80, new THREE.Vector3(4.2, 1, -3.5), cellWall.position);
 
       // Title label
       push(mkSprite("Eukaryotic Cell — Organelle Diagram", "#fbbf24", new THREE.Vector3(0, 5.2, 0), 0.9));
+
+      const GROUPS: Record<Exclude<CellFocus, "all">, THREE.Object3D[]> = {
+        energy: [...mitochondria, chloroplast, ...thylakoids],
+        protein: [...erTubes, golgi, golgi2, ...ribosomes],
+        control: [nucleus, nucleolus],
+        boundary: [cellMembrane, cellWall, vacuole, ...lysosomes],
+      };
+      const allParts = Object.values(GROUPS).flat();
+      const highlighted = focus === "all" ? allParts : GROUPS[focus];
+      allParts.forEach((p) => {
+        const mat = (p as THREE.Mesh).material as THREE.MeshPhongMaterial;
+        if (!mat) return;
+        const keep = (mat as any).__origOpacity ?? ((mat as any).__origOpacity = mat.opacity);
+        mat.transparent = true;
+        mat.opacity = highlighted.includes(p) ? keep : 0.1;
+      });
+
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -270,7 +330,7 @@ export function CellBiologyVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [rotationSpeed, isWebGL]);
+  }, [rotationSpeed, focus, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Eukaryotic Cell" description="3D cell organelle diagram with labeled arrows." />;
@@ -285,6 +345,13 @@ export function CellBiologyVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-green-500/50 bg-green-500/10 text-green-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
         <CollapsibleControls label="Auto-rotation Speed">
           <div className="flex gap-3 mt-2">
             <div className="w-24">
@@ -298,6 +365,14 @@ export function CellBiologyVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid items={[
+          { label: "Highlighting", value: info.team, highlight: true },
+          { label: "Fact 1", value: info.one },
+          { label: "Fact 2", value: info.two },
+          { label: "Fact 3", value: info.three },
+          { label: "Fact 4", value: info.four },
+        ]} />
 
         <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-green-400">Key Concepts</p>

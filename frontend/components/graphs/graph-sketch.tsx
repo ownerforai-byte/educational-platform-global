@@ -1,6 +1,12 @@
 import { shapeToPath, type ShapeName } from "@/lib/graphs-shapes";
+import { ASYMPTOTES_DEG, ZEROS_DEG, type TrigFn } from "@/lib/graphs-angle";
 
 const PALETTE = ["#3b82f6", "#f59e0b", "#10b981", "#ef4444", "#a855f7", "#14b8a6"];
+
+/** shape → trig function, for automatic asymptote/zero overlay lines. */
+const SHAPE_TRIG: Partial<Record<ShapeName, TrigFn>> = {
+  sine: "sin", cosine: "cos", tangent: "tan", cotangent: "cot", secant: "sec", cosecant: "cosec",
+};
 
 /**
  * Renders a graph entry's visual output as a clean SVG sketch:
@@ -12,12 +18,14 @@ export function GraphSketch({
   axes,
   height = 260,
   showLegend = true,
+  angleAxis,
 }: {
   series: { shape: ShapeName; variant?: number; label?: string; dashed?: boolean }[];
   marks?: { x: number; y?: number; label: string; type?: "point" | "vline" | "hline" }[];
   axes: { x: string; y: string };
   height?: number;
   showLegend?: boolean;
+  angleAxis?: { periodDeg: number; ticksDeg: number[] };
 }) {
   const W = 460;
   const H = height;
@@ -50,7 +58,65 @@ export function GraphSketch({
         {/* axes */}
         <line x1={pad} y1={pad + ih} x2={pad + iw} y2={pad + ih} stroke="#71717a" strokeWidth={1.6} />
         <line x1={pad} y1={pad} x2={pad} y2={pad + ih} stroke="#71717a" strokeWidth={1.6} />
-        <text x={pad + iw} y={pad + ih + 14} fontSize={11} fill="#52525b" textAnchor="end">
+
+        {/* angle axis: asymptotes, zeros, degree ticks + labels */}
+        {angleAxis && (() => {
+          const trig = SHAPE_TRIG[series[0]?.shape];
+          const asyms = trig ? ASYMPTOTES_DEG[trig].filter((d) => d > 0 && d < angleAxis.periodDeg) : [];
+          const zeros = trig ? ZEROS_DEG[trig].filter((d) => d > 0 && d < angleAxis.periodDeg) : [];
+          const step = angleAxis.ticksDeg.length > 10 ? 2 : 1;
+          return (
+            <g>
+              {asyms.map((deg) => (
+                <line
+                  key={`a${deg}`}
+                  x1={pad + (deg / angleAxis.periodDeg) * iw}
+                  y1={pad - 4}
+                  x2={pad + (deg / angleAxis.periodDeg) * iw}
+                  y2={pad + ih}
+                  stroke="#ef4444"
+                  strokeWidth={1}
+                  strokeDasharray="4 3"
+                  opacity={0.65}
+                />
+              ))}
+              {zeros.map((deg) => (
+                <circle
+                  key={`z${deg}`}
+                  cx={pad + (deg / angleAxis.periodDeg) * iw}
+                  cy={pad + ih}
+                  r={2.6}
+                  fill="#10b981"
+                />
+              ))}
+              {angleAxis.ticksDeg.map((deg, i) => (
+                <g key={`t${deg}`}>
+                  <line
+                    x1={pad + (deg / angleAxis.periodDeg) * iw}
+                    y1={pad + ih}
+                    x2={pad + (deg / angleAxis.periodDeg) * iw}
+                    y2={pad + ih + 4}
+                    stroke="#a1a1aa"
+                    strokeWidth={0.8}
+                  />
+                  {i % step === 0 && (
+                    <text
+                      x={pad + (deg / angleAxis.periodDeg) * iw}
+                      y={pad + ih + 15}
+                      fontSize={8.5}
+                      fill="#52525b"
+                      textAnchor="middle"
+                    >
+                      {deg}°
+                    </text>
+                  )}
+                </g>
+              ))}
+            </g>
+          );
+        })()}
+
+        <text x={pad + iw} y={pad + ih + (angleAxis ? 28 : 14)} fontSize={11} fill="#52525b" textAnchor="end">
           {axes.x} →
         </text>
         <text x={pad - 6} y={pad - 12} fontSize={11} fill="#52525b" textAnchor="start">

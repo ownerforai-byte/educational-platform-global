@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 /* ============================================================
@@ -43,20 +44,37 @@ export function MeanVarianceVisual() {
   const [n, setN] = useState(10);
   const [p, setP] = useState(0.4);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const presets: ScenePreset[] = [
+    { name: "Balanced · n = 10, p = 0.5", hint: "σ² = 2.5, symmetric spread", apply: () => { setN(10); setP(0.5); setRunId((r) => r + 1); } },
+    { name: "Default · n = 10, p = 0.4", hint: "μ = 4, σ ≈ 1.55", apply: () => { setN(10); setP(0.4); setRunId((r) => r + 1); } },
+    { name: "Wide spread · n = 20, p = 0.5", hint: "σ² = 5 — more trials widen the SD band", apply: () => { setN(20); setP(0.5); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setN(10);
+    setP(0.4);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
+
+  const factorial = (x: number): number => x <= 1 ? 1 : x * factorial(x - 1);
+  const pmf = (k: number) => factorial(n) / (factorial(k) * factorial(n - k)) * Math.pow(p, k) * Math.pow(1 - p, n - k);
+  const mean = n * p;
+  const variance = n * p * (1 - p);
+  const sd = Math.sqrt(variance);
+  const ex2 = variance + mean * mean; // E[X²] = Var(X) + (E[X])²
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container || !isWebGL) return;
 
-    const factorial = (x: number): number => x <= 1 ? 1 : x * factorial(x - 1);
-    const pmf = (k: number) => factorial(n) / (factorial(k) * factorial(n - k)) * Math.pow(p, k) * Math.pow(1 - p, n - k);
-    const mean = n * p;
-    const variance = n * p * (1 - p);
-    const sd = Math.sqrt(variance);
-
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -74,13 +92,13 @@ export function MeanVarianceVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
       controls.autoRotate = false;
       controls.maxPolarAngle = Math.PI / 2.2;
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 
-      const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); if (o instanceof THREE.Sprite) labelSprites.push(o); return o; };
 
       push(new THREE.GridHelper(20, 20, 0x334155, 0x1e293b));
 
@@ -127,6 +145,7 @@ export function MeanVarianceVisual() {
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -163,7 +182,7 @@ export function MeanVarianceVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [n, p, isWebGL]);
+  }, [n, p, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Mean & Variance" description="Distribution statistics — requires WebGL." />;
@@ -178,6 +197,14 @@ export function MeanVarianceVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-amber-500/50 bg-amber-500/10 text-amber-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Parameters (Binomial B(n,p))">
           <div className="flex gap-3 mt-2">
             <div className="w-16"><Label className="text-xs text-muted-foreground">n:</Label><Input type="number" step="1" min={3} max={20} value={n} onChange={(e) => setN(Number(e.target.value))} className="mt-1" /></div>
@@ -188,6 +215,17 @@ export function MeanVarianceVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "E[X] = np", value: mean.toFixed(2), highlight: true },
+            { label: "Var(X) = np(1−p)", value: variance.toFixed(2) },
+            { label: "σ = √Var(X)", value: sd.toFixed(2) },
+            { label: "E[X²] = Var + μ²", value: ex2.toFixed(2) },
+            { label: "μ ± σ interval", value: `[${(mean - sd).toFixed(2)}, ${(mean + sd).toFixed(2)}]` },
+            { label: "Property", value: "Var(aX+b) = a²·Var(X)" },
+          ]}
+        />
 
         <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-amber-400">Formulas</p>

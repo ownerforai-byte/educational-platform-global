@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, PlaybackBar, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 /* ============================================================
@@ -40,12 +41,93 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 type DiscontinuityType = "removable" | "jump" | "infinite" | "continuous";
 
+/** Analytic one-sided limits of the plotted curves at x = a. */
+function limitSides(type: DiscontinuityType, a: number): { lhl: number; rhl: number } {
+  switch (type) {
+    case "continuous":
+    case "removable":
+      return { lhl: 1, rhl: 1 }; // 2·sin(x−a)+1 → 1 as x→a
+    case "jump":
+      return { lhl: 1.5 * Math.sin(a) + 1, rhl: 1.5 * Math.sin(a) - 1 };
+    case "infinite":
+      return { lhl: -Infinity, rhl: Infinity }; // 2/(x−a)
+  }
+}
+
+function fmtV(v: number): string {
+  if (v === Infinity) return "+∞";
+  if (v === -Infinity) return "−∞";
+  return v.toFixed(2);
+}
+
+const DISC_INFO: Record<DiscontinuityType, { concept: string; formula: string; condition: string; resolution: string; fact: string; tip: string }> = {
+  continuous: {
+    concept: "Continuous at x = a",
+    formula: "f(x) = 2·sin(x−a) + 1",
+    condition: "LHL = RHL = f(a)",
+    resolution: "The dot slides onto the curve with no break — the limit equals the value.",
+    fact: "Every polynomial, sin x, cos x and eˣ is continuous at all real numbers.",
+    tip: "Draw it without lifting your pen — that is continuity at Grade-12 level.",
+  },
+  removable: {
+    concept: "Removable discontinuity (hole)",
+    formula: "f(x) = 2·sin(x−a) + 1, x ≠ a; f(a) = 2.5",
+    condition: "LHL = RHL exists, but f(a) ≠ limit",
+    resolution: "Hole at (a, 1), point parked at 2.5 — redefine f(a) = 1 to repair it.",
+    fact: "sin x / x at x = 0 is the classic removable discontinuity: limit 1, value undefined.",
+    tip: "The limit ignores f(a) entirely — it only watches the approach.",
+  },
+  jump: {
+    concept: "Jump discontinuity",
+    formula: "f(x) = 1.5·sin x + 1 (x < a); 1.5·sin x − 1 (x > a)",
+    condition: "LHL ≠ RHL",
+    resolution: "Two branch heights differ by 2 — the two-sided limit does not exist.",
+    fact: "The greatest-integer function ⌊x⌋ jumps by 1 at every integer.",
+    tip: "Both one-sided limits exist at a jump; DNE refers only to the two-sided limit.",
+  },
+  infinite: {
+    concept: "Infinite discontinuity (asymptote)",
+    formula: "f(x) = 2 / (x−a)",
+    condition: "f → −∞ from the left, +∞ from the right",
+    resolution: "Vertical asymptote at x = a — no finite limit exists.",
+    fact: "1/x at x = 0: the left branch dives to −∞ while the right climbs to +∞.",
+    tip: "Writing lim = ∞ records HOW it diverges; strictly, the limit still does not exist.",
+  },
+};
+
 export function LimitsContinuityVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [disType, setDisType] = useState<DiscontinuityType>("continuous");
   const [a, setA] = useState(2);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+  const [playing, setPlaying] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  const playingRef = useRef(true);
+  const speedRef = useRef(1);
+  useEffect(() => { speedRef.current = speed; playingRef.current = playing; }, [speed, playing]);
+
+  const info = DISC_INFO[disType];
+  const sides = limitSides(disType, a);
+  const limitExists = disType === "continuous" || disType === "removable";
+
+  const presets: ScenePreset[] = [
+    { name: "Continuous", hint: "LHL = RHL = f(a)", apply: () => { setDisType("continuous"); setRunId((r) => r + 1); } },
+    { name: "Removable hole", hint: "Limit exists, f(a) ≠ limit", apply: () => { setDisType("removable"); setRunId((r) => r + 1); } },
+    { name: "Jump", hint: "LHL ≠ RHL → DNE", apply: () => { setDisType("jump"); setRunId((r) => r + 1); } },
+    { name: "Infinite", hint: "Vertical asymptote at x = a", apply: () => { setDisType("infinite"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setDisType("continuous");
+    setA(2);
+    setShowLabels(true);
+    setPlaying(true);
+    setSpeed(1);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -58,6 +140,7 @@ export function LimitsContinuityVisual() {
     let animId: number;
     let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
     let dotPos = 0;
 
     const init = async () => {
@@ -78,7 +161,7 @@ export function LimitsContinuityVisual() {
       controls.autoRotate = false;
       controls.minDistance = 5;
       controls.maxDistance = 25;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
 
@@ -122,8 +205,7 @@ export function LimitsContinuityVisual() {
         switch (disType) {
           case "continuous": y = Math.sin(x - a) * 2 + 1; break;
           case "removable":
-            if (Math.abs(x - a) < 0.01) y = 99;
-            else y = Math.sin(x - a) * 2 + 1;
+            y = Math.sin(x - a) * 2 + 1; // curve passes through (a, 1) as a hole — marker drawn separately
             break;
           case "jump":
             y = x < a ? Math.sin(x) * 1.5 + 1 : Math.sin(x) * 1.5 - 1;
@@ -136,7 +218,7 @@ export function LimitsContinuityVisual() {
         fValues.push({
           left: x < a ? y : NaN,
           right: x >= a ? y : NaN,
-          actual: Math.abs(x - a) < 0.01 ? (disType === "removable" ? 2.5 : undefined) : y,
+          actual: y,
           open: disType === "removable" && Math.abs(x - a) < 0.01,
         });
       }
@@ -150,13 +232,9 @@ export function LimitsContinuityVisual() {
       });
       push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(curvePoints), new THREE.LineBasicMaterial({ color: 0x22d3ee, linewidth: 2 })));
 
-      // Limit point marker at x = a
-      let limitY = 0;
-      if (disType === "continuous") limitY = Math.sin(0) * 2 + 1;
-      else if (disType === "removable") limitY = 2.5;
-      else if (disType === "jump") {
-        limitY = (Math.sin(a - 0.01) * 1.5 + 1 + Math.sin(a + 0.01) * 1.5 - 1) / 2;
-      } else if (disType === "infinite") limitY = 0;
+      // Limit-point height at x = a (hole position for the removable case).
+      // For removable: f = 2·sin(x−a) + 1 with x ≠ a, so the limit is 1 — not 2.5.
+      const limitY = Number.isFinite(sides.lhl) ? sides.lhl : 0;
 
       // Approaching dot
       const dot = push(new THREE.Mesh(new THREE.SphereGeometry(0.15, 12, 12), new THREE.MeshBasicMaterial({ color: 0xf97316 }))) as THREE.Mesh;
@@ -176,9 +254,11 @@ export function LimitsContinuityVisual() {
       // Animation loop for approaching dot
       const animLoop = () => {
         animId = requestAnimationFrame(animLoop);
-        dotPos += speed * dir;
-        if (dotPos >= a) { dir = -1; dotPos = a; }
-        if (dotPos <= -10) { dir = 1; dotPos = -10; }
+        if (playingRef.current) {
+          dotPos += speed * dir * speedRef.current;
+          if (dotPos >= a) { dir = -1; dotPos = a; }
+          if (dotPos <= -10) { dir = 1; dotPos = -10; }
+        }
 
         let yVal = 0;
         switch (disType) {
@@ -193,9 +273,9 @@ export function LimitsContinuityVisual() {
       };
       animLoop();
 
-      // L-hat and R-hat markers
-      push(mkSprite(`lim(x→${a}⁻) = ${limitY.toFixed(2)}`, "#22d3ee", new THREE.Vector3(a - 3, 7, 0), 0.9));
-      push(mkSprite(`lim(x→${a}⁺) = ${limitY.toFixed(2)}`, "#a78bfa", new THREE.Vector3(a + 3, 7, 0), 0.9));
+      // L-hat and R-hat markers — one-sided limits computed analytically
+      push(mkSprite(`lim(x→${a}⁻) = ${fmtV(sides.lhl)}`, "#22d3ee", new THREE.Vector3(a - 3, 7, 0), 0.9));
+      push(mkSprite(`lim(x→${a}⁺) = ${fmtV(sides.rhl)}`, "#a78bfa", new THREE.Vector3(a + 3, 7, 0), 0.9));
 
       // f(a) marker (open circle for removable)
       if (disType === "removable") {
@@ -210,13 +290,16 @@ export function LimitsContinuityVisual() {
         ) as THREE.Mesh);
         fillCircle.position.set(a, 2.5, 0.05);
       } else if (disType === "jump") {
-        const yLeft = Math.sin(a - 0.01) * 1.5 + 1;
-        const yRight = Math.sin(a + 0.01) * 1.5 - 1;
+        const yLeft = sides.lhl;
+        const yRight = sides.rhl;
         const lc = push(new THREE.Mesh(new THREE.SphereGeometry(0.12, 8, 8), new THREE.MeshBasicMaterial({ color: 0x22d3ee }))) as THREE.Mesh;
         lc.position.set(a, yLeft, 0.05);
         const rc = push(new THREE.Mesh(new THREE.SphereGeometry(0.12, 8, 8), new THREE.MeshBasicMaterial({ color: 0xa78bfa }))) as THREE.Mesh;
         rc.position.set(a, yRight, 0.05);
       }
+
+      meshes.forEach((m) => { if (m instanceof THREE.Sprite) labelSprites.push(m); });
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       return () => {
         cancelAnimationFrame(frameId);
@@ -235,7 +318,7 @@ export function LimitsContinuityVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [disType, a, isWebGL]);
+  }, [disType, a, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Limits & Continuity" description="Animated limit visualization — requires WebGL." />;
@@ -250,6 +333,14 @@ export function LimitsContinuityVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-orange-500/50 bg-orange-500/10 text-orange-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Discontinuity Type">
           <div className="flex flex-wrap gap-2 mt-2">
             {(["continuous", "removable", "jump", "infinite"] as DiscontinuityType[]).map((t) => (
@@ -279,6 +370,19 @@ export function LimitsContinuityVisual() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <PlaybackBar playing={playing} onPlayToggle={() => setPlaying((p) => !p)} speed={speed} onSpeedChange={setSpeed} onReset={resetAll} />
+
+        <ReadoutGrid
+          items={[
+            { label: "Behavior", value: info.concept, highlight: true },
+            { label: "f(x)", value: info.formula },
+            { label: `LHL at x = ${a}`, value: fmtV(sides.lhl) },
+            { label: `RHL at x = ${a}`, value: fmtV(sides.rhl) },
+            { label: `lim(x→${a}) f(x)`, value: limitExists ? fmtV(sides.lhl) : "Does not exist" },
+            { label: `f(${a})`, value: disType === "continuous" ? fmtV(sides.lhl) : disType === "removable" ? "2.50 ≠ limit" : disType === "jump" ? `${fmtV(sides.rhl)} (right branch)` : "undefined (asymptote)" },
+          ]}
+        />
+
         <div className="rounded-lg border border-orange-500/30 bg-orange-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-orange-400">Key Ideas</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">
@@ -287,7 +391,7 @@ export function LimitsContinuityVisual() {
             <p><strong className="text-foreground">Right-hand limit:</strong> lim(x→a⁺) f(x) — approaching from values greater than a.</p>
             <p><strong className="text-foreground">Continuous at a:</strong> lim(x→a) f(x) = f(a) — all three exist and are equal.</p>
             <p><strong className="text-foreground">Removable discontinuity:</strong> limit exists but f(a) is undefined or different.</p>
-            <p><strong className="text-foreground">Jump discontinuity:</strong> LHL ≠ RHS — limit does not exist.</p>
+            <p><strong className="text-foreground">Jump discontinuity:</strong> LHL ≠ RHL — limit does not exist.</p>
           </div>
         </div>
       </CardContent>

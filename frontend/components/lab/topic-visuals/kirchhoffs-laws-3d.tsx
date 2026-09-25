@@ -8,6 +8,11 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -42,6 +47,51 @@ export function KirchhoffsLawsVisual() {
   const [r2, setR2] = useState(2);
   const [r3, setR3] = useState(6);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [showCurrents, setShowCurrents] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  // Mesh analysis of the two-loop circuit (same equations as in the scene).
+  const denom = r1 * r2 + r2 * r3 + r3 * r1;
+  const i1 = (v1 * (r2 + r3) - v2 * r3) / denom;
+  const i2 = (v2 * (r1 + r3) - v1 * r3) / denom;
+  const i3 = i1 - i2;
+  const powerSupplied = v1 * i1 + v2 * i2;
+
+  const DEFAULTS = { v1: 12, v2: 6, r1: 4, r2: 2, r3: 6 };
+  const presets: ScenePreset[] = [
+    {
+      name: "Default circuit",
+      hint: "12 V / 6 V sources with mixed resistances.",
+      apply: () => { setV1(12); setV2(6); setR1(4); setR2(2); setR3(6); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Balanced (I₃ = 0)",
+      hint: "Both junctions at equal potential — no current in the middle branch.",
+      apply: () => { setV1(6); setV2(12); setR1(4); setR2(14); setR3(3); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Equal sources",
+      hint: "Identical batteries and resistors — symmetry forces I₃ = 0.",
+      apply: () => { setV1(12); setV2(12); setR1(6); setR2(6); setR3(4); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Strong V₁ drive",
+      hint: "24 V dominates — I₂ reverses direction.",
+      apply: () => { setV1(24); setV2(6); setR1(2); setR2(8); setR3(4); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setV1(DEFAULTS.v1);
+    setV2(DEFAULTS.v2);
+    setR1(DEFAULTS.r1);
+    setR2(DEFAULTS.r2);
+    setR3(DEFAULTS.r3);
+    setShowLabels(true);
+    setShowCurrents(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     const container = containerRef.current;
@@ -58,6 +108,8 @@ export function KirchhoffsLawsVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
+    const currentObjs: THREE.Object3D[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -77,7 +129,12 @@ export function KirchhoffsLawsVisual() {
       controls.autoRotate = false;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -85,6 +142,8 @@ export function KirchhoffsLawsVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { s.visible = showLabels; push(s); labelSprites.push(s); return s; };
+      const addCurrent = <T extends THREE.Object3D>(o: T): T => { o.visible = showCurrents; push(o); currentObjs.push(o); return o; };
 
       const { i1, i2, i3 } = solveCircuit();
 
@@ -130,7 +189,7 @@ export function KirchhoffsLawsVisual() {
           pts.push(new THREE.Vector3(px + perpX, py + perpY, 0));
         }
         push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pts), new THREE.LineBasicMaterial({ color })));
-        push(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, start.clone().add(end).multiplyScalar(0.5).add(new THREE.Vector3(0, 0.5, 0)), 0.65));
+        addLabel(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, start.clone().add(end).multiplyScalar(0.5).add(new THREE.Vector3(0, 0.5, 0)), 0.65));
       };
 
       drawResistor(nodes.topLeft, nodes.topMid, 0xef4444, `R₁=${r1}Ω`);
@@ -144,7 +203,7 @@ export function KirchhoffsLawsVisual() {
           new THREE.BoxGeometry(0.6, 0.2, 0.3),
           new THREE.MeshBasicMaterial({ color }),
         )).position.copy(pos);
-        push(mkSprite(`${voltage}V`, "#ffffff", pos.clone().add(new THREE.Vector3(0, polarity === "top+" ? 0.6 : -0.6, 0)), 0.6));
+        addLabel(mkSprite(`${voltage}V`, "#ffffff", pos.clone().add(new THREE.Vector3(0, polarity === "top+" ? 0.6 : -0.6, 0)), 0.6));
       };
 
       drawBattery(nodes.botLeft, v1, "top+");
@@ -154,8 +213,10 @@ export function KirchhoffsLawsVisual() {
       const drawCurrentArrow = (from: THREE.Vector3, to: THREE.Vector3, current: number, color: number, label: string) => {
         const mid = from.clone().add(to).multiplyScalar(0.5);
         const dir = to.clone().sub(from).normalize();
-        push(new LiveLeaderLine(dir, mid.clone().sub(dir.clone().multiplyScalar(0.5)), 0.6, color, 0.15, 0.08));
-        push(mkSprite(`${label}=${current.toFixed(2)}A`, `#${color.toString(16).padStart(6, "0")}`, mid.clone().add(new THREE.Vector3(0, 0.6, 0)), 0.7));
+        addCurrent(new LiveLeaderLine(dir, mid.clone().sub(dir.clone().multiplyScalar(0.5)), 0.6, color, 0.15, 0.08));
+        const s = addLabel(mkSprite(`${label}=${current.toFixed(2)}A`, `#${color.toString(16).padStart(6, "0")}`, mid.clone().add(new THREE.Vector3(0, 0.6, 0)), 0.7));
+        s.visible = showLabels && showCurrents;
+        currentObjs.push(s);
       };
 
       drawCurrentArrow(nodes.topLeft, nodes.topMid, i1, 0x22d3ee, "I₁");
@@ -167,14 +228,14 @@ export function KirchhoffsLawsVisual() {
       const juncTarget = new THREE.Vector3(0, 2, 0);
       const juncDir = juncTarget.clone().sub(juncLabelPos).normalize();
       push(new LiveLeaderLine(juncDir, juncLabelPos, juncLabelPos.distanceTo(juncTarget) * 0.9, 0xef4444, 0.15, 0.1));
-      push(mkSprite("KCL: I₁ = I₂ + I₃", "#ef4444", juncLabelPos.clone().sub(juncDir.multiplyScalar(0.5)), 0.8));
+      addLabel(mkSprite("KCL: I₁ = I₂ + I₃", "#ef4444", juncLabelPos.clone().sub(juncDir.multiplyScalar(0.5)), 0.8));
 
       // Loop rule label
       const loopLabelPos = new THREE.Vector3(-3.5, -3, 0);
       const loopTarget = new THREE.Vector3(0, 0, 0);
       const loopDir = loopTarget.clone().sub(loopLabelPos).normalize();
       push(new LiveLeaderLine(loopDir, loopLabelPos, loopLabelPos.distanceTo(loopTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
-      push(mkSprite("KVL: ΣV = 0 around any loop", "#fbbf24", loopLabelPos.clone().sub(loopDir.multiplyScalar(0.5)), 0.75));
+      addLabel(mkSprite("KVL: ΣV = 0 around any loop", "#fbbf24", loopLabelPos.clone().sub(loopDir.multiplyScalar(0.5)), 0.75));
 
       const update = () => {
         while (meshes.length > 60) {
@@ -225,7 +286,7 @@ export function KirchhoffsLawsVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [v1, v2, r1, r2, r3, isWebGL]);
+  }, [v1, v2, r1, r2, r3, isWebGL, runId, showLabels, showCurrents]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Kirchhoff's Laws" description="Circuit with current arrows showing KCL and KVL." />;
@@ -270,9 +331,44 @@ export function KirchhoffsLawsVisual() {
           </div>
         </CollapsibleControls>
 
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-primary/50 bg-primary/10 text-primary" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Labels
+            </button>
+            <button
+              onClick={() => setShowCurrents((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showCurrents ? "border-emerald-500/50 bg-emerald-500/10 text-emerald-400" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Current arrows
+            </button>
+          </div>
+          <button
+            onClick={resetAll}
+            title="Reset to defaults"
+            className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground transition-colors hover:bg-muted"
+          >
+            Reset
+          </button>
+        </div>
+
+        <ScenePresets presets={presets} />
+
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Branch current I₁", value: i1.toFixed(2), unit: "A" },
+            { label: "Branch current I₂", value: i2.toFixed(2), unit: "A" },
+            { label: "Branch current I₃", value: i3.toFixed(2), unit: "A", highlight: Math.abs(i3) < 0.01 },
+            { label: "Power supplied", value: powerSupplied.toFixed(1), unit: "W" },
+          ]}
+        />
 
         <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-green-400">Key Concepts</p>

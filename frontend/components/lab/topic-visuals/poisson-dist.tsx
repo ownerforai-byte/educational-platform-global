@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 /* ============================================================
@@ -43,10 +44,27 @@ export function PoissonDistVisual() {
   const vizTargetRef = useRef<VizTarget>({});
   const [lambda, setLambda] = useState(3);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
 
+  const presets: ScenePreset[] = [
+    { name: "λ = 3 · defects/metre", hint: "Default rate — μ = σ² = 3", apply: () => { setLambda(3); setRunId((r) => r + 1); } },
+    { name: "Rare events · λ = 0.5", hint: "P(X = 0) = e^−0.5 ≈ 0.607 dominates", apply: () => { setLambda(0.5); setRunId((r) => r + 1); } },
+    { name: "Busy hour · λ = 8", hint: "Distribution becomes near-symmetric", apply: () => { setLambda(8); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setLambda(3);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
   const factorial = (x: number): number => x <= 1 ? 1 : x * factorial(x - 1);
   const pmf = (k: number) => Math.exp(-lambda) * Math.pow(lambda, k) / factorial(k);
+
+  const mode = Math.floor(lambda);
+  const peakProb = pmf(mode);
+  const pZero = Math.exp(-lambda);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -55,6 +73,7 @@ export function PoissonDistVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -72,13 +91,13 @@ export function PoissonDistVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
       controls.autoRotate = false;
       controls.maxPolarAngle = Math.PI / 2.2;
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 
-      const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); if (o instanceof THREE.Sprite) labelSprites.push(o); return o; };
 
       push(new THREE.GridHelper(20, 20, 0x334155, 0x1e293b));
 
@@ -119,6 +138,7 @@ export function PoissonDistVisual() {
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -155,7 +175,7 @@ export function PoissonDistVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [lambda, isWebGL]);
+  }, [lambda, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Poisson Distribution" description="Rate-based PMF visualization — requires WebGL." />;
@@ -170,6 +190,14 @@ export function PoissonDistVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-sky-500/50 bg-sky-500/10 text-sky-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Parameter λ (average rate)">
           <input type="range" min={0.5} max={10} step={0.5} value={lambda} onChange={(e) => setLambda(Number(e.target.value))} className="w-full mt-1" />
           <p className="text-xs font-mono text-primary mt-1">λ = {lambda.toFixed(1)}</p>
@@ -178,6 +206,17 @@ export function PoissonDistVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "E[X] = Var(X) = λ", value: lambda.toFixed(1), highlight: true },
+            { label: "σ = √λ", value: Math.sqrt(lambda).toFixed(2) },
+            { label: "P(X = 0) = e^−λ", value: pZero.toFixed(3) },
+            { label: "Mode = ⌊λ⌋", value: mode },
+            { label: `P(X = ${mode})`, value: peakProb.toFixed(3) },
+            { label: "PMF", value: "P(X=k) = e^−λ·λᵏ/k!" },
+          ]}
+        />
 
         <div className="rounded-lg border border-sky-500/30 bg-sky-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-sky-400">Poisson Distribution</p>

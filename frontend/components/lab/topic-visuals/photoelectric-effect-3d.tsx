@@ -8,6 +8,12 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  PlaybackBar,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -39,11 +45,58 @@ export function PhotoelectricEffectVisual() {
   const [wavelength, setWavelength] = useState(400);
   const [workFunc, setWorkFunc] = useState(2.3);
   const [isWebGL] = useState(() => isWebGLAvailable());
-
+  const [animating, setAnimating] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  const [showLabels, setShowLabels] = useState(true);
+  const [showElectrons, setShowElectrons] = useState(true);
+  const [runId, setRunId] = useState(0);
+  // Speed lives in a ref so changing it never tears down the WebGL scene.
+  const speedRef = useRef(1);
+  speedRef.current = speed;
 
   const h = 6.626e-34;
   const c = 3e8;
-  const thresholdWL = (h * c) / (workFunc * 1.602e-19);
+  const eV = 1.602e-19;
+  const thresholdWL = (h * c) / (workFunc * eV);
+  const thresholdFreq = (workFunc * eV) / h;
+  const photonEnergyEV = (h * c) / (wavelength * 1e-9) / eV;
+  const canEmitNow = photonEnergyEV > workFunc;
+  const keMaxEV = canEmitNow ? photonEnergyEV - workFunc : 0;
+  const stoppingPotential = keMaxEV; // numerically equal in volts
+
+  const DEFAULTS = { wavelength: 400, workFunc: 2.3 };
+  const presets: ScenePreset[] = [
+    {
+      name: "Sodium · violet",
+      hint: "λ = 400 nm on sodium (Φ = 2.3 eV) — emission with moderate KE_max.",
+      apply: () => { setWavelength(400); setWorkFunc(2.3); setRunId((r) => r + 1); },
+    },
+    {
+      name: "UV on zinc",
+      hint: "λ = 250 nm vs Φ = 4.3 eV — energetic UV photon beats a large work function.",
+      apply: () => { setWavelength(250); setWorkFunc(4.3); setRunId((r) => r + 1); },
+    },
+    {
+      name: "At threshold",
+      hint: "hν ≈ Φ — electrons barely escape with KE_max ≈ 0.",
+      apply: () => { setWavelength(496); setWorkFunc(2.5); setRunId((r) => r + 1); },
+    },
+    {
+      name: "No emission (red)",
+      hint: "λ = 650 nm with Φ = 3.5 eV — hν < Φ, nothing ejects at any intensity.",
+      apply: () => { setWavelength(650); setWorkFunc(3.5); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setWavelength(DEFAULTS.wavelength);
+    setWorkFunc(DEFAULTS.workFunc);
+    setSpeed(1);
+    setShowLabels(true);
+    setShowElectrons(true);
+    setAnimating(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     const container = containerRef.current;
@@ -52,6 +105,7 @@ export function PhotoelectricEffectVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
     let photonTime = 0;
     const emittedElectrons: { mesh: THREE.Mesh; vel: number }[] = [];
 
@@ -73,7 +127,12 @@ export function PhotoelectricEffectVisual() {
       controls.autoRotate = false;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -81,6 +140,7 @@ export function PhotoelectricEffectVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
 
       const photonEnergy = (h * c) / (wavelength * 1e-9);
       const photonEnergyEV = photonEnergy / 1.602e-19;
@@ -93,14 +153,14 @@ export function PhotoelectricEffectVisual() {
         new THREE.MeshBasicMaterial({ color: 0x94a3b8 }),
       )) as THREE.Mesh;
       plate.position.set(0, -1, 0);
-      push(mkSprite("Metal Surface (Cathode)", "#94a3b8", new THREE.Vector3(0, -2, 0), 0.7));
+      addLabel(mkSprite("Metal Surface (Cathode)", "#94a3b8", new THREE.Vector3(0, -2, 0), 0.7));
 
       // Work function label with long arrow
       const wfLabelPos = new THREE.Vector3(3, 1.5, 0);
       const wfTarget = new THREE.Vector3(0, -1, 0);
       const wfDir = wfTarget.clone().sub(wfLabelPos).normalize();
       push(new LiveLeaderLine(wfDir, wfLabelPos, wfLabelPos.distanceTo(wfTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
-      push(mkSprite(`Φ = ${workFunc} eV (work function)`, "#fbbf24", wfLabelPos.clone().sub(wfDir.multiplyScalar(0.5)), 0.75));
+      addLabel(mkSprite(`Φ = ${workFunc} eV (work function)`, "#fbbf24", wfLabelPos.clone().sub(wfDir.multiplyScalar(0.5)), 0.75));
 
       // Photon incoming
       const photonColor = wavelength < 450 ? 0x3b82f6 : wavelength < 550 ? 0x22c55e : wavelength < 650 ? 0xf97316 : 0xef4444;
@@ -114,14 +174,14 @@ export function PhotoelectricEffectVisual() {
       const phTarget = new THREE.Vector3(-2, 0, 0);
       const phDir = phTarget.clone().sub(phLabelPos).normalize();
       push(new LiveLeaderLine(phDir, phLabelPos, phLabelPos.distanceTo(phTarget) * 0.9, photonColor, 0.2, 0.1));
-      push(mkSprite(`hν = ${photonEnergyEV.toFixed(2)} eV`, photonColor === 0x3b82f6 ? "#60a5fa" : photonColor === 0x22c55e ? "#4ade80" : photonColor === 0xf97316 ? "#fb923c" : "#f87171", phLabelPos.clone().sub(phDir.multiplyScalar(0.5)), 0.8));
+      addLabel(mkSprite(`hν = ${photonEnergyEV.toFixed(2)} eV`, photonColor === 0x3b82f6 ? "#60a5fa" : photonColor === 0x22c55e ? "#4ade80" : photonColor === 0xf97316 ? "#fb923c" : "#f87171", phLabelPos.clone().sub(phDir.multiplyScalar(0.5)), 0.8));
 
       // Wavelength label
       const wlLabelPos = new THREE.Vector3(-3, 3.5, 0);
       const wlTarget = new THREE.Vector3(-2, 0, 0);
       const wlDir = wlTarget.clone().sub(wlLabelPos).normalize();
       push(new LiveLeaderLine(wlDir, wlLabelPos, wlLabelPos.distanceTo(wlTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
-      push(mkSprite(`λ = ${wavelength} nm`, "#a78bfa", wlLabelPos.clone().sub(wlDir.multiplyScalar(0.5)), 0.75));
+      addLabel(mkSprite(`λ = ${wavelength} nm`, "#a78bfa", wlLabelPos.clone().sub(wlDir.multiplyScalar(0.5)), 0.75));
 
       // Collected electrons
       for (let i = 0; i < 5; i++) {
@@ -141,10 +201,10 @@ export function PhotoelectricEffectVisual() {
         const keTarget = new THREE.Vector3(0, 0, 0);
         const keDir = keTarget.clone().sub(keLabelPos).normalize();
         push(new LiveLeaderLine(keDir, keLabelPos, keLabelPos.distanceTo(keTarget) * 0.9, 0x34d399, 0.15, 0.1));
-        push(mkSprite(`KE_max = ${keMax.toFixed(2)} eV`, "#34d399", keLabelPos.clone().sub(keDir.multiplyScalar(0.5)), 0.8));
+        addLabel(mkSprite(`KE_max = ${keMax.toFixed(2)} eV`, "#34d399", keLabelPos.clone().sub(keDir.multiplyScalar(0.5)), 0.8));
       } else {
         const noEmitLabelPos = new THREE.Vector3(0, 2.5, 0);
-        push(mkSprite("No emission! (hν < Φ)", "#ef4444", noEmitLabelPos, 0.8));
+        addLabel(mkSprite("No emission! (hν < Φ)", "#ef4444", noEmitLabelPos, 0.8));
       }
 
       // Einstein's equation
@@ -152,7 +212,7 @@ export function PhotoelectricEffectVisual() {
       const eqTarget = new THREE.Vector3(0, 0, 0);
       const eqDir = eqTarget.clone().sub(eqLabelPos).normalize();
       push(new LiveLeaderLine(eqDir, eqLabelPos, eqLabelPos.distanceTo(eqTarget) * 0.9, 0xef4444, 0.15, 0.1));
-      push(mkSprite("hν = Φ + KE_max (Einstein)", "#ef4444", eqLabelPos.clone().sub(eqDir.multiplyScalar(0.5)), 0.7));
+      addLabel(mkSprite("hν = Φ + KE_max (Einstein)", "#ef4444", eqLabelPos.clone().sub(eqDir.multiplyScalar(0.5)), 0.7));
 
       const update = () => {
         while (meshes.length > 30) {
@@ -165,11 +225,14 @@ export function PhotoelectricEffectVisual() {
         }
       };
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
-        photonTime += 0.02;
+        if (animating) {
+          photonTime += 0.02 * speedRef.current;
+        }
 
         // Animate photon
         photon.position.set(-4 + photonTime * 2 % 8, 1.5 - Math.sin(photonTime * 3) * 0.3, 0);
@@ -179,7 +242,7 @@ export function PhotoelectricEffectVisual() {
 
         // Animate electrons if emission occurs
         emittedElectrons.forEach((el) => {
-          if (canEmit) {
+          if (canEmit && showElectrons) {
             el.mesh.visible = true;
             const t = (photonTime * el.vel + el.mesh.userData.phase) % 3;
             el.mesh.position.set(-2 + t * 2, -1 + t * 1.5, Math.sin(t * 4) * 0.3);
@@ -222,7 +285,7 @@ export function PhotoelectricEffectVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [wavelength, workFunc, isWebGL]);
+  }, [wavelength, workFunc, isWebGL, runId, animating, showLabels, showElectrons]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Photoelectric Effect" description="Photon striking metal surface ejecting electrons." />;
@@ -252,9 +315,46 @@ export function PhotoelectricEffectVisual() {
           </div>
         </CollapsibleControls>
 
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <PlaybackBar
+            playing={animating}
+            onPlayToggle={() => setAnimating(!animating)}
+            speed={speed}
+            onSpeedChange={setSpeed}
+            onReset={resetAll}
+          />
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-primary/50 bg-primary/10 text-primary" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Labels
+            </button>
+            <button
+              onClick={() => setShowElectrons((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showElectrons ? "border-cyan-500/50 bg-cyan-500/10 text-cyan-400" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Electrons
+            </button>
+          </div>
+        </div>
+
+        <ScenePresets presets={presets} />
+
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Photon energy hν", value: photonEnergyEV.toFixed(2), unit: "eV", highlight: canEmitNow },
+            { label: "Work function Φ", value: workFunc.toFixed(1), unit: "eV" },
+            { label: "Max KE", value: keMaxEV.toFixed(2), unit: "eV" },
+            { label: "Stopping potential", value: stoppingPotential.toFixed(2), unit: "V" },
+            { label: "Threshold freq ν₀", value: `${(thresholdFreq / 1e14).toFixed(2)}`, unit: "×10¹⁴ Hz" },
+            { label: "Threshold λ", value: (thresholdWL * 1e9).toFixed(0), unit: "nm", highlight: !canEmitNow },
+          ]}
+        />
 
         <div className="rounded-lg border border-yellow-500/30 bg-yellow-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-yellow-400">Key Concepts</p>

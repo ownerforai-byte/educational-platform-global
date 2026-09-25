@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -51,7 +52,48 @@ export function OrganicMoleculesVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [molecule, setMolecule] = useState<MolKey>("methane");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const FUNCTIONAL_GROUP: Record<MolKey, string> = {
+    "methane": "None — saturated alkane",
+    "ethene": "C=C double bond (alkene)",
+    "ethyne": "C≡C triple bond (alkyne)",
+    "ethanol": "-OH hydroxyl (alcohol)",
+    "ethanal": "-CHO aldehyde (terminal)",
+    "ethanoic acid": "-COOH carboxyl (acid)",
+  };
+  const molInfo = MOLECULES[molecule];
+
+  const presets: ScenePreset[] = [
+    {
+      name: "sp³: methane",
+      hint: "Four single σ bonds, tetrahedral 109.5° — the saturated reference.",
+      apply: () => { setMolecule("methane"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "sp²: ethene",
+      hint: "The C=C double bond = 1 σ + 1 π; all six atoms lie flat at 120°.",
+      apply: () => { setMolecule("ethene"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "sp: ethyne",
+      hint: "C≡C is 1 σ + 2 π bonds — perfectly linear at 180°.",
+      apply: () => { setMolecule("ethyne"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "-COOH: ethanoic acid",
+      hint: "Acetic acid's carboxyl group makes it a weak acid (vinegar).",
+      apply: () => { setMolecule("ethanoic acid"); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setMolecule("methane");
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -61,6 +103,7 @@ export function OrganicMoleculesVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -81,7 +124,7 @@ export function OrganicMoleculesVisual() {
       controls.autoRotateSpeed = 0.4;
       controls.minDistance = 3;
       controls.maxDistance = 18;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -89,6 +132,7 @@ export function OrganicMoleculesVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
 
       const C_COLOR = 0x374151;
       const H_COLOR = 0xf5f5f5;
@@ -117,7 +161,7 @@ export function OrganicMoleculesVisual() {
           new THREE.MeshPhongMaterial({ color, emissive: color, emissiveIntensity: 0.15 }),
         ));
         sphere.position.copy(pos);
-        push(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, pos.clone().add(new THREE.Vector3(0.4, 0.4, 0)), 0.5));
+        addLabel(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, pos.clone().add(new THREE.Vector3(0.4, 0.4, 0)), 0.5));
       };
 
       const updateScene = () => {
@@ -151,7 +195,7 @@ export function OrganicMoleculesVisual() {
           const aDir = angleTarget.clone().sub(angleLabel).normalize();
           const aLen = angleLabel.distanceTo(angleTarget);
           push(new LiveLeaderLine(aDir, angleLabel, aLen * 0.7, 0xfbbf24, 0.25, 0.12));
-          push(mkSprite("H-C-H = 109.5° (tetrahedral)", "#fbbf24", angleLabel.clone().sub(aDir.multiplyScalar(0.5)), 0.65));
+          addLabel(mkSprite("H-C-H = 109.5° (tetrahedral)", "#fbbf24", angleLabel.clone().sub(aDir.multiplyScalar(0.5)), 0.65));
         }
         else if (mol === "ethene") {
           const C1 = new THREE.Vector3(-0.6, 0, 0);
@@ -174,7 +218,7 @@ export function OrganicMoleculesVisual() {
           const pDir = piTarget.clone().sub(piLabel).normalize();
           const pLen = piLabel.distanceTo(piTarget);
           push(new LiveLeaderLine(pDir, piLabel, pLen * 0.75, 0xf97316, 0.25, 0.12));
-          push(mkSprite("C=C: sigma + pi bond", "#f97316", piLabel.clone().sub(pDir.multiplyScalar(0.5)), 0.7));
+          addLabel(mkSprite("C=C: sigma + pi bond", "#f97316", piLabel.clone().sub(pDir.multiplyScalar(0.5)), 0.7));
         }
         else if (mol === "ethyne") {
           const C1 = new THREE.Vector3(-0.6, 0, 0);
@@ -195,7 +239,7 @@ export function OrganicMoleculesVisual() {
           const lDir = lTarget.clone().sub(lLabel).normalize();
           const lLen = lLabel.distanceTo(lTarget);
           push(new LiveLeaderLine(lDir, lLabel, lLen * 0.7, 0x22d3ee, 0.25, 0.12));
-          push(mkSprite("C≡C: 2 pi bonds, linear 180°", "#22d3ee", lLabel.clone().sub(lDir.multiplyScalar(0.5)), 0.7));
+          addLabel(mkSprite("C≡C: 2 pi bonds, linear 180°", "#22d3ee", lLabel.clone().sub(lDir.multiplyScalar(0.5)), 0.7));
         }
         else if (mol === "ethanol") {
           const C1 = new THREE.Vector3(-0.8, 0, 0);
@@ -217,7 +261,7 @@ export function OrganicMoleculesVisual() {
           const fgDir = fgTarget.clone().sub(fgLabel).normalize();
           const fgLen = fgLabel.distanceTo(fgTarget);
           push(new LiveLeaderLine(fgDir, fgLabel, fgLen * 0.75, 0xef4444, 0.28, 0.12));
-          push(mkSprite("Functional Group: -OH (hydroxyl)", "#ef4444", fgLabel.clone().sub(fgDir.multiplyScalar(0.5)), 0.7));
+          addLabel(mkSprite("Functional Group: -OH (hydroxyl)", "#ef4444", fgLabel.clone().sub(fgDir.multiplyScalar(0.5)), 0.7));
         }
         else if (mol === "ethanal") {
           const C1 = new THREE.Vector3(-0.8, 0, 0);
@@ -240,7 +284,7 @@ export function OrganicMoleculesVisual() {
           const fgDir = fgTarget.clone().sub(fgLabel).normalize();
           const fgLen = fgLabel.distanceTo(fgTarget);
           push(new LiveLeaderLine(fgDir, fgLabel, fgLen * 0.75, 0xef4444, 0.28, 0.12));
-          push(mkSprite("Aldehyde group: -CHO (C=O at end)", "#ef4444", fgLabel.clone().sub(fgDir.multiplyScalar(0.5)), 0.7));
+          addLabel(mkSprite("Aldehyde group: -CHO (C=O at end)", "#ef4444", fgLabel.clone().sub(fgDir.multiplyScalar(0.5)), 0.7));
         }
         else { // ethanoic acid
           const C1 = new THREE.Vector3(-1.0, 0, 0);
@@ -265,15 +309,17 @@ export function OrganicMoleculesVisual() {
           const fgDir = fgTarget.clone().sub(fgLabel).normalize();
           const fgLen = fgLabel.distanceTo(fgTarget);
           push(new LiveLeaderLine(fgDir, fgLabel, fgLen * 0.75, 0xef4444, 0.28, 0.12));
-          push(mkSprite("Carboxyl group: -COOH", "#ef4444", fgLabel.clone().sub(fgDir.multiplyScalar(0.5)), 0.7));
+          addLabel(mkSprite("Carboxyl group: -COOH", "#ef4444", fgLabel.clone().sub(fgDir.multiplyScalar(0.5)), 0.7));
         }
 
         // Molecule info
         const m = MOLECULES[molecule];
-        push(mkSprite(`${m.formula}  |  Shape: ${m.shape}  |  Angle: ${m.bondAngle}  |  Hybrid: ${m.hybrid}`, "#7dd3fc", new THREE.Vector3(0, -2.5, 0), 0.65));
+        addLabel(mkSprite(`${m.formula}  |  Shape: ${m.shape}  |  Angle: ${m.bondAngle}  |  Hybrid: ${m.hybrid}`, "#7dd3fc", new THREE.Vector3(0, -2.5, 0), 0.65));
       };
 
+      labelSprites.length = 0;
       updateScene();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -311,7 +357,7 @@ export function OrganicMoleculesVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [molecule, isWebGL]);
+  }, [molecule, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Organic Molecules" description="Ball-and-stick molecular models — requires WebGL." />;
@@ -326,6 +372,13 @@ export function OrganicMoleculesVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-purple-500/50 bg-purple-500/10 text-purple-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
         <CollapsibleControls label="Select Molecule">
           <div className="flex flex-wrap gap-2 mt-1">
             {Object.entries(MOLECULES).map(([key, m]) => (
@@ -346,6 +399,15 @@ export function OrganicMoleculesVisual() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <ReadoutGrid
+          items={[
+            { label: "Molecule", value: `${molInfo.formula} (${molecule})` },
+            { label: "Geometry", value: molInfo.shape },
+            { label: "Bond angle", value: molInfo.bondAngle, highlight: true },
+            { label: "Hybridization", value: molInfo.hybrid },
+            { label: "Functional group", value: FUNCTIONAL_GROUP[molecule] },
+          ]}
+        />
         <div className="rounded-lg border border-purple-500/30 bg-purple-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-purple-400">Key Concepts</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">

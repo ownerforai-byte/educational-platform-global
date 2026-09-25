@@ -2,10 +2,14 @@
 
 import { useRef, useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -40,7 +44,29 @@ export function BenzeneRingVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [resonance, setResonance] = useState(0);
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const DEFAULTS = { resonance: 0 };
+  const presets: ScenePreset[] = [
+    {
+      name: "Kekulé I",
+      hint: "Alternating double bonds starting at C1–C2 — one valid Lewis structure.",
+      apply: () => { setResonance(0); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Kekulé II",
+      hint: "The other alternating arrangement — the true molecule is the resonance hybrid of both.",
+      apply: () => { setResonance(1); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setResonance(DEFAULTS.resonance);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -50,6 +76,7 @@ export function BenzeneRingVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -69,7 +96,7 @@ export function BenzeneRingVisual() {
       controls.autoRotate = false;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -77,6 +104,7 @@ export function BenzeneRingVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
 
       const R = 1.4; // ring radius
       const angles = Array.from({ length: 6 }, (_, i) => (i * 60 - 90) * Math.PI / 180);
@@ -90,6 +118,7 @@ export function BenzeneRingVisual() {
           else if (m instanceof THREE.Sprite) { (m.material as THREE.SpriteMaterial).map?.dispose?.(); m.material.dispose(); }
           else if (m instanceof THREE.Line) { m.geometry?.dispose(); (m.material as THREE.Material).dispose(); }
         }
+        labelSprites.length = 0;
 
         const C_COLOR = 0x374151;
         const H_COLOR = 0xf5f5f5;
@@ -161,14 +190,14 @@ export function BenzeneRingVisual() {
         const dir1 = targetPos1.clone().sub(labelPos1).normalize();
         const arrowLen1 = labelPos1.distanceTo(targetPos1);
         push(new LiveLeaderLine(dir1, labelPos1, arrowLen1 * 0.8, 0xfbbf24, 0.28, 0.12));
-        push(mkSprite("Delocalized π electrons (circle)", "#fbbf24", labelPos1.clone().sub(dir1.multiplyScalar(0.5)), 0.7));
+        addLabel(mkSprite("Delocalized π electrons (circle)", "#fbbf24", labelPos1.clone().sub(dir1.multiplyScalar(0.5)), 0.7));
 
         const labelPos2 = new THREE.Vector3(-R - 1.8, 0, 0);
         const targetPos2 = new THREE.Vector3(-R * 0.55, 0, 0);
         const dir2 = targetPos2.clone().sub(labelPos2).normalize();
         const arrowLen2 = labelPos2.distanceTo(targetPos2);
         push(new LiveLeaderLine(dir2, labelPos2, arrowLen2 * 0.8, 0x22d3ee, 0.28, 0.12));
-        push(mkSprite("Resonance hybrid structure", "#22d3ee", labelPos2.clone().sub(dir2.multiplyScalar(0.5)), 0.7));
+        addLabel(mkSprite("Resonance hybrid structure", "#22d3ee", labelPos2.clone().sub(dir2.multiplyScalar(0.5)), 0.7));
 
         // Carbon labels with arrows
         Cpos.forEach((pos, i) => {
@@ -177,11 +206,13 @@ export function BenzeneRingVisual() {
           const d = tp.clone().sub(lp).normalize();
           const al = lp.distanceTo(tp);
           push(new LiveLeaderLine(d, lp, al * 0.6, 0x374151, 0.15, 0.08));
-          push(mkSprite(`C${i + 1}`, "#94a3b8", lp.clone().sub(d.multiplyScalar(0.4)), 0.45));
+          addLabel(mkSprite(`C${i + 1}`, "#94a3b8", lp.clone().sub(d.multiplyScalar(0.4)), 0.45));
         });
 
         // Huckel's rule
-        push(mkSprite("Hückel's Rule: 4n+2 π electrons → aromatic (n=1, 6e⁻)", "#a78bfa", new THREE.Vector3(0, -2.5, 0), 0.65));
+        addLabel(mkSprite("Hückel's Rule: 4n+2 π electrons → aromatic (n=1, 6e⁻)", "#a78bfa", new THREE.Vector3(0, -2.5, 0), 0.65));
+
+        labelSprites.forEach((s) => (s.visible = showLabels));
       };
 
       updateScene();
@@ -222,7 +253,7 @@ export function BenzeneRingVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [resonance, isWebGL]);
+  }, [resonance, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Benzene Ring" description="Resonance structure visualization — requires WebGL." />;
@@ -237,26 +268,37 @@ export function BenzeneRingVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
-        <CollapsibleControls label="Resonance Structure">
-          <div className="flex gap-2 mt-1">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
             <button
-              onClick={() => setResonance(0)}
-              className={`px-4 py-1.5 rounded-md text-xs font-medium transition-colors ${resonance === 0 ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-purple-500/50 bg-purple-500/10 text-purple-300" : "border-purple-900 bg-purple-900/40 text-purple-400/60"}`}
             >
-              Kekulé Structure I
+              Labels
             </button>
             <button
-              onClick={() => setResonance(1)}
-              className={`px-4 py-1.5 rounded-md text-xs font-medium transition-colors ${resonance === 1 ? "bg-primary text-primary-foreground" : "bg-muted text-muted-foreground hover:bg-muted/80"}`}
+              onClick={resetAll}
+              className="px-2.5 py-1 rounded-md text-xs font-medium border border-purple-900 bg-purple-900/40 text-purple-300 hover:bg-purple-800/50 transition-colors"
+              title="Reset to defaults"
             >
-              Kekulé Structure II
+              Reset
             </button>
           </div>
-        </CollapsibleControls>
+        </div>
 
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "π electrons", value: 6, unit: "e⁻", highlight: true },
+            { label: "C–C bond length", value: 139, unit: "pm" },
+            { label: "C–C–C bond angle", value: 120, unit: "°" },
+            { label: "Resonance form", value: resonance === 0 ? "Kekulé I" : "Kekulé II" },
+          ]}
+        />
 
         <div className="rounded-lg border border-purple-500/30 bg-purple-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-purple-400">Key Concepts</p>

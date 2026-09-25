@@ -9,6 +9,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -42,6 +43,44 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 type VectorMode = "addition" | "scalar" | "collinear" | "coplanar" | "linear-combo";
 
+const OPERATIONS_INFO: Record<VectorMode, { concept: string; formula: string; interpretation: string; fact: string; tip: string }> = {
+  addition: {
+    concept: "Parallelogram & triangle laws",
+    formula: "|a + b|² = |a|² + |b|² + 2|a||b|cosθ",
+    interpretation: "Place B's tail at A's head; the resultant runs from the first tail to the last head.",
+    fact: "Triangle inequality: |a + b| ≤ |a| + |b|, with equality only when a and b point the same way.",
+    tip: "Vector addition is commutative — the parallelogram's diagonal is the same either way.",
+  },
+  scalar: {
+    concept: "Scalar multiplication",
+    formula: "|ka| = |k||a|",
+    interpretation: "k > 0 stretches along the same line; k < 0 reverses direction.",
+    fact: "k = 0 collapses every vector to 0, which has no defined direction.",
+    tip: "The unit vector â = a/|a| is just scalar multiplication with k = 1/|a|.",
+  },
+  collinear: {
+    concept: "Collinearity test",
+    formula: "a ∥ b ⇔ a = kB for some scalar k",
+    interpretation: "Parallel vectors lie on the same or parallel lines — one is a stretched copy of the other.",
+    fact: "Section formula: P dividing AB in ratio m:n has position vector p = (na + mb)/(m + n).",
+    tip: "Check component-by-component ratios: a₁/b₁ = a₂/b₂ = a₃/b₃ proves A = kB.",
+  },
+  coplanar: {
+    concept: "Coplanarity test",
+    formula: "a·(b×c) = 0 ⇔ a, b, c coplanar",
+    interpretation: "The scalar triple product is a parallelepiped volume — zero means it squashes flat.",
+    fact: "Three non-coplanar vectors form a basis for all of 3-space; coplanar ones cannot.",
+    tip: "Write a = xb + yc and solve — if a consistent solution exists, the trio is coplanar.",
+  },
+  "linear-combo": {
+    concept: "Linear independence",
+    formula: "c₁a + c₂b + c₃c = 0 only when all cᵢ = 0 ⇒ independent",
+    interpretation: "Each vector adds a genuinely new direction the others cannot build.",
+    fact: "Two non-parallel vectors span a plane; three non-coplanar vectors span 3-space.",
+    tip: "If one vector is a combination of the others, the whole set is linearly dependent.",
+  },
+};
+
 export function VectorOperationsVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
@@ -51,6 +90,39 @@ export function VectorOperationsVisual() {
   const [c, setC] = useState({ x: 0, y: 2, z: 2 });
   const [k, setK] = useState(2);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const info = OPERATIONS_INFO[mode];
+  const sum = { x: a.x + b.x, y: a.y + b.y, z: a.z + b.z };
+  const ka = { x: k * a.x, y: k * a.y, z: k * a.z };
+  const magA = Math.hypot(a.x, a.y, a.z);
+  const magB = Math.hypot(b.x, b.y, b.z);
+  const magSum = Math.hypot(sum.x, sum.y, sum.z);
+  const crossBC = {
+    x: b.y * c.z - b.z * c.y,
+    y: b.z * c.x - b.x * c.z,
+    z: b.x * c.y - b.y * c.x,
+  };
+  const stp = a.x * crossBC.x + a.y * crossBC.y + a.z * crossBC.z;
+
+  const presets: ScenePreset[] = [
+    { name: "Addition A + B", hint: "Parallelogram law with the two classic classroom vectors", apply: () => { setMode("addition"); setA({ x: 3, y: 1, z: 0 }); setB({ x: 1, y: 3, z: 0 }); setRunId((r) => r + 1); } },
+    { name: "Unit vector (k = 1/|a|)", hint: "a = (3,4,0) has |a| = 5, so 0.2·a = (0.6, 0.8, 0) is a unit vector", apply: () => { setMode("scalar"); setA({ x: 3, y: 4, z: 0 }); setK(0.2); setRunId((r) => r + 1); } },
+    { name: "Collinear pair A = 2B", hint: "Same line through the origin: a₁/b₁ = a₂/b₂ = a₃/b₃", apply: () => { setMode("collinear"); setA({ x: 2, y: 0, z: 0 }); setB({ x: 1, y: 0, z: 0 }); setRunId((r) => r + 1); } },
+    { name: "Coplanar triple", hint: "All z = 0 ⇒ a·(b×c) = 0 — flat in the xy-plane", apply: () => { setMode("coplanar"); setC({ x: 1, y: 2, z: 0 }); setRunId((r) => r + 1); } },
+    { name: "Basis i, j, k", hint: "Independent trio: the scalar triple product equals 1", apply: () => { setMode("linear-combo"); setA({ x: 1, y: 0, z: 0 }); setB({ x: 0, y: 1, z: 0 }); setC({ x: 0, y: 0, z: 1 }); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setMode("addition");
+    setA({ x: 3, y: 1, z: 0 });
+    setB({ x: 1, y: 3, z: 0 });
+    setC({ x: 0, y: 2, z: 2 });
+    setK(2);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -63,6 +135,7 @@ export function VectorOperationsVisual() {
     let animTime = 0;
     let animPhase = 0;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -83,7 +156,7 @@ export function VectorOperationsVisual() {
       controls.autoRotateSpeed = 0.3;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.6));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -112,7 +185,8 @@ export function VectorOperationsVisual() {
         const len = to.clone().sub(from).length();
         push(new LiveLeaderLine(dir, from, len, color, 0.2, 0.12));
         const mid = from.clone().add(to).multiplyScalar(0.5);
-        push(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, mid.clone().add(new THREE.Vector3(0, 0.6, 0)), 0.8));
+        const s = push(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, mid.clone().add(new THREE.Vector3(0, 0.6, 0)), 0.8));
+        labelSprites.push(s);
       };
 
       const update = () => {
@@ -181,6 +255,7 @@ export function VectorOperationsVisual() {
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -221,7 +296,7 @@ export function VectorOperationsVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [mode, a, b, c, k, isWebGL]);
+  }, [mode, a, b, c, k, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Vector Operations" description="Interactive 3D vector visualization — requires WebGL." />;
@@ -236,6 +311,14 @@ export function VectorOperationsVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-blue-500/50 bg-blue-500/10 text-blue-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Vector Mode">
           <Tabs value={mode} onValueChange={(v) => setMode(v as VectorMode)} className="mt-1">
             <TabsList className="grid w-full grid-cols-5">
@@ -285,6 +368,17 @@ export function VectorOperationsVisual() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <ReadoutGrid
+          items={[
+            { label: "a + b", value: `(${sum.x.toFixed(1)}, ${sum.y.toFixed(1)}, ${sum.z.toFixed(1)})`, highlight: true },
+            { label: "|a + b|", value: magSum.toFixed(2) },
+            { label: "|a| + |b| (triangle bound)", value: (magA + magB).toFixed(2) },
+            { label: "k·a", value: `(${ka.x.toFixed(1)}, ${ka.y.toFixed(1)}, ${ka.z.toFixed(1)})` },
+            { label: "a·(b×c) — scalar triple product", value: stp.toFixed(2) },
+            { label: "Coplanarity test", value: Math.abs(stp) < 1e-9 ? "a·(b×c) = 0 ⇒ coplanar" : "a·(b×c) ≠ 0 ⇒ not coplanar" },
+          ]}
+        />
+
         <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-blue-400">Key Definitions</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">
@@ -292,6 +386,7 @@ export function VectorOperationsVisual() {
             <p><strong className="text-foreground">Coplanar vectors:</strong> Three vectors are coplanar if their scalar triple product A·(B×C) = 0.</p>
             <p><strong className="text-foreground">Linear combination:</strong> v = c₁a + c₂b + c₃c for scalars c₁, c₂, c₃.</p>
             <p><strong className="text-foreground">Linearly independent:</strong> No non-trivial combination gives the zero vector.</p>
+            <p><strong className="text-foreground">{info.concept}:</strong> {info.interpretation} {info.tip}</p>
           </div>
         </div>
       </CardContent>

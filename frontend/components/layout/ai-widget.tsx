@@ -13,7 +13,7 @@ const MAX_GUEST_MESSAGES = 7;
 const STORAGE_KEY = "neb_ai_guest_count";
 const CREDITS_STORAGE_KEY = "neb_guest_credits";
 const GREETING =
-  "I am assistant of this platform, feel free to share your thoughts to get real experience 👋";
+  "👋, I am the captain here. Feel free to clear your doubts.";
 
 function getGuestCount(): number {
   if (typeof window === "undefined") return 0;
@@ -166,7 +166,7 @@ export function AIWidget() {
               <Bot className="h-4 w-4 text-primary" />
             </div>
             <div className="flex-1 min-w-0">
-              <p className="text-sm font-semibold leading-none">Study Assistant</p>
+              <p className="text-sm font-semibold leading-none">Ravikisan's AI Tutor</p>
               <p className="text-[10px] text-muted-foreground mt-0.5">Ask about NEB Study Vault content</p>
             </div>
             <Link

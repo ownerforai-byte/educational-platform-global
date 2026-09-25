@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 /* ============================================================
@@ -15,6 +16,16 @@ import * as THREE from "three";
    3D bar chart of P(X=k) = C(n,k)·p^k·(1-p)^(n-k)
    with mean, variance indicators.
    ============================================================ */
+
+function binomCoeff(n: number, r: number): number {
+  let v = 1;
+  for (let i = 0; i < r; i++) v = (v * (n - i)) / (i + 1);
+  return v;
+}
+
+function binomPmf(n: number, p: number, k: number): number {
+  return binomCoeff(n, k) * Math.pow(p, k) * Math.pow(1 - p, n - k);
+}
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
   const canvas = document.createElement("canvas");
@@ -44,17 +55,39 @@ export function BinomialDistVisual() {
   const [n, setN] = useState(10);
   const [p, setP] = useState(0.4);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const presets: ScenePreset[] = [
+    { name: "Fair coin · n = 10", hint: "p = 0.5 → symmetric, μ = 5", apply: () => { setN(10); setP(0.5); setRunId((r) => r + 1); } },
+    { name: "Skewed right · n = 10, p = 0.2", hint: "Most mass near 0–2", apply: () => { setN(10); setP(0.2); setRunId((r) => r + 1); } },
+    { name: "Large trials · n = 20, p = 0.7", hint: "μ = 14, skewed left", apply: () => { setN(20); setP(0.7); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setN(10);
+    setP(0.4);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
+
+  const mean = n * p;
+  const variance = n * p * (1 - p);
+  const sd = Math.sqrt(variance);
+  const mode = Math.min(Math.max(Math.floor((n + 1) * p), 0), n);
+  const peakProb = binomPmf(n, p, mode);
+  const shape = Math.abs(p - 0.5) < 1e-9 ? "Symmetric (p = 0.5)" : p < 0.5 ? "Skewed right (p < 0.5)" : "Skewed left (p > 0.5)";
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container || !isWebGL) return;
 
-    const factorial = (x: number): number => x <= 1 ? 1 : x * factorial(x - 1);
-    const pmf = (k: number) => factorial(n) / (factorial(k) * factorial(n - k)) * Math.pow(p, k) * Math.pow(1 - p, n - k);
+    const pmf = (k: number) => binomPmf(n, p, k);
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -72,13 +105,13 @@ export function BinomialDistVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
       controls.autoRotate = false;
       controls.maxPolarAngle = Math.PI / 2.2;
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 
-      const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); if (o instanceof THREE.Sprite) labelSprites.push(o); return o; };
 
       push(new THREE.GridHelper(20, 20, 0x334155, 0x1e293b));
 
@@ -122,6 +155,7 @@ export function BinomialDistVisual() {
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -158,7 +192,7 @@ export function BinomialDistVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [n, p, isWebGL]);
+  }, [n, p, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Binomial Distribution" description="3D probability mass function — requires WebGL." />;
@@ -173,6 +207,14 @@ export function BinomialDistVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-indigo-500/50 bg-indigo-500/10 text-indigo-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Parameters">
           <div className="flex gap-3 mt-2">
             <div className="w-16"><Label className="text-xs text-muted-foreground">n (trials):</Label><Input type="number" step="1" min={3} max={20} value={n} onChange={(e) => setN(Number(e.target.value))} className="mt-1" /></div>
@@ -183,6 +225,17 @@ export function BinomialDistVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "E[X] = np", value: mean.toFixed(2), highlight: true },
+            { label: "Var(X) = np(1−p)", value: variance.toFixed(2) },
+            { label: "σ = √(np(1−p))", value: sd.toFixed(2) },
+            { label: "Mode = ⌊(n+1)p⌋", value: mode },
+            { label: `P(X = ${mode})`, value: peakProb.toFixed(3) },
+            { label: "Shape", value: shape },
+          ]}
+        />
 
         <div className="rounded-lg border border-indigo-500/30 bg-indigo-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-indigo-400">Binomial Distribution</p>

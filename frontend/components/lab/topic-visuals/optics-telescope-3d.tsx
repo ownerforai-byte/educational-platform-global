@@ -8,6 +8,11 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, scale = 0.3) {
@@ -33,6 +38,43 @@ export default function OpticsTelescope3d() {
   const [fObjective, setFObjective] = useState(50);
   const [fEyepiece, setFEyepiece] = useState(5);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [showRays, setShowRays] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const mag = fObjective / fEyepiece;
+  const tubeLength = fObjective + fEyepiece;
+
+  const presets: ScenePreset[] = [
+    {
+      name: "Astronomical 20×",
+      hint: "Long objective, medium eyepiece — classic refractor for planets.",
+      apply: () => { setFObjective(100); setFEyepiece(5); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Compact 10×",
+      hint: "Shorter tube — handier, dimmer view.",
+      apply: () => { setFObjective(50); setFEyepiece(5); setRunId((r) => r + 1); },
+    },
+    {
+      name: "High power 50×",
+      hint: "Very short eyepiece focal length — maximum angular magnification.",
+      apply: () => { setFObjective(100); setFEyepiece(2); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Low power 3×",
+      hint: "Wide-field, bright view — like opera glasses.",
+      apply: () => { setFObjective(30); setFEyepiece(10); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setFObjective(50);
+    setFEyepiece(5);
+    setShowLabels(true);
+    setShowRays(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     if (!isWebGL || !containerRef.current) return;
@@ -41,6 +83,7 @@ export default function OpticsTelescope3d() {
     const h = container.clientHeight || 400;
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x1e293b);
+    const labelSprites: THREE.Sprite[] = [];
     const camera = new THREE.PerspectiveCamera(50, w / h, 0.1, 100);
     camera.position.set(0, 2, 8);
     camera.lookAt(0, 0, 0);
@@ -52,7 +95,12 @@ export default function OpticsTelescope3d() {
     import("three/addons/controls/OrbitControls.js").then((mod) => {
       controls = new mod.OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
       controls.dampingFactor = 0.08;
     });
 
@@ -120,19 +168,26 @@ export default function OpticsTelescope3d() {
         ]),
         new THREE.LineBasicMaterial({ color: 0xfbbf24 })
       );
+      ray1.visible = showRays;
       scene.add(ray1);
 
       const sp1 = mkSprite("Objective", "#94a3b8");
       scene.add(sp1);
       sp1.position.set(-2.5, -1.2, 0);
+      sp1.visible = showLabels;
+      labelSprites.push(sp1);
       const sp2 = mkSprite("Eyepiece", "#cbd5e1");
       scene.add(sp2);
       sp2.position.set(2.5, -1.2, 0);
+      sp2.visible = showLabels;
+      labelSprites.push(sp2);
 
       if (spMag) { scene.remove(spMag); spMag.material.map?.dispose(); spMag.material.dispose(); }
       spMag = mkSprite("M=" + mag.toFixed(1) + "×", "#fbbf24");
       scene.add(spMag);
       spMag.position.set(0, -1.5, 0);
+      spMag.visible = showLabels;
+      labelSprites.push(spMag);
 
       const incArcPts: THREE.Vector3[] = [];
       for (let a = Math.PI; a >= Math.PI - 0.3; a -= 0.02) {
@@ -143,6 +198,7 @@ export default function OpticsTelescope3d() {
         new THREE.BufferGeometry().setFromPoints(incArcPts),
         new THREE.LineBasicMaterial({ color: 0xfbbf24 })
       );
+      incArc.visible = showRays;
       scene.add(incArc);
 
       if (eyeF) { scene.remove(eyeF); eyeF.geometry.dispose(); if (!(eyeF.material instanceof Array)) eyeF.material.dispose(); }
@@ -157,6 +213,8 @@ export default function OpticsTelescope3d() {
       eyeFLabel = mkSprite("Fₑ", "#cbd5e1");
       scene.add(eyeFLabel);
       eyeFLabel.position.set(2.5 + fEyepiece / 10, -0.4, 0);
+      eyeFLabel.visible = showLabels;
+      labelSprites.push(eyeFLabel);
     };
 
     updateRays();
@@ -184,14 +242,13 @@ export default function OpticsTelescope3d() {
       eyeHousing.material.dispose();
       ray1.geometry.dispose();
       if (!(ray1.material instanceof Array)) ray1.material.dispose();
-      if (spMag) { spMag.material.map?.dispose(); spMag.material.dispose(); }
       if (incArc) { incArc.geometry.dispose(); if (!(incArc.material instanceof Array)) incArc.material.dispose(); }
       if (eyeF) { eyeF.geometry.dispose(); if (!(eyeF.material instanceof Array)) eyeF.material.dispose(); }
-      if (eyeFLabel) { eyeFLabel.material.map?.dispose(); eyeFLabel.material.dispose(); }
+      labelSprites.forEach((s) => { s.material.map?.dispose(); s.material.dispose(); });
       renderer.dispose();
       controls?.dispose();
     };
-  }, [fObjective, fEyepiece, isWebGL]);
+  }, [fObjective, fEyepiece, isWebGL, runId, showLabels, showRays]);
 
   if (!isWebGL) return <WebGLFallback title="Telescope" />;
 
@@ -208,6 +265,30 @@ export default function OpticsTelescope3d() {
       <CardContent>
         <div ref={containerRef} className="h-[clamp(320px,60vh,640px)] w-full rounded-md overflow-hidden mb-4">
           <VizToolbar targetRef={vizTargetRef} />
+        </div>
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-slate-400/50 bg-slate-400/10 text-slate-200" : "border-slate-700 bg-slate-800/40 text-slate-500"}`}
+            >
+              Labels
+            </button>
+            <button
+              onClick={() => setShowRays((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showRays ? "border-amber-500/50 bg-amber-500/10 text-amber-300" : "border-slate-700 bg-slate-800/40 text-slate-500"}`}
+            >
+              Rays
+            </button>
+            <button
+              onClick={resetAll}
+              className="px-2.5 py-1 rounded-md text-xs font-medium border border-slate-600 bg-slate-700/40 text-slate-200 hover:bg-slate-600/50 transition-colors"
+              title="Reset to defaults"
+            >
+              Reset
+            </button>
+          </div>
+          <ScenePresets presets={presets} />
         </div>
         <CollapsibleControls label="Lens Parameters">
           <div className="space-y-4">
@@ -227,6 +308,15 @@ export default function OpticsTelescope3d() {
             </div>
           </div>
         </CollapsibleControls>
+        <ReadoutGrid
+          className="mt-4"
+          items={[
+            { label: "Angular magnification M", value: mag.toFixed(1), unit: "×", highlight: mag >= 20 },
+            { label: "Tube length (fₒ + fₑ)", value: tubeLength.toFixed(1), unit: "cm" },
+            { label: "Objective power", value: (100 / fObjective).toFixed(2), unit: "D" },
+            { label: "Eyepiece power", value: (100 / fEyepiece).toFixed(1), unit: "D" },
+          ]}
+        />
         <div className="mt-4 p-3 rounded-lg border-l-4 border-slate-500 bg-slate-950/50 text-slate-200 text-sm space-y-2">
           <p className="font-semibold text-slate-300">Angular Magnification</p>
           <p>M = fₒ / fₑ</p>

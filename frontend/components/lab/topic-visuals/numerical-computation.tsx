@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -41,6 +42,19 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 type Method = "bisection" | "newton";
 
+const METHOD_INFO: Record<Method, { idea: string; convergence: string; caution: string }> = {
+  bisection: {
+    idea: "Change-of-sign principle: if f is continuous and f(a)·f(b) < 0, a root lies in (a, b). Take the midpoint and keep the half where the sign change persists.",
+    convergence: "Linear — halves the error each step; after n steps |xₙ − root| ≤ (b − a)/2ⁿ.",
+    caution: "Slower than Newton-Raphson, but convergence is guaranteed for any bracketed root.",
+  },
+  newton: {
+    idea: "Iterate xₙ₊₁ = xₙ − f(xₙ)/f′(xₙ): follow the tangent at xₙ to where it crosses the x-axis.",
+    convergence: "Quadratic near a simple root — correct digits roughly double each step.",
+    caution: "Can diverge when f′(xₙ) ≈ 0 or the initial guess is far away; no convergence guarantee.",
+  },
+};
+
 export function NumericalComputationVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
@@ -49,11 +63,59 @@ export function NumericalComputationVisual() {
   const [b, setB] = useState(3);
   const [x0, setX0] = useState(2);
   const [isWebGL] = useState(() => isWebGLAvailable());
-  const [iterations, setIterations] = useState<{ label: string; val: number; err: number }[]>([]);
-
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
 
   const f = (x: number) => x * x * x - x - 2;
   const df = (x: number) => 3 * x * x - 1;
+  const TRUE_ROOT = 1.5213797068045676;
+  const info = METHOD_INFO[method];
+
+  // Same 8-step bisection the scene draws, mirrored for the live readout
+  const bis = (() => {
+    let lo = Math.min(a, b), hi = Math.max(a, b);
+    const width0 = hi - lo;
+    const signOK = width0 > 0 && f(lo) * f(hi) < 0;
+    let mid = NaN;
+    for (let i = 0; i < 8; i++) {
+      mid = (lo + hi) / 2;
+      if (f(lo) * f(mid) < 0) hi = mid; else lo = mid;
+    }
+    return {
+      signOK,
+      root: mid,
+      err: width0 > 0 ? width0 / 2 ** 8 : NaN,
+      stepsToTol: width0 > 0 ? Math.ceil(Math.log2(width0 / 1e-4)) : NaN,
+    };
+  })();
+
+  // Same 6-step Newton-Raphson the scene draws, with divergence guards
+  const newt = (() => {
+    let x = x0;
+    let ok = Number.isFinite(x);
+    for (let i = 0; i < 6 && ok; i++) {
+      const slope = df(x);
+      if (Math.abs(slope) < 1e-12) { ok = false; break; }
+      x = x - f(x) / slope;
+      if (!Number.isFinite(x)) ok = false;
+    }
+    return { ok, x };
+  })();
+
+  const presets: ScenePreset[] = [
+    { name: "Tight bracket [1, 2]", hint: "f(1) = −2, f(2) = 4 — sign change guarantees a root inside.", apply: () => { setMethod("bisection"); setA(1); setB(2); setRunId((r) => r + 1); } },
+    { name: "Wide bracket [-2, 3]", hint: "Looser start — more bisections needed for the same accuracy.", apply: () => { setMethod("bisection"); setA(-2); setB(3); setRunId((r) => r + 1); } },
+    { name: "No sign change [2, 4]", hint: "f(2) and f(4) are both positive — bisection has nothing to bracket.", apply: () => { setMethod("bisection"); setA(2); setB(4); setRunId((r) => r + 1); } },
+    { name: "Newton x₀ = 2 (quadratic)", hint: "Good start — reaches 1.52138 in about 4 steps.", apply: () => { setMethod("newton"); setX0(2); setRunId((r) => r + 1); } },
+    { name: "Newton x₀ = 0.5 (flat tangent)", hint: "f′(0.5) = −0.25 — the tangent throws x₁ far to −9: a poor guess.", apply: () => { setMethod("newton"); setX0(0.5); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setMethod("bisection");
+    setA(-2); setB(3); setX0(2);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     const container = containerRef.current;
@@ -62,6 +124,7 @@ export function NumericalComputationVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -78,12 +141,13 @@ export function NumericalComputationVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
       controls.autoRotate = false;
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
 
       push(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-10, 0, 0), new THREE.Vector3(10, 0, 0)]), new THREE.LineBasicMaterial({ color: 0xef4444 })));
       push(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, -10, 0), new THREE.Vector3(0, 10, 0)]), new THREE.LineBasicMaterial({ color: 0x22c55e })));
@@ -93,14 +157,18 @@ export function NumericalComputationVisual() {
         push(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(-10, i, 0), new THREE.Vector3(10, i, 0)]), new THREE.LineBasicMaterial({ color: 0x1e293b })));
       }
 
+      // Axes/grid are static — only meshes added after this line get rebuilt.
+      const staticCount = meshes.length;
+
       const update = () => {
-        while (meshes.length > 40) {
+        while (meshes.length > staticCount) {
           const m = meshes.pop()!;
           scene.remove(m);
           if (m instanceof THREE.Mesh) { m.geometry?.dispose(); (m.material as THREE.Material).dispose(); }
           else if (m instanceof THREE.Line) { m.geometry?.dispose(); (m.material as THREE.Material).dispose(); }
           else if (m instanceof THREE.Sprite) { (m.material as THREE.SpriteMaterial).map?.dispose?.(); m.material.dispose(); }
         }
+        labelSprites.length = 0;
 
         // Plot f(x) = x³ - x - 2
         const curvePts: THREE.Vector3[] = [];
@@ -126,29 +194,32 @@ export function NumericalComputationVisual() {
             // Point on curve
             const dot = push(new THREE.Mesh(new THREE.SphereGeometry(0.12, 8, 8), new THREE.MeshBasicMaterial({ color })));
             dot.position.set(mid, midY, 0.05);
-            push(mkSprite(`x${i+1}=${mid.toFixed(3)}`, `#${color.toString(16).padStart(6, "0")}`, new THREE.Vector3(mid, midY + 0.8, 0), 0.6));
+            addLabel(mkSprite(`x${i + 1}=${mid.toFixed(3)}`, `#${color.toString(16).padStart(6, "0")}`, new THREE.Vector3(mid, midY + 0.8, 0), 0.6));
             if (f(lo) * midY < 0) hi = mid; else lo = mid;
           }
-          push(mkSprite("Bisection: halve interval each step", "#fbbf24", new THREE.Vector3(0, -8.5, 0), 0.8));
+          addLabel(mkSprite("Bisection: halve interval each step", "#fbbf24", new THREE.Vector3(0, -8.5, 0), 0.8));
         } else {
           // Newton-Raphson
           let x = x0;
           for (let i = 0; i < 6; i++) {
             const fx = f(x);
             const dfx = df(x);
+            if (!isFinite(x) || Math.abs(dfx) < 1e-12) break;
             const xNext = x - fx / dfx;
             // Tangent line at x
             const tanLen = 3;
             const y1 = fx - dfx * tanLen;
             const y2 = fx + dfx * tanLen;
-            push(new THREE.Line(
-              new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(x - tanLen, y1, 0), new THREE.Vector3(x + tanLen, y2, 0)]),
-              new THREE.LineBasicMaterial({ color: 0xf97316, linewidth: 2 }),
-            ));
-            const dot = push(new THREE.Mesh(new THREE.SphereGeometry(0.15, 12, 12), new THREE.MeshBasicMaterial({ color: 0xef4444 })));
-            dot.position.set(x, fx, 0.05);
-            push(mkSprite(`x${i}=${x.toFixed(3)}`, "#f87171", new THREE.Vector3(x + 0.5, fx + 0.8, 0), 0.65));
-            // Arrow to next guess
+            if (isFinite(x) && isFinite(fx)) {
+              push(new THREE.Line(
+                new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(x - tanLen, y1, 0), new THREE.Vector3(x + tanLen, y2, 0)]),
+                new THREE.LineBasicMaterial({ color: 0xf97316, linewidth: 2 }),
+              ));
+              const dot = push(new THREE.Mesh(new THREE.SphereGeometry(0.15, 12, 12), new THREE.MeshBasicMaterial({ color: 0xef4444 })));
+              dot.position.set(x, fx, 0.05);
+              addLabel(mkSprite(`x${i}=${x.toFixed(3)}`, "#f87171", new THREE.Vector3(x + 0.5, fx + 0.8, 0), 0.65));
+            }
+            // Leader line to next guess
             const arrow = new LiveLeaderLine(
               new THREE.Vector3(xNext - x, -fx, 0).normalize(),
               new THREE.Vector3(x, fx, 0.05),
@@ -156,14 +227,15 @@ export function NumericalComputationVisual() {
               0x22c55e, 0.2, 0.12
             );
             push(arrow);
-            push(mkSprite(`→ x${i+1}=${xNext.toFixed(3)}`, "#4ade80", new THREE.Vector3((x + xNext) / 2, -0.5, 0), 0.65));
+            addLabel(mkSprite(`→ x${i + 1}=${xNext.toFixed(3)}`, "#4ade80", new THREE.Vector3((x + xNext) / 2, -0.5, 0), 0.65));
             x = xNext;
           }
-          push(mkSprite("Newton-Raphson: xₙ₊₁ = xₙ − f(xₙ)/f'(xₙ)", "#fbbf24", new THREE.Vector3(0, -8.5, 0), 0.8));
+          addLabel(mkSprite("Newton-Raphson: xₙ₊₁ = xₙ − f(xₙ)/f'(xₙ)", "#fbbf24", new THREE.Vector3(0, -8.5, 0), 0.8));
         }
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -202,7 +274,7 @@ export function NumericalComputationVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [method, a, b, x0, isWebGL]);
+  }, [method, a, b, x0, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Numerical Computation" description="Root-finding algorithms — requires WebGL." />;
@@ -217,6 +289,14 @@ export function NumericalComputationVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-amber-500/50 bg-amber-500/10 text-amber-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Method">
           <div className="flex flex-wrap gap-2 mt-2">
             {(["bisection", "newton"] as Method[]).map((m) => (
@@ -250,11 +330,34 @@ export function NumericalComputationVisual() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <ReadoutGrid
+          items={
+            method === "bisection"
+              ? [
+                  { label: "Equation", value: "f(x) = x³ − x − 2" },
+                  { label: "Root bracketed? f(a)·f(b) < 0", value: bis.signOK ? "Yes — a root lies in [a, b]" : "No — bisection not guaranteed", highlight: true },
+                  { label: "Midpoint after 8 bisections", value: Number.isFinite(bis.root) ? bis.root.toFixed(4) : "—" },
+                  { label: "Error bound (b − a)/2⁸", value: Number.isFinite(bis.err) ? bis.err.toFixed(5) : "—" },
+                  { label: "Bisections for |err| < 10⁻⁴", value: Number.isFinite(bis.stepsToTol) ? bis.stepsToTol : "—" },
+                  { label: "True root", value: TRUE_ROOT.toFixed(5) },
+                ]
+              : [
+                  { label: "Iteration", value: "xₙ₊₁ = xₙ − f(xₙ)/f′(xₙ)" },
+                  { label: "Start x₀", value: x0 },
+                  { label: "x after 6 steps", value: newt.ok ? newt.x.toFixed(6) : "diverged (f′ ≈ 0 or overflow)", highlight: true },
+                  { label: "|x₆ − root|", value: newt.ok ? Math.abs(newt.x - TRUE_ROOT).toExponential(2) : "—" },
+                  { label: "Residual f(x₆)", value: newt.ok ? f(newt.x).toExponential(2) : "—" },
+                  { label: "Convergence", value: "Quadratic near a simple root" },
+                ]
+          }
+        />
+
         <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-amber-400">Methods</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">
-            <p><strong className="text-foreground">Bisection:</strong> If f(a)·f(b) &lt; 0, root exists in [a,b]. Repeatedly halve the interval. Guaranteed convergence but slow (linear).</p>
-            <p><strong className="text-foreground">Newton-Raphson:</strong> xₙ₊₁ = xₙ − f(xₙ)/f'(xₙ). Fast quadratic convergence near root, but requires derivative and good initial guess.</p>
+            <p><strong className="text-foreground">{method === "bisection" ? "Bisection:" : "Newton-Raphson:"}</strong> {info.idea}</p>
+            <p><strong className="text-foreground">Convergence:</strong> {info.convergence}</p>
+            <p><strong className="text-foreground">Caution:</strong> {info.caution}</p>
             <p><strong className="text-foreground">f(x) = x³ − x − 2</strong> has a real root near x ≈ 1.5214</p>
           </div>
         </div>

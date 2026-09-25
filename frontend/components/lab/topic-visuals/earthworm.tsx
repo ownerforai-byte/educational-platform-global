@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -36,12 +37,17 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
-function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
+function addLabel(scene: THREE.Scene, meshes: THREE.Object3D[], labelSprites: THREE.Sprite[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
   const dir = targetPos.clone().sub(labelPos).normalize();
   const len = labelPos.distanceTo(targetPos);
-  meshes.push(new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14) as any);
+  const line = new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14);
+  scene.add(line);
+  meshes.push(line);
   const lp = labelPos.clone().sub(dir.clone().multiplyScalar(0.45));
-  meshes.push(mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85));
+  const s = mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85);
+  scene.add(s);
+  meshes.push(s);
+  labelSprites.push(s);
 }
 
 type SystemView = "external" | "digestive" | "excretory" | "nervous";
@@ -50,7 +56,30 @@ export function EarthwormVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [view, setView] = useState<SystemView>("external");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const VIEW_INFO: Record<SystemView, { system: string; headline: string; keyStructures: string; functionLine: string; examTip: string }> = {
+    external: { system: "External anatomy", headline: "Segmented worm, 100+ rings", keyStructures: "Prostomium · setae · clitellum (XIV–XVI)", functionLine: "Setae grip soil; clitellum secretes cocoon", examTip: "Clitellum marks sexual maturity — pore positions are asked often" },
+    digestive: { system: "Digestive system", headline: "Complete gut: mouth → anus", keyStructures: "Pharynx · oesophagus · crop · gizzard · intestine", functionLine: "Gizzard grinds, intestine absorbs via typhlosole", examTip: "Typhlosole = internal fold increasing absorptive surface" },
+    excretory: { system: "Excretory system", headline: "Metanephridia per segment", keyStructures: "Nephrostome · collecting chamber · nephridial duct · nephridiopore", functionLine: "Coelomic fluid filtered; waste exits nephridiopore", examTip: "Each segment carries a pair of metanephridia (except first three)" },
+    nervous: { system: "Nervous system", headline: "Brain + ventral nerve cord", keyStructures: "Cerebral ganglia · periesophageal connectives · segmental ganglia", functionLine: "Ventral cord coordinates segmental reflexes", examTip: "Pharyngeal ganglia ring around oesophagus — 'brain' is dorsal" },
+  };
+  const info = VIEW_INFO[view];
+
+  const presets: ScenePreset[] = [
+    { name: "External features", hint: "Find clitellum, setae and the reproductive pores.", apply: () => { setView("external"); setRunId((r) => r + 1); } },
+    { name: "Gut pathway", hint: "Trace food: crop stores, gizzard grinds, intestine absorbs.", apply: () => { setView("digestive"); setRunId((r) => r + 1); } },
+    { name: "Excretory units", hint: "Metanephridia process coelomic fluid segment by segment.", apply: () => { setView("excretory"); setRunId((r) => r + 1); } },
+    { name: "Nerve cord", hint: "Cerebral ganglia linked to a ventral cord with ganglia.", apply: () => { setView("nervous"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setView("external");
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -60,6 +89,7 @@ export function EarthwormVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -79,7 +109,7 @@ export function EarthwormVisual() {
       controls.autoRotate = false;
       controls.minDistance = 4;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dl = new THREE.DirectionalLight(0xffffff, 0.9);
@@ -170,12 +200,12 @@ export function EarthwormVisual() {
 
           push(mkSprite("Earthworm — External Features", "#fbbf24", new THREE.Vector3(0, 2.8, 0), 0.85));
 
-          addLabel(meshes, "Prostomium", 0x92400e, new THREE.Vector3(-4, 1.5, 2), prostomium.position);
-          addLabel(meshes, "Clitellum", 0xfbbf24, new THREE.Vector3(3, 1.2, -2), clitellum.position);
-          addLabel(meshes, "Setae (Bristles)", 0x78350f, new THREE.Vector3(-3.5, -1.5, 2), new THREE.Vector3(-1, bodyY - 0.35, 0));
-          addLabel(meshes, "Male Pores (3/4 & 4/5)", 0xef4444, new THREE.Vector3(-3.5, -0.5, -2.5), mp1.position);
-          addLabel(meshes, "Spermathecal Pores (2/3, 3/4, 4/5)", 0x22d3ee, new THREE.Vector3(3.5, -0.5, 2.5), sp1.position);
-          addLabel(meshes, "Anus (last segment)", 0x451a03, new THREE.Vector3(3.5, 0.5, -2.5), anus.position);
+          addLabel(scene, meshes, labelSprites, "Prostomium", 0x92400e, new THREE.Vector3(-4, 1.5, 2), prostomium.position);
+          addLabel(scene, meshes, labelSprites, "Clitellum", 0xfbbf24, new THREE.Vector3(3, 1.2, -2), clitellum.position);
+          addLabel(scene, meshes, labelSprites, "Setae (Bristles)", 0x78350f, new THREE.Vector3(-3.5, -1.5, 2), new THREE.Vector3(-1, bodyY - 0.35, 0));
+          addLabel(scene, meshes, labelSprites, "Male Pores (3/4 & 4/5)", 0xef4444, new THREE.Vector3(-3.5, -0.5, -2.5), mp1.position);
+          addLabel(scene, meshes, labelSprites, "Spermathecal Pores (2/3, 3/4, 4/5)", 0x22d3ee, new THREE.Vector3(3.5, -0.5, 2.5), sp1.position);
+          addLabel(scene, meshes, labelSprites, "Anus (last segment)", 0x451a03, new THREE.Vector3(3.5, 0.5, -2.5), anus.position);
         } else if (view === "digestive") {
           // Open body wall to show digestive tract
           // Pharynx
@@ -216,12 +246,12 @@ export function EarthwormVisual() {
           typhlosole.position.set(1.0, bodyY + 0.08, 0);
 
           push(mkSprite("Earthworm — Digestive System", "#fbbf24", new THREE.Vector3(0, 2.8, 0), 0.85));
-          addLabel(meshes, "Pharynx", 0xf97316, new THREE.Vector3(-4, 1.5, 2), pharynx.position);
-          addLabel(meshes, "Oesophagus", 0xfb923c, new THREE.Vector3(-4, 0.8, -2), oesophagus.position);
-          addLabel(meshes, "Crop (Storage)", 0xfbbf24, new THREE.Vector3(-3.5, -0.5, 2.5), crop.position);
-          addLabel(meshes, "Gizzard (Muscular)", 0x854d0e, new THREE.Vector3(3.5, 1.2, -2.5), gizzard.position);
-          addLabel(meshes, "Intestine (Digestion/Absorption)", 0x22c55e, new THREE.Vector3(3.5, -0.5, 2), intestine.position);
-          addLabel(meshes, "Typhlosole (Increases SA)", 0x16a34a, new THREE.Vector3(-3.5, -1.5, -2), typhlosole.position);
+          addLabel(scene, meshes, labelSprites, "Pharynx", 0xf97316, new THREE.Vector3(-4, 1.5, 2), pharynx.position);
+          addLabel(scene, meshes, labelSprites, "Oesophagus", 0xfb923c, new THREE.Vector3(-4, 0.8, -2), oesophagus.position);
+          addLabel(scene, meshes, labelSprites, "Crop (Storage)", 0xfbbf24, new THREE.Vector3(-3.5, -0.5, 2.5), crop.position);
+          addLabel(scene, meshes, labelSprites, "Gizzard (Muscular)", 0x854d0e, new THREE.Vector3(3.5, 1.2, -2.5), gizzard.position);
+          addLabel(scene, meshes, labelSprites, "Intestine (Digestion/Absorption)", 0x22c55e, new THREE.Vector3(3.5, -0.5, 2), intestine.position);
+          addLabel(scene, meshes, labelSprites, "Typhlosole (Increases SA)", 0x16a34a, new THREE.Vector3(-3.5, -1.5, -2), typhlosole.position);
         } else if (view === "excretory") {
           // Nephridia (segment-wise)
           for (let i = 0; i < 6; i++) {
@@ -258,9 +288,9 @@ export function EarthwormVisual() {
           chamber.position.set(0, bodyY + 0.2, 0);
 
           push(mkSprite("Earthworm — Excretory System (Metanephridia)", "#fbbf24", new THREE.Vector3(0, 2.8, 0), 0.85));
-          addLabel(meshes, "Nephridia (Segment-wise)", 0x22d3ee, new THREE.Vector3(-3.5, 1.5, 2), new THREE.Vector3(-1, bodyY + 0.15, 0));
-          addLabel(meshes, "Nephridiopore", 0x38bdf8, new THREE.Vector3(3.5, -1, 2.5), new THREE.Vector3(1.2, bodyY - 0.35, 0.3));
-          addLabel(meshes, "Collecting Chamber", 0xfbbf24, new THREE.Vector3(-3.5, -1.5, -2), chamber.position);
+          addLabel(scene, meshes, labelSprites, "Nephridia (Segment-wise)", 0x22d3ee, new THREE.Vector3(-3.5, 1.5, 2), new THREE.Vector3(-1, bodyY + 0.15, 0));
+          addLabel(scene, meshes, labelSprites, "Nephridiopore", 0x38bdf8, new THREE.Vector3(3.5, -1, 2.5), new THREE.Vector3(1.2, bodyY - 0.35, 0.3));
+          addLabel(scene, meshes, labelSprites, "Collecting Chamber", 0xfbbf24, new THREE.Vector3(-3.5, -1.5, -2), chamber.position);
         } else {
           // Nervous system
           // Cerebral ganglia (brain)
@@ -298,15 +328,17 @@ export function EarthwormVisual() {
           }
 
           push(mkSprite("Earthworm — Nervous System", "#fbbf24", new THREE.Vector3(0, 2.8, 0), 0.85));
-          addLabel(meshes, "Cerebral Ganglia (Brain)", 0xa78bfa, new THREE.Vector3(-3.5, 2, 2), brain.position);
-          addLabel(meshes, "Periesophageal Connectives", 0x8b5cf6, new THREE.Vector3(-3.5, 1, -2), conn1.position);
-          addLabel(meshes, "Sub-pharyngeal Ganglion", 0x7c3aed, new THREE.Vector3(-3.5, -0.5, 2), subGang.position);
-          addLabel(meshes, "Ventral Nerve Cord", 0x6d28d9, new THREE.Vector3(3.5, -1, -2), nerveCord.position);
-          addLabel(meshes, "Segmental Ganglia", 0x8b5cf6, new THREE.Vector3(3.5, 0.5, 2), new THREE.Vector3(1, bodyY - 0.25, 0));
+          addLabel(scene, meshes, labelSprites, "Cerebral Ganglia (Brain)", 0xa78bfa, new THREE.Vector3(-3.5, 2, 2), brain.position);
+          addLabel(scene, meshes, labelSprites, "Periesophageal Connectives", 0x8b5cf6, new THREE.Vector3(-3.5, 1, -2), conn1.position);
+          addLabel(scene, meshes, labelSprites, "Sub-pharyngeal Ganglion", 0x7c3aed, new THREE.Vector3(-3.5, -0.5, 2), subGang.position);
+          addLabel(scene, meshes, labelSprites, "Ventral Nerve Cord", 0x6d28d9, new THREE.Vector3(3.5, -1, -2), nerveCord.position);
+          addLabel(scene, meshes, labelSprites, "Segmental Ganglia", 0x8b5cf6, new THREE.Vector3(3.5, 0.5, 2), new THREE.Vector3(1, bodyY - 0.25, 0));
         }
       };
 
+      labelSprites.length = 0;
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -344,7 +376,7 @@ export function EarthwormVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [view, isWebGL]);
+  }, [view, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Earthworm Anatomy" description="3D earthworm system diagrams." />;
@@ -359,6 +391,13 @@ export function EarthwormVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-amber-500/50 bg-amber-500/10 text-amber-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
         <CollapsibleControls label="System View">
           <div className="flex flex-wrap gap-2 mt-2">
             {(["external", "digestive", "excretory", "nervous"] as const).map((v) => (
@@ -375,6 +414,14 @@ export function EarthwormVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid items={[
+          { label: "System", value: info.system, highlight: true },
+          { label: "Body plan", value: info.headline },
+          { label: "Key structures", value: info.keyStructures },
+          { label: "Function", value: info.functionLine },
+          { label: "Exam tip", value: info.examTip },
+        ]} />
 
         <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-amber-400">Key Concepts</p>

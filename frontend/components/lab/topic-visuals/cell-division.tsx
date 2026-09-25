@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -36,12 +37,17 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
-function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
+function addLabel(scene: THREE.Scene, meshes: THREE.Object3D[], labelSprites: THREE.Sprite[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
   const dir = targetPos.clone().sub(labelPos).normalize();
   const len = labelPos.distanceTo(targetPos);
-  meshes.push(new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14) as any);
+  const line = new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14);
+  scene.add(line);
+  meshes.push(line);
   const lp = labelPos.clone().sub(dir.clone().multiplyScalar(0.45));
-  meshes.push(mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85));
+  const s = mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85);
+  scene.add(s);
+  meshes.push(s);
+  labelSprites.push(s);
 }
 
 type Stage = "interphase" | "prophase" | "metaphase" | "anaphase" | "telophase";
@@ -52,7 +58,31 @@ export function CellDivisionVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [stage, setStage] = useState<Stage>("metaphase");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const STAGE_INFO: Record<Stage, { chromatids: string; spindle: string; nucleus: string; keyEvent: string; checkpoint: string }> = {
+    interphase: { chromatids: "Invisible — diffuse chromatin threads", spindle: "Absent (centrioles duplicate)", nucleus: "Intact, nucleolus visible", keyEvent: "DNA replicates in S phase", checkpoint: "G1/S gate checks DNA before copying" },
+    prophase: { chromatids: "Condensing X-shapes, joined at centromere", spindle: "Assembling from centrioles", nucleus: "Envelope breaking down late", keyEvent: "Chromatin condenses into visible chromosomes", checkpoint: "DNA-damage checkpoint (G2/M)" },
+    metaphase: { chromatids: "Aligned single-file at the plate", spindle: "Kinetochore fibers fully attached", nucleus: "No envelope", keyEvent: "Peak condensation — best stage for karyotype", checkpoint: "Spindle checkpoint: all attached?" },
+    anaphase: { chromatids: "Sisters split → individual chromosomes", spindle: "Fibers shorten, pull to opposite poles", nucleus: "No envelope yet", keyEvent: "Centromeres divide; 4n momentarily at poles", checkpoint: "Satisfied checkpoint triggers separase" },
+    telophase: { chromatids: "Decondensing back into chromatin", spindle: "Disassembles", nucleus: "Two envelopes + nucleoli reform", keyEvent: "Cytokinesis: furrow (animal) / cell plate (plant)", checkpoint: "— (exit to G1)" },
+  };
+  const info = STAGE_INFO[stage];
+
+  const presets: ScenePreset[] = [
+    { name: "Resting & copying", hint: "Interphase: DNA replicates while chromatin stays diffuse.", apply: () => { setStage("interphase"); setRunId((r) => r + 1); } },
+    { name: "Line-up (metaphase)", hint: "Chromosomes align single-file — spindle checkpoint active.", apply: () => { setStage("metaphase"); setRunId((r) => r + 1); } },
+    { name: "Pull apart (anaphase)", hint: "Sister chromatids separate toward opposite poles.", apply: () => { setStage("anaphase"); setRunId((r) => r + 1); } },
+    { name: "Two nuclei (telophase)", hint: "Nuclear envelopes reform as cytokinesis begins.", apply: () => { setStage("telophase"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setStage("metaphase");
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -62,6 +92,7 @@ export function CellDivisionVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -81,7 +112,7 @@ export function CellDivisionVisual() {
       controls.autoRotate = false;
       controls.minDistance = 4;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dl = new THREE.DirectionalLight(0xffffff, 0.9);
@@ -126,9 +157,9 @@ export function CellDivisionVisual() {
           ));
           nucleolus.position.set(0.3, 0.2, 0.1);
           push(mkSprite("Interphase — Chromatin diffuse, nucleus intact", "#fbbf24", new THREE.Vector3(0, -5.2, 0), 0.8));
-          addLabel(meshes, "Nucleolus", 0x4c1d95, new THREE.Vector3(2.5, 1.5, 0), nucleolus.position);
-          addLabel(meshes, "Chromatin", 0x7c3aed, new THREE.Vector3(-3, 1.8, 0), chromatin.position);
-          addLabel(meshes, "Nuclear Envelope", 0xa78bfa, new THREE.Vector3(3, -1.5, 0), nucleus.position);
+          addLabel(scene, meshes, labelSprites, "Nucleolus", 0x4c1d95, new THREE.Vector3(2.5, 1.5, 0), nucleolus.position);
+          addLabel(scene, meshes, labelSprites, "Chromatin", 0x7c3aed, new THREE.Vector3(-3, 1.8, 0), chromatin.position);
+          addLabel(scene, meshes, labelSprites, "Nuclear Envelope", 0xa78bfa, new THREE.Vector3(3, -1.5, 0), nucleus.position);
         } else if (stage === "prophase") {
           // Condensing chromosomes (X-shaped)
           const chromosomeColor = 0xef4444;
@@ -152,8 +183,8 @@ export function CellDivisionVisual() {
           const sp2 = push(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(3, 0, 0), new THREE.Vector3(1, 0.3, 0)]), spindleMat) as any);
           (meshes[meshes.length - 1] as any).computeLineDistances();
           push(mkSprite("Prophase — Chromosomes condense, spindle forms", "#fbbf24", new THREE.Vector3(0, -5.2, 0), 0.8));
-          addLabel(meshes, "Condensing Chromosomes", 0xef4444, new THREE.Vector3(3, 2, 0), new THREE.Vector3(-0.8, 0.5, 0.05));
-          addLabel(meshes, "Spindle Fiber", 0x34d399, new THREE.Vector3(-3.5, 1, 0), new THREE.Vector3(-2, 0, 0));
+          addLabel(scene, meshes, labelSprites, "Condensing Chromosomes", 0xef4444, new THREE.Vector3(3, 2, 0), new THREE.Vector3(-0.8, 0.5, 0.05));
+          addLabel(scene, meshes, labelSprites, "Spindle Fiber", 0x34d399, new THREE.Vector3(-3.5, 1, 0), new THREE.Vector3(-2, 0, 0));
         } else if (stage === "metaphase") {
           // Chromosomes aligned at metaphase plate
           const plateY = 0;
@@ -181,10 +212,10 @@ export function CellDivisionVisual() {
             (sp2 as any).computeLineDistances();
           }
           push(mkSprite("Metaphase — Chromosomes aligned at metaphase plate", "#fbbf24", new THREE.Vector3(0, -5.2, 0), 0.8));
-          addLabel(meshes, "Metaphase Plate", 0x64748b, new THREE.Vector3(3.5, -0.8, 0), new THREE.Vector3(0, plateY, 0));
-          addLabel(meshes, "Chromosome", 0xef4444, new THREE.Vector3(-3.5, 1.5, 0), new THREE.Vector3(-1.5, plateY, 0.05));
-          addLabel(meshes, "Spindle Fiber", 0x34d399, new THREE.Vector3(3.5, 2.5, 0), new THREE.Vector3(2, plateY, 0));
-          addLabel(meshes, "Centriole (Pole)", 0x94a3b8, new THREE.Vector3(-4, 0, 2), new THREE.Vector3(-4, 0, 0));
+          addLabel(scene, meshes, labelSprites, "Metaphase Plate", 0x64748b, new THREE.Vector3(3.5, -0.8, 0), new THREE.Vector3(0, plateY, 0));
+          addLabel(scene, meshes, labelSprites, "Chromosome", 0xef4444, new THREE.Vector3(-3.5, 1.5, 0), new THREE.Vector3(-1.5, plateY, 0.05));
+          addLabel(scene, meshes, labelSprites, "Spindle Fiber", 0x34d399, new THREE.Vector3(3.5, 2.5, 0), new THREE.Vector3(2, plateY, 0));
+          addLabel(scene, meshes, labelSprites, "Centriole (Pole)", 0x94a3b8, new THREE.Vector3(-4, 0, 2), new THREE.Vector3(-4, 0, 0));
         } else if (stage === "anaphase") {
           // Chromatids pulled apart
           const colors = [0xef4444, 0xf97316, 0xfbbf24, 0x22c55e];
@@ -204,9 +235,9 @@ export function CellDivisionVisual() {
             (line as any).computeLineDistances();
           });
           push(mkSprite("Anaphase — Sister chromatids separate to opposite poles", "#fbbf24", new THREE.Vector3(0, -5.2, 0), 0.8));
-          addLabel(meshes, "Separating Chromatids", 0xef4444, new THREE.Vector3(-3.5, 3.5, 0), new THREE.Vector3(-1.5, 1.8, 0));
-          addLabel(meshes, "Pulled toward pole", 0x34d399, new THREE.Vector3(3.5, 3, 0), new THREE.Vector3(-1.5, 1.8, 0));
-          addLabel(meshes, "Original Position", 0x94a3b8, new THREE.Vector3(-3.5, -2, 0), new THREE.Vector3(-1.5, -0.3, 0));
+          addLabel(scene, meshes, labelSprites, "Separating Chromatids", 0xef4444, new THREE.Vector3(-3.5, 3.5, 0), new THREE.Vector3(-1.5, 1.8, 0));
+          addLabel(scene, meshes, labelSprites, "Pulled toward pole", 0x34d399, new THREE.Vector3(3.5, 3, 0), new THREE.Vector3(-1.5, 1.8, 0));
+          addLabel(scene, meshes, labelSprites, "Original Position", 0x94a3b8, new THREE.Vector3(-3.5, -2, 0), new THREE.Vector3(-1.5, -0.3, 0));
         } else if (stage === "telophase") {
           // Two nuclei forming, cell cleaving
           const n1 = push(new THREE.Mesh(new THREE.CircleGeometry(1.5, 20), new THREE.MeshPhongMaterial({ color: 0xa78bfa, transparent: true, opacity: 0.35, side: THREE.DoubleSide })));
@@ -229,13 +260,15 @@ export function CellDivisionVisual() {
           ));
           furrow.position.set(0, 0, 0.03);
           push(mkSprite("Telophase — Two nuclei form, cytokinesis begins", "#fbbf24", new THREE.Vector3(0, -5.2, 0), 0.8));
-          addLabel(meshes, "New Nucleus (1)", 0xa78bfa, new THREE.Vector3(-4, 2, 0), n1.position);
-          addLabel(meshes, "New Nucleus (2)", 0xa78bfa, new THREE.Vector3(4, 2, 0), n2.position);
-          addLabel(meshes, "Cleavage Furrow", 0xfbbf24, new THREE.Vector3(0, 2.5, 0), furrow.position);
+          addLabel(scene, meshes, labelSprites, "New Nucleus (1)", 0xa78bfa, new THREE.Vector3(-4, 2, 0), n1.position);
+          addLabel(scene, meshes, labelSprites, "New Nucleus (2)", 0xa78bfa, new THREE.Vector3(4, 2, 0), n2.position);
+          addLabel(scene, meshes, labelSprites, "Cleavage Furrow", 0xfbbf24, new THREE.Vector3(0, 2.5, 0), furrow.position);
         }
       };
 
+      labelSprites.length = 0;
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -273,7 +306,7 @@ export function CellDivisionVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [stage, isWebGL]);
+  }, [stage, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Cell Division (Mitosis)" description="3D mitosis stages with chromosome annotations." />;
@@ -288,6 +321,13 @@ export function CellDivisionVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-red-500/50 bg-red-500/10 text-red-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
         <CollapsibleControls label="Mitosis Stage">
           <div className="flex flex-wrap gap-2 mt-2">
             {STAGES.map((s) => (
@@ -304,6 +344,15 @@ export function CellDivisionVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid items={[
+          { label: "Stage", value: stage.charAt(0).toUpperCase() + stage.slice(1), highlight: true },
+          { label: "Chromatids", value: info.chromatids },
+          { label: "Spindle", value: info.spindle },
+          { label: "Nucleus", value: info.nucleus },
+          { label: "Key event", value: info.keyEvent },
+          { label: "Checkpoint", value: info.checkpoint },
+        ]} />
 
         <div className="rounded-lg border border-red-500/30 bg-red-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-red-400">Key Concepts</p>

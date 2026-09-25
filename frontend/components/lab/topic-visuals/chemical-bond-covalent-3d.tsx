@@ -6,6 +6,11 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
@@ -36,7 +41,47 @@ export function CovalentBondVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [molecule, setMolecule] = useState<Molecule>("water");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const MOL_INFO: Record<Molecule, { shape: string; angle: string; bonds: number; polarity: string }> = {
+    water: { shape: "Bent", angle: "104.5°", bonds: 2, polarity: "Polar" },
+    oxygen: { shape: "Linear", angle: "—", bonds: 2, polarity: "Nonpolar" },
+    "carbon-dioxide": { shape: "Linear", angle: "180°", bonds: 4, polarity: "Nonpolar" },
+    methane: { shape: "Tetrahedral", angle: "109.5°", bonds: 4, polarity: "Nonpolar" },
+  };
+  const info = MOL_INFO[molecule];
+
+  const DEFAULTS = { molecule: "water" as Molecule };
+  const presets: ScenePreset[] = [
+    {
+      name: "H₂O (bent)",
+      hint: "Two lone pairs squeeze the bond angle to 104.5° — a polar molecule.",
+      apply: () => { setMolecule("water"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "O₂ (double bond)",
+      hint: "A double bond — two shared electron pairs, linear and nonpolar.",
+      apply: () => { setMolecule("oxygen"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "CO₂ (linear)",
+      hint: "Two double bonds on opposite sides — bond dipoles cancel, so nonpolar.",
+      apply: () => { setMolecule("carbon-dioxide"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "CH₄ (tetrahedral)",
+      hint: "Four equivalent bonds at 109.5° — the classic VSEPR tetrahedron.",
+      apply: () => { setMolecule("methane"); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setMolecule(DEFAULTS.molecule);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -47,6 +92,7 @@ export function CovalentBondVisual() {
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
     const bondMeshes: THREE.Group[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -67,7 +113,7 @@ export function CovalentBondVisual() {
       controls.autoRotateSpeed = 0.5;
       controls.minDistance = 3;
       controls.maxDistance = 15;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -75,6 +121,12 @@ export function CovalentBondVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const syncLabels = () => {
+        labelSprites.length = 0;
+        scene.traverse((o) => {
+          if ((o as THREE.Sprite).isSprite) { labelSprites.push(o as THREE.Sprite); (o as THREE.Sprite).visible = showLabels; }
+        });
+      };
       const pushBond = <T extends THREE.Object3D>(o: T): T => { const g = new THREE.Group(); g.add(o); scene.add(g); bondMeshes.push(g); meshes.push(g); return o; };
 
       const clearDynamic = () => {
@@ -231,6 +283,7 @@ export function CovalentBondVisual() {
 
       const builders: Record<Molecule, () => void> = { water: buildWater, oxygen: buildOxygen, "carbon-dioxide": buildCO2, methane: buildCH4 };
       builders[molecule]();
+      syncLabels();
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -275,7 +328,7 @@ export function CovalentBondVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [molecule, isWebGL]);
+  }, [molecule, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Covalent Bond" description="H₂O, O₂ molecular visualization — requires WebGL." />;
@@ -290,6 +343,25 @@ export function CovalentBondVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-blue-500/50 bg-blue-500/10 text-blue-300" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Labels
+            </button>
+            <button
+              onClick={resetAll}
+              className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors"
+              title="Reset to defaults"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Select Molecule">
           <div className="grid grid-cols-4 gap-2 mt-1">
             {([
@@ -313,6 +385,16 @@ export function CovalentBondVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Molecular shape", value: info.shape },
+            { label: "Bond angle", value: info.angle },
+            { label: "Bond pairs", value: info.bonds },
+            { label: "Polarity", value: info.polarity, highlight: info.polarity === "Polar" },
+          ]}
+        />
+
         <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-blue-400">Key Concepts</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">

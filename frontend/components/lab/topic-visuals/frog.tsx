@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -36,12 +37,17 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
-function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
+function addLabel(scene: THREE.Scene, meshes: THREE.Object3D[], labelSprites: THREE.Sprite[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
   const dir = targetPos.clone().sub(labelPos).normalize();
   const len = labelPos.distanceTo(targetPos);
-  meshes.push(new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14) as any);
+  const line = new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14);
+  scene.add(line);
+  meshes.push(line);
   const lp = labelPos.clone().sub(dir.clone().multiplyScalar(0.45));
-  meshes.push(mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85));
+  const s = mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85);
+  scene.add(s);
+  meshes.push(s);
+  labelSprites.push(s);
 }
 
 type SystemView = "digestive" | "circulatory" | "respiratory";
@@ -50,7 +56,28 @@ export function FrogVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [view, setView] = useState<SystemView>("digestive");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const VIEW_INFO: Record<SystemView, { system: string; flow: string; keyPoint: string; adaptation: string; tip: string }> = {
+    digestive: { system: "Complete alimentary canal + glands", flow: "Mouth → oesophagus → stomach → intestine → cloaca", keyPoint: "Liver & gall bladder add bile to emulsify fats", adaptation: "Prey is swallowed whole — the eyes sink into the roof of the mouth to push it down", tip: "A tadpole's long coiled intestine mirrors its herbivorous diet" },
+    circulatory: { system: "Closed type — 3-chambered heart", flow: "Sinus venosus → 2 atria → 1 ventricle → conus → aorta", keyPoint: "Oxygenated and deoxygenated blood mix in the single ventricle", adaptation: "Skin capillaries share the oxygen supply — a diving frog absorbs O2 through it", tip: "The isolated frog heart keeps beating for hours — a classical physiology preparation" },
+    respiratory: { system: "Three respiratory surfaces", flow: "Nostrils → buccal cavity → glottis → trachea → lungs", keyPoint: "Lungs are simple sacs; the moist skin performs most gas exchange", adaptation: "During hibernation/estivation the frog respires almost entirely through skin", tip: "No diaphragm — buccal pumping (floor of mouth moves up/down) forces air in" },
+  };
+  const info = VIEW_INFO[view];
+
+  const presets: ScenePreset[] = [
+    { name: "A meal's route", hint: "Trace food from mouth to cloaca — end to end.", apply: () => { setView("digestive"); setRunId((r) => r + 1); } },
+    { name: "The mixed-blood heart", hint: "Two atria, one ventricle — why it's only 'partial' separation.", apply: () => { setView("circulatory"); setRunId((r) => r + 1); } },
+    { name: "Breathing 3 ways", hint: "Lungs, skin and buccal lining — unique among vertebrates.", apply: () => { setView("respiratory"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setView("digestive");
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -60,6 +87,7 @@ export function FrogVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -79,7 +107,7 @@ export function FrogVisual() {
       controls.autoRotate = false;
       controls.minDistance = 4;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dl = new THREE.DirectionalLight(0xffffff, 0.9);
@@ -119,13 +147,13 @@ export function FrogVisual() {
           gallbladder.position.set(-1.8, 0.0, 0.4);
 
           push(mkSprite("Frog — Digestive System", "#fbbf24", new THREE.Vector3(0, 2.5, 0), 0.85));
-          addLabel(meshes, "Mouth", 0x92400e, new THREE.Vector3(-4, 1.5, 2), mouth.position);
-          addLabel(meshes, "Oesophagus", 0xf97316, new THREE.Vector3(-4, 0, 2), oesophagus.position);
-          addLabel(meshes, "Stomach", 0xfbbf24, new THREE.Vector3(-3.5, -1.5, 2.5), stomach.position);
-          addLabel(meshes, "Small Intestine (coiled)", 0x22c55e, new THREE.Vector3(2, -1.5, 2.5), new THREE.Vector3(0, -0.5, 0));
-          addLabel(meshes, "Liver (largest gland)", 0xb45309, new THREE.Vector3(3, 1.0, -2.5), liver.position);
-          addLabel(meshes, "Gall Bladder", 0x16a34a, new THREE.Vector3(3.5, 0.3, -2), gallbladder.position);
-          addLabel(meshes, "Cloaca", 0x7c3aed, new THREE.Vector3(3.5, -0.8, 2), cloaca.position);
+          addLabel(scene, meshes, labelSprites, "Mouth", 0x92400e, new THREE.Vector3(-4, 1.5, 2), mouth.position);
+          addLabel(scene, meshes, labelSprites, "Oesophagus", 0xf97316, new THREE.Vector3(-4, 0, 2), oesophagus.position);
+          addLabel(scene, meshes, labelSprites, "Stomach", 0xfbbf24, new THREE.Vector3(-3.5, -1.5, 2.5), stomach.position);
+          addLabel(scene, meshes, labelSprites, "Small Intestine (coiled)", 0x22c55e, new THREE.Vector3(2, -1.5, 2.5), new THREE.Vector3(0, -0.5, 0));
+          addLabel(scene, meshes, labelSprites, "Liver (largest gland)", 0xb45309, new THREE.Vector3(3, 1.0, -2.5), liver.position);
+          addLabel(scene, meshes, labelSprites, "Gall Bladder", 0x16a34a, new THREE.Vector3(3.5, 0.3, -2), gallbladder.position);
+          addLabel(scene, meshes, labelSprites, "Cloaca", 0x7c3aed, new THREE.Vector3(3.5, -0.8, 2), cloaca.position);
         } else if (view === "circulatory") {
           const heartBase = push(new THREE.Mesh(new THREE.SphereGeometry(0.35, 12, 10), new THREE.MeshPhongMaterial({ color: 0xef4444 })));
           heartBase.position.set(0, 0.8, 0);
@@ -152,12 +180,12 @@ export function FrogVisual() {
           }
 
           push(mkSprite("Frog — Circulatory System (3-chambered Heart)", "#fbbf24", new THREE.Vector3(0, 2.5, 0), 0.85));
-          addLabel(meshes, "Left Atrium (Oxygenated)", 0x22d3ee, new THREE.Vector3(-3.5, 2.0, 2), leftAtrium.position);
-          addLabel(meshes, "Right Atrium (Deoxygenated)", 0xf97316, new THREE.Vector3(3.5, 2.0, -2), rightAtrium.position);
-          addLabel(meshes, "Ventricle (Mixed blood)", 0xdc2626, new THREE.Vector3(0, 2.5, 3), ventricle.position);
-          addLabel(meshes, "Aorta", 0xef4444, new THREE.Vector3(3.5, 1.5, 2), aorta.position);
-          addLabel(meshes, "Sinus Venosus", 0x3b82f6, new THREE.Vector3(-3.5, 1.0, -2), sinus.position);
-          addLabel(meshes, "Pulmocutaneous Artery", 0x22d3ee, new THREE.Vector3(3.5, 0.5, -2.5), pulmonary.position);
+          addLabel(scene, meshes, labelSprites, "Left Atrium (Oxygenated)", 0x22d3ee, new THREE.Vector3(-3.5, 2.0, 2), leftAtrium.position);
+          addLabel(scene, meshes, labelSprites, "Right Atrium (Deoxygenated)", 0xf97316, new THREE.Vector3(3.5, 2.0, -2), rightAtrium.position);
+          addLabel(scene, meshes, labelSprites, "Ventricle (Mixed blood)", 0xdc2626, new THREE.Vector3(0, 2.5, 3), ventricle.position);
+          addLabel(scene, meshes, labelSprites, "Aorta", 0xef4444, new THREE.Vector3(3.5, 1.5, 2), aorta.position);
+          addLabel(scene, meshes, labelSprites, "Sinus Venosus", 0x3b82f6, new THREE.Vector3(-3.5, 1.0, -2), sinus.position);
+          addLabel(scene, meshes, labelSprites, "Pulmocutaneous Artery", 0x22d3ee, new THREE.Vector3(3.5, 0.5, -2.5), pulmonary.position);
         } else {
           const nostrilL = push(new THREE.Mesh(new THREE.SphereGeometry(0.06, 6, 4), new THREE.MeshPhongMaterial({ color: 0x22c55e })));
           nostrilL.position.set(-0.3, 1.5, 0.2);
@@ -177,17 +205,18 @@ export function FrogVisual() {
           skin.position.set(0, 0.5, 0);
 
           push(mkSprite("Frog — Respiratory System", "#fbbf24", new THREE.Vector3(0, 2.5, 0), 0.85));
-          addLabel(meshes, "Nostrils (External nares)", 0x22c55e, new THREE.Vector3(2, 2.2, 2), nostrilL.position);
-          addLabel(meshes, "Buccal Cavity", 0xf97316, new THREE.Vector3(-3, 1.8, -2), buccal.position);
-          addLabel(meshes, "Glottis (Laryngeal opening)", 0xef4444, new THREE.Vector3(-3, 0.8, 2.5), glottis.position);
-          addLabel(meshes, "Trachea", 0x3b82f6, new THREE.Vector3(3, 0.3, 2.5), trachea.position);
-          addLabel(meshes, "Left Lung", 0xfbbf24, new THREE.Vector3(-3, -0.5, 2), lungL.position);
-          addLabel(meshes, "Right Lung", 0xfbbf24, new THREE.Vector3(3, -0.5, -2), lungR.position);
-          addLabel(meshes, "Skin (Cutaneous Respiration)", 0x22c55e, new THREE.Vector3(0, -1.5, 3), skin.position);
+          addLabel(scene, meshes, labelSprites, "Nostrils (External nares)", 0x22c55e, new THREE.Vector3(2, 2.2, 2), nostrilL.position);
+          addLabel(scene, meshes, labelSprites, "Buccal Cavity", 0xf97316, new THREE.Vector3(-3, 1.8, -2), buccal.position);
+          addLabel(scene, meshes, labelSprites, "Glottis (Laryngeal opening)", 0xef4444, new THREE.Vector3(-3, 0.8, 2.5), glottis.position);
+          addLabel(scene, meshes, labelSprites, "Trachea", 0x3b82f6, new THREE.Vector3(3, 0.3, 2.5), trachea.position);
+          addLabel(scene, meshes, labelSprites, "Left Lung", 0xfbbf24, new THREE.Vector3(-3, -0.5, 2), lungL.position);
+          addLabel(scene, meshes, labelSprites, "Right Lung", 0xfbbf24, new THREE.Vector3(3, -0.5, -2), lungR.position);
+          addLabel(scene, meshes, labelSprites, "Skin (Cutaneous Respiration)", 0x22c55e, new THREE.Vector3(0, -1.5, 3), skin.position);
         }
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -225,7 +254,7 @@ export function FrogVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [view, isWebGL]);
+  }, [view, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Frog Anatomy" description="3D frog system diagrams." />;
@@ -240,6 +269,14 @@ export function FrogVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-green-500/50 bg-green-500/10 text-green-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="System View">
           <div className="flex flex-wrap gap-2 mt-2">
             {(["digestive", "circulatory", "respiratory"] as const).map((v) => (
@@ -256,6 +293,14 @@ export function FrogVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid items={[
+          { label: "System", value: info.system, highlight: true },
+          { label: "Path / flow", value: info.flow },
+          { label: "Key point", value: info.keyPoint },
+          { label: "Adaptation", value: info.adaptation },
+          { label: "Exam tip", value: info.tip },
+        ]} />
 
         <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-green-400">Key Concepts</p>

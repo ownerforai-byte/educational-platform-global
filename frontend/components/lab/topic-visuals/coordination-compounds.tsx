@@ -7,6 +7,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -43,7 +44,41 @@ export function CoordinationCompoundsVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [geometry, setGeometry] = useState<CoordType>("octahedral");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const GEOM_INFO: Record<CoordType, { geometry: string; cn: string; angles: string; example: string }> = {
+    octahedral: { geometry: "Octahedral", cn: "6", angles: "90° cis · 180° trans", example: "[Co(NH₃)₆]³⁺" },
+    tetrahedral: { geometry: "Tetrahedral", cn: "4", angles: "109.5°", example: "[Ni(CO)₄]" },
+    "square-planar": { geometry: "Square planar", cn: "4", angles: "90°", example: "[PtCl₄]²⁻ · [Ni(CN)₄]²⁻" },
+  };
+  const info = GEOM_INFO[geometry];
+
+  const DEFAULTS = { geometry: "octahedral" as CoordType };
+  const presets: ScenePreset[] = [
+    {
+      name: "Octahedral (CN=6)",
+      hint: "Six ligands on ±x, ±y, ±z — the classic [MX₆] arrangement.",
+      apply: () => { setGeometry("octahedral"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Tetrahedral (CN=4)",
+      hint: "Four ligands at alternating cube corners, 109.5° apart.",
+      apply: () => { setGeometry("tetrahedral"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Square planar (CN=4)",
+      hint: "Four ligands in one plane — typical of d⁸ metals like Pt²⁺.",
+      apply: () => { setGeometry("square-planar"); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setGeometry(DEFAULTS.geometry);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -53,6 +88,7 @@ export function CoordinationCompoundsVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -73,7 +109,7 @@ export function CoordinationCompoundsVisual() {
       controls.autoRotateSpeed = 0.4;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -81,6 +117,7 @@ export function CoordinationCompoundsVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
 
       const updateScene = () => {
         while (meshes.length > 12) {
@@ -138,7 +175,7 @@ export function CoordinationCompoundsVisual() {
             const d = tp.clone().sub(lp).normalize();
             const al = lp.distanceTo(tp);
             push(new LiveLeaderLine(d, lp, al * 0.7, L_COLOR, 0.25, 0.12));
-            push(mkSprite(ligandNames[i], `#${L_COLOR.toString(16).padStart(6, "0")}`, lp.clone().sub(d.multiplyScalar(0.4)), 0.55));
+            addLabel(mkSprite(ligandNames[i], `#${L_COLOR.toString(16).padStart(6, "0")}`, lp.clone().sub(d.multiplyScalar(0.4)), 0.55));
           });
 
           // Metal label
@@ -147,7 +184,7 @@ export function CoordinationCompoundsVisual() {
           const md = mt.clone().sub(ml).normalize();
           const mL = ml.distanceTo(mt);
           push(new LiveLeaderLine(md, ml, mL * 0.8, M_COLOR, 0.28, 0.12));
-          push(mkSprite("Metal center (M²⁺/M³⁺)", `#${M_COLOR.toString(16).padStart(6, "0")}`, ml.clone().sub(md.multiplyScalar(0.5)), 0.7));
+          addLabel(mkSprite("Metal center (M²⁺/M³⁺)", `#${M_COLOR.toString(16).padStart(6, "0")}`, ml.clone().sub(md.multiplyScalar(0.5)), 0.7));
 
           // Bond angle labels
           const angleLabel1 = new THREE.Vector3(2.0, 2.0, 0);
@@ -155,14 +192,14 @@ export function CoordinationCompoundsVisual() {
           const a1Dir = angleTarget1.clone().sub(angleLabel1).normalize();
           const a1Len = angleLabel1.distanceTo(angleTarget1);
           push(new LiveLeaderLine(a1Dir, angleLabel1, a1Len * 0.6, 0xfbbf24, 0.22, 0.1));
-          push(mkSprite("90° bond angles", "#fbbf24", angleLabel1.clone().sub(a1Dir.multiplyScalar(0.5)), 0.6));
+          addLabel(mkSprite("90° bond angles", "#fbbf24", angleLabel1.clone().sub(a1Dir.multiplyScalar(0.5)), 0.6));
 
           const angleLabel2 = new THREE.Vector3(-2.0, -2.0, 0);
           const angleTarget2 = new THREE.Vector3(-0.75, -0.75, 0);
           const a2Dir = angleTarget2.clone().sub(angleLabel2).normalize();
           const a2Len = angleLabel2.distanceTo(angleTarget2);
           push(new LiveLeaderLine(a2Dir, angleLabel2, a2Len * 0.6, 0xf97316, 0.22, 0.1));
-          push(mkSprite("180° trans angle", "#f97316", angleLabel2.clone().sub(a2Dir.multiplyScalar(0.5)), 0.6));
+          addLabel(mkSprite("180° trans angle", "#f97316", angleLabel2.clone().sub(a2Dir.multiplyScalar(0.5)), 0.6));
         }
         else if (geometry === "tetrahedral") {
           // 4 ligands at alternating corners of cube
@@ -202,7 +239,7 @@ export function CoordinationCompoundsVisual() {
             const d = tp.clone().sub(lp).normalize();
             const al = lp.distanceTo(tp);
             push(new LiveLeaderLine(d, lp, al * 0.7, L_COLOR, 0.25, 0.12));
-            push(mkSprite(ligandNames[i], `#${L_COLOR.toString(16).padStart(6, "0")}`, lp.clone().sub(d.multiplyScalar(0.4)), 0.55));
+            addLabel(mkSprite(ligandNames[i], `#${L_COLOR.toString(16).padStart(6, "0")}`, lp.clone().sub(d.multiplyScalar(0.4)), 0.55));
           });
 
           // Tetrahedral angle
@@ -211,7 +248,7 @@ export function CoordinationCompoundsVisual() {
           const tDir = tTarget.clone().sub(tLabel).normalize();
           const tLen = tLabel.distanceTo(tTarget);
           push(new LiveLeaderLine(tDir, tLabel, tLen * 0.7, 0xfbbf24, 0.25, 0.12));
-          push(mkSprite("Bond angle: 109.5° (tetrahedral)", "#fbbf24", tLabel.clone().sub(tDir.multiplyScalar(0.5)), 0.7));
+          addLabel(mkSprite("Bond angle: 109.5° (tetrahedral)", "#fbbf24", tLabel.clone().sub(tDir.multiplyScalar(0.5)), 0.7));
         }
         else { // square-planar
           const r = 1.5;
@@ -248,7 +285,7 @@ export function CoordinationCompoundsVisual() {
             const d = tp.clone().sub(lp).normalize();
             const al = lp.distanceTo(tp);
             push(new LiveLeaderLine(d, lp, al * 0.7, L_COLOR, 0.25, 0.12));
-            push(mkSprite(ligandNames[i], `#${L_COLOR.toString(16).padStart(6, "0")}`, lp.clone().sub(d.multiplyScalar(0.4)), 0.55));
+            addLabel(mkSprite(ligandNames[i], `#${L_COLOR.toString(16).padStart(6, "0")}`, lp.clone().sub(d.multiplyScalar(0.4)), 0.55));
           });
 
           // Plane indicator
@@ -263,7 +300,7 @@ export function CoordinationCompoundsVisual() {
           const pDir = pTarget.clone().sub(pLabel).normalize();
           const pLen = pLabel.distanceTo(pTarget);
           push(new LiveLeaderLine(pDir, pLabel, pLen * 0.6, 0x22d3ee, 0.25, 0.12));
-          push(mkSprite("Square planar: all in one plane, 90° angles", "#22d3ee", pLabel.clone().sub(pDir.multiplyScalar(0.5)), 0.65));
+          addLabel(mkSprite("Square planar: all in one plane, 90° angles", "#22d3ee", pLabel.clone().sub(pDir.multiplyScalar(0.5)), 0.65));
         }
 
         // CN label
@@ -272,10 +309,12 @@ export function CoordinationCompoundsVisual() {
           tetrahedral: "Coordination Number = 4",
           "square-planar": "Coordination Number = 4",
         };
-        push(mkSprite(cnLabels[geometry], "#a78bfa", new THREE.Vector3(0, -2.5, 0), 0.7));
+        addLabel(mkSprite(cnLabels[geometry], "#a78bfa", new THREE.Vector3(0, -2.5, 0), 0.7));
       };
 
+      labelSprites.length = 0;
       updateScene();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -313,7 +352,7 @@ export function CoordinationCompoundsVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [geometry, isWebGL]);
+  }, [geometry, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Coordination Compounds" description="Crystal field geometry visualization — requires WebGL." />;
@@ -328,6 +367,13 @@ export function CoordinationCompoundsVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-violet-500/50 bg-violet-500/10 text-violet-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
         <CollapsibleControls label="Geometry">
           <Tabs value={geometry} onValueChange={(v) => setGeometry(v as CoordType)} className="mt-1">
             <TabsList className="grid w-full grid-cols-3">
@@ -342,6 +388,14 @@ export function CoordinationCompoundsVisual() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <ReadoutGrid
+          items={[
+            { label: "Geometry", value: info.geometry },
+            { label: "Coordination number", value: info.cn },
+            { label: "Bond angles", value: info.angles, highlight: true },
+            { label: "Typical example", value: info.example },
+          ]}
+        />
         <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-violet-400">Crystal Field Theory</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">

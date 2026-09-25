@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, PlaybackBar, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -36,12 +37,17 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
-function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
+function addLabel(scene: THREE.Scene, meshes: THREE.Object3D[], labelSprites: THREE.Sprite[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
   const dir = targetPos.clone().sub(labelPos).normalize();
   const len = labelPos.distanceTo(targetPos);
-  meshes.push(new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14) as any);
+  const line = new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14);
+  scene.add(line);
+  meshes.push(line);
   const lp = labelPos.clone().sub(dir.clone().multiplyScalar(0.45));
-  meshes.push(mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85));
+  const s = mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85);
+  scene.add(s);
+  meshes.push(s);
+  labelSprites.push(s);
 }
 
 type CycleView = "carbon" | "nitrogen";
@@ -50,7 +56,37 @@ export function BiogeochemicalCyclesVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [cycle, setCycle] = useState<CycleView>("carbon");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+  const [playing, setPlaying] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  const speedRef = useRef(1);
+  const playingRef = useRef(true);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  useEffect(() => {
+    speedRef.current = speed;
+    playingRef.current = playing;
+  }, [speed, playing]);
+
+  const CYCLE_INFO: Record<CycleView, { moving: string; reservoir: string; fixLine: string; release: string; human: string }> = {
+    carbon: { moving: "C circulates as CO₂", reservoir: "Ocean + fossil fuels hold the most carbon", fixLine: "Photosynthesis: CO₂ → glucose in producers", release: "Respiration, decay and combustion return CO₂", human: "~9 Gt of fossil CO₂ added to air each year" },
+    nitrogen: { moving: "N moves as N₂, NH₃, NO₂⁻, NO₃⁻", reservoir: "Air is 78% N₂ — unusable by plants directly", fixLine: "Rhizobium / Azotobacter fix N₂ → NH₃", release: "Pseudomonas denitrify NO₃⁻ back to N₂", human: "Haber–Bosch fixes more N than all natural processes" },
+  };
+  const info = CYCLE_INFO[cycle];
+
+  const presets: ScenePreset[] = [
+    { name: "Carbon cycle", hint: "Watch the atom travel: air → plant → animal → decomposer → air.", apply: () => { setCycle("carbon"); setPlaying(true); setRunId((r) => r + 1); } },
+    { name: "Nitrogen cycle", hint: "Fixation, nitrification, assimilation, denitrification in one loop.", apply: () => { setCycle("nitrogen"); setPlaying(true); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setCycle("carbon");
+    setShowLabels(true);
+    setPlaying(true);
+    setSpeed(1);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -62,6 +98,7 @@ export function BiogeochemicalCyclesVisual() {
     let frameId: number;
     let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
     let cycleParticle: THREE.Mesh;
 
     const init = async () => {
@@ -82,7 +119,7 @@ export function BiogeochemicalCyclesVisual() {
       controls.autoRotate = false;
       controls.minDistance = 4;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dl = new THREE.DirectionalLight(0xffffff, 0.9);
@@ -90,6 +127,7 @@ export function BiogeochemicalCyclesVisual() {
       scene.add(dl);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addSprite = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
 
       const update = () => {
         while (meshes.length > 100) {
@@ -116,7 +154,7 @@ export function BiogeochemicalCyclesVisual() {
               new THREE.MeshPhongMaterial({ color: n.color }),
             ));
             node.position.copy(n.pos);
-            push(mkSprite(n.name, `#${n.color.toString(16).padStart(6, "0")}`, new THREE.Vector3(n.pos.x, n.pos.y + 0.8, 0), 0.7));
+            addSprite(mkSprite(n.name, `#${n.color.toString(16).padStart(6, "0")}`, new THREE.Vector3(n.pos.x, n.pos.y + 0.8, 0), 0.7));
           }
 
           // Arrows between nodes (processes)
@@ -135,10 +173,10 @@ export function BiogeochemicalCyclesVisual() {
             const mid = a.from.clone().add(a.to).multiplyScalar(0.5);
             const labelOffset = new THREE.Vector3(0, 0, 0.8).applyAxisAngle(new THREE.Vector3(0, 1, 0), Math.atan2(a.to.x - a.from.x, a.to.z - a.from.z));
             const labelPos = mid.clone().add(labelOffset);
-            addLabel(meshes, a.label, a.color, labelPos, mid);
+            addLabel(scene, meshes, labelSprites, a.label, a.color, labelPos, mid);
           }
 
-          push(mkSprite("Carbon Cycle", "#fbbf24", new THREE.Vector3(0, 4.5, 0), 0.85));
+          addSprite(mkSprite("Carbon Cycle", "#fbbf24", new THREE.Vector3(0, 4.5, 0), 0.85));
           cycleParticle = push(new THREE.Mesh(
             new THREE.SphereGeometry(0.18, 12, 12),
             new THREE.MeshBasicMaterial({ color: 0x22d3ee }),
@@ -161,7 +199,7 @@ export function BiogeochemicalCyclesVisual() {
               new THREE.MeshPhongMaterial({ color: n.color }),
             ));
             node.position.copy(n.pos);
-            push(mkSprite(n.name, `#${n.color.toString(16).padStart(6, "0")}`, new THREE.Vector3(n.pos.x, n.pos.y + 0.8, 0), 0.65));
+            addSprite(mkSprite(n.name, `#${n.color.toString(16).padStart(6, "0")}`, new THREE.Vector3(n.pos.x, n.pos.y + 0.8, 0), 0.65));
           }
 
           const arrows = [
@@ -176,7 +214,7 @@ export function BiogeochemicalCyclesVisual() {
           for (const a of arrows) {
             const mid = a.from.clone().add(a.to).multiplyScalar(0.5);
             const labelPos = mid.clone().add(new THREE.Vector3(0, 0, 0.8));
-            addLabel(meshes, a.label, a.color, labelPos, mid);
+            addLabel(scene, meshes, labelSprites, a.label, a.color, labelPos, mid);
           }
 
           // Lightning fixation
@@ -185,7 +223,7 @@ export function BiogeochemicalCyclesVisual() {
             new THREE.MeshPhongMaterial({ color: 0xfbbf24 }),
           ));
           lightning.position.set(1.5, 2.5, 0);
-          addLabel(meshes, "Lightning Fixation", 0xfbbf24, new THREE.Vector3(2.5, 3.5, -2), lightning.position);
+          addLabel(scene, meshes, labelSprites, "Lightning Fixation", 0xfbbf24, new THREE.Vector3(2.5, 3.5, -2), lightning.position);
 
           // Industrial fixation
           const industrial = push(new THREE.Mesh(
@@ -193,19 +231,22 @@ export function BiogeochemicalCyclesVisual() {
             new THREE.MeshPhongMaterial({ color: 0xef4444 }),
           ));
           industrial.position.set(-1.5, 2.5, 0);
-          addLabel(meshes, "Industrial\nFixation (Haber Process)", 0xef4444, new THREE.Vector3(-3, 3.5, 2), industrial.position);
+          addLabel(scene, meshes, labelSprites, "Industrial\nFixation (Haber Process)", 0xef4444, new THREE.Vector3(-3, 3.5, 2), industrial.position);
 
-          push(mkSprite("Nitrogen Cycle", "#fbbf24", new THREE.Vector3(0, 4.5, 0), 0.85));
+          addSprite(mkSprite("Nitrogen Cycle", "#fbbf24", new THREE.Vector3(0, 4.5, 0), 0.85));
         }
       };
 
+      labelSprites.length = 0;
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
-        animTime += 0.02;
-        if (cycleParticle) {
+        if (playingRef.current) {
+          animTime += 0.02 * speedRef.current;
+          if (cycleParticle) {
           const nodes = cycle === "carbon"
             ? [{ x: 0, y: 3 }, { x: -3, y: 1 }, { x: 0, y: -0.5 }, { x: -2.5, y: -2.5 }, { x: 2.5, y: -2.5 }, { x: 3, y: 1 }]
             : [{ x: 0, y: 3.2 }, { x: -3, y: 1 }, { x: 0, y: -0.5 }, { x: -2.5, y: -2.5 }, { x: 2.5, y: -2.5 }, { x: 3, y: 1 }];
@@ -214,6 +255,7 @@ export function BiogeochemicalCyclesVisual() {
           const t = (animTime * 2) % 1;
           cycleParticle.position.x = nodes[idx].x + (nodes[nextIdx].x - nodes[idx].x) * t;
           cycleParticle.position.y = nodes[idx].y + (nodes[nextIdx].y - nodes[idx].y) * t;
+          }
         }
         renderer.render(scene, camera);
       };
@@ -248,7 +290,7 @@ export function BiogeochemicalCyclesVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [cycle, isWebGL]);
+  }, [cycle, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Biogeochemical Cycles" description="3D carbon and nitrogen cycle diagrams." />;
@@ -263,6 +305,13 @@ export function BiogeochemicalCyclesVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-cyan-500/50 bg-cyan-500/10 text-cyan-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
         <CollapsibleControls label="Cycle Type">
           <div className="flex flex-wrap gap-2 mt-2">
             {(["carbon", "nitrogen"] as const).map((c) => (
@@ -279,6 +328,23 @@ export function BiogeochemicalCyclesVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <PlaybackBar
+          playing={playing}
+          onPlayToggle={() => setPlaying((p) => !p)}
+          speed={speed}
+          onSpeedChange={setSpeed}
+          onReset={resetAll}
+        />
+
+        <ReadoutGrid items={[
+          { label: "Cycle shown", value: cycle === "carbon" ? "Carbon" : "Nitrogen", highlight: true },
+          { label: "Travels as", value: info.moving },
+          { label: "Big reservoir", value: info.reservoir },
+          { label: "Locked in", value: info.fixLine },
+          { label: "Released by", value: info.release },
+          { label: "Human impact", value: info.human },
+        ]} />
 
         <div className="rounded-lg border border-cyan-500/30 bg-cyan-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-cyan-400">Key Concepts</p>

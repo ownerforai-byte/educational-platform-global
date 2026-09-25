@@ -68,6 +68,69 @@ export const DETAIL_MATH_2: Record<string, GraphDetailInfo> = {
       "Unbounded both ways; useless for bounded quantities.",
     ],
   },
+  "math-cotangent": {
+    gives: [
+      "y = cot x: falling branches with vertical asymptotes at x = nπ.",
+      "Zeros exactly at π/2 + nπ — the mirror of tan's zero set.",
+      "Slope ≤ −1 on every branch: cot only gets steeper as it falls.",
+    ],
+    applies: [
+      "Complementary-angle identities: cot x = tan(π/2 − x) — one curve is the other reflected.",
+      "Navigation and surveying where the adjacent/opposite ratio is the natural measure.",
+      "Calculus: d/dx(cot x) = −cosec²x — a derivative that never changes sign.",
+    ],
+    happens: [
+      "Drag just right of 0: y plunges from +∞ — sin x is tiny and positive, so cos/sin is huge.",
+      "Drag through π/2: the branch crosses zero exactly there — the gentlest slope (−1) cot ever has.",
+      "Approach π from the left: y dives to −∞; cross and the next branch restarts from +∞.",
+    ],
+    limits: [
+      "Undefined at every multiple of π — the dashed asymptote lines are part of the graph.",
+      "Unbounded like tan; useless for quantities that must stay within a band.",
+    ],
+  },
+  "math-secant": {
+    gives: [
+      "y = sec x: U-cups whose arms are the cosine wave turned inside-out.",
+      "Range (−∞, −1] ∪ [1, ∞) — the band between −1 and 1 is forbidden territory.",
+      "Slope sign flips only at extrema of cosine — the cups' minima/maxima sit exactly there.",
+    ],
+    applies: [
+      "Optics and trig substitution in calculus: ∫sec x dx = ln|sec x + tan x| + C.",
+      "Amplitude-tier reasoning in AC circuits where impedance ratios exceed 1.",
+      "The classic 'which values are impossible?' exam trap — the graph answers instantly.",
+    ],
+    happens: [
+      "Drag through x = 0: y = 1 — the cup's bottom, cosine at its own maximum.",
+      "Drag toward π/2: y rockets to +∞ as cosine shrinks — the asymptote wall.",
+      "Cross π/2: reappear at −∞ below the axis, the inverted cup hugging y = −1 around cosine's trough.",
+    ],
+    limits: [
+      "Undefined at π/2 + nπ — every such vertical line must be drawn dashed.",
+      "Nowhere between −1 and 1 — sec can never model a quantity in that band (that's cosine's job).",
+    ],
+  },
+  "math-cosecant": {
+    gives: [
+      "y = cosec x: secant's twin shifted half a period right — cups around sine's crests.",
+      "Asymptotes at x = nπ (sine's zeros) — where the function dies.",
+      "Range (−∞, −1] ∪ [1, ∞) — same forbidden band as secant.",
+    ],
+    applies: [
+      "Calculus: d/dx(csc x) = −csc x·cot x — the product rule's trig showpiece.",
+      "Triangle work with the opposite/hypotenuse ratio inverted — rare but examinable.",
+      "Reciprocal-pair identity checks: sin·csc = 1 wherever both are defined.",
+    ],
+    happens: [
+      "Drag through π/2: y = 1 — global minimum, sitting exactly on sine's crest.",
+      "Drag toward π: y dives to −∞ — sin x stays positive shrinking to 0⁺, so 1/sin x climbs without bound.",
+      "Compare mentally with secant: identical cups, everything shifted π/2 right — sine vs cosine is the only difference.",
+    ],
+    limits: [
+      "Undefined at every multiple of π.",
+      "Never between −1 and 1 — same forbidden band; reciprocal graphs can't shrink.",
+    ],
+  },
   "math-step": {
     gives: [
       "The staircase y = ⌊x⌋: each unit interval holds one constant value.",

@@ -8,6 +8,11 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, scale = 0.3) {
@@ -33,6 +38,43 @@ export default function OpticsPower3d() {
   const [focalLength, setFocalLength] = useState(2);
   const [lensType, setLensType] = useState<"convex" | "concave">("convex");
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [showRays, setShowRays] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const fSigned = lensType === "convex" ? focalLength : -focalLength;
+  const power = 100 / fSigned; // dioptres (f in cm)
+
+  const presets: ScenePreset[] = [
+    {
+      name: "Strong +50 D",
+      hint: "Short focal length convex — a powerful converging lens.",
+      apply: () => { setLensType("convex"); setFocalLength(2); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Gentle +10 D",
+      hint: "Longer focal length convex — weak convergence.",
+      apply: () => { setLensType("convex"); setFocalLength(10); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Myopia −20 D",
+      hint: "Concave lens that diverges light — corrects nearsightedness.",
+      apply: () => { setLensType("concave"); setFocalLength(5); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Mild −10 D",
+      hint: "Weakly diverging concave lens.",
+      apply: () => { setLensType("concave"); setFocalLength(10); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setFocalLength(2);
+    setLensType("convex");
+    setShowLabels(true);
+    setShowRays(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     if (!isWebGL || !containerRef.current) return;
@@ -41,6 +83,7 @@ export default function OpticsPower3d() {
     const h = container.clientHeight || 400;
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x064e3b);
+    const labelSprites: THREE.Sprite[] = [];
     const camera = new THREE.PerspectiveCamera(50, w / h, 0.1, 100);
     camera.position.set(0, 2, 6);
     camera.lookAt(0, 0, 0);
@@ -52,7 +95,12 @@ export default function OpticsPower3d() {
     import("three/addons/controls/OrbitControls.js").then((mod) => {
       controls = new mod.OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
       controls.dampingFactor = 0.08;
     });
 
@@ -93,15 +141,20 @@ export default function OpticsPower3d() {
         new THREE.LineBasicMaterial({ color: 0xfbbf24 })
       );
       scene.add(ray);
+      ray.visible = showRays;
       rayLines.push(ray);
     });
 
     const spF = mkSprite("F", "#34d399");
     scene.add(spF);
     spF.position.set(f / 2, -0.5, 0);
+    spF.visible = showLabels;
+    labelSprites.push(spF);
     const spP = mkSprite("P=" + power.toFixed(1) + "D", "#10b981");
     scene.add(spP);
     spP.position.set(0, 2.5, 0);
+    spP.visible = showLabels;
+    labelSprites.push(spP);
 
     const diopterScale = new THREE.Line(
       new THREE.BufferGeometry().setFromPoints([
@@ -124,6 +177,8 @@ export default function OpticsPower3d() {
         const tickLabel = mkSprite(i.toString(), "#a7f3d0", 0.15);
         scene.add(tickLabel);
         tickLabel.position.set(i * 0.6, -2.8, 0);
+        tickLabel.visible = showLabels;
+        labelSprites.push(tickLabel);
         tickLabels.push(tickLabel);
       }
     }
@@ -156,7 +211,7 @@ export default function OpticsPower3d() {
       renderer.dispose();
       controls?.dispose();
     };
-  }, [focalLength, lensType, isWebGL]);
+  }, [focalLength, lensType, isWebGL, runId, showLabels, showRays]);
 
   if (!isWebGL) return <WebGLFallback title="Lens Power" />;
 
@@ -173,6 +228,30 @@ export default function OpticsPower3d() {
       <CardContent>
         <div ref={containerRef} className="h-[clamp(320px,60vh,640px)] w-full rounded-md overflow-hidden mb-4">
           <VizToolbar targetRef={vizTargetRef} />
+        </div>
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-emerald-500/50 bg-emerald-500/10 text-emerald-300" : "border-emerald-900 bg-emerald-900/30 text-emerald-400/60"}`}
+            >
+              Labels
+            </button>
+            <button
+              onClick={() => setShowRays((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showRays ? "border-amber-500/50 bg-amber-500/10 text-amber-300" : "border-emerald-900 bg-emerald-900/30 text-emerald-400/60"}`}
+            >
+              Rays
+            </button>
+            <button
+              onClick={resetAll}
+              className="px-2.5 py-1 rounded-md text-xs font-medium border border-emerald-900 bg-emerald-900/40 text-emerald-300 hover:bg-emerald-800/50 transition-colors"
+              title="Reset to defaults"
+            >
+              Reset
+            </button>
+          </div>
+          <ScenePresets presets={presets} />
         </div>
         <CollapsibleControls label="Lens Parameters">
           <div className="space-y-4">
@@ -195,6 +274,15 @@ export default function OpticsPower3d() {
             </div>
           </div>
         </CollapsibleControls>
+        <ReadoutGrid
+          className="mt-4"
+          items={[
+            { label: "Focal length (cm)", value: fSigned.toFixed(1), unit: "cm" },
+            { label: "Focal length (m)", value: (fSigned / 100).toFixed(3), unit: "m" },
+            { label: "Power P", value: power.toFixed(1), unit: "D", highlight: Math.abs(power) >= 20 },
+            { label: "Lens type", value: lensType === "convex" ? "Convex (converging)" : "Concave (diverging)" },
+          ]}
+        />
         <div className="mt-4 p-3 rounded-lg border-l-4 border-emerald-500 bg-emerald-950/50 text-emerald-200 text-sm space-y-2">
           <p className="font-semibold text-emerald-300">Power of a Lens</p>
           <p>P = 1 / f  (f in meters)</p>

@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -36,12 +37,17 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
-function addLabel(meshes: THREE.Object3D[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
+function addLabel(scene: THREE.Scene, meshes: THREE.Object3D[], labelSprites: THREE.Sprite[], text: string, color: number, labelPos: THREE.Vector3, targetPos: THREE.Vector3) {
   const dir = targetPos.clone().sub(labelPos).normalize();
   const len = labelPos.distanceTo(targetPos);
-  meshes.push(new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14) as any);
+  const line = new LiveLeaderLine(dir, labelPos, len * 0.85, color, 0.22, 0.14);
+  scene.add(line);
+  meshes.push(line);
   const lp = labelPos.clone().sub(dir.clone().multiplyScalar(0.45));
-  meshes.push(mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85));
+  const s = mkSprite(text, `#${color.toString(16).padStart(6, "0")}`, lp, 0.85);
+  scene.add(s);
+  meshes.push(s);
+  labelSprites.push(s);
 }
 
 type CrossType = "mono" | "di";
@@ -50,7 +56,26 @@ export function MendelsLawsVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [crossType, setCrossType] = useState<CrossType>("mono");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const CROSS_INFO: Record<CrossType, { law: string; parents: string; gametes: string; pheno: string; geno: string; reality: string }> = {
+    mono: { law: "Law of Segregation (1st law)", parents: "Tt × Tt — both hybrid tall", gametes: "♂ T, t × ♀ T, t — 2 types each", pheno: "3 Tall : 1 Dwarf (75% : 25%)", geno: "1 TT : 2 Tt : 1 tt", reality: "Segregation IS the separation of homologous chromosomes in meiosis I; a 4-seed pod rarely shows exact 3:1 — ratios need large samples" },
+    di: { law: "Law of Independent Assortment (2nd law)", parents: "TtYy × TtYy — tall yellow peas", gametes: "4 types each: TY, Ty, tY, ty → 16-cell square", pheno: "9 Tall-Yellow : 3 Tall-Green : 3 Dwarf-Yellow : 1 Dwarf-Green", geno: "9 genotype classes; only ttyy is doubly recessive", reality: "Holds only for genes on DIFFERENT chromosomes — linked genes break the 9:3:3:1" },
+  };
+  const info = CROSS_INFO[crossType];
+
+  const presets: ScenePreset[] = [
+    { name: "Monohybrid Tt × Tt", hint: "One trait — watch the 3:1 emerge from the 4-cell square.", apply: () => { setCrossType("mono"); setRunId((r) => r + 1); } },
+    { name: "Dihybrid TtYy × TtYy", hint: "Two traits — 16 boxes, classic 9:3:3:1.", apply: () => { setCrossType("di"); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setCrossType("mono");
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -60,6 +85,7 @@ export function MendelsLawsVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -79,7 +105,7 @@ export function MendelsLawsVisual() {
       controls.autoRotate = false;
       controls.minDistance = 4;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dl = new THREE.DirectionalLight(0xffffff, 0.9);
@@ -87,6 +113,7 @@ export function MendelsLawsVisual() {
       scene.add(dl);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addSprite = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
 
       const update = () => {
         while (meshes.length > 100) {
@@ -125,7 +152,7 @@ export function MendelsLawsVisual() {
           ));
           f1b.position.set(-1.5, 1.2, 0);
 
-          addLabel(meshes, "F₁: All Tt (Tall)", 0x22c55e, new THREE.Vector3(-4, 1.2, 2.5), new THREE.Vector3(-2.25, 1.2, 0));
+          addLabel(scene, meshes, labelSprites, "F₁: All Tt (Tall)", 0x22c55e, new THREE.Vector3(-4, 1.2, 2.5), new THREE.Vector3(-2.25, 1.2, 0));
 
           // F2 Punnett square
           const squareX = 1.0;
@@ -154,10 +181,10 @@ export function MendelsLawsVisual() {
           }
 
           // Header labels
-          push(mkSprite("T", "#22c55e", new THREE.Vector3(squareX + 0.35, squareY + 2 * cellSize + 0.4, 0), 0.7));
-          push(mkSprite("t", "#ef4444", new THREE.Vector3(squareX + 1.05, squareY + 2 * cellSize + 0.4, 0), 0.7));
-          push(mkSprite("T", "#22c55e", new THREE.Vector3(squareX - 0.5, squareY + 1.4, 0), 0.7));
-          push(mkSprite("t", "#ef4444", new THREE.Vector3(squareX - 0.5, squareY + 0.7, 0), 0.7));
+          addSprite(mkSprite("T", "#22c55e", new THREE.Vector3(squareX + 0.35, squareY + 2 * cellSize + 0.4, 0), 0.7));
+          addSprite(mkSprite("t", "#ef4444", new THREE.Vector3(squareX + 1.05, squareY + 2 * cellSize + 0.4, 0), 0.7));
+          addSprite(mkSprite("T", "#22c55e", new THREE.Vector3(squareX - 0.5, squareY + 1.4, 0), 0.7));
+          addSprite(mkSprite("t", "#ef4444", new THREE.Vector3(squareX - 0.5, squareY + 0.7, 0), 0.7));
 
           // Cells
           for (let i = 0; i < 4; i++) {
@@ -170,15 +197,15 @@ export function MendelsLawsVisual() {
               new THREE.MeshPhongMaterial({ color: colors[i], transparent: true, opacity: 0.4 }),
             ));
             cell.position.set(cx, cy, 0);
-            push(mkSprite(`${genotypes[i]}\n(${phenotypes[i]})`, `#${colors[i].toString(16).padStart(6, "0")}`, new THREE.Vector3(cx, cy + 0.6, 0), 0.6));
+            addSprite(mkSprite(`${genotypes[i]}\n(${phenotypes[i]})`, `#${colors[i].toString(16).padStart(6, "0")}`, new THREE.Vector3(cx, cy + 0.6, 0), 0.6));
           }
 
           // Ratio label
-          push(mkSprite("Phenotypic ratio: 3 Tall : 1 Dwarf", "#fbbf24", new THREE.Vector3(squareX + 0.5, squareY - 0.8, 0), 0.75));
-          push(mkSprite("Genotypic ratio: 1 TT : 2 Tt : 1 tt", "#7dd3fc", new THREE.Vector3(squareX + 0.5, squareY - 1.4, 0), 0.65));
+          addSprite(mkSprite("Phenotypic ratio: 3 Tall : 1 Dwarf", "#fbbf24", new THREE.Vector3(squareX + 0.5, squareY - 0.8, 0), 0.75));
+          addSprite(mkSprite("Genotypic ratio: 1 TT : 2 Tt : 1 tt", "#7dd3fc", new THREE.Vector3(squareX + 0.5, squareY - 1.4, 0), 0.65));
 
           // Law label
-          addLabel(meshes, "Law of Segregation:\nAlleles separate during gamete formation", 0xa78bfa,
+          addLabel(scene, meshes, labelSprites, "Law of Segregation:\nAlleles separate during gamete formation", 0xa78bfa,
             new THREE.Vector3(4.0, 3.0, -2),
             new THREE.Vector3(squareX + 0.5, squareY + 0.5, 0));
 
@@ -211,8 +238,8 @@ export function MendelsLawsVisual() {
           const topGametes = ["TY", "Ty", "tY", "ty"];
           const sideGametes = ["TY", "Ty", "tY", "ty"];
           for (let i = 0; i < 4; i++) {
-            push(mkSprite(topGametes[i], "#22d3ee", new THREE.Vector3(squareX + i * cellSize + cellSize / 2, squareY + 4 * cellSize + 0.35, 0), 0.55));
-            push(mkSprite(sideGametes[i], "#34d399", new THREE.Vector3(squareX - 0.5, squareY + (3 - i) * cellSize + cellSize / 2, 0), 0.55));
+            addSprite(mkSprite(topGametes[i], "#22d3ee", new THREE.Vector3(squareX + i * cellSize + cellSize / 2, squareY + 4 * cellSize + 0.35, 0), 0.55));
+            addSprite(mkSprite(sideGametes[i], "#34d399", new THREE.Vector3(squareX - 0.5, squareY + (3 - i) * cellSize + cellSize / 2, 0), 0.55));
           }
 
           // Phenotype colors
@@ -239,10 +266,10 @@ export function MendelsLawsVisual() {
           }
 
           // Ratio
-          push(mkSprite("9 : 3 : 3 : 1", "#fbbf24", new THREE.Vector3(squareX + 1, squareY - 0.8, 0), 0.85));
-          push(mkSprite("Tall Yellow : Tall Green : Dwarf Yellow : Dwarf Green", "#7dd3fc", new THREE.Vector3(squareX + 1, squareY - 1.4, 0), 0.55));
+          addSprite(mkSprite("9 : 3 : 3 : 1", "#fbbf24", new THREE.Vector3(squareX + 1, squareY - 0.8, 0), 0.85));
+          addSprite(mkSprite("Tall Yellow : Tall Green : Dwarf Yellow : Dwarf Green", "#7dd3fc", new THREE.Vector3(squareX + 1, squareY - 1.4, 0), 0.55));
 
-          addLabel(meshes, "Law of Independent Assortment:\nAlleles of different genes segregate independently", 0xa78bfa,
+          addLabel(scene, meshes, labelSprites, "Law of Independent Assortment:\nAlleles of different genes segregate independently", 0xa78bfa,
             new THREE.Vector3(4, 2.5, -2),
             new THREE.Vector3(squareX + 1, squareY + 1, 0));
 
@@ -251,6 +278,7 @@ export function MendelsLawsVisual() {
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -288,7 +316,7 @@ export function MendelsLawsVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [crossType, isWebGL]);
+  }, [crossType, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Mendel's Laws" description="3D monohybrid and dihybrid cross diagrams." />;
@@ -303,6 +331,14 @@ export function MendelsLawsVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-green-500/50 bg-green-500/10 text-green-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Cross Type">
           <div className="flex flex-wrap gap-2 mt-2">
             {(["mono", "di"] as const).map((c) => (
@@ -319,6 +355,15 @@ export function MendelsLawsVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid items={[
+          { label: "Law shown", value: info.law, highlight: true },
+          { label: "Parents", value: info.parents },
+          { label: "Gametes", value: info.gametes },
+          { label: "F₂ phenotype", value: info.pheno },
+          { label: "F₂ genotype", value: info.geno },
+          { label: "Reality check", value: info.reality },
+        ]} />
 
         <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-green-400">Key Concepts</p>

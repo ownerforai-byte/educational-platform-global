@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -37,7 +38,54 @@ export function LewisDotVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [molecule, setMolecule] = useState<Molecule>("h2o");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const MOL_INFO: Record<Molecule, { formula: string; shape: string; bondType: string; valence: number }> = {
+    h2: { formula: "H₂", shape: "Linear", bondType: "Single covalent", valence: 2 },
+    h2o: { formula: "H₂O", shape: "Bent", bondType: "Polar covalent", valence: 8 },
+    co2: { formula: "CO₂", shape: "Linear", bondType: "Double covalent", valence: 16 },
+    nh3: { formula: "NH₃", shape: "Trigonal pyramidal", bondType: "Polar covalent", valence: 8 },
+    ch4: { formula: "CH₄", shape: "Tetrahedral", bondType: "Nonpolar covalent", valence: 8 },
+    nacl: { formula: "NaCl", shape: "Ion pair", bondType: "Ionic (e⁻ transfer)", valence: 8 },
+  };
+  const info = MOL_INFO[molecule];
+
+  const DEFAULTS = { molecule: "h2o" as Molecule };
+  const presets: ScenePreset[] = [
+    {
+      name: "H₂ single bond",
+      hint: "Two atoms share one electron pair — the simplest covalent bond.",
+      apply: () => { setMolecule("h2"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "H₂O bent",
+      hint: "Oxygen keeps two lone pairs — they squeeze the H–O–H angle to 104.5°.",
+      apply: () => { setMolecule("h2o"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "CO₂ linear",
+      hint: "Two double bonds, zero lone pairs on carbon — perfectly straight.",
+      apply: () => { setMolecule("co2"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "CH₄ tetrahedral",
+      hint: "Carbon shares all four valence electrons — four single bonds.",
+      apply: () => { setMolecule("ch4"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "NaCl transfer",
+      hint: "Sodium gives its electron away — an ionic bond, not a shared pair.",
+      apply: () => { setMolecule("nacl"); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setMolecule(DEFAULTS.molecule);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -47,6 +95,7 @@ export function LewisDotVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -66,7 +115,7 @@ export function LewisDotVisual() {
       controls.autoRotate = false;
       controls.minDistance = 3;
       controls.maxDistance = 15;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.9));
       const dir = new THREE.DirectionalLight(0xffffff, 0.8);
@@ -74,6 +123,7 @@ export function LewisDotVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
       const clearDynamic = () => {
         while (meshes.length > 2) {
           const m = meshes.pop()!;
@@ -93,7 +143,7 @@ export function LewisDotVisual() {
       };
 
       const makeAtom = (text: string, color: string, pos: THREE.Vector3) => {
-        return push(mkSprite(text, color, pos, 1.2));
+        return addLabel(mkSprite(text, color, pos, 1.2));
       };
 
       const buildH2 = () => {
@@ -106,7 +156,7 @@ export function LewisDotVisual() {
         makeDot(new THREE.Vector3(0.15, -0.25, 0));
         const bondPoints = [new THREE.Vector3(-0.5, 0, 0), new THREE.Vector3(0.5, 0, 0)];
         push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(bondPoints), new THREE.LineBasicMaterial({ color: 0x60a5fa, linewidth: 2 })));
-        push(mkSprite("H : H  (single bond, 2 shared e-)", "#60a5fa", new THREE.Vector3(0, -1.5, 0), 0.9));
+        addLabel(mkSprite("H : H  (single bond, 2 shared e-)", "#60a5fa", new THREE.Vector3(0, -1.5, 0), 0.9));
       };
 
       const buildH2O = () => {
@@ -130,7 +180,7 @@ export function LewisDotVisual() {
         const bondMat = new THREE.LineBasicMaterial({ color: 0x60a5fa });
         push(new THREE.Line(new THREE.BufferGeometry().setFromPoints([hLeft, oPos]), bondMat));
         push(new THREE.Line(new THREE.BufferGeometry().setFromPoints([hRight, oPos]), bondMat));
-        push(mkSprite("Bent · 2 lone pairs · Polar", "#ef4444", new THREE.Vector3(0, -1.8, 0), 0.9));
+        addLabel(mkSprite("Bent · 2 lone pairs · Polar", "#ef4444", new THREE.Vector3(0, -1.8, 0), 0.9));
       };
 
       const buildCO2 = () => {
@@ -156,7 +206,7 @@ export function LewisDotVisual() {
         makeDot(oLeft.clone().add(new THREE.Vector3(-0.4, -0.3, 0)));
         makeDot(oRight.clone().add(new THREE.Vector3(0.4, 0.3, 0)));
         makeDot(oRight.clone().add(new THREE.Vector3(0.4, -0.3, 0)));
-        push(mkSprite("O=C=O · Linear · 180 · Nonpolar", "#60a5fa", new THREE.Vector3(0, -1.5, 0), 0.9));
+        addLabel(mkSprite("O=C=O · Linear · 180 · Nonpolar", "#60a5fa", new THREE.Vector3(0, -1.5, 0), 0.9));
       };
 
       const buildNH3 = () => {
@@ -178,7 +228,7 @@ export function LewisDotVisual() {
         makeDot(new THREE.Vector3(0, 0.9, 0));
         makeDot(new THREE.Vector3(0.2, 1.0, 0));
         makeDot(new THREE.Vector3(-0.2, 1.0, 0));
-        push(mkSprite("Trigonal pyramidal · 1 lone pair · 107", "#60a5fa", new THREE.Vector3(0, -1.6, 0), 0.9));
+        addLabel(mkSprite("Trigonal pyramidal · 1 lone pair · 107", "#60a5fa", new THREE.Vector3(0, -1.6, 0), 0.9));
       };
 
       const buildCH4 = () => {
@@ -198,7 +248,7 @@ export function LewisDotVisual() {
           makeDot(mid.clone().add(new THREE.Vector3(0, -0.15, 0)));
           push(new THREE.Line(new THREE.BufferGeometry().setFromPoints([pos, cPos]), new THREE.LineBasicMaterial({ color: 0x60a5fa })));
         });
-        push(mkSprite("Tetrahedral · 109.5 · Nonpolar", "#60a5fa", new THREE.Vector3(0, -2.0, 0), 0.9));
+        addLabel(mkSprite("Tetrahedral · 109.5 · Nonpolar", "#60a5fa", new THREE.Vector3(0, -2.0, 0), 0.9));
       };
 
       const buildNaCl = () => {
@@ -223,11 +273,13 @@ export function LewisDotVisual() {
           new THREE.Vector3(0.9, 0.15, 0.2), new THREE.Vector3(0.9, -0.15, 0.2),
         ];
         clDotPositions.forEach((pos) => makeDot(pos, 0x22c55e));
-        push(mkSprite("Electron transfer → ionic bond", "#fbbf24", new THREE.Vector3(0, -1.5, 0), 0.9));
+        addLabel(mkSprite("Electron transfer → ionic bond", "#fbbf24", new THREE.Vector3(0, -1.5, 0), 0.9));
       };
 
       const builders: Record<Molecule, () => void> = { h2: buildH2, h2o: buildH2O, co2: buildCO2, nh3: buildNH3, ch4: buildCH4, nacl: buildNaCl };
+      labelSprites.length = 0;
       builders[molecule]();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -265,7 +317,7 @@ export function LewisDotVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [molecule, isWebGL]);
+  }, [molecule, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Lewis Dot Structures" description="Valence electron dot structures — requires WebGL." />;
@@ -280,6 +332,13 @@ export function LewisDotVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-amber-500/50 bg-amber-500/10 text-amber-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
         <CollapsibleControls label="Select Molecule">
           <div className="grid grid-cols-3 gap-2 mt-1">
             {([
@@ -305,6 +364,14 @@ export function LewisDotVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+        <ReadoutGrid
+          items={[
+            { label: "Formula", value: info.formula },
+            { label: "Shape", value: info.shape, highlight: true },
+            { label: "Bond type", value: info.bondType },
+            { label: "Valence e⁻", value: info.valence },
+          ]}
+        />
         <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-amber-400">Key Concepts</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">

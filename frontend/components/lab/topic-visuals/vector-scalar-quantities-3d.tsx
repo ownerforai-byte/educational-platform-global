@@ -9,6 +9,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -42,6 +43,44 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 type VectorMode = "addition" | "scalar" | "collinear" | "coplanar" | "linear-combo";
 
+const QUANTITIES_INFO: Record<VectorMode, { concept: string; formula: string; interpretation: string; fact: string; tip: string }> = {
+  addition: {
+    concept: "Vectors add to vectors; scalars add to scalars",
+    formula: "|a + b|² = |a|² + |b|² + 2|a||b|cosθ",
+    interpretation: "A vector's magnitude (a scalar) is computed from the vector by |a| = √(a·a).",
+    fact: "You can never add a scalar to a vector — the types don't match, like units in physics.",
+    tip: "Work out the resultant vector first, only then take its magnitude.",
+  },
+  scalar: {
+    concept: "Scalars are pure numbers in this context",
+    formula: "k·a is a vector, but |ka| = |k||a| is a scalar",
+    interpretation: "Scalar multiplication produces a vector; the absolute value |k| is a scalar magnitude.",
+    fact: "Speed (a scalar) is the magnitude of velocity (a vector): |v|.",
+    tip: "Every magnitude, dot product and triple product is a scalar; every cross product is a vector.",
+  },
+  collinear: {
+    concept: "Direction is what makes a vector a vector",
+    formula: "a ∥ b ⇔ a = kB",
+    interpretation: "Collinear vectors share a direction, so only their magnitudes differ.",
+    fact: "Equal vectors have the same magnitude AND the same direction, whatever point they start from.",
+    tip: "Compare unit vectors: â = b̂ means same direction, â = −b̂ means opposite.",
+  },
+  coplanar: {
+    concept: "Scalar quantities carry no direction",
+    formula: "a·(b×c) is a scalar — the (signed) parallelepiped volume",
+    interpretation: "Work out the normal n = b×c (a vector), then dot it with a to get a plain number.",
+    fact: "Mass, time and energy are scalars; force, momentum and torque are vectors.",
+    tip: "Use units as a check: scalars keep units, direction words flag a vector.",
+  },
+  "linear-combo": {
+    concept: "Components are scalars attached to basis vectors",
+    formula: "a = a₁i + a₂j + a₃k",
+    interpretation: "The numbers a₁, a₂, a₃ are scalars; the i, j, k parts make it a vector.",
+    fact: "Magnitude comes from the scalars: |a| = √(a₁² + a₂² + a₃²).",
+    tip: "Direction cosines satisfy l² + m² + n² = 1 — a quick self-check.",
+  },
+};
+
 export function VectorScalarQuantities3DVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
@@ -51,6 +90,39 @@ export function VectorScalarQuantities3DVisual() {
   const [c, setC] = useState({ x: 0, y: 2, z: 2 });
   const [k, setK] = useState(2);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const info = QUANTITIES_INFO[mode];
+  const magA = Math.hypot(a.x, a.y, a.z);
+  const dirCos = magA > 0
+    ? `(${(a.x / magA).toFixed(2)}, ${(a.y / magA).toFixed(2)}, ${(a.z / magA).toFixed(2)})`
+    : "—";
+  const sum = { x: a.x + b.x, y: a.y + b.y, z: a.z + b.z };
+  const magSum = Math.hypot(sum.x, sum.y, sum.z);
+  const crossBC = {
+    x: b.y * c.z - b.z * c.y,
+    y: b.z * c.x - b.x * c.z,
+    z: b.x * c.y - b.y * c.x,
+  };
+  const stp = a.x * crossBC.x + a.y * crossBC.y + a.z * crossBC.z;
+
+  const presets: ScenePreset[] = [
+    { name: "3-4-5 vector", hint: "a = (3,4,0) has magnitude 5 — the classic Pythagorean triple", apply: () => { setMode("scalar"); setA({ x: 3, y: 4, z: 0 }); setK(2); setRunId((r) => r + 1); } },
+    { name: "Unit vector â", hint: "k = 1/|a| turns a into a unit vector (magnitude exactly 1)", apply: () => { setMode("scalar"); setA({ x: 3, y: 4, z: 0 }); setK(0.2); setRunId((r) => r + 1); } },
+    { name: "Equal-magnitude pair", hint: "Same |a| = |b| but different directions — equal scalars, unequal vectors", apply: () => { setMode("addition"); setA({ x: 3, y: 0, z: 0 }); setB({ x: 0, y: 3, z: 0 }); setRunId((r) => r + 1); } },
+    { name: "Direction cosines of A", hint: "l² + m² + n² = 1 for any non-zero vector", apply: () => { setMode("linear-combo"); setA({ x: 2, y: 3, z: 6 }); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setMode("addition");
+    setA({ x: 3, y: 1, z: 0 });
+    setB({ x: 1, y: 3, z: 0 });
+    setC({ x: 0, y: 2, z: 2 });
+    setK(2);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -63,6 +135,7 @@ export function VectorScalarQuantities3DVisual() {
     let animTime = 0;
     let animPhase = 0;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -83,7 +156,7 @@ export function VectorScalarQuantities3DVisual() {
       controls.autoRotateSpeed = 0.3;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.6));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -112,7 +185,8 @@ export function VectorScalarQuantities3DVisual() {
         const len = to.clone().sub(from).length();
         push(new LiveLeaderLine(dir, from, len, color, 0.2, 0.12));
         const mid = from.clone().add(to).multiplyScalar(0.5);
-        push(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, mid.clone().add(new THREE.Vector3(0, 0.6, 0)), 0.8));
+        const s = push(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, mid.clone().add(new THREE.Vector3(0, 0.6, 0)), 0.8));
+        labelSprites.push(s);
       };
 
       const update = () => {
@@ -140,7 +214,7 @@ export function VectorScalarQuantities3DVisual() {
           (meshes[meshes.length - 1] as any).computeLineDistances();
           drawArrow(new THREE.Vector3(0, 0, 0), sum, 0xf97316, "A + B");
           // Triangle method: B from tip of A
-          push(mkSprite("Triangle: A then B â†’ R", "#7dd3fc", new THREE.Vector3(-4, 4, 0), 0.8));
+          push(mkSprite("Triangle: A then B → R", "#7dd3fc", new THREE.Vector3(-4, 4, 0), 0.8));
         } else if (mode === "scalar") {
           // kA
           const scaled = A.clone().multiplyScalar(k);
@@ -153,7 +227,7 @@ export function VectorScalarQuantities3DVisual() {
           drawArrow(new THREE.Vector3(0, 0, 0), A, 0xef4444, "A");
           drawArrow(new THREE.Vector3(0, 0, 0), bScaled, 0x22c55e, "2B");
           drawArrow(new THREE.Vector3(0, 0, 0), B, 0x3b82f6, "B");
-          push(mkSprite("Collinear: A = 2B â†’ same line through origin", "#a78bfa", new THREE.Vector3(-4, 4, 0), 0.85));
+          push(mkSprite("Collinear: A = 2B → same line through origin", "#a78bfa", new THREE.Vector3(-4, 4, 0), 0.85));
         } else if (mode === "coplanar") {
           // Three vectors coplanar if scalar triple product = 0
           drawArrow(new THREE.Vector3(0, 0, 0), A, 0xef4444, "A");
@@ -175,12 +249,13 @@ export function VectorScalarQuantities3DVisual() {
           const result = A.clone().multiplyScalar(c1).add(B.clone().multiplyScalar(c2));
           drawArrow(new THREE.Vector3(0, 0, 0), A, 0xef4444, "A");
           drawArrow(new THREE.Vector3(0, 0, 0), B, 0x22c55e, "B");
-          drawArrow(new THREE.Vector3(0, 0, 0), result, 0xf97316, `câ‚A+câ‚‚B`);
+          drawArrow(new THREE.Vector3(0, 0, 0), result, 0xf97316, `c₁A+c₂B`);
           push(mkSprite(`Linear combo: 1.5A + 0.8B`, "#fb923c", new THREE.Vector3(-4, 4, 0), 0.85));
         }
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -221,7 +296,7 @@ export function VectorScalarQuantities3DVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [mode, a, b, c, k, isWebGL]);
+  }, [mode, a, b, c, k, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Scalar & Vector Quantities 3D" description="Interactive 3D vector visualization — requires WebGL." />;
@@ -236,11 +311,19 @@ export function VectorScalarQuantities3DVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-blue-500/50 bg-blue-500/10 text-blue-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Vector Mode">
           <Tabs value={mode} onValueChange={(v) => setMode(v as VectorMode)} className="mt-1">
             <TabsList className="grid w-full grid-cols-5">
               <TabsTrigger value="addition" className="text-xs">Addition</TabsTrigger>
-              <TabsTrigger value="scalar" className="text-xs">Scalar Ã— v</TabsTrigger>
+              <TabsTrigger value="scalar" className="text-xs">Scalar × v</TabsTrigger>
               <TabsTrigger value="collinear" className="text-xs">Collinear</TabsTrigger>
               <TabsTrigger value="coplanar" className="text-xs">Coplanar</TabsTrigger>
               <TabsTrigger value="linear-combo" className="text-xs">Linear Combo</TabsTrigger>
@@ -285,13 +368,25 @@ export function VectorScalarQuantities3DVisual() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <ReadoutGrid
+          items={[
+            { label: "|a| — a scalar quantity", value: magA.toFixed(2), highlight: true },
+            { label: "a + b — a vector quantity", value: `(${sum.x.toFixed(1)}, ${sum.y.toFixed(1)}, ${sum.z.toFixed(1)})` },
+            { label: "|a + b|", value: magSum.toFixed(2) },
+            { label: "Direction cosines of a", value: dirCos },
+            { label: "a·(b×c) — a scalar", value: stp.toFixed(2) },
+            { label: info.concept, value: info.formula },
+          ]}
+        />
+
         <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-blue-400">Key Definitions</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">
+            <p><strong className="text-foreground">Scalar quantity:</strong> fully described by magnitude alone (mass, time, energy, |a|).</p>
+            <p><strong className="text-foreground">Vector quantity:</strong> needs magnitude AND direction (force, velocity, a×b).</p>
             <p><strong className="text-foreground">Collinear vectors:</strong> A and B are collinear if A = kB for some scalar k.</p>
-            <p><strong className="text-foreground">Coplanar vectors:</strong> Three vectors are coplanar if their scalar triple product A·(BÃ—C) = 0.</p>
-            <p><strong className="text-foreground">Linear combination:</strong> v = câ‚a + câ‚‚b + câ‚ƒc for scalars câ‚, câ‚‚, câ‚ƒ.</p>
-            <p><strong className="text-foreground">Linearly independent:</strong> No non-trivial combination gives the zero vector.</p>
+            <p><strong className="text-foreground">Coplanar vectors:</strong> Three vectors are coplanar if their scalar triple product A·(B×C) = 0.</p>
+            <p><strong className="text-foreground">{info.concept}:</strong> {info.interpretation} {info.tip}</p>
           </div>
         </div>
       </CardContent>

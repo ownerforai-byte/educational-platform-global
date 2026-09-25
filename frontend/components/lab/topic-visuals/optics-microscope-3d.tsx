@@ -8,6 +8,11 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, scale = 0.3) {
@@ -27,12 +32,54 @@ function mkSprite(text: string, color: string, scale = 0.3) {
   return sprite;
 }
 
+// Fixed optical-tube geometry used for the magnification readouts.
+const TUBE_LENGTH_CM = 16;
+const NEAR_POINT_CM = 25;
+
 export default function OpticsMicroscope3d() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [fObjective, setFObjective] = useState(1);
   const [fEyepiece, setFEyepiece] = useState(2.5);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [showRays, setShowRays] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const mObj = TUBE_LENGTH_CM / fObjective;
+  const mEye = NEAR_POINT_CM / fEyepiece;
+  const mTotal = mObj * mEye;
+
+  const presets: ScenePreset[] = [
+    {
+      name: "Scanning 4×",
+      hint: "Long focal lengths — wide field of view for locating the specimen.",
+      apply: () => { setFObjective(4); setFEyepiece(10); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Low power 40×",
+      hint: "Typical classroom observation setting.",
+      apply: () => { setFObjective(2); setFEyepiece(5); setRunId((r) => r + 1); },
+    },
+    {
+      name: "High power 160×",
+      hint: "Short objective focal length — fine cellular detail.",
+      apply: () => { setFObjective(1); setFEyepiece(2.5); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Oil immersion 800×",
+      hint: "Very short fₒ — maximum useful magnification with oil immersion.",
+      apply: () => { setFObjective(0.2); setFEyepiece(1); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setFObjective(1);
+    setFEyepiece(2.5);
+    setShowLabels(true);
+    setShowRays(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     if (!isWebGL || !containerRef.current) return;
@@ -41,6 +88,7 @@ export default function OpticsMicroscope3d() {
     const h = container.clientHeight || 400;
     const scene = new THREE.Scene();
     scene.background = new THREE.Color(0x831843);
+    const labelSprites: THREE.Sprite[] = [];
     const camera = new THREE.PerspectiveCamera(50, w / h, 0.1, 100);
     camera.position.set(0, 2, 8);
     camera.lookAt(0, 0, 0);
@@ -52,7 +100,12 @@ export default function OpticsMicroscope3d() {
     import("three/addons/controls/OrbitControls.js").then((mod) => {
       controls = new mod.OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
       controls.dampingFactor = 0.08;
     });
 
@@ -113,29 +166,40 @@ export default function OpticsMicroscope3d() {
         new THREE.BufferGeometry().setFromPoints(points),
         new THREE.LineBasicMaterial({ color: 0xf472b6 })
       );
+      ray.visible = showRays;
       scene.add(ray);
 
       const sp1 = mkSprite("Objective", "#e879f9");
       scene.add(sp1);
       sp1.position.set(-1, -2.2, 0);
+      sp1.visible = showLabels;
+      labelSprites.push(sp1);
       const sp2 = mkSprite("Eyepiece", "#f472b6");
       scene.add(sp2);
       sp2.position.set(2, 2.2, 0);
+      sp2.visible = showLabels;
+      labelSprites.push(sp2);
 
       // Image labels
       const spImg = mkSprite("Real Image", "#22d3ee");
       scene.add(spImg);
       spImg.position.set(-0.5, 0.3, 0);
+      spImg.visible = showLabels;
+      labelSprites.push(spImg);
       const spFinal = mkSprite("Virtual Image", "#fbbf24");
       scene.add(spFinal);
       spFinal.position.set(2.5, 1.8, 0);
+      spFinal.visible = showLabels;
+      labelSprites.push(spFinal);
 
       // Object label
       const spObj = mkSprite("Object", "#f472b6");
       scene.add(spObj);
       spObj.position.set(-2.5, -2.8, 0);
+      spObj.visible = showLabels;
+      labelSprites.push(spObj);
 
-      return { ray, spImg, spFinal, spObj };
+      return { ray };
     };
 
     const rayHelper = updateRays();
@@ -162,22 +226,11 @@ export default function OpticsMicroscope3d() {
       light.material.dispose();
       rayHelper.ray.geometry.dispose();
       rayHelper.ray.material.dispose();
-      if (rayHelper.spImg) {
-        rayHelper.spImg.material.map?.dispose();
-        rayHelper.spImg.material.dispose();
-      }
-      if (rayHelper.spFinal) {
-        rayHelper.spFinal.material.map?.dispose();
-        rayHelper.spFinal.material.dispose();
-      }
-      if (rayHelper.spObj) {
-        rayHelper.spObj.material.map?.dispose();
-        rayHelper.spObj.material.dispose();
-      }
+      labelSprites.forEach((s) => { s.material.map?.dispose(); s.material.dispose(); });
       renderer.dispose();
       controls?.dispose();
     };
-  }, [isWebGL]);
+  }, [isWebGL, runId, showLabels, showRays]);
 
   if (!isWebGL) return <WebGLFallback title="Microscope" />;
 
@@ -194,6 +247,30 @@ export default function OpticsMicroscope3d() {
       <CardContent>
         <div ref={containerRef} className="h-[clamp(320px,60vh,640px)] w-full rounded-md overflow-hidden mb-4">
           <VizToolbar targetRef={vizTargetRef} />
+        </div>
+        <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-rose-500/50 bg-rose-500/10 text-rose-300" : "border-rose-900 bg-rose-900/30 text-rose-400/60"}`}
+            >
+              Labels
+            </button>
+            <button
+              onClick={() => setShowRays((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showRays ? "border-pink-400/50 bg-pink-400/10 text-pink-300" : "border-rose-900 bg-rose-900/30 text-rose-400/60"}`}
+            >
+              Rays
+            </button>
+            <button
+              onClick={resetAll}
+              className="px-2.5 py-1 rounded-md text-xs font-medium border border-rose-900 bg-rose-900/40 text-rose-300 hover:bg-rose-800/50 transition-colors"
+              title="Reset to defaults"
+            >
+              Reset
+            </button>
+          </div>
+          <ScenePresets presets={presets} />
         </div>
         <CollapsibleControls label="Lens Parameters">
           <div className="space-y-4">
@@ -213,6 +290,15 @@ export default function OpticsMicroscope3d() {
             </div>
           </div>
         </CollapsibleControls>
+        <ReadoutGrid
+          className="mt-4"
+          items={[
+            { label: "Objective mag (L/fₒ)", value: mObj.toFixed(1), unit: "×" },
+            { label: "Eyepiece mag (D/fₑ)", value: mEye.toFixed(1), unit: "×" },
+            { label: "Total magnification", value: mTotal.toFixed(0), unit: "×", highlight: mTotal >= 400 },
+            { label: "fₒ / fₑ", value: `${fObjective.toFixed(1)} / ${fEyepiece.toFixed(1)}`, unit: "cm" },
+          ]}
+        />
         <div className="mt-4 p-3 rounded-lg border-l-4 border-rose-500 bg-rose-950/50 text-rose-200 text-sm space-y-2">
           <p className="font-semibold text-rose-300">Magnification</p>
           <p>M = (L / fₒ) × (D / fₑ)</p>

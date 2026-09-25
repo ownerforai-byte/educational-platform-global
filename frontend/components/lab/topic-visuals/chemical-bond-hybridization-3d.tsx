@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
@@ -36,7 +37,41 @@ export function HybridizationVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [orbital, setOrbital] = useState<OrbitalType>("sp3");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const ORBITAL_INFO: Record<OrbitalType, { geometry: string; angle: string; example: string; sigma: number; unhybridized: string }> = {
+    sp3: { geometry: "Tetrahedral", angle: "109.5°", example: "CH₄", sigma: 4, unhybridized: "0 p orbitals" },
+    sp2: { geometry: "Trigonal planar", angle: "120°", example: "C₂H₄", sigma: 3, unhybridized: "1 p orbital (π)" },
+    sp: { geometry: "Linear", angle: "180°", example: "C₂H₂", sigma: 2, unhybridized: "2 p orbitals (2π)" },
+  };
+  const info = ORBITAL_INFO[orbital];
+
+  const DEFAULTS = { orbital: "sp3" as OrbitalType };
+  const presets: ScenePreset[] = [
+    {
+      name: "sp³ (CH₄)",
+      hint: "Four equivalent hybrids point to a tetrahedron's corners — 109.5° apart.",
+      apply: () => { setOrbital("sp3"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "sp² (C₂H₄)",
+      hint: "Three hybrids in a plane — the leftover p orbital makes the π bond.",
+      apply: () => { setOrbital("sp2"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "sp (C₂H₂)",
+      hint: "Two hybrids in a line — two leftover p orbitals make two π bonds.",
+      apply: () => { setOrbital("sp"); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setOrbital(DEFAULTS.orbital);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -47,6 +82,7 @@ export function HybridizationVisual() {
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
     const orbitalMeshes: THREE.Group[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -67,7 +103,7 @@ export function HybridizationVisual() {
       controls.autoRotateSpeed = 0.4;
       controls.minDistance = 3;
       controls.maxDistance = 15;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -76,6 +112,13 @@ export function HybridizationVisual() {
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
       const pushOrbital = <T extends THREE.Object3D>(o: T): T => { const g = new THREE.Group(); g.add(o); scene.add(g); orbitalMeshes.push(g); meshes.push(g); return o; };
+
+      const syncLabels = () => {
+        labelSprites.length = 0;
+        scene.traverse((o) => {
+          if ((o as THREE.Sprite).isSprite) { labelSprites.push(o as THREE.Sprite); (o as THREE.Sprite).visible = showLabels; }
+        });
+      };
 
       const clearDynamic = () => {
         while (meshes.length > 2) {
@@ -287,6 +330,7 @@ export function HybridizationVisual() {
 
       const builders: Record<OrbitalType, () => void> = { sp3: buildSP3, sp2: buildSP2, sp: buildSP };
       builders[orbital]();
+      syncLabels();
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -331,7 +375,7 @@ export function HybridizationVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [orbital, isWebGL]);
+  }, [orbital, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Hybridization" description="sp3/sp2/sp orbital visualization — requires WebGL." />;
@@ -346,6 +390,13 @@ export function HybridizationVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-violet-500/50 bg-violet-500/10 text-violet-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
         <CollapsibleControls label="Orbital Type">
           <div className="grid grid-cols-3 gap-2 mt-1">
             {([
@@ -368,6 +419,14 @@ export function HybridizationVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+        <ReadoutGrid
+          items={[
+            { label: "Geometry", value: info.geometry, highlight: true },
+            { label: "Bond angle", value: info.angle },
+            { label: "σ bonds", value: info.sigma },
+            { label: "Example", value: info.example },
+          ]}
+        />
         <div className="rounded-lg border border-violet-500/30 bg-violet-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-violet-400">Key Concepts</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">

@@ -2,12 +2,16 @@
 
 import { useRef, useEffect, useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import { Label } from "@/components/ui/label";
-import { Input } from "@/components/ui/input";
 import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  PlaybackBar,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -34,10 +38,10 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 }
 
 const nuclei = {
-  "h1": { protons: 1, neutrons: 0, label: "¹H (Protium)", color: 0xef4444 },
-  "he4": { protons: 2, neutrons: 2, label: "⁴He", color: 0x3b82f6 },
-  "c12": { protons: 6, neutrons: 6, label: "¹²C", color: 0x22c55e },
-  "u238": { protons: 92, neutrons: 146, label: "²³⁸U", color: 0xf97316 },
+  "h1": { protons: 1, neutrons: 0, label: "¹H (Protium)", color: 0xef4444, bindingMeV: 0, massDefectU: 0 },
+  "he4": { protons: 2, neutrons: 2, label: "⁴He", color: 0x3b82f6, bindingMeV: 28.3, massDefectU: 0.0304 },
+  "c12": { protons: 6, neutrons: 6, label: "¹²C", color: 0x22c55e, bindingMeV: 92.2, massDefectU: 0.0989 },
+  "u238": { protons: 92, neutrons: 146, label: "²³⁸U", color: 0xf97316, bindingMeV: 1801.6, massDefectU: 1.9342 },
 };
 
 export function NuclearPhysicsVisual() {
@@ -45,7 +49,49 @@ export function NuclearPhysicsVisual() {
   const vizTargetRef = useRef<VizTarget>({});
   const [isotope, setIsotope] = useState<"h1" | "he4" | "c12" | "u238">("u238");
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [animating, setAnimating] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+  // Speed lives in a ref so changing it never tears down the WebGL scene.
+  const speedRef = useRef(1);
+  speedRef.current = speed;
 
+  const nuc = nuclei[isotope];
+  const massNumber = nuc.protons + nuc.neutrons;
+  const bePerNucleon = massNumber > 0 ? nuc.bindingMeV / massNumber : 0;
+
+  const DEFAULTS = { isotope: "u238" as const };
+  const presets: ScenePreset[] = [
+    {
+      name: "¹H Protium",
+      hint: "A lone proton — no nucleon pairs, so zero binding energy.",
+      apply: () => { setIsotope("h1"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "⁴He alpha",
+      hint: "Doubly magic and exceptionally tightly bound — 7.07 MeV per nucleon.",
+      apply: () => { setIsotope("he4"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "¹²C carbon",
+      hint: "Mid-light nucleus near the peak of the binding-energy curve.",
+      apply: () => { setIsotope("c12"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "²³⁸U uranium",
+      hint: "Heavy nucleus — lower BE/nucleon makes fission energetically favorable.",
+      apply: () => { setIsotope("u238"); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setIsotope(DEFAULTS.isotope);
+    setSpeed(1);
+    setShowLabels(true);
+    setAnimating(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     const container = containerRef.current;
@@ -54,6 +100,7 @@ export function NuclearPhysicsVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
     let rotAngle = 0;
 
     const init = async () => {
@@ -71,11 +118,16 @@ export function NuclearPhysicsVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      controls.autoRotate = true;
-      controls.autoRotateSpeed = 1.0;
+      controls.autoRotate = animating;
+      controls.autoRotateSpeed = 1.0 * speed;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -83,6 +135,7 @@ export function NuclearPhysicsVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
 
       const nucleus = nuclei[isotope];
       const totalParticles = nucleus.protons + nucleus.neutrons;
@@ -118,35 +171,35 @@ export function NuclearPhysicsVisual() {
       const pTarget = new THREE.Vector3(0, 0, 0);
       const pDir = pTarget.clone().sub(pLabelPos).normalize();
       push(new LiveLeaderLine(pDir, pLabelPos, pLabelPos.distanceTo(pTarget) * 0.9, 0xef4444, 0.2, 0.12));
-      push(mkSprite(`Protons (Z) = ${nProtons}`, "#ef4444", pLabelPos.clone().sub(pDir.multiplyScalar(0.5)), 0.8));
+      addLabel(mkSprite(`Protons (Z) = ${nProtons}`, "#ef4444", pLabelPos.clone().sub(pDir.multiplyScalar(0.5)), 0.8));
 
       // Neutron count label with long arrow
       const nLabelPos = new THREE.Vector3(-3, 2.5, 0);
       const nTarget = new THREE.Vector3(0, 0, 0);
       const nDir = nTarget.clone().sub(nLabelPos).normalize();
       push(new LiveLeaderLine(nDir, nLabelPos, nLabelPos.distanceTo(nTarget) * 0.9, 0x3b82f6, 0.2, 0.12));
-      push(mkSprite(`Neutrons (N) = ${nNeutrons}`, "#3b82f6", nLabelPos.clone().sub(nDir.multiplyScalar(0.5)), 0.8));
+      addLabel(mkSprite(`Neutrons (N) = ${nNeutrons}`, "#3b82f6", nLabelPos.clone().sub(nDir.multiplyScalar(0.5)), 0.8));
 
       // Isotope label
       const isoLabelPos = new THREE.Vector3(0, -3, 0);
       const isoTarget = new THREE.Vector3(0, 0, 0);
       const isoDir = isoTarget.clone().sub(isoLabelPos).normalize();
       push(new LiveLeaderLine(isoDir, isoLabelPos, isoLabelPos.distanceTo(isoTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
-      push(mkSprite(nucleus.label, "#fbbf24", isoLabelPos.clone().sub(isoDir.multiplyScalar(0.5)), 0.85));
+      addLabel(mkSprite(nucleus.label, "#fbbf24", isoLabelPos.clone().sub(isoDir.multiplyScalar(0.5)), 0.85));
 
       // Mass number label
       const ALabelPos = new THREE.Vector3(-3, -2.5, 0);
       const ATarget = new THREE.Vector3(0, 0, 0);
       const ADir = ATarget.clone().sub(ALabelPos).normalize();
       push(new LiveLeaderLine(ADir, ALabelPos, ALabelPos.distanceTo(ATarget) * 0.9, 0xa78bfa, 0.15, 0.1));
-      push(mkSprite(`Mass # (A) = ${totalParticles}`, "#a78bfa", ALabelPos.clone().sub(ADir.multiplyScalar(0.5)), 0.75));
+      addLabel(mkSprite(`Mass # (A) = ${totalParticles}`, "#a78bfa", ALabelPos.clone().sub(ADir.multiplyScalar(0.5)), 0.75));
 
       // Nuclear force range indicator
       const rfLabelPos = new THREE.Vector3(0, 3.5, 0);
       const rfTarget = new THREE.Vector3(0.8, 0.5, 0);
       const rfDir = rfTarget.clone().sub(rfLabelPos).normalize();
       push(new LiveLeaderLine(rfDir, rfLabelPos, rfLabelPos.distanceTo(rfTarget) * 0.9, 0x34d399, 0.15, 0.1));
-      push(mkSprite("Nuclear force (short range)", "#34d399", rfLabelPos.clone().sub(rfDir.multiplyScalar(0.5)), 0.7));
+      addLabel(mkSprite("Nuclear force (short range)", "#34d399", rfLabelPos.clone().sub(rfDir.multiplyScalar(0.5)), 0.7));
 
       const update = () => {
         while (meshes.length > 50) {
@@ -159,19 +212,22 @@ export function NuclearPhysicsVisual() {
         }
       };
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
-        rotAngle += 0.005;
-        nucleons.forEach((n, i) => {
-          const base = positions[i];
-          n.position.set(
-            base.x * Math.cos(rotAngle) - base.z * Math.sin(rotAngle),
-            base.y,
-            base.x * Math.sin(rotAngle) + base.z * Math.cos(rotAngle)
-          );
-        });
+        if (animating) {
+          rotAngle += 0.005 * speedRef.current;
+          nucleons.forEach((n, i) => {
+            const base = positions[i];
+            n.position.set(
+              base.x * Math.cos(rotAngle) - base.z * Math.sin(rotAngle),
+              base.y,
+              base.x * Math.sin(rotAngle) + base.z * Math.cos(rotAngle)
+            );
+          });
+        }
         renderer.render(scene, camera);
       };
       animate();
@@ -206,7 +262,7 @@ export function NuclearPhysicsVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [isotope, isWebGL]);
+  }, [isotope, isWebGL, runId, animating, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Nuclear Physics" description="Nucleus with proton/neutron labels." />;
@@ -237,9 +293,38 @@ export function NuclearPhysicsVisual() {
           </div>
         </CollapsibleControls>
 
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <PlaybackBar
+            playing={animating}
+            onPlayToggle={() => setAnimating(!animating)}
+            speed={speed}
+            onSpeedChange={setSpeed}
+            onReset={resetAll}
+          />
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-primary/50 bg-primary/10 text-primary" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Labels
+            </button>
+          </div>
+        </div>
+
+        <ScenePresets presets={presets} />
+
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Binding energy", value: nuc.bindingMeV.toFixed(1), unit: "MeV", highlight: isotope === "he4" },
+            { label: "BE / nucleon", value: bePerNucleon.toFixed(2), unit: "MeV" },
+            { label: "Mass defect Δm", value: nuc.massDefectU.toFixed(4), unit: "u" },
+            { label: "Nucleons A (Z+N)", value: `${massNumber} (${nuc.protons}+${nuc.neutrons})` },
+          ]}
+        />
 
         <div className="rounded-lg border border-orange-500/30 bg-orange-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-orange-400">Key Concepts</p>

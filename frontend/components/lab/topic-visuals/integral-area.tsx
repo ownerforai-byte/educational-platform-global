@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, PlaybackBar, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 /* ============================================================
@@ -38,15 +39,72 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
+type RiemannMethod = "left" | "right" | "midpoint";
+
+const INTEGRAL_INFO: Record<RiemannMethod, { head: string; rule: string; bias: string; error: string }> = {
+  left: {
+    head: "Left-endpoint sum Lₙ = Σᵢ₌₀ⁿ⁻¹ f(xᵢ)Δx",
+    rule: "Each rectangle takes its height from the left edge of [xᵢ, xᵢ₊₁].",
+    bias: "Under-estimates where f increases, over-estimates where f decreases.",
+    error: "Error is O(1/n) — converges slowly; halved only when n doubles.",
+  },
+  right: {
+    head: "Right-endpoint sum Rₙ = Σᵢ₌₁ⁿ f(xᵢ)Δx",
+    rule: "Each rectangle takes its height from the right edge of [xᵢ₋₁, xᵢ].",
+    bias: "Over-estimates where f increases, under-estimates where f decreases.",
+    error: "Also O(1/n); Lₙ + Rₙ averages to the trapezoidal rule Tₙ.",
+  },
+  midpoint: {
+    head: "Midpoint sum Mₙ = Σᵢ₌₁ⁿ f((xᵢ₋₁+xᵢ)/2)Δx",
+    rule: "Height sampled at the interval centre — errors partially cancel.",
+    bias: "Best single-point rule of the three; over-estimates on concave-up arcs.",
+    error: "Error is O(1/n²) — roughly twice as accurate as Lₙ or Rₙ per n.",
+  },
+};
+
 export function IntegralAreaVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [nRects, setNRects] = useState(8);
-  const [method, setMethod] = useState<"left" | "right" | "midpoint">("midpoint");
+  const [method, setMethod] = useState<RiemannMethod>("midpoint");
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+  const [playing, setPlaying] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  const speedRef = useRef(speed);
+  const playingRef = useRef(playing);
+  useEffect(() => { speedRef.current = speed; playingRef.current = playing; }, [speed, playing]);
 
+  const info = INTEGRAL_INFO[method];
 
   const f = (x: number) => Math.sin(x) * 2 + 1.5;
+  const A = 1, B = 7;
+  const dx = (B - A) / nRects;
+  let riemann = 0;
+  for (let i = 0; i < nRects; i++) {
+    const xs = method === "left" ? A + i * dx : method === "right" ? A + (i + 1) * dx : A + (i + 0.5) * dx;
+    riemann += f(xs) * dx;
+  }
+  const exactArea = (-2 * Math.cos(B) + 1.5 * B) - (-2 * Math.cos(A) + 1.5 * A);
+
+  const presets: ScenePreset[] = [
+    { name: "Rough estimate · n = 4", hint: "Coarse rectangles, large error", apply: () => { setMethod("midpoint"); setNRects(4); setPlaying(true); setRunId((r) => r + 1); } },
+    { name: "Endpoint bias · n = 8", hint: "Left sum on [1, 7]", apply: () => { setMethod("left"); setNRects(8); setPlaying(true); setRunId((r) => r + 1); } },
+    { name: "Converging · n = 40", hint: "Midpoint rule closing in on the true area", apply: () => { setMethod("midpoint"); setNRects(40); setPlaying(true); setRunId((r) => r + 1); } },
+    { name: "Near-exact · n = 100", hint: "Fine partition — limit of the Riemann sum", apply: () => { setMethod("midpoint"); setNRects(100); setPlaying(true); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setMethod("midpoint");
+    setNRects(8);
+    setShowLabels(true);
+    setPlaying(true);
+    setSpeed(1);
+    setRunId((r) => r + 1);
+  };
+
+
 
   useEffect(() => {
     const container = containerRef.current;
@@ -57,6 +115,7 @@ export function IntegralAreaVisual() {
     let frameId: number;
     let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
     const rectMeshes: THREE.Mesh[] = [];
 
     const init = async () => {
@@ -77,7 +136,7 @@ export function IntegralAreaVisual() {
       controls.autoRotate = false;
       controls.minDistance = 5;
       controls.maxDistance = 30;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
 
@@ -159,33 +218,36 @@ export function IntegralAreaVisual() {
         }
 
         // Area label
-        push(mkSprite(
+        labelSprites.push(push(mkSprite(
           `Area ≈ ${totalArea.toFixed(3)}  (${nRects} rects, ${method})`,
           "#fbbf24",
           new THREE.Vector3(4, 8.5, 0.05),
           0.9,
-        ));
+        )));
 
         // Exact value comparison
         const exact = ((-2 * Math.cos(7) + 1.5 * 7) - (-2 * Math.cos(1) + 1.5 * 1));
-        push(mkSprite(
+        labelSprites.push(push(mkSprite(
           `Exact = ${exact.toFixed(3)}`,
           "#22d3ee",
           new THREE.Vector3(4, 7.8, 0.05),
           0.85,
-        ));
+        )));
       };
 
       updateRectangles();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
-        animTime += 0.02;
-        rectMeshes.forEach((r, i) => {
-          const m = r.material as THREE.MeshBasicMaterial;
-          m.opacity = 0.35 + 0.25 * Math.sin(animTime + i * 0.5);
-        });
+        if (playingRef.current) {
+          animTime += 0.02 * speedRef.current;
+          rectMeshes.forEach((r, i) => {
+            const m = r.material as THREE.MeshBasicMaterial;
+            m.opacity = 0.35 + 0.25 * Math.sin(animTime + i * 0.5);
+          });
+        }
         renderer.render(scene, camera);
       };
       animate();
@@ -219,7 +281,7 @@ export function IntegralAreaVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [nRects, method, isWebGL]);
+  }, [nRects, method, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Definite Integral" description="Riemann sum visualization — requires WebGL." />;
@@ -234,6 +296,14 @@ export function IntegralAreaVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-amber-500/50 bg-amber-500/10 text-amber-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Method">
           <div className="flex flex-wrap gap-2 mt-2">
             {(["left", "right", "midpoint"] as const).map((m) => (
@@ -269,12 +339,32 @@ export function IntegralAreaVisual() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <PlaybackBar
+          playing={playing}
+          onPlayToggle={() => setPlaying((p) => !p)}
+          speed={speed}
+          onSpeedChange={setSpeed}
+          onReset={resetAll}
+        />
+
+        <ReadoutGrid
+          items={[
+            { label: "Riemann sum", value: riemann.toFixed(4), unit: "u²", highlight: true },
+            { label: "Exact ∫₁⁷ f(x)dx", value: exactArea.toFixed(4), unit: "u²" },
+            { label: "Error |exact − sum|", value: Math.abs(exactArea - riemann).toFixed(4), unit: "u²" },
+            { label: "Δx = (b−a)/n", value: dx.toFixed(4) },
+            { label: "Rule", value: info.rule },
+            { label: "Convergence", value: info.error },
+          ]}
+        />
+
         <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
-          <p className="text-xs font-semibold uppercase tracking-wide text-amber-400">Fundamental Theorem of Calculus</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-amber-400">Fundamental Theorem of Calculus · {info.head}</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">
             <p><strong className="text-foreground">∫ₐᵇ f(x) dx = F(b) − F(a)</strong>, where F&apos;(x) = f(x).</p>
             <p><strong className="text-foreground">Riemann sum:</strong> lim(n→∞) Σ f(xᵢ*) Δx = ∫ₐᵇ f(x) dx</p>
             <p>The colored rectangles approximate the area. As n increases, the approximation converges to the exact integral value.</p>
+            <p><strong className="text-foreground">Bias:</strong> {info.bias}</p>
             <p><strong className="text-foreground">Today:</strong> f(x) = 2sin(x) + 1.5 on [1, 7]</p>
           </div>
         </div>

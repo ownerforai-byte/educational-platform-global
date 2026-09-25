@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, PlaybackBar, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -41,7 +42,52 @@ export function EquilibriumVisual() {
   const vizTargetRef = useRef<VizTarget>({});
   const [stress, setStress] = useState<"none" | "add-reactant" | "add-product" | "increase-T" | "increase-P">("none");
   const progressRef = useRef(0.5);
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+  const [playing, setPlaying] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  const speedRef = useRef(1);
+  const playingRef = useRef(true);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  type StressType = "none" | "add-reactant" | "add-product" | "increase-T" | "increase-P";
+
+  const STRESS_INFO: Record<StressType, { stress: string; shift: string; reason: string; result: string }> = {
+    none: { stress: "No stress", shift: "At equilibrium — no shift", reason: "rate(forward) = rate(reverse)", result: "Kc unchanged" },
+    "add-reactant": { stress: "Added N₂ / H₂", shift: "Shifts right → more NH₃", reason: "System consumes excess reactant", result: "Kc unchanged, Q < Kc" },
+    "add-product": { stress: "Added NH₃", shift: "Shifts left ← to reactants", reason: "System consumes excess product", result: "Kc unchanged, Q > Kc" },
+    "increase-T": { stress: "Heating (ΔH < 0 fwd)", shift: "Shifts left ← endothermic way", reason: "Absorbs added heat", result: "Kc decreases" },
+    "increase-P": { stress: "Compressed (P ↑)", shift: "Shifts right → fewer moles", reason: "4 mol gas → 2 mol gas", result: "Kc unchanged" },
+  };
+  const info = STRESS_INFO[stress];
+
+  const DEFAULTS = { stress: "none" as StressType, playing: true, speed: 1 };
+  const presets: ScenePreset[] = [
+    {
+      name: "Add reactant",
+      hint: "Dumping in more N₂/H₂ pushes the mixture toward NH₃.",
+      apply: () => { setStress("add-reactant"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Raise temperature",
+      hint: "Forward reaction is exothermic, so heating shifts equilibrium back to N₂ + H₂.",
+      apply: () => { setStress("increase-T"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Raise pressure",
+      hint: "Compression favours the side with fewer gas moles — 2NH₃.",
+      apply: () => { setStress("increase-P"); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setStress(DEFAULTS.stress);
+    setPlaying(DEFAULTS.playing);
+    setSpeed(DEFAULTS.speed);
+    setShowLabels(true);
+    progressRef.current = 0.5;
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -51,6 +97,7 @@ export function EquilibriumVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
     const stressAnim = 0;
     let targetProgress = 0.5;
 
@@ -72,16 +119,18 @@ export function EquilibriumVisual() {
       controls.autoRotate = false;
       controls.minDistance = 4;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { s.visible = showLabels; push(s); labelSprites.push(s); return s; };
 
       // Reaction: N₂ + 3H₂ ⇌ 2NH₃ (exothermic)
       // Forward: exothermic (ΔH < 0)
 
       const updateScene = () => {
+        labelSprites.length = 0;
         while (meshes.length > 8) {
           const m = meshes.pop()!;
           scene.remove(m);
@@ -93,7 +142,9 @@ export function EquilibriumVisual() {
         // Animated progressRef.current toward equilibrium
         const shift = stress === "add-reactant" ? 0.2 : stress === "add-product" ? -0.2 : stress === "increase-T" ? -0.15 : stress === "increase-P" ? 0.25 : 0;
         targetProgress = Math.max(0.05, Math.min(0.95, 0.5 + shift));
-        progressRef.current += (targetProgress - progressRef.current) * 0.03;
+        if (playingRef.current) {
+          progressRef.current += (targetProgress - progressRef.current) * 0.03 * speedRef.current;
+        }
 
         const reactantY = 1 - progressRef.current;
         const productY = progressRef.current;
@@ -105,8 +156,8 @@ export function EquilibriumVisual() {
         // Axes
         push(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(ox, oy, 0), new THREE.Vector3(ox + sx * 10, oy, 0)]), new THREE.LineBasicMaterial({ color: 0x475569 })));
         push(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(ox, oy, 0), new THREE.Vector3(ox, oy + sy * 6, 0)]), new THREE.LineBasicMaterial({ color: 0x475569 })));
-        push(mkSprite("Time", "#94a3b8", new THREE.Vector3(ox + sx * 10.5, oy - 0.3, 0), 0.6));
-        push(mkSprite("Concentration", "#94a3b8", new THREE.Vector3(ox - 0.5, oy + sy * 6.5, 0), 0.6));
+        addLabel(mkSprite("Time", "#94a3b8", new THREE.Vector3(ox + sx * 10.5, oy - 0.3, 0), 0.6));
+        addLabel(mkSprite("Concentration", "#94a3b8", new THREE.Vector3(ox - 0.5, oy + sy * 6.5, 0), 0.6));
 
         // Equilibrium line
         push(new THREE.Line(
@@ -117,7 +168,7 @@ export function EquilibriumVisual() {
           new THREE.LineDashedMaterial({ color: 0xfbbf24, dashSize: 0.2, gapSize: 0.15 }),
         ) as any);
         ((meshes[meshes.length - 1] as any) as THREE.Line).computeLineDistances();
-        push(mkSprite("Equilibrium", "#fbbf24", new THREE.Vector3(ox + sx * 9, oy + progressRef.current * sy * 5 + 0.3, 0), 0.5));
+        addLabel(mkSprite("Equilibrium", "#fbbf24", new THREE.Vector3(ox + sx * 9, oy + progressRef.current * sy * 5 + 0.3, 0), 0.5));
 
         // Reactant curve (decreasing)
         const rPts: THREE.Vector3[] = [];
@@ -128,7 +179,7 @@ export function EquilibriumVisual() {
           rPts.push(new THREE.Vector3(x, oy + Math.max(0, early) * sy * 5, 0));
         }
         push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(rPts), new THREE.LineBasicMaterial({ color: 0xef4444, linewidth: 2 })));
-        push(mkSprite("Reactants (N₂+H₂)", "#ef4444", new THREE.Vector3(ox + sx * 0.5, oy + sy * 4.5, 0), 0.55));
+        addLabel(mkSprite("Reactants (N₂+H₂)", "#ef4444", new THREE.Vector3(ox + sx * 0.5, oy + sy * 4.5, 0), 0.55));
 
         // Product curve (increasing)
         const pPts: THREE.Vector3[] = [];
@@ -139,7 +190,7 @@ export function EquilibriumVisual() {
           pPts.push(new THREE.Vector3(x, oy + Math.min(5, early * 5) * sy, 0));
         }
         push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(pPts), new THREE.LineBasicMaterial({ color: 0x22c55e, linewidth: 2 })));
-        push(mkSprite("Products (NH₃)", "#22c55e", new THREE.Vector3(ox + sx * 0.5, oy + sy * 1.0, 0), 0.55));
+        addLabel(mkSprite("Products (NH₃)", "#22c55e", new THREE.Vector3(ox + sx * 0.5, oy + sy * 1.0, 0), 0.55));
 
         // Stress indicator
         if (stress !== "none") {
@@ -160,11 +211,11 @@ export function EquilibriumVisual() {
           const d = tp.clone().sub(sp).normalize();
           const al = sp.distanceTo(tp);
           push(new LiveLeaderLine(d, sp, al * 0.8, stressColors[stress], 0.25, 0.12));
-          push(mkSprite(stressLabels[stress], `#${stressColors[stress].toString(16).padStart(6, "0")}`, sp.clone().sub(d.multiplyScalar(0.5)), 0.7));
+          addLabel(mkSprite(stressLabels[stress], `#${stressColors[stress].toString(16).padStart(6, "0")}`, sp.clone().sub(d.multiplyScalar(0.5)), 0.7));
         }
 
         // Kc expression
-        push(mkSprite("Kc = [NH₃]² / ([N₂][H₂]³)  — constant at given T", "#7dd3fc", new THREE.Vector3(0, -4.2, 0), 0.6));
+        addLabel(mkSprite("Kc = [NH₃]² / ([N₂][H₂]³)  — constant at given T", "#7dd3fc", new THREE.Vector3(0, -4.2, 0), 0.6));
       };
 
       updateScene();
@@ -206,7 +257,9 @@ export function EquilibriumVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [stress, isWebGL]);
+  }, [stress, isWebGL, runId, showLabels]);
+
+  useEffect(() => { speedRef.current = speed; playingRef.current = playing; }, [speed, playing]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Chemical Equilibrium" description="Le Chatelier's principle animation — requires WebGL." />;
@@ -221,6 +274,13 @@ export function EquilibriumVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-green-500/50 bg-green-500/10 text-green-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
         <CollapsibleControls label="Apply Stress (N₂ + 3H₂ ⇌ 2NH₃, ΔH < 0)">
           <div className="flex flex-wrap gap-2 mt-1">
             {([
@@ -247,6 +307,15 @@ export function EquilibriumVisual() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <PlaybackBar playing={playing} onPlayToggle={() => setPlaying((p) => !p)} speed={speed} onSpeedChange={setSpeed} onReset={() => { progressRef.current = 0.5; setRunId((r) => r + 1); }} resetLabel="Re-settle" />
+        <ReadoutGrid
+          items={[
+            { label: "Applied stress", value: info.stress },
+            { label: "Shift", value: info.shift, highlight: true },
+            { label: "Reason", value: info.reason },
+            { label: "Effect on Kc", value: info.result },
+          ]}
+        />
         <div className="rounded-lg border border-green-500/30 bg-green-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-green-400">Le Chatelier's Principle</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">

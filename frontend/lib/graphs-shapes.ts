@@ -8,7 +8,7 @@
 export type ShapeName =
   | "constant" | "linear" | "linearRise" | "linearFall" | "parabola" | "parabolaDown"
   | "cubic" | "expRise" | "expDecay" | "expDecayToFloor" | "log" | "sqrt" | "saturate"
-  | "sine" | "cosine" | "dampedWave" | "fringes" | "tangent" | "sigmoid" | "sigmoidDown"
+  | "sine" | "cosine" | "dampedWave" | "fringes" | "tangent" | "cotangent" | "secant" | "cosecant" | "sigmoid" | "sigmoidDown"
   | "hyperbola" | "bell" | "vshape" | "peak" | "barrier" | "sawtooth" | "step" | "circle"
   | "ellipse" | "sideHyperbola" | "diode" | "resonancePeak";
 
@@ -32,6 +32,29 @@ function branch(paths: string[]): string {
   return paths.join(" M");
 }
 
+/**
+ * Multi-branch curve sampled from a raw function with automatic segment
+ * breaking at asymptotes: whenever consecutive samples jump more than 0.45
+ * in normalized y, the subpath is cut so no vertical wall is drawn.
+ */
+function brokenPath(fn: (x: number) => number): string {
+  const segs: string[] = [];
+  let cur: string[] = [];
+  let prevY: number | null = null;
+  for (let i = 0; i <= N; i++) {
+    const x = i / N;
+    const y = Math.min(1, Math.max(0, fn(x)));
+    if (prevY !== null && Math.abs(y - prevY) > 0.45 && cur.length > 1) {
+      segs.push("M" + cur.join(" L"));
+      cur = [];
+    }
+    cur.push(`${(x * 100).toFixed(2)},${((1 - y) * 100).toFixed(2)}`);
+    prevY = y;
+  }
+  if (cur.length > 1) segs.push("M" + cur.join(" L"));
+  return segs.join(" M");
+}
+
 export const SHAPE_GENERATORS: Record<ShapeName, (variant?: number) => string> = {
   constant: () => path(() => 0.5),
   linear: (v = 0.5) => path((x) => 0.25 + (v - 0.25) * x),
@@ -50,7 +73,10 @@ export const SHAPE_GENERATORS: Record<ShapeName, (variant?: number) => string> =
   cosine: () => path((x) => 0.5 + 0.5 * Math.cos(2 * Math.PI * x)),
   dampedWave: (v = 4) => path((x) => 0.5 + 0.5 * Math.exp(-1.6 * x) * Math.sin(v * Math.PI * x)),
   fringes: (v = 12) => path((x) => Math.max(0, Math.cos(v * Math.PI * x) ** 2)),
-  tangent: () => branch([path((x) => 0.5 + 0.45 * Math.tan(Math.PI * (x - 0.25)) / Math.tan(Math.PI * 0.22), { clampMin: -0.15, clampMax: 1.15 }), path((x) => 0.5 + 0.45 * Math.tan(Math.PI * (x + 0.25 - 1)) / Math.tan(Math.PI * 0.22), { clampMin: -0.15, clampMax: 1.15 })]),
+  tangent: () => brokenPath((x) => 0.5 + 0.1 * Math.max(-5, Math.min(5, Math.tan(Math.PI * x)))),
+  cotangent: () => brokenPath((x) => 0.5 + 0.1 * Math.max(-5, Math.min(5, 1 / Math.tan(Math.PI * Math.max(1e-6, Math.min(1 - 1e-6, x)))))),
+  secant: () => brokenPath((x) => 0.5 + 0.15 * Math.max(-3, Math.min(3, 1 / Math.cos(2 * Math.PI * x)))),
+  cosecant: () => brokenPath((x) => 0.5 + 0.15 * Math.max(-3, Math.min(3, 1 / Math.sin(2 * Math.PI * x)))),
   sigmoid: (v = 10) => path((x) => 1 / (1 + Math.exp(-v * (x - 0.5)))),
   sigmoidDown: (v = 10) => path((x) => 1 - 1 / (1 + Math.exp(-v * (x - 0.5)))),
   hyperbola: () => branch([path((x) => x <= 0.015 ? 0.98 : Math.min(0.98, 0.04 / x), { clampMax: 0.98 }), path((x) => x <= 0.015 ? 0.02 : Math.max(0.02, 0.04 / (x - 0.001) * 0 + 1.04 - x), { clampMax: 0.98 })].slice(0, 1).concat([path((x) => x >= 0.985 ? 0.02 : Math.max(0.02, Math.min(0.98, 1.04 - x * 1.04)))])),
@@ -99,7 +125,10 @@ const PRIMARY_FNS: Record<ShapeName, (x: number, v?: number) => number> = {
   cosine: (x) => 0.5 + 0.5 * Math.cos(2 * Math.PI * x),
   dampedWave: (x, v = 4) => 0.5 + 0.5 * Math.exp(-1.6 * x) * Math.sin(v * Math.PI * x),
   fringes: (x, v = 12) => Math.max(0, Math.cos(v * Math.PI * x) ** 2),
-  tangent: (x) => 0.5 + (0.45 * Math.tan(Math.PI * (x - 0.25))) / Math.tan(Math.PI * 0.22),
+  tangent: (x) => 0.5 + 0.1 * Math.max(-5, Math.min(5, Math.tan(Math.PI * x))),
+  cotangent: (x) => 0.5 + 0.1 * Math.max(-5, Math.min(5, 1 / Math.tan(Math.PI * Math.max(1e-6, Math.min(1 - 1e-6, x))))),
+  secant: (x) => 0.5 + 0.15 * Math.max(-3, Math.min(3, 1 / Math.cos(2 * Math.PI * x))),
+  cosecant: (x) => 0.5 + 0.15 * Math.max(-3, Math.min(3, 1 / Math.sin(2 * Math.PI * x))),
   sigmoid: (x, v = 10) => 1 / (1 + Math.exp(-v * (x - 0.5))),
   sigmoidDown: (x, v = 10) => 1 - 1 / (1 + Math.exp(-v * (x - 0.5))),
   hyperbola: (x) => (x <= 0.015 ? 0.98 : Math.min(0.98, 0.04 / x)),

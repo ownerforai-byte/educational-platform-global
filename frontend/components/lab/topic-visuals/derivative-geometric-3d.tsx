@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
@@ -32,39 +33,73 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
   return s;
 }
 
+type GeomFunc = "quadratic" | "cubic" | "trig";
+
+const geomF = (fn: GeomFunc, x: number) =>
+  fn === "quadratic" ? 0.2 * x * x - 1 : fn === "cubic" ? 0.08 * x * x * x - 0.4 * x : Math.sin(x) * 2;
+
+const geomDF = (fn: GeomFunc, x: number) =>
+  fn === "quadratic" ? 0.4 * x : fn === "cubic" ? 0.24 * x * x - 0.4 : Math.cos(x) * 2;
+
+const GEOM_INFO: Record<GeomFunc, { formula: string; dfdx: string; meaning: string; tip: string }> = {
+  quadratic: {
+    formula: "f(x) = 0.2x^2 - 1",
+    dfdx: "f'(x) = 0.4x",
+    meaning: "Slope grows linearly with x — zero at the vertex, positive on the right arm",
+    tip: "Power rule: d/dx[cx^n] = cnx^(n-1); the constant -1 differentiates to 0",
+  },
+  cubic: {
+    formula: "f(x) = 0.08x^3 - 0.4x",
+    dfdx: "f'(x) = 0.24x^2 - 0.4",
+    meaning: "Slope is itself a parabola — negative between the turning points x = ±1.29, positive outside them",
+    tip: "A cubic's derivative is quadratic, so the slope has its own minimum at the inflection x = 0",
+  },
+  trig: {
+    formula: "f(x) = 2sin(x)",
+    dfdx: "f'(x) = 2cos(x)",
+    meaning: "Slope is maximal (= 2) at the midline crossings and zero at crests and troughs",
+    tip: "d/dx[sin x] = cos x — the derivative of a sinusoid is a sinusoid shifted by π/2",
+  },
+};
+
 export function DerivativeGeometric3D() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
-  const [funcName, setFuncName] = useState<"quadratic" | "cubic" | "trig">("quadratic");
+  const [funcName, setFuncName] = useState<GeomFunc>("quadratic");
   const [px, setPx] = useState(1.5);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
 
+  const info = GEOM_INFO[funcName];
+
+  const presets: ScenePreset[] = [
+    { name: "Vertex — zero slope", hint: "Parabola at x = 0: horizontal tangent", apply: () => { setFuncName("quadratic"); setPx(0); setRunId((r) => r + 1); } },
+    { name: "Cubic turning point", hint: "f'(x) = 0 at x ≈ 1.29", apply: () => { setFuncName("cubic"); setPx(1.3); setRunId((r) => r + 1); } },
+    { name: "Sine crest", hint: "2sin x at x = π/2: slope 0", apply: () => { setFuncName("trig"); setPx(Math.PI / 2); setRunId((r) => r + 1); } },
+    { name: "Sine midline climb", hint: "Steepest ascent — slope = 2", apply: () => { setFuncName("trig"); setPx(0); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setFuncName("quadratic");
+    setPx(1.5);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     const container = containerRef.current;
     if (!container || !isWebGL) return;
 
-    const f = (x: number) => {
-      switch (funcName) {
-        case "quadratic": return 0.2 * x * x - 1;
-        case "cubic": return 0.08 * x * x * x - 0.4 * x;
-        case "trig": return Math.sin(x) * 2;
-      }
-    };
-
-    const df = (x: number) => {
-      switch (funcName) {
-        case "quadratic": return 0.4 * x;
-        case "cubic": return 0.24 * x * x - 0.4;
-        case "trig": return Math.cos(x) * 2;
-      }
-    };
+    const f = (x: number) => geomF(funcName, x);
+    const df = (x: number) => geomDF(funcName, x);
 
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any;
     let frameId: number;
     let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -83,11 +118,16 @@ export function DerivativeGeometric3D() {
       controls.enableDamping = true;
       controls.minDistance = 5;
       controls.maxDistance = 25;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const pushLabel = (text: string, color: string, pos: THREE.Vector3, scale = 1.0) => {
+        const s = push(mkSprite(text, color, pos, scale));
+        labelSprites.push(s);
+        return s;
+      };
 
       const grid = new THREE.GridHelper(20, 20, 0x334155, 0x1e293b);
       grid.rotation.x = Math.PI / 2;
@@ -117,14 +157,12 @@ export function DerivativeGeometric3D() {
       );
       push(slopeTriangle);
 
-      const slopeLabel = mkSprite("", "#34d399", new THREE.Vector3(0, 0, 0));
-      push(slopeLabel);
+      const slopeLabel = pushLabel("", "#34d399", new THREE.Vector3(0, 0, 0));
 
-      const funcLabel = mkSprite(
-        funcName === "quadratic" ? "f(x)=0.2x^2-1" : funcName === "cubic" ? "f(x)=0.08x^3-0.4x" : "f(x)=2sin(x)",
+      const funcLabel = pushLabel(
+        GEOM_INFO[funcName].formula,
         "#60a5fa", new THREE.Vector3(-5, 3.5, 0)
       );
-      push(funcLabel);
 
       const updateVisualization = () => {
         const fx = f(px);
@@ -143,6 +181,7 @@ export function DerivativeGeometric3D() {
       };
 
       updateVisualization();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -172,12 +211,14 @@ export function DerivativeGeometric3D() {
 
     const cleanupPromise = cleanup();
     return () => { cleanupPromise.then((d) => d?.()); };
-  }, [funcName, px, isWebGL]);
+  }, [funcName, px, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Geometric Interpretation" description="Tangent line slope visualization — requires WebGL." />;
   }
 
+  const yAtP = geomF(funcName, px);
+  const slopeAtP = geomDF(funcName, px);
   const funcOptions: [string, string][] = [
     ["quadratic", "f(x) = 0.2x^2 - 1"],
     ["cubic", "f(x) = 0.08x^3 - 0.4x"],
@@ -193,6 +234,14 @@ export function DerivativeGeometric3D() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-emerald-500/50 bg-emerald-500/10 text-emerald-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Function">
           <div className="flex flex-wrap gap-2 mt-2">
             {funcOptions.map(([key, label]) => (
@@ -212,10 +261,20 @@ export function DerivativeGeometric3D() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <ReadoutGrid
+          items={[
+            { label: "Point P", value: `(${px.toFixed(2)}, ${yAtP.toFixed(2)})` },
+            { label: "Tangent slope f'(x)", value: slopeAtP.toFixed(3), highlight: true },
+            { label: "Angle of inclination", value: `${((Math.atan(slopeAtP) * 180) / Math.PI).toFixed(1)}°` },
+            { label: "Tangent line", value: `y = ${slopeAtP.toFixed(2)}(x − ${px.toFixed(1)}) + ${yAtP.toFixed(2)}` },
+            { label: "Derivative formula", value: info.dfdx },
+          ]}
+        />
+
         <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-400">Geometric Meaning</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">
-            <p><strong className="text-foreground">Orange line:</strong> Tangent line at P — slope = f(px).</p>
+            <p><strong className="text-foreground">Orange line:</strong> Tangent line at P — slope = f&apos;(px).</p>
             <p><strong className="text-foreground">Green triangle:</strong> Rise/run — slope = dy/dx over unit interval.</p>
             <p><strong className="text-foreground">Derivative:</strong> The instantaneous rate of change at any point.</p>
           </div>

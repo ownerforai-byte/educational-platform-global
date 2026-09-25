@@ -6,6 +6,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, PlaybackBar, ReadoutGrid, type ScenePreset, type SceneReadout } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
@@ -36,7 +37,48 @@ export function VanderWaalsVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [force, setForce] = useState<ForceType>("vdw");
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+  const [playing, setPlaying] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  const speedRef = useRef(1);
+  const playingRef = useRef(true);
   const [isWebGL] = useState(() => isWebGLAvailable());
+
+  const FORCE_INFO: Record<ForceType, { force: string; origin: string; strength: string; examples: string }> = {
+    vdw: { force: "London dispersion", origin: "Temporary induced dipoles", strength: "Weakest (~0.05–40 kJ/mol)", examples: "Ar, N₂, I₂, hydrocarbons" },
+    hbond: { force: "Hydrogen bond", origin: "H bonded to N, O, or F", strength: "Strong (~10–40 kJ/mol)", examples: "H₂O, NH₃, HF, DNA base pairs" },
+  };
+  const info = FORCE_INFO[force];
+
+  const readouts: SceneReadout[] = [
+    { label: "Force type", value: info.force },
+    { label: "Origin", value: info.origin },
+    { label: "Relative strength", value: info.strength, highlight: true },
+    { label: "Examples", value: info.examples },
+  ];
+
+  const DEFAULTS = { force: "vdw" as ForceType, playing: true, speed: 1 };
+  const presets: ScenePreset[] = [
+    {
+      name: "London dispersion",
+      hint: "Instantaneous dipole in one nonpolar molecule induces a dipole in its neighbour.",
+      apply: () => { setForce("vdw"); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Hydrogen bond",
+      hint: "O–H of one water molecule attracts the lone pair on O of another.",
+      apply: () => { setForce("hbond"); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setForce(DEFAULTS.force);
+    setPlaying(DEFAULTS.playing);
+    setSpeed(DEFAULTS.speed);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -46,6 +88,7 @@ export function VanderWaalsVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
     const animRef = { time: 0 };
 
     const init = async () => {
@@ -67,7 +110,7 @@ export function VanderWaalsVisual() {
       controls.autoRotateSpeed = 0.2;
       controls.minDistance = 3;
       controls.maxDistance = 15;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -75,6 +118,7 @@ export function VanderWaalsVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
       const clearDynamic = () => {
         while (meshes.length > 2) {
           const m = meshes.pop()!;
@@ -147,9 +191,9 @@ export function VanderWaalsVisual() {
         const arrowLine = push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(arrowPts), arrowMat));
 
         // Labels
-        push(mkSprite("Ar···Ar", "#60a5fa", new THREE.Vector3(-2, -1.0, 0), 0.8));
-        push(mkSprite("Ar···Ar", "#60a5fa", new THREE.Vector3(2, -1.0, 0), 0.8));
-        push(mkSprite("Weak attraction: London dispersion forces", "#f59e0b", new THREE.Vector3(0, -2.0, 0), 0.9));
+        addLabel(mkSprite("Ar···Ar", "#60a5fa", new THREE.Vector3(-2, -1.0, 0), 0.8));
+        addLabel(mkSprite("Ar···Ar", "#60a5fa", new THREE.Vector3(2, -1.0, 0), 0.8));
+        addLabel(mkSprite("Weak attraction: London dispersion forces", "#f59e0b", new THREE.Vector3(0, -2.0, 0), 0.9));
       };
 
       const buildHbond = () => {
@@ -195,23 +239,27 @@ export function VanderWaalsVisual() {
         bondLine.computeLineDistances();
 
         // Labels
-        push(mkSprite("H-O···H-O", "#22c55e", new THREE.Vector3(0, 1.5, 0), 0.8));
-        push(mkSprite("Hydrogen Bond: Dipoles attract", "#22c55e", new THREE.Vector3(0, -2.0, 0), 0.9));
+        addLabel(mkSprite("H-O···H-O", "#22c55e", new THREE.Vector3(0, 1.5, 0), 0.8));
+        addLabel(mkSprite("Hydrogen Bond: Dipoles attract", "#22c55e", new THREE.Vector3(0, -2.0, 0), 0.9));
       };
 
       const builders: Record<ForceType, () => void> = { vdw: buildVdW, hbond: buildHbond };
+      labelSprites.length = 0;
       builders[force]();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
-        animRef.time += 0.01;
+        if (playingRef.current) {
+          animRef.time += 0.01 * speedRef.current;
 
-        // Gentle floating animation
-        meshes.forEach((m, i) => {
-          if (m instanceof THREE.Group) {
-            m.position.y += Math.sin(animRef.time * 2 + i) * 0.002;
-          }
-        });
+          // Gentle floating animation
+          meshes.forEach((m, i) => {
+            if (m instanceof THREE.Group) {
+              m.position.y += Math.sin(animRef.time * 2 + i) * 0.002;
+            }
+          });
+        }
 
         controls.update();
         renderer.render(scene, camera);
@@ -247,7 +295,9 @@ export function VanderWaalsVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [force, isWebGL]);
+  }, [force, isWebGL, runId, showLabels]);
+
+  useEffect(() => { speedRef.current = speed; playingRef.current = playing; }, [speed, playing]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Vander Waals & H-bond" description="Intermolecular forces visualization — requires WebGL." />;
@@ -262,6 +312,13 @@ export function VanderWaalsVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-teal-500/50 bg-teal-500/10 text-teal-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
         <CollapsibleControls label="Intermolecular Force">
           <div className="flex gap-2 mt-1">
             {([
@@ -283,6 +340,8 @@ export function VanderWaalsVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+        <PlaybackBar playing={playing} onPlayToggle={() => setPlaying((p) => !p)} speed={speed} onSpeedChange={setSpeed} onReset={() => setRunId((r) => r + 1)} />
+        <ReadoutGrid items={readouts} />
         <div className="rounded-lg border border-teal-500/30 bg-teal-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-teal-400">Key Concepts</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">

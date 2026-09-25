@@ -185,6 +185,23 @@ export const COMPARE_CHEM_BIO_MATH: Record<string, GraphCompareNote> = {
       "Neither curve ever touches zero or goes negative — range is strictly (0, ∞).",
     ],
   },
+  "math-sine-reciprocals": {
+    series: [
+      { label: "sec x", meaning: "Reciprocal of cosine — cups centred on cos x's crests (x = 2πn) and troughs (π + 2πn), asymptotes where cos = 0." },
+      { label: "cosec x", meaning: "Reciprocal of sine — identical cups shifted right by π/2, asymptotes at nπ where sin = 0." },
+      { label: "cot x", meaning: "Reciprocal of tan — falling branches, asymptotes at nπ, zeros at π/2 + nπ: tan with zeros and poles swapped." },
+    ],
+    differences: [
+      "Cup curves (sec, cosec) never enter the band −1 < y < 1; branch curves (tan, cot) fill all of ℝ — the two families look nothing alike.",
+      "tan rises on every branch; cot falls on every branch — the S-curves are point reflections of each other about their zero crossings.",
+      "Asymptote sets differ: sec at π/2 + nπ, cosec and cot at nπ — the zeros of the function being reciprocated always kill its reciprocal.",
+    ],
+    identify: [
+      "U-cups above and below the axis → secant (centre cups at even multiples of π) or cosecant (centre cups at odd multiples of π/2).",
+      "Falling S-branches → cot. Rising S-branches → tan.",
+      "Cup minima at y = 1 sit exactly on the parent wave's crests — trace which parent (sin or cos) and the name follows.",
+    ],
+  },
   "math-inverse-trig": {
     series: [
       { label: "sin⁻¹x (range −π/2..π/2)", meaning: "Rises through the origin, defined only on [−1, 1] — returns the angle whose sine is x." },

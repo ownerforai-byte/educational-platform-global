@@ -8,6 +8,12 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  PlaybackBar,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -39,6 +45,55 @@ export function CircularMotionVisual() {
   const [radius, setRadius] = useState(3);
   const [speed, setSpeed] = useState(2);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [animating, setAnimating] = useState(true);
+  // `speed` above is the physical tangential speed v, so the animation-rate
+  // multiplier is named playSpeed to avoid a collision.
+  const [playSpeed, setPlaySpeed] = useState(1);
+  const playSpeedRef = useRef(1);
+  playSpeedRef.current = playSpeed;
+  const [showPath, setShowPath] = useState(true);
+  const [showVectors, setShowVectors] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  // Live readouts (assume unit mass m = 1 kg for the force)
+  const omega = speed / radius;
+  const period = (2 * Math.PI * radius) / speed;
+  const aC = (speed * speed) / radius;
+  const fC = aC; // m = 1 kg
+
+  const DEFAULTS = { radius: 3, speed: 2 };
+  const presets: ScenePreset[] = [
+    {
+      name: "Balanced orbit",
+      hint: "Defaults — moderate radius and speed.",
+      apply: () => { setRadius(3); setSpeed(2); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Tight & fast",
+      hint: "Small radius, high speed — huge centripetal acceleration (a_c = v²/r).",
+      apply: () => { setRadius(1); setSpeed(4.5); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Wide & slow",
+      hint: "Large radius, gentle speed — a lazy, low-acceleration loop.",
+      apply: () => { setRadius(5); setSpeed(1); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Fast spin (high ω)",
+      hint: "Small radius at high speed — large angular velocity, short period.",
+      apply: () => { setRadius(1.5); setSpeed(5); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setRadius(DEFAULTS.radius);
+    setSpeed(DEFAULTS.speed);
+    setPlaySpeed(1);
+    setShowPath(true);
+    setShowVectors(true);
+    setAnimating(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -48,6 +103,8 @@ export function CircularMotionVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
+    const vectorObjs: THREE.Object3D[] = [];
     let angle = 0;
 
     const init = async () => {
@@ -69,7 +126,12 @@ export function CircularMotionVisual() {
       controls.autoRotate = false;
       controls.minDistance = 5;
       controls.maxDistance = 25;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -77,6 +139,8 @@ export function CircularMotionVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
+      const addVector = <T extends THREE.Object3D>(o: T): T => { push(o); vectorObjs.push(o); o.visible = showVectors; return o; };
 
       // Circle path
       const circlePts: THREE.Vector3[] = [];
@@ -84,42 +148,43 @@ export function CircularMotionVisual() {
         const a = (i / 100) * 2 * Math.PI;
         circlePts.push(new THREE.Vector3(radius * Math.cos(a), 0, radius * Math.sin(a)));
       }
-      push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(circlePts), new THREE.LineBasicMaterial({ color: 0x334155, transparent: true, opacity: 0.5 })));
+      const pathLine = push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(circlePts), new THREE.LineBasicMaterial({ color: 0x334155, transparent: true, opacity: 0.5 }))) as THREE.Line;
+      pathLine.visible = showPath;
 
       // Center point
       const center = push(new THREE.Mesh(
         new THREE.SphereGeometry(0.15, 12, 12),
         new THREE.MeshBasicMaterial({ color: 0x475569 }),
       ));
-      push(mkSprite("Center (O)", "#475569", new THREE.Vector3(0, 0.8, 0), 0.6));
+      addLabel(mkSprite("Center (O)", "#475569", new THREE.Vector3(0, 0.8, 0), 0.6));
 
       // Radius line with label
       const radiusLabelPos = new THREE.Vector3(radius + 2, 1, 0);
       const radiusTarget = new THREE.Vector3(radius, 0, 0);
       const radiusDir = radiusTarget.clone().sub(radiusLabelPos).normalize();
-      push(new LiveLeaderLine(radiusDir, radiusLabelPos, radiusLabelPos.distanceTo(radiusTarget) * 0.9, 0x94a3b8, 0.15, 0.1));
-      push(mkSprite(`r = ${radius} m`, "#94a3b8", radiusLabelPos.clone().sub(radiusDir.multiplyScalar(0.5)), 0.75));
+      addVector(new LiveLeaderLine(radiusDir, radiusLabelPos, radiusLabelPos.distanceTo(radiusTarget) * 0.9, 0x94a3b8, 0.15, 0.1));
+      addLabel(mkSprite(`r = ${radius} m`, "#94a3b8", radiusLabelPos.clone().sub(radiusDir.multiplyScalar(0.5)), 0.75));
 
       // Tangential velocity arrow (always tangent to circle)
       const velLabelPos = new THREE.Vector3(radius, 0, radius + 3);
       const velTarget = new THREE.Vector3(radius, 0, radius);
       const velDir = velTarget.clone().sub(velLabelPos).normalize();
-      push(new LiveLeaderLine(velDir, velLabelPos, velLabelPos.distanceTo(velTarget) * 0.9, 0x22d3ee, 0.2, 0.1));
-      push(mkSprite("v (tangential velocity)", "#22d3ee", velLabelPos.clone().sub(velDir.multiplyScalar(0.5)), 0.7));
+      addVector(new LiveLeaderLine(velDir, velLabelPos, velLabelPos.distanceTo(velTarget) * 0.9, 0x22d3ee, 0.2, 0.1));
+      addLabel(mkSprite("v (tangential velocity)", "#22d3ee", velLabelPos.clone().sub(velDir.multiplyScalar(0.5)), 0.7));
 
       // Centripetal force arrow (toward center)
       const cfLabelPos = new THREE.Vector3(radius + 3, 1.5, 0);
       const cfTarget = new THREE.Vector3(radius * 0.5, 0, 0);
       const cfDir = cfTarget.clone().sub(cfLabelPos).normalize();
-      push(new LiveLeaderLine(cfDir, cfLabelPos, cfLabelPos.distanceTo(cfTarget) * 0.9, 0xef4444, 0.2, 0.1));
-      push(mkSprite("F_c = mv²/r (centripetal force)", "#ef4444", cfLabelPos.clone().sub(cfDir.multiplyScalar(0.5)), 0.7));
+      addVector(new LiveLeaderLine(cfDir, cfLabelPos, cfLabelPos.distanceTo(cfTarget) * 0.9, 0xef4444, 0.2, 0.1));
+      addLabel(mkSprite("F_c = mv²/r (centripetal force)", "#ef4444", cfLabelPos.clone().sub(cfDir.multiplyScalar(0.5)), 0.7));
 
       // Angular velocity label
       const angLabelPos = new THREE.Vector3(-radius - 2, 1.5, 0);
       const angTarget = new THREE.Vector3(0, 0, 0);
       const angDir = angTarget.clone().sub(angLabelPos).normalize();
-      push(new LiveLeaderLine(angDir, angLabelPos, angLabelPos.distanceTo(angTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
-      push(mkSprite("ω (angular velocity)", "#a78bfa", angLabelPos.clone().sub(angDir.multiplyScalar(0.5)), 0.75));
+      addVector(new LiveLeaderLine(angDir, angLabelPos, angLabelPos.distanceTo(angTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
+      addLabel(mkSprite("ω (angular velocity)", "#a78bfa", angLabelPos.clone().sub(angDir.multiplyScalar(0.5)), 0.75));
 
       // Orbiting ball
       const ball = push(new THREE.Mesh(
@@ -133,7 +198,7 @@ export function CircularMotionVisual() {
         arcPts.push(new THREE.Vector3(1.2 * Math.cos(a), 0, 1.2 * Math.sin(a)));
       }
       const arcLine = push(new THREE.Line(new THREE.BufferGeometry().setFromPoints(arcPts), new THREE.LineBasicMaterial({ color: 0xfbbf24 })));
-      push(mkSprite("θ", "#fbbf24", new THREE.Vector3(1.8, 0.3, 0.5), 0.7));
+      addLabel(mkSprite("θ", "#fbbf24", new THREE.Vector3(1.8, 0.3, 0.5), 0.7));
 
       const update = () => {
         while (meshes.length > 30) {
@@ -150,7 +215,9 @@ export function CircularMotionVisual() {
       const animate = () => {
         frameId = requestAnimationFrame(animate);
         controls.update();
-        angle += speed * 0.02;
+        if (animating) {
+          angle += speed * 0.02 * playSpeedRef.current;
+        }
         ball.position.set(radius * Math.cos(angle), 0, radius * Math.sin(angle));
         renderer.render(scene, camera);
       };
@@ -186,7 +253,7 @@ export function CircularMotionVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [radius, speed, isWebGL]);
+  }, [radius, speed, isWebGL, animating, runId, showPath, showVectors]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Circular Motion" description="Centripetal force and velocity arrows in 3D." />;
@@ -216,9 +283,44 @@ export function CircularMotionVisual() {
           </div>
         </CollapsibleControls>
 
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <PlaybackBar
+            playing={animating}
+            onPlayToggle={() => setAnimating(!animating)}
+            speed={playSpeed}
+            onSpeedChange={setPlaySpeed}
+            onReset={resetAll}
+          />
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowPath((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showPath ? "border-primary/50 bg-primary/10 text-primary" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Path
+            </button>
+            <button
+              onClick={() => setShowVectors((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showVectors ? "border-red-500/50 bg-red-500/10 text-red-400" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Vectors
+            </button>
+          </div>
+        </div>
+
+        <ScenePresets presets={presets} />
+
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Angular velocity ω", value: omega.toFixed(2), unit: "rad/s" },
+            { label: "Period T", value: period.toFixed(2), unit: "s" },
+            { label: "Centripetal accel a_c", value: aC.toFixed(2), unit: "m/s²", highlight: aC > 10 },
+            { label: "Centripetal force F_c", value: fC.toFixed(2), unit: "N (m=1kg)" },
+          ]}
+        />
 
         <div className="rounded-lg border border-red-500/30 bg-red-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-red-400">Key Concepts</p>

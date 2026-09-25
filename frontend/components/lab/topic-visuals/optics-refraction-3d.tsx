@@ -8,6 +8,11 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, scale = 0.3) {
@@ -34,6 +39,55 @@ export default function OpticsRefraction3d() {
   const [n2, setN2] = useState(1.5);
   const [incAngle, setIncAngle] = useState(45);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [showNormals, setShowNormals] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  // Live readouts from current params
+  const theta1 = (incAngle * Math.PI) / 180;
+  const sinTheta2 = (n1 / n2) * Math.sin(theta1);
+  const theta2Deg = sinTheta2 <= 1 ? (Math.asin(sinTheta2) * 180) / Math.PI : NaN;
+  const relIndex = n2 / n1;
+  const brewsterDeg = (Math.atan(n2 / n1) * 180) / Math.PI;
+  const deviationDeg = Number.isFinite(theta2Deg) ? incAngle - theta2Deg : NaN;
+
+  const DEFAULTS = { n1: 1.0, n2: 1.5, incAngle: 45 };
+  const presets: ScenePreset[] = [
+    {
+      name: "Air → Glass",
+      hint: "n₁ = 1.00, n₂ = 1.50 — ray bends toward the normal.",
+      apply: () => { setN1(1.0); setN2(1.5); setIncAngle(45); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Air → Water",
+      hint: "n₁ = 1.00, n₂ = 1.33 — the classic pool-bottom illusion.",
+      apply: () => { setN1(1.0); setN2(1.33); setIncAngle(40); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Glass → Air",
+      hint: "Dense to rare — ray bends away from the normal.",
+      apply: () => { setN1(1.5); setN2(1.0); setIncAngle(30); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Air → Diamond",
+      hint: "n₂ = 2.42 — extreme bending gives diamond its fire.",
+      apply: () => { setN1(1.0); setN2(2.42); setIncAngle(45); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Normal incidence",
+      hint: "θ₁ = 0° — light passes straight through, no bending.",
+      apply: () => { setN1(1.0); setN2(1.5); setIncAngle(0); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setN1(DEFAULTS.n1);
+    setN2(DEFAULTS.n2);
+    setIncAngle(DEFAULTS.incAngle);
+    setShowLabels(true);
+    setShowNormals(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     if (!isWebGL || !containerRef.current) return;
@@ -49,11 +103,24 @@ export default function OpticsRefraction3d() {
     renderer.setSize(w, h);
     container.appendChild(renderer.domElement);
 
+    const labelSprites: THREE.Sprite[] = [];
+    const addLabel = (s: THREE.Sprite): THREE.Sprite => {
+      scene.add(s);
+      s.visible = showLabels;
+      labelSprites.push(s);
+      return s;
+    };
+
     let controls: any;
     import("three/addons/controls/OrbitControls.js").then((mod) => {
       controls = new mod.OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
       controls.dampingFactor = 0.08;
     });
 
@@ -109,14 +176,13 @@ export default function OpticsRefraction3d() {
         ]),
         new THREE.LineBasicMaterial({ color: 0xa5b4fc, linewidth: 2 })
       );
+      normalLine.visible = showNormals;
       scene.add(normalLine);
 
-      const normalLabel = mkSprite("Normal", "#a5b4fc");
-      scene.add(normalLabel);
+      const normalLabel = addLabel(mkSprite("Normal", "#a5b4fc"));
       normalLabel.position.set(0.3, 2, 0);
 
-      const interfaceLabel = mkSprite("Interface", "#22d3ee");
-      scene.add(interfaceLabel);
+      const interfaceLabel = addLabel(mkSprite("Interface", "#22d3ee"));
       interfaceLabel.position.set(3.5, 0.3, 0);
 
       // Medium boundary lines
@@ -127,20 +193,16 @@ export default function OpticsRefraction3d() {
         new THREE.LineBasicMaterial({ color: 0x0ea5e9, transparent: true, opacity: 0.4 })
       );
       scene.add(boundLine1);
-      const boundLabel1 = mkSprite("n₁ medium", "#0ea5e9");
-      scene.add(boundLabel1);
+      const boundLabel1 = addLabel(mkSprite("n₁ medium", "#0ea5e9"));
       boundLabel1.position.set(-3.5, 0.6, 0);
-      const boundLabel2 = mkSprite("n₂ medium", "#06b6d4");
-      scene.add(boundLabel2);
+      const boundLabel2 = addLabel(mkSprite("n₂ medium", "#06b6d4"));
       boundLabel2.position.set(-3.5, -0.6, 0);
 
-      scene.add(mkSprite("n₁=" + n1, "#f59e0b"));
-      (scene.children[scene.children.length - 1] as THREE.Sprite).position.set(-2, 1.5, 0);
-      const sp2 = mkSprite("n₂=" + n2, "#22d3ee");
-      scene.add(sp2);
+      const spN1 = addLabel(mkSprite("n₁=" + n1, "#f59e0b"));
+      spN1.position.set(-2, 1.5, 0);
+      const sp2 = addLabel(mkSprite("n₂=" + n2, "#22d3ee"));
       sp2.position.set(2, 1.5, 0);
-      const spAngle = mkSprite(incAngle + "°", "#fbbf24");
-      scene.add(spAngle);
+      const spAngle = addLabel(mkSprite(incAngle + "°", "#fbbf24"));
       spAngle.position.set(-0.5, -0.5, 0);
 
       return { incRay, refrRay, normalLine, boundLine1, normalLabel, interfaceLabel, boundLabel1, boundLabel2 };
@@ -181,7 +243,7 @@ export default function OpticsRefraction3d() {
       renderer.dispose();
       controls?.dispose();
     };
-  }, [n1, n2, incAngle, isWebGL]);
+  }, [n1, n2, incAngle, isWebGL, runId, showLabels, showNormals]);
 
   if (!isWebGL) return <WebGLFallback title="Refraction" />;
 
@@ -199,6 +261,41 @@ export default function OpticsRefraction3d() {
         <div ref={containerRef} className="h-[clamp(320px,60vh,640px)] w-full rounded-md overflow-hidden mb-4">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-cyan-500/50 bg-cyan-500/10 text-cyan-300" : "border-cyan-900 bg-cyan-900/40 text-cyan-400/60"}`}
+            >
+              Labels
+            </button>
+            <button
+              onClick={() => setShowNormals((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showNormals ? "border-indigo-400/50 bg-indigo-400/10 text-indigo-300" : "border-cyan-900 bg-cyan-900/40 text-cyan-400/60"}`}
+            >
+              Normal
+            </button>
+            <button
+              onClick={resetAll}
+              className="px-2.5 py-1 rounded-md text-xs font-medium border border-cyan-900 bg-cyan-900/40 text-cyan-300 hover:bg-cyan-800/50 transition-colors"
+              title="Reset to defaults"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+        <ReadoutGrid
+          className="mb-4"
+          items={[
+            { label: "Angle of incidence θ₁", value: incAngle, unit: "°" },
+            { label: "Angle of refraction θ₂", value: Number.isFinite(theta2Deg) ? theta2Deg.toFixed(1) : "TIR", unit: Number.isFinite(theta2Deg) ? "°" : undefined, highlight: !Number.isFinite(theta2Deg) },
+            { label: "Relative index n₂/n₁", value: relIndex.toFixed(2) },
+            { label: "Brewster angle θB", value: brewsterDeg.toFixed(1), unit: "°" },
+            { label: "Deviation (θ₁ − θ₂)", value: Number.isFinite(deviationDeg) ? deviationDeg.toFixed(1) : "—", unit: Number.isFinite(deviationDeg) ? "°" : undefined },
+            { label: "Bends toward normal", value: n2 > n1 ? "Yes (n₂ > n₁)" : n2 < n1 ? "No (n₂ < n₁)" : "None (n₁ = n₂)" },
+          ]}
+        />
         <CollapsibleControls label="Refractive Indices & Angle">
           <div className="space-y-4">
             <div className="space-y-2">

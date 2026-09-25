@@ -9,6 +9,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -42,6 +43,44 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 type VectorMode = "addition" | "scalar" | "collinear" | "coplanar" | "linear-combo";
 
+const CROSS_INFO: Record<VectorMode, { concept: string; formula: string; interpretation: string; fact: string; tip: string }> = {
+  addition: {
+    concept: "Cross product distributes over addition",
+    formula: "(a + b)×c = a×c + b×c",
+    interpretation: "Perpendicular-area contributions add vectorially.",
+    fact: "a×b = −(b×a): swapping the order reverses the arrow (anti-commutativity).",
+    tip: "Always apply the right-hand rule to the ordered pair — the cross product is not commutative.",
+  },
+  scalar: {
+    concept: "Scalars pull out of the cross product",
+    formula: "(ka)×b = k(a×b) = a×(kb)",
+    interpretation: "Stretching a by k scales the spanning area by |k|.",
+    fact: "|a×b| = |a||b|sinθ is exactly the parallelogram area spanned by a and b.",
+    tip: "If k < 0 the direction flips to the opposite side of the plane.",
+  },
+  collinear: {
+    concept: "Parallel (collinear) test",
+    formula: "a×b = 0 ⇔ a ∥ b (θ = 0° or 180°)",
+    interpretation: "sinθ = 0, so the spanned area collapses to zero.",
+    fact: "a×b = 0 also holds trivially if either vector is the zero vector.",
+    tip: "Use the cross product to test parallelism and the dot product to test perpendicularity.",
+  },
+  coplanar: {
+    concept: "The plane normal from a×b",
+    formula: "n = a×b ⊥ a and n ⊥ b; c·n = 0 ⇔ a, b, c coplanar",
+    interpretation: "If c has no component along the normal, it lies in the plane of a and b.",
+    fact: "c·(a×b) is the scalar triple product [a b c] — a 3×3 determinant.",
+    tip: "The unit normal n̂ = (a×b)/|a×b| gives the plane's orientation.",
+  },
+  "linear-combo": {
+    concept: "Cross product kills parallel parts",
+    formula: "(c₁a + c₂b)×a = c₂(b×a)",
+    interpretation: "Only the component outside a's direction survives the cross with a.",
+    fact: "This is why a×b of two points' difference vectors gives a line or plane direction.",
+    tip: "Expand with distributivity and remember a×a = 0.",
+  },
+};
+
 export function VectorCross3DVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
@@ -51,6 +90,39 @@ export function VectorCross3DVisual() {
   const [c, setC] = useState({ x: 0, y: 2, z: 2 });
   const [k, setK] = useState(2);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const info = CROSS_INFO[mode];
+  const crossAB = {
+    x: a.y * b.z - a.z * b.y,
+    y: a.z * b.x - a.x * b.z,
+    z: a.x * b.y - a.y * b.x,
+  };
+  const magA = Math.hypot(a.x, a.y, a.z);
+  const magB = Math.hypot(b.x, b.y, b.z);
+  const magCross = Math.hypot(crossAB.x, crossAB.y, crossAB.z);
+  const sinTheta = magA > 0 && magB > 0 ? Math.min(1, magCross / (magA * magB)) : NaN;
+  const unitNormal = magCross > 0
+    ? `(${(crossAB.x / magCross).toFixed(2)}, ${(crossAB.y / magCross).toFixed(2)}, ${(crossAB.z / magCross).toFixed(2)})`
+    : "—";
+
+  const presets: ScenePreset[] = [
+    { name: "i × j = k", hint: "Unit basis vectors: |a×b| = 1, right-handed frame", apply: () => { setMode("addition"); setA({ x: 1, y: 0, z: 0 }); setB({ x: 0, y: 1, z: 0 }); setRunId((r) => r + 1); } },
+    { name: "Max area (θ = 90°)", hint: "Perpendicular arms: |a×b| = |a||b| = 9", apply: () => { setMode("addition"); setA({ x: 3, y: 0, z: 0 }); setB({ x: 0, y: 3, z: 0 }); setRunId((r) => r + 1); } },
+    { name: "Parallel (a×b = 0)", hint: "A = 2B: the spanned area collapses to zero", apply: () => { setMode("collinear"); setA({ x: 4, y: 2, z: 0 }); setB({ x: 2, y: 1, z: 0 }); setRunId((r) => r + 1); } },
+    { name: "Coplanar triple", hint: "n = a×b; c·n = 0 confirms coplanarity", apply: () => { setMode("coplanar"); setC({ x: 1, y: 2, z: 0 }); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setMode("addition");
+    setA({ x: 3, y: 1, z: 0 });
+    setB({ x: 1, y: 3, z: 0 });
+    setC({ x: 0, y: 2, z: 2 });
+    setK(2);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -63,6 +135,7 @@ export function VectorCross3DVisual() {
     let animTime = 0;
     let animPhase = 0;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -83,7 +156,7 @@ export function VectorCross3DVisual() {
       controls.autoRotateSpeed = 0.3;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.6));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -112,7 +185,8 @@ export function VectorCross3DVisual() {
         const len = to.clone().sub(from).length();
         push(new LiveLeaderLine(dir, from, len, color, 0.2, 0.12));
         const mid = from.clone().add(to).multiplyScalar(0.5);
-        push(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, mid.clone().add(new THREE.Vector3(0, 0.6, 0)), 0.8));
+        const s = push(mkSprite(label, `#${color.toString(16).padStart(6, "0")}`, mid.clone().add(new THREE.Vector3(0, 0.6, 0)), 0.8));
+        labelSprites.push(s);
       };
 
       const update = () => {
@@ -140,7 +214,7 @@ export function VectorCross3DVisual() {
           (meshes[meshes.length - 1] as any).computeLineDistances();
           drawArrow(new THREE.Vector3(0, 0, 0), sum, 0xf97316, "A + B");
           // Triangle method: B from tip of A
-          push(mkSprite("Triangle: A then B â†’ R", "#7dd3fc", new THREE.Vector3(-4, 4, 0), 0.8));
+          push(mkSprite("Triangle: A then B → R", "#7dd3fc", new THREE.Vector3(-4, 4, 0), 0.8));
         } else if (mode === "scalar") {
           // kA
           const scaled = A.clone().multiplyScalar(k);
@@ -153,7 +227,7 @@ export function VectorCross3DVisual() {
           drawArrow(new THREE.Vector3(0, 0, 0), A, 0xef4444, "A");
           drawArrow(new THREE.Vector3(0, 0, 0), bScaled, 0x22c55e, "2B");
           drawArrow(new THREE.Vector3(0, 0, 0), B, 0x3b82f6, "B");
-          push(mkSprite("Collinear: A = 2B â†’ same line through origin", "#a78bfa", new THREE.Vector3(-4, 4, 0), 0.85));
+          push(mkSprite("Collinear: A = 2B → same line through origin", "#a78bfa", new THREE.Vector3(-4, 4, 0), 0.85));
         } else if (mode === "coplanar") {
           // Three vectors coplanar if scalar triple product = 0
           drawArrow(new THREE.Vector3(0, 0, 0), A, 0xef4444, "A");
@@ -175,12 +249,13 @@ export function VectorCross3DVisual() {
           const result = A.clone().multiplyScalar(c1).add(B.clone().multiplyScalar(c2));
           drawArrow(new THREE.Vector3(0, 0, 0), A, 0xef4444, "A");
           drawArrow(new THREE.Vector3(0, 0, 0), B, 0x22c55e, "B");
-          drawArrow(new THREE.Vector3(0, 0, 0), result, 0xf97316, `câ‚A+câ‚‚B`);
+          drawArrow(new THREE.Vector3(0, 0, 0), result, 0xf97316, `c₁A+c₂B`);
           push(mkSprite(`Linear combo: 1.5A + 0.8B`, "#fb923c", new THREE.Vector3(-4, 4, 0), 0.85));
         }
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -221,7 +296,7 @@ export function VectorCross3DVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [mode, a, b, c, k, isWebGL]);
+  }, [mode, a, b, c, k, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Cross Product 3D" description="Interactive 3D vector visualization — requires WebGL." />;
@@ -236,11 +311,19 @@ export function VectorCross3DVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-blue-500/50 bg-blue-500/10 text-blue-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Vector Mode">
           <Tabs value={mode} onValueChange={(v) => setMode(v as VectorMode)} className="mt-1">
             <TabsList className="grid w-full grid-cols-5">
               <TabsTrigger value="addition" className="text-xs">Addition</TabsTrigger>
-              <TabsTrigger value="scalar" className="text-xs">Scalar Ã— v</TabsTrigger>
+              <TabsTrigger value="scalar" className="text-xs">Scalar × v</TabsTrigger>
               <TabsTrigger value="collinear" className="text-xs">Collinear</TabsTrigger>
               <TabsTrigger value="coplanar" className="text-xs">Coplanar</TabsTrigger>
               <TabsTrigger value="linear-combo" className="text-xs">Linear Combo</TabsTrigger>
@@ -285,13 +368,25 @@ export function VectorCross3DVisual() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <ReadoutGrid
+          items={[
+            { label: "a × b", value: `(${crossAB.x.toFixed(2)}, ${crossAB.y.toFixed(2)}, ${crossAB.z.toFixed(2)})`, highlight: true },
+            { label: "|a × b| (parallelogram area)", value: magCross.toFixed(2) },
+            { label: "Triangle area = ½|a×b|", value: (magCross / 2).toFixed(2) },
+            { label: "sin θ", value: Number.isNaN(sinTheta) ? "—" : sinTheta.toFixed(2) },
+            { label: "Unit normal n̂ = (a×b)/|a×b|", value: unitNormal },
+            { label: info.concept, value: info.formula },
+          ]}
+        />
+
         <div className="rounded-lg border border-blue-500/30 bg-blue-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-blue-400">Key Definitions</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">
-            <p><strong className="text-foreground">Collinear vectors:</strong> A and B are collinear if A = kB for some scalar k.</p>
-            <p><strong className="text-foreground">Coplanar vectors:</strong> Three vectors are coplanar if their scalar triple product A·(BÃ—C) = 0.</p>
-            <p><strong className="text-foreground">Linear combination:</strong> v = câ‚a + câ‚‚b + câ‚ƒc for scalars câ‚, câ‚‚, câ‚ƒ.</p>
-            <p><strong className="text-foreground">Linearly independent:</strong> No non-trivial combination gives the zero vector.</p>
+            <p><strong className="text-foreground">Cross product:</strong> |a×b| = |a||b|sinθ, directed along the normal to the plane of a and b by the right-hand rule; a×b = −b×a.</p>
+            <p><strong className="text-foreground">Collinear vectors:</strong> A and B are collinear if A = kB for some scalar k; then A×B = 0.</p>
+            <p><strong className="text-foreground">Coplanar vectors:</strong> Three vectors are coplanar if their scalar triple product A·(B×C) = 0.</p>
+            <p><strong className="text-foreground">Linear combination:</strong> v = c₁a + c₂b + c₃c for scalars c₁, c₂, c₃.</p>
+            <p><strong className="text-foreground">{info.concept}:</strong> {info.interpretation} {info.tip}</p>
           </div>
         </div>
       </CardContent>

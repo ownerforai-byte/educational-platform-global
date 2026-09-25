@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, PlaybackBar, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0): THREE.Sprite {
@@ -37,7 +38,34 @@ export function LimitsConcept3D() {
   const vizTargetRef = useRef<VizTarget>({});
   const [targetX, setTargetX] = useState(3);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+  const [playing, setPlaying] = useState(true);
+  const [speed, setSpeed] = useState(1);
+  const playingRef = useRef(true);
+  const speedRef = useRef(1);
+  useEffect(() => { speedRef.current = speed; playingRef.current = playing; }, [speed, playing]);
 
+  const presets: ScenePreset[] = [
+    { name: "a = 0", hint: "Limit of 2·sin x at the origin — L = 0", apply: () => { setTargetX(0); setRunId((r) => r + 1); } },
+    { name: "a = π/2", hint: "Peak of the curve — L = 2", apply: () => { setTargetX(Math.PI / 2); setRunId((r) => r + 1); } },
+    { name: "a = π", hint: "Back to zero crossing — L = 0", apply: () => { setTargetX(Math.PI); setRunId((r) => r + 1); } },
+    { name: "a = 3", hint: "Default target", apply: () => { setTargetX(3); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setTargetX(3);
+    setShowLabels(true);
+    setPlaying(true);
+    setSpeed(1);
+    setRunId((r) => r + 1);
+  };
+
+  const fx = (t: number) => 2 * Math.sin(t);
+  const L = fx(targetX);
+  const lhl = fx(targetX - 1e-4);
+  const rhl = fx(targetX + 1e-4);
+  const epsErr = Math.abs(fx(targetX + 1e-3) - L);
 
   useEffect(() => {
     const container = containerRef.current;
@@ -48,6 +76,7 @@ export function LimitsConcept3D() {
     let frameId: number;
     let animTime = 0;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
     let trailLine: THREE.Line;
 
     const init = async () => {
@@ -67,7 +96,7 @@ export function LimitsConcept3D() {
       controls.enableDamping = true;
       controls.minDistance = 5;
       controls.maxDistance = 25;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
 
@@ -92,8 +121,8 @@ export function LimitsConcept3D() {
       targetLine.computeLineDistances();
       push(targetLine);
 
-      push(mkSprite("lim f(x) = L", "#60a5fa", new THREE.Vector3(0, 4.5, 0)));
-      push(mkSprite(`L = ${Math.sin(targetX).toFixed(2)}`, "#34d399", new THREE.Vector3(targetX + 1.5, Math.sin(targetX) * 2, 0)));
+      push(mkSprite("lim(x→a) f(x) = L", "#60a5fa", new THREE.Vector3(0, 4.5, 0)));
+      push(mkSprite(`L = 2·sin(${targetX.toFixed(2)}) = ${L.toFixed(2)}`, "#34d399", new THREE.Vector3(targetX + 1.5, Math.sin(targetX) * 2, 0)));
 
       const dotGeom = new THREE.SphereGeometry(0.2, 32, 32);
       const dotMat = new THREE.MeshStandardMaterial({ color: 0xf59e0b, emissive: 0xf59e0b, emissiveIntensity: 0.5 });
@@ -104,9 +133,12 @@ export function LimitsConcept3D() {
       const trailMat = new THREE.LineBasicMaterial({ color: 0xf59e0b, transparent: true, opacity: 0.6 });
       trailLine = push(new THREE.Line(trailGeom, trailMat));
 
+      meshes.forEach((m) => { if (m instanceof THREE.Sprite) labelSprites.push(m); });
+      labelSprites.forEach((s) => (s.visible = showLabels));
+
       const animate = () => {
         frameId = requestAnimationFrame(animate);
-        animTime += 0.02;
+        if (playingRef.current) animTime += 0.02 * speedRef.current;
         const xProgress = 1 - Math.exp(-animTime * 0.3);
         approachDot.position.x = -6 + 12 * xProgress;
         approachDot.position.y = Math.sin(approachDot.position.x) * 2;
@@ -140,7 +172,7 @@ export function LimitsConcept3D() {
 
     const cleanupPromise = cleanup();
     return () => { cleanupPromise.then((d) => d?.()); };
-  }, [targetX, isWebGL]);
+  }, [targetX, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Concept of Limit" description="Animated point approaching a curve — requires WebGL." />;
@@ -155,6 +187,14 @@ export function LimitsConcept3D() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-amber-500/50 bg-amber-500/10 text-amber-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Target x-value">
           <div className="w-20 mt-1">
             <Label className="text-xs text-muted-foreground">a:</Label>
@@ -165,6 +205,19 @@ export function LimitsConcept3D() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <PlaybackBar playing={playing} onPlayToggle={() => setPlaying((p) => !p)} speed={speed} onSpeedChange={setSpeed} onReset={resetAll} />
+
+        <ReadoutGrid
+          items={[
+            { label: "Curve", value: "f(x) = 2·sin x" },
+            { label: `L = lim(x→${targetX.toFixed(2)}) f(x)`, value: L.toFixed(4), highlight: true },
+            { label: "LHL (x→a⁻)", value: lhl.toFixed(4) },
+            { label: "RHL (x→a⁺)", value: rhl.toFixed(4) },
+            { label: "f(a) — limit equals value", value: L.toFixed(4) },
+            { label: "|f(a+0.001) − L|", value: epsErr.toExponential(2) },
+          ]}
+        />
 
         <div className="rounded-lg border border-amber-500/30 bg-amber-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-amber-400">The Limit Concept</p>

@@ -8,6 +8,11 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 import { LiveLeaderLine } from "@/components/lab/leader-lines-3d";
 
@@ -38,6 +43,37 @@ export function BiotSavartVisual() {
   const vizTargetRef = useRef<VizTarget>({});
   const [current, setCurrent] = useState(5);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [showField, setShowField] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  // Live readouts from current params: B = μ₀I/(2πr), μ₀/(2π) = 2×10⁻⁷ T·m/A
+  const bAt = (r: number) => ((2e-7 * current) / r) * 1e6; // µT
+  const DEFAULTS = { current: 5 };
+  const presets: ScenePreset[] = [
+    {
+      name: "Gentle (1 A)",
+      hint: "Small current — weak, faint field circles.",
+      apply: () => { setCurrent(1); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Standard (5 A)",
+      hint: "Typical lab-scale current.",
+      apply: () => { setCurrent(5); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Strong (10 A)",
+      hint: "Large current — field strength doubles vs 5 A at the same r.",
+      apply: () => { setCurrent(10); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setCurrent(DEFAULTS.current);
+    setShowLabels(true);
+    setShowField(true);
+    setRunId((r) => r + 1);
+  };
 
 
   useEffect(() => {
@@ -47,6 +83,8 @@ export function BiotSavartVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
+    const fieldLines: THREE.Object3D[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -67,7 +105,12 @@ export function BiotSavartVisual() {
       controls.autoRotate = false;
       controls.minDistance = 3;
       controls.maxDistance = 20;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.7));
       const dir = new THREE.DirectionalLight(0xffffff, 1.0);
@@ -75,6 +118,7 @@ export function BiotSavartVisual() {
       scene.add(dir);
 
       const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const addLabel = (s: THREE.Sprite): THREE.Sprite => { push(s); labelSprites.push(s); return s; };
 
       // Straight wire (along z-axis)
       const wire = push(new THREE.Mesh(
@@ -82,11 +126,11 @@ export function BiotSavartVisual() {
         new THREE.MeshBasicMaterial({ color: 0x94a3b8 }),
       )) as THREE.Mesh;
       wire.position.set(0, 0, 0);
-      push(mkSprite("Wire (current I)", "#94a3b8", new THREE.Vector3(0, 4.5, 0), 0.7));
+      addLabel(mkSprite("Wire (current I)", "#94a3b8", new THREE.Vector3(0, 4.5, 0), 0.7));
 
       // Current direction arrow
       push(new LiveLeaderLine(new THREE.Vector3(0, 1, 0), new THREE.Vector3(0, -3, 0), 2, 0xf97316, 0.15, 0.08));
-      push(mkSprite(`I = ${current} A`, "#f97316", new THREE.Vector3(1, -3, 0), 0.75));
+      addLabel(mkSprite(`I = ${current} A`, "#f97316", new THREE.Vector3(1, -3, 0), 0.75));
 
       // Magnetic field circles around wire
       const fieldRadius = 2;
@@ -97,45 +141,51 @@ export function BiotSavartVisual() {
           circlePts.push(new THREE.Vector3(r * Math.cos(a), 0, r * Math.sin(a)));
         }
         const opacity = 0.3 + (4 - r) * 0.15;
-        push(new THREE.Line(
+        const circle = push(new THREE.Line(
           new THREE.BufferGeometry().setFromPoints(circlePts),
           new THREE.LineBasicMaterial({ color: 0x22d3ee, transparent: true, opacity })
         ));
+        circle.visible = showField;
+        fieldLines.push(circle);
       }
 
       // Field direction arrows (circular around wire)
       const arrowPos = new THREE.Vector3(fieldRadius, 0, 0);
       const arrowDir = new THREE.Vector3(0, 0, 1).normalize();
-      push(new LiveLeaderLine(arrowDir, arrowPos, 0.8, 0x22d3ee, 0.15, 0.08));
-      push(mkSprite("B field (circular)", "#22d3ee", new THREE.Vector3(fieldRadius + 1, 0.5, 0), 0.7));
+      const fieldArrow = push(new LiveLeaderLine(arrowDir, arrowPos, 0.8, 0x22d3ee, 0.15, 0.08));
+      fieldArrow.visible = showField;
+      fieldLines.push(fieldArrow);
+      addLabel(mkSprite("B field (circular)", "#22d3ee", new THREE.Vector3(fieldRadius + 1, 0.5, 0), 0.7));
 
       // Long arrow labels
       const rLabelPos = new THREE.Vector3(fieldRadius + 2, 0, 0);
       const rTarget = new THREE.Vector3(fieldRadius, 0, 0);
       const rDir = rTarget.clone().sub(rLabelPos).normalize();
       push(new LiveLeaderLine(rDir, rLabelPos, rLabelPos.distanceTo(rTarget) * 0.9, 0xfbbf24, 0.15, 0.1));
-      push(mkSprite("r (distance from wire)", "#fbbf24", rLabelPos.clone().sub(rDir.multiplyScalar(0.5)), 0.75));
+      addLabel(mkSprite("r (distance from wire)", "#fbbf24", rLabelPos.clone().sub(rDir.multiplyScalar(0.5)), 0.75));
 
       // Biot-Savart formula label
       const formulaLabelPos = new THREE.Vector3(-4, 2.5, 0);
       const formulaTarget = new THREE.Vector3(0, 0, 0);
       const formulaDir = formulaTarget.clone().sub(formulaLabelPos).normalize();
       push(new LiveLeaderLine(formulaDir, formulaLabelPos, formulaLabelPos.distanceTo(formulaTarget) * 0.9, 0xa78bfa, 0.15, 0.1));
-      push(mkSprite("dB = μ₀Idl×r̂/(4πr²)", "#a78bfa", formulaLabelPos.clone().sub(formulaDir.multiplyScalar(0.5)), 0.75));
+      addLabel(mkSprite("dB = μ₀Idl×r̂/(4πr²)", "#a78bfa", formulaLabelPos.clone().sub(formulaDir.multiplyScalar(0.5)), 0.75));
 
       // Ampere's law label
       const ampLabelPos = new THREE.Vector3(-3, -3, 0);
       const ampTarget = new THREE.Vector3(0, 0, 0);
       const ampDir = ampTarget.clone().sub(ampLabelPos).normalize();
       push(new LiveLeaderLine(ampDir, ampLabelPos, ampLabelPos.distanceTo(ampTarget) * 0.9, 0x34d399, 0.15, 0.1));
-      push(mkSprite("∮B·dl = μ₀I (Ampere's Law)", "#34d399", ampLabelPos.clone().sub(ampDir.multiplyScalar(0.5)), 0.7));
+      addLabel(mkSprite("∮B·dl = μ₀I (Ampere's Law)", "#34d399", ampLabelPos.clone().sub(ampDir.multiplyScalar(0.5)), 0.7));
 
       // Right-hand grip rule indicator
       const gripLabelPos = new THREE.Vector3(3, 2, 0);
       const gripTarget = new THREE.Vector3(0, 0, 0);
       const gripDir = gripTarget.clone().sub(gripLabelPos).normalize();
       push(new LiveLeaderLine(gripDir, gripLabelPos, gripLabelPos.distanceTo(gripTarget) * 0.9, 0xef4444, 0.15, 0.1));
-      push(mkSprite("RHR: thumb→I, fingers→B", "#ef4444", gripLabelPos.clone().sub(gripDir.multiplyScalar(0.5)), 0.7));
+      addLabel(mkSprite("RHR: thumb→I, fingers→B", "#ef4444", gripLabelPos.clone().sub(gripDir.multiplyScalar(0.5)), 0.7));
+
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const update = () => {
         while (meshes.length > 50) {
@@ -186,7 +236,7 @@ export function BiotSavartVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [current, isWebGL]);
+  }, [current, isWebGL, runId, showLabels, showField]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Biot-Savart" description="Magnetic field around current-carrying wire." />;
@@ -211,9 +261,43 @@ export function BiotSavartVisual() {
           </div>
         </CollapsibleControls>
 
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-primary/50 bg-primary/10 text-primary" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Labels
+            </button>
+            <button
+              onClick={() => setShowField((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showField ? "border-cyan-500/50 bg-cyan-500/10 text-cyan-400" : "border-border bg-muted/40 text-muted-foreground"}`}
+            >
+              Field lines
+            </button>
+            <button
+              onClick={resetAll}
+              className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:text-foreground transition-colors"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+
+        <ScenePresets presets={presets} />
+
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "B at r = 1 m", value: bAt(1).toFixed(2), unit: "µT" },
+            { label: "B at r = 2 m", value: bAt(2).toFixed(2), unit: "µT" },
+            { label: "Current I", value: current, unit: "A", highlight: current >= 8 },
+            { label: "Field geometry", value: "Circular (RHR)" },
+          ]}
+        />
 
         <div className="rounded-lg border border-cyan-500/30 bg-cyan-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-cyan-400">Key Concepts</p>

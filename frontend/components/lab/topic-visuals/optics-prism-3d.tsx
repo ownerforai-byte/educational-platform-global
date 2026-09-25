@@ -8,6 +8,11 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import {
+  ScenePresets,
+  ReadoutGrid,
+  type ScenePreset,
+} from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 function mkSprite(text: string, color: string, scale = 0.3) {
@@ -33,6 +38,55 @@ export default function OpticsPrism3d() {
   const [prismAngle, setPrismAngle] = useState(60);
   const [wavelength, setWavelength] = useState(550);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [showNormals, setShowNormals] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  // Live readouts from current params (same n model as the scene labels)
+  const nGlass = wavelength < 450 ? 1.53 : wavelength < 550 ? 1.52 : 1.51;
+  const apexRad = (prismAngle * Math.PI) / 180;
+  const sinHalf = nGlass * Math.sin(apexRad / 2);
+  const minDevDeg = sinHalf <= 1
+    ? (2 * Math.asin(sinHalf) - apexRad) * (180 / Math.PI)
+    : NaN;
+  const colorName = wavelength < 450 ? "Violet/Blue" : wavelength < 500 ? "Blue-Green" : wavelength < 580 ? "Green-Yellow" : wavelength < 650 ? "Orange" : "Red";
+
+  const DEFAULTS = { prismAngle: 60, wavelength: 550 };
+  const presets: ScenePreset[] = [
+    {
+      name: "Equilateral (60°)",
+      hint: "The standard 60° glass prism with green light.",
+      apply: () => { setPrismAngle(60); setWavelength(550); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Right-angle (90°)",
+      hint: "Large apex angle — strong deviation, used in periscopes.",
+      apply: () => { setPrismAngle(90); setWavelength(550); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Shallow (30°)",
+      hint: "Thin prism — small deviation, δ ≈ (n − 1)A.",
+      apply: () => { setPrismAngle(30); setWavelength(550); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Violet (400 nm)",
+      hint: "Short wavelength — highest n, bends the most.",
+      apply: () => { setPrismAngle(60); setWavelength(400); setRunId((r) => r + 1); },
+    },
+    {
+      name: "Red (700 nm)",
+      hint: "Long wavelength — lowest n, bends the least.",
+      apply: () => { setPrismAngle(60); setWavelength(700); setRunId((r) => r + 1); },
+    },
+  ];
+
+  const resetAll = () => {
+    setPrismAngle(DEFAULTS.prismAngle);
+    setWavelength(DEFAULTS.wavelength);
+    setShowLabels(true);
+    setShowNormals(true);
+    setRunId((r) => r + 1);
+  };
 
   useEffect(() => {
     if (!isWebGL || !containerRef.current) return;
@@ -48,11 +102,24 @@ export default function OpticsPrism3d() {
     renderer.setSize(w, h);
     container.appendChild(renderer.domElement);
 
+    const labelSprites: THREE.Sprite[] = [];
+    const addLabel = (s: THREE.Sprite): THREE.Sprite => {
+      scene.add(s);
+      s.visible = showLabels;
+      labelSprites.push(s);
+      return s;
+    };
+
     let controls: any;
     import("three/addons/controls/OrbitControls.js").then((mod) => {
       controls = new mod.OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = {
+        controls,
+        el: container,
+        canvasEl: renderer.domElement,
+        setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)),
+      };
       controls.dampingFactor = 0.08;
     });
 
@@ -83,9 +150,8 @@ export default function OpticsPrism3d() {
     scene.add(prismEdge);
 
     // Add refractive index label
-    const nLabel = mkSprite("n=" + (wavelength < 450 ? 1.53 : wavelength < 550 ? 1.52 : 1.51), "#10b981");
+    const nLabel = addLabel(mkSprite("n=" + (wavelength < 450 ? 1.53 : wavelength < 550 ? 1.52 : 1.51), "#10b981"));
     nLabel.position.set(0, -2.2, 0);
-    scene.add(nLabel);
 
     // Deviation angle arc
     const devArcPoints = [];
@@ -97,8 +163,7 @@ export default function OpticsPrism3d() {
       new THREE.LineBasicMaterial({ color: 0x22d3ee })
     );
     scene.add(devArc);
-    const devLabel = mkSprite("δ", "#22d3ee");
-    scene.add(devLabel);
+    const devLabel = addLabel(mkSprite("δ", "#22d3ee"));
     devLabel.position.set(0.7, -0.3, 0);
 
     // Entry and exit angle markers
@@ -108,6 +173,7 @@ export default function OpticsPrism3d() {
       ]),
       new THREE.LineBasicMaterial({ color: 0x6ee7b7, transparent: true, opacity: 0.6 })
     );
+    entryNormal.visible = showNormals;
     scene.add(entryNormal);
     const exitNormal = new THREE.Line(
       new THREE.BufferGeometry().setFromPoints([
@@ -115,6 +181,7 @@ export default function OpticsPrism3d() {
       ]),
       new THREE.LineBasicMaterial({ color: 0x6ee7b7, transparent: true, opacity: 0.6 })
     );
+    exitNormal.visible = showNormals;
     scene.add(exitNormal);
 
     const updateRays = () => {
@@ -132,11 +199,9 @@ export default function OpticsPrism3d() {
         new THREE.LineBasicMaterial({ color: 0x22d3ee })
       );
       scene.add(dev);
-      const sp = mkSprite(prismAngle + "°", "#34d399");
-      scene.add(sp);
+      const sp = addLabel(mkSprite(prismAngle + "°", "#34d399"));
       sp.position.set(0, 2, 0);
-      const wl = mkSprite(wavelength + "nm", "#fbbf24");
-      scene.add(wl);
+      const wl = addLabel(mkSprite(wavelength + "nm", "#fbbf24"));
       wl.position.set(1.5, -1.2, 0);
       return { ray, dev, devArc, entryNormal, exitNormal };
     };
@@ -174,7 +239,7 @@ export default function OpticsPrism3d() {
       renderer.dispose();
       controls?.dispose();
     };
-  }, [prismAngle, wavelength, isWebGL]);
+  }, [prismAngle, wavelength, isWebGL, runId, showLabels, showNormals]);
 
   if (!isWebGL) return <WebGLFallback title="Prism" />;
 
@@ -192,6 +257,39 @@ export default function OpticsPrism3d() {
         <div ref={containerRef} className="h-[clamp(320px,60vh,640px)] w-full rounded-md overflow-hidden mb-4">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+        <div className="flex flex-wrap items-center justify-between gap-3 mb-4">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button
+              onClick={() => setShowLabels((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-emerald-500/50 bg-emerald-500/10 text-emerald-300" : "border-emerald-900 bg-emerald-900/40 text-emerald-400/60"}`}
+            >
+              Labels
+            </button>
+            <button
+              onClick={() => setShowNormals((v) => !v)}
+              className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showNormals ? "border-teal-400/50 bg-teal-400/10 text-teal-300" : "border-emerald-900 bg-emerald-900/40 text-emerald-400/60"}`}
+            >
+              Normals
+            </button>
+            <button
+              onClick={resetAll}
+              className="px-2.5 py-1 rounded-md text-xs font-medium border border-emerald-900 bg-emerald-900/40 text-emerald-300 hover:bg-emerald-800/50 transition-colors"
+              title="Reset to defaults"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+        <ReadoutGrid
+          className="mb-4"
+          items={[
+            { label: "Apex angle A", value: prismAngle, unit: "°" },
+            { label: "Refractive index n", value: nGlass.toFixed(2) },
+            { label: "Min deviation δₘ", value: Number.isFinite(minDevDeg) ? minDevDeg.toFixed(1) : "— (TIR inside)", unit: Number.isFinite(minDevDeg) ? "°" : undefined, highlight: Number.isFinite(minDevDeg) },
+            { label: "Wavelength λ", value: wavelength, unit: `nm (${colorName})` },
+          ]}
+        />
         <CollapsibleControls label="Prism Parameters">
           <div className="space-y-4">
             <div className="space-y-2">

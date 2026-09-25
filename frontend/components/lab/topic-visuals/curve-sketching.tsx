@@ -9,6 +9,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 /* ============================================================
@@ -41,12 +42,105 @@ function mkSprite(text: string, color: string, pos: THREE.Vector3, scale = 1.0):
 
 type CurveType = "quadratic" | "cubic" | "rational" | "trig-asin" | "trig-acos" | "exponential" | "logarithmic";
 
+const CURVE_INFO: Record<CurveType, { form: string; symmetry: string; key: string; sketch: string }> = {
+  quadratic: {
+    form: "y = ax² + bx + c (parabola)",
+    symmetry: "Symmetric about its axis x = −b/2a",
+    key: "Vertex is the extremum; a > 0 opens upward, a < 0 downward",
+    sketch: "Find vertex, intercepts (roots from D = b² − 4ac), then reflect across the axis.",
+  },
+  cubic: {
+    form: "y = ax³ + bx (cubic)",
+    symmetry: "Odd: f(−x) = −f(x) — symmetric about the origin",
+    key: "Inflection at the origin; two turning points when −b/(3a) > 0",
+    sketch: "Solve f′ = 3ax² + b = 0 for extrema, plot the inflection, then draw the S-shape.",
+  },
+  rational: {
+    form: "y = 1/(x² − 1)",
+    symmetry: "Even function — mirror image in the y-axis",
+    key: "Vertical asymptotes x = ±1; horizontal asymptote y = 0",
+    sketch: "Three branches: y < 0 between the asymptotes; y → 0⁺ as x → ±∞.",
+  },
+  "trig-asin": {
+    form: "y = 2·sin⁻¹(x/2)",
+    symmetry: "Odd — symmetric about the origin",
+    key: "Strictly increasing; inverse of y = 2 sin x on [−π, π]",
+    sketch: "Domain [−2, 2], range [−π, π]; endpoints (±2, ±π), passes through origin.",
+  },
+  "trig-acos": {
+    form: "y = 2·cos⁻¹(x/2)",
+    symmetry: "Neither even nor odd",
+    key: "Strictly decreasing from (−2, 2π) to (2, 0)",
+    sketch: "Domain [−2, 2], range [0, 2π]; inverse of y = 2 cos x on [0, π].",
+  },
+  exponential: {
+    form: "y = a·e^(−bx²) (Gaussian bell)",
+    symmetry: "Even — bell centred on the y-axis",
+    key: "Peak y = a at x = 0; inflections at x = ±1/√(2b)",
+    sketch: "Bell shape with horizontal asymptote y = 0 as x → ±∞.",
+  },
+  logarithmic: {
+    form: "y = a·ln(x + c + 2)",
+    symmetry: "Neither — no symmetry",
+    key: "Vertical asymptote x = −c − 2; zero at x = −c − 1",
+    sketch: "Mirror of the exponential about y = x; increasing for a > 0, no horizontal asymptote.",
+  },
+};
+
 export function CurveSketchingVisual() {
   const containerRef = useRef<HTMLDivElement>(null);
   const vizTargetRef = useRef<VizTarget>({});
   const [curveType, setCurveType] = useState<CurveType>("quadratic");
   const [params, setParams] = useState({ a: 1, b: 0, c: -2 });
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
+
+  const info = CURVE_INFO[curveType];
+
+  const evalCurve = (x: number): number => {
+    switch (curveType) {
+      case "quadratic": return params.a * x * x + params.b * x + params.c;
+      case "cubic": return params.a * x * x * x + params.b * x;
+      case "rational": return 1 / (x * x - 1);
+      case "trig-asin": return Math.asin(x / 2) * 2;
+      case "trig-acos": return Math.acos(x / 2) * 2;
+      case "exponential": return params.a * Math.exp(-params.b * x * x);
+      case "logarithmic": return params.a * Math.log(x + params.c + 2);
+    }
+  };
+  const fmtY = (v: number) => (isFinite(v) ? v.toFixed(2) : "undefined");
+  const specialItem = () => {
+    if (curveType === "quadratic" && params.a !== 0) {
+      const vx = -params.b / (2 * params.a);
+      return { label: "Vertex", value: `(${vx.toFixed(2)}, ${evalCurve(vx).toFixed(2)}) · D = ${(params.b ** 2 - 4 * params.a * params.c).toFixed(2)}`, highlight: true };
+    }
+    if (curveType === "cubic" && params.a !== 0 && -params.b / (3 * params.a) > 0) {
+      return { label: "Turning points at", value: `x = ±${Math.sqrt(-params.b / (3 * params.a)).toFixed(2)}`, highlight: true };
+    }
+    if (curveType === "logarithmic") {
+      return { label: "Vertical asymptote", value: `x = −c − 2 = ${(-params.c - 2).toFixed(2)}`, highlight: true };
+    }
+    if (curveType === "exponential") {
+      return { label: "Peak", value: `(0, ${params.a.toFixed(2)}), inflections x = ±${(1 / Math.sqrt(Math.max(2 * params.b, 1e-9))).toFixed(2)}`, highlight: true };
+    }
+    return { label: "Key feature", value: info.key, highlight: true };
+  };
+
+  const presets: ScenePreset[] = [
+    { name: "Parabola y = x² − 2", hint: "Vertex on the y-axis, roots at ±√2", apply: () => { setCurveType("quadratic"); setParams({ a: 1, b: 0, c: -2 }); setRunId((r) => r + 1); } },
+    { name: "Cubic y = x³ − 3x", hint: "Odd function with two turning points", apply: () => { setCurveType("cubic"); setParams({ a: 1, b: -3, c: 0 }); setRunId((r) => r + 1); } },
+    { name: "Gaussian y = e^(−x²)", hint: "Even bell curve, y → 0 at ±∞", apply: () => { setCurveType("exponential"); setParams({ a: 1, b: 1, c: 0 }); setRunId((r) => r + 1); } },
+    { name: "Logarithm y = ln x", hint: "Vertical asymptote x = 0, zero at x = 1", apply: () => { setCurveType("logarithmic"); setParams({ a: 1, b: 0, c: -2 }); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setCurveType("quadratic");
+    setParams({ a: 1, b: 0, c: -2 });
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
+
 
   useEffect(() => {
     const container = containerRef.current;
@@ -67,6 +161,7 @@ export function CurveSketchingVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -83,7 +178,7 @@ export function CurveSketchingVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
       controls.autoRotate = false;
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
@@ -138,14 +233,14 @@ export function CurveSketchingVisual() {
           features.push(`Even symmetry about x = ${vertexX.toFixed(2)}`);
           const v = push(new THREE.Mesh(new THREE.SphereGeometry(0.15, 12, 12), new THREE.MeshBasicMaterial({ color: 0xf97316 })));
           v.position.set(vertexX, vertexY, 0.05);
-          push(mkSprite("vertex", "#fb923c", new THREE.Vector3(vertexX, vertexY + 0.8, 0), 0.7));
+          labelSprites.push(push(mkSprite("vertex", "#fb923c", new THREE.Vector3(vertexX, vertexY + 0.8, 0), 0.7)));
         } else if (curveType === "cubic") {
           features.push("Odd function: f(−x) = −f(x) — origin symmetry");
           features.push("Inflection point at origin (for b>0, two turning points)");
         } else if (curveType === "rational") {
           features.push("Vertical asymptotes at x = ±1");
           features.push("Horizontal asymptote: y = 0");
-          push(mkSprite("asymptotes x=±1", "#a78bfa", new THREE.Vector3(5, 4, 0), 0.75));
+          labelSprites.push(push(mkSprite("asymptotes x=±1", "#a78bfa", new THREE.Vector3(5, 4, 0), 0.75)));
           // Asymptote lines
           [-1, 1].forEach((ax) => {
             push(new THREE.Line(new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(ax, -10, 0), new THREE.Vector3(ax, 10, 0)]), new THREE.LineDashedMaterial({ color: 0xa78bfa, dashSize: 0.2, gapSize: 0.1 })));
@@ -157,7 +252,7 @@ export function CurveSketchingVisual() {
           features.push("Odd function — symmetry about origin");
         } else if (curveType === "trig-acos") {
           features.push("Domain: [−2, 2]");
-          features.push("Range: [0, π]");
+          features.push("Range: [0, 2π]");
           features.push("Decreasing on its domain");
         } else if (curveType === "exponential") {
           features.push(`Gaussian: y = ${params.a}e^(−${params.b}x²)`);
@@ -165,19 +260,20 @@ export function CurveSketchingVisual() {
           features.push("Monotonic: increasing on (−∞, 0), decreasing on (0, ∞)");
           const peak = push(new THREE.Mesh(new THREE.SphereGeometry(0.15, 12, 12), new THREE.MeshBasicMaterial({ color: 0xef4444 })));
           peak.position.set(0, params.a, 0.05);
-          push(mkSprite("max at x=0", "#f87171", new THREE.Vector3(0.8, params.a + 0.5, 0), 0.7));
+          labelSprites.push(push(mkSprite("max at x=0", "#f87171", new THREE.Vector3(0.8, params.a + 0.5, 0), 0.7)));
         } else if (curveType === "logarithmic") {
-          features.push("Domain: x > −c (vertical asymptote)");
-          features.push("Range: all reals");
-          features.push("Monotonically increasing");
+          features.push(`Vertical asymptote: x = −c − 2 = ${(-params.c - 2).toFixed(1)}`);
+          features.push("Domain: x > −c − 2;  Range: all reals");
+          features.push("Monotonically increasing (a > 0), zero at x = −c − 1");
         }
 
         features.push(`f is ${curveType} function`);
-        push(mkSprite(features[0], labelColor, new THREE.Vector3(-7, 6, 0), 0.75));
-        push(mkSprite(features[1] || "", "#7dd3fc", new THREE.Vector3(-7, 5.0, 0), 0.75));
+        labelSprites.push(push(mkSprite(features[0], labelColor, new THREE.Vector3(-7, 6, 0), 0.75)));
+        labelSprites.push(push(mkSprite(features[1] || "", "#7dd3fc", new THREE.Vector3(-7, 5.0, 0), 0.75)));
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -215,7 +311,7 @@ export function CurveSketchingVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [curveType, params, isWebGL]);
+  }, [curveType, params, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Curve Sketching" description="Graph analysis — requires WebGL." />;
@@ -230,6 +326,14 @@ export function CurveSketchingVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-purple-500/50 bg-purple-500/10 text-purple-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Function Family">
           <Tabs value={curveType} onValueChange={(v) => setCurveType(v as CurveType)} className="mt-1">
             <TabsList className="grid w-full grid-cols-4">
@@ -256,14 +360,26 @@ export function CurveSketchingVisual() {
           <VizToolbar targetRef={vizTargetRef} />
         </div>
 
+        <ReadoutGrid
+          items={[
+            { label: "Curve", value: info.form },
+            specialItem(),
+            { label: "f(0)", value: fmtY(evalCurve(0)) },
+            { label: "f(1)", value: fmtY(evalCurve(1)) },
+            { label: "Symmetry", value: info.symmetry },
+            { label: "Sketching step", value: info.sketch },
+          ]}
+        />
+
         <div className="rounded-lg border border-purple-500/30 bg-purple-500/5 p-4">
-          <p className="text-xs font-semibold uppercase tracking-wide text-purple-400">Sketching Properties</p>
+          <p className="text-xs font-semibold uppercase tracking-wide text-purple-400">Sketching Properties · {info.form}</p>
           <div className="mt-2 space-y-1.5 text-xs text-muted-foreground">
             <p><strong className="text-foreground">Even function:</strong> f(−x) = f(x) — symmetric about y-axis.</p>
             <p><strong className="text-foreground">Odd function:</strong> f(−x) = −f(x) — symmetric about origin.</p>
             <p><strong className="text-foreground">Periodic:</strong> f(x + T) = f(x) — repeats every period T.</p>
             <p><strong className="text-foreground">Monotonic:</strong> Always increasing or always decreasing on an interval.</p>
             <p><strong className="text-foreground">Asymptote:</strong> Line the curve approaches but never touches.</p>
+            <p><strong className="text-foreground">Key feature here:</strong> {info.key}</p>
           </div>
         </div>
       </CardContent>

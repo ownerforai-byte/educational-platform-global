@@ -8,6 +8,7 @@ import { CollapsibleControls } from "@/components/lab/collapsible-controls";
 import { isWebGLAvailable } from "@/lib/webgl";
 import { WebGLFallback } from "@/components/lab/webgl-fallback";
 import { VizToolbar, type VizTarget } from "@/components/viz/viz-toolbar";
+import { ScenePresets, ReadoutGrid, type ScenePreset } from "@/components/lab/scene-interactivity";
 import * as THREE from "three";
 
 /* ============================================================
@@ -45,7 +46,28 @@ export function MeasureDispersionVisual() {
   const [center, setCenter] = useState(5);
   const [n, setN] = useState(30);
   const [isWebGL] = useState(() => isWebGLAvailable());
+  const [showLabels, setShowLabels] = useState(true);
+  const [runId, setRunId] = useState(0);
 
+  const presets: ScenePreset[] = [
+    { name: "Tight cluster · s = 1", hint: "Small spread → small σ, bars hug the mean line", apply: () => { setSpread(1); setCenter(5); setN(30); setRunId((r) => r + 1); } },
+    { name: "Default · s = 2", hint: "Uniform half-width 2 around center 5", apply: () => { setSpread(2); setCenter(5); setN(30); setRunId((r) => r + 1); } },
+    { name: "Wide spread · s = 5", hint: "Large deviation from the central value", apply: () => { setSpread(5); setCenter(5); setN(30); setRunId((r) => r + 1); } },
+  ];
+
+  const resetAll = () => {
+    setSpread(2);
+    setCenter(5);
+    setN(30);
+    setShowLabels(true);
+    setRunId((r) => r + 1);
+  };
+
+  // Sample is drawn uniformly from [center − spread, center + spread];
+  // for a uniform distribution: σ = spread/√3, σ² = spread²/3, range = 2·spread.
+  const theoSd = spread / Math.sqrt(3);
+  const theoVar = (spread * spread) / 3;
+  const theoCv = center !== 0 ? (theoSd / Math.abs(center)) * 100 : NaN;
 
   useEffect(() => {
     const container = containerRef.current;
@@ -74,6 +96,7 @@ export function MeasureDispersionVisual() {
     let scene: THREE.Scene, camera: THREE.PerspectiveCamera, renderer: THREE.WebGLRenderer;
     let controls: any, frameId: number;
     const meshes: THREE.Object3D[] = [];
+    const labelSprites: THREE.Sprite[] = [];
 
     const init = async () => {
       const { OrbitControls } = await import("three/addons/controls/OrbitControls.js");
@@ -91,13 +114,13 @@ export function MeasureDispersionVisual() {
 
       controls = new OrbitControls(camera, renderer.domElement);
       controls.enableDamping = true;
-      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement };
+      vizTargetRef.current = { controls, el: container, canvasEl: renderer.domElement, setLabels: (on: boolean) => labelSprites.forEach((s) => (s.visible = on)) };
       controls.autoRotate = false;
       controls.maxPolarAngle = Math.PI / 2.2;
 
       scene.add(new THREE.AmbientLight(0xffffff, 0.8));
 
-      const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); return o; };
+      const push = <T extends THREE.Object3D>(o: T): T => { scene.add(o); meshes.push(o); if (o instanceof THREE.Sprite) labelSprites.push(o); return o; };
 
       push(new THREE.GridHelper(20, 20, 0x334155, 0x1e293b));
 
@@ -145,6 +168,7 @@ export function MeasureDispersionVisual() {
       };
 
       update();
+      labelSprites.forEach((s) => (s.visible = showLabels));
 
       const animate = () => {
         frameId = requestAnimationFrame(animate);
@@ -181,7 +205,7 @@ export function MeasureDispersionVisual() {
 
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
-  }, [spread, center, n, isWebGL]);
+  }, [spread, center, n, isWebGL, runId, showLabels]);
 
   if (!isWebGL) {
     return <WebGLFallback title="Measure of Dispersion" description="Statistical visualization — requires WebGL." />;
@@ -196,6 +220,14 @@ export function MeasureDispersionVisual() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4">
+        <div className="flex flex-wrap items-center justify-between gap-3">
+          <ScenePresets presets={presets} />
+          <div className="flex flex-wrap items-center gap-2">
+            <button onClick={() => setShowLabels((v) => !v)} className={`px-2.5 py-1 rounded-md text-xs font-medium border transition-colors ${showLabels ? "border-emerald-500/50 bg-emerald-500/10 text-emerald-300" : "border-border bg-muted/40 text-muted-foreground"}`}>Labels</button>
+            <button onClick={resetAll} className="px-2.5 py-1 rounded-md text-xs font-medium border border-border bg-muted/40 text-muted-foreground hover:bg-muted/70 transition-colors" title="Reset to defaults">Reset</button>
+          </div>
+        </div>
+
         <CollapsibleControls label="Data Parameters">
           <div className="flex flex-wrap gap-3 mt-2">
             <div className="w-16"><Label className="text-xs text-muted-foreground">Center:</Label><Input type="number" step="0.5" value={center} onChange={(e) => setCenter(Number(e.target.value))} className="mt-1" /></div>
@@ -207,6 +239,17 @@ export function MeasureDispersionVisual() {
         <div ref={containerRef} className="relative h-[clamp(320px,60vh,640px)] w-full overflow-hidden rounded-lg border border-border bg-slate-900">
           <VizToolbar targetRef={vizTargetRef} />
         </div>
+
+        <ReadoutGrid
+          items={[
+            { label: "Expected mean x̄ ≈ center", value: center.toFixed(2) },
+            { label: "Theoretical σ = spread/√3", value: theoSd.toFixed(3), highlight: true },
+            { label: "Theoretical σ² = spread²/3", value: theoVar.toFixed(3) },
+            { label: "CV = (σ/x̄)·100%", value: Number.isFinite(theoCv) ? `${theoCv.toFixed(1)}%` : "—" },
+            { label: "Full range = 2·spread", value: (2 * spread).toFixed(2) },
+            { label: "Sample size", value: n },
+          ]}
+        />
 
         <div className="rounded-lg border border-emerald-500/30 bg-emerald-500/5 p-4">
           <p className="text-xs font-semibold uppercase tracking-wide text-emerald-400">Key Formulas</p>

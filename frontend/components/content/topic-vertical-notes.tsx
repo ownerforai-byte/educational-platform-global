@@ -4,6 +4,8 @@ import React, { useEffect, useRef, useState, useMemo } from "react";
 import Link from "next/link";
 import { loadData } from "@/lib/data-loader";
 import { MathMarkdown } from "@/components/content/math-markdown";
+import { EntranceQuiz } from "@/components/content/entrance-quiz";
+import { getEntranceQuestions } from "@/lib/entrance-questions";
 import { FormulaCard } from "@/components/content/formula-card";
 import { get3DComponentForTopic } from "@/lib/topic-3d-map";
 import { SchematicDiagram } from "@/components/lab/schematic-diagram";
@@ -246,6 +248,13 @@ export function TopicVerticalNotes({
   );
   const rawPractice = activeData?.practice ?? supplementary?.practice ?? [];
   const rawNumericals = activeData?.numericals ?? supplementary?.numericals ?? [];
+
+  // Entrance-bank questions for this unit (every subject carries a bank;
+  // unknown units fall back to the general exam-craft bank).
+  const entranceQuestions = useMemo(
+    () => getEntranceQuestions(subjectSlug, unitId),
+    [subjectSlug, unitId]
+  );
 
   // Populate missing or boilerplate content using High-Yield Facts Engine
   const populatedFormulas = useMemo(() => {
@@ -669,8 +678,23 @@ export function TopicVerticalNotes({
               </div>
             </div>
           )}
+        </div>        </section>
+
+      {/* ── 4. ENTRANCE QUESTION BANK ───────────────────────────────────── */}
+      <section className="rounded-3xl border border-indigo-500/30 bg-card overflow-hidden shadow-sm">
+        <div className="px-6 py-4 border-b border-indigo-500/20 bg-indigo-500/5 flex items-center justify-between flex-wrap gap-2">
+          <div className="flex items-center gap-2.5">
+            <Target className="h-5 w-5 text-indigo-500" />
+            <h3 className="text-base font-bold text-foreground">Entrance Question Bank — {entranceQuestions.length} CEE/IOE-Style Questions</h3>
+          </div>
+          <span className="text-[11px] font-semibold px-2.5 py-0.5 rounded-full bg-indigo-500/15 text-indigo-600 dark:text-indigo-400">
+            Exam Drill · Learn / Test mode
+          </span>
         </div>
-      </section>
+
+        <div className="p-6">
+          <EntranceQuiz questions={entranceQuestions} title={topicTitle} />
+        </div>      </section>
 
       {/* ── 4. IMPORTANT NOTES BLOCK ────────────────────────────────────── */}
       {(rawImportantNotes.length > 0 || rawImportantStatements.length > 0) && (
