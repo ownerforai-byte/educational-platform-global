@@ -1,4 +1,5 @@
 import { Router, Request, Response } from "express";
+import { PUBLIC_SITE_URL } from "../config/env";
 import { requireAuth } from "../middleware/auth";
 import { createAIService } from "../ai/service";
 import { getSearchService } from "../ai/search-engine";
@@ -104,7 +105,7 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     // Guard: the keyword-based internal engine would echo links/quick-takes
     // instead of rewriting — treat those as "no LLM available".
     const looksInternal =
-      text.includes("ravikisan.vercel.app") ||
+      text.includes(PUBLIC_SITE_URL) ||
       text.startsWith("Quick take:") ||
       text.includes("isn't in the vault");
     if (!text || looksInternal) {

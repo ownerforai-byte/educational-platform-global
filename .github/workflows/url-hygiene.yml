@@ -1,0 +1,54 @@
+name: URL Hygiene
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch: {}
+
+jobs:
+  no-stale-urls:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Fail on hardcoded deployment URLs outside config
+        run: |
+          # The dead-URL bug class (2026-09-25): 19 hardcoded copies of a dead
+          # deployment URL shipped in AI prompts, plus a stale env var, 404'd
+          # every /api call. Allowed homes for concrete URLs:
+          #   backend/src/config/env.ts   (PUBLIC_SITE_URL fallback)
+          #   frontend/next.config.mjs    (API base fallback)
+          #   frontend/proxy.ts           (CSP connect-src fallback)
+          #   frontend/app/api/[...path]/route.ts (proxy fallback)
+          #   backend/scripts/smoke-live.mjs (SMOKE_BASE_URL default)
+          #   .github/**                  (workflow targets)
+          #   *.md, docs                  (documentation)
+          VIOLATIONS=$(git grep -n -E \
+            '(https://[a-z0-9-]+\.vercel\.app|https://[a-z0-9-]+\.onrender\.com)' \
+            -- \
+            'backend/src' \
+            ':(exclude)backend/src/config/env.ts' \
+            ':(exclude)backend/src/middleware/cors.ts' \
+            ':(exclude)backend/src/middleware/rateLimit.ts' \
+            ':(exclude)backend/scripts/smoke-live.mjs' \
+            'frontend' \
+            ':(exclude)frontend/next.config.mjs' \
+            ':(exclude)frontend/proxy.ts' \
+            ':(exclude)frontend/app/api/**' \
+            ':(exclude)frontend/scripts/**' \
+            ':(exclude)frontend/public/**' \
+            ':(exclude)*.md' \
+            ':(exclude)*.test.*' \
+            ':(exclude)*.spec.*' || true)
+
+          if [ -n "$VIOLATIONS" ]; then
+            echo "::error::Hardcoded deployment URL(s) found outside config files."
+            echo "$VIOLATIONS"
+            echo ""
+            echo "Fix: import { PUBLIC_SITE_URL } from 'backend/src/config/env' (backend)"
+            echo "or read process.env.NEXT_PUBLIC_API_URL (frontend) instead."
+            exit 1
+          fi
+          echo "OK: no hardcoded deployment URLs outside config files."
