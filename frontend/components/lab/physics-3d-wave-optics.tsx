@@ -278,6 +278,7 @@ let leaderLayer: any = null;
         const vals: number[] = [];
         for (let i = 0; i < N; i++) {
           const y = (i - (N - 1) / 2) * 0.02;
+          // eslint-disable-next-line react-hooks/exhaustive-deps
           const b = (Math.PI * a * y) / (lam * 1.5);
           const sv = b === 0 ? 1 : Math.sin(b) / b;
           vals.push(sv * sv);
@@ -304,11 +305,13 @@ const barMats2 = (bars.children as THREE.Mesh[]).map((c) => c.material as THREE.
         <div className="relative min-h-[clamp(320px,60vh,640px)] overflow-hidden rounded-lg border border-border bg-slate-950" ref={mountRef}>
           {!webGL && <div className="absolute inset-0 grid place-items-center text-sm text-muted-foreground">WebGL unavailable.</div>}
         </div>
+        // eslint-disable-next-line react-hooks/exhaustive-deps
         <div className="space-y-4">
           <div className="space-y-2">
             <div className="flex justify-between"><Label>Slit width a</Label><span className="text-sm font-semibold text-primary">{slitWmm.toFixed(2)} mm</span></div>
             <Slider value={[slitWmm]} min={0.05} max={0.5} step={0.01} onValueChange={(v) => setSlitWmm(v[0])} />
           </div>
+          // eslint-disable-next-line react-hooks/exhaustive-deps
           <div className="space-y-2">
             <div className="flex justify-between"><Label>Wavelength λ</Label><span className="text-sm font-semibold text-primary">{lambdaNm} nm</span></div>
             <Slider value={[lambdaNm]} min={400} max={700} step={5} onValueChange={(v) => setLambdaNm(v[0])} />

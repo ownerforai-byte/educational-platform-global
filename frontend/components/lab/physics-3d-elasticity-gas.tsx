@@ -203,6 +203,7 @@ let leaderLayer: any;
     if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   }, [webGL, mode, springIdx, massN, wireIdx, forceN, lenM, diaMm]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
 return (
     <div className="space-y-3">
@@ -389,6 +390,7 @@ let leaderLayer: any;
     if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   }, [webGL, molecules, tempK, volumeL]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
 
   return (

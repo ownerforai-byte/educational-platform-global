@@ -277,6 +277,7 @@ const container = mountRef.current!;
     };
   } catch { /* CSS2D not available */ }
   })();}, [webGL, matIdx, discMass, coolRate, sampleThick, radiusCm, theta1, theta2, showSteam]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
 
   return (

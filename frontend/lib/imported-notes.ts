@@ -194,8 +194,7 @@ export async function getImportedNotesForUnit(
 }
 
 function normalizeForMatch(value: string): string {
-  // eslint-disable-next-line no-misleading-character-class -- class intentionally covers Devanagari incl. combining marks (Mn); excluding them would change matching
-  return value.toLowerCase().replace(/[^a-z0-9\u0900-\u097f]+/g, " ").trim();
+    return value.toLowerCase().replace(/[^a-z0-9\u0900-\u097f]+/g, " ").trim();
 }
 
 export async function getImportedNotesForTopic(

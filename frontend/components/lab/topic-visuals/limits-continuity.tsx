@@ -319,6 +319,7 @@ export function LimitsContinuityVisual() {
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
   }, [disType, a, isWebGL, runId, showLabels]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
   if (!isWebGL) {
     return <WebGLFallback title="Limits & Continuity" description="Animated limit visualization — requires WebGL." />;

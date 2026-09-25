@@ -231,6 +231,7 @@ export function VariableSeparableDEVisual() {
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
   }, [mode, k, y0, isWebGL, runId, showLabels]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
   if (!isWebGL) {
     return <WebGLFallback title="Variable Separable DE" description="Separation of variables visualization — requires WebGL." />;

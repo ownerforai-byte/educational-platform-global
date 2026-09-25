@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 "use client";
 
 import { useState, useRef, useEffect, useMemo } from "react";
@@ -149,6 +148,7 @@ const VectorComprehensive3D: React.FC = () => {
     ts!.group.add(xPosArrow);
 
     const xNegArrow = createLabeledAxis(new THREE.Vector3(-1, 0, 0), 0xff3333, "X'", 8);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     xNegArrow.name = "x'-axis";
     ts!.group.add(xNegArrow);
 

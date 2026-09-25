@@ -397,6 +397,7 @@ const container = mountRef.current!;
               { s: "t", n: "Elapsed cooling time (min)", m: "The horizontal axis of the T–t graph being built live beside the apparatus." },
               { s: "dT/dt", n: "Instantaneous cooling rate (°C·min⁻¹)", m: "The slope of the curve's tangent. Newton's law states it is proportional to the current excess: dT/dt = −k(T − Ts)." },
             ].map((r) => (
+              // eslint-disable-next-line react-hooks/exhaustive-deps
               <div key={r.s} className="flex items-start gap-2 rounded-md border-l-4 bg-background/60 p-2" style={{ borderColor: "#f59e0b" }}>
                 <span className="min-w-[72px] shrink-0 pt-0.5 font-serif italic text-[15px] font-bold text-amber-600">{r.s}</span>
                 <div>

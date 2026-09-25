@@ -201,6 +201,7 @@ export const Class11RotationalMotion: React.FC = () => {
     updateScene();
     };
   }, [radius, angularVelocity, mass, showVectors, showTorque]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
 
   return (

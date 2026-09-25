@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 "use client";
 
 import { useState, useRef, useEffect } from "react";
@@ -341,6 +340,7 @@ const CoulombsLaw3D: React.FC = () => {
     updateVectors();
 
   }, [charge1, charge2, distance, showForce, showVectors]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
 
   return (

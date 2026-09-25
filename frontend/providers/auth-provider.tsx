@@ -62,7 +62,6 @@ export function AuthProvider({ children }: { children: React.ReactNode }) {
       }
     };
     load();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [tick]);
 
   const refresh = useCallback(() => {

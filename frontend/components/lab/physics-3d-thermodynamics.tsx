@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 "use client";
 
 import { useState, useRef, useEffect } from "react";

@@ -253,6 +253,7 @@ export const Class11LawsOfMotion: React.FC = () => {
     updateScene();
     };
   }, [mass1, mass2, force, friction, showForces, showTrajectory]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
 
   return (

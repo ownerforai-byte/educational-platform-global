@@ -278,6 +278,7 @@ export function PeriodicTableView() {
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
   }, [isDossierOpen, inspectionElement, elements]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
   if (loading) {
     return (

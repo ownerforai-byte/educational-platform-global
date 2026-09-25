@@ -467,6 +467,7 @@ function DistributionsVisual() {
     }
     return vals;
   }, [n, p]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
   const maxProb = Math.max(...pmf.map((v) => v.prob), 0.001);
   const chartW = 520;

@@ -290,6 +290,7 @@ export function EMIInductionVisual() {
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
   }, [speed, animating, isWebGL, runId, showLabels, showField]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
   if (!isWebGL) {
     return <WebGLFallback title="EM Induction" description="Coil + magnet animation showing electromagnetic induction." />;

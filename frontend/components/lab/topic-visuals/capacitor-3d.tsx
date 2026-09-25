@@ -263,6 +263,7 @@ export function CapacitorVisual() {
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
   }, [charge, capacitance, isWebGL, animating, runId, showLabels, showField]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
   if (!isWebGL) {
     return <WebGLFallback title="Capacitor" description="Parallel plate capacitor with electric field lines." />;

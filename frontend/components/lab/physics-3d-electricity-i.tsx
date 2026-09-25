@@ -179,6 +179,7 @@ labelRenderer = new CSS2DRenderer();
     if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   }, [webGL, matIdx, separationMm, volts, inserted]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
 
   return (
@@ -347,6 +348,7 @@ let leaderLayer: any;
     if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   }, [webGL, knownR, unknownS, batteryV]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
 
   return (

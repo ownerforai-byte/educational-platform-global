@@ -313,6 +313,7 @@ const container = mountRef.current;
     updateScene();
     };
   }, [mass1, mass2, force, friction, showForces, showTrajectory, showLabels]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
 
   return (

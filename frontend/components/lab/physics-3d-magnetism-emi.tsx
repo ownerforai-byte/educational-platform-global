@@ -200,6 +200,7 @@ const turns = 14;
     if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   }, [webGL, mode, current, chargeQ, fieldB]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
 
   const bReadout = mode === "wire" ? bWire * 1e6 : mode === "loop" ? bLoop * 1e6 : mode === "solenoid" ? bSolenoid * 1000 : NaN;
@@ -381,6 +382,7 @@ let leaderLayer: any;
     if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   }, [webGL, speed, turnsN]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
 
   return (

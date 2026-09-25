@@ -293,6 +293,7 @@ export function LenzLawVisual() {
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
   }, [direction, isWebGL, runId, showLabels, showField]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
   if (!isWebGL) {
     return <WebGLFallback title="Lenz's Law" description="Induced current direction opposing flux change." />;

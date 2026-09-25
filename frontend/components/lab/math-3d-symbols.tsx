@@ -115,6 +115,7 @@ const el = mount.current;
     sys.render(ts!.scene, ts!.camera);
     };
   })();}, [webgl, deg]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
 
   return (
@@ -250,6 +251,7 @@ const el = mount.current;
     sys.render(ts!.scene, ts!.camera);
     };
   })();}, [webgl, a, h, fn]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
 
   return (

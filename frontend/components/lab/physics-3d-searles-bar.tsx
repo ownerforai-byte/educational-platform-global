@@ -256,6 +256,7 @@ const container = mountRef.current!;
           const connections: Array<{ label: THREE.Object3D; target: THREE.Vector3; color: string }> = [];
           try { leaderLayerRef.current?.dispose(); } catch { /* noop */ }
           try { leaderLayerRef.current = createLeaderLayer(container); } catch { leaderLayerRef.current = null; }
+          // eslint-disable-next-line react-hooks/exhaustive-deps
           try { revealBarRef.current = createRevealBar(container, leaderLayerRef.current); } catch { /* non-fatal */ }
           const addLbl = (color: string, title: string, pos: [number, number, number], sub?: string, target?: [number, number, number]) => {
             const o = new CSS2DObject(mkLabel(color, title, sub));

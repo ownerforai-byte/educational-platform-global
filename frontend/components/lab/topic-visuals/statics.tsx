@@ -192,6 +192,7 @@ export function StaticsVisual() {
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
   }, [f1, f2, isWebGL, runId, showLabels]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
   if (!isWebGL) {
     return <WebGLFallback title="Statics" description="Force parallelogram visualization — requires WebGL." />;

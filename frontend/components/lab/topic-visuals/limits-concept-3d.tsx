@@ -173,6 +173,7 @@ export function LimitsConcept3D() {
     const cleanupPromise = cleanup();
     return () => { cleanupPromise.then((d) => d?.()); };
   }, [targetX, isWebGL, runId, showLabels]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
   if (!isWebGL) {
     return <WebGLFallback title="Concept of Limit" description="Animated point approaching a curve — requires WebGL." />;

@@ -183,6 +183,7 @@ export function MeanVarianceVisual() {
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
   }, [n, p, isWebGL, runId, showLabels]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
   if (!isWebGL) {
     return <WebGLFallback title="Mean & Variance" description="Distribution statistics — requires WebGL." />;

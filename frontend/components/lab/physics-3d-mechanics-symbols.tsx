@@ -337,6 +337,7 @@ function Incline3D() {
 
   // Scene lifecycle - mount/unmount only
   useEffect(() => {
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     if (!mount.current || !isWebGLAvailable()) return;
     const ts = createThreeScene(mount.current, { cameraPosition: new THREE.Vector3(0, 3.4, 11), autoRotate: false, background: 0x0b1220 });
     tsRef.current = ts;

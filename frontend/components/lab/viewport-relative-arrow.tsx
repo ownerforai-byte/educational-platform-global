@@ -103,6 +103,7 @@ export function useViewportRelativeDirection(config: ViewportRelativeArrowConfig
       setDirection(dirToTarget);
     }
   }, [camera, size, config.screenTarget, config.depth, config.baseDirection]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
   useFrame(() => {
     const currentPos = camera.position.clone();

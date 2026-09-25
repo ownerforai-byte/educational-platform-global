@@ -295,6 +295,7 @@ const container = mountRef.current!;
     if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   })();}, [focalLength, objectPosition, showRays, showLabels, showFocus]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
 
   return (
@@ -637,6 +638,7 @@ const container = mountRef.current!;
     if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   })();}, [focalLength, objectPosition, showRays, showLabels, showFocus]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
 
   return (

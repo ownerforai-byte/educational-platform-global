@@ -234,6 +234,7 @@ const labelMaterials: THREE.SpriteMaterial[] = [];
     updateScene();
     };
   }, [mass, height, velocity, springConstant, compression, showWork]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
 
   return (

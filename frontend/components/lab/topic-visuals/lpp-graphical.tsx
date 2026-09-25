@@ -67,6 +67,7 @@ export function LPPGraphicalVisual() {
     Number.isFinite(xAxisCorner) && Number.isFinite(yAxisCorner) &&
     ix <= xAxisCorner + 1e-9 && iy <= yAxisCorner + 1e-9;
   const cornerList = hasRegion
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     ? [{ x: 0, y: 0 }, { x: xAxisCorner, y: 0 }, { x: ix, y: iy }, { x: 0, y: yAxisCorner }]
     : [];
   const zAt = (x: number, y: number) => p * x + q * y;

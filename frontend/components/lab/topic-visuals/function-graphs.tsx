@@ -228,6 +228,7 @@ export function FunctionVisual() {
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
   }, [funcType, params, showDomainRange, isWebGL, runId, showLabels]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
   if (!isWebGL) {
     return <WebGLFallback title="Functions" description="Function graph explorer — requires WebGL." />;

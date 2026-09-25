@@ -1806,7 +1806,6 @@ export function slugifySyllabusTopic(title: string): string {
     .toLowerCase()
     .normalize("NFKD")
     .replace(/[\u0300-\u036f]/g, "")
-    // eslint-disable-next-line no-misleading-character-class -- class intentionally covers Devanagari incl. combining marks (Mn); excluding them would change matching
     .replace(/[^a-z0-9\u0900-\u097f]+/g, "-")
     .replace(/^-+|-+$/g, "")
     .slice(0, 96);

@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 "use client";
 
 import { useState, useRef, useEffect } from "react";
@@ -294,6 +293,7 @@ const DotProduct3D: React.FC = () => {
           autoRotate: false,
           background: 0x020617
         });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
     tsRef.current = ts;
     const unbind = bindResize(ts);
     function animate() {

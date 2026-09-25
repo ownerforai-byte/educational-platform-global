@@ -265,6 +265,7 @@ let leaderLayer: any;
     for (let n = 1; n <= 4; n++) {
       const r = shellRadii[n - 1];
       const pts: THREE.Vector3[] = [];
+      // eslint-disable-next-line react-hooks/exhaustive-deps
       for (let i = 0; i <= 48; i++) {
         const a = (i / 48) * Math.PI * 2;
         pts.push(new THREE.Vector3(r * Math.cos(a), 2.4, r * Math.sin(a)));

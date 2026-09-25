@@ -247,17 +247,14 @@ export function DevContrastAudit(): null {
       const failures = rows.filter((r) => !r.pass);
 
       if (failures.length > 0) {
-        // eslint-disable-next-line no-console
         console.warn(
           `%c[DevContrastAudit] theme=%c${theme}%c — ${failures.length}/${rows.length} pair(s) below WCAG AA`,
           "color:#f59e0b;font-weight:bold",
           "color:#60a5fa;font-weight:bold",
           "color:inherit",
         );
-        // eslint-disable-next-line no-console
         console.table(failures, ["id", "description", "pair", "ratio", "aa", "pass"]);
       } else {
-        // eslint-disable-next-line no-console
         console.info(
           `%c[DevContrastAudit] theme=%c${theme}%c — all ${rows.length} pairs pass WCAG AA ✓`,
           "color:#10b981;font-weight:bold",

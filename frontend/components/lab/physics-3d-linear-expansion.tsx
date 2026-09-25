@@ -312,6 +312,7 @@ const container = mountRef.current!;
     };
   } catch { /* CSS2D not available */ }
   })();}, [webGL, matIdx, rodLengthCm, T1, T2, unitCm]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
 
   return (

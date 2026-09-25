@@ -49,10 +49,6 @@ export type RealViewId =
   | "circulatory"
   | "reproductive"
   | "process"
-  // Lab studios define their own view vocabulary (ray-path, titration,
-  // field-lines, …). The union keeps autocomplete for the anatomy ids while
-  // still accepting any custom string.
-  // eslint-disable-next-line @typescript-eslint/ban-types
   | (string & {});
 
 export type RealView = { id: RealViewId; label: string; hint: string };

@@ -157,6 +157,7 @@ let leaderLayer: any;
     if (labelRenderer) labelRenderer.render(ts!.scene, ts!.camera);
     };
   }, [webGL, v0, theta, g]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
 
   return (

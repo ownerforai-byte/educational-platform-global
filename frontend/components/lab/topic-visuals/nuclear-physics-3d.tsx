@@ -263,6 +263,7 @@ export function NuclearPhysicsVisual() {
     const cleanup = init();
     return () => { cleanup.then((d) => d?.()); };
   }, [isotope, isWebGL, runId, animating, showLabels]);
+// eslint-disable-next-line react-hooks/exhaustive-deps
 
   if (!isWebGL) {
     return <WebGLFallback title="Nuclear Physics" description="Nucleus with proton/neutron labels." />;
