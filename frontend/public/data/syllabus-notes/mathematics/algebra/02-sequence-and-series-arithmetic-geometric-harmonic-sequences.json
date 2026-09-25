@@ -1,0 +1,51 @@
+{
+  "title": "Sequence and series: arithmetic, geometric, harmonic sequences",
+  "unitSlug": "algebra",
+  "topicSlug": "sequence-and-series-arithmetic-geometric-harmonic-sequences",
+  "topicTitle": "Sequence and series: arithmetic, geometric, harmonic sequences",
+  "relevance": 100,
+  "notes": [
+    "### 1. Sequence Definition",
+    "An ordered list of numbers following a pattern: a1, a2, a3, ..., an, ...",
+    "### 2. Arithmetic Progression (AP)",
+    "- Common difference: d = an - a(n-1)",
+    "- nth term: an = a + (n-1)d",
+    "- Sum of n terms: Sn = n/2[2a + (n-1)d] = n/2(a + l)",
+    "- Arithmetic Mean: A = (a+b)/2",
+    "### 3. Geometric Progression (GP)",
+    "- Common ratio: r = an/a(n-1)",
+    "- nth term: an = ar^(n-1)",
+    "- Sum of n terms: Sn = a(r^n - 1)/(r-1) for r != 1",
+    "- Infinite GP (|r| < 1): S_infinity = a/(1-r)",
+    "- Geometric Mean: G = sqrt(ab)",
+    "### 4. Harmonic Progression (HP)",
+    "Reciprocals of an AP: 1/a, 1/(a+d), 1/(a+2d), ...",
+    "- Harmonic Mean: H = 2ab/(a+b)",
+    "- Relation: A x H = G^2 (AM x HM = GM^2)",
+    "### 5. Important Relations",
+    "- For AP: an - a(n-1) = d (constant)",
+    "- For GP: an/a(n-1) = r (constant)",
+    "- AM >= GM >= HM for positive numbers",
+    "### 6. Entrance Exam Focus",
+    "MCQs: Find nth term, sum, GM/HM; Word problems on AP/GP; relation between AM, GM, HM."
+  ],
+  "confusion": [
+    "x HP has a direct sum formula. x Take reciprocals, use AP sum.",
+    "x r can be any value in infinite GP. x Must have |r| < 1 for convergence.",
+    "x AM = GM always. x AM >= GM, equality only when all terms equal."
+  ],
+  "practice": [
+    "Find the 20th term and sum of first 20 terms of AP: 3, 7, 11, ...",
+    "Find the GP: 2, 6, 18, ... and its 8th term.",
+    "If AM = 13 and GM = 12, find the two numbers.",
+    "Sum of infinite GP: 1 + 1/3 + 1/9 + ..."
+  ],
+  "formulas": [
+    "an = a + (n-1)d (AP)",
+    "Sn = n/2[2a + (n-1)d] (AP)",
+    "an = ar^(n-1) (GP)",
+    "Sn = a(r^n - 1)/(r-1) (GP)",
+    "S_infinity = a/(1-r), |r| < 1 (GP)",
+    "G = sqrt(ab), H = 2ab/(a+b)"
+  ]
+}

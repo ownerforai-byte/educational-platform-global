@@ -22,7 +22,7 @@ const JOURNEY_STEPS = [
     step: "02",
     icon: FlaskConical,
     title: "Learn by Seeing",
-    text: "Step into 96+ interactive 3D labs — spin a cell, build a molecule, bend light, launch projectiles. Concepts stick when you can grab them.",
+    text: "Step into 50+ interactive 3D labs — spin a cell, build a molecule, bend light, launch projectiles. Concepts stick when you can grab them.",
     href: "/lab",
     cta: "Enter the 3D labs",
   },

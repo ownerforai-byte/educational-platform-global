@@ -33,6 +33,7 @@ import periodicTableRoutes from "./api/periodic-table";
 import lessonsRoutes from "./api/lessons";
 import { rateLimit } from "./middleware/rateLimit";
 import { isOriginAllowed } from "./middleware/cors";
+import { isProduction } from "./config/env";
 
 export function createApp(): express.Express {
   const app = express();
@@ -66,11 +67,17 @@ export function createApp(): express.Express {
   }
 
   app.get("/health", (_req, res) => {
-    res.json({ status: "ok", timestamp: new Date().toISOString() });
+    res.json({
+      status: "ok",
+      timestamp: new Date().toISOString(),
+      // Render injects the deployed revision — lets the live smoke test confirm
+      // it is checking the release that triggered it (not the previous one).
+      commit: process.env.RENDER_GIT_COMMIT ?? null,
+    });
   });
 
   // Debug: log all registered routes (suppressed in production)
-  if (process.env.NODE_ENV !== "production") {
+  if (!isProduction) {
   app._router.stack.forEach((layer: any) => {
     if (layer.route) {
       const methods = layer.route.methods ? Object.keys(layer.route.methods).join(", ") : "use";
@@ -112,7 +119,7 @@ export function createApp(): express.Express {
   app.use("/api/lessons", lessonsRoutes);
 
   // Debug after API routes (suppressed in production)
-  if (process.env.NODE_ENV !== "production") {
+  if (!isProduction) {
   console.log("\n=== AFTER API REGISTRATION ===");
   app._router.stack.forEach((layer: any) => {
     if (layer.route) {

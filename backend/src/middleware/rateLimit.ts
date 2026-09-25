@@ -62,7 +62,10 @@ export function rateLimit(req: Request, res: Response, next: NextFunction) {
     }
   }
 
-  const id = getClientId(req);
+  // Per-tier isolation (Greptile review 2026-09-25): one shared counter let a
+  // heavy curriculum page (>10 content calls) consume the login/refresh budget
+  // and 429 the user's next authentication attempt.
+  const id = `${tier}:${getClientId(req)}`;
   const entry = hits.get(id);
 
   if (!entry || now > entry.reset) {

@@ -756,12 +756,16 @@ export class AIService {
 
     const openrouterKey = process.env.OPENROUTER_API_KEY;
     const agnesKey = process.env.AGNES_API_KEY;
+    const geminiKey = process.env.GEMINI_API_KEY;
     const defaultProvider = (
       process.env.AI_DEFAULT_PROVIDER ?? process.env.AI_PROVIDER
     )?.toLowerCase();
 
     if (openrouterKey) this.providers.set("openrouter", new OpenRouterProvider(openrouterKey));
     if (agnesKey) this.providers.set("agnes", new AgnesProvider(agnesKey));
+    // Greptile review 2026-09-25: Gemini was never registered, so a deployment
+    // with only GEMINI_API_KEY set silently degraded to the keyword engine.
+    if (geminiKey) this.providers.set("gemini", new GeminiProvider(geminiKey));
 
     if (defaultProvider && this.providers.has(defaultProvider)) {
       this.defaultProvider = defaultProvider;
@@ -769,6 +773,8 @@ export class AIService {
       this.defaultProvider = "agnes";
     } else if (openrouterKey) {
       this.defaultProvider = "openrouter";
+    } else if (geminiKey) {
+      this.defaultProvider = "gemini";
     }
   }
 
@@ -789,7 +795,28 @@ export class AIService {
 
   async chat(providerName: string, messages: AIChatMessage[]): Promise<string> {
     const internal = this.providers.get("internal")!;
-    const llms = ["agnes", "openrouter"]
+
+    // Explicit provider selection wins (Greptile review 2026-09-25): the race
+    // previously ignored providerName, so a request for "openrouter" could be
+    // answered by agnes (or vice versa) while the API labelled it with the
+    // requested name. Unselected/unknown names keep the race + fallback.
+    const requested = providerName?.toLowerCase();
+    if (
+      requested &&
+      requested !== "internal" &&
+      requested !== "auto" &&
+      this.providers.has(requested)
+    ) {
+      try {
+        const text = await this.providers.get(requested)!.chat(messages);
+        if (text && text.trim()) return text;
+      } catch (err) {
+        console.warn(`[AI] selected provider "${requested}" failed:`, err instanceof Error ? err.message : err);
+      }
+      return internal.chat(messages);
+    }
+
+    const llms = ["agnes", "openrouter", "gemini"]
       .filter((n) => this.providers.has(n))
       .map((n) => this.providers.get(n)!);
     if (llms.length === 0) return internal.chat(messages);
@@ -825,7 +852,23 @@ export class AIService {
 
   async search(providerName: string, query: string): Promise<AISearchResponse> {
     const internal = this.providers.get("internal")!;
-    const llms = ["agnes", "openrouter"]
+
+    const requested = providerName?.toLowerCase();
+    if (
+      requested &&
+      requested !== "internal" &&
+      requested !== "auto" &&
+      this.providers.has(requested)
+    ) {
+      try {
+        return await this.providers.get(requested)!.search(query);
+      } catch (err) {
+        console.warn(`[AI] selected provider "${requested}" search failed:`, err instanceof Error ? err.message : err);
+      }
+      return internal.search(query);
+    }
+
+    const llms = ["agnes", "openrouter", "gemini"]
       .filter((n) => this.providers.has(n))
       .map((n) => this.providers.get(n)!);
     if (llms.length === 0) return internal.search(query);

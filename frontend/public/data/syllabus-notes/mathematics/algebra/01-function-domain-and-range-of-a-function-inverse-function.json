@@ -1,0 +1,47 @@
+{
+  "title": "Function: domain and range of a function, inverse function",
+  "unitSlug": "algebra",
+  "topicSlug": "function-domain-and-range-of-a-function-inverse-function",
+  "topicTitle": "Function: domain and range of a function, inverse function",
+  "relevance": 100,
+  "notes": [
+    "### 1. Function Definition",
+    "A function f from set A to set B is a rule that assigns to each element of A exactly one element of B. Written as f: A -> B, where A is the domain and B is the codomain.",
+    "### 2. Domain and Range",
+    "- Domain: All possible input values (x-values) for which f is defined",
+    "- Range: All possible output values (y-values) that f produces",
+    "- Example: f(x) = sqrt(x-2) -> Domain: x >= 2, Range: y >= 0",
+    "### 3. Types of Functions",
+    "- One-to-one (Injective): Each output has exactly one input",
+    "- Onto (Surjective): Every element of codomain is mapped",
+    "- Bijective: Both one-to-one and onto",
+    "### 4. Inverse Function",
+    "If f: A -> B is bijective, the inverse f^-1: B -> A satisfies f^-1(f(x)) = x and f(f^-1(y)) = y.",
+    "To find f^-1: (1) Replace f(x) with y, (2) Solve for x, (3) interchange x and y.",
+    "### 5. Condition for Inverse to Exist",
+    "f must be one-to-one (horizontal line test) AND onto (range = codomain).",
+    "### 6. Graphical Property",
+    "The graph of f^-1 is the reflection of f across the line y = x.",
+    "### 7. Composite Function",
+    "(f o g)(x) = f(g(x)). Note: f o g != g o f in general.",
+    "### 8. Entrance Exam Formulas",
+    "- f(x) = ax + b -> f^-1(x) = (x-b)/a",
+    "- f(x) = x^2 (x>=0) -> f^-1(x) = sqrt(x)",
+    "- (f o f^-1)(x) = x and (f^-1 o f)(x) = x"
+  ],
+  "confusion": [
+    "x Every function has an inverse. x Only bijective functions have inverses.",
+    "x f^-1(x) = 1/f(x). x f^-1 is the inverse function, not reciprocal.",
+    "x Domain = Range always. x They can be different sets."
+  ],
+  "practice": [
+    "Find the domain and range of f(x) = 1/(x-3).",
+    "If f(x) = 2x + 5, find f^-1(x).",
+    "Show that f(x) = x^3 is one-to-one and find its inverse.",
+    "If f(x) = (x+1)/(x-1), find f o f."
+  ],
+  "formulas": [
+    "f^-1(f(x)) = x and f(f^-1(x)) = x",
+    "(f o g)(x) = f(g(x))"
+  ]
+}

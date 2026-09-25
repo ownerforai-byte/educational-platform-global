@@ -7,29 +7,43 @@ Local Flask endpoint that a cloud n8n workflow POSTs to in order to:
   3. Return the screenshot (Base64 PNG) to n8n so a vision node can verify
      whether the step is COMPLETE or INCOMPLETE.
 
-SECURITY WARNING
-----------------
-This service, once exposed through a public tunnel (ngrok / VS Code port
-forwarding), lets ANYONE with the public URL move your mouse, type on your
-keyboard, and capture your entire screen. It is UNAUTHENTICATED by default.
+SECURITY (hardened 2026-09-25 after Devin/Qodo review)
+------------------------------------------------------
+This service can move your mouse, type on your keyboard, and capture your
+entire screen. It is therefore FAIL-CLOSED:
 
-Recommended hardening (uncomment/set the API key) before going public:
-  - n8n sends header  X-API-Key:  <shared secret>
-  - This endpoint 401s if the header is missing or wrong.
-Treat the public URL like a credential. Do NOT run in production unattended.
+  * AGNES_BRIDGE_API_KEY is REQUIRED. Without it the process refuses to
+    start — the previous "unauthenticated by default" behavior let any caller
+    of a forwarded port or tunnel control the desktop and read the screen.
+  * The server binds to 127.0.0.1 by default. Expose it only through a tunnel
+    (ngrok / VS Code port forwarding) with the API key set, and treat the
+    public URL like a credential.
+  * Prompts are length-capped (AGNES_MAX_PROMPT_CHARS, default 4000) and must
+    be strings — no unbounded typing jobs.
+  * Execution is serialized with a lock: overlapping requests previously
+    interleaved clicks/typing and captured each other's screen state.
+
+n8n sends header  X-API-Key:  <shared secret>. The endpoint 401s otherwise.
 """
 
 import base64
 import os
+import threading
 import time
 from io import BytesIO
 
-import pyautogui
-from flask import Flask, request, jsonify
+from flask import Flask, jsonify, request
+
+try:
+    import pyautogui
+except Exception as _import_err:  # headless machines: import fails without a display
+    pyautogui = None
+    _IMPORT_ERROR = _import_err
 
 # ---------------------------------------------------------------------------
 # Config
 # ---------------------------------------------------------------------------
+
 # Coordinates of the Agnes AI text input field.
 #
 # >>> VERIFY THESE <<<  They were captured from the live cursor at
@@ -44,15 +58,36 @@ AGNES_INPUT_Y = 667
 # Tune to the typical Agnes AI execution time. 10s is the safe default.
 SETTLE_SECONDS = int(os.environ.get("AGNES_SETTLE_SECONDS", "10"))
 
-# Optional shared-secret auth. If set in the environment, every /execute
-# request must carry the header  X-API-Key: <the same value>.
+# REQUIRED shared secret. Fail-closed: no key, no bridge (see docstring).
 API_KEY = os.environ.get("AGNES_BRIDGE_API_KEY", "")
+
+# Prompt length cap (characters). Oversized requests are rejected 400.
+MAX_PROMPT_CHARS = int(os.environ.get("AGNES_MAX_PROMPT_CHARS", "4000"))
+
+# Bind interface. Loopback by default; override only when tunneling WITH a key.
+BIND_HOST = os.environ.get("AGNES_BRIDGE_HOST", "127.0.0.1")
+BIND_PORT = int(os.environ.get("AGNES_BRIDGE_PORT", "5000"))
+
+if not API_KEY:
+    raise SystemExit(
+        "AGNES_BRIDGE_API_KEY is not set.\n"
+        "This bridge controls your desktop and captures the screen — it must\n"
+        "never run unauthenticated. Set a shared secret and restart:\n"
+        "    set AGNES_BRIDGE_API_KEY=<long random secret>   (Windows)\n"
+        "    export AGNES_BRIDGE_API_KEY=<long random secret>  (macOS/Linux)\n"
+        "Then send the same value as the X-API-Key header from n8n."
+    )
 
 app = Flask(__name__)
 
 # Fails fast if the display / screen is unavailable rather than mid-request.
-pyautogui.FAILSAFE = True
-pyautogui.PAUSE = 0.05
+if pyautogui is not None:
+    pyautogui.FAILSAFE = True
+    pyautogui.PAUSE = 0.05
+
+# Serializes /execute: one automation job at a time (overlapping jobs used to
+# click/type while another waited and capture each other's screens).
+EXECUTE_LOCK = threading.Lock()
 
 
 def capture_screen_base64() -> str:
@@ -63,12 +98,10 @@ def capture_screen_base64() -> str:
     return base64.b64encode(buffered.getvalue()).decode("utf-8")
 
 
-def check_auth():
-    """Return True when no API key is configured, else verify the header."""
-    if not API_KEY:
-        return True
+def check_auth() -> bool:
+    """Verify the X-API-Key header against the configured secret."""
     supplied = request.headers.get("X-API-Key", "")
-    return supplied == API_KEY
+    return bool(supplied) and supplied == API_KEY
 
 
 @app.route("/health", methods=["GET"])
@@ -85,20 +118,34 @@ def execute_prompt():
     data = request.get_json(silent=True) or {}
     prompt_text = data.get("prompt", "")
 
-    if not prompt_text:
+    if not isinstance(prompt_text, str) or not prompt_text.strip():
         return jsonify({"status": "error", "message": "No prompt provided"}), 400
 
-    try:
-        # Focus Agnes AI, type the prompt, submit.
-        pyautogui.click(x=AGNES_INPUT_X, y=AGNES_INPUT_Y)
-        time.sleep(0.5)
-        # pyautogui.write only types ASCII; keep it simple & robust.
-        pyautogui.write(prompt_text, interval=0.01)
-        pyautogui.press("enter")
+    if len(prompt_text) > MAX_PROMPT_CHARS:
+        return jsonify(
+            {
+                "status": "error",
+                "message": f"Prompt too long ({len(prompt_text)} chars; max {MAX_PROMPT_CHARS})",
+            }
+        ), 400
 
-        # Let Agnes AI run, then snapshot the result.
-        time.sleep(SETTLE_SECONDS)
-        image_base64 = capture_screen_base64()
+    if pyautogui is None:
+        return jsonify(
+            {"status": "error", "message": f"pyautogui unavailable: {_IMPORT_ERROR}"}
+        ), 500
+
+    try:
+        with EXECUTE_LOCK:
+            # Focus Agnes AI, type the prompt, submit.
+            pyautogui.click(x=AGNES_INPUT_X, y=AGNES_INPUT_Y)
+            time.sleep(0.5)
+            # pyautogui.write only types ASCII; keep it simple & robust.
+            pyautogui.write(prompt_text, interval=0.01)
+            pyautogui.press("enter")
+
+            # Let Agnes AI run, then snapshot the result.
+            time.sleep(SETTLE_SECONDS)
+            image_base64 = capture_screen_base64()
 
         return jsonify(
             {
@@ -115,4 +162,4 @@ def execute_prompt():
 
 
 if __name__ == "__main__":
-    app.run(host="0.0.0.0", port=5000)
+    app.run(host=BIND_HOST, port=BIND_PORT)

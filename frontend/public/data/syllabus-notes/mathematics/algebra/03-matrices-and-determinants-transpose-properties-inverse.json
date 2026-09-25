@@ -1,0 +1,50 @@
+{
+  "title": "Matrices and determinants: transpose, properties, inverse",
+  "unitSlug": "algebra",
+  "topicSlug": "matrices-and-determinants-transpose-properties-inverse",
+  "topicTitle": "Matrices and determinants: transpose, properties, inverse",
+  "relevance": 100,
+  "notes": [
+    "### 1. Matrix Definition",
+    "A rectangular array of numbers arranged in rows and columns. Order: m x n (m rows, n columns).",
+    "### 2. Types of Matrices",
+    "- Square: m = n",
+    "- Diagonal: All non-diagonal elements are zero",
+    "- Identity (I): Diagonal elements = 1, others = 0",
+    "- Zero matrix: All elements = 0",
+    "- Symmetric: A = A^T",
+    "- Skew-symmetric: A = -A^T (diagonal elements = 0)",
+    "### 3. Transpose",
+    "Interchanging rows and columns: (A^T)_ij = A_ji",
+    "- Properties: (A^T)^T = A, (A+B)^T = A^T + B^T, (AB)^T = B^T A^T",
+    "### 4. Determinant (2x2 and 3x3)",
+    "- |A| = ad - bc for A = [[a,b],[c,d]]",
+    "- |A| = 0 -> singular matrix (no inverse)",
+    "- |A| != 0 -> non-singular (inverse exists)",
+    "### 5. Inverse of a Matrix",
+    "A^-1 = (1/|A|) x adj(A) where adj(A) is the adjoint (transpose of cofactor matrix).",
+    "### 6. Cramer's Rule",
+    "For system ax + by = e, cx + dy = f:",
+    "x = Dx/D, y = Dy/D where D = |A|, Dx replaces column 1 with constants, Dy replaces column 2.",
+    "### 7. Entrance Exam Formulas",
+    "- |AB| = |A| x |B|",
+    "- |A^T| = |A|",
+    "- A x adj(A) = |A| x I",
+    "- (A^-1)^T = (A^T)^-1"
+  ],
+  "confusion": [
+    "x (AB)^T = A^T B^T. x (AB)^T = B^T A^T (order reverses!).",
+    "x Every matrix has an inverse. x Only square, non-singular matrices.",
+    "x AB = BA always. x Matrix multiplication is NOT commutative."
+  ],
+  "practice": [
+    "Find the transpose and determinant of A = [[2,3],[1,4]].",
+    "Find the inverse of A = [[1,2],[3,5]].",
+    "Solve using Cramer's rule: 2x + 3y = 8, x - y = 1.",
+    "If |A| = 5, find |adj(A)| for a 3x3 matrix."
+  ],
+  "formulas": [
+    "A^-1 = (1/|A|) adj(A)",
+    "Dx = det(replace col1 with constants), Dy = det(replace col2 with constants)"
+  ]
+}

@@ -1,4 +1,4 @@
-import { apiFetch, getStoredToken } from "../api-client";
+import { apiFetch, getStoredToken, clearStoredToken } from "../api-client";
 import type {
   AIChatMessage,
   AIChatRequest,
@@ -41,58 +41,71 @@ export async function* streamChat(
 
   // Bearer restored 2026-09-25: cookie-only auth broke streams once the 1h
   // access token expired (no refresh-retry exists on stream requests).
-  const headers: Record<string, string> = {
-    "Content-Type": "application/json",
-  };
-  const token = getStoredToken();
-  if (token) {
-    headers["Authorization"] = `Bearer ${token}`;
-  }
+  // Greptile follow-up 2026-09-25: localStorage can hold a STALE token after
+  // the cookie refreshed; the backend trusts the header over the cookie, so a
+  // stale Bearer 401s the stream. On 401: drop the stored token and retry once
+  // cookie-only (streams have no refresh-retry middleware).
+  for (let attempt = 0; attempt < 2; attempt += 1) {
+    const headers: Record<string, string> = {
+      "Content-Type": "application/json",
+    };
+    if (attempt === 0) {
+      const token = getStoredToken();
+      if (token) {
+        headers["Authorization"] = `Bearer ${token}`;
+      }
+    }
 
-  const response = await fetch("/api/ai", {
-    method: "POST",
-    credentials: "include",
-    headers,
-    body: JSON.stringify(body),
-  });
+    const response = await fetch("/api/ai", {
+      method: "POST",
+      credentials: "include",
+      headers,
+      body: JSON.stringify(body),
+    });
 
-  if (!response.ok) {
-    const error = await response.json().catch(() => ({ error: response.statusText }));
-    throw new Error(error.error || "Stream failed");
-  }
+    if (response.status === 401 && attempt === 0) {
+      clearStoredToken();
+      continue;
+    }
 
-  const reader = response.body?.getReader();
-  if (!reader) throw new Error("No reader available");
+    if (!response.ok) {
+      const error = await response.json().catch(() => ({ error: response.statusText }));
+      throw new Error(error.error || "Stream failed");
+    }
 
-  const decoder = new TextDecoder();
-  let buffer = "";
+    const reader = response.body?.getReader();
+    if (!reader) throw new Error("No reader available");
 
-  while (true) {
-    const { done, value } = await reader.read();
-    if (done) break;
+    const decoder = new TextDecoder();
+    let buffer = "";
 
-    buffer += decoder.decode(value, { stream: true });
-    const lines = buffer.split("\n");
-    buffer = lines.pop() ?? "";
+    while (true) {
+      const { done, value } = await reader.read();
+      if (done) return;
 
-    for (const line of lines) {
-      if (!line.startsWith("data: ")) continue;
-      const data = line.slice(6).trim();
-      if (!data) continue;
+      buffer += decoder.decode(value, { stream: true });
+      const lines = buffer.split("\n");
+      buffer = lines.pop() ?? "";
 
-      try {
-        const parsed = JSON.parse(data);
-        if (parsed.content) {
-          yield parsed.content;
+      for (const line of lines) {
+        if (!line.startsWith("data: ")) continue;
+        const data = line.slice(6).trim();
+        if (!data) continue;
+
+        try {
+          const parsed = JSON.parse(data);
+          if (parsed.content) {
+            yield parsed.content;
+          }
+          if (parsed.done) {
+            return;
+          }
+          if (parsed.error) {
+            throw new Error(parsed.error);
+          }
+        } catch (e) {
+          // Skip malformed events
         }
-        if (parsed.done) {
-          return;
-        }
-        if (parsed.error) {
-          throw new Error(parsed.error);
-        }
-      } catch (e) {
-        // Skip malformed events
       }
     }
   }

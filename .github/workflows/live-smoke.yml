@@ -1,8 +1,8 @@
 name: Live Smoke Test
 
 on:
-  # After every push to main, wait for Render to auto-deploy, then verify the
-  # deployed backend still serves auth + AI correctly.
+  # After every push to main, wait until Render has actually deployed the
+  # triggering revision, then verify the deployed backend.
   push:
     branches: [main]
   workflow_dispatch: {}
@@ -10,17 +10,16 @@ on:
 jobs:
   smoke:
     runs-on: ubuntu-latest
-    timeout-minutes: 8
+    timeout-minutes: 12
     steps:
       - uses: actions/checkout@v4
 
-      - name: Wait for Render auto-deploy to settle
-        run: sleep 180
-
-      - name: Run live smoke test
+      - name: Run live smoke test (polls until the pushed revision is live)
         working-directory: backend
         env:
           SMOKE_BASE_URL: https://rn01.onrender.com
+          SMOKE_EXPECTED_COMMIT: ${{ github.sha }}
           SMOKE_OWNER_EMAIL: ${{ secrets.SMOKE_OWNER_EMAIL }}
           SMOKE_OWNER_PASSWORD: ${{ secrets.SMOKE_OWNER_PASSWORD }}
+          CI: "true"
         run: node scripts/smoke-live.mjs

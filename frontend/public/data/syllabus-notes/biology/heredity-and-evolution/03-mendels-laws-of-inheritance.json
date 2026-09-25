@@ -1,0 +1,48 @@
+{
+  "title": "Mendel's laws of inheritance",
+  "unitSlug": "heredity-and-evolution",
+  "topicSlug": "mendels-laws-of-inheritance",
+  "topicTitle": "Mendel's laws of inheritance",
+  "relevance": 100,
+  "notes": [
+    "### 1. Gregor Mendel - Father of Genetics",
+    "Mendel conducted experiments on pea plants (Pisum sativum) from 1856-1863. He studied 7 pairs of contrasting characters.",
+    "### 2. Key Terms",
+    "- **Gene**: Unit of heredity, determines a trait",
+    "- **Allele**: Alternative form of a gene",
+    "- **Dominant**: Expressed when present (capital letter)",
+    "- **Recessive**: Expressed only when homozygous (lowercase)",
+    "- **Genotype**: Genetic makeup (e.g., TT, Tt, tt)",
+    "- **Phenotype**: Physical appearance",
+    "- **Homozygous**: Same alleles (TT or tt)",
+    "- **Heterozygous**: Different alleles (Tt)",
+    "- **Monohybrid cross**: Cross involving one trait",
+    "- **Dihybrid cross**: Cross involving two traits",
+    "### 3. Mendel's First Law - Law of Segregation",
+    "During gamete formation, the two alleles for each gene separate (segregate) so that each gamete receives only one allele.",
+    "Monohybrid cross ratio: Genotypic 1:2:1, Phenotypic 3:1",
+    "### 4. Mendel's Second Law - Law of Independent Assortment",
+    "Genes for different traits assort independently during gamete formation (applies to genes on different chromosomes).",
+    "Dihybrid cross ratio: Phenotypic 9:3:3:1",
+    "### 5. Test Cross",
+    "Cross between dominant phenotype and homozygous recessive to determine genotype.",
+    "### 6. Entrance Exam Focus",
+    "Solve Punnett squares; Calculate ratios; Distinguish between laws."
+  ],
+  "confusion": [
+    "x Dominant traits are more common. x Dominant just means expressed when present.",
+    "x Independent assortment applies to all genes. x Only applies to genes on different chromosomes.",
+    "x 3:1 ratio always means homozygous dominant. x Could be heterozygous."
+  ],
+  "practice": [
+    "Cross TT x tt - find F1 and F2 genotypic and phenotypic ratios.",
+    "In peas, tall (T) is dominant to short (t). Cross Tt x Tt. What fraction is homozygous?",
+    "A dihybrid cross TtRr x TtRr gives what phenotypic ratio?",
+    "How do you determine if a tall plant is TT or Tt?"
+  ],
+  "formulas": [
+    "Monohybrid phenotypic ratio: 3:1",
+    "Dihybrid phenotypic ratio: 9:3:3:1",
+    "Test cross ratio: 1:1"
+  ]
+}

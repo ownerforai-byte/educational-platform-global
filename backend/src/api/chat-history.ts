@@ -61,12 +61,15 @@ router.get("/", requireAuth, async (req: Request, res: Response) => {
   const limitRaw = Number(req.query.limit);
   const limit = Number.isFinite(limitRaw) ? Math.min(Math.max(Math.trunc(limitRaw), 1), 500) : 200;
 
+  // Fetch NEWEST-first then re-reverse (Greptile review 2026-09-25): sorting
+  // ascending before the limit returned the OLDEST 200 once a session grew
+  // past the restore cap, silently dropping recent context.
   const { data, error } = await supabaseAdmin
     .from("chat_messages")
     .select("id, role, content, created_at")
     .eq("user_id", user.id)
     .eq("session", session)
-    .order("created_at", { ascending: true })
+    .order("created_at", { ascending: false })
     .limit(limit);
 
   if (error) {
@@ -78,7 +81,7 @@ router.get("/", requireAuth, async (req: Request, res: Response) => {
     return;
   }
 
-  res.json({ messages: data ?? [], migrated: true });
+  res.json({ messages: (data ?? []).slice().reverse(), migrated: true });
 });
 
 /** POST /api/chat-history — { session, messages: [{role, content}, ...] }. */

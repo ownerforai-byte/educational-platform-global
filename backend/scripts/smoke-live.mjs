@@ -38,6 +38,42 @@ const j = async (path, opts = {}) => {
   return { status: res.status, body, res };
 };
 
+// ── 0. Deploy-aware wait: confirm we are testing the RIGHT release ──
+// Greptile review 2026-09-25: a fixed sleep can run the smoke against the
+// PREVIOUS release when Render is slow. Render injects RENDER_GIT_COMMIT, so
+// when SMOKE_EXPECTED_COMMIT is set (CI passes GITHUB_SHA) we poll /health
+// until the deployed revision matches, then proceed.
+const EXPECTED_COMMIT = process.env.SMOKE_EXPECTED_COMMIT || null;
+const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+{
+  const deadline = Date.now() + (EXPECTED_COMMIT ? 8 * 60_000 : 4 * 60_000);
+  let last = null;
+  while (Date.now() < deadline) {
+    try {
+      const h = await j("/health");
+      last = h;
+      if (h.status === 200 && h.body?.status === "ok") {
+        if (!EXPECTED_COMMIT || h.body?.commit === EXPECTED_COMMIT) {
+          step(
+            "deployed revision confirmed",
+            true,
+            EXPECTED_COMMIT ? `commit=${String(h.body.commit).slice(0, 8)}` : "no expected commit set"
+          );
+          break;
+        }
+      }
+    } catch {}
+    await sleep(10_000);
+  }
+  if (!last || last.status !== 200 || (EXPECTED_COMMIT && last.body?.commit !== EXPECTED_COMMIT)) {
+    step(
+      "deployed revision confirmed",
+      false,
+      `timeout waiting for ${EXPECTED_COMMIT ? `commit ${EXPECTED_COMMIT.slice(0, 8)}` : "healthy backend"}`
+    );
+  }
+}
+
 // ── 1. Health ──
 const health = await j("/health");
 step("health endpoint responds", health.status === 200 && health.body?.status === "ok", `status=${health.status}`);
@@ -59,7 +95,16 @@ step("anonymous biology progress write rejected (401)", anonProgress.status === 
 const email = process.env.SMOKE_OWNER_EMAIL;
 const password = process.env.SMOKE_OWNER_PASSWORD;
 
-if (email && password) {
+const isCI = process.env.CI === "true" || !!process.env.GITHUB_ACTIONS;
+if (isCI && !(email && password)) {
+  // Greptile review 2026-09-25: silently skipping auth in CI lets the suite
+  // report "ALL SMOKE CHECKS PASSED" without testing authentication at all.
+  step(
+    "CI auth round-trip configured",
+    false,
+    "set SMOKE_OWNER_EMAIL + SMOKE_OWNER_PASSWORD repo secrets"
+  );
+} else if (email && password) {
   const login = await j("/api/auth/login", {
     method: "POST",
     body: JSON.stringify({ email, password }),

@@ -1,0 +1,49 @@
+{
+  "title": "Trigonometric ratios and identities",
+  "unitSlug": "trigonometry",
+  "topicSlug": "trigonometric-ratios-and-identities",
+  "topicTitle": "Trigonometric ratios and identities",
+  "relevance": 100,
+  "notes": [
+    "### 1. Basic Trigonometric Ratios",
+    "In a right triangle with angle theta:",
+    "- sin theta = opposite/hypotenuse",
+    "- cos theta = adjacent/hypotenuse",
+    "- tan theta = opposite/adjacent = sin theta/cos theta",
+    "- cosec theta = 1/sin theta, sec theta = 1/cos theta, cot theta = 1/tan theta",
+    "### 2. Key Values",
+    "| theta | 0 | 30 | 45 | 60 | 90 |",
+    "| sin theta | 0 | 1/2 | 1/sqrt(2) | sqrt(3)/2 | 1 |",
+    "| cos theta | 1 | sqrt(3)/2 | 1/sqrt(2) | 1/2 | 0 |",
+    "| tan theta | 0 | 1/sqrt(3) | 1 | sqrt(3) | undefined |",
+    "### 3. Fundamental Identities",
+    "- sin^2 theta + cos^2 theta = 1",
+    "- 1 + tan^2 theta = sec^2 theta",
+    "- 1 + cot^2 theta = cosec^2 theta",
+    "### 4. Compound Angle Formulas",
+    "- sin(A +/- B) = sin A cos B +/- cos A sin B",
+    "- cos(A +/- B) = cos A cos B ∓ sin A sin B",
+    "- tan(A +/- B) = (tan A +/- tan B)/(1 ∓ tan A tan B)",
+    "### 5. Double Angle Formulas",
+    "- sin 2A = 2 sin A cos A",
+    "- cos 2A = cos^2 A - sin^2 A = 2cos^2 A - 1 = 1 - 2sin^2 A",
+    "- tan 2A = 2tan A/(1 - tan^2 A)",
+    "### 6. Entrance Exam Focus",
+    "Prove identities; Solve trig equations; Use compound/double angle formulas."
+  ],
+  "confusion": [
+    "x sin(A+B) = sin A + sin B. x Must use compound angle formula.",
+    "x tan 2A = 2 tan A. x tan 2A = 2tan A/(1-tan^2 A)."
+  ],
+  "practice": [
+    "Prove: sin^2 theta + cos^2 theta = 1",
+    "If sin theta = 3/5, find all other trig ratios.",
+    "Prove: sin(A+B)sin(A-B) = sin^2 A - sin^2 B",
+    "Solve: 2sin^2 x - sin x - 1 = 0 for 0 <= x <= 360 degrees"
+  ],
+  "formulas": [
+    "sin^2 theta + cos^2 theta = 1",
+    "sin(A +/- B) = sin A cos B +/- cos A sin B",
+    "cos 2A = cos^2 A - sin^2 A"
+  ]
+}

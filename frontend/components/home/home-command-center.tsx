@@ -353,7 +353,7 @@ export function HomeCommandCenter({
         {/* Compact Live Stats Strip */}
         <div className="mt-10 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 rounded-2xl border border-border/60 bg-card/60 px-6 py-4 shadow-sm backdrop-blur-md">
           {[
-            { label: "3D Labs", count: "96+" },
+            { label: "3D Labs", count: "50+" },
             { label: "Theorem Proofs", count: `${totalTheorems}+` },
             { label: "Derivations", count: `${totalDerivations}+` },
             { label: "Curated Notes", count: "1,500+" },

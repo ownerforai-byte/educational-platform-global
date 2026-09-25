@@ -1,0 +1,53 @@
+{
+  "title": "Derivatives: derivative of a function, derivatives of algebraic and trigonometric functions",
+  "unitSlug": "calculus",
+  "topicSlug": "derivatives-derivative-of-a-function-derivatives-of-algebraic-and-trigonometric-functions",
+  "topicTitle": "Derivatives: derivative of a function, derivatives of algebraic and trigonometric functions",
+  "relevance": 100,
+  "notes": [
+    "### 1. Derivative Definition",
+    "The derivative of f(x) at x is: f'(x) = lim(h->0) [f(x+h) - f(x)]/h",
+    "Represents the instantaneous rate of change or slope of the tangent line.",
+    "### 2. Basic Derivative Rules",
+    "- Constant: d/dx(c) = 0",
+    "- Power rule: d/dx(x^n) = nx^(n-1)",
+    "- Constant multiple: d/dx[cf(x)] = cf'(x)",
+    "- Sum/Difference: d/dx[f +/- g] = f' +/- g'",
+    "### 3. Trigonometric Derivatives",
+    "- d/dx(sin x) = cos x",
+    "- d/dx(cos x) = -sin x",
+    "- d/dx(tan x) = sec^2 x",
+    "- d/dx(cot x) = -csc^2 x",
+    "- d/dx(sec x) = sec x tan x",
+    "- d/dx(csc x) = -csc x cot x",
+    "### 4. Key Algebraic Derivatives",
+    "- d/dx(x^n) = nx^(n-1)",
+    "- d/dx(e^x) = e^x",
+    "- d/dx(a^x) = a^x ln a",
+    "- d/dx(ln x) = 1/x",
+    "- d/dx(sqrt(x)) = 1/(2sqrt(x))",
+    "### 5. Product and Quotient Rules",
+    "- Product: (fg)' = f'g + fg'",
+    "- Quotient: (f/g)' = (f'g - fg')/g^2",
+    "### 6. Chain Rule",
+    "d/dx[f(g(x))] = f'(g(x)) x g'(x)",
+    "### 7. Entrance Exam Focus",
+    "Find derivative using first principle; Differentiate trigonometric functions; Apply chain rule."
+  ],
+  "confusion": [
+    "x d/dx(sin x) = cos x means slope is always positive. x Slope varies with x.",
+    "x d/dx(f.g) = f'.g. x Must use product rule: f'g + fg'.",
+    "x Derivative = slope of secant. x Derivative = slope of TANGENT line."
+  ],
+  "practice": [
+    "Find dy/dx if y = 3x^4 - 2x^3 + 5x - 1.",
+    "Differentiate y = sin^2 x using chain rule.",
+    "Find dy/dx if y = x^2 x cos x.",
+    "Find the derivative of y = e^(3x) x ln x."
+  ],
+  "formulas": [
+    "f'(x) = lim(h->0) [f(x+h) - f(x)]/h",
+    "(fg)' = f'g + fg'",
+    "d/dx[f(g(x))] = f'(g(x)) x g'(x)"
+  ]
+}
