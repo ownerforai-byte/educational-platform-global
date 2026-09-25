@@ -1,5 +1,6 @@
 import { Request, Response, Router } from "express";
 import { z } from "zod";
+import { isProductionEnv } from "../config/env";
 import { supabaseAdmin } from "../db/supabase";
 import {
   signInWithPassword,
@@ -27,19 +28,22 @@ import type {
 
 // ── Cookie helpers ─────────────────────────────────────────────────────────
 
-const cookieOptions = {
+// Secure flag evaluated per-call (isProductionEnv, not raw NODE_ENV): Render's
+// runtime may not set NODE_ENV, and cross-site OAuth redirects require the
+// Secure flag in production.
+const cookieOptions = () => ({
   httpOnly: true,
   sameSite: "lax" as const,
-  secure: process.env.NODE_ENV === "production",
+  secure: isProductionEnv(),
   path: "/",
-};
+});
 
 function setSessionCookie(res: Response, token: string, expiresInSec?: number): void {
   const maxAge =
     typeof expiresInSec === "number" && Number.isFinite(expiresInSec) && expiresInSec > 0
       ? expiresInSec
       : 3600;
-  res.cookie(SESSION_COOKIE, token, { ...cookieOptions, maxAge: maxAge * 1000 });
+  res.cookie(SESSION_COOKIE, token, { ...cookieOptions(), maxAge: maxAge * 1000 });
 }
 
 /** The refresh token lives 30 days so users stay signed in past the 1h access token. */
@@ -48,14 +52,14 @@ const REFRESH_COOKIE_MAX_AGE_SEC = 60 * 60 * 24 * 30;
 
 function setRefreshCookie(res: Response, token: string): void {
   res.cookie(REFRESH_COOKIE, token, {
-    ...cookieOptions,
+    ...cookieOptions(),
     maxAge: REFRESH_COOKIE_MAX_AGE_SEC * 1000,
   });
 }
 
 function clearSessionCookie(res: Response): void {
-  res.clearCookie(SESSION_COOKIE, cookieOptions);
-  res.clearCookie(REFRESH_COOKIE, cookieOptions);
+  res.clearCookie(SESSION_COOKIE, cookieOptions());
+  res.clearCookie(REFRESH_COOKIE, cookieOptions());
 }
 
 // ── Validation schemas ─────────────────────────────────────────────────────

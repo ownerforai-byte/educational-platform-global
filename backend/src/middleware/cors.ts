@@ -1,4 +1,5 @@
 import type { Request, Response, NextFunction } from "express";
+import { isProductionEnv } from "../config/env";
 
 /**
  * FRONTEND_URL may be a single origin or a comma-separated list, e.g.
@@ -26,32 +27,36 @@ export function getAllowedOrigins(): string[] {
   return Array.from(new Set(origins));
 }
 
-/** Check if a given origin is allowed. */
+/**
+ * Hardening 2026-09-25: in production only the configured FRONTEND_URL
+ * allowlist is accepted — the wildcard *.vercel.app / *.onrender.com rules let
+ * anyone host a phishing frontend that talks to this API with credentials.
+ * Development stays permissive (localhost ports, preview wildcards) so local
+ * work and previews keep flowing.
+ */
 export function isOriginAllowed(origin: string): boolean {
   if (!origin) return true;
   const allowed = getAllowedOrigins();
   if (allowed.includes(origin)) return true;
   try {
     const url = new URL(origin);
-    if (
+    const isLocalhost =
       url.hostname === "localhost" ||
       url.hostname === "127.0.0.1" ||
-      url.hostname === "0.0.0.0"
-    ) {
-      return true;
-    }
-    if (
+      url.hostname === "0.0.0.0";
+    const isPreviewHost =
       url.hostname.endsWith(".vercel.app") ||
       url.hostname.endsWith(".onrender.com") ||
       url.hostname.endsWith(".google.com") ||
-      url.hostname.endsWith(".googleusercontent.com")
-    ) {
-      return true;
+      url.hostname.endsWith(".googleusercontent.com");
+
+    if (!isProductionEnv()) {
+      return isLocalhost || isPreviewHost;
     }
-    // In development or preview environments, allow cross-origin requests
-    if (process.env.NODE_ENV !== "production") {
-      return true;
-    }
+
+    // Production: exact allowlist only (isOriginAllowed callers reflect the
+    // origin, so no wildcard match can smuggle credentials through).
+    return false;
   } catch {
     // not a valid URL — fall through
   }

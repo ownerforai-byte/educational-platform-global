@@ -36,6 +36,7 @@ import aiGenerateRoutes from "../src/api/ai-generate";
 import biologyRoutes from "../src/api/biology";
 import { createApp } from "../src/app";
 import { supabaseAdmin } from "../src/db/supabase";
+import { resetRateLimits } from "../src/middleware/rateLimit";
 import { requireAuth, requireRole, requireAdmin } from "../src/middleware/auth";
 
 const mocked = supabaseAdmin as unknown as {
@@ -119,6 +120,9 @@ async function startServers() {
 beforeEach(() => {
   vi.clearAllMocks();
   mocked.auth.signOut.mockResolvedValue({ data: {}, error: null });
+  // The tiered limiter (strict 10/min on auth endpoints) must not leak hits
+  // between tests — the suite makes many refresh/login calls per IP.
+  resetRateLimits();
 });
 
 beforeAll(async () => {

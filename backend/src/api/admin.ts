@@ -51,21 +51,28 @@ router.get("/users", requireAuth, async (req: Request, res: Response) => {
       return;
     }
 
-    // Enrich with pending premium request counts
-    const enriched = await Promise.all(
-      (data ?? []).map(async (p: any) => {
-        const { count } = await supabaseAdmin
-          .from("premium_requests")
-          .select("id", { count: "exact", head: true })
-          .eq("user_id", p.id)
-          .eq("status", "PENDING");
+    // Perf 2026-09-25: one batched query for pending premium request counts
+    // (was one head-count query PER user — O(N) on every admin page load).
+    const { data: pendingRows, error: pendingErr } = await supabaseAdmin
+      .from("premium_requests")
+      .select("user_id")
+      .eq("status", "PENDING");
 
-        return {
-          ...p,
-          pendingPremiumRequests: count ?? 0,
-        };
-      })
-    );
+    if (pendingErr) {
+      console.error("Failed to fetch pending premium requests:", pendingErr.message);
+      // Non-fatal: render the list with zeroed counts rather than failing.
+    }
+
+    const pendingCounts = new Map<string, number>();
+    for (const row of pendingRows ?? []) {
+      const uid = (row as { user_id?: string }).user_id;
+      if (uid) pendingCounts.set(uid, (pendingCounts.get(uid) ?? 0) + 1);
+    }
+
+    const enriched = (data ?? []).map((p: any) => ({
+      ...p,
+      pendingPremiumRequests: pendingCounts.get(p.id) ?? 0,
+    }));
 
     res.json(enriched);
   } catch (err: any) {

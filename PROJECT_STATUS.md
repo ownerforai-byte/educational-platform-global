@@ -320,3 +320,62 @@ rebuilt `frontend/public/data/syllabus-notes/chemistry/**`.
   states-of-matter / stoichiometry remain in place and may appear as extra tabs next to
   the new canonical notes.
 
+---
+
+## CURRENT TRUTH (2026-09-25 — supersedes everything above where they conflict)
+
+The sections above are historical phase logs (Cloudflare-era + pre-split). This section
+is the authoritative state. Owner: Codebuff (Buffy) + concurrent content agent.
+
+### Reality
+- **Workspace:** `C:\Users\ASUS\Desktop\rn` (monorepo: `frontend/` Next.js 15 + `backend/` Express 4 TS).
+- **Repo:** `github.com/ownerforai-byte/educational-platform-global` (branch `main`).
+- **Deploy:** backend auto-deploys to Render at `https://rn01.onrender.com` on every push to main.
+  **Frontend has NO confirmed production URL** — Supabase `site_url` still points at a dead (410)
+  Vercel URL. Wiring the real frontend URL into `FRONTEND_URL` + Supabase `site_url` is the
+  #1 open item.
+- **Supabase project:** `tsvbksfegvdjwczzfdcx` (Management API token in `backend/.env`).
+
+### Auth architecture (as shipped 2026-09-25)
+- httpOnly cookies: `sb-access-token` (1h) + `sb-refresh-token` (30d), set at login/signup.
+- `POST /api/auth/refresh` **rotates** via Supabase `refreshSession` (preferred) with a legacy
+  access-token revalidate fallback. Users stay signed in past the 1h access-token expiry.
+- Cookie `secure` flag + strict CORS key off `isProductionEnv()` (`src/config/env.ts`), which
+  treats `NODE_ENV=production` OR Render's injected `RENDER=true` / `RENDER_EXTERNAL_URL`
+  as production.
+- Owner accounts (5) share the `-@#%ownerforai` password; role OWNER via `OWNER_EMAILS`.
+
+### Security posture (fixed & verified live)
+- `/api/ai/generate-questions`: was anonymous (burned paid AI credits) → now requireAuth + credit check.
+- Biology lab progress: was arbitrary `userId` read/write → now session-derived; **in-memory
+  fallback store removed** — failures return honest 503 (`PROGRESS_STORE_UNAVAILABLE` / `PROGRESS_STORE_MISSING`).
+- CORS: production = exact `FRONTEND_URL` allowlist only (wildcards `*.vercel.app`/`*.onrender.com`
+  and non-prod allow-all removed; dev keeps localhost + preview wildcards).
+- Rate limits (tiered, in `middleware/rateLimit.ts`): login/refresh 10/min/IP; guest AI + global
+  default 60/min/IP; authenticated AI unlimited (provider-gateway enforced).
+- Guest AI capped in UI (7 messages, was `Infinity`); `streamChat` sends Bearer again.
+
+### Known open issues
+- **Supabase refresh-reuse quirk:** config says `security_refresh_token_reuse_interval=10` but
+  old refresh tokens were still accepted at +65s and reuse did not revoke the token family
+  (empirically verified). Low impact (httpOnly cookie, 30d expiry). File Supabase support ticket.
+- Next.js 14.2.15 CVE-2025-55184 upgrade to 14.2.35 still pending user approval (see advisory above).
+- CORS allowlist is **empty** until `FRONTEND_URL` is set on Render → in production only
+  same-origin (via the Next proxy) and localhost work. This is intentional until the real
+  frontend URL is known.
+
+### Verification state
+- Backend: 48/48 tests, `tsc --noEmit` clean. Frontend: 219/219 tests, `tsc --noEmit` clean.
+- Live rotation e2e on Render: 7/8 (login → refresh-cookie rotation → reuse → logout; the one
+  ⚠️ is the Supabase reuse quirk above).
+- **Permanent smoke test:** `backend/scripts/smoke-live.mjs` (`npm run smoke`), runs in CI via
+  `.github/workflows/live-smoke.yml` after every push to main. Needs repo secrets
+  `SMOKE_OWNER_EMAIL` + `SMOKE_OWNER_PASSWORD` for the auth round-trip (guest/health/401 checks run without).
+
+### Roadmap tracks (8-week plan)
+Track 1 foundation ✅ (2026-09-25) · Track 2 content gaps (concurrent agent, has coverage tool)
+· Track 3 architecture: partial (tests.ts deduped, N+1 batched in ai-generate, admin O(N) fixed,
+prod debug logs off) · Track 4 tests ✅ (48+219, smoke CI) · Track 5 UI polish (open)
+· Track 6 perf (open: bundle audit, Render cold-start keep-alive) · Track 7 deploy (blocked on
+real frontend URL).
+

@@ -109,16 +109,22 @@ router.post(
           .eq("is_active", true);
         const chaptersList = (chRes.data ?? []) as DbChapter[];
 
-        keyTermsContext = "Key terms and vocabulary by topic (for question generation):\n";
-
-        for (const ch of chaptersList) {
+        // Step 3 (perf 2026-09-25): one batched topics query instead of one
+        // query per chapter (N+1 → 3 queries total for any subject size).
+        const chapterIds = chaptersList.map((c) => c.id);
+        let topicsList: DbTopic[] = [];
+        if (chapterIds.length > 0) {
           const tpRes = await supabaseAdmin
             .from("topics")
             .select("id, slug, title, description")
-            .eq("chapter_id", ch.id)
+            .in("chapter_id", chapterIds)
             .eq("is_active", true);
-          const topicsList = (tpRes.data ?? []) as DbTopic[];
-          for (const tp of topicsList) {
+          topicsList = (tpRes.data ?? []) as DbTopic[];
+        }
+
+        keyTermsContext = "Key terms and vocabulary by topic (for question generation):\n";
+
+        for (const tp of topicsList) {
             availableTopics.push(tp.title);
 
             // Build key terms context: combine topic title and description into searchable terms
@@ -134,7 +140,6 @@ router.post(
               }
             }
           }
-        }
       } catch (dbErr) {
         console.warn("DB fetch failed for generate-questions context:", dbErr);
         // Continue without DB context — AI will use general knowledge

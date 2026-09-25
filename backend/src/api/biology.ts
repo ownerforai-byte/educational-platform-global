@@ -1,10 +1,8 @@
 import { Router, Request, Response } from "express";
 import { supabaseAdmin } from "../db/supabase";
-import { createMockSupabaseClient } from "../db/mock-db";
 import { requireAuth, type AuthedRequest } from "../middleware/auth";
 
 const router = Router();
-const fallbackStore = createMockSupabaseClient();
 
 // Lab registry data (mirrors frontend lab-registry for biology)
 const BIOLOGY_LABS = [
@@ -100,19 +98,10 @@ router.get("/labs/:id/progress", requireAuth, async (req: Request, res: Response
       // Remote DB table absent or network error, fallback below
     }
 
-    if (!record) {
-      const { data } = await fallbackStore
-        .from("lab_progress")
-        .select("*")
-        .eq("user_id", userId)
-        .eq("lab_id", labId)
-        .maybeSingle();
-      record = data;
-    }
-
     res.json({
       success: true,
       labId,
+      // Honest default: no row yet ≠ progress stored somewhere ephemeral.
       progress: record || { completed: false, time_spent: 0, tabs_viewed: [] },
     });
   } catch (err: any) {
@@ -140,9 +129,10 @@ router.post("/labs/:id/progress", requireAuth, async (req: Request, res: Respons
     updated_at: new Date().toISOString(),
   };
 
-  let savedSuccessfully = false;
-
-  // Attempt save to Supabase
+  // Hardening 2026-09-25: the in-memory fallback store previously reported
+  // "progress saved +50 credits" while writing to RAM that vanished on
+  // restart — fake success is worse than an honest error. Supabase is now the
+  // only store; failures return 503 so the client can retry.
   try {
     const { data: existing, error: selectErr } = await supabaseAdmin
       .from("lab_progress")
@@ -151,48 +141,48 @@ router.post("/labs/:id/progress", requireAuth, async (req: Request, res: Respons
       .eq("lab_id", labId)
       .maybeSingle();
 
-    if (!selectErr) {
-      if (existing) {
-        const { error: updateErr } = await supabaseAdmin
-          .from("lab_progress")
-          .update(progressData)
-          .eq("id", existing.id);
-        if (!updateErr) savedSuccessfully = true;
-      } else {
-        const { error: insertErr } = await supabaseAdmin
-          .from("lab_progress")
-          .insert(progressData);
-        if (!insertErr) savedSuccessfully = true;
-      }
+    if (selectErr) {
+      console.error("[biology] lab_progress select failed:", selectErr.message);
+      return res.status(503).json({
+        error: "Progress storage is temporarily unavailable. Please retry in a moment.",
+        code: "PROGRESS_STORE_UNAVAILABLE",
+      });
     }
-  } catch (dbErr) {
-    // Database table may not be provisioned remotely
-  }
 
-  // If Supabase didn't save (missing table or connection error), persist in local fallback store
-  if (!savedSuccessfully) {
-    try {
-      const { data: existing } = await fallbackStore
+    if (existing) {
+      const { error: updateErr } = await supabaseAdmin
         .from("lab_progress")
-        .select("id")
-        .eq("user_id", userId)
-        .eq("lab_id", labId)
-        .maybeSingle();
-
-      if (existing) {
-        await fallbackStore
-          .from("lab_progress")
-          .update(progressData)
-          .eq("id", existing.id);
-      } else {
-        await fallbackStore
-          .from("lab_progress")
-          .insert(progressData);
+        .update(progressData)
+        .eq("id", existing.id);
+      if (updateErr) {
+        console.error("[biology] lab_progress update failed:", updateErr.message);
+        return res.status(503).json({
+          error: "Could not save progress. Please retry in a moment.",
+          code: "PROGRESS_STORE_UNAVAILABLE",
+        });
       }
-      savedSuccessfully = true;
-    } catch (fallbackErr) {
-      console.error("Fallback progress save error:", fallbackErr);
+    } else {
+      const { error: insertErr } = await supabaseAdmin
+        .from("lab_progress")
+        .insert(progressData);
+      if (insertErr) {
+        // Missing table (42P01) needs provisioning — a retry will never help.
+        const missing = (insertErr as { code?: string }).code === "42P01";
+        console.error("[biology] lab_progress insert failed:", insertErr.message);
+        return res.status(missing ? 500 : 503).json({
+          error: missing
+            ? "Progress storage is not provisioned. Contact the site owner."
+            : "Could not save progress. Please retry in a moment.",
+          code: missing ? "PROGRESS_STORE_MISSING" : "PROGRESS_STORE_UNAVAILABLE",
+        });
+      }
     }
+  } catch (dbErr: any) {
+    console.error("[biology] lab_progress save error:", dbErr?.message ?? dbErr);
+    return res.status(503).json({
+      error: "Progress storage is temporarily unavailable. Please retry in a moment.",
+      code: "PROGRESS_STORE_UNAVAILABLE",
+    });
   }
 
   const creditsEarned = progress?.completed ? 50 : 15;
