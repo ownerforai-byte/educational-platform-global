@@ -181,12 +181,6 @@ export default function CreditsPage() {
                 >
                   Sign In
                 </a>
-                <a
-                  href="/register"
-                  className="px-4 py-2 rounded-xl text-xs font-bold border border-border/80 bg-card hover:bg-muted/40 transition-colors"
-                >
-                  Register
-                </a>
               </div>
             </div>
           </CardContent>

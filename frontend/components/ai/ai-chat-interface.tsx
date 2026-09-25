@@ -19,6 +19,7 @@ import {
   RotateCcw,
 } from "lucide-react";
 import { chat, guestChat } from "@/lib/api/ai";
+import { getChatHistory, saveChatHistory, clearChatHistory } from "@/lib/api/chat-history";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
@@ -96,6 +97,11 @@ export function AIChatInterface() {
   const [error, setError] = useState<string | null>(null);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
   const [guestCredits, setGuestCredits] = useState<number>(50);
+  // History restore state: loading flag + whether persistence is active
+  // (false when the chat_messages table has not been migrated yet).
+  const [historyState, setHistoryState] = useState<"loading" | "ready" | "unavailable">(
+    isLoggedIn ? "loading" : "ready"
+  );
 
   const chatBottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
@@ -106,7 +112,30 @@ export function AIChatInterface() {
   useEffect(() => {
     if (!isLoggedIn) {
       setGuestCredits(getGuestCredits());
+      return;
     }
+
+    // Restore the signed-in user's persisted conversation (newest-last).
+    let cancelled = false;
+    (async () => {
+      try {
+        const res = await getChatHistory("default", 200);
+        if (cancelled) return;
+        if (res.migrated && res.messages.length > 0) {
+          const restored: AIChatMessage[] = res.messages.map((m) => ({
+            role: m.role,
+            content: m.content,
+          }));
+          setMessages([{ role: "system", content: PLATFORM_SYSTEM_PROMPT }, ...restored]);
+        }
+        setHistoryState("ready");
+      } catch {
+        if (!cancelled) setHistoryState("ready");
+      }
+    })();
+    return () => {
+      cancelled = true;
+    };
   }, [isLoggedIn]);
 
   useEffect(() => {
@@ -116,6 +145,9 @@ export function AIChatInterface() {
   const handleSend = async (customText?: string) => {
     const textToSend = (customText ?? input).trim();
     if (!textToSend || sending) return;
+    // Don't accept sends while persisted history is restoring — the restore
+    // overwrites the message list and would swallow the new exchange.
+    if (historyState === "loading") return;
 
     if (isGuestLimited) {
       setError("You've reached the free guest message limit. Please sign in to continue unlimited AI tutoring!");
@@ -133,6 +165,16 @@ export function AIChatInterface() {
         const res = await chat([...messages, userMsg], "agnes");
         const assistantMsg: AIChatMessage = { role: "assistant", content: res.response };
         setMessages((prev) => [...prev, assistantMsg]);
+        // Persist the exchange (fire-and-forget — never block the UI).
+        saveChatHistory(
+          [
+            { role: "user", content: textToSend },
+            { role: "assistant", content: res.response },
+          ],
+          "default"
+        ).catch(() => {
+          // History saving is best-effort; chat continues without it.
+        });
       } else {
         const res = await guestChat([...messages, userMsg], "agnes");
         const assistantMsg: AIChatMessage = { role: "assistant", content: res.response };
@@ -174,6 +216,10 @@ export function AIChatInterface() {
   const clearChat = () => {
     setMessages([{ role: "system", content: PLATFORM_SYSTEM_PROMPT }]);
     setError(null);
+    // Also clear the persisted history for signed-in users.
+    if (isLoggedIn) {
+      clearChatHistory("default").catch(() => {});
+    }
   };
 
   const displayMessages = messages.filter((m) => m.role !== "system");
@@ -228,7 +274,13 @@ export function AIChatInterface() {
 
       {/* ── Message Stream Area ──────────────────────────────────────── */}
       <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6">
-        {displayMessages.length === 0 ? (
+        {historyState === "loading" ? (
+          /* Restoring persisted conversation */
+          <div className="h-full flex flex-col items-center justify-center gap-3 text-muted-foreground">
+            <div className="h-7 w-7 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+            <p className="text-xs">Restoring your conversation…</p>
+          </div>
+        ) : displayMessages.length === 0 ? (
           /* Empty State: Suggested Prompts */
           <div className="h-full flex flex-col justify-center max-w-2xl mx-auto space-y-6 py-6">
             <div className="text-center space-y-2">

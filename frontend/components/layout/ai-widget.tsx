@@ -147,13 +147,13 @@ export function AIWidget() {
               <p className="text-[10px] text-muted-foreground mt-0.5">Ask about NEB Study Vault content</p>
             </div>
             <Link
-              href="/chat"
+              href="/ai"
               onClick={() => setOpen(false)}
               className="flex items-center gap-1 text-[10px] font-semibold text-primary hover:underline shrink-0 mr-1"
-              title="Open full chat"
+              title="Open AI Studio"
             >
               <MessageSquareText className="h-3 w-3" />
-              Full chat
+              AI Studio
             </Link>
             {!isLoggedIn && (
               <div className="flex items-center gap-2">

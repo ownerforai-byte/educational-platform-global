@@ -566,37 +566,52 @@ ${searchContext ? searchContext + "\n" : ""}${syllabusContext}`,
 class AgnesProvider implements AIProvider {
   name = "agnes";
   private apiKey: string;
-  private apiUrl = "https://api.agnes.ai/v1/chat/completions";
-  private model = "agnes-2.5-flash";
+  private apiUrl: string;
+  private model: string;
+  private timeoutMs: number;
 
   constructor(apiKey: string) {
     this.apiKey = apiKey;
+    // Env-overridable in case the endpoint or model slug changes.
+    this.apiUrl = process.env.AGNES_API_URL || "https://api.agnes.ai/v1/chat/completions";
+    this.model = process.env.AGNES_MODEL || "agnes-2.5-flash";
+    // Fail fast so the chain can reach openrouter/internal when Agnes is down.
+    this.timeoutMs = Number(process.env.AGNES_TIMEOUT_MS || 12000);
   }
 
   private async callAgnes(messages: Array<AIChatMessage>): Promise<string> {
-    const res = await fetch(this.apiUrl, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${this.apiKey}`,
-      },
-      body: JSON.stringify({
-        model: this.model,
-        messages: messages.map((m) => ({ role: m.role, content: m.content })),
-        max_tokens: 2048,
-        temperature: 0.7,
-      }),
-    });
+    // AbortController: a hanging Agnes endpoint must not stall the fallback
+    // chain — timeout to the caller feels broken.
+    const controller = new AbortController();
+    const timer = setTimeout(() => controller.abort(), this.timeoutMs);
+    try {
+      const res = await fetch(this.apiUrl, {
+        method: "POST",
+        signal: controller.signal,
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${this.apiKey}`,
+        },
+        body: JSON.stringify({
+          model: this.model,
+          messages: messages.map((m) => ({ role: m.role, content: m.content })),
+          max_tokens: 2048,
+          temperature: 0.7,
+        }),
+      });
 
-    if (!res.ok) {
-      const text = await res.text();
-      throw new Error(`Agnes error: ${res.status} ${text}`);
+      if (!res.ok) {
+        const text = await res.text();
+        throw new Error(`Agnes error: ${res.status} ${text}`);
+      }
+
+      const data = await res.json();
+      const text = data?.choices?.[0]?.message?.content;
+      if (!text) throw new Error("Empty Agnes response");
+      return text;
+    } finally {
+      clearTimeout(timer);
     }
-
-    const data = await res.json();
-    const text = data?.choices?.[0]?.message?.content;
-    if (!text) throw new Error("Empty Agnes response");
-    return text;
   }
 
   async chat(messages: AIChatMessage[]): Promise<string> {
@@ -675,12 +690,13 @@ export class AIService {
 
     if (defaultProvider && this.providers.has(defaultProvider)) {
       this.defaultProvider = defaultProvider;
+    } else if (agnesKey) {
+      // Agnes is the primary provider — prefer it when available.
+      this.defaultProvider = "agnes";
     } else if (geminiKey) {
       this.defaultProvider = "gemini";
     } else if (openrouterKey) {
       this.defaultProvider = "openrouter";
-    } else if (agnesKey) {
-      this.defaultProvider = "agnes";
     }
   }
 
@@ -701,12 +717,13 @@ export class AIService {
 
   async chat(providerName: string, messages: AIChatMessage[]): Promise<string> {
     const requested = providerName ? this.resolve(providerName) : null;
-    // Preferred order: gemini → openrouter → agnes → internal
-    // (agnes last: api.agnes.ai is unreachable/DNS-dead, don't waste a hop on it)
+    // Preferred order: agnes → openrouter → internal.
+    // Every reply tries Agnes first; OpenRouter is the first fallback and the
+    // internal syllabus index is the last resort. Gemini stays available as an
+    // explicit provider choice (selectable, not in the default chain).
     const chain: AIProvider[] = [];
-    if (this.providers.has("gemini")) chain.push(this.providers.get("gemini")!);
-    if (this.providers.has("openrouter")) chain.push(this.providers.get("openrouter")!);
     if (this.providers.has("agnes")) chain.push(this.providers.get("agnes")!);
+    if (this.providers.has("openrouter")) chain.push(this.providers.get("openrouter")!);
     chain.push(this.providers.get("internal")!);
 
     const target = requested || chain[0];
@@ -729,12 +746,10 @@ export class AIService {
 
   async search(providerName: string, query: string): Promise<AISearchResponse> {
     const requested = providerName ? this.resolve(providerName) : null;
-    // Preferred order: gemini → openrouter → agnes → internal
-    // (agnes last: api.agnes.ai is unreachable/DNS-dead, don't waste a hop on it)
+    // Preferred order: agnes → openrouter → internal (same fallback policy as chat).
     const chain: AIProvider[] = [];
-    if (this.providers.has("gemini")) chain.push(this.providers.get("gemini")!);
-    if (this.providers.has("openrouter")) chain.push(this.providers.get("openrouter")!);
     if (this.providers.has("agnes")) chain.push(this.providers.get("agnes")!);
+    if (this.providers.has("openrouter")) chain.push(this.providers.get("openrouter")!);
     chain.push(this.providers.get("internal")!);
 
     const target = requested || chain[0];

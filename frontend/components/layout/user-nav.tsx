@@ -35,19 +35,15 @@ export function UserNav() {
   }
 
   if (!user) {
+    // Signed-in users never see auth links (they are redirected away from
+    // /login and /signup anyway) — show a single sign-in entry point only.
     return (
       <div className="flex items-center gap-1.5 shrink-0">
         <Link
           href="/login"
-          className="inline-flex items-center gap-1.5 px-2.5 h-8 rounded-xl text-xs font-semibold hover:bg-muted transition-colors whitespace-nowrap"
-        >
-          Log in
-        </Link>
-        <Link
-          href="/signup"
           className="inline-flex items-center gap-1.5 px-3 h-8 rounded-xl bg-primary text-xs font-semibold text-primary-foreground hover:opacity-90 shadow-sm transition-opacity whitespace-nowrap"
         >
-          Sign up
+          Sign in
         </Link>
       </div>
     );

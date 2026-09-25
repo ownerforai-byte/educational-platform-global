@@ -10,12 +10,14 @@ import {
   Layers,
   Globe,
   Landmark,
-  User,
   LogIn,
+  Sparkles,
   X,
   Menu,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { useSession } from "@/features/auth/hooks/use-session";
+import { LogOut } from "lucide-react";
 
 const mobileItems = [
   { href: "/", label: "Home", icon: Home },
@@ -26,6 +28,7 @@ const mobileItems = [
   { href: "/syllabus", label: "Official Syllabus", icon: BookOpen },
   { href: "/lab", label: "3D Labs", icon: FlaskConical },
   { href: "/ai-quiz", label: "Practice Quiz", icon: BookOpen },
+  { href: "/ai", label: "AI Studio", icon: Sparkles },
   { href: "/levels", label: "Curriculum", icon: BookOpen },
   { href: "/loksewa", label: "Loksewa GK", icon: Landmark },
   { href: "/world-knowledge", label: "World Knowledge", icon: Globe },
@@ -34,6 +37,7 @@ const mobileItems = [
 export function MobileNav() {
   const [open, setOpen] = useState(false);
   const pathname = usePathname();
+  const { user, refresh, logoutUser } = useSession();
 
   return (
     <>
@@ -102,22 +106,28 @@ export function MobileNav() {
             </nav>
 
             <div className="mt-auto pt-4 border-t border-border/40 space-y-2">
-              <Link
-                href="/login"
-                onClick={() => setOpen(false)}
-                className="flex items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium text-muted-foreground hover:bg-muted/60 hover:text-foreground transition-all"
-              >
-                <LogIn className="h-5 w-5 shrink-0" />
-                Login
-              </Link>
-              <Link
-                href="/signup"
-                onClick={() => setOpen(false)}
-                className="flex items-center justify-center gap-2 rounded-xl bg-primary px-3 py-3 text-sm font-semibold text-primary-foreground transition-all hover:opacity-90"
-              >
-                <User className="h-4 w-4" />
-                Sign up free
-              </Link>
+              {user ? (
+                <button
+                  onClick={async () => {
+                    setOpen(false);
+                    await logoutUser();
+                    refresh();
+                  }}
+                  className="flex w-full items-center gap-3 rounded-xl px-3 py-3 text-sm font-medium text-muted-foreground hover:bg-destructive/10 hover:text-destructive transition-all"
+                >
+                  <LogOut className="h-5 w-5 shrink-0" />
+                  Log out
+                </button>
+              ) : (
+                <Link
+                  href="/login"
+                  onClick={() => setOpen(false)}
+                  className="flex items-center justify-center gap-2 rounded-xl bg-primary px-3 py-3 text-sm font-semibold text-primary-foreground transition-all hover:opacity-90"
+                >
+                  <LogIn className="h-5 w-5 shrink-0" />
+                  Sign in
+                </Link>
+              )}
             </div>
           </div>
         </div>

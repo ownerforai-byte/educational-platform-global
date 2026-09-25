@@ -1,16 +1,18 @@
 import { Router, Request, Response } from "express";
 import { supabaseAdmin } from "../db/supabase";
+import { extractToken } from "../middleware/auth";
 
 const router = Router();
 
 async function requireAdmin(req: Request, res: Response) {
-  const authHeader = req.headers.authorization;
-  if (!authHeader || !authHeader.startsWith("Bearer ")) {
+  // Accept bearer header or sb-access-token cookie (the controller page uses
+  // raw fetch with credentials, so the cookie is the usual path).
+  const token = extractToken(req);
+  if (!token) {
     res.status(401).json({ error: "Unauthorized" });
     return null;
   }
 
-  const token = authHeader.slice(7);
   const { data, error } = await supabaseAdmin.auth.getUser(token);
 
   if (error || !data.user) {

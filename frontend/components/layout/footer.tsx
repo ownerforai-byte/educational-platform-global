@@ -92,6 +92,7 @@ export function Footer() {
                 ["Virtual 3D Simulations", "/lab"],
                 ["Interactive Mindmaps", "/mindmap"],
                 ["NEB Practice Quiz", "/ai-quiz"],
+                ["AI Studio", "/ai"],
                 ["Curriculum Levels", "/levels"],
                 ["Loksewa GK Portal", "/loksewa"],
               ].map(([label, href]) => (

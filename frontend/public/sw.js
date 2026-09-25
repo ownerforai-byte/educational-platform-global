@@ -28,6 +28,7 @@ const SW_ROUTES = [
   "/progress",
   "/bookmarks",
   "/chat",
+  "/ai",
   "/offline",
 ];
 

@@ -32,6 +32,7 @@ const QUICK_SEARCH_ITEMS = [
   { label: "Chemistry Molecular Builder 3D", href: "/lab/chemistry/molecular-builder", category: "Chemistry Lab" },
   { label: "Biology 3D Cell Anatomy", href: "/lab/biology/cell-3d", category: "Biology Lab" },
   { label: "Math Equation Solver", href: "/lab/math/equation-solver", category: "Math Lab" },
+  { label: "AI Studio (Tutor, Quiz & Search)", href: "/ai", category: "AI" },
   { label: "AI Quiz Generator", href: "/ai-quiz", category: "Assessment" },
   { label: "NEB Board Exam Countdown", href: "/exam-countdown", category: "Schedule" },
   { label: "Mathematical Theorems & Proofs", href: "/theorems", category: "Rigor" },

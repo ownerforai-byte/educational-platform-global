@@ -1,15 +1,22 @@
+import { Suspense } from "react";
 import { LoginForm } from "@/features/auth/components/login-form";
+import { LoggedInRedirect } from "./logged-in-redirect";
 
 export default function LoginPage() {
   return (
-    <div className="mx-auto max-w-md space-y-6 py-10">
-      <div className="text-center space-y-2">
-        <h1 className="text-2xl font-bold tracking-tight">Welcome back</h1>
-        <p className="text-sm text-muted-foreground">
-          Sign in to track progress, save bookmarks, and manage credits.
-        </p>
+    <>
+      <LoggedInRedirect />
+      <div className="mx-auto max-w-md space-y-6 py-10">
+        <div className="text-center space-y-2">
+          <h1 className="text-2xl font-bold tracking-tight">Welcome back</h1>
+          <p className="text-sm text-muted-foreground">
+            Sign in to track progress, save bookmarks, and manage credits.
+          </p>
+        </div>
+        <Suspense fallback={null}>
+          <LoginForm />
+        </Suspense>
       </div>
-      <LoginForm />
-    </div>
+    </>
   );
 }

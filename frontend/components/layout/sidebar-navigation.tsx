@@ -15,7 +15,6 @@ import {
   UserCheck,
   Bookmark,
   Users,
-  ShieldCheck,
   Coins,
   Crown,
   ChevronsUp,
@@ -27,6 +26,7 @@ import {
 } from "lucide-react";
 import { logoutAction } from "@/features/auth/actions";
 import { useSession } from "@/features/auth/hooks/use-session";
+import { isOwnerUser } from "@/lib/owner";
 
 type NavItem = {
   href: string;
@@ -36,7 +36,7 @@ type NavItem = {
 };
 
 const aiItems: NavItem[] = [
-  { href: "/chat", label: "AI Assistant", icon: Sparkles, badge: "AI" },
+  { href: "/ai", label: "AI Studio", icon: Sparkles, badge: "AI" },
   { href: "/ai-quiz", label: "Practice Quiz", icon: HelpCircle, badge: "NEB" },
 ];
 
@@ -69,9 +69,8 @@ const accountItems: NavItem[] = [
   { href: "/bookmarks", label: "Bookmarks", icon: Bookmark },
 ];
 
-const adminItems: NavItem[] = [
-  { href: "/admin", label: "Admin Panel", icon: ShieldCheck },
-  { href: "/controller", label: "Controller", icon: Crown },
+const ownerItems: NavItem[] = [
+  { href: "/owner", label: "Owner Console", icon: Crown },
 ];
 
 function NavSection({
@@ -213,7 +212,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
     lab: false,
     general: false,
     account: false,
-    admin: false,
+    owner: false,
   });
 
   const toggleSection = (key: string) =>
@@ -289,14 +288,14 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
             railCollapsed={collapsed}
           />
         )}
-        {(user?.role === "ADMIN" || user?.role === "OWNER") && (
+        {isOwnerUser(user) && (
           <NavSection
-            label="Admin"
-            icon={ShieldCheck}
-            items={adminItems}
+            label="Owner"
+            icon={Crown}
+            items={ownerItems}
             pathname={pathname}
-            collapsed={collapsedSections.admin}
-            onToggle={() => toggleSection("admin")}
+            collapsed={collapsedSections.owner}
+            onToggle={() => toggleSection("owner")}
             railCollapsed={collapsed}
           />
         )}

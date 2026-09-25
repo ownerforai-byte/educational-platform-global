@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, useSearchParams } from "next/navigation";
 import Link from "next/link";
 import { Mail, Lock, Eye, EyeOff } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -12,6 +12,7 @@ import { useAuth } from "@/providers/auth-provider";
 
 export function LoginForm() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const { refresh } = useAuth();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -29,7 +30,10 @@ export function LoginForm() {
 
     if (result.ok) {
       refresh();
-      router.push("/home");
+      // Honor ?next= (e.g. /login?next=/owner) but never allow off-site redirects.
+      const next = searchParams.get("next");
+      const target = next && next.startsWith("/") && !next.startsWith("//") ? next : "/home";
+      router.push(target);
     } else {
       setError(result.error);
     }
