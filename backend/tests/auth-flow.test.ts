@@ -9,6 +9,7 @@ vi.mock("../src/db/supabase", () => ({
       signUp: vi.fn(),
       getUser: vi.fn(),
       signOut: vi.fn(),
+      refreshSession: vi.fn(),
       admin: { updateUserById: vi.fn() },
     },
     from: vi.fn(),
@@ -31,6 +32,8 @@ vi.mock("../src/api/resources", async () => {
   return { default: Router() };
 });
 
+import aiGenerateRoutes from "../src/api/ai-generate";
+import biologyRoutes from "../src/api/biology";
 import { createApp } from "../src/app";
 import { supabaseAdmin } from "../src/db/supabase";
 import { requireAuth, requireRole, requireAdmin } from "../src/middleware/auth";
@@ -41,6 +44,7 @@ const mocked = supabaseAdmin as unknown as {
     signUp: Mock;
     getUser: Mock;
     signOut: Mock;
+    refreshSession: Mock;
     admin: { updateUserById: Mock };
   };
   from: Mock;
@@ -102,6 +106,10 @@ async function startServers() {
   probeApp.get("/api/guard-owner", requireAuth, requireRole("OWNER"), (_req, res) => {
     res.status(200).json({ ok: "owner" });
   });
+
+  // Real routers (not stubs): verify the security hardening end to end.
+  probeApp.use("/api/ai/generate-questions", aiGenerateRoutes);
+  probeApp.use("/api/biology", biologyRoutes);
 
   const probe = await listen(probeApp);
   probeServer = probe.server;
@@ -332,7 +340,7 @@ describe("auth flow", () => {
     mocked.auth.signUp.mockResolvedValue({
       data: {
         user: { id: "user-9", email: "new@example.com" },
-        session: { access_token: "fresh-token", expires_in: 3600 },
+        session: { access_token: "fresh-token", refresh_token: "fresh-refresh", expires_in: 3600 },
       },
       error: null,
     });
@@ -349,6 +357,7 @@ describe("auth flow", () => {
     expect(body.accessToken).toBe("fresh-token");
     expect(body.user).toMatchObject({ id: "user-9", email: "new@example.com", role: "STUDENT" });
     expect(setCookiesOf(res).some((c) => c.startsWith("sb-access-token="))).toBe(true);
+    expect(setCookiesOf(res).some((c) => c.startsWith("sb-refresh-token="))).toBe(true);
   });
 
   test("POST /signup (needs email confirmation) returns 202 with a message", async () => {
@@ -431,5 +440,106 @@ describe("auth flow", () => {
   test("role guard: unauthenticated requests to guarded routes return 401", async () => {
     const res = await fetch(`${probeUrl}/api/guard-admin`);
     expect(res.status).toBe(401);
+  });
+
+  test("POST /refresh with refresh-token cookie rotates to a fresh access token", async () => {
+    mocked.auth.refreshSession.mockResolvedValue({
+      data: { session: { access_token: "new-access", refresh_token: "new-refresh", expires_in: 3600 } },
+      error: null,
+    });
+    mocked.auth.getUser.mockResolvedValue({
+      data: { user: { id: "user-1", email: "student@example.com" } },
+      error: null,
+    });
+    mockProfiles({ role: "STUDENT", credits: 5, credits_limit: 100, premium_status: false });
+
+    const res = await fetch(`${baseUrl}/api/auth/refresh`, {
+      method: "POST",
+      headers: {
+        Cookie: "sb-refresh-token=old-refresh; sb-access-token=expired",
+        "Content-Type": "application/json",
+      },
+    });
+
+    expect(res.status).toBe(200);
+    const body = await res.json();
+    expect(body.accessToken).toBe("new-access");
+    expect(mocked.auth.refreshSession).toHaveBeenCalledWith({ refresh_token: "old-refresh" });
+
+    const cookies = setCookiesOf(res);
+    expect(cookies.some((c) => c.startsWith("sb-access-token=new-access"))).toBe(true);
+    expect(cookies.some((c) => c.startsWith("sb-refresh-token=new-refresh"))).toBe(true);
+  });
+
+  test("POST /refresh with an invalid refresh token returns 401", async () => {
+    mocked.auth.refreshSession.mockResolvedValue({
+      data: { session: null },
+      error: { message: "Invalid Refresh Token", status: 401 },
+    });
+
+    const res = await fetch(`${baseUrl}/api/auth/refresh`, {
+      method: "POST",
+      headers: { Cookie: "sb-refresh-token=bogus", "Content-Type": "application/json" },
+    });
+    expect(res.status).toBe(401);
+  });
+
+  test("AI question generation requires authentication (was anonymous 200)", async () => {
+    const res = await fetch(`${probeUrl}/api/ai/generate-questions`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ classSlug: "class-11", subjectSlug: "physics" }),
+    });
+    expect(res.status).toBe(401);
+  });
+
+  test("biology progress POST requires auth and stores the session user id", async () => {
+    // Anonymous write attempt (previously 200 with attacker-chosen userId).
+    const denied = await fetch(`${probeUrl}/api/biology/labs/bio-cell-3d/progress`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ labId: "bio-cell-3d", userId: "spoofed-user", progress: { completed: true } }),
+    });
+    expect(denied.status).toBe(401);
+
+    // Authenticated: body userId is ignored, session user id is stored.
+    mocked.auth.getUser.mockResolvedValue({
+      data: { user: { id: "session-user", email: "s@example.com" } },
+      error: null,
+    });
+    mockProfiles({ role: "STUDENT" });
+
+    let insertedPayload: unknown = null;
+    const profilesImpl = mocked.from.getMockImplementation();
+    mocked.from.mockImplementation((table: string) => {
+      if (table === "lab_progress") {
+        const chain: Record<string, unknown> = {};
+        for (const method of ["select", "eq", "order", "single", "maybeSingle", "limit", "upsert", "update", "insert", "delete"]) {
+          chain[method] = (...args: unknown[]) => {
+            if (method === "insert") insertedPayload = args[0];
+            return chain;
+          };
+        }
+        chain.then = (
+          onFulfilled?: (v: { data: unknown; error: unknown }) => unknown,
+          onRejected?: (r: unknown) => unknown,
+        ) => Promise.resolve({ data: null, error: null }).then(onFulfilled, onRejected);
+        return chain;
+      }
+      return profilesImpl ? profilesImpl(table) : makeQueryChain({ data: null, error: null });
+    });
+
+    const ok = await fetch(`${probeUrl}/api/biology/labs/bio-cell-3d/progress`, {
+      method: "POST",
+      headers: {
+        Cookie: `sb-access-token=${VALID_TOKEN}`,
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ labId: "bio-cell-3d", userId: "spoofed-user", progress: { completed: true } }),
+    });
+    expect(ok.status).toBe(200);
+    expect((insertedPayload as { user_id?: string } | null)?.user_id).toBe("session-user");
+
+    mocked.from.mockImplementation(profilesImpl ?? ((t: string) => makeQueryChain({ data: null, error: null }))(t));
   });
 });

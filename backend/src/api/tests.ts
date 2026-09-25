@@ -1,27 +1,5 @@
-import { Router, Request, Response } from "express";
-import { supabaseAdmin } from "../db/supabase";
-
-const router = Router();
-
-router.get("/", async (_req: Request, res: Response) => {
-  try {
-    const { data, error } = await supabaseAdmin
-      .from("resources")
-      .select("id, title, type, topic_id, metadata, created_at")
-      .eq("is_published", true)
-      .eq("type", "QUIZ")
-      .order("created_at", { ascending: false });
-
-    if (error) {
-      res.status(500).json({ error: error.message });
-      return;
-    }
-
-    res.json(data ?? []);
-  } catch (err: any) {
-    console.error(err);
-    res.status(500).json({ error: err.message || "Internal server error" });
-  }
-});
-
-export default router;
+// /api/tests and /api/pyqs returned identical payloads (byte-for-byte copies of
+// the same handler). Both routes stay alive for backward compatibility
+// (frontend lib/api/exams.ts calls both) — but the implementation lives in one
+// place now. If the two surfaces ever diverge, give tests.ts its own router.
+export { default } from "./pyqs";

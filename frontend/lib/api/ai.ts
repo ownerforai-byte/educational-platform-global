@@ -1,4 +1,4 @@
-import { apiFetch } from "../api-client";
+import { apiFetch, getStoredToken } from "../api-client";
 import type {
   AIChatMessage,
   AIChatRequest,
@@ -39,13 +39,15 @@ export async function* streamChat(
     body.provider = provider;
   }
 
-  // const token = getAccessToken(); // Removed: not actually available/needed in client-side streamChat
+  // Bearer restored 2026-09-25: cookie-only auth broke streams once the 1h
+  // access token expired (no refresh-retry exists on stream requests).
   const headers: Record<string, string> = {
     "Content-Type": "application/json",
   };
-  // if (token) {
-  //   headers["Authorization"] = `Bearer ${token}`;
-  // }
+  const token = getStoredToken();
+  if (token) {
+    headers["Authorization"] = `Bearer ${token}`;
+  }
 
   const response = await fetch("/api/ai", {
     method: "POST",

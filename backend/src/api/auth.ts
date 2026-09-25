@@ -42,8 +42,20 @@ function setSessionCookie(res: Response, token: string, expiresInSec?: number): 
   res.cookie(SESSION_COOKIE, token, { ...cookieOptions, maxAge: maxAge * 1000 });
 }
 
+/** The refresh token lives 30 days so users stay signed in past the 1h access token. */
+const REFRESH_COOKIE = "sb-refresh-token";
+const REFRESH_COOKIE_MAX_AGE_SEC = 60 * 60 * 24 * 30;
+
+function setRefreshCookie(res: Response, token: string): void {
+  res.cookie(REFRESH_COOKIE, token, {
+    ...cookieOptions,
+    maxAge: REFRESH_COOKIE_MAX_AGE_SEC * 1000,
+  });
+}
+
 function clearSessionCookie(res: Response): void {
   res.clearCookie(SESSION_COOKIE, cookieOptions);
+  res.clearCookie(REFRESH_COOKIE, cookieOptions);
 }
 
 // ── Validation schemas ─────────────────────────────────────────────────────
@@ -135,6 +147,7 @@ router.post("/login", async (req: Request, res: Response) => {
   const extended = await buildExtendedUser(user.id, user.email, user.role);
 
   setSessionCookie(res, data.session.access_token, data.session.expires_in);
+  if (data.session.refresh_token) setRefreshCookie(res, data.session.refresh_token);
 
   const body: LoginResponse = { user: extended, accessToken: data.session.access_token };
   res.json(body);
@@ -180,6 +193,7 @@ router.post("/signup", async (req: Request, res: Response) => {
     );
 
     setSessionCookie(res, result.session.access_token, result.session.expires_in);
+    if (result.session.refresh_token) setRefreshCookie(res, result.session.refresh_token);
 
     const body: SignupResponse = { user: extended, accessToken: result.session.access_token };
     res.json(body);
@@ -200,12 +214,45 @@ router.post("/signup", async (req: Request, res: Response) => {
 
 /**
  * POST /api/auth/refresh
- * Refreshes the session when the current token is still valid but about
- * to expire, or when called with a valid refresh token via the cookie.
+ * Preferred path: rotate the session using the long-lived `sb-refresh-token`
+ * cookie (set at login/signup). Supabase returns a fresh access token, so
+ * users stay signed in past the 1-hour access-token expiry instead of being
+ * hard-logged-out (the 2026-09-25 "still auth failing" report).
+ *
+ * Legacy fallback: no refresh cookie → re-validate the still-valid access
+ * token and re-set it (keeps older clients working).
+ *
  * 200 → { user, accessToken }
  * 401 → no valid session to refresh
  */
 router.post("/refresh", async (req: Request, res: Response) => {
+  const refreshToken =
+    (req.cookies?.[REFRESH_COOKIE] as string | undefined) || undefined;
+
+  if (refreshToken) {
+    const { data, error } = await supabaseAdmin.auth.refreshSession({ refresh_token: refreshToken });
+    const session = data?.session;
+
+    if (!error && session?.access_token) {
+      const user = await getUserFromRequest({
+        headers: { authorization: `Bearer ${session.access_token}` },
+      } as unknown as Request);
+      if (user) {
+        const extended = await buildExtendedUser(user.id, user.email, user.role);
+        setSessionCookie(res, session.access_token, session.expires_in);
+        // Supabase rotates refresh tokens on use — persist the new one.
+        if (session.refresh_token) setRefreshCookie(res, session.refresh_token);
+
+        const body: RefreshResponse = { user: extended, accessToken: session.access_token };
+        res.json(body);
+        return;
+      }
+    }
+    res.status(401).json({ error: "Invalid or expired session" });
+    return;
+  }
+
+  // ── Legacy fallback: access token still valid → re-set it ──
   const token = extractToken(req);
   if (!token) {
     res.status(401).json({ error: "No session to refresh" });

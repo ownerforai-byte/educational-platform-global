@@ -2,6 +2,8 @@ import { Router, Request, Response } from "express";
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { supabaseAdmin } from "../db/supabase";
 import { rateLimit } from "../middleware/rateLimit";
+import { requireAuth } from "../middleware/auth";
+import { requireCredit } from "../middleware/creditCheck";
 
 const router = Router();
 
@@ -51,6 +53,10 @@ interface GenerateQuestionsResponse {
 
 router.post(
   "/",
+  // Hardening 2026-09-25: this endpoint burns paid AI credits and was callable
+  // fully anonymously. Auth + credit checks now match /api/ai.
+  requireAuth,
+  requireCredit("aiChat"),
   rateLimit,
   async (req: Request, res: Response) => {
     try {

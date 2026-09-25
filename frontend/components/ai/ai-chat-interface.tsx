@@ -72,9 +72,9 @@ const SUGGESTED_PROMPTS = [
   },
 ];
 
-// Unlimited guest chat — no per-visitor message cap (set to Infinity on 2026-09-20).
-// Re-enable a cap later by setting a finite number here.
-const MAX_GUEST_MESSAGES = Infinity;
+// Guest cap re-enabled 2026-09-25: matched the ai-widget's 7-message limit so
+// anonymous visitors can't burn unlimited paid AI credits.
+const MAX_GUEST_MESSAGES = 7;
 const STORAGE_KEY = "neb_ai_guest_count";
 const CREDITS_STORAGE_KEY = "neb_guest_credits";
 

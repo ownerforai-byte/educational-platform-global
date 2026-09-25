@@ -69,7 +69,8 @@ export function createApp(): express.Express {
     res.json({ status: "ok", timestamp: new Date().toISOString() });
   });
 
-  // Debug: log all registered routes
+  // Debug: log all registered routes (suppressed in production)
+  if (process.env.NODE_ENV !== "production") {
   app._router.stack.forEach((layer: any) => {
     if (layer.route) {
       const methods = layer.route.methods ? Object.keys(layer.route.methods).join(", ") : "use";
@@ -80,6 +81,7 @@ export function createApp(): express.Express {
       console.log(`  [Middleware] type=${layer.name || "unknown"}`);
     }
   });
+  }
 
   app.use("/api/ai", aiRoutes);
   app.use("/api/ai/guest", aiGuestRoutes);
@@ -109,7 +111,8 @@ export function createApp(): express.Express {
   app.use("/api/periodic-table", periodicTableRoutes);
   app.use("/api/lessons", lessonsRoutes);
 
-  // Debug after API routes
+  // Debug after API routes (suppressed in production)
+  if (process.env.NODE_ENV !== "production") {
   console.log("\n=== AFTER API REGISTRATION ===");
   app._router.stack.forEach((layer: any) => {
     if (layer.route) {
@@ -122,6 +125,7 @@ export function createApp(): express.Express {
     }
   });
   console.log("=== END ===\n");
+  }
 
   app.use((_req, res) => {
     res.status(404).json({ error: "Not found" });

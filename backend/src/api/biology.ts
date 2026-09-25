@@ -1,6 +1,7 @@
 import { Router, Request, Response } from "express";
 import { supabaseAdmin } from "../db/supabase";
 import { createMockSupabaseClient } from "../db/mock-db";
+import { requireAuth, type AuthedRequest } from "../middleware/auth";
 
 const router = Router();
 const fallbackStore = createMockSupabaseClient();
@@ -79,9 +80,11 @@ router.get("/labs/:id", (req: Request, res: Response) => {
 });
 
 // GET /api/biology/labs/:id/progress
-router.get("/labs/:id/progress", async (req: Request, res: Response) => {
+// Hardening 2026-09-25: requires auth; user_id now comes from the session
+// token (previously any caller could read any user's progress via ?userId=).
+router.get("/labs/:id/progress", requireAuth, async (req: Request, res: Response) => {
   const labId = req.params.id;
-  const userId = (req.query.userId as string) || "student-demo";
+  const userId = (req as AuthedRequest).user.id;
 
   try {
     let record: any = null;
@@ -118,11 +121,14 @@ router.get("/labs/:id/progress", async (req: Request, res: Response) => {
 });
 
 // POST /api/biology/labs/:id/progress
-router.post("/labs/:id/progress", async (req: Request, res: Response) => {
-  const { userId, labId, progress } = req.body;
+// Hardening 2026-09-25: requires auth; the body `userId` is ignored in favour
+// of the authenticated session user (prevents spoofed-progress writes).
+router.post("/labs/:id/progress", requireAuth, async (req: Request, res: Response) => {
+  const { labId, progress } = req.body;
+  const userId = (req as AuthedRequest).user.id;
 
-  if (!userId || !labId) {
-    return res.status(400).json({ error: "userId and labId are required", code: "INVALID_REQUEST" });
+  if (!labId) {
+    return res.status(400).json({ error: "labId is required", code: "INVALID_REQUEST" });
   }
 
   const progressData = {

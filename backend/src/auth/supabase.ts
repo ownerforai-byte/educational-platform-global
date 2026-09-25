@@ -33,7 +33,7 @@ export interface SignUpInput {
 export interface SignUpResult {
   /** Present when the user is immediately usable (session confirmed). */
   user: { id: string; email: string } | null;
-  session: { access_token: string; expires_in?: number } | null;
+  session: { access_token: string; refresh_token?: string; expires_in?: number } | null;
   /** Present when the user must confirm by email (no immediate session). */
   needsEmailConfirmation: boolean;
   error: string | null;
