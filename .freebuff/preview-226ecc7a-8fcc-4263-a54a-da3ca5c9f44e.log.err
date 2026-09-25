@@ -1,0 +1,678 @@
+[browser] ./lib/visual-concept-map.ts
+Error:   x Expected '>', got 'ident'
+     ,-[C:\Users\ASUS\Desktop\rn\frontend\lib\visual-concept-map.ts:111:1]
+ 108 |     ],
+ 109 |     renderSvg: () => (
+ 110 |       <g>
+ 111 |         <rect x="330" y="160" width="240" height="90" rx="10" fill={C.blue} fillOpacity="0.08" stroke={C.blue} strokeWidth="2.5" />
+     :               ^
+ 112 |         <text x="450" y="200" fill="#e2e8f0" textAnchor="middle" fontSize="13" fontWeight="bold">PHYSICAL QUANTITY</text>
+ 113 |         <text x="450" y="222" fill={C.gray} textAnchor="middle" fontSize="10">= number × unit</text>
+ 114 |         {[330, 480].map((x, i) => (
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./lib/visual-concept-map.ts
+./components/lab/schematic-diagram.tsx
+./components/content/topic-vertical-notes.tsx 
+[browser] ./lib/visual-concept-map.ts
+Error:   x Expected '>', got 'ident'
+     ,-[C:\Users\ASUS\Desktop\rn\frontend\lib\visual-concept-map.ts:111:1]
+ 108 |     ],
+ 109 |     renderSvg: () => (
+ 110 |       <g>
+ 111 |         <rect x="330" y="160" width="240" height="90" rx="10" fill={C.blue} fillOpacity="0.08" stroke={C.blue} strokeWidth="2.5" />
+     :               ^
+ 112 |         <text x="450" y="200" fill="#e2e8f0" textAnchor="middle" fontSize="13" fontWeight="bold">PHYSICAL QUANTITY</text>
+ 113 |         <text x="450" y="222" fill={C.gray} textAnchor="middle" fontSize="10">= number × unit</text>
+ 114 |         {[330, 480].map((x, i) => (
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./lib/visual-concept-map.ts
+./components/lab/schematic-diagram.tsx
+./components/content/topic-vertical-notes.tsx 
+[browser] ./lib/visual-concept-map.ts
+Error:   x Expected '>', got 'ident'
+     ,-[C:\Users\ASUS\Desktop\rn\frontend\lib\visual-concept-map.ts:111:1]
+ 108 |     ],
+ 109 |     renderSvg: () => (
+ 110 |       <g>
+ 111 |         <rect x="330" y="160" width="240" height="90" rx="10" fill={C.blue} fillOpacity="0.08" stroke={C.blue} strokeWidth="2.5" />
+     :               ^
+ 112 |         <text x="450" y="200" fill="#e2e8f0" textAnchor="middle" fontSize="13" fontWeight="bold">PHYSICAL QUANTITY</text>
+ 113 |         <text x="450" y="222" fill={C.gray} textAnchor="middle" fontSize="10">= number × unit</text>
+ 114 |         {[330, 480].map((x, i) => (
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./lib/visual-concept-map.ts
+./components/lab/schematic-diagram.tsx
+./components/content/topic-vertical-notes.tsx 
+[browser] ./lib/visual-concept-map.ts
+Error:   x Expected '>', got 'ident'
+     ,-[C:\Users\ASUS\Desktop\rn\frontend\lib\visual-concept-map.ts:111:1]
+ 108 |     ],
+ 109 |     renderSvg: () => (
+ 110 |       <g>
+ 111 |         <rect x="330" y="160" width="240" height="90" rx="10" fill={C.blue} fillOpacity="0.08" stroke={C.blue} strokeWidth="2.5" />
+     :               ^
+ 112 |         <text x="450" y="200" fill="#e2e8f0" textAnchor="middle" fontSize="13" fontWeight="bold">PHYSICAL QUANTITY</text>
+ 113 |         <text x="450" y="222" fill={C.gray} textAnchor="middle" fontSize="10">= number × unit</text>
+ 114 |         {[330, 480].map((x, i) => (
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./lib/visual-concept-map.ts
+./components/lab/schematic-diagram.tsx
+./components/content/topic-vertical-notes.tsx 
+[browser] ./lib/visual-concept-map.ts
+Error:   x Expected '>', got 'ident'
+     ,-[C:\Users\ASUS\Desktop\rn\frontend\lib\visual-concept-map.ts:111:1]
+ 108 |     ],
+ 109 |     renderSvg: () => (
+ 110 |       <g>
+ 111 |         <rect x="330" y="160" width="240" height="90" rx="10" fill={C.blue} fillOpacity="0.08" stroke={C.blue} strokeWidth="2.5" />
+     :               ^
+ 112 |         <text x="450" y="200" fill="#e2e8f0" textAnchor="middle" fontSize="13" fontWeight="bold">PHYSICAL QUANTITY</text>
+ 113 |         <text x="450" y="222" fill={C.gray} textAnchor="middle" fontSize="10">= number × unit</text>
+ 114 |         {[330, 480].map((x, i) => (
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./lib/visual-concept-map.ts
+./components/lab/schematic-diagram.tsx
+./components/content/topic-vertical-notes.tsx 
+[browser] ./lib/visual-concept-map.ts
+Error:   x Expected '>', got 'ident'
+     ,-[C:\Users\ASUS\Desktop\rn\frontend\lib\visual-concept-map.ts:111:1]
+ 108 |     ],
+ 109 |     renderSvg: () => (
+ 110 |       <g>
+ 111 |         <rect x="330" y="160" width="240" height="90" rx="10" fill={C.blue} fillOpacity="0.08" stroke={C.blue} strokeWidth="2.5" />
+     :               ^
+ 112 |         <text x="450" y="200" fill="#e2e8f0" textAnchor="middle" fontSize="13" fontWeight="bold">PHYSICAL QUANTITY</text>
+ 113 |         <text x="450" y="222" fill={C.gray} textAnchor="middle" fontSize="10">= number × unit</text>
+ 114 |         {[330, 480].map((x, i) => (
+     `----
+
+Caused by:
+    Syntax Error
+
+Import trace for requested module:
+./lib/visual-concept-map.ts
+./components/lab/schematic-diagram.tsx
+./components/content/topic-vertical-notes.tsx 
+[browser] ./lib/visual-concept-map.ts
+Error: 
+
+Caused by:
+    0: Failed to read source code from C:\Users\ASUS\Desktop\rn\frontend\lib\visual-concept-map.ts
+    1: The system cannot find the file specified. (os error 2)
+
+Import trace for requested module:
+./lib/visual-concept-map.ts
+./components/lab/schematic-diagram.tsx
+./components/content/topic-vertical-notes.tsx 
+[browser] ./lib/visual-concept-map.ts
+Error: 
+
+Caused by:
+    0: Failed to read source code from C:\Users\ASUS\Desktop\rn\frontend\lib\visual-concept-map.ts
+    1: The system cannot find the file specified. (os error 2)
+
+Import trace for requested module:
+./lib/visual-concept-map.ts
+./components/lab/schematic-diagram.tsx
+./components/content/topic-vertical-notes.tsx 
+[browser] ./lib/visual-concept-map.ts
+Error: 
+
+Caused by:
+    0: Failed to read source code from C:\Users\ASUS\Desktop\rn\frontend\lib\visual-concept-map.ts
+    1: The system cannot find the file specified. (os error 2)
+
+Import trace for requested module:
+./lib/visual-concept-map.ts
+./components/lab/schematic-diagram.tsx
+./components/content/topic-vertical-notes.tsx 
+[browser] ./lib/visual-concept-map.ts
+Error: 
+
+Caused by:
+    0: Failed to read source code from C:\Users\ASUS\Desktop\rn\frontend\lib\visual-concept-map.ts
+    1: The system cannot find the file specified. (os error 2)
+
+Import trace for requested module:
+./lib/visual-concept-map.ts
+./components/lab/schematic-diagram.tsx
+./components/content/topic-vertical-notes.tsx 
+[browser] ./lib/visual-concept-map.ts
+Error: 
+
+Caused by:
+    0: Failed to read source code from C:\Users\ASUS\Desktop\rn\frontend\lib\visual-concept-map.ts
+    1: The system cannot find the file specified. (os error 2)
+
+Import trace for requested module:
+./lib/visual-concept-map.ts
+./components/lab/schematic-diagram.tsx
+./components/content/topic-vertical-notes.tsx 
+[browser] ./lib/visual-concept-map.ts
+Error: 
+
+Caused by:
+    0: Failed to read source code from C:\Users\ASUS\Desktop\rn\frontend\lib\visual-concept-map.ts
+    1: The system cannot find the file specified. (os error 2)
+
+Import trace for requested module:
+./lib/visual-concept-map.ts
+./components/lab/schematic-diagram.tsx
+./components/content/topic-vertical-notes.tsx 
+[browser] ./lib/visual-concept-map.ts
+Error: 
+
+Caused by:
+    0: Failed to read source code from C:\Users\ASUS\Desktop\rn\frontend\lib\visual-concept-map.ts
+    1: The system cannot find the file specified. (os error 2)
+
+Import trace for requested module:
+./lib/visual-concept-map.ts
+./components/lab/schematic-diagram.tsx
+./components/content/topic-vertical-notes.tsx 
+[browser] ./lib/visual-concept-map.ts
+Error: 
+
+Caused by:
+    0: Failed to read source code from C:\Users\ASUS\Desktop\rn\frontend\lib\visual-concept-map.ts
+    1: The system cannot find the file specified. (os error 2)
+
+Import trace for requested module:
+./lib/visual-concept-map.ts
+./components/lab/schematic-diagram.tsx
+./components/content/topic-vertical-notes.tsx 
+⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+⨯ TypeError: __webpack_modules__[moduleId] is not a function
+    at ignore-listed frames {
+  digest: '3444147198'
+}
+[browser] [DevContrastAudit] theme=unknown — 11/13 pair(s) below WCAG AA (lib\color-contrast.ts:251:17)
+[browser] [DevContrastAudit] theme=dark — 2/13 pair(s) below WCAG AA (lib\color-contrast.ts:251:17)
+Failed to proxy http://localhost:3000/api/auth/me AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3000
+        at <unknown> (Error: connect ECONNREFUSED ::1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3000
+    }
+  ]
+}
+AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3000
+        at <unknown> (Error: connect ECONNREFUSED ::1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3000
+    }
+  ]
+}
+Failed to proxy http://localhost:3000/api/auth/me AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3000
+        at <unknown> (Error: connect ECONNREFUSED ::1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3000
+    }
+  ]
+}
+AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3000
+        at <unknown> (Error: connect ECONNREFUSED ::1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3000
+    }
+  ]
+}
+Failed to proxy http://localhost:3000/api/auth/me AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3000
+        at <unknown> (Error: connect ECONNREFUSED ::1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3000
+    }
+  ]
+}
+AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3000
+        at <unknown> (Error: connect ECONNREFUSED ::1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3000
+    }
+  ]
+}
+[browser] [DevContrastAudit] theme=unknown — 11/13 pair(s) below WCAG AA (lib\color-contrast.ts:251:17)
+[browser] [DevContrastAudit] theme=dark — 2/13 pair(s) below WCAG AA (lib\color-contrast.ts:251:17)
+Failed to proxy http://localhost:3000/api/auth/me AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3000
+        at <unknown> (Error: connect ECONNREFUSED ::1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3000
+    }
+  ]
+}
+AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3000
+        at <unknown> (Error: connect ECONNREFUSED ::1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3000
+    }
+  ]
+}
+[browser] Encountered two children with the same key, `ravikishan-1`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `ravikishan-1`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `ravikishan-1`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `ravikishan-1`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `ravikishan-1`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `ravikishan-1`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+Failed to proxy http://localhost:3000/api/auth/me AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3000
+        at <unknown> (Error: connect ECONNREFUSED ::1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3000
+    }
+  ]
+}
+AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3000
+        at <unknown> (Error: connect ECONNREFUSED ::1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3000
+    }
+  ]
+}
+[browser] [DevContrastAudit] theme=unknown — 11/13 pair(s) below WCAG AA (lib\color-contrast.ts:251:17)
+[browser] [DevContrastAudit] theme=dark — 2/13 pair(s) below WCAG AA (lib\color-contrast.ts:251:17)
+Failed to proxy http://localhost:3000/api/auth/me AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3000
+        at <unknown> (Error: connect ECONNREFUSED ::1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3000
+    }
+  ]
+}
+AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3000
+        at <unknown> (Error: connect ECONNREFUSED ::1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3000
+    }
+  ]
+}
+Failed to proxy http://localhost:3000/api/auth/me AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3000
+        at <unknown> (Error: connect ECONNREFUSED ::1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3000
+    }
+  ]
+}
+AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3000
+        at <unknown> (Error: connect ECONNREFUSED ::1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3000
+    }
+  ]
+}
+[browser] [DevContrastAudit] theme=unknown — 11/13 pair(s) below WCAG AA (lib\color-contrast.ts:251:17)
+[browser] [DevContrastAudit] theme=dark — 2/13 pair(s) below WCAG AA (lib\color-contrast.ts:251:17)
+Failed to proxy http://localhost:3000/api/auth/me AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3000
+        at <unknown> (Error: connect ECONNREFUSED ::1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3000
+    }
+  ]
+}
+AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3000
+        at <unknown> (Error: connect ECONNREFUSED ::1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3000
+    }
+  ]
+}
+[browser] Encountered two children with the same key, `ravikishan-2`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `ravikishan-2`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `ravikishan-2`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `ravikishan-2`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `ravikishan-2`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `ravikishan-2`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `ravikishan-2`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+[browser] Encountered two children with the same key, `ravikishan-2`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version. 
+⚠ Fast Refresh had to perform a full reload. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+Failed to proxy http://localhost:3000/api/auth/me AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3000
+        at <unknown> (Error: connect ECONNREFUSED ::1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3000
+    }
+  ]
+}
+AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3000
+        at <unknown> (Error: connect ECONNREFUSED ::1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3000
+    }
+  ]
+}
+[browser] [DevContrastAudit] theme=unknown — 11/13 pair(s) below WCAG AA (lib\color-contrast.ts:251:17)
+[browser] [DevContrastAudit] theme=dark — 2/13 pair(s) below WCAG AA (lib\color-contrast.ts:251:17)
+Failed to proxy http://localhost:3000/api/auth/me AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3000
+        at <unknown> (Error: connect ECONNREFUSED ::1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3000
+    }
+  ]
+}
+AggregateError: 
+    at ignore-listed frames {
+  code: 'ECONNREFUSED',
+  [errors]: [
+    Error: connect ECONNREFUSED ::1:3000
+        at <unknown> (Error: connect ECONNREFUSED ::1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '::1',
+      port: 3000
+    },
+    Error: connect ECONNREFUSED 127.0.0.1:3000
+        at <unknown> (Error: connect ECONNREFUSED 127.0.0.1:3000) {
+      errno: -4078,
+      code: 'ECONNREFUSED',
+      syscall: 'connect',
+      address: '127.0.0.1',
+      port: 3000
+    }
+  ]
+}

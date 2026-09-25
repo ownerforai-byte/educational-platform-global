@@ -15,7 +15,6 @@ import {
   UserCheck,
   Bookmark,
   Users,
-  ShieldCheck,
   Coins,
   Crown,
   ChevronsUp,
@@ -36,6 +35,7 @@ import {
 } from "lucide-react";
 import { logoutAction } from "@/features/auth/actions";
 import { useSession } from "@/features/auth/hooks/use-session";
+import { isOwnerUser } from "@/lib/owner";
 
 type NavItem = {
   href: string;
@@ -243,7 +243,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
     tools: false,
     extended: false,
     account: false,
-    admin: false,
+    owner: false,
   });
 
   const toggleSection = (key: string) =>
@@ -361,14 +361,14 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
             railCollapsed={collapsed}
           />
         )}
-        {(user?.role === "ADMIN" || user?.role === "OWNER") && (
+        {isOwnerUser(user) && (
           <NavSection
-            label="Admin"
-            icon={ShieldCheck}
-            items={adminItems}
+            label="Owner"
+            icon={Crown}
+            items={ownerItems}
             pathname={pathname}
-            collapsed={collapsedSections.admin}
-            onToggle={() => toggleSection("admin")}
+            collapsed={collapsedSections.owner}
+            onToggle={() => toggleSection("owner")}
             railCollapsed={collapsed}
           />
         )}

@@ -2,20 +2,37 @@
 
 import React from "react";
 import Link from "next/link";
-import {
-  Brain,
-  Sparkles,
-  Coins,
-  Bookmark,
-  TrendingUp,
-  Settings,
-  ShieldCheck,
-  Crown,
-  ArrowRight,
-} from "lucide-react";
-import { StudyChat } from "@/components/chat/study-chat";
+import { Brain, Sparkles, Bot, Search, ChevronRight } from "lucide-react";
+import { useSession } from "@/features/auth/hooks/use-session";
 
+/**
+ * Compact AI Studio banner for the home page. The full experience (tutor chat,
+ * quiz studio, smart search) lives at /ai — this section just routes there.
+ */
 export function AIAssistantWorkspace() {
+  const { user } = useSession();
+
+  const features = [
+    {
+      icon: Bot,
+      title: "AI Tutor",
+      description: "Professor-mode chat with step-by-step explanations",
+      tab: "tutor",
+    },
+    {
+      icon: Brain,
+      title: "Quiz Studio",
+      description: "Generate MCQ sets — easy, intermediate, or hard",
+      tab: "quiz",
+    },
+    {
+      icon: Search,
+      title: "Smart Search",
+      description: "AI-powered curriculum and PYQ search",
+      tab: "search",
+    },
+  ];
+
   return (
     <section id="section-ai" className="mx-auto max-w-7xl px-4 py-12 scroll-mt-16 border-t border-border/60">
       {/* Header */}
@@ -23,134 +40,63 @@ export function AIAssistantWorkspace() {
         <div>
           <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-violet-400">
             <Brain className="h-4 w-4" />
-            <span>AI Study Assistant &amp; Workspace</span>
+            <span>AI Studio</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mt-1">
             Your Curriculum-Aligned AI Tutor
           </h2>
           <p className="text-sm text-muted-foreground mt-1 max-w-2xl">
-            Ask any question on NEB Class 11 &amp; 12 concepts, solve numerical problems with step-by-step guidance, and manage your personal study workspace.
+            Tutor chat, generated quizzes, and curriculum search — everything now lives in one dedicated studio.
           </p>
         </div>
 
-        <div className="flex items-center gap-2">
-          <Link
-            href="/chat"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-violet-600 hover:bg-violet-700 text-white text-xs font-bold shadow-sm transition-all"
-          >
-            <Sparkles className="h-3.5 w-3.5" />
-            <span>Full AI Screen</span>
-          </Link>
-          <Link
-            href="/credits"
-            className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl border border-border/70 bg-card hover:bg-muted text-xs font-semibold text-foreground transition-colors"
-          >
-            <Coins className="h-3.5 w-3.5 text-amber-500" />
-            <span>My Credits</span>
-          </Link>
-        </div>
+        <Link
+          href="/ai"
+          className="inline-flex w-fit items-center gap-1.5 px-4 py-2 rounded-xl bg-violet-600 hover:bg-violet-700 text-white text-xs font-bold shadow-sm transition-all shrink-0"
+        >
+          <Sparkles className="h-3.5 w-3.5" />
+          <span>Open AI Studio</span>
+          <ChevronRight className="h-3.5 w-3.5" />
+        </Link>
       </div>
 
-      <div className="mt-8 grid gap-6 lg:grid-cols-12">
-        {/* Left Column: Interactive Study Chat (8 cols) */}
-        <div className="lg:col-span-8 flex flex-col rounded-3xl border border-border/70 bg-card p-6 shadow-sm">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-2.5">
-              <div className="flex h-9 w-9 items-center justify-center rounded-2xl bg-violet-500/15 text-violet-500">
-                <Sparkles className="h-4 w-4" />
+      {/* Feature cards */}
+      <div className="mt-8 grid gap-4 sm:grid-cols-3">
+        {features.map((f) => {
+          const Icon = f.icon;
+          return (
+            <Link
+              key={f.tab}
+              href={`/ai?tab=${f.tab}`}
+              className="group flex flex-col gap-3 rounded-2xl border border-border/70 bg-card p-5 hover:border-violet-500/50 hover:shadow-md transition-all"
+            >
+              <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-500/10 text-violet-500 group-hover:scale-105 transition-transform">
+                <Icon className="h-5 w-5" />
               </div>
               <div>
-                <h3 className="text-sm font-bold text-foreground">Interactive AI Study Chat</h3>
-                <p className="text-[11px] text-muted-foreground">Trained on syllabus guidelines and model answers</p>
+                <h4 className="text-sm font-bold text-foreground group-hover:text-primary transition-colors">
+                  {f.title}
+                </h4>
+                <p className="text-xs text-muted-foreground mt-0.5">{f.description}</p>
               </div>
-            </div>
-            <span className="text-[10px] font-bold px-2 py-0.5 rounded-full bg-emerald-500/15 text-emerald-500">
-              Online
-            </span>
-          </div>
-
-          {/* Embedded StudyChat */}
-          <div className="flex-1 min-h-[360px] flex flex-col">
-            <StudyChat compact={false} />
-          </div>
-        </div>
-
-        {/* Right Column: Student Account & Utility Tools (4 cols) */}
-        <div className="lg:col-span-4 space-y-4">
-          <div className="flex items-center justify-between">
-            <h3 className="text-sm font-bold uppercase tracking-wider text-foreground">
-              Student Workspace
-            </h3>
-            <span className="text-xs text-muted-foreground">My Account</span>
-          </div>
-
-          <div className="space-y-3">
-            <Link
-              href="/credits"
-              className="group flex items-center justify-between p-4 rounded-2xl border border-border/70 bg-card hover:border-amber-500/40 hover:shadow-sm transition-all"
-            >
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-amber-500/10 text-amber-500 group-hover:scale-105 transition-transform">
-                  <Coins className="h-5 w-5" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-foreground group-hover:text-primary transition-colors">Credits &amp; Plan</h4>
-                  <p className="text-[11px] text-muted-foreground">Manage tokens, balance &amp; premium access</p>
-                </div>
-              </div>
-              <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
+              <span className="mt-auto inline-flex items-center gap-1 text-xs font-semibold text-violet-500">
+                Open
+                <ChevronRight className="h-3 w-3 group-hover:translate-x-0.5 transition-transform" />
+              </span>
             </Link>
-
-            <Link
-              href="/bookmarks"
-              className="group flex items-center justify-between p-4 rounded-2xl border border-border/70 bg-card hover:border-violet-500/40 hover:shadow-sm transition-all"
-            >
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-500/10 text-violet-500 group-hover:scale-105 transition-transform">
-                  <Bookmark className="h-5 w-5" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-foreground group-hover:text-primary transition-colors">Saved Bookmarks</h4>
-                  <p className="text-[11px] text-muted-foreground">Quick access to bookmarked topics &amp; labs</p>
-                </div>
-              </div>
-              <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-            </Link>
-
-            <Link
-              href="/progress"
-              className="group flex items-center justify-between p-4 rounded-2xl border border-border/70 bg-card hover:border-emerald-500/40 hover:shadow-sm transition-all"
-            >
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-500/10 text-emerald-500 group-hover:scale-105 transition-transform">
-                  <TrendingUp className="h-5 w-5" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-foreground group-hover:text-primary transition-colors">Study Progress</h4>
-                  <p className="text-[11px] text-muted-foreground">Completion analytics across all subjects</p>
-                </div>
-              </div>
-              <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-            </Link>
-
-            <Link
-              href="/controller"
-              className="group flex items-center justify-between p-4 rounded-2xl border border-border/70 bg-card hover:border-sky-500/40 hover:shadow-sm transition-all"
-            >
-              <div className="flex items-center gap-3">
-                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-sky-500/10 text-sky-500 group-hover:scale-105 transition-transform">
-                  <Crown className="h-5 w-5" />
-                </div>
-                <div>
-                  <h4 className="text-xs font-bold text-foreground group-hover:text-primary transition-colors">Platform Controller</h4>
-                  <p className="text-[11px] text-muted-foreground">System health, database &amp; diagnostics</p>
-                </div>
-              </div>
-              <ArrowRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-colors" />
-            </Link>
-          </div>
-        </div>
+          );
+        })}
       </div>
+
+      {!user && (
+        <p className="mt-4 text-center text-xs text-muted-foreground">
+          Guests get {7} free tutor messages —{" "}
+          <Link href="/login" className="font-semibold text-primary hover:underline">
+            sign in
+          </Link>{" "}
+          for unlimited questions.
+        </p>
+      )}
     </section>
   );
 }

@@ -147,6 +147,9 @@ export function AIChatInterface() {
   const handleSend = async (customText?: string) => {
     const textToSend = (customText ?? input).trim();
     if (!textToSend || sending) return;
+    // Don't accept sends while persisted history is restoring — the restore
+    // overwrites the message list and would swallow the new exchange.
+    if (historyState === "loading") return;
 
     if (isGuestLimited) {
       setError("You've reached the free guest message limit. Please sign in to continue unlimited AI tutoring!");
@@ -297,7 +300,13 @@ export function AIChatInterface() {
 
       {/* ── Message Stream Area ──────────────────────────────────────── */}
       <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6">
-        {displayMessages.length === 0 ? (
+        {historyState === "loading" ? (
+          /* Restoring persisted conversation */
+          <div className="h-full flex flex-col items-center justify-center gap-3 text-muted-foreground">
+            <div className="h-7 w-7 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+            <p className="text-xs">Restoring your conversation…</p>
+          </div>
+        ) : displayMessages.length === 0 ? (
           /* Empty State: Suggested Prompts */
           <div className="h-full flex flex-col justify-center max-w-2xl mx-auto space-y-6 py-6">
             <div className="text-center space-y-2">

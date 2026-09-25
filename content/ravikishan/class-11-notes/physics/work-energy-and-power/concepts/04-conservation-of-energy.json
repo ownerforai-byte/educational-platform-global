@@ -151,5 +151,28 @@
     "Solve 5 spring-mass problems finding maximum speed.",
     "Solve 5 roller coaster problems finding speed at different heights.",
     "Solve 5 rough-slope problems using the work-energy theorem with friction."
-  ]
+  ],
+  "nepali": {
+    "notes": [
+      "**ऊर्जा संरक्षण नियम:** ऊर्जा न सिर्जना हुन सक्छ न नष्ट। यो केवल एउटै रूपबाट अर्को रूपमा रूपान्तरित हुन सक्छ वा प्रणालीहरू बीच हस्तान्तरित हुन सक्छ। एक अलग प्रणालीको कुल ऊर्जा समयसाथ स्थिर रहन्छ।",
+      "**यान्त्रिक ऊर्जा संरक्षण:** जब केवल रूढिगत (conservative) बलहरू (गुरुत्वाकर्षण, स्प्रिङ बल, स्थिरविद्युत बल) प्रणालीमा कार्य गर्छन्, यान्त्रिक ऊर्जा E = K + U संरक्षित रहन्छ: ΔK + ΔU = 0, वा K_i + U_i = K_f + U_f।",
+      "**स्थितिज ऊर्जाको प्रकारहरू:** पृथ्वीको नजिक गुरुत्वाकर्षण स्थितिज ऊर्जा: U_g = mgh (h = सन्दर्भबाटको उचाइ)। स्प्रिङको प्रत्यास्थ स्थितिज ऊर्जा: U_s = ½kx² (x = प्राकृतिक लम्बाईबाट संकुचन/विस्तार)।"
+    ],
+    "importantStatements": [
+      "ऊर्जा संरक्षण भनेको कुल ऊर्जा (गतिज + स्थितिज + तापीय + अन्य) अलग प्रणालीमा स्थिर रहन्छ।",
+      "गतिज ऊर्जा K = ½mv², स्थितिज ऊर्जा U = mgh (पृथ्वीको नजिक)।",
+      "कार्य-ऊर्जा प्रमेय: W_net = ΔK — यो सबै बलहरू (रूढिगत र अरूढिगत दुवै) को लागि मानिन्छ।"
+    ]
+  },
+  "grammar": {
+    "notes": [
+      "Conservation (noun): the act of preserving something. Conserved (adjective): kept constant.",
+      "Energy (noun): capacity to do work. Uncountable in physics context.",
+      "Potential energy (noun phrase): stored energy due to position."
+    ],
+    "importantStatements": [
+      "In physics, 'conservation of energy' is a fundamental principle, not just a suggestion.",
+      "The word 'conserved' means 'remains constant over time', not 'saved' in the everyday sense."
+    ]
+  }
 }

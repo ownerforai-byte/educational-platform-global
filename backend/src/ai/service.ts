@@ -660,6 +660,11 @@ class AgnesProvider implements AIProvider {
 
   constructor(apiKey: string) {
     this.apiKey = apiKey;
+    // Env-overridable in case the endpoint or model slug changes.
+    this.apiUrl = process.env.AGNES_API_URL || "https://api.agnes.ai/v1/chat/completions";
+    this.model = process.env.AGNES_MODEL || "agnes-2.5-flash";
+    // Fail fast so the chain can reach openrouter/internal when Agnes is down.
+    this.timeoutMs = Number(process.env.AGNES_TIMEOUT_MS || 12000);
   }
 
   private async callAgnes(messages: Array<AIChatMessage>): Promise<string> {
@@ -681,9 +686,17 @@ class AgnesProvider implements AIProvider {
       signal: AbortSignal.timeout(29000),
     });
 
-    if (!res.ok) {
-      const text = await res.text();
-      throw new Error(`Agnes error: ${res.status} ${text}`);
+      if (!res.ok) {
+        const text = await res.text();
+        throw new Error(`Agnes error: ${res.status} ${text}`);
+      }
+
+      const data = await res.json();
+      const text = data?.choices?.[0]?.message?.content;
+      if (!text) throw new Error("Empty Agnes response");
+      return text;
+    } finally {
+      clearTimeout(timer);
     }
 
     const data = await res.json();

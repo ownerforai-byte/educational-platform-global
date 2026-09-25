@@ -11,6 +11,7 @@ import {
   Globe,
   User,
   LogIn,
+  Sparkles,
   X,
   Menu,
   GraduationCap,
@@ -32,6 +33,8 @@ import {
   Coins,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { useSession } from "@/features/auth/hooks/use-session";
+import { LogOut } from "lucide-react";
 
 interface MobileSection {
   id: string;
@@ -118,6 +121,7 @@ export function MobileNav() {
   const [open, setOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const pathname = usePathname();
+  const { user, refresh, logoutUser } = useSession();
 
   const filteredSections = mobileSections.map((sec) => ({
     ...sec,
