@@ -82,5 +82,10 @@
     "Solve 5 problems on Capacitance and Capacitor."
   ],
   "duplicateType": 1,
+    "specificConditions": [
+      "**Linearity Constraint:** The relation Q = CV is valid only for linear dielectrics. If the material is nonlinear (e.g., certain ferroelectrics), capacitance C depends on the applied voltage V, requiring C = dQ/dV.",
+      "**Electrostatic Equilibrium:** Formulas assume the capacitor is in a steady state (electrostatic equilibrium), where potential difference is constant and no net current flows.",
+      "**Negligible Fringe Fields:** Standard formulas (like C = ε₀A/d) assume plate dimensions are much larger than the separation distance (A ≫ d²) to treat edge effects as negligible."
+    ],
   "visualType": "parallel-plate-capacitor"
 }

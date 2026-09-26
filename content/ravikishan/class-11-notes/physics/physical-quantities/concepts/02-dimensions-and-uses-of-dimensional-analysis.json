@@ -166,5 +166,10 @@
   ],
   "duplicateType": 2,
   "tabGroup": "dimensions-dimensional-analysis",
+    "specificConditions": [
+      "**Homogeneity Constraint:** Only quantities with the same dimensional formula can be added, subtracted, or equated in an equation. Term-by-term analysis is mandatory.",
+      "**Function Argument Constraint:** The arguments of trigonometric (e.g., sin θ, cos θ), exponential (e.g., $e^x$), and logarithmic functions must be dimensionless. This is a critical check for determining the dimensions of unknown constants in an equation.",
+      "**Dimensionless Constant Constraint:** Dimensional analysis inherently cannot identify or verify dimensionless constants (e.g., $2\\pi$, 0.5). These factors must be determined via independent theoretical derivation or experimental calibration."
+    ],
   "visualType": "dimensional-analysis"
 }

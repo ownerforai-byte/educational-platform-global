@@ -81,5 +81,10 @@
   "importantTasks": [
     "Solve 5 problems on Spherical Lenses and Angular Magnification."
   ],
+  "specificConditions": [
+    "**Thin Lens Approximation:** The lens maker's formula $\\frac{1}{f} = (n-1)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right)$ assumes a *thin* lens (thickness $\\ll$ radii of curvature). For thick lenses, the full Gullstrand formula with principal planes must be used.",
+    "**Sign Convention for Radii:** Using the Cartesian sign convention (light travels left to right): $R$ is positive if the center of curvature is to the *right* of the surface (convex toward incident light), negative if to the *left* (concave). This is opposite to some older conventions.",
+    "**Material and Medium Dependence:** The formula uses relative refractive index $n = n_{lens}/n_{medium}$. For a lens in air, $n_{medium} \\approx 1$. If immersed in water ($n \\approx 1.33$), the focal length increases by factor $n_{lens}/n_{water}$ relative to air."
+  ],
   "duplicateType": 1
 }

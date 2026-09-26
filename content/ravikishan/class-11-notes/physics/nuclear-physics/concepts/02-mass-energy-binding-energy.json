@@ -49,5 +49,10 @@
   ],
   "duplicateType": 2,
   "tabGroup": "atomic-mass-isotopes",
-  "visualType": "mass-defect"
+  "visualType": "mass-defect",
+  "specificConditions": [
+    "**Mass Defect Definition:** $\\Delta m = Z m_p + N m_n - M_{\\text{nucleus}}$ where $m_p \\approx 1.007276$ u, $m_n \\approx 1.008665$ u. The defect is always positive — the bound nucleus is lighter than its free constituents.",
+    "**Binding Energy Conversion:** $BE = \\Delta m \\cdot c^2 = \\Delta m \\times 931.494$ MeV. The binding energy is the energy needed to separate the nucleus into free nucleons. It is positive for bound nuclei.",
+    "**Isotope Chemistry vs Nuclear Properties:** Isotopes (same Z, different A) have identical chemical properties (electron configuration) but different nuclear masses, stabilities, and half-lives. Chemical separation is impossible; nuclear methods (centrifugation, diffusion, laser) are required."
+  ]
 }

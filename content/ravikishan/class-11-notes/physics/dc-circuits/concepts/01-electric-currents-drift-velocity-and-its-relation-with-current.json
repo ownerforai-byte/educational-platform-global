@@ -41,5 +41,10 @@
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits",
   "duplicateType": 2,
-  "tabGroup": "current-voltage-relations-and-ohmic-and-non-ohmic-resistance"
+  "tabGroup": "current-voltage-relations-and-ohmic-and-non-ohmic-resistance",
+    "specificConditions": [
+      "**Drift Velocity Definition:** Drift velocity ($v_d$) is the *average* velocity of charge carriers (electrons) in a conductor under an applied electric field. It is typically very small ($\\sim 10^{-4}$ m/s), much smaller than the random thermal speed of electrons ($\\sim 10^5$ m/s).",
+      "**Current-Drift Velocity Relation:** The current $I = n e A v_d$, where $n$ is the number density of charge carriers, $e$ is the electron charge, and $A$ is the cross-sectional area. This relation assumes a steady-state drift where electrons reach terminal velocity under the balance of electric force and scattering.",
+      "**Steady-State Assumption:** The drift velocity formula assumes a steady state where the average acceleration between collisions is zero. It does not apply to transient phenomena (e.g., switching on a circuit) or very high-frequency AC where the electron motion doesn't reach steady state."
+    ]
 }

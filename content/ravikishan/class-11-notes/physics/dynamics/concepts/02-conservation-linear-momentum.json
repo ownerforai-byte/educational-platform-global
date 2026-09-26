@@ -170,6 +170,11 @@
     "importantConcepts": [],
     "importantTasks": [],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Isolated System Requirement:** Momentum conservation ($\\sum \\vec{p}_i = \\sum \\vec{p}_f$) holds strictly only when the net *external* force on the system is zero. External forces like gravity, friction, or applied pushes must be absent or balanced.",
+      "**Collisions vs. Continuous Interaction:** In a collision, the interaction is brief and impulsive; internal forces dominate. In continuous interactions (e.g., rocket propulsion), momentum is conserved at each instant, but mass changes must be tracked using the variable-mass form $F = dp/dt$.",
+      "**Kinetic Energy Distinction:** Momentum is conserved in *all* isolated collisions (elastic or inelastic). Kinetic energy is conserved *only* in perfectly elastic collisions. In inelastic collisions, some KE is converted to heat, sound, or deformation energy."
+    ]
   }
 }

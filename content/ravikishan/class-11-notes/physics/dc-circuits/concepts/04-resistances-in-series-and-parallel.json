@@ -42,5 +42,10 @@
   "motionGraphics": "dc-circuits",
   "duplicateType": 2,
   "tabGroup": "work-and-power-in-electrical-circuits",
+    "specificConditions": [
+      "**Series Circuit Constraint:** In series, the same current flows through all elements. Power in each resistor is $P_i = I^2 R_i$, so the power dissipation is proportional to resistance. The total power is $P_{total} = I^2 R_{eq}$.",
+      "**Parallel Circuit Constraint:** In parallel, the same voltage appears across all elements. Power in each resistor is $P_i = V^2/R_i$, so power dissipation is inversely proportional to resistance. The total power is $P_{total} = V^2/R_{eq}$.",
+      "**Maximum Power Transfer:** For a source with internal resistance $r$, maximum power is delivered to a load $R$ when $R = r$. At this condition, efficiency is only 50% (half the power is dissipated internally)."
+    ],
   "visualType": "resistor-network"
 }

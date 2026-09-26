@@ -178,6 +178,11 @@
     "importantConcepts": [],
     "importantTasks": [],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Energy Density Validity:** The formula $u = \frac{1}{2}\\sigma\\varepsilon = \frac{1}{2}E\\varepsilon^2 = \frac{\\sigma^2}{2E}$ holds *only* within the linear elastic region (Hooke's law). Beyond the proportional limit, energy density must be found by integrating the actual stress-strain curve: $u = \\int \\sigma d\\varepsilon$.",
+      "**Spring vs Wire Energy:** For a spring, $U = \frac{1}{2}kx^2$ where $k = EA/L$ is the spring constant. For a wire, $U = \frac{1}{2} \frac{EA}{L} x^2 = \frac{1}{2} \\sigma \\varepsilon (AL) = u \times \text{volume}$. Both formulas are equivalent when geometry is accounted for.",
+      "**Hysteresis = Energy Dissipation:** The area of a hysteresis loop represents energy *dissipated* (lost as heat) per cycle, not energy stored. For conservative elastic materials (ideal springs, metals below yield), loading and unloading paths coincide, and the loop area is zero."
+    ]
   }
 }

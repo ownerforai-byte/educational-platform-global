@@ -355,6 +355,11 @@
       "Analyze a 3-block system connected by strings on a horizontal surface with a pulling force."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Inertial Frame Requirement:** Newton's laws ($F=ma$) hold only in inertial reference frames. In accelerating (non-inertial) frames, a pseudo-force $-ma_{frame}$ must be added to the FBD to make the equations valid.",
+      "**FBD Completeness:** The free-body diagram must include *all* forces acting ON the chosen body: weight, normal, friction, tension, applied forces. Forces exerted BY the body on other objects do NOT belong in its FBD.",
+      "**Friction Direction Logic:** Friction always opposes *relative motion or its tendency*. Static friction can act in the direction of motion (e.g., walking forward, car accelerating) — determine direction by asking 'which way would the surface slip without friction?'"
+    ]
   }
 }

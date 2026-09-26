@@ -44,5 +44,10 @@
   "motionGraphics": "ideal-gas",
   "duplicateType": 2,
   "tabGroup": "molecular-properties-of-matter",
-  "visualType": "gas-pressure"
+  "visualType": "gas-pressure",
+  "specificConditions": [
+    "**Pressure from Momentum Transfer:** Pressure is derived from the rate of momentum transfer to the walls. For one molecule hitting a wall elastically: $\\Delta p = 2mv_x$. The rate of collisions is $v_x/(2L)$. Summing over all molecules gives $P = \frac{1}{3} n m \\overline{v^2} = \frac{2}{3} n \\langle KE \rangle$.",
+    "**Microscopic-Macroscopic Link:** The result $P = \frac{2}{3} n \\langle KE \rangle = \frac{1}{3} \rho \\overline{v^2}$ connects microscopic kinetic energy to macroscopic pressure. Using $\\langle KE \rangle = \frac{3}{2} k_B T$, we get $PV = N k_B T = nRT$ — the ideal gas law emerges naturally.",
+    "**Isotropic Velocity Assumption:** The derivation assumes isotropic velocity distribution: $\\overline{v_x^2} = \\overline{v_y^2} = \\overline{v_z^2} = \frac{1}{3}\\overline{v^2}$. This holds for equilibrium gases without external fields. Anisotropic distributions (e.g., in beams) give different pressure tensor components."
+  ]
 }

@@ -343,6 +343,11 @@
       "Compute the safe (working) load using a given safety factor."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Stress-Strain vs Force-Extension:** Stress-strain curves are material properties (independent of geometry), while force-extension curves depend on the specific sample's dimensions. $E = \\sigma/\\varepsilon$ is a material constant; $k = F/x$ depends on length and cross-section.",
+      "**Linear Region Constraint:** The linear proportionality $\\sigma = E\\varepsilon$ (Hooke's law) holds *only* up to the proportional limit. Beyond this, the curve is non-linear even before the elastic limit (where full recovery still occurs). The elastic limit and proportional limit are close but distinct.",
+      "**Ductile vs Brittle Failure Mode:** Ductile materials have a significant plastic region (yield, strain hardening, necking) and fracture after large deformation. Brittle materials fracture near the elastic limit with little/no plastic deformation — no warning before failure."
+    ]
   }
 }

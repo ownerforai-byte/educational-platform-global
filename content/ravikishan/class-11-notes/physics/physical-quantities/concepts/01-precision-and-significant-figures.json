@@ -168,5 +168,10 @@
   ],
   "duplicateType": 2,
   "tabGroup": "precision-significant-figures",
+    "specificConditions": [
+      "**Intermediate Calculations:** Keep at least one extra 'guard' digit during intermediate calculation steps. Only round the final answer to the required number of significant figures to avoid compounding rounding errors.",
+      "**Constants & Conversion Factors:** Treat mathematical constants (e.g., π, √2) and exact conversion factors (e.g., 100 cm = 1 m) as having infinite significant figures. They should never limit the precision of the measured data.",
+      "**Parallax Error:** For analog measurements (metre rules, thermometers), ensure the line of sight is perpendicular to the scale; this is a necessary physical condition that must be met before determining the significant figure precision of the measurement."
+    ],
   "visualType": "heisenberg-uncertainty"
 }

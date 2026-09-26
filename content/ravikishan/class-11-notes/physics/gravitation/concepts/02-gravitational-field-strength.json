@@ -343,6 +343,11 @@
       "Sketch the $V$–$r$ and $U$–$r$ graphs, labelling zero at infinity."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Field vs Potential Distinction:** Gravitational field $\\vec{g} = -GM/r^2 \\, \\hat{r}$ is a *vector* (force per unit mass). Gravitational potential $V = -GM/r$ is a *scalar* (work per unit mass). The field is the negative gradient of the potential: $\\vec{g} = -\\nabla V = -dV/dr \\, \\hat{r}$.",
+      "**Equipotential Surfaces:** Surfaces of constant $V$. For a point mass, they are concentric spheres. No work is done moving a test mass along an equipotential; the field is always perpendicular to these surfaces.",
+      "**Superposition Advantage:** Potentials add as scalars ($V_{total} = \\sum V_i$), which is simpler than adding field vectors. This makes potential calculations easier for multiple mass distributions, especially when symmetry is broken."
+    ]
   }
 }

@@ -44,5 +44,10 @@
   "motionGraphics": "ideal-gas",
   "duplicateType": 2,
   "tabGroup": "molecular-properties-of-matter",
+    "specificConditions": [
+      "**Kinetic Theory Postulates:** (1) Gases consist of point particles in random motion. (2) Collisions are perfectly elastic (kinetic energy conserved). (3) No intermolecular forces except during collisions. (4) The volume of molecules is negligible compared to container volume. These are idealizations — real gases have finite volume and weak forces.",
+      "**Equipartition of Energy:** Each quadratic degree of freedom contributes $\frac{1}{2}k_B T$ per molecule ($\frac{1}{2}RT$ per mole). Monatomic: $f=3$ (translational). Diatomic: $f=5$ (3 trans + 2 rot) at room temp. Polyatomic: $f=6$ (3 trans + 3 rot). Vibrational modes activate at high temperatures.",
+      "**Maxwell-Boltzmann Distribution:** Molecular speeds are not uniform; they follow $f(v) \\propto v^2 e^{-mv^2/2k_B T}$. The rms speed is $v_{rms} = \\sqrt{3RT/M}$. Most probable speed is $v_{mp} = \\sqrt{2RT/M}$. Average speed is $\bar{v} = \\sqrt{8RT/\\pi M}$."
+    ],
   "visualType": "kinetic-theory"
 }

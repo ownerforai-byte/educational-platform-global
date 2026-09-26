@@ -345,6 +345,11 @@
       "Compare the compressibility of steel, water, and air."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Material State Determines Available Moduli:** Solids have all three moduli ($E, B, G$). Fluids (liquids/gases) have *only* bulk modulus $B$ — they cannot sustain shear stress ($G=0$) and have no defined Young's modulus for stretching.",
+      "**Isotropic Material Relations:** For isotropic solids, the three moduli are linked via Poisson's ratio $\\sigma$: $E = 2G(1+\\sigma) = 3B(1-2\\sigma)$. These relations *do not hold* for anisotropic materials (crystals, composites) where moduli depend on direction.",
+      "**Geometry Separation:** $E$ is an intensive material property (Pa), while spring constant $k = EA/L$ is extensive. Changing a wire's length or cross-section changes $k$ but not $E$ — this distinction is essential for connecting spring problems to material science."
+    ]
   }
 }

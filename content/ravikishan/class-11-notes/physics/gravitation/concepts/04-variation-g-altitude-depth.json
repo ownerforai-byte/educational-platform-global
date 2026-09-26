@@ -342,6 +342,11 @@
       "Compute the effect of rotation on g at the equator."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Altitude Formula:** Above the surface ($h \\ge 0$), $g' = g(R/(R+h))^2$ follows the inverse-square law exactly. For $h \\ll R$, the binomial approximation gives $g' \\approx g(1 - 2h/R)$ — the factor of 2 comes from the square in the denominator.",
+      "**Depth Formula:** Below the surface ($d \\le R$), only the mass interior to radius $R-d$ contributes (Shell Theorem). Since mass $\\propto (R-d)^3$ and distance $\\propto (R-d)$, $g' = g(1 - d/R)$ — a linear decrease to zero at the center.",
+      "**Surface Maximum:** $g$ reaches its maximum at Earth's surface. It decreases in both directions: $1/r^2$ outside, linear inside. The graph of $g$ vs $r$ is triangular-like: linear rise from center to surface, then inverse-square fall."
+    ]
   }
 }

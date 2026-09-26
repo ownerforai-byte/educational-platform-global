@@ -42,5 +42,10 @@
   "motionGraphics": "dc-circuits",
   "duplicateType": 2,
   "tabGroup": "potential-divider",
+    "specificConditions": [
+      "**No-Load Assumption:** The simple voltage divider formula $V_{out} = V_{in} \\frac{R_2}{R_1 + R_2}$ assumes the output current is zero (infinite load resistance). Any load drawing current changes the effective resistance of the lower branch.",
+      "**Loading Effect Formalism:** When a load $R_L$ is connected across $R_2$, the effective resistance becomes $R_2' = R_2 \\parallel R_L = \\frac{R_2 R_L}{R_2 + R_L}$. The new output voltage is $V_{out} = V_{in} \\frac{R_2'}{R_1 + R_2'}$.",
+      "**Design Trade-off:** To minimize loading effects, the divider resistance ($R_1 + R_2$) should be much smaller than $R_L$. However, this increases power dissipation ($P = V_{in}^2/(R_1 + R_2)$). The designer must balance voltage stability against power efficiency."
+    ],
   "visualType": "potential-divider"
 }

@@ -82,5 +82,10 @@
     "Solve 5 problems on Creation, Annihilation, Fission and Fusion."
   ],
   "duplicateType": 1,
-  "visualType": "nuclear-fission-fusion"
+  "visualType": "nuclear-fission-fusion",
+  "specificConditions": [
+    "**Particle-Antiparticle Annihilation:** When a particle meets its antiparticle (e.g., $e^- + e^+$), they annihilate into pure energy (photons). Total mass-energy is conserved: $2m_e c^2 = 2 \\times 0.511$ MeV = 1.022 MeV of gamma rays. Charge, lepton number, and momentum are also conserved.",
+    "**Pair Production (Creation):** The reverse of annihilation: a high-energy photon ($E > 1.022$ MeV) creates an $e^- e^+$ pair near a nucleus (to conserve momentum). The photon must have $E \\ge 2m_e c^2$. Excess energy becomes kinetic energy of the pair.",
+    "**Fission vs Fusion in $BE/A$ Context:** Both processes release energy by moving toward the iron peak ($^{56}$Fe, $BE/A \\approx 8.8$ MeV). Fission splits heavy nuclei ($A > 56$); fusion combines light nuclei ($A < 56$). Both increase the average binding energy per nucleon of the final products compared to initial reactants."
+  ]
 }

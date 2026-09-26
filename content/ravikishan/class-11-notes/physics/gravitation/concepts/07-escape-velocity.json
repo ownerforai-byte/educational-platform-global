@@ -163,6 +163,11 @@
       "Solve 5 problems on Escape Velocity using $v_e = \\sqrt{\\frac{2GM}{R}}$."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Energy Conservation Derivation:** Escape velocity $v_e = \\sqrt{2GM/R}$ comes from setting total mechanical energy to zero at infinity: $\\frac{1}{2}mv_e^2 - GMm/R = 0$. This is the minimum speed to reach infinity with zero residual kinetic energy.",
+      "**Relation to Orbital Velocity:** $v_e = \\sqrt{2} \\cdot v_0$ where $v_0 = \\sqrt{GM/R}$ is the circular orbital velocity at the surface. The factor $\\sqrt{2} \\approx 1.414$ means escape requires 41% more speed than a low circular orbit.",
+      "**No Atmosphere Assumption:** The formula assumes no air resistance. In reality, atmospheric drag requires higher initial speed for Earth; for the Moon (no atmosphere), the formula is exact. Also assumes a spherically symmetric, non-rotating body."
+    ]
   }
 }

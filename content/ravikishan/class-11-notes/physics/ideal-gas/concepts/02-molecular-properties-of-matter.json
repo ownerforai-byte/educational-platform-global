@@ -42,5 +42,10 @@
   ],
   "animation3D": "ideal-gas",
   "motionGraphics": "ideal-gas",
-  "visualType": "kinetic-theory-gas-derive"
+  "visualType": "kinetic-theory-gas-derive",
+  "specificConditions": [
+    "**State-Dependent Molecular Spacing:** In gases, intermolecular spacing $\\gg$ molecular diameter ($\\sim 10\\times$); in liquids, spacing $\\approx$ molecular diameter; in solids, molecules are locked in a lattice. This spacing determines the dominant energy (KE in gases, PE in solids) and compressibility.",
+    "**Intermolecular vs Intramolecular Forces:** Intermolecular forces (van der Waals, H-bonding, dipole-dipole) are weak ($\\sim 1-100$ kJ/mol) and govern phase changes. Intramolecular (chemical) bonds are strong ($\\sim 100-1000$ kJ/mol) and govern molecular structure. Phase transitions break intermolecular bonds, not intramolecular ones.",
+    "**Mean Free Path $\\lambda \\propto 1/(n\\sigma)$:** The average distance between collisions $\\lambda = 1/(\\sqrt{2}n\\sigma)$ decreases with number density $n$ and collision cross-section $\\sigma$. At STP for air, $\\lambda \\approx 68$ nm; at low pressure (vacuum), $\\lambda$ can reach kilometers, enabling ballistic transport."
+  ]
 }

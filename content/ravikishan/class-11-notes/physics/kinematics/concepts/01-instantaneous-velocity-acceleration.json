@@ -167,5 +167,10 @@
     "Task 4: Solve the NEB past question: particle at rest — find times, positions and accelerations at those times.",
     "Task 5: Explain to a classmate why a speedometer shows instantaneous speed and why trip-average speed can differ, using the limit definition."
   ],
-  "visualType": "instantaneous-velocity"
+  "visualType": "instantaneous-velocity",
+  "specificConditions": [
+    "**Limit Definition Universality:** Instantaneous velocity $v = dx/dt$ and acceleration $a = dv/dt$ are defined as limits ($\\Delta t \to 0$). They apply to *any* motion — uniform or non-uniform, constant or variable acceleration. The SUVAT equations ($v = u + at$, etc.) are special cases valid *only* for constant $a$.",
+    "**Graph Duality — Slopes vs Areas:** On $x$-$t$ graph: slope of tangent = $v$. On $v$-$t$ graph: slope of tangent = $a$; area under curve = displacement. On $a$-$t$ graph: area under curve = change in velocity. Mixing up slope/area is the most common graph error.",
+    "**Sign Logic for Speeding/Slowing:** Speeding up $\\Leftrightarrow$ $v$ and $a$ have *same* sign. Slowing down $\\Leftrightarrow$ $v$ and $a$ have *opposite* signs. This is true regardless of coordinate choice. At a turning point ($v=0$), $a \neq 0$ (e.g., ball at top of flight: $v=0$, $a=g$)."
+  ]
 }

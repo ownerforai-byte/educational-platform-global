@@ -380,5 +380,10 @@
   },
   "duplicateType": 2,
   "tabGroup": "banking-applications",
+    "specificConditions": [
+      "**Ideal Banking (No Friction):** At the design speed $v_0 = \\sqrt{gR \tan\theta}$, the normal reaction alone provides the centripetal force. No friction is required, so the car can negotiate the curve even on a perfectly frictionless surface.",
+      "**Friction Range (Real Roads):** For speeds $v \neq v_0$, static friction acts up or down the incline to prevent sliding. The safe speed range without skidding is bounded by $v_{max} = \\sqrt{gR \frac{\tan\theta + \\mu_s}{1 - \\mu_s \tan\theta}}$ and $v_{min} = \\sqrt{gR \frac{\tan\theta - \\mu_s}{1 + \\mu_s \tan\theta}}$ (valid only if denominator > 0).",
+      "**No-Friction Limit Check:** If $\\mu_s = 0$, the formulas reduce exactly to $v = \\sqrt{gR \tan\theta}$. If $\tan\theta > 1/\\mu_s$, the denominator for $v_{max}$ becomes negative, implying no upper speed limit (the car cannot slide up regardless of speed)."
+    ],
   "visualType": "banking-of-roads"
 }

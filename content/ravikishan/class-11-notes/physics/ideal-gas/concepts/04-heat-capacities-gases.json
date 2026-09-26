@@ -43,5 +43,10 @@
   "motionGraphics": "ideal-gas",
   "duplicateType": 2,
   "tabGroup": "boltzmann-constant-root-mean-square-speed-and-heat-capacities",
-  "visualType": "heat-capacity"
+  "visualType": "heat-capacity",
+  "specificConditions": [
+    "**Degrees of Freedom Rule:** $C_V = \frac{f}{2}R$, $C_P = C_V + R = \frac{f+2}{2}R$, where $f$ is active degrees of freedom. Monatomic: $f=3$ (translational). Diatomic: $f=5$ (3 trans + 2 rot) at room temp. Polyatomic: $f=6$ (3 trans + 3 rot). Vibrational modes activate at high temperatures.",
+    "**Mayer's Relation:** $C_P - C_V = R$ holds for all ideal gases regardless of $f$. This follows from $H = U + PV$ and $dH = C_P dT$, $dU = C_V dT$, $d(PV) = R dT$. The difference is purely due to $PV$-work.",
+    "**Adiabatic Index:** $\\gamma = C_P/C_V = (f+2)/f$. For monatomic: $\\gamma = 5/3 \\approx 1.67$. For diatomic: $\\gamma = 7/5 = 1.4$. For polyatomic: $\\gamma = 8/6 = 4/3 \\approx 1.33$. Higher $f$ means more energy storage, smaller $\\gamma$."
+  ]
 }

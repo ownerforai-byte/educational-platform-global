@@ -280,5 +280,10 @@
       }
     ]
   },
+    "specificConditions": [
+      "**Axis of Rotation Constraint:** Angular quantities ($\theta$, $\\omega$, $\\alpha$) are defined with respect to a specific fixed axis. If the axis of rotation changes orientation, the angular velocity becomes a time-dependent vector, and simple scalar kinematics no longer apply.",
+      "**Kinematic Equations Applicability:** The kinematic equations (analogs of $v = u + at$) for angular motion are strictly valid *only* for constant angular acceleration ($\\alpha = \text{constant}$). For time-varying $\\alpha(t)$, direct integration of $d\\omega/dt$ is required.",
+      "**Reference Frame:** Angular velocity is defined in an inertial frame. If observing from a rotating reference frame, non-inertial (fictitious) forces like centrifugal or Coriolis forces appear, which must be accounted for if analyzing dynamics in that frame."
+    ],
   "visualType": "angular-motion"
 }

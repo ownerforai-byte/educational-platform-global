@@ -343,6 +343,11 @@
       "Explain weightlessness in orbit in terms of free fall."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Orbital Velocity Derivation:** $v_0 = \\sqrt{GM/r}$ comes from equating gravitational force to centripetal force: $GMm/r^2 = mv_0^2/r$. This applies to *circular* orbits around a spherically symmetric mass. The satellite's mass cancels out — all satellites at the same radius have the same speed.",
+      "**Period Law:** $T = 2\\pi\\sqrt{r^3/GM}$ is Kepler's third law for circular orbits. Squaring gives $T^2 \\propto r^3$, independent of satellite mass. This is valid only for bound circular/elliptical orbits — not for escape trajectories ($E \\ge 0$).",
+      "**Energy Relations:** For circular orbits: $K = GMm/2r$, $U = -GMm/r$, $E = -GMm/2r$. Notice $K = -U/2$ and $E = U/2$. The negative total energy confirms a bound orbit. To raise an orbit, you ADD energy (thrust), but the orbital speed *decreases* because $v_0 \\propto 1/\\sqrt{r}$."
+    ]
   }
 }

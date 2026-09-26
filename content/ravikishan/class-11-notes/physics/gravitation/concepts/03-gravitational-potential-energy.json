@@ -342,6 +342,11 @@
       "Sketch the $V$–$r$ and $U$–$r$ graphs, labelling zero at infinity."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**V vs U Distinction:** Gravitational potential $V = -GM/r$ is work per unit test mass (J/kg) — a property of the field at a point. Gravitational potential energy $U = mV = -GMm/r$ is the energy of the system (J). They differ by a factor of the test mass $m$.",
+      "**Zero at Infinity Convention:** $V=0$ and $U=0$ at $r=\\infty$. Negative values mean the system is bound. Moving closer to a mass makes $V$ and $U$ *more negative* (energy released). The depth of the potential well is $|U| = GMm/r$ (binding energy).",
+      "**Approximation Boundary:** $U = mgh$ is valid only for $h \\ll R$ (constant $g$ approximation). For $h \\gtrsim R$, the exact $U = -GMm/r$ must be used. The crossover is typically around $h \\sim 0.1R$ where the error exceeds 1%."
+    ]
   }
 }

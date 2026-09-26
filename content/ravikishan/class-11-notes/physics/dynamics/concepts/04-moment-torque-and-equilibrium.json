@@ -339,6 +339,11 @@
       "Solve 3 couple problems showing that the torque is independent of the pivot."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Two Independent Equilibrium Conditions:** A rigid body is in static equilibrium if and only if BOTH $\\sum \\vec{F} = 0$ (translational) AND $\\sum \\vec{\tau} = 0$ (rotational) are satisfied. Zero net force alone is insufficient (e.g., a couple produces rotation with zero net force).",
+      "**Pivot Independence of Net Torque:** While the torque of individual forces depends on the pivot choice, the *net* torque in equilibrium is zero about ANY point. Choose the pivot at an unknown force to eliminate it from the torque equation.",
+      "**Couple = Pure Torque:** A couple (equal and opposite forces separated by distance $d$) produces a torque $\tau = Fd$ that is *independent of pivot position*. It causes pure rotation without translation and cannot be balanced by a single force."
+    ]
   }
 }

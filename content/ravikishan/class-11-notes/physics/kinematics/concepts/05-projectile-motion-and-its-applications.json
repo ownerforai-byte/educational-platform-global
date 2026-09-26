@@ -168,5 +168,10 @@
     "Task 4: Trace the full trajectory table ($x, y, v_x, v_y$ each 0.5 s) for $u = 20$ m/s at 30° and plot it.",
     "Task 5: Explain in words why a horizontally thrown stone and a dropped stone hit the ground together."
   ],
-  "visualType": "projectile-motion"
+  "visualType": "projectile-motion",
+  "specificConditions": [
+    "**Independence of Components:** Horizontal motion (constant $v_x = u\\cos\theta$) and vertical motion (free fall $v_y = u\\sin\theta - gt$) are completely independent. They share only the time variable $t$. This is the foundational principle — no horizontal force means $v_x$ is constant.",
+    "**Trajectory is a Parabola:** Eliminating $t$ gives $y = x\tan\theta - \frac{g x^2}{2u^2\\cos^2\theta}$, a downward-opening parabola. This assumes no air resistance, constant $g$, and flat ground. With drag, the trajectory is not a parabola and range decreases.",
+    "**Symmetry and Range Maxima:** Time of flight $T = \frac{2u\\sin\theta}{g}$, max height $H = \frac{u^2\\sin^2\theta}{2g}$, range $R = \frac{u^2\\sin 2\theta}{g}$. Maximum range at $\theta = 45^\\circ$. Complementary angles ($\theta$ and $90^\\circ-\theta$) give identical ranges because $\\sin 2\theta = \\sin(180^\\circ-2\theta)$. Speed at launch = speed at landing (symmetry)."
+  ]
 }

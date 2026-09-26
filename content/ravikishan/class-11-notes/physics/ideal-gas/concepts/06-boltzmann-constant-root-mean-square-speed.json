@@ -41,5 +41,10 @@
   ],
   "animation3D": "ideal-gas",
   "motionGraphics": "ideal-gas",
-  "visualType": "rms-speed"
+  "visualType": "rms-speed",
+  "specificConditions": [
+    "**Boltzmann Constant as Bridge:** $k_B = R/N_A = 1.38 \times 10^{-23}$ J/K connects microscopic ($k_B$) and macroscopic ($R$) thermodynamics. It relates energy per degree of freedom ($\frac{1}{2}k_B T$) to temperature.",
+    "**Speed Hierarchy:** For the Maxwell-Boltzmann distribution: $v_p = \\sqrt{2RT/M}$, $\bar{v} = \\sqrt{8RT/\\pi M}$, $v_{rms} = \\sqrt{3RT/M}$. The order is always $v_p < \bar{v} < v_{rms}$ with ratios $\\sqrt{2} : \\sqrt{8/\\pi} : \\sqrt{3} \\approx 1.414 : 1.596 : 1.732$.",
+    "**Heat Capacity and DOF:** $C_V = \frac{f}{2}R$, $C_P = C_V + R = \frac{f+2}{2}R$, where $f$ is active degrees of freedom. Monatomic: $f=3$ (translational only). Diatomic: $f=5$ (3 trans + 2 rot) at room temp. Vibrational modes activate at high temperatures."
+  ]
 }

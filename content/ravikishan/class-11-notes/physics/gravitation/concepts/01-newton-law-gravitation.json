@@ -343,6 +343,11 @@
       "Explain the Cavendish experiment and its significance."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Universal Scope:** Newton's law ($F = Gm_1m_2/r^2$) applies to *all* masses in the universe, at all distances. It is exact for point masses or spherically symmetric bodies (Shell Theorem). For non-spherical objects, integration or numerical methods are required.",
+      "**Inverse-Square Nature:** The $1/r^2$ dependence means the force has infinite range but drops rapidly. It never reaches zero at any finite distance. This inverse-square law is equivalent to saying gravitational flux through a closed surface is proportional to enclosed mass (Gauss's law for gravity).",
+      "**G vs g Distinction:** $G = 6.67 \\times 10^{-11} \\text{ N·m}^2/\\text{kg}^2$ is a *universal constant*. $g = GM/r^2$ is the *local gravitational field strength*, varying with location. On Earth's surface $g \\approx 9.8 \\text{ m/s}^2$; at height $h$, $g' = g(R/(R+h))^2$."
+    ]
   }
 }

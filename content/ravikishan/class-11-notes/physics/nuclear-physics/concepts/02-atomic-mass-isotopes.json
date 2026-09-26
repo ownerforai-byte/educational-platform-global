@@ -47,5 +47,10 @@
     "Fact (Scale): Converting $1\\\\\\\\,\\\text{g}$ of matter entirely to energy releases $E = mc^2 = 1\\\times 10^{-3} \\\times (3\\\times 10^8)^2 = 9\\\times 10^{13}\\\\\\\\,\\\text{J}$, equivalent to about $21\\\\\\\\,\\\text{kilotons}$ of TNT-the yield of the Hiroshima bomb.",
     "Fact (Nuclear stability): The most stable nuclide is $^{56}\\\text{Fe}$ with a binding energy per nucleon of $8.79\\\\\\\\,\\\text{MeV}$. Nuclides lighter than iron release energy through fusion; those heavier than iron release energy through fission."
   ],
-  "visualType": "isotopes"
+  "visualType": "isotopes",
+  "specificConditions": [
+    "**Mass Defect Definition:** $\\Delta m = Z m_p + N m_n - M_{\\text{nucleus}}$ where $m_p \\approx 1.007276$ u, $m_n \\approx 1.008665$ u. The defect is always positive — the bound nucleus is lighter than its free constituents.",
+    "**Binding Energy Conversion:** $BE = \\Delta m \\cdot c^2 = \\Delta m \\times 931.494$ MeV. The binding energy is the energy needed to separate the nucleus into free nucleons. It is positive for bound nuclei.",
+    "**Isotope Chemistry vs Nuclear Properties:** Isotopes (same Z, different A) have identical chemical properties (electron configuration) but different nuclear masses, stabilities, and half-lives. Chemical separation is impossible; nuclear methods (centrifugation, diffusion, laser) are required."
+  ]
 }

@@ -166,5 +166,10 @@
     "Task 3: Verify $s_n = u + \\frac{a}{2}(2n-1)$ by computing $s(n) - s(n-1)$ explicitly.",
     "Task 4: Solve a two-stage train problem (accelerate, cruise, brake) via the $v$–$t$ area method.",
     "Task 5: Explain why doubling speed quadruples braking distance, using $v^2 = u^2 + 2as$ with $v = 0$."
+  ],
+  "specificConditions": [
+    "**Constant Acceleration Requirement:** The three equations $v = u + at$, $s = ut + \\frac{1}{2}at^2$, $v^2 = u^2 + 2as$ are valid *only* when acceleration is constant. If $a$ varies with time, position, or velocity, these algebraic equations fail — one must use the graphical area method or calculus ($v = \\int a dt$, $s = \\int v dt$).",
+    "**Graphical Derivation Logic:** The $v$-$t$ graph for constant $a$ is a straight line. Slope = $a$ gives $v = u + at$. Area (trapezoid) = $s = \\frac{u+v}{2}t = ut + \\frac{1}{2}at^2$. Eliminating $t$ gives $v^2 = u^2 + 2as$. These derivations are NEB favorites.",
+    "**Sign Convention Consistency:** Choose one positive direction (e.g., up = +) and keep it. For free fall, $a = -g$ if up is +. For braking, $a$ is opposite to $v$. The equations work with signed quantities; plug in signs consistently."
   ]
 }

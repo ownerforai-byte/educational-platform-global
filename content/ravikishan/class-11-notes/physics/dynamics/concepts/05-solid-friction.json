@@ -337,6 +337,11 @@
       "Solve 2 problems where friction acts in the direction of motion."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Static vs. Kinetic Threshold:** The maximum static friction $f_s^{\\max} = \\mu_s N$ is the *upper bound* for static friction. Static friction is a *variable* force that matches the applied force up to this limit. Kinetic friction $f_k = \\mu_k N$ applies *only* when sliding occurs, with $\\mu_k < \\mu_s$.",
+      "**Normal Force Dependency:** Friction is proportional to the *normal reaction*, not the weight. Any vertical force component (pulling up, pushing down, incline) changes $N$, which directly changes the friction force. Always compute $N$ first.",
+      "**Area Independence (Ideal Model):** The laws of friction assume friction is independent of the apparent contact area (Coulomb's model). This holds well for dry, rigid surfaces but breaks down for soft materials, lubricated contacts, or adhesive forces where real contact area matters."
+    ]
   }
 }

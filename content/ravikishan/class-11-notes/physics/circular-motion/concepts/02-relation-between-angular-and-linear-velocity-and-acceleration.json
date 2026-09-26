@@ -282,5 +282,10 @@
   },
   "duplicateType": 2,
   "tabGroup": "angular-displacement-velocity",
+    "specificConditions": [
+      "**Rigid Body Constraint:** Relations like $v = r\\omega$ and $a_t = r\\alpha$ assume the particles are at a fixed distance $r$ from the axis of rotation (e.g., points on a rotating rigid body).",
+      "**Instantaneous Values:** These relationships hold at any instant, even if $\\omega$ or $\\alpha$ are changing over time. They are local relations between linear and angular kinematics.",
+      "**Vector Interpretation:** These are scalar magnitudes of the cross-product relations $\\vec{v} = \\vec{\\omega} \\times \\vec{r}$ and $\\vec{a} = \\vec{\\alpha} \\times \\vec{r} + \\vec{\\omega} \\times (\\vec{\\omega} \\times \\vec{r})$. The latter vector equation includes both tangential and centripetal terms."
+    ],
   "visualType": "angular-linear"
 }

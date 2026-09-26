@@ -41,5 +41,10 @@
   ],
   "animation3D": "heat-and-temperature",
   "motionGraphics": "heat-and-temperature",
-  "visualType": "temperature-scales"
+  "visualType": "temperature-scales",
+  "specificConditions": [
+    "**Temperature vs Heat Distinction:** Temperature is an *intensive* property (average kinetic energy per particle, measured in K). Heat is *extensive* energy transferred due to temperature difference (measured in J). A bathtub of 30°C water has more heat energy than a cup of 80°C water despite lower temperature.",
+    "**Absolute Temperature Requirement:** In kinetic theory and gas laws ($PV = nRT$, $\\langle KE \rangle = \frac{3}{2}kT$), temperature must be in Kelvin (absolute scale). The linear relationship $P \\propto T$ and $V \\propto T$ only holds with $T$ in Kelvin, where $T=0$ corresponds to zero kinetic energy.",
+    "**Triple Point Defines Kelvin:** Since 2019, the Kelvin is defined by fixing Boltzmann's constant $k = 1.380649 \times 10^{-23}$ J/K exactly. The triple point of water (273.16 K) is a reproducible reference, not the definition."
+  ]
 }

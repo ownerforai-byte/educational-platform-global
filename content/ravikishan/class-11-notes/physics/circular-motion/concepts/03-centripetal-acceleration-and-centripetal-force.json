@@ -272,5 +272,10 @@
     ]
   },
   "duplicateType": 2,
+    "specificConditions": [
+      "**Inertial/Non-Inertial Distinction:** Centripetal force is a real resultant force in an inertial frame; it is not a 'fictitious' force. Fictitious centrifugal force only appears in the rotating reference frame to maintain Newton's laws.",
+      "**Directional Constraint:** Centripetal force must act strictly perpendicular to the instantaneous velocity for the speed to remain constant. If the net force has a tangential component, the speed changes (non-uniform circular motion).",
+      "**Radius Variation:** If the path radius $r$ changes during the motion, the centripetal force requirement $F_c = mv^2/r$ must adjust instantaneously based on the new radius and speed at that instant."
+    ],
   "tabGroup": "centripetal-acceleration-force"
 }

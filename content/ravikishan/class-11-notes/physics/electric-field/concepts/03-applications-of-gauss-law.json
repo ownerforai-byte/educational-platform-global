@@ -164,6 +164,11 @@
       "Solve 5 problems on Applications of Gauss's Law."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Spherical Symmetry (Point Charge / Spherical Shell):** Gaussian surface is a concentric sphere. Field is radial with constant magnitude on the surface. Result: $E = kQ/r^2$ (outside) or $E = kQr/R^3$ (inside uniform sphere). Inside a spherical shell, $E = 0$.",
+      "**Cylindrical Symmetry (Infinite Line Charge):** Gaussian surface is a coaxial cylinder. Field is radial and perpendicular to the curved surface. Result: $E = \\lambda/(2\\pi\\varepsilon_0 r)$. For a charged wire, field falls as $1/r$, not $1/r^2$.",
+      "**Planar Symmetry (Infinite Plane Sheet):** Gaussian surface is a cylinder/pillbox straddling the sheet. Field is perpendicular to the plane with constant magnitude. Result: $E = \\sigma/(2\\varepsilon_0)$ (independent of distance). For a conductor surface, $E = \\sigma/\\varepsilon_0$."
+    ]
   }
 }

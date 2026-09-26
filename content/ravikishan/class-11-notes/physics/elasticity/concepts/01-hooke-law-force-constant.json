@@ -341,6 +341,11 @@
       "Design a spring balance calibration table from F = kx and F = mg."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Elastic Limit / Proportional Limit:** Hooke's law ($F = kx$) holds *only* within the linear (proportional) limit. Beyond this, the force-extension graph curves; at the elastic limit, the material returns to its original shape but the relationship is no longer linear. Past the yield point, permanent (plastic) deformation occurs.",
+      "**Spring Constant Geometry Dependence:** $k$ is NOT purely a material property — it depends on geometry. For a uniform wire: $k = EA/L$ ($E$ = Young's modulus, $A$ = cross-section, $L$ = length). For a helical spring: $k = Gd^4/(8nD^3)$ ($G$ = shear modulus, $d$ = wire diameter, $n$ = coils, $D$ = coil diameter). Cutting a spring into $n$ equal parts multiplies $k$ by $n$.",
+      "**Restoring Force Direction:** The spring exerts a restoring force $F = -kx$ that *always* opposes the displacement. This negative sign is crucial for deriving simple harmonic motion ($m\\ddot{x} + kx = 0$). The applied force and restoring force are equal in magnitude but opposite in direction at equilibrium."
+    ]
   }
 }

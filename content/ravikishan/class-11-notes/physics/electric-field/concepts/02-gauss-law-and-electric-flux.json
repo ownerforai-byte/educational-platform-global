@@ -164,6 +164,11 @@
       "Solve 5 problems on Gauss's Law and Electric Flux."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Gauss's Law Validity:** Gauss's law ($\\oint \\vec{E} \\cdot d\\vec{A} = Q_{enc}/\\varepsilon_0$) is always true for *any* closed surface and *any* charge distribution. It is one of Maxwell's equations and is exact — no approximation needed.",
+      "**Flux Definition:** Electric flux $\\Phi_E = \\int \\vec{E} \\cdot d\\vec{A}$ is a scalar. Only the component of $\\vec{E}$ normal to the surface contributes. For a uniform field and flat surface: $\\Phi_E = EA\\cos\\theta$.",
+      "**Symmetry Requirement for Calculation:** While Gauss's law is always true, it *simplifies* field calculation only when there is high symmetry (spherical, cylindrical, planar) so that $E$ is constant in magnitude and normal to the chosen Gaussian surface. Without symmetry, the integral cannot be evaluated easily."
+    ]
   }
 }

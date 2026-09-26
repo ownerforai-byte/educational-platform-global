@@ -49,5 +49,10 @@
   ],
   "duplicateType": 2,
   "tabGroup": "atomic-mass-isotopes",
-  "visualType": "mass-energy"
+  "visualType": "mass-energy",
+  "specificConditions": [
+    "**E=mc² and Binding Energy:** Einstein's relation $E = mc^2$ underpins nuclear binding energy. The mass defect $\\Delta m$ corresponds to binding energy $BE = \\Delta m \\cdot c^2$. In nuclear reactions, the total mass-energy (rest mass + kinetic) is conserved.",
+    "**Packing Fraction Significance:** Packing fraction $f = (M - A)/A$ measures how much the actual atomic mass $M$ deviates from the mass number $A$. Negative $f$ means the nucleus is bound (mass less than sum of parts). Most stable nuclei have the most negative $f$ (e.g., $^{56}$Fe).",
+    "**Binding Energy Curve and Stability:** $BE/A$ peaks at ~8.8 MeV for $^{56}$Fe. Nuclei lighter than iron gain stability through fusion (increasing $BE/A$). Nuclei heavier than iron gain stability through fission (increasing $BE/A$). This curve is the master key to nuclear energy release."
+  ]
 }

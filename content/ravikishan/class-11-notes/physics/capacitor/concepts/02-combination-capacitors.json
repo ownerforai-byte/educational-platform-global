@@ -83,5 +83,10 @@
   ],
   "duplicateType": 2,
   "tabGroup": "combination-of-capacitors",
+    "specificConditions": [
+      "**Series Charge Conservation:** In series, the charge Q is identical on all capacitors. The battery moves charge from the last plate to the first; intermediate plates share equal and opposite charges.",
+      "**Parallel Voltage Equality:** In parallel, the potential difference V is identical across all capacitors. Each capacitor draws its own charge Qᵢ = CᵢV from the source.",
+      "**Isolated System Constraint:** When capacitors are connected/disconnected from a battery, charge conservation applies only to the isolated plates (total charge on connected plates remains constant). Energy is NOT conserved (heat/radiation losses occur during redistribution)."
+    ],
   "visualType": "capacitor-combination"
 }

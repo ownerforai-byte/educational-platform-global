@@ -82,5 +82,10 @@
     "Solve 5 problems on Chromatic and Spherical Aberration."
   ],
   "duplicateType": 1,
+  "specificConditions": [
+    "**Dispersion Definition:** Dispersion is the separation of white light into its constituent colors (spectrum) due to the dependence of the refractive index $n$ on the wavelength $\\lambda$ of light ($n(\\lambda)$).",
+    "**Cauchy's Equation:** For many transparent materials, the refractive index follows Cauchy's equation $n(\\lambda) = A + B/\\lambda^2 + C/\\lambda^4$. This explains why blue light ($\\lambda$ smaller) is refracted more than red light ($\\lambda$ larger).",
+    "**Prism Validity:** The formula for dispersive power $\\omega = (n_v - n_r)/(n_y - 1)$ assumes small angle of deviation and that the prism is in air. For non-thin prisms or different mediums, angular dispersion depends on the geometry."
+  ],
   "visualType": "chromatic-aberration"
 }

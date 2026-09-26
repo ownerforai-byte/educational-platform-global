@@ -42,5 +42,10 @@
   "motionGraphics": "dc-circuits",
   "duplicateType": 2,
   "tabGroup": "ohms-law-resistance",
+    "specificConditions": [
+      "**Ohm's Law Validity:** Ohm's law ($V = IR$) applies strictly to ohmic conductors at *constant temperature*. For metals, resistance increases with temperature, so the law holds only if temperature is held constant (isothermal conditions).",
+      "**Resistivity vs. Resistance:** Resistivity ($\rho$) is an *intensive* material property (independent of geometry), while resistance ($R = \rho L/A$) is an *extensive* property depending on the conductor's length and cross-section. Temperature changes affect $\rho$, which in turn changes $R$.",
+      "**Conductivity Definition:** Conductivity ($\\sigma = 1/\rho$) is the proportionality constant in the microscopic Ohm's law $\\vec{J} = \\sigma \\vec{E}$, where $\\vec{J}$ is current density and $\\vec{E}$ is the electric field. This form is valid for homogeneous, isotropic materials."
+    ],
   "visualType": "ohms-law"
 }

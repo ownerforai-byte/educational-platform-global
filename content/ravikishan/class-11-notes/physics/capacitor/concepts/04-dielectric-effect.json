@@ -83,5 +83,10 @@
   ],
   "duplicateType": 2,
   "tabGroup": "effect-of-a-dielectric-polarization-and-displacement",
+    "specificConditions": [
+      "**Polarization Effect:** Dielectric material polarizes under an external field, creating an internal opposing field $E' = E_0 - E_{induced}$, which reduces the net electric field to $E = E_0/K$.",
+      "**Capacitance Enhancement:** Because $V = Ed$ decreases for a given charge Q when a dielectric is inserted ($V' = V/K$), the capacitance $C = Q/V'$ increases by a factor of K ($C' = KC_0$).",
+      "**Boundary Conditions:** At the interface of dielectric and free space, the normal component of electric displacement D ($D = \\epsilon_0 E + P$) is continuous, while the tangential component of the electric field E is continuous."
+    ],
   "visualType": "dielectric"
 }

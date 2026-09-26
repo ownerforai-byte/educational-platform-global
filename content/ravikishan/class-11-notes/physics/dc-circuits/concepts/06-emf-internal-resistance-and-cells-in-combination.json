@@ -40,5 +40,10 @@
   ],
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits",
+    "specificConditions": [
+      "**EMF vs Terminal Voltage:** EMF ($\\mathcal{E}$) is the open-circuit voltage (no current). Terminal voltage $V = \\mathcal{E} - Ir$ under discharge; $V = \\mathcal{E} + Ir$ during charging. The sign of the $Ir$ term depends on current direction.",
+      "**Series/Parallel Cell Rules:** In series: $\\mathcal{E}_{total} = \\sum \\mathcal{E}_i$, $r_{total} = \\sum r_i$. In parallel (identical cells): $\\mathcal{E}_{total} = \\mathcal{E}$, $r_{total} = r/n$. These assume no circulating currents between mismatched cells.",
+      "**Maximum Power Transfer Theorem:** Maximum power to load $R$ occurs at $R = r$, giving $P_{max} = \\mathcal{E}^2/(4r)$. At this point, efficiency is 50%. For efficiency $>50\\%$, need $R > r$; for $>90\\%$, need $R > 9r$."
+    ],
   "visualType": "emf-internal-resistance"
 }

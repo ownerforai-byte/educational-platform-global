@@ -165,6 +165,11 @@
       "Solve 5 problems on Electric Charges and Induction."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Charge Quantization:** Electric charge exists only in integer multiples of the elementary charge $e \\approx 1.602 \\times 10^{-19}$ C. The charge of any isolated system is $q = ne$ where $n$ is an integer. This is a fundamental law confirmed by Millikan's oil-drop experiment.",
+      "**Conservation of Charge:** In any isolated system, the total electric charge is constant. Charging by induction *redistributes* existing charge between the object and ground; it does not create or destroy net charge. The inducing charge and induced charge are equal in magnitude but opposite in sign.",
+      "**Conductor Requirement for Induction:** Charging by induction requires a *conductor* (mobile charges) and a *ground connection* to allow charge flow. Insulators can be polarized (temporary charge separation) but cannot be permanently charged by induction alone since charges cannot flow to/from ground through them."
+    ]
   }
 }

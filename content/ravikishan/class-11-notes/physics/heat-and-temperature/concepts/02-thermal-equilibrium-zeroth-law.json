@@ -81,6 +81,11 @@
   "importantTasks": [
     "Solve 5 problems on Thermal Equilibrium and Zeroth Law."
   ],
+  "specificConditions": [
+    "**Thermal Equilibrium Definition:** Two systems are in thermal equilibrium if no net heat flows between them when brought into thermal contact. This means they have the *same temperature*. Thermal equilibrium is a transitive, symmetric, and reflexive relation.",
+    "**Zeroth Law Statement:** If system A is in thermal equilibrium with system B, and B is in thermal equilibrium with system C, then A is in thermal equilibrium with C. This transitive property allows temperature to be defined as a state variable that can be measured with a thermometer.",
+    "**Thermometer as 'System B':** The Zeroth law justifies using a thermometer: the thermometer (B) reaches equilibrium with the system (A), and if two systems give the same reading on the same thermometer, they are in equilibrium with each other."
+  ],
   "duplicateType": 2,
   "tabGroup": "meaning-of-thermal-equilibrium-and-zeroth-law-of-thermodynamics",
   "visualType": "zeroth-law"

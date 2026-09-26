@@ -343,6 +343,11 @@
       "Show that internal forces cannot change the velocity of the COM."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**COM Definition:** The centre of mass $R_{cm} = \\sum m_i r_i / \\sum m_i$ is the mass-weighted average position. It is the point where the entire mass can be considered concentrated for *translational* motion analysis.",
+      "**CG Definition:** The centre of gravity is the point where the entire *weight* acts. In a *uniform* gravitational field, CG exactly coincides with COM. In a non-uniform field (e.g., very large bodies), they differ because the torque balance for weight involves the varying $g$ field.",
+      "**COM Outside Material:** The COM can lie outside the physical material (e.g., a ring, L-shape, boomerang). The COM of an isolated system moves with constant velocity; internal forces cannot change the total momentum or COM motion — only external forces do."
+    ]
   }
 }

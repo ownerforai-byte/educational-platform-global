@@ -165,6 +165,11 @@
       "Solve 5 problems on Coulomb's Law."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Point Charge Assumption:** Coulomb's law ($F = k q_1 q_2 / r^2$) applies exactly to *point charges* or spherically symmetric charge distributions. For extended objects, the distance $r$ is between centers, and integration or Gauss's law is needed.",
+      "**Superposition Principle:** The net force on a charge due to multiple other charges is the *vector sum* of individual Coulomb forces: $\\vec{F}_{net} = \\sum \\vec{F}_i$. Forces add as vectors, not scalars — direction matters critically.",
+      "**Vacuum/Air Approximation:** The constant $k = 1/(4\\pi\\varepsilon_0) \\approx 9 \\times 10^9 \\text{ N·m}^2/\\text{C}^2$ assumes vacuum or air as the medium. In a dielectric medium with permittivity $\\varepsilon$, the force is reduced by a factor of the dielectric constant $\\kappa = \\varepsilon/\\varepsilon_0$."
+    ]
   }
 }

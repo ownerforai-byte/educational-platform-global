@@ -40,5 +40,10 @@
   ],
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits",
+    "specificConditions": [
+      "**Ohmic Behavior Constraint:** A device is ohmic only if $I \\propto V$ *and* the temperature is constant. Metals at constant temperature are ohmic; semiconductors, electrolytes, and gas discharges are inherently non-ohmic.",
+      "**Dynamic vs. Static Resistance:** For non-ohmic devices, the static resistance $R_s = V/I$ depends on the operating point, while the dynamic (small-signal) resistance $r_d = dV/dI$ describes the response to small AC signals superimposed on the DC bias.",
+      "**Temperature as Hidden Variable:** In filament lamps and thermistors, the non-ohmic behavior arises because the current heats the device, changing its resistivity. The $I$-$V$ curve actually represents a parametric plot where temperature varies with current."
+    ],
   "visualType": "iv-characteristics"
 }

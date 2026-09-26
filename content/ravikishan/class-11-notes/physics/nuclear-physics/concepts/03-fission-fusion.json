@@ -83,5 +83,10 @@
   ],
   "duplicateType": 2,
   "tabGroup": "creation-and-annihilation-nuclear-fission-and-fusion",
-  "visualType": "nuclear-reactions"
+  "visualType": "nuclear-reactions",
+  "specificConditions": [
+    "**Fission vs Fusion Energy Release:** Both release energy by moving toward higher $BE/A$ (iron peak). Fission splits heavy nuclei ($A > 56$) into medium fragments. Fusion combines light nuclei ($A < 56$) into heavier ones. Both increase the average $BE/A$ of the system.",
+    "**Chain Reaction Requirement:** Fission of $^{235}$U by thermal neutrons produces ~2.4 fast neutrons/fission. A sustained chain reaction requires at least 1 neutron to cause another fission ($k \\ge 1$). Critical mass is the minimum mass where neutron losses are balanced by productions. Moderators (graphite, water) slow neutrons to thermal energies to increase capture probability.",
+    "**Fusion Conditions:** Requires extreme temperature ($T \\sim 10^7-10^8$ K) for nuclei to overcome Coulomb barrier ($kT \\sim 1$ keV vs barrier $\\sim 1$ MeV). Quantum tunneling allows fusion at lower energies. Plasma confinement (magnetic/inertial) is needed to maintain density and temperature long enough for significant fusion (Lawson criterion: $n\\tau > 10^{20}$ m⁻³·s)."
+  ]
 }

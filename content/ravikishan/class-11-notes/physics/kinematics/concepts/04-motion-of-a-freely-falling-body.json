@@ -167,5 +167,10 @@
     "Task 4: Solve a lift problem (coin dropped in an ascending/descending lift) in both frames.",
     "Task 5: Derive $h = \\tfrac{1}{2}gt^2$ from the $v$–$t$ area for a dropped body and verify the 1:3:5 pattern for $n = 1, 2, 3$."
   ],
-  "visualType": "free-fall"
+  "visualType": "free-fall",
+  "specificConditions": [
+    "**Universality of Free Fall:** All bodies fall with the same acceleration $g \\approx 9.8 \text{ m/s}^2$ in vacuum (no air resistance). This is a consequence of the equivalence principle — inertial mass equals gravitational mass. The Apollo 15 hammer-feather drop on the Moon confirmed this.",
+    "**Sign Convention Discipline:** Choose one positive direction (e.g., up = +) and use it consistently. For up-positive: $a = -g$, $v = u - gt$, $h = ut - \frac{1}{2}gt^2$. The sign of $g$ goes into the equation ONCE — never mix conventions.",
+    "**Up-Down Symmetry (No Air Resistance):** Time up = time down = $u/g$. Velocity at equal heights going up and down are equal in magnitude, opposite in direction. At the top, $v=0$ but $a=g$ downward — zero velocity does NOT mean zero acceleration."
+  ]
 }

@@ -40,5 +40,10 @@
   ],
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits",
+    "specificConditions": [
+      "**Power Formula Context:** $P = I^2R$ is used when current is known (series circuits). $P = V^2/R$ is used when voltage is known (parallel circuits). Both are derived from $P = VI$ and Ohm's law; using the wrong one gives incorrect results because $V$ and $I$ are coupled through $R$.",
+      "**Joule Heating is Irreversible:** The power $P = I^2R$ dissipated in a resistor represents an irreversible conversion of electrical energy to heat. It cannot be recovered within the circuit. This is distinct from energy stored in inductors/capacitors or converted to mechanical work.",
+      "**Energy Units:** Electrical energy is measured in joules (SI) or kilowatt-hours (practical). $1 \text{ kWh} = 3.6 \times 10^6 \text{ J}$. Power (watts) is the *rate* of energy transfer, not energy itself."
+    ],
   "visualType": "power-concept"
 }

@@ -393,5 +393,10 @@
       }
     ]
   },
+    "specificConditions": [
+      "**Energy Conservation (No Non-Conservative Work):** Total mechanical energy ($K + U$) is conserved if only gravity and tension act (tension does zero work). $v^2 = u^2 - 2gh$ where $h = R(1 - \\cos\theta)$ from the lowest point.",
+      "**String vs. Rod Constraint:**\n        - **String:** Can only pull (tension $T \\ge 0$). If $T \to 0$, the string goes slack and the particle follows a parabolic projectile path until the string tightens again.\n        - **Rigid Rod:** Can push or pull ($T$ can be negative/compressive). The particle completes the circle even if speed at top is zero (but $v_{top} \\ge 0$ is required).",
+      "**Critical Speeds (String):** $v_{top} \\ge \\sqrt{gR}$ (taut string at top); $v_{bottom} \\ge \\sqrt{5gR}$ (minimum to complete circle). At the horizontal point ($\theta=90^\\circ$), minimum speed is $\\sqrt{2gR}$ for the string to remain taut."
+    ],
   "visualType": "vertical-circle"
 }

@@ -165,6 +165,11 @@
       "Solve 5 problems on Electric Field due to Point Charges."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Point Charge Field Formula:** The electric field due to a point charge $q$ at distance $r$ is $\\vec{E} = kq/r^2 \\, \\hat{r}$, directed radially outward for positive $q$ and inward for negative $q$. This is the definition: force per unit test charge.",
+      "**Superposition for Multiple Charges:** The net electric field at a point due to multiple charges is the *vector sum* of individual fields: $\\vec{E}_{net} = \\sum \\vec{E}_i$. Field lines never cross; their density indicates field strength.",
+      "**Field Line Rules:** (1) Lines start on positive charges and end on negative charges (or infinity). (2) Number of lines is proportional to charge magnitude. (3) Tangent to a line gives field direction. (4) Lines never cross. (5) Lines are perpendicular to conductor surfaces."
+    ]
   }
 }

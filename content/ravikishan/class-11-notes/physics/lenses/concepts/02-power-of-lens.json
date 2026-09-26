@@ -81,6 +81,11 @@
   "importantTasks": [
     "Solve 5 problems on Power of a Lens."
   ],
+  "specificConditions": [
+    "**Lens Power Definition:** Power $P = 1/f$ (in meters) measured in diopters (D). A converging lens has $P > 0$, a diverging lens has $P < 0$. Power is additive for thin lenses in contact: $P_{total} = \\sum P_i$.",
+    "**Combination of Thin Lenses:** For thin lenses in contact, the total focal length is given by $1/f_{total} = \\sum 1/f_i$, or equivalently $P_{total} = \\sum P_i$. This assumes negligible separation between lenses. For separated lenses, use the equivalent focal length formula including the separation $d$.",
+    "**Power vs Magnification:** Lens power $P = 1/f$ relates to focal length, not directly to magnification. Magnification $m = v/u = f/(f-u)$ depends on object distance. A high-power lens (short $f$) gives larger magnification for a given object distance, but $m$ is not simply proportional to $P$."
+  ],
   "duplicateType": 2,
   "tabGroup": "power-of-a-lens",
   "visualType": "lens-power"

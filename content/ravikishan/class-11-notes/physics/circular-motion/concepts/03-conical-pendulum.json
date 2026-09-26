@@ -280,5 +280,10 @@
       }
     ]
   },
+    "specificConditions": [
+      "**Vertical Angle Limit:** For the conical pendulum to exist ($\\cos\theta \\le 1$), the angular velocity must satisfy $\\omega \\ge \\sqrt{g/L}$. Below this speed, the bob cannot maintain a horizontal circular path and will simply hang at the bottom.",
+      "**String Tension Constraint:** The tension in the string is *always* greater than the weight of the bob ($T = mg/\\cos\theta > mg$) because it must support the weight *and* provide the centripetal force.",
+      "**Small Angle Assumption:** The formulas rely on the string remaining taut. If the bob rotates too slowly, the string goes slack, and the motion ceases to be a horizontal circle (conical pendulum) and becomes a vertical oscillation."
+    ],
   "visualType": "conical-pendulum"
 }

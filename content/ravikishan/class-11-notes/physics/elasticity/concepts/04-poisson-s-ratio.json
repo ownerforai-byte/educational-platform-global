@@ -345,6 +345,11 @@
       "Compare the lateral behaviour of cork, steel and rubber."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Definition and Sign Convention:** $\\sigma = -(\text{lateral strain})/(\text{longitudinal strain})$. The negative sign makes $\\sigma$ positive for ordinary materials (lateral and longitudinal strains have opposite signs). The ratio is dimensionless — dividing one dimensionless strain by another.",
+      "**Volume Change Constraint:** The fractional volume change under uniaxial stress is $\\Delta V/V = \\varepsilon(1 - 2\\sigma)$. For $\\sigma = 0.5$ (incompressible), $\\Delta V/V = 0$ — volume is conserved. For $\\sigma < 0.5$, volume increases slightly during stretching.",
+      "**Material State Limits:** The thermodynamic bounds are $-1 < \\sigma < 0.5$ for isotropic materials. Most common materials have $0 < \\sigma < 0.5$. Auxetic materials (negative $\\sigma$) expand laterally when stretched — rare and engineered. Fluids have no defined Poisson's ratio (no shear rigidity)."
+    ]
   }
 }

@@ -81,5 +81,10 @@
   "importantTasks": [
     "Solve 5 problems on Mirrors and Lenses."
   ],
+  "specificConditions": [
+    "**Thin Lens/Mirror Approximation:** The mirror equation (1/f = 1/u + 1/v) and lens formula (1/f = 1/v - 1/u) assume thin optics where thickness is negligible. For thick lenses, principal planes must be used. Sign convention (Cartesian): distances measured from pole/lens center; positive in direction of incident light for u, opposite for v/f.",
+    "**Spherical Aberration:** Paraxial rays (close to axis) follow the simple formulas. Non-paraxial rays focus at different points, causing spherical aberration. The formulas assume paraxial approximation (small angles, sin θ ≈ θ).",
+    "**Lens/Mirror Power:** Power P = 1/f (meters) in diopters. Converging (convex lens, concave mirror): P > 0. Diverging (concave lens, convex mirror): P < 0. Powers add for thin lenses in contact: P_total = Σ P_i."
+  ],
   "duplicateType": 1
 }

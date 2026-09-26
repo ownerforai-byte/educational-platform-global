@@ -81,5 +81,10 @@
   "importantTasks": [
     "Solve 5 problems on OPTICS N1."
   ],
+  "specificConditions": [
+    "**Optical Principles:** The behavior of light is governed by the laws of reflection (angle of incidence = angle of reflection) and refraction (Snell's law: n₁sinθ₁ = n₂sinθ₂). These laws derive from Fermat's principle of least time.",
+    "**Wave Nature of Light:** Light exhibits wave phenomena including interference, diffraction, and polarization. These cannot be explained by ray optics alone and require wave optics. The wavelength λ and frequency f are related by c = λf.",
+    "**Approximations and Validity:** Ray optics (geometrical optics) is valid when object sizes ≫ wavelength λ. Wave optics is required when apertures or obstacles are comparable to λ. Quantum optics is needed for single-photon phenomena."
+  ],
   "duplicateType": 1
 }

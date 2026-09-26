@@ -42,5 +42,10 @@
   "motionGraphics": "dc-circuits",
   "duplicateType": 2,
   "tabGroup": "ohms-law-resistance",
+    "specificConditions": [
+      "**Series Connection Constraints:** In a series circuit, the *same current* flows through all resistors. The equivalent resistance is the sum: $R_{eq} = R_1 + R_2 + \\dots$. The voltage divides proportionally to resistance: $V_i = I R_i$.",
+      "**Parallel Connection Constraints:** In a parallel circuit, the *same voltage* appears across all resistors. The equivalent conductance is the sum of conductances: $1/R_{eq} = 1/R_1 + 1/R_2 + \\dots$. The current divides inversely to resistance: $I_i = V/R_i$.",
+      "**Ideal Wire Assumption:** These formulas assume ideal wires with zero resistance connecting the components. Real wire resistance must be included as additional series resistors if significant."
+    ],
   "visualType": "resistor-combination"
 }

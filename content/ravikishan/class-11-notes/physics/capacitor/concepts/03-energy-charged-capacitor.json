@@ -83,5 +83,10 @@
   ],
   "duplicateType": 2,
   "tabGroup": "energy-of-a-charged-capacitor",
+    "specificConditions": [
+      "**Energy Storage:** The energy stored $U = \frac{1}{2}QV = \frac{1}{2}CV^2 = \frac{Q^2}{2C}$ is work done by the external battery to assemble the charge against the electric field of the other plate.",
+      "**Battery Connectivity:** Energy change depends on whether the battery remains connected (potential V constant, charge Q varies) or is disconnected (charge Q constant, potential V varies).",
+      "**Dielectric Effect on Energy:** Inserting a dielectric at constant charge decreases energy (U' = U/K) due to work done *by* the field on the dielectric, while at constant potential it increases energy (U' = KU) due to extra work *by* the battery."
+    ],
   "visualType": "capacitor-energy"
 }

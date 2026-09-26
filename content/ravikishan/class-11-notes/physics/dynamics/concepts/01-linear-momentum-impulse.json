@@ -333,6 +333,11 @@
       "Task 5: Derive $J = \\Delta p$ from $F = dp/dt$ by integration over a collision interval."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Newton's 2nd Law - General Form:** $\\vec{F} = d\\vec{p}/dt$ is the fundamental form of Newton's second law. It remains valid for variable-mass systems (rockets, raindrops) where $F = ma$ fails because mass is not constant.",
+      "**Impulse-Momentum Theorem:** $\\vec{J} = \\Delta\\vec{p}$ is derived by integrating $F = dp/dt$ over the collision time. It is valid regardless of whether the force is constant, time-varying, or impulsive — the integral captures the total momentum change.",
+      "**Conservation Requirement:** Linear momentum is conserved *only* when the net *external* force on the system is zero. Internal forces always cancel in pairs (Newton's 3rd law) and cannot change the system's total momentum."
+    ]
   }
 }

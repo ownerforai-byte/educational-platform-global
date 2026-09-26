@@ -40,5 +40,10 @@
   ],
   "animation3D": "kinematics",
   "motionGraphics": "kinematics",
-  "visualType": "relative-velocity"
+  "visualType": "relative-velocity",
+  "specificConditions": [
+    "**Vector Subtraction Rule:** $\\vec{v}_{B/A} = \\vec{v}_B - \\vec{v}_A$ is the velocity of B as measured in A's rest frame. The order matters: $\\vec{v}_{A/B} = -\\vec{v}_{B/A}$. This is a vector equation — subtract components, not speeds.",
+    "**Galilean Relativity Limit:** Velocity addition $\\vec{v} = \\vec{v}' + \\vec{u}$ (where $\\vec{u}$ is frame velocity) is valid only for speeds $\\ll c$. At relativistic speeds, Einstein's velocity addition $v = (v' + u)/(1 + v'u/c^2)$ must be used. For everyday kinematics, Galilean addition is exact.",
+    "**Apparent vs Real Motion:** In the rain/river problems, the actual velocity of the rain/boat is unchanged; only the *observed* (relative) velocity changes when the observer moves. The rain still falls vertically; the umbrella is tilted to match the apparent velocity."
+  ]
 }
