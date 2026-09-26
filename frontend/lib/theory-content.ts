@@ -3278,6 +3278,80 @@ export const THEORY_CONTENT: Record<string, Record<string, TopicData>> = {
         "Explain the fluid mosaic model of the cell membrane.",
         "How does the cell wall differ from the cell membrane in structure and function?",
       ],
+      enrichedContent: {
+        title: "The Cell: Why Life Is Built From Boxes",
+        overview:
+          "Before memorising organelles, ask a deeper question: why is life cellular at all, and why are cells so small? A cell is not a bag of parts — it is a bounded chemical system that solves three impossible problems at once: it must concentrate reactions in a tiny volume, exchange materials fast enough to stay alive, and copy itself with near-perfect fidelity. Everything about cell structure follows from those constraints. The real story of the eukaryotic cell is a merger: an ancient archaeon swallowed a bacterium and never digested it, and that captive became the mitochondrion. You are a collaboration, not a single lineage.",
+        sections: [
+          {
+            heading: "1. Why Cells? The Boundary Is the Invention",
+            content:
+              "Chemistry alone is not life; a soup of amino acids drifts apart. What makes a cell alive is a boundary that creates a difference between inside and outside. By walling off a small volume, a cell can concentrate reactants millions of times above their environmental level, keep the products it just made instead of losing them to diffusion, and maintain gradients (ions, protons, charge) that store energy like a charged battery. Life is fundamentally a non-equilibrium process — it persists only by constantly spending energy to stay different from its surroundings. The membrane is therefore the most important molecule-level invention in biology: without a boundary there is no 'self' to be a unit of selection.",
+            formula:
+              "\\text{Cell} = \\text{bounded volume} + \\text{energy-coupled chemistry} + \\text{heritable information}",
+          },
+          {
+            heading: "2. The Surface-Area Crisis: Why Cells Stay Tiny",
+            content:
+              "A cell's metabolism scales with its volume (the amount of cytoplasm doing reactions), but its ability to import food and export waste scales with its surface area (the membrane). Volume grows as r³ while surface grows only as r² — so as a cell enlarges, surface area falls behind fast. Double the radius and volume octuples (×8) but surface only quadruples (×4). Past a critical size a cell simply cannot feed its own interior or clear its heat and CO₂ quickly enough. This single geometric fact explains why organisms are made of trillions of small cells rather than a few giant ones, and why specialised exchange surfaces (villi, alveoli, capillaries, root hairs, gill filaments) are all folded — folding is biology's trick for buying surface area without buying volume.",
+            formula:
+              "\\frac{\\text{Surface}}{\\text{Volume}} = \\frac{4\\pi r^2}{\\tfrac{4}{3}\\pi r^3} = \\frac{3}{r} \\quad (\\text{shrinks as } r \\text{ grows})",
+            example:
+              "A spherical cell of radius 1 μm has S/V = 3. At radius 10 μm, S/V = 0.3 — a tenfold worse exchange ratio, so ten times harder to keep the interior supplied.",
+          },
+          {
+            heading: "3. The Membrane Is Not a Wall — It Is a Decision Engine",
+            content:
+              "The fluid mosaic model is usually taught as 'phospholipids plus proteins', but the deeper idea is selective gating. The hydrophobic core of the bilayer lets small non-polar molecules (O₂, CO₂) slip straight through, blocks ions and large polar molecules entirely, and leaves everything else to protein machines. Channels are water-filled tunnels (fast, passive); carriers change shape to shuttle specific solutes; pumps spend ATP to move substances against their gradient, building up the very imbalances the cell lives on. The membrane therefore does not merely enclose the cell — it decides what the cell is chemically, moment to moment. Your nerve impulses, kidney filtration, and nutrient absorption are all just elaborate forms of a membrane saying yes or no.",
+            formula:
+              "\\text{Passive (down gradient, free)} \\;\\leftrightarrow\\; \\text{Active (against gradient, costs ATP)}",
+          },
+          {
+            heading: "4. Organelles as Compartmentalised Factories",
+            content:
+              "Eukaryotes do not run all chemistry in one open space; they separate incompatible reactions into membrane-bound rooms so each can be optimised independently. The lysosome keeps digestive acid and enzymes (pH ≈ 4.5) sealed away from the neutral cytosol, so digestion happens only where intended. The mitochondrion folds its inner membrane into cristae to pack in electron-transport chains and build a proton gradient — the cristae are the surface-area trick again, applied internally. The nucleus walls DNA away from the churn of the cytoplasm so transcription can be regulated. Compartmentalisation is the same principle as a factory floor: specialise each station, protect sensitive steps, and route the product between them (the endomembrane system: ER → Golgi → vesicles).",
+            formula:
+              "\\text{Mitochondrion: } C_6H_{12}O_6 + 6O_2 \\rightarrow 6CO_2 + 6H_2O + \\sim\\!30\\,ATP",
+          },
+          {
+            heading: "5. Endosymbiosis: You Are Two Lineages in One Body",
+            content:
+              "The most striking fact about eukaryotic cells is that mitochondria and chloroplasts look and behave like bacteria: they are about bacterial size, carry their own small circular DNA, have their own ribosomes (70S, like bacteria), divide by simple fission independently of the cell, and are enclosed by a double membrane. The endosymbiotic theory explains this as ancestry, not coincidence: roughly 1.5–2 billion years ago an archaeal host cell engulfed an aerobic α-proteobacterium but failed to digest it. The captive supplied efficient ATP using oxygen; the host supplied protection and nutrients. The partnership became permanent and the captive became the mitochondrion. A later, separate engulfment of a cyanobacterium gave rise to chloroplasts in plants. Every breath you take is powered by a former free-living bacterium living inside your cells.",
+            formula:
+              "\\text{Archaeon} + \\text{α-proteobacterium} \\rightarrow \\text{mitochondrion}; \\quad \\text{+ cyanobacterium} \\rightarrow \\text{chloroplast}",
+          },
+          {
+            heading: "6. Prokaryote vs Eukaryote: A Difference of Organisation, Not Worth",
+            content:
+              "Prokaryotes (bacteria and archaea) are not 'primitive failures to make a nucleus' — they are supremely successful, having dominated Earth for ~3.5 billion years and still outweighing all other life. Their design is streamlined: a single circular chromosome in a nucleoid, no internal membranes, transcription and translation happening simultaneously in the same compartment. That coupling is actually an advantage for speed — a bacterium can begin making a protein from an mRNA before the mRNA is even finished. Eukaryotes traded that speed for regulation: by separating transcription (nucleus) from translation (cytoplasm), they gained the chance to edit, splice, and control messages, enabling complexity and multicellularity. Small and fast versus large and controllable — both are winning strategies, not steps on a ladder.",
+            formula:
+              "\\text{Prokaryote: } 0.1{-}5\\,\\mu m,\\ \\text{no nucleus} \\qquad \\text{Eukaryote: } 10{-}100\\,\\mu m,\\ \\text{true nucleus}",
+          },
+        ],
+        keyPoints: [
+          "The membrane — a boundary that maintains non-equilibrium — is the defining invention of life, not a passive wrapper",
+          "Cells stay small because surface area (r²) can't keep up with volume (r³); folding buys surface without volume",
+          "Selective permeability makes the membrane a decision engine: channels, carriers, and ATP-driven pumps",
+          "Compartmentalisation separates incompatible reactions (lysosomal acid, mitochondrial gradients) so each is optimised",
+          "Mitochondria and chloroplasts are former free-living bacteria captured by endosymbiosis — you are a merger of lineages",
+        ],
+        commonMistakes: [
+          "Treating the cell membrane as a static wall; it is fluid, dynamic, and actively selective",
+          "Explaining small cell size as 'they need less food' — the real reason is the surface-to-volume limit on exchange",
+          "Calling prokaryotes 'simpler therefore inferior'; they are highly successful and their coupled transcription-translation is faster",
+          "Forgetting that mitochondria/chloroplasts have their own DNA, ribosomes, and division — evidence for endosymbiosis",
+          "Assuming all reactions happen freely in the cytosol; eukaryotes deliberately isolate them in organelles",
+        ],
+        practiceQuestions: [
+          "Using the surface-to-volume ratio, explain mathematically why a cell cannot simply grow indefinitely.",
+          "Why is folding (cristae, villi, microvilli) such a common solution across very different organ systems?",
+          "List three pieces of evidence for the endosymbiotic origin of mitochondria and explain why each is convincing.",
+          "A membrane must be selectively permeable to be useful. Explain what would go wrong if it were freely permeable to everything.",
+          "Compare the speed advantage of coupled transcription-translation in prokaryotes with the regulatory advantage of separating them in eukaryotes.",
+          "Explain how the lysosome's internal pH and sealed membrane protect the rest of the cell.",
+          "If life requires a boundary, energy-coupled chemistry, and heritable information, argue why a virus is or is not a cell.",
+        ],
+      },
     },
     genetics: {
       title: "Genetics & Heredity",
@@ -3329,6 +3403,78 @@ export const THEORY_CONTENT: Record<string, Record<string, TopicData>> = {
         "If a protein has 300 amino acids, what is the minimum number of nucleotides in the coding DNA?",
         "Explain why the genetic code is described as 'degenerate but unambiguous.'",
       ],
+      enrichedContent: {
+        title: "Genetics: How Chemistry Became Memory",
+        overview:
+          "The deepest idea in genetics is not the Punnett square — it is that information can be stored in matter. A gene is not a mystical blueprint; it is a polymer whose sequence of four bases encodes instructions the way letters encode a sentence. This reframes heredity as a molecular copy-and-read problem, and explains everything from Mendel's ratios to mutations to why you resemble your parents. Genetics is also the origin of a profound asymmetry: the code is degenerate (redundant, so many mutations are silent) yet unambiguous (each codon means exactly one thing). Life runs on error-tolerant, digital chemistry.",
+        sections: [
+          {
+            heading: "1. Mendel Was Doing Statistics Before Statistics",
+            content:
+              "Mendel had no idea about DNA or chromosomes, yet he recovered the laws of inheritance by an act of genius: he chose traits with clean either/or outcomes, counted huge numbers of offspring, and looked for ratios. The 3:1 ratio in a monohybrid cross is not magic — it is the arithmetic of two hidden factors (alleles) separating into gametes and recombining at random. His 'law of segregation' is really a statement about probability: each parent contributes one of its two alleles with equal chance. This is why genetics became the first truly quantitative biology, and why the Punnett square is just a probability table. Mendel's insight was to realise that invisible discrete units, not blending fluids, carry traits — otherwise variation would wash out in a generation.",
+            formula:
+              "Aa \\times Aa \\;\\rightarrow\\; 1\\,AA : 2\\,Aa : 1\\,aa \\;\\Rightarrow\\; 3:1 \\text{ phenotype (dominant:recessive)}",
+          },
+          {
+            heading: "2. Why Ratios Break: The Beautiful Exceptions",
+            content:
+              "Real inheritance rarely gives clean 3:1 or 9:3:3:1 ratios, and the deviations are where the biology lives. Incomplete dominance blends (red × white → pink); codominance shows both (blood type AB expresses A and B equally); multiple alleles give more than two options (the ABO system has three: Iᴬ, Iᴮ, i). Genes on the same chromosome violate independent assortment because they are physically linked and travel together — the closer they are, the more often they are inherited as a unit, and the crossover frequency between them became the first way to map a chromosome. Sex-linked genes on the X chromosome produce the striking pattern where colour-blindness and haemophilia affect males far more often (they have only one X, so a single recessive allele shows). The exceptions are not noise; they are the map.",
+            formula:
+              "\\text{Recombination frequency} = \\frac{\\text{recombinant offspring}}{\\text{total}} \\times 100\\% \\;\\Rightarrow\\; \\text{map units (cM)}",
+          },
+          {
+            heading: "3. DNA Is Digital Chemistry",
+            content:
+              "The double helix is revolutionary because it solves a physical problem: how can a molecule store vast information and copy it exactly? The answer is that the two strands are complementary — A always pairs with T, G always with C. This means each strand is a template for rebuilding the other. Unzip the helix and each half dictates the reconstruction of its missing partner, so copying is automatic and near-perfect. The information is not in the shape but in the sequence, exactly like the meaning of a sentence is in the order of its letters, not the ink. Complementarity is why heredity works at all: it gives chemistry a way to remember and to reproduce what it remembers.",
+            formula:
+              "A = T \\;(2\\,\\text{H-bonds}), \\quad G \\equiv C \\;(3\\,\\text{H-bonds}) \\;\\Rightarrow\\; \\text{each strand templates its partner}",
+          },
+          {
+            heading: "4. The Central Dogma Has a Direction — and Loopholes",
+            content:
+              "Information normally flows DNA → RNA → protein, and this one-way street matters: proteins do the work of the cell but cannot rewrite the DNA that made them, so acquired traits are not inherited (this is why Lamarck was wrong). The flow is also lossy at each step — DNA is transcribed to mRNA (with U replacing T), the mRNA is edited and shipped out of the nucleus, and ribosomes translate its codons into an amino-acid chain. But nature keeps loopholes: some viruses run the dogma backwards with reverse transcriptase (RNA → DNA, as in HIV), and prions transmit information as folded protein shape with no nucleic acid at all. The dogma describes the dominant rule, not an absolute law — and knowing the exceptions is what lets us understand retroviruses and certain diseases.",
+            formula:
+              "DNA \\xrightarrow{\\text{transcription}} RNA \\xrightarrow{\\text{translation}} \\text{Protein} \\qquad (\\text{reverse transcriptase: } RNA \\rightarrow DNA)",
+          },
+          {
+            heading: "5. The Code Is Degenerate but Unambiguous — and Nearly Universal",
+            content:
+              "Three bases give 4³ = 64 possible codons, but there are only 20 amino acids, so the code is redundant: several codons specify the same amino acid (degenerate). Crucially it is never ambiguous — a given codon always means the same amino acid. This redundancy is a built-in error buffer: a mutation in the third base of a codon often lands on the same amino acid (a silent mutation), so DNA tolerates change far better than a one-to-one code would. The code also has punctuation: AUG starts (and codes methionine), while UAA/UAG/UGA stop. Most astonishing is that the same code is used by bacteria, oak trees, and you — powerful evidence that all life shares a single common ancestor, because a different code would be lethal to switch.",
+            formula:
+              "4^3 = 64\\ \\text{codons} \\rightarrow 20\\ \\text{amino acids} + 3\\ \\text{stop} \\;\\Rightarrow\\; \\text{degenerate, unambiguous, universal}",
+          },
+          {
+            heading: "6. Mutation Is the Raw Material of Everything",
+            content:
+              "Without change in DNA there would be no variation, and without variation natural selection has nothing to select — evolution would be impossible. Mutations are the ultimate source of all genetic novelty. Most are neutral (silent or in non-coding DNA), some are harmful (a single base change causes sickle-cell anaemia by swapping one amino acid in haemoglobin), and rarely one is advantageous. The sickle-cell story is the classic paradox: the same allele that causes disease in the homozygous form protects against malaria in the heterozygous form, so it is maintained at high frequency exactly where malaria is common — a balanced trade-off, not a simple defect. Mutations are random with respect to need; the environment does not direct them, it only filters the results afterwards.",
+            formula:
+              "\\text{Point mutation} = \\text{single base change} \\;\\rightarrow\\; \\text{silent} \\;|\\; \\text{missense} \\;|\\; \\text{nonsense}",
+          },
+        ],
+        keyPoints: [
+          "A gene is digital information stored in a base sequence — heredity is a molecular copy-and-read process",
+          "Mendel's ratios are probability tables; the exceptions (linkage, codominance, sex-linkage) reveal the chromosome map",
+          "Complementary strands make DNA self-copying: each strand is a template for the other",
+          "The central dogma flows DNA→RNA→protein (why acquired traits aren't inherited), with viral loopholes",
+          "The genetic code is degenerate yet unambiguous and nearly universal — evidence for a single common ancestor",
+        ],
+        commonMistakes: [
+          "Treating deviations from 3:1 as errors rather than the informative cases (linkage, dominance patterns)",
+          "Thinking proteins can rewrite DNA — the dogma's one-way flow is why acquired traits aren't inherited",
+          "Confusing 'degenerate' (redundant code) with 'sloppy'; it is redundancy with zero ambiguity",
+          "Assuming mutations are directed by need; they arise randomly and the environment only filters them",
+          "Calling the sickle-cell allele purely harmful and ignoring the heterozygote malaria advantage",
+        ],
+        practiceQuestions: [
+          "Explain why a 3:1 phenotypic ratio is really a statement about probability, not a guarantee for any single family.",
+          "Two genes are inherited together far more often than expected. What does this suggest, and how would you map their distance?",
+          "Why does DNA complementarity make exact copying almost automatic?",
+          "A retrovirus converts its RNA into DNA inside your cells. Which enzyme does this, and why does it not violate the point of the central dogma?",
+          "Show how the code's degeneracy acts as a buffer against the effects of many point mutations.",
+          "Explain the sickle-cell paradox: how can an allele that causes disease stay common in a population?",
+          "The genetic code is nearly the same in every organism. What does this imply about the origin of life?",
+        ],
+      },
     },
     ecology: {
       title: "Ecology & Environment",
@@ -3380,6 +3526,80 @@ export const THEORY_CONTENT: Record<string, Record<string, TopicData>> = {
         "Describe the nitrogen cycle and the role of bacteria in each step.",
         "What makes a region a biodiversity hotspot? Give one example from Nepal.",
       ],
+      enrichedContent: {
+        title: "Ecology: The Economy of Energy and the Web of Dependence",
+        overview:
+          "Ecology is best understood as the study of flows. Two things move through every ecosystem and they behave in opposite ways: energy flows through once and is lost, while matter cycles endlessly and is reused. Grasping this asymmetry explains the shape of all life on Earth — why food chains are short, why there are far more plants than predators, and why a top carnivore needs a whole landscape beneath it. Beyond energy, ecology reveals that no species stands alone: each is a node in a network of dependencies, and perturbing one node ripples through the rest. The 'balance of nature' is really a dynamic, self-correcting tension, not a static peace.",
+        sections: [
+          {
+            heading: "1. The Two Flows: Energy Leaks, Matter Recycles",
+            content:
+              "The most important sentence in ecology: energy flows one way, matter cycles. Sunlight arrives as high-quality energy, passes through living things, and leaves as low-quality heat that can never be reused by organisms — so the ecosystem must be fed a constant stream of new solar energy or it stops. Matter is different: the carbon in your body was once in the air, in a plant, perhaps in a dinosaur, and will return to the soil and atmosphere to be used again. There is no 'new' matter on Earth; every atom you contain has been recycled countless times. This is why energy pyramids are always upright and finite while nutrients loop forever, and why life ultimately depends on an external power source (the Sun) but a closed set of building blocks.",
+            formula:
+              "\\text{Sun} \\rightarrow \\text{producers} \\rightarrow \\text{consumers} \\rightarrow \\text{heat (lost)} \\qquad \\text{matter: } \\text{recycled}",
+          },
+          {
+            heading: "2. The 10% Rule Is Really the Second Law of Thermodynamics",
+            content:
+              "Only about 10% of the energy at one trophic level appears at the next, and this is not an arbitrary number — it is a consequence of physics. At each transfer most energy is lost as metabolic heat (respiration, movement, keeping warm), in undigested material, and in waste; only a fraction is converted into new body tissue a predator can eat. Because each level keeps only ~10%, a chain of four levels passes on just 0.1% of the original energy. This hard limit explains why food chains rarely exceed four or five links, why herbivore biomass vastly exceeds carnivore biomass, and why eating lower on the chain (plants over meat) can feed many more people from the same land — you skip the losses.",
+            formula:
+              "100\\% \\rightarrow 10\\% \\rightarrow 1\\% \\rightarrow 0.1\\% \\;\\Rightarrow\\; \\text{chains stay short}",
+            example:
+              "10,000 J in grass → ~1,000 J in a grasshopper → ~100 J in a frog → ~10 J in a snake. Only 0.1% of the grass's energy reaches the snake.",
+          },
+          {
+            heading: "3. Everything Is Connected: Keystone Species and Cascades",
+            content:
+              "Some species hold up an entire community far out of proportion to their numbers. Remove a keystone species and the ecosystem reorganises dramatically. The classic case is the sea otter: otters eat sea urchins, urchins graze kelp forests. Hunt the otters and urchins explode, strip the kelp, and collapse a whole habitat that sheltered hundreds of other species. Similarly wolves reintroduced to Yellowstone reduced over-grazing elk, which let riverside willows recover, which brought back beavers and songbirds — a trophic cascade that even changed the paths of rivers. The lesson is that ecosystems are networks, not lists: the connections matter as much as the members, and the strongest effects often come from the top down, not the bottom up.",
+            formula:
+              "\\text{Keystone removed} \\Rightarrow \\text{trophic cascade} \\Rightarrow \\text{community restructures}",
+          },
+          {
+            heading: "4. Populations: The Struggle Between r and K",
+            content:
+              "A population with unlimited resources grows exponentially — a J-curve, where each generation multiplies the last and growth accelerates. But no environment is unlimited. Resources, space, and predators impose a carrying capacity K, bending the curve into an S-shape (logistic growth): fast at first, slowing as the population approaches K, then levelling off. Species fall into two broad strategies. r-strategists (insects, weeds, bacteria) reproduce fast and in huge numbers, betting on quantity in unstable environments. K-strategists (elephants, whales, humans) invest heavily in few offspring, betting on quality in stable, crowded ones. Understanding where a species sits on this spectrum explains everything from pest outbreaks to why large animals are so vulnerable to overhunting.",
+            formula:
+              "\\dfrac{dN}{dt} = rN\\left(\\dfrac{K - N}{K}\\right) \\quad \\xrightarrow{N \\to K}\\; \\text{growth} \\to 0",
+          },
+          {
+            heading: "5. Interactions Beyond Eat-or-Be-Eaten",
+            content:
+              "Predation is only one of many relationships. Mutualism benefits both partners (bees and flowers, nitrogen-fixing bacteria and legume roots, the gut microbiome and you). Commensalism helps one and leaves the other unaffected (barnacles on a whale). Parasitism benefits one at the other's expense (ticks, tapeworms, mistletoe) — and parasites are among the most successful organisms on Earth, driving much of evolution through the arms race with hosts. Competition, when two species need the same limited resource, pushes them to diverge: the competitive-exclusion principle says two species cannot occupy the exact same niche indefinitely, so evolution nudges them apart (character displacement) — this is a hidden engine of biodiversity.",
+            formula:
+              "\\text{Mutualism } (+/+),\\ \\text{Commensalism } (+/0),\\ \\text{Parasitism } (+/-),\\ \\text{Competition } (-/-)",
+          },
+          {
+            heading: "6. Ecosystems Are Dynamic, Not Balanced",
+            content:
+              "The old picture of a perfectly 'balanced' nature in steady equilibrium is misleading. Ecosystems are constantly perturbed and are resilient rather than static — disturbances like fire, flood, and storm are not damage but part of the cycle. Fire clears deadwood and releases nutrients, letting fire-adapted species regenerate; without periodic burning some forests decline. What keeps systems functioning is redundancy and feedback: many species can fill a role, and negative feedbacks (predators rise when prey are abundant, then fall) dampen swings. The real ecological concern today is that human pressure removes redundancy and pushes systems past tipping points where feedbacks flip — a lake that eutrophies, a forest that becomes savanna — and these shifts are hard to reverse.",
+            formula:
+              "\\text{Resilience} = \\text{redundancy} + \\text{negative feedback} \\quad (\\text{lost} \\Rightarrow \\text{tipping point})",
+          },
+        ],
+        keyPoints: [
+          "Energy flows one way and is lost as heat; matter cycles endlessly — the core asymmetry of ecosystems",
+          "The ~10% transfer rule is a consequence of thermodynamics and keeps food chains short (4–5 links)",
+          "Keystone species and trophic cascades show ecosystems are networks where top-down effects dominate",
+          "Populations balance exponential (r) growth against carrying capacity (K); species adopt r- or K-strategies",
+          "Interactions span mutualism to parasitism; competition drives niche divergence and biodiversity",
+        ],
+        commonMistakes: [
+          "Thinking energy is recycled like nutrients — energy is lost as heat and must be continually resupplied",
+          "Treating the 10% figure as exact or arbitrary rather than an emergent consequence of the second law",
+          "Assuming ecosystems seek a fixed 'balance'; they are dynamic and disturbance is often essential",
+          "Judging a species' importance by its numbers, missing keystone species that are few but pivotal",
+          "Ignoring competition's role — it is a major driver of speciation and niche separation",
+        ],
+        practiceQuestions: [
+          "Explain why energy must flow continuously into an ecosystem while matter does not.",
+          "Using the 10% rule, calculate how much energy from 50,000 J of algae reaches a tertiary consumer.",
+          "Describe a trophic cascade and explain why the keystone predator is essential to it.",
+          "Contrast r- and K-strategists and explain why large mammals are especially vulnerable to overexploitation.",
+          "Two similar bird species share one island but feed at different heights in the same trees. What principle explains this?",
+          "Give one example each of mutualism, commensalism, and parasitism from a Nepali ecosystem.",
+          "Why is a forest fire sometimes beneficial rather than destructive to an ecosystem?",
+        ],
+      },
     },
     human: {
       title: "Human Physiology",
@@ -3431,6 +3651,78 @@ export const THEORY_CONTENT: Record<string, Record<string, TopicData>> = {
         "Describe the process of nerve impulse transmission across a synapse.",
         "Explain how the nephron filters blood and forms urine.",
       ],
+      enrichedContent: {
+        title: "Human Physiology: An Orchestra of Control Loops",
+        overview:
+          "The organ systems are usually taught as separate plumbing, but they are one integrated machine held in balance by a single principle: homeostasis. Every system is a control loop with a sensor, a set-point, and a corrector that pushes conditions back toward the target. Your temperature, blood glucose, blood pH, oxygen, and water balance are all actively defended moment to moment, mostly by negative feedback. Understanding physiology as a set of self-correcting loops — rather than a catalogue of parts — turns memorisation into reasoning: once you see the loop, you can predict what happens when it breaks.",
+        sections: [
+          {
+            heading: "1. Homeostasis: The Idea That Unifies Everything",
+            content:
+              "Your internal environment is held remarkably constant while the outside world swings wildly — blood stays near 37 °C, pH near 7.4, glucose in a narrow band. This stability is not passive; it is actively maintained by negative feedback, where any deviation from a set-point triggers a response that reverses it. If you get too hot, you sweat and dilate skin vessels to cool; too cold, you shiver and constrict vessels to conserve. The body never simply 'tolerates' change — it detects and corrects it continuously. Almost every disease can be framed as a control loop that has failed, which is why homeostasis is the master concept of physiology.",
+            formula:
+              "\\text{Sensor} \\rightarrow \\text{control centre} \\rightarrow \\text{effector} \\rightarrow \\text{reverses deviation}",
+          },
+          {
+            heading: "2. Circulation: Two Loops and a Pressure Puzzle",
+            content:
+              "Humans have double circulation — blood passes through the heart twice per circuit. The right side is a low-pressure pump to the lungs (pulmonary circuit); the left side is a powerful high-pressure pump to the whole body (systemic circuit). This separation is essential: it lets blood be fully re-oxygenated at the lungs before being driven hard to the tissues, and keeps oxygenated and deoxygenated blood from mixing. The left ventricle is therefore far thicker than the right — same organ, two jobs, two wall thicknesses. The system also faces an engineering trade-off: high pressure delivers blood fast but risks damage, so arteries branch into vast capillary beds where pressure drops and slow, thin-walled exchange can occur.",
+            formula:
+              "\\text{Cardiac output} = \\text{HR} \\times \\text{SV} \\approx 70 \\times 70 = 4900\\;\\text{mL/min}",
+          },
+          {
+            heading: "3. Respiration: It's Really About CO₂, Not Oxygen",
+            content:
+              "A surprising fact: your breathing is driven mainly by carbon dioxide, not by a lack of oxygen. Sensors in the brainstem and arteries monitor CO₂ (via blood pH); when CO₂ rises, you breathe faster and deeper to blow it off. Oxygen levels matter far less to the drive to breathe. This is why holding your breath becomes unbearable from CO₂ build-up long before you actually run out of O₂, and why hyperventilating before diving underwater is dangerous — it dumps CO₂ and delays the urge to breathe until oxygen runs out without warning. Gas exchange itself is pure diffusion across the enormous, thin alveolar surface, maximised by the folded surface-area trick seen throughout biology.",
+            formula:
+              "CO_2 + H_2O \\rightleftharpoons H_2CO_3 \\rightleftharpoons H^+ + HCO_3^- \\quad (\\text{CO}_2 \\text{ drives pH, drives breathing})",
+          },
+          {
+            heading: "4. Digestion: From Macro to Micro, Then Absorb",
+            content:
+              "Digestion is a single goal executed in stages: break large, insoluble food molecules into small, soluble ones that can cross a membrane and enter the blood. It is mechanical (chewing, churning) plus chemical (enzymes that hydrolyse bonds), each enzyme specific to its substrate and its pH — amylase works on starch in the near-neutral mouth, pepsin on protein in the acidic stomach, pancreatic enzymes on everything in the alkaline small intestine. The small intestine is the true workhorse: its folded lining with villi and microvilli multiplies surface area roughly 600-fold, making absorption efficient. The large intestine then reclaims water and electrolytes and houses bacteria that ferment leftovers and make vitamins.",
+            formula:
+              "\\text{Starch} \\xrightarrow{\\text{amylase}} \\text{maltose} \\xrightarrow{\\text{maltase}} \\text{glucose} \\xrightarrow{\\text{villi}} \\text{blood}",
+          },
+          {
+            heading: "5. Nervous System: Electricity and Chemistry Working Together",
+            content:
+              "Neurons compute with voltage and communicate with chemistry. At rest, a neuron holds a charge difference (about −70 mV) across its membrane, built by ion pumps. When stimulated past a threshold, voltage-gated channels flip the charge in a wave — the action potential (≈ +30 mV) — that travels down the axon. In myelinated neurons the signal leaps between gaps (nodes of Ranvier), which is far faster. At the axon's end the electrical signal is converted into a chemical one: neurotransmitters cross the synapse to the next cell, which may be excited or inhibited. The brain is thus a vast network summing excitatory and inhibitory inputs, and everything from a reflex to a thought is a pattern of firing in that network.",
+            formula:
+              "\\text{Resting} \\approx -70\\,mV \\;\\rightarrow\\; \\text{threshold} \\rightarrow \\text{action potential} \\approx +30\\,mV",
+          },
+          {
+            heading: "6. Excretion and Coordination: The Kidney as a Homeostasis Machine",
+            content:
+              "The kidney does far more than make urine — it is a master regulator of blood volume, pressure, pH, and ion balance. Each nephron filters blood, then reabsorbs almost everything useful back (over 99% of the filtrate) and secretes specific wastes, so the final urine is a precisely adjusted output, not just waste water. Hormones tune this in real time: ADH tells the kidney to retain water when you are dehydrated, aldosterone retains sodium, and the kidney even releases erythropoietin to trigger red-cell production when oxygen is low. This ties excretion back to the whole-body theme: a single organ running several control loops at once to keep the internal environment stable.",
+            formula:
+              "\\text{GFR} \\approx 125\\;\\text{mL/min};\\quad >99\\%\\ \\text{of filtrate reabsorbed}",
+          },
+        ],
+        keyPoints: [
+          "Homeostasis via negative feedback is the unifying principle — nearly every system is a control loop",
+          "Double circulation separates low-pressure lung pumping from high-pressure body pumping; the left ventricle is thicker",
+          "Breathing is driven mainly by CO₂ (via blood pH), not by oxygen lack",
+          "Digestion converts large insoluble molecules to small soluble ones; the folded small intestine maximises absorption",
+          "Neurons use electrical action potentials internally and chemical neurotransmitters between cells",
+        ],
+        commonMistakes: [
+          "Studying systems in isolation and missing that they are coordinated control loops serving homeostasis",
+          "Thinking the urge to breathe comes from low oxygen — it is mainly rising CO₂",
+          "Confusing the two circulations or assuming both ventricles are equally muscular",
+          "Treating urine as simple 'waste water' rather than a hormonally tuned, mostly-reabsorbed filtrate",
+          "Believing the action potential travels continuously in myelinated neurons; it jumps node to node",
+        ],
+        practiceQuestions: [
+          "Define homeostasis and give an example of a negative feedback loop for blood glucose.",
+          "Why is the left ventricle wall much thicker than the right, even though both are part of the same heart?",
+          "Explain why hyperventilating before swimming underwater can cause a blackout.",
+          "How does the folding of the small intestine (villi, microvilli) relate to the surface-area principle seen across biology?",
+          "Describe how a neuron converts an electrical signal into a chemical one at a synapse.",
+          "The kidney reabsorbs over 99% of its filtrate. Explain how ADH adjusts this and why.",
+          "Frame one human disease as a failure of a specific homeostatic control loop.",
+        ],
+      },
     },
     evolution: {
       title: "Evolution & Classification",
@@ -3482,6 +3774,78 @@ export const THEORY_CONTENT: Record<string, Record<string, TopicData>> = {
         "Why is the current rate of extinction considered alarming?",
         "Construct a simple phylogenetic tree for: human, chimpanzee, gorilla, orangutan (given DNA similarity data).",
       ],
+      enrichedContent: {
+        title: "Evolution: The Unifying Idea of All Biology",
+        overview:
+          "Nothing in biology makes sense except in the light of evolution — the phrase is famous because it is true. Every adaptation, every oddity of anatomy, every shared gene is a leftover or a product of descent with modification. The key mental shift is that evolution has no goal, no direction, and no notion of 'better' — only differential survival and reproduction in a particular environment, generation after generation. It is also not just about the famous mechanism of natural selection; mutation, genetic drift, gene flow, and non-random mating all shift populations. Understanding evolution means reasoning about populations over time, not individuals striving to improve.",
+        sections: [
+          {
+            heading: "1. The Mechanism Is Simple; The Consequences Are Staggering",
+            content:
+              "Natural selection needs only three facts: variation exists, variation is heritable, and more offspring are produced than can survive so there is competition. From these alone, traits that help survival and reproduction become more common over generations — no foresight, no intent, no ladder of progress. The power is in cumulative change: tiny advantages compounded over millions of generations produce eyes, wings, and the bacterial flagellum. Selection does not create perfection; it keeps whatever works well enough in the current environment, which is why organisms carry historical baggage (the human appendix, the recurrent laryngeal nerve's absurd detour) — evolution tinkers with what already exists rather than designing from scratch.",
+            formula:
+              "\\text{Variation} + \\text{Heritability} + \\text{Competition} \\Rightarrow \\text{differential reproduction} \\Rightarrow \\text{evolution}",
+          },
+          {
+            heading: "2. Selection Is Not the Only Force",
+            content:
+              "The modern synthesis adds three other engines that change allele frequencies without any 'fitness' involved. Genetic drift is pure chance: in small populations, random sampling of who reproduces can fix or lose alleles regardless of benefit — this is why island and endangered populations change fast and lose diversity. Gene flow (migration) mixes alleles between populations, tending to make them more similar and opposing divergence. Non-random mating (sexual selection) changes who pairs with whom; the peacock's tail is not about surviving predators — it is about being chosen, even at a cost. Recognising all four forces explains why not every trait is an adaptation, a subtlety often lost in the 'survival of the fittest' slogan.",
+            formula:
+              "\\Delta \\text{(allele frequency)} = \\text{selection} + \\text{drift} + \\text{gene flow} + \\text{non-random mating}",
+          },
+          {
+            heading: "3. Evidence Is Everywhere and Independent",
+            content:
+              "Evolution is not one observation but many lines of evidence that independently converge — the hallmark of a well-supported theory. Fossils document transitional forms and the sequence of life over time. Comparative anatomy reveals homologous structures (human arm, whale flipper, bat wing — same bones, different uses) betraying shared ancestry, versus analogous structures (insect wing vs bird wing — different origin, same function) produced by convergent evolution under similar pressures. Embryology shows shared early development. Most decisively, molecular biology lets us read the family tree directly: the degree of DNA and protein similarity tracks evolutionary relatedness quantitatively, and it agrees with the fossil and anatomical evidence.",
+            formula:
+              "\\text{Human–Chimp DNA} \\approx 98.7\\% \\quad (\\text{molecular clock} \\Rightarrow \\text{recent common ancestor})",
+          },
+          {
+            heading: "4. Homology vs Analogy: The Trap Students Fall Into",
+            content:
+              "This distinction is the single most common source of error. Homologous structures share a common origin but may serve different functions — the forelimb bones of a human, cat, whale, and bat. Their similarity is inherited, evidence of descent from a shared ancestor. Analogous structures do the same job but arose independently — the wings of a bird, a bat, and an insect all fly, but insects are not related to vertebrates; they evolved flight separately. Analogy is the product of convergent evolution: unrelated lineages hit on similar solutions to similar problems (streamlined bodies in sharks, dolphins, and ichthyosaurs). The rule of thumb: similarity of underlying structure and development signals common ancestry (homology); similarity of function alone does not.",
+            formula:
+              "\\text{Homologous} = \\text{same origin, may differ in function} \\qquad \\text{Analogous} = \\text{same function, different origin}",
+          },
+          {
+            heading: "5. Speciation: When One Lineage Becomes Two",
+            content:
+              "Evolution's grand pattern — the branching tree of life — comes from speciation, the splitting of one species into two that can no longer interbreed. The most common route is geographic (allopatric) isolation: a barrier separates a population, and the two halves accumulate different mutations and face different selection until they diverge beyond reuniting. Sympatric speciation happens without a physical barrier, often through changes like polyploidy in plants. Reproductive isolation is the key concept — it can be pre-zygotic (different mating times, behaviours, or incompatible gametes) or post-zygotic (hybrid inviability or sterility, as in the mule). Speciation is why life is a branching bush, not a ladder.",
+            formula:
+              "\\text{Isolation} \\rightarrow \\text{divergence} \\rightarrow \\text{reproductive barrier} \\rightarrow \\text{two species}",
+          },
+          {
+            heading: "6. Evolution Has No Goal — and We Are Not Its Pinnacle",
+            content:
+              "The most persistent misconception is that evolution is a march of progress toward 'higher' forms, with humans at the top. It is not. Evolution is local adaptation to current conditions; a bacterium exquisitely suited to a hot spring is just as 'evolved' as a human, and far more numerous. Traits are not aimed at a future target, and environments change, so today's advantage can be tomorrow's liability. There is also no 'missing link' ladder — the tree of life branches in all directions, and every living species sits at the tip of its own equally long branch. Humans are one recent twig, not the trunk or the crown. This reframing is not just pedantry; it prevents misreading the evidence and misunderstanding our own place in nature.",
+            formula:
+              "\\text{Evolution} = \\text{adaptation to local conditions},\\ \\text{not progress toward a goal}",
+          },
+        ],
+        keyPoints: [
+          "Natural selection needs only variation, heritability, and competition; it has no foresight or goal",
+          "Drift, gene flow, and sexual selection also change allele frequencies — not every trait is an adaptation",
+          "Multiple independent lines of evidence (fossils, anatomy, embryology, molecules) converge",
+          "Homologous = shared ancestry (may differ in function); analogous = convergent function (different origin)",
+          "Evolution is local adaptation, not progress; humans are one recent twig, not the pinnacle",
+        ],
+        commonMistakes: [
+          "Thinking evolution is goal-directed or 'strives' toward complexity or perfection",
+          "Confusing homologous with analogous structures",
+          "Believing individuals evolve within their lifetime; populations evolve over generations",
+          "Invoking Lamarckian inheritance of acquired characteristics (use/disuse)",
+          "Treating natural selection as the only evolutionary force, ignoring drift and gene flow",
+        ],
+        practiceQuestions: [
+          "State the three conditions natural selection requires and give a real-world example of each in action.",
+          "Explain why genetic drift has a stronger effect in small populations than large ones.",
+          "A bird's wing and an insect's wing both enable flight. Are they homologous or analogous, and why?",
+          "Describe how geographic isolation can lead to speciation, using an island population as an example.",
+          "The recurrent laryngeal nerve takes a long detour in mammals. Why does this support evolution over design?",
+          "Explain why the peacock's tail is a product of sexual rather than natural selection.",
+          "Argue against the statement 'humans are the most highly evolved species.'",
+        ],
+      },
     },
     plant: {
       title: "Plant Physiology",
@@ -3533,6 +3897,78 @@ export const THEORY_CONTENT: Record<string, Record<string, TopicData>> = {
         "What are the symptoms of nitrogen deficiency in plants? Why does it appear in older leaves first?",
         "Compare C₃, C₄, and CAM photosynthesis. Why are C₄ and CAM adaptations beneficial in hot environments?",
       ],
+      enrichedContent: {
+        title: "Plants: The Slow Engineers That Built the Atmosphere",
+        overview:
+          "Plants solved the hardest engineering problems in biology without moving, without a nervous system, and using only sunlight, water, air, and minerals. They lift water tens of metres against gravity with no pump, manufacture sugar from a gas, and — through photosynthesis — created the oxygen atmosphere that made animal life possible. The key to understanding plants is that they are almost entirely built from air and water, not soil: the mass of a tree is mostly carbon captured from CO₂. Their physiology is a study in elegant physical solutions — cohesion, osmosis, diffusion gradients, and hormones doing the work that animals solve with muscles and nerves.",
+        sections: [
+          {
+            heading: "1. Photosynthesis: Turning Air and Light Into Wood",
+            content:
+              "The most important chemical reaction on Earth converts carbon dioxide and water into sugar and oxygen, powered by light — and it is the source of nearly all food and free oxygen. It runs in two coupled stages. The light-dependent reactions, in the thylakoid membranes, use chlorophyll to capture light energy and convert it into chemical carriers (ATP and NADPH), splitting water and releasing O₂ as a by-product. The Calvin cycle, in the surrounding stroma, then spends that ATP and NADPH to fix CO₂ into sugar — no light needed directly. The profound point: a tree's trunk is not dug from the ground, it is assembled from carbon pulled out of the air. The mass of a forest is solidified atmosphere.",
+            formula:
+              "6CO_2 + 6H_2O \\xrightarrow{\\text{light, chlorophyll}} C_6H_{12}O_6 + 6O_2",
+          },
+          {
+            heading: "2. Climbing Without a Pump: Cohesion-Tension",
+            content:
+              "A tall tree must lift water from roots to leaves tens of metres up, yet it has no heart and no pump. It uses physics instead. Water molecules stick to each other by hydrogen bonding (cohesion) and to the xylem walls (adhesion), forming a continuous unbroken column. When water evaporates from the leaf surface through stomata (transpiration), it creates a tension that pulls the whole column upward, like sucking on a straw — the evaporation at the top drags water all the way from the roots. This cohesion-tension mechanism is entirely passive, powered ultimately by the Sun's energy driving evaporation. It explains why water transport costs the plant no metabolic energy, and why an air bubble (cavitation) in the column is so damaging — it breaks the continuous chain.",
+            formula:
+              "\\text{Transpiration at leaf} \\Rightarrow \\text{tension} \\Rightarrow \\text{cohesive column pulled from roots}",
+          },
+          {
+            heading: "3. Transpiration: A Cost That Cannot Be Avoided",
+            content:
+              "Plants face an unavoidable trade-off. To take in CO₂ for photosynthesis they must open stomata, but opening stomata lets water escape — a plant loses hundreds of grams of water for every gram of CO₂ fixed. Transpiration is therefore the price of photosynthesis, not a wasteful accident. The good news: it also cools the leaf (evaporative cooling) and drives the water-and-mineral stream upward. The plant's entire physiology is a balancing act between capturing carbon and conserving water, which is why so many adaptations exist — waxy cuticles, sunken stomata, and the specialised carbon-fixing pathways of hot, dry environments.",
+            formula:
+              "\\text{Open stomata} = \\text{CO}_2\\ \\text{in (good)} + \\text{H}_2O\\ \\text{out (cost)}",
+          },
+          {
+            heading: "4. Two Plumbing Systems: Xylem Up, Phloem Both Ways",
+            content:
+              "Plants run separate transport systems for water and for food. Xylem carries water and dissolved minerals upward only, from roots to leaves, driven passively by transpiration pull through dead, hollow, lignin-reinforced tubes. Phloem carries the sugar-rich sap made in photosynthesis to wherever it is needed — growing tips, roots, fruits — and can move both up and down, driven actively by the pressure-flow mechanism: sugars are loaded into the phloem at a 'source' (leaf), drawing in water osmotically and building pressure that pushes the sap toward a 'sink' where sugar is used or stored. The distinction (dead xylem, one-way, passive; living phloem, two-way, active) is fundamental.",
+            formula:
+              "\\text{Xylem: } \\text{water up (dead, passive)} \\qquad \\text{Phloem: } \\text{sugar both ways (living, pressure flow)}",
+          },
+          {
+            heading: "5. Hormones: Growth as a Response to Direction",
+            content:
+              "Without nerves or muscles, plants coordinate growth and respond to their environment using a handful of hormones that alter cell behaviour. Auxin is the master regulator of direction: in phototropism it redistributes to the shaded side of a stem, making those cells elongate so the stem bends toward the light — a movement produced by uneven growth, not by muscle. The same hormone drives apical dominance (a growing tip suppressing side branches) and root gravitropism (growing downward). Other hormones divide the labour: gibberellins elongate stems and trigger germination, cytokinins promote cell division, abscisic acid is the stress hormone that closes stomata in drought, and ethylene, a gas, ripens fruit and sheds leaves. Plant 'behaviour' is really chemistry steering growth.",
+            formula:
+              "\\text{Phototropism: auxin} \\rightarrow \\text{shaded side} \\rightarrow \\text{cells elongate} \\rightarrow \\text{bend toward light}",
+          },
+          {
+            heading: "6. Beating the Heat: C₃, C₄, and CAM",
+            content:
+              "The CO₂-fixing enzyme rubisco has an annoying flaw: in hot, bright conditions it grabs oxygen instead of CO₂ (photorespiration), wasting energy. Plants evolved three strategies to cope. Ordinary C₃ plants (rice, wheat) fix carbon directly and thrive in cool, moist climates. C₄ plants (maize, sugarcane) add a spatial trick — they concentrate CO₂ in special bundle-sheath cells away from oxygen, so rubisco works efficiently even in heat. CAM plants (cacti, pineapple) add a time trick — they open stomata only at night to collect CO₂, store it as acid, and use it by day, minimising water loss in deserts. These are not different photosyntheses but clever workarounds to the same problem, and they explain why certain crops dominate certain climates.",
+            formula:
+              "C_3\\ (\\text{direct}) \\;|\\; C_4\\ (\\text{spatial CO}_2 \\text{ concentration}) \\;|\\; CAM\\ (\\text{night-time CO}_2 \\text{ uptake})",
+          },
+        ],
+        keyPoints: [
+          "Photosynthesis builds sugar from air and water; a tree's mass is mostly carbon captured from CO₂, not soil",
+          "Water climbs tall trees by cohesion-tension — passive, sun-driven, with no pump",
+          "Transpiration is the unavoidable cost of opening stomata to take in CO₂, but it also cools and drives uptake",
+          "Xylem moves water up (dead, passive); phloem moves sugar both ways (living, pressure flow)",
+          "Hormones steer growth as directional responses; C₄/CAM are workarounds to rubisco's oxygen problem",
+        ],
+        commonMistakes: [
+          "Believing plants get most of their mass from soil — it comes overwhelmingly from CO₂ in the air",
+          "Confusing xylem (water, up only, passive) with phloem (food, both ways, active)",
+          "Treating transpiration as pure waste rather than a necessary cost plus a driver of water ascent",
+          "Thinking phototropism is movement like an animal's — it is uneven growth driven by auxin",
+          "Assuming all plants photosynthesise the same way, ignoring C₄ and CAM adaptations",
+        ],
+        practiceQuestions: [
+          "Explain why the bulk of a tree's dry mass comes from carbon dioxide rather than from the soil.",
+          "Describe the cohesion-tension mechanism and explain why an air bubble in the xylem is harmful.",
+          "Why is transpiration described as a 'necessary evil' for a photosynthesising plant?",
+          "Compare the structure and function of xylem and phloem, including why one is dead and the other living.",
+          "Explain how auxin causes a stem to bend toward light without any muscle-like contraction.",
+          "Why does nitrogen-deficiency yellowing appear in older leaves first?",
+          "Contrast the spatial solution of C₄ plants with the temporal solution of CAM plants.",
+        ],
+      },
     },
   },
 };
