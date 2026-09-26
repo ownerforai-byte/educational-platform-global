@@ -4,8 +4,17 @@ import * as THREE from "three";
 import { OrbitControls } from "three/addons/controls/OrbitControls.js";
 import { SUBJECT_ACCENT_MAP } from "./3d-rig/accents";
 import type { SubjectName } from "./3d-rig/types";
+import { registerSceneFx } from "./three-fx-registry";
 
 export type SceneQuality = "low" | "medium" | "high";
+
+export interface IntroOptions {
+  durationMs?: number;
+  /** How far back the fly-in starts, as a multiple of the resting distance. */
+  pullBack?: number;
+  /** Yaw offset (degrees) the camera twists through while settling in. */
+  twistDeg?: number;
+}
 
 export interface ThreeSceneOptions {
   cameraPosition?: THREE.Vector3;
@@ -23,6 +32,10 @@ export interface ThreeSceneOptions {
   quality?: SceneQuality;
   /** Set false for cheap scenes: drops the shadow map and shadow-casting key light. */
   shadows?: boolean;
+  /** Camera fly-in on mount (auto-cancelled by the first user interaction). False opts out. */
+  intro?: false | IntroOptions;
+  /** Raycast hover glow on scene meshes. Defaults true. */
+  hoverHighlight?: boolean;
 }
 
 export interface ThreeScene {
@@ -32,6 +45,10 @@ export interface ThreeScene {
   controls: OrbitControls;
   group: THREE.Group;
   container: HTMLElement;
+  /** Toggle wireframe on every mesh in the scene group. */
+  setWireframe: (on: boolean) => void;
+  /** (Re)play the camera fly-in; no-op under prefers-reduced-motion. */
+  replayIntro: () => void;
   dispose: () => void;
 }
 
@@ -134,6 +151,8 @@ export function createThreeScene(container: HTMLElement, opts: ThreeSceneOptions
     subject,
     quality = detectSceneQuality(),
     shadows = true,
+    intro = {},
+    hoverHighlight = true,
   } = opts;
 
   const accent = subject ? SUBJECT_ACCENT_MAP[subject] ?? SUBJECT_ACCENT_MAP.default : null;
@@ -181,6 +200,143 @@ export function createThreeScene(container: HTMLElement, opts: ThreeSceneOptions
   const group = new THREE.Group();
   scene.add(group);
 
+  // ── Motion layer: wireframe, camera fly-in intro, hover glow ──
+
+  const reduceMotion =
+    typeof window !== "undefined" &&
+    (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches ?? false);
+
+  const setWireframe = (on: boolean) => {
+    group.traverse((o) => {
+      const mesh = o as THREE.Mesh;
+      const mat = (mesh as unknown as { material?: THREE.Material | THREE.Material[] }).material;
+      if (!mat) return;
+      for (const m of Array.isArray(mat) ? mat : [mat]) {
+        if ("wireframe" in m) (m as THREE.MeshStandardMaterial).wireframe = on;
+      }
+    });
+    renderer.render(scene, camera);
+  };
+
+  const introOpts = intro === false ? null : { durationMs: 1400, pullBack: 1.9, twistDeg: 26, ...intro };
+  let introRaf = 0;
+  const replayIntro = () => {
+    if (!introOpts || reduceMotion) return;
+    cancelAnimationFrame(introRaf);
+    const target = controls.target.clone();
+    const rest = camera.position.clone();
+    const offset = rest.clone().sub(target).multiplyScalar(introOpts.pullBack);
+    offset.applyAxisAngle(
+      new THREE.Vector3(0, 1, 0),
+      THREE.MathUtils.degToRad(introOpts.twistDeg),
+    );
+    const from = offset.add(target);
+    camera.position.copy(from);
+    const t0 = performance.now();
+    const step = (now: number) => {
+      const t = Math.min(1, (now - t0) / introOpts.durationMs);
+      const eased = 1 - Math.pow(1 - t, 3);
+      camera.position.lerpVectors(from, rest, eased);
+      controls.update();
+      renderer.render(scene, camera);
+      if (t < 1) introRaf = requestAnimationFrame(step);
+    };
+    introRaf = requestAnimationFrame(step);
+  };
+  // The very first drag or wheel gesture takes over the camera — kill the tween.
+  const cancelIntro = () => cancelAnimationFrame(introRaf);
+  if (introOpts) {
+    renderer.domElement.addEventListener("pointerdown", cancelIntro);
+    renderer.domElement.addEventListener("wheel", cancelIntro);
+    // Defer one frame so the caller's geometry build lands before the fly-in.
+    requestAnimationFrame(() => replayIntro());
+  }
+
+  const raycaster = new THREE.Raycaster();
+  const hoverNdc = new THREE.Vector2();
+  const hoverSaved = new WeakMap<
+    THREE.MeshStandardMaterial,
+    { emissive: THREE.Color; intensity: number }
+  >();
+  let hoveredRoot: THREE.Object3D | null = null;
+  let hoverQueued = false;
+  let userDragging = false;
+  const markDragStart = () => {
+    userDragging = true;
+  };
+  const markDragEnd = () => {
+    userDragging = false;
+  };
+  const restoreHover = () => {
+    if (!hoveredRoot) return;
+    hoveredRoot.traverse((o) => {
+      const mat = (o as THREE.Mesh).material as THREE.MeshStandardMaterial | undefined;
+      if (!mat || Array.isArray(mat)) return;
+      const saved = hoverSaved.get(mat);
+      if (!saved) return;
+      mat.emissive.copy(saved.emissive);
+      mat.emissiveIntensity = saved.intensity;
+      hoverSaved.delete(mat);
+    });
+    hoveredRoot = null;
+    renderer.domElement.style.cursor = "grab";
+  };
+  const applyHover = (root: THREE.Object3D) => {
+    root.traverse((o) => {
+      const mat = (o as THREE.Mesh).material as THREE.MeshStandardMaterial | undefined;
+      if (!mat || Array.isArray(mat) || !(mat as THREE.MeshStandardMaterial).isMeshStandardMaterial) return;
+      if (hoverSaved.has(mat)) return;
+      hoverSaved.set(mat, { emissive: mat.emissive.clone(), intensity: mat.emissiveIntensity });
+      mat.emissive.copy(mat.color);
+      mat.emissiveIntensity = 0.22;
+    });
+    hoveredRoot = root;
+    renderer.domElement.style.cursor = "pointer";
+  };
+  const onHoverMove = (event: PointerEvent) => {
+    if (hoverQueued || userDragging) return;
+    hoverQueued = true;
+    requestAnimationFrame(() => {
+      hoverQueued = false;
+      const rect = renderer.domElement.getBoundingClientRect();
+      hoverNdc.x = ((event.clientX - rect.left) / rect.width) * 2 - 1;
+      hoverNdc.y = -((event.clientY - rect.top) / rect.height) * 2 + 1;
+      raycaster.setFromCamera(hoverNdc, camera);
+      const hits = raycaster.intersectObjects(group.children, true);
+      const hit = hits.find((h) => {
+        const m = (h.object as THREE.Mesh).material as THREE.MeshStandardMaterial | undefined;
+        return m && !Array.isArray(m) && (m as THREE.MeshStandardMaterial).isMeshStandardMaterial;
+      });
+      if (!hit) {
+        restoreHover();
+        renderer.render(scene, camera);
+        return;
+      }
+      // Highlight the whole direct-child assembly the mesh belongs to.
+      let root: THREE.Object3D = hit.object;
+      while (root.parent && root.parent !== group) root = root.parent;
+      if (root === hoveredRoot) return;
+      restoreHover();
+      applyHover(root);
+      renderer.render(scene, camera);
+    });
+  };
+  const onHoverLeave = () => {
+    restoreHover();
+    renderer.render(scene, camera);
+  };
+  if (hoverHighlight) {
+    renderer.domElement.style.cursor = "grab";
+    renderer.domElement.addEventListener("pointerdown", markDragStart);
+    window.addEventListener("pointerup", markDragEnd);
+    renderer.domElement.addEventListener("pointermove", onHoverMove);
+    renderer.domElement.addEventListener("pointerleave", onHoverLeave);
+  }
+
+  // Let VizToolbar find these effects without every scene threading props.
+  registerSceneFx(container, { setWireframe, replayIntro });
+  registerSceneFx(renderer.domElement, { setWireframe, replayIntro });
+
   let resizeObserver: ResizeObserver | null = null;
   if (responsive) {
     resizeObserver = new ResizeObserver(() => {
@@ -194,11 +350,18 @@ export function createThreeScene(container: HTMLElement, opts: ThreeSceneOptions
       resizeObserver.disconnect();
       resizeObserver = null;
     }
+    cancelAnimationFrame(introRaf);
     renderer.domElement.removeEventListener("webglcontextlost", onContextLost);
-    disposeThreeScene({ scene, camera, renderer, controls, group, container, dispose });
+    renderer.domElement.removeEventListener("pointerdown", cancelIntro);
+    renderer.domElement.removeEventListener("wheel", cancelIntro);
+    renderer.domElement.removeEventListener("pointerdown", markDragStart);
+    window.removeEventListener("pointerup", markDragEnd);
+    renderer.domElement.removeEventListener("pointermove", onHoverMove);
+    renderer.domElement.removeEventListener("pointerleave", onHoverLeave);
+    disposeThreeScene({ scene, camera, renderer, controls, group, container, setWireframe, replayIntro, dispose });
   };
 
-  return { scene, camera, renderer, controls, group, container, dispose };
+  return { scene, camera, renderer, controls, group, container, setWireframe, replayIntro, dispose };
 }
 
 /**
