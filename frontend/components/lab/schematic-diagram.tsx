@@ -1,8 +1,40 @@
 "use client";
 
-import React, { useCallback, useMemo, useRef, useState } from "react";
+import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import {
+  ZoomIn,
+  ZoomOut,
+  Maximize,
+  ListTree,
+  Play,
+  ChevronLeft,
+  ChevronRight,
+  X,
+  MousePointerClick,
+} from "lucide-react";
 import { matchConceptSchematic } from "@/components/lab/schematic-concepts";
 import { getUnitConcept } from "@/lib/visual-concept-map";
+
+// Shared viewBox for every schematic — used to map pointer coords <-> viewBox space.
+const VIEW_W = 900;
+const VIEW_H = 520;
+const MIN_ZOOM = 0.6;
+const MAX_ZOOM = 3;
+
+// Motion styles (scoped `sd-` prefix; injected once). Pure CSS so we add no dependency.
+const SD_CSS = `
+@keyframes sd-pop{0%{opacity:0;transform:scale(.35)}70%{opacity:1;transform:scale(1.06)}100%{opacity:1;transform:scale(1)}}
+@keyframes sd-fade-up{0%{opacity:0;transform:translateY(8px)}100%{opacity:1;transform:translateY(0)}}
+@keyframes sd-draw{to{stroke-dashoffset:0}}
+.sd-art{animation:sd-fade-up .4s ease}
+.sd-chip{transform-box:fill-box;transform-origin:center;animation:sd-pop .4s cubic-bezier(.2,.9,.3,1.3) backwards}
+.sd-pin{transform-box:fill-box;transform-origin:center;animation:sd-pop .45s cubic-bezier(.2,.9,.3,1.3) backwards}
+.sd-conn{stroke-dasharray:var(--len,600);stroke-dashoffset:var(--len,600);animation:sd-draw .85s cubic-bezier(.4,0,.2,1) forwards}
+.sd-drawer{animation:sd-fade-up .28s ease}
+.sd-tip{animation:sd-fade-up .16s ease}
+`;
+
+type ViewTransform = { x: number; y: number; k: number };
 
 export interface DiagramAnnotation {
   id: string;
@@ -52,7 +84,79 @@ export function SchematicDiagram({
   const collapseAll = useCallback(() => {
     setExpandedMap({});
     setSelectedId(null);
+    setTour(null);
   }, []);
+
+  // ── Motion & interaction state ──
+  const reduceMotion =
+    typeof window !== "undefined" &&
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const svgRef = useRef<SVGSVGElement | null>(null);
+  const wrapRef = useRef<HTMLDivElement | null>(null);
+  const [view, setView] = useState<ViewTransform>({ x: 0, y: 0, k: 1 });
+  const [connLens, setConnLens] = useState<Record<string, number>>({});
+  const [hoveredId, setHoveredId] = useState<string | null>(null);
+  const [tour, setTour] = useState<number | null>(null);
+  const [showIndex, setShowIndex] = useState(false);
+  const dragRef = useRef<{ px: number; py: number; ox: number; oy: number; moved: boolean } | null>(null);
+  const didDragRef = useRef(false);
+
+  const clampZoom = (k: number) => Math.min(MAX_ZOOM, Math.max(MIN_ZOOM, k));
+
+  // Native non-passive wheel listener so we can preventDefault while zooming.
+  useEffect(() => {
+    const el = svgRef.current;
+    if (!el) return;
+    const onWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      const rect = el.getBoundingClientRect();
+      const px = ((e.clientX - rect.left) / rect.width) * VIEW_W;
+      const py = ((e.clientY - rect.top) / rect.height) * VIEW_H;
+      const factor = e.deltaY < 0 ? 1.14 : 1 / 1.14;
+      setView((v) => {
+        const k = clampZoom(v.k * factor);
+        const s = k / v.k;
+        return { k, x: px - (px - v.x) * s, y: py - (py - v.y) * s };
+      });
+    };
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
+  }, []);
+
+  const onPointerDown = (e: React.PointerEvent<SVGSVGElement>) => {
+    if (e.button !== 0 && e.pointerType === "mouse") return;
+    svgRef.current?.setPointerCapture(e.pointerId);
+    dragRef.current = { px: e.clientX, py: e.clientY, ox: view.x, oy: view.y, moved: false };
+  };
+  const onPointerMove = (e: React.PointerEvent<SVGSVGElement>) => {
+    const d = dragRef.current;
+    if (!d) return;
+    const dx = e.clientX - d.px;
+    const dy = e.clientY - d.py;
+    if (Math.abs(dx) + Math.abs(dy) > 4) d.moved = true;
+    didDragRef.current = d.moved;
+    if (!d.moved) return;
+    const rect = svgRef.current?.getBoundingClientRect();
+    if (!rect) return;
+    setView((v) => ({
+      ...v,
+      x: d.ox + (dx / rect.width) * VIEW_W,
+      y: d.oy + (dy / rect.height) * VIEW_H,
+    }));
+  };
+  const endDrag = () => {
+    dragRef.current = null;
+    // Defer clearing so the click that follows a drag can read didDragRef.
+    setTimeout(() => {
+      didDragRef.current = false;
+    }, 0);
+  };
+  const resetView = () => setView({ x: 0, y: 0, k: 1 });
+  const nudgeZoom = (dir: 1 | -1) =>
+    setView((v) => ({ ...v, k: clampZoom(v.k * (dir === 1 ? 1.25 : 1 / 1.25)) }));
+
   const normalizedSubject = useMemo(() => {
     const s = subjectSlug.toLowerCase();
     if (s.includes("physic")) return "physics";
@@ -680,8 +784,100 @@ export function SchematicDiagram({
   conceptAnnotationsRef.current = diagramData.annotations;
   const revealedCount = diagramData.annotations.filter((a) => expandedMap[a.id]).length;
 
+  const orderedIds = useMemo(
+    () => diagramData.annotations.map((a) => a.id),
+    [diagramData]
+  );
+
+  // Measure connector lengths synchronously before paint so each connector's
+  // CSS draw-in animation uses its true length (draws fully, no flash).
+  useLayoutEffect(() => {
+    const root = svgRef.current;
+    if (!root) return;
+    const lens: Record<string, number> = {};
+    root.querySelectorAll<SVGPathElement>("[data-conn-id]").forEach((p) => {
+      const id = p.getAttribute("data-conn-id");
+      if (!id) return;
+      try {
+        lens[id] = p.getTotalLength();
+      } catch {
+        /* unrendered */
+      }
+    });
+    setConnLens(lens);
+  }, [diagramData]);
+
+  // Reset pan/zoom + UI state when the topic changes.
+  useEffect(() => {
+    setView({ x: 0, y: 0, k: 1 });
+    setHoveredId(null);
+    setTour(null);
+    setShowIndex(false);
+  }, [diagramData]);
+
+  const goToTourIndex = useCallback(
+    (i: number) => {
+      const n = orderedIds.length;
+      if (!n) return;
+      const idx = ((i % n) + n) % n;
+      setTour(idx);
+      const id = orderedIds[idx];
+      setSelectedId(id);
+      setExpandedMap({ [id]: true });
+    },
+    [orderedIds]
+  );
+
+  const startTour = useCallback(() => {
+    if (!orderedIds.length) return;
+    setExpandedMap({});
+    goToTourIndex(0);
+  }, [orderedIds, goToTourIndex]);
+
+  const onKeyDown = (e: React.KeyboardEvent) => {
+    if (!orderedIds.length) return;
+    if (tour !== null) {
+      if (e.key === "ArrowRight") {
+        e.preventDefault();
+        goToTourIndex(tour + 1);
+      } else if (e.key === "ArrowLeft") {
+        e.preventDefault();
+        goToTourIndex(tour - 1);
+      } else if (e.key === "Escape") {
+        e.preventDefault();
+        setTour(null);
+      }
+      return;
+    }
+    const cur = selectedId ? orderedIds.indexOf(selectedId) : -1;
+    if (e.key === "ArrowRight" || e.key === "ArrowLeft") {
+      e.preventDefault();
+      const i =
+        e.key === "ArrowRight"
+          ? (cur + 1) % orderedIds.length
+          : (cur - 1 + orderedIds.length) % orderedIds.length;
+      setSelectedId(orderedIds[i]);
+      setExpandedMap({ [orderedIds[i]]: true });
+    } else if ((e.key === "Enter" || e.key === " ") && selectedId) {
+      e.preventDefault();
+      toggleExpanded(selectedId);
+    }
+  };
+
+  const hovered = hoveredId
+    ? diagramData.annotations.find((a) => a.id === hoveredId) ?? null
+    : null;
+
   return (
-    <div className={`space-y-3 ${className}`}>
+    <div
+      className={`space-y-3 ${className}`}
+      tabIndex={0}
+      role="group"
+      aria-label="Interactive schematic"
+      onKeyDown={onKeyDown}
+      style={{ outline: "none" }}
+    >
+      <style>{SD_CSS}</style>
       {/* ── Toolbar: label reveal controls + status ── */}
       <div className="flex flex-wrap items-center justify-between gap-2">
         <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
@@ -697,7 +893,27 @@ export function SchematicDiagram({
           <span aria-hidden>·</span>
           <span>{revealedCount} revealed</span>
         </div>
-        <div className="flex items-center gap-1.5">
+        <div className="flex flex-wrap items-center gap-1.5">
+          <button
+            type="button"
+            onClick={startTour}
+            className="inline-flex items-center gap-1 rounded-lg border border-primary/30 bg-primary/10 px-2.5 py-1 text-[11px] font-bold text-primary transition-colors hover:bg-primary/20"
+          >
+            <Play className="h-3 w-3" /> Walk through
+          </button>
+          <button
+            type="button"
+            onClick={() => setShowIndex((s) => !s)}
+            aria-pressed={showIndex}
+            className={`inline-flex items-center gap-1 rounded-lg border px-2.5 py-1 text-[11px] font-medium transition-colors ${
+              showIndex
+                ? "border-primary/40 bg-primary/10 text-primary"
+                : "border-border text-muted-foreground hover:border-primary/40 hover:text-primary"
+            }`}
+          >
+            <ListTree className="h-3 w-3" /> Parts index
+          </button>
+          <span className="mx-1 hidden h-4 w-px bg-border sm:block" />
           <button
             type="button"
             onClick={revealAll}
@@ -712,13 +928,92 @@ export function SchematicDiagram({
           >
             Collapse all
           </button>
+          <span className="mx-1 hidden h-4 w-px bg-border sm:block" />
+          <button
+            type="button"
+            onClick={() => nudgeZoom(-1)}
+            aria-label="Zoom out"
+            className="rounded-lg border border-border p-1.5 text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
+          >
+            <ZoomOut className="h-3.5 w-3.5" />
+          </button>
+          <button
+            type="button"
+            onClick={resetView}
+            title="Reset zoom & pan"
+            className="min-w-[3rem] rounded-lg border border-border px-1.5 py-1 text-[11px] font-semibold tabular-nums text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
+          >
+            {Math.round(view.k * 100)}%
+          </button>
+          <button
+            type="button"
+            onClick={() => nudgeZoom(1)}
+            aria-label="Zoom in"
+            className="rounded-lg border border-border p-1.5 text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
+          >
+            <ZoomIn className="h-3.5 w-3.5" />
+          </button>
+          <button
+            type="button"
+            onClick={resetView}
+            aria-label="Reset view"
+            className="rounded-lg border border-border p-1.5 text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
+          >
+            <Maximize className="h-3.5 w-3.5" />
+          </button>
         </div>
       </div>
 
+      {/* ── Guided walk-through banner ── */}
+      {tour !== null && (
+        <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-primary/30 bg-primary/5 px-3 py-2">
+          <div className="flex items-center gap-2 text-xs">
+            <MousePointerClick className="h-3.5 w-3.5 text-primary" />
+            <span className="font-semibold text-foreground">
+              Part {tour + 1} of {orderedIds.length}
+            </span>
+            <span className="hidden text-muted-foreground sm:inline">
+              — use ← → keys or the buttons to step through each labelled part
+            </span>
+          </div>
+          <div className="flex items-center gap-1.5">
+            <button
+              type="button"
+              onClick={() => goToTourIndex(tour - 1)}
+              className="inline-flex items-center gap-0.5 rounded-lg border border-border px-2 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
+            >
+              <ChevronLeft className="h-3 w-3" /> Prev
+            </button>
+            <button
+              type="button"
+              onClick={() => goToTourIndex(tour + 1)}
+              className="inline-flex items-center gap-0.5 rounded-lg border border-primary/30 bg-primary/10 px-2 py-1 text-[11px] font-bold text-primary transition-colors hover:bg-primary/20"
+            >
+              Next <ChevronRight className="h-3 w-3" />
+            </button>
+            <button
+              type="button"
+              onClick={() => setTour(null)}
+              aria-label="Exit walk-through"
+              className="rounded-lg border border-border p-1.5 text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
+            >
+              <X className="h-3 w-3" />
+            </button>
+          </div>
+        </div>
+      )}
+
+      <div ref={wrapRef} className="relative">
       <svg
+        ref={svgRef}
         viewBox={diagramData.viewBox}
-        className="w-full h-auto"
-        style={{ overflow: "visible" }}
+        className="sd-art block w-full h-auto select-none"
+        style={{ overflow: "visible", touchAction: "none", cursor: "grab" }}
+        onPointerDown={onPointerDown}
+        onPointerMove={onPointerMove}
+        onPointerUp={endDrag}
+        onPointerLeave={endDrag}
+        onDoubleClick={resetView}
       >
       <defs>
         <marker id="arrow" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto">
@@ -738,10 +1033,11 @@ export function SchematicDiagram({
         </marker>
       </defs>
 
+      <g transform={`translate(${view.x} ${view.y}) scale(${view.k})`}>
       {diagramData.renderSvg()}
 
       {/* ── Label chips: always-visible, clickable ── */}
-      {diagramData.annotations.map((ann) => {
+      {diagramData.annotations.map((ann, idx) => {
         const cColor = ann.color || "#38bdf8";
         const expanded = expandedMap[ann.id] ?? false;
         const isSelected = selectedId === ann.id;
@@ -751,12 +1047,16 @@ export function SchematicDiagram({
         return (
           <g
             key={`chip-${ann.id}`}
+            className="sd-chip"
+            style={{ cursor: "pointer", animationDelay: reduceMotion ? "0ms" : `${idx * 70}ms` }}
             transform={`translate(${ann.labelX}, ${ann.labelY})`}
-            style={{ cursor: "pointer" }}
             onClick={(e) => {
+              if (didDragRef.current) return;
               e.stopPropagation();
               toggleExpanded(ann.id);
             }}
+            onMouseEnter={() => setHoveredId(ann.id)}
+            onMouseLeave={() => setHoveredId((h) => (h === ann.id ? null : h))}
           >
             <rect
               x={-8}
@@ -783,7 +1083,7 @@ export function SchematicDiagram({
         );
       })}
 
-      {diagramData.annotations.map((ann) => {
+      {diagramData.annotations.map((ann, idx) => {
         const cColor = ann.color || "#38bdf8";
         const expanded = expandedMap[ann.id] ?? false;
 
@@ -813,18 +1113,30 @@ export function SchematicDiagram({
         const pinInnerR = expanded ? 4.2 : 2.8;
         const glyphR = expanded ? 3.4 : 2.2;
 
+        const len = connLens[ann.id] ?? 600;
+        const delay = reduceMotion ? "0ms" : `${idx * 70}ms`;
+        const connPathStyle = reduceMotion
+          ? undefined
+          : ({ "--len": String(len), animationDelay: delay } as React.CSSProperties);
+        const pinStyle: React.CSSProperties = reduceMotion
+          ? { animation: "none" }
+          : { animationDelay: delay };
+
         return (
           <g key={ann.id} data-ann-id={ann.id} data-expanded={expanded ? "1" : "0"}>
             <path
+              data-conn-id={ann.id}
+              className={reduceMotion ? undefined : "sd-conn"}
               d={pathD}
               fill="none"
               stroke={cColor}
               strokeWidth={strokeW}
               strokeOpacity={opacity}
               strokeLinecap="round"
+              style={connPathStyle}
             />
 
-            <path d={headD} fill={cColor} stroke="none" />
+            <path d={headD} fill={cColor} stroke="none" className="sd-pin" style={pinStyle} />
 
             <circle
               cx={ann.targetX}
@@ -833,6 +1145,8 @@ export function SchematicDiagram({
               fill={cColor}
               stroke="#ffffff"
               strokeWidth={expanded ? 2 : 1.5}
+              className="sd-pin"
+              style={pinStyle}
             />
 
             <circle
@@ -842,11 +1156,15 @@ export function SchematicDiagram({
               fill="#ffffff"
               stroke={cColor}
               strokeWidth={expanded ? 2.8 : 2.2}
-              style={{ cursor: "pointer" }}
+              className="sd-pin"
+              style={{ cursor: "pointer", ...pinStyle }}
               onClick={(e) => {
+                if (didDragRef.current) return;
                 e.stopPropagation();
                 toggleExpanded(ann.id);
               }}
+              onMouseEnter={() => setHoveredId(ann.id)}
+              onMouseLeave={() => setHoveredId((h) => (h === ann.id ? null : h))}
             />
             <circle
               cx={cx}
@@ -854,7 +1172,8 @@ export function SchematicDiagram({
               r={pinInnerR}
               fill={cColor}
               stroke="none"
-              style={{ pointerEvents: "none" }}
+              className="sd-pin"
+              style={{ pointerEvents: "none", ...pinStyle }}
             />
 
             {expanded ? (
@@ -892,12 +1211,67 @@ export function SchematicDiagram({
           </g>
         );
       })}
+      </g>
       </svg>
+
+      {hovered && !didDragRef.current && (
+        <div
+          className="sd-tip pointer-events-none absolute z-10 max-w-[230px] -translate-x-1/2 -translate-y-[130%] rounded-lg border bg-card/95 px-2.5 py-1.5 shadow-md backdrop-blur-sm"
+          style={{
+            left: `${(hovered.labelX / VIEW_W) * 100}%`,
+            top: `${(hovered.labelY / VIEW_H) * 100}%`,
+            borderColor: `${hovered.color || "#38bdf8"}55`,
+          }}
+        >
+          <p className="text-[11px] font-bold leading-tight" style={{ color: hovered.color || "#38bdf8" }}>
+            {hovered.label}
+          </p>
+          {hovered.formulaOrValue && (
+            <p className="mt-0.5 break-words font-mono text-[10px] leading-snug text-muted-foreground">
+              {hovered.formulaOrValue}
+            </p>
+          )}
+        </div>
+      )}
+      </div>
+
+      {/* ── Parts index: accessible list of every labelled part ── */}
+      {showIndex && (
+        <div className="rounded-xl border border-border bg-muted/20 p-3">
+          <p className="mb-2 text-[11px] font-semibold text-muted-foreground">
+            Parts index — click to locate on the diagram
+          </p>
+          <div className="flex flex-wrap gap-1.5">
+            {diagramData.annotations.map((ann) => {
+              const active = selectedId === ann.id;
+              return (
+                <button
+                  key={ann.id}
+                  type="button"
+                  onClick={() => {
+                    setSelectedId(ann.id);
+                    setExpandedMap({ [ann.id]: true });
+                  }}
+                  className={`inline-flex items-center gap-1.5 rounded-lg border px-2 py-1 text-left text-[11px] transition-colors ${
+                    active
+                      ? "border-primary/50 bg-primary/10 font-semibold"
+                      : "border-border bg-card hover:border-primary/40"
+                  }`}
+                >
+                  <span className="h-2 w-2 shrink-0 rounded-full" style={{ backgroundColor: ann.color || "#38bdf8" }} />
+                  <span className="text-foreground">{ann.label}</span>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      )}
 
       {/* ── Detail drawer: the clicked label's formula + exam note ── */}
       {selected ? (
         <div
-          className="rounded-2xl border bg-card p-4 space-y-2 shadow-sm animate-in fade-in"
+          key={selected.id}
+          className="sd-drawer rounded-2xl border bg-card p-4 space-y-2 shadow-sm"
           style={{ borderColor: `${selected.color || "#38bdf8"}66` }}
         >
           <div className="flex flex-wrap items-center justify-between gap-2">
