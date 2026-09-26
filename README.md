@@ -162,6 +162,13 @@ committed — even to a throwaway branch or checkpoint — rotate it immediately
 API call) and purge history with `git filter-repo`. Treat any credential that has touched Git as
 compromised; assume the object store is copied, forked, and archived elsewhere.
 
+## Agent Instructions (read before editing)
+
+Agents: read `BRANCHES.md` (branch map — 48 area branches, reserved worktree
+branches, scoped checks), then `AGENTS.md`, `project-conductor.md`, and
+`AGENT_RULES.md`. Run `npm run check` before each commit; `npm run check:all`
+before pushing `main`.
+
 ## Migration Notes
 
 - Old root `app/` implementation is retained intentionally until cutover; duplication is

@@ -11,6 +11,9 @@
     "build": "npm run build --workspace=educational-platform-backend",
     "start": "npm run start --workspace=educational-platform-backend",
     "lint": "npm run lint --workspace=educational-platform-backend",
-    "test": "npm run test:run --workspace=educational-platform-backend"
+    "test": "npm run test:run --workspace=educational-platform-backend",
+    "check": "node scripts/scoped-check.mjs",
+    "check:all": "node scripts/scoped-check.mjs --all",
+    "check:content": "node scripts/content-health-check.mjs"
   }
 }

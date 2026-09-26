@@ -7,6 +7,9 @@ repository.
 ## Pre-work Checklist
 1. Every agent MUST read `PROJECT_STATUS.md` before starting work.
 2. Every agent MUST read `AGENT_RULES.md` before modifying the project.
+2b. Every agent MUST read `BRANCHES.md` before creating, checking out, merging,
+    or deleting any branch, and before editing files (it maps each area to its
+    branch and names the reserved worktree branches that must never be touched).
 3. Every agent MUST inspect existing files before creating new files.
 4. Every agent MUST read `lib/syllabus.ts` and the MANDATORY AGENT RULE at the top of that file **before adding ANY content** (notes, chapters, topics, units, resources, lessons, videos, PDFs) to this project.
 
@@ -34,6 +37,18 @@ repository.
 - Completed work must be recorded.
 - Blocked work must be recorded as BLOCKED, with the reason.
 - Failed work must be recorded with the reason.
+
+## Branches
+- `main` is the only deployable branch (push = Vercel/Render production deploy).
+- One area per branch; merge area branches back to `main` often; delete a branch
+  only after `git branch --merged main` confirms it is merged.
+- Never force-push; never push all branches at once (each push of a branch
+  triggers a paid Vercel preview build).
+- Reserved (other sessions' worktrees, uncommitted work): `agents/*`,
+  `claude/*`, `worktree/*` — do not check out, delete, or modify.
+- Checks: `npm run check` (scoped to changed areas) before each commit;
+  `npm run check:all` (full gate) before pushing `main`.
+- Full branch map: `BRANCHES.md`.
 
 ## Code Quality
 - Agents must test their changes before marking work complete.
