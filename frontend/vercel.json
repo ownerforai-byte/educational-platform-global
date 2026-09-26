@@ -1,5 +1,20 @@
 {
   "framework": "nextjs",
   "buildCommand": "npm run build",
-  "outputDirectory": ".next"
+  "outputDirectory": ".next",
+  "git": {
+    "deploymentEnabled": {
+      "main": true,
+      "content/*": false,
+      "feature/*": false,
+      "backend/*": false,
+      "test/*": false,
+      "ci/*": false,
+      "chore/*": false,
+      "docs/*": false,
+      "agents/*": false,
+      "claude/*": false,
+      "worktree/*": false
+    }
+  }
 }

@@ -17,7 +17,9 @@ import { execSync, spawnSync } from "node:child_process";
 const ALL = process.argv.includes("--all");
 
 function git(...args) {
-  return execSync(`git ${args.join(" ")}`, { encoding: "utf8" }).trim();
+  // trimEnd only: `git status --porcelain` lines start with a space (" M x")
+  // that trim() would eat, shifting the slice(3) filename parse.
+  return execSync(`git ${args.join(" ")}`, { encoding: "utf8" }).trimEnd();
 }
 
 // Windows cannot spawn `npx`/`npm` without a shell.

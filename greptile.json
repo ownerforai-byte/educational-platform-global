@@ -1,0 +1,38 @@
+{
+  "instructions": "This repository is divided into 48 area branches (content/*, feature/*, backend/*, test/*, ci/*, chore/tooling, docs/agents-guides) — see BRANCHES.md at the repo root for the full area-to-branch map, reserved worktree branches, and scoped check commands. When reviewing a PR: (1) verify the change stays inside its branch's area as defined in BRANCHES.md and flag cross-area edits as scope creep unless the PR description says otherwise; (2) main is the only deployable branch — changes destined for main must pass `npm run check:all`, and scoped `npm run check` must pass for area branches; (3) reserved branches agents/*, claude/*, worktree/* hold other sessions' uncommitted work — flag any attempt to delete or rewrite them; (4) content/*.json must remain valid JSON (unescaped LaTeX backslashes and stray commas are the known corruption patterns); (5) never commit secrets (vcp_/sbp_/AIza/sk-/KEY=/TOKEN= patterns).",
+  "customContext": {
+    "files": [
+      {
+        "path": "BRANCHES.md",
+        "description": "Branch map, area definitions, reserved branches, scoped check commands — authoritative for scope review"
+      },
+      {
+        "path": "AGENT_RULES.md",
+        "description": "Mandatory agent rules: syllabus order, safety, security"
+      },
+      {
+        "path": "project-conductor.md",
+        "description": "Task labels, acceptance gates, branch workflow (section 7)"
+      }
+    ],
+    "rules": [
+      {
+        "rule": "Keep each change inside the area of its branch as mapped in BRANCHES.md; cross-area edits need explicit justification in the PR description",
+        "scope": ["**/*"]
+      },
+      {
+        "rule": "main is the only deployable branch; never force-push; never delete merged-confirmation-missing branches",
+        "scope": ["**/*"]
+      },
+      {
+        "rule": "content/**/*.json must parse as valid JSON — reject unescaped LaTeX backslashes and stray standalone commas/braces",
+        "scope": ["content/**/*.json"]
+      },
+      {
+        "rule": "Never commit secrets or API keys; flag any vcp_/sbp_/AIza/sk-/KEY=/TOKEN= pattern",
+        "scope": ["**/*"]
+      }
+    ]
+  },
+  "ignorePatterns": "node_modules/**\n.next/**\ndist/**\n.freebuff/**\ncontent/backup-physics-public-*/**\n*.log"
+}

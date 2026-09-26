@@ -1,0 +1,25 @@
+name: Content JSON
+
+# Validates every content/*.json parse. Scoped by path so it only runs
+# when content or the validator itself changes (BRANCHES.md §3).
+on:
+  push:
+    branches: [main]
+    paths:
+      - "content/**"
+      - "scripts/validate-content.mjs"
+  pull_request:
+    branches: [main]
+    paths:
+      - "content/**"
+      - "scripts/validate-content.mjs"
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node scripts/validate-content.mjs
