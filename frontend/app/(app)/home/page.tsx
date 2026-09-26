@@ -2,7 +2,8 @@ import { getTheoremIndex } from "@/lib/theorems";
 import { getDerivationIndex } from "@/lib/derivations";
 import { HomeCommandCenter } from "@/components/home/home-command-center";
 import { HomeIntroduction } from "@/components/home/home-introduction";
-import { HomePortals } from "@/components/home/home-portals";
+import { HomeOwnerNotice } from "@/components/home/home-owner-notice";
+import { DirectoryCard } from "@/features/credits";
 
 export const metadata = {
   title: "Ravikisan's Platform",
@@ -42,8 +43,13 @@ export default async function HomePage() {
       {/* Welcome introduction: the platform story + 4-step learning journey */}
       <HomeIntroduction />
 
-      {/* Compact gateway: every other section lives on its own hub page */}
-      <HomePortals />
+      {/* Owner notice — public, never gated. Owner intro + internal login. */}
+      <HomeOwnerNotice />
+
+      {/* Unified academic directory — one card, gated behind Gmail sign-in.
+          Hero + intro above stay public and structurally unchanged; the AI
+          Tutor entry inside the card stays free and public. */}
+      <DirectoryCard />
     </div>
   );
 }

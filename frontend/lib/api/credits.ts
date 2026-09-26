@@ -71,6 +71,29 @@ export async function getUserTransactions(): Promise<CreditTransaction[]> {
   return apiFetch<CreditTransaction[]>("/api/user/credits/transactions");
 }
 
+export interface UnlockResponse {
+  credits: number;
+  /** Unix epoch seconds — expiration = now + 7200. */
+  expiresAt: number;
+  /** Coins actually charged (0 for OWNER/ADMIN). */
+  cost: number;
+}
+
+/**
+ * Spend coins to open a content category for the 2-hour window.
+ * Server is authoritative: it re-checks the category's cost and the balance.
+ * 402 → insufficient credits (apiFetch surfaces the message).
+ */
+export async function unlockContent(
+  category: "lab3d" | "visuals" | "theory" | "reference",
+  moduleKey?: string,
+): Promise<UnlockResponse> {
+  return apiFetch<UnlockResponse>("/api/user/credits/unlock", {
+    method: "POST",
+    body: JSON.stringify({ category, moduleKey }),
+  });
+}
+
 // Admin endpoints
 export async function getAdminUsers(): Promise<AdminUser[]> {
   return apiFetch<AdminUser[]>("/api/admin/users");

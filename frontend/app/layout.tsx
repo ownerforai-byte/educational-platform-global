@@ -3,6 +3,7 @@ import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
 import { QueryProvider } from "@/providers/query-provider";
 import { AuthProvider } from "@/providers/auth-provider";
+import { CreditProvider } from "@/features/credits";
 import { ServiceWorkerRegistrar } from "@/components/pwa/service-worker-registrar";
 import { OfflineBanner } from "@/components/pwa/offline-banner";
 import { RawEventRejectionGuard } from "@/components/dev/raw-event-rejection-guard";
@@ -47,12 +48,14 @@ export default function RootLayout({
         <QueryProvider>
           <ThemeProvider defaultTheme="system" storageKey="neb-theme">
             <AuthProvider>
-              <RawEventRejectionGuard />
-              <ServiceWorkerRegistrar />
-              <OfflineBanner />
-              {/* Task 2: dev-only WCAG contrast audit — logs theme/pair/ratio warnings. */}
-              {process.env.NODE_ENV !== "production" && <DevContrastAudit />}
-              {children}
+              <CreditProvider>
+                <RawEventRejectionGuard />
+                <ServiceWorkerRegistrar />
+                <OfflineBanner />
+                {/* Task 2: dev-only WCAG contrast audit — logs theme/pair/ratio warnings. */}
+                {process.env.NODE_ENV !== "production" && <DevContrastAudit />}
+                {children}
+              </CreditProvider>
             </AuthProvider>
           </ThemeProvider>
         </QueryProvider>

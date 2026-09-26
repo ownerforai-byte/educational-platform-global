@@ -1,5 +1,6 @@
 import { AppShell } from "@/components/layout/app-shell";
 import { Suspense } from "react";
+import { RouteCreditGate } from "@/features/credits/route-gate";
 
 export default function AppLayout({
   children,
@@ -17,7 +18,11 @@ export default function AppLayout({
         </div>
       }
     >
-      <AppShell>{children}</AppShell>
+      <AppShell>
+        {/* Coin gate: blurs + overlays every paid route until unlocked for
+            2 hours. Public routes (home, AI chat, auth) pass through. */}
+        <RouteCreditGate>{children}</RouteCreditGate>
+      </AppShell>
     </Suspense>
   );
 }

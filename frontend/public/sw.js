@@ -9,8 +9,12 @@
  * Add route patterns to SW_ROUTES to cache additional pages.
  */
 
-const CACHE_NAME = "neb-vault-v4";
-const DATA_CACHE = "neb-data-v4";
+// v5 (2026-09-26): /chat stopped redirecting to /ai and is now the AI
+// Tutor's own dedicated page. Old v4 caches still hold the AI Studio render
+// under /chat (stale-while-revalidate would flash it once per visit), so
+// bump the cache name to force a clean precache of the new surface.
+const CACHE_NAME = "neb-vault-v5";
+const DATA_CACHE = "neb-data-v5";
 
 /** Pages to pre-cache on install (core app shell). */
 const SW_ROUTES = [

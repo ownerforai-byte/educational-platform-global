@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 import { z } from "zod";
-import { requireAuth, type AuthedRequest } from "../middleware/auth";
+import { requireAuth, hasFullAccess, type AuthedRequest } from "../middleware/auth";
 import { supabaseAdmin } from "../db/supabase";
 
 const router = Router();
@@ -115,6 +115,105 @@ router.post("/credits/request", requireAuth, async (req: Request, res: Response)
     res.status(201).json(data);
   } catch (err: any) {
     console.error(err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+// ── Token value allocation matrix (authoritative — mirrors the client) ───────
+const UNLOCK_COSTS: Record<"lab3d" | "visuals" | "theory" | "reference", number> = {
+  lab3d: 5,
+  visuals: 2,
+  theory: 1,
+  reference: 1,
+};
+
+const UNLOCK_WINDOW_SECONDS = 7200;
+
+const unlockSchema = z.object({
+  category: z.enum(["lab3d", "visuals", "theory", "reference"]),
+  moduleKey: z.string().min(1).max(200).optional(),
+});
+
+/**
+ * POST /api/user/credits/unlock
+ * Deduct the category's coin cost and return the 2-hour window expiration.
+ *
+ * 401 — unauthenticated
+ * 402 — insufficient credits
+ * 400 — unknown category
+ * 200 — { credits, expiresAt }
+ */
+router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) => {
+  const user = (req as AuthedRequest).user;
+  const parsed = unlockSchema.safeParse(req.body);
+
+  if (!parsed.success) {
+    res.status(400).json({ error: "Unknown content category" });
+    return;
+  }
+
+  const { category, moduleKey } = parsed.data;
+  const cost = UNLOCK_COSTS[category];
+  const expiresAt = Math.floor(Date.now() / 1000) + UNLOCK_WINDOW_SECONDS;
+
+  try {
+    const { data: profile, error: profileError } = await supabaseAdmin
+      .from("profiles")
+      .select("role, credits, premium_status")
+      .eq("id", user.id)
+      .maybeSingle();
+
+    if (profileError) {
+      console.error("Unlock: profile lookup failed:", profileError.message);
+      res.status(500).json({ error: "Failed to load profile" });
+      return;
+    }
+
+    const role = (profile?.role as string | undefined)?.toUpperCase() ?? null;
+    const premiumStatus = profile?.premium_status ?? false;
+    const privileged = hasFullAccess(role, premiumStatus);
+
+    // OWNER/ADMIN skip all checks — window still applies for UI consistency.
+    if (privileged) {
+      res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0 });
+      return;
+    }
+
+    const credits = profile?.credits ?? 0;
+
+    if (credits < cost) {
+      res.status(402).json({
+        error: "Insufficient credits",
+        required: cost,
+        current: credits,
+        message: "You need more coins to unlock this content.",
+      });
+      return;
+    }
+
+    const newCredits = credits - cost;
+
+    const { error: updateError } = await supabaseAdmin
+      .from("profiles")
+      .update({ credits: newCredits })
+      .eq("id", user.id);
+
+    if (updateError) {
+      console.error("Unlock: credit update failed:", updateError.message);
+      res.status(500).json({ error: "Failed to deduct credits" });
+      return;
+    }
+
+    await supabaseAdmin.from("credit_transactions").insert({
+      user_id: user.id,
+      amount: -cost,
+      type: "SPEND",
+      reason: `Unlocked ${category}${moduleKey ? ` (${moduleKey})` : ""} for 2h window`,
+    });
+
+    res.json({ credits: newCredits, expiresAt, cost });
+  } catch (err: any) {
+    console.error("Unlock error:", err?.message ?? err);
     res.status(500).json({ error: "Internal server error" });
   }
 });
