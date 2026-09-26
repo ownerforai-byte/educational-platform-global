@@ -109,6 +109,10 @@ export function AIChatInterface() {
   const [guestCredits, setGuestCredits] = useState<number>(50);
   const [restoredCount, setRestoredCount] = useState<number | null>(null);
   const [enhancing, setEnhancing] = useState(false);
+  // Tracks the one-time restore of persisted history: sends are blocked and a
+  // spinner is shown while "loading" (the restore appends to the message list,
+  // so an exchange sent mid-restore would be interleaved out of order).
+  const [historyState, setHistoryState] = useState<"idle" | "loading" | "ready">("idle");
   const historyLoadedRef = useRef(false);
 
   const chatBottomRef = useRef<HTMLDivElement>(null);
@@ -125,6 +129,7 @@ export function AIChatInterface() {
     // Signed in: restore the user's persisted conversation once per mount.
     if (historyLoadedRef.current) return;
     historyLoadedRef.current = true;
+    setHistoryState("loading");
     getChatHistory("default", 200)
       .then(({ messages }) => {
         if (!messages.length) return;
@@ -137,7 +142,8 @@ export function AIChatInterface() {
       })
       .catch(() => {
         // history unavailable (not migrated / offline) — fresh chat is fine
-      });
+      })
+      .finally(() => setHistoryState("ready"));
   }, [isLoggedIn]);
 
   useEffect(() => {

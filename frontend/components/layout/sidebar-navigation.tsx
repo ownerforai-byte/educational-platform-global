@@ -17,6 +17,7 @@ import {
   Users,
   Coins,
   Crown,
+  ShieldCheck,
   ChevronsUp,
   Sparkles,
   Atom,
@@ -94,7 +95,7 @@ const accountItems: NavItem[] = [
   { href: "/credits", label: "Credits & Plan", icon: Coins, badge: "Wallet" },
 ];
 
-const adminItems: NavItem[] = [
+const ownerItems: NavItem[] = [
   { href: "/admin", label: "Admin Panel", icon: ShieldCheck, badge: "Admin" },
   { href: "/controller", label: "Controller", icon: Crown, badge: "Master" },
 ];

@@ -18,7 +18,6 @@ import {
   Atom,
   Binary,
   Workflow,
-  Sparkles,
   HelpCircle,
   Target,
   Users,
