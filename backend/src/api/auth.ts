@@ -1,7 +1,8 @@
 import { Request, Response, Router } from "express";
 import { z } from "zod";
 import { isProductionEnv } from "../config/env";
-import { supabaseAdmin } from "../db/supabase";
+import { createAuthClient, supabaseAdmin } from "../db/supabase";
+import { ensureDailyCredits } from "../utils/credits";
 import {
   signInWithPassword,
   signUp,
@@ -98,6 +99,10 @@ async function buildExtendedUser(
       .update({ full_name: fullName.trim() })
       .eq("id", userId);
   }
+
+  // Lazy midnight reset (owner policy): a session fetched after 12:00 AM
+  // reports today's daily pool, not yesterday's spent balance.
+  await ensureDailyCredits(userId, email, role);
 
   const profile = await supabaseAdmin
     .from("profiles")
@@ -234,7 +239,10 @@ router.post("/refresh", async (req: Request, res: Response) => {
     (req.cookies?.[REFRESH_COOKIE] as string | undefined) || undefined;
 
   if (refreshToken) {
-    const { data, error } = await supabaseAdmin.auth.refreshSession({ refresh_token: refreshToken });
+    // Throwaway client: refreshSession stores the new user session on the
+    // client, which would downgrade the shared supabaseAdmin client's later
+    // data writes to the user's RLS rights (silent 0-row updates).
+    const { data, error } = await createAuthClient().auth.refreshSession({ refresh_token: refreshToken });
     const session = data?.session;
 
     if (!error && session?.access_token) {

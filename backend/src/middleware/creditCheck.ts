@@ -5,9 +5,12 @@ import { extractToken, hasFullAccess } from "./auth";
 // ── Feature cost table ─────────────────────────────────────────────────────
 // As of 2026-09-10 all features are public (cost 0, no premium gate).
 // Bump values here to re-enable per-feature gating.
+// Owner policy 2026-09-26: every AI chat message costs 1 credit from the
+// user's daily pool (reset to 8 at 12:00 AM — see utils/credits.ts).
+// Everything else stays public (cost 0, no premium gate).
 const PREMIUM_FEATURES = {
   lab: { cost: 0, requiresPremium: false },
-  aiChat: { cost: 0, requiresPremium: false },
+  aiChat: { cost: 1, requiresPremium: false },
   bookmarks: { cost: 0, requiresPremium: false },
   progress: { cost: 0, requiresPremium: false },
   premiumLab: { cost: 0, requiresPremium: false },

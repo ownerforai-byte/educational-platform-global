@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import { z } from "zod";
 import { requireAuth, hasFullAccess, type AuthedRequest } from "../middleware/auth";
 import { supabaseAdmin } from "../db/supabase";
+import { ensureDailyCredits } from "../utils/credits";
 
 const router = Router();
 
@@ -17,6 +18,9 @@ router.get("/me", requireAuth, async (req: Request, res: Response) => {
   const user = (req as AuthedRequest).user;
 
   try {
+    // Lazy midnight reset: a fetch after 12:00 AM surfaces today's pool.
+    const ensured = await ensureDailyCredits(user.id, user.email, user.role);
+
     const { data: profile, error } = await supabaseAdmin
       .from("profiles")
       .select("id, full_name, role, credits, credits_limit, premium_status, premium_approved_at")
@@ -45,7 +49,8 @@ router.get("/me", requireAuth, async (req: Request, res: Response) => {
       email: user.email,
       fullName: profile?.full_name ?? null,
       role: profile?.role ?? user.role,
-      credits: profile?.credits ?? 0,
+      credits: ensured.unlimited ? profile?.credits ?? 0 : (profile?.credits ?? ensured.credits),
+      dailyPool: ensured.unlimited ? null : 8,
       creditsLimit: profile?.credits_limit ?? 100,
       premiumStatus: profile?.premium_status ?? false,
       premiumApprovedAt: profile?.premium_approved_at ?? null,

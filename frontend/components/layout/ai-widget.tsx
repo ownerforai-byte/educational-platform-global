@@ -9,7 +9,8 @@ import { MathMarkdown } from "@/components/content/math-markdown";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 
-const MAX_GUEST_MESSAGES = 7;
+// Mirrors the server's GUEST_DAILY_LIMIT (ai-guest.ts): 5/day, reset 12:00 AM.
+const MAX_GUEST_MESSAGES = 5;
 const STORAGE_KEY = "neb_ai_guest_count";
 const CREDITS_STORAGE_KEY = "neb_guest_credits";
 const GREETING =
@@ -120,7 +121,7 @@ export function AIWidget() {
     } catch (e: any) {
       if (e.message?.includes("429") || e.message?.includes("limit reached")) {
         setError("Message limit reached. Sign in to continue.");
-        setMessages((prev) => [...prev, { role: "assistant", content: "🔒 You've used all 7 guest messages. Sign in or create an account to keep chatting!" }]);
+        setMessages((prev) => [...prev, { role: "assistant", content: "🔒 You've used all 5 free guest messages for today. Sign in or create an account to keep chatting!" }]);
       } else if (e.message?.includes("Insufficient") || e.message?.includes("402")) {
         setError("Guest credits exhausted.");
         setMessages((prev) => [...prev, { role: "assistant", content: "💰 Your guest credits ran out. Sign in to get more credits and continue chatting!" }]);

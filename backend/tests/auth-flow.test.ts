@@ -2,8 +2,8 @@ import express, { Express } from "express";
 import cookieParser from "cookie-parser";
 import { afterAll, beforeAll, beforeEach, describe, expect, test, vi, type Mock } from "vitest";
 
-vi.mock("../src/db/supabase", () => ({
-  supabaseAdmin: {
+vi.mock("../src/db/supabase", () => {
+  const admin = {
     auth: {
       signInWithPassword: vi.fn(),
       signUp: vi.fn(),
@@ -13,8 +13,14 @@ vi.mock("../src/db/supabase", () => ({
       admin: { updateUserById: vi.fn() },
     },
     from: vi.fn(),
-  },
-}));
+  };
+  return {
+    supabaseAdmin: admin,
+    // Prod uses a throwaway client per auth call (session isolation); the
+    // tests reuse the same mock so existing assertions hold.
+    createAuthClient: () => admin,
+  };
+});
 
 // Routers owned by another agent (resources/progress/bookmarks) are under
 // active concurrent edits; stub them so mounting the full app stays stable.

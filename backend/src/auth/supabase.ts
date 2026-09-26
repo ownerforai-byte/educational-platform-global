@@ -1,4 +1,4 @@
-import { supabaseAdmin } from "../db/supabase";
+import { createAuthClient, supabaseAdmin } from "../db/supabase";
 
 /** Normalized auth failure surfaced to route handlers. */
 export class AuthProviderError extends Error {
@@ -19,9 +19,17 @@ export class AuthProviderError extends Error {
  * never talk to `supabaseAdmin.auth` directly.
  */
 
-/** Sign in with email + password. Returns the Supabase result shape. */
+/**
+ * Sign in with email + password. Returns the Supabase result shape.
+ *
+ * Runs on a throwaway auth client: a successful sign-in stores the user's
+ * session on the client, and supabase-js would then send that USER JWT (not
+ * the service-role key) on every later data request from it — silently
+ * breaking RLS-gated writes such as the daily credit reset (see
+ * db/supabase.ts createAuthClient).
+ */
 export async function signInWithPassword(email: string, password: string) {
-  return supabaseAdmin.auth.signInWithPassword({ email, password });
+  return createAuthClient().auth.signInWithPassword({ email, password });
 }
 
 export interface SignUpInput {
@@ -49,7 +57,11 @@ export interface SignUpResult {
 export async function signUp(input: SignUpInput): Promise<SignUpResult> {
   const { email, password, fullName } = input;
 
-  const { data, error } = await supabaseAdmin.auth.signUp({
+  // One throwaway client for the whole signup flow (sign-up → auto-confirm →
+  // sign-in) so the shared data client never adopts a user session.
+  const auth = createAuthClient().auth;
+
+  const { data, error } = await auth.signUp({
     email,
     password,
     options: { data: { full_name: fullName ?? null } },
@@ -75,12 +87,12 @@ export async function signUp(input: SignUpInput): Promise<SignUpResult> {
   // No session → Supabase wants email confirmation. Try to auto-confirm.
   if (data.user) {
     try {
-      await (supabaseAdmin.auth.admin.updateUserById as (
+      await (auth.admin.updateUserById as (
         id: string,
         attrs: Record<string, unknown>,
       ) => Promise<unknown>)(data.user.id, { email_confirm: true });
 
-      const signIn = await supabaseAdmin.auth.signInWithPassword({ email, password });
+      const signIn = await auth.signInWithPassword({ email, password });
       if (signIn.data.session && signIn.data.user) {
         return {
           user: { id: signIn.data.user.id, email: signIn.data.user.email ?? email },

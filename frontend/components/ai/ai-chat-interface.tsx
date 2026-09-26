@@ -79,28 +79,32 @@ const SUGGESTED_PROMPTS = [
   },
 ];
 
-// Guest cap matches the ai-widget's 7-message limit so anonymous visitors
-// can't burn unlimited paid AI credits.
-const MAX_GUEST_MESSAGES = 7;
-const STORAGE_KEY = "neb_ai_guest_count";
-const CREDITS_STORAGE_KEY = "neb_guest_credits";
+// Daily credit pools (owner policy 2026-09-26): guests get 5 free
+// messages/day, logged users get 8 credits/day — both reset at 12:00 AM.
+// The server enforces the real counts; localStorage is display-only.
+const MAX_GUEST_MESSAGES = 5;
+const DAILY_CREDIT_POOL = 8;
+const STORAGE_KEY = "neb_ai_guest_day";
+const GUEST_COUNT_KEY = "neb_ai_guest_count";
 const ACTIVE_SESSION_KEY = "neb_ai_active_session";
 
-function getGuestCount(): number {
-  if (typeof window === "undefined") return 0;
-  const v = localStorage.getItem(STORAGE_KEY);
-  return v ? parseInt(v, 10) : 0;
+function guestDayKey(): string {
+  return new Date().toISOString().slice(0, 10);
 }
 
-function incGuestCount(): void {
+function readGuestState(): { day: string; count: number } {
+  if (typeof window === "undefined") return { day: guestDayKey(), count: 0 };
+  const day = localStorage.getItem(STORAGE_KEY);
+  const count = parseInt(localStorage.getItem(GUEST_COUNT_KEY) || "0", 10) || 0;
+  // New day (past 12:00 AM) → pool is fresh.
+  if (day !== guestDayKey()) return { day: guestDayKey(), count: 0 };
+  return { day, count };
+}
+
+function writeGuestState(count: number): void {
   if (typeof window === "undefined") return;
-  localStorage.setItem(STORAGE_KEY, String(getGuestCount() + 1));
-}
-
-function getGuestCredits(): number {
-  if (typeof window === "undefined") return 50;
-  const v = localStorage.getItem(CREDITS_STORAGE_KEY);
-  return v ? parseInt(v, 10) : 50;
+  localStorage.setItem(STORAGE_KEY, guestDayKey());
+  localStorage.setItem(GUEST_COUNT_KEY, String(count));
 }
 
 function newSessionId(): string {
@@ -128,7 +132,11 @@ export function AIChatInterface() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
-  const [guestCredits, setGuestCredits] = useState<number>(50);
+  // Guest usage lives in localStorage — it must NEVER be read during render,
+  // or the server HTML (always 0) won't match the hydrated client (the
+  // 2026-09-26 hydration error on /chat: "7" vs "6"). Seed after mount.
+  const [guestCount, setGuestCount] = useState(0);
+  const [dailyCredits, setDailyCredits] = useState<number | null>(null);
   const [enhancing, setEnhancing] = useState(false);
   const [historyState, setHistoryState] = useState<"idle" | "loading" | "ready">("idle");
   const historyLoadedRef = useRef(false);
@@ -144,7 +152,7 @@ export function AIChatInterface() {
   const sessionRef = useRef(session);
   sessionRef.current = session;
 
-  const guestCount = getGuestCount();
+  const guestCredits = Math.max(0, MAX_GUEST_MESSAGES - guestCount);
   const isGuestLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
 
   const refreshSessions = useCallback(async () => {
@@ -184,7 +192,9 @@ export function AIChatInterface() {
 
   useEffect(() => {
     if (!isLoggedIn) {
-      setGuestCredits(getGuestCredits());
+      // Post-mount only: localStorage is unavailable on the server, so the
+      // first client render must match the server's count of 0 exactly.
+      setGuestCount(readGuestState().count);
       setHistoryState("ready");
       return;
     }
@@ -194,7 +204,10 @@ export function AIChatInterface() {
     setSession(active);
     loadSessionHistory(active);
     refreshSessions();
-  }, [isLoggedIn, loadSessionHistory, refreshSessions]);
+    // Signed-in header shows the live daily pool (8 credits/day, resets
+    // at 12:00 AM) — /api/auth/me already applied the lazy midnight reset.
+    if (user && typeof user.credits === "number") setDailyCredits(user.credits);
+  }, [isLoggedIn, loadSessionHistory, refreshSessions, user]);
 
   useEffect(() => {
     chatBottomRef.current?.scrollIntoView({ behavior: "smooth" });
@@ -206,7 +219,7 @@ export function AIChatInterface() {
     if (historyState === "loading") return;
 
     if (isGuestLimited) {
-      setError("You've reached the free guest message limit. Please sign in to continue unlimited AI tutoring!");
+      setError("You've used all 5 free guest messages for today. Your pool resets to 5 at 12:00 AM — or sign in for 8 daily credits & saved histories.");
       return;
     }
 
@@ -223,6 +236,8 @@ export function AIChatInterface() {
         const res = await chat([...messages, userMsg]);
         const assistantMsg: AIChatMessage = { role: "assistant", content: res.response };
         setMessages((prev) => [...prev, assistantMsg]);
+        // Server reports the balance after this message's 1-credit spend.
+        if (typeof res.credits === "number") setDailyCredits(res.credits);
         saveChatHistory(targetSession, [
           { role: "user", content: textToSend },
           { role: "assistant", content: res.response },
@@ -255,15 +270,22 @@ export function AIChatInterface() {
         const res = await guestChat([...messages, userMsg]);
         const assistantMsg: AIChatMessage = { role: "assistant", content: res.response };
         setMessages((prev) => [...prev, assistantMsg]);
-        const newCredits = res.remaining ?? Math.max(0, getGuestCredits() - 2);
-        setGuestCredits(newCredits);
-        localStorage.setItem(CREDITS_STORAGE_KEY, String(newCredits));
-        incGuestCount();
+        // Server-side count is the source of truth; mirror it locally.
+        const used = MAX_GUEST_MESSAGES - (res.remaining ?? MAX_GUEST_MESSAGES - guestCount - 1);
+        const next = Math.min(MAX_GUEST_MESSAGES, Math.max(guestCount + 1, used));
+        writeGuestState(next);
+        setGuestCount(next);
       }
     } catch (err: any) {
       console.error("AI chat error:", err);
       const msg = err.message || "Failed to reach AI Tutor. Please try again.";
       setError(msg);
+      // 402 = the server has counted this guest's daily pool as empty (another
+      // tab/device) — sync local state so the composer locks immediately.
+      if (!isLoggedIn && err?.status === 402) {
+        writeGuestState(MAX_GUEST_MESSAGES);
+        setGuestCount(MAX_GUEST_MESSAGES);
+      }
       setMessages((prev) => [
         ...prev,
         {
@@ -442,7 +464,9 @@ export function AIChatInterface() {
           <div className="p-3 border-t border-border/50">
             <div className="flex items-center gap-2 text-[10px] text-muted-foreground">
               <Coins className="h-3.5 w-3.5 text-amber-500" />
-              <span className="font-semibold">{user?.credits ?? 0} credits</span>
+              <span className="font-semibold">
+                {Math.min(dailyCredits ?? user?.credits ?? DAILY_CREDIT_POOL, DAILY_CREDIT_POOL)}/{DAILY_CREDIT_POOL} credits today
+              </span>
             </div>
           </div>
         </aside>
@@ -480,13 +504,16 @@ export function AIChatInterface() {
             {!isLoggedIn && (
               <span className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-600 font-semibold">
                 <Coins className="h-3 w-3" />
-                {guestCredits} guest credits
+                {guestCredits}/{MAX_GUEST_MESSAGES} free today
               </span>
             )}
             {isLoggedIn && (
-              <span className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-muted border border-border/60 font-semibold">
+              <span
+                className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-muted border border-border/60 font-semibold"
+                title={`1 credit per message · daily pool resets to ${DAILY_CREDIT_POOL} at 12:00 AM`}
+              >
                 <Coins className="h-3 w-3 text-amber-500" />
-                {user?.credits ?? 0}
+                {Math.min(dailyCredits ?? user?.credits ?? DAILY_CREDIT_POOL, DAILY_CREDIT_POOL)}/{DAILY_CREDIT_POOL} credits today
               </span>
             )}
             {displayMessages.length > 0 && (

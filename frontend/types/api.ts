@@ -326,6 +326,12 @@ export interface AIChatRequest {
 export interface AIChatResponse {
   response: string;
   provider: string;
+  /** Credits left after this message's 1-credit spend (logged users). */
+  credits?: number;
+  /** Guest messages left in today's 5-message pool. */
+  remaining?: number;
+  /** The guest daily pool size (5). */
+  limit?: number;
 }
 
 export interface AISearchRequest {

@@ -882,7 +882,11 @@ export class AIService {
     // made replies nondeterministic; a per-provider cap keeps the total wait
     // under the Next dev proxy's ~30s POST kill. The LAST LLM link gets the
     // whole remaining budget (free-tier models queue past any fixed cap).
-    const GLOBAL_BUDGET_MS = Number(process.env.AI_CHAIN_BUDGET_MS) || 28000;
+    // 20000 (was 28000): the professor web search above can burn up to 6s
+    // BEFORE the chain starts, and the Next dev proxy kills any POST at ~30s
+    // with its own 500 ("Internal Server Error" console report, 2026-09-26).
+    // 6s search + 20s chain = 26s worst case, safely under that ceiling.
+    const GLOBAL_BUDGET_MS = Number(process.env.AI_CHAIN_BUDGET_MS) || 20000;
     const PER_PROVIDER_MS = Number(process.env.AI_PROVIDER_TIMEOUT_MS) || 10000;
     // Owner policy: Agnes is THE responder. It gets a longer window than the
     // fallbacks so only a real failure/timeout (not mere slowness) moves the
