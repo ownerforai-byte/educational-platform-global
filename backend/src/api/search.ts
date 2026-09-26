@@ -1,6 +1,7 @@
 ﻿import { Router, Request, Response } from "express";
 import { createAIService } from "../ai/service";
 import { PUBLIC_SITE_URL } from "../config/env";
+import { serverError } from "../middleware/errors";
 import { supabaseAdmin } from "../db/supabase";
 
 interface DbClass {
@@ -141,7 +142,7 @@ router.post("/", async (req: Request, res: Response) => {
     });
   } catch (err: any) {
     console.error("Search error:", err);
-    res.status(500).json({ error: err.message || "Search failed" });
+    serverError(res, err);
   }
 });
 

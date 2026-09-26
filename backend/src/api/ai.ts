@@ -1,7 +1,9 @@
 import { Router, Request, Response } from "express";
+import { serverError } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { requireAuth } from "../middleware/auth";
 import { requireCredit } from "../middleware/creditCheck";
+import { logServerError, newErrorId } from "../middleware/errors";
 import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
 
 const router = Router();
@@ -52,8 +54,15 @@ router.post("/", requireAuth, requireCredit("aiChat"), async (req: Request, res:
         const response = await aiService.chat(provider || aiService.getDefaultProvider(), messages);
         // Send the full response as a single event (simplified streaming)
         res.write(`data: ${JSON.stringify({ content: response, done: true })}\n\n`);
-      } catch (err: any) {
-        res.write(`event: error\ndata: ${JSON.stringify({ error: err.message })}\n\n`);
+      } catch (err) {
+        // SSE headers are already sent, so serverError() cannot be used — but
+        // the raw provider error still must not reach the client. Log it under
+        // a correlation id and send only the generic message + that id.
+        const errorId = newErrorId();
+        logServerError(err, errorId, "POST /api/ai (stream)");
+        res.write(
+          `event: error\ndata: ${JSON.stringify({ error: "AI request failed", errorId })}\n\n`,
+        );
       }
       res.end();
       return;
@@ -63,7 +72,7 @@ router.post("/", requireAuth, requireCredit("aiChat"), async (req: Request, res:
     res.json({ response, provider: provider || aiService.getDefaultProvider() });
   } catch (err: any) {
     console.error("AI chat error:", err);
-    res.status(500).json({ error: err.message || "AI request failed" });
+    serverError(res, err);
   }
 });
 

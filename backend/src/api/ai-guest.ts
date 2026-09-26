@@ -1,4 +1,5 @@
 import { Router, Request, Response } from "express";
+import { serverError } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { rateLimit } from "../middleware/rateLimit";
 import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
@@ -33,7 +34,7 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
     res.json({ response, provider: provider || aiService.getDefaultProvider() });
   } catch (err: any) {
     console.error("AI guest chat error:", err);
-    res.status(500).json({ error: err.message || "AI request failed" });
+    serverError(res, err);
   }
 });
 

@@ -657,6 +657,7 @@ class AgnesProvider implements AIProvider {
   private apiUrl = "https://apihub.agnes-ai.com/v1/chat/completions";
   private model = process.env.AGNES_MODEL || "agnes-3.0-flash";
   private apiKey: string;
+  private timeoutMs: number;
 
   constructor(apiKey: string) {
     this.apiKey = apiKey;
@@ -664,7 +665,7 @@ class AgnesProvider implements AIProvider {
     this.apiUrl = process.env.AGNES_API_URL || "https://api.agnes.ai/v1/chat/completions";
     this.model = process.env.AGNES_MODEL || "agnes-2.5-flash";
     // Fail fast so the chain can reach openrouter/internal when Agnes is down.
-    this.timeoutMs = Number(process.env.AGNES_TIMEOUT_MS || 12000);
+    this.timeoutMs = Number(process.env.AGNES_TIMEOUT_MS || 29000);
   }
 
   private async callAgnes(messages: Array<AIChatMessage>): Promise<string> {
@@ -683,20 +684,12 @@ class AgnesProvider implements AIProvider {
         temperature: 0.7,
       }),
       // Agnes gateway can queue; cap the wait so the chain stays responsive.
-      signal: AbortSignal.timeout(29000),
+      signal: AbortSignal.timeout(this.timeoutMs),
     });
 
-      if (!res.ok) {
-        const text = await res.text();
-        throw new Error(`Agnes error: ${res.status} ${text}`);
-      }
-
-      const data = await res.json();
-      const text = data?.choices?.[0]?.message?.content;
-      if (!text) throw new Error("Empty Agnes response");
-      return text;
-    } finally {
-      clearTimeout(timer);
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`Agnes error: ${res.status} ${text}`);
     }
 
     const data = await res.json();

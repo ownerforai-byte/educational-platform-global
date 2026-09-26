@@ -1,4 +1,5 @@
 import { Router, Request, Response } from "express";
+import { serverError } from "../middleware/errors";
 import { supabaseAdmin } from "../db/supabase";
 import { requireAuth, type AuthedRequest } from "../middleware/auth";
 
@@ -22,14 +23,14 @@ router.get("/", requireAuth, async (req: Request, res: Response) => {
     const { data, error } = await query;
 
     if (error) {
-      res.status(500).json({ error: error.message });
+      serverError(res, error);
       return;
     }
 
     res.json(data ?? []);
   } catch (err: any) {
     console.error(err);
-    res.status(500).json({ error: err.message || "Internal server error" });
+    serverError(res, err);
   }
 });
 
@@ -94,7 +95,7 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     res.status(201).json(row);
   } catch (err: any) {
     console.error(err);
-    res.status(500).json({ error: err.message || "Internal server error" });
+    serverError(res, err);
   }
 });
 
@@ -110,14 +111,14 @@ router.delete("/:id", requireAuth, async (req: Request, res: Response) => {
       .eq("user_id", user.id);
 
     if (error) {
-      res.status(500).json({ error: error.message });
+      serverError(res, error);
       return;
     }
 
     res.json({ success: true });
   } catch (err: any) {
     console.error(err);
-    res.status(500).json({ error: err.message || "Internal server error" });
+    serverError(res, err);
   }
 });
 

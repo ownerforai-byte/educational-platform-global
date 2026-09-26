@@ -1,4 +1,5 @@
 import { Router, Request, Response } from "express";
+import { serverError } from "../middleware/errors";
 import { supabaseAdmin } from "../db/supabase";
 import { extractToken } from "../middleware/auth";
 
@@ -79,7 +80,7 @@ router.get("/content-stats", async (req: Request, res: Response) => {
     });
   } catch (err: any) {
     console.error(err);
-    res.status(500).json({ error: err.message || "Internal server error" });
+    serverError(res, err);
   }
 });
 
@@ -118,7 +119,7 @@ router.get("/settings", async (req: Request, res: Response) => {
     res.json({ settings, map });
   } catch (err: any) {
     console.error(err);
-    res.status(500).json({ error: err.message || "Internal server error" });
+    serverError(res, err);
   }
 });
 
@@ -192,7 +193,7 @@ router.patch("/settings", async (req: Request, res: Response) => {
     res.json({ settings: updated });
   } catch (err: any) {
     console.error(err);
-    res.status(500).json({ error: err.message || "Internal server error" });
+    serverError(res, err);
   }
 });
 

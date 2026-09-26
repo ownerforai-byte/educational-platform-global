@@ -28,10 +28,12 @@ const nextConfig = {
     },
   },
   typescript: {
-    // Pre-existing lab component TS errors (missing imports, null safety)
-    // block deployment. Skip type-check at build time so auth fix ships;
-    // lab files will be cleaned up in a follow-up.
-    ignoreBuildErrors: true,
+    // Build must fail on type errors. This used to be `true` to let a deploy
+    // ship despite pre-existing lab-component errors, which is exactly how an
+    // undefined `ShieldCheck`/`ownerItems`/`historyState` reached production as
+    // a Vercel build failure: nothing failed until the static export evaluated
+    // the module. `npm run typecheck` is clean again, so the safety net is back.
+    ignoreBuildErrors: false,
   },
   outputFileTracingRoot: path.resolve(__dirname, ".."),
 

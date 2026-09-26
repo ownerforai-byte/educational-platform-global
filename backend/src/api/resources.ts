@@ -1,4 +1,5 @@
 import { Router, Request, Response } from "express";
+import { serverError } from "../middleware/errors";
 import { supabaseAdmin } from "../db/supabase";
 
 const router = Router();
@@ -73,14 +74,14 @@ router.get("/", async (_req: Request, res: Response) => {
     const { data, error } = await query;
 
     if (error) {
-      res.status(500).json({ error: error.message });
+      serverError(res, error);
       return;
     }
 
     res.json(data ?? []);
   } catch (err: any) {
     console.error("resources GET failed:", err);
-    res.status(500).json({ error: err.message || "Internal server error" });
+    serverError(res, err);
   }
 });
 
@@ -111,7 +112,7 @@ router.post("/", async (req: Request, res: Response) => {
     .single();
 
   if (error) {
-    res.status(500).json({ error: error.message });
+    serverError(res, error);
     return;
   }
 
@@ -180,14 +181,14 @@ router.get("/:id/linked", async (req: Request, res: Response) => {
 
     if (error) {
       console.error("linked resources lookup failed:", error.message);
-      res.status(500).json({ error: error.message });
+      serverError(res, error);
       return;
     }
 
     res.json(data ?? []);
   } catch (err: any) {
     console.error("linked resources lookup failed:", err);
-    res.status(500).json({ error: err.message || "Internal server error" });
+    serverError(res, err);
   }
 });
 
@@ -394,7 +395,7 @@ router.post("/:id/link", async (req: Request, res: Response) => {
     .single();
 
   if (error) {
-    res.status(500).json({ error: error.message });
+    serverError(res, error);
     return;
   }
 

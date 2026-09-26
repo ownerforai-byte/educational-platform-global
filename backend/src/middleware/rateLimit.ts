@@ -1,13 +1,36 @@
 import { Request, Response, NextFunction } from "express";
 
-const WINDOW_MS = Number(process.env.RATE_LIMIT_WINDOW_MS || 60000);
+/**
+ * Positive-number env parsing. `Number("abc")` is NaN, and a NaN limit
+ * silently disables the limiter (`count > NaN` is always false), so anything
+ * unusable falls back to the built-in default instead of failing open.
+ */
+function positiveNumber(raw: string | undefined, fallback: number): number {
+  const value = Number(raw);
+  return Number.isFinite(value) && value > 0 ? value : fallback;
+}
+
+const WINDOW_MS = positiveNumber(process.env.RATE_LIMIT_WINDOW_MS, 60_000);
 // Global default per IP per window. Raised from 20 (2026-09-25): a normal
 // curriculum page load fires a dozen parallel content calls and was tripping
 // the old cap in real use.
-const MAX_REQUESTS = Number(process.env.RATE_LIMIT_MAX_REQUESTS || 60);
+const MAX_REQUESTS = positiveNumber(process.env.RATE_LIMIT_MAX_REQUESTS, 60);
 // Strict tier for credential endpoints: brute-force protection. Override with
 // AUTH_RATE_LIMIT_MAX_REQUESTS if needed.
-const AUTH_MAX_REQUESTS = Number(process.env.AUTH_RATE_LIMIT_MAX_REQUESTS || 10);
+//
+// Lowered 10 → 5 (2026-09-25 security pass): the pre-deploy checklist asks for
+// at most 5 login attempts per minute per IP.
+const AUTH_MAX_REQUESTS = positiveNumber(process.env.AUTH_RATE_LIMIT_MAX_REQUESTS, 5);
+// Password reset gets its own, much longer window: the checklist asks for 3
+// attempts per hour per IP (email-bombing + reset-token guessing).
+const PASSWORD_RESET_MAX_REQUESTS = positiveNumber(
+  process.env.PASSWORD_RESET_RATE_LIMIT_MAX_REQUESTS,
+  3,
+);
+const PASSWORD_RESET_WINDOW_MS = positiveNumber(
+  process.env.PASSWORD_RESET_RATE_LIMIT_WINDOW_MS,
+  60 * 60 * 1000,
+);
 
 const hits = new Map<string, { count: number; reset: number }>();
 
@@ -21,11 +44,23 @@ function getClientId(req: Request): string {
   return ip;
 }
 
+type Tier = "auth" | "password-reset" | "guest-ai" | "default" | "default-unlimited";
+
 /** Which tier does this request fall into? */
-function tierFor(originalUrl: string | undefined): "auth" | "guest-ai" | "default" | "default-unlimited" {
+function tierFor(originalUrl: string | undefined): Tier {
   const url = originalUrl ?? "";
-  // Auth endpoints: strictest (brute-force protection).
-  if (url.startsWith("/api/auth/login") || url.startsWith("/api/auth/refresh")) {
+  // Password reset first: its own long window (3/hour).
+  if (url.startsWith("/api/auth/reset-password") || url.startsWith("/api/auth/forgot-password")) {
+    return "password-reset";
+  }
+  // Credential endpoints: strictest (brute-force protection). signup belongs
+  // here too — mass account creation is the same abuse class as credential
+  // stuffing, and it used to sit on the 60/min default tier.
+  if (
+    url.startsWith("/api/auth/login") ||
+    url.startsWith("/api/auth/refresh") ||
+    url.startsWith("/api/auth/signup")
+  ) {
     return "auth";
   }
   // Guest AI is anonymous and burns paid credits: standard cap. Authenticated
@@ -37,18 +72,24 @@ function tierFor(originalUrl: string | undefined): "auth" | "guest-ai" | "defaul
   return "default";
 }
 
-const TIERS: Record<string, number> = {
-  auth: AUTH_MAX_REQUESTS,
-  "guest-ai": MAX_REQUESTS,
-  default: MAX_REQUESTS,
-  "default-unlimited": Infinity,
+interface TierLimit {
+  max: number;
+  windowMs: number;
+}
+
+const TIERS: Record<Tier, TierLimit> = {
+  auth: { max: AUTH_MAX_REQUESTS, windowMs: WINDOW_MS },
+  "password-reset": { max: PASSWORD_RESET_MAX_REQUESTS, windowMs: PASSWORD_RESET_WINDOW_MS },
+  "guest-ai": { max: MAX_REQUESTS, windowMs: WINDOW_MS },
+  default: { max: MAX_REQUESTS, windowMs: WINDOW_MS },
+  "default-unlimited": { max: Infinity, windowMs: WINDOW_MS },
 };
 
 export function rateLimit(req: Request, res: Response, next: NextFunction) {
   const tier = tierFor(req.originalUrl);
-  const max = TIERS[tier] ?? MAX_REQUESTS;
+  const limit = TIERS[tier] ?? TIERS.default;
 
-  if (max === Infinity) {
+  if (!Number.isFinite(limit.max)) {
     next();
     return;
   }
@@ -69,14 +110,14 @@ export function rateLimit(req: Request, res: Response, next: NextFunction) {
   const entry = hits.get(id);
 
   if (!entry || now > entry.reset) {
-    hits.set(id, { count: 1, reset: now + WINDOW_MS });
+    hits.set(id, { count: 1, reset: now + limit.windowMs });
     next();
     return;
   }
 
   entry.count += 1;
 
-  if (entry.count > max) {
+  if (entry.count > limit.max) {
     res.status(429).json({ error: "Too many requests" });
     return;
   }

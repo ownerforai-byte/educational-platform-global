@@ -1,11 +1,9 @@
 import express from "express";
 import path from "path";
 import cors from "cors";
-import helmet from "helmet";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
 import authRoutes from "./api/auth";
-import chatHistoryRoutes from "./api/chat-history";
 import aiRoutes from "./api/ai";
 import aiGuestRoutes from "./api/ai-guest";
 import aiGenerateRoutes from "./api/ai-generate";
@@ -35,14 +33,15 @@ import periodicTableRoutes from "./api/periodic-table";
 import lessonsRoutes from "./api/lessons";
 import { rateLimit } from "./middleware/rateLimit";
 import { isOriginAllowed } from "./middleware/cors";
-import { isProduction } from "./config/env";
+import { securityHeaders, LEGACY_STATIC_PAGE_CSP } from "./middleware/securityHeaders";
+import { errorHandler, notFoundHandler } from "./middleware/errors";
+import { logRegisteredRoutes } from "./utils/routeDebug";
 
 export function createApp(): express.Express {
   const app = express();
 
   app.set("trust proxy", 1);
-  // Configure helmet to allow iframe embedding in preview
-  app.use(helmet({ frameguard: false, contentSecurityPolicy: false }));
+  app.use(securityHeaders);
   app.use(
     cors({
       origin(origin, cb) {
@@ -65,7 +64,16 @@ export function createApp(): express.Express {
     path.join(process.cwd(), "..", "public"),
   ];
   for (const p of publicPaths) {
-    app.use(express.static(p));
+    app.use(
+      express.static(p, {
+        setHeaders(res) {
+          // public/index.html loads the Tailwind CDN plus an inline boot script,
+          // so it needs a wider policy than the strict one every API response
+          // carries. Scoped to static files only.
+          res.setHeader("Content-Security-Policy", LEGACY_STATIC_PAGE_CSP);
+        },
+      }),
+    );
   }
 
   app.get("/health", (_req, res) => {
@@ -78,19 +86,8 @@ export function createApp(): express.Express {
     });
   });
 
-  // Debug: log all registered routes (suppressed in production)
-  if (!isProduction) {
-  app._router.stack.forEach((layer: any) => {
-    if (layer.route) {
-      const methods = layer.route.methods ? Object.keys(layer.route.methods).join(", ") : "use";
-      console.log(`  ${methods.padEnd(7)} ${layer.route.path}`);
-    } else if (layer.name === "router") {
-      console.log(`  [Router] ${layer.regexp}`);
-    } else {
-      console.log(`  [Middleware] type=${layer.name || "unknown"}`);
-    }
-  });
-  }
+  // Route-table dump: opt-in only (ROUTE_DEBUG=true) and never in production.
+  logRegisteredRoutes(app, "BEFORE API REGISTRATION");
 
   app.use("/api/ai", aiRoutes);
   app.use("/api/ai/guest", aiGuestRoutes);
@@ -98,7 +95,6 @@ export function createApp(): express.Express {
   app.use("/api/ai/enhance", aiEnhanceRoutes);
   app.use("/api/chat-history", chatHistoryRoutes);
   app.use("/api/auth", authRoutes);
-  app.use("/api/chat-history", chatHistoryRoutes);
   app.use("/api/bookmarks", bookmarksRoutes);
   app.use("/api/chapters", chaptersRoutes);
   app.use("/api/classes", classesRoutes);
@@ -122,30 +118,12 @@ export function createApp(): express.Express {
   app.use("/api/periodic-table", periodicTableRoutes);
   app.use("/api/lessons", lessonsRoutes);
 
-  // Debug after API routes (suppressed in production)
-  if (!isProduction) {
-  console.log("\n=== AFTER API REGISTRATION ===");
-  app._router.stack.forEach((layer: any) => {
-    if (layer.route) {
-      const methods = layer.route.methods ? Object.keys(layer.route.methods).join(", ") : "use";
-      console.log(`  ${methods.padEnd(7)} ${layer.route.path}`);
-    } else if (layer.name === "router") {
-      console.log(`  [Router] ${layer.regexp}`);
-    } else {
-      console.log(`  [Middleware] type=${layer.name || "unknown"}`);
-    }
-  });
-  console.log("=== END ===\n");
-  }
+  logRegisteredRoutes(app, "AFTER API REGISTRATION");
 
-  app.use((_req, res) => {
-    res.status(404).json({ error: "Not found" });
-  });
-
-  app.use((err: any, _req: express.Request, res: express.Response, _next: express.NextFunction) => {
-    console.error(err);
-    res.status(err.status || 500).json({ error: "Internal server error" });
-  });
+  app.use(notFoundHandler);
+  // Terminal handler: internal detail goes to the server log under a
+  // correlation id; the client gets a generic message plus that id.
+  app.use(errorHandler);
 
   return app;
 }

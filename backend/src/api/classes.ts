@@ -1,4 +1,5 @@
 import { Router } from "express";
+import { serverError } from "../middleware/errors";
 import { supabaseAdmin } from "../db/supabase";
 
 const router = Router();
@@ -26,13 +27,13 @@ router.get("/:slug", async (req, res) => {
       .order("order", { ascending: true });
 
     if (subjectsError) {
-      return res.status(500).json({ error: subjectsError.message });
+      return serverError(res, subjectsError);
     }
 
     return res.json({ class: cls, subjects: subjects ?? [] });
   } catch (err: any) {
     console.error(err);
-    return res.status(500).json({ error: err.message || "Internal server error" });
+    return serverError(res, err);
   }
 });
 

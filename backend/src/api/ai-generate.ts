@@ -1,4 +1,5 @@
 import { Router, Request, Response } from "express";
+import { serverError } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { supabaseAdmin } from "../db/supabase";
 import { rateLimit } from "../middleware/rateLimit";
@@ -299,7 +300,7 @@ ${keyTermsContext ? `KEY TERMS FROM SYLLABUS:\n${keyTermsContext}` : "Use standa
       } satisfies GenerateQuestionsResponse);
     } catch (err: any) {
       console.error("AI generate-questions error:", err);
-      res.status(500).json({ error: err.message || "Question generation failed" });
+      serverError(res, err);
     }
   }
 );

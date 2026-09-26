@@ -1,4 +1,5 @@
 import { Router, Request, Response } from "express";
+import { serverError } from "../middleware/errors";
 import { z } from "zod";
 import { supabaseAdmin } from "../db/supabase";
 import { requireAuth, type AuthedRequest } from "../middleware/auth";
@@ -29,7 +30,7 @@ router.get("/", requireAuth, async (req: Request, res: Response) => {
       .order("updated_at", { ascending: false });
 
     if (error) {
-      res.status(500).json({ error: error.message });
+      serverError(res, error);
       return;
     }
 
@@ -60,7 +61,7 @@ router.get("/", requireAuth, async (req: Request, res: Response) => {
     res.json(progress);
   } catch (err: any) {
     console.error(err);
-    res.status(500).json({ error: err.message || "Internal server error" });
+    serverError(res, err);
   }
 });
 
@@ -92,14 +93,14 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
       .single();
 
     if (error) {
-      res.status(500).json({ error: error.message });
+      serverError(res, error);
       return;
     }
 
     res.json(data);
   } catch (err: any) {
     console.error(err);
-    res.status(500).json({ error: err.message || "Internal server error" });
+    serverError(res, err);
   }
 });
 
