@@ -29,7 +29,10 @@ import {
   Eye,
   EyeOff,
   Move3d,
+  Box,
+  Sparkles,
 } from "lucide-react";
+import { lookupSceneFx, type SceneFx } from "@/components/lab/three-fx-registry";
 
 /** Everything a visual pushes so VizToolbar can drive it. All optional. */
 export interface VizTarget {
@@ -65,6 +68,10 @@ export interface VizTarget {
   render?: () => void;
   /** Show/hide in-canvas labels — required for the labels button. */
   setLabels?: (on: boolean) => void;
+  /** Toggle wireframe on every mesh — provided by three-scene.ts scenes. */
+  setWireframe?: (on: boolean) => void;
+  /** Replay the camera fly-in intro. */
+  replayIntro?: () => void;
 }
 
 export type VizTargetRef = React.MutableRefObject<VizTarget>;
@@ -108,6 +115,8 @@ export function VizToolbar({
   const is2D = typeof zoom === "number" && typeof onZoomChange === "function";
 
   const [hasControls, setHasControls] = useState(false);
+  const [hasFx, setHasFx] = useState(false);
+  const [wireOn, setWireOn] = useState(false);
   const [distPct, setDistPct] = useState(100);
   const [autorot, setAutorot] = useState(true);
   const [speedIdx, setSpeedIdx] = useState(1);
@@ -118,7 +127,8 @@ export function VizToolbar({
   /* Poll for the visual's (possibly async-created) controls and capture defaults. */
   useEffect(() => {
     const t = window.setInterval(() => {
-      const c = targetRef.current?.controls ?? null;
+      const tgt = targetRef.current;
+      const c = tgt?.controls ?? null;
       if (c?.object?.position && c.target && !initialRef.current) {
         initialRef.current = {
           pos: { ...c.object.position },
@@ -128,6 +138,7 @@ export function VizToolbar({
         setHasControls(true);
         setAutorot(c.autoRotate ?? true);
       }
+      if (tgt?.setWireframe || tgt?.replayIntro || lookupSceneFx(tgt?.canvasEl ?? tgt?.el)) setHasFx(true);
     }, 400);
     return () => window.clearInterval(t);
   }, [targetRef]);
@@ -196,6 +207,29 @@ export function VizToolbar({
     targetRef.current?.setLabels?.(next);
   }, [labelsOn, onLabelsToggle, targetRef]);
 
+  const wireframeFn = useCallback((): SceneFx["setWireframe"] | null => {
+    const tgt = targetRef.current;
+    if (tgt?.setWireframe) return tgt.setWireframe;
+    const fx = lookupSceneFx(tgt?.canvasEl ?? tgt?.el);
+    return fx ? fx.setWireframe : null;
+  }, [targetRef]);
+
+  const toggleWireframe = useCallback(() => {
+    const fn = wireframeFn();
+    if (!fn) return;
+    const next = !wireOn;
+    setWireOn(next);
+    fn(next);
+  }, [wireOn, wireframeFn]);
+
+  const replayIntro = useCallback(() => {
+    const tgt = targetRef.current;
+    const fx = tgt?.replayIntro ? tgt : lookupSceneFx(tgt?.canvasEl ?? tgt?.el);
+    if (!fx) return;
+    resetView();
+    ("replayIntro" in fx ? fx.replayIntro : undefined)?.();
+  }, [targetRef, resetView]);
+
   const screenshot = useCallback(() => {
     const tgt = targetRef.current;
     if (!tgt?.canvasEl) return;
@@ -226,6 +260,7 @@ export function VizToolbar({
       else if (e.key === "-" || e.key === "_") applyZoom(1.25);
       else if (e.key === "0") resetView();
       else if (e.key === "f" || e.key === "F") void toggleFs();
+      else if (e.key === "w" || e.key === "W") toggleWireframe();
       else if (e.key === " ") {
         e.preventDefault();
         toggleRotate();
@@ -233,7 +268,7 @@ export function VizToolbar({
     };
     window.addEventListener("keydown", h);
     return () => window.removeEventListener("keydown", h);
-  }, [hover, applyZoom, resetView, toggleFs, toggleRotate]);
+  }, [hover, applyZoom, resetView, toggleFs, toggleRotate, toggleWireframe]);
 
   /* Track hover on the visual's own element (not the toolbar). */
   useEffect(() => {
@@ -272,6 +307,20 @@ export function VizToolbar({
       <button onClick={cycleSpeed} className={`${btn} w-auto px-1.5`} title="Rotation speed">
         <span className="text-[10px] font-bold">{SPEEDS[speedIdx]}x</span>
       </button>
+      {hasFx ? (
+        <>
+          <button
+            onClick={toggleWireframe}
+            className={`${btn} ${wireOn ? "!bg-slate-700 text-white" : ""}`}
+            title="Toggle wireframe (W)"
+          >
+            <Box className="h-4 w-4" />
+          </button>
+          <button onClick={replayIntro} className={btn} title="Replay fly-in intro">
+            <Sparkles className="h-4 w-4" />
+          </button>
+        </>
+      ) : null}
       {(typeof labelsOn === "boolean" || targetRef.current?.setLabels) ? (
         <button onClick={toggleLabels} className={btn} title="Toggle labels">
           {labelsOn === false ? <EyeOff className="h-4 w-4" /> : <Eye className="h-4 w-4" />}

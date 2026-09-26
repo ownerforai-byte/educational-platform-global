@@ -75,7 +75,12 @@ const db = makeDb();
 
 vi.mock("../src/db/supabase", () => ({ supabaseAdmin: { from: (t: string) => db.from(t) } }));
 
-import { GUEST_DAILY_LIMIT, consumeGuestSlot, rollbackGuestSlot } from "../src/utils/guestQuota";
+import {
+  GUEST_DAILY_LIMIT,
+  consumeGuestSlot,
+  getGuestDeviceId,
+  rollbackGuestSlot,
+} from "../src/utils/guestQuota";
 
 beforeEach(() => {
   db.calls.length = 0;
@@ -169,6 +174,66 @@ describe("consumeGuestSlot", () => {
 
     const slot = await consumeGuestSlot("ip-fallback-2");
     expect(slot.status).toBe("ok");
+  });
+});
+
+describe("dual identity (device cookie + IP)", () => {
+  // The "cannot refresh the exhausted quota" contract: BOTH identities must
+  // have allowance — clearing/changing one never refills the other.
+  const DEVICE = "a1b2c3d4e5f6a7b8a1b2c3d4e5f6a7b8"; // 32-hex, minted shape
+
+  test("both identities are consumed in one call; remaining is the worst of them", async () => {
+    db.queue("guest_chat_usage:select", { data: { count: 2 }, error: null });
+    db.queue("guest_chat_usage:update", { data: [{ count: 3 }], error: null });
+    db.queue("guest_chat_usage:select", { data: { count: 4 }, error: null });
+    db.queue("guest_chat_usage:update", { data: [{ count: 5 }], error: null });
+
+    const slot = await consumeGuestSlot("ip-dual-1", DEVICE);
+    // ip: 3 used → 2 left; device: 5 used → 0 left → worst = 0.
+    expect(slot).toEqual({ status: "ok", remaining: 0 });
+    expect(db.calls.filter((c) => c.op === "update")).toHaveLength(2);
+  });
+
+  test("exhausted device blocks a FRESH ip (IP rotation cannot refresh)", async () => {
+    // IP key is fresh (first message on this ip)…
+    db.queue("guest_chat_usage:select", { data: null, error: null });
+    db.queue("guest_chat_usage:upsert", { data: [{ count: 1 }], error: null });
+    // …but the device key is already at the limit → limited.
+    db.queue("guest_chat_usage:select", { data: { count: GUEST_DAILY_LIMIT }, error: null });
+    // Rollback of the already-charged ip key (read + CAS decrement).
+    db.queue("guest_chat_usage:select", { data: { count: 1 }, error: null });
+    db.queue("guest_chat_usage:update", { data: [{ count: 0 }], error: null });
+
+    const slot = await consumeGuestSlot("ip-dual-rotate", DEVICE);
+    expect(slot).toEqual({ status: "limited", remaining: 0 });
+
+    // The ip charge went in via the day's-row INSERT…
+    expect(db.calls.filter((c) => c.op === "upsert")).toHaveLength(1);
+    // …and the rollback gave it back — nothing was burned.
+    const updates = db.calls.filter((c) => c.op === "update");
+    expect(updates).toHaveLength(1);
+    expect(updates[0]?.args?.[0]).toEqual({ count: 0 }); // 1 → 0, refunded
+  });
+
+  test("a malformed device id degrades to ip-only, never skips enforcement", async () => {
+    db.queue("guest_chat_usage:select", { data: null, error: null });
+    db.queue("guest_chat_usage:upsert", { data: [{ count: 1 }], error: null });
+
+    const slot = await consumeGuestSlot("ip-dual-2", "../../etc/passwd");
+    expect(slot).toEqual({ status: "ok", remaining: GUEST_DAILY_LIMIT - 1 });
+    // Only ONE identity row was touched (the ip) — junk never becomes a key.
+    expect(db.calls).toHaveLength(2);
+  });
+});
+
+describe("device cookie parsing", () => {
+  test("accepts only the server's minted hex shape; everything else is ignored", () => {
+    const good = "a1b2c3d4e5f6a7b8a1b2c3d4e5f6a7b8";
+    expect(getGuestDeviceId({ cookies: { "neb-gid": good } } as never)).toBe(good);
+    expect(getGuestDeviceId({ cookies: { "neb-gid": "../../etc/passwd" } } as never)).toBeNull();
+    expect(getGuestDeviceId({ cookies: { "neb-gid": "SHORT" } } as never)).toBeNull();
+    expect(getGuestDeviceId({ cookies: {} } as never)).toBeNull();
+    expect(getGuestDeviceId({} as never)).toBeNull();
   });
 });
 

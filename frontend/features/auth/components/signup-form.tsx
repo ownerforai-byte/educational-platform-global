@@ -31,7 +31,17 @@ export function SignupForm() {
     const result = await signupAction({ fullName, email, password });
     setLoading(false);
 
-    if (result.ok && result.message) {
+    if (result.ok && result.statusToken) {
+      // Owner-approval flow: account created but NOT logged in — hand the
+      // signed status token to the /welcome screen, which shows the
+      // "created successfully / awaiting approval" state and polls it.
+      try {
+        localStorage.setItem("neb_signup_status_token", result.statusToken);
+      } catch {
+        /* storage blocked — welcome page falls back to a re-signin hint */
+      }
+      router.push("/welcome");
+    } else if (result.ok && result.message) {
       setMessage(result.message);
     } else if (result.ok) {
       refresh();

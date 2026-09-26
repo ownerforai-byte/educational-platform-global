@@ -30,6 +30,9 @@ export interface AuthSignupResponse {
   user: SessionUser | null;
   message?: string;
   accessToken?: string;
+  /** Owner-approval flow: signed token for the /welcome status screen. */
+  statusToken?: string;
+  accessStatus?: "PENDING" | "ACTIVE" | "REJECTED";
 }
 
 export interface AuthRefreshResponse {

@@ -18,7 +18,9 @@ interface AppShellProps {
 
 export function AppShell({ children, breadcrumbs }: AppShellProps) {
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  const [navPinned, setNavPinned] = useState(false);
+  // Visible by default: an auto-hiding bar hid the whole nav (incl. the mobile
+  // hamburger) behind a 12px hover strip on first load for every visitor.
+  const [navPinned, setNavPinned] = useState(true);
   const [isHovered, setIsHovered] = useState(false);
   const [isClickedOpen, setIsClickedOpen] = useState(false);
 
@@ -27,9 +29,12 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
     if (savedSidebar !== null) {
       setSidebarCollapsed(savedSidebar === "true");
     }
-    const savedPinned = localStorage.getItem("nav-pinned");
-    if (savedPinned !== null) {
-      setNavPinned(savedPinned === "true");
+    // v2 key: the old "nav-pinned" defaulted to false and was auto-written for
+    // every visitor on mount, so honoring it would keep the bar hidden for
+    // everyone. Only "false" counts — it means the user explicitly unpinned.
+    const savedPinned = localStorage.getItem("nav-pinned-v2");
+    if (savedPinned === "false") {
+      setNavPinned(false);
     }
   }, []);
 
@@ -38,7 +43,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
   }, [sidebarCollapsed]);
 
   useEffect(() => {
-    localStorage.setItem("nav-pinned", String(navPinned));
+    localStorage.setItem("nav-pinned-v2", String(navPinned));
   }, [navPinned]);
 
   const navVisible = navPinned || isHovered || isClickedOpen;

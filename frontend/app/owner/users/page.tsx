@@ -13,6 +13,9 @@ import {
   AlertTriangle,
   ChevronDown,
   ChevronUp,
+  CheckCircle2,
+  XCircle,
+  Clock,
 } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -25,6 +28,7 @@ import {
   updateOwnerUserRole,
   setOwnerUserPremium,
   deleteOwnerUser,
+  setOwnerUserAccessStatus,
 } from "@/lib/api/owner";
 import type { OwnerUser, OwnerUserDetail } from "@/lib/api/owner";
 
@@ -35,6 +39,12 @@ const roleBadge: Record<string, string> = {
   ADMIN: "bg-rose-500/15 text-rose-600",
   TEACHER: "bg-blue-500/15 text-blue-600",
   STUDENT: "bg-muted text-muted-foreground",
+};
+
+const accessBadge: Record<string, { label: string; className: string }> = {
+  ACTIVE: { label: "ACCESS GRANTED", className: "bg-emerald-500/15 text-emerald-600 border-emerald-500/30" },
+  PENDING: { label: "PENDING APPROVAL", className: "bg-amber-500/15 text-amber-600 border-amber-500/30" },
+  REJECTED: { label: "ACCESS REVOKED", className: "bg-red-500/15 text-red-600 border-red-500/30" },
 };
 
 export default function OwnerUsersPage() {
@@ -112,6 +122,16 @@ export default function OwnerUsersPage() {
     load(appliedSearch || undefined);
   };
 
+  const handleAccess = async (u: OwnerUser, status: "ACTIVE" | "REJECTED") => {
+    setBusyId(u.id);
+    await runAction(
+      () => setOwnerUserAccessStatus(u.id, status),
+      status === "ACTIVE" ? "Access granted" : "Access removed"
+    );
+    setBusyId(null);
+    load(appliedSearch || undefined);
+  };
+
   const handleDelete = async (u: OwnerUser) => {
     if (!window.confirm(`Permanently delete ${u.email}? This cannot be undone.`)) return;
     setBusyId(u.id);
@@ -142,6 +162,8 @@ export default function OwnerUsersPage() {
     setAppliedSearch(search.trim());
     load(search.trim() || undefined);
   };
+
+  const pendingCount = users.filter((u) => u.access_status === "PENDING").length;
 
   return (
     <div className="space-y-6">
@@ -184,6 +206,17 @@ export default function OwnerUsersPage() {
         </Button>
       </div>
 
+      {/* Pending approvals banner */}
+      {!isLoading && pendingCount > 0 && (
+        <div className="rounded-md border border-amber-500/40 bg-amber-500/10 px-4 py-2.5 text-sm text-amber-700 dark:text-amber-400 flex items-center gap-2">
+          <Clock className="h-4 w-4 shrink-0" />
+          <span>
+            <strong>{pendingCount}</strong> new {pendingCount === 1 ? "account" : "accounts"} awaiting
+            approval — they cannot sign in until you grant access.
+          </span>
+        </div>
+      )}
+
       {/* User list */}
       <Card>
         <CardContent className="pt-6">
@@ -225,9 +258,21 @@ export default function OwnerUsersPage() {
                             </span>
                           )}
                         </p>
-                        <div className="flex items-center gap-2 mt-1">
+                        <div className="flex items-center gap-2 mt-1 flex-wrap">
                           <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${roleBadge[u.role ?? "STUDENT"] ?? roleBadge.STUDENT}`}>
                             {u.role ?? "—"}
+                          </span>
+                          <span className={`inline-flex items-center gap-1 text-[10px] font-bold px-1.5 py-0.5 rounded border ${
+                            (accessBadge[u.access_status ?? "ACTIVE"] ?? accessBadge.ACTIVE).className
+                          }`}>
+                            {u.access_status === "PENDING" ? (
+                              <Clock className="h-2.5 w-2.5" />
+                            ) : u.access_status === "REJECTED" ? (
+                              <XCircle className="h-2.5 w-2.5" />
+                            ) : (
+                              <CheckCircle2 className="h-2.5 w-2.5" />
+                            )}
+                            {(accessBadge[u.access_status ?? "ACTIVE"] ?? accessBadge.ACTIVE).label}
                           </span>
                           <span className="text-xs text-muted-foreground">{u.credits} credits</span>
                         </div>
@@ -235,6 +280,37 @@ export default function OwnerUsersPage() {
                     </div>
 
                     <div className="flex items-center gap-2 shrink-0 flex-wrap">
+                      {u.access_status === "PENDING" ? (
+                        <Button
+                          size="sm"
+                          disabled={busyId === u.id}
+                          onClick={() => handleAccess(u, "ACTIVE")}
+                          className="bg-emerald-600 hover:bg-emerald-700 text-white"
+                        >
+                          <CheckCircle2 className="h-3.5 w-3.5 mr-1" />
+                          Approve
+                        </Button>
+                      ) : u.access_status === "REJECTED" ? (
+                        <Button
+                          size="sm"
+                          disabled={busyId === u.id}
+                          onClick={() => handleAccess(u, "ACTIVE")}
+                        >
+                          <CheckCircle2 className="h-3.5 w-3.5 mr-1" />
+                          Grant Access
+                        </Button>
+                      ) : (
+                        <Button
+                          variant="outline"
+                          size="sm"
+                          disabled={busyId === u.id}
+                          onClick={() => handleAccess(u, "REJECTED")}
+                          className="text-red-600 hover:text-red-700 hover:bg-red-500/10 border-red-500/30"
+                        >
+                          <XCircle className="h-3.5 w-3.5 mr-1" />
+                          Revoke
+                        </Button>
+                      )}
                       <select
                         value={u.role ?? "STUDENT"}
                         onChange={(e) => handleRole(u, e.target.value)}

@@ -3,7 +3,7 @@ import { login as apiLogin, signup as apiSignup, logout as apiLogout } from "@/l
 import type { SessionUser } from "./types";
 
 export type AuthActionResult =
-  | { ok: true; user?: SessionUser | null; message?: string }
+  | { ok: true; user?: SessionUser | null; message?: string; statusToken?: string }
   | { ok: false; error: string };
 
 export async function loginAction(input: unknown): Promise<AuthActionResult> {
@@ -31,7 +31,7 @@ export async function signupAction(input: unknown): Promise<AuthActionResult> {
 
   try {
     const res = await apiSignup(parsed.data);
-    return { ok: true, user: res.user ?? null, message: res.message };
+    return { ok: true, user: res.user ?? null, message: res.message, statusToken: res.statusToken };
   } catch (err) {
     return {
       ok: false,

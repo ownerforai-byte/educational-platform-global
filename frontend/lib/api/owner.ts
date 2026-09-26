@@ -36,6 +36,7 @@ export interface OwnerUser {
   credits_limit?: number | null;
   premium_status: boolean;
   premium_approved_at?: string | null;
+  access_status?: "PENDING" | "ACTIVE" | "REJECTED";
   created_at?: string;
 }
 
@@ -132,6 +133,17 @@ export function setOwnerUserPremium(
 
 export function deleteOwnerUser(userId: string): Promise<{ success: true }> {
   return apiFetch(`/api/owner/users/${userId}`, { method: "DELETE" });
+}
+
+/** Grant or revoke platform access (owner approval of a new signup). */
+export function setOwnerUserAccessStatus(
+  userId: string,
+  accessStatus: "ACTIVE" | "REJECTED" | "PENDING"
+): Promise<{ success: true; accessStatus: string }> {
+  return apiFetch(`/api/owner/users/${userId}/status`, {
+    method: "PATCH",
+    body: JSON.stringify({ status: accessStatus }),
+  });
 }
 
 export function getOwnerPremiumRequests(): Promise<OwnerPremiumRequest[]> {

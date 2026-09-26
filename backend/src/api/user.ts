@@ -2,7 +2,7 @@ import { Router, Request, Response } from "express";
 import { z } from "zod";
 import { requireAuth, hasFullAccess, type AuthedRequest } from "../middleware/auth";
 import { supabaseAdmin } from "../db/supabase";
-import { ensureDailyCredits } from "../utils/credits";
+import { ensureDailyCredits, spendCredits } from "../utils/credits";
 
 const router = Router();
 
@@ -178,45 +178,40 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
     const premiumStatus = profile?.premium_status ?? false;
     const privileged = hasFullAccess(role, premiumStatus);
 
+    // Fresh daily pool first (same pool every other consumer draws from),
+    // then an ATOMIC compare-and-swap spend — the old read-then-write
+    // deduction lost concurrent updates and treated a zero-row UPDATE as
+    // success, silently issuing unlocks (or charging inconsistently).
+    const ensured = await ensureDailyCredits(user.id, user.email, role, premiumStatus);
+
     // OWNER/ADMIN skip all checks — window still applies for UI consistency.
-    if (privileged) {
+    if (ensured.unlimited || privileged) {
       res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0 });
       return;
     }
 
-    const credits = profile?.credits ?? 0;
-
-    if (credits < cost) {
+    if (ensured.credits < cost) {
       res.status(402).json({
         error: "Insufficient credits",
         required: cost,
-        current: credits,
+        current: ensured.credits,
         message: "You need more coins to unlock this content.",
       });
       return;
     }
 
-    const newCredits = credits - cost;
+    const reason = `Unlocked ${category}${moduleKey ? ` (${moduleKey})` : ""} for 2h window`;
+    const remaining = await spendCredits(user.id, cost, reason);
 
-    const { error: updateError } = await supabaseAdmin
-      .from("profiles")
-      .update({ credits: newCredits })
-      .eq("id", user.id);
-
-    if (updateError) {
-      console.error("Unlock: credit update failed:", updateError.message);
+    if (remaining === null) {
+      // Balance read said there was enough, yet the CAS never landed —
+      // concurrent spend or a storage problem. Fail closed, loudly.
+      console.error("Unlock: atomic credit spend failed for", user.id);
       res.status(500).json({ error: "Failed to deduct credits" });
       return;
     }
 
-    await supabaseAdmin.from("credit_transactions").insert({
-      user_id: user.id,
-      amount: -cost,
-      type: "SPEND",
-      reason: `Unlocked ${category}${moduleKey ? ` (${moduleKey})` : ""} for 2h window`,
-    });
-
-    res.json({ credits: newCredits, expiresAt, cost });
+    res.json({ credits: remaining, expiresAt, cost });
   } catch (err: any) {
     console.error("Unlock error:", err?.message ?? err);
     res.status(500).json({ error: "Internal server error" });

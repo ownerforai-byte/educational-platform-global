@@ -6,6 +6,8 @@ import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
 import {
   GUEST_DAILY_LIMIT,
   consumeGuestSlot,
+  getGuestDeviceId,
+  issueGuestDeviceCookie,
   rollbackGuestSlot,
   startGuestQuotaCleanup,
 } from "../utils/guestQuota";
@@ -44,6 +46,10 @@ function getService() {
 
 router.post("/", rateLimit, async (req: Request, res: Response) => {
   const ip = getClientId(req);
+  // Dual identity: the HttpOnly device cookie (minted here on first contact)
+  // AND the IP must BOTH have quota left — clearing one never refills the
+  // other (see utils/guestQuota for the full threat model).
+  const deviceId = getGuestDeviceId(req) ?? issueGuestDeviceCookie(res);
   let consumed = false;
   try {
     const body = req.body;
@@ -56,7 +62,7 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
     }
 
     // ── Guest daily pool: 5 messages/day, resets at 12:00 AM (UTC) ──
-    const slot = await consumeGuestSlot(ip);
+    const slot = await consumeGuestSlot(ip, deviceId);
     if (slot.status === "limited") {
       res.status(402).json({
         error: "Daily guest limit reached",
@@ -95,7 +101,7 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
     console.error("AI guest chat error:", err);
     // The attempt failed → the guest never got an answer, so return the
     // consumed message first (best-effort).
-    if (consumed) await rollbackGuestSlot(ip).catch(() => {});
+    if (consumed) await rollbackGuestSlot(ip, deviceId).catch(() => {});
     // Slow-provider timeout → retryable 504 with a human message, not a
     // generic 500 (the "Internal Server Error" console report 2026-09-26).
     const message = String(err?.message ?? "");

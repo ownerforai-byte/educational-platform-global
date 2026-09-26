@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import { z } from "zod";
 import { requireAuth, isOwnerEmail, type AuthedRequest } from "../middleware/auth";
 import { supabaseAdmin } from "../db/supabase";
+import { authEmailsById } from "../utils/authEmails";
 
 /**
  * Owner-only router — mounted at /api/owner.
@@ -38,6 +39,10 @@ const roleUpdateSchema = z.object({
 
 const premiumUpdateSchema = z.object({
   premiumStatus: z.boolean(),
+});
+
+const accessStatusUpdateSchema = z.object({
+  status: z.enum(["PENDING", "ACTIVE", "REJECTED"]),
 });
 
 const bulkCreditsSchema = z.object({
@@ -164,7 +169,11 @@ router.get("/overview", requireAuth, async (req: Request, res: Response) => {
 
 /**
  * GET /api/owner/users?q=<search>
- * Full user list with credits, roles, premium state and pending request counts.
+ * Full user list with Gmails, credits, roles, premium state and access status.
+ *
+ * Emails come from GoTrue (auth.users) via authEmailsById() — `profiles`
+ * has no email column, and selecting one made this route 500 outright
+ * (found 2026-09-26). Search filters the merged rows.
  */
 router.get("/users", requireAuth, async (req: Request, res: Response) => {
   const owner = ownerGate(req, res);
@@ -172,26 +181,36 @@ router.get("/users", requireAuth, async (req: Request, res: Response) => {
 
   try {
     const q = typeof req.query.q === "string" ? req.query.q.trim() : "";
-    let query = supabaseAdmin
+    const { data, error } = await supabaseAdmin
       .from("profiles")
-      .select("id, full_name, email, role, credits, credits_limit, premium_status, premium_approved_at, created_at")
+      .select(
+        "id, full_name, role, credits, credits_limit, premium_status, premium_approved_at, access_status, created_at",
+      )
       .order("created_at", { ascending: false })
       .limit(500);
 
-    if (q) {
-      // Escape % and _ so callers can't inject wildcards.
-      const safe = q.replace(/[%_\\]/g, "\\$&");
-      query = query.or(`email.ilike.%${safe}%,full_name.ilike.%${safe}%`);
-    }
-
-    const { data, error } = await query;
     if (error) {
       console.error("[owner] users failed:", error.message);
       res.status(500).json({ error: "Failed to fetch users" });
       return;
     }
 
-    res.json(data ?? []);
+    const emails = await authEmailsById();
+    let rows = (data ?? []).map((p: Record<string, unknown>) => ({
+      ...p,
+      email: emails.get(String(p.id)) ?? "",
+    }));
+
+    if (q) {
+      const needle = q.toLowerCase();
+      rows = rows.filter(
+        (r: { email?: string; full_name?: string | null }) =>
+          (r.email ?? "").includes(needle) ||
+          (r.full_name ?? "").toLowerCase().includes(needle),
+      );
+    }
+
+    res.json(rows);
   } catch (err: any) {
     console.error("[owner] users error:", err?.message ?? err);
     res.status(500).json({ error: "Internal server error" });
@@ -218,6 +237,10 @@ router.get("/users/:id", requireAuth, async (req: Request, res: Response) => {
       return;
     }
 
+    // Merge the Gmail (resolved from GoTrue — profiles stores no email).
+    const emails = await authEmailsById();
+    const email = emails.get(String(profile.id)) ?? "";
+
     const [txRes, reqRes] = await Promise.all([
       supabaseAdmin
         .from("credit_transactions")
@@ -234,7 +257,7 @@ router.get("/users/:id", requireAuth, async (req: Request, res: Response) => {
     ]);
 
     res.json({
-      profile,
+      profile: { ...profile, email },
       creditHistory: txRes.data ?? [],
       premiumRequests: reqRes.data ?? [],
     });
@@ -292,6 +315,55 @@ router.patch("/users/:id/credits", requireAuth, async (req: Request, res: Respon
     res.json({ success: true, userId: req.params.id, newCredits });
   } catch (err: any) {
     console.error("[owner] credits error:", err?.message ?? err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+/** PATCH /api/owner/users/:id/status — grant or remove platform access.
+ *
+ * ACTIVE  → the account may sign in (approval granted)
+ * PENDING → created but not yet approved (login blocked)
+ * REJECTED→ explicitly refused (login blocked, status screen reports it)
+ */
+router.patch("/users/:id/status", requireAuth, async (req: Request, res: Response) => {
+  const owner = ownerGate(req, res);
+  if (!owner) return;
+
+  const parsed = accessStatusUpdateSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(400).json({ error: "Invalid access status" });
+    return;
+  }
+
+  try {
+    const { data: target } = await supabaseAdmin
+      .from("profiles")
+      .select("id, access_status")
+      .eq("id", req.params.id)
+      .maybeSingle();
+
+    if (!target) {
+      res.status(404).json({ error: "User not found" });
+      return;
+    }
+
+    const { error } = await supabaseAdmin
+      .from("profiles")
+      .update({ access_status: parsed.data.status })
+      .eq("id", req.params.id);
+
+    if (error) {
+      console.error("[owner] access status update failed:", error.message);
+      res.status(500).json({ error: "Failed to update access status" });
+      return;
+    }
+
+    console.info(
+      `[owner] access ${target.access_status ?? "?"} -> ${parsed.data.status} for ${req.params.id} by ${owner.user.email}`,
+    );
+    res.json({ success: true, userId: req.params.id, status: parsed.data.status });
+  } catch (err: any) {
+    console.error("[owner] access status error:", err?.message ?? err);
     res.status(500).json({ error: "Internal server error" });
   }
 });
@@ -594,10 +666,7 @@ router.get("/premium-requests", requireAuth, async (req: Request, res: Response)
   try {
     const { data, error } = await supabaseAdmin
       .from("premium_requests")
-      .select(
-        `id, user_id, status, message, reviewed_by, reviewed_at, created_at,
-         profiles (id, full_name, email, role, credits)`
-      )
+      .select("id, user_id, status, message, reviewed_by, reviewed_at, created_at")
       .order("created_at", { ascending: false });
 
     if (error) {
@@ -606,7 +675,36 @@ router.get("/premium-requests", requireAuth, async (req: Request, res: Response)
       return;
     }
 
-    res.json(data ?? []);
+    const rows = data ?? [];
+    if (rows.length === 0) {
+      res.json([]);
+      return;
+    }
+
+    // `premium_requests.user_id` FKs to auth.users (not profiles), so a
+    // PostgREST profiles(...) embed is impossible — and profiles has no email
+    // column either. Resolve both server-side like GET /users does.
+    const userIds = [...new Set(rows.map((r) => r.user_id).filter(Boolean))];
+    const [{ data: profileRows }, emails] = await Promise.all([
+      supabaseAdmin
+        .from("profiles")
+        .select("id, full_name, role, credits")
+        .in("id", userIds),
+      authEmailsById(),
+    ]);
+
+    const byId = new Map((profileRows ?? []).map((p) => [p.id, p]));
+    const shaped = rows.map((r) => ({
+      ...r,
+      profiles: (() => {
+        const p = byId.get(r.user_id);
+        return p
+          ? { ...p, email: emails.get(r.user_id) ?? null }
+          : null;
+      })(),
+    }));
+
+    res.json(shaped);
   } catch (err: any) {
     console.error("[owner] premium-requests error:", err?.message ?? err);
     res.status(500).json({ error: "Internal server error" });
@@ -716,7 +814,7 @@ router.get("/settings", requireAuth, async (req: Request, res: Response) => {
   try {
     const { data, error } = await supabaseAdmin
       .from("settings")
-      .select("key, value, description, updated_by")
+      .select("key, value, updated_by")
       .order("key", { ascending: true });
 
     if (error) {
