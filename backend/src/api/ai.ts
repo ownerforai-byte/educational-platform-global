@@ -71,7 +71,7 @@ router.post("/", requireAuth, requireCredit("aiChat"), async (req: Request, res:
     }
 
     const response = await aiService.chat(provider, messages);
-    res.json({ response, provider: provider || aiService.getDefaultProvider() });
+    res.json({ response, provider: provider || aiService.getLastAnsweredBy() });
   } catch (err: any) {
     console.error("AI chat error:", err);
     serverError(res, err);

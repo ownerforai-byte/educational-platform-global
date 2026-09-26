@@ -32,7 +32,7 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
 
     // "" runs the ordered chain (agnes → openrouter → internal).
     const response = await aiService.chat(provider, augmented);
-    res.json({ response, provider: provider || aiService.getDefaultProvider() });
+    res.json({ response, provider: provider || aiService.getLastAnsweredBy() });
   } catch (err: any) {
     console.error("AI guest chat error:", err);
     serverError(res, err);

@@ -295,7 +295,7 @@ ${keyTermsContext ? `KEY TERMS FROM SYLLABUS:\n${keyTermsContext}` : "Use standa
 
       res.json({
         questions,
-        provider: aiService.getDefaultProvider(),
+        provider: aiService.getLastAnsweredBy(),
         topic: topic ?? undefined,
       } satisfies GenerateQuestionsResponse);
     } catch (err: any) {

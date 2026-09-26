@@ -772,6 +772,8 @@ function withDeadline<T>(promise: Promise<T>, ms: number): Promise<T> {
 export class AIService {
   private providers: Map<string, AIProvider> = new Map();
   private defaultProvider: string = "internal";
+  /** Name of the provider that answered the most recent chat() call. */
+  private lastAnsweredBy: string = "internal";
 
   /**
    * Ordered LLM chain (owner policy 2026-09-26): Agnes answers FIRST, then
@@ -824,7 +826,15 @@ export class AIService {
   }
 
   getDefaultProvider(): string {
-    return this.defaultProvider;
+    // The provider that answers by default is the FIRST link of the owner's
+    // chain (agnes) — not the legacy AI_DEFAULT_PROVIDER env value, which the
+    // chain no longer consults.
+    return this.chainProviders()[0]?.name ?? "internal";
+  }
+
+  /** Provider that actually produced the last chat reply (truthful label). */
+  getLastAnsweredBy(): string {
+    return this.lastAnsweredBy;
   }
 
   private resolve(providerName: string): AIProvider {
@@ -850,15 +860,22 @@ export class AIService {
     ) {
       try {
         const text = await this.providers.get(requested)!.chat(messages);
-        if (text && text.trim()) return text;
+        if (text && text.trim()) {
+          this.lastAnsweredBy = requested;
+          return text;
+        }
       } catch (err) {
         console.warn(`[AI] selected provider "${requested}" failed:`, err instanceof Error ? err.message : err);
       }
+      this.lastAnsweredBy = "internal";
       return internal.chat(messages);
     }
 
     const chain = this.chainProviders();
-    if (chain.length === 0) return internal.chat(messages);
+    if (chain.length === 0) {
+      this.lastAnsweredBy = "internal";
+      return internal.chat(messages);
+    }
 
     // Sequential chain (owner policy): agnes → openrouter → internal. The
     // previous parallel race burned BOTH provider bills for one question and
@@ -885,6 +902,7 @@ export class AIService {
           console.info(
             `[AI] chat answered by "${p.name}" in ${Date.now() - started}ms`
           );
+          this.lastAnsweredBy = p.name;
           return text;
         }
       } catch (err) {
@@ -897,6 +915,7 @@ export class AIService {
     console.warn(
       `[AI] chain exhausted in ${Date.now() - started}ms — using internal engine`
     );
+    this.lastAnsweredBy = "internal";
     return internal.chat(messages);
   }
 
