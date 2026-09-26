@@ -1469,6 +1469,78 @@ export const THEORY_CONTENT: Record<string, Record<string, TopicData>> = {
         "Explain why Cr has [Ar]4s¹3d⁵ instead of [Ar]4s²3d⁴.",
         "Which element has [Ar]4s²3d¹⁰4p³? What is its group and period?",
       ],
+      enrichedContent: {
+        title: "Atomic Structure: The Atom Is Not a Mini Solar System",
+        overview:
+          "The biggest obstacle to understanding atoms is the picture everyone learns first — electrons orbiting a nucleus like planets around the Sun. That model is wrong, and unlearning it is the real lesson. Electrons are not particles tracing paths; they are standing waves of probability described by quantum numbers, and the periodic table is simply a map of how those waves stack up. Once you see electron configuration as the filling of three-dimensional probability shapes governed by a few rules, the entire structure of the periodic table — periods, groups, and chemical behaviour — falls out logically instead of being memorised.",
+        sections: [
+          {
+            heading: "1. Electrons Are Standing Waves, Not Orbiting Particles",
+            content:
+              "An electron bound to a nucleus behaves like a wave that must fit around the nucleus without cancelling itself — a standing wave, like the vibration of a guitar string. Only certain wave patterns are stable, which is why only certain energies are allowed. This quantisation is not an arbitrary rule imposed on the atom; it is a natural consequence of wave behaviour in a confined space. The 'orbital' is therefore not a track but a region of space where the electron's wave has large amplitude — a probability cloud. The famous shapes (spherical s, dumbbell p, cloverleaf d) are literally the three-dimensional shapes of these standing waves.",
+            formula:
+              "\\text{Electron} = \\text{standing wave} \\Rightarrow \\text{only certain energies allowed} \\Rightarrow \\text{orbitals}",
+          },
+          {
+            heading: "2. Four Quantum Numbers: The Electron's Address",
+            content:
+              "Each electron's wave is fully specified by four numbers, and together they act like an address. The principal quantum number n sets the shell — roughly the size and energy. The azimuthal number l sets the subshell shape (0 = s spherical, 1 = p dumbbell, 2 = d cloverleaf, 3 = f complex). The magnetic number m_l sets the orientation of that shape in space (a p subshell has three orientations, so three orbitals). The spin m_s is an intrinsic two-valued property (+½ or −½). The Pauli exclusion principle — no two electrons share all four numbers — is the rule that forces electrons to stack into higher shells instead of all collapsing into the lowest, and it is the reason matter has volume and chemistry has variety.",
+            formula:
+              "n\\ (\\text{shell}) \\rightarrow l\\ (\\text{shape}) \\rightarrow m_l\\ (\\text{orientation}) \\rightarrow m_s\\ (\\text{spin})",
+          },
+          {
+            heading: "3. The Periodic Table Is an Aufbau Diagram",
+            content:
+              "The periodic table is not an arbitrary grid; it is a picture of the order in which electron waves fill. Each period adds a new shell, each block (s, p, d, f) corresponds to a subshell being filled, and each group shares an outer-electron configuration — which is why elements in a group behave alike. The filling order (1s, 2s, 2p, 3s, 3p, 4s, 3d...) looks irregular only until you realise it follows increasing energy, and the 4s-before-3d quirk is a consequence of how nuclear charge and shielding shift the energy levels. Reading the table as a filling sequence turns 'memorise the configuration' into 'walk across the table and count electrons'.",
+            formula:
+              "\\text{Period} = \\text{new shell}; \\quad \\text{Block} = \\text{subshell}; \\quad \\text{Group} = \\text{same outer config}",
+          },
+          {
+            heading: "4. Why Half-Filled and Full Subshells Are Special",
+            content:
+              "The famous exceptions — chromium is [Ar]4s¹3d⁵ not 4s²3d⁴, copper is [Ar]4s¹3d¹⁰ not 4s²3d⁹ — are not random glitches. A half-filled (d⁵) or completely filled (d¹⁰) subshell is unusually stable because it maximises symmetry and exchange energy: electrons with parallel spins in separate orbitals keep further apart on average, lowering their mutual repulsion. When promoting one electron from 4s to 3d achieves this symmetric arrangement, the stability gained outweighs the small cost, so the atom adopts it. The lesson is that electron configurations are the result of an energy balance, not a rigid filling rule — the rules are tendencies, and nature optimises.",
+            formula:
+              "Cr:\\ [Ar]\\,4s^1\\,3d^5 \\quad (\\text{half-filled } d^5 \\text{ stability}), \\qquad Cu:\\ [Ar]\\,4s^1\\,3d^{10} \\quad (\\text{full } d^{10})",
+          },
+          {
+            heading: "5. Shielding and the Periodic Trends That Follow",
+            content:
+              "Inner electrons screen the nucleus, so outer electrons feel less than the full nuclear pull — this is effective nuclear charge (Z_eff = Z − shielding). Almost every periodic trend is a consequence of the tug-of-war between rising nuclear charge and this shielding. Across a period, Z_eff increases while the shell stays the same, so atoms shrink, hold electrons more tightly (higher ionisation energy), and attract bonding electrons harder (higher electronegativity). Down a group, new shells are added, outer electrons are further away and more shielded, so atoms grow and hold electrons more loosely. Configuration is therefore not an end in itself — it predicts size, reactivity, and bonding.",
+            formula:
+              "Z_{\\text{eff}} = Z - S \\quad (S = \\text{shielding}) \\Rightarrow \\text{trends in radius, IE, electronegativity}",
+          },
+          {
+            heading: "6. From Orbits to Orbitals: The Model That Replaced Bohr",
+            content:
+              "Bohr's model — electrons in fixed circular orbits — correctly explained hydrogen's line spectrum but failed for every larger atom, and it still pictures electrons as little planets. Quantum mechanics replaced orbits with orbitals: solutions to a wave equation that give probability distributions, not paths. The Heisenberg uncertainty principle makes the planetary picture impossible in principle — you cannot know an electron's exact position and momentum at once, so there is no well-defined orbit to speak of. What remains is the electron cloud, the quantised energies that produce spectral lines, and the four quantum numbers. Understanding this shift is what separates memorising configurations from actually understanding atoms.",
+            formula:
+              "\\Delta x\\,\\Delta p \\geq \\frac{\\hbar}{2} \\quad \\Rightarrow \\quad \\text{no definite orbits, only probability clouds}",
+          },
+        ],
+        keyPoints: [
+          "Electrons are standing probability waves (orbitals), not particles in fixed orbits — Bohr's model is wrong",
+          "Four quantum numbers specify each electron's shell, shape, orientation, and spin; Pauli forces them to stack up",
+          "The periodic table is literally a map of the orbital-filling (Aufbau) order — groups share outer configurations",
+          "Half-filled and full subshells (Cr, Cu exceptions) are stabilised by symmetry and exchange energy",
+          "Effective nuclear charge and shielding explain every periodic trend in radius, ionisation energy, and electronegativity",
+        ],
+        commonMistakes: [
+          "Imagining electrons orbiting like planets; orbitals are probability clouds from standing waves",
+          "Treating Aufbau as an inflexible rule and being confused by Cr and Cu — these follow an energy balance",
+          "Confusing filling order (4s before 3d) with writing order (3d written before 4s)",
+          "Memorising configurations without connecting them to periodic trends and reactivity",
+          "Assigning the wrong l value to a subshell shape (l = 1 is p, not 2)",
+        ],
+        practiceQuestions: [
+          "Explain why the quantum model uses orbitals (probability clouds) rather than Bohr's fixed orbits.",
+          "Show how the structure of the periodic table reflects the order in which subshells fill.",
+          "Why does chromium adopt [Ar]4s¹3d⁵ instead of [Ar]4s²3d⁴? What stability is gained?",
+          "Using effective nuclear charge and shielding, explain why atomic radius decreases across a period but increases down a group.",
+          "Give the four quantum numbers for the outermost electron of nitrogen (Z = 7).",
+          "Why does the Heisenberg uncertainty principle make the idea of a defined electron orbit impossible?",
+          "Predict which of Na, Mg, or Al has the highest first ionisation energy, and justify using configuration.",
+        ],
+      },
     },
     bonding: {
       title: "Chemical Bonding and Molecular Structure",
@@ -1513,6 +1585,80 @@ export const THEORY_CONTENT: Record<string, Record<string, TopicData>> = {
         "Arrange in order of increasing bond length: C₂H₆, C₂H₄, C₂H₂.",
         "Explain why BF₃ is nonpolar but NF₃ is polar.",
       ],
+      enrichedContent: {
+        title: "Bonding: Why Atoms Share, Steal, and Arrange",
+        overview:
+          "Bonding is driven by one principle: atoms arrange their electrons to reach a lower-energy, more stable state, and almost always this means achieving a full outer shell of eight electrons (the octet). Whether an atom transfers electrons (ionic), shares them (covalent), or pools them (metallic) depends entirely on how strongly the partners hold onto electrons — their electronegativity difference. But bonding does not stop at the pair of atoms; the three-dimensional shape of a molecule, dictated by electron-pair repulsion, determines whether it is polar, how it reacts, and even whether life's molecules fit together. Shape is function.",
+        sections: [
+          {
+            heading: "1. Bonding Is One Spectrum, Not Separate Types",
+            content:
+              "Ionic and covalent bonds are taught as opposites, but they are really two ends of a continuum governed by electronegativity difference. When two atoms are identical (ΔEN = 0), electrons are shared perfectly equally — a pure covalent bond. As the difference grows, sharing becomes unequal — a polar covalent bond, with a partial positive and partial negative end. When the difference is very large (>~1.7), the electron is essentially transferred — an ionic bond. So 'ionic vs covalent' is not a switch but a dial. This continuum explains why there is no sharp boundary and why many real bonds are partly ionic and partly covalent.",
+            formula:
+              "\\Delta EN \\approx 0:\\ \\text{nonpolar covalent} \\;\\rightarrow\\; \\text{polar covalent} \\;\\rightarrow\\; \\Delta EN > 1.7:\\ \\text{ionic}",
+          },
+          {
+            heading: "2. The Octet Rule and Its Deep Reason",
+            content:
+              "Atoms bond to reach a stable eight-electron outer shell, mirroring the unreactive noble gases. But why eight? Because a filled s and p subshell (s²p⁶) is a particularly low-energy, symmetric, hard-to-disturb configuration. Atoms that are one or two electrons short of an octet (like Cl or O) grab or share eagerly; those with one or two to spare (like Na or Mg) give them away readily. The octet rule is a shortcut for 'reach a full outer subshell', and its exceptions (expanded octets in period 3+ using d orbitals, or electron-deficient species like BF₃) occur where that underlying logic changes.",
+            formula:
+              "s^2 p^6 = \\text{full outer shell} = \\text{noble-gas stability} = \\text{octet}",
+          },
+          {
+            heading: "3. VSEPR: Shape Comes From Repulsion",
+            content:
+              "Once atoms are bonded, the molecule adopts a shape that minimises the repulsion between electron pairs around the central atom — this is VSEPR (Valence Shell Electron Pair Repulsion). Electron pairs, being negatively charged, push as far apart as possible: two pairs go linear (180°), three go trigonal planar (120°), four go tetrahedral (109.5°). Crucially, lone pairs repel more strongly than bonding pairs because they are held closer to the nucleus and occupy more space, squeezing the bond angles down — which is why water (two lone pairs) is bent at 104.5° rather than tetrahedral. Shape is not decorative; it determines polarity and how molecules interact.",
+            formula:
+              "\\text{Repulsion: } LP\\text{-}LP > LP\\text{-}BP > BP\\text{-}BP \\quad \\Rightarrow \\quad \\text{lone pairs compress angles}",
+            example:
+              "CH₄ (4 BP) → tetrahedral 109.5°; NH₃ (3 BP, 1 LP) → trigonal pyramidal 107°; H₂O (2 BP, 2 LP) → bent 104.5°. Same electron geometry, different molecular shape.",
+          },
+          {
+            heading: "4. Polarity: Why Shape Determines Everything",
+            content:
+              "A molecule is polar if its bond dipoles do not cancel. This is where shape becomes decisive. CO₂ has two polar C=O bonds, but because they point in exactly opposite directions (linear), the dipoles cancel and the molecule is non-polar. Water has two polar O–H bonds bent at an angle, so the dipoles do not cancel and water is strongly polar. This single difference explains why water is a superb solvent for salts and sugars while CO₂ is not, and why oil and water separate. Polarity governs solubility, boiling point, and the three-dimensional folding of proteins and DNA — life depends on molecules being polar in the right places.",
+            formula:
+              "\\text{Symmetric shape} \\Rightarrow \\text{dipoles cancel (nonpolar)}; \\quad \\text{asymmetric} \\Rightarrow \\text{net dipole (polar)}",
+          },
+          {
+            heading: "5. σ and π Bonds: Why Double Bonds Are Rigid",
+            content:
+              "A single covalent bond is a sigma (σ) bond, formed by head-on overlap of orbitals along the bond axis; it is cylindrically symmetric, so the two atoms can rotate freely around it. A double bond adds a pi (π) bond, formed by side-on overlap of parallel p orbitals above and below the axis. This side-on overlap breaks if you twist the atoms, so π bonds lock the molecule into a rigid plane and prevent rotation. That rigidity is the origin of cis-trans (geometric) isomerism — the reason a molecule can exist in two distinct forms that cannot interconvert without breaking a bond. π bonds are also weaker and more exposed, which is why double bonds are the reactive sites in organic chemistry.",
+            formula:
+              "\\text{Single} = 1\\sigma; \\quad \\text{Double} = 1\\sigma + 1\\pi; \\quad \\text{Triple} = 1\\sigma + 2\\pi",
+          },
+          {
+            heading: "6. Resonance and Hybridisation: Models, Not Reality",
+            content:
+              "Two ideas often confuse students because they are models, not physical things. Resonance occurs when a single Lewis structure cannot represent a molecule — like ozone or benzene, where the true electron distribution is a blend (hybrid) of several contributing structures. The molecule does not flip between them; it exists permanently in the averaged, lower-energy state, with bonds of intermediate length. Hybridisation is a bookkeeping trick: to explain observed shapes, we mathematically mix atomic s and p orbitals into new equivalent hybrids (sp³, sp², sp) that point in the right directions. Neither resonance structures nor hybrid orbitals are literally 'real' — they are powerful fictions that correctly predict what we measure.",
+            formula:
+              "\\text{Resonance hybrid} = \\text{average of structures (not flipping)}; \\quad sp^3/sp^2/sp = \\text{mixed orbitals}",
+          },
+        ],
+        keyPoints: [
+          "Ionic and covalent are ends of one electronegativity continuum, not separate categories",
+          "Atoms bond to reach a low-energy full outer shell (octet = s²p⁶, noble-gas configuration)",
+          "VSEPR: electron pairs repel into maximum separation; lone pairs squeeze bond angles",
+          "Molecular polarity depends on shape — symmetric shapes cancel dipoles, asymmetric shapes do not",
+          "π bonds lock geometry (cis-trans isomerism); resonance and hybridisation are predictive models, not literal structures",
+        ],
+        commonMistakes: [
+          "Treating ionic vs covalent as a binary switch rather than a continuum of electron sharing",
+          "Predicting molecular shape from electron geometry without accounting for lone pairs (NH₃ is pyramidal, not tetrahedral)",
+          "Assuming polar bonds always make a polar molecule — symmetry can cancel them (CO₂)",
+          "Thinking resonance structures are real forms the molecule alternates between",
+          "Believing a double bond is exactly twice as strong or as long-related as a single bond",
+        ],
+        practiceQuestions: [
+          "Explain why the electronegativity difference places ionic and covalent bonding on a single continuum.",
+          "Predict the shape and bond angle of NH₃ and explain why it differs from the tetrahedral angle.",
+          "CO₂ and H₂O both contain polar bonds. Why is one non-polar and the other polar?",
+          "Why does a carbon-carbon double bond prevent free rotation while a single bond allows it?",
+          "Describe what a resonance hybrid actually is, using ozone or benzene as an example.",
+          "Explain how molecular shape and polarity account for why water dissolves salt but oil does not.",
+          "Determine the hybridisation of the central atom in BF₃ and predict its geometry.",
+        ],
+      },
     },
     equilibrium: {
       title: "Chemical Equilibrium",
@@ -1551,6 +1697,78 @@ export const THEORY_CONTENT: Record<string, Record<string, TopicData>> = {
         "Solubility of AgCl is 1.3 × 10⁻⁵ M. Find K_sp.",
         "How does increasing pressure affect N₂O₄(g) ⇌ 2NO₂(g)?",
       ],
+      enrichedContent: {
+        title: "Equilibrium: The Dynamic Balance at the Heart of Chemistry",
+        overview:
+          "Chemical equilibrium looks like nothing is happening, but it is one of the most dynamic states in nature: the forward and reverse reactions continue at exactly equal rates, so concentrations stay constant while individual molecules react ceaselessly. The key insight is that a reaction does not simply 'go to completion' — it settles at a balance point described by a single number, K, that depends only on temperature. Equilibrium is not just an exam topic; it governs how much ammonia the world can make for fertiliser, how oxygen loads onto your haemoglobin, and how your blood resists pH change. Understanding the balance, and how to shift it deliberately, is the essence of controlling chemistry.",
+        sections: [
+          {
+            heading: "1. Equilibrium Is Dynamic, Not Static",
+            content:
+              "At equilibrium the macroscopic picture is frozen — concentrations do not change — but the microscopic reality is a hive of activity. Reactants keep forming products and products keep reforming reactants, at precisely equal rates, so the net change is zero. This is a dynamic equilibrium, like a busy footbridge with equal numbers crossing each way: the crowd on each side stays constant while individuals keep moving. This is why equilibrium only makes sense for reversible reactions in a closed system, and why adding a catalyst does not shift the balance — it speeds up both directions equally, reaching the same point faster.",
+            formula:
+              "\\text{At equilibrium: } \\text{rate}_{\\text{forward}} = \\text{rate}_{\\text{reverse}} \\Rightarrow \\text{no net change}",
+          },
+          {
+            heading: "2. K Is a Single Number That Encodes the Balance",
+            content:
+              "The equilibrium constant K is the ratio of product concentrations to reactant concentrations (each raised to its coefficient) at equilibrium. It is remarkably powerful: K depends only on temperature, not on starting amounts, pressure, or catalyst. Whether you begin with all reactants or all products, the system always settles to the same K. A large K (>1) means products dominate at equilibrium; a small K (<1) means reactants dominate. Pure solids and liquids are left out of the expression because their 'concentration' is fixed. K is a thermodynamic fingerprint of how far a reaction wants to go.",
+            formula:
+              "K_c = \\dfrac{[C]^c[D]^d}{[A]^a[B]^b} \\qquad (\\text{solids and pure liquids omitted})",
+          },
+          {
+            heading: "3. Q vs K: The Reaction's Compass",
+            content:
+              "At any moment, you can compute the same ratio from the current concentrations — this is the reaction quotient Q. Comparing Q to K tells you which way the reaction will proceed. If Q < K, there are too few products, so the reaction shifts forward (right) to make more. If Q > K, there are too many products, so it shifts backward (left). If Q = K, the system is at equilibrium and does not shift. This Q-versus-K comparison is the quantitative engine behind Le Chatelier's principle — it lets you predict direction without intuition, and it is how you solve 'is this mixture at equilibrium?' problems.",
+            formula:
+              "Q < K \\rightarrow \\text{right}; \\quad Q > K \\rightarrow \\text{left}; \\quad Q = K \\rightarrow \\text{equilibrium}",
+          },
+          {
+            heading: "4. Le Chatelier: The System Fights Back",
+            content:
+              "Le Chatelier's principle says that if you disturb an equilibrium, the system shifts to partly oppose the disturbance. Add more reactant — it shifts right to use some up. Increase pressure on a gas mixture — it shifts toward the side with fewer gas molecules to reduce the pressure. Increase temperature — it shifts in the endothermic direction, absorbing the added heat. A catalyst does not shift the position at all, only how fast it is reached. This is not mysticism; every shift is the system re-establishing the same K (except for temperature, which actually changes K). It is the practical toolkit for maximising yield in industry.",
+            formula:
+              "\\text{Disturb} \\Rightarrow \\text{shift to oppose}; \\quad \\text{only } T \\text{ changes } K \\text{ itself}",
+          },
+          {
+            heading: "5. The Haber Process: Equilibrium as an Engineering Compromise",
+            content:
+              "The industrial synthesis of ammonia (N₂ + 3H₂ ⇌ 2NH₃) is the classic demonstration of equilibrium under real constraints, and it feeds half the world through fertiliser. The forward reaction is exothermic and reduces gas moles, so Le Chatelier says high pressure and low temperature maximise yield. But low temperature makes the reaction impractically slow. Industry therefore compromises: high pressure (~200 atm) to push the equilibrium right, a moderate temperature (~450 °C) that is a trade-off between yield and speed, an iron catalyst to speed up reaching equilibrium, and continuous removal of ammonia to keep pulling the reaction forward. It is equilibrium reasoning balanced against kinetics and economics.",
+            formula:
+              "N_2 + 3H_2 \\rightleftharpoons 2NH_3,\\ \\Delta H < 0 \\quad \\Rightarrow \\quad \\text{high } P,\\ \\text{moderate } T,\\ \\text{catalyst}",
+          },
+          {
+            heading: "6. Buffers: Equilibrium Defending Your Blood",
+            content:
+              "A buffer uses equilibrium to resist pH change, and it is why your blood stays near pH 7.4 despite the acids your metabolism constantly produces. A buffer is a mixture of a weak acid and its conjugate base in balance. Add a little strong acid and the conjugate base mops up the extra H⁺; add a little base and the weak acid donates H⁺ to replace it. In both cases the equilibrium shifts to absorb the disturbance, so pH barely moves. The Henderson-Hasselbalch equation shows buffering is strongest when the acid and base are present in equal amounts (pH = pKa). The same principle governs ocean acidity and every biological pH-control system.",
+            formula:
+              "\\text{pH} = \\text{p}K_a + \\log\\dfrac{[A^-]}{[HA]} \\quad \\Rightarrow \\quad \\text{strongest buffer when } [A^-] = [HA]",
+          },
+        ],
+        keyPoints: [
+          "Equilibrium is dynamic: forward and reverse rates are equal, so no net change despite constant reaction",
+          "K depends only on temperature and encodes how far a reaction proceeds; solids and liquids are excluded",
+          "Comparing Q to K predicts the direction of shift — the quantitative basis of Le Chatelier",
+          "Le Chatelier: the system shifts to oppose a disturbance; only temperature changes K itself",
+          "The Haber process and blood buffers are real applications of deliberately managing equilibrium",
+        ],
+        commonMistakes: [
+          "Thinking reactions stop at equilibrium; they continue with equal forward and reverse rates",
+          "Believing a catalyst shifts the equilibrium position; it only changes how fast equilibrium is reached",
+          "Including pure solids or liquids in the K expression",
+          "Assuming pressure changes shift every equilibrium; they only matter when gas moles differ between sides",
+          "Forgetting that changing temperature changes the value of K, unlike other disturbances",
+        ],
+        practiceQuestions: [
+          "Explain what 'dynamic equilibrium' means and why concentrations stay constant while reactions continue.",
+          "For a reaction with Q > K, predict the direction of shift and explain using the reaction quotient.",
+          "Use Le Chatelier's principle to explain how the Haber process maximises ammonia yield.",
+          "Why does adding a catalyst not change the amount of product at equilibrium?",
+          "Explain how a blood buffer resists pH change when acid is added, using the equilibrium shift.",
+          "For N₂O₄(g) ⇌ 2NO₂(g), predict and justify the effect of increasing pressure and increasing temperature.",
+          "Why is buffering capacity greatest when pH equals pKa?",
+        ],
+      },
     },
     thermo: {
       title: "Thermochemistry",
@@ -1595,6 +1813,80 @@ export const THEORY_CONTENT: Record<string, Record<string, TopicData>> = {
         "Enthalpy of combustion of methane is -890 kJ/mol. How much heat from 8 g CH₄?",
         "Why is ice melting at 25°C spontaneous even though ΔH > 0?",
       ],
+      enrichedContent: {
+        title: "Thermochemistry: What Makes a Reaction Happen on Its Own",
+        overview:
+          "Thermochemistry answers a deceptively simple question: will a reaction happen by itself, and how much energy will it release or absorb? The naive answer — 'exothermic reactions are spontaneous' — is wrong, because ice melts spontaneously while absorbing heat. The true answer is Gibbs free energy, which balances two competing drives: the tendency to release energy (enthalpy) and the tendency to become more disordered (entropy). Understanding thermochemistry means seeing every process as a tug-of-war between wanting low energy and wanting high disorder, with temperature deciding which side wins. This single framework explains combustion, dissolving, melting, and why life needs a constant energy supply.",
+        sections: [
+          {
+            heading: "1. Enthalpy: The Heat Ledger of a Reaction",
+            content:
+              "Enthalpy change ΔH measures the heat exchanged at constant pressure — essentially the difference in stored chemical energy between products and reactants. A negative ΔH (exothermic) means the products are lower in energy and the excess is released as heat, like combustion. A positive ΔH (endothermic) means energy was absorbed to make higher-energy products, like photosynthesis or melting ice. The crucial idea is that ΔH is a state function: it depends only on the start and end points, not the path taken. This is what makes Hess's law possible — you can add up known reactions to find the enthalpy of a reaction you cannot measure directly.",
+            formula:
+              "\\Delta H = H_{\\text{products}} - H_{\\text{reactants}} \\quad (<0\\ \\text{exothermic},\\ >0\\ \\text{endothermic})",
+          },
+          {
+            heading: "2. Entropy: The Drive Toward Disorder",
+            content:
+              "Entropy S measures the number of ways energy and matter can be dispersed — loosely, disorder or randomness. The second law of thermodynamics says the total entropy of the universe always increases in a spontaneous process. This is not a mystical preference for mess; it is probability. Disordered arrangements are vastly more numerous than ordered ones, so systems naturally evolve toward them. Entropy rises when a solid melts, a liquid boils, a gas expands, or a reaction produces more gas molecules. The universe 'wants' disorder simply because disorder is overwhelmingly more likely — this is the deep reason processes have a direction and time has an arrow.",
+            formula:
+              "\\Delta S_{\\text{universe}} = \\Delta S_{\\text{system}} + \\Delta S_{\\text{surroundings}} > 0 \\quad (\\text{spontaneous})",
+          },
+          {
+            heading: "3. Gibbs Free Energy: The Real Test of Spontaneity",
+            content:
+              "Gibbs free energy combines both drives into one number: ΔG = ΔH − TΔS. A reaction is spontaneous when ΔG < 0. The brilliance of this equation is that it explains the cases enthalpy alone cannot. Ice melting is endothermic (ΔH > 0, unfavourable) but increases entropy a lot (ΔS > 0, favourable); at room temperature the TΔS term outweighs ΔH, so ΔG < 0 and melting is spontaneous. The temperature T is the arbiter: it decides how much weight entropy gets. This is why some reactions are spontaneous only above or below a certain temperature — the point where ΔH and TΔS exactly balance and ΔG = 0.",
+            formula:
+              "\\Delta G = \\Delta H - T\\Delta S \\quad (\\Delta G < 0 \\Rightarrow \\text{spontaneous})",
+            example:
+              "For ΔH = −100 kJ, ΔS = −200 J/K: ΔG = 0 when T = ΔH/ΔS = 500 K. Below 500 K it is spontaneous (ΔG < 0); above, it is not.",
+          },
+          {
+            heading: "4. The Four Sign Cases: Predicting Spontaneity",
+            content:
+              "The signs of ΔH and ΔS sort every reaction into four predictable cases. Both favourable (ΔH < 0, ΔS > 0): always spontaneous at any temperature, like combustion. Both unfavourable (ΔH > 0, ΔS < 0): never spontaneous. Enthalpy-driven (ΔH < 0, ΔS < 0): spontaneous only at low temperature, where the favourable enthalpy wins. Entropy-driven (ΔH > 0, ΔS > 0): spontaneous only at high temperature, where TΔS wins. Memorising these four cases is far more useful than memorising individual reactions — it lets you reason about any process from just two numbers and the temperature.",
+            formula:
+              "(\\Delta H{-},\\Delta S{+}):\\ \\text{always} \\;|\\; (\\Delta H{+},\\Delta S{-}):\\ \\text{never} \\;|\\; (\\Delta H{-},\\Delta S{-}):\\ \\text{low } T \\;|\\; (\\Delta H{+},\\Delta S{+}):\\ \\text{high } T",
+          },
+          {
+            heading: "5. Hess's Law: Enthalpy Is Path-Independent",
+            content:
+              "Because enthalpy is a state function, the total heat change of a reaction is the same no matter how many steps it takes to get there — like the height difference between two floors is fixed regardless of the staircase you climb. Hess's law exploits this: if you cannot measure ΔH for a reaction directly, you can build it from other reactions whose ΔH you know, adding and reversing them like algebraic equations (reversing flips the sign, multiplying scales it). This turns an impossible measurement into a simple sum, and it is why tables of standard enthalpies of formation are so powerful — any reaction's ΔH can be assembled from them.",
+            formula:
+              "\\Delta H_{\\text{total}} = \\sum \\Delta H_{\\text{steps}} \\qquad \\Delta H^\\circ_{rxn} = \\sum \\Delta H_f^\\circ(\\text{products}) - \\sum \\Delta H_f^\\circ(\\text{reactants})",
+          },
+          {
+            heading: "6. Bond Energies: Where the Heat Actually Comes From",
+            content:
+              "The enthalpy change of a reaction has a concrete physical origin: breaking bonds costs energy, forming bonds releases it. ΔH is the net of these two — the energy spent to break reactant bonds minus the energy recovered forming product bonds. If the products have stronger bonds overall, the reaction is exothermic and releases the difference as heat. This is why combustion releases so much energy: the strong C=O and O–H bonds formed in CO₂ and water are far more stable than the bonds broken in fuel and oxygen. Viewing ΔH as a bond-energy balance makes thermochemistry tangible rather than abstract.",
+            formula:
+              "\\Delta H = \\sum \\text{(bond energies broken)} - \\sum \\text{(bond energies formed)}",
+          },
+        ],
+        keyPoints: [
+          "Spontaneity is decided by Gibbs free energy ΔG = ΔH − TΔS, not by enthalpy alone",
+          "Enthalpy is a state function, which makes Hess's law and formation-enthalpy tables possible",
+          "Entropy is the drive toward disorder and gives processes a direction (the arrow of time)",
+          "Temperature arbitrates the ΔH-versus-TΔS tug-of-war; the four sign cases predict spontaneity",
+          "ΔH physically equals bond energy broken minus bond energy formed — stronger product bonds release heat",
+        ],
+        commonMistakes: [
+          "Assuming every exothermic reaction is spontaneous — entropy and temperature matter too",
+          "Forgetting to convert Celsius to Kelvin in ΔG = ΔH − TΔS",
+          "Failing to reverse the sign of ΔH when reversing a reaction in Hess's law",
+          "Treating entropy as vague 'messiness' rather than the number of ways energy can be dispersed",
+          "Confusing ΔG (spontaneity) with reaction rate — a spontaneous reaction can still be extremely slow",
+        ],
+        practiceQuestions: [
+          "Why does ice melt spontaneously at 25 °C even though melting absorbs heat (ΔH > 0)?",
+          "Use the four sign cases to predict at which temperatures a reaction with ΔH < 0 and ΔS < 0 is spontaneous.",
+          "Explain why ΔG < 0 tells you a reaction is spontaneous but not how fast it occurs.",
+          "Apply Hess's law to find ΔH for a reaction you cannot measure directly.",
+          "Using bond energies, explain why the combustion of methane releases so much heat.",
+          "A reaction has ΔH = −100 kJ and ΔS = −200 J/K. Find the temperature at which it switches from spontaneous to non-spontaneous.",
+          "Explain the connection between the second law of thermodynamics and the direction of time.",
+        ],
+      },
     },
     kinetics: {
       title: "Chemical Kinetics",
@@ -1638,6 +1930,78 @@ export const THEORY_CONTENT: Record<string, Record<string, TopicData>> = {
         "Zero-order reaction: k = 0.02 M/s. Time to reduce [A] from 0.5 to 0.1 M?",
         "Ea = 75 kJ/mol. By what factor does rate increase from 300 K to 350 K?",
       ],
+      enrichedContent: {
+        title: "Kinetics: Why Reactions Are Fast or Slow",
+        overview:
+          "Thermodynamics tells you whether a reaction can happen; kinetics tells you whether it will happen on a timescale you care about. A diamond is thermodynamically unstable — it 'wants' to turn into graphite — but the reaction is so slow it will never be noticed. Kinetics is the study of reaction speed and, more importantly, of the pathway a reaction takes: the sequence of molecular collisions and bond-breaking events called the mechanism. The central idea is the activation energy barrier — reactions need a push over a hill before they can roll down to products. Understanding kinetics explains everything from why food keeps longer in a fridge to how enzymes make life possible.",
+        sections: [
+          {
+            heading: "1. Thermodynamics vs Kinetics: Possible Is Not the Same as Fast",
+            content:
+              "A reaction can be highly spontaneous (ΔG very negative) and still take a million years, because spontaneity says nothing about speed. Thermodynamics answers 'will it happen?' by comparing the energy of reactants and products. Kinetics answers 'how fast?' by examining the barrier between them. The classic example is the conversion of diamond to graphite: thermodynamically favoured, kinetically frozen. This separation is profound — it means metastable states (diamond, gasoline plus air at room temperature, your own body) can persist indefinitely because the path to the lower-energy state is blocked by a high barrier.",
+            formula:
+              "\\text{Thermodynamics: } \\Delta G\\ (\\text{will it?}) \\qquad \\text{Kinetics: } E_a\\ (\\text{how fast?})",
+          },
+          {
+            heading: "2. The Activation Energy Barrier",
+            content:
+              "For reactants to become products, bonds must first break before new ones form, and breaking bonds requires an input of energy. The minimum energy needed is the activation energy E_a — a hill the reaction must climb. Even a strongly exothermic reaction must first go up this hill, because the reacting molecules need enough energy to reach a high-energy transition state (an unstable arrangement midway between reactants and products). Only collisions with energy ≥ E_a succeed. This is why a match is needed to start a fire even though burning releases far more energy than the match provides — the match supplies the activation energy to get over the initial hill.",
+            formula:
+              "\\text{Reactants} \\xrightarrow{+E_a} \\text{transition state} \\xrightarrow{-\\Delta H} \\text{products}",
+          },
+          {
+            heading: "3. Collision Theory: Why Rate Depends on Concentration",
+            content:
+              "Reactions occur when molecules collide with sufficient energy and the correct orientation. This collision theory explains the rate law directly. Higher concentration means more molecules per volume, so more collisions per second, so a faster rate. Higher temperature does two things: molecules move faster (more collisions) and, more importantly, a much larger fraction of them have energy above E_a — which is why rate is exquisitely sensitive to temperature. The orientation requirement explains why not every energetic collision reacts; molecules must hit in the right way for the bonds to rearrange.",
+            formula:
+              "\\text{Rate} \\propto (\\text{collision frequency}) \\times (\\text{fraction with } E \\geq E_a) \\times (\\text{correct orientation})",
+          },
+          {
+            heading: "4. The Arrhenius Equation: Temperature Is Exponential",
+            content:
+              "The Arrhenius equation k = Ae^(−E_a/RT) quantifies the temperature dependence, and the exponential is the key. Because E_a appears in an exponential, a modest rise in temperature produces a dramatic increase in rate — roughly, many reactions double in speed for every 10 °C rise. The term e^(−E_a/RT) is the fraction of molecules with enough energy to surmount the barrier, and it grows rapidly with T. This is why refrigeration preserves food (slowing the reactions of spoilage) and why fever matters biologically. The equation also lets you determine E_a experimentally by measuring k at two temperatures.",
+            formula:
+              "k = A\\,e^{-E_a/RT} \\quad \\Rightarrow \\quad \\text{rate rises exponentially with } T",
+          },
+          {
+            heading: "5. Mechanisms and the Rate-Determining Step",
+            content:
+              "Most reactions do not happen in a single collision; they proceed through a sequence of elementary steps called a mechanism, with short-lived intermediates formed along the way. The overall rate is governed by the slowest step — the rate-determining step — just as the slowest stage of an assembly line sets the pace of the whole factory. This is why the experimentally measured rate law often does not match the overall balanced equation: the rate law reflects the molecularity of the slow step, not the net stoichiometry. Determining a mechanism means finding a sequence of steps whose slow step reproduces the observed rate law.",
+            formula:
+              "\\text{Overall rate} = \\text{rate of slowest (rate-determining) step}",
+          },
+          {
+            heading: "6. Catalysts: Lowering the Hill Without Being Consumed",
+            content:
+              "A catalyst speeds up a reaction by providing an alternative pathway with a lower activation energy — it lowers the hill rather than pushing harder. Crucially, a catalyst is not consumed; it participates but is regenerated, so a tiny amount can turn over a huge quantity of reactant. It speeds up the forward and reverse reactions equally, so it does not change the equilibrium position or ΔG — it only helps the system reach equilibrium faster. This is the basis of enormous practical power: the catalytic converter cleans car exhaust, industrial catalysts make fertiliser and plastics, and enzymes are biological catalysts that run every reaction in your body fast enough to sustain life.",
+            formula:
+              "\\text{Catalyst} \\downarrow E_a,\\ \\text{not consumed},\\ \\text{same } \\Delta G \\text{ and equilibrium, faster rate}",
+          },
+        ],
+        keyPoints: [
+          "Thermodynamics decides if a reaction can occur; kinetics decides if it occurs at a useful speed",
+          "Reactions must overcome an activation energy barrier via an unstable transition state",
+          "Collision theory: rate rises with concentration (more collisions) and especially temperature (more energetic collisions)",
+          "The Arrhenius equation shows rate depends exponentially on temperature — small T change, large rate change",
+          "Mechanisms proceed by elementary steps; the slowest sets the rate; catalysts lower E_a without being consumed",
+        ],
+        commonMistakes: [
+          "Confusing spontaneity (ΔG) with speed — a spontaneous reaction can be immeasurably slow",
+          "Assuming reaction order equals the stoichiometric coefficient; orders come from experiment",
+          "Thinking a catalyst changes the equilibrium yield or ΔG; it only changes the rate",
+          "Using the first-order half-life formula for zero- or second-order reactions",
+          "Believing an exothermic reaction needs no activation energy; it still must climb the barrier first",
+        ],
+        practiceQuestions: [
+          "Explain how diamond can be thermodynamically unstable yet persist indefinitely.",
+          "Using collision theory, explain why reaction rate is so sensitive to temperature but only linearly to concentration.",
+          "A reaction needs a spark to start but then releases far more energy than the spark provided. Explain using activation energy.",
+          "Why does a catalyst speed up a reaction without changing the amount of product at equilibrium?",
+          "For a multi-step mechanism, explain how the rate-determining step dictates the observed rate law.",
+          "A first-order reaction has a half-life of 50 min. How long until only 25% of the reactant remains?",
+          "Using the Arrhenius equation, explain why food spoils much more slowly in a refrigerator.",
+        ],
+      },
     },
     "acid-base": {
       title: "Acid-Base Chemistry",
@@ -1681,6 +2045,78 @@ export const THEORY_CONTENT: Record<string, Record<string, TopicData>> = {
         "Calculate pH of 0.01 M NH₄Cl (Kb = 1.8 × 10⁻⁵).",
         "How many grams of NaCH₃COO (M = 82) in 1 L of 0.1 M CH₃COOH for pH 4.74?",
       ],
+      enrichedContent: {
+        title: "Acids and Bases: The Proton Handshake That Runs Life",
+        overview:
+          "Acid-base chemistry looks like a sea of formulas — pH, Ka, pOH, buffers, titration curves — but it rests on one simple idea: acids donate protons (H⁺) and bases accept them. Nearly every biological and environmental process you care about is proton transfer: digestion, blood pH, enzyme function, acid rain, and ocean acidification. The power of the subject comes from the logarithmic pH scale, which compresses an enormous range of proton concentrations into a few numbers, and from the concept of conjugate pairs, which reveals that every acid has a partner base. Once you see acid-base reactions as a proton handshake between partners, the formulas become tools rather than obstacles.",
+        sections: [
+          {
+            heading: "1. Three Definitions, One Deepening Idea",
+            content:
+              "The definition of acids and bases grew more general over time. Arrhenius said acids produce H⁺ in water and bases produce OH⁻ — useful but limited to aqueous solutions. Brønsted-Lowry broadened it to proton transfer: an acid is any proton donor, a base any proton acceptor, which works without requiring water. Lewis broadened it further to electron pairs: an acid accepts an electron pair, a base donates one — the widest definition, covering reactions with no protons at all (like BF₃ acting as an acid). Each definition subsumes the last. For most of biology and solution chemistry, the Brønsted-Lowry proton view is the most useful.",
+            formula:
+              "\\text{Arrhenius (H}^+/\\text{OH}^-) \\subset \\text{Brønsted-Lowry (proton transfer)} \\subset \\text{Lewis (electron pairs)}",
+          },
+          {
+            heading: "2. The Logarithmic pH Scale: Why One Number Hides a Lot",
+            content:
+              "pH = −log[H⁺] is not an arbitrary formula; it is a way to tame a colossal range. Proton concentrations in real solutions span over fourteen orders of magnitude, from ~1 M in strong acid to 10⁻¹⁴ M in strong base. The logarithm compresses this into the tidy 0–14 scale. The critical consequence is that each single pH unit is a tenfold change in acidity: pH 3 is ten times more acidic than pH 4 and a hundred times more than pH 5. This is why a shift of one pH unit in blood or ocean water is chemically enormous — the logarithm hides just how violent these changes really are.",
+            formula:
+              "\\text{pH} = -\\log[H^+], \\qquad \\text{pH} + \\text{pOH} = 14, \\qquad [H^+][OH^-] = K_w = 10^{-14}",
+          },
+          {
+            heading: "3. Strong vs Weak: It's About Degree of Dissociation",
+            content:
+              "A strong acid (HCl, HNO₃, H₂SO₄) dissociates completely in water — every molecule gives up its proton, so [H⁺] equals the acid concentration and pH is simply −log C. A weak acid (acetic acid, carbonic acid) only partially dissociates, establishing an equilibrium, so [H⁺] is much smaller and must be found from Ka using [H⁺] ≈ √(Ka·C). Strength is not the same as concentration: a dilute strong acid and a concentrated weak acid can have similar pH. The distinction matters everywhere — your stomach uses strong acid to digest, while your blood relies on weak-acid buffers to stay near neutral.",
+            formula:
+              "\\text{Strong: } [H^+] = C \\qquad \\text{Weak: } [H^+] \\approx \\sqrt{K_a \\cdot C}",
+          },
+          {
+            heading: "4. Conjugate Pairs: Every Acid Has a Partner",
+            content:
+              "A Brønsted-Lowry acid-base reaction is always a proton transfer between two conjugate pairs. When an acid HA donates a proton, it becomes its conjugate base A⁻; when a base accepts a proton, it becomes its conjugate acid. The two are linked by exactly one H⁺. There is a seesaw relationship: the stronger an acid, the weaker its conjugate base, and vice versa — a species that gives up protons readily leaves behind a partner that has little appetite to take one back. This conjugate-pair thinking is the foundation of buffers and of predicting which direction an acid-base reaction will favour.",
+            formula:
+              "HA + B \\rightleftharpoons A^- + HB^+ \\quad (\\text{two conjugate pairs differing by one } H^+)",
+          },
+          {
+            heading: "5. Buffers: Why Your Blood Doesn't Kill You",
+            content:
+              "A buffer resists pH change when small amounts of acid or base are added, and it is essential to life — blood must stay within about pH 7.35–7.45 or you die. A buffer is a mixture of a weak acid and its conjugate base in equilibrium. Add acid (H⁺) and the conjugate base absorbs it; add base (OH⁻) and the weak acid donates H⁺ to neutralise it. Either way the equilibrium shifts to soak up the disturbance, so pH barely moves. Buffering is strongest when the acid and base are equal (pH = pKa), which is why the body uses buffer systems whose pKa sits near the pH it must defend — like the carbonic acid/bicarbonate system in blood.",
+            formula:
+              "\\text{pH} = \\text{p}K_a + \\log\\dfrac{[A^-]}{[HA]} \\quad (\\text{Henderson-Hasselbalch});\\ \\text{best buffer at pH} = \\text{p}K_a",
+          },
+          {
+            heading: "6. Titration and Salt Hydrolysis: Reading the Curve",
+            content:
+              "A titration gradually adds one solution to another to find an unknown concentration, and its pH curve reveals the chemistry. The equivalence point is where moles of acid equal moles of base — but its pH is not always 7. A strong acid titrated with a strong base gives a neutral equivalence point (pH 7), while a weak acid with a strong base gives a basic equivalence point because the salt formed hydrolyses: the conjugate base of the weak acid reacts with water to produce OH⁻. This salt hydrolysis is why solutions of salts are not always neutral. Choosing an indicator whose colour change matches the equivalence-point pH is the practical key to a successful titration.",
+            formula:
+              "\\text{WA} + \\text{SB} \\rightarrow \\text{basic salt}\\ (\\text{pH}>7); \\quad \\text{SA} + \\text{WB} \\rightarrow \\text{acidic salt}\\ (\\text{pH}<7)",
+          },
+        ],
+        keyPoints: [
+          "Acids donate protons and bases accept them (Brønsted-Lowry); Lewis generalises to electron pairs",
+          "pH is logarithmic — each unit is a tenfold change, so small pH shifts are chemically large",
+          "Strong acids dissociate fully ([H⁺] = C); weak acids partially ([H⁺] ≈ √(Ka·C)); strength ≠ concentration",
+          "Every acid has a conjugate base differing by one H⁺; stronger acid means weaker conjugate base",
+          "Buffers (weak acid + conjugate base) resist pH change; salt hydrolysis makes equivalence points non-neutral",
+        ],
+        commonMistakes: [
+          "Using pH = −log C for a weak acid instead of √(Ka·C)",
+          "Confusing acid strength (degree of dissociation) with concentration (amount dissolved)",
+          "Assuming all salt solutions are neutral — salts of weak acids or bases hydrolyse",
+          "Assuming the equivalence point of every titration is at pH 7",
+          "Forgetting that a buffer works best near its pKa, not at any arbitrary pH",
+        ],
+        practiceQuestions: [
+          "Explain how the Brønsted-Lowry definition generalises the Arrhenius definition.",
+          "Why does a change of one pH unit represent a tenfold change in acidity?",
+          "Calculate the pH of 0.1 M acetic acid (Ka = 1.8 × 10⁻⁵) and explain why it is not simply −log(0.1).",
+          "Identify the two conjugate acid-base pairs in the reaction between acetic acid and water.",
+          "Explain how the carbonic acid/bicarbonate buffer keeps blood near pH 7.4.",
+          "Why is the equivalence point basic when a weak acid is titrated with a strong base?",
+          "Distinguish between a strong dilute acid and a weak concentrated acid of the same pH.",
+        ],
+      },
     },
     redox: {
       title: "Redox Reactions and Electrochemistry",
@@ -1730,6 +2166,78 @@ export const THEORY_CONTENT: Record<string, Record<string, TopicData>> = {
         "Calculate E at 25°C for Zn|Zn²⁺(0.01 M)||Cu²⁺(0.1 M)|Cu. (E° = 1.10 V)",
         "What charge deposits 5.4 g Al from AlCl₃? (Al = 27 g/mol)",
       ],
+      enrichedContent: {
+        title: "Redox: The Flow of Electrons That Powers Everything",
+        overview:
+          "Redox reactions — where electrons are transferred from one species to another — are the chemistry of energy flow. They are why batteries work, why iron rusts, why your cells extract energy from food, and how metals are extracted from ores. The unifying idea is that oxidation (loss of electrons) and reduction (gain of electrons) always occur together: electrons given up by one species must be accepted by another. When you physically separate the two half-reactions and connect them by a wire, the electrons are forced to travel through the wire — and that flow is electricity. Understanding redox is understanding how chemical energy is converted to electrical energy and back.",
+        sections: [
+          {
+            heading: "1. Oxidation and Reduction Are Inseparable",
+            content:
+              "The mnemonic OIL RIG — Oxidation Is Loss, Reduction Is Gain (of electrons) — captures the core, but the deeper point is that the two always happen simultaneously. An electron cannot simply vanish; if one species loses an electron, another must gain it at the same instant. So every redox reaction couples an oxidation half-reaction to a reduction half-reaction. The species that loses electrons is oxidised and acts as the reducing agent (it reduces the other); the species that gains electrons is reduced and is the oxidising agent. Tracking oxidation numbers is the bookkeeping tool that reveals who lost and who gained.",
+            formula:
+              "\\text{Oxidation (loss)} \\;+\\; \\text{Reduction (gain)} \\Rightarrow \\text{always coupled}",
+          },
+          {
+            heading: "2. Oxidation Numbers: The Electron Accounting System",
+            content:
+              "Oxidation numbers are a formal bookkeeping device that lets you track electron transfer even in covalent compounds where no real ions exist. By assigning electrons in each bond to the more electronegative atom, every atom gets a notional charge. An increase in oxidation number is oxidation; a decrease is reduction. This is what lets you identify the oxidising and reducing agents in any reaction and balance redox equations systematically. The rules (O is usually −2, H is usually +1, elemental form is 0, etc.) are conventions, but they work perfectly for accounting because the total electrons lost must equal the total gained.",
+            formula:
+              "\\Delta(\\text{oxidation number}) > 0 \\Rightarrow \\text{oxidised}; \\quad < 0 \\Rightarrow \\text{reduced}",
+          },
+          {
+            heading: "3. Half-Reactions and Balancing Redox",
+            content:
+              "The ion-electron (half-reaction) method turns the messy task of balancing redox equations into a systematic procedure. Split the reaction into an oxidation half and a reduction half. Balance each for atoms, then for oxygen by adding H₂O, for hydrogen by adding H⁺ (in acid) or OH⁻ (in base), and finally for charge by adding electrons. Multiply the halves so the electrons lost equal the electrons gained, then add them and cancel. This method works because it enforces the fundamental conservation of both mass and charge — and it makes the electron transfer explicit, which is exactly what you need to connect the reaction to an electrical circuit.",
+            formula:
+              "\\text{Balance atoms} \\rightarrow \\text{O with } H_2O \\rightarrow \\text{H with } H^+ \\rightarrow \\text{charge with } e^- \\rightarrow \\text{equalise electrons}",
+          },
+          {
+            heading: "4. Galvanic Cells: Forcing Electrons Through a Wire",
+            content:
+              "If you allow oxidation and reduction to happen in the same beaker, the electron transfer is direct and the energy is released as heat. But if you separate the two half-reactions into different compartments and connect them with a wire, the electrons are forced to travel through the wire to get from the oxidation site (anode) to the reduction site (cathode) — and that flow of electrons is an electric current you can use. A salt bridge completes the circuit by allowing ions to flow and maintain charge balance. This is a galvanic (voltaic) cell: a battery. The spontaneous redox reaction is harnessed to do electrical work instead of just making heat.",
+            formula:
+              "\\text{Anode (oxidation)} \\xrightarrow{\\text{electrons through wire}} \\text{Cathode (reduction)}; \\quad \\text{salt bridge balances charge}",
+          },
+          {
+            heading: "5. Cell Potential and the Link to Free Energy",
+            content:
+              "The driving force of a galvanic cell is its cell potential E°_cell = E°_cathode − E°_anode, measured in volts. A positive E°_cell means the reaction is spontaneous. This connects directly to thermodynamics: ΔG° = −nFE°_cell, where n is the moles of electrons and F is Faraday's constant. So a redox reaction's free energy change and its voltage are two faces of the same thing — the greater the potential, the more spontaneous the reaction and the more electrical work it can do. The Nernst equation extends this to non-standard conditions, showing that the voltage drops as the cell discharges and the reaction quotient Q rises toward equilibrium (where E = 0 and the battery is 'dead').",
+            formula:
+              "E^\\circ_{cell} = E^\\circ_{cathode} - E^\\circ_{anode}; \\qquad \\Delta G^\\circ = -nFE^\\circ_{cell}; \\qquad E = E^\\circ - \\frac{0.0591}{n}\\log Q",
+          },
+          {
+            heading: "6. Electrolysis and Faraday's Laws: Running It Backwards",
+            content:
+              "A galvanic cell converts spontaneous chemical energy into electricity; an electrolytic cell does the reverse, using electrical energy to drive a non-spontaneous reaction. This is how we electroplate metals, purify copper, and extract reactive metals like aluminium from their ores — reactions that would never happen on their own are forced by applying a voltage greater than the cell potential. Faraday's laws quantify this: the mass of substance deposited is proportional to the charge passed, with one mole of electrons (one Faraday, 96,485 C) depositing one equivalent. This precise charge-to-mass relationship is the basis of electroplating, batteries being recharged, and industrial electrochemistry.",
+            formula:
+              "m = \\dfrac{MIt}{nF}, \\qquad F = 96485\\ \\text{C/mol} \\quad (1\\ \\text{mol } e^- = 1\\ \\text{Faraday})",
+          },
+        ],
+        keyPoints: [
+          "Oxidation (loss) and reduction (gain) of electrons always occur together in a redox reaction",
+          "Oxidation numbers are a bookkeeping tool to track electron transfer and identify oxidising/reducing agents",
+          "Half-reaction balancing enforces conservation of both mass and charge",
+          "Separating the half-reactions forces electrons through a wire — a galvanic cell (battery)",
+          "E°_cell links to ΔG° = −nFE°; electrolysis runs the non-spontaneous reverse using applied voltage",
+        ],
+        commonMistakes: [
+          "Confusing the anode and cathode, or forgetting the anode is where oxidation occurs",
+          "Computing E°_cell as anode − cathode instead of cathode − anode",
+          "Assuming a redox reaction can have oxidation without a matching reduction",
+          "Applying the wrong sign convention between galvanic and electrolytic cells",
+          "Forgetting to equalise electrons between half-reactions before combining them",
+        ],
+        practiceQuestions: [
+          "Explain why oxidation and reduction must always occur together in a redox reaction.",
+          "Assign oxidation numbers and identify the oxidising and reducing agents in a given reaction.",
+          "Describe how separating two half-reactions into compartments produces an electric current.",
+          "Use ΔG° = −nFE°_cell to explain why a positive cell potential means a spontaneous reaction.",
+          "Explain why a battery's voltage falls as it discharges, using the Nernst equation.",
+          "Balance MnO₄⁻ + Fe²⁺ + H⁺ → Mn²⁺ + Fe³⁺ + H₂O using the half-reaction method.",
+          "How is electrolysis used to extract aluminium, and why can't this be done chemically?",
+        ],
+      },
     },
     organic: {
       title: "Organic Chemistry Fundamentals",
@@ -1780,6 +2288,78 @@ export const THEORY_CONTENT: Record<string, Record<string, TopicData>> = {
         "Arrange in order of increasing acidity: ethanol, phenol, acetic acid.",
         "Explain why t-butyl carbocation is more stable than ethyl carbocation.",
       ],
+      enrichedContent: {
+        title: "Organic Chemistry: The Chemistry of Carbon's Infinite Versatility",
+        overview:
+          "Organic chemistry seems like an overwhelming flood of reactions and names until you see its underlying logic: carbon is uniquely able to build large, stable, varied skeletons, and a handful of principles — functional groups, electron flow, and stability of intermediates — explain almost all of its behaviour. Instead of memorising thousands of reactions, you learn to recognise the reactive site (the functional group), track where electrons want to go (from electron-rich nucleophiles to electron-poor electrophiles), and predict products from the stability of what forms in between. Organic chemistry is the chemistry of life itself: your DNA, proteins, sugars, and fats are all carbon compounds following these same rules.",
+        sections: [
+          {
+            heading: "1. Why Carbon? Tetravalency and Catenation",
+            content:
+              "Carbon dominates the chemistry of life for two structural reasons. First, tetravalency: with four valence electrons it forms four strong covalent bonds, allowing it to be a junction connecting many other atoms in three dimensions. Second, catenation: carbon-carbon bonds are strong enough that carbon chains and rings of almost any length and shape are stable — no other element matches this. Combined with its moderate electronegativity (so bonds are shared, not fully ionic) and its ability to form double and triple bonds, carbon can build an essentially infinite variety of stable structures. This versatility is why there are millions of known organic compounds and why life is carbon-based rather than silicon-based.",
+            formula:
+              "\\text{4 bonds (tetravalency)} + \\text{strong C-C chains (catenation)} \\Rightarrow \\text{near-infinite variety}",
+          },
+          {
+            heading: "2. Functional Groups: The Reactive Personality of a Molecule",
+            content:
+              "The carbon-hydrogen skeleton of an organic molecule is relatively inert; nearly all its reactivity comes from a small set of functional groups — specific arrangements of atoms that behave predictably wherever they appear. An alcohol (−OH), an aldehyde (−CHO), a carboxylic acid (−COOH), an amine (−NH₂) each impose a characteristic chemistry regardless of the rest of the molecule. This is the great simplifier of organic chemistry: instead of studying millions of compounds, you study a dozen functional groups. It is also why molecules in your body work the way they do — the functional groups on an amino acid or a sugar determine how it reacts and what it can build.",
+            formula:
+              "\\text{-OH (alcohol)},\\ \\text{-CHO (aldehyde)},\\ \\text{-COOH (acid)},\\ \\text{-NH}_2\\ (\\text{amine}) \\Rightarrow \\text{predictable reactivity}",
+          },
+          {
+            heading: "3. Electron Flow: Nucleophiles Attack Electrophiles",
+            content:
+              "Almost every organic reaction mechanism is the same story: an electron-rich species attacks an electron-poor one. A nucleophile ('nucleus-loving', often negatively charged or lone-pair bearing) donates electrons to an electrophile ('electron-loving', electron-deficient, often positively charged or bonded to something more electronegative). Reactions happen where there is a mismatch in electron density, and the curly-arrow notation simply tracks the movement of electron pairs. Once you learn to spot the nucleophile and the electrophile in any reaction, you can predict the product by following where the electrons naturally want to flow — this is the master key to organic mechanisms.",
+            formula:
+              "\\text{Nucleophile } (Nu^-,\\ \\text{electron-rich}) \\rightarrow \\text{Electrophile } (E^+,\\ \\text{electron-poor})",
+          },
+          {
+            heading: "4. Bond Fission: Radicals Versus Ions",
+            content:
+              "When a covalent bond breaks, it can do so in two fundamentally different ways, leading to two families of reactions. Homolytic fission splits the bonding pair evenly — each atom keeps one electron — producing highly reactive free radicals (species with unpaired electrons). Radicals drive chain reactions like combustion and polymerisation. Heterolytic fission gives both electrons to one atom, producing a pair of ions — a cation and an anion. Ionic reactions dominate most laboratory and biological organic chemistry. Recognising which type of fission is occurring tells you whether to expect radical or ionic behaviour, and hence what products and mechanisms to predict.",
+            formula:
+              "\\text{Homolytic: } A{-}B \\rightarrow A^\\cdot + B^\\cdot \\ (\\text{radicals}) \\qquad \\text{Heterolytic: } A{-}B \\rightarrow A^+ + B^- \\ (\\text{ions})",
+          },
+          {
+            heading: "5. Stability of Intermediates: Carbocations and Beyond",
+            content:
+              "Many organic reactions pass through short-lived, high-energy intermediates, and the stability of these intermediates determines which product forms and how fast. The carbocation (a carbon with a positive charge) is the most important: its stability increases with substitution, tertiary > secondary > primary > methyl. This is because neighbouring alkyl groups donate electron density through the inductive effect and hyperconjugation (overlap of adjacent C–H bonds with the empty orbital), spreading out and stabilising the positive charge. This ordering explains Markovnikov's rule and why certain products dominate. The general principle — reactions favour the pathway through the most stable intermediate — is a powerful predictive tool across organic chemistry.",
+            formula:
+              "\\text{Carbocation stability: } 3^\\circ > 2^\\circ > 1^\\circ > CH_3^+ \\quad (\\text{inductive + hyperconjugation})",
+          },
+          {
+            heading: "6. Electronic Effects and Isomerism: Same Atoms, Different Behaviour",
+            content:
+              "Two further ideas explain much of organic chemistry's richness. Electronic effects describe how electron density is pushed or pulled through a molecule: the inductive effect operates through σ bonds, the resonance effect delocalises electrons through π systems, and together they determine where reactions occur and how stable intermediates are. Isomerism explains how the same molecular formula can give very different compounds — structural isomers differ in connectivity (chain, position, functional group), while stereoisomers have the same connectivity but different spatial arrangement. Stereoisomerism is crucial in biology: the two mirror-image forms (enantiomers) of a drug or amino acid can behave completely differently, because life's molecules are chirally selective.",
+            formula:
+              "\\text{Isomers: same formula} \\Rightarrow \\text{structural (connectivity) or stereoisomers (arrangement)}",
+          },
+        ],
+        keyPoints: [
+          "Carbon's tetravalency and catenation give it unmatched ability to build diverse stable skeletons",
+          "Functional groups, not the carbon skeleton, determine a molecule's reactivity — study the groups, not every compound",
+          "Most mechanisms are electron flow: nucleophiles (electron-rich) attack electrophiles (electron-poor)",
+          "Bond fission is homolytic (radicals) or heterolytic (ions), dictating the reaction family",
+          "Intermediate stability (3° > 2° > 1° carbocations) and electronic effects predict products; stereoisomerism matters in biology",
+        ],
+        commonMistakes: [
+          "Trying to memorise individual reactions instead of learning functional-group behaviour and electron flow",
+          "Confusing nucleophiles (electron donors) with electrophiles (electron acceptors)",
+          "Treating resonance structures as real, interconverting forms rather than one delocalised hybrid",
+          "Forgetting that a more substituted carbocation is more stable, leading to wrong major products",
+          "Ignoring stereoisomerism, which is critical in biological and pharmaceutical contexts",
+        ],
+        practiceQuestions: [
+          "Explain why carbon, more than any other element, can form such a vast variety of stable compounds.",
+          "Identify the functional group in a molecule and predict its characteristic reactivity.",
+          "For CH₃Br + OH⁻ → CH₃OH + Br⁻, identify the nucleophile and electrophile and show the electron flow.",
+          "Explain the difference between homolytic and heterolytic bond fission and the reaction types each leads to.",
+          "Why is a tertiary carbocation more stable than a primary one? Use hyperconjugation and the inductive effect.",
+          "Draw and classify the isomers of C₄H₁₀ and explain why they are structural isomers.",
+          "Why can two enantiomers of the same drug have dramatically different biological effects?",
+        ],
+      },
     },
   },
 
