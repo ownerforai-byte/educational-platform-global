@@ -91,6 +91,16 @@ const SUGGESTED_PROMPTS = [
 const DAILY_CREDIT_POOL = 8;
 const ACTIVE_SESSION_KEY = "neb_ai_active_session";
 
+// Rotating "work in progress" lines while the professor composes a reply —
+// only rendered while `sending`, which is false during SSR, so the first
+// client render matches the server exactly (no hydration risk).
+const THINKING_LINES = [
+  "Thinking it through…",
+  "Reasoning from first principles…",
+  "Pulling in the NEB syllabus…",
+  "Connecting the dots…",
+];
+
 function newSessionId(): string {
   return `c-${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
 }
@@ -135,6 +145,9 @@ export function AIChatInterface() {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [restoredCount, setRestoredCount] = useState<number | null>(null);
 
+  const [thinkIdx, setThinkIdx] = useState(0);
+
+  const streamRef = useRef<HTMLDivElement>(null);
   const chatBottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const sessionRef = useRef(session);
@@ -208,8 +221,27 @@ export function AIChatInterface() {
   }, [isLoggedIn, loadSessionHistory, refreshSessions, user]);
 
   useEffect(() => {
+    // Nothing to follow yet (empty state) — scrolling to the sentinel would
+    // bury the greeting under the composer. Also pin the stream to the top
+    // so a restored/reloaded page can't start mid-greeting.
+    const hasConversation = messages.some((m) => m.role !== "system");
+    if (!hasConversation && !sending) {
+      if (streamRef.current) streamRef.current.scrollTop = 0;
+      return;
+    }
     chatBottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, sending]);
+
+  // Cycle the thinking lines while a reply is composing (client-only — the
+  // indicator never renders during SSR).
+  useEffect(() => {
+    if (!sending) {
+      setThinkIdx(0);
+      return;
+    }
+    const id = setInterval(() => setThinkIdx((i) => (i + 1) % THINKING_LINES.length), 2600);
+    return () => clearInterval(id);
+  }, [sending]);
 
   const handleSend = async (customText?: string) => {
     const textToSend = (customText ?? input).trim();
@@ -499,15 +531,22 @@ export function AIChatInterface() {
                 {sidebarOpen ? <PanelLeftClose className="h-4 w-4" /> : <PanelLeft className="h-4 w-4" />}
               </button>
             )}
-            <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-primary to-violet-500 flex items-center justify-center text-white shadow-md shrink-0">
+            <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-primary to-violet-500 flex items-center justify-center text-white shadow-md shadow-primary/30 shrink-0">
               <Bot className="h-5 w-5" />
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-2">
-                <h2 className="text-sm font-bold text-foreground truncate">Ravikisan&apos;s AI Tutor</h2>
+                <h2 className="text-sm font-extrabold bg-gradient-to-r from-primary via-violet-500 to-primary bg-clip-text text-transparent animate-gradient-text truncate">
+                  Ravikisan&apos;s AI Tutor
+                </h2>
+                {/* live dot — the professor is on duty */}
+                <span className="relative flex h-2 w-2 shrink-0" title="Online">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                </span>
               </div>
               <p className="text-[11px] text-muted-foreground truncate">
-                Professor mode · grounded in the NEB Class 11 &amp; 12 syllabus
+                Live professor mode · grounded in the NEB Class 11 &amp; 12 syllabus
               </p>
             </div>
           </div>
@@ -542,7 +581,7 @@ export function AIChatInterface() {
         </div>
 
         {/* Message stream */}
-        <div className="flex-1 overflow-y-auto px-4 sm:px-6 py-5 space-y-5">
+        <div ref={streamRef} className="flex-1 overflow-y-auto px-4 sm:px-6 py-5 space-y-5">
           {historyState === "loading" ? (
             <div className="h-full flex flex-col items-center justify-center gap-3 text-muted-foreground">
               <div className="h-7 w-7 animate-spin rounded-full border-2 border-primary border-t-transparent" />
@@ -550,15 +589,17 @@ export function AIChatInterface() {
             </div>
           ) : displayMessages.length === 0 ? (
             /* Empty state */
-            <div className="h-full flex flex-col justify-center max-w-2xl mx-auto space-y-6 py-6">
+            <div className="min-h-full flex flex-col justify-center max-w-2xl mx-auto space-y-6 py-6">
               <div className="text-center space-y-2">
-                <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-primary/15 to-violet-500/15 text-primary mx-auto flex items-center justify-center">
-                  <Sparkles className="h-7 w-7" />
+                <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-primary to-violet-500 shadow-lg shadow-primary/25 text-white mx-auto flex items-center justify-center">
+                  <Sparkles className="h-7 w-7 animate-pulse" />
                 </div>
-                <h3 className="text-xl font-bold text-foreground">What are we learning today?</h3>
+                <h3 className="text-xl font-extrabold bg-gradient-to-r from-foreground via-primary to-violet-500 bg-clip-text text-transparent animate-gradient-text">
+                  What are we learning today?
+                </h3>
                 <p className="text-xs text-muted-foreground max-w-md mx-auto leading-relaxed">
-                  Ask anything from Physics, Chemistry, Biology or Mathematics — derivations, mechanisms,
-                  misconceptions, or past NEB questions.
+                  Fire away — derivations, mechanisms, wild &quot;why&quot; questions, misconceptions, or past
+                  NEB questions. Physics, Chemistry, Biology, Math: broken down step by step.
                 </p>
               </div>
 
@@ -569,7 +610,7 @@ export function AIChatInterface() {
                     <button
                       key={i}
                       onClick={() => handleSend(prompt.text)}
-                      className="p-3 rounded-2xl border border-border/70 bg-muted/15 hover:bg-muted/40 hover:border-primary/50 text-left transition-all group flex flex-col justify-between space-y-1.5"
+                      className="p-3 rounded-2xl border border-border/70 bg-muted/15 hover:bg-muted/40 hover:border-primary/50 hover:-translate-y-0.5 hover:shadow-md hover:shadow-primary/10 active:scale-[0.98] text-left transition-all duration-200 group flex flex-col justify-between space-y-1.5"
                     >
                       <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md border w-fit flex items-center gap-1 ${prompt.color}`}>
                         <Icon className="h-2.5 w-2.5" />
@@ -589,9 +630,9 @@ export function AIChatInterface() {
               const isUser = msg.role === "user";
               if (isUser) {
                 return (
-                  <div key={index} className="flex justify-end">
+                  <div key={index} className="flex justify-end animate-pop-in">
                     <div className="flex items-end gap-2.5 max-w-[85%]">
-                      <div className="rounded-2xl rounded-br-md bg-primary text-primary-foreground px-4 py-2.5 shadow-sm">
+                      <div className="rounded-2xl rounded-br-md bg-gradient-to-br from-primary to-violet-500 text-primary-foreground px-4 py-2.5 shadow-sm">
                         <p className="text-xs leading-relaxed whitespace-pre-wrap font-medium">{msg.content}</p>
                       </div>
                       <div className="h-7 w-7 rounded-lg bg-muted border border-border flex items-center justify-center shrink-0 text-muted-foreground">
@@ -602,7 +643,7 @@ export function AIChatInterface() {
                 );
               }
               return (
-                <div key={index} className="group flex gap-3">
+                <div key={index} className="group flex gap-3 animate-pop-in">
                   <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-primary/20 to-violet-500/20 border border-primary/25 text-primary flex items-center justify-center shrink-0 mt-1">
                     <Bot className="h-3.5 w-3.5" />
                   </div>
@@ -643,10 +684,12 @@ export function AIChatInterface() {
               <div className="rounded-2xl rounded-tl-md border border-border/60 bg-muted/20 px-4 py-3 flex items-center gap-2.5 text-xs text-muted-foreground">
                 <span className="flex gap-1">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary animate-bounce [animation-delay:0ms]" />
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary animate-bounce [animation-delay:150ms]" />
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary animate-bounce [animation-delay:300ms]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-violet-500 animate-bounce [animation-delay:150ms]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-bounce [animation-delay:300ms]" />
                 </span>
-                <span>Thinking through the syllabus…</span>
+                <span key={thinkIdx} className="animate-fade-in">
+                  {THINKING_LINES[thinkIdx]}
+                </span>
               </div>
             </div>
           )}
@@ -691,7 +734,7 @@ export function AIChatInterface() {
                   ? "Guest limit reached — please log in to ask more questions."
                   : creditsExhausted
                     ? "Daily credits used up — your pool resets to 8 at 12:00 AM."
-                    : "Ask a question… (Enter to send, Shift+Enter for a new line)"
+                    : "Ask me anything… ⚡ Enter to send · Shift+Enter for a new line"
               }
               className="flex-1 max-h-32 min-h-[44px] py-2.5 px-4 rounded-2xl border border-border/80 bg-card text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none font-medium"
             />
@@ -699,7 +742,7 @@ export function AIChatInterface() {
             <button
               onClick={handleEnhance}
               disabled={!input.trim() || sending || enhancing || composerLocked}
-              className="h-11 w-11 rounded-2xl border border-violet-500/40 bg-violet-500/10 text-violet-600 font-semibold flex items-center justify-center hover:bg-violet-500/20 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
+              className="h-11 w-11 rounded-2xl border border-violet-500/40 bg-violet-500/10 text-violet-600 font-semibold flex items-center justify-center hover:bg-violet-500/20 hover:scale-105 active:scale-95 disabled:hover:scale-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
               title="Enhance my prompt — rewrite it into a sharper study question"
               aria-label="Enhance prompt"
             >
@@ -708,7 +751,7 @@ export function AIChatInterface() {
             <button
               onClick={() => handleSend()}
               disabled={!input.trim() || sending || composerLocked}
-              className="h-11 px-4 rounded-2xl bg-primary text-primary-foreground font-semibold text-xs flex items-center gap-1.5 shadow-sm hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
+              className="h-11 px-4 rounded-2xl bg-gradient-to-r from-primary to-violet-500 text-primary-foreground font-semibold text-xs flex items-center gap-1.5 shadow-md shadow-primary/30 hover:shadow-lg hover:shadow-primary/40 hover:scale-[1.03] active:scale-95 disabled:hover:scale-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
               aria-label="Send message"
             >
               <span>Send</span>

@@ -962,6 +962,24 @@ code, kbd, samp, pre {
 }
 .animate-fade-in { animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
+/* ─── CHAT ENERGY (2026-09-26) — AI tutor micro-motion ───────────────────── */
+@keyframes popIn {
+  from { opacity: 0; transform: translateY(10px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-pop-in { animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* Slow color drift for gradient headline text (needs bg-clip-text). */
+.animate-gradient-text {
+  background-size: 200% auto;
+  animation: gradientShift 5s ease-in-out infinite;
+}
+
 /* ─── REDUCED MOTION (WCAG 2.3.3) ────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *,
