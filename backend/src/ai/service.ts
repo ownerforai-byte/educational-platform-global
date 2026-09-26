@@ -661,9 +661,11 @@ class AgnesProvider implements AIProvider {
 
   constructor(apiKey: string) {
     this.apiKey = apiKey;
-    // Env-overridable in case the endpoint or model slug changes.
-    this.apiUrl = process.env.AGNES_API_URL || "https://api.agnes.ai/v1/chat/completions";
-    this.model = process.env.AGNES_MODEL || "agnes-2.5-flash";
+    // Env-overridable in case the endpoint or model slug changes. The default
+    // MUST be apihub.agnes-ai.com: api.agnes.ai is dead DNS (verified
+    // 2026-09-26) and the comment above explicitly warns against it.
+    this.apiUrl = process.env.AGNES_API_URL || this.apiUrl;
+    this.model = process.env.AGNES_MODEL || this.model;
     // Fail fast so the chain can reach openrouter/internal when Agnes is down.
     this.timeoutMs = Number(process.env.AGNES_TIMEOUT_MS || 29000);
   }
@@ -754,9 +756,41 @@ NEVER hallucinate features. Only reference real platform sections.`;
   }
 }
 
+/**
+ * Reject when `promise` does not settle within `ms` — one link of the
+ * sequential provider chain must not eat the whole chain budget.
+ */
+function withDeadline<T>(promise: Promise<T>, ms: number): Promise<T> {
+  return Promise.race([
+    promise,
+    new Promise<never>((_, reject) =>
+      setTimeout(() => reject(new Error(`timeout after ${ms}ms`)), ms)
+    ),
+  ]);
+}
+
 export class AIService {
   private providers: Map<string, AIProvider> = new Map();
   private defaultProvider: string = "internal";
+
+  /**
+   * Ordered LLM chain (owner policy 2026-09-26): Agnes answers FIRST, then
+   * OpenRouter, and the internal engine is always the last resort. Override
+   * the order with AI_CHAIN_ORDER (comma-separated provider names).
+   */
+  private chainProviders(): AIProvider[] {
+    const configured = (process.env.AI_CHAIN_ORDER || "agnes,openrouter")
+      .split(",")
+      .map((s) => s.trim().toLowerCase())
+      .filter(Boolean);
+    const ordered = configured.filter((n) => this.providers.has(n));
+    // A deployment with only GEMINI_API_KEY set must still reach an LLM:
+    // Gemini joins as the LAST link, never ahead of the owner's order.
+    if (ordered.length === 0 && this.providers.has("gemini")) {
+      ordered.push("gemini");
+    }
+    return ordered.map((n) => this.providers.get(n)!);
+  }
 
   constructor() {
     this.providers.set("internal", new InternalProvider());
@@ -823,36 +857,45 @@ export class AIService {
       return internal.chat(messages);
     }
 
-    const llms = ["agnes", "openrouter", "gemini"]
-      .filter((n) => this.providers.has(n))
-      .map((n) => this.providers.get(n)!);
-    if (llms.length === 0) return internal.chat(messages);
+    const chain = this.chainProviders();
+    if (chain.length === 0) return internal.chat(messages);
 
-    // Race all LLM providers in PARALLEL and take the first success.
-    // The Next.js dev proxy kills proxied POSTs at ~30s, so the total wait
-    // must stay under that: default 28s global budget, then internal fallback.
+    // Sequential chain (owner policy): agnes → openrouter → internal. The
+    // previous parallel race burned BOTH provider bills for one question and
+    // made replies nondeterministic; a per-provider cap keeps the total wait
+    // under the Next dev proxy's ~30s POST kill. The LAST LLM link gets the
+    // whole remaining budget (free-tier models queue past any fixed cap).
     const GLOBAL_BUDGET_MS = Number(process.env.AI_CHAIN_BUDGET_MS) || 28000;
+    const PER_PROVIDER_MS = Number(process.env.AI_PROVIDER_TIMEOUT_MS) || 10000;
+    // Owner policy: Agnes is THE responder. It gets a longer window than the
+    // fallbacks so only a real failure/timeout (not mere slowness) moves the
+    // chain on to openrouter → internal.
+    const PRIMARY_MS = Number(process.env.AI_PRIMARY_TIMEOUT_MS) || 15000;
     const started = Date.now();
-    const timer = new Promise<null>((resolve) =>
-      setTimeout(() => resolve(null), GLOBAL_BUDGET_MS)
-    );
-    const attempts = llms.map(async (p) => {
-      const text = await p.chat(messages);
-      if (!text || !text.trim()) throw new Error("empty");
-      return text;
-    });
-    const winner = await Promise.race([
-      Promise.any(attempts).catch(() => null),
-      timer,
-    ]);
-    if (winner) {
-      console.info(
-        `[AI] chat answered in ${Date.now() - started}ms (raced ${llms.map((p) => p.name).join(", ")})`
-      );
-      return winner;
+    for (let i = 0; i < chain.length; i++) {
+      const p = chain[i];
+      const remaining = GLOBAL_BUDGET_MS - (Date.now() - started);
+      if (remaining <= 0) break;
+      const isLast = i === chain.length - 1;
+      const linkCap = i === 0 ? Math.max(PER_PROVIDER_MS, PRIMARY_MS) : PER_PROVIDER_MS;
+      const cap = isLast ? remaining : Math.min(linkCap, remaining);
+      try {
+        const text = await withDeadline(p.chat(messages), cap);
+        if (text && text.trim()) {
+          console.info(
+            `[AI] chat answered by "${p.name}" in ${Date.now() - started}ms`
+          );
+          return text;
+        }
+      } catch (err) {
+        console.warn(
+          `[AI] chain link "${p.name}" failed/timed out after ${cap}ms:`,
+          err instanceof Error ? err.message : err
+        );
+      }
     }
     console.warn(
-      `[AI] no LLM answered within ${GLOBAL_BUDGET_MS}ms — using internal engine`
+      `[AI] chain exhausted in ${Date.now() - started}ms — using internal engine`
     );
     return internal.chat(messages);
   }
@@ -875,21 +918,31 @@ export class AIService {
       return internal.search(query);
     }
 
-    const llms = ["agnes", "openrouter", "gemini"]
-      .filter((n) => this.providers.has(n))
-      .map((n) => this.providers.get(n)!);
-    if (llms.length === 0) return internal.search(query);
+    const chain = this.chainProviders();
+    if (chain.length === 0) return internal.search(query);
 
+    // Same sequential order as chat(): agnes → openrouter → internal.
     const GLOBAL_BUDGET_MS = 25000;
-    const timer = new Promise<null>((resolve) =>
-      setTimeout(() => resolve(null), GLOBAL_BUDGET_MS)
-    );
-    const attempts = llms.map((p) => p.search(query));
-    const winner = await Promise.race([
-      Promise.any(attempts).catch(() => null),
-      timer,
-    ]);
-    if (winner) return winner;
+    const PER_PROVIDER_MS = Number(process.env.AI_PROVIDER_TIMEOUT_MS) || 10000;
+    const PRIMARY_MS = Number(process.env.AI_PRIMARY_TIMEOUT_MS) || 15000;
+    const started = Date.now();
+    for (let i = 0; i < chain.length; i++) {
+      const p = chain[i];
+      const remaining = GLOBAL_BUDGET_MS - (Date.now() - started);
+      if (remaining <= 0) break;
+      const isLast = i === chain.length - 1;
+      const linkCap = i === 0 ? Math.max(PER_PROVIDER_MS, PRIMARY_MS) : PER_PROVIDER_MS;
+      const cap = isLast ? remaining : Math.min(linkCap, remaining);
+      try {
+        const result = await withDeadline(p.search(query), cap);
+        if (result) return result;
+      } catch (err) {
+        console.warn(
+          `[AI] search chain link "${p.name}" failed/timed out after ${cap}ms:`,
+          err instanceof Error ? err.message : err
+        );
+      }
+    }
     return internal.search(query);
   }
 }

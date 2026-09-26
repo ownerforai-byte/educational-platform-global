@@ -40,6 +40,24 @@ const premiumUpdateSchema = z.object({
   premiumStatus: z.boolean(),
 });
 
+const bulkCreditsSchema = z.object({
+  grants: z
+    .array(
+      z.object({
+        email: z.string().trim().toLowerCase().email().max(255),
+        amount: z.number().int().min(-999999).max(999999),
+      })
+    )
+    .min(1)
+    .max(500),
+  reason: z.string().max(200).optional(),
+});
+
+const everyoneCreditsSchema = z.object({
+  amount: z.number().int().min(-999999).max(999999),
+  reason: z.string().max(200).optional(),
+});
+
 const settingsSchema = z.object({
   settings: z
     .array(
@@ -337,6 +355,194 @@ router.patch("/users/:id/premium", requireAuth, async (req: Request, res: Respon
     res.json({ success: true, userId: req.params.id, premiumStatus: parsed.data.premiumStatus });
   } catch (err: any) {
     console.error("[owner] premium error:", err?.message ?? err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+/**
+ * POST /api/owner/credits/bulk
+ * Divide credits across individual Gmails in one call — the body carries
+ * explicit per-email amounts: { grants: [{ email, amount }, …], reason? }.
+ * Emails are resolved case-insensitively; unknown emails are reported back
+ * (never silently dropped), and known ones are updated atomically-enough
+ * (profile update + audit row per user).
+ */
+router.post("/credits/bulk", requireAuth, async (req: Request, res: Response) => {
+  const owner = ownerGate(req, res);
+  if (!owner) return;
+
+  const parsed = bulkCreditsSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(400).json({ error: "Invalid payload", details: parsed.error.flatten() });
+    return;
+  }
+  const { grants, reason } = parsed.data;
+
+  try {
+    const emails = Array.from(new Set(grants.map((g) => g.email)));
+    const { data: profiles, error } = await supabaseAdmin
+      .from("profiles")
+      .select("id, email, credits")
+      .in("email", emails);
+    if (error) {
+      console.error("[owner] bulk resolve failed:", error.message);
+      res.status(500).json({ error: "Failed to resolve emails" });
+      return;
+    }
+
+    const byEmail = new Map((profiles ?? []).map((p) => [p.email.toLowerCase(), p]));
+    const notFound: string[] = [];
+    const applied: Array<{ email: string; userId: string; newCredits: number }> = [];
+
+    // Collapse duplicate emails (last write wins) so one profile is updated once.
+    const byUser = new Map<string, { email: string; delta: number }>();
+    for (const g of grants) {
+      const p = byEmail.get(g.email);
+      if (!p) {
+        if (!notFound.includes(g.email)) notFound.push(g.email);
+        continue;
+      }
+      const prev = byUser.get(p.id);
+      byUser.set(p.id, { email: p.email, delta: (prev?.delta ?? 0) + g.amount });
+    }
+
+    for (const [userId, { email, delta }] of byUser) {
+      const current = byEmail.get(email.toLowerCase())?.credits ?? 0;
+      const newCredits = Math.max(0, current + delta);
+      const { error: updateError } = await supabaseAdmin
+        .from("profiles")
+        .update({ credits: newCredits })
+        .eq("id", userId);
+      if (updateError) {
+        console.error("[owner] bulk update failed:", updateError.message);
+        continue;
+      }
+      await supabaseAdmin.from("credit_transactions").insert({
+        user_id: userId,
+        actor_id: owner.user.id,
+        amount: delta,
+        type: delta >= 0 ? "GRANT" : "ADJUST",
+        reason: reason ?? `Owner bulk division by ${owner.user.email}`,
+      });
+      applied.push({ email, userId, newCredits });
+    }
+
+    res.json({ applied, notFound, requested: grants.length });
+  } catch (err: any) {
+    console.error("[owner] bulk credits error:", err?.message ?? err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+/**
+ * POST /api/owner/credits/everyone — grant the same amount to every profile.
+ */
+router.post("/credits/everyone", requireAuth, async (req: Request, res: Response) => {
+  const owner = ownerGate(req, res);
+  if (!owner) return;
+
+  const parsed = everyoneCreditsSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(400).json({ error: "Invalid payload", details: parsed.error.flatten() });
+    return;
+  }
+  const { amount, reason } = parsed.data;
+
+  try {
+    const { data: profiles, error } = await supabaseAdmin
+      .from("profiles")
+      .select("id, credits");
+    if (error) {
+      console.error("[owner] everyone resolve failed:", error.message);
+      res.status(500).json({ error: "Failed to list users" });
+      return;
+    }
+
+    let applied = 0;
+    for (const p of profiles ?? []) {
+      const newCredits = Math.max(0, (p.credits ?? 0) + amount);
+      const { error: updateError } = await supabaseAdmin
+        .from("profiles")
+        .update({ credits: newCredits })
+        .eq("id", p.id);
+      if (updateError) continue;
+      await supabaseAdmin.from("credit_transactions").insert({
+        user_id: p.id,
+        actor_id: owner.user.id,
+        amount,
+        type: amount >= 0 ? "GRANT" : "ADJUST",
+        reason: reason ?? `Owner grant to everyone by ${owner.user.email}`,
+      });
+      applied++;
+    }
+
+    res.json({ applied, total: (profiles ?? []).length, amount });
+  } catch (err: any) {
+    console.error("[owner] everyone credits error:", err?.message ?? err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+/**
+ * GET /api/owner/users/:id/chats?session=&limit=
+ * Tracking: read any user's AI chat history (grouped sessions + messages).
+ * Owner-gated like every other route here.
+ */
+router.get("/users/:id/chats", requireAuth, async (req: Request, res: Response) => {
+  const owner = ownerGate(req, res);
+  if (!owner) return;
+
+  try {
+    const session = typeof req.query.session === "string" ? req.query.session.slice(0, 64) : null;
+    const limitRaw = Number(req.query.limit);
+    const limit = Number.isFinite(limitRaw) ? Math.min(Math.max(Math.trunc(limitRaw), 1), 500) : 200;
+
+    const { data: sessionsRaw, error: sessionsError } = await supabaseAdmin
+      .from("chat_messages")
+      .select("session, role, content, created_at")
+      .eq("user_id", req.params.id)
+      .order("created_at", { ascending: false })
+      .limit(500);
+
+    if (sessionsError) {
+      const msg = (sessionsError.message ?? "").toLowerCase();
+      if (msg.includes("could not find the table") || msg.includes("does not exist") || msg.includes("schema cache")) {
+        res.json({ sessions: [], messages: [], migrated: false });
+        return;
+      }
+      console.error("[owner] chats failed:", sessionsError.message);
+      res.status(500).json({ error: "Failed to fetch chat history" });
+      return;
+    }
+
+    const sessions = new Map<string, { session: string; messages: number; lastMessageAt: string; preview: string }>();
+    for (const row of sessionsRaw ?? []) {
+      const s = row.session || "default";
+      const entry = sessions.get(s) ?? { session: s, messages: 0, lastMessageAt: row.created_at, preview: "" };
+      entry.messages += 1;
+      if (!entry.preview && row.role === "user") entry.preview = row.content.slice(0, 120);
+      sessions.set(s, entry);
+    }
+
+    let messages: unknown[] = [];
+    if (session) {
+      const { data } = await supabaseAdmin
+        .from("chat_messages")
+        .select("id, session, role, content, created_at")
+        .eq("user_id", req.params.id)
+        .eq("session", session)
+        .order("created_at", { ascending: false })
+        .limit(limit);
+      messages = (data ?? []).slice().reverse();
+    }
+
+    res.json({
+      sessions: Array.from(sessions.values()),
+      messages,
+      migrated: true,
+    });
+  } catch (err: any) {
+    console.error("[owner] chats error:", err?.message ?? err);
     res.status(500).json({ error: "Internal server error" });
   }
 });

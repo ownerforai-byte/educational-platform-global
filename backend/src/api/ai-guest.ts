@@ -30,7 +30,8 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
     const professorContext = await buildProfessorContext(lastUser);
     const augmented = withProfessorContext(messages, professorContext) as AIChatMessage[];
 
-    const response = await aiService.chat(provider || aiService.getDefaultProvider(), augmented);
+    // "" runs the ordered chain (agnes → openrouter → internal).
+    const response = await aiService.chat(provider, augmented);
     res.json({ response, provider: provider || aiService.getDefaultProvider() });
   } catch (err: any) {
     console.error("AI guest chat error:", err);

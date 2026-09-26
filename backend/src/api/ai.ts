@@ -51,7 +51,9 @@ router.post("/", requireAuth, requireCredit("aiChat"), async (req: Request, res:
       res.setHeader("Connection", "keep-alive");
 
       try {
-        const response = await aiService.chat(provider || aiService.getDefaultProvider(), messages);
+        // "" runs the ordered chain (agnes → openrouter → internal); an
+        // explicit provider from the client still wins.
+        const response = await aiService.chat(provider, messages);
         // Send the full response as a single event (simplified streaming)
         res.write(`data: ${JSON.stringify({ content: response, done: true })}\n\n`);
       } catch (err) {
@@ -68,7 +70,7 @@ router.post("/", requireAuth, requireCredit("aiChat"), async (req: Request, res:
       return;
     }
 
-    const response = await aiService.chat(provider || aiService.getDefaultProvider(), messages);
+    const response = await aiService.chat(provider, messages);
     res.json({ response, provider: provider || aiService.getDefaultProvider() });
   } catch (err: any) {
     console.error("AI chat error:", err);

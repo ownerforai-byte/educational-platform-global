@@ -166,3 +166,51 @@ export function updateOwnerSettings(
 export function getOwnerActivity(): Promise<OwnerActivity[]> {
   return apiFetch<OwnerActivity[]>("/api/owner/activity");
 }
+
+/** Divide credits across individual Gmails in one call (explicit per-email amounts). */
+export function bulkOwnerCredits(
+  grants: Array<{ email: string; amount: number }>,
+  reason?: string
+): Promise<{ applied: Array<{ email: string; userId: string; newCredits: number }>; notFound: string[]; requested: number }> {
+  return apiFetch("/api/owner/credits/bulk", {
+    method: "POST",
+    body: JSON.stringify({ grants, reason }),
+  });
+}
+
+/** Grant the same credit amount to every user. */
+export function creditEveryone(
+  amount: number,
+  reason?: string
+): Promise<{ applied: number; total: number; amount: number }> {
+  return apiFetch("/api/owner/credits/everyone", {
+    method: "POST",
+    body: JSON.stringify({ amount, reason }),
+  });
+}
+
+export interface OwnerChatSession {
+  session: string;
+  messages: number;
+  lastMessageAt: string;
+  preview: string;
+}
+
+export interface OwnerChatMessage {
+  id?: string;
+  session: string;
+  role: "user" | "assistant";
+  content: string;
+  created_at: string;
+}
+
+/** Tracking: read any user's AI chat history (sessions, or one session's messages). */
+export function getOwnerUserChats(
+  userId: string,
+  session?: string,
+  limit = 200
+): Promise<{ sessions: OwnerChatSession[]; messages: OwnerChatMessage[]; migrated: boolean }> {
+  const qs = new URLSearchParams({ limit: String(limit) });
+  if (session) qs.set("session", session);
+  return apiFetch(`/api/owner/users/${userId}/chats?${qs.toString()}`);
+}

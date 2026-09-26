@@ -217,7 +217,14 @@ export default function OwnerUsersPage() {
                           {u.full_name || u.email}
                           {u.premium_status && <Crown className="h-3.5 w-3.5 text-purple-500 shrink-0" />}
                         </p>
-                        <p className="text-xs text-muted-foreground truncate">{u.email}</p>
+                        <p className="text-xs text-muted-foreground truncate">
+                          {u.email}
+                          {u.created_at && (
+                            <span className="ml-1.5 text-muted-foreground/70">
+                              · Joined {new Date(u.created_at).toLocaleDateString()}
+                            </span>
+                          )}
+                        </p>
                         <div className="flex items-center gap-2 mt-1">
                           <span className={`text-[10px] font-bold px-1.5 py-0.5 rounded ${roleBadge[u.role ?? "STUDENT"] ?? roleBadge.STUDENT}`}>
                             {u.role ?? "—"}
