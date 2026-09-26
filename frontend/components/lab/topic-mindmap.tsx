@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useMemo, useRef, useEffect } from "react";
+import React, { useState, useMemo, useRef, useEffect, useLayoutEffect, useCallback } from "react";
 import {
   Workflow,
   Sparkles,
@@ -27,6 +27,24 @@ import {
 } from "lucide-react";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { getUnitConcept } from "@/lib/visual-concept-map";
+
+// Motion styles (scoped `mm-` prefix; injected once). Pure CSS — no dependency.
+const MM_CSS = `
+@keyframes mm-pop{0%{opacity:0;transform:translate(-50%,-50%) scale(.5)}100%{opacity:1;transform:translate(-50%,-50%) scale(1)}}
+@keyframes mm-draw{to{stroke-dashoffset:0}}
+@keyframes mm-fade{from{opacity:0}to{opacity:1}}
+.mm-pop{animation:mm-pop .35s cubic-bezier(.2,.9,.3,1.25) backwards}
+.mm-conn{stroke-dasharray:var(--len,700);stroke-dashoffset:var(--len,700);animation:mm-draw .8s cubic-bezier(.4,0,.2,1) forwards}
+.mm-tip{animation:mm-fade .15s ease}
+`;
+
+interface HoverTip {
+  title: string;
+  body?: string;
+  color: string;
+  x: number;
+  y: number;
+}
 
 export interface MindMapLeafNode {
   id: string;
@@ -1950,6 +1968,56 @@ export function TopicMindMap({
     setZoomLevel((z) => Math.max(0.35, Math.min(2.6, z * (e.deltaY > 0 ? 0.9 : 1.1))));
   };
 
+  // ── Motion + hover-preview plumbing ──
+  const mmReduceMotion =
+    typeof window !== "undefined" &&
+    typeof window.matchMedia === "function" &&
+    window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+  const [mmConnLens, setMmConnLens] = useState<Record<string, number>>({});
+  const [hoverTip, setHoverTip] = useState<HoverTip | null>(null);
+
+  // Measure trunk/fan path lengths before paint so draw-in uses true lengths.
+  useLayoutEffect(() => {
+    const root = canvasPanRef.current;
+    if (!root) return;
+    const lens: Record<string, number> = {};
+    root.querySelectorAll<SVGPathElement>("[data-mm-conn]").forEach((p) => {
+      const id = p.getAttribute("data-mm-conn");
+      if (!id) return;
+      try {
+        lens[id] = p.getTotalLength();
+      } catch {
+        /* unrendered */
+      }
+    });
+    setMmConnLens(lens);
+  }, [heldBranches, branches]);
+
+  const showTip = useCallback(
+    (title: string, body: string | undefined, color: string) =>
+      (e: React.MouseEvent) => {
+        const rect = canvasPanRef.current?.getBoundingClientRect();
+        if (!rect) return;
+        setHoverTip({
+          title,
+          body,
+          color,
+          x: e.clientX - rect.left,
+          y: e.clientY - rect.top,
+        });
+      },
+    []
+  );
+  const moveTip = useCallback((e: React.MouseEvent) => {
+    setHoverTip((t) => {
+      if (!t) return t;
+      const rect = canvasPanRef.current?.getBoundingClientRect();
+      if (!rect) return t;
+      return { ...t, x: e.clientX - rect.left, y: e.clientY - rect.top };
+    });
+  }, []);
+  const hideTip = useCallback(() => setHoverTip(null), []);
+
   // Expand / collapse every branch's full hierarchy at once.
   const setAllBranchesHeld = (held: boolean) => {
     setHeldBranches(Object.fromEntries(filteredTreeBranches.map((b) => [b.id, held])));
@@ -2001,6 +2069,7 @@ export function TopicMindMap({
 
   return (
     <div ref={mindmapRootRef} className={`rounded-3xl border border-border/80 bg-[#090d16] text-slate-100 shadow-2xl overflow-hidden ${className}`}>
+      <style>{MM_CSS}</style>
       {/* ── Top Header Toolbar ── */}
       <div className="px-5 py-3.5 border-b border-slate-800 bg-[#0d1322] flex flex-wrap items-center justify-between gap-3">
         <div className="flex items-center gap-3">
@@ -2445,14 +2514,21 @@ export function TopicMindMap({
                       stroke={b.color}
                       strokeWidth="3.5"
                       strokeLinecap="round"
+                      data-mm-conn={`mm-trunk-${b.id}`}
+                      className={mmReduceMotion ? undefined : "mm-conn"}
+                      style={{
+                        ["--len" as string]: mmConnLens[`mm-trunk-${b.id}`] ?? 700,
+                        animationDelay: `${branches.indexOf(b) * 90}ms`,
+                      }}
                     />
 
                     {/* Hierarchy fan-out: Branch → Sub-Branch leader lines (SVG, no arrowheads) */}
                     {isHeld &&
-                      fan.subPos.map(({ sub, x: sxp, y: syp }) => {
+                      fan.subPos.map(({ sub, x: sxp, y: syp }, subIdx) => {
                         const midX = (bx + sxp) / 2;
                         const midY = (by + syp) / 2 - 14;
                         const subPath = `M ${bx} ${by} Q ${midX} ${midY} ${sxp} ${syp}`;
+                        const subConnId = `mm-sub-${b.id}-${sub.id}`;
                         return (
                           <path
                             key={`sub-path-${sub.id}`}
@@ -2462,19 +2538,26 @@ export function TopicMindMap({
                             strokeWidth="2"
                             strokeOpacity="0.8"
                             strokeLinecap="round"
+                            data-mm-conn={subConnId}
+                            className={mmReduceMotion ? undefined : "mm-conn"}
+                            style={{
+                              ["--len" as string]: mmConnLens[subConnId] ?? 300,
+                              animationDelay: `${subIdx * 60}ms`,
+                            }}
                           />
                         );
                       })}
 
                     {/* Hierarchy fan-out: Sub-Branch → Leaf leader lines with tip terminators */}
                     {isHeld
-                      ? fan.leafPos.map(({ node, x: lxp, y: lyp, subId }) => {
+                      ? fan.leafPos.map(({ node, x: lxp, y: lyp, subId }, leafIdx) => {
                           const sp = fan.subPos.find((s) => s.sub.id === subId);
                           if (!sp) return null;
                           const midX = (sp.x + lxp) / 2;
                           const midY = (sp.y + lyp) / 2 - 8;
                           const leafPath = `M ${sp.x} ${sp.y} Q ${midX} ${midY} ${lxp} ${lyp}`;
                           const isNodeActive = activeNodeId === node.id;
+                          const leafConnId = `mm-leaf-${node.id}`;
                           // Perpendicular tip terminator at the leaf (never an arrowhead)
                           const ang = Math.atan2(lyp - midY, lxp - midX);
                           const nx = Math.cos(ang);
@@ -2489,6 +2572,12 @@ export function TopicMindMap({
                                 strokeWidth={isNodeActive ? "2.4" : "1.2"}
                                 strokeOpacity={isNodeActive ? 1 : 0.65}
                                 strokeLinecap="round"
+                                data-mm-conn={leafConnId}
+                                className={mmReduceMotion ? undefined : "mm-conn"}
+                                style={{
+                                  ["--len" as string]: mmConnLens[leafConnId] ?? 200,
+                                  animationDelay: `${leafIdx * 40}ms`,
+                                }}
                               />
                               <path
                                 d={`M ${lxp - ny * th} ${lyp + nx * th} L ${lxp} ${lyp} L ${lxp + ny * th} ${lyp - nx * th}`}
@@ -2507,6 +2596,7 @@ export function TopicMindMap({
 
                           const leafPath = `M ${bx} ${by} Q ${(bx + nx) / 2} ${(by + ny) / 2 - 15} ${nx} ${ny}`;
                           const isNodeActive = activeNodeId === node.id;
+                          const leafConnId = `mm-leaf-${node.id}`;
 
                           return (
                             <g key={`leaf-path-${node.id}`}>
@@ -2517,6 +2607,12 @@ export function TopicMindMap({
                                 strokeWidth={isNodeActive ? "3" : "1.8"}
                                 strokeDasharray={isNodeActive ? "none" : "4 2"}
                                 strokeOpacity={isNodeActive ? 1 : 0.75}
+                                data-mm-conn={leafConnId}
+                                className={!mmReduceMotion && isNodeActive ? "mm-conn" : undefined}
+                                style={{
+                                  ["--len" as string]: mmConnLens[leafConnId] ?? 200,
+                                  animationDelay: `${branches.indexOf(b) * 90 + nodeIdx * 70}ms`,
+                                }}
                               />
                               <circle cx={nx} cy={ny} r={isNodeActive ? "6" : "4"} fill={b.color} />
                             </g>
@@ -2547,7 +2643,7 @@ export function TopicMindMap({
             </svg>
 
             {/* 3. HTML Nodes Overlaid at Exact Coordinates */}
-            {branches.map((b) => {
+            {branches.map((b, bIdx) => {
               const rad = (b.angle * Math.PI) / 180;
               const bx = centerX + branchRadius * Math.cos(rad);
               const by = centerY + branchRadius * Math.sin(rad);
@@ -2560,13 +2656,6 @@ export function TopicMindMap({
                 <React.Fragment key={`html-${b.id}`}>
                   {/* Branch Head Capsule — hold to fan out full hierarchy */}
                   <div
-                    style={{
-                      left: `${(bx / 1000) * 100}%`,
-                      top: `${(by / 600) * 100}%`,
-                      transform: "translate(-50%, -50%)",
-                      borderColor: b.color,
-                      boxShadow: activeBranchId === b.id ? `0 0 25px ${b.color}50` : "none",
-                    }}
                     onPointerDown={(e) => {
                       e.stopPropagation();
                       holdTimerRef.current = window.setTimeout(() => {
@@ -2595,10 +2684,25 @@ export function TopicMindMap({
                         window.clearTimeout(holdTimerRef.current);
                         holdTimerRef.current = null;
                       }
+                      hideTip();
                     }}
+                    onMouseEnter={showTip(
+                      b.category,
+                      `${b.nodes.length} concepts • ${b.subBranches.length} sub-branches — hold to fan out`,
+                      b.color
+                    )}
+                    onMouseMove={moveTip}
                     className={`absolute z-20 cursor-pointer rounded-2xl border-2 px-3 py-1.5 backdrop-blur-md transition-all duration-200 select-none touch-none ${
                       isBranchActive ? "opacity-100 scale-105" : "opacity-30 scale-95"
-                    } bg-[#0c1220]/95 hover:scale-110`}
+                    } bg-[#0c1220]/95 hover:scale-110 ${mmReduceMotion ? "" : "mm-pop"}`}
+                    style={{
+                      left: `${(bx / 1000) * 100}%`,
+                      top: `${(by / 600) * 100}%`,
+                      transform: "translate(-50%, -50%)",
+                      borderColor: b.color,
+                      boxShadow: activeBranchId === b.id ? `0 0 25px ${b.color}50` : "none",
+                      animationDelay: `${bIdx * 90 + 150}ms`,
+                    }}
                   >
                     <div className="flex items-center gap-1.5">
                       <span className="h-2 w-2 rounded-full" style={{ backgroundColor: b.color }} />
@@ -2614,7 +2718,7 @@ export function TopicMindMap({
 
                   {/* Held: Sub-Branch capsules fanned around the branch */}
                   {isHeld &&
-                    fan.subPos.map(({ sub, x: sxp, y: syp }) => (
+                    fan.subPos.map(({ sub, x: sxp, y: syp }, subIdx) => (
                       <div
                         key={`held-sub-${sub.id}`}
                         style={{
@@ -2622,12 +2726,20 @@ export function TopicMindMap({
                           top: `${(syp / 600) * 100}%`,
                           transform: "translate(-50%, -50%)",
                           borderColor: b.color,
+                          animationDelay: `${bIdx * 60 + subIdx * 70 + 120}ms`,
                         }}
                         onClick={() => {
                           setActiveBranchId(b.id);
                           setActiveNodeId(null);
                         }}
-                        className="absolute z-25 cursor-pointer rounded-xl border px-2 py-1 backdrop-blur-md bg-[#0c1220]/95 transition-all duration-200 hover:scale-105 animate-fade-in"
+                        onMouseEnter={showTip(
+                          sub.title || sub.id,
+                          `${sub.nodes.length} concepts — click to focus this branch`,
+                          b.color
+                        )}
+                        onMouseMove={moveTip}
+                        onMouseLeave={hideTip}
+                        className={`absolute z-25 cursor-pointer rounded-xl border px-2 py-1 backdrop-blur-md bg-[#0c1220]/95 transition-all duration-200 hover:scale-105 ${mmReduceMotion ? "animate-fade-in" : "mm-pop"}`}
                       >
                         <div className="flex items-center gap-1">
                           <span className="h-1.5 w-1.5 rounded-full" style={{ backgroundColor: b.color }} />
@@ -2640,7 +2752,7 @@ export function TopicMindMap({
 
                   {/* Held: Leaf capsules under their sub-branch (full 3-level hierarchy) */}
                   {isHeld &&
-                    fan.leafPos.map(({ node, x: lxp, y: lyp }) => {
+                    fan.leafPos.map(({ node, x: lxp, y: lyp }, leafIdx) => {
                       const isNodeSelected = activeNodeId === node.id;
                       return (
                         <div
@@ -2650,12 +2762,20 @@ export function TopicMindMap({
                             top: `${(lyp / 600) * 100}%`,
                             transform: "translate(-50%, -50%)",
                             borderColor: isNodeSelected ? b.color : "rgba(148, 163, 184, 0.2)",
+                            animationDelay: `${bIdx * 60 + leafIdx * 45 + 200}ms`,
                           }}
                           onClick={() => {
                             setActiveBranchId(b.id);
                             setActiveNodeId(node.id);
                           }}
-                          className={`absolute z-30 cursor-pointer rounded-lg border p-1.5 max-w-[150px] backdrop-blur-md transition-all duration-200 animate-fade-in ${
+                          onMouseEnter={showTip(
+                            node.title,
+                            node.formula || node.examFact || node.description,
+                            b.color
+                          )}
+                          onMouseMove={moveTip}
+                          onMouseLeave={hideTip}
+                          className={`absolute z-30 cursor-pointer rounded-lg border p-1.5 max-w-[150px] backdrop-blur-md transition-all duration-200 ${mmReduceMotion ? "animate-fade-in" : "mm-pop"} ${
                             isNodeSelected
                               ? "bg-slate-900 border-2 ring-2 scale-105 shadow-xl"
                               : "bg-slate-950/90 hover:border-slate-500"
@@ -2683,12 +2803,20 @@ export function TopicMindMap({
                             top: `${(ny / 600) * 100}%`,
                             transform: "translate(-50%, -50%)",
                             borderColor: isNodeSelected ? b.color : "rgba(148, 163, 184, 0.2)",
+                            animationDelay: `${bIdx * 90 + nodeIdx * 70 + 260}ms`,
                           }}
                           onClick={() => {
                             setActiveBranchId(b.id);
                             setActiveNodeId(node.id);
                           }}
-                          className={`absolute z-30 cursor-pointer rounded-xl border p-2 max-w-[170px] backdrop-blur-md transition-all duration-200 ${
+                          onMouseEnter={showTip(
+                            node.title,
+                            node.formula || node.examFact || node.description,
+                            b.color
+                          )}
+                          onMouseMove={moveTip}
+                          onMouseLeave={hideTip}
+                          className={`absolute z-30 cursor-pointer rounded-xl border p-2 max-w-[170px] backdrop-blur-md transition-all duration-200 ${mmReduceMotion ? "" : "mm-pop"} ${
                             isNodeSelected
                               ? "bg-slate-900 border-2 ring-2 scale-105 shadow-xl"
                               : "bg-slate-950/90 hover:border-slate-500 hover:scale-102"
@@ -2712,6 +2840,26 @@ export function TopicMindMap({
               );
             })}
           </div>
+
+          {/* Hover preview tooltip — follows the cursor over any node */}
+          {hoverTip && (
+            <div
+              className="mm-tip absolute z-40 pointer-events-none max-w-[240px] rounded-lg border px-2.5 py-1.5 shadow-2xl backdrop-blur-md bg-[#0c1220]/95"
+              style={{
+                left: hoverTip.x + 14,
+                top: hoverTip.y + 14,
+                borderColor: `${hoverTip.color}80`,
+              }}
+            >
+              <div className="flex items-center gap-1.5">
+                <span className="h-1.5 w-1.5 rounded-full shrink-0" style={{ backgroundColor: hoverTip.color }} />
+                <span className="text-[11px] font-bold text-white leading-tight">{hoverTip.title}</span>
+              </div>
+              {hoverTip.body && (
+                <p className="mt-0.5 text-[10px] text-slate-300 leading-snug line-clamp-3 font-mono">{hoverTip.body}</p>
+              )}
+            </div>
+          )}
         </div>
       </div>
 
