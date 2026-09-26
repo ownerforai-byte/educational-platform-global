@@ -91,9 +91,21 @@ async function request<T>(path: string, init?: RequestInit, isRetry = false): Pr
   if (!response.ok) {
     const error = (await response.json().catch(() => ({ error: response.statusText }))) as {
       error?: string;
+      /** Human-facing explanation the backend attaches alongside `error`. */
+      message?: string;
+      /** Correlation id the backend logged the full error under. */
+      errorId?: string;
     };
-    const err = new Error(error.error || `Request failed: ${response.status}`);
+    // Prefer the human `message` ("You've used all 8 credits…") over the
+    // short machine `error` ("Insufficient credits") — and fall back to the
+    // status text when the body isn't JSON (e.g. a proxy's 500 page).
+    const text =
+      (typeof error.message === "string" && error.message.trim()) ||
+      error.error ||
+      `Request failed: ${response.status}`;
+    const err = new Error(text);
     (err as unknown as { status?: number }).status = response.status;
+    if (error.errorId) (err as unknown as { errorId?: string }).errorId = error.errorId;
     throw err;
   }
 

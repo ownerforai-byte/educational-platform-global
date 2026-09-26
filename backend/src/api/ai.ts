@@ -3,8 +3,7 @@ import { serverError, ERROR_ID_HEADER } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { requireAuth } from "../middleware/auth";
 import { hasFullAccess } from "../middleware/auth";
-import { requireCredit } from "../middleware/creditCheck";
-import { ensureDailyCredits, spendCredits, AI_MESSAGE_COST } from "../utils/credits";
+import { ensureDailyCredits, spendCredits, refundCredits, AI_MESSAGE_COST } from "../utils/credits";
 import { supabaseAdmin } from "../db/supabase";
 import { logServerError, newErrorId } from "../middleware/errors";
 import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
@@ -28,6 +27,10 @@ router.get("/providers", (_req: Request, res: Response) => {
 });
 
 router.post("/", requireAuth, async (req: Request, res: Response) => {
+  // Set once the 1-credit message fee has been captured — refunded on any
+  // failure path below so the student never pays for an answer they never
+  // received (the "charged but got a 500" weak point).
+  let billedUserId: string | null = null;
   try {
     const body = req.body;
     let messages: AIChatMessage[] = Array.isArray(body?.messages) ? body.messages : [];
@@ -73,6 +76,7 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
         });
         return;
       }
+      billedUserId = user.id;
       creditsLeft = remaining;
     }
 
@@ -100,6 +104,11 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
         // SSE headers are already sent, so serverError() cannot be used — but
         // the raw provider error still must not reach the client. Log it under
         // a correlation id and send only the generic message + that id.
+        if (billedUserId) {
+          await refundCredits(billedUserId, AI_MESSAGE_COST, "Refund: AI reply failed (stream)").catch(
+            () => {},
+          );
+        }
         const errorId = newErrorId();
         logServerError(err, errorId, "POST /api/ai (stream)");
         res.write(
@@ -114,6 +123,11 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     res.json({ response, provider: provider || aiService.getLastAnsweredBy(), credits: creditsLeft ?? undefined });
   } catch (err: any) {
     console.error("AI chat error:", err);
+    // The answer never reached the student → give the 1-credit fee back
+    // before answering with an error status.
+    if (billedUserId) {
+      await refundCredits(billedUserId, AI_MESSAGE_COST, "Refund: AI reply failed").catch(() => {});
+    }
     // Budget-exhaustion/timeouts are a slow-provider condition, not a server
     // bug — answer with a retryable 504 + a human message instead of the
     // generic "Internal server error" (the 2026-09-26 console report).

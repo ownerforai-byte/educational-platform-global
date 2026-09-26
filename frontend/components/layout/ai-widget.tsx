@@ -1,37 +1,21 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
-import { MessageCircle, X, Send, Bot, Loader2, ShieldCheck, Coins, MessageSquareText } from "lucide-react";
+import { MessageCircle, X, Send, Bot, Loader2, Coins, MessageSquareText } from "lucide-react";
 import Link from "next/link";
 import { chat, guestChat, getChatHistory, saveChatHistory } from "@/lib/api/ai";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
+import {
+  GUEST_DAILY_LIMIT,
+  readGuestCount,
+  writeGuestCount,
+} from "@/lib/ai/guest-quota";
 
-// Mirrors the server's GUEST_DAILY_LIMIT (ai-guest.ts): 5/day, reset 12:00 AM.
-const MAX_GUEST_MESSAGES = 5;
-const STORAGE_KEY = "neb_ai_guest_count";
-const CREDITS_STORAGE_KEY = "neb_guest_credits";
 const GREETING =
   "👋, I am the captain here. Feel free to clear your doubts.";
-
-function getGuestCount(): number {
-  if (typeof window === "undefined") return 0;
-  const v = localStorage.getItem(STORAGE_KEY);
-  return v ? parseInt(v, 10) : 0;
-}
-
-function incGuestCount(): void {
-  if (typeof window === "undefined") return;
-  localStorage.setItem(STORAGE_KEY, String(getGuestCount() + 1));
-}
-
-function getGuestCredits(): number {
-  if (typeof window === "undefined") return 50;
-  const v = localStorage.getItem(CREDITS_STORAGE_KEY);
-  return v ? parseInt(v, 10) : 50;
-}
 
 export function AIWidget() {
   const { user } = useSession();
@@ -43,13 +27,15 @@ export function AIWidget() {
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [guestCredits, setGuestCredits] = useState<number | null>(null);
+  // Guest usage mirrored from the server's `remaining` via the shared
+  // day-keyed store (this widget used to keep its own copy that never
+  // applied the midnight reset and showed a stale "50 credits").
+  const [guestCount, setGuestCount] = useState(0);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const historyLoadedRef = useRef(false);
 
-  const guestCount = getGuestCount();
-  const isLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
+  const isLimited = !isLoggedIn && guestCount >= GUEST_DAILY_LIMIT;
 
   useEffect(() => {
     if (open) inputRef.current?.focus();
@@ -63,7 +49,8 @@ export function AIWidget() {
 
   useEffect(() => {
     if (!isLoggedIn) {
-      setGuestCredits(getGuestCredits());
+      // Post-mount only — localStorage must not affect the server render.
+      setGuestCount(readGuestCount());
       return;
     }
     // Signed in: restore the persisted conversation once per mount.
@@ -114,22 +101,35 @@ export function AIWidget() {
         const res = await guestChat([...messages, userMsg]);
         const assistantMsg: AIChatMessage = { role: "assistant", content: res.response };
         setMessages((prev) => [...prev, assistantMsg]);
-        const newCredits = res.remaining ?? getGuestCredits() - 2;
-        setGuestCredits(newCredits);
+        // Server-side count is the source of truth; mirror it locally.
+        const used =
+          typeof res.remaining === "number"
+            ? GUEST_DAILY_LIMIT - res.remaining
+            : Math.min(guestCount + 1, GUEST_DAILY_LIMIT);
+        setGuestCount(used);
+        writeGuestCount(used);
       }
-      if (!isLoggedIn) incGuestCount();
     } catch (e: any) {
-      if (e.message?.includes("429") || e.message?.includes("limit reached")) {
-        setError("Message limit reached. Sign in to continue.");
-        setMessages((prev) => [...prev, { role: "assistant", content: "🔒 You've used all 5 free guest messages for today. Sign in or create an account to keep chatting!" }]);
-      } else if (e.message?.includes("Insufficient") || e.message?.includes("402")) {
-        setError("Guest credits exhausted.");
-        setMessages((prev) => [...prev, { role: "assistant", content: "💰 Your guest credits ran out. Sign in to get more credits and continue chatting!" }]);
+      if (e?.status === 402) {
+        // Server-declared daily limit (guest pool or signed-in credit pool).
+        if (!isLoggedIn) {
+          setGuestCount(GUEST_DAILY_LIMIT);
+          writeGuestCount(GUEST_DAILY_LIMIT);
+        }
+        setError(e.message || "Daily limit reached. Sign in to continue.");
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: "assistant",
+            content: isLoggedIn
+              ? "💳 You've used all 8 daily credits. Your pool resets at 12:00 AM."
+              : "🔒 You've used all 5 free guest messages for today. Sign in or create an account to keep chatting!",
+          },
+        ]);
       } else {
         setError(e.message || "Failed to get response");
         const assistantMsg: AIChatMessage = { role: "assistant", content: "⚠️ Something went wrong. Please try again." };
         setMessages((prev) => [...prev, assistantMsg]);
-        if (!isLoggedIn) incGuestCount();
       }
     } finally {
       setSending(false);
@@ -180,15 +180,11 @@ export function AIWidget() {
               AI Studio
             </Link>
             {!isLoggedIn && (
-              <div className="flex items-center gap-2">
-                <div className="flex items-center gap-1 text-[10px] text-muted-foreground">
-                  <Coins className="h-3 w-3 text-amber-500" />
-                  <span>{guestCredits ?? "?"}</span>
-                </div>
-                <div className="flex items-center gap-1 text-[10px] text-muted-foreground">
-                  <ShieldCheck className="h-3 w-3" />
-                  <span>{MAX_GUEST_MESSAGES - guestCount} left</span>
-                </div>
+              <div className="flex items-center gap-1 text-[10px] text-muted-foreground">
+                <Coins className="h-3 w-3 text-amber-500" />
+                <span>
+                  {Math.max(0, GUEST_DAILY_LIMIT - guestCount)}/{GUEST_DAILY_LIMIT} free today
+                </span>
               </div>
             )}
           </div>

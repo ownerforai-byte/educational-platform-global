@@ -35,6 +35,11 @@ import {
   type ChatSession,
 } from "@/lib/api/ai";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
+import {
+  GUEST_DAILY_LIMIT as MAX_GUEST_MESSAGES,
+  readGuestCount,
+  writeGuestCount,
+} from "@/lib/ai/guest-quota";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { MathMarkdown } from "@/components/content/math-markdown";
@@ -81,31 +86,10 @@ const SUGGESTED_PROMPTS = [
 
 // Daily credit pools (owner policy 2026-09-26): guests get 5 free
 // messages/day, logged users get 8 credits/day — both reset at 12:00 AM.
-// The server enforces the real counts; localStorage is display-only.
-const MAX_GUEST_MESSAGES = 5;
+// Guest counts come from the shared day-keyed mirror (lib/ai/guest-quota);
+// the server enforces the real numbers either way.
 const DAILY_CREDIT_POOL = 8;
-const STORAGE_KEY = "neb_ai_guest_day";
-const GUEST_COUNT_KEY = "neb_ai_guest_count";
 const ACTIVE_SESSION_KEY = "neb_ai_active_session";
-
-function guestDayKey(): string {
-  return new Date().toISOString().slice(0, 10);
-}
-
-function readGuestState(): { day: string; count: number } {
-  if (typeof window === "undefined") return { day: guestDayKey(), count: 0 };
-  const day = localStorage.getItem(STORAGE_KEY);
-  const count = parseInt(localStorage.getItem(GUEST_COUNT_KEY) || "0", 10) || 0;
-  // New day (past 12:00 AM) → pool is fresh.
-  if (day !== guestDayKey()) return { day: guestDayKey(), count: 0 };
-  return { day, count };
-}
-
-function writeGuestState(count: number): void {
-  if (typeof window === "undefined") return;
-  localStorage.setItem(STORAGE_KEY, guestDayKey());
-  localStorage.setItem(GUEST_COUNT_KEY, String(count));
-}
 
 function newSessionId(): string {
   return `c-${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
@@ -137,6 +121,10 @@ export function AIChatInterface() {
   // 2026-09-26 hydration error on /chat: "7" vs "6"). Seed after mount.
   const [guestCount, setGuestCount] = useState(0);
   const [dailyCredits, setDailyCredits] = useState<number | null>(null);
+  // True only after the SERVER declared the pool empty (402 or a billing
+  // response of 0) — never guessed client-side, so owner/admin/premium
+  // balances (manually managed, never 402) can't be locked out by mistake.
+  const [poolEmpty, setPoolEmpty] = useState(false);
   const [enhancing, setEnhancing] = useState(false);
   const [historyState, setHistoryState] = useState<"idle" | "loading" | "ready">("idle");
   const historyLoadedRef = useRef(false);
@@ -154,6 +142,16 @@ export function AIChatInterface() {
 
   const guestCredits = Math.max(0, MAX_GUEST_MESSAGES - guestCount);
   const isGuestLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
+  // Mirror of the backend's hasFullAccess(): these roles are never billed.
+  const privilegedUser =
+    user?.role === "OWNER" || user?.role === "ADMIN" || !!user?.premiumStatus;
+  const creditsExhausted =
+    isLoggedIn &&
+    !privilegedUser &&
+    (poolEmpty ||
+      dailyCredits === 0 ||
+      (typeof user?.credits === "number" && user.credits <= 0));
+  const composerLocked = isGuestLimited || creditsExhausted;
 
   const refreshSessions = useCallback(async () => {
     if (!isLoggedIn) return;
@@ -194,7 +192,7 @@ export function AIChatInterface() {
     if (!isLoggedIn) {
       // Post-mount only: localStorage is unavailable on the server, so the
       // first client render must match the server's count of 0 exactly.
-      setGuestCount(readGuestState().count);
+      setGuestCount(readGuestCount());
       setHistoryState("ready");
       return;
     }
@@ -222,6 +220,10 @@ export function AIChatInterface() {
       setError("You've used all 5 free guest messages for today. Your pool resets to 5 at 12:00 AM — or sign in for 8 daily credits & saved histories.");
       return;
     }
+    if (creditsExhausted) {
+      setError("You've used all 8 credits of today's daily pool. It resets to 8 credits at 12:00 AM.");
+      return;
+    }
 
     const userMsg: AIChatMessage = { role: "user", content: textToSend };
     setMessages((prev) => [...prev, userMsg]);
@@ -237,7 +239,10 @@ export function AIChatInterface() {
         const assistantMsg: AIChatMessage = { role: "assistant", content: res.response };
         setMessages((prev) => [...prev, assistantMsg]);
         // Server reports the balance after this message's 1-credit spend.
-        if (typeof res.credits === "number") setDailyCredits(res.credits);
+        if (typeof res.credits === "number") {
+          setDailyCredits(res.credits);
+          if (res.credits <= 0) setPoolEmpty(true);
+        }
         saveChatHistory(targetSession, [
           { role: "user", content: textToSend },
           { role: "assistant", content: res.response },
@@ -273,26 +278,33 @@ export function AIChatInterface() {
         // Server-side count is the source of truth; mirror it locally.
         const used = MAX_GUEST_MESSAGES - (res.remaining ?? MAX_GUEST_MESSAGES - guestCount - 1);
         const next = Math.min(MAX_GUEST_MESSAGES, Math.max(guestCount + 1, used));
-        writeGuestState(next);
+        writeGuestCount(next);
         setGuestCount(next);
       }
     } catch (err: any) {
       console.error("AI chat error:", err);
       const msg = err.message || "Failed to reach AI Tutor. Please try again.";
       setError(msg);
-      // 402 = the server has counted this guest's daily pool as empty (another
-      // tab/device) — sync local state so the composer locks immediately.
-      if (!isLoggedIn && err?.status === 402) {
-        writeGuestState(MAX_GUEST_MESSAGES);
-        setGuestCount(MAX_GUEST_MESSAGES);
+      if (err?.status === 402) {
+        // Daily pool empty (guest or signed-in). The server's message
+        // explains the limit — show that instead of a fake "connection
+        // difficulty" bubble, and lock the composer until the pool refills.
+        if (isLoggedIn) {
+          setDailyCredits(0);
+          setPoolEmpty(true);
+        } else {
+          writeGuestCount(MAX_GUEST_MESSAGES);
+          setGuestCount(MAX_GUEST_MESSAGES);
+        }
+      } else {
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: "assistant",
+            content: "I apologize, but I encountered a connection difficulty. Please verify your connection or try rephrasing your question.",
+          },
+        ]);
       }
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "assistant",
-          content: "I apologize, but I encountered a connection difficulty. Please verify your connection or try rephrasing your question.",
-        },
-      ]);
     } finally {
       setSending(false);
     }
@@ -673,18 +685,20 @@ export function AIChatInterface() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               onKeyDown={handleKeyDown}
-              disabled={sending || isGuestLimited}
+              disabled={sending || composerLocked}
               placeholder={
                 isGuestLimited
                   ? "Guest limit reached — please log in to ask more questions."
-                  : "Ask a question… (Enter to send, Shift+Enter for a new line)"
+                  : creditsExhausted
+                    ? "Daily credits used up — your pool resets to 8 at 12:00 AM."
+                    : "Ask a question… (Enter to send, Shift+Enter for a new line)"
               }
               className="flex-1 max-h-32 min-h-[44px] py-2.5 px-4 rounded-2xl border border-border/80 bg-card text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none font-medium"
             />
 
             <button
               onClick={handleEnhance}
-              disabled={!input.trim() || sending || enhancing || isGuestLimited}
+              disabled={!input.trim() || sending || enhancing || composerLocked}
               className="h-11 w-11 rounded-2xl border border-violet-500/40 bg-violet-500/10 text-violet-600 font-semibold flex items-center justify-center hover:bg-violet-500/20 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
               title="Enhance my prompt — rewrite it into a sharper study question"
               aria-label="Enhance prompt"
@@ -693,7 +707,7 @@ export function AIChatInterface() {
             </button>
             <button
               onClick={() => handleSend()}
-              disabled={!input.trim() || sending || isGuestLimited}
+              disabled={!input.trim() || sending || composerLocked}
               className="h-11 px-4 rounded-2xl bg-primary text-primary-foreground font-semibold text-xs flex items-center gap-1.5 shadow-sm hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
               aria-label="Send message"
             >

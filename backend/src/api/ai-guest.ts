@@ -3,11 +3,19 @@ import { serverError, ERROR_ID_HEADER, logServerError, newErrorId } from "../mid
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { rateLimit } from "../middleware/rateLimit";
 import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
+import {
+  GUEST_DAILY_LIMIT,
+  consumeGuestSlot,
+  rollbackGuestSlot,
+  startGuestQuotaCleanup,
+} from "../utils/guestQuota";
 
 /**
  * Guest AI chat (no account). Owner policy 2026-09-26:
  *   - 5 messages per guest per day (UTC day rollover at 12:00 AM)
- *   - tracked server-side per IP so clearing localStorage cannot buy more
+ *   - enforced server-side by utils/guestQuota (DB-backed, hashed IP), so
+ *     clearing localStorage, restarting the server, or switching tabs
+ *     cannot buy more
  *
  * The response carries `remaining` + `limit` so the UI can display the
  * guest credit pool honestly.
@@ -15,20 +23,8 @@ import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
 
 const router = Router();
 
-/** Daily guest message allowance (the guest "credit pool"). */
-export const GUEST_DAILY_LIMIT = Number(process.env.GUEST_DAILY_LIMIT) || 5;
-
-interface GuestUsage {
-  count: number;
-  date: string; // UTC YYYY-MM-DD watermark
-}
-
-// IP → usage. Long-lived process guard trims stale days.
-const guestUsage = new Map<string, GuestUsage>();
-
-function todayUtc(now: Date = new Date()): string {
-  return now.toISOString().slice(0, 10);
-}
+// Install the hourly quota trim once, at app boot.
+startGuestQuotaCleanup();
 
 function getClientId(req: Request): string {
   const forwarded = req.headers["x-forwarded-for"];
@@ -40,38 +36,6 @@ function getClientId(req: Request): string {
   return ip;
 }
 
-/**
- * Give back the message a failed attempt consumed: the student was never
- * answered, so charging the pool for it would be dishonest (timeouts and
- * 5xx both roll back; a 402/400 happens before the increment anyway).
- */
-function rollbackGuestUsage(req: Request): void {
-  const entry = guestUsage.get(getClientId(req));
-  if (entry && entry.date === todayUtc() && entry.count > 0) entry.count -= 1;
-}
-
-function getGuestUsage(req: Request): GuestUsage {
-  const id = getClientId(req);
-  const today = todayUtc();
-  const entry = guestUsage.get(id);
-  if (!entry || entry.date !== today) {
-    const fresh: GuestUsage = { count: 0, date: today };
-    guestUsage.set(id, fresh);
-    return fresh;
-  }
-  return entry;
-}
-
-// Keep the map bounded: drop yesterday's entries once it grows.
-setInterval(() => {
-  if (guestUsage.size > 5000) {
-    const today = todayUtc();
-    for (const [key, entry] of guestUsage) {
-      if (entry.date !== today) guestUsage.delete(key);
-    }
-  }
-}, 60 * 60 * 1000).unref();
-
 let _service: ReturnType<typeof createAIService> | null = null;
 function getService() {
   if (!_service) _service = createAIService();
@@ -79,7 +43,8 @@ function getService() {
 }
 
 router.post("/", rateLimit, async (req: Request, res: Response) => {
-  let counted = false;
+  const ip = getClientId(req);
+  let consumed = false;
   try {
     const body = req.body;
     const messages: AIChatMessage[] = Array.isArray(body?.messages) ? body.messages : [];
@@ -91,8 +56,8 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
     }
 
     // ── Guest daily pool: 5 messages/day, resets at 12:00 AM (UTC) ──
-    const usage = getGuestUsage(req);
-    if (usage.count >= GUEST_DAILY_LIMIT) {
+    const slot = await consumeGuestSlot(ip);
+    if (slot.status === "limited") {
       res.status(402).json({
         error: "Daily guest limit reached",
         remaining: 0,
@@ -102,9 +67,14 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
       });
       return;
     }
-    usage.count += 1;
-    counted = true;
-    const remaining = Math.max(0, GUEST_DAILY_LIMIT - usage.count);
+    if (slot.status === "unavailable") {
+      res.status(503).json({
+        error: "Guest chat is temporarily unavailable. Please try again in a moment.",
+      });
+      return;
+    }
+    consumed = true;
+    const remaining = slot.remaining;
 
     const aiService = getService();
 
@@ -123,9 +93,9 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
     });
   } catch (err: any) {
     console.error("AI guest chat error:", err);
-    // The attempt failed → the guest didn't get an answer, so return the
-    // consumed message first.
-    if (counted) rollbackGuestUsage(req);
+    // The attempt failed → the guest never got an answer, so return the
+    // consumed message first (best-effort).
+    if (consumed) await rollbackGuestSlot(ip).catch(() => {});
     // Slow-provider timeout → retryable 504 with a human message, not a
     // generic 500 (the "Internal Server Error" console report 2026-09-26).
     const message = String(err?.message ?? "");

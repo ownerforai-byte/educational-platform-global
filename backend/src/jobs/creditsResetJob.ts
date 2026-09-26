@@ -1,5 +1,5 @@
 import { supabaseAdmin } from "../db/supabase";
-import { DAILY_CREDIT_POOL, todayUtc } from "../utils/credits";
+import { DAILY_CREDIT_POOL, todayUtc, updateMatchedRows } from "../utils/credits";
 import { hasFullAccess } from "../middleware/auth";
 import cron from "node-cron";
 
@@ -41,40 +41,59 @@ export async function runDailyCreditsReset(now: Date = new Date()): Promise<numb
   );
   if (regular.length === 0) return 0;
 
+  // CAS per profile: only apply if the balance is still the value we read,
+  // so a lazy per-user reset (or an in-flight spend) racing this job can
+  // never double-grant — a 0-row update means somebody else won, and that
+  // profile is skipped for the GRANT ledger batch below.
   const updates = regular.map((p) => {
-    const resetTo = Math.max(p.credits ?? 0, DAILY_CREDIT_POOL);
-    return supabaseAdmin
-      .from("profiles")
-      .update({ credits: resetTo, credits_reset_date: today })
-      .eq("id", p.id);
+    const current = p.credits ?? 0;
+    const resetTo = Math.max(current, DAILY_CREDIT_POOL);
+    return {
+      id: p.id,
+      grant: resetTo - current,
+      promise: supabaseAdmin
+        .from("profiles")
+        .update({ credits: resetTo, credits_reset_date: today })
+        .eq("id", p.id)
+        .eq("credits", current)
+        .select("id"),
+    };
   });
 
   // Bounded concurrency: Supabase PostgREST handles this easily for small
   // user counts; chunk keeps it safe as the platform grows.
   const CHUNK = 50;
+  const winners: typeof regular = [];
   let ok = 0;
   for (let i = 0; i < updates.length; i += CHUNK) {
-    const results = await Promise.allSettled(updates.slice(i, i + CHUNK).map((u) => u));
-    for (const r of results) if (r.status === "fulfilled" && !r.value.error) ok += 1;
+    const slice = updates.slice(i, i + CHUNK);
+    const results = await Promise.allSettled(slice.map((u) => u.promise));
+    for (let j = 0; j < results.length; j++) {
+      const r = results[j];
+      if (r.status === "fulfilled" && !r.value.error && updateMatchedRows(r.value.data)) {
+        ok += 1;
+        winners.push(regular[i + j]);
+      }
+    }
   }
 
-  // One auditable transaction batch for the refill.
-  const { data: tx } = await supabaseAdmin
-    .from("credit_transactions")
-    .insert(
-      regular.map((p) => ({
-        user_id: p.id,
-        amount: Math.max(p.credits ?? 0, DAILY_CREDIT_POOL) - (p.credits ?? 0),
-        type: "GRANT",
-        reason: "Daily platform credit pool refill (12:00 AM reset)",
-      })),
-    )
-    .select("id");
+  // One auditable transaction batch for the refill — winners only.
+  if (winners.length > 0) {
+    const { data: tx } = await supabaseAdmin
+      .from("credit_transactions")
+      .insert(
+        winners.map((p) => ({
+          user_id: p.id,
+          amount: Math.max(p.credits ?? 0, DAILY_CREDIT_POOL) - (p.credits ?? 0),
+          type: "GRANT",
+          reason: "Daily platform credit pool refill (12:00 AM reset)",
+        })),
+      )
+      .select("id");
+    console.info(`[credits-cron] logged ${tx?.length ?? 0} refill transactions`);
+  }
 
-  console.info(
-    `[credits-cron] reset ${ok}/${regular.length} profiles to the daily pool (${today})` +
-      (tx ? `, ${tx.length} transactions logged` : ""),
-  );
+  console.info(`[credits-cron] reset ${ok}/${regular.length} profiles to the daily pool (${today})`);
   return ok;
 }
 

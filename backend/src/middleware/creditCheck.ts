@@ -1,6 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { supabaseAdmin } from "../db/supabase";
 import { extractToken, hasFullAccess } from "./auth";
+import { ensureDailyCredits, spendCredits, refundCredits } from "../utils/credits";
 
 // ── Feature cost table ─────────────────────────────────────────────────────
 // As of 2026-09-10 all features are public (cost 0, no premium gate).
@@ -47,11 +48,20 @@ export function requireCredit(
       }
 
       const userId = authData.user.id;
+      const featureConfig = PREMIUM_FEATURES[feature];
+      const actualCost = cost > 0 ? cost : (featureConfig?.cost ?? 0);
 
-      // Load role + profile in one pass
+      // Free feature, no premium gate → nothing to bill or check. Skip the
+      // extra queries (this middleware guards bookmarks/progress/etc too).
+      if (actualCost === 0 && !featureConfig?.requiresPremium) {
+        next();
+        return;
+      }
+
+      // Load role + premium in one pass
       const { data: profile } = await supabaseAdmin
         .from("profiles")
-        .select("role, credits, credits_limit, premium_status")
+        .select("role, premium_status")
         .eq("id", userId)
         .maybeSingle();
 
@@ -64,35 +74,52 @@ export function requireCredit(
         return;
       }
 
-      // Load credits (defaults to 0 when profile missing)
-      const credits = profile?.credits ?? 0;
-      const featureConfig = PREMIUM_FEATURES[feature];
-      const actualCost = cost > 0 ? cost : (featureConfig?.cost ?? 0);
-
-      if (credits < actualCost) {
+      if (featureConfig?.requiresPremium && !premiumStatus) {
         res.status(402).json({
-          error: "Insufficient credits",
-          required: actualCost,
-          current: credits,
-          message: "You need more credits to access this feature. Contact the owner to add credits.",
+          error: "Premium required",
+          message: "This feature requires premium access. Please contact the owner to upgrade.",
         });
         return;
       }
 
-      // Deduct credits
-      if (actualCost > 0) {
-        await supabaseAdmin
-          .from("profiles")
-          .update({ credits: credits - actualCost })
-          .eq("id", userId);
-
-        await supabaseAdmin.from("credit_transactions").insert({
-          user_id: userId,
-          amount: -actualCost,
-          type: "SPEND",
-          reason: `Used for ${feature} feature`,
-        });
+      // Fresh daily pool first (lazy midnight reset), then an ATOMIC spend —
+      // the old read-then-write deduction lost concurrent updates and could
+      // spend a balance the user no longer had.
+      const ensured = await ensureDailyCredits(userId, authData.user.email, role, premiumStatus);
+      if (ensured.unlimited) {
+        next();
+        return;
       }
+      if (ensured.credits < actualCost) {
+        res.status(402).json({
+          error: "Insufficient credits",
+          required: actualCost,
+          current: ensured.credits,
+          message: "You've used all of today's credits. The pool resets at 12:00 AM — or contact the owner to add credits.",
+        });
+        return;
+      }
+
+      const remaining = await spendCredits(userId, actualCost, `Used for ${feature} feature`);
+      if (remaining === null) {
+        res.status(402).json({
+          error: "Insufficient credits",
+          required: actualCost,
+          current: ensured.credits,
+          message: "You've used all of today's credits. The pool resets at 12:00 AM — or contact the owner to add credits.",
+        });
+        return;
+      }
+
+      // Charged upfront — but if the feature then fails server-side, the
+      // student never received it: refund automatically on any 5xx.
+      res.on("finish", () => {
+        if (res.statusCode >= 500) {
+          refundCredits(userId, actualCost, `Refund: ${feature} failed (HTTP ${res.statusCode})`).catch(
+            () => {},
+          );
+        }
+      });
 
       next();
     } catch (err) {
