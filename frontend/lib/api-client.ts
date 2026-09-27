@@ -95,6 +95,10 @@ async function request<T>(path: string, init?: RequestInit, isRetry = false): Pr
       message?: string;
       /** Correlation id the backend logged the full error under. */
       errorId?: string;
+      /** Machine-readable reason (e.g. PENDING_APPROVAL / ACCOUNT_REJECTED). */
+      code?: string;
+      /** Signed token that opens the /welcome status (pending) screen. */
+      statusToken?: string;
     };
     // Prefer the human `message` ("You've used all 8 credits…") over the
     // short machine `error` ("Insufficient credits") — and fall back to the
@@ -106,6 +110,9 @@ async function request<T>(path: string, init?: RequestInit, isRetry = false): Pr
     const err = new Error(text);
     (err as unknown as { status?: number }).status = response.status;
     if (error.errorId) (err as unknown as { errorId?: string }).errorId = error.errorId;
+    if (error.code) (err as unknown as { code?: string }).code = error.code;
+    if (error.statusToken)
+      (err as unknown as { statusToken?: string }).statusToken = error.statusToken;
     throw err;
   }
 

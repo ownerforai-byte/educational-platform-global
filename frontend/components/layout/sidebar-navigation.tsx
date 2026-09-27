@@ -12,6 +12,7 @@ import {
   LogOut,
   Layers,
   GraduationCap,
+  User,
   UserCheck,
   Bookmark,
   Users,
@@ -90,14 +91,16 @@ const extendedItems: NavItem[] = [
 ];
 
 const accountItems: NavItem[] = [
+  { href: "/profile", label: "My Profile", icon: User, badge: "Account" },
   { href: "/progress", label: "My Progress", icon: UserCheck, badge: "Stats" },
   { href: "/bookmarks", label: "Saved Bookmarks", icon: Bookmark, badge: "Saved" },
   { href: "/credits", label: "Credits & Plan", icon: Coins, badge: "Wallet" },
 ];
 
 const ownerItems: NavItem[] = [
-  { href: "/admin", label: "Admin Panel", icon: ShieldCheck, badge: "Admin" },
-  { href: "/controller", label: "Controller", icon: Crown, badge: "Master" },
+  { href: "/owner", label: "Owner Console", icon: Crown, badge: "Master" },
+  { href: "/owner/users", label: "User Management", icon: Users, badge: "Users" },
+  { href: "/controller", label: "Controller", icon: ShieldCheck, badge: "Admin" },
 ];
 
 function NavSection({

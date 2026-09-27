@@ -4,7 +4,14 @@ import type { SessionUser } from "./types";
 
 export type AuthActionResult =
   | { ok: true; user?: SessionUser | null; message?: string; statusToken?: string }
-  | { ok: false; error: string };
+  | {
+      ok: false;
+      error: string;
+      /** Machine-readable failure reason (PENDING_APPROVAL / ACCOUNT_REJECTED). */
+      code?: string;
+      /** Signed token that opens the /welcome pending-status screen. */
+      statusToken?: string;
+    };
 
 export async function loginAction(input: unknown): Promise<AuthActionResult> {
   const parsed = loginSchema.safeParse(input);
@@ -16,9 +23,12 @@ export async function loginAction(input: unknown): Promise<AuthActionResult> {
     const res = await apiLogin(parsed.data);
     return { ok: true, user: res.user ?? null };
   } catch (err) {
+    const e = err as Error & { code?: string; statusToken?: string };
     return {
       ok: false,
-      error: err instanceof Error ? err.message : "Something went wrong. Please try again.",
+      error: e instanceof Error ? e.message : "Something went wrong. Please try again.",
+      code: e.code,
+      statusToken: e.statusToken,
     };
   }
 }

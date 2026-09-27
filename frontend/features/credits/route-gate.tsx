@@ -8,7 +8,7 @@
  * category resolver maps to a paid category it:
  *   - guests   → blurred layer, any click raises the AdminApprovalModal notice,
  *   - members  → unlock overlay showing the category's coin cost,
- *   - unlocked → children render normally with a live 2-hour countdown badge,
+ *   - unlocked → children render normally with a live 20-minute countdown badge,
  *   - expiry   → children unmount, blur returns, overlay reappears — no reload.
  *
  * Public routes (home baseline, AI chat, auth, credits wallet) and privileged
@@ -101,8 +101,8 @@ export function RouteCreditGate({ children }: { children: ReactNode }) {
                 {rule.emoji} {rule.label}
               </p>
               <p className="mt-1.5 text-sm text-muted-foreground">
-                This section is part of the coin-gated library. Unlock it for 2
-                hours — it auto-locks again when the window ends.
+                This section is part of the coin-gated library. Unlock it for 20
+                minutes — it auto-locks again when the window ends.
               </p>
             </div>
 
@@ -132,7 +132,7 @@ export function RouteCreditGate({ children }: { children: ReactNode }) {
             )}
 
             <p className="text-[11px] font-medium text-muted-foreground">
-              Open for 2 hours, then auto-locks
+              Open for 20 minutes, then auto-locks
             </p>
 
             {error && (

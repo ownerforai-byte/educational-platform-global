@@ -5,7 +5,7 @@
  *
  * Unauthenticated → content is blurred and inert; any click raises the notice.
  * Authenticated   → shows the unlock overlay with the category's coin cost;
- *                   after paying, children mount for the 2-hour window.
+ *                   after paying, children mount for the 20-minute window.
  * Window expiry   → children unmount, blur returns, overlay reappears —
  *                   no page reload (driven by the frame-by-frame timer).
  */
@@ -122,7 +122,7 @@ export function CreditGate({
             </button>
 
             <p className="text-[11px] font-medium text-muted-foreground">
-              Open for 2 hours, then auto-locks
+              Open for 20 minutes, then auto-locks
             </p>
 
             {error && (

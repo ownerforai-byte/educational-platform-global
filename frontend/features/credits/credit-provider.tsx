@@ -6,7 +6,7 @@
  * Responsibilities:
  *   - expose the signed-in (Gmail-equivalent) session,
  *   - expose the coin balance,
- *   - unlock modules for coins and start the 2-hour window,
+ *   - unlock modules for coins and start the unlock window,
  *   - run ONE global capture-phase click interceptor that catches any
  *     interaction with a locked element while unauthenticated and raises the
  *     AdminApprovalModal notice,
@@ -55,7 +55,7 @@ export interface CreditContextValue {
   unlocks: UnlockMap;
   /** True when the signed-in user has passed the session check. */
   isAuthenticated: boolean;
-  /** True while `key`'s 2-hour window is open. */
+  /** True while `key`'s unlock window is open. */
   isUnlocked: (key: string) => boolean;
   /** HH:MM:SS remaining for `key`. */
   remainingClock: (key: string) => string;
@@ -63,8 +63,7 @@ export interface CreditContextValue {
   costOf: (category: ContentCategory) => number | null;
   /**
    * Open a module. Unauthenticated → notice modal (returns false).
-   * Authenticated + already open → true (free refresh).
-   * Authenticated + closed → deducts coins, starts the 2-hour window.
+   * Authenticated + already open → true (free refresh).    * Authenticated + closed → deducts coins, starts the unlock window.
    */
   openModule: (key: string, category: ContentCategory) => Promise<boolean>;
   /** Force the notice modal open (used by direct handlers). */
@@ -195,13 +194,13 @@ export function CreditProvider({ children }: { children: ReactNode }) {
         return false;
       }
 
-      // 4. Deduct on the server, then open the 2-hour window.
+      // 4. Deduct on the server, then open the 20-minute window.
       if (pending.has(key)) return false;
       setPending((prev) => new Set(prev).add(key));
 
       try {
         const res = await unlockContent(category, key);
-        // Server returns the canonical expiration (epoch + 7200).
+        // Server returns the canonical expiration (epoch + 1200).
         unlockModuleAt(key, res.expiresAt);
         refresh(); // re-sync the session balance
         return true;

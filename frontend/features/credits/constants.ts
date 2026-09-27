@@ -7,14 +7,14 @@
  *   - core syllabus chapters (theory notes) → 1 coin
  *   - auxiliary reference materials (questions / PYQ sets) → 1 coin
  *
- * A successful unlock stays open for UNLOCK_WINDOW_SECONDS (2 hours) and then
+ * A successful unlock stays open for UNLOCK_WINDOW_SECONDS (20 minutes) and then
  * the module re-locks automatically (no page reload required).
  */
 
 export type ContentCategory = "lab3d" | "visuals" | "theory" | "reference";
 
 export interface CategoryRule {
-  /** Coin cost for one 2-hour unlock window. */
+  /** Coin cost for one 20-minute unlock window. */
   cost: number;
   /** Display label used on unlock overlays. */
   label: string;
@@ -45,8 +45,8 @@ export const TOKEN_MATRIX: Record<ContentCategory, CategoryRule> = {
   },
 };
 
-/** Absolute lock window: expiration = current Unix epoch + 7200 seconds. */
-export const UNLOCK_WINDOW_SECONDS = 7200;
+/** Absolute lock window: expiration = current Unix epoch + 1200 seconds. */
+export const UNLOCK_WINDOW_SECONDS = 1200;
 
 /**
  * Intercepted-action notice copy. DO NOT CHANGE A SINGLE WORD.
@@ -60,7 +60,7 @@ export const LOGIN_PATH = "/login";
 /**
  * Routes that stay fully public: home baseline, the AI chat tutor (external
  * sources are allowed there only when the platform vault lacks the answer),
- * and the credits wallet itself.
+ * the credits wallet itself, and the profile/progress account surfaces.
  */
 export const PUBLIC_PATHS = [
   "/",
@@ -70,6 +70,7 @@ export const PUBLIC_PATHS = [
   "/chat",
   "/ai",
   "/credits",
+  "/profile",
 ] as const;
 
 /**

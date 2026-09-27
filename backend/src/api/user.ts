@@ -132,7 +132,7 @@ const UNLOCK_COSTS: Record<"lab3d" | "visuals" | "theory" | "reference", number>
   reference: 1,
 };
 
-const UNLOCK_WINDOW_SECONDS = 7200;
+const UNLOCK_WINDOW_SECONDS = 1200; // 20 minutes
 
 const unlockSchema = z.object({
   category: z.enum(["lab3d", "visuals", "theory", "reference"]),
@@ -141,7 +141,7 @@ const unlockSchema = z.object({
 
 /**
  * POST /api/user/credits/unlock
- * Deduct the category's coin cost and return the 2-hour window expiration.
+ * Deduct the category's coin cost and return the 20-minute window expiration.
  *
  * 401 — unauthenticated
  * 402 — insufficient credits

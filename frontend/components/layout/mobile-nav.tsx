@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import {
@@ -32,6 +32,7 @@ import {
   Coins,
 } from "lucide-react";
 import { usePathname } from "next/navigation";
+import { createPortal } from "react-dom";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { LogOut } from "lucide-react";
 
@@ -109,6 +110,7 @@ const mobileSections: MobileSection[] = [
     id: "account",
     title: "Student Desk",
     items: [
+      { href: "/profile", label: "My Profile", icon: User, badge: "Account" },
       { href: "/progress", label: "My Progress", icon: UserCheck, badge: "Stats" },
       { href: "/bookmarks", label: "Saved Bookmarks", icon: Bookmark, badge: "Saved" },
       { href: "/credits", label: "Credits & Plan", icon: Coins, badge: "Wallet" },
@@ -121,6 +123,36 @@ export function MobileNav() {
   const [searchQuery, setSearchQuery] = useState("");
   const pathname = usePathname();
   const { user, refresh, logoutUser } = useSession();
+  const panelRef = useRef<HTMLDivElement>(null);
+  const triggerRef = useRef<HTMLButtonElement>(null);
+
+  // Pro behavior: the drawer always mirrors navigation — any route change
+  // (link tap, back/forward, programmatic push) closes it.
+  useEffect(() => {
+    setOpen(false);
+    setSearchQuery("");
+  }, [pathname]);
+
+  // Escape closes and returns focus to the hamburger; the page behind the
+  // drawer must not scroll while it is open.
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") {
+        setOpen(false);
+        triggerRef.current?.focus();
+      }
+    };
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    // Focus lands inside the drawer so keyboard/screen-reader users start there.
+    panelRef.current?.focus();
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [open]);
 
   const filteredSections = mobileSections.map((sec) => ({
     ...sec,
@@ -137,27 +169,39 @@ export function MobileNav() {
       {/* Hamburger button — visible only on mobile (< lg) */}
       <div className="lg:hidden">
         <Button
+          ref={triggerRef}
           variant="ghost"
           size="icon"
           className="h-8 w-8 rounded-xl"
           onClick={() => setOpen(true)}
           aria-label="Open navigation"
+          aria-expanded={open}
+          aria-controls="mobile-nav-drawer"
         >
           <Menu className="h-4 w-4" />
         </Button>
       </div>
 
       {/* Slide-in sidebar overlay */}
-      {open && (
-        <div className="fixed inset-0 z-50 lg:hidden">
+      {/* Portaled to document.body: the header applies a transform, which
+          would trap position:fixed inside a 48px-tall box and let page
+          content bleed through the backdrop. */}
+      {open && typeof document !== "undefined"
+        ? createPortal(
+        <div className="fixed inset-0 z-50 lg:hidden" role="dialog" aria-modal="true" aria-label="Navigation menu">
           {/* Backdrop */}
           <div
-            className="absolute inset-0 bg-black/80 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/80 backdrop-blur-sm animate-backdrop-in"
             onClick={() => setOpen(false)}
             aria-hidden="true"
           />
           {/* Panel */}
-          <div className="absolute left-0 top-0 h-full w-80 max-w-[85vw] border-r border-border bg-card p-4 flex flex-col shadow-2xl">
+          <div
+            ref={panelRef}
+            tabIndex={-1}
+            id="mobile-nav-drawer"
+            className="absolute left-0 top-0 h-full w-80 max-w-[85vw] border-r border-border bg-card p-4 flex flex-col shadow-2xl animate-slide-in-left focus:outline-none"
+          >
             <div className="flex items-center justify-between pb-4 mb-2 border-b border-border/50">
               <Link
                 href="/"
@@ -253,7 +297,7 @@ export function MobileNav() {
                 // Logged-in state: profile entry + logout only — never auth links.
                 <div className="flex gap-2">
                   <Link
-                    href="/progress"
+                    href="/profile"
                     onClick={() => setOpen(false)}
                     className="flex-1 flex items-center justify-center gap-1.5 rounded-xl border border-border/70 py-2 text-xs font-medium text-foreground hover:bg-muted/60 transition-all"
                   >
@@ -294,8 +338,10 @@ export function MobileNav() {
               )}
             </div>
           </div>
-        </div>
-      )}
+        </div>,
+          document.body
+        )
+        : null}
     </>
   );
 }

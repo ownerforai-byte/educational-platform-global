@@ -29,7 +29,7 @@ export interface SessionTimerState {
   remaining: (key: string) => number;
   /** HH:MM:SS for `key` — "00:00:00" when locked. */
   remainingClock: (key: string) => string;
-  /** True while `key`'s 2-hour window is open. */
+  /** True while `key`'s unlock window is open. */
   isOpen: (key: string) => boolean;
   /** Frame counter — lets consumers re-render on every animation frame. */
   frame: number;

@@ -96,15 +96,21 @@ async function readAccessStatus(userId: string): Promise<AccessStatus> {
   return raw === "PENDING" || raw === "REJECTED" ? raw : "ACTIVE";
 }
 
-/** 403 for a non-ACTIVE account — never issues or renews cookies. */
-function accessDenied(res: Response, status: AccessStatus): void {
+/**
+ * 403 for a non-ACTIVE account — never issues or renews cookies.
+ * Carries a signed `statusToken` so the client can bounce the user straight
+ * to the /welcome status screen (pending page) instead of stranding them on
+ * the login form with an error they cannot act on.
+ */
+function accessDenied(res: Response, status: AccessStatus, userId?: string): void {
   const pending = status === "PENDING";
   res.status(403).json({
     error: pending ? "Account pending approval" : "Account not approved",
     code: pending ? "PENDING_APPROVAL" : "ACCOUNT_REJECTED",
     message: pending
-      ? "Your account was created and is awaiting approval. You can sign in as soon as an owner grants access."
+      ? "Your account was created and is awaiting approval. You can sign in after administrative and system approval."
       : "This account was not approved. Please contact the platform owner.",
+    statusToken: userId ? createStatusToken(userId) : undefined,
   });
 }
 
@@ -186,7 +192,7 @@ router.post("/login", async (req: Request, res: Response) => {
   // never receive a session (no cookies are set on this path).
   const accessStatus = await readAccessStatus(data.user.id);
   if (accessStatus !== "ACTIVE") {
-    accessDenied(res, accessStatus);
+    accessDenied(res, accessStatus, data.user.id);
     return;
   }
 
@@ -237,14 +243,14 @@ router.post("/signup", async (req: Request, res: Response) => {
     const accessStatus = await readAccessStatus(result.user.id);
     if (accessStatus !== "ACTIVE") {
       if (accessStatus === "REJECTED") {
-        accessDenied(res, accessStatus);
+        accessDenied(res, accessStatus, result.user.id);
         return;
       }
       const body: SignupResponse = {
         user: null,
         accessToken: null,
         message:
-          "Your account was created successfully! It is now awaiting approval — you can sign in as soon as an owner grants access.",
+          "Your account was created and is awaiting approval. You can sign in after administrative and system approval.",
         statusToken: createStatusToken(result.user.id),
         accessStatus: "PENDING",
       };
@@ -313,7 +319,7 @@ router.post("/refresh", async (req: Request, res: Response) => {
         const accessStatus = await readAccessStatus(user.id);
         if (accessStatus !== "ACTIVE") {
           clearSessionCookie(res);
-          accessDenied(res, accessStatus);
+          accessDenied(res, accessStatus, user.id);
           return;
         }
         const extended = await buildExtendedUser(user.id, user.email, user.role);
@@ -347,7 +353,7 @@ router.post("/refresh", async (req: Request, res: Response) => {
   const legacyAccess = await readAccessStatus(user.id);
   if (legacyAccess !== "ACTIVE") {
     clearSessionCookie(res);
-    accessDenied(res, legacyAccess);
+    accessDenied(res, legacyAccess, user.id);
     return;
   }
 
@@ -426,7 +432,7 @@ router.get("/me", async (req: Request, res: Response) => {
   const accessStatus = await readAccessStatus(user.id);
   if (accessStatus !== "ACTIVE") {
     clearSessionCookie(res);
-    accessDenied(res, accessStatus);
+    accessDenied(res, accessStatus, user.id);
     return;
   }
 

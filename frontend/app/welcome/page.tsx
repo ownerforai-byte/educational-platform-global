@@ -6,7 +6,7 @@ import { LoggedInRedirect } from "@/app/login/logged-in-redirect";
 export const metadata: Metadata = {
   title: "Account Status — Ravikisan's Platform",
   description:
-    "Your account was created — check whether access has been granted and sign in as soon as it's approved.",
+    "Your account was created and is awaiting approval — sign in after administrative and system approval.",
 };
 
 /**
@@ -21,7 +21,7 @@ export default function WelcomePage() {
   return (
     <AuthShell
       title="Your account is on its way"
-      subtitle="Account created — track your access status here. You'll be able to sign in the moment it's approved."
+      subtitle="Account created — track your access status here. You'll be able to sign in after administrative and system approval."
     >
       <LoggedInRedirect />
       <WelcomeStatus />

@@ -138,6 +138,15 @@ export function UserNav() {
 
           <div className="py-1">
             <Link
+              href="/profile"
+              onClick={() => setDropdownOpen(false)}
+              className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-foreground hover:bg-muted transition-colors font-medium"
+            >
+              <User className="h-3.5 w-3.5 text-primary" />
+              <span>My Profile</span>
+            </Link>
+
+            <Link
               href="/credits"
               onClick={() => setDropdownOpen(false)}
               className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-foreground hover:bg-muted transition-colors font-medium"
