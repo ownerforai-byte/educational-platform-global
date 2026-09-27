@@ -137,9 +137,10 @@ Use these labels as YAML/JSON block headers inside any task-tracking file or PR 
 |---|---|
 | Backend entrypoint | `backend/src/index.ts` |
 | AI orchestration | `backend/src/ai/service.ts` (agnes → openrouter → internal) |
+| AI prompt contract | `backend/src/ai/prompts.ts` (composes `MASTER_ACADEMIC_PROMPT`), `backend/src/ai/academic-intelligence.ts` (Master Academic Intelligence System + kingdom/phylum, life-cycle, mind-map, flow engines), frontend mirror `frontend/lib/ai/prompts.ts` |
 | AuthZ/AuthN + middleware | `backend/src/middleware/` (securityHeaders, errors, rateLimit, cors) |
 | Config / env gate | `backend/src/config/env.ts` |
-| Testing | `backend/tests/security-policy.test.ts` (14), `auth-flow.test.ts` (21), `hardening.test.ts` (27) |
+| Testing | `backend/tests/security-policy.test.ts` (14), `auth-flow.test.ts` (21), `hardening.test.ts` (27), `academic-intelligence.test.ts` (AI prompt contract) |
 | Frontend layout | `frontend/components/layout/app-shell.tsx`, `mobile-nav.tsx` |
 | Content model | `backend/src/db/mock-db.ts`, Supabase migrations |
 | Secrets hygiene | `git log -S`, `git grep -n "vcp_|sbp_|AIza|sk-|KEY=|TOKEN="` |

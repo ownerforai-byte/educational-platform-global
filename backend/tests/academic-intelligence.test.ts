@@ -1,0 +1,274 @@
+import { describe, expect, test, vi } from "vitest";
+import {
+  ACADEMIC_INTELLIGENCE_RULES,
+  ACADEMIC_SEARCH_ADDENDUM,
+  ACADEMIC_TAXONOMY_RULES,
+  MASTER_ACADEMIC_RULES,
+} from "../src/ai/academic-intelligence";
+import {
+  MASTER_ACADEMIC_PROMPT,
+  PROFESSOR_STYLE_RULES,
+  buildProfessorContext,
+  withProfessorContext,
+} from "../src/ai/prompts";
+
+/**
+ * Contract suite for the Master Academic Intelligence System.
+ *
+ * The academic layer is prompt text, so nothing about it can be type-checked —
+ * these assertions are the compile step. They pin:
+ *
+ *  1. the house identity rules still win (name, Captain line, links-last),
+ *  2. the academic engine's coverage (six subjects, depth, per-subject method),
+ *  3. the classification/life-cycle/mind-map/flow vocabulary,
+ *  4. the composition order used by /api/ai and /api/ai/guest.
+ */
+
+/** Lower-cased, whitespace-collapsed haystack for casing- and wrap-proof checks. */
+const PROMPT = MASTER_ACADEMIC_PROMPT.toLowerCase().replace(/\s+/g, " ");
+const ACADEMIC = ACADEMIC_INTELLIGENCE_RULES.toLowerCase().replace(/\s+/g, " ");
+const TAXONOMY = ACADEMIC_TAXONOMY_RULES.toLowerCase().replace(/\s+/g, " ");
+
+describe("master academic prompt composition", () => {
+  test("stacks professor style rules, then the academic engine", () => {
+    expect(MASTER_ACADEMIC_RULES).toBe(
+      `${ACADEMIC_INTELLIGENCE_RULES}\n\n${ACADEMIC_TAXONOMY_RULES}`,
+    );
+    expect(MASTER_ACADEMIC_PROMPT.startsWith(PROFESSOR_STYLE_RULES)).toBe(true);
+    expect(MASTER_ACADEMIC_PROMPT.endsWith(ACADEMIC_TAXONOMY_RULES)).toBe(true);
+    expect(MASTER_ACADEMIC_PROMPT).toContain(ACADEMIC_INTELLIGENCE_RULES);
+  });
+
+  test("keeps the tutor's identity and house style intact", () => {
+    expect(PROMPT).toContain("ravikisan's ai tutor");
+    expect(PROMPT).toContain("👋, i am the captain here. feel free to clear your doubts.");
+    expect(PROMPT).toContain("explore further:");
+    expect(PROMPT).toContain("in short:");
+    expect(PROMPT).toContain("never call yourself any other name or title");
+  });
+
+  test("academic rules defer to the reply shape (no printed headings)", () => {
+    expect(ACADEMIC).toContain("checklist of content, not a set of printed headings");
+    expect(ACADEMIC).toContain("never announce");
+  });
+
+  test("carries no template artefacts and stays a sane size", () => {
+    expect(MASTER_ACADEMIC_PROMPT).not.toContain("${");
+    expect(MASTER_ACADEMIC_PROMPT).not.toContain("`");
+    expect(MASTER_ACADEMIC_PROMPT.length).toBeGreaterThan(15_000);
+    expect(MASTER_ACADEMIC_PROMPT.length).toBeLessThan(60_000);
+  });
+
+  test("buildProfessorContext returns the full contract when search is off", async () => {
+    vi.stubEnv("TAVILY_API_KEY", "");
+    const context = await buildProfessorContext("derive the lens maker formula");
+    expect(context.startsWith(PROFESSOR_STYLE_RULES)).toBe(true);
+    expect(context).toContain(ACADEMIC_TAXONOMY_RULES);
+    vi.unstubAllEnvs();
+  });
+
+  test("withProfessorContext merges into an existing system message or prepends one", () => {
+    const merged = withProfessorContext(
+      [
+        { role: "system", content: "CLIENT" },
+        { role: "user", content: "hi" },
+      ],
+      "CONTEXT",
+    );
+    expect(merged[0]).toEqual({ role: "system", content: "CLIENT\n\nCONTEXT" });
+    expect(merged).toHaveLength(2);
+
+    const prepended = withProfessorContext([{ role: "user", content: "hi" }], "CONTEXT");
+    expect(prepended[0]).toEqual({ role: "system", content: "CONTEXT" });
+    expect(prepended).toHaveLength(2);
+  });
+});
+
+describe("academic engine coverage", () => {
+  test("names all six subjects and the default curriculum frame", () => {
+    for (const subject of [
+      "physics",
+      "chemistry",
+      "biology",
+      "mathematics",
+      "english",
+      "nepali",
+    ]) {
+      expect(ACADEMIC).toContain(subject);
+    }
+    expect(ACADEMIC).toContain("व्याकरण");
+    expect(ACADEMIC).toContain("neb grade 11 and grade 12");
+    expect(ACADEMIC).toContain("curriculum awareness");
+    expect(ACADEMIC).toContain("cee / ioe");
+    expect(ACADEMIC).toContain("never claim a topic belongs to a particular curriculum");
+  });
+
+  test("carries the knowledge model and all five depth levels", () => {
+    expect(ACADEMIC).toContain("universal knowledge model");
+    expect(ACADEMIC).toContain("foundation → definition → terminology → classification");
+    expect(ACADEMIC).toContain("summary / revision");
+    for (const level of ["level 1", "level 2", "level 3", "level 4", "level 5"]) {
+      expect(ACADEMIC).toContain(level);
+    }
+    expect(ACADEMIC).toContain("academic depth engine");
+  });
+
+  test("keeps each subject's solving protocol", () => {
+    expect(ACADEMIC).toContain("given → required → principle → formula");
+    expect(ACADEMIC).toContain("dimensional consistency");
+    expect(ACADEMIC).toContain("balance every equation");
+    expect(ACADEMIC).toContain("reactants → conditions → mechanism → intermediate → products");
+    expect(ACADEMIC).toContain("never confuse correlation with causation");
+    expect(ACADEMIC).toContain("structure → function → location → inputs → steps → outputs");
+    expect(ACADEMIC).toContain("theorem/concept → strategy → step-by-step derivation");
+    expect(ACADEMIC).toContain("latex/katex");
+    expect(ACADEMIC).toContain("never invent quotations or textual details");
+    expect(ACADEMIC).toContain("पाठ परिचय");
+  });
+
+  test("ships complete-knowledge mode, exam mode and the difficulty ladder", () => {
+    expect(ACADEMIC).toContain("complete knowledge mode");
+    expect(ACADEMIC).toContain("topic overview");
+    expect(ACADEMIC).toContain("final revision sheet");
+    expect(ACADEMIC).toContain("exam mode");
+    expect(ACADEMIC).toContain("1-mark");
+    expect(ACADEMIC).toContain("2-mark");
+    expect(ACADEMIC).toContain("3–4 mark");
+    expect(ACADEMIC).toContain("long answer");
+    expect(ACADEMIC).toContain("certain to appear");
+    expect(ACADEMIC).toContain("l1 recall · l2 understanding · l3 application · l4 analysis");
+    expect(ACADEMIC).toContain("l6 advanced problem-solving");
+  });
+
+  test("detects misconceptions, researches and refuses to fabricate", () => {
+    expect(ACADEMIC).toContain("misconception detector");
+    expect(ACADEMIC).toContain("counterexample");
+    expect(ACADEMIC).toContain("never embarrass the learner");
+    expect(ACADEMIC).toContain("tavily");
+    expect(ACADEMIC).toContain("[real-time internet search results]");
+    expect(ACADEMIC).toContain("cross-check");
+    expect(ACADEMIC).toContain("primary source");
+    expect(ACADEMIC).toContain("hypothesis · speculation");
+    expect(ACADEMIC).toContain("never fabricate references");
+    expect(ACADEMIC).toContain("knowledge boundary");
+  });
+
+  test("keeps the structure, comparison and problem-solving engines", () => {
+    expect(ACADEMIC).toContain("answer structure");
+    expect(ACADEMIC).toContain("comparison engine");
+    expect(ACADEMIC).toContain("problem-solving engine");
+    expect(ACADEMIC).toContain("step 6 interpret");
+    expect(ACADEMIC).toContain("output quality control");
+    expect(ACADEMIC).toContain("personalised teaching");
+    expect(ACADEMIC).toContain("understand → classify → identify prerequisites → map the knowledge structure");
+  });
+
+  test("the search addendum keeps the academic floor", () => {
+    const addendum = ACADEMIC_SEARCH_ADDENDUM.toLowerCase();
+    expect(addendum).toContain("kingdom");
+    expect(addendum).toContain("life cycle");
+    expect(addendum).toContain("mind map");
+    expect(addendum).toContain("flow");
+    expect(addendum).toContain("never invent a source");
+  });
+});
+
+
+describe("classification, life-cycle, mind-map and flow engine", () => {
+  test("carries the full taxonomic ladder and nomenclature rules", () => {
+    for (const rank of [
+      "domain",
+      "kingdom",
+      "phylum",
+      "division",
+      "class",
+      "order",
+      "family",
+      "genus",
+      "species",
+    ]) {
+      expect(TAXONOMY).toContain(rank);
+    }
+    expect(TAXONOMY).toContain("taxon");
+    expect(TAXONOMY).toContain("linnaeus");
+    expect(TAXONOMY).toContain("homo sapiens");
+    expect(TAXONOMY).toContain("mangifera indica");
+    expect(TAXONOMY).toContain("icbn, iczn, icnb");
+    expect(TAXONOMY).toContain("type specimen");
+  });
+
+  test("teaches the kingdoms with their criteria and the domain system", () => {
+    for (const kingdom of ["monera", "protista", "fungi", "plantae", "animalia"]) {
+      expect(TAXONOMY).toContain(kingdom);
+    }
+    expect(TAXONOMY).toContain("whittaker, 1969");
+    expect(TAXONOMY).toContain("woese, 1977");
+    expect(TAXONOMY).toContain("archaea");
+    expect(TAXONOMY).toContain("eukarya");
+    expect(TAXONOMY).toContain("16s rrna");
+    expect(TAXONOMY).toContain("lichens");
+  });
+
+  test("lists the phyla and divisions with named examples", () => {
+    for (const phylum of [
+      "porifera",
+      "coelenterata",
+      "ctenophora",
+      "platyhelminthes",
+      "aschelminthes",
+      "annelida",
+      "arthropoda",
+      "mollusca",
+      "echinodermata",
+      "hemichordata",
+      "chordata",
+      "urochordata",
+      "cephalochordata",
+      "vertebrata",
+    ]) {
+      expect(TAXONOMY).toContain(phylum);
+    }
+    expect(TAXONOMY).toContain("rhizopoda");
+    expect(TAXONOMY).toContain("ciliophora");
+    expect(TAXONOMY).toContain("apicomplexa");
+    expect(TAXONOMY).toContain("phycomycetes");
+    expect(TAXONOMY).toContain("deuteromycetes");
+    expect(TAXONOMY).toContain("bryophytes");
+    expect(TAXONOMY).toContain("pteridophytes");
+    expect(TAXONOMY).toContain("gymnosperms");
+    expect(TAXONOMY).toContain("angiosperms");
+    expect(TAXONOMY).toContain("diagnostic feature");
+  });
+
+  test("keeps the three life-cycle patterns with ploidy and examples", () => {
+    expect(TAXONOMY).toContain("life-cycle engine");
+    expect(TAXONOMY).toContain("haplontic (zygotic meiosis)");
+    expect(TAXONOMY).toContain("diplontic (gametic meiosis)");
+    expect(TAXONOMY).toContain("haplo-diplontic (sporic meiosis");
+    expect(TAXONOMY).toContain("alternation of generations");
+    expect(TAXONOMY).toContain("gametophyte");
+    expect(TAXONOMY).toContain("sporophyte");
+    expect(TAXONOMY).toContain("ploidy");
+    expect(TAXONOMY).toContain("prothallus");
+    expect(TAXONOMY).toContain("metamorphosis");
+    expect(TAXONOMY).toContain("metagenesis");
+    expect(TAXONOMY).toContain("plasmodium");
+    expect(TAXONOMY).toContain("taenia solium");
+    expect(TAXONOMY).toContain("ascaris");
+    expect(TAXONOMY).toContain("definitive host");
+  });
+
+  test("defines the mind-map and flow output formats", () => {
+    expect(TAXONOMY).toContain("mind-map engine");
+    expect(TAXONOMY).toContain("one root concept");
+    expect(TAXONOMY).toContain("3–6 primary branches");
+    expect(TAXONOMY).toContain("exam traps");
+    expect(TAXONOMY).toContain("/mindmap");
+    expect(TAXONOMY).toContain("/lab");
+    expect(TAXONOMY).toContain("flow engine");
+    expect(TAXONOMY).toContain("start → step → step");
+    expect(TAXONOMY).toContain("decision points");
+    expect(TAXONOMY).toContain("wrapped arrow back to the start");
+    expect(TAXONOMY).toContain("choosing the right visual");
+  });
+});

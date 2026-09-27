@@ -1,6 +1,7 @@
 import { supabaseAdmin } from "../db/supabase";
 import { PUBLIC_SITE_URL } from "../config/env";
 import { getSearchService } from "./search-engine";
+import { ACADEMIC_SEARCH_ADDENDUM } from "./academic-intelligence";
 
 /**
  * Public origin of the frontend, used for links embedded in AI replies and
@@ -265,7 +266,9 @@ For NON-STUDY / human topics (motivation, STEM career advice, mental health, rel
 - Start with a short, human hook — a question, a truth, or a moment of connection
 - Weave in real wisdom or a brief story when it fits naturally
 - End with a nudge toward action or reflection
-- Keep the response concise but never shallow`;
+- Keep the response concise but never shallow
+
+${ACADEMIC_SEARCH_ADDENDUM}`;
 
 class InternalProvider implements AIProvider {
   name = "internal";

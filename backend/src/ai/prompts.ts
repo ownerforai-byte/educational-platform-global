@@ -1,4 +1,5 @@
 import { getSearchService } from "./search-engine";
+import { MASTER_ACADEMIC_RULES } from "./academic-intelligence";
 
 /**
  * PROFESSOR_STYLE_RULES — enforced server-side on every chat reply (auth + guest).
@@ -38,12 +39,33 @@ UNBREAKABLE RULES
 const SITE_TIMEOUT_MS = 6000;
 
 /**
+ * MASTER_ACADEMIC_PROMPT — the full server-side system prompt:
+ *
+ *   1. PROFESSOR_STYLE_RULES       — identity, reply shape, word meanings, links-last,
+ *                                    first-hello, length (the existing house rules).
+ *   2. ACADEMIC_INTELLIGENCE_RULES — the Master Academic Intelligence System: knowledge
+ *                                    model, depth engine, curriculum awareness, the six
+ *                                    subject engines, complete-knowledge / exam modes,
+ *                                    misconception detector, Tavily research discipline,
+ *                                    answer structure and the knowledge boundary.
+ *   3. ACADEMIC_TAXONOMY_RULES     — kingdom/phylum classification, life cycles,
+ *                                    mind-map and flow output.
+ *
+ * Everything below rides on this constant, so a new academic rule is added once,
+ * in ./academic-intelligence.ts.
+ */
+export const MASTER_ACADEMIC_PROMPT = [
+  PROFESSOR_STYLE_RULES,
+  MASTER_ACADEMIC_RULES,
+].join("\n\n");
+
+/**
  * Build the server-side context block appended to the system prompt for every
- * chat request: professor formatting rules + live Google CSE web results for
+ * chat request: professor + master academic rules + live Tavily web results for
  * the student's latest message (raced against a timeout so replies stay fast).
  */
 export async function buildProfessorContext(lastUserMessage: string): Promise<string> {
-  const parts: string[] = [PROFESSOR_STYLE_RULES];
+  const parts: string[] = [MASTER_ACADEMIC_PROMPT];
 
   try {
     const svc = getSearchService();
