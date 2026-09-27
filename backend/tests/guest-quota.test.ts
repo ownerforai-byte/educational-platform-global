@@ -120,6 +120,18 @@ describe("consumeGuestSlot", () => {
     expect(db.calls.filter((c) => c.op === "update")).toHaveLength(0);
   });
 
+  test("refresh cannot regain an exhausted pool (repeat consumes stay limited)", async () => {
+    // A page refresh, token refresh or re-mount simply calls consume again —
+    // every call against an exhausted day must answer limited with ZERO
+    // writes, for ever, until the UTC day rolls over server-side.
+    for (let i = 0; i < 5; i++) {
+      db.queue("guest_chat_usage:select", { data: { count: GUEST_DAILY_LIMIT }, error: null });
+      const slot = await consumeGuestSlot("ip-refresh-1");
+      expect(slot).toEqual({ status: "limited", remaining: 0 });
+    }
+    expect(db.calls.filter((c) => c.op === "update" || c.op === "upsert")).toHaveLength(0);
+  });
+
   test("last allowed message returns remaining 0 (not 'limited')", async () => {
     db.queue("guest_chat_usage:select", { data: { count: GUEST_DAILY_LIMIT - 1 }, error: null });
     db.queue("guest_chat_usage:update", { data: [{ count: GUEST_DAILY_LIMIT }], error: null });

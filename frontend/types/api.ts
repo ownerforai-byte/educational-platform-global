@@ -368,4 +368,8 @@ export interface GenerateQuestionsResponse {
   questions: GeneratedQuestion[];
   provider: string;
   topic?: string;
+  /** Guest pool only: messages left AFTER this generation (server-attested). */
+  remaining?: number;
+  /** Guest pool only: the daily limit the remaining was measured against. */
+  limit?: number;
 }

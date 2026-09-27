@@ -33,7 +33,9 @@ function getClientId(req: Request): string {
   return req.ip ?? "unknown";
 }
 
-type GuestGateRequest = Request & { guestSlot?: { ip: string; deviceId: string } };
+type GuestGateRequest = Request & {
+  guestSlot?: { ip: string; deviceId: string; remaining: number };
+};
 
 /**
  * Access gate (2026-09-27, owner decision): the quiz must work for
@@ -76,7 +78,7 @@ async function authOrGuestQuota(req: Request, res: Response, next: NextFunction)
       return;
     }
 
-    (req as GuestGateRequest).guestSlot = { ip, deviceId };
+    (req as GuestGateRequest).guestSlot = { ip, deviceId, remaining: slot.remaining };
     // Any failure response means no questions were delivered → give the
     // guest's slot back (best-effort) so a broken attempt never burns it.
     res.on("finish", () => {
@@ -165,6 +167,10 @@ interface GenerateQuestionsResponse {
   questions: GeneratedQuestion[];
   provider: string;
   topic?: string;
+  /** Guest pool only: left AFTER this generation (server-attested). */
+  remaining?: number;
+  /** Guest pool only: the daily limit `remaining` was measured against. */
+  limit?: number;
 }
 
 router.post(
@@ -423,10 +429,17 @@ ${keyTermsContext ? `KEY TERMS FROM SYLLABUS:\n${keyTermsContext}` : "Use standa
           explanation: (q.explanation as string) ?? "",
         }));
 
+      const guestSlot = (req as GuestGateRequest).guestSlot;
+
       res.json({
         questions,
         provider: aiService.getLastAnsweredBy(),
         topic: topic ?? undefined,
+        // Guests get the server-attested pool so the UI mirror can never
+        // show MORE than what is actually left (refresh cannot fake it).
+        ...(guestSlot
+          ? { remaining: guestSlot.remaining, limit: GUEST_DAILY_LIMIT }
+          : {}),
       } satisfies GenerateQuestionsResponse);
     } catch (err: any) {
       console.error("AI generate-questions error:", err);

@@ -20,6 +20,10 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { SYLLABUS } from "@/lib/syllabus";
 import { generateQuestions } from "@/lib/api/ai";
+import {
+  GUEST_DAILY_LIMIT,
+  writeGuestCount,
+} from "@/lib/ai/guest-quota";
 import type { GeneratedQuestion } from "@/types/api";
 
 // ── Colour palette per difficulty ────────────────────────────────────────────
@@ -583,6 +587,11 @@ export function QuizStudio() {
         count: params.count,
       });
       setQuestions(res.questions);
+      // Server-attested guest pool: mirror the REAL remainder so a cleared
+      // localStorage / page refresh can never display a refilled quota.
+      if (typeof res.remaining === "number") {
+        writeGuestCount(Math.max(0, GUEST_DAILY_LIMIT - res.remaining));
+      }
       setDifficulty(params.difficulty);
       setPhase("quiz");
     } catch (err: unknown) {
@@ -594,6 +603,14 @@ export function QuizStudio() {
           ? err.message.trim()
           : "Failed to generate questions. Please try again.";
       setError(msg);
+      // Guest pool exhausted (server 402) → lock the client mirror too.
+      const status =
+        err && typeof err === "object" && "status" in err
+          ? (err as { status?: number }).status
+          : undefined;
+      if (status === 402 && /free AI generations|guest/i.test(msg)) {
+        writeGuestCount(GUEST_DAILY_LIMIT);
+      }
     } finally {
       setGenerating(false);
     }
