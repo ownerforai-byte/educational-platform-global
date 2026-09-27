@@ -35,6 +35,7 @@ import {
   type ChatSession,
 } from "@/lib/api/ai";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
+import { stripLinksForCopy } from "@/lib/ai/clean-copy";
 import {
   GUEST_DAILY_LIMIT as MAX_GUEST_MESSAGES,
   readGuestCount,
@@ -88,7 +89,7 @@ const SUGGESTED_PROMPTS = [
 // messages/day, logged users get 8 credits/day — both reset at 12:00 AM.
 // Guest counts come from the shared day-keyed mirror (lib/ai/guest-quota);
 // the server enforces the real numbers either way.
-const DAILY_CREDIT_POOL = 8;
+const DAILY_CREDIT_POOL = 4;
 const ACTIVE_SESSION_KEY = "neb_ai_active_session";
 
 // Rotating "work in progress" lines while the professor composes a reply —
@@ -215,7 +216,7 @@ export function AIChatInterface() {
     setSession(active);
     loadSessionHistory(active);
     refreshSessions();
-    // Signed-in header shows the live daily pool (8 credits/day, resets
+    // Signed-in header shows the live daily pool (4 credits/day, resets
     // at 12:00 AM) — /api/auth/me already applied the lazy midnight reset.
     if (user && typeof user.credits === "number") setDailyCredits(user.credits);
   }, [isLoggedIn, loadSessionHistory, refreshSessions, user]);
@@ -249,11 +250,11 @@ export function AIChatInterface() {
     if (historyState === "loading") return;
 
     if (isGuestLimited) {
-      setError("You've used all 5 free guest messages for today. Your pool resets to 5 at 12:00 AM — or sign in for 8 daily credits & saved histories.");
+      setError(`You've used all ${MAX_GUEST_MESSAGES} free guest messages for today. Your pool resets to ${MAX_GUEST_MESSAGES} at 12:00 AM — or sign in for ${DAILY_CREDIT_POOL} daily credits & saved histories.`);
       return;
     }
     if (creditsExhausted) {
-      setError("You've used all 8 credits of today's daily pool. It resets to 8 credits at 12:00 AM.");
+      setError(`You've used all ${DAILY_CREDIT_POOL} credits of today's daily pool. It resets at 12:00 AM — or go PRO for unlimited.`);
       return;
     }
 
@@ -350,12 +351,15 @@ export function AIChatInterface() {
   };
 
   const handleCopy = async (content: string, index: number) => {
+    // Links stay clickable on screen — but their URLs never reach the
+    // clipboard (owner rule 2026-09-27: labels yes, URLs hidden).
+    const plain = stripLinksForCopy(content);
     try {
-      await navigator.clipboard.writeText(content);
+      await navigator.clipboard.writeText(plain);
     } catch {
       try {
         const ta = document.createElement("textarea");
-        ta.value = content;
+        ta.value = plain;
         ta.style.position = "fixed";
         ta.style.opacity = "0";
         document.body.appendChild(ta);
@@ -733,7 +737,7 @@ export function AIChatInterface() {
                 isGuestLimited
                   ? "Guest limit reached — please log in to ask more questions."
                   : creditsExhausted
-                    ? "Daily credits used up — your pool resets to 8 at 12:00 AM."
+                    ? "Daily credits used up — your pool resets to 4 at 12:00 AM, or go PRO for unlimited."
                     : "Ask me anything… ⚡ Enter to send · Shift+Enter for a new line"
               }
               className="flex-1 max-h-32 min-h-[44px] py-2.5 px-4 rounded-2xl border border-border/80 bg-card text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none font-medium"

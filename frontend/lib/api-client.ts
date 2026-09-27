@@ -100,7 +100,7 @@ async function request<T>(path: string, init?: RequestInit, isRetry = false): Pr
       /** Signed token that opens the /welcome status (pending) screen. */
       statusToken?: string;
     };
-    // Prefer the human `message` ("You've used all 8 credits…") over the
+    // Prefer the human `message` ("You've used all 4 credits…") over the
     // short machine `error` ("Insufficient credits") — and fall back to the
     // status text when the body isn't JSON (e.g. a proxy's 500 page).
     const text =

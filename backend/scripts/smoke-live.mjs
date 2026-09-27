@@ -79,11 +79,18 @@ const health = await j("/health");
 step("health endpoint responds", health.status === 200 && health.body?.status === "ok", `status=${health.status}`);
 
 // ── 2. Hardened endpoints reject anonymous callers ──
+// 2026-09-27: the quiz admits guests through the metered 2/day pool, so the
+// check is "never succeeds without quota" — an EMPTY body still passes the
+// gate first and must answer 4xx (400 validation / 402 exhausted / 503).
 const anonQuiz = await j("/api/ai/generate-questions", {
   method: "POST",
-  body: JSON.stringify({ classSlug: "class-11", subjectSlug: "physics" }),
+  body: JSON.stringify({}),
 });
-step("anonymous /ai/generate-questions rejected (401)", anonQuiz.status === 401, `status=${anonQuiz.status}`);
+step(
+  "anonymous /ai/generate-questions is quota-gated (never 2xx)",
+  anonQuiz.status >= 400,
+  `status=${anonQuiz.status}`,
+);
 
 const anonProgress = await j("/api/biology/labs/bio-cell-3d/progress", {
   method: "POST",

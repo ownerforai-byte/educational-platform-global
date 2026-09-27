@@ -112,7 +112,7 @@ export async function* streamChat(
 }
 
 /**
- * Send a chat message as a guest (no auth required, limited to 5 messages).
+ * Send a chat message as a guest (no auth required, limited to 2 messages/day).
  */
 export async function guestChat(
   messages: AIChatMessage[],

@@ -494,13 +494,21 @@ describe("auth flow", () => {
     expect(res.status).toBe(401);
   });
 
-  test("AI question generation requires authentication (was anonymous 200)", async () => {
+  test("AI question generation is guest-quota-gated (was anonymous unlimited)", async () => {
+    // 2026-09-27: guests are admitted through the metered daily pool
+    // (5/day, shared with guest chat) — but an EXHAUSTED pool must answer
+    // 402 before any AI call. Anonymous unlimited access stays blocked.
+    mocked.from.mockImplementationOnce(() =>
+      makeQueryChain({ data: { count: 999_999 }, error: null }),
+    );
     const res = await fetch(`${probeUrl}/api/ai/generate-questions`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ classSlug: "class-11", subjectSlug: "physics" }),
     });
-    expect(res.status).toBe(401);
+    expect(res.status).toBe(402);
+    const body = await res.json();
+    expect(body.error).toBe("Daily guest limit reached");
   });
 
   test("biology progress POST requires auth and stores the session user id", async () => {

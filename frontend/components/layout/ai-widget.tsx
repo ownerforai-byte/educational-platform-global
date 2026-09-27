@@ -122,8 +122,8 @@ export function AIWidget() {
           {
             role: "assistant",
             content: isLoggedIn
-              ? "💳 You've used all 8 daily credits. Your pool resets at 12:00 AM."
-              : "🔒 You've used all 5 free guest messages for today. Sign in or create an account to keep chatting!",
+              ? "💳 You've used all 4 daily credits. Your pool resets at 12:00 AM — or go PRO for unlimited."
+              : "🔒 You've used all 2 free guest messages for today. Sign in or create an account to keep chatting!",
           },
         ]);
       } else {

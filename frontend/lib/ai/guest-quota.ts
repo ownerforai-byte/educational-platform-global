@@ -1,5 +1,5 @@
 /**
- * Shared display-side helpers for the guest chat daily pool (5/day, resets
+ * Shared display-side helpers for the guest chat daily pool (2/day, resets
  * at 12:00 AM). The server is the source of truth (backend
  * utils/guestQuota.ts — DB-backed, per hashed IP); localStorage only mirrors
  * it so the UI can render honestly before the first reply of the session.
@@ -9,8 +9,8 @@
  * so it could stay locked out all day). Both now read through this module.
  */
 
-/** Mirrors the backend's GUEST_DAILY_LIMIT (owner policy: 5/day). */
-export const GUEST_DAILY_LIMIT = 5;
+/** Mirrors the backend's GUEST_DAILY_LIMIT (hardcoded 2/day since 2026-09-27). */
+export const GUEST_DAILY_LIMIT = 2;
 
 const DAY_KEY = "neb_ai_guest_day";
 const COUNT_KEY = "neb_ai_guest_count";

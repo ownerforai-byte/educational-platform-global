@@ -100,15 +100,15 @@ describe("consumeGuestSlot", () => {
   });
 
   test("existing row: CAS increment against the count just read", async () => {
-    db.queue("guest_chat_usage:select", { data: { count: 2 }, error: null });
-    db.queue("guest_chat_usage:update", { data: [{ count: 3 }], error: null });
+    db.queue("guest_chat_usage:select", { data: { count: GUEST_DAILY_LIMIT - 1 }, error: null });
+    db.queue("guest_chat_usage:update", { data: [{ count: GUEST_DAILY_LIMIT }], error: null });
 
     const slot = await consumeGuestSlot("ip-increment-1");
-    expect(slot).toEqual({ status: "ok", remaining: GUEST_DAILY_LIMIT - 3 });
+    expect(slot).toEqual({ status: "ok", remaining: 0 });
 
     const update = db.calls.find((c) => c.op === "update");
-    expect(update?.args?.[0]).toEqual({ count: 3 });
-    expect(update?.filters).toContainEqual(["count", 2]); // guard: value just read
+    expect(update?.args?.[0]).toEqual({ count: GUEST_DAILY_LIMIT });
+    expect(update?.filters).toContainEqual(["count", GUEST_DAILY_LIMIT - 1]); // guard: value just read
     expect(update?.filters.some((f) => f[0] === "client_key")).toBe(true);
   });
 
@@ -183,13 +183,13 @@ describe("dual identity (device cookie + IP)", () => {
   const DEVICE = "a1b2c3d4e5f6a7b8a1b2c3d4e5f6a7b8"; // 32-hex, minted shape
 
   test("both identities are consumed in one call; remaining is the worst of them", async () => {
-    db.queue("guest_chat_usage:select", { data: { count: 2 }, error: null });
-    db.queue("guest_chat_usage:update", { data: [{ count: 3 }], error: null });
-    db.queue("guest_chat_usage:select", { data: { count: 4 }, error: null });
-    db.queue("guest_chat_usage:update", { data: [{ count: 5 }], error: null });
+    db.queue("guest_chat_usage:select", { data: { count: GUEST_DAILY_LIMIT - 1 }, error: null });
+    db.queue("guest_chat_usage:update", { data: [{ count: GUEST_DAILY_LIMIT }], error: null });
+    db.queue("guest_chat_usage:select", { data: { count: GUEST_DAILY_LIMIT - 1 }, error: null });
+    db.queue("guest_chat_usage:update", { data: [{ count: GUEST_DAILY_LIMIT }], error: null });
 
     const slot = await consumeGuestSlot("ip-dual-1", DEVICE);
-    // ip: 3 used → 2 left; device: 5 used → 0 left → worst = 0.
+    // Both identities are driven TO the limit → 0 left on each → worst = 0.
     expect(slot).toEqual({ status: "ok", remaining: 0 });
     expect(db.calls.filter((c) => c.op === "update")).toHaveLength(2);
   });

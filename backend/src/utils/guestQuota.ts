@@ -7,7 +7,7 @@ import { isProductionEnv } from "../config/env";
  * Server-side daily guest chat quota (owner policy 2026-09-26, hardened
  * 2026-09-26: "a user cannot refresh an exhausted quota"):
  *
- *   5 messages per guest per UTC day, enforced under TWO independent
+ *   2 messages per guest per UTC day, enforced under TWO independent
  *   identities — BOTH must have remaining allowance:
  *
  *     1. DEVICE  — an HttpOnly, JS-invisible cookie minted by the server
@@ -32,8 +32,12 @@ import { isProductionEnv } from "../config/env";
  *   attempt never burns someone else's (or their other key's) allowance.
  */
 
-/** Daily guest message allowance (the guest "credit pool"). */
-export const GUEST_DAILY_LIMIT = Number(process.env.GUEST_DAILY_LIMIT) || 5;
+/**
+ * Daily guest message allowance (the guest "credit pool").
+ * HARDCODED 2026-09-27 (owner): env override removed — no config, restart
+ * or refresh can raise it mid-day; the pool refills only at UTC midnight.
+ */
+export const GUEST_DAILY_LIMIT = 2;
 
 /** HttpOnly device-identity cookie (server-minted, never page-readable). */
 export const GUEST_COOKIE_NAME = "neb-gid";

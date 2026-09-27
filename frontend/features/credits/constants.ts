@@ -61,6 +61,9 @@ export const LOGIN_PATH = "/login";
  * Routes that stay fully public: home baseline, the AI chat tutor (external
  * sources are allowed there only when the platform vault lacks the answer),
  * the credits wallet itself, and the profile/progress account surfaces.
+ * 2026-09-27: /ai-quiz joins /ai — the same Quiz Studio is already free in
+ * the AI Studio tab, so gating the standalone route made no sense (and the
+ * quiz now runs on the shared 5/day guest pool instead of coins).
  */
 export const PUBLIC_PATHS = [
   "/",
@@ -69,6 +72,7 @@ export const PUBLIC_PATHS = [
   "/signup",
   "/chat",
   "/ai",
+  "/ai-quiz",
   "/credits",
   "/profile",
 ] as const;

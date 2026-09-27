@@ -11,6 +11,7 @@
 
 import { useEffect, useRef } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { ShieldCheck, ArrowRight, X } from "lucide-react";
 import { LOGIN_PATH, NOTICE_COPY } from "./constants";
 
@@ -28,6 +29,16 @@ export function AdminApprovalModal({
 }: AdminApprovalModalProps) {
   const dialogRef = useRef<HTMLDivElement>(null);
   const closeRef = useRef<HTMLButtonElement>(null);
+
+  // Auto-dismiss on navigation: tapping "Go to Login" (or ANY route change
+  // while the notice is up) must drop it instead of leaving it floating
+  // over the next page — owner rule 2026-09-27.
+  const pathname = usePathname();
+  const onCloseRef = useRef(onClose);
+  onCloseRef.current = onClose;
+  useEffect(() => {
+    onCloseRef.current();
+  }, [pathname]);
 
   // Focus the dialog on open, trap Escape, and lock background scrolling.
   useEffect(() => {
@@ -125,6 +136,7 @@ export function AdminApprovalModal({
           {/* Login action — internal portal entry path, directly below notice */}
           <Link
             href={LOGIN_PATH}
+            onClick={onClose}
             className="mt-6 inline-flex h-12 w-full items-center justify-center gap-2 rounded-2xl bg-primary px-6 text-sm font-bold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:bg-primary/90 hover:shadow-primary/40 focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-card"
           >
             Go to Login

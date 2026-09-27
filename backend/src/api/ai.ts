@@ -3,7 +3,7 @@ import { serverError, ERROR_ID_HEADER } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { requireAuth } from "../middleware/auth";
 import { hasFullAccess } from "../middleware/auth";
-import { ensureDailyCredits, spendCredits, refundCredits, AI_MESSAGE_COST } from "../utils/credits";
+import { ensureDailyCredits, spendCredits, refundCredits, AI_MESSAGE_COST, DAILY_CREDIT_POOL } from "../utils/credits";
 import { supabaseAdmin } from "../db/supabase";
 import { logServerError, newErrorId } from "../middleware/errors";
 import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
@@ -72,7 +72,7 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
           error: "Insufficient credits",
           required: AI_MESSAGE_COST,
           current: ensured.credits === Infinity ? 0 : ensured.credits,
-          message: `You've used all ${AI_MESSAGE_COST === 1 ? "8 credits" : ""} of today's daily pool. It resets to 8 credits at 12:00 AM.`,
+          message: `You've used all ${DAILY_CREDIT_POOL} credits of today's daily pool. It resets to ${DAILY_CREDIT_POOL} credits at 12:00 AM — or go PRO for unlimited.`,
         });
         return;
       }

@@ -11,10 +11,11 @@ import {
   rollbackGuestSlot,
   startGuestQuotaCleanup,
 } from "../utils/guestQuota";
+import { DAILY_CREDIT_POOL } from "../utils/credits";
 
 /**
  * Guest AI chat (no account). Owner policy 2026-09-26:
- *   - 5 messages per guest per day (UTC day rollover at 12:00 AM)
+ *   - 2 messages per guest per day (UTC day rollover at 12:00 AM)
  *   - enforced server-side by utils/guestQuota (DB-backed, hashed IP), so
  *     clearing localStorage, restarting the server, or switching tabs
  *     cannot buy more
@@ -61,7 +62,7 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
       return;
     }
 
-    // ── Guest daily pool: 5 messages/day, resets at 12:00 AM (UTC) ──
+    // ── Guest daily pool: 2 messages/day, resets at 12:00 AM (UTC) ──
     const slot = await consumeGuestSlot(ip, deviceId);
     if (slot.status === "limited") {
       res.status(402).json({
@@ -69,7 +70,7 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
         remaining: 0,
         limit: GUEST_DAILY_LIMIT,
         message:
-          "You've used all 5 free guest messages for today. Your pool resets to 5 at 12:00 AM — or sign in to get 8 daily credits and saved chat histories.",
+          `You've used all ${GUEST_DAILY_LIMIT} free guest messages for today. Your pool resets to ${GUEST_DAILY_LIMIT} at 12:00 AM — or sign in to get ${DAILY_CREDIT_POOL} daily credits and saved chat histories.`,
       });
       return;
     }

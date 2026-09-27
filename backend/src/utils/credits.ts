@@ -5,13 +5,17 @@ import { hasFullAccess } from "../middleware/auth";
  * Daily credit pool (owner policy 2026-09-26).
  *
  *  - Every AI chat message costs 1 credit.
- *  - Every logged user gets a DAILY_POOL of 8 platform credits.
+ *  - Every logged user gets a DAILY_POOL of 4 platform credits.
  *  - Credits reset to DAILY_POOL at 12:00 AM (UTC day rollover) — enforced
  *    lazily here (first AI call after midnight resets) and eagerly by the
  *    midnight cron job in jobs/creditsResetJob.ts.
  *  - Owner/admin accounts keep their effectively-unlimited manual balance.
  *  - A credit is REFUNDED whenever the answer the student paid for never
  *    arrives (provider failure / timeout — see api/ai.ts + creditCheck).
+ *  - HARDENED 2026-09-27 (owner): the pool is HARDCODED — no env var,
+ *    config or refresh endpoint can refill it mid-day. A spent pool
+ *    refills ONLY at the next UTC midnight; the only in-day escape is a
+ *    PRO plan (premium_status → hasFullAccess → unlimited).
  *
  * Concurrency: every balance write is a compare-and-swap (CAS) — the UPDATE
  * carries `.eq("credits", <value just read>)`, so two parallel requests can
@@ -24,8 +28,13 @@ import { hasFullAccess } from "../middleware/auth";
  * current balance belongs to. A stale date = a new day = reset.
  */
 
-/** Daily platform-credit pool for logged users. */
-export const DAILY_CREDIT_POOL = Number(process.env.DAILY_CREDIT_POOL) || 8;
+/**
+ * Daily platform-credit pool for logged users — HARDCODED 2026-09-27.
+ * No env/config override exists: a spent pool refills ONLY at the next UTC
+ * midnight (never on refresh, reload or restart), unless the account
+ * carries a PRO plan (premium_status → hasFullAccess → unlimited).
+ */
+export const DAILY_CREDIT_POOL = 4;
 
 /** Cost of one AI chat message, in credits. */
 export const AI_MESSAGE_COST = 1;

@@ -333,7 +333,7 @@ export interface AIChatResponse {
   credits?: number;
   /** Guest messages left in today's 5-message pool. */
   remaining?: number;
-  /** The guest daily pool size (5). */
+  /** The guest daily pool size (2). */
   limit?: number;
 }
 
