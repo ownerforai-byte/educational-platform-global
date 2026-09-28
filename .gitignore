@@ -24,6 +24,10 @@ next-env.d.ts
 /.vercel/
 /.vercel-token.txt
 .wrangler/
+.open-next/
+*/.open-next/
+.route-audit/
+*/.route-audit/
 
 # ── secrets and credentials — never commit ──────────────────────────────────
 # local env files (keep only the .example templates)
@@ -119,3 +123,6 @@ test_*.py
 # NOTE: cell-architecture-studio/ is a git submodule (.gitmodules) — it must NOT
 # be listed here. This file previously contained that path encoded as UTF-16,
 # which injected NUL bytes and silently broke the rule.
+
+# local API tokens (never commit)
+cloudflare-token.txt
