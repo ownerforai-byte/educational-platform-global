@@ -174,6 +174,21 @@ describe("academic engine coverage", () => {
 });
 
 
+describe("adaptive teaching contract (2026-09-28)", () => {
+  test("every reply teaches new words and adapts to the learner", () => {
+    expect(PROMPT).toContain("teach a new word in every reply");
+    expect(PROMPT).toContain("never repeat a word already taught earlier in this conversation");
+    expect(PROMPT).toContain("understand the student, then teach in their way");
+  });
+
+  test("detects emotion and switches to romantic mode on romantic topics", () => {
+    expect(PROMPT).toContain("emotion awareness and mode switching");
+    expect(PROMPT).toContain("switch to romantic mode");
+    expect(PROMPT).toContain("age-appropriate");
+    expect(PROMPT).toContain("meet the feeling first");
+  });
+});
+
 describe("classification, life-cycle, mind-map and flow engine", () => {
   test("carries the full taxonomic ladder and nomenclature rules", () => {
     for (const rank of [

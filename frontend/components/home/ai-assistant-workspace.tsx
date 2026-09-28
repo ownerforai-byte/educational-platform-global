@@ -4,10 +4,12 @@ import React from "react";
 import Link from "next/link";
 import { Brain, Sparkles, Bot, Search, ChevronRight } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
+import { GUEST_DAILY_LIMIT } from "@/lib/ai/guest-quota";
 
 /**
- * Compact AI Studio banner for the home page. The full experience (tutor chat,
- * quiz studio, smart search) lives at /ai — this section just routes there.
+ * Compact AI Studio banner for the home page. Each tool now has its own page
+ * (/chat, /ai/tutor, /ai-quiz, /ai/search) and /ai is the hub that lists them —
+ * so every card here links straight to the tool, never to a tab inside one page.
  */
 export function AIAssistantWorkspace() {
   const { user } = useSession();
@@ -15,21 +17,21 @@ export function AIAssistantWorkspace() {
   const features = [
     {
       icon: Bot,
-      title: "AI Tutor",
-      description: "Professor-mode chat with step-by-step explanations",
-      tab: "tutor",
+      title: "AI Tutor Console",
+      description: "AI chat with saved conversations and step-by-step explanations",
+      href: "/ai/tutor",
     },
     {
       icon: Brain,
       title: "Quiz Studio",
       description: "Generate MCQ sets — easy, intermediate, or hard",
-      tab: "quiz",
+      href: "/ai-quiz",
     },
     {
       icon: Search,
-      title: "Smart Search",
-      description: "AI-powered curriculum and PYQ search",
-      tab: "search",
+      title: "AI Curriculum Search",
+      description: "Ask in plain language — notes, labs and PYQs come back with links",
+      href: "/ai/search",
     },
   ];
 
@@ -46,7 +48,7 @@ export function AIAssistantWorkspace() {
             Your Curriculum-Aligned AI Tutor
           </h2>
           <p className="text-sm text-muted-foreground mt-1 max-w-2xl">
-            Tutor chat, generated quizzes, and curriculum search — everything now lives in one dedicated studio.
+            Tutor chat, generated quizzes and curriculum search — each on its own dedicated page.
           </p>
         </div>
 
@@ -55,7 +57,7 @@ export function AIAssistantWorkspace() {
           className="inline-flex w-fit items-center gap-1.5 px-4 py-2 rounded-xl bg-violet-600 hover:bg-violet-700 text-white text-xs font-bold shadow-sm transition-all shrink-0"
         >
           <Sparkles className="h-3.5 w-3.5" />
-          <span>Open AI Studio</span>
+          <span>Open AI Studio Hub</span>
           <ChevronRight className="h-3.5 w-3.5" />
         </Link>
       </div>
@@ -66,8 +68,8 @@ export function AIAssistantWorkspace() {
           const Icon = f.icon;
           return (
             <Link
-              key={f.tab}
-              href={`/ai?tab=${f.tab}`}
+              key={f.href}
+              href={f.href}
               className="group flex flex-col gap-3 rounded-2xl border border-border/70 bg-card p-5 hover:border-violet-500/50 hover:shadow-md transition-all"
             >
               <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-violet-500/10 text-violet-500 group-hover:scale-105 transition-transform">
@@ -90,7 +92,7 @@ export function AIAssistantWorkspace() {
 
       {!user && (
         <p className="mt-4 text-center text-xs text-muted-foreground">
-          Guests get {7} free tutor messages —{" "}
+          Guests get {GUEST_DAILY_LIMIT} free tutor messages a day —{" "}
           <Link href="/login" className="font-semibold text-primary hover:underline">
             sign in
           </Link>{" "}

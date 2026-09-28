@@ -870,8 +870,9 @@ export class AIService {
       } catch (err) {
         console.warn(`[AI] selected provider "${requested}" failed:`, err instanceof Error ? err.message : err);
       }
-      this.lastAnsweredBy = "internal";
-      return internal.chat(messages);
+      // Owner policy 2026-09-28: a failed explicit provider falls through to
+      // the ordered chain (agnes first) — the internal engine never answers
+      // chat while an LLM is configured.
     }
 
     const chain = this.chainProviders();
@@ -919,11 +920,32 @@ export class AIService {
         );
       }
     }
-    console.warn(
-      `[AI] chain exhausted in ${Date.now() - started}ms — using internal engine`
-    );
-    this.lastAnsweredBy = "internal";
-    return internal.chat(messages);
+    // Owner policy 2026-09-28: "Agnes replies to ALL, not the internal" —
+    // when an LLM chain exists the internal engine never answers chat. Give
+    // Agnes one short re-try with whatever budget remains, then surface a
+    // retryable timeout: the API layer turns it into a human 504 and refunds
+    // the credit instead of serving an internal-engine answer.
+    const agnesRetry = chain.find((p) => p.name === "agnes");
+    const retryBudget = GLOBAL_BUDGET_MS - (Date.now() - started);
+    if (agnesRetry && retryBudget >= 4000) {
+      try {
+        const text = await withDeadline(
+          agnesRetry.chat(messages),
+          Math.min(retryBudget, 6000),
+        );
+        if (text && text.trim()) {
+          console.info(`[AI] agnes retry answered in ${Date.now() - started}ms`);
+          this.lastAnsweredBy = "agnes";
+          return text;
+        }
+      } catch (err) {
+        console.warn(
+          `[AI] agnes retry failed:`,
+          err instanceof Error ? err.message : err,
+        );
+      }
+    }
+    throw new Error("The AI timed out before answering — please try again in a moment.");
   }
 
   async search(providerName: string, query: string): Promise<AISearchResponse> {

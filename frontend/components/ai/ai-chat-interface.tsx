@@ -116,7 +116,108 @@ function writeActiveSession(session: string): void {
   localStorage.setItem(ACTIVE_SESSION_KEY, session);
 }
 
-export function AIChatInterface() {
+// ── Guest chat history (signed-out): full multi-thread history saved on
+// this device, mirroring the signed-in sessions sidebar. One keyed store
+// shared by the widget panel and /chat; the tutor console's single thread
+// (`neb_tutor_thread`) is migrated in once on first load.
+const GUEST_HISTORY_KEY = "neb_guest_chat_history_v1";
+const LEGACY_GUEST_THREAD_KEY = "neb_tutor_thread";
+const GUEST_THREAD_CAP = 12;
+const GUEST_MESSAGE_CAP = 200;
+
+interface GuestThread {
+  session: string;
+  messages: ChatHistoryMessage[];
+  lastMessageAt: string;
+}
+
+interface GuestHistoryStore {
+  active: string;
+  threads: GuestThread[];
+}
+
+function readGuestHistory(): GuestHistoryStore {
+  if (typeof window === "undefined") return { active: "default", threads: [] };
+  try {
+    const raw = localStorage.getItem(GUEST_HISTORY_KEY);
+    if (raw) {
+      const parsed = JSON.parse(raw) as GuestHistoryStore;
+      if (parsed && Array.isArray(parsed.threads)) {
+        return { active: parsed.active || "default", threads: parsed.threads };
+      }
+    }
+  } catch {
+    /* corrupted store — fall through to a fresh one */
+  }
+  // One-time migration of the tutor console's single guest thread.
+  try {
+    const legacy = localStorage.getItem(LEGACY_GUEST_THREAD_KEY);
+    if (legacy) {
+      const parsed: unknown = JSON.parse(legacy);
+      if (Array.isArray(parsed)) {
+        const messages = parsed.filter(
+          (m): m is ChatHistoryMessage =>
+            !!m &&
+            typeof m === "object" &&
+            ((m as ChatHistoryMessage).role === "user" ||
+              (m as ChatHistoryMessage).role === "assistant") &&
+            typeof (m as ChatHistoryMessage).content === "string",
+        );
+        if (messages.length) {
+          const store: GuestHistoryStore = {
+            active: "default",
+            threads: [
+              {
+                session: "default",
+                messages: messages.map((m) => ({ role: m.role, content: m.content })),
+                lastMessageAt: new Date().toISOString(),
+              },
+            ],
+          };
+          localStorage.setItem(GUEST_HISTORY_KEY, JSON.stringify(store));
+          return store;
+        }
+      }
+    }
+  } catch {
+    /* storage blocked — start fresh */
+  }
+  return { active: "default", threads: [] };
+}
+
+function writeGuestHistory(store: GuestHistoryStore): void {
+  if (typeof window === "undefined") return;
+  try {
+    const threads = store.threads
+      .slice(0, GUEST_THREAD_CAP)
+      .map((t) => ({ ...t, messages: t.messages.slice(-GUEST_MESSAGE_CAP) }));
+    const trimmed: GuestHistoryStore = { active: store.active, threads };
+    localStorage.setItem(GUEST_HISTORY_KEY, JSON.stringify(trimmed));
+    // Keep the tutor console's single-thread key pointing at the active
+    // thread so /tutor and this panel read the same guest conversation.
+    const active = threads.find((t) => t.session === trimmed.active);
+    if (active && active.messages.length) {
+      localStorage.setItem(LEGACY_GUEST_THREAD_KEY, JSON.stringify(active.messages));
+    } else {
+      localStorage.removeItem(LEGACY_GUEST_THREAD_KEY);
+    }
+  } catch {
+    /* storage blocked — history just won't survive a reload */
+  }
+}
+
+function guestThreadToSessions(threads: GuestThread[]): ChatSession[] {
+  return threads.map((t) => ({
+    session: t.session,
+    messages: t.messages.length,
+    lastMessageAt: t.lastMessageAt,
+    preview:
+      t.messages.find((m) => m.role === "user")?.content.slice(0, 80) ??
+      "Conversation",
+  }));
+}
+
+export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {}) {
   const { user } = useSession();
   const isLoggedIn = !!user;
 
@@ -143,7 +244,7 @@ export function AIChatInterface() {
   // Individual chat histories (per-session conversations, signed-in only).
   const [session, setSession] = useState<string>("default");
   const [sessions, setSessions] = useState<ChatSession[]>([]);
-  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [sidebarOpen, setSidebarOpen] = useState(!embedded);
   const [restoredCount, setRestoredCount] = useState<number | null>(null);
 
   const [thinkIdx, setThinkIdx] = useState(0);
@@ -153,6 +254,7 @@ export function AIChatInterface() {
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const sessionRef = useRef(session);
   sessionRef.current = session;
+  const guestThreadsRef = useRef<GuestThread[]>([]);
 
   const guestCredits = Math.max(0, MAX_GUEST_MESSAGES - guestCount);
   const isGuestLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
@@ -168,7 +270,11 @@ export function AIChatInterface() {
   const composerLocked = isGuestLimited || creditsExhausted;
 
   const refreshSessions = useCallback(async () => {
-    if (!isLoggedIn) return;
+    if (!isLoggedIn) {
+      // Signed-out: the sidebar lists the conversations saved on this device.
+      setSessions(guestThreadToSessions(guestThreadsRef.current));
+      return;
+    }
     try {
       const { sessions: list } = await getChatSessions();
       setSessions(list);
@@ -180,6 +286,22 @@ export function AIChatInterface() {
   const loadSessionHistory = useCallback(
     async (sessionName: string) => {
       setHistoryState("loading");
+      if (!isLoggedIn) {
+        // Signed-out: restore the chosen conversation from this device.
+        const thread = guestThreadsRef.current.find((t) => t.session === sessionName);
+        if (thread && thread.messages.length) {
+          setMessages([
+            { role: "system", content: PLATFORM_SYSTEM_PROMPT },
+            ...thread.messages.map((m) => ({ role: m.role, content: m.content }) as AIChatMessage),
+          ]);
+          setRestoredCount(thread.messages.length);
+        } else {
+          setMessages([{ role: "system", content: PLATFORM_SYSTEM_PROMPT }]);
+          setRestoredCount(null);
+        }
+        setHistoryState("ready");
+        return;
+      }
       try {
         const { messages: restored } = await getChatHistory(sessionName, 200);
         const system: AIChatMessage = { role: "system", content: PLATFORM_SYSTEM_PROMPT };
@@ -199,7 +321,7 @@ export function AIChatInterface() {
         setHistoryState("ready");
       }
     },
-    []
+    [isLoggedIn]
   );
 
   useEffect(() => {
@@ -207,6 +329,19 @@ export function AIChatInterface() {
       // Post-mount only: localStorage is unavailable on the server, so the
       // first client render must match the server's count of 0 exactly.
       setGuestCount(readGuestCount());
+      // Signed-out history: restore the conversations saved on this device.
+      const store = readGuestHistory();
+      guestThreadsRef.current = store.threads;
+      setSessions(guestThreadToSessions(store.threads));
+      setSession(store.active);
+      const guestActive = store.threads.find((t) => t.session === store.active);
+      if (guestActive && guestActive.messages.length) {
+        setMessages([
+          { role: "system", content: PLATFORM_SYSTEM_PROMPT },
+          ...guestActive.messages.map((m) => ({ role: m.role, content: m.content }) as AIChatMessage),
+        ]);
+        setRestoredCount(guestActive.messages.length);
+      }
       setHistoryState("ready");
       return;
     }
@@ -243,6 +378,34 @@ export function AIChatInterface() {
     const id = setInterval(() => setThinkIdx((i) => (i + 1) % THINKING_LINES.length), 2600);
     return () => clearInterval(id);
   }, [sending]);
+
+  // Focus the composer when the widget panel opens (embedded mount).
+  useEffect(() => {
+    if (embedded) inputRef.current?.focus();
+  }, [embedded]);
+
+  /** Signed-out history: save a completed exchange into the device thread. */
+  const touchGuestThread = (sessionName: string, pair: ChatHistoryMessage[]) => {
+    if (isLoggedIn) return;
+    const now = new Date().toISOString();
+    const threads = guestThreadsRef.current;
+    const idx = threads.findIndex((t) => t.session === sessionName);
+    if (idx >= 0) {
+      const updated: GuestThread = {
+        ...threads[idx],
+        messages: [...threads[idx].messages, ...pair],
+        lastMessageAt: now,
+      };
+      guestThreadsRef.current = [updated, ...threads.filter((_, i) => i !== idx)];
+    } else {
+      guestThreadsRef.current = [
+        { session: sessionName, messages: [...pair], lastMessageAt: now },
+        ...threads,
+      ];
+    }
+    setSessions(guestThreadToSessions(guestThreadsRef.current));
+    writeGuestHistory({ active: sessionName, threads: guestThreadsRef.current });
+  };
 
   const handleSend = async (customText?: string) => {
     const textToSend = (customText ?? input).trim();
@@ -313,6 +476,11 @@ export function AIChatInterface() {
         const next = Math.min(MAX_GUEST_MESSAGES, Math.max(guestCount + 1, used));
         writeGuestCount(next);
         setGuestCount(next);
+        // Signed-out history: persist this exchange into the device thread.
+        touchGuestThread(sessionRef.current, [
+          { role: "user", content: textToSend },
+          { role: "assistant", content: res.response },
+        ]);
       }
     } catch (err: any) {
       console.error("AI chat error:", err);
@@ -378,7 +546,7 @@ export function AIChatInterface() {
   const startNewChat = () => {
     const id = newSessionId();
     setSession(id);
-    writeActiveSession(id);
+    if (isLoggedIn) writeActiveSession(id);
     setMessages([{ role: "system", content: PLATFORM_SYSTEM_PROMPT }]);
     setError(null);
     setRestoredCount(null);
@@ -390,7 +558,8 @@ export function AIChatInterface() {
   const openChat = (sessionName: string) => {
     if (sessionName === session) return;
     setSession(sessionName);
-    writeActiveSession(sessionName);
+    if (isLoggedIn) writeActiveSession(sessionName);
+    else writeGuestHistory({ active: sessionName, threads: guestThreadsRef.current });
     setError(null);
     loadSessionHistory(sessionName);
     if (window.innerWidth < 1024) setSidebarOpen(false);
@@ -400,7 +569,12 @@ export function AIChatInterface() {
   const deleteChat = async (e: React.MouseEvent, sessionName: string) => {
     e.stopPropagation();
     if (!window.confirm("Delete this conversation permanently?")) return;
-    await clearChatHistory(sessionName).catch(() => {});
+    if (isLoggedIn) {
+      await clearChatHistory(sessionName).catch(() => {});
+    } else {
+      guestThreadsRef.current = guestThreadsRef.current.filter((t) => t.session !== sessionName);
+      writeGuestHistory({ active: sessionRef.current, threads: guestThreadsRef.current });
+    }
     setSessions((prev) => prev.filter((s) => s.session !== sessionName));
     if (sessionName === session) {
       const next = sessions.find((s) => s.session !== sessionName);
@@ -409,7 +583,7 @@ export function AIChatInterface() {
       } else {
         const id = newSessionId();
         setSession(id);
-        writeActiveSession(id);
+        if (isLoggedIn) writeActiveSession(id);
         setMessages([{ role: "system", content: PLATFORM_SYSTEM_PROMPT }]);
         setRestoredCount(null);
       }
@@ -422,7 +596,15 @@ export function AIChatInterface() {
     setMessages([{ role: "system", content: PLATFORM_SYSTEM_PROMPT }]);
     setError(null);
     setRestoredCount(null);
-    if (isLoggedIn) clearChatHistory(sessionRef.current).catch(() => {});
+    if (isLoggedIn) {
+      clearChatHistory(sessionRef.current).catch(() => {});
+    } else {
+      // Signed-out: drop this device's thread for the conversation.
+      guestThreadsRef.current = guestThreadsRef.current.filter(
+        (t) => t.session !== sessionRef.current,
+      );
+      writeGuestHistory({ active: sessionRef.current, threads: guestThreadsRef.current });
+    }
     setSessions((prev) => prev.filter((s) => s.session !== sessionRef.current));
   };
 
@@ -446,13 +628,24 @@ export function AIChatInterface() {
   const displayMessages = messages.filter((m) => m.role !== "system");
 
   return (
-    <div className="flex h-[calc(100vh-10rem)] max-h-[850px] min-h-[500px] rounded-3xl border border-border/80 bg-card shadow-lg overflow-hidden">
+    <div
+      className={
+        embedded
+          ? "relative flex h-full w-full overflow-hidden bg-card"
+          : "flex h-[calc(100vh-10rem)] max-h-[850px] min-h-[500px] rounded-3xl border border-border/80 bg-card shadow-lg overflow-hidden"
+      }
+    >
       {/* ── Conversations sidebar (individual chat histories) ─────── */}
-      {isLoggedIn && (
+      {(
         <aside
           className={cn(
             "shrink-0 border-r border-border/60 bg-muted/20 flex flex-col transition-all duration-200",
-            sidebarOpen ? "w-64" : "w-0 overflow-hidden border-r-0"
+            sidebarOpen
+              ? embedded
+                ? "w-60"
+                : "w-64"
+              : "w-0 overflow-hidden border-r-0",
+            embedded && sidebarOpen && "absolute inset-y-0 left-0 z-20 shadow-2xl"
           )}
           aria-hidden={!sidebarOpen}
         >
@@ -513,7 +706,9 @@ export function AIChatInterface() {
             <div className="flex items-center gap-2 text-[10px] text-muted-foreground">
               <Coins className="h-3.5 w-3.5 text-amber-500" />
               <span className="font-semibold">
-                {Math.min(dailyCredits ?? user?.credits ?? DAILY_CREDIT_POOL, DAILY_CREDIT_POOL)}/{DAILY_CREDIT_POOL} credits today
+                {isLoggedIn
+                  ? `${Math.min(dailyCredits ?? user?.credits ?? DAILY_CREDIT_POOL, DAILY_CREDIT_POOL)}/${DAILY_CREDIT_POOL} credits today`
+                  : `${guestCredits} of ${MAX_GUEST_MESSAGES} free messages left today`}
               </span>
             </div>
           </div>
@@ -525,7 +720,7 @@ export function AIChatInterface() {
         {/* Header */}
         <div className="px-4 sm:px-6 py-3.5 border-b border-border/60 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 flex items-center justify-between gap-3 shrink-0">
           <div className="flex items-center gap-2.5 min-w-0">
-            {isLoggedIn && (
+            {(
               <button
                 onClick={() => setSidebarOpen((v) => !v)}
                 className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
@@ -550,7 +745,7 @@ export function AIChatInterface() {
                 </span>
               </div>
               <p className="text-[11px] text-muted-foreground truncate">
-                Live professor mode · grounded in the NEB Class 11 &amp; 12 syllabus
+                Grounded in the NEB Class 11 &amp; 12 syllabus · ask me anything
               </p>
             </div>
           </div>

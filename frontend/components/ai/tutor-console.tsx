@@ -82,6 +82,8 @@ const MODES: ModeDef[] = [
 ];
 
 const MODE_STORAGE_KEY = "neb_tutor_mode";
+/** Signed-out thread — history on this device (owner rule 2026-09-27). */
+const GUEST_THREAD_KEY = "neb_tutor_thread";
 
 interface Starter {
   category: string;
@@ -309,6 +311,34 @@ const MODE_STARTERS: Record<TutorMode, Starter[]> = {
   ],
 };
 
+/**
+ * Read the on-device guest thread back as well-formed messages. Anything
+ * malformed (old shapes, hand-edited storage, partial writes) is dropped
+ * rather than crashing the console.
+ */
+function parseStoredThread(raw: string | null): AIChatMessage[] {
+  if (!raw) return [];
+  try {
+    const parsed: unknown = JSON.parse(raw);
+    if (!Array.isArray(parsed)) return [];
+    const out: AIChatMessage[] = [];
+    for (const item of parsed) {
+      if (!item || typeof item !== "object") continue;
+      const role = (item as { role?: unknown }).role;
+      const content = (item as { content?: unknown }).content;
+      if (
+        (role === "user" || role === "assistant") &&
+        typeof content === "string"
+      ) {
+        out.push({ role, content });
+      }
+    }
+    return out;
+  } catch {
+    return [];
+  }
+}
+
 /** Fisher–Yates shuffle — returns a new array, never mutates the pool. */
 function shuffled<T>(items: T[]): T[] {
   const arr = [...items];
@@ -320,16 +350,15 @@ function shuffled<T>(items: T[]): T[] {
 }
 
 /**
- * A fresh, mode-relevant starter set: the mode's own prompts first, topped
- * up with the general pool (de-duplicated by text), shuffled and sliced —
- * so the empty screen shows a DIFFERENT mix on every visit/mode switch.
+ * A fresh starter set for the active mode.
+ *
+ * General mixes the whole pool; a FOCUSED subject mode stays strictly on its
+ * own subject (2026-09-27 fix — a Physics console was offering Biology
+ * starters, which undercut the mode picker).
  */
 function buildStarters(mode: TutorMode): Starter[] {
-  const modePool = MODE_STARTERS[mode];
-  const extras = GENERAL_STARTERS.filter(
-    (g) => !modePool.some((s) => s.text === g.text),
-  );
-  return shuffled([...modePool, ...extras]).slice(0, 6);
+  if (mode !== "General") return shuffled(MODE_STARTERS[mode]);
+  return shuffled(GENERAL_STARTERS).slice(0, 6);
 }
 
 // Daily pools: guests 5/day (shared with guest chat), signed-in 8/day.
@@ -360,6 +389,9 @@ export function TutorConsole() {
   const [poolEmpty, setPoolEmpty] = useState(false);
   const [enhancing, setEnhancing] = useState(false);
   const [restoredCount, setRestoredCount] = useState<number | null>(null);
+  // True once the guest thread restore has run — gates persistence so the
+  // first paint (messages = []) can never wipe what is about to be loaded.
+  const [guestHydrated, setGuestHydrated] = useState(false);
   // SSR renders "General"; the persisted mode lands in an effect.
   const [mode, setMode] = useState<TutorMode>("General");
   // Rotating starters — deterministic first paint, shuffled in an effect.
@@ -396,6 +428,20 @@ export function TutorConsole() {
 
     if (!isLoggedIn) {
       setGuestCount(readGuestCount());
+      // Guests get history too: restore the thread saved on this device so a
+      // reload, route change or browser restart doesn't drop the conversation.
+      try {
+        const restored = parseStoredThread(
+          localStorage.getItem(GUEST_THREAD_KEY),
+        );
+        if (restored.length) {
+          setMessages(restored);
+          setRestoredCount(restored.length);
+        }
+      } catch {
+        /* storage blocked — start fresh */
+      }
+      setGuestHydrated(true);
       return;
     }
     if (historyLoadedRef.current) return;
@@ -415,6 +461,18 @@ export function TutorConsole() {
       }
     })();
   }, [isLoggedIn, user]);
+
+  // Signed-out history: mirror the thread to this device after the restore
+  // above has hydrated it. Signed-in users keep their server-side history.
+  useEffect(() => {
+    if (isLoggedIn || !guestHydrated) return;
+    try {
+      if (messages.length === 0) localStorage.removeItem(GUEST_THREAD_KEY);
+      else localStorage.setItem(GUEST_THREAD_KEY, JSON.stringify(messages));
+    } catch {
+      /* storage blocked — the thread just won't survive a reload */
+    }
+  }, [isLoggedIn, guestHydrated, messages]);
 
   // Fresh starter set whenever the mode changes or the thread is cleared
   // (runs post-mount, so the server HTML and first client paint match).
@@ -668,7 +726,7 @@ export function TutorConsole() {
               </div>
               <p className="text-[11px] text-muted-foreground truncate">
                 {mode === "General"
-                  ? "Live professor mode · grounded in the NEB Class 11 & 12 syllabus"
+                  ? "Grounded in the NEB Class 11 & 12 syllabus · ask me anything"
                   : `${mode} mode · syllabus-grounded answers, one concept at a time`}
               </p>
             </div>
@@ -901,8 +959,8 @@ export function TutorConsole() {
                 </div>
                 <div className="rounded-2xl rounded-tl-md border border-border/60 bg-muted/25 px-4 py-3 flex items-center gap-1.5">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary animate-bounce [animation-delay:-0.2s]" />
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary animate-bounce [animation-delay:-0.1s]" />
-                  <span className="h-1.5 w-1.5 rounded-full bg-primary animate-bounce" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-violet-500 animate-bounce [animation-delay:-0.1s]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-bounce" />
                 </div>
               </div>
             )}

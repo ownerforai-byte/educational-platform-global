@@ -5,9 +5,11 @@ import { QueryProvider } from "@/providers/query-provider";
 import { AuthProvider } from "@/providers/auth-provider";
 import { CreditProvider } from "@/features/credits";
 import { ServiceWorkerRegistrar } from "@/components/pwa/service-worker-registrar";
+import { RouteScrollReset } from "@/components/navigation/route-scroll-reset";
 import { OfflineBanner } from "@/components/pwa/offline-banner";
 import { RawEventRejectionGuard } from "@/components/dev/raw-event-rejection-guard";
 import { DevContrastAudit } from "@/lib/color-contrast";
+import { AIWidget } from "@/components/layout/ai-widget";
 
 export const metadata: Metadata = {
   title: "Ravikisan's Platform — NEB (+2) Learning Platform",
@@ -51,10 +53,15 @@ export default function RootLayout({
               <CreditProvider>
                 <RawEventRejectionGuard />
                 <ServiceWorkerRegistrar />
+                {/* Every route change starts at the header, not the footer. */}
+                <RouteScrollReset />
                 <OfflineBanner />
                 {/* Task 2: dev-only WCAG contrast audit — logs theme/pair/ratio warnings. */}
                 {process.env.NODE_ENV !== "production" && <DevContrastAudit />}
                 {children}
+                {/* Floating AI chat — the full chat lives in its own panel (owner rule):
+                    history, colorful typing dots and the green live dot all ride along. */}
+                <AIWidget />
               </CreditProvider>
             </AuthProvider>
           </ThemeProvider>
