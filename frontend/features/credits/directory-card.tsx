@@ -154,7 +154,7 @@ const DIRECTORY: Portal[] = [
   {
     title: "Assessment & PYQs",
     badge: "EXAM READINESS",
-    desc: "AI quiz engine, past NEB board questions, and real-time exam countdown timer.",
+    desc: "Captain quiz engine, past NEB board questions, and real-time exam countdown timer.",
     href: "/quiz",
     icon: Target,
     iconClass: "text-blue-500 bg-blue-500/10 border-blue-500/25",
@@ -162,7 +162,7 @@ const DIRECTORY: Portal[] = [
     chipClass: "hover:border-blue-500/50 hover:shadow-blue-500/10",
     category: "reference",
     links: [
-      { label: "AI Quiz Maker", href: "/ai-quiz", category: "reference" },
+      { label: "Captain Quiz Maker", href: "/ai-quiz", category: "reference" },
       { label: "Exam Countdown", href: "/exam-countdown", category: "reference" },
       { label: "My Progress", href: "/progress", category: "reference" },
     ],
@@ -185,8 +185,8 @@ const DIRECTORY: Portal[] = [
     ],
   },
   {
-    title: "AI Study Assistant",
-    badge: "24/7 AI TUTOR · FREE",
+    title: "Captain Study Assistant",
+    badge: "24/7 CAPTAIN · FREE",
     desc: "Curriculum-aligned intelligent tutor for instant concept explanations, numerical solutions and study plans.",
     href: "/chat",
     icon: Brain,
@@ -404,7 +404,7 @@ export function DirectoryCard() {
           className="inline-flex h-11 items-center gap-2 rounded-2xl border border-fuchsia-500/40 bg-fuchsia-500/10 px-5 text-sm font-bold text-fuchsia-500 transition-colors hover:bg-fuchsia-500/20 focus:outline-none focus:ring-2 focus:ring-ring"
         >
           <Brain className="h-4 w-4" />
-          Open AI Tutor — free, no coins
+          Open the Captain — free, no coins
         </Link>
       </div>
     </section>

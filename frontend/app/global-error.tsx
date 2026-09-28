@@ -2,6 +2,8 @@
 
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
+// ADDITIVE (perf/resilience pass): normalized error funnel. Import only.
+import { reportClientError } from "@/lib/errors/app-error";
 
 export default function GlobalError({
   error,
@@ -12,6 +14,18 @@ export default function GlobalError({
 }) {
   useEffect(() => {
     console.error("[GlobalError]", error);
+  }, [error]);
+
+  // ADDITIVE (perf/resilience pass): the original console.error above keeps
+  // its exact behaviour; this second effect only adds classification +
+  // correlation so a production report can be joined to the server log.
+  // A client-side failure here is expected to be render-only, so it is
+  // reported once and never re-thrown.
+  useEffect(() => {
+    reportClientError("global-error-boundary", error, {
+      digest: error.digest,
+      route: typeof window !== "undefined" ? window.location.pathname : undefined,
+    });
   }, [error]);
 
   return (

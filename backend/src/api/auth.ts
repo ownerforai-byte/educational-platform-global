@@ -441,4 +441,119 @@ router.get("/me", async (req: Request, res: Response) => {
   res.json(body);
 });
 
+// ── Password recovery (owner feature 2026-09-28) ─────────────────────────────
+
+const forgotPasswordSchema = z.object({ email: z.string().trim().email() });
+
+/**
+ * POST /api/auth/forgot-password — { email }
+ * 200 always (anti-enumeration): Supabase emails the recovery link when the
+ * account exists; the response is identical when it does not. Rate-limited
+ * by middleware (password-reset tier, 3/hour).
+ */
+router.post("/forgot-password", async (req: Request, res: Response) => {
+  const parsed = forgotPasswordSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(400).json({ error: "Enter a valid email address" });
+    return;
+  }
+
+  const base = (
+    process.env.FRONTEND_URL ||
+    process.env.NEXT_PUBLIC_SITE_URL ||
+    "http://localhost:3110"
+  ).replace(/\/+$/, "");
+  const redirectTo = `${base}/reset-password`;
+
+  try {
+    const { error } = await supabaseAdmin.auth.resetPasswordForEmail(parsed.data.email, {
+      redirectTo,
+    });
+    if (error) {
+      // Never leak whether the address exists; log for ops instead.
+      console.warn("[auth] resetPasswordForEmail failed:", error.message);
+    }
+  } catch (err: any) {
+    console.warn("[auth] resetPasswordForEmail error:", err?.message ?? err);
+  }
+
+  res.json({ sent: true });
+});
+
+/**
+ * POST /api/auth/reset-password — { password, code?, token? }
+ * The recovery email lands on /reset-password, which forwards either the
+ * PKCE `code` (query) or the implicit `access_token` (hash) here. The user
+ * id behind that proof is resolved server-side and the password is set
+ * through the Supabase admin API — no session is issued on this path.
+ */
+router.post("/reset-password", async (req: Request, res: Response) => {
+  const body = req.body as { password?: unknown; code?: unknown; token?: unknown };
+  const password = typeof body.password === "string" ? body.password : "";
+  const code = typeof body.code === "string" && body.code ? body.code : null;
+  const token = typeof body.token === "string" && body.token ? body.token : null;
+
+  if (password.length < 8 || password.length > 72) {
+    res.status(400).json({ error: "Password must be between 8 and 72 characters" });
+    return;
+  }
+  if (!code && !token) {
+    res
+      .status(400)
+      .json({ error: "This reset link is missing or malformed. Please request a new one." });
+    return;
+  }
+
+  try {
+    let userId: string | null = null;
+
+    if (code) {
+      const { data, error } = await supabaseAdmin.auth.exchangeCodeForSession(code);
+      if (error || !data?.user) {
+        console.warn("[auth] exchangeCodeForSession failed:", error?.message ?? "no user");
+        res
+          .status(400)
+          .json({ error: "This reset link is invalid or has expired. Please request a new one." });
+        return;
+      }
+      userId = data.user.id;
+    } else if (token) {
+      const { data, error } = await supabaseAdmin.auth.getUser(token);
+      if (error || !data?.user) {
+        console.warn("[auth] recovery token rejected:", error?.message ?? "no user");
+        res
+          .status(400)
+          .json({ error: "This reset link is invalid or has expired. Please request a new one." });
+        return;
+      }
+      userId = data.user.id;
+    }
+
+    if (!userId) {
+      res
+        .status(400)
+        .json({ error: "This reset link is invalid or has expired. Please request a new one." });
+      return;
+    }
+
+    const { error: updateError } = await supabaseAdmin.auth.admin.updateUserById(userId, {
+      password,
+    });
+    if (updateError) {
+      console.error("[auth] password reset failed:", updateError.message);
+      res.status(400).json({
+        error:
+          "Could not update the password. The link may have expired — please request a new one.",
+      });
+      return;
+    }
+
+    console.info(`[auth] password reset completed for user ${userId}`);
+    res.json({ success: true });
+  } catch (err: any) {
+    console.error("[auth] reset-password error:", err?.message ?? err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
 export default router;

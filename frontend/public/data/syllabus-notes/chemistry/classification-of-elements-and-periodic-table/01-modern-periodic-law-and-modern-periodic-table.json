@@ -56,5 +56,104 @@
     "Periodicity in chemical properties arises from the periodic recurrence of similar valence shell electronic configurations."
   ],
   "visualType": "periodic-table",
-  "tabGroup": "Periodic-Table-Trends-Learner-Notes"
+  "tabGroup": "Periodic-Table-Trends-Learner-Notes",
+  "summary": "The modern periodic law states that the physical and chemical properties of elements are periodic functions of their atomic numbers, a statement founded by Moseley in 1913, who showed by bombarding metal anticathodes with cathode rays that the square root of the frequency of the characteristic X-ray line, √ν, is directly proportional to Z, as √ν = a(Z − b), giving a straight line against Z but not against atomic mass. This replaced Mendeleev's atomic-mass basis and resolved his anomalies, so argon now precedes potassium, cobalt precedes nickel, tellurium precedes iodine, and isotopes occupy a single position since they share Z. The long-form table has seven periods corresponding to the principal quantum number n and eighteen groups, with IUPAC digit-root names for elements beyond Z = 100.",
+  "importantConcepts": [
+    "Modern periodic law: properties are periodic functions of atomic number Z, not atomic mass",
+    "Moseley's law √ν = a(Z − b) from characteristic X-ray spectra, with b ≈ 1 for the K-series",
+    "Failure of Dobereiner's triads, Newlands' octaves, Lothar Meyer's atomic-volume curve and Mendeleev's mass basis",
+    "Resolution of Mendeleev's anomalies — Ar/K, Co/Ni, Te/I — and the single position of isotopes",
+    "Seven periods corresponding to the principal quantum number n = 1 to 7, with lengths 2, 8, 8, 18, 18, 32, 32",
+    "Eighteen groups and IUPAC systematic naming for Z > 100 from digit roots with the suffix -ium"
+  ],
+  "importantStatements": [
+    "Henry Moseley established atomic number as the true identity of an element in 1913, and died in World War I at the age of 27.",
+    "Moseley plotted √ν against Z and obtained a straight line, whereas plotting √ν against atomic mass did not.",
+    "The modern periodic law is: the physical and chemical properties of elements are periodic functions of their atomic numbers.",
+    "Argon (Z = 18) naturally precedes potassium (Z = 19), cobalt (Z = 27) precedes nickel (Z = 28), and tellurium (Z = 52) precedes iodine (Z = 53).",
+    "Isotopes have identical atomic numbers and different mass numbers, so they occupy one position in the table without conflict.",
+    "IUPAC digit roots are 0 nil, 1 un, 2 bi, 3 tri, 4 quad, 5 pent, 6 hex, 7 sept, 8 oct and 9 enn, giving 118 = ununoctium (Uuo, now Oganesson)."
+  ],
+  "importantTasks": [
+    "State Moseley's law and explain its significance in formulating the modern periodic table.",
+    "Write the IUPAC systematic name and temporary symbol for elements with Z = 108, 114, 117 and 119.",
+    "Explain how the long form of the table resolves the anomalous pairs and the position of isotopes.",
+    "Calculate the maximum number of elements accommodated in the 4th, 5th and 6th periods from orbital capacities.",
+    "Predict the period, group and block of an element from its atomic number, for example Z = 35 or Z = 56."
+  ],
+  "keyPoints": [
+    "Moseley plotted √ν against Z, not ν against atomic mass — this is the single most examined detail.",
+    "Period number equals the principal quantum number n of the outermost valence shell, not the total electron count.",
+    "Period lengths: 2, 8, 8, 18, 18, 32, 32 — the 32-element periods arise from the f-subshell filling.",
+    "Mendeleev's mass-based law had real failures: the inverted pairs Ar/K, Co/Ni and Te/I.",
+    "The long form divides cleanly into s, p, d and f blocks, reflecting the Aufbau principle, Pauli exclusion and Hund's rule."
+  ],
+  "specialNotes": [
+    "Newlands' law of octaves held only up to calcium and could not accommodate the noble gases, which were discovered later.",
+    "Mendeleev left gaps and correctly predicted properties for eka-boron (Sc), eka-aluminium (Ga) and eka-silicon (Ge), which is his strongest success.",
+    "Mendeleev had no fixed position for hydrogen, and his law could not accommodate isotopes at all.",
+    "The IUPAC digit-root names were stopgap names used only until a permanent name was approved, so older books still print them.",
+    "Period 6 fills 6s, 4f, 5d and 6p while period 7 fills 7s, 5f, 6d and 7p, which is why both contain 32 elements."
+  ],
+  "examShortTricks": [
+    "Moseley's law is √ν = a(Z − b) with √ν on the y-axis and Z on the x-axis; b ≈ 1 for the K-series.",
+    "Memorise the period lengths as 2, 8, 8, 18, 18, 32, 32 and tie the 32s to f-subshell filling.",
+    "Digit roots: nil, un, bi, tri, quad, pent, hex, sept, oct, enn — then add -ium.",
+    "For Z = 35 write 3p⁵ → Period 3, Group 17, p-block; for Z = 56 write 5d⁸ 6s² → Period 5, Group 6, d-block."
+  ],
+  "examNotes": [
+    "Stating Moseley's law with the correct axes is a standard 2–3 mark question.",
+    "Writing systematic names from digit roots is a reliable 2-mark item.",
+    "Explaining how the modern law removes Mendeleev's anomalies is a frequent 3–5 mark question.",
+    "Predicting period, group and block from Z is a common one-mark application question."
+  ],
+  "practiceQuestions": [
+    "State Moseley's law and derive its significance in formulating the modern periodic table.",
+    "Write the IUPAC systematic name and symbol for elements with atomic numbers 108, 114, 117 and 119.",
+    "How does the long form of the periodic table resolve the position of isotopes and the anomalous pairs of Mendeleev?",
+    "Calculate the maximum number of electrons and elements accommodated in the 4th, 5th and 6th periods using quantum orbital capacities.",
+    "Predict the period, group and block for the element with Z = 35 and for the element with Z = 56."
+  ],
+  "mcs": [
+    {
+      "question": "Moseley's law states that the square root of the frequency of a characteristic X-ray line is proportional to:",
+      "options": [
+        "the atomic mass",
+        "the atomic number",
+        "the atomic volume",
+        "the valency"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The modern periodic law is based on:",
+      "options": [
+        "atomic mass",
+        "atomic number",
+        "atomic volume",
+        "electronegativity"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Isotopes occupy a single position in the modern periodic table because they have the same:",
+      "options": [
+        "mass number",
+        "atomic number",
+        "number of neutrons",
+        "density"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The number of elements in the 6th period is:",
+      "options": [
+        "8",
+        "18",
+        "32",
+        "2"
+      ],
+      "answer": "C"
+    }
+  ]
 }

@@ -104,27 +104,53 @@
   "mcs": [
     {
       "question": "The slope of a velocity–time graph gives:",
-      "options": ["Displacement", "Acceleration", "Distance", "Average velocity"],
+      "options": [
+        "Displacement",
+        "Acceleration",
+        "Distance",
+        "Average velocity"
+      ],
       "answer": "B"
     },
     {
       "question": "The area under a velocity–time graph gives:",
-      "options": ["Acceleration", "Change in acceleration", "Displacement", "Force"],
+      "options": [
+        "Acceleration",
+        "Change in acceleration",
+        "Displacement",
+        "Force"
+      ],
       "answer": "C"
     },
     {
       "question": "A body starts from rest with a = 4 m/s². Its displacement in the 3rd second is:",
-      "options": ["10 m", "12 m", "18 m", "36 m"],
-      "answer": "A (s₃ = 0 + 2(5) = 10 m)"
+      "options": [
+        "10 m",
+        "12 m",
+        "18 m",
+        "36 m"
+      ],
+      "answer": "A",
+      "explanation": "s₃ = 0 + 2(5) = 10 m"
     },
     {
       "question": "Which equation is most direct for finding stopping distance when brakes give constant deceleration?",
-      "options": ["v = u + at", "s = ut + ½at²", "v² = u² + 2as", "s = (u+v)t"],
+      "options": [
+        "v = u + at",
+        "s = ut + ½at²",
+        "v² = u² + 2as",
+        "s = (u+v)t"
+      ],
       "answer": "C"
     },
     {
       "question": "The equations of motion are NOT valid for:",
-      "options": ["Free fall", "Braking with constant deceleration", "Air resistance increasing with speed", "A ball rolling down a fixed incline"],
+      "options": [
+        "Free fall",
+        "Braking with constant deceleration",
+        "Air resistance increasing with speed",
+        "A ball rolling down a fixed incline"
+      ],
       "answer": "C"
     }
   ],

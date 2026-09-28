@@ -64,5 +64,85 @@
   "tabGroup": "Atomic-Structure-Learner-Notes",
   "source": "ravikishan",
   "duplicateType": 2,
-  "filename": "14-bohr-bury-scheme.json"
+  "filename": "14-bohr-bury-scheme.json",
+  "summary": "The Bohr–Bury scheme (1921, Bohr and Bury independently) supplied the shell-filling rules that Bohr's orbits alone could not give. Three rules: the capacity of shell n is 2n² (K 2, L 8, M 18, N 32); the outermost shell may hold at most 8 electrons, so a closed shell (He duplet or noble-gas octet) is stable and a new shell then begins; and shells fill in order of increasing energy, with electrons entering a shell before the next one starts — except that 4s begins filling before 3d is complete. The scheme explained the inertness of the noble gases, the valency pattern of the main groups, and why element 11 (Na) starts a third period, so periodicity follows from shell structure, and it gave reliable configurations up to about Z = 20. It fails beyond that because it has no subshell concept, so 4s before 3d, the 8/18/32 period lengths and the s/p/d/f blocks are outside it, and the anomalies of Cr and Cu are impossible for it.",
+  "importantConcepts": [
+    "Capacity rule: shell n holds at most 2n² electrons — K 2, L 8, M 18, N 32",
+    "Octet rule: the outermost shell holds at most 8 electrons, giving duplet (He) and octet (Ne, Ar) stability",
+    "Filling order: shells fill with increasing energy, with 4s starting to fill before 3d is complete",
+    "Achievements: noble-gas inertness, main-group valency, the start of each new period, configurations up to Z ≈ 20",
+    "Defects: no subshell concept, so period lengths 8/18/32, the s/p/d/f blocks and the Cr and Cu anomalies are unexplained"
+  ],
+  "importantStatements": [
+    "The capacity of a shell is 2n² while the occupancy of the valence shell is limited to 8 — two different rules.",
+    "2n² is the capacity; the octet rule restricts only the outermost shell.",
+    "A closed valence shell (duplet or octet) is the shell basis of chemical inertness.",
+    "The scheme cannot express 4s filling before 3d, which first becomes obvious at potassium (Z = 19).",
+    "Electron–electron repulsion and exchange energy, which decide the real anomalies, are absent from the scheme."
+  ],
+  "importantTasks": [
+    "State the Bohr–Bury scheme with its 2n² and octet rules.",
+    "Write the Bohr–Bury configuration of calcium (Z = 20) and point out where 4s before 3d is needed.",
+    "Explain why the scheme fails for chromium and copper.",
+    "Show how the octet rule accounts for the inertness of argon."
+  ],
+  "keyPoints": [
+    "Quote both numbers when asked: 2n² capacity, 8 maximum in the valence shell.",
+    "Shell closures at Z = 2, 10 and 18 match the noble gases known at the time.",
+    "Failure beyond calcium is the historical trigger for introducing subshells.",
+    "In modern terms the capacity becomes Σ2(2l + 1) and the order becomes the (n + l) rule."
+  ],
+  "specialNotes": [
+    "The M shell can hold 18 electrons in total, but only 8 in the outermost position before N begins.",
+    "The octet rule is a statement about the valence shell only; using it for inner shells is wrong.",
+    "The scheme is a historical rule set from the orbit picture, not a quantum-mechanical theory — it contains no orbital shapes."
+  ],
+  "examShortTricks": [
+    "Present the scheme as history, then contrast it with (n + l) and Hund's rule — that contrast is the mark.",
+    "K 2, L 8, M 18, N 32 should be recalled automatically.",
+    "Potassium (Z = 19) is the first element the scheme gets wrong — a reliable example."
+  ],
+  "examNotes": [
+    "Stating the three rules with the capacity table is a standard 3–4 mark question.",
+    "Applications to a specific element's configuration, or to noble-gas inertness, are the usual follow-up.",
+    "One-mark items ask the maximum electrons in the outermost shell — the answer is 8."
+  ],
+  "practiceQuestions": [
+    "State the Bohr–Bury scheme with the 2n² and octet rules.",
+    "Write the configuration of calcium (Z = 20) using the scheme.",
+    "Why does the scheme fail for chromium and copper?",
+    "How does the octet rule explain the inertness of argon?"
+  ],
+  "mcs": [
+    {
+      "question": "According to the Bohr–Bury scheme, the maximum number of electrons in the outermost shell is:",
+      "options": [
+        "2n²",
+        "8",
+        "18",
+        "32"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The maximum number of electrons in the N shell (n = 4) is:",
+      "options": [
+        "8",
+        "18",
+        "32",
+        "64"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The first element for which the Bohr–Bury scheme fails is:",
+      "options": [
+        "Sodium (Z = 11)",
+        "Argon (Z = 18)",
+        "Potassium (Z = 19)",
+        "Calcium (Z = 20)"
+      ],
+      "answer": "C"
+    }
+  ]
 }

@@ -34,6 +34,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Each biomolecule family is indispensable; carbohydrates and lipids handle energy, proteins handle work, nucleic acids handle information, lipids build membranes.",
     keyTakeaways: ["Enzymes are proteins — not carbohydrates.", "Lipids are the main membrane component (phospholipid bilayer)."],
     examTraps: ["ATP is NOT a lipid even though it is an energy molecule — it is a nucleotide."],
+    specialCases: [
+      {
+        name: "ATP is a nucleotide, not a lipid",
+        condition: "Classify ATP from its adenine + ribose + phosphate backbone",
+        formula: "ATP = \\text{adenine} + \\text{ribose} + 3\\,\\text{phosphate}",
+        meaning: "ATP is the energy currency of the cell, but chemically it is a nucleotide, so answering lipid here is the classic board trap.",
+      },
+      {
+        name: "Cellulose beta-linkage resists digestion",
+        condition: "Human diet containing plant cell-wall material",
+        formula: "\\beta(1\\to 4)\\ \\text{vs}\\ \\alpha(1\\to 4)",
+        meaning: "Humans lack cellulase, so cellulose passes through as dietary fibre while amylase can hydrolyse the alpha-linkages of starch.",
+      },
+      {
+        name: "Unsaturated fat stays liquid",
+        condition: "Fatty acid chain carrying a cis double bond",
+        formula: "C_{17}H_{33}COOH\\ (\\text{oleic})",
+        meaning: "Each double bond kinks the chain so it cannot pack tightly, which is why unsaturated oils are liquid at room temperature and flow freely in arteries.",
+      },
+      {
+        name: "Starch vs glycogen as the storage sugar",
+        condition: "Storage polysaccharide of a plant compared with a mammal",
+        formula: "\\text{amylose + amylopectin}\\ \\ \\text{vs}\\ \\ \\text{glycogen}",
+        meaning: "Plants store starch, animals store glycogen. Glycogen is far more branched, so it can be mobilised within seconds during a sprint.",
+      },
+      {
+        name: "Denaturation is not hydrolysis",
+        condition: "Protein exposed to extreme pH or high temperature",
+        formula: "E + S \\xrightarrow{\\Delta T} E' + S",
+        meaning: "Heat or pH unfolds the tertiary structure and the enzyme loses activity, but the peptide bonds themselves survive, so no hydrolysis has occurred.",
+      },
+    ],
     visualType: "biomolecule-types-diagram",
     solvedProblems: [
       {
@@ -71,6 +103,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "The presence or absence of a nucleus is the fundamental dividing line between the two cell types.",
     keyTakeaways: ["Bacteria are prokaryotes; all eukaryotes (plants, animals, fungi, protists) have a nucleus."],
     examTraps: ["Mitochondria and chloroplast have their own DNA — evidence of endosymbiosis, not a prokaryote."],
+    specialCases: [
+      {
+        name: "Nucleoid instead of a nucleus",
+        condition: "Bacterial cell viewed in electron micrograph",
+        formula: "\\text{nucleoid}\\ (\\text{no envelope})",
+        meaning: "The bacterial chromosome is a naked loop lying in the cytoplasm, so transcription and translation can happen at the same time on the same DNA.",
+      },
+      {
+        name: "70S vs 80S ribosome",
+        condition: "Compare the two ribosomal sedimentation coefficients",
+        formula: "70S\\ (50S+30S)\\ \\ \\text{vs}\\ \\ 80S\\ (60S+40S)",
+        meaning: "Svedberg units are not additive, so 50S + 30S does not give 80S. Learn the two subunits of each or you lose the mark.",
+      },
+      {
+        name: "Mycoplasma is a wall-less exception",
+        condition: "Prokaryote that grows on a cell-free medium",
+        formula: "\\text{no wall} \\Rightarrow \\text{pleomorphic}",
+        meaning: "Mycoplasma has no peptidoglycan wall, so it changes shape and cannot be Gram-stained, breaking the rule that every bacterium has a wall.",
+      },
+      {
+        name: "Membrane infoldings are not organelles",
+        condition: "Photosynthetic bacterium with internal thylakoids",
+        formula: "\\text{thylakoid}\\ (\\text{not an MBO})",
+        meaning: "Cyanobacteria trap light on internal thylakoids, but these are infoldings of the plasma membrane, so the cell is still a prokaryote.",
+      },
+      {
+        name: "Mitochondrion is not a prokaryote",
+        condition: "Organelle containing its own circular DNA",
+        formula: "\\text{own DNA} \\Rightarrow \\text{endosymbiosis}",
+        meaning: "Mitochondria keep circular DNA and bacterial-type ribosomes, which records descent from a free-living bacterium absorbed long ago, not a whole prokaryotic cell.",
+      },
+    ],
     visualType: "prokaryotic-vs-eukaryotic-cell",
     solvedProblems: [
       {
@@ -106,6 +170,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Structural differences explain why plant cells are rigid and photoautotrophic while animal cells are mobile and heterotrophic.",
     keyTakeaways: ["Only plant cells fix CO2 via chloroplasts."],
     examTraps: ["Not all plant cells have chloroplasts — root cells do not."],
+    specialCases: [
+      {
+        name: "Root cell stores food in an amyloplast",
+        condition: "A plant cell taken from below ground",
+        formula: "0\\ \\text{chloroplasts}\\ \\ \\text{vs}\\ \\ \\text{amyloplasts}",
+        meaning: "Root cells store starch in leucoplasts instead of photosynthesising, which is why the claim that every plant cell has chloroplasts is false.",
+      },
+      {
+        name: "Turgor, not the wall, holds the plant up",
+        condition: "A plant cell placed in a hypertonic solution",
+        formula: "\\psi_{p} = \\frac{F}{A}",
+        meaning: "Water leaving the vacuole collapses the pressure on the wall and the plant wilts, so rigidity is as much physiological as structural.",
+      },
+      {
+        name: "Onion bulb cell is a plant cell",
+        condition: "Practical slide of onion epidermis",
+        formula: "\\text{wall present},\\ \\text{chloroplast absent}",
+        meaning: "A bulb is a modified underground leaf grown for food, so its cells show wall and vacuole but no chloroplast — the standard practical question.",
+      },
+      {
+        name: "Lysosomes exist in plant cells too",
+        condition: "Both cell types compared for digestive organelles",
+        formula: "\\text{lysosome}\\ (\\text{animal})\\ \\ \\text{or}\\ \\ \\text{vacuole}\\ (\\text{plant})",
+        meaning: "Plant cells do the same hydrolytic work inside the vacuole, so naming only lysosomes leaves the plant side of the comparison unmarked.",
+      },
+      {
+        name: "Centriole becomes a basal body",
+        condition: "A cell forming a cilium or flagellum",
+        formula: "\\text{centriole}\\ (9\\times 3)\\ \\to\\ \\text{basal body}",
+        meaning: "The centriole migrates to the surface and anchors the cilium, so the two are the same microtubule structure in different positions.",
+      },
+    ],
     visualType: "animal-vs-plant-cell",
     solvedProblems: [
       {
@@ -141,6 +237,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Organelles are specialised compartments that increase the efficiency of cellular metabolism.",
     keyTakeaways: ["Both mitochondria and chloroplast carry their own DNA."],
     examTraps: ["Smooth ER does not have ribosomes — it synthesises lipids and detoxifies."],
+    specialCases: [
+      {
+        name: "Smooth ER carries no ribosomes",
+        condition: "Organelle that makes lipids and detoxifies drugs",
+        formula: "\\text{SER} = \\text{ribosome-free}",
+        meaning: "Smooth ER is the one ER region without 80S ribosomes on its surface, so calling it rough or treating it as a protein synthesiser is the most repeated organelle error.",
+      },
+      {
+        name: "Free vs bound ribosome decides the destination",
+        condition: "A protein with an N-terminal signal sequence",
+        formula: "\\text{bound} \\Rightarrow \\text{export/membrane};\\ \\text{free} \\Rightarrow \\text{cytosol}",
+        meaning: "The signal peptide alone routes the protein, not the ribosome's location, which is why free and bound ribosomes make structurally identical protein.",
+      },
+      {
+        name: "Cristae raise mitochondrial surface area",
+        condition: "Locating the electron transport chain",
+        formula: "\\text{ETC} \\subset \\text{inner membrane}",
+        meaning: "The inner membrane folds into cristae to hold the respiratory chain and ATP synthase, while the outer membrane is permeable to small solutes through porins.",
+      },
+      {
+        name: "Secretory cell organelle set",
+        condition: "Pancreatic acinar or plasma cell secreting bulk protein",
+        formula: "\\text{RER} + \\text{Golgi} + \\text{vesicles}\\ \\gg\\ \\text{others}",
+        meaning: "High secretory load crowds the cytoplasm with rough ER and Golgi, so naming these two already secures the mark.",
+      },
+      {
+        name: "Grana versus stroma in the chloroplast",
+        condition: "Splitting the two stages of photosynthesis",
+        formula: "\\text{grana}\\ (\\text{light reaction})\\ \\text{vs}\\ \\text{stroma}\\ (\\text{Calvin})",
+        meaning: "Stacked thylakoids in the grana carry the light reaction while the surrounding stroma holds the carbon-fixing enzymes of the dark reaction.",
+      },
+    ],
     visualType: "organelle-functions",
     solvedProblems: [
       {
@@ -177,6 +305,44 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Mitosis maintains chromosome number for growth and repair; meiosis halves it and shuffles alleles for sexual reproduction.",
     keyTakeaways: ["Anaphase II of meiosis resembles anaphase of mitosis."],
     examTraps: ["Crossing over occurs in prophase I, NOT in mitosis."],
+    specialCases: [
+      {
+        name: "Mitosis yields two identical daughters",
+        condition: "One diploid cell dividing with no mutation",
+        formula: "2N \\rightarrow 2\\times 2N",
+        meaning: "Both daughters keep the parental chromosome number and are genetically identical, which is why mitosis supports growth, wound repair and asexual reproduction.",
+      },
+      {
+        name: "Anaphase II mimics mitotic anaphase",
+        condition: "Comparing the two anaphase stages directly",
+        formula: "\\text{anaphase II} \\approx \\text{anaphase (mitosis)}",
+        meaning: "Both stages split sister chromatids and pull them to opposite poles, which is why meiosis II is called the equational division.",
+      },
+      {
+        name: "Reduction happens in meiosis I only",
+        condition: "Homologous chromosomes separating at anaphase I",
+        formula: "2N \\xrightarrow{\\text{meiosis I}} N",
+        meaning: "Only meiosis I halves the chromosome number; meiosis II is numerically equal, so calling meiosis II the reductional division is a common slip.",
+      },
+      {
+        name: "Haploid cell undergoing meiosis",
+        condition: "A gametophyte or haploid fungus enters meiosis",
+        formula: "N \\rightarrow 4 \\times \\frac{N}{2}",
+        meaning: "Meiosis halves whatever it starts with, so a haploid cell yields four cells with half a normal set, which is why haploid plants form gametes by mitosis instead.",
+      },
+      {
+        name: "Polyploidy breaks the two-daughter rule",
+        condition: "Spindle or cytokinesis failure during mitosis",
+        formula: "2N \\xrightarrow{\\text{failure}} 4N",
+        meaning: "If the spindle fails, one nucleus may be duplicated and end up in a single cell, giving a tetraploid plant — the origin of many crop varieties such as banana and some wheats.",
+      },
+      {
+        name: "Crossing over and assortment are separate",
+        condition: "n bivalents with n = 23 in a human cell",
+        formula: "2^{n} = 2^{23} = 8{,}388{,}608",
+        meaning: "This is from independent assortment alone; crossing over adds far more, so 2^23 is a floor on diversity, never the real number of gamete types.",
+      },
+    ],
     visualType: "mitosis-vs-meiosis",
     solvedProblems: [
       {
@@ -214,6 +380,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Fungi switch between asexual spore production and sexual zygospore/ascospore formation depending on nutrients and stress.",
     keyTakeaways: ["Mucor is a mould with a mycelium; yeast is a unicellular fungus."],
     examTraps: ["Zygomycetes form zygospores, not ascospores."],
+    specialCases: [
+      {
+        name: "Mucor sporangiospores are asexual",
+        condition: "A sporangium on a sporangiophore releasing spores",
+        formula: "\\text{sporangiospores}\\ (\\text{mitotic})",
+        meaning: "Asexual sporangiospores are produced by mitosis and dispersed by wind, which is how a mould colonises bread in days.",
+      },
+      {
+        name: "Zygospore marks sexual reproduction in Mucor",
+        condition: "Two compatible hyphae (+ and −) meet and fuse",
+        formula: "n + n \\rightarrow 2N\\ \\text{(zygospore)}",
+        meaning: "Fusion of gametangia between opposite mating types gives a thick-walled zygospore that resists drying, so the organism survives a bad season.",
+      },
+      {
+        name: "Yeast is unicellular, Mucor is not",
+        condition: "Two fungi compared under the microscope",
+        formula: "\\text{yeast: single cell}\\ \\ \\text{vs}\\ \\ \\text{Mucor: hyphae}",
+        meaning: "Yeast buds as single cells, while Mucor grows as long coenocytic hyphae, so the two are contrasted on cell form as well as on spore type.",
+      },
+      {
+        name: "Budding is mitosis, not fertilisation",
+        condition: "A daughter cell growing as an outgrowth of the parent",
+        formula: "\\text{bud} \\xrightarrow{\\text{mitosis}} \\text{identical cell}",
+        meaning: "The bud carries the parent's genome and is genetically identical, so budding is asexual reproduction with no gamete fusion.",
+      },
+      {
+        name: "Starvation triggers ascospores in yeast",
+        condition: "Saccharomyces cells deprived of nitrogen",
+        formula: "\\text{scarce N} \\Rightarrow 4\\ \\text{ascospores}",
+        meaning: "With nutrients exhausted the cell switches from fast budding to sexual reproduction, packaging four ascospores inside the mother wall to survive.",
+      },
+    ],
     visualType: "fungi-life-cycles",
     solvedProblems: [
       {
@@ -249,6 +447,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Algal diversity spans three major groups distinguished by pigments and stored food; Spirogyra exemplifies green algae.",
     keyTakeaways: ["Green algae store food as starch, like higher plants."],
     examTraps: ["Spirogyra is not a plant — it lacks true tissue differentiation."],
+    specialCases: [
+      {
+        name: "Green algae store starch, not floridean starch",
+        condition: "A filamentous green alga such as Spirogyra",
+        formula: "\\text{chlorophyll } a+b;\\ \\text{reserve: starch}",
+        meaning: "Green algae share chlorophyll a and b and store starch exactly like higher plants, while red algae use floridean starch, so reserve food is a clean class key.",
+      },
+      {
+        name: "Spirogyra is a chain of cells",
+        condition: "A filament examined under the microscope",
+        formula: "N\\ \\text{cells joined end to end}",
+        meaning: "The spiral chloroplast belongs to each cell separately, so a broken fragment containing at least one cell can regenerate a whole filament.",
+      },
+      {
+        name: "Conjugation is sexual reproduction",
+        condition: "Two filaments side by side with conjugation tubes",
+        formula: "\\text{conjugation} \\Rightarrow \\text{zygospore}",
+        meaning: "The whole protoplast rounds off and moves through a tube to fuse with the neighbouring cell, so Spirogyra has no free-living gametes at all.",
+      },
+      {
+        name: "Fragmentation needs no partner",
+        condition: "A filament breaking under physical stress",
+        formula: "\\text{fragmentation}\\ (\\text{asexual})",
+        meaning: "Fragments of a filament grow directly into new ones with no fusion, which is why Spirogyra is described as reproducing both ways.",
+      },
+      {
+        name: "Red algae live deepest in the sea",
+        condition: "Pigments compared against water depth",
+        formula: "R\\ \\text{phycoerythrin}\\ \\text{absorbs blue-green}",
+        meaning: "Red algae reach greatest depth because their pigment captures the blue-green light that penetrates furthest, while green algae are limited to shallow water.",
+      },
+    ],
     visualType: "algae-types-diagram",
     solvedProblems: [
       {
@@ -284,6 +514,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Bryophytes represent the earliest land plants, still dependent on water for fertilisation.",
     keyTakeaways: ["Marchantia is dioecious — male and female cones on separate plants."],
     examTraps: ["The dominant phase in bryophytes is the GAMETOPHYTE, unlike pteridophytes."],
+    specialCases: [
+      {
+        name: "Green thallus is haploid",
+        condition: "A Marchantia plant growing on damp soil",
+        formula: "\\text{gametophyte (N)} = \\text{dominant}",
+        meaning: "The flat green body you see is haploid, which is the reverse of every other land plant and the single most examined fact about bryophytes.",
+      },
+      {
+        name: "Sporophyte depends on gametophyte",
+        condition: "A mature sporophyte still attached to the thallus",
+        formula: "\\text{2N} \\to N\\ \\text{spores}",
+        meaning: "The sporophyte stays joined to the gametophyte for water and nutrients because it has no green photosynthetic tissue of its own.",
+      },
+      {
+        name: "Dioecious means two plants",
+        condition: "Locating antheridia or archegonia on a specimen",
+        formula: "\\text{male plant} \\ne \\text{female plant}",
+        meaning: "Male and female organs sit on separate thalli, so two plants are needed for fertilisation — a detail asked often in the life-cycle diagram.",
+      },
+      {
+        name: "Fertilisation still needs water",
+        condition: "Antherozoids swimming to an archegonium",
+        formula: "\\text{flagellated sperm}\\xrightarrow{H_2O}\\text{egg}",
+        meaning: "Bryophytes are the first land plants yet still cannot complete reproduction without free water, which is why they are restricted to damp, shaded sites.",
+      },
+      {
+        name: "Spores are haploid and made by meiosis",
+        condition: "Meiosis inside the capsule of the sporophyte",
+        formula: "2N \\xrightarrow{\\text{meiosis}} N\\ \\text{spores}",
+        meaning: "Spores germinate by mitosis into new gametophytes, so the cycle must be drawn as an alternation of generations with the 2N phase tiny.",
+      },
+    ],
     visualType: "bryophyte-life-cycle",
     solvedProblems: [
       {
@@ -319,6 +581,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Pteridophytes show reversal of dominance versus bryophytes: the sporophyte is now the dominant, independent phase.",
     keyTakeaways: ["Dryopteris has true roots, stems and leaves (vascular plant)."],
     examTraps: ["In pteridophytes the SPOROPHYTE is dominant — the opposite of bryophytes."],
+    specialCases: [
+      {
+        name: "Fern plant is diploid",
+        condition: "A Dryopteris frond growing in a damp forest",
+        formula: "\\text{sporophyte (2N)} = \\text{dominant}",
+        meaning: "The independent vascular plant is 2N, marking the evolutionary reversal of dominance away from the bryophyte condition.",
+      },
+      {
+        name: "Prothallus is a bisexual gametophyte",
+        condition: "A heart-shaped prothallus examined from below",
+        formula: "\\text{antheridia} + \\text{archegonia}",
+        meaning: "One prothallus carries both sets of organs, so self-fertilisation is possible in Dryopteris, unlike the dioecious Marchantia.",
+      },
+      {
+        name: "Sori cluster the sporangia",
+        condition: "Underside of a mature fertile frond",
+        formula: "\\text{sori}\\ (\\text{abaxial surface})",
+        meaning: "Sori are groups of sporangia on the lower surface; each sporangium has a thickened annulus that bursts and throws the spores out.",
+      },
+      {
+        name: "Vascular tissue without seeds",
+        condition: "Dryopteris compared with a bryophyte",
+        formula: "\\text{xylem + phloem},\\ \\text{no seed}",
+        meaning: "True vascular tissue and organs make a pteridophyte a vascular plant, yet the absence of pollen and seed still forces it to depend on water for sperm.",
+      },
+      {
+        name: "Prothallus is short-lived and fragile",
+        condition: "A prothallus kept away from the sporophyte",
+        formula: "\\text{prothallus}\\ (\\text{brief, tiny})",
+        meaning: "It survives only while the spore is dormant or the gametophyte is fertilised, so the fern you collect is the 2N sporophyte, never the prothallus.",
+      },
+    ],
     visualType: "pteridophyte-life-cycle",
     solvedProblems: [
       {
@@ -354,6 +648,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Gymnosperms are the first to form pollen and seeds but lack flowers and fruits.",
     keyTakeaways: ["Pinus is the archetypal gymnosperm studied in NEB."],
     examTraps: ["Gymnosperm 'seeds' are not enclosed in a fruit."],
+    specialCases: [
+      {
+        name: "No carpel, so the seed is naked",
+        condition: "A mature cone of Pinus after fertilisation",
+        formula: "\\text{seed}\\ (\\text{open on the scale})",
+        meaning: "With no ovary to enclose it, the seed sits exposed on a cone scale, which is the defining contrast with an angiosperm.",
+      },
+      {
+        name: "Male cone makes microspores only",
+        condition: "A strobilus sectioned before pollen release",
+        formula: "\\text{microspore} \\rightarrow \\text{pollen}",
+        meaning: "The male cone is microsporophyll-bearing, so each microspore becomes a pollen grain, the reduced male gametophyte.",
+      },
+      {
+        name: "No free water needed",
+        condition: "Pollen grain landing directly on a cone scale",
+        formula: "\\text{pollen tube}\\rightarrow\\text{egg}",
+        meaning: "The tube delivers the sperm, so gymnosperms freed themselves from standing water — the key advance alongside the seed.",
+      },
+      {
+        name: "Sperm are motile in Pinus",
+        condition: "Pollination followed by tube growth in the ovule",
+        formula: "\\text{2 sperm}\\ (\\text{released in tube})",
+        meaning: "Unlike flowering plants, Pinus releases motile sperm that swim the short distance inside the ovule, so the ovule still needs internal fluid.",
+      },
+      {
+        name: "Monoicous, not dioecious",
+        condition: "Both cone types on one Pinus tree",
+        formula: "\\text{both sexes on one plant}",
+        meaning: "Male and female cones occur on the same tree, so the word dioecious must not be used for Pinus; it applies to plants like Marchantia and papaya.",
+      },
+    ],
     visualType: "gymnosperm-life-cycle",
     solvedProblems: [
       {
@@ -389,6 +715,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Angiosperms are the most successful plants, characterised by flowers, fruits and double fertilisation.",
     keyTakeaways: ["Endosperm is triploid (3N) — unique to angiosperms."],
     examTraps: ["Fruit develops from the ovary; the seed develops from the fertilised ovule."],
+    specialCases: [
+      {
+        name: "Only one male nucleus fertilises the egg",
+        condition: "First fertilisation of the embryo sac",
+        formula: "\\text{sperm}_1 + \\text{egg} \\rightarrow \\text{zygote}",
+        meaning: "One sperm fuses with the egg to form the 2N embryo, so the naming sperm one and sperm two must be tied to the correct nucleus.",
+      },
+      {
+        name: "Triple fusion makes 3N endosperm",
+        condition: "Second sperm fusing with the two polar nuclei",
+        formula: "\\text{sperm}_2 + N + N \\rightarrow 3N",
+        meaning: "Endosperm is triploid because three haploid nuclei fuse, and it is formed only after fertilisation — the nutritive tissue unique to angiosperms.",
+      },
+      {
+        name: "Accessory fruit uses the receptacle",
+        condition: "Strawberry or apple after fertilisation",
+        formula: "\\text{receptacle} \\rightarrow \\text{fleshy part}",
+        meaning: "In a false or accessory fruit the edible tissue comes from the thalamus, so naming only the ovary would be incomplete.",
+      },
+      {
+        name: "Unisexual flower needs cross-pollination",
+        condition: "Stamens and carpels in separate flowers",
+        formula: "\\text{dioecious}\\ \\Rightarrow \\text{cross only}",
+        meaning: "When male and female flowers are on separate plants, selfing is impossible, which raises the chance of fertilisation between two different genotypes.",
+      },
+      {
+        name: "Cleistogamous flower never opens",
+        condition: "Violet or Oxalis flower at ground level",
+        formula: "\\text{cleistogamy}\\ \\Rightarrow \\text{obligate selfing}",
+        meaning: "A closed flower guarantees self-fertilisation, which guarantees seed set even when pollinators are absent, at the cost of lower genetic variety.",
+      },
+    ],
     visualType: "flower-anatomy-diagram",
     solvedProblems: [
       {
@@ -426,6 +784,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Bacterial structure defines their classification, nutrition and ecological roles.",
     keyTakeaways: ["Cyanobacteria are photosynthetic bacteria ('blue-green algae')."],
     examTraps: ["Bacteria have a cell wall but NO nuclear membrane."],
+    specialCases: [
+      {
+        name: "Wall present but nucleus absent",
+        condition: "A bacterium sectioned for electron microscopy",
+        formula: "\\text{wall} + \\text{membrane} + \\text{nucleoid}",
+        meaning: "Peptidoglycan outside, naked DNA inside, so a bacterium has both a wall and no nuclear membrane — the pair most often confused in one line.",
+      },
+      {
+        name: "Plasmid loss without death",
+        condition: "A bacterium cured of its plasmid",
+        formula: "\\text{chromosome}\\ (\\text{essential}) + \\text{plasmid}\\ (\\text{optional})",
+        meaning: "Plasmids replicate independently and carry accessory genes such as antibiotic resistance, so losing one is survivable and is exactly what curing exploits.",
+      },
+      {
+        name: "Cyanobacterium is not a protist",
+        condition: "A photosynthetic, nitrogen-fixing prokaryote",
+        formula: "\\text{cyanobacteria (blue-green algae)}",
+        meaning: "The old name says algae, but it is a prokaryote with a nucleoid and 70S ribosomes, so place it among bacteria and not among the protists.",
+      },
+      {
+        name: "Endospore survives, not feeds",
+        condition: "Bacillus exposed to heat, desiccation or chemicals",
+        formula: "\\text{endospore}\\ (\\text{dormant, resistant})",
+        meaning: "A metabolically dormant endospore resists harsh conditions and germinates later; it is a survival structure, not a reproductive spore, since one cell yields one spore.",
+      },
+      {
+        name: "Pilus differs from flagellum",
+        condition: "Conjugation or attachment to a host surface",
+        formula: "\\text{pilus (short, many)}\\ \\ne\\ \\text{flagellum (long, few)}",
+        meaning: "Pili attach the cell or pull genetic DNA across during conjugation, whereas flagella propel it, so the two are never used interchangeably.",
+      },
+    ],
     visualType: "bacterial-cell-structure",
     solvedProblems: [
       {
@@ -461,6 +851,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Viruses sit at the border between living and non-living; they lack their own metabolism.",
     keyTakeaways: ["Only one type of nucleic acid (DNA or RNA) is present per virus."],
     examTraps: ["A virion is the complete, intact particle; 'naked' viruses lack an envelope."],
+    specialCases: [
+      {
+        name: "One nucleic acid, never both",
+        condition: "Genetic material of a single virus particle",
+        formula: "\\text{DNA}\\ \\text{xor}\\ \\text{RNA}",
+        meaning: "A virion carries either DNA or RNA, which is why a virus can be classified on its genome alone and why the mixed case is always wrong.",
+      },
+      {
+        name: "Lytic versus lysogenic cycle",
+        condition: "Bacteriophage T2 infecting E. coli",
+        formula: "\\text{lytic}\\ (\\text{lysis})\\ \\ \\text{vs}\\ \\ \\text{lysogenic}\\ (\\text{prophage})",
+        meaning: "In the lytic cycle the host is burst open; in lysogeny the phage DNA stays integrated as a prophage and copies with the host, so both cycles must be named.",
+      },
+      {
+        name: "Envelope is stolen from the host",
+        condition: "Influenza or any enveloped animal virus",
+        formula: "\\text{envelope}\\ (\\text{host-derived lipid})",
+        meaning: "The envelope carries viral glycoprotein spikes on a host membrane, so it has viral specificity and host origin at the same time.",
+      },
+      {
+        name: "Viruses have no metabolism",
+        condition: "A virus isolated from a cell-free filtrate",
+        formula: "\\text{no ribosome},\\ \\text{no ATP}",
+        meaning: "A virion brings no ribosomes, enzymes or energy, so it cannot grow or divide alone, which is why it sits outside the five-kingdom system.",
+      },
+      {
+        name: "Capsomere count fixes symmetry",
+        condition: "An icosahedral capsid of T2 head",
+        formula: "\\text{capsid} = \\text{capsomeres}\\ (\\text{icosahedral})",
+        meaning: "The capsid is assembled from protein subunits called capsomeres in a fixed geometric arrangement, so counting subunits is a standard drawing question.",
+      },
+    ],
     visualType: "virion-structure",
     solvedProblems: [
       {
@@ -496,6 +918,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Biotechnology harnesses microbial metabolism for food, medicine and environment.",
     keyTakeaways: ["Lactobacillus produces lactic acid in curd; Rhizobium fixes nitrogen."],
     examTraps: ["Alcohol fermentation by yeast is anaerobic; lactic-acid fermentation in muscles is also anaerobic."],
+    specialCases: [
+      {
+        name: "Yeast fermentation is anaerobic",
+        condition: "S. cerevisiae in a fermenter with no air",
+        formula: "C_6H_{12}O_6 \\to 2C_2H_5OH + 2CO_2",
+        meaning: "With no oxygen the yeast makes ethanol and CO2, the basis of wine, beer and bread — and the gas that puffs bread dough.",
+      },
+      {
+        name: "Lactic acid fermentation, not decay",
+        condition: "Lactobacillus in warm milk",
+        formula: "\\text{lactose} \\to \\text{lactic acid}\\ (\\text{curd})",
+        meaning: "Milk is preserved rather than spoiled, since the drop in pH coagulates the casein, so 'spoilage by bacteria' is a wrong description of curd formation.",
+      },
+      {
+        name: "Antibiotic works on growing cells only",
+        condition: "Penicillin against a bacterial infection",
+        formula: "\\text{blocking peptidoglycan cross-linking}",
+        meaning: "Penicillin kills only multiplying bacteria, which is why it is useless against a viral cold and why completing the full course matters.",
+      },
+      {
+        name: "Nitrogen fixation needs a symbiont",
+        condition: "Rhizobium inside a legume root nodule",
+        formula: "N_2 \\xrightarrow{\\text{Rhizobium}} NH_3",
+        meaning: "The plant supplies sugar and gets usable nitrogen in exchange, so a legume improves soil fertility and is ploughed in as green manure.",
+      },
+      {
+        name: "Bioreactor needs sterility",
+        condition: "Industrial-scale microbial culture",
+        formula: "\\text{sterile} + \\text{controlled pH, T, O}_2",
+        meaning: "A single contaminating spore outcompetes the culture, so sterilisation and continuous monitoring of temperature, pH and oxygen are the control points.",
+      },
+    ],
     visualType: "biotech-microbe-applications",
     solvedProblems: [
       {
@@ -533,6 +987,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Ecosystems transfer energy unidirectionally with large losses, limiting trophic length.",
     keyTakeaways: ["Only the energy pyramid is always upright."],
     examTraps: ["Numbers and biomass pyramids can be inverted (e.g. an oak supporting many insects)."],
+    specialCases: [
+      {
+        name: "Energy pyramid is never inverted",
+        condition: "Any ecosystem with measurable energy flow",
+        formula: "E_{n+1} \\approx 0.1\\,E_n",
+        meaning: "Since energy is lost as heat at every transfer, the energy pyramid is always upright, and this is the only pyramid that cannot be inverted.",
+      },
+      {
+        name: "Inverted pyramid of numbers",
+        condition: "One oak tree supporting thousands of insects",
+        formula: "\\text{numbers}\\ \\text{inverted at } T_1",
+        meaning: "A single large producer can feed a whole tier of consumers, so counting individuals gives a base of one and a wide middle — the classic inverted case.",
+      },
+      {
+        name: "Inverted pyramid of biomass",
+        condition: "Phytoplankton and zooplankton in a sea or lake",
+        formula: "\\text{biomass}_{zooplankton} > \\text{biomass}_{phyto}",
+        meaning: "Phytoplankton turn over so fast that standing crop stays below the zooplankton that grazes them, so biomass inverts even though energy never does.",
+      },
+      {
+        name: "Detritus food chain dominates forests",
+        condition: "A temperate forest floor full of leaf litter",
+        formula: "D\\ \\text{(litter)} \\rightarrow F\\ \\text{(fungi, bacteria)}",
+        meaning: "In a forest most energy enters as dead plant material, so the detritus chain carries more flow than the grazing chain, unlike an open grassland or sea.",
+      },
+      {
+        name: "Parasitic chain is the shortest",
+        condition: "A plant, an insect and a bird on one host",
+        formula: "\\text{3 levels}\\ (\\text{max practical})",
+        meaning: "Because energy is lost at each step, parasites and hyperparasites form very short chains, and trophic levels beyond five are rare in practice.",
+      },
+    ],
     visualType: "food-chain-web",
     solvedProblems: [
       {
@@ -568,6 +1054,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Cycles keep essential elements in continuous motion between organisms and the environment.",
     keyTakeaways: ["Only microbes (and lightning) fix nitrogen."],
     examTraps: ["Ammonification (nitrification) is a separate step from denitrification."],
+    specialCases: [
+      {
+        name: "Only bacteria and lightning fix nitrogen",
+        condition: "Atmospheric N2 entering a food chain",
+        formula: "N_2 \\xrightarrow{\\text{fixers}} NH_4^{+}",
+        meaning: "The triple bond makes N2 inert, so no plant can use it directly; only certain bacteria, cyanobacteria and lightning convert it to a usable form.",
+      },
+      {
+        name: "Ammonification is not nitrification",
+        condition: "Dead organic matter decaying in soil",
+        formula: "\\text{ammonification}\\ (\\to NH_4^{+})\\ \\ne\\ \\text{nitrification}\\ (\\to NO_3^{-})",
+        meaning: "Decomposers release ammonium from dead matter, then nitrifying bacteria oxidise it to nitrate — two separate steps that the entry trap warns about.",
+      },
+      {
+        name: "Denitrification closes the loop",
+        condition: "Wet, oxygen-poor soil with nitrate present",
+        formula: "NO_3^{-} \\to N_2\\uparrow",
+        meaning: "When soil is waterlogged and oxygen-poor, denitrifying bacteria reduce nitrate back to nitrogen gas, so excess nitrate and poor drainage together lose soil nitrogen.",
+      },
+      {
+        name: "Carbon has a fast and a slow cycle",
+        condition: "A century versus a geological timescale",
+        formula: "\\text{fast (yr)}\\ \\ \\text{vs}\\ \\ \\text{slow (fossil, rock)}",
+        meaning: "Atmospheric CO2 turns over in a few hundred years, but carbon locked in limestone and fossil fuels takes millions, so one cycle has two very different speeds.",
+      },
+      {
+        name: "Sulphur is a sedimentary cycle",
+        condition: "Weathering of sulphur-bearing rock",
+        formula: "\\text{rock}\\ \\text{(main reservoir)}",
+        meaning: "Unlike carbon and nitrogen, sulphur has a large geological reservoir and no major atmospheric gas phase, so it is classed as a sedimentary cycle.",
+      },
+    ],
     visualType: "carbon-nitrogen-cycles",
     solvedProblems: [
       {
@@ -603,6 +1121,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Adaptation is the match between an organism's traits and its habitat.",
     keyTakeaways: ["Xerophytes keep stomata open only at night (CAM in many)."],
     examTraps: ["Hydrophytes have few thick-cuticle; xerophytes have prominent cuticles."],
+    specialCases: [
+      {
+        name: "Submerged leaf loses its cuticle",
+        condition: "A hydrophyte leaf under water",
+        formula: "\\text{cuticle absent},\\ \\text{epidermis only}",
+        meaning: "Water is always in contact, so a waxy cuticle would be pointless; the leaf instead has a thin epidermis and no gas loss problem.",
+      },
+      {
+        name: "Aerenchyma supplies air to submerged roots",
+        condition: "A hydrophyte growing in oxygen-poor water",
+        formula: "\\text{aerenchyma}\\ (\\text{large air spaces})",
+        meaning: "Large air channels carry oxygen down to the roots, which is why water hyacinth floats and survives in nutrient-poor ponds.",
+      },
+      {
+        name: "Stomata in sunken pits",
+        condition: "A xerophyte such as Nerium or pine",
+        formula: "\\text{sunken stomata}\\ (\\text{trapped still air})",
+        meaning: "Locating stomata below the leaf surface traps humid air in a pit, so the diffusion gradient for water vapour is much smaller and transpiration drops.",
+      },
+      {
+        name: "CAM opens stomata at night",
+        condition: "A succulent in an arid desert",
+        formula: "\\text{night: open},\\ \\text{day: shut}",
+        meaning: "Many succulents fix CO2 at night into malic acid, so they take in carbon without losing water, which is a physiological rather than purely structural adaptation.",
+      },
+      {
+        name: "Halophytes face salt, not drought",
+        condition: "A mangrove or salt-tolerant grass on a coast",
+        formula: "\\text{salt tolerance}\\ (\\text{osmoregulation})",
+        meaning: "Salt plants exclude or excrete salt and keep osmotic balance, so halophytes can look wilted on dry soil yet survive, which is not true drought resistance.",
+      },
+    ],
     visualType: "hydrophyte-xerophyte-adaptations",
     solvedProblems: [
       {
@@ -638,6 +1188,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Ecological imbalances disrupt biogeochemical cycles and biodiversity, and feed back on climate.",
     keyTakeaways: ["CFCs are the chief ozone-depleting agents."],
     examTraps: ["Ozone depletion is distinct from global warming (different gases)."],
+    specialCases: [
+      {
+        name: "Ozone hole is not global warming",
+        condition: "Stratospheric ozone thinned over the poles",
+        formula: "O_3 \\downarrow\\ (\\text{UV-B rises})",
+        meaning: "CFC-derived chlorine radicals destroy ozone in the stratosphere, letting more UV-B reach the surface; the greenhouse effect is a separate mechanism at the troposphere.",
+      },
+      {
+        name: "CFCs do both jobs",
+        condition: "Freon released to the atmosphere",
+        formula: "\\text{CFC}\\ \\text{(GHG and ODP)}",
+        meaning: "Chlorofluorocarbons are potent greenhouse gases and also the main ozone destroyers, which is why the Montreal Protocol phase-out cut both problems at once.",
+      },
+      {
+        name: "Acid rain threshold",
+        condition: "Precipitation pH below about 5.6",
+        formula: "pH < 5.6",
+        meaning: "Normal rain is already slightly acidic from dissolved CO2, so only rain measurably below pH 5.6 is acid rain, caused by dissolved SO2 and NOx.",
+      },
+      {
+        name: "Urban smog is a separate pollutant problem",
+        condition: "Traffic-heavy city in a valley basin",
+        formula: "\\text{photochemical smog}\\ (\\text{ozone at ground level})",
+        meaning: "Vehicle emissions reacting in strong sunlight make ground-level ozone that irritates the lungs, which is urban smog and not the same as stratospheric depletion.",
+      },
+      {
+        name: "Biological amplification up the chain",
+        condition: "Mercury in a food chain ending in fish-eating birds",
+        formula: "\\text{concentration} \\uparrow\\ \\text{per level}",
+        meaning: "Toxins that are not broken down accumulate in fat and muscle, so a top predator carries a far higher concentration than the water it swims in.",
+      },
+    ],
     visualType: "pollution-climate-change",
     solvedProblems: [
       {
@@ -675,6 +1257,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Nepal's vertical relief packs many climate zones into a small area, giving high vegetation diversity.",
     keyTakeaways: ["Conservation of each zone is part of ex-situ and in-situ protection."],
     examTraps: ["'Churia' is a folk term for the mid-hills, not a formal zone."],
+    specialCases: [
+      {
+        name: "Lapse rate drives vertical zonation",
+        condition: "Moving 100 m up a Himalayan slope",
+        formula: "\\approx 0.6\\,^{\\circ}\\text{C per } 100\\,m",
+        meaning: "Because temperature falls steadily with height, a single mountain stacks several climate zones within a few kilometres, unlike a flat country of the same width.",
+      },
+      {
+        name: "Terai is an ecotone",
+        condition: "The narrow belt between the plains and the hills",
+        formula: "\\text{foothill ecotone}\\ (\\text{200-1000 m})",
+        meaning: "The Terai is a transition between the Gangetic plain and the Churia hills, so it mixes tropical and subtropical species and holds much of the country's wildlife.",
+      },
+      {
+        name: "Tree line ends the forest",
+        condition: "Climbing above roughly 3500 m",
+        formula: "\\text{tree line}\\to\\text{alpine scrub}",
+        meaning: "Above this height wind and cold prevent trees from growing, so the vegetation becomes low alpine herbs, cushions and grasses rather than forest.",
+      },
+      {
+        name: "Cloud forest is not a separate zone",
+        condition: "A moist hillside ridge with constant mist",
+        formula: "\\text{moisture-driven, not altitude}",
+        meaning: "Forest type follows moisture as well as altitude, so a wet ridge can carry temperate broadleaf species lower down than a dry slope at the same height.",
+      },
+      {
+        name: "Rhododendron marks the temperate belt",
+        condition: "A mid-hill forest of evergreen trees",
+        formula: "\\text{Rhododendron arboreum}\\ (\\text{1000-2500 m})",
+        meaning: "This national flower characterises the temperate zone of the mid-hills and is a reliable example to quote for that vegetation band.",
+      },
+    ],
     visualType: "nepal-vegetation-zones",
     solvedProblems: [
       {
@@ -712,6 +1326,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Biology is interdisciplinary and underpins agriculture, medicine and ecology.",
     keyTakeaways: ["Biotechnology and genomics are modern applied branches."],
     examTraps: ["Microbiology studies microbes, not a single kingdom."],
+    specialCases: [
+      {
+        name: "Microbiology crosses every kingdom",
+        condition: "Studying bacteria, fungi, algae and viruses together",
+        formula: "\\text{microbes}\\ \\ne\\ \\text{one kingdom}",
+        meaning: "Bacteria, fungi, algae, protozoa and viruses are all microbes, so microbiology is defined by organism size, not by a taxonomic group.",
+      },
+      {
+        name: "Ecology vs environmental science",
+        condition: "Studying organisms against one another and their surroundings",
+        formula: "\\text{ecology}\\ \\text{vs}\\ \\text{environmental science}",
+        meaning: "Ecology is the basic study of interactions and cycles, while environmental science applies that knowledge to conservation and management — a common one-mark distinction.",
+      },
+      {
+        name: "Cytology vs molecular biology",
+        condition: "Studying DNA structure versus chromosome behaviour in division",
+        formula: "\\text{structure}\\ \\text{vs}\\ \\text{function}",
+        meaning: "Molecular biology deals with sequence, replication and expression, whereas cytology deals with chromosomes, division and cell structure, so the level of study decides the branch.",
+      },
+      {
+        name: "Botany and zoology are a human split",
+        condition: "A unicellular alga and a unicellular protozoan",
+        formula: "\\text{plants vs animals},\\ \\text{not natural groups}",
+        meaning: "This split is artificial, since a bacterium belongs to neither, which is why protists and monera had to be separated out as their own kingdoms.",
+      },
+      {
+        name: "Systematics uses evidence, not looks",
+        condition: "Wheat and a grass-like plant classified together",
+        formula: "\\text{evidence-based grouping}",
+        meaning: "Classification now rests on shared characters and genetic data, so organisms are grouped by common ancestry rather than by superficial resemblance alone.",
+      },
+    ],
     visualType: "biology-scope-branches",
     solvedProblems: [
       {
@@ -749,6 +1395,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "The origin of life is plausibly abiotic; the Miller-Urey experiment provides the classical support.",
     keyTakeaways: ["Miller-Urey proved organic synthesis, not that life arose."],
     examTraps: ["The experiment did NOT reproduce a living cell — only monomers."],
+    specialCases: [
+      {
+        name: "Reducing atmosphere assumption",
+        condition: "Gas mixture in the Miller-Urey flask",
+        formula: "CH_4,\\ NH_3,\\ H_2,\\ H_2O",
+        meaning: "Miller used a strongly reducing mixture, so the result supports Oparin's reducing-atmosphere model; had he used modern N2 and CO2, the yields would be far smaller.",
+      },
+      {
+        name: "Amino acids, not life or protein",
+        condition: "Analysis of the condensate after sparking",
+        formula: "\\text{amino acids}\\ (\\text{monomers only})",
+        meaning: "Only a few amino acids and simpler organics formed, with no protein, membrane or self-replication, so the experiment shows organic synthesis is possible, not that life arose.",
+      },
+      {
+        name: "Electrode vs lightning",
+        condition: "The energy source supplying the discharge",
+        formula: "\\text{E}\\sim 800\\,000\\,V\\ (\\text{simulated lightning})",
+        meaning: "A high-voltage spark stood in for lightning in the primordial atmosphere, which is the one assumption that cannot be tested directly in a sealed flask.",
+      },
+      {
+        name: "Soup needs concentration and energy",
+        condition: "Organic monomers accumulating in a water body",
+        formula: "\\text{coacervate droplets}",
+        meaning: "Oparin proposed that warmed, cooled and repeatedly concentrated organics formed coacervate droplets that grow and divide, giving a step before any true cell existed.",
+      },
+      {
+        name: "Thermophilic origin is an alternative",
+        condition: "Life beginning near volcanic vents rather than ponds",
+        formula: "\\text{vent}\\ \\text{vs}\\ \\text{pool}",
+        meaning: "Haldane's alternative placed life in hot volcanic pools and vents where temperature gradients could drive energy, so the pond model is a hypothesis, not a settled fact.",
+      },
+    ],
     visualType: "origin-of-life-experiment",
     solvedProblems: [
       {
@@ -784,6 +1462,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Independent lines of evidence converge on the fact of evolution.",
     keyTakeaways: ["DNA similarities are the strongest evidence."],
     examTraps: ["Analogous organs are evidence of CONVERGENCE, not descent."],
+    specialCases: [
+      {
+        name: "Homologous means same origin",
+        condition: "Pentadactyl limb of man, bat and whale",
+        formula: "\\text{same bone plan},\\ \\text{different function}",
+        meaning: "Identical skeletal plan with different uses is the strongest sign of shared ancestry, since the structure was inherited and then modified for a new job.",
+      },
+      {
+        name: "Analogous organs show convergence",
+        condition: "Wing of a butterfly against wing of a bird",
+        formula: "\\text{same function},\\ \\text{different structure}",
+        meaning: "Independent evolution produced the same function from unrelated parts, so analogous organs prove that similar needs can shape different structures.",
+      },
+      {
+        name: "Vestigial does not mean useless now",
+        condition: "Human coccyx, appendix and third eyelid",
+        formula: "\\text{reduced}\\ \\text{but still functional sometimes}",
+        meaning: "A vestigial organ has lost its original major role, yet the coccyx still anchors muscles and the appendix still contributes to immunity, so call them reduced rather than functionless.",
+      },
+      {
+        name: "Molecular clock gives a divergence time",
+        condition: "Comparing DNA or protein sequences of two species",
+        formula: "\\%\\ \\text{sequence identity}\\ \\Rightarrow\\ \\text{time of split}",
+        meaning: "Accumulating mutations tick off divergence, so cytochrome c similarity is used to estimate when two lineages separated, which is why DNA is the strongest evidence.",
+      },
+      {
+        name: "Fossil record is incomplete but real",
+        condition: "A gap in the fossil succession",
+        formula: "\\text{soft parts decay}\\ \\Rightarrow\\ \\text{gaps}",
+        meaning: "Only hard parts in the right sediments fossilise, so gaps reflect preservation rather than missing evolutionary steps, and transitional forms like Archaeopteryx fill key links.",
+      },
+    ],
     visualType: "evidences-of-evolution",
     solvedProblems: [
       {
@@ -819,6 +1529,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Modern evolutionary biology = Darwin's selection + Mendelian genetics + molecular data.",
     keyTakeaways: ["Neo-Darwinism is the current framework."],
     examTraps: ["Lamarckism was disproved (Weismann's guinea-pig)."],
+    specialCases: [
+      {
+        name: "Weismann's tail experiment",
+        condition: "Cutting tails off guinea pigs for 20+ generations",
+        formula: "\\text{acquired}\\ \\not\\to\\ \\text{inherited}",
+        meaning: "Offspring always grew normal tails, so a change made during life is not passed on; only variations in the germ cells can be inherited.",
+      },
+      {
+        name: "Use and disuse",
+        condition: "Giraffe neck, or the loss of a limb",
+        formula: "\\text{use}\\ \\Rightarrow\\ \\text{enlarge};\\ \\text{disuse}\\ \\Rightarrow\\ \\text{shrink}",
+        meaning: "Lamarck's giraffe stretched its neck over generations and passed the gain on, an idea that is logically tidy but has the wrong mechanism.",
+      },
+      {
+        name: "Weismann's germ-plasm barrier",
+        condition: "Distinguishing body cells from germ cells",
+        formula: "\\text{germ plasm}\\ \\text{alone is inherited}",
+        meaning: "Soma and gametes are separate lineages, which explains in modern terms why acquired body changes cannot reach the next generation.",
+      },
+      {
+        name: "Fitness means relative success",
+        condition: "Individuals competing in the same environment",
+        formula: "\\Delta p \\propto s",
+        meaning: "Fittest means leaving the most offspring, not the strongest or the cleverest, so fitness must always be measured against a particular environment.",
+      },
+      {
+        name: "Genetic drift needs no advantage",
+        condition: "A very small isolated population",
+        formula: "\\text{drift}\\ (\\text{random, not adaptive})",
+        meaning: "Allele frequency can shift by chance alone, and the effect is strongest in small populations, so drift explains variation that natural selection cannot.",
+      },
+    ],
     visualType: "evolution-theories-comparison",
     solvedProblems: [
       {
@@ -854,6 +1596,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Human evolution is a tree (not a ladder) with branching and extinction.",
     keyTakeaways: ["Bipedalism preceded encephalisation."],
     examTraps: ["Humans did not evolve from 'monkeys' as currently living — we share a common ancestor."],
+    specialCases: [
+      {
+        name: "Bipedalism came before big brains",
+        condition: "Comparing Australopithecus with later Homo",
+        formula: "\\text{bipedalism} \\rightarrow \\text{encephalisation}",
+        meaning: "Upright walking appears in the fossil record well before any large brain volume, so posture was the first hominin adaptation and brain growth came later.",
+      },
+      {
+        name: "Hominid excludes modern apes",
+        condition: "Classifying gorilla and human lineages",
+        formula: "\\text{hominid}\\ \\text{= human branch only}",
+        meaning: "In the syllabus sense a hominid belongs to the line leading to humans, so calling a chimpanzee a hominid is incorrect even though the term is used more broadly in books.",
+      },
+      {
+        name: "Sahelanthropus is a candidate, not a fact",
+        condition: "Fossils from about 6-7 million years ago",
+        formula: "\\approx 6-7\\ \\text{Myr}\\ (\\text{foramen magnum})",
+        meaning: "Its forward-shifted foramen magnum suggests bipedalism, but the interpretation is debated, so a good answer should present it as probable rather than certain.",
+      },
+      {
+        name: "Neanderthal DNA in living humans",
+        condition: "Modern Europeans and Asians compared with Neanderthal genome",
+        formula: "\\text{1-4\\%}\\ \\text{shared DNA}",
+        meaning: "Limited interbreeding occurred after Homo sapiens left Africa, so part of our genome is Neanderthal and evolution is not a simple replacement of one group by another.",
+      },
+      {
+        name: "The tree branches, it does not ladder",
+        condition: "Placing several hominin species on one lineage",
+        formula: "\\text{bushy tree},\\ \\ne\\ \\text{linear ladder}",
+        meaning: "Several hominin lines arose and went extinct without contributing to us, so human evolution must be drawn as a branching tree with side branches that die out.",
+      },
+    ],
     visualType: "human-evolution-tree",
     solvedProblems: [
       {
@@ -891,6 +1665,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Protista is a 'dumping' group for unicellular eukaryotes that don't fit other kingdoms.",
     keyTakeaways: ["Paramecium and Plasmodium are classic protozoa studied in NEB."],
     examTraps: ["Algae (green, red, brown) are protists, not plants."],
+    specialCases: [
+      {
+        name: "Paramecium is a ciliate, not a flagellate",
+        condition: "Locating cilia over the whole body surface",
+        formula: "\\text{holotrich cilia}\\ (\\text{uniform})",
+        meaning: "A ciliate is covered by short cilia used for feeding and movement, whereas a flagellate such as Euglena has one or few long flagella, so the two groups must not be merged.",
+      },
+      {
+        name: "Amoeba has no cell wall",
+        condition: "Amoeba changing shape and engulfing food",
+        formula: "\\text{pseudopodia}\\ (\\text{phagocytosis})",
+        meaning: "Amoeba is an animal-like protist with a flexible pellicle, so it moves and feeds by extending pseudopodia rather than by any fixed body covering.",
+      },
+      {
+        name: "Parasitic protozoan has reduced organelles",
+        condition: "Plasmodium living inside red blood cells",
+        formula: "\\text{intracellular parasite}",
+        meaning: "An endoparasite sheds most of its own organelles and depends entirely on the host's nutrients, so structural simplicity here reflects a parasitic way of life rather than a primitive one.",
+      },
+      {
+        name: "Slime mould eats by engulfing bacteria",
+        condition: "Slime mould moving towards a bacterial colony",
+        formula: "\\text{phagocytosis}\\ (\\text{fungal role})",
+        meaning: "Slime moulds are fungus-like in nutrition and spore formation, yet the mobile plasmodium feeds by phagocytosis, which is why they are classified as protists.",
+      },
+      {
+        name: "Euglena is both plant-like and animal-like",
+        condition: "Euglena in light and then in darkness",
+        formula: "\\text{photoautotrophic}\\ \\text{and}\\ \\text{holozoic}",
+        meaning: "It photosynthesises in light but ingests food in its absence, so it cannot be placed cleanly in either plant or animal — the classic example of a natural group boundary failing.",
+      },
+    ],
     visualType: "protist-diversity",
     solvedProblems: [
       {
@@ -926,6 +1732,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Phylum-level diagnosis uses germ layers, body cavity and symmetry.",
     keyTakeaways: ["Arthropods are the largest phylum (insects)."],
     examTraps: ["Nemathelminthes (roundworms) are pseudocoelomates, not true coelomates."],
+    specialCases: [
+      {
+        name: "Acoelomate: no cavity at all",
+        condition: "Platyhelminthes with mesoderm filling the space",
+        formula: "\\text{acoelomate}\\ (\\text{flatworm})",
+        meaning: "No fluid-filled cavity at all, so organs are embedded in solid mesoderm, which is why the body is flat and wide for diffusion.",
+      },
+      {
+        name: "Pseudocoelomate: cavity partly lined",
+        condition: "Nemathelminthes dissected in cross-section",
+        formula: "\\text{pseudocoel}\\ (\\text{not fully mesoderm-lined})",
+        meaning: "The cavity is not completely lined by mesoderm, so a roundworm is a pseudocoelomate and not a true coelomate like an annelid.",
+      },
+      {
+        name: "Arthropods are the largest phylum",
+        condition: "Counting described species across phyla",
+        formula: "\\text{Arthropoda}\\ (\\text{insects dominant})",
+        meaning: "Insects alone make up the largest share of known animal species, so arthropod features — jointed limbs, chitinous cuticle, haemolymph — are worth memorising in detail.",
+      },
+      {
+        name: "Radial symmetry in adults only",
+        condition: "Starfish larva compared with the adult animal",
+        formula: "\\text{larva: bilateral}\\ \\to\\ \\text{adult: radial}",
+        meaning: "An echinoderm larva is bilaterally symmetrical but the adult is radially symmetrical, so the phylum is grouped as a deuterostome on embryological grounds.",
+      },
+      {
+        name: "Coelom as a functional organ",
+        condition: "A true body cavity with internal organs",
+        formula: "\\text{coelom}\\ (\\text{fluid-filled, mesoderm-lined})",
+        meaning: "A mesoderm-lined cavity lets organs grow and move independently and act as a hydrostatic skeleton, which is the functional reason coelomates are more complex.",
+      },
+    ],
     visualType: "animal-phyla-key-features",
     solvedProblems: [
       {
@@ -961,6 +1799,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Earthworms are model invertebrates for studying annelid anatomy and physiology.",
     keyTakeaways: ["They respire through the skin — which is why they stay moist."],
     examTraps: ["The 'heart' of an earthworm is replaced by dorsal vessels, not a true heart."],
+    specialCases: [
+      {
+        name: "No true heart exists",
+        condition: "Locating the pumping vessels in Pheretima",
+        formula: "\\text{aortic arches (lateral hearts)}",
+        meaning: "Earthworms have no chambered heart; contraction of the dorsal vessel and the lateral hearts in segments 7-9 keep the blood moving, so calling it a heart is the standard error.",
+      },
+      {
+        name: "Closed circulation with haemoglobin",
+        condition: "Blood flowing inside vessels, never in sinuses",
+        formula: "\\text{closed system}\\ (\\text{Hb in plasma})",
+        meaning: "Blood stays within vessels and carries dissolved haemoglobin, so earthworm blood is red and this is a genuine closed circulatory system, not an open one.",
+      },
+      {
+        name: "Respiration through wet skin",
+        condition: "An earthworm on hot dry soil",
+        formula: "\\text{skin must stay moist}",
+        meaning: "Oxygen diffuses directly through the body surface, so a dried-out worm suffocates, which is why they surface after rain and burrow when the soil dries.",
+      },
+      {
+        name: "Hermaphrodite needs cross-fertilisation",
+        condition: "Two worms exchanging sperm during copulation",
+        formula: "\\text{both sexes}\\ \\text{on one worm}",
+        meaning: "Each worm has testes and ovaries but generally cannot self-fertilise, so two individuals must exchange sperm — the exception to sexual reproduction needing two parents.",
+      },
+      {
+        name: "Typhlosole increases absorptive area",
+        condition: "The intestine of a detritivorous worm",
+        formula: "\\text{dorsal fold}\\ \\Rightarrow\\ \\text{larger surface}",
+        meaning: "The typhlosole folds the inner wall into a ridge, giving extra surface for absorbing nutrients from decaying humus, which is how the worm feeds on leaf litter.",
+      },
+    ],
     visualType: "earthworm-external-anatomy",
     solvedProblems: [
       {
@@ -996,6 +1866,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Rana tigrina exemplifies the major amphibian body systems.",
     keyTakeaways: ["Frogs are tetrapods with a 3-chambered heart."],
     examTraps: ["Amphibians have a partial septum, not a complete one."],
+    specialCases: [
+      {
+        name: "Three chambers, mixed blood",
+        condition: "Two atria and a single ventricle",
+        formula: "2\\,\\text{atria} + 1\\,\\text{ventricle}",
+        meaning: "Oxygenated and deoxygenated blood meet in the one ventricle because the septum is only partial, so amphibian blood is always a mixture.",
+      },
+      {
+        name: "Ectothermic, so no metabolic heat",
+        condition: "A frog in cold versus warm air",
+        formula: "\\text{body } T \\approx \\text{ambient } T",
+        meaning: "A frog's activity and digestion track the surrounding temperature, so it feeds and breeds in the warm season and hibernates through the cold one.",
+      },
+      {
+        name: "Cutaneous respiration needs moisture",
+        condition: "A frog lifted out of water and dried",
+        formula: "\\text{skin O_2}\\ (\\text{needs wet})",
+        meaning: "Most gas exchange happens through the moist skin, so a dried frog suffocates even with lungs present, which is why amphibians stay near water.",
+      },
+      {
+        name: "Metamorphosis is thyroid-driven",
+        condition: "A tadpole growing limbs and losing its tail",
+        formula: "\\text{thyroxine}\\ \\to\\ \\text{froglet}",
+        meaning: "Removal of the thyroid arrests metamorphosis while thyroid hormone alone induces it, so this is both a life-cycle stage and an endocrine-control example.",
+      },
+      {
+        name: "Frogs eat insects, not plants",
+        condition: "A frog on a pond bank with a small prey item",
+        formula: "\\text{insectivore}\\ (\\text{not herbivore})",
+        meaning: "A frog is a carnivore that catches insects with a sticky tongue, so an adult frog is a secondary consumer, not a primary one.",
+      },
+    ],
     visualType: "frog-anatomy-overview",
     solvedProblems: [
       {
@@ -1033,6 +1935,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Biodiversity loss is accelerated by habitat destruction, poaching, pollution and invasive species.",
     keyTakeaways: ["Nepal's IUCN Red List is a key reference for national conservation."],
     examTraps: ["In-situ is preferred because it protects whole ecosystems, not just species."],
+    specialCases: [
+      {
+        name: "Biodiversity has three nested levels",
+        condition: "Defining the term in an exam answer",
+        formula: "\\text{genetic} + \\text{species} + \\text{ecosystem}",
+        meaning: "Genetic variation within a species, the number of species, and the range of ecosystems are three distinct levels, so a one-level definition is always incomplete.",
+      },
+      {
+        name: "Hotspot needs two criteria",
+        condition: "Certifying a region as a biodiversity hotspot",
+        formula: "\\ge 1500\\ \\text{endemic plant species}",
+        meaning: "It must hold at least 1,500 endemic vascular plant species and have lost more than 70 percent of its original vegetation, so richness alone does not qualify a region.",
+      },
+      {
+        name: "Ex-situ is a backstop, not a substitute",
+        condition: "A species that no longer has a safe habitat",
+        formula: "\\text{in-situ first},\\ \\text{ex-situ second}",
+        meaning: "A zoo or seed bank can hold only a small number of individuals, so they protect genetics and prevent total extinction but cannot replace the ecosystem itself.",
+      },
+      {
+        name: "Genetic diversity is the base level",
+        condition: "Many individuals of one species in a reserve",
+        formula: "\\text{species count} \\ne\\ \\text{genetic diversity}",
+        meaning: "A reserve holding many members of a single inbred species is still genetically poor, so the narrowest level of diversity is the first to be lost in a bottleneck.",
+      },
+      {
+        name: "Momentum phase precedes conservation area",
+        condition: "A Nepalese community forest passing through registration",
+        formula: "\\text{momentum}\\ \\to\\ \\text{phase}\\ \\to\\ \\text{CF}",
+        meaning: "A community forest is entered in three steps, so the sequence of naming stages is itself examinable in Nepal-specific conservation questions.",
+      },
+    ],
     visualType: "biodiversity-conservation",
     solvedProblems: [
       {
@@ -1068,6 +2002,38 @@ export const BIOLOGY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Nepal's conservation combines in-situ networks with ex-situ facilities.",
     keyTakeaways: ["One-horned rhino (Chitwan) is a flagship species."],
     examTraps: ["Ramsar sites are wetlands, not necessarily national parks."],
+    specialCases: [
+      {
+        name: "Ramsar site is a wetland listing",
+        condition: "Kathmandu Valley or Bara wetland designated internationally",
+        formula: "\\text{Ramsar}\\ \\ne\\ \\text{national park}",
+        meaning: "The Ramsar Convention lists wetlands of international importance, which may sit inside a park, a reserve or outside any protected area at all.",
+      },
+      {
+        name: "Corridors join two isolated parks",
+        condition: "Two rhino populations separated by farmland",
+        formula: "\\text{corridor}\\ \\Rightarrow\\ \\text{gene flow}",
+        meaning: "A corridor lets animals move between populations, so gene flow prevents inbreeding and allows recolonisation after a local loss.",
+      },
+      {
+        name: "Indiscriminate grazing inside a reserve",
+        condition: "Domestic cattle permitted in a buffer zone",
+        formula: "\\text{buffer zone}\\ \\text{limits entry}",
+        meaning: "A reserve often allows controlled grazing or collection that a national park forbids, so the two categories differ in how much human use they permit.",
+      },
+      {
+        name: "One-horned rhino is a flagship species",
+        condition: "Chitwan and Bardia as fundraising priorities",
+        formula: "\\text{flagship}\\ \\to\\ \\text{funding}",
+        meaning: "A charismatic species is used to raise international support and donations, so the rhino carries conservation value far beyond its own population.",
+      },
+      {
+        name: "Rare but not the same as endangered",
+        condition: "Placing a species on the IUCN Red List",
+        formula: "\\text{CR},\\ \\text{EN},\\ \\text{VU},\\ \\text{LC}",
+        meaning: "Red List categories run from critically endangered down to least concern, and a species is rare in population but protected as a national symbol in a separate sense.",
+      },
+    ],
     visualType: "conservation-strategies-nepal",
     solvedProblems: [
       {

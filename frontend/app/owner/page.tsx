@@ -53,7 +53,7 @@ const OWNER_TOOLS = [
     href: "/credits",
     icon: Coins,
     title: "Credits & Plan",
-    desc: "Your unlimited owner credits and premium status.",
+    desc: "Your owner credits and premium status.",
     accent: "text-violet-400 bg-violet-500/10 border-violet-500/25",
   },
 ];

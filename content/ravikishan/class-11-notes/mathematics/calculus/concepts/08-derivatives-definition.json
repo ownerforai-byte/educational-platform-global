@@ -1,85 +1,115 @@
 {
-  "title": "Derivatives: Definition",
   "unitSlug": "calculus",
+  "title": "Derivatives: Definition",
+  "topicTitle": "Derivatives: definition",
   "topicSlug": "derivatives-definition",
-  "topicTitle": "Derivatives: Definition",
   "relevance": 100,
   "notes": [
-    "**Derivatives: Definition:** Class 11 concept.",
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
+    "**The definition is a limit of secants:** $f'(x)=\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}=\\lim_{t\\to x}\\frac{f(t)-f(x)}{t-x}$. Geometrically this is the limit of slopes of chords of the graph, hence the slope of the tangent at $x$.",
+    "**Domain matters:** $f'(x)$ can exist even where $f(x)$ does not, and the reverse is false — a discontinuity anywhere in $[x,x+h]$ blocks the limit. Since the quotient needs both values, a removable hole in $f$ removes the derivative there too.",
+    "**Left and right derivatives:** $f'(x^-)$ and $f'(x^+)$ must BOTH exist and be equal. $|x|$ at 0 has left derivative $-1$ and right derivative $+1$, so no derivative exists, even though the function is continuous there.",
+    "**A derivative need not be continuous:** $f(x)=x^2\\sin\\frac1x$ (with $f(0)=0$) is differentiable everywhere including 0, yet $f'$ is discontinuous at 0. Differentiability implies continuity of $f$, never of $f'$.",
+    "**Infinite derivative — vertical tangent:** for $f(x)=x^{1/3}$ at 0 the quotient diverges while both one-sided limits have the same sign, giving a vertical tangent and a derivative that does not exist as a finite number.",
+    "**Two practical routes:** for a familiar function use the rule table, but for an unfamiliar one use first principles. Computing $\\frac{d}{dx}(x^2)$ from first principles gives $2x$, which is what the power rule asserts — deriving it once removes the need to repeat it."
   ],
   "confusion": [
-    "Distinguish concepts in Derivatives: Definition.",
-    "Check formula conditions."
+    "Treating $\\frac{dy}{dx}$ as an ordinary fraction and cancelling terms across the derivative.",
+    "Concluding a derivative exists because $f$ is continuous — continuity is necessary, not sufficient.",
+    "Assuming $f'$ must be continuous wherever $f'$ exists."
   ],
-  "practice": [
-    "Solve 5 problems on Derivatives: Definition.",
-    "Derive the key formula for Derivatives: Definition."
-  ],
+  "practice": [],
   "universalFacts": [
-    "Derivatives: Definition appears in exams.",
-    "Foundational for advanced topics."
+    "The derivative is defined by a limit, which is why numerical differentiation suffers catastrophic cancellation: for tiny $h$ the numerator is the difference of two nearly equal quantities.",
+    "A vertical tangent is exactly where a curve's rate of change is momentarily infinite — the cusp of a gear tooth and the tip of a raindrop both have one."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [
-    "Application of Derivatives: Definition",
-    "Numerical problem on Derivatives: Definition",
-    "Daily life use of Derivatives: Definition"
-  ],
-  "practiceQuestions": [
-    "Q1. Define Derivatives: Definition.",
-    "Q2. Key formula for Derivatives: Definition.",
-    "Q3. Problem on Derivatives: Definition."
-  ],
+  "examples": [],
+  "practiceQuestions": [],
   "formulas": [
-    "Formula for Derivatives: Definition: [insert from textbook].",
-    "Key relationship: [variable formula]."
+    "First principles: $f'(x)=\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}$",
+    "Alternative form: $f'(x)=\\lim_{t\\to x}\\frac{f(t)-f(x)}{t-x}$",
+    "Exists only if $f'(x^-)=f'(x^+)$",
+    "Power rule (from first principles): $f'(x)=nx^{n-1}$"
   ],
   "keyPoints": [
-    "Core principle of Derivatives: Definition",
-    "Application of Derivatives: Definition",
-    "Connection of Derivatives: Definition to other topics"
+    "The derivative is a limit of secant slopes, giving the tangent slope.",
+    "Differentiability implies continuity of $f$, but not of $f'$.",
+    "Both one-sided derivatives must exist and agree."
   ],
-  "summary": "Derivatives: Definition covers essential principles and applications.",
+  "summary": "The derivative is defined as the limit of difference quotients, which is the limit of chord slopes and hence the tangent slope. It exists only when the left and right derivatives both exist and agree, and differentiability presupposes continuity of the function itself — though the derivative itself need not be continuous. First principles handles any function, and applying it to $x^2$ is what produces the power rule.",
   "specialNotes": [
-    "Check conditions for Derivatives: Definition.",
-    "Derivatives: Definition connects to other topics."
+    "Where a formula is quoted it is valid only under the conditions stated; Treating $\\frac{dy}{dx}$ as an ordinary fraction and cancelling terms across the derivative.",
+    "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Derivatives: Definition",
-    "Statement 2: Theorem related to Derivatives: Definition",
-    "Statement 3: Condition for Derivatives: Definition to be valid",
-    "Statement 4: Principle governing Derivatives: Definition",
-    "Statement 5: Corollary or consequence of Derivatives: Definition"
+    "Statement 1: $f'(x)=\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}$.",
+    "Statement 2: Differentiability at a point implies continuity at that point.",
+    "Statement 3: A differentiable function need not have a continuous derivative.",
+    "Statement 4: $f'(x)$ exists only if $f'(x^-)=f'(x^+)$.",
+    "Statement 5: A vertical tangent corresponds to an infinite derivative, not to a finite one."
   ],
   "importantNotes": [
-    "Derivatives: Definition is based on fundamental principles."
+    "Topic anchor: Two practical routes  for a familiar function use the rule table, but for an unfamiliar one use first principles."
   ],
   "examShortTricks": [
-    "Recall the formula for Derivatives: Definition."
+    "When in doubt, compute from first principles — it is always valid and earns full marks.",
+    "Check both one-sided derivatives before declaring a derivative exists."
   ],
   "examNotes": [
-    "Focus on Derivatives: Definition problems - significant marks."
+    "Deriving $f'(x)$ from first principles for a simple polynomial is a guaranteed 3–4 mark question."
   ],
   "mcs": [
     {
-      "question": "Which describes Derivatives: Definition?",
+      "question": "At $x=0$, $f(x)=|x|$:",
       "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
+        "$f'(0)=0$",
+        "$f'(0)=1$",
+        "$f'(0)$ does not exist",
+        "$f'(0)=-1$"
       ],
-      "answer": "A"
+      "answer": "C",
+      "explanation": "The left derivative is $-1$ and the right is $+1$; because they disagree, the derivative does not exist."
+    },
+    {
+      "question": "Differentiability implies:",
+      "options": [
+        "continuity",
+        "a continuous derivative",
+        "linearity",
+        "a bounded derivative"
+      ],
+      "answer": "A",
+      "explanation": "A discontinuity blocks the limit, so differentiability forces continuity of the function — but says nothing about continuity of the derivative."
+    },
+    {
+      "question": "For $f(x)=x^2$, first principles at $x=2$ gives:",
+      "options": [
+        "2",
+        "4",
+        "8",
+        "0"
+      ],
+      "answer": "B",
+      "explanation": "$\\lim_{h\\to0}\\frac{(2+h)^2-4}{h}=\\lim(4+h)=4$."
     }
   ],
   "importantConcepts": [
-    "Definition and significance of Derivatives: Definition."
+    "The derivative is a limit of secant slopes, giving the tangent slope.",
+    "Differentiability implies continuity of $f$, but not of $f'$.",
+    "Both one-sided derivatives must exist and agree."
   ],
   "importantTasks": [
-    "Solve 5 problems on Derivatives: Definition."
+    "Work through the authored practice problems and re-derive each key formula from the definition."
   ],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "visualType": "derivative",
+  "numericals": [
+    "**1. [Idea: first principles on a rational function with a removable hole]** Find the derivative of $f(x)=\\dfrac{x^2-9}{x-3}$ at $x=5$, and state at which points $f$ is not differentiable.\\newline\\newline**Solution: at 5 the hole is irrelevant**, so simplify first: $f(x)=x+3$ for $x\\ne3$, hence $f'(5)=1$.\\newline\\newline**Domain analysis:** $f$ is undefined at $x=3$, so $f'(3)$ does not exist — this is a domain failure, not a limit failure.$^{\\bullet}$ Re-examine $x=3$ after repairing: with $f(3)=6$ the function is $x+3$ everywhere and $f'(3)=1$.\\newline\\newline**Answer:** $f'(5)=1$; the original $f$ is not differentiable at $3$ only because it is undefined there. **Trap:** students who do not simplify try first principles and hit $\\frac{(x+3)-6}{x-3}$ — the same trap, just slower.",
+    "**2. [Idea: first principles for a radical, where rationalising is mandatory]** Differentiate $f(x)=\\sqrt{x}$ from first principles, and hence find $f'(4)$.\\newline\\newline**Solution:**$^{\\bullet}$ $f'(x)=\\lim_{h\\to0}\\dfrac{\\sqrt{x+h}-\\sqrt{x}}{h}$.\\newline\\newline$^{\\bullet}$ Multiply by the conjugate, $\\frac{\\sqrt{x+h}+\\sqrt{x}}{\\sqrt{x+h}+\\sqrt{x}}$:$\\newline\\lim_{h\\to0}\\dfrac{(x+h)-x}{h\\left(\\sqrt{x+h}+\\sqrt{x}\\right)} = \\lim_{h\\to0}\\dfrac{1}{\\sqrt{x+h}+\\sqrt{x}}$.\\newline\\newline$^{\\bullet}$ Letting $h\\to0$: $f'(x)=\\dfrac{1}{2\\sqrt{x}}$.\\newline\\newline**Answer:** $f'(x)=\\frac{1}{2\\sqrt{x}}$ for $x>0$, so $f'(4)=\\frac{1}{4}$. **Note:** the expression is undefined at $x=0$ — the square-root function has an infinite slope there, a vertical tangent, consistent with $f'(x)\\to\\infty$.",
+    "**3. [Idea: implicit differentiation, then eliminate to a function of one variable]** For $x^2 + y^2 = 9$, find $\\frac{dy}{dx}$ and the slope of the tangent at the point $(0,3)$.\\newline\\newline**Solution:** Differentiate throughout, treating $y$ as a function of $x$:$^{\\bullet}$ $2x + 2y\\dfrac{dy}{dx} = 0$, so $\\dfrac{dy}{dx} = -\\dfrac{x}{y}$.\\newline\\newline**At $(0,3)$:** the formula gives $-\\frac03 = 0$, so the tangent is **horizontal** there.\\newline\\newline**Why the formula is not a constant slope:** the circle is not a graph of a single function globally — the top half is $y=\\sqrt{9-x^2}$ and the bottom is $-\\sqrt{9-x^2}$, with opposite slopes.\\newline\\newline**Answer:** $\\frac{dy}{dx}=-\\frac{x}{y}$; slope at $(0,3)$ is $0$. **Contrast:** at $(3,0)$ the formula divides by $y=0$, correctly signalling a **vertical** tangent.",
+    "**4. [Idea: a parametric curve whose parameter cancels, with a vertical-tangent check]** A curve is $x = 3t - t^3$, $y = 3t^2$. Find $\\frac{dy}{dx}$ and where the tangent is vertical.\\newline\\newline**Solution:**$^{\\bullet}$ $\\dfrac{dx}{dt} = 3 - 3t^2$ and $\\dfrac{dy}{dt} = 6t$.$^{\\bullet}$ $\\dfrac{dy}{dx} = \\dfrac{6t}{3-3t^2} = \\dfrac{2t}{1-t^2}$.\\newline\\newline**Horizontal tangent** ($\\frac{dy}{dx}=0$): $2t=0 \\Rightarrow t=0$, giving the point $(0,0)$.\\newline\\newline**Vertical tangent** ($\\frac{dx}{dt}=0$): $3-3t^2=0 \\Rightarrow t=\\pm1$, giving points $(2,3)$ and $(-2,3)$.\\newline\\newline**Answer:** $\\frac{dy}{dx}=\\frac{2t}{1-t^2}$; horizontal tangent at $t=0$, vertical at $t=\\pm1$. **Trap:** finding a vertical tangent by setting $\\frac{dy}{dx}$ infinite without checking that $\\frac{dx}{dt}$ is genuinely zero.",
+    "**5. [Idea: a second implicit derivative needs the original relation substituted at the end]** For $x^2+y^2 = 25$, obtain $\\frac{d^2y}{dx^2}$ in terms of $y$ alone.\\newline\\newline**Solution:** From part 3, $\\dfrac{dy}{dx} = -\\dfrac{x}{y}$. Differentiate this fraction — do NOT re-derive from scratch:$^{\\bullet}$ $\\dfrac{d}{dx}\\left(-xy^{-1}\\right) = -\\left[\\left(\\frac{dx}{dx}\\right)y^{-1} + x\\left(\\frac{d}{dx}y^{-1}\\right)\\right]$.\\newline\\newline$^{\\bullet}$ Since $\\frac{d}{dx}y^{-1} = -y^{-2}\\dfrac{dy}{dx} = -y^{-2}\\left(-\\frac{x}{y}\\right) = \\dfrac{x}{y^3}$:$\\newline\\frac{d^2y}{dx^2} = -\\left[\\frac{1}{y} + x\\cdot\\frac{x}{y^3}\\right] = -\\frac{y^2 + x^2}{y^3}$.\\newline\\newline$^{\\bullet}$ Finally substitute $x^2+y^2=25$ to remove $x$: $\\dfrac{d^2y}{dx^2} = -\\dfrac{25}{y^3}$.\\newline\\newline**Answer:** $\\frac{d^2y}{dx^2}=-\\frac{r^2}{y^3}=-\\frac{25}{y^3}$ for a circle of radius $r=5$.\\newline\\newline**Check at the top $(0,5)$:** $-\\frac{25}{125}=-\\frac15$, so the top of the circle is concave down with $|f''|=\\frac{1}{5}$ — exactly $\\frac1r$, as a circle of curvature $r$ requires. **Trap:** writing $625$ by squaring $25$ again; the $25$ is already $r^2$.",
+    "**6. [Idea: logarithmic differentiation for a variable exponent]** Differentiate $y = x^x$ and hence find the stationary point of $y=\\dfrac{x^x}{e^x}$ for $x>0$.\\newline\\newline**Solution:** Differentiate $y=x^x$ by taking logs:$^{\\bullet}$ $\\ln y = x\\ln x$, so $\\dfrac{1}{y}\\dfrac{dy}{dx} = \\ln x + 1$.$^{\\bullet}$ Hence $\\dfrac{dy}{dx} = x^x(\\ln x + 1)$.\\newline\\newline**Now** $g(x)=\\dfrac{x^x}{e^x} = x^x e^{-x}$, so $\\dfrac{d}{dx}\\ln g = (\\ln x + 1) - 1 = \\ln x$.\\newline\\newlineSo $g'(x) = g(x)\\ln x$, which vanishes when $\\ln x = 0$, i.e. $x=1$.\\newline\\newline**Answer:** $\\frac{dy}{dx}=x^x(\\ln x+1)$; the stationary point of $g$ is $x=1$. **Verification:** $g(1)=1\\cdot e^{-1}=e^{-1}$, and $g' = g\\ln x$ changes from negative ($x<1$) to positive ($x>1$), confirming a minimum."
+  ]
 }

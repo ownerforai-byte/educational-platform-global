@@ -1,0 +1,84 @@
+{
+  "title": "Cell Structure and Organelles",
+  "unitSlug": "biomolecules-and-cell-biology",
+  "topicSlug": "cell-structure-and-organelles",
+  "topicTitle": "Cell Structure and Organelles",
+  "relevance": 95,
+  "notes": [
+    "### 1. Cell Theory Recap",
+    "- All living organisms are composed of one or more cells",
+    "- The cell is the basic unit of structure and function",
+    "- All cells arise from pre-existing cells (Virchow: omnis cellula e cellula)",
+    "- Cells can be prokaryotic (no nucleus) or eukaryotic (nucleus present)"
+  ],
+  "importantConcepts": [
+    "Cell membrane: selectively permeable phospholipid bilayer",
+    "Nucleus: controls cell activities, contains DNA",
+    "Mitochondria: powerhouse of the cell (ATP production)",
+    "Ribosomes: protein synthesis machinery (70S in prokaryotes, 80S in eukaryotes)",
+    "Endoplasmic reticulum: RER (protein synthesis), SER (lipid synthesis)",
+    "Golgi apparatus: modification, sorting, and packaging of proteins/lipids",
+    "Lysosomes: digestive compartments containing hydrolytic enzymes",
+    "Chloroplasts: site of photosynthesis (plant cells only)",
+    "Centrosome: organizes microtubules in animal cells"
+  ],
+  "importantStatements": [
+    "The cell membrane regulates what enters and exits the cell via passive and active transport.",
+    "Mitochondria generate ATP through oxidative phosphorylation in the electron transport chain.",
+    "Eukaryotic cells are larger (10-100 µm) than prokaryotic cells (1-10 µm).",
+    "Ribosomes are the sites of protein synthesis, translating mRNA into polypeptide chains."
+  ],
+  "keyPoints": [
+    "Organelles have specific functions: nucleus (control), mitochondria (energy), ER (synthesis), Golgi (packaging), lysosomes (digestion).",
+    "Prokaryotic cells lack membrane-bound organelles but have a nucleoid region with DNA.",
+    "Eukaryotic cells have a true nucleus surrounded by a nuclear envelope."
+  ],
+  "specialNotes": [
+    "The cell membrane is fluid mosaic model – a dynamic arrangement of lipids and proteins.",
+    "Mitochondrial DNA is circular and similar to bacterial DNA, supporting endosymbiotic theory.",
+    "Chloroplasts contain thylakoids where light-dependent reactions occur."
+  ],
+  "examShortTricks": [
+    "Cell membrane is selectively permeable – small molecules diffuse freely, large molecules need carriers.",
+    "Mitochondria = powerhouse of the cell (produces ATP).",
+    "Ribosomes are found on rough ER and free in cytoplasm.",
+    "Chloroplasts are only in plant cells and algae."
+  ],
+  "examNotes": [
+    "Cell theory has three postulates: 1) All living things are made of cells, 2) Cells are the basic unit of structure/function, 3) New cells come from existing cells.",
+    "Organelle function questions commonly appear – match organelle to its primary function.",
+    "Compare prokaryotic vs eukaryotic cell structures in exam questions."
+  ],
+  "practiceQuestions": [
+    "Which organelle produces ATP?",
+    "What is the function of the rough endoplasmic reticulum?",
+    "Why do mitochondria have their own DNA?",
+    "What is the difference between prokaryotic and eukaryotic cells?"
+  ],
+  "mcs": [
+    {
+      "question": "Which organelle produces ATP?",
+      "options": ["Nucleus", "Mitochondria", "Ribosome", "Cell membrane"],
+      "answer": "Mitochondria",
+      "explanation": "Mitochondria are known as the powerhouses of the cell because they generate ATP through oxidative phosphorylation."
+    },
+    {
+      "question": "What is the function of the rough endoplasmic reticulum?",
+      "options": ["Protein folding", "Energy production", "DNA replication", "Carbohydrate storage"],
+      "answer": "Protein folding",
+      "explanation": "The rough ER has ribosomes attached and is responsible for synthesizing and transporting proteins."
+    },
+    {
+      "question": "Why do mitochondria have their own DNA?",
+      "options": ["To replicate independently", "To store energy", "To protect the cell", "To communicate with the nucleus"],
+      "answer": "To replicate independently",
+      "explanation": "Mitochondrial DNA is circular and similar to bacterial DNA, supporting the endosymbiotic theory where mitochondria originated from free-living bacteria."
+    },
+    {
+      "question": "What is the difference between prokaryotic and eukaryotic cells?",
+      "options": ["Size only", "Presence of nucleus", "Number of organelles", "Ability to move"],
+      "answer": "Presence of nucleus",
+      "explanation": "Eukaryotic cells have a true nucleus enclosed by a nuclear membrane, while prokaryotic cells lack this compartment."
+    }
+  ]
+}

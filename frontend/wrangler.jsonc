@@ -1,12 +1,21 @@
 {
-  "$schema": "node_modules/wrangler/config-schema.json",
-  "name": "ravikisan",
-  "account_id": "b244e776afbf67f3b3c114d9b206588c",
-  "main": ".open-next/worker.js",
-  "compatibility_date": "2025-01-01",
-  "compatibility_flags": ["nodejs_compat"],
-  "observability": {
-    "enabled": true
-  },
-  "workers_dev": true
+	"$schema": "node_modules/wrangler/config-schema.json",
+	"main": ".open-next/worker.js",
+	"name": "ravikisan",
+	"account_id": "b244e776afbf67f3b3c114d9b206588c",
+	"compatibility_date": "2026-08-01",
+	"compatibility_flags": ["nodejs_compat", "global_fetch_strictly_public"],
+	"assets": {
+		"directory": ".open-next/assets",
+		"binding": "ASSETS"
+	},
+	"services": [
+		{
+			"binding": "WORKER_SELF_REFERENCE",
+			"service": "ravikisan"
+		}
+	],
+	"images": {
+		"binding": "IMAGES"
+	}
 }

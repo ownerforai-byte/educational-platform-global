@@ -48,4 +48,123 @@
     "Fact (Nuclear stability): The most stable nuclide is $^{56}\\\text{Fe}$ with a binding energy per nucleon of $8.79\\\\\\\\,\\\text{MeV}$. Nuclides lighter than iron release energy through fusion; those heavier than iron release energy through fission."
   ],
   "visualType": "isotopes"
+,
+  "summary": "The atomic mass unit is defined as 1/12 the mass of a carbon-12 atom, 1.660539 × 10⁻²⁷ kg, and every nuclear mass is quoted in it. Isotopes are atoms with the same atomic number Z but different mass number A, so they share chemical properties but differ in mass and stability. When Z protons and N neutrons combine into a nucleus, the assembled nucleus is lighter than its separated nucleons, and this mass defect Δm = Zmₚ + Nmₙ − M gives a binding energy BE = Δmc², or roughly 931.5 Δm(u) MeV. Dividing by A gives the binding energy per nucleon, which climbs to a maximum of about 8.8 MeV near ⁵⁶Fe and then falls, which is the single fact that explains why light nuclei fuse and heavy nuclei fission. The same ideas support carbon-14 dating with its 5730-year half-life, abundance-weighted atomic weights, and mass spectrometry by mass-to-charge ratio.",
+  "importantConcepts": [
+    "Atomic mass unit: 1 u = 1.660539 × 10⁻²⁷ kg, defined as exactly 1/12 the mass of a neutral carbon-12 atom in its ground state.",
+    "Isotopes: same Z, different A, hence identical electron configuration and chemical properties but different nuclear mass, stability and decay mode, such as ³⁵Cl (75.78%) and ³⁷Cl (24.22%).",
+    "Mass defect Δm = Zmₚ + Nmₙ − M_nucleus, which is always positive because the bound nucleus is lighter than its separated parts.",
+    "Binding energy BE = Δmc², with BE(MeV) ≈ 931.494 × Δm(u), and binding energy per nucleon BE/A as the stability measure that peaks at about 8.8 MeV near ⁵⁶Fe.",
+    "Packing fraction f = (M − A)/A, a fractional measure of how far the exact mass departs from the integer mass number, most negative for ⁵⁶Fe.",
+    "Applications built on these ideas: carbon-14 dating with a 5730-year half-life, abundance-weighted standard atomic weights, and mass spectrometry separating ions by m/z."
+  ],
+  "importantStatements": [
+    "The mass number A is an integer count of nucleons, but the exact mass in u differs from A because of mass defect; ¹²C is exactly 12 u by definition whereas ¹H is 1.007825 u.",
+    "The mass defect is always positive, so the binding energy is always positive and the nucleus is always more stable than its free nucleons.",
+    "Binding energy per nucleon rises from about 1 MeV for light hydrogen to about 8.8 MeV near A ≈ 56 and then slowly declines to about 7.6 MeV for uranium.",
+    "Because BE/A falls on both sides of iron, nuclei lighter than iron release energy by fusion while nuclei heavier than iron release energy by fission.",
+    "Both the mass number A and the atomic number Z are conserved in every nuclear reaction, and these are the first checks to make when balancing an equation.",
+    "Living organisms maintain ¹⁴C/¹²C ≈ 1.1 × 10⁻¹², and after death this ratio falls as ¹⁴C decays by β⁻ emission, so the remaining ratio gives the time since death."
+  ],
+  "importantTasks": [
+    "Calculate the binding energy and binding energy per nucleon of a given nuclide from the listed proton, neutron and nuclear masses.",
+    "Use BE/A values for two nuclides to decide which is more stable and to predict whether a reaction between them will release energy.",
+    "Compute the Q-value of a nuclear reaction from the difference between initial and final masses and state whether it is exothermic or endothermic.",
+    "Work out the weighted standard atomic weight of an element from the masses and natural abundances of its isotopes, such as chlorine.",
+    "Determine the age of a sample from a stated fraction of remaining ¹⁴C or remaining activity, using the 5730-year half-life."
+  ],
+  "keyPoints": [
+    "Master the conversion 1 u = 931.5 MeV/c², and compute Δm in u first before multiplying by 931.5 to obtain binding energy in MeV.",
+    "The order of operations for mass-defect problems is: list nucleons, add their masses, subtract the nuclear mass, multiply by 931.5 to get BE, then divide by A for BE/A.",
+    "⁵⁶Fe with BE/A ≈ 8.79 MeV is the most stable nuclide and marks the peak of the binding-energy curve.",
+    "A reaction releases energy whenever the total mass of the products is less than that of the reactants, that is when Δm > 0.",
+    "Isotopes share chemical properties because the electron configuration depends on Z alone, not on the neutron count.",
+    "Tabulated atomic weight is an abundance-weighted mean of the isotope masses, as for chlorine, where 0.7578 × 34.96885 + 0.2422 × 36.96590 ≈ 35.45 u."
+  ],
+  "specialNotes": [
+    "Use nuclear masses, not atomic masses, in Δm = Zmₚ + Nmₙ − M, because atomic masses include the electron masses; mixing the two is the most common numerical error.",
+    "The packing fraction f = (M − A)/A is negative for strongly bound nuclides and positive for weakly bound ones, so a negative f signals high stability.",
+    "Carbon-14 dating is usable only up to roughly 50 kyr, beyond which the remaining ¹⁴C fraction is too small to measure reliably.",
+    "Binding energy is released when nucleons combine into a nucleus, not when a nucleus is broken up: splitting ⁵⁶Fe into fragments also costs energy.",
+    "1 g of matter fully converted to energy yields 9 × 10¹³ J, about 21 kilotons of TNT, which sets the scale of nuclear weapons and reactor outputs."
+  ],
+  "examShortTricks": [
+    "Binding energy per nucleon, not total binding energy, decides stability and whether fusion or fission releases energy — always divide by A before concluding.",
+    "Check the sign of Δm first: Δm > 0 means energy is released (exothermic), Δm < 0 means energy must be supplied (endothermic).",
+    "For ¹⁴C, remember that 12.5% remaining means three half-lives, since (1/2)³ = 1/8; this turns any dating question into simple arithmetic.",
+    "Balance nuclear equations by conserving A first, then Z; protons, neutrons and alpha particles are the usual participants.",
+    "Convert u to MeV by multiplying by 931.5 rather than by c², since the factor 931.5 already folds in (3 × 10⁸)²."
+  ],
+  "examNotes": [
+    "A standard two-mark numerical gives masses of a nucleus and asks for BE and BE/A, expecting the two-step calculation in the order listed.",
+    "One-mark questions frequently ask which nuclide is most stable, which process (fusion or fission) is used in reactors or in the sun, or the half-life of a named isotope.",
+    "Binding-energy-per-nucleon curve questions often ask why ⁵⁶Fe is the most stable nuclide and why energy is released on both sides of the peak.",
+    "Carbon-14 dating appears as a two-mark numerical asking for age from a percentage remaining, or as a one-mark question on the 5730-year half-life.",
+    "Isotope abundance questions ask for the weighted mean atomic mass or ask which isotope is used for dating, testing care with significant figures."
+  ],
+  "practiceQuestions": [
+    "Define the atomic mass unit and explain why it is based on carbon-12.",
+    "Two atoms of the same element have the same Z but different A. What are they called, and which properties do they share and which differ?",
+    "Calculate the mass defect and binding energy per nucleon of ⁴He from the given proton, neutron and nuclear masses, expressing the result in MeV.",
+    "Explain, using the binding energy per nucleon curve, why fusion works for light nuclei and fission works for heavy nuclei.",
+    "A ¹⁴C sample shows 12.5% of its original activity. How many half-lives have elapsed and how old is the sample?",
+    "For the reaction ¹⁴N + n → ¹⁴C + p, use the given masses to decide whether the reaction is exothermic or endothermic and find the Q-value."
+  ],
+  "mcs": [
+    {
+      "question": "Isotopes of an element differ in:",
+      "options": [
+        "number of protons",
+        "number of neutrons",
+        "number of electrons",
+        "chemical properties"
+      ],
+      "answer": "B",
+      "explanation": "Isotopes share the same atomic number Z and therefore the same electron configuration and chemical behaviour, but they differ in neutron count and hence in mass number A."
+    },
+    {
+      "question": "The nuclide with the greatest binding energy per nucleon, and hence the most stable, is:",
+      "options": [
+        "²H",
+        "¹⁶O",
+        "⁵⁶Fe",
+        "²³⁸U"
+      ],
+      "answer": "C",
+      "explanation": "The BE/A curve peaks near A ≈ 56 at about 8.8 MeV per nucleon. Light nuclei such as ²H sit on the rising side and heavy nuclei such as ²³⁸U on the falling side."
+    },
+    {
+      "question": "One atomic mass unit is equivalent in energy to:",
+      "options": [
+        "931.5 MeV",
+        "1.66 × 10⁻²⁷ MeV",
+        "1.5 × 10⁻¹⁰ J",
+        "3 × 10⁸ MeV"
+      ],
+      "answer": "A",
+      "explanation": "1 u = 1.660539 × 10⁻²⁷ kg, and E = mc² for this mass gives 931.5 MeV, the standard factor used to convert mass defects into binding energies."
+    },
+    {
+      "question": "A nuclear reaction is exothermic when:",
+      "options": [
+        "the total product mass is greater than the total reactant mass",
+        "the total product mass is less than the total reactant mass",
+        "the mass number changes",
+        "the atomic number is not conserved"
+      ],
+      "answer": "B",
+      "explanation": "Energy is released when mass is lost, so Δm = (reactant mass − product mass) > 0 gives Q = Δmc² > 0, an exothermic reaction."
+    },
+    {
+      "question": "The half-life of carbon-14 used in dating is approximately:",
+      "options": [
+        "573 years",
+        "5730 years",
+        "57 300 years",
+        "1.1 million years"
+      ],
+      "answer": "B",
+      "explanation": "The half-life of ¹⁴C is 5730 years, which allows practical dating of organic material up to roughly 50 000 years."
+    }
+  ]
 }

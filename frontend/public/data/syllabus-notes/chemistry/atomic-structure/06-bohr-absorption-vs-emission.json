@@ -64,5 +64,85 @@
   "tabGroup": "Atomic-Structure-Learner-Notes",
   "source": "ravikishan",
   "duplicateType": 2,
-  "filename": "06-bohr-absorption-vs-emission.json"
+  "filename": "06-bohr-absorption-vs-emission.json",
+  "summary": "Bohr's frequency condition, hν = E₂ − E₁, produces both kinds of line spectrum. In an emission spectrum atoms are excited to level n₂ and the electron falls to n₁, emitting one photon per jump, giving bright lines on a dark background. In an absorption spectrum a cool gas of ground-state atoms is placed before a continuous white-light source and removes exactly those photons whose energy matches a level gap, giving dark lines on a bright continuum — Fraunhofer's solar lines are precisely this. Because the same energy difference is involved in both directions, absorption and emission lines fall at identical wavelengths (Kirchhoff's law), but the patterns differ: absorption needs the lower level populated, so cold hydrogen shows only the Lyman series, while an excited discharge tube can show every series.",
+  "importantConcepts": [
+    "Emission spectrum: excited atoms fall from n₂ to n₁, emitting one photon per jump — bright lines on a dark background",
+    "Absorption spectrum: cool ground-state atoms remove matching photons from a continuous source — dark lines on a bright background",
+    "Same gap E₂ − E₁ in both directions, so absorption and emission lines coincide (Kirchhoff's law)",
+    "Population condition: absorption lines need the lower level occupied, so cold hydrogen shows only Lyman",
+    "Energy-level diagram language: upward arrow = absorption, downward arrow = emission, n = ∞ = ionisation continuum"
+  ],
+  "importantStatements": [
+    "Absorption lines are missing wavelengths, not energy lost by the atom; the atom keeps the photons that match its gaps.",
+    "Emission requires prior excitation, so a ground-state hydrogen atom can absorb but cannot emit a Balmer line.",
+    "Absorption and emission lines occur at the same wavelengths but show different series because the populated levels differ.",
+    "Fraunhofer's solar lines are absorption lines formed when the cool solar atmosphere absorbs from the hot photosphere.",
+    "Quantum mechanics later restricts Bohr's free Δn rule by the selection rule Δl = ±1."
+  ],
+  "importantTasks": [
+    "Distinguish emission and absorption spectra, giving one example of each.",
+    "Explain, using Bohr's frequency condition, why absorption and emission lines coincide.",
+    "Explain why the absorption spectrum of cold hydrogen shows only the Lyman series.",
+    "Identify the transition absorbed when hydrogen is irradiated with 102.6 nm light."
+  ],
+  "keyPoints": [
+    "Bright lines on dark = emission; dark lines on bright continuum = absorption.",
+    "hν = 13.6(1/n₁² − 1/n₂²) eV fixes the wavelength in both spectra.",
+    "The Na D line at 589 nm is the classic emission/absorption pair — street lamps and the flame test share it.",
+    "Neon signs, fireworks and the He–Ne laser (632.8 nm) all use discrete atomic emission lines."
+  ],
+  "specialNotes": [
+    "Absorption needs a populated lower level, so a hot dense source shows emission while a cool thin gas shows absorption.",
+    "A discharge tube shows several series at once because collisions populate many upper levels.",
+    "Line positions, not brightness, carry the element's identity; intensities need transition probabilities."
+  ],
+  "examShortTricks": [
+    "Draw the energy-level diagram with arrows up for absorption and down for emission — it is nearly a guaranteed mark.",
+    "State the population condition for an absorption line: the lower level must be occupied.",
+    "102.6 nm light is absorbed by hydrogen as the 1 → 3 Lyman transition (ΔE = 12.09 eV)."
+  ],
+  "examNotes": [
+    "A labelled energy-level diagram plus one sentence on each spectrum is a standard 3–4 mark question.",
+    "One-mark items test what Fraunhofer lines are or which series a cool gas shows.",
+    "Applications (flame tests, AAS, ICP, laser, neon signs) often form the last part of the question."
+  ],
+  "practiceQuestions": [
+    "Distinguish between emission and absorption spectra with one example of each.",
+    "Explain why absorption and emission lines fall at the same wavelengths.",
+    "Why does the absorption spectrum of cold hydrogen contain only the Lyman series?",
+    "What are Fraunhofer lines and how are they produced?"
+  ],
+  "mcs": [
+    {
+      "question": "Fraunhofer lines in the solar spectrum are:",
+      "options": [
+        "Emission lines",
+        "Absorption lines",
+        "Band spectra",
+        "Continuous radiation"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Absorption and emission lines of the same element occur at:",
+      "options": [
+        "Different wavelengths",
+        "The same wavelengths",
+        "Only in the ultraviolet",
+        "Only in the visible region"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A line spectrum consists of bright lines on a dark background in:",
+      "options": [
+        "An absorption spectrum",
+        "An emission spectrum",
+        "A continuous spectrum",
+        "A band spectrum"
+      ],
+      "answer": "B"
+    }
+  ]
 }

@@ -1,92 +1,124 @@
 {
   "title": "Combination of Capacitors",
   "unitSlug": "capacitor",
-  "topicSlug": "combination-capacitors",
-  "topicTitle": "Combination of Capacitors",
+  "topicSlug": "combination-of-capacitors",
+  "topicTitle": "Combination of capacitors",
   "relevance": 100,
   "notes": [
-    "**Combination of Capacitors:** Class 11 concept.",
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
+    "**Series Combination Theory:** In a series arrangement, capacitors $C_1, C_2, \\dots, C_n$ are connected end-to-end such that an identical magnitude of charge $Q$ is deposited on each plate via electrostatic induction. The total applied voltage across the combination is the sum of individual potential drops: $V = V_1 + V_2 + \\dots + V_n$.",
+    "**Equivalent Capacitance (Series):** Since $V_i = \\frac{Q}{C_i}$, substituting yields $V = Q(\\frac{1}{C_1} + \\frac{1}{C_2} + \\dots + \\frac{1}{C_n})$. For an equivalent capacitor $C_s$, $V = \\frac{Q}{C_s}$. Equating gives $\\frac{1}{C_s} = \\frac{1}{C_1} + \\frac{1}{C_2} + \\dots + \\frac{1}{C_n}$. For two capacitors: $C_s = \\frac{C_1 C_2}{C_1 + C_2}$. The equivalent capacitance is always strictly smaller than the smallest individual capacitor in series.",
+    "**Voltage Division in Series:** The potential drop across any capacitor in series is inversely proportional to its capacitance: $V_i \\propto \\frac{1}{C_i}$. For two capacitors: $V_1 = \\frac{C_2}{C_1 + C_2}V$ and $V_2 = \\frac{C_1}{C_1 + C_2}V$.",
+    "**Parallel Combination Theory:** In a parallel arrangement, the positive plates of all capacitors are connected to a common terminal and negative plates to another common terminal. Consequently, the potential difference across every capacitor is identical ($V$), while the total charge supplied by the source splits among them: $Q = Q_1 + Q_2 + \\dots + Q_n$.",
+    "**Equivalent Capacitance (Parallel):** Substituting $Q_i = C_i V$ gives $Q = (C_1 + C_2 + \\dots + C_n)V$. For an equivalent capacitor $C_p$, $Q = C_p V$. Hence, $C_p = C_1 + C_2 + \\dots + C_n$. The equivalent capacitance in parallel is always larger than the greatest individual capacitor in the network.",
+    "**Redistribution of Charge & Loss of Energy:** When two isolated capacitors carrying charges $Q_1 = C_1 V_1$ and $Q_2 = C_2 V_2$ are connected in parallel, charge flows until both reach a common potential $V_c = \\frac{\\text{Total charge}}{\\text{Total capacitance}} = \\frac{C_1 V_1 + C_2 V_2}{C_1 + C_2}$. During charge sharing, some electrostatic energy is irrevocably dissipated as heat and electromagnetic radiation through connecting wires: $\\Delta U = U_i - U_f = \\frac{1}{2}\\frac{C_1 C_2}{C_1 + C_2}(V_1 - V_2)^2 > 0$."
   ],
   "confusion": [
-    "Distinguish concepts in Combination of Capacitors.",
-    "Check formula conditions."
+    "Confusing series/parallel capacitor rules with resistor rules: Capacitors add directly in parallel ($C_p = \\sum C_i$) and reciprocally in series ($1/C_s = \\sum 1/C_i$), which is the exact mathematical inverse of resistors ($R_s = \\sum R_i$, $1/R_p = \\sum 1/R_i$).",
+    "Assuming energy is conserved during charge sharing: While total charge is strictly conserved ($sum Q_i = \\text{const}$), electrostatic potential energy is NOT conserved. $\\Delta U = \\frac{1}{2}\\frac{C_1 C_2}{C_1+C_2}(V_1-V_2)^2$ is always lost as Joule heat in connecting leads and radiation, regardless of wire resistance.",
+    "Incorrect polarity connection: If opposite-polarity terminals are joined (positive of $C_1$ to negative of $C_2$), initial net charge is $|C_1 V_1 - C_2 V_2|$, yielding $V_c = \\frac{|C_1 V_1 - C_2 V_2|}{C_1 + C_2}$ and greater energy loss: $\\Delta U = \\frac{1}{2}\\frac{C_1 C_2}{C_1 + C_2}(V_1 + V_2)^2$."
   ],
   "practice": [
-    "Solve 5 problems on Combination of Capacitors.",
-    "Derive the key formula for Combination of Capacitors."
+    "Three capacitors of $2\\,\\mu\\text{F}$, $3\\,\\mu\\text{F}$, and $6\\,\\mu\\text{F}$ are connected (a) in series, (b) in parallel across $100\\text{ V}$. Find $C_{eq}$ and charge in each case. Solution: (a) Series: $\\frac{1}{C_s} = \\frac{1}{2} + \\frac{1}{3} + \\frac{1}{6} = \\frac{3+2+1}{6} = 1 \\implies C_s = 1\\,\\mu\\text{F}$. Charge $Q = C_s V = 10^{-6} \\times 100 = 100\\,\\mu\\text{C}$ on each. (b) Parallel: $C_p = 2 + 3 + 6 = 11\\,\\mu\\text{F}$. Total charge $Q = 11 \\times 100 = 1100\\,\\mu\\text{C}$.",
+    "A $4\\,\\mu\\text{F}$ capacitor is charged to $200\\text{ V}$ and then connected in parallel with an uncharged $2\\,\\mu\\text{F}$ capacitor. Find common potential and energy lost. Solution: $V_c = \\frac{C_1 V_1 + C_2 (0)}{C_1 + C_2} = \\frac{4 \\times 200}{4 + 2} = \\frac{800}{6} = 133.33\\text{ V}$. Energy lost $\\Delta U = \\frac{1}{2}\\frac{C_1 C_2}{C_1 + C_2}(V_1 - 0)^2 = \\frac{1}{2}\\frac{4 \\times 2}{6} \\times 10^{-6} \\times (200)^2 = \\frac{4}{6} \\times 10^{-6} \\times 40000 = 0.0267\\text{ J} = 26.7\\text{ mJ}$."
   ],
   "universalFacts": [
-    "Combination of Capacitors appears in exams.",
-    "Foundational for advanced topics."
+    "The energy loss formula $\\Delta U = \\frac{1}{2}\\frac{C_1 C_2}{C_1 + C_2}(V_1 - V_2)^2$ holds true even for ideal superconducting zero-resistance connecting wires, where the missing energy is radiated away as electromagnetic waves.",
+    "Connecting identical capacitors in series of $N$ units increases the breakdown voltage rating by factor $N$ while reducing overall capacitance to $C/N$."
   ],
   "animation3D": "capacitor",
   "motionGraphics": "capacitor",
   "examples": [
-    "Application of Combination of Capacitors",
-    "Numerical problem on Combination of Capacitors",
-    "Daily life use of Combination of Capacitors"
+    "High-voltage capacitor banks: Utility power sub-stations connect capacitors in series-parallel matrices to improve power factor and withstand tens of kilovolts without breakdown.",
+    "Bypass capacitor networks in ICs: A small 0.1 μF ceramic capacitor in parallel with a 10 μF electrolytic capacitor decouples both high-frequency spikes and low-frequency power supply ripple.",
+    "Marx generator: Charges capacitors in parallel at low DC voltage, then rapidly switches them into series via spark gaps to produce mega-volt pulses for lightning simulation."
   ],
   "practiceQuestions": [
-    "Q1. Define Combination of Capacitors.",
-    "Q2. Key formula for Combination of Capacitors.",
-    "Q3. Problem on Combination of Capacitors."
+    "Q1. Derive expressions for the equivalent capacitance of three capacitors connected (a) in series, and (b) in parallel.",
+    "Q2. Two capacitors C₁ and C₂ charged to potentials V₁ and V₂ are connected in parallel. Derive the expression for the common potential and the energy dissipated during charge sharing.",
+    "Q3. How would you connect three capacitors of 6 μF each to obtain an equivalent capacitance of (a) 9 μF, (b) 4 μF?",
+    "Q4. Why does charge sharing between two charged capacitors always result in a net loss of electrostatic potential energy?"
   ],
   "formulas": [
-    "Formula for Combination of Capacitors: [insert from textbook].",
-    "Key relationship: [variable formula]."
+    "Series combination: $\\frac{1}{C_s} = \\sum_{i=1}^n \\frac{1}{C_i}$ ; for two: $C_s = \\frac{C_1 C_2}{C_1 + C_2}$",
+    "Parallel combination: $C_p = \\sum_{i=1}^n C_i$",
+    "Common potential on parallel connection: $V_c = \\frac{C_1 V_1 + C_2 V_2}{C_1 + C_2}$",
+    "Energy dissipated on sharing charge: $\\Delta U = \\frac{1}{2}\\frac{C_1 C_2}{C_1 + C_2}(V_1 - V_2)^2$"
   ],
   "keyPoints": [
-    "Core principle of Combination of Capacitors",
-    "Application of Combination of Capacitors",
-    "Connection of Combination of Capacitors to other topics"
+    "In series connection, charge Q is identical across all capacitors, while potential divides inversely with capacitance.",
+    "In parallel connection, potential difference V is identical across all branches, while charge distributes directly proportional to capacitance.",
+    "Common potential is determined by total charge divided by total capacitance.",
+    "Energy loss during charge sharing depends quadratically on initial voltage difference (V₁ - V₂)²."
   ],
-  "summary": "Combination of Capacitors covers essential principles and applications.",
+  "summary": "Capacitors in series share identical charge with reciprocal addition 1/C_s = ∑ 1/C_i, yielding an equivalent capacitance smaller than any individual unit. Capacitors in parallel share identical voltage with direct addition C_p = ∑ C_i, maximizing charge storage. When two charged capacitors are coupled in parallel, charges redistribute to a common potential V_c = (C₁V₁ + C₂V₂) / (C₁ + C₂), accompanied by energy loss ΔU = ½ [C₁C₂/(C₁+C₂)](V₁ - V₂)² dissipated as heat.",
   "specialNotes": [
-    "Check conditions for Combination of Capacitors.",
-    "Combination of Capacitors connects to other topics."
+    "To obtain 9 μF from three 6 μF capacitors: connect two in parallel (12 μF) in series with the third: (12 × 6)/(12 + 6) = 4 μF. For 9 μF: two in series (3 μF) in parallel with the third: 3 + 6 = 9 μF.",
+    "For N identical capacitors of capacitance C: Series combination yields C/N; Parallel combination yields NC. The ratio C_p / C_s = N²."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Combination of capacitors",
-    "Statement 2: Theorem related to Combination of capacitors",
-    "Statement 3: Condition for Combination of capacitors to be valid",
-    "Statement 4: Principle governing Combination of capacitors",
-    "Statement 5: Corollary or consequence of Combination of capacitors"
+    "Statement 1: In a series combination of capacitors, each capacitor carries the same magnitude of electric charge regardless of its capacitance.",
+    "Statement 2: The equivalent capacitance of a series combination is always less than the smallest capacitance in the group.",
+    "Statement 3: In a parallel combination of capacitors, the potential difference across every individual capacitor is equal to the applied terminal voltage.",
+    "Statement 4: When two capacitors are joined in parallel, total electric charge is conserved, but total electrostatic energy decreases.",
+    "Statement 5: The ratio of equivalent parallel capacitance to equivalent series capacitance for N identical capacitors is N²."
   ],
   "importantNotes": [
-    "Combination of Capacitors is based on fundamental principles."
+    "In bridge networks of capacitors, if C₁/C₂ = C₃/C₄, the bridge is balanced; no charge flows through the diagonal branch, which can be removed from calculation."
   ],
   "examShortTricks": [
-    "Recall the formula for Combination of Capacitors."
+    "Two capacitors in series: product over sum $C_s = (C_1 C_2) / (C_1 + C_2)$.",
+    "Energy loss is always positive: $\\Delta U \\ge 0$, vanishing only when initial voltages are already identical ($V_1 = V_2$).",
+    "Ratio $C_p / C_s = N^2$ for $N$ identical capacitors."
   ],
   "examNotes": [
-    "Focus on Combination of Capacitors problems - significant marks."
+    "Derivation of common potential and electrostatic energy loss on sharing charges is a prominent 4-mark derivation in NEB exams."
   ],
   "mcs": [
     {
-      "question": "Which describes Combination of Capacitors?",
+      "question": "Three capacitors of capacitance 3 μF each are connected in series. The equivalent capacitance of the combination is:",
       "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
+        "9 μF",
+        "1 μF",
+        "3 μF",
+        "0.33 μF"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "In series, 1/C_s = 1/3 + 1/3 + 1/3 = 3/3 = 1 μF⁻¹, giving C_s = 1 μF."
+    },
+    {
+      "question": "When two charged capacitors at different potentials are connected together by a conducting wire, which quantity is conserved?",
+      "options": [
+        "Total electrostatic energy only",
+        "Total electric charge only",
+        "Both total charge and total energy",
+        "Neither charge nor energy"
+      ],
+      "answer": "B",
+      "explanation": "Electric charge is strictly conserved by the law of conservation of charge. Electrostatic potential energy decreases due to dissipation as heat during current flow."
+    },
+    {
+      "question": "The ratio of equivalent capacitance in parallel to that in series for n identical capacitors is:",
+      "options": [
+        "n",
+        "1/n",
+        "n²",
+        "1/n²"
+      ],
+      "answer": "C",
+      "explanation": "C_p = nC and C_s = C/n. Therefore C_p / C_s = nC / (C/n) = n²."
     }
   ],
   "importantConcepts": [
-    "Definition and significance of Combination of Capacitors."
+    "Series combination: charge invariance and reciprocal capacitance summation.",
+    "Parallel combination: voltage invariance and direct linear capacitance summation.",
+    "Derivation of common potential V_c and energy loss formula ΔU."
   ],
   "importantTasks": [
-    "Solve 5 problems on Combination of Capacitors."
+    "Derive equivalent capacitance formulas for series and parallel networks.",
+    "Derive the common potential V_c and energy loss ΔU when two capacitors share charge.",
+    "Solve mixed bridge and ladder capacitor network numerical problems."
   ],
   "duplicateType": 2,
-  "tabGroup": "combination-of-capacitors",
-    "specificConditions": [
-      "**Series Charge Conservation:** In series, the charge Q is identical on all capacitors. The battery moves charge from the last plate to the first; intermediate plates share equal and opposite charges.",
-      "**Parallel Voltage Equality:** In parallel, the potential difference V is identical across all capacitors. Each capacitor draws its own charge Qᵢ = CᵢV from the source.",
-      "**Isolated System Constraint:** When capacitors are connected/disconnected from a battery, charge conservation applies only to the isolated plates (total charge on connected plates remains constant). Energy is NOT conserved (heat/radiation losses occur during redistribution)."
-    ],
-  "visualType": "capacitor-combination"
+  "visualType": "parallel-plate-capacitor",
+  "tabGroup": "combination-of-capacitors"
 }

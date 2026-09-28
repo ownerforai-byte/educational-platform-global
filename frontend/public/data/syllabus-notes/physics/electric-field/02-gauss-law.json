@@ -2,245 +2,125 @@
   "title": "Gauss Law",
   "unitSlug": "electric-field",
   "topicSlug": "gauss-law",
-  "topicTitle": "Gauss Law",
+  "topicTitle": "Gauss's law and electric flux",
   "relevance": 100,
-  "animation3D": "electric-field",
-  "motionGraphics": "electric-field",
-  "duplicateType": 2,
-  "tabGroup": "gauss-law-and-electric-flux",
-  "visualType": "gauss-law",
-  "enrichedContent": {
-    "notes": [
-      "**Gauss Law:** Class 11 concept.",
-      "**Why:** connects to other topics.",
-      "**Study:** learn definitions, formulas, practice."
-    ],
-    "confusion": [
-      "Distinguish concepts in Gauss Law.",
-      "Check formula conditions."
-    ],
-    "practice": [
-      "Solve 5 problems on Gauss Law.",
-      "Derive the key formula for Gauss Law."
-    ],
-    "universalFacts": [
-      "Gauss Law appears in exams.",
-      "Foundational for advanced topics."
-    ],
-    "examples": [
-      "Application of Gauss Law",
-      "Numerical problem on Gauss Law",
-      "Daily life use of Gauss Law"
-    ],
-    "practiceQuestions": [
-      "Q1. Define Gauss Law.",
-      "Q2. Key formula for Gauss Law.",
-      "Q3. Problem on Gauss Law."
-    ],
-    "formulas": [
-      "Formula for Gauss Law: [insert from textbook].",
-      "Key relationship: [variable formula]."
-    ],
-    "keyPoints": [
-      "Core principle of Gauss Law",
-      "Application of Gauss Law",
-      "Connection of Gauss Law to other topics"
-    ],
-    "summary": "Gauss Law covers essential principles and applications.",
-    "specialNotes": [
-      "Check conditions for Gauss Law.",
-      "Gauss Law connects to other topics."
-    ],
-    "importantStatements": [
-      "Statement 1: Definition of Gauss law; electric flux",
-      "Statement 2: Theorem related to Gauss law; electric flux",
-      "Statement 3: Condition for Gauss law; electric flux to be valid",
-      "Statement 4: Principle governing Gauss law; electric flux",
-      "Statement 5: Corollary or consequence of Gauss law; electric flux"
-    ],
-    "importantNotes": [
-      "Gauss Law is based on fundamental principles."
-    ],
-    "examShortTricks": [
-      "Recall the formula for Gauss Law."
-    ],
-    "examNotes": [
-      "Focus on Gauss Law problems - significant marks."
-    ],
-    "mcs": [
-      {
-        "question": "Which describes Gauss Law?",
-        "options": [
-          "Correct definition",
-          "Related concept",
-          "Incorrect description",
-          "Unrelated"
-        ],
-        "answer": "A"
-      }
-    ],
-    "importantConcepts": [
-      "Definition and significance of Gauss Law."
-    ],
-    "importantTasks": [
-      "Solve 5 problems on Gauss Law."
-    ],
-    "exercises": [],
-    "visualization": {}
-  },
-  "originalContent": {
-    "notes": [
-      "**Gauss Law:** Class 11 concept.",
-      "**Why:** connects to other topics.",
-      "**Study:** learn definitions, formulas, practice."
-    ],
-    "confusion": [
-      "Distinguish concepts in Gauss Law.",
-      "Check formula conditions."
-    ],
-    "practice": [
-      "Solve 5 problems on Gauss Law.",
-      "Derive the key formula for Gauss Law."
-    ],
-    "universalFacts": [
-      "Gauss Law appears in exams.",
-      "Foundational for advanced topics."
-    ],
-    "examples": [
-      "Application of Gauss Law",
-      "Numerical problem on Gauss Law",
-      "Daily life use of Gauss Law"
-    ],
-    "practiceQuestions": [
-      "Q1. Define Gauss Law.",
-      "Q2. Key formula for Gauss Law.",
-      "Q3. Problem on Gauss Law."
-    ],
-    "formulas": [
-      "Formula for Gauss Law: [insert from textbook].",
-      "Key relationship: [variable formula]."
-    ],
-    "keyPoints": [
-      "Core principle of Gauss Law",
-      "Application of Gauss Law",
-      "Connection of Gauss Law to other topics"
-    ],
-    "summary": "Gauss Law covers essential principles and applications.",
-    "specialNotes": [
-      "Check conditions for Gauss Law.",
-      "Gauss Law connects to other topics."
-    ],
-    "importantStatements": [
-      "Statement 1: Definition of Gauss law; electric flux",
-      "Statement 2: Theorem related to Gauss law; electric flux",
-      "Statement 3: Condition for Gauss law; electric flux to be valid",
-      "Statement 4: Principle governing Gauss law; electric flux",
-      "Statement 5: Corollary or consequence of Gauss law; electric flux"
-    ],
-    "importantNotes": [
-      "Gauss Law is based on fundamental principles."
-    ],
-    "examShortTricks": [
-      "Recall the formula for Gauss Law."
-    ],
-    "examNotes": [
-      "Focus on Gauss Law problems - significant marks."
-    ],
-    "mcs": [
-      {
-        "question": "Which describes Gauss Law?",
-        "options": [
-          "Correct definition",
-          "Related concept",
-          "Incorrect description",
-          "Unrelated"
-        ],
-        "answer": "A"
-      }
-    ],
-    "importantConcepts": [
-      "Definition and significance of Gauss Law."
-    ],
-    "importantTasks": [
-      "Solve 5 problems on Gauss Law."
-    ],
-    "exercises": [],
-    "visualization": {}
-  },
   "notes": [
-    "**Gauss Law:** Class 11 concept.",
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
+    "**Electric Flux Concept & Definition:** Electric flux $\\Phi_E$ is a macroscopic scalar measure of the total number of electric field lines passing perpendicularly through a given geometric surface. For an infinitesimal surface area vector $d\\vec{A} = dA\\,\\hat{n}$ (where $\\hat{n}$ is the unit normal pointing outward for a closed surface), the elemental flux is $d\\Phi_E = \\vec{E} \\cdot d\\vec{A} = E\\,dA\\,\\cos\\theta$. The total electric flux through an arbitrary finite surface $S$ is given by the surface integral: $\\Phi_E = \\iint_S \\vec{E} \\cdot d\\vec{A}$. The SI unit of electric flux is $\\text{N}\\cdot\\text{m}^2/\\text{C}$ or $\\text{V}\\cdot\\text{m}$, with dimensions $[M L^3 T^{-3} I^{-1}]$.",
+    "**Gauss's Law in Electrostatics:** Formulated by Carl Friedrich Gauss in 1835, Gauss's law states that the net outward electric flux through any arbitrary closed imaginary surface (known as a Gaussian surface) is directly proportional to the total net electric charge enclosed by that surface: $\\Phi_{net} = \\oint_S \\vec{E} \\cdot d\\vec{A} = \\frac{Q_{enclosed}}{\\varepsilon_0}$. Gauss's law is one of Maxwell's four fundamental equations of classical electrodynamics, valid for any static or moving charge distribution and any choice of closed surface.",
+    "**Proof of Gauss's Law for a Point Charge:** Consider an isolated positive point charge $+q$ enclosed by a concentric spherical Gaussian surface of radius $r$. Due to spherical symmetry, the electric field has constant radial magnitude $E = \\frac{q}{4\\pi\\varepsilon_0 r^2}$ and is everywhere parallel to the outward area vector $d\\vec{A}$ ($\\theta = 0^\\circ$). The total flux is: $\\oint_S \\vec{E} \\cdot d\\vec{A} = \\oint E\\,dA = E \\oint dA = \\left(\\frac{q}{4\\pi\\varepsilon_0 r^2}\\right)(4\\pi r^2) = \\frac{q}{\\varepsilon_0}$. By superposition, this result holds for any arbitrary shape and any number of enclosed discrete charges.",
+    "**Physical Implications of Gauss's Law:** (1) Charges located strictly outside the Gaussian surface contribute zero net flux through the closed surface, as every entering field line must exit elsewhere; (2) The total flux depends only on the net interior charge $Q_{enc} = \\sum q_i$ and the medium permittivity $\\varepsilon_0$, independent of the size, shape, or position of charges inside; (3) While the total flux depends only on enclosed charge, the electric field $\\vec{E}$ at any specific point on the surface is the resultant field produced by ALL charges (both inside and outside).",
+    "**Gauss's Law in Differential Form (Maxwell's 1st Equation):** Applying the Gauss Divergence Theorem to convert the surface integral to a volume integral yields: $\\oint_S \\vec{E} \\cdot d\\vec{A} = \\iiint_V (\\vec{\\nabla} \\cdot \\vec{E})\\,dV = \\frac{1}{\\varepsilon_0} \\iiint_V \\rho\\,dV$. Equating integrands for an arbitrary infinitesimal volume gives the differential form: $\\vec{\\nabla} \\cdot \\vec{E} = \\frac{\\rho}{\\varepsilon_0}$, stating that electric field divergence at any spatial point is directly proportional to local volume charge density $\\rho$.",
+    "**Selection Criteria for Gaussian Surfaces:** Gauss's law is always fundamentally true, but it is practically useful for calculating electric fields only when the charge configuration exhibits high geometric symmetry (spherical, cylindrical, or planar). A Gaussian surface must satisfy: (1) $\\vec{E}$ is either perpendicular or parallel to the surface; (2) $|\\vec{E}|$ is constant over the portions of the surface where flux is non-zero; (3) The surface passes through the point where the field is to be evaluated."
   ],
   "confusion": [
-    "Distinguish concepts in Gauss Law.",
-    "Check formula conditions."
+    "Thinking electric flux requires an actual physical fluid to flow: Electric flux is purely a geometric measure of field line penetration across a surface, not a transfer of physical mass or fluid.",
+    "Believing that zero net flux implies zero electric field everywhere: If a Gaussian surface encloses zero net charge, $\\oint \\vec{E} \\cdot d\\vec{A} = 0$, but the electric field $\\vec{E}$ at points on the surface need not be zero (e.g., an uncharged sphere placed in a uniform external field has entering flux equal to exiting flux).",
+    "Confusing the field $\\vec{E}$ in Gauss's law with the field produced only by enclosed charges: $\\vec{E}$ in the integral $\\oint \\vec{E} \\cdot d\\vec{A}$ is the total resultant electric field produced by ALL charges in the universe, whereas the right-hand side $Q_{enc}$ counts strictly enclosed charges."
   ],
   "practice": [
-    "Solve 5 problems on Gauss Law.",
-    "Derive the key formula for Gauss Law."
+    "A point charge $q = +8.854\\,\\text{nC}$ is placed at the center of an imaginary cube of side $10\\text{ cm}$. (a) Calculate the total electric flux emerging through the entire surface of the cube. (b) Find the electric flux passing through each of the six individual faces of the cube. Solution: (a) By Gauss's Law, total flux through the closed cube is $\\Phi_{total} = \\frac{q}{\\varepsilon_0} = \\frac{8.854 \\times 10^{-9}\\,\\text{C}}{8.854 \\times 10^{-12}\\,\\text{C}^2/(\\text{N}\\cdot\\text{m}^2)} = 1000\\,\\text{N}\\cdot\\text{m}^2/\\text{C}$. (b) By symmetry, the charge is equidistant from all six faces, so flux distributes equally: $\\Phi_{face} = \\frac{\\Phi_{total}}{6} = \\frac{1000}{6} = 166.7\\,\\text{N}\\cdot\\text{m}^2/\\text{C}$."
   ],
   "universalFacts": [
-    "Gauss Law appears in exams.",
-    "Foundational for advanced topics."
+    "Gauss's law is mathematically equivalent to the inverse-square power in Coulomb's law. If Coulomb's force varied as $1/r^{2+\\delta}$, Gauss's law would break down because flux through concentric spheres would depend on their radius.",
+    "Gauss's law for magnetism is $\\oint \\vec{B} \\cdot d\\vec{A} = 0$, signifying that magnetic field lines never originate or terminate on isolated sources; magnetic monopoles have never been observed in nature."
   ],
+  "animation3D": "electric-field",
+  "motionGraphics": "electric-field",
   "examples": [
-    "Application of Gauss Law",
-    "Numerical problem on Gauss Law",
-    "Daily life use of Gauss Law"
+    "Faraday Cage: A closed conducting mesh or metal box shields its interior completely from external electric fields because any enclosed charge is zero and mobile charges redistribute along exterior surfaces, making $\\vec{E} = 0$ inside.",
+    "Airplane lightning safety: Commercial aircraft bodies made of aluminum act as hollow Gaussian surfaces. When struck by lightning, immense electrostatic current flows across the outer skin without penetrating the passenger cabin.",
+    "Microwave oven shielding: The wire mesh on a microwave door has holes much smaller than the 12 cm wavelength of 2.45 GHz radiation, acting as a conducting Gaussian barrier that keeps radiation safely inside."
   ],
   "practiceQuestions": [
-    "Q1. Define Gauss Law.",
-    "Q2. Key formula for Gauss Law.",
-    "Q3. Problem on Gauss Law."
+    "Q1. Define electric flux and write its SI unit and dimensional formula. Under what condition is electric flux zero through a surface placed in an electric field?",
+    "Q2. State and prove Gauss's theorem in electrostatics for a point charge enclosed by an arbitrary closed surface.",
+    "Q3. A point charge q is placed at one corner of a cube of edge length a. Calculate the electric flux passing through each face of the cube.",
+    "Q4. State Gauss's law in differential form and explain how it relates to Maxwell's first equation of electromagnetism."
   ],
   "formulas": [
-    "Formula for Gauss Law: [insert from textbook].",
-    "Key relationship: [variable formula]."
+    "Electric flux definition: $\\Phi_E = \\iint_S \\vec{E} \\cdot d\\vec{A} = \\iint_S E\\cos\\theta\\,dA$",
+    "Gauss's Law (integral form): $\\oint_S \\vec{E} \\cdot d\\vec{A} = \\frac{Q_{enc}}{\\varepsilon_0}$",
+    "Gauss's Law (differential form): $\\vec{\\nabla} \\cdot \\vec{E} = \\frac{\\rho}{\\varepsilon_0}$",
+    "Flux through one face of cube (charge at center): $\\Phi = \\frac{q}{6\\varepsilon_0}$",
+    "Flux through cube (charge at corner): $\\Phi_{total} = \\frac{q}{8\\varepsilon_0}$"
   ],
   "keyPoints": [
-    "Core principle of Gauss Law",
-    "Application of Gauss Law",
-    "Connection of Gauss Law to other topics"
+    "Electric flux is the surface integral of normal electric field: $\\Phi_E = \\int \\vec{E} \\cdot d\\vec{A}$.",
+    "Total electric flux through any closed Gaussian surface equals $Q_{enc} / \\varepsilon_0$, independent of surface shape.",
+    "External charges contribute zero net flux to a closed Gaussian surface.",
+    "Gauss's law is valid only because Coulomb's law is an exact inverse-square law ($E \\propto 1/r^2$).",
+    "In differential form, $\\vec{\\nabla} \\cdot \\vec{E} = \\rho / \\varepsilon_0$, representing Maxwell's first equation."
   ],
-  "summary": "Gauss Law covers essential principles and applications.",
+  "summary": "Electric flux Φ_E quantifies the perpendicular penetration of electric field lines across a surface (Φ_E = ∬ E · dA). Gauss's Law states that total net outward electric flux through any arbitrary closed Gaussian surface equals the total enclosed charge divided by vacuum permittivity (∮ E · dA = Q_enc / ε₀). While flux depends exclusively on enclosed charges, local surface field E reflects all charges. In differential form, ∇ · E = ρ / ε₀, serving as Maxwell's first equation.",
   "specialNotes": [
-    "Check conditions for Gauss Law.",
-    "Gauss Law connects to other topics."
+    "If a closed surface encloses an electric dipole (charges +q and -q), the net flux through the surface is identically zero because Q_enc = +q - q = 0.",
+    "For an area vector of a closed surface, dA points outward by standard mathematical convention, so exiting flux is positive and entering flux is negative."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Gauss law; electric flux",
-    "Statement 2: Theorem related to Gauss law; electric flux",
-    "Statement 3: Condition for Gauss law; electric flux to be valid",
-    "Statement 4: Principle governing Gauss law; electric flux",
-    "Statement 5: Corollary or consequence of Gauss law; electric flux"
+    "Statement 1: Electric flux through a surface is defined as the surface integral of the electric field vector over that surface.",
+    "Statement 2: The total electric flux through any closed Gaussian surface depends solely on the net charge enclosed within it and is independent of the size or shape of the surface.",
+    "Statement 3: Charges located outside a closed Gaussian surface do not contribute to the total net electric flux through that surface.",
+    "Statement 4: Gauss's theorem is physically equivalent to the inverse-square law of electrostatic force.",
+    "Statement 5: In differential form, Gauss's law states that the divergence of the electric field at any point in space equals the local volume charge density divided by permittivity."
   ],
   "importantNotes": [
-    "Gauss Law is based on fundamental principles."
+    "Remember that the SI unit of electric flux is N·m²/C or V·m, with dimensional formula [M L³ T⁻³ I⁻¹]."
   ],
   "examShortTricks": [
-    "Recall the formula for Gauss Law."
+    "Charge at center of cube: Flux through each of the 6 faces = q / (6ε₀).",
+    "Charge at corner of cube: Enclosing it requires 8 identical cubes; total flux through 1 cube = q / (8ε₀); flux through each of the 3 opposite faces = q / (24ε₀).",
+    "Charge at center of face of cube: Enclosing requires 2 cubes; flux through cube = q / (2ε₀)."
   ],
   "examNotes": [
-    "Focus on Gauss Law problems - significant marks."
+    "State Gauss's theorem in electrostatics and prove it for a point charge enclosed by a spherical surface (frequent 3-4 mark question in NEB Class 11 Physics)."
   ],
   "mcs": [
     {
-      "question": "Which describes Gauss Law?",
+      "question": "If an electric dipole of moment p is enclosed within a closed spherical surface of radius R, the total electric flux emerging from the surface is:",
       "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
+        "p / ε₀",
+        "p / (4πε₀R²)",
+        "Zero",
+        "2p / ε₀"
       ],
-      "answer": "A"
+      "answer": "C",
+      "explanation": "An electric dipole consists of equal and opposite charges (+q and -q). The net enclosed charge is Q_enc = +q - q = 0. By Gauss's Law, total flux Φ = Q_enc / ε₀ = 0."
+    },
+    {
+      "question": "A point charge q is placed at the center of an imaginary sphere of radius R. If the radius of the sphere is doubled, the total electric flux passing through the sphere will:",
+      "options": [
+        "be halved",
+        "be doubled",
+        "be quadrupled",
+        "remain unchanged"
+      ],
+      "answer": "D",
+      "explanation": "According to Gauss's Law, Φ = Q_enc / ε₀, which depends only on the enclosed charge, not on the surface radius or geometry."
+    },
+    {
+      "question": "The SI unit of electric flux is:",
+      "options": [
+        "N / C",
+        "N·m² / C",
+        "N·m / C",
+        "C / (N·m²)"
+      ],
+      "answer": "B",
+      "explanation": "Flux is E · A, so units are (N/C) · m² = N·m²/C, which is also equivalent to Volt-meters (V·m)."
     }
   ],
   "importantConcepts": [
-    "Definition and significance of Gauss Law."
+    "Definition and orientation of area vector and elemental flux dΦ = E · dA.",
+    "Statement, mathematical formulation, and proof of Gauss's Law.",
+    "Independence of Gaussian surface shape and size from net enclosed flux.",
+    "Calculation of flux through geometric polyhedra (cubes, cylinders) for various charge placements."
   ],
   "importantTasks": [
-    "Solve 5 problems on Gauss Law."
+    "Prove Gauss's Law for a spherical surface enclosing a point charge.",
+    "Calculate flux through individual faces of a cube with charges at the center, corner, or edge.",
+    "Relate Gauss's law in integral form to differential form ∇ · E = ρ / ε₀."
   ],
-  "visualization": {}
+  "duplicateType": 2,
+  "visualType": "gauss-law",
+  "tabGroup": "gauss-law-and-electric-flux"
 }

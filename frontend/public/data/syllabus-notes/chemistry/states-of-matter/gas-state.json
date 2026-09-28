@@ -65,5 +65,104 @@
   "tabGroup": "States-Of-Matter-Learner-Notes",
   "source": "ravikishan",
   "duplicateType": 2,
-  "filename": "gas-state.json"
+  "filename": "gas-state.json",
+  "summary": "A gas has no fixed shape or volume and fills its container completely; it has a very low density, being highly compressible and diffusing rapidly, its molecules are far apart with negligible attraction, it exerts pressure uniformly in all directions, and it mixes completely and homogeneously by diffusion and effusion. The four measurable state variables are pressure in Pa, atm or bar, volume, absolute temperature in kelvin, and amount in moles, and the gas laws are the pairwise relations among them at fixed T, P, V or n. Because PV = nRT holds so universally for gases at low pressure, the behaviour points to a common microscopic structure, which the kinetic theory supplies and whose idealisations mark exactly where real gases deviate.",
+  "importantConcepts": [
+    "Defining characteristics: no fixed shape or volume, very low density, high compressibility, rapid diffusion",
+    "Molecules far apart, at about ten molecular diameters at STP, with negligible attraction",
+    "Pressure exerted equally in all directions, arising from momentum transfer at the walls",
+    "Four state variables — pressure P, volume V, temperature T and amount n",
+    "Unit conventions: 1 atm = 101325 Pa = 760 mm Hg = 1.01325 bar, and T(K) = t(°C) + 273.15",
+    "Each gas law fixes two variables and relates the other two — the constant-holding logic"
+  ],
+  "importantStatements": [
+    "Gases have small but definite mass: 22.4 L of air at STP weighs about 29 g.",
+    "Air is a mixture of about 78% N₂, 21% O₂ and 1% Ar and CO₂ that behaves nearly ideally at 1 atm.",
+    "Pressure is isotropic, being equal in every direction.",
+    "1 atm = 101325 Pa = 760 mm Hg = 1.01325 bar, and 2.5 atm = 1900 mm Hg = 2.53 × 10⁵ Pa.",
+    "Temperature in the gas laws must be in kelvin; 0 °C corresponds to 273.15 K.",
+    "The mean free path at 1 atm is about 10⁻⁷ m, so molecules travel roughly a hundred diameters between collisions."
+  ],
+  "importantTasks": [
+    "List the four measurable properties of a gas together with their SI units.",
+    "State three characteristics that distinguish gases from liquids and solids.",
+    "Convert pressures between atm, Pa, bar and mm Hg.",
+    "Explain why gases fill the entire container while liquids do not.",
+    "Explain why the measured regularity of PV = nRT points to a common molecular structure."
+  ],
+  "keyPoints": [
+    "Fix the four variables P, V, T and n in mind before the laws — every law is a two-at-a-time relation among them.",
+    "Use kelvin always; the °C slip is the classic numerical error.",
+    "Low density and high compressibility both follow from molecules being far apart with negligible attraction.",
+    "Gases mix completely by diffusion and effusion, which is how their compositions are analysed.",
+    "The kinetic theory converts these macroscopic regularities into a microscopic model."
+  ],
+  "specialNotes": [
+    "Gases do have mass: 22.4 L of air at STP weighs about 29 g, since the average molar mass of air is about 28.97 g mol⁻¹.",
+    "The pressure a gas exerts is isotropic, so it is equal in every direction — a common misconception is that it acts only downwards.",
+    "The intermolecular distance in a gas at STP is about ten molecular diameters, which is why the gas is mostly empty space.",
+    "Because PV = nRT holds for so many different gases at low pressure, the behaviour cannot be accidental and must reflect a common structure.",
+    "Molar volumes of liquid water and of a gas at STP differ enormously, so gas laws must never be applied to liquids or solids."
+  ],
+  "examShortTricks": [
+    "Hold the four variables P, V, T and n in mind before the laws — each law is a two-at-a-time relation among them.",
+    "Use kelvin always; the °C slip is the classic numerical error.",
+    "1 atm = 101325 Pa = 760 mm Hg; multiply through by 760 or by 101325 to convert.",
+    "Low density, high compressibility and rapid diffusion all follow from one cause: molecules far apart with negligible attraction."
+  ],
+  "examNotes": [
+    "Usually a 2–3 mark question listing the physical characteristics and the four variables with units.",
+    "Unit conversions between atm, Pa, bar and mm Hg are a frequent one-mark item.",
+    "The question 'why does a gas fill the container while a liquid does not' is a standard conceptual item.",
+    "This topic acts as the orientation before the gas laws and the kinetic theory, so it is asked early in the unit."
+  ],
+  "practiceQuestions": [
+    "List the four measurable properties of a gas and their SI units.",
+    "State three characteristics that distinguish gases from liquids and solids.",
+    "Convert 750 mm Hg into Pa and bar.",
+    "Why do gases fill the entire container while liquids do not?",
+    "Convert 2.5 atm into mm Hg and Pa."
+  ],
+  "mcs": [
+    {
+      "question": "1 atmosphere equals:",
+      "options": [
+        "10⁵ Pa",
+        "101325 Pa",
+        "760 Pa",
+        "1 bar exactly"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A gas exerts pressure:",
+      "options": [
+        "only downwards on the container base",
+        "equally in all directions",
+        "only where the molecules are densest",
+        "only upwards"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The density of air at STP compared with water is:",
+      "options": [
+        "much greater",
+        "much smaller, about 1.3 kg m⁻³ against 1000 kg m⁻³",
+        "about equal",
+        "zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The temperature used in all gas-law relationships must be in:",
+      "options": [
+        "degrees Celsius",
+        "kelvin",
+        "degrees Fahrenheit",
+        "arbitrary units"
+      ],
+      "answer": "B"
+    }
+  ]
 }

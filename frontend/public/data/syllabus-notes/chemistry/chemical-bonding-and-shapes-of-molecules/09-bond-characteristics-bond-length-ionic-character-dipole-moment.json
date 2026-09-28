@@ -46,5 +46,104 @@
   "source": "ravikishan",
   "duplicateType": 1,
   "tabGroup": "Chemical-Bonding-Learner-Notes",
-  "filename": "09-bond-characteristics-bond-length-ionic-character-dipole-moment.json"
+  "filename": "09-bond-characteristics-bond-length-ionic-character-dipole-moment.json",
+  "summary": "Bond length is the equilibrium internuclear distance at which the bond's potential energy is minimised, and it depends on atomic size, bond order, degree of s-character and resonance: C–C 154 pm shortens to C=C 134 pm and C≡C 120 pm, while benzene's delocalised bonds measure 139 pm. Bond energy is the energy to break one mole of a bond in the gas phase, rising with bond order from C–C 347 to C=C 614 and C≡C 839 kJ mol⁻¹. Pauling's equation estimates percent ionic character from electronegativity difference, and the dipole moment μ = q × d in Debye measures charge separation, so percent ionic character can also be found as μ_observed/μ_calculated.",
+  "importantConcepts": [
+    "Bond length as the equilibrium internuclear distance, controlled by size, bond order, s-character and resonance",
+    "Bond energy (bond enthalpy) as the energy to break one mole of a bond in the gas phase, giving gaseous atoms",
+    "Bond order, including fractional values from resonance and molecular orbital theory",
+    "Percent ionic character from Pauling's equation using electronegativity difference",
+    "Dipole moment μ = q × d, with 1 D = 3.336 × 10⁻³⁰ C·m",
+    "Percent ionic character from μ_observed/μ_calculated for a 100% ionic bond"
+  ],
+  "importantStatements": [
+    "Bond length decreases as bond order increases: C–C 154 pm, C=C 134 pm, C≡C 120 pm and benzene C–C 139 pm.",
+    "Bond energy increases with bond order: C–C 347, C=C 614, C≡C 839, O=O 498, N≡N 945 and H–H 436 kJ mol⁻¹.",
+    "Greater s-character shortens a bond, so the C–H bond is 109 pm for sp³, 108 pm for sp² and 106 pm for sp.",
+    "Pauling's equation gives about 54.4% ionic character for H–F and about 71% for NaCl, both estimates rather than exact values.",
+    "A 100% ionic bond with one elementary charge separated by 100 pm would have μ = 4.8 D; HCl has μ_obs = 1.08 D, giving about 22.5% ionic character.",
+    "Symmetrical molecules have zero net dipole despite polar bonds: CO₂ and BF₃ give μ = 0, while bent H₂O gives 1.85 D and pyramidal NH₃ gives 1.47 D."
+  ],
+  "importantTasks": [
+    "Calculate the percent ionic character of a bond from an observed dipole moment and a bond length.",
+    "Calculate percent ionic character from electronegativity difference using Pauling's equation.",
+    "Arrange a set of bonds in order of increasing bond length and justify the order using bond order and resonance.",
+    "Predict which of two molecules has the larger dipole moment and explain using vector addition and lone pairs.",
+    "Estimate the enthalpy change of a reaction from tabulated bond energies."
+  ],
+  "keyPoints": [
+    "Fractional bond orders are normal: 1.5 for benzene and ozone, 1.33 for carbonate, 2 for O₂ in MO theory.",
+    "For dipole moments, geometry decides the answer — polar bonds can still give μ = 0 in CO₂ and BF₃.",
+    "NH₃ (1.47 D) has a larger dipole than NF₃ (0.23 D) because in NH₃ the lone pair reinforces the bond dipoles while in NF₃ it opposes them.",
+    "Bond energies are averages, so the C–H value of 413 kJ mol⁻¹ differs from the first C–H dissociation energy in CH₄.",
+    "ΔH = Σ(bonds broken) − Σ(bonds formed); breaking bonds always costs energy."
+  ],
+  "specialNotes": [
+    "Bond length and bond energy are not monotonically linked: H₂ has the shortest known covalent bond at 74 pm and also a remarkably high 436 kJ mol⁻¹ despite that shortness.",
+    "Fluorine forms the shortest bonds of all halogens, because small F atoms repel each other and so bond more closely; never assume bond energy falls monotonically with bond length.",
+    "Pauling's equation gives an estimate, not an exact value, and the actual ionic character also depends on crystal environment and solvation.",
+    "Bond energies are averages over many compounds, so the tabulated C–H value of 413 kJ mol⁻¹ is not the first C–H dissociation energy of CH₄, which is 427 kJ mol⁻¹.",
+    "The relation between electronegativity difference and ionic character is not linear: the exponential e^(−0.25Δχ²) decays rapidly at first and then levels off."
+  ],
+  "examShortTricks": [
+    "% ionic character = (μ_observed/μ_calculated) × 100, with μ_calculated from q and d for a 100% ionic bond.",
+    "1 D = 3.336 × 10⁻³⁰ C·m; a full elementary charge over 100 pm gives 4.8 D.",
+    "Order bond lengths by bond order first, then by resonance, then by atomic size.",
+    "For dipole moments always sketch the geometry and add the vectors — symmetry gives μ = 0."
+  ],
+  "examNotes": [
+    "Calculating percent ionic character from a dipole moment and bond length is a very common 3-mark numerical.",
+    "Ordering bonds by length and justifying with bond order and resonance is a standard 2–3 mark question.",
+    "Comparing NH₃ and NF₃ dipole moments is a favourite test of lone-pair reasoning.",
+    "Estimating ΔH from bond energies, as for the Haber process, is a frequent 3–5 mark numerical."
+  ],
+  "practiceQuestions": [
+    "Calculate the percent ionic character of the H–F bond given an observed dipole moment of 1.86 D and a bond length of 92 pm.",
+    "Arrange the following in order of increasing bond length: C≡C, C=C, C–C and benzene C–C, and explain your ordering.",
+    "Predict which molecule has the larger dipole moment, NF₃ or NH₃, and explain using vector addition and the lone pair.",
+    "Using bond energies, estimate the enthalpy change for N₂(g) + 3H₂(g) → 2NH₃(g).",
+    "Define bond energy and explain why the N≡N bond makes nitrogen so unreactive at room temperature."
+  ],
+  "mcs": [
+    {
+      "question": "The bond length of the C–C bond in benzene is about:",
+      "options": [
+        "120 pm",
+        "134 pm",
+        "139 pm",
+        "154 pm"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The dipole moment of CO₂ is zero because:",
+      "options": [
+        "the C–O bonds are non-polar",
+        "the two equal C=O dipoles are opposite in a linear molecule and cancel",
+        "CO₂ has no bonds",
+        "carbon and oxygen have equal electronegativity"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "For HCl, μ_obs = 1.08 D and μ_calc = 4.8 D, so the percent ionic character is about:",
+      "options": [
+        "22.5%",
+        "45%",
+        "77.5%",
+        "100%"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which of the following has the highest bond energy?",
+      "options": [
+        "C–C",
+        "C=C",
+        "C≡C",
+        "N≡N"
+      ],
+      "answer": "D"
+    }
+  ]
 }

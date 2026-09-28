@@ -64,5 +64,85 @@
   "tabGroup": "Atomic-Structure-Learner-Notes",
   "source": "ravikishan",
   "duplicateType": 2,
-  "filename": "rutherford-s-atomic-model.json"
+  "filename": "rutherford-s-atomic-model.json",
+  "summary": "A compact revision summary of the nuclear atom. Six features: the atom is neutral and mostly empty space; a tiny dense positive nucleus of radius ≈10⁻¹⁵ m sits at the centre holding ≈99.9% of the mass; nuclear volume is ≈10⁻¹⁵ of atomic volume (r_atom ≈10⁻¹⁰ m); electrons revolve in circular orbits with the Coulomb attraction as the centripetal force; the number of electrons equals the number of protons; and the nuclear charge is characteristic of the element, the seed of atomic number. Three successes: it explained the α-scattering observations quantitatively, including the sin⁻⁴ law; it established the nucleus and the division into nucleus plus electron shell, founding nuclear physics; and it led to Moseley's atomic number, the proton (1919), the neutron (1932) and the modern periodic law. Five drawbacks: instability, since a radiating electron must spiral in within ≈10⁻⁸ s; no explanation of line spectra; no electron arrangement, so periodicity and valency are unexplained; purely classical assumptions of circular orbits and a point nucleus; and no neutron, no electron–electron interaction and no bonding.",
+  "importantConcepts": [
+    "Six features: neutral, mostly empty atom; tiny dense nucleus (≈10⁻¹⁵ m, ≈99.9% of the mass); nuclear volume ≈10⁻¹⁵ of atomic volume",
+    "Electrons revolve in circular orbits with Coulomb attraction supplying the centripetal force; e⁻ count = proton count",
+    "Characteristic nuclear charge — the seed of the atomic-number concept and of Moseley's law",
+    "Three successes: quantitative α-scattering including the sin⁻⁴ law, the establishment of the nucleus, and the road to atomic number, proton and neutron",
+    "Five drawbacks: radiating-electron instability, no line spectra, no electron arrangement, purely classical assumptions, no neutron or e⁻–e⁻ interaction"
+  ],
+  "importantStatements": [
+    "Almost the entire atomic mass lies in a volume only 10⁻¹⁵ of the atom's — nuclear density ≈10¹⁷ kg m⁻³.",
+    "The nucleus : atom radius ratio is about 1 : 100 000, since 10⁻¹⁵ m against 10⁻¹⁰ m.",
+    "Rutherford's model allowed any circular orbit; fixed energy levels were Bohr's addition in 1913.",
+    "The model explained scattering well and failed only beyond that scope — on stability and spectra.",
+    "Nuclear density is nearly constant for all nuclei because R = R₀A^(1/3) with R₀ ≈ 1.2 × 10⁻¹⁵ m."
+  ],
+  "importantTasks": [
+    "State any six features of Rutherford's nuclear model.",
+    "Give two successes and four limitations of the model, each with its reason.",
+    "Identify which single feature of the model leads directly to the idea of atomic number.",
+    "Explain, using Maxwell's theory, why the model cannot give atomic stability."
+  ],
+  "keyPoints": [
+    "Feature 6, the characteristic nuclear charge, is the bridge to Moseley's atomic number.",
+    "One-sentence essence: a tiny massive positive nucleus with electrons revolving around it, the whole mostly empty space and held together electrostatically.",
+    "The sin⁻⁴(θ/2) scattering law is the quantitative success of the model.",
+    "Rutherford announced the nuclear model in 1911 and published it fully that year."
+  ],
+  "specialNotes": [
+    "Rutherford's model is not the same as Bohr's: only Bohr quantised the orbits.",
+    "The model was not rejected as useless; it was superseded because it could not explain stability or spectra.",
+    "Ignoring the neutron left isotopes unexplained, which is a defect distinct from the other two classical ones."
+  ],
+  "examShortTricks": [
+    "Use this tab for last-minute revision, but quote each limitation with its reason in full answers.",
+    "Order the drawbacks: instability → line spectra → no electron arrangement → classical assumptions → ignores the neutron.",
+    "The phrase 'distance of closest approach is an upper limit on nuclear size' covers the numerical mark in one line."
+  ],
+  "examNotes": [
+    "Six features with three successes and five drawbacks is a standard 4–5 mark question.",
+    "Drawbacks quoted with reasons are the most commonly examined part of this topic.",
+    "One-mark items usually ask where nearly all the atomic mass resides."
+  ],
+  "practiceQuestions": [
+    "State any six features of Rutherford's nuclear model.",
+    "Give two successes and four limitations of the model with reasons.",
+    "Which feature of the model leads directly to the idea of atomic number?",
+    "Use Maxwell's theory to explain why the model fails to explain stability."
+  ],
+  "mcs": [
+    {
+      "question": "Almost the entire mass of an atom resides in the:",
+      "options": [
+        "Electron shells",
+        "Nucleus",
+        "Empty space",
+        "Valence electrons"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The ratio of nuclear radius to atomic radius is approximately:",
+      "options": [
+        "1 : 10",
+        "1 : 1000",
+        "1 : 100 000",
+        "1 : 1"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Rutherford's model could not explain:",
+      "options": [
+        "Large-angle α-scattering",
+        "The mostly empty nature of the atom",
+        "Atomic stability and line spectra",
+        "Back-scattering of α-particles"
+      ],
+      "answer": "C"
+    }
+  ]
 }

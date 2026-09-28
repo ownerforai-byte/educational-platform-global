@@ -56,11 +56,12 @@ export function BackButton({
     }
 
     if (inAppNav && typeof window !== "undefined" && window.history.length > 1) {
-      // Navigated here from inside the app → exact back, scroll preserved.
+      // Navigated here from inside the app → exact back. RouteScrollReset
+      // lands it at the HEADER, not wherever the previous page was left.
       window.history.back();
     } else {
-      // Deep link / fresh tab → straight back to the home dashboard.
-      router.push("/", { scroll: false });
+      // Deep link / fresh tab → straight back to the home dashboard, at top.
+      router.push("/", { scroll: true });
     }
   };
 
@@ -94,7 +95,7 @@ export function BackButton({
         className
       )}
       aria-label="Go back"
-      title="Go back (preserves scroll position)"
+      title="Go back (opens the previous page at the header)"
     >
       <ArrowLeft className="h-5 w-5" />
     </button>

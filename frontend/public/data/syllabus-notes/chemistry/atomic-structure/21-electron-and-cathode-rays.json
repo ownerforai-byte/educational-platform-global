@@ -62,5 +62,85 @@
   "tabGroup": "Atomic-Structure-Learner-Notes",
   "source": "ravikishan",
   "duplicateType": 2,
-  "filename": "21-electron-and-cathode-rays.json"
+  "filename": "21-electron-and-cathode-rays.json",
+  "summary": "Cathode rays revealed the first subatomic particle. In a discharge tube containing a gas at ≈10⁻² atm with about 10 000 V across the electrodes, rays leave the cathode and travel in straight lines (casting the shadow of a Maltese cross), carry momentum (turning a paddle wheel) and heat the target. They bend towards the positive plate in an electric field and in the direction expected for negative charges in a magnetic field, so they are streams of particles, not waves. Crucially the deflection is the same whatever gas and cathode material are used, so the particle is universal. Thomson (1897) used crossed fields as a velocity selector, Eq = Bqv giving v = E/B, and measured e/m = 1.76 × 10¹¹ C kg⁻¹, about 1837 times the hydrogen ion's ratio; Millikan's oil-drop experiment (1909) then gave e = 1.602 × 10⁻¹⁹ C and hence mₑ = 9.109 × 10⁻³¹ kg.",
+  "importantConcepts": [
+    "Cathode-ray properties: straight-line travel, momentum (paddle wheel), heating effect, deflection by E and B fields",
+    "Negative charge deduced from bending towards the positive plate; not electromagnetic radiation",
+    "Independence of gas and cathode material, so the electron is a universal constituent of all matter",
+    "Thomson's velocity selector Eq = Bqv gives v = E/B, and e/m = 1.76 × 10¹¹ C kg⁻¹",
+    "Millikan's oil-drop experiment (1909) measured e = 1.602 × 10⁻¹⁹ C, giving mₑ = 9.109 × 10⁻³¹ kg"
+  ],
+  "importantStatements": [
+    "Cathode rays are streams of charged particles; electromagnetic waves are not deflected by electric or magnetic fields.",
+    "The e/m of cathode rays is independent of the gas and electrode material used.",
+    "Thomson measured e/m; Millikan measured the charge e alone — the two milestones are distinct.",
+    "The electron is about 1837 times lighter than a hydrogen atom and is the lightest charged particle known.",
+    "Since atoms are neutral, the discovery of the electron forced the existence of positive charge in the atom."
+  ],
+  "importantTasks": [
+    "List five properties of cathode rays with the conclusion drawn from each.",
+    "Explain how Thomson measured e/m using crossed electric and magnetic fields.",
+    "Describe Millikan's oil-drop experiment and state its result.",
+    "Explain why an identical e/m for different cathode materials proves a universal particle."
+  ],
+  "keyPoints": [
+    "Three milestones: cathode rays (nature of the beam), e/m (Thomson, 1897), e (Millikan, 1909).",
+    "Velocity selector condition: undeflected when Eq = Bqv, so v = E/B.",
+    "Thomson received the 1906 Nobel Prize and Millikan the 1923 Nobel Prize.",
+    "The electron's discovery created the need for positive charge — the direct route to Thomson's model and then the nucleus."
+  ],
+  "specialNotes": [
+    "The rays travel in straight lines yet are deflected by fields — the combination that identifies them as particles.",
+    "Cathode rays are the same regardless of the residual gas, which is the strongest evidence for universality.",
+    "Millikan's drops all carried whole-number multiples of e, showing charge is quantised."
+  ],
+  "examShortTricks": [
+    "Property → conclusion pairs score best: straight lines and shadow = particles with mass; bending = negative charge.",
+    "For velocity problems use v = E/B directly — no other formula is needed.",
+    "Link the electron to the 'atom must be neutral' argument; that link is worth a mark every time."
+  ],
+  "examNotes": [
+    "Properties with conclusions plus the e/m measurement is a standard 4–5 mark question.",
+    "A 2-mark numerical on the undeflected speed (v = E/B) is common.",
+    "One-mark items ask who discovered the electron or the value of e/m."
+  ],
+  "practiceQuestions": [
+    "List the properties of cathode rays and the conclusion drawn from each.",
+    "How did Thomson determine e/m with crossed electric and magnetic fields?",
+    "Describe Millikan's oil-drop experiment and give its result.",
+    "Why does the same e/m for all cathode materials prove a universal particle?"
+  ],
+  "mcs": [
+    {
+      "question": "The charge-to-mass ratio of the electron is:",
+      "options": [
+        "1.76 × 10¹¹ C kg⁻¹",
+        "9.1 × 10⁻³¹ C kg⁻¹",
+        "1.6 × 10⁻¹⁹ C kg⁻¹",
+        "1.76 × 10⁻¹¹ C kg⁻¹"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Cathode rays are deflected towards the positive plate, which shows they are:",
+      "options": [
+        "Neutral",
+        "Negatively charged",
+        "Positively charged",
+        "Electromagnetic waves"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The experiment that measured the charge of the electron was:",
+      "options": [
+        "Thomson's cathode-ray tube",
+        "Millikan's oil-drop experiment",
+        "Rutherford's α-scattering experiment",
+        "The Stern–Gerlach experiment"
+      ],
+      "answer": "B"
+    }
+  ]
 }

@@ -61,5 +61,85 @@
   "tabGroup": "Atomic-Structure-Learner-Notes",
   "source": "ravikishan",
   "duplicateType": 2,
-  "filename": "13-schrodinger-wave-equation.json"
+  "filename": "13-schrodinger-wave-equation.json",
+  "summary": "Schrödinger's 1926 equation converts de Broglie's matter waves into the working model of the atom. In one dimension it reads −(h²/8π²m)(d²ψ/dx²) + Vψ = Eψ, that is Ĥψ = Eψ, combining de Broglie's wave property with classical potential energy; for hydrogen, V is the Coulomb potential and the equation is solved in spherical coordinates. ψ itself has no direct physical meaning — the measurable quantity is |ψ|², the probability density, normalised so that ∫|ψ|²dV = 1, with zeros called nodes. Solving it for hydrogen yields wave functions ψₙ,ₗ,ₘ labelled by the three quantum numbers (forced by the boundary conditions, not assumed), energies Eₙ = −13.6/n² eV that agree with Bohr but with the degeneracy Bohr could not give (2s and 2p are equal in energy), and probability distributions instead of paths.",
+  "importantConcepts": [
+    "Time-independent equation: −(h²/8π²m)(d²ψ/dx²) + Vψ = Eψ, written Ĥψ = Eψ",
+    "ψ is a probability amplitude with no direct physical meaning; |ψ|² is the probability density, ∫|ψ|²dV = 1",
+    "Nodes are the regions where ψ = 0; boundary conditions (single-valued, finite, vanishing at infinity) force discrete energies",
+    "Solutions ψₙ,ₗ,ₘ give n (size/energy), l (shape) and m (orientation) automatically, not by assumption",
+    "Energies Eₙ = −13.6/n² eV reproduce Bohr's values but add degeneracy: 2s and 2p are equal in energy"
+  ],
+  "importantStatements": [
+    "Born supplied the probability interpretation: only |ψ|² is physically meaningful, not ψ itself.",
+    "Quantum numbers emerge from the boundary conditions; they are consequences, not postulates.",
+    "The equation gives probability distributions, never trajectories, so Bohr's definite orbit has no place.",
+    "For hydrogen the n = 2 level is four-fold degenerate (one 2s plus three 2p orbitals) — a result Bohr could not produce.",
+    "Schrödinger published the equation in 1926 and shared the 1933 Nobel Prize with Dirac."
+  ],
+  "importantTasks": [
+    "Write the time-independent Schrödinger equation for a particle in one dimension and explain each term.",
+    "State the physical significance of ψ and of |ψ|², including the normalisation condition.",
+    "Explain how the quantum numbers arise from the solution for the hydrogen atom.",
+    "Give two results of the quantum-mechanical model that Bohr's model cannot provide."
+  ],
+  "keyPoints": [
+    "Ĥψ = Eψ is the whole equation; the probability density |ψ|² is the physical output.",
+    "Boundary conditions are the reason energies are discrete — the same logic as a vibrating guitar string.",
+    "n, l and m come from the solution; mₛ does not, and needs Dirac's relativistic equation.",
+    "Orbital replaced orbit because ψ² gives a probability cloud rather than a path."
+  ],
+  "specialNotes": [
+    "The wave function is not a measurable wave like light; ψ can even be negative or complex while |ψ|² stays positive.",
+    "For multi-electron atoms the equation has no exact solution, so Z_eff and approximations are used.",
+    "Solving in one dimension gives a 1D picture; the atom requires spherical coordinates."
+  ],
+  "examShortTricks": [
+    "Write |ψ|² = probability density on the first line; it is the most frequently examined point.",
+    "Mention the boundary conditions whenever you are asked why energies are discrete.",
+    "Degeneracy of 2s and 2p is the one-line answer to 'what does Bohr miss?'."
+  ],
+  "examNotes": [
+    "The equation with term-by-term explanation and the meaning of ψ² is a standard 4–5 mark question.",
+    "One-mark items ask whether ψ or ψ² is meaningful, or who gave the probability interpretation.",
+    "Applications to shapes, nodes and quantum numbers form the second part of such questions."
+  ],
+  "practiceQuestions": [
+    "Write the time-independent Schrödinger equation and explain each term.",
+    "What is the physical significance of ψ and of |ψ|²?",
+    "How do the quantum numbers arise from the solution for hydrogen?",
+    "Give two results of the quantum-mechanical model that Bohr's model cannot provide."
+  ],
+  "mcs": [
+    {
+      "question": "The physically significant quantity in the quantum-mechanical model is:",
+      "options": [
+        "ψ",
+        "|ψ|²",
+        "E",
+        "V"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In the hydrogen atom, the energies obtained from Schrödinger's equation are:",
+      "options": [
+        "Continuous",
+        "Discrete and equal to −13.6/n² eV",
+        "Equal for all n",
+        "Identical to Bohr's in every respect, with no new feature"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The quantum numbers n, l and m arise from:",
+      "options": [
+        "Postulates of Bohr",
+        "The boundary conditions on the solutions of the Schrödinger equation",
+        "The Stern–Gerlach experiment",
+        "Chemical bonding considerations"
+      ],
+      "answer": "B"
+    }
+  ]
 }

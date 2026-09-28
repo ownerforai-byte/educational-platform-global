@@ -2,245 +2,125 @@
   "title": "Coulomb's Law",
   "unitSlug": "electric-charges",
   "topicSlug": "coulomb-law",
-  "topicTitle": "Coulomb's Law",
+  "topicTitle": "Coulomb's law; force between multiple charges",
   "relevance": 100,
-  "animation3D": "electric-charges",
-  "motionGraphics": "electric-charges",
-  "duplicateType": 2,
-  "tabGroup": "coulomb-s-law-and-force-between-multiple-charges",
-  "visualType": "coulomb-law",
-  "enrichedContent": {
-    "notes": [
-      "**Coulomb's Law:** Class 11 concept.",
-      "**Why:** connects to other topics.",
-      "**Study:** learn definitions, formulas, practice."
-    ],
-    "confusion": [
-      "Distinguish concepts in Coulomb's Law.",
-      "Check formula conditions."
-    ],
-    "practice": [
-      "Solve 5 problems on Coulomb's Law.",
-      "Derive the key formula for Coulomb's Law."
-    ],
-    "universalFacts": [
-      "Coulomb's Law appears in exams.",
-      "Foundational for advanced topics."
-    ],
-    "examples": [
-      "Application of Coulomb's Law",
-      "Numerical problem on Coulomb's Law",
-      "Daily life use of Coulomb's Law"
-    ],
-    "practiceQuestions": [
-      "Q1. Define Coulomb's Law.",
-      "Q2. Key formula for Coulomb's Law.",
-      "Q3. Problem on Coulomb's Law."
-    ],
-    "formulas": [
-      "Formula for Coulomb's Law: [insert from textbook].",
-      "Key relationship: [variable formula]."
-    ],
-    "keyPoints": [
-      "Core principle of Coulomb's Law",
-      "Application of Coulomb's Law",
-      "Connection of Coulomb's Law to other topics"
-    ],
-    "summary": "Coulomb's Law covers essential principles and applications.",
-    "specialNotes": [
-      "Check conditions for Coulomb's Law.",
-      "Coulomb's Law connects to other topics."
-    ],
-    "importantStatements": [
-      "Statement 1: Definition of Coulomb's law; force between multiple charges",
-      "Statement 2: Theorem related to Coulomb's law; force between multiple charges",
-      "Statement 3: Condition for Coulomb's law; force between multiple charges to be valid",
-      "Statement 4: Principle governing Coulomb's law; force between multiple charges",
-      "Statement 5: Corollary or consequence of Coulomb's law; force between multiple charges"
-    ],
-    "importantNotes": [
-      "Coulomb's Law is based on fundamental principles."
-    ],
-    "examShortTricks": [
-      "Recall the formula for Coulomb's Law."
-    ],
-    "examNotes": [
-      "Focus on Coulomb's Law problems - significant marks."
-    ],
-    "mcs": [
-      {
-        "question": "Which describes Coulomb's Law?",
-        "options": [
-          "Correct definition",
-          "Related concept",
-          "Incorrect description",
-          "Unrelated"
-        ],
-        "answer": "A"
-      }
-    ],
-    "importantConcepts": [
-      "Definition and significance of Coulomb's Law."
-    ],
-    "importantTasks": [
-      "Solve 5 problems on Coulomb's Law."
-    ],
-    "exercises": [],
-    "visualization": {}
-  },
-  "originalContent": {
-    "notes": [
-      "**Coulomb's Law:** Class 11 concept.",
-      "**Why:** connects to other topics.",
-      "**Study:** learn definitions, formulas, practice."
-    ],
-    "confusion": [
-      "Distinguish concepts in Coulomb's Law.",
-      "Check formula conditions."
-    ],
-    "practice": [
-      "Solve 5 problems on Coulomb's Law.",
-      "Derive the key formula for Coulomb's Law."
-    ],
-    "universalFacts": [
-      "Coulomb's Law appears in exams.",
-      "Foundational for advanced topics."
-    ],
-    "examples": [
-      "Application of Coulomb's Law",
-      "Numerical problem on Coulomb's Law",
-      "Daily life use of Coulomb's Law"
-    ],
-    "practiceQuestions": [
-      "Q1. Define Coulomb's Law.",
-      "Q2. Key formula for Coulomb's Law.",
-      "Q3. Problem on Coulomb's Law."
-    ],
-    "formulas": [
-      "Formula for Coulomb's Law: [insert from textbook].",
-      "Key relationship: [variable formula]."
-    ],
-    "keyPoints": [
-      "Core principle of Coulomb's Law",
-      "Application of Coulomb's Law",
-      "Connection of Coulomb's Law to other topics"
-    ],
-    "summary": "Coulomb's Law covers essential principles and applications.",
-    "specialNotes": [
-      "Check conditions for Coulomb's Law.",
-      "Coulomb's Law connects to other topics."
-    ],
-    "importantStatements": [
-      "Statement 1: Definition of Coulomb's law; force between multiple charges",
-      "Statement 2: Theorem related to Coulomb's law; force between multiple charges",
-      "Statement 3: Condition for Coulomb's law; force between multiple charges to be valid",
-      "Statement 4: Principle governing Coulomb's law; force between multiple charges",
-      "Statement 5: Corollary or consequence of Coulomb's law; force between multiple charges"
-    ],
-    "importantNotes": [
-      "Coulomb's Law is based on fundamental principles."
-    ],
-    "examShortTricks": [
-      "Recall the formula for Coulomb's Law."
-    ],
-    "examNotes": [
-      "Focus on Coulomb's Law problems - significant marks."
-    ],
-    "mcs": [
-      {
-        "question": "Which describes Coulomb's Law?",
-        "options": [
-          "Correct definition",
-          "Related concept",
-          "Incorrect description",
-          "Unrelated"
-        ],
-        "answer": "A"
-      }
-    ],
-    "importantConcepts": [
-      "Definition and significance of Coulomb's Law."
-    ],
-    "importantTasks": [
-      "Solve 5 problems on Coulomb's Law."
-    ],
-    "exercises": [],
-    "visualization": {}
-  },
   "notes": [
-    "**Coulomb's Law:** Class 11 concept.",
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
+    "**Coulomb's Law of Electrostatics:** Formulated by Charles-Augustin de Coulomb in 1785, the electrostatic force between two stationary point charges is directly proportional to the product of the magnitudes of the charges and inversely proportional to the square of the distance between them: $F = k \\frac{|q_1 q_2|}{r^2}$. The electrostatic force acts along the line connecting the centers of the two charges, being repulsive for like charges ($q_1 q_2 > 0$) and attractive for unlike charges ($q_1 q_2 < 0$).",
+    "**Electrostatic Constant & Permittivity of Free Space:** The proportionality constant in vacuum/air is $k = \\frac{1}{4\\pi\\varepsilon_0} \\approx 8.98755 \\times 10^9\\,\\text{N}\\cdot\\text{m}^2/\\text{C}^2 \\approx 9 \\times 10^9\\,\\text{N}\\cdot\\text{m}^2/\\text{C}^2$. Here $\\varepsilon_0$ denotes the electric permittivity of free space, with value $\\varepsilon_0 = 8.854 \\times 10^{-12}\\,\\text{C}^2/(\\text{N}\\cdot\\text{m}^2) = 8.854 \\times 10^{-12}\\,\\text{F/m}$ and dimensions $[M^{-1} L^{-3} T^4 I^2]$.",
+    "**Vector Formulation & Newton's Third Law:** In vector notation, the force $\\vec{F}_{12}$ exerted on charge $q_1$ by charge $q_2$ located at position vector $\\vec{r}_2$ is: $\\vec{F}_{12} = \\frac{1}{4\\pi\\varepsilon_0} \\frac{q_1 q_2}{|\\vec{r}_1 - \\vec{r}_2|^3} (\\vec{r}_1 - \\vec{r}_2) = \\frac{1}{4\\pi\\varepsilon_0} \\frac{q_1 q_2}{r^2} \\hat{r}_{21}$. Because $\\hat{r}_{12} = -\\hat{r}_{21}$, it follows rigorously that $\\vec{F}_{12} = -\\vec{F}_{21}$. Thus, electrostatic forces between two charges constitute an action-reaction pair satisfying Newton's Third Law in its strong central-force form.",
+    "**Dielectric Medium & Relative Permittivity:** When point charges are embedded within an insulating medium of permittivity $\\varepsilon$, dielectric polarization shields the charges, reducing the net force to $F_m = \\frac{1}{4\\pi\\varepsilon} \\frac{|q_1 q_2|}{r^2} = \\frac{F_0}{\\varepsilon_r} = \\frac{F_0}{\\kappa}$. The dimensionless quantity $\\kappa = \\varepsilon_r = \\frac{\\varepsilon}{\\varepsilon_0} \\ge 1$ is the dielectric constant (relative permittivity) of the medium (for vacuum $\\kappa = 1$, dry air $\\approx 1.0006$, water $\\approx 80$, ideal conductor $\\kappa \\to \\infty$).",
+    "**Principle of Linear Superposition:** Electrostatic interaction between any pair of charges is completely unaffected by the presence of other surrounding charges. Consequently, the net electrostatic force on a test charge $q_0$ due to a discrete distribution of $N$ point charges $q_1, q_2, \\dots, q_N$ is the vector sum: $\\vec{F}_{net} = \\sum_{i=1}^N \\vec{F}_{0i} = \\frac{q_0}{4\\pi\\varepsilon_0} \\sum_{i=1}^N \\frac{q_i}{|\\vec{r}_0 - \\vec{r}_i|^3} (\\vec{r}_0 - \\vec{r}_i)$.",
+    "**Electrostatic Equilibrium & Earnshaw's Theorem:** A system of charges is in equilibrium if the net electrostatic force on each constituent charge vanishes ($\\sum \\vec{F} = 0$). By Earnshaw's theorem (derived from Gauss's law $\\vec{\\nabla} \\cdot \\vec{E} = 0$ in charge-free regions), a collection of stationary point charges cannot be maintained in a state of stable equilibrium solely under the influence of inverse-square electrostatic interactions."
   ],
   "confusion": [
-    "Distinguish concepts in Coulomb's Law.",
-    "Check formula conditions."
+    "Adding electrostatic forces as scalar algebraic quantities: Electric forces are vectors! When calculating the net force exerted by multiple charges, one must resolve each pairwise force into Cartesian orthogonal components ($F_x, F_y$) before summing: $F_{net} = \\sqrt{(\\sum F_x)^2 + (\\sum F_y)^2}$.",
+    "Ignoring the medium's dielectric screening: In water ($\\kappa \\approx 80$), the electrostatic force between ions drops to $\\frac{1}{80}$ of its vacuum value, explaining why table salt ($NaCl$) spontaneously dissociates into hydrated $Na^+$ and $Cl^-$ ions in water.",
+    "Applying Coulomb's law to extended charge distributions at close range: Coulomb's inverse-square formula applies strictly to point charges or non-overlapping spherical charge distributions (via Shell Theorem). At close range, induction distorts charge distribution on real conductors."
   ],
   "practice": [
-    "Solve 5 problems on Coulomb's Law.",
-    "Derive the key formula for Coulomb's Law."
+    "Two identical positive point charges $q_1 = q_2 = +2.0\\,\\mu\\text{C}$ are placed at coordinates $(0, 0.3\\text{ m})$ and $(0, -0.3\\text{ m})$ along the y-axis. A third point charge $q_0 = +4.0\\,\\mu\\text{C}$ is placed on the x-axis at $(0.4\\text{ m}, 0)$. Find the magnitude and direction of the net electrostatic force acting on $q_0$. Solution: Distance from each charge to $q_0$ is $r = \\sqrt{0.4^2 + 0.3^2} = 0.5\\text{ m}$. Force magnitude from one charge: $F_1 = \\frac{(9 \\times 10^9)(2 \\times 10^{-6})(4 \\times 10^{-6})}{(0.5)^2} = \\frac{0.072}{0.25} = 0.288\\text{ N}$. Angle with x-axis: $\\cos\\theta = 0.4 / 0.5 = 0.8$, $\\sin\\theta = 0.3 / 0.5 = 0.6$. By symmetry, vertical components cancel ($F_{1y} - F_{2y} = 0$). Net horizontal force: $F_{net} = 2 F_1 \\cos\\theta = 2(0.288)(0.8) = 0.461\\text{ N}$ directed along $+x$ axis."
   ],
   "universalFacts": [
-    "Coulomb's Law appears in exams.",
-    "Foundational for advanced topics."
+    "The electrostatic force between two protons inside a nucleus is approximately $10^{36}$ times stronger than the gravitational force between them: $\\frac{F_e}{F_g} = \\frac{e^2 / (4\\pi\\varepsilon_0 r^2)}{G m_p^2 / r^2} \\approx 1.24 \\times 10^{36}$, showing the colossal dominance of electromagnetism over gravity at microscopic scales.",
+    "Coulomb's law has been tested experimentally to an accuracy of better than 1 part in $10^{16}$, establishing the inverse power $r^{-(2+\\delta)}$ with $|delta| < 10^{-16}$, proving the photon has zero rest mass."
   ],
+  "animation3D": "electric-charges",
+  "motionGraphics": "electric-charges",
   "examples": [
-    "Application of Coulomb's Law",
-    "Numerical problem on Coulomb's Law",
-    "Daily life use of Coulomb's Law"
+    "Ionic lattice cohesion in minerals: Table salt crystals ($NaCl$) are held together by Coulomb attraction between alternating $Na^+$ cations and $Cl^-$ anions, providing a high melting point of 801 °C.",
+    "Atomic electron orbitals: In Bohr's model of the hydrogen atom, the electrostatic Coulomb attraction between the single proton nucleus and orbiting electron ($F = \\frac{e^2}{4\\pi\\varepsilon_0 r^2}$) provides the required centripetal acceleration ($m v^2 / r$).",
+    "Dissolution in polar solvents: The high dielectric constant of liquid water ($\\kappa \\approx 80$) reduces ionic attraction by a factor of 80, permitting thermal agitation to break ionic bonds and dissolve salts."
   ],
   "practiceQuestions": [
-    "Q1. Define Coulomb's Law.",
-    "Q2. Key formula for Coulomb's Law.",
-    "Q3. Problem on Coulomb's Law."
+    "Q1. State Coulomb's law in electrostatics. Express it in vector form and show that it satisfies Newton's third law of motion.",
+    "Q2. Define the SI unit of electric charge (1 Coulomb) in terms of Coulomb's law.",
+    "Q3. Two point charges $+4q$ and $+q$ are fixed at a distance $L$ apart. Where should a third charge $Q$ be placed on the line joining them so that the entire system remains in electrostatic equilibrium?",
+    "Q4. Explain the principle of linear superposition of electrostatic forces and describe how to calculate the net force on a charge located at the vertex of an equilateral triangle with charges at the other two vertices."
   ],
   "formulas": [
-    "Formula for Coulomb's Law: [insert from textbook].",
-    "Key relationship: [variable formula]."
+    "Coulomb's Law (magnitude): $F = \\frac{1}{4\\pi\\varepsilon_0} \\frac{|q_1 q_2|}{r^2}$",
+    "Coulomb's Law (vector form): $\\vec{F}_{12} = \\frac{1}{4\\pi\\varepsilon_0} \\frac{q_1 q_2}{r^2}\\hat{r}_{21} = -\\vec{F}_{21}$",
+    "Force in dielectric medium: $F_m = \\frac{F_0}{\\varepsilon_r} = \\frac{F_0}{\\kappa} = \\frac{1}{4\\pi\\kappa\\varepsilon_0} \\frac{|q_1 q_2|}{r^2}$",
+    "Principle of Superposition: $\\vec{F}_{net} = \\sum_{i=1}^N \\vec{F}_i$",
+    "Proportionality constant in vacuum: $k = \\frac{1}{4\\pi\\varepsilon_0} \\approx 8.99 \\times 10^9\\,\\text{N}\\cdot\\text{m}^2/\\text{C}^2$"
   ],
   "keyPoints": [
-    "Core principle of Coulomb's Law",
-    "Application of Coulomb's Law",
-    "Connection of Coulomb's Law to other topics"
+    "Coulomb's law is an inverse-square central force acting along the line connecting two stationary point charges.",
+    "Vector formulation demonstrates mutual symmetry: $\\vec{F}_{12} = -\\vec{F}_{21}$, fulfilling Newton's third law.",
+    "Presence of a dielectric medium with relative permittivity $\\kappa > 1$ reduces electrostatic force by a factor of $\\kappa$.",
+    "The principle of superposition allows independent pairwise summation of forces in multi-charge configurations.",
+    "Earnshaw's theorem establishes that stable electrostatic equilibrium of stationary point charges is impossible without non-electrostatic constraints."
   ],
-  "summary": "Coulomb's Law covers essential principles and applications.",
+  "summary": "Coulomb's Law quantifies the electrostatic force between two stationary point charges as directly proportional to the product of charges and inversely proportional to the square of their separation: F = k|q₁q₂|/r². In vector form, forces obey Newton's third law (F₁₂ = -F₂₁). When immersed in a dielectric medium of relative permittivity κ, the force reduces to F₀/κ. For multiple charges, the net force is determined via the principle of linear superposition by vector addition of all individual pairwise interactions.",
   "specialNotes": [
-    "Check conditions for Coulomb's Law.",
-    "Coulomb's Law connects to other topics."
+    "Coulomb's law is strictly valid only for stationary point charges in an inertial reference frame. Accelerating charges radiate electromagnetic energy.",
+    "Definition of 1 Coulomb: That charge which, when placed in vacuum at a distance of 1 meter from an identical charge, repels it with a force of 9 × 10⁹ N."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Coulomb's law; force between multiple charges",
-    "Statement 2: Theorem related to Coulomb's law; force between multiple charges",
-    "Statement 3: Condition for Coulomb's law; force between multiple charges to be valid",
-    "Statement 4: Principle governing Coulomb's law; force between multiple charges",
-    "Statement 5: Corollary or consequence of Coulomb's law; force between multiple charges"
+    "Statement 1: The electrostatic force between two stationary point charges varies inversely with the square of the distance between them.",
+    "Statement 2: Electrostatic forces are central forces acting strictly along the straight line joining the centers of two interacting charges.",
+    "Statement 3: Electrostatic forces satisfy Newton's third law: the force on charge 1 by charge 2 is equal in magnitude and opposite in direction to the force on charge 2 by charge 1.",
+    "Statement 4: The electrostatic force between two charges is independent of the presence of any other surrounding charges.",
+    "Statement 5: In any dielectric medium with relative permittivity κ, the electrostatic force between two charges is attenuated by a factor of κ."
   ],
   "importantNotes": [
-    "Coulomb's Law is based on fundamental principles."
+    "Remember that the permittivity of free space ε₀ has SI units of C²/(N·m²) or F/m, with value 8.854 × 10⁻¹² F/m."
   ],
   "examShortTricks": [
-    "Recall the formula for Coulomb's Law."
+    "Equilibrium between like charges q₁ and q₂ at distance L: Third charge of opposite sign placed at x = L / (√(q₂/q₁) + 1) from q₁ achieves equilibrium.",
+    "Ratio of forces in dielectric medium: F_air / F_medium = κ.",
+    "Two identical charges in symmetrical polygons: Net electrostatic force at the geometric center of any regular polygon with equal vertices charges is identically ZERO."
   ],
   "examNotes": [
-    "Focus on Coulomb's Law problems - significant marks."
+    "State Coulomb's law in vector form and derive the condition for third charge equilibrium along a line joining two point charges (frequent 3-4 mark NEB question)."
   ],
   "mcs": [
     {
-      "question": "Which describes Coulomb's Law?",
+      "question": "Two point charges placed at a distance r in air experience a force F. If they are immersed in a medium of dielectric constant κ = 4 at the same distance, the new force is:",
       "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
+        "4F",
+        "2F",
+        "F / 4",
+        "F / 2"
       ],
-      "answer": "A"
+      "answer": "C",
+      "explanation": "In a dielectric medium, the force is reduced by the relative permittivity: F_medium = F_air / κ = F / 4."
+    },
+    {
+      "question": "Which of the following represents the correct vector form of Coulomb's law for force on q₁ due to q₂?",
+      "options": [
+        "F₁₂ = (1 / 4πε₀) · (q₁ q₂ / r²) r̂₁₂",
+        "F₁₂ = (1 / 4πε₀) · (q₁ q₂ / r³) r⃗₂₁",
+        "F₁₂ = (1 / 4πε₀) · (q₁ q₂ / r²) r̂₂₁",
+        "F₁₂ = (1 / 4πε₀) · (q₁ q₂ / r) r̂₂₁"
+      ],
+      "answer": "C",
+      "explanation": "The force on charge 1 due to charge 2 acts along the unit vector from charge 2 to charge 1 (r̂₂₁): F⃗₁₂ = (1/4πε₀) · (q₁q₂/r²) r̂₂₁."
+    },
+    {
+      "question": "Four equal positive charges +q are fixed at the four corners of a square of side a. The net force on a test charge placed at the center of the square is:",
+      "options": [
+        "4kq² / a²",
+        "2kq² / a²",
+        "Zero",
+        "√2 kq² / a²"
+      ],
+      "answer": "C",
+      "explanation": "By diagonal symmetry, forces exerted by pairs of charges located at opposite corners are equal in magnitude and oppositely directed, canceling to exactly zero."
     }
   ],
   "importantConcepts": [
-    "Definition and significance of Coulomb's Law."
+    "Inverse-square law and electrostatic proportionality constant k = 1/(4πε₀).",
+    "Coulomb's law in vector form satisfying Newton's third law (central force).",
+    "Dielectric screening effect and definition of relative permittivity κ = ε/ε₀.",
+    "Principle of linear superposition for discrete charge distributions."
   ],
   "importantTasks": [
-    "Solve 5 problems on Coulomb's Law."
+    "Express Coulomb's law in vector notation with positional unit vectors.",
+    "Solve problems calculating net force at a polygon vertex using vector components.",
+    "Determine position and magnitude of a third charge for complete electrostatic equilibrium."
   ],
-  "visualization": {}
+  "duplicateType": 2,
+  "visualType": "coulomb-law",
+  "tabGroup": "coulomb-s-law-and-force-between-multiple-charges"
 }

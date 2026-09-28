@@ -32,6 +32,21 @@ function readJsonSafe(p) {
   }
 }
 
+function contentHasMcqs(data) {
+  if (!data) return false;
+  return Boolean(
+    (Array.isArray(data.mcs) && data.mcs.length > 0) ||
+    (Array.isArray(data.mcqs) && data.mcqs.length > 0)
+  );
+}
+
+function contentMcqCount(data) {
+  if (!data) return 0;
+  const mcsLen = Array.isArray(data.mcs) ? data.mcs.length : 0;
+  const mcqsLen = Array.isArray(data.mcqs) ? data.mcqs.length : 0;
+  return Math.max(mcsLen, mcqsLen);
+}
+
 function buildSubject(subject) {
   const subjectDir = path.join(SRC, subject);
   if (!fs.existsSync(subjectDir)) return;
@@ -95,7 +110,7 @@ function buildSubject(subject) {
         filename,
         // Enriched fields for richer UI rendering
         ...(data.tabGroup ? { tabGroup: data.tabGroup } : {}),
-        hasMcqs: Boolean(data.mcqs && data.mcqs.length > 0),
+        hasMcqs: contentHasMcqs(data),
         universalFactsCount: Array.isArray(data.universalFacts)
           ? data.universalFacts.length
           : 0,

@@ -1,85 +1,115 @@
 {
-  "title": "Area Between Two Curves",
   "unitSlug": "calculus",
+  "title": "Area Between Two Curves",
+  "topicTitle": "Area between two curves",
   "topicSlug": "area-between-two-curves",
-  "topicTitle": "Area Between Two Curves",
   "relevance": 100,
   "notes": [
-    "**Area Between Two Curves:** Class 11 concept.",
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
+    "**The rule in one line:** find the intersection points, then integrate (TOP function − BOTTOM function) over the interval between them. The intersections bound the region, and the integrand's sign encodes which curve is on top.",
+    "**Intersections come from solving equalities, not from the graph.** For $y=x^2$ and $y=4x^2$ the intersections are where $x^2=4x^2$, giving $x=0$ only, which is why the two parabolas touch at the origin and enclose no bounded region — a quick sanity check that the setup is wrong.",
+    "**A worked case, $y^2=4x$ and $x^2=4y$:** solving gives $(0,0)$ and $(4,4)$. Between them $y=\\frac{x^2}{4}$ is the lower boundary and $y=2\\sqrt{x}$ the upper, so the area is $\\int_0^4\\left(2\\sqrt{x}-\\frac{x^2}{4}\\right)dx = \\frac{32}{3}-\\frac{64}{12} = \\frac{32}{3}$ square units.",
+    "**When the top curve changes, split the integral.** Regions bounded by three or more curves require a piecewise integrand, and using a single function across the whole span gives a wrong answer that still looks plausible.",
+    "**The 'top minus bottom' sign is what guarantees a positive answer.** If an integral over a bounded region returns a negative number, the curves were named in the wrong order — reverse them rather than taking an absolute value at the end.",
+    "**Symmetry halves the work:** if the region is symmetric about the $y$-axis or a vertical line, integrate over half and double, then multiply by 2 again if it is symmetric about the $x$-axis as well."
   ],
   "confusion": [
-    "Distinguish concepts in Area Between Two Curves.",
-    "Check formula conditions."
+    "Integrating one curve and ignoring the other instead of taking the difference.",
+    "Using the same expression over the whole interval when the top curve changes partway.",
+    "Failing to find the intersection points, which is what actually bounds the region."
   ],
-  "practice": [
-    "Solve 5 problems on Area Between Two Curves.",
-    "Derive the key formula for Area Between Two Curves."
-  ],
+  "practice": [],
   "universalFacts": [
-    "Area Between Two Curves appears in exams.",
-    "Foundational for advanced topics."
+    "The area of a circular segment cut by a chord is exactly this integral, and the same computation gives the circular-segment formula in terms of the half-angle.",
+    "Hydrostatic pressure force on a curved surface is an area integral of pressure over depth, where the pressure varies with depth — an area computation with a non-constant integrand."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [
-    "Application of Area Between Two Curves",
-    "Numerical problem on Area Between Two Curves",
-    "Daily life use of Area Between Two Curves"
-  ],
-  "practiceQuestions": [
-    "Q1. Define Area Between Two Curves.",
-    "Q2. Key formula for Area Between Two Curves.",
-    "Q3. Problem on Area Between Two Curves."
-  ],
+  "examples": [],
+  "practiceQuestions": [],
   "formulas": [
-    "Formula for Area Between Two Curves: [insert from textbook].",
-    "Key relationship: [variable formula]."
+    "$A=\\int_a^b\\big(f_{top}(x)-f_{bottom}(x)\\big)dx$",
+    "Intersections: solve $f_{top}(x)=f_{bottom}(x)$",
+    "Piecewise: split where the two functions exchange order",
+    "Symmetry: $A=2\\int_{half}$ about a vertical axis, $A=4\\int_{quarter}$ about both"
   ],
   "keyPoints": [
-    "Core principle of Area Between Two Curves",
-    "Application of Area Between Two Curves",
-    "Connection of Area Between Two Curves to other topics"
+    "Intersection points bound the region; the graph does not.",
+    "Top function minus bottom function, so the answer is automatically positive.",
+    "A negative answer means the curves were named in the wrong order."
   ],
-  "summary": "Area Between Two Curves covers essential principles and applications.",
+  "summary": "Area between two curves is a single idea: find where the curves intersect, identify which is on top over each sub-interval, and integrate the difference. The intersections are what bound the region, and where the ordering changes the integral must be split. The top-minus-bottom convention guarantees a positive result, so a negative answer signals the curves were named backwards rather than a need to take an absolute value.",
   "specialNotes": [
-    "Check conditions for Area Between Two Curves.",
-    "Area Between Two Curves connects to other topics."
+    "Where a formula is quoted it is valid only under the conditions stated; Integrating one curve and ignoring the other instead of taking the difference.",
+    "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Area Between Two Curves",
-    "Statement 2: Theorem related to Area Between Two Curves",
-    "Statement 3: Condition for Area Between Two Curves to be valid",
-    "Statement 4: Principle governing Area Between Two Curves",
-    "Statement 5: Corollary or consequence of Area Between Two Curves"
+    "Statement 1: The intersection points of the curves bound the region.",
+    "Statement 2: The integrand is the top function minus the bottom function.",
+    "Statement 3: The interval must be split wherever the curves exchange order.",
+    "Statement 4: A negative computed area indicates the curves were named in reverse.",
+    "Statement 5: Symmetry about a vertical axis halves the integration range."
   ],
   "importantNotes": [
-    "Area Between Two Curves is based on fundamental principles."
+    "Topic anchor: Symmetry halves the work  if the region is symmetric about the $y$-axis or a vertical line, integrate over half and double, then multiply by 2 again if it is symmetric about the $x$-axis as well."
   ],
   "examShortTricks": [
-    "Recall the formula for Area Between Two Curves."
+    "Solve for the intersections algebraically before doing any integration — if there are fewer than two, there is no bounded region.",
+    "Sketch the two curves; a wrong 'top' function is visible instantly and costs no algebra."
   ],
   "examNotes": [
-    "Focus on Area Between Two Curves problems - significant marks."
+    "Area between curves with two or three intersection points is a standard 4–5 mark question."
   ],
   "mcs": [
     {
-      "question": "Which describes Area Between Two Curves?",
+      "question": "The area between $y=x$ and $y=x^2$ on $[0,1]$ is:",
       "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
+        "$\\frac16$",
+        "$\\frac13$",
+        "$\\frac12$",
+        "$1$"
       ],
-      "answer": "A"
+      "answer": "A",
+      "explanation": "$\\int_0^1(x-x^2)dx=\\frac12-\\frac13=\\frac16$."
+    },
+    {
+      "question": "A computed area between curves comes out negative. This means:",
+      "options": [
+        "the region is unbounded",
+        "the curves were named in the wrong order",
+        "the integral diverges",
+        "nothing is wrong"
+      ],
+      "answer": "B",
+      "explanation": "Top minus bottom is non-negative over a bounded region, so a negative value means the subtraction was reversed."
+    },
+    {
+      "question": "The intersection points of two curves are needed to:",
+      "options": [
+        "find the antiderivatives",
+        "determine the bounds of integration",
+        "check for symmetry",
+        "decide the units"
+      ],
+      "answer": "B",
+      "explanation": "The region exists only between successive intersections, which supply the limits of integration."
     }
   ],
   "importantConcepts": [
-    "Definition and significance of Area Between Two Curves."
+    "Intersection points bound the region; the graph does not.",
+    "Top function minus bottom function, so the answer is automatically positive.",
+    "A negative answer means the curves were named in the wrong order."
   ],
   "importantTasks": [
-    "Solve 5 problems on Area Between Two Curves."
+    "Work through the authored practice problems and re-derive each key formula from the definition."
   ],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "visualType": "integral",
+  "numericals": [
+    "**1. [Idea: an integral with a shifted inner function where the bounds must transform]** Evaluate $\\int_0^1 \\dfrac{2x}{(x^2+1)^3}\\,dx$.\\newline\\newline**Solution:** Let $u = x^2+1$, so $du = 2x\\,dx$. The limits transform: $x=0 \\Rightarrow u=1$, and $x=1 \\Rightarrow u=2$.\\newline\\newlineThe integral becomes$\\newline\\int_1^2 u^{-3}du = \\left[\\frac{u^{-2}}{-2}\\right]_1^2 = -\\frac12\\left[\\frac{1}{u^2}\\right]_1^2 = -\\frac12\\left(\\frac14 - 1\\right) = \\frac{3}{8}$.\\newline\\newline**Answer:** $\\frac38$.\\newline\\newline**Trap:** keeping limits $0$ and $1$ while integrating with respect to $u$. That gives $\\left[-\\frac{1}{2u^2}\\right]_0^1$, which is undefined at $u=0$ — the tell-tale sign that the substitution was mishandled.",
+    "**2. [Idea: by parts where the LIATE rule chooses the log term as $u$]** Evaluate $\\int x\\ln x\\,dx$.\\newline\\newline**Solution:** By parts, $\\int u\\,dv = uv - \\int v\\,du$.$^{\\bullet}$ **LIATE** orders: Logarithmic before Algebraic, so take $u=\\ln x$ and $dv=x\\,dx$. Then $du=\\frac{dx}{x}$ and $v=\\frac{x^2}{2}$.\\newline\\newline$\\newline\\int x\\ln x\\,dx = \\frac{x^2}{2}\\ln x - \\int \\frac{x^2}{2}\\cdot\\frac{dx}{x} = \\frac{x^2}{2}\\ln x - \\frac12\\int x\\,dx = \\frac{x^2}{2}\\ln x - \\frac{x^2}{4} + C$.\\newline\\newline**Answer:** $\\frac{x^2}{2}\\ln x - \\frac{x^2}{4}+C$, for $x>0$.\\newline\\newline**What went wrong if $u$ is chosen wrongly:** taking $u=x$, $dv=\\ln x\\,dx$ needs $\\int \\ln x\\,dx$ first, which is itself an integral by parts — the problem gets strictly harder. **Also note:** on $[0,1]$ this integral is a proper one and $\\int_0^1 x\\ln x\\,dx$ converges even though $\\ln 0$ is undefined, since $x\\ln x \\to 0$.",
+    "**3. [Idea: repeated by parts that must be stopped at a vanishing term]** Evaluate $\\int x^2 e^x\\,dx$.\\newline\\newline**Solution:**$^{\\bullet}$ 1st application, $u=x^2$, $dv=e^x dx$, $du=2x\\,dx$, $v=e^x$:$\\newline I = x^2e^x - 2\\int xe^x\\,dx$.$^{\\bullet}$ 2nd application to the remaining integral, $u=x$, $dv=e^x dx$:$\\newline\\int xe^x dx = xe^x - e^x$.\\newline\\newlineSubstitute back:$^{\\newline}I = x^2e^x - 2(xe^x - e^x) = x^2e^x - 2xe^x + 2e^x = e^x(x^2 - 2x + 2) + C$.\\newline\\newline**Verify by differentiating:** $\\frac{d}{dx}\\left[e^x(x^2-2x+2)\\right] = e^x(x^2-2x+2) + e^x(2x-2) = e^x\\cdot x^2$. ✓\\newline\\newline**Answer:** $e^x(x^2-2x+2)+C$. **The stopping rule:** stop as soon as a term becomes $0$; had a fourth application been attempted it would be meaningless.",
+    "**4. [Idea: symmetry collapses the work before any integration happens]** Evaluate $\\int_{-2}^{2}\\left(x^3\\cos x + \\sqrt{4-x^2}\\right)dx$.\\newline\\newline**Solution: split by parity first.**$^{\\bullet}$ $x^3$ is ODD and $\\cos x$ is EVEN, so $x^3\\cos x$ is ODD. An odd function integrates to $0$ over $[-2,2]$:$\\newline\\int_{-2}^2 x^3\\cos x\\,dx = 0$.$^{\\bullet}$ $\\sqrt{4-x^2}$ is EVEN, so by King's rule $\\int_{-2}^{2}\\sqrt{4-x^2}\\,dx = 2\\int_0^2 \\sqrt{4-x^2}\\,dx$.\\newline\\newlineThis remaining integral is the area of a quarter circle of radius 2:$\\newline\\int_0^2\\sqrt{4-x^2}\\,dx = \\frac14 \\pi(2)^2 = \\pi$.\\newline\\newlineSo the total is $0 + 2\\pi$.\\newline\\newline**Answer:** $2\\pi$. **The idea:** the odd part was dispatched with no calculus at all. Attempting to integrate $x^3\\cos x$ directly needs repeated by parts for nothing.",
+    "**5. [Idea: the bounds do not determine the top curve — solve the intersection first]** Find the area bounded by $y=x^2$ and $y=\\sqrt{x}$ for $x \\ge 0$.\\newline\\newline**Solution:** Find the intersections: $x^2 = \\sqrt{x} \\Rightarrow x^4 = x \\Rightarrow x(x^3-1)=0$, so $x=0$ and $x=1$.\\newline\\newline**Determine which is on top.** At $x=\\frac12$: $y_1 = x^2 = \\frac14$ and $y_2 = \\sqrt{x} = \\frac{1}{\\sqrt2} \\approx 0.707$. Since $\\sqrt{x} > x^2$ there, $\\sqrt{x}$ is the TOP curve.\\newline\\newline**Area:**$^{\\bullet}$ $\\displaystyle A = \\int_0^1 \\left(\\sqrt{x} - x^2\\right)dx = \\left[\\frac{2}{3}x^{3/2} - \\frac{x^3}{3}\\right]_0^1 = \\frac23 - \\frac13 = \\frac13$.\\newline\\newline**Answer:** $\\frac13$ square units. **Trap:** integrating $x^2-\\sqrt{x}$ and getting $-\\frac13$. The top-minus-bottom convention means a negative answer signals the curves were named backwards, not that the area is negative.",
+    "**6. [Idea: the region is split because the bounding curve changes]** Find the area enclosed by $y=2x+1$, $y=x^2+2$ and the $y$-axis.\\newline\\newline**Solution:**$^{\\bullet}$ The two curves meet where $2x+1 = x^2+2$, i.e. $x^2-2x+1=0$, i.e. $(x-1)^2=0$, so they are **tangent at $x=1$**, meeting at $(1,3)$.\\newline\\newline$^{\\bullet}$ At $x=0$ the line gives $1$ and the parabola $2$, so the LINE is on top for $0\\le x \\le 1$ (tangent means they only just touch at $x=1$).$^{\\bullet}$ The $y$-axis closes the region at $x=0$.\\newline\\newline**Area:**$^{\\bullet}$ $\\displaystyle A = \\int_0^1 \\left[(2x+1)-(x^2+2)\\right]dx = \\int_0^1\\left(-x^2+2x-1\\right)dx = \\left[-\\frac{x^3}{3}+x^2-x\\right]_0^1 = -\\frac13+1-1 = -\\frac13$.\\newline\\newline**Answer:** area $= \\frac13$ square units (the negative integral confirms the curves were named the wrong way round, so the true area is $\\frac13$). **Note:** tangency gives a single intersection, so only one integral is needed — but the sign check is what catches the reversal."
+  ]
 }

@@ -5,82 +5,118 @@
   "topicTitle": "Energy of charged capacitor",
   "relevance": 100,
   "notes": [
-    "**Energy of a Charged Capacitor:** Class 11 concept.",
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
+    "**Physical Origin of Stored Energy:** Charging a capacitor involves transferring incremental charges $dq$ from one plate to the other against the opposing potential difference established by already accumulated charge. The mechanical work done by an external charging source (battery) is stored as electrostatic potential energy in the electric field between the plates.",
+    "**Mathematical Derivation:** Suppose at an intermediate stage of charging, the plate holds charge $q$ and instantaneous potential difference $v = \\frac{q}{C}$. The infinitesimal work required to transfer an additional charge $dq$ is $dW = v\\,dq = \\frac{q}{C}\\,dq$. Integrating from initial uncharged state ($q = 0$) to full charge ($q = Q$): $W = \\int_0^Q \\frac{q}{C}\\,dq = \\frac{1}{C}\\left[\\frac{q^2}{2}\\right]_0^Q = \\frac{Q^2}{2C}$.",
+    "**Equivalent Expressions for Energy:** Using $Q = CV$, the stored electrostatic potential energy $U$ can be represented in three equivalent forms: $U = \\frac{Q^2}{2C} = \\frac{1}{2} C V^2 = \\frac{1}{2} Q V$.",
+    "**Energy Dissipated During Charging by Battery:** A battery of EMF $V$ supplies a total charge $Q$ to fully charge the capacitor. The total work done by the battery is $W_{battery} = Q V = C V^2$. However, the energy stored in the capacitor is only $U = \\frac{1}{2} C V^2$. Exactly half the energy supplied by the battery ($50\\%$, or $\\frac{1}{2} C V^2$) is inevitably dissipated as Joule heat in connecting leads and internal resistance, regardless of circuit resistance.",
+    "**Electrostatic Energy Density:** Energy is localized throughout the dielectric medium of volume $\\mathcal{V} = A d$ between the plates. Substituting $C = \\frac{\\varepsilon_0 A}{d}$ and $V = E d$ into $U = \\frac{1}{2} C V^2$: $U = \\frac{1}{2}\\left(\\frac{\\varepsilon_0 A}{d}\\right)(E d)^2 = \\frac{1}{2}\\varepsilon_0 E^2 (A d)$. Defining energy density $u$ as energy per unit volume: $u = \\frac{U}{A d} = \\frac{1}{2}\\varepsilon_0 E^2$. In a medium of relative permittivity $\\varepsilon_r$: $u = \\frac{1}{2}\\varepsilon E^2 = \\frac{1}{2}\\varepsilon_r \\varepsilon_0 E^2$."
   ],
   "confusion": [
-    "Distinguish concepts in Energy of a Charged Capacitor.",
-    "Check formula conditions."
+    "Thinking all battery energy enters the capacitor: The battery delivers $W = QV = CV^2$, but the capacitor only stores $U = \\frac{1}{2}QV = \\frac{1}{2}CV^2$. The remaining $50\\%$ is always converted into heat in circuit wires during transient charging.",
+    "Factor of 1/2 misconception: Why is there a factor of $\\frac{1}{2}$? Because the potential across the plates starts at $0$ and linearly rises to $V$, making the effective average charging potential $\\bar{V} = \\frac{0 + V}{2} = \\frac{V}{2}$.",
+    "Believing energy resides in the metal plates: Electrostatic potential energy is stored in the electric field throughout the space (dielectric volume) between plates, not inside the conducting metal itself."
   ],
   "practice": [
-    "Solve 5 problems on Energy of a Charged Capacitor.",
-    "Derive the key formula for Energy of a Charged Capacitor."
+    "A $12\\,\\mu\\text{F}$ capacitor is connected across a $50\\text{ V}$ battery. Calculate (a) charge stored, (b) electrostatic energy stored, and (c) energy supplied by the battery. Solution: (a) $Q = CV = (12 \\times 10^{-6})(50) = 600\\,\\mu\\text{C} = 0.6\\text{ mC}$. (b) $U = \\frac{1}{2} C V^2 = 0.5 \\times (12 \\times 10^{-6}) \\times (2500) = 0.015\\text{ J} = 15\\text{ mJ}$. (c) $W = Q V = (600 \\times 10^{-6})(50) = 0.030\\text{ J} = 30\\text{ mJ}$. Exactly half ($15\\text{ mJ}$) is lost as heat.",
+    "Calculate the energy density in an electric field of strength $3 \\times 10^6\\text{ V/m}$ (dielectric breakdown field of air). Solution: $u = \\frac{1}{2}\\varepsilon_0 E^2 = 0.5 \\times (8.854 \\times 10^{-12}) \\times (3 \\times 10^6)^2 = 0.5 \\times 8.854 \\times 10^{-12} \\times 9 \\times 10^{12} = 39.84\\text{ J/m}^3$."
   ],
   "universalFacts": [
-    "Energy of a Charged Capacitor appears in exams.",
-    "Foundational for advanced topics."
+    "The energy density equation $u = \\frac{1}{2}\\varepsilon_0 E^2$ is universally valid for any electrostatic field configuration, not just parallel plates, and applies to electromagnetic radiation (photons) traversing deep space.",
+    "Defibrillators deliver a life-saving pulse of roughly 200 to 360 Joules stored in an internal high-voltage capacitor directly through a patient's heart in less than 10 milliseconds."
   ],
   "animation3D": "capacitor",
   "motionGraphics": "capacitor",
   "examples": [
-    "Application of Energy of a Charged Capacitor",
-    "Numerical problem on Energy of a Charged Capacitor",
-    "Daily life use of Energy of a Charged Capacitor"
+    "Defibrillator: Charges an internal 32 μF capacitor to 5000 V to store U = ½(32×10⁻⁶)(25×10⁶) = 400 J, delivering a synchronized electric shock to reset lethal cardiac fibrillations.",
+    "Photoflash capacitor: A photoflash circuit charges a small capacitor to 330 V to deliver instantaneous high power: P = U / Δt = 15 J / 1 ms = 15 kW.",
+    "Pulsed laser fusion: High-energy glass lasers use room-sized capacitor banks storing hundreds of megajoules to trigger fusion target implosions."
   ],
   "practiceQuestions": [
-    "Q1. Define Energy of a Charged Capacitor.",
-    "Q2. Key formula for Energy of a Charged Capacitor.",
-    "Q3. Problem on Energy of a Charged Capacitor."
+    "Q1. Derive the expression for the electrostatic potential energy stored in a charged capacitor, U = ½ CV².",
+    "Q2. Deduce an expression for the electrostatic energy density of a parallel plate capacitor and show that it is proportional to the square of the electric field.",
+    "Q3. A capacitor is charged by a battery of potential V. Prove that the energy stored in the capacitor is only half the work done by the battery.",
+    "Q4. If the plate separation of an isolated charged capacitor is doubled, what happens to its stored energy, and where does this change in energy come from?"
   ],
   "formulas": [
-    "Formula for Energy of a Charged Capacitor: [insert from textbook].",
-    "Key relationship: [variable formula]."
+    "Stored electrostatic energy: $U = \\frac{1}{2} C V^2 = \\frac{Q^2}{2C} = \\frac{1}{2} Q V$",
+    "Work done by charging battery: $W_{battery} = Q V = C V^2$",
+    "Charging efficiency: $\\eta = \\frac{U}{W_{battery}} = 50\\%$",
+    "Electrostatic energy density: $u = \\frac{1}{2}\\varepsilon_0 E^2$ (in vacuum) or $u = \\frac{1}{2}\\varepsilon E^2$ (in medium)"
   ],
   "keyPoints": [
-    "Core principle of Energy of a Charged Capacitor",
-    "Application of Energy of a Charged Capacitor",
-    "Connection of Energy of a Charged Capacitor to other topics"
+    "Electrostatic energy stored equals work performed in transferring charge against accumulating electric potential: U = ½ CV².",
+    "A battery does work W = QV in delivering charge Q at constant voltage V; exactly 50% is stored, 50% is lost as heat.",
+    "Energy is physically localized in the electric field between plates with volume density u = ½ ε₀ E².",
+    "For an isolated charged capacitor, increasing plate separation d increases stored energy U because positive external work is done against electrostatic attraction."
   ],
-  "summary": "Energy of a Charged Capacitor covers essential principles and applications.",
+  "summary": "The electrostatic energy stored in a charged capacitor is the total mechanical work done against mutual charge repulsion during charging, expressed as U = ½ CV² = Q² / (2C) = ½ QV. A battery of EMF V does total work W = QV, meaning 50% is stored while 50% is dissipated as heat. The energy is distributed throughout the space occupied by the electric field with uniform electrostatic energy density u = ½ ε₀ E².",
   "specialNotes": [
-    "Check conditions for Energy of a Charged Capacitor.",
-    "Energy of a Charged Capacitor connects to other topics."
+    "When plates of an isolated charged capacitor are separated further from d to 2d, capacitance halves to C/2. Stored energy U = Q² / (2C) doubles. The increase in energy ΔU = U_initial comes directly from the external mechanical work done pulling apart the oppositely charged attractive plates.",
+    "When plate separation is doubled while connected to a battery, voltage V remains constant. Capacitance halves, so stored energy U = ½ CV² is halved."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Energy of charged capacitor",
-    "Statement 2: Theorem related to Energy of charged capacitor",
-    "Statement 3: Condition for Energy of charged capacitor to be valid",
-    "Statement 4: Principle governing Energy of charged capacitor",
-    "Statement 5: Corollary or consequence of Energy of charged capacitor"
+    "Statement 1: The electrostatic potential energy of a capacitor is stored in the electric field existing between its conducting plates.",
+    "Statement 2: The total work done in charging a capacitor to charge Q at potential V is U = ½ QV.",
+    "Statement 3: Regardless of the resistance in the charging circuit, exactly half of the energy delivered by the charging source is dissipated as heat.",
+    "Statement 4: The electrostatic energy density in vacuum is proportional to the square of the electric field intensity (u = ½ ε₀ E²).",
+    "Statement 5: For an isolated capacitor, external mechanical work performed against plate attraction increases stored electrostatic energy."
   ],
   "importantNotes": [
-    "Energy of a Charged Capacitor is based on fundamental principles."
+    "Always identify if Q or V is constant when evaluating work and energy changes: use U = Q²/(2C) when isolated (Q constant); use U = ½ CV² when connected (V constant)."
   ],
   "examShortTricks": [
-    "Recall the formula for Energy of a Charged Capacitor."
+    "Average voltage trick: $W = Q \\times V_{avg} = Q \\times \\frac{V}{2} = \\frac{1}{2}QV$.",
+    "Battery work is always double stored capacitor energy: $W_{battery} = 2 U_{cap}$.",
+    "Energy density is quadratic with field: doubling $E$ quadruples energy density $u$."
   ],
   "examNotes": [
-    "Focus on Energy of a Charged Capacitor problems - significant marks."
+    "Derivation of $U = \\frac{1}{2}CV^2$ by integration and subsequent derivation of energy density $u = \\frac{1}{2}\\varepsilon_0 E^2$ is an essential 3 to 4-mark question in NEB exams."
   ],
   "mcs": [
     {
-      "question": "Which describes Energy of a Charged Capacitor?",
+      "question": "The energy stored in a capacitor of capacitance C charged to potential V is given by:",
       "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
+        "CV",
+        "½ CV²",
+        "2 CV²",
+        "½ C² V"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "U = ∫ (q/C) dq = Q² / (2C) = ½ CV²."
+    },
+    {
+      "question": "When a capacitor is charged directly by a battery of EMF V, what fraction of energy supplied by the battery is lost as heat?",
+      "options": [
+        "0%",
+        "25%",
+        "50%",
+        "100%"
+      ],
+      "answer": "C",
+      "explanation": "The battery does work W = QV = CV². The capacitor stores U = ½ CV². The fraction lost is (W - U)/W = (CV² - ½ CV²)/CV² = 50%."
+    },
+    {
+      "question": "The plates of an isolated charged parallel plate capacitor are pulled further apart. The electrostatic potential energy stored in the capacitor:",
+      "options": [
+        "increases",
+        "decreases",
+        "remains constant",
+        "becomes zero"
+      ],
+      "answer": "A",
+      "explanation": "Since the capacitor is isolated, charge Q is constant. Capacitance C = ε₀A/d decreases as d increases. Thus U = Q²/(2C) increases because external work is done against the attractive force of the plates."
     }
   ],
   "importantConcepts": [
-    "Definition and significance of Energy of a Charged Capacitor."
+    "Integration derivation of electrostatic potential energy U = Q² / (2C) = ½ CV².",
+    "Partition of battery work: 50% stored, 50% dissipated as heat.",
+    "Derivation of electrostatic energy density u = ½ ε₀ E²."
   ],
   "importantTasks": [
-    "Solve 5 problems on Energy of a Charged Capacitor."
+    "Derive U = ½ CV² using calculus dW = v dq.",
+    "Derive energy density u = ½ ε₀ E² for a parallel plate capacitor.",
+    "Calculate energy changes and work done when plate separation is altered under connected vs isolated conditions."
   ],
   "duplicateType": 1,
-  "visualType": "energy-charged-capacitor"
+  "visualType": "parallel-plate-capacitor"
 }

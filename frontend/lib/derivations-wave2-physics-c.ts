@@ -263,9 +263,9 @@ const p2c: DerivationOrTheorem[] = [
     ],
     visualType: "graph",
     specialCases: [
-      { name: "Isothermal process", condition: "T fixed", formula: "p_1V_1 = p_2V_2", meaning: "Hyperbolic p–V curve." },
-      { name: "Adiabatic comparison", condition: "Q = 0", formula: "pV^{\\gamma} = \\text{const}", meaning: "Steeper than isothermal — the comparison question." },
-      { name: "Density form", condition: "n = m/M", formula: "p = \\frac{\\rho RT}{M}", meaning: "Air-density and altitude problems." },
+      { name: "Isothermal process", condition: "T constant, pV = const", formula: "p_1V_1 = p_2V_2", meaning: "Constant-temperature ideal gas: rectangular hyperbola on the p–V diagram." },
+      { name: "Adiabatic comparison", condition: "Q = 0, γ = C_p/C_v", formula: "pV^{\\gamma} = \\text{const}", meaning: "Steeper than the isothermal curve from the same starting point — the standard comparison question." },
+      { name: "Density form", condition: "n = m/M, ρ = m/V", formula: "p = \\frac{\\rho RT}{M}", meaning: "Rearranged for air-density, altitude and buoyancy problems where the mass, not the moles, is given." },
     ],
     solvedProblems: [],
   },

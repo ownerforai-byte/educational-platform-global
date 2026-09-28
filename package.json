@@ -16,6 +16,10 @@
     "test": "npm run test:run --workspace=educational-platform-backend",
     "check": "node scripts/scoped-check.mjs",
     "check:all": "node scripts/scoped-check.mjs --all",
-    "check:content": "node scripts/content-health-check.mjs"
+    "check:content": "node scripts/content-health-check.mjs",
+    "check:schema": "cd frontend && npm run test:run -- tests/lib/content/schema-corpus.test.ts",
+    "audit:scopes": "node scripts/audit-empty-scopes.mjs",
+    "audit:scopes:fail": "node scripts/audit-empty-scopes.mjs --strict",
+    "audit:mindmap": "node scripts/enrichment/mindmap-validate.mjs"
   }
 }

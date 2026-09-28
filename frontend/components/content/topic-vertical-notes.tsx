@@ -1045,7 +1045,7 @@ export function TopicVerticalNotes({
                   {[...rawNumericals, ...rawPractice].map((num, idx) => (
                     <div key={idx} className="rounded-xl border border-sky-500/20 bg-sky-500/5 p-3.5 text-xs text-foreground leading-relaxed flex items-start gap-2.5">
                       <span className="text-sky-500 font-bold shrink-0">→</span>
-                      <span>{num}</span>
+                      <MathMarkdown content={num} />
                     </div>
                   ))}
                 </div>

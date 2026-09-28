@@ -1,0 +1,95 @@
+{
+  "file": "biology/heredity-and-evolution/04-incomplete-dominance-and-codominance.json",
+  "data": {
+    "summary": "Not every trait follows a simple dominant-recessive pattern. In incomplete dominance neither allele is completely dominant, so the heterozygote shows an intermediate phenotype, as when red and white snapdragons produce pink offspring with a 1:2:1 phenotypic ratio. In codominance both alleles are fully and separately expressed in the heterozygote, as with the IA and IB alleles of the ABO blood group system, giving a 1:2:1 ratio in which the heterozygote is a third, distinct phenotype. Where more than two alleles exist for one gene in a population, as with IA, IB and i in the ABO system, the condition is called multiple allelism, although each individual still carries only two alleles.",
+    "importantConcepts": [
+      "Incomplete dominance and the intermediate phenotype of the heterozygote",
+      "Codominance, in which both alleles are fully expressed",
+      "Multiple alleles at the population level",
+      "ABO blood group inheritance with antigens and antibodies",
+      "Comparing phenotypic and genotypic ratios in non-Mendelian crosses",
+      "How dominance differs from the expression of two alleles together"
+    ],
+    "importantStatements": [
+      "In incomplete dominance the phenotypic ratio is identical to the genotypic ratio, 1:2:1.",
+      "In codominance neither allele masks the other; both are fully expressed in the heterozygote.",
+      "Red x white snapdragons give pink flowers because neither allele is completely dominant.",
+      "The ABO blood group is controlled by three alleles, IA, IB and i, but each person carries only two of them.",
+      "IA and IB are codominant, while i is recessive to both IA and IB.",
+      "A type AB person carries both antigens, so can receive from any group but can donate only to AB."
+    ],
+    "importantTasks": [
+      "Cross red snapdragons (RR) with white (WW) and state the F1 and F2 genotypic and phenotypic ratios.",
+      "Determine the parent genotypes when a type A father and a type B mother have a type O child.",
+      "Predict all possible genotypes and phenotypes from a cross between IAi and IBi.",
+      "Explain with an example how codominance differs from incomplete dominance.",
+      "Decide whether a type AB parent and a type O parent can have a type O child, and justify the answer."
+    ],
+    "keyPoints": [
+      "Incomplete dominance: RR x WW gives all RW (pink), and RW x RW gives 1 RR : 2 RW : 1 WW both genotypically and phenotypically.",
+      "Codominance: the heterozygote shows both traits fully, as in roan cattle with red and white hair.",
+      "Multiple alleles: more than two alleles in a population, but only two in any one individual.",
+      "Group A = IAIA or IAi; Group B = IBIB or IBi; Group AB = IAIB; Group O = ii.",
+      "Anti-A antibodies occur in group B and O; anti-B antibodies occur in group A and O.",
+      "Non-Mendelian crosses still give a 1:2:1 genotypic ratio, but the phenotypes change."
+    ],
+    "specialNotes": [
+      "Incomplete dominance is not permanent blending: the alleles remain distinct and can be separated again in a later cross.",
+      "Codominance gives two complete traits together, whereas incomplete dominance gives one intermediate trait.",
+      "A type AB parent and a type O parent cannot have a type O child, because the AB parent has no i allele to pass on.",
+      "Multiple alleles describe the population, not the individual; an individual can never carry three alleles of the same gene.",
+      "A type O child proves that each parent contributed an i allele, so neither parent can be type AB or homozygous A or B."
+    ],
+    "examShortTricks": [
+      "Incomplete means intermediate, as in pink snapdragons; codominant means both complete, as in AB blood and roan cattle.",
+      "A 1:2:1 phenotypic ratio is the signature of both incomplete dominance and codominance, so check what the heterozygote looks like.",
+      "For blood group problems, look for the i allele first: a type O child must be ii, so both parents must carry i.",
+      "Type AB is a recipient only and type O is a donor only, so the compatibility table is the whole of the question."
+    ],
+    "examNotes": [
+      "Matching a phenotype to its type of inheritance, incomplete dominance or codominance, is a frequent one-mark MCQ.",
+      "Blood group crosses are the standard numerical, and a type O child from A and B parents is the classic question.",
+      "Short answers frequently ask students to differentiate codominance from incomplete dominance with examples.",
+      "Always name the example with the concept: snapdragon for incomplete dominance, ABO blood group or roan cattle for codominance."
+    ],
+    "practiceQuestions": [
+      "Cross a red snapdragon (RR) with a white one (WW). What are the F1 and F2 genotypic and phenotypic ratios?",
+      "A type A father and a type B mother have a type O child. What must the genotypes of both parents be?",
+      "Can a type AB parent and a type O parent have a type O child? Justify your answer.",
+      "Explain why codominance is not the same as incomplete dominance.",
+      "How many phenotypes appear in a cross of IAi with IBi, and what are they?"
+    ],
+    "mcs": [
+      {
+        "question": "The F2 phenotypic ratio in a cross between two heterozygotes showing incomplete dominance is",
+        "options": ["9:3:3:1", "3:1", "1:2:1", "1:1"],
+        "answer": "C",
+        "explanation": "In incomplete dominance the heterozygote has its own intermediate phenotype, so the phenotypic ratio equals the genotypic ratio of 1:2:1."
+      },
+      {
+        "question": "In codominance, the heterozygote",
+        "options": ["Shows an intermediate phenotype", "Shows both alleles fully expressed", "Shows only the dominant phenotype", "Is always sterile"],
+        "answer": "B",
+        "explanation": "In codominance both alleles are expressed completely and neither masks the other, as in the IAIB blood group."
+      },
+      {
+        "question": "Which of the following is an example of codominance?",
+        "options": ["Red x white snapdragons giving pink flowers", "IAIB giving blood group AB", "Height in pea plants", "Rough and smooth texture in peas"],
+        "answer": "B",
+        "explanation": "Blood group AB shows both the A and B antigens fully expressed, which is codominance; pink snapdragons are incomplete dominance."
+      },
+      {
+        "question": "How many alleles of the ABO blood group gene are present in the human population?",
+        "options": ["One", "Two", "Three", "Four"],
+        "answer": "C",
+        "explanation": "The population carries three alleles, IA, IB and i, but any single individual carries only two of them."
+      },
+      {
+        "question": "A type O individual must have the genotype",
+        "options": ["IAIB", "IAi", "IBi", "ii"],
+        "answer": "D",
+        "explanation": "The i allele is recessive to both IA and IB, so only the homozygous combination ii produces blood group O."
+      }
+    ]
+  }
+}

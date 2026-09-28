@@ -63,5 +63,113 @@
     "Remember that Dalton's theory, not Lavoisier's, is the one that *predicted* multiple proportions."
   ],
   "visualType": "dalton-atomic-theory",
-  "tabGroup": "Stoichiometry-Learner-Notes"
+  "tabGroup": "Stoichiometry-Learner-Notes",
+  "summary": "Dalton's atomic theory (1803–1808) was the first quantitative atomic theory: matter consists of extremely small indivisible atoms, atoms of the same element are identical in mass and properties, atoms cannot be created or destroyed in a chemical reaction, and atoms of different elements combine in fixed simple whole-number ratios. Since a chemical change only rearranges atoms, the theory explained the laws of conservation of mass, definite proportions and multiple proportions and laid the foundation for equation balancing, the mole concept and all stoichiometric calculation. Modern discoveries — the electron, proton and neutron, isotopes, isobars, transmutation and mass–energy equivalence — modified its absolute claims of indivisibility, identical masses and non-convertibility, but its core idea that matter is atomic remains fully valid.",
+  "importantConcepts": [
+    "Atomic theory as the first quantitative model of matter (Dalton, 1803–1808, A New System of Chemical Philosophy)",
+    "Postulate that atoms are indivisible and cannot be created, destroyed or subdivided by chemical means",
+    "Atoms of one element are identical in mass and properties; atoms of different elements differ",
+    "Atoms of different elements combine in fixed, simple whole-number ratios to form compounds",
+    "Isotopes and isobars as the modern distinctions that limit Dalton's claims about mass",
+    "Chemical conservation of mass versus nuclear mass–energy equivalence"
+  ],
+  "importantStatements": [
+    "All chemical reactions obey conservation of mass because atoms are only rearranged, never created or destroyed.",
+    "A compound has a fixed composition because its formula unit contains a fixed whole number of atoms of each element.",
+    "The law of multiple proportions is the strongest historical evidence for the atomic theory, since whole-number ratios arise only from whole atoms combining.",
+    "Atoms of one element cannot be converted into atoms of another by ordinary chemical means; transmutation requires nuclear reactions.",
+    "Isotopes such as ³⁵Cl and ³⁷Cl have identical chemical properties but different masses, contradicting the postulate of identical atoms.",
+    "Isobars such as ⁴⁰Ar and ⁴⁰Ca share the same mass number but have different atomic numbers, contradicting the postulate of different masses."
+  ],
+  "importantTasks": [
+    "State all the postulates of Dalton's atomic theory in the correct order.",
+    "Explain how the theory accounts for the laws of conservation of mass, definite proportions and multiple proportions.",
+    "Match each modern discovery (electron, isotopes, isobars, nuclear reactions) to the specific Dalton postulate that it contradicts.",
+    "Discuss the limitations of the theory in the light of subatomic particles and mass–energy equivalence.",
+    "Give three modern applications of the atomic theory, such as equation balancing or mole calculations."
+  ],
+  "keyPoints": [
+    "Matter is atomic, and a chemical reaction only rearranges atoms.",
+    "Dalton published the theory in 1808 and also gave the first table of relative atomic masses.",
+    "Dalton's theory, not Lavoisier's, is the one that predicted multiple proportions.",
+    "Indivisibility, identical masses and non-convertibility are the parts that had to be modified.",
+    "Dalton assumed atoms are held together by 'chemical attraction' but never explained its nature."
+  ],
+  "specialNotes": [
+    "Dalton could not explain the law of gaseous volumes (Gay-Lussac, 1809); Avogadro's hypothesis was needed to separate the concepts of atom and molecule.",
+    "The theory cannot account for allotropes, giant molecules, or the existence of diatomic element molecules such as H₂, O₂ and N₂.",
+    "Conservation of mass holds for chemical reactions only; in nuclear processes the mass defect appears as energy through E = mc².",
+    "Atomic masses are averages over natural isotopic abundance (³⁵Cl 75% and ³⁷Cl 25% give 35.5 u), so an individual atom does not have a fixed integer mass."
+  ],
+  "examShortTricks": [
+    "Answer limitations in historical order: electron, proton and neutron → isotopes → isobars → transmutation → mass–energy conversion.",
+    "Pair each law with its thinker: Lavoisier 1774 (mass), Proust 1799 (definite), Dalton 1803 (multiple).",
+    "Isotopes = same Z, different A; isobars = same A, different Z. One line secures the mark.",
+    "For CO and CO₂ fix 12 g of carbon: the oxygen masses are 16 g and 32 g, giving 1 : 2 immediately."
+  ],
+  "examNotes": [
+    "Usually a 2–3 mark short question asking for the postulates, or for limitations with reasons.",
+    "A 5-mark question commonly asks for a discussion of limitations, where each point needs a named discovery plus the postulate it contradicts.",
+    "Diagrams of atomic symbols for H₂O, CO₂ and CH₄ are often asked to test understanding of fixed whole-number ratios.",
+    "Answers score best when they separate the still-valid core statements from the modified absolute claims."
+  ],
+  "practiceQuestions": [
+    "Define an atom and state the postulates of Dalton's atomic theory.",
+    "How does Dalton's theory explain the law of conservation of mass?",
+    "Which postulate is contradicted by isotopes, and which by isobars? Explain each.",
+    "Why did Dalton's theory fail to explain Gay-Lussac's law of gaseous volumes?",
+    "Give three applications of the atomic theory in modern chemistry."
+  ],
+  "mcs": [
+    {
+      "question": "According to Dalton's atomic theory, during a chemical reaction the atoms are:",
+      "options": [
+        "created and then destroyed",
+        "only rearranged",
+        "converted into atoms of other elements",
+        "split into subatomic particles"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which discovery directly contradicted the indivisibility of the atom?",
+      "options": [
+        "Isotopes",
+        "Isobars",
+        "The electron",
+        "Allotropes"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Isotopes of an element differ from one another in their:",
+      "options": [
+        "atomic number",
+        "mass number",
+        "number of protons",
+        "chemical properties"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The strongest historical evidence for Dalton's atomic theory is provided by the law of:",
+      "options": [
+        "conservation of mass",
+        "definite proportions",
+        "multiple proportions",
+        "gaseous volumes"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "³⁵Cl and ³⁷Cl are isotopes because they have the same number of protons but different numbers of:",
+      "options": [
+        "neutrons",
+        "protons",
+        "electrons",
+        "valence electrons"
+      ],
+      "answer": "A"
+    }
+  ]
 }

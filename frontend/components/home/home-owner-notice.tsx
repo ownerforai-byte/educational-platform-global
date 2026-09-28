@@ -2,15 +2,18 @@ import Link from "next/link";
 import { PenLine, ShieldCheck, ArrowRight } from "lucide-react";
 
 /**
- * Owner's notice, verbatim. Kept as a literal so JSX never re-wraps it.
+ * Owner's notice. Kept as a literal so JSX never re-wraps it.
+ * Punctuation corrected (2026-09-27): stray apostrophe after "thoughts",
+ * missing comma after the conditional, and `--` attribution removed here
+ * because the figcaption below already signs it (with a proper em dash).
  */
 const OWNER_NOTICE =
-  "This is the page of Ravikisan, made by him for easy access. If you want to explore then sign in and clear your thoughts' --Ravikisan";
+  "This is the page of Ravikisan, made by him for easy access. If you want to explore, sign in and clear your thoughts.";
 
 /**
  * Notice from the owner — shown on the public home page (never gated).
  *
- * The quoted line is the owner's own wording and is rendered verbatim.
+ * The quoted line is the owner's own wording (lightly punctuated).
  * Below it: a short intro identifying Ravikisan as the platform's owner, and
  * an internal link to the login page (no external destinations).
  */
@@ -38,7 +41,7 @@ export function HomeOwnerNotice() {
             <span className="flex h-7 w-7 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-[11px] font-extrabold">
               R
             </span>
-            --Ravikisan
+            — Ravikisan
           </figcaption>
 
           <div className="mt-5 flex flex-wrap items-center gap-3 border-t border-border/50 pt-4">
@@ -75,14 +78,14 @@ export function HomeOwnerNotice() {
           <p className="mt-4 text-sm leading-relaxed text-muted-foreground">
             Ravikisan is the owner of this platform. He built and maintains it
             so NEB Class 11 &amp; 12 students in Nepal get one reliable place
-            for notes, 3D labs, derivations, PYQs and an AI tutor — free to
+            for notes, 3D labs, derivations, PYQs and the Captain — free to
             read, and open to everyone.
           </p>
 
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
             Sign in with your Google account to open the full academic
-            directory, keep your progress, and clear your thoughts with the AI
-            tutor whenever you are stuck.
+            directory, keep your progress, and clear your thoughts with the Captain
+            whenever you are stuck.
           </p>
         </div>
       </div>

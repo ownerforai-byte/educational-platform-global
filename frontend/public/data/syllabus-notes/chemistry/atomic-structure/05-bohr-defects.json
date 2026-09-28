@@ -61,5 +61,85 @@
   "tabGroup": "Atomic-Structure-Learner-Notes",
   "source": "ravikishan",
   "duplicateType": 2,
-  "filename": "05-bohr-defects.json"
+  "filename": "05-bohr-defects.json",
+  "summary": "A compressed revision list of the eight defects of Bohr's theory, each with its one-line physical reason: (1) valid only for one-electron species, since electron–electron repulsion and screening are ignored; (2) no fine structure, because the model has neither relativity nor spin; (3) no Zeeman or Stark splitting, for want of a magnetic quantum number; (4) no line intensities or selection rules; (5) it contradicts the uncertainty principle, since a Bohr orbit fixes r and p at once; (6) it ignores wave–particle duality; (7) the postulates are ad hoc, being imposed rather than derived; and (8) it gives no probability, no orbital shapes and no chemistry. The rescue sequence is Sommerfeld (1916), de Broglie (1924), spin (1925), Schrödinger (1926) and Heisenberg (1927), each step repairing one defect.",
+  "importantConcepts": [
+    "Defect 1 — one-electron species only: e⁻–e⁻ repulsion and screening (Z_eff = Z − S) are ignored",
+    "Defects 2 and 3 — no fine structure (needs relativity and spin) and no Zeeman/Stark splitting (needs the magnetic quantum number)",
+    "Defects 4 and 5 — no line intensities or selection rules, and the definite orbit violates Δx·Δp ≥ h/4π",
+    "Defects 6–8 — no wave–particle duality, ad hoc postulates, and no probability density, orbital shapes or chemistry",
+    "Rescue timeline: Sommerfeld 1916 → de Broglie 1924 → spin 1925 → Schrödinger 1926 → Heisenberg 1927"
+  ],
+  "importantStatements": [
+    "Bohr's theory is exact for one-electron species (H, He⁺); the defects appear only beyond that scope.",
+    "Fine structure comes from spin and relativity even in hydrogen, so it is not a many-electron effect.",
+    "The uncertainty principle is a fundamental limit of nature, not an instrumental defect.",
+    "The quantisation rule mvr = nh/2π was postulated; de Broglie's standing waves later derived it.",
+    "Schrödinger's 1926 equation removed orbits in favour of orbitals and repaired every defect at once."
+  ],
+  "importantTasks": [
+    "List the eight defects of Bohr's theory with a one-line reason for each.",
+    "Match each defect with the later theory that repaired it.",
+    "Explain why Bohr's model fails for helium but works for He⁺.",
+    "State which single defect the uncertainty principle exposes, and how."
+  ],
+  "keyPoints": [
+    "Order for the answer: one-electron limit → fine structure → Zeeman/Stark → intensities → uncertainty → duality → ad hoc → chemistry.",
+    "Sodium D lines 589.0/589.6 nm are the standard fine-structure exhibit.",
+    "Sommerfeld's elliptical orbits (1916) introduced the azimuthal quantum number l.",
+    "Only the Bohr–Bury 2n² scheme was available for periodicity — the crudest part of the picture."
+  ],
+  "specialNotes": [
+    "Defect 5 does not mean measurements are inaccurate; it means a trajectory is not a physical object.",
+    "Zeeman needs a magnetic field and a magnetic quantum number; Stark needs an electric field — do not swap the names.",
+    "Even after de Broglie justifies the quantisation, the orbit picture still carries a definite trajectory, so it is a bridge, not the answer."
+  ],
+  "examShortTricks": [
+    "Give each defect as 'defect — reason' in one line; bare lists score poorly.",
+    "Never mix this list with the limitations of Rutherford's model — examiners check scope.",
+    "Attach a name to each repair: Sommerfeld, de Broglie, Schrödinger, Heisenberg."
+  ],
+  "examNotes": [
+    "This revision list is aimed at the 4–5 mark 'state the defects with reasons' question.",
+    "One-mark items usually name a single effect (Zeeman, fine structure) and ask which model fails.",
+    "A 2-mark numerical comparison such as r₁(He⁺) = 0.2645 Å versus r₁(H) = 0.529 Å is common."
+  ],
+  "practiceQuestions": [
+    "List the defects of Bohr's theory with a one-line physical reason for each.",
+    "Why does Bohr's model work for He⁺ but fail for neutral helium?",
+    "Which defect does the uncertainty principle expose, and how does it do so?",
+    "Match each defect with the later development that repaired it."
+  ],
+  "mcs": [
+    {
+      "question": "Splitting of spectral lines in an electric field is called the:",
+      "options": [
+        "Zeeman effect",
+        "Stark effect",
+        "Raman effect",
+        "Photoelectric effect"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The quantisation condition mvr = nh/2π was originally:",
+      "options": [
+        "Derived from classical mechanics",
+        "Postulated without derivation",
+        "Obtained from the Schrödinger equation",
+        "Proved by the Franck–Hertz experiment"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Bohr's model cannot predict the relative intensities of spectral lines because it lacks:",
+      "options": [
+        "The concept of energy levels",
+        "Transition probabilities",
+        "The value of the Rydberg constant",
+        "The nuclear charge"
+      ],
+      "answer": "B"
+    }
+  ]
 }

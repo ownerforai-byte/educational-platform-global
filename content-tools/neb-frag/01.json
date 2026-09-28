@@ -1,0 +1,97 @@
+{
+  "file": "biology/biomolecules-and-cell-biology/01-biomolecules-introduction-and-functions-of-carbohydrates-proteins-lipids-nucleic-acids-minerals-enzymes-and-water.json",
+  "data": {
+    "summary": "Biomolecules are the organic and inorganic compounds that build living organisms: carbohydrates, proteins, lipids and nucleic acids, supported by minerals and water. Carbohydrates supply energy and structural support, proteins built from amino acids act as enzymes, structural material, transporters and signals, lipids store energy at about 9 kcal/g and form membranes, and nucleic acids store and express genetic information. Enzymes, mostly proteins but including catalytic RNA, lower activation energy without being consumed, while water acts as the universal solvent and minerals serve as enzyme cofactors. Entrance questions repeatedly test biomolecule classification, the four levels of protein structure, enzyme properties and the differences between DNA and RNA.",
+    "importantConcepts": [
+      "Biomolecule classes: carbohydrates, proteins, lipids and nucleic acids as organic biomolecules, with water and minerals as inorganic ones",
+      "Carbohydrate subdivision: monosaccharides, disaccharides and polysaccharides, with the general form C_m(H2O)_n",
+      "Four levels of protein structure: primary, secondary, tertiary and quaternary",
+      "Enzyme action: lock-and-key and induced-fit models and the lowering of activation energy",
+      "DNA versus RNA: double versus single strand, thymine versus uracil, and their functions",
+      "Macrominerals versus microminerals and the structural or functional role of each"
+    ],
+    "importantStatements": [
+      "All living organisms are built from the same basic biomolecule classes, so structure-function relationships are universal.",
+      "Enzymes lower activation energy and are not consumed in the reaction, so they can be reused.",
+      "Lipids are not true polymers because they have no repeating monomer unit.",
+      "RNA differs from DNA by containing uracil instead of thymine, and by being single-stranded.",
+      "Water's high specific heat capacity, cohesion and adhesion make it essential for metabolism and temperature regulation.",
+      "Starch, glycogen and cellulose are all polysaccharides of glucose but differ in linkage and branching, which decides their roles."
+    ],
+    "importantTasks": [
+      "Classify an unknown compound as a sugar, protein, lipid or nucleic acid from its described properties and justify the choice.",
+      "Describe the four levels of protein structure, giving a suitable example at each level.",
+      "Compare starch, glycogen and cellulose in terms of monomer linkage and biological function.",
+      "Explain with an energy profile how an enzyme lowers the activation energy of a reaction.",
+      "Compare saturated and unsaturated fats and state one health implication of each."
+    ],
+    "keyPoints": [
+      "Carbohydrates: monosaccharides glucose, fructose and galactose; disaccharides sucrose, lactose and maltose; polysaccharides starch, glycogen and cellulose.",
+      "Proteins: 20 standard amino acids joined by peptide bonds of the form -CO-NH-.",
+      "Lipids: triglycerides store 9 kcal/g, phospholipids form the bilayer, steroids include cholesterol and the sex hormones.",
+      "Nucleic acids: a nucleotide is sugar plus phosphate plus a nitrogenous base; DNA has A, G, C, T and RNA has A, G, C, U.",
+      "Minerals: macrominerals Ca, P, K, Na, Cl, Mg, S and microminerals Fe, I, Zn, Cu, Mn, Se, F.",
+      "Enzyme activity depends on temperature, pH, substrate concentration and the presence of inhibitors."
+    ],
+    "specialNotes": [
+      "Not all enzymes are proteins: catalytic RNA molecules are called ribozymes, so 'all enzymes are proteins' is a false statement.",
+      "Cellulose is a polysaccharide but humans cannot digest it, because we lack the enzyme that breaks its beta-linkage.",
+      "Glycogen is the animal storage polysaccharide and starch is the plant storage polysaccharide; both are built from glucose.",
+      "Triglycerides are lipids rather than carbohydrates even though both store energy, because lipids store roughly twice as much per gram.",
+      "Disaccharides are named for their two monosaccharide units, so knowing one component usually identifies the whole sugar."
+    ],
+    "examShortTricks": [
+      "Lock-and-key fits exactly, whereas induced-fit says the active site moulds itself to the substrate.",
+      "RNA has uracil and DNA has thymine; this is the fastest way to tell the two nucleic acids apart.",
+      "For biomolecule MCQs, look at the monomer: amino acid means protein, monosaccharide means carbohydrate, glycerol plus fatty acids means lipid, nucleotide means nucleic acid.",
+      "Alpha helix and beta sheet belong to secondary structure, while disulfide bridges and hydrophobic interactions belong to tertiary structure.",
+      "If the question says 'biological catalyst that lowers activation energy and is not consumed', the answer is enzyme."
+    ],
+    "examNotes": [
+      "One-mark MCQs typically ask for biomolecule identification, carbohydrate class, or a specific example such as the monomer of cellulose.",
+      "Short answers often ask students to describe the four levels of protein structure and to explain how enzymes lower activation energy.",
+      "Comparison tables such as DNA versus RNA and starch versus cellulose versus glycogen score well because they are easy to mark.",
+      "Confusing lipids with carbohydrates, or RNA with DNA, is the most frequently penalised error in this topic."
+    ],
+    "practiceQuestions": [
+      "Which level of protein structure is stabilised by disulfide bridges, and why is haemoglobin an example of a higher level?",
+      "Why can a high temperature denature an enzyme permanently?",
+      "Give one functional difference between starch and cellulose.",
+      "A compound is built from glycerol and three fatty acids. Which biomolecule class is it, and what is its energy value per gram?",
+      "State two reasons why lipids are not classified as true polymers.",
+      "How would you distinguish DNA from RNA in one sentence each?"
+    ],
+    "mcs": [
+      {
+        "question": "Which biomolecule acts as a biological catalyst that lowers activation energy?",
+        "options": ["Lipid", "Enzyme", "Carbohydrate", "Nucleic acid"],
+        "answer": "B",
+        "explanation": "Enzymes are biological catalysts. Most are proteins, but catalytic RNA molecules called ribozymes also act as enzymes."
+      },
+      {
+        "question": "Which nitrogenous base is found in RNA but not in DNA?",
+        "options": ["Thymine", "Uracil", "Cytosine", "Adenine"],
+        "answer": "B",
+        "explanation": "RNA carries uracil in place of thymine; adenine, guanine and cytosine are common to both."
+      },
+      {
+        "question": "Which level of protein structure involves three-dimensional folding held by disulfide bridges and hydrophobic interactions?",
+        "options": ["Primary", "Secondary", "Tertiary", "Quaternary"],
+        "answer": "C",
+        "explanation": "Tertiary structure is the overall three-dimensional shape of a single polypeptide, stabilised by disulfide bridges and hydrophobic interactions."
+      },
+      {
+        "question": "Which of the following is not a true polymer because it has no repeating monomer unit?",
+        "options": ["Starch", "Cellulose", "Triglyceride", "Protein"],
+        "answer": "C",
+        "explanation": "A triglyceride is glycerol joined to three fatty acids, with no repeating monomer unit, so lipids are not true polymers."
+      },
+      {
+        "question": "Which pair is matched correctly?",
+        "options": ["Glycogen - plant storage polysaccharide", "Cellulose - animal storage polysaccharide", "Starch - plant storage polysaccharide", "Ribose - the sugar present in DNA"],
+        "answer": "C",
+        "explanation": "Starch is the plant storage polysaccharide. Glycogen is the animal storage form, cellulose is structural, and DNA contains deoxyribose, not ribose."
+      }
+    ]
+  }
+}

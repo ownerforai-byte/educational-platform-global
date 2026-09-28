@@ -1,0 +1,95 @@
+{
+  "file": "biology/biomolecules-and-cell-biology/02-cell-introduction-of-cell-concepts-of-prokaryotic-and-eukaryotic-cells.json",
+  "data": {
+    "summary": "The cell is the basic structural and functional unit of life, formalised in cell theory: all living organisms are composed of one or more cells, the cell is the basic unit of structure and function, and all cells arise from pre-existing cells (Virchow: omnis cellula e cellula). Cells are grouped into prokaryotes and eukaryotes. Prokaryotes such as bacteria, archaea and cyanobacteria have no true nucleus, no membrane-bound organelles, a smaller size of 1-10 micrometres, a peptidoglycan cell wall and 70S ribosomes, and they divide by binary fission. Eukaryotes such as plants, animals, fungi and protists have a true nucleus with a nuclear envelope, membrane-bound organelles, a larger size of 10-100 micrometres, 80S cytoplasmic ribosomes, and they divide by mitosis or meiosis.",
+    "importantConcepts": [
+      "Cell theory: three postulates and the scientists who proposed them",
+      "Nucleoid region of a prokaryote versus a true nucleus with a nuclear envelope",
+      "Ribosome size: 70S in prokaryotes, 80S in eukaryotic cytoplasm and 70S in mitochondria and chloroplasts",
+      "Membrane-bound organelles and their specific functions",
+      "Binary fission in prokaryotes versus mitosis and meiosis in eukaryotes",
+      "Cell wall composition: peptidoglycan in bacteria, cellulose in plants, absent in animals"
+    ],
+    "importantStatements": [
+      "Prokaryotic cells do contain DNA; it is simply not enclosed within a nucleus.",
+      "Ribosomes occur in both cell types, so their presence alone does not identify a cell as eukaryotic.",
+      "A true nucleus with a nuclear envelope is the single feature that separates a eukaryote from a prokaryote.",
+      "Mitochondria are called the powerhouse of the cell because they produce ATP during cellular respiration.",
+      "Rough ER is called rough because of the ribosomes attached to it, and it synthesises protein, whereas smooth ER synthesises lipid.",
+      "Lysosomes contain hydrolytic enzymes and carry out intracellular digestion."
+    ],
+    "importantTasks": [
+      "Draw a labelled diagram of a prokaryotic cell and a eukaryotic cell and mark the structures unique to each.",
+      "Label at least five organelles and state the function of each.",
+      "Explain why mitochondria are called the powerhouse of the cell.",
+      "Write a comparison table of prokaryotic and eukaryotic cells with at least five features.",
+      "State the three postulates of cell theory and explain the significance of cell theory."
+    ],
+    "keyPoints": [
+      "Nucleus: controls cell activities and contains the DNA.",
+      "Mitochondria: site of cellular respiration and ATP production.",
+      "Ribosomes: site of protein synthesis.",
+      "Endoplasmic reticulum: RER for protein synthesis, SER for lipid synthesis.",
+      "Golgi apparatus: packaging, modification and secretion; lysosomes: digestion with hydrolytic enzymes.",
+      "Chloroplasts: photosynthesis in plants; cell membrane: selectively permeable barrier."
+    ],
+    "specialNotes": [
+      "Chloroplasts occur in plant cells but not in animal cells, whereas mitochondria occur in both plant and animal cells.",
+      "A cell wall is present in plants, fungi and bacteria but absent in animal cells, so 'all cells have a wall' is wrong.",
+      "Mitochondria and chloroplasts contain their own 70S ribosomes, which is evidence for the endosymbiotic theory.",
+      "The nucleoid region has no surrounding membrane, so DNA is not separated from the cytoplasm as it is in eukaryotes.",
+      "Archaea are prokaryotes, so prokaryotes are not limited to bacteria."
+    ],
+    "examShortTricks": [
+      "'No nucleus and no organelles' is the fastest test for identifying a prokaryote in an MCQ.",
+      "The S in 70S and 80S is a Svedberg sedimentation coefficient, not a sum, so the two are not directly comparable.",
+      "Rough equals protein and smooth equals lipid; R for Ribosomes, S for Smooth and lipids.",
+      "A double membrane points to a nucleus, mitochondrion or chloroplast; a single membrane points to ER, Golgi apparatus or lysosome."
+    ],
+    "examNotes": [
+      "The prokaryote versus eukaryote comparison table is a very common short-answer question and is easy to mark.",
+      "One-mark MCQs usually ask which feature is present only in eukaryotes, or which of a list of organisms is a prokaryote.",
+      "Labelled diagram questions commonly expect the nucleus, mitochondria, ribosomes, ER, Golgi apparatus and lysosome.",
+      "State all three postulates of cell theory together with names whenever cell theory appears, as partial answers lose marks."
+    ],
+    "practiceQuestions": [
+      "Why are ribosomes found in both prokaryotic and eukaryotic cells, and why are they described as 70S or 80S?",
+      "A cell has DNA but no nuclear envelope. Is it prokaryotic or eukaryotic, and what other features would you expect?",
+      "Explain why a cell that secretes large amounts of protein has abundant rough ER.",
+      "Compare the ribosomes of a prokaryotic cell with those in the cytoplasm and mitochondria of a eukaryotic cell.",
+      "How does the endosymbiotic theory explain the presence of 70S ribosomes inside mitochondria?"
+    ],
+    "mcs": [
+      {
+        "question": "Which feature is present in prokaryotic cells but absent in eukaryotic cells?",
+        "options": ["A cell membrane", "Ribosomes", "A cell wall", "A nucleus"],
+        "answer": "C",
+        "explanation": "Prokaryotes have a peptidoglycan cell wall but no nucleus. Both cell types have a plasma membrane and ribosomes, and animal cells lack a wall."
+      },
+      {
+        "question": "The size of the ribosomes in the cytoplasm of a eukaryotic cell is",
+        "options": ["70S", "80S", "60S", "50S"],
+        "answer": "B",
+        "explanation": "Cytoplasmic ribosomes of eukaryotes are 80S, whereas 70S ribosomes occur in prokaryotes and in mitochondria and chloroplasts."
+      },
+      {
+        "question": "Which organelle is called the powerhouse of the cell?",
+        "options": ["Golgi apparatus", "Lysosome", "Mitochondrion", "Ribosome"],
+        "answer": "C",
+        "explanation": "Mitochondria carry out cellular respiration and generate ATP, the usable energy of the cell."
+      },
+      {
+        "question": "The genetic material of a prokaryotic cell is located in",
+        "options": ["A nucleolus", "A nucleoid region", "A nucleus", "A mitochondrion"],
+        "answer": "B",
+        "explanation": "In prokaryotes the DNA lies in a nucleoid region that is not surrounded by a membrane."
+      },
+      {
+        "question": "Which statement about ribosomes is correct?",
+        "options": ["They are found only in eukaryotic cells", "They are membrane-bound organelles", "They synthesise protein and occur in both cell types", "They contain their own DNA"],
+        "answer": "C",
+        "explanation": "Ribosomes are non-membrane-bound protein-synthesising organelles present in both prokaryotic and eukaryotic cells."
+      }
+    ]
+  }
+}

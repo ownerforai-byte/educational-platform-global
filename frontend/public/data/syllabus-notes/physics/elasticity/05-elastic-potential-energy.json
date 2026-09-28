@@ -257,7 +257,58 @@
     "Understand the difference between energy stored (elastic) and energy dissipated (hysteresis)."
   ],
   "mcs": [
-    "Added new rich content for mcs."
+    {
+      "question": "The elastic potential energy stored in a stretched spring of constant k and extension x is:",
+      "options": [
+        "kx",
+        "kx²",
+        "½kx²",
+        "½k²x"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Elastic potential energy is stored in a body when it is:",
+      "options": [
+        "Moving at constant velocity",
+        "Deformed within the elastic limit",
+        "Heated above its melting point",
+        "In free fall"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A spring of constant 200 N m⁻¹ is stretched 0.10 m. The energy stored is:",
+      "options": [
+        "1.0 J",
+        "2.0 J",
+        "10 J",
+        "20 J"
+      ],
+      "answer": "A",
+      "explanation": "U = ½kx² = ½(200)(0.10)² = 1.0 J."
+    },
+    {
+      "question": "The area under a stress–strain curve in the elastic region represents:",
+      "options": [
+        "Elastic potential energy per unit volume",
+        "Maximum stress",
+        "Young's modulus",
+        "The elastic limit"
+      ],
+      "answer": "A",
+      "explanation": "Energy density u = ½σε is the triangle under the linear part of the curve."
+    },
+    {
+      "question": "On releasing a stretched spring, the stored elastic potential energy is converted into:",
+      "options": [
+        "Heat and sound only",
+        "Kinetic energy and heat",
+        "Chemical energy",
+        "Mass"
+      ],
+      "answer": "B"
+    }
   ],
   "importantConcepts": [
     "Added new rich content for important Concepts."

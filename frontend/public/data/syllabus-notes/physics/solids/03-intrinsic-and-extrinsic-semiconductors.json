@@ -41,4 +41,123 @@
     "Fact (Scale): Doping with just 1 part per billion (ppb) of arsenic in silicon changes the resistivity from $2.3\\\times 10^5\\\\\\\\,\\\\\\\\Omega\\\\\\\\cdot\\\text{cm}$ (intrinsic) to $0.01\\\\\\\\,\\\\\\\\Omega\\\\\\\\cdot\\\text{cm}$ (extrinsic). An incredibly sensitive control.",
     "Fact (Origin): The donor level in n-type and the acceptor level in p-type lie just below the conduction band and above the valence band, respectively. These \"midgap\" states (actually near-band, not midgap) are crucial for devices like LEDs, lasers, and photodetectors."
   ]
+,
+  "summary": "A pure semiconductor crystal such as silicon or germanium, with impurities at only the ppm level or below, is intrinsic: thermal excitation across the gap creates equal numbers of electrons and holes, so n = p = nᵢ. Deliberately adding a small concentration of impurity atoms, typically 10¹⁵ to 10¹⁸ cm⁻³, produces an extrinsic semiconductor with far higher conductivity. Pentavalent donors from Group V (P, As, Sb) supply a loosely bound extra electron, giving n-type material in which electrons are the majority carriers, while trivalent acceptors from Group III (B, Al, Ga) leave a vacant bond or hole, giving p-type material dominated by holes. Since the donor and acceptor ionisation energies are only about 0.01 to 0.05 eV, almost all dopants are ionised at room temperature, so n ≈ N_d or p ≈ N_a. The mass-action law np = nᵢ² and the charge-neutrality condition then fix the minority carrier concentration and the conductivity σ = e(nμₙ + pμₚ).",
+  "importantConcepts": [
+    "Intrinsic semiconductor: a pure crystal such as silicon or germanium in which thermal excitation generates equal electron and hole numbers, so n = p = nᵢ.",
+    "Extrinsic semiconductor: a crystal doped with impurity atoms at roughly 10¹⁵ to 10¹⁸ cm⁻³ to raise the conductivity by orders of magnitude.",
+    "n-type doping: pentavalent Group V donors (P, As, Sb) contribute one loosely bound extra electron, with ionisation energy E_d ≈ 0.01 to 0.05 eV, so electrons are majority carriers.",
+    "p-type doping: trivalent Group III acceptors (B, Al, Ga) create a vacant bond, that is a hole, with E_a ≈ 0.01 to 0.05 eV, so holes are majority carriers.",
+    "Mass-action law: in thermal equilibrium np = nᵢ² holds for intrinsic and extrinsic semiconductors alike, giving p ≈ nᵢ²/N_d for n-type.",
+    "Charge neutrality and compensation: n = N_d⁺ + p in n-type and p = N_a⁻ + n in p-type, and adding both dopants gives a net concentration of N_d − N_a."
+  ],
+  "importantStatements": [
+    "Doping increases the number of mobile charge carriers but does not create net charge, because the free electrons or holes are balanced by the immobile donor or acceptor ions.",
+    "In n-type material electrons are majority carriers and holes are minority carriers; the letter 'n' describes the negative carriers, not the type of dopant atom.",
+    "A p-type semiconductor is not positively charged overall: the immobile negative acceptor ions balance the mobile positive holes.",
+    "Doping changes the number of free electrons and holes, not the number of protons, so the atomic number of silicon remains 14.",
+    "The mass-action law np = nᵢ² is valid at thermal equilibrium for every semiconductor, whether intrinsic or extrinsic.",
+    "There are three temperature regimes: freeze-out with n ∝ exp(−E_d/2k_BT) at low temperature, the extrinsic region with n ≈ N_d at room temperature, and the intrinsic region with n ≈ nᵢ at high temperature."
+  ],
+  "importantTasks": [
+    "Classify a doped semiconductor as n-type or p-type from the group of the dopant used, and state which carriers are majority and which are minority.",
+    "Use the mass-action law np = nᵢ² to find the minority carrier concentration from the dopant concentration and the intrinsic concentration.",
+    "Decide whether a doped sample is in the extrinsic or intrinsic regime by comparing the dopant concentration N_d with the intrinsic concentration nᵢ at that temperature.",
+    "Calculate the conductivity σ = e(nμₙ + pμₚ) and hence the resistivity of a doped semiconductor.",
+    "Determine the net carrier concentration of a compensated sample containing both N_d and N_a, and state whether it is n-type or p-type."
+  ],
+  "keyPoints": [
+    "In an intrinsic semiconductor n = p = nᵢ, and for silicon at room temperature nᵢ ≈ 1.5 × 10¹⁰ cm⁻³.",
+    "At room temperature essentially all donors and acceptors are ionised, so n ≈ N_d for n-type and p ≈ N_a for p-type.",
+    "Minority carriers follow from the mass action: p = nᵢ²/N_d and n = nᵢ²/N_a, which is why minority concentrations are tiny.",
+    "Mobility values for silicon are roughly μₙ = 1350 cm² V⁻¹ s⁻¹ and μₚ = 480 cm² V⁻¹ s⁻¹, so electrons move about three times faster than holes.",
+    "A compensated sample with N_d = 10¹⁷ cm⁻³ and N_a = 4 × 10¹⁶ cm⁻³ is n-type with net concentration 6 × 10¹⁶ cm⁻³.",
+    "Doping to the level of parts per billion can change resistivity from about 2.3 × 10⁵ Ω·cm intrinsic to about 0.01 Ω·cm extrinsic."
+  ],
+  "specialNotes": [
+    "Doping raises conductivity without changing the overall neutrality of the sample, since the free carriers are exactly balanced by the ionised dopant atoms.",
+    "A doped semiconductor is not itself charged: 'n-type' and 'p-type' label the majority carrier, not a net charge on the crystal.",
+    "If nᵢ exceeds N_d the sample is effectively intrinsic again, which is why a heavily doped sample still becomes intrinsic at high temperature.",
+    "The donor level lies just below the conduction band and the acceptor level just above the valence band, not at the middle of the gap as is sometimes stated.",
+    "The Hall effect is the experimental way to tell n-type from p-type, since it reveals the sign of the dominant carrier, and it was key evidence that holes exist."
+  ],
+  "examShortTricks": [
+    "Group V donor gives n-type, Group III acceptor gives p-type: donors add an electron and acceptors leave a hole.",
+    "Always apply np = nᵢ² to get the minority concentration, and remember the majority is approximately the dopant density.",
+    "Compare N_d with nᵢ before labelling a sample extrinsic: if nᵢ > N_d, treat it as intrinsic.",
+    "For conductivity use σ = e(nμₙ + pμₚ) and take the resistivity as ρ = 1/σ, converting cm⁻³ to SI only at the end.",
+    "In compensated samples just subtract: net = N_d − N_a, and the sign of the result tells you whether the sample is n-type or p-type."
+  ],
+  "examNotes": [
+    "One-mark questions routinely ask for the majority and minority carriers of a named doped semiconductor, or the group of the dopant used.",
+    "Two-mark numericals give N_d or N_a with nᵢ and ask for n, p and n/p, requiring the mass-action law after the approximation step.",
+    "Three-mark problems ask for conductivity or resistivity from the carrier concentrations and the mobilities, using σ = e(nμₙ + pμₚ).",
+    "A common two-mark conceptual question asks why a doped semiconductor remains electrically neutral, or how the Hall effect identifies the type.",
+    "Temperature-regime questions about freeze-out, extrinsic and intrinsic behaviour are set as three- or four-mark questions."
+  ],
+  "practiceQuestions": [
+    "Define intrinsic and extrinsic semiconductors, giving two examples of each.",
+    "Explain how pentavalent and trivalent dopants produce n-type and p-type semiconductors, stating the majority and minority carriers in each case.",
+    "State and explain the mass-action law, and use it to find the minority carrier concentration in an n-type sample with N_d = 10¹⁶ cm⁻³ given nᵢ = 1.5 × 10¹⁰ cm⁻³.",
+    "A silicon sample has N_d = 10¹⁷ cm⁻³ and N_a = 4 × 10¹⁶ cm⁻³. Is it n-type or p-type, and what is the net carrier concentration?",
+    "Explain why a doped semiconductor remains electrically neutral overall.",
+    "Describe the three temperature regimes of a doped semiconductor, including the freeze-out behaviour at low temperature."
+  ],
+  "mcs": [
+    {
+      "question": "Silicon doped with phosphorus becomes:",
+      "options": [
+        "p-type, with holes as majority carriers",
+        "n-type, with electrons as majority carriers",
+        "p-type, with electrons as majority carriers",
+        "an insulator"
+      ],
+      "answer": "B",
+      "explanation": "Phosphorus is a Group V donor. It contributes a fifth valence electron, which is loosely bound and becomes a free electron, so the material is n-type with electrons as majority carriers."
+    },
+    {
+      "question": "The mass-action law for a semiconductor in thermal equilibrium is:",
+      "options": [
+        "np = nᵢ²",
+        "n + p = nᵢ²",
+        "n = p",
+        "np = N_d N_a"
+      ],
+      "answer": "A",
+      "explanation": "The equilibrium relation is np = nᵢ², where nᵢ is the intrinsic concentration. It holds for both intrinsic and extrinsic semiconductors."
+    },
+    {
+      "question": "In an intrinsic semiconductor:",
+      "options": [
+        "n = p = nᵢ",
+        "n = N_d and p = 0",
+        "n ≫ p",
+        "p ≫ n"
+      ],
+      "answer": "A",
+      "explanation": "Thermal excitation creates electrons and holes in equal numbers, so the intrinsic condition is n = p = nᵢ."
+    },
+    {
+      "question": "A p-type semiconductor is:",
+      "options": [
+        "positively charged overall",
+        "electrically neutral with holes as majority carriers",
+        "electrically neutral with electrons as majority carriers",
+        "uncharged only before doping"
+      ],
+      "answer": "B",
+      "explanation": "The mobile positive holes are balanced by the immobile negative acceptor ions, so the crystal stays neutral while holes act as the majority carriers."
+    },
+    {
+      "question": "A compensated sample with N_d = 10¹⁷ cm⁻³ and N_a = 4 × 10¹⁶ cm⁻³ is:",
+      "options": [
+        "p-type with 1.4 × 10¹⁷ cm⁻³ holes",
+        "n-type with 6 × 10¹⁶ cm⁻³ electrons",
+        "intrinsic with 6 × 10¹⁶ cm⁻³ carriers",
+        "p-type with 6 × 10¹⁶ cm⁻³ holes"
+      ],
+      "answer": "B",
+      "explanation": "The net donor concentration is N_d − N_a = 10¹⁷ − 4 × 10¹⁶ = 6 × 10¹⁶ cm⁻³. Since it is positive, electrons are the majority carriers and the sample is n-type."
+    }
+  ]
 }

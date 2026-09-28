@@ -97,7 +97,7 @@ export default function OwnerTrackingPage() {
             Tracking
           </h1>
           <p className="text-sm text-muted-foreground">
-            Per-user AI chat history: sessions, activity and full conversations.
+            Per-user Captain chat history: sessions, activity and full conversations.
           </p>
         </div>
         <Button variant="outline" size="sm" onClick={load} disabled={isLoading}>

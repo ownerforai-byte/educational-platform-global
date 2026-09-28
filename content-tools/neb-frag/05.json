@@ -1,0 +1,95 @@
+{
+  "file": "biology/human-health-and-diseases/05-pathogens-and-diseases.json",
+  "data": {
+    "summary": "Pathogens are the disease-causing organisms classified as bacteria, viruses, fungi, protozoa and helminths, and each group produces a characteristic pattern of disease. Bacterial diseases include tuberculosis, cholera, typhoid, diphtheria and pertussis; viral diseases include influenza, the common cold, dengue, chikungunya, hepatitis B, HIV/AIDS and rabies; protozoan diseases such as malaria, amoebiasis, sleeping sickness and kala-azar are spread by specific vectors; helminthic diseases include ascariasis, filariasis, taeniasis and hookworm infection. Fungal diseases such as ringworm and athlete's foot affect the skin, and because antibiotics act only on bacteria, the pathogen must be identified before treatment is chosen.",
+    "importantConcepts": [
+      "Groups of pathogens: bacteria, viruses, fungi, protozoa and helminths",
+      "Vectors such as Aedes aegypti, Anopheles, the tsetse fly and the sandfly",
+      "Modes of transmission: airborne, waterborne, fecal-oral, vector-borne and animal bite",
+      "Why antibiotics act only on bacteria and not on viruses",
+      "Life cycle of Plasmodium between human and mosquito",
+      "Symptom recognition: fever, diarrhoea, joint pain and pseudomembrane"
+    ],
+    "importantStatements": [
+      "Antibiotics have no effect on viruses because viruses have no bacterial cell wall or bacterial metabolic machinery for the drug to act on.",
+      "Malaria is caused by the protozoan Plasmodium and is transmitted by the female Anopheles mosquito.",
+      "Dengue is caused by the dengue virus and is transmitted by Aedes aegypti.",
+      "HIV destroys CD4+ T helper cells, progressively weakening the immune system and leading to AIDS.",
+      "Only particular species of mosquito act as vectors; not every mosquito carries disease.",
+      "Cholera is waterborne and causes severe diarrhoea, while typhoid is spread by the fecal-oral route."
+    ],
+    "importantTasks": [
+      "Match malaria, cholera, tuberculosis and HIV to their correct pathogens.",
+      "State the vector and the main symptoms for dengue and for malaria.",
+      "Explain why antibiotics are ineffective against viral diseases.",
+      "Describe the life cycle of Plasmodium in the human body and in the mosquito.",
+      "Classify a list of diseases as bacterial, viral, protozoan, helminthic or fungal."
+    ],
+    "keyPoints": [
+      "Tuberculosis: Mycobacterium tuberculosis, airborne, affects the lungs.",
+      "Cholera: Vibrio cholerae, waterborne, causes severe diarrhoea.",
+      "Typhoid: Salmonella typhi, fecal-oral, causes fever and abdominal pain.",
+      "Malaria: Plasmodium falciparum and P. vivax, transmitted by the female Anopheles mosquito.",
+      "Filaria (elephantiasis): Wuchereria bancrofti; sleeping sickness: Trypanosoma via the tsetse fly.",
+      "Ringworm and athlete's foot are fungal skin infections caused by Trichophyton, Microsporum and dermatophytes."
+    ],
+    "specialNotes": [
+      "Viruses are obligate parasites that can reproduce only inside a living host cell.",
+      "Dengue and chikungunya are different diseases even though both are spread by the same mosquito, Aedes aegypti.",
+      "Malaria is a protozoan disease and not a worm disease; ascariasis, filariasis and taeniasis are the worm diseases.",
+      "Only the female Anopheles mosquito transmits malaria, because it needs a blood meal before laying eggs.",
+      "Diphtheria produces a pseudomembrane in the throat, which is a distinguishing clinical sign."
+    ],
+    "examShortTricks": [
+      "Pair every disease with two things, the pathogen and the mode of transmission; that covers most MCQs.",
+      "Protozoan diseases are spread by vectors, while most bacterial diseases are not, with typhoid and cholera spread through water.",
+      "If a question mentions a mosquito, decide quickly whether the pathogen is a virus, as in dengue, or a protozoan, as in malaria.",
+      "Skin and foot infections that ring or itch are fungal, not bacterial, so antibiotics will not help."
+    ],
+    "examNotes": [
+      "One-mark MCQs usually ask for the pathogen, the vector or the mode of transmission of a named disease.",
+      "Matching a list of five or six diseases to their pathogens is a standard objective question.",
+      "Short answers often ask why antibiotics are not effective against viral infections, and the answer must mention the absence of bacterial structures.",
+      "Comparing the symptoms and vectors of dengue and malaria earns easy marks in a three-mark question."
+    ],
+    "practiceQuestions": [
+      "Match malaria, cholera, tuberculosis and HIV/AIDS with their pathogens.",
+      "Which vector transmits dengue, and what are the main symptoms?",
+      "Why are antibiotics ineffective against viral diseases?",
+      "Describe the life cycle of Plasmodium.",
+      "Name two bacterial diseases that spread through the air and one that spreads through water."
+    ],
+    "mcs": [
+      {
+        "question": "Which organism causes malaria?",
+        "options": ["Wuchereria bancrofti", "Plasmodium", "Ascaris lumbricoides", "Taenia solium"],
+        "answer": "B",
+        "explanation": "Malaria is caused by the protozoan Plasmodium, principally P. falciparum and P. vivax; the other three are worms."
+      },
+      {
+        "question": "Dengue fever is transmitted mainly by",
+        "options": ["Anopheles mosquito", "Aedes aegypti", "Tsetse fly", "Sandfly"],
+        "answer": "B",
+        "explanation": "Aedes aegypti transmits dengue and chikungunya, whereas Anopheles transmits malaria and the sandfly transmits kala-azar."
+      },
+      {
+        "question": "Cholera is caused by",
+        "options": ["Salmonella typhi", "Mycobacterium tuberculosis", "Vibrio cholerae", "Entamoeba histolytica"],
+        "answer": "C",
+        "explanation": "Vibrio cholerae causes cholera, a waterborne disease marked by severe watery diarrhoea."
+      },
+      {
+        "question": "Which statement about antibiotics is correct?",
+        "options": ["They work against viruses", "They cure all fevers", "They are used for dengue", "They work only against bacteria"],
+        "answer": "D",
+        "explanation": "Antibiotics act on bacterial structures such as the cell wall and ribosomes, so they have no effect on viruses."
+      },
+      {
+        "question": "HIV primarily destroys",
+        "options": ["Red blood cells", "Platelets", "CD4+ T helper cells", "Bone marrow"],
+        "answer": "C",
+        "explanation": "HIV targets CD4+ T helper cells, so their number falls and the immune system weakens progressively, leading to AIDS."
+      }
+    ]
+  }
+}

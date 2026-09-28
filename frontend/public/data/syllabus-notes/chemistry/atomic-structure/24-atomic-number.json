@@ -61,5 +61,85 @@
   "tabGroup": "Atomic-Structure-Learner-Notes",
   "source": "ravikishan",
   "duplicateType": 2,
-  "filename": "24-atomic-number.json"
+  "filename": "24-atomic-number.json",
+  "summary": "The atomic number Z is the number of protons in the nucleus — equivalently the nuclear charge in units of +e, and the number of electrons in a neutral atom — and it is written as a left subscript, as in ₁₁Na. Rutherford named the nuclear charge 'atomic number' in 1920, and it is now the defining property of an element. Moseley's 1913 X-ray evidence settled the matter: bombarding metal targets with fast cathode rays and measuring the characteristic X-ray frequencies gives √ν = a(Z − b), so plotting √ν against Z gives a straight line while plotting it against atomic mass does not. Z therefore, not mass, is fundamental — which corrected the anomalous pairs (Ar/K, Co/Ni, Te/I), gave isotopes one place in the table, fixed hydrogen's position and predicted the missing elements Z = 43 and 61. Z fixes the table position, the electron and neutron counts (n = A − Z) and enters Bohr's formulas through r ∝ 1/Z, E ∝ −Z² and ν ∝ Z².",
+  "importantConcepts": [
+    "Definition: Z = protons = nuclear charge in units of +e = electrons in a neutral atom, written as a left subscript",
+    "Moseley's law √ν = a(Z − b) from characteristic X-ray frequencies, 1913",
+    "Linear plot of √ν against Z but not against atomic mass, proving Z is the fundamental quantity",
+    "Consequences: corrected Ar/K, Co/Ni and Te/I; gave isotopes one place; fixed hydrogen's position",
+    "Uses: position in the periodic table, neutron count n = A − Z, Bohr-type dependences r ∝ 1/Z and E ∝ −Z², X-ray absorption and shielding"
+  ],
+  "importantStatements": [
+    "Z is the number of protons, never the number of neutrons; neutrons = A − Z.",
+    "Only Z is unique to a chemical element, which is why the modern periodic law is stated in terms of Z.",
+    "Z never changes in chemistry: Na and Na⁺ both have Z = 11, only the electron count differs.",
+    "Atomic mass is a weighted average over isotopes (Cl ≈ 35.45 u), so it is not a whole number and is not the identity of the element.",
+    "Moseley died at Gallipoli in 1915 at the age of 27, shortly after establishing atomic number."
+  ],
+  "importantTasks": [
+    "Define the atomic number and describe Moseley's experiment that established it.",
+    "Write Moseley's law and explain how it corrected Mendeleev's anomalous pairs.",
+    "For an atom with Z = 20 and A = 40, find the numbers of protons, neutrons and electrons.",
+    "Explain why a plot of √ν against atomic mass is not a straight line."
+  ],
+  "keyPoints": [
+    "Moseley's law involves the square root of frequency, not the frequency itself.",
+    "Z = p = e⁻ (neutral atom) and n = A − Z.",
+    "The missing elements Z = 43 (technetium) and 61 (promethium) were predicted from gaps in the line.",
+    "Beryllium's low Z = 4 makes it the window material of X-ray tubes because it absorbs X-rays least."
+  ],
+  "specialNotes": [
+    "Link Z to the nuclear charge that Rutherford's scattering revealed — the two ideas belong together.",
+    "Lead's high Z = 82 is why it shields X-rays so effectively in medical and industrial use.",
+    "Isotopes share Z, so they occupy the same table position; that is exactly what Moseley's law made meaningful."
+  ],
+  "examShortTricks": [
+    "Write √ν = a(Z − b) with the square root — a frequent one-mark item.",
+    "For any nuclide answer in one line: protons = Z, electrons = Z, neutrons = A − Z.",
+    "Quote one concrete Moseley correction (Ar/K, Co/Ni or Te/I) to earn the application mark."
+  ],
+  "examNotes": [
+    "Definition plus Moseley's experiment and its corrections is a standard 4–5 mark question.",
+    "Neutron-count numericals from Z and A are the routine 1–2 mark items.",
+    "One-mark questions usually test the definition of Z or the form of Moseley's law."
+  ],
+  "practiceQuestions": [
+    "Define the atomic number and describe Moseley's experiment.",
+    "Write Moseley's law and explain how it corrected the anomalous pairs in Mendeleev's table.",
+    "An atom has Z = 20 and A = 40; find p, n and e.",
+    "Why does a plot of √ν against atomic mass fail to be a straight line?"
+  ],
+  "mcs": [
+    {
+      "question": "Moseley's law relates the X-ray frequency to:",
+      "options": [
+        "Atomic mass",
+        "Atomic number",
+        "Mass number",
+        "Neutron number"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The atomic number of an element equals the number of:",
+      "options": [
+        "Neutrons",
+        "Protons",
+        "Valence electrons",
+        "Isotopes"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An element has A = 23 and 12 neutrons; its atomic number is:",
+      "options": [
+        "11",
+        "12",
+        "23",
+        "35"
+      ],
+      "answer": "A"
+    }
+  ]
 }

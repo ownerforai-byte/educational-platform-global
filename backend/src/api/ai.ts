@@ -65,14 +65,14 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
       const remaining = await spendCredits(
         user.id,
         AI_MESSAGE_COST,
-        "AI tutor message",
+        "Captain tutor message",
       );
       if (remaining === null) {
         res.status(402).json({
           error: "Insufficient credits",
           required: AI_MESSAGE_COST,
           current: ensured.credits === Infinity ? 0 : ensured.credits,
-          message: `You've used all ${DAILY_CREDIT_POOL} credits of today's daily pool. It resets to ${DAILY_CREDIT_POOL} credits at 12:00 AM — or go PRO for unlimited.`,
+          message: `You've used all ${DAILY_CREDIT_POOL} credits of today's daily pool. It resets to ${DAILY_CREDIT_POOL} credits at 12:00 AM — or go PRO with no daily cap.`,
         });
         return;
       }

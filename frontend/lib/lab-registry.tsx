@@ -374,8 +374,8 @@ export const LAB_REGISTRY: LabMeta[] = [
   },
   {
     id: "ai-tutor",
-    title: "AI Lab Tutor",
-    description: "Get instant help with lab concepts. AI explains, solves, and visualizes.",
+    title: "Captain Lab Tutor",
+    description: "Get instant help with lab concepts. Captain explains, solves, and visualizes.",
     category: "physics",
     type: "calculator" as const,
     status: "active" as const,

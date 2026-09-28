@@ -56,5 +56,86 @@
     "Keep mass in kg, speed in m s⁻¹ and h = 6.626 × 10⁻³⁴ J s to avoid order-of-magnitude errors."
   ],
   "visualType": "de-broglie",
-  "tabGroup": "Atomic-Structure-Learner-Notes"
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "summary": "Light behaves as wave and as particles; de Broglie's 1924 hypothesis completes the converse — every moving material particle carries a wave, the matter wave, with wavelength λ = h/mv = h/p = h/√(2mKE). For an electron accelerated through V volts this becomes λ = 12.27/√V Å, so a 100 V electron has λ ≈ 1.23 Å, comparable with atomic spacings, while a 1 g body at 1 m s⁻¹ has λ ≈ 6.6 × 10⁻³¹ m and shows no wave behaviour at all. Davisson and Germer (1927) confirmed it by diffracting electrons from a nickel crystal, and G. P. Thomson did the same with high-speed electrons. The decisive chemical payoff is that a stable orbit must be a standing wave, nλ = 2πr, which converts Bohr's imposed condition into mvr = nh/2π and points on to the Schrödinger equation and the orbital.",
+  "importantConcepts": [
+    "de Broglie's relation λ = h/mv = h/p = h/√(2mKE) for any moving material particle",
+    "Electron form λ = h/√(2meV) = 12.27/√V Å with V in volts",
+    "Matter waves are probability waves, not electromagnetic waves, and travel with the particle",
+    "Experimental proof: Davisson–Germer electron diffraction (1927) and G. P. Thomson's high-speed electron diffraction",
+    "Standing-wave condition nλ = 2πr gives Bohr's mvr = nh/2π, bridging Bohr to the Schrödinger equation"
+  ],
+  "importantStatements": [
+    "λ ∝ 1/m and ∝ 1/v, so heavier and slower bodies have shorter, not longer, wavelengths.",
+    "A 100 V electron has λ ≈ 1.23 Å while a 1 g mass at 1 m s⁻¹ has λ ≈ 6.6 × 10⁻³¹ m — wave behaviour is microscopic, not absent.",
+    "Matter waves are probability waves carrying no charge; they are not E–B oscillations.",
+    "Only a whole number of wavelengths round the orbit is allowed, so only nλ = 2πr orbits are stable.",
+    "de Broglie received the 1929 Nobel Prize for his 1924 thesis, the first awarded for a PhD thesis."
+  ],
+  "importantTasks": [
+    "State and explain de Broglie's wave equation for a material particle.",
+    "Calculate the de Broglie wavelength of an electron accelerated through 100 V.",
+    "Show that the standing-wave condition nλ = 2πr leads to Bohr's quantisation of angular momentum.",
+    "Describe the Davisson–Germer experiment as evidence for matter waves and give two applications."
+  ],
+  "keyPoints": [
+    "λ = h/mv is the one formula; the electron version 12.27/√V Å is the one used in numericals.",
+    "Unobservably small λ for everyday objects is why wave nature is a microscopic phenomenon.",
+    "Standing waves justify Bohr's postulate — an assumption becomes a consequence.",
+    "Applications: electron microscopes, electron and neutron diffraction, tunnelling, matter-wave interferometry."
+  ],
+  "specialNotes": [
+    "The phase velocity of a matter wave can exceed c while the group velocity equals the particle's speed — no violation of relativity.",
+    "λ = h/mv is non-relativistic; near c, relativistic corrections are needed.",
+    "The wave function is a probability amplitude, not a mechanical wave in a medium, so 'wave' here means probability."
+  ],
+  "examShortTricks": [
+    "For electrons use λ = 12.27/√V Å and nothing else — it saves two substitutions.",
+    "Keep h = 6.626 × 10⁻³⁴ J s, mass in kg and speed in m s⁻¹, or the powers of ten go wrong.",
+    "Say 'probability wave', never 'light wave', when describing matter waves.",
+    "nλ = 2πr in one line converts any Bohr quantisation question into a de Broglie answer."
+  ],
+  "examNotes": [
+    "de Broglie's equation with its derivation and the Davisson–Germer proof form a standard 4–5 mark question.",
+    "A 2–3 mark numerical on λ for an electron accelerated through V volts appears regularly.",
+    "One-mark items ask why a cricket ball shows no wave nature, or who proved matter waves experimentally."
+  ],
+  "practiceQuestions": [
+    "State de Broglie's relation and explain why the wave nature of matter is not observed for ordinary objects.",
+    "Calculate the de Broglie wavelength of an electron accelerated through 100 V.",
+    "Show that nλ = 2πr leads to mvr = nh/2π.",
+    "Describe the Davisson–Germer experiment and state how it confirms matter waves."
+  ],
+  "mcs": [
+    {
+      "question": "The de Broglie wavelength of a particle is inversely proportional to its:",
+      "options": [
+        "Mass only",
+        "Velocity only",
+        "Momentum",
+        "Square of its kinetic energy"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Matter waves are:",
+      "options": [
+        "Electromagnetic waves",
+        "Probability waves associated with particles",
+        "Sound waves in a medium",
+        "Light waves of very short wavelength"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The de Broglie wavelength of an electron accelerated through 100 V is about:",
+      "options": [
+        "12.27 Å",
+        "1.23 Å",
+        "0.12 Å",
+        "123 Å"
+      ],
+      "answer": "B"
+    }
+  ]
 }

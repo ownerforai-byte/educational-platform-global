@@ -40,11 +40,21 @@ describe("master academic prompt composition", () => {
   });
 
   test("keeps the tutor's identity and house style intact", () => {
-    expect(PROMPT).toContain("ravikisan's ai tutor");
+    expect(PROMPT).toContain("you are ravikisan's captain");
     expect(PROMPT).toContain("👋, i am the captain here. feel free to clear your doubts.");
     expect(PROMPT).toContain("explore further:");
     expect(PROMPT).toContain("in short:");
     expect(PROMPT).toContain("never call yourself any other name or title");
+    // No self-reference to the word AI (owner rule 2026-09-28).
+    expect(PROMPT).not.toContain("your name is \"ravikisan's ai tutor\"");
+  });
+
+  test("tells every answer like a story, complete start to finish, from 2–3 sources", () => {
+    expect(PROMPT).toContain("the story shape");
+    expect(PROMPT).toContain("complete knowledge, start to finish");
+    expect(PROMPT).toContain("at least 2 and at most 3 sources at a time");
+    expect(PROMPT).toContain("never one source alone, never more than three in a single reply");
+    expect(PROMPT).toContain("from its first idea to its present state in conceptual order");
   });
 
   test("academic rules defer to the reply shape (no printed headings)", () => {
@@ -186,6 +196,13 @@ describe("adaptive teaching contract (2026-09-28)", () => {
     expect(PROMPT).toContain("switch to romantic mode");
     expect(PROMPT).toContain("age-appropriate");
     expect(PROMPT).toContain("meet the feeling first");
+  });
+
+  test("aims for many ideas in conceptual order, past to present", () => {
+    expect(PROMPT).toContain("large number of genuinely distinct ideas");
+    expect(PROMPT).toContain("conceptual order");
+    expect(PROMPT).toContain("past → present");
+    expect(PROMPT).toContain("exempt from the ordinary word target");
   });
 });
 

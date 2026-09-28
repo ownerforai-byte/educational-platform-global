@@ -1,10 +1,118 @@
 {
-  "title": "electric-field Mindmap",
+  "title": "Electric Field — Interactive Concept Map",
   "unitSlug": "electric-field",
   "topicSlug": "electric-field-mindmap",
-  "topicTitle": "electric field — interactive concept map",
-  "relevance": 0,
+  "topicTitle": "Electric Field — Mindmap and Conceptual Hierarchy",
+  "relevance": 100,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "Comprehensive conceptual breakdown of electric field, field lines, electric dipoles, electric flux, and Gauss's law applications.",
+    "Covers core NEB formulas: E = F/q₀, E = kq/r², dipole fields (axial E = 2kp/r³ vs equatorial E = kp/r³), flux Φ = ∮ E · dA, and Gauss's law Φ = Q_enc / ε₀.",
+    "Derives key geometric fields: infinite line charge (E = λ / (2πε₀r)), infinite plane sheet (E = σ / (2ε₀)), and spherical shell (E_inside = 0, E_outside = kQ/r²)."
+  ],
+  "mindmap": {
+    "centralConcept": "Electric Field & Gauss's Law",
+    "branches": [
+      {
+        "topic": "Electric Field Fundamentals",
+        "subtopics": [
+          {
+            "name": "Field Vector & Point Charges",
+            "points": [
+              "Definition: E = lim(q₀→0) F/q₀ (SI unit: N/C or V/m)",
+              "Field of isolated point charge: E = (1/4πε₀) · (q/r²) r̂",
+              "Superposition principle: E_net = ∑ E_i for discrete charges",
+              "Continuous distributions: E = (1/4πε₀) ∫ dq/r² r̂ (line, surface, volume)"
+            ]
+          },
+          {
+            "name": "Electric Field Lines",
+            "points": [
+              "Continuous imaginary curves tangent to local field vector E",
+              "Originate at positive charges, terminate on negative charges",
+              "Lines never intersect (uniqueness of force direction)",
+              "Areal density represents field magnitude",
+              "Never form closed loops (electrostatic field is conservative: ∮ E · dr = 0)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Electric Dipoles",
+        "subtopics": [
+          {
+            "name": "Dipole Moment & External Field",
+            "points": [
+              "Dipole moment vector: p = q(2a), directed from -q to +q",
+              "Torque in uniform external field: τ = p × E (aligns dipole with field)",
+              "Potential energy: U = -p · E (minimum at θ = 0°, maximum at θ = 180°)",
+              "Non-uniform field: experiences net force F = (p · ∇)E and torque"
+            ]
+          },
+          {
+            "name": "Dipole Electric Field",
+            "points": [
+              "Axial position (end-on): E_axial = (1/4πε₀) · (2p/r³) along p (r ≫ a)",
+              "Equatorial position (broadside): E_equatorial = -(1/4πε₀) · (p/r³) opposite p",
+              "Ratio relation: E_axial = 2 · E_equatorial at equal distance r",
+              "Distance dependency: E ∝ 1/r³ (falls off faster than point charge 1/r²)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Electric Flux & Gauss's Law",
+        "subtopics": [
+          {
+            "name": "Electric Flux",
+            "points": [
+              "Elemental flux: dΦ = E · dA = E dA cos(θ)",
+              "Total flux: Φ = ∬ E · dA (SI unit: N·m²/C or V·m)",
+              "Outward normal convention: positive for exiting flux, negative for entering"
+            ]
+          },
+          {
+            "name": "Gauss's Theorem",
+            "points": [
+              "Integral statement: ∮_S E · dA = Q_enclosed / ε₀",
+              "Differential form (Maxwell 1): ∇ · E = ρ / ε₀",
+              "Independent of Gaussian surface size and shape",
+              "External charges produce zero net flux across closed surface",
+              "Directly equivalent to inverse-square Coulomb's law"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Applications of Gauss's Law",
+        "subtopics": [
+          {
+            "name": "Infinite Line Charge",
+            "points": [
+              "Cylindrical Gaussian surface of radius r, length L",
+              "End caps contribute zero flux (E ⊥ dA)",
+              "Curved surface: E · (2πrL) = λL / ε₀",
+              "Field formula: E = λ / (2πε₀r) (inversely proportional to r)"
+            ]
+          },
+          {
+            "name": "Infinite Plane Sheet",
+            "points": [
+              "Cylindrical pillbox of cross-section A piercing plane",
+              "Curved surface flux = 0; two end caps: 2EA = σA / ε₀",
+              "Field formula: E = σ / (2ε₀) (independent of distance r)",
+              "Between oppositely charged plates: E = σ / ε₀; outside: E = 0"
+            ]
+          },
+          {
+            "name": "Charged Spherical Shell & Solid Sphere",
+            "points": [
+              "Thin shell outside (r ≥ R): E = (1/4πε₀) · (Q/r²)",
+              "Thin shell inside (r < R): E = 0 (electrostatic shielding / Faraday cage)",
+              "Uniform non-conducting solid sphere inside (r ≤ R): E = (ρr) / (3ε₀) ∝ r"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

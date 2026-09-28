@@ -66,5 +66,104 @@
   "tabGroup": "States-Of-Matter-Learner-Notes",
   "source": "ravikishan",
   "duplicateType": 2,
-  "filename": "boyles-law-gas-laws-.json"
+  "filename": "boyles-law-gas-laws-.json",
+  "summary": "Boyle's law, published by Robert Boyle in 1662, states that at constant temperature the volume of a fixed mass of gas is inversely proportional to its pressure, so V ∝ 1/P and PV = constant or P₁V₁ = P₂V₂. The P–V graph is a rectangular hyperbola, each temperature giving one isotherm, while P against 1/V is a straight line through the origin with slope nRT, and PV against P is horizontal for an ideal gas but dips and then rises for a real gas. Microscopically, halving the volume doubles the number density and so doubles the wall-collision rate and the pressure. The law fails at high pressure, near liquefaction, and for gases with strong attraction such as CO₂, SO₂ and NH₃.",
+  "importantConcepts": [
+    "Boyle's law: P₁V₁ = P₂V₂ for a fixed mass at constant temperature and ideal behaviour",
+    "Isotherm — one rectangular hyperbola per temperature, with higher-temperature curves farther from the origin",
+    "P against 1/V as a straight line through the origin with slope nRT",
+    "PV against P horizontal for an ideal gas, but dipping then rising for a real gas",
+    "Molecular explanation: halving the volume doubles the number density and hence the wall-collision rate",
+    "Density consequence: at constant T with fixed mass, d ∝ P"
+  ],
+  "importantStatements": [
+    "Boyle published the law in 1662, the first quantitative gas law.",
+    "At constant temperature the product PV equals nRT for every ideal gas, so a PV-versus-P plot is flat.",
+    "Halving the volume doubles the pressure, so 500 cm³ at 700 mm Hg becomes 250 cm³ at 1400 mm Hg.",
+    "An air bubble of 5 mL formed at 4 atm expands to 20 mL at the surface where the pressure is 1 atm.",
+    "A rising air bubble doubles its volume as the surrounding pressure halves, with 10 m of water corresponding to about 1 atm.",
+    "Real gases deviate most at high pressure and near liquefaction; H₂ and He deviate least while CO₂, SO₂ and NH₃ deviate most."
+  ],
+  "importantTasks": [
+    "State Boyle's law with its two conditions and sketch the P–V and P–1/V graphs.",
+    "Solve numericals on P₁V₁ = P₂V₂ for pressure or volume at constant temperature.",
+    "Explain Boyle's law using the kinetic theory and the number density of molecules.",
+    "Explain why a real gas deviates from Boyle's law at high pressure.",
+    "Apply the density consequence d ∝ P to a compressed gas."
+  ],
+  "keyPoints": [
+    "State the two conditions — fixed mass and constant temperature — every time the law is quoted.",
+    "PV is constant only under those conditions; it changes when T or n changes.",
+    "The P–V graph is a hyperbola, not a straight line; the straight line appears for P against 1/V.",
+    "Draw the PV-versus-P horizontal line with the real-gas dip to show mastery beyond the ideal law.",
+    "Boyle's law cannot be extrapolated into the liquid state, where compression produces condensation instead."
+  ],
+  "specialNotes": [
+    "A temperature change during compression invalidates the law, so an isotherm must be maintained throughout.",
+    "Below the critical temperature, compression produces condensation rather than further Boyle-law shrinkage, so the liquid state lies outside the law's scope.",
+    "The real-gas Boyle plot dips below the ideal line at moderate pressure, which is direct experimental evidence of intermolecular attraction.",
+    "Gases with strong attraction such as CO₂, SO₂ and NH₃ deviate most, while the small non-polar H₂ and He deviate least.",
+    "For a bubble rising through water, remember that 10 m of water column corresponds to about 1 atm."
+  ],
+  "examShortTricks": [
+    "State the two conditions — fixed mass, constant temperature — every single time.",
+    "Cross-multiply rather than rearranging: V₂ = P₁V₁/P₂.",
+    "If the pressure doubles, the volume halves; if it quadruples, the volume quarters.",
+    "Sketch the PV-versus-P horizontal line with the real-gas dip to demonstrate the ideal and real cases together."
+  ],
+  "examNotes": [
+    "Usually a 2–3 mark statement with a graph, often as the opening part of a gas-laws question.",
+    "A 2–3 mark numerical on P₁V₁ = P₂V₂ is very common, including diver and bubble problems.",
+    "Explaining the law through the kinetic theory earns the reasoning marks in a 5-mark question.",
+    "Limitations are asked as a short follow-up, with high pressure and liquefaction as the expected points."
+  ],
+  "practiceQuestions": [
+    "State Boyle's law and sketch its P–V and P–1/V graphs.",
+    "A gas occupies 600 cm³ at 760 mm Hg; find its volume at 1520 mm Hg at constant temperature.",
+    "Explain Boyle's law using the kinetic theory.",
+    "Why does a real gas deviate from Boyle's law at high pressure?",
+    "A bubble of 5 mL forms at 4 atm. What volume does it occupy at the surface at 1 atm?"
+  ],
+  "mcs": [
+    {
+      "question": "At constant temperature, a plot of PV against P for an ideal gas is:",
+      "options": [
+        "a rising straight line",
+        "a horizontal straight line",
+        "a hyperbola",
+        "a parabola"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The P–V graph for an ideal gas at constant temperature is:",
+      "options": [
+        "a straight line through the origin",
+        "a rectangular hyperbola",
+        "a circle",
+        "an exponential curve"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A gas occupies 600 cm³ at 760 mm Hg. At 1520 mm Hg and the same temperature its volume is:",
+      "options": [
+        "1200 cm³",
+        "300 cm³",
+        "1500 cm³",
+        "600 cm³"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Halving the volume of a gas at constant temperature changes its pressure by a factor of:",
+      "options": [
+        "1/2",
+        "2",
+        "4",
+        "no change"
+      ],
+      "answer": "B"
+    }
+  ]
 }

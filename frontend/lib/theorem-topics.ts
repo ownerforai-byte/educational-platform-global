@@ -249,6 +249,63 @@ export function findSyllabusTheoremItem(
   return undefined;
 }
 
+/**
+ * A featured card on the theorems head page. Every card carries the link to
+ * ITS OWN dedicated topic page — never a shared subject listing — so clicking
+ * "Bernoulli's Theorem" opens Bernoulli, not the physics index again.
+ */
+export interface FeaturedTheoremCard {
+  link: string;
+  title: string;
+  /** Subject slug used for the client-side subject filter, e.g. "physics". */
+  subjectSlug: string;
+  classSlug: string;
+  unit: string;
+  code: string;
+  topicSlug: string;
+}
+
+/**
+ * Build the featured-theorem cards from real curated content.
+ *
+ * Round-robins across class × subject tracks so the grid shows a spread of
+ * Physics / Chemistry / Biology / Mathematics instead of the first track's
+ * whole run, and only ever features topics that actually have a proof page
+ * behind them (`hasCuratedContent`).
+ */
+export function getFeaturedTheoremCards(limit = 6): FeaturedTheoremCard[] {
+  const tracks = getTheoremProofRoutes().map(({ classSlug, subjectSlug }) => ({
+    classSlug,
+    subjectSlug,
+    items: getSyllabusTheoremItems(classSlug, subjectSlug).filter(
+      (i) => i.hasCuratedContent && i.curated,
+    ),
+  }));
+
+  const cards: FeaturedTheoremCard[] = [];
+  for (let round = 0; cards.length < limit; round++) {
+    let addedThisRound = false;
+    for (const track of tracks) {
+      const item = track.items[round];
+      if (!item || !item.curated) continue;
+      addedThisRound = true;
+      cards.push({
+        link: `/theorems/${track.classSlug}/${track.subjectSlug}/${item.topicSlug}`,
+        title: item.curated.title,
+        subjectSlug: track.subjectSlug,
+        classSlug: track.classSlug,
+        unit: item.unitTitle,
+        code: item.curated.nebCode,
+        topicSlug: item.topicSlug,
+      });
+      if (cards.length >= limit) break;
+    }
+    if (!addedThisRound) break; // no track had another round — stop cleanly
+  }
+
+  return cards;
+}
+
 /** All class tracks × PCB subjects that must always have routed pages. */
 export function getTheoremProofRoutes(): {
   classSlug: string;

@@ -34,6 +34,38 @@ export const CHEMISTRY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Avogadro's law lets us convert between gas volumes and molecular amounts — the bridge of gas stoichiometry.",
     keyTakeaways: ["M = 2 × VD; 1 mole of any gas = 22.4 L at STP."],
     examTraps: ["Vapour density uses H2 as the standard, not H or He."],
+    specialCases: [
+      {
+        name: "At STP (273 K, 1 atm)",
+        condition: "n = 1 mol, T = 273 K, P = 1 atm",
+        formula: "V_{1\\,\\text{mol}} = 22.4\\,L",
+        meaning: "One mole of any ideal gas fills 22.4 L here — this is the bridge that converts a gas mass into a gas volume.",
+      },
+      {
+        name: "At any other temperature (1 atm)",
+        condition: "T \\neq 273\\,K",
+        formula: "V = 22.4\\left(\\frac{T}{273}\\right)\\,L",
+        meaning: "22.4 L is NOT a universal constant; scale it by the absolute temperature whenever T \\neq 273 K.",
+      },
+      {
+        name: "Graham's law of effusion (a deduction)",
+        condition: "Gases effusing through the same small orifice",
+        formula: "\\frac{r_1}{r_2} = \\sqrt{\\frac{M_2}{M_1}}",
+        meaning: "Equal volumes → equal molecules, so rate scales as 1/M. In practice rates go as \\sqrt{1/M}.",
+      },
+      {
+        name: "Vapour density",
+        condition: "VD measured against hydrogen",
+        formula: "M = 2 \\times VD",
+        meaning: "Hydrogen (M = 2) is the reference gas, so molecular mass is always TWICE the reported VD.",
+      },
+      {
+        name: "Where the law breaks",
+        condition: "T < 273\\,K or P > 10\\,atm, i.e. Z \\neq 1",
+        formula: "PV = ZnRT,\\quad Z \\neq 1",
+        meaning: "Equal-volume/equal-molecule counts fail for a real gas once the Z-factor leaves 1 — check Z before invoking Avogadro.",
+      },
+    ],
     visualType: "avogadros-law-deduction",
     solvedProblems: [
       {
@@ -76,6 +108,44 @@ export const CHEMISTRY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "The quantum-number rules define every valid electron state and the capacity of each shell and subshell.",
     keyTakeaways: ["n=3 holds 18 electrons (2n²); p subshell always has 3 orbitals."],
     examTraps: ["l=3 (f) first appears at n=4."],
+    specialCases: [
+      {
+        name: "First shell (n = 1)",
+        condition: "n = 1",
+        formula: "l = 0 \\Rightarrow 1s^2\\ \\text{only}",
+        meaning: "With n = 1 the only allowed l is 0, so the shell holds a maximum of 2 electrons (2n² = 2).",
+      },
+      {
+        name: "Maximum subshell capacity",
+        condition: "Any single subshell",
+        formula: "s^2,\\ p^6,\\ d^{10},\\ f^{14}",
+        meaning: "Each orbital takes 2 opposite-spin electrons; the 2(2l+1) rule gives 2, 6, 10, 14.",
+      },
+      {
+        name: "Maximum shell capacity",
+        condition: "Principal shell n",
+        formula: "\\#\\text{orbitals} = n^2,\\quad \\#e^- = 2n^2",
+        meaning: "n = 1, 2, 3, 4 hold 2, 8, 18, 32 electrons respectively — the 2n² sequence boards love.",
+      },
+      {
+        name: "Degenerate orbitals in a subshell",
+        condition: "Within one (n, l) pair",
+        formula: "2l+1\\ \\text{orbitals}\\ (1,3,5,7)",
+        meaning: "The m_l values −l…+l all carry the same energy, so Hund's rule fills them singly before pairing.",
+      },
+      {
+        name: "Pauli-excluded set",
+        condition: "Two electrons in the same orbital",
+        formula: "(n,l,m_l,m_s) = (3,1,0,+\\tfrac12)\\ \\text{and}\\ (3,1,0,-\\tfrac12)",
+        meaning: "Identical four quantum numbers are impossible — this is why an orbital holds at most two electrons.",
+      },
+      {
+        name: "Highest l for a given n",
+        condition: "l < n",
+        formula: "l = n-1",
+        meaning: "The set (3,3,0,½) is INVALID: for n = 3 the largest l is 2 (d). f appears first at n = 4.",
+      },
+    ],
     visualType: "quantum-numbers",
     solvedProblems: [
       {
@@ -113,6 +183,38 @@ export const CHEMISTRY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Quantum mechanics replaces particle orbits with probability clouds; the uncertainty principle is the formal limit of measurement.",
     keyTakeaways: ["The principle matters only for very small masses."],
     examTraps: ["Δp is the uncertainty in momentum, not the whole momentum."],
+    specialCases: [
+      {
+        name: "Exact position (Δx = 0)",
+        condition: "Position known perfectly",
+        formula: "\\Delta x = 0 \\Rightarrow \\Delta p = \\infty",
+        meaning: "A particle with no position uncertainty would need infinite momentum uncertainty — a momentum so undefined it cannot be measured.",
+      },
+      {
+        name: "Minimum-uncertainty state",
+        condition: "Ground state of the harmonic oscillator",
+        formula: "\\Delta x\\,\\Delta p = \\frac{\\hbar}{2} = \\frac{h}{4\\pi}",
+        meaning: "Equality holds only for the lowest energy state; every excited state is LESS sharp than this bound.",
+      },
+      {
+        name: "Macroscopic body (why classical physics survives)",
+        condition: "m = 1\\,kg,\\ \\Delta x = 10^{-3}\\,m",
+        formula: "\\Delta v \\ge \\frac{1.05\\times10^{-34}}{1\\times10^{-3}} \\approx 10^{-31}\\,m/s",
+        meaning: "The bound is astronomically small, so classical trajectories are effectively exact for everyday objects.",
+      },
+      {
+        name: "Electron at atomic scale",
+        condition: "m_e = 9.1\\times10^{-31}\\,kg,\\ \\Delta x = 10^{-10}\\,m",
+        formula: "\\Delta v \\ge \\frac{1.05\\times10^{-34}}{9.1\\times10^{-31}\\times10^{-10}} \\approx 1.2\\times10^{6}\\,m/s",
+        meaning: "Knowing an electron's position to one atomic radius already ruins knowledge of its velocity — this is why orbits become orbitals.",
+      },
+      {
+        name: "Electron microscope trap",
+        condition: "Attempting to see an electron by scattering light off it",
+        formula: "\\lambda = \\frac{h}{p} \\le \\Delta x \\Rightarrow p \\ge \\frac{h}{\\Delta x}",
+        meaning: "Photon momentum large enough to localise the electron destroys the electron's momentum information — measurement creates the uncertainty.",
+      },
+    ],
     visualType: "heisenberg-uncertainty",
     solvedProblems: [
       {
@@ -153,6 +255,44 @@ export const CHEMISTRY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Molecular shape = electron geometry bent by lone-pair repulsion (E > E–B > B–B).",
     keyTakeaways: ["H2O is bent at 104.5°, NH3 pyramidal at 107°."],
     examTraps: ["The shape is named for ATOM positions; H2O's electron geometry is tetrahedral but its molecular shape is bent."],
+    specialCases: [
+      {
+        name: "Steric number 2, no lone pairs",
+        condition: "AX\\$_2 (BeCl\\$_2$, CO\\$_2$, BF\\$_2^+)",
+        formula: "\\text{linear},\\ 180^\\circ",
+        meaning: "Two domains point in opposite directions — the maximum possible separation.",
+      },
+      {
+        name: "Steric number 3, no lone pairs",
+        condition: "AX\\$_3 (BF\\$_3$, NO\\$_3^-)",
+        formula: "\\text{trigonal planar},\\ 120^\\circ",
+        meaning: "Three domains in one plane; the p\\$_y and p\\$_z orbitals stay empty and give BF\\$_3 its Lewis acidity.",
+      },
+      {
+        name: "Steric number 4, no lone pairs",
+        condition: "AX\\$_4 (CH\\$_4$, CCl\\$_4)",
+        formula: "\\text{tetrahedral},\\ 109.5^\\circ",
+        meaning: "Four domains adopt the corners of a tetrahedron — carbon's default geometry.",
+      },
+      {
+        name: "One lone pair",
+        condition: "AX\\$_3E (NH\\$_3$);\\ AX\\$_2E (H\\$_2O)",
+        formula: "\\text{pyramidal},\\ \\approx 107^\\circ;\\ \\text{bent},\\ \\approx 104.5^\\circ",
+        meaning: "Lone pairs occupy more space than bond pairs, squeezing the bond angle below the ideal value.",
+      },
+      {
+        name: "Two lone pairs",
+        condition: "AX\\$_2E\\$_2 (H\\$_2O$ has 2; XeF\\$_2$)",
+        formula: "\\text{bent},\\ 180^\\circ \\text{ electron geometry}",
+        meaning: "Two lone pairs force the two bonds together; XeF\\$_2 is the extreme — three lone pairs, linear molecular shape.",
+      },
+      {
+        name: "Expanded octet",
+        condition: "AX\\$_5 (PCl\\$_5$);\\ AX\\$_6 (SF\\$_6)",
+        formula: "\\text{trigonal bipyramidal},\\ 120^\\circ/90^\\circ;\\ \\text{octahedral},\\ 90^\\circ",
+        meaning: "Period-3 atoms can exceed the octet, so VSEPR extends to steric numbers 5 and 6.",
+      },
+    ],
     visualType: "vsepr-theory",
     solvedProblems: [
       {
@@ -191,6 +331,38 @@ export const CHEMISTRY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Hybridization rationalizes bond angles and the π bonds of double/triple bonds.",
     keyTakeaways: ["A triple bond = 1 σ (sp) + 2 π; a double bond = 1 σ (sp²) + 1 π."],
     examTraps: ["Hybridization is judged by steric number, not by the number of bonds alone."],
+    specialCases: [
+      {
+        name: "sp — two hybrids",
+        condition: "Steric number 2 (BeCl\\$_2$, CO\\$_2$, C\\$_2H\\$_2$)",
+        formula: "50\\%\\ s,\\ 50\\%\\ p;\\ \\theta = 180^\\circ",
+        meaning: "Highest s-character means the shortest, strongest σ bonds; a triple bond adds two π bonds from the two leftover p orbitals.",
+      },
+      {
+        name: "sp² — three hybrids",
+        condition: "Steric number 3 (BF\\$_3$, C\\$_2H\\$_4$)",
+        formula: "33\\%\\ s,\\ 67\\%\\ p;\\ \\theta = 120^\\circ",
+        meaning: "One unhybridised p orbital remains perpendicular to the plane, forming the π bond of a double bond.",
+      },
+      {
+        name: "sp³ — four hybrids",
+        condition: "Steric number 4 (CH\\$_4$, NH\\$_3$, H\\$_2O)",
+        formula: "25\\%\\ s,\\ 75\\%\\ p;\\ \\theta = 109.5^\\circ",
+        meaning: "All four orbitals are equivalent and fully used; a lone pair simply occupies one of them.",
+      },
+      {
+        name: "sp³ with a lone pair (donor/acceptor)",
+        condition: "NH\\$_3$, H\\$_2O$ as Lewis bases",
+        formula: "\\text{lone pair in an } sp^3 \\text{ hybrid}",
+        meaning: "The filled sp³ hybrid is what makes ammonia and water donate a lone pair to H\\+ or a metal ion.",
+      },
+      {
+        name: "Same shape, different hybridisation",
+        condition: "BeCl\\$_2$ (sp) vs BF\\$_3$ (sp\\²) vs CH\\$_4$ (sp³)",
+        formula: "180^\\circ,\\ 120^\\circ,\\ 109.5^\\circ",
+        meaning: "Both the number of σ bonds AND the presence of lone pairs decide the hybridisation — not the bond count alone.",
+      },
+    ],
     visualType: "hybridization-spspsp2spp3",
     solvedProblems: [
       {
@@ -232,6 +404,38 @@ export const CHEMISTRY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "The half-reaction method guarantees mass and charge balance in any redox equation.",
     keyTakeaways: ["Multiply the half-reactions to equalize electron count."],
     examTraps: ["In basic medium, neutralize H⁺ with OH⁻ afterwards."],
+    specialCases: [
+      {
+        name: "Acidic medium (default)",
+        condition: "H\\+ available",
+        formula: "balance O with H\\$_2O,\\ balance H with H^+",
+        meaning: "The standard NEB method — O atoms get H₂O on the deficient side, H atoms get H⁺, then charge with electrons.",
+      },
+      {
+        name: "Basic medium",
+        condition: "OH\\- present, no H\\+",
+        formula: "balance O with OH^-,\\ then cancel equal H\\$_2O both sides",
+        meaning: "Using H⁺ in a basic medium is the classic error; put OH⁻ on the oxygen-deficient side and cancel water afterwards.",
+      },
+      {
+        name: "Disproportionation",
+        condition: "Same species both oxidised and reduced",
+        formula: "Cl\\$_2 + 2OH^- \\to Cl^- + ClO^- + H_2O",
+        meaning: "One element splits into two oxidation states — cold dilute alkali for Cl₂, hot concentrated for chlorate.",
+      },
+      {
+        name: "Comproportionation",
+        condition: "Two species → one intermediate state",
+        formula: "Fe^{2+} + Fe^{3+} \\text{ formed from Fe and Fe}^{3+}",
+        meaning: "The reverse of disproportionation — the same balancing technique, opposite direction.",
+      },
+      {
+        name: "Oxidation number does not change",
+        condition: "e.g. Zn + CuSO\\$_4 \\to ZnSO\\$_4 + Cu",
+        formula: "\\Delta \\text{ox. no.} = 0 \\text{ for each element}",
+        meaning: "Zn²⁺ and Cu already have their usual states; only the partner swap happens, so no electrons are written in the half-reactions.",
+      },
+    ],
     visualType: "redox-balancing-half-reaction",
     solvedProblems: [
       {
@@ -270,6 +474,38 @@ export const CHEMISTRY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Faraday's laws connect charge, time and current to the mass of electrode products.",
     keyTakeaways: ["1 F deposits 1 equivalent of any substance."],
     examTraps: ["Use the correct n (electrons per ion): Ag⁺→Ag has n=1, Cu²⁺→Cu has n=2."],
+    specialCases: [
+      {
+        name: "One faraday deposits one equivalent",
+        condition: "Q = 96500\\,C (1 faraday)",
+        formula: "m = \\frac{M}{n}\\ \\text{grams}",
+        meaning: "A single faraday always yields the gram-equivalent, whatever the metal — this is Faraday's first law in its cleanest form.",
+      },
+      {
+        name: "Same charge, different valency",
+        condition: "96500\\,C through Ag\\+ vs Cu\\²⁺",
+        formula: "Ag:\\ \\tfrac{108}{1} = 108\\,g;\\quad Cu:\\ \\tfrac{63.5}{2} = 31.75\\,g",
+        meaning: "Identical charge deposits the same number of EQUIVALENTS, so mass scales as M/n — n is the number one trap.",
+      },
+      {
+        name: "Doubling the current vs doubling the time",
+        condition: "m \\propto It",
+        formula: "m = \\frac{MI(2t)}{nF} = 2m",
+        meaning: "Current and time are interchangeable in effect: 2 A for 1 h deposits exactly what 1 A for 2 h deposits.",
+      },
+      {
+        name: "Gas liberated at an electrode",
+        condition: "e.g. H\\+ or O\\²\\- discharge",
+        formula: "n = 2\\ (H_2),\\quad n = 4\\ (O_2)",
+        meaning: "Oxygen needs FOUR electrons per molecule, hydrogen only two — the same law applied to a product you cannot weigh.",
+      },
+      {
+        name: "Current efficiency less than 100 %",
+        condition: "Side reactions consume current",
+        formula: "\\eta = \\frac{\\text{actual}}{\\text{theoretical}} \\times 100\\%",
+        meaning: "Real plating wastes current on side reactions (H₂ evolution), so the observed mass is always ≤ the calculated mass.",
+      },
+    ],
     visualType: "electrolysis-faraday",
     solvedProblems: [
       {
@@ -310,6 +546,38 @@ export const CHEMISTRY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "The combined law relates a gas between any two equilibrium states.",
     keyTakeaways: ["Always use kelvin temperatures."],
     examTraps: ["Using °C instead of K silently breaks the ratio."],
+    specialCases: [
+      {
+        name: "Boyle's law (isothermal)",
+        condition: "T constant",
+        formula: "P\\$_1V\\$_1 = P\\$_2V\\$_2",
+        meaning: "Halving the volume doubles the pressure; the P–V curve is a rectangular hyperbola.",
+      },
+      {
+        name: "Charles' law (isobaric)",
+        condition: "P constant",
+        formula: "\\frac{V\\$_1}{T\\$_1} = \\frac{V\\$_2}{T\\$_2}",
+        meaning: "Volume is directly proportional to KELVIN temperature — 0 °C is not the zero of the linear plot.",
+      },
+      {
+        name: "Gay-Lussac's law (isochoric)",
+        condition: "V constant (rigid container)",
+        formula: "\\frac{P\\$_1}{T\\$_1} = \\frac{P\\$_2}{T\\$_2}",
+        meaning: "Heat a sealed gas and its pressure rises in the same kelvin ratio — the pressure–temperature straight line.",
+      },
+      {
+        name: "Absolute zero (Charles extrapolation)",
+        condition: "P held constant, V ∝ T extrapolated",
+        formula: "T = 0\\,K = -273.15^\\circ C",
+        meaning: "Extrapolating V against °C to zero volume lands on −273.15 °C, proving an absolute zero exists.",
+      },
+      {
+        name: "Changing amount of gas",
+        condition: "n not constant",
+        formula: "\\frac{P\\$_1V\\$_1}{T\\$_1n\\$_1} = \\frac{P\\$_2V\\$_2}{T\\$_2n\\$_2}",
+        meaning: "The combined gas law silently assumes fixed moles; add n to the ratio the moment gas enters or leaves.",
+      },
+    ],
     visualType: "combined-gas-law",
     solvedProblems: [
       {
@@ -348,6 +616,44 @@ export const CHEMISTRY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "The Z-factor diagnosis tells whether attraction or excluded volume dominates.",
     keyTakeaways: ["At low T, H2 shows Z>1 even at moderate pressure."],
     examTraps: ["Z<1 does not mean 'harder to compress' — it means attractions hold molecules in."],
+    specialCases: [
+      {
+        name: "Z > 1 — repulsion dominates",
+        condition: "Very low temperature, e.g. H\\$_2$ or He",
+        formula: "Z > 1",
+        meaning: "Excluded volume wins because attraction is negligible for tiny molecules; H₂ shows Z > 1 even at moderate pressure.",
+      },
+      {
+        name: "Z < 1 — attraction dominates",
+        condition: "Moderate pressure, e.g. NH\\$_3$, CO\\$_2$ near room temperature",
+        formula: "Z < 1",
+        meaning: "Molecules attract each other inward, so the wall pressure is less than the ideal prediction.",
+      },
+      {
+        name: "Boyle temperature",
+        condition: "T = a/Rb",
+        formula: "Z \\approx 1 \\text{ at low } P",
+        meaning: "At exactly this temperature attractions and covolume cancel and the gas obeys Boyle's law over a wide pressure range.",
+      },
+      {
+        name: "Critical compressibility factor",
+        condition: "State at the critical point",
+        formula: "Z_c = \\frac{P_c V_c}{RT_c} = \\frac{3}{8} = 0.375",
+        meaning: "The van der Waals equation predicts a universal Z at the critical point — a favourite one-line numerical.",
+      },
+      {
+        name: "Above the critical temperature",
+        condition: "T > T_c",
+        formula: "\\text{no liquefaction},\\ Z \\to 1",
+        meaning: "No amount of pressure condenses the gas; it becomes denser but never liquid — you cannot cross the critical point.",
+      },
+      {
+        name: "Where van der Waals fails",
+        condition: "Dense liquid region",
+        formula: "\\text{vdW} \\approx \\text{poor near } T_c",
+        meaning: "Two constants cannot describe the liquid; the equation is a qualitative patch, not a precise EOS.",
+      },
+    ],
     visualType: "real-gas-compressibility",
     solvedProblems: [
       {
@@ -387,6 +693,44 @@ export const CHEMISTRY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "K fixes the composition at equilibrium; Q predicts which direction a disturbed system moves.",
     keyTakeaways: ["K is temperature-dependent only."],
     examTraps: ["Omit H2O (liquid) and solids from Kc expressions."],
+    specialCases: [
+      {
+        name: "Pure solids and pure liquids",
+        condition: "Solid or liquid on either side",
+        formula: "\\text{omitted entirely}",
+        meaning: "CaCO₃(s) ⇌ CaO(s) + CO₂(g) gives Kc = [CO₂] only — activities of pure phases are 1.",
+      },
+      {
+        name: "Weak electrolyte",
+        condition: "Partially ionised species",
+        formula: "K_c \\ll 1",
+        meaning: "Small K means little dissociation (CH₃COOH ⇌ H⁺ + CH₃COO⁻), so the reverse reaction is strongly favoured.",
+      },
+      {
+        name: "Reaction quotient Q vs K",
+        condition: "System not yet at equilibrium",
+        formula: "Q < K \\to \\text{forward};\\ Q = K \\to \\text{eq};\\ Q > K \\to \\text{backward}",
+        meaning: "Computing Q tells the direction of spontaneous shift — the whole of Le Chatelier in one line.",
+      },
+      {
+        name: "Reversing the equation",
+        condition: "Products written as reactants",
+        formula: "K_{\\text{reverse}} = \\frac{1}{K}",
+        meaning: "Every equilibrium constant inverts when its equation is written backwards.",
+      },
+      {
+        name: "Multiplying the equation",
+        condition: "Coefficients scaled by n",
+        formula: "K' = K^n",
+        meaning: "Doubling all coefficients squares K; note this differs from the redox habit where cell potentials are NOT multiplied.",
+      },
+      {
+        name: "Kc vs Kp",
+        condition: "Gaseous equilibria, T = 298 K",
+        formula: "K_p = K_c(RT)^{\\Delta n}",
+        meaning: "Δn = moles of gas products − moles of gas reactants; if Δn = 0 the two constants are numerically equal.",
+      },
+    ],
     visualType: "mass-action-equilibrium",
     solvedProblems: [
       {
@@ -426,6 +770,44 @@ export const CHEMISTRY_THEOREMS: DerivationOrTheorem[] = [
     keyTakeaways: ["pH of a buffer ≈ pKa ± 1."],
     examTraps: ["[A\u207b] is the conjugate BASE — it goes in the numerator."],
     visualType: "buffer-henderson",
+    specialCases: [
+      {
+        name: "Half-neutralisation point",
+        condition: "[A⁻] = [HA]",
+        formula: "\\text{pH} = \\text{p}K_a",
+        meaning: "The buffer has maximum capacity here, which is exactly how a titration curve reads pKa.",
+      },
+      {
+        name: "Effective buffer range",
+        condition: "0.1 ≤ [A⁻]/[HA] ≤ 10",
+        formula: "\\text{pH} = \\text{p}K_a \\pm 1",
+        meaning: "Outside a 10:1 ratio the added strong acid/base overwhelms the buffer and the pH runs away.",
+      },
+      {
+        name: "Dilution does not change pH",
+        condition: "Adding water to the buffer",
+        formula: "\\text{pH unchanged}",
+        meaning: "Both [A⁻] and [HA] fall by the same factor, so the ratio — and the pH — survive dilution; capacity, however, drops.",
+      },
+      {
+        name: "Polyprotic acid buffer",
+        condition: "H₂A with pK_{a1} and pK_{a2}",
+        formula: "\\text{two buffers},\\ \\text{one per } pK_a",
+        meaning: "For H₂CO₃ the HCO₃⁻/H₂CO₃ pair buffers near 6.35 while the CO₃²⁻/HCO₃⁻ pair buffers near 10.33.",
+      },
+      {
+        name: "Amphiprotic salt alone",
+        condition: "Pure NaHCO₃ solution",
+        formula: "\\text{pH} = \\tfrac{1}{2}(\\text{p}K_{a1} + \\text{p}K_{a2})",
+        meaning: "With no added acid or base the salt is both — the pH sits midway between the two pKa values.",
+      },
+      {
+        name: "Buffer at very low concentration",
+        condition: "Total concentration below 10⁻⁶ M",
+        formula: "\\text{formula breaks down}",
+        meaning: "Water's own H⁺/OH⁻ becomes comparable, so the Henderson result is no longer reliable.",
+      },
+    ],
     solvedProblems: [
       {
         id: "chem-buffer-1",
@@ -465,6 +847,44 @@ export const CHEMISTRY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Electron effects are the 'why' behind relative stabilities and reactivities.",
     keyTakeaways: ["NO2 and CHO are −M (−R) groups; OMe and NH2 are +R."],
     examTraps: ["A lone pair conjugated with a π system is +R, but an electronegative atom attached to a σ chain is −I."],
+    specialCases: [
+      {
+        name: "−I strength order",
+        condition: "Substituents compared on a σ chain",
+        formula: "-NR\\$_3^+ > -NO\\$_2 > -CN > -SO\\$_3H > -CHO > -COOH > -F > -Cl > -Br > -I",
+        meaning: "For halogens the order reverses down the group (F > Cl > Br > I) because the effect falls off with distance from the nucleus.",
+      },
+      {
+        name: "Induction decays with distance",
+        condition: "Cl on a propyl vs ethyl chain",
+        formula: "CH\\$_3CH\\$_2Cl > (CH\\$_3)\\_2CHCl > (CH\\$_3)\\|_3CCl",
+        meaning: "Acid strength drops as the chlorine moves further from the acidic carbon — induction is a short-range effect.",
+      },
+      {
+        name: "Resonance needs conjugation",
+        condition: "A group directly on a π system",
+        formula: "o-/p-NO\\$_2C\\$_6H\\$_4: -R active",
+        meaning: "A meta nitro group cannot delocalise into the ring π system, so it acts only through its weaker inductive effect.",
+      },
+      {
+        name: "Hyperconjugation (+R/H effect)",
+        condition: "Alkyl groups on a π system",
+        formula: "C-H \\sigma \\to C=C \\text{ donation}",
+        meaning: "Toluene is more reactive than benzene in EAS because the methyl group donates electron density by hyperconjugation.",
+      },
+      {
+        name: "sp hybridisation raises acidity",
+        condition: "Terminal alkynes vs alkanes",
+        formula: "HC\\equiv CH > CH\\$_2=CH\\$_2 > CH\\$_3CH\\$_3",
+        meaning: "Higher s-character holds the negative charge of the conjugate base closer to the nucleus, stabilising it.",
+      },
+      {
+        name: "Ortho effect in benzoic acids",
+        condition: "Substituted benzoic acid",
+        formula: "o- > p- > m- (generally)",
+        meaning: "All ortho-substituted benzoic acids are stronger than benzoic acid itself — steric crowding of COOH destabilises the acid.",
+      },
+    ],
     visualType: "inductive-resonance-effect",
     solvedProblems: [
       {
@@ -505,6 +925,44 @@ export const CHEMISTRY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Haber's process is the classic industrial equilibrium optimization — yield vs rate vs cost.",
     keyTakeaways: ["About 15–25% of feed converts per pass; the rest is recycled."],
     examTraps: ["Raising temperature LOWERS NH3 yield (endothermic side favored)."],
+    specialCases: [
+      {
+        name: "Effect of pressure",
+        condition: "Δn = 4 → 2 (gas moles decrease)",
+        formula: "200\\,atm,\\quad \\Delta H = -92\\,kJ",
+        meaning: "High pressure shifts equilibrium toward fewer moles, raising yield; ~200 atm is the economic compromise against compression cost.",
+      },
+      {
+        name: "Effect of temperature",
+        condition: "Exothermic forward reaction",
+        formula: "450^{\\circ}C,\\quad \\Delta H < 0 \\Rightarrow T\\uparrow \\Rightarrow K\\downarrow",
+        meaning: "Lower temperature gives a better equilibrium yield but too slow a rate — 450 °C is where conversion is commercially useful.",
+      },
+      {
+        name: "Role of the catalyst",
+        condition: "Fe promoted by K₂O/Al₂O₃",
+        formula: "\\text{catalyst does NOT change } K",
+        meaning: "It only lowers the activation energy so equilibrium is reached faster; the position of equilibrium is untouched.",
+      },
+      {
+        name: "Single-pass conversion",
+        condition: "Fresh feed, one pass through the bed",
+        formula: "\\text{only } 15-25\\%",
+        meaning: "Per-pass conversion is low, so unreacted N₂ and H₂ are recycled — this is why the process runs in a recycle loop.",
+      },
+      {
+        name: "Impurities poison the catalyst",
+        condition: "H₂S or CO present in the feed",
+        formula: "\\text{sharp drop in activity}",
+        meaning: "Sulfur compounds and CO adsorb on active Fe sites and block them; the feed gas must be purified first.",
+      },
+      {
+        name: "Ammonia separation",
+        condition: "Cooling the reactor effluent",
+        formula: "NH\\$_3\\ \\text{liquefies first}",
+        meaning: "NH₃ has an exceptionally high boiling point (−33 °C), so cooling condenses it out and lets the gases be recycled.",
+      },
+    ],
     visualType: "haber-process-flow",
     solvedProblems: [
       {
@@ -543,6 +1001,44 @@ export const CHEMISTRY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "The contact process is a catalytic, reversible exothermic equilibrium optimized by temperature, pressure and recycle.",
     keyTakeaways: ["SO3 is NOT absorbed in water — acid mists form."],
     examTraps: ["V2O5 replaces older As2O3 (toxic)."],
+    specialCases: [
+      {
+        name: "Why not a high pressure here",
+        condition: "2SO₂ + O₂ ⇌ 2SO₃ (Δn = 3 → 2)",
+        formula: "1-2\\,atm",
+        meaning: "Unlike Haber's, conversion is already ~97 % at atmospheric pressure, so extra compression only adds cost.",
+      },
+      {
+        name: "Why not a low temperature",
+        condition: "Exothermic, ΔH < 0",
+        formula: "\\sim 450^{\\circ}C",
+        meaning: "Equilibrium strongly favours SO₃ below 400 °C, but the reaction is far too slow without the V₂O₅ catalyst.",
+      },
+      {
+        name: "Why SO₃ never meets water",
+        condition: "Absorption step",
+        formula: "SO\\$_3 + H\\$_2SO\\$_4 \\to H\\$_2S\\$_2O\\$_7",
+        meaning: "Direct contact with water creates an uncontrollable acid mist; oleum absorbs cleanly and is diluted safely afterwards.",
+      },
+      {
+        name: "Dilution of oleum",
+        condition: "Final step",
+        formula: "H\\$_2S\\$_2O\\$_7 + H\\$_2O \\to 2H\\$_2SO\\$_4",
+        meaning: "Oleum is thinned gradually — always add acid to water, never water to concentrated acid.",
+      },
+      {
+        name: "Oleum definition",
+        condition: "SO₃ dissolved in concentrated H₂SO₄",
+        formula: "H\\$_2S\\$_2O\\$_7\\ (\\text{pyrosulphuric acid})",
+        meaning: "The solution is a mixture of H₂S₂O₇ and dissolved SO₃, not a pure compound.",
+      },
+      {
+        name: "Catalyst choice",
+        condition: "Historically As₂O₃, now V₂O₅",
+        formula: "V\\$_2O\\$_5\\ \\text{on SiO\\$_2$ carrier}",
+        meaning: "Arsenic pentoxide was abandoned because it is volatile and highly toxic; V₂O₅ is safer and more active.",
+      },
+    ],
     visualType: "contact-process-h2so4",
     solvedProblems: [
       {
@@ -581,6 +1077,44 @@ export const CHEMISTRY_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "The Solvay process turns cheap NaCl, limestone and recycle ammonia into Na2CO3.",
     keyTakeaways: ["NaHCO3 precipitates; NaCl stays in solution."],
     examTraps: ["KCl brine does NOT work — KNaCO3 is too soluble; the trick is the low-solubility NaHCO3."],
+    specialCases: [
+      {
+        name: "Why NaHCO₃ precipitates but NaCl does not",
+        condition: "Brine is saturated in NaCl, not in NaHCO₃",
+        formula: "s(NaHCO\\$_3) \\approx 9.6\\,g,\\ s(NaCl) \\approx 36\\,g/100\\,mL",
+        meaning: "The brine is already saturated with the soluble salt, so only the far less soluble bicarbonate crystallises out.",
+      },
+      {
+        name: "The role of ammonia",
+        condition: "NH₃ saturates the brine first",
+        formula: "NH\\$_3 + CO\\$_2 + H\\$_2O \\to NH\\$_4HCO\\$_3",
+        meaning: "The alkaline solution absorbs CO₂ as bicarbonate; without NH₃ the CO₂ would not be taken up efficiently.",
+      },
+      {
+        name: "Calcination conditions",
+        condition: "Heating NaHCO₃",
+        formula: "2NaHCO\\$_3 \\xrightarrow{300^\\circ C} Na\\$_2CO\\$_3 + CO\\$_2 + H\\$_2O",
+        meaning: "Mild heating suffices; the released CO₂ is recycled straight back to the carbonation tower.",
+      },
+      {
+        name: "Ammonia recovery",
+        condition: "NH₄Cl liquor treated with lime",
+        formula: "2NH\\$_4Cl + Ca(OH)\\$_2 \\to CaCl\\$_2 + 2NH\\$_3\\uparrow",
+        meaning: "Ammonia is recovered and re-injected, which is why the process is called 'ammonia soda' and stays economical.",
+      },
+      {
+        name: "CO₂ source",
+        condition: "Limestone calcined with coke",
+        formula: "CaCO\\$_3 \\xrightarrow{\\Delta} CaO + CO\\$_2",
+        meaning: "Cheap limestone supplies the CO₂, and the CaO formed is exactly the lime used to recover ammonia — the loop closes.",
+      },
+      {
+        name: "What Solvay cannot make",
+        condition: "Attempting K₂CO₃ from KCl brine",
+        formula: "\\text{not possible}",
+        meaning: "KHCO₃ is far too soluble to precipitate, so potassium carbonate must be made by the carbonate process instead.",
+      },
+    ],
     visualType: "solvay-process-na2co3",
     solvedProblems: [
       {

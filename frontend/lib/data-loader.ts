@@ -1,3 +1,8 @@
+// ADDITIVE (perf pass, 2026-09-27): shared error funnel used by the prefetch
+// helpers appended below. Import only — nothing below changes.
+import { reportClientError } from "./errors/app-error";
+
+
 const cache = new Map<string, Promise<unknown>>();
 
 /**
@@ -79,3 +84,63 @@ export function loadData<T>(relPath: string): Promise<T> {
   cache.set(relPath, load);
   return load as Promise<T>;
 }
+
+/* ------------------------------------------------------------------ *
+ * ADDITIVE (perf pass, 2026-09-27): prefetch + cache introspection.
+ *
+ * `loadData` above is untouched — the same module-level `cache` remains the
+ * single store, so warming it here makes the *existing* call literal on the
+ * next render (the promise is already resolved). Every helper is safe on the
+ * server and never throws.
+ * ------------------------------------------------------------------ */
+
+/** Warms a `/data` asset in the background; never throws, never blocks. */
+export function prefetchData(relPath: string): void {
+  try {
+    void loadData(relPath).catch((error: unknown) => {
+      reportClientError("loadData:prefetch", error, { path: relPath });
+    });
+  } catch (error) {
+    reportClientError("loadData:prefetch:sync", error, { path: relPath });
+  }
+}
+
+/** True when `relPath` was already requested in this session. */
+export function isDataCached(relPath: string): boolean {
+  return cache.has(relPath);
+}
+
+/**
+ * Resolves to the cached value without triggering a fetch; resolves to
+ * `undefined` when the asset is cold or the earlier fetch failed.
+ */
+export async function peekData<T>(relPath: string): Promise<T | undefined> {
+  const cached = cache.get(relPath) as Promise<T> | undefined;
+  if (!cached) return undefined;
+  try {
+    return await cached;
+  } catch {
+    return undefined;
+  }
+}
+
+/** Drops one entry so the next `loadData` re-fetches it. */
+export function invalidateData(relPath: string): boolean {
+  return cache.delete(relPath);
+}
+
+/** Drops every entry (used by hard-refresh / sign-out flows and tests). */
+export function clearDataCache(): void {
+  cache.clear();
+}
+
+/** Number of in-memory entries (diagnostics and tests). */
+export function dataCacheSize(): number {
+  return cache.size;
+}
+
+/** Cached asset paths, in insertion order (diagnostics and tests). */
+export function dataCacheKeys(): string[] {
+  return Array.from(cache.keys());
+}
+

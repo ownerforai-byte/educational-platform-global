@@ -1,85 +1,116 @@
 {
-  "title": "Derivatives of Inverse Trig, Exp & Log Functions",
   "unitSlug": "calculus",
+  "title": "Derivatives: Inverse Trigonometric, Exponential and Logarithmic",
+  "topicTitle": "Derivatives: inverse trig, exponential and logarithmic",
   "topicSlug": "derivatives-inverse-trig-exp-log",
-  "topicTitle": "Derivatives of Inverse Trig, Exp & Log Functions",
   "relevance": 100,
   "notes": [
-    "**Derivatives of Inverse Trig, Exp & Log Functions:** Class 11 concept.",
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
+    "**Inverse trigonometric derivatives all carry a denominator:** $\\frac{d}{dx}\\arcsin x = \\frac1{\\sqrt{1-x^2}}$, $\\frac{d}{dx}\\arccos x = -\\frac1{\\sqrt{1-x^2}}$, $\\frac{d}{dx}\\arctan x = \\frac1{1+x^2}$. Arccos carries a minus sign, which is the detail most often lost.",
+    "**The remaining three follow the same shape:** $\\frac{d}{dx}\\operatorname{arccot}x = -\\frac1{1+x^2}$, $\\frac{d}{dx}\\operatorname{arcsec}x = \\frac1{|x|\\sqrt{x^2-1}}$, $\\frac{d}{dx}\\operatorname{arccsc}x = -\\frac1{|x|\\sqrt{x^2-1}}$. The absolute value on $x$ is required, not optional.",
+    "**Exponential:** $\\frac{d}{dx}e^x = e^x$ is unique in being its own derivative. For $a^x$ use $\\frac{d}{dx}a^x = a^x\\ln a$, so $a^x$ is its own derivative only when $a=e$.",
+    "**Logarithms:** $\\frac{d}{dx}\\ln x = \\frac1x$ and $\\frac{d}{dx}\\log_a x = \\frac1{x\\ln a}$. The identity $\\frac{d}{dx}\\log_a u = \\frac{u'}{u\\ln a}$ is what makes $\\log$ a natural tool for exponential-growth problems, since $\\frac{d}{dx}a^x$ contains exactly the factor $\\ln a$ that $\\log$ removes.",
+    "**Log of a product splits into a sum:** $\\ln(xy)=\\ln x+\\ln y$, so $\\frac{d}{dx}\\ln(xy)=\\frac1y+\\frac1x$ — the chain rule applied to a product, which is a classic exam step.",
+    "**The derivative of $\\ln$ inverts the exponent:** since $e^x$ is its own derivative, $\\frac{d}{dx}\\ln x = \\frac1x$ follows by inverse-function differentiation. The same logic gives $\\frac{d}{dx}\\arctan x$ once $\\frac{d}{dx}\\tan x=\\sec^2x$ is known."
   ],
   "confusion": [
-    "Distinguish concepts in Derivatives of Inverse Trig, Exp & Log Functions.",
-    "Check formula conditions."
+    "Omitting the minus sign on the arccos derivative — it is the one inverse trig derivative that is negative among the three principal ones.",
+    "Writing $\\frac{d}{dx}a^x = a^x$ instead of $a^x\\ln a$; only the natural exponential is self-derivative.",
+    "Dropping the absolute value in the arcsec and arccsc derivatives."
   ],
-  "practice": [
-    "Solve 5 problems on Derivatives of Inverse Trig, Exp & Log Functions.",
-    "Derive the key formula for Derivatives of Inverse Trig, Exp & Log Functions."
-  ],
+  "practice": [],
   "universalFacts": [
-    "Derivatives of Inverse Trig, Exp & Log Functions appears in exams.",
-    "Foundational for advanced topics."
+    "Compound interest is the reason $e$ matters: continuous growth is $e^{rt}$, and the derivative of the exponential is what makes that growth self-similar in time.",
+    "The curve $y=\\ln x$ is the inverse of $y=e^x$ and shares its steepness there, because a function and its inverse are reflections in $y=x$ and have reciprocal slopes."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [
-    "Application of Derivatives of Inverse Trig, Exp & Log Functions",
-    "Numerical problem on Derivatives of Inverse Trig, Exp & Log Functions",
-    "Daily life use of Derivatives of Inverse Trig, Exp & Log Functions"
-  ],
-  "practiceQuestions": [
-    "Q1. Define Derivatives of Inverse Trig, Exp & Log Functions.",
-    "Q2. Key formula for Derivatives of Inverse Trig, Exp & Log Functions.",
-    "Q3. Problem on Derivatives of Inverse Trig, Exp & Log Functions."
-  ],
+  "examples": [],
+  "practiceQuestions": [],
   "formulas": [
-    "Formula for Derivatives of Inverse Trig, Exp & Log Functions: [insert from textbook].",
-    "Key relationship: [variable formula]."
+    "$(\\arcsin x)' = \\frac1{\\sqrt{1-x^2}}$, $(\\arccos x)' = -\\frac1{\\sqrt{1-x^2}}$",
+    "$(\\arctan x)' = \\frac1{1+x^2}$, $(\\operatorname{arccot}x)' = -\\frac1{1+x^2}$",
+    "$(\\operatorname{arcsec}x)' = \\frac1{|x|\\sqrt{x^2-1}}$, $(\\operatorname{arccsc}x)' = -\\frac1{|x|\\sqrt{x^2-1}}$",
+    "$(e^x)' = e^x$, $(a^x)' = a^x\\ln a$",
+    "$(\\ln x)' = \\frac1x$, $(\\log_a x)' = \\frac1{x\\ln a}$"
   ],
   "keyPoints": [
-    "Core principle of Derivatives of Inverse Trig, Exp & Log Functions",
-    "Application of Derivatives of Inverse Trig, Exp & Log Functions",
-    "Connection of Derivatives of Inverse Trig, Exp & Log Functions to other topics"
+    "Arccos and arccot derivatives are negative; the others are positive.",
+    "Only $e^x$ is its own derivative — $a^x$ needs the $\\ln a$ factor.",
+    "The arcsec and arccsc derivatives require an absolute value on $x$."
   ],
-  "summary": "Derivatives of Inverse Trig, Exp & Log Functions covers essential principles and applications.",
+  "summary": "Every inverse trigonometric derivative takes the form 'one over the derivative of its partner', with a sign that is negative for arccos and arccot. The exponential $e^x$ is uniquely self-derivative, while $a^x$ carries an extra $\\ln a$ factor — the same factor that differentiating a logarithm removes, which is why logs and exponentials are paired. Domains and absolute values are part of these formulas, not decorations.",
   "specialNotes": [
-    "Check conditions for Derivatives of Inverse Trig, Exp & Log Functions.",
-    "Derivatives of Inverse Trig, Exp & Log Functions connects to other topics."
+    "Where a formula is quoted it is valid only under the conditions stated; Omitting the minus sign on the arccos derivative — it is the one inverse trig derivative that is negative among the three principal ones.",
+    "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Derivatives of Inverse Trig, Exp & Log Functions",
-    "Statement 2: Theorem related to Derivatives of Inverse Trig, Exp & Log Functions",
-    "Statement 3: Condition for Derivatives of Inverse Trig, Exp & Log Functions to be valid",
-    "Statement 4: Principle governing Derivatives of Inverse Trig, Exp & Log Functions",
-    "Statement 5: Corollary or consequence of Derivatives of Inverse Trig, Exp & Log Functions"
+    "Statement 1: $\\frac{d}{dx}\\arccos x = -\\frac1{\\sqrt{1-x^2}}$.",
+    "Statement 2: $\\frac{d}{dx}\\arctan x = \\frac1{1+x^2}$.",
+    "Statement 3: $\\frac{d}{dx}e^x = e^x$ but $\\frac{d}{dx}a^x = a^x\\ln a$.",
+    "Statement 4: $\\frac{d}{dx}\\ln x = \\frac1x$.",
+    "Statement 5: The arcsec and arccsc derivatives involve $|x|$ in the denominator."
   ],
   "importantNotes": [
-    "Derivatives of Inverse Trig, Exp & Log Functions is based on fundamental principles."
+    "Topic anchor: The derivative of $ ln$ inverts the exponent  since $e^x$ is its own derivative, $ frac{d}{dx} ln x =  frac1x$ follows by inverse-function differentiation."
   ],
   "examShortTricks": [
-    "Recall the formula for Derivatives of Inverse Trig, Exp & Log Functions."
+    "Inverse trig derivative = 1 over the partner's derivative, then adjust the sign for the 'co' functions (cos, cot, csc, sec).",
+    "For $a^x$, always write $a^x\\ln a$ — omitting $\\ln a$ is the common slip."
   ],
   "examNotes": [
-    "Focus on Derivatives of Inverse Trig, Exp & Log Functions problems - significant marks."
+    "Differentiating inverse trig and logarithmic expressions with the chain rule is a reliable 3-mark question."
   ],
   "mcs": [
     {
-      "question": "Which describes Derivatives of Inverse Trig, Exp & Log Functions?",
+      "question": "$\\frac{d}{dx}\\arccos x$ is:",
       "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
+        "$\\frac1{\\sqrt{1-x^2}}$",
+        "$-\\frac1{\\sqrt{1-x^2}}$",
+        "$\\frac1{1+x^2}$",
+        "$-\\frac1{1+x^2}$"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Arccos is the one principal inverse trig function with a negative derivative."
+    },
+    {
+      "question": "$\\frac{d}{dx}2^x$ is:",
+      "options": [
+        "$2^x$",
+        "$2^x\\ln2$",
+        "$\\frac{2^x}{\\ln2}$",
+        "$x2^{x-1}$"
+      ],
+      "answer": "B",
+      "explanation": "Only the natural exponential is self-derivative; $a^x$ needs the $\\ln a$ factor."
+    },
+    {
+      "question": "If $y=\\ln(3x)$, then $y'$ simplifies to:",
+      "options": [
+        "$\\frac{1}{3x}$",
+        "$\\frac{3}{x}$",
+        "$\\frac{1}{x}$",
+        "$\\frac{x}{3}$"
+      ],
+      "answer": "C",
+      "explanation": "By the chain rule, $y'=\\frac{1}{3x}\\times 3 = \\frac{3}{3x} = \\frac{1}{x}$. The inner derivative 3 must be multiplied in, then cancelled against the 3 in the denominator."
     }
   ],
   "importantConcepts": [
-    "Definition and significance of Derivatives of Inverse Trig, Exp & Log Functions."
+    "Arccos and arccot derivatives are negative; the others are positive.",
+    "Only $e^x$ is its own derivative — $a^x$ needs the $\\ln a$ factor.",
+    "The arcsec and arccsc derivatives require an absolute value on $x$."
   ],
   "importantTasks": [
-    "Solve 5 problems on Derivatives of Inverse Trig, Exp & Log Functions."
+    "Work through the authored practice problems and re-derive each key formula from the definition."
   ],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "visualType": "derivative",
+  "numericals": [
+    "**1. [Idea: first principles on a rational function with a removable hole]** Find the derivative of $f(x)=\\dfrac{x^2-9}{x-3}$ at $x=5$, and state at which points $f$ is not differentiable.\\newline\\newline**Solution: at 5 the hole is irrelevant**, so simplify first: $f(x)=x+3$ for $x\\ne3$, hence $f'(5)=1$.\\newline\\newline**Domain analysis:** $f$ is undefined at $x=3$, so $f'(3)$ does not exist — this is a domain failure, not a limit failure.$^{\\bullet}$ Re-examine $x=3$ after repairing: with $f(3)=6$ the function is $x+3$ everywhere and $f'(3)=1$.\\newline\\newline**Answer:** $f'(5)=1$; the original $f$ is not differentiable at $3$ only because it is undefined there. **Trap:** students who do not simplify try first principles and hit $\\frac{(x+3)-6}{x-3}$ — the same trap, just slower.",
+    "**2. [Idea: first principles for a radical, where rationalising is mandatory]** Differentiate $f(x)=\\sqrt{x}$ from first principles, and hence find $f'(4)$.\\newline\\newline**Solution:**$^{\\bullet}$ $f'(x)=\\lim_{h\\to0}\\dfrac{\\sqrt{x+h}-\\sqrt{x}}{h}$.\\newline\\newline$^{\\bullet}$ Multiply by the conjugate, $\\frac{\\sqrt{x+h}+\\sqrt{x}}{\\sqrt{x+h}+\\sqrt{x}}$:$\\newline\\lim_{h\\to0}\\dfrac{(x+h)-x}{h\\left(\\sqrt{x+h}+\\sqrt{x}\\right)} = \\lim_{h\\to0}\\dfrac{1}{\\sqrt{x+h}+\\sqrt{x}}$.\\newline\\newline$^{\\bullet}$ Letting $h\\to0$: $f'(x)=\\dfrac{1}{2\\sqrt{x}}$.\\newline\\newline**Answer:** $f'(x)=\\frac{1}{2\\sqrt{x}}$ for $x>0$, so $f'(4)=\\frac{1}{4}$. **Note:** the expression is undefined at $x=0$ — the square-root function has an infinite slope there, a vertical tangent, consistent with $f'(x)\\to\\infty$.",
+    "**3. [Idea: implicit differentiation, then eliminate to a function of one variable]** For $x^2 + y^2 = 9$, find $\\frac{dy}{dx}$ and the slope of the tangent at the point $(0,3)$.\\newline\\newline**Solution:** Differentiate throughout, treating $y$ as a function of $x$:$^{\\bullet}$ $2x + 2y\\dfrac{dy}{dx} = 0$, so $\\dfrac{dy}{dx} = -\\dfrac{x}{y}$.\\newline\\newline**At $(0,3)$:** the formula gives $-\\frac03 = 0$, so the tangent is **horizontal** there.\\newline\\newline**Why the formula is not a constant slope:** the circle is not a graph of a single function globally — the top half is $y=\\sqrt{9-x^2}$ and the bottom is $-\\sqrt{9-x^2}$, with opposite slopes.\\newline\\newline**Answer:** $\\frac{dy}{dx}=-\\frac{x}{y}$; slope at $(0,3)$ is $0$. **Contrast:** at $(3,0)$ the formula divides by $y=0$, correctly signalling a **vertical** tangent.",
+    "**4. [Idea: a parametric curve whose parameter cancels, with a vertical-tangent check]** A curve is $x = 3t - t^3$, $y = 3t^2$. Find $\\frac{dy}{dx}$ and where the tangent is vertical.\\newline\\newline**Solution:**$^{\\bullet}$ $\\dfrac{dx}{dt} = 3 - 3t^2$ and $\\dfrac{dy}{dt} = 6t$.$^{\\bullet}$ $\\dfrac{dy}{dx} = \\dfrac{6t}{3-3t^2} = \\dfrac{2t}{1-t^2}$.\\newline\\newline**Horizontal tangent** ($\\frac{dy}{dx}=0$): $2t=0 \\Rightarrow t=0$, giving the point $(0,0)$.\\newline\\newline**Vertical tangent** ($\\frac{dx}{dt}=0$): $3-3t^2=0 \\Rightarrow t=\\pm1$, giving points $(2,3)$ and $(-2,3)$.\\newline\\newline**Answer:** $\\frac{dy}{dx}=\\frac{2t}{1-t^2}$; horizontal tangent at $t=0$, vertical at $t=\\pm1$. **Trap:** finding a vertical tangent by setting $\\frac{dy}{dx}$ infinite without checking that $\\frac{dx}{dt}$ is genuinely zero.",
+    "**5. [Idea: a second implicit derivative needs the original relation substituted at the end]** For $x^2+y^2 = 25$, obtain $\\frac{d^2y}{dx^2}$ in terms of $y$ alone.\\newline\\newline**Solution:** From part 3, $\\dfrac{dy}{dx} = -\\dfrac{x}{y}$. Differentiate this fraction — do NOT re-derive from scratch:$^{\\bullet}$ $\\dfrac{d}{dx}\\left(-xy^{-1}\\right) = -\\left[\\left(\\frac{dx}{dx}\\right)y^{-1} + x\\left(\\frac{d}{dx}y^{-1}\\right)\\right]$.\\newline\\newline$^{\\bullet}$ Since $\\frac{d}{dx}y^{-1} = -y^{-2}\\dfrac{dy}{dx} = -y^{-2}\\left(-\\frac{x}{y}\\right) = \\dfrac{x}{y^3}$:$\\newline\\frac{d^2y}{dx^2} = -\\left[\\frac{1}{y} + x\\cdot\\frac{x}{y^3}\\right] = -\\frac{y^2 + x^2}{y^3}$.\\newline\\newline$^{\\bullet}$ Finally substitute $x^2+y^2=25$ to remove $x$: $\\dfrac{d^2y}{dx^2} = -\\dfrac{25}{y^3}$.\\newline\\newline**Answer:** $\\frac{d^2y}{dx^2}=-\\frac{r^2}{y^3}=-\\frac{25}{y^3}$ for a circle of radius $r=5$.\\newline\\newline**Check at the top $(0,5)$:** $-\\frac{25}{125}=-\\frac15$, so the top of the circle is concave down with $|f''|=\\frac{1}{5}$ — exactly $\\frac1r$, as a circle of curvature $r$ requires. **Trap:** writing $625$ by squaring $25$ again; the $25$ is already $r^2$.",
+    "**6. [Idea: logarithmic differentiation for a variable exponent]** Differentiate $y = x^x$ and hence find the stationary point of $y=\\dfrac{x^x}{e^x}$ for $x>0$.\\newline\\newline**Solution:** Differentiate $y=x^x$ by taking logs:$^{\\bullet}$ $\\ln y = x\\ln x$, so $\\dfrac{1}{y}\\dfrac{dy}{dx} = \\ln x + 1$.$^{\\bullet}$ Hence $\\dfrac{dy}{dx} = x^x(\\ln x + 1)$.\\newline\\newline**Now** $g(x)=\\dfrac{x^x}{e^x} = x^x e^{-x}$, so $\\dfrac{d}{dx}\\ln g = (\\ln x + 1) - 1 = \\ln x$.\\newline\\newlineSo $g'(x) = g(x)\\ln x$, which vanishes when $\\ln x = 0$, i.e. $x=1$.\\newline\\newline**Answer:** $\\frac{dy}{dx}=x^x(\\ln x+1)$; the stationary point of $g$ is $x=1$. **Verification:** $g(1)=1\\cdot e^{-1}=e^{-1}$, and $g' = g\\ln x$ changes from negative ($x<1$) to positive ($x>1$), confirming a minimum."
+  ]
 }

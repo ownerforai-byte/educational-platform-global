@@ -1,8 +1,9 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { MessageCircle, X } from "lucide-react";
+import { X } from "lucide-react";
 import { AIChatInterface } from "@/components/ai/ai-chat-interface";
+import { CaptainMark } from "@/components/ai/captain-logo";
 
 /**
  * Floating AI chat launcher (bottom-left corner).
@@ -34,12 +35,12 @@ export function AIWidget() {
             ? "bg-red-500 hover:bg-red-600"
             : "bg-gradient-to-br from-primary to-primary/70 hover:scale-105"
         }`}
-        aria-label="Toggle AI chat"
+        aria-label="Toggle Captain chat"
       >
         {open ? (
           <X className="h-6 w-6 text-white" />
         ) : (
-          <MessageCircle className="h-6 w-6 text-white" />
+          <CaptainMark className="h-7 w-7 text-white" />
         )}
       </button>
 
@@ -49,7 +50,7 @@ export function AIWidget() {
           className="fixed bottom-24 left-6 z-50 w-[min(760px,calc(100vw-3rem))] rounded-2xl border border-border bg-card shadow-2xl overflow-hidden"
           style={{ height: "min(640px, calc(100vh - 8rem))" }}
           role="dialog"
-          aria-label="Ravikisan's AI Tutor"
+          aria-label="Ravikisan's Captain"
         >
           <AIChatInterface embedded />
         </div>

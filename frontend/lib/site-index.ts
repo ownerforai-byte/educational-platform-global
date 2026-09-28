@@ -298,11 +298,64 @@ export function buildSiteIndex(): SiteIndexGroup[] {
     }),
   });
 
-  /* 7. Reference & practice — everything else, each with its own routed pages. */
+  /* 7. Captain studio — one dedicated page per tool, plus the wallet that feeds it. */
+  groups.push({
+    id: "ai",
+    name: "Captain studio — one page per tool",
+    opening:
+      "Each Captain tool on the platform has its own page with its own features: ask a doubt, keep a conversation, generate a quiz, or search the curriculum.",
+    href: "/ai",
+    entries: [
+      {
+        name: "Captain Studio Hub",
+        opening: "The door to all four Captain tools, with your live credits and daily pool on top.",
+        href: "/ai",
+        meta: "Hub",
+      },
+      {
+        name: "Captain Study Assistant",
+        opening: "Ask any NEB Class 11 or 12 doubt and get a curriculum-aligned answer on the spot.",
+        href: "/chat",
+        meta: "Chat",
+        links: [
+          { label: "Tutor console with history", href: "/ai/tutor" },
+          { label: "Adaptive quiz", href: "/ai-quiz" },
+          { label: "Curriculum search", href: "/ai/search" },
+        ],
+      },
+      {
+        name: "Captain Tutor Console",
+        opening:
+          "Long-form tutor with saved conversations, a New conversation button and a prompt enhancer.",
+        href: "/ai/tutor",
+        meta: "History",
+      },
+      {
+        name: "Adaptive Captain Quiz",
+        opening: "Generated practice sets with difficulty bands, scoring and worked feedback.",
+        href: "/ai-quiz",
+        meta: "Practice",
+      },
+      {
+        name: "Captain Curriculum Search",
+        opening: "Plain-language search across notes, labs, graphs and past questions.",
+        href: "/ai/search",
+        meta: "Search",
+      },
+      {
+        name: "Credits & Plan",
+        opening: "Your daily pool, top-ups and the PRO plan that removes the cap.",
+        href: "/credits",
+        meta: "Wallet",
+      },
+    ],
+  });
+
+  /* 8. Reference & practice — everything else, each with its own routed pages. */
   groups.push({
     id: "reference",
     name: "Reference, practice & general knowledge",
-    opening: "The pages that sit beside the curriculum: reference tables, practice banks, GK and the assistant.",
+    opening: "The pages that sit beside the curriculum: reference tables, practice banks and general knowledge.",
     entries: [
       {
         name: "Periodic Table & CEE",
@@ -386,18 +439,6 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         opening: "PYQ-style question sets by subject and unit, with worked answers.",
         href: "/quiz",
         meta: "PYQ",
-      },
-      {
-        name: "Adaptive AI Quiz",
-        opening: "Questions that adjust to your level as you answer.",
-        href: "/ai-quiz",
-        meta: "Adaptive",
-      },
-      {
-        name: "AI Study Assistant",
-        opening: "Ask anything — answers first, then the platform links and sources that back them.",
-        href: "/chat",
-        meta: "AI",
       },
       {
         name: "Loksewa GK",

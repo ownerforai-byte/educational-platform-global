@@ -40,10 +40,10 @@ export function AssessmentExamHub() {
             <span>Assessment &amp; Exam Readiness</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mt-1">
-            AI Test Generator, Past Board PYQs &amp; Exam Countdown
+            Captain Test Generator, Past Board PYQs &amp; Exam Countdown
           </h2>
           <p className="text-sm text-muted-foreground mt-1 max-w-2xl">
-            Test your knowledge with dynamic AI question generation, review authentic NEB board questions, and stay ahead of your examination schedule.
+            Test your knowledge with dynamic Captain question generation, review authentic NEB board questions, and stay ahead of your examination schedule.
           </p>
         </div>
 
@@ -53,7 +53,7 @@ export function AssessmentExamHub() {
             className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl bg-primary text-primary-foreground text-xs font-bold shadow-sm hover:bg-primary/90 transition-all"
           >
             <Sparkles className="h-3.5 w-3.5" />
-            <span>AI Quiz Maker</span>
+            <span>Captain Quiz Maker</span>
           </Link>
           <Link
             href="/exam-countdown"
@@ -75,12 +75,12 @@ export function AssessmentExamHub() {
                   <Brain className="h-5 w-5" />
                 </div>
                 <div>
-                  <h3 className="font-bold text-foreground text-base">Instant AI Quiz Generator</h3>
+                  <h3 className="font-bold text-foreground text-base">Instant Captain Quiz Generator</h3>
                   <p className="text-xs text-muted-foreground">Custom syllabus questions synthesized on demand</p>
                 </div>
               </div>
               <span className="text-[11px] font-bold px-2.5 py-0.5 rounded-full bg-violet-500/20 text-violet-400">
-                Live AI Engine
+                Live Captain Engine
               </span>
             </div>
 

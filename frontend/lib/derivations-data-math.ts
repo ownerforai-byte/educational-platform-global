@@ -34,6 +34,44 @@ export const MATH_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "The three classical means obey a strict total order for positive reals, with equality only at uniformity.",
     keyTakeaways: ["For a fixed sum, the product is maximized when the numbers are equal."],
     examTraps: ["GM is undefined for negative inputs; the inequality needs positivity."],
+    specialCases: [
+      {
+        name: "a = b collapses all three means",
+        condition: "Substitute a = b = k > 0",
+        formula: "AM = GM = HM = k",
+        meaning: "Equality holds throughout the chain, and this is the only way it can: the theorem is an equality precisely when every number is the same.",
+      },
+      {
+        name: "n-variable version of the chain",
+        condition: "Replace the pair by n positive numbers a_1 ... a_n",
+        formula: "\\frac{a_1 + \\cdots + a_n}{n} \\ge (a_1 a_2 \\cdots a_n)^{1/n} \\ge \\frac{n}{\\frac{1}{a_1} + \\cdots + \\frac{1}{a_n}}",
+        meaning: "Board questions almost never stop at two numbers, so learn this shape; the two-term version is just n = 2.",
+      },
+      {
+        name: "HM of a, b is the AM of the reciprocals",
+        condition: "Apply AM-GM to 1/a and 1/b, then invert",
+        formula: "\\frac{2}{\\frac{1}{a}+\\frac{1}{b}} = \\frac{2ab}{a+b}",
+        meaning: "The shortest proof of GM >= HM: reciprocate first and the very same two-number inequality reappears, so only AM-GM is needed.",
+      },
+      {
+        name: "Mixed signs kill the real geometric mean",
+        condition: "Drop the hypothesis a, b > 0 and take ab < 0",
+        formula: "ab < 0 \\Rightarrow \\sqrt{ab} \\notin \\mathbb{R}",
+        meaning: "For a mixed-sign pair GM is not a real number, so the ordering AM >= GM >= HM is not even meaningful; the positivity hypothesis is doing real work.",
+      },
+      {
+        name: "Fixed sum maximises the product at equality",
+        condition: "Hold a + b = S constant and vary ab",
+        formula: "ab \\le \\left(\\frac{S}{2}\\right)^2",
+        meaning: "This is the standard 'find the maximum product' question, and its equality case a = b = S/2 is exactly the AM-GM equality condition.",
+      },
+      {
+        name: "Weighted two-term form",
+        condition: "Weights p, q > 0 with p + q = 1",
+        formula: "pa + qb \\ge a^{p}b^{q}",
+        meaning: "The general inequality behind the whole family; p = q = 1/2 gives the ordinary AM-GM, so this subsumes the two-number case.",
+      },
+    ],
     visualType: "amgm-relation",
     solvedProblems: [
       {
@@ -72,6 +110,44 @@ export const MATH_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "The discriminant is the single test that classifies the root behaviour of every real quadratic.",
     keyTakeaways: ["Use Vieta to find expressions in the roots without solving."],
     examTraps: ["If a, b, c are rational and D is a non-square, the roots are irrational."],
+    specialCases: [
+      {
+        name: "D = 0, the repeated root",
+        condition: "b^2 - 4ac = 0 exactly, with a ≠ 0",
+        formula: "\\alpha = \\beta = -\\frac{b}{2a},\\quad ax^2 + bx + c = a\\left(x + \\frac{b}{2a}\\right)^2",
+        meaning: "One real root of multiplicity two, and the parabola only touches the x-axis instead of crossing it; count it as a single root, not two.",
+      },
+      {
+        name: "D > 0 but not a perfect square",
+        condition: "a, b, c integers with D > 0 and D not a square",
+        formula: "D = 5 \\Rightarrow x = \\frac{-b \\pm \\sqrt{5}}{2a} \\notin \\mathbb{Q}",
+        meaning: "The roots are real but irrational; board questions use exactly this to separate 'real' from 'rational', which are not the same thing.",
+      },
+      {
+        name: "D < 0 forces a and c to share a sign",
+        condition: "D < 0, so 4ac > b^2 ≥ 0",
+        formula: "D < 0 \\Rightarrow ac > 0,\\quad \\alpha = -\\frac{b}{2a} + i\\frac{\\sqrt{-D}}{2a}",
+        meaning: "A complex pair is only possible when a and c have the same sign, so a negative-leading-coefficient parabola opens downward and still misses the axis.",
+      },
+      {
+        name: "D < 0, distance between the roots",
+        condition: "Complex conjugate pair, a ≠ 0",
+        formula: "|\\alpha - \\beta| = \\frac{\\sqrt{-D}}{|a|} = \\frac{\\sqrt{4ac - b^2}}{|a|}",
+        meaning: "The gap between the conjugate roots is fixed by the discriminant alone, which is how questions ask for the 'distance between the roots'.",
+      },
+      {
+        name: "a = 0 degenerates to a linear equation",
+        condition: "Leading coefficient vanishes, so it is no longer a quadratic",
+        formula: "a = 0 \\Rightarrow bx + c = 0,\\ x = -\\frac{c}{b}\\ (b \\ne 0)",
+        meaning: "The discriminant test is meaningless here; always confirm a ≠ 0 before classifying roots, or you will 'find' two complex roots for a linear equation.",
+      },
+      {
+        name: "Vieta without solving",
+        condition: "Ask for α + β or αβ instead of the roots themselves",
+        formula: "\\alpha + \\beta = -\\frac{b}{a},\\quad \\alpha\\beta = \\frac{c}{a}",
+        meaning: "These hold for real and complex roots alike, so an expression in the roots can be evaluated without ever computing them; the standard shortcut in the algebra unit.",
+      },
+    ],
     visualType: "quadratic-equation-nature-roots",
     solvedProblems: [
       {
@@ -110,6 +186,44 @@ export const MATH_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "These identities let you expand and compress logarithmic expressions and solve equations.",
     keyTakeaways: ["log_b(b) = 1 and log_b(1) = 0 are the anchor values."],
     examTraps: ["log(x+y) ≠ log x + log y — the log of a sum is not a sum of logs."],
+    specialCases: [
+      {
+        name: "Argument equal to 1 or to the base",
+        condition: "Substitute x = 1 and x = b",
+        formula: "\\log_b 1 = 0,\\qquad \\log_b b^x = x",
+        meaning: "These anchor values let you check any simplification at a glance: an answer that cannot reproduce log_b 1 = 0 has an error somewhere.",
+      },
+      {
+        name: "Argument zero is outside the domain",
+        condition: "x → 0 in log_b x",
+        formula: "\\log_b 0 = -\\infty\\ \\text{(undefined)},\\quad \\log_b 0^+ \\to -\\infty",
+        meaning: "The limit is minus infinity but the value does not exist, so log 0 is never a legitimate term in a simplification.",
+      },
+      {
+        name: "Negative argument needs a complex branch",
+        condition: "x < 0, or a negative base raised to a fractional power",
+        formula: "\\log_b(-x) = \\log_b x + (2k+1)i\\pi,\\ k \\in \\mathbb{Z}",
+        meaning: "Over the reals the log of a negative number simply does not exist; the multi-valued complex form is the honest reading and is what traps careless candidates.",
+      },
+      {
+        name: "Base restrictions 0 < b, b ≠ 1",
+        condition: "b = 1 or b ≤ 0 in the base position",
+        formula: "b = 1 \\Rightarrow 1^x = 1\\ \\text{(not invertible)},\\quad b \\le 0 \\text{ invalid}",
+        meaning: "The base 1 gives a constant, so log_1 has no inverse; every base in the syllabus satisfies 0 < b ≠ 1.",
+      },
+      {
+        name: "Power rule with an even exponent",
+        condition: "x < 0, n even, in log_b(x^n)",
+        formula: "\\log_b(x^{2}) = 2\\log_b x \\text{ fails for } x < 0",
+        meaning: "The rule is proved for x > 0 only; for a negative x, x^2 is fine but log_b x is not a real number, so the split is illegal.",
+      },
+      {
+        name: "Change of base for non-decimal logs",
+        condition: "log_2 10, log_5 64 and similar non-decimal bases",
+        formula: "\\log_b x = \\frac{\\log_{10} x}{\\log_{10} b},\\quad \\log_2 64 = 6",
+        meaning: "Every logarithm reduces to the common log this way, so a log_2 64 question is a division, not a search for a table entry.",
+      },
+    ],
     visualType: "logarithm-properties-proof",
     solvedProblems: [
       {
@@ -147,6 +261,44 @@ export const MATH_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "The modulus is multiplicative and the conjugate removes the imaginary part.",
     keyTakeaways: ["|z| = 1 places z on the unit circle."],
     examTraps: ["The conjugate of z1 + z2 is the sum of the conjugates: z̄1 + z̄2."],
+    specialCases: [
+      {
+        name: "z = 0 collapses modulus and argument",
+        condition: "a = 0 and b = 0 in z = a + ib",
+        formula: "|z| = 0,\\quad \\arg z\\ \\text{undefined},\\quad \\frac{1}{z}\\ \\text{does not exist}",
+        meaning: "Zero is the one complex number with no argument and no reciprocal, so polar form z = re^(iθ) is only valid for r > 0.",
+      },
+      {
+        name: "Purely imaginary z",
+        condition: "a = 0 with b ≠ 0",
+        formula: "z = ib,\\quad \\bar z = -z,\\quad |z| = |b|",
+        meaning: "Here the conjugate is the negative of z; the point is mirrored and negated at once, and z + z̄ = 0 stays real.",
+      },
+      {
+        name: "Triangle inequality for a sum",
+        condition: "Add z_1 and z_2 and bound the modulus",
+        formula: "|z_1 + z_2| \\le |z_1| + |z_2|,\\quad \\text{equality iff } \\arg z_1 = \\arg z_2",
+        meaning: "Moduli combine as a triangle, never exactly; the bound is tight only when the two vectors point the same way.",
+      },
+      {
+        name: "Quotient via conjugate (rationalising)",
+        condition: "Divide z_1 by z_2 with z_2 ≠ 0",
+        formula: "\\frac{z_1}{z_2} = \\frac{z_1 \\bar z_2}{|z_2|^2} = \\frac{z_1 \\bar z_2}{a_2^2 + b_2^2}",
+        meaning: "Multiply top and bottom by the conjugate to get a real denominator; the sign of the imaginary part depends on the relative signs of b_1 and b_2.",
+      },
+      {
+        name: "z real iff z = z̄",
+        condition: "Compare z and its conjugate",
+        formula: "z = \\bar z \\iff b = 0,\\quad \\frac{z}{\\bar z} = 1",
+        meaning: "Only real numbers equal their own conjugate, which is why conjugate pairs always have a common real part -b/(2a).",
+      },
+      {
+        name: "Modulus of a product vs product of moduli",
+        condition: "z_1 = a_1 + ib_1, z_2 = a_2 + ib_2",
+        formula: "|z_1 z_2| = |z_1||z_2|,\\quad |z_1 + z_2| \\ne |z_1| + |z_2|\\ \\text{ in general}",
+        meaning: "Multiplication is the operation that makes moduli multiplicative; for addition you only get an inequality, a very common slip.",
+      },
+    ],
     visualType: "complex-number-properties",
     solvedProblems: [
       {
@@ -187,6 +339,44 @@ export const MATH_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Choose the form that matches the data; all are algebraically interconvertible.",
     keyTakeaways: ["Parallel lines share slope; perpendicular slopes multiply to −1."],
     examTraps: ["Vertical lines have undefined slope — use x = c instead."],
+    specialCases: [
+      {
+        name: "Vertical line, slope undefined",
+        condition: "The two given points share the same x-coordinate",
+        formula: "x = c,\\quad m = \\frac{y_2 - y_1}{x_2 - x_1} = \\frac{0}{0}\\ \\text{undefined}",
+        meaning: "Slope-intercept and point-slope forms both fail; write x = c, and remember a vertical line is perpendicular to every horizontal line, not via the product rule.",
+      },
+      {
+        name: "Horizontal line, m = 0",
+        condition: "The two given points share the same y-coordinate",
+        formula: "y = c,\\quad m = 0,\\quad c = y_1",
+        meaning: "The 'no solution for c' case in point-slope form actually collapses to y = y_1; watch for it when converting between forms.",
+      },
+      {
+        name: "Line through the origin",
+        condition: "The point (0, 0) satisfies the equation",
+        formula: "c = 0 \\Rightarrow y = mx,\\quad Ax + By = 0",
+        meaning: "Both c and the general constant C vanish, and the intercept form is unavailable because both intercepts are zero.",
+      },
+      {
+        name: "Perpendicular lines, m₁m₂ = −1",
+        condition: "Two non-vertical lines meet at a right angle",
+        formula: "m_1 m_2 = -1,\\quad m_2 = -\\frac{1}{m_1}",
+        meaning: "The product is −1, not the sum; a line perpendicular to itself would need m = ±i, which is why no real line is perpendicular to itself.",
+      },
+      {
+        name: "Intercept form needs both intercepts",
+        condition: "Use x/a + y/b = 1 with a = 0 or b = 0",
+        formula: "\\frac{x}{a} + \\frac{y}{b} = 1,\\quad a, b \\ne 0,\\quad (a,0)\\ \\text{and}\\ (0,b)",
+        meaning: "A line through the origin, or one parallel to an axis, has an intercept at infinity and cannot be written this way — fall back to the general form.",
+      },
+      {
+        name: "Normal form and the sign of p",
+        condition: "Write x cos α + y sin α = p with p taken positive",
+        formula: "p = \\frac{|C|}{\\sqrt{A^2 + B^2}} \\ge 0,\\quad Ax + By + C = 0",
+        meaning: "The normal form measures the perpendicular distance from the origin; the ± belongs to the normal vector, not to p, which is non-negative by convention.",
+      },
+    ],
     visualType: "line-equation-forms",
     solvedProblems: [
       {
@@ -225,6 +415,44 @@ export const MATH_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "The second-degree coefficients encode the two lines, their angle and their concurrence.",
     keyTakeaways: ["Equal slopes from h² = ab → parallel pair."],
     examTraps: ["A 'pair' can also be a point, a real line, or complex lines — check discriminants."],
+    specialCases: [
+      {
+        name: "h² = ab, coincident pair (perfect square)",
+        condition: "Homogeneous ax² + 2hxy + by² = 0 with h² = ab and a, b > 0",
+        formula: "h^2 = ab \\Rightarrow ax^2 + 2hxy + by^2 = (\\sqrt{a}\\,x + \\sqrt{b}\\,y)^2",
+        meaning: "The angle is 0° because the 'two' lines are the same line counted twice; two distinct parallel lines cannot both pass through the origin, so parallel here can only mean coincident.",
+      },
+      {
+        name: "h² < ab, imaginary pair",
+        condition: "Homogeneous pair with h² - ab < 0",
+        formula: "h^2 < ab \\Rightarrow \\text{no real lines},\\ \\text{only the origin}",
+        meaning: "The square root in the angle formula is imaginary, so the equation represents two conjugate imaginary lines intersecting at the origin — it has no real point other than (0,0).",
+      },
+      {
+        name: "a + b = 0, perpendicular pair",
+        condition: "The x² and y² coefficients sum to zero, h² > ab",
+        formula: "a + b = 0 \\Rightarrow \\theta = 90^{\\circ}",
+        meaning: "The denominator of the angle formula vanishes; the two lines are at right angles, and this is the cleanest way to spot a perpendicular pair in the syllabus.",
+      },
+      {
+        name: "General second degree, determinant test",
+        condition: "Full equation ax² + 2hxy + by² + 2gx + 2fy + c = 0, not necessarily through the origin",
+        formula: "\\begin{vmatrix} a & h & g \\\\ h & b & f \\\\ g & f & c \\end{vmatrix} = abc + 2fgh - af^2 - bg^2 - ch^2 = 0",
+        meaning: "The determinant vanishing is necessary and sufficient for the equation to be a pair of straight lines; it is the general test, while h² ≥ ab covers only the homogeneous case.",
+      },
+      {
+        name: "Both lines pass through the origin",
+        condition: "g = f = c = 0 in the general equation",
+        formula: "g = f = c = 0 \\Rightarrow ax^2 + 2hxy + by^2 = 0,\\ am_1m_2 = b",
+        meaning: "Setting y = mx reduces the pair to a quadratic in the slopes, a m² + 2h m + b = 0 — the fastest route to the individual slopes in the board paper.",
+      },
+      {
+        name: "All second-degree terms vanish",
+        condition: "a = b = h = 0 but g, f or c ≠ 0",
+        formula: "a = b = h = 0 \\Rightarrow 2gx + 2fy + c = 0,\\ \\text{a single line}",
+        meaning: "The equation degenerates from a pair to one straight line, so the pair conditions no longer apply; check the degree before testing anything.",
+      },
+    ],
     visualType: "pair-of-lines-condition",
     solvedProblems: [
       {
@@ -265,6 +493,44 @@ export const MATH_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "These laws handle any question about unions, intersections and complements of events.",
     keyTakeaways: ["For independent events, drop the conditional."],
     examTraps: ["'Mutually exclusive' (A∩B=∅) and 'independent' are NOT the same — exclusive events are in fact dependent."],
+    specialCases: [
+      {
+        name: "Mutually exclusive events",
+        condition: "A ∩ B = ∅, so P(A ∩ B) = 0",
+        formula: "P(A \\cup B) = P(A) + P(B)",
+        meaning: "The subtraction term vanishes, so the addition rule becomes plain addition; two non-null exclusive events are automatically dependent, since P(A)P(B) > 0.",
+      },
+      {
+        name: "Independent events",
+        condition: "P(A ∩ B) = P(A)P(B), equivalently P(A|B) = P(A) when P(B) > 0",
+        formula: "P(A \\cap B) = P(A)P(B)",
+        meaning: "Mutually exclusive AND independent simultaneously is impossible unless one event has probability zero; the two words describe opposite situations.",
+      },
+      {
+        name: "Conditional probability needs P(B) > 0",
+        condition: "B is impossible, P(B) = 0",
+        formula: "P(A|B) = \\frac{P(A \\cap B)}{P(B)} = \\frac{0}{0}\\ \\text{undefined}",
+        meaning: "Conditioning on an event that cannot occur is meaningless; the quotient rule is legal only when the conditioning event has nonzero probability.",
+      },
+      {
+        name: "Complement of the sample space",
+        condition: "A = ∅ or A = S",
+        formula: "P(\\varnothing) = 0,\\quad P(S) = 1,\\quad P(A) + P(\\bar A) = 1",
+        meaning: "These are the endpoints of the 0 ≤ P(A) ≤ 1 range, and the complement rule converts 'at least one' questions into product questions by inclusion–exclusion.",
+      },
+      {
+        name: "Three-event inclusion–exclusion",
+        condition: "Extend the addition rule to A, B, C",
+        formula: "P(A \\cup B \\cup C) = \\sum P - \\sum P(A \\cap B) + P(A \\cap B \\cap C)",
+        meaning: "Pairwise intersections are added back because they were subtracted twice; pairwise independence alone does not make the triple term vanish.",
+      },
+      {
+        name: "A ∪ B = S when A and B are complementary",
+        condition: "B = Ā, so the union is certain and the intersection is empty",
+        formula: "P(A \\cup \\bar A) = P(A) + (1 - P(A)) = 1",
+        meaning: "A quick consistency check: if a question reports a union probability that depends on P(A), the events were not complementary after all.",
+      },
+    ],
     visualType: "probability-basic-theorems",
     solvedProblems: [
       {
@@ -303,6 +569,44 @@ export const MATH_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Pearson's coefficient summarizes skewness as a normalized difference between median and mean.",
     keyTakeaways: ["For a strongly skewed set, replace the mean by the median."],
     examTraps: ["The coefficient of SKEWNESS is not the same as the coefficient of VARIATION."],
+    specialCases: [
+      {
+        name: "Perfectly symmetric data",
+        condition: "Mean = Median, so the distribution is balanced about its centre",
+        formula: "\\text{Sk} = \\frac{3(\\text{Med} - \\bar x)}{\\sigma} = 0",
+        meaning: "Zero skewness is the signature of symmetry; it says nothing about the shape otherwise, since a bimodal symmetric set is still unskewed.",
+      },
+      {
+        name: "Sign convention: long right tail",
+        condition: "x̄ > Med, as when a few large values stretch the mean rightwards",
+        formula: "\\bar x > \\text{Med} \\Rightarrow \\text{Sk} < 0\\ \\text{for } 3(\\text{Med}-\\bar x)/\\sigma",
+        meaning: "Read the sign off the formula's own numerator, not off the word 'positive skew'; some texts instead use 3(x̄ − Med)/σ, which flips the sign, so quote the convention you are using.",
+      },
+      {
+        name: "σ = 0, all values identical",
+        condition: "Every observation equals the same constant, so there is no spread",
+        formula: "\\sigma = 0 \\Rightarrow \\text{Sk} = \\frac{0}{0}\\ \\text{undefined}",
+        meaning: "A coefficient normalised by a spread is undefined on a constant data set; the same 0/0 trap appears in CV = σ/x̄ whenever both vanish.",
+      },
+      {
+        name: "The |Sk| ≤ 1 bound and its hypothesis",
+        condition: "Unimodal (single-peaked) distribution",
+        formula: "-1 \\le \\text{Sk} \\le 1\\ \\text{for a unimodal set}",
+        meaning: "The bound needs a single mode; a bimodal or multimodal set can exceed ±1 (the worked example gives −1.5), so never quote the bound without the hypothesis.",
+      },
+      {
+        name: "Bowley's quartile coefficient",
+        condition: "Use quartiles instead of the median, as a second measure",
+        formula: "\\text{Sk}_B = \\frac{Q_3 + Q_1 - 2Q_2}{Q_3 - Q_1}",
+        meaning: "Both coefficients measure asymmetry from a central value, but Bowley's uses the interquartile range and so ignores everything outside the quartiles; the two can disagree on the same data.",
+      },
+      {
+        name: "Sample vs population standard deviation",
+        condition: "σ estimated as s with denominator n − 1 instead of n",
+        formula: "s = \\sqrt{\\frac{\\sum (x-\\bar x)^2}{n-1}},\\quad \\frac{\\text{Sk}_s}{\\text{Sk}_\\sigma} = \\sqrt{\\frac{n}{n-1}}",
+        meaning: "The coefficient is only 'the' skewness once the divisor is stated; swapping n for n − 1 rescales it, so always say whether σ is population or sample.",
+      },
+    ],
     visualType: "pearson-skewness",
     solvedProblems: [
       {
@@ -343,6 +647,44 @@ export const MATH_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "The FTC connects differentiation and integration as inverse operations — the heart of the calculus.",
     keyTakeaways: ["Definite integrals need no '+C'."],
     examTraps: ["The FTC requires f to be continuous on the interval."],
+    specialCases: [
+      {
+        name: "Reversed limits flip the sign",
+        condition: "Integrate with the upper limit below the lower limit",
+        formula: "\\int_a^b f\\,dx = -\\int_b^a f\\,dx",
+        meaning: "The definite integral is oriented, not an unsigned area; a negative value means the curve is below the axis, not that the computation failed.",
+      },
+      {
+        name: "Equal limits give zero",
+        condition: "a = b in the definite integral",
+        formula: "\\int_a^a f\\,dx = F(a) - F(a) = 0",
+        meaning: "A zero-width interval encloses no area at all, which is the sanity check that F(b) − F(a) was formed correctly.",
+      },
+      {
+        name: "Constant integrand",
+        condition: "f(x) = k on [a, b]",
+        formula: "\\int_a^b k\\,dx = k(b - a)",
+        meaning: "The FTC collapses to the rectangle rule; this is the fastest check that the antiderivative you found really does differentiate back to k.",
+      },
+      {
+        name: "Odd function on a symmetric interval",
+        condition: "f is odd and a = −b",
+        formula: "\\int_{-a}^{a} f(x)\\,dx = 0",
+        meaning: "The two halves cancel exactly, so a hard integral vanishes without being evaluated — a standard board shortcut and a common source of a confident zero answer.",
+      },
+      {
+        name: "Variable upper limit (FTC part 1)",
+        condition: "Upper limit is x itself, f continuous",
+        formula: "\\frac{d}{dx}\\int_a^x f(t)\\,dt = f(x)",
+        meaning: "Naming the dummy variable t rather than x is what makes the derivative legal; differentiating ∫f(x)dx with respect to x would give 0 and is the classic blunder.",
+      },
+      {
+        name: "f discontinuous at one point",
+        condition: "A jump inside (a, b), e.g. a step function",
+        formula: "\\int_a^b f\\,dx = \\int_a^{c} f\\,dx + \\int_c^{b} f\\,dx",
+        meaning: "The plain FTC hypothesis fails there, so split the interval at the jump and apply the theorem on each piece; a single global antiderivative does not exist.",
+      },
+    ],
     visualType: "ftc-calculus",
     solvedProblems: [
       {
@@ -381,6 +723,44 @@ export const MATH_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "L'Hôpital resolves 0/0 and ∞/∞ limits by replacing the original ratio with the derivative ratio.",
     keyTakeaways: ["Check the form first — l'Hôpital does NOT apply to 0·∞ directly (convert it)." ],
     examTraps: ["A limit that is not 0/0 or ∞/∞ is illegal for l'Hôpital."],
+    specialCases: [
+      {
+        name: "∞ − ∞, rewrite before differentiating",
+        condition: "Both terms diverge, e.g. lim (x − √(x²−1)) as x → ∞",
+        formula: "\\infty - \\infty \\Rightarrow \\frac{1 - \\sqrt{1 - 1/x^2}}{1/x} = \\frac{0}{0}\\ \\text{now legal}",
+        meaning: "This form is not legal for l'Hôpital; divide through by x or rationalise first to reach a genuine 0/0.",
+      },
+      {
+        name: "0 · ∞, split into a quotient",
+        condition: "One factor tends to 0, the other to infinity",
+        formula: "0 \\cdot \\infty \\Rightarrow \\frac{u}{1/v} = \\frac{u'}{v'}",
+        meaning: "Also outside the rule's scope; rewrite the product as a quotient so the 0/0 or ∞/∞ hypothesis is actually met.",
+      },
+      {
+        name: "g′(x) = 0 at the limit point",
+        condition: "The denominator's derivative vanishes at c, e.g. lim (x²−1)/(x−1)²",
+        formula: "g'(c) = 0 \\Rightarrow \\text{hypothesis fails},\\ \\lim = 2 \\text{ by factorising}",
+        meaning: "The rule requires g′ ≠ 0 near c; factorise (x−1)(x+1)/(x−1)² instead of differentiating into 0/0 and stalling.",
+      },
+      {
+        name: "Two-sided vs one-sided limit",
+        condition: "The limit is requested as x → 0⁺ or as x → ∞",
+        formula: "\\lim_{x \\to 0^+}\\frac{\\ln(1+x)}{x} = \\lim_{x \\to 0^+}\\frac{1/(1+x)}{1} = 1",
+        meaning: "One-sided limits obey exactly the same rule; the direction only matters when the two sides disagree or the function is not defined at c.",
+      },
+      {
+        name: "Repeated 0/0 needs several rounds",
+        condition: "The derivative ratio is still indeterminate",
+        formula: "\\lim_{x\\to 0}\\frac{x - \\sin x}{x^3} = \\frac{1 - \\cos x}{3x^2} = \\frac{\\sin x}{6x} = \\frac{1}{6}",
+        meaning: "Stop as soon as the form resolves; two applications here remove the 0/0 twice, and over-differentiating a resolved ratio is a frequent loss of marks.",
+      },
+      {
+        name: "Limit is a non-zero constant",
+        condition: "The quotient is not indeterminate, e.g. lim (x²+1)/(x²+2) as x → ∞",
+        formula: "\\frac{1 + 1/x^2}{1 + 2/x^2} \\to 1",
+        meaning: "There is nothing to remove; apply l'Hôpital anyway and it still works, but direct division by the leading power is faster and less risky.",
+      },
+    ],
     visualType: "lhospitals-rule",
     solvedProblems: [
       {
@@ -419,6 +799,44 @@ export const MATH_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "The sign of the first derivative gives monotonicity; the sign of the second at critical points gives the type of extremum.",
     keyTakeaways: ["Maxima on a closed interval also include the endpoints."],
     examTraps: ["f'' = 0 does not mean 'not an extremum' — it means 'test again'."],
+    specialCases: [
+      {
+        name: "f″(c) = 0, the test is inconclusive",
+        condition: "Both derivatives vanish at c, e.g. f(x) = x³ at x = 0",
+        formula: "f'(0) = f''(0) = 0 \\Rightarrow \\text{use the sign chart of } f'",
+        meaning: "Zero second derivative means the curvature test has no opinion, not that there is no extremum; go back to the first-derivative sign change.",
+      },
+      {
+        name: "Stationary point of inflection",
+        condition: "f′ = 0, f″ = 0, f‴ ≠ 0, as at x = 0 for f(x) = x³",
+        formula: "f'(0) = f''(0) = 0,\\quad f'''(0) = 6 \\ne 0",
+        meaning: "A point with a horizontal tangent and no extremum: the curve passes straight through while changing concavity, which is why f′ = 0 alone proves nothing.",
+      },
+      {
+        name: "Corner with f′ undefined",
+        condition: "f is continuous but not differentiable, e.g. f(x) = |x| at 0",
+        formula: "f'(0)\\ \\text{does not exist},\\quad f''(0) = -1 < 0",
+        meaning: "A cusp or corner is a critical point with no second derivative at all; inspect the one-sided slopes to classify it.",
+      },
+      {
+        name: "Absolute extrema on a closed interval",
+        condition: "f continuous on [a, b], as in the extreme value theorem",
+        formula: "\\max_{[a,b]} f = \\max\\{f(a),\\ f(b),\\ f(c_1),\\dots\\}",
+        meaning: "The endpoints must be tested even though f′ need not vanish there; an absolute maximum often sits at a boundary and is missed by a purely interior search.",
+      },
+      {
+        name: "Constant function",
+        condition: "f′ ≡ 0 on an interval",
+        formula: "f(x) = C \\Rightarrow f' = 0,\\ f'' = 0",
+        meaning: "Every point is both a local max and a local min in the non-strict sense, which is why the strict sign-change test reports 'no extremum' here.",
+      },
+      {
+        name: "Function never differentiable on an interval",
+        condition: "A jump discontinuity inside the interval",
+        formula: "f'\\ \\text{missing} \\Rightarrow \\text{split at the jump before testing}",
+        meaning: "Monotonicity arguments need differentiability at every point tested; across a jump, compare the end values directly instead of relying on the sign of f′.",
+      },
+    ],
     visualType: "monotonicity-extrema",
     solvedProblems: [
       {
@@ -457,6 +875,44 @@ export const MATH_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "By parts converts a hard integral into an easier one by shifting the differentiation onto the chosen u.",
     keyTakeaways: ["Repeated parts handle ∫xⁿ eˣ; cyclic parts handle ∫eˣ sin x."],
     examTraps: ["A wrong LIATE choice leads to a longer or harder integral — pick the 'most differentiated' u."],
+    specialCases: [
+      {
+        name: "Cyclic integral needs algebra, not a second pass",
+        condition: "∫eˣ cos x dx, where the parts return the original integral",
+        formula: "I = e^x \\cos x + J,\\quad J = e^x \\sin x - I \\Rightarrow I = \\frac{e^x}{2}(\\sin x + \\cos x)",
+        meaning: "When the same integral reappears, isolate I on one side and solve; going round again forever is the standard failure on cyclic cases.",
+      },
+      {
+        name: "Repeated by-parts (tabular method)",
+        condition: "∫xⁿeˣ dx with n ≥ 2",
+        formula: "\\int x^n e^x dx = e^x\\left(x^n - nx^{n-1} + n(n-1)x^{n-2} - \\cdots\\right) + C",
+        meaning: "Keep differentiating u (the polynomial, which dies after n steps) and keep integrating dv (eˣ, which never changes); the polynomial vanishing is what terminates the process.",
+      },
+      {
+        name: "Definite integral by parts",
+        condition: "Bounds a and b on the original integral",
+        formula: "\\int_a^b u\\,dv = [uv]_a^b - \\int_a^b v\\,du",
+        meaning: "Both terms must carry the limits, and no '+C' appears because the constant cancels in the definite case.",
+      },
+      {
+        name: "Logarithmic integrand, domain check",
+        condition: "u = ln x, so x > 0 and du = dx/x",
+        formula: "\\int x \\ln x\\,dx = \\frac{x^2}{2}\\ln x - \\frac{x^2}{4} + C,\\quad x > 0",
+        meaning: "LIATE puts the log as u precisely because its derivative 1/x kills the algebraic factor; state x > 0 rather than using |x|.",
+      },
+      {
+        name: "Choosing u = dv instead of u = v",
+        condition: "Reversing the roles on ∫xeˣ dx",
+        formula: "\\int x e^x dx \\ne \\frac{x^2}{2}e^x - \\int \\frac{x^2}{2}e^x dx",
+        meaning: "This makes the integral harder rather than easier; the rule is ∫u dv, and picking u as the algebraic factor is what makes the recursion terminate.",
+      },
+      {
+        name: "By parts against substitution",
+        condition: "An integral where a u-substitution simplifies the whole thing first",
+        formula: "\\int \\frac{\\ln x}{x}\\,dx = \\frac{(\\ln x)^2}{2} + C",
+        meaning: "By parts is not mandatory; if substitution clears the integral outright, doing it first saves a whole unnecessary round.",
+      },
+    ],
     visualType: "integration-by-parts",
     solvedProblems: [
       {
@@ -469,45 +925,6 @@ export const MATH_THEOREMS: DerivationOrTheorem[] = [
       },
     ],
   },
-  {
-    id: "math-trapezoidal-rule",
-    slug: "trapezoidal-rule-numerical",
-    title: "Numerical Integration: Trapezoidal Rule",
-    subject: "mathematics",
-    unit: "Calculus / Computational Methods",
-    unitId: "computational-methods-or-mechanics",
-    gradeTrack: "grade-11",
-    nebCode: "Mat. 007 (Computational Methods)",
-    isExtra: false,
-    statement:
-      "The trapezoidal rule approximates \\(\\int_a^b f\\,dx\\) as \\(h\\left[\\frac12 y_0 + y_1 + \\cdots + y_{n-1} + \\frac12 y_n\\right]\\) with \\(h = (b-a)/n\\).",
-    coreFormula: "\\int_a^b f\\,dx \\approx h\\left(\\frac{y_0 + y_n}{2} + \\sum_{i=1}^{n-1} y_i\\right)",
-    concernedTerms: [
-      { term: "Step size", symbol: "h", definition: "Uniform sub-interval width." },
-      { term: "Node values", symbol: "y_i", definition: "f evaluated at the grid points." },
-      { term: "Simpson's rule", definition: "Higher-order: parabolic segments; ~5th order." },
-    ],
-    proofSteps: [
-      { stepNumber: 1, title: "Trapezoid on each sub-interval", latex: "\\int_{x_i}^{x_{i+1}} f\\,dx \\approx \\frac{h}{2}(y_i + y_{i+1})", explanation: "The area of a trapezoid." },
-      { stepNumber: 2, title: "Sum over all sub-intervals", latex: "\\approx \\frac{h}{2}(y_0 + 2y_1 + 2y_2 + \\cdots + 2y_{n-1} + y_n)", explanation: "Inner nodes appear twice." },
-      { stepNumber: 3, title: "Apply", latex: "\\int_0^1 x^2\\,dx \\approx \\frac{1}{2}\\left(0 + 2(0.25) + 1\\right) = 0.75", explanation: "True value 1/3 ≈ 0.333; with more steps accuracy rises." },
-    ],
-    conclusion: "The trapezoidal rule is the simplest composite quadrature; it is 2nd-order accurate.",
-    keyTakeaways: ["Simpson's rule (if you use it) must have an even number of intervals."],
-    examTraps: ["The endpoints appear with weight ½, all interior points with weight 1, times h."],
-    visualType: "trapezoidal-rule",
-    solvedProblems: [
-      {
-        id: "math-trap-1",
-        question: "Approximate ∫₀² x dx by the trapezoidal rule with n = 2.",
-        given: "h = 1.",
-        stepByStep: ["y₀ = 0, y₁ = 1, y₂ = 2.", "T = 1·(0/2 + 1 + 2/2) = 2."],
-        finalAnswer: "T = 2 (exact)",
-        visualType: "trapezoidal-rule",
-      },
-    ],
-  },
-
   // ── Grade-12 Calculus Extras ────────────────────────────────────────────
   {
     id: "extra-math-newton-raphson",
@@ -536,6 +953,44 @@ export const MATH_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Newton–Raphson is the workhorse for non-linear root finding; it is fast but sensitive to x₀.",
     keyTakeaways: ["Near a multiple root, convergence slows to linear."],
     examTraps: ["A bad x₀ can diverge — always bracket the root first if possible."],
+    specialCases: [
+      {
+        name: "f′(x₀) = 0, the step is undefined",
+        condition: "The starting point is a stationary point of f, e.g. x₀ = 0 for f(x) = x³ − 1",
+        formula: "f'(0) = 0 \\Rightarrow x_1 = x_0 - \\frac{f(x_0)}{0} = \\text{undefined}",
+        meaning: "The tangent is horizontal there and never meets the x-axis; move the starting point before iterating.",
+      },
+      {
+        name: "Multiple root, convergence drops to linear",
+        condition: "f(r) = 0 and f′(r) = 0 but f″(r) ≠ 0, e.g. (x − 1)³",
+        formula: "x_{n+1} - r \\approx \\frac{m-1}{m}(x_n - r),\\ m = \\text{multiplicity}",
+        meaning: "Each step gains roughly one correct digit instead of doubling them, so the error constant is (m−1)/m; near a double root expect half the usual speed.",
+      },
+      {
+        name: "Exactly at the root already",
+        condition: "x₀ is a root, so f(x₀) = 0",
+        formula: "x_1 = x_0 - \\frac{0}{f'(x_0)} = x_0",
+        meaning: "The iteration terminates immediately and the sequence is constant; always verify f(x₀) = 0 before spending steps on it.",
+      },
+      {
+        name: "Sequence that never converges: no real root",
+        condition: "f has no real root, e.g. f(x) = eˣ started from x₀ = −5",
+        formula: "x_{n+1} = x_n - \\frac{e^{x_n}}{e^{x_n}} = x_n - 1 \\to -\\infty",
+        meaning: "The ratio is exactly 1, so the estimates decrease by 1 forever and never settle; always substitute the final value back into f to confirm a root was actually found.",
+      },
+      {
+        name: "Convergence test and required digits",
+        condition: "Stop when successive estimates agree to the required precision",
+        formula: "|x_{n+1} - x_n| < \\varepsilon",
+        meaning: "Agreement to 4 decimal places needs 10⁻⁴; the doubling of correct digits means this is usually reached in three or four steps.",
+      },
+      {
+        name: "Newton applied to a square root",
+        condition: "f(x) = x² − a, the classic computational-methods example",
+        formula: "x_{n+1} = \\frac{1}{2}\\left(x_n + \\frac{a}{x_n}\\right)",
+        meaning: "Substituting f = x² − a into the iteration yields the Babylonian form; this is the routine the numerical-methods questions ask you to reproduce.",
+      },
+    ],
     visualType: "newton-raphson-method",
     solvedProblems: [
       {
@@ -574,6 +1029,44 @@ export const MATH_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Bayes' theorem updates a prior with new evidence to yield a posterior.",
     keyTakeaways: ["The base-rate matters: P(H) often dominates."],
     examTraps: ["Confusing P(E|H) with P(H|E) — the 'prosecutor's fallacy'."],
+    specialCases: [
+      {
+        name: "Two-hypothesis reduction",
+        condition: "Only H₁ and H₂ are possible, with P(H₁) + P(H₂) = 1",
+        formula: "P(H_1|E) = \\frac{P(E|H_1)P(H_1)}{P(E|H_1)P(H_1) + P(E|H_2)P(H_2)}",
+        meaning: "Every board question reduces to this two-case form; if the priors do not sum to 1 the hypotheses are not exhaustive and the denominator is missing a term.",
+      },
+      {
+        name: "Equal priors cancel",
+        condition: "P(H₁) = P(H₂) = 1/2, as with a fair coin or an untested hypothesis",
+        formula: "P(H_1|E) = \\frac{P(E|H_1)}{P(E|H_1) + P(E|H_2)}",
+        meaning: "With equal priors the base rate drops out entirely and only the likelihoods matter — which is why a common prior must not be silently inserted later.",
+      },
+      {
+        name: "P(E) = 0, posterior undefined",
+        condition: "The evidence cannot occur under any hypothesis, so the denominator is 0",
+        formula: "P(E) = \\sum_j P(E|H_j)P(H_j) = 0 \\Rightarrow \\frac{0}{0}\\ \\text{undefined}",
+        meaning: "Conditioning on impossible evidence is meaningless, so 0/0 is not an answer of 0; the theorem needs P(E) > 0.",
+      },
+      {
+        name: "Rare disease, accurate test",
+        condition: "P(D) = 0.01, sensitivity 0.99, false-positive rate 0.05",
+        formula: "P(D|+) = \\frac{0.99 \\times 0.01}{0.99 \\times 0.01 + 0.05 \\times 0.99} \\approx 0.166",
+        meaning: "Even a 99 % sensitive test leaves the posterior near 17 %, because the 0.0495 mass of false positives outweighs the 0.0099 of true ones by 5 to 1; this is the prosecutor's fallacy in numbers.",
+      },
+      {
+        name: "Odds form of Bayes",
+        condition: "Divide numerator and denominator by P(H_i)",
+        formula: "\\frac{P(H_i|E)}{P(\\bar H_i|E)} = \\text{prior odds} \\times \\text{likelihood ratio}",
+        meaning: "Writing the theorem in odds makes the updating transparent — the prior is multiplied by how much more expected the evidence is under H_i than under its complement.",
+      },
+      {
+        name: "Independent evidence multiplies",
+        condition: "Two independent pieces of evidence E₁, E₂ under the same hypothesis",
+        formula: "P(H|E_1 \\cap E_2) \\propto P(H)P(E_1|H)P(E_2|H)",
+        meaning: "The likelihood factors only because of independence; correlated evidence must be handled as a joint likelihood, otherwise the posterior is overstated.",
+      },
+    ],
     visualType: "bayes-theorem",
     solvedProblems: [
       {
@@ -615,6 +1108,44 @@ export const MATH_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "De Moivre's theorem turns powers of complex numbers into trigonometric powers and gives root formulas.",
     keyTakeaways: ["The cube roots of 1 are 1, e^{2πi/3}, e^{4πi/3}."],
     examTraps: ["For fractional exponents, take all branches (k = 0 … n−1)."],
+    specialCases: [
+      {
+        name: "n = 0 collapses to 1",
+        condition: "Raise a unit-modulus number to the zeroth power",
+        formula: "(\\cos\\theta + i\\sin\\theta)^0 = 1 = \\cos 0 + i\\sin 0",
+        meaning: "The identity extends to n = 0 like any exponent law, since the base is nonzero; this is the base case an inductive proof must check.",
+      },
+      {
+        name: "Negative n gives the conjugate",
+        condition: "Integer exponent below zero, base of modulus 1",
+        formula: "(\\cos\\theta + i\\sin\\theta)^{-n} = \\cos n\\theta - i\\sin n\\theta",
+        meaning: "The modulus stays 1 while the angle is negated, so a negative power simply returns the conjugate; the theorem holds for all integers, not just positive ones.",
+      },
+      {
+        name: "Modulus is not 1",
+        condition: "Base z = r(cos θ + i sin θ) with r ≠ 1",
+        formula: "z^n = r^n(\\cos n\\theta + i\\sin n\\theta)",
+        meaning: "The r^n factor must be carried along; dropping it is the common slip when the base is an ordinary complex number rather than a point on the unit circle.",
+      },
+      {
+        name: "Roots are equally spaced",
+        condition: "Solve zⁿ = r(cos θ + i sin θ) for all n roots",
+        formula: "z_k = r^{1/n}\\left[\\cos\\frac{\\theta + 2k\\pi}{n} + i\\sin\\frac{\\theta + 2k\\pi}{n}\\right],\\ k = 0,\\dots,n-1",
+        meaning: "The n roots sit on a circle of radius r^(1/n) separated by exactly 2π/n; listing k = 0 … n−1 and no more is what keeps the answer free of duplicates.",
+      },
+      {
+        name: "θ reduced modulo 2π",
+        condition: "The argument is given outside 0 ≤ θ < 2π",
+        formula: "\\theta = \\theta_0 + 2m\\pi \\Rightarrow z^n = r^n(\\cos n\\theta_0 + i\\sin n\\theta_0)",
+        meaning: "Only nθ matters, so shifting θ by 2π/n changes nθ by a full turn and leaves the power unchanged; this is how a 'different' argument can give the same answer.",
+      },
+      {
+        name: "cos nθ as a polynomial in cos θ",
+        condition: "Take the real part of the n-th power",
+        formula: "\\cos 3\\theta = 4\\cos^3\\theta - 3\\cos\\theta,\\quad \\cos 2\\theta = 2\\cos^2\\theta - 1",
+        meaning: "Expanding the power and reading off the real part is the standard derivation of multiple-angle identities, and the binomial coefficients must alternate correctly.",
+      },
+    ],
     visualType: "de-moivres-theorem",
     solvedProblems: [
       {

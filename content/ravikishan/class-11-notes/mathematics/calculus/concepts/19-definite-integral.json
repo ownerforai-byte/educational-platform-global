@@ -1,85 +1,116 @@
 {
-  "title": "The Definite Integral",
   "unitSlug": "calculus",
+  "title": "Definite Integral",
+  "topicTitle": "Definite integral",
   "topicSlug": "definite-integral",
-  "topicTitle": "The Definite Integral",
   "relevance": 100,
   "notes": [
-    "**The Definite Integral:** Class 11 concept.",
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
+    "**Definition as a limit of sums:** $\\int_a^b f = \\lim_{n\\to\\infty}\\sum_{i=1}^n f(x_i^*)\\Delta x$. The value depends only on the function and the interval, not on where the sample points are taken — this insensitivity is what makes the integral well defined.",
+    "**The Fundamental Theorem connects the two halves:** if $F'=f$ then $\\int_a^b f(x)dx = F(b)-F(a)$. It converts an apparently infinite limiting process into a pair of function evaluations, which is the single most powerful idea in the topic.",
+    "**Signed, not absolute:** the value is an algebraic accumulation, so negative regions subtract. $\\int_{-1}^1 x^2 dx = \\frac23$, while $\\int_{-1}^1 x\\,dx = 0$ because the odd part cancels.",
+    "**Reversing the limits negates the result:** $\\int_b^a f = -\\int_a^b f$, a direct consequence of how the limit of sums is oriented. Adding an integral over $[a,b]$ and $[b,a]$ therefore gives exactly zero, a useful consistency check.",
+    "**Splitting at a point of discontinuity is still valid:** $\\int_a^b f = \\int_a^c f + \\int_c^b f$ even when $f$ is unbounded or undefined at $c$, provided the improper integrals converge. The graph of $\\frac1{\\sqrt{x}}$ from 0 to 1 has infinite height at 0 yet a finite area.",
+    "**Positivity and comparison follow from the definition:** if $f\\le g$ on $[a,b]$ then $\\int_a^b f \\le \\int_a^b g$, which is what makes integral comparison tests possible."
   ],
   "confusion": [
-    "Distinguish concepts in The Definite Integral.",
-    "Check formula conditions."
+    "Adding a constant of integration to a definite integral — it cancels.",
+    "Treating the value as a positive area when part of the region lies below the axis.",
+    "Forgetting to flip the sign when the limits are given in the order $b$ to $a$."
   ],
-  "practice": [
-    "Solve 5 problems on The Definite Integral.",
-    "Derive the key formula for The Definite Integral."
-  ],
+  "practice": [],
   "universalFacts": [
-    "The Definite Integral appears in exams.",
-    "Foundational for advanced topics."
+    "A lightning bolt's total charge is an integral of current over time, and a pacemaker's delivered energy is an integral of power — both are signed accumulations over a measured interval.",
+    "The Gaussian area $\\int_{-\\infty}^{\\infty} e^{-x^2}dx=\\sqrt\\pi$ is the normalisation that makes the normal distribution a probability density, and it is why the most common distribution in nature has that constant."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [
-    "Application of The Definite Integral",
-    "Numerical problem on The Definite Integral",
-    "Daily life use of The Definite Integral"
-  ],
-  "practiceQuestions": [
-    "Q1. Define The Definite Integral.",
-    "Q2. Key formula for The Definite Integral.",
-    "Q3. Problem on The Definite Integral."
-  ],
+  "examples": [],
+  "practiceQuestions": [],
   "formulas": [
-    "Formula for The Definite Integral: [insert from textbook].",
-    "Key relationship: [variable formula]."
+    "Riemann sum: $\\int_a^b f=\\lim_{n\\to\\infty}\\sum f(x_i^*)\\Delta x$",
+    "FTC: $\\int_a^b f(x)dx=F(b)-F(a)$ when $F'=f$",
+    "Reversal: $\\int_b^a f=-\\int_a^b f$",
+    "Additivity: $\\int_a^b f=\\int_a^c f+\\int_c^b f$",
+    "Comparison: $f\\le g$ on $[a,b]\\Rightarrow\\int_a^b f\\le\\int_a^b g$"
   ],
   "keyPoints": [
-    "Core principle of The Definite Integral",
-    "Application of The Definite Integral",
-    "Connection of The Definite Integral to other topics"
+    "The value is a signed accumulation, not a positive area.",
+    "Reversing the limits negates the result.",
+    "The Fundamental Theorem turns an infinite limit into two evaluations."
   ],
-  "summary": "The Definite Integral covers essential principles and applications.",
+  "summary": "The definite integral is a limit of sums and is independent of how the interval is sampled, which is what makes it well defined. The Fundamental Theorem is its decisive property: if $F'=f$ then the integral is simply $F(b)-F(a)$. Values are signed, reversing the limits negates the result, and additivity holds even across a point of discontinuity, which is how divergent-looking integrands can still have finite integrals.",
   "specialNotes": [
-    "Check conditions for The Definite Integral.",
-    "The Definite Integral connects to other topics."
+    "Where a formula is quoted it is valid only under the conditions stated; Adding a constant of integration to a definite integral — it cancels.",
+    "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
   "importantStatements": [
-    "Statement 1: Definition of The Definite Integral",
-    "Statement 2: Theorem related to The Definite Integral",
-    "Statement 3: Condition for The Definite Integral to be valid",
-    "Statement 4: Principle governing The Definite Integral",
-    "Statement 5: Corollary or consequence of The Definite Integral"
+    "Statement 1: $\\int_a^b f=F(b)-F(a)$ when $F'=f$.",
+    "Statement 2: A definite integral carries no constant of integration.",
+    "Statement 3: $\\int_b^a f=-\\int_a^b f$.",
+    "Statement 4: A definite integral is a signed accumulation.",
+    "Statement 5: If $f\\le g$ on $[a,b]$ then $\\int_a^b f\\le\\int_a^b g$."
   ],
   "importantNotes": [
-    "The Definite Integral is based on fundamental principles."
+    "Topic anchor: Positivity and comparison follow from the definition  if $f le g$ on $[a,b]$ then $ int_a^b f  le  int_a^b g$, which is what makes integral comparison tests possible."
   ],
   "examShortTricks": [
-    "Recall the formula for The Definite Integral."
+    "Always evaluate $F$ at the upper limit first, then subtract the lower — reversing the order is the easy slip.",
+    "For odd integrands on symmetric intervals, write 0 before attempting any calculation."
   ],
   "examNotes": [
-    "Focus on The Definite Integral problems - significant marks."
+    "Evaluating definite integrals by the Fundamental Theorem, with attention to sign, is a guaranteed 3-mark question."
   ],
   "mcs": [
     {
-      "question": "Which describes The Definite Integral?",
+      "question": "$\\int_{-1}^{1}x\\,dx$ equals:",
       "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
+        "$\\frac23$",
+        "$0$",
+        "$2$",
+        "$1$"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "The integrand is odd and the interval symmetric, so the signed contributions cancel exactly."
+    },
+    {
+      "question": "$\\int_2^5 f$ compared with $\\int_5^2 f$ is:",
+      "options": [
+        "equal",
+        "the negative",
+        "twice",
+        "undefined"
+      ],
+      "answer": "B",
+      "explanation": "Reversing the limits negates the value, a direct consequence of the orientation of the limit of sums."
+    },
+    {
+      "question": "A definite integral always has:",
+      "options": [
+        "a constant of integration",
+        "a positive value",
+        "a fixed value once limits are given",
+        "an elementary antiderivative"
+      ],
+      "answer": "C",
+      "explanation": "Once the function and both limits are fixed the value is a specific number, and the constant of integration has cancelled."
     }
   ],
   "importantConcepts": [
-    "Definition and significance of The Definite Integral."
+    "The value is a signed accumulation, not a positive area.",
+    "Reversing the limits negates the result.",
+    "The Fundamental Theorem turns an infinite limit into two evaluations."
   ],
   "importantTasks": [
-    "Solve 5 problems on The Definite Integral."
+    "Work through the authored practice problems and re-derive each key formula from the definition."
   ],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "visualType": "integral",
+  "numericals": [
+    "**1. [Idea: an integral with a shifted inner function where the bounds must transform]** Evaluate $\\int_0^1 \\dfrac{2x}{(x^2+1)^3}\\,dx$.\\newline\\newline**Solution:** Let $u = x^2+1$, so $du = 2x\\,dx$. The limits transform: $x=0 \\Rightarrow u=1$, and $x=1 \\Rightarrow u=2$.\\newline\\newlineThe integral becomes$\\newline\\int_1^2 u^{-3}du = \\left[\\frac{u^{-2}}{-2}\\right]_1^2 = -\\frac12\\left[\\frac{1}{u^2}\\right]_1^2 = -\\frac12\\left(\\frac14 - 1\\right) = \\frac{3}{8}$.\\newline\\newline**Answer:** $\\frac38$.\\newline\\newline**Trap:** keeping limits $0$ and $1$ while integrating with respect to $u$. That gives $\\left[-\\frac{1}{2u^2}\\right]_0^1$, which is undefined at $u=0$ — the tell-tale sign that the substitution was mishandled.",
+    "**2. [Idea: by parts where the LIATE rule chooses the log term as $u$]** Evaluate $\\int x\\ln x\\,dx$.\\newline\\newline**Solution:** By parts, $\\int u\\,dv = uv - \\int v\\,du$.$^{\\bullet}$ **LIATE** orders: Logarithmic before Algebraic, so take $u=\\ln x$ and $dv=x\\,dx$. Then $du=\\frac{dx}{x}$ and $v=\\frac{x^2}{2}$.\\newline\\newline$\\newline\\int x\\ln x\\,dx = \\frac{x^2}{2}\\ln x - \\int \\frac{x^2}{2}\\cdot\\frac{dx}{x} = \\frac{x^2}{2}\\ln x - \\frac12\\int x\\,dx = \\frac{x^2}{2}\\ln x - \\frac{x^2}{4} + C$.\\newline\\newline**Answer:** $\\frac{x^2}{2}\\ln x - \\frac{x^2}{4}+C$, for $x>0$.\\newline\\newline**What went wrong if $u$ is chosen wrongly:** taking $u=x$, $dv=\\ln x\\,dx$ needs $\\int \\ln x\\,dx$ first, which is itself an integral by parts — the problem gets strictly harder. **Also note:** on $[0,1]$ this integral is a proper one and $\\int_0^1 x\\ln x\\,dx$ converges even though $\\ln 0$ is undefined, since $x\\ln x \\to 0$.",
+    "**3. [Idea: repeated by parts that must be stopped at a vanishing term]** Evaluate $\\int x^2 e^x\\,dx$.\\newline\\newline**Solution:**$^{\\bullet}$ 1st application, $u=x^2$, $dv=e^x dx$, $du=2x\\,dx$, $v=e^x$:$\\newline I = x^2e^x - 2\\int xe^x\\,dx$.$^{\\bullet}$ 2nd application to the remaining integral, $u=x$, $dv=e^x dx$:$\\newline\\int xe^x dx = xe^x - e^x$.\\newline\\newlineSubstitute back:$^{\\newline}I = x^2e^x - 2(xe^x - e^x) = x^2e^x - 2xe^x + 2e^x = e^x(x^2 - 2x + 2) + C$.\\newline\\newline**Verify by differentiating:** $\\frac{d}{dx}\\left[e^x(x^2-2x+2)\\right] = e^x(x^2-2x+2) + e^x(2x-2) = e^x\\cdot x^2$. ✓\\newline\\newline**Answer:** $e^x(x^2-2x+2)+C$. **The stopping rule:** stop as soon as a term becomes $0$; had a fourth application been attempted it would be meaningless.",
+    "**4. [Idea: symmetry collapses the work before any integration happens]** Evaluate $\\int_{-2}^{2}\\left(x^3\\cos x + \\sqrt{4-x^2}\\right)dx$.\\newline\\newline**Solution: split by parity first.**$^{\\bullet}$ $x^3$ is ODD and $\\cos x$ is EVEN, so $x^3\\cos x$ is ODD. An odd function integrates to $0$ over $[-2,2]$:$\\newline\\int_{-2}^2 x^3\\cos x\\,dx = 0$.$^{\\bullet}$ $\\sqrt{4-x^2}$ is EVEN, so by King's rule $\\int_{-2}^{2}\\sqrt{4-x^2}\\,dx = 2\\int_0^2 \\sqrt{4-x^2}\\,dx$.\\newline\\newlineThis remaining integral is the area of a quarter circle of radius 2:$\\newline\\int_0^2\\sqrt{4-x^2}\\,dx = \\frac14 \\pi(2)^2 = \\pi$.\\newline\\newlineSo the total is $0 + 2\\pi$.\\newline\\newline**Answer:** $2\\pi$. **The idea:** the odd part was dispatched with no calculus at all. Attempting to integrate $x^3\\cos x$ directly needs repeated by parts for nothing.",
+    "**5. [Idea: the bounds do not determine the top curve — solve the intersection first]** Find the area bounded by $y=x^2$ and $y=\\sqrt{x}$ for $x \\ge 0$.\\newline\\newline**Solution:** Find the intersections: $x^2 = \\sqrt{x} \\Rightarrow x^4 = x \\Rightarrow x(x^3-1)=0$, so $x=0$ and $x=1$.\\newline\\newline**Determine which is on top.** At $x=\\frac12$: $y_1 = x^2 = \\frac14$ and $y_2 = \\sqrt{x} = \\frac{1}{\\sqrt2} \\approx 0.707$. Since $\\sqrt{x} > x^2$ there, $\\sqrt{x}$ is the TOP curve.\\newline\\newline**Area:**$^{\\bullet}$ $\\displaystyle A = \\int_0^1 \\left(\\sqrt{x} - x^2\\right)dx = \\left[\\frac{2}{3}x^{3/2} - \\frac{x^3}{3}\\right]_0^1 = \\frac23 - \\frac13 = \\frac13$.\\newline\\newline**Answer:** $\\frac13$ square units. **Trap:** integrating $x^2-\\sqrt{x}$ and getting $-\\frac13$. The top-minus-bottom convention means a negative answer signals the curves were named backwards, not that the area is negative.",
+    "**6. [Idea: the region is split because the bounding curve changes]** Find the area enclosed by $y=2x+1$, $y=x^2+2$ and the $y$-axis.\\newline\\newline**Solution:**$^{\\bullet}$ The two curves meet where $2x+1 = x^2+2$, i.e. $x^2-2x+1=0$, i.e. $(x-1)^2=0$, so they are **tangent at $x=1$**, meeting at $(1,3)$.\\newline\\newline$^{\\bullet}$ At $x=0$ the line gives $1$ and the parabola $2$, so the LINE is on top for $0\\le x \\le 1$ (tangent means they only just touch at $x=1$).$^{\\bullet}$ The $y$-axis closes the region at $x=0$.\\newline\\newline**Area:**$^{\\bullet}$ $\\displaystyle A = \\int_0^1 \\left[(2x+1)-(x^2+2)\\right]dx = \\int_0^1\\left(-x^2+2x-1\\right)dx = \\left[-\\frac{x^3}{3}+x^2-x\\right]_0^1 = -\\frac13+1-1 = -\\frac13$.\\newline\\newline**Answer:** area $= \\frac13$ square units (the negative integral confirms the curves were named the wrong way round, so the true area is $\\frac13$). **Note:** tangency gives a single intersection, so only one integral is needed — but the sign check is what catches the reversal."
+  ]
 }

@@ -2,189 +2,125 @@
   "title": "Equipotential Lines and Surfaces",
   "unitSlug": "potential-potential-difference-and-potential-energy",
   "topicSlug": "equipotential-surfaces",
-  "topicTitle": "Equipotential Lines and Surfaces",
+  "topicTitle": "Equipotential lines and surfaces",
   "relevance": 100,
   "notes": [
-    "**Equipotential surface:** a surface on which the electric potential is the same at every point. $V = \\text{constant}$ everywhere on the surface.",
-    "**No work on equipotential:** since $\\Delta V = 0$ on an equipotential surface, the work done moving a charge along it is zero: $W = q\\Delta V = 0$.",
-    "**Perpendicular to field lines:** equipotential surfaces are always perpendicular to electric field lines. If they were not, the field would have a component along the surface, doing work on a charge moving along it.",
-    "**Spacing of equipotentials:** the spacing between equipotential surfaces indicates field strength. Close spacing means a steep potential gradient and thus a strong field: $E = -dV/dn$.",
-    "**Point charge:** equipotential surfaces are concentric spheres centred on the charge. $V = kQ/r = \\text{constant}$ implies $r = \\text{constant}$. The spacing increases with $r$ because $E \\propto 1/r^2$ weakens.",
-    "**Uniform electric field:** equipotential surfaces are parallel planes perpendicular to the field direction. The spacing between equal potential intervals is uniform: $\\Delta r = \\Delta V/E$.",
-    "**Electric dipole:** equipotential surfaces are more complex — they are closed surfaces around each charge near the charges, and approximately plane-like far away. The equatorial plane is at $V = 0$.",
-    "**Conductors in electrostatics:** the entire surface (and interior) of a conductor is an equipotential. The field just outside is perpendicular to the surface, and the surface charge density adjusts to maintain constant potential.",
-    "**Field-line pattern:** field lines always originate from higher potential and terminate at lower potential. The direction of $\\vec{E}$ is always from high $V$ to low $V$, perpendicular to equipotentials.",
-    "**Equipotentials and potential gradient:** $E = -\\nabla V = -\\frac{\\partial V}{\\partial n}\\hat{n}$, where $\\hat{n}$ is the normal to the equipotential surface. The field is steepest in the direction normal to the equipotential.",
-    "**Potential near a charged conducting sphere:** $V = kQ/R$ on the surface (constant). Inside, $V = kQ/R$ (entire interior is at the same potential as the surface).",
-    "**Field of infinite line charge:** equipotential surfaces are coaxial cylinders. $V = -(\\lambda/2\\pi\\epsilon_0)\\ln r + \\text{const}$. The field is radial, perpendicular to cylindrical surfaces.",
-    "**Two oppositely charged parallel plates:** equipotential surfaces are parallel planes between the plates (uniform field). Near the edges, the equipotentials bulge outward (fringing).",
-    "**Non-intersecting:** equipotential surfaces can never intersect. At an intersection, the potential would have two different values, which is impossible since potential is single-valued.",
-    "**Drawing equipotentials:** typically drawn for equal potential increments (e.g., every 10 V). In regions of strong field, they are close together; in weak field, they are far apart.",
-    "**Application — shielding:** a hollow conductor shields its interior from external electric fields. The interior is an equipotential volume with no field, regardless of external charges."
+    "**Definition of an Equipotential Surface:** An equipotential surface (or equipotential line in two dimensions) is a geometrical surface on which the electric potential V is the same at every point. Since $\\Delta V = 0$ between any two points on it, no work is done by the electrostatic field in moving a charge anywhere along the surface: $W = q\\Delta V = 0$. Every equipotential surface is a level surface of the scalar potential field, just as contour lines on a topographic map join points of equal height.",
+    "**Fundamental Properties of Equipotential Surfaces:** (1) **No work is done** on a charge moving along the surface ($W = q\\Delta V = 0$); (2) **They are always perpendicular to electric field lines** wherever the field is non-zero; (3) **They never intersect one another** — two intersecting surfaces would assign two different potentials to the same point; (4) **The spacing between successive equipotential surfaces indicates field strength** — closely spaced surfaces signify a strong electric field and rapidly changing potential; (5) **A conductor in electrostatic equilibrium is a single equipotential surface**, since free charges redistribute until the internal field vanishes.",
+    "**Proof that Equipotential Surfaces are Perpendicular to Field Lines:** Let A and B be two points a distance $\\Delta s$ apart on the same equipotential surface, so $\\Delta V = 0$. The change in potential along a displacement is $\\Delta V = -\\vec{E} \\cdot \\Delta\\vec{s} = -E\\,\\Delta s\\cos\\theta$. Since $\\Delta V = 0$, we must have $\\cos\\theta = 0$, meaning $\\theta = 90^\\circ$. Therefore the displacement $\\Delta\\vec{s}$ (which lies along the equipotential surface) is always perpendicular to $\\vec{E}$, confirming that equipotential surfaces and field lines intersect at right angles everywhere.",
+    "**Equipotential Surfaces for Standard Charge Configurations:** (1) **Isolated point charge Q:** $V = kQ/r$ is constant on a sphere of radius r, so equipotentials are concentric spheres, and the normal to each sphere is radial, exactly along the field lines. (2) **Infinite line charge λ:** $V = -\\frac{\\lambda}{2\\pi\\varepsilon_0}\\ln\\frac{r}{r_0}$, so equipotentials are coaxial cylinders of radius r, with field lines radial and perpendicular. (3) **Infinite plane sheet with surface density σ:** $V = -\\frac{\\sigma}{2\\varepsilon_0}x$, so equipotentials are infinite planes parallel to the sheet, uniformly spaced since E is constant. (4) **Two parallel plates:** planes parallel to the plates, densely packed between the plates (where E is large) and widely spaced outside (where E is zero).",
+    "**Equipotential Surface of a Conducting Sphere:** For a conducting sphere of radius R carrying charge Q, the entire surface of the sphere is at a single potential $V = kQ/R$. Taking the outside potential, $V(r) = kQ/r$, the equipotentials are concentric spheres of radius r ≥ R, all larger than the sphere itself. Inside the hollow conductor, V is constant at $kQ/R$ for every point $r < R$, so the entire interior cavity constitutes one equipotential region. Because E = 0 inside, there is no field direction to define, and the conductor plus its interior forms a single continuous equipotential volume.",
+    "**Work and Energy Relations for Equipotential Surfaces:** Moving a charge q from equipotential surface V₁ to V₂ requires external work $W_{ext} = q\\Delta V = q(V_2 - V_1)$ and changes the system's potential energy by exactly the same amount: $\\Delta U = q\\Delta V$. For a positive charge, work is required to move it to a higher potential; for an electron (negative charge), it is spontaneous. Two equipotential surfaces at potentials differing by 1 volt, for a single electron, differ in potential energy by exactly 1 eV — this is precisely why the electron volt is the natural energy unit when discussing potential differences."
   ],
   "confusion": [
-    "Equipotential surfaces are NOT the same as field lines. Field lines show the direction of force; equipotentials are surfaces of constant potential. They are perpendicular to each other, not parallel.",
-    "A zero potential does not mean zero field. On the equatorial plane of a dipole, $V = 0$ everywhere but $E \\neq 0$. Potential is relative; field is an absolute gradient.",
-    "Equipotential surfaces never intersect because at an intersection point, the potential would need to equal two different values simultaneously, which is impossible for a single-valued function.",
-    "The spacing of equipotentials shows field strength, NOT the magnitude of potential. Close equipotentials mean strong field (large $|dV/dn|$), but the actual potential values can be anything.",
-    "For a point charge, equipotential surfaces are spheres, but the field lines are radial lines. Near a dipole, equipotentials curve around to connect the positive and negative charge regions.",
-    "Inside a conductor, $E = 0$ and $V = \\text{constant}$. But the constant value is not necessarily zero — it depends on the total charge and the reference point. A charged conductor has a non-zero but uniform potential throughout.",
-    "Moving a charge along an equipotential surface requires no work by the electric field, but an external agent may need to do work to move it at constant speed against other forces (gravity, friction).",
-    "Equipotentials are not physical objects — they are mathematical surfaces of constant potential. You cannot place a conductor on them; rather, the conductor's surface itself becomes one if it is in equilibrium.",
-    "In a non-uniform field, equipotential surfaces are not equally spaced even for equal potential intervals. For a point charge, $V = kQ/r$, so equal $\\Delta V$ corresponds to decreasing $\\Delta r$ as you approach the charge."
+    "Mistaking equipotential surfaces for field lines: Field lines show the direction of the force on a positive test charge; equipotential surfaces join points of equal potential. The two families are always mutually perpendicular, never parallel.",
+    "Believing that equipotential surfaces are widely spaced where the field is weak: Spacing is inversely related to field strength. Close spacing means a large potential change over a short distance, i.e. a strong field (E = -ΔV/Δs).",
+    "Assuming the potential on the surface of a charged conductor varies with position: In electrostatic equilibrium, free charges redistribute until the interior field is zero, making the entire conductor surface a single equipotential at V = kQ/R."
   ],
   "practice": [
-    "A uniform electric field of magnitude 200 N/C points in the $+x$ direction. What is the potential difference between $x = 0.1$ m and $x = 0.3$ m? Solution: $\\Delta V = -E\\Delta x = -200 \\times 0.2 = -40$ V. The potential decreases by 40 V as we move in the field direction.",
-    "Draw the equipotential surfaces for an isolated positively charged sphere of radius 0.1 m with potential 100 V on its surface. Solution: Concentric spheres. At the surface ($r = 0.1$ m), $V = 100$ V. At $r = 0.2$ m, $V = 50$ V. At $r = 0.05$ m (inside), $V = 100$ V (constant). Outside: $V = 10$ V at $r = 1$ m.",
-    "Two parallel plates 5 mm apart have a potential difference of 500 V. Find the field strength and the spacing between the 100 V and 200 V equipotential surfaces. Solution: $E = V/d = 500/0.005 = 10^5$ N/C. Between 100 V and 200 V surfaces: $\\Delta V = 100$ V, so $\\Delta x = \\Delta V/E = 100/10^5 = 0.001$ m = 1 mm.",
-    "A point charge $q = +10\\,\\mu$C is at the origin. Find the work done in moving a charge $q_0 = +1\\,\\mu$C from a point on the $x$-axis at 0.2 m to a point on the $y$-axis at 0.2 m. Solution: Both points are at the same distance from the charge, so they are on the same equipotential surface ($r = 0.2$ m). $W = q_0 \\Delta V = 0$. No work is needed.",
-    "Sketch the equipotential lines for an electric dipole and label the regions of high and low potential. Solution: Near the positive charge, equipotentials are small spheres at high positive $V$. Near the negative charge, small spheres at large negative $V$. The equatorial plane is at $V = 0$. Far away, equipotentials merge into figure-eight shapes.",
-    "A conducting sphere of radius 0.05 m is charged to a potential of 5000 V. Find the charge on the sphere and the electric field at its surface. Solution: $V = kQ/R$, so $Q = VR/k = 5000 \\times 0.05 / (9 \\times 10^9) = 2.78 \\times 10^{-8}$ C $= 27.8$ nC. $E = V/R = 5000/0.05 = 10^5$ N/C.",
-    "In a uniform field $\\vec{E} = 200\\hat{i} + 100\\hat{j}$ N/C, find the potential difference between points $A(0,0)$ and $B(0.1, 0.2)$ m. Solution: $\\Delta V = -\\vec{E} \\cdot \\vec{d} = -(200 \\times 0.1 + 100 \\times 0.2) = -(20 + 20) = -40$ V. The potential at $B$ is 40 V lower than at $A$.",
-    "A charged conductor has a surface with varying curvature. Explain where the surface charge density is highest and how this affects the equipotential spacing just outside the surface. Solution: At sharp points (small radius of curvature), $\\sigma$ is highest. Since $E = \\sigma/\\epsilon_0$, the field is strongest there. Equipotentials are closest together near sharp points, indicating the steep potential gradient."
+    "A point charge q = 4 μC is located at the origin. (a) What is the potential on a sphere of radius 5 cm? (b) What is the work required to move a test charge of 2 μC from that sphere to a sphere of radius 10 cm? Solution: (a) $V = kq/r = (9 \\times 10^9)(4 \\times 10^{-6})/0.05 = 36000/0.05 = 7.2 \\times 10^5\\,\\text{V}$. (b) $W = q_0\\Delta V$ where $\\Delta V = kq(1/r_2 - 1/r_1) = (9 \\times 10^9)(4 \\times 10^{-6})(10 - 20) = 36000 \\times (-10) = -3.6 \\times 10^5\\,\\text{V}$. Thus $W = (2 \\times 10^{-6})(-3.6 \\times 10^5) = -0.72\\,\\text{J}$. The negative sign indicates the field does this work spontaneously as the test charge moves outward against the repulsion of the positive source."
   ],
   "universalFacts": [
-    "Equipotential surfaces are always perpendicular to electric field lines. This is a universal geometric property — if they were not perpendicular, the field would have a component along the surface, contradicting the definition of an equipotential.",
-    "The interior of a hollow conductor is a field-free region (Faraday cage). Every point inside is at the same potential as the inner surface, regardless of the external field or charges outside the conductor.",
-    "In the human body, the surface of the skin is approximately an equipotential because body fluids are conductive. This is why electric shock risk depends on the path through the body, not just surface contact points.",
-    "Lightning rods are installed on buildings because the sharp points concentrate the electric field, causing corona discharge that can neutralize approaching charged clouds. The building itself acts as an equipotential conductor.",
-    "The Earth's surface is approximately an equipotential surface (the geoid). This is why we use it as the reference $V = 0$ in electrical circuits. Ocean water, being a good conductor, follows this equipotential.",
-    "In semiconductor devices, the depletion region has a potential gradient, and the equipotential surfaces determine the electric field that separates charge carriers. This is fundamental to diodes and transistors.",
-    "For NEB board exams, remember: (1) equipotential surfaces are perpendicular to field lines, (2) no work is done moving a charge along an equipotential, (3) they never intersect, (4) field strength is proportional to the inverse of their spacing.",
-    "The concept of equipotential surfaces generalizes to gravitational fields: equipotential surfaces for gravity are surfaces of constant gravitational potential, perpendicular to gravitational field lines."
+    "The human heart, whose electrical activity is measured by electrocardiograms (ECGs), depends on the heart muscle cells generating potential differences of about 1 mV at the body surface — an equipotential mapping problem in three dimensions.",
+    "Equipotential mapping of underground rock and soil resistivity is a standard geophysical prospecting technique: injecting current into the ground and mapping constant-potential contours reveals buried ore deposits, voids, and groundwater."
   ],
   "animation3D": "potential-potential-difference-and-potential-energy",
   "motionGraphics": "potential-potential-difference-and-potential-energy",
   "examples": [
-    "Example 1: Real-world application of Equipotential lines and surfaces",
-    "Example 2: Practical demonstration of Equipotential lines and surfaces concepts",
-    "Example 3: Numerical problem on Equipotential lines and surfaces",
-    "Example 4: Diagram-based question on Equipotential lines and surfaces",
-    "Example 5: Application in daily life involving Equipotential lines and surfaces"
+    "Cathode ray oscilloscope (CRO): The vertical deflection plates are connected to an amplifier so the electron beam passes through a controlled electric field, but the calibration relies on the beam travelling along a path of constant potential between the plates.",
+    "Electrostatic loudspeaker drivers: A charged cone suspended in a radial field moves along paths near-constant potential, so almost no additional energy is required for the cone's travel and the efficiency stays high.",
+    "Tectonic stress mapping in geophysics: Repeated surveys of Earth's surface potential (equipotential contours) show slow drift of surface charge, a possible precursor to earthquakes as stressed rock begins to release charge."
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Equipotential lines and surfaces with suitable example.",
-    "Q2. Solve problems related to Equipotential lines and surfaces.",
-    "Q3. Differentiate between various aspects of Equipotential lines and surfaces.",
-    "Q4. Derive the key formula related to Equipotential lines and surfaces.",
-    "Q5. What are the applications of Equipotential lines and surfaces?"
+    "Q1. Define an equipotential surface. State and prove any three properties of equipotential surfaces.",
+    "Q2. Show that equipotential surfaces are always perpendicular to the lines of force. Deduce the shape of the equipotential surfaces for (a) a point charge, (b) a long straight wire, and (c) an infinite plane sheet of charge.",
+    "Q3. A conducting sphere of radius 10 cm carries a charge of 1 μC. Find the potential (a) on the surface, (b) at a point 15 cm from the centre, and (c) at a point 5 cm from the centre.",
+    "Q4. Two equipotential surfaces of an electric field are at 10 V and 40 V. How much work is required to move a charge of 2 μC from the first surface to the second, and what is the change in its potential energy?"
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Equipotential lines and surfaces",
-    "Key Formula 2: Mathematical expression of Equipotential lines and surfaces",
-    "Key Formula 3: Application formula for Equipotential lines and surfaces",
-    "Key Formula 4: Derivation result for Equipotential lines and surfaces",
-    "Key Formula 5: Important relation in Equipotential lines and surfaces"
+    "Equipotential condition: $\\Delta V = 0$",
+    "Perpendicularity condition: $\\vec{E} \\cdot d\\vec{l} = -dV = 0$",
+    "Field from potential spacing: $E \\approx \\frac{\\Delta V}{\\Delta s}$",
+    "Work to move charge between surfaces: $W = q\\Delta V$",
+    "Potential change: $\\Delta U = q\\Delta V$"
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of Equipotential lines and surfaces",
-    "Key Point 2: Essential theorem or principle related to Equipotential lines and surfaces",
-    "Key Point 3: Important condition or constraint for Equipotential lines and surfaces",
-    "Key Point 4: Common applications of Equipotential lines and surfaces",
-    "Key Point 5: Connection to other topics in Science"
+    "No work is done by the electric field in moving a charge along an equipotential surface (W = qΔV = 0).",
+    "Equipotential surfaces are always perpendicular to electric field lines.",
+    "Two equipotential surfaces can never intersect one another.",
+    "Closely spaced equipotential surfaces indicate a strong electric field; widely spaced ones indicate a weak field.",
+    "A conductor in electrostatic equilibrium is a single equipotential surface at constant V = kQ/R."
   ],
-  "summary": "Equipotential lines and surfaces is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "An equipotential surface is a locus of points at identical potential V, so no work is done by the field along it (W = qΔV = 0). Equipotential surfaces can never intersect and are always perpendicular to electric field lines, since dV = -E·dl = 0 forces the displacement along the surface to be normal to E. Their spacing indicates field strength: close spacing means a strong field. For a point charge they are concentric spheres, for a line charge coaxial cylinders, and for an infinite plane sheet parallel planes.",
   "specialNotes": [
-    "Note 1: Pay attention to the conditions under which Equipotential lines and surfaces applies",
-    "Note 2: Equipotential lines and surfaces connects to multiple other topics in Science",
-    "Note 3: Practice numerical problems regularly for mastery of Equipotential lines and surfaces",
-    "Note 4: Remember the units and dimensions involved in Equipotential lines and surfaces",
-    "Note 5: Equipotential lines and surfaces frequently appears in examination questions"
+    "Inside a charged conductor there is no field direction, so the concept of perpendicularity does not apply there; the whole cavity is simply at the constant potential of the conductor's surface.",
+    "For a dipole, the V = 0 equipotential surface is the perpendicular bisector plane of the axis — the only region in the dipole's field where V is exactly zero, though E is non-zero there."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Equipotential lines and surfaces",
-    "Statement 2: Theorem related to Equipotential lines and surfaces",
-    "Statement 3: Condition for Equipotential lines and surfaces to be valid",
-    "Statement 4: Principle governing Equipotential lines and surfaces",
-    "Statement 5: Corollary or consequence of Equipotential lines and surfaces"
+    "Statement 1: No work is done by the electrostatic field in moving a charge along an equipotential surface, since W = qΔV = 0.",
+    "Statement 2: Equipotential surfaces are always perpendicular to the electric field lines at the points of intersection.",
+    "Statement 3: Two distinct equipotential surfaces can never intersect each other.",
+    "Statement 4: The closeness of successive equipotential surfaces is inversely proportional to the strength of the electric field in that region.",
+    "Statement 5: The entire surface of a conductor in electrostatic equilibrium is at a single constant potential."
   ],
   "importantNotes": [
-    "Note 1: Equipotential lines and surfaces is based on fundamental principles",
-    "Note 2: Remember the distinction between different types in Equipotential lines and surfaces",
-    "Note 3: Equipotential lines and surfaces has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Equipotential lines and surfaces",
-    "Note 5: Cross-check your answers using alternative methods for Equipotential lines and surfaces"
+    "Equipotential surfaces are the two-dimensional analogue of contour lines on a topographic map: equal potential means equal 'height' of the potential field, and gradient magnitude equals field magnitude."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Equipotential lines and surfaces formula",
-    "Trick 2: Elimination technique for Equipotential lines and surfaces MCQs",
-    "Trick 3: Dimensional analysis shortcut for Equipotential lines and surfaces",
-    "Trick 4: Memory aid for Equipotential lines and surfaces formulas",
-    "Trick 5: Time-saving approach for Equipotential lines and surfaces problems"
+    "Shape recall: point charge → concentric spheres; line charge → coaxial cylinders; plane sheet → parallel planes; conducting shell → sphere plus a constant interior region.",
+    "Quick check of perpendicularity: if E had a component along the equipotential surface, moving along it would change V, contradicting ΔV = 0."
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Equipotential lines and surfaces",
-    "Exam Tip 2: Practice previous year questions on Equipotential lines and surfaces",
-    "Exam Tip 3: Equipotential lines and surfaces carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Equipotential lines and surfaces thoroughly",
-    "Exam Tip 5: Review common mistakes related to Equipotential lines and surfaces"
+    "Proving perpendicularity of equipotential surfaces and field lines, along with sketching equipotentials for three standard configurations, is a standard 4-mark question in NEB Class 11 Physics."
   ],
   "mcs": [
     {
-      "question": "Which of the following best describes Equipotential lines and surfaces?",
+      "question": "The work done in moving a charge q from one equipotential surface to another surface at a higher potential is:",
       "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
+        "zero",
+        "qΔV",
+        "negative qΔV",
+        "independent of q"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "W = qΔV where ΔV is the potential difference between the two surfaces. This is non-zero because the surfaces are not equipotential with each other."
     },
     {
-      "question": "The primary application of Equipotential lines and surfaces is in:",
+      "question": "Equipotential surfaces of a point charge are:",
       "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
+        "planes",
+        "concentric spheres",
+        "cylinders",
+        "paraboloids"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Since V = kQ/r, V is constant for a fixed value of r, which is the equation of a sphere centred on the charge. Hence equipotentials are concentric spheres."
     },
     {
-      "question": "For Equipotential lines and surfaces, which condition is necessary?",
+      "question": "The spacing between two consecutive equipotential surfaces in a region is small. This indicates that the electric field in that region is:",
       "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
+        "zero",
+        "very large",
+        "moderate and constant",
+        "perpendicular to the surfaces"
       ],
-      "answer": "A"
-    },
-    {
-      "question": "What is the unit/dimension used in Equipotential lines and surfaces?",
-      "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "Which statement about Equipotential lines and surfaces is FALSE?",
-      "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
-      ],
-      "answer": "C"
+      "answer": "B",
+      "explanation": "A small separation for a fixed potential difference means a large gradient, E = -ΔV/Δs, so the field is very large in that region."
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Equipotential lines and surfaces",
-    "Concept 2: Key theorem or principle in Equipotential lines and surfaces",
-    "Concept 3: Important application area of Equipotential lines and surfaces",
-    "Concept 4: Fundamental relationship in Equipotential lines and surfaces",
-    "Concept 5: Connection between Equipotential lines and surfaces and other topics"
+    "Definition of equipotential surfaces and the zero-work consequence.",
+    "Proof of perpendicularity between equipotential surfaces and field lines.",
+    "Shapes of equipotential surfaces for point charge, line charge, and plane sheet.",
+    "Equipotential behaviour of conductors and the constant interior potential.",
+    "Work and potential energy relations between equipotential surfaces."
   ],
   "importantTasks": [
-    "Task 1: Solve 10 numerical problems on Equipotential lines and surfaces",
-    "Task 2: Derive the main formula for Equipotential lines and surfaces",
-    "Task 3: Create a concept map for Equipotential lines and surfaces",
-    "Task 4: Practice previous year exam questions on Equipotential lines and surfaces",
-    "Task 5: Explain Equipotential lines and surfaces to a peer or study group"
+    "Derive the proof that E is normal to an equipotential surface.",
+    "Sketch equipotential diagrams for the three canonical charge distributions.",
+    "Calculate work and potential energy differences between two equipotential surfaces."
   ],
   "duplicateType": 2,
+  "visualType": "equipotential",
   "tabGroup": "equipotential-lines-and-surfaces"
 }

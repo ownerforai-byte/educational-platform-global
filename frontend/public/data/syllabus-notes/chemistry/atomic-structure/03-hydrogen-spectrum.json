@@ -57,5 +57,87 @@
     "Convert cm⁻¹ to m⁻¹ (× 100) before using R in SI; unit slips are the commonest error here."
   ],
   "visualType": "hydrogen-spectrum",
-  "tabGroup": "Atomic-Structure-Learner-Notes"
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "summary": "An emission spectrum shows bright lines on a dark background and an absorption spectrum dark lines on a continuous background; atomic spectra are line spectra, band spectra coming from molecules and continuous spectra from incandescent solids. In hydrogen each line is a single electron transition, hν = E₂ − E₁ = 13.6(1/n₁² − 1/n₂²) eV, so discrete levels give discrete wavelengths. The series are named by the lower level n₁: Lyman (n₁ = 1, UV, limit 91.2 nm), Balmer (n₁ = 2, the only visible series — Hα 656.3 nm, Hβ 486.1 nm, Hγ 434.0 nm, Hδ 410.2 nm, limit 364.6 nm), and Paschen, Brackett and Pfund in the infrared. Within a series the lines crowd together and converge at the series limit, where ionisation begins and the spectrum turns continuous. The Rydberg equation, 1/λ = RZ²(1/n₁² − 1/n₂²) with R = 1.097 × 10⁷ m⁻¹, was derived by Bohr, and the pattern is used for elemental analysis, stellar astronomy and lasers.",
+  "importantConcepts": [
+    "Emission (bright lines on dark ground) versus absorption (dark lines on a continuous source)",
+    "Each line is one electron transition, hν = E₂ − E₁ = 13.6(1/n₁² − 1/n₂²) eV",
+    "Series named by the lower level: Lyman UV (n₁ = 1), Balmer visible (n₁ = 2), Paschen, Brackett, Pfund IR",
+    "Line crowding and convergence at the series limit, beyond which the atom ionises and emission becomes continuous",
+    "Rydberg equation 1/λ = RZ²(1/n₁² − 1/n₂²) with R = 1.097 × 10⁷ m⁻¹ = 109 678 cm⁻¹, derived by Bohr"
+  ],
+  "importantStatements": [
+    "The Balmer series is the only hydrogen series in the visible region; Lyman is ultraviolet and Paschen onward infrared.",
+    "Within a series the lines crowd closer together and converge at the series limit, they do not spread apart.",
+    "A ground-state hydrogen atom can absorb but cannot emit a Balmer line — emission needs prior excitation.",
+    "The number of spectral lines from a single excited level n is n(n − 1)/2.",
+    "Bohr's derivation of R turned Rydberg's empirical formula into theory — the model's greatest success."
+  ],
+  "importantTasks": [
+    "Explain the origin of the line spectrum of hydrogen using Bohr's frequency condition.",
+    "Write the Rydberg equation and compute the wavelength of the first Balmer line (3 → 2).",
+    "Name the hydrogen series lying in the visible region and state the region of each of the others.",
+    "Calculate the wave number and photon energy for the n = 4 → 2 transition in hydrogen."
+  ],
+  "keyPoints": [
+    "Discrete energy levels are the reason the spectrum is lines, not a continuum.",
+    "Hα = 656.3 nm (red) is the first Balmer line; Balmer limit = 364.6 nm, Lyman limit = 91.2 nm.",
+    "The number of lines possible from level n is n(n − 1)/2.",
+    "λ(nm) = 1240/ΔE(eV) converts a transition energy into a wavelength.",
+    "The Balmer series was found first (1885) because it alone is visible."
+  ],
+  "specialNotes": [
+    "Absorption lines mark missing wavelengths, not energy lost by the atom: the atom keeps exactly the photons matching its level gaps.",
+    "Beyond the series limit the electron is free, so the spectrum becomes continuous — the limit is the ionisation threshold.",
+    "The Bohr picture gives line positions only; fine structure (Hα is a doublet), intensities and Zeeman/Stark splitting need quantum mechanics."
+  ],
+  "examShortTricks": [
+    "Series-to-region map on one line: Lyman UV, Balmer visible, Paschen/Brackett/Pfund IR.",
+    "Convert cm⁻¹ to m⁻¹ by multiplying by 100 before using R = 1.097 × 10⁷ m⁻¹ — the commonest slip.",
+    "Lines from level n: n(n − 1)/2 in total, but only n − n₁ in one series.",
+    "λ(nm) = 1240/ΔE(eV) saves a conversion in every energy-wavelength numerical."
+  ],
+  "examNotes": [
+    "The series table with region, first line and series limit is a standard 3–4 mark question.",
+    "Numericals ask for λ of a named line, the series limit, or the energy of a transition.",
+    "A frequent 1-mark item tests the visible series (Balmer) or the meaning of the series limit."
+  ],
+  "practiceQuestions": [
+    "Explain, using Bohr's postulates, why hydrogen gives a line spectrum rather than a continuous one.",
+    "Calculate the wavelength of the second Balmer line (4 → 2) and identify it.",
+    "How many spectral lines are emitted when an electron falls from n = 5 to the ground state?",
+    "Name the series lying in the visible region and give the region of the remaining four."
+  ],
+  "mcs": [
+    {
+      "question": "The only visible series of the hydrogen atom is the:",
+      "options": [
+        "Lyman",
+        "Balmer",
+        "Paschen",
+        "Pfund"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The first line of the Balmer series (Hα, 656.3 nm) corresponds to the transition:",
+      "options": [
+        "2 → 1",
+        "3 → 2",
+        "4 → 3",
+        "3 → 1"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The number of spectral lines possible from an excited level n = 4 is:",
+      "options": [
+        "3",
+        "4",
+        "6",
+        "12"
+      ],
+      "answer": "C"
+    }
+  ]
 }

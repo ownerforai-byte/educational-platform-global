@@ -302,6 +302,44 @@ const FF: DerivationOrTheorem[] = [
       "Forgetting diatomic/triatomic nature: O₂ is 32, O₃ is 48 g/mol.",
       "Dropping Avogadro's exponent: 6.022 × 10²³, not 10²⁶ or 10²¹.",
     ],
+    specialCases: [
+      {
+        name: "22.4 L at a temperature other than STP",
+        condition: "Gas measured at T ≠ 273 K, P ≠ 1 atm",
+        formula: "V = n\\frac{RT}{P}",
+        meaning: "22.4 L is a special case of the ideal-gas law, not a constant. Away from STP you must scale it by RT/P.",
+      },
+      {
+        name: "Ionic solids — count formula units",
+        condition: "Substance like NaCl, CaCl₂, K₂SO₄",
+        formula: "n = \\frac{m}{M_{\\text{formula}}}",
+        meaning: "A mole of NaCl is 6.022 × 10²³ formula units, not that many separate Na⁺ and Cl⁻ ions — the formula unit is the particle.",
+      },
+      {
+        name: "Molar mass is numerically the relative mass",
+        condition: "Any substance",
+        formula: "M = A_r \\text{ (numerically)}, \\quad [M] = \\text{g mol}^{-1}",
+        meaning: "Atomic mass of Fe is 55.85, so its molar mass is 55.85 g/mol — the number is the same, the unit is not. Never attach u to a molar mass.",
+      },
+      {
+        name: "Diatomic versus atomic gases",
+        condition: "H₂, N₂, O₂, F₂, Cl₂, Br₂, I₂ at STP",
+        formula: "M(\\text{O}_2) = 32,\\ M(\\text{O}_3) = 48",
+        meaning: "The diatomic form is what exists at ordinary conditions, so its molar mass is the double. Ozone is the exception that only appears in ozone generators.",
+      },
+      {
+        name: "Non-gases have no molar volume of 22.4 L",
+        condition: "Solids and liquids",
+        formula: "V = \\frac{m}{\\rho}",
+        meaning: "For water or iron you divide mass by density, never by 22.4 — that figure is a gas-only property at STP.",
+      },
+      {
+        name: "Reaction coefficients are mole ratios",
+        condition: "Any balanced equation",
+        formula: "2H_2 + O_2 \\to 2H_2O: \\; 2:1:2",
+        meaning: "Coefficients give the mole ratio directly, which is why every stoichiometry problem starts by converting to moles.",
+      },
+    ],
     visualType: "mole-concept",
     solvedProblems: [
       {
@@ -361,6 +399,44 @@ const FF: DerivationOrTheorem[] = [
       "Sign slip in the quotient rule numerator: it is u'v − uv', in that order.",
       "Treating y as a constant when differentiating implicitly — it carries a y'.",
       "Parametric y'' needs the division by dx/dt again, not just one quotient.",
+    ],
+    specialCases: [
+      {
+        name: "Constant multiple",
+        condition: "One factor is a constant",
+        formula: "(cu)' = c\\,u'",
+        meaning: "The constant just scales the result — the commonest case, and the one most often over-worked with a full product rule.",
+      },
+      {
+        name: "Quotient with a constant denominator",
+        condition: "u/v where v is constant",
+        formula: "\\left(\\frac{u}{v}\\right)' = \\frac{u'}{v}",
+        meaning: "The full quotient rule collapses; writing v' = 0 is the quick way to see it.",
+      },
+      {
+        name: "Logarithmic differentiation",
+        condition: "y = u(x)^{v(x)}, or a nasty quotient/root",
+        formula: "\\ln y = v\\ln u \\Rightarrow y' = u^v\\left(v'\\ln u + \\frac{v u'}{u}\\right)",
+        meaning: "Neither the product nor quotient rule copes with a variable in the exponent — take logs first.",
+      },
+      {
+        name: "Vertical tangent on an implicit curve",
+        condition: "y = 0 in dy/dx = -F_x/F_y",
+        formula: "\\frac{dy}{dx} \\to \\infty \\text{ as } y \\to 0",
+        meaning: "The implicit formula breaks at the y = 0 points of a circle or ellipse — that is a vertical tangent, not an error.",
+      },
+      {
+        name: "Parametric second derivative",
+        condition: "y = y(t), x = x(t), both differentiable",
+        formula: "\\frac{d^2y}{dx^2} = \\frac{\\dfrac{d}{dt}\\left(\\frac{dy}{dx}\\right)}{dx/dt}",
+        meaning: "Differentiate dy/dx with respect to t, then divide by dx/dt again — it is not d²y/dt² ÷ d²x/dt².",
+      },
+      {
+        name: "Leibniz higher-order product rule",
+        condition: "dⁿ(uv)",
+        formula: "\\frac{d^n(uv)}{dx^n} = u\\frac{d^n v}{dx^n} + n\\frac{du}{dx}\\frac{d^{n-1}v}{dx^{n-1}} + \\dots",
+        meaning: "The binomial-style pattern generalises the product rule; for n = 2 the middle coefficient 2 gives f'g' + fg'.",
+      },
     ],
     visualType: "tv-diff-rules",
     solvedProblems: [

@@ -23,7 +23,6 @@ import React, { useState, useRef, useEffect, useCallback } from "react";
 import { useRouter } from "next/navigation";
 import {
   Send,
-  Bot,
   User,
   Sparkles,
   Trash2,
@@ -58,6 +57,7 @@ import {
 } from "@/lib/ai/guest-quota";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
+import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { stripLinksForCopy } from "@/lib/ai/clean-copy";
 import { cn } from "@/lib/utils";
@@ -364,6 +364,18 @@ function buildStarters(mode: TutorMode): Starter[] {
 // Daily pools: guests 5/day (shared with guest chat), signed-in 8/day.
 const DAILY_CREDIT_POOL = 4;
 
+/** Rotating words shown beside the bouncing dots while a reply generates. */
+const THINKING_LINES = [
+  "Thinking…",
+  "Extracting…",
+  "Contemplating…",
+  "Musing…",
+  "Pondering…",
+  "Reflecting…",
+  "Gathering the ideas in conceptual order…",
+  "Building the answer from past to present…",
+];
+
 function systemMessageFor(mode: TutorMode): AIChatMessage {
   const focus =
     mode === "General"
@@ -382,6 +394,7 @@ export function TutorConsole() {
   const [messages, setMessages] = useState<AIChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
+  const [thinkIdx, setThinkIdx] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
   const [guestCount, setGuestCount] = useState(0);
@@ -415,6 +428,16 @@ export function TutorConsole() {
       dailyCredits === 0 ||
       (typeof user?.credits === "number" && user.credits <= 0));
   const composerLocked = isGuestLimited || creditsExhausted;
+
+  // Rotate the thinking words while a reply is generating.
+  useEffect(() => {
+    if (!sending) return;
+    const id = setInterval(
+      () => setThinkIdx((i) => (i + 1) % THINKING_LINES.length),
+      2600,
+    );
+    return () => clearInterval(id);
+  }, [sending]);
 
   // Restore mode + quota/history after mount (localStorage/sessionStorage
   // never exist on the server — first client paint must match it).
@@ -591,7 +614,7 @@ export function TutorConsole() {
         const msg =
           err instanceof Error && err.message
             ? err.message
-            : "Failed to reach the AI Tutor. Please try again.";
+            : "Failed to reach the Captain. Please try again.";
         setError(msg);
         if (
           err &&
@@ -711,12 +734,12 @@ export function TutorConsole() {
         <div className="flex items-center justify-between gap-3 px-4 sm:px-6 pt-3.5 pb-2.5">
           <div className="flex items-center gap-2.5 min-w-0">
             <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-primary to-violet-500 flex items-center justify-center text-white shadow-md shadow-primary/30 shrink-0">
-              <Bot className="h-5 w-5" />
+              <CaptainAvatar className="h-5 w-5" />
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-2">
                 <h2 className="text-sm font-extrabold bg-gradient-to-r from-primary via-violet-500 to-primary bg-clip-text text-transparent animate-gradient-text truncate">
-                  Ravikisan&apos;s AI Tutor
+                  Ravikisan&apos;s Captain
                 </h2>
                 {/* live dot — the professor is on duty (do not remove) */}
                 <span className="relative flex h-2 w-2 shrink-0" title="Online">
@@ -736,7 +759,7 @@ export function TutorConsole() {
             {!isLoggedIn && (
               <span
                 className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-600 font-semibold"
-                title="Guest pool shared with the AI quiz · resets at 12:00 AM"
+                title="Guest pool shared with the Captain quiz · resets at 12:00 AM"
               >
                 <Coins className="h-3 w-3" />
                 {guestCredits}/{MAX_GUEST_MESSAGES} free today
@@ -808,7 +831,7 @@ export function TutorConsole() {
           <div className="min-h-full flex flex-col justify-center max-w-2xl mx-auto space-y-6 py-6">
             <div className="text-center space-y-2">
               <div className="relative h-14 w-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-primary shadow-lg shadow-emerald-500/25 text-white mx-auto flex items-center justify-center">
-                <Sparkles className="h-7 w-7 animate-pulse" />
+                <CaptainMark className="h-7 w-7" />
               </div>
               <h3 className="text-xl font-extrabold bg-gradient-to-r from-foreground via-emerald-600 to-primary bg-clip-text text-transparent animate-gradient-text">
                 {mode === "General"
@@ -878,7 +901,7 @@ export function TutorConsole() {
               return (
                 <div key={index} className="group flex gap-3 animate-pop-in">
                   <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-emerald-500/20 to-primary/20 border border-emerald-500/30 text-emerald-600 flex items-center justify-center shrink-0 mt-1">
-                    <Bot className="h-3.5 w-3.5" />
+                    <CaptainAvatar className="h-3.5 w-3.5" />
                   </div>
                   <div className="min-w-0 flex-1">
                     <div className="rounded-2xl rounded-tl-md border border-border/60 bg-muted/25 px-4 py-3">
@@ -955,12 +978,13 @@ export function TutorConsole() {
             {sending && (
               <div className="flex gap-3 animate-pop-in">
                 <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-emerald-500/20 to-primary/20 border border-emerald-500/30 text-emerald-600 flex items-center justify-center shrink-0 mt-1">
-                  <Bot className="h-3.5 w-3.5" />
+                  <CaptainAvatar className="h-3.5 w-3.5" />
                 </div>
-                <div className="rounded-2xl rounded-tl-md border border-border/60 bg-muted/25 px-4 py-3 flex items-center gap-1.5">
+                <div className="rounded-2xl rounded-tl-md border border-border/60 bg-muted/25 px-4 py-3 flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary animate-bounce [animation-delay:-0.2s]" />
                   <span className="h-1.5 w-1.5 rounded-full bg-violet-500 animate-bounce [animation-delay:-0.1s]" />
                   <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-bounce" />
+                  <span className="text-xs text-muted-foreground ml-1">{THINKING_LINES[thinkIdx]}</span>
                 </div>
               </div>
             )}
@@ -985,7 +1009,7 @@ export function TutorConsole() {
           <button
             onClick={startPracticeQuiz}
             className="inline-flex items-center gap-1 rounded-lg border border-emerald-500/40 bg-emerald-500/10 px-2 py-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 transition-colors"
-            title="Open the AI quiz seeded with this conversation"
+            title="Open the Captain quiz seeded with this conversation"
           >
             <Brain className="h-3 w-3" /> Practice quiz
           </button>
@@ -1046,7 +1070,7 @@ export function TutorConsole() {
         <p className="mt-1.5 text-[10px] text-muted-foreground">
           {isLoggedIn
             ? "1 credit per message · history saved to your account"
-            : `${guestCredits} of ${MAX_GUEST_MESSAGES} free messages left today · shared with the AI quiz`}
+            : `${guestCredits} of ${MAX_GUEST_MESSAGES} free messages left today · shared with the Captain quiz`}
         </p>
       </div>
     </div>

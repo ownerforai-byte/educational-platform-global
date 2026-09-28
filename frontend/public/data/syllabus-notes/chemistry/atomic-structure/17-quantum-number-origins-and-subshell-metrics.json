@@ -63,5 +63,85 @@
   "tabGroup": "Atomic-Structure-Learner-Notes",
   "source": "ravikishan",
   "duplicateType": 2,
-  "filename": "17-quantum-number-origins-and-subshell-metrics.json"
+  "filename": "17-quantum-number-origins-and-subshell-metrics.json",
+  "summary": "The quantum numbers are mathematical consequences, not postulates: n, l and m appear as separation constants when the Schrödinger equation for hydrogen is solved in spherical coordinates, forced by the boundary conditions, while mₛ does not come from that equation at all — it enters through Dirac's relativistic equation (1928) and was inferred earlier (1925, Uhlenbeck and Goudsmit) from the Stern–Gerlach experiment and spectral doublets. The metrics follow immediately: a shell of principal quantum number n has n² orbitals and 2n² electrons (K 1/2, L 4/8, M 9/18, N 16/32), a subshell of quantum number l has 2l + 1 orbitals and 2(2l + 1) electrons (s 1/2, p 3/6, d 5/10, f 7/14), and the nodes are radial = n − l − 1, angular = l, total = n − 1. For hydrogen all subshells of a shell are degenerate, but in multi-electron atoms penetration gives ns < np < nd < nf and the (n + l) Madelung order governs filling across shells.",
+  "importantConcepts": [
+    "n, l and m arise as separation constants of the Schrödinger equation in spherical coordinates, forced by boundary conditions",
+    "mₛ does not come from Schrödinger; it enters through Dirac's equation and the Stern–Gerlach/doublet evidence",
+    "Shell metrics: orbitals n² and electrons 2n² — K 1/2, L 4/8, M 9/18, N 16/32",
+    "Subshell metrics: orbitals 2l + 1 and electrons 2(2l + 1) — s 1/2, p 3/6, d 5/10, f 7/14",
+    "Energy order: degenerate in hydrogen, but ns < np < nd < nf by penetration, with (n + l) governing filling across shells"
+  ],
+  "importantStatements": [
+    "2n² counts electrons in a shell; the number of orbitals in that shell is n².",
+    "Only n, l and m come from the Schrödinger solution — attributing spin to it is a standard error.",
+    "The Stern–Gerlach experiment (1922) split a silver beam into two, the first evidence for spin.",
+    "For hydrogen the n = 2 level is degenerate across 2s and three 2p orbitals, four states in all.",
+    "The 4f subshell (l = 3) holds 14 electrons, the width of the lanthanide series."
+  ],
+  "importantTasks": [
+    "Show how n, l and m arise from solving the Schrödinger equation for hydrogen.",
+    "Tabulate the orbitals and electron capacities of the K, L, M and N shells.",
+    "How many orbitals and electrons are possible for n = 4?",
+    "Explain why the 4s orbital is filled before 3d in potassium."
+  ],
+  "keyPoints": [
+    "Three counting numbers to memorise: 2l + 1 orbitals, 2(2l + 1) subshell electrons, 2n² shell electrons.",
+    "Attribute spin to Dirac and Stern–Gerlach, never to Schrödinger alone.",
+    "n = 4 gives 16 orbitals and 32 electrons, made up of 4s, 4p, 4d, 4f.",
+    "Degeneracy holds only for one-electron atoms."
+  ],
+  "specialNotes": [
+    "Electrons with n = 4 and l = 2 means the 4d subshell, so 2(2·2 + 1) = 10 electrons.",
+    "The energy order of subshells changes with Z, inside ions and in ligand fields, so no single order is absolute.",
+    "Spin–orbit coupling needs the total angular momentum J, beyond the four numbers treated here."
+  ],
+  "examShortTricks": [
+    "Orbitals in a shell = n²; electrons in a shell = 2n² — keep the two apart.",
+    "Electrons with given n and m: count the subshells that contain an orbital with that m and double it.",
+    "4f = 7 orbitals, 14 electrons — the lanthanide series width."
+  ],
+  "examNotes": [
+    "The metrics table (shell and subshell orbitals and capacities) is a standard 3–4 mark question.",
+    "Counting questions with a given n, l or m are the routine 2-mark numericals.",
+    "Explaining 4s before 3d is a common 1–2 mark item."
+  ],
+  "practiceQuestions": [
+    "Show how n, l and m arise from solving the Schrödinger equation.",
+    "Tabulate the orbitals and electron capacities of the K, L, M and N shells.",
+    "How many orbitals and electrons are possible for n = 4?",
+    "Why is the 4s orbital filled before 3d in potassium?"
+  ],
+  "mcs": [
+    {
+      "question": "The number of orbitals in the M shell (n = 3) is:",
+      "options": [
+        "3",
+        "6",
+        "9",
+        "18"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The spin quantum number mₛ is introduced from:",
+      "options": [
+        "The Schrödinger equation alone",
+        "The Stern–Gerlach experiment and Dirac's equation",
+        "The Franck–Hertz experiment",
+        "The Rutherford scattering experiment"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The maximum number of electrons in a 4f subshell is:",
+      "options": [
+        "6",
+        "10",
+        "14",
+        "32"
+      ],
+      "answer": "C"
+    }
+  ]
 }

@@ -71,5 +71,85 @@
   "tabGroup": "Atomic-Structure-Learner-Notes",
   "source": "ravikishan",
   "duplicateType": 2,
-  "filename": "23-neutron-and-fundamental-particles.json"
+  "filename": "23-neutron-and-fundamental-particles.json",
+  "summary": "A third particle had to exist. The mass problem: helium (Z = 2) should weigh 2 u if built from protons alone but weighs 4 u. The charge problem: nitrogen (A = 14, Z = 7) would need electrons inside the nucleus, which the uncertainty principle forbids, since confining an electron to 10⁻¹⁵ m demands ~10⁹ eV. Chadwick's 1932 experiment solved it: α-particles from polonium struck beryllium, ⁹Be + ⁴He → ¹²C + ¹n, releasing a highly penetrating neutral radiation that knocked protons out of paraffin wax; momentum conservation gave its mass as about 1.15 u. The complete table is: electron −1.602 × 10⁻¹⁹ C, 9.109 × 10⁻³¹ kg = 0.000549 u, in orbitals, Thomson 1897; proton +1.602 × 10⁻¹⁹ C, 1.673 × 10⁻²⁷ kg = 1.00728 u, in the nucleus, named by Rutherford; neutron 0, 1.675 × 10⁻²⁷ kg = 1.00867 u, in the nucleus, Chadwick 1932. The trio explains isotopes, radioactivity and nuclear stability.",
+  "importantConcepts": [
+    "Why a third particle was needed: the mass problem (He = 4 u, not 2 u) and the charge problem (no electrons in the nucleus)",
+    "Chadwick's experiment: ⁹Be + ⁴He → ¹²C + ¹n, with protons recoiling from paraffin wax",
+    "Electron: −1.602 × 10⁻¹⁹ C, 9.109 × 10⁻³¹ kg = 0.000549 u, outside the nucleus (Thomson, 1897)",
+    "Proton: +1.602 × 10⁻¹⁹ C, 1.673 × 10⁻²⁷ kg = 1.00728 u, in the nucleus (named by Rutherford)",
+    "Neutron: charge 0, 1.675 × 10⁻²⁷ kg = 1.00867 u, in the nucleus (Chadwick, 1932)"
+  ],
+  "importantStatements": [
+    "The neutron is slightly heavier than a proton, so free neutrons β-decay with a half-life of about 10.7 minutes.",
+    "A neutral particle leaves no track in electric or magnetic fields and does not ionise gas, which is why it was missed for years.",
+    "The neutron's magnetic moment is not zero (−1.91 nuclear magnetons) despite its zero charge — evidence of internal quark structure.",
+    "A = Z + N, so a nuclide is written ᴬZX; isotopes differ only in N.",
+    "Stable nuclei need N/Z ≈ 1 for light elements, rising to about 1.5 for heavy ones."
+  ],
+  "importantTasks": [
+    "Explain the mass and charge problems that predicted the neutron's existence.",
+    "Describe Chadwick's beryllium experiment with its nuclear equation.",
+    "Complete the fundamental-particles table: particle, charge, mass, discoverer and location.",
+    "Explain why the N/Z ratio is higher in heavy stable nuclei."
+  ],
+  "keyPoints": [
+    "The full table (charge, mass, discoverer, location) is a guaranteed short question.",
+    "Use the uncertainty principle — an electron cannot be confined to 10⁻¹⁵ m — as the conceptual argument for the neutron.",
+    "For any nuclide: protons = Z, electrons = Z (neutral atom), neutrons = A − Z.",
+    "The neutron's discovery made the fission chain reaction conceivable and led to the 1935 Nobel Prize."
+  ],
+  "specialNotes": [
+    "The unknown radiation was first mistaken for γ-rays because it was neutral and highly penetrating.",
+    "Chadwick found a mass of about 1.15 u, slightly higher than the proton's — later refined to 1.00867 u.",
+    "The neutron is the heaviest of the three particles, yet carries no charge."
+  ],
+  "examShortTricks": [
+    "Memorise all four table columns; short questions on the particles are guaranteed.",
+    "Both nuclear equations are worth quoting: ⁹Be + ⁴He → ¹²C + ¹n and ¹⁴N + ⁴He → ¹⁷O + ¹p.",
+    "For isotope questions, protons = Z and neutrons = A − Z, always."
+  ],
+  "examNotes": [
+    "The neutron's discovery with its equation and reasoning is a standard 4–5 mark question.",
+    "The three-particle table is a frequent 3-mark short question.",
+    "One-mark items test who discovered the neutron or the target of Chadwick's bombardment."
+  ],
+  "practiceQuestions": [
+    "Explain the mass and charge problems that predicted the neutron's existence.",
+    "Describe Chadwick's beryllium experiment and write its nuclear equation.",
+    "Complete the table of charge, mass, discoverer and location for the three particles.",
+    "Why is the N/Z ratio higher in heavy stable nuclei?"
+  ],
+  "mcs": [
+    {
+      "question": "The particle with almost the same mass as a proton but zero charge is the:",
+      "options": [
+        "Electron",
+        "Positron",
+        "Neutron",
+        "Neutrino"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Neutrons were discovered using bombardment of:",
+      "options": [
+        "Nitrogen with protons",
+        "Beryllium with α-particles",
+        "Gold with electrons",
+        "Hydrogen with γ-rays"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An atom with Z = 6 and A = 14 contains:",
+      "options": [
+        "6 p, 6 n, 6 e",
+        "6 p, 8 n, 6 e",
+        "8 p, 6 n, 6 e",
+        "6 p, 8 n, 8 e"
+      ],
+      "answer": "B"
+    }
+  ]
 }

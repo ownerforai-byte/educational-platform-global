@@ -1,10 +1,107 @@
 {
-  "title": "electric-charges Mindmap",
+  "title": "Electric Charges Mindmap",
   "unitSlug": "electric-charges",
   "topicSlug": "electric-charges-mindmap",
-  "topicTitle": "electric charges — interactive concept map",
-  "relevance": 0,
+  "topicTitle": "Electric Charges — Interactive Concept Map",
+  "relevance": 100,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "Foundational electrostatics covering nature, quantization, and conservation of electric charge.",
+    "Mechanisms of electrification: triboelectric friction, conduction, and electrostatic induction with earthing.",
+    "Quantitative electrostatic forces via Coulomb's law, dielectric attenuation, and vector superposition."
+  ],
+  "mindmap": {
+    "centralConcept": "Electric Charges & Electrostatic Forces",
+    "branches": [
+      {
+        "topic": "Properties of Electric Charge",
+        "subtopics": [
+          {
+            "name": "Quantization of Charge",
+            "points": [
+              "Discrete elementary quantum: q = ±ne",
+              "Fundamental charge: e = 1.602 × 10⁻¹⁹ C",
+              "Demonstrated by Millikan's oil-drop experiment"
+            ]
+          },
+          {
+            "name": "Conservation of Charge",
+            "points": [
+              "Total charge of an isolated system remains strictly constant",
+              "Algebraic additivity: Q_total = ∑ q_i",
+              "Relativistically invariant (independent of speed)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Electrification Methods",
+        "subtopics": [
+          {
+            "name": "Charging by Friction",
+            "points": [
+              "Triboelectric electron transfer between differing materials",
+              "Glass on silk becomes positive; amber/ebonite becomes negative"
+            ]
+          },
+          {
+            "name": "Charging by Conduction",
+            "points": [
+              "Direct physical contact between conductors",
+              "Charge redistributes until electrostatic potentials equalize"
+            ]
+          },
+          {
+            "name": "Charging by Induction",
+            "points": [
+              "Non-contact method utilizing polarization and grounding",
+              "Traps charge of opposite polarity on the conductor",
+              "Earthing must be disconnected BEFORE removing inducing body"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Coulomb's Law",
+        "subtopics": [
+          {
+            "name": "Scalar & Vector Formulation",
+            "points": [
+              "Inverse-square law: F = (1/4πε₀) · |q₁q₂| / r²",
+              "Vacuum permittivity: ε₀ = 8.854 × 10⁻¹² F/m",
+              "Coulomb constant: k ≈ 9 × 10⁹ N·m²/C²",
+              "Vector form: F⃗₁₂ = -F⃗₂₁ (satisfies Newton's third law)"
+            ]
+          },
+          {
+            "name": "Medium Effect & Dielectrics",
+            "points": [
+              "Force in dielectric: F_m = F₀ / κ",
+              "Relative permittivity: κ = ε / ε₀ ≥ 1",
+              "Dielectric screening explains salt dissolution in water (κ ≈ 80)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Forces Between Multiple Charges",
+        "subtopics": [
+          {
+            "name": "Principle of Superposition",
+            "points": [
+              "Pairwise interactions remain independent",
+              "Net electrostatic force is vector sum: F⃗_net = ∑ F⃗_i",
+              "Resolved along Cartesian axes (F_x, F_y)"
+            ]
+          },
+          {
+            "name": "Electrostatic Equilibrium",
+            "points": [
+              "Translational equilibrium condition: ∑ F⃗ = 0",
+              "Earnshaw's Theorem: Stable equilibrium impossible with static charges alone"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

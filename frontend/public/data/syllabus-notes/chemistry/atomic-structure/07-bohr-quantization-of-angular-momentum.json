@@ -61,5 +61,85 @@
   "tabGroup": "Atomic-Structure-Learner-Notes",
   "source": "ravikishan",
   "duplicateType": 2,
-  "filename": "07-bohr-quantization-of-angular-momentum.json"
+  "filename": "07-bohr-quantization-of-angular-momentum.json",
+  "summary": "Bohr's second postulate, mvr = nh/2π, is the quantisation of angular momentum, and it is the hinge between the old and new models. Used with the classical force condition it fixes the allowed orbits — eliminating v gives rₙ = 0.529 n²/Z Å and vₙ = 2πke²Z/(nh) — whereas classical mechanics alone permits a continuum of orbits. The postulate was a defect because it was imposed, not derived. de Broglie (1924) removed that objection: if the electron is a wave of wavelength h/mv, a stable orbit must be a standing wave with a whole number of wavelengths round the circumference, nλ = 2πr, and substituting λ = h/mv returns mvr = nh/2π. For n = 1, λ = 3.32 × 10⁻¹⁰ m is exactly the circumference 2πr₁. Even so the picture keeps a definite trajectory, which the uncertainty principle forbids — so it is a bridge to Schrödinger's orbitals, not the destination.",
+  "importantConcepts": [
+    "Quantisation of angular momentum: only orbits with mvr = nh/2π are permitted, n = 1, 2, 3, …",
+    "With the force condition it fixes the orbits: rₙ = n²h²ε₀/(πme²Z) = 0.529 n²/Z Å and vₙ = 2πke²Z/(nh)",
+    "Why it was a defect: the rule was imposed, not derived from any classical argument",
+    "de Broglie's rescue: the orbit must be a standing wave, nλ = 2πr, which derives mvr = nh/2π",
+    "Limitation that remains: a definite trajectory (sharp r and p) is forbidden by Δx·Δp ≥ h/4π"
+  ],
+  "importantStatements": [
+    "Classical mechanics alone allows a continuum of orbits; the quantisation rule is what makes the states discrete.",
+    "Only a whole number of wavelengths round the orbit is allowed — otherwise the wave interferes destructively with itself.",
+    "For n = 1 the de Broglie wavelength 3.32 × 10⁻¹⁰ m equals the circumference 2πr₁ = 3.32 × 10⁻¹⁰ m exactly.",
+    "The integer n literally counts the matter waves round the orbit.",
+    "Bohr's postulate (1913) predates de Broglie's justification (1924) by eleven years."
+  ],
+  "importantTasks": [
+    "Show that the standing-wave condition nλ = 2πr leads to Bohr's quantisation of angular momentum.",
+    "Verify numerically that exactly one de Broglie wavelength fits the first Bohr orbit of hydrogen.",
+    "Explain why mvr = nh/2π was considered a defect of Bohr's theory.",
+    "State why the standing-wave picture still fails under the uncertainty principle."
+  ],
+  "keyPoints": [
+    "mvr = nh/2π with the force condition is the shortest route to rₙ and vₙ.",
+    "nλ = 2πr converts an imposed postulate into a derived consequence.",
+    "Non-integer wave numbers give destructive interference, so those orbits are forbidden.",
+    "Justifying quantisation is not the same as justifying the orbit — the trajectory is the next obstacle."
+  ],
+  "specialNotes": [
+    "The standing-wave argument justifies only the quantisation of angular momentum, not the classical circular path.",
+    "de Broglie, not Bohr, supplied the justification; examiners check the attribution.",
+    "In three dimensions the wave is not confined to a circle, which is exactly why orbitals replace orbits."
+  ],
+  "examShortTricks": [
+    "This tab is the standard answer to 'justify Bohr's second postulate' — write nλ = 2πr, then substitute λ = h/mv.",
+    "For the numerical check: λ = h/mv = 3.32 × 10⁻¹⁰ m and 2πr₁ = 3.32 × 10⁻¹⁰ m for hydrogen.",
+    "End with 'but the orbit still has a definite trajectory', to show the limit of the argument."
+  ],
+  "examNotes": [
+    "'Justify Bohr's quantisation postulate using de Broglie's hypothesis' is a common 3–4 mark question.",
+    "The numerical check of one wavelength round the first orbit is a popular 2-mark part.",
+    "One-mark items ask the standing-wave condition itself: nλ = 2πr."
+  ],
+  "practiceQuestions": [
+    "Show that the standing-wave condition nλ = 2πr leads to mvr = nh/2π.",
+    "Verify numerically that one de Broglie wavelength fits the first Bohr orbit of hydrogen.",
+    "Why was mvr = nh/2π regarded as a defect of Bohr's theory?",
+    "How does the uncertainty principle still limit the standing-wave picture?"
+  ],
+  "mcs": [
+    {
+      "question": "The standing-wave condition for a stable orbit is:",
+      "options": [
+        "nλ = πr",
+        "nλ = 2πr",
+        "λ = 2πr/n²",
+        "nλ = 4πr"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Bohr's quantisation of angular momentum was justified by:",
+      "options": [
+        "Maxwell's theory",
+        "de Broglie's matter-wave hypothesis",
+        "The Stern–Gerlach experiment",
+        "The Franck–Hertz experiment"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The number of de Broglie wavelengths fitting the first Bohr orbit of hydrogen is:",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "Infinite"
+      ],
+      "answer": "B"
+    }
+  ]
 }

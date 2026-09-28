@@ -32,27 +32,27 @@ export function Footer() {
   const showCoins = isLoading || !!user;
   const planRows: [string, string][] = showCoins
     ? [
-        ["AI chat reply & quiz generation", "1 credit"],
+        ["Captain chat reply & quiz generation", "1 credit"],
         ["Guest pool (signed out)", "2 free / day"],
         ["Signed-in daily pool", "4 / day"],
         ["Core syllabus notes & chapters", "1 coin · 20 min"],
         ["Reference & PYQ sets", "1 coin · 20 min"],
         ["HD visuals — diagrams & maps", "2 coins"],
         ["3D / AR simulation labs", "5 coins"],
-        ["Pro plan — AI + notes credits", "Unlimited"],
+        ["Pro plan — Captain + notes credits", "No daily cap"],
       ]
     : [
         // Owner rates (2026-09-28): AI chat $0.05 → $0.16 per reply; all other
         // rates scaled by the same ×3.2 factor; unlimited Pro plan $4.99 → $29.99.
         // Coin/credit costs above stay untouched — only dollar prices moved.
-        ["AI chat reply & quiz generation", "$0.16 / reply"],
+        ["Captain chat reply & quiz generation", "$0.16 / reply"],
         ["Guest pool (signed out)", "2 free / day"],
         ["Signed-in daily pool", "4 free / day"],
         ["Core syllabus notes & chapters", "$0.32 · 20 min"],
         ["Reference & PYQ sets", "$0.32 · 20 min"],
         ["HD visuals — diagrams & maps", "$0.64"],
         ["3D / AR simulation labs", "$1.60"],
-        ["Pro plan — AI + notes credits", "$29.99 / mo"],
+        ["Pro plan — Captain + notes credits", "$29.99 / mo"],
       ];
 
   return (
@@ -180,14 +180,14 @@ export function Footer() {
           <div className="space-y-3">
             <h4 className="text-xs font-bold uppercase tracking-widest text-foreground flex items-center gap-1.5">
               <Sparkles className="h-3.5 w-3.5 text-primary" />
-              <span>Knowledge &amp; AI Tools</span>
+              <span>Knowledge &amp; Captain Tools</span>
             </h4>
             <div className="flex flex-col space-y-2 text-xs">
               {[
                 ["Everything Index", "/site-index"],
                 ["Pro Knowledge Suite", "/knowledge/pro"],
-                ["AI Study Assistant", "/chat"],
-                ["Adaptive AI Quiz Bank", "/ai-quiz"],
+                ["Captain Study Assistant", "/chat"],
+                ["Adaptive Captain Quiz Bank", "/ai-quiz"],
                 ["Visual Concept Mindmaps", "/mindmap"],
                 ["Loksewa GK Portal", "/loksewa"],
                 ["World Knowledge Vault", "/world-knowledge"],
@@ -244,7 +244,7 @@ export function Footer() {
           <div className="flex items-center justify-between gap-3 flex-wrap">
             <h4 className="text-xs font-bold uppercase tracking-widest text-foreground flex items-center gap-1.5">
               <Gem className="h-3.5 w-3.5 text-amber-500" />
-              <span>Pro Plan — AI &amp; Note Credits</span>
+              <span>Pro Plan — Captain &amp; Note Credits</span>
             </h4>
             <span className="inline-flex items-center gap-1 rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider text-amber-600 dark:text-amber-400">
               Fixed daily pools · refill at 12:00 AM
@@ -272,7 +272,7 @@ export function Footer() {
             <span>
               Pools are fixed and cannot be topped up by refreshing — a spent
               pool refills only at 12:00 AM, or go <strong className="text-foreground">PRO</strong> for
-              unlimited AI &amp; note credits.
+              Captain &amp; note credits with no daily cap.
               {!showCoins &&
                 " Signed-out preview: prices shown in USD — sign in for coin credits."}
             </span>

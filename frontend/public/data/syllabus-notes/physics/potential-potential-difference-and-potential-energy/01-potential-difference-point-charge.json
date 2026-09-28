@@ -2,86 +2,132 @@
   "title": "Potential Difference and Point Charge",
   "unitSlug": "potential-potential-difference-and-potential-energy",
   "topicSlug": "potential-difference-point-charge",
-  "topicTitle": "Potential Difference and Point Charge",
+  "topicTitle": "Potential difference, potential due to point charge, potential energy and electron volt",
   "relevance": 100,
   "notes": [
-    "**Potential Difference and Point Charge:** Class 11 concept.",
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
+    "**Electrostatic Potential & Potential Difference:** Electric potential at a point P is defined as the work done per unit positive charge in bringing a test charge q₀ from infinity to P against the electrostatic force of the source distribution, without altering the field: $V = \\frac{W}{q_0} = -\\int_\\infty^P \\vec{E} \\cdot d\\vec{r}$. Potential difference between two points A and B is $\\Delta V = V_B - V_A = -\\int_A^B \\vec{E} \\cdot d\\vec{r}$. Both V and ΔV are scalars, have SI unit volt (V), where $1\\,\\text{V} = 1\\,\\text{J/C}$, and are path-independent because the electrostatic field is conservative ($\\oint \\vec{E} \\cdot d\\vec{r} = 0$).",
+    "**Potential due to an Isolated Point Charge:** For a source charge Q at the origin, the work done in bringing q₀ from infinity to distance r is $W = -\\int_\\infty^r \\frac{Q}{4\\pi\\varepsilon_0 x^2} dx = \\frac{1}{4\\pi\\varepsilon_0} \\frac{Q q_0}{r}$. Dividing by q₀ gives the potential: $V(r) = \\frac{1}{4\\pi\\varepsilon_0}\\frac{Q}{r} = k\\frac{Q}{r}$. Unlike electric field (which is a vector falling off as 1/r²), potential is a scalar that falls off only as 1/r. For an ensemble of point charges, superposition applies algebraically: $V = k \\sum_i \\frac{q_i}{r_i}$.",
+    "**Relation between Electric Field and Potential Gradient:** The electric field and potential are intrinsically related. Since $V = -\\int \\vec{E}\\cdot d\\vec{r}$, we obtain $\\vec{E} = -\\vec{\\nabla}V$. For a uniform field directed along the x-axis: $E = -\\frac{dV}{dx}$. This is the foundational link that converts every electrostatic field formula into a corresponding potential formula, always by substituting $E \\propto 1/r^2$ with $V \\propto 1/r$.",
+    "**Potential of Standard Charge Distributions:** (1) **Line charge:** $V = -\\frac{\\lambda}{2\\pi\\varepsilon_0}\\ln(r/r_0)$; (2) **Infinite plane sheet:** $V = -\\frac{\\sigma}{2\\varepsilon_0}x$ (linear decrease, since E is constant); (3) **Charged conducting shell (radius R, charge Q):** $V = kQ/R$ everywhere inside and on the surface, jumping to $V = kQ/r$ outside — a discontinuity of exactly $E R = \\sigma R/\\varepsilon_0$; (4) **Two parallel plates separated by d:** $E = \\frac{\\sigma}{\\varepsilon_0}$ and $V_{AB} = -Ed = -\\frac{\\sigma d}{\\varepsilon_0}$.",
+    "**Potential Energy of a System of Charges:** The potential energy of a charge q brought from infinity into the field of source charge Q is $U = qV = k\\frac{qQ}{r}$. For two like charges ($qQ > 0$), U is positive, meaning work must be done against repulsion; for two unlike charges ($qQ < 0$), U is negative, indicating the system is bound and energy is released on assembly. For multiple charges, the total energy is the sum over all distinct pairs: $U = k \\sum_{i<j} \\frac{q_i q_j}{r_{ij}}$. Energy is a scalar and must never be computed by summing $\\vec{F}\\cdot d\\vec{r}$ naively over individual pairs for conservative systems.",
+    "**Equivalence of Potential Energy and Force:** By the work-energy theorem, the work done by the electrostatic force in moving a charge slowly from A to B is $W = q(V_A - V_B) = -\\Delta U$. Therefore $\\Delta U = -W_{electric}$, proving that $\\Delta U = -\\int \\vec{F}\\cdot d\\vec{r}$. This means a force always acts to reduce potential energy: a positive charge accelerates toward lower V, and a negative charge accelerates toward higher V.",
+    "**Electron Volt (eV) — Energy Unit Conversion:** The electron volt is the energy gained by a particle of charge e when accelerated through a potential difference of one volt: $1\\,\\text{eV} = e \\times 1\\,\\text{V} = 1.602 \\times 10^{-19}\\,\\text{C} \\times 1\\,\\text{J/C} = 1.602 \\times 10^{-19}\\,\\text{J}$. Convenient conversion factors: $1\\,\\text{eV} = 1.602 \\times 10^{-19}\\,\\text{J}$ and $1\\,\\text{J} = 6.242 \\times 10^{18}\\,\\text{eV}$. Multiples are commonly used: $1\\,\\text{keV} = 10^3\\,\\text{eV}$ (X-rays), $1\\,\\text{MeV} = 10^6\\,\\text{eV}$ (particle accelerators, nuclear binding), and $1\\,\\text{GeV} = 10^9\\,\\text{eV}$ (collider experiments). Note that electron volt is an energy unit, not a charge or potential unit."
   ],
   "confusion": [
-    "Distinguish concepts in Potential Difference and Point Charge.",
-    "Check formula conditions."
+    "Treating potential as a vector and adding components: Potential V is a scalar. Only in a region with a clear directional symmetry (e.g. along the axis of a line charge) is it meaningful to write $V = -Ex$; you must never resolve V into vector components like x, y, z components.",
+    "Confusing potential difference with potential: Potential difference is a change $\\Delta V = V_B - V_A$ between two points and can be positive or negative. Potential V itself is defined relative to infinity ($V_\\infty = 0$), so a positive charge gives positive V while an electron gives negative V.",
+    "Believing the electron volt is a unit of charge or potential: The electron volt (eV) is a unit of ENERGY, defined as the energy of a charge of magnitude e accelerated through 1 V. 1 eV = 1.602 × 10⁻¹⁹ J.",
+    "Computing total potential energy by summing over all ordered pairs (i, j) instead of distinct pairs (i < j): Every interaction must be counted exactly once; summing both $q_i q_j$ and $q_j q_i$ double-counts each pair energy."
   ],
   "practice": [
-    "Solve 5 problems on Potential Difference and Point Charge.",
-    "Derive the key formula for Potential Difference and Point Charge."
+    "Two charges $q_1 = +2\\,\\mu\\text{C}$ and $q_2 = -3\\,\\mu\\text{C}$ are separated by $30\\,\\text{cm}$ in vacuum. (a) Find the potential at the midpoint. (b) Find the potential energy of the system. Solution: (a) At the midpoint, $r_1 = r_2 = 0.15\\,\\text{m}$, so $V = k\\left(\\frac{q_1}{r_1} + \\frac{q_2}{r_2}\\right) = (9 \\times 10^9)\\left(\\frac{2 \\times 10^{-6} - 3 \\times 10^{-6}}{0.15}\\right) = (9 \\times 10^9)\\left(\\frac{-1 \\times 10^{-6}}{0.15}\\right) = (9 \\times 10^9)(-6.67 \\times 10^{-6}) = -6.0 \\times 10^4\\,\\text{V}$. (b) $U = k\\frac{q_1 q_2}{r} = (9 \\times 10^9)\\frac{(2 \\times 10^{-6})(-3 \\times 10^{-6})}{0.30} = (9 \\times 10^9)(-2 \\times 10^{-11}) = -1.8 \\times 10^{-1}\\,\\text{J} = -0.18\\,\\text{J}$."
   ],
   "universalFacts": [
-    "Potential Difference and Point Charge appears in exams.",
-    "Foundational for advanced topics."
+    "The electron volt is named after the electron but is a universal energy unit: an alpha particle with charge +2e accelerated through 1 V gains 2 eV, while a proton accelerated through the same 1 V gains 1 eV.",
+    "The resting membrane potential of a human nerve axon (about −70 mV measured inside relative to outside) corresponds to a stored energy of roughly 1.1 × 10⁻¹⁰ J per ion crossing the membrane, which is the physical basis of neural signaling."
   ],
   "animation3D": "potential-potential-difference-and-potential-energy",
   "motionGraphics": "potential-potential-difference-and-potential-energy",
   "examples": [
-    "Application of Potential Difference and Point Charge",
-    "Numerical problem on Potential Difference and Point Charge",
-    "Daily life use of Potential Difference and Point Charge"
+    "Electron gun in a cathode ray tube: Electrons accelerated through a potential difference V gain kinetic energy eV. For V = 10 kV, each electron gains 10 keV = 1.6 × 10⁻¹⁵ J, which determines the spot size on the fluorescent screen.",
+    "Photocell and photoelectric effect: Incoming photons with energies quoted in electron volts (visible light ≈ 1.5–3 eV, UV up to tens of eV) eject photoelectrons only if the photon energy exceeds the work function, the basis of all photoelectric devices.",
+    "Nucleosome-free grounding of tall buildings: Lightning-induced potential differences of 10⁸ V are bled harmlessly to earth through lightning rods and thick grounding strips, since $W = qV$ for a large charge at huge potential would otherwise be catastrophic."
   ],
   "practiceQuestions": [
-    "Q1. Define Potential Difference and Point Charge.",
-    "Q2. Key formula for Potential Difference and Point Charge.",
-    "Q3. Problem on Potential Difference and Point Charge."
+    "Q1. Define electrostatic potential at a point. State its SI unit and dimensional formula, and explain why electric potential is a scalar while electric field is a vector.",
+    "Q2. Derive an expression for the potential at a point due to a point charge Q, and compare its distance dependence with that of the electric field.",
+    "Q3. A charge q is brought from infinity to a point in the field of a dipole of moment p placed along the x-axis. Show that the potential energy is $U = -kq p \\cos\\theta / r^2$.",
+    "Q4. An electron is accelerated from rest through a potential difference of 500 V. Calculate the energy gained in joules and in electron volts, and the resulting speed. (e = 1.6 × 10⁻¹⁹ C, m = 9.1 × 10⁻³¹ kg)"
   ],
   "formulas": [
-    "Formula for Potential Difference and Point Charge: [insert from textbook].",
-    "Key relationship: [variable formula]."
+    "Potential: $V = \\frac{W}{q_0} = -\\int_\\infty^P \\vec{E} \\cdot d\\vec{r}$",
+    "Potential difference: $\\Delta V = V_B - V_A = -\\int_A^B \\vec{E} \\cdot d\\vec{r}$",
+    "Potential due to point charge: $V = \\frac{1}{4\\pi\\varepsilon_0}\\frac{Q}{r} = k\\frac{Q}{r}$",
+    "Field–potential link: $\\vec{E} = -\\vec{\\nabla}V$",
+    "Potential energy of two charges: $U = k\\frac{q_1 q_2}{r}$",
+    "System potential energy: $U = k\\sum_{i<j} \\frac{q_i q_j}{r_{ij}}$",
+    "Energy–work relation: $\\Delta U = -W_{electric}$",
+    "Electron volt: $1\\,\\text{eV} = 1.602 \\times 10^{-19}\\,\\text{J}$"
   ],
   "keyPoints": [
-    "Core principle of Potential Difference and Point Charge",
-    "Application of Potential Difference and Point Charge",
-    "Connection of Potential Difference and Point Charge to other topics"
+    "Potential V is work done per unit positive charge; SI unit is volt (1 V = 1 J/C).",
+    "Potential is a path-independent scalar; electric field is a vector with direction given by -∇V.",
+    "Potential due to a point charge falls as 1/r, while its electric field falls as 1/r².",
+    "Like charges give positive U (repulsive, unbound); unlike charges give negative U (attractive, bound).",
+    "1 eV = 1.602 × 10⁻¹⁹ J, an energy unit; 1 MeV = 10⁶ eV is standard in nuclear physics."
   ],
-  "summary": "Potential Difference and Point Charge covers essential principles and applications.",
+  "summary": "Electrostatic potential V is the work done per unit positive charge in bringing a test charge from infinity, given by V = -∫E·dr, with SI unit the volt. A point charge Q produces V = kQ/r, falling as 1/r (compared with the field's 1/r²), and fields and potentials are linked by E = -∇V. The potential energy of a charge system is U = kΣqᵢqⱼ/rᵢⱼ, positive for like charges and negative for unlike charges, with ΔU = -W_electric. The electron volt is an energy unit where 1 eV = 1.602 × 10⁻¹⁹ J.",
   "specialNotes": [
-    "Check conditions for Potential Difference and Point Charge.",
-    "Potential Difference and Point Charge connects to other topics."
+    "Electric potential can be zero at a point even where the field is non-zero (the equatorial point of a dipole, and the null point of a dipole field). Only the electric field is guaranteed to be non-zero wherever a charge feels a force.",
+    "Inside a hollow charged conductor the potential is constant (not zero): V = kQ/R, whereas the electric field there is zero. Zero field does not imply zero potential.",
+    "Because V depends on position but not on the path taken, a charge can reach a point via any route with identical work done, which is why parallel-plate capacitor calculations ignore the fringing geometry at the edges."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Potential difference, potential due to a point charge, potential energy, electron volt",
-    "Statement 2: Theorem related to Potential difference, potential due to a point charge, potential energy, electron volt",
-    "Statement 3: Condition for Potential difference, potential due to a point charge, potential energy, electron volt to be valid",
-    "Statement 4: Principle governing Potential difference, potential due to a point charge, potential energy, electron volt",
-    "Statement 5: Corollary or consequence of Potential difference, potential due to a point charge, potential energy, electron volt"
+    "Statement 1: Electric potential at a point is defined as the work done per unit positive charge in bringing a test charge from infinity to that point.",
+    "Statement 2: The potential due to a point charge varies inversely with distance (V ∝ 1/r), whereas the electric field varies inversely with distance squared (E ∝ 1/r²).",
+    "Statement 3: The electric field at any point is the negative gradient of the potential at that point (E = -∇V).",
+    "Statement 4: The potential energy of two like charges is positive, indicating a repulsive, unbound configuration, whereas for two unlike charges it is negative, indicating an attractive, bound configuration.",
+    "Statement 5: One electron volt is the energy gained by an electron accelerated through a potential difference of one volt, equal to 1.602 × 10⁻¹⁹ J."
   ],
   "importantNotes": [
-    "Potential Difference and Point Charge is based on fundamental principles."
+    "The SI unit of potential is the volt (V), where 1 V = 1 J/C, and its dimensional formula is [M L² T⁻³ I⁻¹], identical to that of energy per unit charge."
   ],
   "examShortTricks": [
-    "Recall the formula for Potential Difference and Point Charge."
+    "Field-to-potential conversion trick: whenever E ∝ 1/r², the corresponding potential is V ∝ 1/r; whenever E ∝ 1/r, the potential is V ∝ ln r.",
+    "Sign check: a positive charge always moves toward lower V, while a negative charge moves toward higher V, since force always acts to reduce potential energy.",
+    "eV conversion: multiply eV by 1.602 × 10⁻¹⁹ to get joules, or divide joules by 1.602 × 10⁻¹⁹ to get eV."
   ],
   "examNotes": [
-    "Focus on Potential Difference and Point Charge problems - significant marks."
+    "Derivation of potential due to a point charge and of potential energy of a charge system, together with the eV-J conversion, forms a frequently asked 5-mark long question in NEB Class 11 Physics."
   ],
   "mcs": [
     {
-      "question": "Which describes Potential Difference and Point Charge?",
+      "question": "An electron is accelerated through a potential difference of 100 V. The energy gained in joules is:",
       "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
+        "100 J",
+        "1.602 × 10⁻¹⁷ J",
+        "1.602 × 10⁻²¹ J",
+        "6.242 × 10¹⁹ J"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Energy gained = qV = (1.602 × 10⁻¹⁹ C)(100 V) = 1.602 × 10⁻¹⁷ J, which is equivalent to 100 eV."
+    },
+    {
+      "question": "Two charges +2 μC and -2 μC are separated by 1 m. The potential energy of the system is:",
+      "options": [
+        "positive",
+        "negative",
+        "zero",
+        "infinite"
+      ],
+      "answer": "B",
+      "explanation": "U = kq₁q₂/r. Since q₁q₂ = (2 × 10⁻⁶)(−2 × 10⁻⁶) < 0, the product is negative, so U is negative, corresponding to an attractive and bound configuration."
+    },
+    {
+      "question": "The potential at a point where the electric field is zero must be:",
+      "options": [
+        "zero",
+        "finite and non-zero",
+        "infinite",
+        "undefined"
+      ],
+      "answer": "B",
+      "explanation": "E = 0 means the field has no local variation of potential, but the potential itself can take any value. At the midpoint between two equal positive charges, E = 0 yet V = 2kQ/r ≠ 0."
     }
   ],
   "importantConcepts": [
-    "Definition and significance of Potential Difference and Point Charge."
+    "Definition of electrostatic potential and potential difference with units and dimensions.",
+    "Derivation of potential due to a point charge and superposition of potentials.",
+    "Field–potential gradient relation E = -∇V.",
+    "Potential energy of discrete charge systems and its sign interpretation.",
+    "Electron volt as an energy unit and its conversion to joules."
   ],
   "importantTasks": [
-    "Solve 5 problems on Potential Difference and Point Charge."
+    "Derive V = kQ/r for an isolated point charge from first principles.",
+    "Calculate the potential and potential energy of a two-charge configuration.",
+    "Convert energy values between joules, electron volts, and multiples (keV, MeV)."
   ],
   "duplicateType": 2,
-  "tabGroup": "potential-difference-potential-due-to-point-charge-potential-energy-and-electron-volt",
-  "visualType": "electric-potential"
+  "visualType": "potential",
+  "tabGroup": "potential-difference-potential-due-to-point-charge-potential-energy-and-electron-volt"
 }

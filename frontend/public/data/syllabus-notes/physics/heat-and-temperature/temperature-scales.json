@@ -42,4 +42,123 @@
   "animation3D": "heat-and-temperature",
   "motionGraphics": "heat-and-temperature",
   "visualType": "temperature-scales"
+,
+  "summary": "A temperature scale is built by choosing two easily reproduced fixed points, normally the freezing and boiling points of water at 1 atm, and dividing the interval between them into equal parts. Celsius uses 100 divisions between 0 °C and 100 °C, Fahrenheit uses 180 divisions between 32 °F and 212 °F, and the Kelvin scale is the absolute scale whose zero, 0 K = −273.15 °C, corresponds to the point where all classical molecular motion ceases. The conversions are K = °C + 273.15, °F = (9/5)°C + 32 and °C = (°F − 32) × 5/9, and because a kelvin has the same magnitude as a degree Celsius, ΔT(K) = ΔT(°C). A constant-volume gas thermometer is the most accurate instrument because P ∝ T is exactly linear in the limit of zero pressure, while a platinum resistance thermometer uses R = R₀(1 + αT).",
+  "importantConcepts": [
+    "Scale construction: two reproducible fixed points (ice point 0 °C, 32 °F, 273.15 K and steam point 100 °C, 212 °F, 373.15 K) plus a thermometric substance whose property varies linearly with temperature.",
+    "Celsius scale: introduced by Anders Celsius in 1742, 100 equal divisions between the fixed points, and the degree Celsius is the SI unit of temperature interval.",
+    "Fahrenheit scale: introduced by Daniel Gabriel Fahrenheit in 1720, 180 equal divisions between 32 °F and 212 °F, still in everyday use in the United States.",
+    "Kelvin scale: the SI base unit of thermodynamic temperature, an absolute scale with the same magnitude as the degree Celsius, defined since 2019 by fixing the Boltzmann constant k = 1.380649 × 10⁻²³ J/K.",
+    "Absolute zero and the triple point: 0 K = −273.15 °C = −459.67 °F is the classical limit of zero molecular motion, while the triple point of water is 273.16 K (0.01 °C) at 611.657 Pa.",
+    "Instrumentation: the constant-volume gas thermometer measures the pressure of a fixed volume of gas, and the platinum resistance thermometer relies on the near-linear rise of metal resistance, R = R₀(1 + αT)."
+  ],
+  "importantStatements": [
+    "The kelvin has the same magnitude as the degree Celsius, so ΔT(K) = ΔT(°C), but a temperature difference of 1 °C is not 1 °F: ΔT(°C) = (5/9)ΔT(°F).",
+    "Since 2019 the kelvin is defined by fixing the Boltzmann constant to exactly 1.380649 × 10⁻²³ J/K, replacing the earlier definition based on the triple point of water.",
+    "The triple point of water (273.16 K) and the freezing point of water (273.15 K) differ by exactly 0.01 K, a common source of error in metrology.",
+    "Temperature measures the average kinetic energy of particles, ⟨KE⟩ = (3/2)kT, which is why temperature must be in kelvin in the gas laws — kinetic energy cannot be negative.",
+    "Different thermometric substances give slightly different scales because their expansion is not perfectly linear with temperature; gas thermometers are the most accurate because ideal gases behave linearly as the pressure approaches zero.",
+    "Absolute zero is unreachable in practice because of quantum zero-point energy, and all real substances are condensed to their ground states there."
+  ],
+  "importantTasks": [
+    "Convert a temperature given in kelvin into degrees Celsius and degrees Fahrenheit, showing both steps.",
+    "Determine the temperature at which the Celsius and Fahrenheit scales read the same value, and justify it algebraically.",
+    "Correct a faulty thermometer that reads the ice point as 5° and the steam point as 95°, given that it indicates 59°.",
+    "Apply Charles's law to find the new temperature of an ideal gas whose volume doubles at constant pressure starting from 0 °C.",
+    "Express an extreme temperature such as the Sun's core value, 1.5 × 10⁷ K, in degrees Celsius and degrees Fahrenheit."
+  ],
+  "keyPoints": [
+    "Two reproducible fixed points plus equal divisions define any temperature scale; if the fixed points are not reproducible the scale is not a standard scale.",
+    "Conversion formulas: K = °C + 273.15; °F = (9/5)°C + 32; °C = (°F − 32) × 5/9; K = (°F + 459.67) × 5/9.",
+    "Celsius and Fahrenheit coincide at −40°, the only temperature at which both scales show the same numerical reading.",
+    "The Rankine scale °Ra is the absolute counterpart of Fahrenheit, so 0 °Ra = 0 K = −459.67 °F, with water freezing at 491.67 °Ra and boiling at 671.67 °Ra.",
+    "The Réaumur scale (0 °Ré to 80 °Ré) survives only historically in a few European countries.",
+    "There is no upper limit to temperature; the Planck temperature of 1.417 × 10³² K marks where quantum gravity becomes important, not a physical maximum."
+  ],
+  "specialNotes": [
+    "Temperature is an intensive property and heat is extensive: a bathtub of 30 °C water contains more heat energy than a cup of 80 °C water, yet has the lower temperature.",
+    "Kelvin is written simply as K, never as °K; there is no 'degree kelvin', and the word kelvin is not capitalised when spelled out.",
+    "Absolute zero is not merely 'extremely cold': in the classical picture it is the state in which all thermal motion ceases, leaving only quantum zero-point energy.",
+    "In the gas laws the linear relation P ∝ T holds only for absolute temperature; at 0 K an ideal gas extrapolates to zero volume, which is sensible, whereas −273.15 °C would wrongly imply a non-zero volume at 'zero' temperature.",
+    "The gas thermometer achieves its ideal linearity only in the limit of zero pressure, which is why no real gas thermometer reaches perfect accuracy."
+  ],
+  "examShortTricks": [
+    "Route every conversion through Celsius as the hub: K = °C + 273.15, then °F = (9/5)°C + 32.",
+    "Set C = F inside °F = (9/5)°C + 32 and the answer appears immediately: −40°.",
+    "Faulty-thermometer shortcut: true temperature = (reading − faulty ice reading) × 100 ÷ (faulty steam reading − faulty ice reading).",
+    "Memorise the trio 0 K = −273.15 °C = −459.67 °F; the 459.67 value is the one most often dropped in exams.",
+    "Temperature differences convert by × 9/5 from Celsius to Fahrenheit, so 10 °C = 18 °F, while absolute temperatures do not convert by a simple ratio."
+  ],
+  "examNotes": [
+    "A one-mark conversion question is almost certain, so the three relations and the 273.15 and 459.67 constants must be memorised.",
+    "Two-mark questions often combine a conversion with the faulty-thermometer correction, or ask for the temperature at which two scales agree.",
+    "Numericals on Charles's law and the ideal gas law commonly start from 0 °C or 273.15 K specifically to test the habit of converting to kelvin.",
+    "A two-mark descriptive question may ask why the Kelvin scale is used in gas laws, or why gas thermometers are the most accurate thermometers.",
+    "Converting extreme values such as 1.5 × 10⁷ K tests handling of large numbers and significant figures more than the formula itself."
+  ],
+  "practiceQuestions": [
+    "Convert 300 K into degrees Celsius and degrees Fahrenheit, showing each step.",
+    "At what single temperature do the Celsius and Fahrenheit scales read the same value? Prove your answer algebraically.",
+    "A faulty thermometer reads 5° at the ice point and 95° at the steam point. What true Celsius temperature does it indicate when it reads 59°?",
+    "An ideal gas at 0 °C is heated at constant pressure until its volume doubles. Find its new temperature in kelvin and in degrees Celsius.",
+    "Why must temperature be expressed in kelvin when using the ideal gas law PV = nRT, and what would go wrong at −273.15 °C?",
+    "The Sun's core is at about 1.5 × 10⁷ K. Express this temperature in degrees Celsius and in degrees Fahrenheit."
+  ],
+  "mcs": [
+    {
+      "question": "The Celsius and Fahrenheit scales give the same numerical reading at:",
+      "options": [
+        "0°",
+        "−40°",
+        "100°",
+        "273°"
+      ],
+      "answer": "B",
+      "explanation": "Set C = F in °F = (9/5)°C + 32. Then −(4/5)C = 32, giving C = F = −40°, the only crossing point of the two linear scales."
+    },
+    {
+      "question": "Absolute zero on the Kelvin scale corresponds to which Celsius temperature?",
+      "options": [
+        "−273.15 °C",
+        "−459.67 °C",
+        "−32 °C",
+        "−100 °C"
+      ],
+      "answer": "A",
+      "explanation": "Since K = °C + 273.15, then 0 K = 0 − 273.15 = −273.15 °C. The value −459.67 is the equivalent Fahrenheit reading, not the Celsius one."
+    },
+    {
+      "question": "How many equal divisions separate the ice point and the steam point on the Fahrenheit scale?",
+      "options": [
+        "100",
+        "180",
+        "212",
+        "273.15"
+      ],
+      "answer": "B",
+      "explanation": "The Fahrenheit fixed points are 32 °F and 212 °F, so the interval contains 212 − 32 = 180 equal divisions."
+    },
+    {
+      "question": "Since 2019 the kelvin has been defined by fixing the exact value of:",
+      "options": [
+        "the triple point of water",
+        "the ice point of water",
+        "the Boltzmann constant",
+        "the average kinetic energy of particles"
+      ],
+      "answer": "C",
+      "explanation": "The 2019 SI redefinition fixes the Boltzmann constant at exactly 1.380649 × 10⁻²³ J/K, which fixes the kelvin. The triple point of water was the earlier reference."
+    },
+    {
+      "question": "A temperature change of 10 °C is equivalent to a change of:",
+      "options": [
+        "10 °F",
+        "16 °F",
+        "18 °F",
+        "50 °F"
+      ],
+      "answer": "C",
+      "explanation": "Temperature differences convert as ΔT(°F) = (9/5)ΔT(°C), so 10 °C × 9/5 = 18 °F."
+    }
+  ]
 }

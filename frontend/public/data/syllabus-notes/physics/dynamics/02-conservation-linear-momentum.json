@@ -245,7 +245,47 @@
     "Exam Tip 2: Check if the collision is elastic or inelastic before assuming KE conservation."
   ],
   "mcs": [
-    "Added new rich content for mcs."
+    {
+      "question": "Linear momentum is conserved in a collision when:",
+      "options": [
+        "The collision is perfectly elastic",
+        "There is no external resultant force on the system",
+        "Kinetic energy is conserved",
+        "The particles move in opposite directions"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In a perfectly inelastic collision, the total momentum is:",
+      "options": [
+        "Zero",
+        "Conserved, and the bodies move together with a common velocity",
+        "Converted entirely into heat",
+        "Not conserved"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Kinetic energy is conserved only in:",
+      "options": [
+        "Every collision",
+        "An elastic collision",
+        "An inelastic collision",
+        "A head-on collision of equal masses"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A 2 kg body moving at 3 m/s strikes a stationary 4 kg body and they stick together. Their common velocity is:",
+      "options": [
+        "1.0 m/s",
+        "1.5 m/s",
+        "3.0 m/s",
+        "6.0 m/s"
+      ],
+      "answer": "A",
+      "explanation": "Momentum in: (2)(3) = 6 kg m/s. Total mass 6 kg, so v = 6/6 = 1 m/s."
+    }
   ],
   "importantConcepts": [
     "Added new rich content for important Concepts."

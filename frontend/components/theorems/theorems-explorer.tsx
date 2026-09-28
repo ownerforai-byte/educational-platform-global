@@ -20,6 +20,7 @@ import {
   X,
   Binary,
 } from "lucide-react";
+import type { FeaturedTheoremCard } from "@/lib/theorem-topics";
 
 export type TheoremTrackCard = {
   classSlug: string;
@@ -84,63 +85,18 @@ const SUBJECT_CONFIG: Record<
   },
 };
 
-const FEATURED_THEOREMS = [
-  {
-    title: "Bernoulli's Theorem & Equation of Continuity",
-    subject: "physics",
-    classSlug: "class-11-notes",
-    unit: "Fluids & Hydrodynamics",
-    code: "PHY-11-FL-04",
-    link: "/theorems/class-11-notes/physics",
-  },
-  {
-    title: "Carnot Engine & Second Law of Thermodynamics",
-    subject: "physics",
-    classSlug: "class-11-notes",
-    unit: "Thermodynamics",
-    code: "PHY-11-TH-02",
-    link: "/theorems/class-11-notes/physics",
-  },
-  {
-    title: "Gauss's Theorem & Electric Flux Applications",
-    subject: "physics",
-    classSlug: "class-12-notes",
-    unit: "Electrostatics",
-    code: "PHY-12-ES-01",
-    link: "/theorems/class-12-notes/physics",
-  },
-  {
-    title: "Ampere's Circuital Law & Biot-Savart Rule",
-    subject: "physics",
-    classSlug: "class-12-notes",
-    unit: "Magnetic Effect of Current",
-    code: "PHY-12-MG-03",
-    link: "/theorems/class-12-notes/physics",
-  },
-  {
-    title: "Rolle's Theorem & Lagrange's Mean Value Theorem",
-    subject: "mathematics",
-    classSlug: "class-12-notes",
-    unit: "Calculus & Applications of Derivatives",
-    code: "MAT-12-CALC-05",
-    link: "/theorems/class-12-notes/mathematics",
-  },
-  {
-    title: "Bohr's Postulates & Hydrogen Spectral Series",
-    subject: "physics",
-    classSlug: "class-12-notes",
-    unit: "Modern Physics & Atomic Structure",
-    code: "PHY-12-MP-02",
-    link: "/theorems/class-12-notes/physics",
-  },
-];
-
 export function TheoremsExplorer({
   trackCards,
   allEntries,
+  featured,
 }: {
   trackCards: TheoremTrackCard[];
   allEntries: TheoremEntryData[];
+  /**
+   * Featured high-yield cards, each already deep-linked to its own dedicated
+   * theorem page by the server. Never hardcode these links in the client.
+   */
+  featured: FeaturedTheoremCard[];
 }) {
   const [selectedSubject, setSelectedSubject] = useState<string>("all");
   const [selectedClass, setSelectedClass] = useState<string>("all");
@@ -345,16 +301,16 @@ export function TheoremsExplorer({
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
-            {FEATURED_THEOREMS.filter(
+            {featured.filter(
               (t) =>
-                (selectedSubject === "all" || t.subject === selectedSubject) &&
+                (selectedSubject === "all" || t.subjectSlug === selectedSubject) &&
                 (selectedClass === "all" || t.classSlug === selectedClass)
             ).map((theorem) => {
-              const conf = SUBJECT_CONFIG[theorem.subject] ?? SUBJECT_CONFIG.physics;
+              const conf = SUBJECT_CONFIG[theorem.subjectSlug] ?? SUBJECT_CONFIG.physics;
               const Icon = conf.icon;
               return (
                 <Link
-                  key={theorem.title}
+                  key={theorem.link}
                   href={theorem.link}
                   className={`group flex flex-col justify-between rounded-3xl border border-border/70 bg-gradient-to-b ${conf.gradientBg} p-5 shadow-sm transition-all duration-300 hover:-translate-y-0.5 ${conf.borderHover}`}
                 >
@@ -374,7 +330,7 @@ export function TheoremsExplorer({
                   </div>
 
                   <div className="mt-4 pt-3 border-t border-border/50 flex items-center justify-between text-xs font-bold text-primary">
-                    <span>Explore Proof Scaffold</span>
+                    <span>Open This Proof</span>
                     <ArrowRight className="h-3.5 w-3.5 group-hover:translate-x-1 transition-transform" />
                   </div>
                 </Link>

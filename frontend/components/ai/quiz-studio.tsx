@@ -608,7 +608,7 @@ export function QuizStudio() {
         err && typeof err === "object" && "status" in err
           ? (err as { status?: number }).status
           : undefined;
-      if (status === 402 && /free AI generations|guest/i.test(msg)) {
+      if (status === 402 && /free (AI|quiz) generations|guest/i.test(msg)) {
         writeGuestCount(GUEST_DAILY_LIMIT);
       }
     } finally {

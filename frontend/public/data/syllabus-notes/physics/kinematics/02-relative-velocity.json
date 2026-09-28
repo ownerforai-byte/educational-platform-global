@@ -41,4 +41,123 @@
   "animation3D": "kinematics",
   "motionGraphics": "kinematics",
   "visualType": "relative-velocity"
+,
+  "summary": "Relative velocity is the velocity of one object as measured in the reference frame of another moving object, and it is given by the vector difference v⃗_B/A = v⃗_B − v⃗_A. In one dimension, objects moving in the same direction give a relative speed equal to the difference of speeds, while objects moving in opposite directions approach each other with a relative speed equal to the sum. In two dimensions the subtraction must be done component by component, which is what makes river-crossing and rain problems solvable: the rain appears to fall at an angle tanθ = v_p/v_r when a person runs, and a boat aiming to cross directly must cancel the current so that v⃗_bg = v⃗_bw + v⃗_wg has no cross-stream component. The transformation v′ = v − v_A is a Galilean transformation, valid because the laws of physics are the same in all inertial frames, and it breaks down near the speed of light, where Einstein's special relativity replaces it with the Lorentz velocity-addition formula.",
+  "importantConcepts": [
+    "Definition: the velocity of object B as observed from the frame of moving object A, written v⃗_B/A = v⃗_B − v⃗_A.",
+    "Same direction: the relative speed is the difference of speeds, so a faster B gains on A at 80 − 60 = 20 km/h.",
+    "Opposite directions: the relative speed is the sum of speeds, which is the closing rate for a head-on encounter.",
+    "Vector treatment: relative velocity is found by component-wise subtraction, so the angle between the two velocities matters.",
+    "Rain problem: rain falling at v_r appears to come at angle θ from vertical with tanθ = v_p/v_r, and the apparent speed is √(v_r² + v_p²).",
+    "River crossing: the boat's ground velocity is v⃗_bg = v⃗_bw + v⃗_wg, so to arrive directly opposite the start the boat must cancel the cross-stream component of its heading."
+  ],
+  "importantStatements": [
+    "The order of subtraction matters: v⃗_B/A = v⃗_B − v⃗_A while v⃗_A/B = v⃗_A − v⃗_B = −v⃗_B/A, equal in magnitude but opposite in direction.",
+    "For two cars at 60 km/h and 40 km/h in the same direction the relative speed is 20 km/h, not 100 km/h; the sum applies only when the directions are opposite.",
+    "The actual velocity of the rain does not change when a person runs; only the apparent velocity relative to the person is inclined, which is why the umbrella is tilted forward.",
+    "In river problems the velocities must be added as vectors, since adding the boat speed and the current speed as scalars ignores the angle between them.",
+    "Galilean relativity holds because the laws of physics are identical in all inertial frames, and it reduces to the Lorentz formula v = (v₁ + v₂)/(1 + v₁v₂/c²) at speeds much less than c.",
+    "Closing speed equals the magnitude of the relative velocity only when the two objects are on a collision course."
+  ],
+  "importantTasks": [
+    "Find the relative velocity of one vehicle with respect to another on parallel tracks, in the same and in opposite directions.",
+    "Determine the direction from which rain appears to fall to a moving person, and the apparent speed of the rain.",
+    "Find the heading a boat must take and its ground speed in order to cross a river directly, and hence the crossing time.",
+    "Express the ground velocity of an aircraft by adding its velocity relative to the air to the wind velocity, resolving into components.",
+    "Use x(t) functions for two particles to differentiate, subtract and find the relative velocity at a stated instant."
+  ],
+  "keyPoints": [
+    "The master relation is v⃗_B/A = v⃗_B − v⃗_A; every relative-velocity problem reduces to this one subtraction.",
+    "Trains at 60 km/h and 80 km/h eastward give v_B/A = +20 km/h eastward and v_A/B = −20 km/h, that is 20 km/h westward.",
+    "With rain at 30 m/s and a runner at 10 m/s, tanθ = 10/30 gives θ ≈ 18.4° from vertical and an apparent speed √1000 ≈ 31.6 m/s.",
+    "For a boat at 5 m/s in a 3 m/s current aiming straight across, 5 sinθ = 3 gives θ = 36.9° west of north, a ground speed of 4 m/s and 25 s to cross 100 m.",
+    "For x_A = 2t + 1 and x_B = −3t + 10, the relative velocity at t = 2 s is −5 m/s, so the gap closes at 5 m/s.",
+    "An aircraft at 400 km/h heading north with a 100 km/h eastward wind has a ground speed √(400² + 100²) ≈ 412 km/h, directed 14° east of north."
+  ],
+  "specialNotes": [
+    "Relative velocity is not the difference in speeds in general: for objects moving in opposite directions the relative speed is the sum of the speeds.",
+    "The two relative velocities v_B/A and v_A/B are equal in magnitude and opposite in direction, so a sign error in the order of subtraction flips the physical answer.",
+    "The rain keeps its true vertical velocity; only the apparent velocity in the runner's frame is tilted, and the tilt is ahead of the direction of running.",
+    "Galilean velocity addition is only an approximation: as speeds approach c the Lorentz formula v = (v₁ + v₂)/(1 + v₁v₂/c²) must replace it.",
+    "A person feels nothing of Earth's orbital or rotational velocity because the relative velocity with respect to Earth is zero; only acceleration produces felt effects."
+  ],
+  "examShortTricks": [
+    "Same direction subtract, opposite direction add: decide the geometry first, then choose the operation.",
+    "For the rain problem the angle is measured from the vertical, so use tanθ = v_person/v_rain, not the other way round.",
+    "In river problems set the cross-stream component of the boat heading equal to the current, then the ground speed is just the along-bank component.",
+    "For two position functions, differentiate each, then subtract in the right order: v_B/A = dx_B/dt − dx_A/dt.",
+    "Galilean addition is fine for cars, trains and boats; mention the Lorentz formula only if the question hints at speeds near c."
+  ],
+  "examNotes": [
+    "The two-train same-direction problem is a standard one-mark question, with the opposite-direction sum as the common trap.",
+    "The rain and umbrella problem appears regularly as a two- or three-mark numerical requiring tanθ and the apparent speed.",
+    "Boat-and-river problems are common three- or four-mark questions, often asking for the heading, the ground speed and the time to cross.",
+    "Aircraft-and-wind problems test vector resolution into north and east components and are usually set at four or five marks.",
+    "One-mark conceptual questions often ask why we do not feel the Earth's orbital or rotational velocity, expecting the answer of zero relative velocity."
+  ],
+  "practiceQuestions": [
+    "Define relative velocity and state the vector relation between the velocities of B, A and the ground frame.",
+    "Two trains move east at 60 km/h and 80 km/h. Find the velocity of each relative to the other and explain the signs.",
+    "Rain falls vertically at 30 m/s and a man runs horizontally at 10 m/s. At what angle from vertical does the rain appear to fall, and what is its apparent speed?",
+    "A boat travels at 5 m/s in still water while a river flows at 3 m/s. Find the heading needed to cross directly, the ground speed and the time to cross 100 m.",
+    "Two particles move along the x-axis with x_A(t) = 2t + 1 and x_B(t) = −3t + 10. Find their relative velocity at t = 2 s and state whether they approach or separate.",
+    "An aircraft flies at 400 km/h relative to the air while the wind blows at 100 km/h from the west. Find the ground speed and direction when it heads north, and when it heads northeast."
+  ],
+  "mcs": [
+    {
+      "question": "Two trains move east at 60 km/h and 80 km/h. The velocity of the faster train relative to the slower is:",
+      "options": [
+        "20 km/h east",
+        "20 km/h west",
+        "140 km/h east",
+        "70 km/h east"
+      ],
+      "answer": "A",
+      "explanation": "v_B/A = 80 − 60 = 20 km/h eastward, since the faster train gains on the slower one. The sum of 140 km/h would apply only if they moved in opposite directions."
+    },
+    {
+      "question": "Rain falls vertically at 30 m/s and a person runs horizontally at 10 m/s. The rain appears to fall at an angle from the vertical given by:",
+      "options": [
+        "tanθ = 30/10",
+        "tanθ = 10/30",
+        "tanθ = 30 × 10",
+        "sinθ = 30/40"
+      ],
+      "answer": "B",
+      "explanation": "The apparent velocity is the vector difference of the rain and the runner's velocity, so the horizontal component is 10 m/s against a vertical 30 m/s, giving tanθ = 10/30 and θ ≈ 18.4°."
+    },
+    {
+      "question": "A boat of speed 5 m/s in still water must cross a river flowing at 3 m/s in order to reach the point directly opposite. Its ground speed is:",
+      "options": [
+        "8 m/s",
+        "5 m/s",
+        "4 m/s",
+        "2 m/s"
+      ],
+      "answer": "C",
+      "explanation": "The boat aims upstream with 5 sinθ = 3, so θ = 36.9° from the across-river direction and sinθ = 0.6. The ground speed is then 5 cosθ = 4 m/s, not 5 + 3 = 8 m/s."
+    },
+    {
+      "question": "The velocity of B relative to A is:",
+      "options": [
+        "v⃗_B + v⃗_A",
+        "v⃗_B − v⃗_A",
+        "v⃗_A − v⃗_B",
+        "v⃗_A × v⃗_B"
+      ],
+      "answer": "B",
+      "explanation": "By definition v⃗_B/A = v⃗_B − v⃗_A, the velocity of B in the ground frame minus the velocity of the frame A. Reversing the order gives the equal and opposite quantity."
+    },
+    {
+      "question": "Galilean addition of velocities fails when:",
+      "options": [
+        "the objects move slowly",
+        "the objects move in opposite directions",
+        "the speeds approach the speed of light",
+        "the frame is accelerating"
+      ],
+      "answer": "C",
+      "explanation": "At speeds comparable to c, special relativity requires the Lorentz formula v = (v₁ + v₂)/(1 + v₁v₂/c²), which reduces to the simple sum only when both speeds are much less than c."
+    }
+  ]
 }

@@ -44,4 +44,123 @@
   "animation3D": "work-energy-and-power",
   "motionGraphics": "work-energy-and-power",
   "visualType": "work-energy"
+,
+  "summary": "For a constant force, work is the product of the force, the displacement and the cosine of the angle between them, W = F s cosθ, and it is a scalar whose sign depends on the direction of the force component along the displacement: positive for θ < 90°, zero at 90° as for centripetal force, and negative beyond 90° as with friction or lifting against gravity. In vector form W = F⃗ · s⃗ = Fₓsₓ + F_y s_y + F_z s_z, so only the component parallel to the displacement contributes. When the force varies with position, work becomes the integral W = ∫ F dx, which is the signed area under the F-x curve. For an ideal spring F = −kx, this integrates to W_spring = ½kxᵢ² − ½kx_f², a triangle on the graph, while gravity contributes W_g = −mgΔy. The sum of the individual works equals the work of the net force and, by the work-energy theorem, equals the change in kinetic energy ΔK.",
+  "importantConcepts": [
+    "Work by a constant force: W = F s cosθ, a scalar quantity depending only on the component of force along the displacement.",
+    "Sign convention: work is positive for 0° ≤ θ < 90°, zero at θ = 90° (centripetal force, normal force on a horizontal surface) and negative for 90° < θ ≤ 180° (friction, lifting against gravity).",
+    "Vector form: W = F⃗ · s⃗ = Fₓsₓ + F_y s_y + F_z s_z, so only the component of force parallel to the displacement does work.",
+    "Work by a variable force: W = ∫ F(x) dx, equal to the signed area under the force-displacement graph between the initial and final positions.",
+    "Work done by a spring: integrating F = −kx gives W_spring = ½kxᵢ² − ½kx_f², and the external agent does the opposite.",
+    "Work-energy theorem: the net work on a body equals its change in kinetic energy, W_net = ΔK = ½mv_f² − ½mvᵢ², a restatement of Newton's second law."
+  ],
+  "importantStatements": [
+    "Work is a scalar with a sign but no direction, so works done by different forces add directly as ordinary numbers.",
+    "The total work is the sum of the individual works, ∑Fᵢ s cosθᵢ, and this equals the work done by the resultant force.",
+    "A force perpendicular to the displacement does no work, which is why a centripetal force changes direction but not speed.",
+    "For a conservative force such as gravity or a spring, the work is path-independent and equals −ΔU, while for friction the work depends on the path actually taken.",
+    "In two dimensions, work is the line integral ∫(Fₓ dx + F_y dy) along the path, and for a conservative force with ∇ × F⃗ = 0 the value does not depend on the path.",
+    "In thermodynamics the same definition applies, but the sign convention is often reversed, with work done by the system on the surroundings taken as positive."
+  ],
+  "importantTasks": [
+    "Calculate the work done by a constant force at a given angle to the displacement, and state its sign from the angle.",
+    "Find the net work on a body acted on by several forces, adding the individual works or using the resultant force.",
+    "Evaluate the work done by a variable force using integration, for example F(x) = 3x² + 2x between two positions.",
+    "Compute the work done by a spring between two compressions or extensions, and the work done by the external agent.",
+    "Use the work-energy theorem to find the final speed of a body from the net work done on it, and verify it against energy conservation."
+  ],
+  "keyPoints": [
+    "Only the component of the force parallel to the displacement contributes, so an oblique pull is always less effective than the same force along the motion.",
+    "For a pull at 30° above the horizontal, the normal force is reduced to N = mg − F sinθ, which lowers the friction and must be included in any numerical.",
+    "The F-x graph gives work as area: a triangle ½kx² for a spring, and signed areas cancel when the force reverses sign along the path.",
+    "With F(x) = 10 − 2x from 0 to 6 m the force is positive below 5 m, zero at 5 m and negative beyond, giving 25 J positive and 1 J negative for a net 24 J.",
+    "Work by gravity depends only on the vertical displacement, W_g = −mgΔy, so horizontal motion gives no work by gravity regardless of the path.",
+    "The work-energy theorem is equivalent to F = ma and is usually easier to apply when forces vary or the path is complicated."
+  ],
+  "specialNotes": [
+    "Averaging the initial and final forces, (Fᵢ + F_f)/2, is valid only when F varies linearly with x; for any other variation the correct method is integration or the graphical area.",
+    "The spring does negative work when compressed further, because it always opposes the motion, so the work stored in it is ½kx² and grows with compression.",
+    "Forces perpendicular to the displacement, such as tension in a string or the normal reaction on an ideal frictionless surface, do exactly zero work.",
+    "In mechanics the sign convention is that work done on the body is positive when energy is transferred to it, whereas thermodynamics often takes work done by the system as positive.",
+    "One joule is the work done by a force of 1 N moving an object 1 m along the force, so lifting a 100 g apple through 1 m is roughly 1 J."
+  ],
+  "examShortTricks": [
+    "Work out the sign from the angle before computing anything: θ < 90° positive, θ = 90° zero, θ > 90° negative.",
+    "In oblique-pull problems always reduce the normal force by F sinθ first, because less normal force means less friction.",
+    "For a variable force, integrate or shade the area; never average the endpoint forces unless the F-x graph is a straight line.",
+    "Reverse the sign to switch between the work done by the spring and the work done on it by the external agent.",
+    "When only the final speed is asked, go straight to W_net = ½mv² and skip the separate energy bookkeeping."
+  ],
+  "examNotes": [
+    "The oblique pull with friction, as in a 20 N pull at 30° on a 5 kg block, is a standard three- or four-mark numerical.",
+    "Two-mark questions often ask only the work done by a constant force at a stated angle, or the work done by friction on a horizontal surface.",
+    "Variable-force integrals of the form ∫(ax² + bx)dx are set as three- or four-mark questions, with limits emphasized in the question.",
+    "Spring problems asking for the work done by the spring and by the external agent are common, and the two answers always have equal magnitude and opposite sign.",
+    "One-mark conceptual questions frequently ask which force does zero work, or why a centripetal force changes no kinetic energy."
+  ],
+  "practiceQuestions": [
+    "State the conditions under which the work done by a force is positive, zero and negative, giving one example of each.",
+    "A 5 kg block is pulled 10 m by a 20 N force at 30° above the horizontal on a floor with coefficient of kinetic friction 0.2. Find the work done by the applied force, by friction, the net work and the final speed from rest.",
+    "A force F(x) = 3x² + 2x N acts on a particle moving from x = 1 m to x = 3 m. Find the work done.",
+    "A spring of spring constant 200 N/m is compressed from 0.1 m to 0.3 m. Find the work done by the spring and by the external agent.",
+    "A 2 kg block slides 5 m down a frictionless incline of angle 30°. Find the work done by gravity and the final speed.",
+    "Explain graphically how the work done by a force F(x) = 10 − 2x between 0 and 6 m splits into a positive and a negative contribution."
+  ],
+  "mcs": [
+    {
+      "question": "A force perpendicular to the displacement of a body does:",
+      "options": [
+        "positive work",
+        "negative work",
+        "zero work",
+        "work equal to Fs"
+      ],
+      "answer": "C",
+      "explanation": "Since W = F s cosθ and cos90° = 0, a perpendicular force does no work. This is why a centripetal force changes direction but not speed."
+    },
+    {
+      "question": "The work done by a spring in compressing it further is:",
+      "options": [
+        "positive",
+        "negative",
+        "zero",
+        "the same as the work done by the external agent"
+      ],
+      "answer": "B",
+      "explanation": "The spring force F = −kx always opposes the motion, so it does negative work while being compressed; the external agent does equal positive work storing ½kx²."
+    },
+    {
+      "question": "For a force that varies with position, the work done equals:",
+      "options": [
+        "F s cosθ with the final force",
+        "the area under the F-x curve between the limits",
+        "the average force times the displacement",
+        "zero"
+      ],
+      "answer": "B",
+      "explanation": "W = ∫F dx is the signed area under the force-displacement graph, and averaging the endpoint forces is valid only for a linear variation."
+    },
+    {
+      "question": "The work done by friction on a body sliding a distance s with friction force f is:",
+      "options": [
+        "+f s",
+        "−f s",
+        "f s cos90°",
+        "zero"
+      ],
+      "answer": "B",
+      "explanation": "Friction opposes the displacement, so θ = 180° and cosθ = −1, giving W = −f s, which removes energy from the body."
+    },
+    {
+      "question": "According to the work-energy theorem, the net work on a body equals:",
+      "options": [
+        "its change in potential energy",
+        "its change in kinetic energy",
+        "the product of force and distance",
+        "zero for a body at constant speed"
+      ],
+      "answer": "B",
+      "explanation": "W_net = ΔK = ½mv_f² − ½mvᵢ², so if the speed is constant the net work is indeed zero, but the general statement is that it equals the change in kinetic energy."
+    }
+  ]
 }

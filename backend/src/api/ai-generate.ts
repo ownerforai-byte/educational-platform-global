@@ -67,7 +67,7 @@ async function authOrGuestQuota(req: Request, res: Response, next: NextFunction)
         error: "Daily guest limit reached",
         remaining: 0,
         limit: GUEST_DAILY_LIMIT,
-        message: `You've used all ${GUEST_DAILY_LIMIT} free AI generations for today (guest quizzes share this pool with guest chat). Your pool resets at 12:00 AM — or sign in for ${DAILY_CREDIT_POOL} daily credits and saved history.`,
+        message: `You've used all ${GUEST_DAILY_LIMIT} free quiz generations for today (guest quizzes share this pool with guest chat). Your pool resets at 12:00 AM — or sign in for ${DAILY_CREDIT_POOL} daily credits and saved history.`,
       });
       return;
     }
@@ -404,14 +404,14 @@ ${keyTermsContext ? `KEY TERMS FROM SYLLABUS:\n${keyTermsContext}` : "Use standa
 
       if (!parsed) {
         res.status(502).json({
-          error: "AI returned invalid question format",
+          error: "Captain returned invalid question format",
           raw: rawResponse.slice(0, 500),
         });
         return;
       }
 
       if (!Array.isArray(parsed.questions) || parsed.questions.length === 0) {
-        res.status(502).json({ error: "AI returned no questions", raw: rawResponse.slice(0, 500) });
+        res.status(502).json({ error: "Captain returned no questions", raw: rawResponse.slice(0, 500) });
         return;
       }
 

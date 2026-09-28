@@ -52,5 +52,98 @@
     "Why are mitochondria called the powerhouse of the cell?",
     "Explain the significance of cell theory."
   ],
-  "formulas": []
+  "formulas": [],
+  "summary": "The cell is the basic structural and functional unit of life, as stated by cell theory, and cells fall into two great groups. Prokaryotic cells (bacteria, archaea, cyanobacteria) are small, have no nuclear membrane and no membrane-bound organelles, and carry 70S ribosomes, whereas eukaryotic cells (plants, animals, fungi, protists) have a true nucleus enclosed by a nuclear envelope, numerous membrane-bound organelles and 80S ribosomes in the cytoplasm. Each organelle performs a specific function — mitochondria for ATP production, ribosomes for protein synthesis, ER for protein and lipid synthesis, Golgi for packaging, lysosomes for digestion and chloroplasts for photosynthesis. Comparison of the two cell types and organelle structure-function relationships are the main examination targets.",
+  "importantConcepts": [
+    "Cell theory holds that all living organisms are made of one or more cells, that the cell is the basic unit of structure and function, and that all cells arise from pre-existing cells (Virchow: omnis cellula e cellula).",
+    "Prokaryotic cells have no nuclear membrane — the DNA lies free in a nucleoid region — and possess no membrane-bound organelles.",
+    "Eukaryotic cells have a true nucleus with a nuclear envelope plus membrane-bound organelles: mitochondria, endoplasmic reticulum, Golgi apparatus, lysosomes and, in plants, chloroplasts.",
+    "Ribosome size distinguishes the two cell types: 70S in prokaryotes, 80S in the eukaryotic cytoplasm but 70S inside mitochondria and chloroplasts.",
+    "Cell wall chemistry differs between groups: peptidoglycan in bacteria, cellulose in plant cells, chitin in fungi, and no cell wall at all in animal cells.",
+    "Each organelle has a defined role — mitochondria for aerobic respiration and ATP, ribosomes for protein synthesis, rough ER for secretory proteins, smooth ER for lipids, Golgi for packaging, lysosomes for digestion, chloroplasts for photosynthesis."
+  ],
+  "importantStatements": [
+    "Prokaryotes do possess DNA; it is simply not enclosed within a nucleus.",
+    "Not all cells have a nucleus — prokaryotic cells lack a true nucleus.",
+    "Both prokaryotes and eukaryotes contain ribosomes, but of different sizes (70S and 80S).",
+    "Mitochondria and chloroplasts contain their own 70S ribosomes and double membranes, which is evidence that they evolved from free-living prokaryotes.",
+    "Prokaryotes divide by binary fission, whereas eukaryotes divide by mitosis or meiosis.",
+    "The selectively permeable cell membrane is present in both prokaryotic and eukaryotic cells."
+  ],
+  "importantTasks": [
+    "Draw a labelled plant cell and an animal cell and tabulate at least five differences between them.",
+    "Label any five organelles on a diagram and write one function for each.",
+    "Explain why mitochondria are described as the powerhouse of the cell.",
+    "State the three postulates of cell theory and justify each with an example.",
+    "Construct a comparison table of prokaryotic and eukaryotic cells using at least six features."
+  ],
+  "keyPoints": [
+    "Size ranges: prokaryotic cells about 1-10 micrometres, eukaryotic cells about 10-100 micrometres.",
+    "The presence or absence of a nuclear envelope and membrane-bound organelles is the single defining difference between the two cell types.",
+    "Chloroplasts occur in plant cells only, but mitochondria occur in both plant and animal cells.",
+    "Rough ER bears ribosomes and makes secretory and membrane proteins, whereas smooth ER lacks ribosomes and makes lipids and steroid hormones and detoxifies drugs.",
+    "Lysosomes contain hydrolytic (digestive) enzymes and are prominent in animal cells, where they digest material taken in by phagocytosis.",
+    "Cell wall is present in bacteria, plants and fungi but absent in animal cells, which however always have a cell membrane."
+  ],
+  "specialNotes": [
+    "The 70S ribosomes and double membranes of mitochondria and chloroplasts are endosymbiotic evidence that these organelles originated from free-living bacteria.",
+    "Chloroplasts are absent from animal cells, but plant cells contain both chloroplasts and mitochondria.",
+    "Animal cells have no cell wall but do have a cell membrane and prominent lysosomes, whereas plant cells rarely have lysosomes.",
+    "Sedimentation values are not lengths: 70S = 50S + 30S subunits, 80S = 60S + 40S subunits.",
+    "Not every eukaryote is multicellular; a single amoeba is a complete eukaryotic organism."
+  ],
+  "examShortTricks": [
+    "One look at the nucleus settles the class: nuclear membrane present = eukaryotic, absent = prokaryotic.",
+    "Ribosome size mnemonic: 'Eukaryotes are EIGHTy, prokaryotes are Seventy'.",
+    "Cell wall mnemonic by group: Bacteria peptidoglycan, Plants cellulose, fungi Chitin, Animals none.",
+    "RER = ribosome-bearing = protein; SER = no ribosomes = steroid and lipid.",
+    "Mitochondria respire, chloroplasts photosynthesise; 'Mito makes ATP' is the one-liner."
+  ],
+  "examNotes": [
+    "One-mark MCQs typically ask which structure is absent in a prokaryotic cell, or ask for the organelle matching a given function.",
+    "The prokaryote versus eukaryote comparison table is a standard 5-mark structured question and appears in most papers.",
+    "Label-the-diagram questions ask for the cell membrane, nucleus, mitochondrion, ribosome, ER, Golgi body or lysosome, one mark per correct label.",
+    "Cell theory statements are often set as 'which of the following is NOT a part of cell theory?'",
+    "Structure-to-function questions (for example, why the inner membrane folded into cristae suits aerobic respiration) carry 2-3 marks."
+  ],
+  "practiceQuestions": [
+    "Compare prokaryotic and eukaryotic cells using a table of at least six features.",
+    "Label five organelles on a diagram of a eukaryotic cell and give the function of each.",
+    "Why are mitochondria called the powerhouse of the cell?",
+    "State and explain the three postulates of cell theory.",
+    "List the differences between a plant cell and an animal cell and explain why a plant cell has both mitochondria and chloroplasts.",
+    "Explain why mitochondria and chloroplasts contain 70S ribosomes even though they occur inside eukaryotic cells."
+  ],
+  "mcs": [
+    {
+      "question": "Which of the following structures is absent in a prokaryotic cell?",
+      "options": ["Cell membrane", "Ribosome", "Nuclear membrane", "Cytoplasm"],
+      "answer": "C",
+      "explanation": "Prokaryotic DNA lies free in a nucleoid region with no nuclear envelope. The cell membrane, cytoplasm and 70S ribosomes are all present in prokaryotic cells."
+    },
+    {
+      "question": "Mitochondria and chloroplasts contain 70S ribosomes. What does this indicate?",
+      "options": ["They are the sites of protein digestion", "They evolved from prokaryotic ancestors by endosymbiosis", "They have no membrane of their own", "They occur only in animal cells"],
+      "answer": "B",
+      "explanation": "Bacterial-type 70S ribosomes and a double membrane match free-living bacteria, which is the evidence behind the endosymbiotic (symbiogenetic) theory of their origin."
+    },
+    {
+      "question": "The organelle that lacks attached ribosomes and synthesises lipids and steroid hormones is the:",
+      "options": ["Rough endoplasmic reticulum", "Smooth endoplasmic reticulum", "Golgi apparatus", "Lysosome"],
+      "answer": "B",
+      "explanation": "The smooth ER has no ribosomes on its surface; it makes lipids and steroids and detoxifies drugs. The rough ER carries ribosomes and makes proteins destined for secretion or membranes."
+    },
+    {
+      "question": "The principal function of the Golgi apparatus is:",
+      "options": ["Production of ATP", "Replication of DNA", "Modification, packaging and secretion of proteins", "Splitting of water in photosynthesis"],
+      "answer": "C",
+      "explanation": "The Golgi modifies (for example glycosylates), sorts and packages proteins arriving from the rough ER into vesicles for secretion or delivery to other organelles."
+    },
+    {
+      "question": "Virchow's statement 'omnis cellula e cellula' means:",
+      "options": ["All cells arise from pre-existing cells", "Every cell contains a nucleus", "All living organisms are unicellular", "Cells divide by binary fission only"],
+      "answer": "A",
+      "explanation": "'Every cell arises from another cell' — this was Virchow's 1858 addition to cell theory, alongside the cell being the basic unit of structure and function."
+    }
+  ]
 }

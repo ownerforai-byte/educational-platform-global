@@ -1,4 +1,11 @@
-import { apiFetch } from "../api-client";
+// ADDITIVE (perf pass, 2026-09-27): cached GET entry points used by the
+// `*Cached` variants appended at the bottom of this file.
+import {
+  apiFetch,
+  apiGet,
+  invalidateApiGetWhere,
+  type ApiGetOptions,
+} from "../api-client";
 import type {
   Chapter,
   SubjectWithChapters,
@@ -65,3 +72,63 @@ export async function getTopic(
   }
   return topic;
 }
+
+/* ------------------------------------------------------------------ *
+ * ADDITIVE (perf pass, 2026-09-27): cached read variants.
+ *
+ * Everything above is untouched and still calls `apiFetch`. These variants use
+ * the same endpoints and response types with the shared TTL / SWR /
+ * in-flight-dedupe cache; the slug is part of the cache key, so two subjects
+ * never collide, and only public catalogue data is cached.
+ * ------------------------------------------------------------------ */
+
+/** Fresh window for subject/chapter catalogue data (10 minutes). */
+const SUBJECT_FRESH_MS = 1000 * 60 * 10;
+/** Window in which stale catalogue data may still be served (60 minutes). */
+const SUBJECT_STALE_MS = 1000 * 60 * 60;
+
+/** `getSubject` with the additive GET cache. */
+export async function getSubjectCached(
+  slug: string,
+  options: ApiGetOptions = {},
+): Promise<SubjectWithChapters> {
+  return apiGet<SubjectWithChapters>(`/api/subjects/${encodeURIComponent(slug)}`, {
+    freshMs: SUBJECT_FRESH_MS,
+    staleMs: SUBJECT_STALE_MS,
+    scope: "subjects",
+    variant: slug,
+    ...options,
+  });
+}
+
+/** `getSubjectTopics` with the additive GET cache (keyed by chapter slug). */
+export async function getSubjectTopicsCached(
+  subjectSlug: string,
+  chapterSlug: string,
+  options: ApiGetOptions = {},
+): Promise<Topic[]> {
+  const res = await apiGet<{ chapter: Chapter; topics: Topic[] }>(
+    `/api/chapters/${encodeURIComponent(chapterSlug)}`,
+    {
+      freshMs: SUBJECT_FRESH_MS,
+      staleMs: SUBJECT_STALE_MS,
+      scope: "chapters",
+      variant: `${subjectSlug}/${chapterSlug}`,
+      ...options,
+    },
+  );
+  return res.topics;
+}
+
+/** Background-warms a subject page (safe from hover/idle). Never throws. */
+export function prefetchSubject(slug: string, options: ApiGetOptions = {}): void {
+  void getSubjectCached(slug, options).catch(() => undefined);
+}
+
+/** Drops cached subject/chapter reads (run after an admin edit). */
+export function invalidateSubjectsCache(): number {
+  return invalidateApiGetWhere(
+    (key) => key.startsWith("/api/subjects/") || key.startsWith("/api/chapters/"),
+  );
+}
+

@@ -155,6 +155,45 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
     examTraps: [
       "❌ Forgetting to take the absolute value of the numerator. Distance is always a non-negative scalar quantity.",
     ],
+    specialCases: [
+      {
+        name: "Distance between two parallel lines",
+        condition: "Ax + By + C₁ = 0 and Ax + By + C₂ = 0 have identical A and B, so they are parallel",
+        formula: "d = \\frac{|C_1 - C_2|}{\\sqrt{A^2 + B^2}}",
+        meaning: "The x₁, y₁ terms cancel because the two lines share a common normal, leaving only the difference of constants over the same denominator.",
+      },
+      {
+        name: "Distance from the origin to the line",
+        condition: "The point is the origin, so x₁ = y₁ = 0",
+        formula: "p = \\frac{|C|}{\\sqrt{A^2 + B^2}}",
+        meaning: "This is the perpendicular form of the line ax + by = p in which p is itself the distance, and it is the quickest route for lines like 3x − 4y − 6 = 0.",
+      },
+      {
+        name: "Point lying on the line",
+        condition: "Substituting the point into the equation gives Ax₁ + By₁ + C = 0",
+        formula: "p = 0",
+        meaning: "Distance is a non-negative scalar, so a point on the line is zero units away — worth checking first, since it eliminates the whole calculation.",
+      },
+      {
+        name: "Normalised equation makes p the distance directly",
+        condition: "The equation is first divided through by √(A² + B²) so that A² + B² = 1",
+        formula: "x\\cos\\alpha + y\\sin\\alpha = p \\quad \\text{with } p = |C|",
+        meaning: "A unit normal vector turns the general form into normal form, where the right-hand side is the perpendicular distance itself with no square root left to evaluate.",
+      },
+      {
+        name: "Distance from a point to a line through the origin",
+        condition: "C = 0 because the line passes through the origin, e.g. y = 2x written as 2x − y = 0",
+        formula: "p = \\frac{|2x_1 - y_1|}{\\sqrt{2^2 + (-1)^2}} = \\frac{|2x_1 - y_1|}{\\sqrt{5}}",
+        meaning: "With the constant term gone the numerator is just the signed value of the linear form at the point, and the denominator reduces to √(1 + m²) for slope m.",
+      },
+      {
+        name: "Midpoint of two parallel lines is an equidistant line",
+        condition: "A third line is drawn halfway between Ax + By + C₁ = 0 and Ax + By + C₂ = 0",
+        formula: "Ax + By + \\frac{C_1 + C_2}{2} = 0",
+        meaning: "Equidistance from the two parallels is the definition of an angle bisector between them, and averaging the constants is the algebraic way to find it.",
+      },
+    ],
+
     visualType: "point-to-line-distance",
     solvedProblems: [
       {
@@ -252,6 +291,39 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
     examTraps: [
       "❌ Remember that h is HALF the coefficient of xy. In 2x² + 7xy + 3y² = 0, 2h = 7, so h = 7/2!",
     ],
+    specialCases: [
+      {
+        name: "A real angle needs h² > ab",
+        condition: "The pair is claimed to be two distinct real straight lines through the origin",
+        formula: "h^2 - ab > 0",
+        meaning: "This is the discriminant of the auxiliary quadratic bm² + 2hm + a = 0, so it decides whether the two lines are real and distinct, coincident, or imaginary.",
+      },
+      {
+        name: "h² = ab gives a single repeated line",
+        condition: "The discriminant of the auxiliary quadratic vanishes",
+        formula: "h^2 = ab \\Rightarrow \\left(y - m_1 x\\right)^2 = 0",
+        meaning: "The pair degenerates into one line of multiplicity two, so the 'angle between' is 0° and the tan θ expression is 0/0 rather than a real angle.",
+      },
+      {
+        name: "h² < ab gives an imaginary pair",
+        condition: "The discriminant of the auxiliary quadratic is negative",
+        formula: "h^2 - ab < 0 \\Rightarrow \\tan\\theta \\text{ is not real}",
+        meaning: "No real lines pass through the origin, and the algebra describes conjugate imaginary lines intersecting only at the origin.",
+      },
+      {
+        name: "The 45° special case",
+        condition: "The coefficients are such that 2√(h² − ab) equals a + b in magnitude",
+        formula: "\\tan\\theta = 1 \\Rightarrow \\theta = 45^\\circ",
+        meaning: "For 2x² + 7xy + 3y² = 0 the ratio works out to exactly 1, so the two lines through the origin are inclined at 45° — the board's favourite clean answer.",
+      },
+      {
+        name: "Sign of a + b picks the supplementary angle",
+        condition: "a + b is negative while h² > ab, so the tangent comes out negative",
+        formula: "a + b < 0 \\Rightarrow \\tan\\theta < 0 \\Rightarrow \\theta > 90^\\circ",
+        meaning: "The ± in the formula covers this: tan θ is negative for an obtuse pair, and the acute angle is recovered by taking the absolute value of the denominator.",
+      },
+    ],
+
     visualType: "pair-of-lines",
     solvedProblems: [
       {
@@ -355,6 +427,39 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
     examTraps: [
       "❌ Applying L'Hôpital's rule to prove this theorem. That is circular reasoning because d/dx(sin x) = cos x relies ON this limit!",
     ],
+    specialCases: [
+      {
+        name: "Degrees give π/180 instead of 1",
+        condition: "The same limit is taken with the angle measured in degrees, sin x° / x",
+        formula: "\\lim_{x \\to 0}\\frac{\\sin x^\\circ}{x} = \\frac{\\pi}{180} \\approx 0.01745",
+        meaning: "The theorem only yields 1 in radians; in degrees the constant is π/180, which is the single most common error in this topic.",
+      },
+      {
+        name: "The tangent limit follows from the same squeeze",
+        condition: "Divide the inequality sin θ < θ < tan θ by sin θ and let θ → 0",
+        formula: "\\lim_{\\theta\\to 0}\\frac{\\tan\\theta}{\\theta} = 1",
+        meaning: "Because cos θ → 1, the ratio θ/sin θ is squeezed between 1 and sec θ, giving the tangent limit with no extra work — and hence d/dx(tan x) = sec²x.",
+      },
+      {
+        name: "Deriving the (1 − cos θ)/θ² limit",
+        condition: "Rewrite 1 − cos θ as 2 sin²(θ/2) and use the fundamental limit once",
+        formula: "\\lim_{\\theta\\to 0}\\frac{1-\\cos\\theta}{\\theta^2} = \\frac{2\\cdot(\\theta/2)^2}{\\theta^2} = \\frac{1}{2}",
+        meaning: "The famous 1/2 is not a new result but the basic limit applied at half the angle, which is how d/dx(cos x) = −sin x is obtained from first principles.",
+      },
+      {
+        name: "The squeeze fails for sin θ/θ²",
+        condition: "A function that is not squeezed between two finite bounds is chosen, e.g. sin θ/θ²",
+        formula: "\\lim_{\\theta\\to 0}\\frac{\\sin\\theta}{\\theta^2} = \\infty",
+        meaning: "Dividing by a quantity vanishing faster makes the limit diverge, so the sandwich theorem cannot produce a finite answer here — a good check on whether a manipulation is legitimate.",
+      },
+      {
+        name: "Scaling inside the limit is free",
+        condition: "A constant multiple ka is inserted in the numerator and denominator, e.g. sin 5x / tan 3x",
+        formula: "\\lim_{x\\to 0}\\frac{\\sin 5x}{\\tan 3x} = \\frac{5}{3}\\lim_{x\\to 0}\\frac{\\sin 5x}{5x}\\cdot\\frac{3x}{\\tan 3x} = \\frac{5}{3}",
+        meaning: "Every linear function of x has the same unit limit, so the answer is always the ratio of the coefficients — the standard first-derivative MCQ pattern.",
+      },
+    ],
+
     visualType: "limit-sin-x",
     solvedProblems: [
       {
@@ -437,6 +542,39 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
     examTraps: [
       "❌ Confusing n (number of subintervals) with number of points (which is n + 1). If n = 4, there are 5 ordinates!",
     ],
+    specialCases: [
+      {
+        name: "Exact for any straight line",
+        condition: "f(x) is linear, so f″ = 0 identically on [a, b]",
+        formula: "\\int_a^b f(x)\\,dx = \\frac{h}{2}\\left[y_0 + 2\\sum_{i=1}^{n-1} y_i + y_n\\right] \\quad \\text{exactly}",
+        meaning: "A chord joining two points on a straight line lies along the line itself, so no area error arises — the trapezoidal rule is not merely an approximation for degree ≤ 1 polynomials.",
+      },
+      {
+        name: "Concave-up curve gives a slight over-estimate",
+        condition: "f″ > 0 on [a, b], e.g. f(x) = x² on [0, 1]",
+        formula: "\\int_0^1 x^2 dx = \\tfrac{1}{3} \\quad < \\quad \\frac{1}{2}\\left[0 + 2\\left(\\tfrac{1}{4}\\right) + 1\\right] = \\tfrac{3}{4}",
+        meaning: "For a bowl-shaped curve the chords sit above the arc, so the rule over-estimates; for a cap-shaped curve (f″ < 0) it under-estimates instead.",
+      },
+      {
+        name: "Halving the step size quarters the error",
+        condition: "The number of subintervals is doubled from n to 2n",
+        formula: "h \\to \\frac{h}{2} \\Rightarrow |E| \\to \\frac{1}{4}|E|",
+        meaning: "The error is proportional to h², so adding a few more ordinates buys a lot of accuracy — four times the work buys sixteen times the precision.",
+      },
+      {
+        name: "One sub-interval is a single straight chord",
+        condition: "n = 1, so h = b − a and no intermediate ordinates exist",
+        formula: "\\int_a^b f(x)\\,dx \\approx \\frac{b-a}{2}\\left[f(a) + f(b)\\right]",
+        meaning: "The formula degenerates to a one-strip trapezoid requiring only the two endpoint values, which is the crudest possible estimate.",
+      },
+      {
+        name: "Simpson's rule needs an even n",
+        condition: "A comparison with Simpson's 1/3 rule, which fits parabolas instead of chords",
+        formula: "\\frac{h}{3}\\left[(y_0+y_n) + 4(y_1+y_3+\\cdots) + 2(y_2+y_4+\\cdots)\\right], \\quad n \\text{ even}",
+        meaning: "Simpson is exact for cubics and needs an even number of strips, so the trapezoidal rule is the fallback when the data points give an odd count.",
+      },
+    ],
+
     visualType: "trapezoidal-rule",
     solvedProblems: [
       {
@@ -523,6 +661,39 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
     examTraps: [
       "❌ AM ≥ GM ≥ HM requires numbers to be POSITIVE. For negative numbers, geometric mean involves imaginary roots.",
     ],
+    specialCases: [
+      {
+        name: "Minimum of x + 1/x from AM ≥ GM",
+        condition: "The expression x + 1/x is minimised for x > 0",
+        formula: "x + \\frac{1}{x} \\ge 2\\sqrt{x \\cdot \\frac{1}{x}} = 2",
+        meaning: "The general trick behind most CEE minimum-value questions: split the expression into two positive terms whose product is constant, then apply AM ≥ GM.",
+      },
+      {
+        name: "A, G, H are themselves in geometric progression",
+        condition: "The three means of the same two numbers a, b > 0 are listed in order",
+        formula: "\\frac{G}{A} = \\frac{H}{G} = \\sqrt{\\frac{H}{A}}",
+        meaning: "Since G² = AH, the means form a GP with common ratio √(H/A), so AM and HM are the extreme terms of a geometric progression.",
+      },
+      {
+        name: "Generalisation to n positive numbers",
+        condition: "The inequality is extended from two numbers to a₁, a₂, …, aₙ > 0",
+        formula: "\\frac{a_1 + a_2 + \\cdots + a_n}{n} \\ge (a_1 a_2 \\cdots a_n)^{1/n} \\ge \\frac{n}{\\frac{1}{a_1} + \\cdots + \\frac{1}{a_n}}",
+        meaning: "The n-variable statement is the direct generalisation, with equality holding only when every aᵢ is identical.",
+      },
+      {
+        name: "Ratios of successive means for extreme inputs",
+        condition: "One of the two numbers becomes very large compared with the other, e.g. b → ∞",
+        formula: "A \\to \\frac{b}{2}, \\quad G \\to \\sqrt{ab} \\to \\infty \\text{ more slowly}, \\quad H \\to 2a",
+        meaning: "As the numbers separate the harmonic mean locks onto twice the smaller value while the geometric mean lags far behind the arithmetic mean, so the gap A − G becomes unbounded.",
+      },
+      {
+        name: "Inequality between a sum and its reciprocal sum",
+        condition: "A, G and H are combined to bound expressions such as a/b + b/a",
+        formula: "\\frac{a}{b} + \\frac{b}{a} \\ge 2 \\quad \\text{(AM ≥ GM on } \\tfrac{a}{b}, \\tfrac{b}{a}\\text{)}",
+        meaning: "The chain AM ≥ GM ≥ HM is used constantly in algebraic inequality proofs, always with the positivity of a and b stated first.",
+      },
+    ],
+
     visualType: "am-gm-hm",
     solvedProblems: [
       {
@@ -599,6 +770,39 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
     examTraps: [
       "❌ Setting velocity to zero at the peak. Kinetic energy at top is ½ m (u cos θ)² ≠ 0.",
     ],
+    specialCases: [
+      {
+        name: "Straight-up throw at 90°",
+        condition: "θ = 90°, so the launch is entirely vertical and uₓ = 0",
+        formula: "R = 0, \\quad H = \\frac{u^2}{2g}, \\quad T = \\frac{2u}{g}",
+        meaning: "The range collapses to zero because there is no horizontal component at all — the projectile simply rises and retraces its own path.",
+      },
+      {
+        name: "Horizontal throw at 0°",
+        condition: "θ = 0°, so u_y = 0 and the fall begins immediately",
+        formula: "H = 0, \\quad T = 0, \\quad R = \\frac{u^2 \\sin 0^\\circ}{g} = 0",
+        meaning: "Launched from ground level a horizontal throw has no airborne time at all; the same formulas only give a non-zero T when the launch is from a height h.",
+      },
+      {
+        name: "Free fall is the same parabola at 90°",
+        condition: "A body is dropped from rest, equivalent to u = 0 with any θ",
+        formula: "T = \\sqrt{\\frac{2h}{g}}, \\quad H = h = \\frac{1}{2}gT^2",
+        meaning: "Setting u = 0 collapses T and R to zero while H reproduces the standard kinematic result — the parabolic trajectory of a dropped body has a degenerate vertex.",
+      },
+      {
+        name: "Three mutually perpendicular throws",
+        condition: "The same speed u is launched at θ, then θ + 120° and θ + 240° from the same point",
+        formula: "\\text{Sum of ranges} = \\frac{u^2}{g}\\left[\\sin 2\\theta + \\sin(2\\theta + 240^\\circ) + \\sin(2\\theta + 480^\\circ)\\right] = 0",
+        meaning: "The three sin 2θ values are 120° apart and sum to zero, so the three landing points form an equilateral triangle — a favourite CEE projectile question.",
+      },
+      {
+        name: "Projectile landing at the foot of a cliff",
+        condition: "Launch and landing levels differ by h, e.g. a ball thrown from a cliff top",
+        formula: "y = x\\tan\\theta - \\frac{gx^2}{2u^2\\cos^2\\theta} - h",
+        meaning: "Replacing the launch point by the origin in the trajectory equation adds a constant offset −h; time of flight grows beyond 2u sin θ/g.",
+      },
+    ],
+
     visualType: "projectile-motion",
     solvedProblems: [
       {
@@ -651,6 +855,39 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Angle of banking depends on design velocity and turn radius, completely independent of vehicle mass.",
     keyTakeaways: ["Bicycle rider leans inward at angle tan θ = v² / (rg) to create identical torque balance."],
     examTraps: ["❌ Banking angle does NOT depend on vehicle mass; heavy trucks and light cars share the same design angle."],
+    specialCases: [
+      {
+        name: "Vehicle at rest on the banked curve",
+        condition: "v = 0, so no centripetal force is needed",
+        formula: "\\tan\\theta = \\frac{0}{rg} = 0 \\Rightarrow \\theta = 0",
+        meaning: "A parked car on a banked track needs no friction to stay put; N cos θ = mg alone holds it, which is why banked curves are safe even when empty.",
+      },
+      {
+        name: "Friction on an unbanked curve",
+        condition: "A level road is traversed at speed v with no banking, θ = 0",
+        formula: "f = \\frac{mv^2}{r} \\le \\mu mg \\Rightarrow v_{\\max} = \\sqrt{\\mu rg}",
+        meaning: "Setting θ = 0 in the friction-inclusive equation gives the everyday limit for an ordinary road bend, and shows the √(μrg) speed scaling.",
+      },
+      {
+        name: "Maximum safe speed with friction on a banked curve",
+        condition: "The car tends to skid up the slope, so friction acts down the bank at its limiting value",
+        formula: "v_{\\max} = \\sqrt{rg\\left(\\frac{\\tan\\theta + \\mu}{1 - \\mu\\tan\\theta}\\right)}",
+        meaning: "Friction extends the safe speed above the frictionless design value; the expression fails for μ tan θ ≥ 1, where no finite limit exists.",
+      },
+      {
+        name: "Minimum safe speed with friction on a banked curve",
+        condition: "The car tends to slide down the bank, so friction acts up the slope at its limiting value",
+        formula: "v_{\\min} = \\sqrt{rg\\left(\\frac{\\tan\\theta - \\mu}{1 + \\mu\\tan\\theta}\\right)}",
+        meaning: "Between v_min and v_max a stationary car will not roll down the bank; the safe resting window is what the bank angle is designed around.",
+      },
+      {
+        name: "A raised outer edge on a level curve is unphysical",
+        condition: "The banking is attempted with zero speed on a perfectly horizontal curve",
+        formula: "\\theta > 0, \\ v = 0 \\Rightarrow N\\sin\\theta \\neq 0",
+        meaning: "With no centripetal demand the horizontal component of N has nothing to balance, so a banked curve always needs a minimum design speed to be stable.",
+      },
+    ],
+
     visualType: "banked-road",
     solvedProblems: [
       {
@@ -724,6 +961,39 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
       "c_rms = √(3RT / M); doubling absolute temperature increases rms speed by √2 ≈ 1.414.",
     ],
     examTraps: ["❌ Forgetting the 1/3 factor. It arises strictly because motion is distributed across three spatial dimensions."],
+    specialCases: [
+      {
+        name: "Heavier molecules move slower at the same temperature",
+        condition: "Two gases at one temperature are compared, e.g. O₂ (32 g/mol) and H₂ (2 g/mol)",
+        formula: "\\frac{c_{\\text{rms,O}_2}}{c_{\\text{rms,H}_2}} = \\sqrt{\\frac{2}{32}} = \\frac{1}{4}",
+        meaning: "Because c_rms ∝ 1/√M, oxygen molecules travel four times slower than hydrogen at 27 °C — the reason heavy gases effuse more slowly than light ones.",
+      },
+      {
+        name: "Halving the number density halves the pressure",
+        condition: "The same gas is expanded to twice the volume at constant T",
+        formula: "\\frac{N}{V} \\to \\frac{1}{2}\\frac{N}{V} \\Rightarrow P \\to \\frac{1}{2}P",
+        meaning: "Since c_rms² is unchanged at constant temperature, the pressure tracks the number density directly — pressure is nothing more than collision rate per unit area.",
+      },
+      {
+        name: "Monatomic gas has only translational energy",
+        condition: "Helium or argon, with no rotation or vibration in the molecule",
+        formula: "E = \\frac{3}{2}RT \\; \\text{per mole}",
+        meaning: "The 3/2 arises purely from three translational degrees of freedom; monatomic gases have C_V = 3R/2 and γ = 5/3, the largest γ of any gas.",
+      },
+      {
+        name: "Diatomic and polyatomic gases add internal modes",
+        condition: "Rotational and vibrational degrees of freedom become active at ordinary temperatures",
+        formula: "\\text{O}_2:\\ E = \\frac{5}{2}RT, \\qquad \\text{CO}_2:\\ E = \\frac{7}{2}RT",
+        meaning: "The pressure formula P = ⅓ρc_rms² is unaffected, but the total molar heat capacity is not 3R/2 once rotation and vibration contribute.",
+      },
+      {
+        name: "The same pressure at higher temperature needs fewer molecules",
+        condition: "P and V are held fixed while T is raised",
+        formula: "P = \\frac{1}{3}\\frac{mN}{V}\\cdot\\frac{3RT}{M} = \\frac{N}{V}RT \\Rightarrow \\frac{N}{V} \\propto \\frac{1}{T}",
+        meaning: "This substitution recovers the ideal gas law PV = nRT, proving the kinetic derivation and the thermodynamic one describe the same physics.",
+      },
+    ],
+
     visualType: "kinetic-gas-pressure",
     solvedProblems: [
       {
@@ -782,6 +1052,39 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Immersing a glass lens in water quadruples its focal length.",
     keyTakeaways: ["For equiconvex lens: R₁ = +R, R₂ = -R ⟹ 1/f = 2(μ - 1)/R."],
     examTraps: ["❌ Sign convention: R₂ is NEGATIVE for convex lens; subtracting negative gives positive addition!"],
+    specialCases: [
+      {
+        name: "Plano-convex lens has one flat surface",
+        condition: "R₂ → ∞, so the term 1/R₂ vanishes from the lens-maker equation",
+        formula: "\\frac{1}{f} = (\\mu - 1)\\frac{1}{R_1}",
+        meaning: "A flat face contributes no refraction, so the power is exactly half that of an equiconvex lens of the same radius — the plano-convex lens is the usual achromat component.",
+      },
+      {
+        name: "Lens power is quoted in dioptres",
+        condition: "The focal length from the lens-maker formula is expressed in metres",
+        formula: "P = \\frac{1}{f(\\text{m})} \\quad \\text{dioptre} \\; (D)",
+        meaning: "A +20 cm convex lens has P = +5 D and a −50 cm concave lens P = −2 D; the sign convention of the optometrist's prescription is the sign of f itself.",
+      },
+      {
+        name: "Immersing the lens in water lengthens f",
+        condition: "The lens sits in water of refractive index 1.33 instead of air",
+        formula: "\\frac{1}{f_w} = \\left(\\frac{1.5}{1.33} - 1\\right)\\left(\\frac{1}{R_1} - \\frac{1}{R_2}\\right)",
+        meaning: "Only the relative index μ_rel matters, so the power drops by roughly a quarter and the focal length becomes about four times longer — a swimming-pool lens looks weak for this reason.",
+      },
+      {
+        name: "A lens of refractive index 1 has no power at all",
+        condition: "μ is exactly 1, so the factor (μ − 1) vanishes",
+        formula: "\\mu = 1 \\Rightarrow \\frac{1}{f} = 0 \\Rightarrow f = \\infty",
+        meaning: "A medium optically identical to the surroundings cannot bend light at all; the lens formula degenerates gracefully rather than failing.",
+      },
+      {
+        name: "Equal radii of crown glass give f = R",
+        condition: "Equiconvex lens of crown glass with μ = 1.5 and R₁ = +R, R₂ = −R",
+        formula: "\\frac{1}{f} = (1.5-1)\\left(\\frac{1}{R} + \\frac{1}{R}\\right) = \\frac{2(0.5)}{R} = \\frac{1}{R} \\Rightarrow f = R",
+        meaning: "Since 2(μ − 1) = 1 for ordinary glass, an equiconvex lens has a focal length numerically equal to its radius of curvature — 20 cm radius gives a 20 cm lens.",
+      },
+    ],
+
     visualType: "lens-makers",
     solvedProblems: [
       {
@@ -853,6 +1156,45 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
       "Lyman series (n₁ = 1) falls in UV; Balmer (n₁ = 2) falls in Visible; Paschen (n₁ = 3) in IR.",
     ],
     examTraps: ["❌ Radius is proportional to n²; energy is proportional to 1/n²!"],
+    specialCases: [
+      {
+        name: "n = 1, Z = 1 is the Bohr atom",
+        condition: "A hydrogen atom in its ground state",
+        formula: "r_1 = 0.529\\ \\text{\\AA}, \\quad E_1 = -13.6\\ \\text{eV}",
+        meaning: "This single pair of numbers fixes the size and ionisation energy of the simplest atom, and both are pure experimental constants.",
+      },
+      {
+        name: "Hydrogen-like ions scale with Z",
+        condition: "He⁺, Li²⁺ or any one-electron ion with nuclear charge +Ze",
+        formula: "r_n = 0.529\\frac{n^2}{Z}\\ \\text{\\AA}, \\quad E_n = -13.6\\frac{Z^2}{n^2}\\ \\text{eV}",
+        meaning: "The radius shrinks as 1/Z while the energy deepens as Z², so He⁺ has half the radius of hydrogen but four times the binding energy at the same n.",
+      },
+      {
+        name: "The ionisation limit is n going to infinity",
+        condition: "The electron is given enough energy to escape the nucleus entirely",
+        formula: "\\lim_{n \\to \\infty} r_n = \\infty, \\quad \\lim_{n \\to \\infty} E_n = 0",
+        meaning: "Energy accumulates at 0 eV, which is why the visible Balmer lines crowd together near the series limit instead of running off to infinity.",
+      },
+      {
+        name: "Level spacing shrinks as n grows",
+        condition: "Successive levels near the top of the orbit ladder are compared, e.g. n = 5 and n = 6",
+        formula: "\\Delta E = 13.6\\left(\\frac{1}{n^2} - \\frac{1}{(n+1)^2}\\right) \\approx \\frac{27.2}{n^3}\\ \\text{eV}",
+        meaning: "The gap falls off as 1/n³, which is exactly why a hot dense gas produces a continuous spectrum instead of resolved hydrogen lines.",
+      },
+      {
+        name: "Rydberg frequency for a given transition",
+        condition: "An electron falls from n₂ to n₁, emitting one photon",
+        formula: "\\frac{1}{\\lambda} = R_H Z^2\\left(\\frac{1}{n_1^2} - \\frac{1}{n_2^2}\\right), \\quad R_H = 1.097\\times10^7\\ \\text{m}^{-1}",
+        meaning: "Every spectral line of hydrogen-like species is fixed by this one expression; only the region of the spectrum changes with n₁.",
+      },
+      {
+        name: "Zero radius and infinite energy are both impossible",
+        condition: "The limit n → 0 is examined, which has no physical meaning",
+        formula: "n = 0 \\text{ has no meaning; } n \\text{ starts at } 1",
+        meaning: "The n² and 1/n² laws are only meaningful for positive integer n; the ground state is n = 1 and the electron never collapses into the nucleus.",
+      },
+    ],
+
     visualType: "bohr-hydrogen-atom",
     solvedProblems: [
       {
@@ -921,6 +1263,45 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
       "If Δn_g < 0: K_p < K_c (e.g. N₂ + 3H₂ ⇌ 2NH₃, Δn_g = -2 ⟹ K_p = K_c(RT)⁻²).",
     ],
     examTraps: ["❌ Count ONLY GASEOUS species when calculating Δn_g! Solids and liquids have activity 1 and Δn = 0."],
+    specialCases: [
+      {
+        name: "Equal gas moles on both sides",
+        condition: "a + b = c + d for a gaseous equilibrium, e.g. H₂(g) + I₂(g) ⇌ 2HI(g)",
+        formula: "\\Delta n_g = 0 \\Rightarrow K_p = K_c",
+        meaning: "The (RT) factor disappears entirely, so the two constants are numerically identical — the quick check to run before any substitution.",
+      },
+      {
+        name: "More gas moles on the product side",
+        condition: "A dissociation such as N₂O₄(g) ⇌ 2NO₂(g) with Δn_g = +1",
+        formula: "K_p = K_c (RT)^{+1} = K_c \\times 24.47 \\text{ at } 298\\ \\text{K}",
+        meaning: "Because RT exceeds 1 at ordinary temperatures, K_p comes out numerically larger than K_c whenever Δn_g is positive.",
+      },
+      {
+        name: "Fewer gas moles on the product side",
+        condition: "A synthesis such as N₂(g) + 3H₂(g) ⇌ 2NH₃(g) with Δn_g = −2",
+        formula: "K_p = K_c (RT)^{-2} = \\frac{K_c}{(RT)^2}",
+        meaning: "Raising the pressure raises K_p for this reaction because the product side holds fewer gas moles, matching Le Châtelier's principle.",
+      },
+      {
+        name: "Only the gas phase counts toward Δn_g",
+        condition: "A heterogeneous equilibrium with a solid, e.g. CaCO₃(s) ⇌ CaO(s) + CO₂(g)",
+        formula: "\\Delta n_g = 1 - 0 = 1 \\Rightarrow K_p = K_c (RT)",
+        meaning: "Solids and pure liquids have unit activity and are omitted entirely, so only the gaseous coefficients enter the difference.",
+      },
+      {
+        name: "The units of K_c and K_p differ",
+        condition: "Δn_g is non-zero and the dimensions of both constants are compared",
+        formula: "[K_c] = (\\text{mol L}^{-1})^{\\Delta n_g}, \\quad [K_p] = \\text{atm}^{\\Delta n_g}",
+        meaning: "Only when Δn_g = 0 is K dimensionless and numerically equal to K_p; otherwise each carries its own power of a concentration or pressure unit.",
+      },
+      {
+        name: "K_p and K_c both change with temperature",
+        condition: "The system is heated or cooled away from the temperature at which the constants were quoted",
+        formula: "\\frac{K_{p,2}}{K_{p,1}} = \\frac{K_{c,2}}{K_{c,1}} = \\text{a new value at } T_2",
+        meaning: "The K_p = K_c(RT)^{Δn} link holds at one temperature only; both constants must be recomputed from fresh thermodynamic data at the new T.",
+      },
+    ],
+
     visualType: "kp-kc-equilibrium",
     solvedProblems: [
       {
@@ -985,6 +1366,39 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Allows determining molecular weight directly from gas density.",
     keyTakeaways: ["Molar volume at STP: 1 mole of any ideal gas occupies 22.4 L."],
     examTraps: ["❌ Forgetting that hydrogen is diatomic; neglecting the factor 2 causes a 50% error!"],
+    specialCases: [
+      {
+        name: "Mixtures have a mean molecular mass",
+        condition: "A gas mixture of components with mole fractions xᵢ is measured against hydrogen",
+        formula: "M_{\\text{mix}} = \\sum_i x_i M_i = 2 \\times \\text{V.D.}_{\\text{mix}}",
+        meaning: "Vapour density of a mixture such as air is an average weighted by mole fraction, which is why the relative density of air against H₂ is close to 14.5.",
+      },
+      {
+        name: "The factor two assumes hydrogen is diatomic",
+        condition: "The reference gas is taken as one atom of hydrogen rather than one H₂ molecule",
+        formula: "\\text{V.D.} = \\frac{M}{2} \\quad \\text{only because } H_2 = 2H",
+        meaning: "If the standard were a monatomic gas the multiplier would be 1; the factor 2 is purely the diatomicity of the reference gas.",
+      },
+      {
+        name: "Isomers share the same vapour density",
+        condition: "Two compounds of identical molecular formula, e.g. ethanol and dimethyl ether",
+        formula: "M = 46 \\Rightarrow \\text{V.D.} = 23 \\text{ for both}",
+        meaning: "Vapour density measures mass and not structure, so it cannot distinguish structural isomers — only a chemical test can.",
+      },
+      {
+        name: "Elemental gases follow the same rule",
+        condition: "A monatomic or diatomic element such as He, O₂ or Cl₂ is evaluated",
+        formula: "\\text{He: } \\text{V.D.} = 2, \\quad \\text{O}_2: \\text{V.D.} = 16, \\quad \\text{SO}_2: \\text{V.D.} = 32",
+        meaning: "The relation is general for any gas, not only compounds; the molar masses are 4, 32 and 64 g/mol respectively.",
+      },
+      {
+        name: "Mixtures that dissociate give a non-integer result",
+        condition: "A gas such as N₂O₄ partially dissociates to NO₂ in the measuring bulb",
+        formula: "\\text{Observed } \\text{V.D.} < \\frac{M_{\\text{N}_2\\text{O}_4}}{2} = 46",
+        meaning: "Dissociation lowers the average molar mass, so the measured vapour density is smaller than that of the pure undissociated gas.",
+      },
+    ],
+
     visualType: "molecular-mass-vd",
     solvedProblems: [
       {
@@ -1050,6 +1464,39 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
       "Higher G+C content increases DNA melting temperature (T_m) due to 3 hydrogen bonds.",
     ],
     examTraps: ["❌ Chargaff's rules do NOT hold for single-stranded RNA or single-stranded viral DNA (e.g. φX174)."],
+    specialCases: [
+      {
+        name: "AT-rich DNA melts at a lower temperature than GC-rich DNA",
+        condition: "Two samples of equal length but different base composition are heated",
+        formula: "T_m \\uparrow \\text{ as } (G+C)\\% \\uparrow",
+        meaning: "Because G≡C carries three hydrogen bonds against two for A=T, GC-rich DNA needs more heat to separate; this is why bacterial GC content is linked to growth temperature.",
+      },
+      {
+        name: "One turn of the helix covers ten base pairs",
+        condition: "The helix pitch of 3.4 nm is divided by the rise of a single base pair",
+        formula: "\\frac{3.4\\ \\text{nm}}{10} = 0.34\\ \\text{nm per bp}",
+        meaning: "Ten base pairs make one full 360° revolution, so the sugar-phosphate helix completes a turn every 3.4 nm along its axis.",
+      },
+      {
+        name: "Single-stranded DNA has no equimolar base ratio",
+        condition: "A circular single-stranded viral genome such as φX174 is analysed for base composition",
+        formula: "[A] \\neq [T] \\quad \\text{and} \\quad [G] \\neq [C]",
+        meaning: "Chargaff's rules follow from double-strandedness alone, so a single-stranded genome has free bases and no fixed 1:1 pairing ratio.",
+      },
+      {
+        name: "A–T pairs are wider than G≡C pairs",
+        condition: "The two base pairs are compared in the major groove of B-DNA",
+        formula: "A-T \\approx 0.34\\ \\text{nm wide}, \\quad G\\equiv C \\approx 0.33\\ \\text{nm wide}",
+        meaning: "The two purine–pyrimidine pairs are almost the same width, which is what allows a uniform 2.0 nm diameter helix with no distortion of the backbone.",
+      },
+      {
+        name: "X-ray diffraction spacing gives the helix dimensions",
+        condition: "The 3.4 nm repeat along the helix axis is measured from a diffraction pattern",
+        formula: "d = 3.4\\ \\text{nm}, \\quad D = 2.0\\ \\text{nm}",
+        meaning: "The pitch came from the X-ray repeat distance and the diameter from the equatorial spacing — the two numbers that fixed B-DNA's geometry.",
+      },
+    ],
+
     visualType: "dna-double-helix",
     solvedProblems: [
       {
@@ -1111,6 +1558,39 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Crossing over and independent assortment provide the cellular basis for biological variation.",
     keyTakeaways: ["Colchicine arrests cell division at Metaphase by inhibiting microtubule spindle formation."],
     examTraps: ["❌ Centromeres do NOT split in Anaphase I; they split ONLY in Anaphase II and Mitotic Anaphase!"],
+    specialCases: [
+      {
+        name: "Anaphase I is reductional, not equational",
+        condition: "A cell with 2n = 24 enters anaphase I of meiosis",
+        formula: "\\underbrace{24}_{2n} \\xrightarrow{\\text{anaphase I}} \\underbrace{12}_{n} \\text{ per pole}",
+        meaning: "Centromeres do not divide in anaphase I, so whole duplicated chromosomes move apart and the chromosome number is already halved at this stage.",
+      },
+      {
+        name: "Chromatid doubling in anaphase II",
+        condition: "A secondary spermatocyte with n = 12 chromosomes divides in anaphase II",
+        formula: "\\underbrace{12}_{n,\\ 24\\ \\text{chromatids}} \\to \\underbrace{24}_{2n\\ \\text{temporarily}} \\text{ chromatids total}",
+        meaning: "Splitting centromeres doubles the chromatid count within the cell even though the ploidy of each future gamete stays at n — the classic exam trap.",
+      },
+      {
+        name: "Mitosis in a haploid cell keeps the ploidy unchanged",
+        condition: "A gametophyte or haploid fungus cell divides mitotically, e.g. 2n = 2n = n",
+        formula: "n \\to 2 \\times n \\quad (\\text{no reduction})",
+        meaning: "Mitosis is equational and simply copies whatever ploidy it is given; the 2n → 2 × 2n notation only holds when the parent cell is diploid.",
+      },
+      {
+        name: "Crossing over needs a homologous pair to be present",
+        condition: "A haploid cell, or a male grasshopper with no pairing, enters meiosis I",
+        formula: "\\text{No synapsis} \\Rightarrow \\text{no chiasma} \\Rightarrow \\text{no recombination}",
+        meaning: "Without homologues to zip together there is nothing to exchange, so segregation is random and independent assortment still applies.",
+      },
+      {
+        name: "Colchicine turns mitosis into polyploidy",
+        condition: "Colchicine blocks spindle formation so the chromosomes never reach the poles",
+        formula: "\\text{Mitosis arrested} \\Rightarrow 2n \\to 4n",
+        meaning: "Failure of cytokinesis after a blocked metaphase duplicates the whole genome, which is how tetraploid plants and colchicine-treated karyotypes are produced.",
+      },
+    ],
+
     visualType: "mitosis-meiosis-stages",
     solvedProblems: [
       {
@@ -1172,6 +1652,39 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
       "Pyramid of biomass can be inverted in aquatic ecosystems (phytoplankton < zooplankton), but energy pyramid NEVER inverts.",
     ],
     examTraps: ["❌ Confusing pyramid of numbers (can be inverted in tree ecosystem) with pyramid of energy (always upright)."],
+    specialCases: [
+      {
+        name: "Secondary consumers sit two transfers above the producers",
+        condition: "Producers fix E₁ joules and each trophic step passes on 10 %",
+        formula: "E_{T_3} = E_1 \\times (0.1)^2 = 0.01\\,E_1",
+        meaning: "Counting transfers, not organisms, is the whole skill: a secondary consumer receives only 1 % of the producer energy, so 20 000 J becomes 200 J.",
+      },
+      {
+        name: "Only 1–2 % of sunlight ever enters the chain",
+        condition: "Gross primary productivity is compared with the incident solar flux",
+        formula: "\\text{GPP} \\approx 0.01\\text{–}0.02 \\times \\text{Solar flux}",
+        meaning: "The 10 % law starts from GPP, not from total incoming sunlight, so the true figure for a sunlit grassland is far below 10 % of incident radiation.",
+      },
+      {
+        name: "90 % is dissipated, not stored",
+        condition: "The untransferred fraction of a trophic level is apportioned",
+        formula: "R + E + U = 0.9\\,E_n",
+        meaning: "The lost 90 % is respiration heat plus egestion and undigested material; it leaves the system and can never be reused by the next level.",
+      },
+      {
+        name: "Food chains stop at four or five levels",
+        condition: "Successive 10 % steps are continued until the residual energy becomes negligible",
+        formula: "10^4 \\to 10^3 \\to 10^2 \\to 10^1 \\to 10^0\\ \\text{J}",
+        meaning: "Halving the energy ten times already costs a factor of ten billion, which is why no real food chain extends beyond about five trophic levels.",
+      },
+      {
+        name: "Warm-water ecosystems run a longer chain than cold ones",
+        condition: "Two systems of equal producer productivity are compared",
+        formula: "E_\\text{transfer, warm} > E_\\text{transfer, cold}",
+        meaning: "Cold-water phytoplankton has poor thermal efficiency, so polar food chains are typically only three or four links long while tropical ones reach five or six.",
+      },
+    ],
+
     visualType: "lindeman-energy-pyramid",
     solvedProblems: [
       {
@@ -1230,6 +1743,39 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Guarantees existence of parallel tangent for any smooth continuous curve.",
     keyTakeaways: ["Foundation for proving Taylor's series, L'Hôpital's rule, and monotonicity criteria."],
     examTraps: ["❌ Checking differentiability at closed endpoints [a, b]. Only open interval (a, b) is required."],
+    specialCases: [
+      {
+        name: "Rolle's theorem is the f(a) = f(b) corollary",
+        condition: "The endpoint values coincide, e.g. f(1) = f(3) for f(x) = x² − 4x + 3",
+        formula: "f(b) - f(a) = 0 \\;\\Rightarrow\\; f'(c) = 0",
+        meaning: "A continuous curve that starts and ends at the same height must flatten out somewhere in between, which is the geometric heart of the theorem.",
+      },
+      {
+        name: "Every c works for a linear function",
+        condition: "f is itself linear, so f' is constant on (a, b)",
+        formula: "f'(c) = \\frac{f(b)-f(a)}{b-a} \\; \\text{holds for all } c \\in (a,b)",
+        meaning: "LMVT does not single out a unique c for a straight line; the tangent is parallel to the secant everywhere, so uniqueness must not be assumed in general either.",
+      },
+      {
+        name: "Trigonometric functions satisfy Rolle over a full period",
+        condition: "f(x) = sin x on [0, 2π], where f(0) = f(2π) = 0",
+        formula: "\\cos c = 0 \\;\\Rightarrow\\; c = \\frac{\\pi}{2},\\ \\frac{3\\pi}{2}",
+        meaning: "Rolle's conclusion is existential, not unique: two different values of c can satisfy f'(c) = 0 in the same interval.",
+      },
+      {
+        name: "A vertical tangent still admits a valid secant slope",
+        condition: "f(x) = √x is differentiable on (0, 4) though f' is unbounded at 0",
+        formula: "\\frac{1}{2\\sqrt{c}} = \\frac{2-0}{4-0} = \\frac{1}{2} \\;\\Rightarrow\\; c = 1",
+        meaning: "The theorem only needs the derivative to exist at the interior point c; it need not be bounded or continuous on the whole open interval.",
+      },
+      {
+        name: "The hypotheses cannot be weakened",
+        condition: "f is continuous on [a, b] but fails to be differentiable at one interior point",
+        formula: "f(x) = |x| \\text{ on } [-1,1] \\;\\Rightarrow\\; \\text{no } c \\text{ with } f'(c) = 0",
+        meaning: "Rolle's theorem genuinely requires differentiability everywhere in (a, b); the cusp at x = 0 is the standard counterexample showing both conditions are needed.",
+      },
+    ],
+
     visualType: "lmvt-rolle",
     solvedProblems: [
       {
@@ -1273,6 +1819,39 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Constriction increases velocity and decreases fluid pressure (Venturi effect).",
     keyTakeaways: ["Torricelli efflux velocity from orifice at depth h equals free fall velocity √(2gh)."],
     examTraps: ["❌ Misconception that fast fluid has high pressure; high velocity means LOW static pressure."],
+    specialCases: [
+      {
+        name: "Torricelli efflux from a small orifice",
+        condition: "A large open tank is pierced at depth h below the free surface",
+        formula: "v = \\sqrt{2gh}",
+        meaning: "Applying Bernoulli between the free surface and the jet, both points being at atmospheric pressure, gives the jet the same speed as a body in free fall from height h.",
+      },
+      {
+        name: "Horizontal pipe of varying cross-section",
+        condition: "Steady flow along a level pipe, so h₁ = h₂ and the pressure term alone balances the kinetic term",
+        formula: "P_1 + \\tfrac{1}{2}\\rho v_1^2 = P_2 + \\tfrac{1}{2}\\rho v_2^2",
+        meaning: "A constriction raises speed and lowers static pressure — the Venturi effect that makes a Venturimeter a working flow meter.",
+      },
+      {
+        name: "Continuity fixes the area–velocity trade",
+        condition: "An incompressible fluid passes a narrow throat of area A₂",
+        formula: "A_1 v_1 = A_2 v_2 \\quad \\Rightarrow \\quad v_2 = v_1 \\frac{A_1}{A_2}",
+        meaning: "Bernoulli's speed-up is only possible because the volume flow rate stays constant; squeezing the pipe is what converts pressure into kinetic energy.",
+      },
+      {
+        name: "Stagnation point at the tip of a body",
+        condition: "The flow is brought to rest, v = 0, against the oncoming stream",
+        formula: "P_0 = P + \\tfrac{1}{2}\\rho v^2",
+        meaning: "The entire dynamic head converts to pressure at a stagnation point, which is exactly the Pitot-tube measurement used to find the speed of a fluid.",
+      },
+      {
+        name: "Blood pressure at the top of the body",
+        condition: "Blood climbs a height h through a column whose speed change is negligible",
+        formula: "\\Delta P = -\\rho g h \\;\\; (v_1 \\approx v_2)",
+        meaning: "With the velocity term cancelling, Bernoulli reduces to a simple hydrostatic column — the reason a sphygmometer cuff must be at heart level for a correct reading.",
+      },
+    ],
+
     visualType: "bernoulli-fluid",
     solvedProblems: [
       {
@@ -1315,6 +1894,39 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Reaction rates double approximately every 10°C increase in temperature near 298 K.",
     keyTakeaways: ["Catalysts provide alternative low-activation barrier pathway without altering equilibrium ΔG°."],
     examTraps: ["❌ Temperature must always be in Kelvin (T = °C + 273.15)."],
+    specialCases: [
+      {
+        name: "Arrhenius plot is a straight line",
+        condition: "ln k is plotted against 1/T for rate constants measured at several temperatures",
+        formula: "\\ln k = \\ln A - \\frac{E_a}{R}\\left(\\frac{1}{T}\\right)",
+        meaning: "A linear ln k vs 1/T graph has slope −E_a/R and intercept ln A, which is how E_a is obtained graphically in board questions.",
+      },
+      {
+        name: "E_a = 0 removes all temperature sensitivity",
+        condition: "The reaction proceeds without an activation barrier, so k becomes temperature independent",
+        formula: "k = A e^{0} = A = \\text{constant}",
+        meaning: "A zero activation energy means the rate constant no longer responds to temperature; real reactions never have E_a exactly zero.",
+      },
+      {
+        name: "Catalyst lowers E_a but leaves A and ΔG° unchanged",
+        condition: "A catalysed and an uncatalysed pathway exist for the same reaction",
+        formula: "E_{a,\\text{cat}} < E_{a,\\text{uncat}} \\;\\Rightarrow\\; k_{\\text{cat}} > k_{\\text{uncat}}",
+        meaning: "The catalyst offers a lower-barrier route only; it speeds up both forward and reverse reactions equally and leaves K and the equilibrium position untouched.",
+      },
+      {
+        name: "The familiar doubling of rate near 300 K",
+        condition: "T rises by 10 K around 300 K, giving the empirical Q₁₀ ≈ 2",
+        formula: "\\frac{k_{T+10}}{k_T} \\approx 2 \\;\\Rightarrow\\; E_a \\approx 50\\text{–}60\\ \\mathrm{kJ\\,mol^{-1}}",
+        meaning: "The rule of thumb that a reaction doubles for every 10 °C holds only for activation energies near 50 kJ/mol; enzymatic reactions are far more temperature sensitive.",
+      },
+      {
+        name: "Half-life formula is first-order only",
+        condition: "The rate law is zero order or second order rather than first order in the reactant",
+        formula: "t_{1/2} = \\frac{0.693}{k} \\;\\text{(first order)} \\quad \\text{vs} \\quad t_{1/2} = \\frac{[A]_0}{2k} \\;\\text{(zero order)}",
+        meaning: "Only for first order is the half-life independent of the starting concentration; for zero order it doubles when the initial amount doubles.",
+      },
+    ],
+
     visualType: "arrhenius-kinetics",
     solvedProblems: [
       {
@@ -1357,6 +1969,45 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "At equilibrium, E_cell = 0 and Q = K_c ⟹ log K_c = n E° / 0.0591.",
     keyTakeaways: ["Adding products lowers cell voltage; adding reactants increases cell voltage."],
     examTraps: ["❌ Don't forget stoichiometric exponents in Q = [Products]^p / [Reactants]^r."],
+    specialCases: [
+      {
+        name: "All species at unit activity collapses the log term",
+        condition: "Every solute is 1 M, every gas 1 atm, T = 298 K, so Q = 1",
+        formula: "E_{\\text{cell}} = E^\\circ_{\\text{cell}} - \\frac{0.0591}{n}\\log 1 = E^\\circ_{\\text{cell}}",
+        meaning: "Under standard conditions the Nernst correction vanishes identically, which is exactly why E° is quoted at 1 M and 1 atm.",
+      },
+      {
+        name: "At equilibrium the cell potential is zero",
+        condition: "The cell has run to completion and Q = K_c",
+        formula: "0 = E^\\circ_{\\text{cell}} - \\frac{0.0591}{n}\\log K_c \\;\\Rightarrow\\; \\log K_c = \\frac{nE^\\circ_{\\text{cell}}}{0.0591}",
+        meaning: "This converts a standard potential into an equilibrium constant; it is the standard way to find K of a redox reaction from a table of E° values.",
+      },
+      {
+        name: "Diluting both compartments equally changes nothing",
+        condition: "Both ion concentrations are divided by the same factor, e.g. both cut tenfold",
+        formula: "Q' = \\frac{[C]^{2}/10}{[A]^{2}/10} = Q",
+        meaning: "Scaling every concentration by the same factor cancels in the quotient, so the EMF is unchanged — dilution only matters when one side is diluted.",
+      },
+      {
+        name: "Adding product suppresses the EMF",
+        condition: "Q > 1 because extra product is added to the cathode compartment",
+        formula: "E_{\\text{cell}} < E^\\circ_{\\text{cell}} \\quad (\\log Q > 0)",
+        meaning: "Le Châtelier works at the electrochemical level: driving the reaction backwards lowers the driving force; adding reactant raises it above E°.",
+      },
+      {
+        name: "Doubling the cell reaction halves the potential",
+        condition: "All coefficients in the balanced cell reaction are multiplied by an integer k",
+        formula: "Q \\to Q^{k}, \\quad n \\to kn \\;\\Rightarrow\\; E^\\circ_{\\text{cell}} \\text{ is unchanged}",
+        meaning: "E° is an intensive property and must never be multiplied; only n and Q change. Multiplying E° by the stoichiometric factor is a classic wrong answer.",
+      },
+      {
+        name: "Nernst coefficient varies with temperature",
+        condition: "The cell is operated at T other than 298 K",
+        formula: "E_{\\text{cell}} = E^\\circ_{\\text{cell}} - \\frac{2.303 RT}{nF}\\log Q",
+        meaning: "The constant 0.0591 is just (2.303 RT/F) evaluated at 25 °C; the general form is required whenever T ≠ 298 K.",
+      },
+    ],
+
     visualType: "nernst-equation",
     solvedProblems: [
       {
@@ -1400,6 +2051,39 @@ export const DERIVATIONS_AND_THEOREMS: DerivationOrTheorem[] = [
     conclusion: "Evolution occurs whenever allele frequencies deviate from Hardy-Weinberg equilibrium.",
     keyTakeaways: ["Maximum carrier frequency (2pq) is 50% when p = q = 0.50."],
     examTraps: ["❌ Frequency of affected individuals with recessive trait is q², NOT q!"],
+    specialCases: [
+      {
+        name: "Maximum heterozygote frequency at p = q = 0.5",
+        condition: "Two alleles are equally common, so p = q = 0.5",
+        formula: "2pq = 2(0.5)(0.5) = 0.50",
+        meaning: "The carrier class can never exceed 50 % of the population. Asking for 'the maximum possible carrier frequency' is a standard CEE one-mark question.",
+      },
+      {
+        name: "Recovering q from a recessive trait frequency",
+        condition: "A fully recessive autosomal phenotype is reported as a percentage of the population",
+        formula: "q = \\sqrt{q^2}, \\quad \\text{so } q = \\sqrt{0.16} = 0.40",
+        meaning: "Because only homozygotes aa are visibly affected, the recessive allele frequency is the square root of the phenotype percentage, not the percentage itself.",
+      },
+      {
+        name: "Two-gene extension gives the 9 : 3 : 3 : 1 ratio",
+        condition: "Two independently assorting loci are each in Hardy-Weinberg equilibrium",
+        formula: "(p^2 + 2pq + q^2)(P^2 + 2PQ + Q^2) = 1",
+        meaning: "Multiplying the two binomial expansions reproduces the dihybrid ratio 9 : 3 : 3 : 1, which is why a monohybrid cross always shows 3 : 1 in F₂.",
+      },
+      {
+        name: "X-linked recessive trait breaks the q² rule",
+        condition: "The recessive allele lies on the X chromosome, so males (XY) are hemizygous",
+        formula: "\\text{Affected males} = q, \\quad \\text{Carrier females} = 2pq",
+        meaning: "A son needs only one copy of the allele to be affected, so for X-linked traits the affected male frequency is q, not q² — colour blindness and haemophilia are the classic examples.",
+      },
+      {
+        name: "Any departure from p + q = 1 means evolution has occurred",
+        condition: "Mutation, migration (gene flow) or natural selection acts on the population",
+        formula: "p + q \\neq 1 \\; \\Longrightarrow \\; \\text{allele frequencies have shifted}",
+        meaning: "Evolution is defined precisely as a change in allele frequency, so the moment any of the assumptions breaks, the population leaves equilibrium.",
+      },
+    ],
+
     visualType: "hardy-weinberg",
     solvedProblems: [
       {

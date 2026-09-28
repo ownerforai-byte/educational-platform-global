@@ -3,6 +3,7 @@ import { getTheoremIndex } from "@/lib/theorems";
 import {
   getTheoremProofRoutes,
   getSyllabusTheoremItems,
+  getFeaturedTheoremCards,
 } from "@/lib/theorem-topics";
 import {
   Trophy,
@@ -110,7 +111,13 @@ export default async function TheoremsPage() {
       </div>
 
       {/* Interactive Explorer Client Component */}
-      <TheoremsExplorer trackCards={trackCards} allEntries={mappedEntries} />
+      {/* Featured cards are built here, on the server, from real curated
+          content — each one deep-links to its own dedicated theorem page. */}
+      <TheoremsExplorer
+        trackCards={trackCards}
+        allEntries={mappedEntries}
+        featured={getFeaturedTheoremCards(6)}
+      />
     </div>
   );
 }

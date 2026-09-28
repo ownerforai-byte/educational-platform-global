@@ -62,5 +62,85 @@
   "tabGroup": "Atomic-Structure-Learner-Notes",
   "source": "ravikishan",
   "duplicateType": 2,
-  "filename": "11-de-broglie-matter-waves.json"
+  "filename": "11-de-broglie-matter-waves.json",
+  "summary": "Starting from the photon relations E = hν and E = mc², one obtains λ = h/p; de Broglie's 1924 leap was that the same relation must hold for matter, so a particle of momentum p = mv has wavelength λ = h/mv = h/√(2mKE), and for an electron accelerated through V volts, λ = 12.27/√V Å. Since λ ∝ 1/m, wave behaviour is unobservable for everyday objects (1 g at 1 m s⁻¹ gives λ ≈ 6.6 × 10⁻³¹ m) but dominant for 100 V electrons (λ ≈ 1.23 Å, the scale of atomic spacings). Davisson and Germer (1927) diffracted ≈54 V electrons from a nickel crystal and found λ ≈ 0.165 nm from Bragg's law against 1.67 Å predicted, and G. P. Thomson confirmed it independently. The chemical consequences are the standing-wave justification of Bohr's quantisation (nλ = 2πr), the Schrödinger equation, the orbital, electron microscopy and quantum tunnelling.",
+  "importantConcepts": [
+    "Derivation from the photon relations: mc² = hν = hc/λ gives λ = h/p for matter as well",
+    "λ = h/mv = h/p = h/√(2mKE), and for electrons λ = 12.27/√V Å with V in volts",
+    "Davisson–Germer (1927): 54 V electrons on nickel, d = 0.091 nm, maximum at φ = 50°, λ ≈ 0.165 nm",
+    "Chemical payoff: standing wave nλ = 2πr derives Bohr's mvr = nh/2π",
+    "Applications: electron microscope (λ ≈ 0.005 nm at 50 kV), electron and neutron diffraction, tunnelling, atom interferometry"
+  ],
+  "importantStatements": [
+    "Matter waves travel with the particle; the phase velocity may exceed c while the group velocity equals v.",
+    "A heavier body has a shorter de Broglie wavelength, so wave behaviour is a microscopic phenomenon, not an absent one.",
+    "The λ = h/mv form is non-relativistic; the photon derivation only motivates the form of the relation.",
+    "Davisson–Germer proved that electrons have wave nature — the converse of the photoelectric effect.",
+    "For an electron of KE 13.6 eV, λ = 3.33 Å, exactly the circumference of the first Bohr orbit."
+  ],
+  "importantTasks": [
+    "Derive de Broglie's relation from the photon equations E = hν and E = mc².",
+    "Calculate the de Broglie wavelength of an electron accelerated through 100 V and through 50 V.",
+    "Describe the Davisson–Germer experiment and show that it verifies λ = h/mv.",
+    "Explain why the wave nature of a cricket ball is unobservable."
+  ],
+  "keyPoints": [
+    "Two forms to quote: λ = h/mv for any particle and λ = 12.27/√V Å for electrons.",
+    "The 54 V electron result, 1.67 Å predicted against 0.165 nm measured, is the classic verification.",
+    "Electron microscopes reach atomic resolution because the electron wavelength is ~10⁵ times shorter than visible light.",
+    "nλ = 2πr links this topic directly to Bohr's quantisation condition."
+  ],
+  "specialNotes": [
+    "De Broglie's 1929 Nobel Prize was the first ever awarded for a PhD thesis.",
+    "Davisson and Germer shared the 1937 Nobel Prize, the year G. P. Thomson's work was recognised too.",
+    "Matter waves carry no charge and are not electromagnetic, so they need no medium."
+  ],
+  "examShortTricks": [
+    "For electron problems jump straight to λ = 12.27/√V Å; it saves two substitutions.",
+    "Order of magnitude check: 1 g at 1 m s⁻¹ gives λ ≈ 10⁻³³ m, so no diffraction is possible.",
+    "Mentioning 1927 and nickel crystal is enough to earn the proof mark."
+  ],
+  "examNotes": [
+    "Derivation plus the Davisson–Germer evidence is a standard 4–5 mark question.",
+    "A 2–3 mark numerical on the wavelength of an accelerated electron is very common.",
+    "One-mark items test why macroscopic objects show no wave behaviour."
+  ],
+  "practiceQuestions": [
+    "Derive de Broglie's relation from the photon equations.",
+    "Calculate the wavelength of an electron accelerated through 100 V.",
+    "Describe the Davisson–Germer experiment and show how it verifies λ = h/mv.",
+    "Why is the wave nature of a cricket ball unobservable?"
+  ],
+  "mcs": [
+    {
+      "question": "The de Broglie wavelength of a particle is inversely proportional to its:",
+      "options": [
+        "Mass only",
+        "Velocity only",
+        "Momentum",
+        "Kinetic energy squared"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Matter waves travel with a speed:",
+      "options": [
+        "Equal to c",
+        "Equal to the speed of the particle",
+        "Greater than c",
+        "Zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The Davisson–Germer experiment provided evidence for:",
+      "options": [
+        "The wave nature of electrons",
+        "The particle nature of light",
+        "The nuclear atom",
+        "Isotopes"
+      ],
+      "answer": "A"
+    }
+  ]
 }

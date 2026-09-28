@@ -1,0 +1,10 @@
+{
+  "generatedAt": "2026-09-28T17:40:04.349Z",
+  "note": "Pre-existing INVALID files, baselined so `--strict` fails only on NEW violations.",
+  "invalid": [],
+  "counts": {
+    "invalid": 0,
+    "empty": 140,
+    "thin": 31
+  }
+}

@@ -50,4 +50,102 @@
   "animation3D": "quantity-of-heat",
   "motionGraphics": "quantity-of-heat",
   "visualType": "specific-heat"
+,
+  "summary": "Specific heat capacity c is the heat required to raise the temperature of unit mass of a substance by 1 K, so it follows directly from H = mcΔθ as c = H/(m·Δθ). It is an intensive property fixed by the material alone, which is why 1 kg and 1 g of copper share the same value of 390 J/kg·K. Water is the benchmark at about 4186 J/kg·K (4200 J/kg·K is the standard exam figure), far above every common metal, because hydrogen bonds must be partly broken before the molecules can move faster. Ice at 2100 J/kg·K and steam at 2010 J/kg·K show that c changes discontinuously at a phase boundary, and gases carry two values, c_p and c_v, with c_p > c_v always. Comparing materials in practice, when two bodies are mixed the equilibrium temperature is the heat-capacity-weighted average T_eq = (m₁c₁T₁ + m₂c₂T₂)/(m₁c₁ + m₂c₂).",
+  "importantConcepts": [
+    "Definition of c as the heat per unit mass per unit temperature rise, obtained by rearranging H = mcΔθ to c = H/(m·Δθ).",
+    "Intensity: c depends only on the material, never on how much of the material is present, so 1 kg and 1 g of the same substance have identical c.",
+    "Water as the reference substance, c = 4186 J/kg·K (4200 J/kg·K in exam work), about 5 times that of copper and 10 times that of lead.",
+    "Dulong-Petit law for solid elements: the molar heat capacity c × M ≈ 25 J/mol·K, so c ≈ 25/M and heavy atoms give a low c per kilogram.",
+    "Two specific heats for gases, c_p and c_v, with c_p > c_v because a gas that expands at constant pressure must do work on its surroundings.",
+    "The equilibrium temperature of two mixed bodies, a weighted average in which the weights are the heat capacities m₁c₁ and m₂c₂, not the masses alone."
+  ],
+  "importantStatements": [
+    "The specific heat capacity of a substance is the quantity of heat required to raise the temperature of 1 kg of that substance by 1 K.",
+    "Since c is an intensive property it does not change with the mass of the body, and it is positive for all ordinary materials.",
+    "The specific heat of a given substance is different in different states: ice 2100, liquid water 4186 and steam 2010 J/kg·K.",
+    "For every gas the specific heat at constant pressure exceeds that at constant volume, so c_p − c_v = R/M per unit mass.",
+    "When two bodies at different temperatures are mixed in an isolated system, the common final temperature is the heat-capacity-weighted average of the initial temperatures."
+  ],
+  "importantTasks": [
+    "Determine the specific heat capacity of an unknown metal from the heat supplied, the mass and the measured temperature rise.",
+    "Predict the equilibrium temperature of two bodies mixed together, using c to convert each mass into a heat capacity.",
+    "Identify a substance from a tabulated specific heat value, and justify the identification by comparing orders of magnitude rather than exact figures.",
+    "Convert a specific heat capacity between J/kg·K and cal/g·°C and use it correctly inside mcΔθ."
+  ],
+  "keyPoints": [
+    "c = H/(mΔθ) is the rearrangement to memorise; H = mcΔθ is the form used in numericals.",
+    "Water's c = 4186 J/kg·K is anomalously high because of hydrogen bonding, which is why oceans moderate climate.",
+    "Metals respond quickly to heating because c is small, which makes them good cookware and poor thermal storage.",
+    "Ice has roughly half the c of liquid water, so ice warms about twice as fast for the same mass and heating.",
+    "c varies slightly with temperature in reality, but school problems treat it as a constant of the material."
+  ],
+  "specialNotes": [
+    "The specific heat of a substance is not the same in every state: ice 2100, liquid water 4186 and steam 2010 J/kg·K, and c jumps discontinuously at the phase boundary.",
+    "Beryllium (1825 J/kg·K) and lithium (3580 J/kg·K) are exceptions to the rule that metals have low c, because their atomic masses are small so each kilogram holds very many atoms.",
+    "The calorie was originally defined as the heat needed to raise 1 g of water by 1 °C, specifically over 14.5 °C to 15.5 °C, but water's c is not perfectly constant, so the modern exact value is 1 cal = 4.184 J.",
+    "Mercury has an exceptionally low c of 140 J/kg·K, which is why mercury thermometers respond so quickly to a change in temperature.",
+    "Liquids have essentially one specific heat because they barely expand, whereas every gas has two; writing c without a subscript for a gas is incomplete."
+  ],
+  "examShortTricks": [
+    "Convert masses to kg and use c = 4200 J/kg·K for water in one step: Q in kJ equals kg × °C, a useful 3-mark shortcut.",
+    "Order-of-magnitude matching beats memorising every value: a result near 390 is copper, near 900 aluminium, near 450 iron, near 130 lead.",
+    "For a mixing problem, compute the heat capacities m₁c₁ and m₂c₂ first and treat them as the weights; a mass-weighted average is almost always wrong.",
+    "The single conversion 1 cal/g·°C = 4184 J/kg·K absorbs both the calorie factor and the gram-to-kilogram factor."
+  ],
+  "examNotes": [
+    "Two to three mark numericals on finding an unknown c from a heated block or a cooling curve appear in most papers.",
+    "The mixing formula is a regular 5 mark question, often with a copper or aluminium block dropped into water and the equilibrium temperature measured.",
+    "One-mark recall questions ask for the specific heat of water in SI and CGS units, and for the definition of specific heat capacity as an intensive property.",
+    "Expect a comparison question: why water is used as a coolant, or why a coastal city has smaller temperature swings than an inland one."
+  ],
+  "practiceQuestions": [
+    "A metal receives 500 J and its 0.2 kg mass rises by 10 °C. What is its specific heat capacity, and which metal does it suggest?",
+    "How much heat is needed to raise 3 kg of aluminium from 20 °C to 100 °C, and how does this compare with the same mass of water?",
+    "Find the equilibrium temperature when 0.5 kg of copper at 90 °C is mixed with 0.2 kg of water at 20 °C.",
+    "A 0.1 kg metal at 100 °C dropped into 0.3 kg of water at 15 °C gives an equilibrium of 18 °C. Identify the metal.",
+    "Convert 0.215 cal/g·°C into J/kg·K and account for both factors in the conversion."
+  ],
+  "mcs": [
+    {
+      "question": "Specific heat capacity c is the heat required to raise the temperature of:",
+      "options": [
+        "Any body by 1 K",
+        "1 kg of a substance by 1 K",
+        "1 kg of water specifically by 1 K",
+        "1 m³ of a substance by 1 K"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which statement about specific heat capacity is correct?",
+      "options": [
+        "It is an extensive property that doubles when the mass doubles",
+        "It is an intensive property fixed by the material alone",
+        "It is the same for ice, water and steam",
+        "It is always larger for gases than for liquids"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "500 J raises 0.2 kg of a metal by 10 °C. Its specific heat capacity is:",
+      "options": [
+        "25 J/kg·K",
+        "100 J/kg·K",
+        "250 J/kg·K",
+        "2500 J/kg·K"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The specific heat capacity of water is approximately:",
+      "options": [
+        "140 J/kg·K",
+        "390 J/kg·K",
+        "2100 J/kg·K",
+        "4200 J/kg·K"
+      ],
+      "answer": "D"
+    }
+  ]
 }

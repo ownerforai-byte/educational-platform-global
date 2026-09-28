@@ -117,7 +117,7 @@ export default function CreditsPage() {
                   <p className="text-xs text-muted-foreground">Explore isolated science branches, sub-branches &amp; exam traps</p>
                 </div>
                 <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-green-500/10 text-green-600 dark:text-green-400">
-                  FREE / Unlimited
+                  FREE / No limits
                 </span>
               </div>
 
@@ -127,7 +127,7 @@ export default function CreditsPage() {
                   <p className="text-xs text-muted-foreground">Atomic radii, electron affinities &amp; high-yield chemistry traps</p>
                 </div>
                 <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-green-500/10 text-green-600 dark:text-green-400">
-                  FREE / Unlimited
+                  FREE / No limits
                 </span>
               </div>
 
@@ -137,13 +137,13 @@ export default function CreditsPage() {
                   <p className="text-xs text-muted-foreground">Class 11 &amp; 12 NEB calculus proofs &amp; mechanics derivations</p>
                 </div>
                 <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-green-500/10 text-green-600 dark:text-green-400">
-                  FREE / Unlimited
+                  FREE / No limits
                 </span>
               </div>
 
               <div className="flex items-center justify-between py-2.5">
                 <div>
-                  <p className="font-semibold text-foreground">AI Tutor Instant Explanations</p>
+                  <p className="font-semibold text-foreground">Captain Instant Explanations</p>
                   <p className="text-xs text-muted-foreground">Step-by-step problem solver &amp; doubt clearing</p>
                 </div>
                 <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400">
@@ -281,7 +281,7 @@ export default function CreditsPage() {
               <div>
                 <p className="font-medium">Want Premium Access?</p>
                 <p className="text-sm text-muted-foreground">
-                  Contact the owner to get premium status and unlimited features.
+                  Contact the owner to get premium status and full access.
                 </p>
               </div>
             </div>

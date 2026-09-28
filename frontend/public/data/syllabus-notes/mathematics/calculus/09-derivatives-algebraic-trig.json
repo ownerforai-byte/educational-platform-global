@@ -1,85 +1,118 @@
 {
-  "title": "Derivatives of Algebraic & Trig Functions",
   "unitSlug": "calculus",
+  "title": "Derivatives: Algebraic and Trigonometric Functions",
+  "topicTitle": "Derivatives: algebraic and trigonometric functions",
   "topicSlug": "derivatives-algebraic-trig",
-  "topicTitle": "Derivatives of Algebraic & Trig Functions",
   "relevance": 100,
   "notes": [
-    "**Derivatives of Algebraic & Trig Functions:** Class 11 concept.",
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
+    "**The algebraic core:** constant ($\\frac{d}{dx}c=0$), sum/difference, product $\\frac{d}{dx}uv = u'v+uv'$, quotient $\\frac{d}{dx}\\frac{u}{v}=\\frac{u'v-uv'}{v^2}$, and power $\\frac{d}{dx}x^n = nx^{n-1}$.",
+    "**The power rule generalises to any real exponent** for $x>0$: $\\frac{d}{dx}x^a = ax^{a-1}$, so $x^{-1/2}$ gives $-\\frac12x^{-3/2}$ and $x^{1/3}$ gives $\\frac13x^{-2/3}$. The domain restriction $x>0$ is what makes negative bases illegal in general.",
+    "**The quotient rule's order is the whole difficulty:** the denominator's own derivative multiplies the second term with a MINUS sign, $\\frac{u'v - uv'}{v^2}$. A mnemonic that works is 'low d-high minus high d-low, over low squared'.",
+    "**Trigonometric derivatives are ratios of the next function:** $\\frac{d}{dx}\\sin x = \\cos x$, $\\frac{d}{dx}\\cos x = -\\sin x$, $\\frac{d}{dx}\\tan x = \\sec^2x$, and the cotangent and secant forms follow the same 'derivative over itself squared' pattern. All assume $x$ in RADIANS.",
+    "**The sine and cosine derivatives swap and change sign,** and every other trigonometric derivative is built from them: $\\frac{d}{dx}\\sec x = \\sec x\\tan x$ and $\\frac{d}{dx}\\csc x = -\\csc x\\cot x$. Forgetting the minus on cosine is the single most common slip in this table.",
+    "**Derivatives of nested forms need the chain rule:** $\\frac{d}{dx}\\sin^2x = 2\\sin x\\cos x = \\sin 2x$ and $\\frac{d}{dx}(3x+1)^5 = 15(3x+1)^4$. Treating $\\sin^2x$ as $\\sin(x^2)$ is a misreading, since the exponent applies to the VALUE."
   ],
   "confusion": [
-    "Distinguish concepts in Derivatives of Algebraic & Trig Functions.",
-    "Check formula conditions."
+    "Forgetting the negative sign on $\\frac{d}{dx}\\cos x$ and on $\\frac{d}{dx}\\csc x$.",
+    "Reversing the quotient rule to $\\frac{uv'-u'v}{v^2}$.",
+    "Writing $\\sin^2x$ as $\\sin(x^2)$ — the exponent squares the value, not the argument.",
+    "Applying these rules in degrees; the standard derivatives assume radians."
   ],
-  "practice": [
-    "Solve 5 problems on Derivatives of Algebraic & Trig Functions.",
-    "Derive the key formula for Derivatives of Algebraic & Trig Functions."
-  ],
+  "practice": [],
   "universalFacts": [
-    "Derivatives of Algebraic & Trig Functions appears in exams.",
-    "Foundational for advanced topics."
+    "The derivatives of sine and cosine are only these simple values in radians; in degrees a factor of $\\frac{\\pi}{180}$ is required, which is why physics and calculus always work in radians.",
+    "The quotient rule is genuinely the derivative of a reciprocal: $\\frac{d}{dx}\\frac1{u}=-\\frac{u'}{u^2}$ follows by setting $v=1$, a check worth using to verify signs."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [
-    "Application of Derivatives of Algebraic & Trig Functions",
-    "Numerical problem on Derivatives of Algebraic & Trig Functions",
-    "Daily life use of Derivatives of Algebraic & Trig Functions"
-  ],
-  "practiceQuestions": [
-    "Q1. Define Derivatives of Algebraic & Trig Functions.",
-    "Q2. Key formula for Derivatives of Algebraic & Trig Functions.",
-    "Q3. Problem on Derivatives of Algebraic & Trig Functions."
-  ],
+  "examples": [],
+  "practiceQuestions": [],
   "formulas": [
-    "Formula for Derivatives of Algebraic & Trig Functions: [insert from textbook].",
-    "Key relationship: [variable formula]."
+    "Power: $\\frac{d}{dx}x^n = nx^{n-1}$",
+    "Product: $\\frac{d}{dx}uv = u'v + uv'$",
+    "Quotient: $\\frac{d}{dx}\\frac{u}{v} = \\frac{u'v - uv'}{v^2}$",
+    "Reciprocal check: $\\frac{d}{dx}\\frac1u = -\\frac{u'}{u^2}$",
+    "Trig: $(\\sin x)'=\\cos x$, $(\\cos x)'=-\\sin x$, $(\\tan x)'=\\sec^2x$, $(\\cot x)'=-\\csc^2x$",
+    "Chain cases: $(\\sin^2x)'=2\\sin x\\cos x$, $((3x+1)^5)'=15(3x+1)^4$"
   ],
   "keyPoints": [
-    "Core principle of Derivatives of Algebraic & Trig Functions",
-    "Application of Derivatives of Algebraic & Trig Functions",
-    "Connection of Derivatives of Algebraic & Trig Functions to other topics"
+    "Product rule ADDS; quotient rule subtracts with the order $u'v - uv'$.",
+    "The cosine derivative carries a minus sign, and so does csc.",
+    "All standard derivatives assume x in radians."
   ],
-  "summary": "Derivatives of Algebraic & Trig Functions covers essential principles and applications.",
+  "summary": "The rule table is built from the power, product and quotient rules, with trigonometric derivatives following the 'derivative over itself squared' pattern. The order of the two terms in the quotient rule, and the minus sign on the cosine derivative, are the two details that most often cost marks. Nested expressions such as $\\sin^2x$ require the chain rule, and the exponent applies to the value rather than the argument.",
   "specialNotes": [
-    "Check conditions for Derivatives of Algebraic & Trig Functions.",
-    "Derivatives of Algebraic & Trig Functions connects to other topics."
+    "Where a formula is quoted it is valid only under the conditions stated; Forgetting the negative sign on $\\frac{d}{dx}\\cos x$ and on $\\frac{d}{dx}\\csc x$.",
+    "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Derivatives of Algebraic & Trig Functions",
-    "Statement 2: Theorem related to Derivatives of Algebraic & Trig Functions",
-    "Statement 3: Condition for Derivatives of Algebraic & Trig Functions to be valid",
-    "Statement 4: Principle governing Derivatives of Algebraic & Trig Functions",
-    "Statement 5: Corollary or consequence of Derivatives of Algebraic & Trig Functions"
+    "Statement 1: $\\frac{d}{dx}x^n = nx^{n-1}$ for $x>0$.",
+    "Statement 2: The quotient rule gives $\\frac{u'v - uv'}{v^2}$.",
+    "Statement 3: $\\frac{d}{dx}\\cos x = -\\sin x$.",
+    "Statement 4: $\\frac{d}{dx}\\tan x = \\sec^2x$.",
+    "Statement 5: These derivatives are valid for arguments measured in radians."
   ],
   "importantNotes": [
-    "Derivatives of Algebraic & Trig Functions is based on fundamental principles."
+    "Topic anchor: Derivatives of nested forms need the chain rule  $ frac{d}{dx} sin^2x = 2 sin x cos x =  sin 2x$ and $ frac{d}{dx}(3x+1)^5 = 15(3x+1)^4$."
   ],
   "examShortTricks": [
-    "Recall the formula for Derivatives of Algebraic & Trig Functions."
+    "Check the quotient rule with the reciprocal case: differentiate $1/u$ and it should give $-u'/u^2$.",
+    "Write $\\sin^2x$ as $(\\sin x)^2$ on paper — it removes the argument/value confusion instantly."
   ],
   "examNotes": [
-    "Focus on Derivatives of Algebraic & Trig Functions problems - significant marks."
+    "Differentiating a product, quotient or nested trigonometric form is the most common 3-mark derivative question."
   ],
   "mcs": [
     {
-      "question": "Which describes Derivatives of Algebraic & Trig Functions?",
+      "question": "$\\frac{d}{dx}\\cos x$ is:",
       "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
+        "$\\sin x$",
+        "$-\\sin x$",
+        "$\\sec x\\tan x$",
+        "$-\\cos x$"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "The sine and cosine derivatives swap and the cosine derivative takes a negative sign."
+    },
+    {
+      "question": "If $y=\\frac{u}{v}$, then $y'$ is:",
+      "options": [
+        "$\\frac{u'v'}{v^2}$",
+        "$\\frac{u'v+uv'}{v^2}$",
+        "$\\frac{u'v-uv'}{v^2}$",
+        "$\\frac{v'}{u'v}$"
+      ],
+      "answer": "C",
+      "explanation": "The quotient rule gives low-d-high minus high-d-low, all over low squared."
+    },
+    {
+      "question": "$\\frac{d}{dx}(\\sin x)^2$ is:",
+      "options": [
+        "$2\\cos x$",
+        "$2\\sin x\\cos x$",
+        "$\\cos^2x$",
+        "$2x\\cos x$"
+      ],
+      "answer": "B",
+      "explanation": "Chain rule with outer $u^2$ gives $2\\sin x\\cdot\\cos x$, which equals $\\sin 2x$."
     }
   ],
   "importantConcepts": [
-    "Definition and significance of Derivatives of Algebraic & Trig Functions."
+    "Product rule ADDS; quotient rule subtracts with the order $u'v - uv'$.",
+    "The cosine derivative carries a minus sign, and so does csc.",
+    "All standard derivatives assume x in radians."
   ],
   "importantTasks": [
-    "Solve 5 problems on Derivatives of Algebraic & Trig Functions."
+    "Work through the authored practice problems and re-derive each key formula from the definition."
   ],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "visualType": "derivative",
+  "numericals": [
+    "**1. [Idea: first principles on a rational function with a removable hole]** Find the derivative of $f(x)=\\dfrac{x^2-9}{x-3}$ at $x=5$, and state at which points $f$ is not differentiable.\\newline\\newline**Solution: at 5 the hole is irrelevant**, so simplify first: $f(x)=x+3$ for $x\\ne3$, hence $f'(5)=1$.\\newline\\newline**Domain analysis:** $f$ is undefined at $x=3$, so $f'(3)$ does not exist — this is a domain failure, not a limit failure.$^{\\bullet}$ Re-examine $x=3$ after repairing: with $f(3)=6$ the function is $x+3$ everywhere and $f'(3)=1$.\\newline\\newline**Answer:** $f'(5)=1$; the original $f$ is not differentiable at $3$ only because it is undefined there. **Trap:** students who do not simplify try first principles and hit $\\frac{(x+3)-6}{x-3}$ — the same trap, just slower.",
+    "**2. [Idea: first principles for a radical, where rationalising is mandatory]** Differentiate $f(x)=\\sqrt{x}$ from first principles, and hence find $f'(4)$.\\newline\\newline**Solution:**$^{\\bullet}$ $f'(x)=\\lim_{h\\to0}\\dfrac{\\sqrt{x+h}-\\sqrt{x}}{h}$.\\newline\\newline$^{\\bullet}$ Multiply by the conjugate, $\\frac{\\sqrt{x+h}+\\sqrt{x}}{\\sqrt{x+h}+\\sqrt{x}}$:$\\newline\\lim_{h\\to0}\\dfrac{(x+h)-x}{h\\left(\\sqrt{x+h}+\\sqrt{x}\\right)} = \\lim_{h\\to0}\\dfrac{1}{\\sqrt{x+h}+\\sqrt{x}}$.\\newline\\newline$^{\\bullet}$ Letting $h\\to0$: $f'(x)=\\dfrac{1}{2\\sqrt{x}}$.\\newline\\newline**Answer:** $f'(x)=\\frac{1}{2\\sqrt{x}}$ for $x>0$, so $f'(4)=\\frac{1}{4}$. **Note:** the expression is undefined at $x=0$ — the square-root function has an infinite slope there, a vertical tangent, consistent with $f'(x)\\to\\infty$.",
+    "**3. [Idea: implicit differentiation, then eliminate to a function of one variable]** For $x^2 + y^2 = 9$, find $\\frac{dy}{dx}$ and the slope of the tangent at the point $(0,3)$.\\newline\\newline**Solution:** Differentiate throughout, treating $y$ as a function of $x$:$^{\\bullet}$ $2x + 2y\\dfrac{dy}{dx} = 0$, so $\\dfrac{dy}{dx} = -\\dfrac{x}{y}$.\\newline\\newline**At $(0,3)$:** the formula gives $-\\frac03 = 0$, so the tangent is **horizontal** there.\\newline\\newline**Why the formula is not a constant slope:** the circle is not a graph of a single function globally — the top half is $y=\\sqrt{9-x^2}$ and the bottom is $-\\sqrt{9-x^2}$, with opposite slopes.\\newline\\newline**Answer:** $\\frac{dy}{dx}=-\\frac{x}{y}$; slope at $(0,3)$ is $0$. **Contrast:** at $(3,0)$ the formula divides by $y=0$, correctly signalling a **vertical** tangent.",
+    "**4. [Idea: a parametric curve whose parameter cancels, with a vertical-tangent check]** A curve is $x = 3t - t^3$, $y = 3t^2$. Find $\\frac{dy}{dx}$ and where the tangent is vertical.\\newline\\newline**Solution:**$^{\\bullet}$ $\\dfrac{dx}{dt} = 3 - 3t^2$ and $\\dfrac{dy}{dt} = 6t$.$^{\\bullet}$ $\\dfrac{dy}{dx} = \\dfrac{6t}{3-3t^2} = \\dfrac{2t}{1-t^2}$.\\newline\\newline**Horizontal tangent** ($\\frac{dy}{dx}=0$): $2t=0 \\Rightarrow t=0$, giving the point $(0,0)$.\\newline\\newline**Vertical tangent** ($\\frac{dx}{dt}=0$): $3-3t^2=0 \\Rightarrow t=\\pm1$, giving points $(2,3)$ and $(-2,3)$.\\newline\\newline**Answer:** $\\frac{dy}{dx}=\\frac{2t}{1-t^2}$; horizontal tangent at $t=0$, vertical at $t=\\pm1$. **Trap:** finding a vertical tangent by setting $\\frac{dy}{dx}$ infinite without checking that $\\frac{dx}{dt}$ is genuinely zero.",
+    "**5. [Idea: a second implicit derivative needs the original relation substituted at the end]** For $x^2+y^2 = 25$, obtain $\\frac{d^2y}{dx^2}$ in terms of $y$ alone.\\newline\\newline**Solution:** From part 3, $\\dfrac{dy}{dx} = -\\dfrac{x}{y}$. Differentiate this fraction — do NOT re-derive from scratch:$^{\\bullet}$ $\\dfrac{d}{dx}\\left(-xy^{-1}\\right) = -\\left[\\left(\\frac{dx}{dx}\\right)y^{-1} + x\\left(\\frac{d}{dx}y^{-1}\\right)\\right]$.\\newline\\newline$^{\\bullet}$ Since $\\frac{d}{dx}y^{-1} = -y^{-2}\\dfrac{dy}{dx} = -y^{-2}\\left(-\\frac{x}{y}\\right) = \\dfrac{x}{y^3}$:$\\newline\\frac{d^2y}{dx^2} = -\\left[\\frac{1}{y} + x\\cdot\\frac{x}{y^3}\\right] = -\\frac{y^2 + x^2}{y^3}$.\\newline\\newline$^{\\bullet}$ Finally substitute $x^2+y^2=25$ to remove $x$: $\\dfrac{d^2y}{dx^2} = -\\dfrac{25}{y^3}$.\\newline\\newline**Answer:** $\\frac{d^2y}{dx^2}=-\\frac{r^2}{y^3}=-\\frac{25}{y^3}$ for a circle of radius $r=5$.\\newline\\newline**Check at the top $(0,5)$:** $-\\frac{25}{125}=-\\frac15$, so the top of the circle is concave down with $|f''|=\\frac{1}{5}$ — exactly $\\frac1r$, as a circle of curvature $r$ requires. **Trap:** writing $625$ by squaring $25$ again; the $25$ is already $r^2$.",
+    "**6. [Idea: logarithmic differentiation for a variable exponent]** Differentiate $y = x^x$ and hence find the stationary point of $y=\\dfrac{x^x}{e^x}$ for $x>0$.\\newline\\newline**Solution:** Differentiate $y=x^x$ by taking logs:$^{\\bullet}$ $\\ln y = x\\ln x$, so $\\dfrac{1}{y}\\dfrac{dy}{dx} = \\ln x + 1$.$^{\\bullet}$ Hence $\\dfrac{dy}{dx} = x^x(\\ln x + 1)$.\\newline\\newline**Now** $g(x)=\\dfrac{x^x}{e^x} = x^x e^{-x}$, so $\\dfrac{d}{dx}\\ln g = (\\ln x + 1) - 1 = \\ln x$.\\newline\\newlineSo $g'(x) = g(x)\\ln x$, which vanishes when $\\ln x = 0$, i.e. $x=1$.\\newline\\newline**Answer:** $\\frac{dy}{dx}=x^x(\\ln x+1)$; the stationary point of $g$ is $x=1$. **Verification:** $g(1)=1\\cdot e^{-1}=e^{-1}$, and $g' = g\\ln x$ changes from negative ($x<1$) to positive ($x>1$), confirming a minimum."
+  ]
 }

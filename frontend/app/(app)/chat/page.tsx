@@ -2,9 +2,9 @@ import type { Metadata } from "next";
 import { TutorConsole } from "@/components/ai/tutor-console";
 
 export const metadata: Metadata = {
-  title: "AI Tutor & Study Assistant — NEB Science",
+  title: "Captain & Study Assistant — NEB Science",
   description:
-    "Ravikisan's AI Tutor — ask any NEB Class 11 & 12 doubt and get a curriculum-aligned answer with formulas, derivations and study tips.",
+    "Ravikisan's Captain — ask any NEB Class 11 & 12 doubt and get a curriculum-aligned answer with formulas, derivations and study tips.",
 };
 
 /**

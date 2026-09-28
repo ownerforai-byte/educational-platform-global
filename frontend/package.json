@@ -10,6 +10,7 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest",
     "test:run": "vitest run",
+    "content:validate": "vitest run tests/lib/content/schema-corpus.test.ts",
     "postinstall": "node scripts/patch-rehype-katex.cjs"
   },
   "dependencies": {

@@ -5,87 +5,122 @@
   "topicTitle": "Capacitance and capacitor",
   "relevance": 100,
   "notes": [
-    "**Capacitance and Capacitor:** Class 11 concept.",
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
+    "**Capacitance definition:** Capacitance $C$ of a conductor is the ratio of electric charge $Q$ given to it to the resulting increase in its electrostatic potential $V$: $C = \\frac{Q}{V}$. It is a scalar quantity measuring the conductor's capacity to hold electric charge without electrical breakdown of surrounding insulating medium.",
+    "**SI Unit and Dimensions:** The SI unit of capacitance is the farad (F), where $1\\text{ F} = 1\\text{ C/V} = 1\\text{ C}^2\\text{J}^{-1}$. Because 1 farad is enormous, practical submultiples are microfarad ($1\\,\\mu\\text{F} = 10^{-6}\\text{ F}$), nanofarad ($1\\text{ nF} = 10^{-9}\\text{ F}$), and picofarad ($1\\text{ pF} = 10^{-12}\\text{ F}$). The dimensional formula is $[M^{-1}L^{-2}T^4I^2]$.",
+    "**Isolated Spherical Conductor:** For an isolated conducting sphere of radius $R$ carrying charge $Q$ in vacuum, potential at its surface is $V = \\frac{1}{4\\pi\\varepsilon_0}\\frac{Q}{R}$. Therefore its capacitance is $C = \\frac{Q}{V} = 4\\pi\\varepsilon_0 R$. For Earth ($R \\approx 6.4 \\times 10^6\\text{ m}$), $C = 4\\pi(8.854 \\times 10^{-12})(6.4 \\times 10^6) \\approx 711\\,\\mu\\text{F}$, showing an isolated conductor cannot achieve huge capacitance in a compact space.",
+    "**Principle of a Capacitor:** A capacitor consists of two conductors separated by an insulator/dielectric. When an insulated metal plate $A$ is given a positive charge $+Q$, its potential rises to $V$. Bringing an uncharged grounded plate $B$ close to $A$ induces negative charge on the near face of $B$ and positive charge on the far face. The positive charge flows to earth, leaving only negative charge on $B$. This negative charge lowers the potential of plate $A$ while holding charge $Q$ constant, thereby drastically increasing capacitance $C = Q/V$.",
+    "**Factors Affecting Capacitance:** Capacitance depends purely on geometric factors and intervening medium: (1) Area of the plates ($C \\propto A$), (2) Separation between plates ($C \\propto 1/d$), and (3) Relative permittivity or dielectric constant of the insulating medium ($C \\propto \\varepsilon_r$). It is strictly independent of $Q$ and $V$.",
+    "**Role in Circuits:** Capacitors block direct current (DC) after fully charging, while allowing alternating current (AC) to pass through continuous charging and discharging cycles. They are essential for filtering power supplies, tuning radio receivers, pulse power delivery, and flash photography."
   ],
   "confusion": [
-    "Distinguish concepts in Capacitance and Capacitor.",
-    "Check formula conditions."
+    "Thinking $C$ depends on $Q$ or $V$: Although $C = Q/V$, capacitance is an intrinsic geometric and material property. Doubling $Q$ doubles $V$ proportionally, leaving $C$ constant (analogous to resistance $R = V/I$).",
+    "Believing an isolated conductor cannot store charge: An isolated conductor is actually a capacitor whose second plate is imagined to be an infinitely large conducting sphere at infinity ($V_\\infty = 0$).",
+    "Confusing plate charge with total capacitor charge: The net charge on a charged capacitor is $+Q + (-Q) = 0$. When we refer to charge on a capacitor, we strictly mean the magnitude of charge on either single plate.",
+    "Assuming capacitance changes when disconnected: Once disconnected from a battery, charge $Q$ remains trapped and conserved. Any geometric alteration changes potential $V$ and capacitance $C$, but not $Q$."
   ],
   "practice": [
-    "Solve 5 problems on Capacitance and Capacitor.",
-    "Derive the key formula for Capacitance and Capacitor."
+    "An isolated spherical conductor of capacitance $1\\text{ pF}$ is placed in air. Calculate its radius. Solution: $C = 4\\pi\\varepsilon_0 R \\implies R = \\frac{C}{4\\pi\\varepsilon_0} = (10^{-12}\\text{ F}) \\times (9 \\times 10^9\\text{ N m}^2/\\text{C}^2) = 9 \\times 10^{-3}\\text{ m} = 9\\text{ mm}$.",
+    "A conductor acquires a potential of $250\\text{ V}$ when a charge of $5\\,\\mu\\text{C}$ is supplied. Find its capacitance. Solution: $C = \\frac{Q}{V} = \\frac{5 \\times 10^{-6}\\text{ C}}{250\\text{ V}} = 2 \\times 10^{-8}\\text{ F} = 20\\text{ nF} = 0.02\\,\\mu\\text{F}$.",
+    "What potential is required to store $0.1\\text{ C}$ of charge on a $50\\,\\mu\\text{F}$ capacitor? Solution: $V = \\frac{Q}{C} = \\frac{0.1\\text{ C}}{50 \\times 10^{-6}\\text{ F}} = 2000\\text{ V} = 2\\text{ kV}$."
   ],
   "universalFacts": [
-    "Capacitance and Capacitor appears in exams.",
-    "Foundational for advanced topics."
+    "One farad is such a tremendous capacitance that an isolated spherical conductor would require a radius of $9 \\times 10^9\\text{ m}$, about 14 times the radius of the Sun.",
+    "Supercapacitors achieve thousands of farads in pocket-sized packages by utilizing porous carbon with internal surface areas exceeding $2000\\text{ m}^2/\\text{g}$ and sub-nanometer Helmholtz layer separations.",
+    "The net electric charge of any operational capacitor as a whole system is strictly zero at all times.",
+    "Capacitors store electrostatic energy in the electric field between plates, unlike chemical batteries which store energy in chemical bond rearrangements."
   ],
   "animation3D": "capacitor",
   "motionGraphics": "capacitor",
   "examples": [
-    "Application of Capacitance and Capacitor",
-    "Numerical problem on Capacitance and Capacitor",
-    "Daily life use of Capacitance and Capacitor"
+    "Camera flash unit: Slowly charges a 330 μF capacitor to 300 V from a small battery and discharges the stored energy across a xenon tube in a millisecond pulse.",
+    "Tuning circuit: A variable air capacitor changes plate overlap area to match LC resonance frequency with radio transmission frequency f = 1 / (2π√(LC)).",
+    "Computer memory (DRAM): Each single dynamic RAM bit stores information as charge (or absence of charge) in a microscopic capacitor."
   ],
   "practiceQuestions": [
-    "Q1. Define Capacitance and Capacitor.",
-    "Q2. Key formula for Capacitance and Capacitor.",
-    "Q3. Problem on Capacitance and Capacitor."
+    "Q1. Define capacitance of a conductor and state its SI unit and dimensional formula.",
+    "Q2. Explain the principle of a capacitor with the help of neat schematics.",
+    "Q3. Calculate the capacitance of an isolated spherical conductor of radius equal to the Earth (R = 6400 km).",
+    "Q4. Why does grounding the second plate drastically increase the capacitance of a parallel plate arrangement?"
   ],
   "formulas": [
-    "Formula for Capacitance and Capacitor: [insert from textbook].",
-    "Key relationship: [variable formula]."
+    "Fundamental definition: $C = \\frac{Q}{V}$",
+    "Capacitance of isolated sphere: $C = 4\\pi\\varepsilon_0 \\varepsilon_r R$",
+    "Capacitance dimensions: $[M^{-1}L^{-2}T^4I^2]$",
+    "Reactance to AC: $X_C = \\frac{1}{\\omega C} = \\frac{1}{2\\pi f C}$"
   ],
   "keyPoints": [
-    "Core principle of Capacitance and Capacitor",
-    "Application of Capacitance and Capacitor",
-    "Connection of Capacitance and Capacitor to other topics"
+    "Capacitance C = Q/V is an invariant characteristic of conductor shape, area, separation, and dielectric medium.",
+    "Grounding the outer plate creates an opposite induced bound charge that depresses potential, allowing far greater charge retention.",
+    "1 Farad = 1 Coulomb / Volt; practical values span microfarads to picofarads.",
+    "The net charge on any capacitor is zero; stored charge Q refers to magnitude on either plate."
   ],
-  "summary": "Capacitance and Capacitor covers essential principles and applications.",
+  "summary": "Capacitance measures a conductor's capacity to accumulate electrostatic charge per unit electrical potential (C = Q/V). A capacitor overcomes the geometric limitation of isolated conductors by placing an earthed conductor adjacent to a charged plate, which suppresses potential through induced charges and dramatically multiplies charge storage capacity at low voltages.",
   "specialNotes": [
-    "Check conditions for Capacitance and Capacitor.",
-    "Capacitance and Capacitor connects to other topics."
+    "Standard dielectric breakdown of dry air occurs at an electric field of E_max ≈ 3 × 10^6 V/m; beyond this, air ionizes and spark discharge neutralizes the plates.",
+    "In electrostatic equilibrium, the surface of any conducting capacitor plate is an equipotential surface."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Capacitance and capacitor",
-    "Statement 2: Theorem related to Capacitance and capacitor",
-    "Statement 3: Condition for Capacitance and capacitor to be valid",
-    "Statement 4: Principle governing Capacitance and capacitor",
-    "Statement 5: Corollary or consequence of Capacitance and capacitor"
+    "Statement 1: Capacitance is defined as the charge required to raise the electric potential of a conductor by unity.",
+    "Statement 2: The capacitance of an isolated conductor is directly proportional to its radius (C = 4πε₀R).",
+    "Statement 3: An uncharged earthed conducting body placed near a charged body reduces its potential without altering its charge, multiplying its capacitance.",
+    "Statement 4: Capacitance is independent of the metal chosen for the plates, depending solely on geometric configuration and the surrounding dielectric medium.",
+    "Statement 5: A capacitor acts as an open circuit for steady direct current (DC) and a finite reactance for alternating current (AC)."
   ],
   "importantNotes": [
-    "Capacitance and Capacitor is based on fundamental principles."
+    "Always check whether a capacitor remains connected to a DC source (V constant, Q variable) or is isolated (Q constant, V variable) before evaluating modifications."
   ],
   "examShortTricks": [
-    "Recall the formula for Capacitance and Capacitor."
+    "Isolated conductor: R = 9 mm ⟺ C = 1 pF; multiply radius in meters by 1.11 × 10⁻¹⁰ to get Farads directly.",
+    "Remember mnemonic: Q = CV ('Quickly Charged Voltage')."
   ],
   "examNotes": [
-    "Focus on Capacitance and Capacitor problems - significant marks."
+    "NEB exam frequently asks for the derivation of capacitance of an isolated spherical conductor and the physical principle of a parallel plate capacitor (3 to 4 marks)."
   ],
   "mcs": [
     {
-      "question": "Which describes Capacitance and Capacitor?",
+      "question": "If the charge on a capacitor is doubled, its capacitance:",
       "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
+        "is doubled",
+        "is halved",
+        "remains unchanged",
+        "quadruples"
       ],
-      "answer": "A"
+      "answer": "C",
+      "explanation": "Capacitance is determined solely by geometry and dielectric medium. When charge Q is doubled, potential difference V doubles proportionally, leaving C = Q/V invariant."
+    },
+    {
+      "question": "The dimensional formula of capacitance is:",
+      "options": [
+        "[M⁻¹ L⁻² T⁴ I²]",
+        "[M¹ L² T⁻⁴ I⁻²]",
+        "[M⁻¹ L⁻² T² I²]",
+        "[M¹ L² T⁻² I¹]"
+      ],
+      "answer": "A",
+      "explanation": "From C = Q/V = Q² / W = (I·T)² / (M·L²·T⁻²) = M⁻¹ L⁻² T⁴ I²."
+    },
+    {
+      "question": "The capacitance of the Earth modeled as an isolated conducting sphere of radius 6400 km is approximately:",
+      "options": [
+        "1 F",
+        "711 μF",
+        "9000 μF",
+        "6400 μF"
+      ],
+      "answer": "B",
+      "explanation": "C = 4πε₀R = (6.4 × 10⁶) / (9 × 10⁹) ≈ 7.11 × 10⁻⁴ F = 711 μF."
     }
   ],
   "importantConcepts": [
-    "Definition and significance of Capacitance and Capacitor."
+    "Definition of capacitance as charge per unit potential difference: C = Q/V.",
+    "Derivation of capacitance of an isolated spherical conductor C = 4πε₀R.",
+    "Principle of capacitor using an earthed complementary conductor."
   ],
   "importantTasks": [
-    "Solve 5 problems on Capacitance and Capacitor."
+    "Derive C = 4πε₀R for an isolated sphere.",
+    "State the units, dimensions, and physical factors determining capacitance.",
+    "Calculate the capacitance of Earth and explain why 1 Farad is practically unachievable for isolated objects."
   ],
   "duplicateType": 1,
-    "specificConditions": [
-      "**Linearity Constraint:** The relation Q = CV is valid only for linear dielectrics. If the material is nonlinear (e.g., certain ferroelectrics), capacitance C depends on the applied voltage V, requiring C = dQ/dV.",
-      "**Electrostatic Equilibrium:** Formulas assume the capacitor is in a steady state (electrostatic equilibrium), where potential difference is constant and no net current flows.",
-      "**Negligible Fringe Fields:** Standard formulas (like C = ε₀A/d) assume plate dimensions are much larger than the separation distance (A ≫ d²) to treat edge effects as negligible."
-    ],
   "visualType": "parallel-plate-capacitor"
 }

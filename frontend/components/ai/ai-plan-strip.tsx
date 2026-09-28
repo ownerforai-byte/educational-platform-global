@@ -63,7 +63,7 @@ export function AiPlanStrip() {
         {premium ? (
           <span className="inline-flex items-center gap-1.5 rounded-lg border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 font-bold text-amber-500">
             <Crown className="h-3.5 w-3.5" />
-            PRO — unlimited tutor
+            PRO — full tutor access
           </span>
         ) : (
           <span className="inline-flex items-center gap-1.5 rounded-lg border border-border/60 bg-card px-2 py-0.5 font-bold text-foreground">
@@ -74,7 +74,7 @@ export function AiPlanStrip() {
         )}
         <span className="text-muted-foreground">
           {premium
-            ? "No daily cap on AI replies."
+            ? "No daily cap on replies."
             : "Daily credits refill at midnight — one reply costs one credit."}
         </span>
       </span>

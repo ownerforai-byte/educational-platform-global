@@ -75,5 +75,85 @@
   "tabGroup": "Atomic-Structure-Learner-Notes",
   "source": "ravikishan",
   "duplicateType": 2,
-  "filename": "08-hydrogen-spectrum-origin-and-series.json"
+  "filename": "08-hydrogen-spectrum-origin-and-series.json",
+  "summary": "The five series of hydrogen are a series-by-series reference table. Each series is named by its lower level n₁ and all its lines end there: Lyman (n₁ = 1, ultraviolet, first line 121.6 nm, limit 91.2 nm, discovered 1906), Balmer (n₁ = 2, visible, Hα 656.3 nm, Hβ 486.1 nm, Hγ 434.0 nm, Hδ 410.2 nm, limit 364.6 nm, discovered 1885), Paschen (n₁ = 3, near infrared, first line 1875 nm, limit 820.4 nm), Brackett (n₁ = 4, infrared, 4051 nm, limit 1458 nm) and Pfund (n₁ = 5, far infrared, 7460 nm, limit 2279 nm), with a sixth Humphreys series at n₁ = 6. Within a series the lines crowd together and converge at the series limit, where ν̄ = R/n₁² and the atom is ionised. Counting rules: n − n₁ lines in one series, but n(n − 1)/2 lines in all of them from level n.",
+  "importantConcepts": [
+    "Series are named by the lower level n₁: Lyman 1, Balmer 2, Paschen 3, Brackett 4, Pfund 5, Humphreys 6",
+    "First members: Lyman 121.6 nm, Balmer 656.3 nm, Paschen 1875 nm, Brackett 4051 nm, Pfund 7460 nm",
+    "Series limits: 91.2, 364.6, 820.4, 1458 and 2279 nm, with ν̄_limit = R/n₁²",
+    "Line counting: n − n₁ lines within one series, n(n − 1)/2 lines from level n in the whole spectrum",
+    "Conversions: ΔE(eV) = 1240/λ(nm) and ΔE = 13.6(1/n₁² − 1/n₂²); wavelengths of hydrogen-like ions scale as 1/Z²"
+  ],
+  "importantStatements": [
+    "A series is named by its lower level n₁, not by the upper level that varies from line to line.",
+    "The Balmer series alone is visible, which is why it was discovered first in 1885, before the electron was known.",
+    "Within a series the lines converge at the series limit; they never spread apart.",
+    "The series limit is the convergence point where the atom is ionised and the spectrum becomes continuous.",
+    "He⁺ lines are four times as energetic as the corresponding hydrogen lines and appear at a quarter of the wavelength."
+  ],
+  "importantTasks": [
+    "Tabulate the five series of hydrogen with region, first member and series limit.",
+    "Calculate the number of spectral lines emitted when an electron de-excites from n = 6 to the ground state.",
+    "Calculate the series limit of the Paschen series from ν̄ = R/n₁².",
+    "Name the series whose lines fall in the visible region and identify its first line."
+  ],
+  "keyPoints": [
+    "Series-to-region map: Lyman UV, Balmer visible, Paschen near IR, Brackett and Pfund IR.",
+    "Memorise the three visible Balmer wavelengths 656.3, 486.1 and 434.0 nm — they recur in numericals.",
+    "The Lyman limit 91.2 nm is the ionisation threshold of ground-state hydrogen.",
+    "Hα at 656.3 nm is the reddest strong line in astronomy, used to map hydrogen nebulae."
+  ],
+  "specialNotes": [
+    "The series limit is a convergence point, not the strongest line of the series.",
+    "Fraunhofer catalogued over 570 solar lines in 1814, decades before Bohr explained them.",
+    "Beyond the limit the electron is free, so the continuous ionisation spectrum takes over."
+  ],
+  "examShortTricks": [
+    "Lines from level n: n(n − 1)/2 in total, but only n − n₁ within a single series.",
+    "Series limit = shortest wavelength of that series; set n₂ → ∞ in the Rydberg equation.",
+    "Shortest Balmer wavelength = 4/R = 364.6 nm — a frequent one-mark recall."
+  ],
+  "examNotes": [
+    "The series table with region, first member and limit is a standard 3–4 mark question.",
+    "Line counting from an excited level and series-limit calculations are the usual 2-mark numericals.",
+    "One-mark items test the visible series, the naming rule, or the meaning of the limit."
+  ],
+  "practiceQuestions": [
+    "Tabulate the five series of hydrogen with their regions, first members and series limits.",
+    "How many spectral lines are emitted when an electron de-excites from n = 6 to the ground state?",
+    "Calculate the series limit of the Paschen series.",
+    "Name the series lying in the visible region and identify its first line."
+  ],
+  "mcs": [
+    {
+      "question": "The first line of the Balmer series is produced by the transition:",
+      "options": [
+        "2 → 1",
+        "3 → 2",
+        "4 → 2",
+        "3 → 1"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The series limit of the Lyman series corresponds to:",
+      "options": [
+        "91.2 nm",
+        "121.6 nm",
+        "364.6 nm",
+        "656.3 nm"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The number of lines possible when an electron falls from n = 5 to the ground state is:",
+      "options": [
+        "4",
+        "5",
+        "10",
+        "20"
+      ],
+      "answer": "C"
+    }
+  ]
 }

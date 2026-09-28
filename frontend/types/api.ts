@@ -373,3 +373,64 @@ export interface GenerateQuestionsResponse {
   /** Guest pool only: the daily limit the remaining was measured against. */
   limit?: number;
 }
+
+/* ------------------------------------------------------------------ *
+ * ADDITIVE (perf/resilience pass, 2026-09-27).
+ * Types for the new caching + error-normalization layers. Every interface
+ * above is unchanged; these are new exports only.
+ * ------------------------------------------------------------------ */
+
+/**
+ * Generic error envelope the backend returns. Mirrors the fields
+ * `lib/api-client.ts` already reads off a failed response body.
+ */
+export interface ApiErrorEnvelope {
+  error: string;
+  /** Human-facing explanation ("You've used all 4 credits…"). */
+  message?: string;
+  /** Correlation id logged server-side and echoed as `x-error-id`. */
+  errorId?: string;
+  /** Machine-readable reason (e.g. PENDING_APPROVAL / ACCOUNT_REJECTED). */
+  code?: string;
+  /** Signed token that opens the /welcome status screen. */
+  statusToken?: string;
+}
+
+/** A value plus the cache metadata the additive layer tracks for it. */
+export interface CachedResponse<T> {
+  data: T;
+  /** Epoch ms when the value was stored. */
+  fetchedAt: number;
+  /** Age in ms at the time it was read. */
+  ageMs: number;
+  /** True once the fresh window has elapsed (a background refresh starts). */
+  isStale: boolean;
+}
+
+/** Conventional paginated payload (used by list endpoints in the docs). */
+export interface PaginatedResponse<T> {
+  items: T[];
+  total?: number;
+  page?: number;
+  pageSize?: number;
+  hasMore?: boolean;
+}
+
+/** Transport-level knobs shared by the additive helpers. */
+export interface RequestTuning {
+  /** Per-request timeout in ms; `0` disables the timeout. */
+  timeoutMs?: number;
+  /** Caller abort signal (unmount / route change). */
+  signal?: AbortSignal;
+  /** Retries for transient failures, in addition to the first attempt. */
+  retries?: number;
+}
+
+/** Options accepted by the additive `apiGet`-style prefetchers. */
+export interface PrefetchTuning extends RequestTuning {
+  /** Cache key variant (e.g. user id) so scoped reads never collide. */
+  variant?: string;
+  /** Never touch the cache — always hit the network. */
+  noStore?: boolean;
+}
+

@@ -1,0 +1,96 @@
+{
+  "file": "biology/environmental-issues/09-air-water-and-solid-waste-pollution.json",
+  "data": {
+    "summary": "Pollution of air, water and land arises from human activities and is described in three linked sections. Primary air pollutants such as SO2, NOx, CO and particulates are emitted directly, while secondary pollutants such as ground-level ozone and acid rain form in the atmosphere; acid rain arises when SO2 and NOx react with water vapour and is defined as rain with a pH below 5.6. Water pollution is classified as point source and non-point source, with eutrophication, high BOD and heavy metals such as mercury and lead as the major consequences. Solid waste is handled by landfilling, incineration, composting, recycling and the 3Rs, while the enhanced greenhouse effect, ozone depletion and the Montreal, Kyoto and Paris agreements explain global environmental change.",
+    "importantConcepts": [
+      "Primary versus secondary air pollutants",
+      "Acid rain and its pH threshold of 5.6",
+      "Point source and non-point source water pollution",
+      "Eutrophication and biochemical oxygen demand",
+      "Classification of solid waste and the 3Rs",
+      "Greenhouse gases and the enhanced greenhouse effect",
+      "Ozone depletion by CFCs and the Montreal Protocol"
+    ],
+    "importantStatements": [
+      "Primary pollutants are emitted directly, whereas secondary pollutants form in the atmosphere through chemical reactions.",
+      "Acid rain is caused by SO2 and NOx reacting with water vapour to form sulfuric and nitric acids, and it occurs when the rain pH is below 5.6.",
+      "CO2 is not the only greenhouse gas; CH4, N2O, CFCs and water vapour also contribute.",
+      "Stratospheric ozone protects the Earth from ultraviolet radiation, while ground-level ozone is a pollutant.",
+      "Global warming and ozone depletion are different problems with different causes and must not be confused.",
+      "The Montreal Protocol of 1987 phased out CFCs successfully, while the Kyoto Protocol of 1997 and the Paris Agreement of 2015 target greenhouse gas emissions."
+    ],
+    "importantTasks": [
+      "Distinguish primary from secondary pollutants, giving two examples of each.",
+      "Explain the cause and the effects of acid rain.",
+      "Describe how eutrophication changes an aquatic ecosystem.",
+      "Describe the mechanism of ozone layer depletion by CFCs and name the treaty that reduced them.",
+      "Classify a list of solid wastes as biodegradable, non-biodegradable or hazardous and suggest a disposal method for each."
+    ],
+    "keyPoints": [
+      "Primary pollutants: SO2, NOx, CO and particulates; secondary pollutants: ground-level ozone and acid rain.",
+      "Point source means a single identifiable outlet such as a factory pipe; non-point source means diffuse runoff from agricultural chemicals.",
+      "Organic waste raises the BOD, and excess nutrients cause eutrophication and algal blooms.",
+      "Heavy metals: mercury causes Minamata disease and lead is neurotoxic.",
+      "Solid waste methods: landfilling, incineration, composting, recycling and the 3Rs, reduce, reuse and recycle.",
+      "Greenhouse gases: CO2, CH4, N2O, CFCs and water vapour; the ozone hole over Antarctica was discovered in 1985."
+    ],
+    "specialNotes": [
+      "Ozone high in the atmosphere is protective, but the same gas at ground level is a respiratory pollutant.",
+      "CFCs cause ozone depletion, while CO2 and methane cause the enhanced greenhouse effect; the two are often mixed up.",
+      "Incineration reduces waste volume but can release harmful gases unless the emissions are filtered.",
+      "E-waste is the fastest-growing non-biodegradable category because of the toxic heavy metals in electronics.",
+      "Normal rain is already slightly acidic at about pH 5.6, so acid rain is rain that is more acidic than this natural level."
+    ],
+    "examShortTricks": [
+      "Remember 5.6: rain with a pH below 5.6 is acid rain, so rain that is already mildly acidic is normal.",
+      "Direct emission means primary and formation in the air means secondary, which is the fastest way to classify a pollutant.",
+      "Keep two separate lists: greenhouse gases are CO2, CH4, N2O, CFCs and water vapour, while ozone depletion is caused by CFCs.",
+      "Minamata means mercury, Itai-Itai means cadmium, and lead damage is neurological."
+    ],
+    "examNotes": [
+      "One-mark MCQs ask for the pollutant, the gas responsible, or the pH of acid rain.",
+      "Three-mark questions commonly ask for the cause and effects of acid rain, or the mechanism of ozone depletion.",
+      "Difference-type questions between global warming and ozone depletion are frequently set; give cause, mechanism and effect for each.",
+      "Diagrams of the ozone layer with UV rays, or a flow chart of solid waste management, score well."
+    ],
+    "practiceQuestions": [
+      "Explain the cause and the effects of acid rain.",
+      "What is the greenhouse effect, and which gases contribute to it?",
+      "Describe the mechanism of ozone layer depletion.",
+      "How does eutrophication affect an aquatic ecosystem?",
+      "Differentiate between point source and non-point source water pollution with examples."
+    ],
+    "mcs": [
+      {
+        "question": "Acid rain is caused mainly by",
+        "options": ["CO2 and methane", "CFCs and ozone", "SO2 and NOx", "Nitrous oxide only"],
+        "answer": "C",
+        "explanation": "Sulphur dioxide and nitrogen oxides react with water vapour in the atmosphere to form sulfuric and nitric acids, which fall as acid rain."
+      },
+      {
+        "question": "Rain is considered acid rain when its pH is",
+        "options": ["Below 5.6", "Above 7", "Above 8", "Exactly 7"],
+        "answer": "A",
+        "explanation": "Normal rain is already slightly acidic at about pH 5.6, so acid rain is defined as rain with a pH below 5.6."
+      },
+      {
+        "question": "Which of the following is a secondary air pollutant?",
+        "options": ["Carbon monoxide", "Sulphur dioxide", "Ground-level ozone", "Particulate matter"],
+        "answer": "C",
+        "explanation": "Ground-level ozone forms in the atmosphere from a reaction between nitrogen oxides and volatile organic compounds, so it is secondary."
+      },
+      {
+        "question": "The ozone hole was first discovered over",
+        "options": ["The Arctic", "Antarctica", "The Himalayas", "Europe"],
+        "answer": "B",
+        "explanation": "The Antarctic ozone hole was reported in 1985, and its cause was traced to CFCs released chlorine atoms that destroyed ozone."
+      },
+      {
+        "question": "Which gas is the main contributor to the enhanced greenhouse effect?",
+        "options": ["Carbon dioxide", "Oxygen", "Nitrogen", "Hydrogen"],
+        "answer": "A",
+        "explanation": "Carbon dioxide is the largest human-made contributor, although methane, nitrous oxide, CFCs and water vapour also trap heat."
+      }
+    ]
+  }
+}

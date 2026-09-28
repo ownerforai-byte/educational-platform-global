@@ -2,6 +2,8 @@
 
 import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
+// ADDITIVE (perf/resilience pass): normalized error funnel. Import only.
+import { reportClientError } from "@/lib/errors/app-error";
 
 export default function Error({
   error,
@@ -12,6 +14,16 @@ export default function Error({
 }) {
   useEffect(() => {
     console.error("Application error:", error);
+  }, [error]);
+
+  // ADDITIVE (perf/resilience pass): keeps the original console.error above
+  // untouched and adds kind/status/correlation-id classification, which is
+  // what makes a client report traceable to the backend log via `x-error-id`.
+  useEffect(() => {
+    reportClientError("app-error-boundary", error, {
+      digest: error.digest,
+      route: typeof window !== "undefined" ? window.location.pathname : undefined,
+    });
   }, [error]);
 
   return (

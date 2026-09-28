@@ -96,7 +96,7 @@ const P2: DerivationOrTheorem[] = [
     visualType: "tv-index-relations",
     specialCases: [
       { name: "Through parallel slab", condition: "Air–glass–air", formula: "i = e, \\; d = t\\frac{\\sin(i-r)}{\\cos r}", meaning: "Net bending zero; only lateral displacement." },
-      { name: "Normal incidence", condition: "i = 0", formula: "d = 0", meaning: "Ray passes straight through." },
+      { name: "Normal incidence through a slab", condition: "i = 0, slab of thickness t", formula: "d = 0", meaning: "No lateral shift at all — the ray travels along the normal, so a slab is invisible edge-on." },
       { name: "Thin layer sandwich", condition: "Multiple slabs", formula: "\\prod \\mu_{i+1,i}", meaning: "Chains telescope to first/last medium only." },
     ],
     solvedProblems: [

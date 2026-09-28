@@ -1,10 +1,135 @@
 {
-  "title": "capacitor Mindmap",
+  "title": "Capacitor Mindmap",
   "unitSlug": "capacitor",
   "topicSlug": "capacitor-mindmap",
-  "topicTitle": "capacitor — interactive concept map",
-  "relevance": 0,
+  "topicTitle": "Capacitor — Interactive Concept Map",
+  "relevance": 100,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "Comprehensive study of capacitance, parallel plate geometry, combinations, electrostatic energy, and dielectric polarization.",
+    "Covers core NEB formulas: C = Q/V, C = ε₀A/d, series/parallel networks, energy U = ½CV², and polarization P = χ_e ε₀ E.",
+    "Essential foundation for electrostatics, AC circuits, and semiconductor electronics."
+  ],
+  "mindmap": {
+    "centralConcept": "Capacitance & Capacitors",
+    "branches": [
+      {
+        "topic": "Fundamentals of Capacitance",
+        "subtopics": [
+          {
+            "name": "Definition & Units",
+            "points": [
+              "C = Q / V (Ratio of charge to potential rise)",
+              "SI Unit: Farad (F) = 1 C/V, Dimensions: [M⁻¹ L⁻² T⁴ I²]",
+              "Isolated Sphere: C = 4πε₀R (Earth C ≈ 711 μF)"
+            ]
+          },
+          {
+            "name": "Principle of Capacitor",
+            "points": [
+              "Grounded secondary plate reduces potential of primary plate",
+              "Enables massive charge storage at low operating voltage"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Parallel Plate Capacitor",
+        "subtopics": [
+          {
+            "name": "Air / Vacuum Medium",
+            "points": [
+              "Uniform field: E = σ/ε₀ = Q / (ε₀A)",
+              "Capacitance: C₀ = ε₀A / d"
+            ]
+          },
+          {
+            "name": "Dielectric Slab Insertion",
+            "points": [
+              "Partially filled slab (t < d): C = ε₀A / [d - t(1 - 1/κ)]",
+              "Conducting slab (t < d): C = ε₀A / (d - t)",
+              "Fully filled: C = κε₀A / d = κC₀"
+            ]
+          },
+          {
+            "name": "Electrostatic Plate Attraction",
+            "points": [
+              "Attractive force: F = Q² / (2ε₀A) = ½ ε₀ A (V/d)²",
+              "Factor of ½ arises because charge interacts only with the field of the opposite plate"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Capacitor Combinations",
+        "subtopics": [
+          {
+            "name": "Series Combination",
+            "points": [
+              "Identical charge Q on each capacitor",
+              "Reciprocal addition: 1/C_s = 1/C₁ + 1/C₂ + ...",
+              "Two capacitors: C_s = (C₁C₂) / (C₁ + C₂)",
+              "Voltage divider: V₁ = [C₂/(C₁+C₂)]V"
+            ]
+          },
+          {
+            "name": "Parallel Combination",
+            "points": [
+              "Identical potential difference V across each branch",
+              "Direct addition: C_p = C₁ + C₂ + ...",
+              "Charge sharing: Q₁ = C₁V, Q₂ = C₂V"
+            ]
+          },
+          {
+            "name": "Charge Redistribution & Energy Loss",
+            "points": [
+              "Common potential: V_c = (C₁V₁ + C₂V₂) / (C₁ + C₂)",
+              "Energy loss: ΔU = ½ [C₁C₂/(C₁+C₂)](V₁ - V₂)²",
+              "Dissipated as heat and EM radiation"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Energy & Energy Density",
+        "subtopics": [
+          {
+            "name": "Stored Electrostatic Energy",
+            "points": [
+              "U = ½ CV² = Q² / (2C) = ½ QV",
+              "Work done by battery: W = QV = CV²",
+              "Charging efficiency: 50% stored, 50% lost as heat"
+            ]
+          },
+          {
+            "name": "Energy Density in Medium",
+            "points": [
+              "Energy per volume: u = ½ ε₀ E² (vacuum) or ½ ε E² (dielectric)",
+              "Energy is stored in the electric field itself"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Dielectric Effects & Polarization",
+        "subtopics": [
+          {
+            "name": "Polar vs Non-Polar Dielectrics",
+            "points": [
+              "Non-polar: Symmetric molecules (H₂, O₂, CO₂), zero permanent dipole",
+              "Polar: Asymmetric molecules (H₂O, HCl), permanent electric dipole"
+            ]
+          },
+          {
+            "name": "Vectors E, P, and D",
+            "points": [
+              "Reduced field: E = E₀ - E_p = E₀ / κ",
+              "Polarization vector: P = χ_e ε₀ E = σ_p (bound surface charge density)",
+              "Electric displacement: D = ε₀E + P = κε₀E = σ_free",
+              "Constitutive relation: κ = 1 + χ_e"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

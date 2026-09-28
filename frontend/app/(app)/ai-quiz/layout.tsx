@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "AI Quiz Generator — NEB Practice Questions",
-  description: "Generate custom MCQs from syllabus content with easy, intermediate, or hard difficulty. Powered by AI.",
+  title: "Captain Quiz Generator — NEB Practice Questions",
+  description: "Generate custom MCQs from syllabus content with easy, intermediate, or hard difficulty. Powered by Captain.",
 };
 
 export const viewport = {

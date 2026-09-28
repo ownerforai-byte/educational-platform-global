@@ -48,4 +48,102 @@
   "animation3D": "refraction-at-plane-surfaces",
   "motionGraphics": "refraction-at-plane-surfaces",
   "visualType": "lateral-shift"
+,
+  "summary": "When a ray of light passes through a parallel-sided transparent slab such as glass, it emerges parallel to its original direction but displaced sideways, and that perpendicular displacement is the lateral shift d. The two refractions at the entry and exit faces exactly cancel in their angular effect, so the slab produces no angular deviation at all, only a sideways offset. The shift is given by d = t·sin(i − r)/cos r, where t is the thickness of the slab, i the angle of incidence and r the angle of refraction found from Snell's law. The derivation is geometric: inside the slab the ray travels a horizontal distance t/cos r, and the perpendicular offset is that distance multiplied by sin(i − r). The shift is directly proportional to the thickness, so doubling t doubles d, and it vanishes at normal incidence because then i = r = 0. As the angle of incidence increases the shift grows, approaching t at grazing incidence, and for a fixed angle of incidence a higher refractive index makes r smaller, which enlarges (i − r) and hence increases the shift.",
+  "importantConcepts": [
+    "Lateral shift d as the perpendicular sideways displacement of a ray after passing through a parallel-sided slab.",
+    "The formula d = t·sin(i − r)/cos r, with t the slab thickness, i the incidence angle and r the refraction angle.",
+    "Geometric derivation: the distance travelled inside the slab is t/cos r and the offset is that times sin(i − r).",
+    "Direct proportionality to thickness, so doubling the thickness doubles the shift.",
+    "Growth with angle of incidence, with the shift approaching t at grazing incidence as i tends to 90°.",
+    "Absence of angular deviation: the emergent ray is parallel to the incident ray because the two refractions cancel."
+  ],
+  "importantStatements": [
+    "A ray passing through a parallel-sided slab emerges parallel to its original direction but laterally displaced.",
+    "The lateral shift produced by a slab of thickness t is d = t·sin(i − r)/cos r.",
+    "At normal incidence the lateral shift is zero, since i = r = 0.",
+    "The emergent ray is parallel to the incident ray, so a slab causes no angular deviation.",
+    "For a fixed angle of incidence a slab of higher refractive index produces a larger lateral shift."
+  ],
+  "importantTasks": [
+    "Calculate the lateral shift through a slab of given thickness, refractive index and angle of incidence.",
+    "Find the angle of refraction from Snell's law and substitute it into the lateral shift expression.",
+    "Compare the lateral shift produced by two slabs of different thickness or different material.",
+    "Draw a labelled ray diagram showing the incident ray, the internal ray, the emergent ray and the perpendicular shift."
+  ],
+  "keyPoints": [
+    "Snell's law must be used first to obtain r, since the shift formula contains the difference (i − r) rather than either angle alone.",
+    "Doubling the thickness doubles the shift, which makes the shift a direct linear measurement of thickness.",
+    "At i = 0 the shift is exactly zero, and at grazing incidence it approaches the thickness t, giving a useful pair of limiting checks.",
+    "The emergent ray is parallel to the incident ray, so the only observable effect of the slab is the sideways displacement.",
+    "A higher refractive index gives a smaller r, hence a larger (i − r) and a larger shift for the same angle of incidence."
+  ],
+  "specialNotes": [
+    "At normal incidence there is no lateral shift at all, because i = r = 0 makes sin(i − r) vanish.",
+    "At grazing incidence the ray travels almost parallel to the faces of the slab and the shift approaches the thickness t, which is the upper limit.",
+    "For a fixed angle of incidence a higher refractive index makes the refracted angle r smaller, so (i − r) is larger and the shift is larger.",
+    "The emergent ray is parallel to the incident ray, so the two refractions at the entry and exit faces cancel in angle while leaving a residual displacement.",
+    "A very thin slab produces a negligible shift even at a large angle of incidence, which is why thin windows appear to show no refraction."
+  ],
+  "examShortTricks": [
+    "Always find r from Snell's law first, since the shift formula needs the difference (i − r) and not the incidence angle alone.",
+    "Two limiting checks settle any doubt: d = 0 at i = 0, and d → t as i → 90°.",
+    "For a fixed i, the shift grows with the refractive index, so a denser slab displaces the ray more.",
+    "The distance travelled inside the slab is t/cos r, and this factor is where the cos r in the denominator comes from."
+  ],
+  "examNotes": [
+    "A four or five mark numerical finding the lateral shift, with a preceding step for the refracted angle, is a standard question.",
+    "Ray diagram questions showing the emergent ray parallel to the incident ray and marking d are very common.",
+    "One mark questions ask what happens to the direction of the ray, answered by saying it emerges parallel to the incident ray.",
+    "A two mark comparison asks which of two slabs gives the larger shift, answered from thickness and refractive index."
+  ],
+  "practiceQuestions": [
+    "Define lateral shift and state what happens to the direction of a ray passing through a parallel-sided slab.",
+    "Derive the expression d = t·sin(i − r)/cos r geometrically from a labelled ray diagram.",
+    "A ray passes through a glass slab of thickness 1 cm at an incidence of 45°. Find the refracted angle and the lateral shift.",
+    "Show that the lateral shift is zero at normal incidence.",
+    "Explain why a glass slab produces a larger lateral shift than an equal-thickness slab of water at the same angle of incidence."
+  ],
+  "mcs": [
+    {
+      "question": "A ray passing through a parallel-sided slab emerges:",
+      "options": [
+        "Deviated towards the normal",
+        "Parallel to the incident ray but laterally displaced",
+        "Deviated away from the normal",
+        "Undeviated in direction and position"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The lateral shift through a slab of thickness t is:",
+      "options": [
+        "t·sin(i − r)/cos r",
+        "t·sin(i + r)/cos r",
+        "t·cos(i − r)/sin r",
+        "t·sin r/cos i"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "At normal incidence the lateral shift is:",
+      "options": [
+        "Zero",
+        "Equal to t",
+        "Equal to the thickness of the slab",
+        "Maximum"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The lateral shift is directly proportional to:",
+      "options": [
+        "The refractive index only",
+        "The thickness of the slab",
+        "The angle of refraction only",
+        "The speed of light"
+      ],
+      "answer": "B"
+    }
+  ]
 }

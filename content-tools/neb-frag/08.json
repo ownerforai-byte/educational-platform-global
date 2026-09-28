@@ -1,0 +1,96 @@
+{
+  "file": "biology/biotechnology-applications/08-applications-in-agriculture-and-medicine.json",
+  "data": {
+    "summary": "Biotechnology applies genetically engineered organisms to agriculture, medicine and industry. In agriculture, Bt cotton and Bt corn carry the Bacillus thuringiensis gene for insect resistance, Golden Rice is fortified with beta-carotene for vitamin A, and other crops are engineered for herbicide tolerance, delayed ripening and drought resistance. In medicine, recombinant DNA technology produces human insulin in E. coli, growth hormone for dwarfism, the hepatitis B vaccine, gene therapy for genetic disorders, monoclonal antibodies and CRISPR-Cas9 gene editing. Transgenic animals serve as disease models or as protein factories in milk. The chapter also covers biopiracy, the unauthorized commercial use of biological resources and traditional knowledge, and bioremediation using organisms such as Pseudomonas putida.",
+    "importantConcepts": [
+      "Bt crops and insect resistance",
+      "Golden Rice and biofortification",
+      "Production of human insulin by recombinant DNA technology",
+      "Gene therapy and CRISPR-Cas9 gene editing",
+      "Transgenic animals and pharming",
+      "Biopiracy and patents on biological resources",
+      "Bioremediation using microorganisms"
+    ],
+    "importantStatements": [
+      "Bt cotton contains a gene from Bacillus thuringiensis that codes for a toxin toxic to insect pests.",
+      "Human insulin produced in E. coli by rDNA technology replaced insulin extracted from animals.",
+      "Biopiracy is the unauthorized commercial use of biological resources and indigenous knowledge, and it is not legal.",
+      "Monoclonal antibodies are used both in cancer treatment and in diagnostic tests because they are specific to a single antigen.",
+      "Golden Rice is genetically enhanced with beta-carotene so that it provides vitamin A.",
+      "Pseudomonas putida degrades hydrocarbons and is used to clean up oil spills."
+    ],
+    "importantTasks": [
+      "Explain step by step how human insulin is produced using recombinant DNA technology.",
+      "Describe what Bt cotton is and how it protects the plant from insect pests.",
+      "Define biopiracy and explain the basmati rice or neem patent cases.",
+      "List at least four applications of transgenic animals and explain pharming.",
+      "Explain how bioremediation helps to clean up an oil spill."
+    ],
+    "keyPoints": [
+      "Agricultural uses: Bt cotton, Bt corn, Golden Rice, herbicide-resistant crops, delayed-ripening tomatoes and drought-resistant crops.",
+      "Medical uses: insulin, growth hormone, hepatitis B vaccine, gene therapy and monoclonal antibodies.",
+      "Gene editing with CRISPR-Cas9 allows precise cutting and correction of faulty genes.",
+      "Transgenic examples: GloFish, transgenic mice, RoboCow and animals used for pharming.",
+      "Biopiracy cases: patents on basmati rice, neem and Indian wheat, all of which were later revoked.",
+      "Bioremediation: microbes such as Pseudomonas putida degrade oil, and bioaccumulation removes heavy metals."
+    ],
+    "specialNotes": [
+      "GM does not mean GWO; genetically wrought organism is a different term and must not be substituted for genetically modified.",
+      "Not all transgenic animals are harmful; many provide medical benefit, such as producing protein in milk.",
+      "A patent covers a commercial product, whereas biopiracy concerns the unauthorized appropriation of biological material and traditional knowledge.",
+      "The hepatitis B vaccine can be produced in a yeast expression system, while insulin is typically produced in E. coli.",
+      "Biofortification, as in Golden Rice, addresses vitamin deficiency rather than insect resistance, so the two should not be confused."
+    ],
+    "examShortTricks": [
+      "Bt always means Bacillus thuringiensis, so the pest-killing gene in Bt cotton comes from a bacterium, not from the plant.",
+      "Insulin means rDNA in bacteria and the hepatitis B vaccine means a yeast expression system; learn the host for each.",
+      "For biopiracy questions recall three case names: basmati rice, neem and wheat, all of which had patents revoked.",
+      "For any 'application' question, name the product first, then give one line of benefit, and marks are secured."
+    ],
+    "examNotes": [
+      "A three-mark question commonly asks how Bt cotton works or how insulin is produced, so use a numbered sequence for the process.",
+      "One-mark MCQs test names: the source of the Bt toxin, the organism used for bioremediation, or the definition of biopiracy.",
+      "Applications in medicine questions expect named products such as insulin, vaccine and gene therapy with one line of benefit each.",
+      "Biopiracy is a favourite short-answer topic; mention the case, the country and the fact that the patent was revoked."
+    ],
+    "practiceQuestions": [
+      "How is human insulin produced using recombinant DNA technology?",
+      "What is Bt cotton and how does it work?",
+      "Define biopiracy and give an example from India and one relevant to Nepal.",
+      "What are the applications of transgenic animals?",
+      "How does bioremediation help in cleaning up an oil spill?"
+    ],
+    "mcs": [
+      {
+        "question": "The gene responsible for insect resistance in Bt cotton comes from",
+        "options": ["Bacillus thuringiensis", "Escherichia coli", "Pseudomonas putida", "Saccharomyces cerevisiae"],
+        "answer": "A",
+        "explanation": "The Bt gene comes from the bacterium Bacillus thuringiensis and codes for a toxin that kills insect pests."
+      },
+      {
+        "question": "Golden Rice has been genetically modified to increase its content of",
+        "options": ["Protein", "Iron", "Vitamin A", "Calcium"],
+        "answer": "C",
+        "explanation": "Golden Rice is engineered to produce beta-carotene in the grain, which the body converts to vitamin A."
+      },
+      {
+        "question": "Human insulin produced by rDNA technology is expressed in",
+        "options": ["Yeast", "Animal cells", "Plant cells", "Escherichia coli"],
+        "answer": "D",
+        "explanation": "Bacterial hosts such as E. coli grow rapidly and are used to produce recombinant human insulin in large amounts."
+      },
+      {
+        "question": "Biopiracy refers to",
+        "options": ["Laboratory culture of bacteria", "Use of pesticides", "Unauthorized commercial use of biological resources", "Legal patenting of life forms"],
+        "answer": "C",
+        "explanation": "Biopiracy is the taking over of biological resources or traditional knowledge for commercial gain without authorization or fair benefit sharing."
+      },
+      {
+        "question": "CRISPR-Cas9 is primarily used for",
+        "options": ["Making vaccines", "Amplifying DNA", "Gene editing", "Separating DNA fragments"],
+        "answer": "C",
+        "explanation": "CRISPR-Cas9 is a gene-editing tool that cuts DNA at a chosen site so a faulty gene can be corrected or replaced."
+      }
+    ]
+  }
+}

@@ -1,85 +1,116 @@
 {
-  "title": "Types of Discontinuity",
   "unitSlug": "calculus",
+  "title": "Types of Discontinuity",
+  "topicTitle": "Types of discontinuity",
   "topicSlug": "types-of-discontinuity",
-  "topicTitle": "Types of Discontinuity",
   "relevance": 100,
   "notes": [
-    "**Types of Discontinuity:** Class 11 concept.",
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
+    "**Removable (hole):** $\\lim_{x\\to a^-}f=\\lim_{x\\to a^+}f=L\\ne f(a)$, or $f(a)$ undefined. Both one-sided limits AGREE, so only one point is wrong. Examples: $\\frac{x^2-4}{x-2}$ at 2, or $\\frac{\\sin x}{x}$ at 0 if its value is wrongly set to 1.",
+    "**Jump (step):** both one-sided limits exist but DIFFER, so the two-sided limit does not exist. $\\frac{x}{|x|}$ at 0 and the floor function at integers are standard. The jump SIZE is $|f(a^+)-f(a^-)|$.",
+    "**Infinite (second kind):** at least one one-sided limit is infinite, so a vertical asymptote passes through $x=a$. $\\frac1x$ at 0 and $\\tan x$ at $\\frac{\\pi}{2}$ are the standard examples. Opposite-sign divergence means the asymptote is approached from both sides.",
+    "**Classifying from one-sided limits:** equal and equal to $f(a)$ means continuous; equal but not equal to $f(a)$ is removable; both finite but different is a jump; either infinite is an infinite discontinuity. This four-way test settles every classification question.",
+    "**Why the type matters:** a removable discontinuity is repairable with a single reassigned value, a jump is not, and an infinite one means the function is unbounded near $a$. The intermediate value theorem fails at all three, but differently.",
+    "**Effect on the derivative:** differentiability presupposes continuity, so a discontinuity of ANY type rules out a derivative there — even a removable one, until the hole is filled."
   ],
   "confusion": [
-    "Distinguish concepts in Types of Discontinuity.",
-    "Check formula conditions."
+    "Calling $|x|$ at 0 removable — it is a JUMP, because the one-sided limits are governed by different branches rather than one wrong value.",
+    "Saying an infinite discontinuity 'has limit infinity' — infinity is not a value, so the real limit does not exist.",
+    "Assuming a hole is harmless for differentiation — it blocks the derivative even though both one-sided limits agree."
   ],
-  "practice": [
-    "Solve 5 problems on Types of Discontinuity.",
-    "Derive the key formula for Types of Discontinuity."
-  ],
+  "practice": [],
   "universalFacts": [
-    "Types of Discontinuity appears in exams.",
-    "Foundational for advanced topics."
+    "The jump in a sampled digital signal is the physical origin of quantisation noise in audio and image compression.",
+    "A removable discontinuity is why a computer's piecewise approximation to a smooth function can be made continuous by assigning the limit at the join."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [
-    "Application of Types of Discontinuity",
-    "Numerical problem on Types of Discontinuity",
-    "Daily life use of Types of Discontinuity"
-  ],
-  "practiceQuestions": [
-    "Q1. Define Types of Discontinuity.",
-    "Q2. Key formula for Types of Discontinuity.",
-    "Q3. Problem on Types of Discontinuity."
-  ],
+  "examples": [],
+  "practiceQuestions": [],
   "formulas": [
-    "Formula for Types of Discontinuity: [insert from textbook].",
-    "Key relationship: [variable formula]."
+    "Removable: $f(a^-)=f(a^+)=L\\ne f(a)$, or $f(a)$ undefined",
+    "Jump: $f(a^-),f(a^+)$ finite but $f(a^-)\\ne f(a^+)$",
+    "Jump size: $|f(a^+)-f(a^-)|$",
+    "Infinite: $f(a^-)=\\pm\\infty$ or $f(a^+)=\\pm\\infty$"
   ],
   "keyPoints": [
-    "Core principle of Types of Discontinuity",
-    "Application of Types of Discontinuity",
-    "Connection of Types of Discontinuity to other topics"
+    "Removable: the one-sided limits agree but the function value does not.",
+    "Jump: both one-sided limits exist and differ.",
+    "Infinite: at least one one-sided limit diverges, giving a vertical asymptote.",
+    "Any discontinuity rules out differentiability at that point."
   ],
-  "summary": "Types of Discontinuity covers essential principles and applications.",
+  "summary": "Discontinuities sort into three types, distinguished entirely by the one-sided limits. Removable means they agree but the function value differs, so one reassignment repairs it. Jump means both exist and differ, giving a finite step. Infinite means at least one diverges, producing a vertical asymptote. Differentiability is impossible at all three, because it presupposes continuity.",
   "specialNotes": [
-    "Check conditions for Types of Discontinuity.",
-    "Types of Discontinuity connects to other topics."
+    "Where a formula is quoted it is valid only under the conditions stated; Calling $|x|$ at 0 removable — it is a JUMP, because the one-sided limits are governed by different branches rather than one wrong value.",
+    "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Types of Discontinuity",
-    "Statement 2: Theorem related to Types of Discontinuity",
-    "Statement 3: Condition for Types of Discontinuity to be valid",
-    "Statement 4: Principle governing Types of Discontinuity",
-    "Statement 5: Corollary or consequence of Types of Discontinuity"
+    "Statement 1: A removable discontinuity has equal one-sided limits.",
+    "Statement 2: A jump discontinuity has two finite but unequal one-sided limits.",
+    "Statement 3: An infinite discontinuity has at least one one-sided limit equal to $\\pm\\infty$.",
+    "Statement 4: A function cannot be differentiable where it is discontinuous.",
+    "Statement 5: The jump magnitude is $|f(a^+)-f(a^-)|$."
   ],
   "importantNotes": [
-    "Types of Discontinuity is based on fundamental principles."
+    "Topic anchor: Effect on the derivative  differentiability presupposes continuity, so a discontinuity of ANY type rules out a derivative there — even a removable one, until the hole is filled."
   ],
   "examShortTricks": [
-    "Recall the formula for Types of Discontinuity."
+    "Compute BOTH one-sided limits first; comparing $(f(a^-), f(a^+), f(a))$ classifies every case.",
+    "If one side is infinite, stop — it is an infinite discontinuity regardless of the other side."
   ],
   "examNotes": [
-    "Focus on Types of Discontinuity problems - significant marks."
+    "Classifying a discontinuity from its one-sided limits is a frequent 3-mark question."
   ],
   "mcs": [
     {
-      "question": "Which describes Types of Discontinuity?",
+      "question": "$f(x)=\\frac{x}{|x|}$ at $x=0$ has a:",
       "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
+        "removable",
+        "jump",
+        "infinite",
+        "no discontinuity"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "The one-sided limits $-1$ and $1$ are both finite but different — the definition of a jump."
+    },
+    {
+      "question": "$f(x)=\\tan x$ at $x=\\frac{\\pi}{2}$ has a:",
+      "options": [
+        "removable",
+        "jump",
+        "infinite",
+        "no discontinuity"
+      ],
+      "answer": "C",
+      "explanation": "The one-sided limits diverge to $\\pm\\infty$ because $\\cos x=0$ there, giving a vertical asymptote."
+    },
+    {
+      "question": "For a removable discontinuity at $a$:",
+      "options": [
+        "redefining $f(a)$ restores continuity",
+        "the limits are infinite",
+        "it is automatically differentiable",
+        "the one-sided limits differ"
+      ],
+      "answer": "A",
+      "explanation": "Setting $f(a)$ to the common limit repairs continuity; differentiability must still be checked separately."
     }
   ],
   "importantConcepts": [
-    "Definition and significance of Types of Discontinuity."
+    "Removable: the one-sided limits agree but the function value does not.",
+    "Jump: both one-sided limits exist and differ.",
+    "Infinite: at least one one-sided limit diverges, giving a vertical asymptote.",
+    "Any discontinuity rules out differentiability at that point."
   ],
   "importantTasks": [
-    "Solve 5 problems on Types of Discontinuity."
+    "Work through the authored practice problems and re-derive each key formula from the definition."
   ],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "visualType": "discontinuity",
+  "numericals": [
+    "**1. [Idea: a parameter must make the limit finite, and the point must then be defined]** Find all $a$ for which $f(x) = \\dfrac{x^2+ax+3}{x-1}$ has a removable discontinuity at $x = 1$, and give the repaired value.\\newline\\newline**Solution:** For the limit to be finite the numerator must also vanish at 1:$^{\\bullet}$ $1 + a + 3 = 0 \\Rightarrow a = -4$.\\newline\\newline**Check:** with $a=-4$, $x^2-4x+3 = (x-1)(x-3)$, so $f(x)=x-3$ for $x\\ne1$, giving $\\lim_{x\\to1}f = -2$.\\newline\\newline$f(1)$ is still undefined, but the break is removable: assign $f(1)=-2$.\\newline\\newline**Answer:** $a=-4$, repaired value $f(1)=-2$. **Trap:** cancelling the denominator makes the limit finite, but the function is not continuous until the point itself is defined.",
+    "**2. [Idea: fewer equations than unknowns — parameterise the family]** The function $f(x)=\\dfrac{ax^2+bx+c}{x-1}$ has a finite limit at $x=1$ equal to 2. Find $a,b,c$.\\newline\\newline**Solution:** Finite limit requires the numerator to vanish at 1:$^{\\bullet}$ $a+b+c=0 \\quad (i)$.\\newline\\newlineThe removable value equals the derivative ratio, set equal to 2:$^{\\bullet}$ $2a+b = 2 \\quad (ii)$.\\newline\\newlineTwo equations in three unknowns — the question is deliberately **under-determined**. From (ii) $b=2-2a$; from (i) $c=-a-b = a-2$.\\newline\\newline**Answer:** $a$ arbitrary, $b=2-2a$, $c=a-2$. **Check with $a=1$:** $\\dfrac{x^2+3}{x-1}$, and $\\lim_{x\\to1}\\frac{(x-1)(x+1)}{x-1}=2$. ✓ **Lesson:** recognising under-determination and giving a one-parameter family is the skill tested.",
+    "**3. [Idea: exhibit both one-sided limits rather than assert them]** Show that $f(x)=\\dfrac{2^{1/x}-1}{2^{-1/x}+1}$ has no limit as $x \\to 0$, and classify the discontinuity.\\newline\\newline**Solution:** Put $u = 1/x$.$^{\\bullet}$ **$x\\to0^+$: $u\\to+\\infty$**, so $2^u \\to \\infty$. Divide numerator and denominator by $2^u$:$\\newline\\lim_{x\\to0^+}\\dfrac{2^u-1}{2^{-u}+1} = \\lim\\dfrac{1-2^{-u}}{2^{-u}+1} = \\dfrac{1-0}{0+1} = 1$.$^{\\bullet}$ **$x\\to0^-$: $u\\to-\\infty$**, so $2^u \\to 0$. Numerator $\\to -1$, denominator $\\to 2$, giving $-\\frac12$.\\newline\\newlineThe one-sided limits are $1$ and $-\\frac12$ — both finite but UNEQUAL.\\newline\\newline**Answer:** no limit; a **JUMP** discontinuity of size $\\left|1+\\frac12\\right| = \\frac32$.",
+    "**4. [Idea: the derivative test resolves $0/0$ at any point where the numerator also vanishes]** Classify the discontinuity of $g(x)=\\dfrac{\\sin(\\pi x)}{x(x-1)}$ at $x=0$ and at $x=1$.\\newline\\newline**Solution:** The form is $\\frac00$ at both, so apply the ratio-of-derivatives test.$^{\\bullet}$ **At 0:** $\\lim_{x\\to0}\\dfrac{\\pi\\cos(\\pi x)}{2x-1} = \\dfrac{\\pi}{1} = \\pi$. Finite ⇒ **removable**, $g(0)=\\pi$.$^{\\bullet}$ **At 1:** $\\lim_{x\\to1}\\dfrac{\\pi\\cos(\\pi x)}{2x-1} = \\dfrac{-\\pi}{1} = -\\pi$. Finite ⇒ **removable**, $g(1)=-\\pi$.\\newline\\newline**Answer:** removable at both, repaired values $\\pi$ and $-\\pi$. **Note:** the test succeeds at both points only because $\\sin(\\pi x)$ vanishes at BOTH $0$ and $1$; had it vanished at 0 but not 1, $x=1$ would have been an infinite discontinuity.",
+    "**5. [Idea: compose the two limit statements, and notice where the hypothesis is used]** $f$ is continuous on $[a,b]$, $g$ is continuous on $[c,d]$, and $f([a,b])\\subseteq[c,d]$. Prove $g\\circ f$ is continuous on $[a,b]$.\\newline\\newline**Solution:** Fix $x_0\\in[a,b]$.$^{\\bullet}$ $f$ continuous at $x_0$: $\\lim_{x\\to x_0}f(x)=f(x_0)$.$^{\\bullet}$ $f(x_0)\\in[c,d]$ and $g$ continuous there: $\\lim_{u\\to f(x_0)}g(u)=g(f(x_0))$.\\newline\\newline$^{\\bullet}$ As $x\\to x_0$, $f(x)\\to f(x_0)$, so substituting $u=f(x)$ in the second statement gives$\\newline\\lim_{x\\to x_0}g(f(x)) = g(f(x_0))$.\\newline\\newlineThat is precisely continuity of $g\\circ f$ at $x_0$, and $x_0$ was arbitrary.\\newline\\newline**Answer:** $g\\circ f$ continuous on $[a,b]$. **Where the hypothesis matters:** the inclusion $f([a,b])\\subseteq[c,d]$ ensures the second limit is taken where $g$ is actually continuous — otherwise $f(x_0)$ could land on a hole in $g$."
+  ]
 }

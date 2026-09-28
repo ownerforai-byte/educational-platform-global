@@ -43,13 +43,16 @@ function changedFiles() {
 }
 
 function areasFor(files) {
-  if (files === null) return ["content", "frontend", "backend"];
+  if (files === null) return ["content", "frontend", "backend", "contentScopes", "mindmap"];
   const a = new Set();
   for (const f of files) {
     if (f.startsWith("content/")) a.add("content");
     else if (f.startsWith("frontend/")) a.add("frontend");
     else if (f.startsWith("backend/")) a.add("backend");
   }
+  // The gates always run when note content or mindmap data is in play.
+  if (a.has("content")) a.add("contentScopes");
+  if (a.has("content") || a.has("frontend")) a.add("mindmap");
   return [...a];
 }
 
@@ -87,6 +90,29 @@ const runners = {
       const t = run("npx", ["tsc", "--noEmit"], { cwd: "backend", stdio: "inherit" });
       if (t.status !== 0) return t.status ?? 1;
       const v = run("npm", ["run", "test:run"], { cwd: "backend", stdio: "inherit" });
+      return v.status ?? 1;
+    },
+  },
+  // The empty-scope gate. Runs whenever note content is touched, so a
+  // template-filled file can never be added to a unit that was already
+  // authored, and the global placeholder count can never creep upward.
+  // Shrinking the count always passes.
+  contentScopes: {
+    label: "empty-scope gate (placeholder count must not rise)",
+    run() {
+      const v = run(process.execPath, ["scripts/audit-empty-scopes.mjs", "--strict"], {
+        stdio: "inherit",
+      });
+      return v.status ?? 1;
+    },
+  },
+  // Mindmap depth packs: leaf ids must exist and all four depth fields filled.
+  mindmap: {
+    label: "mindmap depth pack coverage",
+    run() {
+      const v = run(process.execPath, ["scripts/enrichment/mindmap-validate.mjs"], {
+        stdio: "inherit",
+      });
       return v.status ?? 1;
     },
   },

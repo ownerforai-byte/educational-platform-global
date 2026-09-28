@@ -41,5 +41,105 @@
   "source": "ravikishan",
   "duplicateType": 1,
   "tabGroup": "Bio-Inorganic-Learner-Notes",
-  "filename": "02-ion-pumps-and-metal-toxicity.json"
+  "filename": "02-ion-pumps-and-metal-toxicity.json",
+  "summary": "Ion pumps maintain the ion gradients that all cells depend on. The Na⁺/K⁺-ATPase is electrogenic, exporting 3 Na⁺ for every 2 K⁺ imported per ATP hydrolysed, so the cell interior becomes negative at about −70 mV; the downhill Na⁺ gradient it creates then drives cotransport such as SGLT1 and SGLT2, which carry glucose against its own gradient. Other pumps include the Ca²⁺ pump SERCA, which removes calcium from the cytoplasm to allow muscle relaxation, and the H⁺/K⁺-ATPase of gastric parietal cells, which produces hydrochloric acid at pH about 1 and is the target of omeprazole. Metal toxicity arises when ions such as Fe²⁺, As³⁺, Hg²⁺, Pb²⁺ and Cd²⁺ generate reactive radicals or bind sulfhydryl groups and mimic calcium.",
+  "importantConcepts": [
+    "Na⁺/K⁺-ATPase as an electrogenic pump moving 3 Na⁺ out for 2 K⁺ in per ATP, creating the resting membrane potential",
+    "Sodium–glucose cotransport using the downhill Na⁺ gradient to drive glucose uphill, with SGLT1 in intestine and SGLT2 in kidney",
+    "Ca²⁺ pump SERCA using one ATP per two Ca²⁺ ions, essential for muscle relaxation",
+    "H⁺/K⁺-ATPase in gastric parietal cells producing hydrochloric acid, targeted by proton pump inhibitors",
+    "Fenton reaction Fe²⁺ + H₂O₂ → Fe³⁺ + OH⁻ + ·OH generating the destructive hydroxyl radical",
+    "Sulfhydryl binding and calcium mimicry as the two common mechanisms of heavy-metal toxicity"
+  ],
+  "importantStatements": [
+    "The Na⁺/K⁺-ATPase consumes about 20–25% of all the ATP in a resting human cell, and it moves an unequal ratio of 3 Na⁺ out to 2 K⁺ in, so this net export of positive charge is what makes the cell interior negative.",
+    "The toxic species in the Fenton reaction is the hydroxyl radical ·OH, not the Fe³⁺ product.",
+    "Arsenite As³⁺ binds vicinal dithiol groups in lipoic acid, blocking pyruvate dehydrogenase and shutting down the citric acid cycle.",
+    "Mercury Hg²⁺ binds sulfhydryl groups on enzyme cysteines, forming Enzyme–S–Hg⁺, which denatures the protein and causes neurological damage such as Minamata disease.",
+    "Lead Pb²⁺ mimics Ca²⁺ because of similar ionic radius (120 pm against 100 pm), substitutes in bone and teeth, and inhibits δ-aminolevulinic acid dehydratase, causing anaemia.",
+    "Cd²⁺ accumulates in kidneys with a biological half-life of 10–30 years, displaces Zn²⁺ in zinc-dependent enzymes, and causes renal tubular damage and itai-itai disease."
+  ],
+  "importantTasks": [
+    "Explain how the Na⁺/K⁺-ATPase creates the resting membrane potential and why it is essential for nerve impulse transmission.",
+    "Write the Fenton reaction and explain which species is toxic and why.",
+    "Recommend a chelation therapy for iron overload in haemochromatosis and justify the choice.",
+    "Explain why Pb²⁺ is more toxic to children than adults, considering biological half-life and the developing nervous system.",
+    "Describe how cotransport uses the Na⁺ gradient to move glucose against its concentration gradient."
+  ],
+  "keyPoints": [
+    "The Na⁺/K⁺ pump is electrogenic: 3 Na⁺ out for 2 K⁺ in, not equal numbers.",
+    "The hydroxyl radical ·OH from the Fenton reaction is the damaging species, not Fe³⁺.",
+    "Lead toxicity is chemical, not physical: Pb²⁺ mimics Ca²⁺ in calcium-dependent processes and inhibits haem synthesis.",
+    "Long biological half-lives mean chronic low-dose exposure is as dangerous as acute poisoning — Pb 20–30 years in bone, Cd 10–30 years in kidney.",
+    "EDTA and desferrioxamine chelate metals into water-soluble complexes excreted in urine."
+  ],
+  "specialNotes": [
+    "The Na⁺/K⁺-ATPase is electrogenic; a pump moving equal numbers of Na⁺ and K⁺ would be electrically neutral and could not sustain a membrane potential.",
+    "Cotransport is secondary active transport: it uses the Na⁺ gradient built by the ATPase rather than ATP directly, so inhibiting the ATPase also stops glucose uptake.",
+    "In the Fenton reaction the harmful species is the hydroxyl radical ·OH, not the Fe³⁺ product, and it attacks DNA, lipids and proteins indiscriminately.",
+    "Chelation therapy choice matters: desferrioxamine is preferred for iron overload while EDTA is used for lead and other metals, since each chelate is selective.",
+    "Aluminium is linked to Alzheimer's disease and interferes with calcium signalling and phosphorus metabolism, with exposure from cookware and antacids.",
+    "The word 'plumbing' derives from plumbum, the Latin name for lead, a reminder of its historic use in pipes, paint and petrol."
+  ],
+  "examShortTricks": [
+    "Write 3 Na⁺ out and 2 K⁺ in every time — the 3:2 ratio is the single most examined fact here.",
+    "For the Fenton reaction, name ·OH as the toxic species; naming Fe³⁺ loses the mark.",
+    "Match the mechanism to the metal: Hg²⁺ and As³⁺ bind –SH groups, Pb²⁺ mimics Ca²⁺, Cd²⁺ displaces Zn²⁺, Fe²⁺ generates radicals.",
+    "Whenever a half-life is quoted, conclude that chronic low-dose exposure is as dangerous as an acute dose."
+  ],
+  "examNotes": [
+    "Explaining the electrogenic pump and the resting membrane potential is a standard 3–5 mark question.",
+    "Writing the Fenton reaction and identifying the toxic species is a frequent 2–3 mark item.",
+    "Metal toxicity is usually examined metal by metal, asking for the mechanism and the resulting disease.",
+    "Chelation therapy and the choice between EDTA and desferrioxamine is a common applied question."
+  ],
+  "practiceQuestions": [
+    "Explain how the Na⁺/K⁺-ATPase pump creates the resting membrane potential of −70 mV. Why is this potential essential for nerve impulse transmission?",
+    "Write the Fenton reaction equation. If a patient has iron overload (haemochromatosis), what chelation therapy drug (EDTA or desferrioxamine) would you recommend and why?",
+    "Explain why Pb²⁺ is more toxic to children than adults, considering both biological half-life and the developing nervous system. What are the clinical symptoms of lead poisoning?",
+    "Describe how the sodium–glucose cotransporter uses the Na⁺ gradient to move glucose against its concentration gradient.",
+    "Compare the mechanisms of toxicity of mercury and cadmium."
+  ],
+  "mcs": [
+    {
+      "question": "The Na⁺/K⁺-ATPase pump moves, per ATP hydrolysed:",
+      "options": [
+        "2 Na⁺ out and 3 K⁺ in",
+        "3 Na⁺ out and 2 K⁺ in",
+        "1 Na⁺ out and 1 K⁺ in",
+        "3 Na⁺ in and 2 K⁺ out"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The pump is described as electrogenic because it:",
+      "options": [
+        "moves equal numbers of Na⁺ and K⁺",
+        "exports a net positive charge, making the cell interior negative",
+        "uses ATP in both directions",
+        "pumps calcium instead of potassium"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In the Fenton reaction the species responsible for cellular damage is:",
+      "options": [
+        "Fe³⁺",
+        "the hydroxyl radical ·OH",
+        "H₂O₂",
+        "Fe²⁺"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Pb²⁺ is toxic mainly because it:",
+      "options": [
+        "is heavy and therefore physically damaging",
+        "mimics Ca²⁺ and substitutes in calcium-dependent processes",
+        "binds to sulfhydryl groups in lipoic acid",
+        "displaces Zn²⁺ in zinc-dependent enzymes"
+      ],
+      "answer": "B"
+    }
+  ]
 }

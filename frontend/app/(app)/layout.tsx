@@ -1,6 +1,10 @@
 import { AppShell } from "@/components/layout/app-shell";
 import { Suspense } from "react";
 import { RouteCreditGate } from "@/features/credits/route-gate";
+// ADDITIVE (perf/resilience pass): inner error layer and passive intent prefetcher.
+// The existing shell/gate structure below is untouched.
+import { RouteErrorBoundary } from "@/components/perf/route-error-boundary";
+import { TopicNotesPrefetcher } from "@/components/perf/topic-notes-prefetcher";
 
 export default function AppLayout({
   children,
@@ -21,8 +25,20 @@ export default function AppLayout({
       <AppShell>
         {/* Coin gate: blurs + overlays every paid route until unlocked for
             20 minutes. Public routes (home, AI chat, auth) pass through. */}
-        <RouteCreditGate>{children}</RouteCreditGate>
+        <RouteCreditGate>
+          {/* ADDITIVE (perf/resilience pass): a render error inside a route now
+              degrades to the shared fallback card while the shell (header,
+              nav, theme, offline banner) stays interactive. `app/error.tsx`
+              at the root still catches anything thrown outside this subtree —
+              this only adds the inner layer, it replaces nothing. */}
+          <RouteErrorBoundary>
+            {/* ADDITIVE: intent-driven notes prefetcher; renders null, adds no DOM. */}
+            <TopicNotesPrefetcher />
+            {children}
+          </RouteErrorBoundary>
+        </RouteCreditGate>
       </AppShell>
     </Suspense>
   );
 }
+

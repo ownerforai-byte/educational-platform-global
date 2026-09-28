@@ -1,10 +1,111 @@
 {
-  "title": "potential-potential-difference-and-potential-energy Mindmap",
+  "title": "Potential, Potential Difference & Potential Energy — Interactive Concept Map",
   "unitSlug": "potential-potential-difference-and-potential-energy",
   "topicSlug": "potential-potential-difference-and-potential-energy-mindmap",
-  "topicTitle": "potential potential difference and potential energy — interactive concept map",
-  "relevance": 0,
+  "topicTitle": "Potential, Potential Difference and Potential Energy — Mindmap and Conceptual Hierarchy",
+  "relevance": 100,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "Comprehensive conceptual breakdown of electrostatic potential, potential difference, potential energy, equipotential surfaces, and potential gradient.",
+    "Covers core NEB formulas: V = -∫E·dr, V = kQ/r, E = -∇V, U = kq₁q₂/r, and 1 eV = 1.602 × 10⁻¹⁹ J.",
+    "Unifies the electrostatics chain: field lines → equipotential surfaces (perpendicular) → potential gradient (E = -dV/dx) → potential energy (ΔU = -W)."
+  ],
+  "mindmap": {
+    "centralConcept": "Potential, PD and Potential Energy",
+    "branches": [
+      {
+        "topic": "Electric Potential & Potential Difference",
+        "subtopics": [
+          {
+            "name": "Definition & Properties",
+            "points": [
+              "V = W/q₀ = -∫_∞^P E·dr (SI unit: volt, 1 V = 1 J/C)",
+              "Scalar, path-independent (conservative field: ∮E·dr = 0)",
+              "ΔV = V_B - V_A = -∫_A^B E·dr (can be positive or negative)",
+              "Dimensional formula: [M L² T⁻³ I⁻¹]",
+              "Reference level fixed by convention: V(∞) = 0"
+            ]
+          },
+          {
+            "name": "Potential of Standard Distributions",
+            "points": [
+              "Point charge: V = kQ/r (falls as 1/r, field falls as 1/r²)",
+              "Line charge: V = -(λ / 2πε₀) ln(r/r₀)",
+              "Infinite plane sheet: V = -(σ / 2ε₀)x (uniform field ⇒ linear V)",
+              "Charged shell: V = kQ/r outside; constant kQ/R inside",
+              "Superposition: V = k Σ qᵢ / rᵢ (algebraic, scalar sum)"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Field–Potential Relationship",
+        "subtopics": [
+          {
+            "name": "Gradient Relation",
+            "points": [
+              "E = -dV/dx (uniform field along one axis)",
+              "Vector form: E = -∇V with ∇ = î ∂/∂x + ĵ ∂/∂y + k̂ ∂/∂z",
+              "Field points toward steepest DECREASE of potential",
+              "Differentiate V = kQ/r to recover E = kQ/r²"
+            ]
+          },
+          {
+            "name": "Graphical Interpretation",
+            "points": [
+              "Slope of V–r graph = -(potential gradient) = -E",
+              "Straight line ⇒ uniform field; hyperbola ⇒ point charge; log curve ⇒ line charge",
+              "Steep graph segment ⇒ strong field; flat segment ⇒ weak field"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Equipotential Lines and Surfaces",
+        "subtopics": [
+          {
+            "name": "Core Properties",
+            "points": [
+              "Surface of constant V: ΔV = 0, so W = qΔV = 0 (no work done)",
+              "Always perpendicular to electric field lines (dV = -E·dl = 0 forces θ = 90°)",
+              "Two equipotential surfaces can never intersect",
+              "Close spacing ⇒ strong field; wide spacing ⇒ weak field",
+              "Conductor in equilibrium = single equipotential surface"
+            ]
+          },
+          {
+            "name": "Shapes for Standard Configurations",
+            "points": [
+              "Point charge → concentric spheres",
+              "Line charge → coaxial cylinders",
+              "Infinite plane sheet → parallel planes, uniformly spaced",
+              "Conducting shell → sphere (V = kQ/R) plus constant-potential interior cavity"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Potential Energy & Electron Volt",
+        "subtopics": [
+          {
+            "name": "Potential Energy",
+            "points": [
+              "U = qV = k q₁ q₂ / r for two charges",
+              "Like charges: U > 0 (repulsive, unbound); unlike charges: U < 0 (attractive, bound)",
+              "Multiple charges: U = k Σ_{i<j} qᵢ qⱼ / rᵢⱼ (count each pair once)",
+              "ΔU = -W_electric (force always acts to reduce U)"
+            ]
+          },
+          {
+            "name": "Electron Volt",
+            "points": [
+              "1 eV = e × 1 V = 1.602 × 10⁻¹⁹ J (an ENERGY unit)",
+              "1 J = 6.242 × 10¹⁸ eV",
+              "1 keV = 10³ eV (X-rays); 1 MeV = 10⁶ eV (nuclear binding)",
+              "1 GeV = 10⁹ eV (particle colliders)"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

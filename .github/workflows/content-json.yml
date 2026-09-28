@@ -1,18 +1,26 @@
 name: Content JSON
 
-# Validates every content/*.json parse. Scoped by path so it only runs
-# when content or the validator itself changes (BRANCHES.md §3).
+# Validates every content/*.json parse, then enforces the strict
+# `ConceptNoteSchema` gate (frontend corpus test with the baseline ratchet in
+# scripts/content-schema-baseline.json). Scoped by path so it only runs when
+# content or the validator itself changes (BRANCHES.md §3).
 on:
   push:
     branches: [main]
     paths:
       - "content/**"
       - "scripts/validate-content.mjs"
+      - "scripts/content-schema-baseline.json"
+      - "frontend/lib/content/schema/**"
+      - "frontend/tests/lib/content/**"
   pull_request:
     branches: [main]
     paths:
       - "content/**"
       - "scripts/validate-content.mjs"
+      - "scripts/content-schema-baseline.json"
+      - "frontend/lib/content/schema/**"
+      - "frontend/tests/lib/content/**"
 
 jobs:
   validate:
@@ -23,3 +31,8 @@ jobs:
         with:
           node-version: "22"
       - run: node scripts/validate-content.mjs
+      - name: Strict schema gate (ConceptNoteSchema + baseline ratchet)
+        working-directory: frontend
+        run: |
+          npm ci
+          npm run test:run -- tests/lib/content/schema-corpus.test.ts

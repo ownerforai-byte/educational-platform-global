@@ -41,4 +41,102 @@
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits",
   "visualType": "potential-divider"
+,
+  "summary": "A potential divider is two or more resistors connected in series across a voltage source, used to obtain any chosen fraction of the source voltage. For two resistors the output taken across R₂ is V_out = V_in R₂/(R₁ + R₂), and more generally the voltage divider rule gives V_i = V_total R_i/R_total for a resistor in a series chain. Because only the ratio R₂/(R₁ + R₂) matters, the output is independent of the absolute values of the resistors or of the total supply voltage: scaling every resistor scales the current but leaves the output voltage unchanged. The simple formula is exact only when no current is drawn from the output. Loading the output with a resistor R_L puts it in parallel with R₂, lowering the effective resistance and pulling the output voltage down, so dividers are unsuitable for high-current loads. A potentiometer is the continuously adjustable version, using a uniform resistance wire whose output voltage is proportional to the length of wire between the wiper and one end.",
+  "importantConcepts": [
+    "Potential divider as a series chain of resistors across a source, producing a chosen fraction of the supply voltage.",
+    "Output voltage V_out = V_in R₂/(R₁ + R₂) for the two-resistor case, taken across R₂.",
+    "The general voltage divider rule V_i = V_total R_i/R_total for any resistor in a series chain.",
+    "Ratio dependence: only R₂/(R₁ + R₂) sets the output, so doubling all resistors leaves the output unchanged while halving the current.",
+    "Loading effect: a load R_L across R₂ forms a parallel combination that lowers the output voltage below the ideal value.",
+    "The potentiometer as a continuous divider on a uniform wire, with output voltage proportional to the wiper length."
+  ],
+  "importantStatements": [
+    "In a potential divider the output voltage is V_in R₂/(R₁ + R₂) when it is taken across the resistor R₂.",
+    "The output voltage of a potential divider depends only on the ratio of the resistances, not on their absolute values.",
+    "When a load resistor is connected across R₂ the output voltage falls because the effective resistance of that branch decreases.",
+    "A potential divider should not be used to supply large currents, because the output voltage then drops significantly and a buffer or regulator is needed.",
+    "In a potentiometer the output voltage is proportional to the length of resistance wire between the wiper and one terminal."
+  ],
+  "importantTasks": [
+    "Calculate the output voltage and the current drawn by an unloaded two-resistor potential divider.",
+    "Recalculate the output voltage when a load resistor is connected across the output resistor of a divider.",
+    "Design a divider to produce a required output voltage from a given supply by choosing a suitable ratio of resistances.",
+    "Explain why a potential divider is unsuitable as a power supply for a high-current load."
+  ],
+  "keyPoints": [
+    "Only the resistance ratio matters, so the supply voltage cancels out of the output expression entirely.",
+    "The unloaded formula V_out = V_in R₂/(R₁ + R₂) is exact only while no current is drawn from the output terminal.",
+    "Loading always reduces the output voltage, never raises it, because the branch resistance falls.",
+    "Scaling all resistors by the same factor keeps the output voltage but changes the current by the inverse factor.",
+    "A potentiometer gives a continuously variable output, which a fixed two-resistor divider cannot."
+  ],
+  "specialNotes": [
+    "The output voltage of a divider changes when a load is connected, so the simple formula V_in R₂/(R₁ + R₂) is valid only in the unloaded case.",
+    "A divider should not be used as a voltage source for high-current loads, because the output voltage drops badly; a voltage regulator or an op-amp buffer is needed instead.",
+    "The output does not depend on the total supply voltage or on the absolute resistor values, only on their ratio, so scaling all resistors leaves the output unchanged but halves the current.",
+    "Loading can only reduce the output voltage, because placing R_L across R₂ always lowers the resistance of that branch and therefore lowers the fraction of the voltage across it.",
+    "A potentiometer works as a divider only because its wire is uniform, so that resistance, and hence output voltage, is proportional to length."
+  ],
+  "examShortTricks": [
+    "Compute the ratio first: V_out = V_in × R₂/(R₁ + R₂), and resist any temptation to involve the supply current at all.",
+    "When a load is given, reduce R₂ and R_L in parallel first, then apply the same ratio formula to the new branch resistance.",
+    "Use kiloohms and mA together in divider problems, since 12 V across 10 kΩ gives a current of the order of 1 mA and keeps the arithmetic clean.",
+    "If asked to design a divider, choose R₁ to be the smaller resistor when a large output fraction is wanted, since the output is taken across R₂."
+  ],
+  "examNotes": [
+    "A three mark numerical on an unloaded divider, finding the output voltage and the current, appears very regularly.",
+    "A four or five mark question adds a load resistor across the output and asks for the loaded output voltage, which is the standard extension.",
+    "One mark definition questions ask what a potential divider is, answered by two or more resistors in series across a source.",
+    "Expect a design question: choose resistor values to give a specified output from a given supply."
+  ],
+  "practiceQuestions": [
+    "A potential divider with R₁ = 4 kΩ and R₂ = 6 kΩ is connected across a 12 V battery. Find the output voltage across R₂ and the current through the divider.",
+    "The same divider is loaded with a 12 kΩ resistor across R₂. Find the new output voltage and comment on the change.",
+    "State the voltage divider rule and use it to find the voltage across each resistor of a three-resistor series chain.",
+    "Design a potential divider to give an output of 6 V from a 12 V supply and state the resulting current.",
+    "Explain why a potential divider is unsuitable for supplying a high current, and suggest a better alternative."
+  ],
+  "mcs": [
+    {
+      "question": "The output voltage of an unloaded potential divider depends on:",
+      "options": [
+        "The absolute values of the resistors",
+        "The ratio of the resistances only",
+        "The supply current",
+        "The wattage rating of the resistors"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A load resistor is connected across the output of a potential divider. The output voltage will:",
+      "options": [
+        "Increase",
+        "Decrease",
+        "Stay exactly the same",
+        "Become zero"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "For R₁ = 4 kΩ and R₂ = 6 kΩ across a 12 V supply, the output across R₂ is:",
+      "options": [
+        "4.8 V",
+        "7.2 V",
+        "10 V",
+        "12 V"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "In a potentiometer the output voltage is proportional to:",
+      "options": [
+        "The square of the wiper length",
+        "The length of wire between the wiper and one end",
+        "The total length of the wire squared",
+        "The current through the wire"
+      ],
+      "answer": "B"
+    }
+  ]
 }

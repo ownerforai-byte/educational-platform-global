@@ -49,4 +49,102 @@
   "animation3D": "rate-of-heat-flow",
   "motionGraphics": "rate-of-heat-flow",
   "visualType": "fourier-conduction"
+,
+  "summary": "Conduction is the transfer of heat through a material by molecular collisions, with no bulk movement of the substance, and it is described quantitatively by Fourier's law, dQ/dt = −kA dT/dx, where k is the thermal conductivity of the material in W/(m·K), A the cross-sectional area and dT/dx the temperature gradient. The negative sign fixes the direction of flow, from hot to cold. For a uniform slab of thickness L with faces at T₁ and T₂ the rate is H = kA(T₁ − T₂)/L, so a thicker or better conducting layer resists heat more. Typical conductivities are about 400 W/(m·K) for copper, 200 for aluminium and 0.04 to 0.7 for insulation materials such as fibrewool and brick. It is useful to write the flow in the thermal-resistance form H = ΔT/R_th with R_th = L/(kA), which is directly analogous to Ohm's law, and for a composite wall the resistances of the layers simply add. This explains why metals feel cold: they conduct heat away from the hand rapidly, while wood and plastic, with the same temperature, feel warm because they conduct very little.",
+  "importantConcepts": [
+    "Conduction as heat transfer by molecular collisions without any bulk motion of the material.",
+    "Fourier's law dQ/dt = −kA dT/dx, with the negative sign indicating flow from hot to cold.",
+    "Thermal conductivity k as a material property in W/(m·K), independent of the dimensions of the body.",
+    "The uniform-slab form H = kA(T₁ − T₂)/L, in which a thicker layer or a smaller k reduces the flow.",
+    "Thermal resistance R_th = L/(kA), giving H = ΔT/R_th in direct analogy with Ohm's law.",
+    "Additivity of layer resistances in a composite wall, R_total = R₁ + R₂ + R₃ + …"
+  ],
+  "importantStatements": [
+    "Heat flows by conduction from a hotter region to a colder one at a rate proportional to the cross-sectional area and the temperature gradient.",
+    "The rate of conduction is directly proportional to the area A and inversely proportional to the thickness L of the conducting layer.",
+    "Thermal conductivity is a property of the material alone and does not depend on its thickness, area or shape.",
+    "For a uniform slab the heat current is H = kA(T₁ − T₂)/L.",
+    "Layers in series have resistances that add, so a composite wall conducts less than any one of its layers alone."
+  ],
+  "importantTasks": [
+    "Calculate the rate of heat flow through a slab of given conductivity, area, thickness and end temperatures.",
+    "Determine the thermal resistance of a layer and the total resistance of a composite wall built from several layers.",
+    "Compare the insulating effectiveness of two materials of different conductivity and thickness.",
+    "Explain why metals feel colder than wood or plastic at the same temperature."
+  ],
+  "keyPoints": [
+    "Flow rate is proportional to area and to the temperature difference, and inversely proportional to thickness and inversely to k.",
+    "A copper rod with k = 400 W/(m·K), length 0.5 m and area 0.01 m² between 100 °C and 0 °C passes about 800 W.",
+    "For a composite wall add the resistances L/(kA) of the layers, and the largest resistance dominates the total.",
+    "k belongs to the material and does not change with thickness, though the heat flow rate certainly does.",
+    "Metals feel cold because they draw heat from the hand quickly, not because they are at a lower temperature."
+  ],
+  "specialNotes": [
+    "Thermal conductivity k is a property of the material and does not depend on thickness, area or shape, although the heat flow rate depends on all three.",
+    "Metals feel cold to the touch because they conduct heat away from the hand rapidly, not because they are at a lower temperature than the wood beside them.",
+    "The negative sign in Fourier's law is what states the direction of flow, from hot to cold, and should not be dropped when writing the rate as a positive quantity.",
+    "Adding layers always increases the total thermal resistance, so a composite wall conducts less than any single layer of the same area.",
+    "Fourier's law in the form H = ΔT/R_th is the exact analogue of Ohm's law, with ΔT playing the part of V and R_th that of R."
+  ],
+  "examShortTricks": [
+    "Write H = kAΔT/L for a slab and check units: k in W/(m·K) with A in m² and L in m gives watts directly.",
+    "For a composite wall convert every layer to a resistance L/(kA) first, add them, and only then divide the total temperature difference by the total resistance.",
+    "Use k ≈ 400 for copper, 200 for aluminium, 0.7 for brick and 0.04 for good insulation, and compare orders of magnitude before computing.",
+    "If a question asks for the rate, remember the area A must be in square metres and the thickness in metres, which is where most arithmetic errors occur."
+  ],
+  "examNotes": [
+    "A three mark numerical on the heat flow rate through a slab of given k, A, L and temperatures is the standard question in this topic.",
+    "A four or five mark question gives a composite wall of two or three layers and asks for the heat flow per unit area.",
+    "One mark definition questions ask for conduction and for the meaning of thermal conductivity.",
+    "Application questions about insulation in houses, cooking utensils and the sense of touch are popular one or two mark items."
+  ],
+  "practiceQuestions": [
+    "State Fourier's law and define thermal conductivity with its SI unit.",
+    "A copper rod of length 0.5 m and cross-sectional area 0.01 m² has ends at 100 °C and 0 °C. Find the heat flow rate.",
+    "A wall consists of a 10 cm brick layer of k = 0.7 W/(m·K) and a 5 cm insulation layer of k = 0.04 W/(m·K), with 25 °C inside and 5 °C outside. Find the heat flow per unit area.",
+    "Explain why a metal spoon in hot tea feels much hotter than a wooden spoon in the same tea.",
+    "Define thermal resistance and show that the heat flow through a wall obeys an Ohm's law analogy."
+  ],
+  "mcs": [
+    {
+      "question": "Fourier's law for conduction is:",
+      "options": [
+        "H = kAΔT/L",
+        "H = kA L/ΔT",
+        "H = kΔT/(AL)",
+        "H = ALΔT/k"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Thermal conductivity depends on:",
+      "options": [
+        "The thickness of the material",
+        "The material alone",
+        "The cross-sectional area",
+        "The temperature difference only"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The thermal resistance of a layer is:",
+      "options": [
+        "kA/L",
+        "L/(kA)",
+        "L·k/A",
+        "A/(kL)"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Metals feel cold to the touch because:",
+      "options": [
+        "Metals are always at a lower temperature",
+        "Metals conduct heat away from the hand more quickly",
+        "Metals have a higher specific heat",
+        "Metals reflect cold"
+      ],
+      "answer": "B"
+    }
+  ]
 }

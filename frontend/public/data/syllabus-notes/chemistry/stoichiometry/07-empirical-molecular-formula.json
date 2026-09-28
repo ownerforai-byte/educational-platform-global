@@ -65,5 +65,105 @@
     "Remember the by-difference rule for oxygen and the conversion factors 12/44 for carbon and 2/18 for hydrogen."
   ],
   "visualType": "empirical-molecular-formula",
-  "tabGroup": "Stoichiometry-Learner-Notes"
+  "tabGroup": "Stoichiometry-Learner-Notes",
+  "summary": "The empirical formula gives the simplest whole-number ratio of the atoms present (CH₂O for glucose), while the molecular formula gives the actual number of each kind of atom in one molecule (C₆H₁₂O₆), and the two are related by molecular formula = (empirical formula)ₙ where n = molecular mass ÷ empirical formula mass. From percentage composition the procedure is to take masses in 100 g, divide by atomic masses, divide by the smallest, clear fractions to get the empirical formula, then use the molecular mass (often from vapour density, M = 2 × VD) to find n. In combustion analysis carbon comes from the CO₂ absorbed in KOH using the factor 12/44, hydrogen from the H₂O absorbed in anhydrous CaCl₂ using 2/18, and oxygen is found by difference.",
+  "importantConcepts": [
+    "Empirical formula — simplest whole-number ratio of atoms; molecular formula — actual atom count per molecule",
+    "Relation molecular formula = (empirical formula)ₙ with n = molecular mass ÷ empirical formula mass, a whole number",
+    "Procedure from percentage composition: mass in 100 g → moles → divide by smallest → whole numbers → n",
+    "Combustion analysis with conversion factors 12/44 for carbon and 2/18 for hydrogen",
+    "Oxygen determined by difference in organic combustion analysis",
+    "Reverse calculation of percentage composition from a formula, and hydrated-salt problems"
+  ],
+  "importantStatements": [
+    "Glucose, fructose, formaldehyde, acetic acid and lactic acid all share the empirical formula CH₂O but have different molecular formulas.",
+    "A compound with 40% C, 6.67% H and 53.33% O and molecular mass 180 gives the empirical formula CH₂O (mass 30) and n = 6, so the molecular formula is C₆H₁₂O₆.",
+    "Molecular mass from vapour density is M = 2 × VD for a hydrogen reference.",
+    "In combustion analysis, mass of C = mass of CO₂ × 12/44 and mass of H = mass of H₂O × 2/18.",
+    "Two compounds with the same empirical formula need not be the same substance; they may be isomers or entirely different compounds.",
+    "Modern CHN analysers and mass spectrometers determine these formulas in minutes, but the arithmetic logic is unchanged from the classical combustion train."
+  ],
+  "importantTasks": [
+    "Define empirical and molecular formula and derive the relation between them.",
+    "Determine empirical and molecular formula from percentage composition and a given molecular mass.",
+    "Determine the empirical formula from combustion data giving masses of CO₂ and H₂O.",
+    "Find the molecular formula of a compound from its percentage composition and vapour density.",
+    "Find the number of water molecules in a hydrated salt from the mass lost on heating."
+  ],
+  "keyPoints": [
+    "Learn the sequence exactly: percentage → mass → moles → divide by the smallest → whole numbers → n → molecular formula.",
+    "Never leave a fractional ratio; multiply the whole set by 2 or 3 before computing the formula mass.",
+    "Memorise the by-difference rule for oxygen and the factors 12/44 and 2/18.",
+    "Empirical and molecular formulas coincide only when n = 1.",
+    "Without the molecular mass you can get the empirical formula, but never the molecular formula."
+  ],
+  "specialNotes": [
+    "Rounding is dangerous: if the smallest quotient gives ratios near 0.5, such as 1 : 1.5, the whole set must be multiplied by 2, and by 3 for 1 : 1.33 : 1.67 — stopping early gives the wrong formula.",
+    "The result depends entirely on the accuracy of the percentage analysis, and errors propagate through every subsequent division.",
+    "In combustion analysis oxygen is normally found by difference rather than measured directly.",
+    "Elements present in small amounts, such as nitrogen, halogens and sulphur, are poorly determined by the classical train and need special absorption methods or a CHN analyser.",
+    "Hygroscopic or volatile samples give poor data because the mass measured is not the mass of the pure sample."
+  ],
+  "examShortTricks": [
+    "Take 100 g as the basis so that percentages become masses directly — this saves a step.",
+    "Two factors to memorise: 12/44 converts CO₂ to C, and 2/18 converts H₂O to H.",
+    "M = 2 × VD gives the molecular mass needed for n; without it you can only reach the empirical formula.",
+    "Write n explicitly as molecular mass ÷ empirical formula mass before multiplying the empirical formula."
+  ],
+  "examNotes": [
+    "A 5-mark numerical on percentage composition with a given molecular mass is the standard question.",
+    "Combustion-analysis problems supplying masses of CO₂ and H₂O are equally common.",
+    "The empirical versus molecular distinction, with the CH₂O family as the illustration, is a frequent 2-mark question.",
+    "Hydrated-salt problems appear occasionally and test the same ratio method."
+  ],
+  "practiceQuestions": [
+    "Define empirical and molecular formula and derive the relation between them.",
+    "A compound contains 40% C, 6.67% H and 53.33% O and has molecular mass 180. Determine its empirical and molecular formula.",
+    "0.2 g of an organic compound on combustion gives 0.44 g CO₂ and 0.18 g H₂O. Find its empirical formula.",
+    "An oxide of nitrogen contains 30.4% nitrogen and has vapour density 46. Find its molecular formula.",
+    "A hydrated salt contains 36.1% water of crystallisation and its anhydrous salt has molar mass 120 g mol⁻¹. Find the number of water molecules per formula unit.",
+    "Explain why an empirical formula alone cannot identify a compound, with a suitable example."
+  ],
+  "mcs": [
+    {
+      "question": "The molecular formula of a compound is related to its empirical formula by:",
+      "options": [
+        "molecular formula = (empirical formula)ₙ",
+        "molecular formula = empirical formula ÷ n",
+        "molecular formula = n × molar mass",
+        "molecular formula = empirical formula + n"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Glucose, fructose and formaldehyde all share the empirical formula:",
+      "options": [
+        "CH₂O",
+        "C₂H₄O₂",
+        "CH₄",
+        "C₆H₁₂O₆"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "In combustion analysis, the mass of carbon is obtained from the mass of CO₂ using the factor:",
+      "options": [
+        "12/44",
+        "44/12",
+        "2/18",
+        "18/2"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "In the combustion analysis of an organic compound, oxygen is usually determined by:",
+      "options": [
+        "direct weighing of the oxygen evolved",
+        "difference after finding masses of C and H",
+        "absorption in anhydrous CaCl₂",
+        "absorption in KOH solution"
+      ],
+      "answer": "B"
+    }
+  ]
 }

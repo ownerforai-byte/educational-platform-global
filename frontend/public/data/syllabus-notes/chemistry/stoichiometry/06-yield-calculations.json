@@ -68,5 +68,104 @@
     "For reversible processes (Haber, esterification) state that equilibrium limits the yield and recycling is used to improve the overall figure."
   ],
   "visualType": "yield-calculations",
-  "tabGroup": "Stoichiometry-Learner-Notes"
+  "tabGroup": "Stoichiometry-Learner-Notes",
+  "summary": "Theoretical yield is the maximum mass of product calculable from the balanced equation using the limiting reactant, assuming complete reaction and no losses; experimental yield is the mass of pure product actually isolated; and percentage yield = actual ÷ theoretical × 100. Actual yield is always lower because the reaction is incomplete or reversible, side reactions occur, and there are mechanical, solubility and weighing losses — a yield above 100% always signals an impure or wet product. Percentage yield measures how much intended product is recovered, whereas atom economy measures how much reactant mass ends up in the desired product, so a high-yield reaction can still be environmentally poor.",
+  "importantConcepts": [
+    "Theoretical yield — maximum product from the limiting reactant assuming complete reaction",
+    "Experimental (actual) yield — mass of pure product actually isolated",
+    "Percentage yield = (actual ÷ theoretical) × 100",
+    "Related measures — conversion, selectivity, atom economy and the E-factor",
+    "Reasons for yield loss — incompleteness, reversibility, side reactions, mechanical and solubility losses, volatility, hygroscopicity and weighing error"
+  ],
+  "importantStatements": [
+    "The theoretical yield is calculated from the limiting reactant, which is the only reactant that fixes it.",
+    "From 100 g of CaCO₃ the theoretical yield of CaO is 56 g; if 47.6 g is obtained the percentage yield is 47.6/56 × 100 = 85%.",
+    "Hydrating 0.25 mol of ethene should give 0.25 mol = 11.5 g of ethanol; an actual yield of 9.2 g corresponds to 80%.",
+    "A percentage yield greater than 100% always indicates experimental error, such as a wet or impure product or unreacted starting material weighed as product.",
+    "Percentage yield is not purity; purity is a separate property measured by assay.",
+    "In the Haber process only about 15% of the gas reacts per pass, so unreacted gas is recycled to raise the overall yield."
+  ],
+  "importantTasks": [
+    "Define theoretical yield, experimental yield and percentage yield, giving the formula for each.",
+    "Calculate a theoretical yield from the limiting reactant and then a percentage yield from the mass obtained.",
+    "List the reasons why the actual yield is lower than the theoretical yield.",
+    "Explain why a student may report a yield above 100% and how the error can be corrected.",
+    "Distinguish percentage yield from atom economy and state the limitations of each."
+  ],
+  "keyPoints": [
+    "Always quote the limiting reactant when explaining the theoretical yield.",
+    "% yield = (experimental ÷ theoretical) × 100, with both masses in the same units.",
+    "Yield is not purity, and a figure above 100% means an impure or wet sample.",
+    "For reversible processes such as the Haber process and esterification, state that equilibrium limits the yield and recycling improves the overall figure.",
+    "Atom economy of an addition reaction is 100%, while substitution reactions lose part of the reactant mass as by-product."
+  ],
+  "specialNotes": [
+    "A yield above 100% should never be reported as a good result; it always means an impure or wet product, unreacted starting material weighed as product, or a weighing mistake.",
+    "For reversible reactions the stoichiometric theoretical yield is not attainable at all, since the equilibrium yield depends on K, temperature, pressure and recycling.",
+    "Percentage yield cannot be predicted theoretically — it must be determined experimentally, because it depends on kinetics, equilibrium and technique.",
+    "Percentage yield says nothing about energy consumption, solvent use, hazards or waste, so a high yield alone does not establish that a process is green.",
+    "Product remaining dissolved in the mother liquor is a real and often overlooked loss in recrystallisation."
+  ],
+  "examShortTricks": [
+    "Three definitions in one line each: theoretical = maximum possible, experimental = actually obtained, percentage = the ratio of the two.",
+    "Always identify the limiting reactant before computing the theoretical yield.",
+    "Typical laboratory values worth quoting: aspirin 70–85%, soap 80–90%, esterification 60–70%.",
+    "E-factor = mass of waste ÷ mass of product; quote it when discussing green chemistry."
+  ],
+  "examNotes": [
+    "A 5-mark question often combines a theoretical-yield calculation with a percentage-yield calculation.",
+    "Listing the reasons for low yield is a standard 3-mark short question.",
+    "The distinction between percentage yield and atom economy, with the E-factor, is a frequent 2–3 mark item.",
+    "A yield exceeding 100% is often presented in a numerical to test whether the student recognises the error."
+  ],
+  "practiceQuestions": [
+    "Define theoretical yield, experimental yield and percentage yield with a formula for each.",
+    "List six reasons why the actual yield of a reaction is less than the theoretical yield.",
+    "100 g of CaCO₃ on heating gives 47.6 g of CaO. Calculate the percentage yield.",
+    "0.25 mol of ethene is hydrated to ethanol but only 9.2 g is obtained. Calculate the percentage yield. (M(C₂H₅OH) = 46 g mol⁻¹)",
+    "Explain why a student may report a yield greater than 100% and how the error can be corrected.",
+    "Distinguish between percentage yield and atom economy, stating the limitations of each."
+  ],
+  "mcs": [
+    {
+      "question": "Percentage yield is calculated as:",
+      "options": [
+        "theoretical yield ÷ actual yield × 100",
+        "actual yield ÷ theoretical yield × 100",
+        "actual yield × 100",
+        "theoretical yield − actual yield"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A reported percentage yield of 112% most probably indicates:",
+      "options": [
+        "an unusually efficient reaction",
+        "a very pure product",
+        "an impure or wet product, or unreacted starting material",
+        "an error in the balanced equation only"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The theoretical yield is calculated from:",
+      "options": [
+        "the excess reactant",
+        "the limiting reactant",
+        "the total mass of both reactants",
+        "the mass of product actually obtained"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Atom economy differs from percentage yield in that it measures:",
+      "options": [
+        "how much of the reactant mass ends up in the desired product",
+        "how much product was recovered from the flask",
+        "the purity of the isolated product",
+        "the rate of the reaction"
+      ],
+      "answer": "A"
+    }
+  ]
 }

@@ -44,5 +44,98 @@
     "Monohybrid phenotypic ratio: 3:1",
     "Dihybrid phenotypic ratio: 9:3:3:1",
     "Test cross ratio: 1:1"
+  ],
+  "summary": "Gregor Mendel worked on the garden pea Pisum sativum from 1856 to 1863 with seven pairs of contrasting characters and formulated the two laws of classical inheritance. The law of segregation states that the two alleles of a gene separate during gamete formation so that each gamete receives one allele, which gives an F2 genotypic ratio of 1:2:1 and a phenotypic ratio of 3:1 in a monohybrid cross. The law of independent assortment states that genes on different chromosomes assort independently during meiosis, giving the 9:3:3:1 F2 phenotypic ratio in a dihybrid cross. Punnett squares, ratio identification and test crosses are the calculation skills tested in NEB entrance papers.",
+  "importantConcepts": [
+    "A gene is the unit of heredity; an allele is one of the alternative forms of that gene, written with a capital letter for the dominant allele and the matching lowercase letter for the recessive one.",
+    "Genotype is the genetic makeup (TT, Tt, tt) and phenotype is the observable trait; a dominant allele is expressed even in a heterozygote.",
+    "Homozygous (TT or tt) means two identical alleles; heterozygous (Tt) means two different alleles and shows the dominant phenotype.",
+    "Law of segregation: the pair of alleles separates during gamete formation, so each gamete carries only one allele of each gene.",
+    "Law of independent assortment: alleles of genes on different chromosomes assort independently during meiosis; linked genes on the same chromosome are the exception.",
+    "A test cross between an individual showing the dominant phenotype and a homozygous recessive individual reveals the genotype — a 1:1 ratio means heterozygous, all dominant means homozygous dominant."
+  ],
+  "importantStatements": [
+    "Dominance does not mean 'more common'; it only means the allele is expressed when a single copy is present.",
+    "Independent assortment applies to genes on different chromosomes, not to every gene in the organism.",
+    "A 3:1 phenotypic ratio alone does not prove that a parent is homozygous — a test cross is needed to confirm the genotype.",
+    "A dominant allele is expressed in the heterozygote, the recessive allele is masked but can still be inherited and passed to the offspring.",
+    "A monohybrid cross follows one pair of contrasting characters, whereas a dihybrid cross follows two characters considered together.",
+    "Homozygous parents (TT x tt) produce an F1 in which every offspring is Tt and shows only the dominant phenotype."
+  ],
+  "importantTasks": [
+    "Draw Punnett squares for TT x tt, Tt x Tt and Tt x tt and state the genotypic and phenotypic ratios of the F2.",
+    "In a cross of Tt x Tt, calculate the fraction of F2 offspring that are homozygous and the probability of a short (recessive) plant.",
+    "Determine the phenotype ratio produced by a dihybrid cross TtRr x TtRr and say what fraction shows both dominant traits.",
+    "Find the genotype of a tall pea plant by test-crossing it with a homozygous recessive plant, and interpret a 1:1 ratio and an all-dominant offspring ratio.",
+    "Given two phenotypically normal parents who have produced a child with a recessive trait, deduce the possible genotype of each parent."
+  ],
+  "keyPoints": [
+    "Monohybrid cross Tt x Tt: F2 genotypes 1 TT : 2 Tt : 1 tt, phenotypes 3 tall : 1 short.",
+    "Dihybrid cross TtRr x TtRr: F2 phenotypes 9 : 3 : 3 : 1 (9 round-yellow, 3 round-green, 3 wrinkled-yellow, 1 wrinkled-green).",
+    "A Tt x Tt parent forms T and t gametes in equal numbers, giving a 1:1 ratio of the two gamete types.",
+    "A test cross ratio of 1:1 identifies the unknown dominant parent as heterozygous.",
+    "Genotypic and phenotypic ratios differ only where dominance makes two different genotypes look identical (TT and Tt look the same).",
+    "Sutton and Boveri later supplied the chromosomal basis for Mendel's factors, establishing that genes are carried on chromosomes."
+  ],
+  "specialNotes": [
+    "Independent assortment fails for genes carried on the same chromosome; such linked genes are inherited together unless crossing over separates them.",
+    "Dominant does not mean common, stronger or better — a recessive phenotype appears only in homozygotes.",
+    "A 3:1 F2 ratio is expected only when the sample is large, fertilisation is random and dominance is complete; small samples deviate by chance.",
+    "A test cross works only with a homozygous recessive partner, since that parent can supply only the recessive allele.",
+    "Mendel published his work in 1866 but it was largely ignored until it was rediscovered around 1900, long after the chromosome basis of heredity was established."
+  ],
+  "examShortTricks": [
+    "Ratio decoder: 3:1 = monohybrid F2 phenotype, 1:2:1 = monohybrid F2 genotype, 9:3:3:1 = dihybrid F2 phenotype, 1:1 = test cross.",
+    "In a Tt x Tt square, three of the four boxes look alike (TT, TT, Tt) because dominance hides the difference.",
+    "If a recessive phenotype appears in the offspring, both parents must carry a recessive allele.",
+    "In dihybrid questions 9/16 of the F2 shows both dominant traits — it is the most common single class.",
+    "Count the letters in the Punnett square, then multiply out to 16 boxes for a dihybrid."
+  ],
+  "examNotes": [
+    "Monohybrid and dihybrid Punnett-square problems are the highest-frequency 5-mark items in the heredity section; state the genotype and phenotype ratios separately.",
+    "One-mark MCQs ask for the meaning of a term (gene, allele, homozygous, genotype) or the ratio produced by a named cross.",
+    "Statement-based MCQs test the exceptions: 'independent assortment applies to all genes' and 'dominant traits are more common' are both false.",
+    "Test cross questions give an offspring ratio and ask for the parent's genotype; a 1:1 ratio indicates heterozygosity.",
+    "Ratio-identification MCQs with a printed cross (1:2:1, 3:1, 9:3:3:1, 1:1) are frequently set as one-mark items."
+  ],
+  "practiceQuestions": [
+    "Cross TT x tt and state the F1 genotype, the F1 phenotype and the F2 genotypic and phenotypic ratios.",
+    "In a Tt x Tt cross, what fraction of the F2 is homozygous and what fraction shows the recessive phenotype?",
+    "A dihybrid cross TtRr x TtRr gives what phenotypic ratio, and what fraction shows both dominant traits?",
+    "How would you determine whether a tall pea plant is TT or Tt?",
+    "Two phenotypically normal parents produce a child with a recessive disorder. What can you infer about their genotypes?",
+    "Explain why Mendel's second law does not hold for genes located on the same chromosome."
+  ],
+  "mcs": [
+    {
+      "question": "A tall pea plant (T) crossed with a short pea plant (t) produces only tall offspring. The genotype of the tall parent is most likely:",
+      "options": ["tt", "Tt", "TT", "Either Tt or TT"],
+      "answer": "C",
+      "explanation": "All tall offspring from a short (tt) parent means the tall parent supplied only T alleles, so it must be homozygous dominant TT. A Tt parent would have given a 1:1 ratio of tall and short."
+    },
+    {
+      "question": "The phenotypic ratio obtained in the F2 generation of a monohybrid cross is:",
+      "options": ["1:1", "3:1", "1:2:1", "9:3:3:1"],
+      "answer": "B",
+      "explanation": "3:1 is the F2 phenotypic ratio of a monohybrid cross with complete dominance. 1:2:1 is its genotypic ratio, 1:1 comes from a test cross and 9:3:3:1 from a dihybrid cross."
+    },
+    {
+      "question": "In a test cross with a homozygous recessive plant, a heterozygous dominant parent produces:",
+      "options": ["All dominant offspring", "All recessive offspring", "A 1:1 dominant to recessive ratio", "A 3:1 ratio"],
+      "answer": "C",
+      "explanation": "Tt x tt gives one-half Tt (dominant) and one-half tt (recessive), a 1:1 ratio that identifies the unknown dominant parent as heterozygous."
+    },
+    {
+      "question": "The law of independent assortment applies to:",
+      "options": ["All genes in a cell", "Only genes on the same chromosome", "Genes located on different chromosomes", "Only dominant genes"],
+      "answer": "C",
+      "explanation": "Genes on different chromosomes assort independently during meiosis. Genes on the same chromosome are linked and are inherited together unless crossing over separates them."
+    },
+    {
+      "question": "In the dihybrid cross TtRr x TtRr the F2 offspring occur in the genotypic ratio:",
+      "options": ["9:3:3:1", "1:2:1", "1:4:6:4:1", "1:1:1:1"],
+      "answer": "C",
+      "explanation": "1:4:6:4:1 is the genotypic (and phenotypic) ratio of the F2 dihybrid, while 9:3:3:1 is the phenotypic ratio produced when dominance is complete."
+    }
   ]
 }

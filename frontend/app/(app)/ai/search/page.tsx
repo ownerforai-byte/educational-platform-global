@@ -4,7 +4,7 @@ import { ArrowLeft, Compass, Search, Sparkles, FileSearch } from "lucide-react";
 import { SmartSearchPanel } from "@/components/ai/smart-search-panel";
 
 export const metadata: Metadata = {
-  title: "AI Curriculum Search — Notes, Labs & PYQs in Plain Language",
+  title: "Captain Curriculum Search — Notes, Labs & PYQs in Plain Language",
   description:
     "Ask a question in plain language and get the notes, labs, graphs and past questions that answer it, each with a direct link on Ravikisan's Platform.",
 };
@@ -46,7 +46,7 @@ export default function AISearchPage() {
           AI Studio
         </Link>
         <span className="text-muted-foreground/40">/</span>
-        <span className="text-xs font-semibold text-foreground">AI Curriculum Search</span>
+        <span className="text-xs font-semibold text-foreground">Captain Curriculum Search</span>
       </div>
 
       {/* Header */}
@@ -56,7 +56,7 @@ export default function AISearchPage() {
             <Search className="h-5 w-5 text-emerald-500" />
           </span>
           <div>
-            <h1 className="text-xl sm:text-2xl font-black tracking-tight">AI Curriculum Search</h1>
+            <h1 className="text-xl sm:text-2xl font-black tracking-tight">Captain Curriculum Search</h1>
             <p className="text-xs text-muted-foreground">
               One search across notes, labs, graphs, practicals and question banks.
             </p>

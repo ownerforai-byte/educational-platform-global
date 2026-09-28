@@ -1,0 +1,95 @@
+{
+  "file": "biology/human-health-and-diseases/06-immune-system-and-immunity.json",
+  "data": {
+    "summary": "The immune system defends the body against pathogens and foreign substances through two layers. Innate or non-specific immunity is present from birth and acts immediately through physical barriers such as skin and mucous membranes, chemical barriers such as stomach acid and lysozyme in tears, phagocytes, inflammation, fever and natural killer cells. Adaptive or specific immunity develops over a lifetime, targets particular pathogens and has immunological memory; its humoral branch uses B cells to produce antibodies and its cell-mediated branch uses T cells to destroy infected cells. Vaccination exploits this by introducing a weakened or killed antigen to create memory cells, and herd immunity results when enough people are immune to limit spread.",
+    "importantConcepts": [
+      "Innate versus adaptive immunity",
+      "Physical, chemical and cellular barriers",
+      "Phagocytes, inflammation, fever and natural killer cells",
+      "Humoral immunity by B cells and cell-mediated immunity by T cells",
+      "The five antibody classes IgG, IgA, IgM, IgD and IgE",
+      "Active versus passive immunity, vaccination and herd immunity"
+    ],
+    "importantStatements": [
+      "Only adaptive immunity has immunological memory; innate immunity has none.",
+      "Antibodies usually do not kill pathogens directly; they neutralise or mark them for destruction by phagocytes.",
+      "Vaccines use weakened or killed pathogens to stimulate active immunity, so they do not cause the disease itself.",
+      "IgM is the first antibody produced in a primary response, while IgG is the most abundant and crosses the placenta.",
+      "Passive immunity means receiving ready-made antibodies, as from mother to baby or as antivenom.",
+      "Allergies are hypersensitive responses to harmless antigens and are mediated by IgE and histamine released from mast cells."
+    ],
+    "importantTasks": [
+      "Compare innate and adaptive immunity in a table covering source, speed, specificity and memory.",
+      "Explain in a few sentences how an antibody neutralises or marks a pathogen.",
+      "Distinguish active immunity from passive immunity and give one example of each.",
+      "Describe the mechanism of vaccination, including the role of memory cells.",
+      "Name each of the five antibody classes and state its main function."
+    ],
+    "keyPoints": [
+      "Innate immunity: present from birth, immediate, non-specific and without memory.",
+      "Adaptive immunity: develops over time, specific, slow on first exposure, and has memory.",
+      "IgG: most abundant, crosses the placenta, gives long-term immunity; IgM: first responder, large pentamer.",
+      "IgA: mucosal immunity in tears, saliva and breast milk; IgE: allergies and parasites; IgD: B cell receptor.",
+      "Vaccination creates memory cells so that re-exposure produces a faster, stronger response.",
+      "Herd immunity occurs when enough people are immune that transmission of the disease is limited."
+    ],
+    "specialNotes": [
+      "Autoimmune disease occurs when the immune system attacks the body's own cells, for example rheumatoid arthritis or type 1 diabetes.",
+      "Inflammation shows as redness, swelling, heat and pain at the site of infection.",
+      "Fever helps defence by raising body temperature above the optimum for many pathogens.",
+      "Natural killer cells destroy infected host cells and belong to innate, not adaptive, immunity.",
+      "Passive immunity gives immediate but short-lived protection, while active immunity is slower but long-lasting."
+    ],
+    "examShortTricks": [
+      "'Born with it means innate; learned and remembered means adaptive.'",
+      "IgM for first, IgG for greatest and placenta, IgA for mucus, IgE for allergy, IgD for receptor: match the letter to the clue.",
+      "The quickest way to separate active from passive is to ask whether the body made the antibodies or received them.",
+      "Antibody function in one line: it neutralises, opsonises or agglutinates, and then phagocytes finish the job."
+    ],
+    "examNotes": [
+      "A comparison table of innate and adaptive immunity is the most common short-answer question in this topic.",
+      "One-mark MCQs ask which antibody class is the first responder, or which one crosses the placenta.",
+      "Vaccination and herd immunity are frequently set as a three-mark explanation question.",
+      "Distinguish active from passive immunity with one example of each, since marks are usually awarded for the example."
+    ],
+    "practiceQuestions": [
+      "Why does adaptive immunity have memory while innate immunity does not?",
+      "Which antibody class is produced first in a new infection, and which is found in breast milk?",
+      "Explain the difference between an allergy and an autoimmune disease.",
+      "Why does passive immunity not protect a person for very long?",
+      "A patient is vaccinated and later meets the same pathogen. Describe the difference in the immune response."
+    ],
+    "mcs": [
+      {
+        "question": "Which type of immunity is present from birth and has no memory?",
+        "options": ["Adaptive immunity", "Innate immunity", "Active immunity", "Acquired immunity"],
+        "answer": "B",
+        "explanation": "Innate immunity is non-specific, acts immediately and has no immunological memory; memory belongs to adaptive immunity."
+      },
+      {
+        "question": "The first antibody produced in a primary immune response is",
+        "options": ["IgG", "IgA", "IgE", "IgM"],
+        "answer": "D",
+        "explanation": "IgM is the first responder and is a large pentamer, while IgG follows later and becomes the most abundant class."
+      },
+      {
+        "question": "Passive immunity is obtained by",
+        "options": ["Receiving pre-made antibodies", "Infection", "Vaccination", "Exposure to an antigen"],
+        "answer": "A",
+        "explanation": "Passive immunity means the body receives ready-made antibodies, as from mother to baby or as antivenom."
+      },
+      {
+        "question": "Allergic reactions are mainly mediated by",
+        "options": ["IgA", "IgG", "IgM", "IgE"],
+        "answer": "D",
+        "explanation": "IgE binds to mast cells, and their release of histamine produces the symptoms of hay fever, asthma and anaphylaxis."
+      },
+      {
+        "question": "Which antibody crosses the placenta and gives natural immunity to the newborn?",
+        "options": ["IgM", "IgG", "IgA", "IgE"],
+        "answer": "B",
+        "explanation": "IgG is the most abundant class and is the only one that passes the placenta, so it protects the newborn in early life."
+      }
+    ]
+  }
+}

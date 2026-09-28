@@ -120,7 +120,8 @@
         "4h",
         "16h"
       ],
-      "answer": "C (h ∝ t²)"
+      "answer": "C",
+      "explanation": "For a body dropped from rest, h ∝ t², so doubling the time quadruples the fall: 4 h."
     },
     {
       "question": "A ball thrown up at 20 m/s (g = 10) returns to the thrower after:",
@@ -130,7 +131,8 @@
         "20 s",
         "10 s"
       ],
-      "answer": "B (T = 2u/g)"
+      "answer": "B",
+      "explanation": "Time of flight for a vertical throw returning to the thrower: T = 2u/g = 2(20)/10 = 4 s."
     },
     {
       "question": "Two stones of masses 1 kg and 5 kg are dropped together from a cliff. They land:",

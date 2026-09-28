@@ -1,0 +1,95 @@
+{
+  "file": "biology/heredity-and-evolution/03-mendels-laws-of-inheritance.json",
+  "data": {
+    "summary": "Gregor Mendel, the father of genetics, worked on pea plants (Pisum sativum) from 1856 to 1863 and studied seven pairs of contrasting characters. His first law, the law of segregation, states that the two alleles of a gene separate during gamete formation so that each gamete receives only one allele, giving a monohybrid cross of 1:2:1 genotypically and 3:1 phenotypically. His second law, the law of independent assortment, states that genes on different chromosomes assort independently during gamete formation, giving a dihybrid phenotypic ratio of 9:3:3:1. A test cross between an individual showing the dominant phenotype and a homozygous recessive individual gives a 1:1 ratio and reveals the genotype.",
+    "importantConcepts": [
+      "Gene, allele, genotype and phenotype",
+      "Homozygous versus heterozygous, and dominant versus recessive notation",
+      "Punnett square method for predicting offspring ratios",
+      "Monohybrid cross: genotypic 1:2:1 and phenotypic 3:1",
+      "Dihybrid cross: phenotypic 9:3:3:1",
+      "Test cross: dominant phenotype crossed with a homozygous recessive, giving 1:1"
+    ],
+    "importantStatements": [
+      "Mendel is known as the father of genetics and based his work on the pea plant Pisum sativum.",
+      "During gamete formation the two alleles of a gene segregate, so each gamete carries only one allele for that gene.",
+      "Independent assortment applies only to genes on different chromosomes; genes on the same chromosome do not assort independently.",
+      "A test cross with a homozygous recessive individual always gives a 1:1 phenotypic ratio.",
+      "Dominance describes expression, not frequency; a dominant trait need not be the commonest trait in a population.",
+      "The law of segregation holds during gamete formation, so it explains the behaviour of alleles rather than of traits."
+    ],
+    "importantTasks": [
+      "Fill in Punnett squares for a monohybrid and a dihybrid cross and state both genotypic and phenotypic ratios.",
+      "Perform the cross TT x tt and record the genotype and phenotype of the F1 and F2 generations.",
+      "Use a test cross to determine whether a tall plant is TT or Tt.",
+      "Determine the F2 genotypic and phenotypic ratios from the cross Tt x Tt.",
+      "State both of Mendel's laws and explain how the test cross supports the law of segregation."
+    ],
+    "keyPoints": [
+      "Genotype is the genetic makeup (TT, Tt, tt); phenotype is the observable appearance.",
+      "A capital letter denotes the dominant allele and a lowercase letter the recessive allele.",
+      "Monohybrid cross of two heterozygotes: genotypic 1:2:1, phenotypic 3:1.",
+      "Dihybrid cross of two double heterozygotes: phenotypic 9:3:3:1.",
+      "Test cross: a 1:1 ratio means the tested parent is heterozygous, while all dominant offspring means it is homozygous dominant.",
+      "Punnett square: parental gametes along the top and side, offspring in the inner cells."
+    ],
+    "specialNotes": [
+      "A 3:1 phenotypic ratio can arise from TT x tt or from Tt x Tt, so the ratio alone does not reveal the parental genotypes.",
+      "Independent assortment fails for genes carried on the same chromosome, which is why Mendel studied seven separate traits.",
+      "Dominance does not mean a trait is commoner or stronger; it only means it is expressed in the heterozygote.",
+      "Genotype and phenotype must not be interchanged: the ratio of phenotypes differs from the ratio of genotypes unless dominance is complete.",
+      "Only one allele of a gene passes into each gamete, so a gamete can never carry both T and t."
+    ],
+    "examShortTricks": [
+      "Fill the Punnett square with T and t along the top and side: wherever T and t meet in a cell, that cell is Tt.",
+      "A test cross is the shortest route to an unknown genotype, because the recessive parent always contributes t.",
+      "Tt x Tt gives 1 TT : 2 Tt : 1 tt, which becomes 3:1 only when you count tall against short.",
+      "9:3:3:1 arises from two independent 3:1 ratios multiplied together, so treat a dihybrid as two monohybrid crosses."
+    ],
+    "examNotes": [
+      "Punnett square numericals are almost guaranteed; practise monohybrid, dihybrid and test cross questions.",
+      "One-mark MCQs ask for the ratio produced by a named cross, or for the definition of a term such as allele or homozygous.",
+      "Long answers often ask students to state and explain the two laws with diagrams, and one Punnett square per law scores well.",
+      "Always label the parental generation, the gametes, the F1 and the F2 so the examiner can follow your working."
+    ],
+    "practiceQuestions": [
+      "Cross TT with tt and state the genotype and phenotype of the F1 generation.",
+      "In a Tt x Tt cross, what fraction of the offspring are homozygous?",
+      "What phenotypic ratio does the dihybrid cross TtRr x TtRr produce?",
+      "How can a test cross show whether a tall pea plant is TT or Tt?",
+      "Why does the law of independent assortment not apply to genes on the same chromosome?"
+    ],
+    "mcs": [
+      {
+        "question": "In a monohybrid cross between two heterozygotes, the F2 genotypic ratio is",
+        "options": ["1:2:1", "3:1", "9:3:3:1", "1:1"],
+        "answer": "A",
+        "explanation": "Tt x Tt gives 1 TT : 2 Tt : 1 tt, a genotypic ratio of 1:2:1 and a phenotypic ratio of 3:1."
+      },
+      {
+        "question": "Mendel's law of segregation states that the alleles of a gene",
+        "options": ["Assort independently during gamete formation", "Separate during gamete formation so that each gamete receives one allele", "Are always linked together", "Mutate in every generation"],
+        "answer": "B",
+        "explanation": "Segregation means the two alleles separate during gamete formation, so each gamete receives only one allele of that gene."
+      },
+      {
+        "question": "A test cross is used to find whether an individual showing the dominant phenotype is",
+        "options": ["Homozygous or heterozygous", "Always homozygous recessive", "A different species", "Of a different genotype from its parents only"],
+        "answer": "A",
+        "explanation": "Crossing with a homozygous recessive gives a 1:1 ratio if the tested parent is Tt, and all dominant offspring if it is TT."
+      },
+      {
+        "question": "The phenotypic ratio in the F2 generation of a dihybrid cross is",
+        "options": ["1:2:1", "3:1", "9:3:3:1", "1:1"],
+        "answer": "C",
+        "explanation": "A dihybrid cross TtRr x TtRr with independent assortment gives the classic 9:3:3:1 phenotypic ratio."
+      },
+      {
+        "question": "The law of independent assortment applies to genes located on",
+        "options": ["Different chromosomes", "The same chromosome only", "Any chromosome in the F1 generation", "Only in males"],
+        "answer": "A",
+        "explanation": "Genes on different chromosomes assort independently during gamete formation; linked genes on the same chromosome do not."
+      }
+    ]
+  }
+}

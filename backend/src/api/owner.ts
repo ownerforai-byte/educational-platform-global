@@ -3,6 +3,7 @@ import { z } from "zod";
 import { requireAuth, isOwnerEmail, type AuthedRequest } from "../middleware/auth";
 import { supabaseAdmin } from "../db/supabase";
 import { authEmailsById } from "../utils/authEmails";
+import { sendApprovalEmail } from "../utils/mailer";
 
 /**
  * Owner-only router — mounted at /api/owner.
@@ -361,6 +362,40 @@ router.patch("/users/:id/status", requireAuth, async (req: Request, res: Respons
     console.info(
       `[owner] access ${target.access_status ?? "?"} -> ${parsed.data.status} for ${req.params.id} by ${owner.user.email}`,
     );
+
+    // Auto-approval email (owner policy 2026-09-28): the moment an account
+    // becomes ACTIVE the user is told they can sign in. Fire-and-forget —
+    // email must never slow down or fail the approval itself.
+    if (parsed.data.status === "ACTIVE" && target.access_status !== "ACTIVE") {
+      void (async () => {
+        try {
+          const { data: authUser } = await supabaseAdmin.auth.admin.getUserById(
+            req.params.id,
+          );
+          const email = authUser?.user?.email;
+          if (!email) return;
+          const meta = authUser?.user?.user_metadata as
+            | { full_name?: string }
+            | undefined;
+          const result = await sendApprovalEmail(email, meta?.full_name ?? null);
+          if (result.sent) {
+            console.info(`[owner] approval email sent to ${email}`);
+          } else {
+            console.warn(
+              `[owner] approval email not sent (${
+                result.skipped ? "no mail provider configured" : result.error
+              })`,
+            );
+          }
+        } catch (err) {
+          console.warn(
+            "[owner] approval email failed:",
+            err instanceof Error ? err.message : err,
+          );
+        }
+      })();
+    }
+
     res.json({ success: true, userId: req.params.id, status: parsed.data.status });
   } catch (err: any) {
     console.error("[owner] access status error:", err?.message ?? err);

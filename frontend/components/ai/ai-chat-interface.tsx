@@ -4,8 +4,12 @@ import React, { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 import {
   Send,
-  Bot,
   User,
+  Brain,
+  Globe,
+  Lightbulb,
+  Rocket,
+  Scale,
   Sparkles,
   Trash2,
   Copy,
@@ -45,45 +49,71 @@ import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { cn } from "@/lib/utils";
+import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
 
-const SUGGESTED_PROMPTS = [
-  {
-    category: "Physics",
-    icon: Atom,
-    color: "text-sky-500 bg-sky-500/10 border-sky-500/30",
-    text: "Derive the Lens Maker's formula step by step with sign conventions.",
-  },
-  {
-    category: "Physics",
-    icon: Atom,
-    color: "text-sky-500 bg-sky-500/10 border-sky-500/30",
-    text: "Explain Carnot engine cycle and maximum theoretical efficiency.",
-  },
-  {
-    category: "Chemistry",
-    icon: FlaskConical,
-    color: "text-emerald-500 bg-emerald-500/10 border-emerald-500/30",
-    text: "Explain the Inert Pair Effect in heavier p-block elements with examples.",
-  },
-  {
-    category: "Chemistry",
-    icon: FlaskConical,
-    color: "text-emerald-500 bg-emerald-500/10 border-emerald-500/30",
-    text: "Compare SN1 and SN2 reaction mechanisms, kinetics, and stereochemistry.",
-  },
-  {
-    category: "Biology",
-    icon: Sparkles,
-    color: "text-pink-500 bg-pink-500/10 border-pink-500/30",
-    text: "Describe the steps of DNA replication and role of DNA Polymerase III.",
-  },
-  {
-    category: "Mathematics",
-    icon: Binary,
-    color: "text-purple-500 bg-purple-500/10 border-purple-500/30",
-    text: "Prove that lim(x->0) [sin(x)/x] = 1 using Sandwich (Squeeze) Theorem.",
-  },
+// ── Rotating suggestion deck (owner request 2026-09-28): the starter
+// questions must never feel fixed — a wide pool of DEEP, idea-walk prompts
+// (each invites many ideas in conceptual order, past → present) is shuffled
+// on mount and whenever a fresh conversation starts.
+type Suggestion = {
+  category: string;
+  icon: React.ComponentType<{ className?: string }>;
+  color: string;
+  text: string;
+};
+
+const CAT_COLORS: Record<string, string> = {
+  Physics: "text-sky-500 bg-sky-500/10 border-sky-500/30",
+  Chemistry: "text-emerald-500 bg-emerald-500/10 border-emerald-500/30",
+  Biology: "text-pink-500 bg-pink-500/10 border-pink-500/30",
+  Mathematics: "text-purple-500 bg-purple-500/10 border-purple-500/30",
+  "World & History": "text-amber-600 bg-amber-500/10 border-amber-500/30",
+  "Earth & Space": "text-indigo-500 bg-indigo-500/10 border-indigo-500/30",
+};
+
+function sug(
+  category: string,
+  icon: React.ComponentType<{ className?: string }>,
+  text: string
+): Suggestion {
+  return {
+    category,
+    icon,
+    color: CAT_COLORS[category] ?? "text-primary bg-primary/10 border-primary/30",
+    text,
+  };
+}
+
+const SUGGESTION_POOL: Suggestion[] = [
+  sug("Physics", Atom, "Take me from the earliest idea of motion to Einstein — every big idea about space and time, in order."),
+  sug("Physics", Atom, "What is energy, really? Walk me through every major idea behind it, oldest to newest."),
+  sug("Physics", Lightbulb, "Explain light — from rays to photons to fields — the full chain of ideas in conceptual order."),
+  sug("Physics", Rocket, "From falling apples to GPS: gather every idea that built Newton's gravity, step by step."),
+  sug("Chemistry", FlaskConical, "From atoms to bonds to orbitals: build the whole idea of the chemical bond, step by step."),
+  sug("Chemistry", FlaskConical, "Walk me through every idea behind the mole, from mass ratios to Avogadro's number."),
+  sug("Chemistry", FlaskConical, "Gather every idea that explained why reactions happen — from affinities to energy landscapes."),
+  sug("Biology", Brain, "From vital force to DNA to CRISPR: the chain of ideas that made heredity understandable."),
+  sug("Biology", FlaskConical, "Trace the idea of the cell — from cork scratches to endosymbiosis — every step in order."),
+  sug("Biology", Brain, "How did we figure out life runs on information? Build that idea from enzymes to the genetic code."),
+  sug("Mathematics", Binary, "Build calculus from Zeno's paradox to the limit: every idea that made it rigorous."),
+  sug("Mathematics", Binary, "From rope-stretching to graphs: how the idea of a function grew across centuries."),
+  sug("Mathematics", Scale, "Why do proofs exist? Trace the idea of mathematical certainty from Euclid to Gödel."),
+  sug("World & History", Globe, "What does 'knowing' mean? Build the idea of knowledge from ancient Greece to modern science."),
+  sug("World & History", Scale, "Trace the idea of justice from Hammurabi to human rights — many views in conceptual order."),
+  sug("World & History", Lightbulb, "How did we learn to trust numbers? From tally marks to statistics to big data."),
+  sug("Earth & Space", Globe, "From a flat earth to an expanding universe: every big idea about our cosmos, in order."),
+  sug("Earth & Space", Rocket, "Plate tectonics: gather every idea that proved the ground moves, oldest to newest."),
 ];
+
+/** A random set of six from the pool (fresh deck for a fresh conversation). */
+function shuffledSuggestions(): Suggestion[] {
+  const bag = [...SUGGESTION_POOL];
+  for (let i = bag.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [bag[i], bag[j]] = [bag[j], bag[i]];
+  }
+  return bag.slice(0, 6);
+}
 
 // Daily credit pools (owner policy 2026-09-26): guests get 5 free
 // messages/day, logged users get 8 credits/day — both reset at 12:00 AM.
@@ -97,8 +127,15 @@ const ACTIVE_SESSION_KEY = "neb_ai_active_session";
 // client render matches the server exactly (no hydration risk).
 const THINKING_LINES = [
   "Thinking it through…",
+  "Extracting the ideas…",
+  "Contemplating the concept…",
+  "Musing it over…",
+  "Pondering the question…",
+  "Reflecting on what matters…",
   "Reasoning from first principles…",
   "Pulling in the NEB syllabus…",
+  "Gathering the ideas in conceptual order…",
+  "Building the answer from past to present…",
   "Connecting the dots…",
 ];
 
@@ -245,6 +282,9 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
   const [session, setSession] = useState<string>("default");
   const [sessions, setSessions] = useState<ChatSession[]>([]);
   const [sidebarOpen, setSidebarOpen] = useState(!embedded);
+  const [suggestions, setSuggestions] = useState<Suggestion[]>(() =>
+    SUGGESTION_POOL.slice(0, 6)
+  );
   const [restoredCount, setRestoredCount] = useState<number | null>(null);
 
   const [thinkIdx, setThinkIdx] = useState(0);
@@ -255,6 +295,28 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
   const sessionRef = useRef(session);
   sessionRef.current = session;
   const guestThreadsRef = useRef<GuestThread[]>([]);
+  const asideRef = useRef<HTMLElement>(null);
+
+  // Fresh deep-question set per mount (deterministic first paint → no
+  // hydration mismatch; the shuffle lands right after hydration).
+  useEffect(() => {
+    setSuggestions(shuffledSuggestions());
+  }, []);
+
+  // Embedded widget: clicking outside the histories drawer closes it
+  // (hovering the left edge re-opens it — see the hotspot near <aside>).
+  useEffect(() => {
+    if (!embedded || !sidebarOpen) return;
+    const onPointerDown = (e: MouseEvent) => {
+      const target = e.target as Element | null;
+      if (!target || typeof target.closest !== "function") return;
+      if (asideRef.current?.contains(target)) return;
+      if (target.closest("[data-chat-sidebar-toggle]")) return;
+      setSidebarOpen(false);
+    };
+    document.addEventListener("mousedown", onPointerDown);
+    return () => document.removeEventListener("mousedown", onPointerDown);
+  }, [embedded, sidebarOpen]);
 
   const guestCredits = Math.max(0, MAX_GUEST_MESSAGES - guestCount);
   const isGuestLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
@@ -417,7 +479,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       return;
     }
     if (creditsExhausted) {
-      setError(`You've used all ${DAILY_CREDIT_POOL} credits of today's daily pool. It resets at 12:00 AM — or go PRO for unlimited.`);
+      setError(`You've used all ${DAILY_CREDIT_POOL} credits of today's daily pool. It resets at 12:00 AM — or go PRO for no daily cap.`);
       return;
     }
 
@@ -484,7 +546,8 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       }
     } catch (err: any) {
       console.error("AI chat error:", err);
-      const msg = err.message || "Failed to reach AI Tutor. Please try again.";
+      const msg =
+        err.message || "Failed to reach the Captain. Please try again.";
       setError(msg);
       if (err?.status === 402) {
         // Daily pool empty (guest or signed-in). The server's message
@@ -550,6 +613,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
     setMessages([{ role: "system", content: PLATFORM_SYSTEM_PROMPT }]);
     setError(null);
     setRestoredCount(null);
+    setSuggestions(shuffledSuggestions());
     if (window.innerWidth < 1024) setSidebarOpen(false);
     inputRef.current?.focus();
   };
@@ -606,6 +670,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       writeGuestHistory({ active: sessionRef.current, threads: guestThreadsRef.current });
     }
     setSessions((prev) => prev.filter((s) => s.session !== sessionRef.current));
+    setSuggestions(shuffledSuggestions());
   };
 
   /** Rewrite the drafted prompt into a sharper study question before sending. */
@@ -636,8 +701,17 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       }
     >
       {/* ── Conversations sidebar (individual chat histories) ─────── */}
+      {/* Embedded: hovering the left edge slides the histories open. */}
+      {embedded && !sidebarOpen && (
+        <div
+          aria-hidden="true"
+          onMouseEnter={() => setSidebarOpen(true)}
+          className="absolute inset-y-0 left-0 w-3 z-30 cursor-pointer"
+        />
+      )}
       {(
         <aside
+          ref={asideRef}
           className={cn(
             "shrink-0 border-r border-border/60 bg-muted/20 flex flex-col transition-all duration-200",
             sidebarOpen
@@ -722,6 +796,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
           <div className="flex items-center gap-2.5 min-w-0">
             {(
               <button
+                data-chat-sidebar-toggle=""
                 onClick={() => setSidebarOpen((v) => !v)}
                 className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
                 title={sidebarOpen ? "Hide conversations" : "Show conversations"}
@@ -731,12 +806,12 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
               </button>
             )}
             <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-primary to-violet-500 flex items-center justify-center text-white shadow-md shadow-primary/30 shrink-0">
-              <Bot className="h-5 w-5" />
+              <CaptainAvatar className="h-5 w-5" />
             </div>
             <div className="min-w-0">
               <div className="flex items-center gap-2">
                 <h2 className="text-sm font-extrabold bg-gradient-to-r from-primary via-violet-500 to-primary bg-clip-text text-transparent animate-gradient-text truncate">
-                  Ravikisan&apos;s AI Tutor
+                  Ravikisan&apos;s Captain
                 </h2>
                 {/* live dot — the professor is on duty */}
                 <span className="relative flex h-2 w-2 shrink-0" title="Online">
@@ -791,7 +866,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
             <div className="min-h-full flex flex-col justify-center max-w-2xl mx-auto space-y-6 py-6">
               <div className="text-center space-y-2">
                 <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-primary to-violet-500 shadow-lg shadow-primary/25 text-white mx-auto flex items-center justify-center">
-                  <Sparkles className="h-7 w-7 animate-pulse" />
+                  <CaptainMark className="h-9 w-9 text-white animate-pulse" />
                 </div>
                 <h3 className="text-xl font-extrabold bg-gradient-to-r from-foreground via-primary to-violet-500 bg-clip-text text-transparent animate-gradient-text">
                   What are we learning today?
@@ -803,7 +878,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
               </div>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-                {SUGGESTED_PROMPTS.map((prompt, i) => {
+                {suggestions.map((prompt, i) => {
                   const Icon = prompt.icon;
                   return (
                     <button
@@ -844,7 +919,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
               return (
                 <div key={index} className="group flex gap-3 animate-pop-in">
                   <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-primary/20 to-violet-500/20 border border-primary/25 text-primary flex items-center justify-center shrink-0 mt-1">
-                    <Bot className="h-3.5 w-3.5" />
+                    <CaptainAvatar className="h-3.5 w-3.5" />
                   </div>
                   <div className="min-w-0 flex-1 rounded-2xl rounded-tl-md border border-border/60 bg-muted/20 px-4 py-3">
                     <div className="text-xs leading-relaxed">
@@ -878,7 +953,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
           {sending && (
             <div className="flex gap-3 animate-fade-in">
               <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-primary/20 to-violet-500/20 border border-primary/25 text-primary flex items-center justify-center shrink-0 mt-1">
-                <Bot className="h-3.5 w-3.5" />
+                <CaptainAvatar className="h-3.5 w-3.5" />
               </div>
               <div className="rounded-2xl rounded-tl-md border border-border/60 bg-muted/20 px-4 py-3 flex items-center gap-2.5 text-xs text-muted-foreground">
                 <span className="flex gap-1">
@@ -932,7 +1007,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                 isGuestLimited
                   ? "Guest limit reached — please log in to ask more questions."
                   : creditsExhausted
-                    ? "Daily credits used up — your pool resets to 4 at 12:00 AM, or go PRO for unlimited."
+                    ? "Daily credits used up — your pool resets to 4 at 12:00 AM, or go PRO with no daily cap."
                     : "Ask me anything… ⚡ Enter to send · Shift+Enter for a new line"
               }
               className="flex-1 max-h-32 min-h-[44px] py-2.5 px-4 rounded-2xl border border-border/80 bg-card text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none font-medium"
@@ -968,7 +1043,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
               <span>
                 Free guest mode ({Math.max(0, MAX_GUEST_MESSAGES - guestCount)} messages left) ·{" "}
                 <Link href="/login" className="text-primary hover:underline font-semibold">
-                  Sign in for unlimited questions &amp; saved histories
+                  Sign in to save your histories &amp; keep asking
                 </Link>
               </span>
             )}

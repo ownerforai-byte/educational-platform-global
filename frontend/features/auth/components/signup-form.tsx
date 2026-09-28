@@ -9,7 +9,7 @@ import { Input } from "@/components/ui/input";
 import { signupAction } from "../actions";
 import { useAuth } from "@/providers/auth-provider";
 
-const PERKS = ["Save progress across subjects", "Bookmark notes & labs", "AI quiz credits"];
+const PERKS = ["Save progress across subjects", "Bookmark notes & labs", "Captain quiz credits"];
 
 export function SignupForm() {
   const router = useRouter();

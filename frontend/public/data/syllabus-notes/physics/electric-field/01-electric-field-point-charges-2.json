@@ -2,176 +2,128 @@
   "title": "Electric Field due to Point Charges",
   "unitSlug": "electric-field",
   "topicSlug": "electric-field-point-charges",
-  "topicTitle": "Electric Field due to Point Charges",
+  "topicTitle": "Electric field due to point charges and field lines",
   "relevance": 100,
   "notes": [
-    "**Electric field $\\vec{E}$:** the force per unit positive test charge at a point in space. $\\vec{E} = \\vec{F}/q_0$, where $q_0 \\to 0$ to avoid disturbing the field. Units: N/C or V/m. The two are equivalent: $1\\,\\text{N/C} = 1\\,\\text{V/m}$.",
-    "**Field of a point charge:** $\\vec{E} = \\frac{kq}{r^2}\\hat{r} = \\frac{1}{4\\pi\\epsilon_0}\\frac{q}{r^2}\\hat{r}$. Points radially outward for positive charges, radially inward for negative charges.",
-    "**Superposition principle:** the total field at a point due to multiple charges is the vector sum of individual fields: $\\vec{E}_{total} = \\vec{E}_1 + \\vec{E}_2 + \\ldots + \\vec{E}_N$.",
-    "**Continuous charge distribution:** for a line, surface, or volume distribution, the field is calculated by integration: $\\vec{E} = \\int \\frac{k\\,dq}{r^2}\\hat{r}$. Here $dq = \\lambda\\,dl$ (line), $\\sigma\\,dA$ (surface), or $\\rho\\,dV$ (volume).",
-    "**Electric field lines:** a visual representation of the field. They start on positive charges, end on negative charges, never cross, and their density (lines per unit area perpendicular to the field) is proportional to the field strength.",
-    "**Properties of field lines:** (1) Tangent at any point gives the direction of $\\vec{E}$. (2) Density of lines represents magnitude. (3) Lines cannot cross (field is single-valued). (4) Lines start and end on charges or extend to infinity.",
-    "**Dipole field:** for an electric dipole with moment $\\vec{p} = q\\vec{d}$, the field along the axial line at distance $r$ is $E_{axial} = \\frac{2kp}{r^3}$ (for $r \\gg d$). The equatorial field is $E_{eq} = \\frac{kp}{r^3}$, pointing anti-parallel to $\\vec{p}$.",
-    "**Field of an infinite line of charge:** $E = \\frac{\\lambda}{2\\pi\\epsilon_0 r} = \\frac{2k\\lambda}{r}$. The field decreases as $1/r$, not $1/r^2$. It is purely radial.",
-    "**Field of an infinite plane of charge:** $E = \\frac{\\sigma}{2\\epsilon_0}$. The field is constant and perpendicular to the plane. This is independent of distance from the plane.",
-    "**Field of a uniformly charged conducting sphere:** outside ($r > R$): $E = kQ/r^2$ as if all charge were at the centre. At the surface ($r = R$): $E = kQ/R^2$. Inside ($r < R$): $E = 0$ for a conductor in electrostatic equilibrium.",
-    "**Test charge:** a small positive charge used to probe the field without disturbing it. As $q_0 \\to 0$, the field it sees is the actual field at that point.",
-    "**Electric field vs gravitational field:** both are vector fields, but the electric field depends on charge and can be attractive or repulsive, while the gravitational field is always attractive and depends on mass.",
-    "**Relation to potential:** $\\vec{E} = -\\nabla V = -\\frac{dV}{dn}\\hat{n}$. The field points in the direction of decreasing potential. The magnitude equals the rate of change of potential with distance."
+    "**Electric Field Concept & Definition:** An electric field $\\vec{E}$ is an intrinsic vector property of space surrounding any charged distribution. It is defined quantitatively as the electrostatic force experienced per unit positive infinitesimal test charge placed at that location: $\\vec{E} = \\lim_{q_0 \\to 0} \\frac{\\vec{F}}{q_0}$. The limiting operation $q_0 \\to 0$ ensures the test charge does not disturb the source charge configuration. The SI unit of electric field is Newton per Coulomb ($\\text{N/C}$) or equivalently Volt per meter ($\\text{V/m}$), with dimensional formula $[M L T^{-3} I^{-1}]$.",
+    "**Electric Field due to an Isolated Point Charge:** Applying Coulomb's law to a source charge $q$ at position vector $\\vec{r}'$ and test charge $q_0$ at field point $\\vec{r}$, the electric field is: $\\vec{E}(\\vec{r}) = \\frac{1}{4\\pi\\varepsilon_0} \\frac{q}{|\\vec{r} - \\vec{r}'|^3} (\\vec{r} - \\vec{r}') = \\frac{1}{4\\pi\\varepsilon_0} \\frac{q}{r^2}\\hat{r}$. The electric field radiates spherically outward in all directions for a positive source charge ($q > 0$) and converges radially inward for a negative source charge ($q < 0$), exhibiting strict inverse-square attenuation with radial distance $r$.",
+    "**Superposition Principle for Discrete & Continuous Charges:** The net electric field created by an ensemble of $N$ discrete point charges is the vector sum of individual fields: $\\vec{E}_{net} = \\sum_{i=1}^N \\vec{E}_i = \\frac{1}{4\\pi\\varepsilon_0} \\sum_{i=1}^N \\frac{q_i}{r_i^2}\\hat{r}_i$. For continuous charge distributions, summation transitions to volume, surface, or linear integrals: $\\vec{E} = \\frac{1}{4\\pi\\varepsilon_0} \\int \\frac{dq}{r^2}\\hat{r}$, where $dq = \\lambda dl$ (linear charge density), $dq = \\sigma dA$ (surface charge density), or $dq = \\rho dV$ (volume charge density).",
+    "**Properties of Electric Field Lines:** Introduced by Michael Faraday, electric field lines (lines of force) provide an intuitive geometric mapping of electrostatic vector fields: (1) Lines originate perpendicularly on positive charges and terminate on negative charges (or extend to infinity); (2) The tangent to a field line at any point indicates the direction of $\\vec{E}$ at that point; (3) Two field lines can NEVER cross, because intersecting lines would imply two distinct field vectors at the same spatial coordinate; (4) The local areal density of lines is directly proportional to field magnitude $E$; (5) Electrostatic field lines never form closed loops, reflecting the conservative nature of electrostatic forces ($\\oint \\vec{E}\\cdot d\\vec{r} = 0$).",
+    "**Electric Dipole & Dipole Moment:** An electric dipole consists of two equal and opposite point charges $\\pm q$ separated by a small distance $2a$. The electric dipole moment vector is defined as $\\vec{p} = q(2\\vec{a})$, directed by convention from the negative charge $-q$ to positive charge $+q$, with SI unit $\\text{C}\\cdot\\text{m}$. In an external electric field $\\vec{E}$, a dipole experiences a net aligning torque $\\vec{\\tau} = \\vec{p} \\times \\vec{E}$ and possesses electrostatic potential energy $U = -\\vec{p} \\cdot \\vec{E}$. In a non-uniform field, it experiences both torque and a net translational force $\\vec{F} = (\\vec{p} \\cdot \\vec{\\nabla})\\vec{E}$.",
+    "**Electric Field of a Dipole at Axial & Equatorial Points:** For a dipole of moment $p = 2qa$ at distances $r \\gg a$: (1) **Axial point (End-on position):** $\\vec{E}_{axial} = \\frac{1}{4\\pi\\varepsilon_0} \\frac{2\\vec{p}}{r^3}$, parallel to $\\vec{p}$; (2) **Equatorial point (Broadside-on position):** $\\vec{E}_{equatorial} = -\\frac{1}{4\\pi\\varepsilon_0} \\frac{\\vec{p}}{r^3}$, antiparallel to $\\vec{p}$. Notice that for any dipole, $E \\propto 1/r^3$ (faster fall-off than a point charge's $1/r^2$), and $E_{axial} = 2 E_{equatorial}$ at the same radial distance $r$."
   ],
   "confusion": [
-    "Electric field lines are a visualization tool, not physical entities. There is no 'thing' flowing along them. The field itself is what physically exists.",
-    "Field lines do not represent the trajectory of a charged particle. A moving charge follows a curved path, but the field line is the instantaneous direction of force, not motion.",
-    "The number of field lines drawn is conventional; what matters is the ratio of line density between regions. More lines means stronger field, but the actual count is arbitrary.",
-    "Inside a conductor in electrostatic equilibrium, the field is exactly zero, even though there are charges on the surface. The surface charges arrange to cancel any interior field.",
-    "The field at the surface of a conductor is perpendicular to the surface, not parallel. Any parallel component would cause charges to flow along the surface."
+    "Confusing field line direction with trajectory of a moving charge: An electric field line represents the direction of electrostatic force on a stationary positive charge, NOT the trajectory of a moving charge. A moving charge accelerates along $\\vec{F} = q\\vec{E}$, so velocity and field vectors generally diverge due to inertia.",
+    "Assuming field lines can intersect: If two field lines crossed, a test charge at the intersection would experience two distinct electrostatic forces in different directions simultaneously, which violates the uniqueness theorem of vector fields.",
+    "Confusing the radial fall-off of dipoles versus point charges: Point charge field scales as $1/r^2$, whereas an electric dipole field decays as $1/r^3$ because the positive and negative charges largely cancel each other out at long distances ($r \\gg a$)."
   ],
   "practice": [
-    "Two charges $q_1 = +3\\,\\mu$C at $(0, 0)$ and $q_2 = -3\\,\\mu$C at $(0, 0.1$ m$)$ form a dipole. Find the electric field at point $(0.1$ m$, 0)$. Solution: This is the equatorial point. $r = \\sqrt{0.1^2 + 0.1^2} = 0.141$ m. Each field magnitude: $E = 9 \\times 10^9 \\times 3 \\times 10^{-6} / 0.141^2 = 1.35 \\times 10^6$ N/C. By symmetry, the y-components cancel, x-components add. Each x-component: $E \\cos 45° = 1.35 \\times 10^6 \\times 0.707 = 9.55 \\times 10^5$ N/C. Total $E = 2 \\times 9.55 \\times 10^5 = 1.91 \\times 10^6$ N/C in the $-x$ direction (anti-parallel to the dipole moment).",
-    "A long straight wire has a uniform linear charge density $\\lambda = 5\\,\\mu$C/m. Find the electric field at a point 0.1 m from the wire. Solution: $E = 2k\\lambda/r = 2 \\times 9 \\times 10^9 \\times 5 \\times 10^{-6} / 0.1 = 9 \\times 10^5$ N/C, directed radially outward from the wire.",
-    "An infinite plane has surface charge density $\\sigma = 10\\,\\mu$C/m$^2$. Find the field at a point 0.05 m from the plane. Solution: $E = \\sigma/(2\\epsilon_0) = 10 \\times 10^{-6} / (2 \\times 8.85 \\times 10^{-12}) = 5.65 \\times 10^5$ N/C, directed perpendicular to the plane.",
-    "A charge $q = +1\\,\\mu$C is at the origin. Find the work done by the electric field in moving a charge $q_0 = +2\\,\\mu$C from $(0.1$ m$, 0)$ to $(0.5$ m$, 0)$. Solution: $W = q_0(V_i - V_f) = q_0 kq(1/r_i - 1/r_f) = 2 \\times 10^{-6} \\times 9 \\times 10^9 \\times 10^{-6} \\times (10 - 2) = 2 \\times 10^{-6} \\times 9 \\times 10^3 \\times 8 = 0.144$ J.",
-    "Three charges are placed on the x-axis: $+1\\,\\mu$C at $x=0$, $+2\\,\\mu$C at $x=0.5$ m, and $-3\\,\\mu$C at $x=1$ m. Find the net field at $x = 0.2$ m. Solution: $E_1 = 9 \\times 10^9 \\times 1 \\times 10^{-6} / 0.2^2 = 2.25 \\times 10^5$ N/C in $+x$. $E_2 = 9 \\times 10^9 \\times 2 \\times 10^{-6} / 0.3^2 = 2.0 \\times 10^5$ N/C in $-x$. $E_3 = 9 \\times 10^9 \\times 3 \\times 10^{-6} / 0.8^2 = 4.22 \\times 10^4$ N/C in $+x$ (attractive, so toward $q_3$, i.e., in $+x$). Net: $E = 2.25 \\times 10^5 - 2.0 \\times 10^5 + 4.22 \\times 10^4 = 6.72 \\times 10^4$ N/C in $+x$."
+    "Two point charges $q_1 = +5.0\\,\\mu\\text{C}$ and $q_2 = -5.0\\,\\mu\\text{C}$ are separated by $10\\text{ cm}$ along the x-axis ($2a = 0.1\\text{ m}$). (a) Find the electric dipole moment. (b) Find the electric field magnitude at an axial point $20\\text{ cm}$ from the dipole center. Solution: (a) $p = q(2a) = (5.0 \\times 10^{-6}\\text{ C})(0.1\\text{ m}) = 5.0 \\times 10^{-7}\\,\\text{C}\\cdot\\text{m}$. (b) Using the axial field formula with $r = 0.2\\text{ m}$ ($r \\gg a$ approximation): $E_{axial} = \\frac{1}{4\\pi\\varepsilon_0} \\frac{2p}{r^3} = \\frac{(9 \\times 10^9)(2 \\times 5.0 \\times 10^{-7})}{(0.2)^3} = \\frac{9000}{0.008} = 1.125 \\times 10^6\\,\\text{N/C}$, directed along the dipole axis in the direction of $\\vec{p}$."
   ],
   "universalFacts": [
-    "Electric field lines are also called lines of force because the tangent to a line at any point gives the direction of the force on a positive test charge at that point.",
-    "Faraday introduced the concept of field lines, which was later formalized mathematically by Maxwell. The field concept replaced Newton's action-at-a-distance.",
-    "The electric field of Earth at its surface is about 100-200 V/m, pointing downward, due to the negative charge on the ground and positive charge in the ionosphere.",
-    "The number of field lines per unit area is proportional to the field strength. By convention, the total number of lines from a charge $q$ is $N = q/\\epsilon_0$.",
-    "Inside a Faraday cage, the electric field is zero regardless of external fields. This is the principle behind lightning protection and shielding sensitive electronic equipment."
+    "The terrestrial fair-weather atmosphere maintains a downward-directed vertical electric field of approximately $100\\,\\text{to}\\,150\\,\\text{V/m}$ near the Earth's surface due to the global electrical thunderstorm battery circuit.",
+    "Electric fields in nerve cells (action potentials) reach immense intensities of roughly $10^7\\,\\text{V/m}$ across thin ($7\\text{ nm}$) phospholipid bilayer cell membranes, driving ion pumps that enable animal thought and heartbeat."
   ],
   "animation3D": "electric-field",
   "motionGraphics": "electric-field",
   "examples": [
-    "Example 1: Real-world application of Electric field due to point charges; field lines",
-    "Example 2: Practical demonstration of Electric field due to point charges; field lines concepts",
-    "Example 3: Numerical problem on Electric field due to point charges; field lines",
-    "Example 4: Diagram-based question on Electric field due to point charges; field lines",
-    "Example 5: Application in daily life involving Electric field due to point charges; field lines"
+    "Inkjet printers: Electrically deflected microscopic ink droplets pass between high-voltage deflection plates generating a uniform electric field, steering droplets precisely onto paper to render text and images.",
+    "Cathode Ray Oscilloscope (CRO): An electron beam accelerated by an electron gun is deflected horizontally and vertically by orthogonal electric fields between parallel plates, projecting waveforms onto a fluorescent screen.",
+    "Laser toner transfer: Controlled electrostatic fields attract charged polymer toner particles from the photoconductor drum onto paper, which is subsequently thermally fused."
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Electric field due to point charges; field lines with suitable example.",
-    "Q2. Solve problems related to Electric field due to point charges; field lines.",
-    "Q3. Differentiate between various aspects of Electric field due to point charges; field lines.",
-    "Q4. Derive the key formula related to Electric field due to point charges; field lines.",
-    "Q5. What are the applications of Electric field due to point charges; field lines?"
+    "Q1. Define electric field intensity. Derive an expression for the electric field at a distance r due to an isolated point charge Q in vacuum.",
+    "Q2. State four essential characteristics of electric field lines and explain why two field lines can never intersect each other.",
+    "Q3. Define electric dipole moment. Derive expressions for the electric field intensity due to a short electric dipole at (a) an axial point, and (b) an equatorial point.",
+    "Q4. An electron is released from rest in a uniform horizontal electric field of intensity 2.0 × 10⁴ N/C. Calculate its acceleration and the time taken to travel a distance of 1.5 cm."
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Electric field due to point charges; field lines",
-    "Key Formula 2: Mathematical expression of Electric field due to point charges; field lines",
-    "Key Formula 3: Application formula for Electric field due to point charges; field lines",
-    "Key Formula 4: Derivation result for Electric field due to point charges; field lines",
-    "Key Formula 5: Important relation in Electric field due to point charges; field lines"
+    "Electric field definition: $\\vec{E} = \\frac{\\vec{F}}{q_0}$",
+    "Field of a point charge: $\\vec{E} = \\frac{1}{4\\pi\\varepsilon_0} \\frac{q}{r^2}\\hat{r}$",
+    "Electric dipole moment: $\\vec{p} = q(2\\vec{a})$",
+    "Dipole field (axial, $r \\gg a$): $\\vec{E}_{axial} = \\frac{1}{4\\pi\\varepsilon_0} \\frac{2\\vec{p}}{r^3}$",
+    "Dipole field (equatorial, $r \\gg a$): $\\vec{E}_{equatorial} = -\\frac{1}{4\\pi\\varepsilon_0} \\frac{\\vec{p}}{r^3}$",
+    "Dipole torque in uniform field: $\\vec{\\tau} = \\vec{p} \\times \\vec{E}$",
+    "Dipole potential energy: $U = -\\vec{p} \\cdot \\vec{E}$"
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of Electric field due to point charges; field lines",
-    "Key Point 2: Essential theorem or principle related to Electric field due to point charges; field lines",
-    "Key Point 3: Important condition or constraint for Electric field due to point charges; field lines",
-    "Key Point 4: Common applications of Electric field due to point charges; field lines",
-    "Key Point 5: Connection to other topics in Science"
+    "Electric field intensity is force per unit positive test charge ($E = F/q_0$) in N/C or V/m.",
+    "Point charge field obeys inverse square law ($E \\propto 1/r^2$); short dipole field obeys inverse cube law ($E \\propto 1/r^3$).",
+    "Field lines point outward from positive charges and inward toward negative charges, never intersecting.",
+    "Axial field of a short dipole is exactly twice the magnitude of equatorial field at equal distance ($E_{axial} = 2 E_{equatorial}$).",
+    "In a uniform electric field, an electric dipole experiences zero net force but a restoring torque $\\vec{\\tau} = \\vec{p} \\times \\vec{E}$."
   ],
-  "summary": "Electric field due to point charges; field lines is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "The electric field E is a vector field describing electrostatic force per unit test charge (E = F/q₀). Point charges produce radially symmetric fields falling off as 1/r², mapped visually by continuous non-intersecting field lines originating on positive and terminating on negative charges. Electric dipoles (p = 2qa) generate fields decaying as 1/r³, with axial field intensity twice that of the equatorial position at the same large distance, experiencing aligning torque τ = p × E in an external field.",
   "specialNotes": [
-    "Note 1: Pay attention to the conditions under which Electric field due to point charges; field lines applies",
-    "Note 2: Electric field due to point charges; field lines connects to multiple other topics in Science",
-    "Note 3: Practice numerical problems regularly for mastery of Electric field due to point charges; field lines",
-    "Note 4: Remember the units and dimensions involved in Electric field due to point charges; field lines",
-    "Note 5: Electric field due to point charges; field lines frequently appears in examination questions"
+    "Electrostatic field lines do not form closed loops because electrostatic fields are conservative: the closed loop line integral ∮ E · dr = 0.",
+    "A charged particle projected perpendicularly into a uniform electric field follows a parabolic trajectory, analogous to projectile motion in a uniform gravitational field."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Electric field due to point charges; field lines",
-    "Statement 2: Theorem related to Electric field due to point charges; field lines",
-    "Statement 3: Condition for Electric field due to point charges; field lines to be valid",
-    "Statement 4: Principle governing Electric field due to point charges; field lines",
-    "Statement 5: Corollary or consequence of Electric field due to point charges; field lines"
+    "Statement 1: The electric field at any point in space is the electrostatic force experienced per unit infinitesimal positive test charge.",
+    "Statement 2: Electric field lines originate on positive charges, terminate on negative charges, and cannot intersect at any point.",
+    "Statement 3: The electric field due to a point charge obeys an inverse-square distance relationship (E ∝ 1/r²).",
+    "Statement 4: The electric field due to a short electric dipole decays inversely with the cube of distance (E ∝ 1/r³).",
+    "Statement 5: In a uniform electric field, an electric dipole experiences zero translational net force but a net aligning torque τ = p × E."
   ],
   "importantNotes": [
-    "Note 1: Electric field due to point charges; field lines is based on fundamental principles",
-    "Note 2: Remember the distinction between different types in Electric field due to point charges; field lines",
-    "Note 3: Electric field due to point charges; field lines has both theoretical and practical significance",
-    "Note 4: Study the derivations step by step for Electric field due to point charges; field lines",
-    "Note 5: Cross-check your answers using alternative methods for Electric field due to point charges; field lines"
+    "Remember that the SI units N/C and V/m are completely interchangeable: 1 N/C = 1 (J/m) / C = 1 (J/C) / m = 1 V/m."
   ],
   "examShortTricks": [
-    "Trick 1: Quick method to identify applicable Electric field due to point charges; field lines formula",
-    "Trick 2: Elimination technique for Electric field due to point charges; field lines MCQs",
-    "Trick 3: Dimensional analysis shortcut for Electric field due to point charges; field lines",
-    "Trick 4: Memory aid for Electric field due to point charges; field lines formulas",
-    "Trick 5: Time-saving approach for Electric field due to point charges; field lines problems"
+    "Dipole field ratio trick: At identical large distance r, E_axial / E_equatorial = 2.",
+    "Neutral point between like charges: E_net = 0 lies between them at distance x = d / (√(q₂/q₁) + 1) from q₁.",
+    "Acceleration of charged particle in field: a = qE / m (direction along E for positive charge, opposite E for electron)."
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Electric field due to point charges; field lines",
-    "Exam Tip 2: Practice previous year questions on Electric field due to point charges; field lines",
-    "Exam Tip 3: Electric field due to point charges; field lines carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Electric field due to point charges; field lines thoroughly",
-    "Exam Tip 5: Review common mistakes related to Electric field due to point charges; field lines"
+    "Derivation of electric field due to an electric dipole at axial and equatorial points is a premier 4-mark question in NEB Class 11 Physics exams."
   ],
   "mcs": [
     {
-      "question": "Which of the following best describes Electric field due to point charges; field lines?",
+      "question": "The electric field intensity at an axial point distance r from a short electric dipole is E. The electric field at an equatorial point at the same distance r is:",
       "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
+        "2E",
+        "E / 2",
+        "E / 4",
+        "4E"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "For a short dipole (r ≫ a), E_axial = 2kp/r³ and E_equatorial = kp/r³. Therefore, E_equatorial = E_axial / 2 = E / 2."
     },
     {
-      "question": "The primary application of Electric field due to point charges; field lines is in:",
+      "question": "An electric dipole placed in a uniform electric field experiences:",
       "options": [
-        "Field A",
-        "Field B",
-        "Field C",
-        "Field D"
+        "both a net force and a torque",
+        "a net force only, but no torque",
+        "a torque only, but no net force",
+        "neither a net force nor a torque"
       ],
-      "answer": "A"
+      "answer": "C",
+      "explanation": "In a uniform field, equal and opposite forces act on +q and -q (+qE and -qE), so net force is zero. However, their lines of action do not coincide, producing a net torque τ = p × E."
     },
     {
-      "question": "For Electric field due to point charges; field lines, which condition is necessary?",
+      "question": "Electric field lines can never intersect each other because:",
       "options": [
-        "Condition A",
-        "Condition B",
-        "Condition C",
-        "Condition D"
+        "they are imaginary lines",
+        "at the point of intersection, the electric field would have two distinct directions",
+        "they always terminate at infinity",
+        "they form closed loops in vacuum"
       ],
-      "answer": "A"
-    },
-    {
-      "question": "What is the unit/dimension used in Electric field due to point charges; field lines?",
-      "options": [
-        "Unit A",
-        "Unit B",
-        "Unit C",
-        "Unit D"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "Which statement about Electric field due to point charges; field lines is FALSE?",
-      "options": [
-        "True statement A",
-        "True statement B",
-        "False statement C",
-        "True statement D"
-      ],
-      "answer": "C"
+      "answer": "B",
+      "explanation": "The tangent to a field line gives the direction of E. If two lines intersect, there would be two tangents, meaning two distinct field directions at a single point, which is physically impossible."
     }
   ],
   "importantConcepts": [
-    "Concept 1: Core definition of Electric field due to point charges; field lines",
-    "Concept 2: Key theorem or principle in Electric field due to point charges; field lines",
-    "Concept 3: Important application area of Electric field due to point charges; field lines",
-    "Concept 4: Fundamental relationship in Electric field due to point charges; field lines",
-    "Concept 5: Connection between Electric field due to point charges; field lines and other topics"
+    "Definition and physical meaning of electric field vector E = F/q₀.",
+    "Electric field of a point charge and principle of linear superposition.",
+    "Rules governing electric field lines and why they never form closed loops.",
+    "Electric dipole moment and derivation of axial and equatorial dipole fields.",
+    "Behavior of dipoles in uniform and non-uniform electric fields."
   ],
   "importantTasks": [
-    "Task 1: Solve 10 numerical problems on Electric field due to point charges; field lines",
-    "Task 2: Derive the main formula for Electric field due to point charges; field lines",
-    "Task 3: Create a concept map for Electric field due to point charges; field lines",
-    "Task 4: Practice previous year exam questions on Electric field due to point charges; field lines",
-    "Task 5: Explain Electric field due to point charges; field lines to a peer or study group"
+    "Derive expressions for E_axial and E_equatorial of an electric dipole.",
+    "Sketch electric field lines for unlike charges, like charges, and uniform fields.",
+    "Calculate the net electric field and neutral point for two collinear point charges."
   ],
   "duplicateType": 2,
+  "visualType": "electric-field",
   "tabGroup": "electric-field-due-to-point-charges-and-field-lines"
 }

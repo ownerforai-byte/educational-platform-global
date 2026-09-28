@@ -1,85 +1,115 @@
 {
-  "title": "Parametric and Implicit Functions",
   "unitSlug": "calculus",
+  "title": "Parametric and Implicit Derivatives",
+  "topicTitle": "Parametric and implicit derivatives",
   "topicSlug": "parametric-implicit-derivatives",
-  "topicTitle": "Parametric and Implicit Functions",
   "relevance": 100,
   "notes": [
-    "**Parametric and Implicit Functions:** Class 11 concept.",
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
+    "**Parametric rule:** if $x=x(t)$ and $y=y(t)$ then $\\frac{dy}{dx}=\\frac{dy/dt}{dx/dt}$, provided $\\frac{dx}{dt}\\ne0$. The parameter cancels, which is what allows a curve with no closed-form $y=f(x)$ to be differentiated at all.",
+    "**Why $\\frac{dx}{dt}=0$ is special:** it means $\\frac{dy}{dx}$ is infinite, i.e. a vertical tangent. A circle $x=\\cos t$, $y=\\sin t$ gives $\\frac{dy}{dx}=\\frac{\\cos t}{-\\sin t}$ and a vertical tangent at $t=0$, matching the geometry.",
+    "**Implicit differentiation:** differentiate $F(x,y)=0$ with respect to $x$, treating $y$ as a function of $x$ throughout, then collect the $\\frac{dy}{dx}$ terms. For $x^2+y^2=25$ one gets $2x+2y\\frac{dy}{dx}=0$, hence $\\frac{dy}{dx}=-\\frac{x}{y}$.",
+    "**Always state the assumption $y=y(x)$** when differentiating implicitly; without it the method is a guess, and the resulting formula is only valid where $\\frac{\\partial F}{\\partial y}\\ne0$.",
+    "**Second derivatives from parametric form are found by differentiating $\\frac{dy}{dx}$ with respect to $t$ and dividing by $\\frac{dx}{dt}$ again:** $\\frac{d^2y}{dx^2}=\\frac{d}{dt}\\left(\\frac{dy/dt}{dx/dt}\\right)\\div\\frac{dx}{dt}$.",
+    "**Higher-order implicit derivatives substitute back** the expression obtained for $\\frac{dy}{dx}$ before differentiating again, so for a circle $\\frac{d^2y}{dx^2}=-\\frac{r^2}{y^3}$ once $x^2+y^2=r^2$ is used."
   ],
   "confusion": [
-    "Distinguish concepts in Parametric and Implicit Functions.",
-    "Check formula conditions."
+    "Inverting the ratio in the parametric rule, giving $\\frac{dx}{dt}/\\frac{dy}{dt}$ instead.",
+    "Treating $y$ as a constant in implicit differentiation.",
+    "Forgetting the second division by $\\frac{dx}{dt}$ when computing a parametric second derivative."
   ],
-  "practice": [
-    "Solve 5 problems on Parametric and Implicit Functions.",
-    "Derive the key formula for Parametric and Implicit Functions."
-  ],
+  "practice": [],
   "universalFacts": [
-    "Parametric and Implicit Functions appears in exams.",
-    "Foundational for advanced topics."
+    "Projectile motion is the standard parametric curve: eliminating $t$ is clumsy, while $\\frac{dy}{dx}=\\frac{v_y}{v_x}$ gives the trajectory angle instantly.",
+    "A cycloid, the curve traced by a point on a rolling wheel, has no single-valued $y(x)$ over a full arch, which is precisely why parametric differentiation is needed for it."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [
-    "Application of Parametric and Implicit Functions",
-    "Numerical problem on Parametric and Implicit Functions",
-    "Daily life use of Parametric and Implicit Functions"
-  ],
-  "practiceQuestions": [
-    "Q1. Define Parametric and Implicit Functions.",
-    "Q2. Key formula for Parametric and Implicit Functions.",
-    "Q3. Problem on Parametric and Implicit Functions."
-  ],
+  "examples": [],
+  "practiceQuestions": [],
   "formulas": [
-    "Formula for Parametric and Implicit Functions: [insert from textbook].",
-    "Key relationship: [variable formula]."
+    "Parametric: $\\frac{dy}{dx}=\\frac{dy/dt}{dx/dt}$ for $dx/dt\\ne0$",
+    "Implicit: differentiate $F(x,y)=0$ w.r.t. $x$ and solve for $y'$",
+    "Parametric 2nd: $\\frac{d^2y}{dx^2}=\\frac{d}{dt}(\\frac{dy}{dx})\\div\\frac{dx}{dt}$",
+    "Circle: $\\frac{dy}{dx}=-\\frac{x}{y}$, $\\frac{d^2y}{dx^2}=-\\frac{r^2}{y^3}$"
   ],
   "keyPoints": [
-    "Core principle of Parametric and Implicit Functions",
-    "Application of Parametric and Implicit Functions",
-    "Connection of Parametric and Implicit Functions to other topics"
+    "Parametric derivatives are a ratio of parameter derivatives, not a product.",
+    "$\\frac{dx}{dt}=0$ corresponds to a vertical tangent.",
+    "Implicit differentiation presumes $y$ is a differentiable function of $x$."
   ],
-  "summary": "Parametric and Implicit Functions covers essential principles and applications.",
+  "summary": "Parametric and implicit differentiation both exist because a curve need not be expressible as $y=f(x)$. In the parametric case the parameter cancels, leaving a ratio of parameter derivatives, and a vanishing $\\frac{dx}{dt}$ marks a vertical tangent. In the implicit case one differentiates an equation solved for neither variable, treating $y$ as a function of $x$ throughout, then isolates $\\frac{dy}{dx}$.",
   "specialNotes": [
-    "Check conditions for Parametric and Implicit Functions.",
-    "Parametric and Implicit Functions connects to other topics."
+    "Where a formula is quoted it is valid only under the conditions stated; Inverting the ratio in the parametric rule, giving $\\frac{dx}{dt}/\\frac{dy}{dt}$ instead.",
+    "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Parametric and Implicit Functions",
-    "Statement 2: Theorem related to Parametric and Implicit Functions",
-    "Statement 3: Condition for Parametric and Implicit Functions to be valid",
-    "Statement 4: Principle governing Parametric and Implicit Functions",
-    "Statement 5: Corollary or consequence of Parametric and Implicit Functions"
+    "Statement 1: $\\frac{dy}{dx}=\\frac{dy/dt}{dx/dt}$ for parametric equations when $dx/dt\\ne0$.",
+    "Statement 2: $\\frac{dx}{dt}=0$ indicates a vertical tangent.",
+    "Statement 3: Implicit differentiation requires $y$ to be a differentiable function of $x$.",
+    "Statement 4: For $x^2+y^2=r^2$, $\\frac{dy}{dx}=-\\frac{x}{y}$.",
+    "Statement 5: A parametric second derivative divides by $\\frac{dx}{dt}$ a second time."
   ],
   "importantNotes": [
-    "Parametric and Implicit Functions is based on fundamental principles."
+    "Topic anchor: Higher-order implicit derivatives substitute back the expression obtained for $ frac{dy}{dx}$ before differentiating again, so for a circle $ frac{d^2y}{dx^2}=- frac{r^2}{y^3}$ once $x^2+y^2=r^2$ is used."
   ],
   "examShortTricks": [
-    "Recall the formula for Parametric and Implicit Functions."
+    "For the circle, always convert $y$ to $\\pm\\sqrt{r^2-x^2}$ before computing a second derivative — implicit is faster but needs the substitution step.",
+    "Draw the parametric curve for a few values of $t$ if the shape is unclear; the vertical tangent becomes obvious."
   ],
   "examNotes": [
-    "Focus on Parametric and Implicit Functions problems - significant marks."
+    "Slope of a parametric curve and slope of a circle by implicit differentiation are both standard 3-mark questions."
   ],
   "mcs": [
     {
-      "question": "Which describes Parametric and Implicit Functions?",
+      "question": "For $x=t^2$, $y=2t$, $\\frac{dy}{dx}$ is:",
       "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
+        "$\\frac1t$",
+        "$t$",
+        "$2t$",
+        "$\\frac{t}{2}$"
       ],
-      "answer": "A"
+      "answer": "A",
+      "explanation": "$\\frac{dy}{dt}=2$ and $\\frac{dx}{dt}=2t$, so the ratio is $\\frac1t$."
+    },
+    {
+      "question": "For $x^2+y^2=25$, $\\frac{dy}{dx}$ is:",
+      "options": [
+        "$\\frac{x}{y}$",
+        "$-\\frac{x}{y}$",
+        "$\\frac{y}{x}$",
+        "$-\\frac{y}{x}$"
+      ],
+      "answer": "B",
+      "explanation": "$2x+2y\\frac{dy}{dx}=0$ gives $\\frac{dy}{dx}=-\\frac{x}{y}$, zero at the top of the circle and vertical at the sides."
+    },
+    {
+      "question": "$\\frac{dx}{dt}=0$ at some $t$ means:",
+      "options": [
+        "the curve has ended",
+        "a vertical tangent",
+        "$y$ is constant",
+        "the curve is a circle"
+      ],
+      "answer": "B",
+      "explanation": "$\\frac{dy}{dx}$ becomes infinite, which is the signature of a vertical tangent."
     }
   ],
   "importantConcepts": [
-    "Definition and significance of Parametric and Implicit Functions."
+    "Parametric derivatives are a ratio of parameter derivatives, not a product.",
+    "$\\frac{dx}{dt}=0$ corresponds to a vertical tangent.",
+    "Implicit differentiation presumes $y$ is a differentiable function of $x$."
   ],
   "importantTasks": [
-    "Solve 5 problems on Parametric and Implicit Functions."
+    "Work through the authored practice problems and re-derive each key formula from the definition."
   ],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "visualType": "derivative",
+  "numericals": [
+    "**1. [Idea: first principles on a rational function with a removable hole]** Find the derivative of $f(x)=\\dfrac{x^2-9}{x-3}$ at $x=5$, and state at which points $f$ is not differentiable.\\newline\\newline**Solution: at 5 the hole is irrelevant**, so simplify first: $f(x)=x+3$ for $x\\ne3$, hence $f'(5)=1$.\\newline\\newline**Domain analysis:** $f$ is undefined at $x=3$, so $f'(3)$ does not exist — this is a domain failure, not a limit failure.$^{\\bullet}$ Re-examine $x=3$ after repairing: with $f(3)=6$ the function is $x+3$ everywhere and $f'(3)=1$.\\newline\\newline**Answer:** $f'(5)=1$; the original $f$ is not differentiable at $3$ only because it is undefined there. **Trap:** students who do not simplify try first principles and hit $\\frac{(x+3)-6}{x-3}$ — the same trap, just slower.",
+    "**2. [Idea: first principles for a radical, where rationalising is mandatory]** Differentiate $f(x)=\\sqrt{x}$ from first principles, and hence find $f'(4)$.\\newline\\newline**Solution:**$^{\\bullet}$ $f'(x)=\\lim_{h\\to0}\\dfrac{\\sqrt{x+h}-\\sqrt{x}}{h}$.\\newline\\newline$^{\\bullet}$ Multiply by the conjugate, $\\frac{\\sqrt{x+h}+\\sqrt{x}}{\\sqrt{x+h}+\\sqrt{x}}$:$\\newline\\lim_{h\\to0}\\dfrac{(x+h)-x}{h\\left(\\sqrt{x+h}+\\sqrt{x}\\right)} = \\lim_{h\\to0}\\dfrac{1}{\\sqrt{x+h}+\\sqrt{x}}$.\\newline\\newline$^{\\bullet}$ Letting $h\\to0$: $f'(x)=\\dfrac{1}{2\\sqrt{x}}$.\\newline\\newline**Answer:** $f'(x)=\\frac{1}{2\\sqrt{x}}$ for $x>0$, so $f'(4)=\\frac{1}{4}$. **Note:** the expression is undefined at $x=0$ — the square-root function has an infinite slope there, a vertical tangent, consistent with $f'(x)\\to\\infty$.",
+    "**3. [Idea: implicit differentiation, then eliminate to a function of one variable]** For $x^2 + y^2 = 9$, find $\\frac{dy}{dx}$ and the slope of the tangent at the point $(0,3)$.\\newline\\newline**Solution:** Differentiate throughout, treating $y$ as a function of $x$:$^{\\bullet}$ $2x + 2y\\dfrac{dy}{dx} = 0$, so $\\dfrac{dy}{dx} = -\\dfrac{x}{y}$.\\newline\\newline**At $(0,3)$:** the formula gives $-\\frac03 = 0$, so the tangent is **horizontal** there.\\newline\\newline**Why the formula is not a constant slope:** the circle is not a graph of a single function globally — the top half is $y=\\sqrt{9-x^2}$ and the bottom is $-\\sqrt{9-x^2}$, with opposite slopes.\\newline\\newline**Answer:** $\\frac{dy}{dx}=-\\frac{x}{y}$; slope at $(0,3)$ is $0$. **Contrast:** at $(3,0)$ the formula divides by $y=0$, correctly signalling a **vertical** tangent.",
+    "**4. [Idea: a parametric curve whose parameter cancels, with a vertical-tangent check]** A curve is $x = 3t - t^3$, $y = 3t^2$. Find $\\frac{dy}{dx}$ and where the tangent is vertical.\\newline\\newline**Solution:**$^{\\bullet}$ $\\dfrac{dx}{dt} = 3 - 3t^2$ and $\\dfrac{dy}{dt} = 6t$.$^{\\bullet}$ $\\dfrac{dy}{dx} = \\dfrac{6t}{3-3t^2} = \\dfrac{2t}{1-t^2}$.\\newline\\newline**Horizontal tangent** ($\\frac{dy}{dx}=0$): $2t=0 \\Rightarrow t=0$, giving the point $(0,0)$.\\newline\\newline**Vertical tangent** ($\\frac{dx}{dt}=0$): $3-3t^2=0 \\Rightarrow t=\\pm1$, giving points $(2,3)$ and $(-2,3)$.\\newline\\newline**Answer:** $\\frac{dy}{dx}=\\frac{2t}{1-t^2}$; horizontal tangent at $t=0$, vertical at $t=\\pm1$. **Trap:** finding a vertical tangent by setting $\\frac{dy}{dx}$ infinite without checking that $\\frac{dx}{dt}$ is genuinely zero.",
+    "**5. [Idea: a second implicit derivative needs the original relation substituted at the end]** For $x^2+y^2 = 25$, obtain $\\frac{d^2y}{dx^2}$ in terms of $y$ alone.\\newline\\newline**Solution:** From part 3, $\\dfrac{dy}{dx} = -\\dfrac{x}{y}$. Differentiate this fraction — do NOT re-derive from scratch:$^{\\bullet}$ $\\dfrac{d}{dx}\\left(-xy^{-1}\\right) = -\\left[\\left(\\frac{dx}{dx}\\right)y^{-1} + x\\left(\\frac{d}{dx}y^{-1}\\right)\\right]$.\\newline\\newline$^{\\bullet}$ Since $\\frac{d}{dx}y^{-1} = -y^{-2}\\dfrac{dy}{dx} = -y^{-2}\\left(-\\frac{x}{y}\\right) = \\dfrac{x}{y^3}$:$\\newline\\frac{d^2y}{dx^2} = -\\left[\\frac{1}{y} + x\\cdot\\frac{x}{y^3}\\right] = -\\frac{y^2 + x^2}{y^3}$.\\newline\\newline$^{\\bullet}$ Finally substitute $x^2+y^2=25$ to remove $x$: $\\dfrac{d^2y}{dx^2} = -\\dfrac{25}{y^3}$.\\newline\\newline**Answer:** $\\frac{d^2y}{dx^2}=-\\frac{r^2}{y^3}=-\\frac{25}{y^3}$ for a circle of radius $r=5$.\\newline\\newline**Check at the top $(0,5)$:** $-\\frac{25}{125}=-\\frac15$, so the top of the circle is concave down with $|f''|=\\frac{1}{5}$ — exactly $\\frac1r$, as a circle of curvature $r$ requires. **Trap:** writing $625$ by squaring $25$ again; the $25$ is already $r^2$.",
+    "**6. [Idea: logarithmic differentiation for a variable exponent]** Differentiate $y = x^x$ and hence find the stationary point of $y=\\dfrac{x^x}{e^x}$ for $x>0$.\\newline\\newline**Solution:** Differentiate $y=x^x$ by taking logs:$^{\\bullet}$ $\\ln y = x\\ln x$, so $\\dfrac{1}{y}\\dfrac{dy}{dx} = \\ln x + 1$.$^{\\bullet}$ Hence $\\dfrac{dy}{dx} = x^x(\\ln x + 1)$.\\newline\\newline**Now** $g(x)=\\dfrac{x^x}{e^x} = x^x e^{-x}$, so $\\dfrac{d}{dx}\\ln g = (\\ln x + 1) - 1 = \\ln x$.\\newline\\newlineSo $g'(x) = g(x)\\ln x$, which vanishes when $\\ln x = 0$, i.e. $x=1$.\\newline\\newline**Answer:** $\\frac{dy}{dx}=x^x(\\ln x+1)$; the stationary point of $g$ is $x=1$. **Verification:** $g(1)=1\\cdot e^{-1}=e^{-1}$, and $g' = g\\ln x$ changes from negative ($x<1$) to positive ($x>1$), confirming a minimum."
+  ]
 }

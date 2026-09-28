@@ -1,6 +1,8 @@
 import {
   useQuery,
+  useQueryClient,
   useSuspenseQuery,
+  type QueryClient,
   type UseQueryResult,
   type UseSuspenseQueryResult,
 } from "@tanstack/react-query";
@@ -118,3 +120,71 @@ export function useUnitTopic(
     staleTime: 1000 * 60 * 10,
   });
 }
+
+/* ------------------------------------------------------------------ *
+ * ADDITIVE (perf pass, 2026-09-27): prefetch + invalidation helpers.
+ *
+ * The hooks above are untouched. These helpers reuse the exact query keys
+ * declared at the top of this module, so warming a key here means the next
+ * mount of the matching hook renders straight from cache instead of starting
+ * a request waterfall.
+ * ------------------------------------------------------------------ */
+
+/** Mirrors the 10-minute stale window used by the hooks above. */
+const SYLLABUS_STALE_MS = 1000 * 60 * 10;
+
+/**
+ * Warms the class-syllabus query for a given client. Safe to call from an
+ * idle callback or a hover handler — React Query already swallows prefetch
+ * failures, and this returns `void`-like `Promise<void>`.
+ */
+export function prefetchSyllabusByClass(
+  queryClient: QueryClient,
+  classSlug: string,
+): Promise<void> {
+  if (!classSlug) return Promise.resolve();
+  return queryClient
+    .prefetchQuery({
+      queryKey: [...SYLLABUS_KEY, classSlug],
+      queryFn: () => getSyllabusByClass(classSlug),
+      staleTime: SYLLABUS_STALE_MS,
+    })
+    .then(() => undefined);
+}
+
+/** Invalidates all syllabus queries, or just one class when `classSlug` is given. */
+export function invalidateSyllabus(
+  queryClient: QueryClient,
+  classSlug?: string,
+): Promise<void> {
+  return queryClient.invalidateQueries({
+    queryKey: classSlug ? [...SYLLABUS_KEY, classSlug] : [...SYLLABUS_KEY],
+  });
+}
+
+/** Synchronous cache read — renders instantly when the key is already warm. */
+export function peekSyllabus(
+  queryClient: QueryClient,
+  classSlug: string,
+): ClassSyllabus | undefined {
+  return queryClient.getQueryData<ClassSyllabus>([...SYLLABUS_KEY, classSlug]);
+}
+
+/**
+ * Hook form of the helpers above for client components that want hover/focus
+ * prefetching. Returns stable-per-render functions; it performs no fetching on
+ * its own, so mounting it changes nothing until one is called.
+ */
+export function useSyllabusPrefetch(): {
+  class: (classSlug: string) => Promise<void>;
+  invalidate: (classSlug?: string) => Promise<void>;
+  peek: (classSlug: string) => ClassSyllabus | undefined;
+} {
+  const queryClient = useQueryClient();
+  return {
+    class: (classSlug: string) => prefetchSyllabusByClass(queryClient, classSlug),
+    invalidate: (classSlug?: string) => invalidateSyllabus(queryClient, classSlug),
+    peek: (classSlug: string) => peekSyllabus(queryClient, classSlug),
+  };
+}
+

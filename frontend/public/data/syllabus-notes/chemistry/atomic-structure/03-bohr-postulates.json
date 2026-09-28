@@ -70,5 +70,85 @@
   "tabGroup": "Atomic-Structure-Learner-Notes",
   "source": "ravikishan",
   "duplicateType": 2,
-  "filename": "03-bohr-postulates.json"
+  "filename": "03-bohr-postulates.json",
+  "summary": "Bohr's model rests on four postulates: (1) the electron in hydrogen revolves only in certain fixed circular orbits of definite energy and neither emits nor absorbs energy while in one; (2) only orbits with angular momentum mvr = nh/2π are permitted, n = 1, 2, 3, …; (3) energy is emitted or absorbed only during a jump between orbits, hν = E₂ − E₁; (4) the Coulomb attraction provides the centripetal force, mv²/r = kZe²/r². Postulate 1 suspends classical electrodynamics inside the atom, postulate 2 makes the allowed orbits discrete, postulate 3 is Planck's quantum hypothesis applied to atoms, and postulate 4 keeps the mechanics classical — which is why the model is called semi-classical. The vocabulary of the model follows directly: ground state (n = 1), excited state (any higher orbit), ionisation (n = ∞) and binding energy (−Eₙ).",
+  "importantConcepts": [
+    "Postulate 1 — stationary orbits of definite energy in which the electron does not radiate",
+    "Postulate 2 — quantisation of angular momentum, mvr = nh/2π, n = 1, 2, 3, …",
+    "Postulate 3 — frequency condition, hν = E₂ − E₁, applied only to emitted or absorbed photons",
+    "Postulate 4 — force condition, mv²/r = kZe²/r², the classical Coulomb balance",
+    "Model vocabulary: ground state, excited state, ionisation (n = ∞) and binding energy −Eₙ"
+  ],
+  "importantStatements": [
+    "A stationary orbit means constant energy, not rest: the electron revolves but does not radiate.",
+    "The postulates were imposed, not derived; only the force condition is classical mechanics.",
+    "Postulate 2 plus postulate 4 together fix the orbit radii; without postulate 2 a continuum of orbits would be allowed.",
+    "The frequency condition concerns the emitted or absorbed photon, not the electron's own motion.",
+    "The postulates apply strictly to one-electron species: H, He⁺, Li²⁺, Be³⁺."
+  ],
+  "importantTasks": [
+    "State the four postulates in order and explain the physical meaning of each one.",
+    "Identify which postulate accounts for atomic stability and which for the line spectrum.",
+    "Define ground state, excited state and ionisation in terms of Bohr's orbits.",
+    "Show that postulates 2 and 4 together determine the allowed orbit radii."
+  ],
+  "keyPoints": [
+    "Postulate 1 → stability; postulate 3 → sharp spectral lines.",
+    "mvr = nh/2π means angular momentum arrives in packets of ħ.",
+    "hν = E₂ − E₁ is Planck's relation applied to an atomic transition.",
+    "The model is semi-classical: quantum states, classical motion."
+  ],
+  "specialNotes": [
+    "The postulates were published in 1913, one year after Bohr joined Rutherford in Manchester.",
+    "Postulate 2 was later derived by de Broglie from standing matter waves, turning an assumption into a consequence.",
+    "Stationary orbits are not orbitals: Bohr's orbits are fixed 2D paths of definite radius."
+  ],
+  "examShortTricks": [
+    "Quote the postulates verbatim — 'stationary orbit', 'mvr = nh/2π' and 'hν = E₂ − E₁' carry the marks.",
+    "Attach one clause of meaning to each postulate; bare statements lose half the marks.",
+    "Say 'one-electron species' when quoting applicability — it is the commonest precision slip."
+  ],
+  "examNotes": [
+    "This tab is the fastest route to full marks on the 4–5 mark 'state the postulates' question.",
+    "Derivations of rₙ and Eₙ from postulates 2 and 4 usually follow in the next part of the same question.",
+    "One-mark items often ask which postulate explains stability or the line spectrum."
+  ],
+  "practiceQuestions": [
+    "State the four postulates of Bohr's atomic model and explain the meaning of each.",
+    "Which postulate accounts for the stability of the atom and which for the line spectrum?",
+    "Define ground state, excited state and ionisation using Bohr's orbits.",
+    "Show that postulate 2 with postulate 4 fixes the radii of the allowed orbits."
+  ],
+  "mcs": [
+    {
+      "question": "While revolving in a stationary orbit the electron:",
+      "options": [
+        "Radiates continuously",
+        "Absorbs energy",
+        "Neither radiates nor absorbs",
+        "Emits a line spectrum"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The force condition of Bohr's model is:",
+      "options": [
+        "mv²/r = kZe²/r²",
+        "mv = nh/2π",
+        "hν = E₂ − E₁",
+        "E = −13.6 Z²/n² eV"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "In Bohr's model radiation is emitted:",
+      "options": [
+        "Continuously along the orbit",
+        "Only during a jump between orbits",
+        "Only when the orbit grows",
+        "Never, in classical mechanics"
+      ],
+      "answer": "B"
+    }
+  ]
 }

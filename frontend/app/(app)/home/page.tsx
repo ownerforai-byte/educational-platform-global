@@ -7,7 +7,7 @@ import { DirectoryCard } from "@/features/credits";
 
 export const metadata = {
   title: "Ravikisan's Platform",
-  description: "NEB Class 11 & 12 complete curriculum: interactive 3D science labs, computational solvers, step-by-step theorem proofs, derivations, AI quizzes, and curated notes.",
+  description: "NEB Class 11 & 12 complete curriculum: interactive 3D science labs, computational solvers, step-by-step theorem proofs, derivations, Captain quizzes, and curated notes.",
 };
 
 async function getTheoremsSummary() {

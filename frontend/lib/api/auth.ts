@@ -80,3 +80,33 @@ export async function getCurrentUser(): Promise<SessionUser | null> {
   const res = await getSession();
   return res.user;
 }
+
+/**
+ * Request a password-reset email (Supabase recovery link).
+ * The server answers identically whether or not the account exists
+ * (anti-enumeration), so this resolves `sent: true` for any valid email.
+ */
+export async function forgotPassword(
+  email: string
+): Promise<{ sent: boolean }> {
+  return apiFetch<{ sent: boolean }>("/api/auth/forgot-password", {
+    method: "POST",
+    body: JSON.stringify({ email }),
+  });
+}
+
+/**
+ * Finish a password reset. The recovery link lands on /reset-password with
+ * either a PKCE `code` (query string) or an implicit `access_token` (hash);
+ * the page forwards whichever it received together with the new password.
+ */
+export async function resetPassword(data: {
+  password: string;
+  code?: string;
+  token?: string;
+}): Promise<{ success: boolean }> {
+  return apiFetch<{ success: boolean }>("/api/auth/reset-password", {
+    method: "POST",
+    body: JSON.stringify(data),
+  });
+}

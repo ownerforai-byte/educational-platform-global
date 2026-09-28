@@ -39,15 +39,131 @@
     "x d/dx(f.g) = f'.g. x Must use product rule: f'g + fg'.",
     "x Derivative = slope of secant. x Derivative = slope of TANGENT line."
   ],
-  "practice": [
-    "Find dy/dx if y = 3x^4 - 2x^3 + 5x - 1.",
-    "Differentiate y = sin^2 x using chain rule.",
-    "Find dy/dx if y = x^2 x cos x.",
-    "Find the derivative of y = e^(3x) x ln x."
-  ],
+  "practice": [],
   "formulas": [
     "f'(x) = lim(h->0) [f(x+h) - f(x)]/h",
     "(fg)' = f'g + fg'",
     "d/dx[f(g(x))] = f'(g(x)) x g'(x)"
+  ],
+  "summary": "The derivative f'(x) = lim(h->0) [f(x+h) - f(x)]/h is the limit of the difference quotient, so it gives the instantaneous rate of change of f at x and the slope of the tangent there. From first principles one builds the rule set: constants differentiate to 0, d/dx(x^n) = n x^(n-1), and sums and constant multiples are handled by the sum and multiple rules. The trigonometric functions give d/dx(sin x) = cos x, d/dx(cos x) = -sin x and d/dx(tan x) = sec^2 x, the product and quotient rules handle factors and fractions, and the chain rule d/dx[f(g(x))] = f'(g(x)) x g'(x) extends the power rule to composite functions.",
+  "importantConcepts": [
+    "Derivative at a point: the limit of the difference quotient, equal to the slope of the tangent line and the instantaneous rate of change.",
+    "First principles versus rules: the rules are shortcuts proved from f'(x) = lim(h->0)[f(x+h) - f(x)]/h, and both routes must give the same answer.",
+    "Power, constant and sum rules: d/dx(c) = 0, d/dx(x^n) = n x^(n-1), d/dx[cf] = cf' and d/dx[f ± g] = f' ± g'.",
+    "Product rule (fg)' = f'g + fg' and quotient rule (f/g)' = (f'g - fg')/g^2, the latter valid only where g != 0.",
+    "Chain rule d/dx[f(g(x))] = f'(g(x)) x g'(x), needed whenever one function is composed with another.",
+    "Exponential and logarithmic derivatives: d/dx(e^x) = e^x, d/dx(a^x) = a^x ln a, d/dx(ln x) = 1/x and d/dx(sqrt x) = 1/(2 sqrt x)."
+  ],
+  "importantStatements": [
+    "The derivative of f at x is f'(x) = lim(h->0) [f(x+h) - f(x)]/h, the limit of the slope of the secant from x to x+h as h tends to 0.",
+    "The power rule d/dx(x^n) = n x^(n-1) holds for every real exponent n, and is used with d/dx(c) = 0 and d/dx[f ± g] = f' ± g'.",
+    "d/dx(sin x) = cos x, d/dx(cos x) = -sin x, d/dx(tan x) = sec^2 x, d/dx(cot x) = -csc^2 x, d/dx(sec x) = sec x tan x and d/dx(csc x) = -csc x cot x.",
+    "The product rule is (fg)' = f'g + fg' and the quotient rule is (f/g)' = (f'g - fg')/g^2 for g != 0.",
+    "The chain rule gives d/dx[f(g(x))] = f'(g(x)) x g'(x), so d/dx(sin^2 x) = 2 sin x cos x and d/dx(e^(3x)) = 3e^(3x)."
+  ],
+  "importantTasks": [
+    "Find dy/dx from first principles for a simple polynomial such as x^2 or 3x, expanding (x+h)^n, cancelling and only then setting h = 0.",
+    "Differentiate polynomial and rational expressions, choosing the product rule for a product of factors and the quotient rule for a single fraction.",
+    "Differentiate composite functions by identifying the outer and the inner function and applying the chain rule at every level.",
+    "Differentiate trigonometric expressions such as sin^2 x, tan(x^3) or cos 2x, applying the chain rule outside and the standard derivative inside."
+  ],
+  "keyPoints": [
+    "The derivative is the slope of the tangent, not of the secant; the secant slope becomes the tangent slope only in the limit h -> 0.",
+    "d/dx(sin x) = cos x says the slope equals cos x at that point, not that the slope is constant or always positive.",
+    "Every product needs (fg)' = f'g + fg'; the tempting 'differentiate each factor and multiply' is wrong.",
+    "In the chain rule, differentiate the outer function leaving the inner one untouched, then multiply by the derivative of the inner function.",
+    "d/dx(sqrt x) follows from the power rule with n = 1/2, giving 1/(2 sqrt x) for x > 0."
+  ],
+  "specialNotes": [
+    "Five derivatives are worth memorising as a block: d/dx(sin x) = cos x, d/dx(cos x) = -sin x, d/dx(e^x) = e^x, d/dx(ln x) = 1/x and d/dx(x) = 1.",
+    "d/dx(a^x) = a^x ln a, so a constant multiple of x in the exponent is handled by the chain rule as d/dx(a^(kx)) = k a^(kx) ln a.",
+    "The power rule needs no restriction on the exponent, but a^(kx) with a <= 0 and a non-integer k is not a real function and has no real derivative.",
+    "d/dx(ln|x|) = 1/x holds for x != 0, which pairs with d/dx(sqrt x) = 1/(2 sqrt x) being defined only for x > 0.",
+    "Every rule assumes the expression is defined at the point in question, so a derivative also requires the original function to exist there."
+  ],
+  "examShortTricks": [
+    "For first principles, keep h to the last moment: expand, cancel, divide by h, and only then put h = 0.",
+    "Factor before differentiating, since an expression written as one fraction wants the quotient rule and one written as two factors wants the product rule.",
+    "Count the layers of a composite function, as each layer contributes its own derivative factor, so d/dx(sin^2 x) = 2 sin x cos x has two factors.",
+    "Sanity-check a result at a special point, where the derivative of x^n is 1 for n = 1 and 0 at x = 0 for n > 1."
+  ],
+  "examNotes": [
+    "Differentiating a polynomial or a product of elementary functions is the standard 2 to 5 mark question.",
+    "Differentiation from first principles on a given function is usually a 5 mark question in the form find dy/dx at a stated point.",
+    "Chain-rule expressions such as y = (3x^2 + 2)^4 or y = sin(x^3) appear as 5 mark questions and test correct nesting.",
+    "MCQs often give a derivative and ask for the original function, so read the constant multiple and the signs carefully."
+  ],
+  "practiceQuestions": [
+    "Find dy/dx if y = 3x^4 - 2x^3 + 5x - 1.",
+    "Differentiate y = sin^2 x using the chain rule.",
+    "Find dy/dx if y = x^3 sin x, using the product rule.",
+    "Differentiate y = (3x^2 + 2)^4 and y = e^(3x).",
+    "Find the derivative of y = (2x + 1)/(x^2 + 3) by the quotient rule and state the domain of the result.",
+    "Find dy/dx from first principles for y = x^2 + 3x."
+  ],
+  "mcs": [
+    {
+      "question": "If y = 3x^4 - 2x^3 + 5x - 1, then dy/dx is",
+      "options": [
+        "12x^3 - 6x^2 + 5",
+        "12x^4 - 6x^3 + 5x",
+        "3x^3 - 2x^2 + 5",
+        "12x^3 - 6x^2 + 1"
+      ],
+      "answer": "A",
+      "explanation": "Apply the power rule term by term: 3(4x^3) = 12x^3, -2(3x^2) = -6x^2 and 5(1) = 5, while the constant -1 differentiates to 0."
+    },
+    {
+      "question": "d/dx(sin^2 x) equals",
+      "options": [
+        "cos^2 x",
+        "2 sin x cos x",
+        "2 cos x",
+        "-2 sin x cos x"
+      ],
+      "answer": "B",
+      "explanation": "Write sin^2 x as (sin x)^2 and use the chain rule to get 2 sin x cos x, which is also equal to sin 2x."
+    },
+    {
+      "question": "Using the product rule, d/dx(x^3 sin x) is",
+      "options": [
+        "3x^2 sin x",
+        "x^3 cos x",
+        "3x^2 sin x + x^3 cos x",
+        "3x^2 cos x + x^3 sin x"
+      ],
+      "answer": "C",
+      "explanation": "With f = x^3 and g = sin x, the rule (fg)' = f'g + fg' gives 3x^2 sin x + x^3 cos x. Both terms are required; differentiating one factor and multiplying is wrong."
+    },
+    {
+      "question": "d/dx[(3x^2 + 2)^4] equals",
+      "options": [
+        "24x(3x^2 + 2)^3",
+        "4(3x^2 + 2)^3",
+        "12x(3x^2 + 2)^3",
+        "24x(3x^2 + 2)^2"
+      ],
+      "answer": "A",
+      "explanation": "The chain rule gives 4(3x^2 + 2)^3 x 6x = 24x(3x^2 + 2)^3. The second option is the trap of forgetting the inner derivative."
+    },
+    {
+      "question": "d/dx(tan x) equals",
+      "options": [
+        "csc^2 x",
+        "-csc^2 x",
+        "sec x tan x",
+        "sec^2 x"
+      ],
+      "answer": "D",
+      "explanation": "This follows by differentiating 1 + tan^2 x = sec^2 x, which gives 2 tan x sec^2 x = 2 sec x sec x tan x. Note that d/dx(sec x) = sec x tan x, which is the third option."
+    }
+  ],
+  "numericals": [
+    "**1. [Idea: first principles on a rational function with a removable hole]** Find the derivative of $f(x)=\\dfrac{x^2-9}{x-3}$ at $x=5$, and state at which points $f$ is not differentiable.\\newline\\newline**Solution: at 5 the hole is irrelevant**, so simplify first: $f(x)=x+3$ for $x\\ne3$, hence $f'(5)=1$.\\newline\\newline**Domain analysis:** $f$ is undefined at $x=3$, so $f'(3)$ does not exist — this is a domain failure, not a limit failure.$^{\\bullet}$ Re-examine $x=3$ after repairing: with $f(3)=6$ the function is $x+3$ everywhere and $f'(3)=1$.\\newline\\newline**Answer:** $f'(5)=1$; the original $f$ is not differentiable at $3$ only because it is undefined there. **Trap:** students who do not simplify try first principles and hit $\\frac{(x+3)-6}{x-3}$ — the same trap, just slower.",
+    "**2. [Idea: first principles for a radical, where rationalising is mandatory]** Differentiate $f(x)=\\sqrt{x}$ from first principles, and hence find $f'(4)$.\\newline\\newline**Solution:**$^{\\bullet}$ $f'(x)=\\lim_{h\\to0}\\dfrac{\\sqrt{x+h}-\\sqrt{x}}{h}$.\\newline\\newline$^{\\bullet}$ Multiply by the conjugate, $\\frac{\\sqrt{x+h}+\\sqrt{x}}{\\sqrt{x+h}+\\sqrt{x}}$:$\\newline\\lim_{h\\to0}\\dfrac{(x+h)-x}{h\\left(\\sqrt{x+h}+\\sqrt{x}\\right)} = \\lim_{h\\to0}\\dfrac{1}{\\sqrt{x+h}+\\sqrt{x}}$.\\newline\\newline$^{\\bullet}$ Letting $h\\to0$: $f'(x)=\\dfrac{1}{2\\sqrt{x}}$.\\newline\\newline**Answer:** $f'(x)=\\frac{1}{2\\sqrt{x}}$ for $x>0$, so $f'(4)=\\frac{1}{4}$. **Note:** the expression is undefined at $x=0$ — the square-root function has an infinite slope there, a vertical tangent, consistent with $f'(x)\\to\\infty$.",
+    "**3. [Idea: implicit differentiation, then eliminate to a function of one variable]** For $x^2 + y^2 = 9$, find $\\frac{dy}{dx}$ and the slope of the tangent at the point $(0,3)$.\\newline\\newline**Solution:** Differentiate throughout, treating $y$ as a function of $x$:$^{\\bullet}$ $2x + 2y\\dfrac{dy}{dx} = 0$, so $\\dfrac{dy}{dx} = -\\dfrac{x}{y}$.\\newline\\newline**At $(0,3)$:** the formula gives $-\\frac03 = 0$, so the tangent is **horizontal** there.\\newline\\newline**Why the formula is not a constant slope:** the circle is not a graph of a single function globally — the top half is $y=\\sqrt{9-x^2}$ and the bottom is $-\\sqrt{9-x^2}$, with opposite slopes.\\newline\\newline**Answer:** $\\frac{dy}{dx}=-\\frac{x}{y}$; slope at $(0,3)$ is $0$. **Contrast:** at $(3,0)$ the formula divides by $y=0$, correctly signalling a **vertical** tangent.",
+    "**4. [Idea: a parametric curve whose parameter cancels, with a vertical-tangent check]** A curve is $x = 3t - t^3$, $y = 3t^2$. Find $\\frac{dy}{dx}$ and where the tangent is vertical.\\newline\\newline**Solution:**$^{\\bullet}$ $\\dfrac{dx}{dt} = 3 - 3t^2$ and $\\dfrac{dy}{dt} = 6t$.$^{\\bullet}$ $\\dfrac{dy}{dx} = \\dfrac{6t}{3-3t^2} = \\dfrac{2t}{1-t^2}$.\\newline\\newline**Horizontal tangent** ($\\frac{dy}{dx}=0$): $2t=0 \\Rightarrow t=0$, giving the point $(0,0)$.\\newline\\newline**Vertical tangent** ($\\frac{dx}{dt}=0$): $3-3t^2=0 \\Rightarrow t=\\pm1$, giving points $(2,3)$ and $(-2,3)$.\\newline\\newline**Answer:** $\\frac{dy}{dx}=\\frac{2t}{1-t^2}$; horizontal tangent at $t=0$, vertical at $t=\\pm1$. **Trap:** finding a vertical tangent by setting $\\frac{dy}{dx}$ infinite without checking that $\\frac{dx}{dt}$ is genuinely zero.",
+    "**5. [Idea: a second implicit derivative needs the original relation substituted at the end]** For $x^2+y^2 = 25$, obtain $\\frac{d^2y}{dx^2}$ in terms of $y$ alone.\\newline\\newline**Solution:** From part 3, $\\dfrac{dy}{dx} = -\\dfrac{x}{y}$. Differentiate this fraction — do NOT re-derive from scratch:$^{\\bullet}$ $\\dfrac{d}{dx}\\left(-xy^{-1}\\right) = -\\left[\\left(\\frac{dx}{dx}\\right)y^{-1} + x\\left(\\frac{d}{dx}y^{-1}\\right)\\right]$.\\newline\\newline$^{\\bullet}$ Since $\\frac{d}{dx}y^{-1} = -y^{-2}\\dfrac{dy}{dx} = -y^{-2}\\left(-\\frac{x}{y}\\right) = \\dfrac{x}{y^3}$:$\\newline\\frac{d^2y}{dx^2} = -\\left[\\frac{1}{y} + x\\cdot\\frac{x}{y^3}\\right] = -\\frac{y^2 + x^2}{y^3}$.\\newline\\newline$^{\\bullet}$ Finally substitute $x^2+y^2=25$ to remove $x$: $\\dfrac{d^2y}{dx^2} = -\\dfrac{25}{y^3}$.\\newline\\newline**Answer:** $\\frac{d^2y}{dx^2}=-\\frac{r^2}{y^3}=-\\frac{25}{y^3}$ for a circle of radius $r=5$.\\newline\\newline**Check at the top $(0,5)$:** $-\\frac{25}{125}=-\\frac15$, so the top of the circle is concave down with $|f''|=\\frac{1}{5}$ — exactly $\\frac1r$, as a circle of curvature $r$ requires. **Trap:** writing $625$ by squaring $25$ again; the $25$ is already $r^2$.",
+    "**6. [Idea: logarithmic differentiation for a variable exponent]** Differentiate $y = x^x$ and hence find the stationary point of $y=\\dfrac{x^x}{e^x}$ for $x>0$.\\newline\\newline**Solution:** Differentiate $y=x^x$ by taking logs:$^{\\bullet}$ $\\ln y = x\\ln x$, so $\\dfrac{1}{y}\\dfrac{dy}{dx} = \\ln x + 1$.$^{\\bullet}$ Hence $\\dfrac{dy}{dx} = x^x(\\ln x + 1)$.\\newline\\newline**Now** $g(x)=\\dfrac{x^x}{e^x} = x^x e^{-x}$, so $\\dfrac{d}{dx}\\ln g = (\\ln x + 1) - 1 = \\ln x$.\\newline\\newlineSo $g'(x) = g(x)\\ln x$, which vanishes when $\\ln x = 0$, i.e. $x=1$.\\newline\\newline**Answer:** $\\frac{dy}{dx}=x^x(\\ln x+1)$; the stationary point of $g$ is $x=1$. **Verification:** $g(1)=1\\cdot e^{-1}=e^{-1}$, and $g' = g\\ln x$ changes from negative ($x<1$) to positive ($x>1$), confirming a minimum."
   ]
 }

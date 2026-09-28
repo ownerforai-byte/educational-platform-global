@@ -1,85 +1,116 @@
 {
-  "title": "Limits of Algebraic, Trig, Exp & Log Functions",
   "unitSlug": "calculus",
+  "title": "Limits: Algebraic, Trigonometric, Exponential and Logarithmic",
+  "topicTitle": "Limits: algebraic, trigonometric, exponential and logarithmic",
   "topicSlug": "limits-algebraic-trig-exp-log",
-  "topicTitle": "Limits of Algebraic, Trig, Exp & Log Functions",
   "relevance": 100,
   "notes": [
-    "**Limits of Algebraic, Trig, Exp & Log Functions:** Class 11 concept.",
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
+    "**The standard limits that unlock everything else:** $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$, $\\lim_{x\\to0}\\frac{\\tan x}{x}=1$, and $\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}=\\frac12$. The second follows from the first and the third from the half-angle identity, so only one needs proving.",
+    "**All three assume RADIANS.** In degrees each is scaled: $\\lim\\frac{\\sin x}{x}=\\frac{\\pi}{180}$ and $\\lim\\frac{1-\\cos x}{x^2}=\\frac{\\pi^2}{360}$. A calculator left in degree mode produces exactly the wrong value, which is the most practical trap in the topic.",
+    "**Rational functions and polynomials substitute directly:** since polynomials are continuous everywhere and rational functions are continuous away from their zeros, $\\lim_{x\\to a}\\frac{P(x)}{Q(x)}=\\frac{P(a)}{Q(a)}$ whenever $Q(a)\\ne0$.",
+    "**Exponential and logarithmic limits are continuous functions:** $\\lim_{x\\to a}e^{f(x)}=e^{f(a)}$ and $\\lim_{x\\to a}\\ln f(x)=\\ln f(a)$ for $f(a)>0$. The domain condition on the logarithm is what excludes $f(a)\\le0$.",
+    "**The $1^\\infty$ family via logarithms:** for $y=(1+\\frac{1}{x})^x$, take logs to get $\\lim x\\ln(1+\\frac1x)$, a $0/0$ form, and L'Hôpital then gives $\\lim\\frac{\\frac{1}{x}cdot\frac{1}{1+1/x}}{1}=1$, so the limit is $e$.",
+    "**Composition of continuous functions settles most limits:** if $f$ is continuous at $a$ and $g$ is continuous at $f(a)$, then $\\lim_{x\\to a}g(f(x))=g(f(a))$. This is why almost no work is needed for expressions built from polynomials, roots, exponentials and logarithms with well-behaved arguments."
   ],
   "confusion": [
-    "Distinguish concepts in Limits of Algebraic, Trig, Exp & Log Functions.",
-    "Check formula conditions."
+    "Using the standard limits with x in degrees, which changes every value by a factor involving $\\pi$.",
+    "Applying $\\lim \\ln f = \\ln(\\lim f)$ when the limit of $f$ is negative, where the logarithm is not defined at all.",
+    "Forgetting that the $1^\\infty$ case needs logarithms and cannot be handled by L'Hôpital directly."
   ],
-  "practice": [
-    "Solve 5 problems on Limits of Algebraic, Trig, Exp & Log Functions.",
-    "Derive the key formula for Limits of Algebraic, Trig, Exp & Log Functions."
-  ],
+  "practice": [],
   "universalFacts": [
-    "Limits of Algebraic, Trig, Exp & Log Functions appears in exams.",
-    "Foundational for advanced topics."
+    "The limit defining $e$ is exactly the $1^\\infty$ case, which is why $e$ governs continuous compounding rather than discrete interest steps.",
+    "In physics, $\\lim_{t\\to0}\\frac{\\sin\\theta}{\\theta}=1$ is why the small-angle approximation $\\sin\\theta\\approx\\theta$ is valid for pendulum and projectile work — and it only holds in radians."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [
-    "Application of Limits of Algebraic, Trig, Exp & Log Functions",
-    "Numerical problem on Limits of Algebraic, Trig, Exp & Log Functions",
-    "Daily life use of Limits of Algebraic, Trig, Exp & Log Functions"
-  ],
-  "practiceQuestions": [
-    "Q1. Define Limits of Algebraic, Trig, Exp & Log Functions.",
-    "Q2. Key formula for Limits of Algebraic, Trig, Exp & Log Functions.",
-    "Q3. Problem on Limits of Algebraic, Trig, Exp & Log Functions."
-  ],
+  "examples": [],
+  "practiceQuestions": [],
   "formulas": [
-    "Formula for Limits of Algebraic, Trig, Exp & Log Functions: [insert from textbook].",
-    "Key relationship: [variable formula]."
+    "$\\lim_{x\\to0}\\frac{\\sin x}{x}=1$, $\\lim_{x\\to0}\\frac{\\tan x}{x}=1$",
+    "$\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}=\\frac12$",
+    "Degrees: $\\lim\\frac{\\sin x}{x}=\\frac{\\pi}{180}$",
+    "Rational: $\\lim_{x\\to a}\\frac{P}{Q}=\\frac{P(a)}{Q(a)}$ for $Q(a)\\ne0$",
+    "$\\lim_{x\\to a}e^{f}=e^{f(a)}$, $\\lim_{x\\to a}\\ln f=\\ln f(a)$ for $f(a)>0$"
   ],
   "keyPoints": [
-    "Core principle of Limits of Algebraic, Trig, Exp & Log Functions",
-    "Application of Limits of Algebraic, Trig, Exp & Log Functions",
-    "Connection of Limits of Algebraic, Trig, Exp & Log Functions to other topics"
+    "All three standard trigonometric limits assume radians.",
+    "Continuous functions compose, so most limits need no special technique.",
+    "$1^\\infty$ limits are handled by taking logarithms first."
   ],
-  "summary": "Limits of Algebraic, Trig, Exp & Log Functions covers essential principles and applications.",
+  "summary": "Three standard limits — the sine, tangent and cosine forms — unlock most of the topic, and all assume radians, which is the trap that changes every numerical answer. Rational functions and compositions of continuous functions settle themselves by direct substitution. The remaining family, limits of the form $(1+1/x)^x$, is handled by taking logarithms and reducing to a $0/0$ quotient, which is where the definition of $e$ itself comes from.",
   "specialNotes": [
-    "Check conditions for Limits of Algebraic, Trig, Exp & Log Functions.",
-    "Limits of Algebraic, Trig, Exp & Log Functions connects to other topics."
+    "Where a formula is quoted it is valid only under the conditions stated; Using the standard limits with x in degrees, which changes every value by a factor involving $\\pi$.",
+    "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
   "importantStatements": [
-    "Statement 1: Definition of Limits of Algebraic, Trig, Exp & Log Functions",
-    "Statement 2: Theorem related to Limits of Algebraic, Trig, Exp & Log Functions",
-    "Statement 3: Condition for Limits of Algebraic, Trig, Exp & Log Functions to be valid",
-    "Statement 4: Principle governing Limits of Algebraic, Trig, Exp & Log Functions",
-    "Statement 5: Corollary or consequence of Limits of Algebraic, Trig, Exp & Log Functions"
+    "Statement 1: $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$ for $x$ in radians.",
+    "Statement 2: $\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}=\\frac12$.",
+    "Statement 3: For $Q(a)\\ne0$, $\\lim_{x\\to a}\\frac{P(x)}{Q(x)}=\\frac{P(a)}{Q(a)}$.",
+    "Statement 4: $\\lim_{x\\to a}\\ln f(x)=\\ln f(a)$ requires $f(a)>0$.",
+    "Statement 5: $\\lim_{n\\to\\infty}(1+\\frac1n)^n=e$."
   ],
   "importantNotes": [
-    "Limits of Algebraic, Trig, Exp & Log Functions is based on fundamental principles."
+    "Topic anchor: Composition of continuous functions settles most limits  if $f$ is continuous at $a$ and $g$ is continuous at $f(a)$, then $ lim_{x to a}g(f(x))=g(f(a))$."
   ],
   "examShortTricks": [
-    "Recall the formula for Limits of Algebraic, Trig, Exp & Log Functions."
+    "Switch the calculator to radians before evaluating anything in this topic.",
+    "If the answer involves $\\frac{\\pi}{180}$, the degrees/radians conversion was missed."
   ],
   "examNotes": [
-    "Focus on Limits of Algebraic, Trig, Exp & Log Functions problems - significant marks."
+    "Combining a standard limit with a substitution such as $u=3x$ is a reliable 2–3 mark question."
   ],
   "mcs": [
     {
-      "question": "Which describes Limits of Algebraic, Trig, Exp & Log Functions?",
+      "question": "$\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}$ (radians) is:",
       "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
+        "$0$",
+        "$\\frac12$",
+        "$1$",
+        "$2$"
       ],
-      "answer": "A"
+      "answer": "B",
+      "explanation": "Using $1-\\cos^2x=\\sin^2x$ and $\\lim\\frac{\\sin x}{x}=1$ with $\\cos0=1$ gives $\\frac12$."
+    },
+    {
+      "question": "The standard limit $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$ holds when $x$ is measured in:",
+      "options": [
+        "degrees",
+        "radians",
+        "gradians",
+        "any unit"
+      ],
+      "answer": "B",
+      "explanation": "In degrees the value is $\\frac{\\pi}{180}$, because the radian is defined by this very limit."
+    },
+    {
+      "question": "$\\lim_{x\\to2}\\frac{3x^2+1}{x-2}$ is:",
+      "options": [
+        "$\\frac{13}{0}$",
+        "does not exist as a finite limit",
+        "$0$",
+        "$6.5$"
+      ],
+      "answer": "B",
+      "explanation": "The denominator vanishes at 2 while the numerator does not, giving a vertical asymptote rather than a finite limit."
     }
   ],
   "importantConcepts": [
-    "Definition and significance of Limits of Algebraic, Trig, Exp & Log Functions."
+    "All three standard trigonometric limits assume radians.",
+    "Continuous functions compose, so most limits need no special technique.",
+    "$1^\\infty$ limits are handled by taking logarithms first."
   ],
   "importantTasks": [
-    "Solve 5 problems on Limits of Algebraic, Trig, Exp & Log Functions."
+    "Work through the authored practice problems and re-derive each key formula from the definition."
   ],
-  "duplicateType": 1
+  "duplicateType": 1,
+  "visualType": "limit",
+  "numericals": [
+    "**1. [Idea: the denominator's limit does not exist, so the limit cannot either]** Determine $\\lim_{x \\to 0}\\dfrac{x^2}{2x^2 + \\sin^2(1/x)}$.\\newline\\newline**Solution:** Substitute: the numerator tends to $0$ and the denominator oscillates, so the form is not even $\\frac00$ and L'Hôpital is unavailable. Divide by $x^2$:$\\newline\\dfrac{1}{2 + \\left(\\frac{\\sin(1/x)}{x}\\right)^2}$. Put $u = 1/x$, so $u \\to \\infty$ and the squared term becomes $u^2\\sin^2 u$.\\newline\\newline**Examine two sequences:**$^{\\bullet}$ $x_n = \\frac{1}{n\\pi}$ gives $\\sin u = 0$, so the fraction is exactly $\\frac12$.$^{\\bullet}$ $y_n = \\frac{1}{\\frac\\pi2 + 2n\\pi}$ gives $|\\sin u| = 1$, so the fraction is $\\dfrac{1}{2+y_n^2} \\to 0$.\\newline\\newlineSince the two sequences give different values, **the limit does not exist**.\\newline\\newline**Answer:** DNE. **This is the concept the question tests** — students who see $\\frac00$ and reach for L'Hôpital get a wrong answer.",
+    "**2. [Idea: repeated L'Hôpital, one application per order of vanishing]** Evaluate $\\lim_{x \\to 0}\\dfrac{x - \\sin x}{x^3}$.\\newline\\newline**Solution:** Direct substitution gives $\\frac00$. The numerator vanishes to **third order** because $x - \\sin x$ starts with the $x^3$ term, so exactly three applications are needed.$^{\\bullet}$ 1st: $\\lim\\dfrac{1 - \\cos x}{3x^2}$ — still $\\frac00$.$^{\\bullet}$ 2nd: $\\lim\\dfrac{\\sin x}{6x}$ — still $\\frac00$.$^{\\bullet}$ 3rd: $\\lim\\dfrac{\\cos x}{6} = \\frac16$.\\newline\\newline**Answer:** $\\frac16$. **Warning:** a fourth application would be differentiating an already non-zero limit, which is meaningless.",
+    "**3. [Idea: substitute $t = 1/x$ to convert an infinity-limit into a zero-limit]** Evaluate $\\lim_{x \\to \\infty} x^3\\left(\\tan^{-1}\\dfrac1x - \\dfrac1x\\right)$.\\newline\\newline**Solution:** Naive substitution gives $\\infty^3 \\cdot 0$, so a change of variable is required. Let $t = \\frac1x$, so $t \\to 0$ and $x^3 = \\frac1{t^3}$:$\\newline\\lim_{t \\to 0}\\dfrac{\\tan^{-1}t - t}{t^3}$, a $\\frac00$ form.\\newline\\newlineL'Hôpital:$\\newline\\lim_{t \\to 0}\\dfrac{\\frac{1}{1+t^2} - 1}{3t^2} = \\lim_{t \\to 0}\\dfrac{\\frac{1-(1+t^2)}{1+t^2}}{3t^2} = \\lim_{t \\to 0}\\dfrac{-t^2}{3t^2(1+t^2)} = -\\lim_{t\\to0}\\dfrac{1}{3(1+t^2)}$.\\newline\\newline**Answer:** $-\\frac13$. **Check:** $\\tan^{-1}t = t - \\frac{t^3}{3} + \\cdots$, so the difference is $-\\frac{t^3}{3}$ and multiplying by $x^3=\\frac1{t^3}$ indeed gives $-\\frac13$.",
+    "**4. [Idea: the $1^\\infty$ family with a trigonometric inner function]** Evaluate $\\lim_{x \\to 0}\\left(1+\\sin x\\right)^{\\frac{1}{\\sin x}}$.\\newline\\newline**Solution:** Let $y = \\left(1+\\sin x\\right)^{1/\\sin x}$ and take logarithms:$\\newline\\ln y = \\dfrac{\\ln(1+\\sin x)}{\\sin x}$, which is $\\frac00$.\\newline\\newlineL'Hôpital:$\\newline\\lim_{x\\to0}\\dfrac{\\frac{\\cos x}{1+\\sin x}}{\\cos x} = \\lim_{x\\to0}\\dfrac{1}{1+\\sin x} = 1$.\\newline\\newlineSo $\\ln y \\to 1$, hence $y \\to e$.\\newline\\newline**Answer:** $e$. **Check:** this is the general identity $\\lim_{u\\to0}(1+u)^{1/u}=e$ with $u = \\sin x$.",
+    "**5. [Idea: the standard limit $\\lim\\frac{e^u-1}{u}=1$ does all the work]** Evaluate $\\lim_{x \\to 0}\\dfrac{2^{\\sin^2 x} - 1}{x^2}$.\\newline\\newline**Solution:** The form is $\\frac00$. Direct differentiation is circular, and a squeeze using $-x^2 \\le \\sin^2x \\le x^2$ only bounds the expression by $\\frac{2^{x^2}-1}{x^2}$, which tends to $\\ln 2$ — **a non-zero bound proves nothing**.\\newline\\newlineConvert the base instead: $2^{\\sin^2x} = e^{\\sin^2x \\ln 2}$. Set $u = \\sin^2 x\\,\\ln 2$, so $u \\to 0$, and factor the expression into three pieces each with a known limit:$\\newline\\lim_{x\\to0}\\underbrace{\\frac{e^u-1}{u}}_{\\to\\,1}\\cdot\\underbrace{\\frac{u}{\\sin^2x}}_{\\to\\,\\ln2}\\cdot\\underbrace{\\frac{\\sin^2x}{x^2}}_{\\to\\,1}$.\\newline\\newline**Answer:** $1 \\times \\ln 2 \\times 1 = \\ln 2$. **Lesson:** when a squeeze bound tends to a non-zero constant, switch to factorisation.",
+    "**6. [Idea: chain an unknown function's limit through a rationalising identity]** Given $\\lim_{x \\to 2}\\dfrac{f(x)-f(2)}{x-2} = 3$ and $f(2) = 6$, evaluate $\\lim_{x \\to 2}\\dfrac{f^2(x) - 36}{x^2-4}$.\\newline\\newline**Solution:** Direct substitution gives $\\frac00$ and nothing can be computed without more information, so factor both sides:$^{\\bullet}$ Numerator: $f^2(x)-36 = \\left(f(x)-f(2)\\right)\\left(f(x)+f(2)\\right)$ since $36 = f^2(2)$.$^{\\bullet}$ Denominator: $x^2-4 = (x-2)(x+2)$.\\newline\\newlineThen$\\newline\\lim_{x\\to2}\\dfrac{f(x)-f(2)}{x-2}\\cdot\\dfrac{f(x)+f(2)}{x+2} = 3 \\cdot \\dfrac{6+6}{2+2} = 3 \\cdot 3$.\\newline\\newline**Answer:** $9$."
+  ]
 }

@@ -41,4 +41,102 @@
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits",
   "visualType": "power-concept"
+,
+  "summary": "The work done by a current in a circuit is the electrical energy it transfers, and it can be written in four equivalent forms: W = VIt = I²Rt = V²t/R, all of which agree because Ohm's law relates V, I and R. The corresponding power, that is the rate of energy transfer, is likewise P = VI = I²R = V²/R. In a resistor all of this electrical energy appears as heat, the Joule heating P = I²R, and the same expression is called the I²R loss when describing energy wasted in transmission lines. Because that loss grows with the square of the current, power is transmitted at high voltage and low current, which is why grid systems step the voltage up for transmission and step it down near the user. Energy itself is measured in joules or in kilowatt-hours, with 1 kWh = 3.6 × 10⁶ J, and it is the kilowatt-hour that domestic electricity meters record, since the watt is a unit of power. In devices that are not pure resistors the input power VI splits into useful output plus heating, so a motor obeys P_input = VI = I²R + P_mech while a cell being charged stores part of its input as chemical energy.",
+  "importantConcepts": [
+    "Electrical work in four equivalent forms, W = VIt = I²Rt = V²t/R, all equivalent through Ohm's law.",
+    "Electrical power as the rate of energy transfer, P = VI = I²R = V²/R.",
+    "Joule heating P = I²R, the power dissipated as heat in a resistor, also called the I²R loss.",
+    "The kilowatt-hour as the practical unit of electrical energy, 1 kWh = 3.6 × 10⁶ J, recorded by domestic meters.",
+    "Transmission at high voltage and low current to reduce I²R losses, which grow with the square of the current.",
+    "Power splitting in non-resistive devices, so that a motor obeys P_input = VI = I²R + P_mech and a charging cell stores part of its input chemically."
+  ],
+  "importantStatements": [
+    "The work done by a current in time t is W = VIt = I²Rt = V²t/R.",
+    "The power dissipated as heat in a resistor is P = I²R.",
+    "One kilowatt-hour equals 3.6 × 10⁶ joules, and it is energy that is measured in kilowatt-hours, not power in watts.",
+    "Since transmission loss P = I²R grows as the square of the current, high-voltage low-current transmission is used to reduce losses.",
+    "In any steady circuit the total electrical energy supplied equals the sum of the energy dissipated as heat and the energy converted into other forms."
+  ],
+  "importantTasks": [
+    "Calculate the current, resistance and energy consumed by a rated appliance such as a bulb from its power and voltage rating.",
+    "Choose between the forms P = I²R and P = V²/R according to whether the current or the voltage across the component is known.",
+    "Convert an energy reading in kilowatt-hours into joules, and a power in watts into kilowatts.",
+    "Write an energy balance for a circuit or a device in which part of the input power is dissipated as heat and part is converted into useful output."
+  ],
+  "keyPoints": [
+    "Pick the power form to match what is given: I²R when the current is known, V²/R when the voltage across the component is known.",
+    "Watts are power and joules are energy, so a 60 W bulb running for 5 h uses 300 Wh = 0.3 kWh, not 300 W.",
+    "The I² dependence of transmission loss is the whole reason for the national grid using very high voltages.",
+    "For a series circuit the same current flows through every component, so I²R is the convenient form; in a parallel circuit the same voltage applies, so V²/R is.",
+    "Joule heating converts electrical energy irreversibly into thermal energy, which is why resistors warm up in use."
+  ],
+  "specialNotes": [
+    "P = I²R and P = V²/R are both correct but suit different data: use I²R where the current is known, as in a series circuit, and V²/R where the voltage is known, as in a parallel circuit.",
+    "Energy is measured in joules or kilowatt-hours and never in watts, since the watt is a unit of power, that is energy per unit time; 1 kWh = 3.6 × 10⁶ J.",
+    "The I² factor means halving the current reduces the resistive loss to a quarter, which is exactly why transmission voltage is stepped up and the current stepped down.",
+    "In a pure resistor all the input power leaves as heat, so P = I²R is both the useful output and the unavoidable loss.",
+    "For a motor or a charging cell the input power VI splits into heating and useful output, so equating VI with I²R alone understates the output."
+  ],
+  "examShortTricks": [
+    "Select the form of the power formula to match the data: I²R for a known current, V²/R for a known voltage, VI for a known pair.",
+    "For a rated appliance, P = VI gives the current directly and R = V/I follows, which settles most household-appliance numericals in two lines.",
+    "Convert energy with 1 kWh = 3.6 × 10⁶ J and remember that the kilowatt-hour is what a meter displays, so read the number and attach the unit.",
+    "In a series circuit the current is common to every component, so I²R gives the power in each one directly."
+  ],
+  "examNotes": [
+    "A three mark numerical on a household appliance, finding the current, the resistance and the energy used in a stated time, is very common.",
+    "One mark questions ask for the SI unit of power, the unit of energy and the value of 1 kWh in joules.",
+    "Transmission-loss questions appear regularly and are answered by pointing out that P_loss = I²R varies as the square of the current.",
+    "Expect a five mark energy balance in which the supplied energy is shared between heat and useful output in a motor or a cell."
+  ],
+  "practiceQuestions": [
+    "A 60 W, 230 V bulb is connected to a 230 V supply. Find the current, the resistance and the energy consumed in 5 hours.",
+    "A 12 V car headlamp draws 5 A. Find the power, the resistance and the energy used in 2 minutes.",
+    "Convert 0.5 kWh into joules and 2.5 kW into watts, stating which are energy and which are power.",
+    "Explain why power stations transmit electricity at very high voltage, using the expression P = I²R.",
+    "A motor takes 500 W from a supply and dissipates 120 W as heat. Find its mechanical output power."
+  ],
+  "mcs": [
+    {
+      "question": "The power dissipated as heat in a resistor is:",
+      "options": [
+        "VI",
+        "I²R",
+        "V²/R",
+        "IR"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "One kilowatt-hour is equal to:",
+      "options": [
+        "3.6 × 10³ J",
+        "3.6 × 10⁶ J",
+        "36 J",
+        "1000 J"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Power loss in a transmission line is proportional to:",
+      "options": [
+        "I",
+        "I²",
+        "I³",
+        "1/I"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "A 60 W bulb runs for 5 hours. The energy consumed is:",
+      "options": [
+        "300 J",
+        "300 Wh",
+        "12 kWh",
+        "5 kWh"
+      ],
+      "answer": "B"
+    }
+  ]
 }

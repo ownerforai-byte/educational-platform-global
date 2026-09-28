@@ -34,6 +34,16 @@ const SUGGESTIONS = [
   { icon: MessageSquareText, label: "Newton's laws with examples", text: "Explain Newton's three laws using everyday examples." },
 ];
 
+const STUDY_THINKING_LINES = [
+  "Thinking…",
+  "Extracting…",
+  "Contemplating…",
+  "Musing…",
+  "Pondering…",
+  "Reflecting…",
+  "Gathering the ideas in conceptual order…",
+];
+
 export function StudyChat({ compact = false }: { compact?: boolean }) {
   const { user } = useSession();
   const isLoggedIn = !!user;
@@ -47,12 +57,23 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
   ]);
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
+  const [thinkIdx, setThinkIdx] = useState(0);
   const [enhancing, setEnhancing] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [restoredCount, setRestoredCount] = useState<number | null>(null);
   const bottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
   const historyLoadedRef = useRef(false);
+
+  // Rotate the thinking words while a reply is generating.
+  useEffect(() => {
+    if (!sending) return;
+    const id = setInterval(
+      () => setThinkIdx((i) => (i + 1) % STUDY_THINKING_LINES.length),
+      2600,
+    );
+    return () => clearInterval(id);
+  }, [sending]);
 
   // Restore the signed-in user's persisted conversation once per mount.
   useEffect(() => {
@@ -166,7 +187,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
           <Bot className="h-5 w-5 text-primary" />
         </div>
         <div className="flex-1 min-w-0">
-          <h2 className="text-xs font-bold leading-none">Ravikisan's AI Tutor</h2>
+          <h2 className="text-xs font-bold leading-none">Ravikisan&apos;s Captain</h2>
           <p className="text-[10px] text-muted-foreground mt-1 flex items-center gap-1.5">
             <span className="inline-flex h-1.5 w-1.5 rounded-full bg-green-500" />
             Online · answers + points you to notes, labs &amp; PYQs
@@ -193,7 +214,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
               <div className="mx-auto w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg shadow-primary/20 mb-3">
                 <Sparkles className="h-7 w-7 text-white" />
               </div>
-              <h2 className="text-lg font-bold">Learn with your AI study buddy</h2>
+              <h2 className="text-lg font-bold">Learn with the Captain</h2>
               <p className="text-xs text-muted-foreground mt-1">
                 Ask anything about Class 11 &amp; 12 science — I&apos;ll explain it and send you to the right notes.
               </p>
@@ -247,7 +268,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
             <div className="flex justify-start">
               <div className="bg-muted rounded-2xl px-4 py-2.5 flex items-center gap-2 text-xs text-muted-foreground">
                 <Loader2 className="h-4 w-4 animate-spin" />
-                Thinking…
+                {STUDY_THINKING_LINES[thinkIdx]}
               </div>
             </div>
           )}

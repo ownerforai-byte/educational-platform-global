@@ -62,5 +62,98 @@
     "Carbohydrate: Cm(H2O)n",
     "Triglyceride: glycerol + 3 fatty acids",
     "Peptide bond: -CO-NH-"
+  ],
+  "summary": "Biomolecules are the chemical basis of life: the organic molecules carbohydrates, proteins, lipids and nucleic acids, completed by the inorganic biomolecules water and minerals. Carbohydrates supply and store energy and build structure, proteins built from 20 amino acids act as enzymes, transport molecules, defence molecules and hormones, lipids store energy and form membranes, and nucleic acids store and express genetic information. Enzymes speed up every metabolic reaction by lowering activation energy, while water and minerals provide the medium and the cofactors on which all of this depends. The links between molecular structure and biological function, and the factors that control enzyme activity, are the standard examination focus of this topic.",
+  "importantConcepts": [
+    "Biomolecules are organic compounds of living organisms — carbohydrates, proteins, lipids and nucleic acids — and the inorganic biomolecules water and essential minerals.",
+    "Carbohydrates follow the general formula Cm(H2O)n; monosaccharides (glucose, fructose, galactose) condense into disaccharides (sucrose, lactose, maltose) and polysaccharides (starch, glycogen, cellulose).",
+    "Proteins are polymers of 20 amino acids joined by peptide bonds (-CO-NH-), organised into primary, secondary, tertiary and quaternary levels of structure.",
+    "Lipids are not true polymers; triglycerides, phospholipids, steroids and waxes store energy at about 9 kcal/g, build membranes and act as hormones.",
+    "Nucleic acids are polymers of nucleotides (pentose sugar + phosphate + nitrogenous base); DNA stores genetic information while RNA directs protein synthesis.",
+    "Enzymes are biological catalysts that lower activation energy without being consumed; most are proteins but some catalytic RNA molecules (ribozymes) also act as enzymes."
+  ],
+  "importantStatements": [
+    "Not all enzymes are proteins — certain RNA molecules called ribozymes also catalyse reactions.",
+    "Lipids are not true polymers because they have no repeating monomer unit.",
+    "RNA differs from DNA by carrying uracil in place of thymine.",
+    "Cellulose gives structural support to plant cell walls, whereas starch and glycogen are energy-storage polysaccharides.",
+    "Enzymes lower the activation energy of a reaction but are regenerated at the end of it and are not used up.",
+    "Macrominerals (Ca, P, K, Na, Cl, Mg, S) are needed in large amounts, while microminerals or trace elements (Fe, I, Zn, Cu, Mn, Se, F) are needed in minute amounts."
+  ],
+  "importantTasks": [
+    "Classify a named compound (glycogen, testosterone, tRNA, haemoglobin) as carbohydrate, protein, lipid or nucleic acid and justify the classification from its structure.",
+    "Draw the four levels of protein structure for one example, labelling the bonds or interactions that stabilise each level.",
+    "Compare starch and cellulose in terms of monomer, type of glycosidic linkage, function and the organisms that store or use them.",
+    "Sketch labelled graphs showing how temperature, pH and substrate concentration affect enzyme activity and explain each shape.",
+    "Compare saturated and unsaturated fats in terms of hydrogen content, melting point and effect on health."
+  ],
+  "keyPoints": [
+    "Monosaccharide examples: glucose, fructose and galactose — all are isomers with the molecular formula C6H12O6.",
+    "Sucrose = glucose + fructose; lactose = glucose + galactose; maltose = glucose + glucose.",
+    "Haemoglobin is the classic quaternary protein; disulfide bridges and hydrophobic interactions stabilise the tertiary level.",
+    "Phospholipids are amphipathic — a hydrophilic phosphate head with two hydrophobic fatty-acid tails — which is why they form bilayers.",
+    "The lock-and-key model shows a rigid active site, whereas the induced-fit model shows the site reshaping around the substrate; induced fit is the better model.",
+    "Water acts as a universal solvent with high specific heat capacity, cohesion and adhesion, which is the basis of transport, osmosis and temperature control."
+  ],
+  "specialNotes": [
+    "Ribozymes show that the definition of an enzyme must include catalytic RNA and not proteins alone.",
+    "Lipids are excluded from the true-polymer category; only proteins, polysaccharides and nucleic acids have true repeating monomers.",
+    "Glycogen is the animal storage polysaccharide (animal starch), and humans cannot digest cellulose because we lack the enzyme cellulase.",
+    "The secondary structure (alpha helix and beta sheet) is held by hydrogen bonds between backbone groups; peptide bonds define the primary level instead.",
+    "Minerals are inorganic, are never broken down for energy, and act as structural ions or cofactors of enzymes."
+  ],
+  "examShortTricks": [
+    "Cm(H2O)n means carbohydrate; no repeating monomer means lipid.",
+    "Protein level order: sequence (primary) -> helix and sheet (secondary) -> 3-D fold (tertiary) -> many chains (quaternary).",
+    "Energy density: carbohydrate 4 kcal/g, protein 4 kcal/g, fat 9 kcal/g.",
+    "T is DNA-only, U is RNA-only — if uracil is present it must be RNA.",
+    "Lock = rigid fit, induced fit = the active site reshapes; induced fit is the accepted model."
+  ],
+  "examNotes": [
+    "One-mark MCQs usually ask for biomolecule identification, carbohydrate subclass, or a property of enzymes.",
+    "Two-mark short questions commonly ask for the four levels of protein structure or the differences between DNA and RNA.",
+    "Five-mark structured questions often take the form of a table comparing starch, cellulose and glycogen or comparing saturated and unsaturated fats.",
+    "Graphs of enzyme activity against temperature, pH or substrate concentration appear almost every year as a 4-5 mark question with a labelled curve.",
+    "The difference between the lock-and-key and induced-fit models is often set as a one-mark pair or inside a two-mark statement question."
+  ],
+  "practiceQuestions": [
+    "Differentiate between starch and cellulose giving the monomer, linkage, function and an example organism for each.",
+    "Describe the four levels of protein structure with a suitable example.",
+    "Explain, using a labelled graph, how temperature and pH affect the rate of an enzyme-catalysed reaction.",
+    "Compare saturated and unsaturated fats in terms of hydrogen content and physical state at room temperature.",
+    "Compare DNA and RNA in terms of sugar, bases, structure and function.",
+    "Distinguish between macrominerals and microminerals, giving two examples and one function of each."
+  ],
+  "mcs": [
+    {
+      "question": "Which of the following biomolecules is NOT a true polymer?",
+      "options": ["Protein", "Starch", "Lipid", "DNA"],
+      "answer": "C",
+      "explanation": "Triglycerides, phospholipids and steroids have no repeating monomer unit, so lipids are not true polymers; protein, starch and DNA all consist of true repeating monomers."
+    },
+    {
+      "question": "The secondary structure of a protein (alpha helix and beta-pleated sheet) is stabilised mainly by:",
+      "options": ["Peptide bonds", "Disulfide bridges", "Hydrogen bonds", "Hydrophobic interactions"],
+      "answer": "C",
+      "explanation": "Hydrogen bonds between backbone C=O and N-H groups hold the helix and sheet together. Peptide bonds define the primary structure, while disulfide bridges and hydrophobic interactions stabilise the tertiary level."
+    },
+    {
+      "question": "Which statement correctly describes enzymes?",
+      "options": ["They are consumed in the reaction they catalyse", "They raise the activation energy of a reaction", "They lower activation energy and are not consumed", "All enzymes are proteins, so no RNA can catalyse"],
+      "answer": "C",
+      "explanation": "Enzymes are catalysts, so they lower activation energy and are regenerated at the end of the reaction. Ribozymes, such as the rRNA of the ribosome, show that not all enzymes are proteins."
+    },
+    {
+      "question": "Glucose, fructose and galactose are:",
+      "options": ["Polysaccharides with the general formula Cm(H2O)n", "Isomers sharing the molecular formula C6H12O6", "Disaccharides joined by peptide bonds", "Lipids stored in adipose tissue"],
+      "answer": "B",
+      "explanation": "All three are monosaccharides containing six carbon atoms, so they are structural isomers of C6H12O6. They become disaccharides only when they condense with another sugar."
+    },
+    {
+      "question": "Cellulose differs from starch in that cellulose:",
+      "options": ["Is a monosaccharide used for energy storage", "Has alpha-1,4 linkages and is digested by humans", "Has beta-1,4 linkages and forms plant cell wall structure", "Is broken down to glucose by human amylase"],
+      "answer": "C",
+      "explanation": "Cellulose is a structural polysaccharide with beta-1,4 glycosidic linkages that builds the plant cell wall; humans lack cellulase, whereas starch with alpha-1,4 linkages is digested by amylase."
+    }
   ]
 }

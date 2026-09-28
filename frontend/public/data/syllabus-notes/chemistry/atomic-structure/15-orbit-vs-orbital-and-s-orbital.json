@@ -64,5 +64,85 @@
   "tabGroup": "Atomic-Structure-Learner-Notes",
   "source": "ravikishan",
   "duplicateType": 2,
-  "filename": "15-orbit-vs-orbital-and-s-orbital.json"
+  "filename": "15-orbit-vs-orbital-and-s-orbital.json",
+  "summary": "Orbit and orbital differ in origin, nature, definiteness, number, direction and status: an orbit is Bohr's fixed two-dimensional circular path with an exact radius and momentum, while an orbital is Schrödinger's three-dimensional probability region with neither quantity definite (Δx·Δp ≥ h/4π); there is one orbit per n but n² orbitals per shell, and only orbitals have direction. The s orbital in detail is spherical, so its density depends only on r and it is non-directional; its radial probability distribution P(r) = 4πr²|ψ|² peaks at the most probable distance, 0.529 Å for 1s, and for 2s it shows two maxima separated by a spherical radial node at r = 2a₀ ≈ 1.06 Å, with (n − 1) such nodes in general and no nodal plane at all. Size and energy rise with n, and s orbitals penetrate closer to the nucleus than p of the same shell, which is the origin of the ns < np order.",
+  "importantConcepts": [
+    "Six-row contrast: origin (Bohr versus Schrödinger), nature (2D path versus 3D region), definiteness, number, direction and status",
+    "s orbital: spherical, non-directional, present in every shell, with P(r) = 4πr²|ψ|² peaking at 0.529 Å for 1s",
+    "Radial nodes: (n − 1) spherical nodes and no nodal plane; the 2s node lies at r = 2a₀ ≈ 1.06 Å",
+    "Size and energy both increase with n, and s orbitals penetrate closer to the nucleus than p, giving ns < np",
+    "Chemical role: s orbitals are the all-direction bond formers and the mixing component of every sp, sp² and sp³ hybrid"
+  ],
+  "importantStatements": [
+    "An orbital is a region of maximum probability with no sharp edge; the electron may be found outside the drawn sphere.",
+    "|ψ|² is largest at the nucleus for 1s, but the radial probability 4πr²|ψ|² peaks at a₀ = 0.529 Å.",
+    "2s is not merely a bigger 1s: it has an inner radial node and a second probability maximum.",
+    "s orbitals are the only subshells present in every shell, from n = 1 upwards.",
+    "Pure s orbitals cannot be directional; directionality appears only after hybridisation."
+  ],
+  "importantTasks": [
+    "Distinguish orbit from orbital in a six-point table.",
+    "Draw the radial probability curves of the 1s and 2s orbitals and mark the node.",
+    "State how many radial nodes a 3s orbital has and where the first lies.",
+    "Explain why s orbitals form non-directional bonds."
+  ],
+  "keyPoints": [
+    "One orbit per n; n² orbitals per shell.",
+    "Radial nodes = n − 1 for s orbitals; angular nodes = 0.",
+    "1s radial probability maximum = a₀ = 0.529 Å; 2s node = 2a₀ ≈ 1.06 Å.",
+    "Spherical symmetry explains the inertness of noble gases, whose filled s and p shells give a spherically symmetric cloud."
+  ],
+  "specialNotes": [
+    "Probability density and radial probability answer different questions and peak at different places — a classic subtlety.",
+    "Higher s orbitals are larger and more penetrating but never directional or dumbbell-shaped.",
+    "The drawn sphere is a boundary surface at a chosen probability, not a container."
+  ],
+  "examShortTricks": [
+    "Use the six-row table format for the orbit-versus-orbital question; it matches the marking scheme.",
+    "Radial probability P(r) = 4πr²|ψ|² — the r² factor is why it vanishes at r = 0 while |ψ|² does not.",
+    "Quote 0.529 Å as the most probable distance, never as a fixed radius."
+  ],
+  "examNotes": [
+    "The six-row orbit-versus-orbital table is a standard 4–5 mark question.",
+    "Radial nodes of s orbitals and the position of the 2s node are frequent 1–2 mark items.",
+    "Applications to bonding and hybridisation usually close the question."
+  ],
+  "practiceQuestions": [
+    "Distinguish an orbit from an orbital in a six-point table.",
+    "Draw the radial probability distribution of 1s and 2s and mark the node.",
+    "How many radial nodes does a 3s orbital have?",
+    "Why do s orbitals give non-directional bonds?"
+  ],
+  "mcs": [
+    {
+      "question": "The number of radial nodes in a 2s orbital is:",
+      "options": [
+        "0",
+        "1",
+        "2",
+        "3"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "An orbital is best described as:",
+      "options": [
+        "A fixed circular path of definite radius",
+        "A three-dimensional region of maximum electron probability",
+        "A circle of radius 0.529 Å",
+        "A path followed at 2.18 × 10⁶ m s⁻¹"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The radial probability of the 1s electron is maximum at:",
+      "options": [
+        "r = 0",
+        "r = a₀ = 0.529 Å",
+        "r = 2a₀",
+        "r = 10⁻¹⁰ m"
+      ],
+      "answer": "B"
+    }
+  ]
 }

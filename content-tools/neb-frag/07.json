@@ -1,0 +1,96 @@
+{
+  "file": "biology/biotechnology-principles/07-principles-of-biotechnology.json",
+  "data": {
+    "summary": "Modern biotechnology rests on genetic engineering and its core techniques of recombinant DNA technology, PCR, gel electrophoresis and gene cloning. Restriction enzymes act as molecular scissors, cutting DNA at specific palindromic recognition sequences and producing either sticky or blunt ends, while vectors such as plasmids and bacteriophages carry foreign DNA into a competent host cell. The six steps of rDNA technology run from isolation of genetic material through cutting, separation, insertion into a vector, transformation and expression of the desired gene. PCR amplifies a specific DNA segment using Taq polymerase from Thermus aquaticus through repeated cycles of denaturation, annealing and extension.",
+    "importantConcepts": [
+      "Restriction enzymes and palindromic recognition sites",
+      "Sticky ends and blunt ends produced by cutting DNA",
+      "Vectors such as plasmids, bacteriophages, cosmids and the Ti plasmid",
+      "Competent host cells and transformation",
+      "The six steps of rDNA technology",
+      "PCR: denaturation, annealing and extension using Taq polymerase",
+      "Gel electrophoresis for size-based separation of DNA"
+    ],
+    "importantStatements": [
+      "Restriction enzymes cut DNA only at specific recognition sequences; not any enzyme can cut DNA.",
+      "EcoRI recognises GAATTC and HindIII recognises AAGCTT.",
+      "Sticky ends are single-stranded overhangs produced by cutting, while blunt ends have no overhang.",
+      "A vector must have an origin of replication, a selectable marker and a site for inserting foreign DNA.",
+      "DNA is negatively charged, so it moves toward the positive electrode during electrophoresis, and smaller fragments travel faster.",
+      "Each PCR cycle doubles the DNA, so the total increase is limited by the available reagents rather than truly infinite."
+    ],
+    "importantTasks": [
+      "State the function of a restriction enzyme and give the recognition sites of EcoRI and HindIII.",
+      "Describe the three steps of a PCR cycle, naming the temperature and the enzyme used.",
+      "Explain why Taq polymerase rather than an ordinary DNA polymerase is used in PCR.",
+      "Explain how gel electrophoresis separates DNA fragments of different sizes.",
+      "List the six steps of rDNA technology in the correct order."
+    ],
+    "keyPoints": [
+      "Restriction enzymes are molecular scissors and vectors are molecular vehicles.",
+      "Examples of vectors: plasmids, bacteriophages, cosmids and the Ti plasmid of Agrobacterium.",
+      "Bacterial cells are made competent for DNA uptake, usually by CaCl2 treatment.",
+      "PCR: denaturation at 94 degrees C, annealing at 50-65 degrees C and extension at 72 degrees C.",
+      "Gel electrophoresis separates DNA by size in agarose gel and is visualized with ethidium bromide under UV light.",
+      "The six rDNA steps: isolate, cut, separate, insert into vector, transform and express."
+    ],
+    "specialNotes": [
+      "The recognition sequence of a restriction enzyme is a palindrome, read the same in both directions as in GAATTC.",
+      "DNA migrates toward the positive anode because its phosphate backbone gives it a net negative charge.",
+      "Sticky ends produced by the same enzyme anneal naturally, which is how a gene is inserted into a plasmid.",
+      "A competent host is a cell modified to take up foreign DNA; the word does not mean the cell is healthy or rapidly dividing.",
+      "The sticky ends of EcoRI are complementary to those made by any other enzyme with the same recognition sequence, so the same enzyme is normally used for vector and insert."
+    ],
+    "examShortTricks": [
+      "Scissors cut and vehicles carry: restriction enzymes cut, vectors carry.",
+      "PCR temperatures in order are 94, then 50-65, then 72, for denaturation, annealing and extension.",
+      "Taq is heat-stable because it comes from the thermophilic bacterium Thermus aquaticus, which is exactly why it survives 94 degrees C.",
+      "In gel electrophoresis the smallest fragment has travelled the furthest towards the positive electrode."
+    ],
+    "examNotes": [
+      "A three-mark question frequently asks for the three PCR steps with temperatures, so learn the exact figures.",
+      "One-mark MCQs ask for the recognition sequence of a named enzyme or the definition of a vector.",
+      "Sequence questions on the six steps of rDNA technology are common, so keep them in the correct order.",
+      "Diagrams of a plasmid showing a restriction site and a selectable marker often carry two to three marks."
+    ],
+    "practiceQuestions": [
+      "What is the function of a restriction enzyme? Give the recognition sequence of EcoRI.",
+      "Describe the three steps of a PCR cycle with their temperatures.",
+      "Why is Taq polymerase used in PCR rather than an ordinary DNA polymerase?",
+      "Explain how gel electrophoresis separates fragments of different sizes.",
+      "Why must recombinant DNA be inserted into a vector before it is introduced into a host cell?"
+    ],
+    "mcs": [
+      {
+        "question": "Restriction enzymes are called molecular scissors because they",
+        "options": ["Join DNA fragments", "Cut DNA at specific sequences", "Copy DNA", "Separate RNA from DNA"],
+        "answer": "B",
+        "explanation": "A restriction endonuclease recognises a particular palindromic sequence and cuts the DNA there."
+      },
+      {
+        "question": "The recognition sequence of EcoRI is",
+        "options": ["AAGCTT", "CTGCAG", "GAATTC", "GGATCC"],
+        "answer": "C",
+        "explanation": "EcoRI cuts at GAATTC, while HindIII cuts at AAGCTT and BamHI at GGATCC."
+      },
+      {
+        "question": "The heat-stable enzyme used in PCR is",
+        "options": ["Taq polymerase", "Ligase", "Helicase", "Reverse transcriptase"],
+        "answer": "A",
+        "explanation": "Taq polymerase from Thermus aquaticus withstands the 94 degrees C denaturation step, so it does not have to be replaced each cycle."
+      },
+      {
+        "question": "During gel electrophoresis, DNA moves toward",
+        "options": ["The negative electrode", "The positive electrode", "The loading wells only", "Randomly"],
+        "answer": "B",
+        "explanation": "DNA has a net negative charge from its phosphate backbone, so it migrates towards the anode and smaller fragments move fastest."
+      },
+      {
+        "question": "A plasmid is used in rDNA technology as",
+        "options": ["A restriction enzyme", "A carrier vector for foreign DNA", "An enzyme that joins DNA", "A primer for PCR"],
+        "answer": "B",
+        "explanation": "A plasmid is a small circular DNA that replicates independently and carries the foreign gene into the host cell."
+      }
+    ]
+  }
+}

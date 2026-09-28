@@ -239,7 +239,7 @@ async function extractSyllabusHints(
 
 // ── Shared: Search system prompt (used by all providers) ────────────────────
 
-const SEARCH_SYSTEM_PROMPT = `You are Ravikisan's AI Tutor — a warm, wise mentor for NEB Science students (${SITE}/).
+const SEARCH_SYSTEM_PROMPT = `You are Ravikisan's Captain — a warm, wise mentor for NEB Science students (${SITE}/).
 
 **YOUR VOICE:** Speak like a mentor who genuinely cares about science students. Be deep, human, and inspirational — not robotic. Use real-life analogies from nature, technology, and everyday science. A student should feel like they're talking to someone who believes in them.
 
@@ -881,21 +881,22 @@ export class AIService {
       return internal.chat(messages);
     }
 
-    // Sequential chain (owner policy): agnes → openrouter → internal. The
-    // previous parallel race burned BOTH provider bills for one question and
-    // made replies nondeterministic; a per-provider cap keeps the total wait
-    // under the Next dev proxy's ~30s POST kill. The LAST LLM link gets the
-    // whole remaining budget (free-tier models queue past any fixed cap).
-    // 20000 (was 28000): the professor web search above can burn up to 6s
-    // BEFORE the chain starts, and the Next dev proxy kills any POST at ~30s
-    // with its own 500 ("Internal Server Error" console report, 2026-09-26).
-    // 6s search + 20s chain = 26s worst case, safely under that ceiling.
-    const GLOBAL_BUDGET_MS = Number(process.env.AI_CHAIN_BUDGET_MS) || 20000;
-    const PER_PROVIDER_MS = Number(process.env.AI_PROVIDER_TIMEOUT_MS) || 10000;
-    // Owner policy: Agnes is THE responder. It gets a longer window than the
-    // fallbacks so only a real failure/timeout (not mere slowness) moves the
-    // chain on to openrouter → internal.
-    const PRIMARY_MS = Number(process.env.AI_PRIMARY_TIMEOUT_MS) || 15000;
+    // Sequential chain (owner policy): agnes → openrouter. The previous
+    // parallel race burned BOTH provider bills for one question and made
+    // replies nondeterministic; the LAST LLM link gets the whole remaining
+    // budget (free-tier models queue past any fixed cap).
+    // 2-MINUTE ENVELOPE (owner policy 2026-09-28): a deep, conceptual answer
+    // legitimately takes time to generate, so the chain may run up to ~115s
+    // (+ up to 6s of professor web search ≈ 2 minutes end to end). Chat calls
+    // go straight to the backend via NEXT_PUBLIC_API_URL (not through the
+    // Next dev proxy), so nothing cuts the POST off before the budget is
+    // spent; `apiFetch` applies no client-side timeout either.
+    const GLOBAL_BUDGET_MS = Number(process.env.AI_CHAIN_BUDGET_MS) || 115000;
+    const PER_PROVIDER_MS = Number(process.env.AI_PROVIDER_TIMEOUT_MS) || 30000;
+    // Owner policy: Agnes is THE responder. It gets a much longer window than
+    // the fallback so only a real failure/timeout (not mere slowness) moves
+    // the chain on to openrouter.
+    const PRIMARY_MS = Number(process.env.AI_PRIMARY_TIMEOUT_MS) || 100000;
     const started = Date.now();
     for (let i = 0; i < chain.length; i++) {
       const p = chain[i];

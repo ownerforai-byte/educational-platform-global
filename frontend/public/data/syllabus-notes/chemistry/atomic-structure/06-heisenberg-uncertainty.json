@@ -53,5 +53,85 @@
     "State clearly that the limit is fundamental, not instrumental."
   ],
   "visualType": "heisenberg-uncertainty",
-  "tabGroup": "Atomic-Structure-Learner-Notes"
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "summary": "Heisenberg's uncertainty principle (1927) states that for a microscopic particle position and momentum cannot both be determined exactly: Δx·Δp ≥ h/4π, or Δx·Δv ≥ h/4πm, with the conjugate forms ΔE·Δt ≥ h/4π and ΔL·Δθ ≥ h/4π. The cause is not clumsy instruments but physics: to locate an electron you must illuminate it with radiation of comparable wavelength, and that photon disturbs its momentum. The consequence is the concept of probability — the electron is described by a wave function ψ with |ψ|² as the probability density, so 0.529 Å reappears as the most probable distance of the 1s electron rather than a fixed radius. Numerically, an electron confined to 10⁻¹⁰ m has Δv ≈ 5.8 × 10⁵ m s⁻¹, so no definite orbit exists, and confinement to a nucleus would demand ≈10⁹ eV, proving electrons are not nuclear constituents.",
+  "importantConcepts": [
+    "Position–momentum form Δx·Δp ≥ h/4π, or Δx·Δv ≥ h/4πm for velocity",
+    "Conjugate forms: energy–time ΔE·Δt ≥ h/4π (natural line width) and ΔL·Δθ ≥ h/4π",
+    "Physical reason: illuminating the electron to locate it disturbs its momentum — a fundamental, not instrumental, limit",
+    "Probability concept: wave function ψ, probability density |ψ|², electron cloud and the most probable radius 0.529 Å for 1s",
+    "Applications: atomic size and stability, line broadening, zero-point energy, resolution limits of electron microscopes"
+  ],
+  "importantStatements": [
+    "Only the product of the uncertainties is bounded; either quantity alone may be exact.",
+    "The limit is a property of nature, so no better instrument can beat h/4π.",
+    "A definite Bohr orbit gives Δx ≈ 0 and Δp ≈ 0 at once, so Δx·Δp → 0, which is impossible.",
+    "An electron confined to 10⁻¹⁵ m would need Δp ≈ 5.3 × 10⁻¹⁸ kg m s⁻¹ and a KE of order 10⁹–10¹⁰ eV, far above nuclear binding energies.",
+    "For macroscopic bodies the uncertainty product is negligible, so classical mechanics remains valid."
+  ],
+  "importantTasks": [
+    "State the uncertainty principle and explain why it is not a limit of instruments.",
+    "Estimate the minimum uncertainty in the velocity of an electron confined to 10⁻¹⁰ m.",
+    "Use the principle to show that an electron cannot be confined inside a nucleus of radius 10⁻¹⁵ m.",
+    "Explain how the principle leads to the probability description of the electron and to orbitals."
+  ],
+  "keyPoints": [
+    "Two forms are worth quoting: Δx·Δp ≥ h/4π and Δx·Δv ≥ h/4πm.",
+    "ΔE·Δt ≥ h/4π explains why spectral lines have a natural width, since Δt ≈ 10⁻⁸ s.",
+    "The 1s most probable distance is 0.529 Å — Bohr's radius reinterpreted as probability.",
+    "ħ = h/2π = 1.055 × 10⁻³⁴ J s, and the bound is often written Δx·Δp ≥ ħ/2."
+  ],
+  "specialNotes": [
+    "The principle forbids simultaneous exact knowledge, not knowledge of one quantity — perfect p leaves position undefined.",
+    "Interpretations differ (Copenhagen versus measurement-disturbance), so state it as a property of quantum ensembles.",
+    "It does not mean measurement is impossible, only that conjugate quantities cannot both be sharp."
+  ],
+  "examShortTricks": [
+    "Write both forms on the first line; questions often ask for the velocity form.",
+    "Always finish a numerical with the physical conclusion: no definite orbit, or no electron in the nucleus.",
+    "Quote the γ-ray microscope argument for 'fundamental, not instrumental' — it earns the explanation mark."
+  ],
+  "examNotes": [
+    "The statement plus its two numerical applications (atomic size, electron in the nucleus) is a 4–5 mark question.",
+    "A 1-mark item usually asks whether the principle is a limitation of instruments — the answer is no.",
+    "Natural line width and tunnelling are the standard follow-up applications."
+  ],
+  "practiceQuestions": [
+    "State Heisenberg's uncertainty principle and explain why it is not a limitation of instruments.",
+    "An electron is confined to 10⁻¹⁰ m; estimate the minimum uncertainty in its velocity.",
+    "Show numerically why an electron cannot exist inside a nucleus of radius 10⁻¹⁵ m.",
+    "How does the uncertainty principle justify describing the electron by a probability distribution?"
+  ],
+  "mcs": [
+    {
+      "question": "The uncertainty principle is significant for:",
+      "options": [
+        "Moving cars",
+        "Microscopic particles like electrons",
+        "Planets",
+        "All objects equally"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The uncertainty principle states that:",
+      "options": [
+        "Position and momentum can never be known",
+        "Position and momentum cannot both be known exactly at the same time",
+        "Mass and energy are interchangeable",
+        "Electrons have no definite mass"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The energy–time form ΔE·Δt ≥ h/4π explains:",
+      "options": [
+        "The finite width of spectral lines",
+        "The charge of the electron",
+        "The size of the nucleus",
+        "The periodicity of the table"
+      ],
+      "answer": "A"
+    }
+  ]
 }

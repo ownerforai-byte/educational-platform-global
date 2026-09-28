@@ -62,5 +62,85 @@
   "tabGroup": "Atomic-Structure-Learner-Notes",
   "source": "ravikishan",
   "duplicateType": 2,
-  "filename": "18-orbital-designation-matrix-and-magnetic-spin.json"
+  "filename": "18-orbital-designation-matrix-and-magnetic-spin.json",
+  "summary": "The quantum-number triple (n, l, m) maps onto orbital designations in a fixed matrix: l = 0 gives s with one orbital (m = 0) as 1s, 2s, 3s; l = 1 gives p with three orbitals (m = −1, 0, +1) as 2p, 3p, written px, py, pz; l = 2 gives d with five orbitals (m = −2 … +2) labelled dxy, dyz, dxz, dx²−y² and dz²; l = 3 gives f with seven orbitals (m = −3 … +3). A full designation combines n and the letter (3p), and the complete state (3, 1, 0) is the 3pz orbital. Spin adds mₛ = ±½, an intrinsic angular momentum of magnitude √3/2 ħ rather than a literal spinning ball, evidenced by Stern–Gerlach and the alkali doublets; with spin each orbital defined by n, l and m holds exactly two opposite-spin electrons, which is Pauli's exclusion principle in this language.",
+  "importantConcepts": [
+    "Designation matrix: l = 0 → s (1 orbital), l = 1 → p (3), l = 2 → d (5), l = 3 → f (7)",
+    "m values run −l to +l, so the triple (n, l, m) fixes a single orbital, e.g. (3, 1, 0) is 3pz",
+    "d orbitals carry the spectroscopic labels dxy, dyz, dxz, dx²−y² and dz²",
+    "Spin: mₛ = ±½ with intrinsic angular momentum √3/2 ħ, evidenced by Stern–Gerlach (silver splits into two beams) and doublet spectra",
+    "With spin, each orbital holds exactly two electrons of opposite spin — Pauli's exclusion principle; box notation shows ↑ ↑ ↑ before ↑↓"
+  ],
+  "importantStatements": [
+    "Spin is an intrinsic quantum property, not a classical rotation, though the name survives.",
+    "The five d orbitals are degenerate in a free atom and split only in ligand or magnetic fields.",
+    "A complete state needs all four numbers; n and l alone describe a whole subshell.",
+    "Silver's single unpaired 5s electron produced exactly two Stern–Gerlach beams, confirming s = ½.",
+    "Pauli stated his exclusion principle in 1925, before spin was formally introduced."
+  ],
+  "importantTasks": [
+    "Draw the designation matrix for l = 0, 1, 2, 3 with m values and orbital capacities.",
+    "Explain the Stern–Gerlach experiment as evidence for electron spin.",
+    "Use box notation to show the 2p electrons of nitrogen and oxygen and count the unpaired electrons.",
+    "Calculate the spin-only magnetic moment of Mn²⁺ (3d⁵) and of Cu²⁺ (3d⁹)."
+  ],
+  "keyPoints": [
+    "Orbitals per subshell 2l + 1; capacity 2(2l + 1): s 2, p 6, d 10, f 14.",
+    "Box notation: one box per orbital, parallel arrows first (Hund), opposite arrows only when paired (Pauli).",
+    "μ = √(u(u + 2)) BM: Mn²⁺ (u = 5) gives 5.92 BM, Cu²⁺ (u = 1) gives 1.73 BM, Zn²⁺ (u = 0) is diamagnetic.",
+    "Nitrogen 2p³ has three unpaired electrons, oxygen 2p⁴ has two."
+  ],
+  "specialNotes": [
+    "Degenerate orbitals split in a magnetic field — that is the Zeeman effect in matrix language.",
+    "A subshell is (n, l); an orbital is (n, l, m); an electron state adds mₛ.",
+    "Box arrows represent mₛ only; the orbital shape comes from l and never changes with spin."
+  ],
+  "examShortTricks": [
+    "Use box notation whenever unpaired electrons or magnetism are asked — it is faster and safer.",
+    "State Pauli's principle in terms of all four quantum numbers, not just 'two per orbital'.",
+    "(3, 1, 0) = 3pz; (4, 2, −1) = one of the five 4d orbitals — this mapping is a favourite one-mark item."
+  ],
+  "examNotes": [
+    "The designation matrix with m values is a standard 3–4 mark question.",
+    "Magnetic-moment calculations from unpaired electrons are the usual 2–3 mark numerical.",
+    "One-mark items test the designation of a given (n, l, m) set."
+  ],
+  "practiceQuestions": [
+    "Give the designation of the electron with (n, l, m, mₛ) = (4, 2, −1, +½).",
+    "Explain the Stern–Gerlach experiment as evidence for spin.",
+    "Using box notation, show the 2p electrons of N and O and count the unpaired electrons.",
+    "Calculate the spin-only magnetic moment of Mn²⁺ (3d⁵)."
+  ],
+  "mcs": [
+    {
+      "question": "The spin-only magnetic moment of Cu²⁺ (3d⁹) is about:",
+      "options": [
+        "0 BM",
+        "1.73 BM",
+        "2.83 BM",
+        "5.92 BM"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The quantum-number set (n, l, m) = (3, 1, 0) corresponds to the:",
+      "options": [
+        "3s orbital",
+        "3pz orbital",
+        "3d orbital",
+        "3p orbital with any orientation"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The value of the spin quantum number for an electron is:",
+      "options": [
+        "0",
+        "+½ or −½",
+        "+1 or −1",
+        "Any value from −l to +l"
+      ],
+      "answer": "B"
+    }
+  ]
 }

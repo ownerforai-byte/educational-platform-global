@@ -46,5 +46,92 @@
   "formulas": [
     "A^-1 = (1/|A|) adj(A)",
     "Dx = det(replace col1 with constants), Dy = det(replace col2 with constants)"
+  ],
+  "summary": "A matrix is a rectangular array of numbers of order m x n, and the special types that matter here are square, diagonal, identity, zero, symmetric (A = A^T) and skew-symmetric (A = -A^T, whose diagonal entries are all zero). The transpose interchanges rows and columns, (A^T)_ij = A_ji, with (AB)^T = B^T A^T, so the order reverses. The determinant of A = [[a,b],[c,d]] is ad - bc; |A| = 0 makes the matrix singular, and only a square matrix with |A| != 0 has an inverse, obtained as A^-1 = (1/|A|) adj(A), the same tool that gives Cramer's rule.",
+  "importantConcepts": [
+    "Order m x n means m rows and n columns; a matrix is square only when m = n.",
+    "Transpose: (A^T)_ij = A_ji, so the order becomes n x m while the main diagonal is unchanged.",
+    "The determinant of A = [[a,b],[c,d]] is ad - bc; it is a single number attached to the whole matrix, not to its entries.",
+    "Singular matrix: |A| = 0, so no inverse exists. Non-singular: |A| != 0, so the inverse exists and is unique.",
+    "The adjoint adj(A) is the transpose of the cofactor matrix; A x adj(A) = |A| x I, hence A^-1 = (1/|A|) adj(A).",
+    "Cramer's rule: x = Dx/D and y = Dy/D, where D = |A| and Dx, Dy are D with column 1 or column 2 replaced by the constants."
+  ],
+  "importantStatements": [
+    "The transpose interchanges rows and columns and satisfies (A^T)^T = A, (A + B)^T = A^T + B^T and (AB)^T = B^T A^T.",
+    "For A = [[a,b],[c,d]] the determinant is |A| = ad - bc, and a matrix is singular exactly when |A| = 0.",
+    "A^-1 = (1/|A|) adj(A) exists if and only if A is square and |A| != 0, and the inverse it produces is unique.",
+    "Cramer's rule solves ax + by = e and cx + dy = f by x = Dx/D and y = Dy/D with D = |A|.",
+    "Determinants obey |AB| = |A| x |B| and |A^T| = |A|, while (A^-1)^T = (A^T)^-1 and A x A^-1 = I."
+  ],
+  "importantTasks": [
+    "Find the transpose and the determinant of a 2x2 or 3x3 matrix, expanding a 3x3 determinant along the row or column with the most zeros.",
+    "Find A^-1 for a 2x2 matrix by the adjoint method, then verify the result by multiplying A A^-1 to obtain the identity matrix.",
+    "Solve a pair of linear equations by Cramer's rule, forming Dx and Dy by replacing the appropriate column with the constants.",
+    "Classify a given matrix as square, diagonal, identity, zero, symmetric or skew-symmetric, and confirm that a skew-symmetric matrix has a zero diagonal."
+  ],
+  "keyPoints": [
+    "Matrix multiplication is not commutative, and (AB)^T = B^T A^T reverses the order for exactly the same reason.",
+    "Only square matrices can have an inverse, and only when |A| != 0; a rectangular matrix has neither determinant nor inverse.",
+    "The adjoint is the transpose of the cofactor matrix, not the cofactor matrix itself.",
+    "|A^T| = |A|, and a 3x3 determinant uses the cofactor signs + - + along the first row.",
+    "For an n x n matrix, |adj A| = |A|^(n-1), so for a 3x3 matrix the power is 2."
+  ],
+  "specialNotes": [
+    "A skew-symmetric matrix can also be symmetric only in the trivial case A = 0, since A = A^T = -A^T forces every entry to be zero.",
+    "Interchanging any two rows, or any two columns, of a matrix changes the sign of its determinant.",
+    "Multiplying one whole row of an n x n matrix by k multiplies its determinant by k, not by k^n.",
+    "The determinant of an odd-order skew-symmetric matrix is zero, even though the matrix itself need not be zero.",
+    "If |A| = 5 for a 3x3 matrix then |adj A| = 5^2 = 25, not 5, because the exponent is n - 1."
+  ],
+  "examShortTricks": [
+    "Expand a 3x3 determinant along the row with the most zeros, which keeps the signs and the arithmetic simple.",
+    "For a 2x2 matrix adj([[a,b],[c,d]]) = [[d,-b],[-c,a]], and A^-1 is that matrix divided by (ad - bc).",
+    "Cramer's rule is only a substitution: copy D and swap column 1 for the constants to get Dx, and column 2 for Dy.",
+    "If only |A| and |AB| are given, use |AB| = |A| x |B| and |A^T| = |A| instead of expanding anything."
+  ],
+  "examNotes": [
+    "Transpose questions are 1 to 2 marks and test the reversed order in (AB)^T rather than any computation.",
+    "Finding a 2x2 inverse, or solving a 2x2 system by Cramer's rule, is a standard 5-mark question.",
+    "Determinants of 3x3 matrices and the classification of matrices as symmetric or skew-symmetric are common 5-mark items.",
+    "MCQs often ask which of the given matrices is singular, or ask for the order and entries after a transpose."
+  ],
+  "practiceQuestions": [
+    "Find the transpose and the determinant of A = [[2,3],[1,4]].",
+    "Find the inverse of A = [[1,2],[3,5]] and verify it by computing A A^-1.",
+    "Solve 2x + 3y = 8 and x - y = 1 by Cramer's rule.",
+    "If |A| = 5 for a 3x3 matrix, find |adj A| and state the general formula for |adj A|.",
+    "Show that A + A^T is always symmetric for any square matrix A."
+  ],
+  "mcs": [
+    {
+      "question": "If A = [[2,3],[1,4]], then the determinant |A| is",
+      "options": ["5", "-5", "11", "1"],
+      "answer": "A",
+      "explanation": "|A| = ad - bc = 2(4) - 3(1) = 8 - 3 = 5. The value 11 comes from wrongly adding ad + bc."
+    },
+    {
+      "question": "(AB)^T is equal to",
+      "options": ["A^T B^T", "B^T A^T", "AB", "BA"],
+      "answer": "B",
+      "explanation": "Transposition reverses the order of a product, because ((AB)^T)_ij = (AB)_ji = sum over k of B_jk A_ki, which is the ij entry of B^T A^T."
+    },
+    {
+      "question": "The inverse of the matrix A = [[1,2],[3,5]] is",
+      "options": ["[[5,-2],[-3,1]]", "[[-5,2],[3,-1]]", "[[5,2],[3,-1]]", "[[-5,-2],[-3,-1]]"],
+      "answer": "B",
+      "explanation": "|A| = 1(5) - 2(3) = -1 and adj A = [[5,-2],[-3,1]], so A^-1 = (1/-1) adj A = [[-5,2],[3,-1]]. Multiplying A by this gives the identity matrix."
+    },
+    {
+      "question": "If A is a 3x3 matrix with |A| = 5, then |adj A| equals",
+      "options": ["25", "5", "15", "125"],
+      "answer": "A",
+      "explanation": "The general rule is |adj A| = |A|^(n-1) for an n x n matrix, so with n = 3 this is 5^2 = 25 and not 5 or 5^3."
+    },
+    {
+      "question": "A square matrix A has an inverse if and only if",
+      "options": ["|A| = 0", "|A| != 0", "A is symmetric", "A is diagonal"],
+      "answer": "B",
+      "explanation": "A^-1 = (1/|A|) adj(A) requires a non-zero determinant. When |A| = 0 the matrix is singular and the division is impossible, while symmetry or diagonality says nothing about the determinant."
+    }
   ]
 }

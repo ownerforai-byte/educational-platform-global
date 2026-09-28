@@ -3,120 +3,22 @@
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
-import {
-  Home,
-  BookOpen,
-  FlaskConical,
-  Layers,
-  Globe,
-  User,
-  LogIn,
-  Sparkles,
-  X,
-  Menu,
-  GraduationCap,
-  Atom,
-  Binary,
-  Workflow,
-  HelpCircle,
-  Target,
-  Users,
-  LineChart,
-  Compass,
-  Search,
-  Lightbulb,
-  FileText,
-  Box,
-  Bookmark,
-  UserCheck,
-  Coins,
-} from "lucide-react";
+import { LogIn, LogOut, Menu, Search, User, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { createPortal } from "react-dom";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { LogOut } from "lucide-react";
+import { isNavItemActive } from "@/lib/nav-active";
+import { isOwnerUser } from "@/lib/owner";
+import { NAV_SECTIONS } from "@/lib/navigation";
 
-interface MobileSection {
-  id: string;
-  title: string;
-  items: {
-    href: string;
-    label: string;
-    icon: React.ComponentType<{ className?: string }>;
-    badge?: string;
-    badgeClass?: string;
-  }[];
-}
+/**
+ * Section + item data lives in lib/navigation.ts — one shared list, also used
+ * by the desktop sidebar, so the drawer can never lag behind the sidebar.
+ * Sections flagged ownerOnly are added below for allowlisted owner accounts.
+ */
 
-const mobileSections: MobileSection[] = [
-  {
-    id: "primary",
-    title: "Quick Access",
-    items: [
-      { href: "/", label: "Home Dashboard", icon: Home },
-      { href: "/search", label: "Search Index", icon: Search, badge: "Ctrl+K", badgeClass: "bg-muted text-muted-foreground border border-border/80" },
-      { href: "/levels", label: "Curriculum Levels", icon: Compass, badge: "5 Tracks", badgeClass: "bg-sky-500/15 text-sky-500" },
-    ],
-  },
-  {
-    id: "curriculum",
-    title: "Curriculum & Notes",
-    items: [
-      { href: "/class-11-notes", label: "Class 11 Hub", icon: BookOpen, badge: "XI", badgeClass: "bg-sky-500/15 text-sky-500" },
-      { href: "/class-12-notes", label: "Class 12 Hub", icon: BookOpen, badge: "XII", badgeClass: "bg-violet-500/15 text-violet-500" },
-      { href: "/subjects", label: "All 6 Subjects", icon: Layers, badge: "Core", badgeClass: "bg-emerald-500/15 text-emerald-500" },
-      { href: "/syllabus", label: "Official CDC Syllabus", icon: GraduationCap },
-      { href: "/practical", label: "Practical Lab Manuals", icon: FlaskConical, badge: "Labs", badgeClass: "bg-emerald-500/15 text-emerald-500" },
-      { href: "/legend", label: "Concept Legends & Facts", icon: Lightbulb, badge: "Facts", badgeClass: "bg-amber-500/15 text-amber-500" },
-      { href: "/notes", label: "Notes Archive", icon: FileText, badge: "Archive", badgeClass: "bg-blue-500/15 text-blue-500" },
-    ],
-  },
-  {
-    id: "stem",
-    title: "STEM Labs & Rigor",
-    items: [
-      { href: "/lab", label: "Virtual 3D Labs", icon: FlaskConical, badge: "3D", badgeClass: "bg-violet-500/15 text-violet-500" },
-      { href: "/lab/3d", label: "3D Simulations Hub", icon: Box, badge: "96+", badgeClass: "bg-indigo-500/15 text-indigo-500" },
-      { href: "/lab/bio-3d-organelles", label: "Cell Organelles 3D", icon: Sparkles, badge: "13 Org", badgeClass: "bg-emerald-500/15 text-emerald-500" },
-      { href: "/periodic-table", label: "Periodic Table & CEE", icon: Atom, badge: "118", badgeClass: "bg-cyan-500/15 text-cyan-500" },
-      { href: "/theorems", label: "Theorems & Proofs", icon: Binary, badge: "Rigor", badgeClass: "bg-amber-500/15 text-amber-500" },
-      { href: "/derivations", label: "Formula Derivations", icon: Layers, badge: "Steps", badgeClass: "bg-rose-500/15 text-rose-500" },
-      { href: "/graphs", label: "Science Graph Bank", icon: LineChart, badge: "Charts", badgeClass: "bg-indigo-500/15 text-indigo-500" },
-      { href: "/mindmap", label: "Visual Mindmaps", icon: Workflow, badge: "Maps", badgeClass: "bg-purple-500/15 text-purple-500" },
-    ],
-  },
-  {
-    id: "tools",
-    title: "AI & Assessment",
-    items: [
-      { href: "/chat", label: "AI Study Assistant", icon: Sparkles, badge: "AI", badgeClass: "bg-fuchsia-500/15 text-fuchsia-500" },
-      { href: "/ai-quiz", label: "Adaptive AI Quiz", icon: HelpCircle, badge: "Adaptive", badgeClass: "bg-blue-500/15 text-blue-500" },
-      { href: "/quiz", label: "Practice Quiz Bank", icon: Target, badge: "PYQ", badgeClass: "bg-teal-500/15 text-teal-500" },
-      { href: "/exam-countdown", label: "Exam Countdown", icon: Target, badge: "NEB", badgeClass: "bg-amber-500/15 text-amber-500" },
-    ],
-  },
-  {
-    id: "extended",
-    title: "Knowledge & Prep",
-    items: [
-      { href: "/knowledge", label: "Knowledge Hub", icon: BookOpen, badge: "Concepts", badgeClass: "bg-sky-500/15 text-sky-500" },
-      { href: "/lessons", label: "Lessons Library", icon: GraduationCap, badge: "Theory", badgeClass: "bg-indigo-500/15 text-indigo-500" },
-      { href: "/loksewa", label: "Loksewa GK", icon: Users, badge: "GK", badgeClass: "bg-orange-500/15 text-orange-500" },
-      { href: "/world-knowledge", label: "World Knowledge", icon: Globe, badge: "Global", badgeClass: "bg-emerald-500/15 text-emerald-500" },
-      { href: "/resources", label: "Resource Vault", icon: Bookmark, badge: "Vault", badgeClass: "bg-pink-500/15 text-pink-500" },
-    ],
-  },
-  {
-    id: "account",
-    title: "Student Desk",
-    items: [
-      { href: "/profile", label: "My Profile", icon: User, badge: "Account" },
-      { href: "/progress", label: "My Progress", icon: UserCheck, badge: "Stats" },
-      { href: "/bookmarks", label: "Saved Bookmarks", icon: Bookmark, badge: "Saved" },
-      { href: "/credits", label: "Credits & Plan", icon: Coins, badge: "Wallet" },
-    ],
-  },
-];
+/* Menu data: lib/navigation.ts (NAV_SECTIONS). */
+
 
 export function MobileNav() {
   const [open, setOpen] = useState(false);
@@ -154,15 +56,19 @@ export function MobileNav() {
     };
   }, [open]);
 
-  const filteredSections = mobileSections.map((sec) => ({
-    ...sec,
-    items: sec.items.filter((item) =>
-      searchQuery.trim() === ""
-        ? true
-        : item.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          sec.title.toLowerCase().includes(searchQuery.toLowerCase())
-    ),
-  })).filter((sec) => sec.items.length > 0);
+  const filteredSections = NAV_SECTIONS.filter(
+    (sec) => !sec.ownerOnly || isOwnerUser(user),
+  )
+    .map((sec) => ({
+      ...sec,
+      items: sec.items.filter((item) =>
+        searchQuery.trim() === ""
+          ? true
+          : item.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
+            sec.label.toLowerCase().includes(searchQuery.toLowerCase())
+      ),
+    }))
+    .filter((sec) => sec.items.length > 0);
 
   return (
     <>
@@ -250,16 +156,14 @@ export function MobileNav() {
             {/* Scrollable links */}
             <nav className="flex-1 overflow-y-auto pr-1 space-y-4">
               {filteredSections.map((sec) => (
-                <div key={sec.title} className="space-y-1">
+                <div key={sec.id} className="space-y-1">
                   <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground/80 px-2.5 py-1">
-                    {sec.title}
+                    {sec.label}
                   </p>
                   <div className="space-y-0.5">
                     {sec.items.map((item) => {
                       const Icon = item.icon;
-                      const active =
-                        pathname === item.href ||
-                        (item.href !== "/" && pathname.startsWith(item.href));
+                      const active = isNavItemActive(pathname, item.href);
                       return (
                         <Link
                           key={item.href}

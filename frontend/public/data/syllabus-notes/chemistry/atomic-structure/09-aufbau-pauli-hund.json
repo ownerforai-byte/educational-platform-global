@@ -56,5 +56,87 @@
     "Explain the Cr/Cu anomalies with exchange energy and half-filled stability, not as arbitrary exceptions."
   ],
   "visualType": "electronic-configuration",
-  "tabGroup": "Atomic-Structure-Learner-Notes"
+  "tabGroup": "Atomic-Structure-Learner-Notes",
+  "summary": "Three rules distribute the electrons of an atom in its ground state. Aufbau fixes the order of filling by the Madelung (n + l) rule — smaller (n + l) first, and for equal (n + l) the smaller n — so 4s fills before 3d and the order runs 1s, 2s, 2p, 3s, 3p, 4s, 3d, 4p, 5s … Pauli's exclusion principle fixes the capacity: no two electrons may share all four quantum numbers, so an orbital holds at most two electrons with opposite spins, giving subshell capacities 2, 6, 10, 14 and shell capacity 2n². Hund's rule of maximum multiplicity says degenerate orbitals are filled singly with parallel spins before pairing, which is why N is 2p³ (↑ ↑ ↑) and O is 2p⁴ (↑↓ ↑ ↑). The exchange-energy bonus of half-filled and filled subshells explains the two anomalies within Z ≤ 30: Cr = [Ar]3d⁵4s¹ and Cu = [Ar]3d¹⁰4s¹, and ions lose 4s electrons before 3d.",
+  "importantConcepts": [
+    "Aufbau principle with the Madelung (n + l) rule: smaller (n + l) first, tie broken by smaller n, so 4s fills before 3d",
+    "Pauli exclusion principle: no two electrons have all four quantum numbers alike, so an orbital holds at most two with opposite spins",
+    "Hund's rule of maximum multiplicity: degenerate orbitals fill singly with parallel spins before any pairing",
+    "Extra stability of half-filled and filled subshells (d⁵, d¹⁰, p³, p⁶) from exchange energy",
+    "Configurations of Z = 1–30 in noble-gas shorthand, and of ions with 4s removed before 3d"
+  ],
+  "importantStatements": [
+    "Capacities: subshell 2(2l + 1) = 2, 6, 10, 14 for s, p, d, f; shell 2n².",
+    "Cr (Z = 24) is [Ar]3d⁵4s¹ and Cu (Z = 29) is [Ar]3d¹⁰4s¹ — the only anomalies up to Z = 30.",
+    "Electrons are removed from the highest-n shell first, so Fe²⁺ = [Ar]3d⁶ and not [Ar]3d⁴4s².",
+    "Hund's rule follows from exchange energy gained by parallel spins against the cost of pairing.",
+    "Fe³⁺ = [Ar]3d⁵ has 5 unpaired electrons (paramagnetic) while Zn²⁺ = [Ar]3d¹⁰ has none (diamagnetic)."
+  ],
+  "importantTasks": [
+    "State Aufbau's principle, Pauli's exclusion principle and Hund's rule with one example each.",
+    "Apply the (n + l) rule to arrange 3d, 4s, 4p, 3p and 5s in order of filling.",
+    "Give the configurations of Z = 24, 26 and 29 and explain the anomalies.",
+    "Write the configurations of Fe, Fe²⁺ and Fe³⁺ and explain the extra stability of Fe³⁺.",
+    "Count the unpaired electrons in Mn²⁺ and Cu²⁺ and state the magnetic behaviour of each."
+  ],
+  "keyPoints": [
+    "(n + l) decides the order; equal (n + l) means smaller n fills first.",
+    "Two electrons per orbital with opposite spins — this is Pauli's limit.",
+    "Pairing begins only after every degenerate orbital holds one electron.",
+    "Ion formation removes 4s before 3d even though 4s filled last among those two.",
+    "Spin-only moment μ = √(u(u + 2)) BM, so Mn²⁺ (u = 5) gives μ ≈ 5.92 BM."
+  ],
+  "specialNotes": [
+    "Aufbau's order is only approximate: Nb, Mo, Ru, Rh, Pd, Ag, Pt and Au also break it.",
+    "The orbital energy order itself changes with Z and inside ions or ligand fields, so '3d before 4s' is never absolute.",
+    "Hund's rule can have exceptions in excited states, where electrons need not pair to minimise repulsion."
+  ],
+  "examShortTricks": [
+    "For ions: remove from the highest n first — 4s before 3d.",
+    "Explain Cr and Cu with exchange energy and half-filled stability, never as arbitrary exceptions.",
+    "Anomaly checklist within Z ≤ 30 is just two: Cr (24) and Cu (29)."
+  ],
+  "examNotes": [
+    "Writing configurations up to Z = 30 with noble-gas shorthand is a standard 3–4 mark question.",
+    "Unpaired-electron counting with the magnetic moment is the most common 2–3 mark follow-up.",
+    "The ion-versus-atom removal order is the single most examined trap in this topic."
+  ],
+  "practiceQuestions": [
+    "State the three rules with one example of each.",
+    "Give the electronic configurations of Z = 24, 26 and 29 and explain the anomalies.",
+    "Write the configurations of Fe, Fe²⁺ and Fe³⁺ and comment on the stability of Fe³⁺.",
+    "How many unpaired electrons are in Mn²⁺ and Cu²⁺, and what is the magnetic behaviour?"
+  ],
+  "mcs": [
+    {
+      "question": "According to Pauli's exclusion principle:",
+      "options": [
+        "No two electrons in an atom can have the same four quantum numbers",
+        "An orbital can hold only one electron",
+        "Electrons must fill the lowest orbital first",
+        "Only two electrons can be unpaired"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The correct electronic configuration of copper (Z = 29) is:",
+      "options": [
+        "[Ar] 3d⁹ 4s²",
+        "[Ar] 3d¹⁰ 4s¹",
+        "[Ar] 3d⁸ 4s²",
+        "[Ar] 3d¹⁰"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Hund's rule states that degenerate orbitals are filled:",
+      "options": [
+        "By pairing electrons first",
+        "Singly with parallel spins before pairing",
+        "Only after the inner shells are complete",
+        "In decreasing order of n"
+      ],
+      "answer": "B"
+    }
+  ]
 }

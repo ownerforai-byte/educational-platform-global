@@ -63,5 +63,115 @@
     "State the radius type and the electronegativity scale whenever numbers are quoted."
   ],
   "visualType": "periodic-trends",
-  "tabGroup": "Periodic-Table-Trends-Learner-Notes"
+  "tabGroup": "Periodic-Table-Trends-Learner-Notes",
+  "summary": "Periodicity is the recurrence of similar properties at regular intervals in order of atomic number, caused by the periodic repetition of the valence-shell electronic configuration: trends across a period follow from rising Z_eff, and trends down a group from increasing n and shielding. Atomic radius decreases across a period (Li 152 to F 64 pm) and increases down a group; cations are smaller than their parent atoms while anions are larger, and in an isoelectronic series radius falls as nuclear charge rises, so N³⁻ > O²⁻ > F⁻ > Ne > Na⁺ > Mg²⁺ > Al³⁺. Ionisation energy and electronegativity increase across a period and decrease down a group, electron affinity generally becomes more exothermic across a period, and metallic character does the reverse.",
+  "importantConcepts": [
+    "Periodicity arising from the periodic repetition of valence-shell configuration",
+    "Atomic radius — covalent, metallic and van der Waals definitions, decreasing across a period and increasing down a group",
+    "Ionic radii — cations smaller, anions larger, and isoelectronic series ordering",
+    "Ionisation energy increasing across a period with the anomalies Be > B and N > O, repeated as Mg > Al and P > S",
+    "Electron affinity with chlorine exceeding fluorine because of the compact 2p shell",
+    "Electronegativity on the Pauling scale with F = 4.0, and metallic character decreasing across a period"
+  ],
+  "importantStatements": [
+    "Hydrogen has an ionisation enthalpy of 1312 kJ mol⁻¹ (13.6 eV) and helium the highest first value at 2372 kJ mol⁻¹, while caesium is among the lowest at about 376 kJ mol⁻¹.",
+    "Fluorine is the most electronegative element on the Pauling scale at 4.0, with caesium and francium least at about 0.7.",
+    "Bond character from ΔEN: above 1.7 usually ionic, between 0.5 and 1.7 polar covalent, and below 0.5 essentially non-polar, so HF with ΔEN = 1.9 is polar covalent.",
+    "Successive ionisation enthalpies always increase, and a large jump marks the end of a shell, as with Na at 496 and then 4562 kJ mol⁻¹.",
+    "Na⁺ is 95 pm against 186 pm for the Na atom, and Cl⁻ is 181 pm against 99 pm for the Cl atom.",
+    "Oxides change from basic through amphoteric to acidic across a period, and the bonding changes from ionic NaCl to covalent AlCl₃ across period 3."
+  ],
+  "importantTasks": [
+    "Define atomic radius and explain the period and group trends using Z_eff.",
+    "Arrange N³⁻, O²⁻, F⁻, Na⁺ and Mg²⁺ in order of increasing radius and justify the order.",
+    "Define ionisation energy and account for the Be > B and N > O anomalies.",
+    "Explain why the electron affinity of chlorine is greater than that of fluorine.",
+    "Define electronegativity and use ΔEN to classify the bonds in HF, HCl and CH₄."
+  ],
+  "keyPoints": [
+    "Explain every trend with Z_eff across a period and n plus shielding down a group — the mark is for the reason, not just the direction.",
+    "Quote the anomaly pairs Be–B, N–O, Mg–Al and P–S with their reasons; they are frequently examined.",
+    "State the radius type and the electronegativity scale whenever numbers are quoted.",
+    "In an isoelectronic series the ion with the smallest nuclear charge is the largest, so O²⁻ > F⁻ > Na⁺ > Mg²⁺.",
+    "Electron affinity and electron gain enthalpy differ in sign convention, so state which convention you are using."
+  ],
+  "specialNotes": [
+    "All the trends are general rather than exact: the Be/B, N/O, Mg/Al and P/S breaks come from penetration and pairing.",
+    "The d- and f-blocks show many irregularities, including chromium, copper, lanthanide contraction from poor 4f shielding, and relativistic effects in heavy elements.",
+    "Radii are not directly measurable, and covalent, metallic and van der Waals values differ by 0.5–1 Å, so only one consistent type may be compared.",
+    "Electronegativity values differ between the Pauling, Mulliken and Allred–Rochow scales, and noble-gas values are ill-defined.",
+    "Trends are qualitative; quantitative prediction needs quantum calculations or Z_eff with accurate shielding values."
+  ],
+  "examShortTricks": [
+    "One reason covers all period trends: Z_eff rises across a period, so size falls while IE and EN rise.",
+    "One reason covers all group trends: n increases down a group with more shielding, so size rises while IE and EN fall.",
+    "Isoelectronic series: order by Z, smallest Z gives the largest ion, so O²⁻ > F⁻ > Na⁺ > Mg²⁺ > Al³⁺.",
+    "Say 'covalent radius' or 'metallic radius' before quoting a number, and name the Pauling scale for electronegativity."
+  ],
+  "examNotes": [
+    "Defining each property and giving its trend with reasons is the standard 2–3 mark pattern for this topic.",
+    "The anomaly pairs Be–B, N–O, Mg–Al and P–S with explanations are among the most frequently asked items in the unit.",
+    "Arranging isoelectronic ions in order of radius is a common 2–3 mark numerical.",
+    "The syllabus asks for general trends and explanations only, so derivations are not required."
+  ],
+  "practiceQuestions": [
+    "Define atomic radius and explain the period and group trends using Z_eff.",
+    "Arrange N³⁻, O²⁻, F⁻, Na⁺ and Mg²⁺ in order of increasing radius and justify the order.",
+    "Define ionisation energy and account for the Be > B and N > O anomalies.",
+    "Why is the electron affinity of chlorine greater than that of fluorine?",
+    "Define electronegativity and use ΔEN to classify the bonds in HF, HCl and CH₄.",
+    "Explain the variation of metallic character across a period and down a group with examples."
+  ],
+  "mcs": [
+    {
+      "question": "Atomic radius across a period generally:",
+      "options": [
+        "increases",
+        "decreases",
+        "remains constant",
+        "first increases then decreases"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Which pair shows the correct isoelectronic radius order?",
+      "options": [
+        "Mg²⁺ > Na⁺ > F⁻ > O²⁻",
+        "O²⁻ > F⁻ > Na⁺ > Mg²⁺",
+        "F⁻ > O²⁻ > Mg²⁺ > Na⁺",
+        "Na⁺ > Mg²⁺ > O²⁻ > F⁻"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The first ionisation enthalpy of beryllium is greater than that of boron because:",
+      "options": [
+        "boron has a full 2p subshell",
+        "beryllium's filled 2s² subshell is more stable and its 2s electrons penetrate closer to the nucleus",
+        "beryllium has a larger atomic radius",
+        "boron is more electronegative"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The most electronegative element on the Pauling scale is:",
+      "options": [
+        "oxygen",
+        "chlorine",
+        "fluorine",
+        "nitrogen"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Metallic character across a period from left to right generally:",
+      "options": [
+        "increases",
+        "decreases",
+        "stays constant",
+        "increases then decreases"
+      ],
+      "answer": "B"
+    }
+  ]
 }
