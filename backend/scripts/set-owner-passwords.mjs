@@ -47,8 +47,13 @@ async function rest(path, init = {}) {
   return { status: r.status, data: await r.json().catch(() => null) };
 }
 
-// Simple but strong password: Easy to type, easy to remember, passes all requirements (11 chars, upper, lower, numbers, symbols)
-const NEW_PASSWORD = "Owner@2026#";
+// The password is supplied at runtime, never committed. Set OWNER_NEW_PASSWORD in the
+// environment (or in backend/.env, which is gitignored) before running this script.
+const NEW_PASSWORD = process.env.OWNER_NEW_PASSWORD ?? e.OWNER_NEW_PASSWORD ?? "";
+if (!NEW_PASSWORD) {
+  console.error("OWNER_NEW_PASSWORD missing — refusing to run (never hardcode owner credentials).");
+  process.exit(1);
+}
 
 const OWNERS = [
   { email: "harindarsah98172@gmail.com", name: "Harindra Sah" },
@@ -59,7 +64,7 @@ const OWNERS = [
 ];
 
 async function main() {
-  console.log(`=== Setting simple but strong password (${NEW_PASSWORD}) for all 5 owners ===\n`);
+  console.log("=== Setting OWNER_NEW_PASSWORD for all 5 owners ===\n");
 
   const list = await auth("/admin/users");
   const users = list.data?.users ?? [];
@@ -106,7 +111,7 @@ async function main() {
     });
     console.log(
       pw.status === 200
-        ? `  ✓ password set → ${NEW_PASSWORD}`
+        ? "  ✓ password set"
         : `  ⚠ password setting HTTP ${pw.status}`
     );
 
@@ -146,15 +151,13 @@ async function main() {
     results.push({
       ...owner,
       id,
-      password: NEW_PASSWORD,
       ok: loginOk,
-      tokenSnippet: login.data?.access_token ? `${login.data.access_token.slice(0, 15)}...` : "none",
     });
   }
 
   console.log("\n==================== VERIFICATION SUMMARY ====================");
   for (const r of results) {
-    console.log(`  ${r.ok ? "✅" : "❌"} Email: ${r.email.padEnd(30)} Password: ${r.password}  Status: ${r.ok ? "LOGIN SUCCESS (OWNER)" : "FAILED"}`);
+    console.log(`  ${r.ok ? "✅" : "❌"} Email: ${r.email.padEnd(30)} Status: ${r.ok ? "LOGIN SUCCESS (OWNER)" : "FAILED"}`);
   }
   const allOk = results.every((r) => r.ok);
   console.log(allOk ? "\nAll 5 owners successfully configured with simple & strong password!" : "\nSome accounts failed.");

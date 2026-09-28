@@ -8,6 +8,10 @@ import { ChevronRight, BookOpen, CheckCircle2 } from "lucide-react";
 import { EmptyState } from "@/components/content/empty-state";
 import { DerivationScaffold } from "@/components/derivations/derivation-scaffold";
 import { MathMarkdown } from "@/components/content/math-markdown";
+import {
+  TopicKnowledgeFloat,
+  type TopicKnowledgeRow,
+} from "@/components/lab/topic-knowledge-float";
 
 export const dynamic = "force-dynamic";
 
@@ -117,6 +121,33 @@ export default async function DerivationDetailPage({
   const confusion = (rawJson as any)?.confusion ?? [];
   const universalFacts = (rawJson as any)?.universalFacts ?? [];
 
+  // Floating topic-knowledge rows: compact symbol-tagged facts over the
+  // drawing (meanings stay in the permanent legend below the sheet).
+  const clip = (s: string, n: number) =>
+    s.replace(/[*#`]/g, "").replace(/\s+/g, " ").trim().slice(0, n);
+  const knowledgeRows: TopicKnowledgeRow[] = [];
+  const statementText = entry.preview || title;
+  if (statementText) knowledgeRows.push({ symbol: "§", text: clip(statementText, 260) });
+  const coreFormula = (rawJson as any)?.coreFormula ?? "";
+  if (coreFormula) knowledgeRows.push({ symbol: "ƒ", text: coreFormula, mono: true });
+  const proofSteps = (rawJson as any)?.proofSteps ?? [];
+  if (Array.isArray(proofSteps) && proofSteps.length > 0) {
+    knowledgeRows.push({
+      symbol: "✎",
+      text: `${proofSteps.length}-step derivation ending in: ${clip(proofSteps[proofSteps.length - 1]?.title ?? "", 90)}`,
+    });
+  }
+  for (const fact of universalFacts.slice(0, 2)) {
+    if (typeof fact === "string" && fact.trim()) {
+      knowledgeRows.push({ symbol: "★", text: clip(fact, 180) });
+    }
+  }
+  for (const trap of confusion.slice(0, 2)) {
+    if (typeof trap === "string" && trap.trim()) {
+      knowledgeRows.push({ symbol: "⚠", text: clip(trap, 180) });
+    }
+  }
+
   const visualTypeFallback = subjectSlug.includes("phys")
     ? "projectile-motion"
     : subjectSlug.includes("chem")
@@ -153,7 +184,9 @@ export default async function DerivationDetailPage({
           <h2 className="text-sm font-bold text-foreground">Visual Concept Schematic</h2>
           <span className="text-[11px] text-muted-foreground">Diagram &amp; Geometric Structure</span>
         </div>
-        <DerivationVisual visualType={visualTypeFallback} title={title} />
+        <TopicKnowledgeFloat title={title} rows={knowledgeRows}>
+          <DerivationVisual visualType={visualTypeFallback} title={title} />
+        </TopicKnowledgeFloat>
       </div>
 
       <section className="space-y-3">

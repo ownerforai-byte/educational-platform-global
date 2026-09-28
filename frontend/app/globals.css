@@ -122,28 +122,28 @@
   --foreground: 222.2 84% 6%;
   --card: 0 0% 100%;
   --card-foreground: 222.2 84% 6%;
-  --primary: 217 91% 56%;
+  --primary: 217 91% 50%;
   --primary-foreground: 0 0% 100%;
   --muted: 214 32% 93%;
-  --muted-foreground: 215 16% 45%;
+  --muted-foreground: 215 16% 40%;
   --border: 214 24% 88%;
   --ai-blue: 217 91% 56%;
   --radius: 0.75rem;
 
   /* Subject accent palette (HSL) */
-  --subject-physics: 38 92% 50%;      /* sunset amber */
-  --subject-chemistry: 192 95% 40%;   /* teal lab */
-  --subject-biology: 158 84% 40%;     /* forest emerald */
+  --subject-physics: 38 92% 31%;      /* sunset amber */
+  --subject-chemistry: 192 95% 30%;   /* teal lab */
+  --subject-biology: 158 84% 27%;     /* forest emerald */
   --subject-mathematics: 262 83% 55%; /* scholarly violet */
-  --subject-english: 217 91% 56%;     /* ink blue */
-  --subject-nepali: 25 95% 45%;       /* saffron */
+  --subject-english: 217 91% 50%;     /* ink blue */
+  --subject-nepali: 25 95% 37%;       /* saffron */
 
   /* Base accent palette */
-  --accent-cyan: 192 95% 50%;
+  --accent-cyan: 192 95% 30%;
   --accent-violet: 262 83% 58%;
-  --accent-emerald: 158 84% 40%;
-  --accent-amber: 38 92% 50%;
-  --accent-rose: 350 89% 58%;
+  --accent-emerald: 158 84% 27%;
+  --accent-amber: 38 92% 31%;
+  --accent-rose: 350 89% 45%;
 
   --surface-glass: rgba(255, 255, 255, 0.82);
   --surface-glass-border: rgba(226, 232, 240, 0.8);
@@ -180,12 +180,12 @@
   --subject-physics: 38 92% 58%;
   --subject-chemistry: 192 95% 55%;
   --subject-biology: 158 84% 55%;
-  --subject-mathematics: 262 83% 68%;
+  --subject-mathematics: 262 83% 72%;
   --subject-english: 217 91% 62%;
   --subject-nepali: 28 95% 58%;
 
   --accent-cyan: 192 95% 58%;
-  --accent-violet: 262 83% 68%;
+  --accent-violet: 262 83% 72%;
   --accent-emerald: 158 84% 58%;
   --accent-amber: 38 92% 58%;
   --accent-rose: 350 89% 68%;
@@ -213,7 +213,8 @@
   --card: 270 45% 11%;
   --card-foreground: 280 40% 98%;
   --primary: 292 92% 64%;
-  --primary-foreground: 0 0% 100%;
+  /* Neon magenta keeps its glow — the label on it goes dark (AA on the button). */
+  --primary-foreground: 270 50% 7%;
   --muted: 270 30% 16%;
   --muted-foreground: 270 20% 72%;
   --border: 270 35% 22%;
@@ -240,7 +241,8 @@
   --card: 160 38% 10%;
   --card-foreground: 150 40% 98%;
   --primary: 158 84% 45%;
-  --primary-foreground: 0 0% 100%;
+  /* Mid-green button keeps its punch — white on it was 1.96:1, so text goes dark. */
+  --primary-foreground: 160 45% 8%;
   --muted: 160 25% 15%;
   --muted-foreground: 155 20% 70%;
   --border: 160 25% 19%;
@@ -248,11 +250,11 @@
   --subject-physics: 38 80% 55%;
   --subject-chemistry: 192 80% 55%;
   --subject-biology: 158 84% 55%;
-  --subject-mathematics: 262 70% 65%;
+  --subject-mathematics: 262 70% 70%;
   --subject-english: 217 80% 65%;
   --subject-nepali: 28 85% 55%;
   --accent-cyan: 192 80% 55%;
-  --accent-violet: 262 70% 65%;
+  --accent-violet: 262 70% 70%;
   --accent-emerald: 158 84% 55%;
   --accent-amber: 38 80% 55%;
   --accent-rose: 350 80% 65%;
@@ -266,23 +268,23 @@
   --foreground: 30 42% 16%;
   --card: 40 38% 98%;
   --card-foreground: 30 42% 16%;
-  --primary: 28 85% 45%;
+  --primary: 28 85% 36%;
   --primary-foreground: 0 0% 100%;
   --muted: 36 28% 90%;
-  --muted-foreground: 30 20% 45%;
+  --muted-foreground: 30 20% 36%;
   --border: 36 25% 84%;
   --ai-blue: 28 85% 45%;
-  --subject-physics: 28 85% 50%;
-  --subject-chemistry: 192 80% 40%;
-  --subject-biology: 158 80% 38%;
+  --subject-physics: 28 85% 35%;
+  --subject-chemistry: 192 80% 31%;
+  --subject-biology: 158 80% 27%;
   --subject-mathematics: 262 70% 48%;
-  --subject-english: 217 85% 52%;
-  --subject-nepali: 25 90% 50%;
-  --accent-cyan: 192 80% 45%;
+  --subject-english: 217 85% 49%;
+  --subject-nepali: 25 90% 36%;
+  --accent-cyan: 192 80% 31%;
   --accent-violet: 262 70% 50%;
-  --accent-emerald: 158 80% 40%;
-  --accent-amber: 38 90% 50%;
-  --accent-rose: 350 80% 50%;
+  --accent-emerald: 158 80% 27%;
+  --accent-amber: 38 90% 30%;
+  --accent-rose: 350 80% 45%;
   --surface-glass: rgba(251, 247, 238, 0.88);
   --surface-glass-border: rgba(180, 83, 9, 0.2);
 }
@@ -329,11 +331,11 @@
   --subject-physics: 38 92% 58%;
   --subject-chemistry: 192 80% 55%;
   --subject-biology: 158 80% 50%;
-  --subject-mathematics: 262 75% 65%;
+  --subject-mathematics: 262 75% 70%;
   --subject-english: 217 85% 62%;
   --subject-nepali: 25 95% 55%;
   --accent-cyan: 192 80% 55%;
-  --accent-violet: 262 75% 65%;
+  --accent-violet: 262 75% 70%;
   --accent-emerald: 158 80% 50%;
   --accent-amber: 38 92% 58%;
   --accent-rose: 350 80% 62%;
@@ -347,7 +349,7 @@
   --foreground: 0 0% 98%;
   --card: 0 0% 5%;
   --card-foreground: 0 0% 98%;
-  --primary: 217 100% 60%;
+  --primary: 217 100% 50%;
   --primary-foreground: 0 0% 100%;
   --muted: 0 0% 12%;
   --muted-foreground: 0 0% 68%;
@@ -962,6 +964,37 @@ code, kbd, samp, pre {
 }
 .animate-fade-in { animation: fadeIn 0.25s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
 
+/* ─── MOBILE NAV (2026-09-27) — hamburger drawer micro-motion ─────────────── */
+@keyframes slideInLeft {
+  from { transform: translateX(-100%); }
+  to   { transform: translateX(0); }
+}
+.animate-slide-in-left { animation: slideInLeft 0.28s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@keyframes backdropIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+.animate-backdrop-in { animation: backdropIn 0.2s ease-out both; }
+
+/* ─── CHAT ENERGY (2026-09-26) — AI tutor micro-motion ───────────────────── */
+@keyframes popIn {
+  from { opacity: 0; transform: translateY(10px) scale(0.97); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+.animate-pop-in { animation: popIn 0.3s cubic-bezier(0.16, 1, 0.3, 1) both; }
+
+@keyframes gradientShift {
+  0%   { background-position: 0% 50%; }
+  50%  { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+/* Slow color drift for gradient headline text (needs bg-clip-text). */
+.animate-gradient-text {
+  background-size: 200% auto;
+  animation: gradientShift 5s ease-in-out infinite;
+}
+
 /* ─── REDUCED MOTION (WCAG 2.3.3) ────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *,
@@ -985,4 +1018,277 @@ html, body {
 @media (max-width: 767px) {
   :root { font-size: 15px; }
   .type-nepali { font-size: 1.125em; }
+}
+
+/* ─── BLUEPRINT KEYFRAMES ─────────────────────────────────────────────────
+   .card-viz::before has always animated `grid-pan`, but the keyframes were
+   never defined — the grid sat still. Declared here so every blueprint card
+   (labs, schematics, graphs) pans its grid like an engineering drawing. */
+@keyframes grid-pan {
+  from { background-position: 0 0, 0 0; }
+  to   { background-position: 24px 24px, 24px 24px; }
+}
+
+/* ─── VIZ SHEET — the drawing canvas for schematics & diagrams ────────── */
+@layer components {
+  .viz-canvas {
+    position: relative;
+    border: 1px solid hsl(var(--border));
+    border-radius: 1.5rem;
+    background:
+      radial-gradient(130% 95% at 50% -18%, hsl(var(--primary) / 0.11) 0%, transparent 62%),
+      linear-gradient(180deg, hsl(var(--card)) 0%, hsl(var(--muted) / 0.35) 100%);
+    box-shadow: var(--card-viz);
+  }
+  .viz-canvas::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    pointer-events: none;
+    z-index: 0;
+    background-image:
+      linear-gradient(to right, hsl(var(--border) / 0.55) 1px, transparent 1px),
+      linear-gradient(to bottom, hsl(var(--border) / 0.55) 1px, transparent 1px);
+    background-size: 24px 24px;
+    -webkit-mask-image: radial-gradient(ellipse at 50% 30%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 78%);
+            mask-image: radial-gradient(ellipse at 50% 30%, rgba(0, 0, 0, 0.5) 0%, rgba(0, 0, 0, 0) 78%);
+    opacity: 0.7;
+  }
+  @media (prefers-reduced-motion: no-preference) {
+    .viz-canvas::before { animation: grid-pan 75s linear infinite; }
+  }
+
+  /* Annotation chip on the SVG sheet: hover lift + focus ring */
+  .schem-chip rect,
+  .schem-chip circle {
+    transition: stroke-width 150ms ease, filter 150ms ease;
+  }
+  .schem-chip { cursor: pointer; }
+  .schem-chip:hover rect { stroke-width: 2.4; }
+  .schem-chip:hover { filter: drop-shadow(0 3px 8px hsl(var(--foreground) / 0.18)); }
+  .schem-chip:focus-visible rect { stroke-width: 3; }
+
+  /* Leader line + target pin: soft glow when a part is active */
+  .schem-line,
+  .schem-target {
+    transition: filter 160ms ease, stroke-width 160ms ease;
+  }
+  .schem-line.is-active,
+  .schem-target.is-active {
+    filter: drop-shadow(0 0 6px currentColor);
+  }
+
+  /* Selected target: outward pulse ring (motion-safe) */
+  .schem-ring {
+    transform-box: fill-box;
+    transform-origin: center;
+    opacity: 0;
+  }
+  .schem-ring.is-active { opacity: 1; animation: viz-ping 1.6s ease-out infinite; }
+  @media (prefers-reduced-motion: reduce) {
+    .schem-ring.is-active { animation: none; opacity: 0.55; }
+  }
+
+  /* Entrance: whole sheet rises once when it mounts (reduced-motion safe) */
+  .viz-in { animation: viz-fade-up 360ms cubic-bezier(0.22, 1, 0.36, 1) both; }
+  @media (prefers-reduced-motion: reduce) {
+    .viz-in { animation: none; }
+  }
+
+  /* Sheet panning: thin technical scrollbar instead of the OS default bar.
+     scrollbar-color/width would make Chromium ignore the ::-webkit-scrollbar
+     rules below (and draw a Windows scrollbar with arrow buttons), so gate
+     the standard properties to Firefox via @supports. */
+  .viz-scroll {
+    overscroll-behavior-x: contain;
+  }
+  @supports (-moz-appearance: none) {
+    .viz-scroll {
+      scrollbar-width: thin;
+      scrollbar-color: hsl(var(--muted-foreground) / 0.35) transparent;
+    }
+  }
+  .viz-scroll::-webkit-scrollbar { height: 6px; }
+  .viz-scroll::-webkit-scrollbar-track { background: transparent; }
+  .viz-scroll::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 999px;
+  }
+  .viz-scroll::-webkit-scrollbar-thumb:hover { background: hsl(var(--muted-foreground) / 0.5); }
+
+  /* Always-dark technical sheet for renderers with a fixed light-on-dark SVG
+     palette (DerivationVisual labels are near-white on #0b1220 panels, so a
+     theme-tinted background would erase them in light mode). Cyanotype-style
+     blueprint: dark navy sheet + faint grid, identical in every theme. */
+  .viz-sheet {
+    position: relative;
+    background-color: #0b1220;
+    background-image:
+      radial-gradient(120% 90% at 50% -15%, rgba(56, 189, 248, 0.14) 0%, transparent 60%),
+      linear-gradient(to right, rgba(148, 163, 184, 0.10) 1px, transparent 1px),
+      linear-gradient(to bottom, rgba(148, 163, 184, 0.10) 1px, transparent 1px);
+    background-size: 100% 100%, 24px 24px, 24px 24px;
+  }
+
+  /* ── Floating knowledge block: dense symbol-led facts over the sheet ──── */
+  .knowledge-block {
+    position: absolute;
+    z-index: 30;
+    width: max-content;
+    max-width: min(340px, calc(100% - 1.25rem));
+    min-width: 220px;
+    padding: 0.65rem 0.75rem 0.7rem;
+    border-radius: 0.9rem;
+    border: 1.5px solid color-mix(in srgb, var(--kb-color, hsl(var(--primary))) 45%, transparent);
+    background: hsl(var(--card) / 0.94);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 14px 34px rgb(0 0 0 / 0.30), 0 2px 8px rgb(0 0 0 / 0.18);
+    animation: viz-fade-up 160ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+  .knowledge-block[data-tone="dark"] {
+    background: rgb(2 6 23 / 0.94);
+    border-color: color-mix(in srgb, var(--kb-color, #38bdf8) 55%, transparent);
+  }
+  .knowledge-block__head {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .knowledge-block__dot {
+    width: 0.5rem;
+    height: 0.5rem;
+    margin-top: 0.3rem;
+    flex-shrink: 0;
+    border-radius: 999px;
+    background: var(--kb-color, hsl(var(--primary)));
+    box-shadow: 0 0 8px var(--kb-color, hsl(var(--primary)));
+  }
+  .knowledge-block__title {
+    flex: 1;
+    min-width: 0;
+    font-size: 0.8rem;
+    font-weight: 800;
+    line-height: 1.3;
+    color: hsl(var(--foreground));
+    overflow-wrap: anywhere;
+  }
+  .knowledge-block[data-tone="dark"] .knowledge-block__title { color: #f8fafc; }
+  .knowledge-block__close {
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.25rem;
+    border-radius: 0.5rem;
+    border: 1px solid hsl(var(--border));
+    color: hsl(var(--muted-foreground));
+    transition: color 150ms ease, border-color 150ms ease;
+  }
+  .knowledge-block__close:hover {
+    color: var(--kb-color, hsl(var(--primary)));
+    border-color: var(--kb-color, hsl(var(--primary)));
+  }
+  .knowledge-block__close:focus-visible { outline-offset: 1px; }
+  .knowledge-block__rows {
+    display: grid;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+  }
+  .knowledge-block__row {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  .knowledge-block__symbol {
+    flex-shrink: 0;
+    width: 1rem;
+    text-align: center;
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.8rem;
+    font-weight: 700;
+    line-height: 1.5;
+    color: var(--kb-color, hsl(var(--primary)));
+  }
+  .knowledge-block__text {
+    font-size: 0.74rem;
+    line-height: 1.5;
+    color: hsl(var(--muted-foreground));
+    overflow-wrap: anywhere;
+  }
+  .knowledge-block[data-tone="dark"] .knowledge-block__text { color: #cbd5e1; }
+  .knowledge-block__text--mono {
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 600;
+    color: hsl(var(--foreground));
+  }
+  .knowledge-block[data-tone="dark"] .knowledge-block__text--mono { color: #e2e8f0; }
+  /* Math pipeline output inside a block row: strip prose chrome so the
+     typeset formula sits inline like the plain-text rows around it. */
+  .knowledge-block__text .knowledge-block__math.prose {
+    margin: 0;
+    max-width: none;
+    font-size: inherit;
+    line-height: 1.5;
+    color: inherit;
+    font-family: "JetBrains Mono", monospace;
+    font-weight: 600;
+  }
+  .knowledge-block__text .knowledge-block__math.prose > * { margin: 0; }
+  .knowledge-block__text .knowledge-block__math .katex { font-size: 1.02em; }
+
+  /* ── Permanent symbol legend strip below every sheet ───────────────────── */
+  .symbol-legend {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 0.35rem 1rem;
+    padding: 0.5rem 0.85rem;
+    border-top: 1px solid hsl(var(--border) / 0.6);
+    background: hsl(var(--muted) / 0.3);
+    font-size: 0.625rem;
+    line-height: 1;
+    color: hsl(var(--muted-foreground));
+  }
+  .symbol-legend[data-tone="dark"] {
+    border-top-color: rgb(30 41 59);
+    background: #0c1220;
+    color: #94a3b8;
+  }
+  .symbol-legend__hint {
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: hsl(var(--primary));
+    opacity: 0.85;
+  }
+  .symbol-legend[data-tone="dark"] .symbol-legend__hint { color: #818cf8; }
+  .symbol-legend__item {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    white-space: nowrap;
+  }
+  .symbol-legend__glyph {
+    font-family: "JetBrains Mono", monospace;
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: hsl(var(--foreground));
+  }
+  .symbol-legend[data-tone="dark"] .symbol-legend__glyph { color: #e2e8f0; }
+  .symbol-legend__meaning {
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    font-weight: 600;
+  }
+}
+
+@keyframes viz-fade-up {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes viz-ping {
+  0%   { transform: scale(0.7); opacity: 0.9; }
+  70%, 100% { transform: scale(1.9); opacity: 0; }
 }

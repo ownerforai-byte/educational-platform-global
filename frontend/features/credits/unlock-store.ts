@@ -83,8 +83,8 @@ export function useUnlocks(): UnlockMap {
 }
 
 /**
- * Start (or extend) a 2-hour window for a module.
- * Expiration = current Unix epoch + 7200 seconds.
+ * Start (or extend) a 20-minute window for a module.
+ * Expiration = current Unix epoch + 1200 seconds.
  */
 export function unlockModule(moduleKey: string): number {
   return unlockModuleAt(
@@ -94,7 +94,7 @@ export function unlockModule(moduleKey: string): number {
 }
 
 /**
- * Open a window at an explicit expiration (server-issued epoch + 7200).
+ * Open a window at an explicit expiration (server-issued epoch + 1200).
  * Ignores already-expired timestamps so a stale response can't grant access.
  */
 export function unlockModuleAt(moduleKey: string, expiresAt: number): number {

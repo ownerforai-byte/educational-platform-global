@@ -7,14 +7,14 @@
  *   - core syllabus chapters (theory notes) → 1 coin
  *   - auxiliary reference materials (questions / PYQ sets) → 1 coin
  *
- * A successful unlock stays open for UNLOCK_WINDOW_SECONDS (2 hours) and then
+ * A successful unlock stays open for UNLOCK_WINDOW_SECONDS (20 minutes) and then
  * the module re-locks automatically (no page reload required).
  */
 
 export type ContentCategory = "lab3d" | "visuals" | "theory" | "reference";
 
 export interface CategoryRule {
-  /** Coin cost for one 2-hour unlock window. */
+  /** Coin cost for one 20-minute unlock window. */
   cost: number;
   /** Display label used on unlock overlays. */
   label: string;
@@ -45,8 +45,8 @@ export const TOKEN_MATRIX: Record<ContentCategory, CategoryRule> = {
   },
 };
 
-/** Absolute lock window: expiration = current Unix epoch + 7200 seconds. */
-export const UNLOCK_WINDOW_SECONDS = 7200;
+/** Absolute lock window: expiration = current Unix epoch + 1200 seconds. */
+export const UNLOCK_WINDOW_SECONDS = 1200;
 
 /**
  * Intercepted-action notice copy. DO NOT CHANGE A SINGLE WORD.
@@ -60,7 +60,10 @@ export const LOGIN_PATH = "/login";
 /**
  * Routes that stay fully public: home baseline, the AI chat tutor (external
  * sources are allowed there only when the platform vault lacks the answer),
- * and the credits wallet itself.
+ * the credits wallet itself, and the profile/progress account surfaces.
+ * 2026-09-27: /ai-quiz joins /ai — the same Quiz Studio is already free in
+ * the AI Studio tab, so gating the standalone route made no sense (and the
+ * quiz now runs on the shared 5/day guest pool instead of coins).
  */
 export const PUBLIC_PATHS = [
   "/",
@@ -69,7 +72,9 @@ export const PUBLIC_PATHS = [
   "/signup",
   "/chat",
   "/ai",
+  "/ai-quiz",
   "/credits",
+  "/profile",
 ] as const;
 
 /**

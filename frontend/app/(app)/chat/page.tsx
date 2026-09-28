@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { AIChatInterface } from "@/components/ai/ai-chat-interface";
+import { TutorConsole } from "@/components/ai/tutor-console";
 
 export const metadata: Metadata = {
   title: "AI Tutor & Study Assistant — NEB Science",
@@ -8,18 +8,20 @@ export const metadata: Metadata = {
 };
 
 /**
- * The AI Tutor's own dedicated interface.
+ * The AI Tutor's own dedicated interface (TutorConsole) — separate from the
+ * AI Studio tab shell at /ai, which keeps the classic AIChatInterface.
  *
- * Home, the intro journey and the academic directory all deep-link here, so
- * this route renders ONLY the tutor — full-height chat surface, no AI Studio
- * tab bar (Quiz Studio / Smart Search live at /ai), no marketing chrome.
- * Public and free: external sources appear only when the platform vault has
- * no page for the question.
+ * Its own features: subject-mode picker (Physics/Chemistry/Biology/Math),
+ * per-answer quick actions (copy / regenerate / deeper / shorter), thread
+ * summarize, and a chat → AI-quiz handoff. The green "online" ping dot in
+ * the header is kept exactly as it has always been.
+ *
+ * Public and free: guests share the 5/day pool with the AI quiz.
  */
 export default function ChatPage() {
   return (
     <div className="mx-auto w-full max-w-5xl px-2 sm:px-4 py-4 sm:py-6">
-      <AIChatInterface />
+      <TutorConsole />
     </div>
   );
 }

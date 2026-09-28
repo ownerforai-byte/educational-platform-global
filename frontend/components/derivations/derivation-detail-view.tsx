@@ -7,6 +7,7 @@ import {
 } from "@/lib/derivations-data";
 import { DerivationVisual } from "./derivation-visual";
 import { MathMarkdown } from "@/components/content/math-markdown";
+import { TopicKnowledgeFloat } from "@/components/lab/topic-knowledge-float";
 import {
   BookOpen,
   CheckCircle2,
@@ -30,6 +31,31 @@ export function DerivationDetailView({ derivation }: DerivationDetailViewProps) 
   const [expandedProblemId, setExpandedProblemId] = useState<string | null>(
     derivation.solvedProblems[0]?.id ?? null,
   );
+
+  // Floating topic-knowledge rows over the drawing (compact symbol-tagged
+  // facts; meanings stay in the permanent legend below the sheet).
+  const clip = (s: string, n: number) =>
+    s.replace(/[*#`]/g, "").replace(/\s+/g, " ").trim().slice(0, n);
+  const knowledgeRows: { symbol: string; text: string; mono?: boolean }[] = [];
+  if (derivation.statement) {
+    knowledgeRows.push({ symbol: "§", text: clip(derivation.statement, 260) });
+  }
+  if (derivation.coreFormula) {
+    knowledgeRows.push({ symbol: "ƒ", text: derivation.coreFormula, mono: true });
+  }
+  if (derivation.proofSteps.length > 0) {
+    const last = derivation.proofSteps[derivation.proofSteps.length - 1];
+    knowledgeRows.push({
+      symbol: "✎",
+      text: `${derivation.proofSteps.length}-step derivation ending in: ${clip(last.title, 90)}`,
+    });
+  }
+  for (const fact of derivation.keyTakeaways.slice(0, 2)) {
+    knowledgeRows.push({ symbol: "★", text: clip(fact, 180) });
+  }
+  for (const trap of derivation.examTraps.slice(0, 2)) {
+    knowledgeRows.push({ symbol: "⚠", text: clip(trap, 180) });
+  }
 
   return (
     <div className="space-y-8">
@@ -95,10 +121,12 @@ export function DerivationDetailView({ derivation }: DerivationDetailViewProps) 
           <span className="text-[11px] text-muted-foreground">Visual Reference Engine</span>
         </div>
 
-        <DerivationVisual
-          visualType={derivation.visualType}
-          title={derivation.title}
-        />
+        <TopicKnowledgeFloat title={derivation.title} rows={knowledgeRows}>
+          <DerivationVisual
+            visualType={derivation.visualType}
+            title={derivation.title}
+          />
+        </TopicKnowledgeFloat>
       </div>
 
       {/* ── 3. TABS: PROOF, SOLVED PROBLEMS, CONCERNED TERMS ───────────────── */}

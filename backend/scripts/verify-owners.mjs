@@ -47,14 +47,26 @@ async function rest(path, init = {}) {
   return { status: r.status, data: await r.json().catch(() => null) };
 }
 
-// Fresh, strong, unique passwords (12 chars: upper+lower+digit+symbol).
+// Owner credentials are supplied at runtime, never committed. Provide each password via
+// OWNER_PASSWORD_* in the environment or in backend/.env (gitignored).
+const envPassword = (key) => process.env[key] ?? e[key] ?? "";
 const OWNERS = [
-  { email: "harindarsah98172@gmail.com", password: "HarinOw26#1", name: "Harindra Sah" },
-  { email: "yashsah231@gmail.com", password: "YashOw26#1", name: "Yash Sah" },
-  { email: "sahrocky81@gmail.com", password: "RockyOw26#1", name: "Sah Rocky" },
-  { email: "ravikisan1814@gmail.com", password: "RaviOw26#1", name: "Ravi Kisan" },
-  { email: "planephoto88@gmail.com", password: "PlaneOw26#1", name: "Plane Photo" },
+  { email: "harindarsah98172@gmail.com", password: envPassword("OWNER_PASSWORD_HARINDAR"), name: "Harindra Sah" },
+  { email: "yashsah231@gmail.com", password: envPassword("OWNER_PASSWORD_YASH"), name: "Yash Sah" },
+  { email: "sahrocky81@gmail.com", password: envPassword("OWNER_PASSWORD_ROCKY"), name: "Sah Rocky" },
+  { email: "ravikisan1814@gmail.com", password: envPassword("OWNER_PASSWORD_RAVI"), name: "Ravi Kisan" },
+  { email: "planephoto88@gmail.com", password: envPassword("OWNER_PASSWORD_PLANE"), name: "Plane Photo" },
 ];
+
+const missingPasswords = OWNERS.filter((o) => !o.password).map((o) => o.email);
+if (missingPasswords.length > 0) {
+  console.error(
+    "Missing passwords for: " +
+      missingPasswords.join(", ") +
+      " — set the OWNER_PASSWORD_* env vars (never commit owner credentials)."
+  );
+  process.exit(1);
+}
 
 async function main() {
   console.log("=== Verifying 5 owner accounts ===\n");
@@ -109,7 +121,7 @@ async function main() {
     });
     console.log(
       pw.status === 200
-        ? `  ✓ password set → ${owner.password}`
+        ? "  ✓ password set"
         : `  ⚠ password: HTTP ${pw.status} ${JSON.stringify(pw.data)}`
     );
 
@@ -150,7 +162,7 @@ async function main() {
 
   console.log("\n=== Summary ===");
   for (const r of results) {
-    console.log(`  ${r.ok ? "✅" : "❌"} ${r.email}  (pw=${r.password})  ${r.detail}`);
+    console.log(`  ${r.ok ? "✅" : "❌"} ${r.email}  ${r.detail}`);
   }
   const allOk = results.every((r) => r.ok);
   console.log(allOk ? "\nAll 5 owners verified & logged in successfully." : "\nSome owners FAILED.");

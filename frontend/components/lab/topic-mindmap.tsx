@@ -3,15 +3,12 @@
 import React, { useState, useMemo, useRef, useEffect, useLayoutEffect, useCallback } from "react";
 import {
   Workflow,
-  Sparkles,
-  Info,
   Maximize2,
   Minimize2,
   ZoomIn,
   ZoomOut,
   RotateCcw,
   CheckCircle2,
-  AlertTriangle,
   Lightbulb,
   BookOpen,
   Filter,
@@ -23,10 +20,21 @@ import {
   ArrowUpDown,
   GraduationCap,
   Layers,
-  Code2,
 } from "lucide-react";
 import { MathMarkdown } from "@/components/content/math-markdown";
-import { getUnitConcept } from "@/lib/visual-concept-map";
+import {
+  KnowledgeBlock,
+  SymbolLegend,
+  examSymbol,
+  DEPTH_ORDER,
+  DEPTH_SYMBOLS,
+  type KnowledgeRow,
+} from "@/components/lab/knowledge-block";
+import { getUnitConcept, getExactUnitConcept } from "@/lib/visual-concept-map";
+import { buildUnitMindmapBranches } from "@/lib/unit-mindmap-branches";
+import { applyFallbackDepth } from "@/lib/mindmap-depth";
+// side-effect import: registers every authored depth pack
+import "@/lib/mindmap-depth-index";
 
 // Motion styles (scoped `mm-` prefix; injected once). Pure CSS — no dependency.
 const MM_CSS = `
@@ -54,6 +62,14 @@ export interface MindMapLeafNode {
   formulaLatex?: string;
   derivationSnippet?: string;
   examFact?: string;
+  /** Surprising, quotable facts (authored in lib/mindmap-depth-*.ts). */
+  keyFacts?: string[];
+  /** Exceptional / corner / degenerate / limiting cases. */
+  edgeCases?: string[];
+  /** Questions that genuinely appear in NEB / CEE / IOE papers. */
+  examAsked?: string[];
+  /** The beginner error that reliably produces a wrong answer. */
+  commonMistakes?: string[];
   highYield?: boolean;
   classLevel?: "Class 11" | "Class 12" | "CEE/IOE" | "All";
   orderIndex: number;
@@ -116,6 +132,36 @@ export function TopicMindMap({
   const [heldBranches, setHeldBranches] = useState<Record<string, boolean>>({});
   const [expandedBranches, setExpandedBranches] = useState<Record<string, boolean>>({});
 
+  // ── Hover preview plumbing: the floating knowledge block follows the
+  // pointer; a click pins the selection underneath it. ──────────────────────
+  const [preview, setPreview] = useState<{
+    branchId?: string;
+    nodeId?: string;
+  } | null>(null);
+  const previewTimerRef = useRef<number | null>(null);
+  const cancelPreviewClear = () => {
+    if (previewTimerRef.current !== null) {
+      window.clearTimeout(previewTimerRef.current);
+      previewTimerRef.current = null;
+    }
+  };
+  const schedulePreviewClear = () => {
+    cancelPreviewClear();
+    previewTimerRef.current = window.setTimeout(() => setPreview(null), 280);
+  };
+  const previewNode = (branchId: string, nodeId?: string) => {
+    cancelPreviewClear();
+    setPreview({ branchId, nodeId });
+  };
+  useEffect(
+    () => () => {
+      if (previewTimerRef.current !== null) {
+        window.clearTimeout(previewTimerRef.current);
+      }
+    },
+    [],
+  );
+
   const setBranchExpanded = (id: string, next: boolean) => {
     setHeldBranches((prev) => ({ ...prev, [id]: next }));
     setExpandedBranches((prev) => ({ ...prev, [id]: next }));
@@ -143,11 +189,25 @@ export function TopicMindMap({
     const s = subjectSlug.toLowerCase();
 
     // ─────────────────────────────────────────────────────────────
-    // 0. UNIT-CONCEPT REGISTRY — topic-aware branches. Every syllabus
-    // unit with authored concept data gets its own 3-branch mindmap
-    // (definitions → laws → applications), overriding the subject-level
-    // generic trees below.
+    // 0. UNIT-AWARE BRANCHES — resolved in strict specificity order so two
+    // units never share a tree by accident:
+    //   a) authored UNIT_CONCEPTS entry for this exact unit id
+    //   b) fact-bank tree built from this unit's own HIGH_YIELD_TOPIC_BANK
+    //      knowledge (laws / formulas / numericals / traps / terms)
+    //   c) authored entry reached only by topic keywords (shared — last resort)
+    //   d) subject-level generic tree (bottom fallback)
     // ─────────────────────────────────────────────────────────────
+    const exactConcept = getExactUnitConcept(unitId || "");
+    if (exactConcept) return exactConcept.branches;
+
+    const bankBranches = buildUnitMindmapBranches(
+      unitId || "",
+      s,
+      topicSlug,
+      topicTitle,
+    );
+    if (bankBranches) return bankBranches;
+
     const unitConcept = getUnitConcept(unitId || "", topicSlug, topicTitle);
     if (unitConcept) return unitConcept.branches;
 
@@ -1863,16 +1923,50 @@ export function TopicMindMap({
   // Flatten nodes for canvas and compute filtered branches
   const branches: MindMapBranch[] = useMemo(() => {
     return rawBranches.map((b) => {
+      // Attach the node-id-keyed depth pack (exceptional cases / key facts /
+      // exam-asked / beginner mistakes). Applied here — the single funnel every
+      // source passes through — so the last-resort generic trees get the same
+      // depth as the authored UNIT_CONCEPTS. Ids do not collide (uc-* vs ph-*).
+      const subBranches = b.subBranches.map((sb) => ({
+        ...sb,
+        nodes: sb.nodes.map((n) => applyFallbackDepth(n)),
+      }));
       const flattenedNodes: MindMapLeafNode[] = [];
-      b.subBranches.forEach((sub) => {
+      subBranches.forEach((sub) => {
         flattenedNodes.push(...sub.nodes);
       });
       return {
         ...b,
+        subBranches,
         nodes: flattenedNodes,
       };
     });
   }, [rawBranches]);
+
+  // Unit-level depth rows — the exceptional cases / exam pointers / traps that
+  // span the whole unit rather than one leaf. Shown on the branch overview.
+  // Rendered through MathMarkdown so inline $…$ KaTeX in the packs works here
+  // exactly as it does on a leaf.
+  const unitDepthRows: KnowledgeRow[] | null = useMemo(() => {
+    const d = getUnitConcept(unitId || "", topicSlug, topicTitle)?.depth;
+    if (!d) return null;
+    const groups: [keyof typeof DEPTH_SYMBOLS, string[] | undefined][] = [
+      ["keyFacts", d.unitFacts],
+      ["edgeCases", d.unitEdgeCases],
+      ["examAsked", d.unitExamAsked],
+      ["commonMistakes", d.unitCommonMistakes],
+    ];
+    const rows: KnowledgeRow[] = [];
+    for (const [field, items] of groups) {
+      for (const item of items ?? []) {
+        rows.push({
+          symbol: DEPTH_SYMBOLS[field],
+          text: <MathMarkdown content={item} />,
+        });
+      }
+    }
+    return rows.length ? rows : null;
+  }, [unitId, topicSlug, topicTitle]);
 
   // Filtered branches for left panel based on Class, Search, and Sorting
   const filteredTreeBranches = useMemo(() => {
@@ -1894,7 +1988,11 @@ export function TopicMindMap({
               const matchesDesc = node.description.toLowerCase().includes(q);
               const matchesFormula = (node.formula || "").toLowerCase().includes(q);
               const matchesFact = (node.examFact || "").toLowerCase().includes(q);
-              return matchesTitle || matchesDesc || matchesFormula || matchesFact;
+              // depth layer must be searchable too, or the traps become invisible
+              const matchesDepth = DEPTH_ORDER.some((f) =>
+                (node[f] ?? []).some((t) => t.toLowerCase().includes(q)),
+              );
+              return matchesTitle || matchesDesc || matchesFormula || matchesFact || matchesDepth;
             }
             return true;
           });
@@ -1936,6 +2034,74 @@ export function TopicMindMap({
     branches
       .flatMap((b) => b.nodes)
       .find((n) => n.id === activeNodeId) ?? null;
+
+  // Knowledge target: hover previews a capsule, click pins it — the preview
+  // wins whenever the pointer is resting on a capsule.
+  const shownNode = preview
+    ? preview.nodeId
+      ? branches.flatMap((b) => b.nodes).find((n) => n.id === preview.nodeId) ?? null
+      : null
+    : activeNode;
+  const shownNodeBranch = shownNode
+    ? branches.find((b) => b.nodes.some((n) => n.id === shownNode.id)) ?? null
+    : null;
+  const shownBranch =
+    (preview
+      ? branches.find((b) => b.id === preview.branchId) ?? null
+      : activeBranch) ?? shownNodeBranch;
+
+  const shownKnowledge: {
+    title: string;
+    color: string;
+    rows: KnowledgeRow[];
+  } | null = shownNode
+    ? (() => {
+        const rows: KnowledgeRow[] = [];
+        if (shownNode.description) {
+          rows.push({ symbol: "§", text: shownNode.description });
+        }
+        if (shownNode.formulaLatex) {
+          rows.push({ symbol: "ƒ", text: <MathMarkdown content={shownNode.formulaLatex} /> });
+        } else if (shownNode.formula) {
+          rows.push({ symbol: "ƒ", text: shownNode.formula, mono: true });
+        }
+        if (shownNode.derivationSnippet) {
+          rows.push({
+            symbol: "✎",
+            text: <MathMarkdown content={shownNode.derivationSnippet} />,
+          });
+        }
+        if (shownNode.examFact) {
+          rows.push({ symbol: examSymbol(shownNode.examFact), text: shownNode.examFact });
+        }
+        // ── depth layer: key facts → exceptional cases → exam-asked → traps ──
+        for (const field of DEPTH_ORDER) {
+          const items = shownNode[field];
+          if (!items?.length) continue;
+          for (const item of items) {
+            rows.push({ symbol: DEPTH_SYMBOLS[field], text: item });
+          }
+        }
+        return {
+          title: shownNode.title,
+          color: (shownNodeBranch ?? shownBranch)?.color ?? "#38bdf8",
+          rows,
+        };
+      })()
+    : shownBranch
+      ? {
+          title: shownBranch.category,
+          color: shownBranch.color,
+          rows: [
+            {
+              symbol: "§",
+              text: `Isolates ${shownBranch.subBranches.reduce((n, sb) => n + sb.nodes.length, 0)} core concepts across ${shownBranch.subBranches.length} structured sub-branches.`,
+            },
+            // ── unit-level depth: the traps that span the whole unit ──
+            ...(unitDepthRows ?? []),
+          ],
+        }
+      : null;
 
   // Center coordinate on 1000 x 600 canvas
   const centerX = 500;
@@ -2425,6 +2591,25 @@ export function TopicMindMap({
           onWheel={handleCanvasWheel}
           style={{ cursor: panStartRef.current ? "grabbing" : "grab" }}
         >
+          {/* Floating knowledge block — hover/click facts over the canvas */}
+          {shownKnowledge && (
+            <KnowledgeBlock
+              tone="dark"
+              title={shownKnowledge.title}
+              color={shownKnowledge.color}
+              rows={shownKnowledge.rows}
+              onClose={() => {
+                cancelPreviewClear();
+                setPreview(null);
+                setActiveBranchId(null);
+                setActiveNodeId(null);
+              }}
+              style={{ right: 12, top: 48 }}
+              onPointerEnter={cancelPreviewClear}
+              onPointerLeave={schedulePreviewClear}
+            />
+          )}
+
           {/* Category Legend Pill Bar */}
           <div className="px-4 py-2 border-b border-slate-800/80 bg-[#090e1a] flex items-center gap-2 overflow-x-auto text-xs">
             <span className="text-[10px] font-bold text-slate-400 uppercase tracking-wider mr-1 flex items-center gap-1 shrink-0">
@@ -2627,6 +2812,8 @@ export function TopicMindMap({
                 transform={`translate(${centerX}, ${centerY})`}
                 className="cursor-pointer"
                 onClick={() => {
+                  cancelPreviewClear();
+                  setPreview(null);
                   setActiveBranchId(null);
                   setActiveNodeId(null);
                 }}
@@ -2679,11 +2866,13 @@ export function TopicMindMap({
                         toggleBranchExpanded(b.id);
                       }
                     }}
+                    onPointerEnter={() => previewNode(b.id)}
                     onPointerLeave={() => {
                       if (holdTimerRef.current !== null) {
                         window.clearTimeout(holdTimerRef.current);
                         holdTimerRef.current = null;
                       }
+                      schedulePreviewClear();
                       hideTip();
                     }}
                     onMouseEnter={showTip(
@@ -2728,6 +2917,8 @@ export function TopicMindMap({
                           borderColor: b.color,
                           animationDelay: `${bIdx * 60 + subIdx * 70 + 120}ms`,
                         }}
+                        onPointerEnter={() => previewNode(b.id)}
+                        onPointerLeave={schedulePreviewClear}
                         onClick={() => {
                           setActiveBranchId(b.id);
                           setActiveNodeId(null);
@@ -2764,6 +2955,8 @@ export function TopicMindMap({
                             borderColor: isNodeSelected ? b.color : "rgba(148, 163, 184, 0.2)",
                             animationDelay: `${bIdx * 60 + leafIdx * 45 + 200}ms`,
                           }}
+                          onPointerEnter={() => previewNode(b.id, node.id)}
+                          onPointerLeave={schedulePreviewClear}
                           onClick={() => {
                             setActiveBranchId(b.id);
                             setActiveNodeId(node.id);
@@ -2805,6 +2998,8 @@ export function TopicMindMap({
                             borderColor: isNodeSelected ? b.color : "rgba(148, 163, 184, 0.2)",
                             animationDelay: `${bIdx * 90 + nodeIdx * 70 + 260}ms`,
                           }}
+                          onPointerEnter={() => previewNode(b.id, node.id)}
+                          onPointerLeave={schedulePreviewClear}
                           onClick={() => {
                             setActiveBranchId(b.id);
                             setActiveNodeId(node.id);
@@ -2863,98 +3058,12 @@ export function TopicMindMap({
         </div>
       </div>
 
-      {/* ── KaTeX Fact, Proof & Exam Insight Drawer (Shows upon clicking node/branch) ── */}
-      <div className="p-5 border-t border-slate-800 bg-[#0c1220] min-h-[140px] transition-all">
-        {activeNode ? (
-          <div className="space-y-3 animate-fade-in">
-            <div className="flex items-center justify-between">
-              <div className="flex items-center gap-2">
-                <span
-                  className="h-3 w-3 rounded-full"
-                  style={{ backgroundColor: activeBranch?.color || "#38bdf8" }}
-                />
-                <h4 className="text-sm font-extrabold text-white">{activeNode.title}</h4>
-                <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-300">
-                  {activeBranch?.category}
-                </span>
-                {activeNode.classLevel && (
-                  <span className="text-[10px] font-bold px-2 py-0.5 rounded bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
-                    {activeNode.classLevel}
-                  </span>
-                )}
-              </div>
-              <button
-                onClick={() => setActiveNodeId(null)}
-                className="text-xs text-slate-400 hover:text-white"
-              >
-                Close Drawer
-              </button>
-            </div>
-
-            <p className="text-xs text-slate-300 leading-relaxed">{activeNode.description}</p>
-
-            {/* KaTeX Governing Formula */}
-            {activeNode.formulaLatex && (
-              <div className="rounded-xl border border-cyan-500/30 bg-cyan-950/20 p-3">
-                <div className="text-[10px] uppercase font-bold tracking-wider text-cyan-400 mb-1 flex items-center gap-1.5">
-                  <Code2 className="h-3.5 w-3.5" />
-                  Governing KaTeX Mathematical Law:
-                </div>
-                <div className="text-sm text-cyan-100 overflow-x-auto py-1">
-                  <MathMarkdown content={activeNode.formulaLatex} />
-                </div>
-              </div>
-            )}
-
-            {/* Step-by-Step LaTeX Derivation Proof */}
-            {activeNode.derivationSnippet && (
-              <div className="rounded-xl border border-indigo-500/30 bg-indigo-950/20 p-3">
-                <div className="text-[10px] uppercase font-bold tracking-wider text-indigo-300 mb-1 flex items-center gap-1.5">
-                  <Sparkles className="h-3.5 w-3.5 text-indigo-400" />
-                  Step-by-Step Derivation &amp; Proof:
-                </div>
-                <div className="text-xs text-slate-300 leading-relaxed overflow-x-auto">
-                  <MathMarkdown content={activeNode.derivationSnippet} />
-                </div>
-              </div>
-            )}
-
-            {/* CEE / NEB High-Yield Pointer */}
-            {activeNode.examFact && (
-              <div className="rounded-xl border border-amber-500/30 bg-amber-500/10 p-3 text-xs text-amber-200 flex items-start gap-2">
-                <AlertTriangle className="h-4 w-4 text-amber-400 shrink-0 mt-0.5" />
-                <div>
-                  <span className="font-bold text-amber-300">CEE / NEB High-Yield Exam Pointer: </span>
-                  <span>{activeNode.examFact}</span>
-                </div>
-              </div>
-            )}
-          </div>
-        ) : activeBranch ? (
-          <div className="space-y-1.5 animate-fade-in">
-            <div className="flex items-center gap-2">
-              <span className="h-3 w-3 rounded-full" style={{ backgroundColor: activeBranch.color }} />
-              <h4 className="text-sm font-bold text-white">{activeBranch.category}</h4>
-              <span className="text-[10px] uppercase font-bold px-2 py-0.5 rounded bg-slate-800 text-slate-300">
-                {activeBranch.nodes.length} Concepts &bull; {activeBranch.subBranches.length} Sub-branches
-              </span>
-            </div>
-            <p className="text-xs text-slate-400">
-              This branch isolates {activeBranch.nodes.length} core concepts across {activeBranch.subBranches.length} structured sub-branches. Click any sub-branch leaf in the left tree or on the canvas to inspect its full mathematical KaTeX derivation and exam pointers.
-            </p>
-          </div>
-        ) : (
-          <div className="flex flex-wrap items-center justify-between gap-2 text-xs text-slate-400">
-            <span className="flex items-center gap-2">
-              <Info className="h-4 w-4 text-indigo-400 shrink-0" />
-              <span>Click any node in the left Explorer tree or on the canvas to inspect step-by-step KaTeX derivations and entrance examination traps.</span>
-            </span>
-            <span className="text-[11px] font-bold text-indigo-300 uppercase tracking-wider">
-              Blueprint Mode &bull; 5 Multi-Color Pathways
-            </span>
-          </div>
-        )}
-      </div>
+      {/* Permanent symbol legend — meanings stay visible below the canvas */}
+      <SymbolLegend
+        tone="dark"
+        hint="hover / tap a branch or node"
+        className="px-5 py-3"
+      />
     </div>
   );
 }

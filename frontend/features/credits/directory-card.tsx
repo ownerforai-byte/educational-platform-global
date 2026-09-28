@@ -9,7 +9,7 @@
  *     and any click raises the AdminApprovalModal notice.
  *   - Once authenticated, the full directory opens and every entry is routed
  *     through the coin matrix (lab 5 / visuals 2 / theory 1 / reference 1)
- *     with a 2-hour window per module.
+ *     with an unlock window per module.
  *   - AI Chat is the one entry that stays free and public: it is the platform's
  *     only surface allowed to link externally, and only when the vault lacks
  *     the answer.

@@ -112,7 +112,7 @@ export async function* streamChat(
 }
 
 /**
- * Send a chat message as a guest (no auth required, limited to 5 messages).
+ * Send a chat message as a guest (no auth required, limited to 2 messages/day).
  */
 export async function guestChat(
   messages: AIChatMessage[],
@@ -214,6 +214,18 @@ export async function saveChatHistory(
     method: "POST",
     body: JSON.stringify({ session, messages }),
   });
+}
+
+export interface ChatSession {
+  session: string;
+  messages: number;
+  lastMessageAt: string;
+  preview: string;
+}
+
+/** List the signed-in user's conversations (individual chat histories). */
+export async function getChatSessions(): Promise<{ sessions: ChatSession[]; migrated: boolean }> {
+  return apiFetch<{ sessions: ChatSession[]; migrated: boolean }>("/api/chat-history/sessions");
 }
 
 /** Clear the user's chat history for a session (or every session when omitted). */

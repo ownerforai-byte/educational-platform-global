@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import {
   Brain,
   Sparkles,
@@ -20,6 +20,10 @@ import { Badge } from "@/components/ui/badge";
 import { Progress } from "@/components/ui/progress";
 import { SYLLABUS } from "@/lib/syllabus";
 import { generateQuestions } from "@/lib/api/ai";
+import {
+  GUEST_DAILY_LIMIT,
+  writeGuestCount,
+} from "@/lib/ai/guest-quota";
 import type { GeneratedQuestion } from "@/types/api";
 
 // ── Colour palette per difficulty ────────────────────────────────────────────
@@ -76,10 +80,36 @@ function ConfigScreen({
   const [classSlug, setClassSlug] = useState("class-11-notes");
   const [subjectSlug, setSubjectSlug] = useState("");
   const [topic, setTopic] = useState("");
+  const [customTopic, setCustomTopic] = useState("");
   const [difficulty, setDifficulty] = useState<"easy" | "intermediate" | "hard">(
     "intermediate"
   );
   const [count, setCount] = useState(10);
+
+  // Chat → quiz handoff: the tutor's "Practice quiz" button seeds the
+  // subject/topic here (one-shot, consumed on mount).
+  useEffect(() => {
+    try {
+      const raw = sessionStorage.getItem("neb_quiz_seed");
+      if (!raw) return;
+      sessionStorage.removeItem("neb_quiz_seed");
+      const seed = JSON.parse(raw) as {
+        classSlug?: string;
+        subjectSlug?: string;
+        topic?: string;
+      };
+      const clsSlug =
+        seed.classSlug === "class-12-notes" ? "class-12-notes" : "class-11-notes";
+      const cls = SYLLABUS.find((c) => c.slug === clsSlug);
+      if (seed.subjectSlug && cls?.subjects.some((s) => s.slug === seed.subjectSlug)) {
+        setClassSlug(clsSlug);
+        setSubjectSlug(seed.subjectSlug);
+      }
+      if (seed.topic) setCustomTopic(seed.topic);
+    } catch {
+      /* malformed seed — fall back to the default config */
+    }
+  }, []);
 
   const classData = useMemo(
     () => SYLLABUS.find((c) => c.slug === classSlug),
@@ -170,7 +200,8 @@ function ConfigScreen({
               <select
                 value={topic}
                 onChange={(e) => setTopic(e.target.value)}
-                className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
+                disabled={customTopic.trim().length > 0}
+                className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-primary/40"
               >
                 <option value="">All topics in {subjectData?.name ?? ""}</option>
                 {allTopics.map((t) => (
@@ -179,6 +210,25 @@ function ConfigScreen({
                   </option>
                 ))}
               </select>
+            </div>
+
+            {/* Free-text topic — ANY topic on the platform, not just the list */}
+            <div className="space-y-1.5">
+              <label className="text-xs font-medium text-muted-foreground">
+                …or type any topic from the platform
+              </label>
+              <input
+                type="text"
+                value={customTopic}
+                onChange={(e) => setCustomTopic(e.target.value)}
+                placeholder="e.g. Newton's second law, Photosynthesis, Organic nomenclature…"
+                className="w-full rounded-lg border border-input bg-background px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-primary/40"
+              />
+              {customTopic.trim() && (
+                <p className="text-[11px] font-semibold text-primary">
+                  Custom topic active — questions will target “{customTopic.trim()}”.
+                </p>
+              )}
             </div>
 
             {/* Difficulty */}
@@ -236,7 +286,7 @@ function ConfigScreen({
                 onGenerate({
                   classSlug,
                   subjectSlug,
-                  topic,
+                  topic: customTopic.trim() || topic,
                   difficulty,
                   count,
                 })
@@ -537,14 +587,30 @@ export function QuizStudio() {
         count: params.count,
       });
       setQuestions(res.questions);
+      // Server-attested guest pool: mirror the REAL remainder so a cleared
+      // localStorage / page refresh can never display a refilled quota.
+      if (typeof res.remaining === "number") {
+        writeGuestCount(Math.max(0, GUEST_DAILY_LIMIT - res.remaining));
+      }
       setDifficulty(params.difficulty);
       setPhase("quiz");
     } catch (err: unknown) {
+      // api-client throws Error(message) — message carries the server's
+      // human text (quota/credits/AI failures); the old `"error" in err`
+      // check never matched an Error, so everyone saw the generic fallback.
       const msg =
-        err && typeof err === "object" && "error" in (err as any)
-          ? (err as any).error
+        err instanceof Error && err.message.trim()
+          ? err.message.trim()
           : "Failed to generate questions. Please try again.";
       setError(msg);
+      // Guest pool exhausted (server 402) → lock the client mirror too.
+      const status =
+        err && typeof err === "object" && "status" in err
+          ? (err as { status?: number }).status
+          : undefined;
+      if (status === 402 && /free AI generations|guest/i.test(msg)) {
+        writeGuestCount(GUEST_DAILY_LIMIT);
+      }
     } finally {
       setGenerating(false);
     }

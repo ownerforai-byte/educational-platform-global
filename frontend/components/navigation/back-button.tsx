@@ -1,8 +1,12 @@
 "use client";
 
+import { useEffect, useRef } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 import { cn } from "@/lib/utils";
+
+/** sessionStorage flag: this session has navigated INSIDE the app at least once. */
+const IN_APP_NAV_KEY = "neb_inapp_nav";
 
 interface BackButtonProps {
   className?: string;
@@ -17,8 +21,26 @@ export function BackButton({
 }: BackButtonProps) {
   const router = useRouter();
   const pathname = usePathname();
+  const prevPathRef = useRef<string | null>(null);
 
-  if (pathname === "/") {
+  // Remember in-app navigation: once this session has moved between app
+  // routes, history.back() is safe (scroll-exact). A fresh deep-link has no
+  // in-app history behind it, so its back must land on HOME instead of
+  // leaving the site (owner rule 2026-09-27).
+  useEffect(() => {
+    if (prevPathRef.current !== null && prevPathRef.current !== pathname) {
+      try {
+        sessionStorage.setItem(IN_APP_NAV_KEY, "1");
+      } catch {
+        /* storage blocked — fall back to home */
+      }
+    }
+    prevPathRef.current = pathname;
+  }, [pathname]);
+
+  // Home is the destination — the button only appears once something else
+  // has been opened on top of it.
+  if (pathname === "/" || pathname === "/home") {
     return null;
   }
 
@@ -26,18 +48,19 @@ export function BackButton({
     e.preventDefault();
     e.stopPropagation();
 
-    // Use native history back to preserve exact scroll position without top-to-bottom jumping
-    if (typeof window !== "undefined" && window.history.length > 1) {
+    let inAppNav = false;
+    try {
+      inAppNav = sessionStorage.getItem(IN_APP_NAV_KEY) === "1";
+    } catch {
+      inAppNav = false;
+    }
+
+    if (inAppNav && typeof window !== "undefined" && window.history.length > 1) {
+      // Navigated here from inside the app → exact back, scroll preserved.
       window.history.back();
     } else {
-      // Fallback: navigate to logical parent directory without forced scroll reset
-      const segments = pathname.split("/").filter(Boolean);
-      if (segments.length > 1) {
-        segments.pop();
-        router.push("/" + segments.join("/"), { scroll: false });
-      } else {
-        router.push("/", { scroll: false });
-      }
+      // Deep link / fresh tab → straight back to the home dashboard.
+      router.push("/", { scroll: false });
     }
   };
 

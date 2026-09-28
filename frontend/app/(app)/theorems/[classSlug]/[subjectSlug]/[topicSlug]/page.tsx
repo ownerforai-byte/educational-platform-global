@@ -8,6 +8,10 @@ import { ChevronRight, BookOpen, FileText } from "lucide-react";
 import { EmptyState } from "@/components/content/empty-state";
 import { DerivationScaffold } from "@/components/derivations/derivation-scaffold";
 import { MathMarkdown } from "@/components/content/math-markdown";
+import {
+  TopicKnowledgeFloat,
+  type TopicKnowledgeRow,
+} from "@/components/lab/topic-knowledge-float";
 
 export const dynamic = "force-dynamic";
 
@@ -103,6 +107,34 @@ export default async function TheoremDetailPage({
   const practice = (rawJson as any)?.practice ?? [];
   const universalFacts = (rawJson as any)?.universalFacts ?? [];
 
+  // Floating topic-knowledge rows for the drawing sheet: compact symbol-tagged
+  // facts (meanings stay in the permanent legend below the sheet).
+  const clip = (s: string, n: number) =>
+    s.replace(/[*#`]/g, "").replace(/\s+/g, " ").trim().slice(0, n);
+  const knowledgeRows: TopicKnowledgeRow[] = [];
+  const statementText = entry.derivation?.statement || entry.preview || entry.topicTitle;
+  if (statementText) knowledgeRows.push({ symbol: "§", text: clip(statementText, 260) });
+  const coreFormula = entry.derivation?.coreFormula ?? "";
+  if (coreFormula) knowledgeRows.push({ symbol: "ƒ", text: coreFormula, mono: true });
+  const proofSteps = entry.derivation?.proofSteps ?? [];
+  if (proofSteps.length > 0) {
+    const last = proofSteps[proofSteps.length - 1];
+    knowledgeRows.push({
+      symbol: "✎",
+      text: `${proofSteps.length}-step derivation ending in: ${clip(last.title, 90)}`,
+    });
+  }
+  for (const fact of universalFacts.slice(0, 2)) {
+    if (typeof fact === "string" && fact.trim()) {
+      knowledgeRows.push({ symbol: "★", text: clip(fact, 180) });
+    }
+  }
+  for (const trap of confusion.slice(0, 2)) {
+    if (typeof trap === "string" && trap.trim()) {
+      knowledgeRows.push({ symbol: "⚠", text: clip(trap, 180) });
+    }
+  }
+
   return (
     <div className="mx-auto max-w-3xl space-y-8 py-10">
       <Breadcrumb current={title} />
@@ -131,18 +163,20 @@ export default async function TheoremDetailPage({
           <BookOpen className="h-4 w-4 text-primary" />
           Interactive Visual Schematic
         </h2>
-        <div className="rounded-xl border border-border overflow-hidden">
-          {entry.visualType ? (
+        {/* Both renderers carry their own framed drawing sheet (ISO title block
+            + blueprint canvas), so no outer border here — it used to double-frame. */}
+        {entry.visualType ? (
+          <TopicKnowledgeFloat title={title} rows={knowledgeRows}>
             <DerivationVisual visualType={entry.visualType} />
-          ) : (
-            <SchematicDiagram
-              subjectSlug={subjectSlug}
-              topicSlug={entry.topicSlug}
-              topicTitle={title}
-              unitId={entry.unitId}
-            />
-          )}
-        </div>
+          </TopicKnowledgeFloat>
+        ) : (
+          <SchematicDiagram
+            subjectSlug={subjectSlug}
+            topicSlug={entry.topicSlug}
+            topicTitle={title}
+            unitId={entry.unitId}
+          />
+        )}
       </section>
 
       <section className="space-y-3">

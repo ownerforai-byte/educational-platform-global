@@ -32,6 +32,13 @@ export interface SignupResponse {
   user: ExtendedSessionUser | null;
   accessToken: string | null;
   message?: string;
+  /**
+   * Owner-approval flow: present when the account was created PENDING —
+   * the client stores this signed token and polls /api/auth/account-status
+   * from the status screen (no session is issued in that case).
+   */
+  statusToken?: string;
+  accessStatus?: "PENDING" | "ACTIVE" | "REJECTED";
 }
 
 /** Response shape for logout. */

@@ -20,7 +20,7 @@ export default function AppLayout({
     >
       <AppShell>
         {/* Coin gate: blurs + overlays every paid route until unlocked for
-            2 hours. Public routes (home, AI chat, auth) pass through. */}
+            20 minutes. Public routes (home, AI chat, auth) pass through. */}
         <RouteCreditGate>{children}</RouteCreditGate>
       </AppShell>
     </Suspense>

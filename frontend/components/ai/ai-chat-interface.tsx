@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState, useRef, useEffect } from "react";
+import React, { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
 import {
   Send,
@@ -12,12 +12,16 @@ import {
   Check,
   Coins,
   AlertCircle,
-  GraduationCap,
   Atom,
   FlaskConical,
   Binary,
-  RotateCcw,
   Loader2,
+  Plus,
+  MessageSquare,
+  History,
+  PanelLeftClose,
+  PanelLeft,
+  UserRound,
 } from "lucide-react";
 import {
   chat,
@@ -25,13 +29,22 @@ import {
   getChatHistory,
   saveChatHistory,
   clearChatHistory,
+  getChatSessions,
   enhancePrompt,
   type ChatHistoryMessage,
+  type ChatSession,
 } from "@/lib/api/ai";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
+import { stripLinksForCopy } from "@/lib/ai/clean-copy";
+import {
+  GUEST_DAILY_LIMIT as MAX_GUEST_MESSAGES,
+  readGuestCount,
+  writeGuestCount,
+} from "@/lib/ai/guest-quota";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { MathMarkdown } from "@/components/content/math-markdown";
+import { cn } from "@/lib/utils";
 
 const SUGGESTED_PROMPTS = [
   {
@@ -72,27 +85,35 @@ const SUGGESTED_PROMPTS = [
   },
 ];
 
-// Guest cap re-enabled 2026-09-25: matched the ai-widget's 7-message limit so
-// anonymous visitors can't burn unlimited paid AI credits.
-const MAX_GUEST_MESSAGES = 7;
-const STORAGE_KEY = "neb_ai_guest_count";
-const CREDITS_STORAGE_KEY = "neb_guest_credits";
+// Daily credit pools (owner policy 2026-09-26): guests get 5 free
+// messages/day, logged users get 8 credits/day — both reset at 12:00 AM.
+// Guest counts come from the shared day-keyed mirror (lib/ai/guest-quota);
+// the server enforces the real numbers either way.
+const DAILY_CREDIT_POOL = 4;
+const ACTIVE_SESSION_KEY = "neb_ai_active_session";
 
-function getGuestCount(): number {
-  if (typeof window === "undefined") return 0;
-  const v = localStorage.getItem(STORAGE_KEY);
-  return v ? parseInt(v, 10) : 0;
+// Rotating "work in progress" lines while the professor composes a reply —
+// only rendered while `sending`, which is false during SSR, so the first
+// client render matches the server exactly (no hydration risk).
+const THINKING_LINES = [
+  "Thinking it through…",
+  "Reasoning from first principles…",
+  "Pulling in the NEB syllabus…",
+  "Connecting the dots…",
+];
+
+function newSessionId(): string {
+  return `c-${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
 }
 
-function incGuestCount(): void {
+function readActiveSession(): string {
+  if (typeof window === "undefined") return "default";
+  return localStorage.getItem(ACTIVE_SESSION_KEY) || "default";
+}
+
+function writeActiveSession(session: string): void {
   if (typeof window === "undefined") return;
-  localStorage.setItem(STORAGE_KEY, String(getGuestCount() + 1));
-}
-
-function getGuestCredits(): number {
-  if (typeof window === "undefined") return 50;
-  const v = localStorage.getItem(CREDITS_STORAGE_KEY);
-  return v ? parseInt(v, 10) : 50;
+  localStorage.setItem(ACTIVE_SESSION_KEY, session);
 }
 
 export function AIChatInterface() {
@@ -106,59 +127,134 @@ export function AIChatInterface() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
-  const [guestCredits, setGuestCredits] = useState<number>(50);
-  const [restoredCount, setRestoredCount] = useState<number | null>(null);
+  // Guest usage lives in localStorage — it must NEVER be read during render,
+  // or the server HTML (always 0) won't match the hydrated client (the
+  // 2026-09-26 hydration error on /chat: "7" vs "6"). Seed after mount.
+  const [guestCount, setGuestCount] = useState(0);
+  const [dailyCredits, setDailyCredits] = useState<number | null>(null);
+  // True only after the SERVER declared the pool empty (402 or a billing
+  // response of 0) — never guessed client-side, so owner/admin/premium
+  // balances (manually managed, never 402) can't be locked out by mistake.
+  const [poolEmpty, setPoolEmpty] = useState(false);
   const [enhancing, setEnhancing] = useState(false);
-  // Tracks the one-time restore of persisted history: sends are blocked and a
-  // spinner is shown while "loading" (the restore appends to the message list,
-  // so an exchange sent mid-restore would be interleaved out of order).
   const [historyState, setHistoryState] = useState<"idle" | "loading" | "ready">("idle");
   const historyLoadedRef = useRef(false);
 
+  // Individual chat histories (per-session conversations, signed-in only).
+  const [session, setSession] = useState<string>("default");
+  const [sessions, setSessions] = useState<ChatSession[]>([]);
+  const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [restoredCount, setRestoredCount] = useState<number | null>(null);
+
+  const [thinkIdx, setThinkIdx] = useState(0);
+
+  const streamRef = useRef<HTMLDivElement>(null);
   const chatBottomRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
+  const sessionRef = useRef(session);
+  sessionRef.current = session;
 
-  const guestCount = getGuestCount();
+  const guestCredits = Math.max(0, MAX_GUEST_MESSAGES - guestCount);
   const isGuestLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
+  // Mirror of the backend's hasFullAccess(): these roles are never billed.
+  const privilegedUser =
+    user?.role === "OWNER" || user?.role === "ADMIN" || !!user?.premiumStatus;
+  const creditsExhausted =
+    isLoggedIn &&
+    !privilegedUser &&
+    (poolEmpty ||
+      dailyCredits === 0 ||
+      (typeof user?.credits === "number" && user.credits <= 0));
+  const composerLocked = isGuestLimited || creditsExhausted;
+
+  const refreshSessions = useCallback(async () => {
+    if (!isLoggedIn) return;
+    try {
+      const { sessions: list } = await getChatSessions();
+      setSessions(list);
+    } catch {
+      // history unavailable — sidebar just stays empty
+    }
+  }, [isLoggedIn]);
+
+  const loadSessionHistory = useCallback(
+    async (sessionName: string) => {
+      setHistoryState("loading");
+      try {
+        const { messages: restored } = await getChatHistory(sessionName, 200);
+        const system: AIChatMessage = { role: "system", content: PLATFORM_SYSTEM_PROMPT };
+        if (restored.length) {
+          setMessages([
+            system,
+            ...restored.map((m: ChatHistoryMessage) => ({ role: m.role, content: m.content })),
+          ]);
+          setRestoredCount(restored.length);
+        } else {
+          setMessages([system]);
+          setRestoredCount(null);
+        }
+      } catch {
+        setMessages([{ role: "system", content: PLATFORM_SYSTEM_PROMPT }]);
+      } finally {
+        setHistoryState("ready");
+      }
+    },
+    []
+  );
 
   useEffect(() => {
     if (!isLoggedIn) {
-      setGuestCredits(getGuestCredits());
+      // Post-mount only: localStorage is unavailable on the server, so the
+      // first client render must match the server's count of 0 exactly.
+      setGuestCount(readGuestCount());
+      setHistoryState("ready");
       return;
     }
-    // Signed in: restore the user's persisted conversation once per mount.
     if (historyLoadedRef.current) return;
     historyLoadedRef.current = true;
-    setHistoryState("loading");
-    getChatHistory("default", 200)
-      .then(({ messages }) => {
-        if (!messages.length) return;
-        const restored: AIChatMessage[] = messages.map((m: ChatHistoryMessage) => ({
-          role: m.role,
-          content: m.content,
-        }));
-        setMessages((prev) => [...prev, ...restored]);
-        setRestoredCount(restored.length);
-      })
-      .catch(() => {
-        // history unavailable (not migrated / offline) — fresh chat is fine
-      })
-      .finally(() => setHistoryState("ready"));
-  }, [isLoggedIn]);
+    const active = readActiveSession();
+    setSession(active);
+    loadSessionHistory(active);
+    refreshSessions();
+    // Signed-in header shows the live daily pool (4 credits/day, resets
+    // at 12:00 AM) — /api/auth/me already applied the lazy midnight reset.
+    if (user && typeof user.credits === "number") setDailyCredits(user.credits);
+  }, [isLoggedIn, loadSessionHistory, refreshSessions, user]);
 
   useEffect(() => {
+    // Nothing to follow yet (empty state) — scrolling to the sentinel would
+    // bury the greeting under the composer. Also pin the stream to the top
+    // so a restored/reloaded page can't start mid-greeting.
+    const hasConversation = messages.some((m) => m.role !== "system");
+    if (!hasConversation && !sending) {
+      if (streamRef.current) streamRef.current.scrollTop = 0;
+      return;
+    }
     chatBottomRef.current?.scrollIntoView({ behavior: "smooth" });
   }, [messages, sending]);
+
+  // Cycle the thinking lines while a reply is composing (client-only — the
+  // indicator never renders during SSR).
+  useEffect(() => {
+    if (!sending) {
+      setThinkIdx(0);
+      return;
+    }
+    const id = setInterval(() => setThinkIdx((i) => (i + 1) % THINKING_LINES.length), 2600);
+    return () => clearInterval(id);
+  }, [sending]);
 
   const handleSend = async (customText?: string) => {
     const textToSend = (customText ?? input).trim();
     if (!textToSend || sending) return;
-    // Don't accept sends while persisted history is restoring — the restore
-    // overwrites the message list and would swallow the new exchange.
     if (historyState === "loading") return;
 
     if (isGuestLimited) {
-      setError("You've reached the free guest message limit. Please sign in to continue unlimited AI tutoring!");
+      setError(`You've used all ${MAX_GUEST_MESSAGES} free guest messages for today. Your pool resets to ${MAX_GUEST_MESSAGES} at 12:00 AM — or sign in for ${DAILY_CREDIT_POOL} daily credits & saved histories.`);
+      return;
+    }
+    if (creditsExhausted) {
+      setError(`You've used all ${DAILY_CREDIT_POOL} credits of today's daily pool. It resets at 12:00 AM — or go PRO for unlimited.`);
       return;
     }
 
@@ -168,35 +264,80 @@ export function AIChatInterface() {
     setSending(true);
     setError(null);
 
+    const targetSession = sessionRef.current;
+
     try {
       if (isLoggedIn) {
         const res = await chat([...messages, userMsg]);
         const assistantMsg: AIChatMessage = { role: "assistant", content: res.response };
         setMessages((prev) => [...prev, assistantMsg]);
-        saveChatHistory("default", [
+        // Server reports the balance after this message's 1-credit spend.
+        if (typeof res.credits === "number") {
+          setDailyCredits(res.credits);
+          if (res.credits <= 0) setPoolEmpty(true);
+        }
+        saveChatHistory(targetSession, [
           { role: "user", content: textToSend },
           { role: "assistant", content: res.response },
         ]).catch(() => {});
+        // New conversation gets a session row as soon as it has content.
+        setSessions((prev) => {
+          if (prev.some((s) => s.session === targetSession)) {
+            return prev.map((s) =>
+              s.session === targetSession
+                ? {
+                    ...s,
+                    messages: s.messages + 2,
+                    lastMessageAt: new Date().toISOString(),
+                    preview: s.preview || textToSend.slice(0, 80),
+                  }
+                : s
+            );
+          }
+          return [
+            {
+              session: targetSession,
+              messages: 2,
+              lastMessageAt: new Date().toISOString(),
+              preview: textToSend.slice(0, 80),
+            },
+            ...prev,
+          ];
+        });
       } else {
         const res = await guestChat([...messages, userMsg]);
         const assistantMsg: AIChatMessage = { role: "assistant", content: res.response };
         setMessages((prev) => [...prev, assistantMsg]);
-        const newCredits = res.remaining ?? Math.max(0, getGuestCredits() - 2);
-        setGuestCredits(newCredits);
-        localStorage.setItem(CREDITS_STORAGE_KEY, String(newCredits));
-        incGuestCount();
+        // Server-side count is the source of truth; mirror it locally.
+        const used = MAX_GUEST_MESSAGES - (res.remaining ?? MAX_GUEST_MESSAGES - guestCount - 1);
+        const next = Math.min(MAX_GUEST_MESSAGES, Math.max(guestCount + 1, used));
+        writeGuestCount(next);
+        setGuestCount(next);
       }
     } catch (err: any) {
       console.error("AI chat error:", err);
       const msg = err.message || "Failed to reach AI Tutor. Please try again.";
       setError(msg);
-      setMessages((prev) => [
-        ...prev,
-        {
-          role: "assistant",
-          content: "I apologize, but I encountered a connection difficulty. Please verify your connection or try rephrasing your question.",
-        },
-      ]);
+      if (err?.status === 402) {
+        // Daily pool empty (guest or signed-in). The server's message
+        // explains the limit — show that instead of a fake "connection
+        // difficulty" bubble, and lock the composer until the pool refills.
+        if (isLoggedIn) {
+          setDailyCredits(0);
+          setPoolEmpty(true);
+        } else {
+          writeGuestCount(MAX_GUEST_MESSAGES);
+          setGuestCount(MAX_GUEST_MESSAGES);
+        }
+      } else {
+        setMessages((prev) => [
+          ...prev,
+          {
+            role: "assistant",
+            content: "I apologize, but I encountered a connection difficulty. Please verify your connection or try rephrasing your question.",
+          },
+        ]);
+      }
     } finally {
       setSending(false);
     }
@@ -210,12 +351,15 @@ export function AIChatInterface() {
   };
 
   const handleCopy = async (content: string, index: number) => {
+    // Links stay clickable on screen — but their URLs never reach the
+    // clipboard (owner rule 2026-09-27: labels yes, URLs hidden).
+    const plain = stripLinksForCopy(content);
     try {
-      await navigator.clipboard.writeText(content);
+      await navigator.clipboard.writeText(plain);
     } catch {
       try {
         const ta = document.createElement("textarea");
-        ta.value = content;
+        ta.value = plain;
         ta.style.position = "fixed";
         ta.style.opacity = "0";
         document.body.appendChild(ta);
@@ -230,11 +374,56 @@ export function AIChatInterface() {
     setTimeout(() => setCopiedIndex(null), 2000);
   };
 
+  /** Start a fresh conversation (its own chat history). */
+  const startNewChat = () => {
+    const id = newSessionId();
+    setSession(id);
+    writeActiveSession(id);
+    setMessages([{ role: "system", content: PLATFORM_SYSTEM_PROMPT }]);
+    setError(null);
+    setRestoredCount(null);
+    if (window.innerWidth < 1024) setSidebarOpen(false);
+    inputRef.current?.focus();
+  };
+
+  /** Switch to an existing conversation and restore its history. */
+  const openChat = (sessionName: string) => {
+    if (sessionName === session) return;
+    setSession(sessionName);
+    writeActiveSession(sessionName);
+    setError(null);
+    loadSessionHistory(sessionName);
+    if (window.innerWidth < 1024) setSidebarOpen(false);
+  };
+
+  /** Delete one conversation's history (falls back to a fresh chat). */
+  const deleteChat = async (e: React.MouseEvent, sessionName: string) => {
+    e.stopPropagation();
+    if (!window.confirm("Delete this conversation permanently?")) return;
+    await clearChatHistory(sessionName).catch(() => {});
+    setSessions((prev) => prev.filter((s) => s.session !== sessionName));
+    if (sessionName === session) {
+      const next = sessions.find((s) => s.session !== sessionName);
+      if (next) {
+        openChat(next.session);
+      } else {
+        const id = newSessionId();
+        setSession(id);
+        writeActiveSession(id);
+        setMessages([{ role: "system", content: PLATFORM_SYSTEM_PROMPT }]);
+        setRestoredCount(null);
+      }
+    }
+    refreshSessions();
+  };
+
+  /** Clear the ACTIVE conversation (keeps the session, empties its messages). */
   const clearChat = () => {
     setMessages([{ role: "system", content: PLATFORM_SYSTEM_PROMPT }]);
     setError(null);
     setRestoredCount(null);
-    if (isLoggedIn) clearChatHistory("default").catch(() => {});
+    if (isLoggedIn) clearChatHistory(sessionRef.current).catch(() => {});
+    setSessions((prev) => prev.filter((s) => s.session !== sessionRef.current));
   };
 
   /** Rewrite the drafted prompt into a sharper study question before sending. */
@@ -257,249 +446,338 @@ export function AIChatInterface() {
   const displayMessages = messages.filter((m) => m.role !== "system");
 
   return (
-    <div className="flex flex-col h-[calc(100vh-10rem)] max-h-[850px] min-h-[500px] rounded-3xl border border-border/80 bg-card shadow-lg overflow-hidden">
-      {/* ── Chat Header ─────────────────────────────────────────────── */}
-      <div className="px-6 py-4 border-b border-border/60 bg-muted/20 flex items-center justify-between gap-4 shrink-0">
-        <div className="flex items-center gap-3">
-          <div className="h-10 w-10 rounded-2xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center text-white shadow-md shadow-primary/20">
-            <Bot className="h-5 w-5" />
+    <div className="flex h-[calc(100vh-10rem)] max-h-[850px] min-h-[500px] rounded-3xl border border-border/80 bg-card shadow-lg overflow-hidden">
+      {/* ── Conversations sidebar (individual chat histories) ─────── */}
+      {isLoggedIn && (
+        <aside
+          className={cn(
+            "shrink-0 border-r border-border/60 bg-muted/20 flex flex-col transition-all duration-200",
+            sidebarOpen ? "w-64" : "w-0 overflow-hidden border-r-0"
+          )}
+          aria-hidden={!sidebarOpen}
+        >
+          <div className="p-3 border-b border-border/50">
+            <button
+              onClick={startNewChat}
+              className="w-full flex items-center justify-center gap-1.5 rounded-xl bg-primary text-primary-foreground text-xs font-semibold py-2.5 hover:opacity-90 transition-opacity"
+            >
+              <Plus className="h-3.5 w-3.5" />
+              New conversation
+            </button>
           </div>
-          <div>
-            <div className="flex items-center gap-2">
-              <h2 className="text-base font-bold text-foreground">Ravikisan's AI Tutor</h2>
-              <span className="text-[10px] font-extrabold px-2 py-0.5 rounded-full bg-primary/15 text-primary">
-                Professor Mode
+          <div className="flex-1 overflow-y-auto p-2 space-y-1">
+            <p className="px-2 pt-1 pb-1.5 text-[10px] font-bold uppercase tracking-wider text-muted-foreground flex items-center gap-1.5">
+              <History className="h-3 w-3" />
+              Your chat histories
+            </p>
+            {sessions.length === 0 ? (
+              <p className="px-2 text-[11px] text-muted-foreground leading-relaxed">
+                No saved conversations yet. Your first chat will appear here.
+              </p>
+            ) : (
+              sessions.map((s) => (
+                <button
+                  key={s.session}
+                  onClick={() => openChat(s.session)}
+                  className={cn(
+                    "group w-full text-left rounded-xl px-2.5 py-2 transition-colors flex items-start gap-2",
+                    s.session === session
+                      ? "bg-primary/10 border border-primary/30"
+                      : "hover:bg-muted/60 border border-transparent"
+                  )}
+                >
+                  <MessageSquare className="h-3.5 w-3.5 mt-0.5 shrink-0 text-muted-foreground" />
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-xs font-medium truncate">
+                      {s.preview || "Conversation"}
+                    </span>
+                    <span className="block text-[10px] text-muted-foreground">
+                      {s.messages} msgs · {new Date(s.lastMessageAt).toLocaleDateString()}
+                    </span>
+                  </span>
+                  <span
+                    role="button"
+                    tabIndex={0}
+                    aria-label="Delete conversation"
+                    onClick={(e) => deleteChat(e, s.session)}
+                    onKeyDown={(e) => e.key === "Enter" && deleteChat(e as any, s.session)}
+                    className="opacity-0 group-hover:opacity-100 shrink-0 p-1 rounded-md text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-all"
+                  >
+                    <Trash2 className="h-3 w-3" />
+                  </span>
+                </button>
+              ))
+            )}
+          </div>
+          <div className="p-3 border-t border-border/50">
+            <div className="flex items-center gap-2 text-[10px] text-muted-foreground">
+              <Coins className="h-3.5 w-3.5 text-amber-500" />
+              <span className="font-semibold">
+                {Math.min(dailyCredits ?? user?.credits ?? DAILY_CREDIT_POOL, DAILY_CREDIT_POOL)}/{DAILY_CREDIT_POOL} credits today
               </span>
             </div>
-            <p className="text-xs text-muted-foreground">
-              👋, I am the captain here. Feel free to clear your doubts.
-            </p>
           </div>
-        </div>
+        </aside>
+      )}
 
-        {/* Top Controls: credits + clear */}
-        <div className="flex items-center gap-3">
-          {isLoggedIn ? (
-            <span className="hidden sm:flex items-center gap-1.5 text-xs font-semibold px-2.5 py-1 rounded-xl bg-muted border border-border/60 text-foreground">
-              <Coins className="h-3.5 w-3.5 text-amber-500" />
-              <span>{user?.credits ?? 0} Credits</span>
-            </span>
-          ) : (
-            <span className="text-xs text-muted-foreground hidden sm:flex items-center gap-1.5 px-2.5 py-1 rounded-xl bg-muted/60 border border-border/50">
-              <span>Guest messages:</span>
-              <strong className="text-primary">Unlimited</strong>
-            </span>
-          )}
-
-          {displayMessages.length > 0 && (
-            <button
-              onClick={clearChat}
-              className="p-2 rounded-xl text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
-              title="Clear conversation"
-              aria-label="Clear chat"
-            >
-              <Trash2 className="h-4 w-4" />
-            </button>
-          )}
-        </div>
-      </div>
-
-      {/* ── Message Stream Area ──────────────────────────────────────── */}
-      <div className="flex-1 overflow-y-auto p-4 sm:p-6 space-y-6">
-        {historyState === "loading" ? (
-          /* Restoring persisted conversation */
-          <div className="h-full flex flex-col items-center justify-center gap-3 text-muted-foreground">
-            <div className="h-7 w-7 animate-spin rounded-full border-2 border-primary border-t-transparent" />
-            <p className="text-xs">Restoring your conversation…</p>
-          </div>
-        ) : displayMessages.length === 0 ? (
-          /* Empty State: Suggested Prompts */
-          <div className="h-full flex flex-col justify-center max-w-2xl mx-auto space-y-6 py-6">
-            <div className="text-center space-y-2">
-              <div className="h-12 w-12 rounded-2xl bg-primary/10 text-primary mx-auto flex items-center justify-center">
-                <Sparkles className="h-6 w-6" />
+      {/* ── Main column ───────────────────────────────────────────── */}
+      <div className="flex-1 flex flex-col min-w-0">
+        {/* Header */}
+        <div className="px-4 sm:px-6 py-3.5 border-b border-border/60 bg-gradient-to-r from-primary/5 via-transparent to-primary/5 flex items-center justify-between gap-3 shrink-0">
+          <div className="flex items-center gap-2.5 min-w-0">
+            {isLoggedIn && (
+              <button
+                onClick={() => setSidebarOpen((v) => !v)}
+                className="p-1.5 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+                title={sidebarOpen ? "Hide conversations" : "Show conversations"}
+                aria-label="Toggle conversations sidebar"
+              >
+                {sidebarOpen ? <PanelLeftClose className="h-4 w-4" /> : <PanelLeft className="h-4 w-4" />}
+              </button>
+            )}
+            <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-primary to-violet-500 flex items-center justify-center text-white shadow-md shadow-primary/30 shrink-0">
+              <Bot className="h-5 w-5" />
+            </div>
+            <div className="min-w-0">
+              <div className="flex items-center gap-2">
+                <h2 className="text-sm font-extrabold bg-gradient-to-r from-primary via-violet-500 to-primary bg-clip-text text-transparent animate-gradient-text truncate">
+                  Ravikisan&apos;s AI Tutor
+                </h2>
+                {/* live dot — the professor is on duty */}
+                <span className="relative flex h-2 w-2 shrink-0" title="Online">
+                  <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+                  <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+                </span>
               </div>
-              <h3 className="text-lg font-bold text-foreground">How can I assist your studies today?</h3>
-              <p className="text-xs text-muted-foreground max-w-md mx-auto leading-relaxed">
-                Ask any question from Physics, Chemistry, Biology, or Mathematics. I can derive formulas, explain reaction mechanisms, clarify misconceptions, and solve past questions.
+              <p className="text-[11px] text-muted-foreground truncate">
+                Live professor mode · grounded in the NEB Class 11 &amp; 12 syllabus
               </p>
             </div>
+          </div>
 
-            {/* Prompt Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
-              {SUGGESTED_PROMPTS.map((prompt, i) => {
-                const Icon = prompt.icon;
-                return (
-                  <button
-                    key={i}
-                    onClick={() => handleSend(prompt.text)}
-                    className="p-3 rounded-2xl border border-border/70 bg-muted/15 hover:bg-muted/40 hover:border-primary/50 text-left transition-all group flex flex-col justify-between space-y-1.5"
-                  >
-                    <div className="flex items-center gap-1.5">
-                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md border ${prompt.color} flex items-center gap-1`}>
+          <div className="flex items-center gap-2 shrink-0">
+            {!isLoggedIn && (
+              <span className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-600 font-semibold">
+                <Coins className="h-3 w-3" />
+                {guestCredits}/{MAX_GUEST_MESSAGES} free today
+              </span>
+            )}
+            {isLoggedIn && (
+              <span
+                className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-muted border border-border/60 font-semibold"
+                title={`1 credit per message · daily pool resets to ${DAILY_CREDIT_POOL} at 12:00 AM`}
+              >
+                <Coins className="h-3 w-3 text-amber-500" />
+                {Math.min(dailyCredits ?? user?.credits ?? DAILY_CREDIT_POOL, DAILY_CREDIT_POOL)}/{DAILY_CREDIT_POOL} credits today
+              </span>
+            )}
+            {displayMessages.length > 0 && (
+              <button
+                onClick={clearChat}
+                className="p-2 rounded-lg text-muted-foreground hover:text-destructive hover:bg-destructive/10 transition-colors"
+                title="Clear this conversation"
+                aria-label="Clear chat"
+              >
+                <Trash2 className="h-4 w-4" />
+              </button>
+            )}
+          </div>
+        </div>
+
+        {/* Message stream */}
+        <div ref={streamRef} className="flex-1 overflow-y-auto px-4 sm:px-6 py-5 space-y-5">
+          {historyState === "loading" ? (
+            <div className="h-full flex flex-col items-center justify-center gap-3 text-muted-foreground">
+              <div className="h-7 w-7 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+              <p className="text-xs">Loading conversation…</p>
+            </div>
+          ) : displayMessages.length === 0 ? (
+            /* Empty state */
+            <div className="min-h-full flex flex-col justify-center max-w-2xl mx-auto space-y-6 py-6">
+              <div className="text-center space-y-2">
+                <div className="h-14 w-14 rounded-2xl bg-gradient-to-br from-primary to-violet-500 shadow-lg shadow-primary/25 text-white mx-auto flex items-center justify-center">
+                  <Sparkles className="h-7 w-7 animate-pulse" />
+                </div>
+                <h3 className="text-xl font-extrabold bg-gradient-to-r from-foreground via-primary to-violet-500 bg-clip-text text-transparent animate-gradient-text">
+                  What are we learning today?
+                </h3>
+                <p className="text-xs text-muted-foreground max-w-md mx-auto leading-relaxed">
+                  Fire away — derivations, mechanisms, wild &quot;why&quot; questions, misconceptions, or past
+                  NEB questions. Physics, Chemistry, Biology, Math: broken down step by step.
+                </p>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+                {SUGGESTED_PROMPTS.map((prompt, i) => {
+                  const Icon = prompt.icon;
+                  return (
+                    <button
+                      key={i}
+                      onClick={() => handleSend(prompt.text)}
+                      className="p-3 rounded-2xl border border-border/70 bg-muted/15 hover:bg-muted/40 hover:border-primary/50 hover:-translate-y-0.5 hover:shadow-md hover:shadow-primary/10 active:scale-[0.98] text-left transition-all duration-200 group flex flex-col justify-between space-y-1.5"
+                    >
+                      <span className={`text-[10px] font-bold px-2 py-0.5 rounded-md border w-fit flex items-center gap-1 ${prompt.color}`}>
                         <Icon className="h-2.5 w-2.5" />
                         <span>{prompt.category}</span>
                       </span>
-                    </div>
-                    <p className="text-xs text-foreground/90 font-medium group-hover:text-primary transition-colors leading-relaxed">
-                      {prompt.text}
-                    </p>
-                  </button>
-                );
-              })}
+                      <p className="text-xs text-foreground/90 font-medium group-hover:text-primary transition-colors leading-relaxed">
+                        {prompt.text}
+                      </p>
+                    </button>
+                  );
+                })}
+              </div>
             </div>
-          </div>
-        ) : (
-          /* Active Chat Thread */
-          displayMessages.map((msg, index) => {
-            const isUser = msg.role === "user";
-            return (
-              <div
-                key={index}
-                className={`flex gap-3.5 max-w-3xl ${isUser ? "ml-auto justify-end" : "mr-auto"}`}
-              >
-                {!isUser && (
-                  <div className="h-8 w-8 rounded-xl bg-primary/10 border border-primary/20 text-primary flex items-center justify-center shrink-0 mt-0.5">
-                    <Bot className="h-4 w-4" />
-                  </div>
-                )}
-
-                <div
-                  className={`rounded-2xl p-4 text-xs leading-relaxed relative group ${
-                    isUser
-                      ? "bg-primary text-primary-foreground shadow-sm max-w-[85%]"
-                      : "bg-muted/25 border border-border/70 text-foreground max-w-[95%] sm:max-w-[90%]"
-                  }`}
-                >
-                  {isUser ? (
-                    <p className="whitespace-pre-wrap font-medium">{msg.content}</p>
-                  ) : (
-                    <div className="space-y-2">
-                      <MathMarkdown content={msg.content} />
-
-                      {/* Copy Action Button */}
-                      <div className="pt-2 flex justify-end border-t border-border/30 opacity-60 group-hover:opacity-100 transition-opacity">
-                        <button
-                          onClick={() => handleCopy(msg.content, index)}
-                          className="inline-flex items-center gap-1 text-[10px] text-muted-foreground hover:text-foreground font-semibold"
-                        >
-                          {copiedIndex === index ? (
-                            <>
-                              <Check className="h-3 w-3 text-emerald-500" />
-                              <span className="text-emerald-500">Copied</span>
-                            </>
-                          ) : (
-                            <>
-                              <Copy className="h-3 w-3" />
-                              <span>Copy Response</span>
-                            </>
-                          )}
-                        </button>
+          ) : (
+            /* Active thread — assistant answers are full-width, user asks are right-aligned */
+            displayMessages.map((msg, index) => {
+              const isUser = msg.role === "user";
+              if (isUser) {
+                return (
+                  <div key={index} className="flex justify-end animate-pop-in">
+                    <div className="flex items-end gap-2.5 max-w-[85%]">
+                      <div className="rounded-2xl rounded-br-md bg-gradient-to-br from-primary to-violet-500 text-primary-foreground px-4 py-2.5 shadow-sm">
+                        <p className="text-xs leading-relaxed whitespace-pre-wrap font-medium">{msg.content}</p>
+                      </div>
+                      <div className="h-7 w-7 rounded-lg bg-muted border border-border flex items-center justify-center shrink-0 text-muted-foreground">
+                        <User className="h-3.5 w-3.5" />
                       </div>
                     </div>
-                  )}
-                </div>
-
-                {isUser && (
-                  <div className="h-8 w-8 rounded-xl bg-muted border border-border flex items-center justify-center shrink-0 mt-0.5 text-muted-foreground">
-                    <User className="h-4 w-4" />
                   </div>
+                );
+              }
+              return (
+                <div key={index} className="group flex gap-3 animate-pop-in">
+                  <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-primary/20 to-violet-500/20 border border-primary/25 text-primary flex items-center justify-center shrink-0 mt-1">
+                    <Bot className="h-3.5 w-3.5" />
+                  </div>
+                  <div className="min-w-0 flex-1 rounded-2xl rounded-tl-md border border-border/60 bg-muted/20 px-4 py-3">
+                    <div className="text-xs leading-relaxed">
+                      <MathMarkdown content={msg.content} />
+                    </div>
+                    <div className="pt-2 mt-2 border-t border-border/40 flex items-center justify-end">
+                      <button
+                        onClick={() => handleCopy(msg.content, index)}
+                        className="inline-flex items-center gap-1 text-[10px] text-muted-foreground hover:text-foreground font-semibold"
+                      >
+                        {copiedIndex === index ? (
+                          <>
+                            <Check className="h-3 w-3 text-emerald-500" />
+                            <span className="text-emerald-500">Copied</span>
+                          </>
+                        ) : (
+                          <>
+                            <Copy className="h-3 w-3" />
+                            <span>Copy</span>
+                          </>
+                        )}
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              );
+            })
+          )}
+
+          {/* Thinking indicator */}
+          {sending && (
+            <div className="flex gap-3 animate-fade-in">
+              <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-primary/20 to-violet-500/20 border border-primary/25 text-primary flex items-center justify-center shrink-0 mt-1">
+                <Bot className="h-3.5 w-3.5" />
+              </div>
+              <div className="rounded-2xl rounded-tl-md border border-border/60 bg-muted/20 px-4 py-3 flex items-center gap-2.5 text-xs text-muted-foreground">
+                <span className="flex gap-1">
+                  <span className="h-1.5 w-1.5 rounded-full bg-primary animate-bounce [animation-delay:0ms]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-violet-500 animate-bounce [animation-delay:150ms]" />
+                  <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-bounce [animation-delay:300ms]" />
+                </span>
+                <span key={thinkIdx} className="animate-fade-in">
+                  {THINKING_LINES[thinkIdx]}
+                </span>
+              </div>
+            </div>
+          )}
+
+          {error && (
+            <div className="p-3.5 rounded-2xl bg-destructive/10 border border-destructive/30 text-destructive text-xs flex items-center gap-2">
+              <AlertCircle className="h-4 w-4 shrink-0" />
+              <div className="flex-1">
+                <span>{error}</span>
+                {!isLoggedIn && (
+                  <Link href="/login" className="ml-2 font-bold underline hover:opacity-80">
+                    Log in here &rarr;
+                  </Link>
                 )}
               </div>
-            );
-          })
-        )}
-
-        {/* Thinking / Streaming Indicator */}
-        {sending && (
-          <div className="flex gap-3 max-w-2xl mr-auto animate-fade-in">
-            <div className="h-8 w-8 rounded-xl bg-primary/10 border border-primary/20 text-primary flex items-center justify-center shrink-0">
-              <Bot className="h-4 w-4" />
             </div>
-            <div className="rounded-2xl p-4 bg-muted/20 border border-border/70 flex items-center gap-2 text-xs text-muted-foreground">
-              <span className="h-2 w-2 rounded-full bg-primary animate-ping" />
-              <span>Analyzing curriculum &amp; deriving answer...</span>
+          )}
+
+          {restoredCount !== null && restoredCount > 0 && (
+            <div className="flex justify-center">
+              <span className="rounded-full border border-border/60 bg-muted/40 px-3 py-1 text-[10px] font-medium text-muted-foreground">
+                Restored {restoredCount} earlier message{restoredCount === 1 ? "" : "s"} from this conversation
+              </span>
             </div>
-          </div>
-        )}
+          )}
 
-        {error && (
-          <div className="p-3.5 rounded-2xl bg-destructive/10 border border-destructive/30 text-destructive text-xs flex items-center gap-2">
-            <AlertCircle className="h-4 w-4 shrink-0" />
-            <div className="flex-1">
-              <span>{error}</span>
-              {!isLoggedIn && (
-                <Link href="/login" className="ml-2 font-bold underline hover:opacity-80">
-                  Log in here &rarr;
-                </Link>
-              )}
-            </div>
-          </div>
-        )}
-
-        {restoredCount !== null && restoredCount > 0 && (
-          <div className="flex justify-center">
-            <span className="rounded-full border border-border/60 bg-muted/40 px-3 py-1 text-[10px] font-medium text-muted-foreground">
-              Restored {restoredCount} earlier message{restoredCount === 1 ? "" : "s"} from your history
-            </span>
-          </div>
-        )}
-
-        <div ref={chatBottomRef} />
-      </div>
-
-      {/* ── Input Box Footer ─────────────────────────────────────────── */}
-      <div className="p-4 border-t border-border/60 bg-muted/10 shrink-0">
-        <div className="relative flex items-end gap-2 max-w-4xl mx-auto">
-          <textarea
-            ref={inputRef}
-            rows={1}
-            value={input}
-            onChange={(e) => setInput(e.target.value)}
-            onKeyDown={handleKeyDown}
-            disabled={sending || isGuestLimited}
-            placeholder={
-              isGuestLimited
-                ? "Guest limit reached — please log in to ask more questions."
-                : "Ask about any NEB concept, derivation, or formula (Enter to send, Shift+Enter for newline)..."
-            }
-            className="flex-1 max-h-32 min-h-[44px] py-2.5 px-4 rounded-2xl border border-border/80 bg-card text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none font-medium"
-          />
-
-          <button
-            onClick={handleEnhance}
-            disabled={!input.trim() || sending || enhancing || isGuestLimited}
-            className="h-11 w-11 rounded-2xl border border-primary/40 bg-primary/10 text-primary font-semibold flex items-center justify-center hover:bg-primary/20 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
-            title="Enhance my prompt — rewrite it into a sharper study question"
-            aria-label="Enhance prompt"
-          >
-            {enhancing ? (
-              <Loader2 className="h-4 w-4 animate-spin" />
-            ) : (
-              <Sparkles className="h-4 w-4" />
-            )}
-          </button>
-          <button
-            onClick={() => handleSend()}
-            disabled={!input.trim() || sending || isGuestLimited}
-            className="h-11 px-4 rounded-2xl bg-primary text-primary-foreground font-semibold text-xs flex items-center gap-1.5 shadow-sm hover:opacity-90 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
-            aria-label="Send message"
-          >
-            <span>Ask</span>
-            <Send className="h-3.5 w-3.5" />
-          </button>
+          <div ref={chatBottomRef} />
         </div>
 
-        <div className="mt-2 text-center text-[10px] text-muted-foreground/60 flex items-center justify-center gap-3">
-          <span>AI Tutor responses are grounded in NEB Class 11 &amp; 12 CDC syllabi.</span>
-          {!isLoggedIn && (
-            <span>
-              Free Guest Mode ·{" "}
-              <Link href="/login" className="text-primary hover:underline font-semibold">
-                Sign in for unlimited questions
-              </Link>
-            </span>
-          )}
+        {/* Composer */}
+        <div className="px-4 sm:px-6 py-4 border-t border-border/60 bg-muted/10 shrink-0">
+          <div className="relative flex items-end gap-2 max-w-4xl mx-auto">
+            <textarea
+              ref={inputRef}
+              rows={1}
+              value={input}
+              onChange={(e) => setInput(e.target.value)}
+              onKeyDown={handleKeyDown}
+              disabled={sending || composerLocked}
+              placeholder={
+                isGuestLimited
+                  ? "Guest limit reached — please log in to ask more questions."
+                  : creditsExhausted
+                    ? "Daily credits used up — your pool resets to 4 at 12:00 AM, or go PRO for unlimited."
+                    : "Ask me anything… ⚡ Enter to send · Shift+Enter for a new line"
+              }
+              className="flex-1 max-h-32 min-h-[44px] py-2.5 px-4 rounded-2xl border border-border/80 bg-card text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none font-medium"
+            />
+
+            <button
+              onClick={handleEnhance}
+              disabled={!input.trim() || sending || enhancing || composerLocked}
+              className="h-11 w-11 rounded-2xl border border-violet-500/40 bg-violet-500/10 text-violet-600 font-semibold flex items-center justify-center hover:bg-violet-500/20 hover:scale-105 active:scale-95 disabled:hover:scale-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
+              title="Enhance my prompt — rewrite it into a sharper study question"
+              aria-label="Enhance prompt"
+            >
+              {enhancing ? <Loader2 className="h-4 w-4 animate-spin" /> : <Sparkles className="h-4 w-4" />}
+            </button>
+            <button
+              onClick={() => handleSend()}
+              disabled={!input.trim() || sending || composerLocked}
+              className="h-11 px-4 rounded-2xl bg-gradient-to-r from-primary to-violet-500 text-primary-foreground font-semibold text-xs flex items-center gap-1.5 shadow-md shadow-primary/30 hover:shadow-lg hover:shadow-primary/40 hover:scale-[1.03] active:scale-95 disabled:hover:scale-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
+              aria-label="Send message"
+            >
+              <span>Send</span>
+              <Send className="h-3.5 w-3.5" />
+            </button>
+          </div>
+
+          <div className="mt-2 text-center text-[10px] text-muted-foreground/60 flex items-center justify-center gap-3 flex-wrap">
+            {isLoggedIn ? (
+              <span className="flex items-center gap-1">
+                <UserRound className="h-3 w-3" />
+                Each conversation is saved as its own chat history.
+              </span>
+            ) : (
+              <span>
+                Free guest mode ({Math.max(0, MAX_GUEST_MESSAGES - guestCount)} messages left) ·{" "}
+                <Link href="/login" className="text-primary hover:underline font-semibold">
+                  Sign in for unlimited questions &amp; saved histories
+                </Link>
+              </span>
+            )}
+          </div>
         </div>
       </div>
     </div>

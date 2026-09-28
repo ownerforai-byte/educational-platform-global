@@ -1,0 +1,5 @@
+{
+  "extends": "./tsconfig.json",
+  "include": ["next-env.d.ts", "components/lab/three-scene.ts", "components/lab/three-fx-registry.ts", "components/viz/viz-toolbar.tsx"],
+  "compilerOptions": { "noEmit": true }
+}

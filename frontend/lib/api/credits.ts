@@ -73,7 +73,7 @@ export async function getUserTransactions(): Promise<CreditTransaction[]> {
 
 export interface UnlockResponse {
   credits: number;
-  /** Unix epoch seconds — expiration = now + 7200. */
+  /** Unix epoch seconds — expiration = now + 1200. */
   expiresAt: number;
   /** Coins actually charged (0 for OWNER/ADMIN). */
   cost: number;

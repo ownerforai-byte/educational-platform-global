@@ -2,8 +2,8 @@ import express, { Express } from "express";
 import cookieParser from "cookie-parser";
 import { afterAll, beforeAll, beforeEach, describe, expect, test, vi, type Mock } from "vitest";
 
-vi.mock("../src/db/supabase", () => ({
-  supabaseAdmin: {
+vi.mock("../src/db/supabase", () => {
+  const admin = {
     auth: {
       signInWithPassword: vi.fn(),
       signUp: vi.fn(),
@@ -13,8 +13,14 @@ vi.mock("../src/db/supabase", () => ({
       admin: { updateUserById: vi.fn() },
     },
     from: vi.fn(),
-  },
-}));
+  };
+  return {
+    supabaseAdmin: admin,
+    // Prod uses a throwaway client per auth call (session isolation); the
+    // tests reuse the same mock so existing assertions hold.
+    createAuthClient: () => admin,
+  };
+});
 
 // Routers owned by another agent (resources/progress/bookmarks) are under
 // active concurrent edits; stub them so mounting the full app stays stable.
@@ -219,6 +225,42 @@ describe("auth flow", () => {
       role: "TEACHER",
     });
     expect(mocked.auth.getUser).toHaveBeenCalledWith(VALID_TOKEN);
+  });
+
+  test("a same-day page/token refresh never regains the daily credit pool", async () => {
+    // Fresh watermark (today) + a spent balance: two consecutive GET /me
+    // calls — the exact page-refresh path — must return the SAME balance
+    // and never trigger a refill log. Only the UTC rollover may top up.
+    const infoSpy = vi.spyOn(console, "info");
+    const today = new Date().toISOString().slice(0, 10);
+    mocked.auth.getUser.mockResolvedValue({
+      data: { user: { id: "user-1", email: "student@example.com" } },
+      error: null,
+    });
+    mockProfiles({
+      role: "STUDENT",
+      credits: 1,
+      credits_reset_date: today,
+      premium_status: false,
+    });
+
+    const first = await fetch(`${baseUrl}/api/auth/me`, {
+      headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
+    });
+    const second = await fetch(`${baseUrl}/api/auth/me`, {
+      headers: { Cookie: `sb-access-token=${VALID_TOKEN}` },
+    });
+
+    expect(first.status).toBe(200);
+    expect(second.status).toBe(200);
+    const b1 = await first.json();
+    const b2 = await second.json();
+    expect(b1.user.credits).toBe(1);
+    expect(b2.user.credits).toBe(1);
+    expect(
+      infoSpy.mock.calls.some((c) => String(c[0]).includes("daily reset")),
+    ).toBe(false);
+    infoSpy.mockRestore();
   });
 
   test("protected route GET /api/progress with valid cookie passes requireAuth (not 401)", async () => {
@@ -488,13 +530,21 @@ describe("auth flow", () => {
     expect(res.status).toBe(401);
   });
 
-  test("AI question generation requires authentication (was anonymous 200)", async () => {
+  test("AI question generation is guest-quota-gated (was anonymous unlimited)", async () => {
+    // 2026-09-27: guests are admitted through the metered daily pool
+    // (5/day, shared with guest chat) — but an EXHAUSTED pool must answer
+    // 402 before any AI call. Anonymous unlimited access stays blocked.
+    mocked.from.mockImplementationOnce(() =>
+      makeQueryChain({ data: { count: 999_999 }, error: null }),
+    );
     const res = await fetch(`${probeUrl}/api/ai/generate-questions`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ classSlug: "class-11", subjectSlug: "physics" }),
     });
-    expect(res.status).toBe(401);
+    expect(res.status).toBe(402);
+    const body = await res.json();
+    expect(body.error).toBe("Daily guest limit reached");
   });
 
   test("biology progress POST requires auth and stores the session user id", async () => {

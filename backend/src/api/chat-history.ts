@@ -54,6 +54,49 @@ async function insertWithRetry(
   return last;
 }
 
+/**
+ * GET /api/chat-history/sessions — the user's conversation list.
+ * One row per session: name, message count, last activity, and a preview
+ * snippet (first user message) so the sidebar can label each history.
+ */
+router.get("/sessions", requireAuth, async (req: Request, res: Response) => {
+  const user = (req as Request & { user: { id: string } }).user;
+
+  const { data, error } = await supabaseAdmin
+    .from("chat_messages")
+    .select("session, role, content, created_at")
+    .eq("user_id", user.id)
+    .order("created_at", { ascending: false })
+    .limit(500);
+
+  if (error) {
+    if (isMissingTable(error)) {
+      res.json({ sessions: [], migrated: false });
+      return;
+    }
+    res.status(500).json({ error: "Failed to load chat sessions" });
+    return;
+  }
+
+  const map = new Map<string, { session: string; messages: number; lastMessageAt: string; preview: string }>();
+  for (const row of data ?? []) {
+    const s = row.session || "default";
+    const entry = map.get(s) ?? { session: s, messages: 0, lastMessageAt: row.created_at, preview: "" };
+    entry.messages += 1;
+    map.set(s, entry);
+  }
+
+  // Rows arrive newest-first; walk them reversed so the preview ends up as
+  // each session's FIRST user message (a stable label for the sidebar).
+  for (const row of (data ?? []).slice().reverse()) {
+    if (row.role !== "user") continue;
+    const entry = map.get(row.session || "default");
+    if (entry && !entry.preview) entry.preview = row.content.slice(0, 80);
+  }
+
+  res.json({ sessions: Array.from(map.values()), migrated: true });
+});
+
 /** GET /api/chat-history?session=default&limit=200 — newest-last. */
 router.get("/", requireAuth, async (req: Request, res: Response) => {
   const user = (req as Request & { user: { id: string } }).user;

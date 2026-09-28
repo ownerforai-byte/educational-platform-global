@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Crown, Users, Crown as CrownIcon, Database, Settings, Activity, Home, Stethoscope } from "lucide-react";
+import { Crown, Users, Crown as CrownIcon, Database, Settings, Activity, Home, Stethoscope, Coins, MessageSquareText } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { isOwnerUser } from "@/lib/owner";
 import { cn } from "@/lib/utils";
@@ -11,6 +11,8 @@ import { cn } from "@/lib/utils";
 const navItems = [
   { href: "/owner", label: "Overview", icon: Activity, exact: true },
   { href: "/owner/users", label: "Users", icon: Users },
+  { href: "/owner/credits", label: "Credits", icon: Coins },
+  { href: "/owner/tracking", label: "Tracking", icon: MessageSquareText },
   { href: "/owner/premium", label: "Premium", icon: CrownIcon },
   { href: "/owner/content", label: "Content", icon: Database },
   { href: "/owner/activity", label: "Activity", icon: Activity },

@@ -1,6 +1,13 @@
 "use client";
 
-import React, { useCallback, useEffect, useLayoutEffect, useMemo, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react";
 import {
   ZoomIn,
   ZoomOut,
@@ -11,7 +18,14 @@ import {
   ChevronRight,
   X,
   MousePointerClick,
+  Shapes,
 } from "lucide-react";
+import {
+  KnowledgeBlock,
+  SymbolLegend,
+  examSymbol,
+  type KnowledgeRow,
+} from "@/components/lab/knowledge-block";
 import { matchConceptSchematic } from "@/components/lab/schematic-concepts";
 import { getUnitConcept } from "@/lib/visual-concept-map";
 
@@ -67,6 +81,30 @@ export function SchematicDiagram({
 }: SchematicDiagramProps) {
   const [expandedMap, setExpandedMap] = useState<Record<string, boolean>>({});
   const [selectedId, setSelectedId] = useState<string | null>(null);
+  // Hover preview: the knowledge block follows the pointer, click pins it.
+  const [hoverId, setHoverId] = useState<string | null>(null);
+  const hoverTimerRef = useRef<number | null>(null);
+
+  const cancelHoverClear = useCallback(() => {
+    if (hoverTimerRef.current !== null) {
+      window.clearTimeout(hoverTimerRef.current);
+      hoverTimerRef.current = null;
+    }
+  }, []);
+
+  const scheduleHoverClear = useCallback(() => {
+    cancelHoverClear();
+    hoverTimerRef.current = window.setTimeout(() => setHoverId(null), 280);
+  }, [cancelHoverClear]);
+
+  useEffect(
+    () => () => {
+      if (hoverTimerRef.current !== null) {
+        window.clearTimeout(hoverTimerRef.current);
+      }
+    },
+    [],
+  );
 
   const toggleExpanded = useCallback((annId: string) => {
     setExpandedMap((prev) => ({ ...prev, [annId]: !prev[annId] }));
@@ -82,10 +120,12 @@ export function SchematicDiagram({
   }, []);
 
   const collapseAll = useCallback(() => {
+    cancelHoverClear();
     setExpandedMap({});
     setSelectedId(null);
     setTour(null);
-  }, []);
+    setHoverId(null);
+  }, [cancelHoverClear]);
 
   // ── Motion & interaction state ──
   const reduceMotion =
@@ -780,7 +820,55 @@ export function SchematicDiagram({
     unitId,
   ]);
 
-  const selected = diagramData.annotations.find((a) => a.id === selectedId) ?? null;
+  // Knowledge target: hover previews a chip, click pins it (the pinned chip is
+  // the fallback whenever the pointer is not over another one).
+  const activeId = hoverId ?? selectedId;
+  const activeAnn = diagramData.annotations.find((a) => a.id === activeId) ?? null;
+  const activeRows: KnowledgeRow[] = activeAnn
+    ? [
+        ...(activeAnn.formulaOrValue
+          ? [{ symbol: "ƒ", text: activeAnn.formulaOrValue, mono: true }]
+          : []),
+        { symbol: examSymbol(activeAnn.examNote), text: activeAnn.examNote },
+      ]
+    : [];
+
+  // Floating block anchor: measured against the hovered chip before paint so
+  // it never lands outside the sheet or on top of the pointer.
+  const canvasRef = useRef<HTMLDivElement>(null);
+  const [blockPos, setBlockPos] = useState<{ left: number; top: number } | null>(
+    null,
+  );
+  useLayoutEffect(() => {
+    if (!activeAnn) {
+      setBlockPos(null);
+      return;
+    }
+    const canvas = canvasRef.current;
+    const block = canvas?.querySelector<HTMLElement>("[data-knowledge-block]");
+    if (!canvas || !block) return;
+    const chip = canvas.querySelector<HTMLElement>(
+      `.schem-chip[data-ann-id="${activeAnn.id}"]`,
+    );
+    const c = canvas.getBoundingClientRect();
+    const b = block.getBoundingClientRect();
+    let left: number;
+    let top: number;
+    if (chip) {
+      const ch = chip.getBoundingClientRect();
+      left = ch.left - c.left + ch.width / 2 - b.width / 2;
+      top = ch.bottom - c.top + 10;
+      // Below the chip would overflow the sheet — flip above it.
+      if (top + b.height > c.height - 8) top = ch.top - c.top - b.height - 10;
+    } else {
+      left = c.width - b.width - 12;
+      top = 12;
+    }
+    left = Math.max(8, Math.min(left, c.width - b.width - 8));
+    top = Math.max(8, Math.min(top, c.height - b.height - 8));
+    setBlockPos({ left, top });
+  }, [activeAnn]);
+
   conceptAnnotationsRef.current = diagramData.annotations;
   const revealedCount = diagramData.annotations.filter((a) => expandedMap[a.id]).length;
 
@@ -868,9 +956,29 @@ export function SchematicDiagram({
     ? diagramData.annotations.find((a) => a.id === hoveredId) ?? null
     : null;
 
+  const totalParts = diagramData.annotations.length;
+  const slugParts = topicSlug.split(/[^a-z0-9]+/i).filter(Boolean);
+  let drawingName = "";
+  for (const part of slugParts) {
+    const next = drawingName ? `${drawingName}-${part}` : part;
+    if (next.length > 12) break;
+    drawingName = next;
+  }
+  if (!drawingName && slugParts[0]) drawingName = slugParts[0].slice(0, 12);
+  const drawingNo = `SCH-${normalizedSubject.slice(0, 3).toUpperCase()}-${(
+    drawingName || "general"
+  ).toUpperCase()}`;
+  const subjectColor: Record<string, string> = {
+    physics: "#38bdf8",
+    chemistry: "#10b981",
+    biology: "#22c55e",
+    mathematics: "#a855f7",
+  };
+  const accent = subjectColor[normalizedSubject] ?? "#38bdf8";
+
   return (
     <div
-      className={`space-y-3 ${className}`}
+      className={`viz-in space-y-3 ${className}`}
       tabIndex={0}
       role="group"
       aria-label="Interactive schematic"
@@ -878,22 +986,38 @@ export function SchematicDiagram({
       style={{ outline: "none" }}
     >
       <style>{SD_CSS}</style>
-      {/* ── Toolbar: label reveal controls + status ── */}
-      <div className="flex flex-wrap items-center justify-between gap-2">
-        <div className="flex flex-wrap items-center gap-x-2 gap-y-1 text-xs text-muted-foreground">
-          <span className="font-semibold text-foreground">
-            {diagramData.annotations.length} labelled parts
+      {/* ── ISO title block: what this drawing is + reveal controls ── */}
+      <div
+        className="card-viz-iso-title relative flex flex-wrap items-center gap-2 rounded-xl border border-border/70 bg-card px-3 py-2.5 shadow-sm sm:px-4"
+        style={{ color: accent }}
+      >
+        <span className="chip" data-variant="subject">
+          <Shapes className="h-3.5 w-3.5" />
+          Interactive Schematic
+        </span>
+        <span className="chip">{totalParts} labelled parts</span>
+        <span
+          className="chip"
+          data-variant={diagramData.specific ? undefined : "neb"}
+          title={
+            diagramData.specific
+              ? "This drawing was authored for this concept"
+              : "This topic has no dedicated drawing — showing the general fallback sheet"
+          }
+        >
+          {diagramData.specific ? "Topic-matched drawing" : "General fallback drawing"}
+        </span>
+
+        <div className="hidden min-w-4 flex-1 sm:block" />
+
+        <span className="chip tabular-nums" title="Parts revealed so far">
+          <span className="font-bold text-foreground">
+            {revealedCount}/{totalParts}
           </span>
-          <span aria-hidden>·</span>
-          <span>
-            {diagramData.specific
-              ? "Topic-specific schematic — matched to this concept"
-              : "General schematic — this topic has no dedicated drawing yet"}
-          </span>
-          <span aria-hidden>·</span>
-          <span>{revealedCount} revealed</span>
-        </div>
-        <div className="flex flex-wrap items-center gap-1.5">
+          revealed
+        </span>
+
+        <div className="flex items-center gap-1.5">
           <button
             type="button"
             onClick={startTour}
@@ -913,18 +1037,18 @@ export function SchematicDiagram({
           >
             <ListTree className="h-3 w-3" /> Parts index
           </button>
-          <span className="mx-1 hidden h-4 w-px bg-border sm:block" />
           <button
             type="button"
             onClick={revealAll}
             className="rounded-lg border border-primary/30 bg-primary/10 px-2.5 py-1 text-[11px] font-bold text-primary transition-colors hover:bg-primary/20"
           >
-            Reveal all labels
+            Reveal all
           </button>
           <button
             type="button"
             onClick={collapseAll}
-            className="rounded-lg border border-border px-2.5 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary"
+            disabled={revealedCount === 0}
+            className="rounded-lg border border-border px-2.5 py-1 text-[11px] font-medium text-muted-foreground transition-colors hover:border-primary/40 hover:text-primary disabled:opacity-40"
           >
             Collapse all
           </button>
@@ -962,6 +1086,10 @@ export function SchematicDiagram({
             <Maximize className="h-3.5 w-3.5" />
           </button>
         </div>
+
+        <span className="iso-drawing-no hidden shrink-0 whitespace-nowrap md:inline-flex" aria-hidden>
+          {drawingNo}
+        </span>
       </div>
 
       {/* ── Guided walk-through banner ── */}
@@ -1003,12 +1131,16 @@ export function SchematicDiagram({
         </div>
       )}
 
-      <div ref={wrapRef} className="relative">
+      {/* ── Drawing sheet: blueprint grid, pans instead of shrinking ── */}
+      <div className="viz-canvas" ref={canvasRef}>
+        <div ref={wrapRef} className="viz-scroll relative z-10 overflow-x-auto px-3 py-6 sm:px-5">
       <svg
         ref={svgRef}
         viewBox={diagramData.viewBox}
-        className="sd-art block w-full h-auto select-none"
+        className="sd-art block h-auto w-full min-w-[640px] select-none sm:min-w-[720px]"
         style={{ overflow: "visible", touchAction: "none", cursor: "grab" }}
+        role="img"
+        aria-label={`Annotated schematic: ${topicTitle}`}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={endDrag}
@@ -1040,16 +1172,42 @@ export function SchematicDiagram({
       {diagramData.annotations.map((ann, idx) => {
         const cColor = ann.color || "#38bdf8";
         const expanded = expandedMap[ann.id] ?? false;
-        const isSelected = selectedId === ann.id;
+        const isSelected = activeId === ann.id;
         const chipLabel = ann.label.length > 36 ? `${ann.label.slice(0, 34)}…` : ann.label;
         const chipW = chipLabel.length * 5.9 + 20;
+        // Chips anchored near the right edge flip to the left of their pin so
+        // the drawing sheet never has to clip a label off the card.
+        const flip = ann.labelX + chipW + 8 > 900;
+        const rectX = flip ? -chipW + 8 : -8;
+        const textX = flip ? -9 : 9;
+        const dotX = flip ? -1 : 1;
 
         return (
           <g
             key={`chip-${ann.id}`}
-            className="sd-chip"
-            style={{ cursor: "pointer", animationDelay: reduceMotion ? "0ms" : `${idx * 70}ms` }}
+            className="schem-chip sd-chip"
+            data-ann-id={ann.id}
+            role="button"
+            tabIndex={0}
+            aria-pressed={expanded}
+            aria-label={`${ann.label}${expanded ? " — revealed" : ""}`}
             transform={`translate(${ann.labelX}, ${ann.labelY})`}
+            style={{
+              cursor: "pointer",
+              animationDelay: reduceMotion ? "0ms" : `${idx * 70}ms`,
+              filter: isSelected ? `drop-shadow(0 4px 10px ${cColor}66)` : undefined,
+            }}
+            onPointerEnter={() => {
+              cancelHoverClear();
+              setHoverId(ann.id);
+            }}
+            onPointerLeave={scheduleHoverClear}
+            onKeyDown={(e) => {
+              if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                toggleExpanded(ann.id);
+              }
+            }}
             onClick={(e) => {
               if (didDragRef.current) return;
               e.stopPropagation();
@@ -1059,19 +1217,20 @@ export function SchematicDiagram({
             onMouseLeave={() => setHoveredId((h) => (h === ann.id ? null : h))}
           >
             <rect
-              x={-8}
+              x={rectX}
               y={-15}
               width={chipW}
               height={21}
-              rx={10}
+              rx={10.5}
               className="fill-card"
               stroke={cColor}
               strokeWidth={isSelected ? 2.6 : expanded ? 2 : 1.4}
             />
-            <circle cx={1} cy={-4.5} r={3.4} fill={cColor} />
+            <circle cx={dotX} cy={-4.5} r={3.4} fill={cColor} />
             <text
-              x={9}
+              x={textX}
               y={-0.8}
+              textAnchor={flip ? "end" : "start"}
               fontSize={10.5}
               fontWeight={700}
               fill={cColor}
@@ -1108,6 +1267,7 @@ export function SchematicDiagram({
         const a2x = ann.targetX - headLen * Math.cos(angle + halfApex);
         const a2y = ann.targetY - headLen * Math.sin(angle + halfApex);
         const headD = `M ${a1x} ${a1y} L ${ann.targetX} ${ann.targetY} L ${a2x} ${a2y}`;
+        const active = expanded || activeId === ann.id;
 
         const pinR = expanded ? 11 : 7;
         const pinInnerR = expanded ? 4.2 : 2.8;
@@ -1123,10 +1283,15 @@ export function SchematicDiagram({
           : { animationDelay: delay };
 
         return (
-          <g key={ann.id} data-ann-id={ann.id} data-expanded={expanded ? "1" : "0"}>
+          <g
+            key={ann.id}
+            data-ann-id={ann.id}
+            data-expanded={expanded ? "1" : "0"}
+            style={{ color: cColor }}
+          >
             <path
               data-conn-id={ann.id}
-              className={reduceMotion ? undefined : "sd-conn"}
+              className={`schem-line${active ? " is-active" : ""}${reduceMotion ? "" : " sd-conn"}`}
               d={pathD}
               fill="none"
               stroke={cColor}
@@ -1136,7 +1301,19 @@ export function SchematicDiagram({
               style={connPathStyle}
             />
 
-            <path d={headD} fill={cColor} stroke="none" className="sd-pin" style={pinStyle} />
+            <path d={headD} fill={cColor} stroke="none" className="schem-target sd-pin" style={pinStyle} />
+
+            {activeId === ann.id && (
+              <circle
+                cx={ann.targetX}
+                cy={ann.targetY}
+                r={11}
+                fill="none"
+                stroke={cColor}
+                strokeWidth={2}
+                className="schem-ring is-active"
+              />
+            )}
 
             <circle
               cx={ann.targetX}
@@ -1145,7 +1322,7 @@ export function SchematicDiagram({
               fill={cColor}
               stroke="#ffffff"
               strokeWidth={expanded ? 2 : 1.5}
-              className="sd-pin"
+              className={`schem-target sd-pin${active ? " is-active" : ""}`}
               style={pinStyle}
             />
 
@@ -1153,10 +1330,9 @@ export function SchematicDiagram({
               cx={cx}
               cy={cy}
               r={pinR}
-              fill="#ffffff"
+              className="fill-card sd-pin"
               stroke={cColor}
               strokeWidth={expanded ? 2.8 : 2.2}
-              className="sd-pin"
               style={{ cursor: "pointer", ...pinStyle }}
               onClick={(e) => {
                 if (didDragRef.current) return;
@@ -1233,7 +1409,6 @@ export function SchematicDiagram({
           )}
         </div>
       )}
-      </div>
 
       {/* ── Parts index: accessible list of every labelled part ── */}
       {showIndex && (
@@ -1267,50 +1442,36 @@ export function SchematicDiagram({
         </div>
       )}
 
-      {/* ── Detail drawer: the clicked label's formula + exam note ── */}
-      {selected ? (
-        <div
-          key={selected.id}
-          className="sd-drawer rounded-2xl border bg-card p-4 space-y-2 shadow-sm"
-          style={{ borderColor: `${selected.color || "#38bdf8"}66` }}
-        >
-          <div className="flex flex-wrap items-center justify-between gap-2">
-            <div className="flex items-center gap-2 min-w-0">
-              <span
-                className="h-3 w-3 shrink-0 rounded-full"
-                style={{ backgroundColor: selected.color || "#38bdf8" }}
-              />
-              <h4 className="text-sm font-bold text-foreground truncate">{selected.label}</h4>
-            </div>
-            <button
-              type="button"
-              onClick={() => setSelectedId(null)}
-              className="text-[11px] font-medium text-muted-foreground transition-colors hover:text-foreground"
-            >
-              Close
-            </button>
-          </div>
-          {selected.formulaOrValue && (
-            <p
-              className="rounded-lg px-3 py-2 font-mono text-xs font-semibold"
-              style={{
-                backgroundColor: `${selected.color || "#38bdf8"}14`,
-                color: selected.color || "#38bdf8",
-              }}
-            >
-              {selected.formulaOrValue}
-            </p>
-          )}
-          <p className="text-xs leading-relaxed text-muted-foreground">
-            <span className="font-bold text-foreground">Exam pointer: </span>
-            {selected.examNote}
-          </p>
         </div>
-      ) : (
-        <p className="rounded-xl border border-dashed border-border/70 px-4 py-2.5 text-center text-[11px] text-muted-foreground">
-          Click any labelled pin or chip on the diagram to reveal its value and exam pointer here.
+        <p className="viz-pan-hint relative z-10 px-4 pb-3 text-center text-[10px] font-semibold uppercase tracking-wider text-muted-foreground sm:hidden">
+          ↔ Drag the sheet sideways to pan
         </p>
-      )}
+
+        {/* Floating knowledge block — dense symbol-led facts over the sheet */}
+        {activeAnn && (
+          <KnowledgeBlock
+            title={activeAnn.label}
+            color={activeAnn.color || "#38bdf8"}
+            rows={activeRows}
+            onClose={() => {
+              cancelHoverClear();
+              setHoverId(null);
+              setSelectedId(null);
+            }}
+            style={{
+              left: blockPos?.left ?? -9999,
+              top: blockPos?.top ?? -9999,
+              visibility: blockPos ? "visible" : "hidden",
+            }}
+            onPointerEnter={cancelHoverClear}
+            onPointerLeave={scheduleHoverClear}
+          />
+        )}
+
+        {/* Permanent symbol legend — meanings stay, usages show on demand */}
+        <SymbolLegend hint="hover / tap a label" />
+      </div>
+
     </div>
   );
 }

@@ -33,6 +33,15 @@ export function LoginForm() {
       const next = searchParams.get("next");
       const target = next && next.startsWith("/") && !next.startsWith("//") ? next : "/home";
       router.push(target);
+    } else if (result.code === "PENDING_APPROVAL" && result.statusToken) {
+      // Waiting for approval → MUST land on the pending-status screen, not
+      // stranded on this form with an error the student cannot act on.
+      try {
+        localStorage.setItem("neb_signup_status_token", result.statusToken);
+      } catch {
+        /* storage blocked — /welcome falls back to its missing-token state */
+      }
+      router.push("/welcome");
     } else {
       setError(result.error);
     }

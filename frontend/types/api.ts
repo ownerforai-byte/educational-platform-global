@@ -30,6 +30,9 @@ export interface AuthSignupResponse {
   user: SessionUser | null;
   message?: string;
   accessToken?: string;
+  /** Owner-approval flow: signed token for the /welcome status screen. */
+  statusToken?: string;
+  accessStatus?: "PENDING" | "ACTIVE" | "REJECTED";
 }
 
 export interface AuthRefreshResponse {
@@ -326,6 +329,12 @@ export interface AIChatRequest {
 export interface AIChatResponse {
   response: string;
   provider: string;
+  /** Credits left after this message's 1-credit spend (logged users). */
+  credits?: number;
+  /** Guest messages left in today's 5-message pool. */
+  remaining?: number;
+  /** The guest daily pool size (2). */
+  limit?: number;
 }
 
 export interface AISearchRequest {
@@ -359,4 +368,8 @@ export interface GenerateQuestionsResponse {
   questions: GeneratedQuestion[];
   provider: string;
   topic?: string;
+  /** Guest pool only: messages left AFTER this generation (server-attested). */
+  remaining?: number;
+  /** Guest pool only: the daily limit the remaining was measured against. */
+  limit?: number;
 }

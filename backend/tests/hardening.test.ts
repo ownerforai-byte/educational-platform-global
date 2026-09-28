@@ -120,7 +120,12 @@ const h = vi.hoisted(() => {
   };
 });
 
-vi.mock("../src/db/supabase", () => ({ supabaseAdmin: h.supabaseAdmin }));
+vi.mock("../src/db/supabase", () => ({
+  supabaseAdmin: h.supabaseAdmin,
+  // Auth calls run on a throwaway client in prod (session isolation); tests
+  // reuse the same mocked client so signIn/refresh assertions keep working.
+  createAuthClient: () => h.supabaseAdmin,
+}));
 
 const resourcesRouter = (await import("../src/api/resources")).default;
 const progressRouter = (await import("../src/api/progress")).default;

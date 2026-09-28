@@ -18,6 +18,9 @@
 
 import type { ConceptAnnotation } from "@/components/lab/schematic-concepts";
 import type { MindMapBranch } from "@/components/lab/topic-mindmap";
+import { MINDMAP_DEPTH, type UnitDepth, type LeafDepth } from "./mindmap-depth";
+// side-effect import: registers every authored depth pack into MINDMAP_DEPTH
+import "./mindmap-depth-index";
 
 export interface UnitConcept {
   /** Human name shown in the schematic status line. */
@@ -29,6 +32,41 @@ export interface UnitConcept {
   renderSvg: () => React.ReactNode;
   /** Mindmap branches for the same unit. */
   branches: MindMapBranch[];
+  /**
+   * Unit-level depth: the exceptional cases / exam-asked / traps that apply
+   * to the whole unit rather than to a single leaf. Attached by
+   * {@link getUnitConcept}; absent for units with no authored pack.
+   */
+  depth?: UnitDepth;
+}
+
+/**
+ * Merge a leaf's depth pack onto it without mutating the registry: the
+ * registry objects are module-level constants shared across every render, so
+ * they must stay pristine.
+ */
+function withDepth(node: MindMapBranch["subBranches"][number]["nodes"][number], pack?: LeafDepth) {
+  if (!pack) return node;
+  return {
+    ...node,
+    keyFacts: pack.keyFacts,
+    edgeCases: pack.edgeCases,
+    examAsked: pack.examAsked,
+    commonMistakes: pack.commonMistakes,
+  };
+}
+
+/** Apply a unit's depth pack to a copy of its branch tree. */
+function applyDepth(branches: MindMapBranch[], depth?: UnitDepth): MindMapBranch[] {
+  if (!depth?.leaves) return branches;
+  return branches.map((b) => ({
+    ...b,
+    subBranches: b.subBranches.map((sb) => ({
+      ...sb,
+      nodes: sb.nodes.map((n) => withDepth(n, depth.leaves?.[n.id])),
+    })),
+    nodes: b.nodes.map((n) => withDepth(n, depth.leaves?.[n.id])),
+  }));
 }
 
 const C = {
@@ -559,6 +597,20 @@ export const UNIT_CONCEPTS: Record<string, UnitConcept> = {
   },
 };
 
+/** Wrap a registry entry with its depth pack (pure — never mutates the source). */
+function enrich(entry: UnitConcept, unitId: string): UnitConcept {
+  const depth = MINDMAP_DEPTH[unitId];
+  if (!depth) return entry;
+  return { ...entry, branches: applyDepth(entry.branches, depth), depth };
+}
+
+/** Exact unit-id lookup with no keyword guessing — lets callers prefer
+ *  unit-specific branches over a shared keyword match. */
+export function getExactUnitConcept(unitId: string): UnitConcept | undefined {
+  const direct = UNIT_CONCEPTS[unitId];
+  return direct ? enrich(direct, unitId) : undefined;
+}
+
 /** Resolver: exact unit id first, then topic-keyword refinement across all entries. */
 export function getUnitConcept(
   unitId: string,
@@ -566,7 +618,7 @@ export function getUnitConcept(
   topicTitle = "",
 ): UnitConcept | undefined {
   const direct = UNIT_CONCEPTS[unitId];
-  if (direct) return direct;
+  if (direct) return enrich(direct, unitId);
 
   // Keyword pass: a topic may sit in a unit we haven't authored but share a
   // concept with an authored one (e.g. unit aliases, merged units).
@@ -585,7 +637,7 @@ export function getUnitConcept(
   };
   for (const [uid, hints] of Object.entries(KEY_HINTS)) {
     if (UNIT_CONCEPTS[uid] && hints.some((h) => hay.includes(h))) {
-      return UNIT_CONCEPTS[uid];
+      return enrich(UNIT_CONCEPTS[uid], uid);
     }
   }
   return undefined;

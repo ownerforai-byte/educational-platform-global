@@ -6,7 +6,7 @@
  *   - <CreditGate>      → blur/overlay any coin-gated block
  *   - <DirectoryCard>   → the single gated opening for the academic directory
  *   - useCredit()       → session, coins, unlock windows, notice control
- *   - useSessionTimer() → frame-by-frame 2-hour countdown
+ *   - useSessionTimer() → frame-by-frame unlock countdown
  */
 
 export { CreditProvider, useCredit } from "./credit-provider";

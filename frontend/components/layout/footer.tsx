@@ -1,10 +1,14 @@
+"use client";
+
 import Link from "next/link";
+import { useSession } from "@/features/auth/hooks/use-session";
 import {
   Atom,
   BookOpen,
   FlaskConical,
   GraduationCap,
   Instagram,
+  Mail,
   Sparkles,
   ExternalLink,
   ListTree,
@@ -15,9 +19,42 @@ import {
   Compass,
   Search,
   ShieldCheck,
+  Gem,
+  Info,
 } from "lucide-react";
 
 export function Footer() {
+  const { user, isLoading } = useSession();
+  // Owner rule (2026-09-27): the plan stays visible after login with the
+  // current coin pricing — only confirmed signed-out visitors get the same
+  // credits priced in $ (they have no coin wallet to read). While the
+  // session resolves, keep the coin plan on screen so neither side flashes.
+  const showCoins = isLoading || !!user;
+  const planRows: [string, string][] = showCoins
+    ? [
+        ["AI chat reply & quiz generation", "1 credit"],
+        ["Guest pool (signed out)", "2 free / day"],
+        ["Signed-in daily pool", "4 / day"],
+        ["Core syllabus notes & chapters", "1 coin · 20 min"],
+        ["Reference & PYQ sets", "1 coin · 20 min"],
+        ["HD visuals — diagrams & maps", "2 coins"],
+        ["3D / AR simulation labs", "5 coins"],
+        ["Pro plan — AI + notes credits", "Unlimited"],
+      ]
+    : [
+        // Owner rates (2026-09-28): AI chat $0.05 → $0.16 per reply; all other
+        // rates scaled by the same ×3.2 factor; unlimited Pro plan $4.99 → $29.99.
+        // Coin/credit costs above stay untouched — only dollar prices moved.
+        ["AI chat reply & quiz generation", "$0.16 / reply"],
+        ["Guest pool (signed out)", "2 free / day"],
+        ["Signed-in daily pool", "4 free / day"],
+        ["Core syllabus notes & chapters", "$0.32 · 20 min"],
+        ["Reference & PYQ sets", "$0.32 · 20 min"],
+        ["HD visuals — diagrams & maps", "$0.64"],
+        ["3D / AR simulation labs", "$1.60"],
+        ["Pro plan — AI + notes credits", "$29.99 / mo"],
+      ];
+
   return (
     <footer className="border-t border-border/60 bg-card/60 backdrop-blur-xl mt-auto">
       <div className="mx-auto max-w-7xl px-4 md:px-6 py-10 sm:py-14 space-y-10">
@@ -67,12 +104,12 @@ export function Footer() {
                 </Link>
               </p>
               <p className="text-[11px] text-muted-foreground/70 mt-1 flex items-center gap-1.5">
-                <Instagram className="h-3 w-3 text-pink-500" />
+                <Mail className="h-3 w-3 text-primary" />
                 <Link
-                  href="https://www.instagram.com/___unxknown___player"
+                  href="mailto:ravikisan1814@gmail.com"
                   className="hover:text-foreground transition-colors underline decoration-border hover:decoration-foreground"
                 >
-                  @___unxknown___player
+                  ravikisan1814@gmail.com
                 </Link>
               </p>
             </div>
@@ -200,6 +237,50 @@ export function Footer() {
               </p>
             </div>
           </div>
+        </div>
+
+        {/* ── Pro Plan — AI & Note Credits (hardcoded coin price list) ── */}
+        <div className="rounded-2xl border border-primary/25 bg-gradient-to-br from-primary/5 via-card to-amber-500/5 p-4 sm:p-5 space-y-3">
+          <div className="flex items-center justify-between gap-3 flex-wrap">
+            <h4 className="text-xs font-bold uppercase tracking-widest text-foreground flex items-center gap-1.5">
+              <Gem className="h-3.5 w-3.5 text-amber-500" />
+              <span>Pro Plan — AI &amp; Note Credits</span>
+            </h4>
+            <span className="inline-flex items-center gap-1 rounded-full border border-amber-500/30 bg-amber-500/10 px-2.5 py-0.5 text-[10px] font-extrabold uppercase tracking-wider text-amber-600 dark:text-amber-400">
+              Fixed daily pools · refill at 12:00 AM
+            </span>
+          </div>
+
+          <div className="grid gap-2 sm:grid-cols-2 lg:grid-cols-3">
+            {planRows.map(([label, price]) => (
+              <div
+                key={label}
+                className="flex items-center justify-between gap-3 rounded-xl border border-border/60 bg-background/60 px-3 py-2"
+              >
+                <span className="text-[11px] font-medium text-muted-foreground">
+                  {label}
+                </span>
+                <span className="text-[11px] font-extrabold text-foreground whitespace-nowrap">
+                  {price}
+                </span>
+              </div>
+            ))}
+          </div>
+
+          <p className="text-[11px] text-muted-foreground leading-relaxed flex items-start gap-1.5">
+            <Info className="h-3.5 w-3.5 shrink-0 mt-0.5 text-primary" />
+            <span>
+              Pools are fixed and cannot be topped up by refreshing — a spent
+              pool refills only at 12:00 AM, or go <strong className="text-foreground">PRO</strong> for
+              unlimited AI &amp; note credits.
+              {!showCoins &&
+                " Signed-out preview: prices shown in USD — sign in for coin credits."}
+            </span>
+          </p>
+
+          <p className="text-[11px] font-semibold italic text-muted-foreground border-t border-border/40 pt-3">
+            “Costing free worth nothing but a paid hit in mind”
+          </p>
         </div>
 
         {/* ── Bottom Bar & Quick Route Links ── */}

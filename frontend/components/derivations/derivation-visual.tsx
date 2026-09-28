@@ -6484,7 +6484,9 @@ case "avogadros-law-deduction":
   };
 
   return (
-    <div className={`rounded-2xl border border-border/80 bg-card overflow-hidden shadow-sm ${className}`}>
+    <div
+      className={`viz-in rounded-2xl border border-border/80 bg-card overflow-hidden shadow-sm transition-shadow hover:shadow-[0_0_28px_hsl(var(--primary)/0.16)] ${className}`}
+    >
       {/* Shared SVG defs sprite: the arrow markers referenced via url(#…)
           across every visual (the old inline <defs> was dead JSX code that
           never rendered). Rendered once, hidden, document-wide. */}
@@ -6510,7 +6512,13 @@ case "avogadros-law-deduction":
         <div className="flex items-center gap-2">
           <button
             onClick={() => setShowAnnotations((prev) => !prev)}
-            className="flex items-center gap-1 text-[11px] font-semibold text-muted-foreground hover:text-foreground transition-colors px-2 py-0.5 rounded-md hover:bg-muted"
+            aria-pressed={showAnnotations}
+            aria-label={showAnnotations ? "Hide drawing annotations" : "Show drawing annotations"}
+            className={`flex items-center gap-1 text-[11px] font-semibold transition-colors px-2 py-0.5 rounded-md ${
+              showAnnotations
+                ? "text-primary bg-primary/10 hover:bg-primary/20"
+                : "text-muted-foreground hover:text-foreground hover:bg-muted"
+            }`}
           >
             <Eye className="h-3 w-3" />
             <span>{showAnnotations ? "Hide Notes" : "Show Notes"}</span>
@@ -6518,8 +6526,10 @@ case "avogadros-law-deduction":
         </div>
       </div>
 
-      {/* SVG Canvas */}
-      <div className="p-3 sm:p-4 bg-gradient-to-b from-card to-background/50 flex items-center justify-center">
+      {/* SVG Canvas — always-dark blueprint sheet: these SVGs use a fixed
+          light-on-dark palette (near-white labels, #0b1220 panels), so a
+          theme-tinted background would erase them in light mode. */}
+      <div className="viz-sheet p-3 sm:p-4 flex items-center justify-center">
         {renderVisualContent()}
       </div>
     </div>

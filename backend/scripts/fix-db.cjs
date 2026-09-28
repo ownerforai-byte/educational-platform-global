@@ -8,8 +8,13 @@ async function main() {
   const ravikishan = users.users.find(u => u.email === 'ravikishan1814@gmail.com');
   console.log('ravikishan id:', ravikishan?.id);
   if (ravikishan) {
-    const { error } = await sb.auth.admin.updateUserById(ravikishan.id, { password: 'Ravikisan@1814' });
-    console.log('password reset:', error?.message || 'OK');
+    const newPassword = process.env.OWNER_NEW_PASSWORD || process.env.OWNER_PASSWORD_RAVI;
+    if (!newPassword) {
+      console.log('password reset: skipped (set OWNER_NEW_PASSWORD to rotate the owner password)');
+    } else {
+      const { error } = await sb.auth.admin.updateUserById(ravikishan.id, { password: newPassword });
+      console.log('password reset:', error?.message || 'OK');
+    }
   }
 
   // 2. Fix profiles table - add full_name column if missing

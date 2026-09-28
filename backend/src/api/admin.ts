@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import { z } from "zod";
 import { requireAuth, type AuthedRequest } from "../middleware/auth";
 import { supabaseAdmin } from "../db/supabase";
+import { authEmailsById } from "../utils/authEmails";
 
 const router = Router();
 
@@ -30,17 +31,20 @@ router.get("/users", requireAuth, async (req: Request, res: Response) => {
   }
 
   try {
+    // No `email` on profiles (it would be PII in an open-policy table) —
+    // resolve Gmails from GoTrue and merge them in; selecting the nonexistent
+    // column made this route 500 (found 2026-09-26).
     const { data, error } = await supabaseAdmin
       .from("profiles")
       .select(`
         id,
         full_name,
-        email,
         role,
         credits,
         credits_limit,
         premium_status,
         premium_approved_at,
+        access_status,
         created_at
       `)
       .order("created_at", { ascending: false });
@@ -50,6 +54,8 @@ router.get("/users", requireAuth, async (req: Request, res: Response) => {
       res.status(500).json({ error: "Failed to fetch users" });
       return;
     }
+
+    const emails = await authEmailsById();
 
     // Perf 2026-09-25: one batched query for pending premium request counts
     // (was one head-count query PER user — O(N) on every admin page load).
@@ -71,6 +77,7 @@ router.get("/users", requireAuth, async (req: Request, res: Response) => {
 
     const enriched = (data ?? []).map((p: any) => ({
       ...p,
+      email: emails.get(String(p.id)) ?? "",
       pendingPremiumRequests: pendingCounts.get(p.id) ?? 0,
     }));
 

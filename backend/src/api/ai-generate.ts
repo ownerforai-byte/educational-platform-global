@@ -1,10 +1,18 @@
-import { Router, Request, Response } from "express";
+import { Router, Request, Response, NextFunction } from "express";
 import { serverError } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { supabaseAdmin } from "../db/supabase";
 import { rateLimit } from "../middleware/rateLimit";
-import { requireAuth } from "../middleware/auth";
+import { getUserFromRequest, type AuthedRequest } from "../middleware/auth";
 import { requireCredit } from "../middleware/creditCheck";
+import {
+  GUEST_DAILY_LIMIT,
+  consumeGuestSlot,
+  getGuestDeviceId,
+  issueGuestDeviceCookie,
+  rollbackGuestSlot,
+} from "../utils/guestQuota";
+import { DAILY_CREDIT_POOL } from "../utils/credits";
 
 const router = Router();
 
@@ -13,6 +21,87 @@ let _service: ReturnType<typeof createAIService> | null = null;
 function getService() {
   if (!_service) _service = createAIService();
   return _service;
+}
+
+/** Guest client IP (mirrors ai-guest.ts). */
+function getClientId(req: Request): string {
+  const forwarded = req.headers["x-forwarded-for"];
+  if (forwarded) {
+    const first = typeof forwarded === "string" ? forwarded.split(",")[0] : forwarded[0];
+    if (first?.trim()) return first.trim();
+  }
+  return req.ip ?? "unknown";
+}
+
+type GuestGateRequest = Request & {
+  guestSlot?: { ip: string; deviceId: string; remaining: number };
+};
+
+/**
+ * Access gate (2026-09-27, owner decision): the quiz must work for
+ * signed-OUT visitors too, but never anonymously unlimited.
+ *
+ *   - signed-in → attach the session user; the credit guard below bills
+ *     their daily pool exactly as before,
+ *   - guest     → consume ONE slot from the SAME DB-backed daily pool as
+ *     guest chat (GUEST_DAILY_LIMIT/day under cookie + IP dual identity),
+ *   - exhausted → 402 with a human message, storage down → 503 retryable.
+ *
+ * The 2026-09-25 hardening intent (no free unlimited AI) still holds — this
+ * only re-opens a metered window instead of a blanket 401.
+ */
+async function authOrGuestQuota(req: Request, res: Response, next: NextFunction): Promise<void> {
+  try {
+    const user = await getUserFromRequest(req);
+    if (user) {
+      (req as AuthedRequest).user = user;
+      next();
+      return;
+    }
+
+    const ip = getClientId(req);
+    const deviceId = getGuestDeviceId(req) ?? issueGuestDeviceCookie(res);
+    const slot = await consumeGuestSlot(ip, deviceId);
+    if (slot.status === "limited") {
+      res.status(402).json({
+        error: "Daily guest limit reached",
+        remaining: 0,
+        limit: GUEST_DAILY_LIMIT,
+        message: `You've used all ${GUEST_DAILY_LIMIT} free AI generations for today (guest quizzes share this pool with guest chat). Your pool resets at 12:00 AM — or sign in for ${DAILY_CREDIT_POOL} daily credits and saved history.`,
+      });
+      return;
+    }
+    if (slot.status === "unavailable") {
+      res.status(503).json({
+        error: "Guest quiz is temporarily unavailable. Please try again in a moment.",
+      });
+      return;
+    }
+
+    (req as GuestGateRequest).guestSlot = { ip, deviceId, remaining: slot.remaining };
+    // Any failure response means no questions were delivered → give the
+    // guest's slot back (best-effort) so a broken attempt never burns it.
+    res.on("finish", () => {
+      if (res.statusCode >= 400) rollbackGuestSlot(ip, deviceId).catch(() => {});
+    });
+    next();
+  } catch (err) {
+    console.error("[generate-questions] guest quota gate failed:", err);
+    res.status(503).json({
+      error: "Guest quiz is temporarily unavailable. Please try again in a moment.",
+    });
+  }
+}
+
+const creditIfAuthed = requireCredit("aiChat");
+
+/** Signed-in → daily credit pool; guest → already quota-charged above. */
+function creditGate(req: Request, res: Response, next: NextFunction): void {
+  if ((req as AuthedRequest).user) {
+    void creditIfAuthed(req, res, next);
+    return;
+  }
+  next();
 }
 
 interface DbSubject {
@@ -46,19 +135,53 @@ interface GeneratedQuestion {
   explanation: string;
 }
 
+/**
+ * Return the first brace-balanced `{...}` object in `text`, honoring string
+ * literals and escapes. Returns null when no complete object exists.
+ */
+function extractJsonObject(text: string): string | null {
+  const start = text.indexOf("{");
+  if (start === -1) return null;
+  let depth = 0;
+  let inString = false;
+  let escaped = false;
+  for (let i = start; i < text.length; i++) {
+    const ch = text[i];
+    if (inString) {
+      if (escaped) escaped = false;
+      else if (ch === "\\") escaped = true;
+      else if (ch === '"') inString = false;
+      continue;
+    }
+    if (ch === '"') inString = true;
+    else if (ch === "{") depth++;
+    else if (ch === "}") {
+      depth--;
+      if (depth === 0) return text.slice(start, i + 1);
+    }
+  }
+  return null;
+}
+
 interface GenerateQuestionsResponse {
   questions: GeneratedQuestion[];
   provider: string;
   topic?: string;
+  /** Guest pool only: left AFTER this generation (server-attested). */
+  remaining?: number;
+  /** Guest pool only: the daily limit `remaining` was measured against. */
+  limit?: number;
 }
 
 router.post(
   "/",
-  // Hardening 2026-09-25: this endpoint burns paid AI credits and was callable
-  // fully anonymously. Auth + credit checks now match /api/ai.
-  requireAuth,
-  requireCredit("aiChat"),
+  // Hardening 2026-09-25: anonymous UNLIMITED access was blocked.
+  // 2026-09-27: guests re-admitted through the metered daily pool
+  // (authOrGuestQuota) so the quiz works signed-out without reopening
+  // free unlimited AI; signed-in users still pass the credit guard.
   rateLimit,
+  authOrGuestQuota,
+  creditGate,
   async (req: Request, res: Response) => {
     try {
       const {
@@ -164,8 +287,9 @@ router.post(
       // If a specific topic was requested, narrow the prompt
       const topicContext = topic
         ? `\n\nThe user wants questions specifically about the topic: "${topic}".` +
+          ` Treat this topic as authoritative — it may come from anywhere on the platform (notes, labs, derivations, PYQ banks), even when it is not in the syllabus list below.` +
           (availableTopics.length > 0
-            ? `\nAvailable topics to choose from: ${availableTopics.slice(0, 30).join(", ")}`
+            ? `\nSyllabus topics for subject context: ${availableTopics.slice(0, 30).join(", ")}`
             : "")
         : `\n\nGenerate a balanced mix across the subject's topics.` +
           (availableTopics.length > 0
@@ -214,7 +338,9 @@ RULES:
 - 4 options per question, correctIndex is 0-based
 - Each question MUST have one, and only one, definitively correct answer (no ambiguity).
 - Explanation: SHORT + ACCURATE — state why the correct answer is 100% right, briefly explain why others are wrong.
-- Comprehensive Learning: Design each question to act as a mini-tutorial, ensuring all necessary conceptual components for that specific sub-topic are present.
+- **DENSE, SHORT STEMS (core style rule)**: pack 2–3 DISTINCT details of the topic into every question — e.g. a condition + a data point + the relationship being tested, or a term + a context + its consequence. One question = several linked ideas about the concept, never a bare single fact.
+- **SHORT GRAMMAR**: exam-terse phrasing. Max 2 sentences in the stem. Cut all filler — no "Which of the following…", no restating the topic name, no preamble. Options stay 2–8 words with parallel grammar.
+- A student who merely READS the question (before answering) should walk away with extra ideas about the concept — the stem and options together teach related facts.
 - Rotate through different question styles each generation
 - Include key technical terms from the syllabus
 - **NO CONFLICTING CONCEPTS**: Ensure no ambiguity in options or explanations
@@ -239,6 +365,9 @@ ${keyTermsContext ? `KEY TERMS FROM SYLLABUS:\n${keyTermsContext}` : "Use standa
 5. Mix easy, intermediate, and hard questions based on difficulty setting
 6. **ABSOLUTE CLARITY**: Every question must have one, and only one, 100% correct answer. No ambiguous options.
 7. **COMPREHENSIVE COVERAGE**: Each question should reinforce all relevant concepts for that sub-topic, acting as a mini-lesson.
+8. **2–3 DETAILS PER QUESTION, SHORT GRAMMAR**: every stem carries 2–3 concrete details of the topic (values, conditions, linked ideas) in terse exam grammar — reading the question itself must give the student more ideas about the concept.
+9. **ANY TOPIC**: when a specific topic is requested it is authoritative — generate questions directly about it, even if it sits outside the syllabus lists above.
+10. **FORMAT**: return ONLY the JSON object described in the system prompt — no markdown fences, no commentary.
 
 **EXAMPLE Question Styles:**
 - Definition: "What is the unit of electric current?"
@@ -254,19 +383,26 @@ ${keyTermsContext ? `KEY TERMS FROM SYLLABUS:\n${keyTermsContext}` : "Use standa
       ];
 
       const rawResponse = await aiService.chat(
-        aiService.getDefaultProvider(),
+        "", // run the ordered chain: agnes → openrouter → internal
         messages
       );
 
-      // Parse JSON from potential markdown-wrapped response
-      let jsonStr = rawResponse.trim();
-      const jsonMatch = jsonStr.match(/\{[\s\S]*\}/);
-      if (jsonMatch) jsonStr = jsonMatch[0];
+      // Parse JSON from potential markdown-wrapped / prose-wrapped replies.
+      // Brace-balanced extraction survives ``` fences, leading chatter and
+      // extra braces inside explanation strings (the old greedy match broke
+      // on those and surfaced as "AI returned invalid question format").
+      const jsonStr = extractJsonObject(rawResponse);
 
-      let parsed: { questions: GeneratedQuestion[] };
-      try {
-        parsed = JSON.parse(jsonStr);
-      } catch {
+      let parsed: { questions: GeneratedQuestion[] } | null = null;
+      if (jsonStr) {
+        try {
+          parsed = JSON.parse(jsonStr);
+        } catch {
+          parsed = null;
+        }
+      }
+
+      if (!parsed) {
         res.status(502).json({
           error: "AI returned invalid question format",
           raw: rawResponse.slice(0, 500),
@@ -293,10 +429,17 @@ ${keyTermsContext ? `KEY TERMS FROM SYLLABUS:\n${keyTermsContext}` : "Use standa
           explanation: (q.explanation as string) ?? "",
         }));
 
+      const guestSlot = (req as GuestGateRequest).guestSlot;
+
       res.json({
         questions,
-        provider: aiService.getDefaultProvider(),
+        provider: aiService.getLastAnsweredBy(),
         topic: topic ?? undefined,
+        // Guests get the server-attested pool so the UI mirror can never
+        // show MORE than what is actually left (refresh cannot fake it).
+        ...(guestSlot
+          ? { remaining: guestSlot.remaining, limit: GUEST_DAILY_LIMIT }
+          : {}),
       } satisfies GenerateQuestionsResponse);
     } catch (err: any) {
       console.error("AI generate-questions error:", err);

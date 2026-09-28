@@ -90,9 +90,11 @@ router.get("/settings", async (req: Request, res: Response) => {
 
   try {
     // Original Next.js contract: GET returned { settings: [{key,value,description}] }.
+    // `description` never existed on this table (found 2026-09-26) — selecting it
+    // 500'd the route; the frontend treats description as optional.
     const { data, error } = await supabaseAdmin
       .from("settings")
-      .select("key, value, description")
+      .select("key, value")
       .order("key", { ascending: true });
 
     if (error) {
