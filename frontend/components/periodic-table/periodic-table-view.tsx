@@ -3,9 +3,12 @@
 import React, { useEffect, useState, useMemo, useRef } from "react";
 import {
   PERIODIC_FILTERS,
+  BLOCK_TONES,
+  blockFilterIdFor,
   type PeriodicElement,
   type PeriodicFilterCategory,
 } from "@/lib/periodic-table";
+import { BlockExplorer } from "@/components/periodic-table/block-explorer";
 import {
   Atom,
   Search,
@@ -34,6 +37,8 @@ import {
   FlaskConical,
   Scale,
   Sparkle,
+  Filter,
+  TrendingUp,
 } from "lucide-react";
 
 const CATEGORY_COLORS: Record<string, { bg: string; border: string; text: string; badge: string }> = {
@@ -57,11 +62,15 @@ const CATEGORY_COLORS: Record<string, { bg: string; border: string; text: string
   },
 };
 
-const BLOCK_COLORS: Record<string, string> = {
-  s: "text-rose-500 border-rose-500/30 bg-rose-500/10",
-  p: "text-blue-500 border-blue-500/30 bg-blue-500/10",
-  d: "text-amber-500 border-amber-500/30 bg-amber-500/10",
-  f: "text-purple-500 border-purple-500/30 bg-purple-500/10",
+// Shared s/p/d/f tones live in lib/periodic-table (BLOCK_TONES) so the tiles,
+// the colour legend and the Block Explorer always agree on a block's colour.
+
+/** Which orbital takes the last-added electron, per block (used in the dossier). */
+const BLOCK_ORBITAL_PHRASE: Record<string, string> = {
+  s: "an ns orbital (the outermost s-subshell)",
+  p: "an np orbital (the outermost p-subshell)",
+  d: "an (n−1)d orbital (the penultimate d-subshell)",
+  f: "an (n−2)f orbital (the anti-penultimate f-subshell)",
 };
 
 // Traditional Roman group labels for the 18 groups
@@ -75,13 +84,15 @@ export function PeriodicTableView() {
   const [elements, setElements] = useState<PeriodicElement[]>([]);
   const [loading, setLoading] = useState(true);
   const [activeFilterId, setActiveFilterId] = useState<string>("all");
+  // "nature" colours tiles by metal/non-metal/metalloid; "block" by s/p/d/f.
+  const [colorMode, setColorMode] = useState<"nature" | "block">("nature");
   const [hoveredFilter, setHoveredFilter] = useState<PeriodicFilterCategory | null>(null);
 
   // Active elements
   const [hoveredElement, setHoveredElement] = useState<PeriodicElement | null>(null);
   const [selectedElement, setSelectedElement] = useState<PeriodicElement | null>(null);
   const [isDossierOpen, setIsDossierOpen] = useState(false);
-  const [activeDossierTab, setActiveDossierTab] = useState<"pyqs" | "reactions" | "facts" | "properties">("pyqs");
+  const [activeDossierTab, setActiveDossierTab] = useState<"pyqs" | "reactions" | "facts" | "properties" | "block">("pyqs");
 
   const [searchQuery, setSearchQuery] = useState("");
 
@@ -292,6 +303,10 @@ export function PeriodicTableView() {
   }
 
   const activeHoverCategory = hoveredFilter ?? activeFilter;
+  // Full s/p/d/f record for whichever element's dossier is open.
+  const selectedBlockFilter = selectedElement
+    ? PERIODIC_FILTERS[blockFilterIdFor(selectedElement.block)]
+    : null;
 
   return (
     <div className="space-y-2 sm:space-y-2.5">
@@ -332,6 +347,39 @@ export function PeriodicTableView() {
                 <X className="h-3 w-3" />
               </button>
             )}
+          </div>
+
+          {/* Tile colouring: chemical nature vs s/p/d/f block */}
+          <div
+            className="flex items-center gap-1 bg-card border border-border/80 rounded-xl p-0.5 shadow-sm"
+            title="Recolour the tiles by chemical nature (metal / metalloid / non-metal) or by orbital block (s / p / d / f)"
+          >
+            <button
+              onClick={() => setColorMode("nature")}
+              className={`px-2 py-1 rounded-lg font-bold text-[10px] sm:text-[11px] transition-all ${
+                colorMode === "nature"
+                  ? "bg-primary text-primary-foreground shadow-sm"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              Nature
+            </button>
+            <button
+              onClick={() => setColorMode("block")}
+              className={`px-2 py-1 rounded-lg font-bold text-[10px] sm:text-[11px] transition-all flex items-center gap-1 ${
+                colorMode === "block"
+                  ? "bg-primary text-primary-foreground shadow-sm"
+                  : "text-muted-foreground hover:text-foreground"
+              }`}
+            >
+              <span className="flex items-center gap-0.5">
+                <span className="h-1.5 w-1.5 rounded-full bg-rose-500" />
+                <span className="h-1.5 w-1.5 rounded-full bg-blue-500" />
+                <span className="h-1.5 w-1.5 rounded-full bg-amber-500" />
+                <span className="h-1.5 w-1.5 rounded-full bg-purple-500" />
+              </span>
+              <span>Block</span>
+            </button>
           </div>
 
           {/* Screen Fit & Zoom Controls */}
@@ -697,6 +745,10 @@ export function PeriodicTableView() {
                         const isSelected = selectedElement?.atomicNumber === el.atomicNumber;
                         const isHovered = hoveredElement?.atomicNumber === el.atomicNumber;
                         const catStyle = CATEGORY_COLORS[el.category] ?? CATEGORY_COLORS.metal;
+                        const blockTone = BLOCK_TONES[el.block];
+                        const tileBg = colorMode === "block" ? blockTone.bg : catStyle.bg;
+                        const tileBorder = colorMode === "block" ? blockTone.border : catStyle.border;
+                        const tileText = colorMode === "block" ? blockTone.text : catStyle.text;
 
                         return (
                           <button
@@ -707,9 +759,7 @@ export function PeriodicTableView() {
                             }}
                             onMouseEnter={() => setHoveredElement(el)}
                             onMouseLeave={() => setHoveredElement(null)}
-                            className={`aspect-square rounded-lg border p-0.5 sm:p-1 flex flex-col justify-between text-left transition-all ${
-                              catStyle.bg
-                            } ${catStyle.border} ${
+                            className={`aspect-square rounded-lg border p-0.5 sm:p-1 flex flex-col justify-between text-left transition-all ${tileBg} ${tileBorder} ${
                               isHovered || isSelected
                                 ? "ring-2 ring-primary scale-110 z-30 shadow-lg bg-primary/20"
                                 : ""
@@ -721,7 +771,7 @@ export function PeriodicTableView() {
                               <span className="uppercase text-[6px] font-extrabold">{el.block}</span>
                             </div>
 
-                            <div className={`text-xs sm:text-[13px] font-black tracking-tight leading-none text-center ${catStyle.text}`}>
+                            <div className={`text-xs sm:text-[13px] font-black tracking-tight leading-none text-center ${tileText}`}>
                               {el.symbol}
                             </div>
 
@@ -811,14 +861,22 @@ export function PeriodicTableView() {
                         }}
                         onMouseEnter={() => setHoveredElement(el)}
                         onMouseLeave={() => setHoveredElement(null)}
-                        className={`aspect-square rounded-lg border border-pink-500/30 bg-pink-500/10 p-0.5 sm:p-1 flex flex-col justify-between text-left transition-all hover:bg-pink-500/25 ${
+                        className={`aspect-square rounded-lg border ${
+                          colorMode === "block" ? BLOCK_TONES.f.border : "border-pink-500/30"
+                        } ${colorMode === "block" ? BLOCK_TONES.f.bg : "bg-pink-500/10"} p-0.5 sm:p-1 flex flex-col justify-between text-left transition-all ${
+                          colorMode === "block" ? "hover:bg-purple-500/25" : "hover:bg-pink-500/25"
+                        } ${
                           isHovered || isSelected ? "ring-2 ring-primary scale-110 z-30 shadow-lg" : ""
                         } ${!isMatch ? "opacity-15 grayscale pointer-events-none" : "opacity-100"}`}
                       >
                         <div className="text-[7px] font-mono leading-none text-muted-foreground font-bold">
                           {el.atomicNumber}
                         </div>
-                        <div className="text-xs font-black text-pink-400 leading-none text-center">
+                        <div
+                          className={`text-xs font-black leading-none text-center ${
+                            colorMode === "block" ? BLOCK_TONES.f.text : "text-pink-400"
+                          }`}
+                        >
                           {el.symbol}
                         </div>
                         <div className="text-[6.5px] truncate text-foreground/85 leading-none text-center">
@@ -834,7 +892,34 @@ export function PeriodicTableView() {
         </div>
       </div>
 
-      {/* ── 5. DEEP-DIVE CEE ELEMENT DOSSIER MODAL / OVERLAY ─────────────── */}
+      {/* ── 5. BLOCK COLOUR LEGEND + s/p/d/f BLOCK EXPLORER ────────────── */}
+      {colorMode === "block" && (
+        <div className="flex flex-wrap items-center gap-1.5 text-[10px]">
+          <span className="text-muted-foreground font-bold uppercase tracking-wider">
+            Block colours:
+          </span>
+          {(["s", "p", "d", "f"] as const).map((b) => (
+            <span
+              key={b}
+              className={`px-1.5 py-0.5 rounded border font-bold ${BLOCK_TONES[b].chip}`}
+            >
+              {b}-block · {elements.filter((el) => el.block === b).length}
+            </span>
+          ))}
+        </div>
+      )}
+
+      <BlockExplorer
+        elements={elements}
+        activeFilterId={activeFilterId}
+        onSelectBlock={setActiveFilterId}
+        onSelectElement={(el) => {
+          setSelectedElement(el);
+          setIsDossierOpen(true);
+        }}
+      />
+
+      {/* ── 6. DEEP-DIVE CEE ELEMENT DOSSIER MODAL / OVERLAY ─────────────── */}
       {isDossierOpen && selectedElement && (
         <div className="fixed inset-0 z-50 flex items-center justify-center p-3 sm:p-6 bg-background/80 backdrop-blur-md animate-fade-in overflow-y-auto">
           <div className="relative w-full max-w-4xl rounded-3xl border border-border/80 bg-card shadow-2xl overflow-hidden my-auto max-h-[92vh] flex flex-col">
@@ -947,6 +1032,17 @@ export function PeriodicTableView() {
               >
                 <Scale className="h-4 w-4" />
                 <span>Physical &amp; Electronic Constants</span>
+              </button>
+              <button
+                onClick={() => setActiveDossierTab("block")}
+                className={`py-3 px-3 border-b-2 transition-all flex items-center gap-1.5 whitespace-nowrap ${
+                  activeDossierTab === "block"
+                    ? "border-violet-500 text-violet-500"
+                    : "border-transparent text-muted-foreground hover:text-foreground"
+                }`}
+              >
+                <Layers className="h-4 w-4" />
+                <span>{selectedElement.block}-Block Context</span>
               </button>
             </div>
 
@@ -1224,6 +1320,133 @@ export function PeriodicTableView() {
                       <span className="font-bold text-foreground text-xs block capitalize">
                         {selectedElement.stateAtSTP}
                       </span>
+                    </div>
+                  </div>
+                </div>
+              )}
+
+              {/* ── TAB 5: s/p/d/f BLOCK CONTEXT ───────────────────────────── */}
+              {activeDossierTab === "block" && selectedBlockFilter && (
+                <div className="space-y-4">
+                  {/* Block identity & why this element belongs to it */}
+                  <div className="rounded-2xl border border-border/70 bg-muted/20 p-4 space-y-2 text-xs">
+                    <div className="flex flex-wrap items-center gap-2">
+                      <span
+                        className={`text-[10px] font-bold px-2 py-0.5 rounded border uppercase tracking-wider ${
+                          BLOCK_TONES[selectedElement.block]?.chip ?? ""
+                        }`}
+                      >
+                        {selectedBlockFilter.name}
+                      </span>
+                      <span className="font-mono font-bold text-primary">
+                        {selectedBlockFilter.generalElectronicConfig}
+                      </span>
+                    </div>
+                    <p className="text-foreground font-semibold leading-relaxed">
+                      {selectedBlockFilter.oneLineSummary}
+                    </p>
+                    <p className="text-muted-foreground leading-relaxed">
+                      <strong className="text-foreground">
+                        Why {selectedElement.name} sits in the {selectedElement.block}-block:
+                      </strong>{" "}
+                      its last added electron enters {BLOCK_ORBITAL_PHRASE[selectedElement.block]},
+                      which reads {selectedElement.electronConfig}.
+                    </p>
+                    <div className="flex flex-wrap gap-2 pt-1">
+                      <button
+                        onClick={() => {
+                          setActiveFilterId(blockFilterIdFor(selectedElement.block));
+                          setIsDossierOpen(false);
+                        }}
+                        className="px-2.5 py-1.5 rounded-xl bg-primary text-primary-foreground text-[11px] font-bold flex items-center gap-1.5"
+                      >
+                        <Filter className="h-3 w-3" />
+                        <span>
+                          Highlight all {selectedElement.block}-block elements on the table
+                        </span>
+                      </button>
+                    </div>
+                  </div>
+
+                  {/* All characteristics of this block */}
+                  <div className="rounded-2xl border border-border/70 bg-card p-4 space-y-2.5">
+                    <span className="text-xs font-bold uppercase tracking-wider text-primary flex items-center gap-1.5">
+                      <Layers className="h-3.5 w-3.5" />
+                      <span>
+                        All Key Characteristics ({selectedBlockFilter.keyCharacteristics.length})
+                      </span>
+                    </span>
+                    <ul className="space-y-2 text-xs">
+                      {selectedBlockFilter.keyCharacteristics.map((c, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span
+                            className={`flex h-4 w-4 shrink-0 items-center justify-center rounded text-[9px] font-black mt-0.5 ${
+                              BLOCK_TONES[selectedElement.block]?.chip ?? ""
+                            }`}
+                          >
+                            {idx + 1}
+                          </span>
+                          <span>
+                            <strong className="text-foreground font-bold">{c.title}:</strong>{" "}
+                            <span className="text-muted-foreground">{c.detail}</span>
+                          </span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* All exam traps of this block */}
+                  <div className="rounded-2xl border border-amber-500/30 bg-amber-500/5 p-4 space-y-2.5">
+                    <span className="text-xs font-bold uppercase tracking-wider text-amber-500 flex items-center gap-1.5">
+                      <ShieldAlert className="h-3.5 w-3.5" />
+                      <span>
+                        All Exam Traps &amp; Exceptions ({selectedBlockFilter.examTrapsAndExceptions.length})
+                      </span>
+                    </span>
+                    <ul className="space-y-2 text-xs text-foreground">
+                      {selectedBlockFilter.examTrapsAndExceptions.map((trap, idx) => (
+                        <li key={idx} className="flex items-start gap-2">
+                          <span className="text-amber-500 font-black shrink-0 mt-0.5">⚠</span>
+                          <span>{trap}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Trend facts + CEE facts */}
+                  <div className="grid sm:grid-cols-2 gap-3">
+                    <div className="rounded-2xl border border-border/70 bg-card p-4 space-y-2.5">
+                      <span className="text-xs font-bold uppercase tracking-wider text-sky-500 flex items-center gap-1.5">
+                        <TrendingUp className="h-3.5 w-3.5" />
+                        <span>
+                          Precise Periodic-Trend Facts ({selectedBlockFilter.periodicTrendFacts?.length ?? 0})
+                        </span>
+                      </span>
+                      <ul className="space-y-2 text-xs text-muted-foreground">
+                        {selectedBlockFilter.periodicTrendFacts?.map((fact, idx) => (
+                          <li key={idx} className="flex items-start gap-2">
+                            <span className="text-sky-500 font-black shrink-0 mt-0.5">→</span>
+                            <span>{fact}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="rounded-2xl border border-emerald-500/30 bg-emerald-500/5 p-4 space-y-2.5">
+                      <span className="text-xs font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 flex items-center gap-1.5">
+                        <GraduationCap className="h-3.5 w-3.5" />
+                        <span>
+                          CEE High-Frequency Facts ({selectedBlockFilter.ceeFrequentFacts?.length ?? 0})
+                        </span>
+                      </span>
+                      <ul className="space-y-2 text-xs text-foreground">
+                        {selectedBlockFilter.ceeFrequentFacts?.map((fact, idx) => (
+                          <li key={idx} className="flex items-start gap-2">
+                            <span className="text-emerald-500 font-black shrink-0 mt-0.5">✓</span>
+                            <span>{fact}</span>
+                          </li>
+                        ))}
+                      </ul>
                     </div>
                   </div>
                 </div>

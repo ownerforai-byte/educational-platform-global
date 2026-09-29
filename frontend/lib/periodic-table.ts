@@ -13,6 +13,10 @@ export interface PeriodicFilterCategory {
   generalElectronicConfig: string;
   keyCharacteristics: FilterCharacteristic[];
   examTrapsAndExceptions: string[];
+  /** Precise, memorise-ready periodic-trend statements for this classification. */
+  periodicTrendFacts?: string[];
+  /** High-frequency CEE one-liners (the answer is embedded) for this classification. */
+  ceeFrequentFacts?: string[];
   elementSymbols: string[];
   testCondition: (element: PeriodicElement) => boolean;
 }
@@ -50,6 +54,60 @@ export interface PeriodicElement {
   ceeSpeedFormulas?: string[];
   ceeTrapAlert?: string;
 }
+
+/* ── Block (s / p / d / f) helpers ────────────────────────────────────────── */
+
+/** The four block classifications, in filling order: s → p → d → f. */
+export const BLOCK_FILTER_IDS = ["s_block", "p_block", "d_block", "f_block"] as const;
+export type BlockFilterId = (typeof BLOCK_FILTER_IDS)[number];
+
+/** Maps an element's `block` field ("s") to its filter id ("s_block"). */
+export function blockFilterIdFor(block: string): string {
+  return `${block}_block`;
+}
+
+export function isBlockFilterId(id: string): id is BlockFilterId {
+  return (BLOCK_FILTER_IDS as readonly string[]).includes(id);
+}
+
+/**
+ * Shared visual identity for each block — one source for the table tiles, the
+ * colour legend, the filter chips and the Block Explorer, so a block always
+ * looks like itself everywhere on the page.
+ */
+export const BLOCK_TONES: Record<
+  string,
+  { bg: string; border: string; text: string; chip: string; hex: string }
+> = {
+  s: {
+    bg: "bg-rose-500/10",
+    border: "border-rose-500/40",
+    text: "text-rose-500",
+    chip: "bg-rose-500/15 text-rose-500 border-rose-500/40",
+    hex: "#f43f5e",
+  },
+  p: {
+    bg: "bg-blue-500/10",
+    border: "border-blue-500/40",
+    text: "text-blue-500",
+    chip: "bg-blue-500/15 text-blue-500 border-blue-500/40",
+    hex: "#3b82f6",
+  },
+  d: {
+    bg: "bg-amber-500/10",
+    border: "border-amber-500/40",
+    text: "text-amber-500",
+    chip: "bg-amber-500/15 text-amber-500 border-amber-500/40",
+    hex: "#f59e0b",
+  },
+  f: {
+    bg: "bg-purple-500/10",
+    border: "border-purple-500/40",
+    text: "text-purple-500",
+    chip: "bg-purple-500/15 text-purple-500 border-purple-500/40",
+    hex: "#a855f7",
+  },
+};
 
 export const PERIODIC_FILTERS: Record<string, PeriodicFilterCategory> = {
   metals: {
@@ -190,6 +248,19 @@ export const PERIODIC_FILTERS: Record<string, PeriodicFilterCategory> = {
       "Lithium forms normal monoxide (Li₂O), Sodium forms peroxide (Na₂O₂), and Potassium forms superoxide (KO₂) due to relative cation-anion lattice stabilization.",
       "BeO and Be(OH)₂ are amphoteric, reacting with both acids and strong bases."
     ],
+    periodicTrendFacts: [
+      "Atomic radius increases down every group; ionization energy falls with it — Cesium (376 kJ/mol) has the lowest IE of the stable elements.",
+      "Electronegativity is the lowest of its period in each group: Na 0.93, K 0.82, Rb 0.82, Cs 0.79 (Pauling scale).",
+      "Hydration enthalpy falls down the group (Li⁺ > Na⁺ > K⁺) because the tiny Li⁺ ion packs the most water molecules around itself.",
+      "The 2nd ionization energy of Group 1 elements jumps several-fold (breaking a noble-gas core), which is why Group 1 is strictly +1."
+    ],
+    ceeFrequentFacts: [
+      "Flame colours: Li crimson, Na golden yellow, K lilac, Ca brick red, Sr crimson red, Ba apple green — Be and Mg give NO flame colour.",
+      "Oxide type shifts with cation size: Li₂O (normal oxide), Na₂O₂ (peroxide), KO₂ (superoxide).",
+      "Solubility of hydroxides increases down Group 2 (Ba(OH)₂ most soluble) while sulphates decrease — BaSO₄ is insoluble, the classic SO₄²⁻ test.",
+      "Carbonate and nitrate thermal stability increases down the group: Li₂CO₃ and LiNO₃ decompose on heating, KNO₃ only melts.",
+      "Diagonal relationships to remember: Li ~ Mg, Be ~ Al, B ~ Si (similar charge/radius ratio)."
+    ],
     elementSymbols: ["H","He","Li","Be","Na","Mg","K","Ca","Rb","Sr","Cs","Ba","Fr","Ra"],
     testCondition: (el) => el.block === "s"
   },
@@ -212,6 +283,19 @@ export const PERIODIC_FILTERS: Record<string, PeriodicFilterCategory> = {
       "Inert Pair Effect causes Lead dioxide (PbO₂) and Bismuth pentafluoride (BiF₅) to act as aggressive oxidizing agents.",
       "NF₃ is stable and neutral to water, but NCl₃ hydrolyzes rapidly because chlorine possesses vacant d-orbitals.",
       "CCl₄ cannot be hydrolyzed by water, whereas SiCl₄ hydrolyzes violently to Si(OH)₄ due to vacant 3d-orbitals in Silicon."
+    ],
+    periodicTrendFacts: [
+      "Electronegativity rises across a period and falls down a group — Fluorine (3.98) is the most electronegative element known.",
+      "Metallic character increases down and to the left; non-metallic character increases up and to the right.",
+      "Oxide acidity tracks oxidation state: MnO is basic, MnO₂ amphoteric, Mn₂O₇ acidic — never memorise oxides without their state.",
+      "Hydrates and acidity of oxyacids rise with the oxidation number: HClO < HClO₂ < HClO₃ < HClO₄."
+    ],
+    ceeFrequentFacts: [
+      "Second-period elements never exceed an octet: NCl₃ exists but NCl₅ does not, while PCl₅ does (vacant 3d orbitals).",
+      "Catenation strength: C > Si > Ge; the C–C bond (347 kJ/mol) is far stronger than Si–Si, which is why organic chemistry is carbon's alone.",
+      "N₂ is inert because of N≡N (941 kJ/mol), yet NCl₃ hydrolyses instantly — bond strength and reactivity are different questions.",
+      "Allotropes to name in answers: O₂/O₃, red-white-grey phosphorus, diamond/graphite/C₆₀, grey tin/tin(II) tin.",
+      "Noble-gas compounds (XeF₂, XeF₄, XeF₆) involve ONLY fluorine and oxygen, because only they are electronegative enough."
     ],
     elementSymbols: ["B","C","N","O","F","Ne","Al","Si","P","S","Cl","Ar","Ga","Ge","As","Se","Br","Kr","In","Sn","Sb","Te","I","Xe","Tl","Pb","Bi","Po","At","Rn","Nh","Fl","Mc","Lv","Ts","Og"],
     testCondition: (el) => el.block === "p"
@@ -237,6 +321,19 @@ export const PERIODIC_FILTERS: Record<string, PeriodicFilterCategory> = {
       "Permanganate (MnO₄⁻) is intense purple despite having Mn(VII) with a 3d⁰ configuration; its color arises from Ligand-to-Metal Charge Transfer (LMCT), not d-d transition.",
       "Osmium (Os) and Ruthenium (Ru) exhibit the maximum known oxidation state of +8 (in OsO₄ and RuO₄)."
     ],
+    periodicTrendFacts: [
+      "Melting points peak mid-series: Tungsten (3422 °C) is the highest of all metals, while Zn/Cd/Hg stay low because their d-shell is full.",
+      "Atomic radii barely change across a series (added d electrons shield poorly), then drop sharply at the start of each new period.",
+      "Ionization energy rises across a series with dips at d⁵ (Mn) and d¹⁰ (Zn) — half-filled and fully-filled shells resist removal.",
+      "5d elements are the same size as their 4d congeners because lanthanide contraction cancels the expected increase: Zr 160 pm vs Hf 159 pm."
+    ],
+    ceeFrequentFacts: [
+      "Colour and magnetism come from unpaired d-electrons; spin-only moment μ = √(n(n+2)) Bohr magnetons.",
+      "Catalysts you must name: Fe (Haber), V₂O₅ (Contact), Ni (hydrogenation), Pt/Rh (NH₃ oxidation).",
+      "Highest oxidation states: Os/Ru +8, Mn +7 (MnO₄⁻), Cr +6 (Cr₂O₇²⁻) — all with oxygen, never with fluorine alone.",
+      "Sc³⁺ (3d⁰), Zn²⁺ (3d¹⁰) and Cu⁺ (3d¹⁰) are colourless and diamagnetic — d-electron count decides, not d-block membership.",
+      "Interstitial compounds and alloys: steel is carbon trapped in Fe lattice; WC tools and stainless steel are the usual CEE examples."
+    ],
     elementSymbols: ["Sc","Ti","V","Cr","Mn","Fe","Co","Ni","Cu","Zn","Y","Zr","Nb","Mo","Tc","Ru","Rh","Pd","Ag","Cd","La","Hf","Ta","W","Re","Os","Ir","Pt","Au","Hg","Ac","Rf","Db","Sg","Bh","Hs","Mt","Ds","Rg","Cn"],
     testCondition: (el) => el.block === "d"
   },
@@ -259,6 +356,19 @@ export const PERIODIC_FILTERS: Record<string, PeriodicFilterCategory> = {
       "Separation of Lanthanides is famously difficult due to near-identical chemical properties, achieved via ion-exchange chromatography.",
       "Basicity of lanthanide hydroxides DECREASES from La(OH)₃ to Lu(OH)₃ because smaller ionic radius increases covalent character (Fajans' rule).",
       "Promethium (₆₁Pm) is the ONLY lanthanide with no stable isotopes; all actinides are radioactive."
+    ],
+    periodicTrendFacts: [
+      "Radii contract steadily across the lanthanides (lanthanide contraction) — unlike the d-block there is no size break at the series end.",
+      "Basicity of Ln(OH)₃ falls from La(OH)₃ to Lu(OH)₃: a smaller Ln³⁺ polarises OH⁻ more (Fajans), so it is less basic.",
+      "Density and melting point generally climb across the actinides, and actinide contraction is steeper than lanthanide contraction.",
+      "4f electrons are buried and screen poorly, so ionization energies and colours change very little across the lanthanides."
+    ],
+    ceeFrequentFacts: [
+      "Lanthanides are separated by ion-exchange chromatography or fractional precipitation, not by ordinary crystallisation — the +3 chemistry is nearly identical.",
+      "Anomalous states are explained by electron configuration: Ce⁴⁺ (f⁰), Eu²⁺ (f⁷), Yb²⁺ (f¹⁴), Tb⁴⁺ (f⁸).",
+      "Actinides show more oxidation states than lanthanides (+3 to +7 for Np, Pu, Am) because 5f and 6d are close in energy.",
+      "Uranium is 99.3% ²³⁸U; the fissile ²³⁵U is under 1%, which is why natural uranium must be enriched.",
+      "Only Th, U (and traces of Pa) occur naturally in useful amounts; every actinide beyond uranium is synthetic — all radioactive."
     ],
     elementSymbols: ["Ce","Pr","Nd","Pm","Sm","Eu","Gd","Tb","Dy","Ho","Er","Tm","Yb","Lu","Th","Pa","U","Np","Pu","Am","Cm","Bk","Cf","Es","Fm","Md","No","Lr"],
     testCondition: (el) => el.block === "f"

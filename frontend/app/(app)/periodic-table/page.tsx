@@ -4,7 +4,7 @@ import { PeriodicTableView } from "@/components/periodic-table/periodic-table-vi
 export const metadata: Metadata = {
   title: "Modern Periodic Table & CEE Question Bank — NEB & CEE Chemistry",
   description:
-    "Interactive 118-element periodic table with CEE past MCQs, hallmark chemical reactions, key ores & compounds, melting and boiling points, and electron configurations.",
+    "Interactive 118-element periodic table with a full s/p/d/f Block Explorer — every block's characteristics, periodic-trend facts, exam traps and CEE high-frequency details — plus past MCQs, hallmark reactions, key ores & compounds and electron configurations.",
 };
 
 export default function PeriodicTablePage() {
