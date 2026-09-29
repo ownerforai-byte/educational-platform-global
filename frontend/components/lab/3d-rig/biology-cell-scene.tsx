@@ -6,6 +6,7 @@ import gsap from "gsap";
 import { Leaf, PawPrint, type LucideIcon } from "lucide-react";
 import { Shared3DScene } from "./shared-3d-scene";
 import { CellCytoplasmMaterial, CellMembraneMaterial } from "./pbr-materials";
+import { useSceneTier } from "./use-scene-tier";
 import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import type { ConceptData, SceneTier } from "./types";
@@ -183,22 +184,50 @@ function OrganelleGroup({
 
 // ─── Organelles ─────────────────────────────────────────────────────────────
 
-function Nucleus() {
+/** Condensed chromatin strands inside the nucleus (detail tier). */
+const CHROMATIN_TRANSFORMS: {
+  position: [number, number, number];
+  rotation: [number, number, number];
+  scale: number;
+}[] = [
+  { position: [-0.18, 0.1, 0.12], rotation: [0.4, 0.8, 0.2], scale: 1 },
+  { position: [0.16, -0.16, -0.1], rotation: [-0.3, 0.4, 0.9], scale: 0.8 },
+  { position: [-0.05, 0.22, -0.2], rotation: [0.9, -0.5, 0.3], scale: 0.7 },
+];
+
+/** Small granules clustered around the nucleolus. */
+const NUCLEOLUS_GRANULES: [number, number, number][] = [
+  [0.31, -0.02, 0.16],
+  [0.22, -0.22, 0.02],
+  [0.05, -0.28, 0.1],
+];
+
+function Nucleus({ detail = true }: { detail?: boolean }) {
   const pores = useSpherePoints(14, 0.62);
 
   return (
     <group position={[0.95, 0.45, 0.1]}>
-      {/* nuclear envelope */}
+      {/* nuclear envelope — translucent so chromatin shows through */}
       <mesh>
         <sphereGeometry args={[0.6, 32, 32]} />
-        <meshStandardMaterial
+        <meshPhysicalMaterial
           color="#8b5cf6"
-          roughness={0.32}
+          roughness={0.3}
           metalness={0.06}
           emissive="#6d28d9"
-          emissiveIntensity={0.14}
+          emissiveIntensity={0.12}
+          transparent
+          opacity={0.55}
+          clearcoat={0.4}
         />
       </mesh>
+      {/* chromatin — condensed DNA strands */}
+      {(detail ? CHROMATIN_TRANSFORMS : CHROMATIN_TRANSFORMS.slice(0, 1)).map((transform, index) => (
+        <mesh key={`chromatin-${index}`} position={transform.position} rotation={transform.rotation} scale={transform.scale}>
+          <torusKnotGeometry args={[0.16, 0.035, 48, 8, 2, 3]} />
+          <meshStandardMaterial color="#5b21b6" roughness={0.5} emissive="#4c1d95" emissiveIntensity={0.2} />
+        </mesh>
+      ))}
       {/* nucleolus */}
       <mesh position={[0.13, -0.11, 0.09]}>
         <sphereGeometry args={[0.21, 24, 24]} />
@@ -210,12 +239,28 @@ function Nucleus() {
           emissiveIntensity={0.18}
         />
       </mesh>
-      {/* nuclear pore rings */}
+      {/* nucleolus granules */}
+      {detail &&
+        NUCLEOLUS_GRANULES.map((position, index) => (
+          <mesh key={`granule-${index}`} position={position}>
+            <sphereGeometry args={[0.035, 8, 8]} />
+            <meshStandardMaterial color="#a78bfa" roughness={0.4} />
+          </mesh>
+        ))}
+      {/* nuclear pore rings — outer ring + inner annulus */}
       {pores.map((point, index) => (
-        <mesh key={`pore-${index}`} position={point} quaternion={outwardQuaternion(point)}>
-          <torusGeometry args={[0.05, 0.014, 8, 14]} />
-          <meshStandardMaterial color="#c4b5fd" roughness={0.35} metalness={0.25} />
-        </mesh>
+        <group key={`pore-${index}`} position={point} quaternion={outwardQuaternion(point)}>
+          <mesh>
+            <torusGeometry args={[0.05, 0.014, 8, 14]} />
+            <meshStandardMaterial color="#c4b5fd" roughness={0.35} metalness={0.25} />
+          </mesh>
+          {detail && (
+            <mesh>
+              <torusGeometry args={[0.028, 0.008, 6, 12]} />
+              <meshStandardMaterial color="#ede9fe" roughness={0.3} metalness={0.2} />
+            </mesh>
+          )}
+        </group>
       ))}
     </group>
   );
@@ -224,8 +269,12 @@ function Nucleus() {
 function RoughER() {
   const ribosomes = useMemo(() => {
     const dots: [number, number, number][] = [];
-    for (let i = 0; i < 20; i += 1) {
-      dots.push([Math.sin(i * 2.3) * 0.3, (i / 20) * 0.5 - 0.14, Math.cos(i * 1.7) * 0.13]);
+    for (let i = 0; i < 40; i += 1) {
+      dots.push([
+        Math.sin(i * 2.3) * 0.3,
+        (i / 40) * 0.5 - 0.14,
+        Math.cos(i * 1.7) * 0.13,
+      ]);
     }
     return dots;
   }, []);
@@ -297,6 +346,9 @@ function GolgiBody() {
     [0.16, 0.52, 0.1],
     [-0.2, 0.58, -0.05],
     [0.05, 0.64, 0.16],
+    [0.28, 0.2, -0.18],
+    [-0.3, 0.15, 0.2],
+    [0.12, 0.05, -0.22],
   ];
 
   return (
@@ -308,12 +360,17 @@ function GolgiBody() {
           scale={[1 - i * 0.08, 0.34, 1 - i * 0.08]}
         >
           <torusGeometry args={[0.42, 0.05, 10, 28]} />
-          <meshStandardMaterial color="#ec4899" roughness={0.38} metalness={0.08} />
+          {/* cis face (lighter) vs trans face (deeper) tint */}
+          <meshStandardMaterial
+            color={i < 2 ? "#ec4899" : "#db2777"}
+            roughness={0.38}
+            metalness={0.08}
+          />
         </mesh>
       ))}
       {vesicles.map((position, index) => (
         <mesh key={`vesicle-${index}`} position={position}>
-          <sphereGeometry args={[0.06, 12, 12]} />
+          <sphereGeometry args={[0.055, 12, 12]} />
           <meshStandardMaterial color="#f9a8d4" roughness={0.4} />
         </mesh>
       ))}
@@ -331,6 +388,14 @@ const MITOCHONDRIA_TRANSFORMS: {
   { position: [-1.05, 0.95, 0.35], rotation: [1.2, 0.2, 0.25] },
 ];
 
+/** Matrix granules inside the mitochondrial matrix. */
+const MATRIX_GRANULES: [number, number, number][] = [
+  [0.05, 0.06, 0.05],
+  [-0.08, -0.02, -0.04],
+  [0.1, -0.1, 0.03],
+  [-0.02, 0.12, -0.06],
+];
+
 function Mitochondrion({
   position,
   rotation,
@@ -338,12 +403,25 @@ function Mitochondrion({
   position: [number, number, number];
   rotation: [number, number, number];
 }) {
-  const cristae = useHelixCurve(0.075, 0.34, 3);
+  const cristaeA = useHelixCurve(0.075, 0.34, 3);
+  const cristaeB = useHelixCurve(0.05, 0.3, 2.5);
 
   return (
     <group position={position} rotation={rotation}>
+      {/* outer membrane (translucent) */}
       <mesh>
-        <capsuleGeometry args={[0.15, 0.4, 8, 16]} />
+        <capsuleGeometry args={[0.17, 0.42, 8, 16]} />
+        <meshStandardMaterial
+          color="#f87171"
+          roughness={0.4}
+          metalness={0.05}
+          transparent
+          opacity={0.45}
+        />
+      </mesh>
+      {/* inner membrane */}
+      <mesh>
+        <capsuleGeometry args={[0.14, 0.38, 8, 16]} />
         <meshStandardMaterial
           color="#ef4444"
           roughness={0.42}
@@ -352,11 +430,22 @@ function Mitochondrion({
           emissiveIntensity={0.14}
         />
       </mesh>
-      {/* inner cristae (helix) */}
+      {/* cristae — two interleaved helices */}
       <mesh>
-        <tubeGeometry args={[cristae, 56, 0.018, 6, false]} />
+        <tubeGeometry args={[cristaeA, 56, 0.018, 6, false]} />
         <meshStandardMaterial color="#fca5a5" roughness={0.5} />
       </mesh>
+      <mesh>
+        <tubeGeometry args={[cristaeB, 48, 0.014, 6, false]} />
+        <meshStandardMaterial color="#fecaca" roughness={0.5} />
+      </mesh>
+      {/* matrix granules */}
+      {MATRIX_GRANULES.map((granule, index) => (
+        <mesh key={`granule-${index}`} position={granule}>
+          <sphereGeometry args={[0.028, 8, 8]} />
+          <meshStandardMaterial color="#b91c1c" roughness={0.4} />
+        </mesh>
+      ))}
     </group>
   );
 }
@@ -389,25 +478,40 @@ function Chloroplast({
 }) {
   return (
     <group position={position} rotation={rotation}>
+      {/* envelope (translucent) */}
       <mesh scale={[1.35, 0.85, 0.95]}>
         <sphereGeometry args={[0.3, 28, 20]} />
         <meshStandardMaterial
           color="#10b981"
-          roughness={0.45}
+          roughness={0.4}
           metalness={0.05}
-          emissive="#065f46"
-          emissiveIntensity={0.12}
+          transparent
+          opacity={0.5}
         />
       </mesh>
-      {/* thylakoid grana stacks */}
-      {[0, 1, 2, 3].map((i) => (
-        <mesh
-          key={`thylakoid-${i}`}
-          position={[-0.14 + i * 0.095, 0, 0]}
-          rotation={[0, 0, Math.PI / 2]}
-        >
-          <cylinderGeometry args={[0.13, 0.13, 0.028, 16]} />
-          <meshStandardMaterial color="#34d399" roughness={0.5} metalness={0.04} />
+      {/* grana — two stacks of three thylakoid discs */}
+      {[0, 1].map((stack) =>
+        [0, 1, 2].map((disc) => (
+          <mesh
+            key={`grana-${stack}-${disc}`}
+            position={[-0.1 + stack * 0.2, disc * 0.035 - 0.035, 0]}
+            rotation={[0, 0, Math.PI / 2]}
+          >
+            <cylinderGeometry args={[0.11, 0.11, 0.024, 16]} />
+            <meshStandardMaterial color="#34d399" roughness={0.5} metalness={0.04} />
+          </mesh>
+        )),
+      )}
+      {/* stroma thylakoid connecting the grana */}
+      <mesh position={[0, 0, 0.05]} rotation={[Math.PI / 2, 0, 0]}>
+        <cylinderGeometry args={[0.025, 0.025, 0.3, 8]} />
+        <meshStandardMaterial color="#6ee7b7" roughness={0.5} />
+      </mesh>
+      {/* starch granules */}
+      {[[0.12, 0.1, 0.08], [-0.15, -0.08, -0.05]].map((granule, index) => (
+        <mesh key={`starch-${index}`} position={granule as [number, number, number]}>
+          <sphereGeometry args={[0.045, 10, 10]} />
+          <meshStandardMaterial color="#fef3c7" roughness={0.35} />
         </mesh>
       ))}
     </group>
@@ -449,23 +553,40 @@ function Lysosomes() {
   );
 }
 
-function Centrioles() {
+function Centrioles({ detail = true }: { detail?: boolean }) {
+  const triplets = Array.from({ length: 9 }, (_, i) => (i / 9) * Math.PI * 2);
   return (
     <group position={[0.05, 1.35, -0.95]}>
       {[0, 1].map((index) => (
-        <mesh
+        <group
           key={`centriole-${index}`}
-          position={[index * 0.13, 0, index * 0.07]}
+          position={[index * 0.16, 0, index * 0.08]}
           rotation={[index === 0 ? 0.4 : -0.4, 0.5 * index, 0]}
         >
-          <cylinderGeometry args={[0.09, 0.09, 0.3, 9, 1, true]} />
-          <meshStandardMaterial
-            color="#a78bfa"
-            roughness={0.35}
-            metalness={0.3}
-            side={THREE.DoubleSide}
-          />
-        </mesh>
+          {detail ? (
+            // 9+0 arrangement — nine microtubule triplets
+            triplets.map((angle, t) => (
+              <group key={`triplet-${t}`} rotation={[0, 0, angle]}>
+                {[0, 1, 2].map((m) => (
+                  <mesh key={`microtubule-${m}`} position={[0.09 + m * 0.024, 0, 0]}>
+                    <cylinderGeometry args={[0.012, 0.012, 0.3, 6]} />
+                    <meshStandardMaterial color="#a78bfa" roughness={0.35} metalness={0.3} />
+                  </mesh>
+                ))}
+              </group>
+            ))
+          ) : (
+            <mesh>
+              <cylinderGeometry args={[0.09, 0.09, 0.3, 9, 1, true]} />
+              <meshStandardMaterial
+                color="#a78bfa"
+                roughness={0.35}
+                metalness={0.3}
+                side={THREE.DoubleSide}
+              />
+            </mesh>
+          )}
+        </group>
       ))}
     </group>
   );
@@ -473,12 +594,56 @@ function Centrioles() {
 
 // ─── Shells (translucent, drawn after the opaque organelles) ────────────────
 
-function Membrane() {
-  const geometry = useBlobGeometry(2, 4, 0.05);
+/** Transmembrane proteins embedded in the bilayer (detail tier). */
+const MEMBRANE_PROTEINS: [number, number, number][] = [
+  [1.1, 1.2, 1.0],
+  [-1.4, 0.6, 1.2],
+  [0.9, -1.5, 0.7],
+  [-0.8, -1.4, -0.9],
+  [1.6, -0.3, -1.1],
+  [-1.7, -0.2, 0.9],
+  [0.3, 1.9, 0.4],
+  [-0.5, 1.2, -1.5],
+];
+
+function Membrane({ detail = true }: { detail?: boolean }) {
+  const outer = useBlobGeometry(2, 4, 0.05);
+  const inner = useBlobGeometry(1.94, 4, 0.05);
+  const glycocalyx = useSpherePoints(26, 2.02, 2.3);
+  const proteins = detail ? MEMBRANE_PROTEINS : MEMBRANE_PROTEINS.slice(0, 4);
+
   return (
-    <mesh geometry={geometry}>
-      <CellMembraneMaterial color="#fca5a5" opacity={0.26} />
-    </mesh>
+    <group>
+      {/* phospholipid bilayer — outer + inner leaflet */}
+      <mesh geometry={outer}>
+        <CellMembraneMaterial color="#fca5a5" opacity={0.2} />
+      </mesh>
+      <mesh geometry={inner}>
+        <CellMembraneMaterial color="#fecaca" opacity={0.14} />
+      </mesh>
+      {/* transmembrane proteins spanning both leaflets */}
+      {proteins.map((position, index) => (
+        <group key={`protein-${index}`} position={position} quaternion={outwardQuaternion(position)}>
+          <mesh rotation={[Math.PI / 2, 0, 0]}>
+            <capsuleGeometry args={[0.075, 0.16, 6, 10]} />
+            <meshStandardMaterial color="#f472b6" roughness={0.4} metalness={0.05} />
+          </mesh>
+          {/* glycoprotein head on the outer face */}
+          <mesh position={[0, 0, 0.16]}>
+            <icosahedronGeometry args={[0.06, 1]} />
+            <meshStandardMaterial color="#fbcfe8" roughness={0.35} />
+          </mesh>
+        </group>
+      ))}
+      {/* glycocalyx studs */}
+      {detail &&
+        glycocalyx.map((point, index) => (
+          <mesh key={`glyco-${index}`} position={point}>
+            <sphereGeometry args={[0.022, 6, 6]} />
+            <meshStandardMaterial color="#fecdd3" roughness={0.4} />
+          </mesh>
+        ))}
+    </group>
   );
 }
 
@@ -515,25 +680,41 @@ function CellWall() {
 /** Plant-only large central vacuole (up to ~90% of the plant cell volume). */
 function CentralVacuole() {
   return (
-    <mesh position={[-0.35, 0.1, -0.15]} scale={[0.9, 1.2, 0.9]}>
-      <sphereGeometry args={[0.95, 32, 24]} />
-      <meshPhysicalMaterial
-        color="#93c5fd"
-        roughness={0.12}
-        metalness={0.02}
-        transparent
-        opacity={0.2}
-        ior={1.33}
-        thickness={0.5}
-        transmission={0.6}
-        clearcoat={0.6}
-      />
-    </mesh>
+    <group position={[-0.35, 0.1, -0.15]} scale={[0.9, 1.2, 0.9]}>
+      {/* tonoplast (vacuolar membrane) */}
+      <mesh>
+        <sphereGeometry args={[0.95, 32, 24]} />
+        <meshPhysicalMaterial
+          color="#93c5fd"
+          roughness={0.12}
+          metalness={0.02}
+          transparent
+          opacity={0.2}
+          ior={1.33}
+          thickness={0.5}
+          transmission={0.6}
+          clearcoat={0.6}
+        />
+      </mesh>
+      {/* inner cell-sap shell */}
+      <mesh>
+        <sphereGeometry args={[0.88, 24, 18]} />
+        <meshPhysicalMaterial
+          color="#bfdbfe"
+          roughness={0.1}
+          metalness={0}
+          transparent
+          opacity={0.12}
+          ior={1.33}
+          transmission={0.4}
+        />
+      </mesh>
+    </group>
   );
 }
 
 function FreeRibosomes() {
-  const points = useSpherePoints(28, 1.6, 1.7);
+  const points = useSpherePoints(36, 1.6, 1.7);
   return (
     <group>
       {points.map((point, index) => (
@@ -546,12 +727,120 @@ function FreeRibosomes() {
   );
 }
 
+/** Microtubules — long, straight, radiating from the centrosome. */
+const MICROTUBULE_PATHS: [number, number, number][][] = [
+  [[0.1, 0.2, 0.1], [0.9, 0.7, 0.8], [1.6, 1.2, 1.1]],
+  [[0.1, 0.2, 0.1], [-0.8, 0.9, -0.6], [-1.5, 1.3, -1.2]],
+  [[0.1, 0.2, 0.1], [0.7, -1.0, 0.5], [1.3, -1.6, 0.8]],
+  [[0.1, 0.2, 0.1], [-1.0, -0.7, 0.6], [-1.7, -1.2, 1.0]],
+  [[0.1, 0.2, 0.1], [0.4, 0.3, -1.2], [0.7, 0.4, -1.8]],
+  [[0.1, 0.2, 0.1], [-0.5, -0.8, -1.0], [-0.9, -1.4, -1.6]],
+];
+
+/** Actin microfilaments — short, thin, wavy (detail tier). */
+const ACTIN_PATHS: [number, number, number][][] = [
+  [[0.3, 0.5, 0.4], [0.55, 0.72, 0.5], [0.8, 0.66, 0.72]],
+  [[-0.4, 0.6, -0.3], [-0.62, 0.78, -0.4], [-0.8, 0.7, -0.55]],
+  [[0.5, -0.5, 0.6], [0.72, -0.66, 0.72], [0.9, -0.58, 0.9]],
+  [[-0.6, -0.4, 0.5], [-0.8, -0.55, 0.62], [-1.0, -0.48, 0.78]],
+  [[0.2, 0.2, -0.8], [0.4, 0.34, -1.0], [0.6, 0.28, -1.2]],
+  [[-0.3, -0.3, -0.7], [-0.5, -0.42, -0.9], [-0.7, -0.36, -1.1]],
+  [[0.8, 0.8, -0.2], [1.0, 0.94, -0.34], [1.2, 0.9, -0.5]],
+  [[-0.9, 0.5, 0.4], [-1.1, 0.62, 0.52], [-1.3, 0.56, 0.68]],
+  [[0.7, -0.9, -0.4], [0.88, -1.04, -0.52], [1.05, -0.98, -0.68]],
+  [[-0.7, -0.9, 0.2], [-0.88, -1.04, 0.32], [-1.05, -0.98, 0.48]],
+  [[1.0, 0.2, 0.7], [1.16, 0.32, 0.82], [1.3, 0.26, 0.98]],
+  [[-1.1, -0.2, -0.6], [-1.26, -0.32, -0.72], [-1.4, -0.26, -0.88]],
+];
+
+/** Intermediate filaments — wavy, medium thickness (detail tier). */
+const INTERMEDIATE_PATHS: [number, number, number][][] = [
+  [[0.2, -0.4, 0.9], [0.45, -0.2, 1.1], [0.7, -0.42, 1.2]],
+  [[-0.5, 0.3, 1.0], [-0.72, 0.5, 1.15], [-0.95, 0.32, 1.25]],
+  [[0.6, 1.0, 0.3], [0.82, 1.16, 0.46], [1.0, 1.0, 0.62]],
+  [[-0.8, -0.8, 0.6], [-1.0, -0.64, 0.76], [-1.2, -0.82, 0.9]],
+];
+
+/** Cytoskeleton — microtubules, actin filaments, intermediate filaments. */
+function Cytoskeleton({ detail = true }: { detail?: boolean }) {
+  return (
+    <group>
+      {MICROTUBULE_PATHS.map((points, index) => (
+        <Tube key={`microtubule-${index}`} points={points} radius={0.018} color="#c4b5fd" />
+      ))}
+      {detail &&
+        ACTIN_PATHS.map((points, index) => (
+          <Tube key={`actin-${index}`} points={points} radius={0.009} color="#f9a8d4" />
+        ))}
+      {detail &&
+        INTERMEDIATE_PATHS.map((points, index) => (
+          <Tube key={`intermediate-${index}`} points={points} radius={0.014} color="#fcd34d" />
+        ))}
+    </group>
+  );
+}
+
+const PEROXISOME_POSITIONS: [number, number, number][] = [
+  [0.7, 1.3, -0.6],
+  [-1.2, -1.0, -0.4],
+];
+
+/** Peroxisomes — single membrane with a crystalline core (shared). */
+function Peroxisomes() {
+  return (
+    <group>
+      {PEROXISOME_POSITIONS.map((position, index) => (
+        <group key={`peroxisome-${index}`} position={position}>
+          <mesh>
+            <icosahedronGeometry args={[0.11, 1]} />
+            <meshStandardMaterial color="#94a3b8" roughness={0.4} transparent opacity={0.75} />
+          </mesh>
+          <mesh>
+            <octahedronGeometry args={[0.05, 0]} />
+            <meshStandardMaterial color="#e2e8f0" roughness={0.3} />
+          </mesh>
+        </group>
+      ))}
+    </group>
+  );
+}
+
+const TRANSPORT_VESICLE_POSITIONS: [number, number, number][] = [
+  [0.4, 0.6, 0.9],
+  [-0.6, 0.3, 1.1],
+  [1.0, -0.4, 0.6],
+  [-1.1, 0.7, -0.5],
+  [0.2, -1.3, 0.4],
+  [-0.3, -0.2, -1.4],
+];
+
+/** Small transport vesicles shuttling cargo through the cytoplasm (shared). */
+function TransportVesicles() {
+  return (
+    <group>
+      {TRANSPORT_VESICLE_POSITIONS.map((position, index) => (
+        <mesh key={`t-vesicle-${index}`} position={position}>
+          <sphereGeometry args={[0.045, 10, 10]} />
+          <meshStandardMaterial color="#fde68a" roughness={0.35} transparent opacity={0.85} />
+        </mesh>
+      ))}
+    </group>
+  );
+}
+
 /**
- * Flat geometry budget — subdiv-4 icosahedron membrane, 4 mitochondria,
- * 3 chloroplasts, ~48 ribosome spheres. Comfortably inside the desktop
- * ≥ 60 FPS / mobile-low ≥ 45 FPS budget (T4-TR4).
+ * Geometry budget — subdiv-4 icosahedron bilayer membrane with embedded
+ * proteins, 4 double-membrane mitochondria, 3 chloroplasts with grana stacks,
+ * a 9-triplet centriole pair, a 22-fibre cytoskeleton and ~76 ribosome
+ * spheres. Heavy detail is gated behind the hardware tier (low tier drops
+ * actin/intermediate filaments, chromatin knots, glycocalyx and triplet
+ * centrioles), keeping the desktop ≥ 60 FPS / mobile-low ≥ 45 FPS budget
+ * (T4-TR4).
  */
 function CellModel({ mode, reducedMotion }: { mode: CellMode; reducedMotion: boolean }) {
+  const { tier } = useSceneTier("biology");
+  const detail = tier !== "low";
+
   return (
     <group>
       <OrganelleGroup show={isOrganelleVisible("cellWall", mode)} reducedMotion={reducedMotion}>
@@ -570,17 +859,20 @@ function CellModel({ mode, reducedMotion }: { mode: CellMode; reducedMotion: boo
         <Lysosomes />
       </OrganelleGroup>
       <OrganelleGroup show={isOrganelleVisible("centriole", mode)} reducedMotion={reducedMotion}>
-        <Centrioles />
+        <Centrioles detail={detail} />
       </OrganelleGroup>
 
-      <Nucleus />
+      <Nucleus detail={detail} />
       <RoughER />
       <SmoothER />
       <GolgiBody />
       <Mitochondria />
+      <Peroxisomes />
+      <TransportVesicles />
+      <Cytoskeleton detail={detail} />
       <FreeRibosomes />
       <Cytoplasm />
-      <Membrane />
+      <Membrane detail={detail} />
     </group>
   );
 }

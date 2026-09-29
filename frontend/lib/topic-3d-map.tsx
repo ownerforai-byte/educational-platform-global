@@ -68,6 +68,14 @@ import { GaussLawVisual } from "@/components/lab/topic-visuals/gauss-law-3d";
 import { OhmsLawVisual } from "@/components/lab/topic-visuals/ohms-law-3d";
 import { KirchhoffsLawsVisual } from "@/components/lab/topic-visuals/kirchhoffs-laws-3d";
 import { BiotSavartVisual } from "@/components/lab/topic-visuals/biot-savart-3d";
+import { LorentzForceVisual } from "@/components/lab/topic-visuals/lorentz-force-3d";
+import { LRCircuitVisual } from "@/components/lab/topic-visuals/lr-circuit-3d";
+import { LCOscillationVisual } from "@/components/lab/topic-visuals/lc-oscillation-3d";
+import { TransformerVisual } from "@/components/lab/topic-visuals/transformer-3d";
+import { WheatstoneBridgeVisual } from "@/components/lab/topic-visuals/wheatstone-bridge-3d";
+import { PNJunctionVisual } from "@/components/lab/topic-visuals/pn-junction-3d";
+import { LogicGatesVisual } from "@/components/lab/topic-visuals/logic-gates-3d";
+import { AMFMModulationVisual } from "@/components/lab/topic-visuals/am-fm-modulation-3d";
 import { CellBiologyVisual } from "@/components/lab/topic-visuals/cell-biology";
 import { CellDivisionVisual } from "@/components/lab/topic-visuals/cell-division";
 import { FiveKingdomVisual } from "@/components/lab/topic-visuals/five-kingdom";
@@ -559,16 +567,21 @@ const PHYSICS_12: LabComponentMap = {
   "ohms-law-and-its-limitations": makeTopic(OhmsLawVisual, "Ohm's Law"),
 
   "kirchhoffs-laws-and-their-applications": makeTopic(KirchhoffsLawsVisual, "Kirchhoff's Laws"),
+  "wheatstone-bridge-and-meter-bridge": makeTopic(WheatstoneBridgeVisual, "Wheatstone Bridge"),
 
   "magnetism-and-magnetic-effect-of-current": make("magnetic", "Magnetism", "magnetism-and-magnetic-effect", "physics"),
   "biot-savart-law-and-its-applications-straight-wire-circular-loop-solenoid": makeTopic(BiotSavartVisual, "Biot-Savart Law"),
+  "lorentz-force-and-motion-of-charged-particles-in-magnetic-fields": makeTopic(LorentzForceVisual, "Lorentz Force"),
 
   "electromagnetic-induction": makeTopic(EMIInductionVisual, "Electromagnetic Induction"),
   "faradays-laws-of-electromagnetic-induction": makeTopic(EMIInductionVisual, "Faraday's Laws"),
   "lenzs-law-and-conservation-of-energy": makeTopic(LenzLawVisual, "Lenz's Law"),
+  "growing-and-decaying-current-in-lr-circuits": makeTopic(LRCircuitVisual, "LR Circuit — Current Growth & Decay"),
 
   "alternating-current": makeTopic(ACcircuitsVisual, "Alternating Current"),
   "ac-voltage-applied-to-resistor-inductor-and-capacitor": makeTopic(ACcircuitsVisual, "AC Voltage"),
+  "lc-oscillations-and-resonance": makeTopic(LCOscillationVisual, "LC Oscillations"),
+  "transformer-principle-types-and-losses": makeTopic(TransformerVisual, "Transformer"),
 
   "ray-optics": makeTopic(OpticsVisual, "Ray Optics"),
   "reflection-at-plane-and-curved-surfaces-mirrors": makeTopic(OpticsReflection3d, "Reflection at Mirrors"),
@@ -596,8 +609,11 @@ const PHYSICS_12: LabComponentMap = {
   "atom-bohrs-model-and-hydrogen-spectrum": makeTopic(BohrModelVisual, "Bohr's Model"),
   "nucleus-binding-energy-nuclear-fission-and-fusion": make("binding energy", "Binding Energy", "modern-physics", "physics"),
   "communication-systems": make("modulation", "Communication Systems", "communication-systems", "physics"),
+  "modulation-amplitude-modulation-and-frequency-modulation": makeTopic(AMFMModulationVisual, "AM & FM Modulation"),
 
   "difference-between-metals-insulators-and-semiconductors-using-band-theory": makeTopic(SemiconductorsVisual, "Band Theory"),
+  "semiconductors-intrinsic-and-extrinsic-p-n-junction-diode-transistor": makeTopic(PNJunctionVisual, "p-n Junction Diode"),
+  "logic-gates-and-or-not-nand-nor": makeTopic(LogicGatesVisual, "Logic Gates"),
 };
 export { PHYSICS_12 };
 
