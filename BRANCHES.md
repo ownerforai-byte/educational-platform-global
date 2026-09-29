@@ -32,6 +32,13 @@
 
 ## 2. The 48 area branches (all start at `main`)
 
+> **Sync policy (2026-09-29):** every area branch is kept **fast-forwarded to
+> `main`'s tip** (`git merge --ff-only main` in its worktree). They are not
+> long-lived forks — they exist so an agent can stage an area's work without
+> touching `main` directly, then merge back. Last full sync: `main` `a8e20833`.
+> Re-sync everything with `scripts/sync-area-branches.ps1` (skips reserved
+> `agents/*`, `claude/*`, `worktree/*`, `cline/*` branches automatically).
+
 ### content/* — data & notes (10)
 | Branch | Scope |
 |---|---|
@@ -58,6 +65,11 @@
 Scope: the matching route under `frontend/app/(app)/**` or
 `frontend/app/**`, its components, and feature folders
 (`frontend/features/**`). UI + tests only — no backend changes on these.
+
+`feature/lab` additionally owns the whole 3D/simulation layer:
+`frontend/components/lab/**` (3D rig, `topic-visuals/*` simulations, motion
+graphics), `frontend/lib/topic-3d-map.tsx`, `frontend/lib/lab-registry.tsx`,
+and the lab test suites under `frontend/tests/**lab**`.
 
 ### backend/* — API areas (6)
 | Branch | Scope |
