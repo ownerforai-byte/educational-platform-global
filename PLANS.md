@@ -1,13 +1,12 @@
 # PLANS — Typed content core + live formulas (JSON stays the storage format)
 
-Status: **Phases 1–4 and 6 implemented** (uncommitted in the working tree as of
+Status: **Phases 1–4 and 6 implemented** (committed on `main` in `9a3951ab`,
 2026-09-29); **Phase 5 (`derive_formulas.py`) is the only unstarted piece**. Phase 1
 (schema tree + validate/repair CLI + corpus test + CI workflow + baseline ratchet)
 landed on `main` in `73793f3b`; its §4.2 `formula.ts` / §4.6 `syllabus-ref.ts` tails
-and §4.7 helpers are now on disk. Phases 2–4 and 6 (one CLI, typed authoring
-scaffold, live formulas, interactive blocks, tests/gates) are implemented but NOT
-yet committed. `main` is the only deployable branch — the `feature/notes` worktree
-still sits at its stale base `46a048bf`; do not build there.
+and §4.7 helpers are on disk. Phases 2–4 and 6 (one CLI, typed authoring scaffold,
+live formulas, interactive blocks, tests/gates) are implemented and committed.
+`main` is the only deployable branch.
 
 ---
 
@@ -1650,7 +1649,7 @@ index" no longer exists. Everything it worried about is tracked on `main`:
   `tsconfig.json` already includes `**/*.ts(x)` (only node_modules/backend/content-tools
   excluded), so the 3 files it listed were never outside typechecking.
 
-### Weaknesses found by this inspection — pass 2 fixed 1, 2, 4, 6, 7; pass 3 fixed 6 fully + the backend ESM landmines on 2026-09-29 (3, 8 still open)
+### Weaknesses found by this inspection — all fixed (pass 2 fixed 1, 2, 4, 6, 7; pass 3 fixed 6 fully + the backend ESM landmines on 2026-09-29; 3, 5, 8 fixed 2026-09-29)
 
 1. **FIXED** — `check:content` now exits 1 on unparseable JSON and chains
    `check:schema`; the name and the behavior agree (§4.9).
@@ -1661,9 +1660,10 @@ index" no longer exists. Everything it worried about is tracked on `main`:
    `frontend/.env.example`, and `lib/api-client.ts`'s fallback (3001 → 3000 — nothing
    ever listened on 3001; `backend/src/index.ts` defaults to 3000). FE 5173 was never
    wrong: `next dev --webpack -p 5173` pins it.
-3. **Duplicate corpus** — `frontend/content/ravikishan/` (113 tracked JSON, not gitignored)
-   is invisible to this plan and to the gate (the corpus test resolves the repo-root tree
-   specifically to avoid sweeping it). Document as deliberate, or delete.
+3. **FIXED (2026-09-29)** — deleted the stale app-side copy
+   `frontend/content/ravikishan/` (113 tracked JSON): no code referenced it, and it
+   had drifted from the canonical `content/ravikishan/` tree (all 59 comparable
+   mindmaps differed; 54 files existed only there).
 4. **FIXED** — `_manifest.json` is validated in two places: `validate.ts --strict`
    (local gate, proven by negative test) and the corpus test (CI gate). Wiring it
    exposed a bigger bug: the build script had been **crashing on every run** since
@@ -1680,8 +1680,8 @@ index" no longer exists. Everything it worried about is tracked on `main`:
    (2026-09-29, `998343c4`) that runs `validate.ts --strict` on every push/PR
    regardless of which paths changed. No path-scoped gap remains.
 7. **FIXED** — `tsx@^4.23.15` added to root devDependencies (§4.9).
-8. **Stale plan artifacts** — the `feature/notes` worktree still sits at `46a048bf` far
-   behind `main`; nobody should build on it.
+8. **FIXED (2026-09-29)** — removed the stale `feature/notes` worktree and deleted
+   the merged branch (local; the remote ref is deleted with the push).
 9. **FIXED (pass 3, 2026-09-29, `998343c4`)** — the last `require()` landmines under
    root/backend `"type": "module"`: `backend/scripts/diagnose-ai.js` deleted (broken
    duplicate — it also pointed at the nonexistent `backend/backend/.env`; the fixed
