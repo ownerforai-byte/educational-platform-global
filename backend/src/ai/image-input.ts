@@ -1,5 +1,5 @@
 /**
- * IMAGE INPUT (camera / gallery) for the Captain chat.
+ * IMAGE INPUT (camera / gallery) for the Veer chat.
  *
  * Students can attach a photo of a question, a diagram, a chart or a
  * hand-written derivation; the model must READ it and then teach the thing it

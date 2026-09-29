@@ -52,7 +52,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
     {
       role: "assistant",
       content:
-        "👋, I am Veer here. Feel free to clear your doubts.",
+        "👋, I'm Veer — feel free to clear your doubts.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -164,7 +164,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
       {
         role: "assistant",
         content:
-          "👋, I am Veer here. Feel free to clear your doubts.",
+          "👋, I'm Veer — feel free to clear your doubts.",
       },
     ]);
     setError(null);

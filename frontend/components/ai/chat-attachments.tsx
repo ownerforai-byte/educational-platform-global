@@ -5,7 +5,7 @@ import { Camera, ImagePlus, X } from "lucide-react";
 import { cn } from "@/lib/utils";
 
 /**
- * Camera / gallery photo input for the Captain chat.
+ * Camera / gallery photo input for the Veer chat.
  *
  * A student can photograph a question, a textbook page, a diagram or a
  * hand-written derivation and send it with (or without) typed text; the

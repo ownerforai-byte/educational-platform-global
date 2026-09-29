@@ -143,7 +143,7 @@ const PORTALS: Portal[] = [
   },
   {
     title: "Veer Study Assistant",
-    badge: "24/7 CAPTAIN",
+    badge: "24/7 VEER",
     desc: "Curriculum-aligned intelligent tutor for instant concept explanations, numerical solutions and study plans.",
     href: "/chat",
     icon: Brain,
