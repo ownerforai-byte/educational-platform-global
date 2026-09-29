@@ -20,8 +20,8 @@
  */
 
 import {
-  HIGH_YIELD_TOPIC_BANK,
-  getHighYieldTopicData,
+  ALL_HIGH_YIELD_TOPICS,
+  getHighYieldEntriesForUnit,
   type HighYieldTopicData,
 } from "@/lib/high-yield-topic-facts";
 import type {
@@ -82,23 +82,34 @@ function latexToPlain(tex: string): string {
   return out;
 }
 
-/** Every bank entry that claims this unit; keyword match only as a fallback. */
-function entriesForUnit(
-  unitId: string,
-  subjectSlug: string,
-  topicSlug: string,
-  topicTitle: string,
-): HighYieldTopicData[] {
-  if (unitId) {
-    const exact = HIGH_YIELD_TOPIC_BANK.filter((e) =>
-      e.unitSlugs?.includes(unitId),
-    );
-    if (exact.length > 0) return exact;
-  }
-  // No entry claims the unit: allow a scored keyword match (never a blind
-  // "first entry for this subject" — that is what made trees repeat).
-  const byKeyword = getHighYieldTopicData(subjectSlug, topicSlug, topicTitle);
-  return byKeyword ? [byKeyword] : [];
+/**
+ * Every bank entry that claims this unit — EXACT unit-id match only.
+ *
+ * History: this searched only the 5-entry core array, so the ~50 entries that
+ * live in the per-subject banks could never match by unit and the function fell
+ * through to a keyword guess. That guess is how "Fundamentals of Applied
+ * Chemistry" rendered another unit's facts (0.0% vocabulary overlap) and why
+ * 57 units had no tree of their own at all. A unit id is the only signal that
+ * cannot be wrong; when nothing claims the unit we return [] and the caller
+ * builds a tree from the unit's OWN syllabus topics instead of guessing.
+ */
+function entriesForUnit(unitId: string): HighYieldTopicData[] {
+  if (!unitId) return [];
+  const exact = getHighYieldEntriesForUnit(unitId);
+  if (exact.length > 0) return exact;
+  // Alias bridge: a unit whose id was renamed still has an entry under the old
+  // id. Only accepted when the alias is a real bank slug that shares the unit's
+  // distinctive words, never on a bare keyword score.
+  const words = new Set(
+    unitId.split("-").filter((w) => w.length >= 5),
+  );
+  if (!words.size) return [];
+  return ALL_HIGH_YIELD_TOPICS.filter((e) =>
+    (e.unitSlugs ?? []).some((slug) => {
+      const parts = slug.split("-").filter((w) => w.length >= 5);
+      return parts.length > 0 && parts.every((p) => words.has(p));
+    }),
+  ).slice(0, 1);
 }
 
 function sub(
@@ -140,14 +151,14 @@ function branch(
  */
 export function buildUnitMindmapBranches(
   unitId: string,
-  subjectSlug: string,
-  topicSlug: string,
-  topicTitle: string,
+  _subjectSlug?: string,
+  _topicSlug?: string,
+  _topicTitle?: string,
 ): MindMapBranch[] | undefined {
-  const entries = entriesForUnit(unitId, subjectSlug, topicSlug, topicTitle);
+  const entries = entriesForUnit(unitId);
   if (entries.length === 0) return undefined;
 
-  const uid = (unitId || topicSlug || "unit").replace(/[^a-z0-9-]+/gi, "-");
+  const uid = (unitId || "unit").replace(/[^a-z0-9-]+/gi, "-");
   let i = 0; // global node counter — keeps ids unique across merged entries
   const nextId = (kind: string) => `${uid}-${kind}-${i++}`;
 

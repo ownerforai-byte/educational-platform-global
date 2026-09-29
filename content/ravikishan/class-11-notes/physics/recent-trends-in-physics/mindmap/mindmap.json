@@ -3,8 +3,42 @@
   "unitSlug": "recent-trends-in-physics",
   "topicSlug": "recent-trends-in-physics-mindmap",
   "topicTitle": "recent trends in physics — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "**Elementary particles:** Particles with no known internal structure or substructure. They are the fundamental constituents of matter and radiation under the…",
+    "**Fermions (spin-$\\frac{1}{2}$):** Obey the Pauli exclusion principle. They include quarks and leptons. Quarks combine to form hadrons (baryons, mesons);…",
+    "**Bosons (integer spin):** Do NOT obey the exclusion principle; they can occupy the same quantum state (lasers, BEC). Force-carrying bosons: photon…"
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
+  "mindmap": {
+    "centralConcept": "RECENT TRENDS IN PHYSICS",
+    "branches": [
+      {
+        "topic": "Particles, Antiparticles, Quarks and Leptons",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Elementary particles:** Particles with no known internal structure or substructure. They are the…",
+              "**Fermions (spin-$\\frac{1}{2}$):** Obey the Pauli exclusion principle. They include quarks and leptons.…",
+              "**Bosons (integer spin):** Do NOT obey the exclusion principle; they can occupy the same quantum state…",
+              "**Quarks:** Six flavors: up ($u$), down ($d$), charm ($c$), strange ($s$), top ($t$), bottom ($b$). Charges…",
+              "**Leptons:** Six flavors: electron ($e^-$), muon ($\\\\\\mu^-$), tau ($\\tau^-$), electron neutrino ($\\nu_e$),…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Confusion: The proton is made of three quarks ($uud$), but its mass is $938\\\\\\,\\text{MeV}/c^2$ while the sum…",
+              "Confusion: There are only TWO stable hadrons found in nature: protons and electrons. Free neutrons decay…",
+              "Confusion: A neutrino has almost no mass, but NOT zero mass. Oscillation experiments show $\\\\\\Delta m^2 \\neq…"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

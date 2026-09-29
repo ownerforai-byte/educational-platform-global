@@ -3,8 +3,149 @@
   "unitSlug": "quantity-of-heat",
   "topicSlug": "quantity-of-heat-mindmap",
   "topicTitle": "quantity of heat — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "**Heat is energy in transit:** Heat ($H$) is the thermal energy transferred between systems due to a temperature difference. It is NOT a property of a body -…",
+    "**Mass dependency (H ∝ m):** For a given substance and temperature change, the heat required is directly proportional to the mass: $H \\propto m$. Doubling the…",
+    "**Temperature dependency (H ∝ Δθ):** For a given mass, heat is directly proportional to the temperature change: $H \\propto \\Delta\\theta$, where $\\Delta\\theta…"
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
+  "mindmap": {
+    "centralConcept": "QUANTITY OF HEAT",
+    "branches": [
+      {
+        "topic": "Heat (H) - Mass and Temperature Dependency",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Heat is energy in transit:** Heat ($H$) is the thermal energy transferred between systems due to a…",
+              "**Mass dependency (H ∝ m):** For a given substance and temperature change, the heat required is directly…",
+              "**Temperature dependency (H ∝ Δθ):** For a given mass, heat is directly proportional to the temperature…",
+              "**Combined relation:** Combining both: $H \\propto m \\cdot \\Delta\\theta$. Introducing the constant of…",
+              "**Sign convention:** When heat is absorbed (temperature rises), $H > 0$ and $\\Delta\\theta > 0$. When heat is…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ Heat and temperature are the same thing. ✅ Temperature is the average molecular kinetic energy…",
+              "❌ A body \"contains\" heat. ✅ A body contains internal energy (kinetic + potential of its molecules). Heat is…",
+              "❌ All materials heat up at the same rate with the same power. ✅ Different materials have different specific…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Newton's Law of Cooling — Purpose & Real-World…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Purpose of Newton's law of cooling:** The law provides a simple mathematical model to predict how the…",
+              "**Forensic science — estimating time of death:** A corpse cools according to Newton's law after death (the…",
+              "**Engineering — cooling system design:** Engineers use Newton's law to size radiators, heat sinks, and…",
+              "**Food industry — pasteurization and chilling:** After pasteurization, milk must be cooled to below 4°C…",
+              "**Everyday life — coffee and tea:** A hot cup of coffee cools faster when the room is cold and slower when…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ Newton's law of cooling tells you the exact time of death. ✅ It gives an ESTIMATE. The model ignores many…",
+              "❌ The law works equally well for very large temperature differences (e.g., a red-hot iron in air). ✅ For…",
+              "❌ A larger object always cools faster. ✅ Larger objects have larger heat capacity ($mc$), which slows…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Specific Heat Capacity (c) - Definition & Key Values",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Definition:** Specific heat capacity ($c$) is the amount of heat energy required to raise the temperature…",
+              "**Formula:** From $H = mc\\Delta\\theta$, solving for $c$: **$c = \\frac{H}{m \\cdot \\Delta\\theta}$**. This…",
+              "**Water - the benchmark:** $c_{water} = 4186\\text{ J/kg·K}$ (more precisely 4181.3 J/kg·K at 15°C, but 4200…",
+              "**Ice vs. liquid water:** $c_{ice} \\approx 2100\\text{ J/kg·K}$ - about HALF of liquid water's specific heat.…",
+              "**Metals - low specific heats:** Copper: $c = 390\\text{ J/kg·K}$, Aluminum: $c = 900\\text{ J/kg·K}$, Iron:…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ Specific heat capacity is the same for all states of a substance. ✅ Ice ($c=2100$), liquid water…",
+              "❌ Specific heat depends on the shape/size of the object. ✅ Specific heat is an INTENSIVE property - it…",
+              "❌ $c_p$ and $c_v$ are the same for all substances. ✅ For solids and liquids, $c_p \\approx c_v$ because they…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Heat Capacity (Thermal Capacity, C')",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Definition:** Heat capacity (also called thermal capacity), denoted $C'$ or simply $C$, is the amount of…",
+              "**Formula:** $C' = m \\cdot c$, where $m$ is the mass of the object and $c$ is the specific heat capacity of…",
+              "**Heat exchanged using C':** $H = C' \\cdot \\Delta\\theta$. This is simpler than $H = mc\\Delta\\theta$ when you…",
+              "**SI unit:** $\\text{J/K}$ (joule per kelvin) or $\\text{J/°C}$. Since a kelvin and a degree Celsius have the…",
+              "**CGS unit:** $\\text{cal/°C}$ (calorie per degree Celsius). Water's heat capacity is $1\\text{ cal/°C}$ per…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ Heat capacity and specific heat are the same thing. ✅ Heat capacity ($C'$) depends on the object's mass;…",
+              "❌ A larger object always has a larger heat capacity. ✅ For the SAME material, yes. But a small lead weight…",
+              "❌ Heat capacity has no units. ✅ Heat capacity has units: J/K (SI) or cal/°C (CGS). Specific heat has units…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Triple Point",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Triple Point",
+              "Application of Triple Point",
+              "Connection of Triple Point to other topics",
+              "**Triple Point:** Class 11 concept.",
+              "**Why:** connects to other topics."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Triple Point",
+              "Statement 2: Theorem related to Triple Point",
+              "Statement 3: Condition for Triple Point to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Triple Point problems - significant marks.",
+              "Recall the formula for Triple Point.",
+              "Triple Point is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Triple Point.",
+              "Check formula conditions."
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

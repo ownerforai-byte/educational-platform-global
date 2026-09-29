@@ -3,127 +3,157 @@
   "unitSlug": "conservation-biology",
   "topicSlug": "conservation-biology-mindmap",
   "topicTitle": "conservation biology — interactive concept map",
-  "relevance": 0,
-  "enrichedContent": {
-    "notes": [
-      "Strategies and approaches for conserving biodiversity, including protected areas and sustainable development.",
-      "Conservation biology: applied science dedicated to protecting Earth's biodiversity and natural processes",
-      "Biodiversity hotspots: regions with exceptional species richness and high endemism under threat",
-      "IUCN Red List categories: Extinct (EX), Extinct in Wild (EW), Critically Endangered (CR), Endangered (EN), Vulnerable (VU)",
-      "In-situ conservation: protecting species within natural habitats — national parks, wildlife sanctuaries, biosphere reserves",
-      "Ex-situ conservation: protecting species outside natural habitats — zoos, botanical gardens, seed banks, gene banks",
-      "Nepal's protected areas: 10 national parks, 3 conservation areas, 9 wildlife reserves, 1 hunting reserve",
-      "Chitwan National Park: UNESCO World Heritage Site; home to Bengal tiger, one-horned rhinoceros",
-      "Sagarmatha National Park: Mount Everest region; preserved for cultural and natural significance"
-    ],
-    "confusion": [],
-    "practice": [],
-    "universalFacts": [
-      "Biology studies the diversity of life across approximately 8.7 million species worldwide.",
-      "The smallest living organisms are mycoplasma bacteria at 0.1 micrometers in diameter.",
-      "DNA contains the genetic instructions for the development and function of all known living organisms.",
-      "The human genome contains approximately 3 billion base pairs across 23 pairs of chromosomes.",
-      "Photosynthesis converts sunlight into chemical energy, producing approximately 130 terawatts of power globally.",
-      "Cell theory states that all living organisms are composed of one or more cells, the basic unit of life."
-    ],
-    "examples": [],
-    "practiceQuestions": [],
-    "formulas": [
-      "Basic biochemical reaction: A + B -> C + D (generic enzymatic reaction)",
-      "Photosynthesis: 6CO2 + 6H2O -> C6H12O6 + 6O2 (light-dependent reactions)",
-      "Cellular respiration: C6H12O6 + 6O2 -> 6CO2 + 6H2O + ~38 ATP",
-      "Osmosis: water moves from hypotonic to hypertonic solution across semipermeable membrane",
-      "Enzyme kinetics: v = Vmax[S] / (Km + [S]) (Michaelis-Menten equation)",
-      "pH calculation: pH = -log[H+]"
-    ],
-    "keyPoints": [
-      "Added new rich content for key Points."
-    ],
-    "summary": "",
-    "specialNotes": [
-      "Added new rich content for special Notes."
-    ],
-    "importantStatements": [
-      "Added new rich content for important Statements."
-    ],
-    "importantNotes": [
-      "Always read the question carefully to understand what is being asked.",
-      "Use diagrams to clarify complex biological processes.",
-      "Memorize key definitions and terminology for MCQ questions.",
-      "Practice numerical problems in ecology (energy transfer, population growth).",
-      "Understand the difference between homologous and analogous structures.",
-      "Review past NEB exam questions to identify frequently tested topics."
-    ],
-    "examShortTricks": [
-      "Quick recall tip: Always read the question carefully before answering.",
-      "Memory aid: Use mnemonics to remember lists and sequences.",
-      "Exam strategy: Start with questions you know best to build confidence.",
-      "Time management: Allocate time proportionally to marks available.",
-      "Diagram practice: Draw and label diagrams neatly for better visualization.",
-      "Definition memorization: Learn key definitions verbatim for maximum marks."
-    ],
-    "examNotes": [
-      "Focus on understanding concepts rather than rote memorization.",
-      "Practice drawing labeled diagrams - they carry significant marks.",
-      "Learn key definitions exactly as given in the textbook for marking purposes.",
-      "Solve numerical problems in ecology (energy transfer, population growth) regularly.",
-      "Review previous year questions to understand the exam pattern and marking scheme.",
-      "Use mnemonics and memory aids for classification and cycles."
-    ],
-    "mcs": [
-      "Added new rich content for mcs."
-    ],
-    "importantConcepts": [
-      "Added new rich content for important Concepts."
-    ],
-    "importantTasks": [
-      "Added new rich content for important Tasks."
-    ],
-    "exercises": [
-      {
-        "problem": "Define and explain the importance of the topic.",
-        "solution": "Provide a clear definition and explain why it matters in biological sciences."
-      },
-      {
-        "problem": "Give three examples of the concept discussed.",
-        "solution": "Example 1: ... Example 2: ... Example 3: ..."
-      },
-      {
-        "problem": "Compare and contrast two related concepts.",
-        "solution": "Similarities: ... Differences: ..."
-      }
-    ],
-    "visualization": {}
+  "relevance": 100,
+  "notes": [
+    "Biodiversity is the variety of life at three levels — genetic, species, and ecosystem. Conservation biology protects it through in-situ strategies (protected…",
+    "Biodiversity: the variety of life at three levels — genetic, species, and ecosystem diversity.",
+    "Genetic diversity: variation in genes within a species; important for adaptation and survival."
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
   },
-  "originalContent": {
-    "notes": [
-      "Strategies and approaches for conserving biodiversity, including protected areas and sustainable development.",
-      "Conservation biology: applied science dedicated to protecting Earth's biodiversity and natural processes",
-      "Biodiversity hotspots: regions with exceptional species richness and high endemism under threat",
-      "IUCN Red List categories: Extinct (EX), Extinct in Wild (EW), Critically Endangered (CR), Endangered (EN), Vulnerable (VU)",
-      "In-situ conservation: protecting species within natural habitats — national parks, wildlife sanctuaries, biosphere reserves",
-      "Ex-situ conservation: protecting species outside natural habitats — zoos, botanical gardens, seed banks, gene banks",
-      "Nepal's protected areas: 10 national parks, 3 conservation areas, 9 wildlife reserves, 1 hunting reserve",
-      "Chitwan National Park: UNESCO World Heritage Site; home to Bengal tiger, one-horned rhinoceros",
-      "Sagarmatha National Park: Mount Everest region; preserved for cultural and natural significance"
-    ],
-    "confusion": [],
-    "practice": [],
-    "universalFacts": [],
-    "examples": [],
-    "practiceQuestions": [],
-    "formulas": [],
-    "keyPoints": [],
-    "summary": "",
-    "specialNotes": [],
-    "importantStatements": [],
-    "importantNotes": [],
-    "examShortTricks": [],
-    "examNotes": [],
-    "mcs": [],
-    "importantConcepts": [],
-    "importantTasks": [],
-    "exercises": [],
-    "visualization": {}
+  "mindmap": {
+    "centralConcept": "CONSERVATION BIOLOGY",
+    "branches": [
+      {
+        "topic": "Biodiversity and Conservation",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Biodiversity: genetic, species, ecosystem diversity.",
+              "Conservation: in-situ (natural habitat) + ex-situ (outside).",
+              "In-situ: protected areas, community forests, sacred groves.",
+              "Ex-situ: zoos, botanical gardens, seed banks, gene banks.",
+              "Threats: habitat loss, overexploitation, pollution, invasive species, climate change, poaching."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "In-situ: protected areas + community forests + sacred groves (in natural habitat)",
+              "Ex-situ: zoos + botanical gardens + seed banks + gene banks + cryopreservation (outside habitat)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Biodiversity exists at genetic, species, and ecosystem levels.",
+              "In-situ conservation protects species in their natural habitat.",
+              "Community forestry is Nepal's successful in-situ conservation strategy."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Define biodiversity and its three levels.",
+              "Differentiate in-situ and ex-situ conservation.",
+              "Explain community forestry in Nepal.",
+              "Biodiversity = G-S-E (Genetic, Species, Ecosystem).",
+              "In-situ = IN habitat; Ex-situ = EX (outside) habitat."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Biodiversity has THREE levels: genetic, species, ecosystem (not just \"number of species\").",
+              "In-situ conservation protects species IN their natural habitat; ex-situ conserves them OUTSIDE (zoos, seed…",
+              "Protected areas (in-situ) are the most effective large-scale conservation strategy."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Protected Areas, Biodiversity Hotspots and…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core point for 02 national parks wildlife reserves conservation areas biodiversity hotspots wetland and…",
+              "Detailed notes on 02 national parks wildlife reserves conservation areas biodiversity hotspots wetland and…",
+              "Key concept 1 for 02 national parks wildlife reserves conservation areas biodiversity hotspots wetland and…"
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "$F = m \\cdot a$ (relevant formula for 02 national parks wildlife reserves conservation areas biodiversity…"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Key statement for 02 national parks wildlife reserves conservation areas biodiversity hotspots wetland and…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Biodiversity and Conservation is frequently tested.",
+              "Practice writing detailed answers.",
+              "Focus on definitions and classifications.",
+              "Use diagrams to understand Biodiversity and Conservation.",
+              "Important note regarding 02 national parks wildlife reserves conservation areas biodiversity hotspots…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ Misconception about 02 national parks wildlife reserves conservation areas biodiversity hotspots wetland…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Protected Areas and Wildlife",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Nepal: 10 national parks, 6 conservation areas, 1 hunting reserve, Ramsar wetlands.",
+              "Chitwan (1973): first park; Bengal tiger + one-horned rhino; UNESCO World Heritage.",
+              "Sagarmatha (1976): Everest; UNESCO World Heritage.",
+              "IUCN: EX, EW, CR, EN, VU, NT, LC.",
+              "Endangered in Nepal: tiger (EN), rhino (VU), snow leopard (VU), elephant (EN), red panda (VU)."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "IUCN categories: EX → EW → CR → EN → VU → NT → LC (highest to lowest risk)",
+              "Nepal protected areas: 10 national parks + 6 conservation areas + 1 hunting reserve + Ramsar wetlands",
+              "Conservation strategies: in-situ + ex-situ + community forestry + anti-poaching + CITES"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Nepal has 10 national parks, 6 conservation areas, 1 hunting reserve, and Ramsar wetlands.",
+              "Chitwan National Park (1973) is the first and most famous; it holds the Bengal tiger and one-horned rhino.",
+              "The IUCN Red List tracks species from Extinct to Least Concern."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "List Nepal's national parks with one key feature each.",
+              "Explain the IUCN Red List categories (7) with examples.",
+              "List endangered species in Nepal with their IUCN status.",
+              "IUCN = EX-EW-CR-EN-VU-NT-LC (7 categories, highest to lowest risk).",
+              "Nepal parks = 10 NP + 6 CA + 1 HR + Ramsar."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Chitwan National Park (1973) is the FIRST and most famous; it is home to the Bengal tiger and one-horned…",
+              "Sagarmatha National Park (1976) includes Mount Everest; it is a UNESCO World Heritage Site.",
+              "IUCN \"CR\" = Critically Endangered (highest risk); \"EN\" = Endangered; \"VU\" = Vulnerable."
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

@@ -3,127 +3,238 @@
   "unitSlug": "faunal-diversity",
   "topicSlug": "faunal-diversity-mindmap",
   "topicTitle": "faunal diversity — interactive concept map",
-  "relevance": 0,
-  "enrichedContent": {
-    "notes": [
-      "Study of animal diversity from protozoa through invertebrates to vertebrates, focusing on classification and morphology.",
-      "Ernst Haeckel proposed kingdom Protista; animal diversity spans from unicellular to complex multicellular organisms",
-      "Protozoa: unicellular animals; classified by locomotion — flagellates (Euglena), ciliates (Paramecium), amoeboids (Amoeba), sporozoans (Plasmodium)",
-      "Plasmodium vivax causes malaria; Plasmodium falciparum causes malignant malaria",
-      "Animal body plans: asymmetrical (sponges), radial (jellyfish), bilateral (most animals)",
-      "Body cavities: acoelomate (no cavity), pseudocoelomate (false cavity), coelomate (true cavity)",
-      "Segmentation: body divided into repeated units (metamerism); seen in annelids and arthropods",
-      "Phylum Porifera: sponges; sessile filter feeders; canal system for water flow",
-      "Phylum Coelenterata: jellyfish, corals, hydra; radially symmetrical; cnidoblasts for defense"
-    ],
-    "confusion": [],
-    "practice": [],
-    "universalFacts": [
-      "Biology studies the diversity of life across approximately 8.7 million species worldwide.",
-      "The smallest living organisms are mycoplasma bacteria at 0.1 micrometers in diameter.",
-      "DNA contains the genetic instructions for the development and function of all known living organisms.",
-      "The human genome contains approximately 3 billion base pairs across 23 pairs of chromosomes.",
-      "Photosynthesis converts sunlight into chemical energy, producing approximately 130 terawatts of power globally.",
-      "Cell theory states that all living organisms are composed of one or more cells, the basic unit of life."
-    ],
-    "examples": [],
-    "practiceQuestions": [],
-    "formulas": [
-      "Basic biochemical reaction: A + B -> C + D (generic enzymatic reaction)",
-      "Photosynthesis: 6CO2 + 6H2O -> C6H12O6 + 6O2 (light-dependent reactions)",
-      "Cellular respiration: C6H12O6 + 6O2 -> 6CO2 + 6H2O + ~38 ATP",
-      "Osmosis: water moves from hypotonic to hypertonic solution across semipermeable membrane",
-      "Enzyme kinetics: v = Vmax[S] / (Km + [S]) (Michaelis-Menten equation)",
-      "pH calculation: pH = -log[H+]"
-    ],
-    "keyPoints": [
-      "Added new rich content for key Points."
-    ],
-    "summary": "",
-    "specialNotes": [
-      "Added new rich content for special Notes."
-    ],
-    "importantStatements": [
-      "Added new rich content for important Statements."
-    ],
-    "importantNotes": [
-      "Always read the question carefully to understand what is being asked.",
-      "Use diagrams to clarify complex biological processes.",
-      "Memorize key definitions and terminology for MCQ questions.",
-      "Practice numerical problems in ecology (energy transfer, population growth).",
-      "Understand the difference between homologous and analogous structures.",
-      "Review past NEB exam questions to identify frequently tested topics."
-    ],
-    "examShortTricks": [
-      "Quick recall tip: Always read the question carefully before answering.",
-      "Memory aid: Use mnemonics to remember lists and sequences.",
-      "Exam strategy: Start with questions you know best to build confidence.",
-      "Time management: Allocate time proportionally to marks available.",
-      "Diagram practice: Draw and label diagrams neatly for better visualization.",
-      "Definition memorization: Learn key definitions verbatim for maximum marks."
-    ],
-    "examNotes": [
-      "Focus on understanding concepts rather than rote memorization.",
-      "Practice drawing labeled diagrams - they carry significant marks.",
-      "Learn key definitions exactly as given in the textbook for marking purposes.",
-      "Solve numerical problems in ecology (energy transfer, population growth) regularly.",
-      "Review previous year questions to understand the exam pattern and marking scheme.",
-      "Use mnemonics and memory aids for classification and cycles."
-    ],
-    "mcs": [
-      "Added new rich content for mcs."
-    ],
-    "importantConcepts": [
-      "Added new rich content for important Concepts."
-    ],
-    "importantTasks": [
-      "Added new rich content for important Tasks."
-    ],
-    "exercises": [
-      {
-        "problem": "Define and explain the importance of the topic.",
-        "solution": "Provide a clear definition and explain why it matters in biological sciences."
-      },
-      {
-        "problem": "Give three examples of the concept discussed.",
-        "solution": "Example 1: ... Example 2: ... Example 3: ..."
-      },
-      {
-        "problem": "Compare and contrast two related concepts.",
-        "solution": "Similarities: ... Differences: ..."
-      }
-    ],
-    "visualization": {}
+  "relevance": 100,
+  "notes": [
+    "Protozoa are animal-like, mostly unicellular eukaryotes classified by their locomotion into four classes: Sarcodina (pseudopodia, e.g. Amoeba), Mastigophora…",
+    "**Protista:** unicellular eukaryotes. Includes protozoa (animal-like), algae (plant-like) and slime moulds (fungus-like).",
+    "**Protozoa characteristics:** unicellular, eukaryotic, heterotrophic, locomotion by cilia, flagella or pseudopodia, reproduce by binary fission or multiple…"
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
   },
-  "originalContent": {
-    "notes": [
-      "Study of animal diversity from protozoa through invertebrates to vertebrates, focusing on classification and morphology.",
-      "Ernst Haeckel proposed kingdom Protista; animal diversity spans from unicellular to complex multicellular organisms",
-      "Protozoa: unicellular animals; classified by locomotion — flagellates (Euglena), ciliates (Paramecium), amoeboids (Amoeba), sporozoans (Plasmodium)",
-      "Plasmodium vivax causes malaria; Plasmodium falciparum causes malignant malaria",
-      "Animal body plans: asymmetrical (sponges), radial (jellyfish), bilateral (most animals)",
-      "Body cavities: acoelomate (no cavity), pseudocoelomate (false cavity), coelomate (true cavity)",
-      "Segmentation: body divided into repeated units (metamerism); seen in annelids and arthropods",
-      "Phylum Porifera: sponges; sessile filter feeders; canal system for water flow",
-      "Phylum Coelenterata: jellyfish, corals, hydra; radially symmetrical; cnidoblasts for defense"
-    ],
-    "confusion": [],
-    "practice": [],
-    "universalFacts": [],
-    "examples": [],
-    "practiceQuestions": [],
-    "formulas": [],
-    "keyPoints": [],
-    "summary": "",
-    "specialNotes": [],
-    "importantStatements": [],
-    "importantNotes": [],
-    "examShortTricks": [],
-    "examNotes": [],
-    "mcs": [],
-    "importantConcepts": [],
-    "importantTasks": [],
-    "exercises": [],
-    "visualization": {}
+  "mindmap": {
+    "centralConcept": "FAUNAL DIVERSITY",
+    "branches": [
+      {
+        "topic": "Faunal Diversity — Animal Kingdom Classification",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Protista: eukaryotic, mostly unicellular; animal/plant/fungus-like.",
+              "Protozoa = animal-like; locomotion defines the 4 classes.",
+              "Sarcodina (Amoeba) — pseudopodia; Ciliophora (Paramecium) — cilia.",
+              "Mastigophora (Trypanosoma) — flagella; Sporozoa (Plasmodium) — non-motile spores.",
+              "Paramecium has two nuclei (macro + micro) and contractile vacuoles."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Protozoa classes: Sarcodina (pseudopodia), Mastigophora (flagella), Ciliophora (cilia), Sporozoa…",
+              "Amoeba: cell membrane + cytoplasm + nucleus + food vacuole + contractile vacuole",
+              "Paramecium: cilia + oral groove + food vacuole + macro/micronucleus + contractile vacuole"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Protozoa are animal-like protists that move by pseudopodia, flagella, or cilia.",
+              "Paramecium is ciliated and has two distinct nuclei.",
+              "Plasmodium (a sporozoan) causes malaria and requires the Anopheles mosquito as its vector."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Draw and label Paramecium — very common.",
+              "Tabulate the 4 Protozoa classes (locomotion, example, disease).",
+              "Explain the Plasmodium life cycle with Anopheles.",
+              "Protozoa = Proto (first) + zoon (animal).",
+              "Amoeba = pseudo (false foot) = pseudopodia."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "**Protista is a single group of organisms.** — Protista is a polyphyletic kingdom-level group; it contains…",
+              "**Binary fission and conjugation in Paramecium are both reproduction.** — Binary fission is asexual…",
+              "**Plasmodium reproduces only in mosquitoes.** — Plasmodium undergoes asexual reproduction (schizogony)…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Protista and Protozoa",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Protista: eukaryotic, mostly unicellular (some colonial); the \"kingdom of convenience\" for single-celled…",
+              "Protozoa (animal-like protists): heterotrophic, motile; grouped by locomotion — Sarcodina (Amoeba,…",
+              "Amoeba proteus: pseudopodia for movement + food; contractile vacuole; no definite shape.",
+              "Paramecium caudatum: ciliated, oval, oral groove → food vacuole; two nuclei (macro + micronucleus);…",
+              "Plasmodium (malaria): sporozoan; life cycle involves Anopheles mosquito (vector) and human; causes malaria."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Protists are eukaryotes (have a nucleus); they are NOT bacteria (prokaryotes).",
+              "Protozoa are animal-like; algae are plant-like; slime moulds are fungus-like — all are in Protista.",
+              "Amoeba moves by pseudopodia (no flagella/cilia); Paramecium by cilia; Trypanosoma by flagella."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Animal Kingdom — Diagnostic Features and…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Levels: cellular (Porifera) → tissue (Cnidaria) → organ system (higher).",
+              "Body cavity: acoelom, pseudocoelom, coelom.",
+              "Symmetry: asymmetry, radial, bilateral.",
+              "Segmentation in Annelida, Arthropoda, Chordata.",
+              "9 phyla: Porifera, Cnidaria, Platyhelminthes, Nematoda, Annelida, Arthropoda, Mollusca, Echinodermata,…"
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Body cavity: Acoelom (no cavity) / Pseudocoelom (partly lined) / Coelom (fully mesoderm-lined)",
+              "Symmetry: Asymmetry (Porifera) / Radial (Cnidaria, Echinodermata) / Bilateral (Platyhelminthes onward)",
+              "Chordate features: notochord, dorsal hollow nerve cord, pharyngeal slits, post-anal tail"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Animal organisation progresses from cellular (Porifera) to organ-system (Chordata).",
+              "Body cavity type (acoelom/pseudocoelom/coelom) is a key evolutionary feature.",
+              "Chordates are defined by four shared features: notochord, dorsal nerve cord, pharyngeal slits, post-anal tail."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "List the 9 animal phyla with classes.",
+              "Differentiate acoelom, pseudocoelom, coelom.",
+              "Explain radial vs bilateral symmetry.",
+              "9 phyla: P-C-P-N-A-A-M-E-C (Porifera, Cnidaria, Platyhelminthes, Nematoda, Annelida, Arthropoda, Mollusca,…",
+              "Chordate = C-D-P-P (Chordate, Dorsal nerve, Pharyngeal slits, post-anal tail)."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Acoelomates have NO body cavity; pseudocoelomates have a cavity not fully lined by mesoderm; coelomates have…",
+              "Cnidaria are radial (adult) but their larvae may be bilateral; echinoderms are radial in adults but…",
+              "Segmentation (metamerism) is seen in annelids, arthropods, and chordates — NOT in sponges or cnidarians."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Earthworm",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Pheretima: annelid, ~10–15 cm, ~100–150 segments.",
+              "Clitellum (segments 15–31): saddle-like; forms the cocoon.",
+              "Setae on each segment: bristles for anchoring in peristaltic movement.",
+              "Body plan: coelom (true body cavity), circular + longitudinal muscles, septa.",
+              "Cutaneous respiration through moist skin; night-active; lives in moist soil."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Earthworm body: prostomium + 100–150 segments + clitellum (segments 15–31) + setae",
+              "Coelom: true body cavity, fluid-filled, divided by septa",
+              "Respiration: cutaneous (through moist skin)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Earthworms are annelids with a segmented body and a true coelom.",
+              "The clitellum forms the cocoon that encloses the eggs.",
+              "Respiration occurs through the moist skin (cutaneous)."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Draw and label the external anatomy of Pheretima.",
+              "Explain the body plan (coelom, septa, muscles).",
+              "Describe the role of the clitellum and setae.",
+              "Earthworm = Annelid = segmented + coelom + setae.",
+              "Clitellum = saddle + cocoon (segments 15–31)."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Earthworms are Annelids, NOT arthropods; they have a soft body with setae, not a hard exoskeleton.",
+              "The clitellum is a thickened, saddle-like region used to form the cocoon — it is NOT a reproductive organ…",
+              "Earthworms have a closed circulatory system (blood vessels + heart-like vessels), not an open one."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Earthworm — Excretory, Nervous and Reproductive…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Digestive: crop (store) + gizzard (grind) + typhlosole (absorb).",
+              "Nervous: cerebral ganglion + ventral nerve cord + segmental ganglia.",
+              "Excretory: metanephridia (intersegmentary, septal, genital).",
+              "Circulatory: closed system; 5–6 heart-like vessels.",
+              "Reproductive: hermaphrodite; cross-fertilisation; clitellum forms cocoon."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Digestive: buccal → pharynx → oesophagus → crop → gizzard → intestine (typhlosole) → rectum → anus",
+              "Nephridia: intersegmentary + septal + genital",
+              "Circulatory: dorsal vessel → 5–6 hearts → ventral vessel → capillaries (closed)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "The crop stores food; the gizzard grinds it; the typhlosole increases absorption.",
+              "Earthworms have a closed circulatory system with heart-like vessels.",
+              "Metanephridia are the excretory organs of annelids."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Draw and label the digestive system of Pheretima.",
+              "Explain the excretory system (nephridia types).",
+              "Describe the nervous system.",
+              "Digestive: C-G-T (Crop store, Gizzard grind, Typhlosole absorb).",
+              "Circulatory = CLOSED (blood in vessels)."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Earthworms have a CLOSED circulatory system (blood in vessels), not open.",
+              "The crop STORES food; the gizzard GRINDS it (like a chicken's gizzard) — they are different organs.",
+              "Nephridia types: intersegmentary (perivisceral) connect two segments; septal are at septa; genital in the…"
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

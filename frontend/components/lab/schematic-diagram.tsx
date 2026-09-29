@@ -28,6 +28,12 @@ import {
 } from "@/components/lab/knowledge-block";
 import { matchConceptSchematic } from "@/components/lab/schematic-concepts";
 import { getUnitConcept } from "@/lib/visual-concept-map";
+import {
+  buildTopicKnowledge,
+  buildTopicSchematic,
+  isInclinedPlaneTopic,
+  type ConceptNoteLike,
+} from "@/lib/topic-visuals";
 
 // Shared viewBox for every schematic — used to map pointer coords <-> viewBox space.
 const VIEW_W = 900;
@@ -69,6 +75,14 @@ export interface SchematicDiagramProps {
   topicSlug: string;
   topicTitle: string;
   unitId?: string;
+  /** Class track — keeps a shared unit id on its own title and topics. */
+  classSlug?: string;
+  /**
+   * The topic's own loaded concept notes, when the page has them. They become
+   * the labelled parts of the generated drawing; without them the drawing is
+   * generated from the unit's own syllabus scope instead.
+   */
+  concepts?: ConceptNoteLike[];
   className?: string;
 }
 
@@ -77,6 +91,8 @@ export function SchematicDiagram({
   topicSlug,
   topicTitle,
   unitId = "",
+  classSlug,
+  concepts,
   className = "",
 }: SchematicDiagramProps) {
   const [expandedMap, setExpandedMap] = useState<Record<string, boolean>>({});
@@ -727,6 +743,38 @@ export function SchematicDiagram({
       };
     }
 
+    // ─────────────────────────────────────────────────────────────────────
+    // 5. TOPIC-DERIVED DRAWING — generated from this topic's own syllabus
+    //    scope and knowledge. The shape is classified from the topic's own
+    //    content (cycle / chain / structure / graph / trend / comparison /
+    //    mechanism / classification / construction / relations) and every
+    //    labelled part is one of the topic's own items. The inclined-plane
+    //    sheet below is therefore reached ONLY by topics that genuinely are
+    //    about a plane, friction or an incline.
+    // ─────────────────────────────────────────────────────────────────────
+    if (!isInclinedPlaneTopic(topicSlug, topicTitle, unitId)) {
+      const topicSchematic = buildTopicSchematic(
+        buildTopicKnowledge({
+          subjectSlug: normalizedSubject,
+          classSlug,
+          unitId,
+          topicSlug,
+          topicTitle,
+          concepts,
+        }),
+      );
+      // Even a one-part sheet beats an unrelated drawing: the inclined plane is
+      // now reserved for topics that really are about a plane.
+      if (topicSchematic.annotations.length >= 1) {
+        return {
+          viewBox: sharedViewBox,
+          specific: true,
+          annotations: topicSchematic.annotations,
+          renderSvg: topicSchematic.renderSvg,
+        };
+      }
+    }
+
     return {
       viewBox: sharedViewBox,
       specific: false,
@@ -815,9 +863,11 @@ export function SchematicDiagram({
     };
   }, [
     normalizedSubject,
+    classSlug,
     topicSlug,
     topicTitle,
     unitId,
+    concepts,
   ]);
 
   // Knowledge target: hover previews a chip, click pins it (the pinned chip is

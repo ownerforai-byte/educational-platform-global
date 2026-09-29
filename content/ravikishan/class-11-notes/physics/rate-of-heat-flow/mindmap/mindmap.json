@@ -3,8 +3,134 @@
   "unitSlug": "rate-of-heat-flow",
   "topicSlug": "rate-of-heat-flow-mindmap",
   "topicTitle": "rate of heat flow — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "**Conduction:** Heat transfer through a material without any bulk motion of the material itself. Energy is transferred from molecule to molecule via…",
+    "**Fourier's law of heat conduction:** The rate of heat flow through a material is given by $H = \\frac{Q}{t} = kA\\frac{T_1 - T_2}{L}$, where $k$ is the thermal…",
+    "**Thermal conductivity $k$:** A material property that quantifies how well a material conducts heat. Units: $\\text{W/(m·K)}$. Metals have high $k$ (copper:…"
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
+  "mindmap": {
+    "centralConcept": "RATE OF HEAT FLOW",
+    "branches": [
+      {
+        "topic": "Conduction and Thermal Conductivity",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Conduction:** Heat transfer through a material without any bulk motion of the material itself. Energy is…",
+              "**Fourier's law of heat conduction:** The rate of heat flow through a material is given by $H = \\frac{Q}{t}…",
+              "**Thermal conductivity $k$:** A material property that quantifies how well a material conducts heat. Units:…",
+              "**Why metals conduct heat well:** In metals, free electrons are mobile and can move rapidly through the…",
+              "**Fayer's apparatus:** Used to measure thermal conductivity of liquids. A steam jacket surrounds the…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ Thermal conductivity depends on the thickness of the material. ✅ $k$ is a MATERIAL PROPERTY — it does not…",
+              "❌ Metals feel cold because they are at a lower temperature. ✅ Metals feel cold because they CONDUCT heat…",
+              "❌ Heat flows from hot to cold, so Fourier's law has no negative sign. ✅ The negative sign in $H =…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Convection",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Convection:** Heat transfer by the bulk movement of a fluid (liquid or gas). Unlike conduction (molecular…",
+              "**Mechanism of convection:** When a fluid is heated, it expands, becomes less dense, and rises. The cooler,…",
+              "**Natural (free) convection:** Fluid motion is driven solely by buoyancy forces arising from density…",
+              "**Forced convection:** Fluid is driven by an external agent — a pump, fan, blower, or wind — rather than…",
+              "**Newton's law of cooling (convection form):** $H = hA\\Delta T$, where $h$ is the convective heat transfer…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ Convection can occur in solids. ✅ Convection ONLY occurs in fluids (liquids and gases) because only fluids…",
+              "❌ Convection is the same as conduction. ✅ Conduction transfers heat through molecular collisions without…",
+              "❌ A fan works by convection. ✅ A fan creates FORCED CONVECTION by moving air. The heat transfer mechanism is…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Black-Body Radiation",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Black body:** An idealized physical body that absorbs all incident electromagnetic radiation, regardless…",
+              "**Absorptivity and emissivity:** Absorptivity $\\alpha$ is the fraction of incident radiation absorbed…",
+              "**Planck's radiation law:** The spectral radiance of a black body at temperature $T$ is $B(\\lambda, T) =…",
+              "**Wien's displacement law:** $\\lambda_{max} T = b = 2.898 \\times 10^{-3}\\,\\text{m·K}$. The wavelength of…",
+              "**Wien's approximation:** At short wavelengths (high frequencies), Planck's law simplifies to $B(\\lambda, T)…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ A black body must be black in color. ✅ A black body is defined by $\\alpha = 1$ (perfect absorption). At…",
+              "❌ Only black bodies emit thermal radiation. ✅ ALL objects above absolute zero emit thermal radiation. A…",
+              "❌ The Stefan-Boltzmann law $E = \\sigma T^4$ gives the spectral distribution. ✅ The Stefan-Boltzmann law…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Radiation and Ideal Radiator",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Radiation:** Heat transfer by electromagnetic waves (mainly infrared, but also visible and ultraviolet for…",
+              "**Mechanism of radiation:** All objects above absolute zero emit electromagnetic radiation due to the…",
+              "**Electromagnetic spectrum of thermal radiation:** At room temperature (~300 K), peak emission is in the…",
+              "**Black body (ideal radiator):** An idealized object that absorbs ALL incident radiation at every wavelength…",
+              "**Kirchhoff's law of thermal radiation:** At thermal equilibrium, the emissivity of a body equals its…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ A black body is always black in color. ✅ A black body is defined by its RADIATION properties, not its…",
+              "❌ Only hot objects emit radiation. ✅ ALL objects above absolute zero emit thermal radiation.…",
+              "❌ Good reflectors are also good emitters. ✅ Good REFLECTORS are POOR emitters (and poor absorbers). By…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Stefan-Boltzmann Law",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Statement of the Stefan-Boltzmann law:** The total energy radiated per unit area per unit time by a black…",
+              "**For real bodies:** $E = e\\sigma T^4$, where $e$ is the emissivity ($0 < e \\leq 1$). A perfect black body…",
+              "**Net radiation formula:** If a body at temperature $T$ is surrounded by an enclosure at temperature $T_0$,…",
+              "**Why the fourth power:** The Stefan-Boltzmann law emerges from integrating Planck's radiation law over all…",
+              "**Stefan-Boltzmann constant derivation:** $\\sigma = \\frac{2\\pi^5 k_B^4}{15 c^2 h^3} = \\frac{\\pi^2 k_B^4}{60…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ The Stefan-Boltzmann law gives the power per unit wavelength. ✅ It gives the TOTAL power integrated over…",
+              "❌ Doubling the temperature doubles the radiated power. ✅ Because of the $T^4$ dependence, doubling the…",
+              "❌ The $T$ in the Stefan-Boltzmann law can be in Celsius. ✅ The temperature MUST be in Kelvin. At 0°C (273…"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

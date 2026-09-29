@@ -3,32 +3,246 @@
   "unitSlug": "kinematics",
   "topicSlug": "kinematics-mindmap",
   "topicTitle": "kinematics — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Study of kinematics - motion without considering forces.",
-    "Covers equations of motion, free fall, and projectile motion.",
-    "Foundation for all mechanics."
+    "Instantaneous velocity and acceleration are defined as limits: $v = dx/dt$ and $a = dv/dt = d^2x/dt^2$. Graphically, $v$ is the tangent slope of the $x$–$t$…",
+    "**Type 2 — alternate treatment:** this version complements the original note with the limit-definition approach, calculus forms and graphical slope reasoning…",
+    "**Average quantities first:** average velocity $v_{avg} = \\frac{\\Delta x}{\\Delta t}$ uses the whole interval; average acceleration $a_{avg} = \\frac{\\Delta…"
   ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
   "mindmap": {
-    "centralConcept": "Kinematics",
+    "centralConcept": "KINEMATICS",
     "branches": [
-      {"topic": "Basic Quantities", "subtopics": [
-        {"name": "Distance/Displacement", "points": ["Distance: scalar, total path", "Displacement: vector, change in position"]},
-        {"name": "Speed/Velocity", "points": ["Speed: scalar, rate of distance", "Velocity: vector, rate of displacement"]},
-        {"name": "Acceleration", "points": ["Rate of change of velocity, a = dv/dt"]}
-      ]},
-      {"topic": "Equations", "subtopics": [
-        {"name": "Linear (constant a)", "points": ["v = u + at", "s = ut + ½at²", "v² = u² + 2as"]},
-        {"name": "Graphical", "points": ["x-t: slope = velocity", "v-t: slope = acceleration, area = displacement"]}
-      ]},
-      {"topic": "Free Fall", "subtopics": [
-        {"name": "Characteristics", "points": ["a = g = 9.8 m/s² downward", "v = gt, h = ½gt², v² = 2gh"]},
-        {"name": "Projected Up", "points": ["v = u - gt, h = ut - ½gt²", "Time of flight: 2u/g"]}
-      ]},
-      {"topic": "Projectile", "subtopics": [
-        {"name": "Components", "points": ["Horizontal: uniform", "Vertical: uniform acceleration"]},
-        {"name": "Results", "points": ["Range: R = u²sin2θ/g", "Max height: H = u²sin²θ/2g", "Max range at θ=45°"]}
-      ]}
+      {
+        "topic": "Instantaneous Velocity and Acceleration",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Instantaneous velocity is the slope of the tangent of the $x$–$t$ graph; instantaneous acceleration is the…",
+              "Displacement is the area under the $v$–$t$ graph; change in velocity is the area under the $a$–$t$ graph.",
+              "$v = 0$ does not imply $a = 0$ — turning points have zero velocity but non-zero acceleration.",
+              "Speeding up ⟺ $v$ and $a$ share the same sign; slowing down ⟺ opposite signs.",
+              "Derivatives go down the chain $x \\to v \\to a$; integrals go up $a \\to v \\to x$, using initial conditions."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Instantaneous velocity: $v = \\lim_{\\Delta t \\to 0}\\frac{\\Delta x}{\\Delta t} = \\frac{dx}{dt}$",
+              "Instantaneous acceleration: $a = \\frac{dv}{dt} = \\frac{d^2x}{dt^2}$",
+              "Displacement from velocity: $x_2 - x_1 = \\int_{t_1}^{t_2} v\\,dt$ (area under $v$–$t$ curve)",
+              "Velocity from acceleration: $v_2 - v_1 = \\int_{t_1}^{t_2} a\\,dt$",
+              "Rest condition: $v = \\frac{dx}{dt} = 0$; reversal check: sign change of $v$ around that instant"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Instantaneous velocity is the limit of average velocity as the time interval tends to zero: $v…",
+              "Statement 2: Instantaneous acceleration is the derivative of velocity with respect to time: $a = dv/dt$.",
+              "Statement 3: On a position–time graph the slope of the tangent at any instant gives the instantaneous…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Exam Tip 1: NEB regularly sets 2-3 mark calculus questions: differentiate $x(t)$, evaluate $v$ and $a$ at a…",
+              "Exam Tip 2: In graph-conversion questions (given $v$–$t$, sketch $x$–$t$), track curvature: constant $v$ →…",
+              "Exam Tip 3: When asked 'when is the particle at rest', also state the acceleration at that instant —…",
+              "Trick 1: 'At rest' ⇒ set $dx/dt = 0$ and solve for $t$; then check the sign of $v$ on both sides to classify…",
+              "Trick 2: In graph MCQs, remember: slope of $x$–$t$ = $v$; slope of $v$–$t$ = $a$; area of $v$–$t$ = $x$;…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'Instantaneous velocity equals average velocity.' ✅ Only when motion is uniform. In general $v_{inst} =…",
+              "❌ 'Negative acceleration always means slowing down.' ✅ Slowing means $v$ and $a$ have OPPOSITE signs. A ball…",
+              "❌ 'The area under an $x$–$t$ graph gives velocity.' ✅ The SLOPE of $x$–$t$ gives velocity; the AREA under a…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Relative Velocity",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Definition of relative velocity:** The velocity of an object B as measured from the reference frame of…",
+              "**Same direction (one-dimensional):** If car A moves at velocity v_A and car B at v_B in the same direction,…",
+              "**Opposite directions (one-dimensional):** If A and B move toward each other with speeds v_A and v_B, the…",
+              "**Vector form (two/three dimensions):** \\vec{v}_{B/A} = \\vec{v}_B - \\vec{v}_A. This is the velocity of B in…",
+              "**Relative velocity in 2D — Rain example:** If rain falls vertically downward at speed v_r and a person runs…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Relative velocity is NOT the same as the difference in speeds. For two cars moving at 60 km/h and 40 km/h in…",
+              "When subtracting vectors, the ORDER MATTERS: \\vec{v}_{B/A} = \\vec{v}_B - \\vec{v}_A. This is the velocity of…",
+              "A common mistake in river problems: students add the boat's speed to the current speed as scalars. You must…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Equations of Motion — Graphical Treatment",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Slope of $v$–$t$ = acceleration; area under $v$–$t$ = displacement.",
+              "The three equations hold ONLY for constant acceleration.",
+              "$v^2 = u^2 + 2as$ is the equation of choice when time is unknown.",
+              "$s = \\left(\\frac{u+v}{2}\\right)t$ is the graphical 'average velocity × time' form.",
+              "Sign convention decides deceleration: keep one positive direction throughout the problem."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "$v = u + at$ (slope of $v$–$t$ line)",
+              "$s = ut + \\tfrac{1}{2}at^2$ (rectangle + triangle area)",
+              "$s = \\left(\\frac{u+v}{2}\\right)t$ (trapezoid mean-height form)",
+              "$v^2 = u^2 + 2as$ (time eliminated)",
+              "$s_n = u + \\tfrac{a}{2}(2n - 1)$ (distance in the $n$-th second)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: For uniformly accelerated motion, the velocity–time graph is a straight line whose slope equals…",
+              "Statement 2: The displacement in uniformly accelerated motion equals the area of the trapezoid under the…",
+              "Statement 3: The three equations of motion are valid only when acceleration is constant in magnitude and…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Exam Tip 1: The graphical derivation of $v = u + at$ and $s = ut + \\tfrac{1}{2}at^2$ is a repeating NEB…",
+              "Exam Tip 2: In numericals, write the chosen equation first, then substitute — method marks live in the…",
+              "Exam Tip 3: Convert all units to SI (km/h ÷ 3.6) before any substitution, and state the sign convention used.",
+              "Trick 1: Given/asked table — list u, v, a, t, s; the equation missing BOTH the unknown and the unwanted…",
+              "Trick 2: Braking distance without time: $s = u^2/2|a|$ — memorise this special case of the third equation."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'The area under the $v$–$t$ graph gives acceleration.' ✅ Area gives DISPLACEMENT; the SLOPE gives…",
+              "❌ Using $s = ut + \\tfrac{1}{2}at^2$ for the distance in the $n$-th second directly with $t = n$. ✅ That…",
+              "❌ Applying $v^2 = u^2 + 2as$ with sign errors during braking. ✅ Take one positive direction and keep it:…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Motion of a Freely Falling Body",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Free fall acceleration $g$ is independent of mass, size and material.",
+              "At every instant of the flight, $a = g$ downward — including the top ($v = 0$, $a \\ne 0$).",
+              "Up–down symmetry: equal speeds at equal heights, equal times up and down.",
+              "Use ONE sign convention throughout a problem; put $g$'s sign in consistently.",
+              "'Dropped' = $u = 0$; 'thrown' = $u \\ne 0$ — the equations differ by the $ut$ term."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Dropped from rest: $v = gt$, $h = \\tfrac{1}{2}gt^2$, $v = \\sqrt{2gh}$",
+              "Thrown up (up positive): $v = u - gt$, $h = ut - \\tfrac{1}{2}gt^2$, $v^2 = u^2 - 2gh$",
+              "Maximum height: $h_{max} = \\dfrac{u^2}{2g}$ (at $v = 0$)",
+              "Times: $t_{up} = t_{down} = \\dfrac{u}{g}$, total flight $T = \\dfrac{2u}{g}$",
+              "$n$-th second fall distance: $s_n = \\tfrac{g}{2}(2n - 1)$ — ratio $1:3:5:7\\ldots$"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: In free fall, every body accelerates at $g$ regardless of its mass — gravity acts identically…",
+              "Statement 2: At the highest point of vertical flight the velocity is zero but the acceleration is still $g$…",
+              "Statement 3: Neglecting air resistance, the time of ascent equals the time of descent, and the body returns…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Exam Tip 1: NEB loves the ascent = descent proof — quote $v = u - gt$ at top and bottom points and use…",
+              "Exam Tip 2: In 'velocity on reaching ground' questions, prefer $v^2 = u^2 + 2gh$; finding $t$ first wastes a…",
+              "Exam Tip 3: Always sketch the motion (up, top, down) and mark $v = 0$ at the top — diagrams earn marks and…",
+              "Trick 1: 'Maximum height' ⇒ remember $u^2/2g$; 'time to top' ⇒ $u/g$; both come from $v = 0$ in the first…",
+              "Trick 2: Total flight time of a return throw: $T = 2u/g$ — read the word 'returns' and write it instantly."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'Heavier bodies fall faster.' ✅ In free fall ALL bodies have the same acceleration $g$; observed…",
+              "❌ 'At the top of the flight, acceleration is zero because the body stops.' ✅ $v = 0$ but $a = g$ downward at…",
+              "❌ Using $g = -10$ m/s² AND taking $h$ positive upward in $h = \\tfrac{1}{2}gt^2$. ✅ Put the sign in ONCE:…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Projectile Motion and Its Applications",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Horizontal and vertical motions are independent; they share only TIME.",
+              "$v_x$ is constant; $v_y$ changes by $g$ every second; the path is a parabola.",
+              "At the top: $v_y = 0$, speed $= u\\cos\\theta$ (minimum), $a = g$ downward.",
+              "Landing speed equals launch speed; landing angle equals −launch angle (symmetry).",
+              "$R$ is maximum at 45°; complementary angles give equal ranges but different heights."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Components: $v_x = u\\cos\\theta$ (constant); $v_y = u\\sin\\theta - gt$",
+              "Time of flight: $T = \\dfrac{2u\\sin\\theta}{g}$",
+              "Maximum height: $H = \\dfrac{u^2\\sin^2\\theta}{2g}$",
+              "Range: $R = \\dfrac{u^2\\sin 2\\theta}{g}$; $R_{max} = \\dfrac{u^2}{g}$ at $\\theta = 45°$",
+              "Trajectory: $y = x\\tan\\theta - \\dfrac{gx^2}{2u^2\\cos^2\\theta}$ (parabola); $R = 4H\\cot\\theta$"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: A projectile's horizontal and vertical motions are completely independent; gravity acts only on…",
+              "Statement 2: The horizontal velocity of a projectile remains constant throughout the flight (no air…",
+              "Statement 3: The trajectory of an ideal projectile is a parabola."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Exam Tip 1: Derivations of $T$, $H$ and $R$ from components are standard 4-mark questions — write the two…",
+              "Exam Tip 2: Draw the trajectory with $v_x$ arrows equal everywhere and $v_y$ arrows shrinking/rising —…",
+              "Exam Tip 3: For 'velocity at height h' questions use $v_y^2 = (u\\sin\\theta)^2 - 2gh$ — avoids solving a…",
+              "Trick 1: $R = u^2\\sin2\\theta/g$ — for 30° and 60°, $\\sin 2\\theta = \\sin 60° = 0.866$; write the common range…",
+              "Trick 2: At 45°, $R = 4H$ — if a question gives one, the other is a division away."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'A projectile's horizontal velocity decreases during flight.' ✅ $v_x = u\\cos\\theta$ is CONSTANT (no…",
+              "❌ 'At the top of the trajectory the velocity is zero.' ✅ Only $v_y = 0$; the horizontal component…",
+              "❌ 'The path is part of a circle / straight line decaying.' ✅ The trajectory is a PARABOLA — the graph of $y…"
+            ]
+          }
+        ]
+      }
     ]
   }
 }

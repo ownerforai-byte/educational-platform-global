@@ -3,37 +3,274 @@
   "unitSlug": "gravitation",
   "topicSlug": "gravitation-mindmap",
   "topicTitle": "gravitation — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Study of gravitation - universal force of attraction between masses.",
-    "Covers Newton's law, gravitational field, potential, and satellite motion.",
-    "Key for understanding planetary motion and space travel."
+    "Newton's law of gravitation states that every mass attracts every other mass with $F = \\frac{Gm_1m_2}{r^2}$. The universal constant $G = 6.67\\times 10^{-11}…",
+    "**Law statement:** every particle in the universe attracts every other particle with a force that is proportional to the product of their masses and inversely…",
+    "**The universal constant G:** $G = 6.67\\times 10^{-11} \\text{ N m}^2/\\text{kg}^2$. It is the same everywhere in the universe (hence 'universal') and was first…"
   ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
   "mindmap": {
-    "centralConcept": "Gravitation",
+    "centralConcept": "GRAVITATION",
     "branches": [
-      {"topic": "Newton's Law", "subtopics": [
-        {"name": "Universal Law", "points": ["F=GMm/r², G=6.67×10⁻¹¹ N·m²/kg²"]},
-        {"name": "Properties", "points": ["Always attractive, inverse square, action-reaction"]}
-      ]},
-      {"topic": "Gravitational Field", "subtopics": [
-        {"name": "Field Strength", "points": ["g=F/m=GM/r², units: N/kg or m/s²"]},
-        {"name": "Variation", "points": ["Altitude: g'=g(R/(R+h))², Depth: g'=g(1-d/R)"]}
-      ]},
-      {"topic": "Potential", "subtopics": [
-        {"name": "Potential", "points": ["V=-GM/r, units: J/kg, always negative"]},
-        {"name": "Potential Energy", "points": ["U=-GMm/r, zero at infinity"]}
-      ]},
-      {"topic": "Satellite Motion", "subtopics": [
-        {"name": "Orbital Velocity", "points": ["v₀=√(GM/r)=√(gR²/r), ≈7.9 km/s at surface"]},
-        {"name": "Time Period", "points": ["T=2π√(r³/GM), Kepler's 3rd law: T²∝r³"]},
-        {"name": "Escape Velocity", "points": ["vₑ=√(2GM/R)=√(2gR), ≈11.2 km/s"]},
-        {"name": "Energy", "points": ["KE=GMm/2r, PE=-GMm/r, Total=-GMm/2r"]}
-      ]},
-      {"topic": "Geostationary", "subtopics": [
-        {"name": "Properties", "points": ["T=24h, equatorial orbit, height=35,786 km"]},
-        {"name": "Uses", "points": ["Communication, weather, broadcasting"]}
-      ]}
+      {
+        "topic": "Newton's Law of Gravitation",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "$F = \\frac{Gm_1m_2}{r^2}$ — force is always attractive, proportional to both masses, inverse-square in…",
+              "$G = 6.67\\times 10^{-11} \\text{ N·m}^2/\\text{kg}^2$ is universal and independent of environment.",
+              "$g = \\frac{GM}{r^2}$ is the force per unit mass; on Earth's surface it is 9.8 m/s².",
+              "The law explains orbital motion, tides, and planetary orbits.",
+              "Gravity between everyday objects is negligible because G is tiny."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Newton's law of gravitation: $F = \\frac{Gm_1m_2}{r^2}$",
+              "Gravitational field strength: $g = \\frac{GM}{r^2}$",
+              "Orbital velocity: $v = \\sqrt{\\frac{GM}{r}}$",
+              "Orbital period: $T = 2\\pi\\sqrt{\\frac{r^3}{GM}}$",
+              "g at height h: $g' = g\\left(\\frac{R}{R+h}\\right)^2$"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Every particle attracts every other particle with a force directly proportional to the product of the masses…",
+              "The gravitational constant $G = 6.67\\times 10^{-11} \\text{ N·m}^2/\\text{kg}^2$ is a universal constant of…",
+              "Gravitational force is always attractive and acts along the line joining the centres."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Numericals on $F = \\frac{Gm_1m_2}{r^2}$ are a certainty — drill at least five.",
+              "g at a height or depth is a recurring short question.",
+              "Comparing gravitational and electric forces between protons is a popular conceptual MCQ.",
+              "Doubling the distance quarters the force; halving it quadruples the force (inverse-square).",
+              "For g at height: $g' = g\\left(\\frac{R}{R+h}\\right)^2$; at $h = R$, $g' = g/4$."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'There is a force of gravity only near Earth.' ✅ Gravity acts between ANY two masses anywhere in the…",
+              "❌ 'G can change with temperature or medium.' ✅ G is a universal constant — independent of temperature,…",
+              "❌ 'The force depends on the square of the distance — it dies quickly.' ✅ It dies as 1/r² but never reaches…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Gravitational Field Strength",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "$V = -\\frac{GM}{r}$ is negative, approaching zero at infinity.",
+              "$U = -\\frac{GMm}{r}$ is the energy of the (bound) system, negative for attraction.",
+              "Near Earth's surface $U = mgh$ is the appropriate approximation.",
+              "Potential and field connect: $g = -\\frac{dV}{dr}$.",
+              "Total energy of a circular orbit is negative: $E = -\\frac{GMm}{2r}$."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Gravitational potential: $V = -\\frac{GM}{r}$ (J/kg)",
+              "Gravitational potential energy: $U = mV = -\\frac{GMm}{r}$ (J)",
+              "Near the surface: $U = mgh$ ($h \\ll R$)",
+              "Field from potential: $g = -\\frac{dV}{dr}$",
+              "Total orbital energy: $E = -\\frac{GMm}{2r} = U/2$"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Gravitational potential at a point is the work done per unit mass in bringing a mass from infinity to that…",
+              "Gravitational potential energy of two masses is $U = -\\frac{GMm}{r}$, taking zero at infinity.",
+              "For small heights near Earth's surface, $U = mgh$."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Derivation of $U = -\\frac{GMm}{r}$ from integrating $F = \\frac{GMm}{r^2}$ is a standard question.",
+              "Numericals on satellite total energy and escape energy are frequently asked.",
+              "Conceptual MCQ: why is potential energy negative? → because zero is at infinity and gravity is attractive.",
+              "Escape-energy shortcut: energy to infinity = $GMm/R = mgR$ (since $g = \\frac{GM}{R^2}$).",
+              "Orbital energy memory: $E = -\\frac{GMm}{2r} = U/2$ means $K = -U/2$."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'Potential and potential energy are the same.' ✅ Potential V is work per unit mass (J/kg); potential…",
+              "❌ 'Negative energy is unphysical.' ✅ Negative potential energy simply means the system is BOUND — energy…",
+              "❌ '$U = mgh$ and $U = -\\frac{GMm}{r}$ disagree.' ✅ They agree for small heights: $mgh$ is the CHANGE in…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Variation in g due to Altitude and Depth",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Above the surface: $g' = g\\left(\\frac{R}{R+h}\\right)^2$ — decreases as $\\frac{1}{(R+h)^2}$.",
+              "Below the surface: $g' = g\\left(1 - \\frac{d}{R}\\right)$ — decreases linearly to zero at the centre.",
+              "g is maximum at the surface.",
+              "Rotation and oblateness also reduce g at the equator.",
+              "The $g$–$r$ graph: linear rise inside, $1/r^2$ fall outside."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "g at altitude h: $g' = g\\left(\\frac{R}{R+h}\\right)^2$",
+              "Small-h approximation: $g' \\approx g\\left(1 - \\frac{2h}{R}\\right)$",
+              "g at depth d: $g' = g\\left(1 - \\frac{d}{R}\\right)$",
+              "g at latitude λ due to rotation: $g' = g - \\omega^2 R \\cos^2 \\lambda$",
+              "g inside a uniform sphere: $g' = \\frac{gr}{R}$ ($r \\le R$)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "At altitude h, $g' = g\\left(\\frac{R}{R+h}\\right)^2$.",
+              "At depth d, $g' = g\\left(1 - \\frac{d}{R}\\right)$.",
+              "g is maximum at Earth's surface."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Deriving $g' = g\\left(1 - \\frac{2h}{R}\\right)$ from the binomial expansion is frequently asked.",
+              "Sketch-the-graph questions (inside + outside) appear in exams.",
+              "Numericals mixing altitude and depth are standard.",
+              "$h = R ightarrow g/4$; $d = R/2 ightarrow g/2$ — memorise these anchor values.",
+              "Percentage change at small $h \\approx (2h/R)\\times 100\\%$."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'g increases with altitude.' ✅ Above the surface g DEcreases as $\\frac{1}{(R+h)^2}$; below the surface it…",
+              "❌ 'From height h, g falls by $h/R$.' ✅ The small-h approximation is $2h/R$ (from the square), not $h/R$. At…",
+              "❌ 'Deep inside Earth, g keeps growing.' ✅ It decreases linearly: $g' = g\\left(1 - \\frac{d}{R}\\right)$, zero…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Centre of Mass and Centre of Gravity",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "COM is a mass-weighted average position; CG is where the total weight acts.",
+              "In a uniform g, COM and CG coincide.",
+              "For uniform symmetric bodies, COM is at the geometric centre.",
+              "COM can lie outside the material (ring, L-shape, boomerang).",
+              "The motion of the COM is governed only by external forces."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Centre of mass (discrete): $R_{cm} = \\frac{\\Sigma m_i r_i}{\\Sigma m_i}$",
+              "Centre of mass (continuous): $R_{cm} = \\frac{\\int r dm}{\\int dm}$",
+              "Two masses: $x_{cm} = \\frac{m_1 x_1 + m_2 x_2}{m_1 + m_2}$",
+              "Velocity of COM: $V_{cm} = \\frac{\\Sigma m_i v_i}{M}$",
+              "Acceleration of COM: $a_{cm} = \\frac{\\Sigma m_i a_i}{M} = \\frac{F_{ext}}{M}$"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "The centre of mass of a system is the mass-weighted average position: $R_{cm} = \\frac{\\Sigma m_i r_i}{\\Sigma…",
+              "The centre of gravity is the point where the entire weight may be considered to act.",
+              "In a uniform gravitational field the centre of gravity coincides with the centre of mass."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "COM calculation for two/three point masses is a standard numerical.",
+              "Comparing COM and CG is a frequent short-answer question.",
+              "Locating CG by suspending a lamina is a common practical question.",
+              "For two masses: COM divides the join inversely to the masses (closer to the heavier).",
+              "Uniform rod → COM at L/2; uniform square → centre; ring → centre (empty)."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'COM and CG are always at the material centre.' ✅ Only for uniform, symmetric bodies. A ring's COM is at…",
+              "❌ 'COM and CG are always the same point.' ✅ They coincide in a UNIFORM gravitational field. For very large…",
+              "❌ 'COM is a force point.' ✅ COM is a mass-weighted average position — a geometric point for translational…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Motion of a Satellite — Orbital Velocity and Time…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "v₀ = √(GM/r) — orbital speed depends only on radius, not satellite mass.",
+              "T = 2π√(r³/GM) — Kepler's third law: T² ∝ r³.",
+              "Higher orbit → slower speed, longer period.",
+              "E_total = −GMm/2r: bound orbit, with K = −U/2.",
+              "Astronauts float because of free fall, not absence of gravity."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Orbital velocity: v₀ = √(GM/r)",
+              "Near-surface orbital speed: v₀ = √(gR)",
+              "Time period: T = 2πr/v₀ = 2π√(r³/GM)",
+              "Kinetic energy: K = GMm/2r",
+              "Total energy: E = −GMm/2r (E = U/2, K = −U/2)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "The orbital velocity of a satellite is v₀ = √(GM/r).",
+              "The period of revolution is T = 2π√(r³/GM).",
+              "Orbital speed is independent of the satellite's mass."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Deriving v₀ and T from equating gravity to centripetal force is a year-on-year question.",
+              "Finding the altitude for a given period (e.g., 2 h, 24 h) is a standard numerical.",
+              "Energy numericals (K, U, E) for a given orbit are frequently asked.",
+              "Near surface: v₀ = √(gR) ≈ 7.9 km/s — remember this anchor value.",
+              "T applet: for the ISS (≈ 90 min) confirm with T = 2π√(r³/GM)."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'A satellite must be above the atmosphere to feel no gravity.' ✅ A satellite feels gravity at every…",
+              "❌ 'Weightlessness means g = 0 on the ISS.' ✅ g at 400 km is ≈ 8.7 m/s² (89% of surface). Astronauts float…",
+              "❌ 'Heavier satellites orbit slower.' ✅ Orbital speed is independent of the satellite's mass: v₀ = √(GM/r)."
+            ]
+          }
+        ]
+      }
     ]
   }
 }

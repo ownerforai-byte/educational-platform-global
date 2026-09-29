@@ -3,39 +3,205 @@
   "unitSlug": "vectors",
   "topicSlug": "vectors-mindmap",
   "topicTitle": "vectors — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Study of vectors - quantities with magnitude and direction.",
-    "Covers vector algebra, products, and applications in physics.",
-    "Essential tool for physics and engineering."
+    "Collinear and Non-collinear Vectors covers essential principles and applications.",
+    "**Collinear and Non-collinear Vectors:** Class 11 concept.",
+    "**Why:** connects to other topics."
   ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
   "mindmap": {
-    "centralConcept": "Vectors",
+    "centralConcept": "VECTORS",
     "branches": [
-      {"topic": "Basic Concepts", "subtopics": [
-        {"name": "Definition", "points": ["Magnitude + direction, scalar vs vector"]},
-        {"name": "Types", "points": ["Unit, zero, position, equal, negative"]},
-        {"name": "Components", "points": ["a = a₁i + a₂j + a₃k", "|a| = √(a₁² + a₂² + a₃²)"]}
-      ]},
-      {"topic": "Addition", "subtopics": [
-        {"name": "Triangle Law", "points": ["Head-to-tail, resultant from first to last"]},
-        {"name": "Parallelogram", "points": ["Common tail, diagonal = resultant"]},
-        {"name": "Polygon", "points": ["Multiple vectors, chain method"]}
-      ]},
-      {"topic": "Scalar Product", "subtopics": [
-        {"name": "Definition", "points": ["a·b = |a||b|cosθ, scalar result"]},
-        {"name": "Properties", "points": ["Perpendicular: a·b=0, projection"]},
-        {"name": "Components", "points": ["a·b = a₁b₁ + a₂b₂ + a₃b₃"]}
-      ]},
-      {"topic": "Vector Product", "subtopics": [
-        {"name": "Definition", "points": ["a×b = |a||b|sinθ n̂, vector result"]},
-        {"name": "Properties", "points": ["Parallel: a×b=0, area of parallelogram"]},
-        {"name": "Components", "points": ["Determinant form"]}
-      ]},
-      {"topic": "Applications", "subtopics": [
-        {"name": "Triple Products", "points": ["Scalar triple: volume", "Vector triple: BAC-CAB"]},
-        {"name": "Physics", "points": ["Work: W=F·s", "Torque: τ=r×F", "Angular momentum: L=r×p"]}
-      ]}
+      {
+        "topic": "Collinear and Non-collinear Vectors",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Collinear and Non-collinear Vectors",
+              "Application of Collinear and Non-collinear Vectors",
+              "Connection of Collinear and Non-collinear Vectors to other topics",
+              "**Collinear and Non-collinear Vectors:** Class 11 concept.",
+              "**Why:** connects to other topics."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Collinear and Non-collinear Vectors",
+              "Statement 2: Theorem related to Collinear and Non-collinear Vectors",
+              "Statement 3: Condition for Collinear and Non-collinear Vectors to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Collinear and Non-collinear Vectors problems - significant marks.",
+              "Recall the formula for Collinear and Non-collinear Vectors.",
+              "Collinear and Non-collinear Vectors is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Collinear and Non-collinear Vectors.",
+              "Check formula conditions."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Vector Algebra — Types, Addition and Scalar…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Vector Algebra — Types, Addition and Scalar Multiplication",
+              "Application of Vector Algebra — Types, Addition and Scalar Multiplication",
+              "Connection of Vector Algebra — Types, Addition and Scalar Multiplication to other topics",
+              "**Vector Algebra — Types, Addition and Scalar Multiplication:** Class 11 concept.",
+              "Definition and significance of Vector Algebra — Types, Addition and Scalar Multiplication."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Scalar and vector quantities, types of vectors; addition, subtraction and scalar…",
+              "Statement 2: Theorem related to Scalar and vector quantities, types of vectors; addition, subtraction and…",
+              "Statement 3: Condition for Scalar and vector quantities, types of vectors; addition, subtraction and scalar…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Vector Algebra — Types, Addition and Scalar Multiplication problems - significant marks.",
+              "Recall the formula for Vector Algebra — Types, Addition and Scalar Multiplication.",
+              "Vector Algebra — Types, Addition and Scalar Multiplication is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Vector Algebra — Types, Addition and Scalar Multiplication."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Dot Product and Its Applications",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Dot Product and Its Applications",
+              "Application of Dot Product and Its Applications",
+              "Connection of Dot Product and Its Applications to other topics",
+              "**Dot Product and Its Applications:** Class 11 concept.",
+              "Definition and significance of Dot Product and Its Applications."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Dot product (scalar product) and its applications",
+              "Statement 2: Theorem related to Dot product (scalar product) and its applications",
+              "Statement 3: Condition for Dot product (scalar product) and its applications to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Dot Product and Its Applications problems - significant marks.",
+              "Recall the formula for Dot Product and Its Applications.",
+              "Dot Product and Its Applications is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Dot Product and Its Applications."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Dot Product of Two Vectors",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Dot Product of Two Vectors",
+              "Application of Dot Product of Two Vectors",
+              "Connection of Dot Product of Two Vectors to other topics",
+              "**Dot Product of Two Vectors:** Class 11 concept.",
+              "Definition and significance of Dot Product of Two Vectors."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Dot Product of Two Vectors",
+              "Statement 2: Theorem related to Dot Product of Two Vectors",
+              "Statement 3: Condition for Dot Product of Two Vectors to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Dot Product of Two Vectors problems - significant marks.",
+              "Recall the formula for Dot Product of Two Vectors.",
+              "Dot Product of Two Vectors is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Dot Product of Two Vectors."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Linear Combination of Vectors",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Linear Combination of Vectors",
+              "Application of Linear Combination of Vectors",
+              "Connection of Linear Combination of Vectors to other topics",
+              "**Linear Combination of Vectors:** Class 11 concept.",
+              "Definition and significance of Linear Combination of Vectors."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Linear Combination of Vectors",
+              "Statement 2: Theorem related to Linear Combination of Vectors",
+              "Statement 3: Condition for Linear Combination of Vectors to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Linear Combination of Vectors problems - significant marks.",
+              "Recall the formula for Linear Combination of Vectors.",
+              "Linear Combination of Vectors is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Linear Combination of Vectors."
+            ]
+          }
+        ]
+      }
     ]
   }
 }

@@ -9,6 +9,8 @@
  *   content   -> JSON parse validation of every file under content/      (~1-3s)
  *   frontend  -> tsc --noEmit + the 3 content/note test files           (~30-60s)
  *   backend   -> tsc --noEmit + backend vitest                          (~30-60s)
+ *   mindmap   -> depth-pack coverage                                    (~1-5s)
+ *   visuals   -> every branch/schematic is about its own topic           (~10-30s)
  *
  * Exit code is non-zero if any selected check fails.
  */
@@ -43,7 +45,8 @@ function changedFiles() {
 }
 
 function areasFor(files) {
-  if (files === null) return ["content", "frontend", "backend", "contentScopes", "mindmap"];
+  if (files === null)
+    return ["content", "frontend", "backend", "contentScopes", "mindmap", "visuals"];
   const a = new Set();
   for (const f of files) {
     if (f.startsWith("content/")) a.add("content");
@@ -52,7 +55,10 @@ function areasFor(files) {
   }
   // The gates always run when note content or mindmap data is in play.
   if (a.has("content")) a.add("contentScopes");
-  if (a.has("content") || a.has("frontend")) a.add("mindmap");
+  if (a.has("content") || a.has("frontend")) {
+    a.add("mindmap");
+    a.add("visuals");
+  }
   return [...a];
 }
 
@@ -111,6 +117,21 @@ const runners = {
     label: "mindmap depth pack coverage",
     run() {
       const v = run(process.execPath, ["scripts/enrichment/mindmap-validate.mjs"], {
+        stdio: "inherit",
+      });
+      return v.status ?? 1;
+    },
+  },
+  // Branch + schematic topicality: every unit tree and every topic drawing must
+  // be about its OWN topic, with content traceable to its own sources. Exits
+  // non-zero on any high finding, so a keyword guess or a shared fallback that
+  // creeps back in fails the gate instead of shipping silently.
+  visuals: {
+    label: "branch + schematic topicality (visual audit)",
+    run() {
+      const tsx = ["..", "node_modules", "tsx", "dist", "cli.mjs"].join("/");
+      const v = run(process.execPath, [tsx, "scripts/audit-visuals.ts"], {
+        cwd: "frontend",
         stdio: "inherit",
       });
       return v.status ?? 1;

@@ -3,8 +3,65 @@
   "unitSlug": "refraction-through-prisms",
   "topicSlug": "refraction-through-prisms-mindmap",
   "topicTitle": "refraction through prisms — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "**Deviation angle (δ):** When a ray of light passes through a prism, it bends at both faces. The total angle between the incident ray's original direction and…",
+    "**Formula for deviation:** $\\delta = i + e - A$, where $i$ is the angle of incidence, $e$ is the angle of emergence, and $A$ is the prism angle (refracting…",
+    "**Minimum deviation (δ_min):** As you vary the angle of incidence $i$, the deviation $\\delta$ changes. There is a unique value of $i$ that gives the SMALLEST…"
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
+  "mindmap": {
+    "centralConcept": "REFRACTION THROUGH PRISMS",
+    "branches": [
+      {
+        "topic": "Minimum Deviation Condition",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Deviation angle (δ):** When a ray of light passes through a prism, it bends at both faces. The total angle…",
+              "**Formula for deviation:** $\\delta = i + e - A$, where $i$ is the angle of incidence, $e$ is the angle of…",
+              "**Minimum deviation (δ_min):** As you vary the angle of incidence $i$, the deviation $\\delta$ changes. There…",
+              "**Symmetric path condition:** At minimum deviation, the ray passes SYMMETRICALLY through the prism: $i = e$…",
+              "**Geometric consequence:** At minimum deviation, the ray inside the prism is parallel to the base of the…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ Minimum deviation occurs when the ray passes straight through the prism without bending. ✅ Minimum…",
+              "❌ At minimum deviation, the ray is perpendicular to both prism faces. ✅ At minimum deviation, the ray inside…",
+              "❌ Any angle of incidence gives the same deviation. ✅ Deviation varies with angle of incidence. Only at one…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Deviation in a Small-Angle (Thin) Prism",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Small-angle prism definition:** A prism with a refracting angle $A \\leq 10°$ (typically 2°–10°) is called…",
+              "**Derivation of $\\delta = (n-1)A$:** From the prism formula at minimum deviation: $n =…",
+              "**Independent of angle of incidence:** Unlike the general prism formula, the thin-prism deviation $\\delta =…",
+              "**Why independence matters:** In a thin prism, even if the incident ray is not at the minimum deviation…",
+              "**Dispersion by a thin prism:** Since $n$ varies with wavelength: $\\delta_v = (n_v - 1)A$ and $\\delta_r =…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ The thin-prism formula $\\delta = (n-1)A$ works for ANY prism angle. ✅ It is only valid for small $A$…",
+              "❌ The deviation through a thin prism depends on the angle of incidence. ✅ For a thin prism, the deviation is…",
+              "❌ A thin prism produces no dispersion. ✅ A thin prism DOES produce dispersion — different wavelengths…"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

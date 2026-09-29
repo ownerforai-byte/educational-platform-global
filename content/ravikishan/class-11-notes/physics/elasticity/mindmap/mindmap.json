@@ -3,35 +3,239 @@
   "unitSlug": "elasticity",
   "topicSlug": "elasticity-mindmap",
   "topicTitle": "elasticity — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Study of elasticity - ability of materials to return to original shape after deformation.",
-    "Covers stress, strain, elastic moduli, and Hooke's law.",
-    "Essential for engineering and material science."
+    "Hooke's law (F = kx) states that deformation is proportional to applied force within the elastic limit. The spring constant k (N/m) measures stiffness.…",
+    "**Hooke's law statement:** For small deformations, the extension (or compression) of an elastic body is directly proportional to the applied force: F = kx,…",
+    "**Force (spring) constant k:** k = F/x, measured in N/m. It measures the stiffness of the spring — a stiffer spring has a larger k and needs a bigger force…"
   ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
   "mindmap": {
-    "centralConcept": "Elasticity",
+    "centralConcept": "ELASTICITY",
     "branches": [
-      {"topic": "Hooke's Law", "subtopics": [
-        {"name": "Statement", "points": ["Stress ∝ strain (within elastic limit)", "F = kx for springs"]},
-        {"name": "Force Constant", "points": ["k = F/x, depends on material and dimensions"]}
-      ]},
-      {"topic": "Stress & Strain", "subtopics": [
-        {"name": "Stress", "points": ["Force/Area, units: N/m² or Pa"]},
-        {"name": "Strain", "points": ["Change/Original, dimensionless"]},
-        {"name": "Types", "points": ["Tensile, compressive, shear"]}
-      ]},
-      {"topic": "Elastic Moduli", "subtopics": [
-        {"name": "Young's (Y)", "points": ["Tensile stress/strain", "Y = Fl/(AΔl)"]},
-        {"name": "Bulk (K)", "points": ["Volumetric stress/strain", "K = -VΔP/ΔV"]},
-        {"name": "Shear (η)", "points": ["Shear stress/strain", "η = F/(Aθ)"]}
-      ]},
-      {"topic": "Poisson's Ratio", "subtopics": [
-        {"name": "Definition", "points": ["σ = lateral strain/longitudinal strain", "Range: -1 to 0.5"]}
-      ]},
-      {"topic": "Elastic Energy", "subtopics": [
-        {"name": "Energy", "points": ["U = ½ × stress × strain × volume", "U = ½kx² for spring"]}
-      ]}
+      {
+        "topic": "Hooke's Law and Force Constant",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "F = kx holds only within the elastic limit — marked by the straight-line region of the F–x graph.",
+              "k measures stiffness in N/m; a larger k is a stiffer spring.",
+              "Series springs combine like 1/k = 1/k₁ + 1/k₂ (softer).",
+              "Parallel springs combine like k = k₁ + k₂ (stiffer).",
+              "Energy stored in a stretched spring is ½kx² — the triangle under the F–x graph."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Hooke's law: F = kx",
+              "Spring constant: k = F/x (units N/m)",
+              "Series springs: 1/k = 1/k₁ + 1/k₂",
+              "Parallel springs: k = k₁ + k₂",
+              "Elastic potential energy: U = ½kx²; oscillation ω = √(k/m)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Hooke's law: F = kx within the elastic limit.",
+              "The spring constant k measures the force per unit deformation (N/m).",
+              "Series springs: 1/k_eq = 1/k₁ + 1/k₂ (combination is softer)."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "The force required to extend a spring doubles when the extension doubles (F = kx).",
+              "Combinations of springs are a guaranteed numerical question.",
+              "Finding k from a graph slope is a frequent NEB short question.",
+              "Spring constant from graph: k = slope of F–x line in the linear region.",
+              "Series/parallel: use the same rule as capacitors (series) and resistors (parallel)."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'F = kx means force depends on extension.' ✅ Precisely that — for a spring, doubling the extension doubles…",
+              "❌ 'k is a property only of the material.' ✅ k depends on the geometry too (length, coil radius, number of…",
+              "❌ 'A stiffer spring stretches more.' ✅ A stiffer spring stretches LESS for the same force — it has a larger…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Hooke's Law and Force Constant",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Restoring Force:** The spring exerts a restoring force $F = -kx$ that always opposes the displacement.…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Hooke's law F = kx is valid only in the linear region of the F–x graph, up to the proportionality limit."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Stress, Strain, Elasticity and Plasticity",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Stress is force per unit area; strain is fractional deformation (dimensionless).",
+              "Elasticity = recovery of shape when the force is removed; plasticity = permanent deformation.",
+              "Stress is proportional to strain only within the elastic limit (Hooke's law, σ = Eε).",
+              "The stress–strain curve has six regions: proportional, elastic, yield, plastic, ultimate, fracture.",
+              "Ductile materials deform plastically before breaking; brittle ones break suddenly near the elastic limit."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Stress: σ = F/A (N/m² or Pa)",
+              "Strain: ε = Δl/l (dimensionless; ε_V = ΔV/V, shear ε = θ)",
+              "Hooke's law in stress–strain form: σ = Eε",
+              "Young's modulus: E = (F/A)/(Δl/l) = Fl/(AΔl)",
+              "Bulk modulus: B = −P/(ΔV/V); Shear modulus: G = τ/θ"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Stress is the internal force per unit area resisting deformation: σ = F/A.",
+              "Strain is the fractional change in dimension and is dimensionless: ε = Δl/l.",
+              "Within the elastic limit stress is proportional to strain (Hooke's law): σ = Eε."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Stress and strain numericals are a guaranteed exam topic — practice unit conversions (mm² → m²).",
+              "Labeling the stress–strain curve and identifying regions carries direct marks.",
+              "Young's modulus problems (extension of a wire) appear almost every year.",
+              "Remember: strain has NO units — a quick sanity check for MCQs.",
+              "To find E: rearrange to E = Fl/(AΔl) — compute σ then divide by ε."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'Stress and pressure are the same.' ✅ Both have units N/m², but stress is the INTERNAL resisting force per…",
+              "❌ 'Strain has units.' ✅ Strain is dimensionless — it is a ratio of lengths (or volumes/angles). This is…",
+              "❌ 'Elasticity means materials are always elastic.' ✅ Every material is elastic only up to its elastic limit;…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Elastic Moduli — Young, Bulk, Shear",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "E, B, G all have units N/m² (Pa) — they differ by the type of deformation they describe.",
+              "E (stretching), B (volume), G (shape) measure the corresponding resistance of a material.",
+              "The three moduli are linked: E = 2G(1+σ) and E = 3B(1−2σ).",
+              "Liquids and gases have G = 0 (they cannot resist shear) — only solids have a shear modulus.",
+              "Compressibility is the reciprocal of B."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Bulk modulus: B = −P/(ΔV/V)",
+              "Shear modulus: G = (F/A)/θ = τ/θ",
+              "Relation: E = 2G(1 + σ) = 3B(1 − 2σ)",
+              "Combined: E = 9BG/(3B + G); compressibility k = 1/B"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Young's modulus E = Fl/(AΔl) measures resistance to longitudinal deformation.",
+              "Bulk modulus B = −P/(ΔV/V) measures resistance to uniform compression.",
+              "Shear modulus G = τ/θ measures resistance to change of shape."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "E, B, G definitions and units are certainty for short-answer questions.",
+              "Young's modulus wire problems remain the most-tested numerical.",
+              "The relation E = 2G(1+σ) is frequently used to find Poisson's ratio.",
+              "unit memory: all three moduli are in N/m² (Pa).",
+              "For Young's modulus: rearrange E = Fl/(AΔl) to solve any one variable."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'All three moduli have different units.' ✅ All three are measured in N/m² (Pa) — same units, different…",
+              "❌ 'Bulk modulus applies only to liquids.' ✅ It applies to solids and gases too — any material under uniform…",
+              "❌ 'Shear strain is a length ratio.' ✅ Shear strain is the ANGLE of displacement θ (radians), not a length…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Poisson's Ratio",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Poisson's ratio is the (negative) ratio of lateral strain to longitudinal strain — always dimensionless.",
+              "σ typically lies between 0 and 0.5 for isotropic materials.",
+              "σ links E, B and G: E = 2G(1+σ) = 3B(1−2σ).",
+              "σ = 0.5 means incompressible (volume is conserved); σ = 0 means no lateral change (cork).",
+              "ΔV/V = ε(1 − 2σ) — volume change during stretching depends only on σ and strain."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Poisson's ratio: σ = −(lateral strain)/(longitudinal strain)",
+              "Relation with moduli: E = 2G(1 + σ); E = 3B(1 − 2σ)",
+              "σ from E and B: σ = (3B − E)/(6B)",
+              "σ from E and G: σ = E/(2G) − 1",
+              "Fractional volume change: ΔV/V = ε(1 − 2σ)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Poisson's ratio is the ratio of lateral strain to longitudinal strain, taken with a negative sign.",
+              "Poisson's ratio is dimensionless and ranges between 0 and 0.5 for ordinary isotropic materials.",
+              "The moduli are linked by E = 2G(1 + σ) and E = 3B(1 − 2σ)."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Definitions and limits of Poisson's ratio are a standard short-answer.",
+              "Computing σ from E and G (or E and B) is a common numerical.",
+              "Conceptual: why cork for bottle stoppers → σ ≈ 0.",
+              "σ is dimensionless — any answer with units is automatically wrong.",
+              "From E and G: σ = E/(2G) − 1 — do this division first, then subtract 1."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'Poisson's ratio has units of strain.' ✅ It is a RATIO of two strains — dimensionless.",
+              "❌ 'Poisson's ratio can be greater than 1.' ✅ No — the thermodynamic limit is 0.5 for isotropic materials (a…",
+              "❌ 'Lateral strain equals longitudinal strain.' ✅ Lateral strain = −σ × longitudinal strain, with σ typically…"
+            ]
+          }
+        ]
+      }
     ]
   }
 }

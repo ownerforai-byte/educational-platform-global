@@ -5,29 +5,62 @@
   "topicTitle": "Capacitor — Interactive Concept Map",
   "relevance": 100,
   "notes": [
-    "Comprehensive study of capacitance, parallel plate geometry, combinations, electrostatic energy, and dielectric polarization.",
-    "Covers core NEB formulas: C = Q/V, C = ε₀A/d, series/parallel networks, energy U = ½CV², and polarization P = χ_e ε₀ E.",
-    "Essential foundation for electrostatics, AC circuits, and semiconductor electronics."
+    "Capacitance measures a conductor's capacity to accumulate electrostatic charge per unit electrical potential (C = Q/V). A capacitor overcomes the geometric…",
+    "**Capacitance definition:** Capacitance $C$ of a conductor is the ratio of electric charge $Q$ given to it to the resulting increase in its electrostatic…",
+    "**SI Unit and Dimensions:** The SI unit of capacitance is the farad (F), where $1\\text{ F} = 1\\text{ C/V} = 1\\text{ C}^2\\text{J}^{-1}$. Because 1 farad is…"
   ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
   "mindmap": {
-    "centralConcept": "Capacitance & Capacitors",
+    "centralConcept": "CAPACITOR",
     "branches": [
       {
-        "topic": "Fundamentals of Capacitance",
+        "topic": "Capacitance and Capacitor",
         "subtopics": [
           {
-            "name": "Definition & Units",
+            "name": "Key points",
             "points": [
-              "C = Q / V (Ratio of charge to potential rise)",
-              "SI Unit: Farad (F) = 1 C/V, Dimensions: [M⁻¹ L⁻² T⁴ I²]",
-              "Isolated Sphere: C = 4πε₀R (Earth C ≈ 711 μF)"
+              "Capacitance C = Q/V is an invariant characteristic of conductor shape, area, separation, and dielectric…",
+              "Grounding the outer plate creates an opposite induced bound charge that depresses potential, allowing far…",
+              "1 Farad = 1 Coulomb / Volt; practical values span microfarads to picofarads.",
+              "The net charge on any capacitor is zero; stored charge Q refers to magnitude on either plate.",
+              "**Capacitance definition:** Capacitance $C$ of a conductor is the ratio of electric charge $Q$ given to it…"
             ]
           },
           {
-            "name": "Principle of Capacitor",
+            "name": "Formulas & relations",
             "points": [
-              "Grounded secondary plate reduces potential of primary plate",
-              "Enables massive charge storage at low operating voltage"
+              "Fundamental definition: $C = \\frac{Q}{V}$",
+              "Capacitance of isolated sphere: $C = 4\\pi\\varepsilon_0 \\varepsilon_r R$",
+              "Capacitance dimensions: $[M^{-1}L^{-2}T^4I^2]$",
+              "Reactance to AC: $X_C = \\frac{1}{\\omega C} = \\frac{1}{2\\pi f C}$"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Capacitance is defined as the charge required to raise the electric potential of a conductor by…",
+              "Statement 2: The capacitance of an isolated conductor is directly proportional to its radius (C = 4πε₀R).",
+              "Statement 3: An uncharged earthed conducting body placed near a charged body reduces its potential without…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "NEB exam frequently asks for the derivation of capacitance of an isolated spherical conductor and the…",
+              "Isolated conductor: R = 9 mm ⟺ C = 1 pF; multiply radius in meters by 1.11 × 10⁻¹⁰ to get Farads directly.",
+              "Remember mnemonic: Q = CV ('Quickly Charged Voltage').",
+              "Always check whether a capacitor remains connected to a DC source (V constant, Q variable) or is isolated (Q…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Thinking $C$ depends on $Q$ or $V$: Although $C = Q/V$, capacitance is an intrinsic geometric and material…",
+              "Believing an isolated conductor cannot store charge: An isolated conductor is actually a capacitor whose…",
+              "Confusing plate charge with total capacitor charge: The net charge on a charged capacitor is $+Q + (-Q) =…"
             ]
           }
         ]
@@ -36,96 +69,200 @@
         "topic": "Parallel Plate Capacitor",
         "subtopics": [
           {
-            "name": "Air / Vacuum Medium",
+            "name": "Key points",
             "points": [
-              "Uniform field: E = σ/ε₀ = Q / (ε₀A)",
-              "Capacitance: C₀ = ε₀A / d"
+              "Capacitance of a parallel plate capacitor is directly proportional to plate area A and inversely…",
+              "Inserting a dielectric increases capacitance by factor κ by reducing net internal electric field for a given…",
+              "A conducting slab of thickness t increases capacitance equivalent to reducing effective separation to (d - t).",
+              "Force between plates is attractive and equals F = Q² / (2ε₀A); it is independent of d for constant charge Q.",
+              "**Construction & Geometry:** A parallel plate capacitor consists of two identical, parallel metallic plates…"
             ]
           },
           {
-            "name": "Dielectric Slab Insertion",
+            "name": "Formulas & relations",
             "points": [
-              "Partially filled slab (t < d): C = ε₀A / [d - t(1 - 1/κ)]",
-              "Conducting slab (t < d): C = ε₀A / (d - t)",
-              "Fully filled: C = κε₀A / d = κC₀"
+              "Capacitance with vacuum/air: $C_0 = \\frac{\\varepsilon_0 A}{d}$",
+              "Capacitance fully filled with dielectric: $C = \\frac{\\kappa \\varepsilon_0 A}{d} = \\kappa C_0$",
+              "Capacitance with partially filled slab: $C = \\frac{\\varepsilon_0 A}{d - t(1 - 1/\\kappa)}$",
+              "Capacitance with conducting slab ($t < d$): $C = \\frac{\\varepsilon_0 A}{d - t}$",
+              "Electrostatic force between plates: $F = \\frac{Q^2}{2\\varepsilon_0 A} = \\frac{1}{2} \\frac{\\varepsilon_0 A…"
             ]
           },
           {
-            "name": "Electrostatic Plate Attraction",
+            "name": "Statements to quote",
             "points": [
-              "Attractive force: F = Q² / (2ε₀A) = ½ ε₀ A (V/d)²",
-              "Factor of ½ arises because charge interacts only with the field of the opposite plate"
+              "Statement 1: The electric field between two infinite oppositely charged parallel plates is uniform and equal…",
+              "Statement 2: The capacitance of a parallel plate capacitor with air is given by C = ε₀A/d.",
+              "Statement 3: Inserting a dielectric slab of thickness t increases capacitance by reducing the effective…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Derivation of C = ε₀A / [d - t(1 - 1/κ)] is one of the most frequently asked long questions in the NEB Class…",
+              "Dielectric slab formula trick: effective air distance becomes d_eff = d - t + t/κ.",
+              "Conducting slab trick: effective distance becomes d_eff = d - t.",
+              "Attractive force: F = ½ Q E_total = ½ Q (V/d).",
+              "Remember the fundamental difference between inserting a dielectric with battery connected (V constant, C↑,…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Using $E = \\sigma/\\varepsilon_0$ for force calculation: The electric field acting ON the charge $+Q$ of…",
+              "Confusing effect of dielectric under connected vs disconnected states: If connected to a battery, voltage…",
+              "Misinterpreting plate thickness: Capacitance depends strictly on separation $d$ between facing surfaces, not…"
             ]
           }
         ]
       },
       {
-        "topic": "Capacitor Combinations",
+        "topic": "Combination of Capacitors",
         "subtopics": [
           {
-            "name": "Series Combination",
+            "name": "Key points",
             "points": [
-              "Identical charge Q on each capacitor",
-              "Reciprocal addition: 1/C_s = 1/C₁ + 1/C₂ + ...",
-              "Two capacitors: C_s = (C₁C₂) / (C₁ + C₂)",
-              "Voltage divider: V₁ = [C₂/(C₁+C₂)]V"
+              "In series connection, charge Q is identical across all capacitors, while potential divides inversely with…",
+              "In parallel connection, potential difference V is identical across all branches, while charge distributes…",
+              "Common potential is determined by total charge divided by total capacitance.",
+              "Energy loss during charge sharing depends quadratically on initial voltage difference (V₁ - V₂)².",
+              "**Series Combination Theory:** In a series arrangement, capacitors $C_1, C_2, \\dots, C_n$ are connected…"
             ]
           },
           {
-            "name": "Parallel Combination",
+            "name": "Formulas & relations",
             "points": [
-              "Identical potential difference V across each branch",
-              "Direct addition: C_p = C₁ + C₂ + ...",
-              "Charge sharing: Q₁ = C₁V, Q₂ = C₂V"
+              "Series combination: $\\frac{1}{C_s} = \\sum_{i=1}^n \\frac{1}{C_i}$ ; for two: $C_s = \\frac{C_1 C_2}{C_1 + C_2}$",
+              "Parallel combination: $C_p = \\sum_{i=1}^n C_i$",
+              "Common potential on parallel connection: $V_c = \\frac{C_1 V_1 + C_2 V_2}{C_1 + C_2}$",
+              "Energy dissipated on sharing charge: $\\Delta U = \\frac{1}{2}\\frac{C_1 C_2}{C_1 + C_2}(V_1 - V_2)^2$"
             ]
           },
           {
-            "name": "Charge Redistribution & Energy Loss",
+            "name": "Statements to quote",
             "points": [
-              "Common potential: V_c = (C₁V₁ + C₂V₂) / (C₁ + C₂)",
-              "Energy loss: ΔU = ½ [C₁C₂/(C₁+C₂)](V₁ - V₂)²",
-              "Dissipated as heat and EM radiation"
+              "Statement 1: In a series combination of capacitors, each capacitor carries the same magnitude of electric…",
+              "Statement 2: The equivalent capacitance of a series combination is always less than the smallest capacitance…",
+              "Statement 3: In a parallel combination of capacitors, the potential difference across every individual…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Derivation of common potential and electrostatic energy loss on sharing charges is a prominent 4-mark…",
+              "Two capacitors in series: product over sum $C_s = (C_1 C_2) / (C_1 + C_2)$.",
+              "Energy loss is always positive: $\\Delta U \\ge 0$, vanishing only when initial voltages are already identical…",
+              "Ratio $C_p / C_s = N^2$ for $N$ identical capacitors.",
+              "In bridge networks of capacitors, if C₁/C₂ = C₃/C₄, the bridge is balanced; no charge flows through the…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Confusing series/parallel capacitor rules with resistor rules: Capacitors add directly in parallel ($C_p =…",
+              "Assuming energy is conserved during charge sharing: While total charge is strictly conserved ($sum Q_i =…",
+              "Incorrect polarity connection: If opposite-polarity terminals are joined (positive of $C_1$ to negative of…"
             ]
           }
         ]
       },
       {
-        "topic": "Energy & Energy Density",
+        "topic": "Energy of a Charged Capacitor",
         "subtopics": [
           {
-            "name": "Stored Electrostatic Energy",
+            "name": "Key points",
             "points": [
-              "U = ½ CV² = Q² / (2C) = ½ QV",
-              "Work done by battery: W = QV = CV²",
-              "Charging efficiency: 50% stored, 50% lost as heat"
+              "Electrostatic energy stored equals work performed in transferring charge against accumulating electric…",
+              "A battery does work W = QV in delivering charge Q at constant voltage V; exactly 50% is stored, 50% is lost…",
+              "Energy is physically localized in the electric field between plates with volume density u = ½ ε₀ E².",
+              "For an isolated charged capacitor, increasing plate separation d increases stored energy U because positive…",
+              "**Physical Origin of Stored Energy:** Charging a capacitor involves transferring incremental charges $dq$…"
             ]
           },
           {
-            "name": "Energy Density in Medium",
+            "name": "Formulas & relations",
             "points": [
-              "Energy per volume: u = ½ ε₀ E² (vacuum) or ½ ε E² (dielectric)",
-              "Energy is stored in the electric field itself"
+              "Stored electrostatic energy: $U = \\frac{1}{2} C V^2 = \\frac{Q^2}{2C} = \\frac{1}{2} Q V$",
+              "Work done by charging battery: $W_{battery} = Q V = C V^2$",
+              "Charging efficiency: $\\eta = \\frac{U}{W_{battery}} = 50\\%$",
+              "Electrostatic energy density: $u = \\frac{1}{2}\\varepsilon_0 E^2$ (in vacuum) or $u = \\frac{1}{2}\\varepsilon…"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: The electrostatic potential energy of a capacitor is stored in the electric field existing…",
+              "Statement 2: The total work done in charging a capacitor to charge Q at potential V is U = ½ QV.",
+              "Statement 3: Regardless of the resistance in the charging circuit, exactly half of the energy delivered by…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Derivation of $U = \\frac{1}{2}CV^2$ by integration and subsequent derivation of energy density $u =…",
+              "Average voltage trick: $W = Q \\times V_{avg} = Q \\times \\frac{V}{2} = \\frac{1}{2}QV$.",
+              "Battery work is always double stored capacitor energy: $W_{battery} = 2 U_{cap}$.",
+              "Energy density is quadratic with field: doubling $E$ quadruples energy density $u$.",
+              "Always identify if Q or V is constant when evaluating work and energy changes: use U = Q²/(2C) when isolated…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Thinking all battery energy enters the capacitor: The battery delivers $W = QV = CV^2$, but the capacitor…",
+              "Factor of 1/2 misconception: Why is there a factor of $\\frac{1}{2}$? Because the potential across the plates…",
+              "Believing energy resides in the metal plates: Electrostatic potential energy is stored in the electric field…"
             ]
           }
         ]
       },
       {
-        "topic": "Dielectric Effects & Polarization",
+        "topic": "Effect of a Dielectric — Polarization and Displacement",
         "subtopics": [
           {
-            "name": "Polar vs Non-Polar Dielectrics",
+            "name": "Key points",
             "points": [
-              "Non-polar: Symmetric molecules (H₂, O₂, CO₂), zero permanent dipole",
-              "Polar: Asymmetric molecules (H₂O, HCl), permanent electric dipole"
+              "Dielectrics lack free electrons; applied electric fields induce dipole alignment and bound surface charge…",
+              "Induced bound surface charge creates an opposing internal field E_p, reducing the net field to E = E₀/κ.",
+              "Polarization vector P has units of C/m² and equals induced bound surface charge density σ_p.",
+              "Displacement vector D depends solely on free charges on the conducting plates (D = σ_free).",
+              "Dielectric constant κ relates to electric susceptibility χ_e by κ = 1 + χ_e."
             ]
           },
           {
-            "name": "Vectors E, P, and D",
+            "name": "Formulas & relations",
             "points": [
-              "Reduced field: E = E₀ - E_p = E₀ / κ",
-              "Polarization vector: P = χ_e ε₀ E = σ_p (bound surface charge density)",
-              "Electric displacement: D = ε₀E + P = κε₀E = σ_free",
-              "Constitutive relation: κ = 1 + χ_e"
+              "Electric polarization: $\\vec{P} = \\chi_e \\varepsilon_0 \\vec{E}$",
+              "Electric displacement: $\\vec{D} = \\varepsilon_0 \\vec{E} + \\vec{P} = \\kappa \\varepsilon_0 \\vec{E}$",
+              "Susceptibility relation: $\\kappa = 1 + \\chi_e$",
+              "Reduced field in dielectric: $E = E_0 - E_p = \\frac{E_0}{\\kappa}$",
+              "Induced bound surface charge density: $\\sigma_p = P = \\sigma_{free}\\left(1 - \\frac{1}{\\kappa}\\right)$"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: In a dielectric placed in an electric field, induced bound charges appear on opposite faces,…",
+              "Statement 2: The electric polarization vector P is defined as the induced electric dipole moment per unit…",
+              "Statement 3: The magnitude of the polarization vector P is equal to the induced bound surface charge density…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Questions on the distinction between polar and non-polar dielectrics and the derivation of $\\kappa = 1 +…",
+              "Bound charge trick: $\\sigma_p = \\sigma(1 - 1/\\kappa)$; for large $\\kappa$, $\\sigma_p \\approx \\sigma$.",
+              "Relative permittivity identity: $\\kappa = 1 + \\chi_e$.",
+              "Electric displacement in uniform plate capacitor: $D = \\sigma_{free} = Q/A$, completely unaffected by…",
+              "Remember that dielectric constant κ is dimensionless, whereas electric permittivity ε has SI units of Farads…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Thinking polarization field cancels external field completely: Unlike an ideal conductor where mobile…",
+              "Confusing free charge with bound charge: Free charge resides on the metal capacitor plates (Q_free = σ A),…",
+              "Conflating electric susceptibility χ_e with dielectric constant κ: χ_e measures ease of polarization,…"
             ]
           }
         ]

@@ -175,6 +175,7 @@ export default async function TheoremDetailPage({
             topicSlug={entry.topicSlug}
             topicTitle={title}
             unitId={entry.unitId}
+            classSlug={classSlug}
           />
         )}
       </section>

@@ -3,8 +3,121 @@
   "unitSlug": "physical-quantities",
   "topicSlug": "physical-quantities-mindmap",
   "topicTitle": "physical quantities — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "Precision and significant figures control how many digits a measurement may honestly claim. Accuracy is closeness to the true value; precision is…",
+    "**Accuracy vs Precision:** **Accuracy** is how close a measurement is to the true value; **precision** is how close repeated measurements are to each other. A…",
+    "**Significant figures** are the digits that carry meaning about precision. Rules: (1) All non-zero digits are significant — 24.7 has **3** s.f. (2) Zeros…"
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
+  "mindmap": {
+    "centralConcept": "PHYSICAL QUANTITIES",
+    "branches": [
+      {
+        "topic": "Precision and Significant Figures",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Significant figures express the precision of a MEASUREMENT, not of a pure number — a counted quantity like…",
+              "Multiplication/division → fewest significant figures; addition/subtraction → fewest decimal places.",
+              "Leading zeros never count; captive zeros always count; trailing zeros count only after a decimal point.",
+              "Uncertainty of a reading is normally ± half the least count of the instrument.",
+              "Relative errors add in products and are multiplied by the power for $A^n$ — highest-power quantities…"
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Percentage uncertainty: $\\%\\,\\text{uncertainty} = \\frac{\\Delta x}{x} \\times 100\\%$",
+              "Sum/difference: $\\Delta Z = \\Delta A + \\Delta B$ (absolute errors add)",
+              "Product/quotient: $\\frac{\\Delta Z}{Z} = \\frac{\\Delta A}{A} + \\frac{\\Delta B}{B}$ (relative errors add)",
+              "Power rule: $Z = A^n \\Rightarrow \\frac{\\Delta Z}{Z} = n\\,\\frac{\\Delta A}{A}$",
+              "Pendulum example: $g = \\frac{4\\pi^2 L}{T^2} \\Rightarrow \\frac{\\Delta g}{g} = \\frac{\\Delta L}{L} +…"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: A measurement is meaningful only when stated with its uncertainty — a bare number is an…",
+              "Statement 2: In multiplication and division, the result cannot have more significant figures than the least…",
+              "Statement 3: In addition and subtraction, the result cannot be more precise (more decimal places) than the…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Exam Tip 1: NEB frequently asks 1-mark questions on counting significant figures and 2-3 mark questions on…",
+              "Exam Tip 2: In practical exams, quoting a result beyond the instrument's least count loses marks — always…",
+              "Exam Tip 3: When a question gives data like (2.0 ± 0.1) and (3.45 ± 0.02), compute the value first, then add…",
+              "Trick 1: Underline the significant figures of EVERY given value before starting a numerical — the smallest…",
+              "Trick 2: For 'which reading is more precise' MCQs, compare least counts, not decimal places: 0.01 cm…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ '0.00250 has 6 significant figures because it has 6 digits.' ✅ Leading zeros only locate the decimal point…",
+              "❌ '500 has 3 significant figures.' ✅ Without a decimal point, trailing zeros are ambiguous — 500 could be 1,…",
+              "❌ Rounding 2.45 to 2.5 'because 5 always rounds up'. ✅ For an exact 5 with nothing after, round to the…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Dimensions and Dimensional Analysis",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Dimensional homogeneity is a necessary test of correctness — it can reject an equation but can never fully…",
+              "Dimensionless constants (½, 2π, e) are invisible to dimensional analysis.",
+              "Quantities with identical dimensions can still be physically different (work vs torque; energy vs moment).",
+              "The powers method can only solve for as many unknown exponents as there are independent base dimensions…",
+              "Angle (radian) and steradian are supplementary, dimensionless $[M^0L^0T^0]$ units."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Force: $[F] = [MLT^{-2}]$",
+              "Work/Energy/Torque: $[ML^2T^{-2}]$",
+              "Power: $[ML^2T^{-3}]$; Pressure/Stress/Energy density: $[ML^{-1}T^{-2}]$",
+              "Gravitational constant: $[G] = [M^{-1}L^3T^{-2}]$; Planck constant: $[h] = [ML^2T^{-1}]$",
+              "Unit conversion: $n_2 = n_1 \\left(\\ rac{M_1}{M_2}\\ ight)^a\\left(\\ rac{L_1}{L_2}\\ ight)^b\\left(\\…"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: The dimensions of every term in a physically valid equation must be identical (principle of…",
+              "Statement 2: Dimensional methods can determine the FORM of a relation but never its dimensionless constants.",
+              "Statement 3: The numerical value of a physical quantity changes with the unit system, but the quantity…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Exam Tip 1: A 2-mark derivation by the powers method (pendulum, string wave, Stokes' law) appears in NEB…",
+              "Exam Tip 2: Always state limitations when asked to 'derive and comment' — omitting them costs the last mark.",
+              "Exam Tip 3: For conversion numericals, show $n_1 u_1 = n_2 u_2$ explicitly; the final factor without working…",
+              "Trick 1: Build dimensional formulas from known definitions rather than memorising: force = ma, then chain…",
+              "Trick 2: 'Same dimensions' pairs frequently asked: work–torque–energy; Planck's constant–angular momentum;…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'If an equation is dimensionally correct, it is physically correct.' ✅ Homogeneity is a necessary but not…",
+              "❌ 'Dimensional formula and dimensional equation are the same.' ✅ The formula is $[F] = [MLT^{-2}]$; the…",
+              "❌ 'Angle has units but no dimensions, so it is not a physical quantity.' ✅ Angle is a dimensionless…"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

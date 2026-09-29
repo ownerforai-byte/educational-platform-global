@@ -3,130 +3,57 @@
   "unitSlug": "atomic-structure",
   "topicSlug": "atomic-structure-mindmap",
   "topicTitle": "atomic structure interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Study of atomic structure concepts."
+    "### 1. Meaning of the experiment",
+    "Thomson's plum-pudding model (1904) treated the atom as diffuse positive charge with electrons embedded in it and could not explain large-angle deflection of…",
+    "### 2. Set-up"
   ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
   "mindmap": {
     "centralConcept": "ATOMIC STRUCTURE",
     "branches": [
       {
-        "topic": "Core Concepts",
+        "topic": "Rutherford's Atomic Model and its Limitations",
         "subtopics": [
           {
-            "name": "Fundamentals",
+            "name": "Key points",
             "points": [
-              "Key Definitions",
-              "Basic Theories",
-              "Historical Context"
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Properties",
-        "subtopics": [
-          {
-            "name": "Physical",
-            "points": [
-              "State",
-              "Melting/Boiling Points"
+              "### 1. Meaning of the experiment",
+              "Thomson's plum-pudding model (1904) treated the atom as diffuse positive charge with electrons embedded in…",
+              "### 2. Set-up",
+              "Radium in a lead block with a collimator gives a narrow α-beam; the target is gold foil ≈4 × 10⁻⁵ cm thick…",
+              "### 3. Observations"
             ]
           },
           {
-            "name": "Chemical",
+            "name": "Formulas & relations",
             "points": [
-              "Reactivity",
-              "Periodic Trends"
+              "$$N(\\theta) \\propto \\frac{1}{\\sin^{4}(\\theta/2)}$$",
+              "$$r_{0}=\\frac{2kZe^{2}}{KE}=\\frac{2Ze^{2}}{4\\pi\\varepsilon_{0}\\,KE}$$",
+              "$$\\rho_{\\text{nucleus}}\\approx 2.3\\times10^{17}\\ \\mathrm{kg\\,m^{-3}}$$"
             ]
-          }
-        ]
-      },
-      {
-        "topic": "Applications",
-        "subtopics": [
+          },
           {
-            "name": "Industrial",
+            "name": "Exam focus",
             "points": [
-              "Manufacturing Processes",
-              "Practical Uses",
-              "Environmental Impact"
+              "Quote the radiating-electron instability (collapse in ≈10⁻⁸ s) and the continuous-versus-line-spectrum…",
+              "Never claim Rutherford's model explained the hydrogen spectrum — repairing that was Bohr's achievement (1913)."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ The atom is 'totally empty'. ✅ It is mostly empty *space*, but ≈99.9% of the mass lies in the nucleus.",
+              "❌ α-particles are electrons. ✅ They are helium nuclei (+2e, ≈7300 times heavier than an electron), so…",
+              "❌ The model failed because α-particles were absorbed. ✅ Scattering itself was explained well; the model…"
             ]
           }
         ]
       }
     ]
-  },
-  "uiConfig": {
-    "allowZoom": true,
-    "showRefresh": true
-  },
-  "formulas": [
-    "E=hν",
-    "λ=h/mv",
-    "mvr=nh/2π",
-    "Δx·Δp≥h/4π",
-    "En=-13.6/n² eV",
-    "rn=0.529n²/Z Å"
-  ],
-  "examples": [
-    "Calculate de Broglie wavelength of electron at 10⁶ m/s: λ ≈ 0.727 nm"
-  ],
-  "keyPoints": [
-    "Nucleus: ~10⁻¹⁵m diameter",
-    "Electron cloud: ~10⁻¹⁰m diameter",
-    "s: spherical, p: dumbbell"
-  ],
-  "summary": "Atomic structure evolved from Rutherford nuclear model to Bohr quantized orbits to quantum mechanical model.",
-  "mcqs": [
-    {
-      "question": "de Broglie proposed:",
-      "options": [
-        "Nucleus",
-        "Wave nature of matter",
-        "Uncertainty",
-        "Quantum numbers"
-      ],
-      "answer": "B"
-    },
-    {
-      "question": "Radius proportional to:",
-      "options": [
-        "n",
-        "n²",
-        "n³",
-        "n⁴"
-      ],
-      "answer": "B"
-    }
-  ],
-  "importantConcepts": [
-    "Quantum numbers",
-    "Uncertainty principle",
-    "Bohr model"
-  ],
-  "exercises": [
-    {
-      "id": "1",
-      "question": "Calculate de Broglie wavelength of electron at 10⁶ m/s",
-      "steps": [
-        "Formula: λ=h/mv",
-        "h=6.626×10⁻³⁴ J·s, m=9.11×10⁻³¹ kg, v=10⁶ m/s",
-        "λ=6.626e-34/(9.11e-31×1e6)",
-        "λ≈7.27×10⁻¹⁰m=0.727nm"
-      ],
-      "answer": "0.727 nm"
-    },
-    {
-      "id": "2",
-      "question": "Find energy of electron in 2nd orbit of hydrogen",
-      "steps": [
-        "En=-13.6/n² eV",
-        "E₂=-13.6/2²",
-        "-13.6/4=-3.4 eV"
-      ],
-      "answer": "-3.4 eV"
-    }
-  ],
-  "visualType": "heisenberg-uncertainty"
+  }
 }

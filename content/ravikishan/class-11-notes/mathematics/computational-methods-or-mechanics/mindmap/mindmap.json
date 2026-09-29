@@ -3,8 +3,131 @@
   "unitSlug": "computational-methods-or-mechanics",
   "topicSlug": "computational-methods-or-mechanics-mindmap",
   "topicTitle": "computational methods or mechanics — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "Numerical Computation and Integration Methods covers essential principles and applications.",
+    "**Numerical Computation and Integration Methods:** Class 11 concept.",
+    "**Why:** connects to other topics."
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
+  "mindmap": {
+    "centralConcept": "COMPUTATIONAL METHODS OR MECHANICS",
+    "branches": [
+      {
+        "topic": "Numerical Computation and Integration Methods",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Numerical Computation and Integration Methods",
+              "Application of Numerical Computation and Integration Methods",
+              "Connection of Numerical Computation and Integration Methods to other topics",
+              "**Numerical Computation and Integration Methods:** Class 11 concept.",
+              "**Why:** connects to other topics."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Numerical computation: roots of algebraic and transcendental equations (bisection…",
+              "Statement 2: Theorem related to Numerical computation: roots of algebraic and transcendental equations…",
+              "Statement 3: Condition for Numerical computation: roots of algebraic and transcendental equations (bisection…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Numerical Computation and Integration Methods problems - significant marks.",
+              "Recall the formula for Numerical Computation and Integration Methods.",
+              "Numerical Computation and Integration Methods is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Numerical Computation and Integration Methods.",
+              "Check formula conditions."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Mechanics â€” Statics and Dynamics",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Mechanics â€” Statics and Dynamics",
+              "Application of Mechanics â€” Statics and Dynamics",
+              "Connection of Mechanics â€” Statics and Dynamics to other topics",
+              "**Mechanics â€” Statics and Dynamics:** Class 11 concept.",
+              "Definition and significance of Mechanics â€” Statics and Dynamics."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Mechanics (optional): Statics â€” forces and resultant forces, parallelogram law…",
+              "Statement 2: Theorem related to Mechanics (optional): Statics â€” forces and resultant forces, parallelogram…",
+              "Statement 3: Condition for Mechanics (optional): Statics â€” forces and resultant forces, parallelogram law…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Mechanics â€” Statics and Dynamics problems - significant marks.",
+              "Recall the formula for Mechanics â€” Statics and Dynamics.",
+              "Mechanics â€” Statics and Dynamics is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Mechanics â€” Statics and Dynamics."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Numerical Integration",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Numerical Integration",
+              "Application of Numerical Integration",
+              "Connection of Numerical Integration to other topics",
+              "**Numerical Integration:** Class 11 concept.",
+              "Definition and significance of Numerical Integration."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Numerical Integration",
+              "Statement 2: Theorem related to Numerical Integration",
+              "Statement 3: Condition for Numerical Integration to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Numerical Integration problems - significant marks.",
+              "Recall the formula for Numerical Integration.",
+              "Numerical Integration is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Numerical Integration."
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

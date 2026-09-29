@@ -3,62 +3,175 @@
   "unitSlug": "chemical-equilibrium",
   "topicSlug": "chemical-equilibrium-mindmap",
   "topicTitle": "chemical equilibrium interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Study of chemical equilibrium concepts."
+    "Chemical equilibrium describes the state where opposing reactions occur at equal rates, maintaining constant concentrations.",
+    "Dynamic equilibrium: forward rate = backward rate.",
+    "Kc = [products]/[reactants]."
   ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
   "mindmap": {
     "centralConcept": "CHEMICAL EQUILIBRIUM",
     "branches": [
       {
-        "topic": "Core Concepts",
+        "topic": "Dynamic Equilibrium",
         "subtopics": [
           {
-            "name": "Fundamentals",
+            "name": "Key points",
             "points": [
-              "Key Definitions",
-              "Basic Theories",
-              "Historical Context"
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Properties",
-        "subtopics": [
-          {
-            "name": "Physical",
-            "points": [
-              "State",
-              "Melting/Boiling Points"
+              "Core point for 01 dynamic equilibrium.",
+              "Dynamic equilibrium: forward rate = backward rate.",
+              "Kc = [products]/[reactants].",
+              "Le Chatelier's principle.",
+              "pH = -log[H⁺]."
             ]
           },
           {
-            "name": "Chemical",
+            "name": "Formulas & relations",
             "points": [
-              "Reactivity",
-              "Periodic Trends"
+              "Kp = Kc(RT)^Δn",
+              "Ka × Kb = Kw"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Key statement for 01 dynamic equilibrium."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Dynamic Equilibrium problems - significant marks.",
+              "Recall the formula for Dynamic Equilibrium.",
+              "Important note regarding 01 dynamic equilibrium."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic…",
+              "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is…",
+              "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter…"
             ]
           }
         ]
       },
       {
-        "topic": "Applications",
+        "topic": "Physical and Chemical Equilibrium — Dynamic Nature",
         "subtopics": [
           {
-            "name": "Industrial",
+            "name": "Key points",
             "points": [
-              "Manufacturing Processes",
-              "Practical Uses",
-              "Environmental Impact"
+              "Core point for 01 physical and chemical equilibrium dynamic nature.",
+              "Key concept 1 for 01 physical and chemical equilibrium dynamic nature."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Key statement for 01 physical and chemical equilibrium dynamic nature."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Physical and Chemical Equilibrium — Dynamic Nature problems - significant marks.",
+              "Recall the formula for Physical and Chemical Equilibrium — Dynamic Nature.",
+              "Important note regarding 01 physical and chemical equilibrium dynamic nature."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
+              "❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons.",
+              "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals)."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Law of Mass Action",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core point for 02 law mass action.",
+              "Key concept 1 for 02 law mass action."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Key statement for 02 law mass action."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Law of Mass Action problems - significant marks.",
+              "Recall the formula for Law of Mass Action.",
+              "Important note regarding 02 law mass action."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Law of Mass Action and Equilibrium Constant",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core point for 02 law of mass action.",
+              "Key concept 1 for 02 law of mass action."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Key statement for 02 law of mass action."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Law of Mass Action and Equilibrium Constant problems - significant marks.",
+              "Recall the formula for Law of Mass Action and Equilibrium Constant.",
+              "Important note regarding 02 law of mass action."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Equilibrium Constant Expression and Its Importance",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core point for 03 expression for equilibrium constant and its importance.",
+              "Key concept 1 for 03 expression for equilibrium constant and its importance."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Key statement for 03 expression for equilibrium constant and its importance."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Equilibrium Constant Expression and Its Importance problems - significant marks.",
+              "Recall the formula for Equilibrium Constant Expression and Its Importance.",
+              "Important note regarding 03 expression for equilibrium constant and its importance."
             ]
           }
         ]
       }
     ]
-  },
-  "uiConfig": {
-    "allowZoom": true,
-    "showRefresh": true
   }
 }

@@ -3,62 +3,59 @@
   "unitSlug": "states-of-matter",
   "topicSlug": "states-of-matter-mindmap",
   "topicTitle": "states of matter interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Study of states of matter concepts."
+    "### 1. Meaning",
+    "The gas laws are the experimentally established relations between the pressure (P), volume (V), absolute temperature (T) and amount (n) of a fixed mass of…",
+    "### 2. Boyle's law (1662)"
   ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
   "mindmap": {
     "centralConcept": "STATES OF MATTER",
     "branches": [
       {
-        "topic": "Core Concepts",
+        "topic": "Gas Laws: Boyle's, Charles', Avogadro's, Combined…",
         "subtopics": [
           {
-            "name": "Fundamentals",
+            "name": "Key points",
             "points": [
-              "Key Definitions",
-              "Basic Theories",
-              "Historical Context"
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Properties",
-        "subtopics": [
-          {
-            "name": "Physical",
-            "points": [
-              "State",
-              "Melting/Boiling Points"
+              "### 1. Meaning",
+              "The gas laws are the experimentally established relations between the pressure (P), volume (V), absolute…",
+              "### 2. Boyle's law (1662)",
+              "At constant temperature the volume of a fixed mass of gas is inversely proportional to its pressure: V ∝…",
+              "### 3. Charles' law (1787; published 1802)"
             ]
           },
           {
-            "name": "Chemical",
+            "name": "Formulas & relations",
             "points": [
-              "Reactivity",
-              "Periodic Trends"
+              "$$\\text{Boyle: }P_{1}V_{1}=P_{2}V_{2};\\qquad \\text{Charles: }\\frac{V_{1}}{T_{1}}=\\frac{V_{2}}{T_{2}};\\qquad…",
+              "$$\\text{Combined: }\\frac{P_{1}V_{1}}{T_{1}}=\\frac{P_{2}V_{2}}{T_{2}};\\qquad \\text{Ideal: }PV=nRT$$",
+              "$$P_{\\text{total}}=P_{1}+P_{2}+\\dots;\\qquad P_{i}=x_{i}P_{\\text{total}}$$",
+              "$$\\frac{r_{1}}{r_{2}}=\\sqrt{\\frac{d_{2}}{d_{1}}}=\\sqrt{\\frac{M_{2}}{M_{1}}}$$"
             ]
-          }
-        ]
-      },
-      {
-        "topic": "Applications",
-        "subtopics": [
+          },
           {
-            "name": "Industrial",
+            "name": "Exam focus",
             "points": [
-              "Manufacturing Processes",
-              "Practical Uses",
-              "Environmental Impact"
+              "Always convert temperature to kelvin and keep pressure units consistent before substituting in the combined…",
+              "State the three conditions in every law: fixed mass, one variable constant, ideal-gas behaviour.",
+              "Cite the limitation near the critical point — liquefaction by compression alone fails above T_c."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ Boyle's law means PV is always constant. ✅ Only for a *fixed mass* at *constant temperature*; PV changes…",
+              "❌ Doubling the Celsius temperature doubles the volume. ✅ Charles' law uses kelvin: 10 °C → 40 °C is a 293 →…",
+              "❌ Dalton's law works for any gas mixture. ✅ It requires non-reacting gases; NH₃ and HCl react, so partial…"
             ]
           }
         ]
       }
     ]
-  },
-  "uiConfig": {
-    "allowZoom": true,
-    "showRefresh": true
   }
 }

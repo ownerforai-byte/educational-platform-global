@@ -3,128 +3,215 @@
   "unitSlug": "evolutionary-biology",
   "topicSlug": "evolutionary-biology-mindmap",
   "topicTitle": "evolutionary biology — interactive concept map",
-  "relevance": 0,
-  "visualType": "lamarck-darwin-evolution",
-  "enrichedContent": {
-    "notes": [
-      "Study of how life has changed over time — evidence from fossils, comparative anatomy, embryology, and molecular biology.",
-      "Evolution: change in the heritable characteristics of biological populations over successive generations",
-      "Darwin's theory of natural selection: variation, inheritance, high rate of population growth, differential survival/reproduction",
-      "Lamarckism: inheritance of acquired characteristics; now largely discredited but historically important",
-      "Fossil evidence: preserved remains/traces in sedimentary rock; shows progression of life forms",
-      "Comparative anatomy: homologous structures (common origin, different function) vs analogous structures (different origin, same function)",
-      "Embryological evidence: similar early developmental stages across vertebrates (gill slits, tail)",
-      "Molecular evidence: DNA/protein sequence similarities; cytochrome c, hemoglobin comparisons",
-      "Genetic drift: random changes in allele frequencies; founder effect and bottleneck effect"
-    ],
-    "confusion": [],
-    "practice": [],
-    "universalFacts": [
-      "Biology studies the diversity of life across approximately 8.7 million species worldwide.",
-      "The smallest living organisms are mycoplasma bacteria at 0.1 micrometers in diameter.",
-      "DNA contains the genetic instructions for the development and function of all known living organisms.",
-      "The human genome contains approximately 3 billion base pairs across 23 pairs of chromosomes.",
-      "Photosynthesis converts sunlight into chemical energy, producing approximately 130 terawatts of power globally.",
-      "Cell theory states that all living organisms are composed of one or more cells, the basic unit of life."
-    ],
-    "examples": [],
-    "practiceQuestions": [],
-    "formulas": [
-      "Basic biochemical reaction: A + B -> C + D (generic enzymatic reaction)",
-      "Photosynthesis: 6CO2 + 6H2O -> C6H12O6 + 6O2 (light-dependent reactions)",
-      "Cellular respiration: C6H12O6 + 6O2 -> 6CO2 + 6H2O + ~38 ATP",
-      "Osmosis: water moves from hypotonic to hypertonic solution across semipermeable membrane",
-      "Enzyme kinetics: v = Vmax[S] / (Km + [S]) (Michaelis-Menten equation)",
-      "pH calculation: pH = -log[H+]"
-    ],
-    "keyPoints": [
-      "Added new rich content for key Points."
-    ],
-    "summary": "",
-    "specialNotes": [
-      "Added new rich content for special Notes."
-    ],
-    "importantStatements": [
-      "Added new rich content for important Statements."
-    ],
-    "importantNotes": [
-      "Always read the question carefully to understand what is being asked.",
-      "Use diagrams to clarify complex biological processes.",
-      "Memorize key definitions and terminology for MCQ questions.",
-      "Practice numerical problems in ecology (energy transfer, population growth).",
-      "Understand the difference between homologous and analogous structures.",
-      "Review past NEB exam questions to identify frequently tested topics."
-    ],
-    "examShortTricks": [
-      "Quick recall tip: Always read the question carefully before answering.",
-      "Memory aid: Use mnemonics to remember lists and sequences.",
-      "Exam strategy: Start with questions you know best to build confidence.",
-      "Time management: Allocate time proportionally to marks available.",
-      "Diagram practice: Draw and label diagrams neatly for better visualization.",
-      "Definition memorization: Learn key definitions verbatim for maximum marks."
-    ],
-    "examNotes": [
-      "Focus on understanding concepts rather than rote memorization.",
-      "Practice drawing labeled diagrams - they carry significant marks.",
-      "Learn key definitions exactly as given in the textbook for marking purposes.",
-      "Solve numerical problems in ecology (energy transfer, population growth) regularly.",
-      "Review previous year questions to understand the exam pattern and marking scheme.",
-      "Use mnemonics and memory aids for classification and cycles."
-    ],
-    "mcs": [
-      "Added new rich content for mcs."
-    ],
-    "importantConcepts": [
-      "Added new rich content for important Concepts."
-    ],
-    "importantTasks": [
-      "Added new rich content for important Tasks."
-    ],
-    "exercises": [
-      {
-        "problem": "Define and explain the importance of the topic.",
-        "solution": "Provide a clear definition and explain why it matters in biological sciences."
-      },
-      {
-        "problem": "Give three examples of the concept discussed.",
-        "solution": "Example 1: ... Example 2: ... Example 3: ..."
-      },
-      {
-        "problem": "Compare and contrast two related concepts.",
-        "solution": "Similarities: ... Differences: ..."
-      }
-    ],
-    "visualization": {}
+  "relevance": 100,
+  "notes": [
+    "The origin of life is explained by chemical evolution (abiogenesis). The Oparin-Haldane theory proposed that a reducing early atmosphere allowed inorganic…",
+    "Origin of life: life arose from non-living matter by chemical evolution (abiogenesis) in a warm dilution (primordial ocean).",
+    "Oparin-Haldane theory (1924/29): the early reducing atmosphere (CH4, NH3, H2O, H2, no O2) allowed formation of organic molecules from inorganic ones."
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
   },
-  "originalContent": {
-    "notes": [
-      "Study of how life has changed over time — evidence from fossils, comparative anatomy, embryology, and molecular biology.",
-      "Evolution: change in the heritable characteristics of biological populations over successive generations",
-      "Darwin's theory of natural selection: variation, inheritance, high rate of population growth, differential survival/reproduction",
-      "Lamarckism: inheritance of acquired characteristics; now largely discredited but historically important",
-      "Fossil evidence: preserved remains/traces in sedimentary rock; shows progression of life forms",
-      "Comparative anatomy: homologous structures (common origin, different function) vs analogous structures (different origin, same function)",
-      "Embryological evidence: similar early developmental stages across vertebrates (gill slits, tail)",
-      "Molecular evidence: DNA/protein sequence similarities; cytochrome c, hemoglobin comparisons",
-      "Genetic drift: random changes in allele frequencies; founder effect and bottleneck effect"
-    ],
-    "confusion": [],
-    "practice": [],
-    "universalFacts": [],
-    "examples": [],
-    "practiceQuestions": [],
-    "formulas": [],
-    "keyPoints": [],
-    "summary": "",
-    "specialNotes": [],
-    "importantStatements": [],
-    "importantNotes": [],
-    "examShortTricks": [],
-    "examNotes": [],
-    "mcs": [],
-    "importantConcepts": [],
-    "importantTasks": [],
-    "exercises": [],
-    "visualization": {}
+  "mindmap": {
+    "centralConcept": "EVOLUTIONARY BIOLOGY",
+    "branches": [
+      {
+        "topic": "Evolutionary Biology — Origin and Evidence",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Oparin-Haldane: reducing early atmosphere allowed chemical evolution.",
+              "Stages: simple organics → polymers → coacervates → self-replicating systems.",
+              "Miller-Urey (1953): produced amino acids from inorganic precursors.",
+              "RNA world: self-replicating, catalytic RNA may predate DNA/protein life.",
+              "Abiogenesis (origin of life) ≠ spontaneous generation (disproved)."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Chemical evolution: Inorganic (CH4, NH3, H2O, H2) → Simple organics (amino acids, sugars, bases) → Polymers…",
+              "Miller-Urey: electric sparks (lightning) + reducing atmosphere → amino acids"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Life arose from non-living matter through gradual chemical evolution.",
+              "The Miller-Urey experiment provided experimental support for chemical evolution.",
+              "The early Earth atmosphere was reducing and oxygen-free."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Explain the Oparin-Haldane theory with 4 stages.",
+              "Describe the Miller-Urey experiment (setup, conditions, results).",
+              "What is the RNA world hypothesis?",
+              "Oparin-Haldane = O-H (Organics from Heat).",
+              "Miller-Urey = M-U (Made Urea... no — Made amino acids from Urey's setup)."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Abiogenesis ≠ spontaneous generation (spontaneous generation is the disproved idea that life arises from…",
+              "Miller-Urey proved organics CAN form from inorganics under early-Earth-like conditions; it did NOT prove…",
+              "The early atmosphere was reducing (no free O2); free oxygen came later from photosynthetic cyanobacteria."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Evidences of Evolution",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Five types of evidence: morphological, anatomical, fossil, embryological, biochemical.",
+              "Homologous (divergent) vs analogous (convergent) organs.",
+              "Vestigial organs = reduced ancestral remnants.",
+              "Fossils show progressive complexity; transitional forms link groups.",
+              "Embryos of vertebrates are similar early, diverge later."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Homologous: same structure, different function, common origin (divergent evolution)",
+              "Analogous: different structure, same function, different origin (convergent evolution)",
+              "Vestigial: reduced remnant of an ancestral organ",
+              "Molecular: DNA/protein similarity inversely related to evolutionary distance"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Homologous structures indicate common descent with divergent evolution.",
+              "Analogous structures result from convergent evolution under similar selection pressures.",
+              "Vestigial organs are remnants of structures that were functional in ancestors."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Differentiate homologous and analogous organs (with examples).",
+              "Explain vestigial organs as evidence of evolution.",
+              "Describe the significance of Archaeopteryx.",
+              "Homo = same origin; Ana = same function.",
+              "Vestigial = \"Vest\" (a leftover vest of evolution)."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Homologous = same origin, different function (divergent); Analogous = different origin, same function…",
+              "Vestigial organs are evidence of common ancestry, not of \"uselessness\" in an absolute sense.",
+              "Fossils are not just \"old bones\"; they include traces (footprints, burrows), impressions, and molecular…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Theories of Evolution",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Lamarckism: use/disuse + inheritance of acquired traits (rejected).",
+              "Darwinism: natural selection; variation, overproduction, survival of fittest.",
+              "Neo-Darwinism: genetics + selection + drift + gene flow + recombination.",
+              "Evolution = change in allele frequencies in a population.",
+              "Natural selection is non-random; genetic drift is random."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Hardy-Weinberg: p² + 2pq + q² = 1 (p = dominant allele freq, q = recessive)",
+              "Natural selection: variation → struggle → survival of fittest → adaptation",
+              "Evolution (modern): change in allele frequencies in a population over generations"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Lamarck's inheritance of acquired characteristics lacks a hereditary mechanism and is largely rejected.",
+              "Darwin's natural selection explains adaptation through variation and differential survival.",
+              "Neo-Darwinism (modern synthesis) explains evolution as change in allele frequencies."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Compare Lamarckism and Darwinism (postulates, example, status).",
+              "Describe the modern synthesis (Neo-Darwinism).",
+              "Differentiate natural selection from genetic drift.",
+              "Lamarck = L-A-M (Learned, Acquired, Modified) traits — inherited (wrong).",
+              "Darwin = D-N-S (Difference, Nature, Selection) — survival of the fittest."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Lamarck's \"inheritance of acquired characteristics\" is largely rejected: a muscle built by exercise is NOT…",
+              "Darwin did NOT know about genes; his mechanism (natural selection) was later explained by genetics…",
+              "Natural selection acts on VARIATION in a population; it does not create new traits (mutations create…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Human Evolution",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Humans: Kingdom Animalia, Phylum Chordata, Class Mammalia, Order Primates, Family Hominidae.",
+              "Primates: grasping hands, forward eyes, large brain.",
+              "New World (Platyrrhini) vs Old World (Cercopithecinae) monkeys.",
+              "Apes (no tail): gorilla, chimpanzee, orangutan, gibbon, humans (hominids).",
+              "Human evolution: bipedalism → tool use → fire → brain enlargement → language."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Taxonomic position: Animalia > Chordata > Mammalia > Primates > Hominidae > Homo > Homo sapiens",
+              "Evolutionary sequence: Australopithecus → H. habilis → H. erectus → H. neanderthalensis → H. sapiens",
+              "Key adaptations: bipedalism, encephalisation, language, culture"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Humans are primates in the family Hominidae.",
+              "Bipedalism evolved before the large brain in human ancestors.",
+              "The sequence Australopithecus → H. habilis → H. erectus → H. sapiens is well supported by fossils."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "State the taxonomic position of humans.",
+              "Differentiate New World and Old World monkeys.",
+              "Describe the main features of Australopithecus, H. habilis, and H. erectus.",
+              "Human = H-O-M-O (Homo sapiens) = Mammal + Primate + Hominid.",
+              "Apes = no tail; Monkeys = tail (usually)."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Humans are NOT apes; we are hominids (great apes) within the family Hominidae, but a distinct lineage.",
+              "Australopithecus was bipedal but had a small brain (~400–500 mL); the brain enlarged later in Homo.",
+              "Homo habilis (the \"handy man\") made stone tools; Homo erectus (the \"upright man\") controlled fire and left…"
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

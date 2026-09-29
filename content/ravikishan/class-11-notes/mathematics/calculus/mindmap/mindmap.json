@@ -3,43 +3,268 @@
   "unitSlug": "calculus",
   "topicSlug": "calculus-mindmap",
   "topicTitle": "calculus — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Study of calculus - limits, continuity, derivatives, and integrals.",
-    "Covers differentiation rules, integration techniques, and applications.",
-    "Essential tool for physics, engineering, and optimization."
+    "A limit fixes the value a function approaches as $x$ nears $a$, independently of whether $f(a)$ is defined, which is why $\\frac{x^2-4}{x-2}$ is undefined at 2…",
+    "**Meaning of a limit:** $\\lim_{x \\to a} f(x) = L$ means that as $x$ gets arbitrarily close to $a$ (from either side, and without ever requiring $x = a$) the…",
+    "**The $\\varepsilon$-$\\delta$ definition:** for every $\\varepsilon > 0$ there exists $\\delta > 0$ such that $0 < |x-a| < \\delta$ implies $|f(x)-L| <…"
   ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
   "mindmap": {
-    "centralConcept": "Calculus",
+    "centralConcept": "CALCULUS",
     "branches": [
-      {"topic": "Limits", "subtopics": [
-        {"name": "Definition", "points": ["lim(x→a)f(x)=L, value approached"]},
-        {"name": "Methods", "points": ["Direct substitution, factoring, rationalization"]},
-        {"name": "Special Limits", "points": ["lim(sinx/x)=1, lim((1+1/n)^n)=e"]},
-        {"name": "Indeterminate", "points": ["0/0, ∞/∞, L'Hôpital's rule"]}
-      ]},
-      {"topic": "Continuity", "subtopics": [
-        {"name": "Definition", "points": ["lim(x→a)f(x)=f(a), three conditions"]},
-        {"name": "Discontinuity", "points": ["Removable, jump, infinite, oscillating"]},
-        {"name": "Properties", "points": ["IVT, EVT, continuous functions"]}
-      ]},
-      {"topic": "Differentiation", "subtopics": [
-        {"name": "Definition", "points": ["f'(x)=lim[h→0](f(x+h)-f(x))/h"]},
-        {"name": "Rules", "points": ["Power, product, quotient, chain"]},
-        {"name": "Standard", "points": ["(sinx)'=cosx, (eˣ)'=eˣ, (lnx)'=1/x"]},
-        {"name": "Applications", "points": ["Tangents, maxima/minima, curve sketching"]}
-      ]},
-      {"topic": "Integration", "subtopics": [
-        {"name": "Indefinite", "points": ["∫f(x)dx=F(x)+C, reverse of differentiation"]},
-        {"name": "Standard", "points": ["∫xⁿdx=xⁿ⁺¹/(n+1), ∫sinxdx=-cosx"]},
-        {"name": "Methods", "points": ["Substitution, parts, partial fractions"]},
-        {"name": "Definite", "points": ["∫ₐᵇf(x)dx=F(b)-F(a), area under curve"]}
-      ]},
-      {"topic": "Applications", "subtopics": [
-        {"name": "Area", "points": ["Area under curve, between curves"]},
-        {"name": "Volume", "points": ["Revolution, disk/washer method"]},
-        {"name": "Physics", "points": ["Work, average value"]}
-      ]}
+      {
+        "topic": "Limits of a Function",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "A limit describes the value approached, not the value taken at the point.",
+              "The two-sided limit exists only if the one-sided limits are equal and finite.",
+              "$0/0$ signals failure of substitution, not a result of zero.",
+              "Infinity is never a value; it denotes unbounded growth or a vertical asymptote.",
+              "Horizontal asymptotes come from limits at infinity via the dominant-term rule."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Limit: $\\lim_{x \\to a} f(x) = L$",
+              "Epsilon-delta: $|f(x)-L|<\\varepsilon$ whenever $0<|x-a|<\\delta$",
+              "One-sided: $\\lim_{x\\to a^-}f(x)=\\lim_{x\\to a^+}f(x)=L$",
+              "Standard limit: $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$ (radians only)",
+              "Conjugate: $\\frac{1-\\cos x}{1+\\cos x}=\\frac{\\sin^2x}{1+\\cos x}$"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: $\\lim_{x\\to a}f(x)=L$ does not require $f(a)$ to be defined.",
+              "Statement 2: The two-sided limit exists if and only if both one-sided limits equal the same finite number.",
+              "Statement 3: $0/0$ indicates that substitution failed, not that the limit is zero."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "The epsilon-delta definition and evaluation of $0/0$ forms are the most frequently asked 2–3 mark items from…",
+              "$0/0$ fix order: factorise, rationalise (conjugate), divide by the highest vanishing power, then use…",
+              "Degree check at infinity: smaller numerator degree gives 0, equal degrees gives the ratio of leading…",
+              "Always state BOTH one-sided limits when asked about discontinuity at a point — the values carry the marks.",
+              "A limit is a boundary of behaviour, never an attained value — the same reason $f'(a)$ is independent of…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Substituting the point and stopping — the limit asks what the function APPROACHES, not what it equals there.",
+              "Concluding the limit exists because both sides are 'big' — they must be the SAME FINITE number; $0/0$ or…",
+              "Writing $\\lim = \\infty$ as a result — a divergent limit says the function is unbounded, not that it reached…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Indeterminate Forms",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "An indeterminate form is a shape, not a value.",
+              "Factorise, rationalise, or use L'Hôpital — never substitute and stop.",
+              "L'Hôpital applies only to $0/0$ and $\\infty/\\infty$.",
+              "For $1^\\infty$, take logarithms to reduce to a $0/0$ quotient.",
+              "**What 'indeterminate' means:** a form like $0/0$ describes the SHAPE the expression takes as $x$ approaches…"
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Forms: $0/0$, $\\infty/\\infty$, $0\\cdot\\infty$, $\\infty-\\infty$, $1^\\infty$, $0^0$, $\\infty^0$",
+              "$a^n-b^n = (a-b)(a^{n-1}+a^{n-2}b+\\dots+b^{n-1})$",
+              "L'Hôpital: $\\lim\\frac{f}{g}=\\lim\\frac{f'}{g'}$ for $0/0$ or $\\infty/\\infty$",
+              "$\\lim_{n\\to\\infty}(1+\\frac{k}{n})^n = e^k$"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: $0/0$ and $\\infty/\\infty$ are indeterminate, but $5/0$ and $0/5$ are determinate.",
+              "Statement 2: L'Hôpital's rule may be applied only to $0/0$ and $\\infty/\\infty$ forms.",
+              "Statement 3: Differentiating both parts is only part of L'Hôpital — the resulting limit must exist."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Naming the correct technique for a given form is a frequent 2-mark question in the limits block.",
+              "Match technique to form: $0/0$ → factorise, rationalise or L'Hôpital; $1^\\infty$ → logs; $0\\cdot\\infty$ and…",
+              "If the expression contains a root, reach for the conjugate first.",
+              "Topic anchor: Technique 4 — logs for $1^ infty$ with $y=(1+f)^{g}$ and $f to0$, take logs and use $ lim…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Reading $0/0$ as the answer — it means substitution failed, and the limit may be anything.",
+              "Applying L'Hôpital to $0\\cdot\\infty$ or $\\infty-\\infty$ without first rewriting as a quotient.",
+              "Differentiating only the numerator and forgetting the denominator."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Algebraic Properties of Limits",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "The laws need only the LIMITS to exist, not the function to be defined at the point.",
+              "The quotient law is void when the denominator's limit is 0 — the root of $0/0$.",
+              "Squeeze is the only general method for a vanishing factor times an oscillating term.",
+              "**Sum and difference:** if $\\lim f = L$ and $\\lim g = M$ then $\\lim(f\\pm g)=L\\pm M$. Limits commute with…",
+              "**Product and quotient:** $\\lim(fg)=LM$ and, provided $M\\ne0$, $\\lim\\frac{f}{g}=\\frac{L}{M}$. The condition…"
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Sum/difference: $\\lim(f\\pm g)=L\\pm M$",
+              "Product: $\\lim(fg)=LM$",
+              "Quotient: $\\lim\\frac{f}{g}=\\frac{L}{M}$ for $M\\ne0$",
+              "Power: $\\lim f^n=L^n$",
+              "Composition: $\\lim g(f(x))=g(L)$ when $g$ is continuous at $L$"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: $\\lim(f\\pm g)=L\\pm M$ whenever both limits exist.",
+              "Statement 2: $\\lim\\frac{f}{g}=\\frac{L}{M}$ is valid only when $M\\ne0$.",
+              "Statement 3: $\\lim f^n=L^n$ holds for positive integers; an even root also needs a non-negative limit."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Stating the limit laws with the $M\\ne0$ condition attached is a common 2-mark question.",
+              "Check the denominator's limit FIRST — if it is 0 no law applies and the expression must be rewritten.",
+              "Small factor times a trigonometric or oscillating term means squeeze, immediately.",
+              "Topic anchor: Why the laws survive discontinuity none of these need $f$ defined at $a$, only the limits to…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Using the quotient law when the denominator's limit is 0 — the law does not apply and the form is…",
+              "Taking $\\lim\\sqrt{f(x)}=\\sqrt{\\lim f}$ without checking the sign; an even root needs a non-negative limit.",
+              "Applying the composition rule through a discontinuous outer function such as $\\tan$."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Limits: Algebraic, Trigonometric, Exponential and…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "All three standard trigonometric limits assume radians.",
+              "Continuous functions compose, so most limits need no special technique.",
+              "$1^\\infty$ limits are handled by taking logarithms first.",
+              "**The standard limits that unlock everything else:** $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$,…",
+              "**All three assume RADIANS.** In degrees each is scaled: $\\lim\\frac{\\sin x}{x}=\\frac{\\pi}{180}$ and…"
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "$\\lim_{x\\to0}\\frac{\\sin x}{x}=1$, $\\lim_{x\\to0}\\frac{\\tan x}{x}=1$",
+              "$\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}=\\frac12$",
+              "Degrees: $\\lim\\frac{\\sin x}{x}=\\frac{\\pi}{180}$",
+              "Rational: $\\lim_{x\\to a}\\frac{P}{Q}=\\frac{P(a)}{Q(a)}$ for $Q(a)\\ne0$",
+              "$\\lim_{x\\to a}e^{f}=e^{f(a)}$, $\\lim_{x\\to a}\\ln f=\\ln f(a)$ for $f(a)>0$"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$ for $x$ in radians.",
+              "Statement 2: $\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}=\\frac12$.",
+              "Statement 3: For $Q(a)\\ne0$, $\\lim_{x\\to a}\\frac{P(x)}{Q(x)}=\\frac{P(a)}{Q(a)}$."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Combining a standard limit with a substitution such as $u=3x$ is a reliable 2–3 mark question.",
+              "Switch the calculator to radians before evaluating anything in this topic.",
+              "If the answer involves $\\frac{\\pi}{180}$, the degrees/radians conversion was missed.",
+              "Topic anchor: Composition of continuous functions settles most limits if $f$ is continuous at $a$ and $g$ is…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Using the standard limits with x in degrees, which changes every value by a factor involving $\\pi$.",
+              "Applying $\\lim \\ln f = \\ln(\\lim f)$ when the limit of $f$ is negative, where the logarithm is not defined at…",
+              "Forgetting that the $1^\\infty$ case needs logarithms and cannot be handled by L'Hôpital directly."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Continuity of Function",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "All three conditions must hold; the failing one names the type of discontinuity.",
+              "Continuity does not imply differentiability — $|x|$ at 0 proves it.",
+              "Polynomials are continuous everywhere; rational functions except where the denominator vanishes.",
+              "**The three conditions:** $f$ is continuous at $x=a$ if (i) $f(a)$ is DEFINED, (ii) $\\lim_{x \\to a} f(x)$…",
+              "**Intuitively:** the graph has no hole, no jump and no break at $a$ — it can be drawn without lifting the…"
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Continuity at $a$: $f(a)$ defined, $\\lim_{x\\to a}f(x)=L$, and $f(a)=L$",
+              "One-sided test: $\\lim_{x\\to a^-}f(x)=f(a)=\\lim_{x\\to a^+}f(x)$",
+              "Composite: $g\\circ f$ continuous if $f$ is and $g$ is continuous at $f(x)$",
+              "Polynomial: $\\lim_{x\\to a}P(x)=P(a)$"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: $f$ is continuous at $a$ only if $f(a)$ is defined, the limit exists, and they are equal.",
+              "Statement 2: Every polynomial is continuous everywhere on the real line.",
+              "Statement 3: Continuity does not imply differentiability."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Testing continuity of a piece-wise function at a join point is a standard 2–3 mark question.",
+              "When asked 'is it continuous at $a$?', name which of the three conditions fails rather than answering only…",
+              "A hole with a well-defined limit is removable — always check for that case first.",
+              "Topic anchor: Composite and inverse $g circ f$ is continuous wherever $f$ is continuous and $g$ is…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Checking only that $f(a)$ is defined and declaring continuity — the limit must exist and match.",
+              "Conflating continuity with differentiability — $|x|$ at 0 is continuous but not differentiable.",
+              "Using a one-sided limit in place of the two-sided one at a join point."
+            ]
+          }
+        ]
+      }
     ]
   }
 }

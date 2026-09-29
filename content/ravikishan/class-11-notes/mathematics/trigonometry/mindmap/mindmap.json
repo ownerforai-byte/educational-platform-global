@@ -3,29 +3,94 @@
   "unitSlug": "trigonometry",
   "topicSlug": "trigonometry-mindmap",
   "topicTitle": "trigonometry — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Study of trigonometry - relationships between angles and sides of triangles.",
-    "Covers inverse functions and trigonometric equations.",
-    "Essential for physics, engineering, and navigation."
+    "Inverse Circular Functions covers essential principles and applications.",
+    "**Inverse Circular Functions:** Class 11 concept.",
+    "**Why:** connects to other topics."
   ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
   "mindmap": {
-    "centralConcept": "Trigonometry",
+    "centralConcept": "TRIGONOMETRY",
     "branches": [
-      {"topic": "Inverse Functions", "subtopics": [
-        {"name": "sin⁻¹x", "points": ["Principal value [-π/2, π/2]", "Domain: [-1, 1]"]},
-        {"name": "cos⁻¹x", "points": ["Principal value [0, π]", "Domain: [-1, 1]"]},
-        {"name": "tan⁻¹x", "points": ["Principal value (-π/2, π/2)", "Domain: all reals"]},
-        {"name": "Relations", "points": ["sin⁻¹x + cos⁻¹x = π/2", "tan⁻¹x + cot⁻¹x = π/2"]}
-      ]},
-      {"topic": "Trig Equations", "subtopics": [
-        {"name": "General Solutions", "points": ["sinθ=sinα: θ=nπ+(-1)ⁿα", "cosθ=cosα: θ=2nπ±α", "tanθ=tanα: θ=nπ+α"]},
-        {"name": "Standard", "points": ["sinθ=0: θ=nπ", "cosθ=0: θ=(2n+1)π/2"]}
-      ]},
-      {"topic": "Identities", "subtopics": [
-        {"name": "Pythagorean", "points": ["sin²θ + cos²θ = 1", "1 + tan²θ = sec²θ", "1 + cot²θ = cosec²θ"]},
-        {"name": "Sum/Difference", "points": ["sin(A±B) = sinAcosB ± cosAsinB", "cos(A±B) = cosAcosB ∓ sinAsinB"]}
-      ]}
+      {
+        "topic": "Inverse Circular Functions",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Inverse Circular Functions",
+              "Application of Inverse Circular Functions",
+              "Connection of Inverse Circular Functions to other topics",
+              "**Inverse Circular Functions:** Class 11 concept.",
+              "**Why:** connects to other topics."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Inverse circular functions",
+              "Statement 2: Theorem related to Inverse circular functions",
+              "Statement 3: Condition for Inverse circular functions to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Inverse Circular Functions problems - significant marks.",
+              "Recall the formula for Inverse Circular Functions.",
+              "Inverse Circular Functions is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Inverse Circular Functions.",
+              "Check formula conditions."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Trigonometric Equations and General Values",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Trigonometric Equations and General Values",
+              "Application of Trigonometric Equations and General Values",
+              "Connection of Trigonometric Equations and General Values to other topics",
+              "**Trigonometric Equations and General Values:** Class 11 concept.",
+              "Definition and significance of Trigonometric Equations and General Values."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Trigonometric equations and general values",
+              "Statement 2: Theorem related to Trigonometric equations and general values",
+              "Statement 3: Condition for Trigonometric equations and general values to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Trigonometric Equations and General Values problems - significant marks.",
+              "Recall the formula for Trigonometric Equations and General Values.",
+              "Trigonometric Equations and General Values is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Trigonometric Equations and General Values."
+            ]
+          }
+        ]
+      }
     ]
   }
 }

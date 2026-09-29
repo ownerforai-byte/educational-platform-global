@@ -3,8 +3,140 @@
   "unitSlug": "ideal-gas",
   "topicSlug": "ideal-gas-mindmap",
   "topicTitle": "ideal gas — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "Ideal Gas Equation covers essential principles and applications.",
+    "**Ideal Gas Equation:** Class 11 concept.",
+    "**Why:** connects to other topics."
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
+  "mindmap": {
+    "centralConcept": "IDEAL GAS",
+    "branches": [
+      {
+        "topic": "Ideal Gas Equation",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Ideal Gas Equation",
+              "Application of Ideal Gas Equation",
+              "Connection of Ideal Gas Equation to other topics",
+              "**Ideal Gas Equation:** Class 11 concept.",
+              "**Why:** connects to other topics."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Ideal gas equation",
+              "Statement 2: Theorem related to Ideal gas equation",
+              "Statement 3: Condition for Ideal gas equation to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Ideal Gas Equation problems - significant marks.",
+              "Recall the formula for Ideal Gas Equation.",
+              "Ideal Gas Equation is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Ideal Gas Equation.",
+              "Check formula conditions."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Molecular Properties of Matter",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Kinetic theory of matter:** All matter is composed of tiny particles (atoms or molecules) that are in…",
+              "**States of matter and molecular spacing:** In gases, intermolecular spacing is much larger than molecular…",
+              "**Intermolecular forces:** Attractive forces between molecules (van der Waals, hydrogen bonding,…",
+              "**Kinetic energy vs potential energy in matter:** In gases, kinetic energy dominates (molecules move…",
+              "**Brownian motion:** Random zigzag motion of microscopic particles suspended in a fluid, first observed by…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Temperature measures the average kinetic energy of molecules, NOT the total energy. A hot object has higher…",
+              "Heat and temperature are NOT the same. Temperature is a measure of average molecular KE (intensive…",
+              "Intermolecular forces are NOT the same as intramolecular (chemical) forces. Intermolecular forces hold…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Boltzmann Constant, Root Mean Square Speed and Heat…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Boltzmann constant:** $k_B = R/N_A = 1.38 \\times 10^{-23}$ J/K. It connects microscopic and macroscopic…",
+              "**RMS speed:** $v_{rms} = \\sqrt{3RT/M}$, where $M$ is molar mass in kg/mol. At STP (273 K), $v_{rms}$ for…",
+              "**Most probable speed:** $v_p = \\sqrt{2RT/M}$. This is the speed at which the Maxwell-Boltzmann distribution…",
+              "**Mean speed:** $v_{mean} = \\sqrt{8RT/\\pi M}$. The average of all molecular speeds. At 300 K for air:…",
+              "**Heat capacities - monatomic gases:** $C_V = \\frac{3}{2}R$, $C_P = \\frac{5}{2}R$. The ratio $\\gamma =…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "The ratio $\\gamma = C_P/C_V$ is NOT always 5/3 or 7/5. It depends on temperature and molecular structure. At…",
+              "The formula $C_V = \\frac{3}{2}R$ applies ONLY to monatomic ideal gases. For diatomic or polyatomic gases,…",
+              "Dulong's law ($C \\approx 3R$) for solids works well at room temperature but fails at very low temperatures…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Average Translational Kinetic Energy of Gas Molecule",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Average Translational Kinetic Energy of Gas Molecule",
+              "Application of Average Translational Kinetic Energy of Gas Molecule",
+              "Connection of Average Translational Kinetic Energy of Gas Molecule to other topics",
+              "**Average Translational Kinetic Energy of Gas Molecule:** Class 11 concept.",
+              "Definition and significance of Average Translational Kinetic Energy of Gas Molecule."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Average translational kinetic energy of gas molecule",
+              "Statement 2: Theorem related to Average translational kinetic energy of gas molecule",
+              "Statement 3: Condition for Average translational kinetic energy of gas molecule to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Average Translational Kinetic Energy of Gas Molecule problems - significant marks.",
+              "Recall the formula for Average Translational Kinetic Energy of Gas Molecule.",
+              "Average Translational Kinetic Energy of Gas Molecule is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Average Translational Kinetic Energy of Gas Molecule."
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

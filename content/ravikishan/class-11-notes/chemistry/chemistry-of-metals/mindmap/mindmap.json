@@ -3,62 +3,198 @@
   "unitSlug": "chemistry-of-metals",
   "topicSlug": "chemistry-of-metals-mindmap",
   "topicTitle": "chemistry of metals interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Study of chemistry of metals concepts."
+    "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables…",
+    "Metals: electropositive, form cations.",
+    "Activity series: K > Na > Ca > Mg > Al > Zn > Fe > Pb > H > Cu > Ag > Au."
   ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
   "mindmap": {
     "centralConcept": "CHEMISTRY OF METALS",
     "branches": [
       {
-        "topic": "Core Concepts",
+        "topic": "Metallurgical Principles",
         "subtopics": [
           {
-            "name": "Fundamentals",
+            "name": "Key points",
             "points": [
-              "Key Definitions",
-              "Basic Theories",
-              "Historical Context"
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Properties",
-        "subtopics": [
-          {
-            "name": "Physical",
-            "points": [
-              "State",
-              "Melting/Boiling Points"
+              "Core point for 01 metallurgical principles.",
+              "Metals: electropositive, form cations.",
+              "Activity series: K > Na > Ca > Mg > Al > Zn > Fe > Pb > H > Cu > Ag > Au.",
+              "Extraction: smelting, electrolysis.",
+              "Alloys: mixtures of metals."
             ]
           },
           {
-            "name": "Chemical",
+            "name": "Formulas & relations",
             "points": [
-              "Reactivity",
-              "Periodic Trends"
+              "$F = m \\cdot a$ (relevant formula for 01 metallurgical principles)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Key statement for 01 metallurgical principles."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Metallurgical Principles problems - significant marks.",
+              "Recall the formula for Metallurgical Principles.",
+              "Important note regarding 01 metallurgical principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic…",
+              "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is…",
+              "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter…"
             ]
           }
         ]
       },
       {
-        "topic": "Applications",
+        "topic": "Metallurgy — Principles and Extraction Methods",
         "subtopics": [
           {
-            "name": "Industrial",
+            "name": "Key points",
             "points": [
-              "Manufacturing Processes",
-              "Practical Uses",
-              "Environmental Impact"
+              "Core point for 01 metals and metallurgical principles.",
+              "Key concept 1 for 01 metals and metallurgical principles."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "$F = m \\cdot a$ (relevant formula for 01 metals and metallurgical principles)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Key statement for 01 metals and metallurgical principles."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Metallurgy — Principles and Extraction Methods problems - significant marks.",
+              "Recall the formula for Metallurgy — Principles and Extraction Methods.",
+              "Important note regarding 01 metals and metallurgical principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
+              "❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons.",
+              "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals)."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Alkali Metals",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core point for 02 alkali metals.",
+              "Key concept 1 for 02 alkali metals."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "$F = m \\cdot a$ (relevant formula for 02 alkali metals)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Key statement for 02 alkali metals."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Alkali Metals problems - significant marks.",
+              "Recall the formula for Alkali Metals.",
+              "Important note regarding 02 alkali metals."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "General Principles of Extraction of Metals",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core point for 02 general principles of extraction of metals.",
+              "Key concept 1 for 02 general principles of extraction of metals."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "$F = m \\cdot a$ (relevant formula for 02 general principles of extraction of metals)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Key statement for 02 general principles of extraction of metals."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on General Principles of Extraction of Metals problems - significant marks.",
+              "Recall the formula for General Principles of Extraction of Metals.",
+              "Important note regarding 02 general principles of extraction of metals."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Alkaline Earth Metals",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core point for 03 alkaline earth metals.",
+              "Key concept 1 for 03 alkaline earth metals."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "$F = m \\cdot a$ (relevant formula for 03 alkaline earth metals)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Key statement for 03 alkaline earth metals."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Alkaline Earth Metals problems - significant marks.",
+              "Recall the formula for Alkaline Earth Metals.",
+              "Important note regarding 03 alkaline earth metals."
             ]
           }
         ]
       }
     ]
-  },
-  "uiConfig": {
-    "allowZoom": true,
-    "showRefresh": true
   }
 }

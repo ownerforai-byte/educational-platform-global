@@ -3,8 +3,88 @@
   "unitSlug": "refraction-at-plane-surfaces",
   "topicSlug": "refraction-at-plane-surfaces-mindmap",
   "topicTitle": "refraction at plane surfaces — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "**Absolute refractive index:** The refractive index of a medium measured relative to vacuum (or air, approximately). $n = \\frac{c}{v}$, where $c = 3.00 \\times…",
+    "**Relative refractive index $n_{21}$:** When light passes from medium 1 to medium 2, the relative refractive index is $n_{21} = \\frac{n_2}{n_1} =…",
+    "**Snell's law with relative index:** $n_{21} = \\frac{\\sin i}{\\sin r}$, where $i$ is the angle of incidence in medium 1 and $r$ is the angle of refraction in…"
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
+  "mindmap": {
+    "centralConcept": "REFRACTION AT PLANE SURFACES",
+    "branches": [
+      {
+        "topic": "Relation Between Refractive Indices",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Absolute refractive index:** The refractive index of a medium measured relative to vacuum (or air,…",
+              "**Relative refractive index $n_{21}$:** When light passes from medium 1 to medium 2, the relative refractive…",
+              "**Snell's law with relative index:** $n_{21} = \\frac{\\sin i}{\\sin r}$, where $i$ is the angle of incidence…",
+              "**Reciprocity relation:** $n_{12} = \\frac{1}{n_{21}}$. The refractive index of medium 1 relative to medium 2…",
+              "**Multiplicative chain rule:** For light passing through multiple media: $n_{31} = n_{32} \\times n_{21}$.…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ The refractive index can be less than 1. ✅ For normal materials, $n \\geq 1$ because light travels slowest…",
+              "❌ A higher refractive index means a denser material (more mass per volume). ✅ Optical density and mass…",
+              "❌ $n_{21} = n_2 - n_1$. ✅ The relative refractive index is a RATIO, not a difference: $n_{21} = n_2/n_1$.…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Lateral Shift",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Definition:** When a ray of light passes through a parallel-sided transparent slab (like a glass slab), it…",
+              "**Formula:** $d = t \\cdot \\frac{\\sin(i - r)}{\\cos r}$, where $t$ is the thickness of the slab, $i$ is the…",
+              "**Derivation:** Inside the slab, the ray travels at angle $r$ to the normal. The horizontal distance…",
+              "**Special case — normal incidence:** When $i = 0°$, $d = 0$. The ray passes straight through without any…",
+              "**Dependence on thickness:** The lateral shift is directly proportional to the slab thickness $t$. A thicker…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ The emergent ray is deviated from the original direction. ✅ The emergent ray is PARALLEL to the incident…",
+              "❌ Lateral shift depends on the refractive index of the slab material only. ✅ Lateral shift depends on ALL…",
+              "❌ At normal incidence, there is a lateral shift. ✅ At normal incidence ($i = 0°$), the lateral shift is…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Total Internal Reflection",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Definition:** Total internal reflection (TIR) occurs when a ray of light traveling in a denser medium…",
+              "**Two essential conditions:** (1) Light must travel from a DENSER medium to a RARER medium ($n_1 > n_2$).…",
+              "**Critical angle formula:** $\\sin\\theta_c = \\frac{n_2}{n_1}$, where $n_1$ is the refractive index of the…",
+              "**Critical angle for common materials:** Glass-to-air ($n = 1.52$): $\\theta_c = \\arcsin(1/1.52) = 41.1°$.…",
+              "**What happens at different angles:** If $i < \\theta_c$: partial reflection + refraction (most light…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ TIR can occur when light goes from rarer to denser medium. ✅ TIR ONLY occurs when light travels from…",
+              "❌ The critical angle exists for any pair of media. ✅ The critical angle only exists when $n_1 > n_2$. If…",
+              "❌ At the critical angle, all light is reflected. ✅ At the critical angle ($i = \\theta_c$), the refracted ray…"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

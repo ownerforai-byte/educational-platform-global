@@ -5,56 +5,64 @@
   "topicTitle": "Potential, Potential Difference and Potential Energy — Mindmap and Conceptual Hierarchy",
   "relevance": 100,
   "notes": [
-    "Comprehensive conceptual breakdown of electrostatic potential, potential difference, potential energy, equipotential surfaces, and potential gradient.",
-    "Covers core NEB formulas: V = -∫E·dr, V = kQ/r, E = -∇V, U = kq₁q₂/r, and 1 eV = 1.602 × 10⁻¹⁹ J.",
-    "Unifies the electrostatics chain: field lines → equipotential surfaces (perpendicular) → potential gradient (E = -dV/dx) → potential energy (ΔU = -W)."
+    "Electrostatic potential V is the work done per unit positive charge in bringing a test charge from infinity, given by V = -∫E·dr, with SI unit the volt. A…",
+    "**Electrostatic Potential & Potential Difference:** Electric potential at a point P is defined as the work done per unit positive charge in bringing a test…",
+    "**Potential due to an Isolated Point Charge:** For a source charge Q at the origin, the work done in bringing q₀ from infinity to distance r is $W =…"
   ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
   "mindmap": {
-    "centralConcept": "Potential, PD and Potential Energy",
+    "centralConcept": "POTENTIAL POTENTIAL DIFFERENCE AND POTENTIAL ENERGY",
     "branches": [
       {
-        "topic": "Electric Potential & Potential Difference",
+        "topic": "Potential Difference, Potential Due to a Point…",
         "subtopics": [
           {
-            "name": "Definition & Properties",
+            "name": "Key points",
             "points": [
-              "V = W/q₀ = -∫_∞^P E·dr (SI unit: volt, 1 V = 1 J/C)",
-              "Scalar, path-independent (conservative field: ∮E·dr = 0)",
-              "ΔV = V_B - V_A = -∫_A^B E·dr (can be positive or negative)",
-              "Dimensional formula: [M L² T⁻³ I⁻¹]",
-              "Reference level fixed by convention: V(∞) = 0"
+              "Potential V is work done per unit positive charge; SI unit is volt (1 V = 1 J/C).",
+              "Potential is a path-independent scalar; electric field is a vector with direction given by -∇V.",
+              "Potential due to a point charge falls as 1/r, while its electric field falls as 1/r².",
+              "Like charges give positive U (repulsive, unbound); unlike charges give negative U (attractive, bound).",
+              "1 eV = 1.602 × 10⁻¹⁹ J, an energy unit; 1 MeV = 10⁶ eV is standard in nuclear physics."
             ]
           },
           {
-            "name": "Potential of Standard Distributions",
+            "name": "Formulas & relations",
             "points": [
-              "Point charge: V = kQ/r (falls as 1/r, field falls as 1/r²)",
-              "Line charge: V = -(λ / 2πε₀) ln(r/r₀)",
-              "Infinite plane sheet: V = -(σ / 2ε₀)x (uniform field ⇒ linear V)",
-              "Charged shell: V = kQ/r outside; constant kQ/R inside",
-              "Superposition: V = k Σ qᵢ / rᵢ (algebraic, scalar sum)"
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Field–Potential Relationship",
-        "subtopics": [
-          {
-            "name": "Gradient Relation",
-            "points": [
-              "E = -dV/dx (uniform field along one axis)",
-              "Vector form: E = -∇V with ∇ = î ∂/∂x + ĵ ∂/∂y + k̂ ∂/∂z",
-              "Field points toward steepest DECREASE of potential",
-              "Differentiate V = kQ/r to recover E = kQ/r²"
+              "Potential: $V = \\frac{W}{q_0} = -\\int_\\infty^P \\vec{E} \\cdot d\\vec{r}$",
+              "Potential difference: $\\Delta V = V_B - V_A = -\\int_A^B \\vec{E} \\cdot d\\vec{r}$",
+              "Potential due to point charge: $V = \\frac{1}{4\\pi\\varepsilon_0}\\frac{Q}{r} = k\\frac{Q}{r}$",
+              "Field–potential link: $\\vec{E} = -\\vec{\\nabla}V$",
+              "Potential energy of two charges: $U = k\\frac{q_1 q_2}{r}$"
             ]
           },
           {
-            "name": "Graphical Interpretation",
+            "name": "Statements to quote",
             "points": [
-              "Slope of V–r graph = -(potential gradient) = -E",
-              "Straight line ⇒ uniform field; hyperbola ⇒ point charge; log curve ⇒ line charge",
-              "Steep graph segment ⇒ strong field; flat segment ⇒ weak field"
+              "Statement 1: Electric potential at a point is defined as the work done per unit positive charge in bringing…",
+              "Statement 2: The potential due to a point charge varies inversely with distance (V ∝ 1/r), whereas the…",
+              "Statement 3: The electric field at any point is the negative gradient of the potential at that point (E =…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Derivation of potential due to a point charge and of potential energy of a charge system, together with the…",
+              "Field-to-potential conversion trick: whenever E ∝ 1/r², the corresponding potential is V ∝ 1/r; whenever E ∝…",
+              "Sign check: a positive charge always moves toward lower V, while a negative charge moves toward higher V,…",
+              "eV conversion: multiply eV by 1.602 × 10⁻¹⁹ to get joules, or divide joules by 1.602 × 10⁻¹⁹ to get eV.",
+              "The SI unit of potential is the volt (V), where 1 V = 1 J/C, and its dimensional formula is [M L² T⁻³ I⁻¹],…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Treating potential as a vector and adding components: Potential V is a scalar. Only in a region with a clear…",
+              "Confusing potential difference with potential: Potential difference is a change $\\Delta V = V_B - V_A$…",
+              "Believing the electron volt is a unit of charge or potential: The electron volt (eV) is a unit of ENERGY,…"
             ]
           }
         ]
@@ -63,45 +71,99 @@
         "topic": "Equipotential Lines and Surfaces",
         "subtopics": [
           {
-            "name": "Core Properties",
+            "name": "Key points",
             "points": [
-              "Surface of constant V: ΔV = 0, so W = qΔV = 0 (no work done)",
-              "Always perpendicular to electric field lines (dV = -E·dl = 0 forces θ = 90°)",
-              "Two equipotential surfaces can never intersect",
-              "Close spacing ⇒ strong field; wide spacing ⇒ weak field",
-              "Conductor in equilibrium = single equipotential surface"
+              "No work is done by the electric field in moving a charge along an equipotential surface (W = qΔV = 0).",
+              "Equipotential surfaces are always perpendicular to electric field lines.",
+              "Two equipotential surfaces can never intersect one another.",
+              "Closely spaced equipotential surfaces indicate a strong electric field; widely spaced ones indicate a weak…",
+              "A conductor in electrostatic equilibrium is a single equipotential surface at constant V = kQ/R."
             ]
           },
           {
-            "name": "Shapes for Standard Configurations",
+            "name": "Formulas & relations",
             "points": [
-              "Point charge → concentric spheres",
-              "Line charge → coaxial cylinders",
-              "Infinite plane sheet → parallel planes, uniformly spaced",
-              "Conducting shell → sphere (V = kQ/R) plus constant-potential interior cavity"
+              "Equipotential condition: $\\Delta V = 0$",
+              "Perpendicularity condition: $\\vec{E} \\cdot d\\vec{l} = -dV = 0$",
+              "Field from potential spacing: $E \\approx \\frac{\\Delta V}{\\Delta s}$",
+              "Work to move charge between surfaces: $W = q\\Delta V$",
+              "Potential change: $\\Delta U = q\\Delta V$"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: No work is done by the electrostatic field in moving a charge along an equipotential surface,…",
+              "Statement 2: Equipotential surfaces are always perpendicular to the electric field lines at the points of…",
+              "Statement 3: Two distinct equipotential surfaces can never intersect each other."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Proving perpendicularity of equipotential surfaces and field lines, along with sketching equipotentials for…",
+              "Shape recall: point charge → concentric spheres; line charge → coaxial cylinders; plane sheet → parallel…",
+              "Quick check of perpendicularity: if E had a component along the equipotential surface, moving along it would…",
+              "Equipotential surfaces are the two-dimensional analogue of contour lines on a topographic map: equal…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Mistaking equipotential surfaces for field lines: Field lines show the direction of the force on a positive…",
+              "Believing that equipotential surfaces are widely spaced where the field is weak: Spacing is inversely…",
+              "Assuming the potential on the surface of a charged conductor varies with position: In electrostatic…"
             ]
           }
         ]
       },
       {
-        "topic": "Potential Energy & Electron Volt",
+        "topic": "Potential Gradient",
         "subtopics": [
           {
-            "name": "Potential Energy",
+            "name": "Key points",
             "points": [
-              "U = qV = k q₁ q₂ / r for two charges",
-              "Like charges: U > 0 (repulsive, unbound); unlike charges: U < 0 (attractive, bound)",
-              "Multiple charges: U = k Σ_{i<j} qᵢ qⱼ / rᵢⱼ (count each pair once)",
-              "ΔU = -W_electric (force always acts to reduce U)"
+              "Potential gradient is the rate of change of potential with distance, measured in V/m (identical to N/C).",
+              "Electric field equals the negative of the potential gradient: E = -dV/dx.",
+              "The field always points in the direction of steepest decrease of potential.",
+              "Differentiating V = kQ/r reproduces the inverse-square law E = kQ/r² exactly.",
+              "Slope of the potential–distance graph is minus the electric field at that point."
             ]
           },
           {
-            "name": "Electron Volt",
+            "name": "Formulas & relations",
             "points": [
-              "1 eV = e × 1 V = 1.602 × 10⁻¹⁹ J (an ENERGY unit)",
-              "1 J = 6.242 × 10¹⁸ eV",
-              "1 keV = 10³ eV (X-rays); 1 MeV = 10⁶ eV (nuclear binding)",
-              "1 GeV = 10⁹ eV (particle colliders)"
+              "Potential gradient (uniform field): $E = -\\frac{dV}{dx}$",
+              "Vector relation: $\\vec{E} = -\\vec{\\nabla}V$",
+              "Magnitude: $|\\vec{E}| = |\\nabla V|$",
+              "Gradient along a wire: $K = \\frac{V}{l} = \\frac{I\\rho}{A}$",
+              "Cartesian components: $E_x = -\\frac{\\partial V}{\\partial x}$, $E_y = -\\frac{\\partial V}{\\partial y}$, $E_z =…"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: The potential gradient is defined as the rate of change of potential with distance along a…",
+              "Statement 2: The electric field at any point equals the negative of the potential gradient at that point (E…",
+              "Statement 3: The SI unit of potential gradient is volt per metre, which is dimensionally and numerically…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Deriving the electric field from a given potential function using the gradient, and the numerical…",
+              "Field recovery trick: differentiate the known V(r) and put a minus sign to obtain E(r). E.g. V = kQ/r gives…",
+              "Unit trick: 1 V/m = 1 (J/C)/m = 1 N/C = 1 (kg·m/s²)/C, so volt per metre and newton per coulomb are…",
+              "Resistivity shortcut: K = V/l = Iρ/A, so ρ = (V/l)(A/I).",
+              "The gradient operator ∇V always points in the direction of maximum increase of V; the electric field is its…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Omitting the negative sign in E = -dV/dx: The minus sign indicates that the field points toward decreasing…",
+              "Assuming the potential gradient is a vector while differentiating only with respect to one variable: For a…",
+              "Confusing the potential gradient with the gradient of a scalar function in general mathematics: In…"
             ]
           }
         ]

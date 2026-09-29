@@ -3,8 +3,94 @@
   "unitSlug": "reflection-at-curved-mirror",
   "topicSlug": "reflection-at-curved-mirror-mindmap",
   "topicTitle": "reflection at curved mirror — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "Mirror Formula covers essential principles and applications.",
+    "**Mirror Formula:** Class 11 concept.",
+    "**Why:** connects to other topics."
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
+  "mindmap": {
+    "centralConcept": "REFLECTION AT CURVED MIRROR",
+    "branches": [
+      {
+        "topic": "Mirror Formula",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Mirror Formula",
+              "Application of Mirror Formula",
+              "Connection of Mirror Formula to other topics",
+              "**Mirror Formula:** Class 11 concept.",
+              "**Why:** connects to other topics."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Mirror formula",
+              "Statement 2: Theorem related to Mirror formula",
+              "Statement 3: Condition for Mirror formula to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Mirror Formula problems - significant marks.",
+              "Recall the formula for Mirror Formula.",
+              "Mirror Formula is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Mirror Formula.",
+              "Check formula conditions."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Real and Virtual Images",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Real and Virtual Images",
+              "Application of Real and Virtual Images",
+              "Connection of Real and Virtual Images to other topics",
+              "**Real and Virtual Images:** Class 11 concept.",
+              "Definition and significance of Real and Virtual Images."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Real and virtual images",
+              "Statement 2: Theorem related to Real and virtual images",
+              "Statement 3: Condition for Real and virtual images to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Real and Virtual Images problems - significant marks.",
+              "Recall the formula for Real and Virtual Images.",
+              "Real and Virtual Images is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Real and Virtual Images."
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

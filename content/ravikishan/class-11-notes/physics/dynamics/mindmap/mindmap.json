@@ -3,42 +3,271 @@
   "unitSlug": "dynamics",
   "topicSlug": "dynamics-mindmap",
   "topicTitle": "dynamics — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Study of dynamics - forces and their effects on motion.",
-    "Covers Newton's laws, momentum, energy, and collisions.",
-    "Core of classical mechanics."
+    "Linear momentum $\\vec{p} = m\\vec{v}$ measures 'quantity of motion'. Newton's second law in its general form is $\\vec{F} = d\\vec{p}/dt$, and integrating it…",
+    "**Type 2 — alternate treatment:** this version emphasises the momentum form of Newton's second law and the impulse–momentum theorem with force–time graphs —…",
+    "**Impulsive Force:** A force that acts for a very short time but produces a finite change in momentum. Examples: hammer hitting a nail, bat hitting a ball,…"
   ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
   "mindmap": {
-    "centralConcept": "Dynamics",
+    "centralConcept": "DYNAMICS",
     "branches": [
-      {"topic": "Newton's Laws", "subtopics": [
-        {"name": "1st Law", "points": ["Inertia, rest stays rest"]},
-        {"name": "2nd Law", "points": ["F=ma, direction of a same as F"]},
-        {"name": "3rd Law", "points": ["Action-reaction, equal and opposite"]}
-      ]},
-      {"topic": "Momentum", "subtopics": [
-        {"name": "Definition", "points": ["p=mv, vector quantity"]},
-        {"name": "Impulse", "points": ["J=FΔt=Δp"]},
-        {"name": "Conservation", "points": ["If F_ext=0, total p constant"]}
-      ]},
-      {"topic": "Energy", "subtopics": [
-        {"name": "Work", "points": ["W=Fd cosθ, units: Joule"]},
-        {"name": "Kinetic Energy", "points": ["KE=½mv²"]},
-        {"name": "Potential Energy", "points": ["PE=mgh, PE=½kx²"]},
-        {"name": "Conservation", "points": ["Energy cannot be created or destroyed"]}
-      ]},
-      {"topic": "Power", "subtopics": [
-        {"name": "Definition", "points": ["P=W/t=Fv, units: Watt"]}
-      ]},
-      {"topic": "Collisions", "subtopics": [
-        {"name": "Elastic", "points": ["Momentum conserved, KE conserved, e=1"]},
-        {"name": "Inelastic", "points": ["Momentum conserved, KE not conserved, e<1"]}
-      ]},
-      {"topic": "Friction", "subtopics": [
-        {"name": "Static", "points": ["f_s≤μ_sN, prevents motion"]},
-        {"name": "Kinetic", "points": ["f_k=μ_kN, opposes motion"]}
-      ]}
+      {
+        "topic": "Linear Momentum and Impulse",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Momentum is a vector — always assign signs/directions before computing $\\Delta p$.",
+              "Impulse and momentum share units (N·s = kg·m/s); impulse is the area under the force–time graph.",
+              "For a FIXED momentum change, force and time trade off: $F_{avg} = \\Delta p/\\Delta t$.",
+              "$F = dp/dt$ is the general second law — essential for variable-mass (rocket) problems.",
+              "Momentum conservation holds in all collisions; kinetic energy only in elastic ones."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Momentum: $\\vec{p} = m\\vec{v}$ [kg·m/s]",
+              "Second law (general): $\\vec{F} = \\dfrac{d\\vec{p}}{dt}$; constant mass: $\\vec{F} = m\\vec{a}$",
+              "Impulse (constant force): $\\vec{J} = \\vec{F}\\Delta t$; general: $\\vec{J} = \\int \\vec{F}\\,dt$ (area under…",
+              "Impulse–momentum theorem: $\\vec{J} = \\Delta\\vec{p} = m\\vec{v}_f - m\\vec{v}_i$",
+              "Average force: $F_{avg} = \\dfrac{\\Delta p}{\\Delta t}$"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: The linear momentum of a body is the product of its mass and velocity — a vector along the…",
+              "Statement 2: The rate of change of momentum of a body equals the net force acting on it (general form of…",
+              "Statement 3: Impulse of a force is the product of the force and the time for which it acts, equal to the…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Exam Tip 1: Theory answers should state BOTH $J = F\\Delta t$ and $J = \\Delta p$ and connect them — one-line…",
+              "Exam Tip 2: In numericals, convert grams to kg and quote directions ('opposite to initial motion') with…",
+              "Exam Tip 3: Graph-reading impulse questions: label the base and height you used to compute the area.",
+              "Trick 1: Rebounds: add the speeds in $\\Delta p = m(v_f + v_i)$ — sign flip doubles the effect.",
+              "Trick 2: 'Soft landing' MCQs: longer $\\Delta t$ ⇒ smaller $F$ ⇒ pick the option that stretches the time."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'Momentum and kinetic energy are interchangeable measures of motion.' ✅ Momentum $mv$ is a vector…",
+              "❌ 'Impulse equals force.' ✅ Impulse = force × time (or the area under $F$–$t$). A small force acting long…",
+              "❌ 'The ball exerts no force on the bat while being hit because the bat is harder.' ✅ Newton's third law:…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Conservation of Linear Momentum",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Isolated system = no external force.",
+              "Momentum is always conserved in collisions.",
+              "Kinetic energy is conserved ONLY in elastic collisions.",
+              "Recoil and explosions are momentum conservation problems.",
+              "**Law of Conservation of Linear Momentum:** In an isolated system (no external net force), the total linear…"
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Conservation: $\\sum \\vec{p}_i = \\sum \\vec{p}_f$",
+              "1D Collision: $m_1 u_1 + m_2 u_2 = m_1 v_1 + m_2 v_2$",
+              "Perfectly Inelastic: $m_1 u_1 + m_2 u_2 = (m_1 + m_2) v$"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Total momentum of an isolated system is constant.",
+              "Statement 2: Momentum is conserved in all collisions."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Exam Tip 1: Always state 'Assuming an isolated system' in theory answers.",
+              "Exam Tip 2: Check if the collision is elastic or inelastic before assuming KE conservation.",
+              "Trick 1: If objects stick, use $m_1 u_1 + m_2 u_2 = (m_1 + m_2) v$.",
+              "Trick 2: Recoil: $V = -mv/M$.",
+              "Trick 3: Explosion: $m_1 v_1 = -m_2 v_2$."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'Momentum is conserved only in elastic collisions.' ✅ Momentum is conserved in ALL collisions (elastic or…",
+              "❌ 'Kinetic energy is always conserved in collisions.' ✅ Only in perfectly elastic collisions. In inelastic…",
+              "❌ 'Internal forces change the total momentum.' ✅ Internal forces (like collision forces) cancel out in pairs…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Application of Newton's Laws",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "The FBD method is universal: isolate → draw forces → choose axes → ΣF = ma → solve.",
+              "The normal force adapts to the situation — it is NOT always mg.",
+              "Tension in an accelerating string differs from the weight of the attached mass.",
+              "Action-reaction pairs act on different bodies — never cancel in a single FBD.",
+              "On a frictionless incline, all bodies slide at the same rate (independent of mass)."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Newton's second law (vector): ΣF = ma → ΣF_x = ma_x, ΣF_y = ma_y",
+              "Elevator apparent weight: N = m(g ± a) where + is upward acceleration, − is downward",
+              "Atwood's machine: a = (m₁ − m₂)g/(m₁ + m₂); T = 2m₁m₂g/(m₁ + m₂)",
+              "Smooth inclined plane: a = g sin θ down the slope; N = mg cos θ",
+              "Rough inclined plane: a = g(sin θ − μ cos θ); slides when tan θ > μ"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Newton's second law: the net force on a body equals the rate of change of its momentum (ΣF = dp/dt); for…",
+              "Every force has an identifiable agent — if you cannot name the agent, the force does not exist (no 'force of…",
+              "Static equilibrium (a = 0) requires ΣF = 0 — forces exist but balance."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "The FBD carries marks — draw it clearly, label all forces, and show the coordinate axes.",
+              "Elevator and Atwood problems appear almost every year — master both.",
+              "Inclined plane problems (smooth and rough) are standard — know the mg sin θ and mg cos θ decomposition.",
+              "Elevator shortcut: apparent weight = m(g ± a) — just add or subtract ma from the real weight.",
+              "Atwood shortcut: a = (m₁ − m₂)g/(m₁ + m₂) — the net driving force is the weight difference; total inertia is…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'The normal force is always mg.' ✅ N = mg only on a horizontal surface with no vertical acceleration. On a…",
+              "❌ 'Friction always opposes motion.' ✅ Friction opposes RELATIVE motion (or its tendency). Static friction…",
+              "❌ 'The tension in a string equals the weight of the hanging mass.' ✅ Only if the system is in equilibrium.…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Moment, Torque and Equilibrium",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Torque = rF sin θ — it depends on force, distance, AND the angle between them.",
+              "Equilibrium requires BOTH ΣF = 0 and Στ = 0 — one without the other is not enough.",
+              "A couple produces pure rotation (zero net force, non-zero torque) — the torque is the same about any point.",
+              "The centre of gravity simplifies a distributed weight to a single point force.",
+              "Choose the pivot at an unknown force's point of application to eliminate that force from the torque equation."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Torque of a force: τ = rF sin θ (positive = anticlockwise, negative = clockwise)",
+              "Equilibrium conditions: ΣF = 0 (translational) AND Στ = 0 (rotational)",
+              "Couple torque: τ = F × d (independent of pivot position)",
+              "Centre of gravity: x_CG = Σ(mᵢxᵢ)/Σmᵢ (weighted average of positions)",
+              "Principle of moments: for equilibrium, sum of clockwise torques = sum of anticlockwise torques"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Torque is the rotational effect of a force: τ = r × F (vector cross product), magnitude rF sin θ.",
+              "A rigid body is in static equilibrium if and only if ΣF = 0 and Στ = 0 about any point.",
+              "The principle of moments: in equilibrium, the sum of clockwise torques equals the sum of anticlockwise…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "The FBD is essential — draw ALL forces with their correct points of application.",
+              "Choose the pivot wisely: at the point of an unknown force, that force contributes zero torque.",
+              "Ladder problems (smooth wall, rough ground) are standard — know the torque equation about the base.",
+              "Pivot trick: place the pivot at the point of an unknown force — that force drops out of the torque equation.",
+              "Seesaw shortcut: m₁r₁ = m₂r₂ — the product of mass and distance must be equal on both sides."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'Torque and moment are different.' ✅ In physics problems, they are the same quantity: τ = rF sin θ.…",
+              "❌ 'A body with zero net force is in equilibrium.' ✅ It must ALSO have zero net torque. A couple (equal and…",
+              "❌ 'The torque depends on the pivot chosen.' ✅ The torque of a single force depends on the pivot, but the NET…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Solid Friction",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Static friction is VARIABLE: it matches the applied force up to μ_sN.",
+              "Kinetic friction is approximately CONSTANT: f_k = μ_kN during sliding.",
+              "μ_k < μ_s — harder to start sliding than to keep sliding.",
+              "Friction is (approximately) independent of the apparent area of contact.",
+              "Pulling at an angle reduces N and friction; pushing at an angle increases both."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Maximum static friction: f_s(max) = μ_sN (acts just before slipping)",
+              "Kinetic friction: f_k = μ_kN (acts during sliding; μ_k < μ_s)",
+              "Slope sliding condition: body slides when tan θ > μ_s; a = g(sin θ − μ_k cos θ)",
+              "Angle of friction: tan λ = μ_s (angle between normal and resultant reaction)",
+              "Angle of repose: tan θ_r = μ_s → θ_r = λ (steepest angle for rest)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Friction opposes relative motion (or its tendency) between two surfaces in contact.",
+              "Maximum static friction and kinetic friction are both proportional to the normal reaction: f_max = μN.",
+              "μ_k < μ_s for most surface pairs — it is harder to start sliding than to keep sliding."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Slope problems are the most common — know the tan θ vs μ_s check and the a = g(sin θ − μ_k cos θ) formula.",
+              "Pulling/pushing at an angle changes the normal force — always recalculate N before finding friction.",
+              "Static friction is variable — do NOT assume f = μ_sN unless the body is at the point of slipping.",
+              "Slope check: compare tan θ with μ_s — if tan θ > μ_s, the body slides; otherwise it stays.",
+              "Normal force shortcut: N = mg (horizontal), N = mg cos θ (slope), N = mg − F sin θ (pulling up), N = mg + F…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'Friction depends on the area of contact.' ✅ For a given normal force, friction is (approximately)…",
+              "❌ 'Static friction is always μ_sN.' ✅ Static friction is VARIABLE: it matches the applied force up to μ_sN.…",
+              "❌ 'μ_k > μ_s because sliding is faster.' ✅ μ_k < μ_s — it is harder to start sliding than to keep sliding.…"
+            ]
+          }
+        ]
+      }
     ]
   }
 }

@@ -3,8 +3,131 @@
   "unitSlug": "lenses",
   "topicSlug": "lenses-mindmap",
   "topicTitle": "lenses — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "Lens Maker's Formula covers essential principles and applications.",
+    "**Lens Maker's Formula:** Class 11 concept.",
+    "**Why:** connects to other topics."
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
+  "mindmap": {
+    "centralConcept": "LENSES",
+    "branches": [
+      {
+        "topic": "Lens Maker's Formula",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Lens Maker's Formula",
+              "Application of Lens Maker's Formula",
+              "Connection of Lens Maker's Formula to other topics",
+              "**Lens Maker's Formula:** Class 11 concept.",
+              "**Why:** connects to other topics."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Lens maker's formula",
+              "Statement 2: Theorem related to Lens maker's formula",
+              "Statement 3: Condition for Lens maker's formula to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Lens Maker's Formula problems - significant marks.",
+              "Recall the formula for Lens Maker's Formula.",
+              "Lens Maker's Formula is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Lens Maker's Formula.",
+              "Check formula conditions."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Spherical Lenses and Angular Magnification",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Spherical Lenses and Angular Magnification",
+              "Application of Spherical Lenses and Angular Magnification",
+              "Connection of Spherical Lenses and Angular Magnification to other topics",
+              "**Spherical Lenses and Angular Magnification:** Class 11 concept.",
+              "Definition and significance of Spherical Lenses and Angular Magnification."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Spherical lenses, angular magnification",
+              "Statement 2: Theorem related to Spherical lenses, angular magnification",
+              "Statement 3: Condition for Spherical lenses, angular magnification to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Spherical Lenses and Angular Magnification problems - significant marks.",
+              "Recall the formula for Spherical Lenses and Angular Magnification.",
+              "Spherical Lenses and Angular Magnification is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Spherical Lenses and Angular Magnification."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Power of a Lens",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Power of a Lens",
+              "Application of Power of a Lens",
+              "Connection of Power of a Lens to other topics",
+              "**Power of a Lens:** Class 11 concept.",
+              "Definition and significance of Power of a Lens."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Power of a lens",
+              "Statement 2: Theorem related to Power of a lens",
+              "Statement 3: Condition for Power of a lens to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Power of a Lens problems - significant marks.",
+              "Recall the formula for Power of a Lens.",
+              "Power of a Lens is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Power of a Lens."
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

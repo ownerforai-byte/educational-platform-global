@@ -3,45 +3,205 @@
   "unitSlug": "algebra",
   "topicSlug": "algebra-mindmap",
   "topicTitle": "algebra — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Study of algebra - mathematical symbols and rules for manipulating them.",
-    "Covers logic, sets, functions, sequences, matrices, and complex numbers.",
-    "Foundation for all higher mathematics."
+    "Logic and Set covers essential principles and applications.",
+    "**Logic and Set:** Class 11 concept.",
+    "**Why:** connects to other topics."
   ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
   "mindmap": {
-    "centralConcept": "Algebra",
+    "centralConcept": "ALGEBRA",
     "branches": [
-      {"topic": "Logic & Sets", "subtopics": [
-        {"name": "Logic", "points": ["Statements, AND/OR/NOT, truth tables"]},
-        {"name": "Sets", "points": ["Union, intersection, complement, Venn diagrams"]},
-        {"name": "De Morgan", "points": ["Laws for complements"]}
-      ]},
-      {"topic": "Functions", "subtopics": [
-        {"name": "Definition", "points": ["f:X→Y, domain, range"]},
-        {"name": "Types", "points": ["One-one, onto, bijective"]},
-        {"name": "Operations", "points": ["Composition, inverse"]}
-      ]},
-      {"topic": "Sequences", "subtopics": [
-        {"name": "AP", "points": ["a, a+d, a+2d... T_n=a+(n-1)d"]},
-        {"name": "GP", "points": ["a, ar, ar²... T_n=ar^(n-1)"]},
-        {"name": "Sum Formulas", "points": ["S_n=n/2[2a+(n-1)d], S_n=a(1-r^n)/(1-r)"]}
-      ]},
-      {"topic": "Matrices", "subtopics": [
-        {"name": "Operations", "points": ["Addition, multiplication, transpose"]},
-        {"name": "Determinant", "points": ["2×2: ad-bc, 3×3: expansion"]},
-        {"name": "Inverse", "points": ["A⁻¹=adj(A)/det(A)"]}
-      ]},
-      {"topic": "Quadratic", "subtopics": [
-        {"name": "Form", "points": ["ax²+bx+c=0"]},
-        {"name": "Discriminant", "points": ["D=b²-4ac, nature of roots"]},
-        {"name": "Formula", "points": ["x=(-b±√D)/2a"]}
-      ]},
-      {"topic": "Complex Numbers", "subtopics": [
-        {"name": "Definition", "points": ["z=a+bi, i=√-1"]},
-        {"name": "Modulus", "points": ["|z|=√(a²+b²)"]},
-        {"name": "Operations", "points": ["Add, multiply, divide"]}
-      ]}
+      {
+        "topic": "Logic and Set",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Logic and Set",
+              "Application of Logic and Set",
+              "Connection of Logic and Set to other topics",
+              "**Logic and Set:** Class 11 concept.",
+              "**Why:** connects to other topics."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Logic and Set",
+              "Statement 2: Theorem related to Logic and Set",
+              "Statement 3: Condition for Logic and Set to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Logic and Set problems - significant marks.",
+              "Recall the formula for Logic and Set.",
+              "Logic and Set is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Logic and Set.",
+              "Check formula conditions."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Real Numbers",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Real Numbers",
+              "Application of Real Numbers",
+              "Connection of Real Numbers to other topics",
+              "**Real Numbers:** Class 11 concept.",
+              "Definition and significance of Real Numbers."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Real Numbers",
+              "Statement 2: Theorem related to Real Numbers",
+              "Statement 3: Condition for Real Numbers to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Real Numbers problems - significant marks.",
+              "Recall the formula for Real Numbers.",
+              "Real Numbers is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Real Numbers."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Function: Domain and Range",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Function: Domain and Range",
+              "Application of Function: Domain and Range",
+              "Connection of Function: Domain and Range to other topics",
+              "**Function: Domain and Range:** Class 11 concept.",
+              "Definition and significance of Function: Domain and Range."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Function: Domain and Range",
+              "Statement 2: Theorem related to Function: Domain and Range",
+              "Statement 3: Condition for Function: Domain and Range to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Function: Domain and Range problems - significant marks.",
+              "Recall the formula for Function: Domain and Range.",
+              "Function: Domain and Range is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Function: Domain and Range."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Curve Sketching",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Curve Sketching",
+              "Application of Curve Sketching",
+              "Connection of Curve Sketching to other topics",
+              "**Curve Sketching:** Class 11 concept.",
+              "Definition and significance of Curve Sketching."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Curve Sketching",
+              "Statement 2: Theorem related to Curve Sketching",
+              "Statement 3: Condition for Curve Sketching to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Curve Sketching problems - significant marks.",
+              "Recall the formula for Curve Sketching.",
+              "Curve Sketching is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Curve Sketching."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Sequence and Series",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Sequence and Series",
+              "Application of Sequence and Series",
+              "Connection of Sequence and Series to other topics",
+              "**Sequence and Series:** Class 11 concept.",
+              "Definition and significance of Sequence and Series."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Sequence and Series",
+              "Statement 2: Theorem related to Sequence and Series",
+              "Statement 3: Condition for Sequence and Series to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Sequence and Series problems - significant marks.",
+              "Recall the formula for Sequence and Series.",
+              "Sequence and Series is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Sequence and Series."
+            ]
+          }
+        ]
+      }
     ]
   }
 }

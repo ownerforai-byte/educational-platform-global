@@ -3,8 +3,111 @@
   "unitSlug": "dc-circuits",
   "topicSlug": "dc-circuits-mindmap",
   "topicTitle": "dc circuits — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "**Ohmic conductor:** obeys Ohm's law. The $I$-$V$ graph is a straight line through the origin. Resistance is constant.",
+    "**Non-ohmic conductor:** does not obey Ohm's law. The $I$-$V$ graph is curved. Resistance changes with voltage or current.",
+    "**Examples of non-ohmic:** diode (conducts easily in one direction only), filament lamp (resistance increases with temperature as current increases),…"
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
+  "mindmap": {
+    "centralConcept": "DC CIRCUITS",
+    "branches": [
+      {
+        "topic": "Current-Voltage Relations and Ohmic/Non-Ohmic…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Ohmic conductor:** obeys Ohm's law. The $I$-$V$ graph is a straight line through the origin. Resistance is…",
+              "**Non-ohmic conductor:** does not obey Ohm's law. The $I$-$V$ graph is curved. Resistance changes with…",
+              "**Examples of non-ohmic:** diode (conducts easily in one direction only), filament lamp (resistance…",
+              "**Why filament lamp is non-ohmic:** as current increases, the filament heats up, increasing its resistivity.…",
+              "**Dynamic resistance:** $R_d = dV/dI$ at a point on the $I$-$V$ curve. For non-ohmic devices, this is the…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Ohm's law $V = IR$ is a definition of resistance, not a law that all materials obey. Only ohmic conductors…",
+              "A filament lamp becomes a better conductor (lower resistance) when cold. This is why bulbs often burn out at…",
+              "The dynamic resistance $dV/dI$ is different from the static resistance $V/I$. For a non-ohmic device, the…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Potential Divider",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Definition:** two or more resistors in series across a voltage source, used to obtain a fraction of the…",
+              "**Output voltage:** $V_{out} = V_{in} \\ rac{R_2}{R_1 + R_2}$, where $R_2$ is the resistor across which the…",
+              "**Why useful:** allows you to set any voltage between 0 and $V_{in}$ by adjusting the ratio of resistances.",
+              "**Loading effect:** if a load resistor $R_L$ is connected across $R_2$, the output voltage changes because…",
+              "**Potentiometer:** a continuous potential divider using a uniform resistance wire. The output voltage is…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "The output voltage of a potential divider changes when a load is connected. The simple formula $V_{out} =…",
+              "A potential divider should not be used as a voltage source for high-current loads because the output voltage…",
+              "The potential divider formula does not depend on the total voltage - only the ratio of resistances matters.…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Work and Power in Electrical Circuits",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Electrical work:** $W = VIt = I^2Rt = V^2t/R$. Work done by a current is the energy transferred.",
+              "**Electrical power:** $P = VI = I^2R = V^2/R$. Power is the rate of energy transfer.",
+              "**Joule heating:** $P = I^2R$ is the power dissipated as heat in a resistor. This is also called $I^2R$ loss.",
+              "**Kilowatt-hour:** unit of electrical energy. $1\\\\\\\\,\\ ext{kWh} = 3.6 \\ imes 10^6\\\\\\\\,\\ ext{J}$. This is…",
+              "**Efficiency:** useful power output divided by total power input. Transmission lines use high voltage to…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Power $P = I^2R$ and $P = V^2/R$ are both correct but apply in different contexts. Use $I^2R$ when current…",
+              "Electrical energy is measured in joules (J) or kilowatt-hours (kWh), NOT in watts (W). Watt is a unit of…",
+              "A 100 W bulb connected to 230 V draws less current than a 60 W bulb (because $I = P/V$, so the 100 W bulb…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "EMF, Internal Resistance and Cells in Combination",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**EMF ($\\mathcal{E}$):** the open-circuit voltage of a source. It is the work done per unit charge in moving…",
+              "**Internal resistance $r$:** the resistance inside the cell due to electrolyte and electrodes. It causes the…",
+              "**Terminal voltage:** $V = \\mathcal{E} - Ir$. When no current flows ($I=0$), $V = \\mathcal{E}$. Under load,…",
+              "**Cells in series:** $\\mathcal{E}_{total} = \\mathcal{E}_1 + \\mathcal{E}_2 + \\ldots$, $r_{total} = r_1 + r_2…",
+              "**Cells in parallel:** $\\mathcal{E}_{total} = \\mathcal{E}$ (if all equal), $r_{total} = r/n$ for $n$…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "EMF is not a force - it is a voltage (energy per unit charge). The name is historical. EMF is measured in…",
+              "Terminal voltage $V = \\\\\\\\mathcal{E} - Ir$ is less than EMF when current flows out of the cell. But when…",
+              "In series, both EMF and internal resistance add. In parallel, the equivalent EMF is the same as one cell,…"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

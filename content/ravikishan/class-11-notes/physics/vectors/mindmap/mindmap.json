@@ -3,8 +3,116 @@
   "unitSlug": "vectors",
   "topicSlug": "vectors-mindmap",
   "topicTitle": "vectors — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "The triangle, parallelogram and polygon laws are the graphical and analytical foundations of vector addition. All three lead to the master resultant formula…",
+    "**Scalars and vectors:** a scalar has only magnitude (mass, time, speed, energy, temperature); a vector has magnitude AND direction (displacement, velocity,…",
+    "**The three addition laws** answer one question — 'what is the single vector that has the same effect as several together?' (1) **Triangle law** (two…"
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
+  "mindmap": {
+    "centralConcept": "VECTORS",
+    "branches": [
+      {
+        "topic": "Triangle, Parallelogram and Polygon Laws",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Triangle, parallelogram and polygon laws are three views of the same addition rule — use whichever suits the…",
+              "The cross-term $2PQ\\cos\\theta$ is what makes vector addition different from ordinary addition.",
+              "A closed polygon of vectors ⇒ zero resultant ⇒ equilibrium.",
+              "Lami's theorem works only for three concurrent forces in equilibrium.",
+              "The equilibrant equals the resultant in magnitude but points the opposite way."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Master formula: $R = \\sqrt{P^2 + Q^2 + 2PQ\\cos\\theta}$",
+              "Direction: $\\alpha = \\tan^{-1}\\!\\left(\\frac{Q\\sin\\theta}{P + Q\\cos\\theta}\\right)$ from $\\vec{P}$",
+              "Equal vectors: $R = 2P\\cos(\\theta/2)$; $R = P$ when $\\theta = 120°$",
+              "Bounds: $|P - Q| \\le R \\le P + Q$",
+              "Lami's theorem (equilibrium of 3 concurrent forces): $\\frac{F_1}{\\sin\\alpha} = \\frac{F_2}{\\sin\\beta} =…"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Two vectors are added by the triangle law; the resultant runs from the free tail to the free…",
+              "Statement 2: The diagonal of the parallelogram through the common origin represents the resultant of two…",
+              "Statement 3: If the vector polygon closes, the resultant is zero and the body is in equilibrium."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Exam Tip 1: The parallelogram-law derivation (with figure, perpendicular drop, and the $\\sin^2+\\cos^2=1$…",
+              "Exam Tip 2: Numericals often combine resolution with the polygon law: resolve first, add components, only…",
+              "Exam Tip 3: In 'show that the system is in equilibrium' questions, demonstrate the closed polygon OR both…",
+              "Trick 1: 'Resultant equals either vector' + 'equal vectors' ⇒ angle 120° instantly.",
+              "Trick 2: For max/min resultant MCQs: $R_{max} = P+Q$ at 0°, $R_{min} = |P-Q|$ at 180°."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'The triangle law and parallelogram law give different resultants.' ✅ They are mathematically EQUIVALENT —…",
+              "❌ Measuring the angle between the two sides INSIDE the parallelogram. ✅ $\\theta$ is the angle between the…",
+              "❌ 'The resultant of three vectors is always bigger than each.' ✅ Not necessarily — vectors can partially or…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Multiplication of Vectors — Vector (Cross) Product",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Definition:** The cross product (vector product) of two vectors $\\vec{A}$ and $\\vec{B}$ is a vector…",
+              "**Magnitude:** $|\\vec{A} \\times \\vec{B}| = AB\\sin\\theta$, where $\\theta$ is the angle between the two…",
+              "**Direction — right-hand rule:** Point the fingers of your right hand in the direction of $\\vec{A}$, then…",
+              "**Unit vector form:** $\\vec{A} \\times \\vec{B} = AB\\sin\\theta \\, \\hat{n}$, where $\\hat{n}$ is the unit vector…",
+              "**Case 1 — Parallel vectors ($\\theta = 0°$ or $180°$):** $\\vec{A} \\times \\vec{B} = 0$. Parallel (or…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ The cross product gives a scalar. ✅ The cross product gives a VECTOR. The result is perpendicular to both…",
+              "❌ $\\vec{A} \\times \\vec{B} = \\vec{B} \\times \\vec{A}$. ✅ The cross product is ANTI-COMMUTATIVE: $\\vec{A}…",
+              "❌ The cross product is defined for any number of vectors. ✅ The cross product is defined only for EXACTLY…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Cross Product — Component Form and Area of…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Component form of cross product:** For $\\vec{A} = A_1\\hat{i} + A_2\\hat{j} + A_3\\hat{k}$ and $\\vec{B} =…",
+              "**Expanded form:** $\\vec{A} \\times \\vec{B} = (A_2B_3 - A_3B_2)\\hat{i} + (A_3B_1 - A_1B_3)\\hat{j} + (A_1B_2 -…",
+              "**Memory trick (Sarrus' rule):** Write the first two columns again to the right: $\\begin{array}{ccc|cc} A_1…",
+              "**Area of parallelogram:** The magnitude of the cross product equals the AREA of the parallelogram formed by…",
+              "**Area of triangle:** The area of the triangle formed by two vectors is HALF the parallelogram area:…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ The cross product of two vectors is a scalar. ✅ The cross product is a VECTOR. Its magnitude is a scalar…",
+              "❌ The area of the parallelogram is $|\\vec{A}| \\cdot |\\vec{B}|$. ✅ The area is $|\\vec{A} \\times \\vec{B}| =…",
+              "❌ You can cancel vectors in a cross product: if $\\vec{A} \\times \\vec{B} = \\vec{A} \\times \\vec{C}$, then…"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

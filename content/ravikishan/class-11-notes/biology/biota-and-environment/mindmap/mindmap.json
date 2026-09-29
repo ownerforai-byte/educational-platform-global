@@ -3,127 +3,168 @@
   "unitSlug": "biota-and-environment",
   "topicSlug": "biota-and-environment-mindmap",
   "topicTitle": "biota and environment — interactive concept map",
-  "relevance": 0,
-  "enrichedContent": {
-    "notes": [
-      "How animals adapt to their environment and the impacts of pollution on biota and ecosystems.",
-      "Adaptation: structural, physiological, or behavioral traits that improve survival and reproduction",
-      "Structural adaptations: body shape, coloration, camouflage, mimicry",
-      "Physiological adaptations: temperature regulation, toxin resistance, hibernation",
-      "Behavioral adaptations: migration, hibernation, courtship rituals, social organization",
-      "Pollution: introduction of harmful substances into environment — air, water, soil pollution",
-      "Air pollution: particulate matter, SO₂, NOₓ, CO, ozone; causes respiratory diseases and acid rain",
-      "Water pollution: industrial waste, agricultural runoff, sewage; eutrophication from nutrient excess",
-      "Soil pollution: pesticides, heavy metals, plastic waste; affects soil organisms and crop productivity"
-    ],
-    "confusion": [],
-    "practice": [],
-    "universalFacts": [
-      "Biology studies the diversity of life across approximately 8.7 million species worldwide.",
-      "The smallest living organisms are mycoplasma bacteria at 0.1 micrometers in diameter.",
-      "DNA contains the genetic instructions for the development and function of all known living organisms.",
-      "The human genome contains approximately 3 billion base pairs across 23 pairs of chromosomes.",
-      "Photosynthesis converts sunlight into chemical energy, producing approximately 130 terawatts of power globally.",
-      "Cell theory states that all living organisms are composed of one or more cells, the basic unit of life."
-    ],
-    "examples": [],
-    "practiceQuestions": [],
-    "formulas": [
-      "Basic biochemical reaction: A + B -> C + D (generic enzymatic reaction)",
-      "Photosynthesis: 6CO2 + 6H2O -> C6H12O6 + 6O2 (light-dependent reactions)",
-      "Cellular respiration: C6H12O6 + 6O2 -> 6CO2 + 6H2O + ~38 ATP",
-      "Osmosis: water moves from hypotonic to hypertonic solution across semipermeable membrane",
-      "Enzyme kinetics: v = Vmax[S] / (Km + [S]) (Michaelis-Menten equation)",
-      "pH calculation: pH = -log[H+]"
-    ],
-    "keyPoints": [
-      "Added new rich content for key Points."
-    ],
-    "summary": "",
-    "specialNotes": [
-      "Added new rich content for special Notes."
-    ],
-    "importantStatements": [
-      "Added new rich content for important Statements."
-    ],
-    "importantNotes": [
-      "Always read the question carefully to understand what is being asked.",
-      "Use diagrams to clarify complex biological processes.",
-      "Memorize key definitions and terminology for MCQ questions.",
-      "Practice numerical problems in ecology (energy transfer, population growth).",
-      "Understand the difference between homologous and analogous structures.",
-      "Review past NEB exam questions to identify frequently tested topics."
-    ],
-    "examShortTricks": [
-      "Quick recall tip: Always read the question carefully before answering.",
-      "Memory aid: Use mnemonics to remember lists and sequences.",
-      "Exam strategy: Start with questions you know best to build confidence.",
-      "Time management: Allocate time proportionally to marks available.",
-      "Diagram practice: Draw and label diagrams neatly for better visualization.",
-      "Definition memorization: Learn key definitions verbatim for maximum marks."
-    ],
-    "examNotes": [
-      "Focus on understanding concepts rather than rote memorization.",
-      "Practice drawing labeled diagrams - they carry significant marks.",
-      "Learn key definitions exactly as given in the textbook for marking purposes.",
-      "Solve numerical problems in ecology (energy transfer, population growth) regularly.",
-      "Review previous year questions to understand the exam pattern and marking scheme.",
-      "Use mnemonics and memory aids for classification and cycles."
-    ],
-    "mcs": [
-      "Added new rich content for mcs."
-    ],
-    "importantConcepts": [
-      "Added new rich content for important Concepts."
-    ],
-    "importantTasks": [
-      "Added new rich content for important Tasks."
-    ],
-    "exercises": [
-      {
-        "problem": "Define and explain the importance of the topic.",
-        "solution": "Provide a clear definition and explain why it matters in biological sciences."
-      },
-      {
-        "problem": "Give three examples of the concept discussed.",
-        "solution": "Example 1: ... Example 2: ... Example 3: ..."
-      },
-      {
-        "problem": "Compare and contrast two related concepts.",
-        "solution": "Similarities: ... Differences: ..."
-      }
-    ],
-    "visualization": {}
+  "relevance": 100,
+  "notes": [
+    "Animal adaptations reflect their habitat. Aquatic animals (primary, e.g. fishes; secondary, e.g. whales) have streamlined bodies, gills with countercurrent…",
+    "Animal adaptation: structural, physiological, and behavioural features that allow an animal to survive in a particular environment.",
+    "Aquatic adaptation: primary aquatic (fishes, fully aquatic) and secondary aquatic (whales, seals — originally terrestrial)."
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
   },
-  "originalContent": {
-    "notes": [
-      "How animals adapt to their environment and the impacts of pollution on biota and ecosystems.",
-      "Adaptation: structural, physiological, or behavioral traits that improve survival and reproduction",
-      "Structural adaptations: body shape, coloration, camouflage, mimicry",
-      "Physiological adaptations: temperature regulation, toxin resistance, hibernation",
-      "Behavioral adaptations: migration, hibernation, courtship rituals, social organization",
-      "Pollution: introduction of harmful substances into environment — air, water, soil pollution",
-      "Air pollution: particulate matter, SO₂, NOₓ, CO, ozone; causes respiratory diseases and acid rain",
-      "Water pollution: industrial waste, agricultural runoff, sewage; eutrophication from nutrient excess",
-      "Soil pollution: pesticides, heavy metals, plastic waste; affects soil organisms and crop productivity"
-    ],
-    "confusion": [],
-    "practice": [],
-    "universalFacts": [],
-    "examples": [],
-    "practiceQuestions": [],
-    "formulas": [],
-    "keyPoints": [],
-    "summary": "",
-    "specialNotes": [],
-    "importantStatements": [],
-    "importantNotes": [],
-    "examShortTricks": [],
-    "examNotes": [],
-    "mcs": [],
-    "importantConcepts": [],
-    "importantTasks": [],
-    "exercises": [],
-    "visualization": {}
+  "mindmap": {
+    "centralConcept": "BIOTA AND ENVIRONMENT",
+    "branches": [
+      {
+        "topic": "Animal Adaptations — Aquatic, Terrestrial and Volant",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Aquatic: fusiform body, gills (countercurrent), lateral line, webbed feet, fins.",
+              "Primary aquatic = always aquatic (fish); secondary = evolved from land (whales, seals).",
+              "Terrestrial: cursorial (run), fossorial (dig), arboreal (tree-dwell); waterproof skin, lungs.",
+              "Volant: wings, hollow bones, air sacs, strong pectoral muscles, beak.",
+              "Countercurrent exchange: ~80% O2 uptake in fish gills."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Aquatic: fusiform body + fins + gills (countercurrent) + lateral line + webbed feet",
+              "Terrestrial: waterproof skin + lungs + internal fertilisation + strong limbs",
+              "Volant: wings + hollow bones + air sacs + strong pectoral muscles + streamlined body + beak"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Aquatic animals have streamlined bodies and gills with countercurrent exchange.",
+              "Primary aquatic animals were always aquatic; secondary ones evolved from land.",
+              "Volant animals have wings, hollow bones, and air sacs for efficient flight."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Explain the aquatic adaptations of a fish.",
+              "Differentiate primary from secondary aquatic animals.",
+              "List the terrestrial adaptations (cursorial, fossorial, arboreal).",
+              "Aquatic = A-F-G-L (Adapted, Fusiform, Gills, Lateral line).",
+              "Primary = always water; Secondary = land → water (whales)."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Primary aquatic animals were ALWAYS aquatic (fishes); secondary aquatic animals (whales, seals) evolved FROM…",
+              "A fusiform (streamlined) body REDUCES water resistance; it is an adaptation for fast swimming.",
+              "Countercurrent exchange in fish gills allows ~80% O2 uptake efficiency (blood and water flow in opposite…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Animal Behaviour and Migration",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Reflex action: automatic, involuntary; reflex arc (spinal level, no brain).",
+              "Taxis: directional movement (phototaxis, chemotaxis, thigmotaxis, geotaxis).",
+              "Kinesis: non-directional (random) movement; different from taxis.",
+              "Dominance and leadership: social hierarchies in group-living animals.",
+              "Fish migration: seasonal movement to feeding/breeding grounds."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Reflex arc: Receptor → Sensory neuron → CNS (spinal cord) → Motor neuron → Effector",
+              "Taxis: directional movement (positive = toward, negative = away)",
+              "Kinesis: non-directional (random) movement in response to a stimulus",
+              "Migration: seasonal, genetically programmed movement between habitats"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "A reflex action is an automatic, involuntary response via a reflex arc.",
+              "Taxis is directional movement; kinesis is non-directional.",
+              "Social animals form dominance hierarchies."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Explain a reflex action with a reflex arc diagram.",
+              "Differentiate taxis from kinesis.",
+              "List the 4 types of taxes with examples.",
+              "Reflex = R-E-F-L-E-X (Receptor, Effector, Fast, Local, eXternal).",
+              "Taxis = directional (Toward/Away); Kinesis = random (K for \"kicking around\")."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "A reflex arc is SHORT (spinal level); it does NOT involve the brain (faster response).",
+              "Taxis is DIRECTIONAL (toward/away from a stimulus); kinesis is NON-DIRECTIONAL (random movement).",
+              "Phototaxis: movement in response to light (positive = toward, negative = away)."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Environmental Pollution and Pesticides",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Air pollution: SO2, NOx, CO, PM2.5, O3, CFCs; sources: industry, vehicles, biomass.",
+              "Effects: respiratory disease, acid rain, smog, global warming, ozone depletion.",
+              "Kathmandu Valley: PM2.5 exceeds WHO limits ~10× in winter.",
+              "Water pollution: domestic, industrial, agricultural; effects: eutrophication, O2 depletion, disease.",
+              "Soil pollution: heavy metals, pesticides, plastics; effects: reduced fertility, food contamination."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Air pollutants: SO2, NOx, CO, PM2.5, O3, CFCs",
+              "Water pollutants: domestic waste, industrial effluent, agricultural runoff, oil",
+              "Soil pollutants: heavy metals, pesticides, plastics, industrial waste",
+              "Biomagnification: toxin concentration INCREASES up the food chain"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Air pollution causes respiratory disease, acid rain, and global warming.",
+              "Water pollution leads to eutrophication, O2 depletion, and disease.",
+              "Pesticides biomagnify up food chains and cause resistance."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "List the sources and effects of air pollution.",
+              "Explain water pollution (sources, effects, control).",
+              "Describe the effects of soil pollution.",
+              "Air = A-S-N-P (SO2, NOx, CO, PM2.5, O3, CFCs).",
+              "Water = domestic + industrial + agricultural."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Acid rain (pH < 5.6) is caused by SO2 and NOx, NOT by CO2 alone.",
+              "Ozone is beneficial in the STRATOSPHERE (blocks UV) but harmful at ground level (smog, air pollutant).",
+              "Biomagnification: toxin concentration INCREASES at higher trophic levels (e.g., DDT in fish-eating birds)."
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

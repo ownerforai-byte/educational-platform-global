@@ -3,8 +3,42 @@
   "unitSlug": "thermal-expansion",
   "topicSlug": "thermal-expansion-mindmap",
   "topicTitle": "thermal expansion — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "**Linear expansion definition:** When a solid is heated, its length increases. The fractional increase in length per unit rise in temperature is called the…",
+    "**Formula:** $\\Delta L = L_0 \\alpha \\Delta T$, where $L_0$ is the original length, $\\alpha$ is the coefficient of linear expansion (unit: K⁻¹ or °C⁻¹), and…",
+    "**New length:** $L = L_0(1 + \\alpha\\Delta T)$. For small $\\alpha\\Delta T$, this is an excellent approximation. For large temperature ranges, $\\alpha$ may vary…"
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
+  "mindmap": {
+    "centralConcept": "THERMAL EXPANSION",
+    "branches": [
+      {
+        "topic": "Linear Expansion and Its Measurement",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Linear expansion definition:** When a solid is heated, its length increases. The fractional increase in…",
+              "**Formula:** $\\Delta L = L_0 \\alpha \\Delta T$, where $L_0$ is the original length, $\\alpha$ is the…",
+              "**New length:** $L = L_0(1 + \\alpha\\Delta T)$. For small $\\alpha\\Delta T$, this is an excellent…",
+              "**Physical origin:** Heating increases the amplitude of atomic vibrations in the lattice. Because the…",
+              "**Coefficient of linear expansion for common materials:** Steel: $\\alpha \\approx 12 \\times 10^{-6}$ K⁻¹.…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ $\\Delta L = L_0 \\alpha \\Delta T$ works for any temperature range. ✅ It is valid only for moderate $\\Delta…",
+              "❌ All solids expand at the same rate. ✅ Different materials have very different $\\alpha$ values. Invar…",
+              "❌ The coefficient $\\alpha$ has units of temperature. ✅ $\\alpha$ has units of K⁻¹ (or °C⁻¹). It is a…"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

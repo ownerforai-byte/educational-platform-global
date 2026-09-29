@@ -3,127 +3,264 @@
   "unitSlug": "biomolecules-and-cell-biology",
   "topicSlug": "biomolecules-and-cell-biology-mindmap",
   "topicTitle": "biomolecules and cell biology — interactive concept map",
-  "relevance": 0,
-  "enrichedContent": {
-    "notes": [
-      "Study of biological molecules (carbohydrates, proteins, lipids, nucleic acids) and cell structure/function including cell theory, organelles, and cell division (mitosis/meiosis).",
-      "Biomolecules are organic compounds (C,H,O,N,S,P) that make up living organisms",
-      "Carbohydrates: monosaccharides (glucose), disaccharides (sucrose), polysaccharides (starch, glycogen, cellulose)",
-      "Proteins: amino acids linked by peptide bonds; primary→secondary→tertiary→quaternary structure",
-      "Lipids: fats, oils, phospholipids, steroids; hydrophobic molecules forming cell membranes",
-      "Nucleic acids: DNA (double helix) and RNA (single strand); genetic information storage and transfer",
-      "Enzymes: biological catalysts that lower activation energy; specific to substrates",
-      "Cell theory: all living things made of cells; cells are basic unit of life; all cells from pre-existing cells",
-      "Prokaryotic cells: no nucleus, no membrane-bound organelles; bacteria and archaea"
-    ],
-    "confusion": [],
-    "practice": [],
-    "universalFacts": [
-      "Biology studies the diversity of life across approximately 8.7 million species worldwide.",
-      "The smallest living organisms are mycoplasma bacteria at 0.1 micrometers in diameter.",
-      "DNA contains the genetic instructions for the development and function of all known living organisms.",
-      "The human genome contains approximately 3 billion base pairs across 23 pairs of chromosomes.",
-      "Photosynthesis converts sunlight into chemical energy, producing approximately 130 terawatts of power globally.",
-      "Cell theory states that all living organisms are composed of one or more cells, the basic unit of life."
-    ],
-    "examples": [],
-    "practiceQuestions": [],
-    "formulas": [
-      "Basic biochemical reaction: A + B -> C + D (generic enzymatic reaction)",
-      "Photosynthesis: 6CO2 + 6H2O -> C6H12O6 + 6O2 (light-dependent reactions)",
-      "Cellular respiration: C6H12O6 + 6O2 -> 6CO2 + 6H2O + ~38 ATP",
-      "Osmosis: water moves from hypotonic to hypertonic solution across semipermeable membrane",
-      "Enzyme kinetics: v = Vmax[S] / (Km + [S]) (Michaelis-Menten equation)",
-      "pH calculation: pH = -log[H+]"
-    ],
-    "keyPoints": [
-      "Added new rich content for key Points."
-    ],
-    "summary": "",
-    "specialNotes": [
-      "Added new rich content for special Notes."
-    ],
-    "importantStatements": [
-      "Added new rich content for important Statements."
-    ],
-    "importantNotes": [
-      "Always read the question carefully to understand what is being asked.",
-      "Use diagrams to clarify complex biological processes.",
-      "Memorize key definitions and terminology for MCQ questions.",
-      "Practice numerical problems in ecology (energy transfer, population growth).",
-      "Understand the difference between homologous and analogous structures.",
-      "Review past NEB exam questions to identify frequently tested topics."
-    ],
-    "examShortTricks": [
-      "Quick recall tip: Always read the question carefully before answering.",
-      "Memory aid: Use mnemonics to remember lists and sequences.",
-      "Exam strategy: Start with questions you know best to build confidence.",
-      "Time management: Allocate time proportionally to marks available.",
-      "Diagram practice: Draw and label diagrams neatly for better visualization.",
-      "Definition memorization: Learn key definitions verbatim for maximum marks."
-    ],
-    "examNotes": [
-      "Focus on understanding concepts rather than rote memorization.",
-      "Practice drawing labeled diagrams - they carry significant marks.",
-      "Learn key definitions exactly as given in the textbook for marking purposes.",
-      "Solve numerical problems in ecology (energy transfer, population growth) regularly.",
-      "Review previous year questions to understand the exam pattern and marking scheme.",
-      "Use mnemonics and memory aids for classification and cycles."
-    ],
-    "mcs": [
-      "Added new rich content for mcs."
-    ],
-    "importantConcepts": [
-      "Added new rich content for important Concepts."
-    ],
-    "importantTasks": [
-      "Added new rich content for important Tasks."
-    ],
-    "exercises": [
-      {
-        "problem": "Define and explain the importance of the topic.",
-        "solution": "Provide a clear definition and explain why it matters in biological sciences."
-      },
-      {
-        "problem": "Give three examples of the concept discussed.",
-        "solution": "Example 1: ... Example 2: ... Example 3: ..."
-      },
-      {
-        "problem": "Compare and contrast two related concepts.",
-        "solution": "Similarities: ... Differences: ..."
-      }
-    ],
-    "visualization": {}
+  "relevance": 100,
+  "notes": [
+    "Biomolecules are the chemical basis of life. Carbohydrates supply and store energy and form structural fibres; proteins (from 20 amino acids) act as enzymes,…",
+    "Biomolecules are organic molecules essential to life: carbohydrates, proteins, lipids, nucleic acids, plus minerals, enzymes and water.",
+    "Carbohydrates (CH2O)n: monosaccharides (glucose, fructose, ribose), disaccharides (sucrose=glucose+fructose, lactose, maltose), polysaccharides (starch,…"
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
   },
-  "originalContent": {
-    "notes": [
-      "Study of biological molecules (carbohydrates, proteins, lipids, nucleic acids) and cell structure/function including cell theory, organelles, and cell division (mitosis/meiosis).",
-      "Biomolecules are organic compounds (C,H,O,N,S,P) that make up living organisms",
-      "Carbohydrates: monosaccharides (glucose), disaccharides (sucrose), polysaccharides (starch, glycogen, cellulose)",
-      "Proteins: amino acids linked by peptide bonds; primary→secondary→tertiary→quaternary structure",
-      "Lipids: fats, oils, phospholipids, steroids; hydrophobic molecules forming cell membranes",
-      "Nucleic acids: DNA (double helix) and RNA (single strand); genetic information storage and transfer",
-      "Enzymes: biological catalysts that lower activation energy; specific to substrates",
-      "Cell theory: all living things made of cells; cells are basic unit of life; all cells from pre-existing cells",
-      "Prokaryotic cells: no nucleus, no membrane-bound organelles; bacteria and archaea"
-    ],
-    "confusion": [],
-    "practice": [],
-    "universalFacts": [],
-    "examples": [],
-    "practiceQuestions": [],
-    "formulas": [],
-    "keyPoints": [],
-    "summary": "",
-    "specialNotes": [],
-    "importantStatements": [],
-    "importantNotes": [],
-    "examShortTricks": [],
-    "examNotes": [],
-    "mcs": [],
-    "importantConcepts": [],
-    "importantTasks": [],
-    "exercises": [],
-    "visualization": {}
+  "mindmap": {
+    "centralConcept": "BIOMOLECULES AND CELL BIOLOGY",
+    "branches": [
+      {
+        "topic": "Biomolecules: Classification, Structure &…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Functions: C=energy+structure, P=enzymes/transport/structure, L=storage+membrane, N=heredity+protein…",
+              "A hydrolysis breaks a bond + water; a condensation joins molecules - water.",
+              "Enzymes are specific, reversible regulators, not consumed in the reaction.",
+              "DNA is the gene; RNA is the messenger/scaffold in protein synthesis.",
+              "Essential amino acids (8 in adults, 9 in children) must come from food."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "General carbohydrate ratio: C : H : O = 1 : 2 : 1, i.e. (CH2O)n",
+              "Endergonic polymerisation (condensation): monomer + monomer → dimer + H2O",
+              "Peptide unit: -C(=O)-NH-",
+              "DNA base pairing: A=T (2 H-bonds), G≡C (3 H-bonds)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "All cells share the same basic biochemical machinery of DNA→RNA→protein (central dogma).",
+              "The 20 naturally occurring L-amino acids differ only in their R-group (side chain).",
+              "Phospholipid bilayers form spontaneously because the head is hydrophilic and the tail is hydrophobic."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "High frequency: monomer/polymer matching tables, enzyme action and factors affecting enzymes.",
+              "Diagram-based marks: label a phospholipid bilayer and a DNA nucleotide.",
+              "Application: explain a disease caused by a biomolecule deficiency.",
+              "Remember C-H-O-N: C=energy, P=work, L=lipid, N=genetic.",
+              "A-T two H-bonds (think \"A\" has 2 strokes), G-C three."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Cellulose is a structural polymer in plant cell walls, not an energy reserve; glycogen (animal) and starch…",
+              "Starch is unbranched amylose + branched amylopectin; both yield maltose on hydrolysis.",
+              "Ribose and deoxyribose differ only by one oxygen atom on C-2; hence RNA vs DNA sugars."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Cell — Prokaryotic and Eukaryotic",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Cell = smallest structural + functional unit of life.",
+              "Prokaryote: no nucleus, 70S ribosomes, circular DNA, cell wall usually peptidoglycan.",
+              "Eukaryote: membrane-bound nucleus, 80S ribosomes, linear chromosomes, organelles.",
+              "Three postulates of cell theory (Schleiden, Schwann, Virchow).",
+              "Cell wall: plants (cellulose), fungi (chitin), bacteria (peptidoglycan); absent in animals."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "General size: prokaryote ~ 1-10 µm; eukaryote ~ 10-100 µm",
+              "Magnification = image size ÷ real size"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "All known living organisms are cellular.",
+              "A prokaryote is the simplest true cell; a eukaryote is the most complex.",
+              "The plasma membrane is selectively permeable and controls the entry of materials."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Prokaryote/eukaryote comparison table is a very common short-answer.",
+              "State cell theory fully (3 postulates + names).",
+              "Describe the structure of a typical bacterium with a labelled diagram.",
+              "PRO = small, NO nucleus; EU = nucleus + organelles.",
+              "Ribosome 7-0 (seventy) = prokaryote; 8-0 = eukaryote."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "A virus is not a cell and is not prokaryotic or eukaryotic; it is an acellular, obligate intracellular…",
+              "Prokaryotes lack a nuclear membrane but still carry DNA (usually a single circular chromosome).",
+              "Mycoplasma has no cell wall; it is the smallest known living cell (0.1-0.3 µm), not the smallest living…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Eukaryotic Cell Organelles",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Each organelle has a distinct, examinable function (mitochondrion→ATP, chloroplast→photosynthesis,…",
+              "RER = rough = ribosomes = protein; SER = smooth = no ribosomes = lipid.",
+              "Mitochondria + chloroplast: own DNA, 70S ribosomes, double membrane, binary fission (endosymbiosis).",
+              "Protein-secretion pathway: ribosome → RER → Golgi → vesicle → membrane.",
+              "Plant cell: wall + chloroplast + large central vacuole; animal cell: centrioles + lysosomes + small vacuoles."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Fluid-mosaic: phospholipid bilayer + integral/peripheral protein + cholesterol + glycocalyx",
+              "Protein secretion: ribosome → RER → Golgi → vesicle → exocytosis",
+              "Mitochondrial respiration: glycolysis → Krebs → ETS → ~34 ATP",
+              "9+9 axoneme (cilia/flagella); 9+0 centriole"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "The plasma membrane is the selectively permeable boundary of every cell.",
+              "Mitochondria are the site of aerobic respiration; chloroplasts of photosynthesis.",
+              "The Golgi apparatus modifies, sorts, and packages proteins and lipids."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Draw a fully labelled plant cell (all organelles + wall).",
+              "Differentiate RER and SER.",
+              "Explain the endosymbiotic theory with 4 evidence lines.",
+              "RER = rough = protein; SER = smooth = lipid.",
+              "Mito + Chloro = own DNA + 70S ribosomes = endosymbiosis."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "RER makes PROTEIN; SER makes LIPID. A cell secreting lots of protein has abundant RER + Golgi (e.g.,…",
+              "The Golgi does NOT synthesise proteins; it MODIFIES, SORTS, and PACKAGES what the RER made.",
+              "Mitochondria and chloroplasts have their OWN DNA + 70S ribosomes — the key endosymbiosis evidence."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Eukaryotic Cell Structure",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Each organelle has a distinct, frequently-examined function (mitochondrion→ATP, chloroplast→photosynthesis).",
+              "RER makes protein; SER makes lipid; Golgi packages; lysosome digests.",
+              "Plasma membrane is selectively permeable fluid mosaic.",
+              "Nucleus + nucleolus + chromatin = genetic control; chromatin condenses into chromosomes.",
+              "Plant-specific: cell wall, chloroplast, large central vacuole."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Fluid-mosaic model: phospholipid bilayer + protein mosaic + cholesterol + glycocalyx",
+              "9+9 axonemal structure of cilia/flagella (9 doublets + central pair)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "The Golgi apparatus modifies and packages proteins and lipids.",
+              "Cilia and flagella use a 9+9 microtubule arrangement for locomotion."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Organelle label-and-function questions are very common.",
+              "Draw the fluid-mosaic model with a labelled membrane.",
+              "Explain endosymbiotic theory with evidence (own DNA, 70S ribosomes, double membrane).",
+              "POWER: P=power (mitochondrion), O=oil & lipid (SER), W=wall (plant), E=envelope, R=respiration, power house…",
+              "MITOCHONDRIUM = MITOchondria make ENERGY (powerhouse)."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "The cell wall is fully permeable; the plasma membrane is selectively permeable.",
+              "RER is rough because of ribosomes; it makes PROTEINS. SER makes LIPIDS and detoxifies — it has no ribosomes.",
+              "The Golgi packages proteins and lipids; it does not synthesise them."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Cell Division — Cycle, Mitosis and Meiosis",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Cell cycle: G1, S, G2 (interphase) + M; checkpoints prevent errors.",
+              "PMAT = Prophase, Metaphase, Anaphase, Telophase of mitosis.",
+              "Meiosis: two divisions; crossing over (Prophase I) + independent assortment (Metaphase I) create variation.",
+              "Anaphase I separates homologs; Anaphase (mitosis) + Anaphase II separate sister chromatids.",
+              "Cytokinesis: animal (cleavage furrow) vs plant (cell plate)."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Mitosis: 2n → 2 daughter cells of 2n",
+              "Meiosis: 2n → 4 gametes of n",
+              "Crossing over (Prophase I) + independent assortment (Metaphase I) → variation",
+              "Chromosome count: after S each chromosome = 2 chromatids"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Mitosis maintains a species' diploid chromosome number.",
+              "Meiosis halves the genome and shuffles alleles, creating variation.",
+              "The cell cycle is controlled by checkpoints that stop M phase if DNA is damaged."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Draw and label all four mitotic phases.",
+              "Draw a full meiosis diagram (mark crossing over + independent assortment).",
+              "Tabulate mitosis vs meiosis (6 points).",
+              "PMAT = Prophase, Metaphase, Anaphase, Telophase.",
+              "MITO = 2 identical (2n); MEI = 4 different (n)."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Mitosis maintains the chromosome number (2n → 2n); meiosis halves it (2n → n).",
+              "Crossing over and independent assortment occur in MEIOSIS only, not mitosis.",
+              "In Anaphase I of meiosis, HOMOLOGOUS chromosomes separate; in Anaphase of mitosis and Anaphase II of…"
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

@@ -3,9 +3,11 @@
   "unitSlug": "classification-of-elements-and-periodic-table",
   "topicSlug": "classification-of-elements-and-periodic-table-mindmap",
   "topicTitle": "classification of elements and periodic table — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
+    "### 1. Historical Evolution of Periodic Classification",
+    "• **Dobereiner's Law of Triads (1829):** Grouped elements into triads where atomic mass of middle element was roughly arithmetic mean of first and third…",
+    "• **Newlands' Law of Octaves (1865):** When elements are arranged in order of increasing atomic mass, every eighth element shows similar physical and chemical…"
   ],
   "uiConfig": {
     "allowZoom": true,
@@ -15,46 +17,24 @@
     "centralConcept": "CLASSIFICATION OF ELEMENTS AND PERIODIC TABLE",
     "branches": [
       {
-        "topic": "Core Concepts",
+        "topic": "Modern Periodic Law and Modern Periodic Table",
         "subtopics": [
           {
-            "name": "Fundamentals",
+            "name": "Key points",
             "points": [
-              "Key Definitions",
-              "Basic Theories",
-              "Historical Context"
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Properties",
-        "subtopics": [
-          {
-            "name": "Physical",
-            "points": [
-              "State",
-              "Melting/Boiling Points"
+              "### 1. Historical Evolution of Periodic Classification",
+              "• **Dobereiner's Law of Triads (1829):** Grouped elements into triads where atomic mass of middle element…",
+              "• **Newlands' Law of Octaves (1865):** When elements are arranged in order of increasing atomic mass, every…",
+              "• **Lothar Meyer's Curve (1869):** Plotted atomic volume against atomic weight. Alkali metals occupied sharp…",
+              "• **Mendeleev's Periodic Law (1869):** 'The physical and chemical properties of elements are periodic…"
             ]
           },
           {
-            "name": "Chemical",
+            "name": "Common misconceptions",
             "points": [
-              "Reactivity",
-              "Periodic Trends"
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Applications",
-        "subtopics": [
-          {
-            "name": "Industrial",
-            "points": [
-              "Manufacturing Processes",
-              "Practical Uses",
-              "Environmental Impact"
+              "❌ Modern Periodic Law is based on atomic mass like Mendeleev's law. ✅ Modern Periodic Law is strictly based…",
+              "❌ Isotopes need separate positions in the modern periodic table. ✅ Isotopes possess identical atomic…",
+              "❌ Cobalt was placed before Nickel by Mendeleev as an error. ✅ Mendeleev placed Co before Ni based on…"
             ]
           }
         ]

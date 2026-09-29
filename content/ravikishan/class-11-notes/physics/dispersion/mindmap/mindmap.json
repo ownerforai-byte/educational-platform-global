@@ -3,8 +3,131 @@
   "unitSlug": "dispersion",
   "topicSlug": "dispersion-mindmap",
   "topicTitle": "dispersion — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "Pure Spectrum and Dispersive Power covers essential principles and applications.",
+    "**Pure Spectrum and Dispersive Power:** Class 11 concept.",
+    "**Why:** connects to other topics."
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
+  "mindmap": {
+    "centralConcept": "DISPERSION",
+    "branches": [
+      {
+        "topic": "Pure Spectrum and Dispersive Power",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Pure Spectrum and Dispersive Power",
+              "Application of Pure Spectrum and Dispersive Power",
+              "Connection of Pure Spectrum and Dispersive Power to other topics",
+              "**Pure Spectrum and Dispersive Power:** Class 11 concept.",
+              "**Why:** connects to other topics."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Pure spectrum and dispersive power",
+              "Statement 2: Theorem related to Pure spectrum and dispersive power",
+              "Statement 3: Condition for Pure spectrum and dispersive power to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Pure Spectrum and Dispersive Power problems - significant marks.",
+              "Recall the formula for Pure Spectrum and Dispersive Power.",
+              "Pure Spectrum and Dispersive Power is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Pure Spectrum and Dispersive Power.",
+              "Check formula conditions."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Chromatic and Spherical Aberration",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Chromatic and Spherical Aberration",
+              "Application of Chromatic and Spherical Aberration",
+              "Connection of Chromatic and Spherical Aberration to other topics",
+              "**Chromatic and Spherical Aberration:** Class 11 concept.",
+              "Definition and significance of Chromatic and Spherical Aberration."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Chromatic and spherical aberration",
+              "Statement 2: Theorem related to Chromatic and spherical aberration",
+              "Statement 3: Condition for Chromatic and spherical aberration to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Chromatic and Spherical Aberration problems - significant marks.",
+              "Recall the formula for Chromatic and Spherical Aberration.",
+              "Chromatic and Spherical Aberration is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Chromatic and Spherical Aberration."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Achromatism and Its Applications",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Achromatism and Its Applications",
+              "Application of Achromatism and Its Applications",
+              "Connection of Achromatism and Its Applications to other topics",
+              "**Achromatism and Its Applications:** Class 11 concept.",
+              "Definition and significance of Achromatism and Its Applications."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Achromatism and its applications",
+              "Statement 2: Theorem related to Achromatism and its applications",
+              "Statement 3: Condition for Achromatism and its applications to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Achromatism and Its Applications problems - significant marks.",
+              "Recall the formula for Achromatism and Its Applications.",
+              "Achromatism and Its Applications is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Achromatism and Its Applications."
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

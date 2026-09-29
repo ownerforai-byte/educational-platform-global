@@ -5,99 +5,114 @@
   "topicTitle": "Electric Charges — Interactive Concept Map",
   "relevance": 100,
   "notes": [
-    "Foundational electrostatics covering nature, quantization, and conservation of electric charge.",
-    "Mechanisms of electrification: triboelectric friction, conduction, and electrostatic induction with earthing.",
-    "Quantitative electrostatic forces via Coulomb's law, dielectric attenuation, and vector superposition."
+    "Electric charge is a fundamental, quantized ($q = ne$), and conserved property of matter. Objects can be charged by triboelectric friction, conduction, or…",
+    "**Electric Charge & Elementary Charge:** Electric charge is an intrinsic physical property of elementary matter that governs all electromagnetic interactions.…",
+    "**Quantization of Charge:** Electric charge is not continuous; it exists only in discrete integral multiples of the elementary electronic charge: $q = \\pm n…"
   ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
   "mindmap": {
-    "centralConcept": "Electric Charges & Electrostatic Forces",
+    "centralConcept": "ELECTRIC CHARGES",
     "branches": [
       {
-        "topic": "Properties of Electric Charge",
+        "topic": "Electric Charges and Charging by Induction",
         "subtopics": [
           {
-            "name": "Quantization of Charge",
+            "name": "Key points",
             "points": [
-              "Discrete elementary quantum: q = ±ne",
-              "Fundamental charge: e = 1.602 × 10⁻¹⁹ C",
-              "Demonstrated by Millikan's oil-drop experiment"
+              "Electric charge is quantized in integral multiples of $e = 1.602 \\times 10^{-19}\\,\\text{C}$.",
+              "Charge is an isolated invariant scalar conserved across all nuclear and electromagnetic interactions.",
+              "Induction charges a conductor with the sign opposite to that of the inducing charged body without contact…",
+              "Grounding neutralizes electrostatic potential by allowing electron exchange with Earth's infinite charge…",
+              "Electrostatic attraction occurs between unlike charges and between any charged body and a neutral conductor…"
             ]
           },
           {
-            "name": "Conservation of Charge",
+            "name": "Formulas & relations",
             "points": [
-              "Total charge of an isolated system remains strictly constant",
-              "Algebraic additivity: Q_total = ∑ q_i",
-              "Relativistically invariant (independent of speed)"
+              "Quantization of electric charge: $q = \\pm n e \\quad (n \\in \\mathbb{Z}^+)$",
+              "Conservation of electric charge: $\\sum q_{\\text{initial}} = \\sum q_{\\text{final}}$",
+              "Charge sharing between identical conducting spheres in contact: $q' = \\frac{q_1 + q_2}{2}$",
+              "Fractional quark composition of nucleon: $p = uud \\; (+1e), \\quad n = udd \\; (0)$"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Electric charge is quantized, meaning it exists only in integral multiples of the fundamental…",
+              "Statement 2: The total electric charge of an isolated system remains constant over time regardless of…",
+              "Statement 3: Electrostatic induction allows charging a conductor with a sign opposite to that of the…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Explaining the four steps of charging a sphere by induction with neatly labeled diagrams is a frequent…",
+              "Quantization check: divide given charge Q by 1.6 × 10⁻¹⁹ C; if n is not an integer, the charge is physically…",
+              "Induction charge sign: Induced net charge on conductor is ALWAYS opposite to the sign of the inducing rod.",
+              "Identical spheres contact trick: Touching identical spheres of charges q₁ and q₂ redistributes charge…",
+              "Remember that in conductors, only negative charges (free conduction electrons) physically move; positive…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Thinking induction creates new charge: Induction does not generate charge from nothing; it redistributes…",
+              "Believing grounding always pulls electrons down to Earth: If a positively charged rod is inducing negative…",
+              "Assuming insulators can be charged permanently by induction: Only materials with delocalized mobile charges…"
             ]
           }
         ]
       },
       {
-        "topic": "Electrification Methods",
+        "topic": "Coulomb's Law and Force Between Multiple Charges",
         "subtopics": [
           {
-            "name": "Charging by Friction",
+            "name": "Key points",
             "points": [
-              "Triboelectric electron transfer between differing materials",
-              "Glass on silk becomes positive; amber/ebonite becomes negative"
+              "Coulomb's law is an inverse-square central force acting along the line connecting two stationary point…",
+              "Vector formulation demonstrates mutual symmetry: $\\vec{F}_{12} = -\\vec{F}_{21}$, fulfilling Newton's third…",
+              "Presence of a dielectric medium with relative permittivity $\\kappa > 1$ reduces electrostatic force by a…",
+              "The principle of superposition allows independent pairwise summation of forces in multi-charge configurations.",
+              "Earnshaw's theorem establishes that stable electrostatic equilibrium of stationary point charges is…"
             ]
           },
           {
-            "name": "Charging by Conduction",
+            "name": "Formulas & relations",
             "points": [
-              "Direct physical contact between conductors",
-              "Charge redistributes until electrostatic potentials equalize"
+              "Coulomb's Law (magnitude): $F = \\frac{1}{4\\pi\\varepsilon_0} \\frac{|q_1 q_2|}{r^2}$",
+              "Coulomb's Law (vector form): $\\vec{F}_{12} = \\frac{1}{4\\pi\\varepsilon_0} \\frac{q_1 q_2}{r^2}\\hat{r}_{21} =…",
+              "Force in dielectric medium: $F_m = \\frac{F_0}{\\varepsilon_r} = \\frac{F_0}{\\kappa} =…",
+              "Principle of Superposition: $\\vec{F}_{net} = \\sum_{i=1}^N \\vec{F}_i$",
+              "Proportionality constant in vacuum: $k = \\frac{1}{4\\pi\\varepsilon_0} \\approx 8.99 \\times…"
             ]
           },
           {
-            "name": "Charging by Induction",
+            "name": "Statements to quote",
             "points": [
-              "Non-contact method utilizing polarization and grounding",
-              "Traps charge of opposite polarity on the conductor",
-              "Earthing must be disconnected BEFORE removing inducing body"
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Coulomb's Law",
-        "subtopics": [
-          {
-            "name": "Scalar & Vector Formulation",
-            "points": [
-              "Inverse-square law: F = (1/4πε₀) · |q₁q₂| / r²",
-              "Vacuum permittivity: ε₀ = 8.854 × 10⁻¹² F/m",
-              "Coulomb constant: k ≈ 9 × 10⁹ N·m²/C²",
-              "Vector form: F⃗₁₂ = -F⃗₂₁ (satisfies Newton's third law)"
+              "Statement 1: The electrostatic force between two stationary point charges varies inversely with the square…",
+              "Statement 2: Electrostatic forces are central forces acting strictly along the straight line joining the…",
+              "Statement 3: Electrostatic forces satisfy Newton's third law: the force on charge 1 by charge 2 is equal in…"
             ]
           },
           {
-            "name": "Medium Effect & Dielectrics",
+            "name": "Exam focus",
             "points": [
-              "Force in dielectric: F_m = F₀ / κ",
-              "Relative permittivity: κ = ε / ε₀ ≥ 1",
-              "Dielectric screening explains salt dissolution in water (κ ≈ 80)"
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Forces Between Multiple Charges",
-        "subtopics": [
-          {
-            "name": "Principle of Superposition",
-            "points": [
-              "Pairwise interactions remain independent",
-              "Net electrostatic force is vector sum: F⃗_net = ∑ F⃗_i",
-              "Resolved along Cartesian axes (F_x, F_y)"
+              "State Coulomb's law in vector form and derive the condition for third charge equilibrium along a line…",
+              "Equilibrium between like charges q₁ and q₂ at distance L: Third charge of opposite sign placed at x = L /…",
+              "Ratio of forces in dielectric medium: F_air / F_medium = κ.",
+              "Two identical charges in symmetrical polygons: Net electrostatic force at the geometric center of any…",
+              "Remember that the permittivity of free space ε₀ has SI units of C²/(N·m²) or F/m, with value 8.854 × 10⁻¹²…"
             ]
           },
           {
-            "name": "Electrostatic Equilibrium",
+            "name": "Common misconceptions",
             "points": [
-              "Translational equilibrium condition: ∑ F⃗ = 0",
-              "Earnshaw's Theorem: Stable equilibrium impossible with static charges alone"
+              "Adding electrostatic forces as scalar algebraic quantities: Electric forces are vectors! When calculating…",
+              "Ignoring the medium's dielectric screening: In water ($\\kappa \\approx 80$), the electrostatic force between…",
+              "Applying Coulomb's law to extended charge distributions at close range: Coulomb's inverse-square formula…"
             ]
           }
         ]

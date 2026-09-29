@@ -3,105 +3,117 @@
   "unitSlug": "circular-motion",
   "topicSlug": "circular-motion-mindmap",
   "topicTitle": "circular motion — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Circular motion: motion of a body along a circular path. Key quantities: angular displacement (θ), angular velocity (ω), angular acceleration (α), centripetal acceleration (a_c = v²/r = rω²).",
-    "Angular displacement: θ = s/r (radians); 2π rad = 360° = 1 revolution; vector along axis (right-hand rule).",
-    "Angular velocity: ω = dθ/dt; uniform circular motion has constant ω; unit: rad/s; rpm conversion: × 2π/60.",
-    "Angular acceleration: α = dω/dt; constant α gives kinematic equations mirroring linear motion.",
-    "Centripetal acceleration: a_c = v²/r = rω² — always directed toward the center; changes direction of velocity, not speed.",
-    "Centripetal force: F_c = mv²/r — not a new force; provided by tension, gravity, friction, or normal force.",
-    "Conical pendulum: bob moves in horizontal circle; string traces cone; period T = 2π√(L cos θ/g), independent of mass.",
-    "Vertical circle: speed varies with height; minimum top speed (string) = √(gr); minimum bottom speed = √(5gr).",
-    "Banking of roads: tan θ = v²/(rg) for ideal angle; reduces friction requirement; railway superelevation h = w tan θ.",
-    "NEB exam focus: converting rpm to rad/s; centripetal force identification; conical pendulum derivation; vertical circle min speeds; banking angle calculations."
+    "Angular displacement (θ), angular velocity (ω = dθ/dt), and angular acceleration (α = dω/dt) describe rotational motion. For constant angular acceleration,…",
+    "**Angular displacement ($\\Delta \\theta$):** the angle through which a body rotates about a fixed axis. Measured in radians (rad). 1 rad = 57.3°, 2$\\pi$ rad =…",
+    "**Angular velocity ($\\omega$):** the rate of change of angular displacement: $\\omega = d\\theta/dt$ (instantaneous), $\\omega = \\Delta\\theta/t$ (average). Unit:…"
   ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
   "mindmap": {
-    "centralConcept": "Circular Motion",
+    "centralConcept": "CIRCULAR MOTION",
     "branches": [
       {
-        "topic": "Angular Quantities",
+        "topic": "Angular Displacement, Velocity and Acceleration",
         "subtopics": [
           {
-            "name": "Angular Displacement (θ)",
+            "name": "Key points",
             "points": [
-              "θ = s/r (radians)",
-              "2π rad = 360° = 1 rev",
-              "Vector along rotation axis (RHR)",
-              "θ > 2π possible (not like plain angle)"
+              "Angular displacement is measured in radians; 2π rad = 360° = 1 revolution.",
+              "Angular velocity is a vector along the axis (right-hand rule), not tangential.",
+              "The kinematic equations for rotation mirror linear motion: x→θ, v→ω, a→α.",
+              "v = rω links linear and angular speed — the basis of all circular motion problems.",
+              "Always convert rpm to rad/s before using formulas: multiply by 2π/60."
             ]
           },
           {
-            "name": "Angular Velocity (ω)",
+            "name": "Formulas & relations",
             "points": [
-              "ω = dθ/dt (instantaneous)",
-              "ω = 2π/T = 2πf (uniform motion)",
-              "Unit: rad/s; rpm × 2π/60",
-              "Vector along axis (right-hand rule)"
+              "Angular velocity: ω = dθ/dt (instantaneous), ω = Δθ/t (average)",
+              "Angular acceleration: α = dω/dt = d²θ/dt²",
+              "Kinematic equations (constant α): ω = ω₀ + αt; θ = ω₀t + ½αt²; ω² = ω₀² + 2αθ",
+              "Linear-angular links: v = rω; a_t = rα; a_c = v²/r = rω²",
+              "rpm conversion: ω (rad/s) = rpm × 2π/60; revolutions = θ/(2π)"
             ]
           },
           {
-            "name": "Angular Acceleration (α)",
+            "name": "Statements to quote",
             "points": [
-              "α = dω/dt = d²θ/dt²",
-              "Unit: rad/s²",
-              "Constant α → kinematic equations",
-              "Same form as linear: v→ω, a→α, x→θ"
+              "Angular velocity is the rate of change of angular displacement: ω = dθ/dt, with direction along the axis…",
+              "For constant angular acceleration, the kinematic equations are: ω = ω₀ + αt, θ = ω₀t + ½αt², ω² = ω₀² + 2αθ.",
+              "Linear speed and angular speed are linked by v = rω — this is why the outside of a disc moves faster than…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "rpm to rad/s conversion is tested every year — know the factor 2π/60.",
+              "Kinematic equation problems (constant α) are standard — practice all four equations.",
+              "Linear-angular link problems (v = rω, a = rω²) are common — know both formulas.",
+              "rpm shortcut: multiply by 2π/60 to get rad/s — memorize this conversion factor.",
+              "Revolutions shortcut: divide θ (in radians) by 2π — no conversion needed."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'Angular displacement and angle are the same.' ✅ Angular displacement is a vector (along the axis), while…",
+              "❌ 'Angular velocity is always constant in circular motion.' ✅ Only in UNIFORM circular motion is ω constant.…",
+              "❌ 'The direction of angular velocity is tangential.' ❌ The direction of angular velocity is ALONG THE AXIS…"
             ]
           }
         ]
       },
       {
-        "topic": "Linear-Angular Links",
+        "topic": "Centripetal Acceleration and Force",
         "subtopics": [
           {
-            "name": "Position",
+            "name": "Key points",
             "points": [
-              "s = rθ (arc length)"
+              "Centripetal force is NOT a new force — it is the resultant of real forces (tension, gravity, friction).",
+              "Centripetal acceleration changes only the direction of velocity, not its magnitude.",
+              "Centrifugal force is a pseudo-force that appears only in rotating reference frames.",
+              "If the centripetal force is removed, the body moves tangent to the circle.",
+              "Centripetal force is proportional to v² — doubling speed quadruples the required force."
             ]
           },
           {
-            "name": "Speed/Velocity",
+            "name": "Formulas & relations",
             "points": [
-              "v = rω (tangential speed)"
+              "Centripetal acceleration: $a_c = v^2/r = r\\omega^2$ (directed toward the centre)",
+              "Centripetal force: $F_c = mv^2/r = mr\\omega^2$ (resultant of real forces toward centre)",
+              "Maximum speed (string): $v_{max} = \\sqrt{T_{max} \\times r/m}$ — when tension reaches breaking point",
+              "Maximum speed (flat curve): $v_{max} = \\sqrt{\\mu_s rg}$ — when friction reaches its maximum",
+              "Cyclist lean angle: $\\tan \\theta = v^2/(rg)$ — the angle needed to balance torque"
             ]
           },
           {
-            "name": "Acceleration",
+            "name": "Statements to quote",
             "points": [
-              "a_t = rα (tangential)",
-              "a_c = v²/r = rω² (centripetal)",
-              "a_total = √(a_t² + a_c²)"
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Centripetal Force",
-        "subtopics": [
-          {
-            "name": "Formula",
-            "points": [
-              "F_c = mv²/r = mrω²",
-              "a_c = v²/r = rω²"
+              "Centripetal acceleration is directed toward the centre of the circular path: a_c = v²/r = rω².",
+              "Centripetal force is the resultant of real forces pointing toward the centre — it is not a new force.",
+              "If the centripetal force is removed, the body moves tangent to the circle (Newton's first law)."
             ]
           },
           {
-            "name": "Real Force Sources",
+            "name": "Exam focus",
             "points": [
-              "String → Tension",
-              "Planet orbit → Gravity",
-              "Car on road → Friction",
-              "Banked road → Normal force component"
+              "Maximum-speed problems (string breaking, car skidding) are the most common type.",
+              "Always identify which real force provides the centripetal force — never add it as a separate force.",
+              "Centrifugal force is a pseudo-force — use it only in rotating reference frames.",
+              "Force identification trick: always ask 'which real force points toward the centre?' — that's your F_c.",
+              "Maximum speed shortcut: v_max = √(μ_s rg) for flat curves, v_max = √(T_max r/m) for strings."
             ]
           },
           {
-            "name": "Key Ideas",
+            "name": "Common misconceptions",
             "points": [
-              "NOT a new force — it is a ROLE",
-              "Always points toward center",
-              "Changes direction of v, not speed",
-              "Centrifugal force is a pseudo-force"
+              "❌ 'Centrifugal force pulls the body outward.' ✅ Centrifugal force is a pseudo-force that appears only in a…",
+              "❌ 'Centripetal force is a new type of force.' ✅ Centripetal force is the RESULTANT of real forces (tension,…",
+              "❌ 'The body in circular motion is in equilibrium.' ✅ The body accelerates toward the centre (a_c = v²/r). It…"
             ]
           }
         ]
@@ -110,122 +122,155 @@
         "topic": "Conical Pendulum",
         "subtopics": [
           {
-            "name": "Geometry",
+            "name": "Key points",
             "points": [
-              "String length L, angle θ",
-              "Radius r = L sin θ",
-              "Height h = L cos θ"
+              "The period of a conical pendulum depends only on L cos θ (the vertical height of the cone), not on mass.",
+              "The faster the rotation, the larger the angle θ — the cone becomes flatter.",
+              "The minimum period (θ → 0) equals the period of a simple pendulum of the same length.",
+              "The tension is always greater than mg: T = mg/cos θ.",
+              "The centripetal force is the horizontal component of tension — no new force is added."
             ]
           },
           {
-            "name": "Force Equations",
+            "name": "Formulas & relations",
             "points": [
-              "T cos θ = mg (vertical)",
-              "T sin θ = mω²r (horizontal)",
-              "Result: cos θ = g/(ω²L)"
+              "Vertical equilibrium: $T \\cos \\theta = mg$",
+              "Centripetal force: $T \\sin \\theta = m\\omega^2 L \\sin \\theta ightarrow T = m\\omega^2 L$",
+              "Angular speed: $\\omega = \\sqrt{g/(L \\cos \\theta)}$",
+              "Period: $T_{period} = 2\\pi\\sqrt{L \\cos \\theta/g}$ — independent of mass",
+              "Radius of circle: $r = L \\sin \\theta$"
             ]
           },
           {
-            "name": "Key Results",
+            "name": "Statements to quote",
             "points": [
-              "ω = √(g/L cos θ)",
-              "T_period = 2π√(L cos θ/g)",
-              "Independent of mass m",
-              "Tension T = mg/cos θ > mg"
+              "The period of a conical pendulum (T = 2π√(L cos θ/g)) is independent of the mass of the bob.",
+              "The centripetal force is provided by the horizontal component of tension: T sin θ = mω²r.",
+              "The vertical component of tension balances the weight: T cos θ = mg."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "The derivation of cos θ = g/(ω²L) is the most common NEB question on this topic.",
+              "Period problems: use T = 2π√(L cos θ/g) — know this formula.",
+              "Tension problems: use T = mg/cos θ — remember T > mg.",
+              "Period shortcut: T = 2π√(L cos θ/g) — just plug in L cos θ and g.",
+              "Angular speed shortcut: ω = √(g/L cos θ) — the square root of g over L cos θ."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'The tension in the string equals mg.' ✅ The vertical component of tension equals mg. The total tension is…",
+              "❌ 'The bob is in equilibrium.' ✅ The bob is in vertical equilibrium (T cos θ = mg) but NOT horizontal…",
+              "❌ 'The period depends on the mass of the bob.' ✅ The period T = 2π√(L cos θ/g) is independent of mass. A…"
             ]
           }
         ]
       },
       {
-        "topic": "Vertical Circle",
+        "topic": "Motion in a Vertical Circle",
         "subtopics": [
           {
-            "name": "String Case",
+            "name": "Key points",
             "points": [
-              "v_top(min) = √(gr)",
-              "v_bottom(min) = √(5gr)",
-              "T_bottom = mg + mv²/r",
-              "T_top = mv²/r − mg"
+              "The minimum speed at the top (string) is √(gr), independent of mass.",
+              "The minimum speed at the bottom (string) is √(5gr) — the most tested result.",
+              "For a rigid rod, v_bottom(min) = √(2gr) — the rod can push, not just pull.",
+              "Tension at the bottom is always maximum; at the top it is minimum.",
+              "At the minimum case (string), T_bottom = 6mg — six times the weight."
             ]
           },
           {
-            "name": "Rod Case",
+            "name": "Formulas & relations",
             "points": [
-              "v_top(min) = 0 (rod can push)",
-              "v_bottom(min) = √(2gr)",
-              "Lower minimum than string"
+              "Minimum speed at top (string): v_top = √(gr)",
+              "Minimum speed at bottom (string): v_bottom = √(5gr)",
+              "Minimum speed at bottom (rod): v_bottom = √(2gr)",
+              "Tension at bottom: T_bottom = mg + mv²/r",
+              "Tension at top: T_top = mv²/r − mg"
             ]
           },
           {
-            "name": "Energy",
+            "name": "Statements to quote",
             "points": [
-              "½mv_b² = ½mv_t² + mg(2r)",
-              "Speed varies with height",
-              "Total mechanical energy conserved"
+              "The minimum speed at the top of a vertical circle (string) is √(gr), independent of mass.",
+              "The minimum speed at the bottom (string) is √(5gr) — derived from energy conservation.",
+              "For a rigid rod, the body can complete the circle with v_top = 0, giving v_bottom(min) = √(2gr)."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "√(5gr) is tested almost every year — memorize this result.",
+              "String vs rod distinction is a classic conceptual question.",
+              "Tension at top and bottom problems are standard numerical questions.",
+              "Top minimum: v_top = √(gr) — just take √(g × r).",
+              "Bottom minimum (string): v_bottom = √(5gr) — remember the factor 5."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ 'The speed is constant in vertical circular motion.' ✅ The speed VARIES — gravity speeds up the body on…",
+              "❌ 'The minimum speed at the top is zero.' ✅ For a STRING, the minimum speed at the top is √(gr). For a ROD,…",
+              "❌ 'The tension is the same at all points.' ✅ The tension varies — maximum at the bottom (T = mg + mv²/r) and…"
             ]
           }
         ]
       },
       {
-        "topic": "Banking of Roads",
+        "topic": "Applications of Banking",
         "subtopics": [
           {
-            "name": "Ideal Banking (no friction)",
+            "name": "Key points",
             "points": [
-              "tan θ = v²/(rg)",
-              "Independent of vehicle mass",
-              "Design speed: v = √(rg tan θ)"
+              "The ideal banking angle tan θ = v²/(rg) is independent of vehicle mass.",
+              "At design speed, no friction is needed — the horizontal component of normal force provides all centripetal…",
+              "Banking with friction increases the maximum safe speed beyond the design speed.",
+              "Railway superelevation h = w tan θ applies the same physics to train tracks.",
+              "Over-banking (θ too large for the speed) causes inward sliding; under-banking causes outward skidding."
             ]
           },
           {
-            "name": "With Friction",
+            "name": "Formulas & relations",
             "points": [
-              "v_max = √[rg(tan θ + μ)/(1 − μ tan θ)]",
-              "Friction up slope if v < design speed",
-              "Friction down slope if v > design speed"
+              "Ideal banking angle (no friction): tan θ = v²/(rg)",
+              "Maximum speed with friction: v_max = √[rg(tan θ + μ)/(1 − μ tan θ)]",
+              "Minimum speed with friction: v_min = √[rg(tan θ − μ)/(1 + μ tan θ)]",
+              "Railway superelevation: h = w tan θ, where w = track gauge",
+              "Normal force on banked road: N = mg/cos θ"
             ]
           },
           {
-            "name": "Railway",
+            "name": "Statements to quote",
             "points": [
-              "Superelevation: h = w tan θ",
-              "w = track gauge (1.5 m standard)",
-              "Prevents rail wear and derailment"
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "NEB Exam Focus",
-        "subtopics": [
-          {
-            "name": "Conversions",
-            "points": [
-              "rpm → rad/s: × 2π/60",
-              "rad → revolutions: ÷ 2π",
-              "degrees → rad: × π/180"
+              "The ideal banking angle is given by tan θ = v²/(rg), independent of the vehicle's mass.",
+              "On a banked road with friction, the maximum safe speed is v_max = √[rg(tan θ + μ)/(1 − μ tan θ)].",
+              "At the design speed, the horizontal component of the normal force alone provides the centripetal force."
             ]
           },
           {
-            "name": "Derivations",
+            "name": "Exam focus",
             "points": [
-              "Conical pendulum: cos θ = g/(ω²L)",
-              "Vertical circle: v_bottom = √(5gr)",
-              "Banking: tan θ = v²/(rg)"
+              "Deriving tan θ = v²/(rg) is the most common NEB question — know the force resolution steps.",
+              "Maximum speed with friction problems are standard numerical questions.",
+              "Railway superelevation: know h = w tan θ and that w ≈ 1.5 m for standard gauge.",
+              "Design speed shortcut: v = √(rg tan θ) — square root of rg times tangent of angle.",
+              "Friction-free shortcut: if the problem says 'no friction needed', use tan θ = v²/(rg)."
             ]
           },
           {
-            "name": "Numerical Problems",
+            "name": "Common misconceptions",
             "points": [
-              "Centripetal force calculations",
-              "Maximum speed (string breaking, car skidding)",
-              "Conical pendulum period/tension",
-              "Banking angle and superelevation"
+              "❌ 'Banking eliminates friction entirely.' ✅ Banking REDUCES friction requirement. At the design speed (tan θ…",
+              "❌ 'A steeper bank angle is always better.' ✅ Too steep a bank angle causes problems at low speeds — the…",
+              "❌ 'The normal force equals mg on a banked road.' ✅ The normal force is N = mg/cos θ, which is GREATER than…"
             ]
           }
         ]
       }
     ]
-  },
-  "visualType": "vsepr-theory"
+  }
 }

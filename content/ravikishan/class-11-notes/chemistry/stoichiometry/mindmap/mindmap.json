@@ -3,57 +3,57 @@
   "unitSlug": "stoichiometry",
   "topicSlug": "stoichiometry-mindmap",
   "topicTitle": "stoichiometry interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Study of stoichiometry concepts."
+    "### 1. Meaning and background",
+    "John Dalton (1803–1808, *A New System of Chemical Philosophy*) proposed the first quantitative atomic theory. Its purpose was to explain the experimentally…",
+    "### 2. Postulates (state them in order)"
   ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
   "mindmap": {
     "centralConcept": "STOICHIOMETRY",
     "branches": [
       {
-        "topic": "Laws",
+        "topic": "Dalton's Atomic Theory and its Postulates",
         "subtopics": [
           {
-            "name": "Fundamental Laws",
+            "name": "Key points",
             "points": [
-              "Conservation of Mass",
-              "Definite Proportions",
-              "Multiple Proportions"
+              "### 1. Meaning and background",
+              "John Dalton (1803–1808, *A New System of Chemical Philosophy*) proposed the first quantitative atomic…",
+              "### 2. Postulates (state them in order)",
+              "• Matter is composed of extremely small, indivisible particles called atoms.",
+              "• Atoms of the same element are identical in mass, size and chemical properties; atoms of different elements…"
             ]
-          }
-        ]
-      },
-      {
-        "topic": "Mole Concept",
-        "subtopics": [
+          },
           {
-            "name": "Calculations",
+            "name": "Formulas & relations",
             "points": [
-              "Molar Mass",
-              "Avogadro's Number",
-              "Molar Volume at STP"
+              "$$\\text{Law of definite proportions: }\\ %\\text{element}=\\frac{\\text{mass of element in…",
+              "$$\\text{Mass defect (nuclear): }\\ \\Delta m=\\frac{E}{c^{2}}\\ \\Rightarrow\\ \\text{chemical mass is not strictly…"
             ]
-          }
-        ]
-      },
-      {
-        "topic": "Reactions",
-        "subtopics": [
+          },
           {
-            "name": "Limiting Reactant",
+            "name": "Exam focus",
             "points": [
-              "Theoretical Yield",
-              "Actual Yield",
-              "Percent Yield"
+              "Answer the limitations question historically: electron/proton/neutron → isotopes → isobars → transmutation →…",
+              "Distinguish 'conservation of mass is valid for chemical reactions but not nuclear reactions' — a common…",
+              "Remember that Dalton's theory, not Lavoisier's, is the one that *predicted* multiple proportions."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ Dalton's atomic theory is completely wrong today. ✅ Its core (matter is atomic and reactions only…",
+              "❌ Atoms of the same element always have the same mass. ✅ Isotopes such as ³⁵Cl and ³⁷Cl differ in mass while…",
+              "❌ Dalton explained the law of gaseous volumes. ✅ That was Gay-Lussac (1809), and Avogadro's hypothesis was…"
             ]
           }
         ]
       }
     ]
-  },
-  "uiConfig": {
-    "allowZoom": true,
-    "showRefresh": true
-  },
-  "visualType": "avogadros-law-deduction"
+  }
 }

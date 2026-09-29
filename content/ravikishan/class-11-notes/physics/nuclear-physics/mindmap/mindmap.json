@@ -3,8 +3,117 @@
   "unitSlug": "nuclear-physics",
   "topicSlug": "nuclear-physics-mindmap",
   "topicTitle": "nuclear physics — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "**Atomic mass unit (u):** $1\\\\\\\\,\\ ext{u} = 1.660539\\ imes 10^{-27}\\\\\\\\,\\ ext{kg}$. Defined as exactly $1/12$ the mass of a neutral carbon-12 atom in its…",
+    "**Exact mass vs mass number:** The mass number $A$ is the integer count of nucleons. The exact mass in u differs slightly from $A$ due to mass defect. For…",
+    "**Isotopes:** atoms of the same element ($Z$ same) with different mass numbers ($A$ different). They have identical chemical properties (same electron…"
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
+  "mindmap": {
+    "centralConcept": "NUCLEAR PHYSICS",
+    "branches": [
+      {
+        "topic": "Atomic Mass, Isotopes and Mass Defect",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Atomic mass unit (u):** $1\\\\\\\\,\\ ext{u} = 1.660539\\ imes 10^{-27}\\\\\\\\,\\ ext{kg}$. Defined as exactly…",
+              "**Exact mass vs mass number:** The mass number $A$ is the integer count of nucleons. The exact mass in u…",
+              "**Isotopes:** atoms of the same element ($Z$ same) with different mass numbers ($A$ different). They have…",
+              "**Mass defect $\\\\\\\\Delta m$:** $\\\\\\\\Delta m = Zm_p + Nm_n - M_{\\ ext{nucleus}}$, where $m_p \\\\\\\\approx…",
+              "**Packing fraction:** $f = (M - A)/A$, where $M$ is the exact atomic mass in u and $A$ is the mass number.…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Misconception - Mass number $A$ is an integer count of nucleons; exact atomic mass in u is not exactly $A$.…",
+              "Misconception - Packing fraction $f = (M - A)/A$ can be negative because the bound nucleus weighs less than…",
+              "Misconception - Isotopes share the same $Z$ but have different $A$; isobars share the same $A$ but have…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Discovery of Nucleus",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Discovery of Nucleus",
+              "Application of Discovery of Nucleus",
+              "Connection of Discovery of Nucleus to other topics",
+              "**Discovery of Nucleus:** Class 11 concept.",
+              "**Why:** connects to other topics."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+              "Statement 2: Theorem related to Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+              "Statement 3: Condition for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number to be…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Discovery of Nucleus problems - significant marks.",
+              "Recall the formula for Discovery of Nucleus.",
+              "Discovery of Nucleus is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Discovery of Nucleus.",
+              "Check formula conditions."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Creation, Annihilation, Fission and Fusion",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Creation, Annihilation, Fission and Fusion",
+              "Application of Creation, Annihilation, Fission and Fusion",
+              "Connection of Creation, Annihilation, Fission and Fusion to other topics",
+              "**Creation, Annihilation, Fission and Fusion:** Class 11 concept.",
+              "Definition and significance of Creation, Annihilation, Fission and Fusion."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Creation and annihilation; nuclear fission and fusion",
+              "Statement 2: Theorem related to Creation and annihilation; nuclear fission and fusion",
+              "Statement 3: Condition for Creation and annihilation; nuclear fission and fusion to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Creation, Annihilation, Fission and Fusion problems - significant marks.",
+              "Recall the formula for Creation, Annihilation, Fission and Fusion.",
+              "Creation, Annihilation, Fission and Fusion is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Creation, Annihilation, Fission and Fusion."
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

@@ -3,62 +3,150 @@
   "unitSlug": "oxidation-and-reduction",
   "topicSlug": "oxidation-and-reduction-mindmap",
   "topicTitle": "oxidation and reduction interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Study of oxidation and reduction concepts."
+    "Redox reactions involve electron transfer and are fundamental to electrochemistry and energy production.",
+    "Oxidation = loss e⁻ (OIL), Reduction = gain e⁻ (RIG).",
+    "Oxidation numbers identify redox."
   ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
   "mindmap": {
     "centralConcept": "OXIDATION AND REDUCTION",
     "branches": [
       {
-        "topic": "Core Concepts",
+        "topic": "General and Electronic Concepts of Oxidation and…",
         "subtopics": [
           {
-            "name": "Fundamentals",
+            "name": "Key points",
             "points": [
-              "Key Definitions",
-              "Basic Theories",
-              "Historical Context"
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Properties",
-        "subtopics": [
-          {
-            "name": "Physical",
-            "points": [
-              "State",
-              "Melting/Boiling Points"
+              "Core point for 01 general and electronic concept of oxidation and reduction.",
+              "Oxidation = loss e⁻ (OIL), Reduction = gain e⁻ (RIG).",
+              "Oxidation numbers identify redox.",
+              "Galvanic cells: chemical → electrical energy.",
+              "Faraday laws: m = ZIt."
             ]
           },
           {
-            "name": "Chemical",
+            "name": "Formulas & relations",
             "points": [
-              "Reactivity",
-              "Periodic Trends"
+              "E°cell = E°cathode - E°anode",
+              "Q = It",
+              "m = ZIt (Faraday's first law)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Key statement for 01 general and electronic concept of oxidation and reduction."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on General and Electronic Concepts of Oxidation and Reduction problems - significant marks.",
+              "Recall the formula for General and Electronic Concepts of Oxidation and Reduction.",
+              "Important note regarding 01 general and electronic concept of oxidation and reduction."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic…",
+              "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is…",
+              "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter…"
             ]
           }
         ]
       },
       {
-        "topic": "Applications",
+        "topic": "Oxidation Number and Rules for Assigning It",
         "subtopics": [
           {
-            "name": "Industrial",
+            "name": "Key points",
             "points": [
-              "Manufacturing Processes",
-              "Practical Uses",
-              "Environmental Impact"
+              "Core point for 02 oxidation number and rules for assigning oxidation number.",
+              "Key concept 1 for 02 oxidation number and rules for assigning oxidation number."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Key statement for 02 oxidation number and rules for assigning oxidation number."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Oxidation Number and Rules for Assigning It problems - significant marks.",
+              "Recall the formula for Oxidation Number and Rules for Assigning It.",
+              "Important note regarding 02 oxidation number and rules for assigning oxidation number."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Balancing Redox Reactions",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core point for 03 balancing redox reactions.",
+              "Key concept 1 for 03 balancing redox reactions."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Key statement for 03 balancing redox reactions."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Balancing Redox Reactions problems - significant marks.",
+              "Recall the formula for Balancing Redox Reactions.",
+              "Important note regarding 03 balancing redox reactions."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
+              "❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons.",
+              "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals)."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Electrolysis — Qualitative and Quantitative Aspects",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core point for 04 electrolysis qualitative and quantitative aspect.",
+              "Key concept 1 for 04 electrolysis qualitative and quantitative aspect."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Key statement for 04 electrolysis qualitative and quantitative aspect."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Electrolysis — Qualitative and Quantitative Aspects problems - significant marks.",
+              "Recall the formula for Electrolysis — Qualitative and Quantitative Aspects.",
+              "Important note regarding 04 electrolysis qualitative and quantitative aspect."
             ]
           }
         ]
       }
     ]
-  },
-  "uiConfig": {
-    "allowZoom": true,
-    "showRefresh": true
   }
 }

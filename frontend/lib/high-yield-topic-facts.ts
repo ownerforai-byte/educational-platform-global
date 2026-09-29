@@ -605,7 +605,7 @@ export const HIGH_YIELD_TOPIC_BANK: HighYieldTopicData[] = [
 /** Keywords shorter than this never decide a match on their own. */
 const MIN_KEYWORD_LENGTH = 5;
 
-const ALL_HIGH_YIELD_TOPICS: HighYieldTopicData[] = [
+export const ALL_HIGH_YIELD_TOPICS: HighYieldTopicData[] = [
   ...HIGH_YIELD_TOPIC_BANK,
   ...HIGH_YIELD_TOPIC_BANK_PHYSICS,
   ...HIGH_YIELD_TOPIC_BANK_PHYSICS_2,
@@ -635,6 +635,50 @@ const ALL_HIGH_YIELD_TOPICS: HighYieldTopicData[] = [
  * electricity, …) show vectors too. Callers must treat `null` as "no curated
  * facts for this topic yet" and hide the fact-bank sections.
  */
+/**
+ * Every curated entry that claims this syllabus unit, in stable bank order.
+ *
+ * Unit-aware callers (the mindmap branch builder, the schematic generator) must
+ * use THIS rather than `getHighYieldTopicData` without a unit: an exact unit id
+ * is the only match that cannot pull another unit's facts into a topic.
+ */
+export function getHighYieldEntriesForUnit(
+  unitId: string,
+  subjectSlug?: string
+): HighYieldTopicData[] {
+  if (!unitId) return [];
+  const subject = (subjectSlug || "").toLowerCase();
+  const matches = ALL_HIGH_YIELD_TOPICS.filter((e) => e.unitSlugs?.includes(unitId));
+  if (!subject) return matches;
+  // A unit id is only unique WITHIN a subject: `vectors` is a physics unit in
+  // class 11 and a mathematics unit in class 11, and `hydrocarbons` exists in
+  // both chemistry tracks. Without this filter the physics entry was handed to
+  // the mathematics unit as well.
+  return matches.filter(
+    (e) => e.subject === "general" || subject.includes(e.subject) || e.subject.includes(subject)
+  );
+}
+
+/**
+ * Every curated entry that names one of `unitIds`, de-duplicated.
+ * Used by the topic-derived generator when a unit's exact id is not in the
+ * bank but a sibling alias of the same concept is.
+ */
+export function getHighYieldEntriesForUnits(unitIds: string[]): HighYieldTopicData[] {
+  const wanted = new Set(unitIds.filter(Boolean));
+  if (!wanted.size) return [];
+  const seen = new Set<HighYieldTopicData>();
+  const out: HighYieldTopicData[] = [];
+  for (const e of ALL_HIGH_YIELD_TOPICS) {
+    if (seen.has(e)) continue;
+    if (e.unitSlugs?.some((u) => wanted.has(u))) {
+      seen.add(e);
+      out.push(e);
+    }
+  }
+  return out;
+}
+
 export function getHighYieldTopicData(
   subjectSlug: string,
   topicSlug: string,

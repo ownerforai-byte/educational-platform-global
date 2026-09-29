@@ -3,27 +3,131 @@
   "unitSlug": "statistics-and-probability",
   "topicSlug": "statistics-and-probability-mindmap",
   "topicTitle": "statistics and probability — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Study of statistics and probability - data analysis and chance.",
-    "Covers measures of dispersion and probability laws.",
-    "Essential for data science, research, and decision making."
+    "Measures of Dispersion covers essential principles and applications.",
+    "**Measures of Dispersion:** Class 11 concept.",
+    "**Why:** connects to other topics."
   ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
   "mindmap": {
-    "centralConcept": "Statistics & Probability",
+    "centralConcept": "STATISTICS AND PROBABILITY",
     "branches": [
-      {"topic": "Dispersion", "subtopics": [
-        {"name": "Range", "points": ["Max - Min, simple but affected by outliers"]},
-        {"name": "Mean Deviation", "points": ["MD = Σ|xᵢ - x̄|/n"]},
-        {"name": "Standard Deviation", "points": ["σ = √[Σ(xᵢ-x̄)²/n]", "Variance = σ²"]},
-        {"name": "CV", "points": ["CV = (σ/x̄) × 100%, relative measure"]}
-      ]},
-      {"topic": "Probability", "subtopics": [
-        {"name": "Definitions", "points": ["Experiment, sample space, event"]},
-        {"name": "Types", "points": ["Theoretical, empirical, subjective"]},
-        {"name": "Laws", "points": ["P(A∪B) = P(A)+P(B)-P(A∩B)", "P(A') = 1-P(A)"]},
-        {"name": "Conditional", "points": ["P(A|B) = P(A∩B)/P(B)", "Independent: P(A∩B)=P(A)·P(B)"]}
-      ]}
+      {
+        "topic": "Measures of Dispersion",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Measures of Dispersion",
+              "Application of Measures of Dispersion",
+              "Connection of Measures of Dispersion to other topics",
+              "**Measures of Dispersion:** Class 11 concept.",
+              "**Why:** connects to other topics."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Measure of dispersion: standard deviation, variance, coefficient of variation,…",
+              "Statement 2: Theorem related to Measure of dispersion: standard deviation, variance, coefficient of…",
+              "Statement 3: Condition for Measure of dispersion: standard deviation, variance, coefficient of variation,…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Measures of Dispersion problems - significant marks.",
+              "Recall the formula for Measures of Dispersion.",
+              "Measures of Dispersion is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Measures of Dispersion.",
+              "Check formula conditions."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Probability â€” Definitions and Basic Laws",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Probability â€” Definitions and Basic Laws",
+              "Application of Probability â€” Definitions and Basic Laws",
+              "Connection of Probability â€” Definitions and Basic Laws to other topics",
+              "**Probability â€” Definitions and Basic Laws:** Class 11 concept.",
+              "Definition and significance of Probability â€” Definitions and Basic Laws."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Probability: independent cases, mathematical and empirical definition of…",
+              "Statement 2: Theorem related to Probability: independent cases, mathematical and empirical definition of…",
+              "Statement 3: Condition for Probability: independent cases, mathematical and empirical definition of…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Probability â€” Definitions and Basic Laws problems - significant marks.",
+              "Recall the formula for Probability â€” Definitions and Basic Laws.",
+              "Probability â€” Definitions and Basic Laws is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Probability â€” Definitions and Basic Laws."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Probability",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Probability",
+              "Application of Probability",
+              "Connection of Probability to other topics",
+              "**Probability:** Class 11 concept.",
+              "Definition and significance of Probability."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Probability",
+              "Statement 2: Theorem related to Probability",
+              "Statement 3: Condition for Probability to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Probability problems - significant marks.",
+              "Recall the formula for Probability.",
+              "Probability is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Probability."
+            ]
+          }
+        ]
+      }
     ]
   }
 }

@@ -229,6 +229,16 @@ export function TopicVerticalNotes({
 
   const activeData = sources[activeSourceIndex]?.data || supplementary;
 
+  // Notes the Visual Workspace is built from. Memoised on the objects
+  // themselves so the generated mindmap/schematic do not rebuild every render.
+  const visualConcepts = useMemo(
+    () =>
+      [activeData, supplementary].filter(
+        (c): c is RichTopicConcept => Boolean(c),
+      ),
+    [activeData, supplementary],
+  );
+
   // Extract raw lists
   const rawNotes = activeData?.notes ?? supplementary?.notes ?? [];
   const rawExamples = (activeData?.examples ?? supplementary?.examples ?? []).filter((e) => !isBoilerplate(e));
@@ -461,6 +471,8 @@ export function TopicVerticalNotes({
               topicSlug={topicSlug}
               topicTitle={topicTitle}
               unitId={unitId}
+              classSlug={classSlug}
+              concepts={visualConcepts}
             />
           )}
 
@@ -471,6 +483,8 @@ export function TopicVerticalNotes({
               topicSlug={topicSlug}
               topicTitle={topicTitle}
               unitId={unitId}
+              classSlug={classSlug}
+              concepts={visualConcepts}
             />
           )}
 

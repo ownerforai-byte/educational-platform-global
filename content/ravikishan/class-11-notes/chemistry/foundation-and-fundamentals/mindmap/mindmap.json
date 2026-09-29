@@ -3,9 +3,11 @@
   "unitSlug": "foundation-and-fundamentals",
   "topicSlug": "foundation-and-fundamentals-mindmap",
   "topicTitle": "foundation and fundamentals — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
+    "Biomolecules and cell biology: Living organisms built from four macromolecule classes; cell theory unifies all life; membrane structure enables…",
+    "Matter: anything with mass and volume.",
+    "Atoms: basic unit of elements."
   ],
   "uiConfig": {
     "allowZoom": true,
@@ -15,46 +17,180 @@
     "centralConcept": "FOUNDATION AND FUNDAMENTALS",
     "branches": [
       {
-        "topic": "Core Concepts",
+        "topic": "General Introduction and Importance of Chemistry",
         "subtopics": [
           {
-            "name": "Fundamentals",
+            "name": "Key points",
             "points": [
-              "Key Definitions",
-              "Basic Theories",
-              "Historical Context"
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Properties",
-        "subtopics": [
-          {
-            "name": "Physical",
-            "points": [
-              "State",
-              "Melting/Boiling Points"
+              "Core point for 01 general introduction and importance of chemistry.",
+              "Matter: anything with mass and volume.",
+              "Atoms: basic unit of elements.",
+              "Molecules: combinations of atoms.",
+              "Mixtures: physical combinations, separable."
             ]
           },
           {
-            "name": "Chemical",
+            "name": "Formulas & relations",
             "points": [
-              "Reactivity",
-              "Periodic Trends"
+              "$F = m \\cdot a$ (relevant formula for 01 general introduction and importance of chemistry)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Key statement for 01 general introduction and importance of chemistry."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on General Introduction and Importance of Chemistry problems - significant marks.",
+              "Recall the formula for General Introduction and Importance of Chemistry.",
+              "Important note regarding 01 general introduction and importance of chemistry."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ All cells look the same under a microscope. ✅ Prokaryotic cells lack membrane-bound organelles; eukaryotic…",
+              "❌ DNA and RNA are identical in structure. ✅ DNA is double-stranded with deoxyribose and thymine; RNA is…",
+              "❌ Mitosis produces genetically different cells. ✅ Mitosis produces genetically identical diploid daughter…"
             ]
           }
         ]
       },
       {
-        "topic": "Applications",
+        "topic": "Introduction and Importance of Chemistry",
         "subtopics": [
           {
-            "name": "Industrial",
+            "name": "Key points",
             "points": [
-              "Manufacturing Processes",
-              "Practical Uses",
-              "Environmental Impact"
+              "Core point for 01 introduction importance chemistry.",
+              "Key concept 1 for 01 introduction importance chemistry."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "$F = m \\cdot a$ (relevant formula for 01 introduction importance chemistry)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Key statement for 01 introduction importance chemistry."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Introduction and Importance of Chemistry problems - significant marks.",
+              "Recall the formula for Introduction and Importance of Chemistry.",
+              "Important note regarding 01 introduction importance chemistry."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Basic Concepts — Atoms, Molecules, Relative Masses…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core point for 02 basic concepts atoms molecules relative masses and formulae.",
+              "Key concept 1 for 02 basic concepts atoms molecules relative masses and formulae."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "$F = m \\cdot a$ (relevant formula for 02 basic concepts atoms molecules relative masses and formulae)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Key statement for 02 basic concepts atoms molecules relative masses and formulae."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Basic Concepts — Atoms, Molecules, Relative Masses and Formulae problems - significant marks.",
+              "Recall the formula for Basic Concepts — Atoms, Molecules, Relative Masses and Formulae.",
+              "Important note regarding 02 basic concepts atoms molecules relative masses and formulae."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ All atoms are identical in an element. ✅ Isotopes have same protons but different neutrons.",
+              "❌ Atoms are indivisible. ✅ Atoms consist of protons, neutrons, and electrons.",
+              "❌ Electrons orbit in fixed paths like planets. ✅ Electrons exist in probability clouds (orbitals)."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Basic Concepts: Atoms, Molecules, Formulas",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core point for 02 basic concepts atoms molecules.",
+              "Key concept 1 for 02 basic concepts atoms molecules."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "$F = m \\cdot a$ (relevant formula for 02 basic concepts atoms molecules)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Key statement for 02 basic concepts atoms molecules."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Basic Concepts: Atoms, Molecules, Formulas problems - significant marks.",
+              "Recall the formula for Basic Concepts: Atoms, Molecules, Formulas.",
+              "Important note regarding 02 basic concepts atoms molecules."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Percentage Composition from Molecular Formula",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core point for 03 percentage composition from molecular formula.",
+              "Key concept 1 for 03 percentage composition from molecular formula."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "$F = m \\cdot a$ (relevant formula for 03 percentage composition from molecular formula)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Key statement for 03 percentage composition from molecular formula."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Percentage Composition from Molecular Formula problems - significant marks.",
+              "Recall the formula for Percentage Composition from Molecular Formula.",
+              "Important note regarding 03 percentage composition from molecular formula."
             ]
           }
         ]

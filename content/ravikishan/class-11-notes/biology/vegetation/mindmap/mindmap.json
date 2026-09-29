@@ -3,127 +3,164 @@
   "unitSlug": "vegetation",
   "topicSlug": "vegetation-mindmap",
   "topicTitle": "vegetation — interactive concept map",
-  "relevance": 0,
-  "enrichedContent": {
-    "notes": [
-      "Study of plant communities and vegetation types, and conservation strategies including in-situ and ex-situ methods.",
-      "Vegetation: collective plant life in a particular region; shaped by climate, soil, and disturbances",
-      "Tropical rainforests: high rainfall, evergreen trees, highest biodiversity; found in Nepal's mid-hills",
-      "Temperate forests: deciduous and coniferous trees; moderate climate",
-      "Grasslands: dominated by grasses; found in dry regions; support grazing ecosystems",
-      "Biodiversity: variety of life at genetic, species, and ecosystem levels",
-      "In-situ conservation: protecting species in their natural habitat — national parks, conservation areas",
-      "Ex-situ conservation: protecting species outside natural habitat — botanical gardens, seed banks, zoos",
-      "Nepal's conservation approach: protected areas network including Chitwan National Park and Sagarmatha National Park"
-    ],
-    "confusion": [],
-    "practice": [],
-    "universalFacts": [
-      "Biology studies the diversity of life across approximately 8.7 million species worldwide.",
-      "The smallest living organisms are mycoplasma bacteria at 0.1 micrometers in diameter.",
-      "DNA contains the genetic instructions for the development and function of all known living organisms.",
-      "The human genome contains approximately 3 billion base pairs across 23 pairs of chromosomes.",
-      "Photosynthesis converts sunlight into chemical energy, producing approximately 130 terawatts of power globally.",
-      "Cell theory states that all living organisms are composed of one or more cells, the basic unit of life."
-    ],
-    "examples": [],
-    "practiceQuestions": [],
-    "formulas": [
-      "Basic biochemical reaction: A + B -> C + D (generic enzymatic reaction)",
-      "Photosynthesis: 6CO2 + 6H2O -> C6H12O6 + 6O2 (light-dependent reactions)",
-      "Cellular respiration: C6H12O6 + 6O2 -> 6CO2 + 6H2O + ~38 ATP",
-      "Osmosis: water moves from hypotonic to hypertonic solution across semipermeable membrane",
-      "Enzyme kinetics: v = Vmax[S] / (Km + [S]) (Michaelis-Menten equation)",
-      "pH calculation: pH = -log[H+]"
-    ],
-    "keyPoints": [
-      "Added new rich content for key Points."
-    ],
-    "summary": "",
-    "specialNotes": [
-      "Added new rich content for special Notes."
-    ],
-    "importantStatements": [
-      "Added new rich content for important Statements."
-    ],
-    "importantNotes": [
-      "Always read the question carefully to understand what is being asked.",
-      "Use diagrams to clarify complex biological processes.",
-      "Memorize key definitions and terminology for MCQ questions.",
-      "Practice numerical problems in ecology (energy transfer, population growth).",
-      "Understand the difference between homologous and analogous structures.",
-      "Review past NEB exam questions to identify frequently tested topics."
-    ],
-    "examShortTricks": [
-      "Quick recall tip: Always read the question carefully before answering.",
-      "Memory aid: Use mnemonics to remember lists and sequences.",
-      "Exam strategy: Start with questions you know best to build confidence.",
-      "Time management: Allocate time proportionally to marks available.",
-      "Diagram practice: Draw and label diagrams neatly for better visualization.",
-      "Definition memorization: Learn key definitions verbatim for maximum marks."
-    ],
-    "examNotes": [
-      "Focus on understanding concepts rather than rote memorization.",
-      "Practice drawing labeled diagrams - they carry significant marks.",
-      "Learn key definitions exactly as given in the textbook for marking purposes.",
-      "Solve numerical problems in ecology (energy transfer, population growth) regularly.",
-      "Review previous year questions to understand the exam pattern and marking scheme.",
-      "Use mnemonics and memory aids for classification and cycles."
-    ],
-    "mcs": [
-      "Added new rich content for mcs."
-    ],
-    "importantConcepts": [
-      "Added new rich content for important Concepts."
-    ],
-    "importantTasks": [
-      "Added new rich content for important Tasks."
-    ],
-    "exercises": [
-      {
-        "problem": "Define and explain the importance of the topic.",
-        "solution": "Provide a clear definition and explain why it matters in biological sciences."
-      },
-      {
-        "problem": "Give three examples of the concept discussed.",
-        "solution": "Example 1: ... Example 2: ... Example 3: ..."
-      },
-      {
-        "problem": "Compare and contrast two related concepts.",
-        "solution": "Similarities: ... Differences: ..."
-      }
-    ],
-    "visualization": {}
+  "relevance": 100,
+  "notes": [
+    "Vegetation is the natural plant cover of a region, determined by climate, altitude, soil, and human activity. Nepal's vegetation is zoned by altitude: Terai…",
+    "Vegetation introduction: the natural plant cover of a region; determined by climate, altitude, soil, and human activity.",
+    "Types of vegetation in Nepal: Terai subtropical (sal, grasslands), sub-montane (mixed deciduous), temperate (oak, rhododendron, chestnut), sub-alpine (pine,…"
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
   },
-  "originalContent": {
-    "notes": [
-      "Study of plant communities and vegetation types, and conservation strategies including in-situ and ex-situ methods.",
-      "Vegetation: collective plant life in a particular region; shaped by climate, soil, and disturbances",
-      "Tropical rainforests: high rainfall, evergreen trees, highest biodiversity; found in Nepal's mid-hills",
-      "Temperate forests: deciduous and coniferous trees; moderate climate",
-      "Grasslands: dominated by grasses; found in dry regions; support grazing ecosystems",
-      "Biodiversity: variety of life at genetic, species, and ecosystem levels",
-      "In-situ conservation: protecting species in their natural habitat — national parks, conservation areas",
-      "Ex-situ conservation: protecting species outside natural habitat — botanical gardens, seed banks, zoos",
-      "Nepal's conservation approach: protected areas network including Chitwan National Park and Sagarmatha National Park"
-    ],
-    "confusion": [],
-    "practice": [],
-    "universalFacts": [],
-    "examples": [],
-    "practiceQuestions": [],
-    "formulas": [],
-    "keyPoints": [],
-    "summary": "",
-    "specialNotes": [],
-    "importantStatements": [],
-    "importantNotes": [],
-    "examShortTricks": [],
-    "examNotes": [],
-    "mcs": [],
-    "importantConcepts": [],
-    "importantTasks": [],
-    "exercises": [],
-    "visualization": {}
+  "mindmap": {
+    "centralConcept": "VEGETATION",
+    "branches": [
+      {
+        "topic": "Vegetation — Types and Conservation",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Vegetation: natural plant cover; set by climate, altitude, soil, human activity.",
+              "Nepal types: Terai, sub-montane, temperate, sub-alpine, alpine, nival.",
+              "In-situ: protected areas, community forests, sacred groves.",
+              "Ex-situ: botanical gardens, seed banks, tissue culture, herbaria.",
+              "Natural environment-vegetation: water cycle, soil, climate, biodiversity."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Vegetation = natural plant cover; determined by climate + altitude + soil + human activity",
+              "Types in Nepal: Terai → Sub-montane → Temperate → Sub-alpine → Alpine → Nival",
+              "Human impact: jhum + grazing + firewood + logging + climate change + pollution"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Vegetation is the natural plant cover of a region, set by climate, altitude, soil, and human activity.",
+              "In-situ conservation protects vegetation in its natural habitat.",
+              "Vegetation is vital to the natural environment: it regulates the water cycle, prevents erosion, and…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Define vegetation and state its determinants.",
+              "List Nepal's vegetation types by altitude.",
+              "Explain in-situ and ex-situ vegetation conservation.",
+              "Vegetation = natural plant cover (climate + altitude + soil + human activity).",
+              "Types: Terai → Sub-montane → Temperate → Sub-alpine → Alpine → Nival."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Vegetation is the NATURAL plant cover; plantations and cultivated crops are human-made, not natural…",
+              "In-situ conservation protects vegetation IN its natural habitat; ex-situ conserves plant material OUTSIDE.",
+              "Jhum (shifting) agriculture is a major cause of hill deforestation; it is different from permanent…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Types of Vegetation in Nepal",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Vegetation is set by altitude + climate (temperature, rainfall) + soil + human activity.",
+              "Nepal zones: Terai → Sub-montane → Temperate → Sub-alpine → Alpine → Nival.",
+              "Terai: sal forest + grasslands (warm, low rainfall).",
+              "Temperate: oak, rhododendron (national flower), chestnut.",
+              "Sub-alpine: pine, fir, juniper; Alpine: meadows, dwarf shrubs, lichens."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Vegetation zones (altitude): Terai (60–1000 m) → Sub-montane (500–1500 m) → Temperate (1000–2000 m) →…",
+              "Dominant species: sal (Terai), rhododendron + oak (temperate), pine + fir (sub-alpine), meadows + lichens…"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Nepal's vegetation is zoned by altitude and climate.",
+              "The Terai is dominated by sal forest and grasslands; the temperate hills by rhododendron and oak.",
+              "The tree line ends at ~3000–4500 m; alpine vegetation is meadows and dwarf shrubs."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "List Nepal's vegetation zones by altitude with dominant species.",
+              "Explain the Terai vegetation (sal forest, grasslands).",
+              "Describe the temperate vegetation (rhododendron, oak, chestnut).",
+              "Zones: Terai → Sub-montane → Temperate → Sub-alpine → Alpine → Nival (rising).",
+              "Sal = Terai; Rhododendron + Oak = temperate; Pine + Fir = sub-alpine; Meadows = alpine."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Vegetation zones are defined by ALTITUDE + climate (rainfall, temperature), not by political boundaries.",
+              "Sal (Shorea robusta) is the dominant Terai/subtropical tree; rhododendron dominates the temperate hills.",
+              "Burning/shifting agriculture (jhum) degrades vegetation; natural regrowth is slow on poor soils."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "In-situ and Ex-situ Conservation",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Vegetation conservation: in-situ + ex-situ strategies.",
+              "Nepal: community forestry (~36% of forest land) is a global success story.",
+              "Threats: jhum, grazing, firewood, logging, climate change, pollution.",
+              "Vegetation conservation: protecting and managing natural plant cover; includes in-situ and ex-situ strategies.",
+              "In-situ conservation: protecting vegetation in its natural location — protected areas (national parks,…"
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "In-situ: protected areas + community forests + sacred groves (in natural habitat)",
+              "Ex-situ: botanical gardens + seed banks + tissue culture + herbaria (outside habitat)",
+              "Importance: oxygen + climate + soil + water + biodiversity + food + medicine + culture"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Community forestry is Nepal's successful in-situ conservation strategy.",
+              "Jhum agriculture and over-grazing are major causes of hill deforestation."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Differentiate in-situ and ex-situ vegetation conservation.",
+              "Explain community forestry in Nepal.",
+              "List the threats to Nepali vegetation.",
+              "Community forestry = ~36% of Nepal's forest land.",
+              "Jhum = shifting agriculture = major hill deforestation cause."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Community forests (in-situ) give local communities rights and responsibility; they differ from…",
+              "Jhum (shifting/slash-and-burn) agriculture is a major cause of hill deforestation; it is different from…",
+              "A sacred grove (deval-ghari) is a traditionally protected forest patch; it is a form of in-situ conservation."
+            ]
+          }
+        ]
+      }
+    ]
   }
 }

@@ -3,8 +3,80 @@
   "unitSlug": "solids",
   "topicSlug": "solids-mindmap",
   "topicTitle": "solids — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Mindmap placeholder — run content generation to create actual mindmap data."
-  ]
+    "Energy Bands in Solids covers essential principles and applications.",
+    "**Energy Bands in Solids:** Class 11 concept.",
+    "**Why:** connects to other topics."
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
+  "mindmap": {
+    "centralConcept": "SOLIDS",
+    "branches": [
+      {
+        "topic": "Energy Bands in Solids",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Energy Bands in Solids",
+              "Application of Energy Bands in Solids",
+              "Connection of Energy Bands in Solids to other topics",
+              "**Energy Bands in Solids:** Class 11 concept.",
+              "**Why:** connects to other topics."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: Definition of Energy bands in solids (qualitative ideas)",
+              "Statement 2: Theorem related to Energy bands in solids (qualitative ideas)",
+              "Statement 3: Condition for Energy bands in solids (qualitative ideas) to be valid"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Energy Bands in Solids problems - significant marks.",
+              "Recall the formula for Energy Bands in Solids.",
+              "Energy Bands in Solids is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Energy Bands in Solids.",
+              "Check formula conditions."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Intrinsic and Extrinsic Semiconductors",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Intrinsic semiconductor:** A pure semiconductor crystal with no significant impurity atoms (ppm or less).…",
+              "**Extrinsic semiconductor:** A semiconductor deliberately doped with a small concentration of impurity atoms…",
+              "**n-type doping:** Pentavalent donor atoms (Group V: P, As, Sb) are substituted for silicon atoms. Each…",
+              "**p-type doping:** Trivalent acceptor atoms (Group III: B, Al, Ga) replace silicon atoms. Each acceptor has…",
+              "**Mass-action law:** In thermal equilibrium, $np = n_i^2$ holds for any semiconductor (intrinsic or…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Confusion: Doping increases the number of charge carriers but does NOT create new charge. The semiconductor…",
+              "Confusion: In n-type semiconductors, electrons are majority carriers and holes are minority carriers. The…",
+              "Confusion: A p-type semiconductor has holes as majority carriers but is NOT positively charged overall. It…"
+            ]
+          }
+        ]
+      }
+    ]
+  }
 }

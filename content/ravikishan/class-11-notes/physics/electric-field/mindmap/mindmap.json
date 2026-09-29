@@ -5,79 +5,115 @@
   "topicTitle": "Electric Field — Mindmap and Conceptual Hierarchy",
   "relevance": 100,
   "notes": [
-    "Comprehensive conceptual breakdown of electric field, field lines, electric dipoles, electric flux, and Gauss's law applications.",
-    "Covers core NEB formulas: E = F/q₀, E = kq/r², dipole fields (axial E = 2kp/r³ vs equatorial E = kp/r³), flux Φ = ∮ E · dA, and Gauss's law Φ = Q_enc / ε₀.",
-    "Derives key geometric fields: infinite line charge (E = λ / (2πε₀r)), infinite plane sheet (E = σ / (2ε₀)), and spherical shell (E_inside = 0, E_outside = kQ/r²)."
+    "The electric field E is a vector field describing electrostatic force per unit test charge (E = F/q₀). Point charges produce radially symmetric fields falling…",
+    "**Electric Field Concept & Definition:** An electric field $\\vec{E}$ is an intrinsic vector property of space surrounding any charged distribution. It is…",
+    "**Electric Field due to an Isolated Point Charge:** Applying Coulomb's law to a source charge $q$ at position vector $\\vec{r}'$ and test charge $q_0$ at field…"
   ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
   "mindmap": {
-    "centralConcept": "Electric Field & Gauss's Law",
+    "centralConcept": "ELECTRIC FIELD",
     "branches": [
       {
-        "topic": "Electric Field Fundamentals",
+        "topic": "Electric Field Due to Point Charges and Field Lines",
         "subtopics": [
           {
-            "name": "Field Vector & Point Charges",
+            "name": "Key points",
             "points": [
-              "Definition: E = lim(q₀→0) F/q₀ (SI unit: N/C or V/m)",
-              "Field of isolated point charge: E = (1/4πε₀) · (q/r²) r̂",
-              "Superposition principle: E_net = ∑ E_i for discrete charges",
-              "Continuous distributions: E = (1/4πε₀) ∫ dq/r² r̂ (line, surface, volume)"
+              "Electric field intensity is force per unit positive test charge ($E = F/q_0$) in N/C or V/m.",
+              "Point charge field obeys inverse square law ($E \\propto 1/r^2$); short dipole field obeys inverse cube law…",
+              "Field lines point outward from positive charges and inward toward negative charges, never intersecting.",
+              "Axial field of a short dipole is exactly twice the magnitude of equatorial field at equal distance…",
+              "In a uniform electric field, an electric dipole experiences zero net force but a restoring torque…"
             ]
           },
           {
-            "name": "Electric Field Lines",
+            "name": "Formulas & relations",
             "points": [
-              "Continuous imaginary curves tangent to local field vector E",
-              "Originate at positive charges, terminate on negative charges",
-              "Lines never intersect (uniqueness of force direction)",
-              "Areal density represents field magnitude",
-              "Never form closed loops (electrostatic field is conservative: ∮ E · dr = 0)"
+              "Electric field definition: $\\vec{E} = \\frac{\\vec{F}}{q_0}$",
+              "Field of a point charge: $\\vec{E} = \\frac{1}{4\\pi\\varepsilon_0} \\frac{q}{r^2}\\hat{r}$",
+              "Electric dipole moment: $\\vec{p} = q(2\\vec{a})$",
+              "Dipole field (axial, $r \\gg a$): $\\vec{E}_{axial} = \\frac{1}{4\\pi\\varepsilon_0} \\frac{2\\vec{p}}{r^3}$",
+              "Dipole field (equatorial, $r \\gg a$): $\\vec{E}_{equatorial} = -\\frac{1}{4\\pi\\varepsilon_0}…"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Statement 1: The electric field at any point in space is the electrostatic force experienced per unit…",
+              "Statement 2: Electric field lines originate on positive charges, terminate on negative charges, and cannot…",
+              "Statement 3: The electric field due to a point charge obeys an inverse-square distance relationship (E ∝…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Derivation of electric field due to an electric dipole at axial and equatorial points is a premier 4-mark…",
+              "Dipole field ratio trick: At identical large distance r, E_axial / E_equatorial = 2.",
+              "Neutral point between like charges: E_net = 0 lies between them at distance x = d / (√(q₂/q₁) + 1) from q₁.",
+              "Acceleration of charged particle in field: a = qE / m (direction along E for positive charge, opposite E for…",
+              "Remember that the SI units N/C and V/m are completely interchangeable: 1 N/C = 1 (J/m) / C = 1 (J/C) / m = 1…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Confusing field line direction with trajectory of a moving charge: An electric field line represents the…",
+              "Assuming field lines can intersect: If two field lines crossed, a test charge at the intersection would…",
+              "Confusing the radial fall-off of dipoles versus point charges: Point charge field scales as $1/r^2$, whereas…"
             ]
           }
         ]
       },
       {
-        "topic": "Electric Dipoles",
+        "topic": "Gauss's Law and Electric Flux",
         "subtopics": [
           {
-            "name": "Dipole Moment & External Field",
+            "name": "Key points",
             "points": [
-              "Dipole moment vector: p = q(2a), directed from -q to +q",
-              "Torque in uniform external field: τ = p × E (aligns dipole with field)",
-              "Potential energy: U = -p · E (minimum at θ = 0°, maximum at θ = 180°)",
-              "Non-uniform field: experiences net force F = (p · ∇)E and torque"
+              "Electric flux is the surface integral of normal electric field: $\\Phi_E = \\int \\vec{E} \\cdot d\\vec{A}$.",
+              "Total electric flux through any closed Gaussian surface equals $Q_{enc} / \\varepsilon_0$, independent of…",
+              "External charges contribute zero net flux to a closed Gaussian surface.",
+              "Gauss's law is valid only because Coulomb's law is an exact inverse-square law ($E \\propto 1/r^2$).",
+              "In differential form, $\\vec{\\nabla} \\cdot \\vec{E} = \\rho / \\varepsilon_0$, representing Maxwell's first…"
             ]
           },
           {
-            "name": "Dipole Electric Field",
+            "name": "Formulas & relations",
             "points": [
-              "Axial position (end-on): E_axial = (1/4πε₀) · (2p/r³) along p (r ≫ a)",
-              "Equatorial position (broadside): E_equatorial = -(1/4πε₀) · (p/r³) opposite p",
-              "Ratio relation: E_axial = 2 · E_equatorial at equal distance r",
-              "Distance dependency: E ∝ 1/r³ (falls off faster than point charge 1/r²)"
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Electric Flux & Gauss's Law",
-        "subtopics": [
-          {
-            "name": "Electric Flux",
-            "points": [
-              "Elemental flux: dΦ = E · dA = E dA cos(θ)",
-              "Total flux: Φ = ∬ E · dA (SI unit: N·m²/C or V·m)",
-              "Outward normal convention: positive for exiting flux, negative for entering"
+              "Electric flux definition: $\\Phi_E = \\iint_S \\vec{E} \\cdot d\\vec{A} = \\iint_S E\\cos\\theta\\,dA$",
+              "Gauss's Law (integral form): $\\oint_S \\vec{E} \\cdot d\\vec{A} = \\frac{Q_{enc}}{\\varepsilon_0}$",
+              "Gauss's Law (differential form): $\\vec{\\nabla} \\cdot \\vec{E} = \\frac{\\rho}{\\varepsilon_0}$",
+              "Flux through one face of cube (charge at center): $\\Phi = \\frac{q}{6\\varepsilon_0}$",
+              "Flux through cube (charge at corner): $\\Phi_{total} = \\frac{q}{8\\varepsilon_0}$"
             ]
           },
           {
-            "name": "Gauss's Theorem",
+            "name": "Statements to quote",
             "points": [
-              "Integral statement: ∮_S E · dA = Q_enclosed / ε₀",
-              "Differential form (Maxwell 1): ∇ · E = ρ / ε₀",
-              "Independent of Gaussian surface size and shape",
-              "External charges produce zero net flux across closed surface",
-              "Directly equivalent to inverse-square Coulomb's law"
+              "Statement 1: Electric flux through a surface is defined as the surface integral of the electric field vector…",
+              "Statement 2: The total electric flux through any closed Gaussian surface depends solely on the net charge…",
+              "Statement 3: Charges located outside a closed Gaussian surface do not contribute to the total net electric…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "State Gauss's theorem in electrostatics and prove it for a point charge enclosed by a spherical surface…",
+              "Charge at center of cube: Flux through each of the 6 faces = q / (6ε₀).",
+              "Charge at corner of cube: Enclosing it requires 8 identical cubes; total flux through 1 cube = q / (8ε₀);…",
+              "Charge at center of face of cube: Enclosing requires 2 cubes; flux through cube = q / (2ε₀).",
+              "Remember that the SI unit of electric flux is N·m²/C or V·m, with dimensional formula [M L³ T⁻³ I⁻¹]."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Thinking electric flux requires an actual physical fluid to flow: Electric flux is purely a geometric…",
+              "Believing that zero net flux implies zero electric field everywhere: If a Gaussian surface encloses zero net…",
+              "Confusing the field $\\vec{E}$ in Gauss's law with the field produced only by enclosed charges: $\\vec{E}$ in…"
             ]
           }
         ]
@@ -86,29 +122,49 @@
         "topic": "Applications of Gauss's Law",
         "subtopics": [
           {
-            "name": "Infinite Line Charge",
+            "name": "Key points",
             "points": [
-              "Cylindrical Gaussian surface of radius r, length L",
-              "End caps contribute zero flux (E ⊥ dA)",
-              "Curved surface: E · (2πrL) = λL / ε₀",
-              "Field formula: E = λ / (2πε₀r) (inversely proportional to r)"
+              "Line charge field decreases inversely with radial distance: $E \\propto 1/r$.",
+              "Infinite sheet field is completely uniform and distance-independent: $E = \\sigma / (2\\varepsilon_0)$.",
+              "Inside any hollow conductor or spherical shell in electrostatic equilibrium, $E = 0$ (electrostatic…",
+              "Outside a spherical charge distribution, the field behaves as if all charge is concentrated at the center…",
+              "Inside a uniformly charged solid dielectric sphere, field increases linearly from center to surface ($E…"
             ]
           },
           {
-            "name": "Infinite Plane Sheet",
+            "name": "Formulas & relations",
             "points": [
-              "Cylindrical pillbox of cross-section A piercing plane",
-              "Curved surface flux = 0; two end caps: 2EA = σA / ε₀",
-              "Field formula: E = σ / (2ε₀) (independent of distance r)",
-              "Between oppositely charged plates: E = σ / ε₀; outside: E = 0"
+              "Infinite line charge: $E = \\frac{\\lambda}{2\\pi\\varepsilon_0 r} = \\frac{2k\\lambda}{r}$",
+              "Infinite non-conducting plane sheet: $E = \\frac{\\sigma}{2\\varepsilon_0}$",
+              "Conducting surface boundary: $E = \\frac{\\sigma}{\\varepsilon_0}$",
+              "Between oppositely charged plates: $E = \\frac{\\sigma}{\\varepsilon_0}$",
+              "Spherical shell (outside, $r \\ge R$): $E = \\frac{1}{4\\pi\\varepsilon_0} \\frac{Q}{r^2}$"
             ]
           },
           {
-            "name": "Charged Spherical Shell & Solid Sphere",
+            "name": "Statements to quote",
             "points": [
-              "Thin shell outside (r ≥ R): E = (1/4πε₀) · (Q/r²)",
-              "Thin shell inside (r < R): E = 0 (electrostatic shielding / Faraday cage)",
-              "Uniform non-conducting solid sphere inside (r ≤ R): E = (ρr) / (3ε₀) ∝ r"
+              "Statement 1: The electric field due to an infinitely long straight wire carrying uniform linear charge…",
+              "Statement 2: The electric field due to an infinite plane sheet of charge is uniform and completely…",
+              "Statement 3: The electric field inside a uniformly charged conducting spherical shell is identically zero…"
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Derivations for line charge, plane sheet, and spherical shell using Gauss's law are core long questions (4…",
+              "Distance dependency table: Infinite Sheet (E ∝ r⁰), Infinite Line (E ∝ 1/r), Point Charge (E ∝ 1/r²), Dipole…",
+              "Hollow shell inside: E = 0 always; potential V = constant = kQ/R.",
+              "Solid dielectric sphere inside: E(r) = (r / R) · E_surface.",
+              "Contrast the distance dependencies: point charge E ∝ 1/r², dipole E ∝ 1/r³, line charge E ∝ 1/r, infinite…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Confusing field of a non-conducting infinite sheet with a conducting plate: An isolated non-conducting sheet…",
+              "Assuming field inside a charged sphere is always zero: Inside a hollow shell or conductor, $E = 0$. However,…",
+              "Neglecting Gaussian end-caps in line charge: Students often forget to justify why the two flat circular ends…"
             ]
           }
         ]

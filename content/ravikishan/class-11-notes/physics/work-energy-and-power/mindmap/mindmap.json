@@ -3,37 +3,233 @@
   "unitSlug": "work-energy-and-power",
   "topicSlug": "work-energy-and-power-mindmap",
   "topicTitle": "work energy and power — interactive concept map",
-  "relevance": 0,
+  "relevance": 100,
   "notes": [
-    "Study of work, energy, and power - fundamental concepts in physics.",
-    "Covers work-energy theorem, conservation of energy, and power.",
-    "Essential for understanding mechanical systems."
+    "**Definition of work (constant force):** $W = F s \\\\\\\\cos\\ heta$, where $F$ is the magnitude of the constant force, $s$ is the displacement, and $\\ heta$ is…",
+    "**Sign of work:** Work is POSITIVE when $0^\\\\\\\\circ \\\\\\\\le \\ heta < 90^\\\\\\\\circ$ (force component along displacement). Work is ZERO when $\\ heta =…",
+    "**Work by multiple forces:** Total work is the sum of works by individual forces: $W_{\\ ext{net}} = \\\\\\\\sum W_i = \\\\\\\\sum F_i s \\\\\\\\cos\\ heta_i$. This is…"
   ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
+  },
   "mindmap": {
-    "centralConcept": "Work, Energy & Power",
+    "centralConcept": "WORK ENERGY AND POWER",
     "branches": [
-      {"topic": "Work", "subtopics": [
-        {"name": "Definition", "points": ["W=F·d=Fd cosθ, units: Joule (J)"]},
-        {"name": "Variable Force", "points": ["W=∫F·dx, area under F-x graph"]},
-        {"name": "Spring Work", "points": ["W=½kx²"]}
-      ]},
-      {"topic": "Energy", "subtopics": [
-        {"name": "Kinetic Energy", "points": ["KE=½mv², energy due to motion"]},
-        {"name": "Potential Energy", "points": ["Gravitational: PE=mgh, Elastic: PE=½kx²"]},
-        {"name": "Conservation", "points": ["Total mechanical energy constant (conservative forces)"]}
-      ]},
-      {"topic": "Work-Energy Theorem", "subtopics": [
-        {"name": "Statement", "points": ["W_net=ΔKE=½mv²-½mu²"]}
-      ]},
-      {"topic": "Power", "subtopics": [
-        {"name": "Definition", "points": ["P=W/t=F·v, units: Watt (W)"]},
-        {"name": "Applications", "points": ["Engine power, efficiency"]}
-      ]},
-      {"topic": "Collisions", "subtopics": [
-        {"name": "Elastic", "points": ["Momentum conserved, KE conserved, e=1"]},
-        {"name": "Inelastic", "points": ["Momentum conserved, KE not conserved, e<1"]},
-        {"name": "Perfectly Inelastic", "points": ["Stick together, e=0"]}
-      ]}
+      {
+        "topic": "Work Done by a Constant Force and a Variable Force",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "**Definition of work (constant force):** $W = F s \\\\\\\\cos\\ heta$, where $F$ is the magnitude of the constant…",
+              "**Sign of work:** Work is POSITIVE when $0^\\\\\\\\circ \\\\\\\\le \\ heta < 90^\\\\\\\\circ$ (force component along…",
+              "**Work by multiple forces:** Total work is the sum of works by individual forces: $W_{\\ ext{net}} = \\\\\\\\sum…",
+              "**Variable force definition:** When force varies with position, work is the integral of force over the…",
+              "**Work by a spring force (Hooke's law):** For an ideal spring, $F = -kx$. Work done BY the spring when…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Work is NOT force times distance in general - it is force component in the direction of displacement times…",
+              "Work done BY a force vs work done ON an object: $W_{\\ ext{by}} = -W_{\\ ext{on}}$. The work-energy theorem…",
+              "Holding a heavy object stationary: You exert a force, but displacement is zero, so $W = 0$! You get tired…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Power",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Core principle of Power",
+              "Application of Power",
+              "Connection of Power to other topics",
+              "**Power:** Class 11 concept.",
+              "**Why:** connects to other topics."
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Power is the rate of doing work: P = dW/dt = F·v.",
+              "The SI unit of power is the watt (W): 1 W = 1 J/s.",
+              "For constant force and velocity: P = Fv cos θ (dot product)."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Focus on Power problems - significant marks.",
+              "Recall the formula for Power.",
+              "Power is based on fundamental principles."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Distinguish concepts in Power.",
+              "Check formula conditions."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Conservation of Energy",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Mechanical energy (K + U) is conserved ONLY when all forces are conservative.",
+              "Friction and air resistance are non-conservative — they convert mechanical energy to heat.",
+              "The work-energy theorem (W_net = ΔK) holds for ALL forces, conservative or not.",
+              "Total energy (including thermal) is always conserved — this is the first law of thermodynamics.",
+              "Choose the reference level for PE at the lowest point to simplify calculations."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Mechanical energy conservation: K_i + U_i = K_f + U_f (only conservative forces)",
+              "Work-energy theorem: W_net = ΔK = ½mv_f² − ½mv_i²",
+              "Work by non-conservative forces: W_nc = ΔE_mech = (K_f + U_f) − (K_i + U_i)",
+              "Gravitational PE: U_g = mgh (near Earth); U = −GMm/r (universal)",
+              "Elastic PE: U_s = ½kx²; total spring energy: ½mv² + ½kx² = ½kA²"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "The law of conservation of energy: energy cannot be created or destroyed, only transformed.",
+              "Mechanical energy (K + U) is conserved when only conservative forces do work.",
+              "The work-energy theorem states that the net work on a body equals its change in kinetic energy."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Mechanical energy conservation (K_i + U_i = K_f + U_f) is the most common problem type.",
+              "Work-energy theorem (W_net = ΔK) is more general — use it when friction is present.",
+              "Pendulum and spring problems are standard — know the energy oscillation formulas.",
+              "Smooth surface shortcut: mgh = ½mv² — mass cancels, so v = √(2gh) independent of mass.",
+              "Spring shortcut: ½kA² = ½mv² — max speed v = A√(k/m)."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Energy is NOT created or destroyed — it only transforms. When a pendulum stops swinging due to friction, the…",
+              "Conservation of mechanical energy (K + U = constant) ONLY holds when ALL forces are conservative. If there…",
+              "Potential energy is NOT absolute — it is defined relative to an arbitrary zero point. A ball on a table has…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Conservative and Non-Conservative Forces",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Conservative forces (gravity, spring, electrostatic) allow potential energy definition.",
+              "Non-conservative forces (friction, air resistance) dissipate energy as heat.",
+              "The closed-loop test: if net work around a closed path is zero, the force is conservative.",
+              "When both types act, use W_nc = ΔE_mech (general energy equation).",
+              "Friction always does negative work — it removes mechanical energy from the system."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Conservative force: work depends only on endpoints; ∮F·dr = 0 (closed loop)",
+              "Non-conservative force: work depends on path; ∮F·dr ≠ 0",
+              "Work-energy relation: W_nc = ΔE_mech = (K_f + U_f) − (K_i + U_i)",
+              "Conservative force and PE: W = −ΔU (work = negative change in potential energy)",
+              "Friction work: W_f = −μNd (always negative; energy dissipated as heat)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "A force is conservative if the work done depends only on initial and final positions, not the path.",
+              "The work done by a conservative force around any closed loop is zero: ∮F·dr = 0.",
+              "Non-conservative forces dissipate mechanical energy as heat, sound, or deformation."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "The closed-loop test is the standard way to justify whether a force is conservative.",
+              "Gravity, spring, and electrostatic forces are always conservative — memorize these.",
+              "Friction and air resistance are always non-conservative — they dissipate energy.",
+              "Closed-loop test: if net work around a closed path is zero, the force is conservative.",
+              "Path-independence shortcut: gravity, spring, and electrostatic forces are always conservative."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Friction does NOT have a potential energy. Many students try to write U_friction = μmgx or something…",
+              "A force being 'conservative' does NOT mean the total energy of the system is conserved. It means mechanical…",
+              "Normal force and tension are NOT conservative forces — they are constraint forces that do zero work (they…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Elastic and Inelastic Collisions",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Elastic collision: both momentum AND kinetic energy are conserved.",
+              "Inelastic collision: momentum conserved, kinetic energy NOT conserved (some → heat/sound).",
+              "Perfectly inelastic: bodies stick together, KE loss is maximum.",
+              "Coefficient of restitution e = 1 (elastic), e = 0 (perfectly inelastic), 0 < e < 1 (inelastic).",
+              "Equal-mass elastic collision (one at rest): the masses exchange velocities."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Elastic collision (1D): v₁ = [(m₁−m₂)u₁ + 2m₂u₂]/(m₁+m₂); v₂ = [(m₂−m₁)u₂ + 2m₁u₁]/(m₁+m₂)",
+              "Perfectly inelastic: m₁u₁ + m₂u₂ = (m₁+m₂)v (common velocity v)",
+              "Coefficient of restitution: e = (v₂ − v₁)/(u₁ − u₂) = relative speed of separation / relative speed of…",
+              "KE loss in inelastic collision: ΔK = ½μv_rel²(1 − e²), where μ = m₁m₂/(m₁+m₂)",
+              "Equal mass elastic (one at rest): v₁ = 0, v₂ = u₁ (velocities exchanged)"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "In an elastic collision, both total momentum and total kinetic energy are conserved.",
+              "In an inelastic collision, momentum is conserved but kinetic energy is not — some converts to internal energy.",
+              "In a perfectly inelastic collision, the colliding bodies stick together and move with a common velocity."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "One-dimensional elastic collision formulas are standard — know how to derive and apply them.",
+              "Equal-mass elastic collision (one at rest): the moving mass stops, the stationary one moves off at the…",
+              "Perfectly inelastic collision: find the common velocity using momentum conservation, then compute KE loss.",
+              "Equal mass shortcut: if m₁ = m₂ and the collision is elastic, the masses exchange velocities.",
+              "Perfectly inelastic shortcut: bodies stick together → use m₁u₁ + m₂u₂ = (m₁ + m₂)v to find the common…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "In a perfectly inelastic collision, the objects DO NOT lose ALL their kinetic energy. They lose the MAXIMUM…",
+              "The coefficient of restitution e is NOT the ratio of final to initial KE. e = (v₂ - v₁)/(u₁ - u₂) is the…",
+              "Momentum is ALWAYS conserved in an isolated system (no external forces). Kinetic energy is ONLY conserved in…"
+            ]
+          }
+        ]
+      }
     ]
   }
 }

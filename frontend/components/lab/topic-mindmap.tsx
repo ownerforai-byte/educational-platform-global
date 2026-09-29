@@ -23,6 +23,10 @@ import {
 } from "lucide-react";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import {
+  resolveVisualBranches,
+  type ConceptNoteLike,
+} from "@/lib/topic-visuals";
+import {
   KnowledgeBlock,
   SymbolLegend,
   examSymbol,
@@ -102,6 +106,14 @@ interface TopicMindMapProps {
   topicSlug: string;
   topicTitle: string;
   unitId?: string;
+  /** Class track — keeps a shared unit id on its own title and topics. */
+  classSlug?: string;
+  /**
+   * The topic's own loaded concept notes, when the page has them. They ground
+   * the generated tree in the actual lesson content; without them the tree is
+   * still built from the unit's own syllabus scope.
+   */
+  concepts?: ConceptNoteLike[];
   className?: string;
 }
 
@@ -113,6 +125,8 @@ export function TopicMindMap({
   topicSlug,
   topicTitle,
   unitId,
+  classSlug,
+  concepts,
   className = "",
 }: TopicMindMapProps) {
   const [activeBranchId, setActiveBranchId] = useState<string | null>(null);
@@ -210,6 +224,23 @@ export function TopicMindMap({
 
     const unitConcept = getUnitConcept(unitId || "", topicSlug, topicTitle);
     if (unitConcept) return unitConcept.branches;
+
+    // ─────────────────────────────────────────────────────────────
+    // 1. TOPIC-DERIVED TREE — built from THIS topic's own syllabus scope and
+    //    knowledge (its unit's curated bank entry + its own loaded notes).
+    //    This is what replaced the shared subject-level tree: every unit's
+    //    scope statements, laws, formulas, numericals and traps are its own,
+    //    so two units can no longer render an identical tree.
+    // ─────────────────────────────────────────────────────────────
+    const derived = resolveVisualBranches({
+      subjectSlug,
+      classSlug,
+      unitId,
+      topicSlug,
+      topicTitle,
+      concepts,
+    });
+    if (derived.branches.length) return derived.branches;
 
     // ─────────────────────────────────────────────────────────────
     // 1. BIOLOGY TOPICS
@@ -1918,7 +1949,7 @@ export function TopicMindMap({
         nodes: [],
       },
     ];
-  }, [subjectSlug, unitId, topicSlug, topicTitle]);
+  }, [subjectSlug, classSlug, unitId, topicSlug, topicTitle, concepts]);
 
   // Flatten nodes for canvas and compute filtered branches
   const branches: MindMapBranch[] = useMemo(() => {

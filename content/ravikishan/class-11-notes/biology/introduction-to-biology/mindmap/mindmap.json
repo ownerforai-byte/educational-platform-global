@@ -3,127 +3,118 @@
   "unitSlug": "introduction-to-biology",
   "topicSlug": "introduction-to-biology-mindmap",
   "topicTitle": "introduction to biology — interactive concept map",
-  "relevance": 0,
-  "enrichedContent": {
-    "notes": [
-      "Introduction to biology as a science — its scope, branches, levels of organisation, and relationship with other sciences.",
-      "Biology: scientific study of living organisms and their interactions (Greek: bios=life, logos=study)",
-      "Father of biology: Aristotle; father of botany: Theophrastus; father of medicine: Hippocrates",
-      "Levels of organisation: molecule → organelle → cell → tissue → organ → organ system → organism → population → community → ecosystem → biosphere",
-      "Major branches: botany (plants), zoology (animals), microbiology (microorganisms)",
-      "Botany sub-disciplines: phycology, bryology, pteridology, mycology, paleobotany",
-      "Zoology sub-disciplines: entomology, ornithology, mammalogy, herpetology, ichthyology",
-      "Biology relates to chemistry (biochemistry), physics (biophysics), mathematics (biostatistics)",
-      "Biotechnology: application of living systems to develop products; medicine, agriculture, industry"
-    ],
-    "confusion": [],
-    "practice": [],
-    "universalFacts": [
-      "Biology studies the diversity of life across approximately 8.7 million species worldwide.",
-      "The smallest living organisms are mycoplasma bacteria at 0.1 micrometers in diameter.",
-      "DNA contains the genetic instructions for the development and function of all known living organisms.",
-      "The human genome contains approximately 3 billion base pairs across 23 pairs of chromosomes.",
-      "Photosynthesis converts sunlight into chemical energy, producing approximately 130 terawatts of power globally.",
-      "Cell theory states that all living organisms are composed of one or more cells, the basic unit of life."
-    ],
-    "examples": [],
-    "practiceQuestions": [],
-    "formulas": [
-      "Basic biochemical reaction: A + B -> C + D (generic enzymatic reaction)",
-      "Photosynthesis: 6CO2 + 6H2O -> C6H12O6 + 6O2 (light-dependent reactions)",
-      "Cellular respiration: C6H12O6 + 6O2 -> 6CO2 + 6H2O + ~38 ATP",
-      "Osmosis: water moves from hypotonic to hypertonic solution across semipermeable membrane",
-      "Enzyme kinetics: v = Vmax[S] / (Km + [S]) (Michaelis-Menten equation)",
-      "pH calculation: pH = -log[H+]"
-    ],
-    "keyPoints": [
-      "Added new rich content for key Points."
-    ],
-    "summary": "",
-    "specialNotes": [
-      "Added new rich content for special Notes."
-    ],
-    "importantStatements": [
-      "Added new rich content for important Statements."
-    ],
-    "importantNotes": [
-      "Always read the question carefully to understand what is being asked.",
-      "Use diagrams to clarify complex biological processes.",
-      "Memorize key definitions and terminology for MCQ questions.",
-      "Practice numerical problems in ecology (energy transfer, population growth).",
-      "Understand the difference between homologous and analogous structures.",
-      "Review past NEB exam questions to identify frequently tested topics."
-    ],
-    "examShortTricks": [
-      "Quick recall tip: Always read the question carefully before answering.",
-      "Memory aid: Use mnemonics to remember lists and sequences.",
-      "Exam strategy: Start with questions you know best to build confidence.",
-      "Time management: Allocate time proportionally to marks available.",
-      "Diagram practice: Draw and label diagrams neatly for better visualization.",
-      "Definition memorization: Learn key definitions verbatim for maximum marks."
-    ],
-    "examNotes": [
-      "Focus on understanding concepts rather than rote memorization.",
-      "Practice drawing labeled diagrams - they carry significant marks.",
-      "Learn key definitions exactly as given in the textbook for marking purposes.",
-      "Solve numerical problems in ecology (energy transfer, population growth) regularly.",
-      "Review previous year questions to understand the exam pattern and marking scheme.",
-      "Use mnemonics and memory aids for classification and cycles."
-    ],
-    "mcs": [
-      "Added new rich content for mcs."
-    ],
-    "importantConcepts": [
-      "Added new rich content for important Concepts."
-    ],
-    "importantTasks": [
-      "Added new rich content for important Tasks."
-    ],
-    "exercises": [
-      {
-        "problem": "Define and explain the importance of the topic.",
-        "solution": "Provide a clear definition and explain why it matters in biological sciences."
-      },
-      {
-        "problem": "Give three examples of the concept discussed.",
-        "solution": "Example 1: ... Example 2: ... Example 3: ..."
-      },
-      {
-        "problem": "Compare and contrast two related concepts.",
-        "solution": "Similarities: ... Differences: ..."
-      }
-    ],
-    "visualization": {}
+  "relevance": 100,
+  "notes": [
+    "Biology is the scientific study of living organisms, from molecules (DNA, proteins) to the entire biosphere. It encompasses branches such as Botany, Zoology,…",
+    "Biology: the study of living organisms (Greek: bios = life, logos = study).",
+    "Scope: from molecules (DNA, proteins) to cells, tissues, organs, organisms, populations, communities, ecosystems, and the biosphere."
+  ],
+  "uiConfig": {
+    "allowZoom": true,
+    "showRefresh": true
   },
-  "originalContent": {
-    "notes": [
-      "Introduction to biology as a science — its scope, branches, levels of organisation, and relationship with other sciences.",
-      "Biology: scientific study of living organisms and their interactions (Greek: bios=life, logos=study)",
-      "Father of biology: Aristotle; father of botany: Theophrastus; father of medicine: Hippocrates",
-      "Levels of organisation: molecule → organelle → cell → tissue → organ → organ system → organism → population → community → ecosystem → biosphere",
-      "Major branches: botany (plants), zoology (animals), microbiology (microorganisms)",
-      "Botany sub-disciplines: phycology, bryology, pteridology, mycology, paleobotany",
-      "Zoology sub-disciplines: entomology, ornithology, mammalogy, herpetology, ichthyology",
-      "Biology relates to chemistry (biochemistry), physics (biophysics), mathematics (biostatistics)",
-      "Biotechnology: application of living systems to develop products; medicine, agriculture, industry"
-    ],
-    "confusion": [],
-    "practice": [],
-    "universalFacts": [],
-    "examples": [],
-    "practiceQuestions": [],
-    "formulas": [],
-    "keyPoints": [],
-    "summary": "",
-    "specialNotes": [],
-    "importantStatements": [],
-    "importantNotes": [],
-    "examShortTricks": [],
-    "examNotes": [],
-    "mcs": [],
-    "importantConcepts": [],
-    "importantTasks": [],
-    "exercises": [],
-    "visualization": {}
+  "mindmap": {
+    "centralConcept": "INTRODUCTION TO BIOLOGY",
+    "branches": [
+      {
+        "topic": "Introduction to Biology — Scope and Fields",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Biology: the study of living organisms.",
+              "Scope: from molecules to the biosphere (9 levels).",
+              "Branches: Botany, Zoology, Microbiology, Genetics, Ecology, Physiology, Anatomy, Taxonomy, Biotechnology.",
+              "Characteristics of life: cellular, metabolism, homeostasis, growth, reproduction, response, evolution.",
+              "Scientific method: observation → hypothesis → experiment → conclusion."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Biology = Bios (life) + Logos (study) = the study of living organisms",
+              "Scope: molecule → cell → tissue → organ → organism → population → community → ecosystem → biosphere",
+              "Scientific method: Observation → Question → Hypothesis → Experiment → Data → Conclusion"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Biology is the scientific study of living organisms.",
+              "Life spans from molecules to the biosphere (9 organisational levels).",
+              "All living things share 7 fundamental characteristics."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Define biology and state its scope (9 levels).",
+              "List 8 branches of biology with one focus each.",
+              "State the 7 characteristics of life.",
+              "Biology = B-I-O (Basic, Investigative, Organic) = life study.",
+              "Characteristics: C-M-H-G-R-R-E (Cellular, Metabolism, Homeostasis, Growth, Reproduction, Response, Evolution)."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Biology is NOT the same as medicine or agriculture; it is the foundational science, and medicine/agriculture…",
+              "Botany studies plants (including algae and fungi in some systems); Zoology studies animals.",
+              "Microbiology includes bacteria, viruses, fungi, protists; it overlaps with botany and zoology."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Relation of Biology with Other Sciences",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "Biology is interconnected with Chemistry, Physics, Mathematics, and Earth Science.",
+              "Biochemistry: the chemistry of life (metabolism, enzymes, macromolecules).",
+              "Biophysics: physics applied to biology (nerve conduction, muscle, imaging).",
+              "Biostatistics: mathematics used in biology (genetics, populations, experiments).",
+              "Geobiology: interaction of life with Earth (fossils, climate, cycles)."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Biochemistry: metabolic pathways (glycolysis, Krebs, ETS) → energy (ATP)",
+              "Biophysics: nerve conduction (action potential), muscle mechanics, imaging (MRI)",
+              "Biostatistics: Punnett squares, Hardy-Weinberg, population models",
+              "Geobiology: fossil records, biogeochemical cycles, palaeoclimate"
+            ]
+          },
+          {
+            "name": "Statements to quote",
+            "points": [
+              "Biology is an interdisciplinary science that relies on and contributes to other sciences.",
+              "Biochemistry studies the chemistry of living systems.",
+              "Biophysics applies physics to biological problems."
+            ]
+          },
+          {
+            "name": "Exam focus",
+            "points": [
+              "Explain how biology relates to chemistry (biochemistry).",
+              "Describe the role of physics in biology (biophysics).",
+              "Explain how mathematics is used in biology (biostatistics).",
+              "Biology = B-I-O (Bio-Interconnected with Other sciences).",
+              "Biochem = chemistry of life; Biophys = physics of life; Biostats = math of life."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "Biochemistry is NOT the same as organic chemistry; it focuses on the chemistry of living systems…",
+              "Biophysics applies physics to biological problems; it is not \"physics of life\" in a vague sense.",
+              "Biostatistics is a branch of statistics, not a branch of biology; it is used BY biologists."
+            ]
+          }
+        ]
+      }
+    ]
   }
 }
