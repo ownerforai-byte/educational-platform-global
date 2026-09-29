@@ -337,7 +337,12 @@
       "Solve 5 connected-body problems finding both acceleration and internal contact forces."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Inertial Frame Requirement:** Newton's laws ($F=ma$) hold only in inertial reference frames. In accelerating (non-inertial) frames, a pseudo-force $-ma_{frame}$ must be added to the FBD to make the equations valid.",
+      "**FBD Completeness:** The free-body diagram must include *all* forces acting ON the chosen body: weight, normal, friction, tension, applied forces. Forces exerted BY the body on other objects do NOT belong in its FBD.",
+      "**Friction Direction Logic:** Friction always opposes *relative motion or its tendency*. Static friction can act in the direction of motion (e.g., walking forward, car accelerating) — determine direction by asking 'which way would the surface slip without friction?'"
+    ]
   },
   "notes": [
     "**The problem-solving framework (the 'FBD method'):** (1) isolate the body, (2) draw ALL forces acting ON it (weight, normal, friction, tension, applied), (3) choose axes (one along acceleration), (4) write ΣF = ma for each axis, (5) solve. Every single NEB numerical follows this pattern.",
@@ -399,7 +404,6 @@
     "Action-reaction pairs act on different bodies — never cancel in a single FBD.",
     "On a frictionless incline, all bodies slide at the same rate (independent of mass)."
   ],
-  "summary": "Newton's second law (ΣF = ma) applied through free-body diagrams solves every mechanics problem: elevators (apparent weight), Atwood's machine, connected bodies, inclined planes (smooth and rough), and objects in fluids. The key is correct isolation of the body and accurate force identification.",
   "specialNotes": [
     "Always draw the FBD BEFORE writing equations — a wrong diagram guarantees a wrong answer.",
     "Choose one axis along the direction of acceleration — this makes ma appear on only one axis.",
@@ -435,6 +439,21 @@
     "Connected-body problems test both system thinking (find a) and isolation thinking (find contact forces).",
     "Apparent weight in fluids and elevators uses the same ΣF = ma framework — recognize the pattern."
   ],
+  "importantConcepts": [
+    "Newton's second law (ΣF = ma) is the master equation connecting forces to motion in mechanics.",
+    "The free-body diagram (FBD) is the essential first step — it identifies all forces acting on a single body.",
+    "Apparent weight changes with acceleration: N = m(g ± a) — the basis of weightlessness.",
+    "Atwood's machine and connected bodies demonstrate how tension transmits force between bodies.",
+    "On an inclined plane, weight decomposes into mg sin θ (along slope) and mg cos θ (into slope)."
+  ],
+  "importantTasks": [
+    "Draw free-body diagrams for 10 different mechanical scenarios and write the ΣF = ma equations.",
+    "Solve 5 elevator problems computing apparent weight for upward, downward, and free-fall cases.",
+    "Solve 5 Atwood's machine problems for acceleration and tension.",
+    "Solve 5 inclined-plane problems (smooth and rough) for acceleration and critical angle.",
+    "Solve 5 connected-body problems finding both acceleration and internal contact forces."
+  ],
+  "summary": "Newton's second law (ΣF = ma) applied through free-body diagrams solves every mechanics problem: elevators (apparent weight), Atwood's machine, connected bodies, inclined planes (smooth and rough), and objects in fluids. The key is correct isolation of the body and accurate force identification.",
   "mcs": [
     {
       "question": "A block of mass 5 kg rests on a smooth inclined plane at 30°. Its acceleration down the plane is: (g = 10 m/s²)",
@@ -486,20 +505,5 @@
       ],
       "answer": "B"
     }
-  ],
-  "importantConcepts": [
-    "Newton's second law (ΣF = ma) is the master equation connecting forces to motion in mechanics.",
-    "The free-body diagram (FBD) is the essential first step — it identifies all forces acting on a single body.",
-    "Apparent weight changes with acceleration: N = m(g ± a) — the basis of weightlessness.",
-    "Atwood's machine and connected bodies demonstrate how tension transmits force between bodies.",
-    "On an inclined plane, weight decomposes into mg sin θ (along slope) and mg cos θ (into slope)."
-  ],
-  "importantTasks": [
-    "Draw free-body diagrams for 10 different mechanical scenarios and write the ΣF = ma equations.",
-    "Solve 5 elevator problems computing apparent weight for upward, downward, and free-fall cases.",
-    "Solve 5 Atwood's machine problems for acceleration and tension.",
-    "Solve 5 inclined-plane problems (smooth and rough) for acceleration and critical angle.",
-    "Solve 5 connected-body problems finding both acceleration and internal contact forces."
-  ],
-  "visualization": {}
+  ]
 }

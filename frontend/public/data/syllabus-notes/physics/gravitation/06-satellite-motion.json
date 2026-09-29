@@ -343,7 +343,12 @@
       "Explain weightlessness in orbit in terms of free fall."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Orbital Velocity Derivation:** $v_0 = \\sqrt{GM/r}$ comes from equating gravitational force to centripetal force: $GMm/r^2 = mv_0^2/r$. This applies to *circular* orbits around a spherically symmetric mass. The satellite's mass cancels out — all satellites at the same radius have the same speed.",
+      "**Period Law:** $T = 2\\pi\\sqrt{r^3/GM}$ is Kepler's third law for circular orbits. Squaring gives $T^2 \\propto r^3$, independent of satellite mass. This is valid only for bound circular/elliptical orbits — not for escape trajectories ($E \\ge 0$).",
+      "**Energy Relations:** For circular orbits: $K = GMm/2r$, $U = -GMm/r$, $E = -GMm/2r$. Notice $K = -U/2$ and $E = U/2$. The negative total energy confirms a bound orbit. To raise an orbit, you ADD energy (thrust), but the orbital speed *decreases* because $v_0 \\propto 1/\\sqrt{r}$."
+    ]
   },
   "notes": [
     "**Orbital velocity (v₀):** a satellite stays in a circular orbit when the gravitational pull $GMm/r^2$ provides the required centripetal force $mv^2/r$. Equating: $GMm/r^2 = mv_0^2/r \\rightarrow v_0 = \\sqrt{GM/r}$. Near Earth's surface, $v_0 = \\sqrt{gR} \\approx 7.9 \\text{ km/s}$.",
@@ -407,7 +412,6 @@
     "$E_{total} = -\\frac{GMm}{2r}$: bound orbit, with $K = -U/2$.",
     "Astronauts float because of free fall, not absence of gravity."
   ],
-  "summary": "A satellite orbits when gravity supplies the centripetal force: $v_0 = \\sqrt{GM/r}$ and $T = 2\\pi\\sqrt{r^3/GM}$. Energy is $K = \\frac{GMm}{2r}$, $U = -\\frac{GMm}{r}$, $E = -\\frac{GMm}{2r}$. Orbital speed is mass-independent; higher orbits are slower but longer-period. Weightlessness arises from continuous free fall.",
   "specialNotes": [
     "r is measured from the centre of Earth: $r = R + h$, never forget to add the radius.",
     "Orbital speed is ~7.9 km/s at the surface, 7.66 km/s at the ISS altitude, 3.08 km/s at geostationary.",
@@ -443,6 +447,21 @@
     "Conceptual: 'why do astronauts float?' — answer free fall.",
     "Geostationary orbit numbers (35,800 km, 3.08 km/s) are exam favourites."
   ],
+  "importantConcepts": [
+    "Orbital velocity $v_0 = \\sqrt{GM/r}$ follows from gravity = centripetal force.",
+    "Period $T = 2\\pi\\sqrt{r^3/GM}$ — Kepler's third law.",
+    "Orbital speed is independent of satellite mass.",
+    "Energy: $K = \\frac{GMm}{2r}$, $U = -\\frac{GMm}{r}$, $E = -\\frac{GMm}{2r}$.",
+    "Weightlessness = free fall."
+  ],
+  "importantTasks": [
+    "Derive $v_0 = \\sqrt{GM/r}$ and $T = 2\\pi\\sqrt{r^3/GM}$.",
+    "Compute v and T for a satellite at a given altitude (R + h).",
+    "Compute K, U and E for a given orbit.",
+    "Find the geostationary altitude from T = 24 h.",
+    "Explain weightlessness in orbit in terms of free fall."
+  ],
+  "summary": "A satellite orbits when gravity supplies the centripetal force: $v_0 = \\sqrt{GM/r}$ and $T = 2\\pi\\sqrt{r^3/GM}$. Energy is $K = \\frac{GMm}{2r}$, $U = -\\frac{GMm}{r}$, $E = -\\frac{GMm}{2r}$. Orbital speed is mass-independent; higher orbits are slower but longer-period. Weightlessness arises from continuous free fall.",
   "mcs": [
     {
       "question": "The orbital velocity of a satellite is given by:",
@@ -494,20 +513,5 @@
       ],
       "answer": "B"
     }
-  ],
-  "importantConcepts": [
-    "Orbital velocity $v_0 = \\sqrt{GM/r}$ follows from gravity = centripetal force.",
-    "Period $T = 2\\pi\\sqrt{r^3/GM}$ — Kepler's third law.",
-    "Orbital speed is independent of satellite mass.",
-    "Energy: $K = \\frac{GMm}{2r}$, $U = -\\frac{GMm}{r}$, $E = -\\frac{GMm}{2r}$.",
-    "Weightlessness = free fall."
-  ],
-  "importantTasks": [
-    "Derive $v_0 = \\sqrt{GM/r}$ and $T = 2\\pi\\sqrt{r^3/GM}$.",
-    "Compute v and T for a satellite at a given altitude (R + h).",
-    "Compute K, U and E for a given orbit.",
-    "Find the geostationary altitude from T = 24 h.",
-    "Explain weightlessness in orbit in terms of free fall."
-  ],
-  "visualization": {}
+  ]
 }

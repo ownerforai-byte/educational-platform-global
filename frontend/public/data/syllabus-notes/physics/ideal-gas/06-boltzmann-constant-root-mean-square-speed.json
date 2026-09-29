@@ -41,103 +41,10 @@
   ],
   "animation3D": "ideal-gas",
   "motionGraphics": "ideal-gas",
-  "visualType": "rms-speed"
-,
-  "summary": "The Boltzmann constant k_B = R/N_A = 1.38 × 10⁻²³ J/K is the bridge between microscopic molecular behaviour and macroscopic thermodynamics, and it sets the energy scale of a single molecule. Three characteristic molecular speeds follow from it, all proportional to √(T/M): the root-mean-square speed v_rms = √(3RT/M) ≈ 479 m/s for air at 273 K, the most probable speed v_p = √(2RT/M) at which the Maxwell-Boltzmann distribution peaks, and the mean speed v_mean = √(8RT/πM), with v_p < v_mean < v_rms always. Lighter molecules move faster, so hydrogen at roughly 1650 to 1760 m/s greatly outpaces air. Molecular heat capacities follow the same counting argument: a monatomic gas has only translational freedom, giving C_V = 3R/2, C_P = 5R/2 and γ = 5/3, while an ordinary diatomic gas adds two rotational degrees of freedom to give C_V = 5R/2, C_P = 7R/2 and γ = 7/5. At high temperatures vibration activates and γ falls towards 9/7, and for solids the Dulong-Petit law gives a molar heat capacity of about 3R ≈ 25 J/(mol·K).",
-  "importantConcepts": [
-    "Boltzmann constant k_B = R/N_A = 1.38 × 10⁻²³ J/K, linking the microscopic and macroscopic descriptions of a gas.",
-    "Root-mean-square speed v_rms = √(3RT/M), about 479 m/s for air at 273 K and 484 m/s at 300 K.",
-    "Most probable speed v_p = √(2RT/M), the speed at which the Maxwell-Boltzmann distribution peaks.",
-    "Mean speed v_mean = √(8RT/πM), the average over all molecular speeds, always ordered v_p < v_mean < v_rms.",
-    "Monatomic heat capacities C_V = 3R/2 and C_P = 5R/2 with γ = 5/3, from three translational degrees of freedom only.",
-    "Diatomic heat capacities C_V = 5R/2 and C_P = 7R/2 with γ = 7/5 at ordinary temperatures, from three translational plus two rotational degrees of freedom."
-  ],
-  "importantStatements": [
-    "The Boltzmann constant is k_B = R/N_A = 1.38 × 10⁻²³ J/K.",
-    "The root-mean-square speed of a gas is v_rms = √(3RT/M), so lighter molecules move faster at the same temperature.",
-    "The most probable speed is v_p = √(2RT/M) and the mean speed is v_mean = √(8RT/πM).",
-    "For a monatomic ideal gas C_V = 3R/2, C_P = 5R/2 and γ = 5/3.",
-    "The Dulong-Petit law gives a molar heat capacity of about 3R ≈ 25 J/(mol·K) for most solid elements at room temperature."
-  ],
-  "importantTasks": [
-    "Calculate the root-mean-square, most probable or mean speed of a gas from its molar mass and temperature.",
-    "Rank the three characteristic speeds of a gas and justify the ordering.",
-    "Determine γ and the molar heat capacities of a monatomic or diatomic gas from its degrees of freedom.",
-    "Compare the speeds of two different gases at the same temperature and explain the difference in terms of molar mass."
-  ],
-  "keyPoints": [
-    "All three speeds scale as √(T/M), so doubling the temperature raises the speed by √2 and doubling the molar mass lowers it by √2.",
-    "The ordering v_p < v_mean < v_rms holds for every gas and is worth memorising as a single line.",
-    "C_V = 3R/2 is valid only for monatomic gases; diatomic gases add two rotational degrees of freedom.",
-    "γ is not a constant of nature: it is 5/3 for monatomic, 7/5 for ordinary diatomic, and falls towards 9/7 when vibration is excited at high temperature.",
-    "Hydrogen molecules move roughly three to four times faster than nitrogen at the same temperature because their molar mass is so much smaller."
-  ],
-  "specialNotes": [
-    "The ratio γ = C_P/C_V is not always 5/3 or 7/5: it depends on temperature and molecular structure, and falls towards 9/7 when vibrational modes are excited at high temperature.",
-    "C_V = 3R/2 applies only to monatomic ideal gases; diatomic and polyatomic gases gain rotational and sometimes vibrational contributions.",
-    "For a diatomic gas at very high temperature the rotational modes are fully excited and C_V approaches 4R while C_P approaches 5R.",
-    "The three speeds are not interchangeable: v_p is where the distribution peaks, v_mean is the plain average, and v_rms is the square-root-mean-square, which is the largest of the three.",
-    "Molar mass must be in kg/mol for the speed formulas to give metres per second, so use 0.028 for nitrogen and 0.004 for helium."
-  ],
-  "examShortTricks": [
-    "All three speed formulas differ only in the numerator, 2, 8/π and 3, so once you know v_p the others are quick multiples.",
-    "Convert molar mass to kg/mol before substituting; using 28 instead of 0.028 for nitrogen makes the answer wrong by a factor of √1000.",
-    "Read the question carefully for which speed is wanted, since v_rms, v_p and v_mean give visibly different numbers for the same gas.",
-    "Count degrees of freedom to fix γ: 3 for monatomic giving 5/3, 5 for diatomic giving 7/5."
-  ],
-  "examNotes": [
-    "A three mark numerical on the root-mean-square speed of a named gas at a stated temperature is one of the most common questions in this unit.",
-    "Questions asking for the most probable or mean speed, or for a comparison of two gases, appear regularly.",
-    "One mark recall asks for the value of the Boltzmann constant and its role as the microscopic link.",
-    "Heat capacity ratios for monatomic and diatomic gases are a standard two or three mark item."
-  ],
-  "practiceQuestions": [
-    "Calculate the root-mean-square speed of nitrogen molecules, M = 0.028 kg/mol, at 350 K.",
-    "Find the most probable speed of helium atoms, M = 0.004 kg/mol, at 400 K.",
-    "Show that v_p < v_mean < v_rms for any gas and state the numerical coefficients involved.",
-    "A gas has γ = 1.4. Identify whether it is monatomic or diatomic and state its degrees of freedom.",
-    "Explain, using v_rms = √(3RT/M), why hydrogen molecules move much faster than nitrogen molecules at the same temperature."
-  ],
-  "mcs": [
-    {
-      "question": "The value of the Boltzmann constant is:",
-      "options": [
-        "1.38 × 10⁻²³ J/K",
-        "8.314 J/(mol·K)",
-        "6.626 × 10⁻³⁴ J·s",
-        "9.81 m/s²"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "The root-mean-square speed of a gas is proportional to:",
-      "options": [
-        "T/M",
-        "√(T/M)",
-        "M/T",
-        "√(M/T)"
-      ],
-      "answer": "B"
-    },
-    {
-      "question": "For a monatomic ideal gas, γ = C_P/C_V equals:",
-      "options": [
-        "1",
-        "7/5",
-        "5/3",
-        "9/7"
-      ],
-      "answer": "C"
-    },
-    {
-      "question": "The correct ordering of molecular speeds is:",
-      "options": [
-        "v_rms < v_mean < v_p",
-        "v_p < v_mean < v_rms",
-        "v_mean < v_p < v_rms",
-        "v_p < v_rms < v_mean"
-      ],
-      "answer": "B"
-    }
+  "visualType": "rms-speed",
+  "specificConditions": [
+    "**Boltzmann Constant as Bridge:** $k_B = R/N_A = 1.38 \times 10^{-23}$ J/K connects microscopic ($k_B$) and macroscopic ($R$) thermodynamics. It relates energy per degree of freedom ($\frac{1}{2}k_B T$) to temperature.",
+    "**Speed Hierarchy:** For the Maxwell-Boltzmann distribution: $v_p = \\sqrt{2RT/M}$, $\bar{v} = \\sqrt{8RT/\\pi M}$, $v_{rms} = \\sqrt{3RT/M}$. The order is always $v_p < \bar{v} < v_{rms}$ with ratios $\\sqrt{2} : \\sqrt{8/\\pi} : \\sqrt{3} \\approx 1.414 : 1.596 : 1.732$.",
+    "**Heat Capacity and DOF:** $C_V = \frac{f}{2}R$, $C_P = C_V + R = \frac{f+2}{2}R$, where $f$ is active degrees of freedom. Monatomic: $f=3$ (translational only). Diatomic: $f=5$ (3 trans + 2 rot) at room temp. Vibrational modes activate at high temperatures."
   ]
 }

@@ -1,7 +1,12 @@
 # PLANS — Typed content core + live formulas (JSON stays the storage format)
 
-Status: approved-in-principle, not started. Branch: `feature/notes`
-(worktree `../rn.worktrees/feature/notes`). `main` is the only deployable branch.
+Status: **Phase 1 APPLIED on `main`** (schema tree + validate/repair CLI + corpus
+test + CI workflow + baseline ratchet, landed in `73793f3b`); the §4.2 `formula.ts`
+and §4.6 `syllabus-ref.ts` tails are still pending. Phases 2–6 not started.
+`main` is the only deployable branch — the `feature/notes` worktree still sits at
+its stale base `46a048bf`; do not build there. Deep-inspected against the working
+tree at `73793f3b` (clean) on 2026-09-29; every APPLIED/PENDING note below comes
+from that inspection.
 
 ---
 
@@ -32,14 +37,18 @@ Non-goals (deliberately excluded):
 |---|---|
 | Rich rendering already exists: Markdown, GFM tables/lists, `$…$`/`$$…$$`/`\(…\)`/`\[…\]` KaTeX, mhchem `\ce{…}`, fenced code highlighted, `:::formula`/`:::trick` + `> [!TRAP]` callouts, raw HTML sanitised | `frontend/lib/content/pipeline.ts` (`noteProcessor`, `renderNoteHtml`), `frontend/lib/content/katex.ts` (`KATEX_OPTIONS`, `KATEX_MACROS`, `normalizeMathDelimiters`, `normalizeLatexExpression`), `frontend/lib/content/callouts.ts` |
 | Single render entry point, server component, no client JS | `frontend/components/content/math-markdown.tsx` → `dangerouslySetInnerHTML` of sanitised HTML |
-| Authored content: 1,240 JSON under `content/ravikishan/{classSlug}-notes/{subject}/{unit}/concepts/NN-slug.json` (+ `formula/ notes/ pyqs/ sets/ examples/ mindmap/`) | repo tree |
-| Built to 643 JSON + `_manifest.json` under `frontend/public/data/syllabus-notes/{subject}/{unit}/` | `content-tools/build-syllabus-notes.js` |
+| Authored content: **1,240 JSON under `content/` in total** — that count also covers `backup-…/`, `exams/`, `lessons/`, `r-export/`. `content/ravikishan/` itself holds **891**: 630 under `{classSlug}-notes/{subject}/{unit}/concepts/NN-slug.json`, 60 `mindmap/`, plus `formula/ notes/ pyqs/ sets/ examples/` and a separate 90-file `class-11/` tree that the in-scope path rules ignore (`CLASS_DIR_TO_SLUG` doesn't exist — see §4.3) | `find content -name '*.json' \| wc -l` |
+| Built to **631** JSON + **6** `_manifest.json` (602 entries total) under `frontend/public/data/syllabus-notes/{subject}/` | `find frontend/public/data/syllabus-notes -name '*.json'` |
 | Runtime **fetches** that JSON | `frontend/lib/data-loader.ts` (`/data/${safe}`), `frontend/lib/topic-content-index.ts` |
-| `zod@^3.25` installed, used **once** (`frontend/lib/schemas/exam.ts`); content has no schema | `frontend/package.json` |
+| `zod@^3.25` installed. Content now HAS a schema: `frontend/lib/content/schema/{atoms,concept,index,manifest,mindmap}.ts` — `.strict()`, 40 measured fields in three tiers (Required/Authored/Extended). `formula.ts` + `syllabus-ref.ts` (§4.2/§4.6) do **not** exist yet | `ls frontend/lib/content/schema/` |
 | ~40 ad-hoc mutation scripts instead of validation | `content-tools/*.cjs`, `scripts/*.py`, `scripts/*.cjs`, `scripts/validate-content.mjs` |
-| `scripts/validate-content.ts` and `scripts/organize-content.ts` referenced by `frontend/agents.md` **do not exist** | `ls scripts/` |
+| `frontend/agents.md` referenced missing `scripts/{validate,organize}-content.ts` and BE port 3001 — **FIXED 2026-09-29** (commands now point at `validate-content.mjs` / `check:schema` / `validate.ts`; BE 3000 everywhere; FE 5173 was always correct — `next dev -p 5173` pins it) | `grep -n frontend/agents.md` |
 | Syllabus API available for validation: `SYLLABUS: ClassSyllabus[]`, `SyllabusUnit{id,title,topics[],hours?,introducedIn?}`, `getSyllabusByClass`, `getSubjectSyllabus(classSlug, subjectSlug)`, `getUnitSyllabus(subject, unitId)`, `getUnitTopicEntries(unit)`, `getTopicEntryBySlug`, `slugifySyllabusTopic`, `getSubjectTopics` | `frontend/lib/syllabus.ts` (1,866 lines) |
 | Not installed: `mathjs` | `frontend/package.json` |
+| Phase 1 gate is live: `frontend/scripts/content/{validate,repair}.ts` + pure `frontend/lib/content/repair.ts` + tests `frontend/tests/lib/content/{schema-corpus,repair}.test.ts` + `scripts/content-schema-baseline.json` + CI `.github/workflows/content-json.yml` — all green | repo tree |
+| `npm run check:content` — **FIXED 2026-09-29**: health scan now exits 1 if any JSON stays unparseable, then chains `check:schema` (corpus + manifest gate), so the command can fail and actually gates content. Root scripts `content:build` + `dev:backend` were also added because README/UI strings already told people to run them | `package.json` scripts |
+| `ManifestSchema`/`ManifestEntrySchema` enforcement — **FIXED 2026-09-29**: every built `_manifest.json` is parsed by `validate.ts --strict` AND by the corpus test CI runs; 6 manifests / 594 entries clean | `frontend/scripts/content/validate.ts`, `frontend/tests/lib/content/schema-corpus.test.ts` |
+| Duplicate corpus `frontend/content/ravikishan/` — **113 tracked JSON**, not gitignored, never mentioned in this plan; the corpus gate deliberately excludes it. Governance decision open (document as deliberate, or delete) | `find frontend/content/ravikishan -name '*.json' \| wc -l` |
 
 Exact concept-file shape (measured on
 `content/ravikishan/class-11-notes/physics/capacitor/concepts/01-capacitance-and-capacitor.json`):
@@ -60,12 +69,27 @@ duplicateType: number          importantTasks: string[3]   mcs: {question,option
 Mindmap file shape: `{ title, unitSlug, topicSlug, topicTitle, relevance, notes: string[],
 mindmap: { centralConcept: string, branches: [{ topic, subtopics: [{ name, points: string[] }] }] } }`
 
-### Bug found while mapping this (fix in Phase 1)
+### Bug found while mapping this — **already FIXED** (landed in `73793f3b`)
 
-`content-tools/build-syllabus-notes.js:98` computes
-`hasMcqs: Boolean(data.mcqs && data.mcqs.length > 0)` but the authored field is **`mcs`**.
-Every manifest entry therefore reports `hasMcqs: false` even where MCQs exist. The CLI port
-must read `mcs` (with `mcqs` kept as a legacy alias) and `doctor` must flag the mismatch.
+The builder computed `hasMcqs` from `mcqs` while the authored field is `mcs`, so every
+manifest entry reported `hasMcqs: false` — measured at **172 wrong entries**, each
+silently disabling a "Practice" affordance (comment in
+`frontend/lib/content/schema/manifest.ts`). `content-tools/build-syllabus-notes.js`
+now defines `contentHasMcqs(data)` (lines 35–40, reads `mcs` **and** `mcqs`) and uses
+it at line 113; `schema/manifest.ts` exports the same helper plus `contentMcqCount`
+(`max` of both arrays — verified on 28 files where the two arrays are byte-identical
+mirrors, so summing would double-count). Consequences for the rest of this plan:
+
+- §5.1's port must **preserve** `contentHasMcqs`; its "← fixes the current bug"
+  annotation is stale, and "reading only `mcs`" would break the 37 files that carry
+  only `mcqs`.
+- The code fix shipped in `73793f3b`, but the **output stayed stale until
+  2026-09-29**: 148/602 manifest entries still reported `hasMcqs: false` (and
+  `noteCount`/tab pairing had drifted) because the builder itself had been
+  crashing on start (`require` under root `"type": "module"`) and was never
+  re-run. Fixed in pass 2: builder converted to ESM, corpus rebuilt,
+  staleness 148 → 0, manifests now 594 clean entries. The §11 "announce the
+  manifest change" risk row is historical.
 
 ---
 
@@ -79,7 +103,7 @@ frontend/components/content/formula-lab.tsx  ← Phase 4a, client island
 frontend/scripts/content/             ← Phase 1b/2, validator + CLI (runs in the frontend workspace)
 frontend/content-src/                 ← Phase 3, TS authoring modules (compiled to public/data)
 content/ravikishan/                   ← unchanged JSON storage (still the fallback source)
-scripts/content-schema-baseline.json  ← known pre-existing violations (ratchet)
+scripts/content-schema-baseline.json  ← ratchet; key `invalid`, empty today (repairs cleared it)
 ```
 
 **Rule:** files under `frontend/lib/content/schema/` import each other and
@@ -90,6 +114,16 @@ path-alias resolution, while app code may still import it as `@/lib/content/sche
 ---
 
 ## 4. Phase 1 — Schema contract
+
+> **Deep-inspection status (2026-09-29).** APPLIED and green: §4.1 atoms, §4.3
+> concept, §4.4 mindmap, §4.5 manifest, §4.7 index, §4.8 validate/repair CLI,
+> §4.9 wiring + CI + baseline. PENDING: §4.2 `formula.ts`, §4.6 `syllabus-ref.ts`
+> (nothing imports either, so they gate only Phases 4a/4b — see the note on each).
+> Where applied code deliberately diverges from a sketch below, **the code is the
+> contract**; divergences are annotated inline instead of silently rewritten.
+> Gate output today: `in-scope files: 654  INVALID: 0  EMPTY: 140  THIN: 31  BODY: 483`,
+> `out-of-scope 176`, `schema violations: 0` — the repair pipeline already cleared
+> every violation, so there is **zero ratchet debt**.
 
 ### 4.1 `frontend/lib/content/schema/atoms.ts`
 
@@ -118,7 +152,20 @@ export const UnitSymbol = z.enum([
 ]);
 ```
 
+> **APPLIED** — all of the above exist as written, plus `NoteBlockSchema` (a nested
+> `notes[]` payload used by `originalContent`/`nepali`/`grammar` in §4.3's Extended
+> tier). Two caveats: `UnitSymbol` **and** `ContentFileName` currently have **zero
+> consumers** — `formula.ts` (§4.2) and a stricter manifest/build check (§4.5/§5.1)
+> are what would consume them. They are Phase 4a/2 input kept in place on purpose;
+> do not "clean up" either as dead code.
+
 ### 4.2 `frontend/lib/content/schema/formula.ts`
+
+> **PENDING — not on disk.** No `formula.ts`; `index.ts` does not export it and
+> nothing imports `FormulaSchema`/`BlockSchema`. It is the pre-req for Phase 4a (§7)
+> and for the block types in §8 — land it before either. `atoms.ts` already ships
+> the `UnitSymbol` enum it needs. Until then, notes cannot declare `formulaSpecs`
+> or `blocks` (§4.3's sketch shows them, the applied schema does not have them).
 
 ```ts
 import { z } from "zod";
@@ -213,6 +260,39 @@ export type WidgetBlockInput = Omit<WidgetBlock, "kind" | "props"> &
 
 ### 4.3 `frontend/lib/content/schema/concept.ts`
 
+> **APPLIED with deliberate divergences — the file on disk is the contract.**
+>
+> - `ConceptNoteSchema` is `.strict()`, not `.passthrough()`: a typo'd key fails
+>   validation, so unknown-key reporting comes from Zod itself. The sketch's
+>   `KNOWN_CONCEPT_KEYS` set does not exist — and is not needed.
+> - Three tiers, **40 measured fields** (the inventory came from walking the
+>   corpus, see the file header): Required = 5 fields (`relevance` moved OUT of
+>   it), Authored = the curated body, **Extended** = what the file calls "the
+>   single largest defect in the original plan": `mcqs` via `LegacyMcqSchema`
+>   (217 files), `exercises`, `originalContent`/`enrichedContent`,
+>   `visualization`, `simulation`, `uiConfig`, `nepali`, `grammar`, `numericals`,
+>   nested `mindmap`, … A strict schema over only the sketch's 27 fields would
+>   reject hundreds of real files (or strip their data).
+> - `relevance` is **optional** (`z.number().min(0).max(100)` in AuthoredFields);
+>   `duplicateType` allows **1–9** (sketch: 1–6); `mcs[].explanation` is optional;
+>   `mcqs[].answer` is `min(1).max(10)` — the A–H letter regex is enforced only on
+>   `mcs`.
+> - `tabGroup` is `z.string().max(400)`, **not `Slug`** — measured values run to
+>   236 chars, no code reads it (only producers write it), so a slug regex would
+>   reject legitimate data. Rationale is in the file; keep it.
+> - `formulaSpecs` + `blocks` (the "new in this plan" block below) are **not in
+>   the applied schema** — they arrive with `formula.ts` (§4.2).
+> - `MIN_NOTES_FOR_BODY = 4` + `MIN_MCQ_FOR_TEST` + `hasBody()` live here, so the
+>   validator grades completeness (EMPTY/THIN/BODY) separately from validity —
+>   "valid but unfinished" is not "broken".
+> - `CLASS_DIR_TO_SLUG` (top of the sketch) does **not** exist anywhere — the applied
+>   CLI identifies in-scope files with a path regex instead
+>   (`/(class-\d+-notes)/[^/]+/[^/]+/concepts/`). §5.1's build sketch imports this
+>   map from the schema and would fail to compile until someone adds it (fine to add
+>   when Phase 2 starts).
+> - Applied `McqSchema.explanation` is `.optional()` (sketch: required) — measured,
+>   not every MCQ carries one.
+
 ```ts
 import { z } from "zod";
 import { MdList, MdString, ShortString, Slug } from "./atoms";
@@ -295,6 +375,17 @@ export type ConceptNote = z.infer<typeof ConceptNoteSchema>;
 
 ### 4.4 `frontend/lib/content/schema/mindmap.ts`
 
+> **APPLIED, shaped differently — and the applied shape is better.** The file
+> exports `MindMapFileSchema = ConceptNoteSchema.extend({ mindmap: MindMapCoreSchema })`
+> rather than a standalone object: measured, mindmap files carry the SAME authored
+> fields as concept notes plus a `mindmap` core, so a second minimal schema would
+> have rejected 44 valid files. Names differ too (`MindMap*` not `Mindmap*`),
+> `validate.ts` imports exactly these, and the caps are relaxed to corpus reality:
+> `branches` 1–12 (sketch 2–10), `subtopics` ≤20 per branch (sketch 10), `points`
+> ≤60 per subtopic (sketch 12), and the "≤60 total subtopics" refine is dropped.
+> The file also documents that the LIVE mindmap surface resolves through TS
+> registries first and these JSON files are the fallback tier.
+
 ```ts
 import { z } from "zod";
 import { MdList, MdString, ShortString, Slug } from "./atoms";
@@ -342,6 +433,19 @@ export type MindmapBody = z.infer<typeof MindmapBodySchema>;
 
 ### 4.5 `frontend/lib/content/schema/manifest.ts`
 
+> **APPLIED, with three gaps.** (1) The applied schema is looser than the sketch:
+> `source: z.string().min(1).max(80)` (not `z.literal("ravikishan")`),
+> `duplicateType` max **9**, `title` max 400, `filename` is a plain string ≤300
+> (not the `ContentFileName` regex), `noteCount` ≤500, and it exports
+> `contentHasMcqs()`/`contentMcqCount()` helpers. (2) It has **no `blockCount` yet**
+> — §5.1's build sketch spreads one in, and `.strict()` means that would FAIL the
+> manifest parse the moment this schema is enforced; either add the optional field
+> (declared below) or drop it from the build. (3) Enforcement — **FIXED
+> 2026-09-29**: `validate.ts --strict` parses every built `_manifest.json`
+> against `ManifestSchema` (any violation fails the gate, proven by negative
+> test), and the corpus test does the same so CI enforces it too. 6 manifests /
+> 594 entries currently clean.
+
 ```ts
 import { z } from "zod";
 import { ContentFileName, Slug } from "./atoms";
@@ -359,6 +463,8 @@ export const ManifestEntrySchema = z
     tabGroup: Slug.optional(),
     hasMcqs: z.boolean(),
     universalFactsCount: z.number().int().min(0),
+    /** Phase 2 additive: only present when the note declares `blocks` (see §5.1). */
+    blockCount: z.number().int().min(1).optional(),
   })
   .strict();
 
@@ -367,6 +473,14 @@ export type ManifestEntry = z.infer<typeof ManifestEntrySchema>;
 ```
 
 ### 4.6 `frontend/lib/content/schema/syllabus-ref.ts`
+
+> **PENDING — not on disk.** No `syllabus-ref.ts`, and `checkSyllabusRef` has zero
+> consumers, so nothing yet enforces "content may not exist outside the syllabus"
+> (`frontend/agents.md` §1–§2). Decide before Phase 3: either wire it into
+> `validate.ts` as Phase 1 tail, or accept it as a Phase 2 `doctor` check. Content-
+> src migration multiplies the cost of a bad slug, so "never" is not an option.
+> Note the applied `validate.ts` does not import it (it imports only
+> `ConceptNoteSchema`, `MindMapFileSchema`, `MIN_NOTES_FOR_BODY`).
 
 ```ts
 import {
@@ -423,6 +537,14 @@ export { getUnitSyllabus };
 
 ### 4.7 `frontend/lib/content/schema/index.ts`
 
+> **APPLIED minus the helpers.** The barrel on disk re-exports only
+> `atoms`/`concept`/`mindmap`/`manifest` (no `formula`, no `syllabus-ref` — they
+> don't exist), carries a doc comment telling repo-root `tsx` tools to import the
+> concrete file instead of the `@/…` alias (§3's rule), and defines **none** of the
+> helpers below: no `md()`, `formula()`, `computeBlock()`, `widgetBlock()`,
+> `defineNote()`. Phase 3 (§6) and Phase 6 (§10) must add them — or drop `md()` and
+> pass plain strings, since it is an identity function anyway.
+
 ```ts
 import type { ConceptNote } from "./concept";
 import type { Formula } from "./formula";
@@ -449,7 +571,37 @@ export const widgetBlock = (b: WidgetBlockInput): WidgetBlock => ({ props: {}, .
 export const defineNote = (n: ConceptNote): ConceptNote => n;
 ```
 
-### 4.8 `frontend/scripts/content/validate.ts`
+### 4.8 `frontend/scripts/content/validate.ts` — **applied**
+
+What actually runs (verified 2026-09-29):
+
+- **Four states per file**, graded separately from validity: `INVALID` (schema
+  rejected — the only state `--strict` fails on), `EMPTY` (generator placeholder
+  markers / blank body), `THIN` (`notes.length < MIN_NOTES_FOR_BODY`), `BODY`.
+  "Valid but unfinished" is deliberately not "broken".
+- Flags: `--strict`, `--write-baseline`, `--subject`, `--unit`. Companion
+  `frontend/scripts/content/repair.ts` drives the pure rules in
+  `frontend/lib/content/repair.ts` (tested in
+  `frontend/tests/lib/content/repair.test.ts`): the first strict run rejected **51
+  files, which were four migration defects**, not 51 authoring mistakes — 39
+  lift-embedded-fields (body written INTO `enrichedContent`/`originalContent` and
+  never lifted), 6 mcq-answer-letter, 4 visual-key-identifier, 2 prune-blank-entries.
+  Every rule is idempotent and deletes nothing (snapshots stay on disk).
+- **Baseline key is `invalid`, not `findings`**, and it carries a `counts` snapshot:
+  `{"generatedAt": …, "invalid": [], "counts": {invalid:0, empty:140, thin:31}}`
+  (230 bytes, `scripts/content-schema-baseline.json`). Empty `invalid` = the repair
+  pipeline already cleared everything — zero ratchet debt today.
+- **Still not implemented from the sketch below:** the syllabus-ref check
+  (§4.6 doesn't exist), the per-subject breakdown and the `--json` flag. The
+  applied CLI also has no `KNOWN_CONCEPT_KEYS` pass — the `.strict()` schema
+  flags unknown keys itself. `_manifest.json` validation **was added 2026-09-29**:
+  every built manifest is parsed against `ManifestSchema`, reported as
+  `manifests: 6   entries: 594   manifest violations: 0`, and fails `--strict`.
+
+> The fenced sketch below is the **original pre-implementation draft, kept for
+> intent**. It does not compile against today's tree (imports `ManifestSchema`,
+> `checkSyllabusRef`, `KNOWN_CONCEPT_KEYS`; reads baseline key `findings`; writes
+> the baseline in the old shape). When Phase 2 revisits it, the file on disk wins.
 
 ```ts
 /**
@@ -617,23 +769,31 @@ function run(): number {
 process.exit(run());
 ```
 
-### 4.9 npm wiring
+### 4.9 npm wiring — **applied, differently from this sketch**
 
-```jsonc
-// frontend/package.json → scripts
-"content:validate": "tsx scripts/content/validate.ts",
-"content:build": "tsx scripts/content/build.ts",
-"content:doctor": "tsx scripts/content/doctor.ts"
+| command | what it runs today | can it fail? |
+|---|---|---|
+| root `npm run check:content` | health scan (BOM repair + `_index.json` completeness) **then** `check:schema` | **yes** — fixed 2026-09-29: exits 1 on unparseable JSON, then runs the schema gate |
+| root `npm run check:schema` | `cd frontend && npm run test:run -- tests/lib/content/schema-corpus.test.ts` — the corpus + baseline ratchet (2/2 green) | yes |
+| frontend `npm run content:validate` | `vitest run tests/lib/content/schema-corpus.test.ts` | yes |
+| CI `.github/workflows/content-json.yml` | `node scripts/validate-content.mjs` (parse every `content/*.json`, exits 1 on broken) + the corpus test | yes, but **path-scoped** to `content/**`, `scripts/validate-content.mjs`, the baseline, `frontend/lib/content/schema/**`, `frontend/tests/lib/content/**` |
+| CI `ci.yml` | no content step at all | — |
 
-// root package.json → scripts (replaces whatever check:content does today)
-"check:content": "npm run content:validate -w frontend",
-"content:build": "npm run content:build -w frontend"
-```
+- The sketch's `content:build` / `content:doctor` scripts do **not** exist — Phase 2.
+- The sketch's "root `check:content` = schema gate" **matches reality again**
+  (fixed 2026-09-29): the health scan exits 1 on unparseable JSON and the script
+  chains `check:schema`, so `check:content` both fails on bad content and runs the
+  corpus + manifest gate. `check:schema` alone remains the fast inner loop.
+- `tsx` is now a **root devDependency** (`tsx@^4.23.15`, added 2026-09-29), so both
+  `npx tsx frontend/scripts/content/validate.ts` and the explicit
+  `node node_modules/tsx/dist/cli.mjs frontend/scripts/content/validate.ts`
+  (`scripts/run-validate.ps1`) are guaranteed to work instead of relying on
+  backend's hoisted copy.
+- CI gap **closed 2026-09-29**: `content-json.yml` now also watches
+  `frontend/scripts/content/**`, so validator changes re-run the gate.
 
-`npx tsx` needs `tsx` as a frontend devDependency (`npm i -D tsx -w frontend`) — check whether
-it is already present before installing; `scripts/*.ts` are currently run ad hoc.
-
-**Gate:** `npm run check:content` exits 0 with a recorded baseline. Effort ≈ 1 day.
+**Gate:** the schema gate exits 0 with an empty baseline — true today. Remaining
+Phase 1 tail (formula.ts, syllabus-ref.ts, manifest enforcement, gate naming) ≈ 1 day.
 
 ---
 
@@ -647,7 +807,7 @@ it is already present before installing; `scripts/*.ts` are currently run ad hoc
  * Behavioural parity with content-tools/build-syllabus-notes.js, plus:
  *  - Zod validation on every input and on the emitted manifest
  *  - content-src/<class>/<subject>/<unit>/ takes precedence over authored JSON
- *  - hasMcqs reads `mcs` (legacy `mcqs` still honoured)   ← fixes the current bug
+ *  - hasMcqs via contentHasMcqs(): `mcs` OR `mcqs`       ← already fixed in the .js
  *  - deterministic output: sorted keys preserved as authored, 2-space, trailing LF
  *  - --check mode builds to a temp dir and diffs against public/data (CI parity gate)
  */
@@ -780,10 +940,15 @@ main().catch((e) => { console.error(e.message ?? e); process.exit(1); });
 ```
 
 Notes for the implementer:
+- The sketch imports `CLASS_DIR_TO_SLUG` from the schema tree — **it does not exist**
+  (§4.3): define it here (or port the validate.ts path regex) before anything runs.
 - `await import()` of a `.ts` file works under `tsx`; if it complains, precompile `content-src`
   with `esbuild --bundle` per unit instead.
-- `blockCount` is additive; if any consumer of `_manifest.json` is strict, drop it in Phase 2
-  and reintroduce with `ManifestEntrySchema` updated (it is in §4.5 — add the optional field).
+- `blockCount` is additive **and currently unsafe**: the applied `ManifestEntrySchema`
+  (§4.5) is `.strict()` with no `blockCount`, and `buildSubject` re-parses the manifest
+  it just built — so the sketch throws as soon as ONE note declares `blocks`. Either add
+  `blockCount: z.number().int().min(1).optional()` to `manifest.ts` (declared in §4.5) or
+  drop the spread. Decide before Phase 2, not during it.
 - The original script wrote `JSON.stringify(data, null, 2)` with **no** trailing newline; the
   port adds `\n`. Run `build` once, accept the whitespace delta as a single commit, then use
   `--check` as the parity gate forever after.
@@ -851,9 +1016,11 @@ process.exit(Object.values(r).some((l) => l.length > 0) ? 1 : 0);
 exists, it is the sole source for that unit**; the JSON under `content/ravikishan/…` is ignored
 by `build` but stays on disk until you delete it deliberately.
 
-**Gate:** `content:build --check` passes with byte-identical output vs today's tree (after the
-one accepted whitespace commit + the `hasMcqs` fix, which *will* change manifest values — call
-that out in the commit message). Effort ≈ 2–3 days.
+**Gate:** `content:build --check` passes with byte-identical output vs today's tree (after one
+accepted whitespace commit for the trailing `\n`). The `hasMcqs` fix is **already applied** —
+`contentHasMcqs` shipped in `73793f3b`, so the false→true value flip already happened; a port
+that reproduces today's tree byte-for-byte must call `contentHasMcqs`, not re-derive it.
+Effort ≈ 2–3 days.
 
 ---
 
@@ -1348,7 +1515,14 @@ visible placeholder. ≈2 days.
 
 ## 10. Phase 6 — Tests and gates
 
-`frontend/__tests__/content-schema.test.ts`
+`frontend/tests/lib/content/schema.test.ts`
+
+> **Path corrected.** Vitest `include` is `tests/**/*.{test,spec}.{ts,tsx}` — a file
+> under `frontend/__tests__/` would NEVER run (the original path silently defeated
+> the whole phase). Two of these suites already exist: `tests/lib/content/
+> schema-corpus.test.ts` (the corpus + baseline gate, wired to `check:schema` and
+> `content-json.yml`) and `tests/lib/content/repair.test.ts`. The unit fixtures below
+> plus `safe-eval.test.ts` are the not-yet-written remainder.
 
 ```ts
 import { describe, expect, it } from "vitest";
@@ -1381,7 +1555,7 @@ describe("blocks", () => {
 });
 ```
 
-`frontend/__tests__/safe-eval.test.ts` — the injection suite. All must be rejected:
+`frontend/tests/lib/content/safe-eval.test.ts` — the injection suite. All must be rejected:
 
 ```ts
 import { describe, expect, it } from "vitest";
@@ -1419,7 +1593,8 @@ describe("safe-eval accepts", () => {
 ```
 
 Checklist per phase:
-- `npm run check:content` — new violations fail.
+- `npm run check:schema` (and `content-json.yml`) — new violations fail. Do NOT cite
+  `check:content` as the gate: it runs a report script that cannot fail (§4.9).
 - `npx tsx scripts/content/build.ts --check` — build parity.
 - `npx next build` (Turbopack) from `frontend/` exits 0.
 - `npm test` — security-policy, auth-flow, hardening suites stay green (repo rule).
@@ -1436,7 +1611,7 @@ phase its gate. 4b is the fastest visible win because the components already exi
 
 | Phase | Effort | Ships |
 |---|---|---|
-| 1 Schema + ratchet validator | 1 d | `check:content` bites on new bad content; `hasMcqs` fix |
+| 1 Schema + ratchet validator | 1 d — **applied** (tail pending: `formula.ts`, `syllabus-ref.ts`, manifest enforcement) | schema gate bites on new bad content via `check:schema` + CI; `hasMcqs` fix **shipped** |
 | 2 CLI + doctor | 2–3 d | one build path, ~40 scripts retired, `--check` parity |
 | 3 content-src authoring | 2 d infra | typed authoring per unit, ~15 min/unit migration |
 | 4b Widget registry | 2 d | interactive visuals inside notes, safely |
@@ -1445,19 +1620,60 @@ phase its gate. 4b is the fastest visible win because the components already exi
 | 6 Tests/gates | 1 d | injection-proof evaluator, schema fixtures |
 
 Risks:
-- **Corpus noise** — expect hundreds of Phase 1 findings; the baseline ratchet is mandatory or
-  the gate gets switched off.
+- **Corpus noise** — RESOLVED: the first strict run found 51 INVALID (four migration
+  defects), `repair.ts` cleared them all, and the baseline `invalid` array is now empty.
+  The ratchet stays on so it never regresses.
 - **Bundle** — mathjs must stay lazy; audit with `next build` output after wiring 4a.
-- **Manifest consumers** — `hasMcqs` flipping from false→true changes UI behaviour; treat it
-  as a deliberate, announced fix.
+- **Manifest consumers** — `hasMcqs` flipping false→true shipped in `73793f3b` (code)
+  and reached the built output on 2026-09-29 (rebuild flipped 148 entries); manifests
+  are validated at two gates now (§4.5), so this class of bug cannot recur silently.
 - **Trust creep** — any future request to "just eval it" is answered by the registry, not a
   sandbox widening.
 
-## 12. Known blocker outside this plan
+## 12. Old blocker — RESOLVED, and weaknesses this inspection found
 
-`feature/lab` → `main` merge is pending. The primary checkout (`Desktop/rn`) holds another
-session's work — 28 staged files plus ~200 modified content JSONs — and `git merge` aborts on a
-dirty index. main commit `5f272bd7` already accidentally captured `three-scene.ts`,
-`viz-toolbar.tsx`, `three-fx-registry.ts` and the scratch `frontend/tsconfig.check.json` (that
-file should be deleted from main); only `topic-mindmap.tsx` and `schematic-diagram.tsx` are
-genuinely missing from main. Clear this before Phase 1 so this work lands on a clean base.
+**The blocker is gone (verified 2026-09-29).** The `feature/lab` → `main` merge landed
+(`98439456` "Merge main into feature/lab") and the working tree at `73793f3b` is clean and
+in sync with `origin/main` — the old text's "28 staged files / ~200 modified JSONs / dirty
+index" no longer exists. Everything it worried about is tracked on `main`:
+
+- `frontend/components/lab/{topic-mindmap.tsx,schematic-diagram.tsx,three-scene.ts,three-fx-registry.ts}`
+  and `frontend/components/viz/viz-toolbar.tsx` (plus
+  `frontend/tests/components/lab/three-scene.test.ts`) — the two files the old text said
+  were "genuinely missing" (`topic-mindmap.tsx`, `schematic-diagram.tsx`) arrived with the
+  merge, so all five are now tracked and nothing needs re-merging.
+- `frontend/tsconfig.check.json` **is** tracked on `main` (the old text was right here)
+  but has **zero references** in `frontend/package.json`, `.github/` or `scripts/` —
+  a deletion candidate, not a blocker.
+
+### Weaknesses found by this inspection — pass 2 fixed 1, 2, 4, 6, 7 on 2026-09-29 (3, 5, 8 still open)
+
+1. **FIXED** — `check:content` now exits 1 on unparseable JSON and chains
+   `check:schema`; the name and the behavior agree (§4.9).
+2. **FIXED** — `frontend/agents.md` §6/§7/Key Files now point at real commands
+   (`validate-content.mjs`, `check:schema`, `validate.ts --strict`) and BE port 3000.
+   Corrected the same way: README (its `-w frontend` commands all failed with
+   "No workspaces found", `dev:backend`/`content:build` didn't exist, BE port 3001),
+   `frontend/.env.example`, and `lib/api-client.ts`'s fallback (3001 → 3000 — nothing
+   ever listened on 3001; `backend/src/index.ts` defaults to 3000). FE 5173 was never
+   wrong: `next dev --webpack -p 5173` pins it.
+3. **Duplicate corpus** — `frontend/content/ravikishan/` (113 tracked JSON, not gitignored)
+   is invisible to this plan and to the gate (the corpus test resolves the repo-root tree
+   specifically to avoid sweeping it). Document as deliberate, or delete.
+4. **FIXED** — `_manifest.json` is validated in two places: `validate.ts --strict`
+   (local gate, proven by negative test) and the corpus test (CI gate). Wiring it
+   exposed a bigger bug: the build script had been **crashing on every run** since
+   root `"type": "module"` landed (`require` in ESM scope), so the `hasMcqs` code fix
+   never reached the output — 148/602 entries were stale. Builder is ESM now, corpus
+   rebuilt (staleness 148 → 0, manifests 594 clean entries), and the 16 retired
+   `content-tools/*.js` one-shots + `scripts/fix-comparison-operators.js` were renamed
+   `.cjs` so they can run at all.
+5. **Phase 1 tail** — `formula.ts` (§4.2), `syllabus-ref.ts` (§4.6) and the
+   `md`/`defineNote`/`formula` helpers (§4.7) are pending; §6 and §8 cannot start without
+   them, and nothing enforces "content must be inside the syllabus" until §4.6 lands.
+6. **PARTLY FIXED** — `content-json.yml` now watches `frontend/scripts/content/**`
+   (validator changes re-run the gate). Still open: `ci.yml` has no content step, so
+   changes outside the watched paths still skip the schema gate.
+7. **FIXED** — `tsx@^4.23.15` added to root devDependencies (§4.9).
+8. **Stale plan artifacts** — the `feature/notes` worktree still sits at `46a048bf` far
+   behind `main`; nobody should build on it.

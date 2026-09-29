@@ -337,7 +337,12 @@
       "Solve 3 couple problems showing that the torque is independent of the pivot."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Two Independent Equilibrium Conditions:** A rigid body is in static equilibrium if and only if BOTH $\\sum \\vec{F} = 0$ (translational) AND $\\sum \\vec{\tau} = 0$ (rotational) are satisfied. Zero net force alone is insufficient (e.g., a couple produces rotation with zero net force).",
+      "**Pivot Independence of Net Torque:** While the torque of individual forces depends on the pivot choice, the *net* torque in equilibrium is zero about ANY point. Choose the pivot at an unknown force to eliminate it from the torque equation.",
+      "**Couple = Pure Torque:** A couple (equal and opposite forces separated by distance $d$) produces a torque $\tau = Fd$ that is *independent of pivot position*. It causes pure rotation without translation and cannot be balanced by a single force."
+    ]
   },
   "notes": [
     "**Torque (moment of a force):** τ = rF sin θ, where r is the distance from the pivot to the point of application, F is the force, and θ is the angle between r and F. The SI unit is Nm. Torque is positive for anticlockwise rotation, negative for clockwise.",
@@ -399,7 +404,6 @@
     "The centre of gravity simplifies a distributed weight to a single point force.",
     "Choose the pivot at an unknown force's point of application to eliminate that force from the torque equation."
   ],
-  "summary": "Torque (τ = rF sin θ) is the rotational analogue of force. A rigid body is in equilibrium only when both ΣF = 0 (no linear acceleration) and Στ = 0 (no angular acceleration). The principle of moments, couples, and centre of gravity are the key tools for solving beam, ladder, and structure problems.",
   "specialNotes": [
     "Always choose the pivot at the point of an unknown force — that force then contributes zero torque and drops out of the equation.",
     "Torque sign convention: anticlockwise = positive, clockwise = negative (or vice versa — just be consistent).",
@@ -435,6 +439,21 @@
     "Seesaw and beam problems use the principle of moments: clockwise torques = anticlockwise torques.",
     "Couple problems: remember that the torque is the same about any point — pick the easiest one."
   ],
+  "importantConcepts": [
+    "Torque (τ = rF sin θ) is the rotational analogue of force — it causes angular acceleration.",
+    "A rigid body is in equilibrium only when both ΣF = 0 and Στ = 0 — both conditions are independent.",
+    "The principle of moments: in equilibrium, clockwise torques balance anticlockwise torques about any pivot.",
+    "A couple produces a pure torque τ = Fd that is independent of the pivot position.",
+    "The centre of gravity is the single point where the total weight may be considered to act."
+  ],
+  "importantTasks": [
+    "Solve 5 torque-calculation problems for forces at different angles and distances from the pivot.",
+    "Solve 5 equilibrium problems (beams, seesaws) using ΣF = 0 and Στ = 0.",
+    "Solve 3 ladder problems for reactions and the minimum angle before slipping.",
+    "Find the centre of gravity of composite bodies by taking moments.",
+    "Solve 3 couple problems showing that the torque is independent of the pivot."
+  ],
+  "summary": "Torque (τ = rF sin θ) is the rotational analogue of force. A rigid body is in equilibrium only when both ΣF = 0 (no linear acceleration) and Στ = 0 (no angular acceleration). The principle of moments, couples, and centre of gravity are the key tools for solving beam, ladder, and structure problems.",
   "mcs": [
     {
       "question": "A 40 N force is applied perpendicularly at the end of a 0.5 m spanner. The torque is:",
@@ -486,20 +505,5 @@
       ],
       "answer": "C"
     }
-  ],
-  "importantConcepts": [
-    "Torque (τ = rF sin θ) is the rotational analogue of force — it causes angular acceleration.",
-    "A rigid body is in equilibrium only when both ΣF = 0 and Στ = 0 — both conditions are independent.",
-    "The principle of moments: in equilibrium, clockwise torques balance anticlockwise torques about any pivot.",
-    "A couple produces a pure torque τ = Fd that is independent of the pivot position.",
-    "The centre of gravity is the single point where the total weight may be considered to act."
-  ],
-  "importantTasks": [
-    "Solve 5 torque-calculation problems for forces at different angles and distances from the pivot.",
-    "Solve 5 equilibrium problems (beams, seesaws) using ΣF = 0 and Στ = 0.",
-    "Solve 3 ladder problems for reactions and the minimum angle before slipping.",
-    "Find the centre of gravity of composite bodies by taking moments.",
-    "Solve 3 couple problems showing that the torque is independent of the pivot."
-  ],
-  "visualization": {}
+  ]
 }

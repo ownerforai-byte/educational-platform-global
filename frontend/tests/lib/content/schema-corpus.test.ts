@@ -12,6 +12,7 @@ import { existsSync, readdirSync, readFileSync } from "node:fs";
 import { dirname, join, relative } from "node:path";
 import { describe, expect, it } from "vitest";
 import { ConceptNoteSchema } from "@/lib/content/schema/concept";
+import { ManifestSchema } from "@/lib/content/schema/manifest";
 
 /**
  * The gated corpus is the repo-root `content/ravikishan` tree — the same one
@@ -80,5 +81,46 @@ describe("concept corpus vs strict schema", () => {
       invalid,
       `new schema violations beyond the ${baselined.size}-file baseline:\n${invalid.slice(0, 10).join("\n")}`,
     ).toEqual([]);
+  });
+});
+
+describe("built manifests vs ManifestEntrySchema", () => {
+  // Nothing else validated _manifest.json until now (PLANS.md §4.5): the build
+  // writes it, the UI discovers notes through it, and the `mcs`/`mcqs` hasMcqs
+  // bug shipped precisely because producers and consumers disagreed on its
+  // shape. This block is what makes CI enforce it (content-json.yml runs this
+  // suite); the same check runs locally under `validate.ts --strict`.
+  const builtRoot = join(REPO, "frontend", "public", "data", "syllabus-notes");
+
+  it("every _manifest.json parses clean against ManifestEntrySchema", () => {
+    if (!existsSync(builtRoot)) return; // built data absent (fresh export)
+    const problems: string[] = [];
+    let entries = 0;
+    let manifests = 0;
+    for (const subject of readdirSync(builtRoot)) {
+      const mp = join(builtRoot, subject, "_manifest.json");
+      if (!existsSync(mp)) continue;
+      manifests++;
+      let parsed: unknown;
+      try {
+        parsed = JSON.parse(readFileSync(mp, "utf8"));
+      } catch {
+        problems.push(`${subject}/_manifest.json: unparseable JSON`);
+        continue;
+      }
+      if (Array.isArray(parsed)) entries += parsed.length;
+      const res = ManifestSchema.safeParse(parsed);
+      if (!res.success) {
+        problems.push(
+          `${subject}/_manifest.json: ${res.error.issues
+            .slice(0, 3)
+            .map((i) => `${i.path.join(".") || "(root)"} ${i.message}`)
+            .join("; ")}`,
+        );
+      }
+    }
+    expect(manifests).toBeGreaterThan(0);
+    expect(entries).toBeGreaterThan(0);
+    expect(problems).toEqual([]);
   });
 });

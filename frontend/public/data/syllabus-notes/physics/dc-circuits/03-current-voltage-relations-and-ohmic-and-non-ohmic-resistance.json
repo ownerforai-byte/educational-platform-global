@@ -40,103 +40,10 @@
   ],
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits",
+  "specificConditions": [
+    "**Ohmic Behavior Constraint:** A device is ohmic only if $I \\propto V$ *and* the temperature is constant. Metals at constant temperature are ohmic; semiconductors, electrolytes, and gas discharges are inherently non-ohmic.",
+    "**Dynamic vs. Static Resistance:** For non-ohmic devices, the static resistance $R_s = V/I$ depends on the operating point, while the dynamic (small-signal) resistance $r_d = dV/dI$ describes the response to small AC signals superimposed on the DC bias.",
+    "**Temperature as Hidden Variable:** In filament lamps and thermistors, the non-ohmic behavior arises because the current heats the device, changing its resistivity. The $I$-$V$ curve actually represents a parametric plot where temperature varies with current."
+  ],
   "visualType": "iv-characteristics"
-,
-  "summary": "An ohmic conductor obeys Ohm's law, so its I-V graph is a straight line through the origin and its resistance R = V/I stays constant at every operating point. A non-ohmic conductor does not: its I-V graph is curved because the resistance itself changes with the applied voltage or current, which is why R = V/I remains a valid definition of resistance while no longer being a constant of the material. Familiar non-ohmic devices include the diode, which conducts freely in only one direction once the forward voltage exceeds a threshold of about 0.7 V for silicon or 0.3 V for germanium, the filament lamp, whose resistance rises as the filament heats with increasing current, and the thermistor, whose resistance falls as it heats. For such devices the useful measure of resistance at a chosen operating point is the dynamic or differential resistance R_d = dV/dI, the slope of the I-V curve, which differs from the static resistance V/I.",
-  "importantConcepts": [
-    "Ohmic conductor: obeys Ohm's law, gives a straight-line I-V graph through the origin, and has constant resistance.",
-    "Non-ohmic conductor: curved I-V graph with a resistance that varies with voltage or current, though R = V/I is still a valid definition.",
-    "Filament lamp as the classic non-ohmic case, because the heating of the filament raises its resistivity as the current grows.",
-    "Thermistor, whose resistance decreases with temperature, giving the opposite curvature to a lamp.",
-    "Diode behaviour with a forward threshold of about 0.7 V for silicon and 0.3 V for germanium, and negligible reverse current until breakdown.",
-    "Dynamic or differential resistance R_d = dV/dI as the slope of the I-V curve at a point, distinguished from the static resistance V/I."
-  ],
-  "importantStatements": [
-    "An ohmic conductor has a linear I-V characteristic passing through the origin, so its resistance is independent of voltage and current.",
-    "For a non-ohmic conductor the ratio V/I changes with the operating point, so the resistance is not a fixed property of the device.",
-    "A filament lamp is non-ohmic because the filament's temperature, and therefore its resistivity, rises as the current increases.",
-    "A diode carries almost no current in reverse bias until the reverse voltage reaches breakdown, when the current rises sharply.",
-    "The dynamic resistance R_d = dV/dI of a non-ohmic device is the slope of its I-V curve at the point of interest."
-  ],
-  "importantTasks": [
-    "Sketch the I-V graph of an ohmic and a non-ohmic conductor and label the differences between them.",
-    "Calculate the cold and operating resistance of a filament lamp and explain the large inrush current at switch-on.",
-    "Solve a circuit containing a diode in series with a resistor by allowing for the forward voltage drop of the diode.",
-    "Determine the dynamic resistance of a non-ohmic device from the slope of its I-V graph at a stated point."
-  ],
-  "keyPoints": [
-    "Ohm's law V = IR is a definition of resistance, not a law obeyed by every material.",
-    "A cold filament has a much lower resistance than a glowing one, which is why bulbs often fail at the instant of switch-on.",
-    "The inrush current through a cold bulb can be about ten times the steady-state current.",
-    "Use V/I for the static resistance and the tangent slope dV/dI for the dynamic resistance of a non-ohmic device.",
-    "A diode in series with a resistor reduces the voltage available to the resistor by the diode's forward drop."
-  ],
-  "specialNotes": [
-    "R = V/I is always a valid definition of resistance, but it is only a constant, and hence a material property, for an ohmic conductor.",
-    "A filament lamp is a better conductor when cold, so the initial current surge at switch-on is far larger than the steady current and can burn the filament.",
-    "Below the forward threshold a silicon diode passes essentially no current, so a diode is close to an open circuit in that region and near a short circuit once forward biased.",
-    "The static resistance V/I and the dynamic resistance dV/dI are different quantities and coincide only for a straight-line characteristic.",
-    "A non-ohmic device has no single resistance at all, so a stated operating point or temperature must always accompany the value quoted."
-  ],
-  "examShortTricks": [
-    "Check the graph shape first: a straight line through the origin means ohmic and any curvature means non-ohmic, which alone settles a descriptive question.",
-    "For a diode, subtract the forward drop before doing Ohm's law on the series resistor, so the resistor sees V_supply − 0.7 V for silicon.",
-    "Quote the cold and hot resistances of a lamp separately; at fixed voltage the ratio of the two currents equals the ratio of the two resistances.",
-    "Remember 0.7 V for silicon and 0.3 V for germanium, and treat a reverse-biased diode as an open circuit unless breakdown is specified."
-  ],
-  "examNotes": [
-    "A three mark question commonly gives the cold and glowing resistance of a lamp and asks for the current in each case from a fixed supply.",
-    "Sketching and labelling I-V graphs for ohmic and non-ohmic conductors is a very common two or three mark item.",
-    "Numericals on a diode plus resistor in series with a battery appear regularly and test the forward voltage drop.",
-    "One mark definition questions ask for an ohmic and a non-ohmic conductor, with the filament lamp and diode as standard examples."
-  ],
-  "practiceQuestions": [
-    "A filament lamp has a resistance of 20 Ω when cold and 240 Ω when glowing. Find the current in each case from a 12 V supply.",
-    "Sketch the I-V characteristic of a metallic conductor and of a filament lamp, labelling both axes.",
-    "A silicon diode with a 0.7 V forward drop is in series with a 500 Ω resistor and a 5 V battery. Find the current.",
-    "Explain, using the temperature dependence of resistivity, why a filament lamp is non-ohmic.",
-    "Distinguish between the static resistance V/I and the dynamic resistance dV/dI for a non-ohmic conductor."
-  ],
-  "mcs": [
-    {
-      "question": "The I-V graph of an ohmic conductor is:",
-      "options": [
-        "A curve",
-        "A straight line through the origin",
-        "A horizontal line",
-        "A circle"
-      ],
-      "answer": "B"
-    },
-    {
-      "question": "A filament lamp is non-ohmic because:",
-      "options": [
-        "Its resistance increases as the filament heats up",
-        "It has no filament",
-        "It obeys Ohm's law at all temperatures",
-        "Its resistance is zero when cold"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "The dynamic resistance of a device is:",
-      "options": [
-        "V/I",
-        "dV/dI at a point on the curve",
-        "I/V",
-        "R/2"
-      ],
-      "answer": "B"
-    },
-    {
-      "question": "A silicon diode in series with a resistor and a 5 V battery drops 0.7 V. The resistor sees:",
-      "options": [
-        "5 V",
-        "0.7 V",
-        "4.3 V",
-        "5.7 V"
-      ],
-      "answer": "C"
-    }
-  ]
 }

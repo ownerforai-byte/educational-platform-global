@@ -342,7 +342,12 @@
       "Compute the effect of rotation on g at the equator."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Altitude Formula:** Above the surface ($h \\ge 0$), $g' = g(R/(R+h))^2$ follows the inverse-square law exactly. For $h \\ll R$, the binomial approximation gives $g' \\approx g(1 - 2h/R)$ — the factor of 2 comes from the square in the denominator.",
+      "**Depth Formula:** Below the surface ($d \\le R$), only the mass interior to radius $R-d$ contributes (Shell Theorem). Since mass $\\propto (R-d)^3$ and distance $\\propto (R-d)$, $g' = g(1 - d/R)$ — a linear decrease to zero at the center.",
+      "**Surface Maximum:** $g$ reaches its maximum at Earth's surface. It decreases in both directions: $1/r^2$ outside, linear inside. The graph of $g$ vs $r$ is triangular-like: linear rise from center to surface, then inverse-square fall."
+    ]
   },
   "notes": [
     "**g above the surface (altitude):** at height h above Earth's surface, $g' = \\frac{GM}{(R+h)^2} = g\\left(\\frac{R}{R+h}\\right)^2$. As h increases, g decreases. For small h ($h \\ll R$), a binomial expansion gives $g' \\approx g\\left(1 - \\frac{2h}{R}\\right)$ — a useful approximation.",
@@ -406,7 +411,6 @@
     "Rotation and oblateness also reduce g at the equator.",
     "The $g$–$r$ graph: linear rise inside, $1/r^2$ fall outside."
   ],
-  "summary": "g varies with altitude ($g' = g\\left(\\frac{R}{R+h}\\right)^2$), depth ($g' = g\\left(1 - \\frac{d}{R}\\right)$), and latitude. Above the surface g falls as the inverse square of distance; below the surface the shell theorem makes it fall linearly to zero at the centre. The $g$–$r$ graph is a straight rise then a $1/r^2$ fall.",
   "specialNotes": [
     "Small-height formula: $g' \\approx g\\left(1 - \\frac{2h}{R}\\right)$ — remember the factor 2.",
     "Shell theorem is the tool for points inside Earth — shells outside contribute zero net force.",
@@ -442,6 +446,21 @@
     "The rotation term $g' = g - \\omega^2 R \\cos^2 \\lambda$ is a common short answer.",
     "Comparing g at poles vs equator is a favourite conceptual MCQ."
   ],
+  "importantConcepts": [
+    "Altitude: $g' = g\\left(\\frac{R}{R+h}\\right)^2$ (inverse-square fall above the surface).",
+    "Depth: $g' = g\\left(1 - \\frac{d}{R}\\right)$ (linear fall inside).",
+    "g is maximum at Earth's surface.",
+    "Rotation and ellipticity cause small latitude variations.",
+    "The $g$–$r$ graph is triangular-like: linear rise then inverse-square fall."
+  ],
+  "importantTasks": [
+    "Derive the altitude formula and its small-h approximation.",
+    "Derive the depth formula using the shell theorem.",
+    "Solve 5 mixed altitude/depth numericals.",
+    "Sketch and label the $g$–$r$ graph from centre to beyond the surface.",
+    "Compute the effect of rotation on g at the equator."
+  ],
+  "summary": "g varies with altitude ($g' = g\\left(\\frac{R}{R+h}\\right)^2$), depth ($g' = g\\left(1 - \\frac{d}{R}\\right)$), and latitude. Above the surface g falls as the inverse square of distance; below the surface the shell theorem makes it fall linearly to zero at the centre. The $g$–$r$ graph is a straight rise then a $1/r^2$ fall.",
   "mcs": [
     {
       "question": "At a height equal to Earth's radius, the value of g is:",
@@ -493,20 +512,5 @@
       ],
       "answer": "A"
     }
-  ],
-  "importantConcepts": [
-    "Altitude: $g' = g\\left(\\frac{R}{R+h}\\right)^2$ (inverse-square fall above the surface).",
-    "Depth: $g' = g\\left(1 - \\frac{d}{R}\\right)$ (linear fall inside).",
-    "g is maximum at Earth's surface.",
-    "Rotation and ellipticity cause small latitude variations.",
-    "The $g$–$r$ graph is triangular-like: linear rise then inverse-square fall."
-  ],
-  "importantTasks": [
-    "Derive the altitude formula and its small-h approximation.",
-    "Derive the depth formula using the shell theorem.",
-    "Solve 5 mixed altitude/depth numericals.",
-    "Sketch and label the $g$–$r$ graph from centre to beyond the surface.",
-    "Compute the effect of rotation on g at the equator."
-  ],
-  "visualization": {}
+  ]
 }

@@ -46,98 +46,10 @@
   ],
   "animation3D": "quantity-of-heat",
   "motionGraphics": "quantity-of-heat",
-  "visualType": "heat-transfer"
-,
-  "summary": "Heat H is thermal energy in transit between systems because of a temperature difference; a body stores internal energy, never heat. For a fixed substance the heat needed is directly proportional to the mass (H ∝ m) and to the temperature change (H ∝ Δθ), so introducing the specific heat capacity c converts both proportionalities into the exact master relation H = mcΔθ with Δθ = θ_f − θ_i. The SI unit of heat is the joule, with 1 cal = 4.184 J and 1 BTU ≈ 1055 J. Temperature is an intensive property while heat is extensive, so a bathtub at 50 °C holds far more energy than a cup at 80 °C. Every calorimetry sum applies this equation to each body separately and then sets heat lost by the hot body equal to heat gained by the cold body and the calorimeter.",
-  "importantConcepts": [
-    "Heat is energy in transit, not a stored property: a body contains internal energy U, and H describes only the energy crossing its boundary because of a temperature difference.",
-    "Mass dependency H ∝ m: doubling the mass doubles the heat required for the same Δθ, because twice as many molecules must have their average kinetic energy changed.",
-    "Temperature dependency H ∝ Δθ: heating water from 20 °C to 80 °C needs 3× the heat of heating it from 20 °C to 40 °C, because Δθ triples.",
-    "The constant of proportionality is the specific heat capacity c, an intensive material property, which turns the two proportionalities into the exact equation H = mcΔθ.",
-    "Sign convention: H and Δθ are both positive on heating and both negative on cooling, so the sign of H always states the direction of energy flow."
-  ],
-  "importantStatements": [
-    "Heat flows spontaneously from a body at higher temperature to one at lower temperature until thermal equilibrium is reached.",
-    "The heat required by a body is directly proportional both to its mass and to the temperature change it undergoes.",
-    "H = mcΔθ holds only while the phase of the substance is unchanged; during melting or boiling a latent heat term mL must be added instead.",
-    "Specific heat capacity c is intensive, so 1 kg and 1 g of the same material have identical values of c.",
-    "The SI unit of heat is the joule, and 1 cal = 4.184 J for the thermochemical calorie."
-  ],
-  "importantTasks": [
-    "Convert a quantity of heat between SI and CGS units and between calorie, kilocalorie and BTU, showing the multiplier used.",
-    "Given a mass, a temperature range and the specific heat capacity of a substance, calculate the heat absorbed or released.",
-    "Write a calorimetry balance for a hot body immersed in a cold liquid plus calorimeter and solve it for the equilibrium temperature.",
-    "Carry out a dimensional check on a proposed expression for heat before attempting any numerical substitution."
-  ],
-  "keyPoints": [
-    "H = mcΔθ is the single equation behind almost every numerical in this unit.",
-    "Temperature is intensive and does not scale with mass; heat and internal energy are extensive and do.",
-    "Water has c = 4200 J/kg·K, which makes it an effective coolant and the reason coastal climates stay moderate.",
-    "Quick estimate: 1 kg of water needs 4200 J per kelvin, so 2 kg heated through 50 K takes 420 kJ.",
-    "In a real calorimeter the vessel also absorbs heat, so its heat capacity C_cal = m_cal c_cal must be added to the gaining side."
-  ]
-,
-  "specialNotes": [
-    "During a phase change the temperature stays constant while heat keeps flowing, so the sensible-heat term cΔθ cannot describe the process at all; use Q = mL instead.",
-    "Specific heat is not strictly constant: water's c runs from 4217 J/kg·K at 0 °C to 4181 J/kg·K at 15 °C and 4219 J/kg·K at 100 °C, though school problems treat it as fixed.",
-    "At constant volume with no work done, ΔU = H; if the body expands and does work, only part of the supplied heat goes into raising its internal energy.",
-    "Δθ is a temperature INTERVAL, so 1 K and 1 °C are interchangeable in size; only absolute temperatures differ numerically between the two scales.",
-    "Two bodies at the same temperature hold very different amounts of energy, so being at the same temperature is not the same as having the same heat content."
-  ],
-  "examShortTricks": [
-    "Anchor every answer on 4200 J per kg per kelvin for water; if 1 kg of water appears to need less than 4200 J for one kelvin, a mistake has already been made.",
-    "Build the calorimetry balance around the unknown equilibrium temperature so that every difference stays positive: m_h c_h (θ_h − θ_eq) = (m_c c_c + C_cal)(θ_eq − θ_c).",
-    "Use the single conversion 1 cal/g·°C = 4184 J/kg·K instead of juggling 4.184 and 10⁻³ separately.",
-    "Read every question for whether it wants heat capacity C or specific heat c; if C is given, divide by the mass to get c = C/m before substituting into mcΔθ."
-  ],
-  "examNotes": [
-    "Carried as a 3 or 4 mark numerical in almost every paper, usually the heat needed to raise a stated mass of water or metal through a stated temperature range.",
-    "The method of mixtures is a standard 5 mark question: a hot solid is dropped into water in a calorimeter and the equilibrium temperature is measured.",
-    "One-mark definition questions on the difference between heat and temperature, and on why a body cannot be said to contain heat, appear frequently.",
-    "Expect at least one unit-conversion sub-part, so quote the SI joule value first and the calorie value alongside it."
-  ],
-  "practiceQuestions": [
-    "How much heat is required to raise 2.5 kg of water from 20 °C to 80 °C, and what is that in kilocalories?",
-    "A 500 g copper block at 100 °C is placed in 200 g of water at 20 °C. What is the equilibrium temperature if no heat is lost?",
-    "An electric heater supplies 840 J/s to 2 kg of water. How long does it take to raise the temperature from 25 °C to 75 °C?",
-    "Using the mass and temperature dependencies, explain why doubling the mass of a body doubles the heat it absorbs for the same temperature rise.",
-    "Why is it wrong to say that a 100 °C spark contains more heat than a 40 °C bathtub full of water?"
-  ],
-  "mcs": [
-    {
-      "question": "Heat is best described as:",
-      "options": [
-        "A stored substance contained inside every body",
-        "Energy transferred from one system to another because of a temperature difference",
-        "A property that depends only on the mass of the body",
-        "A quantity that is numerically equal to temperature"
-      ],
-      "answer": "B"
-    },
-    {
-      "question": "For a given substance and a fixed temperature change, the heat required is directly proportional to:",
-      "options": [
-        "The square of the mass",
-        "The mass of the body",
-        "The surface area of the body",
-        "The temperature of the surroundings"
-      ],
-      "answer": "B"
-    },
-    {
-      "question": "How much heat is needed to raise 2 kg of water from 20 °C to 70 °C, taking c = 4200 J/kg·K?",
-      "options": ["84 kJ", "168 kJ", "420 kJ", "840 kJ"],
-      "answer": "C"
-    },
-    {
-      "question": "Which statement about heat and temperature is correct?",
-      "options": [
-        "Heat is an intensive property and temperature is extensive",
-        "Heat is a property stored inside a body, while temperature is what is transferred",
-        "Temperature is intensive, while heat and internal energy are extensive",
-        "Heat and temperature both scale directly with the mass of the body"
-      ],
-      "answer": "C"
-    }
+  "visualType": "heat-transfer",
+  "specificConditions": [
+    "**Heat as Energy Transfer:** Heat ($H$) is energy in transit due to temperature difference, not a property of a system. A body contains internal energy $U$; heat is the transfer $\\Delta U = H$ (at constant volume, no work).",
+    "**Proportionality Law:** $H \\propto m \\Delta\\theta$ for a given substance. This linearity holds only within a single phase (no phase change). During phase transitions, $H = mL$ with constant $\\theta$ — the $H \\propto \\Delta\\theta$ relation breaks down.",
+    "**Specific Heat Capacity Definition:** $c = H/(m\\Delta\\theta)$ is the proportionality constant. It is an *intensive* property (independent of mass). The SI unit is J/kg·K. Specific heat varies slightly with temperature for real materials; the constant-$c$ approximation is valid for small $\\Delta\\theta$."
   ]
 }

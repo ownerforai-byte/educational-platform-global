@@ -401,7 +401,6 @@
     "Gravity is conservative — work depends only on vertical displacement, not on the path.",
     "Friction is non-conservative — work depends on the path length and is always negative (for kinetic friction)."
   ],
-  "summary": "Work (W = Fd cos θ for constant force, W = ∫F dx for variable force) is the transfer of energy by a force. The work-energy theorem (W_net = ΔK) connects forces to motion. Gravity (conservative) and friction (non-conservative) are the two most important forces in work problems. Spring work (W = ½kx²) is a standard NEB topic.",
   "specialNotes": [
     "Work is a scalar — it has magnitude but no direction. Do not assign a direction to work.",
     "The angle θ in W = Fd cos θ is the angle between the force and displacement vectors.",
@@ -437,6 +436,21 @@
     "Zero-work identification: force perpendicular to displacement, no displacement, no force.",
     "NEB asks both numerical problems and conceptual questions about work and energy."
   ],
+  "importantConcepts": [
+    "Work is the dot product of force and displacement: W = Fd cos θ — a scalar quantity measured in joules.",
+    "The work-energy theorem: W_net = ΔK = ½mv² − ½mu² — connects forces to motion.",
+    "Gravity is a conservative force — work depends only on vertical displacement (mgΔh).",
+    "Friction is a non-conservative force — work depends on the path length and is always negative.",
+    "A spring stores elastic potential energy U = ½kx² — this energy is fully recoverable."
+  ],
+  "importantTasks": [
+    "Solve 5 constant-force work problems (W = Fd cos θ) for different angles.",
+    "Solve 5 work-energy theorem problems finding final speed from net work.",
+    "Solve 5 spring-work problems (W = ½kx²) for different compressions.",
+    "Solve 3 problems identifying zero-work situations.",
+    "Solve 3 problems computing work done by gravity for different paths."
+  ],
+  "summary": "Work (W = Fd cos θ for constant force, W = ∫F dx for variable force) is the transfer of energy by a force. The work-energy theorem (W_net = ΔK) connects forces to motion. Gravity (conservative) and friction (non-conservative) are the two most important forces in work problems. Spring work (W = ½kx²) is a standard NEB topic.",
   "mcs": [
     {
       "question": "A 50 N force pushes a block 8 m at 60° to the horizontal. The work done is:",
@@ -488,20 +502,5 @@
       ],
       "answer": "C"
     }
-  ],
-  "importantConcepts": [
-    "Work is the dot product of force and displacement: W = Fd cos θ — a scalar quantity measured in joules.",
-    "The work-energy theorem: W_net = ΔK = ½mv² − ½mu² — connects forces to motion.",
-    "Gravity is a conservative force — work depends only on vertical displacement (mgΔh).",
-    "Friction is a non-conservative force — work depends on the path length and is always negative.",
-    "A spring stores elastic potential energy U = ½kx² — this energy is fully recoverable."
-  ],
-  "importantTasks": [
-    "Solve 5 constant-force work problems (W = Fd cos θ) for different angles.",
-    "Solve 5 work-energy theorem problems finding final speed from net work.",
-    "Solve 5 spring-work problems (W = ½kx²) for different compressions.",
-    "Solve 3 problems identifying zero-work situations.",
-    "Solve 3 problems computing work done by gravity for different paths."
-  ],
-  "visualization": {}
+  ]
 }

@@ -337,7 +337,12 @@
       "Solve 2 problems where friction acts in the direction of motion."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Static vs. Kinetic Threshold:** The maximum static friction $f_s^{\\max} = \\mu_s N$ is the *upper bound* for static friction. Static friction is a *variable* force that matches the applied force up to this limit. Kinetic friction $f_k = \\mu_k N$ applies *only* when sliding occurs, with $\\mu_k < \\mu_s$.",
+      "**Normal Force Dependency:** Friction is proportional to the *normal reaction*, not the weight. Any vertical force component (pulling up, pushing down, incline) changes $N$, which directly changes the friction force. Always compute $N$ first.",
+      "**Area Independence (Ideal Model):** The laws of friction assume friction is independent of the apparent contact area (Coulomb's model). This holds well for dry, rigid surfaces but breaks down for soft materials, lubricated contacts, or adhesive forces where real contact area matters."
+    ]
   },
   "notes": [
     "**What friction is:** a contact force that opposes relative motion (or its tendency) between two surfaces in contact. It acts parallel to the contact surface. Static friction (no sliding) and kinetic friction (sliding) are the two main types.",
@@ -399,7 +404,6 @@
     "Friction is (approximately) independent of the apparent area of contact.",
     "Pulling at an angle reduces N and friction; pushing at an angle increases both."
   ],
-  "summary": "Friction is a contact force opposing relative motion. Static friction (variable, up to μ_sN) acts before sliding; kinetic friction (constant, μ_kN) acts during sliding, with μ_k < μ_s. The angle of repose equals the angle of friction (tan⁻¹μ_s). Slope problems, pulling/pushing at angles, and the distinction between static and kinetic friction are the key NEB topics.",
   "specialNotes": [
     "Static friction is NOT always μ_sN — it is a variable force that matches the applied force up to that maximum.",
     "The normal force is NOT always mg — on a slope it is mg cos θ; with pulling/pushing at an angle it changes.",
@@ -435,6 +439,21 @@
     "The angle of repose equals the angle of friction — both are tan⁻¹μ_s.",
     "Friction can act in the direction of motion (walking, conveyor belts) — static friction pushes you forward."
   ],
+  "importantConcepts": [
+    "Friction is a contact force opposing relative motion (or its tendency) between two surfaces.",
+    "Static friction is variable (up to μ_sN); kinetic friction is approximately constant (μ_kN).",
+    "μ_k < μ_s — harder to start sliding than to keep sliding.",
+    "The angle of repose equals the angle of friction: θ_r = λ = tan⁻¹μ_s.",
+    "Friction is (approximately) independent of the apparent area of contact."
+  ],
+  "importantTasks": [
+    "Solve 5 slope problems: check if the body slides (tan θ vs μ_s) and find the acceleration.",
+    "Solve 5 horizontal-surface problems with pulling/pushing at an angle.",
+    "Solve 3 angle-of-repose problems showing θ_r = tan⁻¹μ_s.",
+    "Solve 3 problems comparing static and kinetic friction.",
+    "Solve 2 problems where friction acts in the direction of motion."
+  ],
+  "summary": "Friction is a contact force opposing relative motion. Static friction (variable, up to μ_sN) acts before sliding; kinetic friction (constant, μ_kN) acts during sliding, with μ_k < μ_s. The angle of repose equals the angle of friction (tan⁻¹μ_s). Slope problems, pulling/pushing at angles, and the distinction between static and kinetic friction are the key NEB topics.",
   "mcs": [
     {
       "question": "A 10 kg block rests on a horizontal surface (μ_s = 0.5). The maximum static friction is: (g = 10 m/s²)",
@@ -486,20 +505,5 @@
       ],
       "answer": "A"
     }
-  ],
-  "importantConcepts": [
-    "Friction is a contact force opposing relative motion (or its tendency) between two surfaces.",
-    "Static friction is variable (up to μ_sN); kinetic friction is approximately constant (μ_kN).",
-    "μ_k < μ_s — harder to start sliding than to keep sliding.",
-    "The angle of repose equals the angle of friction: θ_r = λ = tan⁻¹μ_s.",
-    "Friction is (approximately) independent of the apparent area of contact."
-  ],
-  "importantTasks": [
-    "Solve 5 slope problems: check if the body slides (tan θ vs μ_s) and find the acceleration.",
-    "Solve 5 horizontal-surface problems with pulling/pushing at an angle.",
-    "Solve 3 angle-of-repose problems showing θ_r = tan⁻¹μ_s.",
-    "Solve 3 problems comparing static and kinetic friction.",
-    "Solve 2 problems where friction acts in the direction of motion."
-  ],
-  "visualization": {}
+  ]
 }

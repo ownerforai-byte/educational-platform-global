@@ -81,5 +81,10 @@
   "importantTasks": [
     "Solve 5 problems on Ideal Gas Equation."
   ],
+  "specificConditions": [
+    "**Ideal Gas Assumptions:** The equation $PV = nRT$ assumes (1) molecules are point particles with zero volume, (2) no intermolecular forces except during elastic collisions, (3) motion is random and obeys Newton's laws. These hold best at high temperature and low pressure; real gases deviate near condensation.",
+    "**Universal Gas Constant:** $R = 8.314 \text{ J/mol·K}$ is the same for all ideal gases. It connects macroscopic ($P, V, n, T$) to microscopic ($k_B, N_A$) via $R = N_A k_B$. The value depends on units: $R = 0.0821 \text{ L·atm/mol·K}$ in common chemistry units.",
+    "**Temperature Must Be Absolute:** $T$ must be in Kelvin for $PV = nRT$ to hold. Using Celsius gives incorrect results because $T=0^\\circ\text{C} \neq 0$ kinetic energy. The linear proportionality $P \\propto T$ and $V \\propto T$ only works with absolute temperature."
+  ],
   "duplicateType": 1
 }

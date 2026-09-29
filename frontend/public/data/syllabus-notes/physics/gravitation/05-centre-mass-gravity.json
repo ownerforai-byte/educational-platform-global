@@ -343,7 +343,12 @@
       "Show that internal forces cannot change the velocity of the COM."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**COM Definition:** The centre of mass $R_{cm} = \\sum m_i r_i / \\sum m_i$ is the mass-weighted average position. It is the point where the entire mass can be considered concentrated for *translational* motion analysis.",
+      "**CG Definition:** The centre of gravity is the point where the entire *weight* acts. In a *uniform* gravitational field, CG exactly coincides with COM. In a non-uniform field (e.g., very large bodies), they differ because the torque balance for weight involves the varying $g$ field.",
+      "**COM Outside Material:** The COM can lie outside the physical material (e.g., a ring, L-shape, boomerang). The COM of an isolated system moves with constant velocity; internal forces cannot change the total momentum or COM motion — only external forces do."
+    ]
   },
   "notes": [
     "**Centre of mass (COM):** the point where the entire mass of a body (or system) may be considered to be concentrated for translational (linear) motion analysis. Position: $R_{cm} = \\frac{\\Sigma m_i r_i}{\\Sigma m_i}$. For continuous bodies: $R_{cm} = \\frac{\\int r dm}{M}$.",
@@ -407,7 +412,6 @@
     "COM can lie outside the material (ring, L-shape, boomerang).",
     "The motion of the COM is governed only by external forces."
   ],
-  "summary": "The centre of mass is the mass-weighted average position of a body or system: $R_{cm} = \\frac{\\Sigma m_i r_i}{M}$; the centre of gravity is the point where total weight acts. They coincide in a uniform gravitational field. The COM may lie outside the material and its motion is controlled only by external forces — the key to rigid-body and stability analysis.",
   "specialNotes": [
     "In a uniform gravitational field the location of CG equals COM — that is almost always true in school problems.",
     "For symmetric uniform bodies, COM = geometric centre (no calculation needed).",
@@ -443,6 +447,21 @@
     "COM of composite bodies (L-shape, rod + disk) appears in exams.",
     "Know that the COM follows a parabola even for a spinning projectile."
   ],
+  "importantConcepts": [
+    "$COM = \\frac{\\Sigma m_i r_i}{\\Sigma m_i}$; $CG = \\text{point where total weight acts}$.",
+    "COM and CG coincide in uniform g.",
+    "Uniform symmetric bodies have COM at the geometric centre.",
+    "The COM can lie outside the material of the body.",
+    "External forces alone determine COM motion."
+  ],
+  "importantTasks": [
+    "Compute the COM for two and three point-mass systems.",
+    "Compute the COM of composite uniform bodies (L-shape, rod + mass).",
+    "Describe the experimental method to find the CG of a lamina.",
+    "Explain the COM = CG condition.",
+    "Show that internal forces cannot change the velocity of the COM."
+  ],
+  "summary": "The centre of mass is the mass-weighted average position of a body or system: $R_{cm} = \\frac{\\Sigma m_i r_i}{M}$; the centre of gravity is the point where total weight acts. They coincide in a uniform gravitational field. The COM may lie outside the material and its motion is controlled only by external forces — the key to rigid-body and stability analysis.",
   "mcs": [
     {
       "question": "The centre of mass of a uniform rod lies at its:",
@@ -494,20 +513,5 @@
       ],
       "answer": "B"
     }
-  ],
-  "importantConcepts": [
-    "$COM = \\frac{\\Sigma m_i r_i}{\\Sigma m_i}$; $CG = \\text{point where total weight acts}$.",
-    "COM and CG coincide in uniform g.",
-    "Uniform symmetric bodies have COM at the geometric centre.",
-    "The COM can lie outside the material of the body.",
-    "External forces alone determine COM motion."
-  ],
-  "importantTasks": [
-    "Compute the COM for two and three point-mass systems.",
-    "Compute the COM of composite uniform bodies (L-shape, rod + mass).",
-    "Describe the experimental method to find the CG of a lamina.",
-    "Explain the COM = CG condition.",
-    "Show that internal forces cannot change the velocity of the COM."
-  ],
-  "visualization": {}
+  ]
 }

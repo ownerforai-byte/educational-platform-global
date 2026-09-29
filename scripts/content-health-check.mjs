@@ -102,3 +102,10 @@ if (nebSampleKey) {
 const result2 = scanJSON(allJSON);
 console.log("\n=== RE-SCAN AFTER FIX ===");
 console.log("Valid:", result2.ok, "| Broken:", result2.broken.length);
+
+// Gate semantics: fail when JSON is still unparseable after the BOM pass, so
+// `npm run check:content` can actually exit non-zero (it previously never did).
+if (result2.broken.length > 0) {
+  console.error("\n" + result2.broken.length + " JSON file(s) still unparseable - content health check FAILED.");
+  process.exit(1);
+}

@@ -343,7 +343,12 @@
       "Explain the Cavendish experiment and its significance."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Universal Scope:** Newton's law ($F = Gm_1m_2/r^2$) applies to *all* masses in the universe, at all distances. It is exact for point masses or spherically symmetric bodies (Shell Theorem). For non-spherical objects, integration or numerical methods are required.",
+      "**Inverse-Square Nature:** The $1/r^2$ dependence means the force has infinite range but drops rapidly. It never reaches zero at any finite distance. This inverse-square law is equivalent to saying gravitational flux through a closed surface is proportional to enclosed mass (Gauss's law for gravity).",
+      "**G vs g Distinction:** $G = 6.67 \\times 10^{-11} \\text{ N·m}^2/\\text{kg}^2$ is a *universal constant*. $g = GM/r^2$ is the *local gravitational field strength*, varying with location. On Earth's surface $g \\approx 9.8 \\text{ m/s}^2$; at height $h$, $g' = g(R/(R+h))^2$."
+    ]
   },
   "notes": [
     "**Law statement:** every particle in the universe attracts every other particle with a force that is proportional to the product of their masses and inversely proportional to the square of the distance between their centres: $F = \\frac{Gm_1m_2}{r^2}$.",
@@ -407,7 +412,6 @@
     "The law explains orbital motion, tides, and planetary orbits.",
     "Gravity between everyday objects is negligible because G is tiny."
   ],
-  "summary": "Newton's law of gravitation states that every mass attracts every other mass with $F = \\frac{Gm_1m_2}{r^2}$. The universal constant $G = 6.67\\times 10^{-11} \\text{ N·m}^2/\\text{kg}^2$ couples mass and distance to force. The law gives the gravitational field $g = \\frac{GM}{r^2}$, explains orbital motion ($v = \\sqrt{\\frac{GM}{r}}$, $T = 2\\pi\\sqrt{\\frac{r^3}{GM}}$), and underpins all celestial mechanics.",
   "specialNotes": [
     "Use the centre-to-centre distance in r — for spheres this is the distance between centres.",
     "G is the same everywhere; g is NOT — it varies with location and height.",
@@ -443,6 +447,21 @@
     "Kepler's third law can be derived from Newton's law — a common derivation question.",
     "Know the difference between G (universal constant) and g (local field)."
   ],
+  "importantConcepts": [
+    "Newton's law of gravitation: $F = \\frac{Gm_1m_2}{r^2}$ with $G = 6.67\\times 10^{-11} \\text{ N·m}^2/\\text{kg}^2$.",
+    "Gravitational force is always attractive and obeys the inverse-square law.",
+    "$g = \\frac{GM}{r^2}$ gives the gravitational field strength.",
+    "Orbital velocity $v = \\sqrt{\\frac{GM}{r}}$ and period $T = 2\\pi\\sqrt{\\frac{r^3}{GM}}$ follow from the law.",
+    "The law explains tides, satellite motion, and planetary orbits."
+  ],
+  "importantTasks": [
+    "Solve 5 numericals using $F = \\frac{Gm_1m_2}{r^2}$.",
+    "Compute g at the surface and at various heights of a planet.",
+    "Derive the orbital velocity and period formulas from the law.",
+    "Compare gravitational and electric forces for the same particles.",
+    "Explain the Cavendish experiment and its significance."
+  ],
+  "summary": "Newton's law of gravitation states that every mass attracts every other mass with $F = \\frac{Gm_1m_2}{r^2}$. The universal constant $G = 6.67\\times 10^{-11} \\text{ N·m}^2/\\text{kg}^2$ couples mass and distance to force. The law gives the gravitational field $g = \\frac{GM}{r^2}$, explains orbital motion ($v = \\sqrt{\\frac{GM}{r}}$, $T = 2\\pi\\sqrt{\\frac{r^3}{GM}}$), and underpins all celestial mechanics.",
   "mcs": [
     {
       "question": "The gravitational force between two masses depends on:",
@@ -494,20 +513,5 @@
       ],
       "answer": "B"
     }
-  ],
-  "importantConcepts": [
-    "Newton's law of gravitation: $F = \\frac{Gm_1m_2}{r^2}$ with $G = 6.67\\times 10^{-11} \\text{ N·m}^2/\\text{kg}^2$.",
-    "Gravitational force is always attractive and obeys the inverse-square law.",
-    "$g = \\frac{GM}{r^2}$ gives the gravitational field strength.",
-    "Orbital velocity $v = \\sqrt{\\frac{GM}{r}}$ and period $T = 2\\pi\\sqrt{\\frac{r^3}{GM}}$ follow from the law.",
-    "The law explains tides, satellite motion, and planetary orbits."
-  ],
-  "importantTasks": [
-    "Solve 5 numericals using $F = \\frac{Gm_1m_2}{r^2}$.",
-    "Compute g at the surface and at various heights of a planet.",
-    "Derive the orbital velocity and period formulas from the law.",
-    "Compare gravitational and electric forces for the same particles.",
-    "Explain the Cavendish experiment and its significance."
-  ],
-  "visualization": {}
+  ]
 }

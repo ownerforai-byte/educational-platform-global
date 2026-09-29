@@ -569,5 +569,37 @@
       ],
       "answer": "Guanine = 30%"
     }
-  ]
+  ],
+  "nepali": {
+    "notes": [
+      "**जैवअणु (Biomolecules) वर्गीकरण, संरचना र शारीरिक कार्य:** जीवनको लागि आवश्यक कार्बनिक अणुहरू: कार्बोहाइड्रेट, प्रोटीन, लिपिड, न्यूक्लिक एसिड, खनिज, एन्जाइम र पानी।",
+      "**कार्बोहाइड्रेट (CH2O)n:** मोनोस्याक्काराइड (ग्लुकोज, फ्रक्टोज, राइबोज), डाइस्याक्काराइड (सुक्रोज=ग्लुकोज+फ्रक्टोज, ल्याक्टोज, माल्टोज), पोलीस्याक्काराइड (स्टार्च, ग्लाइकोजन, सेल्युलोज)। ऊर्जा (4 kcal/g) र संरचनात्मक सहयोग प्रदान गर्छ।",
+      "**प्रोटीन:** 20 L-अमीनो एसिडको बहुलक जे पेप्टाइड (-CO-NH-) बन्डद्वारा जोडिएको छ। चार संरचनात्मक स्तर (प्राथमिक, द्वितीयक, तृतीयक, चतुर्थक)। कार्यहरू: एन्जाइम, परिवहन (हीमोग्लोबिन), संकुचन, रक्षा, संरचनात्मक।",
+      "**लिपिड:** जलविरोधी (hydrophobic); ट्राइग्लिसराइड (वसा संग्रह, 9 kcal/g), फस्फोलिपिड (झिल्ली द्विस्तर), स्टेराइड (कोलेस्ट्रल, हार्मोन)। वास्तविक बहुलक होइनन्।",
+      "**न्यूक्लिक एसिड:** DNA (दोहोरो हेलिक्स, डिअक्सीराइबोज, A=T 2 H-बन्ड, G=C 3 H-बन्ड) वंशागति सङ्ग्रह गर्छ; RNA (एकल फाँड, राइबोज, A=U) प्रोटीन संश्लेषणमा (mRNA, tRNA, rRNA)।",
+      "**एन्जाइम:** जैविक उत्प्रेरक (अधिकांश प्रोटीन); लक-अन्ड-की / प्रेरित-फिट मोडेलबाट कार्य गर्छ; उच्च तापमान वा चरम pH ले विकृत गर्छ; -S- (सब्सट्रेट) विशिष्टता पालना गर्छ।",
+      "**पानी (प्रमुख विलायक, ~७०% सेल) र खनिज (Ca, P, K, Na, Fe, I) संरचनात्मक, उत्प्रेरक र परासरण नियामकको रूपमा कार्य गर्छन्; अभावले अभाव रोगहरू ल्याउँछ।"
+    ],
+    "importantStatements": [
+      "मानव शरीरमा पृथ्वीमा बालुका कणको संख्याको बराबर कार्बन परमाणु हुन्छन्; कार्बन सबै जीवनको मेरुदण्ड हो।",
+      "हीमोग्लोबिन १०० mL पूर्ण सन्तृप्त रक्तमा १.४ g अक्सिजन वहन गर्छ।",
+      "पानीको विशिष्ट ताप असाधारण उच्च छ र यो जैविक थर्मोस्टेटको रूपमा कार्य गर्छ।",
+      "इन्सुलिन (५१ अमीनो एसिड) मानव चिकित्साको लागि बनेको पहिलो पुनर्संयोजक प्रोटीन थियो (१९७८)।"
+    ]
+  },
+  "grammar": {
+    "notes": [
+      "Biomolecule (noun): organic molecule essential to life. Plural: biomolecules.",
+      "Macromolecule (noun): large biological polymer. Includes proteins, nucleic acids, polysaccharides.",
+      "Monomer (noun): repeating unit of a polymer. E.g., amino acid for protein, nucleotide for DNA.",
+      "Enzyme (noun): biological catalyst, usually protein. Suffix -ase indicates enzyme.",
+      "Peptide bond (noun phrase): covalent bond between amino acids (-CO-NH-).",
+      "Hydrolysis (noun): breaking bonds by adding water. Opposite of condensation."
+    ],
+    "importantStatements": [
+      "In biology, 'polymer' means a chain of repeating monomers, not necessarily synthetic.",
+      "The term 'denature' means loss of native structure (unfolding), not destruction of the molecule.",
+      "Base-pairing rules: A pairs with T (or U in RNA), G pairs with C — this is specific, not random."
+    ]
+  }
 }

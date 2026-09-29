@@ -81,5 +81,10 @@
   "importantTasks": [
     "Solve 5 problems on Average Translational Kinetic Energy of Gas Molecule."
   ],
+  "specificConditions": [
+    "**Equipartition Result:** The average translational kinetic energy per molecule is $\\langle KE_{trans} \rangle = \frac{3}{2} k_B T = \frac{3}{2} \frac{R}{N_A} T$. This comes from 3 translational degrees of freedom, each contributing $\frac{1}{2} k_B T$ via equipartition.",
+    "**Temperature Proportionality:** $\\langle KE_{trans} \rangle \\propto T$ — absolute temperature is a direct measure of average translational kinetic energy. This is why Kelvin scale is fundamental: at $T=0$, translational KE is zero (classically).",
+    "**Internal Energy of Monatomic Gas:** For a monatomic ideal gas, $U = N \\langle KE_{trans} \rangle = \frac{3}{2} nRT$. The internal energy is purely translational KE. For diatomic/polyatomic gases, $U$ includes rotational and vibrational contributions as well."
+  ],
   "duplicateType": 1
 }

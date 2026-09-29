@@ -46,24 +46,28 @@ educational-platform-global/
 
 ## Quick Start
 
-Prerequisites: Node.js 20+, npm 10+. All commands run from the repo root via npm workspaces.
+Prerequisites: Node.js 20+, npm 10+. Backend scripts run from the repo root via npm
+workspaces; `frontend/` is NOT a workspace member, so its scripts run from `frontend/`.
 
 ```bash
 npm install
 
-# Frontend — Next.js 15 App Router, http://localhost:5173
-npm run dev -w frontend
-npm run typecheck -w frontend     # 0 errors expected
-npm run build -w frontend         # full production build
-npm run test:run -w frontend      # vitest suite
+# Frontend — Next.js 15 App Router, http://localhost:5173 (run from frontend/)
+cd frontend
+npm run dev                       # next dev -p 5173
+npm run typecheck                 # 0 errors expected
+npm run build                     # full production build
+npm run test:run                  # vitest suite
+cd ..
 
-# Backend — Express 4 + TS ESM, http://localhost:3001
+# Backend — Express 4 + TS ESM, http://localhost:3000
 npm run dev:backend               # tsx watch (dev)
 npm run build -w backend          # tsc + ESM import fixup
 node backend/dist/index.js        # boots with ZERO env vars (lazy Supabase client)
 
 # Content pipeline — rebuild public/data JSON from content/
 npm run content:build
+npm run check:schema              # strict Zod gate: corpus + built manifests
 ```
 
 In development the backend boots without configuration (DB-backed routes fall back to an

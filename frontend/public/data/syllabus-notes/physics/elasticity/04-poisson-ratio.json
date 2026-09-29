@@ -343,7 +343,12 @@
       "Compare the lateral behaviour of cork, steel and rubber."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Definition and Sign Convention:** $\\sigma = -(\text{lateral strain})/(\text{longitudinal strain})$. The negative sign makes $\\sigma$ positive for ordinary materials (lateral and longitudinal strains have opposite signs). The ratio is dimensionless — dividing one dimensionless strain by another.",
+      "**Volume Change Constraint:** The fractional volume change under uniaxial stress is $\\Delta V/V = \\varepsilon(1 - 2\\sigma)$. For $\\sigma = 0.5$ (incompressible), $\\Delta V/V = 0$ — volume is conserved. For $\\sigma < 0.5$, volume increases slightly during stretching.",
+      "**Material State Limits:** The thermodynamic bounds are $-1 < \\sigma < 0.5$ for isotropic materials. Most common materials have $0 < \\sigma < 0.5$. Auxetic materials (negative $\\sigma$) expand laterally when stretched — rare and engineered. Fluids have no defined Poisson's ratio (no shear rigidity)."
+    ]
   },
   "notes": [
     "**Poisson's ratio (σ):** when a body is stretched (or compressed), it becomes thinner (or thicker) in the perpendicular directions. Poisson's ratio is the ratio of lateral strain to longitudinal strain: σ = −(lateral strain)/(longitudinal strain) = −(β/α). The minus sign keeps σ positive because lateral strain is opposite in sign to longitudinal strain.",
@@ -407,7 +412,6 @@
     "σ = 0.5 means incompressible (volume is conserved); σ = 0 means no lateral change (cork).",
     "ΔV/V = ε(1 − 2σ) — volume change during stretching depends only on σ and strain."
   ],
-  "summary": "Poisson's ratio σ = −(lateral strain)/(longitudinal strain) is a dimensionless material constant between 0 and 0.5 describing how a body thins when stretched. It links the elastic moduli through E = 2G(1+σ) = 3B(1−2σ). σ = 0.5 corresponds to an incompressible material, while cork (σ ≈ 0) barely changes width.",
   "specialNotes": [
     "Remember the minus sign in σ = −(lateral)/(longitudinal) — it makes typical σ positive.",
     "σ is dimensionless — do not attach units.",
@@ -443,6 +447,21 @@
     "Volume change ΔV/V = ε(1 − 2σ) appears in numerical questions.",
     "NEB may ask to verify volu-constancy for rubber (σ = 0.5)."
   ],
+  "importantConcepts": [
+    "Poisson's ratio σ = −(lateral strain)/(longitudinal strain) is dimensionless.",
+    "Typical range for isotropic materials: 0 < σ < 0.5.",
+    "σ connects the elastic moduli: E = 2G(1+σ) = 3B(1−2σ).",
+    "σ = 0.5 → incompressible; σ = 0 → no lateral deformation.",
+    "ΔV/V = ε(1 − 2σ) describes volume change on stretching."
+  ],
+  "importantTasks": [
+    "Compute σ from measured lateral and longitudinal strains.",
+    "Compute σ from E and G using E = 2G(1+σ).",
+    "Compute the lateral change for a stretched wire given σ and strain.",
+    "Show that rubber (σ = 0.5) conserves volume.",
+    "Compare the lateral behaviour of cork, steel and rubber."
+  ],
+  "summary": "Poisson's ratio σ = −(lateral strain)/(longitudinal strain) is a dimensionless material constant between 0 and 0.5 describing how a body thins when stretched. It links the elastic moduli through E = 2G(1+σ) = 3B(1−2σ). σ = 0.5 corresponds to an incompressible material, while cork (σ ≈ 0) barely changes width.",
   "mcs": [
     {
       "question": "Poisson's ratio is the ratio of lateral strain to:",
@@ -494,20 +513,5 @@
       ],
       "answer": "A"
     }
-  ],
-  "importantConcepts": [
-    "Poisson's ratio σ = −(lateral strain)/(longitudinal strain) is dimensionless.",
-    "Typical range for isotropic materials: 0 < σ < 0.5.",
-    "σ connects the elastic moduli: E = 2G(1+σ) = 3B(1−2σ).",
-    "σ = 0.5 → incompressible; σ = 0 → no lateral deformation.",
-    "ΔV/V = ε(1 − 2σ) describes volume change on stretching."
-  ],
-  "importantTasks": [
-    "Compute σ from measured lateral and longitudinal strains.",
-    "Compute σ from E and G using E = 2G(1+σ).",
-    "Compute the lateral change for a stretched wire given σ and strain.",
-    "Show that rubber (σ = 0.5) conserves volume.",
-    "Compare the lateral behaviour of cork, steel and rubber."
-  ],
-  "visualization": {}
+  ]
 }

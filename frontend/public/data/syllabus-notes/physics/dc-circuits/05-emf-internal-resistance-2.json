@@ -42,103 +42,10 @@
   "motionGraphics": "dc-circuits",
   "duplicateType": 2,
   "tabGroup": "emf-internal-resistance-and-cells-in-combination",
+  "specificConditions": [
+    "**EMF vs Terminal Voltage:** EMF ($\\mathcal{E}$) is the open-circuit voltage (no current). Terminal voltage $V = \\mathcal{E} - Ir$ under discharge; $V = \\mathcal{E} + Ir$ during charging. The sign of the $Ir$ term depends on current direction.",
+    "**Series/Parallel Cell Rules:** In series: $\\mathcal{E}_{total} = \\sum \\mathcal{E}_i$, $r_{total} = \\sum r_i$. In parallel (identical cells): $\\mathcal{E}_{total} = \\mathcal{E}$, $r_{total} = r/n$. These assume no circulating currents between mismatched cells.",
+    "**Maximum Power Transfer Theorem:** Maximum power to load $R$ occurs at $R = r$, giving $P_{max} = \\mathcal{E}^2/(4r)$. At this point, efficiency is 50%. For efficiency $>50\\%$, need $R > r$; for $>90\\%$, need $R > 9r$."
+  ],
   "visualType": "emf-internal-resistance"
-,
-  "summary": "The electromotive force ℰ of a source is its open-circuit voltage, that is the work done per unit charge in moving charge around the complete circuit, and it is measured in volts rather than newtons despite the historical name. Every real cell also has an internal resistance r arising from its electrolyte and electrodes, so the terminal voltage under load is V = ℰ − Ir, which equals ℰ only when no current flows. The current in a simple circuit is therefore I = ℰ/(R + r), with R the external resistance. Cells in series add both their emf and their internal resistance, whereas cells in parallel leave the equivalent emf unchanged at ℰ while reducing the internal resistance to r/n for n identical cells, which allows a much larger current to be delivered. The power delivered to a load R is greatest when R = r, giving P_max = ℰ²/(4r).",
-  "importantConcepts": [
-    "EMF ℰ defined as the open-circuit voltage of the source, equal to the work done per unit charge around the circuit.",
-    "Internal resistance r due to the electrolyte and the electrodes, which is why the terminal voltage falls when current flows.",
-    "Terminal voltage V = ℰ − Ir when the cell discharges, reducing to V = ℰ at zero current.",
-    "Current in a single loop I = ℰ/(R + r), in which the internal resistance appears in series with the external resistance.",
-    "Series combination adding both emf and internal resistance, against parallel combination which keeps ℰ and divides r by n.",
-    "Maximum power transfer to the load when R = r, giving a maximum power of ℰ²/(4r)."
-  ],
-  "importantStatements": [
-    "The emf of a cell is the potential difference across its terminals when no current is drawn from it.",
-    "The terminal voltage of a discharging cell is less than its emf and is given by V = ℰ − Ir.",
-    "When cells are connected in series their emfs and their internal resistances both add.",
-    "When identical cells are connected in parallel the equivalent emf is unchanged and the internal resistance becomes r/n.",
-    "The power delivered to an external resistance is maximum when the external resistance equals the internal resistance."
-  ],
-  "importantTasks": [
-    "Find the current, terminal voltage and power delivered in a circuit containing a cell of emf ℰ, internal resistance r and load R.",
-    "Determine the emf and internal resistance of a cell from its open-circuit voltage and its voltage under a known load.",
-    "Combine several cells in series and in parallel, stating both the equivalent emf and the equivalent internal resistance.",
-    "Show that the power delivered to the load is maximum when R = r and evaluate that maximum power."
-  ],
-  "keyPoints": [
-    "Always include r in the total resistance: I = ℰ/(R + r), never I = ℰ/R for a real cell.",
-    "EMF is a voltage measured in volts, not a force, so it is energy per unit charge.",
-    "Series raises the emf but also raises the internal resistance; parallel lowers the internal resistance to deliver more current.",
-    "The open-circuit voltage of a cell is its emf, which is how a voltmeter of very high resistance measures it.",
-    "Maximum power transfer at R = r is the condition for a source delivering the most power to a load, not for a source being most efficient."
-  ],
-  "specialNotes": [
-    "EMF is a voltage, that is energy per unit charge, measured in volts and not in newtons; the name is purely historical.",
-    "While the cell discharges, V = ℰ − Ir, but while it is being charged the current enters the positive terminal and the terminal voltage rises to V = ℰ + Ir.",
-    "In series both the emf and the internal resistance add, whereas in parallel the emf is unchanged and only the internal resistance is reduced, so parallel cells can deliver far more current.",
-    "Open-circuit voltage equals emf only because no current flows, so a voltmeter must have a very high resistance for the reading to be trustworthy.",
-    "Maximum power transfer at R = r wastes half the available energy as heat inside the cell, so it is not the condition of maximum efficiency."
-  ],
-  "examShortTricks": [
-    "Put the internal resistance in series with the external one the moment you see a cell, so the total is R + r before any other step.",
-    "A cell that reads 2.0 V open circuit and 1.8 V at 1 A has r = 0.2 Ω by simple subtraction, which settles a two mark question instantly.",
-    "For n identical cells in parallel, the internal resistance is r/n but the emf stays ℰ; in series the emf is nℰ and the resistance is nr.",
-    "Write the terminal voltage as V = ℰ − Ir and remember that the drop across the internal resistance is exactly the loss I²r in power."
-  ],
-  "examNotes": [
-    "A three mark numerical giving ℰ, r and R and asking for the current, terminal voltage and power in the resistor is extremely common.",
-    "A two mark item asks for the emf and internal resistance from an open-circuit and a loaded voltage reading.",
-    "Series and parallel combinations of cells are a regular four or five mark question requiring both the equivalent emf and the equivalent internal resistance.",
-    "One mark questions test the definition of emf as the open-circuit voltage, and frequently the fact that it is measured in volts."
-  ],
-  "practiceQuestions": [
-    "A cell of emf 1.5 V and internal resistance 0.5 Ω is connected to a 7 Ω resistor. Find the current, the terminal voltage and the power delivered to the resistor.",
-    "A cell gives 2.0 V when no current flows and 1.8 V while delivering 1 A. Find its emf and internal resistance.",
-    "Three identical cells of emf 1.5 V and internal resistance 0.2 Ω are connected in series with a 4 Ω resistor. Find the current.",
-    "Show that the power delivered to a load is maximum when the load resistance equals the internal resistance, and find that maximum power.",
-    "Explain why connecting cells in parallel allows a larger current to be drawn than connecting the same cells in series."
-  ],
-  "mcs": [
-    {
-      "question": "The emf of a cell is equal to:",
-      "options": [
-        "The terminal voltage under load",
-        "The open-circuit voltage of the cell",
-        "The current it delivers",
-        "The force pushing the charge"
-      ],
-      "answer": "B"
-    },
-    {
-      "question": "The terminal voltage of a discharging cell is:",
-      "options": [
-        "ℰ + Ir",
-        "ℰ − Ir",
-        "ℰ",
-        "Ir"
-      ],
-      "answer": "B"
-    },
-    {
-      "question": "For n identical cells in parallel, the internal resistance becomes:",
-      "options": [
-        "nr",
-        "r/n",
-        "r",
-        "n²r"
-      ],
-      "answer": "B"
-    },
-    {
-      "question": "The power delivered to the load is maximum when:",
-      "options": [
-        "R = r",
-        "R = 0",
-        "R is very large",
-        "R = ℰ"
-      ],
-      "answer": "A"
-    }
-  ]
 }

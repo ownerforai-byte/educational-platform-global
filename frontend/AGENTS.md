@@ -54,14 +54,16 @@ When given PDFs or raw text:
 ### 6. Content Validation
 Run validation before committing content:
 ```bash
-npx tsx scripts/validate-content.ts    # Check all content is properly organized
-npx tsx scripts/organize-content.ts    # Scan for misplaced content
+# from the repo root:
+node scripts/validate-content.mjs                               # parse every content/*.json (exit 1 on broken)
+npm run check:schema                                            # strict Zod gate (corpus + built manifests)
+node node_modules/tsx/dist/cli.mjs frontend/scripts/content/validate.ts --strict  # same gate, detailed report
 ```
 
 ### 7. Backend + Frontend Must Run Together
 - Frontend: `npm run dev -w frontend` (port 5173)
-- Backend: `npm run dev:backend` (port 3001)
-- API proxy: frontend proxies `/api/*` → `localhost:3001`
+- Backend: `npm run dev:backend` (port 3000)
+- API proxy: frontend proxies `/api/*` → `localhost:3000` (set `NEXT_PUBLIC_API_URL` in `frontend/.env.local`)
 
 ### 8. Adding New Routes
 - Page routes go in `frontend/app/` (Next.js App Router)
@@ -73,8 +75,9 @@ npx tsx scripts/organize-content.ts    # Scan for misplaced content
 - `frontend/features/mindmap/` — Mind map generation system
 - `frontend/features/syllabus/` — Syllabus display components
 - `content/ravikishan/` — All course content (JSON format)
-- `scripts/validate-content.ts` — Content organization validator
-- `scripts/organize-content.ts` — Content alignment scanner
+- `scripts/validate-content.mjs` — content JSON parser (exit 1 on broken files)
+- `scripts/content-health-check.mjs` — BOM repair + `_index.json` completeness scan
+- `frontend/scripts/content/validate.ts` — strict schema gate (corpus + built manifests)
 
 <!-- BEGIN:nextjs-agent-rules -->
 

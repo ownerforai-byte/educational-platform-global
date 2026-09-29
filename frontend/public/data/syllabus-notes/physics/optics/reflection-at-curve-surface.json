@@ -81,5 +81,10 @@
   "importantTasks": [
     "Solve 5 problems on Reflection at Curved Surface."
   ],
+  "specificConditions": [
+    "**Mirror Equation Validity:** The mirror formula $1/f = 1/u + 1/v$ (or $1/f = 1/v - 1/u$ for lenses) assumes paraxial rays (small angles, close to principal axis). For large apertures, spherical aberration occurs and the simple formula breaks down.",
+    "**Sign Convention (Cartesian):** Distances measured from pole: $u$ (object) positive if object is on the incoming light side; $v$ (image) positive if image is on the outgoing light side (real image for mirrors, virtual for lenses); $f$ positive for concave mirrors/convex lenses, negative for convex mirrors/concave lenses.",
+    "**Focal Length and Radius:** For spherical mirrors, $f = R/2$. This comes from the geometry of reflection at a spherical surface. For lenses, $1/f = (n-1)(1/R_1 - 1/R_2)$ (lens maker's formula), which reduces to mirror-like behavior for reflective surfaces."
+  ],
   "duplicateType": 1
 }

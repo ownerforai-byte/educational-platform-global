@@ -407,7 +407,6 @@
     "Applications: communication, broadcasting, weather satellites.",
     "Geosynchronous ≠ geostationary — geosynchronous only matches the period."
   ],
-  "summary": "A geostationary satellite orbits in the equatorial plane west-to-east with a 24-hour period, so it appears fixed over one point on the equator. It sits at a unique altitude of 35,800 km (r = 4.22×10⁷ m) and moves at 3.07 km/s. Geostationary orbits are vital for communications and weather satellites.",
   "specialNotes": [
     "The key difference from geosynchronous: geostationary also requires the equatorial plane and zero inclination.",
     "Altitude 35,800 km = about 5.6 Earth radii.",
@@ -443,6 +442,21 @@
     "Applications (telecom, weather, broadcasting) are direct marks.",
     "Energy in geostationary orbit is tested together with satellite topic."
   ],
+  "importantConcepts": [
+    "A geostationary satellite is equatorial, west-to-east, and has T = 24 h.",
+    "Its radius r ≈ 4.22×10⁷ m; altitude ≈ 35,800 km.",
+    "v ≈ 3.07 km/s; it appears fixed over one equator point.",
+    "Geostationary orbits are unique — one height satisfies T = 24 h.",
+    "Used for communications, broadcasting and weather satellites."
+  ],
+  "importantTasks": [
+    "Derive the geostationary orbital radius from T = 24 h.",
+    "Compute altitude, speed and angular speed of the orbit.",
+    "Distinguish geosynchronous and geostationary with examples.",
+    "Calculate K, U and E for a satellite at geostationary height.",
+    "Explain why geostationary orbits suit communication satellites."
+  ],
+  "summary": "A geostationary satellite orbits in the equatorial plane west-to-east with a 24-hour period, so it appears fixed over one point on the equator. It sits at a unique altitude of 35,800 km (r = 4.22×10⁷ m) and moves at 3.07 km/s. Geostationary orbits are vital for communications and weather satellites.",
   "mcs": [
     {
       "question": "A geostationary satellite has an orbital period of:",
@@ -494,20 +508,5 @@
       ],
       "answer": "B"
     }
-  ],
-  "importantConcepts": [
-    "A geostationary satellite is equatorial, west-to-east, and has T = 24 h.",
-    "Its radius r ≈ 4.22×10⁷ m; altitude ≈ 35,800 km.",
-    "v ≈ 3.07 km/s; it appears fixed over one equator point.",
-    "Geostationary orbits are unique — one height satisfies T = 24 h.",
-    "Used for communications, broadcasting and weather satellites."
-  ],
-  "importantTasks": [
-    "Derive the geostationary orbital radius from T = 24 h.",
-    "Compute altitude, speed and angular speed of the orbit.",
-    "Distinguish geosynchronous and geostationary with examples.",
-    "Calculate K, U and E for a satellite at geostationary height.",
-    "Explain why geostationary orbits suit communication satellites."
-  ],
-  "visualization": {}
+  ]
 }

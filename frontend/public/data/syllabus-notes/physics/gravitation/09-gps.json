@@ -407,7 +407,6 @@
     "Relativistic corrections (~38 µs/day) are essential for metre-level accuracy.",
     "GPS relies directly on satellite motion physics (v = √(GM/r), T = 2π√(r³/GM))."
   ],
-  "summary": "The Global Positioning System uses ≥ 4 satellites whose positions and times are known to compute a receiver's (x, y, z, t) by measuring signal travel times (d = c·Δt). The constellation orbits at ≈ 20,200 km with ≈ 12 h periods, and relativistic clock corrections of ~38 µs/day are essential to maintain metre-level accuracy.",
   "specialNotes": [
     "The fourth satellite is not for redundancy — it solves the unknown receiver clock offset.",
     "GPS satellites are NOT geostationary; they sit in inclined medium Earth orbits.",
@@ -443,6 +442,21 @@
     "Relativistic correction in GPS is a famous applied-physics question.",
     "Sources of GPS error and how they are corrected appear in applied sections."
   ],
+  "importantConcepts": [
+    "GPS uses travel-time ranging from ≥ 4 satellites to fix (x, y, z, t).",
+    "Satellite positions are computed from orbital mechanics (Kepler's laws).",
+    "GPS satellites orbit at 20,200 km altitude with ~12 h periods.",
+    "Relativistic corrections of ~38 µs/day keep clocks accurate.",
+    "Applications: navigation, timing, mapping, geodesy."
+  ],
+  "importantTasks": [
+    "Compute GPS satellite speed and period from its orbital radius.",
+    "Explain the four-satellite requirement with unknowns.",
+    "Quantify the effect of a 1 µs clock error.",
+    "Describe the special and general relativistic clock corrections.",
+    "List GPS error sources and their fixes."
+  ],
+  "summary": "The Global Positioning System uses ≥ 4 satellites whose positions and times are known to compute a receiver's (x, y, z, t) by measuring signal travel times (d = c·Δt). The constellation orbits at ≈ 20,200 km with ≈ 12 h periods, and relativistic clock corrections of ~38 µs/day are essential to maintain metre-level accuracy.",
   "mcs": [
     {
       "question": "GPS determines a receiver's position by measuring:",
@@ -494,20 +508,5 @@
       ],
       "answer": "B"
     }
-  ],
-  "importantConcepts": [
-    "GPS uses travel-time ranging from ≥ 4 satellites to fix (x, y, z, t).",
-    "Satellite positions are computed from orbital mechanics (Kepler's laws).",
-    "GPS satellites orbit at 20,200 km altitude with ~12 h periods.",
-    "Relativistic corrections of ~38 µs/day keep clocks accurate.",
-    "Applications: navigation, timing, mapping, geodesy."
-  ],
-  "importantTasks": [
-    "Compute GPS satellite speed and period from its orbital radius.",
-    "Explain the four-satellite requirement with unknowns.",
-    "Quantify the effect of a 1 µs clock error.",
-    "Describe the special and general relativistic clock corrections.",
-    "List GPS error sources and their fixes."
-  ],
-  "visualization": {}
+  ]
 }

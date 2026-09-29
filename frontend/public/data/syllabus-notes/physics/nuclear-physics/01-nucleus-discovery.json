@@ -83,5 +83,10 @@
   ],
   "duplicateType": 2,
   "tabGroup": "nucleus-discovery-density-mass-number-and-atomic-number",
-  "visualType": "nuclear-model"
+  "visualType": "nuclear-model",
+  "specificConditions": [
+    "**Rutherford Scattering Experiment:** Alpha particles were fired at a thin gold foil. Most passed through with little deflection, but a few scattered at large angles (>90°). This disproved the Thomson plum-pudding model and established the nuclear model: a tiny, dense, positively charged nucleus containing most of the atom's mass.",
+    "**Nuclear Size vs Atom Size:** The nucleus is ~10⁻¹⁵ m (1-10 fm) while the atom is ~10⁻¹⁰ m (1 Å). The nucleus occupies ~10⁻¹⁵ of the atomic volume but contains >99.9% of the mass. The rest is empty space where electrons orbit.",
+    "**Nuclear Density:** Nearly constant for all nuclei: ρ = mass/volume ≈ A·1.67×10⁻²⁷ kg / (4/3 π (1.2×10⁻¹⁵ A¹ᐟ³)³) ≈ 2.3×10¹⁷ kg/m³. This constancy supports the liquid-drop model and the idea that nucleons are closely packed."
+  ]
 }

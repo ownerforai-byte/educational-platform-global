@@ -26,6 +26,7 @@ import path from "node:path";
 // plain tsx from the repo root without path-alias resolution (PLANS.md §3).
 import { ConceptNoteSchema, MIN_NOTES_FOR_BODY } from "../../lib/content/schema/concept";
 import { MindMapFileSchema } from "../../lib/content/schema/mindmap";
+import { ManifestSchema } from "../../lib/content/schema/manifest";
 
 // Resolve the repo root from this file's location so the CLI works no matter
 // which directory it is invoked from (repo root via `npm run check:schema`, or
@@ -179,6 +180,38 @@ if (fs.existsSync(CORPUS)) {
   }
 }
 
+// ── built manifests ──────────────────────────────────────────────────────
+// The build writes these and nothing else validated them until now
+// (PLANS.md §4.5): a manifest that drifts from ManifestEntrySchema silently
+// breaks discovery (hasMcqs / noteCount / tab pairing) — exactly how the
+// `mcs`/`mcqs` bug shipped. Gated alongside the corpus under --strict.
+interface ManifestFinding {
+  file: string;
+  reasons: string[];
+}
+const manifestFindings: ManifestFinding[] = [];
+let manifestCount = 0;
+let manifestEntries = 0;
+const builtRoot = path.join(REPO, "frontend", "public", "data", "syllabus-notes");
+if (fs.existsSync(builtRoot)) {
+  for (const subject of fs.readdirSync(builtRoot).sort()) {
+    const mp = path.join(builtRoot, subject, "_manifest.json");
+    if (!fs.existsSync(mp)) continue;
+    manifestCount++;
+    const rel = path.relative(REPO, mp).replaceAll(path.sep, "/");
+    let parsedManifest: unknown;
+    try {
+      parsedManifest = JSON.parse(fs.readFileSync(mp, "utf8"));
+    } catch (e) {
+      manifestFindings.push({ file: rel, reasons: [`JSON.parse: ${String(e).slice(0, 120)}`] });
+      continue;
+    }
+    if (Array.isArray(parsedManifest)) manifestEntries += parsedManifest.length;
+    const res = ManifestSchema.safeParse(parsedManifest);
+    if (!res.success) manifestFindings.push({ file: rel, reasons: formatIssues(res.error) });
+  }
+}
+
 // ── report ───────────────────────────────────────────────────────────────
 const relPath = (f: string) => path.relative(REPO, f).replaceAll(path.sep, "/");
 const byState: Record<State, Finding[]> = { INVALID: [], EMPTY: [], THIN: [], BODY: [] };
@@ -189,6 +222,9 @@ console.log(
   `in-scope files: ${findings.length}   INVALID: ${byState.INVALID.length}   EMPTY: ${byState.EMPTY.length}   THIN: ${byState.THIN.length}   BODY: ${byState.BODY.length}`
 );
 console.log(`out-of-scope (other trees, not assessed): ${other.length}`);
+console.log(
+  `manifests: ${manifestCount}   entries: ${manifestEntries}   manifest violations: ${manifestFindings.length}`
+);
 const incomplete = byState.EMPTY.length + byState.THIN.length;
 console.log(`schema violations: ${byState.INVALID.length}   incomplete notes (EMPTY+THIN): ${incomplete}`);
 
@@ -196,6 +232,12 @@ if (byState.INVALID.length) {
   console.log("\n-- INVALID (schema rejected) --");
   for (const f of byState.INVALID.slice(0, 40)) console.log(`  ${f.file}\n     ${f.reasons.join("\n     ")}`);
   if (byState.INVALID.length > 40) console.log(`  … and ${byState.INVALID.length - 40} more`);
+}
+
+if (manifestFindings.length) {
+  console.log("\n-- INVALID manifests (built _manifest.json) --");
+  for (const m of manifestFindings.slice(0, 10))
+    console.log(`  ${m.file}\n     ${m.reasons.join("\n     ")}`);
 }
 
 const currentInvalid = byState.INVALID.map((f) => f.file).sort();
@@ -229,10 +271,17 @@ if (newInvalid.length) {
   for (const f of newInvalid.slice(0, 30)) console.log("  + " + f);
   process.exit(1);
 }
+if (manifestFindings.length) {
+  console.log(`\nGATE: FAIL — ${manifestFindings.length} manifest(s) violate ManifestEntrySchema:`);
+  for (const m of manifestFindings.slice(0, 10))
+    console.log(`  ${m.file}\n     ${m.reasons.join("\n     ")}`);
+  process.exit(1);
+}
 const fixed = [...known].filter((f) => !currentInvalid.includes(f)).length;
 console.log(
   `\nGATE: PASS — no new violations (${currentInvalid.length} known, ${fixed} since baseline; ` +
-    `EMPTY ${byState.EMPTY.length} / THIN ${byState.THIN.length} tracked separately)`
+    `EMPTY ${byState.EMPTY.length} / THIN ${byState.THIN.length} tracked separately; ` +
+    `manifests ${manifestCount} clean, ${manifestEntries} entries)`
 );
 process.exit(0);
 

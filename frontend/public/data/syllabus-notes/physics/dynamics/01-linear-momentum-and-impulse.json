@@ -353,7 +353,12 @@
       "Task 5: Derive $J = \\Delta p$ from $F = dp/dt$ by integration over a collision interval."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Newton's 2nd Law - General Form:** $\\vec{F} = d\\vec{p}/dt$ is the fundamental form of Newton's second law. It remains valid for variable-mass systems (rockets, raindrops) where $F = ma$ fails because mass is not constant.",
+      "**Impulse-Momentum Theorem:** $\\vec{J} = \\Delta\\vec{p}$ is derived by integrating $F = dp/dt$ over the collision time. It is valid regardless of whether the force is constant, time-varying, or impulsive — the integral captures the total momentum change.",
+      "**Conservation Requirement:** Linear momentum is conserved *only* when the net *external* force on the system is zero. Internal forces always cancel in pairs (Newton's 3rd law) and cannot change the system's total momentum."
+    ]
   },
   "notes": [
     "**Type 2 — alternate treatment:** this version emphasises the momentum form of Newton's second law and the impulse–momentum theorem with force–time graphs — the framing NEB theory questions use.",
@@ -425,7 +430,6 @@
     "Momentum conservation holds in all collisions; kinetic energy only in elastic ones.",
     "Recoil problems are momentum bookkeeping: $M V + m v = 0$ from rest."
   ],
-  "summary": "Linear momentum $\\vec{p} = m\\vec{v}$ measures 'quantity of motion'. Newton's second law in its general form is $\\vec{F} = d\\vec{p}/dt$, and integrating it over a collision interval gives the impulse–momentum theorem $\\vec{J} = \\int F\\,dt = \\Delta\\vec{p}$ — impulse is the area under the force–time graph. Because a given momentum change can come from a big force briefly or a small force slowly, safety design (airbags, crumple zones, bent knees) is the art of stretching $\\Delta t$. Recoil, ball games and rocket thrust are all direct applications.",
   "specialNotes": [
     "Note 1: In rebound problems the velocity CHANGES SIGN — $\\Delta p = m(v_f + v_i)$, not the difference. The commonest numerical error.",
     "Note 2: Quote impulse in N·s and momentum in kg·m/s — numerically identical, and examiners check units.",
@@ -458,6 +462,21 @@
     "Exam Tip 3: Graph-reading impulse questions: label the base and height you used to compute the area.",
     "Exam Tip 4: Safety-device explanations score full marks only with the chain: fixed $\\Delta p$ → longer $\\Delta t$ → smaller $F_{avg}$."
   ],
+  "importantConcepts": [
+    "Concept 1: Momentum as the fundamental 'quantity of motion' vector $m\\vec{v}$.",
+    "Concept 2: General second law $F = dp/dt$ and its constant-mass reduction.",
+    "Concept 3: Impulse as the time integral of force — area under $F$–$t$ — equal to momentum change.",
+    "Concept 4: Force–time trade-off: $F_{avg} = \\Delta p/\\Delta t$ and safety engineering.",
+    "Concept 5: Recoil and variable-mass motion as momentum bookkeeping."
+  ],
+  "importantTasks": [
+    "Task 1: Compute impulses for stop, rebound and deflect cases with explicit signs.",
+    "Task 2: Extract final velocities from three force–time pulses (rectangle, triangle, trapezium).",
+    "Task 3: Explain airbags, crumple zones and helmet padding with one common argument and numbers.",
+    "Task 4: Solve recoil problems: rifle–bullet, boat–passenger, and rocket thrust per second.",
+    "Task 5: Derive $J = \\Delta p$ from $F = dp/dt$ by integration over a collision interval."
+  ],
+  "summary": "Linear momentum $\\vec{p} = m\\vec{v}$ measures 'quantity of motion'. Newton's second law in its general form is $\\vec{F} = d\\vec{p}/dt$, and integrating it over a collision interval gives the impulse–momentum theorem $\\vec{J} = \\int F\\,dt = \\Delta\\vec{p}$ — impulse is the area under the force–time graph. Because a given momentum change can come from a big force briefly or a small force slowly, safety design (airbags, crumple zones, bent knees) is the art of stretching $\\Delta t$. Recoil, ball games and rocket thrust are all direct applications.",
   "mcs": [
     {
       "question": "The SI unit of impulse is:",
@@ -509,20 +528,5 @@
       ],
       "answer": "C"
     }
-  ],
-  "importantConcepts": [
-    "Concept 1: Momentum as the fundamental 'quantity of motion' vector $m\\vec{v}$.",
-    "Concept 2: General second law $F = dp/dt$ and its constant-mass reduction.",
-    "Concept 3: Impulse as the time integral of force — area under $F$–$t$ — equal to momentum change.",
-    "Concept 4: Force–time trade-off: $F_{avg} = \\Delta p/\\Delta t$ and safety engineering.",
-    "Concept 5: Recoil and variable-mass motion as momentum bookkeeping."
-  ],
-  "importantTasks": [
-    "Task 1: Compute impulses for stop, rebound and deflect cases with explicit signs.",
-    "Task 2: Extract final velocities from three force–time pulses (rectangle, triangle, trapezium).",
-    "Task 3: Explain airbags, crumple zones and helmet padding with one common argument and numbers.",
-    "Task 4: Solve recoil problems: rifle–bullet, boat–passenger, and rocket thrust per second.",
-    "Task 5: Derive $J = \\Delta p$ from $F = dp/dt$ by integration over a collision interval."
-  ],
-  "visualization": {}
+  ]
 }

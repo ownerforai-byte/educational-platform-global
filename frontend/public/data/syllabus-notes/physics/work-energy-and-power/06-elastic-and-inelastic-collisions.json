@@ -171,5 +171,30 @@
     "Solve 3 coefficient of restitution problems computing e from given velocities.",
     "Solve 2 two-dimensional elastic collision problems using vector momentum conservation."
   ],
+  "nepali": {
+    "notes": [
+      "**प्रत्यास्थ टक्कर (Elastic collision):** एउटी टक्कर जहाँ कुल संवेग (momentum) र कुल गतिज ऊर्जा (kinetic energy) दुवै संरक्षित रहन्छ। पिण्डहरू स्थायी विकृति बिना प्रतिघात गर्छन्, शब्द/ताप उत्पादन हुन्न। सापेक्ष वेगको पहुँच = सापेक्ष वेगको अलगाव: v₂ - v₁ = u₁ - u₂।",
+      "**अप्रत्यास्थ टक्कर (Inelastic collision):** एउटी टक्कर जहाँ संवेग संरक्षित हुन्छ तर गतिज ऊर्जा संरक्षित हुँदैन। केही गतिज ऊर्जा आन्तरिक ऊर्जामा (ताप, शब्द, विकृति) परिवर्तित हुन्छ। प्रत्यास्थता गुणांक e < 1।",
+      "**पूर्ण अप्रत्यास्थ टक्कर (Perfectly inelastic collision):** चरम अवस्था जहाँ टक्कर खाने पिण्डहरू टक्करपछि एकसाथ रहन्छन् र सामान्य वेगसँग चल्छन्। संवेग संरक्षित हुन्छ; गतिज ऊर्जाको नोक्सान अधिकतम (तर १००% होइन किनकि संवेग संरक्षित हुनुपर्छ)।"
+    ],
+    "importantStatements": [
+      "प्रत्यास्थ टक्करमा संवेग र गतिज ऊर्जा दुवै संरक्षित रहन्छ।",
+      "अप्रत्यास्थ टक्करमा संवेग मात्र संरक्षित हुन्छ, गतिज ऊर्जा हुँदैन।",
+      "प्रत्यास्थता गुणांक e = (अलगावको सापेक्ष वेग) / (पहुँचको सापेक्ष वेग)।",
+      "केन्द्रको द्रव्यमान फ्रेममा कुल संवेग शून्य हुन्छ — यो 2D टक्कर विश्लेषण सरल बनाउँछ।"
+    ]
+  },
+  "grammar": {
+    "notes": [
+      "Collision (noun): an instance of objects striking together. Plural: collisions.",
+      "Elastic (adjective): able to resume shape after deformation; in physics, KE-conserving.",
+      "Inelastic (adjective): not elastic; in physics, KE not conserved.",
+      "Coefficient of restitution (noun phrase): ratio of separation speed to approach speed."
+    ],
+    "importantStatements": [
+      "In physics, 'elastic' means kinetic energy is conserved, not just that objects bounce back.",
+      "The term 'perfectly inelastic' means maximum kinetic energy loss consistent with momentum conservation."
+    ]
+  },
   "visualType": "elastic-collisions"
 }

@@ -8,6 +8,8 @@
   ],
   "scripts": {
     "dev": "npm run dev --workspace=educational-platform-backend",
+    "dev:backend": "npm run dev --workspace=educational-platform-backend",
+    "content:build": "node content-tools/build-syllabus-notes.js",
     "build": "npm run build --workspace=educational-platform-backend",
     "build:backend": "npm run build --workspace=educational-platform-backend",
     "start": "npm run start --workspace=educational-platform-backend",
@@ -16,10 +18,13 @@
     "test": "npm run test:run --workspace=educational-platform-backend",
     "check": "node scripts/scoped-check.mjs",
     "check:all": "node scripts/scoped-check.mjs --all",
-    "check:content": "node scripts/content-health-check.mjs",
+    "check:content": "node scripts/content-health-check.mjs && npm run check:schema",
     "check:schema": "cd frontend && npm run test:run -- tests/lib/content/schema-corpus.test.ts",
     "audit:scopes": "node scripts/audit-empty-scopes.mjs",
     "audit:scopes:fail": "node scripts/audit-empty-scopes.mjs --strict",
     "audit:mindmap": "node scripts/enrichment/mindmap-validate.mjs"
+  },
+  "devDependencies": {
+    "tsx": "^4.23.15"
   }
 }

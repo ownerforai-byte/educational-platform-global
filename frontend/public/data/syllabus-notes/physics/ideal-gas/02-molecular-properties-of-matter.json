@@ -42,103 +42,10 @@
   ],
   "animation3D": "ideal-gas",
   "motionGraphics": "ideal-gas",
-  "visualType": "kinetic-theory-gas-derive"
-,
-  "summary": "Kinetic theory holds that all matter consists of atoms or molecules in constant random thermal motion, faster at higher temperature, and that the state of a substance is fixed by how closely those particles are packed and how strongly they attract one another. In a gas the intermolecular spacing exceeds the molecular diameter by a factor of about ten, so molecules move almost freely and kinetic energy dominates; in a liquid the spacing is roughly one molecular diameter, with moderate attraction; in a solid the particles are locked into a regular lattice and potential energy dominates. The intermolecular forces, whether van der Waals, dipole-dipole or hydrogen bonding, are strongest in solids and weakest in gases, which is why a phase change at constant temperature consumes energy in breaking bonds rather than raising the kinetic energy. Observable consequences of the same molecular picture include Brownian motion, the random zigzag motion of fine particles suspended in a fluid caused by unequal molecular bombardment and explained by Einstein in 1905, and diffusion, which is fastest in gases and slowest in solids and speeds up with temperature.",
-  "importantConcepts": [
-    "Kinetic theory: all matter consists of particles in constant random thermal motion, faster at higher temperature.",
-    "Molecular spacing setting the state: about ten molecular diameters in a gas, about one in a liquid, and tightly packed in an ordered solid lattice.",
-    "Intermolecular forces, whether van der Waals, hydrogen bonding or dipole-dipole, strongest in solids, moderate in liquids and very weak in gases.",
-    "The competition between kinetic and potential energy: kinetic dominates in gases, potential dominates in solids.",
-    "Brownian motion as the random zigzag motion of suspended particles, first seen by Brown in 1827 and explained by Einstein in 1905 through unequal molecular bombardment.",
-    "Diffusion as spontaneous mixing from random molecular motion, governed by Fick's law, fastest in gases and slowest in solids."
-  ],
-  "importantStatements": [
-    "All matter is composed of tiny particles that are in constant random motion, and that motion is faster at higher temperature.",
-    "In a gas the intermolecular spacing is much greater than the molecular diameter, so the molecules move almost freely.",
-    "In a solid the molecules are held in fixed positions by strong intermolecular forces, so potential energy dominates.",
-    "During melting or boiling the energy supplied increases the potential energy by breaking bonds, while the temperature stays constant.",
-    "Brownian motion results from the unequal bombardment of a suspended particle by the molecules of the fluid around it."
-  ],
-  "importantTasks": [
-    "Compare the kinetic and potential energy contributions in the three states of matter and relate them to the observed properties.",
-    "Explain the random zigzag motion of a particle suspended in a liquid in terms of molecular collisions from all directions.",
-    "Predict which of two states diffuses faster and justify the answer in terms of molecular speeds and mean free path.",
-    "Account for the different magnitudes of thermal expansion in gases, liquids and solids in terms of molecular motion."
-  ],
-  "keyPoints": [
-    "The spacing of molecules, not their identity, is what distinguishes a gas from a liquid or a solid.",
-    "Energy absorbed during a phase change goes into potential energy, breaking intermolecular bonds, not into kinetic energy.",
-    "Brownian motion and diffusion are the two most visible experimental confirmations of molecular motion.",
-    "Diffusion accelerates with temperature because the molecules are moving faster and cover more ground between collisions.",
-    "Expansion on heating arises from the increased amplitude of molecular vibration, greatest in gases and smallest in solids."
-  ],
-  "specialNotes": [
-    "Temperature measures the average kinetic energy of the molecules, not the total energy, so a large cold body can hold more total thermal energy than a small hot one.",
-    "Heat and temperature are not the same: temperature is the intensive measure of average molecular kinetic energy, while heat is the extensive energy transferred because of a difference in temperature.",
-    "At a melting or boiling point the temperature does not change even though heat continues to flow, because the energy goes into potential energy in breaking intermolecular bonds.",
-    "Brownian motion is not a property of the particle itself but of the imbalance between molecular impacts arriving from all directions at once.",
-    "A gas expands far more than a liquid or a solid on heating, because its molecules are far apart and free to move apart rather than being constrained to fixed sites."
-  ],
-  "examShortTricks": [
-    "When a question says energy is absorbed but the temperature does not change, immediately think phase change and potential energy.",
-    "For diffusion questions, the two decisive factors are molecular speed, which rises with temperature, and the mean free path, which is longest in a gas.",
-    "Quote roughly one molecular diameter for liquid spacing and about ten for gas spacing; these ratios are what examiners expect.",
-    "To explain Brownian motion, stress the word unequal: perfectly balanced impacts from all sides would leave the particle at rest."
-  ],
-  "examNotes": [
-    "A three mark question comparing the three states of matter in a table of spacing, forces and dominant energy type is very common.",
-    "One mark recall questions ask for the observation of Brownian motion, who explained it and in what year, or for the definition of diffusion.",
-    "Explanation questions on why the temperature stays constant during boiling are standard and are answered using potential energy.",
-    "Expect a two or three mark application: why a gas diffuses faster than a liquid, or why a liquid expands more than a solid."
-  ],
-  "practiceQuestions": [
-    "State the kinetic theory of matter in two or three sentences.",
-    "Compare the intermolecular spacing, the strength of intermolecular forces and the dominant energy type in a gas, a liquid and a solid.",
-    "Explain the observation of Brownian motion in terms of molecular bombardment.",
-    "Explain why the temperature of boiling water stays constant while heat is still being supplied.",
-    "Explain why gases diffuse faster than liquids, and why diffusion speeds up when the temperature is raised."
-  ],
-  "mcs": [
-    {
-      "question": "In a gas, the intermolecular spacing is typically:",
-      "options": [
-        "About one molecular diameter",
-        "Much greater than the molecular diameter",
-        "Zero, since molecules touch",
-        "Smaller than in a solid"
-      ],
-      "answer": "B"
-    },
-    {
-      "question": "In a solid, the dominant energy is:",
-      "options": [
-        "Kinetic energy",
-        "Potential energy",
-        "Electrical energy",
-        "Nuclear energy"
-      ],
-      "answer": "B"
-    },
-    {
-      "question": "Brownian motion is caused by:",
-      "options": [
-        "A force pushing the particle steadily",
-        "Unequal bombardment of the particle by fluid molecules",
-        "Magnetic attraction in the fluid",
-        "Convection currents in the liquid"
-      ],
-      "answer": "B"
-    },
-    {
-      "question": "During boiling, the energy supplied goes to:",
-      "options": [
-        "Increasing the kinetic energy of the molecules",
-        "Breaking intermolecular bonds, increasing potential energy",
-        "Increasing the pressure of the liquid",
-        "Radiating as heat immediately"
-      ],
-      "answer": "B"
-    }
+  "visualType": "kinetic-theory-gas-derive",
+  "specificConditions": [
+    "**State-Dependent Molecular Spacing:** In gases, intermolecular spacing $\\gg$ molecular diameter ($\\sim 10\\times$); in liquids, spacing $\\approx$ molecular diameter; in solids, molecules are locked in a lattice. This spacing determines the dominant energy (KE in gases, PE in solids) and compressibility.",
+    "**Intermolecular vs Intramolecular Forces:** Intermolecular forces (van der Waals, H-bonding, dipole-dipole) are weak ($\\sim 1-100$ kJ/mol) and govern phase changes. Intramolecular (chemical) bonds are strong ($\\sim 100-1000$ kJ/mol) and govern molecular structure. Phase transitions break intermolecular bonds, not intramolecular ones.",
+    "**Mean Free Path $\\lambda \\propto 1/(n\\sigma)$:** The average distance between collisions $\\lambda = 1/(\\sqrt{2}n\\sigma)$ decreases with number density $n$ and collision cross-section $\\sigma$. At STP for air, $\\lambda \\approx 68$ nm; at low pressure (vacuum), $\\lambda$ can reach kilometers, enabling ballistic transport."
   ]
 }

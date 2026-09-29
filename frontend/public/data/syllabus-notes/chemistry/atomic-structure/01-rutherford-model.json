@@ -65,85 +65,54 @@
   ],
   "visualType": "rutherford-scattering",
   "tabGroup": "Atomic-Structure-Learner-Notes",
-  "summary": "Rutherford's α-scattering work (1909–1911, with Geiger and Marsden) replaced Thomson's plum-pudding atom with the nuclear atom: a tiny, heavy, positively charged nucleus (r ≈ 10⁻¹⁵ m, density ≈2.3 × 10¹⁷ kg m⁻³) carrying nearly all the mass inside an atom that is otherwise empty space (r ≈ 10⁻¹⁰ m), with electrons revolving around it under Coulomb attraction. The two quantitative results are the distance of closest approach, r₀ = 2Ze²/(4πε₀·KE), and the scattering law N(θ) ∝ 1/sin⁴(θ/2). The model explains the observations superbly but fails fatally on two points — a revolving electron must radiate and spiral into the nucleus in ≈10⁻⁸ s, and it would emit a continuous spectrum instead of hydrogen's sharp lines — and it offers no electronic arrangement, which is why Bohr's quantised model became necessary in 1913.",
-  "importantConcepts": [
-    "Nuclear model: a tiny heavy positive nucleus in a mostly empty atom, electrons revolving with Coulomb attraction as the centripetal force",
-    "α-scattering observations and inferences: ≈99.86% undeflected, 1 in 20 000 beyond 90°, very few back-scattered",
-    "Scattering law N(θ) ∝ 1/sin⁴(θ/2) and distance of closest approach r₀ = 2kZe²/KE",
-    "Size data: nuclear radius ≈10⁻¹⁵ m against atomic radius ≈10⁻¹⁰ m, nuclear density ≈2.3 × 10¹⁷ kg m⁻³",
-    "Limitations: radiating-electron instability, continuous-spectrum prediction, no electronic arrangement, classical assumptions, no neutron"
-  ],
-  "importantStatements": [
-    "The atom is mostly empty space, yet nearly 99.9% of its mass lies in the nucleus.",
-    "A classical revolving electron is accelerated, so it must radiate and spiral into the nucleus in ≈10⁻⁸ s — yet atoms are stable.",
-    "The inward spiral would emit a continuous range of frequencies, contradicting hydrogen's discrete line spectrum.",
-    "The nuclear radius (≈10⁻¹⁵ m) is about 1/100 000 of the atomic radius (≈10⁻¹⁰ m), so nuclear volume is ≈10⁻¹⁵ of atomic volume.",
-    "The model gives no shells, energies or electronic arrangement, so periodicity and valency stay unexplained, and ignoring the neutron leaves isotopes unexplained."
-  ],
-  "importantTasks": [
-    "Describe the α-scattering experiment with a labelled diagram and list the observations with the conclusions drawn.",
-    "Use Maxwell's electromagnetic theory to show that Rutherford's model cannot account for atomic stability.",
-    "Calculate the distance of closest approach of a 5 MeV α-particle fired at a gold nucleus (Z = 79).",
-    "Estimate the ratio of nuclear volume (r ≈ 7 × 10⁻¹⁵ m) to atomic volume (r ≈ 1.5 × 10⁻¹⁰ m) for gold."
-  ],
-  "keyPoints": [
-    "Undeflected majority → empty space; large-angle scattering → concentrated charge; back-scattering → a very small nucleus.",
-    "r₀ ≈ 4.5 × 10⁻¹⁴ m for a 5 MeV α-particle on gold — an experimental upper limit on nuclear size.",
-    "N(θ) ∝ 1/sin⁴(θ/2) explains why 180° scattering is the rarest event.",
-    "Defect 1: accelerated charge radiates → energy loss → spiral inward → no stable atoms.",
-    "Defect 2: the changing revolution frequency would give a continuous spectrum, not lines."
-  ],
-  "specialNotes": [
-    "The atom is not 'totally empty' — it is mostly empty space, but almost all the mass is nuclear.",
-    "α-particles are helium nuclei (+2e), ≈7300 times heavier than an electron, so only the nucleus can deflect them.",
-    "The scattering itself was explained well: the model failed on stability and line spectra, not on the observations."
-  ],
-  "examShortTricks": [
-    "List the limitations in this order: stability → line spectra → no electronic arrangement → classical assumptions → ignores the neutron.",
-    "Pair every observation with its conclusion; the marks are for the inference, not for listing the apparatus.",
-    "r₀ = 2kZe²/KE, and always follow the number with 'an upper limit on nuclear size'."
-  ],
-  "examNotes": [
-    "Observations, conclusions and the two main defects together make a standard 4–5 mark NEB question.",
-    "Numericals use r₀, the nuclear radius and density, and the nucleus : atom volume ratio.",
-    "A common 1–2 mark item asks why the foil must be very thin and why the apparatus is evacuated."
-  ],
-  "practiceQuestions": [
-    "Describe the α-scattering experiment with a labelled diagram, listing observations and conclusions.",
-    "Explain using Maxwell's theory why the Rutherford atom could not be stable.",
-    "State four limitations of the nuclear model and say which of them Bohr had to repair.",
-    "Calculate the distance of closest approach for a 5 MeV α-particle on gold (Z = 79)."
-  ],
-  "mcs": [
-    {
-      "question": "The number of α-particles scattered at an angle θ varies as:",
-      "options": [
-        "sin⁴(θ/2)",
-        "1/sin⁴(θ/2)",
-        "1/sin(θ/2)",
-        "cos⁴(θ/2)"
-      ],
-      "answer": "B"
-    },
-    {
-      "question": "According to classical theory an electron revolving in a Rutherford orbit will:",
-      "options": [
-        "Lose energy and spiral into the nucleus",
-        "Remain stable indefinitely",
-        "Radiate only on completing one revolution",
-        "Absorb energy continuously from the nucleus"
-      ],
-      "answer": "A"
-    },
-    {
-      "question": "The radius of the nucleus is approximately:",
-      "options": [
-        "10⁻¹⁰ m",
-        "10⁻⁸ m",
-        "10⁻¹⁵ m",
-        "10⁻⁵ m"
-      ],
-      "answer": "C"
-    }
-  ]
+  "nepali": {
+    "notes": [
+      "**रदरफोर्डको परमाणु मोडेल र यसका सीमाहरू:**",
+      "**१. प्रयोगको अर्थ:** थमसनको प्लम-पडिङ मोडेल (१९०४) ले परमाणुलाई फैलिएको धनात्मक आवेश मान्नुभएको थियो जसमा इलेक्ट्रोनहरू समाविष्ट थिए, र यो द्रुत α-कणहरूको (He²⁺, ≈५.५ MeV) ठूला-कोण विक्षेपण व्याख्या गर्न सक्नथ्यो। रदरफोर्डले गाइगर र मार्सडेनसँग (१९०९-१९११) α-विक्षेपणबाट परमाणुको *संरचना* जाँच्नुभएको थियो — यसले **केन्द्रक परमाणु** स्थापित गर्छ।",
+      "**२. सेट-अप:** सीसाब्लकमा रेडियम र क्योलिमेटर ले सानो α-बीम दिन्छ; लक्ष्य सोनाको फोइल ≈४ × १०⁻⁵ सेमि मोटो (≈१००० परमाणु) किनभने सोना धेरै पत्लो बन्छ र यसको भारी केन्द्रक छ (Z = ७९); घुम्नसक्ने ZnS स्क्रिन सूक्ष्मदर्शीबाट हेर्ने गरी प्रत्येक स्किनटिलेसन रेकर्ड गर्छ; उपकरण निर्वातमा छ।",
+      "**३. अवलोकनहरू:**",
+      "• ≈९९.८६% α-कणहरू सीधै पार भए — परमाणु अधिकांश खाली ठाउँ हो।",
+      "• ≈२०,००० मा १ कण ९०° भन्दा बढी विक्षेपित भयो, र केही मात्र फिर्ता भए (θ ≈ १८०°)।",
+      "• विक्षेपण N(θ) ∝ 1/sin⁴(θ/2) अनुसार हुन्छ; ठूला-कोण विक्षेपण विरल तर वास्तविक छ।",
+      "**४. निष्कर्षहरू (केन्द्रक मोडेल):**",
+      "• परमाणु उदासीन र प्रायः खाली छ; एक सानो, भारी, धनात्मक **केन्द्रक** प्रायः सबै द्रव्यमान वहन गर्छ।",
+      "• केन्द्रकको अर्धव्यास ≈१०⁻¹⁵ मि विरुद्ध परमाणुको अर्धव्यास ≈१०⁻¹⁰ मि (१ : १००,०००); केन्द्रकको आयतन ≈१०⁻¹⁵ परमाणुको आयतनको, केन्द्रकको घनत्व ≈१०¹⁷ किग्रा मि⁻³।",
+      "• इलेक्ट्रोनहरू वृत्ताकार कक्षकमा घुम्छन्, केन्द्रकको कुलम्ब आकर्षण केन्द्राभिमुख बल दिन्छ।",
+      "• धनात्मक आवेश तत्वको विशेषता हो — परमाणु संख्याको मूल, पहिले मोस्लेले (१९१३) प्रमाणित गरे।",
+      "**५. परिमाणात्मक परिणामहरू:**",
+      "• नजिकको दूरी (KE → स्थिरविद्युत PE): r₀ = 2Ze²/(4πε₀·KE) ≈ ४.५ × १०⁻¹⁴ मि ५ MeV α सोनामा — केन्द्रकको आकारको प्रयोगात्मक ऊपरी सीमा।",
+      "• रदरफोर्ड विक्षेपण नियम N(θ) ∝ 1/sin⁴(θ/2) व्याख्या गर्छ किन भने फिर्ता विक्षेपण विरल घटना हो।",
+      "**६. अनुप्रयोगहरू:**",
+      "• केन्द्रक भौतिकीको स्थापना: प्रोटोन (१९१९) र न्यूट्रन (१९३२) बाट परमाणु विखण्डन/रिएक्टर प्रविधि; रदरफोर्ड फिर्ता-विक्षेपण स्पेक्ट्रोस्कोपी (RBS) अहिलै पनि पत्लो फिल्महरूको उद्योगी विश्लेषण गर्छ।",
+      "• मोस्लेको नियम र आधुनिक आवर्त सारणीको परमाणु-संख्या आधार रचना गर्छ, र संरचनालाई सांख्यिकीय रूपमा (सम्भावनाबाट) निष्कर्ष गर्ने उत्कृष्ट उदाहरण हो, प्रत्यक्ष अवलोकनबाट होइन।",
+      "**७. सीमाहरू (परीक्षा-महत्वपूर्ण):**",
+      "१. **स्थिरता व्याख्या नगरेको:** घुमिरहने इलेक्ट्रोन निरन्तर त्वरित हुन्छ, त्यसैले मैक्सवेलको सिद्धान्तअनुसार यो ऊर्जा विकिरण गर्छ र ≈१०⁻८ सेकेन्डमा केन्द्रकमा लुन्छ — तर परमाणुहरू स्थिर छन्।",
+      "२. **रेखा स्पेक्ट्रम व्याख्या नगरेको:** भित्रको स्पायरलले निरन्तर आवृत्तिको दायरा उत्सर्जन गर्थ्यो, तर हाइड्रोजनले तेज र विविध रेखाहरू दिन्छ।",
+      "३. **कोई इलेक्ट्रोन व्यवस्था छैन:** खोलहरू, इलेक्ट्रोन संख्या वा ऊर्जा बारे कुनै कुरा छैन, त्यसैले आवर्तिता र संयोजकता व्याख्या नभएको।",
+      "४. **पूर्ण रूपमा शास्त्रीय:** वृत्ताकार कक्षक र बिन्दु केन्द्रक मान्यताहरू हुन्; परिमाणीकरण बिना मोडेलले कक्षक अर्धव्यास वा ऊर्जा दिन सक्दैन।",
+      "५. **न्यूट्रन उपेक्षित** (त्यसैले आइसोटोपहरू व्याख्या नभएको) र इलेक्ट्रोन-इलेक्ट्रोन प्रतिकर्षण उपेक्षित, त्यसैले बहु-इलेक्ट्रोन परमाणुहरूको लागि असफल; बन्डिङ वा जिमन/स्टार्क विभाजनको लेखाजोखा छैन।",
+      "**८. परीक्षा संकेतहरू:**",
+      "अवलोकन + निष्कर्ष र दुई मुख्य दोषहरू (स्थिरता, विविध स्पेक्ट्रम) मानक ४-५ अङ्कका NEB प्रश्नहरू हुन्; संख्यात्मक r₀, केन्द्रक अर्धव्यास/घनत्व र परमाणु : केन्द्रक आयतन अनुपात प्रयोग गर्छन्।"
+    ],
+    "importantStatements": [
+      "α-विक्षेपण प्रयोग: १९०९-१९११; गाइगर र मार्सडलेन ठूला कोणमा ≈१०⁴ मा १ फ्ल्यास गणना गरे; सोनाको फोइल ≈४ × १०⁻⁵ सेमि मोटो।",
+      "रदरफोर्डले १९०८ मा रेडियोधर्मितामा कामका लागि रसायन विज्ञानको नोबेल पुरस्कार प्राप्त गरे।",
+      "केन्द्रकको घनत्व प्रायः सबै केन्द्रकहरूको लागि नै समान हुन्छ किनकि R = R₀A^(1/3), R₀ ≈ १.२ × १०⁻¹⁵ मि।"
+    ]
+  },
+  "grammar": {
+    "notes": [
+      "Nucleus (noun): the dense central core of an atom. Plural: nuclei.",
+      "Alpha particle (noun phrase): helium nucleus (He²⁺) emitted in radioactive decay.",
+      "Scattering (noun/gerund): deflection of particles from their path. Rutherford scattering is the classic experiment.",
+      "Atomic model (noun phrase): a theoretical representation of atom structure.",
+      "Limitation (noun): a weakness or shortcoming of a theory/model.",
+      "Quantization (noun): restricting values to discrete levels; the key step from Rutherford to Bohr."
+    ],
+    "importantStatements": [
+      "In scientific English, 'model' means a simplified representation, not a miniature replica.",
+      "The phrase 'mostly empty space' is a relative statement — 99.9% of the volume, not 99.9% of the mass.",
+      "Rutherford's experiment 'probed' atomic structure — to probe means to investigate by testing."
+    ]
+  }
 }

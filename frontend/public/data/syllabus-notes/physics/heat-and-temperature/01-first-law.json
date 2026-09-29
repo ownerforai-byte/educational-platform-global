@@ -81,5 +81,10 @@
   "importantTasks": [
     "Solve 5 problems on First Law of Thermodynamics."
   ],
+  "specificConditions": [
+    "**Energy Conservation Foundation:** The first law ($\\Delta U = Q - W$) is energy conservation applied to thermodynamic systems. Internal energy $U$ is a state function; heat $Q$ and work $W$ are path-dependent energy transfers. The sign convention: $Q > 0$ when heat enters the system, $W > 0$ when work is done BY the system.",
+    "**Process Dependence:** $Q$ and $W$ depend on the thermodynamic path (isothermal, adiabatic, isobaric, isochoric), but $\\Delta U$ depends only on initial and final states. For a cyclic process, $\\Delta U = 0$ and $Q = W$ — net heat in equals net work out.",
+    "**Work in Thermodynamics:** Only $PV$-work is considered in the basic first law: $W = \\int P_{ext} dV$. Reversible work uses the system pressure $W = \\int P dV$. Other work forms (electrical, surface tension, magnetic) must be added as extra terms if present."
+  ],
   "duplicateType": 1
 }

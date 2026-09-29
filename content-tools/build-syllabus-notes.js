@@ -16,9 +16,14 @@
  * Usage:  node content-tools/build-syllabus-notes.js [subject ...]
  *         (default: all subjects found under class-11-notes)
  */
-const fs = require("fs");
-const path = require("path");
+// ESM (root package.json has "type": "module"): was CommonJS `require` and crashed
+// on every run with "require is not defined in ES module scope". Keep this file
+// .js — every doc/UI string references `node content-tools/build-syllabus-notes.js`.
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const ROOT = path.join(__dirname, "..");
 const SRC = path.join(ROOT, "content", "ravikishan", "class-11-notes");
 const DEST = path.join(ROOT, "frontend", "public", "data", "syllabus-notes");

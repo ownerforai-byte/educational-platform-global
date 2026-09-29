@@ -341,7 +341,12 @@
       "Design a spring balance calibration table from F = kx and F = mg."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Elastic Limit / Proportional Limit:** Hooke's law ($F = kx$) holds *only* within the linear (proportional) limit. Beyond this, the force-extension graph curves; at the elastic limit, the material returns to its original shape but the relationship is no longer linear. Past the yield point, permanent (plastic) deformation occurs.",
+      "**Spring Constant Geometry Dependence:** $k$ is NOT purely a material property — it depends on geometry. For a uniform wire: $k = EA/L$ ($E$ = Young's modulus, $A$ = cross-section, $L$ = length). For a helical spring: $k = Gd^4/(8nD^3)$ ($G$ = shear modulus, $d$ = wire diameter, $n$ = coils, $D$ = coil diameter). Cutting a spring into $n$ equal parts multiplies $k$ by $n$.",
+      "**Restoring Force Direction:** The spring exerts a restoring force $F = -kx$ that *always* opposes the displacement. This negative sign is crucial for deriving simple harmonic motion ($m\\ddot{x} + kx = 0$). The applied force and restoring force are equal in magnitude but opposite in direction at equilibrium."
+    ]
   },
   "notes": [
     "**Hooke's law statement:** For small deformations, the extension (or compression) of an elastic body is directly proportional to the applied force: F = kx, where F is the applied force, x is the deformation, and k is the spring (force) constant. This linear region is called the elastic limit.",
@@ -404,7 +409,6 @@
     "Parallel springs combine like k = k₁ + k₂ (stiffer).",
     "Energy stored in a stretched spring is ½kx² — the triangle under the F–x graph."
   ],
-  "summary": "Hooke's law (F = kx) states that deformation is proportional to applied force within the elastic limit. The spring constant k (N/m) measures stiffness. Springs combine in series (reciprocal sum, softer) and parallel (direct sum, stiffer). The stored elastic energy is ½kx², and the law underpins spring balances, suspension systems, and simple harmonic motion.",
   "specialNotes": [
     "The restoring force of a spring is −kx: it always opposes the displacement from equilibrium.",
     "A cut spring doubles its k — shorter springs are stiffer for the same material and geometry.",
@@ -440,6 +444,21 @@
     "The energy stored (½kx²) connects to SHM: v_max = A√(k/m).",
     "Spring balance calibration uses F = kx with F = mg."
   ],
+  "importantConcepts": [
+    "Hooke's law: F = kx in the elastic limit.",
+    "The spring constant k is the force per unit extension (N/m), a measure of stiffness.",
+    "Series springs soften the combination; parallel springs stiffen it.",
+    "The restoring force is −kx, producing SHM with ω = √(k/m).",
+    "Elastic potential energy stored is ½kx²."
+  ],
+  "importantTasks": [
+    "Plot an F–x graph from experimental data and read k from its slope.",
+    "Solve 5 numerical problems using F = kx including conversions.",
+    "Solve 3 series and 3 parallel combination problems.",
+    "Derive the energy stored ½kx² as the area under the F–x graph.",
+    "Design a spring balance calibration table from F = kx and F = mg."
+  ],
+  "summary": "Hooke's law (F = kx) states that deformation is proportional to applied force within the elastic limit. The spring constant k (N/m) measures stiffness. Springs combine in series (reciprocal sum, softer) and parallel (direct sum, stiffer). The stored elastic energy is ½kx², and the law underpins spring balances, suspension systems, and simple harmonic motion.",
   "mcs": [
     {
       "question": "A spring stretches 4 cm under a 20 N load. Its spring constant is:",
@@ -491,20 +510,5 @@
       ],
       "answer": "B"
     }
-  ],
-  "importantConcepts": [
-    "Hooke's law: F = kx in the elastic limit.",
-    "The spring constant k is the force per unit extension (N/m), a measure of stiffness.",
-    "Series springs soften the combination; parallel springs stiffen it.",
-    "The restoring force is −kx, producing SHM with ω = √(k/m).",
-    "Elastic potential energy stored is ½kx²."
-  ],
-  "importantTasks": [
-    "Plot an F–x graph from experimental data and read k from its slope.",
-    "Solve 5 numerical problems using F = kx including conversions.",
-    "Solve 3 series and 3 parallel combination problems.",
-    "Derive the energy stored ½kx² as the area under the F–x graph.",
-    "Design a spring balance calibration table from F = kx and F = mg."
-  ],
-  "visualization": {}
+  ]
 }

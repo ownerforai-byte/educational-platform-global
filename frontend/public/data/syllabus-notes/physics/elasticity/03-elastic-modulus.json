@@ -345,7 +345,12 @@
       "Compare the compressibility of steel, water, and air."
     ],
     "exercises": [],
-    "visualization": {}
+    "visualization": {},
+    "specificConditions": [
+      "**Material State Determines Available Moduli:** Solids have all three moduli ($E, B, G$). Fluids (liquids/gases) have *only* bulk modulus $B$ — they cannot sustain shear stress ($G=0$) and have no defined Young's modulus for stretching.",
+      "**Isotropic Material Relations:** For isotropic solids, the three moduli are linked via Poisson's ratio $\\sigma$: $E = 2G(1+\\sigma) = 3B(1-2\\sigma)$. These relations *do not hold* for anisotropic materials (crystals, composites) where moduli depend on direction.",
+      "**Geometry Separation:** $E$ is an intensive material property (Pa), while spring constant $k = EA/L$ is extensive. Changing a wire's length or cross-section changes $k$ but not $E$ — this distinction is essential for connecting spring problems to material science."
+    ]
   },
   "notes": [
     "**Young's modulus (E):** the ratio of longitudinal stress to longitudinal strain: E = (F/A)/(Δl/l) = Fl/(AΔl). It measures resistance to stretching/compression. For steel, E ≈ 2×10¹¹ N/m²; for aluminium ≈ 7×10¹⁰ N/m²; for rubber ≈ 5×10⁶ N/m².",
@@ -410,7 +415,6 @@
     "Liquids and gases have G = 0 (they cannot resist shear) — only solids have a shear modulus.",
     "Compressibility is the reciprocal of B."
   ],
-  "summary": "The three elastic moduli — Young's (E), bulk (B), and shear (G) — quantify how materials resist stretching, uniform compression, and shape change respectively. Each is stress/strain with units N/m². They are related by E = 2G(1+σ) = 3B(1−2σ). Solids possess all three; fluids have only bulk modulus.",
   "specialNotes": [
     "Choose the modulus by the type of deformation: stretch → E, squeeze → B, twist → G.",
     "The sign in B = −P/(ΔV/V) makes the modulus positive since ΔV is negative under compression.",
@@ -446,6 +450,21 @@
     "Comparing bulk moduli of solids, liquids, gases comes up in conceptual questions.",
     "NEB often provides two moduli and asks for the third using the linking relation."
   ],
+  "importantConcepts": [
+    "Young's modulus E = Fl/(AΔl) describes stretching/compression stiffness.",
+    "Bulk modulus B = −P/(ΔV/V) describes compression under uniform pressure.",
+    "Shear modulus G = τ/θ describes change of shape under tangential stress.",
+    "The three moduli are interrelated: E = 2G(1+σ) = 3B(1−2σ).",
+    "Fluids possess only bulk modulus; compressibility = 1/B."
+  ],
+  "importantTasks": [
+    "Compute Young's modulus from a wire experiment data set.",
+    "Compute bulk modulus from a known pressure and volume change.",
+    "Compute shear modulus from a tangential force and shear angle.",
+    "Evaluate Poisson's ratio from given E and G.",
+    "Compare the compressibility of steel, water, and air."
+  ],
+  "summary": "The three elastic moduli — Young's (E), bulk (B), and shear (G) — quantify how materials resist stretching, uniform compression, and shape change respectively. Each is stress/strain with units N/m². They are related by E = 2G(1+σ) = 3B(1−2σ). Solids possess all three; fluids have only bulk modulus.",
   "mcs": [
     {
       "question": "Young's modulus is the ratio of longitudinal stress to:",
@@ -497,20 +516,5 @@
       ],
       "answer": "B"
     }
-  ],
-  "importantConcepts": [
-    "Young's modulus E = Fl/(AΔl) describes stretching/compression stiffness.",
-    "Bulk modulus B = −P/(ΔV/V) describes compression under uniform pressure.",
-    "Shear modulus G = τ/θ describes change of shape under tangential stress.",
-    "The three moduli are interrelated: E = 2G(1+σ) = 3B(1−2σ).",
-    "Fluids possess only bulk modulus; compressibility = 1/B."
-  ],
-  "importantTasks": [
-    "Compute Young's modulus from a wire experiment data set.",
-    "Compute bulk modulus from a known pressure and volume change.",
-    "Compute shear modulus from a tangential force and shear angle.",
-    "Evaluate Poisson's ratio from given E and G.",
-    "Compare the compressibility of steel, water, and air."
-  ],
-  "visualization": {}
+  ]
 }

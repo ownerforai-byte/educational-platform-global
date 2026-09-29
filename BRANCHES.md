@@ -94,7 +94,9 @@ Scope: the matching route under `frontend/app/(app)/**` or
 | before pushing `main` | `npm run check:all` — full gate (all three) |
 
 `npm run check:content` runs the deeper content health scan
-(BOM repair + `_index.json` completeness) — see `scripts/content-health-check.mjs`.
+(BOM repair + `_index.json` completeness — now exits 1 if any JSON stays
+unparseable) and then chains `check:schema`, the strict corpus + manifest
+gate — see `scripts/content-health-check.mjs`.
 
 ## 4. Reserved worktree branches (do not touch)
 
