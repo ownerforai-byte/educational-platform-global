@@ -97,10 +97,21 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
 
       try {
         // "" runs the ordered chain (agnes → openrouter → internal); an
-        // explicit provider from the client still wins.
-        const response = await aiService.chat(provider, messages);
-        // Send the full response as a single event (simplified streaming)
-        res.write(`data: ${JSON.stringify({ content: response, done: true, credits: creditsLeft ?? undefined })}\n\n`);
+        // explicit provider from the client still wins. The reply floor is
+        // enforced here too — this branch sends the full reply as a single
+        // event, so the same synchronous retry loop applies before anything
+        // reaches the student.
+        const streamRaw = await aiService.chat(provider, messages);
+        const streamFloor = floorWordsForQuestion(lastUser);
+        const streamFloored = await enforceReplyFloor(streamRaw, streamFloor, async (request) => {
+          const convoTail = messages.slice(-6);
+          return aiService.chat(provider, [
+            ...convoTail,
+            { role: "assistant" as const, content: streamRaw },
+            { role: "user" as const, content: request },
+          ]);
+        });
+        res.write(`data: ${JSON.stringify({ content: streamFloored.answer, done: true, credits: creditsLeft ?? undefined, replyFloor: { floor: streamFloored.floor, words: streamFloored.words, expanded: streamFloored.expanded } })}\n\n`);
       } catch (err) {
         // SSE headers are already sent, so serverError() cannot be used — but
         // the raw provider error still must not reach the client. Log it under
