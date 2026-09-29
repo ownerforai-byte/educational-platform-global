@@ -31,6 +31,8 @@ export const ManifestEntrySchema = z
     universalFactsCount: z.number().int().min(0).max(500),
     /** Present only for duplicateType 2 entries. Opaque label, not a URL slug. */
     tabGroup: z.string().max(400).optional(),
+    /** Present only when the note declares `blocks` (Phase 4b, PLANS.md §5.1). */
+    blockCount: z.number().int().min(1).optional(),
   })
   .strict();
 

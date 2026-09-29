@@ -1,12 +1,13 @@
 # PLANS — Typed content core + live formulas (JSON stays the storage format)
 
-Status: **Phase 1 APPLIED on `main`** (schema tree + validate/repair CLI + corpus
-test + CI workflow + baseline ratchet, landed in `73793f3b`); the §4.2 `formula.ts`
-and §4.6 `syllabus-ref.ts` tails are still pending. Phases 2–6 not started.
-`main` is the only deployable branch — the `feature/notes` worktree still sits at
-its stale base `46a048bf`; do not build there. Deep-inspected against the working
-tree at `73793f3b` (clean) on 2026-09-29; every APPLIED/PENDING note below comes
-from that inspection.
+Status: **Phases 1–4 and 6 implemented** (uncommitted in the working tree as of
+2026-09-29); **Phase 5 (`derive_formulas.py`) is the only unstarted piece**. Phase 1
+(schema tree + validate/repair CLI + corpus test + CI workflow + baseline ratchet)
+landed on `main` in `73793f3b`; its §4.2 `formula.ts` / §4.6 `syllabus-ref.ts` tails
+and §4.7 helpers are now on disk. Phases 2–4 and 6 (one CLI, typed authoring
+scaffold, live formulas, interactive blocks, tests/gates) are implemented but NOT
+yet committed. `main` is the only deployable branch — the `feature/notes` worktree
+still sits at its stale base `46a048bf`; do not build there.
 
 ---
 
@@ -1649,7 +1650,7 @@ index" no longer exists. Everything it worried about is tracked on `main`:
   `tsconfig.json` already includes `**/*.ts(x)` (only node_modules/backend/content-tools
   excluded), so the 3 files it listed were never outside typechecking.
 
-### Weaknesses found by this inspection — pass 2 fixed 1, 2, 4, 6, 7; pass 3 fixed 6 fully + the backend ESM landmines on 2026-09-29 (3, 5, 8 still open)
+### Weaknesses found by this inspection — pass 2 fixed 1, 2, 4, 6, 7; pass 3 fixed 6 fully + the backend ESM landmines on 2026-09-29 (3, 8 still open)
 
 1. **FIXED** — `check:content` now exits 1 on unparseable JSON and chains
    `check:schema`; the name and the behavior agree (§4.9).
@@ -1671,9 +1672,9 @@ index" no longer exists. Everything it worried about is tracked on `main`:
    rebuilt (staleness 148 → 0, manifests 594 clean entries), and the 16 retired
    `content-tools/*.js` one-shots + `scripts/fix-comparison-operators.js` were renamed
    `.cjs` so they can run at all.
-5. **Phase 1 tail** — `formula.ts` (§4.2), `syllabus-ref.ts` (§4.6) and the
-   `md`/`defineNote`/`formula` helpers (§4.7) are pending; §6 and §8 cannot start without
-   them, and nothing enforces "content must be inside the syllabus" until §4.6 lands.
+5. **FIXED (2026-09-29)** — the Phase 1 tail landed: `formula.ts` (§4.2),
+   `syllabus-ref.ts` (§4.6) and the `md`/`defineNote`/`formula` helpers (§4.7) are on
+   disk (uncommitted), and §6/§8 now build on them.
 6. **FIXED** — `content-json.yml` now watches `frontend/scripts/content/**`
    (validator changes re-run the gate), and `ci.yml` gained a `content-schema` job
    (2026-09-29, `998343c4`) that runs `validate.ts --strict` on every push/PR

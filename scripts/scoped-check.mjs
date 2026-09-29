@@ -116,7 +116,9 @@ const runners = {
   mindmap: {
     label: "mindmap depth pack coverage",
     run() {
-      const v = run(process.execPath, ["scripts/enrichment/mindmap-validate.mjs"], {
+      // spawnSync directly (no shell): process.execPath contains spaces on
+      // Windows ("C:\Program Files\nodejs\node.exe") and a shell would split it.
+      const v = spawnSync(process.execPath, ["scripts/enrichment/mindmap-validate.mjs"], {
         stdio: "inherit",
       });
       return v.status ?? 1;
@@ -130,7 +132,8 @@ const runners = {
     label: "branch + schematic topicality (visual audit)",
     run() {
       const tsx = ["..", "node_modules", "tsx", "dist", "cli.mjs"].join("/");
-      const v = run(process.execPath, [tsx, "scripts/audit-visuals.ts"], {
+      // spawnSync directly (no shell) — see the mindmap runner note.
+      const v = spawnSync(process.execPath, [tsx, "scripts/audit-visuals.ts"], {
         cwd: "frontend",
         stdio: "inherit",
       });

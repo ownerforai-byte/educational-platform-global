@@ -4,6 +4,7 @@ import React, { useEffect, useRef, useState, useMemo } from "react";
 import Link from "next/link";
 import { loadData } from "@/lib/data-loader";
 import { MathMarkdown } from "@/components/content/math-markdown";
+import { NoteBlocks } from "@/components/content/rich-note";
 import { EntranceQuiz } from "@/components/content/entrance-quiz";
 import { getEntranceQuestions } from "@/lib/entrance-questions";
 import { FormulaCard } from "@/components/content/formula-card";
@@ -70,6 +71,10 @@ export interface RichTopicConcept {
   duplicateType?: number;
   animation3D?: string;
   motionGraphics?: string;
+  /** Phase 4a: structured formulas with units + solve targets (authoring, opt-in). */
+  formulaSpecs?: unknown[];
+  /** Phase 4b: interactive blocks rendered after the notes (authoring, opt-in). */
+  blocks?: unknown[];
 }
 
 interface ManifestItem {
@@ -651,6 +656,13 @@ export function TopicVerticalNotes({
               </p>
             </div>
           )}
+
+          {/* Interactive Blocks (formulaSpecs + blocks, PLANS.md §8) — renders when
+              the loaded note declares them; otherwise a no-op (returns null). */}
+          <NoteBlocks
+            blocks={activeData?.blocks ?? supplementary?.blocks}
+            formulaSpecs={activeData?.formulaSpecs ?? supplementary?.formulaSpecs}
+          />
 
           {/* Important Concepts pills */}
           {rawImportantConcepts.length > 0 && (

@@ -1,5 +1,15 @@
 import { z } from "zod";
 import { MdList, MdString, NoteBlockSchema, ShortString, Slug } from "./atoms";
+import { BlockSchema, FormulaSchema } from "./formula";
+
+/**
+ * `content/ravikishan/class-11-notes/…` → classSlug `class-11`.
+ * Consumed by `scripts/content/build.ts` and the validator's path scope.
+ */
+export const CLASS_DIR_TO_SLUG: Record<string, string> = {
+  "class-11-notes": "class-11",
+  "class-12-notes": "class-12",
+};
 
 /**
  * Concept note schema — `content/ravikishan/{classSlug}-notes/{subject}/{unit}/concepts/NN-slug.json`
@@ -94,6 +104,12 @@ const AuthoredFields = z.object({
    * The plan's constraint was an assumption; the consumer is the proof.
    */
   tabGroup: z.string().max(400).optional(),
+
+  // ── new in this plan (PLANS.md §4.2/§6): opt-in, absent from every note today ──
+  /** Structured formulas with units + solve targets (Phase 4a input). */
+  formulaSpecs: z.array(FormulaSchema).optional(),
+  /** Inline interactive blocks, ordered after `notes` (Phase 4b). */
+  blocks: z.array(BlockSchema).optional(),
 });
 
 /**

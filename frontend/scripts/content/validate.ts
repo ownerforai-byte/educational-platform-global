@@ -24,9 +24,11 @@ import path from "node:path";
 
 // Relative import: the schema tree deliberately avoids `@/` so this runs under
 // plain tsx from the repo root without path-alias resolution (PLANS.md §3).
-import { ConceptNoteSchema, MIN_NOTES_FOR_BODY } from "../../lib/content/schema/concept";
+import { CLASS_DIR_TO_SLUG, ConceptNoteSchema, MIN_NOTES_FOR_BODY } from "../../lib/content/schema/concept";
 import { MindMapFileSchema } from "../../lib/content/schema/mindmap";
 import { ManifestSchema } from "../../lib/content/schema/manifest";
+import { checkSyllabusRef, checkSyllabusUnit } from "../../lib/content/schema/syllabus-ref";
+import { isPlaceholderContent } from "../../lib/content/placeholders";
 
 // Resolve the repo root from this file's location so the CLI works no matter
 // which directory it is invoked from (repo root via `npm run check:schema`, or
@@ -55,16 +57,15 @@ const BASELINE = path.join(REPO, "scripts", "content-schema-baseline.json");
 const ARGS = process.argv.slice(2);
 const STRICT = ARGS.includes("--strict");
 const WRITE = ARGS.includes("--write-baseline");
+const JSON_OUT = ARGS.includes("--json");
+const argValue = (flag: string) => {
+  const i = ARGS.indexOf(flag);
+  return i === -1 ? null : (ARGS[i + 1] ?? null);
+};
+const ONLY_SUBJECT = argValue("--subject");
+const ONLY_UNIT = argValue("--unit");
 
-/** Markers left by the content generator. */
-const PLACEHOLDER_MARKERS = [
-  "class 11 concept",
-  "key point 1",
-  "key formula 1",
-  "[insert",
-  "placeholder — run content generation",
-  "mindmap placeholder",
-];
+/** Markers left by the content generator — shared single rule (lib/content/placeholders.ts). */
 
 type State = "INVALID" | "EMPTY" | "THIN" | "BODY";
 
@@ -75,8 +76,7 @@ interface Finding {
 }
 
 function isPlaceholder(text: string): boolean {
-  const low = text.toLowerCase();
-  return PLACEHOLDER_MARKERS.some((m) => low.includes(m));
+  return isPlaceholderContent(text);
 }
 
 function collect(dir: string, out: string[] = []): string[] {
@@ -96,6 +96,9 @@ function formatIssues(err: { issues?: { path: (string | number)[]; message: stri
 const findings: Finding[] = [];
 /** Files outside the concept/mindmap trees — counted, never reported as violations. */
 const other: string[] = [];
+/** Syllabus-reference results: advisory only (see §4.6 + PLANS.md measurement). */
+const syllabusFindings: { file: string; reason: string }[] = [];
+let syllabusOk = 0;
 
 if (fs.existsSync(CORPUS)) {
   for (const file of collect(CORPUS)) {
@@ -119,6 +122,9 @@ if (fs.existsSync(CORPUS)) {
       continue;
     }
 
+    if (ONLY_SUBJECT && !rel.includes(`/${ONLY_SUBJECT}/`)) continue;
+    if (ONLY_UNIT && !rel.includes(`/${ONLY_UNIT}/`)) continue;
+
     const raw = fs.readFileSync(file, "utf8");
 
     // Placeholder check FIRST: a generator-stub file is legitimately
@@ -138,6 +144,25 @@ if (fs.existsSync(CORPUS)) {
     } catch (e) {
       findings.push({ file: rel, state: "INVALID", reasons: [`JSON.parse: ${String(e).slice(0, 120)}`] });
       continue;
+    }
+
+    // Syllabus reference (PLANS.md §4.6) — ADVISORY, never a gate: measured
+    // 226/654 files sit outside the syllabus today (authored sub-topic
+    // granularity plus 11 off-syllabus unit directories). `doctor.ts` carries
+    // the full per-file report; here it is a visible count plus the unit class.
+    const refMatch = /(class-\d+-notes)\/([^/]+)\/([^/]+)\/(concepts|mindmap)\//.exec(rel);
+    if (refMatch) {
+      const [, classDir, subjectSlug, unitSlug, kind] = refMatch;
+      const classSlug = CLASS_DIR_TO_SLUG[classDir] ?? classDir;
+      const topicSlug =
+        kind === "concepts" && typeof (parsed as { topicSlug?: unknown }).topicSlug === "string"
+          ? (parsed as { topicSlug: string }).topicSlug
+          : "";
+      const ref = topicSlug
+        ? checkSyllabusRef(classSlug, subjectSlug, unitSlug, topicSlug)
+        : checkSyllabusUnit(classSlug, subjectSlug, unitSlug);
+      if (ref.ok) syllabusOk++;
+      else syllabusFindings.push({ file: rel, reason: ref.reason ?? "outside the syllabus" });
     }
 
     // A mindmap file with no `mindmap` core is UNFINISHED, not malformed: the
@@ -217,6 +242,7 @@ const relPath = (f: string) => path.relative(REPO, f).replaceAll(path.sep, "/");
 const byState: Record<State, Finding[]> = { INVALID: [], EMPTY: [], THIN: [], BODY: [] };
 for (const f of findings) byState[f.state].push(f);
 
+if (!JSON_OUT) {
 console.log("=== content:validate ===");
 console.log(
   `in-scope files: ${findings.length}   INVALID: ${byState.INVALID.length}   EMPTY: ${byState.EMPTY.length}   THIN: ${byState.THIN.length}   BODY: ${byState.BODY.length}`
@@ -227,6 +253,11 @@ console.log(
 );
 const incomplete = byState.EMPTY.length + byState.THIN.length;
 console.log(`schema violations: ${byState.INVALID.length}   incomplete notes (EMPTY+THIN): ${incomplete}`);
+if (syllabusFindings.length) {
+  console.log(
+    `syllabus refs (ADVISORY, not gated): ${syllabusOk} ok, ${syllabusFindings.length} outside the syllabus`
+  );
+}
 
 if (byState.INVALID.length) {
   console.log("\n-- INVALID (schema rejected) --");
@@ -240,7 +271,59 @@ if (manifestFindings.length) {
     console.log(`  ${m.file}\n     ${m.reasons.join("\n     ")}`);
 }
 
+if (syllabusFindings.length) {
+  const offUnits = new Map<string, number>();
+  for (const f of syllabusFindings) {
+    if (!/unit "/.test(f.reason)) continue;
+    const k = f.file.split("/").slice(0, 4).join("/");
+    offUnits.set(k, (offUnits.get(k) ?? 0) + 1);
+  }
+  console.log("\n-- syllabus refs (ADVISORY) — off-syllabus units --");
+  for (const [k, n] of [...offUnits].sort((a, b) => b[1] - a[1]).slice(0, 15)) console.log(`  ${n}  ${k}`);
+  console.log("  (full per-file report: npx tsx frontend/scripts/content/doctor.ts)");
+}
+} // end human report (`--json` prints machine output instead)
+
 const currentInvalid = byState.INVALID.map((f) => f.file).sort();
+
+// Baseline ratchet data — read once here so both the `--json` snapshot and the
+// gate section below share it.
+let baselineExists = fs.existsSync(BASELINE);
+const known = new Set<string>();
+if (baselineExists) {
+  try {
+    const parsed = JSON.parse(fs.readFileSync(BASELINE, "utf8")) as { invalid?: string[] };
+    for (const f of parsed.invalid ?? []) known.add(f);
+  } catch {
+    baselineExists = false;
+  }
+}
+const newInvalid = currentInvalid.filter((f) => !known.has(f));
+
+// `--json` — machine-readable snapshot with no human prose (PLANS.md §4.8).
+if (JSON_OUT) {
+  process.stdout.write(
+    JSON.stringify(
+      {
+        files: findings.length,
+        states: {
+          invalid: byState.INVALID.length,
+          empty: byState.EMPTY.length,
+          thin: byState.THIN.length,
+          body: byState.BODY.length,
+        },
+        outOfScope: other.length,
+        invalid: currentInvalid,
+        manifests: { count: manifestCount, entries: manifestEntries, violations: manifestFindings.map((m) => m.file) },
+        syllabus: { ok: syllabusOk, advisory: syllabusFindings.length, offSyllabus: syllabusFindings.slice(0, 100) },
+        baseline: { exists: baselineExists, known: known.size, newViolations: STRICT ? newInvalid : [] },
+      },
+      null,
+      2,
+    ) + "\n",
+  );
+  if (!STRICT) process.exit(0);
+}
 
 if (WRITE) {
   const baseline = {
@@ -258,13 +341,10 @@ if (WRITE) {
 if (!STRICT) process.exit(0);
 
 // ── gate ─────────────────────────────────────────────────────────────────
-if (!fs.existsSync(BASELINE)) {
+if (!baselineExists) {
   console.log("\nGATE: no baseline. Run `--write-baseline` once first.");
   process.exit(1);
 }
-const base = JSON.parse(fs.readFileSync(BASELINE, "utf8")) as { invalid?: string[] };
-const known = new Set(base.invalid ?? []);
-const newInvalid = currentInvalid.filter((f) => !known.has(f));
 
 if (newInvalid.length) {
   console.log(`\nGATE: FAIL — ${newInvalid.length} new schema violation(s):`);

@@ -16,6 +16,7 @@ import fs from "node:fs";
 import path from "node:path";
 import { ConceptNoteSchema } from "../../lib/content/schema/concept";
 import { repairNote } from "../../lib/content/repair";
+import { isPlaceholderContent } from "../../lib/content/placeholders";
 
 const WRITE = process.argv.includes("--write");
 const QUIET = process.argv.includes("--quiet");
@@ -38,8 +39,7 @@ function findRepoRoot(): string {
 const REPO = findRepoRoot();
 const CORPUS = path.join(REPO, "content", "ravikishan");
 
-const PLACEHOLDER_MARKERS = ["class 11 concept", "key point 1", "key formula 1", "[insert", "placeholder — run content generation", "mindmap placeholder"];
-const isPlaceholder = (raw: string) => PLACEHOLDER_MARKERS.some((m) => raw.toLowerCase().includes(m));
+const isPlaceholder = isPlaceholderContent;
 
 function collect(dir: string, out: string[] = []): string[] {
   if (!fs.existsSync(dir)) return out;

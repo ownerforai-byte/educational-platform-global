@@ -38,3 +38,5 @@ jobs:
         run: |
           npm ci
           npm run test:run -- tests/lib/content/schema-corpus.test.ts
+      - name: Build parity gate (content:build --check)
+        run: npx --yes tsx@4.23.15 frontend/scripts/content/build.ts --check

@@ -66,10 +66,13 @@ jobs:
           cache-dependency-path: package-lock.json
       - run: npm ci
       - run: npx tsx frontend/scripts/content/validate.ts --strict
+      # Parity gate (PLANS.md §5.1): the built tree must match the corpus
+      # byte-for-byte. Needs frontend/node_modules for zod — install it first.
+      - run: cd frontend && npm ci
+      - run: npx tsx frontend/scripts/content/build.ts --check
       # Visual audit: every syllabus unit's branch tree and every topic's
       # drawing must be about its OWN topic, with content traceable to that
       # unit's own sources. Exits non-zero on any high finding.
-      - run: cd frontend && npm ci
       - run: npm run audit:visuals
       # The legacy mindmap branch files must stay rebuilt from their unit's own
       # concept notes (no scaffold, no empty branch, no filler).

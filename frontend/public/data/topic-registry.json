@@ -1,0 +1,194 @@
+{
+  "version": 1,
+  "topics": [
+    {
+      "slug": "cell-division",
+      "title": "Cell Division",
+      "class": "class-11-notes",
+      "subject": "biology",
+      "unit": "biomolecules-and-cell-biology",
+      "importance": "core",
+      "route": "/class-11-notes/biology/chapters/biomolecules-and-cell-biology",
+      "payloadDir": "content/ravikishan/class-11-notes/biology/biomolecules-and-cell-biology",
+      "aliases": [],
+      "legacyUnits": []
+    },
+    {
+      "slug": "trigonometric-functions",
+      "title": "Trigonometric Functions",
+      "class": "class-11-notes",
+      "subject": "mathematics",
+      "unit": "trigonometry",
+      "importance": "high-yield",
+      "route": "/class-11-notes/mathematics/chapters/trigonometry",
+      "payloadDir": "content/ravikishan/class-11-notes/mathematics/trigonometry",
+      "aliases": [],
+      "legacyUnits": []
+    },
+    {
+      "slug": "coulomb-law",
+      "title": "Coulomb's Law and Force Between Multiple Charges",
+      "class": "class-11-notes",
+      "subject": "physics",
+      "unit": "electric-charges",
+      "importance": "high-yield",
+      "route": "/class-11-notes/physics/chapters/electric-charges",
+      "payloadDir": "content/ravikishan/class-11-notes/physics/electric-charges",
+      "aliases": [
+        "coulomb-s-law-and-force-between-multiple-charges"
+      ],
+      "legacyUnits": []
+    },
+    {
+      "slug": "newton-s-law-of-gravitation",
+      "title": "Newton's Law of Gravitation",
+      "class": "class-11-notes",
+      "subject": "physics",
+      "unit": "gravitation",
+      "importance": "high-yield",
+      "route": "/class-11-notes/physics/chapters/gravitation",
+      "payloadDir": "content/ravikishan/class-11-notes/physics/gravitation",
+      "aliases": [
+        "newton-law-gravitation"
+      ],
+      "legacyUnits": []
+    },
+    {
+      "slug": "ideal-gas-equation",
+      "title": "Ideal Gas Equation",
+      "class": "class-11-notes",
+      "subject": "physics",
+      "unit": "ideal-gas",
+      "importance": "high-yield",
+      "route": "/class-11-notes/physics/chapters/ideal-gas",
+      "payloadDir": "content/ravikishan/class-11-notes/physics/ideal-gas",
+      "aliases": [],
+      "legacyUnits": []
+    },
+    {
+      "slug": "quantity-of-heat",
+      "title": "Quantity of Heat",
+      "class": "class-11-notes",
+      "subject": "physics",
+      "unit": "quantity-of-heat",
+      "importance": "core",
+      "route": "/class-11-notes/physics/chapters/quantity-of-heat",
+      "payloadDir": "content/ravikishan/class-11-notes/physics/quantity-of-heat",
+      "aliases": [],
+      "legacyUnits": [
+        "heat-and-temperature"
+      ]
+    },
+    {
+      "slug": "specific-heat-capacity",
+      "title": "Specific Heat Capacity",
+      "class": "class-11-notes",
+      "subject": "physics",
+      "unit": "quantity-of-heat",
+      "importance": "core",
+      "route": "/class-11-notes/physics/chapters/quantity-of-heat",
+      "payloadDir": "content/ravikishan/class-11-notes/physics/quantity-of-heat",
+      "aliases": [],
+      "legacyUnits": []
+    },
+    {
+      "slug": "stefan-boltzmann-law",
+      "title": "Stefan-Boltzmann Law",
+      "class": "class-11-notes",
+      "subject": "physics",
+      "unit": "rate-of-heat-flow",
+      "importance": "high-yield",
+      "route": "/class-11-notes/physics/chapters/rate-of-heat-flow",
+      "payloadDir": "content/ravikishan/class-11-notes/physics/rate-of-heat-flow",
+      "aliases": [],
+      "legacyUnits": []
+    },
+    {
+      "slug": "mirror-formula",
+      "title": "Mirror Formula",
+      "class": "class-11-notes",
+      "subject": "physics",
+      "unit": "reflection-at-curved-mirror",
+      "importance": "high-yield",
+      "route": "/class-11-notes/physics/chapters/reflection-at-curved-mirror",
+      "payloadDir": "content/ravikishan/class-11-notes/physics/reflection-at-curved-mirror",
+      "aliases": [
+        "01-mirror-formula",
+        "02-mirror-formula"
+      ],
+      "legacyUnits": []
+    },
+    {
+      "slug": "lateral-shift",
+      "title": "Lateral Shift",
+      "class": "class-11-notes",
+      "subject": "physics",
+      "unit": "refraction-at-plane-surfaces",
+      "importance": "core",
+      "route": "/class-11-notes/physics/chapters/refraction-at-plane-surfaces",
+      "payloadDir": "content/ravikishan/class-11-notes/physics/refraction-at-plane-surfaces",
+      "aliases": [],
+      "legacyUnits": []
+    },
+    {
+      "slug": "total-internal-reflection",
+      "title": "Total Internal Reflection",
+      "class": "class-11-notes",
+      "subject": "physics",
+      "unit": "refraction-at-plane-surfaces",
+      "importance": "high-yield",
+      "route": "/class-11-notes/physics/chapters/refraction-at-plane-surfaces",
+      "payloadDir": "content/ravikishan/class-11-notes/physics/refraction-at-plane-surfaces",
+      "aliases": [],
+      "legacyUnits": []
+    },
+    {
+      "slug": "work-energy-theorem",
+      "title": "Work-Energy Theorem",
+      "class": "class-11-notes",
+      "subject": "physics",
+      "unit": "work-energy-and-power",
+      "importance": "high-yield",
+      "route": "/class-11-notes/physics/chapters/work-energy-and-power",
+      "payloadDir": "content/ravikishan/class-11-notes/physics/work-energy-and-power",
+      "aliases": [],
+      "legacyUnits": [
+        "work-energy-power"
+      ]
+    },
+    {
+      "slug": "electrochemical-cells",
+      "title": "Electrochemical Cells",
+      "class": "class-12-notes",
+      "subject": "chemistry",
+      "unit": "electro-chemistry",
+      "importance": "core",
+      "route": "/class-12-notes/chemistry/chapters/electro-chemistry",
+      "payloadDir": "content/ravikishan/class-12-notes/chemistry/electro-chemistry",
+      "aliases": [],
+      "legacyUnits": []
+    },
+    {
+      "slug": "limits-and-continuity",
+      "title": "Limits and Continuity",
+      "class": "class-12-notes",
+      "subject": "mathematics",
+      "unit": "limits-and-continuity",
+      "importance": "high-yield",
+      "route": "/class-12-notes/mathematics/chapters/limits-and-continuity",
+      "payloadDir": "content/ravikishan/class-12-notes/mathematics/limits-and-continuity",
+      "aliases": [],
+      "legacyUnits": []
+    }
+  ],
+  "aliasMap": {
+    "01-mirror-formula": "mirror-formula",
+    "02-mirror-formula": "mirror-formula",
+    "newton-law-gravitation": "newton-s-law-of-gravitation",
+    "coulomb-s-law-and-force-between-multiple-charges": "coulomb-law"
+  },
+  "legacyUnitMap": {
+    "work-energy-power": "work-energy-and-power",
+    "heat-and-temperature": "quantity-of-heat"
+  }
+}

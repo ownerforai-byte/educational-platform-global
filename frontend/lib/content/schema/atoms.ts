@@ -1,4 +1,5 @@
 import { z } from "zod";
+import { UNITS } from "../dimensions";
 
 /**
  * Schema atoms — leaf types shared by every content schema.
@@ -29,6 +30,19 @@ export const Slug = z
   .trim()
   .regex(/^[a-z0-9][a-z0-9._-]*$/, "slug must be lowercase url-safe");
 
+/**
+ * A formula symbol exactly as it appears in an authored `expr` (`Q`, `V`, `C`,
+ * `e0`, `N_A`). Deliberately NOT a `Slug`: physics is case-sensitive — `C` is
+ * capacitance, `c` is the speed of light — and mathjs resolves names verbatim.
+ * The strict charset doubles as the first half of the safe-eval guard: no
+ * whitespace, brackets or dots means an expr token can only ever be a name
+ * `lib/content/safe-eval.ts` was told about (`ALLOWED`/declared symbols).
+ */
+export const FormulaSymbol = z
+  .string()
+  .trim()
+  .regex(/^[A-Za-z][A-Za-z0-9_]{0,7}$/, "formula symbol must be a short alphanumeric name");
+
 /** `NN-slug.json` naming, per `frontend/agents.md` §4. */
 export const ContentFileName = z
   .string()
@@ -51,6 +65,18 @@ export const UnitSymbol = z.enum([
   // degree-ish
   "deg", "°",
 ]);
+
+/**
+ * Units a FORMULA may declare — derived from `dimensions.ts` instead of being
+ * listed again here, because the two lists drifting is the actual hazard: a unit
+ * the schema accepts but `toBase()` cannot convert evaluates as dimensionless,
+ * i.e. silently wrong physics with a green test suite. Anything the lab can
+ * convert is legal here; anything else is a schema error at build time.
+ *
+ * (UnitSymbol above stays the vocabulary for LEGACY authored fields, where the
+ * corpus is measured data we do not get to redefine.)
+ */
+export const MeasurableUnit = z.enum(Object.keys(UNITS) as [string, ...string[]]);
 
 /** Plain, non-markdown short identifier used for ids and registry keys. */
 export const Identifier = z.string().trim().min(1).max(120);
