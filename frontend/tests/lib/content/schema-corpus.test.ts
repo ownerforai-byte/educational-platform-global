@@ -17,8 +17,7 @@ import { ManifestSchema } from "@/lib/content/schema/manifest";
 /**
  * The gated corpus is the repo-root `content/ravikishan` tree — the same one
  * `scripts/content/validate.ts` assesses. Resolved explicitly (frontend/../..)
- * because a small app-side copy also exists at `frontend/content/ravikishan`
- * and must NOT be swept into this gate.
+ * so the gate finds the canonical tree from the frontend workspace too.
  */
 function findCorpus(): string {
   const candidates = [
