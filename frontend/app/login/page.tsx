@@ -4,7 +4,7 @@ import { AuthShell } from "@/features/auth/components/auth-shell";
 import { LoggedInRedirect } from "@/app/login/logged-in-redirect";
 
 export const metadata: Metadata = {
-  title: "Sign In — Ravikisan's Platform",
+  title: "Welcome back — your notes are waiting 📚",
   description: "Sign in to your Ravikisan account to track progress, save bookmarks, and manage credits.",
 };
 

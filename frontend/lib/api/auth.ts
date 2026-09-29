@@ -1,4 +1,8 @@
-import { apiFetch, setStoredToken, clearStoredToken } from "../api-client";
+import { apiFetch, setStoredToken, clearStoredToken, getStoredToken } from "../api-client";
+import {
+  clearCachedSession,
+  writeCachedSession,
+} from "../auth/session-store";
 import type {
   AuthLoginRequest,
   AuthLoginResponse,
@@ -23,6 +27,10 @@ export async function login(
   if (res?.accessToken) {
     setStoredToken(res.accessToken);
   }
+  // Persist the validated user + expiry so a reload starts out signed in.
+  if (res?.user) {
+    writeCachedSession(res.user, res.accessToken ?? null);
+  }
   return res;
 }
 
@@ -40,6 +48,9 @@ export async function signup(
   if (res?.accessToken) {
     setStoredToken(res.accessToken);
   }
+  if (res?.user) {
+    writeCachedSession(res.user, res.accessToken ?? null);
+  }
   return res;
 }
 
@@ -53,6 +64,9 @@ export async function refreshSession(): Promise<AuthRefreshResponse> {
   if (res?.accessToken) {
     setStoredToken(res.accessToken);
   }
+  if (res?.user) {
+    writeCachedSession(res.user, res.accessToken ?? getStoredToken());
+  }
   return res;
 }
 
@@ -61,6 +75,7 @@ export async function refreshSession(): Promise<AuthRefreshResponse> {
  */
 export async function logout(): Promise<AuthLogoutResponse> {
   clearStoredToken();
+  clearCachedSession();
   return apiFetch<AuthLogoutResponse>("/api/auth/logout", {
     method: "POST",
   });
@@ -79,6 +94,54 @@ export async function getSession(): Promise<AuthMeResponse> {
 export async function getCurrentUser(): Promise<SessionUser | null> {
   const res = await getSession();
   return res.user;
+}
+
+/**
+ * Resolve the current session, silently renewing a expired access token first.
+ *
+ * Why this exists: the access token lives ~1 hour while the refresh cookie lives
+ * 30 days, so a returning visitor is almost always holding an expired access
+ * token. `api-client` never refreshes `auth/*` paths, so a bare `/api/auth/me`
+ * answered 401 and the app treated a perfectly renewable session as a logout —
+ * the "I have to sign in again after a while" report. Here a rejected access
+ * token is renewed through the refresh cookie and the new session is returned.
+ *
+ * Throws on transport failures (offline, cold start, 5xx) so callers can keep
+ * the cached session instead of mistaking an unreachable backend for a logout.
+ * Returns null only when the backend explicitly refuses the session.
+ */
+export async function ensureSession(): Promise<SessionUser | null> {
+  const adopt = (user: SessionUser | null | undefined, token?: string | null): SessionUser | null => {
+    if (!user) return null;
+    writeCachedSession(user, token ?? getStoredToken());
+    return user;
+  };
+
+  try {
+    const me = await getSession();
+    // 200 with `user: null` is a definitive "not signed in".
+    if (!me?.user) {
+      clearStoredToken();
+      clearCachedSession();
+      return null;
+    }
+    return adopt(me.user);
+  } catch (err) {
+    const status = (err as { status?: number }).status;
+    // Anything that is not an auth refusal is the network's problem, not ours:
+    // let the provider fall back to the cached session.
+    if (status !== 401 && status !== 403) throw err;
+    try {
+      const renewed = await refreshSession();
+      const user = adopt(renewed?.user, renewed?.accessToken ?? getStoredToken());
+      if (user) return user;
+    } catch {
+      // Refresh refused (expired/revoked) → fall through to signed out.
+    }
+    clearStoredToken();
+    clearCachedSession();
+    return null;
+  }
 }
 
 /**
