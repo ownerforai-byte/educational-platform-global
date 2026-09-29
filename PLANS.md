@@ -777,7 +777,7 @@ process.exit(run());
 | root `npm run check:schema` | `cd frontend && npm run test:run -- tests/lib/content/schema-corpus.test.ts` — the corpus + baseline ratchet (2/2 green) | yes |
 | frontend `npm run content:validate` | `vitest run tests/lib/content/schema-corpus.test.ts` | yes |
 | CI `.github/workflows/content-json.yml` | `node scripts/validate-content.mjs` (parse every `content/*.json`, exits 1 on broken) + the corpus test | yes, but **path-scoped** to `content/**`, `scripts/validate-content.mjs`, the baseline, `frontend/lib/content/schema/**`, `frontend/tests/lib/content/**` |
-| CI `ci.yml` | no content step at all | — |
+| CI `ci.yml` → `content-schema` job | `npx tsx frontend/scripts/content/validate.ts --strict` from the repo root (baseline ratchet + manifest gate; added 2026-09-29); `frontend-build` needs it | yes — runs on EVERY push/PR, no path scoping |
 
 - The sketch's `content:build` / `content:doctor` scripts do **not** exist — Phase 2.
 - The sketch's "root `check:content` = schema gate" **matches reality again**
@@ -793,7 +793,8 @@ process.exit(run());
   `frontend/scripts/content/**`, so validator changes re-run the gate.
 
 **Gate:** the schema gate exits 0 with an empty baseline — true today. Remaining
-Phase 1 tail (formula.ts, syllabus-ref.ts, manifest enforcement, gate naming) ≈ 1 day.
+Phase 1 tail (formula.ts, syllabus-ref.ts, gate naming) ≈ 1 day — manifest
+enforcement is DONE since 2026-09-29.
 
 ---
 
@@ -1644,9 +1645,11 @@ index" no longer exists. Everything it worried about is tracked on `main`:
   merge, so all five are now tracked and nothing needs re-merging.
 - `frontend/tsconfig.check.json` **is** tracked on `main` (the old text was right here)
   but has **zero references** in `frontend/package.json`, `.github/` or `scripts/` —
-  a deletion candidate, not a blocker.
+  a deletion candidate, not a blocker. **Deleted 2026-09-29 (`998343c4`)** — the main
+  `tsconfig.json` already includes `**/*.ts(x)` (only node_modules/backend/content-tools
+  excluded), so the 3 files it listed were never outside typechecking.
 
-### Weaknesses found by this inspection — pass 2 fixed 1, 2, 4, 6, 7 on 2026-09-29 (3, 5, 8 still open)
+### Weaknesses found by this inspection — pass 2 fixed 1, 2, 4, 6, 7; pass 3 fixed 6 fully + the backend ESM landmines on 2026-09-29 (3, 5, 8 still open)
 
 1. **FIXED** — `check:content` now exits 1 on unparseable JSON and chains
    `check:schema`; the name and the behavior agree (§4.9).
@@ -1671,9 +1674,15 @@ index" no longer exists. Everything it worried about is tracked on `main`:
 5. **Phase 1 tail** — `formula.ts` (§4.2), `syllabus-ref.ts` (§4.6) and the
    `md`/`defineNote`/`formula` helpers (§4.7) are pending; §6 and §8 cannot start without
    them, and nothing enforces "content must be inside the syllabus" until §4.6 lands.
-6. **PARTLY FIXED** — `content-json.yml` now watches `frontend/scripts/content/**`
-   (validator changes re-run the gate). Still open: `ci.yml` has no content step, so
-   changes outside the watched paths still skip the schema gate.
+6. **FIXED** — `content-json.yml` now watches `frontend/scripts/content/**`
+   (validator changes re-run the gate), and `ci.yml` gained a `content-schema` job
+   (2026-09-29, `998343c4`) that runs `validate.ts --strict` on every push/PR
+   regardless of which paths changed. No path-scoped gap remains.
 7. **FIXED** — `tsx@^4.23.15` added to root devDependencies (§4.9).
 8. **Stale plan artifacts** — the `feature/notes` worktree still sits at `46a048bf` far
    behind `main`; nobody should build on it.
+9. **FIXED (pass 3, 2026-09-29, `998343c4`)** — the last `require()` landmines under
+   root/backend `"type": "module"`: `backend/scripts/diagnose-ai.js` deleted (broken
+   duplicate — it also pointed at the nonexistent `backend/backend/.env`; the fixed
+   `.cjs` twin with the correct `backend/.env` path already existed), and
+   `backend/ecosystem.config.js` renamed `.cjs` so pm2 keeps loading it.
