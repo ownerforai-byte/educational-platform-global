@@ -12,13 +12,13 @@ import { DevContrastAudit } from "@/lib/color-contrast";
 import { AIWidget } from "@/components/layout/ai-widget";
 
 export const metadata: Metadata = {
-  title: "Ravikisan's Platform — NEB (+2) Learning Platform",
+  title: "Ravikisan's Platform",
   description: "Syllabus-first learning for NEB +2 students in Nepal. Notes, mind maps, interactive labs, and PYQs aligned to the official curriculum.",
   manifest: "/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "default",
-    title: "NEB Vault",
+    title: "Ravikisan's Platform",
   },
 };
 
@@ -43,7 +43,7 @@ export default function RootLayout({
     <meta name="theme-color" content="#3b82f6" />
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-    <meta name="apple-mobile-web-app-title" content="NEB Vault" />
+    <meta name="apple-mobile-web-app-title" content="Ravikisan's Platform" />
     <link rel="apple-touch-icon" href="/icon-192.png" />
   </head>
       <body className="min-h-screen bg-background text-foreground antialiased bg-mesh">
