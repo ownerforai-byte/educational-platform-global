@@ -106,7 +106,8 @@ const runners = {
   contentScopes: {
     label: "empty-scope gate (placeholder count must not rise)",
     run() {
-      const v = run(process.execPath, ["scripts/audit-empty-scopes.mjs", "--strict"], {
+      // spawnSync directly (no shell) — see the mindmap runner note.
+      const v = spawnSync(process.execPath, ["scripts/audit-empty-scopes.mjs", "--strict"], {
         stdio: "inherit",
       });
       return v.status ?? 1;
