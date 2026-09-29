@@ -7,6 +7,7 @@ import { ensureDailyCredits, spendCredits, refundCredits, AI_MESSAGE_COST, DAILY
 import { supabaseAdmin } from "../db/supabase";
 import { logServerError, newErrorId } from "../middleware/errors";
 import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
+import { enforceReplyFloor, floorWordsForQuestion } from "../ai/syllabus-anchor";
 
 const router = Router();
 
@@ -119,8 +120,30 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
       return;
     }
 
-    const response = await aiService.chat(provider, messages);
-    res.json({ response, provider: provider || aiService.getLastAnsweredBy(), credits: creditsLeft ?? undefined });
+    // Server-side reply floor (owner requirement 2026-09-29): a reply below
+    // 150 words (scaled up with question depth) gets ONE expansion retry
+    // before it may ship — the anti-random-answer guarantee is enforced in
+    // code, not just prompted.
+    const rawResponse = await aiService.chat(provider, messages);
+    const floor = floorWordsForQuestion(lastUser);
+    const floored = await enforceReplyFloor(rawResponse, floor, async (request) => {
+      const convoTail = messages.slice(-6);
+      return aiService.chat(provider, [
+        ...convoTail,
+        {
+          role: "assistant" as const,
+          content: rawResponse,
+        },
+        { role: "user" as const, content: request },
+      ]);
+    });
+    const response = floored.answer;
+    res.json({
+      response,
+      provider: provider || aiService.getLastAnsweredBy(),
+      credits: creditsLeft ?? undefined,
+      replyFloor: { floor: floored.floor, words: floored.words, expanded: floored.expanded },
+    });
   } catch (err: any) {
     console.error("AI chat error:", err);
     // The answer never reached the student → give the 1-credit fee back

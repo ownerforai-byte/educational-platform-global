@@ -3,6 +3,7 @@ import { serverError, ERROR_ID_HEADER, logServerError, newErrorId } from "../mid
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { rateLimit } from "../middleware/rateLimit";
 import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
+import { enforceReplyFloor, floorWordsForQuestion } from "../ai/syllabus-anchor";
 import {
   GUEST_DAILY_LIMIT,
   consumeGuestSlot,
@@ -91,12 +92,25 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
     const augmented = withProfessorContext(messages, professorContext) as AIChatMessage[];
 
     // "" runs the ordered chain (agnes → openrouter → internal).
-    const response = await aiService.chat(provider, augmented);
+    const rawResponse = await aiService.chat(provider, augmented);
+    // Server-side reply floor (owner requirement 2026-09-29): same guarantee
+    // as the authed chat — one expansion retry when a reply lands below the
+    // 150-word minimum (scaled up with question depth).
+    const floor = floorWordsForQuestion(lastUser);
+    const floored = await enforceReplyFloor(rawResponse, floor, async (request) => {
+      const convoTail = augmented.slice(-6);
+      return aiService.chat(provider, [
+        ...convoTail,
+        { role: "assistant" as const, content: rawResponse },
+        { role: "user" as const, content: request },
+      ]);
+    });
     res.json({
-      response,
+      response: floored.answer,
       provider: provider || aiService.getLastAnsweredBy(),
       remaining,
       limit: GUEST_DAILY_LIMIT,
+      replyFloor: { floor: floored.floor, words: floored.words, expanded: floored.expanded },
     });
   } catch (err: any) {
     console.error("AI guest chat error:", err);
