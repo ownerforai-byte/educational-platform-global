@@ -52,8 +52,23 @@ jobs:
       - run: npm ci
       - run: npm run test:run
 
+  # Baseline-ratchet gate: fails on NEW schema violations + manifest drift.
+  # Uses root tsx (backend lockfile has no zod/tsx to hoist into backend/);
+  # schema files are imported relatively so this works from the repo root.
+  content-schema:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+          cache: 'npm'
+          cache-dependency-path: package-lock.json
+      - run: npm ci
+      - run: npx tsx frontend/scripts/content/validate.ts --strict
+
   frontend-build:
-    needs: [frontend-lint, frontend-typecheck, frontend-test]
+    needs: [frontend-lint, frontend-typecheck, frontend-test, content-schema]
     runs-on: ubuntu-latest
     defaults:
       run:
