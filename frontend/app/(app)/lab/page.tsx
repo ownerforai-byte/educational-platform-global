@@ -187,7 +187,7 @@ const LABS_BY_SUBJECT: Record<LabCategory, LabItem[]> = {
     { id: "ph-calc-optics", title: "Optics Lab", description: "Reflection, refraction, lateral shift, prism dispersion.", category: "physics", icon: <Eye className="h-4 w-4 text-blue-500" />, status: "active", component: () => <PhysicsLab /> },
     { id: "ph-calc-projectile", title: "Projectile Motion", description: "Launch projectiles with adjustable velocity, angle, and gravity.", category: "physics", icon: <span className="text-blue-500">ðŸš€</span>, status: "active", component: () => <PhysicsLab /> },
     // General
-    { id: "ai-tutor", title: "Captain Lab Tutor", description: "Get instant help with lab concepts. Captain explains, solves, and visualizes any problem.", category: "physics", icon: <Brain className="h-4 w-4 text-amber-500" />, status: "active", component: () => <AILabTutor /> },
+    { id: "ai-tutor", title: "Veer Lab Tutor", description: "Get instant help with lab concepts. Veer explains, solves, and visualizes any problem.", category: "physics", icon: <Brain className="h-4 w-4 text-amber-500" />, status: "active", component: () => <AILabTutor /> },
     { id: "advanced-circuit", title: "Advanced Circuit Simulator", description: "Build and test complex circuits with 50+ components.", category: "physics", icon: <Bolt className="h-4 w-4 text-amber-500" />, status: "active", component: () => <PremiumAdvancedCircuitSimulator /> },
   ],
 

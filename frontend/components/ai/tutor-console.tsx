@@ -26,29 +26,42 @@ import {
   User,
   Sparkles,
   Trash2,
-  Copy,
-  Check,
   Coins,
   Atom,
   FlaskConical,
   Dna,
   Sigma,
-  RefreshCw,
-  Layers,
-  AlignLeft,
   ListChecks,
   Brain,
   Wand2,
   AlertCircle,
+  Plus,
+  History,
+  MessageSquare,
 } from "lucide-react";
 import {
   chat,
   guestChat,
   getChatHistory,
+  getChatSessions,
   saveChatHistory,
   clearChatHistory,
   enhancePrompt,
+  type ChatSession,
 } from "@/lib/api/ai";
+import { ChatMessageActions } from "@/components/ai/chat-message-actions";
+import {
+  ChatAttachButton,
+  ChatAttachPreview,
+  MAX_ATTACHMENTS,
+} from "@/components/ai/chat-attachments";
+import {
+  GO_DEEPER_INSTRUCTION,
+  KEEP_IT_SHORT_INSTRUCTION,
+  PHOTO_ONLY_PROMPT,
+  SUMMARIZE_INSTRUCTION,
+  writeQuizSeed,
+} from "@/lib/ai/chat-actions";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
 import {
   GUEST_DAILY_LIMIT as MAX_GUEST_MESSAGES,
@@ -84,6 +97,22 @@ const MODES: ModeDef[] = [
 const MODE_STORAGE_KEY = "neb_tutor_mode";
 /** Signed-out thread — history on this device (owner rule 2026-09-27). */
 const GUEST_THREAD_KEY = "neb_tutor_thread";
+/** Which conversation this console is currently showing (signed-in). */
+const SESSION_STORAGE_KEY = "neb_tutor_active_session";
+
+/** Fresh conversation id — its own saved history, like the widget's. */
+function newConversationId(): string {
+  return `t-${Date.now().toString(36)}${Math.random().toString(36).slice(2, 6)}`;
+}
+
+function readStoredSession(): string {
+  if (typeof window === "undefined") return "default";
+  try {
+    return localStorage.getItem(SESSION_STORAGE_KEY) || "default";
+  } catch {
+    return "default";
+  }
+}
 
 interface Starter {
   category: string;
@@ -412,10 +441,20 @@ export function TutorConsole() {
     GENERAL_STARTERS.slice(0, 6),
   );
   const [startersNonce, setStartersNonce] = useState(0);
+  // ── Chat history: separate conversations + a working "New chat" ──
+  // (signed-in users get the server's per-session histories; guests keep the
+  // single device thread above, and New chat simply starts a fresh one).
+  const [sessionName, setSessionName] = useState<string>("default");
+  const [sessions, setSessions] = useState<ChatSession[]>([]);
+  const [historyOpen, setHistoryOpen] = useState(false);
+  /** Photos queued for the next message (camera / gallery). */
+  const [pendingImages, setPendingImages] = useState<string[]>([]);
 
   const streamRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const historyLoadedRef = useRef(false);
+  const sessionRef = useRef(sessionName);
+  sessionRef.current = sessionName;
 
   const guestCredits = Math.max(0, MAX_GUEST_MESSAGES - guestCount);
   const isGuestLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
@@ -470,20 +509,70 @@ export function TutorConsole() {
     if (historyLoadedRef.current) return;
     historyLoadedRef.current = true;
     if (user && typeof user.credits === "number") setDailyCredits(user.credits);
-    (async () => {
-      try {
-        const { messages: restored } = await getChatHistory("default", 200);
-        if (restored.length) {
-          setMessages(
-            restored.map((m) => ({ role: m.role, content: m.content })),
-          );
-          setRestoredCount(restored.length);
-        }
-      } catch {
-        /* history unavailable — start fresh */
-      }
-    })();
+    const active = readStoredSession();
+    setSessionName(active);
+    void loadSession(active);
+    void refreshSessions();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isLoggedIn, user]);
+
+  /** Load one conversation's messages into the console. */
+  const loadSession = useCallback(async (name: string) => {
+    try {
+      const { messages: restored } = await getChatHistory(name, 200);
+      setMessages(restored.map((m) => ({ role: m.role, content: m.content })));
+      setRestoredCount(restored.length || null);
+    } catch {
+      /* history unavailable — start fresh */
+    }
+  }, []);
+
+  /** Refresh the conversation list shown in the history panel. */
+  const refreshSessions = useCallback(async () => {
+    try {
+      const { sessions: list } = await getChatSessions();
+      setSessions(list);
+    } catch {
+      /* sidebar simply stays empty */
+    }
+  }, []);
+
+  /** Start a brand-new conversation (its own saved history). */
+  const startNewChat = () => {
+    const id = newConversationId();
+    setSessionName(id);
+    sessionRef.current = id;
+    try {
+      localStorage.setItem(SESSION_STORAGE_KEY, id);
+    } catch {
+      /* storage blocked — the session still works for this visit */
+    }
+    setMessages([]);
+    setPendingImages([]);
+    setError(null);
+    setRestoredCount(null);
+    setHistoryOpen(false);
+    setStartersNonce((n) => n + 1);
+    inputRef.current?.focus();
+  };
+
+  /** Switch to an earlier conversation. */
+  const openSession = (name: string) => {
+    if (name === sessionName) {
+      setHistoryOpen(false);
+      return;
+    }
+    setSessionName(name);
+    sessionRef.current = name;
+    try {
+      localStorage.setItem(SESSION_STORAGE_KEY, name);
+    } catch {
+      /* storage blocked */
+    }
+    setHistoryOpen(false);
+    setError(null);
+    void loadSession(name);
+  };
 
   // Signed-out history: mirror the thread to this device after the restore
   // above has hydrated it. Signed-in users keep their server-side history.
@@ -553,8 +642,15 @@ export function TutorConsole() {
    * deeper, shorter) can re-send from any point without stale-state races.
    */
   const sendWith = useCallback(
-    async (history: AIChatMessage[], text: string, effectiveMode: TutorMode) => {
-      const content = text.trim();
+    async (
+      history: AIChatMessage[],
+      text: string,
+      effectiveMode: TutorMode,
+      images: string[] = [],
+    ) => {
+      // A photo with no typed question still gets an answer: the model is told
+      // to read the image, say what it shows, then teach it.
+      const content = text.trim() || (images.length ? PHOTO_ONLY_PROMPT : "");
       if (!content || sending) return;
 
       if (isGuestLimited) {
@@ -570,10 +666,13 @@ export function TutorConsole() {
         return;
       }
 
-      const userMsg: AIChatMessage = { role: "user", content };
+      const userMsg: AIChatMessage = images.length
+        ? { role: "user", content, images }
+        : { role: "user", content };
       const outbound = [...history, userMsg];
       setMessages(outbound);
       setInput("");
+      setPendingImages([]);
       setSending(true);
       setError(null);
 
@@ -589,10 +688,12 @@ export function TutorConsole() {
             setDailyCredits(res.credits);
             if (res.credits <= 0) setPoolEmpty(true);
           }
-          saveChatHistory("default", [
+          saveChatHistory(sessionRef.current, [
             { role: "user", content },
             { role: "assistant", content: res.response },
-          ]).catch(() => {});
+          ])
+            .then(() => refreshSessions())
+            .catch(() => {});
         } else {
           const res = await guestChat(payload);
           setMessages((prev) => [
@@ -614,7 +715,7 @@ export function TutorConsole() {
         const msg =
           err instanceof Error && err.message
             ? err.message
-            : "Failed to reach the Captain. Please try again.";
+            : "Failed to reach Veer. Please try again.";
         setError(msg);
         if (
           err &&
@@ -644,11 +745,11 @@ export function TutorConsole() {
         setSending(false);
       }
     },
-    [sending, isGuestLimited, creditsExhausted, isLoggedIn, guestCount],
+    [sending, isGuestLimited, creditsExhausted, isLoggedIn, guestCount, refreshSessions],
   );
 
   const handleSend = (customText?: string) => {
-    void sendWith(messages, customText ?? input, mode);
+    void sendWith(messages, customText ?? input, mode, pendingImages);
   };
 
   /** Drop the stale answer and ask the same question again. */
@@ -662,7 +763,8 @@ export function TutorConsole() {
       }
     }
     if (idx === -1) return;
-    void sendWith(messages.slice(0, idx), messages[idx].content, mode);
+    const asked = messages[idx];
+    void sendWith(messages.slice(0, idx), asked.content, mode, asked.images ?? []);
   };
 
   const followUp = (instruction: string) => {
@@ -672,18 +774,10 @@ export function TutorConsole() {
   /** Chat → quiz handoff: seed /ai-quiz with subject + last question. */
   const startPracticeQuiz = () => {
     const lastUser = [...messages].reverse().find((m) => m.role === "user");
-    const subjectSlug = MODES.find((m) => m.id === mode)?.subjectSlug;
-    try {
-      sessionStorage.setItem(
-        "neb_quiz_seed",
-        JSON.stringify({
-          subjectSlug,
-          topic: lastUser ? lastUser.content.slice(0, 120).trim() : "",
-        }),
-      );
-    } catch {
-      /* storage blocked — the quiz still opens with its defaults */
-    }
+    writeQuizSeed({
+      subjectSlug: MODES.find((m) => m.id === mode)?.subjectSlug,
+      topic: lastUser ? lastUser.content.slice(0, 120).trim() : "",
+    });
     router.push("/ai-quiz");
   };
 
@@ -703,12 +797,17 @@ export function TutorConsole() {
     }
   };
 
+  /** Empty the CURRENT conversation (keeps it in the history list). */
   const clearChat = () => {
     setMessages([]);
     setError(null);
     setRestoredCount(null);
     setStartersNonce((n) => n + 1);
-    if (isLoggedIn) clearChatHistory("default").catch(() => {});
+    if (isLoggedIn) {
+      clearChatHistory(sessionRef.current)
+        .then(() => refreshSessions())
+        .catch(() => {});
+    }
     inputRef.current?.focus();
   };
 
@@ -739,7 +838,7 @@ export function TutorConsole() {
             <div className="min-w-0">
               <div className="flex items-center gap-2">
                 <h2 className="text-sm font-extrabold bg-gradient-to-r from-primary via-violet-500 to-primary bg-clip-text text-transparent animate-gradient-text truncate">
-                  Ravikisan&apos;s Captain
+                  Veer
                 </h2>
                 {/* live dot — the professor is on duty (do not remove) */}
                 <span className="relative flex h-2 w-2 shrink-0" title="Online">
@@ -756,10 +855,34 @@ export function TutorConsole() {
           </div>
 
           <div className="flex items-center gap-2 shrink-0">
+            {/* New chat — always available, opens a fresh conversation */}
+            <button
+              onClick={startNewChat}
+              disabled={sending}
+              className="inline-flex items-center gap-1 rounded-lg border border-border/70 bg-background px-2 py-1.5 text-[11px] font-semibold text-muted-foreground hover:text-foreground hover:border-emerald-500/40 transition-colors disabled:opacity-50"
+              title="New chat — start a fresh conversation"
+              aria-label="New chat"
+            >
+              <Plus className="h-3.5 w-3.5" />
+              <span className="hidden sm:inline">New chat</span>
+            </button>
+            {/* Chat history — every saved conversation, one click away */}
+            {isLoggedIn && (
+              <button
+                onClick={() => setHistoryOpen((v) => !v)}
+                aria-expanded={historyOpen}
+                className="inline-flex items-center gap-1 rounded-lg border border-border/70 bg-background px-2 py-1.5 text-[11px] font-semibold text-muted-foreground hover:text-foreground hover:border-emerald-500/40 transition-colors"
+                title="Your chat histories"
+                aria-label="Chat history"
+              >
+                <History className="h-3.5 w-3.5" />
+                <span className="hidden sm:inline">{sessions.length}</span>
+              </button>
+            )}
             {!isLoggedIn && (
               <span
                 className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-600 font-semibold"
-                title="Guest pool shared with the Captain quiz · resets at 12:00 AM"
+                title="Guest pool shared with Veer quiz · resets at 12:00 AM"
               >
                 <Coins className="h-3 w-3" />
                 {guestCredits}/{MAX_GUEST_MESSAGES} free today
@@ -791,6 +914,43 @@ export function TutorConsole() {
             )}
           </div>
         </div>
+
+        {/* History panel — switch between saved conversations */}
+        {isLoggedIn && historyOpen && (
+          <div className="mx-4 sm:mx-6 mb-2 max-h-52 overflow-y-auto rounded-xl border border-border/70 bg-background p-2 space-y-1">
+            <p className="px-1.5 pt-0.5 pb-1 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
+              Your chat histories
+            </p>
+            {sessions.length === 0 ? (
+              <p className="px-1.5 text-[11px] text-muted-foreground">
+                No saved conversations yet — your first chat will appear here.
+              </p>
+            ) : (
+              sessions.map((s) => (
+                <button
+                  key={s.session}
+                  onClick={() => openSession(s.session)}
+                  className={cn(
+                    "w-full text-left rounded-lg px-2 py-1.5 transition-colors flex items-start gap-2",
+                    s.session === sessionName
+                      ? "bg-emerald-500/10 border border-emerald-500/30"
+                      : "hover:bg-muted/60 border border-transparent",
+                  )}
+                >
+                  <MessageSquare className="h-3.5 w-3.5 mt-0.5 shrink-0 text-muted-foreground" />
+                  <span className="min-w-0 flex-1">
+                    <span className="block text-xs font-medium truncate">
+                      {s.preview || "Conversation"}
+                    </span>
+                    <span className="block text-[10px] text-muted-foreground">
+                      {s.messages} msgs · {new Date(s.lastMessageAt).toLocaleDateString()}
+                    </span>
+                  </span>
+                </button>
+              ))
+            )}
+          </div>
+        )}
 
         {/* Subject-mode picker — this console's own feature */}
         <div className="flex gap-1.5 overflow-x-auto px-4 sm:px-6 pb-2.5">
@@ -908,68 +1068,17 @@ export function TutorConsole() {
                       <MathMarkdown content={msg.content} />
                     </div>
 
-                    {/* Per-answer quick actions — this console's own feature */}
-                    <div className="mt-1.5 flex flex-wrap items-center gap-1.5 opacity-70 group-hover:opacity-100 transition-opacity">
-                      <button
-                        onClick={() => handleCopy(msg.content, index)}
-                        className="inline-flex items-center gap-1 rounded-lg border border-border/60 bg-background px-2 py-1 text-[10px] font-semibold text-muted-foreground hover:text-foreground hover:border-emerald-500/40 transition-colors"
-                        title="Copy this answer"
-                      >
-                        {copiedIndex === index ? (
-                          <>
-                            <Check className="h-3 w-3 text-emerald-500" /> Copied
-                          </>
-                        ) : (
-                          <>
-                            <Copy className="h-3 w-3" /> Copy
-                          </>
-                        )}
-                      </button>
-                      {isLastAssistant && (
-                        <button
-                          onClick={regenerate}
-                          disabled={sending}
-                          className="inline-flex items-center gap-1 rounded-lg border border-border/60 bg-background px-2 py-1 text-[10px] font-semibold text-muted-foreground hover:text-foreground hover:border-emerald-500/40 transition-colors disabled:opacity-50"
-                          title="Ask the same question again for a fresh take"
-                        >
-                          <RefreshCw className="h-3 w-3" /> Regenerate
-                        </button>
-                      )}
-                      <button
-                        onClick={() =>
-                          followUp(
-                            "Go deeper on your last answer: add the underlying intuition, the full step-by-step working, and one exam-style example.",
-                          )
-                        }
-                        disabled={sending}
-                        className="inline-flex items-center gap-1 rounded-lg border border-border/60 bg-background px-2 py-1 text-[10px] font-semibold text-muted-foreground hover:text-foreground hover:border-emerald-500/40 transition-colors disabled:opacity-50"
-                        title="Expand with intuition, working and an example"
-                      >
-                        <Layers className="h-3 w-3" /> Go deeper
-                      </button>
-                      <button
-                        onClick={() =>
-                          followUp(
-                            "Give the same answer again, but half as long — exam-terse, only the essentials.",
-                          )
-                        }
-                        disabled={sending}
-                        className="inline-flex items-center gap-1 rounded-lg border border-border/60 bg-background px-2 py-1 text-[10px] font-semibold text-muted-foreground hover:text-foreground hover:border-emerald-500/40 transition-colors disabled:opacity-50"
-                        title="Condense to exam-terse essentials"
-                      >
-                        <AlignLeft className="h-3 w-3" /> Keep it short
-                      </button>
-                      {isLastAssistant && (
-                        <button
-                          onClick={startPracticeQuiz}
-                          disabled={sending}
-                          className="inline-flex items-center gap-1 rounded-lg border border-emerald-500/40 bg-emerald-500/10 px-2 py-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 transition-colors disabled:opacity-50"
-                          title="Turn this topic into an instant practice quiz"
-                        >
-                          <Brain className="h-3 w-3" /> Practice quiz
-                        </button>
-                      )}
-                    </div>
+                    {/* Shared per-answer actions — identical to the widget's */}
+                    <ChatMessageActions
+                      copied={copiedIndex === index}
+                      onCopy={() => handleCopy(msg.content, index)}
+                      isLatest={isLastAssistant}
+                      disabled={sending}
+                      onRegenerate={regenerate}
+                      onDeeper={() => followUp(GO_DEEPER_INSTRUCTION)}
+                      onShorter={() => followUp(KEEP_IT_SHORT_INSTRUCTION)}
+                      onPractice={startPracticeQuiz}
+                    />
                   </div>
                 </div>
               );
@@ -996,11 +1105,7 @@ export function TutorConsole() {
       {hasConversation && !sending && (
         <div className="shrink-0 px-4 sm:px-6 pt-2 flex flex-wrap items-center gap-1.5 border-t border-border/40">
           <button
-            onClick={() =>
-              followUp(
-                "Summarize our conversation so far as concise revision notes: short headings, tight bullets, key formulas and terms in bold — ready to screenshot before an exam.",
-              )
-            }
+            onClick={() => followUp(SUMMARIZE_INSTRUCTION)}
             className="inline-flex items-center gap-1 rounded-lg border border-border/60 bg-background px-2 py-1 text-[10px] font-semibold text-muted-foreground hover:text-foreground hover:border-emerald-500/40 transition-colors"
             title="Turn this thread into revision notes"
           >
@@ -1009,7 +1114,7 @@ export function TutorConsole() {
           <button
             onClick={startPracticeQuiz}
             className="inline-flex items-center gap-1 rounded-lg border border-emerald-500/40 bg-emerald-500/10 px-2 py-1 text-[10px] font-bold text-emerald-600 dark:text-emerald-400 hover:bg-emerald-500/20 transition-colors"
-            title="Open the Captain quiz seeded with this conversation"
+            title="Open Veer quiz seeded with this conversation"
           >
             <Brain className="h-3 w-3" /> Practice quiz
           </button>
@@ -1025,7 +1130,19 @@ export function TutorConsole() {
               : `Today's ${DAILY_CREDIT_POOL}-credit pool is empty — it resets at 12:00 AM.`}
           </p>
         )}
+        <ChatAttachPreview
+          images={pendingImages}
+          onRemove={(i) => setPendingImages((prev) => prev.filter((_, idx) => idx !== i))}
+          className="mb-2"
+        />
         <div className="flex items-end gap-2">
+          <ChatAttachButton
+            onPick={(dataUrl) => setPendingImages((prev) => [...prev, dataUrl].slice(0, MAX_ATTACHMENTS))}
+            onError={setError}
+            disabled={sending || composerLocked}
+            attached={pendingImages.length}
+            className="self-end"
+          />
           <textarea
             ref={inputRef}
             value={input}
@@ -1055,7 +1172,7 @@ export function TutorConsole() {
           </button>
           <button
             onClick={() => handleSend()}
-            disabled={!input.trim() || sending || composerLocked}
+            disabled={(!input.trim() && pendingImages.length === 0) || sending || composerLocked}
             title="Send (Enter)"
             aria-label="Send message"
             className="h-9 w-9 shrink-0 rounded-xl bg-gradient-to-br from-emerald-500 to-primary text-white shadow-md shadow-emerald-500/20 hover:opacity-90 transition-opacity flex items-center justify-center disabled:opacity-40"
@@ -1070,7 +1187,7 @@ export function TutorConsole() {
         <p className="mt-1.5 text-[10px] text-muted-foreground">
           {isLoggedIn
             ? "1 credit per message · history saved to your account"
-            : `${guestCredits} of ${MAX_GUEST_MESSAGES} free messages left today · shared with the Captain quiz`}
+            : `${guestCredits} of ${MAX_GUEST_MESSAGES} free messages left today · shared with Veer quiz`}
         </p>
       </div>
     </div>

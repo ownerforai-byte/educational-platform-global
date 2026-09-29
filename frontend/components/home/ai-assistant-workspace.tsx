@@ -17,8 +17,8 @@ export function AIAssistantWorkspace() {
   const features = [
     {
       icon: Bot,
-      title: "Captain Tutor Console",
-      description: "Captain chat with saved conversations and step-by-step explanations",
+      title: "Veer Tutor Console",
+      description: "Veer chat with saved conversations and step-by-step explanations",
       href: "/ai/tutor",
     },
     {
@@ -29,7 +29,7 @@ export function AIAssistantWorkspace() {
     },
     {
       icon: Search,
-      title: "Captain Curriculum Search",
+      title: "Veer Curriculum Search",
       description: "Ask in plain language — notes, labs and PYQs come back with links",
       href: "/ai/search",
     },
@@ -42,10 +42,10 @@ export function AIAssistantWorkspace() {
         <div>
           <div className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-wider text-violet-400">
             <Brain className="h-4 w-4" />
-            <span>Captain Studio</span>
+            <span>Veer Studio</span>
           </div>
           <h2 className="text-2xl sm:text-3xl font-bold tracking-tight text-foreground mt-1">
-            Your Curriculum-Aligned Captain
+            Your Curriculum-Aligned Veer
           </h2>
           <p className="text-sm text-muted-foreground mt-1 max-w-2xl">
             Tutor chat, generated quizzes and curriculum search — each on its own dedicated page.
@@ -57,7 +57,7 @@ export function AIAssistantWorkspace() {
           className="inline-flex w-fit items-center gap-1.5 px-4 py-2 rounded-xl bg-violet-600 hover:bg-violet-700 text-white text-xs font-bold shadow-sm transition-all shrink-0"
         >
           <Sparkles className="h-3.5 w-3.5" />
-          <span>Open Captain Studio Hub</span>
+          <span>Open Veer Studio Hub</span>
           <ChevronRight className="h-3.5 w-3.5" />
         </Link>
       </div>

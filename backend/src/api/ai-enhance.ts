@@ -14,7 +14,7 @@ import { getSearchService } from "../ai/search-engine";
 const router = Router();
 
 const ENHANCER_SYSTEM = `You are a prompt enhancer for a NEB science study platform.
-Rewrite the user's rough question into ONE clear, specific study question that will get a great answer from the Captain tutor.
+Rewrite the user's rough question into ONE clear, specific study question that will get a great answer from Veer tutor.
 
 Rules:
 - Keep the user's language (English or Nepali) and their intent.

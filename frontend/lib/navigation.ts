@@ -93,11 +93,11 @@ const stemAndRigorItems: NavItem[] = [
 ];
 
 const toolsItems: NavItem[] = [
-  { href: "/ai", label: "Captain Studio Hub", icon: Bot, badge: "4 Tools", badgeClass: "bg-violet-500/15 text-violet-500" },
-  { href: "/chat", label: "Captain Study Assistant", icon: Sparkles, badge: "Chat", badgeClass: "bg-fuchsia-500/15 text-fuchsia-500" },
-  { href: "/ai/tutor", label: "Captain Tutor Console", icon: Bot, badge: "History", badgeClass: "bg-fuchsia-500/15 text-fuchsia-500" },
-  { href: "/ai/search", label: "Captain Curriculum Search", icon: Search, badge: "Semantic", badgeClass: "bg-emerald-500/15 text-emerald-500" },
-  { href: "/ai-quiz", label: "Adaptive Captain Quiz", icon: HelpCircle, badge: "Adaptive", badgeClass: "bg-blue-500/15 text-blue-500" },
+  { href: "/ai", label: "Veer Studio Hub", icon: Bot, badge: "4 Tools", badgeClass: "bg-violet-500/15 text-violet-500" },
+  { href: "/chat", label: "Veer Study Assistant", icon: Sparkles, badge: "Chat", badgeClass: "bg-fuchsia-500/15 text-fuchsia-500" },
+  { href: "/ai/tutor", label: "Veer Tutor Console", icon: Bot, badge: "History", badgeClass: "bg-fuchsia-500/15 text-fuchsia-500" },
+  { href: "/ai/search", label: "Veer Curriculum Search", icon: Search, badge: "Semantic", badgeClass: "bg-emerald-500/15 text-emerald-500" },
+  { href: "/ai-quiz", label: "Adaptive Veer Quiz", icon: HelpCircle, badge: "Adaptive", badgeClass: "bg-blue-500/15 text-blue-500" },
   { href: "/quiz", label: "Practice Quiz Bank", icon: Target, badge: "PYQ", badgeClass: "bg-teal-500/15 text-teal-500" },
   { href: "/exam-countdown", label: "Exam Countdown", icon: Target, badge: "NEB", badgeClass: "bg-amber-500/15 text-amber-500" },
 ];
@@ -132,7 +132,7 @@ export const NAV_SECTIONS: NavSection[] = [
   { id: "primary", label: "Quick Access", icon: Compass, items: primaryItems },
   { id: "curriculum", label: "Curriculum & Notes", icon: BookOpen, items: curriculumItems },
   { id: "stem", label: "STEM Labs & Rigor", icon: FlaskConical, items: stemAndRigorItems },
-  { id: "tools", label: "Captain & Assessment", icon: Sparkles, items: toolsItems },
+  { id: "tools", label: "Veer & Assessment", icon: Sparkles, items: toolsItems },
   { id: "extended", label: "Knowledge & Prep", icon: Globe, items: extendedItems },
   { id: "account", label: "Student Desk", icon: UserCheck, items: accountItems },
   { id: "owner", label: "Owner", icon: Crown, ownerOnly: true, items: ownerItems },

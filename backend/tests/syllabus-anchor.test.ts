@@ -101,7 +101,7 @@ describe("classifyQuestionDepth", () => {
 
   test("shallow for definitions, facts and casual chat", () => {
     expect(classifyQuestionDepth("what is enthalpy?")).toBe("shallow");
-    expect(classifyQuestionDepth("hi captain, feeling tired today")).toBe("shallow");
+    expect(classifyQuestionDepth("hi veer, feeling tired today")).toBe("shallow");
   });
 });
 

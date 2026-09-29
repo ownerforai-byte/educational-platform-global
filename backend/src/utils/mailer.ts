@@ -146,7 +146,7 @@ function approvalHtml(displayName: string | null): string {
           <p style="margin:0 0 14px;line-height:1.6;">
             The platform owner has approved your account. You can now sign in
             and use everything the platform offers: syllabus notes, 3D labs,
-            derivations, PYQs, quizzes and your Captain tutor — with your own
+            derivations, PYQs, quizzes and your Veer tutor — with your own
             saved chat histories and daily credits.
           </p>
           <table role="presentation" cellpadding="0" cellspacing="0" style="margin:22px 0;">

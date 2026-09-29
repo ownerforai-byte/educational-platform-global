@@ -1,5 +1,5 @@
 /**
- * Captain branding for the AI tutor (owner request 2026-09-28):
+ * Veer branding for the AI tutor (owner request 2026-09-28):
  *   "change the bot logo to like a captain" / "design the ai widget chat's
  *    logo also like something real".
  *
@@ -7,7 +7,7 @@
  *   • CaptainAvatar — a peaked captain's cap; drops into any spot that used
  *     lucide's <Bot/> (message bubbles, chat headers). Inherits currentColor
  *     for the cap so it themes with its container; the band/badge stay gold.
- *   • CaptainMark — the Captain's badge: a medallion ring holding the
+ *   • CaptainMark — Veer's badge: a medallion ring holding the
  *     peaked cap over a gold anchor; used as the floating widget's real
  *     logo on its gradient button (owner 2026-09-28: "change that wheel
  *     icon to a captain logo").
@@ -49,7 +49,7 @@ export function CaptainAvatar({ className = "" }: { className?: string }) {
 }
 
 export function CaptainMark({ className = "" }: { className?: string }) {
-  // The Captain's badge: medallion ring + peaked cap + gold anchor.
+  // Veer's badge: medallion ring + peaked cap + gold anchor.
   return (
     <svg
       viewBox="0 0 64 64"

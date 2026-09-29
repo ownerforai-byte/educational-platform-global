@@ -131,7 +131,7 @@ const SPECIAL_MODULES = [
     color: "bg-yellow-500/10 text-yellow-600 dark:text-yellow-400",
   },
   {
-    title: "Adaptive Captain Quiz Generator",
+    title: "Adaptive Veer Quiz Generator",
     description: "Generate customized practice sets with immediate grading and conceptual explanations.",
     href: "/ai-quiz",
     icon: Brain,

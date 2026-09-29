@@ -8,6 +8,7 @@ import { supabaseAdmin } from "../db/supabase";
 import { logServerError, newErrorId } from "../middleware/errors";
 import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
 import { enforceReplyFloor, floorWordsForQuestion } from "../ai/syllabus-anchor";
+import { imageInstruction, sanitizeChatImages } from "../ai/image-input";
 
 const router = Router();
 
@@ -43,6 +44,17 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
       return;
     }
 
+    // Photo input (camera / gallery): validated and capped, attached to the
+    // latest user turn. Invalid or oversized photos are dropped (counted in
+    // the response) rather than failing the whole request.
+    const { images, rejected: rejectedImages } = sanitizeChatImages(body?.images);
+    if (images.length) {
+      const lastUserIdx = messages.map((m) => m.role).lastIndexOf("user");
+      if (lastUserIdx >= 0) {
+        messages[lastUserIdx] = { ...messages[lastUserIdx], images };
+      }
+    }
+
     // ── Daily pool + 1-credit-per-message billing (owner policy) ──
     const user = (req as unknown as { user?: { id: string; email?: string; role?: string | null } }).user;
     if (!user) {
@@ -66,7 +78,7 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
       const remaining = await spendCredits(
         user.id,
         AI_MESSAGE_COST,
-        "Captain tutor message",
+        "Veer tutor message",
       );
       if (remaining === null) {
         res.status(402).json({
@@ -86,7 +98,10 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     // Professor mode: enforce plain-text style + inject live web results
     // for the student's latest question (Google CSE, timeout-protected).
     const lastUser = [...messages].reverse().find((m) => m.role === "user")?.content ?? "";
-    const professorContext = await buildProfessorContext(lastUser);
+    const baseContext = await buildProfessorContext(lastUser);
+    const professorContext = images.length
+      ? `${baseContext}\n\n${imageInstruction(images.length)}`
+      : baseContext;
     messages = withProfessorContext(messages, professorContext) as AIChatMessage[];
 
     // Handle streaming
@@ -154,6 +169,7 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
       provider: provider || aiService.getLastAnsweredBy(),
       credits: creditsLeft ?? undefined,
       replyFloor: { floor: floored.floor, words: floored.words, expanded: floored.expanded },
+      images: { accepted: images.length, rejected: rejectedImages },
     });
   } catch (err: any) {
     console.error("AI chat error:", err);

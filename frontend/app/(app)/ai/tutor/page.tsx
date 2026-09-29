@@ -4,9 +4,9 @@ import { ArrowLeft, Bot, History, Plus, Sparkles } from "lucide-react";
 import { AIChatInterface } from "@/components/ai/ai-chat-interface";
 
 export const metadata: Metadata = {
-  title: "Captain Tutor Console — Saved Conversations & Prompt Enhancer",
+  title: "Veer Tutor Console — Saved Conversations & Prompt Enhancer",
   description:
-    "The long-form Captain tutor console for NEB Class 11 & 12: keep separate conversations, restore your history on any device, and improve a rough question before sending it.",
+    "The long-form Veer tutor console for NEB Class 11 & 12: keep separate conversations, restore your history on any device, and improve a rough question before sending it.",
 };
 
 /**
@@ -48,7 +48,7 @@ export default function AITutorPage() {
           AI Studio
         </Link>
         <span className="text-muted-foreground/40">/</span>
-        <span className="text-xs font-semibold text-foreground">Captain Tutor Console</span>
+        <span className="text-xs font-semibold text-foreground">Veer Tutor Console</span>
       </div>
 
       {/* Header + its own feature list */}
@@ -58,7 +58,7 @@ export default function AITutorPage() {
             <Bot className="h-5 w-5 text-fuchsia-500" />
           </span>
           <div>
-            <h1 className="text-lg sm:text-xl font-bold tracking-tight">Captain Tutor Console</h1>
+            <h1 className="text-lg sm:text-xl font-bold tracking-tight">Veer Tutor Console</h1>
             <p className="text-xs text-muted-foreground">
               Saved conversations, prompt enhancer and full answer history for signed-in students.
             </p>

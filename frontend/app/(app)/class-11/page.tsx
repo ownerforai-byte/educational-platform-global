@@ -132,7 +132,7 @@ const SPECIAL_MODULES = [
     color: "bg-yellow-500/10 text-yellow-600 dark:text-yellow-400",
   },
   {
-    title: "Adaptive Captain Quiz Generator",
+    title: "Adaptive Veer Quiz Generator",
     description: "Generate instant self-testing quizzes by topic to master Class 11 board exams.",
     href: "/ai-quiz",
     icon: Brain,

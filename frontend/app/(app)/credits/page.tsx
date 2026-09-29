@@ -143,7 +143,7 @@ export default function CreditsPage() {
 
               <div className="flex items-center justify-between py-2.5">
                 <div>
-                  <p className="font-semibold text-foreground">Captain Instant Explanations</p>
+                  <p className="font-semibold text-foreground">Veer Instant Explanations</p>
                   <p className="text-xs text-muted-foreground">Step-by-step problem solver &amp; doubt clearing</p>
                 </div>
                 <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400">

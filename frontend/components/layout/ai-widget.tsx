@@ -35,7 +35,7 @@ export function AIWidget() {
             ? "bg-red-500 hover:bg-red-600"
             : "bg-gradient-to-br from-primary to-primary/70 hover:scale-105"
         }`}
-        aria-label="Toggle Captain chat"
+        aria-label="Toggle Veer chat"
       >
         {open ? (
           <X className="h-6 w-6 text-white" />
@@ -50,7 +50,7 @@ export function AIWidget() {
           className="fixed bottom-24 left-6 z-50 w-[min(760px,calc(100vw-3rem))] rounded-2xl border border-border bg-card shadow-2xl overflow-hidden"
           style={{ height: "min(640px, calc(100vh - 8rem))" }}
           role="dialog"
-          aria-label="Ravikisan's Captain"
+          aria-label="Veer"
         >
           <AIChatInterface embedded />
         </div>

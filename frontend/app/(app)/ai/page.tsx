@@ -16,9 +16,9 @@ import {
 import { AiPlanStrip } from "@/components/ai/ai-plan-strip";
 
 export const metadata: Metadata = {
-  title: "Captain Studio Hub — Tutor, Quiz Generator & Curriculum Search",
+  title: "Veer Studio Hub — Tutor, Quiz Generator & Curriculum Search",
   description:
-    "Every Captain tool on the platform, each on its own page: the Captain study assistant, the tutor console with saved conversations, the adaptive quiz generator and Captain curriculum search.",
+    "Every Veer tool on the platform, each on its own page: Veer study assistant, the tutor console with saved conversations, the adaptive quiz generator and Veer curriculum search.",
 };
 
 /**
@@ -47,7 +47,7 @@ const TOOLS: {
 }[] = [
   {
     href: "/chat",
-    title: "Captain Study Assistant",
+    title: "Veer Study Assistant",
     badge: "Ask a doubt",
     description:
       "The everyday tutor: ask any NEB Class 11 or 12 question and get a curriculum-aligned answer, right inside the console.",
@@ -77,7 +77,7 @@ const TOOLS: {
   },
   {
     href: "/ai-quiz",
-    title: "Adaptive Captain Quiz",
+    title: "Adaptive Veer Quiz",
     badge: "Practice",
     description:
       "Generate a practice set from any subject and unit, pick the difficulty, then answer and score it with worked feedback.",
@@ -92,7 +92,7 @@ const TOOLS: {
   },
   {
     href: "/ai/search",
-    title: "Captain Curriculum Search",
+    title: "Veer Curriculum Search",
     badge: "Find anything",
     description:
       "Ask in plain language and get the pages that answer it — notes, labs, graphs and past questions — with the links to open each one.",

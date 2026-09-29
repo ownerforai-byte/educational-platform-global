@@ -2,6 +2,7 @@
 
 import React, { useState, useRef, useEffect, useCallback } from "react";
 import Link from "next/link";
+import { useRouter } from "next/navigation";
 import {
   Send,
   User,
@@ -12,8 +13,6 @@ import {
   Scale,
   Sparkles,
   Trash2,
-  Copy,
-  Check,
   Coins,
   AlertCircle,
   Atom,
@@ -50,6 +49,18 @@ import { useSession } from "@/features/auth/hooks/use-session";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import { cn } from "@/lib/utils";
 import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
+import { ChatMessageActions } from "@/components/ai/chat-message-actions";
+import {
+  ChatAttachButton,
+  ChatAttachPreview,
+  MAX_ATTACHMENTS,
+} from "@/components/ai/chat-attachments";
+import {
+  GO_DEEPER_INSTRUCTION,
+  KEEP_IT_SHORT_INSTRUCTION,
+  PHOTO_ONLY_PROMPT,
+  writeQuizSeed,
+} from "@/lib/ai/chat-actions";
 
 // ── Rotating suggestion deck (owner request 2026-09-28): the starter
 // questions must never feel fixed — a wide pool of DEEP, idea-walk prompts
@@ -256,7 +267,10 @@ function guestThreadToSessions(threads: GuestThread[]): ChatSession[] {
 
 export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {}) {
   const { user } = useSession();
+  const router = useRouter();
   const isLoggedIn = !!user;
+  /** Photos queued for the next message (camera / gallery). */
+  const [pendingImages, setPendingImages] = useState<string[]>([]);
 
   const [messages, setMessages] = useState<AIChatMessage[]>([
     { role: "system", content: PLATFORM_SYSTEM_PROMPT },
@@ -469,8 +483,18 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
     writeGuestHistory({ active: sessionName, threads: guestThreadsRef.current });
   };
 
-  const handleSend = async (customText?: string) => {
-    const textToSend = (customText ?? input).trim();
+  /**
+   * Core send with an EXPLICIT history, so the quick actions (regenerate,
+   * deeper, shorter) can re-send from any point without stale-state races.
+   * Photos ride on the user message; a photo-only message gets a prompt that
+   * tells the model to read the image and teach what it shows.
+   */
+  const sendWith = async (
+    history: AIChatMessage[],
+    rawText: string,
+    images: string[] = [],
+  ) => {
+    const textToSend = rawText.trim() || (images.length ? PHOTO_ONLY_PROMPT : "");
     if (!textToSend || sending) return;
     if (historyState === "loading") return;
 
@@ -483,9 +507,13 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       return;
     }
 
-    const userMsg: AIChatMessage = { role: "user", content: textToSend };
-    setMessages((prev) => [...prev, userMsg]);
+    const userMsg: AIChatMessage = images.length
+      ? { role: "user", content: textToSend, images }
+      : { role: "user", content: textToSend };
+    const outbound = [...history, userMsg];
+    setMessages(outbound);
     setInput("");
+    setPendingImages([]);
     setSending(true);
     setError(null);
 
@@ -493,9 +521,9 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
 
     try {
       if (isLoggedIn) {
-        const res = await chat([...messages, userMsg]);
+        const res = await chat(outbound);
         const assistantMsg: AIChatMessage = { role: "assistant", content: res.response };
-        setMessages((prev) => [...prev, assistantMsg]);
+        setMessages([...outbound, assistantMsg]);
         // Server reports the balance after this message's 1-credit spend.
         if (typeof res.credits === "number") {
           setDailyCredits(res.credits);
@@ -530,9 +558,9 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
           ];
         });
       } else {
-        const res = await guestChat([...messages, userMsg]);
+        const res = await guestChat(outbound);
         const assistantMsg: AIChatMessage = { role: "assistant", content: res.response };
-        setMessages((prev) => [...prev, assistantMsg]);
+        setMessages([...outbound, assistantMsg]);
         // Server-side count is the source of truth; mirror it locally.
         const used = MAX_GUEST_MESSAGES - (res.remaining ?? MAX_GUEST_MESSAGES - guestCount - 1);
         const next = Math.min(MAX_GUEST_MESSAGES, Math.max(guestCount + 1, used));
@@ -547,7 +575,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
     } catch (err: any) {
       console.error("AI chat error:", err);
       const msg =
-        err.message || "Failed to reach the Captain. Please try again.";
+        err.message || "Failed to reach Veer. Please try again.";
       setError(msg);
       if (err?.status === 402) {
         // Daily pool empty (guest or signed-in). The server's message
@@ -572,6 +600,37 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
     } finally {
       setSending(false);
     }
+  };
+
+  const handleSend = (customText?: string) => {
+    void sendWith(messages, customText ?? input, pendingImages);
+  };
+
+  /** Drop the stale answer and ask the previous question again. */
+  const regenerate = () => {
+    if (sending) return;
+    let idx = -1;
+    for (let i = messages.length - 1; i >= 0; i--) {
+      if (messages[i].role === "user") {
+        idx = i;
+        break;
+      }
+    }
+    if (idx === -1) return;
+    const asked = messages[idx];
+    void sendWith(messages.slice(0, idx), asked.content, asked.images ?? []);
+  };
+
+  /** Follow-up instruction on top of the current thread (deeper / shorter). */
+  const followUp = (instruction: string) => {
+    void sendWith(messages, instruction, []);
+  };
+
+  /** Chat → quiz handoff: seed /ai-quiz with the last question. */
+  const startPracticeQuiz = () => {
+    const lastUser = [...messages].reverse().find((m) => m.role === "user");
+    writeQuizSeed({ topic: lastUser ? lastUser.content.slice(0, 120).trim() : "" });
+    router.push("/ai-quiz");
   };
 
   const handleKeyDown = (e: React.KeyboardEvent<HTMLTextAreaElement>) => {
@@ -691,6 +750,12 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
   };
 
   const displayMessages = messages.filter((m) => m.role !== "system");
+  const lastAssistantIndex = (() => {
+    for (let i = displayMessages.length - 1; i >= 0; i--) {
+      if (displayMessages[i].role === "assistant") return i;
+    }
+    return -1;
+  })();
 
   return (
     <div
@@ -811,7 +876,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
             <div className="min-w-0">
               <div className="flex items-center gap-2">
                 <h2 className="text-sm font-extrabold bg-gradient-to-r from-primary via-violet-500 to-primary bg-clip-text text-transparent animate-gradient-text truncate">
-                  Ravikisan&apos;s Captain
+                  Veer
                 </h2>
                 {/* live dot — the professor is on duty */}
                 <span className="relative flex h-2 w-2 shrink-0" title="Online">
@@ -841,6 +906,15 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                 {Math.min(dailyCredits ?? user?.credits ?? DAILY_CREDIT_POOL, DAILY_CREDIT_POOL)}/{DAILY_CREDIT_POOL} credits today
               </span>
             )}
+            {/* New chat — opens a fresh conversation (same as the sidebar button) */}
+            <button
+              onClick={startNewChat}
+              className="p-2 rounded-lg text-muted-foreground hover:text-foreground hover:bg-muted transition-colors"
+              title="New chat — start a fresh conversation"
+              aria-label="New chat"
+            >
+              <Plus className="h-4 w-4" />
+            </button>
             {displayMessages.length > 0 && (
               <button
                 onClick={clearChat}
@@ -925,24 +999,17 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                     <div className="text-xs leading-relaxed">
                       <MathMarkdown content={msg.content} />
                     </div>
-                    <div className="pt-2 mt-2 border-t border-border/40 flex items-center justify-end">
-                      <button
-                        onClick={() => handleCopy(msg.content, index)}
-                        className="inline-flex items-center gap-1 text-[10px] text-muted-foreground hover:text-foreground font-semibold"
-                      >
-                        {copiedIndex === index ? (
-                          <>
-                            <Check className="h-3 w-3 text-emerald-500" />
-                            <span className="text-emerald-500">Copied</span>
-                          </>
-                        ) : (
-                          <>
-                            <Copy className="h-3 w-3" />
-                            <span>Copy</span>
-                          </>
-                        )}
-                      </button>
-                    </div>
+                    {/* Same per-answer actions as the tutor console, same position */}
+                    <ChatMessageActions
+                      copied={copiedIndex === index}
+                      onCopy={() => handleCopy(msg.content, index)}
+                      isLatest={index === lastAssistantIndex}
+                      disabled={sending}
+                      onRegenerate={regenerate}
+                      onDeeper={() => followUp(GO_DEEPER_INSTRUCTION)}
+                      onShorter={() => followUp(KEEP_IT_SHORT_INSTRUCTION)}
+                      onPractice={startPracticeQuiz}
+                    />
                   </div>
                 </div>
               );
@@ -991,10 +1058,13 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
           )}
 
           <div ref={chatBottomRef} />
-        </div>
-
-        {/* Composer */}
+        </div>         {/* Composer */}
         <div className="px-4 sm:px-6 py-4 border-t border-border/60 bg-muted/10 shrink-0">
+          <ChatAttachPreview
+            images={pendingImages}
+            onRemove={(i) => setPendingImages((prev) => prev.filter((_, idx) => idx !== i))}
+            className="max-w-4xl mx-auto mb-2"
+          />
           <div className="relative flex items-end gap-2 max-w-4xl mx-auto">
             <textarea
               ref={inputRef}
@@ -1013,6 +1083,12 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
               className="flex-1 max-h-32 min-h-[44px] py-2.5 px-4 rounded-2xl border border-border/80 bg-card text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none font-medium"
             />
 
+            <ChatAttachButton
+              onPick={(dataUrl) => setPendingImages((prev) => [...prev, dataUrl].slice(0, MAX_ATTACHMENTS))}
+              onError={setError}
+              disabled={sending || composerLocked}
+              attached={pendingImages.length}
+            />
             <button
               onClick={handleEnhance}
               disabled={!input.trim() || sending || enhancing || composerLocked}
@@ -1024,7 +1100,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
             </button>
             <button
               onClick={() => handleSend()}
-              disabled={!input.trim() || sending || composerLocked}
+              disabled={(!input.trim() && pendingImages.length === 0) || sending || composerLocked}
               className="h-11 px-4 rounded-2xl bg-gradient-to-r from-primary to-violet-500 text-primary-foreground font-semibold text-xs flex items-center gap-1.5 shadow-md shadow-primary/30 hover:shadow-lg hover:shadow-primary/40 hover:scale-[1.03] active:scale-95 disabled:hover:scale-100 disabled:opacity-40 disabled:cursor-not-allowed transition-all shrink-0"
               aria-label="Send message"
             >

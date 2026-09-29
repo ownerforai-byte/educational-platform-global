@@ -22,7 +22,7 @@ const HIGHLIGHTS = [
   },
   {
     icon: Brain,
-    title: "Captain Tutor — Professor Mode",
+    title: "Veer Tutor — Professor Mode",
     desc: "Syllabus-grounded answers with LaTeX math and CEE insights.",
   },
   {

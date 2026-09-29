@@ -2,6 +2,7 @@ import { supabaseAdmin } from "../db/supabase";
 import { PUBLIC_SITE_URL } from "../config/env";
 import { getSearchService } from "./search-engine";
 import { ACADEMIC_SEARCH_ADDENDUM } from "./academic-intelligence";
+import { toGeminiImageParts, toOpenAIContent, type GeminiInlineDataPart } from "./image-input";
 
 /**
  * Public origin of the frontend, used for links embedded in AI replies and
@@ -15,6 +16,11 @@ export type SupportedProvider = "openrouter" | "internal" | "agnes";
 export interface AIChatMessage {
   role: "user" | "assistant" | "system";
   content: string;
+  /**
+   * Attached photo data URLs (camera / gallery). Only the LAST user message's
+   * images reach the model; providers that cannot read images ignore them.
+   */
+  images?: string[];
 }
 
 export interface AISearchResult {
@@ -239,7 +245,7 @@ async function extractSyllabusHints(
 
 // ── Shared: Search system prompt (used by all providers) ────────────────────
 
-const SEARCH_SYSTEM_PROMPT = `You are Ravikisan's Captain — a warm, wise mentor for NEB Science students (${SITE}/).
+const SEARCH_SYSTEM_PROMPT = `You are Veer — a warm, wise mentor for NEB Science students (${SITE}/).
 
 **YOUR VOICE:** Speak like a mentor who genuinely cares about science students. Be deep, human, and inspirational — not robotic. Use real-life analogies from nature, technology, and everyday science. A student should feel like they're talking to someone who believes in them.
 
@@ -356,6 +362,21 @@ class InternalProvider implements AIProvider {
     await this.loadIndex();
     const lastUser = [...messages].reverse().find((m) => m.role === "user");
     const query = lastUser?.content ?? "";
+
+    // Photo with no accompanying text in fallback mode: say so honestly
+    // instead of manufacturing anything about an image we cannot read.
+    if ((lastUser?.images?.length ?? 0) > 0 && !query.trim()) {
+      return [
+        "I can see you attached a photo, but my offline fallback can't read images — and I won't guess at what it shows.",
+        "",
+        "Two ways forward: (1) type out the question (or the key lines) from the photo and I'll answer it from the syllabus right away, or (2) try again in a moment so the full tutor — which can read images — picks it up.",
+        "",
+        "Explore further:",
+        `- [All Subjects & PYQs](${SITE}/subjects)`,
+        "- [Ask me again with more detail](/chat)",
+      ].join("\n");
+    }
+
     const results = this.match(query, 5);
 
     if (!results.length) {
@@ -490,11 +511,12 @@ class GeminiProvider implements AIProvider {
   private async callGemini(
     prompt: string,
     systemInstruction?: string,
-    useWebSearch = false
+    useWebSearch = false,
+    imageParts: GeminiInlineDataPart[] = []
   ): Promise<string> {
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${this.model}:generateContent`;
     const body: any = {
-      contents: [{ role: "user", parts: [{ text: prompt }] }],
+      contents: [{ role: "user", parts: [{ text: prompt }, ...imageParts] }],
       generationConfig: { temperature: 0.7, maxOutputTokens: 2048 },
     };
     if (systemInstruction) {
@@ -547,7 +569,10 @@ class GeminiProvider implements AIProvider {
     });
 
     const prompt = `${enrichedHistory.map((h) => `${h.role === "user" ? "User" : "Assistant"}: ${h.parts[0].text}`).join("\n\n")}\n\nAssistant:`;
-    return this.callGemini(prompt, systemPrompt, true);
+    // Only the LATEST user turn's photos are sent (history images are already
+    // described in the earlier text and re-sending them multiplies cost).
+    const lastUser = [...messages].reverse().find((m) => m.role === "user");
+    return this.callGemini(prompt, systemPrompt, true, toGeminiImageParts(lastUser?.images));
   }
 
   async search(query: string): Promise<AISearchResponse> {
@@ -597,7 +622,10 @@ class OpenRouterProvider implements AIProvider {
       },
       body: JSON.stringify({
         model: this.model,
-        messages: messages.map((m) => ({ role: m.role, content: m.content })),
+        messages: messages.map((m) => ({
+          role: m.role,
+          content: toOpenAIContent(m.content, m.images),
+        })),
         max_tokens: 2048,
       }),
       // Free-tier models can queue; cap the wait so the chain stays responsive.
@@ -682,7 +710,10 @@ class AgnesProvider implements AIProvider {
       },
       body: JSON.stringify({
         model: this.model,
-        messages: messages.map((m) => ({ role: m.role, content: m.content })),
+        messages: messages.map((m) => ({
+          role: m.role,
+          content: toOpenAIContent(m.content, m.images),
+        })),
         // 1600 tokens keeps full derivations intact while staying inside the
         // chain's global budget (the Next dev proxy kills POSTs at ~30s).
         max_tokens: 1600,

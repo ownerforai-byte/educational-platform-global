@@ -113,14 +113,14 @@ const PORTALS: Portal[] = [
   {
     title: "Assessment & PYQs",
     badge: "EXAM READINESS",
-    desc: "Captain quiz engine, past NEB board questions, and real-time exam countdown timer.",
+    desc: "Veer quiz engine, past NEB board questions, and real-time exam countdown timer.",
     href: "/quiz",
     icon: Target,
     iconClass: "text-blue-500 bg-blue-500/10 border-blue-500/25",
     gradientClass: "from-blue-500/[0.08] via-card to-card",
     chipClass: "hover:border-blue-500/50 hover:shadow-blue-500/10",
     links: [
-      { label: "Captain Quiz Maker", href: "/ai-quiz" },
+      { label: "Veer Quiz Maker", href: "/ai-quiz" },
       { label: "Exam Countdown", href: "/exam-countdown" },
       { label: "My Progress", href: "/progress" },
     ],
@@ -142,7 +142,7 @@ const PORTALS: Portal[] = [
     ],
   },
   {
-    title: "Captain Study Assistant",
+    title: "Veer Study Assistant",
     badge: "24/7 CAPTAIN",
     desc: "Curriculum-aligned intelligent tutor for instant concept explanations, numerical solutions and study plans.",
     href: "/chat",

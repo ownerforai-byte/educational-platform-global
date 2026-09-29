@@ -4,6 +4,7 @@ import { createAIService, type AIChatMessage } from "../ai/service";
 import { rateLimit } from "../middleware/rateLimit";
 import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
 import { enforceReplyFloor, floorWordsForQuestion } from "../ai/syllabus-anchor";
+import { imageInstruction, sanitizeChatImages } from "../ai/image-input";
 import {
   GUEST_DAILY_LIMIT,
   consumeGuestSlot,
@@ -63,6 +64,15 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
       return;
     }
 
+    // Photo input (camera / gallery) — same validation as the authed route.
+    const { images, rejected: rejectedImages } = sanitizeChatImages(body?.images);
+    if (images.length) {
+      const lastUserIdx = messages.map((m) => m.role).lastIndexOf("user");
+      if (lastUserIdx >= 0) {
+        messages[lastUserIdx] = { ...messages[lastUserIdx], images };
+      }
+    }
+
     // ── Guest daily pool: 2 messages/day, resets at 12:00 AM (UTC) ──
     const slot = await consumeGuestSlot(ip, deviceId);
     if (slot.status === "limited") {
@@ -88,7 +98,10 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
 
     // Professor mode: plain-text enforcement + live web results (best-effort).
     const lastUser = [...messages].reverse().find((m) => m.role === "user")?.content ?? "";
-    const professorContext = await buildProfessorContext(lastUser);
+    const baseContext = await buildProfessorContext(lastUser);
+    const professorContext = images.length
+      ? `${baseContext}\n\n${imageInstruction(images.length)}`
+      : baseContext;
     const augmented = withProfessorContext(messages, professorContext) as AIChatMessage[];
 
     // "" runs the ordered chain (agnes → openrouter → internal).
@@ -111,6 +124,7 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
       remaining,
       limit: GUEST_DAILY_LIMIT,
       replyFloor: { floor: floored.floor, words: floored.words, expanded: floored.expanded },
+      images: { accepted: images.length, rejected: rejectedImages },
     });
   } catch (err: any) {
     console.error("AI guest chat error:", err);

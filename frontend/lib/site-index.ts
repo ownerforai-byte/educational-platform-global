@@ -298,22 +298,22 @@ export function buildSiteIndex(): SiteIndexGroup[] {
     }),
   });
 
-  /* 7. Captain studio — one dedicated page per tool, plus the wallet that feeds it. */
+  /* 7. Veer studio — one dedicated page per tool, plus the wallet that feeds it. */
   groups.push({
     id: "ai",
-    name: "Captain studio — one page per tool",
+    name: "Veer studio — one page per tool",
     opening:
-      "Each Captain tool on the platform has its own page with its own features: ask a doubt, keep a conversation, generate a quiz, or search the curriculum.",
+      "Each Veer tool on the platform has its own page with its own features: ask a doubt, keep a conversation, generate a quiz, or search the curriculum.",
     href: "/ai",
     entries: [
       {
-        name: "Captain Studio Hub",
-        opening: "The door to all four Captain tools, with your live credits and daily pool on top.",
+        name: "Veer Studio Hub",
+        opening: "The door to all four Veer tools, with your live credits and daily pool on top.",
         href: "/ai",
         meta: "Hub",
       },
       {
-        name: "Captain Study Assistant",
+        name: "Veer Study Assistant",
         opening: "Ask any NEB Class 11 or 12 doubt and get a curriculum-aligned answer on the spot.",
         href: "/chat",
         meta: "Chat",
@@ -324,20 +324,20 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         ],
       },
       {
-        name: "Captain Tutor Console",
+        name: "Veer Tutor Console",
         opening:
           "Long-form tutor with saved conversations, a New conversation button and a prompt enhancer.",
         href: "/ai/tutor",
         meta: "History",
       },
       {
-        name: "Adaptive Captain Quiz",
+        name: "Adaptive Veer Quiz",
         opening: "Generated practice sets with difficulty bands, scoring and worked feedback.",
         href: "/ai-quiz",
         meta: "Practice",
       },
       {
-        name: "Captain Curriculum Search",
+        name: "Veer Curriculum Search",
         opening: "Plain-language search across notes, labs, graphs and past questions.",
         href: "/ai/search",
         meta: "Search",

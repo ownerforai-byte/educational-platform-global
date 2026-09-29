@@ -404,14 +404,14 @@ ${keyTermsContext ? `KEY TERMS FROM SYLLABUS:\n${keyTermsContext}` : "Use standa
 
       if (!parsed) {
         res.status(502).json({
-          error: "Captain returned invalid question format",
+          error: "Veer returned invalid question format",
           raw: rawResponse.slice(0, 500),
         });
         return;
       }
 
       if (!Array.isArray(parsed.questions) || parsed.questions.length === 0) {
-        res.status(502).json({ error: "Captain returned no questions", raw: rawResponse.slice(0, 500) });
+        res.status(502).json({ error: "Veer returned no questions", raw: rawResponse.slice(0, 500) });
         return;
       }
 

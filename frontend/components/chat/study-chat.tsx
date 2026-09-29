@@ -52,7 +52,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
     {
       role: "assistant",
       content:
-        "👋, I am the captain here. Feel free to clear your doubts.",
+        "👋, I am Veer here. Feel free to clear your doubts.",
     },
   ]);
   const [input, setInput] = useState("");
@@ -164,7 +164,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
       {
         role: "assistant",
         content:
-          "👋, I am the captain here. Feel free to clear your doubts.",
+          "👋, I am Veer here. Feel free to clear your doubts.",
       },
     ]);
     setError(null);
@@ -187,7 +187,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
           <Bot className="h-5 w-5 text-primary" />
         </div>
         <div className="flex-1 min-w-0">
-          <h2 className="text-xs font-bold leading-none">Ravikisan&apos;s Captain</h2>
+          <h2 className="text-xs font-bold leading-none">Veer</h2>
           <p className="text-[10px] text-muted-foreground mt-1 flex items-center gap-1.5">
             <span className="inline-flex h-1.5 w-1.5 rounded-full bg-green-500" />
             Online · answers + points you to notes, labs &amp; PYQs
@@ -214,7 +214,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
               <div className="mx-auto w-14 h-14 rounded-2xl bg-gradient-to-br from-primary to-primary/70 flex items-center justify-center shadow-lg shadow-primary/20 mb-3">
                 <Sparkles className="h-7 w-7 text-white" />
               </div>
-              <h2 className="text-lg font-bold">Learn with the Captain</h2>
+              <h2 className="text-lg font-bold">Learn with Veer</h2>
               <p className="text-xs text-muted-foreground mt-1">
                 Ask anything about Class 11 &amp; 12 science — I&apos;ll explain it and send you to the right notes.
               </p>

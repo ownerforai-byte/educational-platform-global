@@ -30,17 +30,17 @@ const JOURNEY_STEPS = [
     step: "03",
     icon: Trophy,
     title: "Master the Rigor",
-    text: "Step-by-step theorem proofs, verified derivations, solved numericals, and Captain-generated quizzes that turn reading marks into board-exam marks.",
+    text: "Step-by-step theorem proofs, verified derivations, solved numericals, and Veer-generated quizzes that turn reading marks into board-exam marks.",
     href: "/theorems",
     cta: "Theorems & derivations",
   },
   {
     step: "04",
     icon: Brain,
-    title: "Ask the Captain",
-    text: "Stuck at 2 AM? Ravikisan's Captain answers doubts in plain language with live web citations — and generates practice questions from your own syllabus.",
+    title: "Ask Veer",
+    text: "Stuck at 2 AM? Veer answers doubts in plain language with live web citations — and generates practice questions from your own syllabus.",
     href: "/chat",
-    cta: "Meet the Captain",
+    cta: "Meet Veer",
   },
 ];
 
@@ -67,7 +67,7 @@ export function HomeIntroduction() {
           <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
             👋 Welcome aboard. This is a free study vault built for Nepali students
             everywhere: Class 11 &amp; 12 notes, interactive 3D science labs, theorem
-            proofs, derivations, exam countdowns, and the Captain with a live internet
+            proofs, derivations, exam countdowns, and Veer with a live internet
             connection — all in one place, all curriculum-aligned. No paywalls on the
             path to understanding.
           </p>

@@ -40,7 +40,7 @@ export function SmartSearchPanel() {
       <div className="text-center space-y-1.5">
         <h2 className="text-lg font-bold">Smart Search</h2>
         <p className="text-xs text-muted-foreground">
-          Captain-powered curriculum search — finds notes, labs, and past questions across the platform.
+          Veer-powered curriculum search — finds notes, labs, and past questions across the platform.
         </p>
       </div>
 

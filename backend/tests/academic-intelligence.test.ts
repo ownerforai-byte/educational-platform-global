@@ -18,7 +18,7 @@ import {
  * The academic layer is prompt text, so nothing about it can be type-checked —
  * these assertions are the compile step. They pin:
  *
- *  1. the house identity rules still win (name, Captain line, links-last),
+ *  1. the house identity rules still win (name, Veer line, links-last),
  *  2. the academic engine's coverage (six subjects, depth, per-subject method),
  *  3. the classification/life-cycle/mind-map/flow vocabulary,
  *  4. the composition order used by /api/ai and /api/ai/guest.
@@ -40,8 +40,8 @@ describe("master academic prompt composition", () => {
   });
 
   test("keeps the tutor's identity and house style intact", () => {
-    expect(PROMPT).toContain("you are ravikisan's captain");
-    expect(PROMPT).toContain("👋, i am the captain here. feel free to clear your doubts.");
+    expect(PROMPT).toContain("you are veer");
+    expect(PROMPT).toContain("👋, i am veer here. feel free to clear your doubts.");
     expect(PROMPT).toContain("explore further:");
     expect(PROMPT).toContain("in short:");
     expect(PROMPT).toContain("never call yourself any other name or title");

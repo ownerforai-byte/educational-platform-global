@@ -318,17 +318,26 @@ export interface SearchResponse {
 export interface AIChatMessage {
   role: "user" | "assistant" | "system";
   content: string;
+  /**
+   * Photo data URLs (camera / gallery) attached to this message. Only the
+   * LAST user message's images are forwarded to the model.
+   */
+  images?: string[];
 }
 
 export interface AIChatRequest {
   messages: AIChatMessage[];
   provider?: string;
   stream?: boolean;
+  /** Photos for the latest user turn (max 3, data URLs). */
+  images?: string[];
 }
 
 export interface AIChatResponse {
   response: string;
   provider: string;
+  /** How many attached photos were accepted / dropped (size or count caps). */
+  images?: { accepted: number; rejected: number };
   /** Credits left after this message's 1-credit spend (logged users). */
   credits?: number;
   /** Guest messages left in today's 5-message pool. */

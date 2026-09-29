@@ -27,7 +27,7 @@ const QUICK_SEARCH_ITEMS = [
   { label: "Chemistry Molecular Builder 3D", href: "/lab/molecular-builder", category: "Chemistry Lab" },
   { label: "Biology 3D Cell Anatomy", href: "/lab/bio-3d-cell", category: "Biology Lab" },
   { label: "Math Equation Solver", href: "/lab/equation-solver", category: "Math Lab" },
-  { label: "Captain Quiz Generator", href: "/ai-quiz", category: "Assessment" },
+  { label: "Veer Quiz Generator", href: "/ai-quiz", category: "Assessment" },
   { label: "NEB Board Exam Countdown", href: "/exam-countdown", category: "Schedule" },
   { label: "Mathematical Theorems & Proofs", href: "/theorems", category: "Rigor" },
   { label: "Physics & Chemistry Derivations", href: "/derivations", category: "Rigor" },
@@ -96,7 +96,7 @@ export function HomeCommandCenter({
 
           <p className="text-sm sm:text-base text-muted-foreground max-w-2xl leading-relaxed">
             The complete educational platform: interactive 3D science labs, computational solvers,
-            step-by-step theorem proofs, verified derivations, Captain quizzes, and curriculum-aligned notes across all 6 NEB subjects.
+            step-by-step theorem proofs, verified derivations, Veer quizzes, and curriculum-aligned notes across all 6 NEB subjects.
           </p>
 
           {/* Quick Smart Search */}
@@ -187,9 +187,9 @@ export function HomeCommandCenter({
                   { label: "3D Virtual Labs", href: "/lab", icon: FlaskConical },
                   { label: "Theorems & Proofs", href: "/theorems", icon: Trophy },
                   { label: "Derivations Vault", href: "/derivations", icon: Zap },
-                  { label: "Captain Quizzes & PYQs", href: "/quiz", icon: Target },
+                  { label: "Veer Quizzes & PYQs", href: "/quiz", icon: Target },
                   { label: "Knowledge Hub", href: "/knowledge", icon: BookOpen },
-                  { label: "Captain Study Assistant", href: "/chat", icon: Brain },
+                  { label: "Veer Study Assistant", href: "/chat", icon: Brain },
                 ].map((item) => {
                   const Icon = item.icon;
                   return (
@@ -343,7 +343,7 @@ export function HomeCommandCenter({
                   className="inline-flex items-center gap-1.5 rounded-xl border border-border/60 bg-card/80 px-3.5 py-2 text-xs font-semibold text-foreground/80 hover:border-primary/40 hover:text-primary transition-all shadow-sm"
                 >
                   <Target className="h-3.5 w-3.5 text-primary" />
-                  <span>Captain Timed Entrance Quizzes</span>
+                  <span>Veer Timed Entrance Quizzes</span>
                 </Link>
               </>
             )}

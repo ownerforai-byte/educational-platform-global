@@ -10,16 +10,29 @@ import type {
 } from "../../types/api";
 
 /**
+ * Photos travel at the top level of the request body, taken from the LAST
+ * user message: the backend hands them to vision-capable providers and drops
+ * them for the rest. Older turns keep their data URLs out of the payload so
+ * a long conversation never re-uploads (or re-bills) old photos.
+ */
+function withLatestImages(messages: AIChatMessage[], body: AIChatRequest): AIChatRequest {
+  const last = messages[messages.length - 1];
+  const images = last?.role === "user" ? last.images : undefined;
+  return images && images.length ? { ...body, images } : body;
+}
+
+/**
  * Send a chat message to the AI assistant (requires auth).
  */
 export async function chat(
   messages: AIChatMessage[],
   provider?: string
 ): Promise<AIChatResponse> {
-  const body: AIChatRequest = { messages };
+  let body: AIChatRequest = { messages };
   if (provider) {
     body.provider = provider;
   }
+  body = withLatestImages(messages, body);
   return apiFetch<AIChatResponse>("/api/ai", {
     method: "POST",
     body: JSON.stringify(body),
@@ -34,10 +47,11 @@ export async function* streamChat(
   messages: AIChatMessage[],
   provider?: string
 ): AsyncGenerator<string, void, unknown> {
-  const body: AIChatRequest = { messages, stream: true };
+  let body: AIChatRequest = { messages, stream: true };
   if (provider) {
     body.provider = provider;
   }
+  body = withLatestImages(messages, body);
 
   // Bearer restored 2026-09-25: cookie-only auth broke streams once the 1h
   // access token expired (no refresh-retry exists on stream requests).
@@ -118,10 +132,11 @@ export async function guestChat(
   messages: AIChatMessage[],
   provider?: string
 ): Promise<AIChatResponse & { remaining?: number }> {
-  const body: AIChatRequest = { messages };
+  let body: AIChatRequest = { messages };
   if (provider) {
     body.provider = provider;
   }
+  body = withLatestImages(messages, body);
   return apiFetch<AIChatResponse & { remaining?: number }>("/api/ai/guest", {
     method: "POST",
     body: JSON.stringify(body),
