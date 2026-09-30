@@ -3,6 +3,7 @@ import { getDerivationIndex } from "@/lib/derivations";
 import { HomeCommandCenter } from "@/components/home/home-command-center";
 import { HomeIntroduction } from "@/components/home/home-introduction";
 import { HomeOwnerNotice } from "@/components/home/home-owner-notice";
+import { HomeMindStudio } from "@/components/home/home-mind-studio";
 import { DirectoryCard } from "@/features/credits";
 
 export const metadata = {
@@ -45,6 +46,9 @@ export default async function HomePage() {
 
       {/* Owner notice — public, never gated. Owner intro + internal login. */}
       <HomeOwnerNotice />
+
+      {/* Mind Studio launcher — local workspace entry, zero network. */}
+      <HomeMindStudio />
 
       {/* Unified academic directory — one card, gated behind Gmail sign-in.
           Hero + intro above stay public and structurally unchanged; the AI
