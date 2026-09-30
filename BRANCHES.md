@@ -35,9 +35,11 @@
 > **Sync policy (2026-09-29):** every area branch is kept **fast-forwarded to
 > `main`'s tip** (`git merge --ff-only main` in its worktree). They are not
 > long-lived forks — they exist so an agent can stage an area's work without
-> touching `main` directly, then merge back. Last full sync: `main` `a8e20833`.
-> Re-sync everything with `scripts/sync-area-branches.ps1` (skips reserved
-> `agents/*`, `claude/*`, `worktree/*`, `cline/*` branches automatically).
+> touching `main` directly, then merge back. Last full sync: `main` `5a4a1704`.
+> Re-sync everything with `scripts/sync-area-branches.ps1`, then publish it with
+> `scripts/push-area-branches.ps1` (both skip reserved `agents/*`, `claude/*`,
+> `worktree/*`, `cline/*` branches automatically; the push is a plain
+> fast-forward, so nothing can be force-written).
 
 ### content/* — data & notes (10)
 | Branch | Scope |
