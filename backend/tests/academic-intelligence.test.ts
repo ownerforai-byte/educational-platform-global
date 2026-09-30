@@ -1,4 +1,5 @@
-import { describe, expect, test, vi } from "vitest";
+import { beforeAll, describe, expect, test, vi } from "vitest";
+import { getCorpus, resetCorpusCache } from "../src/ai/curriculum-corpus";
 import {
   ACADEMIC_INTELLIGENCE_RULES,
   ACADEMIC_SEARCH_ADDENDUM,
@@ -35,6 +36,17 @@ import { SOURCE_REGISTRY_RULES } from "../src/ai/source-registry";
  * room instead of letting a cold read look like a broken contract.
  */
 const CONTEXT_TIMEOUT = 30_000;
+
+/**
+ * Warm the corpus ONCE, before any assertion. With the owner's books ingested
+ * the tree is ~1.7k records / 7 MB, and paying that read inside a test body is
+ * what turned two of these into timeouts. Same rule (and same reason) as
+ * curriculum-retrieval.test.ts: the I/O belongs in a beforeAll.
+ */
+beforeAll(() => {
+  resetCorpusCache();
+  getCorpus();
+}, CONTEXT_TIMEOUT);
 
 /** Lower-cased, whitespace-collapsed haystack for casing- and wrap-proof checks. */
 const PROMPT = MASTER_ACADEMIC_PROMPT.toLowerCase().replace(/\s+/g, " ");

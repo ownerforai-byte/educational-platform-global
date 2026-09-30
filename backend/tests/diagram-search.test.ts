@@ -1,5 +1,6 @@
-import { afterEach, describe, expect, it, vi } from "vitest";
+import { afterEach, beforeAll, describe, expect, it, vi } from "vitest";
 import { buildProfessorContext } from "../src/ai/prompts";
+import { getCorpus, resetCorpusCache } from "../src/ai/curriculum-corpus";
 import {
   DIAGRAM_LIMIT,
   buildDiagramQuery,
@@ -12,6 +13,19 @@ import {
   questionTerms,
   relevanceOf,
 } from "../src/ai/diagram-search";
+
+/**
+ * Warm the corpus ONCE. buildProfessorContext reads every record from disk on
+ * its first call, and this file ends up assembling a full context — paying that
+ * read inside the assertion is what made it time out once the owner's books
+ * were ingested (~1.7k records / 7 MB). Same rule as curriculum-retrieval.
+ */
+const CORPUS_TIMEOUT = 30_000;
+
+beforeAll(() => {
+  resetCorpusCache();
+  getCorpus();
+}, CORPUS_TIMEOUT);
 
 /** A Commons reply in the shape `formatversion=2` returns. */
 const commonsPayload = (pages: Array<Record<string, unknown>>) => ({ query: { pages } });
