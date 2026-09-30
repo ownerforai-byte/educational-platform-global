@@ -153,4 +153,100 @@ export const DETAIL_BIO: Record<string, GraphDetailInfo> = {
       "Log scale vs linear scale confusion changes the whole look.",
     ],
   },
+  "bio-enzyme-inhibition": {
+    gives: [
+      "The two inhibition signatures side by side: same ceiling / shifted right (competitive) versus lower ceiling (non-competitive).",
+      "A Km-reader: the midpoint of each curve, showing which inhibitor changed the enzyme's appetite for substrate.",
+      "A Vmax-reader: the summits, showing which inhibitor changed the enzyme's working capacity.",
+      "The rescue logic: why flooding with substrate defeats one inhibitor and not the other.",
+    ],
+    applies: [
+      "Pharmacology: many drugs are designed as competitive inhibitors (methotrexate, statins).",
+      "Poison biology: cyanide and heavy metals act non-competitively — no amount of substrate helps.",
+      "Metabolic regulation: product molecules often inhibit upstream enzymes competitively — feedback control.",
+    ],
+    happens: [
+      "No inhibitor: classic saturation curve, fastest to its ceiling.",
+      "Competitive present: the start looks slow, but push [S] high enough and the curve climbs to the SAME summit.",
+      "Non-competitive present: every point scales down — the curve flattens, and the summit is out of reach.",
+      "Raise inhibitor dose: competitive stretches the curve further right; non-competitive presses the ceiling lower.",
+    ],
+    limits: [
+      "Idealised hyperbolic kinetics: allosteric enzymes give sigmoid curves, not these.",
+      "Assumes pure inhibition with no enzyme denaturation or slow-tight binding complications.",
+      "Real assays drift (temperature, pH); the clean three-curve overlay is the textbook ideal.",
+    ],
+  },
+  "bio-survivorship": {
+    gives: [
+      "The demographic signature of a species: where death concentrates in the lifespan.",
+      "A strategy comparison: K-strategy (Type I) versus r-strategy (Type III) drawn as curves.",
+      "Conservation insight: which life stage matters most for saving a species.",
+      "The raw material of life tables — lx columns are literally these curves.",
+    ],
+    applies: [
+      "Population ecology: predicting recovery after disturbances for r- versus K-selected species.",
+      "Conservation planning: protecting nesting beaches (sea turtles, Type III) versus elder care in long-lived species.",
+      "Human demography: national survivorship curves shift as healthcare improves.",
+    ],
+    happens: [
+      "Trace Type III: the crowd dies in the first chapters — millions of eggs, few adults.",
+      "Trace Type II: risk has no age bias — the line just keeps sliding.",
+      "Trace Type I: the cohort marches together until the cliff near the last chapter.",
+      "Compare at midlife: the three curves are already worlds apart — species strategies made visible.",
+    ],
+    limits: [
+      "Cohort studies take a lifetime — most curves come from snapshot life tables with assumptions.",
+      "Captive vs wild populations give very different curves for the same species.",
+      "The three 'types' are archetypes; real populations sit on a continuum and can switch under stress.",
+    ],
+  },
+  "bio-action-potential": {
+    gives: [
+      "The full electrical script of a nerve impulse: rest, threshold, spike, undershoot, recovery.",
+      "The all-or-none rule drawn in: sub-threshold stimuli simply never appear on this graph.",
+      "Ionic choreography: Na⁺ in (upstroke), K⁺ out (downstroke), pumps restore (baseline).",
+      "The numbers worth memorising: −70 resting, −55 threshold, +30 peak (in mV).",
+    ],
+    applies: [
+      "Neurophysiology: how signals travel without fading (regenerated at every point).",
+      "ECG and EEG reading — the same spike logic scaled up to organs.",
+      "Anaesthesia and drug action: many agents work by shifting threshold or slowing ion gates.",
+    ],
+    happens: [
+      "Stimulus below threshold: the trace wiggles and relaxes — no spike, no signal.",
+      "Stimulus at threshold: the gates commit — Na⁺ floods in and the trace rockets up.",
+      "Peak reached: Na⁺ gates slam shut, K⁺ gates open — the fall begins, a touch slower.",
+      "Aftermath: the K⁺ overshoot dips the trace below rest, then the pumps restore the baseline.",
+    ],
+    limits: [
+      "Idealised single spike: real recordings show noise, drifts and non-linear summation.",
+      "Squid-axon numbers — mammalian neurons vary quite a bit in threshold and peak.",
+      "Ignores spatial spread: a real propagating spike is this curve moving, not standing still.",
+    ],
+  },
+  "bio-predator-prey": {
+    gives: [
+      "The defining feature of coupled populations: oscillations with a built-in time lag.",
+      "The causal chain: prey rise feeds predators, predator rise crashes prey, crash starves predators.",
+      "The lag readout: predator peaks trail prey peaks by roughly a quarter cycle.",
+      "A warning system: the phase gap is how ecologists spot interaction rather than coincidence.",
+    ],
+    applies: [
+      "Wildlife management: hare–lynx, moose–wolf, plankton–fish cycles all print this shape.",
+      "Pest control: introduce a predator and the prey cycle changes phase, not just level.",
+      "Conservation maths: Lotka–Volterra's equations sit inside modern ecosystem models.",
+    ],
+    happens: [
+      "Prey take off: food is plentiful and predation is still light.",
+      "Predators follow: with prey abundant, their numbers climb too — the lagged copy of the prey curve.",
+      "Prey crash: too many mouths; the food base collapses under the peak predator load.",
+      "Predators starve back: the food gone, their numbers fall, releasing the prey to start again.",
+    ],
+    limits: [
+      "Classic model ignores carrying capacity, space and other species — real cycles can damp out.",
+      "Fur-trade records measure trapping, not true populations; the curves are proxies.",
+      "At small population sizes, noise and extinction risk break the elegant mathematics.",
+    ],
+  },
 };

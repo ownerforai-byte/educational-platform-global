@@ -10,7 +10,8 @@ export type ShapeName =
   | "cubic" | "expRise" | "expDecay" | "expDecayToFloor" | "log" | "sqrt" | "saturate"
   | "sine" | "cosine" | "dampedWave" | "fringes" | "tangent" | "cotangent" | "secant" | "cosecant" | "sigmoid" | "sigmoidDown"
   | "hyperbola" | "bell" | "vshape" | "peak" | "barrier" | "sawtooth" | "step" | "circle"
-  | "ellipse" | "sideHyperbola" | "diode" | "resonancePeak";
+  | "ellipse" | "sideHyperbola" | "diode" | "resonancePeak"
+  | "invertedParabola" | "saturateAt";
 
 const N = 64;
 
@@ -91,6 +92,10 @@ export const SHAPE_GENERATORS: Record<ShapeName, (variant?: number) => string> =
   sideHyperbola: () => branch([path((x) => 0.25 / Math.max(0.06, x) * 0.5 + 0.25, { clampMax: 0.95 }), path((x) => 0.95 - 0.25 / Math.max(0.06, x) * 0.5, { clampMin: 0.05 })]),
   diode: () => branch([path((x) => x < 0.45 ? 0.5 - (0.45 - x) * 0.12 : 0.5 + Math.exp((x - 0.5) * 18) * 0.02, { clampMax: 0.95 }, ), path((x) => 0.5 - (0.5 - x) * 0.06)]),
   resonancePeak: (v = 14) => path((x) => (0.06 + 0.9 / (1 + v * 8 * (x - 0.45) * (x - 0.45))) * (x < 0.02 ? x / 0.02 : 1)),
+  /** Downward parabola peaked at the centre (kinetic energy in SHM). */
+  invertedParabola: () => path((x) => 1 - (x - 0.5) * (x - 0.5) / 0.25),
+  /** Saturation curve with a variant-set ceiling (e.g. inhibited Vmax in enzyme kinetics). */
+  saturateAt: (v = 0.65) => path((x) => v * ((8 * x) / (1 + 8 * x))),
 };
 
 export function shapeToPath(shape: ShapeName, variant?: number): string {
@@ -146,6 +151,10 @@ const PRIMARY_FNS: Record<ShapeName, (x: number, v?: number) => number> = {
   diode: (x) => (x < 0.45 ? 0.5 - (0.45 - x) * 0.12 : 0.5 + Math.exp((x - 0.5) * 18) * 0.02),
   resonancePeak: (x, v = 14) =>
     (0.06 + 0.9 / (1 + v * 8 * (x - 0.45) * (x - 0.45))) * (x < 0.02 ? x / 0.02 : 1),
+  /** Downward parabola peaked at the centre (kinetic energy in SHM). */
+  invertedParabola: (x) => 1 - (x - 0.5) * (x - 0.5) / 0.25,
+  /** Saturation curve with a variant-set ceiling (e.g. inhibited Vmax in enzyme kinetics). */
+  saturateAt: (x, v = 0.65) => v * ((8 * x) / (1 + 8 * x)),
 };
 
 const clamp01 = (y: number) => Math.min(1, Math.max(0, y));

@@ -20,7 +20,7 @@ export function GraphSketch({
   showLegend = true,
   angleAxis,
 }: {
-  series: { shape: ShapeName; variant?: number; label?: string; dashed?: boolean }[];
+  series: { shape: ShapeName; variant?: number; label?: string; dashed?: boolean; fill?: boolean }[];
   marks?: { x: number; y?: number; label: string; type?: "point" | "vline" | "hline" }[];
   axes: { x: string; y: string };
   height?: number;
@@ -48,9 +48,15 @@ export function GraphSketch({
       >
         {/* plot frame */}
         <rect x={pad} y={pad} width={iw} height={ih} fill="white" stroke="#d4d4d8" rx={6} />
-        {/* grid */}
+        {/* grid: fine 0.2 lines + stronger quadrant lines */}
+        {[0.2, 0.4, 0.6, 0.8].map((g) => (
+          <g key={`f${g}`} stroke="#f6f6f8">
+            <line x1={pad + g * iw} y1={pad} x2={pad + g * iw} y2={pad + ih} />
+            <line x1={pad} y1={pad + g * ih} x2={pad + iw} y2={pad + g * ih} />
+          </g>
+        ))}
         {[0.25, 0.5, 0.75].map((g) => (
-          <g key={g} stroke="#f1f1f4">
+          <g key={g} stroke={g === 0.5 ? "#e7e7ec" : "#efeff3"}>
             <line x1={pad + g * iw} y1={pad} x2={pad + g * iw} y2={pad + ih} />
             <line x1={pad} y1={pad + g * ih} x2={pad + iw} y2={pad + g * ih} />
           </g>
@@ -116,12 +122,13 @@ export function GraphSketch({
           );
         })()}
 
-        <text x={pad + iw} y={pad + ih + (angleAxis ? 28 : 14)} fontSize={11} fill="#52525b" textAnchor="end">
+        <text x={pad + iw} y={pad + ih + (angleAxis ? 28 : 15)} fontSize={11.5} fill="#3f3f46" textAnchor="end" fontWeight={500}>
           {axes.x} →
         </text>
-        <text x={pad - 6} y={pad - 12} fontSize={11} fill="#52525b" textAnchor="start">
+        <text x={pad - 6} y={pad - 12} fontSize={11.5} fill="#3f3f46" textAnchor="start" fontWeight={500}>
           ↑ {axes.y}
         </text>
+        <text x={pad - 9} y={pad + ih + 12} fontSize={10} fill="#a1a1aa" textAnchor="end">O</text>
 
         {/* series */}
         {series.map((s, i) => {
@@ -130,14 +137,35 @@ export function GraphSketch({
           return (
             <g key={i}>
               {/* shapeToPath outputs percent coords 0-100; map into the plot box */}
+              {s.fill && (
+                <path
+                  d={`${d} L100,100 L0,100 Z`}
+                  transform={`translate(${pad}, ${pad}) scale(${iw / 100}, ${ih / 100})`}
+                  fill={color}
+                  fillOpacity={s.dashed ? 0.06 : 0.1}
+                  stroke="none"
+                />
+              )}
+              {/* soft halo underlay for depth */}
               <path
                 d={d}
                 transform={`translate(${pad}, ${pad}) scale(${iw / 100}, ${ih / 100})`}
                 fill="none"
                 stroke={color}
-                strokeWidth={2.2}
-                strokeDasharray={s.dashed ? "5 4" : undefined}
+                strokeWidth={5.5}
+                strokeOpacity={0.14}
                 strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+              <path
+                d={d}
+                transform={`translate(${pad}, ${pad}) scale(${iw / 100}, ${ih / 100})`}
+                fill="none"
+                stroke={color}
+                strokeWidth={2.3}
+                strokeDasharray={s.dashed ? "6 4" : undefined}
+                strokeLinecap="round"
+                strokeLinejoin="round"
               />
             </g>
           );
@@ -164,8 +192,9 @@ export function GraphSketch({
           }
           return (
             <g key={`m${i}`}>
-              <circle cx={p.x} cy={p.y} r={3.4} fill="#ef4444" />
-              <text x={p.x + 5} y={p.y - 5} fontSize={10} fill="#64748b">{m.label}</text>
+              <circle cx={p.x} cy={p.y} r={6.5} fill="#ef4444" opacity={0.16} />
+              <circle cx={p.x} cy={p.y} r={3.3} fill="#ef4444" stroke="#ffffff" strokeWidth={1.1} />
+              <text x={p.x + 7} y={p.y - 6} fontSize={10} fill="#52525b" fontWeight={500}>{m.label}</text>
             </g>
           );
         })}
@@ -183,16 +212,27 @@ export function GraphSketch({
                 const ly = pad + 16 + i * 15;
                 return (
                   <g key={`l${i}`}>
+                    <rect
+                      x={lx - 5}
+                      y={ly - 8}
+                      width={Math.min(180, 38 + s.label!.length * 5.6)}
+                      height={16}
+                      rx={8}
+                      fill="#ffffff"
+                      fillOpacity={0.85}
+                      stroke={color}
+                      strokeOpacity={0.25}
+                    />
                     <line
                       x1={lx}
                       y1={ly}
                       x2={lx + 22}
                       y2={ly}
                       stroke={color}
-                      strokeWidth={2.4}
-                      strokeDasharray={s.dashed ? "5 4" : undefined}
+                      strokeWidth={2.6}
+                      strokeDasharray={s.dashed ? "6 4" : undefined}
                     />
-                    <text x={lx + 28} y={ly + 3.5} fontSize={10.5} fill="#3f3f46">{s.label}</text>
+                    <text x={lx + 28} y={ly + 3.5} fontSize={10.5} fill="#3f3f46" fontWeight={500}>{s.label}</text>
                   </g>
                 );
               })}

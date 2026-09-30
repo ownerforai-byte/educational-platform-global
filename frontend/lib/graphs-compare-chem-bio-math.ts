@@ -217,4 +217,86 @@ export const COMPARE_CHEM_BIO_MATH: Record<string, GraphCompareNote> = {
       "Both flatten vertically near x = ±1 — the derivative blows up at the domain edges.",
     ],
   },
+  "chem-arrhenius-plot": {
+    series: [
+      { label: "small Ea (shallow line)", meaning: "Low barrier reaction: k barely changes with temperature — the line hardly tilts." },
+      { label: "large Ea (steep line)", meaning: "High barrier reaction: k is violently temperature-sensitive — the line plunges as 1/T grows." },
+    ],
+    differences: [
+      "Same axes, same physical law — only the slope separates them.",
+      "The steep line loses rate far faster when cooled (rightward on the axis).",
+      "At very high temperature (left edge) both lines converge near ln A — the ceiling rate.",
+    ],
+    identify: [
+      "Whichever line falls harder as 1/T increases is the high-Ea reaction.",
+      "Read slope × (−R) to rank the activation energies numerically.",
+      "A shifted-but-parallel line signals a changed mechanism or catalyst — slopes compare only where the mechanism holds.",
+    ],
+  },
+  "chem-conductivity-dilution": {
+    series: [
+      { label: "strong electrolyte (KCl)", meaning: "Gentle near-linear rise: all ions already free; dilution only un-crowds them." },
+      { label: "weak electrolyte (CH₃COOH)", meaning: "Steep runaway rise: each dilution step dissociates more molecules into ions." },
+    ],
+    differences: [
+      "The strong line is straight-ish; the weak curve hugs zero then rockets.",
+      "At high dilution both crowd toward Λm⁰ from very different starting heights.",
+      "The weak curve's shape IS the degree of dissociation plotted against dilution.",
+    ],
+    identify: [
+      "Gentle, nearly straight rise = strong. Steep, curved rise from near zero = weak.",
+      "If extrapolating the straight line to zero concentration gives a clean intercept → strong electrolyte.",
+      "Fix the concentration and compare heights — same c, weak sits far below strong.",
+    ],
+  },
+  "bio-enzyme-inhibition": {
+    series: [
+      { label: "no inhibitor", meaning: "Reference saturation: the enzyme's natural Km and Vmax." },
+      { label: "competitive inhibitor", meaning: "Same ceiling, stretched right — apparent Km rises, Vmax survives." },
+      { label: "non-competitive inhibitor", meaning: "Same Km, lowered ceiling — Vmax is cut down permanently." },
+    ],
+    differences: [
+      "At high [S] the competitive curve JOINS the reference; the non-competitive one never does.",
+      "At low [S] all three look slow — the inhibitor story only reveals itself at the ceilings.",
+      "Km (the midpoint) moves right for competitive; it stays put for non-competitive.",
+    ],
+    identify: [
+      "Ceilings equal but curves apart = competitive.",
+      "Ceiling pressed lower = non-competitive.",
+      "Flood with substrate: whichever curve catches up to the reference was the competitive one.",
+    ],
+  },
+  "bio-survivorship": {
+    series: [
+      { label: "Type I (sigmoid-down)", meaning: "Death waits until old age — the curve holds high then cliffs. Humans, elephants." },
+      { label: "Type II (straight line)", meaning: "Constant death fraction at every age — risk has no age bias. Songbirds, hydra." },
+      { label: "Type III (steep decay)", meaning: "Death floods the young; survivors tail off. Fish, insects, oysters." },
+    ],
+    differences: [
+      "At mid-life Type I still stands near the top, Type III is already crawling near the floor.",
+      "Type II is the great straight middle — the geometric 'no memory' of age.",
+      "The three curves agree only at the two endpoints: everything starts at 100%, everything ends at 0%.",
+    ],
+    identify: [
+      "High-then-cliff = Type I. Constant slope = Type II. Instant plunge = Type III.",
+      "Match to life history: heavy parental care → Type I; millions of eggs → Type III.",
+      "If unsure, read the first quarter: 90s% survivors = I, steady decline = II, single digits = III.",
+    ],
+  },
+  "bio-predator-prey": {
+    series: [
+      { label: "prey (hare)", meaning: "Rises first on abundant food; crashes when predator numbers peak." },
+      { label: "predator (lynx)", meaning: "Follows the prey — its peaks and crashes trail the prey's by roughly a quarter cycle." },
+    ],
+    differences: [
+      "The curves never peak together: the vertical gap between peaks IS the interaction lag.",
+      "Both oscillate at the same period but permanently out of phase — the system's signature.",
+      "When prey is high and predators are still climbing, the crash is already mathematically scheduled.",
+    ],
+    identify: [
+      "Whichever wave peaks first is the prey; the lagging wave is the predator.",
+      "The lag is about a quarter period — not exactly zero, not exactly opposite.",
+      "If the waves were in step, the species would not be interacting — check the lag to confirm coupling.",
+    ],
+  },
 };

@@ -784,4 +784,186 @@ export const GRAPH_REALITY_FACTS: Record<string, GraphRealityFacts> = {
       "The restricted ranges are called the principal values.",
     ],
   },
+  "phy-shm-energy": {
+    reality: [
+      "A child on a swing: fastest whizzing through the bottom, momentarily frozen at each end — the two parabolas in motion.",
+      "Car suspension springs: the energy swap sets how much the body dips and rebounds over a bump.",
+      "Every musical instrument string: vibration energy alternates between string tension (potential) and motion (kinetic) at the pitch frequency.",
+    ],
+    facts: [
+      "Total energy grows with the SQUARE of amplitude: double the amplitude, quadruple the energy.",
+      "⟨K⟩ = ⟨U⟩ = E/2 over a full cycle — the favourite one-line answer in SHM questions.",
+      "The K and U curves cross at x = ±a/√2, where each is exactly half the total.",
+      "Kinetic energy peaks at the mean position — the opposite of potential energy's story.",
+    ],
+  },
+  "phy-faraday-flux-time": {
+    reality: [
+      "Every power station generator: rotating coils print exactly this flux–EMF pair onto the grid.",
+      "Wireless charging pads: a rapidly switched coil flux induces current across the gap — Faraday at your desk.",
+      "Metal detectors and induction cooktops: changing flux through metal, read as this EMF curve.",
+    ],
+    facts: [
+      "The EMF depends on how FAST flux changes, not on flux size — a huge steady flux induces nothing.",
+      "Flux peaking means EMF is ZERO — the graph's most-tested crossover.",
+      "Lenz's law is the minus sign: the induced current always fights the change that made it.",
+      "Area under ε(t) (split by N) recovers the flux change ΔΦ — slope and area duals, as always.",
+    ],
+  },
+  "phy-transformer-efficiency": {
+    reality: [
+      "National grids: distribution transformers are specified so their efficiency peak sits at everyday loads, not at nameplate rating.",
+      "Phone chargers: the tiny transformer inside runs near its design load and stays cool; a cheap mismatched one cooks.",
+      "Industrial plants switch large transformers in and out by load schedule to live near the peak of this curve.",
+    ],
+    facts: [
+      "Maximum efficiency occurs where copper loss EQUALS iron loss — a classic exam statement.",
+      "Iron (core) loss is constant at every load; copper loss grows as I².",
+      "Efficiency is 0% at no load — the input feeds only the fixed core loss with nothing delivered.",
+      "A transformer slightly under-loaded for its peak is deliberately designed that way: demand is below rating most of the day.",
+    ],
+  },
+  "phy-transistor-output": {
+    reality: [
+      "Every amplifier ever built — from a phone speaker to a stadium PA — is biased onto the flat shelf of these curves.",
+      "Digital logic gates: transistors slammed between the saturation valley and the cut-off floor, billions per chip.",
+      "Voltage regulators, motor drivers and LED dimmers all live on this family of shelves.",
+    ],
+    facts: [
+      "The shelf spacing at equal ΔI_B gives β = I_C/I_B — current gain read straight off the graph.",
+      "The steep rise near the origin is the saturation region — the switch's ON state.",
+      "I_C is independent of V_CE on the flat shelf in the ideal model — that flatness IS the amplifier.",
+      "The slight upward tilt of the shelves is the early effect — a favourite 'spot the detail' question.",
+    ],
+  },
+  "phy-doppler-shift": {
+    reality: [
+      "An ambulance siren dropping in pitch the instant it passes you — this graph's branch switch in real time.",
+      "Police radar and weather Doppler radars convert the frequency shift into speed measurements.",
+      "Redshifted galaxy spectra are Doppler's signature at cosmic scale — the expanding-universe evidence.",
+    ],
+    facts: [
+      "The wave speed through the medium never changes — only observed frequency and wavelength do.",
+      "Approaching uses (v − v_s) in the denominator, so f′ grows faster than linearly with v_s.",
+      "At v_s → v the formula diverges — the source outruns its wavefronts and a shock wave (sonic boom) forms.",
+      "For light the same effect appears as redshift/blueshift with the relativistic formula replacing the classical one.",
+    ],
+  },
+  "chem-arrhenius-plot": {
+    reality: [
+      "Food science: shelf-life prediction extrapolates rate constants to fridge temperatures along exactly this line.",
+      "Catalyst screening in industry: the best catalyst lifts the line highest at plant temperature.",
+      "Atmospheric chemistry: ozone and pollutant decay rates tuned by their measured Arrhenius slopes.",
+    ],
+    facts: [
+      "Slope of the line = −Ea/R; multiply by (−R) for joules per mole.",
+      "The steeper the line, the MORE temperature-sensitive the reaction — high Ea means rate responds violently to heat.",
+      "A catalyst shifts the line upward while keeping its slope — lower Ea, but fitted from a different mechanism.",
+      "The same line is why a 10 °C rise can double the rate: small 1/T change, big exponential response when Ea is large.",
+    ],
+  },
+  "chem-conductivity-dilution": {
+    reality: [
+      "Water-quality labs measure conductivity to estimate dissolved ions — this graph's physics in a probe.",
+      "Battery and fuel-cell electrolytes are chosen for high Λm⁰ along the strong-electrolyte branch.",
+      "Conductometric titrations track the same Λm behaviour as ions are swapped during neutralisation.",
+    ],
+    facts: [
+      "Both curves rise with dilution, but for different reasons: strong = drag relaxes; weak = more ions are born.",
+      "Λm⁰ for a weak electrolyte cannot be measured directly — Ostwald's law and ion additivity supply it.",
+      "Degree of dissociation α = Λm/Λm⁰ is read straight off the weak curve at any concentration.",
+      "Kohlrausch's law: Λm⁰ of a salt = sum of its ions' individual limiting conductivities.",
+    ],
+  },
+  "chem-common-ion-effect": {
+    reality: [
+      "Qualitative analysis: precipitates are washed with dilute common-ion solution so they don't re-dissolve.",
+      "Gravimetric analysis and water softening chemistry lean on the same suppression.",
+      "Buffer design: a weak acid plus its salt resists pH change because the shared ion suppresses ionisation.",
+    ],
+    facts: [
+      "Ksp never moves — it is the SOLUBILITY that drops; swap them in an exam and the answer is wrong.",
+      "For a 1:1 salt in excess common ion, solubility s ≈ Ksp/[common ion] — the flat-tail shortcut.",
+      "The suppression is Le Chatelier's principle applied to a dissolution equilibrium.",
+      "Diluting restores solubility — the effect is reversible, unlike a covalent change.",
+    ],
+  },
+  "chem-equilibrium-approach": {
+    reality: [
+      "Industrial reactors (Haber ammonia, Contact sulphuric acid) are tuned for the Q = K asymptote, not for speed alone.",
+      "Blood chemistry: carbonic acid/bicarbonate keeps the body's own Q pinned to its K.",
+      "Reaction monitoring in the lab: a flat concentration readout is the signature that equilibrium has arrived.",
+    ],
+    facts: [
+      "Flat graph ≠ stopped reaction: both directions continue at equal rates (dynamic equilibrium).",
+      "A catalyst changes only the SPEED of arrival — the Q = K asymptote is untouched.",
+      "Change the temperature and the asymptote itself moves — K is temperature's function.",
+      "The approach is fastest far from equilibrium and slows as Q nears K — the drive is proportional to the gap.",
+    ],
+  },
+  "bio-enzyme-inhibition": {
+    reality: [
+      "Drug design: statins and methotrexate are competitive inhibitors shaped to out-compete the natural substrate.",
+      "Poisoning: cyanide blocks cytochrome oxidase; heavy metals bind enzymes non-competitively — substrate floods cannot rescue.",
+      "Metabolic control: the end product of a pathway often inhibits its first enzyme — feedback regulation drawn as these curves.",
+    ],
+    facts: [
+      "Competitive: same Vmax, higher Km — more substrate eventually wins.",
+      "Non-competitive: lower Vmax, same Km — extra substrate never wins.",
+      "Km is read at HALF the ceiling of each curve, not at the graph's midpoint.",
+      "Both inhibitors slow the start; only the CEILING tells them apart at a glance.",
+    ],
+  },
+  "bio-survivorship": {
+    reality: [
+      "Sea-turtle nests: thousands of hatchlings, a handful of adults — Type III measured on a beach.",
+      "Human life tables and pension maths are built from Type I curves.",
+      "Songbird ringing studies recover constant-fraction losses year on year — Type II in the field.",
+    ],
+    facts: [
+      "Type I = K-strategists (few offspring, heavy care); Type III = r-strategists (many offspring, no care).",
+      "The y-axis is survivors, not deaths — the curves never show a 'death peak'.",
+      "At mid-life the three curves already look completely different — strategy made visible.",
+      "Conservation money follows the curve: protect the life stage with the steepest drop.",
+    ],
+  },
+  "bio-action-potential": {
+    reality: [
+      "Every heartbeat and thought is this spike, scaled and repeated — ECG and EEG are its mass versions.",
+      "Local anaesthetics work by blocking the Na⁺ gates this curve depends on.",
+      "Nerve-conduction studies in clinics time this spike to diagnose demyelination.",
+    ],
+    facts: [
+      "Rest −70 mV, threshold −55 mV, peak +30 mV — the three numbers to memorise.",
+      "All-or-none: below threshold there is no spike at all, not a smaller one.",
+      "The peak OVERSHOOTS zero — membrane polarity actually reverses for a moment.",
+      "The undershoot after the spike (hyperpolarisation) is what makes the refractory period.",
+    ],
+  },
+  "bio-predator-prey": {
+    reality: [
+      "Hudson Bay fur records (lynx and snowshoe hare) printed this graph for a century of Canadian history.",
+      "Plankton blooms and the fish that follow them oscillate with the same lag in every ocean.",
+      "Biological pest control bets on shifting the cycle phase, not wiping the pest out.",
+    ],
+    facts: [
+      "Predator peaks LAG prey peaks by about a quarter cycle — the signature of interaction.",
+      "If the peaks were simultaneous, the two species would not be interacting at all.",
+      "Prey high + predators rising = the crash is already scheduled — the curves carry different news simultaneously.",
+      "Real cycles often spiral inward (damped); the perfect eternal loop is the idealised Lotka–Volterra dream.",
+    ],
+  },
+  "math-hyperbola-conic": {
+    reality: [
+      "LORAN and modern hyperbolic navigation systems locate ships and aircraft by constant-difference-of-distance loci.",
+      "Cooling towers and certain telescope mirrors cut their elegant curves from hyperbolas.",
+      "The inverse-square relation and lens formulas trace hyperbola-like branches in their graphs.",
+    ],
+    facts: [
+      "Hyperbola is the only conic with TWO open branches — ellipse and circle close, the parabola has one arc, the hyperbola never ends.",
+      "Eccentricity e > 1 is the defining test; e = 1 is the parabola boundary case.",
+      "The asymptotes y = ±(b/a)x are the graph's rails — closeness to them grows without ever touching.",
+      "Solving 'difference of distances to two fixed points is constant' always lands on a hyperbola.",
+    ],
+  },
 };

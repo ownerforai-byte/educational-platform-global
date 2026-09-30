@@ -191,4 +191,69 @@ export const COMPARE_PHYSICS: Record<string, GraphCompareNote> = {
       "Half-power width Δω = ω₀/Q — read the width at 1/√2 of the peak.",
     ],
   },
+  "phy-shm-energy": {
+    series: [
+      { label: "kinetic K (inverted parabola)", meaning: "Maximum at the mean position where the oscillator is fastest; zero at both extremes." },
+      { label: "potential U (upright parabola)", meaning: "Maximum at the extremes where displacement is largest; zero at the mean position." },
+    ],
+    differences: [
+      "The two parabolas are exact mirror images about the vertical centre line x = 0.",
+      "Wherever one curve rises, the other falls by the identical amount — the sum is pinned at E.",
+      "They cross at x = ±a/√2, not at the centre: K = U exactly halfway out, not at the midpoint.",
+    ],
+    identify: [
+      "Highest at the centre and touching zero at the edges = K (kinetic).",
+      "Touching zero at the centre and rising to the edges = U (potential).",
+      "Both flat at the top of their arcs? You are seeing E split evenly — the crossing points.",
+    ],
+  },
+  "phy-faraday-flux-time": {
+    series: [
+      { label: "flux Φ(t) — the sine", meaning: "How much field threads the coil at each instant; peaks when the coil faces the field squarely." },
+      { label: "EMF ε(t) — the cosine-like partner", meaning: "The negative slope of the flux curve; peaks where flux changes fastest, zero where flux is momentarily still." },
+    ],
+    differences: [
+      "A quarter period apart (90°): every flux peak sits over an EMF zero crossing.",
+      "Every flux zero crossing sits under an EMF peak — the two grids interleave.",
+      "Signs oppose while flux rises and align while flux falls — Lenz's minus sign made visible.",
+    ],
+    identify: [
+      "Tall, smooth wave starting at zero = flux. Quarter-shifted wave starting at a maximum = EMF.",
+      "Find the flat top of one curve: the other crosses zero directly beneath it.",
+      "Whichever curve would flatten to nothing if the coil stopped moving is the EMF.",
+    ],
+  },
+  "phy-transistor-output": {
+    series: [
+      { label: "I_B = 30 µA (top shelf)", meaning: "Highest base drive; the shelf sits highest — I_C = β × 30 µA in the active region." },
+      { label: "I_B = 20 µA (middle shelf)", meaning: "One step down in base current drops the shelf by one β-multiple." },
+      { label: "I_B = 10 µA (bottom shelf)", meaning: "Lowest shelf; equal ΔI_B steps produce equal shelf gaps — the definition of β." },
+    ],
+    differences: [
+      "All three curves share the same steep saturation rise from the origin.",
+      "Past the knee they flatten into parallel shelves — separated by equal vertical steps.",
+      "The step between shelves carries the gain: read it once, use it everywhere.",
+    ],
+    identify: [
+      "Lowest shelf = smallest I_B. The ladder climbs with base current.",
+      "Equal-looking shelf gaps mean a well-behaved transistor; unequal gaps hint at non-ideal behaviour.",
+      "A gently rising (not flat) shelf at high V_CE is the early effect showing itself.",
+    ],
+  },
+  "phy-doppler-shift": {
+    series: [
+      { label: "approaching branch (rising)", meaning: "Source closing in: (v − v_s) shrinks in the denominator, so f′ climbs with growing steepness." },
+      { label: "receding branch (falling)", meaning: "Source heading away: (v + v_s) grows, so f′ sags smoothly below the rest frequency." },
+    ],
+    differences: [
+      "One branch accelerates upward (division by a shrinking number), the other falls gently (division by a growing one).",
+      "The upward branch runs into a wall at v_s = v — the receding branch has no wall.",
+      "Both spend the slow-speed region almost linear and symmetric about the rest line — the numericals' comfort zone.",
+    ],
+    identify: [
+      "Curve rising above the rest-frequency line = approaching. Falling below = receding.",
+      "The runaway steepness near the right edge marks the sonic-boom limit of the approaching branch.",
+      "At the rest line (v_s = 0) both branches meet the reference frequency — the source at rest.",
+    ],
+  },
 };

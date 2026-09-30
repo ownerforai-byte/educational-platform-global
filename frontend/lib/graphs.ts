@@ -32,6 +32,8 @@ export interface GraphSeries {
   variant?: number;
   label?: string;
   dashed?: boolean;
+  /** Soft gradient area fill under this curve (energy / population / abundance graphs). */
+  fill?: boolean;
 }
 
 export interface GraphMark {

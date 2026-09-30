@@ -241,4 +241,124 @@ export const DETAIL_PHYSICS_2: Record<string, GraphDetailInfo> = {
       "Breaks down inside the wire radius (B falls linearly to zero at the centre, not up).",
     ],
   },
+  "phy-shm-energy": {
+    gives: [
+      "Kinetic and potential energy at every displacement — read each curve straight off the y-axis.",
+      "The total energy as a flat line: wherever you stand on the swing, K + U reads the same.",
+      "The crossing points where K = U = E/2 (at x = ±a/√2) — a standard numerical answer.",
+      "Fastest point (x = 0) and the turning points (x = ±a) at a glance.",
+    ],
+    applies: [
+      "Every spring-mass, pendulum and molecular-vibration problem in NEB mechanics.",
+      "Energy conversion reasoning: 'where is the block fastest, where is the spring most stretched?'",
+      "The energy half of SHM numericals (E = ½mω²a²) alongside the kinematics half.",
+    ],
+    happens: [
+      "Swing from x = ±a to the centre: the U parabola slides down exactly as fast as the K curve rises — the sum never changes.",
+      "At x = 0 the K curve kisses its maximum and U touches zero: the block is unstoppably fast there.",
+      "Increase the amplitude a: both parabolas stretch taller TOGETHER — the energy grows by a², not by a.",
+      "Add damping: the flat total line picks up a downward slope — energy bleeds out each cycle.",
+    ],
+    limits: [
+      "Ideal (undamped, single-frequency) oscillator only — real damped swings lose the flat line.",
+      "Sketches show shape, not scale: the curves' heights encode E = ½mω²a² only qualitatively.",
+      "Anharmonic systems (large pendulum swings) bend away from exact parabolas.",
+    ],
+  },
+  "phy-faraday-flux-time": {
+    gives: [
+      "The phase relation the exam keeps testing: EMF is zero where flux peaks, and largest where flux crosses zero.",
+      "A visual slope-reader: the steepness of the Φ(t) curve IS the induced EMF (times −N).",
+      "The sign story of Lenz's law directly from the minus sign — rising flux gives negative EMF, falling gives positive.",
+      "The flux change ΔΦ as the area under the ε(t) graph (with the N factor stripped out).",
+    ],
+    applies: [
+      "AC generators and dynamos — the rotating-coil derivation drawn as two coupled waves.",
+      "Switch-on/switch-off transients in coils (with linear or exponential flux instead of sine).",
+      "Transformer theory: the same changing flux threads both windings, so both EMFs share this shape.",
+    ],
+    happens: [
+      "Watch Φ climb: ε sits at its most negative (Lenz pushing back hardest).",
+      "Across a flux peak: the ε curve sweeps through zero — flat flux induces nothing, however large.",
+      "Into the tail: as Φ eases toward zero, ε eases back up — the two curves keep their 90° lockstep.",
+      "Spin the coil faster (raise ω): both curves crowd together and every peak value grows — frequency and amplitude tied.",
+    ],
+    limits: [
+      "Single loop geometry idealized: real coils have self-inductance that reshapes the current, not the EMF law.",
+      "The sketch fixes the phase at exactly 90° — eddy currents and core losses shift real generator output slightly.",
+      "Flux lines are assumed uniform across the coil area; fringing fields break the neat sine.",
+    ],
+  },
+  "phy-transformer-efficiency": {
+    gives: [
+      "The load at which the machine runs best — the peak, sitting where copper loss equals iron loss.",
+      "Both loss families at a glance: the fixed iron overhead and the I² copper tax that explodes at high load.",
+      "Why a transformer idles warm and still meters current even with nothing plugged in.",
+      "The shape every electrical-machine efficiency question borrows (motors, generators, transformers).",
+    ],
+    applies: [
+      "Power-distribution design: why 11 kV/230 V transformers are specified the way they are.",
+      "Load-scheduling reasoning: efficiency peaks dominate real demand (60–75% load) rather than nameplate rating.",
+      "The same curve shape for AC motors and generators — one graph, every rotating machine.",
+    ],
+    happens: [
+      "From no load: efficiency rockets up as useful output appears while iron loss stays fixed.",
+      "At the design point: the rising copper loss meets the flat iron loss and the curve tops out.",
+      "Beyond it: overload pours on I²R heating — the curve tips over and the windings heat up.",
+      "Swap the core for better laminations: iron loss shrinks, so the peak slides higher and a touch left.",
+    ],
+    limits: [
+      "Reads for a fixed voltage and power factor; a bad cos φ shifts the whole curve down.",
+      "Idealized smooth peak — measured efficiency curves are slightly asymmetric around it.",
+      "Assumes the core stays unsaturated; saturation distorts both losses and the curve.",
+    ],
+  },
+  "phy-transistor-output": {
+    gives: [
+      "The two operating worlds on one frame: the steep saturation rise (switch ON) and the flat active shelves (amplifier).",
+      "β read directly from the shelf spacing: equal steps in I_B lift the plateau by equal β-multiples.",
+      "The cut-off floor: with I_B = 0 the collector line sits at the axis — the switch OFF.",
+      "A training ground for separating dependent (I_C) from control (I_B) variables.",
+    ],
+    applies: [
+      "Biasing an NPN in the active region for amplifier circuits — the flat shelf IS the amplifier's home.",
+      "Switching circuits: choose the saturation valley for 'closed', cut-off for 'open'.",
+      "Reading practical characteristic sheets in the physics lab and comparing with measured data.",
+    ],
+    happens: [
+      "Sweep V_CE from zero: current shoots up — the transistor is still a pair of forward-biased junctions.",
+      "Past ~0.3 V: the shelf flattens — collector current now answers only to the base.",
+      "Raise I_B a notch: the whole shelf lifts β-multiples, not by equal milliamps.",
+      "Push V_CE far right: the 'flat' shelf tilts gently upward as the effective base shortens (early effect).",
+    ],
+    limits: [
+      "Small-signal NPN geometry only — power transistors show fatter saturation knees and stronger tilt.",
+      "Temperature moves the shelves (β drifts and leakage rises at constant I_B).",
+      "The sketch exaggerates shelf flatness; real curves tilt enough to matter for biasing calculations.",
+    ],
+  },
+  "phy-doppler-shift": {
+    gives: [
+      "Both directions in one frame: the swoop upward of approach and the sag of recession from the rest-frequency line.",
+      "The divergence warning: why the formula (and the pitch) blows up as the source nears the wave speed.",
+      "The linear regime for slow sources — the regime every numerical problem uses.",
+      "Wavelength thinking: pitch up means wavelengths squeezed, pitch down means stretched.",
+    ],
+    applies: [
+      "The police speed gun and the weather radar — Doppler shift translated into velocity.",
+      "Astronomy's redshift: the same structure at light speed measures galaxy recession.",
+      "Medical ultrasound: blood flow speed from the shift in echoes, the modern stethoscope.",
+    ],
+    happens: [
+      "At rest the curve sits on the reference line: f′ = f — silence in the shift language.",
+      "Increasing v_s toward you: each extra percent of wave speed buys MORE than the last — the curve steepens.",
+      "Crossing the line: the source passes and the sound drops — the curve jumps branches to the falling one.",
+      "As v_s approaches v: the graph marches into a wall — the shock front that becomes a sonic boom.",
+    ],
+    limits: [
+      "Observer stationary; move the observer and the formulas swap (and in relativity, merge).",
+      "Classical (sound) model only — light needs the relativistic form, though the picture survives.",
+      "Point source in open air: extended sources and echoes blur the neat two-branch shape.",
+    ],
+  },
 };
