@@ -79,7 +79,13 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
           setIsHovered(false);
           setIsClickedOpen(false);
         }}
-        className={`sticky top-0 z-40 border-b border-border/40 bg-background/70 backdrop-blur-xl transition-transform duration-300 ease-in-out ${
+        /* The background is near-opaque on purpose: at /70 the bar is a
+           translucent panel, so whatever scrolls under it stayed legible
+           through the blur — the footer's own text ran visibly through the
+           nav at the bottom of every page. A blur cannot hide text that is
+           30% visible behind it; opacity has to do that. Kept at /95 rather
+           than solid so the tiniest hint of the nebula backdrop survives. */
+        className={`sticky top-0 z-40 border-b border-border/40 bg-background/95 backdrop-blur-xl transition-transform duration-300 ease-in-out ${
           navVisible ? "translate-y-0 shadow-md" : "-translate-y-full"
         }`}
       >

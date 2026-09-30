@@ -3,12 +3,18 @@ import { PenLine, ShieldCheck, ArrowRight } from "lucide-react";
 
 /**
  * Owner's notice. Kept as a literal so JSX never re-wraps it.
- * Punctuation corrected (2026-09-27): stray apostrophe after "thoughts",
- * missing comma after the conditional, and `--` attribution removed here
- * because the figcaption below already signs it (with a proper em dash).
+ *
+ * Punctuation corrected (2026-09-27): stray apostrophe after "thoughts", and
+ * `--` attribution removed here because the figcaption below already signs it
+ * (with a proper em dash).
+ *
+ * 2026-09-30 — the owner's own wording, as he wrote it: the conditional reads
+ * "explore then sign in", NOT "explore, sign in". This file and /notice carry
+ * the same sentence, so change them together or the two pages start quoting
+ * him differently.
  */
 const OWNER_NOTICE =
-  "This is the page of Ravikisan, made by him for easy access. If you want to explore, sign in and clear your thoughts.";
+  "This is the page of Ravikisan, made by him for easy access. If you want to explore then sign in and clear your thoughts.";
 
 /**
  * Notice from the owner — shown on the public home page (never gated).
