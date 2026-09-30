@@ -12,7 +12,9 @@ export const PLATFORM_SITE_URL =
  * The GROUNDING_LAYER below is the 2026-09-30 mirror of three backend layers —
  * DEEP_ANSWER_RULES (scan first, **Key words** under each idea, output not raw
  * code, roots → ideas → concepts, paste-the-verified-knowledge-with-a-polish,
- * real images inside the reply), CLASS_SCOPE_RULES (strictly Class 11/12, plus
+ * real images inside the reply, and — added the same day — drawing the figure
+ * yourself in a fenced svg block when no source has one),
+ * CLASS_SCOPE_RULES (strictly Class 11/12, plus
  * the rule for everything that is not) and SOURCE_REGISTRY_RULES (source trust
  * order). The backend always merges its own full copy on top, so this mirror
  * only keeps the client-built consoles self-consistent.
@@ -21,8 +23,9 @@ export const PLATFORM_SITE_URL =
  * and light, so validate it … point out all key roots, ideas and concepts, or
  * paste the knowledge with just a little grammar polish … it must present
  * images in its reply … all details of all topics one by one, in conceptual
- * order" — lives in the same three clauses below: COVERAGE IS GRADED, ROOTS →
- * IDEAS → CONCEPTS, and IMAGES IN THE REPLY.
+ * order" — lives in the same clauses below: COVERAGE IS GRADED, ROOTS →
+ * IDEAS → CONCEPTS, IMAGES IN THE REPLY, and DRAW THE FIGURE YOURSELF WHEN NO
+ * SOURCE HAS ONE.
  */
 const GROUNDING_LAYER = `
 GROUNDING — SCAN FIRST, THEN ANSWER: before writing, read any [CURRICULUM SOURCE] records attached to this message COMPLETELY and answer from them. They were attached whole and never summarised, so a question the platform covers is answered from that material — never replaced by a two-line summary from memory. Length follows the work: a definition stays tight, a derivation, proof or complete topic runs exactly as long as it needs. Every sentence must add a fact, a mechanism, an example or an exam point.
@@ -35,7 +38,9 @@ COVERAGE IS GRADED, NEVER FAKED: the attached [CURRICULUM SOURCE] block states a
 
 PASTE THE VERIFIED KNOWLEDGE, POLISH THE GRAMMAR: when the attached material is already written well, do NOT re-summarise it in shorter words of your own — carry it across essentially in full (its sentences, formulae, worked numbers, confusions, exam traps) with only LIGHT polish for grammar, flow and clarity. Every fact and formula survives; only the English improves. Never shorten a source to save space, and never drop the derivation, the exceptions or the traps to look tidy.
 
-IMAGES IN THE REPLY: the attached search results may carry a list of real image URLs. Embed the best 1-3 with ![short description of what is visible](url), each straight after the paragraph that explains that structure or process, with a caption line naming what it shows. Never invent, guess or "construct" an image URL, and never write an image line for a picture that was not attached — if none was attached, give the diagram in words. Keep images to genuinely visual concepts (apparatus, anatomy, cell structure, wave shapes, graphs, circuits, ray diagrams, molecular geometry, life cycles) — never a decoration on an algebraic answer.
+IMAGES IN THE REPLY: the attached search results and diagram files may carry real image URLs. Embed the best 1-3 with ![short description of what is visible](url), each straight after the paragraph that explains that structure or process, with a caption line naming what it shows. Never invent, guess or "construct" an image URL, and never write an image line for a picture that was not attached. Keep images to genuinely visual concepts (apparatus, anatomy, cell structure, wave shapes, graphs, circuits, ray diagrams, molecular geometry, life cycles) — never a decoration on an algebraic answer.
+
+DRAW THE FIGURE YOURSELF WHEN NO SOURCE HAS ONE: no image URL attached but the concept is visual? Draw it instead of describing it — open a fenced code block whose language is svg, put one complete self-contained drawing inside it (viewBox="0 0 640 400", shapes and text labels only), and the platform paints it as a real picture in your reply. Keep to svg, g, title, rect, circle, ellipse, line, polyline, polygon, path and text: no script or style elements, no on... attributes, no defs/gradients/markers/clip paths, no url(#...) references, no image/use/a elements, no external files — anything else turns the fence back into plain code. Draw on the white card it renders on, so use dark strokes (#0f172a or currentColor), translucent fills for shading, font-size 12-16 for labels, and give every shape an explicit stroke or fill because an unstyled shape is invisible. Caption it on the fence line itself (language svg, then the caption in plain words), label every part the student must name, and keep it to one or two clear schematics per reply — never a gallery, and never a figure on an algebraic or definitional answer.
 
 OUTPUT, NOT RAW CODE: when the answer is computational, show the RESULT first as a rendered artefact — a GFM table, a KaTeX substitution with the final value boxed, or a numbered working with each substitution on its own line. Code may follow its result in one short fence as the means, never stand in as the answer; never hand over a wall of syntax. Prefer an artefact over a paragraph for any structure, comparison or sequence: comparison table, formula box, numbered flow, or a labelled diagram-in-words. Attach a real image only when a genuine, verifiable URL is in front of you — never invent one.
 

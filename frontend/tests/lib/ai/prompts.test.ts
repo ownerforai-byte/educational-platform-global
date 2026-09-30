@@ -11,7 +11,8 @@ import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
  * passes of 2026-09-30: the deep-answer contract (scan first, keywords under
  * each idea, output over raw code) and the follow-up — roots → ideas →
  * concepts, paste-the-verified-knowledge-with-a-light-polish, graded coverage,
- * and real images inside the reply.
+ * real images inside the reply, and — when no source has a picture — drawing
+ * the figure itself in a fenced svg block the platform paints.
  */
 describe("PLATFORM_SYSTEM_PROMPT — the client mirror of the academic contract", () => {
   it("mirrors the deep-answer grounding layer", () => {
@@ -51,8 +52,19 @@ describe("PLATFORM_SYSTEM_PROMPT — the client mirror of the academic contract"
     expect(PLATFORM_SYSTEM_PROMPT).toContain("IMAGES IN THE REPLY");
     expect(PLATFORM_SYSTEM_PROMPT).toContain("![short description of what is visible](url)");
     expect(PLATFORM_SYSTEM_PROMPT).toContain("Never invent, guess");
-    expect(PLATFORM_SYSTEM_PROMPT).toContain("give the diagram in words");
     expect(PLATFORM_SYSTEM_PROMPT).toContain("a real image only when a genuine, verifiable URL is in front of you");
+  });
+
+  it("teaches the tutor to draw the figure when no source has one", () => {
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("DRAW THE FIGURE YOURSELF WHEN NO SOURCE HAS ONE");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("whose language is svg");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain('viewBox="0 0 640 400"');
+    // The constructs the renderer refuses must be named, so the model does not
+    // lose the figure to the code-block fallback.
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("no script or style elements");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("no url(#...) references");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("white card");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("on the fence line");
   });
 
   it("no longer caps a complete answer at three sources", () => {

@@ -365,11 +365,33 @@ describe("the complete-answer contract reaches the model", () => {
       "REAL IMAGES INSIDE THE REPLY",
       "IMAGE FENCE",
       "NEVER invent, guess",
+      "DRAW THE FIGURE YOURSELF WHEN NO SOURCE HAS ONE",
+      "THE svg FENCE",
     ]) {
       expect(DEEP_ANSWER_RULES, `missing rule: ${rule}`).toContain(rule);
     }
     expect(MASTER_ACADEMIC_PROMPT).toContain("ROOTS → IDEAS → CONCEPTS");
     expect(MASTER_ACADEMIC_PROMPT).toContain("PASTE THE VERIFIED KNOWLEDGE");
+  });
+
+  test("the tutor is taught to draw what no source shows", () => {
+    // Owner request 2026-09-30: "it should create visuals on screen with the
+    // help of codes". The platform paints a fence whose language is svg, and
+    // the prompt has to teach the exact shape the renderer accepts — a figure
+    // the guard refuses silently becomes a code block instead of a picture.
+    for (const rule of [
+      "The platform renders that fence as a real picture in the reply",
+      'viewBox="0 0 640 400"',
+      "No script element, no style element, no on-event attributes",
+      "no url(#...) references",
+      "white card",
+      "Caption it on the fence line itself",
+      "svg is the only drawing language the platform paints",
+      "Keep the drawing honest",
+    ]) {
+      expect(DEEP_ANSWER_RULES, `missing drawing rule: ${rule}`).toContain(rule);
+    }
+    expect(MASTER_ACADEMIC_PROMPT).toContain("DRAW THE FIGURE YOURSELF WHEN NO SOURCE HAS ONE");
   });
 
   test("nothing caps a complete answer at three sources any more", () => {

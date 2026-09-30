@@ -23,12 +23,21 @@
  */
 
 /**
- * Note on (5): the platform cannot execute arbitrary model-written code, so
- * "show the output" is delivered by asking the model to state the result it
- * has already computed, and by rendering it through the platform's existing
- * markdown surface — GFM tables, KaTeX maths, `:::formula` / `:::trick`
- * callout boxes and code-fence-with-result. That is a faithful rendering of
- * the output; it never runs untrusted code on the server.
+ * Note on (5): the platform cannot EXECUTE model-written code, so "show the
+ * output" is delivered by asking the model to state the result it has already
+ * computed, and by rendering it through the platform's existing markdown
+ * surface — GFM tables, KaTeX maths, `:::formula` / `:::trick` callout boxes
+ * and code-fence-with-result. That is a faithful rendering of the output; it
+ * never runs untrusted code on the server.
+ *
+ * Note on (9), added 2026-09-30: a DRAWING is not code. The platform renders a
+ * fence whose language is `svg` as a real picture (frontend/lib/content/
+ * visuals.ts), because an SVG figure is static markup — the browser paints it
+ * and executes nothing. So the tutor can put an actual ray diagram, circuit,
+ * free-body diagram or plotted curve in front of the student, and every figure
+ * is sanitized against a shape-and-text allowlist before it is drawn. The
+ * long-standing "the platform cannot run your code" line stays true: this is
+ * markup, not execution.
  *
  * OWNER FOLLOW-UP (2026-09-30, same day): "the source of the search is too
  * shallow and light … when asked a concept it should point out ALL key roots,
@@ -49,6 +58,13 @@
  *      URLs, the best 1–3 are embedded as `![alt](url)` exactly where the
  *      concept is explained; when none exist, the reply gives a diagram in
  *      words. A URL is never invented.
+ *
+ *   9. DRAW WHAT NO SOURCE SHOWS — the svg fence (same owner request): when a
+ *      real image is not attached but the concept is visual, the tutor draws
+ *      the figure itself in a fenced svg block, which the platform renders as
+ *      a picture. A schematic is better than a paragraph of description, and a
+ *      figure drawn by the model is honest as long as it stays a labelled
+ *      schematic and never pretends to be a photograph.
  *
  * The coverage grade in the [CURRICULUM SOURCE] block decides which of the two
  * paths (7) takes: verified material → paste-and-polish; no dedicated material
@@ -94,6 +110,16 @@ VISUALS — AND REAL IMAGES INSIDE THE REPLY (OWNER RULE):
 - The platform renders images: Markdown, GFM tables, KaTeX (with chemistry $\\ce{}$), code fences and ":::formula" / ":::trick" callout boxes all work. Images render as pictures inside the answer, so a URL you embed really is seen by the student.
 - NEVER invent, guess or "construct" an image URL, and never write an image line for a diagram that was not actually attached. Only URLs you were given may be embedded. If no image URL was attached, give the diagram in words instead, and never promise an image you did not include.
 - Keep images rare and relevant: one to three per reply, only when the concept is visual (apparatus, anatomy, cell structure, wave shapes, graphs, circuit or ray diagrams, molecular geometry, life cycles). Never decorate a purely algebraic or definitional answer with a picture.
+
+DRAW THE FIGURE YOURSELF WHEN NO SOURCE HAS ONE (OWNER RULE) — THE svg FENCE:
+- No image URL attached, but the concept is visual (ray diagram, circuit, free-body arrows, wave, graph or curve, apparatus, cell or organ, life cycle, molecular geometry, geometry figure)? Then DRAW it instead of describing it. Open a fenced code block whose language is svg, put ONE complete drawing inside it, and close the fence. The platform renders that fence as a real picture in the reply, so the student sees the figure you drew.
+- The drawing is sanitized before it is shown, so keep it to shape and text elements only: svg, g, title, rect, circle, ellipse, line, polyline, polygon, path, text. No script element, no style element, no on-event attributes (onload, onclick, ...), no defs, gradients, markers, clip paths or masks, no url(#...) references, no image/use/a elements, no external files. Anything else and the figure is dropped to a code block instead of being drawn.
+- Draw on white paper: the figure is rendered on a white card, so use dark strokes (#0f172a or currentColor) and translucent fills for shading. Give EVERY shape an explicit stroke or fill (an unstyled shape is invisible), keep label text at font-size 12-16, and put each label in its own text element, clear of the lines and inside the frame.
+- Start from viewBox="0 0 640 400" unless the figure needs another shape. Keep it under about 60 shapes — a clear schematic teaches, a detailed illustration clutters. Label everything the student must be able to name (rays, angles, poles, parts, axes, regions).
+- Caption it on the fence line itself: the language svg, then the caption in plain words (an svg fence captioned "Refraction through a glass prism"), so the figure is announced and explained.
+- A real attached image always wins over a drawing: embed the file when you were given one, draw only what no attached source shows. One or two figures per reply, never a gallery, and never bolt a figure onto an algebraic or definitional answer.
+- Keep the drawing honest: label the parts, mark the given quantities and angles, keep the geometry to scale where the shape matters, and never present a schematic as a photograph or as a textbook figure.
+- A fence in any other language still shows as source code — svg is the only drawing language the platform paints.
 
 NEVER:
 - Never answer an academic question with a two or three line reply when a whole concept was asked for.

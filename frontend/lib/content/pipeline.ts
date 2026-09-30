@@ -16,6 +16,11 @@ import "katex/dist/katex.min.css";
 import "highlight.js/styles/github-dark.css";
 import { KATEX_OPTIONS, normalizeMathDelimiters } from "@/lib/content/katex";
 import { normalizeCalloutBlocks, remarkEduCallouts } from "@/lib/content/callouts";
+import {
+  SVG_SANITIZE_ATTRIBUTES,
+  SVG_SANITIZE_TAGS,
+  remarkVisuals,
+} from "@/lib/content/visuals";
 
 /**
  * Universal note rendering pipeline — the single system every incoming note
@@ -29,6 +34,9 @@ import { normalizeCalloutBlocks, remarkEduCallouts } from "@/lib/content/callout
  *  - Code fences: syntax-highlighted server-side (` ```lang `), no client JS
  *  - Exam callouts: `:::formula … :::` / `:::trick … :::` blocks and
  *    `> [!TRAP] …` alerts → colour-coded revision boxes (see lib/content/callouts.ts)
+ *  - Model-drawn figures: a ` ```svg ` fence becomes an inline SVG figure the
+ *    student can see (see lib/content/visuals.ts). Still no client JS — an SVG
+ *    drawing is static markup, and it is sanitized like any other input.
  *
  * Trust order matters: sanitize runs FIRST on author-supplied markup; the
  * highlighter and KaTeX run afterwards and are trusted generators, so their
@@ -51,6 +59,9 @@ const sanitizeSchema: Schema = {
     "video",
     "audio",
     "source",
+    // Model-drawn figures (lib/content/visuals.ts). Shape, group and text
+    // primitives only: no scripting, no external fetches, no id references.
+    ...SVG_SANITIZE_TAGS,
   ],
   attributes: {
     ...defaultSchema.attributes,
@@ -62,6 +73,7 @@ const sanitizeSchema: Schema = {
       ["className", /^language-./],
     ],
     input: [...(defaultSchema.attributes?.input ?? []), "disabled", "type", "checked"],
+    ...SVG_SANITIZE_ATTRIBUTES,
   },
 };
 
@@ -70,6 +82,7 @@ export const noteProcessor = unified()
   .use(remarkGfm)
   .use(remarkMath, { singleDollarTextMath: true })
   .use(remarkEduCallouts)
+  .use(remarkVisuals)
   .use(remarkRehype, { allowDangerousHtml: true })
   .use(rehypeRaw)
   .use(rehypeSanitize, sanitizeSchema)

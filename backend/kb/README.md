@@ -110,15 +110,33 @@ theorem, conic sections, photosynthesis and DNA as their own units. Dropping a
 real note into this folder for any of them flips that question to STRONG on the
 next request — no code change.
 
-## Images in the reply
+## Images and diagrams in the reply
 
 Web grounding returns real image URLs (`TAVILY_SEARCH_DEPTH=advanced`,
 `include_images`), and the tutor is instructed to embed the relevant ones inside
 the answer as `![what is visible](url)` wherever a structure or process is
 explained. The frontend renders them (`components/content/math-markdown.tsx` →
 `lib/content/pipeline.ts`, styled by `.prose img`); the sanitiser only allows
-`http(s)` image sources. A URL is never invented: if no real URL was attached,
-the reply gives the diagram in words instead.
+`http(s)` image sources.
+
+Two more sources of pictures were added on 2026-09-30, because a page's own
+images are often a banner rather than a figure:
+
+1. **Fetched diagrams** — `src/ai/diagram-search.ts` asks Wikimedia Commons for
+   openly licensed files whose NAME matches the concept, attaches their direct
+   URLs with the licence, and drops anything unrelated (a file that shares no
+   word with the question is never attached). It runs in parallel with the web
+   search, is best-effort, needs no API key, and can be switched off with
+   `DIAGRAM_SEARCH=off`.
+2. **Figures the tutor draws** — when no source has a picture, the reply carries
+   a fenced `svg` block and the platform PAINTS it as a real figure
+   (`frontend/lib/content/visuals.ts`, styled by `.edu-visual` in
+   `app/globals.css`). The drawing is static markup, sanitised against a
+   shapes-and-text allowlist, and a drawing that uses anything else falls back
+   to a readable code block rather than a mangled picture.
+
+Either way a URL is never invented: the reply embeds only URLs it was actually
+given, or draws the figure itself.
 
 ## Tuning knobs (env, all optional)
 
@@ -130,6 +148,9 @@ the reply gives the diagram in words instead.
 | `AI_SEARCH_TIMEOUT_MS` | 9000 | How long web grounding may take |
 | `TAVILY_SEARCH_DEPTH` | `advanced` | Search depth (`basic` to save quota) |
 | `SEARCH_RAW_CONTENT_CHARS` | 2500 | Page extract kept per result |
+| `DIAGRAM_SEARCH` | on (`off` in tests) | Wikimedia diagram fetch: `off` to disable |
+| `DIAGRAM_LIMIT` | 3 | Diagram files attached per question |
+| `DIAGRAM_TIMEOUT_MS` | 6000 | Budget for the diagram fetch (runs beside the web search) |
 
 ## Class levels — `_class-index.json`
 

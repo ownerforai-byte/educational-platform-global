@@ -1,4 +1,5 @@
 import { getSearchService } from "./search-engine";
+import { DIAGRAM_TIMEOUT_MS, fetchDiagramContext } from "./diagram-search";
 import { MASTER_ACADEMIC_RULES } from "./academic-intelligence";
 import { buildSyllabusAnchorBlock, floorWordsForQuestion } from "./syllabus-anchor";
 import { buildCurriculumContext, DEFAULT_RECORD_LIMIT } from "./curriculum-retrieval";
@@ -157,18 +158,42 @@ export async function buildProfessorContext(
     // Anchor is best-effort: never block the chat on it.
   }
 
+  // ── 3. LIVE MATERIAL — page sources AND diagram files, in parallel ──
+  // Two independent fetches, collected together so neither adds its latency to
+  // the other's: the web search supplies current prose, and DiagramSearch
+  // supplies real labelled figures whose file names match the concept (owner
+  // request 2026-09-30: fetch images/diagrams related to the context). Each one
+  // settles to "" on its own, so a slow or dead source can never cost the
+  // student the other, and neither can cost them the reply.
+  const safe = async (promise: Promise<string>): Promise<string> => {
+    try {
+      return await promise;
+    } catch {
+      return "";
+    }
+  };
+  const emptyOnTimeout = (ms: number) =>
+    new Promise<string>((resolve) => setTimeout(() => resolve(""), ms));
+
   try {
     const svc = getSearchService();
-    if (svc.isEnabled() && lastUserMessage.trim()) {
-      // A concept the platform does NOT teach needs the wider net most: ask for
-      // more results, and let the engines return real page text and images.
-      const wanted = coverage === "covered" ? 5 : 6;
-      const web = await Promise.race([
-        svc.searchAsContext(lastUserMessage, wanted),
-        new Promise<string>((resolve) => setTimeout(() => resolve(""), SITE_TIMEOUT_MS)),
-      ]);
-      if (web) parts.push(web);
-    }
+    // A concept the platform does NOT teach needs the wider net most: ask for
+    // more results, and let the engines return real page text and images.
+    const wanted = coverage === "covered" ? 5 : 6;
+    const webPromise =
+      svc.isEnabled() && lastUserMessage.trim()
+        ? Promise.race([
+            svc.searchAsContext(lastUserMessage, wanted),
+            emptyOnTimeout(SITE_TIMEOUT_MS),
+          ])
+        : Promise.resolve("");
+    const diagramPromise = question
+      ? Promise.race([fetchDiagramContext(question), emptyOnTimeout(DIAGRAM_TIMEOUT_MS)])
+      : Promise.resolve("");
+
+    const [web, diagrams] = await Promise.all([safe(webPromise), safe(diagramPromise)]);
+    if (web) parts.push(web);
+    if (diagrams) parts.push(diagrams);
   } catch {
     // Search is best-effort: never block the chat on it.
   }

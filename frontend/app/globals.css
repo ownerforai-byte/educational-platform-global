@@ -829,6 +829,29 @@ code, kbd, samp, pre {
     color: hsl(var(--muted-foreground));
   }
 
+  /* Model-drawn figures: a fenced svg block becomes this card
+     (frontend/lib/content/visuals.ts). A drawing is inked on white "paper" in
+     both themes, because the tutor's drawings use dark strokes and translucent
+     fills — exactly how a textbook figure is drawn — and white paper keeps them
+     legible in the dark theme too. */
+  .edu-visual {
+    margin: 1.3em 0;
+    padding: 0.85em;
+    border: 1px solid hsl(var(--border));
+    border-radius: 0.875rem;
+    background: #ffffff;
+  }
+  .edu-visual svg {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 460px;
+    margin: 0 auto;
+    color: #0f172a;
+  }
+  .edu-visual svg text { font-family: inherit; }
+  .edu-visual .edu-visual__caption { color: #475569; }
+
   .prose details {
     margin: 1em 0;
     padding: 0.75em 1em;
