@@ -3,7 +3,7 @@ import { MindStudio } from "@/features/mindmap-studio";
 export const metadata = {
   title: "Mind Studio — Ravikisan's Platform",
   description:
-    "Map concepts on a draggable canvas, classify facts with local deterministic rules, and explore the seeded Physics demo. Runs entirely in your browser.",
+    "Generate mindmaps, trees, flowcharts, hierarchies, timelines and sequence diagrams with Agnes AI (guest pool and puter.js fallbacks), then edit on a draggable canvas. Maps stay on your device.",
 };
 
 /**

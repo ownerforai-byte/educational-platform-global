@@ -523,102 +523,95 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
     const targetSession = sessionRef.current;
 
     try {
-      if (isLoggedIn) {
-        // LIVE streaming (owner 2026-09-30): the assistant bubble fills in as
-        // the provider generates — the agent-working feel. Paints are
-        // throttled to ~12/s so re-parsing the growing markdown stays cheap;
-        // the final chunk is always painted.
-        let liveAcc = "";
-        let liveCredits: number | null = null;
-        let sawToken = false;
-        let lastPaint = 0;
-        // Live figures (owner 2026-09-30): the model's ```veer-image fences are
-        // stripped server-side; each one arrives as imageStart / imageSuccess /
-        // imageFailed events and is appended at the end of the answer as a
-        // placeholder that swaps into the picture.
-        const figs = new Map<
-          number,
-          { prompt: string; caption?: string; status: "pending" | "done" | "failed"; url?: string }
-        >();
-        const figureBlocks = (): string =>
-          [...figs.values()]
-            .map((f) =>
-              f.status === "done" && f.url
-                ? `\n\n![${f.caption || "Veer-drawn figure"}](${f.url})\n\n\n\n\n\n`
-                : f.status === "pending"
-                  ? "\n\n*🎨 Veer is drawing a figure…*"
-                  : "",
-            )
-            .join("");
-        const paintLive = (force: boolean) => {
-          const now = Date.now();
-          if (!force && now - lastPaint < 80) return;
-          lastPaint = now;
-          const snapshot = liveAcc + figureBlocks();
-          setMessages((prev) => {
-            const next = [...prev];
-            const last = next[next.length - 1];
-            if (last?.role === "assistant") next[next.length - 1] = { role: "assistant", content: snapshot };
-            return next;
-          });
-        };
-        try {
-          for await (const chunk of streamChat(outbound)) {
-            if (typeof chunk === "string") {
-              if (!sawToken) {
-                // First token: create the bubble and flip the streaming flag,
-                // which retires the "working" dots and starts the live cursor.
-                sawToken = true;
-                liveAcc = chunk;
-                setStreamingText("");
-                setMessages((prev) => [...prev, { role: "assistant", content: chunk + figureBlocks() }]);
-              } else {
-                liveAcc += chunk;
-                paintLive(false);
-              }
-            } else if ("imageStart" in chunk) {
-              figs.set(chunk.imageStart, { prompt: chunk.prompt, caption: chunk.caption, status: "pending" });
-              paintLive(true);
-            } else if ("imageSuccess" in chunk) {
-              const f = figs.get(chunk.imageSuccess);
-              if (f) { f.status = "done"; f.url = chunk.url; }
-              paintLive(true);
-            } else if ("imageFailed" in chunk) {
-              const f = figs.get(chunk.imageFailed);
-              if (f) f.status = "failed";
-            } else if (typeof chunk.credits === "number") {
-              liveCredits = chunk.credits;
+      // LIVE streaming (owner 2026-09-30): assistant bubble streams deltas live
+      // for both signed-in and guest users, with real-time continuous generation,
+      // figures, and markdown rendering.
+      let liveAcc = "";
+      let liveCredits: number | null = null;
+      let liveRemaining: number | null = null;
+      let sawToken = false;
+      let lastPaint = 0;
+      const figs = new Map<
+        number,
+        { prompt: string; caption?: string; status: "pending" | "done" | "failed"; url?: string }
+      >();
+      const figureBlocks = (): string =>
+        [...figs.values()]
+          .map((f) =>
+            f.status === "done" && f.url
+              ? `\n\n![${f.caption || "Veer-drawn figure"}](${f.url})\n\n\n\n\n\n`
+              : f.status === "pending"
+                ? "\n\n*🎨 Veer is drawing a figure…*"
+                : "",
+          )
+          .join("");
+      const paintLive = (force: boolean) => {
+        const now = Date.now();
+        if (!force && now - lastPaint < 40) return;
+        lastPaint = now;
+        const snapshot = liveAcc + figureBlocks();
+        setMessages((prev) => {
+          const next = [...prev];
+          const last = next[next.length - 1];
+          if (last?.role === "assistant") next[next.length - 1] = { role: "assistant", content: snapshot };
+          return next;
+        });
+      };
+      try {
+        for await (const chunk of streamChat(outbound, undefined, { isGuest: !isLoggedIn })) {
+          if (typeof chunk === "string") {
+            if (!sawToken) {
+              sawToken = true;
+              liveAcc = chunk;
+              setStreamingText("");
+              setMessages((prev) => [...prev, { role: "assistant", content: chunk + figureBlocks() }]);
+            } else {
+              liveAcc += chunk;
+              paintLive(false);
             }
+          } else if ("imageStart" in chunk) {
+            figs.set(chunk.imageStart, { prompt: chunk.prompt, caption: chunk.caption, status: "pending" });
+            paintLive(true);
+          } else if ("imageSuccess" in chunk) {
+            const f = figs.get(chunk.imageSuccess);
+            if (f) { f.status = "done"; f.url = chunk.url; }
+            paintLive(true);
+          } else if ("imageFailed" in chunk) {
+            const f = figs.get(chunk.imageFailed);
+            if (f) f.status = "failed";
+          } else if (typeof chunk.credits === "number") {
+            liveCredits = chunk.credits;
+          } else if (typeof chunk.remaining === "number") {
+            liveRemaining = chunk.remaining;
           }
-        } catch (streamErr) {
-          // A failed stream is not a failed message: if tokens already reached
-          // the bubble, keep them (and persist them); only a totally empty
-          // stream re-throws so the error banner shows.
-          if (!liveAcc.trim()) throw streamErr;
         }
-        // Agent picks the engine: anything Agnes could not draw gets a
-        // browser-side puter.js attempt for the same prompt (User-Pays: the
-        // student's own free Puter allocation; the platform pays nothing).
-        for (const f of figs.values()) {
-          if (f.status === "failed") {
-            const url = await drawFigureWithPuter(f.prompt);
-            if (url) { f.status = "done"; f.url = url; }
-          }
+      } catch (streamErr) {
+        if (!liveAcc.trim()) throw streamErr;
+      }
+      for (const f of figs.values()) {
+        if (f.status === "failed") {
+          const url = await drawFigureWithPuter(f.prompt);
+          if (url) { f.status = "done"; f.url = url; }
         }
-        paintLive(true);
-        setStreamingText(null);
+      }
+      paintLive(true);
+      setStreamingText(null);
+
+      if (!liveAcc.trim()) {
+        throw new Error("No reply received from the AI. Please try again.");
+      }
+
+      const finalReply = liveAcc + figureBlocks();
+
+      if (isLoggedIn) {
         if (liveCredits !== null) {
           setDailyCredits(liveCredits);
           if (liveCredits <= 0) setPoolEmpty(true);
         }
-        if (!liveAcc.trim()) {
-          throw new Error("No reply received from the AI. Please try again.");
-        }
         saveChatHistory(targetSession, [
           { role: "user", content: textToSend },
-          { role: "assistant", content: liveAcc + figureBlocks() },
+          { role: "assistant", content: finalReply },
         ]).catch(() => {});
-        // New conversation gets a session row as soon as it has content.
         setSessions((prev) => {
           if (prev.some((s) => s.session === targetSession)) {
             return prev.map((s) =>
@@ -643,18 +636,14 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
           ];
         });
       } else {
-        const res = await guestChat(outbound);
-        const assistantMsg: AIChatMessage = { role: "assistant", content: res.response };
-        setMessages([...outbound, assistantMsg]);
-        // Server-side count is the source of truth; mirror it locally.
-        const used = MAX_GUEST_MESSAGES - (res.remaining ?? MAX_GUEST_MESSAGES - guestCount - 1);
-        const next = Math.min(MAX_GUEST_MESSAGES, Math.max(guestCount + 1, used));
-        writeGuestCount(next);
-        setGuestCount(next);
-        // Signed-out history: persist this exchange into the device thread.
+        const nextUsed = liveRemaining !== null
+          ? Math.min(MAX_GUEST_MESSAGES, Math.max(0, MAX_GUEST_MESSAGES - liveRemaining))
+          : Math.min(MAX_GUEST_MESSAGES, guestCount + 1);
+        writeGuestCount(nextUsed);
+        setGuestCount(nextUsed);
         touchGuestThread(sessionRef.current, [
           { role: "user", content: textToSend },
-          { role: "assistant", content: res.response },
+          { role: "assistant", content: finalReply },
         ]);
       }
     } catch (err: any) {

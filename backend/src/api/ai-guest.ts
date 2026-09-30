@@ -5,7 +5,14 @@ import { rateLimit } from "../middleware/rateLimit";
 import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
 import { completeAnswer } from "../ai/complete-answer";
 import { imageInstruction, sanitizeChatImages } from "../ai/image-input";
-import { withFigureToolInstruction, resolveFiguresInText } from "../ai/image-gen";
+import { withFigureToolInstruction, resolveFiguresInText, FigureStreamFilter, generateVeerImage } from "../ai/image-gen";
+import {
+  detectTruncation,
+  describeVerdict,
+  continuationRequest,
+  joinContinued,
+  MAX_CONTINUATIONS,
+} from "../ai/truncation";
 import {
   GUEST_DAILY_LIMIT,
   consumeGuestSlot,
@@ -59,6 +66,7 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
     const body = req.body;
     const messages: AIChatMessage[] = Array.isArray(body?.messages) ? body.messages : [];
     const provider: string = typeof body?.provider === "string" ? body.provider : "";
+    const stream: boolean = body?.stream === true;
 
     if (!messages.length) {
       res.status(400).json({ error: "messages array is required" });
@@ -110,6 +118,121 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
     if (images.length) baseContext += `\n\n${imageInstruction(images.length)}`;
     const professorContext = withFigureToolInstruction(baseContext);
     const augmented = withProfessorContext(messages, professorContext) as AIChatMessage[];
+
+    // Handle streaming for guests
+    if (stream) {
+      res.setHeader("Content-Type", "text/event-stream; charset=utf-8");
+      res.setHeader("Cache-Control", "no-cache, no-transform");
+      res.setHeader("Connection", "keep-alive");
+      res.setHeader("X-Accel-Buffering", "no");
+      if (typeof res.flushHeaders === "function") res.flushHeaders();
+
+      let streamedAny = false;
+      let figureSeq = 0;
+      const sendSSE = (obj: any) => {
+        res.write(`data: ${JSON.stringify(obj)}\n\n`);
+        if (typeof (res as any).flush === "function") (res as any).flush();
+      };
+
+      try {
+        let acc = "";
+        let continued = 0;
+        const figFilter = new FigureStreamFilter();
+        const pendingFigures: Array<{ id: number; prompt: string }> = [];
+
+        for await (const delta of aiService.chatStream(provider, augmented)) {
+          const { chunks, figureStarts } = figFilter.push(delta);
+          for (const spec of figureStarts) {
+            figureSeq += 1;
+            pendingFigures.push({ id: figureSeq, prompt: spec.prompt });
+            sendSSE({ imageStart: figureSeq, prompt: spec.prompt, caption: spec.caption });
+          }
+          for (const chunk of chunks) {
+            acc += chunk;
+            streamedAny = true;
+            sendSSE({ content: chunk });
+          }
+        }
+        const tail = figFilter.flush();
+        if (tail.tail) {
+          acc += tail.tail;
+          streamedAny = true;
+          sendSSE({ content: tail.tail });
+        }
+        for (const spec of tail.figureStarts) {
+          figureSeq += 1;
+          pendingFigures.push({ id: figureSeq, prompt: spec.prompt });
+          sendSSE({ imageStart: figureSeq, prompt: spec.prompt, caption: spec.caption });
+        }
+
+        // Multi-turn truncation repair and continuous streaming
+        for (let i = 0; i < MAX_CONTINUATIONS; i += 1) {
+          const verdict = detectTruncation(acc, aiService.getLastFinishReason());
+          if (!verdict.truncated) break;
+          console.info(`[AI guest stream] reply repair: ${describeVerdict(verdict)}`);
+          try {
+            let nextAcc = "";
+            const continuationMessages: AIChatMessage[] = [
+              ...augmented.slice(-6),
+              { role: "assistant", content: acc },
+              { role: "user", content: continuationRequest(verdict.detail) },
+            ];
+            for await (const delta of aiService.chatStream(provider, continuationMessages)) {
+              const { chunks, figureStarts } = figFilter.push(delta);
+              for (const spec of figureStarts) {
+                figureSeq += 1;
+                pendingFigures.push({ id: figureSeq, prompt: spec.prompt });
+                sendSSE({ imageStart: figureSeq, prompt: spec.prompt, caption: spec.caption });
+              }
+              for (const chunk of chunks) {
+                nextAcc += chunk;
+                streamedAny = true;
+                sendSSE({ content: chunk });
+              }
+            }
+            const continuationTail = figFilter.flush();
+            if (continuationTail.tail) {
+              nextAcc += continuationTail.tail;
+              streamedAny = true;
+              sendSSE({ content: continuationTail.tail });
+            }
+            for (const spec of continuationTail.figureStarts) {
+              figureSeq += 1;
+              pendingFigures.push({ id: figureSeq, prompt: spec.prompt });
+              sendSSE({ imageStart: figureSeq, prompt: spec.prompt, caption: spec.caption });
+            }
+            if (nextAcc.trim()) {
+              acc = joinContinued(acc, nextAcc);
+              continued += 1;
+              continue;
+            }
+          } catch (contErr) {
+            console.warn(`[AI guest stream] continuation ${i + 1} failed:`, contErr);
+          }
+          break;
+        }
+
+        // Draw figures if requested
+        for (const fig of pendingFigures) {
+          const result = await generateVeerImage(fig.prompt);
+          const ok = !!result.url;
+          sendSSE({ [ok ? "imageSuccess" : "imageFailed"]: fig.id, url: ok ? result.url : undefined, reason: ok ? undefined : result.reason });
+        }
+
+        sendSSE({ done: true, remaining, limit: GUEST_DAILY_LIMIT, continued: continued > 0, continuations: continued });
+      } catch (err) {
+        if (consumed && !streamedAny) {
+          await rollbackGuestSlot(ip, deviceId).catch(() => {});
+        }
+        const errorId = newErrorId();
+        logServerError(err, errorId, "POST /api/ai/guest (stream)");
+        res.write(
+          `event: error\ndata: ${JSON.stringify({ error: "AI request failed", errorId })}\n\n`,
+        );
+      }
+      res.end();
+      return;
+    }
 
     // "" runs the ordered chain (agnes → openrouter → internal).
     //

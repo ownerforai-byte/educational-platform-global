@@ -40,7 +40,7 @@ import {
   MessageSquare,
 } from "lucide-react";
 import {
-  chat,
+  streamChat,
   guestChat,
   getChatHistory,
   getChatSessions,
@@ -72,6 +72,7 @@ import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
 import { MathMarkdown } from "@/components/content/math-markdown";
+import { drawFigureWithPuter } from "@/lib/puter-image";
 import { stripLinksForCopy } from "@/lib/ai/clean-copy";
 import { cn } from "@/lib/utils";
 
@@ -423,6 +424,9 @@ export function TutorConsole() {
   const [messages, setMessages] = useState<AIChatMessage[]>([]);
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
+  // True from the first streamed token until the answer completes — retires
+  // the "thinking" dots while the bubble is visibly writing itself.
+  const [streaming, setStreaming] = useState(false);
   const [thinkIdx, setThinkIdx] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
@@ -678,37 +682,105 @@ export function TutorConsole() {
 
       try {
         const payload = [systemMessageFor(effectiveMode), ...outbound];
+        // LIVE streaming (owner 2026-09-30): deltas reach the student as the
+        // provider generates them for both signed-in and guest users.
+        let liveAcc = "";
+        let liveCredits: number | null = null;
+        let liveRemaining: number | null = null;
+        let sawToken = false;
+        const figs = new Map<
+          number,
+          { prompt: string; caption?: string; status: "pending" | "done" | "failed"; url?: string }
+        >();
+        const figureBlocks = (): string =>
+          [...figs.values()]
+            .map((f) =>
+              f.status === "done" && f.url
+                ? `\n\n![${f.caption || "Veer-drawn figure"}](${f.url})\n\n\n\n\n\n`
+                : f.status === "pending"
+                  ? "\n\n*🎨 Veer is drawing a figure…*"
+                  : "",
+            )
+            .join("");
+        let lastPaint = 0;
+        const paintLive = (force: boolean) => {
+          const now = Date.now();
+          if (!force && now - lastPaint < 40) return;
+          lastPaint = now;
+          const snapshot = liveAcc + figureBlocks();
+          setMessages((prev) => {
+            const next = [...prev];
+            const last = next[next.length - 1];
+            if (last?.role === "assistant") next[next.length - 1] = { role: "assistant", content: snapshot };
+            return next;
+          });
+        };
+        try {
+          for await (const chunk of streamChat(payload, undefined, { isGuest: !isLoggedIn })) {
+            if (typeof chunk === "string") {
+              if (!sawToken) {
+                sawToken = true;
+                liveAcc = chunk;
+                setStreaming(true);
+                setMessages((prev) => [...prev, { role: "assistant", content: chunk + figureBlocks() }]);
+              } else {
+                liveAcc += chunk;
+                paintLive(false);
+              }
+            } else if ("imageStart" in chunk) {
+              figs.set(chunk.imageStart, { prompt: chunk.prompt, caption: chunk.caption, status: "pending" });
+              paintLive(true);
+            } else if ("imageSuccess" in chunk) {
+              const f = figs.get(chunk.imageSuccess);
+              if (f) { f.status = "done"; f.url = chunk.url; }
+              paintLive(true);
+            } else if ("imageFailed" in chunk) {
+              const f = figs.get(chunk.imageFailed);
+              if (f) f.status = "failed";
+            } else if (typeof chunk.credits === "number") {
+              liveCredits = chunk.credits;
+            } else if (typeof chunk.remaining === "number") {
+              liveRemaining = chunk.remaining;
+            }
+          }
+        } catch (streamErr) {
+          // Keep partial text if it reached the bubble; only an empty stream
+          // re-throws so the failure banner shows.
+          if (!liveAcc.trim()) throw streamErr;
+        }
+        // Agent picks the engine: anything Agnes could not draw gets a
+        // browser-side puter.js attempt (User-Pays, free for the platform).
+        for (const f of figs.values()) {
+          if (f.status === "failed") {
+            const url = await drawFigureWithPuter(f.prompt);
+            if (url) { f.status = "done"; f.url = url; }
+          }
+        }
+        const finalContent = liveAcc + figureBlocks();
+        paintLive(true);
+        setStreaming(false);
+
+        if (!finalContent.trim()) {
+          throw new Error("No reply received from the AI. Please try again.");
+        }
+
         if (isLoggedIn) {
-          const res = await chat(payload);
-          setMessages((prev) => [
-            ...prev,
-            { role: "assistant", content: res.response },
-          ]);
-          if (typeof res.credits === "number") {
-            setDailyCredits(res.credits);
-            if (res.credits <= 0) setPoolEmpty(true);
+          if (liveCredits !== null) {
+            setDailyCredits(liveCredits);
+            if (liveCredits <= 0) setPoolEmpty(true);
           }
           saveChatHistory(sessionRef.current, [
             { role: "user", content },
-            { role: "assistant", content: res.response },
+            { role: "assistant", content: finalContent },
           ])
             .then(() => refreshSessions())
             .catch(() => {});
         } else {
-          const res = await guestChat(payload);
-          setMessages((prev) => [
-            ...prev,
-            { role: "assistant", content: res.response },
-          ]);
-          const used =
-            MAX_GUEST_MESSAGES -
-            (res.remaining ?? MAX_GUEST_MESSAGES - guestCount - 1);
-          const next = Math.min(
-            MAX_GUEST_MESSAGES,
-            Math.max(guestCount + 1, used),
-          );
-          writeGuestCount(next);
-          setGuestCount(next);
+          const used = liveRemaining !== null
+            ? Math.min(MAX_GUEST_MESSAGES, Math.max(0, MAX_GUEST_MESSAGES - liveRemaining))
+            : Math.min(MAX_GUEST_MESSAGES, guestCount + 1);
+          writeGuestCount(used);
+          setGuestCount(used);
         }
       } catch (err: unknown) {
         console.error("Tutor console error:", err);
@@ -743,6 +815,7 @@ export function TutorConsole() {
         }
       } finally {
         setSending(false);
+        setStreaming(false);
       }
     },
     [sending, isGuestLimited, creditsExhausted, isLoggedIn, guestCount, refreshSessions],
@@ -1084,7 +1157,7 @@ export function TutorConsole() {
               );
             })}
 
-            {sending && (
+            {sending && !streaming && (
               <div className="flex gap-3 animate-pop-in">
                 <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-emerald-500/20 to-primary/20 border border-emerald-500/30 text-emerald-600 flex items-center justify-center shrink-0 mt-1">
                   <CaptainAvatar className="h-3.5 w-3.5" />

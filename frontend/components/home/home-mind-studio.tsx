@@ -5,17 +5,20 @@ import {
   FileJson,
   MousePointerClick,
   Network,
+  Sparkles,
   Tags,
 } from "lucide-react";
 
 /**
- * Mind Studio launcher — the home entry for the local mind-map workspace.
+ * Mind Studio launcher — the home entry for the AI diagram workspace.
  *
- * Copy stays literal about what the feature actually does: nodes on a canvas,
- * deterministic classification that runs in the browser (no AI calls, no
- * network requests), a seeded Physics demo, JSON import/export, and
- * localStorage persistence. The preview on the right is a static mockup of the
- * workspace chrome — purely decorative, renders nothing interactive.
+ * Copy stays literal about what the feature actually does: AI generation of
+ * mindmaps/trees/flowcharts and friends through Agnes (platform key, server
+ * side) with the guest pool and puter.js as browser-side fallbacks, local
+ * deterministic classification for fact cards, a seeded Physics demo, JSON
+ * import/export, and localStorage persistence. The preview on the right is a
+ * static mockup of the workspace chrome — purely decorative, renders nothing
+ * interactive.
  */
 export function HomeMindStudio() {
   return (
@@ -32,7 +35,7 @@ export function HomeMindStudio() {
           <div>
             <div className="inline-flex items-center gap-2 rounded-full border border-violet-500/25 bg-violet-500/10 px-3.5 py-1.5 text-xs font-semibold text-violet-600 dark:text-violet-300">
               <Network className="h-3.5 w-3.5" />
-              <span>Local workspace · no AI calls, no server round-trips</span>
+              <span>AI diagrams · Agnes first, puter.js fallback</span>
             </div>
 
             <h2
@@ -46,12 +49,14 @@ export function HomeMindStudio() {
             </h2>
 
             <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
-              Open a dark, glassy workspace where a chapter becomes a living
-              map: drag, zoom and collapse concept nodes on a canvas with a
-              minimap, then watch every fact get classified locally — domain →
-              subject → topic → concept, with fact type, tags, confidence and
-              plain-language reasoning. It all runs inside your browser:
-              deterministic keyword rules, no AI service, no network requests.
+              Open a dark, glassy workspace and let AI turn any topic into a
+              living map: mindmaps, trees, flowcharts, org hierarchies,
+              timelines and sequence diagrams, drawn on a draggable canvas with
+              a minimap. Generation runs through Agnes, the platform&apos;s AI,
+              with the guest pool and puter.js in your browser as fallbacks —
+              while every fact still gets classified locally (domain → subject
+              → topic → concept, with fact type, tags, confidence and
+              reasoning) by deterministic keyword rules.
             </p>
 
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
@@ -70,6 +75,10 @@ export function HomeMindStudio() {
               <li className="inline-flex items-center gap-1.5 rounded-xl border border-border/60 bg-card/80 px-3 py-2 text-xs font-semibold text-foreground/80">
                 <MousePointerClick className="h-3.5 w-3.5 text-sky-500" />
                 Drag-and-drop canvas + minimap
+              </li>
+              <li className="inline-flex items-center gap-1.5 rounded-xl border border-border/60 bg-card/80 px-3 py-2 text-xs font-semibold text-foreground/80">
+                <Sparkles className="h-3.5 w-3.5 text-violet-500" />
+                6 AI diagram types
               </li>
               <li className="inline-flex items-center gap-1.5 rounded-xl border border-border/60 bg-card/80 px-3 py-2 text-xs font-semibold text-foreground/80">
                 <Tags className="h-3.5 w-3.5 text-violet-500" />

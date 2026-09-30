@@ -60,14 +60,17 @@ function setSecurityHeaders(response: NextResponse) {
     "content-security-policy",
     [
       "default-src 'self'",
-      "script-src 'self' 'unsafe-inline' 'unsafe-eval'",
+      // puter.js (js.puter.com) is the platform's browser-side AI fallback —
+      // image drawing since 2026-09-30 and Mind Studio diagram generation.
+      // Without these two origins the CDN script itself never loads.
+      "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.puter.com",
       // fonts.googleapis.com: globals.css @imports Google Fonts — blocking it
       // makes the stylesheet load reject with a raw Event, surfacing as the
       // "[object Event]" unhandled rejection in devtools.
       "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com",
       "img-src 'self' data: https:",
       "font-src 'self' data: https://fonts.gstatic.com",
-      `connect-src 'self' ${process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com"} https://tsvbksfegvdjwczzfdcx.supabase.co wss: ws:`,
+      `connect-src 'self' ${process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com"} https://tsvbksfegvdjwczzfdcx.supabase.co wss: ws: https://api.puter.com https://api-v2.puter.com wss://api.puter.com`,
       "frame-src 'none'",
       "worker-src 'self' blob:",
     ].join("; ") + ";",

@@ -128,15 +128,22 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
 
     // Handle streaming
     if (stream) {
-      res.setHeader("Content-Type", "text/event-stream");
-      res.setHeader("Cache-Control", "no-cache");
+      res.setHeader("Content-Type", "text/event-stream; charset=utf-8");
+      res.setHeader("Cache-Control", "no-cache, no-transform");
       res.setHeader("Connection", "keep-alive");
+      res.setHeader("X-Accel-Buffering", "no");
+      if (typeof res.flushHeaders === "function") res.flushHeaders();
 
       // Declared before the `try` so the `catch` below can tell "nothing
       // reached the student" (refund) from "a partial answer already showed"
       // (keep the credit) after a mid-stream failure.
       let streamedAny = false;
       let figureSeq = 0;
+      const sendSSE = (obj: any) => {
+        res.write(`data: ${JSON.stringify(obj)}\n\n`);
+        if (typeof (res as any).flush === "function") (res as any).flush();
+      };
+
       try {
         // LIVE streaming (owner 2026-09-30): deltas reach the student as the
         // provider generates them — the agent-working feel, and long answers
@@ -155,49 +162,70 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
           for (const spec of figureStarts) {
             figureSeq += 1;
             pendingFigures.push({ id: figureSeq, prompt: spec.prompt });
-            res.write(`data: ${JSON.stringify({ imageStart: figureSeq, prompt: spec.prompt, caption: spec.caption })}\n\n`);
+            sendSSE({ imageStart: figureSeq, prompt: spec.prompt, caption: spec.caption });
           }
           for (const chunk of chunks) {
             acc += chunk;
             streamedAny = true;
-            res.write(`data: ${JSON.stringify({ content: chunk })}\n\n`);
+            sendSSE({ content: chunk });
           }
         }
         const tail = figFilter.flush();
         if (tail.tail) {
           acc += tail.tail;
           streamedAny = true;
-          res.write(`data: ${JSON.stringify({ content: tail.tail })}\n\n`);
+          sendSSE({ content: tail.tail });
         }
         for (const spec of tail.figureStarts) {
           figureSeq += 1;
           pendingFigures.push({ id: figureSeq, prompt: spec.prompt });
-          res.write(`data: ${JSON.stringify({ imageStart: figureSeq, prompt: spec.prompt, caption: spec.caption })}\n\n`);
+          sendSSE({ imageStart: figureSeq, prompt: spec.prompt, caption: spec.caption });
         }
 
-        // A cut answer is the worse defect, so truncation repair still runs:
-        // one follow-up turn is stitched on as its own chunk. The length
-        // floor stays on the non-stream path — a streamed reply is deep by
-        // construction, and a floor retry would double the cost.
+        // A cut answer is repaired incrementally: continuations STREAM directly
+        // to the student chunk-by-chunk so comprehensive knowledge finishes seamlessly.
         for (let i = 0; i < MAX_CONTINUATIONS; i += 1) {
           const verdict = detectTruncation(acc, aiService.getLastFinishReason());
           if (!verdict.truncated) break;
           console.info(`[AI stream] reply repair: ${describeVerdict(verdict)}`);
           try {
-            const next = await aiService.chat(provider, [
+            let nextAcc = "";
+            const continuationMessages: AIChatMessage[] = [
               ...messages.slice(-6),
               { role: "assistant", content: acc },
               { role: "user", content: continuationRequest(verdict.detail) },
-            ]);
-            if (next && next.trim()) {
-              acc = joinContinued(acc, next);
+            ];
+            for await (const delta of aiService.chatStream(provider, continuationMessages)) {
+              const { chunks, figureStarts } = figFilter.push(delta);
+              for (const spec of figureStarts) {
+                figureSeq += 1;
+                pendingFigures.push({ id: figureSeq, prompt: spec.prompt });
+                sendSSE({ imageStart: figureSeq, prompt: spec.prompt, caption: spec.caption });
+              }
+              for (const chunk of chunks) {
+                nextAcc += chunk;
+                streamedAny = true;
+                sendSSE({ content: chunk });
+              }
+            }
+            const continuationTail = figFilter.flush();
+            if (continuationTail.tail) {
+              nextAcc += continuationTail.tail;
+              streamedAny = true;
+              sendSSE({ content: continuationTail.tail });
+            }
+            for (const spec of continuationTail.figureStarts) {
+              figureSeq += 1;
+              pendingFigures.push({ id: figureSeq, prompt: spec.prompt });
+              sendSSE({ imageStart: figureSeq, prompt: spec.prompt, caption: spec.caption });
+            }
+            if (nextAcc.trim()) {
+              acc = joinContinued(acc, nextAcc);
               continued += 1;
-              res.write(`data: ${JSON.stringify({ content: next })}\n\n`);
               continue;
             }
-          } catch {
-            // A failed continuation must not cost the student the partial
-            // answer they are already watching: ship what we have.
+          } catch (contErr) {
+            console.warn(`[AI stream] continuation ${i + 1} failed:`, contErr);
           }
           break;
         }
@@ -214,9 +242,9 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
               ? `[image-gen] stream fig ${fig.id} ready in ${Date.now() - t0}ms`
               : `[image-gen] stream fig ${fig.id} failed: ${result.reason}`,
           );
-          res.write(`data: ${JSON.stringify({ [ok ? "imageSuccess" : "imageFailed"]: fig.id, url: ok ? result.url : undefined, reason: ok ? undefined : result.reason })}\n\n`);
+          sendSSE({ [ok ? "imageSuccess" : "imageFailed"]: fig.id, url: ok ? result.url : undefined, reason: ok ? undefined : result.reason });
         }
-        res.write(`data: ${JSON.stringify({ done: true, credits: creditsLeft ?? undefined, continued: continued > 0, continuations: continued })}\n\n`);
+        sendSSE({ done: true, credits: creditsLeft ?? undefined, continued: continued > 0, continuations: continued });
       } catch (err) {
         // SSE headers are already sent, so serverError() cannot be used — but
         // the raw provider error still must not reach the client. Log it under

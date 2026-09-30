@@ -19,7 +19,10 @@
 declare global {
   interface Window {
     puter?: {
-      ai?: { txt2img: (prompt: string, opts?: Record<string, unknown>) => Promise<unknown> };
+      ai?: {
+      txt2img: (prompt: string, opts?: Record<string, unknown>) => Promise<unknown>;
+      chat?: (prompt: string, opts?: Record<string, unknown>) => Promise<unknown>;
+    };
       auth?: { isSignedIn: () => boolean; signIn: () => Promise<unknown> };
     };
   }
@@ -28,8 +31,10 @@ declare global {
 type Puter = NonNullable<Window["puter"]>;
 let puterPromise: Promise<Puter | null> | null = null;
 
-/** Lazily load Puter.js exactly once per page. Resolves null when unavailable. */
-function loadPuter(): Promise<Puter | null> {
+/** Lazily load Puter.js exactly once per page. Resolves null when unavailable.
+ *  Exported so the text engine (lib/puter-chat.ts) reuses this exact loader —
+ *  one <script> tag per page, shared by image and chat fallbacks. */
+export function loadPuter(): Promise<Puter | null> {
   if (typeof window === "undefined") return Promise.resolve(null);
   if (window.puter?.ai?.txt2img) {
     return Promise.resolve(window.puter ?? null);

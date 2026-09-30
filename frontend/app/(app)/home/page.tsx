@@ -47,7 +47,7 @@ export default async function HomePage() {
       {/* Owner notice — public, never gated. Owner intro + internal login. */}
       <HomeOwnerNotice />
 
-      {/* Mind Studio launcher — local workspace entry, zero network. */}
+      {/* Mind Studio launcher — AI diagram workspace entry (Agnes → puter.js). */}
       <HomeMindStudio />
 
       {/* Unified academic directory — one card, gated behind Gmail sign-in.

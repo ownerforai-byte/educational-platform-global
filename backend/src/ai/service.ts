@@ -873,6 +873,7 @@ class AgnesProvider implements AIProvider {
 
   async *chatStream(messages: AIChatMessage[]): AsyncGenerator<string> {
     if (!this.apiKey) throw new Error("Missing Agnes API key");
+    this.lastFinishReason = "";
     const systemPrompt = messages.find((m) => m.role === "system")?.content ?? "";
     const enriched: AIChatMessage[] = [
       { role: "system", content: systemPrompt },
@@ -998,6 +999,19 @@ async function* sseEvents(res: Response): AsyncGenerator<any> {
       }
     }
   }
+  if (buffer.trim()) {
+    const t = buffer.trim();
+    if (t.startsWith("data:")) {
+      const data = t.slice(5).trim();
+      if (data && data !== "[DONE]") {
+        try {
+          yield JSON.parse(data);
+        } catch {
+          // ignore
+        }
+      }
+    }
+  }
 }
 
 export class AIService {
@@ -1012,7 +1026,7 @@ export class AIService {
    * the order with AI_CHAIN_ORDER (comma-separated provider names).
    */
   private chainProviders(): AIProvider[] {
-    const configured = (process.env.AI_CHAIN_ORDER || "agnes,openrouter")
+    const configured = (process.env.AI_CHAIN_ORDER || "agnes")
       .split(",")
       .map((s) => s.trim().toLowerCase())
       .filter(Boolean);

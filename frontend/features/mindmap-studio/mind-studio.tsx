@@ -5,6 +5,19 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import {
+  DIAGRAM_TYPES,
+  ENGINE_LABELS,
+  generateDiagram,
+  type DiagramType,
+} from "./generate";
 
 const MAP_STORAGE_KEY = "mindstudio-map-v1";
 const OVERRIDE_STORAGE_KEY = "mindstudio-overrides-v1";
@@ -418,6 +431,16 @@ export function MindStudio() {
   const canvasRef = useRef<HTMLDivElement | null>(null);
   const fileInputRef = useRef<HTMLInputElement | null>(null);
 
+  // ── AI Generate (Agnes → guest pool → puter.js) ─────────────────────────
+  const [genOpen, setGenOpen] = useState(true);
+  const [genTopic, setGenTopic] = useState("");
+  const [genType, setGenType] = useState<DiagramType>("mindmap");
+  const [genBusy, setGenBusy] = useState(false);
+  const [genStatus, setGenStatus] = useState<{
+    kind: "busy" | "done" | "error";
+    text: string;
+  } | null>(null);
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       window.localStorage.setItem(MAP_STORAGE_KEY, JSON.stringify(nodes));
@@ -501,6 +524,73 @@ export function MindStudio() {
     },
     [commitNodes, nodes, selectedNode],
   );
+
+  /** Frame a node set in the canvas viewport after a generation. */
+  const fitToNodes = useCallback((nextNodes: MindNode[]) => {
+    if (!nextNodes.length) return;
+    const rect = canvasRef.current?.getBoundingClientRect();
+    const width = rect?.width ?? 900;
+    const height = rect?.height ?? 540;
+    const pad = 90;
+    const xs = nextNodes.map((node) => node.x);
+    const ys = nextNodes.map((node) => node.y);
+    const minX = Math.min(...xs) - pad;
+    const maxX = Math.max(...xs) + pad;
+    const minY = Math.min(...ys) - pad;
+    const maxY = Math.max(...ys) + pad;
+    const nextScale = clamp(
+      Math.min(width / Math.max(maxX - minX, 1), height / Math.max(maxY - minY, 1)),
+      0.45,
+      1.2,
+    );
+    setScale(nextScale);
+    setPan({
+      x: width / 2 - ((minX + maxX) / 2) * nextScale,
+      y: height / 2 - ((minY + maxY) / 2) * nextScale,
+    });
+  }, []);
+
+  /** Ask the engine chain for a diagram, replace the map, frame the result. */
+  const handleGenerate = useCallback(async () => {
+    const topic = genTopic.trim();
+    if (!topic || genBusy) return;
+    setGenBusy(true);
+    setGenStatus({ kind: "busy", text: "Starting…" });
+    try {
+      const result = await generateDiagram({
+        topic,
+        type: genType,
+        onEngine: (engine) =>
+          setGenStatus({
+            kind: "busy",
+            text:
+              engine === "agnes"
+                ? "Asking Agnes…"
+                : engine === "guest-pool"
+                  ? "Agnes busy — using the guest pool…"
+                  : "Switching to puter.js…",
+          }),
+      });
+      commitNodes(result.nodes);
+      setSelectedNodeId("root");
+      setInspectedNodeId("root");
+      fitToNodes(result.nodes);
+      const typeLabel = DIAGRAM_TYPES.find((d) => d.id === genType)?.label ?? genType;
+      const credits =
+        typeof result.credits === "number" ? ` · ${result.credits} credits left` : "";
+      setGenStatus({
+        kind: "done",
+        text: `${typeLabel}: ${result.nodes.length} nodes via ${ENGINE_LABELS[result.engine]}${credits} · Ctrl+Z undoes`,
+      });
+    } catch (error) {
+      setGenStatus({
+        kind: "error",
+        text: (error instanceof Error ? error.message : "Generation failed").slice(0, 180),
+      });
+    } finally {
+      setGenBusy(false);
+    }
+  }, [commitNodes, fitToNodes, genBusy, genTopic, genType]);
 
   useEffect(() => {
     const handleKeyDown = (event: KeyboardEvent) => {
@@ -693,6 +783,89 @@ export function MindStudio() {
           </div>
 
           <input ref={fileInputRef} type="file" accept="application/json" onChange={importMap} className="hidden" />
+
+          {/* AI Generate — Agnes first, guest pool, puter.js last */}
+          <div className="rounded-xl border border-violet-400/25 bg-violet-500/5 p-3">
+            <div className="flex items-center justify-between gap-2">
+              <span className="text-[10px] font-semibold uppercase tracking-[0.18em] text-violet-300">
+                AI Generate · mindmap, tree, flowchart &amp; more
+              </span>
+              <button
+                type="button"
+                aria-expanded={genOpen}
+                className="rounded border border-white/15 bg-slate-900/60 px-2 py-1 text-[10px] uppercase tracking-[0.12em] text-slate-200"
+                onClick={() => setGenOpen((open) => !open)}
+              >
+                {genOpen ? "Hide" : "Show"}
+              </button>
+            </div>
+
+            {genOpen ? (
+              <div className="mt-3 space-y-2">
+                <Textarea
+                  value={genTopic}
+                  onChange={(event) => setGenTopic(event.target.value)}
+                  rows={2}
+                  placeholder='Topic or pasted text — e.g. "Photosynthesis", "The Mughal Empire", a whole chapter…'
+                  className="border-white/10 bg-slate-900/70 text-sm text-slate-100 placeholder:text-slate-500"
+                />
+                <div className="flex flex-wrap items-center gap-2">
+                  <Select
+                    value={genType}
+                    onValueChange={(next) => setGenType(next as DiagramType)}
+                  >
+                    <SelectTrigger className="h-8 w-[190px] border-white/15 bg-slate-900/60 text-xs text-slate-100">
+                      <SelectValue>
+                        {DIAGRAM_TYPES.find((d) => d.id === genType)?.label}
+                      </SelectValue>
+                    </SelectTrigger>
+                    <SelectContent className="border-white/15 bg-slate-950 text-slate-100">
+                      {DIAGRAM_TYPES.map((option) => (
+                        <SelectItem key={option.id} value={option.id}>
+                          {option.label}
+                        </SelectItem>
+                      ))}
+                    </SelectContent>
+                  </Select>
+
+                  <Button
+                    size="sm"
+                    onClick={() => void handleGenerate()}
+                    disabled={genBusy || !genTopic.trim()}
+                    className="bg-violet-500 text-white hover:bg-violet-400/90"
+                  >
+                    {genBusy ? (
+                      <>
+                        <span className="mr-1 h-3.5 w-3.5 animate-spin rounded-full border-2 border-white/70 border-t-transparent" />
+                        Generating…
+                      </>
+                    ) : (
+                      "Generate with AI"
+                    )}
+                  </Button>
+
+                  {genStatus ? (
+                    <span
+                      role="status"
+                      aria-live="polite"
+                      className={[
+                        "text-[11px]",
+                        genStatus.kind === "done" ? "text-emerald-300" : "",
+                        genStatus.kind === "error" ? "text-rose-300" : "",
+                        genStatus.kind === "busy" ? "text-slate-300" : "",
+                      ].join(" ")}
+                    >
+                      {genStatus.text}
+                    </span>
+                  ) : null}
+                </div>
+                <p className="text-[10px] leading-relaxed text-slate-400">
+                  Agnes (platform AI) → guest pool → puter.js in your browser. Generation
+                  replaces the map — Ctrl+Z undoes. Classification stays local.
+                </p>
+              </div>
+            ) : null}
+          </div>
 
           <div
             ref={canvasRef}

@@ -19,8 +19,8 @@
  * negative ships a broken answer — so only high-confidence signals count.
  */
 
-/** Bounded continuation attempts. Each one costs one short extra generation. */
-export const MAX_CONTINUATIONS = 2;
+/** Bounded continuation attempts. Each one streams the next section until complete. */
+export const MAX_CONTINUATIONS = 4;
 
 export interface TruncationVerdict {
   truncated: boolean;

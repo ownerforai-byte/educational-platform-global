@@ -47,6 +47,8 @@ export async function chat(
 export interface StreamChatMeta {
   done: boolean;
   credits?: number;
+  remaining?: number;
+  limit?: number;
   continued?: boolean;
 }
 
@@ -77,15 +79,25 @@ export type StreamChunk =
   | StreamImageSuccess
   | StreamImageFailed;
 
+export interface StreamChatOptions {
+  isGuest?: boolean;
+}
+
 export async function* streamChat(
   messages: AIChatMessage[],
-  provider?: string
+  provider?: string,
+  options?: StreamChatOptions
 ): AsyncGenerator<StreamChunk, void, unknown> {
   let body: AIChatRequest = { messages, stream: true };
   if (provider) {
     body.provider = provider;
   }
   body = withLatestImages(messages, body);
+
+  const hasAuth =
+    typeof window !== "undefined" &&
+    (!!getStoredToken() || document.cookie.includes("sb-access-token="));
+  const isGuest = options?.isGuest !== undefined ? options.isGuest : !hasAuth;
 
   // Bearer restored 2026-09-25: cookie-only auth broke streams once the 1h
   // access token expired (no refresh-retry exists on stream requests).
@@ -94,24 +106,25 @@ export async function* streamChat(
   // stale Bearer 401s the stream. On 401: drop the stored token and retry once
   // cookie-only (streams have no refresh-retry middleware).
   for (let attempt = 0; attempt < 2; attempt += 1) {
+    const targetPath = isGuest ? "/api/ai/guest" : "/api/ai";
     const headers: Record<string, string> = {
       "Content-Type": "application/json",
     };
-    if (attempt === 0) {
+    if (!isGuest && attempt === 0) {
       const token = getStoredToken();
       if (token) {
         headers["Authorization"] = `Bearer ${token}`;
       }
     }
 
-    const response = await fetch("/api/ai", {
+    const response = await fetch(targetPath, {
       method: "POST",
       credentials: "include",
       headers,
       body: JSON.stringify(body),
     });
 
-    if (response.status === 401 && attempt === 0) {
+    if (response.status === 401 && !isGuest && attempt === 0) {
       clearStoredToken();
       continue;
     }
@@ -129,7 +142,21 @@ export async function* streamChat(
 
     while (true) {
       const { done, value } = await reader.read();
-      if (done) return;
+      if (done) {
+        if (buffer.trim()) {
+          const trimmed = buffer.trim();
+          if (trimmed.startsWith("data:")) {
+            const data = trimmed.slice(5).trim();
+            if (data && data !== "[DONE]") {
+              try {
+                const parsed = JSON.parse(data);
+                if (typeof parsed.content === "string") yield parsed.content;
+              } catch {}
+            }
+          }
+        }
+        return;
+      }
 
       buffer += decoder.decode(value, { stream: true });
       const lines = buffer.split("\n");
@@ -139,13 +166,15 @@ export async function* streamChat(
         const trimmed = line.trim();
         if (!trimmed.startsWith("data:")) continue;
         const data = trimmed.slice(5).trim();
-        if (!data) continue;
+        if (!data || data === "[DONE]") continue;
 
         let parsed: {
           content?: string;
           done?: boolean;
           error?: string;
           credits?: number;
+          remaining?: number;
+          limit?: number;
           continued?: boolean;
           imageStart?: number;
           imageSuccess?: number;
@@ -175,15 +204,15 @@ export async function* streamChat(
           yield { imageFailed: parsed.imageFailed, reason: parsed.reason };
           continue;
         }
-        if (parsed.content) yield parsed.content;
+        if (typeof parsed.content === "string") yield parsed.content;
         if (parsed.done) {
-          if (typeof parsed.credits === "number" || parsed.continued) {
-            yield {
-              done: true,
-              credits: parsed.credits,
-              continued: parsed.continued,
-            };
-          }
+          yield {
+            done: true,
+            credits: parsed.credits,
+            remaining: parsed.remaining,
+            limit: parsed.limit,
+            continued: parsed.continued,
+          };
           return;
         }
       }
