@@ -104,8 +104,13 @@ describe("retrieval (scan the concept first)", () => {
   test("scores are descending and hits clear the coverage threshold", () => {
     const hits = retrieveCurriculum("what is photosynthesis", 3);
     expect(hits.length).toBeGreaterThan(0);
-    for (let i = 1; i < hits.length; i++) {
-      expect(hits[i].score).toBeLessThanOrEqual(hits[i - 1].score);
+    // Ranked records never rise. An owner drop-in is promoted to the FRONT on
+    // purpose (`selectHits`), because the character ceiling cuts whatever is
+    // attached last — so the invariant is asserted over the ranked records,
+    // not over the owner's deliberately front-placed material.
+    const ranked = hits.filter((h) => !h.entry.dropIn);
+    for (let i = 1; i < ranked.length; i++) {
+      expect(ranked[i].score).toBeLessThanOrEqual(ranked[i - 1].score);
     }
     expect(hasCurriculumCoverage("what is photosynthesis")).toBe(true);
   }, CORPUS_TIMEOUT);

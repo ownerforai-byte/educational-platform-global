@@ -1,0 +1,31 @@
+{
+  "class": "unknown",
+  "subject": "physics",
+  "unit": "PHYSICS — Grade 11 (NEB) MCQ Test — A. PHYSICAL QUANTITIES (Precision, Significant Figures, Dimensions) — Q1–30",
+  "title": "PHYSICS — Grade 11 (NEB) MCQ Test — A. PHYSICAL QUANTITIES (Precision, Significant Figures, Dimensions) — Q1–30 (part 1)",
+  "source": "Physics MCQ Test OPTIMIZED — PHYSICS — Grade 11 (NEB) MCQ Test — A. PHYSICAL QUANTITIES (Precision, Significant Figures, Dimensions) — Q1–30, pages 1-1 [Physics_MCQ_Test_OPTIMIZED.md]",
+  "textbookText": [
+    "**30 questions per topic (150 total).** Each option represents a distinct concept, property, example, or fact — not just number juggling. Answer key with concept notes is at the end.",
+    "---",
+    "1. Which of these best defines \"precision\" of a measurement? A) Closeness of a measured value to the true value B) Closeness of repeated measurements to each other, regardless of true value C) The number of significant figures reported D) The smallest division of the measuring instrument",
+    "2. A measurement is accurate but not precise. This means: A) Repeated readings cluster tightly but far from true value B) Repeated readings scatter widely but average close to true value C) Every reading is identical to the true value D) The instrument has zero error",
+    "3. The number 0.004050 has how many significant figures? A) 2 (leading zeros never count, trailing zero after decimal doesn't count) B) 4 (zeros between/after non-zero digits after decimal count) C) 6 (all digits including leading zeros count) D) 3 (only non-zero digits count)",
+    "4. In addition/subtraction of measured quantities, the result should be rounded to: A) The least number of significant figures among the quantities B) The least number of decimal places among the quantities C) The greatest number of decimal places among the quantities D) The average number of digits of all quantities",
+    "5. Which quantity is dimensionless? A) Strain (ratio of two lengths) B) Stress (force per area) C) Angular velocity (rad/s, radian is dimensionless but has time dimension) D) Torque (force × length)",
+    "6. The dimensional formula of force is: A) [MLT⁻²] — mass × acceleration B) [ML²T⁻²] — same as energy C) [MLT⁻¹] — same as momentum D) [ML⁻¹T⁻²] — same as pressure",
+    "7. Dimensional analysis CANNOT be used to: A) Check homogeneity of a physical equation B) Convert units from one system to another C) Derive a relation involving trigonometric or exponential functions D) Derive a relation among physical quantities (up to a dimensionless constant)",
+    "8. The principle of homogeneity of dimensions states: A) Only quantities of the same dimension can be added or subtracted B) All physical quantities must have the same numerical value C) Dimensions of a quantity change with the unit system used D) Every equation must contain exactly three fundamental quantities",
+    "9. Which pair has the SAME dimensions? A) Work and Torque ([ML²T⁻²] both) B) Pressure and Force C) Momentum and Impulse of force per unit time D) Power and Energy",
+    "10. A physical quantity has dimension [ML²T⁻³]. It could represent: A) Power B) Energy C) Momentum D) Force",
+    "11. The number of significant figures in 6.020 × 10³ is: A) 4 B) 2 C) 3 D) 7",
+    "12. In multiplication/division, the result's significant figures equal: A) The least number of significant figures among the operands B) The greatest number of significant figures among the operands C) The sum of significant figures of all operands D) Always 3, by convention",
+    "13. Systematic error in an instrument (like zero error in a screw gauge) affects: A) Accuracy of measurement, consistently shifting every reading B) Precision only, causing random scatter C) Neither accuracy nor precision D) Only the unit of the measured quantity",
+    "14. Which of these is a fundamental (base) physical quantity in SI? A) Luminous intensity (candela) B) Force (newton) C) Velocity (m/s) D) Density (kg/m³)",
+    "15. Random errors in measurement are best reduced by: A) Taking many readings and averaging them B) Using a more expensive instrument only C) Rounding off all figures to one significant digit D) Ignoring the least count of the instrument",
+    "16. Dimensional formula of angular momentum is: A) [ML²T⁻¹] B) [MLT⁻¹] C) [ML²T⁻²] D) [MLT⁻²]",
+    "17. Which statement about significant figures is TRUE? A) All non-zero digits are always significant B) Trailing zeros in a whole number without a decimal are always significant C) Leading zeros are always significant D) Significant figures depend on the unit chosen for the quantity",
+    "18. Checking the equation v² = u² + 2as by dimensional analysis confirms: A) All terms have dimension [LT⁻¹]² = [L²T⁻²], so the equation is dimensionally consistent B) The equation is numerically exact including constants C) The equation is dimensionally wrong because acceleration has no length dimension D) Time dimension is missing from the equation",
+    "19. A quantity measured as 25.0 cm implies the uncertainty lies in: A) The tenths place (last digit is the doubtful/estimated digit) B) The units place only C) No uncertainty at all — the value is exact D) The hundreds place",
+    "20. Which of the following CANNOT be derived using dimensional analysis alone? A) The exact numerical (dimensionless) constant in a formula, e.g., ½ in KE = ½mv² B) Whether an equation is dimensionally homogeneous C) The dimensional formula of an unknown derived quantity D) Conversion factor between CGS and SI units of a quantity"
+  ]
+}

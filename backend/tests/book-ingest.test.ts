@@ -130,6 +130,19 @@ describe("chapterHeading / detectChapters — where one unit ends and the next b
     expect(chapterHeading(book.pages[1])).toBeNull();
   });
 
+  it("does not repeat the title when the heading has no separator", () => {
+    // "Chapter 3. Motion" needs the split: "Chapter 3" + title. "Chapter 3
+    //  Motion" has no separator, and re-appending stored every unit twice —
+    // doubling the record title, the filename slug and the provenance line.
+    expect(chapterHeading("Chapter 3  Motion in a Straight Line\n\nbody")).toBe(
+      "Chapter 3 Motion in a Straight Line",
+    );
+    expect(chapterHeading("Chapter 3. Motion in a Straight Line\n\nbody")).toBe(
+      "Chapter 3 Motion in a Straight Line",
+    );
+    expect(chapterHeading("3. Motion in a Straight Line\n\nbody")).toBe("3 Motion in a Straight Line");
+  });
+
   it("groups the pages between two headings", () => {
     const chapters = detectChapters(book.pages, book.bookTitle);
     expect(chapters).toHaveLength(2);

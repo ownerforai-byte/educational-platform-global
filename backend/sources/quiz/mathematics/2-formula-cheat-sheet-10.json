@@ -1,0 +1,10 @@
+{
+  "class": "unknown",
+  "subject": "mathematics",
+  "unit": "2. Formula Cheat Sheet",
+  "title": "2. Formula Cheat Sheet",
+  "source": "Math MCQ Test OPTIMIZED — 2. Formula Cheat Sheet, pages 6-6 [Math_MCQ_Test_OPTIMIZED.md]",
+  "textbookText": [
+    "**Matrices:** A⁻¹ = (1/det A) · adj A · adj A = transpose(cofactor) · Cramer: x = det(Aₐ)/det(A) · rank(A)=max LI rows = max LI columns. **Complex:** |z|=√(a²+b²) · z̄ = a−ib · z·z̄ = |z|² · z+z̄=2a · (r(cosθ+isinθ))ⁿ = rⁿ(cos nθ + i sin nθ) (De Moivre) · e^(iθ)=cosθ+isinθ (Euler) · cube roots of 1: 1, ω=(−1+i√3)/2, ω² · 1+ω+ω²=0. **Conics (vertex at origin):** circle (x−h)²+(y−k)²=r² · parabola y²=4ax (focus (a,0), directrix x=−a) · ellipse x²/a²+y²/b²=1, c²=a²−b² · hyperbola x²/a²−y²/b²=1, c²=a²+b². **Calculus:** d/dx sin x=cos x · d/dx cos x=−sin x · d/dx tan x=sec²x · d/dx e^x=e^x · d/dx ln x=1/x · ∫(1/x)dx=ln|x|+C · ∫xⁿ dx=x^(n+1)/(n+1)+C · Product: u'v+uv' · Quotient: (u'v−uv')/v²."
+  ]
+}

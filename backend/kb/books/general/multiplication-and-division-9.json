@@ -1,0 +1,30 @@
+{
+  "class": "unknown",
+  "subject": "general",
+  "unit": "Multiplication and Division",
+  "title": "Multiplication and Division",
+  "source": "kech101 — Multiplication and Division, pages 12-12 [kech101.pdf]",
+  "textbookText": [
+    "Multiplication and Division These two operations follow the same rules which are there for exponential numbers, i.e.",
+    "5.6  105   6.9  108 =5.6  6.91058 ",
+    "5.6",
+    "6.9",
+    "38.64",
+    "3.864",
+    "9.8  102   2.5  106 =9.8  2.51026  =9.8  2.51026 ",
+    "= 24.50  108",
+    "= 2.450  107",
+    "5.5  104 2.7  10 =2.7  5.5 3 1034  = 0.4909  107 = 4.909  108",
+    "Addition and Subtraction For these two operations, first the numbers are written in such a way that they have the same exponent. After that, the coefficients (digit terms) are added or subtracted as the case may be.",
+    "Thus, for adding 6.65×104 and 8.95×103, exponent is made same for both the numbers. Thus, we get (6.65×104) + (0.895×104)",
+    "Then, these numbers can be added as follows (6.65 + 0.895)×104 = 7.545×104 Similarly, the subtraction of two numbers can be done as shown below:",
+    "(2.5 × 10–2) – (4.8 ×10–3) = (2.5 × 10–2) – (0.48 × 10–2) = (2.5 – 0.48)×10–2 = 2.02 × 10–2 1.4.2 Significant Figures Every experimental measurement has some amount of uncertainty associated with it because of limitation of measuring instrument and the skill of the person making the measurement. For example, mass of an object is obtained using a platform balance and it comes out to be 9.4g. On measuring the mass of this object on an analytical balance, the mass obtained is 9.4213g. The",
+    "chemistry mass obtained by an analytical balance is slightly higher than the mass obtained by using a platform balance. Therefore, digit 4 placed after decimal in the measurement by platform balance is uncertain.",
+    "The uncertainty in the experimental or the calculated values is indicated by mentioning the number of significant figures. Significant figures are meaningful digits which are known with certainty plus one which is estimated or uncertain. The uncertainty is indicated by writing the certain digits and the last uncertain digit. Thus, if we write a result as 11.2 mL, we say the 11 is certain and 2 is uncertain and the uncertainty would be +1 in the last digit. Unless otherwise stated, an uncertainty of +1 in the last digit is always understood.",
+    "There are certain rules for determining the number of significant figures. These are stated below: (1) All non-zero digits are significant. For example in 285 cm, there are three significant figures and in 0.25 mL, there are two significant figures.",
+    "(2) Zeros preceding to first non-zero digit are not significant. Such zero indicates the position of decimal point. Thus, 0.03 has one significant figure and 0.0052 has two significant figures.",
+    "(3) Zeros between two non-zero digits are significant. Thus, 2.005 has four significant figures.",
+    "(4) Zeros at the end or right of a number are significant, provided they are on the right side of the decimal point. For example, 0.200 g has three significant figures. But, if otherwise, the terminal zeros are not significant if there is no decimal point. For example, 100 has only one significant figure, but 100 has three significant figures and 100.0 has four significant figures. Such numbers are better represented in scientific notation. We can express the number 100 as 1×102 for one significant figure, 1.0×102 for two significant figures and 1.00×102 for three significant figures.",
+    "Reprint 2026-27"
+  ]
+}

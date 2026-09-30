@@ -1,0 +1,32 @@
+{
+  "class": "unknown",
+  "subject": "general",
+  "unit": "2 How to Open the Website",
+  "title": "2 How to Open the Website",
+  "source": "Add master — 2 How to Open the Website, pages 2-4 [Add master .pdf]",
+  "textbookText": [
+    "controls in the top-right) → click a topic → Topic page (with ← Previous / Next → topic controls at the bottom).",
+    "2. How to Open the Website",
+    "Easiest method (recommended): Double-click index.html . It opens directly in your browser and works completely offline. This works because the site uses <script src=\"...\"> tags to load data (not fetch() ), which avoids the CORS restrictions browsers place on file:// pages trying to load JSON. Optional method: If you later add features that need fetch() , run a lightweight local server instead: open a terminal in the study-notes folder and run python -m http.server 8000 , then visit http://localhost:8000 . Not required for the current setup — doubleclicking index.html is sufficient.",
+    "3. How to Add New Content",
+    "All content lives in js/data.js . Never edit the HTML files to add content.",
+    "Add a new chapter Open js/data.js , find the subject (e.g. physics ), and add an object to its chapters array: js { id: \"chapter-3\", title: \"Chapter 3\", description: \"Short description.\", topics: [ { id: \"topic-1\", title: \"Topic 1\" } ] }",
+    "Add a new topic to an existing chapter Add an object to that chapter's topics array: js { id: \"topic-4\", title: \"Topic 4\" }",
+    "Add the actual notes for a topic In the same file, find TOPIC_CONTENT and add an entry keyed as \"subjectKey__chapterId__topicId\" :",
+    "js \"physics__chapter-1__topic-2\": { notes: [ \"Content 1 — your first block of notes.\", \"Content 2 — your second block of notes.\", \"Content 3 — your third block of notes.\" ], diagrams: [ { type: \"placeholder\", label: \"Diagram 1\", caption: \"Describe the diagram h ], examples: [ { title: \"Example 1\", problem: \"...\", solution: \"...\" } ], practice: { mcqs: [\"Question text...\"], short: [], long: [], numericals: [] }, formulas: [ { name: \"Newton's Second Law\", expression: \"F = ma\" } ], keyPoints: [\"Key point one.\", \"Key point two.\"], summary: \"One paragraph wrapping up the topic.\",",
+    "// 8 optional extra sections shown after Summary — each is just an // array of plain strings, same as keyPoints. Leave any of them out // (or use []) and that section shows a \"not added yet\" placeholder. specialNotes: [\"Special note 1.\"], importantStatements: [\"Important statement 1.\"], importantNotes: [\"Important note 1.\"], examShortTricks: [\"Short trick 1.\"], examNotes: [\"Exam-focused note 1.\"], quickMcqs: [\"MCQ question 1.\"], importantConcepts: [\"Important concept 1.\"], importantTasks: [\"Important task 1.\"] }",
+    "You can add as many notes entries as you want (Content 1, Content 2, Content 3...) — the page automatically numbers and displays each one. Basic HTML is allowed inside any string ( <b> , <i> , <u> , <ul><li> , <table> , <sup> , <sub> , etc.).",
+    "Until a topic has a TOPIC_CONTENT entry, its page still works — it shows clean \"not added yet\" placeholders in every section instead of breaking.",
+    "Add a concept diagram (you can add more than one per topic)",
+    "In js/data.js , each topic's TOPIC_CONTENT entry has a diagrams array — add as many diagram objects as you want. As soon as a topic has 2+ diagrams, a tab strip appears automatically above the diagram box so the reader can switch between them.",
+    "js",
+    "diagrams: [ { type: \"svg\", label: \"Diagram 1\", caption: \"...\", svg: `<svg viewBox=\"0 0 48 { type: \"image\", label: \"Diagram 2\", caption: \"...\", src: \"assets/diagrams/yo ]",
+    "type: \"svg\" — paste raw <svg>...</svg> markup into the svg field. Use var(-accent) / var(--card-color) for strokes/fills so it matches light & dark mode automatically. type: \"image\" — put a PNG/SVG file in assets/diagrams/ and point src at it. label is optional — it's what shows on the tab button when there's more than one diagram.",
+    "Every diagram automatically gets zoom in/out, drag-to-pan, fullscreen, and reset controls — you don't need to build those yourself.",
+    "Add a new subject Add a new top-level key to STUDY_DATA in js/data.js , following the same shape as physics / chemistry /etc. It will automatically appear as a new home page card, in the sidebar, and in search — no HTML changes needed.",
+    "4. Packaging for Distribution",
+    "Zip the entire study-notes folder as-is. Anyone can unzip it and double-click index.html — no installation, no dependencies, works on Windows/Mac/Linux, works completely offline.",
+    "5. Recommended Access Method",
+    "Double-click index.html . This is the simplest and recommended method for this project, since all data loading uses <script> tags rather than fetch() , so there are no CORS issues when opening directly from disk. A local server is only needed if you later add fetch() based features (e.g. loading .json files instead of .js )."
+  ]
+}

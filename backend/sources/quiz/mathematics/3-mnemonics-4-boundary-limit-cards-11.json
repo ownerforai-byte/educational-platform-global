@@ -1,0 +1,11 @@
+{
+  "class": "unknown",
+  "subject": "mathematics",
+  "unit": "3. Mnemonics — 4. Boundary & Limit Cards",
+  "title": "3. Mnemonics — 4. Boundary & Limit Cards",
+  "source": "Math MCQ Test OPTIMIZED — 3. Mnemonics — 4. Boundary & Limit Cards, pages 7-7 [Math_MCQ_Test_OPTIMIZED.md]",
+  "textbookText": [
+    "- **AD-SK** → determinant of 2×2 [[a,b],[c,d]] = **AD − SK** (a·d − s·k) - **D-E-P-H** → **D**e Moivre: (cosθ+isinθ)ⁿ = cos nθ+isin nθ · **E**uler: e^iθ = cosθ+isinθ · **P**rod rule: u'v+uv' · **H**yperbola c²=a²+b² (plus); Ellipse c²=a²−b² (minus). - **“0<1<e”** → e_circle = 0 · e_ellipse ∈ (0,1) · e_parabola = 1 · e_hyperbola > 1 - **“SLA — Sin Cos tan”** → derivatives: **S**in→**C**os · **C**os→−**S**in · **T**an→sec²",
+    "- **Cramer's rule boundary:** applies ONLY when det A ≠ 0 and the system is square (same equations as unknowns). - **Euler / De Moivre boundary:** angles must be in radians when differentiating e^(iθ)-form; in degrees add π/180 factor. - **Real-variable vs complex:** for z₁,₂ complex, “z₁>z₂” is meaningless; you may compare |z₁| and |z₂| only. - **Mean Value Theorem boundary:** f must be continuous on [a,b] AND differentiable on (a,b); otherwise no guarantee of c. - **Integration boundary:** ∫(1/x)dx = ln|x|+C, NOT ln x (the |.| matters on x<0)."
+  ]
+}

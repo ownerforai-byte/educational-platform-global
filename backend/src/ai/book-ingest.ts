@@ -1,10 +1,14 @@
 /**
- * BOOK INGEST — a local PDF becomes a first-class platform source.
+ * BOOK INGEST — a local book becomes a first-class platform source.
  *
  * Owner request (2026-09-30): "I have many books PDF locally, which I want to
  * make it as a source, and whenever I ask a question related to them, it should
  * scan and present all those in polished, refined and short grammar with the
  * full concept."
+ *
+ * Follow-up (2026-09-30): the folder holds `.pdf`, `.md` AND `.docx`, so the
+ * three readers below differ on purpose — see the markdown and docx sections
+ * for why neither of them can reuse the PDF cleaning pass.
  *
  * The design answer is that nothing new has to exist at RUNTIME. The platform
  * already has a drop-in knowledge contract — `backend/kb/**\/*.json`, read by
@@ -32,6 +36,10 @@
  * Scanned books (photographs of pages) have no text layer at all: pdftotext
  * returns nothing and no amount of cleaning helps. Those pages are DETECTED and
  * reported rather than silently ingested as empty records — see `scanReport`.
+ *
+ * Which file goes WHERE is decided separately, by `source-classify.ts`: prose
+ * into the tutor corpus, MCQ papers to the quiz sink, past papers to reference,
+ * and duplicates/junk/slides/syllabi nowhere at all.
  */
 
 /** Smallest chunk worth storing: below this the corpus marks it filler anyway. */
@@ -260,7 +268,16 @@ export function chapterHeading(page: string): string | null {
       // is worse than no chapter at all.
       if (!title || title.length < 3) continue;
       if (/^(?:the|a|an|of|and|in|on|to)$/i.test(title)) continue;
-      return normaliseLine(`${match[0].split(/[.:]/)[0].trim()} ${title}`.slice(0, 90));
+      // The matched line already contains the title. Splitting on a separator
+      // only makes sense when one was there ("Chapter 3. Motion" → "Chapter 3"
+      // + "Motion"); with "Chapter 3  Motion" the split returns the whole line
+      // and re-appending the title would store every chapter twice — in the
+      // record title AND in its filename slug.
+      const raw = match[0];
+      const head = raw.split(/[.:]/)[0].trim();
+      const heading = head === raw.trim() ? normaliseLine(raw) : normaliseLine(`${head} ${title}`);
+      if (heading.length > 90) return heading.slice(0, 90).trim();
+      return heading;
     }
   }
   return null;
@@ -393,7 +410,27 @@ export function slugify(value: string, maxLength = 70): string {
  * the provenance is recorded without being taught as knowledge.
  */
 export function buildBookRecords(book: ParsedBook, maxChars = DEFAULT_MAX_CHUNK_CHARS): BookRecord[] {
-  const chapters = detectChapters(book.pages, book.bookTitle);
+  return recordsFromChapters(detectChapters(book.pages, book.bookTitle), book, maxChars);
+}
+
+/** The file-level facts every record of one book carries. */
+export interface BookMeta {
+  /** "class-11" | "class-12" | "unknown" — the corpus' own vocabulary. */
+  classLevel: string;
+  subject: string;
+  bookTitle: string;
+  sourceFile: string;
+}
+
+/**
+ * Chapters → records, shared by all three readers (`.pdf` finds its chapters
+ * from layout, `.md` from `#` headings, `.docx` from paragraph windows).
+ *
+ * The chunking and provenance rules are format-independent, so they live here
+ * once — a reader that had to re-implement them would drift on the part that
+ * decides whether a book's text actually survives into a record.
+ */
+export function recordsFromChapters(chapters: Chapter[], book: BookMeta, maxChars = DEFAULT_MAX_CHUNK_CHARS): BookRecord[] {
   const records: BookRecord[] = [];
 
   for (const chapter of chapters) {
@@ -426,14 +463,246 @@ export function buildBookRecords(book: ParsedBook, maxChars = DEFAULT_MAX_CHUNK_
 }
 
 /**
- * Relative output path for a record: `books/<subject>/<slug>-<n>.json`.
- * The counter is appended AFTER slug truncation — inside the slug it was cut
- * off by long chapter titles, so two parts of one chapter produced one name and
- * the second silently overwrote the first.
+ * Relative output path for a record: `<subject>/<slug>-<n>.json`.
+ *
+ * The TITLE alone names the file. It already carries the chapter and its
+ * `(part n)` suffix, so `unit` — which is the same chapter without that
+ * suffix — adds nothing but repetition: joining the two produced names like
+ * `1-cocci-sing-coccus-1-cocci-sing-coccus-part-1-78.json` on every chunked
+ * chapter, which is most of them.
+ *
+ * The counter is appended AFTER slug truncation. Inside the slug it was cut
+ * off by long chapter titles, so two parts of one chapter produced one name
+ * and the second silently overwrote the first.
  */
 export function recordFileName(record: BookRecord, index: number): string {
-  // Where a chunk has no part suffix the two are identical; slug it once, or
-  // the same long title fills the whole filename twice over.
-  const base = slugify(record.unit === record.title ? record.title : `${record.unit}-${record.title}`, 60);
+  const base = slugify(record.title || record.unit, 60);
   return `${slugify(record.subject)}/${base || "record"}-${index + 1}.json`;
 }
+
+// ── markdown ────────────────────────────────────────────────────────────────
+
+/**
+ * Markdown is the OPPOSITE of pdftotext output: it is already prose, already
+ * paragraphed, and its formatting is meaningful. So the PDF pipeline is
+ * deliberately NOT run over it — `cleanPage` would treat a `---` slide
+ * separator as a blank line, strip `#` headings as furniture, and re-flow a
+ * bullet list into one paragraph. Every one of those would destroy the very
+ * structure the file was optimised for.
+ *
+ * Setext underlines (`===` / `---`) are NOT headings here. In an exported slide
+ * deck `---` separates slides, and reading each of those as a chapter would cut
+ * a 40-slide deck into 40 records of one paragraph each.
+ */
+const ATX_HEADING_RE = /^(#{1,6})\s+(.+?)\s*#*\s*$/;
+
+export interface MarkdownSection {
+  /** Heading text with the `#` marks removed; `"Untitled"` before any heading. */
+  title: string;
+  /** Heading depth, 1–6 — used only to tell a chapter from a sub-heading. */
+  level: number;
+  /** The section body, VERBATIM. */
+  text: string;
+}
+
+/** Split a markdown document into one entry per ATX heading. */
+export function splitMarkdownSections(markdown: string): MarkdownSection[] {
+  const lines = String(markdown ?? "").replace(/\r\n?/g, "\n").split("\n");
+  const sections: MarkdownSection[] = [];
+  let current: MarkdownSection = { title: "Untitled", level: 0, text: "" };
+  const buffer: string[] = [];
+
+  const flush = () => {
+    const text = buffer.join("\n").trim();
+    if (current.title !== "Untitled" || text) sections.push({ ...current, text });
+    buffer.length = 0;
+  };
+
+  for (const line of lines) {
+    const match = ATX_HEADING_RE.exec(line);
+    if (!match) {
+      buffer.push(line);
+      continue;
+    }
+    flush();
+    current = { title: match[2].trim() || "Untitled", level: match[1].length, text: "" };
+  }
+  flush();
+  return sections.filter((s) => s.title !== "Untitled" || s.text);
+}
+
+/**
+ * Markdown → chapters, one per heading, body untouched.
+ *
+ * A document with fewer than two headings has no structure to follow, so it is
+ * windowed by paragraphs exactly like a PDF whose headings could not be found —
+ * a 40k-char single-section `.md` must not become one 40k record either.
+ *
+ * `startPage` / `endPage` carry the SECTION INDEX (not a PDF page) because the
+ * caller only uses them for the `pages N-M` provenance line.
+ */
+export function markdownChapters(markdown: string, bookTitle: string, windowChars = DEFAULT_MAX_CHUNK_CHARS): Chapter[] {
+  const sections = splitMarkdownSections(markdown);
+  const headed = sections.filter((s) => s.level > 0);
+
+  // Under two headings there is no structure to follow, so the document is
+  // windowed by paragraphs exactly like a PDF whose headings could not be
+  // found — a 40k-char single-section `.md` must not become one 40k record.
+  if (headed.length < 2) {
+    const text = sections.map((s) => s.text).join("\n\n").trim();
+    return windowedChapters(text, bookTitle, windowChars);
+  }
+
+  const chapters: Chapter[] = [];
+  // Text before the first heading rides along with the first chapter rather
+  // than being dropped — it is usually the introduction.
+  let carry = sections.filter((s) => s.level === 0).map((s) => s.text).join("\n\n").trim();
+  let carryTitle = "";
+  let index = 0;
+
+  // NO size test before the fold: a 300-char `##` section is a sub-heading,
+  // and rejecting it up front would throw away the prose it is about to be
+  // merged into. Only the finished chapter is measured.
+  for (const section of headed) {
+    const body = carry ? `${carry}\n\n${section.text}` : section.text;
+    if (body.replace(/\s/g, "").length < MIN_CHUNK_CHARS) {
+      carry = body;
+      carryTitle = carryTitle || section.title;
+      continue;
+    }
+    chapters.push({
+      title: carryTitle ? `${carryTitle} — ${section.title}` : section.title,
+      startPage: index,
+      endPage: index,
+      text: body,
+    });
+    index += 1;
+    carry = "";
+    carryTitle = "";
+  }
+  if (carry.replace(/\s/g, "").length >= MIN_CHUNK_CHARS) {
+    chapters.push({ title: carryTitle || bookTitle, startPage: index, endPage: index, text: carry });
+  }
+  return chapters;
+}
+
+/** Fixed-size paragraph windows for a text with no headings of its own. */
+export function windowedChapters(text: string, bookTitle: string, windowChars = DEFAULT_MAX_CHUNK_CHARS): Chapter[] {
+  const paragraphs = String(text ?? "")
+    .split(/\n{2,}/)
+    .map((p) => p.replace(/\s+/g, " ").trim())
+    .filter(Boolean);
+  const chapters: Chapter[] = [];
+  let current: string[] = [];
+  let size = 0;
+  let index = 0;
+
+  const push = () => {
+    if (!current.length) return;
+    const body = current.join("\n\n");
+    if (body.replace(/\s/g, "").length >= MIN_CHUNK_CHARS) {
+      chapters.push({
+        title: `${bookTitle} — part ${chapters.length + 1}`,
+        startPage: index,
+        endPage: index,
+        text: body,
+      });
+    }
+    index += 1;
+    current = [];
+    size = 0;
+  };
+
+  for (const paragraph of paragraphs) {
+    if (size + paragraph.length + 2 > windowChars) push();
+    current.push(paragraph);
+    size += paragraph.length + 2;
+  }
+  push();
+  return chapters;
+}
+
+// ── docx ────────────────────────────────────────────────────────────────────
+
+const NAMED_ENTITIES: Record<string, string> = {
+  amp: "&",
+  lt: "<",
+  gt: ">",
+  quot: '"',
+  apos: "'",
+  nbsp: " ",
+};
+
+/**
+ * Decode XML entities. Numeric forms are decoded FIRST and `&amp;` LAST, so
+ * `&amp;#39;` becomes `&#39;` and not `'` — the escaped form must survive
+ * until the ampersand it belongs to has been resolved.
+ */
+export function decodeXmlEntities(value: string): string {
+  return String(value ?? "")
+    .replace(/&#x([0-9a-f]+);/gi, (_, hex) => codePointToChar(parseInt(hex, 16)))
+    .replace(/&#(\d+);/g, (_, dec) => codePointToChar(parseInt(dec, 10)))
+    .replace(/&([a-z]+);/gi, (entity, name) => NAMED_ENTITIES[name.toLowerCase()] ?? entity)
+    .replace(/&amp;/g, "&");
+}
+
+function codePointToChar(code: number): string {
+  if (!Number.isFinite(code) || code <= 0 || code > 0x10ffff) return "";
+  try {
+    return String.fromCodePoint(code);
+  } catch {
+    return "";
+  }
+}
+
+/**
+ * `word/document.xml` → the paragraphs it holds.
+ *
+ * The replacements run BEFORE the generic tag strip, in the order the markup
+ * nests: a cell separator becomes a space (table cells are not paragraphs), a
+ * paragraph close becomes a blank line (the paragraph break the PDF pipeline
+ * has to guess at is explicit here), and a tab or line break inside a run
+ * becomes whitespace rather than being fused into the middle of a word.
+ *
+ * Text inside `<w:t>` survives because it is text, not a tag; anything the
+ * strip removes carried no visible characters to begin with.
+ */
+export function docxXmlToText(xml: string): string {
+  const text = String(xml ?? "")
+    .replace(/<w:tab\b[^>]*\/>/g, " ")
+    .replace(/<w:(?:br|cr)\b[^>]*\/>/g, "\n")
+    // A cell's own paragraph must NOT become a document paragraph: the table
+    // is one structure, so the cell ends as a space and the ROW ends the line.
+    .replace(/<\/w:p>(?=\s*<\/w:tc>)/g, "")
+    .replace(/<\/w:tc>/g, " ")
+    .replace(/<\/w:tr>/g, "\n\n")
+    .replace(/<\/w:p>/g, "\n\n")
+    .replace(/<[^>]+>/g, "");
+
+  return decodeXmlEntities(text)
+    .replace(/[ \t]+\n/g, "\n")
+    .replace(/[ \t]{2,}/g, " ")
+    .replace(/\n{3,}/g, "\n\n")
+    .trim();
+}
+
+/**
+ * A `.docx` has no pages — Word computes them at render time, and the file
+ * stores none. So the text is grouped into fixed paragraph windows that behave
+ * like pages for `detectChapters`, which reads the first four lines of each
+ * one looking for a chapter heading.
+ */
+export function paragraphsToPages(text: string, paragraphsPerPage = 12): string[] {
+  const paragraphs = String(text ?? "")
+    .split(/\n{2,}/)
+    .map((p) => p.trim())
+    .filter(Boolean);
+  if (!paragraphs.length) return [];
+
+  const pages: string[] = [];
+  for (let at = 0; at < paragraphs.length; at += paragraphsPerPage) {
+    pages.push(paragraphs.slice(at, at + paragraphsPerPage).join("\n\n"));
+  }
+  return pages;
+}
+

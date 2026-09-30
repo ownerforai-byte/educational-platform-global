@@ -1,0 +1,33 @@
+{
+  "class": "unknown",
+  "subject": "physics",
+  "unit": "B. VECTORS — Q31–60",
+  "title": "B. VECTORS — Q31–60 (part 1)",
+  "source": "Physics MCQ Test OPTIMIZED — B. VECTORS — Q31–60, pages 2-2 [Physics_MCQ_Test_OPTIMIZED.md]",
+  "textbookText": [
+    "31. A scalar quantity is one that has: A) Only magnitude, no direction (e.g., mass, temperature) B) Magnitude and direction, and obeys vector addition C) Direction only, no magnitude D) Magnitude that changes with direction of observation",
+    "32. Which of the following is a vector quantity? A) Displacement B) Distance C) Speed D) Work done",
+    "33. The resultant of two vectors of equal magnitude A is maximum when the angle between them is: A) 0° (resultant = 2A) B) 90° (resultant = A√2) C) 180° (resultant = 0) D) 120° (resultant = A)",
+    "34. Two vectors of magnitude 3 and 4 units acting at 90° to each other give a resultant of: A) 5 units (Pythagorean combination) B) 7 units (simple addition) C) 1 unit (simple subtraction) D) 12 units (product of magnitudes)",
+    "35. A unit vector is defined as a vector: A) Having magnitude exactly one, used to indicate direction only B) Having magnitude equal to the given vector but opposite direction C) Having zero magnitude but defined direction D) That can only point along the x-axis",
+    "36. The dot (scalar) product of two vectors A and B is given by: A) AB cos θ — a scalar result B) AB sin θ — a scalar result C) AB sin θ, in the direction perpendicular to both — a vector result D) A + B cos θ",
+    "37. The cross (vector) product A × B is: A) A vector of magnitude AB sinθ, directed perpendicular to the plane of A and B B) A scalar of magnitude AB cosθ C) A vector of magnitude AB cosθ along A D) Always equal to A × B = B × A (commutative)",
+    "38. If A · B = 0 for two non-zero vectors, then A and B are: A) Perpendicular to each other B) Parallel to each other C) Antiparallel to each other D) Equal in magnitude",
+    "39. If A × B = 0 for two non-zero vectors, then A and B are: A) Parallel or antiparallel (collinear) B) Perpendicular to each other C) Equal and opposite always D) Necessarily unit vectors",
+    "40. The triangle law of vector addition states: A) If two vectors are represented as two sides of a triangle taken in order, the resultant is the third side taken in the opposite order B) The sum of two vectors is always along the bisector of the angle between them C) Vectors can only be added if they are perpendicular D) The resultant is always equal to the difference of magnitudes",
+    "41. Which physical quantity is obtained from the cross product of two vectors? A) Torque (r × F) B) Work (F · d) C) Power (F · v) D) Kinetic energy",
+    "42. Resolving a vector into perpendicular components, the horizontal component of a vector A at angle θ from the x-axis is: A) A cos θ B) A sin θ C) A tan θ D) A / cos θ",
+    "43. Which of these statements about vector subtraction (A − B) is correct? A) It equals A + (−B), where −B has the same magnitude as B but opposite direction B) It is not defined for vectors, only for scalars C) It always results in a vector of zero magnitude D) It equals B − A in general",
+    "44. The polygon law of vector addition is essentially an extension of: A) The triangle law to more than two vectors B) The parallelogram law applied to scalars C) Newton's third law D) The dot product rule",
+    "45. Two equal vectors A and B satisfy A × B = 0 when the angle between them is: A) 0° or 180° B) 90° C) 45° D) 60°",
+    "46. A force of 10 N acts at 60° to the displacement of 5 m. The work done (F·d) is: A) 25 J (Fd cos60°) B) 50 J (Fd, ignoring angle) C) 43.3 J (Fd sin60°) D) 5 J",
+    "47. Which of the following can be added by simple algebraic (arithmetic) addition, unlike true vectors? A) None — true vectors always need vector addition rules (geometric/component method) B) Force C) Velocity D) Displacement",
+    "48. The magnitude of the resultant of two vectors A and B inclined at angle θ is given by: A) √(A² + B² + 2AB cosθ) B) A + B, regardless of θ C) √(A² − B²) D) AB sinθ",
+    "49. A vector directed from the origin to a point makes equal angles with all three coordinate axes. Each direction cosine equals: A) 1/√3 B) 1 C) 1/3 D) √3",
+    "50. In vector notation, î, ĵ, k̂ represent: A) Unit vectors along x, y, z axes respectively B) Scalar constants used in calculus C) Vectors of arbitrary, unspecified magnitude D) Only used for representing forces, not displacement",
+    "51. The zero (null) vector has: A) Zero magnitude and arbitrary/indeterminate direction B) A fixed direction along the x-axis C) Magnitude equal to one D) Meaning only in two dimensions",
+    "52. Which of these correctly describes commutativity of vector operations? A) A + B = B + A, but A × B ≠ B × A (in fact A × B = −(B × A)) B) Both addition and cross product are commutative C) Neither addition nor cross product is commutative D) A · B ≠ B · A",
+    "53. A boat crosses a river; its velocity relative to the ground is the vector sum of: A) Boat's velocity relative to water and water's velocity relative to ground B) Only the boat's velocity relative to water C) The difference between boat speed and river width D) Only the river current's velocity",
+    "54. If |A + B| = |A − B|, the angle between A and B must be: A) 90° B) 0° C) 180° D) 45°"
+  ]
+}

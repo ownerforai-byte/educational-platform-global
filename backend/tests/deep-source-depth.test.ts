@@ -223,6 +223,21 @@ describe("coverage grading (strong / weak / none — never faked)", () => {
     ["mathematics", "explain vectors and their resolution"],
   ];
 
+  /**
+   * The owner's own books attach FIRST by design (`selectHits` promotes a
+   * STRONG drop-in so the character ceiling cannot cut it), which means the
+   * attached list is deliberately not in pure score order. The ranking
+   * invariant therefore applies to the RANKED records — everything that earned
+   * its place by score. Asserting it across a promoted record would be
+   * asserting that the owner's front placement does not work.
+   */
+  const assertRankingNeverRises = (hits: Array<{ entry: { dropIn?: boolean }; score: number }>) => {
+    const ranked = hits.filter((h) => !h.entry.dropIn);
+    for (let i = 1; i < ranked.length; i++) {
+      expect(ranked[i].score).toBeLessThanOrEqual(ranked[i - 1].score);
+    }
+  };
+
   test.each(COVERED)("a taught %s concept is graded STRONG and reaches the prompt", (subject, question) => {
     const result = retrieve(question, 6);
     expect(result.coverage, `${subject}: ${question}`).toBe("strong");
@@ -238,6 +253,14 @@ describe("coverage grading (strong / weak / none — never faked)", () => {
   test("a concept the platform does not teach is never dressed up as covered", () => {
     // Audited against the real corpus: none of these has an authored record, so
     // the honest answer is \"answer it completely from established knowledge\".
+    // The owner's ingested books did NOT change this list, and that is the
+    // point. Several of them DO teach these concepts somewhere in their body
+    // (the ingested NCERT chapter 2 has a section on the photoelectric effect;
+    // the maths books cover the binomial theorem). Coverage is still WEAK,
+    // because a book chunk whose own heading does not name the asked concept
+    // must not be presented as the platform's coverage of it — the alternative
+    // was a biology record citing binomial NOMENCLATURE as coverage of the
+    // binomial THEOREM. See `gradeStrength`.
     for (const question of [
       "explain the photoelectric effect",
       "describe the mechanism of SN1 and SN2 reactions",
@@ -266,9 +289,7 @@ describe("coverage grading (strong / weak / none — never faked)", () => {
     ]) {
       const { hits, contentTerms } = retrieve(question, 6);
       expect(contentTerms.length).toBeGreaterThan(0);
-      for (let i = 1; i < hits.length; i++) {
-        expect(hits[i].score).toBeLessThanOrEqual(hits[i - 1].score);
-      }
+      assertRankingNeverRises(hits);
       for (const hit of hits) {
         expect(hit.entry.filler).toBe(false);
         if (!hit.related) {
@@ -334,7 +355,10 @@ describe("no accidental matches (the false positives that made answers light)", 
     // \"motor\" and \"motive\" in unrelated records.
     const laws = retrieve("explain the laws of thermodynamics", 4);
     expect(laws.coverage).toBe("strong");
-    expect(laws.hits[0].entry.title).toMatch(/thermodynamics/i);
+    // The thermodynamics record must be attached. It is not necessarily hit[0]:
+    // a STRONG owner drop-in is promoted ahead of it on purpose, and the ingested
+    // NCERT chapter happens to contain both content terms.
+    expect(laws.hits.some((h) => /thermodynamics/i.test(h.entry.title))).toBe(true);
 
     const shm = retrieve("explain simple harmonic motion", 4);
     expect(shm.coverage).not.toBe("strong");

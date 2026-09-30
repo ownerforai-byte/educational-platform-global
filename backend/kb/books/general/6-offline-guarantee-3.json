@@ -1,0 +1,13 @@
+{
+  "class": "unknown",
+  "subject": "general",
+  "unit": "6 Offline Guarantee",
+  "title": "6 Offline Guarantee",
+  "source": "Add master — 6 Offline Guarantee, pages 5-6 [Add master .pdf]",
+  "textbookText": [
+    "6. Offline Guarantee",
+    "Everything is self-contained: No CDN links (fonts, icons, and frameworks are NOT loaded from the internet) No external API calls No images loaded from the web All JavaScript, CSS, and content ship inside this folder You can disconnect from the internet entirely and the site will work identically.",
+    "Current Status This build includes the full working structure (home → subject → chapter → topic, search, sidebar, theme toggle, breadcrumbs, back-to-top, prev/next chapter controls on the chapter page, prev/next topic controls on the topic page) with one sample topic filled in ( physics__chapter-1__topic-1 , with two sample diagrams) so you can see the full layout in action. Every other topic currently shows placeholder states — fill them in using Section 3 above.",
+    "The home page also has 4 quick-link buttons (Claude, ChatGPT, Perplexity, Google Chrome) that open in a new tab — these need an internet connection to actually load, same as any other external link; the study content itself stays fully offline."
+  ]
+}

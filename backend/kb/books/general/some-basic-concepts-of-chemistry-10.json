@@ -1,0 +1,31 @@
+{
+  "class": "unknown",
+  "subject": "general",
+  "unit": "Some Basic Concepts of Chemistry",
+  "title": "Some Basic Concepts of Chemistry",
+  "source": "kech101 — Some Basic Concepts of Chemistry, pages 13-13 [kech101.pdf]",
+  "textbookText": [
+    "Some Basic Concepts of Chemistry",
+    "(5) Counting the numbers of object, for example, 2 balls or 20 eggs, have infinite significant figures as these are exact numbers and can be represented by writing infinite number of zeros after placing a decimal i.e., 2 = 2.000000 or 20 = 20.000000.",
+    "In numbers written in scientific notation, all digits are significant e.g., 4.01×102 has three significant figures, and 8.256×10–3 has four significant figures.",
+    "However, one would always like the results to be precise and accurate. Precision and accuracy are often referred to while we talk about the measurement.",
+    "Precision refers to the closeness of various measurements for the same quantity. However, accuracy is the agreement of a particular value to the true value of the result. For example, if the true value for a result is 2.00 g and student ‘A’ takes two measurements and reports the results as 1.95 g and 1.93 g. These values are precise as they are close to each other but are not accurate. Another student ‘B’ repeats the experiment and obtains 1.94 g and 2.05 g as the results for two measurements. These observations are neither precise nor accurate. When the third student ‘C’ repeats these measurements and reports 2.01 g and 1.99 g as the result, these values are both precise and accurate. This can be more clearly understood from the data given in Table 1.4. Table 1.4 Data to Illustrate Precision and Accuracy",
+    "Measurements/g",
+    "Average (g)",
+    "Student A 1.95",
+    "1.93",
+    "1.940",
+    "Student B 1.94",
+    "2.05",
+    "1.995",
+    "Student C 2.01",
+    "1.99",
+    "2.000",
+    "Addition and Subtraction of Significant Figures The result cannot have more digits to the right of the decimal point than either of the original numbers. 12.11 18.0 1.012 31.122",
+    "Here, 18.0 has only one digit after the decimal point and the result should be reported only up to one digit after the decimal point, which is 31.1.",
+    "Multiplication and Division of Significant Figures In these operations, the result must be reported with no more significant figures as in the measurement with the few significant figures. 2.5×1.25 = 3.125 Since 2.5 has two significant figures, the result should not have more than two significant figures, thus, it is 3.1.",
+    "While limiting the result to the required number of significant figures as done in the above mathematical operation, one has to keep in mind the following points for rounding off the numbers 1. If the rightmost digit to be removed is more than 5, the preceding number is increased by one. For example, 1.386. If we have to remove 6, we have to round it to 1.39. 2. If the rightmost digit to be removed is less than 5, the preceding number is not changed. For example, 4.334 if 4 is to be removed, then the result is rounded upto 4.33. 3. If the rightmost digit to be removed is 5, then the preceding number is not changed if it is an even number but it is increased by one if it is an odd number. For example, if 6.35 is to be rounded by removing 5, we have to increase 3 to 4 giving 6.4 as the result. However, if 6.25 is to be rounded off it is rounded off to 6.2. 1.4.3 Dimensional Analysis Often while calculating, there is a need to convert units from one system to the other. The method used to accomplish this is called factor label method or unit factor method or dimensional analysis. This is illustrated below.",
+    "Example A piece of metal is 3 inch (represented by in) long. What is its length in cm?",
+    "Reprint 2026-27"
+  ]
+}

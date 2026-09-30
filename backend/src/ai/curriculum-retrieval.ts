@@ -373,12 +373,30 @@ export const OWNER_SLOT_QUOTA = (() => {
  *     itself ("capacitor", "vectors", "limits-and-continuity" — the platform
  *     organises those units by topic, so the unit name matching IS coverage).
  *
- * OWNER MATERIAL IS GRADED DIFFERENTLY, on purpose. A book chapter is named
- * after the CHAPTER, not the concept ("Chapter 3 Motion in a Straight Line")),
- * so demanding a title match would grade every book record as a passing mention
- * and tell the tutor to answer from its own knowledge while the owner's own
- * textbook sat attached. An owner drop-in that contains EVERY content term of
- * the question, at length enough to survive the filler filter, is coverage.
+ * OWNER MATERIAL IS GRADED WITH A LOWER RATIO, on purpose. A book chapter is
+ * named after the CHAPTER, not the concept ("Chapter 3 Motion in a Straight
+ * Line"), so a book needs to match less of the question than a curated note
+ * does. But it is NOT exempt from the question above — the record must still
+ * name the concept somewhere in its own title, slug or unit.
+ *
+ * That exemption was removed on 2026-09-30, and the ingest is why. With the
+ * owner's 51 books in the corpus, several hundred broad records now contain
+ * most of the syllabus's VOCABULARY somewhere in their body, and a rule that
+ * only demanded word presence graded them STRONG:
+ *
+ *   "state the binomial theorem"        → "6 Resistant to traditional
+ *                                          antibiotics"   (binomial NOMENCLATURE)
+ *   "explain the laws of thermodynamics" → "Electron Proton Neutron (part 6)"
+ *
+ * The first is a biology record claimed as coverage for a mathematics theorem;
+ * the second outranked the real thermodynamics record and was promoted to the
+ * front of the answer. Both are precisely the "dressed up as covered" failure
+ * this grading exists to prevent, and both are fixed by demanding the concept
+ * be NAMED rather than merely mentioned. The cost is recall — a book chunk
+ * whose heading does not name the asked concept is now graded WEAK even when
+ * its body teaches it — and that is the cheaper error: WEAK still answers
+ * completely, from established knowledge, while a false STRONG hands the
+ * student an irrelevant record as the spine of the answer.
  */
 export function gradeStrength(
   hit: CurriculumHit,
@@ -389,11 +407,15 @@ export function gradeStrength(
   if (!allContent) return "weak";
 
   const questionRatio = hit.matched.length / Math.max(1, questionTokenCount);
-  if (hit.entry.dropIn && (questionRatio >= 0.5 || hit.matched.length >= 2)) return "strong";
-
   const namesConcept = hit.positionTokens.some((t) => target.includes(t));
   const unitTokens = new Set(tokenize(hit.entry.unit.replace(/-/g, " ")).map(stem));
   const unitIsConcept = target.some((t) => unitTokens.has(t));
+  const namesTheConcept = namesConcept || unitIsConcept;
+
+  // An owner's own book: the same "is this record about the concept?" bar,
+  // reached at a lower ratio because a chapter is not named after one idea.
+  if (hit.entry.dropIn) return namesTheConcept ? "strong" : "weak";
+
   return namesConcept && (questionRatio >= 0.6 || hit.matched.length >= 2 || unitIsConcept)
     ? "strong"
     : "weak";

@@ -1,0 +1,11 @@
+{
+  "class": "unknown",
+  "subject": "mathematics",
+  "unit": "🎯 OPTIMIZED STUDY LAYER — MATHEMATICS (internet-sourced exam support) — 1. Top 10 Exam Traps",
+  "title": "🎯 OPTIMIZED STUDY LAYER — MATHEMATICS (internet-sourced exam support) — 1. Top 10 Exam Traps",
+  "source": "Math MCQ Test OPTIMIZED — 🎯 OPTIMIZED STUDY LAYER — MATHEMATICS (internet-sourced exam support) — 1. Top 10 Exam Traps, pages 5-5 [Math_MCQ_Test_OPTIMIZED.md]",
+  "textbookText": [
+    "> The 120 MCQs above are kept intact. Below are the most-frequented exam traps, > formula cheats, and mnemonics for **matrices, complex numbers, conics, calculus** > at NEB Grade-11 level.",
+    "| # | Trap | Defense | |---|------|---------| | 1 | Forgetting i² = −1 in products | (2i)(5i) = 10i² = **−10**, not +10. Substitute i²→−1 FIRST. | | 2 | Assuming √zₘₒ = √zₘ√zₒ | Not valid for complex z without quadrant care. | | 3 | Argument in wrong quadrant | θ = tan⁻¹(b/a) gives reference angle only; add/subtract 180° or 360° per quadrant. | | 4 | Comparing complex numbers by magnitude | Complex numbers have **NO order** (“positive/negative” undefined). Compare |z| only. | | 5 | det(kA) = k·det(A) | Correct: det(kA) = **kⁿ** · det(A) for n×n. | | 6 | det(AB) = det(A)·det(B) is fine, but A·B = B·A is NOT | Matrix mult is non-commutative; determinants of products **are** commutative. | | 7 | Cramer's rule when det A = 0 | det A = 0 ⇒ system has NO unique solution (0 or ∞). Cramer's rule blocked. | | 8 | Conic eccentricity confusion | Circle e=0; ellipse 0<e<1; parabola e=1; hyperbola e>1. Memorise by shape. | | 9 | Confusing B²−4AC for line-pair vs conic | For Ax²+Bxy+Cy²… : B²−4AC >0 pair of lines, =0 parabola, <0 ellipse/imaginary. | | 10 | d/dx(x² ln x) — product rule slip | = 2x·ln x + x·(1/x) = 2x ln x + 1. Missing the second term is the classic. |"
+  ]
+}
