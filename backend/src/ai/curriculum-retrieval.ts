@@ -333,6 +333,104 @@ function scoreRecords(tokens: QueryToken[]): CurriculumHit[] {
   return hits;
 }
 
+// ── Coverage grading ────────────────────────────────────────────────────────
+
+/**
+ * How many slots in one answer are reserved for the owner's OWN sources.
+ *
+ * OWNER REPORT (2026-09-30): "I have many books PDF locally, which I want to
+ * make it as a source, and whenever I ask a question related to them, it should
+ * scan and present all those in polished, refined and short grammar with full
+ * concept." Ingestion worked, but the books still lost the race: their text
+ * matches only inside the BODY (2 × weight) while a curated note matches in its
+ * TITLE (6 × weight), so a chapter that teaches the concept end to end was
+ * outranked by a note merely named after it and never reached the answer.
+ *
+ * A quota is the honest fix. It reserves slots — it does not lower the bar: a
+ * reserved record must still pass `gradeStrength`, i.e. it must contain every
+ * content term of the question. Junk cannot enter through this door; an owner's
+ * textbook can.
+ */
+export const OWNER_SLOT_QUOTA = (() => {
+  const declared = Number(process.env.AI_OWNER_RECORD_SLOTS);
+  if (!Number.isFinite(declared) || declared < 0) return 2;
+  return Math.min(4, Math.floor(declared));
+})();
+
+/**
+ * STRONG means the record actually answers the whole question:
+ *   · every content term of the question is present;
+ *   · at least one of them sits in the record's own title, slug or unit (the
+ *     record NAMES the concept) — otherwise a question about "simple harmonic
+ *     motion" would be "covered" by a series chapter that merely contains the
+ *     words harmonic mean;
+ *   · the record matches most of the question, or its UNIT is the concept
+ *     itself ("capacitor", "vectors", "limits-and-continuity" — the platform
+ *     organises those units by topic, so the unit name matching IS coverage).
+ *
+ * OWNER MATERIAL IS GRADED DIFFERENTLY, on purpose. A book chapter is named
+ * after the CHAPTER, not the concept ("Chapter 3 Motion in a Straight Line")),
+ * so demanding a title match would grade every book record as a passing mention
+ * and tell the tutor to answer from its own knowledge while the owner's own
+ * textbook sat attached. An owner drop-in that contains EVERY content term of
+ * the question, at length enough to survive the filler filter, is coverage.
+ */
+export function gradeStrength(
+  hit: CurriculumHit,
+  target: string[],
+  questionTokenCount: number,
+): "strong" | "weak" {
+  const allContent = target.every((term) => hit.matched.includes(term));
+  if (!allContent) return "weak";
+
+  const questionRatio = hit.matched.length / Math.max(1, questionTokenCount);
+  if (hit.entry.dropIn && (questionRatio >= 0.5 || hit.matched.length >= 2)) return "strong";
+
+  const namesConcept = hit.positionTokens.some((t) => target.includes(t));
+  const unitTokens = new Set(tokenize(hit.entry.unit.replace(/-/g, " ")).map(stem));
+  const unitIsConcept = target.some((t) => unitTokens.has(t));
+  return namesConcept && (questionRatio >= 0.6 || hit.matched.length >= 2 || unitIsConcept)
+    ? "strong"
+    : "weak";
+}
+
+/**
+ * Choose the records that actually get attached: the owner's own strong
+ * matches FIRST, then the ranked hits, up to `limit`.
+ *
+ * Front placement is not cosmetic. The context builder attaches records in
+ * order until the character ceiling is reached (curated records run 15k
+ * characters apiece, so the ceiling is reached long before the ranking is), and
+ * a record appended last is a record that never arrives. Measured on a real
+ * question — "state Newton's first law of motion" — the owner's ingested book
+ * ranked sixth and was cut every single time: exactly the "I ask about my books
+ * and nothing comes" failure the quota exists to prevent. It also matches the
+ * documented source hierarchy, where an owner drop-in outranks the authored
+ * corpus.
+ *
+ * The gate stays strict: only a STRONG owner match is promoted, i.e. a record
+ * carrying every content term of the question. Per the hierarchy, curated hits
+ * keep their places behind it — nothing is discarded that could have fitted.
+ */
+export function selectHits(
+  candidates: CurriculumHit[],
+  limit: number,
+  quota = OWNER_SLOT_QUOTA,
+): CurriculumHit[] {
+  const chosen = candidates.slice(0, limit);
+  if (quota <= 0) return chosen;
+
+  // A quota, not a nudge: at most `quota` owner records are attached. Beyond
+  // that the owner's book has to earn its place like anything else — one long
+  // chapter that mentions every term must not crowd out the curated notes.
+  const ownerStrong = candidates.filter((h) => h.entry.dropIn && h.strength === "strong");
+  if (!ownerStrong.length) return chosen;
+
+  const promote = ownerStrong.slice(0, quota);
+  const rest = chosen.filter((hit) => !ownerStrong.includes(hit));
+  return [...promote, ...rest.slice(0, Math.max(0, limit - promote.length))];
+}
+
 // ── Duplicate suppression ───────────────────────────────────────────────────
 
 /**
@@ -421,32 +519,9 @@ export function retrieve(question: string, limit = DEFAULT_RECORD_LIMIT, convers
     const contentHits = hit.matched.filter((m) => target.includes(m));
     if (!contentHits.length) continue;
 
-    // STRONG means the record answers the WHOLE question, all three of:
-    //   · every content term of the question is present;
-    //   · at least one of them sits in the record's own title, slug or unit
-    //     (the record NAMES the concept);
-    //   · the record matches most of the question — otherwise a question about
-    //     "simple harmonic motion" would be "covered" by a series chapter that
-    //     merely contains the words harmonic mean.
-    // Anything else is a passing mention (weak), and is never presented as the
-    // syllabus treatment of the concept.
-    const allContent = target.every((term) => hit.matched.includes(term));
-    const namesConcept = hit.positionTokens.some((t) => target.includes(t));
-    const questionRatio = hit.matched.length / Math.max(1, tokens.length);
-    // A record also answers the whole question when its UNIT is the concept
-    // itself ("capacitor", "vectors", "limits-and-continuity"): the platform
-    // organises those units by topic, so the unit name matching IS coverage.
-    const unitTokensForHit = new Set(tokenize(hit.entry.unit.replace(/-/g, " ")).map(stem));
-    const unitIsConcept = target.some((t) => unitTokensForHit.has(t));
-    // Otherwise: "most of the question" OR "at least two of its words". A
-    // genuinely covered concept matches its term AND the words around it
-    // ("principle", "laws", "mechanism"); one lone word is a coincidence.
-    const strong =
-      allContent &&
-      namesConcept &&
-      (questionRatio >= 0.6 || hit.matched.length >= 2 || unitIsConcept);
-    if (strong) contentHits.forEach((m) => matchedTerms.add(m));
-    candidates.push({ ...hit, strength: strong ? "strong" : "weak" });
+    const strength = gradeStrength(hit, target, tokens.length);
+    if (strength === "strong") contentHits.forEach((m) => matchedTerms.add(m));
+    candidates.push({ ...hit, strength });
   }
 
   const deduped = dedupe(candidates);
@@ -481,7 +556,10 @@ export function retrieve(question: string, limit = DEFAULT_RECORD_LIMIT, convers
 
   // Whole-record budget. Siblings carry score 0 and stay after the ranked hits,
   // so the returned ordering is always non-increasing.
-  const hits = [...deduped, ...siblings].slice(0, Math.max(1, limit));
+  const hits = [...selectHits(deduped, Math.max(1, limit)), ...siblings].slice(
+    0,
+    Math.max(1, limit),
+  );
   return { hits, coverage, contentTerms: target, matchedTerms: Array.from(matchedTerms) };
 }
 

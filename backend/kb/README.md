@@ -91,6 +91,25 @@ the topic itself. Corpus stats (entries, template lines stripped, filler count,
 validated characters) are printed in the injected block and exposed through
 `getCorpusStats()`.
 
+### How your books are graded and attached
+
+A book chapter is named after the **chapter**, not the concept, so its text
+matches a question only inside the record's body — and a body match used to be
+graded "a passing mention" and ranked below every curated note. Two rules in
+`src/ai/curriculum-retrieval.ts` fix that for owner material specifically:
+
+- an owner drop-in that carries **every content term** of the question is
+  graded **STRONG** even without a title match (`gradeStrength`);
+- up to `AI_OWNER_RECORD_SLOTS` (default **2**) owner records are attached
+  **first** (`selectHits`). Order matters: the context builder attaches records
+  until the 48k character ceiling, and curated records run ~15k each, so a
+  record appended last is a record that never arrives.
+
+The bar is unchanged for everything else: a record missing even one content
+term stays weak, and a weak owner record is never promoted. See
+`tests/owner-source.test.ts` for the rules and `tests/book-ingest.test.ts` for
+the conversion.
+
 ### Coverage is graded, never faked
 
 The retriever grades each question and tells the model what it is allowed to
@@ -109,6 +128,64 @@ mechanisms, Le Chatelier's principle, aldol condensation, benzene, the binomial
 theorem, conic sections, photosynthesis and DNA as their own units. Dropping a
 real note into this folder for any of them flips that question to STRONG on the
 next request — no code change.
+
+## Your own PDF books (local PDFs → a source, no barrier)
+
+Your textbook PDFs live on your laptop and never have to leave it — neither the
+files nor any server access to them. What ships is their **text**, converted
+once into the JSON records this folder already reads:
+
+```bash
+cd backend
+npx tsx scripts/ingest-books.ts --dir "D:\NEB Books" --subject physics --class 12
+```
+
+The command walks the folder recursively (any layout, any nesting), extracts the
+text layer with `pdftotext`, and writes one record per chapter chunk into
+`kb/books/<subject>/`. Commit them, and every later question is answered by the
+machinery that already exists — retrieval, graded coverage, and the
+paste-the-verified-knowledge-with-a-light-polish contract. Nothing new runs in
+production, and no PDF is ever stored in the repo (only text, a few hundred KB
+per book).
+
+Why the conversion is not just "dump the text":
+
+- `pdftotext` emits the **visual** line breaks of the page, so a paragraph
+  arrives as eight 70-character lines with a hyphen where the word wrapped. The
+  ingester de-hyphenates and re-joins them into real paragraphs, so the tutor
+  polishes prose instead of repairing a column layout.
+- every page carries a running head and a page number, which on 400 pages read
+  like content. The ingester finds the lines that sit at the top/bottom of most
+  pages (short labels, and nothing that ends a sentence) and drops them.
+- a book is far too large for one prompt, so chapters are split into chunks that
+  each stay readable in a single record.
+
+Options: `--out <dir>` (default `kb/books`), `--max-chars <n>` (5000 default;
+lower it for shorter records), `--window <n>` (pages per record when a book has
+no detectable chapter headings), `--layout` (keep the visual layout — use it for
+table-heavy books), `--force` (overwrite existing records), `--dry-run` (report
+only). Each run writes `kb/books/_ingest-report.json` — underscore-prefixed, so
+the corpus ignores it as knowledge — listing every book, its page count and
+where the records went.
+
+### Scanned books need OCR first (the one real barrier)
+
+A photographed page has **no text layer at all**, so `pdftotext` returns nothing
+and no cleaning can help. The ingester measures this and reports it:
+
+```
+⚠ 92% of pages carry no text — needs OCR
+
+Pages with no text layer (these will answer NOTHING until OCR'd):
+  • Chemistry Grade 12: 372/404 pages (92%)
+  OCR route: install Tesseract, run `ocrmypdf <in.pdf> <out.pdf>` (adds a text
+  layer), then re-run this script with --force.
+```
+
+Add the text layer with `ocrmypdf` (one command, keeps the original page
+images), re-run the ingester, and that book answers like any other. `pdftotext`
+itself ships with Git for Windows; on macOS/Linux it is `brew install poppler`
+or `apt install poppler-utils`.
 
 ## Images and diagrams in the reply
 
@@ -148,6 +225,7 @@ given, or draws the figure itself.
 | `AI_SEARCH_TIMEOUT_MS` | 9000 | How long web grounding may take |
 | `TAVILY_SEARCH_DEPTH` | `advanced` | Search depth (`basic` to save quota) |
 | `SEARCH_RAW_CONTENT_CHARS` | 2500 | Page extract kept per result |
+| `AI_OWNER_RECORD_SLOTS` | 2 | Records from `backend/kb` (your books) attached to one answer; 0 disables the reservation |
 | `DIAGRAM_SEARCH` | on (`off` in tests) | Wikimedia diagram fetch: `off` to disable |
 | `DIAGRAM_LIMIT` | 3 | Diagram files attached per question |
 | `DIAGRAM_TIMEOUT_MS` | 6000 | Budget for the diagram fetch (runs beside the web search) |
