@@ -54,7 +54,7 @@ export function ThemeToggle() {
               <span>Theme Studio</span>
             </span>
             <span className="text-[10px] text-muted-foreground font-mono">
-              8 Themes
+              9 Themes
             </span>
           </div>
 

@@ -89,6 +89,12 @@ interface IndexItem {
 interface AIProvider {
   name: string;
   chat(messages: AIChatMessage[]): Promise<string>;
+  /**
+   * Token-level streaming variant of chat(): yields content deltas as the
+   * provider generates them. Every provider implements it; the internal
+   * keyword engine yields its complete answer as a single chunk.
+   */
+  chatStream(messages: AIChatMessage[]): AsyncGenerator<string>;
   search(query: string): Promise<AISearchResponse>;
 }
 
@@ -512,6 +518,13 @@ class InternalProvider implements AIProvider {
 
     return scored.slice(0, limit).map((entry) => entry.item);
   }
+
+  async *chatStream(messages: AIChatMessage[]): AsyncGenerator<string> {
+    // The keyword engine cannot generate incrementally: hand the complete
+    // answer over in one chunk so the last-resort link honours the stream.
+    const text = await this.chat(messages);
+    if (text && text.trim()) yield text;
+  }
 }
 
 class GeminiProvider implements AIProvider {
@@ -592,6 +605,45 @@ class GeminiProvider implements AIProvider {
     return this.callGemini(prompt, systemPrompt, true, toGeminiImageParts(lastUser?.images));
   }
 
+  async *chatStream(messages: AIChatMessage[]): AsyncGenerator<string> {
+    if (!this.apiKey) throw new Error("Missing Gemini API key");
+    const systemPrompt = messages.find((m) => m.role === "system")?.content ?? "";
+    const history = messages
+      .filter((m) => m.role !== "system")
+      .map((m) => ({
+        role: m.role === "assistant" ? "model" : "user",
+        parts: [{ text: m.content }],
+      }));
+    const enriched = history.map((h, i) => {
+      if (h.role === "user" && i === 0 && systemPrompt) {
+        return { ...h, parts: [{ text: `[SYSTEM INSTRUCTIONS]\n${systemPrompt}\n\n[USER QUERY]\n${h.parts[0].text}` }] };
+      }
+      return h;
+    });
+    const prompt = `${enriched.map((h) => `${h.role === "user" ? "User" : "Assistant"}: ${h.parts[0].text}`).join("\n\n")}\n\nAssistant:`;
+    const lastUser = [...messages].reverse().find((m) => m.role === "user");
+    const body: any = {
+      contents: [{ role: "user", parts: [{ text: prompt }, ...toGeminiImageParts(lastUser?.images)] }],
+      generationConfig: { temperature: 0.7, maxOutputTokens: MAX_OUTPUT_TOKENS },
+    };
+    if (process.env.GEMINI_SEARCH_GROUNDING !== "off") body.tools = [{ google_search: {} }];
+    const url = `https://generativelanguage.googleapis.com/v1beta/models/${this.model}:streamGenerateContent?alt=sse`;
+    const res = await fetch(url, {
+      method: "POST",
+      headers: { "Content-Type": "application/json", "x-goog-api-key": this.apiKey },
+      body: JSON.stringify(body),
+      signal: AbortSignal.timeout(300000),
+    });
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`Gemini stream error: ${res.status} ${text.slice(0, 200)}`);
+    }
+    for await (const event of sseEvents(res)) {
+      const chunk = event?.candidates?.[0]?.content?.parts?.[0]?.text;
+      if (typeof chunk === "string" && chunk) yield chunk;
+    }
+  }
+
   async search(query: string): Promise<AISearchResponse> {
     if (!this.apiKey) throw new Error("Missing Gemini API key");
     const syllabusContext = await buildSyllabusContext(query);
@@ -668,6 +720,43 @@ class OpenRouterProvider implements AIProvider {
       ...messages.filter((m) => m.role !== "system"),
     ];
     return this.callOpenRouter(enriched);
+  }
+
+  async *chatStream(messages: AIChatMessage[]): AsyncGenerator<string> {
+    if (!this.apiKey) throw new Error("Missing OpenRouter API key");
+    const systemPrompt = messages.find((m) => m.role === "system")?.content ?? "";
+    const enriched: AIChatMessage[] = [
+      { role: "system", content: systemPrompt },
+      ...messages.filter((m) => m.role !== "system"),
+    ];
+    const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${this.apiKey}`,
+        "HTTP-Referer": `${SITE}/`,
+        "X-Title": "Ravikisan",
+      },
+      body: JSON.stringify({
+        model: this.model,
+        messages: enriched.map((m) => ({
+          role: m.role,
+          content: toOpenAIContent(m.content, m.images),
+        })),
+        max_tokens: MAX_OUTPUT_TOKENS,
+        temperature: 0.7,
+        stream: true,
+      }),
+      signal: AbortSignal.timeout(300000),
+    });
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`OpenRouter stream error: ${res.status} ${text.slice(0, 200)}`);
+    }
+    for await (const event of sseEvents(res)) {
+      const chunk = event?.choices?.[0]?.delta?.content;
+      if (typeof chunk === "string" && chunk) yield chunk;
+    }
   }
 
   async search(query: string): Promise<AISearchResponse> {
@@ -782,6 +871,44 @@ class AgnesProvider implements AIProvider {
     return this.callAgnes(enriched);
   }
 
+  async *chatStream(messages: AIChatMessage[]): AsyncGenerator<string> {
+    if (!this.apiKey) throw new Error("Missing Agnes API key");
+    const systemPrompt = messages.find((m) => m.role === "system")?.content ?? "";
+    const enriched: AIChatMessage[] = [
+      { role: "system", content: systemPrompt },
+      ...messages.filter((m) => m.role !== "system"),
+    ];
+    const res = await fetch(this.apiUrl, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${this.apiKey}`,
+      },
+      body: JSON.stringify({
+        model: this.model,
+        messages: enriched.map((m) => ({
+          role: m.role,
+          content: toOpenAIContent(m.content, m.images),
+        })),
+        max_tokens: MAX_OUTPUT_TOKENS,
+        temperature: 0.7,
+        stream: true,
+      }),
+      // Same envelope as the one-shot call: a streamed answer may run long.
+      signal: AbortSignal.timeout(this.timeoutMs),
+    });
+    if (!res.ok) {
+      const text = await res.text();
+      throw new Error(`Agnes stream error: ${res.status} ${text.slice(0, 200)}`);
+    }
+    for await (const event of sseEvents(res)) {
+      const finish = event?.choices?.[0]?.finish_reason;
+      if (finish) this.lastFinishReason = String(finish);
+      const chunk = event?.choices?.[0]?.delta?.content;
+      if (typeof chunk === "string" && chunk) yield chunk;
+    }
+  }
+
   async search(query: string): Promise<AISearchResponse> {
     if (!this.apiKey) throw new Error("Missing Agnes API key");
     const syllabusContext = await buildSyllabusContext(query);
@@ -839,6 +966,38 @@ function withDeadline<T>(promise: Promise<T>, ms: number): Promise<T> {
       setTimeout(() => reject(new Error(`timeout after ${ms}ms`)), ms)
     ),
   ]);
+}
+
+/**
+ * Read an SSE response body and yield every parsed JSON event. One shared
+ * reader for all three streaming transports (Gemini native SSE, plus the two
+ * OpenAI-compatible SSE responses from Agnes and OpenRouter): OpenAI-family
+ * servers separate events with blank lines, Gemini's alt=sse does not — the
+ * blank-line split handles both.
+ */
+async function* sseEvents(res: Response): AsyncGenerator<any> {
+  if (!res.body) return;
+  const reader = res.body.getReader();
+  const decoder = new TextDecoder();
+  let buffer = "";
+  for (;;) {
+    const { done, value } = await reader.read();
+    if (done) break;
+    buffer += decoder.decode(value, { stream: true });
+    const lines = buffer.split("\n");
+    buffer = lines.pop() ?? "";
+    for (const line of lines) {
+      const t = line.trim();
+      if (!t.startsWith("data:")) continue;
+      const data = t.slice(5).trim();
+      if (!data || data === "[DONE]") continue;
+      try {
+        yield JSON.parse(data);
+      } catch {
+        // A partial event: the remainder arrives on the next read.
+      }
+    }
+  }
 }
 
 export class AIService {
@@ -1038,6 +1197,76 @@ export class AIService {
       }
     }
     throw new Error("The AI timed out before answering — please try again in a moment.");
+  }
+
+  /**
+   * Streaming chain (owner 2026-09-30): the provider that produces the FIRST
+   * token owns the reply to the end — a cut reply is repaired by the caller's
+   * truncation loop, never by swapping models mid-sentence. A provider that
+   * produces NOTHING falls through to the next link, exactly like chat().
+   */
+  async *chatStream(
+    providerName: string,
+    messages: AIChatMessage[],
+  ): AsyncGenerator<string> {
+    const internal = this.providers.get("internal")!;
+    const requested = providerName?.toLowerCase();
+
+    if (
+      requested &&
+      requested !== "internal" &&
+      requested !== "auto" &&
+      this.providers.has(requested)
+    ) {
+      const p = this.providers.get(requested)!;
+      let emitted = 0;
+      try {
+        for await (const chunk of p.chatStream(messages)) {
+          emitted += chunk.length;
+          yield chunk;
+        }
+        if (emitted > 0) {
+          this.lastAnsweredBy = requested;
+          return;
+        }
+      } catch (err) {
+        console.warn(
+          `[AI stream] selected provider "${requested}" failed:`,
+          err instanceof Error ? err.message : err,
+        );
+      }
+      // If ANY token reached the student, do not fall through to a second
+      // provider: the chain's answers would print underneath the first.
+      if (emitted > 0) return;
+    }
+
+    const chain = this.chainProviders();
+    const links = chain.length ? chain : [internal];
+    for (const p of links) {
+      let emitted = 0;
+      try {
+        for await (const chunk of p.chatStream(messages)) {
+          emitted += chunk.length;
+          yield chunk;
+        }
+        if (emitted > 0) {
+          this.lastAnsweredBy = p.name;
+          return;
+        }
+      } catch (err) {
+        // Already-streamed tokens are kept: the student is watching the
+        // answer arrive, and a second provider's continuation would sit
+        // under it. Truncation repair of a cut reply is the route's job.
+        console.warn(
+          `[AI stream] link "${p.name}" failed${emitted ? " mid-stream (tokens kept)" : ""}:`,
+          err instanceof Error ? err.message : err,
+        );
+      }
+      if (emitted > 0) return;
+    }
+    // Every link produced nothing: surface a generic failure; the route refunds
+    // the credit and sends the SSE error event.
+    throw new Error("All AI stream links failed");
   }
 
   async search(providerName: string, query: string): Promise<AISearchResponse> {

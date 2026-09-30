@@ -28,6 +28,7 @@ import {
 } from "lucide-react";
 import {
   chat,
+  streamChat,
   guestChat,
   getChatHistory,
   saveChatHistory,
@@ -38,6 +39,7 @@ import {
   type ChatSession,
 } from "@/lib/api/ai";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
+import { drawFigureWithPuter } from "@/lib/puter-image";
 import { stripLinksForCopy } from "@/lib/ai/clean-copy";
 import {
   GUEST_DAILY_LIMIT as MAX_GUEST_MESSAGES,
@@ -277,6 +279,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
   ]);
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
+  const [streamingText, setStreamingText] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
   // Guest usage lives in localStorage — it must NEVER be read during render,
@@ -521,17 +524,99 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
 
     try {
       if (isLoggedIn) {
-        const res = await chat(outbound);
-        const assistantMsg: AIChatMessage = { role: "assistant", content: res.response };
-        setMessages([...outbound, assistantMsg]);
-        // Server reports the balance after this message's 1-credit spend.
-        if (typeof res.credits === "number") {
-          setDailyCredits(res.credits);
-          if (res.credits <= 0) setPoolEmpty(true);
+        // LIVE streaming (owner 2026-09-30): the assistant bubble fills in as
+        // the provider generates — the agent-working feel. Paints are
+        // throttled to ~12/s so re-parsing the growing markdown stays cheap;
+        // the final chunk is always painted.
+        let liveAcc = "";
+        let liveCredits: number | null = null;
+        let sawToken = false;
+        let lastPaint = 0;
+        // Live figures (owner 2026-09-30): the model's ```veer-image fences are
+        // stripped server-side; each one arrives as imageStart / imageSuccess /
+        // imageFailed events and is appended at the end of the answer as a
+        // placeholder that swaps into the picture.
+        const figs = new Map<
+          number,
+          { prompt: string; caption?: string; status: "pending" | "done" | "failed"; url?: string }
+        >();
+        const figureBlocks = (): string =>
+          [...figs.values()]
+            .map((f) =>
+              f.status === "done" && f.url
+                ? `\n\n![${f.caption || "Veer-drawn figure"}](${f.url})\n\n\n\n\n\n`
+                : f.status === "pending"
+                  ? "\n\n*🎨 Veer is drawing a figure…*"
+                  : "",
+            )
+            .join("");
+        const paintLive = (force: boolean) => {
+          const now = Date.now();
+          if (!force && now - lastPaint < 80) return;
+          lastPaint = now;
+          const snapshot = liveAcc + figureBlocks();
+          setMessages((prev) => {
+            const next = [...prev];
+            const last = next[next.length - 1];
+            if (last?.role === "assistant") next[next.length - 1] = { role: "assistant", content: snapshot };
+            return next;
+          });
+        };
+        try {
+          for await (const chunk of streamChat(outbound)) {
+            if (typeof chunk === "string") {
+              if (!sawToken) {
+                // First token: create the bubble and flip the streaming flag,
+                // which retires the "working" dots and starts the live cursor.
+                sawToken = true;
+                liveAcc = chunk;
+                setStreamingText("");
+                setMessages((prev) => [...prev, { role: "assistant", content: chunk + figureBlocks() }]);
+              } else {
+                liveAcc += chunk;
+                paintLive(false);
+              }
+            } else if ("imageStart" in chunk) {
+              figs.set(chunk.imageStart, { prompt: chunk.prompt, caption: chunk.caption, status: "pending" });
+              paintLive(true);
+            } else if ("imageSuccess" in chunk) {
+              const f = figs.get(chunk.imageSuccess);
+              if (f) { f.status = "done"; f.url = chunk.url; }
+              paintLive(true);
+            } else if ("imageFailed" in chunk) {
+              const f = figs.get(chunk.imageFailed);
+              if (f) f.status = "failed";
+            } else if (typeof chunk.credits === "number") {
+              liveCredits = chunk.credits;
+            }
+          }
+        } catch (streamErr) {
+          // A failed stream is not a failed message: if tokens already reached
+          // the bubble, keep them (and persist them); only a totally empty
+          // stream re-throws so the error banner shows.
+          if (!liveAcc.trim()) throw streamErr;
+        }
+        // Agent picks the engine: anything Agnes could not draw gets a
+        // browser-side puter.js attempt for the same prompt (User-Pays: the
+        // student's own free Puter allocation; the platform pays nothing).
+        for (const f of figs.values()) {
+          if (f.status === "failed") {
+            const url = await drawFigureWithPuter(f.prompt);
+            if (url) { f.status = "done"; f.url = url; }
+          }
+        }
+        paintLive(true);
+        setStreamingText(null);
+        if (liveCredits !== null) {
+          setDailyCredits(liveCredits);
+          if (liveCredits <= 0) setPoolEmpty(true);
+        }
+        if (!liveAcc.trim()) {
+          throw new Error("No reply received from the AI. Please try again.");
         }
         saveChatHistory(targetSession, [
           { role: "user", content: textToSend },
-          { role: "assistant", content: res.response },
+          { role: "assistant", content: liveAcc + figureBlocks() },
         ]).catch(() => {});
         // New conversation gets a session row as soon as it has content.
         setSessions((prev) => {
@@ -574,6 +659,17 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       }
     } catch (err: any) {
       console.error("AI chat error:", err);
+      setStreamingText(null);
+      // A dead stream that already painted partial text: keep the partial
+      // bubble, append a marker so the student sees it stopped.
+      setMessages((prev) => {
+        const next = [...prev];
+        const last = next[next.length - 1];
+        if (last?.role === "assistant" && !next[next.length - 1].content.trim()) {
+          next.pop();
+        }
+        return next;
+      });
       const msg =
         err.message || "Failed to reach Veer. Please try again.";
       setError(msg);
@@ -750,6 +846,10 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
   };
 
   const displayMessages = messages.filter((m) => m.role !== "system");
+  // The in-progress bubble is the last assistant message while a stream runs.
+  const isStreaming =
+    sending && streamingText !== null &&
+    displayMessages[displayMessages.length - 1]?.role === "assistant";
   const lastAssistantIndex = (() => {
     for (let i = displayMessages.length - 1; i >= 0; i--) {
       if (displayMessages[i].role === "assistant") return i;
@@ -998,6 +1098,9 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                   <div className="min-w-0 flex-1 rounded-2xl rounded-tl-md border border-border/60 bg-muted/20 px-4 py-3">
                     <div className="text-xs leading-relaxed">
                       <MathMarkdown content={msg.content} />
+                      {isStreaming && index === lastAssistantIndex && (
+                        <span className="ml-0.5 inline-block h-3 w-1.5 animate-pulse rounded-sm bg-primary align-text-bottom" aria-hidden />
+                      )}
                     </div>
                     {/* Same per-answer actions as the tutor console, same position */}
                     <ChatMessageActions
@@ -1016,8 +1119,8 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
             })
           )}
 
-          {/* Thinking indicator */}
-          {sending && (
+          {/* Thinking indicator — hidden once the stream starts writing */}
+          {sending && !isStreaming && (
             <div className="flex gap-3 animate-fade-in">
               <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-primary/20 to-violet-500/20 border border-primary/25 text-primary flex items-center justify-center shrink-0 mt-1">
                 <CaptainAvatar className="h-3.5 w-3.5" />

@@ -107,7 +107,7 @@ export function UserNav() {
         </span>
 
         <span
-          className={`hidden xs:inline-flex items-center gap-1 text-[9px] font-bold px-1.5 py-0.2 rounded-md border ${badge.bg} ${badge.text}`}
+          className={`hidden sm:inline-flex items-center gap-1 text-[9px] font-bold px-1.5 py-0.2 rounded-md border ${badge.bg} ${badge.text}`}
         >
           <RoleIcon className="h-2.5 w-2.5" />
           <span>{badge.label}</span>

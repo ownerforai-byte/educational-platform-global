@@ -11,6 +11,7 @@ export type Theme =
   | "nord"
   | "amber"
   | "oled"
+  | "nebula"
   | "system";
 
 export interface ThemeOption {
@@ -91,6 +92,14 @@ export const THEME_OPTIONS: ThemeOption[] = [
     colors: { bg: "#000000", primary: "#3b82f6", border: "#27272a" },
     isDark: true,
   },
+  {
+    id: "nebula",
+    label: "Nebula Sky",
+    description: "Deep-space sky with twinkling stars — the universe look",
+    badge: "Space & Stars",
+    colors: { bg: "#0b0f22", primary: "#b4c2ff", border: "#2a3355" },
+    isDark: true,
+  },
 ];
 
 type ThemeProviderProps = {
@@ -122,6 +131,7 @@ const ALL_THEME_CLASSES = [
   "nord",
   "amber",
   "oled",
+  "nebula",
 ];
 
 export function ThemeProvider({

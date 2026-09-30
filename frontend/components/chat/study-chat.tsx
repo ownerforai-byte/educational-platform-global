@@ -24,6 +24,7 @@ import {
 } from "@/lib/api/ai";
 import { PLATFORM_SYSTEM_PROMPT } from "@/lib/ai/prompts";
 import { MathMarkdown } from "@/components/content/math-markdown";
+import { drawFigureWithPuter } from "@/lib/puter-image";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 
@@ -108,21 +109,60 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
 
     try {
       if (isLoggedIn) {
-        // Use streaming for logged-in users
+        // Use streaming for logged-in users. The server strips the model's
+        // ```veer-image fences, so figures arrive as events and are appended
+        // at the end of the answer: placeholder -> picture -> puter.js fallback.
         let accumulated = "";
-        setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
-        
-        for await (const chunk of streamChat([...messages, userMsg])) {
-          accumulated += chunk;
+        const figs = new Map<
+          number,
+          { prompt: string; caption?: string; status: "pending" | "done" | "failed"; url?: string }
+        >();
+        const figureBlocks = (): string =>
+          [...figs.values()]
+            .map((f) =>
+              f.status === "done" && f.url
+                ? `\n\n![${f.caption || "Veer-drawn figure"}](${f.url})\n\n\n\n\n\n`
+                : f.status === "pending"
+                  ? "\n\n*🎨 Veer is drawing a figure…*"
+                  : "",
+            )
+            .join("");
+        const paint = () => {
+          const full = accumulated + figureBlocks();
           setMessages((prev) => {
             const updated = [...prev];
-            updated[updated.length - 1] = { role: "assistant", content: accumulated };
+            updated[updated.length - 1] = { role: "assistant", content: full };
             return updated;
           });
+        };
+        setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
+
+        for await (const chunk of streamChat([...messages, userMsg])) {
+          if (typeof chunk === "string") {
+            accumulated += chunk;
+          } else if ("imageStart" in chunk) {
+            figs.set(chunk.imageStart, { prompt: chunk.prompt, caption: chunk.caption, status: "pending" });
+          } else if ("imageSuccess" in chunk) {
+            const f = figs.get(chunk.imageSuccess);
+            if (f) { f.status = "done"; f.url = chunk.url; }
+          } else if ("imageFailed" in chunk) {
+            const f = figs.get(chunk.imageFailed);
+            if (f) f.status = "failed";
+          }
+          paint();
         }
+        // Agent picks the engine: anything Agnes could not draw gets a
+        // browser-side puter.js attempt (User-Pays, free for the platform).
+        for (const f of figs.values()) {
+          if (f.status === "failed") {
+            const url = await drawFigureWithPuter(f.prompt);
+            if (url) { f.status = "done"; f.url = url; }
+          }
+        }
+        paint();
         saveChatHistory("default", [
           { role: "user", content: text },
-          { role: "assistant", content: accumulated },
+          { role: "assistant", content: accumulated + figureBlocks() },
         ]).catch(() => {});
       } else {
         const res = await guestChat([...messages, userMsg]);

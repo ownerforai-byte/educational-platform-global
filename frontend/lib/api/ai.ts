@@ -43,10 +43,44 @@ export async function chat(
  * Stream a chat message to the AI assistant (requires auth).
  * Returns an async generator that yields content chunks.
  */
+/** Terminal event of a stream: server-reported credits + truncation-repair flag. */
+export interface StreamChatMeta {
+  done: boolean;
+  credits?: number;
+  continued?: boolean;
+}
+
+/** A figure the model requested mid-answer: the client shows a live
+ *  "generating" placeholder, then swaps in the picture on imageSuccess. */
+export interface StreamImageStart {
+  imageStart: number;
+  prompt: string;
+  caption?: string;
+}
+
+/** The drawn picture (same id as imageStart). */
+export interface StreamImageSuccess {
+  imageSuccess: number;
+  url: string;
+}
+
+/** Agnes failed to draw — the client falls back to puter.js for the same prompt. */
+export interface StreamImageFailed {
+  imageFailed: number;
+  reason?: string;
+}
+
+export type StreamChunk =
+  | string
+  | StreamChatMeta
+  | StreamImageStart
+  | StreamImageSuccess
+  | StreamImageFailed;
+
 export async function* streamChat(
   messages: AIChatMessage[],
   provider?: string
-): AsyncGenerator<string, void, unknown> {
+): AsyncGenerator<StreamChunk, void, unknown> {
   let body: AIChatRequest = { messages, stream: true };
   if (provider) {
     body.provider = provider;
@@ -102,23 +136,55 @@ export async function* streamChat(
       buffer = lines.pop() ?? "";
 
       for (const line of lines) {
-        if (!line.startsWith("data: ")) continue;
-        const data = line.slice(6).trim();
+        const trimmed = line.trim();
+        if (!trimmed.startsWith("data:")) continue;
+        const data = trimmed.slice(5).trim();
         if (!data) continue;
 
+        let parsed: {
+          content?: string;
+          done?: boolean;
+          error?: string;
+          credits?: number;
+          continued?: boolean;
+          imageStart?: number;
+          imageSuccess?: number;
+          imageFailed?: number;
+          prompt?: string;
+          caption?: string;
+          url?: string;
+          reason?: string;
+        };
         try {
-          const parsed = JSON.parse(data);
-          if (parsed.content) {
-            yield parsed.content;
+          parsed = JSON.parse(data);
+        } catch {
+          continue; // A malformed event must not kill a healthy stream.
+        }
+        // The server's error event (generic message + correlation id) now
+        // reaches the caller instead of being swallowed by the old catch.
+        if (parsed.error) throw new Error(parsed.error);
+        if (typeof parsed.imageStart === "number") {
+          yield { imageStart: parsed.imageStart, prompt: parsed.prompt ?? "", caption: parsed.caption };
+          continue;
+        }
+        if (typeof parsed.imageSuccess === "number" && parsed.url) {
+          yield { imageSuccess: parsed.imageSuccess, url: parsed.url };
+          continue;
+        }
+        if (typeof parsed.imageFailed === "number") {
+          yield { imageFailed: parsed.imageFailed, reason: parsed.reason };
+          continue;
+        }
+        if (parsed.content) yield parsed.content;
+        if (parsed.done) {
+          if (typeof parsed.credits === "number" || parsed.continued) {
+            yield {
+              done: true,
+              credits: parsed.credits,
+              continued: parsed.continued,
+            };
           }
-          if (parsed.done) {
-            return;
-          }
-          if (parsed.error) {
-            throw new Error(parsed.error);
-          }
-        } catch (e) {
-          // Skip malformed events
+          return;
         }
       }
     }

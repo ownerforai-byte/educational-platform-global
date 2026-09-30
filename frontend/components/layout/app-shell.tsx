@@ -5,6 +5,7 @@ import Link from "next/link";
 import { PanelLeftClose, PanelLeftOpen, Atom, Pin, PinOff, ChevronDown, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "./mobile-nav";
+import { MobileQuickNav } from "./mobile-quick-nav";
 import { SidebarNavigation } from "./sidebar-navigation";
 import { BackButton } from "@/components/navigation/back-button";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
@@ -85,7 +86,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
            nav at the bottom of every page. A blur cannot hide text that is
            30% visible behind it; opacity has to do that. Kept at /95 rather
            than solid so the tiniest hint of the nebula backdrop survives. */
-        className={`sticky top-0 z-40 border-b border-border/40 bg-background/95 backdrop-blur-xl transition-transform duration-300 ease-in-out ${
+        className={`pt-safe-top sticky top-0 z-40 border-b border-border/40 bg-background/95 backdrop-blur-xl transition-transform duration-300 ease-in-out ${
           navVisible ? "translate-y-0 shadow-md" : "-translate-y-full"
         }`}
       >
@@ -169,6 +170,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             </Suspense>
           </div>
         </div>
+      <MobileQuickNav />
       </header>
 
       {/* ── Body: sidebar + main ───────────────────────────────────── */}

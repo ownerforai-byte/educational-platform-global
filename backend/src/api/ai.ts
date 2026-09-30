@@ -8,7 +8,20 @@ import { supabaseAdmin } from "../db/supabase";
 import { logServerError, newErrorId } from "../middleware/errors";
 import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
 import { completeAnswer } from "../ai/complete-answer";
+import {
+  detectTruncation,
+  describeVerdict,
+  continuationRequest,
+  joinContinued,
+  MAX_CONTINUATIONS,
+} from "../ai/truncation";
 import { imageInstruction, sanitizeChatImages } from "../ai/image-input";
+import {
+  FigureStreamFilter,
+  generateVeerImage,
+  withFigureToolInstruction,
+  resolveFiguresInText,
+} from "../ai/image-gen";
 
 const router = Router();
 
@@ -106,10 +119,11 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
       .filter((m) => m.content && m.content !== lastUser)
       .map((m) => m.content.slice(0, 600))
       .join(" \n ");
-    const baseContext = await buildProfessorContext(lastUser, conversationTail);
-    const professorContext = images.length
-      ? `${baseContext}\n\n${imageInstruction(images.length)}`
-      : baseContext;
+    let baseContext = await buildProfessorContext(lastUser, conversationTail);
+    if (images.length) baseContext += `\n\n${imageInstruction(images.length)}`;
+    // Figure tool: when enabled the model may draw one live figure at the end
+    // of its answer (see image-gen.ts) — the instruction explains the fence.
+    const professorContext = withFigureToolInstruction(baseContext);
     messages = withProfessorContext(messages, professorContext) as AIChatMessage[];
 
     // Handle streaming
@@ -118,29 +132,98 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
       res.setHeader("Cache-Control", "no-cache");
       res.setHeader("Connection", "keep-alive");
 
+      // Declared before the `try` so the `catch` below can tell "nothing
+      // reached the student" (refund) from "a partial answer already showed"
+      // (keep the credit) after a mid-stream failure.
+      let streamedAny = false;
+      let figureSeq = 0;
       try {
-        // "" runs the ordered chain (agnes → openrouter → internal); an
-        // explicit provider from the client still wins. completeAnswer() runs
-        // the full repair sequence before anything reaches the student:
-        // truncation repair first (a cut answer is the worse defect), then the
-        // length floor. This branch sends the full reply as a single event, so
-        // the same synchronous loop applies.
-        const completed = await completeAnswer({
-          chat: (turn) => aiService.chat(provider, turn),
-          finishReason: () => aiService.getLastFinishReason(),
-          messages,
-          tail: messages.slice(-6),
-          question: lastUser,
-        });
-        if (completed.notes.length) {
-          console.info(`[AI] reply repair: ${completed.notes.join("; ")}`);
+        // LIVE streaming (owner 2026-09-30): deltas reach the student as the
+        // provider generates them — the agent-working feel, and long answers
+        // no longer sit behind a single response. Provider selection follows
+        // the ordered chain exactly like the non-stream path.
+        let acc = "";
+        let continued = 0;
+        // Figure fences are filtered OUT of the content the student sees;
+        // each one becomes an imageStart -> imageSuccess/imageFailed event
+        // pair, and the answer continues after the picture (owner 2026-09-30:
+        // "write -> generate -> continue").
+        const figFilter = new FigureStreamFilter();
+        const pendingFigures: Array<{ id: number; prompt: string }> = [];
+        for await (const delta of aiService.chatStream(provider, messages)) {
+          const { chunks, figureStarts } = figFilter.push(delta);
+          for (const spec of figureStarts) {
+            figureSeq += 1;
+            pendingFigures.push({ id: figureSeq, prompt: spec.prompt });
+            res.write(`data: ${JSON.stringify({ imageStart: figureSeq, prompt: spec.prompt, caption: spec.caption })}\n\n`);
+          }
+          for (const chunk of chunks) {
+            acc += chunk;
+            streamedAny = true;
+            res.write(`data: ${JSON.stringify({ content: chunk })}\n\n`);
+          }
         }
-        res.write(`data: ${JSON.stringify({ content: completed.text, done: true, credits: creditsLeft ?? undefined, replyFloor: { floor: completed.floor, words: completed.words, expanded: completed.expanded, continued: completed.continued, continuations: completed.continuations } })}\n\n`);
+        const tail = figFilter.flush();
+        if (tail.tail) {
+          acc += tail.tail;
+          streamedAny = true;
+          res.write(`data: ${JSON.stringify({ content: tail.tail })}\n\n`);
+        }
+        for (const spec of tail.figureStarts) {
+          figureSeq += 1;
+          pendingFigures.push({ id: figureSeq, prompt: spec.prompt });
+          res.write(`data: ${JSON.stringify({ imageStart: figureSeq, prompt: spec.prompt, caption: spec.caption })}\n\n`);
+        }
+
+        // A cut answer is the worse defect, so truncation repair still runs:
+        // one follow-up turn is stitched on as its own chunk. The length
+        // floor stays on the non-stream path — a streamed reply is deep by
+        // construction, and a floor retry would double the cost.
+        for (let i = 0; i < MAX_CONTINUATIONS; i += 1) {
+          const verdict = detectTruncation(acc, aiService.getLastFinishReason());
+          if (!verdict.truncated) break;
+          console.info(`[AI stream] reply repair: ${describeVerdict(verdict)}`);
+          try {
+            const next = await aiService.chat(provider, [
+              ...messages.slice(-6),
+              { role: "assistant", content: acc },
+              { role: "user", content: continuationRequest(verdict.detail) },
+            ]);
+            if (next && next.trim()) {
+              acc = joinContinued(acc, next);
+              continued += 1;
+              res.write(`data: ${JSON.stringify({ content: next })}\n\n`);
+              continue;
+            }
+          } catch {
+            // A failed continuation must not cost the student the partial
+            // answer they are already watching: ship what we have.
+          }
+          break;
+        }
+
+        // Draw the figure(s) the model requested (Agnes 2.1 first, auto-
+        // fallback to 2.0). Each event carries the image id; on failure the
+        // client falls back to browser-side puter.js for the same prompt.
+        for (const fig of pendingFigures) {
+          const t0 = Date.now();
+          const result = await generateVeerImage(fig.prompt);
+          const ok = !!result.url;
+          console.info(
+            ok
+              ? `[image-gen] stream fig ${fig.id} ready in ${Date.now() - t0}ms`
+              : `[image-gen] stream fig ${fig.id} failed: ${result.reason}`,
+          );
+          res.write(`data: ${JSON.stringify({ [ok ? "imageSuccess" : "imageFailed"]: fig.id, url: ok ? result.url : undefined, reason: ok ? undefined : result.reason })}\n\n`);
+        }
+        res.write(`data: ${JSON.stringify({ done: true, credits: creditsLeft ?? undefined, continued: continued > 0, continuations: continued })}\n\n`);
       } catch (err) {
         // SSE headers are already sent, so serverError() cannot be used — but
         // the raw provider error still must not reach the client. Log it under
         // a correlation id and send only the generic message + that id.
-        if (billedUserId) {
+        // Refund only when NOTHING reached the student: a mid-stream failure
+        // delivered a partial answer, which is the service being paid for.
+        if (billedUserId && !streamedAny) {
           await refundCredits(billedUserId, AI_MESSAGE_COST, "Refund: AI reply failed (stream)").catch(
             () => {},
           );
@@ -169,9 +252,11 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     if (completed.notes.length) {
       console.info(`[AI] reply repair: ${completed.notes.join("; ")}`);
     }
-    const response = completed.text;
+    // Figure fences -> drawn pictures (or an honest inline note on failure).
+    const { text: response, figures } = await resolveFiguresInText(completed.text);
     res.json({
       response,
+      generatedFigures: figures.map((f) => ({ prompt: f.prompt, url: f.url, reason: f.reason })),
       provider: provider || aiService.getLastAnsweredBy(),
       credits: creditsLeft ?? undefined,
       replyFloor: {

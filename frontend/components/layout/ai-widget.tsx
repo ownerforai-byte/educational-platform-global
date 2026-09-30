@@ -30,7 +30,7 @@ export function AIWidget() {
       {/* Floating toggle button — bottom-left */}
       <button
         onClick={() => setOpen(!open)}
-        className={`fixed bottom-6 left-6 z-50 h-14 w-14 rounded-full shadow-lg flex items-center justify-center transition-all ${
+        className={`fixed left-6 z-50 h-14 w-14 rounded-full shadow-lg flex items-center justify-center transition-all bottom-safe ${
           open
             ? "bg-red-500 hover:bg-red-600"
             : "bg-gradient-to-br from-primary to-primary/70 hover:scale-105"
@@ -47,7 +47,7 @@ export function AIWidget() {
       {/* Chat panel — its own panel, full interface inside */}
       {open && (
         <div
-          className="fixed bottom-24 left-6 z-50 w-[min(760px,calc(100vw-3rem))] rounded-2xl border border-border bg-card shadow-2xl overflow-hidden"
+          className="fixed bottom-safe-panel left-6 z-50 w-[min(760px,calc(100vw-3rem))] rounded-2xl border border-border bg-card shadow-2xl overflow-hidden"
           style={{ height: "min(640px, calc(100vh - 8rem))" }}
           role="dialog"
           aria-label="Veer"

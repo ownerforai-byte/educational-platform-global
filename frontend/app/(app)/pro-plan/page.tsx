@@ -50,10 +50,10 @@ const ACTIONS: Array<[label: string, note: string, coins: string, usd: string]> 
 ];
 
 const PRO_INCLUDES = [
-  "Veer replies with no daily cap — ask again in the same minute, not tomorrow",
-  "Note credits with no daily ceiling, so a full revision day is not cut short",
+  "Veer replies on a pool based on your tier — ask again in the same minute, not tomorrow",
+  "Note credits on a pool based on your tier, so a full revision day is not cut short",
   "The same NEB Class 11/12 grounding, the same saved conversations",
-  "The daily pool keeps working exactly as it does now for everyone else",
+  "The daily pool is based on tiers and keeps working exactly as it does now for everyone else",
 ];
 
 export default function ProPlanPage() {

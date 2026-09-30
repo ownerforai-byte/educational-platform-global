@@ -5,6 +5,7 @@ import { rateLimit } from "../middleware/rateLimit";
 import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
 import { completeAnswer } from "../ai/complete-answer";
 import { imageInstruction, sanitizeChatImages } from "../ai/image-input";
+import { withFigureToolInstruction, resolveFiguresInText } from "../ai/image-gen";
 import {
   GUEST_DAILY_LIMIT,
   consumeGuestSlot,
@@ -105,10 +106,9 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
       .filter((m) => m.content && m.content !== lastUser)
       .map((m) => m.content.slice(0, 600))
       .join(" \n ");
-    const baseContext = await buildProfessorContext(lastUser, conversationTail);
-    const professorContext = images.length
-      ? `${baseContext}\n\n${imageInstruction(images.length)}`
-      : baseContext;
+    let baseContext = await buildProfessorContext(lastUser, conversationTail);
+    if (images.length) baseContext += `\n\n${imageInstruction(images.length)}`;
+    const professorContext = withFigureToolInstruction(baseContext);
     const augmented = withProfessorContext(messages, professorContext) as AIChatMessage[];
 
     // "" runs the ordered chain (agnes → openrouter → internal).
@@ -127,8 +127,12 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
     if (completed.notes.length) {
       console.info(`[AI] guest reply repair: ${completed.notes.join("; ")}`);
     }
+    // Guest answers draw figures too (the server engine is free for the app;
+    // the browser puter.js fallback covers a dead Agnes key on their side).
+    const { text: guestResponse, figures: guestFigures } = await resolveFiguresInText(completed.text);
     res.json({
-      response: completed.text,
+      response: guestResponse,
+      generatedFigures: guestFigures.map((f) => ({ prompt: f.prompt, url: f.url, reason: f.reason })),
       provider: provider || aiService.getLastAnsweredBy(),
       remaining,
       limit: GUEST_DAILY_LIMIT,

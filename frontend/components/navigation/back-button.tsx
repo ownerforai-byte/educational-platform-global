@@ -87,7 +87,7 @@ export function BackButton({
       type="button"
       onClick={handleBack}
       className={cn(
-        "fixed bottom-6 right-6 z-50 h-11 w-11 rounded-full shadow-lg",
+        "fixed right-6 z-50 h-11 w-11 rounded-full shadow-lg bottom-safe",
         "flex items-center justify-center",
         "bg-primary text-primary-foreground",
         "hover:opacity-90 hover:scale-105 active:scale-95",

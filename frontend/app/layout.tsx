@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme/theme-provider";
+import { StarField } from "@/components/theme/star-field";
 import { QueryProvider } from "@/providers/query-provider";
 import { AuthProvider } from "@/providers/auth-provider";
 import { CreditProvider } from "@/features/credits";
@@ -25,6 +26,7 @@ export const metadata: Metadata = {
 export const viewport: Viewport = {
   width: "device-width",
   initialScale: 1,
+  viewportFit: "cover",
   // No `maximumScale` — blocking pinch-zoom fails WCAG 1.4.4 (Resize Text).
   themeColor: "#3b82f6",
 };
@@ -48,7 +50,10 @@ export default function RootLayout({
   </head>
       <body className="min-h-screen bg-background text-foreground antialiased bg-mesh">
         <QueryProvider>
-          <ThemeProvider defaultTheme="system" storageKey="neb-theme">
+          <ThemeProvider defaultTheme="nebula" storageKey="neb-theme">
+            {/* Permanent "Nebula Sky" starfield: mounted once, shows the
+                flashing-stars backdrop on every page (dark themes only). */}
+            <StarField />
             <AuthProvider>
               <CreditProvider>
                 <RawEventRejectionGuard />
