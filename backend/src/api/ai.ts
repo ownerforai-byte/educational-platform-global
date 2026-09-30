@@ -7,7 +7,7 @@ import { ensureDailyCredits, spendCredits, refundCredits, AI_MESSAGE_COST, DAILY
 import { supabaseAdmin } from "../db/supabase";
 import { logServerError, newErrorId } from "../middleware/errors";
 import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
-import { enforceReplyFloor, floorWordsForQuestion } from "../ai/syllabus-anchor";
+import { completeAnswer } from "../ai/complete-answer";
 import { imageInstruction, sanitizeChatImages } from "../ai/image-input";
 
 const router = Router();
@@ -98,7 +98,15 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     // Professor mode: enforce plain-text style + inject live web results
     // for the student's latest question (Google CSE, timeout-protected).
     const lastUser = [...messages].reverse().find((m) => m.role === "user")?.content ?? "";
-    const baseContext = await buildProfessorContext(lastUser);
+    // The recent thread (minus the current message) identifies the topic for
+    // retrieval and grounding, so a follow-up gets the same depth as the
+    // question that opened it instead of a from-memory answer.
+    const conversationTail = messages
+      .slice(-6)
+      .filter((m) => m.content && m.content !== lastUser)
+      .map((m) => m.content.slice(0, 600))
+      .join(" \n ");
+    const baseContext = await buildProfessorContext(lastUser, conversationTail);
     const professorContext = images.length
       ? `${baseContext}\n\n${imageInstruction(images.length)}`
       : baseContext;
@@ -112,21 +120,22 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
 
       try {
         // "" runs the ordered chain (agnes → openrouter → internal); an
-        // explicit provider from the client still wins. The reply floor is
-        // enforced here too — this branch sends the full reply as a single
-        // event, so the same synchronous retry loop applies before anything
-        // reaches the student.
-        const streamRaw = await aiService.chat(provider, messages);
-        const streamFloor = floorWordsForQuestion(lastUser);
-        const streamFloored = await enforceReplyFloor(streamRaw, streamFloor, async (request) => {
-          const convoTail = messages.slice(-6);
-          return aiService.chat(provider, [
-            ...convoTail,
-            { role: "assistant" as const, content: streamRaw },
-            { role: "user" as const, content: request },
-          ]);
+        // explicit provider from the client still wins. completeAnswer() runs
+        // the full repair sequence before anything reaches the student:
+        // truncation repair first (a cut answer is the worse defect), then the
+        // length floor. This branch sends the full reply as a single event, so
+        // the same synchronous loop applies.
+        const completed = await completeAnswer({
+          chat: (turn) => aiService.chat(provider, turn),
+          finishReason: () => aiService.getLastFinishReason(),
+          messages,
+          tail: messages.slice(-6),
+          question: lastUser,
         });
-        res.write(`data: ${JSON.stringify({ content: streamFloored.answer, done: true, credits: creditsLeft ?? undefined, replyFloor: { floor: streamFloored.floor, words: streamFloored.words, expanded: streamFloored.expanded } })}\n\n`);
+        if (completed.notes.length) {
+          console.info(`[AI] reply repair: ${completed.notes.join("; ")}`);
+        }
+        res.write(`data: ${JSON.stringify({ content: completed.text, done: true, credits: creditsLeft ?? undefined, replyFloor: { floor: completed.floor, words: completed.words, expanded: completed.expanded, continued: completed.continued, continuations: completed.continuations } })}\n\n`);
       } catch (err) {
         // SSE headers are already sent, so serverError() cannot be used — but
         // the raw provider error still must not reach the client. Log it under
@@ -146,29 +155,32 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
       return;
     }
 
-    // Server-side reply floor (owner requirement 2026-09-29): a reply below
-    // 150 words (scaled up with question depth) gets ONE expansion retry
-    // before it may ship — the anti-random-answer guarantee is enforced in
-    // code, not just prompted.
-    const rawResponse = await aiService.chat(provider, messages);
-    const floor = floorWordsForQuestion(lastUser);
-    const floored = await enforceReplyFloor(rawResponse, floor, async (request) => {
-      const convoTail = messages.slice(-6);
-      return aiService.chat(provider, [
-        ...convoTail,
-        {
-          role: "assistant" as const,
-          content: rawResponse,
-        },
-        { role: "user" as const, content: request },
-      ]);
+    // Server-side answer completion (owner requirements 2026-09-29/30): the
+    // reply is repaired for TRUNCATION first — a sentence that stops mid-clause
+    // is the worst failure mode and used to ship silently — and only then
+    // raised to the 150-word depth-scaled floor. Enforced in code, not prompted.
+    const completed = await completeAnswer({
+      chat: (turn) => aiService.chat(provider, turn),
+      finishReason: () => aiService.getLastFinishReason(),
+      messages,
+      tail: messages.slice(-6),
+      question: lastUser,
     });
-    const response = floored.answer;
+    if (completed.notes.length) {
+      console.info(`[AI] reply repair: ${completed.notes.join("; ")}`);
+    }
+    const response = completed.text;
     res.json({
       response,
       provider: provider || aiService.getLastAnsweredBy(),
       credits: creditsLeft ?? undefined,
-      replyFloor: { floor: floored.floor, words: floored.words, expanded: floored.expanded },
+      replyFloor: {
+        floor: completed.floor,
+        words: completed.words,
+        expanded: completed.expanded,
+        continued: completed.continued,
+        continuations: completed.continuations,
+      },
       images: { accepted: images.length, rejected: rejectedImages },
     });
   } catch (err: any) {

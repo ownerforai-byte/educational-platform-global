@@ -11,6 +11,23 @@ import { toGeminiImageParts, toOpenAIContent, type GeminiInlineDataPart } from "
  */
 const SITE = (process.env.FRONTEND_URL || PUBLIC_SITE_URL).replace(/\/$/, "");
 
+/**
+ * Output ceiling for every provider request.
+ *
+ * Owner requirement (2026-09-30): "all details of all topics one by one, not
+ * the shallow one … paste the knowledge with a little grammar polish". A hard
+ * 1600/2048-token ceiling is what forced the tutor to COMPRESS a whole topic
+ * into a summary — the model was cut off mid-derivation, so `Go deeper` could
+ * not go deeper. The ceiling is now one shared, env-overridable constant set
+ * high enough for a complete topic (roughly 3000+ words) while still being a
+ * ceiling: a prompt that demands completeness cannot be honoured inside 1600.
+ *
+ * NOTE: raising this lengthens generation time; the chain budget
+ * (AI_CHAIN_BUDGET_MS, AI_PRIMARY_TIMEOUT_MS) still bounds how long a reply may
+ * take, so tune both together on a slow deployment.
+ */
+export const MAX_OUTPUT_TOKENS = Number(process.env.AI_MAX_OUTPUT_TOKENS) || 16384;
+
 export type SupportedProvider = "openrouter" | "internal" | "agnes";
  
 export interface AIChatMessage {
@@ -517,7 +534,7 @@ class GeminiProvider implements AIProvider {
     const url = `https://generativelanguage.googleapis.com/v1beta/models/${this.model}:generateContent`;
     const body: any = {
       contents: [{ role: "user", parts: [{ text: prompt }, ...imageParts] }],
-      generationConfig: { temperature: 0.7, maxOutputTokens: 2048 },
+      generationConfig: { temperature: 0.7, maxOutputTokens: MAX_OUTPUT_TOKENS },
     };
     if (systemInstruction) {
       body.systemInstruction = { parts: [{ text: systemInstruction }] };
@@ -626,7 +643,7 @@ class OpenRouterProvider implements AIProvider {
           role: m.role,
           content: toOpenAIContent(m.content, m.images),
         })),
-        max_tokens: 2048,
+        max_tokens: MAX_OUTPUT_TOKENS,
       }),
       // Free-tier models can queue; cap the wait so the chain stays responsive.
       signal: AbortSignal.timeout(60000),
@@ -689,6 +706,16 @@ class AgnesProvider implements AIProvider {
   private model = process.env.AGNES_MODEL || "agnes-3.0-flash";
   private apiKey: string;
   private timeoutMs: number;
+  /**
+   * The provider's own verdict on the last call. "length" means the model ran
+   * out of output room mid-answer — the conclusive truncation signal, reported
+   * by the transport rather than guessed from the text.
+   */
+  private lastFinishReason = "";
+
+  getLastFinishReason(): string {
+    return this.lastFinishReason;
+  }
 
   constructor(apiKey: string) {
     this.apiKey = apiKey;
@@ -698,7 +725,15 @@ class AgnesProvider implements AIProvider {
     this.apiUrl = process.env.AGNES_API_URL || this.apiUrl;
     this.model = process.env.AGNES_MODEL || this.model;
     // Fail fast so the chain can reach openrouter/internal when Agnes is down.
-    this.timeoutMs = Number(process.env.AGNES_TIMEOUT_MS || 29000);
+    //
+    // 2026-09-30 (owner: "answers must cover all aspects, i have given it time,
+    // no haste"): this was 29s. A whole-topic answer on a flash-class model
+    // takes longer than that, so the request was ABORTED mid-generation, the
+    // chain treated the timeout as a failure, and the next link — a free
+    // "lightning" tier model — answered instead. That is the "half knowledge"
+    // report. A depth-first answer may now take minutes; slowness must never
+    // be a reason to hand the question to a terser model.
+    this.timeoutMs = Number(process.env.AGNES_TIMEOUT_MS || 240000);
   }
 
   private async callAgnes(messages: Array<AIChatMessage>): Promise<string> {
@@ -714,9 +749,11 @@ class AgnesProvider implements AIProvider {
           role: m.role,
           content: toOpenAIContent(m.content, m.images),
         })),
-        // 1600 tokens keeps full derivations intact while staying inside the
-        // chain's global budget (the Next dev proxy kills POSTs at ~30s).
-        max_tokens: 1600,
+        // One shared ceiling (AI_MAX_OUTPUT_TOKENS, default 4096) so a complete
+        // topic — every root, idea, formula and trap — fits without the model
+        // compressing itself mid-derivation. The chain budget still bounds the
+        // wait, and a slow deployment can lower this without a code change.
+        max_tokens: MAX_OUTPUT_TOKENS,
         temperature: 0.7,
       }),
       // Agnes gateway can queue; cap the wait so the chain stays responsive.
@@ -729,6 +766,7 @@ class AgnesProvider implements AIProvider {
     }
 
     const data = await res.json();
+    this.lastFinishReason = String(data?.choices?.[0]?.finish_reason ?? "");
     const text = data?.choices?.[0]?.message?.content;
     if (!text || !text.trim()) throw new Error("Empty Agnes response");
     return text;
@@ -871,6 +909,16 @@ export class AIService {
     return this.lastAnsweredBy;
   }
 
+  /**
+   * The transport's own verdict on the last call — "length" means the provider
+   * ran out of output room mid-answer. Empty when the transport cannot report
+   * it, in which case detectTruncation() falls back to reading the text.
+   */
+  getLastFinishReason(): string {
+    const agnes = this.providers.get("agnes");
+    return agnes instanceof AgnesProvider ? agnes.getLastFinishReason() : "";
+  }
+
   private resolve(providerName: string): AIProvider {
     return (
       this.providers.get(providerName.toLowerCase()) ??
@@ -922,20 +970,32 @@ export class AIService {
     // go straight to the backend via NEXT_PUBLIC_API_URL (not through the
     // Next dev proxy), so nothing cuts the POST off before the budget is
     // spent; `apiFetch` applies no client-side timeout either.
-    const GLOBAL_BUDGET_MS = Number(process.env.AI_CHAIN_BUDGET_MS) || 115000;
-    const PER_PROVIDER_MS = Number(process.env.AI_PROVIDER_TIMEOUT_MS) || 30000;
+    const GLOBAL_BUDGET_MS = Number(process.env.AI_CHAIN_BUDGET_MS) || 600000;
+    const PER_PROVIDER_MS = Number(process.env.AI_PROVIDER_TIMEOUT_MS) || 120000;
     // Owner policy: Agnes is THE responder. It gets a much longer window than
     // the fallback so only a real failure/timeout (not mere slowness) moves
     // the chain on to openrouter.
-    const PRIMARY_MS = Number(process.env.AI_PRIMARY_TIMEOUT_MS) || 100000;
+    const PRIMARY_MS = Number(process.env.AI_PRIMARY_TIMEOUT_MS) || 540000;
     const started = Date.now();
     for (let i = 0; i < chain.length; i++) {
       const p = chain[i];
       const remaining = GLOBAL_BUDGET_MS - (Date.now() - started);
       if (remaining <= 0) break;
       const isLast = i === chain.length - 1;
+      // 2026-09-30: the PRIMARY link now owns the ENTIRE remaining budget.
+      //
+      // This is the fix for "half knowledge". Previously the primary was capped
+      // at PRIMARY_MS (100s) while the whole chain was capped at 115s, so a deep
+      // answer that ran long was killed, the catch treated the timeout as a
+      // provider FAILURE, and openrouter's free "lightning" model answered in
+      // its place — fast, short and shallow, with no visible warning.
+      //
+      // Now: primary gets everything. If it times out, the budget really is
+      // spent, so the loop breaks and the student gets a retryable 504 with
+      // their credit refunded — which is the honest outcome. A slow, complete
+      // answer is never silently replaced by a terse one.
       const linkCap = i === 0 ? Math.max(PER_PROVIDER_MS, PRIMARY_MS) : PER_PROVIDER_MS;
-      const cap = isLast ? remaining : Math.min(linkCap, remaining);
+      const cap = i === 0 ? Math.min(Math.max(linkCap, remaining), remaining) : isLast ? remaining : Math.min(linkCap, remaining);
       try {
         const text = await withDeadline(p.chat(messages), cap);
         if (text && text.trim()) {

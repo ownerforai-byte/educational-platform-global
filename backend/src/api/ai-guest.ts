@@ -3,7 +3,7 @@ import { serverError, ERROR_ID_HEADER, logServerError, newErrorId } from "../mid
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { rateLimit } from "../middleware/rateLimit";
 import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
-import { enforceReplyFloor, floorWordsForQuestion } from "../ai/syllabus-anchor";
+import { completeAnswer } from "../ai/complete-answer";
 import { imageInstruction, sanitizeChatImages } from "../ai/image-input";
 import {
   GUEST_DAILY_LIMIT,
@@ -97,33 +97,48 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
     const aiService = getService();
 
     // Professor mode: plain-text enforcement + live web results (best-effort).
+    // The recent thread rides along so a follow-up is grounded on the topic the
+    // guest is actually on, exactly as in the authed chat.
     const lastUser = [...messages].reverse().find((m) => m.role === "user")?.content ?? "";
-    const baseContext = await buildProfessorContext(lastUser);
+    const conversationTail = messages
+      .slice(-6)
+      .filter((m) => m.content && m.content !== lastUser)
+      .map((m) => m.content.slice(0, 600))
+      .join(" \n ");
+    const baseContext = await buildProfessorContext(lastUser, conversationTail);
     const professorContext = images.length
       ? `${baseContext}\n\n${imageInstruction(images.length)}`
       : baseContext;
     const augmented = withProfessorContext(messages, professorContext) as AIChatMessage[];
 
     // "" runs the ordered chain (agnes → openrouter → internal).
-    const rawResponse = await aiService.chat(provider, augmented);
-    // Server-side reply floor (owner requirement 2026-09-29): same guarantee
-    // as the authed chat — one expansion retry when a reply lands below the
-    // 150-word minimum (scaled up with question depth).
-    const floor = floorWordsForQuestion(lastUser);
-    const floored = await enforceReplyFloor(rawResponse, floor, async (request) => {
-      const convoTail = augmented.slice(-6);
-      return aiService.chat(provider, [
-        ...convoTail,
-        { role: "assistant" as const, content: rawResponse },
-        { role: "user" as const, content: request },
-      ]);
+    //
+    // Server-side answer completion (owner 2026-09-29/30): the guest path gets
+    // the EXACT same repair the authed path gets — truncation repair first (a
+    // cut answer used to ship silently), then the 150-word depth-scaled floor.
+    // Guests must not receive a weaker answer than signed-in students.
+    const completed = await completeAnswer({
+      chat: (turn) => aiService.chat(provider, turn),
+      finishReason: () => aiService.getLastFinishReason(),
+      messages: augmented,
+      tail: augmented.slice(-6),
+      question: lastUser,
     });
+    if (completed.notes.length) {
+      console.info(`[AI] guest reply repair: ${completed.notes.join("; ")}`);
+    }
     res.json({
-      response: floored.answer,
+      response: completed.text,
       provider: provider || aiService.getLastAnsweredBy(),
       remaining,
       limit: GUEST_DAILY_LIMIT,
-      replyFloor: { floor: floored.floor, words: floored.words, expanded: floored.expanded },
+      replyFloor: {
+        floor: completed.floor,
+        words: completed.words,
+        expanded: completed.expanded,
+        continued: completed.continued,
+        continuations: completed.continuations,
+      },
       images: { accepted: images.length, rejected: rejectedImages },
     });
   } catch (err: any) {

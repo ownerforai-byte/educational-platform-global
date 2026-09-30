@@ -68,3 +68,54 @@ describe("renderNoteHtml — universal note pipeline", () => {
     expect(html).toContain("\\[x\\]");
   });
 });
+
+/**
+ * Images inside an AI reply (owner requirement 2026-09-30): "it must be able to
+ * present images in its reply". The tutor embeds real image URLs from its web
+ * grounding as `![caption](url)`, and every AI surface renders replies through
+ * MathMarkdown -> renderNoteHtml, so the pictures must survive this pipeline.
+ * (Styles: app/globals.css `.prose img` sizes and frames them.)
+ */
+describe("renderNoteHtml — images in an AI reply", () => {
+  it("renders a real https image as an <img> inside the answer", () => {
+    const html = renderNoteHtml(
+      "The nephron filters blood.\n\n![Nephron structure — glomerulus, tubule and collecting duct](https://upload.wikimedia.org/nephron.png)\n\n*Figure: the functional unit of the kidney.*",
+    );
+    expect(html).toContain("<img");
+    expect(html).toContain('src="https://upload.wikimedia.org/nephron.png"');
+    expect(html).toContain('alt="Nephron structure — glomerulus, tubule and collecting duct"');
+    // The caption stays with it, and the prose around it is untouched.
+    expect(html).toContain("<em>Figure: the functional unit of the kidney.</em>");
+    expect(html).toContain("The nephron filters blood.");
+  });
+
+  it("renders several images from one answer, each where it was written", () => {
+    const html = renderNoteHtml(
+      "Step 1 — the cell body.\n\n![Neuron cell body](https://example.edu/neuron-body.png)\n\nStep 2 — the synapse.\n\n![Synapse](https://example.edu/synapse.jpg)",
+    );
+    const imgs = html.match(/<img/g) ?? [];
+    expect(imgs.length).toBe(2);
+    expect(html).toContain("https://example.edu/neuron-body.png");
+    expect(html).toContain("https://example.edu/synapse.jpg");
+    expect(html.indexOf("Step 1")).toBeLessThan(html.indexOf("neuron-body.png"));
+    expect(html.indexOf("neuron-body.png")).toBeLessThan(html.indexOf("Step 2"));
+  });
+
+  it("still refuses dangerous URLs and scripts in an image line", () => {
+    const html = renderNoteHtml(
+      '![x](javascript:alert(1))\n\n<img src="x" onerror="alert(1)">\n\n<script>alert(1)</script>',
+    );
+    expect(html).not.toContain("javascript:");
+    expect(html).not.toContain("onerror");
+    expect(html).not.toContain("<script");
+  });
+
+  it("a data-URL image keeps its alt text but is never given a src", () => {
+    // The sanitizer only allows http(s) image sources, so an inline data URL
+    // cannot smuggle markup into the answer: the tag survives with no src, so
+    // the browser has nothing to fetch and nothing to render.
+    const html = renderNoteHtml("![inline](data:image/svg+xml;base64,PHN2Zz48L3N2Zz4=)");
+    expect(html).not.toContain("src=");
+    expect(html).not.toContain("base64");
+  });
+});

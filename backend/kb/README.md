@@ -131,6 +131,31 @@ the reply gives the diagram in words instead.
 | `TAVILY_SEARCH_DEPTH` | `advanced` | Search depth (`basic` to save quota) |
 | `SEARCH_RAW_CONTENT_CHARS` | 2500 | Page extract kept per result |
 
+## Class levels — `_class-index.json`
+
+**Audit finding (2026-09-30): the authored corpus contains no Class 12 folder at
+all** (`content/ravikishan/` holds `class-11` and `class-11-notes` only), and the
+built syllabus-notes payloads declare no class — so every Class 12 topic was
+indexed as an *unknown level* and the tutor was never told which grade it was
+teaching. The backend now falls back to the platform's own topic registry
+(`frontend/public/data/topic-registry.json`), which fixed what it lists.
+
+For everything it does not list, drop a map in here — no code change:
+
+```json
+{
+  "physics/nuclear-physics": "class-12",
+  "physics/semiconductors": "class-12",
+  "biology/heredity-and-evolution": "class-12",
+  "chemistry/electro-chemistry": "class-12",
+  "chemistry/electrochemistry": "class-12"
+}
+```
+
+Keys may be `"subject/unit"` (preferred) or a bare `"unit"`. A record's own
+`class` field and its folder path always win over this index. Current split:
+657 Class 11 · 16 Class 12 · 503 unknown, out of 1176 records.
+
 ## Validation
 
 Add a file, then ask the tutor a question about it. Automated checks:

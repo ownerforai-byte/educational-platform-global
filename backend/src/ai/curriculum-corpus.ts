@@ -206,15 +206,30 @@ export function humanizeKey(key: string): string {
   return spaced.charAt(0).toUpperCase() + spaced.slice(1).toLowerCase();
 }
 
-/** Read a class level out of any path/text the source provides. */
+/**
+ * Read a class level out of any path/text the source provides.
+ *
+ * Every form is matched as a STANDALONE token. The old pattern allowed a
+ * non-digit on either side of the Roman numeral, so the letters "xi" inside a
+ * word matched Class 11: `.../limits-and-continuity/06-existence-of-limit.json`
+ * was classified Class 11 while its eleven sibling files were Class 12. A
+ * boundary that also excludes letters (not just digits) fixes that without
+ * losing "class-11-notes", "class 12", "Grade 11" or "xii".
+ */
 export function detectClassLevel(text: string): ClassLevel {
   const t = text.toLowerCase();
-  if (/(^|[^0-9])class[-_ ]?12([^0-9]|$)|grade[-_ ]?12|(^|[^0-9])xii([^0-9]|$)/.test(t)) {
-    return "class-12";
-  }
-  if (/(^|[^0-9])class[-_ ]?11([^0-9]|$)|grade[-_ ]?11|(^|[^0-9])xi([^0-9]|$)/.test(t)) {
-    return "class-11";
-  }
+  const edge = "(^|[^a-z0-9])";
+  const end = "([^a-z0-9]|$)";
+  const twelve = new RegExp(
+    `${edge}class[-_ ]?12${end}|${edge}grade[-_ ]?12${end}|${edge}xii${end}|${edge}12th${end}`,
+    "i",
+  );
+  const eleven = new RegExp(
+    `${edge}class[-_ ]?11${end}|${edge}grade[-_ ]?11${end}|${edge}xi${end}|${edge}11th${end}`,
+    "i",
+  );
+  if (twelve.test(t)) return "class-12";
+  if (eleven.test(t)) return "class-11";
   return "unknown";
 }
 
@@ -227,8 +242,12 @@ export function detectClassLevel(text: string): ClassLevel {
 export function classLevelFromDeclared(value: unknown): ClassLevel {
   const v = String(value ?? "").trim().toLowerCase();
   if (!v || v.length > 20) return "unknown";
-  if (/(^|\d)xii$|^12$|^12th$|class\s*12$|grade\s*12$/.test(v)) return "class-12";
-  if (/(^|\d)xi$|^11$|^11th$|class\s*11$|grade\s*11$/.test(v)) return "class-11";
+  // The declared value may carry a suffix ("class-12-notes" is how the platform
+  // registry spells it), so match the class token with a word boundary rather
+  // than insisting the string ends there. Prose is still rejected by the length
+  // guard above and by the anchored numeric forms below.
+  if (/class[-_ ]?12\b|grade[-_ ]?12\b|^xii$|^12$|^12th$/.test(v)) return "class-12";
+  if (/class[-_ ]?11\b|grade[-_ ]?11\b|^xi$|^11$|^11th$/.test(v)) return "class-11";
   return "unknown";
 }
 
@@ -278,6 +297,8 @@ function toEntry(
     unit: string;
     classLevel: ClassLevel;
     dropIn: boolean;
+    /** Fallback "which class teaches this unit" map (see loadClassIndex). */
+    classIndex?: Map<string, ClassLevel>;
   },
   lineCounts?: Map<string, number>,
 ): CorpusEntry | null {
@@ -335,6 +356,15 @@ function toEntry(
         ? meta.classLevel
         : detectClassLevel(`${meta.id} ${subject} ${unit}`);
 
+  // Path and declaration both silent? Ask the class index (`_class-index.json`
+  // drop-in + the platform's topic registry). Without this every Class 12 topic
+  // was indexed as an unknown level, so the tutor was never told the grade it
+  // was teaching.
+  const indexedClass =
+    classLevel !== "unknown"
+      ? classLevel
+      : classFromIndex(meta.classIndex ?? new Map(), subject, unit);
+
   const haystack = [title, unit, subject, topicSlug, ...sections.flatMap((s) => s.lines)]
     .join(" \n ")
     .toLowerCase();
@@ -343,7 +373,7 @@ function toEntry(
 
   return {
     id: meta.id,
-    classLevel,
+    classLevel: indexedClass,
     subject,
     unit,
     title,
@@ -443,10 +473,89 @@ function collectJsonFiles(dir: string, requireSegment: string | undefined, out: 
       continue;
     }
     if (!name.endsWith(".json")) continue;
-    if (name === "_index.json") continue;
+    // `_index.json` / `_manifest.json` describe the folder; `_class-index.json`
+    // is the class map read below. None of them is knowledge, so none is loaded
+    // as a record.
+    if (name.startsWith("_")) continue;
     if (requireSegment && !full.includes(requireSegment)) continue;
     out.push(full);
   }
+}
+
+/**
+ * CLASS INDEX — which class a topic belongs to, when the source does not say.
+ *
+ * Audit finding (2026-09-30): the authored corpus carries `class-11` paths only,
+ * and the built syllabus-notes payloads declare no class at all, so EVERY
+ * Class 12 topic (nuclear physics, electrochemistry, heredity, limits and
+ * continuity…) was indexed as "unknown level" and shown to the tutor without a
+ * grade. Two sources fix that, both read-only and optional:
+ *
+ *   1. `frontend/public/data/topic-registry.json` — the platform's own topic
+ *      registry, whose entries carry `class`, `subject` and `unit`.
+ *   2. `backend/kb/_class-index.json` — an owner drop-in for everything the
+ *      registry does not list: `{ "physics/nuclear-physics": "class-12" }` or
+ *      `{ "nuclear-physics": "class-12" }`.
+ *
+ * A record's own declaration and its path always win over this index.
+ */
+export function loadClassIndex(): Map<string, ClassLevel> {
+  const index = new Map<string, ClassLevel>();
+  const add = (key: string, value: unknown) => {
+    const level = classLevelFromDeclared(value);
+    if (level !== "unknown" && key.trim()) index.set(key.trim().toLowerCase(), level);
+  };
+
+  const cwd = process.cwd();
+  const registryPaths = [
+    path.join(cwd, "frontend", "public", "data", "topic-registry.json"),
+    path.join(cwd, "..", "frontend", "public", "data", "topic-registry.json"),
+    path.join(cwd, "public", "data", "topic-registry.json"),
+  ];
+  for (const file of registryPaths) {
+    if (!fs.existsSync(file)) continue;
+    try {
+      const parsed = JSON.parse(fs.readFileSync(file, "utf8")) as {
+        topics?: Array<{ class?: unknown; subject?: unknown; unit?: unknown }>;
+      };
+      for (const topic of parsed.topics ?? []) {
+        const subject = String(topic.subject ?? "").toLowerCase();
+        const unit = String(topic.unit ?? "").toLowerCase();
+        if (!unit) continue;
+        if (subject) add(`${subject}/${unit}`, topic.class);
+        if (!index.has(unit)) add(unit, topic.class);
+      }
+    } catch {
+      // A malformed registry never blocks the corpus.
+    }
+    break;
+  }
+
+  for (const base of [cwd, path.join(cwd, "..")]) {
+    for (const dir of [path.join(base, "backend", "kb"), path.join(base, "kb")]) {
+      const file = path.join(dir, "_class-index.json");
+      if (!fs.existsSync(file)) continue;
+      try {
+        const parsed = JSON.parse(fs.readFileSync(file, "utf8")) as Record<string, unknown>;
+        for (const [key, value] of Object.entries(parsed)) add(key, value);
+      } catch {
+        // A malformed drop-in never blocks the corpus.
+      }
+    }
+  }
+
+  return index;
+}
+
+/** Resolve a class from the index: subject-scoped key first, then bare unit. */
+export function classFromIndex(
+  index: Map<string, ClassLevel>,
+  subject: string,
+  unit: string,
+): ClassLevel {
+  const s = subject.toLowerCase();
+  const u = unit.toLowerCase();
+  return index.get(`${s}/${u}`) ?? index.get(u) ?? "unknown";
 }
 
 /** Derive `subject` / `unit` from a path relative to its corpus root. */
@@ -498,6 +607,8 @@ export interface CorpusStats {
   substantiveRecords: number;
   /** Validated characters available to the tutor across all records. */
   contentChars: number;
+  /** Units the class index resolved when the source itself did not say. */
+  classIndexEntries: number;
 }
 
 interface CorpusSnapshot {
@@ -528,6 +639,8 @@ interface RawRecord {
     unit: string;
     classLevel: ClassLevel;
     dropIn: boolean;
+    /** Fallback "which class teaches this unit" map (see loadClassIndex). */
+    classIndex?: Map<string, ClassLevel>;
   };
 }
 
@@ -547,6 +660,9 @@ export function loadCorpus(): CorpusSnapshot {
   const unreadable: string[] = [];
   const roots = candidateRoots();
   const raws: RawRecord[] = [];
+  // Read once per load: which class teaches which unit (topic registry + owner
+  // drop-in), used only where a record declares no class of its own.
+  const classIndex = loadClassIndex();
 
   // ── Pass 1: parse ─────────────────────────────────────────────────────────
   for (const root of roots) {
@@ -600,7 +716,15 @@ export function loadCorpus(): CorpusSnapshot {
         raws.push({
           id,
           raw: raw as Record<string, unknown>,
-          meta: { id, file: display, subject, unit, classLevel, dropIn: root.dropIn },
+          meta: {
+            id,
+            file: display,
+            subject,
+            unit,
+            classLevel,
+            dropIn: root.dropIn,
+            classIndex,
+          },
         });
       }
     }
@@ -662,6 +786,7 @@ export function loadCorpus(): CorpusSnapshot {
       fillerRecords,
       substantiveRecords: entries.length - fillerRecords,
       contentChars,
+      classIndexEntries: classIndex.size,
     },
     lineCounts,
     loadedAt: Date.now(),

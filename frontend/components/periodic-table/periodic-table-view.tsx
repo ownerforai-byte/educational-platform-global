@@ -87,6 +87,8 @@ export function PeriodicTableView() {
   // "nature" colours tiles by metal/non-metal/metalloid; "block" by s/p/d/f.
   const [colorMode, setColorMode] = useState<"nature" | "block">("nature");
   const [hoveredFilter, setHoveredFilter] = useState<PeriodicFilterCategory | null>(null);
+  // Filter info card: compact by default, expandable to the full hardcoded dossier.
+  const [expandedFilterDetail, setExpandedFilterDetail] = useState(false);
 
   // Active elements
   const [hoveredElement, setHoveredElement] = useState<PeriodicElement | null>(null);
@@ -288,8 +290,10 @@ export function PeriodicTableView() {
     };
     window.addEventListener("keydown", handleKeyDown);
     return () => window.removeEventListener("keydown", handleKeyDown);
+    // handleNavigateElement is recreated each render, so the effect is
+    // intentionally keyed to the state it reads rather than the callback.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [isDossierOpen, inspectionElement, elements]);
-// eslint-disable-next-line react-hooks/exhaustive-deps
 
   if (loading) {
     return (
@@ -521,12 +525,90 @@ export function PeriodicTableView() {
               </div>
             </div>
 
-            {activeHoverCategory.examTrapsAndExceptions.length > 0 && (
-              <div className="text-[10.5px] text-amber-600 dark:text-amber-400 font-medium flex items-center gap-1.5 pt-1 border-t border-border/40">
-                <ShieldAlert className="h-3.5 w-3.5 shrink-0" />
-                <span>CEE Trap: {activeHoverCategory.examTrapsAndExceptions[0]}</span>
+            <div className="grid gap-2 sm:grid-cols-2 pt-1.5 border-t border-border/40">
+              <div className="space-y-1">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-primary flex items-center gap-1">
+                  <Layers className="h-3.5 w-3.5" />
+                  <span>Key characteristics ({activeHoverCategory.keyCharacteristics.length})</span>
+                </span>
+                <ul className="space-y-1">
+                  {activeHoverCategory.keyCharacteristics
+                    .slice(0, expandedFilterDetail ? undefined : 3)
+                    .map((c, idx) => (
+                      <li key={idx} className="flex items-start gap-1.5 text-[10.5px]">
+                        <span className="text-primary font-black shrink-0 mt-0.5">{idx + 1}.</span>
+                        <span className="text-muted-foreground">
+                          <strong className="text-foreground font-bold">{c.title}:</strong> {c.detail}
+                        </span>
+                      </li>
+                    ))}
+                </ul>
+              </div>
+
+              <div className="space-y-1">
+                <span className="text-[10px] font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 flex items-center gap-1">
+                  <ShieldAlert className="h-3.5 w-3.5" />
+                  <span>Exam traps &amp; exceptions ({activeHoverCategory.examTrapsAndExceptions.length})</span>
+                </span>
+                <ul className="space-y-1">
+                  {activeHoverCategory.examTrapsAndExceptions
+                    .slice(0, expandedFilterDetail ? undefined : 2)
+                    .map((trap, idx) => (
+                      <li key={idx} className="flex items-start gap-1.5 text-[10.5px] text-foreground">
+                        <span className="text-amber-500 font-black shrink-0 mt-0.5">⚠</span>
+                        <span>{trap}</span>
+                      </li>
+                    ))}
+                </ul>
+              </div>
+            </div>
+
+            {expandedFilterDetail && (
+              <div className="grid gap-2 sm:grid-cols-2 pt-1.5 border-t border-border/40">
+                <div className="space-y-1">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-sky-500 flex items-center gap-1">
+                    <TrendingUp className="h-3.5 w-3.5" />
+                    <span>Precise periodic-trend facts ({activeHoverCategory.periodicTrendFacts?.length ?? 0})</span>
+                  </span>
+                  <ul className="space-y-1 text-[10.5px] text-muted-foreground">
+                    {activeHoverCategory.periodicTrendFacts?.map((fact, idx) => (
+                      <li key={idx} className="flex items-start gap-1.5">
+                        <span className="text-sky-500 font-black shrink-0 mt-0.5">→</span>
+                        <span>{fact}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="space-y-1">
+                  <span className="text-[10px] font-bold uppercase tracking-wider text-emerald-600 dark:text-emerald-400 flex items-center gap-1">
+                    <GraduationCap className="h-3.5 w-3.5" />
+                    <span>CEE high-frequency facts ({activeHoverCategory.ceeFrequentFacts?.length ?? 0})</span>
+                  </span>
+                  <ul className="space-y-1 text-[10.5px] text-foreground">
+                    {activeHoverCategory.ceeFrequentFacts?.map((fact, idx) => (
+                      <li key={idx} className="flex items-start gap-1.5">
+                        <span className="text-emerald-500 font-black shrink-0 mt-0.5">✓</span>
+                        <span>{fact}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
               </div>
             )}
+
+            <button
+              onClick={() => setExpandedFilterDetail((open) => !open)}
+              className="text-[10.5px] font-bold text-primary flex items-center gap-1 hover:underline"
+            >
+              <ChevronRight
+                className={`h-3 w-3 transition-transform ${expandedFilterDetail ? "rotate-90" : ""}`}
+              />
+              <span>
+                {expandedFilterDetail
+                  ? "Show only the top facts"
+                  : `Show all characteristics, trends & CEE facts (${(activeHoverCategory.periodicTrendFacts?.length ?? 0) + (activeHoverCategory.ceeFrequentFacts?.length ?? 0)} trend/CEE lines)`}
+              </span>
+            </button>
           </div>
         )}
       </div>

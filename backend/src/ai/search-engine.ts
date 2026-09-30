@@ -19,6 +19,14 @@ export interface WebSearchResult {
   link: string;
   snippet: string;
   displayLink: string;
+  /**
+   * Real image URLs the engine returned for this result. These are the only
+   * URLs the tutor is allowed to embed in a reply — the owner asked for images
+   * IN the answer, and inventing one is impossible from this list.
+   */
+  images?: string[];
+  /** Page text (truncated) when the engine can supply it — real depth, not a teaser. */
+  rawContent?: string;
 }
 
 export interface WebSearchResponse {
@@ -31,7 +39,10 @@ export interface WebSearchResponse {
 
 export type EngineName = "tavily" | "exa" | "firecrawl" | "jina" | "youcom";
 
-const ENGINE_TIMEOUT_MS = 7000;
+const ENGINE_TIMEOUT_MS = Number(process.env.SEARCH_ENGINE_TIMEOUT_MS) || 12_000;
+
+/** How much of a source page is kept — depth without blowing the prompt. */
+const RAW_CONTENT_CHARS = Number(process.env.SEARCH_RAW_CONTENT_CHARS) || 2500;
 
 function hostnameOf(url: string): string {
   if (!url) return "";
@@ -66,6 +77,13 @@ export function selectProviders(
 
 // ── Engine adapters ─────────────────────────────────────────────────────────
 
+/**
+ * Tavily — the primary academic engine. `search_depth: "advanced"` plus
+ * `include_raw_content` turns a one-line teaser into a readable page extract,
+ * and `include_images` is what makes "present images in its reply" possible.
+ * (The old call asked for "basic" depth and no images, which is a large part of
+ * why replies read as light.)
+ */
 async function searchTavily(
   query: string,
   numResults: number,
@@ -77,22 +95,37 @@ async function searchTavily(
     body: JSON.stringify({
       api_key: key,
       query: query.slice(0, 1000),
-      search_depth: "basic",
+      search_depth: process.env.TAVILY_SEARCH_DEPTH || "advanced",
       max_results: Math.min(Math.max(numResults, 1), 10),
       include_answer: false,
-      include_raw_content: false,
+      include_raw_content: true,
+      include_images: true,
     }),
     signal: AbortSignal.timeout(ENGINE_TIMEOUT_MS),
   });
   if (!res.ok) throw new Error(`Tavily ${res.status}`);
   const data = (await res.json()) as {
-    results?: Array<{ title?: string; url?: string; content?: string }>;
+    results?: Array<{
+      title?: string;
+      url?: string;
+      content?: string;
+      raw_content?: string;
+      images?: string[];
+    }>;
+    images?: Array<string | { url?: string }>;
   };
-  return (data.results ?? []).map((item) => ({
+  const pageImages = (data.images ?? [])
+    .map((img) => (typeof img === "string" ? img : img?.url ?? ""))
+    .filter((url) => /^https?:\/\//.test(url));
+  return (data.results ?? []).map((item, index) => ({
     title: item.title ?? "",
     link: item.url ?? "",
     snippet: item.content ?? "",
     displayLink: hostnameOf(item.url ?? ""),
+    images: [...(item.images ?? []), ...(index === 0 ? pageImages : [])].filter((url) =>
+      /^https?:\/\//.test(url),
+    ),
+    rawContent: item.raw_content ? item.raw_content.slice(0, RAW_CONTENT_CHARS) : undefined,
   }));
 }
 
@@ -111,19 +144,21 @@ async function searchExa(
       query: query.slice(0, 1000),
       numResults: Math.min(Math.max(numResults, 1), 10),
       type: "auto",
-      contents: { text: { maxCharacters: 600 } },
+      // 600 characters was a teaser; a real extract is what grounds depth.
+      contents: { text: { maxCharacters: RAW_CONTENT_CHARS } },
     }),
     signal: AbortSignal.timeout(ENGINE_TIMEOUT_MS),
   });
   if (!res.ok) throw new Error(`Exa ${res.status}`);
   const data = (await res.json()) as {
-    results?: Array<{ title?: string; url?: string; text?: string }>;
+    results?: Array<{ title?: string; url?: string; text?: string; image?: string }>;
   };
   return (data.results ?? []).map((item) => ({
     title: item.title ?? "",
     link: item.url ?? "",
     snippet: item.text ?? "",
     displayLink: hostnameOf(item.url ?? ""),
+    images: item.image && /^https?:\/\//.test(item.image) ? [item.image] : undefined,
   }));
 }
 
@@ -365,44 +400,88 @@ export class WebSearchService {
    * Perform a web search and return results formatted as context text
    * suitable for injection into an LLM prompt.
    */
-  async searchAsContext(query: string, numResults: number = 5): Promise<string> {
+  async searchAsContext(query: string, numResults: number = 6): Promise<string> {
     if (!this.enabled) return "";
 
     try {
       const results = await this.search(query, numResults);
-
       if (!results.length) return "";
-
-      const sources = [...new Set(results.map((r) => r.displayLink).filter(Boolean))];
-      const lines = ["[REAL-TIME INTERNET SEARCH RESULTS]", ""];
-      if (sources.length) {
-        lines.push(
-          `Gathered from ${sources.length} independent source${sources.length === 1 ? "" : "s"}: ${sources.join(", ")}.`,
-          "",
-        );
-      }
-      for (let i = 0; i < results.length; i++) {
-        const r = results[i];
-        lines.push(`${i + 1}. ${r.title}`);
-        lines.push(`   Source: ${r.link}`);
-        lines.push(`   ${r.snippet}`);
-        lines.push("");
-      }
-      lines.push("[END OF SEARCH RESULTS]");
-      lines.push("");
-      lines.push(
-        "Use the above real-time search results to provide an accurate, up-to-date answer. " +
-          "Ground the reply in at least two of these sources (never more than three at a time), " +
-          "credit sources by NAME in plain words. " +
-          "If the search results are relevant, prioritize them over your training data.",
-      );
-
-      return lines.join("\n");
+      return formatSearchContext(results);
     } catch (err: any) {
       console.error("[SearchEngine] Failed to build search context:", err.message);
       return "";
     }
   }
+}
+
+/**
+ * Format search results as the `[REAL-TIME INTERNET SEARCH RESULTS]` block.
+ *
+ * Pure and exported so the contract is testable without a network call — which
+ * matters, because two of the owner's requirements live in this text: a
+ * complete answer must be allowed to draw on ALL the gathered sources (the old
+ * wording capped the reply at three), and real image URLs must reach the model
+ * so it can put pictures inside the answer.
+ */
+export function formatSearchContext(
+  results: WebSearchResult[],
+  opts: { maxSources?: number } = {},
+): string {
+  if (!results.length) return "";
+  // Aligned with the number of results the chat layer asks for: a complete
+  // answer may draw on all of them, so nothing gathered is dropped silently.
+  const chosen = results.slice(0, Math.max(1, opts.maxSources ?? 6));
+
+  const sources = [...new Set(chosen.map((r) => r.displayLink).filter(Boolean))];
+  const images = chosen
+    .flatMap((r, i) =>
+      (r.images ?? []).slice(0, 2).map((url) => ({ url, title: r.title, index: i + 1 })),
+    )
+    .slice(0, 6);
+
+  const lines = ["[REAL-TIME INTERNET SEARCH RESULTS]", ""];
+  if (sources.length) {
+    lines.push(
+      `Gathered from ${sources.length} independent source${sources.length === 1 ? "" : "s"}: ${sources.join(", ")}.`,
+      "",
+    );
+  }
+  for (let i = 0; i < chosen.length; i++) {
+    const r = chosen[i];
+    lines.push(`${i + 1}. ${r.title}`);
+    lines.push(`   Source: ${r.link}`);
+    lines.push(`   ${r.snippet}`);
+    if (r.rawContent) lines.push(`   Page extract: ${r.rawContent}`);
+    lines.push("");
+  }
+
+  if (images.length) {
+    lines.push(
+      "[REAL IMAGE URLS ATTACHED — EMBED THE RELEVANT ONES IN THE REPLY]",
+      "These are real, verified image links returned by the search engines. Where the answer explains",
+      "a structure, organ, apparatus, graph, wave, circuit, ray diagram, molecular shape or cycle,",
+      "embed the best 1-3 as ![short description](url) directly after that explanation, so the student",
+      "sees the picture beside the idea. Only these URLs may be embedded — never invent an image URL,",
+      "and never write an image line when none was attached.",
+    );
+    for (const img of images) {
+      lines.push(`   • ${img.url}   (from result ${img.index}: ${img.title})`);
+    }
+    lines.push("");
+  }
+
+  lines.push("[END OF SEARCH RESULTS]");
+  lines.push("");
+  lines.push(
+    "Use the above real-time search results to provide an accurate, up-to-date answer. " +
+      "Ground the reply in at least two of these sources, and use EVERY result that adds a fact " +
+      "about the asked concept — a complete answer may draw on all of them, so never drop a source " +
+      "that carries something the student needs. Credit sources by NAME in plain words " +
+      "(as per NASA, as per WHO) instead of dumping URLs, and prefer these results over your " +
+      "training data whenever they are relevant.",
+  );
+
+  return lines.join("\n");
 }
 
 /** Singleton instance — lazy initialized after dotenv loads. */
