@@ -1,6 +1,10 @@
 import { getSearchService } from "./search-engine";
 import { MASTER_ACADEMIC_RULES } from "./academic-intelligence";
 import { buildSyllabusAnchorBlock, floorWordsForQuestion } from "./syllabus-anchor";
+import { buildCurriculumContext, DEFAULT_RECORD_LIMIT } from "./curriculum-retrieval";
+import { CLASS_SCOPE_RULES, classifyScope } from "./class-scope";
+import { DEEP_ANSWER_RULES } from "./deep-answer";
+import { SOURCE_REGISTRY_RULES } from "./source-registry";
 
 /**
  * PROFESSOR_STYLE_RULES — enforced server-side on every chat reply (auth + guest).
@@ -39,10 +43,15 @@ UNBREAKABLE RULES
 - FORMAT: markdown — **bold** key terms, tight bullets, LaTeX for math ($inline$, $$display$$). Real equations, not word descriptions.
 - LENGTH — THE 150-WORD FLOOR IS ABSOLUTE: no reply may ever be shorter than 150 words, no matter how long a complete answer takes to produce. Ordinary questions land at 180-260 words; the floor scales UP with the depth of the question (explanations ≈ 220+, derivations, proofs and complete topics run AS LONG AS THE WORK REQUIRES). The floor is a MINIMUM, never a target: reach it with substance (mechanism, origin, worked example, exam relevance), never with padding, repetition or filler. Never cut a proof short to hit a word target.
 - THE AIM — MANY IDEAS IN CONCEPTUAL ORDER, PAST → PRESENT. For ANY question, topic or curiosity, your goal is to give a LARGE number of genuinely distinct ideas — as many ideas as the subject truly holds — arranged in CONCEPTUAL ORDER: the earliest/foundational idea first, each idea introduced before the ones that build on it, accumulating the understanding of the past step by step up to the present. Structure the walk (eras, stages, layers) so the student always stands on the previous idea before meeting the next. Breadth of ideas beats one narrow answer; an idea-walk like this is EXEMPT from the ordinary word target — organize tightly, cover the ideas in order, never pad, never repeat.
-- THE STORY SHAPE — COMPLETE KNOWLEDGE, START TO FINISH. Build every reply like a story of the whole surface asked: gather information from AT LEAST 2 and AT MOST 3 sources at a time — never one source alone, never more than three in a single reply — then walk the subject from its first idea to its present state in CONCEPTUAL ORDER, so the student ends with COMPLETE knowledge of that surface from start to finish. Whatever the question needs — a description, an explanation, a life cycle, kingdom details, a full survey — carry it through in that structure, beginning to end, nothing important skipped. This full-journey shape is EXEMPT from the ordinary word target, like the idea-walk above.
+- THE STORY SHAPE — COMPLETE KNOWLEDGE, START TO FINISH. Build every reply like a story of the whole surface asked: gather from AT LEAST 2 sources and USE EVERY source attached to the message — never one source alone, and never an artificial ceiling that forces a complete topic to be trimmed — then walk the subject from its first idea to its present state in CONCEPTUAL ORDER (roots → ideas → concepts → results → applications → traps), so the student ends with COMPLETE knowledge of that surface from start to finish. Whatever the question needs — a description, an explanation, a life cycle, kingdom details, a full survey — carry it through in that structure, beginning to end, nothing important skipped. This full-journey shape is EXEMPT from the ordinary word target, like the idea-walk above.
 - FIRST HELLO 👋 — FIRST-REPLY ONLY, NEVER IN FOLLOW-UPS: your reply must START with exactly this greeting as its own opening line — "👋, I'm Veer — feel free to clear your doubts." — ONLY when this is your very first reply in the conversation (no earlier assistant reply exists). Once any assistant reply exists, NEVER greet again: no repetition, no re-worded version, no "welcome back" substitute — go straight to the answer. When asked WHO you are, answer that you are Veer, using that greeting line only if it is still your first reply.`;
 
-const SITE_TIMEOUT_MS = 6000;
+/**
+ * Web search must not stall a reply, but the engines now return real page
+ * extracts and image URLs (deep search), so the old 6s cap was cutting the
+ * grounding off too early. 9s still fits the ~2-minute end-to-end envelope.
+ */
+const SITE_TIMEOUT_MS = Number(process.env.AI_SEARCH_TIMEOUT_MS) || 9000;
 
 /**
  * MASTER_ACADEMIC_PROMPT — the full server-side system prompt:
@@ -56,22 +65,76 @@ const SITE_TIMEOUT_MS = 6000;
  *                                    answer structure and the knowledge boundary.
  *   3. ACADEMIC_TAXONOMY_RULES     — kingdom/phylum classification, life cycles,
  *                                    mind-map and flow output.
+ *   4. DEEP_ANSWER_RULES            — scan-first, easy grammar, **Key words** under
+ *                                    each idea, output-not-raw-code, visuals.
+ *   5. CLASS_SCOPE_RULES            — strictly NEB Class 11/12, plus the rule for
+ *                                    prerequisite / beyond-12 / other-board /
+ *                                    non-academic questions.
+ *   6. SOURCE_REGISTRY_RULES        — source trust order and citation discipline.
  *
  * Everything below rides on this constant, so a new academic rule is added once,
- * in ./academic-intelligence.ts.
+ * in ./academic-intelligence.ts (or its sibling module when it is a new layer).
  */
 export const MASTER_ACADEMIC_PROMPT = [
   PROFESSOR_STYLE_RULES,
   MASTER_ACADEMIC_RULES,
+  DEEP_ANSWER_RULES,
+  CLASS_SCOPE_RULES,
+  SOURCE_REGISTRY_RULES,
 ].join("\n\n");
 
 /**
  * Build the server-side context block appended to the system prompt for every
- * chat request: professor + master academic rules + live Tavily web results for
- * the student's latest message (raced against a timeout so replies stay fast).
+ * chat request: professor + master academic rules + the platform's own
+ * curriculum material + the scope directive + live web results (with real
+ * image URLs), all for the student's latest message and the topic the
+ * conversation is on.
+ *
+ * `conversationTail` is the recent thread. It exists because retrieval used to
+ * see ONLY the last user message, so a follow-up ("explain more", "and then?",
+ * "prove it") retrieved nothing and the tutor answered from memory — the
+ * shallow-reply report, arriving through the back door. The tail identifies the
+ * topic; the current message still outvotes it.
  */
-export async function buildProfessorContext(lastUserMessage: string): Promise<string> {
+export async function buildProfessorContext(
+  lastUserMessage: string,
+  conversationTail = "",
+): Promise<string> {
   const parts: string[] = [MASTER_ACADEMIC_PROMPT];
+  const question = lastUserMessage.trim();
+
+  // ── 1. CURRICULUM SOURCE — SCAN BEFORE ANSWERING (owner 2026-09-30) ──
+  // Retrieve the platform's own Class 11/12 material for this question and
+  // attach it WHOLE, ahead of every rule that tells the model how to answer.
+  // This is the anti-shallow stage: the reply is built from records the
+  // platform owns, not from the model's memory of them.
+  // Best-effort: an absent corpus simply yields no grounding block.
+  let coverage: "covered" | "not-covered" = "not-covered";
+  try {
+    if (question) {
+      const context = buildCurriculumContext(question, DEFAULT_RECORD_LIMIT, conversationTail);
+      if (context) {
+        parts.push(context);
+        // Only a STRONG match counts as platform coverage for the scope layer;
+        // "the platform merely mentions it" must never be classified as taught
+        // material.
+        coverage = /Coverage for this question: STRONG/.test(context) ? "covered" : "not-covered";
+      }
+    }
+  } catch {
+    // Grounding is best-effort: never block the chat on it.
+  }
+
+  // ── 2. CLASS SCOPE — strictly Class 11/12, plus the rule for "the rest" ──
+  // The zone directive follows the retrieval so it can use the coverage answer:
+  // a graduate-level signal with no platform material is genuinely beyond-12.
+  try {
+    if (question) {
+      parts.push(classifyScope(question, coverage).directive);
+    }
+  } catch {
+    // Scope classification is best-effort: never block the chat on it.
+  }
 
   // Syllabus anchor + reply floor (owner requirement 2026-09-29): every chat
   // reply is anchored in the NEB syllabus — or traces its origin there when
@@ -97,8 +160,11 @@ export async function buildProfessorContext(lastUserMessage: string): Promise<st
   try {
     const svc = getSearchService();
     if (svc.isEnabled() && lastUserMessage.trim()) {
+      // A concept the platform does NOT teach needs the wider net most: ask for
+      // more results, and let the engines return real page text and images.
+      const wanted = coverage === "covered" ? 5 : 6;
       const web = await Promise.race([
-        svc.searchAsContext(lastUserMessage, 4),
+        svc.searchAsContext(lastUserMessage, wanted),
         new Promise<string>((resolve) => setTimeout(() => resolve(""), SITE_TIMEOUT_MS)),
       ]);
       if (web) parts.push(web);

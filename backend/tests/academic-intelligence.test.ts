@@ -11,6 +11,9 @@ import {
   buildProfessorContext,
   withProfessorContext,
 } from "../src/ai/prompts";
+import { DEEP_ANSWER_RULES } from "../src/ai/deep-answer";
+import { CLASS_SCOPE_RULES } from "../src/ai/class-scope";
+import { SOURCE_REGISTRY_RULES } from "../src/ai/source-registry";
 
 /**
  * Contract suite for the Master Academic Intelligence System.
@@ -21,8 +24,17 @@ import {
  *  1. the house identity rules still win (name, Veer line, links-last),
  *  2. the academic engine's coverage (six subjects, depth, per-subject method),
  *  3. the classification/life-cycle/mind-map/flow vocabulary,
- *  4. the composition order used by /api/ai and /api/ai/guest.
+ *  4. the composition order used by /api/ai and /api/ai/guest — including the
+ *     three grounding layers added 2026-09-30 (deep-answer contract, strict
+ *     Class 11/12 scope, source hierarchy).
  */
+
+/**
+ * buildProfessorContext now reads the curriculum corpus from disk on its first
+ * call, so it is genuinely I/O-bound rather than a pure string join. Give it
+ * room instead of letting a cold read look like a broken contract.
+ */
+const CONTEXT_TIMEOUT = 30_000;
 
 /** Lower-cased, whitespace-collapsed haystack for casing- and wrap-proof checks. */
 const PROMPT = MASTER_ACADEMIC_PROMPT.toLowerCase().replace(/\s+/g, " ");
@@ -30,13 +42,33 @@ const ACADEMIC = ACADEMIC_INTELLIGENCE_RULES.toLowerCase().replace(/\s+/g, " ");
 const TAXONOMY = ACADEMIC_TAXONOMY_RULES.toLowerCase().replace(/\s+/g, " ");
 
 describe("master academic prompt composition", () => {
-  test("stacks professor style rules, then the academic engine", () => {
+  test("stacks professor style rules, then the academic engine, then the grounding layers", () => {
     expect(MASTER_ACADEMIC_RULES).toBe(
       `${ACADEMIC_INTELLIGENCE_RULES}\n\n${ACADEMIC_TAXONOMY_RULES}`,
     );
     expect(MASTER_ACADEMIC_PROMPT.startsWith(PROFESSOR_STYLE_RULES)).toBe(true);
-    expect(MASTER_ACADEMIC_PROMPT.endsWith(ACADEMIC_TAXONOMY_RULES)).toBe(true);
     expect(MASTER_ACADEMIC_PROMPT).toContain(ACADEMIC_INTELLIGENCE_RULES);
+    expect(MASTER_ACADEMIC_PROMPT).toContain(ACADEMIC_TAXONOMY_RULES);
+
+    // Owner addition 2026-09-30: the academic engine no longer CLOSES the
+    // prompt — three grounding layers follow it (deep-answer contract, strict
+    // Class 11/12 scope, source hierarchy). They must appear AFTER the engine,
+    // in that order.
+    const order = [
+      PROFESSOR_STYLE_RULES,
+      ACADEMIC_INTELLIGENCE_RULES,
+      ACADEMIC_TAXONOMY_RULES,
+      DEEP_ANSWER_RULES,
+      CLASS_SCOPE_RULES,
+      SOURCE_REGISTRY_RULES,
+    ];
+    let cursor = -1;
+    for (const layer of order) {
+      const at = MASTER_ACADEMIC_PROMPT.indexOf(layer);
+      expect(at, `layer missing or out of order: ${layer.slice(0, 40)}…`).toBeGreaterThan(cursor);
+      cursor = at;
+    }
+    expect(MASTER_ACADEMIC_PROMPT.endsWith(SOURCE_REGISTRY_RULES)).toBe(true);
   });
 
   test("keeps the tutor's identity and house style intact", () => {
@@ -49,11 +81,15 @@ describe("master academic prompt composition", () => {
     expect(PROMPT).not.toContain("your name is \"ravikisan's ai tutor\"");
   });
 
-  test("tells every answer like a story, complete start to finish, from 2–3 sources", () => {
+  test("tells every answer like a story, complete start to finish, from every attached source", () => {
     expect(PROMPT).toContain("the story shape");
     expect(PROMPT).toContain("complete knowledge, start to finish");
-    expect(PROMPT).toContain("at least 2 and at most 3 sources at a time");
-    expect(PROMPT).toContain("never one source alone, never more than three in a single reply");
+    // Owner change 2026-09-30: the old "AT LEAST 2 and AT MOST 3 sources" ceiling
+    // is what capped complete answers — the tutor now uses every attached source,
+    // with the floor of two still in place.
+    expect(PROMPT).toContain("at least 2 sources and use every source attached to the message");
+    expect(PROMPT).toContain("never one source alone, and never an artificial ceiling");
+    expect(PROMPT).not.toContain("at most 3 sources");
     expect(PROMPT).toContain("from its first idea to its present state in conceptual order");
   });
 
@@ -74,8 +110,12 @@ describe("master academic prompt composition", () => {
     const context = await buildProfessorContext("derive the lens maker formula");
     expect(context.startsWith(PROFESSOR_STYLE_RULES)).toBe(true);
     expect(context).toContain(ACADEMIC_TAXONOMY_RULES);
+    // Grounding layers ride along on every request, not just the static prompt.
+    expect(context).toContain("[DEEP ANSWER CONTRACT");
+    expect(context).toContain("[CLASS SCOPE");
+    expect(context).toContain("[SOURCE HIERARCHY");
     vi.unstubAllEnvs();
-  });
+  }, CONTEXT_TIMEOUT);
 
   test("withProfessorContext merges into an existing system message or prepends one", () => {
     const merged = withProfessorContext(
