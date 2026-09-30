@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowLeft, Bot, History, Plus, Sparkles } from "lucide-react";
+import { ArrowLeft, ArrowRight, Bot, History, Plus, Search, Sparkles } from "lucide-react";
 import { AIChatInterface } from "@/components/ai/ai-chat-interface";
 
 export const metadata: Metadata = {
@@ -80,6 +80,32 @@ export default function AITutorPage() {
       </div>
 
       <AIChatInterface />
+
+      {/* Owner request (2026-09-30): the console ANSWERS, the history console
+          SEARCHES what you already discussed. Linking the two is the whole
+          point of having them side by side. */}
+      <div className="mt-4 flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-border/70 bg-card p-4">
+        <div className="flex items-center gap-2.5">
+          <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-xl border border-sky-500/25 bg-sky-500/10">
+            <Search className="h-4 w-4 text-sky-500" />
+          </span>
+          <div>
+            <p className="text-xs font-bold text-foreground">
+              Looking for something you already discussed?
+            </p>
+            <p className="text-[11px] text-muted-foreground">
+              The history console searches your saved conversations and presents them back.
+            </p>
+          </div>
+        </div>
+        <Link
+          href="/ai/history"
+          className="inline-flex items-center gap-1.5 rounded-2xl border border-sky-500/30 bg-sky-500/10 px-4 py-2 text-xs font-bold text-sky-600 transition-colors hover:bg-sky-500/15 dark:text-sky-400"
+        >
+          Search history
+          <ArrowRight className="h-3.5 w-3.5" />
+        </Link>
+      </div>
     </div>
   );
 }

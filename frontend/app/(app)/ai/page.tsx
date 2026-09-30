@@ -12,6 +12,8 @@ import {
   Target,
   BookOpenCheck,
   ArrowRight,
+  Gem,
+  BellRing,
 } from "lucide-react";
 import { AiPlanStrip } from "@/components/ai/ai-plan-strip";
 
@@ -32,6 +34,7 @@ export const metadata: Metadata = {
  *
  *   /chat       — AI study assistant (subject modes, quick actions)
  *   /ai/tutor   — tutor console with saved conversations & prompt enhancer
+ *   /ai/history — history console: search your own saved conversations
  *   /ai-quiz    — adaptive quiz generator (its canonical route)
  *   /ai/search  — AI curriculum search
  */
@@ -73,6 +76,25 @@ const TOOLS: {
       "Conversation list with one-tap New conversation",
       "Prompt enhancer — rewrite a rough question before you send it",
       "History loads back from your account on every device",
+    ],
+  },
+  {
+    // Owner request (2026-09-30): a SEPARATE interface from the tutor console,
+    // whose work is to search the student's saved conversations and present
+    // them as asked. Signed-in only, and free — no coin is spent searching your
+    // own history.
+    href: "/ai/history",
+    title: "History Console",
+    badge: "Search your chats",
+    description:
+      "Ask about your own saved conversations — what you discussed, where it started, what was left unfinished — and get it presented, conversation by conversation.",
+    icon: History,
+    iconClass: "bg-sky-500/10 text-sky-500 border-sky-500/25",
+    borderClass: "hover:border-sky-500/50",
+    features: [
+      "Searches only your saved messages — never answers from general knowledge",
+      "Shows which conversation each moment came from",
+      "Free for signed-in students; guests are asked to sign in",
     ],
   },
   {
@@ -236,6 +258,27 @@ export default function AIStudioPage() {
             See your plan and top-up options
           </Link>
           .
+        </p>
+
+        {/* Owner request (2026-09-30): the PRO plan link belongs under the
+            plan/top-up line, and the notice board is reachable from here too.
+            Both pages are public — never coin-gated — and neither is shown on
+            the home page. */}
+        <p className="flex flex-wrap items-center gap-x-4 gap-y-2 pt-1 text-xs">
+          <Link
+            href="/pro-plan"
+            className="inline-flex items-center gap-1.5 font-semibold text-primary hover:underline"
+          >
+            <Gem className="h-3.5 w-3.5" />
+            PRO plan — Veer &amp; note credits with no daily cap
+          </Link>
+          <Link
+            href="/notice"
+            className="inline-flex items-center gap-1.5 font-medium text-muted-foreground hover:text-primary transition-colors"
+          >
+            <BellRing className="h-3.5 w-3.5" />
+            Notice board
+          </Link>
         </p>
       </section>
     </div>

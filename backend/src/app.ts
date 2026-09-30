@@ -8,6 +8,7 @@ import aiRoutes from "./api/ai";
 import aiGuestRoutes from "./api/ai-guest";
 import aiGenerateRoutes from "./api/ai-generate";
 import aiEnhanceRoutes from "./api/ai-enhance";
+import aiHistoryRoutes from "./api/ai-history";
 import chatHistoryRoutes from "./api/chat-history";
 import bookmarksRoutes from "./api/bookmarks";
 import chaptersRoutes from "./api/chapters";
@@ -89,6 +90,10 @@ export function createApp(): express.Express {
   // Route-table dump: opt-in only (ROUTE_DEBUG=true) and never in production.
   logRegisteredRoutes(app, "BEFORE API REGISTRATION");
 
+  // Registered BEFORE /api/ai so the more specific path wins: this is the
+  // history-search interface (search your own saved conversations), which is
+  // free for signed-in students and blocked for guests.
+  app.use("/api/ai/history-search", aiHistoryRoutes);
   app.use("/api/ai", aiRoutes);
   app.use("/api/ai/guest", aiGuestRoutes);
   app.use("/api/ai/generate-questions", aiGenerateRoutes);

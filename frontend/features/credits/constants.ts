@@ -75,6 +75,13 @@ export const PUBLIC_PATHS = [
   "/ai-quiz",
   "/credits",
   "/profile",
+  // Owner request (2026-09-30): the notice board and the PRO plan explanation
+  // are never coin-gated — they are read-through pages, reachable by link and
+  // deliberately not advertised on the home page. Listed here so the resolver
+  // returns null and the gate renders them untouched (never blurred, no
+  // unlock button, no lock overlay).
+  "/notice",
+  "/pro-plan",
 ] as const;
 
 /**

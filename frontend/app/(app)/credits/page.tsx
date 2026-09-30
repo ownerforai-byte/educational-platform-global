@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { Coins, Crown, TrendingUp, TrendingDown, ShieldCheck } from "lucide-react";
+import { Coins, Crown, TrendingUp, TrendingDown, ShieldCheck, Gem, BellRing } from "lucide-react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Skeleton } from "@/components/ui/skeleton";
 import { getUserCredits, getUserTransactions } from "@/lib/api/credits";
@@ -172,6 +172,25 @@ export default function CreditsPage() {
                 <h3 className="font-bold text-foreground text-base">Want to sync credits across devices?</h3>
                 <p className="text-sm text-muted-foreground mt-0.5">
                   Sign in or create a free student account to save quiz progress, bookmark mindmaps, and earn credit bonuses.
+                </p>
+                {/* Owner request (2026-09-30): the PRO plan link sits with the
+                    plan/top-up area, and the notice board is linked from here
+                    too. Both open without spending a coin. */}
+                <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs font-semibold">
+                  <a
+                    href="/pro-plan"
+                    className="inline-flex items-center gap-1.5 text-primary hover:underline"
+                  >
+                    <Gem className="h-3.5 w-3.5" />
+                    PRO plan — no daily cap
+                  </a>
+                  <a
+                    href="/notice"
+                    className="inline-flex items-center gap-1.5 text-muted-foreground hover:text-foreground transition-colors"
+                  >
+                    <BellRing className="h-3.5 w-3.5" />
+                    Notice board
+                  </a>
                 </p>
               </div>
               <div className="flex items-center gap-2 shrink-0">

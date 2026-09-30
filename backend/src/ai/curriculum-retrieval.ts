@@ -89,7 +89,12 @@ export function tokenize(text: string): string[] {
  *     produced "mot", which then matched "motor" and "motive" in unrelated
  *     records. "reaction" → "react" is still allowed; "motion" is left alone.
  */
-function stem(token: string): string {
+/**
+ * Conservative suffix stripping, exported so every lexical matcher in the
+ * backend normalises words the same way (the history search reuses it: a
+ * student asks about "capacitors" and their saved messages say "capacitor").
+ */
+export function stem(token: string): string {
   if (token.length <= 3) return token;
   for (const suffix of ["ies", "ing", "ions", "ion", "es", "s", "ed", "al", "ic"]) {
     if (!token.endsWith(suffix)) continue;
