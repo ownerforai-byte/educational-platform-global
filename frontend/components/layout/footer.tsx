@@ -6,11 +6,8 @@ import {
   BookOpen,
   FlaskConical,
   GraduationCap,
-  Instagram,
-  Mail,
   BellRing,
   Sparkles,
-  ExternalLink,
   ListTree,
   LineChart,
   Binary,
@@ -29,6 +26,14 @@ import {
  * price list now lives on its own page (/pro-plan, linked from /ai under "See
  * your plan and top-up options" and from /credits), and the session hook that
  * only existed to choose between the two price columns went with it.
+ *
+ * Owner request (2026-09-30, second): the direct contact details — the
+ * ravikisan1814@gmail.com mailto and the @___unxknown___player profile link —
+ * came out of the footer and live on /notice instead, which is the page that
+ * already carries the owner's own words and the "write to the owner" notice.
+ * The attribution line stays; it is a credit, not a way to reach him, so the
+ * name is no longer a link. The platform's own brand and the copyright line are
+ * the site's name rather than the owner's contact details and are untouched.
  */
 export function Footer() {
   return (
@@ -67,26 +72,17 @@ export function Footer() {
               </Link>
             </div>
 
-            {/* Creator Attribution */}
+            {/*
+              Creator credit — a name, deliberately NOT a link and with no
+              contact details beside it. Both moved to /notice on the owner's
+              request, so the footer no longer hands out his address. The
+              "Everything Index" badge above already carries the traffic this
+              column needs.
+            */}
             <div className="pt-3 border-t border-border/40">
-              <p className="text-xs font-medium text-muted-foreground flex items-center gap-1.5">
-                <span>Made with curiosity by</span>
-                <Link
-                  href="https://www.instagram.com/___unxknown___player"
-                  className="font-bold text-primary hover:underline inline-flex items-center gap-1 group transition-colors"
-                >
-                  <span>Ravikisan</span>
-                  <ExternalLink className="h-2.5 w-2.5 opacity-60 group-hover:opacity-100 transition-opacity" />
-                </Link>
-              </p>
-              <p className="text-[11px] text-muted-foreground/70 mt-1 flex items-center gap-1.5">
-                <Mail className="h-3 w-3 text-primary" />
-                <Link
-                  href="mailto:ravikisan1814@gmail.com"
-                  className="hover:text-foreground transition-colors underline decoration-border hover:decoration-foreground"
-                >
-                  ravikisan1814@gmail.com
-                </Link>
+              <p className="text-xs font-medium text-muted-foreground">
+                Made with curiosity by{" "}
+                <span className="font-bold text-foreground">Ravikisan</span>
               </p>
             </div>
           </div>
@@ -250,20 +246,15 @@ export function Footer() {
                 here — it is a public, never-gated page that is not advertised
                 on the home screen. Pricing is NOT linked from the footer any
                 more; the plan page is reached from /ai and /credits. */}
+            {/* The owner's profile link used to sit after this one. It is on
+                /notice now, together with the mailto — one page holds the
+                contact details instead of every page carrying them. */}
             <Link
               href="/notice"
               className="inline-flex items-center gap-1 font-medium hover:text-primary transition-colors"
             >
               <BellRing className="h-3 w-3" />
               <span>Notice</span>
-            </Link>
-            <span>·</span>
-            <Link
-              href="https://www.instagram.com/___unxknown___player"
-              className="inline-flex items-center gap-1 hover:text-pink-500 transition-colors"
-            >
-              <Instagram className="h-3 w-3" />
-              <span>@___unxknown___player</span>
             </Link>
           </div>
         </div>

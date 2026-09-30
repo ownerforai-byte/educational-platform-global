@@ -11,6 +11,8 @@ import {
   Mail,
   Gem,
   Sparkles,
+  Instagram,
+  ExternalLink,
 } from "lucide-react";
 
 export const metadata: Metadata = {
@@ -32,13 +34,23 @@ export const metadata: Metadata = {
  *     site index — `tests/lib/site-index-coverage.test.ts` only requires the
  *     NAV destinations to be indexed, so a hidden route stays legal.
  *
+ * Owner request (2026-09-30, second): the mailto and the Instagram profile come
+ * off the footer and live HERE instead. This page is where the owner speaks in
+ * his own words, so it is the one place that should also say how to reach him;
+ * every other page stops carrying his address.
+ *
  * Every notice below states something the platform actually does — no
  * countdowns, no "maintenance windows", nothing that would need updating to
  * stay true.
  */
 
+/** The owner's own line, kept verbatim. */
 const OWNER_NOTICE =
-  "This is the page of Ravikisan, made by him for easy access. If you want to explore, sign in and clear your thoughts.";
+  "This is the page of Ravikisan, made by him for easy access. If you want to explore then sign in and clear your thoughts.";
+
+/** The owner's profile — moved off the footer, kept in exactly one place. */
+const OWNER_INSTAGRAM = "https://www.instagram.com/___unxknown___player";
+const OWNER_HANDLE = "@___unxknown___player";
 
 interface Notice {
   icon: typeof BellRing;
@@ -95,7 +107,7 @@ const NOTICES: Notice[] = [
     icon: Mail,
     title: "Corrections, requests and access",
     body:
-      "Found a mistake in a note, want a topic covered, or need PRO access on your account? Write to the owner directly — a wrong note is corrected at the source, for everyone.",
+      "Found a mistake in a note, want a topic covered, or need PRO access on your account? Write to the owner directly — a wrong note is corrected at the source, for everyone. His address and profile are on this page and nowhere else on the site.",
     href: "mailto:ravikisan1814@gmail.com",
     linkLabel: "ravikisan1814@gmail.com",
   },
@@ -135,11 +147,23 @@ export default function NoticePage() {
       {/* The owner's own line, kept verbatim */}
       <figure className="mt-4 rounded-2xl border border-border/70 bg-card p-5 sm:p-6">
         <blockquote className="text-sm leading-relaxed text-foreground">{OWNER_NOTICE}</blockquote>
-        <figcaption className="mt-3 flex items-center gap-2 text-xs font-bold text-primary">
-          <span className="flex h-6 w-6 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-[10px] font-extrabold">
-            R
+        <figcaption className="mt-3 flex flex-wrap items-center gap-x-3 gap-y-2 text-xs">
+          <span className="flex items-center gap-2 font-bold text-primary">
+            <span className="flex h-6 w-6 items-center justify-center rounded-full border border-primary/30 bg-primary/10 text-[10px] font-extrabold">
+              R
+            </span>
+            — Ravikisan, owner
           </span>
-          — Ravikisan, owner
+          <a
+            href={OWNER_INSTAGRAM}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1 font-medium text-muted-foreground transition-colors hover:text-pink-500"
+          >
+            <Instagram className="h-3.5 w-3.5" />
+            <span>{OWNER_HANDLE}</span>
+            <ExternalLink className="h-2.5 w-2.5 opacity-60" />
+          </a>
         </figcaption>
       </figure>
 
