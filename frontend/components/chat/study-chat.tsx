@@ -58,6 +58,9 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
   ]);
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
+  // Live server phase ("Researching the topic…", "Continuing the answer…").
+  // The stream opens before the web research, so the wait is explained.
+  const [streamPhase, setStreamPhase] = useState<string | null>(null);
   const [thinkIdx, setThinkIdx] = useState(0);
   const [enhancing, setEnhancing] = useState(false);
   const [error, setError] = useState<string | null>(null);
@@ -136,6 +139,13 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
       for await (const chunk of streamChat([...messages, userMsg], undefined, { isGuest: !isLoggedIn })) {
         if (typeof chunk === "string") {
           accumulated += chunk;
+          setStreamPhase(null);
+        } else if ("phase" in chunk) {
+          setStreamPhase(chunk.label ?? null);
+          continue;
+        } else if ("continuing" in chunk) {
+          setStreamPhase(chunk.label ?? "Continuing the answer…");
+          continue;
         } else if ("imageStart" in chunk) {
           figs.set(chunk.imageStart, { prompt: chunk.prompt, caption: chunk.caption, status: "pending" });
         } else if ("imageSuccess" in chunk) {
@@ -170,6 +180,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
       setError(errText);
     } finally {
       setSending(false);
+      setStreamPhase(null);
     }
   };
 
@@ -300,7 +311,7 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
             <div className="flex justify-start">
               <div className="bg-muted rounded-2xl px-4 py-2.5 flex items-center gap-2 text-xs text-muted-foreground">
                 <Loader2 className="h-4 w-4 animate-spin" />
-                {STUDY_THINKING_LINES[thinkIdx]}
+                {streamPhase ?? STUDY_THINKING_LINES[thinkIdx]}
               </div>
             </div>
           )}

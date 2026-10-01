@@ -280,6 +280,10 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
   const [input, setInput] = useState("");
   const [sending, setSending] = useState(false);
   const [streamingText, setStreamingText] = useState<string | null>(null);
+  // Live server phase ("Researching the topic…", "Continuing…"): the stream
+  // opens before the web research, so the wait is visible and explained
+  // instead of looking like a frozen or one-shot reply.
+  const [streamPhase, setStreamPhase] = useState<string | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
   // Guest usage lives in localStorage — it must NEVER be read during render,
@@ -531,6 +535,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       let liveRemaining: number | null = null;
       let sawToken = false;
       let lastPaint = 0;
+      setStreamPhase(null);
       const figs = new Map<
         number,
         { prompt: string; caption?: string; status: "pending" | "done" | "failed"; url?: string }
@@ -563,12 +568,18 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
             if (!sawToken) {
               sawToken = true;
               liveAcc = chunk;
+              setStreamPhase(null);
               setStreamingText("");
               setMessages((prev) => [...prev, { role: "assistant", content: chunk + figureBlocks() }]);
             } else {
               liveAcc += chunk;
               paintLive(false);
             }
+          } else if ("phase" in chunk) {
+            // Research/writing progress before the first token exists.
+            setStreamPhase(chunk.label ?? null);
+          } else if ("continuing" in chunk) {
+            setStreamPhase(chunk.label ?? "Continuing the answer…");
           } else if ("imageStart" in chunk) {
             figs.set(chunk.imageStart, { prompt: chunk.prompt, caption: chunk.caption, status: "pending" });
             paintLive(true);
@@ -649,6 +660,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
     } catch (err: any) {
       console.error("AI chat error:", err);
       setStreamingText(null);
+      setStreamPhase(null);
       // A dead stream that already painted partial text: keep the partial
       // bubble, append a marker so the student sees it stopped.
       setMessages((prev) => {
@@ -1108,8 +1120,10 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
             })
           )}
 
-          {/* Thinking indicator — hidden once the stream starts writing */}
-          {sending && !isStreaming && (
+          {/* Thinking indicator — hidden once the stream starts writing, but
+              brought back for a live server phase (a continuation mid-answer
+              is real news while text keeps arriving). */}
+          {sending && (!isStreaming || streamPhase !== null) && (
             <div className="flex gap-3 animate-fade-in">
               <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-primary/20 to-violet-500/20 border border-primary/25 text-primary flex items-center justify-center shrink-0 mt-1">
                 <CaptainAvatar className="h-3.5 w-3.5" />
@@ -1120,8 +1134,8 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                   <span className="h-1.5 w-1.5 rounded-full bg-violet-500 animate-bounce [animation-delay:150ms]" />
                   <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-bounce [animation-delay:300ms]" />
                 </span>
-                <span key={thinkIdx} className="animate-fade-in">
-                  {THINKING_LINES[thinkIdx]}
+                <span key={streamPhase ?? thinkIdx} className="animate-fade-in">
+                  {streamPhase ?? THINKING_LINES[thinkIdx]}
                 </span>
               </div>
             </div>

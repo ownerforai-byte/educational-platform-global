@@ -427,6 +427,8 @@ export function TutorConsole() {
   // True from the first streamed token until the answer completes — retires
   // the "thinking" dots while the bubble is visibly writing itself.
   const [streaming, setStreaming] = useState(false);
+  // Live server phase (research / continuation) shown until the first token.
+  const [streamPhase, setStreamPhase] = useState<string | null>(null);
   const [thinkIdx, setThinkIdx] = useState(0);
   const [error, setError] = useState<string | null>(null);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
@@ -688,6 +690,7 @@ export function TutorConsole() {
         let liveCredits: number | null = null;
         let liveRemaining: number | null = null;
         let sawToken = false;
+        setStreamPhase(null);
         const figs = new Map<
           number,
           { prompt: string; caption?: string; status: "pending" | "done" | "failed"; url?: string }
@@ -721,12 +724,19 @@ export function TutorConsole() {
               if (!sawToken) {
                 sawToken = true;
                 liveAcc = chunk;
+                setStreamPhase(null);
                 setStreaming(true);
                 setMessages((prev) => [...prev, { role: "assistant", content: chunk + figureBlocks() }]);
               } else {
                 liveAcc += chunk;
                 paintLive(false);
               }
+            } else if ("phase" in chunk) {
+              // The server opens the stream before its web research: show what
+              // Veer is doing instead of an unexplained wait.
+              setStreamPhase(chunk.label ?? null);
+            } else if ("continuing" in chunk) {
+              setStreamPhase(chunk.label ?? "Continuing the answer…");
             } else if ("imageStart" in chunk) {
               figs.set(chunk.imageStart, { prompt: chunk.prompt, caption: chunk.caption, status: "pending" });
               paintLive(true);
@@ -816,6 +826,7 @@ export function TutorConsole() {
       } finally {
         setSending(false);
         setStreaming(false);
+        setStreamPhase(null);
       }
     },
     [sending, isGuestLimited, creditsExhausted, isLoggedIn, guestCount, refreshSessions],
@@ -1157,7 +1168,9 @@ export function TutorConsole() {
               );
             })}
 
-            {sending && !streaming && (
+            {/* Live server phase (research / continuation) is shown even while
+                the bubble is already writing. */}
+            {sending && (!streaming || streamPhase !== null) && (
               <div className="flex gap-3 animate-pop-in">
                 <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-emerald-500/20 to-primary/20 border border-emerald-500/30 text-emerald-600 flex items-center justify-center shrink-0 mt-1">
                   <CaptainAvatar className="h-3.5 w-3.5" />
@@ -1166,7 +1179,9 @@ export function TutorConsole() {
                   <span className="h-1.5 w-1.5 rounded-full bg-primary animate-bounce [animation-delay:-0.2s]" />
                   <span className="h-1.5 w-1.5 rounded-full bg-violet-500 animate-bounce [animation-delay:-0.1s]" />
                   <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-bounce" />
-                  <span className="text-xs text-muted-foreground ml-1">{THINKING_LINES[thinkIdx]}</span>
+                  <span className="text-xs text-muted-foreground ml-1">
+                    {streamPhase ?? THINKING_LINES[thinkIdx]}
+                  </span>
                 </div>
               </div>
             )}

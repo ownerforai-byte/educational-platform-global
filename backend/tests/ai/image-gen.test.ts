@@ -84,6 +84,65 @@ describe("FigureStreamFilter", () => {
   });
 });
 
+/**
+ * TOKEN-LEVEL EMISSION (owner 2026-10-01): the filter must never hold ordinary
+ * prose back. The old line-buffered version emitted only complete lines, so a
+ * paragraph arrived as one lump and the reply looked like it landed at once —
+ * Claude/ChatGPT behaviour is text appearing as it is written.
+ */
+describe("FigureStreamFilter — token-level emission", () => {
+  it("forwards every prose delta immediately, one push in → one chunk out", () => {
+    const filter = new FigureStreamFilter();
+    const words = ["The ", "cell ", "is ", "the ", "unit ", "of ", "life."];
+    for (const word of words) {
+      // Each push returns that word right away: no waiting for a newline.
+      expect(filter.push(word).chunks).toEqual([word]);
+    }
+    expect(filter.flush().tail).toBe("");
+  });
+
+  it("stays ready to type during a long single-line paragraph", () => {
+    const filter = new FigureStreamFilter();
+    let silent = 0;
+    for (let i = 0; i < 60; i += 1) {
+      if (filter.push("word ").chunks.length === 0) silent += 1;
+    }
+    expect(silent).toBe(0);
+  });
+
+  it("holds only a tail that could still become a figure opener", () => {
+    const filter = new FigureStreamFilter();
+    expect(filter.push("``").chunks).toEqual([]); // could still be the fence
+    expect(filter.push("`").chunks).toEqual([]); // still could be the fence
+    expect(filter.push("j").chunks).toEqual(["```j"]); // diverged → real text
+    expect(filter.push("s code").chunks).toEqual(["s code"]);
+    expect(filter.flush().tail).toBe("");
+  });
+
+  it("types the prose that precedes a fence before the fence closes", () => {
+    const filter = new FigureStreamFilter();
+    expect(filter.push("Answer: ").chunks).toEqual(["Answer: "]);
+    expect(filter.push("```veer").chunks).toEqual([]); // possible opener
+    expect(filter.push("-image\n").chunks).toEqual([]); // opener swallowed
+    expect(filter.push("draw a cube\n").chunks).toEqual([]); // brief hidden
+    // The closing fence (with its newline) ends the figure: nothing of it or
+    // its brief ever reached the student.
+    const closed = filter.push("```\n");
+    expect(closed.chunks).toEqual([]);
+    expect(closed.figureStarts).toHaveLength(1);
+    expect(closed.figureStarts[0].prompt).toBe("draw a cube");
+    expect(filter.push("\nDone.").chunks.join("")).toBe("\nDone.");
+  });
+
+  it("releases a fence-looking line that turns out to be ordinary text", () => {
+    const filter = new FigureStreamFilter();
+    expect(filter.push("```").chunks).toEqual([]);
+    const next = filter.push("js\nconst x = 1;\n");
+    expect(next.chunks.join("")).toBe("```js\nconst x = 1;\n");
+    expect(filter.figures).toHaveLength(0);
+  });
+});
+
 describe("resolveFiguresInText", () => {
   it("swaps each fence for a drawn picture (fake generator, no network)", async () => {
     const answer = `Explain first.\n\n${fence("a blue flat circle")}\n\nExplain last.`;

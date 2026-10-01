@@ -72,12 +72,31 @@ export interface StreamImageFailed {
   reason?: string;
 }
 
+/**
+ * Live progress from the server before/while it writes: the route opens the
+ * stream immediately (it used to stay silent through ~15-20s of web research,
+ * which made the answer look like it landed all at once), then reports each
+ * phase so the UI can say what Veer is doing right now.
+ */
+export interface StreamPhase {
+  phase: "searching" | "writing" | string;
+  label?: string;
+}
+
+/** A cut answer is being continued on the SAME bubble (truncation repair). */
+export interface StreamContinuation {
+  continuing: number;
+  label?: string;
+}
+
 export type StreamChunk =
   | string
   | StreamChatMeta
   | StreamImageStart
   | StreamImageSuccess
-  | StreamImageFailed;
+  | StreamImageFailed
+  | StreamPhase
+  | StreamContinuation;
 
 export interface StreamChatOptions {
   isGuest?: boolean;
@@ -131,7 +150,12 @@ export async function* streamChat(
 
     if (!response.ok) {
       const error = await response.json().catch(() => ({ error: response.statusText }));
-      throw new Error(error.error || "Stream failed");
+      // Carry the HTTP status: the chat surfaces branch on 402 (daily pool
+      // empty) and 504 (slow provider) to show the honest message instead of a
+      // bogus "connection difficulty" bubble.
+      const failure = new Error(error.error || "Stream failed") as Error & { status?: number };
+      failure.status = response.status;
+      throw failure;
     }
 
     const reader = response.body?.getReader();
@@ -183,6 +207,9 @@ export async function* streamChat(
           caption?: string;
           url?: string;
           reason?: string;
+          phase?: string;
+          continuing?: number;
+          label?: string;
         };
         try {
           parsed = JSON.parse(data);
@@ -192,6 +219,16 @@ export async function* streamChat(
         // The server's error event (generic message + correlation id) now
         // reaches the caller instead of being swallowed by the old catch.
         if (parsed.error) throw new Error(parsed.error);
+        // Progress events: research started / answer writing / continuation —
+        // they carry no text, only what the UI should say it is doing.
+        if (typeof parsed.phase === "string") {
+          yield { phase: parsed.phase, label: parsed.label };
+          continue;
+        }
+        if (typeof parsed.continuing === "number") {
+          yield { continuing: parsed.continuing, label: parsed.label };
+          continue;
+        }
         if (typeof parsed.imageStart === "number") {
           yield { imageStart: parsed.imageStart, prompt: parsed.prompt ?? "", caption: parsed.caption };
           continue;

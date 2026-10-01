@@ -5,14 +5,8 @@ import { rateLimit } from "../middleware/rateLimit";
 import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
 import { completeAnswer } from "../ai/complete-answer";
 import { imageInstruction, sanitizeChatImages } from "../ai/image-input";
-import { withFigureToolInstruction, resolveFiguresInText, FigureStreamFilter, generateVeerImage } from "../ai/image-gen";
-import {
-  detectTruncation,
-  describeVerdict,
-  continuationRequest,
-  joinContinued,
-  MAX_CONTINUATIONS,
-} from "../ai/truncation";
+import { withFigureToolInstruction, resolveFiguresInText } from "../ai/image-gen";
+import { openSseChannel, streamAnswerToStudent, type StreamState } from "./ai-stream";
 import {
   GUEST_DAILY_LIMIT,
   consumeGuestSlot,
@@ -62,6 +56,9 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
   // other (see utils/guestQuota for the full threat model).
   const deviceId = getGuestDeviceId(req) ?? issueGuestDeviceCookie(res);
   let consumed = false;
+  // Shared with the SSE pipeline: true as soon as ANY character or figure
+  // placeholder reached the guest, which decides rollback-vs-keep on failure.
+  const streamState: StreamState = { streamedAny: false };
   try {
     const body = req.body;
     const messages: AIChatMessage[] = Array.isArray(body?.messages) ? body.messages : [];
@@ -105,6 +102,13 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
 
     const aiService = getService();
 
+    // ── The live channel opens BEFORE the slow research step ──
+    // Grounding runs multi-engine web search (~15-20s). Opening the SSE
+    // response here keeps the guest connected — and shows live status —
+    // instead of leaving a pending request that then dumps the whole answer.
+    const channel = stream ? openSseChannel(res) : null;
+    channel?.send({ phase: "searching", label: "Researching the topic…" });
+
     // Professor mode: plain-text enforcement + live web results (best-effort).
     // The recent thread rides along so a follow-up is grounded on the topic the
     // guest is actually on, exactly as in the authed chat.
@@ -119,122 +123,27 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
     const professorContext = withFigureToolInstruction(baseContext);
     const augmented = withProfessorContext(messages, professorContext) as AIChatMessage[];
 
-    // Handle streaming for guests
-    if (stream) {
-      res.setHeader("Content-Type", "text/event-stream; charset=utf-8");
-      res.setHeader("Cache-Control", "no-cache, no-transform");
-      res.setHeader("Connection", "keep-alive");
-      res.setHeader("X-Accel-Buffering", "no");
-      if (typeof res.flushHeaders === "function") res.flushHeaders();
-
-      let streamedAny = false;
-      let figureSeq = 0;
-      const sendSSE = (obj: any) => {
-        res.write(`data: ${JSON.stringify(obj)}\n\n`);
-        if (typeof (res as any).flush === "function") (res as any).flush();
-      };
-
-      try {
-        let acc = "";
-        let continued = 0;
-        const figFilter = new FigureStreamFilter();
-        const pendingFigures: Array<{ id: number; prompt: string }> = [];
-
-        for await (const delta of aiService.chatStream(provider, augmented)) {
-          const { chunks, figureStarts } = figFilter.push(delta);
-          for (const spec of figureStarts) {
-            figureSeq += 1;
-            pendingFigures.push({ id: figureSeq, prompt: spec.prompt });
-            sendSSE({ imageStart: figureSeq, prompt: spec.prompt, caption: spec.caption });
-          }
-          for (const chunk of chunks) {
-            acc += chunk;
-            streamedAny = true;
-            sendSSE({ content: chunk });
-          }
-        }
-        const tail = figFilter.flush();
-        if (tail.tail) {
-          acc += tail.tail;
-          streamedAny = true;
-          sendSSE({ content: tail.tail });
-        }
-        for (const spec of tail.figureStarts) {
-          figureSeq += 1;
-          pendingFigures.push({ id: figureSeq, prompt: spec.prompt });
-          sendSSE({ imageStart: figureSeq, prompt: spec.prompt, caption: spec.caption });
-        }
-
-        // Multi-turn truncation repair and continuous streaming
-        for (let i = 0; i < MAX_CONTINUATIONS; i += 1) {
-          const verdict = detectTruncation(acc, aiService.getLastFinishReason());
-          if (!verdict.truncated) break;
-          console.info(`[AI guest stream] reply repair: ${describeVerdict(verdict)}`);
-          try {
-            let nextAcc = "";
-            const continuationMessages: AIChatMessage[] = [
-              ...augmented.slice(-6),
-              { role: "assistant", content: acc },
-              { role: "user", content: continuationRequest(verdict.detail) },
-            ];
-            for await (const delta of aiService.chatStream(provider, continuationMessages)) {
-              const { chunks, figureStarts } = figFilter.push(delta);
-              for (const spec of figureStarts) {
-                figureSeq += 1;
-                pendingFigures.push({ id: figureSeq, prompt: spec.prompt });
-                sendSSE({ imageStart: figureSeq, prompt: spec.prompt, caption: spec.caption });
-              }
-              for (const chunk of chunks) {
-                nextAcc += chunk;
-                streamedAny = true;
-                sendSSE({ content: chunk });
-              }
-            }
-            const continuationTail = figFilter.flush();
-            if (continuationTail.tail) {
-              nextAcc += continuationTail.tail;
-              streamedAny = true;
-              sendSSE({ content: continuationTail.tail });
-            }
-            for (const spec of continuationTail.figureStarts) {
-              figureSeq += 1;
-              pendingFigures.push({ id: figureSeq, prompt: spec.prompt });
-              sendSSE({ imageStart: figureSeq, prompt: spec.prompt, caption: spec.caption });
-            }
-            if (nextAcc.trim()) {
-              acc = joinContinued(acc, nextAcc);
-              continued += 1;
-              continue;
-            }
-          } catch (contErr) {
-            console.warn(`[AI guest stream] continuation ${i + 1} failed:`, contErr);
-          }
-          break;
-        }
-
-        // Draw figures if requested
-        for (const fig of pendingFigures) {
-          const result = await generateVeerImage(fig.prompt);
-          const ok = !!result.url;
-          sendSSE({ [ok ? "imageSuccess" : "imageFailed"]: fig.id, url: ok ? result.url : undefined, reason: ok ? undefined : result.reason });
-        }
-
-        sendSSE({ done: true, remaining, limit: GUEST_DAILY_LIMIT, continued: continued > 0, continuations: continued });
-      } catch (err) {
-        if (consumed && !streamedAny) {
-          await rollbackGuestSlot(ip, deviceId).catch(() => {});
-        }
-        const errorId = newErrorId();
-        logServerError(err, errorId, "POST /api/ai/guest (stream)");
-        res.write(
-          `event: error\ndata: ${JSON.stringify({ error: "AI request failed", errorId })}\n\n`,
-        );
+    // Live streaming: the connection is already open (above); the pipeline is
+    // shared with the signed-in route so a guest gets the identical stream.
+    if (stream && channel) {
+      const outcome = await streamAnswerToStudent({
+        channel,
+        service: aiService,
+        provider,
+        messages: augmented,
+        logLabel: "[AI guest stream]",
+        doneExtras: { remaining, limit: GUEST_DAILY_LIMIT },
+        state: streamState,
+      });
+      if (outcome.status === "failed" && consumed && !streamState.streamedAny) {
+        // Nothing reached the guest → return the consumed message slot.
+        await rollbackGuestSlot(ip, deviceId).catch(() => {});
       }
-      res.end();
+      channel.end();
       return;
     }
 
-    // "" runs the ordered chain (agnes → openrouter → internal).
+    // "" runs the ordered chain (agnes → internal).
     //
     // Server-side answer completion (owner 2026-09-29/30): the guest path gets
     // the EXACT same repair the authed path gets — truncation repair first (a
@@ -271,8 +180,26 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
   } catch (err: any) {
     console.error("AI guest chat error:", err);
     // The attempt failed → the guest never got an answer, so return the
-    // consumed message first (best-effort).
-    if (consumed) await rollbackGuestSlot(ip, deviceId).catch(() => {});
+    // consumed message first (best-effort). A stream that already painted
+    // partial text did deliver, so its slot stays consumed.
+    if (consumed && !streamState.streamedAny) {
+      await rollbackGuestSlot(ip, deviceId).catch(() => {});
+    }
+    // The SSE channel opens before the research step, so the response may
+    // already be mid-stream: an error frame + close is all that is left (a
+    // JSON status would throw ERR_HTTP_HEADERS_SENT), and the guest must not
+    // be left waiting on a silent connection.
+    if (res.headersSent) {
+      const errorId = newErrorId();
+      logServerError(err, errorId, "POST /api/ai/guest");
+      if (!res.writableEnded) {
+        res.write(
+          `event: error\ndata: ${JSON.stringify({ error: "AI request failed", errorId })}\n\n`,
+        );
+        res.end();
+      }
+      return;
+    }
     // Slow-provider timeout → retryable 504 with a human message, not a
     // generic 500 (the "Internal Server Error" console report 2026-09-26).
     const message = String(err?.message ?? "");

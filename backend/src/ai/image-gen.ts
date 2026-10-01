@@ -123,12 +123,21 @@ export async function generateVeerImage(
 // ── fence streaming filter ───────────────────────────────────────────────────
 
 /**
- * Line-based fence filter for the live stream. The model's fence arrives as
- * ordinary text deltas, so it is SUPPRESSED from the content deltas the
- * student sees: the opening fence line is swallowed, the instruction line(s)
- * are collected, and the closing fence triggers a figureStart event exactly
- * once. The prompt instructs the model to place the fence at the very end of
- * the answer, so nothing streams after it in practice.
+ * TOKEN-LEVEL fence filter for the live stream.
+ *
+ * The model's fence arrives as ordinary text deltas, so it is SUPPRESSED from
+ * the content the student sees: the opening fence line is swallowed, the
+ * instruction line(s) are collected, and the closing fence triggers a
+ * figureStart event exactly once.
+ *
+ * Streaming rule (owner 2026-10-01: "reply like Claude/ChatGPT — it must keep
+ * typing, not arrive at once"): every delta that CANNOT be the start of a
+ * figure fence is forwarded IMMEDIATELY. The previous line-buffered version
+ * held all text until a "\n" arrived, which turned a paragraph of prose into
+ * one lump and made the reply look like it landed in bursts. Now only two
+ * things are ever held back: the body of an open fence, and a trailing partial
+ * line that could still grow into the opener (e.g. "``", "```", "```vee"…).
+ * Plain text is byte-for-byte identical to the input.
  */
 export class FigureStreamFilter {
   private buf = "";
@@ -136,6 +145,26 @@ export class FigureStreamFilter {
   private figLines: string[] = [];
   /** Every figure the filter has seen (resolved later by the caller). */
   figures: FigureSpec[] = [];
+
+  /** The opener, e.g. "```veer-image" (the language may change with config). */
+  private static readonly OPEN_RE = new RegExp(
+    "^```" + FIGURE_FENCE + "(\\s|$)",
+    "i",
+  );
+
+  /**
+   * Could the pending tail (a newline-free partial line) still turn into a
+   * fence opener? True for a prefix of the marker ("`", "```", "```veer")
+   * and for the marker itself once its brief arrives on the same line.
+   */
+  private couldOpenFigure(): boolean {
+    const tail = this.buf.trim();
+    // Whitespace-only: may be up to 3 spaces of markdown fence indentation.
+    if (!tail) return true;
+    const marker = "```" + FIGURE_FENCE;
+    if (marker.toLowerCase().startsWith(tail.toLowerCase())) return true;
+    return FigureStreamFilter.OPEN_RE.test(tail);
+  }
 
   /** Feed one delta; returns content chunks to forward + figure events. */
   push(
@@ -147,7 +176,15 @@ export class FigureStreamFilter {
 
     for (;;) {
       const idx = this.buf.indexOf("\n");
-      if (idx === -1) break; // hold the incomplete final line
+      if (idx === -1) {
+        // No complete line yet: inside a fence the body stays hidden, and a
+        // tail that could still become an opener is held. Everything else is
+        // ordinary prose → forward it right now (this is the typing effect).
+        if (this.inFigure || this.couldOpenFigure()) break;
+        chunks.push(this.buf);
+        this.buf = "";
+        break;
+      }
       const line = this.buf.slice(0, idx);
       this.buf = this.buf.slice(idx + 1);
       const trimmed = line.trim();
@@ -171,7 +208,7 @@ export class FigureStreamFilter {
         continue; // figure lines never reach the student as text
       }
 
-      if (new RegExp("^```" + FIGURE_FENCE + "(\\s|$)", "i").test(trimmed)) {
+      if (FigureStreamFilter.OPEN_RE.test(trimmed)) {
         this.inFigure = true;
         this.figLines = [];
         continue; // swallow the opening fence line

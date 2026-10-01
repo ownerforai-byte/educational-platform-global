@@ -8,25 +8,14 @@ import { supabaseAdmin } from "../db/supabase";
 import { logServerError, newErrorId } from "../middleware/errors";
 import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
 import { completeAnswer } from "../ai/complete-answer";
-import {
-  detectTruncation,
-  describeVerdict,
-  continuationRequest,
-  joinContinued,
-  MAX_CONTINUATIONS,
-} from "../ai/truncation";
 import { imageInstruction, sanitizeChatImages } from "../ai/image-input";
-import {
-  FigureStreamFilter,
-  generateVeerImage,
-  withFigureToolInstruction,
-  resolveFiguresInText,
-} from "../ai/image-gen";
+import { withFigureToolInstruction, resolveFiguresInText } from "../ai/image-gen";
+import { openSseChannel, streamAnswerToStudent, type StreamState } from "./ai-stream";
 
 const router = Router();
 
 // Lazy init: create service on first request so dotenv has already loaded
-// env vars (AGNES_API_KEY, OPENROUTER_API_KEY, etc.).
+// env vars (AGNES_API_KEY, etc.).
 let _service: ReturnType<typeof createAIService> | null = null;
 function getService() {
   if (!_service) _service = createAIService();
@@ -46,6 +35,9 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
   // failure path below so the student never pays for an answer they never
   // received (the "charged but got a 500" weak point).
   let billedUserId: string | null = null;
+  // Shared with the SSE pipeline: true as soon as ANY character or figure
+  // placeholder reached the student, which decides refund-vs-keep on failure.
+  const streamState: StreamState = { streamedAny: false };
   try {
     const body = req.body;
     let messages: AIChatMessage[] = Array.isArray(body?.messages) ? body.messages : [];
@@ -108,6 +100,15 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
 
     const aiService = getService();
 
+    // ── The live channel opens BEFORE the slow research step ──
+    // Grounding runs multi-engine web search and takes ~15-20s. Opening the
+    // SSE response here means the browser is already connected and can show
+    // live status during that wait; previously the headers waited for the
+    // research to finish, so the student stared at a frozen spinner and then
+    // the answer appeared to land all at once.
+    const channel = stream ? openSseChannel(res) : null;
+    channel?.send({ phase: "searching", label: "Researching the topic…" });
+
     // Professor mode: enforce plain-text style + inject live web results
     // for the student's latest question (Google CSE, timeout-protected).
     const lastUser = [...messages].reverse().find((m) => m.role === "user")?.content ?? "";
@@ -126,143 +127,28 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     const professorContext = withFigureToolInstruction(baseContext);
     messages = withProfessorContext(messages, professorContext) as AIChatMessage[];
 
-    // Handle streaming
-    if (stream) {
-      res.setHeader("Content-Type", "text/event-stream; charset=utf-8");
-      res.setHeader("Cache-Control", "no-cache, no-transform");
-      res.setHeader("Connection", "keep-alive");
-      res.setHeader("X-Accel-Buffering", "no");
-      if (typeof res.flushHeaders === "function") res.flushHeaders();
-
-      // Declared before the `try` so the `catch` below can tell "nothing
-      // reached the student" (refund) from "a partial answer already showed"
-      // (keep the credit) after a mid-stream failure.
-      let streamedAny = false;
-      let figureSeq = 0;
-      const sendSSE = (obj: any) => {
-        res.write(`data: ${JSON.stringify(obj)}\n\n`);
-        if (typeof (res as any).flush === "function") (res as any).flush();
-      };
-
-      try {
-        // LIVE streaming (owner 2026-09-30): deltas reach the student as the
-        // provider generates them — the agent-working feel, and long answers
-        // no longer sit behind a single response. Provider selection follows
-        // the ordered chain exactly like the non-stream path.
-        let acc = "";
-        let continued = 0;
-        // Figure fences are filtered OUT of the content the student sees;
-        // each one becomes an imageStart -> imageSuccess/imageFailed event
-        // pair, and the answer continues after the picture (owner 2026-09-30:
-        // "write -> generate -> continue").
-        const figFilter = new FigureStreamFilter();
-        const pendingFigures: Array<{ id: number; prompt: string }> = [];
-        for await (const delta of aiService.chatStream(provider, messages)) {
-          const { chunks, figureStarts } = figFilter.push(delta);
-          for (const spec of figureStarts) {
-            figureSeq += 1;
-            pendingFigures.push({ id: figureSeq, prompt: spec.prompt });
-            sendSSE({ imageStart: figureSeq, prompt: spec.prompt, caption: spec.caption });
-          }
-          for (const chunk of chunks) {
-            acc += chunk;
-            streamedAny = true;
-            sendSSE({ content: chunk });
-          }
-        }
-        const tail = figFilter.flush();
-        if (tail.tail) {
-          acc += tail.tail;
-          streamedAny = true;
-          sendSSE({ content: tail.tail });
-        }
-        for (const spec of tail.figureStarts) {
-          figureSeq += 1;
-          pendingFigures.push({ id: figureSeq, prompt: spec.prompt });
-          sendSSE({ imageStart: figureSeq, prompt: spec.prompt, caption: spec.caption });
-        }
-
-        // A cut answer is repaired incrementally: continuations STREAM directly
-        // to the student chunk-by-chunk so comprehensive knowledge finishes seamlessly.
-        for (let i = 0; i < MAX_CONTINUATIONS; i += 1) {
-          const verdict = detectTruncation(acc, aiService.getLastFinishReason());
-          if (!verdict.truncated) break;
-          console.info(`[AI stream] reply repair: ${describeVerdict(verdict)}`);
-          try {
-            let nextAcc = "";
-            const continuationMessages: AIChatMessage[] = [
-              ...messages.slice(-6),
-              { role: "assistant", content: acc },
-              { role: "user", content: continuationRequest(verdict.detail) },
-            ];
-            for await (const delta of aiService.chatStream(provider, continuationMessages)) {
-              const { chunks, figureStarts } = figFilter.push(delta);
-              for (const spec of figureStarts) {
-                figureSeq += 1;
-                pendingFigures.push({ id: figureSeq, prompt: spec.prompt });
-                sendSSE({ imageStart: figureSeq, prompt: spec.prompt, caption: spec.caption });
-              }
-              for (const chunk of chunks) {
-                nextAcc += chunk;
-                streamedAny = true;
-                sendSSE({ content: chunk });
-              }
-            }
-            const continuationTail = figFilter.flush();
-            if (continuationTail.tail) {
-              nextAcc += continuationTail.tail;
-              streamedAny = true;
-              sendSSE({ content: continuationTail.tail });
-            }
-            for (const spec of continuationTail.figureStarts) {
-              figureSeq += 1;
-              pendingFigures.push({ id: figureSeq, prompt: spec.prompt });
-              sendSSE({ imageStart: figureSeq, prompt: spec.prompt, caption: spec.caption });
-            }
-            if (nextAcc.trim()) {
-              acc = joinContinued(acc, nextAcc);
-              continued += 1;
-              continue;
-            }
-          } catch (contErr) {
-            console.warn(`[AI stream] continuation ${i + 1} failed:`, contErr);
-          }
-          break;
-        }
-
-        // Draw the figure(s) the model requested (Agnes 2.1 first, auto-
-        // fallback to 2.0). Each event carries the image id; on failure the
-        // client falls back to browser-side puter.js for the same prompt.
-        for (const fig of pendingFigures) {
-          const t0 = Date.now();
-          const result = await generateVeerImage(fig.prompt);
-          const ok = !!result.url;
-          console.info(
-            ok
-              ? `[image-gen] stream fig ${fig.id} ready in ${Date.now() - t0}ms`
-              : `[image-gen] stream fig ${fig.id} failed: ${result.reason}`,
-          );
-          sendSSE({ [ok ? "imageSuccess" : "imageFailed"]: fig.id, url: ok ? result.url : undefined, reason: ok ? undefined : result.reason });
-        }
-        sendSSE({ done: true, credits: creditsLeft ?? undefined, continued: continued > 0, continuations: continued });
-      } catch (err) {
-        // SSE headers are already sent, so serverError() cannot be used — but
-        // the raw provider error still must not reach the client. Log it under
-        // a correlation id and send only the generic message + that id.
-        // Refund only when NOTHING reached the student: a mid-stream failure
-        // delivered a partial answer, which is the service being paid for.
-        if (billedUserId && !streamedAny) {
-          await refundCredits(billedUserId, AI_MESSAGE_COST, "Refund: AI reply failed (stream)").catch(
-            () => {},
-          );
-        }
-        const errorId = newErrorId();
-        logServerError(err, errorId, "POST /api/ai (stream)");
-        res.write(
-          `event: error\ndata: ${JSON.stringify({ error: "AI request failed", errorId })}\n\n`,
-        );
+    // Live streaming: the connection is already open (above); the pipeline —
+    // token-level fence filtering, streamed truncation repair, figure drawing —
+    // lives in ai-stream.ts so the guest route streams byte-identically.
+    if (stream && channel) {
+      const outcome = await streamAnswerToStudent({
+        channel,
+        service: aiService,
+        provider,
+        messages,
+        logLabel: "[AI stream]",
+        doneExtras: { credits: creditsLeft ?? undefined },
+        state: streamState,
+      });
+      if (outcome.status === "failed" && billedUserId && !streamState.streamedAny) {
+        // Nothing reached the student → the 1-credit fee goes back.
+        await refundCredits(
+          billedUserId,
+          AI_MESSAGE_COST,
+          "Refund: AI reply failed (stream)",
+        ).catch(() => {});
       }
-      res.end();
+      channel.end();
       return;
     }
 
@@ -298,10 +184,26 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     });
   } catch (err: any) {
     console.error("AI chat error:", err);
-    // The answer never reached the student → give the 1-credit fee back
-    // before answering with an error status.
-    if (billedUserId) {
+    // The answer never reached the student → give the 1-credit fee back before
+    // answering with an error status. A stream that already painted partial
+    // text is the service being paid for, so it keeps the fee.
+    if (billedUserId && !streamState.streamedAny) {
       await refundCredits(billedUserId, AI_MESSAGE_COST, "Refund: AI reply failed").catch(() => {});
+    }
+    // The SSE channel opens before the research step, so the response may
+    // already be mid-stream: send an error frame (a JSON status would throw
+    // ERR_HTTP_HEADERS_SENT) and close, or the student waits on a silent
+    // connection forever.
+    if (res.headersSent) {
+      const errorId = newErrorId();
+      logServerError(err, errorId, "POST /api/ai");
+      if (!res.writableEnded) {
+        res.write(
+          `event: error\ndata: ${JSON.stringify({ error: "AI request failed", errorId })}\n\n`,
+        );
+        res.end();
+      }
+      return;
     }
     // Budget-exhaustion/timeouts are a slow-provider condition, not a server
     // bug — answer with a retryable 504 + a human message instead of the
