@@ -1,41 +1,27 @@
-import { MindStudio } from "@/features/mindmap-studio";
+import type { Metadata } from "next";
+import { ImageHub } from "@/features/image-hub";
 
-export const metadata = {
-  title: "Mind Studio — Ravikisan's Platform",
+export const metadata: Metadata = {
+  title: "Image Hub — Agnes 2.1 Flash · Ravikisan's Platform",
   description:
-    "Generate mindmaps, trees, flowcharts, hierarchies, timelines and sequence diagrams with Agnes AI (guest pool and puter.js fallbacks), then edit on a draggable canvas. Maps stay on your device.",
-  // Owner-only since 2026-10-01 (layout.tsx gates the render) — keep the
-  // workspace out of search indexes too.
+    "Owner-only image studio: describe a picture and Agnes 2.1 Flash draws it (puter.js browser fallback), with a per-session gallery and downloads.",
+  // Owner-only (layout.tsx gates the render) — keep the studio out of
+  // search indexes too.
   robots: { index: false, follow: false },
 };
 
 /**
- * Signed-in Mind Studio route.
+ * IMAGE HUB (owner request 2026-10-02): the former Mind Studio diagram
+ * workspace is REPLACED — this route now hosts the whole image interface:
+ * prompt → Agnes 2.1 Flash image chain → puter.js fallback → gallery.
  *
- * MindStudio is a self-contained client workspace; this page only places it
- * edge-to-edge inside the (app) shell. Its floating panels are laid out for a
- * ~1500px-wide desk (the Classifier/Data View sit at x=1060 inside the
- * workspace), so the wrapper scrolls horizontally instead of clipping them on
- * narrower screens — mind-studio.tsx itself is untouched.
+ * The owner-only gate lives in layout.tsx (login/home bounces); the backend
+ * endpoint /api/ai/image enforces the same boundary server-side.
  */
-export default function MindStudioPage() {
+export default function ImageHubPage() {
   return (
-    /* Cancel <main>'s px/py so the dark workspace bleeds to the shell edges. */
-    <div className="-mx-4 -my-6 md:-mx-6 lg:-mx-8">
-      <h1 className="sr-only">Mind Studio</h1>
-
-      {/* Panels sit side-by-side at fixed offsets — pan to reach them all.
-          Hidden once the viewport is wide enough for the full layout. */}
-      <p className="border-b border-white/10 bg-[#040916] px-4 py-2 text-center text-[11px] text-slate-400 min-[1820px]:hidden">
-        The workspace is wider than your screen — scroll sideways to reach the
-        Classifier, Data View and Inspector.
-      </p>
-
-      <div className="overflow-x-auto overscroll-x-contain bg-[#040916]">
-        <div className="min-w-[1500px]">
-          <MindStudio />
-        </div>
-      </div>
+    <div className="mx-auto w-full max-w-6xl px-2 sm:px-4 py-4 sm:py-6">
+      <ImageHub />
     </div>
   );
 }

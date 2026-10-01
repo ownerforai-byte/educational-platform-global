@@ -48,10 +48,11 @@ export default async function HomePage() {
       {/* Owner notice — public, never gated. Owner intro + internal login. */}
       <HomeOwnerNotice />
 
-      {/* Mind Studio launcher — AI diagram workspace entry (Agnes → puter.js).
-          Owner emails only (owner request 2026-10-01): OwnerOnly renders null
-          for guests and non-owners, so the section is not even in the served
-          HTML. The /mind-studio route carries the matching bounce gate. */}
+      {/* Image Hub launcher (was Mind Studio) — Agnes 2.1 Flash images
+          (puter.js fallback). Owner emails only (owner request 2026-10-01):
+          OwnerOnly renders null for guests and non-owners, so the section is
+          not even in the served HTML. The /mind-studio route carries the
+          matching bounce gate. */}
       <OwnerOnly>
         <HomeMindStudio />
       </OwnerOnly>

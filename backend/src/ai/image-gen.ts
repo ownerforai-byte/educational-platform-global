@@ -76,7 +76,7 @@ export interface GeneratedFigure extends FigureSpec {
  */
 export async function generateVeerImage(
   prompt: string,
-): Promise<{ url?: string; reason?: string }> {
+): Promise<{ url?: string; reason?: string; model?: string }> {
   const clean = (prompt ?? "").trim().slice(0, MAX_PROMPT_CHARS);
   if (!imageGenEnabled() || !clean) {
     return { reason: "image generation is disabled or no instruction was given" };
@@ -107,7 +107,7 @@ export async function generateVeerImage(
       const url = data?.data?.[0]?.url;
       if (typeof url === "string" && url.trim()) {
         console.info(`[image-gen] ${model} drew "${clean.slice(0, 60)}…" in ${url.slice(0, 60)}`);
-        return { url };
+        return { url, model };
       }
       console.warn(`[image-gen] ${model} returned no url`);
     } catch (err) {

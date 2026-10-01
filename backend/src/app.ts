@@ -6,6 +6,7 @@ import cookieParser from "cookie-parser";
 import authRoutes from "./api/auth";
 import aiRoutes from "./api/ai";
 import aiGuestRoutes from "./api/ai-guest";
+import aiImageRoutes from "./api/ai-image";
 import aiGenerateRoutes from "./api/ai-generate";
 import aiEnhanceRoutes from "./api/ai-enhance";
 import aiHistoryRoutes from "./api/ai-history";
@@ -94,6 +95,9 @@ export function createApp(): express.Express {
   // history-search interface (search your own saved conversations), which is
   // free for signed-in students and blocked for guests.
   app.use("/api/ai/history-search", aiHistoryRoutes);
+  // Registered BEFORE /api/ai so the more specific path wins: the Image
+  // Hub's owner-only drawing endpoint (Agnes 2.1 image chain).
+  app.use("/api/ai/image", aiImageRoutes);
   app.use("/api/ai", aiRoutes);
   app.use("/api/ai/guest", aiGuestRoutes);
   app.use("/api/ai/generate-questions", aiGenerateRoutes);

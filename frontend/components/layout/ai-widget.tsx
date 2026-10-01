@@ -1,60 +1,31 @@
 "use client";
 
-import { useState, useEffect } from "react";
-import { X } from "lucide-react";
-import { AIChatInterface } from "@/components/ai/ai-chat-interface";
+import Link from "next/link";
 import { CaptainMark } from "@/components/ai/captain-logo";
 
 /**
- * Floating AI chat launcher (bottom-left corner).
+ * Floating AI launcher (bottom-left corner) — OWNER RULE CHANGE 2026-10-02:
+ * "make all ai not open as widget but their whole interface … their own
+ * separate page not as floating widget anymore".
  *
- * The panel integrates the FULL chat interface (AIChatInterface) with all of
- * its features: per-conversation chat history for signed-in users AND guests,
- * colorful typing dots, copy/enhance/regenerate, quota badges and the header's
- * green live dot. Owner rules: the launcher button stays, the green animating
- * dot inside the header stays — never remove either.
+ * The floating PANEL (and the Escape handler, and the embedded
+ * AIChatInterface) are gone: the button no longer opens anything in place.
+ * It NAVIGATES to /chat — the assistant's canonical full page (the same
+ * AIChatInterface that used to be squeezed into the panel, with its history,
+ * quota badges and live dot at full size). The launcher button itself stays
+ * at its old spot, per the owner rule of 2026-09-27.
+ *
+ * /ai/chat forwards to /chat too, so every AI surface reaches the interface
+ * as a PAGE: /chat (assistant), /ai/tutor (studio tutor), /ai-quiz, /ai/search.
  */
 export function AIWidget() {
-  const [open, setOpen] = useState(false);
-
-  useEffect(() => {
-    const onEsc = (e: KeyboardEvent) => {
-      if (e.key === "Escape") setOpen(false);
-    };
-    window.addEventListener("keydown", onEsc);
-    return () => window.removeEventListener("keydown", onEsc);
-  }, []);
-
   return (
-    <>
-      {/* Floating toggle button — bottom-left */}
-      <button
-        onClick={() => setOpen(!open)}
-        className={`fixed left-6 z-50 h-14 w-14 rounded-full shadow-lg flex items-center justify-center transition-all bottom-safe ${
-          open
-            ? "bg-red-500 hover:bg-red-600"
-            : "bg-gradient-to-br from-primary to-primary/70 hover:scale-105"
-        }`}
-        aria-label="Toggle Veer chat"
-      >
-        {open ? (
-          <X className="h-6 w-6 text-white" />
-        ) : (
-          <CaptainMark className="h-7 w-7 text-white" />
-        )}
-      </button>
-
-      {/* Chat panel — its own panel, full interface inside */}
-      {open && (
-        <div
-          className="fixed bottom-safe-panel left-6 z-50 w-[min(760px,calc(100vw-3rem))] rounded-2xl border border-border bg-card shadow-2xl overflow-hidden"
-          style={{ height: "min(640px, calc(100vh - 8rem))" }}
-          role="dialog"
-          aria-label="Veer"
-        >
-          <AIChatInterface embedded />
-        </div>
-      )}
-    </>
+    <Link
+      href="/chat"
+      aria-label="Open Veer — full chat page"
+      className="fixed left-6 bottom-safe z-50 h-14 w-14 rounded-full shadow-lg flex items-center justify-center bg-gradient-to-br from-primary to-primary/70 hover:scale-105 transition-all"
+    >
+      <CaptainMark className="h-7 w-7 text-white" />
+    </Link>
   );
 }
