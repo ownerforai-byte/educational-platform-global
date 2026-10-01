@@ -4,6 +4,9 @@ export const metadata = {
   title: "Mind Studio — Ravikisan's Platform",
   description:
     "Generate mindmaps, trees, flowcharts, hierarchies, timelines and sequence diagrams with Agnes AI (guest pool and puter.js fallbacks), then edit on a draggable canvas. Maps stay on your device.",
+  // Owner-only since 2026-10-01 (layout.tsx gates the render) — keep the
+  // workspace out of search indexes too.
+  robots: { index: false, follow: false },
 };
 
 /**

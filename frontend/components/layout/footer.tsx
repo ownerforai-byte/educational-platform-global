@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import { DEPLOY_VERSION } from "@/lib/deploy-version";
 import {
   Atom,
   BookOpen,
@@ -296,6 +297,12 @@ export function Footer() {
               <BellRing className="h-3 w-3" />
               <span>Notice</span>
             </Link>
+            <span
+              className="font-mono text-[10px] rounded-full border border-border/60 bg-muted/40 px-2 py-0.5 text-muted-foreground/80"
+              title="Platform version — v0.0001 was the first version (2026-10-01); every deployment after it adds 0.0001"
+            >
+              v{DEPLOY_VERSION}
+            </span>
           </div>
         </div>
       </div>

@@ -3,7 +3,9 @@
   "version": "0.2.0",
   "private": true,
   "scripts": {
+    "predev": "node scripts/bump-deploy-version.mjs",
     "dev": "next dev --webpack -p 5173",
+    "prebuild": "node scripts/bump-deploy-version.mjs",
     "build": "next build",
     "start": "next start -p $PORT",
     "lint": "eslint .",
