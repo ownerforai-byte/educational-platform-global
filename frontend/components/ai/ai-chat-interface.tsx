@@ -505,7 +505,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
     if (historyState === "loading") return;
 
     if (isGuestLimited) {
-      setError(`Veer chat is for signed-in members. Sign in to ask questions — you get ${DAILY_CREDIT_POOL} daily credits and saved chat histories.`);
+      setError(`You've used your free message for today. Sign in to keep asking Veer — members get ${DAILY_CREDIT_POOL} daily credits and saved chat histories.`);
       return;
     }
     if (creditsExhausted) {
@@ -947,7 +947,9 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
               <span className="font-semibold">
                 {isLoggedIn
                   ? `${Math.min(dailyCredits ?? user?.credits ?? DAILY_CREDIT_POOL, DAILY_CREDIT_POOL)}/${DAILY_CREDIT_POOL} credits today`
-                  : "Sign in to chat with Veer · members get daily credits"}
+                  : Math.max(0, MAX_GUEST_MESSAGES - guestCount) > 0
+                    ? `${Math.max(0, MAX_GUEST_MESSAGES - guestCount)} free message left today`
+                    : "Free trial used · sign in to continue"}
               </span>
             </div>
           </div>
@@ -994,7 +996,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
             {!isLoggedIn && (
               <span className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-600 font-semibold">
                 <Coins className="h-3 w-3" />
-                Members only
+                {Math.max(0, MAX_GUEST_MESSAGES - guestCount) > 0 ? "1 free trial message" : "Free trial used"}
               </span>
             )}
             {isLoggedIn && (

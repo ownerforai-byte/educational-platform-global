@@ -3,14 +3,15 @@
 import Link from "next/link";
 import { Coins, Crown, Sparkles, UserRound } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
+import { GUEST_DAILY_LIMIT, readGuestCount } from "@/lib/ai/guest-quota";
 
 /**
  * Live plan + credit strip for the AI pages.
  *
- * Shows what this account can actually spend today — daily credits for
- * signed-in students or the PRO badge — and links to /credits for the full
- * wallet. Since 2026-10-01 guest access is members-only (GUEST_DAILY_LIMIT
- * = 0), so signed-out visitors get the sign-in strip instead of a pool.
+ * Shows what this account can actually spend today — the 1-message free
+ * trial for guests, daily credits for signed-in students, or the PRO badge —
+ * and links to /credits for the full wallet. Guest usage is mirrored from
+ * the shared day-keyed store, so it resets at midnight like the server pool.
  */
 export function AiPlanStrip() {
   const { user, isLoading } = useSession();
@@ -24,13 +25,17 @@ export function AiPlanStrip() {
   }
 
   if (!user) {
+    const used = readGuestCount();
+    const left = Math.max(0, GUEST_DAILY_LIMIT - used);
     return (
       <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-border/60 bg-muted/30 px-4 py-3">
         <span className="inline-flex items-center gap-2 text-xs">
           <Sparkles className="h-3.5 w-3.5 text-violet-500" />
-          <span className="font-semibold text-foreground">Members only</span>
+          <span className="font-semibold text-foreground">Free trial</span>
           <span className="text-muted-foreground">
-            Sign in to chat with Veer and generate quizzes
+            {left > 0
+              ? `${left} free message left today · resets at midnight`
+              : "Free trial used · sign in to continue"}
           </span>
         </span>
         <Link

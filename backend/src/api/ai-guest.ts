@@ -19,12 +19,12 @@ import { DAILY_CREDIT_POOL } from "../utils/credits";
 
 /**
  * Guest AI chat (no account). Owner policy 2026-10-01 supersedes 2026-09-26:
- *   - GUEST_DAILY_LIMIT = 0 — guest chat is MEMBERS-ONLY; there is no free
- *     guest trial. utils/guestQuota answers `limited` before any key is read,
- *     so clearing localStorage, rotating IPs or restarting the server cannot
- *     buy a single message.
- *   - GUEST_DAILY_LIMIT is a one-constant flip; raising it restores the old
- *     per-day pool (DB-backed, hashed IP, dual identity) with no rewrite.
+ *   - GUEST_DAILY_LIMIT = 1 — a FREE TRIAL. Each guest gets one free message
+ *     per day; after that, sign-in is required. utils/guestQuota enforces it
+ *     DB-side per hashed IP + device cookie, so clearing localStorage,
+ *     rotating IPs or restarting the server cannot buy extra messages.
+ *   - GUEST_DAILY_LIMIT is a one-constant flip: 0 = members-only (the gate
+ *     answers before any key is read), 2+ = the old per-day pool.
  */
 
 const router = Router();
@@ -85,7 +85,7 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
         error: "Sign in required",
         remaining: 0,
         limit: GUEST_DAILY_LIMIT,
-        message: `Guest chat is members-only. Sign in to talk to Veer — you'll get ${DAILY_CREDIT_POOL} daily credits and saved chat histories.`,
+        message: `You've used your ${GUEST_DAILY_LIMIT} free message for today. Sign in to keep talking to Veer — members get ${DAILY_CREDIT_POOL} daily credits and saved chat histories.`,
       });
       return;
     }

@@ -531,8 +531,8 @@ describe("auth flow", () => {
   });
 
   test("AI question generation is guest-quota-gated (was anonymous unlimited)", async () => {
-    // 2026-10-01: the guest pool is closed (GUEST_DAILY_LIMIT = 0) — every
-    // guest generate must answer 402 before any AI call, no matter what any
+    // 2026-10-01: guests get a 1/day free trial (GUEST_DAILY_LIMIT = 1) — an
+    // EXHAUSTED trial must answer 402 before any AI call, no matter what any
     // stored count says. Anonymous unlimited access stays blocked.
     mocked.from.mockImplementationOnce(() =>
       makeQueryChain({ data: { count: 999_999 }, error: null }),

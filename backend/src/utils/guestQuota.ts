@@ -36,11 +36,12 @@ import { isProductionEnv } from "../config/env";
  * Daily guest message allowance (the guest "credit pool").
  * HARDCODED 2026-09-27 (owner): env override removed — no config, restart
  * or refresh can raise it mid-day; the pool refills only at UTC midnight.
- * SET TO 0 on 2026-10-01 (owner): guest chat is members-only now — no chat
- * without signing in. The consume path keeps the full machinery (keys, CAS,
- * rollback) so the limit is a one-constant flip, never a rewrite.
+ * Owner 2026-10-01: FREE TRIAL — each guest gets 1 free message per day,
+ * then sign-in is required. The consume path keeps the full machinery
+ * (keys, CAS, rollback) so the limit is a one-constant flip, never a
+ * rewrite: 0 here would mean members-only, 2+ restores the old pool.
  */
-export const GUEST_DAILY_LIMIT = 0;
+export const GUEST_DAILY_LIMIT = 1;
 
 /** HttpOnly device-identity cookie (server-minted, never page-readable). */
 export const GUEST_COOKIE_NAME = "neb-gid";

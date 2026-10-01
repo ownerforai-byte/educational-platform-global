@@ -152,17 +152,32 @@ if (isCI && !(email && password)) {
   console.log("SKIP  auth round-trip (set SMOKE_OWNER_EMAIL / SMOKE_OWNER_PASSWORD to enable)");
 }
 
-// ── 4. Guest AI stays members-only (owner 2026-10-01) ──
-// EVERY guest must be refused with 402 "Sign in required" — a 200 here means
-// the guest pool was re-opened without updating this smoke test.
-const guest = await j("/api/ai/guest", {
+// ── 4. Guest free trial holds (owner 2026-10-01: 1 free message/day) ──
+// Each guest identity gets ONE free message, then 402 "Sign in required".
+// Two consecutive guest calls pin the contract whatever state the runner's
+// shared egress IP arrives in: every response must be either a real trial
+// answer (200) or the trial-spent gate (402) — never a 5xx — and the SAME
+// identity can never pass twice, so at least one 402 must appear.
+const guestTrial = await j("/api/ai/guest", {
   method: "POST",
   body: JSON.stringify({ messages: [{ role: "user", content: "Reply with the single word: ready" }] }),
 });
+const guestAfter = await j("/api/ai/guest", {
+  method: "POST",
+  body: JSON.stringify({ messages: [{ role: "user", content: "Reply with the single word: ready" }] }),
+});
+const trialOk = (g) =>
+  (g.status === 200 && typeof g.body?.response === "string" && g.body.response.length > 0) ||
+  (g.status === 402 && g.body?.error === "Sign in required");
 step(
-  "guest AI is members-only (402, sign-in required)",
-  guest.status === 402 && guest.body?.error === "Sign in required",
-  `status=${guest.status}`
+  "guest trial: both calls are 200-trial or 402-trial-spent (never 5xx)",
+  trialOk(guestTrial) && trialOk(guestAfter),
+  `status=${guestTrial.status},${guestAfter.status}`
+);
+step(
+  "guest trial: 1/day enforced (second call on one identity is gated)",
+  guestTrial.status === 402 || guestAfter.status === 402,
+  `status=${guestTrial.status},${guestAfter.status}`
 );
 
 console.log(failures === 0 ? "\nALL SMOKE CHECKS PASSED" : `\n${failures} SMOKE CHECK(S) FAILED`);

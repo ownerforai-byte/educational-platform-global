@@ -67,7 +67,7 @@ async function authOrGuestQuota(req: Request, res: Response, next: NextFunction)
         error: "Sign in required",
         remaining: 0,
         limit: GUEST_DAILY_LIMIT,
-        message: `Guest quiz generation is members-only. Sign in to generate quizzes — you'll get ${DAILY_CREDIT_POOL} daily credits and saved history.`,
+        message: `You've used your free trial for today (guest chat and quizzes share it). Sign in to keep going — members get ${DAILY_CREDIT_POOL} daily credits and saved history.`,
       });
       return;
     }

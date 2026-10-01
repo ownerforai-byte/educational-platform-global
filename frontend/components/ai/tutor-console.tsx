@@ -462,6 +462,7 @@ export function TutorConsole() {
   const sessionRef = useRef(sessionName);
   sessionRef.current = sessionName;
 
+  const guestCredits = Math.max(0, MAX_GUEST_MESSAGES - guestCount);
   const isGuestLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
   const privilegedUser =
     user?.role === "OWNER" || user?.role === "ADMIN" || !!user?.premiumStatus;
@@ -660,7 +661,7 @@ export function TutorConsole() {
 
       if (isGuestLimited) {
         setError(
-          `Veer chat is for signed-in members. Sign in to ask questions — you get ${DAILY_CREDIT_POOL} daily credits and saved chat histories.`,
+          `You've used your free message for today. Sign in to keep asking Veer — members get ${DAILY_CREDIT_POOL} daily credits and saved chat histories.`,
         );
         return;
       }
@@ -965,10 +966,10 @@ export function TutorConsole() {
             {!isLoggedIn && (
               <span
                 className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-600 font-semibold"
-                title="Sign in to chat with Veer"
+                title="1 free message per day · sign in for daily credits"
               >
                 <Coins className="h-3 w-3" />
-                Members only
+                {guestCredits > 0 ? "1 free trial message" : "Free trial used"}
               </span>
             )}
             {isLoggedIn && (
@@ -1213,7 +1214,7 @@ export function TutorConsole() {
         {composerLocked && (
           <p className="mb-2 rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-1.5 text-[11px] font-semibold text-amber-600">
             {isGuestLimited
-              ? `Veer chat is for signed-in members. Sign in to continue — your daily credits and saved histories are waiting.`
+              ? `Your free message for today is used — sign in to continue. Your daily credits and saved histories are waiting.`
               : `Today's ${DAILY_CREDIT_POOL}-credit pool is empty — it resets at 12:00 AM.`}
           </p>
         )}
@@ -1274,7 +1275,9 @@ export function TutorConsole() {
         <p className="mt-1.5 text-[10px] text-muted-foreground">
           {isLoggedIn
             ? "1 credit per message · history saved to your account"
-            : "Sign in to chat with Veer · members get daily credits & saved history"}
+            : guestCredits > 0
+              ? "1 free message left today · try Veer, then sign in for daily credits"
+              : "Free trial used · sign in for daily credits & saved history"}
         </p>
       </div>
     </div>

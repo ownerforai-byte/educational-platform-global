@@ -3,15 +3,16 @@ import { describe, expect, test, beforeEach, vi } from "vitest";
 /**
  * Guest quota policy + machinery.
  *
- * OWNER POLICY 2026-10-01: GUEST_DAILY_LIMIT = 0 — guest chat and guest quiz
- * generation are MEMBERS-ONLY. `consumeGuestSlot` answers `limited` before
- * any identity key is read, so no DB write, no cookie mint and no daily
- * reset can admit a guest message.
+ * OWNER POLICY 2026-10-01: GUEST_DAILY_LIMIT = 1 — a FREE TRIAL. Each guest
+ * gets one free message per day (chat and quiz share the pool); after that
+ * every call answers `limited` until the UTC day rolls over. Enforcement is
+ * DB-backed per hashed IP + device cookie, so clearing localStorage,
+ * rotating IPs or restarting the server cannot buy extra messages.
  *
  * The metered machinery below (identity keys, CAS increments, dual-identity
- * rollback, in-memory fallback) is still real code and must keep working the
- * day the owner flips the constant back up — so it is driven through
- * `consumeGuestSlotWithLimit`, the seam built for exactly that.
+ * rollback, in-memory fallback) is limit-agnostic and is additionally driven
+ * through `consumeGuestSlotWithLimit` (the seam built for tests and for any
+ * future policy flip) with a different limit than production uses.
  */
 
 type Res = { data: unknown; error: { message: string; code?: string } | null };
@@ -91,25 +92,40 @@ beforeEach(() => {
   db.clear();
 });
 
-// ── Policy: members-only ────────────────────────────────────────────────────
+// ── Policy: free trial (1 message/day) ─────────────────────────────────────
 
-describe("members-only guest policy (GUEST_DAILY_LIMIT = 0)", () => {
-  test("consumeGuestSlot answers limited before touching any identity key", async () => {
-    const slot = await consumeGuestSlot("ip-zero-1", "a1b2c3d4e5f6a7b8a1b2c3d4e5f6a7b8");
-    expect(slot).toEqual({ status: "limited", remaining: 0 });
-    // Zero reads, zero writes, zero cookie-related DB work.
-    expect(db.calls).toHaveLength(0);
+describe("free-trial guest policy (GUEST_DAILY_LIMIT = 1)", () => {
+  test("the FIRST message of the day consumes the trial (ok, remaining 0)", async () => {
+    // Dual identity (ip + device): BOTH keys insert the day's row, and the
+    // worst remaining across them (0 = trial spent) is reported.
+    db.queue("guest_chat_usage:select", { data: null, error: null });
+    db.queue("guest_chat_usage:upsert", { data: [{ count: 1 }], error: null });
+    db.queue("guest_chat_usage:select", { data: null, error: null });
+    db.queue("guest_chat_usage:upsert", { data: [{ count: 1 }], error: null });
+
+    const slot = await consumeGuestSlot("ip-trial-first", "a1b2c3d4e5f6a7b8a1b2c3d4e5f6a7b8");
+    expect(slot).toEqual({ status: "ok", remaining: 0 });
+    expect(db.calls.filter((c) => c.op === "upsert")).toHaveLength(2);
   });
 
-  test("no stored count, identity or daily reset can admit a message", async () => {
-    for (let i = 0; i < 3; i++) {
-      const slot = await consumeGuestSlot(`ip-zero-repeat-${i}`);
+  test("the SECOND message of the day is limited — trial spent", async () => {
+    db.queue("guest_chat_usage:select", { data: { count: 1 }, error: null });
+
+    const slot = await consumeGuestSlot("ip-trial-second");
+    expect(slot).toEqual({ status: "limited", remaining: 0 });
+    expect(db.calls.filter((c) => c.op === "update" || c.op === "upsert")).toHaveLength(0);
+  });
+
+  test("no stored count, identity trick or daily reset can buy extra messages", async () => {
+    for (let i = 0; i < 5; i++) {
+      db.queue("guest_chat_usage:select", { data: { count: 999_999 }, error: null });
+      const slot = await consumeGuestSlot(`ip-trial-repeat-${i}`);
       expect(slot).toEqual({ status: "limited", remaining: 0 });
     }
-    expect(db.calls).toHaveLength(0);
+    expect(db.calls.filter((c) => c.op === "update" || c.op === "upsert")).toHaveLength(0);
   });
 
-  test("the seam reports limited for any non-positive limit", async () => {
+  test("the seam keeps guarding non-positive limits (0 = members-only)", async () => {
     for (const limit of [0, -1]) {
       const slot = await consumeGuestSlotWithLimit("ip-zero-seam", null, limit);
       expect(slot).toEqual({ status: "limited", remaining: 0 });
