@@ -79,9 +79,9 @@ const health = await j("/health");
 step("health endpoint responds", health.status === 200 && health.body?.status === "ok", `status=${health.status}`);
 
 // ── 2. Hardened endpoints reject anonymous callers ──
-// 2026-09-27: the quiz admits guests through the metered 2/day pool, so the
-// check is "never succeeds without quota" — an EMPTY body still passes the
-// gate first and must answer 4xx (400 validation / 402 exhausted / 503).
+// 2026-10-01: guest access is MEMBERS-ONLY (GUEST_DAILY_LIMIT = 0) — the
+// guest gate answers 402 before any AI call; an empty body must still never
+// reach the AI (400 validation or 402 gate, never 2xx).
 const anonQuiz = await j("/api/ai/generate-questions", {
   method: "POST",
   body: JSON.stringify({}),
@@ -132,6 +132,19 @@ if (isCI && !(email && password)) {
     const me = await j("/api/auth/me", { headers: { Cookie: `sb-access-token=${access1}` } });
     step("/me with fresh session returns 200", me.status === 200 && !!me.body?.user, `status=${me.status}`);
 
+    // AI liveness rides the AUTHED route since 2026-10-01: guests no longer
+    // reach the AI at all, so the paid-key check uses the owner session.
+    const ai = await j("/api/ai", {
+      method: "POST",
+      headers: { Cookie: `sb-access-token=${access1}` },
+      body: JSON.stringify({ messages: [{ role: "user", content: "Reply with the single word: ready" }] }),
+    });
+    step(
+      "authed AI responds (paid-key liveness)",
+      ai.status === 200 && typeof ai.body?.response === "string" && ai.body.response.length > 0,
+      `status=${ai.status}`
+    );
+
     const lo = await j("/api/auth/logout", { method: "POST", headers: { Cookie: `sb-access-token=${access1}` } });
     step("logout invalidates session", lo.status === 200, `status=${lo.status}`);
   }
@@ -139,14 +152,16 @@ if (isCI && !(email && password)) {
   console.log("SKIP  auth round-trip (set SMOKE_OWNER_EMAIL / SMOKE_OWNER_PASSWORD to enable)");
 }
 
-// ── 4. Guest AI answers (paid-key liveness) ──
+// ── 4. Guest AI stays members-only (owner 2026-10-01) ──
+// EVERY guest must be refused with 402 "Sign in required" — a 200 here means
+// the guest pool was re-opened without updating this smoke test.
 const guest = await j("/api/ai/guest", {
   method: "POST",
   body: JSON.stringify({ messages: [{ role: "user", content: "Reply with the single word: ready" }] }),
 });
 step(
-  "guest AI responds",
-  guest.status === 200 && typeof guest.body?.response === "string" && guest.body.response.length > 0,
+  "guest AI is members-only (402, sign-in required)",
+  guest.status === 402 && guest.body?.error === "Sign in required",
   `status=${guest.status}`
 );
 
