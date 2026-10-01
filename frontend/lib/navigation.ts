@@ -41,6 +41,7 @@ import {
   Box,
   ListTree,
   Bot,
+  Languages,
 } from "lucide-react";
 
 export type NavIcon = ComponentType<{ className?: string }>;
@@ -95,6 +96,8 @@ const stemAndRigorItems: NavItem[] = [
 const toolsItems: NavItem[] = [
   { href: "/ai", label: "Veer Studio Hub", icon: Bot, badge: "4 Tools", badgeClass: "bg-violet-500/15 text-violet-500" },
   { href: "/chat", label: "Veer Study Assistant", icon: Sparkles, badge: "Chat", badgeClass: "bg-fuchsia-500/15 text-fuchsia-500" },
+  { href: "/chat/nepali", label: "नेपाली Console", icon: Languages, badge: "Pure नेपाली", badgeClass: "bg-rose-500/15 text-rose-500" },
+  { href: "/chat/grammar", label: "Grammar Console", icon: BookOpen, badge: "English", badgeClass: "bg-indigo-500/15 text-indigo-500" },
   { href: "/ai/tutor", label: "Veer Tutor Console", icon: Bot, badge: "History", badgeClass: "bg-fuchsia-500/15 text-fuchsia-500" },
   { href: "/ai/search", label: "Veer Curriculum Search", icon: Search, badge: "Semantic", badgeClass: "bg-emerald-500/15 text-emerald-500" },
   { href: "/ai-quiz", label: "Adaptive Veer Quiz", icon: HelpCircle, badge: "Adaptive", badgeClass: "bg-blue-500/15 text-blue-500" },

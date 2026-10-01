@@ -318,6 +318,8 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         href: "/chat",
         meta: "Chat",
         links: [
+          { label: "नेपाली console — replies in Nepali", href: "/chat/nepali" },
+          { label: "Grammar console — origin-first with citations", href: "/chat/grammar" },
           { label: "Tutor console with history", href: "/ai/tutor" },
           { label: "Adaptive quiz", href: "/ai-quiz" },
           { label: "Curriculum search", href: "/ai/search" },

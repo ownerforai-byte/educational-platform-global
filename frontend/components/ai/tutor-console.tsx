@@ -500,7 +500,16 @@ function systemMessageFor(mode: TutorMode): AIChatMessage {
 
 // ── Console ─────────────────────────────────────────────────────────────────
 
-export function TutorConsole() {
+/**
+ * Deep-link entry (/chat/nepali, /chat/grammar): preselects the console mode
+ * on mount — it wins over the stored mode and becomes the new stored one,
+ * exactly as if the chip had been tapped.
+ */
+export function TutorConsole({
+  initialConsole,
+}: {
+  initialConsole?: "nepali" | "grammar";
+} = {}) {
   const { user } = useSession();
   const router = useRouter();
   const isLoggedIn = !!user;
@@ -571,11 +580,23 @@ export function TutorConsole() {
   // Restore mode + quota/history after mount (localStorage/sessionStorage
   // never exist on the server — first client paint must match it).
   useEffect(() => {
-    try {
-      const saved = localStorage.getItem(MODE_STORAGE_KEY) as TutorMode | null;
-      if (saved && MODES.some((m) => m.id === saved)) setMode(saved);
-    } catch {
-      /* storage blocked — stay on General */
+    const deepLinkMode = initialConsole
+      ? MODES.find((m) => m.console === initialConsole)?.id
+      : undefined;
+    if (deepLinkMode) {
+      setMode(deepLinkMode);
+      try {
+        localStorage.setItem(MODE_STORAGE_KEY, deepLinkMode);
+      } catch {
+        /* storage blocked — mode still applies for this visit */
+      }
+    } else {
+      try {
+        const saved = localStorage.getItem(MODE_STORAGE_KEY) as TutorMode | null;
+        if (saved && MODES.some((m) => m.id === saved)) setMode(saved);
+      } catch {
+        /* storage blocked — stay on General */
+      }
     }
 
     if (!isLoggedIn) {
