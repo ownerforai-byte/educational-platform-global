@@ -93,6 +93,17 @@ describe("master academic prompt composition", () => {
     expect(PROMPT).not.toContain("your name is \"ravikisan's ai tutor\"");
   });
 
+  test("pins the one-surface-at-a-time law (owner 2026-10-01)", () => {
+    // A reply must finish EVERY aspect of a concept before touching the next:
+    // no interleaving, no trimming one topic to reach another, no ending with
+    // a surface half-covered. This is an ABSOLUTE rule, so pin its load-bearing
+    // clauses — drop the test if the rule is ever deliberately redesigned.
+    expect(PROMPT).toContain("one surface at a time");
+    expect(PROMPT).toContain("only then close the surface");
+    expect(PROMPT).toContain("never interleave the aspects of two surfaces");
+    expect(PROMPT).toContain("no jump to another topic unless the present one is fully presented");
+  });
+
   test("tells every answer like a story, complete start to finish, from every attached source", () => {
     expect(PROMPT).toContain("the story shape");
     expect(PROMPT).toContain("complete knowledge, start to finish");

@@ -94,7 +94,7 @@ describe("streamChat", () => {
       "fetch",
       vi.fn(
         async () =>
-          new Response(JSON.stringify({ error: "Daily guest limit reached" }), {
+          new Response(JSON.stringify({ error: "Sign in required" }), {
             status: 402,
             headers: { "Content-Type": "application/json" },
           }),
@@ -109,6 +109,6 @@ describe("streamChat", () => {
           // no chunks on a failed request
         }
       })(),
-    ).rejects.toMatchObject({ message: "Daily guest limit reached", status: 402 });
+    ).rejects.toMatchObject({ message: "Sign in required", status: 402 });
   });
 });

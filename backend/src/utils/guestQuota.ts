@@ -36,8 +36,11 @@ import { isProductionEnv } from "../config/env";
  * Daily guest message allowance (the guest "credit pool").
  * HARDCODED 2026-09-27 (owner): env override removed — no config, restart
  * or refresh can raise it mid-day; the pool refills only at UTC midnight.
+ * SET TO 0 on 2026-10-01 (owner): guest chat is members-only now — no chat
+ * without signing in. The consume path keeps the full machinery (keys, CAS,
+ * rollback) so the limit is a one-constant flip, never a rewrite.
  */
-export const GUEST_DAILY_LIMIT = 2;
+export const GUEST_DAILY_LIMIT = 0;
 
 /** HttpOnly device-identity cookie (server-minted, never page-readable). */
 export const GUEST_COOKIE_NAME = "neb-gid";
@@ -61,6 +64,15 @@ export type GuestSlotResult =
 
 function todayUtc(): string {
   return new Date().toISOString().slice(0, 10);
+}
+
+/**
+ * A consume that succeeded (a slot was charged) reports how many messages
+ * remain. Clamped at 0 so a zero-limit day never reports a negative
+ * "remaining" that a caller could read as "still allowed".
+ */
+function okRemainingFor(used: number, limit: number): GuestSlotResult {
+  return { status: "ok", remaining: Math.max(limit - used, 0) };
 }
 
 /** Day-scoped, non-reversible key for one identity (raw ids never stored). */
@@ -110,18 +122,18 @@ interface MemUsage {
 }
 const memUsage = new Map<string, MemUsage>();
 
-function memConsume(key: string): GuestSlotResult {
+function memConsume(key: string, limit: number): GuestSlotResult {
   const date = todayUtc();
   const entry = memUsage.get(key);
   if (!entry || entry.date !== date) {
     memUsage.set(key, { count: 1, date });
-    return { status: "ok", remaining: GUEST_DAILY_LIMIT - 1 };
+    return okRemainingFor(1, limit);
   }
-  if (entry.count >= GUEST_DAILY_LIMIT) {
+  if (entry.count >= limit) {
     return { status: "limited", remaining: 0 };
   }
   entry.count += 1;
-  return { status: "ok", remaining: GUEST_DAILY_LIMIT - entry.count };
+  return okRemainingFor(entry.count, limit);
 }
 
 function memRollback(key: string): void {
@@ -131,8 +143,13 @@ function memRollback(key: string): void {
 
 // ── Persistent quota (guest_chat_usage) ─────────────────────────────────────
 
-/** Consume ONE message on ONE identity key. */
-async function consumeKey(key: string): Promise<GuestSlotResult> {
+/**
+ * CAS consume on ONE key, parameterised on the limit (so tests can exercise
+ * the machinery while the live policy constant stays 0).
+ */
+
+/** Consume ONE message on ONE identity key against an explicit limit. */
+async function consumeKeyWithLimit(key: string, limit: number): Promise<GuestSlotResult> {
   for (let attempt = 0; attempt < CAS_ATTEMPTS; attempt++) {
     const { data: row, error } = await supabaseAdmin
       .from("guest_chat_usage")
@@ -142,7 +159,7 @@ async function consumeKey(key: string): Promise<GuestSlotResult> {
 
     if (error) {
       console.warn("[guest-quota] DB read failed, using in-memory quota:", error.message);
-      return memConsume(key);
+      return memConsume(key, limit);
     }
 
     if (!row) {
@@ -162,15 +179,15 @@ async function consumeKey(key: string): Promise<GuestSlotResult> {
         // table, permissions) → degrade to the in-memory quota.
         if (insertError.code === "23505") continue;
         console.warn("[guest-quota] DB insert failed, using in-memory quota:", insertError.message);
-        return memConsume(key);
+        return memConsume(key, limit);
       }
       if (inserted && inserted.length > 0) {
-        return { status: "ok", remaining: GUEST_DAILY_LIMIT - 1 };
+        return okRemainingFor(1, limit);
       }
       continue; // conflict without error shape → re-read
     }
 
-    if ((row.count ?? 0) >= GUEST_DAILY_LIMIT) {
+    if ((row.count ?? 0) >= limit) {
       return { status: "limited", remaining: 0 };
     }
 
@@ -184,10 +201,10 @@ async function consumeKey(key: string): Promise<GuestSlotResult> {
 
     if (updateError) {
       console.warn("[guest-quota] DB update failed, using in-memory quota:", updateError.message);
-      return memConsume(key);
+      return memConsume(key, limit);
     }
     if (updated && updated.length > 0) {
-      return { status: "ok", remaining: GUEST_DAILY_LIMIT - ((row.count ?? 0) + 1) };
+      return okRemainingFor((row.count ?? 0) + 1, limit);
     }
     // CAS lost → re-read and retry.
   }
@@ -228,12 +245,36 @@ export async function consumeGuestSlot(
   ip: string,
   deviceId?: string | null,
 ): Promise<GuestSlotResult> {
+  // Owner 2026-10-01: guests get ZERO messages — chat requires an account.
+  // Answered before any key is read: no DB round-trips, no cookie writes,
+  // nothing for the daily reset to bring back (the limit is the rule now,
+  // not a countdown).
+  if (GUEST_DAILY_LIMIT <= 0) {
+    return { status: "limited", remaining: 0 };
+  }
+  return consumeGuestSlotWithLimit(ip, deviceId, GUEST_DAILY_LIMIT);
+}
+
+/**
+ * The metered consume path, parameterised on the limit. Exists so tests can
+ * drive the full identity + CAS + rollback machinery while the live policy
+ * stays `GUEST_DAILY_LIMIT = 0` — flip the constant and every branch below
+ * becomes the production behavior again, unchanged.
+ */
+export async function consumeGuestSlotWithLimit(
+  ip: string,
+  deviceId: string | null | undefined,
+  limit: number,
+): Promise<GuestSlotResult> {
+  if (limit <= 0) {
+    return { status: "limited", remaining: 0 };
+  }
   const keys = identityKeys(ip, deviceId);
   const charged: string[] = [];
-  let remaining = GUEST_DAILY_LIMIT;
+  let remaining = limit;
 
   for (const key of keys) {
-    const result = await consumeKey(key);
+    const result = await consumeKeyWithLimit(key, limit);
     if (result.status !== "ok") {
       // Another identity already said no → give back what we just charged.
       await Promise.all(charged.map(rollbackKey));

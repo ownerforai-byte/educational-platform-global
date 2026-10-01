@@ -1,14 +1,17 @@
 import { describe, expect, test, beforeEach, vi } from "vitest";
 
 /**
- * Regression suite for the DB-backed guest quota (the 2026-09-26 redesign
- * that replaced the restart-amnesiac in-memory Map). Pins:
+ * Guest quota policy + machinery.
  *
- *  1. the 5/day limit and its `remaining` contract;
- *  2. CAS increments — concurrent tabs can't both slip past the limit;
- *  3. rollback of a slot whose AI answer never arrived;
- *  4. the degraded in-memory fallback when the table is unavailable (schema
- *     drift must never hard-down guest chat).
+ * OWNER POLICY 2026-10-01: GUEST_DAILY_LIMIT = 0 — guest chat and guest quiz
+ * generation are MEMBERS-ONLY. `consumeGuestSlot` answers `limited` before
+ * any identity key is read, so no DB write, no cookie mint and no daily
+ * reset can admit a guest message.
+ *
+ * The metered machinery below (identity keys, CAS increments, dual-identity
+ * rollback, in-memory fallback) is still real code and must keep working the
+ * day the owner flips the constant back up — so it is driven through
+ * `consumeGuestSlotWithLimit`, the seam built for exactly that.
  */
 
 type Res = { data: unknown; error: { message: string; code?: string } | null };
@@ -78,6 +81,7 @@ vi.mock("../src/db/supabase", () => ({ supabaseAdmin: { from: (t: string) => db.
 import {
   GUEST_DAILY_LIMIT,
   consumeGuestSlot,
+  consumeGuestSlotWithLimit,
   getGuestDeviceId,
   rollbackGuestSlot,
 } from "../src/utils/guestQuota";
@@ -87,35 +91,67 @@ beforeEach(() => {
   db.clear();
 });
 
-describe("consumeGuestSlot", () => {
+// ── Policy: members-only ────────────────────────────────────────────────────
+
+describe("members-only guest policy (GUEST_DAILY_LIMIT = 0)", () => {
+  test("consumeGuestSlot answers limited before touching any identity key", async () => {
+    const slot = await consumeGuestSlot("ip-zero-1", "a1b2c3d4e5f6a7b8a1b2c3d4e5f6a7b8");
+    expect(slot).toEqual({ status: "limited", remaining: 0 });
+    // Zero reads, zero writes, zero cookie-related DB work.
+    expect(db.calls).toHaveLength(0);
+  });
+
+  test("no stored count, identity or daily reset can admit a message", async () => {
+    for (let i = 0; i < 3; i++) {
+      const slot = await consumeGuestSlot(`ip-zero-repeat-${i}`);
+      expect(slot).toEqual({ status: "limited", remaining: 0 });
+    }
+    expect(db.calls).toHaveLength(0);
+  });
+
+  test("the seam reports limited for any non-positive limit", async () => {
+    for (const limit of [0, -1]) {
+      const slot = await consumeGuestSlotWithLimit("ip-zero-seam", null, limit);
+      expect(slot).toEqual({ status: "limited", remaining: 0 });
+    }
+    expect(db.calls).toHaveLength(0);
+  });
+});
+
+// ── Metered machinery (via the WithLimit seam; limit-agnostic) ─────────────
+
+/** Any positive limit — the machinery below must not care which. */
+const L = 2;
+
+describe("consumeGuestSlotWithLimit (metered machinery)", () => {
   test("first message of the day inserts the row and returns remaining = limit-1", async () => {
     db.queue("guest_chat_usage:select", { data: null, error: null });
     db.queue("guest_chat_usage:upsert", { data: [{ count: 1 }], error: null });
 
-    const slot = await consumeGuestSlot("ip-insert-1");
-    expect(slot).toEqual({ status: "ok", remaining: GUEST_DAILY_LIMIT - 1 });
+    const slot = await consumeGuestSlotWithLimit("ip-insert-1", null, L);
+    expect(slot).toEqual({ status: "ok", remaining: L - 1 });
 
     const upsert = db.calls.find((c) => c.op === "upsert");
     expect(upsert?.args?.[0]).toMatchObject({ count: 1 });
   });
 
   test("existing row: CAS increment against the count just read", async () => {
-    db.queue("guest_chat_usage:select", { data: { count: GUEST_DAILY_LIMIT - 1 }, error: null });
-    db.queue("guest_chat_usage:update", { data: [{ count: GUEST_DAILY_LIMIT }], error: null });
+    db.queue("guest_chat_usage:select", { data: { count: L - 1 }, error: null });
+    db.queue("guest_chat_usage:update", { data: [{ count: L }], error: null });
 
-    const slot = await consumeGuestSlot("ip-increment-1");
+    const slot = await consumeGuestSlotWithLimit("ip-increment-1", null, L);
     expect(slot).toEqual({ status: "ok", remaining: 0 });
 
     const update = db.calls.find((c) => c.op === "update");
-    expect(update?.args?.[0]).toEqual({ count: GUEST_DAILY_LIMIT });
-    expect(update?.filters).toContainEqual(["count", GUEST_DAILY_LIMIT - 1]); // guard: value just read
+    expect(update?.args?.[0]).toEqual({ count: L });
+    expect(update?.filters).toContainEqual(["count", L - 1]); // guard: value just read
     expect(update?.filters.some((f) => f[0] === "client_key")).toBe(true);
   });
 
   test("pool already empty → limited, no write", async () => {
-    db.queue("guest_chat_usage:select", { data: { count: GUEST_DAILY_LIMIT }, error: null });
+    db.queue("guest_chat_usage:select", { data: { count: L }, error: null });
 
-    const slot = await consumeGuestSlot("ip-limited-1");
+    const slot = await consumeGuestSlotWithLimit("ip-limited-1", null, L);
     expect(slot).toEqual({ status: "limited", remaining: 0 });
     expect(db.calls.filter((c) => c.op === "update")).toHaveLength(0);
   });
@@ -125,18 +161,18 @@ describe("consumeGuestSlot", () => {
     // every call against an exhausted day must answer limited with ZERO
     // writes, for ever, until the UTC day rolls over server-side.
     for (let i = 0; i < 5; i++) {
-      db.queue("guest_chat_usage:select", { data: { count: GUEST_DAILY_LIMIT }, error: null });
-      const slot = await consumeGuestSlot("ip-refresh-1");
+      db.queue("guest_chat_usage:select", { data: { count: L }, error: null });
+      const slot = await consumeGuestSlotWithLimit("ip-refresh-1", null, L);
       expect(slot).toEqual({ status: "limited", remaining: 0 });
     }
     expect(db.calls.filter((c) => c.op === "update" || c.op === "upsert")).toHaveLength(0);
   });
 
   test("last allowed message returns remaining 0 (not 'limited')", async () => {
-    db.queue("guest_chat_usage:select", { data: { count: GUEST_DAILY_LIMIT - 1 }, error: null });
-    db.queue("guest_chat_usage:update", { data: [{ count: GUEST_DAILY_LIMIT }], error: null });
+    db.queue("guest_chat_usage:select", { data: { count: L - 1 }, error: null });
+    db.queue("guest_chat_usage:update", { data: [{ count: L }], error: null });
 
-    const slot = await consumeGuestSlot("ip-last-1");
+    const slot = await consumeGuestSlotWithLimit("ip-last-1", null, L);
     expect(slot).toEqual({ status: "ok", remaining: 0 });
   });
 
@@ -146,8 +182,8 @@ describe("consumeGuestSlot", () => {
     db.queue("guest_chat_usage:select", { data: null, error: null });
     db.queue("guest_chat_usage:upsert", { data: [{ count: 1 }], error: null });
 
-    const slot = await consumeGuestSlot("ip-race-insert");
-    expect(slot).toEqual({ status: "ok", remaining: GUEST_DAILY_LIMIT - 1 });
+    const slot = await consumeGuestSlotWithLimit("ip-race-insert", null, L);
+    expect(slot).toEqual({ status: "ok", remaining: L - 1 });
     expect(db.calls.filter((c) => c.op === "upsert")).toHaveLength(2);
   });
 
@@ -157,26 +193,26 @@ describe("consumeGuestSlot", () => {
       db.queue("guest_chat_usage:update", { data: [], error: null });
     }
 
-    const slot = await consumeGuestSlot("ip-contention");
+    const slot = await consumeGuestSlotWithLimit("ip-contention", null, L);
     expect(slot).toEqual({ status: "unavailable" });
     expect(db.calls.filter((c) => c.op === "update")).toHaveLength(4);
   });
 
-  test("read failure → in-memory fallback keeps guest chat alive", async () => {
+  test("read failure → in-memory fallback keeps the meter honest", async () => {
     // Every DB read in this test fails (six consumes below) — each falls back
     // to the in-memory counter, which must still enforce the limit itself.
     for (let i = 0; i < 6; i++) {
       db.queue("guest_chat_usage:select", { data: null, error: { message: "relation does not exist" } });
     }
 
-    const first = await consumeGuestSlot("ip-fallback-1");
-    expect(first).toEqual({ status: "ok", remaining: GUEST_DAILY_LIMIT - 1 });
+    const first = await consumeGuestSlotWithLimit("ip-fallback-1", null, L);
+    expect(first).toEqual({ status: "ok", remaining: L - 1 });
 
-    const second = await consumeGuestSlot("ip-fallback-1");
-    expect(second).toEqual({ status: "ok", remaining: GUEST_DAILY_LIMIT - 2 });
+    const second = await consumeGuestSlotWithLimit("ip-fallback-1", null, L);
+    expect(second).toEqual({ status: "ok", remaining: L - 2 });
     // …and it still enforces the limit through the fallback.
-    for (let i = 0; i < 3; i++) await consumeGuestSlot("ip-fallback-1");
-    const exhausted = await consumeGuestSlot("ip-fallback-1");
+    for (let i = 0; i < 3; i++) await consumeGuestSlotWithLimit("ip-fallback-1", null, L);
+    const exhausted = await consumeGuestSlotWithLimit("ip-fallback-1", null, L);
     expect(exhausted).toEqual({ status: "limited", remaining: 0 });
   });
 
@@ -184,7 +220,7 @@ describe("consumeGuestSlot", () => {
     db.queue("guest_chat_usage:select", { data: { count: 1 }, error: null });
     db.queue("guest_chat_usage:update", { data: null, error: { message: "timeout" } });
 
-    const slot = await consumeGuestSlot("ip-fallback-2");
+    const slot = await consumeGuestSlotWithLimit("ip-fallback-2", null, L);
     expect(slot.status).toBe("ok");
   });
 });
@@ -195,12 +231,12 @@ describe("dual identity (device cookie + IP)", () => {
   const DEVICE = "a1b2c3d4e5f6a7b8a1b2c3d4e5f6a7b8"; // 32-hex, minted shape
 
   test("both identities are consumed in one call; remaining is the worst of them", async () => {
-    db.queue("guest_chat_usage:select", { data: { count: GUEST_DAILY_LIMIT - 1 }, error: null });
-    db.queue("guest_chat_usage:update", { data: [{ count: GUEST_DAILY_LIMIT }], error: null });
-    db.queue("guest_chat_usage:select", { data: { count: GUEST_DAILY_LIMIT - 1 }, error: null });
-    db.queue("guest_chat_usage:update", { data: [{ count: GUEST_DAILY_LIMIT }], error: null });
+    db.queue("guest_chat_usage:select", { data: { count: L - 1 }, error: null });
+    db.queue("guest_chat_usage:update", { data: [{ count: L }], error: null });
+    db.queue("guest_chat_usage:select", { data: { count: L - 1 }, error: null });
+    db.queue("guest_chat_usage:update", { data: [{ count: L }], error: null });
 
-    const slot = await consumeGuestSlot("ip-dual-1", DEVICE);
+    const slot = await consumeGuestSlotWithLimit("ip-dual-1", DEVICE, L);
     // Both identities are driven TO the limit → 0 left on each → worst = 0.
     expect(slot).toEqual({ status: "ok", remaining: 0 });
     expect(db.calls.filter((c) => c.op === "update")).toHaveLength(2);
@@ -211,12 +247,12 @@ describe("dual identity (device cookie + IP)", () => {
     db.queue("guest_chat_usage:select", { data: null, error: null });
     db.queue("guest_chat_usage:upsert", { data: [{ count: 1 }], error: null });
     // …but the device key is already at the limit → limited.
-    db.queue("guest_chat_usage:select", { data: { count: GUEST_DAILY_LIMIT }, error: null });
+    db.queue("guest_chat_usage:select", { data: { count: L }, error: null });
     // Rollback of the already-charged ip key (read + CAS decrement).
     db.queue("guest_chat_usage:select", { data: { count: 1 }, error: null });
     db.queue("guest_chat_usage:update", { data: [{ count: 0 }], error: null });
 
-    const slot = await consumeGuestSlot("ip-dual-rotate", DEVICE);
+    const slot = await consumeGuestSlotWithLimit("ip-dual-rotate", DEVICE, L);
     expect(slot).toEqual({ status: "limited", remaining: 0 });
 
     // The ip charge went in via the day's-row INSERT…
@@ -231,8 +267,8 @@ describe("dual identity (device cookie + IP)", () => {
     db.queue("guest_chat_usage:select", { data: null, error: null });
     db.queue("guest_chat_usage:upsert", { data: [{ count: 1 }], error: null });
 
-    const slot = await consumeGuestSlot("ip-dual-2", "../../etc/passwd");
-    expect(slot).toEqual({ status: "ok", remaining: GUEST_DAILY_LIMIT - 1 });
+    const slot = await consumeGuestSlotWithLimit("ip-dual-2", "../../etc/passwd", L);
+    expect(slot).toEqual({ status: "ok", remaining: L - 1 });
     // Only ONE identity row was touched (the ip) — junk never becomes a key.
     expect(db.calls).toHaveLength(2);
   });

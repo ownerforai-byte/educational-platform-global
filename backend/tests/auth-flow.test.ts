@@ -531,9 +531,9 @@ describe("auth flow", () => {
   });
 
   test("AI question generation is guest-quota-gated (was anonymous unlimited)", async () => {
-    // 2026-09-27: guests are admitted through the metered daily pool
-    // (5/day, shared with guest chat) — but an EXHAUSTED pool must answer
-    // 402 before any AI call. Anonymous unlimited access stays blocked.
+    // 2026-10-01: the guest pool is closed (GUEST_DAILY_LIMIT = 0) — every
+    // guest generate must answer 402 before any AI call, no matter what any
+    // stored count says. Anonymous unlimited access stays blocked.
     mocked.from.mockImplementationOnce(() =>
       makeQueryChain({ data: { count: 999_999 }, error: null }),
     );
@@ -544,7 +544,7 @@ describe("auth flow", () => {
     });
     expect(res.status).toBe(402);
     const body = await res.json();
-    expect(body.error).toBe("Daily guest limit reached");
+    expect(body.error).toBe("Sign in required");
   });
 
   test("biology progress POST requires auth and stores the session user id", async () => {

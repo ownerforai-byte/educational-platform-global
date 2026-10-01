@@ -1,16 +1,21 @@
 /**
- * Shared display-side helpers for the guest chat daily pool (2/day, resets
- * at 12:00 AM). The server is the source of truth (backend
- * utils/guestQuota.ts — DB-backed, per hashed IP); localStorage only mirrors
- * it so the UI can render honestly before the first reply of the session.
+ * Shared display-side helpers for the guest chat daily pool. The server is
+ * the source of truth (backend utils/guestQuota.ts — DB-backed, per hashed
+ * IP); localStorage only mirrors it so the UI can render honestly before the
+ * first reply of the session.
  *
  * Day-keyed and shared: the /chat page and the floating widget used to keep
  * separate, diverging copies (the widget never applied the midnight reset,
  * so it could stay locked out all day). Both now read through this module.
  */
 
-/** Mirrors the backend's GUEST_DAILY_LIMIT (hardcoded 2/day since 2026-09-27). */
-export const GUEST_DAILY_LIMIT = 2;
+/**
+ * Mirrors the backend's GUEST_DAILY_LIMIT. 0 since 2026-10-01 (owner):
+ * guest chat is members-only — the composer hard-locks for signed-out
+ * visitors and every guest request is answered 402 by the server. Raise it
+ * back (backend + here, same number) to restore the per-day guest pool.
+ */
+export const GUEST_DAILY_LIMIT = 0;
 
 const DAY_KEY = "neb_ai_guest_day";
 const COUNT_KEY = "neb_ai_guest_count";

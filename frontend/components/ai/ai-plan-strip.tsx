@@ -1,26 +1,19 @@
 "use client";
 
-import { useEffect, useState } from "react";
 import Link from "next/link";
 import { Coins, Crown, Sparkles, UserRound } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { GUEST_DAILY_LIMIT, readGuestCount } from "@/lib/ai/guest-quota";
 
 /**
  * Live plan + credit strip for the AI pages.
  *
- * Shows what this account can actually spend today — the free-message pool for
- * guests (2/day), daily credits for signed-in students, or the PRO badge — and
- * links to /credits for the full wallet. Guest usage is mirrored from the
- * shared day-keyed store, so it resets at midnight like the server pool does.
+ * Shows what this account can actually spend today — daily credits for
+ * signed-in students or the PRO badge — and links to /credits for the full
+ * wallet. Since 2026-10-01 guest access is members-only (GUEST_DAILY_LIMIT
+ * = 0), so signed-out visitors get the sign-in strip instead of a pool.
  */
 export function AiPlanStrip() {
   const { user, isLoading } = useSession();
-  const [guestUsed, setGuestUsed] = useState<number | null>(null);
-
-  useEffect(() => {
-    setGuestUsed(readGuestCount());
-  }, []);
 
   if (isLoading) {
     return (
@@ -31,15 +24,13 @@ export function AiPlanStrip() {
   }
 
   if (!user) {
-    const left =
-      guestUsed === null ? GUEST_DAILY_LIMIT : Math.max(0, GUEST_DAILY_LIMIT - guestUsed);
     return (
       <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-border/60 bg-muted/30 px-4 py-3">
         <span className="inline-flex items-center gap-2 text-xs">
           <Sparkles className="h-3.5 w-3.5 text-violet-500" />
-          <span className="font-semibold text-foreground">Guest access</span>
+          <span className="font-semibold text-foreground">Members only</span>
           <span className="text-muted-foreground">
-            {left} of {GUEST_DAILY_LIMIT} free messages left today · refills at midnight
+            Sign in to chat with Veer and generate quizzes
           </span>
         </span>
         <Link

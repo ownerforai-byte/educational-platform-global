@@ -64,10 +64,10 @@ async function authOrGuestQuota(req: Request, res: Response, next: NextFunction)
     const slot = await consumeGuestSlot(ip, deviceId);
     if (slot.status === "limited") {
       res.status(402).json({
-        error: "Daily guest limit reached",
+        error: "Sign in required",
         remaining: 0,
         limit: GUEST_DAILY_LIMIT,
-        message: `You've used all ${GUEST_DAILY_LIMIT} free quiz generations for today (guest quizzes share this pool with guest chat). Your pool resets at 12:00 AM — or sign in for ${DAILY_CREDIT_POOL} daily credits and saved history.`,
+        message: `Guest quiz generation is members-only. Sign in to generate quizzes — you'll get ${DAILY_CREDIT_POOL} daily credits and saved history.`,
       });
       return;
     }

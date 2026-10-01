@@ -18,14 +18,13 @@ import {
 import { DAILY_CREDIT_POOL } from "../utils/credits";
 
 /**
- * Guest AI chat (no account). Owner policy 2026-09-26:
- *   - 2 messages per guest per day (UTC day rollover at 12:00 AM)
- *   - enforced server-side by utils/guestQuota (DB-backed, hashed IP), so
- *     clearing localStorage, restarting the server, or switching tabs
- *     cannot buy more
- *
- * The response carries `remaining` + `limit` so the UI can display the
- * guest credit pool honestly.
+ * Guest AI chat (no account). Owner policy 2026-10-01 supersedes 2026-09-26:
+ *   - GUEST_DAILY_LIMIT = 0 — guest chat is MEMBERS-ONLY; there is no free
+ *     guest trial. utils/guestQuota answers `limited` before any key is read,
+ *     so clearing localStorage, rotating IPs or restarting the server cannot
+ *     buy a single message.
+ *   - GUEST_DAILY_LIMIT is a one-constant flip; raising it restores the old
+ *     per-day pool (DB-backed, hashed IP, dual identity) with no rewrite.
  */
 
 const router = Router();
@@ -83,11 +82,10 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
     const slot = await consumeGuestSlot(ip, deviceId);
     if (slot.status === "limited") {
       res.status(402).json({
-        error: "Daily guest limit reached",
+        error: "Sign in required",
         remaining: 0,
         limit: GUEST_DAILY_LIMIT,
-        message:
-          `You've used all ${GUEST_DAILY_LIMIT} free guest messages for today. Your pool resets to ${GUEST_DAILY_LIMIT} at 12:00 AM — or sign in to get ${DAILY_CREDIT_POOL} daily credits and saved chat histories.`,
+        message: `Guest chat is members-only. Sign in to talk to Veer — you'll get ${DAILY_CREDIT_POOL} daily credits and saved chat histories.`,
       });
       return;
     }

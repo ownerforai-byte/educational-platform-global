@@ -174,8 +174,11 @@ export function StudyChat({ compact = false }: { compact?: boolean }) {
       const errText =
         e.message?.includes("429") || e.message?.includes("limit reached")
           ? "Message limit reached. Sign in to continue."
-          : e.message?.includes("Insufficient") || e.message?.includes("402")
-            ? "Guest credits exhausted. Sign in to continue."
+          : e.status === 402 ||
+              e.message?.includes("Insufficient") ||
+              e.message?.includes("402") ||
+              e.message?.includes("members-only")
+            ? "Veer chat is for signed-in members. Sign in to continue."
             : "Something went wrong. Please try again.";
       setError(errText);
     } finally {

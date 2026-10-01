@@ -339,7 +339,6 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
     return () => document.removeEventListener("mousedown", onPointerDown);
   }, [embedded, sidebarOpen]);
 
-  const guestCredits = Math.max(0, MAX_GUEST_MESSAGES - guestCount);
   const isGuestLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
   // Mirror of the backend's hasFullAccess(): these roles are never billed.
   const privilegedUser =
@@ -506,7 +505,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
     if (historyState === "loading") return;
 
     if (isGuestLimited) {
-      setError(`You've used all ${MAX_GUEST_MESSAGES} free guest messages for today. Your pool resets to ${MAX_GUEST_MESSAGES} at 12:00 AM — or sign in for ${DAILY_CREDIT_POOL} daily credits & saved histories.`);
+      setError(`Veer chat is for signed-in members. Sign in to ask questions — you get ${DAILY_CREDIT_POOL} daily credits and saved chat histories.`);
       return;
     }
     if (creditsExhausted) {
@@ -948,7 +947,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
               <span className="font-semibold">
                 {isLoggedIn
                   ? `${Math.min(dailyCredits ?? user?.credits ?? DAILY_CREDIT_POOL, DAILY_CREDIT_POOL)}/${DAILY_CREDIT_POOL} credits today`
-                  : `${guestCredits} of ${MAX_GUEST_MESSAGES} free messages left today`}
+                  : "Sign in to chat with Veer · members get daily credits"}
               </span>
             </div>
           </div>
@@ -995,7 +994,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
             {!isLoggedIn && (
               <span className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-600 font-semibold">
                 <Coins className="h-3 w-3" />
-                {guestCredits}/{MAX_GUEST_MESSAGES} free today
+                Members only
               </span>
             )}
             {isLoggedIn && (
@@ -1223,9 +1222,9 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
               </span>
             ) : (
               <span>
-                Free guest mode ({Math.max(0, MAX_GUEST_MESSAGES - guestCount)} messages left) ·{" "}
+                Chatting needs an account ·{" "}
                 <Link href="/login" className="text-primary hover:underline font-semibold">
-                  Sign in to save your histories &amp; keep asking
+                  Sign in to ask Veer anything
                 </Link>
               </span>
             )}

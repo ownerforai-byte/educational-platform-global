@@ -462,7 +462,6 @@ export function TutorConsole() {
   const sessionRef = useRef(sessionName);
   sessionRef.current = sessionName;
 
-  const guestCredits = Math.max(0, MAX_GUEST_MESSAGES - guestCount);
   const isGuestLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
   const privilegedUser =
     user?.role === "OWNER" || user?.role === "ADMIN" || !!user?.premiumStatus;
@@ -661,7 +660,7 @@ export function TutorConsole() {
 
       if (isGuestLimited) {
         setError(
-          `You've used all ${MAX_GUEST_MESSAGES} free guest messages for today. Your pool resets at 12:00 AM — or sign in for ${DAILY_CREDIT_POOL} daily credits & saved history.`,
+          `Veer chat is for signed-in members. Sign in to ask questions — you get ${DAILY_CREDIT_POOL} daily credits and saved chat histories.`,
         );
         return;
       }
@@ -966,10 +965,10 @@ export function TutorConsole() {
             {!isLoggedIn && (
               <span
                 className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-600 font-semibold"
-                title="Guest pool shared with Veer quiz · resets at 12:00 AM"
+                title="Sign in to chat with Veer"
               >
                 <Coins className="h-3 w-3" />
-                {guestCredits}/{MAX_GUEST_MESSAGES} free today
+                Members only
               </span>
             )}
             {isLoggedIn && (
@@ -1214,7 +1213,7 @@ export function TutorConsole() {
         {composerLocked && (
           <p className="mb-2 rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-1.5 text-[11px] font-semibold text-amber-600">
             {isGuestLimited
-              ? `All ${MAX_GUEST_MESSAGES} free guest messages used today — the pool resets at 12:00 AM, or sign in for ${DAILY_CREDIT_POOL} daily credits.`
+              ? `Veer chat is for signed-in members. Sign in to continue — your daily credits and saved histories are waiting.`
               : `Today's ${DAILY_CREDIT_POOL}-credit pool is empty — it resets at 12:00 AM.`}
           </p>
         )}
@@ -1275,7 +1274,7 @@ export function TutorConsole() {
         <p className="mt-1.5 text-[10px] text-muted-foreground">
           {isLoggedIn
             ? "1 credit per message · history saved to your account"
-            : `${guestCredits} of ${MAX_GUEST_MESSAGES} free messages left today · shared with Veer quiz`}
+            : "Sign in to chat with Veer · members get daily credits & saved history"}
         </p>
       </div>
     </div>
