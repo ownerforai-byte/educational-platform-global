@@ -2,18 +2,31 @@
 /**
  * Regenerates lib/deploy-version.ts from the git commit count.
  *
- * Version scheme (owner request 2026-10-01): 0.0001 is the first version
- * (first deployment after 9482d580), and each subsequent deployment — one per
- * push to main (vercel.json deploys main on every push) — increases it by
- * 0.0001. Commit count is the deployment counter because every push to main
- * is exactly one deployment.
+ * Version scheme (owner request 2026-10-01): 0.0001 is the first version and
+ * each subsequent deployment — one per push to main (vercel.json deploys main
+ * on every push) — increases it by 0.0001. Commit count is the deployment
+ * counter because every push to main is exactly one deployment.
  *
- *   version = max(1, commitsSince(9482d580)) * 0.0001   (4 decimal places)
+ *   version = max(1, commitsSince(ANCHOR)) * 0.0001   (4 decimal places)
+ *
+ * ANCHOR = commit e4ef69fa (count 433), the first-version deployment. The
+ * broken counter on the next build (efb00b6c) also displayed 0.0001, so
+ * anchoring here keeps the VISIBLE sequence consecutive: 433→0.0001,
+ * 434→0.0001, 435→0.0002, 436→0.0003, …
  *
  * Runs from the package.json prebuild/predev hooks. NEVER throws: if git or
- * the network is unavailable (shallow CI checkout, sandboxed build), the
- * committed value is left untouched / clamped to the 0.0001 floor so the
- * build always succeeds.
+ * the network is unavailable the committed value survives and the build still
+ * succeeds. Every path LOGS what it did, because the first deployed attempt
+ * silently fell back to the floor and the build log was the only place to
+ * find out why.
+ *
+ * Failure modes handled here (all observed or suspected on Vercel):
+ *   1. "detected dubious ownership in repository" — build container runs git
+ *      as another user → `-c safe.directory=*`.
+ *   2. shallow clone (count < anchor) → `git fetch --unshallow` once, on
+ *      Vercel only (CI artifacts never ship, so CI keeps the fast path).
+ *   3. git entirely absent → GitHub API total-commit count (public repo).
+ *   4. API rate-limited/unreachable → 0.0001 floor, loudly logged.
  */
 import { execSync } from "node:child_process";
 import { existsSync, readFileSync, writeFileSync } from "node:fs";
@@ -23,42 +36,67 @@ import { fileURLToPath } from "node:url";
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const TARGET = path.resolve(__dirname, "../lib/deploy-version.ts");
 
-/** `git rev-list --count HEAD` at commit 9482d580 — versioning starts after it. */
-const BASE_COMMIT_COUNT = 432;
+/** `git rev-list --count HEAD` at commit e4ef69fa — first version (v0.0001). */
+const ANCHOR_COMMIT_COUNT = 433;
 
-/** Fallback counter via the GitHub API when the local clone is shallow. */
+/** Fallback counter via the GitHub API when the local clone is unusable. */
 const REPO = "ownerforai-byte/educational-platform-global";
 
-function commitsFromGit() {
-  try {
-    const out = execSync("git rev-list --count HEAD", {
-      stdio: ["ignore", "pipe", "ignore"],
-    })
-      .toString()
-      .trim();
-    const n = Number.parseInt(out, 10);
-    // A shallow clone (depth 1 in CI) reports a tiny count — treat it as
-    // "no history" so the API fallback or the floor value takes over.
-    return Number.isFinite(n) && n >= BASE_COMMIT_COUNT ? n - BASE_COMMIT_COUNT : null;
-  } catch {
-    return null;
-  }
+function run(cmd, timeout = 60_000) {
+  return execSync(cmd, {
+    stdio: ["ignore", "pipe", "pipe"],
+    encoding: "utf8",
+    timeout,
+  }).trim();
 }
 
-async function commitsFromApi() {
+/** Steps since the anchor, or null when the clone cannot answer. */
+function gitSteps() {
+  let out;
+  try {
+    // safe.directory=* : the Vercel build container may check out as another
+    // user, which makes plain `git` refuse with "dubious ownership".
+    out = run('git -c safe.directory="*" rev-list --count HEAD');
+  } catch (e) {
+    return { steps: null, why: `git failed: ${String(e.message).slice(0, 100)}` };
+  }
+  const n = Number.parseInt(out, 10);
+  if (!Number.isFinite(n)) return { steps: null, why: `unparsable: ${out.slice(0, 40)}` };
+  if (n >= ANCHOR_COMMIT_COUNT) return { steps: n - ANCHOR_COMMIT_COUNT, why: `count=${n}` };
+
+  // Count too small for the anchor: shallow clone (or pre-anchor history).
+  // On Vercel the deployed footer comes from this build, so spend one fetch
+  // to get the real history; elsewhere fall through to the API.
+  if (process.env.VERCEL) {
+    try {
+      run("git fetch --unshallow origin", 180_000);
+      const again = Number.parseInt(run('git -c safe.directory="*" rev-list --count HEAD'), 10);
+      if (Number.isFinite(again) && again >= ANCHOR_COMMIT_COUNT) {
+        return { steps: again - ANCHOR_COMMIT_COUNT, why: `unshallowed count=${again}` };
+      }
+      return { steps: null, why: `still shallow after unshallow (count=${again})` };
+    } catch (e) {
+      return { steps: null, why: `shallow (count=${n}), unshallow failed: ${String(e.message).slice(0, 80)}` };
+    }
+  }
+  return { steps: null, why: `shallow (count=${n})` };
+}
+
+async function apiSteps() {
   try {
     const res = await fetch(
       `https://api.github.com/repos/${REPO}/commits?per_page=1`,
       { headers: { Accept: "application/vnd.github+json" } },
     );
-    if (!res.ok) return null;
+    if (!res.ok) return { steps: null, why: `HTTP ${res.status}` };
     const link = res.headers.get("link") || "";
     const last = link.match(/[?&]page=(\d+)>; rel="last"/);
-    if (!last) return res.status === 200 ? 1 : null;
+    if (!last) return { steps: null, why: "no Link header" };
     const total = Number.parseInt(last[1], 10);
-    return Number.isFinite(total) ? total - BASE_COMMIT_COUNT : null;
-  } catch {
-    return null;
+    if (!Number.isFinite(total)) return { steps: null, why: "unparsable Link" };
+    return { steps: Math.max(0, total - ANCHOR_COMMIT_COUNT), why: `total=${total}` };
+  } catch (e) {
+    return { steps: null, why: String(e.message).slice(0, 80) };
   }
 }
 
@@ -75,19 +113,36 @@ function readTarget() {
 }
 
 async function main() {
-  let steps = commitsFromGit();
-  if (steps == null) steps = await commitsFromApi();
+  const git = gitSteps();
+  let steps = git.steps;
+  let source = `git (${git.why})`;
+
+  if (steps == null) {
+    const api = await apiSteps();
+    steps = api.steps;
+    source = `api (${api.why}; git: ${git.why})`;
+  }
+
   // Floor of 0.0001: the version always exists and never goes backwards.
-  const version = (Math.max(1, steps ?? 1) * 0.0001).toFixed(4);
+  const n = Math.max(1, steps ?? 1);
+  const version = (n * 0.0001).toFixed(4);
 
   const src = readTarget();
   const exportLine = `export const DEPLOY_VERSION = "${version}";`;
   const next = /export const DEPLOY_VERSION[^;]*;/.test(src)
     ? src.replace(/export const DEPLOY_VERSION[^;]*;/, exportLine)
     : `${src}\n${exportLine}\n`;
-  if (next !== src) writeFileSync(TARGET, next);
+  const wrote = next !== src;
+  if (wrote) writeFileSync(TARGET, next);
+
+  // Always visible in `npm run dev` output and in the Vercel build log — the
+  // silent fallback is exactly what hid the first counter failure.
+  console.log(
+    `[deploy-version] ${source} -> v${version}${wrote ? "" : " (unchanged)"}${steps == null ? "  ⚠ FLOOR: counter sources unavailable" : ""}`,
+  );
 }
 
-main().catch(() => {
-  /* never fail the build over a version badge */
+main().catch((e) => {
+  // Never fail the build over a version badge — but say so.
+  console.warn(`[deploy-version] skipped: ${String(e && e.message).slice(0, 200)}`);
 });
