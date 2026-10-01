@@ -100,6 +100,8 @@ export type StreamChunk =
 
 export interface StreamChatOptions {
   isGuest?: boolean;
+  /** Dedicated console id ("nepali" | "grammar") — forwarded to the server. */
+  console?: string;
 }
 
 export async function* streamChat(
@@ -110,6 +112,9 @@ export async function* streamChat(
   let body: AIChatRequest = { messages, stream: true };
   if (provider) {
     body.provider = provider;
+  }
+  if (options?.console) {
+    body.console = options.console;
   }
   body = withLatestImages(messages, body);
 

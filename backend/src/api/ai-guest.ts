@@ -2,7 +2,7 @@ import { Router, Request, Response } from "express";
 import { serverError, ERROR_ID_HEADER, logServerError, newErrorId } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { rateLimit } from "../middleware/rateLimit";
-import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
+import { appendConsoleRules, buildProfessorContext, withProfessorContext } from "../ai/prompts";
 import { completeAnswer } from "../ai/complete-answer";
 import { imageInstruction, sanitizeChatImages } from "../ai/image-input";
 import { withFigureToolInstruction, resolveFiguresInText } from "../ai/image-gen";
@@ -63,6 +63,9 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
     const messages: AIChatMessage[] = Array.isArray(body?.messages) ? body.messages : [];
     const provider: string = typeof body?.provider === "string" ? body.provider : "";
     const stream: boolean = body?.stream === true;
+    // Optional dedicated console id ("nepali" | "grammar"); unknown ids are
+    // ignored by appendConsoleRules.
+    const consoleId: string = typeof body?.console === "string" ? body.console : "";
 
     if (!messages.length) {
       res.status(400).json({ error: "messages array is required" });
@@ -118,7 +121,13 @@ router.post("/", rateLimit, async (req: Request, res: Response) => {
       .join(" \n ");
     let baseContext = await buildProfessorContext(lastUser, conversationTail);
     if (images.length) baseContext += `\n\n${imageInstruction(images.length)}`;
-    const professorContext = withFigureToolInstruction(baseContext);
+    // Console rules (pure Nepali / grammar) go LAST in the assembled prompt —
+    // after the figure tool — so they are the final word on language/scope.
+    const professorContext = appendConsoleRules(
+      withFigureToolInstruction(baseContext),
+      consoleId,
+    );
+    if (consoleId) console.info(`[AI] console=${consoleId} guest`);
     const augmented = withProfessorContext(messages, professorContext) as AIChatMessage[];
 
     // Live streaming: the connection is already open (above); the pipeline is

@@ -331,6 +331,12 @@ export interface AIChatRequest {
   stream?: boolean;
   /** Photos for the latest user turn (max 3, data URLs). */
   images?: string[];
+  /**
+   * Dedicated chat console id ("nepali" = pure-Nepali NEB console,
+   * "grammar" = English grammar console). The server appends the console's
+   * rule block as the LAST part of the system prompt; unknown ids ignored.
+   */
+  console?: string;
 }
 
 export interface AIChatResponse {

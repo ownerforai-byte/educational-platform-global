@@ -38,6 +38,8 @@ import {
   Plus,
   History,
   MessageSquare,
+  Languages,
+  BookOpen,
 } from "lucide-react";
 import {
   streamChat,
@@ -78,13 +80,20 @@ import { cn } from "@/lib/utils";
 
 // ── Subject modes ───────────────────────────────────────────────────────────
 
-type TutorMode = "General" | "Physics" | "Chemistry" | "Biology" | "Mathematics";
+type TutorMode = "General" | "Physics" | "Chemistry" | "Biology" | "Mathematics" | "नेपाली" | "Grammar";
 
 interface ModeDef {
   id: TutorMode;
   icon: React.ComponentType<{ className?: string }>;
   /** Seed for the quiz handoff (undefined = let the quiz ask). */
   subjectSlug?: string;
+  /**
+   * Dedicated server console rules for this mode: "nepali" = शुद्ध नेपाली
+   * (every reply in Nepali, NEB नेपाली only), "grammar" = English grammar
+   * master-teacher (origin-first + citations). The id rides with the request
+   * and the server appends the console block LAST in the system prompt.
+   */
+  console?: "nepali" | "grammar";
 }
 
 const MODES: ModeDef[] = [
@@ -93,7 +102,14 @@ const MODES: ModeDef[] = [
   { id: "Chemistry", icon: FlaskConical, subjectSlug: "chemistry" },
   { id: "Biology", icon: Dna, subjectSlug: "biology" },
   { id: "Mathematics", icon: Sigma, subjectSlug: "mathematics" },
+  { id: "नेपाली", icon: Languages, subjectSlug: "nepali", console: "nepali" },
+  { id: "Grammar", icon: BookOpen, subjectSlug: "english", console: "grammar" },
 ];
+
+/** Server console id for a mode (undefined = no console block). */
+function consoleForMode(mode: TutorMode): string | undefined {
+  return MODES.find((m) => m.id === mode)?.console;
+}
 
 const MODE_STORAGE_KEY = "neb_tutor_mode";
 /** Signed-out thread — history on this device (owner rule 2026-09-27). */
@@ -339,6 +355,70 @@ const MODE_STARTERS: Record<TutorMode, Starter[]> = {
       text: "Explain Bayes' theorem with a NEB-style probability example.",
     },
   ],
+  "नेपाली": [
+    {
+      category: "नेपाली व्याकरण",
+      icon: Languages,
+      color: "text-amber-600 bg-amber-500/10 border-amber-500/30",
+      text: "विभक्ति र प्रयोग फरक के हो? उदाहरणसहित पूरै व्याख्या गर्नुहोस्।",
+    },
+    {
+      category: "नेपाली व्याकरण",
+      icon: Languages,
+      color: "text-amber-600 bg-amber-500/10 border-amber-500/30",
+      text: "कर्ता, कर्म र भावकारकका धातुरूप छुट्याउनुहोस् र प्रयोग देखाउनुहोस्।",
+    },
+    {
+      category: "नेपाली व्याकरण",
+      icon: Languages,
+      color: "text-amber-600 bg-amber-500/10 border-amber-500/30",
+      text: "र्‍यापि र जमर्‍यापि के हो? फरक र उदाहरणसहित बुझाउनुहोस्।",
+    },
+    {
+      category: "नेपाली रचना",
+      icon: Languages,
+      color: "text-amber-600 bg-amber-500/10 border-amber-500/30",
+      text: "औपचारिक अपठित गद्यांश विश्लेषण गर्ने चरणहरू के हुन्?",
+    },
+    {
+      category: "नेपाली रचना",
+      icon: Languages,
+      color: "text-amber-600 bg-amber-500/10 border-amber-500/30",
+      text: "निबन्ध लेख्ने क्रम (चरण) कसरी बुझ्ने र लेख्ने? प्रारूपसहित।",
+    },
+  ],
+  Grammar: [
+    {
+      category: "Grammar",
+      icon: BookOpen,
+      color: "text-indigo-500 bg-indigo-500/10 border-indigo-500/30",
+      text: "Explain clauses with their types — with citations from a grammar book.",
+    },
+    {
+      category: "Grammar",
+      icon: BookOpen,
+      color: "text-indigo-500 bg-indigo-500/10 border-indigo-500/30",
+      text: "Teach the English tenses from origin — why each tense exists and how it formed.",
+    },
+    {
+      category: "Grammar",
+      icon: BookOpen,
+      color: "text-indigo-500 bg-indigo-500/10 border-indigo-500/30",
+      text: "Explain subject–verb agreement with wrong examples and why they are wrong.",
+    },
+    {
+      category: "Writing",
+      icon: BookOpen,
+      color: "text-indigo-500 bg-indigo-500/10 border-indigo-500/30",
+      text: "Generate 10 essay ideas for NEB practice and outline the best one.",
+    },
+    {
+      category: "Language dev",
+      icon: BookOpen,
+      color: "text-indigo-500 bg-indigo-500/10 border-indigo-500/30",
+      text: "How do I build my English vocabulary from roots, prefixes and suffixes?",
+    },
+  ],
 };
 
 /**
@@ -410,7 +490,11 @@ function systemMessageFor(mode: TutorMode): AIChatMessage {
   const focus =
     mode === "General"
       ? ""
-      : `\n\nSUBJECT FOCUS (${mode.toUpperCase()}): frame every reply through ${mode} first — ${mode} syllabus terms, notation, classic NEB ${mode} questions and the usual exam traps in this topic. Touch other subjects only when the question truly demands it.`;
+      : mode === "नेपाली"
+        ? "\n\nCONSOLE (नेपाली): this is the pure-Nepali console — NEB Class 11/12 नेपाली only, and EVERY reply is written in नेपाली whatever language the question is asked in (the server console rules below are absolute)."
+        : mode === "Grammar"
+          ? "\n\nCONSOLE (GRAMMAR): this console teaches the English language itself — grammar, language development, writing skill and idea generation — origin-first and with citations from attached sources; no other subject."
+          : `\n\nSUBJECT FOCUS (${mode.toUpperCase()}): frame every reply through ${mode} first — ${mode} syllabus terms, notation, classic NEB ${mode} questions and the usual exam traps in this topic. Touch other subjects only when the question truly demands it.`;
   return { role: "system", content: `${PLATFORM_SYSTEM_PROMPT}${focus}` };
 }
 
@@ -719,7 +803,7 @@ export function TutorConsole() {
           });
         };
         try {
-          for await (const chunk of streamChat(payload, undefined, { isGuest: !isLoggedIn })) {
+          for await (const chunk of streamChat(payload, undefined, { isGuest: !isLoggedIn, console: consoleForMode(effectiveMode) })) {
             if (typeof chunk === "string") {
               if (!sawToken) {
                 sawToken = true;
@@ -1240,7 +1324,11 @@ export function TutorConsole() {
             placeholder={
               mode === "General"
                 ? "Ask any Class 11 & 12 doubt… (Enter to send)"
-                : `Ask a ${mode} question… (Enter to send)`
+                : mode === "नेपाली"
+                  ? "नेपालीमा सोध्नुहोस् — जवाफ शुद्ध नेपालीमै आउँछ… (Enter = पठाउनुहोस्)"
+                  : mode === "Grammar"
+                    ? "Ask about English grammar, writing, vocabulary, ideas… (Enter to send)"
+                    : `Ask a ${mode} question… (Enter to send)`
             }
             disabled={composerLocked || sending}
             className="flex-1 resize-none rounded-2xl border border-input bg-background px-3.5 py-2.5 text-xs leading-relaxed placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 disabled:opacity-60"

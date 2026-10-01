@@ -6,7 +6,7 @@ import { hasFullAccess } from "../middleware/auth";
 import { ensureDailyCredits, spendCredits, refundCredits, AI_MESSAGE_COST, DAILY_CREDIT_POOL } from "../utils/credits";
 import { supabaseAdmin } from "../db/supabase";
 import { logServerError, newErrorId } from "../middleware/errors";
-import { buildProfessorContext, withProfessorContext } from "../ai/prompts";
+import { appendConsoleRules, buildProfessorContext, withProfessorContext } from "../ai/prompts";
 import { completeAnswer } from "../ai/complete-answer";
 import { imageInstruction, sanitizeChatImages } from "../ai/image-input";
 import { withFigureToolInstruction, resolveFiguresInText } from "../ai/image-gen";
@@ -43,6 +43,9 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     let messages: AIChatMessage[] = Array.isArray(body?.messages) ? body.messages : [];
     const provider: string = typeof body?.provider === "string" ? body.provider : "";
     const stream: boolean = body?.stream === true;
+    // Optional dedicated console id ("nepali" | "grammar"); unknown ids are
+    // ignored by appendConsoleRules.
+    const consoleId: string = typeof body?.console === "string" ? body.console : "";
 
     if (!messages.length) {
       res.status(400).json({ error: "messages array is required" });
@@ -124,7 +127,13 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     if (images.length) baseContext += `\n\n${imageInstruction(images.length)}`;
     // Figure tool: when enabled the model may draw one live figure at the end
     // of its answer (see image-gen.ts) — the instruction explains the fence.
-    const professorContext = withFigureToolInstruction(baseContext);
+    // Console rules (pure Nepali / grammar) go LAST — after the figure tool —
+    // so they are the final word on language/scope.
+    const professorContext = appendConsoleRules(
+      withFigureToolInstruction(baseContext),
+      consoleId,
+    );
+    if (consoleId) console.info(`[AI] console=${consoleId} authed`);
     messages = withProfessorContext(messages, professorContext) as AIChatMessage[];
 
     // Live streaming: the connection is already open (above); the pipeline —
