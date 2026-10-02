@@ -53,7 +53,11 @@ function isRateLimited(key: string) {
 }
 
 function setSecurityHeaders(response: NextResponse) {
-  response.headers.set("x-frame-options", "DENY");
+  // SAMEORIGIN, not DENY: the app frames its own documents in-page (PDF Library,
+  // PdfViewer, video viewer). DENY blocks *same-origin* framing too, which made
+  // every in-app viewer render blank. Cross-site framing stays blocked, so
+  // clickjacking protection is unchanged.
+  response.headers.set("x-frame-options", "SAMEORIGIN");
   response.headers.set("x-content-type-options", "nosniff");
   response.headers.set("referrer-policy", "strict-origin-when-cross-origin");
   response.headers.set(
@@ -71,7 +75,12 @@ function setSecurityHeaders(response: NextResponse) {
       "img-src 'self' data: https:",
       "font-src 'self' data: https://fonts.gstatic.com",
       `connect-src 'self' ${process.env.NEXT_PUBLIC_API_URL || "https://rn01.onrender.com"} https://tsvbksfegvdjwczzfdcx.supabase.co wss: ws: https://api.puter.com https://api-v2.puter.com wss://api.puter.com`,
-      "frame-src 'none'",
+      // In-app embeds: our own PDFs under /pdfs + /materials, PDF resources on
+      // Supabase Storage, Google Drive previews, and the video players.
+      "frame-src 'self' https://tsvbksfegvdjwczzfdcx.supabase.co https://drive.google.com https://www.youtube.com https://player.vimeo.com",
+      // Modern equivalent of the X-Frame-Options above: we may frame ourselves,
+      // other sites may not frame us.
+      "frame-ancestors 'self'",
       "worker-src 'self' blob:",
     ].join("; ") + ";",
   );
