@@ -22,7 +22,7 @@ export const isDevelopment = !isProduction;
 
 /**
  * Canonical public frontend URL used in AI prompts, search fallbacks, and
- * OpenRouter referer headers.
+ * AI referer headers.
  *
  * 2026-09-25: hardcoded copies pointed at the DEAD deployment URL
  * (ravikisan-7phkshvvk-…vercel.app → 410), so the AI handed students links
@@ -49,7 +49,6 @@ export const CRITICAL_ENV_VARS = [
 export const AI_PROVIDER_KEY_VARS = [
   "AGNES_API_KEY",
   "GEMINI_API_KEY",
-  "OPENROUTER_API_KEY",
 ] as const;
 
 /** Numeric tuning knobs that silently disable a control when malformed. */

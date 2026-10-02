@@ -28,7 +28,7 @@ const SITE = (process.env.FRONTEND_URL || PUBLIC_SITE_URL).replace(/\/$/, "");
  */
 export const MAX_OUTPUT_TOKENS = Number(process.env.AI_MAX_OUTPUT_TOKENS) || 16384;
 
-export type SupportedProvider = "openrouter" | "internal" | "agnes";
+export type SupportedProvider = "internal" | "agnes";
  
 export interface AIChatMessage {
   role: "user" | "assistant" | "system";
@@ -666,126 +666,6 @@ User query: ${query}`;
   }
 }
 
-class OpenRouterProvider implements AIProvider {
-  name = "openrouter";
-  private apiKey: string;
-  private model: string;
-
-  constructor(
-    apiKey: string,
-    // Free-model slugs churn on OpenRouter; make it env-configurable.
-    model: string = process.env.OPENROUTER_MODEL || "nvidia/nemotron-3.5-lightning:free"
-  ) {
-    this.apiKey = apiKey;
-    this.model = model;
-  }
-
-  private async callOpenRouter(messages: Array<AIChatMessage>): Promise<string> {
-    const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${this.apiKey}`,
-        "HTTP-Referer": `${SITE}/`,
-        "X-Title": "Ravikisan",
-      },
-      body: JSON.stringify({
-        model: this.model,
-        messages: messages.map((m) => ({
-          role: m.role,
-          content: toOpenAIContent(m.content, m.images),
-        })),
-        max_tokens: MAX_OUTPUT_TOKENS,
-      }),
-      // Free-tier models can queue; cap the wait so the chain stays responsive.
-      signal: AbortSignal.timeout(60000),
-    });
-
-    if (!res.ok) {
-      const text = await res.text();
-      throw new Error(`OpenRouter error: ${res.status} ${text}`);
-    }
-
-    const data = await res.json();
-    const text = data?.choices?.[0]?.message?.content;
-    if (!text) throw new Error("Empty OpenRouter response");
-    return text;
-  }
-
-  async chat(messages: AIChatMessage[]): Promise<string> {
-    if (!this.apiKey) throw new Error("Missing OpenRouter API key");
-    const systemPrompt = messages.find((m) => m.role === "system")?.content ?? "";
-    const enriched: AIChatMessage[] = [
-      { role: "system", content: systemPrompt },
-      ...messages.filter((m) => m.role !== "system"),
-    ];
-    return this.callOpenRouter(enriched);
-  }
-
-  async *chatStream(messages: AIChatMessage[]): AsyncGenerator<string> {
-    if (!this.apiKey) throw new Error("Missing OpenRouter API key");
-    const systemPrompt = messages.find((m) => m.role === "system")?.content ?? "";
-    const enriched: AIChatMessage[] = [
-      { role: "system", content: systemPrompt },
-      ...messages.filter((m) => m.role !== "system"),
-    ];
-    const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${this.apiKey}`,
-        "HTTP-Referer": `${SITE}/`,
-        "X-Title": "Ravikisan",
-      },
-      body: JSON.stringify({
-        model: this.model,
-        messages: enriched.map((m) => ({
-          role: m.role,
-          content: toOpenAIContent(m.content, m.images),
-        })),
-        max_tokens: MAX_OUTPUT_TOKENS,
-        temperature: 0.7,
-        stream: true,
-      }),
-      signal: AbortSignal.timeout(300000),
-    });
-    if (!res.ok) {
-      const text = await res.text();
-      throw new Error(`OpenRouter stream error: ${res.status} ${text.slice(0, 200)}`);
-    }
-    for await (const event of sseEvents(res)) {
-      const chunk = event?.choices?.[0]?.delta?.content;
-      if (typeof chunk === "string" && chunk) yield chunk;
-    }
-  }
-
-  async search(query: string): Promise<AISearchResponse> {
-    if (!this.apiKey) throw new Error("Missing OpenRouter API key");
-    const syllabusContext = await buildSyllabusContext(query);
-
-    // Fetch real-time internet search context
-    const searchService = getSearchService();
-    const searchContext = await searchService.searchAsContext(query);
-
-    const messages: AIChatMessage[] = [
-      {
-        role: "system",
-        content: `${SEARCH_SYSTEM_PROMPT}
-
-${searchContext ? searchContext + "\n" : ""}${syllabusContext}`,
-      },
-      { role: "user", content: query },
-    ];
-
-    const reply = await this.callOpenRouter(messages);
-    return {
-      results: [],
-      fallbackMessage: reply,
-      syllabusHints: syllabusContext ? await extractSyllabusHints(query) : undefined,
-    };
-  }
-
-}
 
 class AgnesProvider implements AIProvider {
   name = "agnes";
@@ -813,7 +693,7 @@ class AgnesProvider implements AIProvider {
     // 2026-09-26) and the comment above explicitly warns against it.
     this.apiUrl = process.env.AGNES_API_URL || this.apiUrl;
     this.model = process.env.AGNES_MODEL || this.model;
-    // Fail fast so the chain can reach openrouter/internal when Agnes is down.
+    // Fail fast so the chain can reach internal when Agnes is down.
     //
     // 2026-09-30 (owner: "answers must cover all aspects, i have given it time,
     // no haste"): this was 29s. A whole-topic answer on a flash-class model
@@ -972,7 +852,7 @@ function withDeadline<T>(promise: Promise<T>, ms: number): Promise<T> {
 /**
  * Read an SSE response body and yield every parsed JSON event. One shared
  * reader for all three streaming transports (Gemini native SSE, plus the two
- * OpenAI-compatible SSE responses from Agnes and OpenRouter): OpenAI-family
+ * OpenAI-compatible SSE responses from Agnes): OpenAI-family
  * servers separate events with blank lines, Gemini's alt=sse does not — the
  * blank-line split handles both.
  */
@@ -1021,8 +901,8 @@ export class AIService {
   private lastAnsweredBy: string = "internal";
 
   /**
-   * Ordered LLM chain (owner policy 2026-09-26): Agnes answers FIRST, then
-   * OpenRouter, and the internal engine is always the last resort. Override
+   * Ordered LLM chain (owner policy 2026-09-26): Agnes answers FIRST,
+   * and the internal engine is always the last resort. Override
    * the order with AI_CHAIN_ORDER (comma-separated provider names).
    */
   private chainProviders(): AIProvider[] {
@@ -1042,14 +922,12 @@ export class AIService {
   constructor() {
     this.providers.set("internal", new InternalProvider());
 
-    const openrouterKey = process.env.OPENROUTER_API_KEY;
     const agnesKey = process.env.AGNES_API_KEY;
     const geminiKey = process.env.GEMINI_API_KEY;
     const defaultProvider = (
       process.env.AI_DEFAULT_PROVIDER ?? process.env.AI_PROVIDER
     )?.toLowerCase();
 
-    if (openrouterKey) this.providers.set("openrouter", new OpenRouterProvider(openrouterKey));
     if (agnesKey) this.providers.set("agnes", new AgnesProvider(agnesKey));
     // Greptile review 2026-09-25: Gemini was never registered, so a deployment
     // with only GEMINI_API_KEY set silently degraded to the keyword engine.
@@ -1059,8 +937,6 @@ export class AIService {
       this.defaultProvider = defaultProvider;
     } else if (agnesKey) {
       this.defaultProvider = "agnes";
-    } else if (openrouterKey) {
-      this.defaultProvider = "openrouter";
     } else if (geminiKey) {
       this.defaultProvider = "gemini";
     }
@@ -1103,7 +979,7 @@ export class AIService {
     const internal = this.providers.get("internal")!;
 
     // Explicit provider selection wins (Greptile review 2026-09-25): the race
-    // previously ignored providerName, so a request for "openrouter" could be
+    // previously ignored providerName, so a request for a specific provider could be
     // answered by agnes (or vice versa) while the API labelled it with the
     // requested name. Unselected/unknown names keep the race + fallback.
     const requested = providerName?.toLowerCase();
@@ -1133,7 +1009,7 @@ export class AIService {
       return internal.chat(messages);
     }
 
-    // Sequential chain (owner policy): agnes → openrouter. The previous
+    // Sequential chain (owner policy): Agnes first. The previous
     // parallel race burned BOTH provider bills for one question and made
     // replies nondeterministic; the LAST LLM link gets the whole remaining
     // budget (free-tier models queue past any fixed cap).
@@ -1147,7 +1023,7 @@ export class AIService {
     const PER_PROVIDER_MS = Number(process.env.AI_PROVIDER_TIMEOUT_MS) || 120000;
     // Owner policy: Agnes is THE responder. It gets a much longer window than
     // the fallback so only a real failure/timeout (not mere slowness) moves
-    // the chain on to openrouter.
+    // the chain on to internal.
     const PRIMARY_MS = Number(process.env.AI_PRIMARY_TIMEOUT_MS) || 540000;
     const started = Date.now();
     for (let i = 0; i < chain.length; i++) {
@@ -1160,8 +1036,7 @@ export class AIService {
       // This is the fix for "half knowledge". Previously the primary was capped
       // at PRIMARY_MS (100s) while the whole chain was capped at 115s, so a deep
       // answer that ran long was killed, the catch treated the timeout as a
-      // provider FAILURE, and openrouter's free "lightning" model answered in
-      // its place — fast, short and shallow, with no visible warning.
+      // provider FAILURE, and was handled accordingly.
       //
       // Now: primary gets everything. If it times out, the budget really is
       // spent, so the loop breaks and the student gets a retryable 504 with
@@ -1304,7 +1179,7 @@ export class AIService {
     const chain = this.chainProviders();
     if (chain.length === 0) return internal.search(query);
 
-    // Same sequential order as chat(): agnes → openrouter → internal.
+    // Same sequential order as chat(): agnes → internal.
     const GLOBAL_BUDGET_MS = 25000;
     const PER_PROVIDER_MS = Number(process.env.AI_PROVIDER_TIMEOUT_MS) || 10000;
     const PRIMARY_MS = Number(process.env.AI_PRIMARY_TIMEOUT_MS) || 15000;

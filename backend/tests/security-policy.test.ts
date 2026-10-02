@@ -271,7 +271,7 @@ describe("startup environment gate", () => {
     const report = inspectStartupEnv({
       SUPABASE_URL: "https://example.supabase.co",
       SUPABASE_SERVICE_ROLE_KEY: "service-role",
-      OPENROUTER_API_KEY: "key",
+      AGNES_API_KEY: "key",
       RATE_LIMIT_MAX_REQUESTS: "abc",
       RATE_LIMIT_WINDOW_MS: "-5",
     } as unknown as NodeJS.ProcessEnv);
