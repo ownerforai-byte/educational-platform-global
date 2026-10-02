@@ -6,7 +6,7 @@
  * shows — never guess. This module holds the pure, provider-agnostic plumbing:
  *
  *   - validation/limits for incoming data URLs (size + count + mime type),
- *   - mapping to OpenAI-compatible content parts (Agnes, OpenRouter),
+ *   - mapping to OpenAI-compatible content parts (Agnes),
  *   - mapping to Gemini inlineData parts,
  *   - the prompt instruction that turns a photo into a grounded answer.
  *
@@ -100,7 +100,7 @@ export interface OpenAIImagePart {
 
 /**
  * Map a message's text + images to the OpenAI-compatible `content` shape used
- * by Agnes and OpenRouter. Plain text stays a string so nothing changes for
+ * by Agnes. Plain text stays a string so nothing changes for
  * the (overwhelmingly common) text-only case.
  */
 export function toOpenAIContent(

@@ -117,7 +117,7 @@ export const SOURCE_REGISTRY: SourceDescriptor[] = [
     kind: "model",
     tier: 3,
     scope: "Reasoning, derivations and analogy — used only where no source reaches.",
-    path: "agnes → openrouter → internal chain",
+    path: "agnes → internal chain",
     howToSupply: "n/a",
     automatic: true,
   },

@@ -45,7 +45,7 @@ router.post("/", async (req: Request, res: Response) => {
       return;
     }
 
-    // "" runs the ordered chain (agnes → openrouter → internal).
+    // "" runs the ordered chain (agnes → internal).
     const aiResult = await aiService.search(provider, query);
 
     const { data: classesData } = await supabaseAdmin

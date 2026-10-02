@@ -15,7 +15,7 @@ import {
  *
  *  1. data-URL parsing — image mime types only, junk rejected;
  *  2. the request-body guard — count cap, per-image size cap, never throws;
- *  3. provider mapping — OpenAI-compatible parts (Agnes/OpenRouter) and
+ *  3. provider mapping — OpenAI-compatible parts (Agnes) and
  *     Gemini inlineData;
  *  4. the prompt instruction — read the photo, never invent its content,
  *     keep the 150-word floor.

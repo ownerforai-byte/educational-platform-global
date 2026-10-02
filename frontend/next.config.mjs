@@ -27,18 +27,33 @@ const buildEnv = {
 };
 
 const nextConfig = {
-  // The KaTeX note pipeline (lib/content/pipeline.ts → rehype-katex) must be
   // Expose the deploy fingerprint to the client bundle (footer build badge).
   env: buildEnv,
-  // Keep HTML routes out of the Vercel edge cache so a new deploy is served
-  // immediately instead of a stale copy. Static assets (/_next, images, font)
-  // are still cached by URL — only document responses are no-store.
+  // Fresh deploys must win — but only for DOCUMENTS. A blanket no-store on
+  // "/:path*" also hit everything served out of /public, including the 6 MB
+  // notes manifest the app fetches at runtime: that turned a cached edge
+  // payload into a full re-download on every visit. So the rules are split by
+  // what the browser asked for (`Accept: text/html` means a page navigation):
+  //   1. HTML documents → no-store, a new deploy is served immediately
+  //   2. everything else → revalidate, the behaviour these had before
+  // Hashed bundles under /_next/static are deliberately NOT listed: Vercel
+  // already serves them as immutable, and a custom header there only makes
+  // Next warn that it can break its own cache behaviour.
   async headers() {
+    const HTML_NAVIGATION = ".*text/html.*";
     return [
       {
         source: "/:path*",
+        has: [{ type: "header", key: "accept", value: HTML_NAVIGATION }],
         headers: [
           { key: "Cache-Control", value: "no-store, must-revalidate" },
+        ],
+      },
+      {
+        source: "/:path*",
+        missing: [{ type: "header", key: "accept", value: HTML_NAVIGATION }],
+        headers: [
+          { key: "Cache-Control", value: "public, max-age=0, must-revalidate" },
         ],
       },
     ];

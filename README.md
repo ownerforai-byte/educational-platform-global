@@ -73,7 +73,7 @@ npm run check:schema              # strict Zod gate: corpus + built manifests
 In development the backend boots without configuration (DB-backed routes fall back to an
 in-memory mock store). **In production it refuses to start** unless `SUPABASE_URL` and
 `SUPABASE_SERVICE_ROLE_KEY` are set — no silent mock-data fallback. AI keys
-(`GEMINI_API_KEY`, `OPENROUTER_API_KEY`, `AGNES_API_KEY`) also go in `backend/.env` only —
+(`AGNES_API_KEY`, `GEMINI_API_KEY`) also go in `backend/.env` only —
 never `NEXT_PUBLIC_*`. See `.env.example` for the full list.
 
 ## Environment Variables
@@ -98,7 +98,7 @@ never `NEXT_PUBLIC_*`. See `.env.example` for the full list.
 | `SUPABASE_SERVICE_ROLE_KEY` | Secret | Supabase service role |
 | `DATABASE_URL` | Secret | PostgreSQL connection |
 | `GEMINI_API_KEY` | Secret | Google Gemini AI |
-| `OPENROUTER_API_KEY` | Secret | OpenRouter AI |
+| `AGNES_API_KEY` | Secret | Agnes AI (answers first in the chain) |
 | `AI_PROVIDER` | Secret | Default AI provider |
 | `AI_DEFAULT_PROVIDER` | Secret | Default AI provider |
 | `FRONTEND_URL` | Secret | Allowed CORS origin (exact allowlist in production) |

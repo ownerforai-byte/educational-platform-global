@@ -39,35 +39,6 @@ async function testGemini(model) {
   }
 }
 
-async function testOpenRouter(model) {
-  const key = env.OPENROUTER_API_KEY;
-  if (!key) return { model, ok: false, error: "no key" };
-  try {
-    const res = await fetch("https://openrouter.ai/api/v1/chat/completions", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${key}`,
-        "HTTP-Referer": "https://ravikisan.edu.np",
-        "X-Title": "Ravikisan",
-      },
-      body: JSON.stringify({
-        model,
-        messages: [{ role: "user", content: "Answer in 5 words: What is speed?" }],
-        max_tokens: 50,
-      }),
-    });
-    const data = await res.json();
-    if (!res.ok) {
-      return { model, ok: false, status: res.status, error: data?.error?.message || JSON.stringify(data) };
-    }
-    const text = data?.choices?.[0]?.message?.content;
-    return { model, ok: true, reply: text?.trim() };
-  } catch (err) {
-    return { model, ok: false, error: err.message };
-  }
-}
-
 async function run() {
   console.log("=== Testing Gemini Models ===");
   const geminiModels = [
@@ -82,20 +53,6 @@ async function run() {
   for (const m of geminiModels) {
     const r = await testGemini(m);
     console.log(`Gemini ${m}:`, r.ok ? `✅ ${r.reply}` : `❌ ${r.error?.slice(0, 100)}`);
-  }
-
-  console.log("\n=== Testing OpenRouter Models ===");
-  const orModels = [
-    "google/gemini-2.0-flash-lite-preview-02-05:free",
-    "google/gemini-2.0-flash-exp:free",
-    "meta-llama/llama-3.3-70b-instruct:free",
-    "meta-llama/llama-3.2-3b-instruct:free",
-    "deepseek/deepseek-r1:free",
-    "nvidia/nemotron-3.5-lightning:free"
-  ];
-  for (const m of orModels) {
-    const r = await testOpenRouter(m);
-    console.log(`OpenRouter ${m}:`, r.ok ? `✅ ${r.reply}` : `❌ ${r.error?.slice(0, 100)}`);
   }
 }
 

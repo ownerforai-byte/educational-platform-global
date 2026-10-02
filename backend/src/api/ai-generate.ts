@@ -383,7 +383,7 @@ ${keyTermsContext ? `KEY TERMS FROM SYLLABUS:\n${keyTermsContext}` : "Use standa
       ];
 
       const rawResponse = await aiService.chat(
-        "", // run the ordered chain: agnes → openrouter → internal
+        "", // run the ordered chain: agnes → internal
         messages
       );
 
