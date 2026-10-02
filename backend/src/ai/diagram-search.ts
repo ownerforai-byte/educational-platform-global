@@ -26,6 +26,13 @@
  * automatically (NODE_ENV=test) unless DIAGRAM_SEARCH=on forces them.
  */
 
+import {
+  fetchGoogleDiagrams,
+  formatGoogleDiagramBlock,
+  googleDiagramsEnabled,
+  type GoogleDiagram,
+} from "./google-diagrams";
+
 export interface DiagramImage {
   /** Direct file URL (upload.wikimedia.org) — the only thing a reply may embed. */
   url: string;
@@ -258,14 +265,37 @@ export function formatDiagramBlock(images: DiagramImage[]): string {
 export async function fetchDiagramContext(question: string, limit = DIAGRAM_LIMIT): Promise<string> {
   if (!diagramSearchEnabled() || !question.trim()) return "";
   try {
-    let images = await fetchDiagrams(question, limit, { drawingOnly: true });
-    if (!images.length) images = await fetchDiagrams(question, limit);
-    if (!images.length) return "";
-    console.log(
-      `[DiagramSearch] "${question.slice(0, 50)}" → ${images.length} diagram file(s): ` +
-        images.map((i) => i.file.replace(/^file:/i, "")).join(", "),
-    );
-    return formatDiagramBlock(images);
+    let images: DiagramImage[] = [];
+    try {
+      images = await fetchDiagrams(question, limit, { drawingOnly: true });
+      if (!images.length) images = await fetchDiagrams(question, limit);
+    } catch (err) {
+      console.warn("[DiagramSearch] Commons unavailable:", err instanceof Error ? err.message : err);
+    }
+
+    // Optional second source (owner 2026-10-02): Google Images, handed over as
+    // VISUAL REFERENCE only (key-gated; silent without credentials).
+    let google: GoogleDiagram[] = [];
+    if (googleDiagramsEnabled()) {
+      try {
+        google = await fetchGoogleDiagrams(
+          buildDiagramQuery(question),
+          questionTerms(question),
+          limit,
+        );
+      } catch (err) {
+        console.warn("[GoogleDiagrams] unavailable:", err instanceof Error ? err.message : err);
+      }
+    }
+
+    if (!images.length && !google.length) return "";
+    if (images.length) {
+      console.log(
+        `[DiagramSearch] "${question.slice(0, 50)}" → ${images.length} diagram file(s): ` +
+          images.map((i) => i.file.replace(/^file:/i, "")).join(", "),
+      );
+    }
+    return formatDiagramBlock(images) + formatGoogleDiagramBlock(google);
   } catch (err) {
     console.warn("[DiagramSearch] unavailable:", err instanceof Error ? err.message : err);
     return "";
