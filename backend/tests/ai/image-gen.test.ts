@@ -192,6 +192,9 @@ describe("withFigureToolInstruction", () => {
     expect(on).toContain("base context");
     expect(on).toContain(FIGURE_FENCE);
     expect(on).toContain(FIGURE_TOOL_INSTRUCTION);
+    expect(on).toContain("PHYSICS");
+    expect(on).toContain("NEPALI");
+    expect(on).toContain("Universal drawing law");
 
     delete process.env[KEY];
     expect(withFigureToolInstruction("base context")).toBe("base context");

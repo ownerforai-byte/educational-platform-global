@@ -313,8 +313,31 @@ export const FIGURE_TOOL_INSTRUCTION = [
   `Figure rules: at most ONE figure per answer; write the instruction as a plain drawing brief, not a sentence of your answer; prefer the attached real diagram files when they cover the concept (embed those with normal markdown instead of drawing); never invent image URLs yourself — the platform draws the figure, shows it live, and the conversation continues.`,
 ].join("\n");
 
+/**
+ * SUBJECT DIAGRAM GUIDE — the exam-grade figure each of the six NEB subjects
+ * actually asks for. Appended to the figure-tool instruction so the image
+ * creator draws subject-correct, deep-academic diagrams, never a generic
+ * illustration.
+ */
+export const SUBJECT_DIAGRAM_GUIDE = `[FIGURE SUBJECT GUIDE — draw the exam-grade figure each subject actually asks for]
+
+PHYSICS — ray diagrams for mirrors/lenses/prisms (principal axis, F, C, object, image, arrow-headed rays); circuit diagrams with standard symbols and labelled I (A) / V (V); free-body diagrams with named force arrows (weight mg, normal N, tension T, friction f) at their point of action; s-t / v-t / a-t graphs with labelled axes and units; transverse and longitudinal waves (crest, trough, amplitude, wavelength); electric and magnetic field lines with direction arrows; apparatus labelled part-by-part (vernier calliper, screw gauge, meter bridge, potentiometer).
+
+CHEMISTRY — structural and Lewis formulas with correct valency and bonds; apparatus set-ups labelled vessel-by-vessel (distillation, titration, electrolysis, Kipp's apparatus); reaction mechanisms drawn with curled arrows tracing electron flow; orbital and energy-level diagrams obeying Aufbau and (n+l); periodic-trend graphs labelled on both axes; electrochemical (galvanic/electrolytic) cells with anode/cathode/salt bridge; crystal lattices and unit cells.
+
+BIOLOGY — cell and organelle structure with every part labelled; tissues and organ systems (digestive, respiratory, circulatory, excretory, nervous, reproductive); life cycles with each stage's ploidy (n / 2n) and the meiosis that resets it; metabolic pathways (glycolysis, Krebs, Calvin, photosynthesis, respiration) showing substrate, enzyme, product and ATP/NADH/FADH2 per compartment; Mendelian crosses as Punnett squares; DNA double helix and replication fork.
+
+MATHEMATICS — conic sections (circle, parabola, ellipse, hyperbola) with axes, foci, vertices, directrix, asymptotes; function graphs with labelled axes and intercepts; tangent line and area-under-the-curve shaded correctly; the unit circle with exact radian/degree values; vectors and 3D lines/planes; geometric constructions and circle theorems; Venn diagrams and probability curves.
+
+ENGLISH — sentence/parse trees (phrase structure); grammar mind-maps; the phonetics vowel quadrilateral with IPA symbols; essay and story-structure diagrams.
+
+NEPALI — वर्णमाला charts classifying स्वर/व्यञ्जन; व्याकरण mind-maps (नाम, सर्वनाम, विशेषण, क्रिया, कारक); साहित्य concept maps (रस, अलङ्कार, छन्द); कथाको संरचना as a flow in Devanagari.
+
+Universal drawing law for all six subjects: label every part an examiner marks; give units on every axis; point arrows only in the physically/chemically correct direction; keep notation standard (italic genus species, SI units, IUPAC); and never invent a label or detail the source does not show.`;
+
 /** Append the figure-tool instruction to the professor context when enabled. */
 export function withFigureToolInstruction(context: string): string {
   if (!imageGenEnabled()) return context;
-  return context ? `${context}\n\n${FIGURE_TOOL_INSTRUCTION}` : FIGURE_TOOL_INSTRUCTION;
+  const instruction = `${FIGURE_TOOL_INSTRUCTION}\n\n${SUBJECT_DIAGRAM_GUIDE}`;
+  return context ? `${context}\n\n${instruction}` : instruction;
 }
