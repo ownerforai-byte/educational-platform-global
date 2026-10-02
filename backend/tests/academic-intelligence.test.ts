@@ -116,9 +116,10 @@ describe("master academic prompt composition", () => {
     expect(PROMPT).toContain("from its first idea to its present state in conceptual order");
   });
 
-  test("academic rules defer to the reply shape (no printed headings)", () => {
-    expect(ACADEMIC).toContain("checklist of content, not a set of printed headings");
-    expect(ACADEMIC).toContain("never announce");
+  test("academic rules define the specialist contract without imposing headings", () => {
+    expect(ACADEMIC).toContain("draft-and-verify");
+    expect(ACADEMIC).toContain("senior science & language academic specialist");
+    expect(ACADEMIC).toContain("unless asked otherwise");
   });
 
   test("carries no template artefacts and stays a sane size", () => {
@@ -157,8 +158,8 @@ describe("master academic prompt composition", () => {
   });
 });
 
-describe("academic engine coverage", () => {
-  test("names all six subjects and the default curriculum frame", () => {
+describe("academic specialist contract coverage", () => {
+  test("names all six subjects and the NEB Class 11/12 Science frame", () => {
     for (const subject of [
       "physics",
       "chemistry",
@@ -169,71 +170,49 @@ describe("academic engine coverage", () => {
     ]) {
       expect(ACADEMIC).toContain(subject);
     }
-    expect(ACADEMIC).toContain("व्याकरण");
-    expect(ACADEMIC).toContain("neb grade 11 and grade 12");
-    expect(ACADEMIC).toContain("curriculum awareness");
-    expect(ACADEMIC).toContain("cee / ioe");
-    expect(ACADEMIC).toContain("never claim a topic belongs to a particular curriculum");
+    expect(ACADEMIC).toContain("neb (national examinations board, nepal)");
+    expect(ACADEMIC).toContain("class 11 and class 12 science");
+    expect(ACADEMIC).toContain("व्याकरणिक");
+    expect(ACADEMIC).toContain("नेपाली बृहत् शब्दकोश");
   });
 
-  test("carries the knowledge model and all five depth levels", () => {
-    expect(ACADEMIC).toContain("universal knowledge model");
-    expect(ACADEMIC).toContain("foundation → definition → terminology → classification");
-    expect(ACADEMIC).toContain("summary / revision");
-    for (const level of ["level 1", "level 2", "level 3", "level 4", "level 5"]) {
-      expect(ACADEMIC).toContain(level);
-    }
-    expect(ACADEMIC).toContain("academic depth engine");
+  test("pins the draft-and-verify reasoning instruction and dictionary sources", () => {
+    expect(ACADEMIC).toContain("draft-and-verify");
+    expect(ACADEMIC).toContain("cdc (curriculum development centre)");
+    expect(ACADEMIC).toContain("oxford/cambridge");
+    expect(ACADEMIC).toContain("do not summarize steps");
+    expect(ACADEMIC).toContain("complete proofs and complete reaction mechanisms");
   });
 
-  test("keeps each subject's solving protocol", () => {
-    expect(ACADEMIC).toContain("given → required → principle → formula");
-    expect(ACADEMIC).toContain("dimensional consistency");
-    expect(ACADEMIC).toContain("balance every equation");
-    expect(ACADEMIC).toContain("reactants → conditions → mechanism → intermediate → products");
-    expect(ACADEMIC).toContain("never confuse correlation with causation");
-    expect(ACADEMIC).toContain("structure → function → location → inputs → steps → outputs");
-    expect(ACADEMIC).toContain("theorem/concept → strategy → step-by-step derivation");
-    expect(ACADEMIC).toContain("latex/katex");
-    expect(ACADEMIC).toContain("never invent quotations or textual details");
-    expect(ACADEMIC).toContain("पाठ परिचय");
+  test("keeps each subject's domain rules", () => {
+    // Physics & Chemistry
+    expect(ACADEMIC).toContain("boundary conditions and initial assumptions");
+    expect(ACADEMIC).toContain("si units");
+    expect(ACADEMIC).toContain("iupac naming");
+    expect(ACADEMIC).toContain("oxidation states");
+    expect(ACADEMIC).toContain("electron flow mechanisms");
+    // Biology
+    expect(ACADEMIC).toContain("binomial nomenclature");
+    expect(ACADEMIC).toContain("double-stranded right-handed b-dna helix");
+    expect(ACADEMIC).toContain("oxidative phosphorylation");
+    // Mathematics
+    expect(ACADEMIC).toContain("given,");
+    expect(ACADEMIC).toContain("to prove,");
+    expect(ACADEMIC).toContain("initial conditions,");
+    expect(ACADEMIC).toContain("proof");
+    // English & Nepali
+    expect(ACADEMIC).toContain("etymology");
+    expect(ACADEMIC).toContain("part-of-speech");
   });
 
-  test("ships complete-knowledge mode, exam mode and the difficulty ladder", () => {
-    expect(ACADEMIC).toContain("complete knowledge mode");
-    expect(ACADEMIC).toContain("topic overview");
-    expect(ACADEMIC).toContain("final revision sheet");
-    expect(ACADEMIC).toContain("exam mode");
-    expect(ACADEMIC).toContain("1-mark");
-    expect(ACADEMIC).toContain("2-mark");
-    expect(ACADEMIC).toContain("3–4 mark");
-    expect(ACADEMIC).toContain("long answer");
-    expect(ACADEMIC).toContain("certain to appear");
-    expect(ACADEMIC).toContain("l1 recall · l2 understanding · l3 application · l4 analysis");
-    expect(ACADEMIC).toContain("l6 advanced problem-solving");
-  });
-
-  test("detects misconceptions, researches and refuses to fabricate", () => {
-    expect(ACADEMIC).toContain("misconception detector");
-    expect(ACADEMIC).toContain("counterexample");
-    expect(ACADEMIC).toContain("never embarrass the learner");
-    expect(ACADEMIC).toContain("tavily");
-    expect(ACADEMIC).toContain("[real-time internet search results]");
-    expect(ACADEMIC).toContain("cross-check");
-    expect(ACADEMIC).toContain("primary source");
-    expect(ACADEMIC).toContain("hypothesis · speculation");
-    expect(ACADEMIC).toContain("never fabricate references");
-    expect(ACADEMIC).toContain("knowledge boundary");
-  });
-
-  test("keeps the structure, comparison and problem-solving engines", () => {
-    expect(ACADEMIC).toContain("answer structure");
-    expect(ACADEMIC).toContain("comparison engine");
-    expect(ACADEMIC).toContain("problem-solving engine");
-    expect(ACADEMIC).toContain("step 6 interpret");
-    expect(ACADEMIC).toContain("output quality control");
-    expect(ACADEMIC).toContain("personalised teaching");
-    expect(ACADEMIC).toContain("understand → classify → identify prerequisites → map the knowledge structure");
+  test("ships the five-section structural response template with exam focus", () => {
+    expect(ACADEMIC).toContain("formal textbook definition / lexical meaning");
+    expect(ACADEMIC).toContain("core theoretical principles & assumptions");
+    expect(ACADEMIC).toContain("complete mathematical derivation / chemical mechanism / biological process");
+    expect(ACADEMIC).toContain("technical vocabulary & etymology breakdown");
+    expect(ACADEMIC).toContain("standard neb examination application");
+    expect(ACADEMIC).toContain("4-mark");
+    expect(ACADEMIC).toContain("8-mark");
   });
 
   test("the search addendum keeps the academic floor", () => {
