@@ -36,6 +36,7 @@ const RESOURCE_TYPES = [
   "FLASHCARD",
   "QUIZ",
   "VIDEO",
+  "PDF",
 ] as const;
 
 // Radix-style Select value sentinel: this shadcn Select cannot use "" as a

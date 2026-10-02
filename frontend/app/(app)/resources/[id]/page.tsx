@@ -3,6 +3,7 @@ import { getResourceById } from "@/lib/curriculum";
 import { EmptyState } from "@/components/content/empty-state";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { NotesViewer } from "@/components/content/notes-viewer";
+import { PdfViewer } from "@/components/content/pdf-viewer";
 export const dynamic = "force-dynamic";
 
 
@@ -30,7 +31,9 @@ export default async function ResourcePage({
         <p className="text-sm text-muted-foreground">{resource.type}</p>
       </div>
 
-      {content ? (
+      {resource.type === "PDF" && resource.media_url ? (
+        <PdfViewer title={resource.title} mediaUrl={resource.media_url} />
+      ) : content ? (
         <Card>
           <CardHeader>
             <CardTitle className="text-lg">Content</CardTitle>

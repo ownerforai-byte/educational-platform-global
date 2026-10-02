@@ -7,6 +7,7 @@ import { NumericalViewer } from "@/components/content/numerical-viewer";
 import { FlashcardViewer } from "@/components/content/flashcard-viewer";
 import { QuizViewer } from "@/components/content/quiz-viewer";
 import { VideoViewer } from "@/components/content/video-viewer";
+import { PdfViewer } from "@/components/content/pdf-viewer";
 
 
 
@@ -90,7 +91,10 @@ export default async function ResourcePage({
       {resource.type === "VIDEO" && (
         <VideoViewer title={resource.title} mediaUrl={resource.media_url} />
       )}
-      {!["NOTES", "NUMERICAL", "FLASHCARD", "QUIZ", "VIDEO"].includes(
+      {resource.type === "PDF" && (
+        <PdfViewer title={resource.title} mediaUrl={resource.media_url} />
+      )}
+      {!["NOTES", "NUMERICAL", "FLASHCARD", "QUIZ", "VIDEO", "PDF"].includes(
         resource.type
       ) && (
         <Card>
