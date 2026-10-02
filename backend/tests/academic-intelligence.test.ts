@@ -215,6 +215,14 @@ describe("academic specialist contract coverage", () => {
     expect(ACADEMIC).toContain("8-mark");
   });
 
+  test("tells answers as a dated, ascending story from history to the future", () => {
+    expect(ACADEMIC).toContain("history → present → future");
+    expect(ACADEMIC).toContain("ascending");
+    expect(ACADEMIC).toContain("extra keywords");
+    expect(ACADEMIC).toContain("ground every reply in the source");
+    expect(ACADEMIC).toContain("story-like flow");
+  });
+
   test("the search addendum keeps the academic floor", () => {
     const addendum = ACADEMIC_SEARCH_ADDENDUM.toLowerCase();
     expect(addendum).toContain("kingdom");

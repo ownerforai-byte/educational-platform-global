@@ -124,18 +124,52 @@ export const SOURCE_REGISTRY: SourceDescriptor[] = [
 ];
 
 /**
+ * OFFICIAL SOURCE ALLOWLIST (owner 2026-10-02) — the ONLY sources the tutor may
+ * treat as TRUTH. Anything outside this list is rejected: ignore it, never cite
+ * it. The textbooks/dictionaries carry the subject facts; the board site carries
+ * exam rules and official notices.
+ */
+export const OFFICIAL_SOURCE_ALLOWLIST: ReadonlyArray<{
+  name: string;
+  role: string;
+  domains: string[];
+}> = [
+  {
+    name: "CDC e-library + official NEB (CDC) Class 11/12 textbooks",
+    role: "syllabus facts, definitions, derivations, diagrams",
+    domains: ["moecdc.gov.np", "elearning.moecdc.gov.np", "cdc.gov.np"],
+  },
+  {
+    name: "NEB (National Examinations Board) Nepal",
+    role: "exam rules, syllabus changes, results, official notices",
+    domains: ["neb.gov.np"],
+  },
+  {
+    name: "Oxford/Cambridge dictionaries (English) · नेपाली बृहत् शब्दकोश (Nepali)",
+    role: "word meanings and definitions only — never science facts",
+    domains: ["dictionary.cambridge.org", "oxfordlearnersdictionaries.com", "oed.com"],
+  },
+];
+
+/**
  * The always-on source contract appended to every system prompt: which sources
  * exist, what they are trusted for, and the citation discipline between them.
  */
 export const SOURCE_REGISTRY_RULES = `[SOURCE HIERARCHY — WHAT TO TRUST, AND HOW TO SAY IT]
 
+STRICT OFFICIAL ALLOWLIST — only these may be cited as source of truth:
+1. CDC e-library + official NEB (CDC) Class 11/12 textbooks — the factual spine for every syllabus answer.
+2. neb.gov.np (National Examinations Board) — the only authority for exam rules, syllabus changes, results and official notices.
+3. Standard dictionaries for WORD meanings only — Oxford/Cambridge (English) and नेपाली बृहत् शब्दकोश (Nepali). They define words; they never decide science facts.
+Every other website is FORBIDDEN as a source of truth — Wikipedia, blogs, Khan Academy, news sites, forums, etc. Ignore it and never cite it. If a fact cannot be traced to the allowlist, say so plainly instead of citing a non-official site.
+
 In order of authority — on any conflict, the higher one wins and you follow it:
 1. Owner drop-in source (${SOURCE_REGISTRY[0].path}) — material the owner handed you directly. Preferred on ties.
-2. NEB Class 11/12 authored corpus (${SOURCE_REGISTRY[1].path}) — the SPINE of every academic answer. Its facts, order and exam framing come first.
+2. Official NEB (CDC) Class 11/12 textbook + authored corpus (${SOURCE_REGISTRY[1].path}) — the SPINE of every academic answer. Its facts, order and exam framing come first.
 3. Built syllabus notes (${SOURCE_REGISTRY[2].path}) — extra detail and a cross-check.
 4. NEB syllabus anchor — tells you whether a topic is genuinely in the syllabus.
-5. Live web search — ONLY for facts that may have changed (current affairs, exam dates, recent science). Cite the source by name in plain words ("as per WHO", "as per NASA"). Never treat it as syllabus truth, and never let it contradict 1–4 silently: say what differs and which you are following.
-6. Your own prior knowledge — reasoning, derivations, analogy, and whatever none of the above covers.
+5. Live web search — ONLY when it lands inside the official allowlist (CDC e-library, neb.gov.np), and ONLY for facts that may have changed (exam dates, syllabus updates, official notices). Cite the source by name in plain words ("as per neb.gov.np"). Never treat any non-official web result as truth, and never let it contradict 1–4 silently: say what differs and which you are following.
+6. Your own prior knowledge — reasoning, derivations, analogy, and whatever none of the allowlisted sources covers. Never present it as the official textbook.
 
 CITE BY NAME, NEVER BY URL: say which source carried the fact. Never invent a source, a statistic, a quotation or a curriculum rule. If you did not receive a curriculum record for this topic, say the answer is from general knowledge rather than implying the platform supplied it.`;
 
