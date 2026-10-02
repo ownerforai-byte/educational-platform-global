@@ -3,7 +3,7 @@ import { serverError, ERROR_ID_HEADER } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { requireAuth } from "../middleware/auth";
 import { hasFullAccess } from "../middleware/auth";
-import { ensureDailyCredits, spendCredits, refundCredits, AI_MESSAGE_COST, DAILY_CREDIT_POOL } from "../utils/credits";
+import { ensureDailyCredits, spendCredits, refundCredits, AI_MESSAGE_COST, DAILY_CREDIT_POOL, isCoinGateEnabled } from "../utils/credits";
 import { supabaseAdmin } from "../db/supabase";
 import { logServerError, newErrorId } from "../middleware/errors";
 import { appendConsoleRules, buildProfessorContext, withProfessorContext } from "../ai/prompts";
@@ -80,7 +80,9 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     );
 
     let creditsLeft: number | null = null;
-    if (!privileged) {
+    // Coin gate OFF (owner toggle) → this message is free; skip billing.
+    const coinGate = await isCoinGateEnabled();
+    if (!privileged && coinGate) {
       // Lazy midnight reset: first AI call of the day refills the pool.
       const ensured = await ensureDailyCredits(user.id, user.email, prof?.role as string | null, prof?.premium_status);
       const remaining = await spendCredits(

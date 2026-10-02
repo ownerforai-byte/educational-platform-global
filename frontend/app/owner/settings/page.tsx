@@ -18,6 +18,7 @@ export default function OwnerSettingsPage() {
   const [isSaving, setIsSaving] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [savedMsg, setSavedMsg] = useState<string | null>(null);
+  const [coinGate, setCoinGate] = useState<boolean | null>(null);
 
   const load = useCallback(async () => {
     try {
@@ -25,6 +26,8 @@ export default function OwnerSettingsPage() {
       setIsLoading(true);
       const res = await getOwnerSettings();
       setSettings(res.settings ?? []);
+      const gate = (res.settings ?? []).find((s) => s.key === "coin_gate_enabled");
+      setCoinGate(!gate || gate.value !== false);
       const initial: Record<string, string> = {};
       for (const s of res.settings ?? []) {
         initial[s.key] =
@@ -118,6 +121,24 @@ export default function OwnerSettingsPage() {
     }
   };
 
+  const toggleCoinGate = async () => {
+    if (coinGate === null) return;
+    const next = !coinGate;
+    setIsSaving(true);
+    setError(null);
+    setSavedMsg(null);
+    try {
+      await updateOwnerSettings([{ key: "coin_gate_enabled", value: next }]);
+      setCoinGate(next);
+      await load();
+      setSavedMsg(`Coin gate ${next ? "enabled — AI chat asks for coins" : "disabled — AI chat is free"}.`);
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Toggle failed");
+    } finally {
+      setIsSaving(false);
+    }
+  };
+
   const dirtyCount = settings.filter(
     (s) => drafts[s.key] !== undefined && drafts[s.key] !== originalString(s)
   ).length;
@@ -156,6 +177,25 @@ export default function OwnerSettingsPage() {
           {savedMsg}
         </div>
       )}
+
+      <Card className="border-primary/40">
+        <CardHeader className="pb-2">
+          <CardTitle className="text-sm font-medium">Coin gate (AI chat billing)</CardTitle>
+        </CardHeader>
+        <CardContent className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+          <p className="text-sm text-muted-foreground">
+            When ON, every AI chat message costs a credit from each user's daily pool. When OFF, AI chat is free for everyone.
+          </p>
+          <Button
+            variant={coinGate ? "default" : "outline"}
+            onClick={toggleCoinGate}
+            disabled={isSaving || coinGate === null}
+            className="shrink-0"
+          >
+            Coin gate: {coinGate === null ? "…" : coinGate ? "ON — asking for coins" : "OFF — free"}
+          </Button>
+        </CardContent>
+      </Card>
 
       <Card>
         <CardHeader className="pb-2">

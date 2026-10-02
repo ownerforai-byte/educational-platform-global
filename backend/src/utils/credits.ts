@@ -39,6 +39,34 @@ export const DAILY_CREDIT_POOL = 4;
 /** Cost of one AI chat message, in credits. */
 export const AI_MESSAGE_COST = 1;
 
+// ── Coin gate (owner toggle 2026-10-02) ─────────────────────────────────────
+// Owners flip `coin_gate_enabled` in owner settings: ON (default) means AI chat
+// costs a credit; OFF means it is free for everyone. Read from the `settings`
+// table and cached briefly so the gate never adds a query to every message.
+let coinGateCache: { enabled: boolean; at: number } | null = null;
+const COIN_GATE_TTL_MS = 15_000;
+
+/** True when the owner wants AI chat to cost credits (the default). */
+export async function isCoinGateEnabled(): Promise<boolean> {
+  const now = Date.now();
+  if (coinGateCache && now - coinGateCache.at < COIN_GATE_TTL_MS) {
+    return coinGateCache.enabled;
+  }
+  let enabled = true; // default ON: bill unless the owner explicitly turns it off
+  try {
+    const { data } = await supabaseAdmin
+      .from("settings")
+      .select("value")
+      .eq("key", "coin_gate_enabled")
+      .maybeSingle();
+    if (data && data.value === false) enabled = false;
+  } catch {
+    // Fail closed to billing — the safer default on a settings read error.
+  }
+  coinGateCache = { enabled, at: now };
+  return enabled;
+}
+
 /** How often a CAS write re-reads and retries before giving up. */
 const CAS_ATTEMPTS = 4;
 

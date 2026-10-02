@@ -1,7 +1,7 @@
 import { Request, Response, NextFunction } from "express";
 import { supabaseAdmin } from "../db/supabase";
 import { extractToken, hasFullAccess } from "./auth";
-import { ensureDailyCredits, spendCredits, refundCredits } from "../utils/credits";
+import { ensureDailyCredits, spendCredits, refundCredits, isCoinGateEnabled } from "../utils/credits";
 
 // ── Feature cost table ─────────────────────────────────────────────────────
 // As of 2026-09-10 all features are public (cost 0, no premium gate).
@@ -49,6 +49,13 @@ export function requireCredit(
       }
 
       const userId = authData.user.id;
+
+      // Coin gate OFF (owner toggle) → every gated feature is free.
+      if (!(await isCoinGateEnabled())) {
+        next();
+        return;
+      }
+
       const featureConfig = PREMIUM_FEATURES[feature];
       const actualCost = cost > 0 ? cost : (featureConfig?.cost ?? 0);
 
