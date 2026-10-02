@@ -405,13 +405,16 @@ describe("the complete-answer contract reaches the model", () => {
     // the guard refuses silently becomes a code block instead of a picture.
     for (const rule of [
       "The platform renders that fence as a real picture in the reply",
-      'viewBox="0 0 640 400"',
+      'viewBox="0 0 900 640"',
       "No script element, no style element, no on-event attributes",
       "no url(#...) references",
       "white card",
       "Caption it on the fence line itself",
       "svg is the only drawing language the platform paints",
       "Keep the drawing honest",
+      "LABEL EVERY PART WITH LEADER LINES",
+      "Use a LARGER CANVAS",
+      "TAKE YOUR TIME",
     ]) {
       expect(DEEP_ANSWER_RULES, `missing drawing rule: ${rule}`).toContain(rule);
     }
