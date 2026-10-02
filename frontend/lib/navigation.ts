@@ -111,6 +111,7 @@ const extendedItems: NavItem[] = [
   { href: "/loksewa", label: "Loksewa GK", icon: Users, badge: "GK", badgeClass: "bg-orange-500/15 text-orange-500" },
   { href: "/world-knowledge", label: "World Knowledge", icon: Globe, badge: "Global", badgeClass: "bg-emerald-500/15 text-emerald-500" },
   { href: "/resources", label: "Resource Vault", icon: Bookmark, badge: "Vault", badgeClass: "bg-pink-500/15 text-pink-500" },
+  { href: "/pdfs", label: "PDF Library", icon: FileText, badge: "Read", badgeClass: "bg-rose-500/15 text-rose-500" },
 ];
 
 const accountItems: NavItem[] = [

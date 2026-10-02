@@ -172,6 +172,13 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         href: "/resources",
         meta: "Vault",
       },
+      {
+        name: "PDF Library",
+        opening:
+          "Download-ready PDFs and study materials — exam-cram sheets, unit notes and MCQ practice sets.",
+        href: "/pdfs",
+        meta: "PDFs",
+      },
     ],
   });
 
