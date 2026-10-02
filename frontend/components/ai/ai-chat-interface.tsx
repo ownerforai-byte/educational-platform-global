@@ -48,7 +48,7 @@ import {
 } from "@/lib/ai/guest-quota";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { MathMarkdown } from "@/components/content/math-markdown";
+import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
 import { cn } from "@/lib/utils";
 import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
 import { ChatMessageActions } from "@/components/ai/chat-message-actions";
@@ -1099,7 +1099,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                   </div>
                   <div className="min-w-0 flex-1 rounded-2xl rounded-tl-md border border-border/60 bg-muted/20 px-4 py-3">
                     <div className="text-xs leading-relaxed">
-                      <MathMarkdown content={msg.content} />
+                      <InteractiveMarkdown content={msg.content} />
                       {isStreaming && index === lastAssistantIndex && (
                         <span className="ml-0.5 inline-block h-3 w-1.5 animate-pulse rounded-sm bg-primary align-text-bottom" aria-hidden />
                       )}

@@ -909,12 +909,46 @@ code, kbd, samp, pre {
     display: block;
     width: 100%;
     height: auto;
-    max-height: 460px;
+    /* Raised from 460px so a labelled academic figure keeps its full area —
+       the tutor now draws on a 900×640 canvas with leader lines and every
+       part named (backend deep-answer.ts), and clipping it shrank it back. */
+    max-height: 720px;
     margin: 0 auto;
     color: #0f172a;
   }
   .edu-visual svg text { font-family: inherit; }
   .edu-visual .edu-visual__caption { color: #475569; }
+
+  /* Interactive figure parts (components/content/interactive-markdown.tsx):
+     every labelled <g> carries its own <title> explanation, so hover, focus or
+     click opens it — the picture explains itself while the answer streams. */
+  .edu-visual__part {
+    cursor: pointer;
+    transition: filter 120ms ease;
+  }
+  .edu-visual__part:hover,
+  .edu-visual__part:focus-visible {
+    filter: drop-shadow(0 0 3px rgb(59 130 246 / 0.55));
+    outline: none;
+  }
+  .edu-visual__tip {
+    position: absolute;
+    z-index: 40;
+    transform: translate(-50%, calc(-100% - 10px));
+    max-width: 22rem;
+    padding: 0.5rem 0.7rem;
+    border: 1px solid rgb(59 130 246 / 0.35);
+    border-radius: 0.5rem;
+    background: rgb(15 23 42 / 0.95);
+    color: rgb(241 245 249);
+    font-size: 0.78rem;
+    line-height: 1.4;
+    box-shadow: 0 8px 24px rgb(0 0 0 / 0.3);
+    pointer-events: none;
+  }
+  @media (max-width: 640px) {
+    .edu-visual__tip { max-width: 80vw; font-size: 0.74rem; }
+  }
 
   .prose details {
     margin: 1em 0;

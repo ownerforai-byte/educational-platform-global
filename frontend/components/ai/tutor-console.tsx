@@ -73,7 +73,7 @@ import {
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
-import { MathMarkdown } from "@/components/content/math-markdown";
+import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
 import { drawFigureWithPuter } from "@/lib/puter-image";
 import { stripLinksForCopy } from "@/lib/ai/clean-copy";
 import { cn } from "@/lib/utils";
@@ -1254,7 +1254,7 @@ export function TutorConsole({
                   </div>
                   <div className="min-w-0 flex-1">
                     <div className="rounded-2xl rounded-tl-md border border-border/60 bg-muted/25 px-4 py-3">
-                      <MathMarkdown content={msg.content} />
+                      <InteractiveMarkdown content={msg.content} />
                     </div>
 
                     {/* Shared per-answer actions — identical to the widget's */}
