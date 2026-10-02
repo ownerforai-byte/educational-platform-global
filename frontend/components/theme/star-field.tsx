@@ -24,16 +24,17 @@ type StaticStar = {
   alpha: number;
 };
 
+
 const STATIC_STAR_DENSITY = 0.000016; // a quiet, sparse sky
 const MAX_STATIC_STARS = 64;
 const MAX_STREAKS = 3; // at most a few comets on screen at once
 
-/* ── The two given colors: the comet is "deep/blur" at the far end in
-   dark desaturated violet/charcoal (#1f1924) and "clear/flash" at the
-   near end in vibrant spring green (#3ab44a). Depth t (0→1) lerps between
-   them, so it reads as arriving from deep inside and clearing up near. */
+/* ── The streak is a soft white: deep/blur at the far end in dark
+   violet/charcoal (#1f1924) and "clear/flash" at the near end in white.
+   Depth t (0→1) lerps between them, so it reads as arriving from deep
+   inside and clearing up to a bright white streak near. */
 const FAR = { r: 31, g: 25, b: 36 }; // #1f1924
-const NEAR = { r: 58, g: 180, b: 74 }; // #3ab44a
+const NEAR = { r: 255, g: 255, b: 255 }; // white
 
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 const smoothstep = (t: number) => {
@@ -43,13 +44,13 @@ const smoothstep = (t: number) => {
 const rgba = (r: number, g: number, b: number, a: number) =>
   `rgba(${r | 0}, ${g | 0}, ${b | 0}, ${a})`;
 
-/* "Natural" gap: not a metronome — short / medium / long at random,
-   e.g. 5s then 15s then 45s then 20s … */
+/* "Natural" but LARGE gap: always at least 40s, with longer random waits
+   on top — e.g. 40s then 60s then 120s then 45s … */
 const naturalGap = () => {
   const r = Math.random();
-  if (r < 0.4) return 3 + Math.random() * 5; // 3–8s
-  if (r < 0.8) return 12 + Math.random() * 12; // 12–24s
-  return 35 + Math.random() * 20; // 35–55s (the long, quiet wait)
+  if (r < 0.45) return 40 + Math.random() * 20; // 40–60s
+  if (r < 0.8) return 60 + Math.random() * 40; // 60–100s
+  return 100 + Math.random() * 50; // 100–150s (the long, quiet wait)
 };
 
 /**
@@ -142,8 +143,8 @@ export function StarField() {
         y0,
         dirX: dx,
         dirY: dy,
-        speed: 320 + Math.random() * 380, // brisk but not absurd
-        tail: 150 + Math.random() * 170,
+        speed: 130 + Math.random() * 130, // long, slow drift — a lazy comet
+        tail: 320 + Math.random() * 180, // a long line trailing behind
         baseR: 1.4 + Math.random() * 1.2,
         exitDist: total,
         traveled: 0,
@@ -209,7 +210,6 @@ export function StarField() {
       }
 
       ctx.globalCompositeOperation = "lighter"; // glows sum up on the dark sky
-
       streaks = streaks.filter((st) => st.traveled < st.exitDist);
       for (const st of streaks) {
         st.traveled += st.speed * dt;
