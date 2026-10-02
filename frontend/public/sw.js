@@ -2,7 +2,7 @@
  * Service Worker — Offline-first caching for Ravikisan's Platform.
  *
  * Strategy:
- *   - HTML pages (app routes): stale-while-revalidate
+ *   - HTML pages (app routes): network-first (fresh deploy wins), offline fallback
  *   - JS/CSS bundles: cache-first with update
  *   - Fonts/images: cache-first, never update
  *
@@ -13,8 +13,8 @@
 // Tutor's own dedicated page. Old v4 caches still hold the AI Studio render
 // under /chat (stale-while-revalidate would flash it once per visit), so
 // bump the cache name to force a clean precache of the new surface.
-const CACHE_NAME = "neb-vault-v5";
-const DATA_CACHE = "neb-data-v5";
+const CACHE_NAME = "neb-vault-v6";
+const DATA_CACHE = "neb-data-v6";
 
 /** Pages to pre-cache on install (core app shell). */
 const SW_ROUTES = [
@@ -91,9 +91,12 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  // App pages: stale-while-revalidate (with offline fallback for navigations)
+  // App pages: HTML navigations are network-first (fresh deploy wins), with an
+  // offline fallback. Non-navigation same-origin assets stay stale-while-revalidate.
   event.respondWith(
-    staleWhileRevalidate(request, CACHE_NAME, request.mode === "navigate")
+      request.mode === "navigate"
+        ? navigationNetworkFirst(request)
+        : staleWhileRevalidate(request, CACHE_NAME, false)
   );
 });
 
@@ -122,6 +125,31 @@ async function networkFirst(request) {
   } catch {
     const cached = await caches.match(request);
     return cached ?? new Response("Offline", { status: 503, statusText: "Offline" });
+  }
+}
+
+/**
+ * Navigation (HTML page) strategy: network-first with cache refresh.
+ *  - Always try the network first so the newest Vercel deploy is served.
+ *  - On a successful fetch, overwrite the cached copy so the offline
+ *    fallback and any cached copy reflect the current build.
+ *  - Only when the network fails: serve the cached page; for a top-level
+ *    navigation with no cache, fall back to the /offline page.
+ */
+async function navigationNetworkFirst(request) {
+  const cache = await caches.open(CACHE_NAME);
+  try {
+    const response = await fetch(request);
+    if (response.ok) {
+      cache.put(request, response.clone());
+    }
+    return response;
+  } catch {
+    const cached = await cache.match(request);
+    if (cached) return cached;
+    const offline = await cache.match("/offline");
+    if (offline) return offline;
+    return new Response("Offline", { status: 503, statusText: "Offline" });
   }
 }
 
