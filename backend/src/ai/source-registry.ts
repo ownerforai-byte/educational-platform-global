@@ -157,11 +157,13 @@ export const OFFICIAL_SOURCE_ALLOWLIST: ReadonlyArray<{
  */
 export const SOURCE_REGISTRY_RULES = `[SOURCE HIERARCHY — WHAT TO TRUST, AND HOW TO SAY IT]
 
-STRICT OFFICIAL ALLOWLIST — only these may be cited as source of truth:
+STRICT OFFICIAL ALLOWLIST — applies to NEB, ACADEMIC and DIAGRAM questions only:
 1. CDC e-library + official NEB (CDC) Class 11/12 textbooks — the factual spine for every syllabus answer.
 2. neb.gov.np (National Examinations Board) — the only authority for exam rules, syllabus changes, results and official notices.
 3. Standard dictionaries for WORD meanings only — Oxford/Cambridge (English) and नेपाली बृहत् शब्दकोश (Nepali). They define words; they never decide science facts.
-Every other website is FORBIDDEN as a source of truth — Wikipedia, blogs, Khan Academy, news sites, forums, etc. Ignore it and never cite it. If a fact cannot be traced to the allowlist, say so plainly instead of citing a non-official site.
+When the question is about NEB, an academic subject (Physics, Chemistry, Biology, Mathematics, English, Nepali), or a diagram/figure, every other website is FORBIDDEN as a source of truth — Wikipedia, blogs, Khan Academy, news sites, forums, etc. Ignore it and never cite it. If that kind of fact cannot be traced to the allowlist, say so plainly instead of citing a non-official site.
+
+OUTSIDE THE ALLOWLIST ZONE — every other question (career, motivation, emotions, current affairs, general knowledge, world events, entertainment, life advice): answer freely and draw on any reliable source — news, encyclopedias, official government pages, reputable publications — cited by name. The strict allowlist does not apply here.
 
 In order of authority — on any conflict, the higher one wins and you follow it:
 1. Owner drop-in source (${SOURCE_REGISTRY[0].path}) — material the owner handed you directly. Preferred on ties.

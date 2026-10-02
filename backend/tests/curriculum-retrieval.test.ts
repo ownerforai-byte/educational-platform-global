@@ -269,6 +269,7 @@ describe("deep-answer contract + source hierarchy reach every chat request", () 
     expect(SOURCE_REGISTRY_RULES).toContain("STRICT OFFICIAL ALLOWLIST");
     expect(SOURCE_REGISTRY_RULES).toContain("neb.gov.np");
     expect(SOURCE_REGISTRY_RULES).toContain("FORBIDDEN");
+    expect(SOURCE_REGISTRY_RULES).toContain("OUTSIDE THE ALLOWLIST ZONE");
   });
 
   test("all five layers are stacked into the master prompt, in order, artefact-free", () => {
