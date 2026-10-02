@@ -63,6 +63,7 @@ logs/
 # ── agent / editor tooling state (local only, never shared) ─────────────────
 .agnes/
 .agnes-lost-files.txt
+.agnes-work-tsc.txt
 .qwen/
 .freebuff/
 .claude/settings.local.json
