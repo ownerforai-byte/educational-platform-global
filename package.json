@@ -3,6 +3,26 @@
   "version": "1.0.0",
   "private": true,
   "type": "module",
+  "description": "Ravikishan's Platform — an open NEB Class 11/12 study platform: an AI tutor (Veer) grounded in real curriculum + live web + drawn figures, plus notes, labs, quizzes and PYQs for Nepali +2 students.",
+  "author": {
+    "name": "ownerforai",
+    "email": "ownerforai@gmail.com"
+  },
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ownerforai-byte/educational-platform-global.git"
+  },
+  "homepage": "https://github.com/ownerforai-byte/educational-platform-global",
+  "keywords": [
+    "neb",
+    "education",
+    "study-platform",
+    "ai-tutor",
+    "class-11",
+    "class-12",
+    "nepal"
+  ],
   "workspaces": [
     "backend"
   ],

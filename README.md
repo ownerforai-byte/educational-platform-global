@@ -5,6 +5,12 @@
 -->
 # Educational Platform — Split Architecture
 
+## Who this helps & why it matters
+
+**Ravikishan's Platform** is an open study platform for **NEB Class 11 & 12 (Nepali +2) students** — a free, offline-capable PWA covering Physics, Chemistry, Biology, Mathematics, English and Nepali. Its centerpiece is **Veer**, an AI tutor that answers doubts grounded in the real NEB syllabus and ingested textbook content, cross-checked against live web sources, with streamed answers and AI-drawn figures — so a student with a phone and a signal can get the depth of a personal teacher.
+
+This is the ecosystem role it plays: **curriculum-aligned, exam-grade study infrastructure for Nepali +2 students**, maintained as a single public repo with an agentic 48-branch workflow, 300+ backend tests, a content pipeline (scrape → transform → load), and a full AI pipeline (provider chain, truncation repair, figure generation with a browser-side free fallback).
+
 ## Overview
 
 This repository has been migrated from a monolithic Next.js application to a clean split architecture:
@@ -73,7 +79,7 @@ npm run check:schema              # strict Zod gate: corpus + built manifests
 In development the backend boots without configuration (DB-backed routes fall back to an
 in-memory mock store). **In production it refuses to start** unless `SUPABASE_URL` and
 `SUPABASE_SERVICE_ROLE_KEY` are set — no silent mock-data fallback. AI keys
-(`AGNES_API_KEY`, `GEMINI_API_KEY`) also go in `backend/.env` only —
+(`AGNES_API_KEY`) also go in `backend/.env` only —
 never `NEXT_PUBLIC_*`. See `.env.example` for the full list.
 
 ## Environment Variables
@@ -97,8 +103,7 @@ never `NEXT_PUBLIC_*`. See `.env.example` for the full list.
 | `SUPABASE_ANON_KEY` | Secret | Supabase anon key |
 | `SUPABASE_SERVICE_ROLE_KEY` | Secret | Supabase service role |
 | `DATABASE_URL` | Secret | PostgreSQL connection |
-| `GEMINI_API_KEY` | Secret | Google Gemini AI |
-| `AGNES_API_KEY` | Secret | Agnes AI (answers first in the chain) |
+| `AGNES_API_KEY` | Secret | Agnes AI — the sole LLM provider (answers first in the chain) |
 | `AI_PROVIDER` | Secret | Default AI provider |
 | `AI_DEFAULT_PROVIDER` | Secret | Default AI provider |
 | `FRONTEND_URL` | Secret | Allowed CORS origin (exact allowlist in production) |
