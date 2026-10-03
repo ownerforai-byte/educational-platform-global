@@ -1,12 +1,16 @@
 import { cn } from "@/lib/utils";
 import { renderNoteHtml } from "@/lib/content/pipeline";
 import { registerVeerArtifact } from "@/components/content/veer-artifact";
+import { registerEduVisualInteractive } from "@/components/content/edu-visual";
 
 // The pipeline can emit a <veer-artifact> mount point for a ```run fence; this
 // renderer is the one the chat (and every note surface) puts on screen, so it
 // registers the runner too. A no-op during SSR — without it the element renders
 // as an unknown tag and the artefact is silently invisible.
 registerVeerArtifact();
+// Automatically activate hover & click inspection interfaces for all SVG diagram
+// labels across every MathMarkdown surface (chat, notes, lessons, lab).
+registerEduVisualInteractive();
 
 type MathMarkdownProps = {
   content: string;

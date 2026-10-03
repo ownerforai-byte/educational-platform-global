@@ -8,13 +8,13 @@ type Streak = {
   y0: number;
   dirX: number;
   dirY: number;
-  speed: number; // px/sec along the path
-  tail: number; // px length of the visible trail
-  baseR: number; // base head radius (grows as it "comes near")
+  speed: number; // px/sec along the path (fast — a quick deep flash)
+  tail: number; // px length of the thin visible trail
+  baseR: number; // head radius (kept small/thin)
   exitDist: number; // distance until it leaves the screen
   traveled: number;
-  flashSpeed: number; // Hz-ish phase speed for the green flash
-  phase: number;
+  life: number; // seconds the flash lasts, then it fades out on its own
+  age: number;
 };
 
 type StaticStar = {
@@ -28,21 +28,6 @@ type StaticStar = {
 const STATIC_STAR_DENSITY = 0.000016; // a quiet, sparse sky
 const MAX_STATIC_STARS = 64;
 const MAX_STREAKS = 3; // at most a few comets on screen at once
-
-/* ── The streak is a soft white: deep/blur at the far end in dark
-   violet/charcoal (#1f1924) and "clear/flash" at the near end in white.
-   Depth t (0→1) lerps between them, so it reads as arriving from deep
-   inside and clearing up to a bright white streak near. */
-const FAR = { r: 31, g: 25, b: 36 }; // #1f1924
-const NEAR = { r: 255, g: 255, b: 255 }; // white
-
-const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
-const smoothstep = (t: number) => {
-  const x = Math.max(0, Math.min(1, t));
-  return x * x * (3 - 2 * x);
-};
-const rgba = (r: number, g: number, b: number, a: number) =>
-  `rgba(${r | 0}, ${g | 0}, ${b | 0}, ${a})`;
 
 /* "Natural" but LARGE gap: always at least 40s, with longer random waits
    on top — e.g. 40s then 60s then 120s then 45s … */
@@ -113,43 +98,37 @@ export function StarField() {
     };
 
     const spawnStreak = () => {
-      // Start "deep inside" / one side: the upper-left region (may be off-screen).
-      const x0 = width * (-0.08 + Math.random() * 0.42);
-      const y0 = height * (-0.08 + Math.random() * 0.42);
+      // A short "deep inside" flash: a tiny, thin, fast diagonal streak that
+      // happens far away (dim + brief), not a screen-crossing comet.
+      // Direction is limited to true diagonals (both |dx| and |dy| matter),
+      // picking one of the four diagonal quadrants at random.
+      const quadrant = Math.random() < 0.5 ? 1 : -1; // + / - X
+      const qY = Math.random() < 0.5 ? 1 : -1; // + / - Y
+      // Diagonal: keep the angle within ~30°–60° of the X axis so it always
+      // reads as a slant, never horizontal or vertical.
+      const diag = (30 + Math.random() * 30) * (Math.PI / 180); // 30–60°
+      const dx = Math.cos(diag) * quadrant;
+      const dy = Math.sin(diag) * qY;
 
-      // End point: 85% of the time it ends past the mid of the bottom base
-      // AND past the mid of the right perpendicular (bottom-right base).
-      let xEnd: number;
-      let yEnd: number;
-      if (Math.random() < 0.85) {
-        xEnd = width * (0.55 + Math.random() * 0.55); // 55%–110%
-        yEnd = height * (0.55 + Math.random() * 0.55); // 55%–110%
-      } else {
-        // Rare chance: somewhere else.
-        xEnd = width * Math.random();
-        yEnd = height * Math.random();
-      }
+      const x0 = width * (0.15 + Math.random() * 0.7);
+      const y0 = height * (0.15 + Math.random() * 0.7);
 
-      let dx = xEnd - x0;
-      let dy = yEnd - y0;
-      const mag = Math.hypot(dx, dy) || 1;
-      dx /= mag;
-      dy /= mag;
-
+      // Short travel (a quick dart), not a full traverse of the screen.
       const total = exitDist(x0, y0, dx, dy);
+      const life = 0.5 + Math.random() * 0.6; // brief flash, then fade
 
       streaks.push({
         x0,
         y0,
         dirX: dx,
         dirY: dy,
-        speed: 130 + Math.random() * 130, // long, slow drift — a lazy comet
-        tail: 320 + Math.random() * 180, // a long line trailing behind
-        baseR: 1.4 + Math.random() * 1.2,
+        speed: 900 + Math.random() * 700, // fast — a quick deep flash
+        tail: 70 + Math.random() * 70, // a short, thin dash
+        baseR: 0.7 + Math.random() * 0.5, // keep the head small/thin
         exitDist: total,
         traveled: 0,
-        flashSpeed: 2.2 + Math.random() * 2.2,
-        phase: Math.random() * Math.PI * 2,
+        life,
+        age: 0,
       });
     };
 
@@ -210,59 +189,43 @@ export function StarField() {
       }
 
       ctx.globalCompositeOperation = "lighter"; // glows sum up on the dark sky
-      streaks = streaks.filter((st) => st.traveled < st.exitDist);
+      streaks = streaks.filter((st) => st.age < st.life && st.traveled < st.exitDist);
       for (const st of streaks) {
+        st.age += dt;
         st.traveled += st.speed * dt;
-        const t = Math.min(1, st.traveled / st.exitDist); // 0 (far) → 1 (near)
         const x = st.x0 + st.dirX * st.traveled;
         const y = st.y0 + st.dirY * st.traveled;
-        const k = smoothstep(t); // depth easing
 
-        // Color: dark-violet (far/blur) → spring-green (near/clear).
-        const r = lerp(FAR.r, NEAR.r, k);
-        const g = lerp(FAR.g, NEAR.g, k);
-        const b = lerp(FAR.b, NEAR.b, k);
+        // Brief fade-in/out envelope so it "happens far away": appears,
+        // darts diagonally, then disappears on its own (no screen traverse).
+        const p = Math.min(1, st.age / st.life);
+        const envelope = Math.sin(Math.PI * p); // 0 → 1 → 0
 
-        // "A little blur" when far, "clear" when near: the soft halo is wider
-        // and dimmer at the start, tighter and brighter at the end.
-        const blurR = st.baseR * (9 + (1 - k) * 10); // far → ~19x, near → 9x
-        const coreR = st.baseR * (0.5 + k * 1.1); // grows as it comes near
-
-        // Flash: a green pulse that ramps in as the comet gets near.
-        const flashEnv = 0.5 + 0.5 * Math.sin(now * st.flashSpeed + st.phase);
-        const flash = (0.15 + 0.85 * k) * flashEnv;
-        const headAlpha = Math.min(0.95, 0.25 + 0.5 * k + 0.35 * flash);
-
-        // Comet tail: a straight line back toward the deep/far end, fading
-        // from green (near the head) to dark violet (deep inside).
+        // Subtle blue-white streak, kept dim so it reads as "deep inside".
+        const light = "224, 232, 255";
+        const a = 0.5 * envelope; // peak brightness, still soft
         const tx = x - st.dirX * st.tail;
         const ty = y - st.dirY * st.tail;
         const grad = ctx.createLinearGradient(tx, ty, x, y);
-        grad.addColorStop(0, rgba(FAR.r, FAR.g, FAR.b, 0));
-        grad.addColorStop(0.55, rgba(lerp(FAR.r, NEAR.r, 0.3), lerp(FAR.g, NEAR.g, 0.3), lerp(FAR.b, NEAR.b, 0.3), 0.12));
-        grad.addColorStop(1, rgba(r, g, b, 0.5 * headAlpha + 0.25 * flash));
+        grad.addColorStop(0, `rgba(${light}, 0)`);
+        grad.addColorStop(0.7, `rgba(${light}, ${a * 0.5})`);
+        grad.addColorStop(1, `rgba(${light}, ${a})`);
         ctx.strokeStyle = grad;
-        ctx.lineWidth = 1.5 + k * 1.2;
+        ctx.lineWidth = 0.9; // thin line
         ctx.lineCap = "round";
         ctx.beginPath();
         ctx.moveTo(tx, ty);
         ctx.lineTo(x, y);
         ctx.stroke();
 
-        // Soft "blur" halo (wide when far).
-        const halo = ctx.createRadialGradient(x, y, 0, x, y, blurR);
-        halo.addColorStop(0, rgba(r, g, b, headAlpha * 0.55));
-        halo.addColorStop(0.35, rgba(r, g, b, headAlpha * 0.22));
-        halo.addColorStop(1, rgba(r, g, b, 0));
+        // A small, soft head glow at the leading tip.
+        const haloR = st.baseR * 4;
+        const halo = ctx.createRadialGradient(x, y, 0, x, y, haloR);
+        halo.addColorStop(0, `rgba(${light}, ${a * 0.6})`);
+        halo.addColorStop(1, `rgba(${light}, 0)`);
         ctx.fillStyle = halo;
         ctx.beginPath();
-        ctx.arc(x, y, blurR, 0, Math.PI * 2);
-        ctx.fill();
-
-        // Sharp clear core (the "clear" part when near).
-        ctx.fillStyle = rgba(r, g, b, headAlpha);
-        ctx.beginPath();
-        ctx.arc(x, y, coreR, 0, Math.PI * 2);
+        ctx.arc(x, y, haloR, 0, Math.PI * 2);
         ctx.fill();
       }
       ctx.globalCompositeOperation = "source-over";

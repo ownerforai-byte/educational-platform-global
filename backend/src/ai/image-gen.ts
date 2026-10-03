@@ -87,6 +87,9 @@ export async function generateVeerImage(
   const key = process.env.AGNES_API_KEY;
   const baseUrl = (process.env.AGNES_API_URL || "https://apihub.agnes-ai.com").replace(/\/v1\/?$/, "");
 
+  // Enforce textbook schematic format: eliminates random artistic hallucinations
+  const enrichedPrompt = `Educational science textbook diagram of ${clean}. Clear anatomical/physical labelling with leader lines, technical schematic style on crisp clean background, high-contrast, syllabus-accurate instructional figure, no artistic distortions.`;
+
   for (const model of IMAGE_MODELS) {
     try {
       const res = await fetch(`${baseUrl}/v1/images/generations`, {
@@ -95,7 +98,7 @@ export async function generateVeerImage(
           "Content-Type": "application/json",
           Authorization: `Bearer ${key}`,
         },
-        body: JSON.stringify({ model, prompt: clean, n: 1, size: IMAGE_SIZE }),
+        body: JSON.stringify({ model, prompt: enrichedPrompt, n: 1, size: IMAGE_SIZE }),
         signal: AbortSignal.timeout(IMAGE_GEN_TIMEOUT_MS),
       });
       if (!res.ok) {
@@ -306,13 +309,20 @@ function regexForFence(prompt: string): RegExp {
 // ── prompt instruction (appended to the professor context when enabled) ─────
 
 export const FIGURE_TOOL_INSTRUCTION = [
-  `[FIGURE TOOL — LIVE FIGURE DRAWING]`,
-  `You can draw ONE figure into the answer when a NEW drawn picture teaches more than words (a ray or apparatus diagram, a labelled structure, a schematic) and the attached REAL DIAGRAM FILES do not already show that exact concept.`,
-  `To draw it, place exactly this fenced block at the VERY END of your answer — after all your text, immediately before the "Explore further" links when you include them:`,
+  `[FIGURE TOOL — LIVE FIGURE DRAWING & INTERACTIVE LABELLING]`,
+  `MANDATORY SEARCH & INTERACTIVE LABELLING (OWNER LAW 2026-10-03):`,
+  `Never produce random, artistic, or unlabelled images — random images are strictly useless for academic study.`,
+  `When an academic concept needs a visual (apparatus, anatomy, ray/circuit diagram, cycle, curve, geometry):`,
+  `1. SEARCH MANDATORY FROM GOOGLE / ATTACHED DIAGRAMS: Consult Google Images and attached reference diagram files to get the exact idea, structure, orientation, and official textbook labels.`,
+  `2. DRAW THE DIAGRAM WITH COMPLETE LABELLING: Prefer drawing the diagram directly using the \`\`\`svg fence on a 900x640 canvas so lines and text are razor-sharp. Run leader lines from every part to legible text labels.`,
+  `3. INTERACTIVE LABELS: Wrap every labelled part in its own <g> tag with an informative <title>:`,
+  `   <g><title>Part Name | Mechanism & Function | Exam Significance</title>...shapes, leader line, text label...</g>`,
+  `   The platform automatically provides an interactive interface opening on hover and click for every single label!`,
+  `4. If an image generation brief is emitted, place exactly this fenced block at the VERY END of your answer (after all text):`,
   `\`\`\`${FIGURE_FENCE}`,
-  `one short English line (max 120 characters) describing exactly what to draw: objects, labels, arrows, scale hints.`,
+  `one short English line (max 120 characters) describing a technical textbook schematic with clear labels and leader lines.`,
   `\`\`\``,
-  `Figure rules: at most ONE figure per answer; write the instruction as a plain drawing brief, not a sentence of your answer; prefer the attached real diagram files when they cover the concept (embed those with normal markdown instead of drawing); never invent image URLs yourself — the platform draws the figure, shows it live, and the conversation continues.`,
+  `Figure rules: at most ONE figure per answer; write the instruction as a plain technical drawing brief, never random art; prefer the attached real diagram files and vector SVG drawings.`,
 ].join("\n");
 
 /**

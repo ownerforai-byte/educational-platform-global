@@ -924,30 +924,169 @@ code, kbd, samp, pre {
      click opens it — the picture explains itself while the answer streams. */
   .edu-visual__part {
     cursor: pointer;
-    transition: filter 120ms ease;
+    transition: filter 160ms ease, transform 160ms ease;
   }
   .edu-visual__part:hover,
   .edu-visual__part:focus-visible {
-    filter: drop-shadow(0 0 3px rgb(59 130 246 / 0.55));
+    filter: drop-shadow(0 0 4px rgb(59 130 246 / 0.85)) brightness(1.08);
     outline: none;
   }
+  .edu-visual__part--active {
+    filter: drop-shadow(0 0 6px rgb(99 102 241 / 0.95)) drop-shadow(0 0 10px rgb(59 130 246 / 0.7)) !important;
+  }
   .edu-visual__tip {
-    position: absolute;
-    z-index: 40;
-    transform: translate(-50%, calc(-100% - 10px));
+    position: fixed;
+    z-index: 9999;
     max-width: 22rem;
-    padding: 0.5rem 0.7rem;
-    border: 1px solid rgb(59 130 246 / 0.35);
-    border-radius: 0.5rem;
-    background: rgb(15 23 42 / 0.95);
+    padding: 0.6rem 0.85rem;
+    border: 1px solid rgb(59 130 246 / 0.45);
+    border-radius: 0.625rem;
+    background: rgba(15, 23, 42, 0.96);
+    backdrop-filter: blur(8px);
     color: rgb(241 245 249);
-    font-size: 0.78rem;
-    line-height: 1.4;
-    box-shadow: 0 8px 24px rgb(0 0 0 / 0.3);
+    font-size: 0.8rem;
+    line-height: 1.45;
+    box-shadow: 0 12px 32px -4px rgba(0, 0, 0, 0.5), 0 0 0 1px rgba(255, 255, 255, 0.1);
     pointer-events: none;
+    animation: eduVisualTipFade 120ms ease-out;
+  }
+  @keyframes eduVisualTipFade {
+    from { opacity: 0; transform: translate(-50%, -95%); }
+    to { opacity: 1; transform: translate(-50%, -100%); }
   }
   @media (max-width: 640px) {
-    .edu-visual__tip { max-width: 80vw; font-size: 0.74rem; }
+    .edu-visual__tip { max-width: 82vw; font-size: 0.75rem; }
+  }
+
+  /* Interactive Part Inspection Modal / Interface */
+  .edu-visual__modal-backdrop {
+    position: fixed;
+    inset: 0;
+    z-index: 99999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 1rem;
+    background: rgba(15, 23, 42, 0.65);
+    backdrop-filter: blur(6px);
+    animation: eduBackdropFade 160ms ease-out;
+  }
+  @keyframes eduBackdropFade {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .edu-visual__modal-card {
+    position: relative;
+    width: 100%;
+    max-width: 32rem;
+    border-radius: 1rem;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--card));
+    color: hsl(var(--card-foreground));
+    box-shadow: 0 20px 48px -8px rgba(0, 0, 0, 0.35);
+    padding: 1.25rem 1.5rem;
+    animation: eduCardScale 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+  @keyframes eduCardScale {
+    from { opacity: 0; transform: scale(0.96) translateY(6px); }
+    to { opacity: 1; transform: scale(1) translateY(0); }
+  }
+  .edu-visual__modal-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+  }
+  .edu-visual__modal-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.35rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 9999px;
+    background: rgb(59 130 246 / 0.12);
+    border: 1px solid rgb(59 130 246 / 0.3);
+    font-size: 0.72rem;
+    font-weight: 600;
+    color: rgb(59 130 246);
+  }
+  .edu-visual__modal-close {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.75rem;
+    height: 1.75rem;
+    border-radius: 0.375rem;
+    border: 1px solid hsl(var(--border));
+    background: transparent;
+    color: hsl(var(--muted-foreground));
+    cursor: pointer;
+    font-size: 0.85rem;
+    transition: background 120ms ease, color 120ms ease;
+  }
+  .edu-visual__modal-close:hover {
+    background: hsl(var(--accent));
+    color: hsl(var(--accent-foreground));
+  }
+  .edu-visual__modal-title {
+    font-size: 1.15rem;
+    font-weight: 700;
+    margin: 0 0 0.85rem 0;
+    color: hsl(var(--foreground));
+    letter-spacing: -0.015em;
+  }
+  .edu-visual__modal-body {
+    display: flex;
+    flex-direction: column;
+    gap: 0.85rem;
+  }
+  .edu-visual__modal-section {
+    padding: 0.75rem 0.9rem;
+    border-radius: 0.625rem;
+    background: hsl(var(--muted) / 0.45);
+    border: 1px solid hsl(var(--border) / 0.6);
+  }
+  .edu-visual__modal-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: hsl(var(--muted-foreground));
+    margin-bottom: 0.25rem;
+  }
+  .edu-visual__modal-text {
+    font-size: 0.88rem;
+    line-height: 1.5;
+    color: hsl(var(--foreground));
+  }
+  .edu-visual__modal-footer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 1.25rem;
+    padding-top: 0.75rem;
+    border-top: 1px solid hsl(var(--border));
+  }
+  .edu-visual__modal-nav {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 0.78rem;
+    font-weight: 600;
+    padding: 0.4rem 0.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid hsl(var(--border));
+    background: hsl(var(--background));
+    color: hsl(var(--foreground));
+    cursor: pointer;
+    transition: background 120ms ease, border-color 120ms ease;
+  }
+  .edu-visual__modal-nav:hover:not(:disabled) {
+    background: hsl(var(--accent));
+    border-color: rgb(59 130 246 / 0.4);
+  }
+  .edu-visual__modal-nav:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
   }
 
   .prose details {
