@@ -149,7 +149,7 @@ describe("ProfilePage", () => {
     expect(screen.getByText("harindarsah98172@gmail.com")).toBeInTheDocument();
     expect(screen.getByText("HS")).toBeInTheDocument(); // initials
     expect(screen.getByText("Owner")).toBeInTheDocument(); // role badge
-    expect(screen.getByText("Premium")).toBeInTheDocument();
+    expect(screen.getByText("PRO")).toBeInTheDocument();
     expect(screen.getByText(/42/)).toBeInTheDocument(); // credits shown
     // Owner console shortcut present for allowlisted owners.
     expect(screen.getByRole("link", { name: /owner console/i })).toHaveAttribute(
@@ -164,8 +164,8 @@ describe("ProfilePage", () => {
     fireEvent.click(screen.getByRole("tab", { name: /account/i }));
 
     expect(screen.getByText("Full name")).toBeInTheDocument();
-    // "Premium" appears in the header badge AND the account row — both present.
-    expect(screen.getAllByText("Premium").length).toBeGreaterThanOrEqual(2);
+    // "PRO" appears in the header badge AND the account row — both present.
+    expect(screen.getAllByText(/^PRO/).length).toBeGreaterThanOrEqual(2);
     expect(
       screen.getByRole("link", { name: /full progress page/i })
     ).toHaveAttribute("href", "/progress");

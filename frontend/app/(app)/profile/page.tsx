@@ -289,7 +289,7 @@ export default function ProfilePage() {
                   {user.premiumStatus && (
                     <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-md border bg-violet-500/15 border-violet-500/30 text-violet-500">
                       <Crown className="h-3 w-3" />
-                      Premium
+                      PRO
                     </span>
                   )}
                   <span className="inline-flex items-center gap-1 text-[10px] font-bold px-2 py-0.5 rounded-md border bg-primary/10 border-primary/20 text-primary">
@@ -714,9 +714,9 @@ export default function ProfilePage() {
                 </span>
               </div>
               <div className="flex items-center justify-between gap-4 py-1.5 border-b">
-                <span className="text-muted-foreground">Premium</span>
-                <span className="font-medium">
-                  {user.premiumStatus ? "Premium" : "Not active"}
+                <span className="text-muted-foreground">Plan</span>
+                <span className={`font-semibold ${user.premiumStatus ? "text-violet-500" : "text-muted-foreground"}`}>
+                  {user.premiumStatus ? "PRO — Active" : "Free tier"}
                 </span>
               </div>
               <div className="flex items-center justify-between gap-4 py-1.5">

@@ -227,7 +227,7 @@ export default function CreditsPage() {
           My Credits
         </h1>
         <p className="text-sm text-muted-foreground">
-          Track your credits and premium status.
+          Track your credits and PRO plan status.
         </p>
       </div>
 
@@ -257,7 +257,10 @@ export default function CreditsPage() {
             </div>
             <div>
               <p className="text-sm text-muted-foreground">Credits Limit</p>
-              <p className="text-3xl font-bold">{credits.creditsLimit}</p>
+              <p className="text-3xl font-bold">{isPremium ? "Unlimited" : credits.creditsLimit}</p>
+              {isPremium && (
+                <p className="text-[11px] font-semibold text-violet-500">PRO — no daily cap</p>
+              )}
             </div>
           </CardContent>
         </Card>
@@ -268,9 +271,9 @@ export default function CreditsPage() {
               <Crown className="h-6 w-6 text-purple-600" />
             </div>
             <div>
-              <p className="text-sm text-muted-foreground">Premium Status</p>
+              <p className="text-sm text-muted-foreground">Account Plan</p>
               <p className={`text-xl font-bold ${isPremium ? "text-green-600" : "text-orange-600"}`}>
-                {isPremium ? "Active" : "Free"}
+                {isPremium ? "PRO · Active" : "Free"}
               </p>
             </div>
           </CardContent>
