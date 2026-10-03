@@ -1,0 +1,116 @@
+{
+  "generator": "visuals-py@0.1.0",
+  "count": 10,
+  "assets": [
+    {
+      "id": "ph-surface-wave",
+      "kind": "surface3d",
+      "title": "Damped Wave Surface",
+      "subject": "physics",
+      "unit": "Unit: Waves",
+      "description": "A damped radial travelling wave superimposed on a grid sine field.",
+      "file": "ph-surface-wave.json",
+      "frames": 0,
+      "meshes": 1
+    },
+    {
+      "id": "math-surface-paraboloid",
+      "kind": "surface3d",
+      "title": "Paraboloid of Revolution",
+      "subject": "mathematics",
+      "unit": "Unit: 3D Geometry",
+      "description": "The paraboloid y = 0.12(x\u00b2+z\u00b2)\u22123 with a focal-depth readout.",
+      "file": "math-surface-paraboloid.json",
+      "frames": 0,
+      "meshes": 1
+    },
+    {
+      "id": "bio-surface-terrain",
+      "kind": "surface3d",
+      "title": "Gaussian Terrain (Height-Field)",
+      "subject": "biology",
+      "unit": "Unit: Cell Biology",
+      "description": "Two Gaussian peaks combined \u2014 a height-field demo for biology terrain / cell-surface work.",
+      "file": "bio-surface-terrain.json",
+      "frames": 0,
+      "meshes": 1
+    },
+    {
+      "id": "ph-sim-projectile",
+      "kind": "sim",
+      "title": "Projectile Motion",
+      "subject": "physics",
+      "unit": "Unit: Kinematics",
+      "description": "Parabolic trajectory with live velocity vector; v0=18 m/s, \u03b8=55\u00b0, g=9.81 m/s\u00b2.",
+      "file": "ph-sim-projectile.json",
+      "frames": 240,
+      "meshes": 0
+    },
+    {
+      "id": "ph-sim-pendulum",
+      "kind": "sim",
+      "title": "Nonlinear Pendulum",
+      "subject": "physics",
+      "unit": "Unit: Oscillations",
+      "description": "Full (sin\u03b8) pendulum, L=1 m, \u03b80=60\u00b0. Period readout uses the small-angle value.",
+      "file": "ph-sim-pendulum.json",
+      "frames": 150,
+      "meshes": 0
+    },
+    {
+      "id": "ph-sim-shm",
+      "kind": "sim",
+      "title": "Simple Harmonic Motion",
+      "subject": "physics",
+      "unit": "Unit: Oscillations",
+      "description": "x = A\u00b7cos(\u03c9t) with velocity vector; A=4, \u03c9=2 rad/s.",
+      "file": "ph-sim-shm.json",
+      "frames": 120,
+      "meshes": 0
+    },
+    {
+      "id": "math-motion-phaser",
+      "kind": "motion",
+      "title": "Rotating Phasors (Vector Addition)",
+      "subject": "mathematics",
+      "unit": "Unit: Vectors",
+      "description": "Two counter-rotating phasors with a live resultant \u2014 the motion-graphic behind AC / superposition.",
+      "file": "math-motion-phaser.json",
+      "frames": 120,
+      "meshes": 0
+    },
+    {
+      "id": "ph-motion-interference",
+      "kind": "motion",
+      "title": "Wave Interference (Two Sources)",
+      "subject": "physics",
+      "unit": "Unit: Wave Optics",
+      "description": "Huygens wavefronts from two point sources; where rings cross, constructive interference.",
+      "file": "ph-motion-interference.json",
+      "frames": 60,
+      "meshes": 0
+    },
+    {
+      "id": "math-motion-lissajous",
+      "kind": "motion",
+      "title": "Lissajous Figure (3:2)",
+      "subject": "mathematics",
+      "unit": "Unit: Oscillations",
+      "description": "x = 4\u00b7sin(3t), y = 4\u00b7sin(2t) traced with a moving point \u2014 frequency-ratio pattern.",
+      "file": "math-motion-lissajous.json",
+      "frames": 240,
+      "meshes": 0
+    },
+    {
+      "id": "ph-motion-emwave",
+      "kind": "motion",
+      "title": "Transverse EM Wave (E \u22a5 B)",
+      "subject": "physics",
+      "unit": "Unit: EM Waves",
+      "description": "Electric and magnetic fields oscillating in phase with each other, perpendicular to propagation.",
+      "file": "ph-motion-emwave.json",
+      "frames": 100,
+      "meshes": 0
+    }
+  ]
+}

@@ -49,7 +49,10 @@
     "audit:mindmap": "node scripts/enrichment/mindmap-validate.mjs",
     "audit:visuals": "cd frontend && node ../node_modules/tsx/dist/cli.mjs scripts/audit-visuals.ts",
     "mindmaps:rebuild": "node scripts/enrichment/rebuild-legacy-mindmaps.mjs",
-    "mindmaps:check": "node scripts/enrichment/rebuild-legacy-mindmaps.mjs --check"
+    "mindmaps:check": "node scripts/enrichment/rebuild-legacy-mindmaps.mjs --check",
+    "visuals:py": "python visuals-py/run.py generate",
+    "visuals:py:images": "python visuals-py/run.py generate --images",
+    "visuals:py:check": "python visuals-py/run.py check"
   },
   "devDependencies": {
     "tsx": "^4.23.15"

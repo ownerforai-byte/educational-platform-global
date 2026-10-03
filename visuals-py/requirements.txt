@@ -1,0 +1,9 @@
+# Core — required for the JSON asset pipeline (3D / simulation / motion-graphics)
+numpy>=1.26
+
+# Optional — only needed for `python -m visuals_py generate --images`
+# (static matplotlib PNGs and, if Pillow is present, GIFs)
+matplotlib>=3.8
+pillow>=10.0
+# Optional — short GIF export in images.make_images (falls back to PNG without it)
+imageio>=2.34
