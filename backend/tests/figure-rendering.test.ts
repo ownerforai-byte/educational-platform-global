@@ -86,8 +86,9 @@ describe("academic figures — drawn, not rough, parts hoverable", () => {
     expect(parts.length).toBeGreaterThan(5);
     for (const part of parts) {
       expect(part.name.length).toBeGreaterThan(0);
+      // A real explanation, not just the label (the legend keeps the name and
+      // the explanation apart — see the hover-legend tests in academic-figures).
       expect(part.detail.length).toBeGreaterThan(part.name.length + 5);
-      expect(part.detail).toContain(" — ");
     }
   });
 
@@ -104,6 +105,9 @@ describe("academic figures — drawn, not rough, parts hoverable", () => {
 
     expect(extractSvgFigure(svg)).not.toBeNull();
     expect(extractSvgFigure(rofem)).not.toBeNull();
+    // Both fences carry their caption through; the rofem alias is a real
+    // platform fence, not source code.
+    expect(extractSvgFigure(rofem)?.caption).toBe("A labelled diagram");
 
     // Both fences carry the SAME hover/explainer contract: every labelled part is
     // wrapped in its own <g><title>NAME — detail</title>.
@@ -111,12 +115,19 @@ describe("academic figures — drawn, not rough, parts hoverable", () => {
     expect(figureParts(rofem).length).toBe(figureParts(figure).length);
   });
 
-  it("never renders a figure as a broken 404 link or a rough image", () => {
-    // A rough image (no labelled parts, no title) is not academic.
+  it("never renders a figure as a broken 404 link or a rough image", async () => {
+    // A rough image (no labelled part, no hover title) is not academic: the
+    // writer asks for a repair once and, when the second reply is just as bare,
+    // reports the miss instead of shipping a rough picture as a labelled figure.
     const rough = `<svg viewBox="0 0 900 640">
       <circle cx="100" cy="100" r="40" fill="#93c5fd" fill-opacity="0.3"/>
     </svg>`;
-    expect(extractSvgFigure(rough)).toBeNull();
+    const chat = async (_messages: AIChatMessage[]) => rough;
+    const drawn = await drawAcademicFigure("labelled diagram of the human heart", { chat });
+
+    expect(drawn.svg).toBeUndefined();
+    expect(drawn.parts).toEqual([]);
+    expect(drawn.reason).toBeTruthy();
 
     // A broken link is not a figure the student can see.
     const broken = `Check the diagram at https://example.com/404-does-not-exist.svg`;
@@ -154,7 +165,8 @@ describe("academic figures — drawn, not rough, parts hoverable", () => {
     const large = `<svg viewBox="0 0 900 640">
       <g><title>Right Atrium — receives deoxygenated blood from the body via the vena cavae</title><circle cx="100" cy="100" r="40" fill="#93c5fd"/></g>
     </svg>`;
-    expect(extractSvgFigure(large)?.svg).toMatch(/viewBox="0 0 800 600"/);
+    // The platform's canvas law is 900×640 — big enough for a full labelled figure.
+    expect(extractSvgFigure(large)?.svg).toMatch(/viewBox="0 0 900 640"/);
   });
 
   it("the figure subject guide names all six subjects", () => {
@@ -172,18 +184,27 @@ describe("academic figures — drawn, not rough, parts hoverable", () => {
     expect(FIGURE_ARCHETYPES.timeline.label).toBe("Timeline");
   });
 
-  it("figures never shrink to fit — one complete figure per surface", () => {
+  it("figures never shrink to fit — every labelled part survives, nothing is merged away", () => {
     const figure = `<svg viewBox="0 0 900 640">
       <g><title>Right Atrium — receives deoxygenated blood from the body via the vena cavae and empties into the right ventricle through the tricuspid valve.</title><circle cx="100" cy="100" r="40" fill="#93c5fd" fill-opacity="0.3" stroke="#0f172a" stroke-width="2"/></g>
       <g><title>Right Ventricle — pumps deoxygenated blood into the pulmonary trunk via the pulmonic valve and receives it from the right atrium.</title><circle cx="200" cy="200" r="30" fill="#93c5fd" fill-opacity="0.3" stroke="#0f172a" stroke-width="2"/></g>
       <g><title>Left Atrium — receives oxygenated blood from the pulmonary veins and empties into the left ventricle through the mitral valve.</title><circle cx="300" cy="300" r="30" fill="#93c5fd" fill-opacity="0.3" stroke="#0f172a" stroke-width="2"/></g>
       <g><title>Left Ventricle — pumps oxygenated blood into the aorta via the aortic valve and receives it from the left atrium.</title><circle cx="400" cy="400" r="40" fill="#93c5fd" fill-opacity="0.3" stroke="#0f172a" stroke-width="2"/></g>
     </svg>`;
-    expect(figureParts(figure).length).toBeGreaterThan(3);
-    const double = `<svg viewBox="0 0 900 640">
-      ${figure.replace(/^<svg/i,'<g>').replace(/<\/svg>$/,'</g></svg>')}
-    </svg>`;
-    expect(figureParts(double).length).toBeGreaterThanOrEqual(figureParts(figure).length * 2);
+    const parts = figureParts(figure);
+    expect(parts.length).toBe(4);
+
+    // Extraction keeps the drawing's own canvas and every one of its parts: a
+    // figure is never scaled down to fit and never loses a label on the way.
+    const drawn = extractSvgFigure(figure);
+    expect(drawn).not.toBeNull();
+    expect(drawn?.svg).toContain('viewBox="0 0 900 640"');
+    expect(figureParts(drawn?.svg ?? "").length).toBe(parts.length);
+
+    // The same drawing twice counts every part of both — parts are never merged
+    // or deduplicated; "one figure per surface" is enforced at extraction
+    // instead (see the gallery test below).
+    expect(figureParts(figure + figure).length).toBe(parts.length * 2);
   });
 
   it("draws the figure for free from the platform records (the tutor's svg brief)", () => {
@@ -195,7 +216,7 @@ describe("academic figures — drawn, not rough, parts hoverable", () => {
     expect(brief).toContain("labelled diagram of the human heart");
     expect(brief).toContain("LABELLED STRUCTURE");
     expect(brief).toContain(FIGURE_ARCHETYPES.labelled.must);
-    expect(brief).toContain("<svg viewBox=\"0 0 800 600\">");
+    expect(brief).toContain('<svg viewBox="0 0 900 640">');
     expect(brief).toContain("<g><title>");
     expect(brief).toContain("ONE-LINE name + what it does + how it links to / fits in the parts around it");
   });
@@ -249,8 +270,12 @@ describe("academic figures — drawn, not rough, parts hoverable", () => {
 
     const lifecycleParts = figureParts(lifecycle);
     expect(lifecycleParts.length).toBeGreaterThan(1);
-    expect(lifecycleParts[0].detail).toContain("2n");
-    expect(lifecycleParts[1].detail).toContain("n");
+    // The ploidy the syllabus marks travels on the part's own label…
+    expect(lifecycleParts[0].name).toContain("2n");
+    expect(lifecycleParts[1].name).toContain("(n)");
+    // …and every part still carries a real teaching line in its legend entry.
+    expect(lifecycleParts[0].detail).toContain("mitosis");
+    expect(lifecycleParts[1].detail).toContain("meiosis");
   });
 
   it("figures on the note page never leave any part unlabelled", () => {
@@ -310,9 +335,7 @@ describe("academic figures — drawn, not rough, parts hoverable", () => {
     // figure per surface, never a gallery of figures side by side.
     const two = `${figure}${figure}`;
     expect(figureParts(two).length).toBe(figureParts(figure).length * 2);
-    expect(extractSvgFigure(two)).toBeNull();
-    // Every part in a single figure is wrapped in its own <g><title>NAME — detail</title>.
-    // Two figures concatenated: NOT a single figure — the platform renders ONE
+    // Concatenated drawings are not ONE figure: the platform renders a single
     // figure per surface, never a gallery of figures side by side.
     expect(extractSvgFigure(two)).toBeNull();
   });

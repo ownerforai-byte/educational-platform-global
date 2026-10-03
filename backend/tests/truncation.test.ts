@@ -119,7 +119,7 @@ describe("completeAnswer — repair order and bounds", () => {
   /** A reply long enough to clear the length floor, with the interesting text
    *  LAST so the cut/seam lands where the assertion can see it. */
   const longEnough = (tail: string) =>
-    `${"The dielectric blocks direct current while allowing the plates to build charge. ".repeat(14)} ${tail}`.trim();
+    `${"The dielectric blocks direct current while allowing the plates to build charge. ".repeat(45)} ${tail}`.trim();
 
   test("a complete answer is passed through untouched — no wasted call", async () => {
     const chat = vi.fn(async () => longEnough("A capacitor stores charge. Exam trap: RC, not R/C."));

@@ -130,6 +130,11 @@ describe("streamAnswerToStudent", () => {
     const channel = openSseChannel(res);
     const { service } = fakeService([
       { deltas: ["The ", "cell ", "is ", "alive."], finishReason: "stop" },
+      // The answer is below the hardcoded 250-word floor, so the pipeline asks
+      // the provider once more for substance; the fake has none to give, so the
+      // stream ends without inventing content.
+      { deltas: [], finishReason: "stop" },
+      { deltas: [], finishReason: "stop" },
     ]);
     const state = newState();
 
@@ -165,9 +170,13 @@ describe("streamAnswerToStudent", () => {
   it("continues a truncated answer on the SAME stream and says so", async () => {
     const { res, written } = fakeRes();
     const channel = openSseChannel(res);
+    // The continuation must also clear the hardcoded 250-word reply floor, so
+    // the repair stays the only extra call this stream makes.
+    const substance =
+      "It is the basic structural and functional unit of every living organism, carrying out nutrition, respiration, excretion and reproduction inside its membrane. ".repeat(25);
     const { service, calls, seen } = fakeService([
       { deltas: ["The cell is "], finishReason: "length" },
-      { deltas: ["a ", "unit ", "of life."], finishReason: "stop" },
+      { deltas: ["a ", "unit ", "of life. ", substance], finishReason: "stop" },
     ]);
     const state = newState();
 
@@ -192,7 +201,8 @@ describe("streamAnswerToStudent", () => {
       .filter((e) => typeof e.content === "string")
       .map((e) => e.content as string)
       .join("");
-    expect(text).toBe("The cell is a unit of life.");
+    expect(text.startsWith("The cell is a unit of life.")).toBe(true);
+    expect(text).toContain("basic structural and functional unit");
     expect(sent[sent.length - 1]).toMatchObject({ done: true, continued: true, continuations: 1 });
     // The continuation call carries the partial answer + the continuation rule.
     const continuation = seen()[1];

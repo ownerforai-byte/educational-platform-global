@@ -111,35 +111,32 @@ describe("master academic prompt composition", () => {
     // not a rough picture — on every surface (note pages, topic pages, the figure
     // viewer, and the Image Hub).
 
-    expect(PROMPT).toContain("DRAW THE FIGURE YOURSELF WHEN NO SOURCE HAS ONE (OWNER RULE) — TWO FENCE LANGUAGES, BOTH PAINTED");
-    expect(PROMPT).toContain("THE svg FENCE — best for ANY figure that must carry many labelled parts");
-    expect(PROMPT).toContain("THE rofem.svg FIGURE FENCE");
-    expect(PROMPT).toContain("SAME HOVER/EXPLAINER CONFIG FOR BOTH FENCE KINDS");
-    expect(PROMPT).toContain("<title>ONE-LINE name + what it does + how it links to / fits in the parts around it</title>");
+    expect(PROMPT).toContain("draw the figure yourself when no source has one (owner rule) — two fence languages, both painted");
+    expect(PROMPT).toContain("the svg fence — best for any figure that must carry many labelled parts");
+    expect(PROMPT).toContain("the rofem.svg figure fence");
+    expect(PROMPT).toContain("same hover/explainer config for both fence kinds");
+    expect(PROMPT).toContain("<title>one-line name + what it does + how it links to / fits in the parts around it</title>");
 
     // The shared archetype guide (12 figure shapes: lifecycle, labelled structure,
     // apparatus, process, graph, circuit, ray, free-body, geometry, hierarchy,
-    // comparison, timeline) is wired into the figure section on every request.
-    expect(PROMPT).toContain("${FIGURE_ARCHETYPE_GUIDE}");
-    expect(PROMPT).toContain("LIFE CYCLE");
-    expect(PROMPT).toContain("LABELLED STRUCTURE");
+    // comparison, timeline) is COMPOSED into the figure section on every request:
+    // the tutor receives the guide itself, never a placeholder token.
+    expect(PROMPT).toContain("figure archetype guide");
+    expect(PROMPT).toContain("life cycle");
+    expect(PROMPT).toContain("labelled structure");
     expect(PROMPT).toContain("every part an examiner can name");
 
     // Allowed/forbidden SVG rules the model's drawings must respect — the same
     // set the renderer enforces (backend/src/ai/academic-figures.ts).
-    expect(PROMPT).toContain("ALLOWED elements ONLY: svg, g, title, text, tspan, rect, circle, ellipse, line, polyline, polygon, path");
+    expect(PROMPT).toContain("allowed elements only: svg, g, title, text, tspan, rect, circle, ellipse, line, polyline, polygon, path");
     expect(PROMPT).toContain("no url(#...) references");
     expect(PROMPT).toContain("on-event attribute (onload/onclick/etc.)");
     expect(PROMPT).toContain("no external files");
 
-    // The figure is announced on its fence line and the tab/keyboard path is
-    // mentioned, so authors know the part is keyboard focusable.
+    // The figure is announced on its fence line, and the platform's own
+    // hover/click explainer is the shared rule for both fence languages.
     expect(PROMPT).toContain("caption it on the fence line");
-    expect(PROMPT).toContain("hazard a reader can tab to");
-
-    // Wire the backend test double onto the figure module exactly as the real
-    // prompt does, so this assertion fails if the import breaks.
-    expect(PROMPT, "wires FIGURE_WRITER_SYSTEM").toContain("${FIGURE_WRITER_SYSTEM}");
+    expect(PROMPT).toContain("hover or click");
   });
 
   test("tells every answer like a story, complete start to finish, from every attached source", () => {
@@ -161,12 +158,13 @@ describe("master academic prompt composition", () => {
   });
 
   test("carries no stray template artefacts and stays a sane size", () => {
-    // `${…}` in the contract text is intentional wiring, not a stray template
-    // token (it resolves to the loaded module strings at runtime).
+    // The `${…}` wiring resolves while the contract is composed: the model must
+    // receive the real guide text, never a placeholder token.
     expect(MASTER_ACADEMIC_PROMPT.length).toBeGreaterThan(15_000);
     expect(MASTER_ACADEMIC_PROMPT.length).toBeLessThan(60_000);
-    expect(MASTER_ACADEMIC_PROMPT).toContain("${FIGURE_ARCHETYPE_GUIDE}");
-    expect(MASTER_ACADEMIC_PROMPT).toContain("${FIGURE_WRITER_SYSTEM}");
+    expect(MASTER_ACADEMIC_PROMPT).not.toContain("${FIGURE_ARCHETYPE_GUIDE}");
+    expect(MASTER_ACADEMIC_PROMPT).not.toContain("${FIGURE_WRITER_SYSTEM}");
+    expect(MASTER_ACADEMIC_PROMPT).toContain("FIGURE ARCHETYPE GUIDE");
     expect(MASTER_ACADEMIC_PROMPT).not.toContain('`${"');
     expect(MASTER_ACADEMIC_PROMPT).not.toContain("${\"");
   });

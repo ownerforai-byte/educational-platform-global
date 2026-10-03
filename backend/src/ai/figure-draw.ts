@@ -142,6 +142,19 @@ export async function drawAcademicFigure(
       };
     }
 
+    // A drawing with no hoverable part is the "rough picture" the owner
+    // refused: report the miss (the hub falls back to the raster chain)
+    // instead of shipping an unlabelled figure as if it were exam-grade.
+    if (parts.length === 0) {
+      return {
+        caption,
+        kind,
+        parts: [],
+        attempts,
+        reason: "the model did not label any part of the figure",
+      };
+    }
+
     return { svg: drawn.svg, caption: drawn.caption || caption, kind, parts, attempts };
   } catch (err) {
     return {

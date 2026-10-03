@@ -253,7 +253,8 @@ export function buildFigureBrief(input: {
     "- every part an examiner can name carries a label; nothing nameable is left bare;",
     "- each label sits outside the figure and joins its part with a thin leader line ending in a 3px dot at the exact point of attachment;",
     "- wrap every labelled part in its own <g> element whose FIRST child is a <title>;",
-    "- the <title> is exactly: NAME — what it does and how it links to the parts around it. One line, 10–30 words, real teaching text (function + interface), never just the name;",
+    "- write each part exactly like this: <g><title>ONE-LINE name + what it does + how it links to / fits in the parts around it</title> …shapes, leader line, label… </g>;",
+    "- the <title> is one line, 10–30 words, real teaching text (function + interface), never just the name;",
     "- name parts with the syllabus's own words and spell them exactly (e.g. \"Pulmonary artery — carries deoxygenated blood from the right ventricle to the lungs\").",
     "",
     "CORRECTNESS:",
@@ -278,6 +279,8 @@ export const FIGURE_WRITER_SYSTEM = [
   "<svg viewBox=\"0 0 900 640\">…the complete drawing…</svg>",
   "```",
   "The drawing must be complete in that single reply: every shape styled, every label written, every part grouped with its <title>. Never abbreviate, never say \"…\", never ask a question.",
+  "",
+  "INTERACTIVE LABELS — the platform explains the figure by opening a part's <title> on hover or click, so the title is a real teaching note, never just the name. Group every labelled part exactly as <g><title>ONE-LINE name + what it does + how it links to / fits in the parts around it</title>…shapes, leader line, label…</g>. SAME HOVER/EXPLAINER CONFIG FOR BOTH FENCE KINDS: whichever fence carries the drawing (svg or a figure/<name>.svg alias), every labelled part is grouped the same way — never a bare label.",
 ].join("\n");
 
 // ── extraction and validation ────────────────────────────────────────────────
@@ -368,7 +371,9 @@ export function ensureFigureViewBox(svg: string): string {
  */
 export function extractSvgFigure(text: string): ExtractedFigure | null {
   const raw = text ?? "";
-  const fenced = /```svg[ \t]*([\s\S]*?)```/i.exec(raw);
+  // Either of the platform's two drawing fences: ```svg … and the tutor's
+  // ```figure/<name>.svg alias. Both carry their caption on the fence line.
+  const fenced = /```(?:svg|figure\/[\w.-]+)[ \t]*([\s\S]*?)```/i.exec(raw);
   const body = fenced ? fenced[1] : raw;
 
   // Locate the drawing by its OWN tags. The draughtsman routinely puts the
@@ -386,6 +391,10 @@ export function extractSvgFigure(text: string): ExtractedFigure | null {
   if (!candidate) return null;
   if (!/^<svg[\s>]/i.test(candidate)) return null;
   if (!/<\/svg>$/i.test(candidate)) return null;
+  // ONE figure per surface: two concatenated drawings must never render as a
+  // single SVG (they would stack into a gallery). The caller reads null as a
+  // miss and asks the writer for one figure.
+  if ((candidate.match(/<svg[\s>]/gi) ?? []).length !== 1) return null;
   if (candidate.length > MAX_FIGURE_CHARS) return null;
   if (candidate.split("<").length - 1 > MAX_FIGURE_ELEMENTS) return null;
   if (hasForbiddenFigureConstruct(candidate)) return null;

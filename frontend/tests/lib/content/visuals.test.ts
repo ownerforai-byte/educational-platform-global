@@ -6,6 +6,7 @@ import {
   ensureViewBox,
   extractVisual,
   hasForbiddenConstruct,
+  isVisualFenceLang,
 } from "@/lib/content/visuals";
 
 /** A minimal, valid figure of the shape the prompt asks for. */
@@ -128,6 +129,23 @@ describe("renderNoteHtml — a drawing reaches the page", () => {
     const html = renderNoteHtml(`:::trick Ray diagram\n${fence(DRAWING)}\n:::`);
     expect(html).toContain("edu-callout");
     expect(html).toContain("<svg");
+  });
+
+  it("paints the tutor's figure/<name>.svg fence as a real figure too", () => {
+    // The tutor is told it may draw in two fence languages: svg and the
+    // figure/rofem.svg alias. Both must reach the student as a picture with the
+    // same hover/click parts — a fence that silently renders as code is exactly
+    // the "rough image" the owner refused.
+    expect(isVisualFenceLang("figure/rofem.svg")).toBe(true);
+    expect(isVisualFenceLang("figure/heart.svg")).toBe(true);
+    expect(isVisualFenceLang("python")).toBe(false);
+    expect(isVisualFenceLang("css")).toBe(false);
+
+    const html = renderNoteHtml(fence(DRAWING, "figure/rofem.svg Principal axis"));
+    expect(html).toContain('class="edu-visual"');
+    expect(html).toContain("<svg");
+    expect(html).toContain("<figcaption");
+    expect(html).toContain("Principal axis");
   });
 
   it("leaves a non-drawing svg fence as highlighted code", () => {

@@ -45,6 +45,18 @@ import type { Code, Root, RootContent } from "mdast";
 /** Fence languages that mean "draw this" (aliases: `diagram`, `figure`). */
 export const VISUAL_FENCE_LANGS = new Set(["svg", "diagram", "figure"]);
 
+/**
+ * True when a fence language means "draw this". Beyond the plain aliases the
+ * tutor paints a `figure/<name>.svg` fence — the language it is told to use for
+ * short academically precise figures — so any `figure/…` or `*.svg` language is
+ * a drawing too. Anything else still renders as source code.
+ */
+export function isVisualFenceLang(lang: string | null | undefined): boolean {
+  const clean = (lang ?? "").trim().toLowerCase();
+  if (!clean) return false;
+  return VISUAL_FENCE_LANGS.has(clean) || clean.startsWith("figure/") || clean.endsWith(".svg");
+}
+
 /** Longest drawing accepted, in characters. */
 export const MAX_SVG_CHARS = 40_000;
 
@@ -295,7 +307,7 @@ function transform(children: RootContent[]): RootContent[] {
   for (let index = 0; index < children.length; index += 1) {
     const node = children[index];
 
-    if (node.type === "code" && node.lang && VISUAL_FENCE_LANGS.has(node.lang.toLowerCase())) {
+    if (node.type === "code" && isVisualFenceLang(node.lang)) {
       const visual = extractVisual((node as Code).value ?? "", (node as Code).meta);
       if (visual) {
         children[index] = figureNode(visual);

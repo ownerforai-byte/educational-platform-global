@@ -404,9 +404,9 @@ describe("the complete-answer contract reaches the model", () => {
     // the prompt has to teach the exact shape the renderer accepts — a figure
     // the guard refuses silently becomes a code block instead of a picture.
     for (const rule of [
-      "The platform renders that fence as a real picture in the reply",
+      "the platform renders BOTH as a real picture in your reply",
       'viewBox="0 0 900 640"',
-      "No script element, no style element, no on-event attributes",
+      "style element, ANY on-event attribute",
       "no url(#...) references",
       "white card",
       "Caption it on the fence line itself",
