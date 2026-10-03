@@ -1,0 +1,414 @@
+{
+  "class": "class-12-notes",
+  "subject": "Biology",
+  "units": [
+    {
+      "id": "heredity-and-evolution",
+      "title": "Heredity and Evolution",
+      "hours": 24,
+      "assetId": "bio-py-dna",
+      "origin": "Mendel's pea laws (1866, rediscovered 1900); chromosome theory by Sutton & Boveri (1902–03); DNA structure by Watson, Crick, Franklin & Wilkins (1953).",
+      "discovered": "Double helix 1953; genetic code cracked 1961–66 (Nirenberg, Khorana); Human Genome Project 1990–2003.",
+      "mechanism": "Genes on chromosomes segregate and assort into gametes; DNA replicates semiconservatively, transcribes to mRNA and translates to protein under regulated switches; mutation plus selection shifts populations (Hardy–Weinberg baseline), radiating adaptations — including humans.",
+      "features": ["Mendel's dominance, segregation, independent assortment — with extensions (incomplete dominance, linkage)", "Chromosome theory marries Mendel to meiosis", "Central dogma: DNA → RNA → protein, regulated per cell type", "Hardy–Weinberg equilibrium as the no-evolution null model"],
+      "properties": ["Genotype hidden, phenotype shown; test crosses reveal carriers", "Linkage breaks Mendel's ratios; crossing over rescues variation", "Sex-linked traits follow X/Y transmission rules", "DNA constancy across species contrasts with endless sequence variety"],
+      "details": "Monohybrid (3:1) and dihybrid (9:3:3:1) crosses anchor inheritance; codominance and linkage complicate it. Sex determination (XX/XY) explains haemophilia and colour-blindness patterns. Molecularly, Watson–Crick DNA unwinds, copies, and expresses through transcription–translation with operon-level regulation. The Human Genome Project (3 billion bases, ~20,000 genes) turned medicine predictive; Hardy–Weinberg maths plus fossil/DNA evidence close the loop to human evolution.",
+      "topics": [
+        {
+          "title": "Mendel's laws of inheritance — monohybrid and dihybrid cross",
+          "origin": "Mendel, Experiments on Plant Hybrids (1866); ignored until 1900.",
+          "mechanism": "Allele pairs separate into gametes (segregation); different genes assort independently — Punnett squares predict the ratios.",
+          "keyPoints": ["Dominance/recessiveness; 3:1 and 9:3:3:1 ratios", "Test cross exposes hidden heterozygotes", "Pea-trait logic applied to human pedigrees"]
+        },
+        {
+          "title": "Incomplete dominance and codominance",
+          "origin": "Correns documented blending inheritance (1900s); ABO codominance (Landsteiner, 1900).",
+          "mechanism": "Heterozygotes show intermediate (pink snapdragon) or dual (AB blood) phenotypes because neither allele fully masks the other.",
+          "keyPoints": ["1:2:1 phenotypic = genotypic in incomplete dominance", "ABO/Rh blood-group genetics + transfusion logic", "Roan cattle and sickle-cell heterozygote edge"]
+        },
+        {
+          "title": "Linkage and crossing over",
+          "origin": "Morgan's fly room (1910s); Creighton & McClintock proved crossing over physically (1931).",
+          "mechanism": "Genes on one chromosome travel together (parental combos dominate) until meiotic crossovers swap segments, scrambling them.",
+          "keyPoints": ["Complete vs incomplete linkage", "Recombination % = map distance (centimorgan)", "Gene maps built from test-cross data"]
+        },
+        {
+          "title": "Sex determination and sex-linked disorders",
+          "origin": "McClung/Stevens/Wilson (sex chromosomes, 1900s); Morgan's white-eyed flies (1910).",
+          "mechanism": "XX/XY (or ZW) sets sex; X-linked recessives strike hemizygous males most, passing criss-cross from mother to son.",
+          "keyPoints": ["Human XX–XY mechanism; Barr bodies", "Haemophilia and colour-blindness pedigrees", "Y-linked holandric traits contrasted"]
+        },
+        {
+          "title": "Chromosome theory of inheritance",
+          "origin": "Sutton & Boveri (1902–03), confirmed by Morgan's flies.",
+          "mechanism": "Chromosomes behave exactly like Mendel's factors — pairing, segregating and assorting in meiosis — because they ARE the factors' vehicles.",
+          "keyPoints": ["Parallel table: Mendel vs meiosis", "Evidence: sex linkage, nondisjunction", "Bridging cytology and genetics"]
+        },
+        {
+          "title": "Molecular basis of inheritance: DNA, replication, transcription, translation, regulation",
+          "origin": "Hershey–Chase (1952); Watson–Crick (1953); Meselson–Stahl (1958); Jacob–Monod operon (1961).",
+          "mechanism": "Helicase unzips, polymerase copies semiconservatively; RNA polymerase transcribes genes; ribosomes translate codons to amino acids; repressors/operators switch operons.",
+          "keyPoints": ["Antiparallel strands, Chargaff pairing", "Leading/lagging replication forks", "mRNA → ribosome → protein; lac-operon logic"]
+        },
+        {
+          "title": "Human Genome Project — objectives and significance",
+          "origin": "International HGP 1990–2003 (Collins, Venter).",
+          "mechanism": "Shotgun + clone sequencing read all 3 billion bases, mapped ~20,000 genes, and opened predictive, preventative medicine.",
+          "keyPoints": ["Goals: sequence, map variation (SNPs), share data", "Findings: junk-DNA rethink, gene paucity", "Medicine, forensics and ancestry payoffs"]
+        },
+        {
+          "title": "Evolution: evidences, adaptive radiation, Hardy–Weinberg, human evolution",
+          "origin": "Modern synthesis (1930s–40s); Hardy–Weinberg (1908); Pääbo's ancient DNA (Nobel 2022).",
+          "mechanism": "Fossils, embryos and DNA prove descent; empty niches radiate forms (finches, mammals); allele maths (p²+2pq+q²) detects selection; hominins walked the bipedal branch.",
+          "keyPoints": ["Evidence lines + radiation exemplars", "Equilibrium conditions and violation meanings", "Human ascent recap from anthropoid stock"]
+        }
+      ]
+    },
+    {
+      "id": "human-health-and-diseases",
+      "title": "Human Health and Diseases",
+      "hours": 10,
+      "assetId": "bio-py-antibody",
+      "origin": "Germ theory (Pasteur/Koch, 1860s–80s); antibodies by von Behring (1890, Nobel 1901); vaccines from Jenner (1796).",
+      "discovered": "Penicillin 1928 (Fleming); HIV identified 1983; immune network theory and clonal selection (Burnet, 1950s).",
+      "mechanism": "Pathogens invade via air, water, vectors and contact; innate barriers and phagocytes strike first, then B/T lymphocytes mount specific antibody and killer-cell responses with memory — vaccines pre-train that memory without the disease.",
+      "features": ["Ten-disease dossier: malaria to ringworm — agent, spread, symptoms, control", "Innate (skin, interferon, complement) vs adaptive (humoral + cellular)", "Antigen–antibody lock-and-key with memory cells", "Allergy (overreaction) vs autoimmunity (self-attack) vs AIDS (defence collapse)"],
+      "properties": ["Vaccination: live-attenuated, killed, subunit, mRNA platforms", "Herd immunity shields the unvaccinated", "Antibiotics hit bacteria only — useless on viruses", "Sanitation + vectors + drugs = the control triangle"],
+      "details": "Each pathogen gets its profile — Plasmodium (mosquito), dengue virus (Aedes), Wuchereria, Ascaris, pneumonia bacteria, Salmonella typhi, Mycobacterium tuberculosis, rhinovirus, HIV, ringworm fungus. Immunity chapters layer physical barriers, inflammation, interferons, then lymphocyte specificity, MHC presentation and memory. Vaccination schedules, allergy mediators (histamine/IgE) and autoimmune examples (rheumatoid arthritis) plus AIDS management complete the unit.",
+      "topics": [
+        {
+          "title": "Pathogens and diseases: malaria, dengue, filariasis, ascariasis, pneumonia, typhoid, TB, cold, AIDS, ringworm",
+          "origin": "Each agent isolated between 1880s (typhoid, TB) and 1980s (HIV).",
+          "mechanism": "Vector bite, droplet, faecal–oral or contact delivers the agent; it multiplies, damages tissue and exits to the next host.",
+          "keyPoints": ["Agent–vector–symptom–control table for all ten", "Mosquito trio: malaria, dengue, filariasis", "TB/DOTS, typhoid/Widal, AIDS/ART essentials"]
+        },
+        {
+          "title": "Immune system — innate and adaptive immunity",
+          "origin": "Metchnikoff (phagocytosis) vs Ehrlich (antibodies), Nobel 1908; lymphocyte roles (1960s).",
+          "mechanism": "Skin, mucus, acid, interferon and complement blunt invasion within hours; lymphocytes then learn the invader and remember it for years.",
+          "keyPoints": ["Physical, physiological, cellular, cytokine barriers", "Humoral (B) vs cell-mediated (T) arms", "Primary vs secondary response curves"]
+        },
+        {
+          "title": "Antigens and antibodies, immune response",
+          "origin": "Antibody Y-structure (Porter/Edelman, Nobel 1972); MHC (Zinkernagel/Doherty, Nobel 1996).",
+          "mechanism": "Epitopes trigger clonal B/T expansion; plasma cells flood Ig while killers lyse infected cells; memory cells await round two.",
+          "keyPoints": ["Antigen vs immunogen vs epitope", "IgG/A/M/E/D roles; monoclonal uses", "Active vs passive immunity compared"]
+        },
+        {
+          "title": "Vaccination and immunization",
+          "origin": "Jenner 1796 (smallpox); Pasteur 1885 (rabies); mRNA platform (2020).",
+          "mechanism": "Harmless antigen trains memory without disease; boosters refresh it; herd coverage starves outbreaks.",
+          "keyPoints": ["Live, killed, subunit, toxoid, mRNA types", "Nepal's immunisation schedule logic", "Eradication wins: smallpox; polio near-miss"]
+        },
+        {
+          "title": "Allergy and autoimmune diseases",
+          "origin": "Allergy term (von Pirquet, 1906); autoimmunity accepted 1950s–60s.",
+          "mechanism": "IgE–histamine misfires on pollen/dust; regulatory failures let lymphocytes attack joints, myelin or islets instead.",
+          "keyPoints": ["Anaphylaxis vs local allergy handling", "Rheumatoid arthritis, lupus, type-1 diabetes examples", "AIDS contrast: defence collapse, not misfire"]
+        }
+      ]
+    },
+    {
+      "id": "strategies-for-food-production",
+      "title": "Strategies for Enhancement in Food Production",
+      "hours": 6,
+      "assetId": "bio-py-crop",
+      "origin": "Green Revolution (Borlaug, 1940s–60s, Nobel 1970); single-cell protein concept (1960s); white/blue revolutions for milk and fish.",
+      "discovered": "Dwarf wheat/rice varieties 1960s; Bt crops 1990s; biofortified crops 2000s+.",
+      "mechanism": "Breeders cross, select and hybridise for yield and resistance; microbes and algae become protein (SCP); elite livestock breeds plus feed/health management multiply milk, meat and eggs; biofertilisers feed soil instead of poisoning it.",
+      "features": ["Plant breeding pipeline: collection → evaluation → crossing → selection → release", "SCP: Spirulina, yeast, Fusarium protein vats", "Animal husbandry: indigenous + exotic breeds, MOET, artificial insemination", "Biofertilisers: Rhizobium, Azolla, mycorrhiza, cyanobacteria"],
+      "properties": ["Hybrid vigour (heterosis) outyields parents", "Disease resistance beats pesticide treadmills", "Sustainability: yield without aquifer/soil ruin", "Nepal angle: terrace crops, buffalo, carp polyculture"],
+      "details": "Mass/pure-line/mutation breeding and hybridisation build resilient varieties (with Green Revolution history as caution and triumph). SCP turns petroleum, molasses or sunlight into protein. Dairy/poultry/fishery management — housing, feed formulation, vaccination — scales output. Biofertilisers close the nutrient loop for sustainable agriculture.",
+      "topics": [
+        {
+          "title": "Plant breeding — methods and examples",
+          "origin": "Vavilov's centres of origin (1920s); Borlaug's dwarf wheat (1960s).",
+          "mechanism": "Cross contrasting parents, select segregants over generations, multiply the winner — mutation and polyploidy add raw novelty.",
+          "keyPoints": ["Mass, pure-line, hybridisation, mutation steps", "Hybrid maize/rice revolution logic", "Resistant varieties vs evolving pests"]
+        },
+        {
+          "title": "Single cell protein (SCP)",
+          "origin": "Pruteen/Mycoprotein programmes (1960s–80s).",
+          "mechanism": "Fast microbes convert cheap substrates into protein-rich biomass harvested, dried and eaten or fed.",
+          "keyPoints": ["Spirulina, Chlorella, yeast, Fusarium sources", "Protein content rivals meat per gram", "Safety and scale economics"]
+        },
+        {
+          "title": "Animal husbandry — breeds and management",
+          "origin": "Operation Flood/white revolution (1970s); AI technique (20th century).",
+          "mechanism": "Elite genetics × nutrition × health management multiply milk, meat, eggs and fish; AI and MOET spread winners fast.",
+          "keyPoints": ["Indigenous vs exotic breed ledgers", "Housing, feed, vaccination triad", "Dairy, poultry, fishery snapshots for Nepal"]
+        },
+        {
+          "title": "Biofertilizers and sustainable agriculture",
+          "origin": "Rhizobium inoculants (1890s+); biofertiliser science (1980s+).",
+          "mechanism": "Nitrogen-fixers and P-solubilisers feed crops biologically; rotations, compost and IPM keep soil alive.",
+          "keyPoints": ["Rhizobium–legume, Azolla–rice, mycorrhizal networks", "Urea vs biology: cost and soil comparison", "Sustainability metrics: soil, water, diversity"]
+        }
+      ]
+    },
+    {
+      "id": "microbes-in-human-welfare",
+      "title": "Microbes in Human Welfare",
+      "hours": 5,
+      "assetId": "bio-py-fermenter",
+      "origin": "Fermentation science (Pasteur, 1857); antibiotics (Fleming 1928, Florey/Chain 1940s); biogas engineering (20th century).",
+      "discovered": "Citric-acid fermentation (1917, Currie); Bt biopesticide (1960s); oil-spill bioremediation (1980s+).",
+      "mechanism": "Yeast respire sugar to alcohol/CO₂; Penicillium secretes antibiotics; Aspergillus excretes citric acid; Bacillus/Baculoviruses kill pests selectively; methanogens digest waste to biogas while others eat oil and metals.",
+      "features": ["Household trio: curd (LAB), bread (yeast), cheese (moulds + bacteria)", "Industrial trio: penicillin, ethanol, citric acid", "Biocontrol: Bt toxin, NPV viruses, Trichoderma fungi", "Cleanup crew: oil-eaters, metal-leachers, biogas digesters"],
+      "properties": ["Strain + sterility + scale = fermentation success", "Narrow-spectrum biocontrol spares beneficials", "Resistance demands antibiotic stewardship", "Waste-to-value closes the loop"],
+      "details": "Household fermentation (Lactobacillus curd, Saccharomyces dough, Propionibacterium cheese holes) scales to antibiotic tanks, distillery vats and citric-acid fermenters. Bt cotton's Cry protein and viral/fungal biocontrol replace broad pesticides. Bioremediation (Pseudomonas oil spills), biomining and gobar-gas plants turn pollution into product.",
+      "topics": [
+        {
+          "title": "Microorganisms in household products",
+          "origin": "Pasteur (1857) proved fermentation is microbial.",
+          "mechanism": "Lactic-acid bacteria sour milk to curd; yeast leavens dough with CO₂; ripening cultures flavour cheese.",
+          "keyPoints": ["Curd, yoghurt, cheese cultures", "Bread/wine/beer yeast roles", "Fermented foods of Nepal (gundruk, sinki)"]
+        },
+        {
+          "title": "Industrial production: antibiotics, beverages, citric acid",
+          "origin": "Deep-tank fermentation (1940s) industrialised it all.",
+          "mechanism": "Aerated sterile tanks grow producers; downstream extraction purifies the molecule.",
+          "keyPoints": ["Penicillin/streptomycin production logic", "Brewing/distillation chain", "Aspergillus niger citric-acid process"]
+        },
+        {
+          "title": "Microbes as biocontrol agents and biofertilizers",
+          "origin": "Bt commercialised 1960s; Trichoderma programmes (1970s+).",
+          "mechanism": "Cry toxins, viral infections and fungal parasites kill pests selectively; fixers and solubilisers feed plants.",
+          "keyPoints": ["Bt, NPV, Trichoderma in fields", "Specificity sparing pollinators", "Biofertiliser overlap with food-production unit"]
+        },
+        {
+          "title": "Bioremediation and biogas",
+          "origin": "Exxon Valdez bioremediation (1989) proved the cleanup; gobar plants (20th century).",
+          "mechanism": "Oil-eating bacteria mineralise spills; methanogen consortia digest dung to methane in sealed digesters.",
+          "keyPoints": ["Pseudomonas vs oil slicks", "Gobar-gas plant design and slurry value", "Biomining and metal-leaching bonus"]
+        }
+      ]
+    },
+    {
+      "id": "biotechnology-principles",
+      "title": "Biotechnology — Principles and Processes",
+      "hours": 8,
+      "assetId": "bio-py-pcr",
+      "origin": "Recombinant DNA: Cohen–Boyer (1973); PCR: Mullis (1983, Nobel 1993); sequencing: Sanger (1977).",
+      "discovered": "Restriction enzymes (1970s, Nobel 1978); Ti plasmid vectors; gel electrophoresis routine by 1980s.",
+      "mechanism": "Restriction enzymes cut DNA at palindromes; ligase pastes foreign genes into plasmid/λ vectors; competent hosts (CaCl₂/heat-shock or electroporation) take them up; PCR then photocopies any target billions-fold while electrophoresis sorts fragments by size.",
+      "features": ["Core premise: alien DNA replicates inside a living host", "Tool trinity: enzymes, vectors, competent host", "Process chain: isolate → cut → ligate → transfer → select → culture", "Downstream analytics: PCR + blots + sequencing"],
+      "properties": ["Palindromic cutters give sticky ends", "Selectable markers (ampR, lacZ) find the winners", "PCR needs primers, Taq, and thermal cycling", "Containment levels match risk (BSL-1 to 4)"],
+      "details": "Principles chapters justify rDNA (universal genetic code, replicon autonomy). Tools chapters profile EcoRI-style enzymes, pBR322/Ti/viral vectors and Agrobacterium's natural engineering. Process chapters walk DNA isolation (lysis → RNase/protease → precipitation), PCR cycles (denature–anneal–extend), agarose gels, Southern blotting and gene-gun/microinjection transfer — ending in bioreactors.",
+      "topics": [
+        {
+          "title": "Principles of biotechnology — recombinant DNA technology",
+          "origin": "Berg (first recombinant, 1972); Cohen–Boyer plasmids (1973).",
+          "mechanism": "Universal code + autonomous replicons let any gene work in any host — cut, paste, copy, express.",
+          "keyPoints": ["Why alien genes work anywhere (shared code)", "Plasmid as the molecular taxi", "Asilomar safety legacy"]
+        },
+        {
+          "title": "Tools: restriction enzymes, vectors, competent host",
+          "origin": "Arber/Nathans/Smith restriction work (Nobel 1978).",
+          "mechanism": "Palindromic cutters open DNA; vectors carry inserts past selection; porous hosts admit them.",
+          "keyPoints": ["Sticky vs blunt ends; EcoRI exemplar", "pBR322/Ti/viral vector checklists", "Making cells competent (CaCl₂, electroporation)"]
+        },
+        {
+          "title": "Processes: DNA isolation, PCR, gel electrophoresis, gene transfer",
+          "origin": "Mullis's PCR insight (1983); Southern blot (1975).",
+          "mechanism": "Extract pure DNA, amplify the target region, visualise bands, deliver constructs into cells/plants/animals.",
+          "keyPoints": ["Isolation chemistry step by step", "Three PCR temperatures on repeat", "Gel reading + transfer methods compared"]
+        },
+        {
+          "title": "Applications of recombinant DNA technology",
+          "origin": "Humulin approval (1982) — first rDNA drug.",
+          "mechanism": "Same toolbox yields drugs, diagnostics, engineered crops and research models.",
+          "keyPoints": ["Pharma, agriculture, forensics, research", "Gene therapy preview (next unit)", "Safety, patents and ethics framing"]
+        }
+      ]
+    },
+    {
+      "id": "biotechnology-applications",
+      "title": "Biotechnology and Its Applications",
+      "hours": 8,
+      "assetId": "bio-py-insulin",
+      "origin": "Bt crops (1990s); Humulin (1982); Dolly the clone (1996); CRISPR era (2012+).",
+      "discovered": "Agrobacterium Ti mechanism (1970s); gene-therapy trials (1990s); Bt brinjal debates (2000s).",
+      "mechanism": "Cry genes make crops their own pesticide; nematode-resistance silences pest genes by RNAi; human insulin, growth hormone and clotting factors pour from vats; corrected genes ride vectors into patients; transgenic animals model disease — while biopiracy fights decide who owns life.",
+      "features": ["Agri wins: Bt cotton (bollworm-proof), RNAi tobacco (nematode-proof)", "Medicine wins: insulin, interferon, tPA, gene therapy for ADA–SCID", "Animal wins: transgenic mice, pharming goats, salmon", "Controversy wins: patents, terminator fears, biopiracy cases"],
+      "properties": ["Trait stability across generations required", "Biosafety trials before release", "Therapy somatic (body) vs germline (heritable) split", "Benefit-sharing under CBD/Nagoya rules"],
+      "details": "Agriculture chapters detail Cry endotoxin mode-of-action and RNA-interference nematode control with yield data. Medicine chapters follow insulin from pig extracts to Humulin vats, plus gene-therapy vectors and therapeutic proteins. Transgenic-animal chapters weigh pharming promise against welfare. Closing chapters litigate biopiracy (neem, basmati, turmeric cases) and patent regimes.",
+      "topics": [
+        {
+          "title": "Agriculture: Bt cotton, nematode-resistant tobacco",
+          "origin": "Bt spray (1960s) → Bt genes in plants (1990s); RNAi mechanism (Fire/Mello, Nobel 2006).",
+          "mechanism": "Cry crystals perforate bollworm guts; host-delivered dsRNA silences nematode parasitism genes.",
+          "keyPoints": ["Cry protein activation inside insect gut", "RNAi defence design in tobacco", "Refuge strategy against resistance"]
+        },
+        {
+          "title": "Medicine: insulin, gene therapy, therapeutic proteins",
+          "origin": "Genentech insulin (1978–82); first gene therapy (1990).",
+          "mechanism": "Vats express human proteins; AAV/retroviral vectors deliver fixed genes to patient cells.",
+          "keyPoints": ["Proinsulin → mature insulin processing", "ADA–SCID and haemophilia trials", "Monoclonal antibodies and vaccines pipeline"]
+        },
+        {
+          "title": "Transgenic animals",
+          "origin": "First transgenic mice (1980–81); Oncomouse (1988).",
+          "mechanism": "Pronuclear injection or ES-cell targeting inserts genes; herds then secrete drugs in milk or model human disease.",
+          "keyPoints": ["Models (Alzheimer mice), pharming goats, salmon", "Welfare and escape debates", "Xenotransplant hopes (pig organs)"]
+        },
+        {
+          "title": "Biopiracy and patent issues",
+          "origin": "Turmeric patent revoked (1997); CBD/Nagoya benefit-sharing (1993/2010).",
+          "mechanism": "Traditional knowledge gets patented abroad; challenges cite prior art; treaties now demand consent and sharing.",
+          "keyPoints": ["Neem, basmati, turmeric cases", "What patent offices allow on life", "Farmers' rights and TKDL defence"]
+        }
+      ]
+    },
+    {
+      "id": "organisms-and-environment",
+      "title": "Organisms and Environment",
+      "hours": 10,
+      "assetId": "bio-py-logistic",
+      "origin": "Population ecology (Malthus 1798 → Verhulst 1838 logistic → Lotka–Volterra 1920s); ecosystem energetics (Odum, 1950s).",
+      "discovered": "Logistic equation 1838; r/K selection (MacArthur & Wilson, 1967).",
+      "mechanism": "Organisms tolerate only bands of temperature, water and salts (acclimatise, migrate or die); populations grow exponentially until competition, predation and disease bend them into S-curves at K; ecosystems meanwhile fix, move and release carbon, nitrogen and phosphorus while succession reweaves disturbed ground.",
+      "features": ["Adaptation toolbox: conform, regulate, migrate, suspend", "Population traits: natality, mortality, age pyramids, growth forms", "Interactions: competition, predation, parasitism, commensalism, mutualism", "Ecosystem services: productivity, decomposition, succession, cycling"],
+      "properties": ["Liebig's minimum + Shelford's tolerance set limits", "J vs S curves diagnose resource states", "Decomposition rate hinges on chemistry + climate", "Pioneer → climax succession is directional but not destiny"],
+      "details": "Adaptation chapters sort regulators vs conformers with hibernation/aestivation/migration exits. Population chapters quantify growth (exponential vs logistic maths), age-structure pyramids and Lotka–Volterra duels. Ecosystem chapters audit pond/forest productivity, detritus vs grazing chains, decomposition steps and hydrarch/xerarch succession — with full C/N/P cycle accounting and pyramid/energy-flow diagrams.",
+      "topics": [
+        {
+          "title": "Adaptations of organisms to environmental conditions",
+          "origin": "Malthus (1798) warned; Darwin (1859) explained; tolerance law (Shelford, 1913).",
+          "mechanism": "Regulators hold internal constancy, conformers track the environment, migrants leave and suspenders sleep through hardship.",
+          "keyPoints": ["Regulate/conform/migrate/suspend strategies", "Hibernation, aestivation, diapause toolkits", "Allen's/Bergmann's rules as climate signatures"]
+        },
+        {
+          "title": "Population ecology — growth, regulation, interactions",
+          "origin": "Verhulst logistic (1838); Lotka–Volterra equations (1920s).",
+          "mechanism": "Births minus deaths steer numbers toward K; competition, predation and cooperation tune the trajectory.",
+          "keyPoints": ["Exponential vs logistic with K", "Age pyramids predict futures", "Five interaction types with equations"]
+        },
+        {
+          "title": "Ecosystem structure and function — productivity, decomposition",
+          "origin": "Odum's Silver Springs study (1957) balanced an ecosystem's books.",
+          "mechanism": "GPP minus respiration funds all consumers; detritivores shred, leach, fragment and mineralise litter back to producers.",
+          "keyPoints": ["Stratification and zonation", "GPP/NPP accounting", "Decomposition five steps"]
+        },
+        {
+          "title": "Ecological succession",
+          "origin": "Dune studies (Cowles, 1899); Clements vs Gleason debate (1916–26).",
+          "mechanism": "Pioneers trap soil and water, mid-seral species shade them out, and a self-replacing climax settles — hydrarch in water, xerarch on rock.",
+          "keyPoints": ["Primary vs secondary seres", "Hydrarch vs xerarch sequences", "Climax theories compared"]
+        },
+        {
+          "title": "Nutrient cycling — carbon, nitrogen, phosphorus",
+          "origin": "Cycle chemistry from Lavoisier to Redfield (1934 ocean ratio).",
+          "mechanism": "Photosynthesis–respiration shuttles carbon; fixers–nitrifiers–denitrifiers shuttle nitrogen; weathering shuttles phosphorus.",
+          "keyPoints": ["Reservoirs and fluxes per element", "Gaseous vs sedimentary cycle contrast", "Human short-circuits: fertiliser, fossil fuel"]
+        },
+        {
+          "title": "Ecological pyramids and energy flow",
+          "origin": "Elton's pyramids (1927); Lindeman's energetics (1942).",
+          "mechanism": "Each transfer burns ~90%, so pyramids narrow and chains stay short — energy flows one way while matter cycles.",
+          "keyPoints": ["Number/biomass/energy pyramids", "10% law reuse across chains", "Standing crop vs production clarity"]
+        }
+      ]
+    },
+    {
+      "id": "biodiversity-and-conservation",
+      "title": "Biodiversity and Conservation",
+      "hours": 6,
+      "assetId": "bio-py-hotspot",
+      "origin": "Biodiversity coined by Rosen (1985); hotspots by Myers (1988); CBD (1992).",
+      "discovered": "Red Data Book (1966); Nepal community-forestry success (1990s+).",
+      "mechanism": "Count diversity at gene, species and ecosystem levels; map where it concentrates (tropics, Nepal's Himalaya) and why it bleeds (habitat, overuse, invasion, pollution, climate); then defend in place (parks, corridors) and in backup (banks, gardens, Red-List triage).",
+      "features": ["Three biodiversity levels with measurement tricks", "Global patterns: latitudinal gradient, species–area curves", "Loss drivers with Nepalese examples", "In-situ + ex-situ + law + Red Data Book toolkit"],
+      "properties": ["Endemics raise irreplaceability", "Fragmentation multiplies extinction", "Conservation pays: watershed, tourism, genes", "People-powered (buffer zones, CFUGs) outlasts fences"],
+      "details": "Biodiversity chapters quantify richness, evenness and endemism, then walk global and Nepal patterns (Terai–Himalaya transects). Loss chapters autopsy habitat conversion, poaching, invasives, pollution and warming. Conservation chapters design reserves (SLOSS, corridors), run ex-situ backup, enforce CITES/national law and read Red Data Book accounts.",
+      "topics": [
+        {
+          "title": "Biodiversity — genetic, species, ecosystem levels",
+          "origin": "Rosen (1985) gave the crisis its name.",
+          "mechanism": "Allele variety buffers populations, species variety buffers ecosystems, habitat variety buffers regions — measure each to manage each.",
+          "keyPoints": ["Richness vs evenness vs endemism metrics", "Three levels with examples", "Why diversity stabilises function"]
+        },
+        {
+          "title": "Patterns of biodiversity — global and Nepal",
+          "origin": "Humboldt's gradient (1800s); island theory (1967).",
+          "mechanism": "Energy, area and history pile species toward the tropics; Nepal's altitude transect compresses many biomes into one country.",
+          "keyPoints": ["Latitudinal gradient + species–area curves", "Nepal's flagship diversity stats", "Terai–Himalaya transect logic"]
+        },
+        {
+          "title": "Biodiversity loss — causes and consequences",
+          "origin": "Extinction-rate science (1970s+); IPBES assessments (2019+).",
+          "mechanism": "HIPPO drivers shrink and split populations until chance finishes them; services (pollination, water, genes) fail with them.",
+          "keyPoints": ["Habitat loss first, rest follow", "Invasive case studies", "Ecosystem-service crash costs"]
+        },
+        {
+          "title": "Conservation strategies — in-situ and ex-situ",
+          "origin": "Yellowstone model (1872); modern reserve design (1980s).",
+          "mechanism": "Protect, connect, breed, bank and legislate — matching each threat with its countermeasure.",
+          "keyPoints": ["Parks, corridors, community forests", "Banks, gardens, captive breeding", "CITES and national law teeth"]
+        },
+        {
+          "title": "Red Data Book and IUCN categories",
+          "origin": "Red Data Book (1966); categories revised 1994/2001.",
+          "mechanism": "Population size, decline rate and range thresholds sort species into threat bands that trigger action and funding.",
+          "keyPoints": ["Category ladder with criteria", "Reading a Red List account", "Nepal-listed species spot-check"]
+        }
+      ]
+    },
+    {
+      "id": "environmental-issues",
+      "title": "Environmental Issues",
+      "hours": 8,
+      "assetId": "bio-py-greenhouse",
+      "origin": "Greenhouse physics (Fourier 1824, Tyndall 1859, Arrhenius 1896); ozone hole (Farman et al., 1985); waste science (20th century).",
+      "discovered": "Keeling curve (1958+); Montreal Protocol (1987); Paris Agreement (2015).",
+      "mechanism": "Fossil smoke and dust choke air; sewage and effluents starve water of oxygen; plastics and e-waste pile on land; radiation damages genes; CO₂/CH₄ trap heat, CFCs eat ozone — controls run from scrubbers and STPs to segregation, treaties and rainwater harvesting.",
+      "features": ["Air: smog, SPM, SO₂/NOₓ, indoor smoke", "Water: BOD, eutrophication, heavy metals, pathogens", "Land/radiation: solid, biomedical, e-waste; nuclear hazards", "Global trio: warming, ozone loss, plus local fixes (harvest, wasteland greening)"],
+      "properties": ["Pollutant = quantity + place + time wrong", "BOD/COD quantify water rot", "Half-lives decide nuclear legacy", "Mitigation hierarchy: avoid → reduce → reuse → treat"],
+      "details": "Air chapters source apportion (vehicles, brick kilns, cooking smoke) and prescribe filters, fuel switching and standards. Water chapters trace sewage/industrial paths through DO crashes to STP/ETP treatment trains. Waste chapters sort municipal, biomedical and e-waste into 4R handling; radiation chapters cover sources, units and shielding. Climate chapters explain greenhouse physics, ozone chemistry (CFC → Cl → O₃ loss), then land solutions: rainwater harvesting structures and wasteland afforestation.",
+      "topics": [
+        {
+          "title": "Air pollution — causes, effects, control",
+          "origin": "London smog deaths (1952) launched clean-air law worldwide.",
+          "mechanism": "Combustion and dust emit gases/particles that inflame lungs, cut visibility and seed acid rain.",
+          "keyPoints": ["Vehicles, kilns, cooking-smoke inventories", "SPM/SO₂/NOₓ health endpoints", "ESP, scrubbers, fuel switch, standards"]
+        },
+        {
+          "title": "Water pollution — causes, effects, control",
+          "origin": "Cholera maps (Snow, 1854) founded water epidemiology.",
+          "mechanism": "Sewage and effluents rot in rivers, crashing dissolved oxygen; nutrients trigger blooms; metals and pathogens persist.",
+          "keyPoints": ["BOD/COD/eutrophication logic", "Sewage vs industrial signatures", "STP/ETP trains and river action plans"]
+        },
+        {
+          "title": "Solid waste management",
+          "origin": "Sanitary-landfill science (1930s+); 4R hierarchy (1970s+).",
+          "mechanism": "Segregated waste composts, recycles or energy-recovers; only inert residue landfills safely.",
+          "keyPoints": ["Municipal, biomedical, e-waste streams", "Compost, recycle, refuse-derived fuel", "Kathmandu Valley case lessons"]
+        },
+        {
+          "title": "Nuclear radiation hazards",
+          "origin": "Hiroshima/Nagasaki studies (1945+); Chernobyl reset safety (1986).",
+          "mechanism": "Ionising rays break DNA — dose × time decides harm; distance, shielding and containment cut exposure.",
+          "keyPoints": ["Alpha/beta/gamma contrasted; sievert units", "Medical, fallout and waste sources", "Protection triad + disaster drills"]
+        },
+        {
+          "title": "Greenhouse effect, global warming, climate change",
+          "origin": "Arrhenius (1896) computed CO₂ warming; Keeling measured it (1958+).",
+          "mechanism": "IR-absorbing gases blanket Earth; extra CO₂/CH₄ thicken the blanket — glaciers, monsoons and seas respond.",
+          "keyPoints": ["Keeling curve + Himalayan glacier evidence", "Impacts on Nepal: floods, drought, disease", "Mitigation vs adaptation; Paris pledges"]
+        },
+        {
+          "title": "Ozone layer depletion",
+          "origin": "Rowland–Molina warning (1974); Antarctic hole found (1985).",
+          "mechanism": "CFC chlorine cycles shred stratospheric ozone catalytically; the Montreal Protocol phased CFCs out.",
+          "keyPoints": ["Cl + O₃ → ClO + O₂ catalytic loop", "UV-B health and crop costs", "Montreal as the treaty that worked"]
+        },
+        {
+          "title": "Rainwater harvesting and wasteland development",
+          "origin": "Traditional johads revived (1980s+); social forestry (1970s+).",
+          "mechanism": "Catchments, recharge pits and check dams bank monsoon water; hardy plantations reclaim degraded commons.",
+          "keyPoints": ["Rooftop/pit/dam designs", "Greening species for wastelands", "Community ownership decides success"]
+        }
+      ]
+    }
+  ]
+}

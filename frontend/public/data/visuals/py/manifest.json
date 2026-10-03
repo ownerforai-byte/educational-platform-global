@@ -1,6 +1,6 @@
 {
   "generator": "visuals-py@0.1.0",
-  "count": 10,
+  "count": 29,
   "assets": [
     {
       "id": "ph-surface-wave",
@@ -110,6 +110,215 @@
       "description": "Electric and magnetic fields oscillating in phase with each other, perpendicular to propagation.",
       "file": "ph-motion-emwave.json",
       "frames": 100,
+      "meshes": 0
+    },
+    {
+      "id": "bio-py-cell",
+      "kind": "motion",
+      "title": "Animal Cell 3D",
+      "subject": "biology",
+      "unit": "Unit: Biomolecules and Cell Biology",
+      "description": "Cell membrane, nucleus with nucleolus, mitochondria and ribosome bodies in motion.",
+      "file": "bio-py-cell.json",
+      "frames": 90,
+      "meshes": 0
+    },
+    {
+      "id": "bio-py-flower",
+      "kind": "motion",
+      "title": "Angiosperm Flower (Bloom)",
+      "subject": "biology",
+      "unit": "Unit: Floral Diversity",
+      "description": "Ovary, six petals blooming open, stamens, stem and leaf \u2014 Brassicaceae-type flower.",
+      "file": "bio-py-flower.json",
+      "frames": 80,
+      "meshes": 0
+    },
+    {
+      "id": "bio-py-bacteria",
+      "kind": "motion",
+      "title": "Binary Fission in Bacteria",
+      "subject": "biology",
+      "unit": "Unit: Introductory Microbiology",
+      "description": "Rod-shaped bacterium elongates, nucleoid divides, septum splits it into two daughters.",
+      "file": "bio-py-bacteria.json",
+      "frames": 100,
+      "meshes": 0
+    },
+    {
+      "id": "bio-py-foodweb",
+      "kind": "motion",
+      "title": "Ecological Pyramid of Energy",
+      "subject": "biology",
+      "unit": "Unit: Ecology",
+      "description": "Producers \u2192 herbivores \u2192 carnivores \u2192 top carnivores; ~10% energy passes each level.",
+      "file": "bio-py-foodweb.json",
+      "frames": 60,
+      "meshes": 0
+    },
+    {
+      "id": "bio-py-vegetation",
+      "kind": "motion",
+      "title": "Altitudinal Vegetation Belts",
+      "subject": "biology",
+      "unit": "Unit: Vegetation",
+      "description": "Tropical \u2192 subtropical \u2192 temperate \u2192 alpine belts rising with altitude in Nepal.",
+      "file": "bio-py-vegetation.json",
+      "frames": 60,
+      "meshes": 0
+    },
+    {
+      "id": "bio-py-scope",
+      "kind": "motion",
+      "title": "Scope of Biology",
+      "subject": "biology",
+      "unit": "Unit: Introduction to Biology",
+      "description": "Six great fields \u2014 botany, zoology, genetics, ecology, microbiology, physiology \u2014 orbiting biology.",
+      "file": "bio-py-scope.json",
+      "frames": 120,
+      "meshes": 0
+    },
+    {
+      "id": "bio-py-phylogeny",
+      "kind": "motion",
+      "title": "Phylogenetic Tree (Growing)",
+      "subject": "biology",
+      "unit": "Unit: Evolutionary Biology",
+      "description": "A common ancestor splits into lineages; survivors bloom as species at the tips.",
+      "file": "bio-py-phylogeny.json",
+      "frames": 80,
+      "meshes": 0
+    },
+    {
+      "id": "bio-py-worm",
+      "kind": "motion",
+      "title": "Earthworm \u2014 Metameric Crawling",
+      "subject": "biology",
+      "unit": "Unit: Faunal Diversity",
+      "description": "Nine segments ripple in peristaltic waves; clitellum band rides the middle.",
+      "file": "bio-py-worm.json",
+      "frames": 100,
+      "meshes": 0
+    },
+    {
+      "id": "bio-py-migration",
+      "kind": "motion",
+      "title": "Bird Migration Flyway",
+      "subject": "biology",
+      "unit": "Unit: Biota and Environment",
+      "description": "A flock commutes between breeding and wintering ranges along a fixed flyway.",
+      "file": "bio-py-migration.json",
+      "frames": 110,
+      "meshes": 0
+    },
+    {
+      "id": "bio-py-reserve",
+      "kind": "surface3d",
+      "title": "Conservation Reserve (Terrain)",
+      "subject": "biology",
+      "unit": "Unit: Conservation Biology",
+      "description": "A guarded reserve boundary ringed in red; flagship species blink inside the safe habitat.",
+      "file": "bio-py-reserve.json",
+      "frames": 50,
+      "meshes": 1
+    },
+    {
+      "id": "bio-py-dna",
+      "kind": "motion",
+      "title": "DNA Double Helix (Rotating)",
+      "subject": "biology",
+      "unit": "Unit: Heredity and Evolution",
+      "description": "Two sugar-phosphate rails wind around base-pair rungs; the tracer rides the leading strand.",
+      "file": "bio-py-dna.json",
+      "frames": 110,
+      "meshes": 0
+    },
+    {
+      "id": "bio-py-antibody",
+      "kind": "motion",
+      "title": "Antibody\u2013Antigen Binding",
+      "subject": "biology",
+      "unit": "Unit: Human Health and Diseases",
+      "description": "A Y-shaped antibody docks its variable arms onto the antigen, then flags it neutralized.",
+      "file": "bio-py-antibody.json",
+      "frames": 90,
+      "meshes": 0
+    },
+    {
+      "id": "bio-py-crop",
+      "kind": "motion",
+      "title": "High-Yield Crop Rows (Growing)",
+      "subject": "biology",
+      "unit": "Unit: Strategies for Enhancement in Food Production",
+      "description": "Selected rows thicken and head with grain \u2014 plant breeding made visible.",
+      "file": "bio-py-crop.json",
+      "frames": 80,
+      "meshes": 0
+    },
+    {
+      "id": "bio-py-fermenter",
+      "kind": "motion",
+      "title": "Fermenter (Microbes at Work)",
+      "subject": "biology",
+      "unit": "Unit: Microbes in Human Welfare",
+      "description": "Immobilised microbes (green) bubble product gas through the blue broth.",
+      "file": "bio-py-fermenter.json",
+      "frames": 100,
+      "meshes": 0
+    },
+    {
+      "id": "bio-py-pcr",
+      "kind": "motion",
+      "title": "PCR \u2014 Exponential Doubling",
+      "subject": "biology",
+      "unit": "Unit: Biotechnology \u2014 Principles and Processes",
+      "description": "Each thermal cycle doubles the DNA: one template becomes 2, 4, then 8 copies.",
+      "file": "bio-py-pcr.json",
+      "frames": 96,
+      "meshes": 0
+    },
+    {
+      "id": "bio-py-insulin",
+      "kind": "motion",
+      "title": "Recombinant Insulin Maturation",
+      "subject": "biology",
+      "unit": "Unit: Biotechnology and Its Applications",
+      "description": "Proinsulin folds; the C-peptide (grey) is clipped out, leaving active A+B chain insulin.",
+      "file": "bio-py-insulin.json",
+      "frames": 100,
+      "meshes": 0
+    },
+    {
+      "id": "bio-py-logistic",
+      "kind": "motion",
+      "title": "Logistic Growth (S-Curve)",
+      "subject": "biology",
+      "unit": "Unit: Organisms and Environment",
+      "description": "Population traces an S-curve that levels at carrying capacity K.",
+      "file": "bio-py-logistic.json",
+      "frames": 120,
+      "meshes": 0
+    },
+    {
+      "id": "bio-py-hotspot",
+      "kind": "surface3d",
+      "title": "Biodiversity Hotspot (Terrain)",
+      "subject": "biology",
+      "unit": "Unit: Biodiversity and Conservation",
+      "description": "Species markers swell where richness peaks \u2014 hotspots glow over the landscape.",
+      "file": "bio-py-hotspot.json",
+      "frames": 60,
+      "meshes": 1
+    },
+    {
+      "id": "bio-py-greenhouse",
+      "kind": "motion",
+      "title": "Greenhouse Effect (Trapped Heat)",
+      "subject": "biology",
+      "unit": "Unit: Environmental Issues",
+      "description": "Sunlight enters; CO\u2082 layers bounce outgoing heat back \u2014 the planet warms.",
+      "file": "bio-py-greenhouse.json",
+      "frames": 90,
       "meshes": 0
     }
   ]

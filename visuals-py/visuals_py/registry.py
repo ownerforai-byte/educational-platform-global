@@ -7,6 +7,7 @@ from .assets import VisualAsset
 from .gen_3d import sine_surface, paraboloid, gaussian_blob
 from .gen_sim import projectile, pendulum, simple_harmonic
 from .gen_motion import rotating_vectors, interference, lissajous, em_wave
+from . import gen_bio
 
 GENERATORS: Dict[str, Callable[[], VisualAsset]] = {
     # 3D surfaces
@@ -22,6 +23,26 @@ GENERATORS: Dict[str, Callable[[], VisualAsset]] = {
     "ph-motion-interference": interference,
     "math-motion-lissajous": lissajous,
     "ph-motion-emwave": em_wave,
+    # biology unit scenes (Class 11 + Class 12, one per NEB unit)
+    "bio-py-cell": gen_bio.bio_cell,
+    "bio-py-flower": gen_bio.bio_flower,
+    "bio-py-bacteria": gen_bio.bio_bacteria,
+    "bio-py-foodweb": gen_bio.bio_foodweb,
+    "bio-py-vegetation": gen_bio.bio_vegetation,
+    "bio-py-scope": gen_bio.bio_scope,
+    "bio-py-phylogeny": gen_bio.bio_phylogeny,
+    "bio-py-worm": gen_bio.bio_worm,
+    "bio-py-migration": gen_bio.bio_migration,
+    "bio-py-reserve": gen_bio.bio_reserve,
+    "bio-py-dna": gen_bio.bio_dna,
+    "bio-py-antibody": gen_bio.bio_antibody,
+    "bio-py-crop": gen_bio.bio_crop,
+    "bio-py-fermenter": gen_bio.bio_fermenter,
+    "bio-py-pcr": gen_bio.bio_pcr,
+    "bio-py-insulin": gen_bio.bio_insulin,
+    "bio-py-logistic": gen_bio.bio_logistic,
+    "bio-py-hotspot": gen_bio.bio_hotspot,
+    "bio-py-greenhouse": gen_bio.bio_greenhouse,
 }
 
 

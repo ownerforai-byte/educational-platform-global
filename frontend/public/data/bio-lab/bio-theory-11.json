@@ -1,0 +1,494 @@
+{
+  "class": "class-11-notes",
+  "subject": "Biology",
+  "units": [
+    {
+      "id": "biomolecules-and-cell-biology",
+      "title": "Biomolecules and Cell Biology",
+      "hours": 15,
+      "assetId": "bio-py-cell",
+      "origin": "Cell theory by Schleiden & Schwann (1838–39), built on Hooke's 1665 cork cells and Brown's 1831 nucleus.",
+      "discovered": "Cell observed 1665 (Robert Hooke); cell theory 1838–39; electron-microscope ultrastructure resolved in the 1940s–50s (Palade, Porter).",
+      "mechanism": "Biomolecules assemble into membranes and organelles; the nucleus stores DNA instructions, mitochondria release energy (ATP) from food, ribosomes build proteins, and the membrane controls entry and exit — together running metabolism, growth and division.",
+      "features": ["Cell is the structural and functional unit of life", "Prokaryotic (no nucleus) vs eukaryotic (true nucleus) organisation", "Compartmentation: each organelle does one specialised job", "Cell cycle runs growth (interphase) then division (M phase)"],
+      "properties": ["Selective permeability of the plasma membrane", "Colloidal, aqueous cytoplasm favouring enzyme reactions", "Genetic continuity through DNA replication before every division", "Energy currency ATP produced by respiration"],
+      "details": "Life's chemistry rests on six biomolecule families — carbohydrates (fuel), proteins (machines), lipids (membranes), nucleic acids (information), enzymes (catalysts), minerals and water (medium). Eukaryotic cells house a membrane-bound nucleus, mitochondria, plastids (plants), ER, Golgi bodies, lysosomes, ribosomes and cytoskeleton. The cell cycle (G1–S–G2–M) ends in amitosis (direct), mitosis (equal, for growth) or meiosis (halving, for gametes).",
+      "topics": [
+        {
+          "title": "Biomolecules: carbohydrates, proteins, lipids, nucleic acids, minerals, enzymes, water",
+          "origin": "Biochemistry founded in the 19th century — Wöhler's 1828 urea synthesis erased the life/non-life chemical divide; enzyme concept from Kühne (1878).",
+          "mechanism": "Carbohydrates oxidise to release energy; proteins fold into enzymes that speed reactions; lipids form bilayers; DNA/RNA store and carry instructions; water dissolves and transports everything.",
+          "keyPoints": ["Carbohydrates: instant fuel (glucose) + storage (starch, glycogen)", "Proteins: 20 amino acids → structure, enzymes, hormones, antibodies", "Lipids: membranes, insulation, steroid hormones", "Nucleic acids: DNA archive, RNA working copies", "Enzymes lower activation energy; minerals (Ca, Fe, Mg…) and water complete the system"]
+        },
+        {
+          "title": "Cell: prokaryotic and eukaryotic concepts",
+          "origin": "Hooke (1665) named the cell; Leeuwenhoek (1670s) saw living bacteria; Chatton (1925) coined prokaryote/eukaryote.",
+          "mechanism": "Prokaryotes keep DNA free in cytoplasm and divide by fission; eukaryotes wrap DNA in a nucleus and divide by mitosis/meiosis using a spindle.",
+          "keyPoints": ["Prokaryote: no nucleus, no organelles, single circular DNA (bacteria, cyanobacteria)", "Eukaryote: nucleus + organelles (plants, animals, fungi, protists)", "Size range ~1 µm (bacteria) to 100 µm (egg cells)", "Endosymbiotic origin of mitochondria and chloroplasts (Margulis, 1967)"]
+        },
+        {
+          "title": "Detail structure of eukaryotic cells",
+          "origin": "Organelles named across the 19th century (Golgi 1898, mitochondria 1890s); ultrastructure confirmed by electron microscopy c. 1940–55.",
+          "mechanism": "ER synthesises and ships molecules, Golgi packs and labels them, lysosomes digest waste, mitochondria burn fuel to ATP, plastids photosynthesise, nucleus directs all of it via mRNA.",
+          "keyPoints": ["Cell wall (plants): cellulose, protection + support", "Plasma membrane: fluid-mosaic lipid bilayer (Singer–Nicolson, 1972)", "Mitochondria: powerhouse, Krebs cycle + electron transport", "Plastids: chloroplasts trap light; ER/Golgi/lysosome form the transport chain", "Nucleus + chromosomes + cilia/flagella + inclusions complete the inventory"]
+        },
+        {
+          "title": "Cell division: cell cycle, amitosis, mitosis, meiosis",
+          "origin": "Mitosis described by Flemming (1882); meiosis worked out by Farmer, Moore and others c. 1905; Howard & Pelc defined the cell cycle (1953).",
+          "mechanism": "Interphase replicates DNA (S phase); mitosis pulls sister chromatids apart for identical daughters; meiosis runs two divisions to halve chromosome number for gametes, shuffling genes by crossing over.",
+          "keyPoints": ["Cell cycle: G1 → S → G2 → M; checkpoints guard errors", "Mitosis: prophase–metaphase–anaphase–telophase → growth and repair", "Meiosis I & II: homologous pairing, crossing over → variation", "Significance: growth, repair, asexual reproduction (mitosis); gametes + diversity (meiosis)"]
+        }
+      ]
+    },
+    {
+      "id": "floral-diversity",
+      "title": "Floral Diversity",
+      "hours": 30,
+      "assetId": "bio-py-flower",
+      "origin": "Plant classification from Theophrastus (c. 300 BC) to Linnaeus (1753 Species Plantarum); five-kingdom system by Whittaker (1969); three domains by Woese (1990).",
+      "discovered": "Binomial nomenclature 1753 (Linnaeus); alternation of generations in bryophytes/ferns shown by Hofmeister (1851).",
+      "mechanism": "Plants alternate between a haploid gametophyte and diploid sporophyte; evolution shrank the gametophyte until, in angiosperms, the flower packages male (pollen) and female (ovule) parts together for fast, animal-aided fertilisation and seed protection inside fruit.",
+      "features": ["Three domains of life; five-kingdom framework for the plant groups", "Alternation of generations shortens the gametophyte up the evolutionary ladder", "Seed habit frees reproduction from standing water", "Flower + fruit make angiosperms the dominant flora"],
+      "properties": ["Fungi: absorptive, chitin walls — studied with plants but not plants", "Algae/bryophytes: need water for fertilisation", "Pteridophytes: vascular but seedless; gymnosperms: naked seeds; angiosperms: enclosed seeds", "Family traits (Brassicaceae, Fabaceae, Solanaceae, Liliaceae) identify crops"],
+      "details": "From fungi (Mucor, yeast, mushrooms, lichens) through algae (Spirogyra), bryophytes (Marchantia), pteridophytes (Dryopteris), gymnosperms (Pinus) to angiosperms — each grade adds vasculature, seeds or flowers. Angiosperm morphology (root, stem, leaf, inflorescence, flower, fruit) and taxonomic hierarchy let botanists place any flowering plant into artificial, natural or phylogenetic systems.",
+      "topics": [
+        {
+          "title": "Introduction: three domains of life, binomial nomenclature, five-kingdom system",
+          "origin": "Linnaeus (1753) binomial system; Whittaker five kingdoms (1969); Woese three domains from rRNA (1990).",
+          "mechanism": "Organisms group by cell type, nutrition and body plan: Monera, Protista, Fungi, Plantae, Animalia — inside Bacteria, Archaea, Eukarya domains.",
+          "keyPoints": ["Binomial: Genus species, Latinised, italicised", "Five kingdoms split microbes, absorbers, producers, consumers", "Domains from ribosomal-RNA family trees"]
+        },
+        {
+          "title": "Status of flora in Nepal and world representation",
+          "origin": "Humboldt's phytogeography (1800s); Nepal flora surveys through the 20th century.",
+          "mechanism": "Nepal's 60–8848 m altitude staircase compresses tropical to alpine floras — ~6000+ flowering species in a small country.",
+          "keyPoints": ["Global plant wealth vs Nepal's share", "Endemism in the Himalaya", "Herbaria (KATH) documenting the flora"]
+        },
+        {
+          "title": "Fungi: phycomycetes, ascomycetes, basidiomycetes, deuteromycetes",
+          "origin": "Fungal classes defined by sexual-spore type in the 19th century mycology.",
+          "mechanism": "Non-motile spores define the class: oospores (phycomycetes), ascospores in sacs, basidiospores on clubs, or no known sexual stage (deuteromycetes).",
+          "keyPoints": ["Chitin walls, absorptive feeding, hyphal body", "Class diagnostics with examples", "Economic roles: food, antibiotics, decay"]
+        },
+        {
+          "title": "Structure and reproduction of Mucor and Yeast",
+          "origin": "Bread-mould and budding-yeast cycles worked out in 19th-century labs.",
+          "mechanism": "Mucor's coenocytic hyphae fruit sporangia and fuse gametangia (zygospore); yeast buds mitotically and sporulates asci when stressed.",
+          "keyPoints": ["Mucor: stolon, rhizoid, sporangiophore anatomy", "Yeast budding vs fission vs ascospores", "Fermentation industry from both"]
+        },
+        {
+          "title": "Mushrooms: poisonous, non-poisonous; economic importance of fungi",
+          "origin": "Folk knowledge formalised by 19th-century field mycology.",
+          "mechanism": "Basidiocarp gills shed millions of basidiospores; toxins (amanitin) vs edibles differ microscopically — never by taste or peeling.",
+          "keyPoints": ["Agaricus edibility markers; Amanita danger signs", "Food, medicine (penicillin), biocontrol, decay", "Mycorrhizae feeding forests and crops"]
+        },
+        {
+          "title": "Lichen: introduction, features, economic importance",
+          "origin": "Dual nature shown by Schwendener (1867).",
+          "mechanism": "Fungus houses and waters the alga; the alga photosynthesises and shares sugar — surviving bare rock and thin air.",
+          "keyPoints": ["Crustose, foliose, fruticose growth forms", "Pioneers, pollution monitors, litmus and dyes", "Reindeer moss and rock-weathering roles"]
+        },
+        {
+          "title": "Algae: green, brown, red; Spirogyra structure, reproduction, importance",
+          "origin": "Pigment-based classification (19th century); Spirogyra conjugation described in the 1800s.",
+          "mechanism": "Chlorophylls plus accessory pigments harvest light at different depths; Spirogyra's spiral chloroplasts fuse via conjugation tubes (scalariform) into zygospores.",
+          "keyPoints": ["Chlorophyta/Phaeophyta/Rhodophyta diagnostics", "Filament, akinete and zygospore stages", "Agar, algin, food and fertiliser uses"]
+        },
+        {
+          "title": "Bryophyta: liverworts, hornworts, moss; Marchantia structure and reproduction",
+          "origin": "Bryophyte life cycle by Hofmeister (1851).",
+          "mechanism": "Dominant gametophyte anchors by rhizoids; swimming sperm need rain to reach archegonia; the dependent sporophyte fires spores from an elevated capsule.",
+          "keyPoints": ["Three groups by thallus/capsule form", "Marchantia: gemma cups, antheridiophores, archegoniophores", "Peat, packing, seedbed and medicinal uses"]
+        },
+        {
+          "title": "Pteridophyta: features; Dryopteris morphology and reproduction",
+          "origin": "Fern life cycle (Hofmeister, 1851); fossil coal forests mapped in the 19th century.",
+          "mechanism": "True roots, stems and fronds with vascular plumbing; sori release spores that grow heart-shaped prothalli where swimming sperm meet eggs.",
+          "keyPoints": ["Seedless vascular grade; circinate vernation", "Dryopteris: rhizome, stipe, pinnae, indusiate sori", "Ornamentals, soil binders, evolutionary bridge"]
+        },
+        {
+          "title": "Gymnosperm: features; Pinus morphology and reproduction",
+          "origin": "Living cycad/fern phylogeny refined through the 20th century; fossil seed-ferns (19th century).",
+          "mechanism": "Pollen flies to ovules on cone scales; a pollen tube delivers non-swimming sperm; winged seeds scatter from woody female cones.",
+          "keyPoints": ["Naked seeds on cones; xerophytic needles", "Pinus male vs female cones and life-cycle sequence", "Timber, resin, turpentine economy"]
+        },
+        {
+          "title": "Angiosperm morphology: root, stem, leaves, inflorescences, flowers, fruit",
+          "origin": "Morphological vocabulary standardised by 19th-century taxonomists.",
+          "mechanism": "Roots anchor and absorb, stems conduct and display, leaves photosynthesise; inflorescences advertise; flowers execute double fertilisation; ovaries ripen into dispersal-engineered fruits.",
+          "keyPoints": ["Root/stem/leaf modification galleries", "Racemose vs cymose inflorescences", "Flower whorls; fruit types and dispersal tricks"]
+        },
+        {
+          "title": "Taxonomic study: hierarchy and classification systems",
+          "origin": "Linnaeus (artificial, 1753); Bentham & Hooker (natural, 1860s); APG phylogenetic system (1998+).",
+          "mechanism": "Hierarchy nests species in genera, families, orders…; artificial systems key on one trait, natural on many, phylogenetic on DNA descent.",
+          "keyPoints": ["Seven ranks with suffix rules", "Comparing the three system philosophies", "Herbarium method and keys"]
+        },
+        {
+          "title": "Angiosperm families: Brassicaceae, Fabaceae, Solanaceae, Liliaceae",
+          "origin": "Family circumscriptions from de Jussieu (1789) to APG DNA revisions.",
+          "mechanism": "Floral formulae fingerprint each family — tetradynamous mustard stamens, pea banners, potato pentamery, lily trimer — matched to their crop chemistry.",
+          "keyPoints": ["Diagnostic traits + formulae per family", "Mustard, pea, potato, onion exemplars", "Economic: oil, pulse, drug and vegetable value"]
+        }
+      ]
+    },
+    {
+      "id": "introductory-microbiology",
+      "title": "Introductory Microbiology",
+      "hours": 5,
+      "assetId": "bio-py-bacteria",
+      "origin": "Leeuwenhoek's animalcules (1670s); germ theory by Pasteur and Koch (1860s–80s); virus concept by Ivanovsky/Beijerinck (1890s).",
+      "discovered": "Bacteria 1670s; bacteriophage by Twort (1915) and d'Hérelle (1917); bacterial growth curve by Buchanan & Fulmer (1930s).",
+      "mechanism": "Bacteria absorb nutrients through a wall-enclosed cell, copy one circular chromosome and split by binary fission — doubling populations in minutes; viruses instead hijack host cells, and phages inject DNA that mass-produces new virus particles.",
+      "features": ["Monera: no nucleus, rapid fission, diverse nutrition (photo/auto/heterotrophic)", "Cyanobacteria: oxygenic photosynthesis, nitrogen fixation, bloom formers", "Virus: acellular, obligate parasite — living only inside hosts", "Biotechnology redirects microbes into factories"],
+      "properties": ["Generation times down to ~20 minutes (E. coli)", "Spore formers survive boiling, drying, disinfectants", "Phages are host-specific — basis of phage typing and therapy research", "Growth phases: lag → log → stationary → death"],
+      "details": "Bacterial cells pack capsule, wall, membrane, ribosomes and nucleoid without organelles; nutrition spans sunlight, chemicals and organic food. Viruses carry DNA or RNA in protein coats (bacteriophage: head + tail fibres). Recombinant microbes now brew insulin, clean spills and fix nitrogen.",
+      "topics": [
+        {
+          "title": "Monera: bacterial cell, nutrition, growth; cyanobacteria",
+          "origin": "Bacterial structure resolved by electron microscopy in the 1940s–50s; cyanobacteria recognised as oxygen-makers of the ancient atmosphere.",
+          "mechanism": "Binary fission after chromosome replication; photosynthesis or chemical feeding powers growth through four predictable curve phases.",
+          "keyPoints": ["Wall/membrane/nucleoid/flagella architecture", "Autotrophs vs heterotrophs; nitrogen-fixing cyanobacteria as biofertiliser", "Growth-curve control in food, medicine and industry"]
+        },
+        {
+          "title": "Virus: structure, importance; bacteriophage",
+          "origin": "Tobacco mosaic agent (1892–98); TMV crystallised by Stanley (1935); Hershey–Chase (1952) proved DNA is the genetic payload.",
+          "mechanism": "Attachment → genome injection → host machinery hijacked → assembly → lysis release; lysogenic phages hide inside the host chromosome instead.",
+          "keyPoints": ["Acellular: nucleic acid + capsid, sometimes envelope", "Phage anatomy: icosahedral head, contractile tail, fibres", "Vaccines, diagnostics and gene-delivery vectors from viruses"]
+        },
+        {
+          "title": "Impacts of biotechnology in microbiology",
+          "origin": "Recombinant DNA era from Cohen–Boyer (1973); PCR from Mullis (1983).",
+          "mechanism": "Engineered plasmids turn bacteria into protein factories; PCR copies trace DNA billions-fold for detection.",
+          "keyPoints": ["Insulin, vaccines and enzymes brewed by microbes", "Rapid pathogen detection by culture + molecular tests", "Bioremediation and biofertilisers from wild microbes"]
+        }
+      ]
+    },
+    {
+      "id": "ecology",
+      "title": "Ecology",
+      "hours": 11,
+      "assetId": "bio-py-foodweb",
+      "origin": "Term 'oekologie' by Haeckel (1866); ecosystem concept by Tansley (1935); succession theory by Clements and Gleason (early 1900s).",
+      "discovered": "Food-web energetics by Lindeman (1942, 10% law); carbon/nitrogen cycles mapped through the 19th–20th centuries.",
+      "mechanism": "Producers capture sun, consumers pass ~10% of energy upward, decomposers recycle everything; carbon and nitrogen loop between air, soil and bodies while succession steadily rebuilds disturbed communities toward climax.",
+      "features": ["Biotic + abiotic factors jointly set survival", "Pond and forest show ecosystem structure and function side by side", "Pyramids of number, biomass and energy always narrow upward in energy terms", "Hydrophytes/xerophytes prove adaptation shapes form"],
+      "properties": ["Productivity: gross minus respiration = net", "Trophic levels rarely exceed 4–5 (energy runs out)", "Cycles are gaseous (C, N) or sedimentary (P) in character", "Greenhouse, ozone loss, acid rain, invasions destabilise balance"],
+      "details": "Species interact as competitors, predators, parasites, commensals and mutualists inside pond/forest ecosystems. Food chains braid into webs; ecological pyramids and productivity quantify the flow. Carbon and nitrogen cycle globally; succession heals bare ground. Human-driven imbalance — warming, ozone thinning, acid rain, invasive species — is the unit's closing warning.",
+      "topics": [
+        {
+          "title": "Ecosystem ecology: biotic/abiotic factors, species interactions",
+          "origin": "Haeckel (1866) coined ecology; interaction classes formalised through 20th-century field studies.",
+          "mechanism": "Light, water, soil and climate filter which species survive; the survivors then compete, eat, parasitise or cooperate.",
+          "keyPoints": ["Five interaction types with +/−/0 outcomes", "Niche: each species' role + address", "Population vs community vs ecosystem levels"]
+        },
+        {
+          "title": "Pond and forest ecosystem: structure and function",
+          "origin": "Odum's Silver Springs study (1957) balanced a whole ecosystem's books.",
+          "mechanism": "Producers, consumers and decomposers trade energy and matter; stratification and zonation organise space.",
+          "keyPoints": ["Pond: littoral–limnetic–profundal zones", "Forest: canopy–understorey–floor layers", "Structure (who/where) vs function (flow/cycle)"]
+        },
+        {
+          "title": "Food chain, food web, trophic level, pyramids, productivity",
+          "origin": "Lindeman's trophic-dynamic paper (1942) founded energy-flow ecology.",
+          "mechanism": "Each feeding step burns ~90% as heat and respiration, leaving ~10% for the next level — capping chain length.",
+          "keyPoints": ["Grazing vs detritus chains braided into webs", "Number/biomass/energy pyramids compared", "GPP − respiration = NPP, the food base of the planet"]
+        },
+        {
+          "title": "Biogeochemical cycles: carbon and nitrogen; succession",
+          "origin": "Nitrogen fixation by Hellriegel & Wilfarth (1886); succession theory (Clements/Gleason, early 1900s).",
+          "mechanism": "Photosynthesis fixes carbon, respiration/decay return it; fixers, nitrifiers and denitrifiers shuttle nitrogen; pioneers → sere → climax rebuilds ecosystems.",
+          "keyPoints": ["Reservoirs: atmosphere, ocean, soil, biomass", "Legume–Rhizobium pact as the nitrogen gateway", "Primary (bare rock) vs secondary (disturbed) succession"]
+        },
+        {
+          "title": "Ecological adaptation: hydrophytes and xerophytes",
+          "origin": "Adaptation concept from Darwin (1859); anatomical studies of water plants (19th century).",
+          "mechanism": "Hydrophytes float and breathe through aerenchyma with reduced roots; xerophytes hoard water with succulence, sunken stomata and thorns.",
+          "keyPoints": ["Hydrilla/Eichhornia vs Opuntia/Nerium body plans", "Aerenchyma, mucilage, waxy coats compared", "Adaptation as evidence of selection"]
+        },
+        {
+          "title": "Ecological imbalances: greenhouse, ozone, acid rain, invasion",
+          "origin": "Greenhouse physics (Fourier 1824, Tyndall 1859); ozone hole found 1985.",
+          "mechanism": "Excess CO₂ overheats, CFC chlorine shreds ozone, SO₂/NOₓ acidify rain, and introduced species outrun native checks.",
+          "keyPoints": ["Four imbalances: mechanism each", "Effects on health, crops, ecosystems", "Controls: clean energy, treaties, treatment, biosecurity"]
+        }
+      ]
+    },
+    {
+      "id": "vegetation",
+      "title": "Vegetation",
+      "hours": 3,
+      "assetId": "bio-py-vegetation",
+      "origin": "Phytogeography founded by Humboldt (early 1800s); Nepal's flora surveyed through the 20th century (Flora of Nepal project).",
+      "discovered": "Nepal's protected-area system from Chitwan National Park (1973, UNESCO 1984).",
+      "mechanism": "Altitude (60–8848 m) stacks climate belts — tropical, subtropical, temperate, alpine — each growing its own forest; protected areas and seed banks hold the line where people press in.",
+      "features": ["Nepal holds ~6000+ flowering species in a tiny area", "In-situ: parks, reserves, conservation areas, Ramsar wetlands", "Ex-situ: botanical gardens, seed/gene banks", "Vegetation tracks human pressure — deforestation, grazing, fire"],
+      "properties": ["Belt boundaries shift with temperature and rainfall", "Endemics cluster in the Himalaya", "Corridors matter more than isolated patches", "Community forestry restores cover fastest"],
+      "details": "Nepal's vegetation types run from Terai sal forest through Schima–Castanopsis, oak–laurel and conifer belts to alpine scrub. In-situ conservation (national parks, wildlife reserves, conservation areas) pairs with ex-situ backup (Godawari botanical garden, seed banks). Human activity — farming, fuelwood, roads — fragments habitat; management answers with zoning, corridors and replanting.",
+      "topics": [
+        {
+          "title": "Vegetation types of Nepal",
+          "origin": "Humboldt's life-zone idea (1800s) applied to the Himalaya by successive flora surveys.",
+          "mechanism": "Every ~1000 m of climb cools the climate a belt — forests thin, shorten and finally yield to meadow and rock.",
+          "keyPoints": ["Terai → Siwalik → mid-hill → high-mountain → alpine sequence", "Sal, chir pine, oak, fir–birch, rhododendron signatures", "Nepal as a meeting point of Indo-Malayan and Palaearctic flora"]
+        },
+        {
+          "title": "In-situ and ex-situ conservation",
+          "origin": "Modern park movement from Yellowstone (1872); Nepal's system from 1973.",
+          "mechanism": "Parks protect whole ecosystems in place; gardens and banks freeze diversity outside them as insurance.",
+          "keyPoints": ["Chitwan, Sagarmatha, Annapurna flagships; Ramsar wetlands", "Seed banks + botanical gardens back up wild loss", "Buffer zones pay locals to protect"]
+        },
+        {
+          "title": "Natural environment–vegetation–human activities",
+          "origin": "Human-ecology synthesis of the late 20th century (sustainable-use doctrine).",
+          "mechanism": "Fuel, fodder, timber and farmland demand strips cover; erosion and landslides follow; community forestry and alternatives reverse it.",
+          "keyPoints": ["Deforestation drivers: energy, expansion, infrastructure", "Feedbacks: flood, drought, biodiversity crash", "Fixes: alternatives, tenure, restoration"]
+        }
+      ]
+    },
+    {
+      "id": "introduction-to-biology",
+      "title": "Introduction to Biology",
+      "hours": 2,
+      "assetId": "bio-py-scope",
+      "origin": "Word 'biology' independently by Treviranus and Lamarck (1802); modern synthesis unifying it in the 1930s–40s.",
+      "discovered": "Biology's branches split off as microscopy, evolution and genetics matured (1600s–1900s).",
+      "mechanism": "Biology studies life at nested scales — molecules → cells → organisms → ecosystems — borrowing physics' instruments, chemistry's reactions and mathematics' models to explain each level.",
+      "features": ["Scope: from biomolecules to biosphere", "Fields: botany, zoology, genetics, ecology, microbiology, physiology…", "Relations: biophysics, biochemistry, biostatistics, biotechnology", "Careers: medicine, agriculture, conservation, research"],
+      "properties": ["Observation → hypothesis → experiment → theory method", "Life's hallmarks: order, regulation, growth, reproduction, evolution", "Unity (DNA) inside diversity (millions of species)", "Ethics: bioethics governs life-science applications"],
+      "details": "Biology asks how living things are built, work, reproduce and evolve. Its fields map onto life's levels, and every one leans on sister sciences — microscopes and X-rays from physics, reaction chemistry from chemistry, statistics from mathematics. Nepal's curriculum uses this unit to frame the two-year journey ahead.",
+      "topics": [
+        {
+          "title": "Scope and fields of biology",
+          "origin": "Lamarck/Treviranus (1802) named the unified science of life.",
+          "mechanism": "Each level of organisation gets its own field, from molecular biology to global ecology.",
+          "keyPoints": ["Classical split: botany + zoology", "Modern fields: genetics, cell biology, ecology, evolution", "Applied arms: medicine, agriculture, biotechnology"]
+        },
+        {
+          "title": "Relation of biology with other sciences",
+          "origin": "Interdisciplinary institutes and biophysics/biochemistry chairs, 20th century.",
+          "mechanism": "Physics builds the tools, chemistry explains the reactions, maths tests the patterns — biology integrates them on living systems.",
+          "keyPoints": ["Biophysics: imaging, biomechanics, electrophysiology", "Biochemistry: metabolism and molecular machines", "Biostatistics/bioinformatics: proving patterns in data"]
+        }
+      ]
+    },
+    {
+      "id": "evolutionary-biology",
+      "title": "Evolutionary Biology",
+      "hours": 15,
+      "assetId": "bio-py-phylogeny",
+      "origin": "Darwin & Wallace (1858–59); Mendel (1866) supplied the mechanism; modern synthesis (Fisher, Haldane, Dobzhansky, 1930s–40s).",
+      "discovered": "Origin of Species 1859; Miller–Urey experiment 1953; human–chimp split dated ~6–7 million years ago.",
+      "mechanism": "Prebiotic chemistry built replicating molecules (Oparin–Haldane, tested by Miller–Urey); heritable variation plus natural selection then sculpted lineages; humans descended from African anthropoid ancestors through australopiths to Homo sapiens.",
+      "features": ["Five evidence pillars: morphology, anatomy, fossils, embryos, molecules", "Lamarck (use/disuse) → Darwin (selection) → Neo-Darwinism (genes + selection)", "Human story: tree-dwelling primates → bipedal toolmakers", "New vs old world monkeys, apes vs humans diagnosed by anatomy"],
+      "properties": ["Variation is raw material; selection is the sieve", "Homology (shared origin) vs analogy (shared function)", "Molecular clocks date splits with DNA differences", "Evolution is both fact (fossils/DNA) and theory (mechanisms)"],
+      "details": "Life began when Earth's early chemistry produced self-copying molecules, energised by lightning and UV (Miller–Urey, 1953). Whale hips, human tails, Archaeopteryx and identical embryos all testify to common descent. Lamarck's inheritance of acquired traits failed; Darwin's selection on variation, fused with genetics, stands. Humans sit among catarrhine primates — diverging from apes as bipedal, big-brained hominins spread out of Africa.",
+      "topics": [
+        {
+          "title": "Life and its origin: Oparin–Haldane theory, Miller–Urey experiment",
+          "origin": "Oparin (1924) and Haldane (1929) hypotheses; Miller–Urey test (1953).",
+          "mechanism": "Reducing-atmosphere gases zapped by energy form amino acids → coacervates → replicating RNA → first cells.",
+          "keyPoints": ["Primordial soup ingredients and energy sources", "Miller–Urey yielded amino acids in a week", "RNA-world as the bridge to DNA–protein life"]
+        },
+        {
+          "title": "Evidences of evolution: morphological, anatomical, paleontological, embryological, biochemical",
+          "origin": "Comparative anatomy (Owen, 1840s), fossils (19th century), DNA (1960s+).",
+          "mechanism": "Shared structures, transitional fossils, matching embryos and matching genes all converge on common ancestry.",
+          "keyPoints": ["Homologous limbs, vestigial organs", "Archaeopteryx, horse and elephant series", "Embryo gill slits; cytochrome-c percentages"]
+        },
+        {
+          "title": "Theories of evolution: Lamarckism, Darwinism, Neo-Darwinism",
+          "origin": "Lamarck (1809), Darwin (1859), synthesis (1930s–40s).",
+          "mechanism": "Acquired-trait inheritance fails tests; variation + selection + isolation, grounded in genes and mutation, passes them.",
+          "keyPoints": ["Giraffe necks: the textbook contrast", "Natural selection's four postulates", "Gene pool, drift, flow and selection in Neo-Darwinism"]
+        },
+        {
+          "title": "Human evolution: position of man in animal kingdom",
+          "origin": "Darwin's Descent of Man (1871); Taung child (1924) proved African origins.",
+          "mechanism": "Shared primate anatomy plus unique bipedalism, tools and language place humans as hominin apes.",
+          "keyPoints": ["Kingdom → species address of Homo sapiens", "Primate hallmarks: grasping, vision, big brain", "Why Africa: fossil and DNA consensus"]
+        },
+        {
+          "title": "Differences: new vs old world monkeys; apes vs man",
+          "origin": "Primate taxonomy (Simpson, 1940s; molecular revisions 1990s+).",
+          "mechanism": "Nose shape, tails and dentition split monkey families; posture, brain and culture split apes from humans.",
+          "keyPoints": ["Platyrrhine vs catarrhine diagnostics", "Brachiation, knuckle-walking vs bipedalism", "Cranial capacity and tool-culture gaps"]
+        },
+        {
+          "title": "Evolution of modern man from anthropoid ancestor",
+          "origin": "Fossil sequence: Sahelanthropus (2001) to Cro-Magnon (1868 find).",
+          "mechanism": "Bipedalism freed hands, tools fed brains, fire and language compounded gains — australopiths → Homo → sapiens out of Africa.",
+          "keyPoints": ["Australopithecus → habilis → erectus → sapiens", "Fire, art and agriculture milestones", "Neanderthal admixture in modern genomes"]
+        }
+      ]
+    },
+    {
+      "id": "faunal-diversity",
+      "title": "Faunal Diversity",
+      "hours": 34,
+      "assetId": "bio-py-worm",
+      "origin": "Animal classification from Aristotle to Linnaeus (1758 Systema Naturae); germ-layer/body-cavity scheme of the 19th century.",
+      "discovered": "Paramecium/Plasmodium life cycles (19th century); earthworm physiology (19th–20th); frog as the classic vertebrate type.",
+      "mechanism": "Body plans escalate — asymmetry → radial → bilateral, acoelomate → pseudocoelomate → coelomate — while type animals (Paramecium, Plasmodium, earthworm, frog) demonstrate how feeding, transport, breathing and reproduction solve survival at each grade.",
+      "features": ["Protozoa to Chordata: the full invertebrate parade to vertebrates", "Paramecium (free-living ciliate) vs Plasmodium (malarial parasite) contrast", "Earthworm: segmented engineer with closed circulation", "Frog: amphibian bridge — gills to lungs, water to land"],
+      "properties": ["Symmetry, coelom and segmentation diagnose phyla", "Parasites trade complexity for transmission tricks", "Closed circulation + nephridia = annelid efficiency", "Double circulation + lungs = frog's land permit"],
+      "details": "Protozoa (Paramecium's slipper with oral groove and contractile vacuoles; Plasmodium's mosquito–human cycle, P. falciparum deadliest) lead into nine invertebrate phyla diagnosed by organisation, symmetry, cavity and segmentation. Earthworm chapters cover gut, septal nephridia, ladder nervous system and hermaphrodite mating with cocoon economics. Frog chapters cover gut, three-chambered heart, cutaneous/buccal/pulmonary breathing and separate-sex reproduction.",
+      "topics": [
+        {
+          "title": "Protista: classification; Protozoa diagnostic features up to class",
+          "origin": "Protozoa named by Goldfuss (1818); locomotor-based classes (19th century).",
+          "mechanism": "Single cells move by cilia, flagella, pseudopodia or not at all — the locomotory organ defines the class.",
+          "keyPoints": ["Ciliata, Flagellata, Rhizopoda, Sporozoa with examples", "Outline classification logic", "Free-living vs parasitic lifestyles"]
+        },
+        {
+          "title": "Paramecium caudatum: habits, structure, reproduction, life cycle",
+          "origin": "Described by 19th-century microscopists; conjugation genetics (Sonneborn, 1930s+).",
+          "mechanism": "Cilia sweep bacteria into the oral groove; contractile vacuoles bail water; binary fission clones, conjugation reshuffles genes.",
+          "keyPoints": ["Slipper anatomy: pellicle, trichocysts, macro/micronucleus", "Holozoic feeding + osmoregulation", "Fission vs conjugation significance"]
+        },
+        {
+          "title": "Plasmodium vivax: habits, structure, reproduction, life cycle; P. falciparum importance",
+          "origin": "Malaria cycle solved by Ross and Grassi (1897–98, Nobel 1902/1907).",
+          "mechanism": "Sporozoites ride mosquito saliva to liver then red cells (schizogony); gametocytes return to mosquitoes for sporogony — falciparum's stickiness kills.",
+          "keyPoints": ["Human + mosquito phase tables", "Vivax relapse (hypnozoites) vs falciparum severity", "Economic toll: treatment, nets, DDT history"]
+        },
+        {
+          "title": "Animalia: organisation, body plan, symmetry, cavity, segmentation",
+          "origin": "Body-plan scheme (Haeckel, Lankester, 19th century).",
+          "mechanism": "Grades of organisation stack: cells → tissues → organs; symmetry and cavities then sort every animal into its phylum.",
+          "keyPoints": ["Cellular/blind-sac/tube-within-tube grades", "Asymmetry/radial/bilateral; acoelomate/pseudocoelomate/coelomate", "Metamerism and cephalisation trends"]
+        },
+        {
+          "title": "Diagnostic features and classification of phyla up to class",
+          "origin": "Phylum system stabilised through 20th-century invertebrate zoology.",
+          "mechanism": "Each phylum's key innovation (pores, stingers, flatness, cuticle, segments, jointed legs, shells, spines, notochord) earns its branch.",
+          "keyPoints": ["Porifera → Chordata march with class examples", "Sponges to echinoderms: one-line diagnoses", "Chordate hallmarks previewing vertebrates"]
+        },
+        {
+          "title": "Earthworm: habit, external features, digestive system",
+          "origin": "Darwin's earthworm book (1881) crowned its ecological role.",
+          "mechanism": "Nocturnal burrower; prostomium shovels leaf litter through pharynx–gizzard mill; typhlosole boosts absorption.",
+          "keyPoints": ["Segments, setae, clitellum externals", "Alimentary canal regions + digestion physiology", "Castings: soil fertility economics"]
+        },
+        {
+          "title": "Earthworm: excretory and nervous systems with working mechanism",
+          "origin": "Nephridial and nerve-cord anatomy (19th-century microtomy).",
+          "mechanism": "Septal nephridia filter coelomic fluid into the gut; dorsal brain + ventral cord run segmental reflexes.",
+          "keyPoints": ["Nephridia types; septal arrangement diagram", "Central + peripheral ladder system", "Reflex arc through a segment"]
+        },
+        {
+          "title": "Earthworm: reproduction, copulation, cocoon, economic importance",
+          "origin": "Hermaphrodite mating described in the 19th century.",
+          "mechanism": "Mutual sperm exchange during belly-to-belly copulation; clitellum secretes the cocoon where cross-fertilised eggs develop.",
+          "keyPoints": ["Male/female organ positions", "Copulation → cocoon sequence", "Vermicompost and bait industries"]
+        },
+        {
+          "title": "Frog: habit, external features, digestive system",
+          "origin": "Frog as laboratory vertebrate since Galvani (1780s).",
+          "mechanism": "Camouflaged ambush predator; sticky tongue flips prey into a J-shaped stomach; liver/pancreas juices finish digestion.",
+          "keyPoints": ["Cutaneous colour, webbed feet, tympanum externals", "Alimentary canal + glands + physiology", "Pest-control and lab-model value"]
+        },
+        {
+          "title": "Frog: blood vascular and respiratory systems with mechanism",
+          "origin": "Double-circulation physiology (19th-century vivisection).",
+          "mechanism": "Three-chambered heart shunts blood to body, lungs and skin; breathing rotates through skin, mouth lining and lungs by season.",
+          "keyPoints": ["Heart chambers + working cycle", "Cutaneous/buccopharyngeal/pulmonary modes", "Hibernation/aestivation breathing shifts"]
+        },
+        {
+          "title": "Frog: male and female reproductive systems",
+          "origin": "Amphibian development classic since Spemann (organiser, Nobel 1935).",
+          "mechanism": "Separate sexes shed gametes into water (amplexus); external fertilisation spawns eggs that hatch gilled tadpoles, metamorphosing to froglets.",
+          "keyPoints": ["Testes/vasa vs ovaries/oviducts anatomy", "Amplexus and spawn strategy", "Metamorphosis hormonal control"]
+        }
+      ]
+    },
+    {
+      "id": "biota-and-environment",
+      "title": "Biota and Environment",
+      "hours": 10,
+      "assetId": "bio-py-migration",
+      "origin": "Ethology by Lorenz, Tinbergen, von Frisch (Nobel 1973); migration tracked since 19th-century bird ringing.",
+      "discovered": "Conditioned reflex (Pavlov, 1900s); pollutant crises (London smog 1952, Minamata, Bhopal 1984) forced control science.",
+      "mechanism": "Bodies reshape for water, land, air or flight; nerves run reflexes and instincts while learning tunes behaviour; migrants navigate by sun, stars and magnetism; pollutants enter air, water and soil faster than nature dilutes them — so treatment, bans and IPM pull them back out.",
+      "features": ["Aquatic → terrestrial → volant adaptation series", "Reflex, taxes, imprinting, dominance hierarchies", "Fish (spawning runs) and bird (seasonal flyways) migrations", "Pollution sources → effects → controls, medium by medium"],
+      "properties": ["Form follows medium: fusiform, cursorial, fossorial, arboreal, volant", "Innate vs learned behaviour split", "Migration trades travel cost for food and breeding gain", "Pesticides biomagnify — DDT's eggshell lesson"],
+      "details": "Adaptation chapters dress animals for primary/secondary aquatic life, cursorial running, fossorial digging, arboreal climbing and volant flight. Behaviour spans reflex arcs to leadership hierarchies; fish and birds migrate on physiological calendars. Pollution units fingerprint air (smoke, SO₂), water (sewage, effluents) and soil (plastics, agrochemicals) with effects and controls; pesticides get a special dossier on persistence and alternatives.",
+      "topics": [
+        {
+          "title": "Animal adaptation: aquatic, terrestrial, volant",
+          "origin": "Adaptive morphology since Darwin (1859); ecomorphology of the 20th century.",
+          "mechanism": "Streamlining, limbs-to-paddles/wings/claws and sensory retuning cut the cost of moving and feeding in each medium.",
+          "keyPoints": ["Primary (fish) vs secondary (whale) aquatic returnees", "Cursorial/fossorial/arboreal land specialists", "Gliders vs powered fliers"]
+        },
+        {
+          "title": "Animal behavior: reflex action, taxes, dominance, leadership",
+          "origin": "Pavlov (reflexes), Lorenz/Tinbergen (instinct), Wilson (sociobiology, 1975).",
+          "mechanism": "Short reflex arcs react instantly; taxes steer toward/away from stimuli; hierarchies ration mating and food peacefully.",
+          "keyPoints": ["Reflex arc wiring", "Phototaxis to migration restlessness (zugunruhe)", "Pecking orders and leadership payoffs"]
+        },
+        {
+          "title": "Fish and bird migration",
+          "origin": "Ringing stations (1899+); satellite telemetry (1990s+) mapped flyways precisely.",
+          "mechanism": "Photoperiod fattens migrants; compass senses (sun, stars, magnetite) steer night-and-day legs between ranges.",
+          "keyPoints": ["Anadromous/catadromous fish runs", "Central Asian flyway over Nepal", "Navigation toolkit + stopover conservation"]
+        },
+        {
+          "title": "Environmental pollution: air, water, soil — sources, effects, control",
+          "origin": "Modern pollution science from mid-20th-century disasters; Carson's Silent Spring (1962).",
+          "mechanism": "Emissions overload sinks: particulates lodge in lungs, sewage starves rivers of oxygen, plastics persist in soil.",
+          "keyPoints": ["Medium-by-medium source inventories", "Health and ecosystem endpoints", "Treatment plants, filters, bans, standards"]
+        },
+        {
+          "title": "Pesticides and their effects",
+          "origin": "DDT era (1940s–60s); biomagnification proven by 1960s residue studies.",
+          "mechanism": "Persistent molecules wash into food webs and concentrate upward — thinning raptor eggs and poisoning applicators.",
+          "keyPoints": ["Organochlorine/OP/carbamate classes", "Biomagnification arithmetic", "IPM and biopesticides as the exit ramp"]
+        }
+      ]
+    },
+    {
+      "id": "conservation-biology",
+      "title": "Conservation Biology",
+      "hours": 3,
+      "assetId": "bio-py-reserve",
+      "origin": "Soulé founded conservation biology as a discipline (1980s); CBD signed at Rio (1992).",
+      "discovered": "IUCN Red List (1964); Nepal's rhino/tiger recoveries (2000s–2010s).",
+      "mechanism": "Counting diversity (genes → species → ecosystems), diagnosing extinction drivers (habitat, hunting, invasion, pollution, climate — HIPPO), then shielding strongholds (parks, Ramsar wetlands) and ranking the desperate (Red List) for rescue.",
+      "features": ["Biodiversity at three nested levels", "Hotspots, wetlands and Ramsar sites as priority real estate", "Extinct → endangered → vulnerable → rare scale", "Nepal's endangered roll-call: rhino, tiger, gharial, red panda…"],
+      "properties": ["Small populations spiral via inbreeding and chance", "Corridors beat isolated islands", "Ex-situ backs up in-situ, never replaces it", "Community ownership decides success"],
+      "details": "Conservation biology converts biodiversity value into action: inventory, threat analysis (habitat loss first), protected-area design, law (CITES, national acts) and Red-List triage. Nepal pairs Terai–Himalaya parks with community forests; its endangered species — one-horned rhino, Bengal tiger, snow leopard, red panda, gharial, giant hornbill — anchor the syllabus list.",
+      "topics": [
+        {
+          "title": "Conservation biology: biodiversity concept and conservation",
+          "origin": "Soulé (1980s) framed the mission-driven science.",
+          "mechanism": "Genetic, species and ecosystem diversity get inventoried, valued (use + ethical) and defended.",
+          "keyPoints": ["Three diversity levels with measures", "Why conserve: ecological, economic, ethical", "Conservation vs preservation doctrines"]
+        },
+        {
+          "title": "National parks, reserves, conservation areas, hotspots, wetlands, Ramsar sites",
+          "origin": "Park movement (1872); Ramsar Convention (1971); Myers' hotspots (1988).",
+          "mechanism": "Zoned strongholds protect whole ecosystems; treaty wetlands and hotspot maps aim money where endemics face ruin.",
+          "keyPoints": ["Nepal's park/reserve/CA network", "Hotspot criteria (1500 endemics + 70% loss)", "Ramsar sites and wise-use rules"]
+        },
+        {
+          "title": "Wildlife: importance, extinction causes, conservation strategies",
+          "origin": "Extinction science from fossils to island biogeography (MacArthur & Wilson, 1967).",
+          "mechanism": "HIPPO drivers shrink populations; reserves, corridors, breeding and law reverse each driver.",
+          "keyPoints": ["Ecological/economic/cultural values", "Habitat, hunting, invasion, pollution, climate", "In-situ + ex-situ + legislation toolkit"]
+        },
+        {
+          "title": "IUCN categories: extinct, endangered, vulnerable, rare, threatened",
+          "origin": "IUCN Red List categories formalised 1964, revised 1994/2001.",
+          "mechanism": "Population size, decline rate and range size sort species into threat bands that trigger action.",
+          "keyPoints": ["Category definitions with thresholds", "How assessments are compiled", "From listing to action plans"]
+        },
+        {
+          "title": "Endangered species in Nepal",
+          "origin": "Nepal's species action plans (2000s–2010s).",
+          "mechanism": "Anti-poaching patrols, habitat corridors (Terai Arc) and community incentives doubled rhinos and tigers.",
+          "keyPoints": ["Rhino, tiger, snow leopard, red panda, gharial profiles", "Terai Arc + Sacred Himalayan landscapes", "Doubling-tigers and zero-poaching milestones"]
+        }
+      ]
+    }
+  ]
+}
