@@ -48,6 +48,7 @@ import {
 } from "@/lib/ai/guest-quota";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
+import { useCoinGateEnabled } from "@/features/credits/use-coin-gate";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
 import { cn } from "@/lib/utils";
 import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
@@ -271,6 +272,10 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
   const { user } = useSession();
   const router = useRouter();
   const isLoggedIn = !!user;
+  // Owner coin gate (live): when OFF, chat is free for everyone — the credit
+  // lock below must not fire on a zero balance (owner report 2026-10-03).
+  const coinGateEnabled = useCoinGateEnabled();
+  const freeMode = coinGateEnabled === false;
   /** Photos queued for the next message (camera / gallery). */
   const [pendingImages, setPendingImages] = useState<string[]>([]);
 
@@ -346,6 +351,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
   const creditsExhausted =
     isLoggedIn &&
     !privilegedUser &&
+    !freeMode &&
     (poolEmpty ||
       dailyCredits === 0 ||
       (typeof user?.credits === "number" && user.credits <= 0));
@@ -946,7 +952,9 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
               <Coins className="h-3.5 w-3.5 text-amber-500" />
               <span className="font-semibold">
                 {isLoggedIn
-                  ? `${Math.min(dailyCredits ?? user?.credits ?? DAILY_CREDIT_POOL, DAILY_CREDIT_POOL)}/${DAILY_CREDIT_POOL} credits today`
+                  ? freeMode
+                    ? "Free mode — no credits needed"
+                    : `${Math.min(dailyCredits ?? user?.credits ?? DAILY_CREDIT_POOL, DAILY_CREDIT_POOL)}/${DAILY_CREDIT_POOL} credits today`
                   : Math.max(0, MAX_GUEST_MESSAGES - guestCount) > 0
                     ? `${Math.max(0, MAX_GUEST_MESSAGES - guestCount)} free message left today`
                     : "Free trial used · sign in to continue"}
@@ -999,7 +1007,16 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                 {Math.max(0, MAX_GUEST_MESSAGES - guestCount) > 0 ? "1 free trial message" : "Free trial used"}
               </span>
             )}
-            {isLoggedIn && (
+            {isLoggedIn && freeMode && (
+              <span
+                className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 font-semibold"
+                title="The owner turned the coin gate OFF — Veer is free for everyone right now"
+              >
+                <Sparkles className="h-3 w-3" />
+                Free mode
+              </span>
+            )}
+            {isLoggedIn && !freeMode && (
               <span
                 className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-muted border border-border/60 font-semibold"
                 title={`1 credit per message · daily pool resets to ${DAILY_CREDIT_POOL} at 12:00 AM`}

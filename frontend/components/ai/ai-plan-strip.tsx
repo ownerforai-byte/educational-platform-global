@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { Coins, Crown, Sparkles, UserRound } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
+import { useCoinGateEnabled } from "@/features/credits/use-coin-gate";
 import { GUEST_DAILY_LIMIT, readGuestCount } from "@/lib/ai/guest-quota";
 
 /**
@@ -15,6 +16,10 @@ import { GUEST_DAILY_LIMIT, readGuestCount } from "@/lib/ai/guest-quota";
  */
 export function AiPlanStrip() {
   const { user, isLoading } = useSession();
+  // Live owner coin gate: OFF → replies are free, so the strip must not claim
+  // a credit is about to be spent (owner report 2026-10-03).
+  const coinGateEnabled = useCoinGateEnabled();
+  const freeMode = coinGateEnabled === false;
 
   if (isLoading) {
     return (
@@ -56,7 +61,12 @@ export function AiPlanStrip() {
   return (
     <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-border/60 bg-muted/30 px-4 py-3">
       <span className="inline-flex flex-wrap items-center gap-2 text-xs">
-        {premium ? (
+        {freeMode ? (
+          <span className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 font-bold text-emerald-600 dark:text-emerald-400">
+            <Sparkles className="h-3.5 w-3.5" />
+            Free mode
+          </span>
+        ) : premium ? (
           <span className="inline-flex items-center gap-1.5 rounded-lg border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 font-bold text-amber-500">
             <Crown className="h-3.5 w-3.5" />
             PRO — full tutor access
@@ -69,9 +79,11 @@ export function AiPlanStrip() {
           </span>
         )}
         <span className="text-muted-foreground">
-          {premium
-            ? "No daily cap on replies."
-            : "Daily credits refill at midnight — one reply costs one credit."}
+          {freeMode
+            ? "The owner turned the coin gate off — Veer replies are free for everyone right now."
+            : premium
+              ? "No daily cap on replies."
+              : "Daily credits refill at midnight — one reply costs one credit."}
         </span>
       </span>
       <Link

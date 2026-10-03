@@ -72,6 +72,7 @@ import {
 } from "@/lib/ai/guest-quota";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
+import { useCoinGateEnabled } from "@/features/credits/use-coin-gate";
 import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
 import { drawFigureWithPuter } from "@/lib/puter-image";
@@ -513,6 +514,9 @@ export function TutorConsole({
   const { user } = useSession();
   const router = useRouter();
   const isLoggedIn = !!user;
+  // Owner coin gate (live): OFF → chat is free, so an empty pool must not lock.
+  const coinGateEnabled = useCoinGateEnabled();
+  const freeMode = coinGateEnabled === false;
 
   const [messages, setMessages] = useState<AIChatMessage[]>([]);
   const [input, setInput] = useState("");
@@ -562,6 +566,7 @@ export function TutorConsole({
   const creditsExhausted =
     isLoggedIn &&
     !privilegedUser &&
+    !freeMode &&
     (poolEmpty ||
       dailyCredits === 0 ||
       (typeof user?.credits === "number" && user.credits <= 0));
@@ -1321,6 +1326,11 @@ export function TutorConsole({
             {isGuestLimited
               ? `Your free message for today is used — sign in to continue. Your daily credits and saved histories are waiting.`
               : `Today's ${DAILY_CREDIT_POOL}-credit pool is empty — it resets at 12:00 AM.`}
+          </p>
+        )}
+        {freeMode && isLoggedIn && !isGuestLimited && (
+          <p className="mb-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
+            Free mode — the owner turned the coin gate off, so Veer is free for everyone right now.
           </p>
         )}
         <ChatAttachPreview

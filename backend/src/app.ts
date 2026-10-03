@@ -15,6 +15,7 @@ import chatHistoryRoutes from "./api/chat-history";
 import bookmarksRoutes from "./api/bookmarks";
 import chaptersRoutes from "./api/chapters";
 import classesRoutes from "./api/classes";
+import configRoutes from "./api/config";
 import controllerRoutes from "./api/controller";
 import examsRoutes from "./api/exams";
 import levelsRoutes from "./api/levels";
@@ -107,6 +108,9 @@ export function createApp(): express.Express {
   app.use("/api/ai/generate-questions", aiGenerateRoutes);
   app.use("/api/ai/enhance", aiEnhanceRoutes);
   app.use("/api/chat-history", chatHistoryRoutes);
+  // Public runtime flags (coin gate on/off) — no auth: every AI surface needs
+  // the owner's current gate state before it locks a composer on 0 credits.
+  app.use("/api/config", configRoutes);
   app.use("/api/auth", authRoutes);
   app.use("/api/bookmarks", bookmarksRoutes);
   app.use("/api/chapters", chaptersRoutes);
