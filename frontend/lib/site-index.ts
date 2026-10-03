@@ -444,6 +444,13 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         ],
       },
       {
+        name: "Previous Year Questions",
+        opening:
+          "The real NEB paper archive for Class 11 — every subject's past questions grouped by exam year, tagged with their syllabus unit, each with a worked solution.",
+        href: "/pyqs",
+        meta: "PYQ archive",
+      },
+      {
         name: "Practice Quiz Bank",
         opening: "PYQ-style question sets by subject and unit, with worked answers.",
         href: "/quiz",
