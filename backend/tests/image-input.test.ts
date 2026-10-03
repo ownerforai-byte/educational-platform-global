@@ -101,7 +101,7 @@ describe("imageInstruction", () => {
     const text = imageInstruction(2);
     expect(text).toContain("2 photos");
     expect(text).toContain("NEVER invent");
-    expect(text).toContain("150-word minimum");
+    expect(text).toContain("250-word minimum");
     expect(imageInstruction(1)).toContain("1 photo.");
   });
 });

@@ -132,6 +132,6 @@ export function imageInstruction(count: number): string {
     "2. restate the problem in one line so the student knows you read it correctly;",
     "3. then teach it fully — the syllabus concept it belongs to, the mechanism or derivation, and the complete step-by-step solution with units where relevant;",
     "4. if any part is unreadable or ambiguous, say exactly which part and ask for a clearer photo — NEVER invent what cannot be read.",
-    "The 150-word minimum and the syllabus-anchor rule apply to image answers exactly as to typed ones.",
+    "The 250-word minimum and the syllabus-anchor rule apply to image answers exactly as to typed ones.",
   ].join(" ");
 }

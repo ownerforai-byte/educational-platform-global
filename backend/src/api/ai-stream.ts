@@ -29,6 +29,11 @@ import {
   detectTruncation,
   joinContinued,
 } from "../ai/truncation";
+import {
+  floorWordsForQuestion,
+  wordCount,
+  REPLY_FLOOR_WORDS,
+} from "../ai/syllabus-anchor";
 import { logServerError, newErrorId } from "../middleware/errors";
 
 /** Keep Render/Vercel from closing a stream that is quiet during research. */
@@ -183,6 +188,57 @@ export async function streamAnswerToStudent(
         console.warn(`${logLabel} continuation ${i + 1} failed:`, contErr);
       }
       break;
+    }
+
+    // Length floor enforcement, streamed: ensure the answer satisfies the hardcoded
+    // 250-word minimum per topic. If the provider stopped early (e.g. 100-word brief reply),
+    // stream continuation passes with dimensional depth to hit at least 250 words.
+    const lastUserMsg =
+      [...messages].reverse().find((m) => m.role === "user")?.content ?? "";
+    const floor = Math.max(REPLY_FLOOR_WORDS, floorWordsForQuestion(lastUserMsg));
+
+    for (let fRound = 0; fRound < 2 && wordCount(acc) < floor; fRound++) {
+      const currentWords = wordCount(acc);
+      console.info(
+        `${logLabel} floor expansion pass ${fRound + 1}: ${currentWords}/${floor} words`,
+      );
+      channel.send({
+        continuing: continued + 1,
+        label: "Expanding core mechanisms and details…",
+      });
+
+      const floorPrompt = `Your reply has ${currentWords} words, which is below the mandatory ${floor}-word minimum floor for this topic.
+Continue writing immediately from where you stopped. Do NOT repeat or restart.
+Elaborate deeply on:
+- Core ideas, discoverers, and exact dates/timeline.
+- How and why this works with complete causal mechanisms and equations ($inline$ and $$display$$ LaTeX).
+- Key factors, dependencies, and variables influencing it.
+- Defining features and architectural structure.
+- Inherent properties and qualitative/quantitative behaviors.
+- Concrete real-world applications and exam takeaways.
+Continue with the remaining required substance to reach at least ${floor} words for this topic:`;
+
+      try {
+        let floorAcc = "";
+        const continuationMessages: AIChatMessage[] = [
+          ...messages.slice(-6),
+          { role: "assistant", content: acc },
+          { role: "user", content: floorPrompt },
+        ];
+        for await (const delta of service.chatStream(provider, continuationMessages)) {
+          floorAcc += forward(delta);
+        }
+        floorAcc += flushTail();
+        if (floorAcc.trim()) {
+          acc = joinContinued(acc, floorAcc);
+          continued += 1;
+        } else {
+          break;
+        }
+      } catch (fErr) {
+        console.warn(`${logLabel} floor continuation ${fRound + 1} failed:`, fErr);
+        break;
+      }
     }
 
     // Draw the figure(s) the model requested (Agnes image models first; the

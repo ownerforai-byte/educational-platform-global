@@ -13,7 +13,7 @@ export const GO_DEEPER_INSTRUCTION =
 
 /** Ask for a tighter version of the previous answer. */
 export const KEEP_IT_SHORT_INSTRUCTION =
-  "Keep it short now: same topic, same correctness, but compress it to the essentials — the core definition, the key formula(e), and one exam-ready line. Drop repetition, keep the 150-word minimum.";
+  "Keep it short now: same topic, same correctness, but compress it to the essentials — the core definition, the key formula(e), and one exam-ready line. Drop repetition, keep the 250-word minimum.";
 
 /** Ask for revision notes across the whole thread. */
 export const SUMMARIZE_INSTRUCTION =

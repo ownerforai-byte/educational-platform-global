@@ -93,29 +93,31 @@ describe("classifyQuestionDepth", () => {
     expect(classifyQuestionDepth("teach me the complete knowledge of thermodynamics")).toBe("deep");
   });
 
-  test("medium for explanation, comparison and process questions", () => {
+  test("medium for explanation, comparison, process, features, properties and factors", () => {
     expect(classifyQuestionDepth("why does ice float on water?")).toBe("medium");
     expect(classifyQuestionDepth("difference between mitosis and meiosis")).toBe("medium");
     expect(classifyQuestionDepth("explain the process of photosynthesis")).toBe("medium");
+    expect(classifyQuestionDepth("what are the features and properties of benzene?")).toBe("medium");
+    expect(classifyQuestionDepth("what factors affect surface tension?")).toBe("medium");
   });
 
-  test("shallow for definitions, facts and casual chat", () => {
+  test("shallow for definitions, facts and casual chat (held to 250 floor)", () => {
     expect(classifyQuestionDepth("what is enthalpy?")).toBe("shallow");
     expect(classifyQuestionDepth("hi veer, feeling tired today")).toBe("shallow");
   });
 });
 
 describe("floorWordsForQuestion", () => {
-  test("the hard minimum is exactly 150 words", () => {
-    expect(REPLY_FLOOR_WORDS).toBe(150);
-    expect(DEPTH_FLOOR_WORDS.shallow).toBe(150);
+  test("the hard minimum is exactly 250 words", () => {
+    expect(REPLY_FLOOR_WORDS).toBe(250);
+    expect(DEPTH_FLOOR_WORDS.shallow).toBe(250);
   });
 
-  test("the floor scales UP with question depth, never below 150", () => {
-    expect(floorWordsForQuestion("what is enthalpy?")).toBe(150);
-    expect(floorWordsForQuestion("why does ice float?")).toBe(220);
-    expect(floorWordsForQuestion("derive the lens formula")).toBe(300);
-    for (const v of Object.values(DEPTH_FLOOR_WORDS)) expect(v).toBeGreaterThanOrEqual(150);
+  test("the floor scales UP with question depth, never below 250", () => {
+    expect(floorWordsForQuestion("what is enthalpy?")).toBe(250);
+    expect(floorWordsForQuestion("why does ice float?")).toBe(350);
+    expect(floorWordsForQuestion("derive the lens formula")).toBe(500);
+    for (const v of Object.values(DEPTH_FLOOR_WORDS)) expect(v).toBeGreaterThanOrEqual(250);
   });
 });
 
@@ -128,8 +130,8 @@ describe("wordCount / meetsReplyFloor", () => {
   });
 
   test("floor comparison is inclusive", () => {
-    expect(meetsReplyFloor("a ".repeat(150).trim(), 150)).toBe(true);
-    expect(meetsReplyFloor("a ".repeat(149).trim(), 150)).toBe(false);
+    expect(meetsReplyFloor("a ".repeat(250).trim(), 250)).toBe(true);
+    expect(meetsReplyFloor("a ".repeat(249).trim(), 250)).toBe(false);
   });
 });
 

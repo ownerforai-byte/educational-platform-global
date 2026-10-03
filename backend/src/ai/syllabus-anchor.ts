@@ -49,14 +49,14 @@ interface AnchorTopic {
 /** Depth signal of a question — used only to SCALE the floor upward. */
 export type QuestionDepth = "shallow" | "medium" | "deep";
 
-/** The hard floor: no chat reply may ship below this word count. */
-export const REPLY_FLOOR_WORDS = 150;
+/** The hard floor: no chat reply may ship below this word count for any topic. */
+export const REPLY_FLOOR_WORDS = 250;
 
-/** Per-depth floors: the 150-word minimum scales with question depth. */
+/** Per-depth floors: the 250-word minimum scales with question depth. */
 export const DEPTH_FLOOR_WORDS: Record<QuestionDepth, number> = {
-  shallow: REPLY_FLOOR_WORDS,
-  medium: 220,
-  deep: 300,
+  shallow: REPLY_FLOOR_WORDS, // 250
+  medium: 350,
+  deep: 500,
 };
 
 function escapeRegExp(s: string): string {
@@ -64,9 +64,10 @@ function escapeRegExp(s: string): string {
 }
 
 /**
- * Classify the depth signal of a question. "deep" = derivation/proof/complete
- * knowledge requests; "medium" = explanation/comparison/process questions;
- * "shallow" = everything else (definitions, facts, casual chat).
+ * Classify the depth signal of a question.
+ * "deep" = derivations, proofs, complete knowledge, historical timeline / events breakdowns;
+ * "medium" = mechanisms, how/why it works, factors, features, properties, dates, comparisons;
+ * "shallow" = definitions, facts, casual chat (still strictly held to the 250-word minimum floor).
  */
 export function classifyQuestionDepth(question: string): QuestionDepth {
   const q = question.toLowerCase();
@@ -87,6 +88,12 @@ export function classifyQuestionDepth(question: string): QuestionDepth {
       "make notes",
       "complete notes",
       "from basic to advanced",
+      "in detail",
+      "detailed explanation",
+      "past events",
+      "history of",
+      "historical events",
+      "timeline",
     )
   ) {
     return "deep";
@@ -95,6 +102,9 @@ export function classifyQuestionDepth(question: string): QuestionDepth {
     has(
       "why",
       "how does",
+      "how and why",
+      "how it works",
+      "why it works",
       "explain",
       "difference between",
       "compare",
@@ -104,6 +114,21 @@ export function classifyQuestionDepth(question: string): QuestionDepth {
       "application",
       "importance",
       "significance",
+      "feature",
+      "features",
+      "property",
+      "properties",
+      "factor",
+      "factors",
+      "what factors",
+      "date",
+      "dates",
+      "when was",
+      "when did",
+      "origin",
+      "discovery",
+      "discoveries",
+      "ideas",
     )
   ) {
     return "medium";
@@ -111,7 +136,7 @@ export function classifyQuestionDepth(question: string): QuestionDepth {
   return "shallow";
 }
 
-/** Floor for a question: 150 minimum, scaled up by the depth signal. */
+/** Floor for a question: 250 minimum per topic, scaled up by the depth signal. */
 export function floorWordsForQuestion(question: string): number {
   return DEPTH_FLOOR_WORDS[classifyQuestionDepth(question)];
 }
@@ -249,20 +274,24 @@ export async function findSyllabusMatches(
  * floor. It demands expansion with substance — never padding — and repeats
  * the two hard constraints (syllabus core, no new facts invented).
  */
-export const EXPANSION_REQUEST = `Your previous reply is BELOW the platform's minimum length and must be expanded before the student sees it.
+export const EXPANSION_REQUEST = `Your previous reply is BELOW the platform's minimum length floor and must be expanded before the student sees it.
 
-Expand it to AT LEAST the required minimum words by adding real teaching substance, in this order of preference:
-1. the syllabus core the topic belongs to (definition → mechanism → formula in $LaTeX$ → worked example);
-2. the origin of the idea (who formulated/discovered it, from which earlier idea it grew);
-3. where the topic sits in its unit and which common misconception it clears;
-4. one concrete exam-relevant application.
+HARDCODED LAW: You must provide AT LEAST 250 words for this topic before moving on to another topic.
 
-Hard constraints: keep every fact already stated correct; invent NOTHING new; do not pad with repetition, filler or restatement of the same sentence; keep markdown/LaTeX formatting. Return ONLY the complete expanded reply, starting from the beginning of the answer — not a diff, not a commentary.`;
+Expand it to AT LEAST the required minimum words by adding real knowledge depth and substance across these dimensions:
+1. Core Ideas & Historical Context: The foundational idea, who discovered or formulated it, and the exact historical date, year, or era.
+2. How and Why This Works: Detailed causal mechanism — why it happens, how the processes interact, scientific/logical principles, and explicit equations ($inline$ and $$display$$ LaTeX).
+3. Key Factors & Variables: What factors govern, influence, accelerate, inhibit, or alter it.
+4. Defining Features & Architecture: Structural characteristics, architectural traits, or defining components.
+5. Inherent Properties & Behaviors: Physical, chemical, or logical properties and how it behaves under varying conditions.
+6. Real-World Applications & Exam Focus: Practical applications, concrete worked example with units, and key exam pitfalls/misconceptions.
+
+Hard constraints: Exhaust the current topic thoroughly with at least 250 words before concluding or switching topics; keep every fact already stated correct; invent NOTHING new; do not pad with repetition, filler, or restatement of sentences; maintain clean markdown/LaTeX formatting. Return ONLY the complete expanded reply, starting from the beginning of the answer — not a diff, not a commentary.`;
 
 /** The final-chance variant: sterner, sent when the first retry was still short. */
 export const EXPANSION_REQUEST_STRICT = `${EXPANSION_REQUEST}
 
-THIS IS THE FINAL CHANCE. The previous attempt was STILL below the minimum. Count your words as you write and do not stop before the minimum is reached: add the full mechanism step by step, the complete derivation or a second worked example — real content, never filler.`;
+THIS IS THE FINAL CHANCE. The previous attempt was STILL below the 250-word floor. Count your words as you write and do not stop before the minimum is reached: unfold the complete ideas, historical timeline/dates, full step-by-step mechanism, equations, influencing factors, features, and properties — genuine deep substance, never filler.`;
 
 export interface FloorEnforcementResult {
   answer: string;
