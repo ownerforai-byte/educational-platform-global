@@ -1,11 +1,12 @@
 import { supabaseAdmin } from "../db/supabase";
-import { hasFullAccess } from "../middleware/auth";
+import { isOwnerEmail } from "../middleware/auth";
 
 /**
- * Daily credit pool (owner policy 2026-09-26).
+ * Daily credit pool (owner policy 2026-09-26, owner-only 2026-10-04).
  *
- *  - Every AI chat message costs 1 credit.
- *  - Every logged user gets a DAILY_POOL of 4 platform credits.
+ *  - Every AI chat message costs 1 credit — for OWNER-ALLOWLIST emails only.
+ *  - Every owner email gets a DAILY_POOL of 4 platform credits.
+ *  - Everyone else is free without a pool (no balance, no billing, no locks).
  *  - Credits reset to DAILY_POOL at 12:00 AM (UTC day rollover) — enforced
  *    lazily here (first AI call after midnight resets) and eagerly by the
  *    midnight cron job in jobs/creditsResetJob.ts.
@@ -97,13 +98,20 @@ interface ResetResult {
 /**
  * Ensure the user's balance reflects TODAY's daily pool.
  *
+ * OWNER-ONLY ECONOMY (owner policy 2026-10-04): the coin pool exists only
+ * for owner-allowlist emails. Anyone else is free without a pool — return
+ * the stored balance untouched and perform ZERO writes (no refills, no
+ * watermark updates), so non-owner traffic never mints credits.
+ *
  * Called before any credit spend (and by /api/user/me + /api/auth/me so the
  * UI shows the refreshed pool right after midnight). When the watermark is
  * older than today's UTC date, the balance is topped up to DAILY_CREDIT_POOL
  * — top-up (max), never overwrite, so an owner-granted larger balance
  * survives the reset and only users who dipped into their pool refill.
  *
- * Privileged roles (OWNER/ADMIN/premium) skip the reset entirely.
+ * Privileged NON-OWNER roles (ADMIN/premium) skip the reset entirely.
+ * Owner emails always flow through the pool logic (they are the only ones
+ * who can be billed) unless PRO-unlimited.
  *
  * The write is CAS-guarded on the balance just read: if a parallel request
  * or the midnight cron reset first, this update matches zero rows — we then
@@ -117,8 +125,19 @@ export async function ensureDailyCredits(
   premiumStatus?: boolean | null,
   now: Date = new Date(),
 ): Promise<ResetResult> {
-  const privileged = hasFullAccess((role ?? "").toUpperCase() || null, !!premiumStatus);
   const today = todayUtc(now);
+  const owner = isOwnerEmail(email);
+
+  // Non-owner emails are outside the coin economy: free without a pool.
+  // One read, zero writes — the balance is reported as stored.
+  if (!owner) {
+    const { data: profile } = await supabaseAdmin
+      .from("profiles")
+      .select("credits")
+      .eq("id", userId)
+      .maybeSingle();
+    return { credits: profile?.credits ?? 0, resetDone: false, unlimited: false };
+  }
 
   let currentCredits = 0;
   for (let attempt = 0; attempt < CAS_ATTEMPTS; attempt++) {
@@ -128,13 +147,10 @@ export async function ensureDailyCredits(
       .eq("id", userId)
       .maybeSingle();
 
-    const isPrivileged =
-      privileged ||
-      hasFullAccess(
-        ((profile?.role as string | undefined) ?? "").toUpperCase() || null,
-        profile?.premium_status ?? !!premiumStatus,
-      );
-    if (isPrivileged) {
+    // PRO owners stay unlimited; every other owner email draws the daily pool.
+    // (Non-owner ADMIN/premium never reach here — the early return above.)
+    const proUnlimited = (profile?.premium_status ?? !!premiumStatus) === true;
+    if (proUnlimited) {
       return { credits: Infinity, resetDone: false, unlimited: true };
     }
 

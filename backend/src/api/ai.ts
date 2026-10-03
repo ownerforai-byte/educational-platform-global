@@ -2,7 +2,7 @@ import { Router, Request, Response } from "express";
 import { serverError, ERROR_ID_HEADER } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { requireAuth } from "../middleware/auth";
-import { hasFullAccess } from "../middleware/auth";
+import { isOwnerEmail } from "../middleware/auth";
 import { ensureDailyCredits, spendCredits, refundCredits, AI_MESSAGE_COST, DAILY_CREDIT_POOL, isCoinGateEnabled } from "../utils/credits";
 import { supabaseAdmin } from "../db/supabase";
 import { logServerError, newErrorId } from "../middleware/errors";
@@ -64,6 +64,10 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
     }
 
     // ── Daily pool + 1-credit-per-message billing (owner policy) ──
+    // OWNER-ONLY ECONOMY: only owner-allowlist emails are ever billed, and
+    // only while the owner coin-gate toggle is ON. Everyone else chats free
+    // (no pool, no deduction) — including when the gate is OFF. PRO owners
+    // (premium_status) stay unlimited.
     const user = (req as unknown as { user?: { id: string; email?: string; role?: string | null } }).user;
     if (!user) {
       res.status(401).json({ error: "Unauthorized" });
@@ -74,15 +78,13 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
       .select("role, premium_status")
       .eq("id", user.id)
       .maybeSingle();
-    const privileged = hasFullAccess(
-      ((prof?.role as string | undefined) ?? user.role ?? "").toUpperCase() || null,
-      prof?.premium_status ?? false,
-    );
+    const ownerBilling = isOwnerEmail(user?.email);
+    const proFree = (prof?.premium_status ?? false) === true;
 
     let creditsLeft: number | null = null;
     // Coin gate OFF (owner toggle) → this message is free; skip billing.
     const coinGate = await isCoinGateEnabled();
-    if (!privileged && coinGate) {
+    if (ownerBilling && coinGate && !proFree) {
       // Lazy midnight reset: first AI call of the day refills the pool.
       const ensured = await ensureDailyCredits(user.id, user.email, prof?.role as string | null, prof?.premium_status);
       const remaining = await spendCredits(

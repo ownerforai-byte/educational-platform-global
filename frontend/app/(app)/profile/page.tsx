@@ -198,8 +198,8 @@ export default function ProfilePage() {
       setCoinGate(next);
       setGateMsg(
         next
-          ? "Coin gate ENABLED — AI chat messages require 1 platform coin."
-          : "Coin gate DISABLED — AI chat is now completely FREE for all users."
+          ? "Coin gate ENABLED — your AI chat messages require 1 platform coin."
+          : "Coin gate DISABLED — your AI chat is now completely FREE."
       );
     } catch (err) {
       setGateErr(err instanceof Error ? err.message : "Failed to toggle coin gate");
@@ -302,11 +302,18 @@ export default function ProfilePage() {
                   {email}
                 </p>
                 <div className="mt-1.5 flex items-center gap-3 text-xs text-muted-foreground flex-wrap">
-                  <span className="inline-flex items-center gap-1">
-                    <Coins className="h-3.5 w-3.5 text-amber-500" />
-                    <span className="font-semibold text-foreground">{user.credits ?? 0}</span>
-                    {user.creditsLimit !== undefined && ` / ${user.creditsLimit}`} credits
-                  </span>
+                  {owner ? (
+                    <span className="inline-flex items-center gap-1">
+                      <Coins className="h-3.5 w-3.5 text-amber-500" />
+                      <span className="font-semibold text-foreground">{user.credits ?? 0}</span>
+                      {user.creditsLimit !== undefined && ` / ${user.creditsLimit}`} credits
+                    </span>
+                  ) : (
+                    <span className="inline-flex items-center gap-1 text-emerald-500">
+                      <Sparkles className="h-3.5 w-3.5" />
+                      <span className="font-semibold">Free access</span>
+                    </span>
+                  )}
                   <span className="text-muted-foreground/40">•</span>
                   <span className="inline-flex items-center gap-1">
                     <Sparkles className="h-3.5 w-3.5 text-indigo-400" />
@@ -414,8 +421,8 @@ export default function ProfilePage() {
           <CardContent className="pt-1 text-xs space-y-2">
             <p className="text-muted-foreground">
               {coinGate
-                ? "Active: Each AI chat message deducts 1 platform credit from each user's daily credit pool."
-                : "Free Mode: The coin gate is OFF. All platform users can chat with the AI tutor freely without credit deduction."}
+                ? "Active: Each AI chat message deducts 1 platform credit from your daily credit pool."
+                : "Free Mode: The coin gate is OFF. You can chat with the AI tutor freely without credit deduction."}
             </p>
             {gateMsg && (
               <div className="rounded-md border border-emerald-500/40 bg-emerald-500/10 px-3 py-1.5 text-xs text-emerald-600 font-medium">
@@ -708,10 +715,14 @@ export default function ProfilePage() {
               </div>
               <div className="flex items-center justify-between gap-4 py-1.5 border-b">
                 <span className="text-muted-foreground">Daily Credits</span>
-                <span className="font-medium">
-                  {user.credits ?? 0}
-                  {user.creditsLimit !== undefined && ` / ${user.creditsLimit}`}
-                </span>
+                {owner ? (
+                  <span className="font-medium">
+                    {user.credits ?? 0}
+                    {user.creditsLimit !== undefined && ` / ${user.creditsLimit}`}
+                  </span>
+                ) : (
+                  <span className="font-medium text-emerald-500">Free — no coin billing</span>
+                )}
               </div>
               <div className="flex items-center justify-between gap-4 py-1.5 border-b">
                 <span className="text-muted-foreground">Plan</span>
@@ -721,9 +732,15 @@ export default function ProfilePage() {
               </div>
               <div className="flex items-center justify-between gap-4 py-1.5">
                 <span className="text-muted-foreground">Daily Reset Rule</span>
-                <span className="text-xs text-muted-foreground">
-                  4 platform credits replenished at 12:00 AM UTC
-                </span>
+                {owner ? (
+                  <span className="text-xs text-muted-foreground">
+                    4 platform credits replenished at 12:00 AM UTC
+                  </span>
+                ) : (
+                  <span className="text-xs text-emerald-500">
+                    Not applicable — your account is free
+                  </span>
+                )}
               </div>
             </CardContent>
           </Card>
@@ -745,7 +762,7 @@ export default function ProfilePage() {
                   <div>
                     <p className="text-xs font-semibold">Coin Gate (AI Chat Credit Billing)</p>
                     <p className="text-[11px] text-muted-foreground">
-                      {coinGate ? "Currently ON: AI chat deducts 1 coin." : "Currently OFF: AI chat is free for everyone."}
+                      {coinGate ? "Currently ON: AI chat deducts 1 coin from your daily pool." : "Currently OFF: AI chat is free for you."}
                     </p>
                   </div>
                   <Button

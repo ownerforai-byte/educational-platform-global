@@ -1,6 +1,6 @@
 import { Request, Response, NextFunction } from "express";
 import { supabaseAdmin } from "../db/supabase";
-import { extractToken, hasFullAccess } from "./auth";
+import { extractToken, hasFullAccess, isOwnerEmail } from "./auth";
 import { ensureDailyCredits, spendCredits, refundCredits, isCoinGateEnabled } from "../utils/credits";
 
 // ── Feature cost table ─────────────────────────────────────────────────────
@@ -56,6 +56,13 @@ export function requireCredit(
         return;
       }
 
+      // OWNER-ONLY ECONOMY: non-owner emails are never billed or gated —
+      // free without a pool, so features stay usable offline.
+      if (!isOwnerEmail(authData.user.email)) {
+        next();
+        return;
+      }
+
       const featureConfig = PREMIUM_FEATURES[feature];
       const actualCost = cost > 0 ? cost : (featureConfig?.cost ?? 0);
 
@@ -76,8 +83,9 @@ export function requireCredit(
       const role = (profile?.role as string | undefined)?.toUpperCase() ?? null;
       const premiumStatus = profile?.premium_status ?? false;
 
-      // OWNER/ADMIN → skip all checks
-      if (hasFullAccess(role, premiumStatus)) {
+      // Non-owner ADMIN/premium → skip all checks (owners always pay from
+      // the pool while the gate is ON — only PRO owners are unlimited).
+      if (!isOwnerEmail(authData.user.email) && hasFullAccess(role, premiumStatus)) {
         next();
         return;
       }

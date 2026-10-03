@@ -73,6 +73,7 @@ import {
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { useCoinGateEnabled } from "@/features/credits/use-coin-gate";
+import { isOwnerEmail } from "@/lib/owner";
 import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
 import { drawFigureWithPuter } from "@/lib/puter-image";
@@ -561,8 +562,10 @@ export function TutorConsole({
 
   const guestCredits = Math.max(0, MAX_GUEST_MESSAGES - guestCount);
   const isGuestLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
+  // OWNER-ONLY ECONOMY: only owner-allowlist emails are ever billed.
+  // Everyone else (including ADMIN/premium) is always free.
   const privilegedUser =
-    user?.role === "OWNER" || user?.role === "ADMIN" || !!user?.premiumStatus;
+    !isOwnerEmail(user?.email) || !!user?.premiumStatus;
   const creditsExhausted =
     isLoggedIn &&
     !privilegedUser &&

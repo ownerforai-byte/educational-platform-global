@@ -49,6 +49,7 @@ import {
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { useCoinGateEnabled } from "@/features/credits/use-coin-gate";
+import { isOwnerEmail } from "@/lib/owner";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
 import { cn } from "@/lib/utils";
 import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
@@ -345,9 +346,10 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
   }, [embedded, sidebarOpen]);
 
   const isGuestLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
-  // Mirror of the backend's hasFullAccess(): these roles are never billed.
+  // OWNER-ONLY ECONOMY: only owner-allowlist emails are ever billed.
+  // Everyone else (including ADMIN/premium) is always free.
   const privilegedUser =
-    user?.role === "OWNER" || user?.role === "ADMIN" || !!user?.premiumStatus;
+    !isOwnerEmail(user?.email) || !!user?.premiumStatus;
   const creditsExhausted =
     isLoggedIn &&
     !privilegedUser &&

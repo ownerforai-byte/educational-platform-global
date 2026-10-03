@@ -1,8 +1,8 @@
 import { Router, Request, Response } from "express";
 import { z } from "zod";
-import { requireAuth, hasFullAccess, type AuthedRequest } from "../middleware/auth";
+import { requireAuth, isOwnerEmail, type AuthedRequest } from "../middleware/auth";
 import { supabaseAdmin } from "../db/supabase";
-import { ensureDailyCredits, spendCredits } from "../utils/credits";
+import { ensureDailyCredits, isCoinGateEnabled, spendCredits } from "../utils/credits";
 
 const router = Router();
 
@@ -143,8 +143,13 @@ const unlockSchema = z.object({
  * POST /api/user/credits/unlock
  * Deduct the category's coin cost and return the 20-minute window expiration.
  *
+ * OWNER-ONLY ECONOMY: only owner-allowlist emails are ever charged, and only
+ * while the owner coin-gate toggle is ON. Everyone else (and owners while
+ * the gate is OFF) receives the window free with cost 0 — no deduction, so
+ * unlocking works offline-friendly without spending anything.
+ *
  * 401 — unauthenticated
- * 402 — insufficient credits
+ * 402 — insufficient credits (owner email, gate ON, pool exhausted)
  * 400 — unknown category
  * 200 — { credits, expiresAt }
  */
@@ -176,7 +181,21 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
 
     const role = (profile?.role as string | undefined)?.toUpperCase() ?? null;
     const premiumStatus = profile?.premium_status ?? false;
-    const privileged = hasFullAccess(role, premiumStatus);
+    const owner = isOwnerEmail(user.email);
+
+    // Outside the coin economy (non-owner email) or gate OFF (owner toggle):
+    // free window, zero charge — the client opens it without spending.
+    if (!owner || !(await isCoinGateEnabled())) {
+      res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0 });
+      return;
+    }
+
+    // Owner email + gate ON: PRO owners stay unlimited; otherwise the daily
+    // pool pays. (Non-owner ADMIN/premium never reach here — free above.)
+    if (premiumStatus) {
+      res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0 });
+      return;
+    }
 
     // Fresh daily pool first (same pool every other consumer draws from),
     // then an ATOMIC compare-and-swap spend — the old read-then-write
@@ -184,8 +203,8 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
     // success, silently issuing unlocks (or charging inconsistently).
     const ensured = await ensureDailyCredits(user.id, user.email, role, premiumStatus);
 
-    // OWNER/ADMIN skip all checks — window still applies for UI consistency.
-    if (ensured.unlimited || privileged) {
+    // OWNER/PRO skip all checks — window still applies for UI consistency.
+    if (ensured.unlimited) {
       res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0 });
       return;
     }

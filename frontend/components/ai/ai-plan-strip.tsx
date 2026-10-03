@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Coins, Crown, Sparkles, UserRound } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { useCoinGateEnabled } from "@/features/credits/use-coin-gate";
+import { isOwnerEmail } from "@/lib/owner";
 import { GUEST_DAILY_LIMIT, readGuestCount } from "@/lib/ai/guest-quota";
 
 /**
@@ -57,14 +58,17 @@ export function AiPlanStrip() {
   const premium = !!user.premiumStatus;
   const credits = user.credits ?? 0;
   const limit = user.creditsLimit;
+  // OWNER-ONLY ECONOMY: non-owner emails are always free — show "Free" instead
+  // of a coin balance they can never spend.
+  const isOwner = isOwnerEmail(user.email);
 
   return (
     <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-border/60 bg-muted/30 px-4 py-3">
       <span className="inline-flex flex-wrap items-center gap-2 text-xs">
-        {freeMode ? (
+        {freeMode || !isOwner ? (
           <span className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 font-bold text-emerald-600 dark:text-emerald-400">
             <Sparkles className="h-3.5 w-3.5" />
-            Free mode
+            Free
           </span>
         ) : premium ? (
           <span className="inline-flex items-center gap-1.5 rounded-lg border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 font-bold text-amber-500">
@@ -79,8 +83,8 @@ export function AiPlanStrip() {
           </span>
         )}
         <span className="text-muted-foreground">
-          {freeMode
-            ? "The owner turned the coin gate off — Veer replies are free for everyone right now."
+          {freeMode || !isOwner
+            ? "Veer replies are free — no coin billing for your account."
             : premium
               ? "No daily cap on replies."
               : "Daily credits refill at midnight — one reply costs one credit."}

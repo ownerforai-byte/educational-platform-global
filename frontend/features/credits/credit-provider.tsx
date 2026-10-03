@@ -28,6 +28,7 @@ import {
 } from "react";
 import { useAuth } from "@/providers/auth-provider";
 import type { SessionUser } from "@/features/auth/types";
+import { isOwnerEmail } from "@/lib/owner";
 import {
   TOKEN_MATRIX,
   type ContentCategory,
@@ -109,7 +110,9 @@ export function CreditProvider({ children }: { children: ReactNode }) {
 
   const coins = useMemo(() => {
     if (!user) return 0;
-    if (user.role === "OWNER" || user.role === "ADMIN") return OWNER_COIN_FLOOR;
+    // OWNER-ONLY ECONOMY: only owner-allowlist emails see the infinite floor.
+    // Everyone else sees their stored balance (which is never billed).
+    if (isOwnerEmail(user.email)) return OWNER_COIN_FLOOR;
     return user.credits ?? 0;
   }, [user]);
 
