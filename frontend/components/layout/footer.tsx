@@ -215,44 +215,6 @@ export function Footer() {
         </div>
 
         {/* ── Bottom Bar & Quick Route Links ── */}
-        {/* Live deployment marker — the whole block re-inlines on every Vercel
-            build (values come from next.config.mjs `env`), so the owner can tell
-            at a glance which deployment is actually being served. */}
-        {(process.env.NEXT_PUBLIC_BUILD_SHA ||
-          process.env.NEXT_PUBLIC_BUILD_NO ||
-          process.env.NEXT_PUBLIC_VERCEL_ENV) && (
-          <div className="flex flex-wrap items-center gap-2 text-[10px] text-muted-foreground">
-            <span className="inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 font-mono text-emerald-600 dark:text-emerald-400">
-              <span className="h-1.5 w-1.5 rounded-full bg-emerald-500 animate-pulse" />
-              LIVE
-            </span>
-            <span className="font-mono">
-              {process.env.NEXT_PUBLIC_BUILD_NO
-                ? `build #${process.env.NEXT_PUBLIC_BUILD_NO}`
-                : process.env.NEXT_PUBLIC_BUILD_SHA
-                  ? `#${process.env.NEXT_PUBLIC_BUILD_SHA}`
-                  : "dev"}
-            </span>
-            {process.env.NEXT_PUBLIC_BUILD_REF && (
-              <span className="font-mono">{process.env.NEXT_PUBLIC_BUILD_REF}</span>
-            )}
-            {process.env.NEXT_PUBLIC_BUILD_TIME && (
-              <span>built {new Date(process.env.NEXT_PUBLIC_BUILD_TIME).toLocaleString()}</span>
-            )}
-            {process.env.NEXT_PUBLIC_VERCEL_URL && (
-              <a
-                className="font-mono underline hover:text-foreground"
-                href={`https://${process.env.NEXT_PUBLIC_VERCEL_URL}`}
-                target="_blank"
-                rel="noreferrer"
-                title="This exact deployment (unique URL)"
-              >
-                {process.env.NEXT_PUBLIC_VERCEL_URL}
-              </a>
-            )}
-          </div>
-        )}
-
         <div className="pt-6 border-t border-border/40 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-muted-foreground">
           <p className="text-center md:text-left">
             © 2026 Ravikisan&apos;s Platform. All educational contents aligned with NEB / CDC Nepal standards.

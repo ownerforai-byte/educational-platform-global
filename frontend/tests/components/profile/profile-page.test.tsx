@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, fireEvent } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 
 // ─── Mocks ──────────────────────────────────────────────────────────────────
 
@@ -50,6 +50,14 @@ vi.mock("@/lib/api/progress", () => ({
   updateProgress: (...args: unknown[]) => updateProgress(...args),
 }));
 
+const getOwnerSettings = vi.fn();
+const updateOwnerSettings = vi.fn();
+
+vi.mock("@/lib/api/owner", () => ({
+  getOwnerSettings: (...args: unknown[]) => getOwnerSettings(...args),
+  updateOwnerSettings: (...args: unknown[]) => updateOwnerSettings(...args),
+}));
+
 import ProfilePage from "@/app/(app)/profile/page";
 
 // ─── Fixtures ───────────────────────────────────────────────────────────────
@@ -62,6 +70,16 @@ const ownerUser = {
   credits: 42,
   creditsLimit: 100,
   premiumStatus: true,
+};
+
+const studentUser = {
+  id: "u2",
+  email: "student@example.com",
+  fullName: "Aayush Sharma",
+  role: "STUDENT" as const,
+  credits: 4,
+  creditsLimit: 100,
+  premiumStatus: false,
 };
 
 const progressEntries = [
@@ -97,6 +115,12 @@ beforeEach(() => {
   sessionState.isLoading = false;
   getProgress.mockResolvedValue(progressEntries);
   updateProgress.mockResolvedValue({});
+  getOwnerSettings.mockResolvedValue({
+    settings: [{ key: "coin_gate_enabled", value: true }],
+  });
+  updateOwnerSettings.mockResolvedValue({
+    settings: [{ key: "coin_gate_enabled", value: false }],
+  });
 });
 
 // ─── Tests ──────────────────────────────────────────────────────────────────
@@ -165,5 +189,64 @@ describe("ProfilePage", () => {
     const { container } = render(<ProfilePage />);
     expect(container.querySelectorAll(".animate-pulse").length).toBeGreaterThan(0);
     expect(replace).not.toHaveBeenCalled();
+  });
+
+  it("displays scholar level details and XP for logged-in user", async () => {
+    render(<ProfilePage />);
+
+    // Shows Scholar Rank and XP
+    expect(screen.getByText("Scholar Rank")).toBeInTheDocument();
+    expect(screen.getAllByText(/Novice Scholar/i).length).toBeGreaterThanOrEqual(1);
+    expect(screen.getByText("Total Scholar XP")).toBeInTheDocument();
+
+    // Check level indicator in header
+    expect(screen.getByText(/Level 1 · Novice Scholar/i)).toBeInTheDocument();
+  });
+
+  it("switches to Level Details tab to see academic level & NEB curriculum", async () => {
+    render(<ProfilePage />);
+
+    const levelTab = screen.getByRole("tab", { name: /level details/i });
+    expect(levelTab).toBeInTheDocument();
+    fireEvent.click(levelTab);
+
+    // Shows NEB +2 academic level details
+    expect(screen.getByText("Scholar Level & Academic Hierarchy")).toBeInTheDocument();
+    expect(screen.getByText("Academic Grade & Curriculum Settings")).toBeInTheDocument();
+    expect(screen.getByText("NEB +2")).toBeInTheDocument();
+    expect(screen.getByText("CDC Nepal Curriculum")).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /class 11 science/i })).toBeInTheDocument();
+    expect(screen.getByRole("button", { name: /class 12 science/i })).toBeInTheDocument();
+  });
+
+  it("renders Coin Gate on/off switch and button for owner user and allows toggling", async () => {
+    sessionState.user = ownerUser;
+    render(<ProfilePage />);
+
+    // Owner sees Coin Gate Control
+    expect(await screen.findByText("Owner Coin Gate Control")).toBeInTheDocument();
+    expect(screen.getByLabelText("Toggle Coin Gate")).toBeInTheDocument();
+    const toggleBtn = screen.getByRole("button", { name: /turn gate off/i });
+    expect(toggleBtn).toBeInTheDocument();
+
+    // Click toggle button to turn OFF
+    fireEvent.click(toggleBtn);
+    await waitFor(() => {
+      expect(updateOwnerSettings).toHaveBeenCalledWith([
+        { key: "coin_gate_enabled", value: false },
+      ]);
+    });
+  });
+
+  it("does not render Coin Gate controller for non-owner student", async () => {
+    sessionState.user = studentUser;
+    render(<ProfilePage />);
+
+    // Student should not see owner-exclusive coin gate
+    expect(screen.queryByText("Owner Coin Gate Control")).not.toBeInTheDocument();
+    expect(screen.queryByLabelText("Toggle Coin Gate")).not.toBeInTheDocument();
+    // But student DOES see level details
+    expect(screen.getByText("Scholar Rank")).toBeInTheDocument();
+    expect(screen.getByText("Total Scholar XP")).toBeInTheDocument();
   });
 });

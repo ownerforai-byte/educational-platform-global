@@ -21,6 +21,7 @@ import {
   SVG_SANITIZE_TAGS,
   remarkVisuals,
 } from "@/lib/content/visuals";
+import { ARTIFACT_ELEMENT, remarkArtifacts } from "@/lib/content/artifacts";
 
 /**
  * Universal note rendering pipeline — the single system every incoming note
@@ -62,6 +63,10 @@ const sanitizeSchema: Schema = {
     // Model-drawn figures (lib/content/visuals.ts). Shape, group and text
     // primitives only: no scripting, no external fetches, no id references.
     ...SVG_SANITIZE_TAGS,
+    // Runnable artefacts (lib/content/artifacts.ts): the mount point only. It
+    // carries the artefact source as a plain string attribute — nothing in an
+    // attribute executes; the element renders it inside a sandboxed iframe.
+    ARTIFACT_ELEMENT,
   ],
   attributes: {
     ...defaultSchema.attributes,
@@ -82,6 +87,7 @@ const sanitizeSchema: Schema = {
     ],
     input: [...(defaultSchema.attributes?.input ?? []), "disabled", "type", "checked"],
     ...SVG_SANITIZE_ATTRIBUTES,
+    [ARTIFACT_ELEMENT]: ["artifactsource", "artifactcaption", "running"],
   },
   // puter.js fallback figures are data: URLs; remote web/diagram URLs are
   // http(s). No other protocol may reach an <img src>.
@@ -97,6 +103,7 @@ export const noteProcessor = unified()
   .use(remarkMath, { singleDollarTextMath: true })
   .use(remarkEduCallouts)
   .use(remarkVisuals)
+  .use(remarkArtifacts)
   .use(remarkRehype, { allowDangerousHtml: true })
   .use(rehypeRaw)
   .use(rehypeSanitize, sanitizeSchema)

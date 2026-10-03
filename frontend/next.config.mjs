@@ -3,32 +3,7 @@ import path from "node:path";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
-// ── Build / deploy fingerprint ────────────────────────────────────────────
-// Vercel injects VERCEL_* vars at build time. We mirror the useful ones into
-// NEXT_PUBLIC_* so the client bundle (footer build badge) can render a live
-// "which deployment am I on?" marker that changes on every deploy. Locally and
-// on non-Vercel hosts these fall back to empty strings / "local" and the badge
-// degrades gracefully — it never breaks the page.
-const gitSha = (process.env.VERCEL_GIT_COMMIT_SHA || "").trim();
-const gitRef = (process.env.VERCEL_GIT_COMMIT_REF || "").trim();
-const gitMsg = (process.env.VERCEL_GIT_COMMIT_MESSAGE || "").trim();
-const buildEnv = {
-  NEXT_PUBLIC_BUILD_SHA: gitSha.slice(0, 7),
-  NEXT_PUBLIC_BUILD_REF: gitRef,
-  NEXT_PUBLIC_BUILD_MSG: gitMsg.slice(0, 64),
-  NEXT_PUBLIC_VERCEL_ENV: process.env.VERCEL_ENV || "local",
-  NEXT_PUBLIC_VERCEL_DEPLOY_ID: process.env.VERCEL_DEPLOYMENT_ID || "",
-  NEXT_PUBLIC_VERCEL_URL: process.env.VERCEL_URL || process.env.NEXT_PUBLIC_VERCEL_URL || "",
-  // Optional owner-controlled counter ("increases from 0,1,2..."). If you set
-  // NEXT_PUBLIC_BUILD_NO in the Vercel project it shows verbatim as the version
-  // number; otherwise the footer falls back to the auto commit marker above.
-  NEXT_PUBLIC_BUILD_NO: process.env.NEXT_PUBLIC_BUILD_NO || "",
-  NEXT_PUBLIC_BUILD_TIME: new Date().toISOString(),
-};
-
 const nextConfig = {
-  // Expose the deploy fingerprint to the client bundle (footer build badge).
-  env: buildEnv,
   // Fresh deploys must win — but only for DOCUMENTS. A blanket no-store on
   // "/:path*" also hit everything served out of /public, including the 6 MB
   // notes manifest the app fetches at runtime: that turned a cached edge

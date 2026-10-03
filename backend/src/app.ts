@@ -7,6 +7,7 @@ import authRoutes from "./api/auth";
 import aiRoutes from "./api/ai";
 import aiGuestRoutes from "./api/ai-guest";
 import aiImageRoutes from "./api/ai-image";
+import aiFigureRoutes from "./api/ai-figure";
 import aiGenerateRoutes from "./api/ai-generate";
 import aiEnhanceRoutes from "./api/ai-enhance";
 import aiHistoryRoutes from "./api/ai-history";
@@ -98,6 +99,9 @@ export function createApp(): express.Express {
   // Registered BEFORE /api/ai so the more specific path wins: the Image
   // Hub's owner-only drawing endpoint (Agnes 2.1 image chain).
   app.use("/api/ai/image", aiImageRoutes);
+  // Registered BEFORE /api/ai as well: the Image Hub's vector academic-figure
+  // writer (every labelled part hoverable) shares the same owner-only boundary.
+  app.use("/api/ai/figure", aiFigureRoutes);
   app.use("/api/ai", aiRoutes);
   app.use("/api/ai/guest", aiGuestRoutes);
   app.use("/api/ai/generate-questions", aiGenerateRoutes);

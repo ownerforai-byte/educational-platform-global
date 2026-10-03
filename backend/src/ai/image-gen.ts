@@ -30,6 +30,8 @@
  * instruction + the fence scanner (answers simply never carry fences).
  */
 
+import { FIGURE_ARCHETYPE_GUIDE } from "./academic-figures";
+
 // ── config ────────────────────────────────────────────────────────────────────
 
 /** Verify the gateway with AI_IMAGE_GEN=on|off (default: on when a key exists). */
@@ -338,6 +340,10 @@ Universal drawing law for all six subjects: label every part an examiner marks; 
 /** Append the figure-tool instruction to the professor context when enabled. */
 export function withFigureToolInstruction(context: string): string {
   if (!imageGenEnabled()) return context;
-  const instruction = `${FIGURE_TOOL_INSTRUCTION}\n\n${SUBJECT_DIAGRAM_GUIDE}`;
+  // The archetype guide is shared with the vector figure writer
+  // (ai/figure-draw.ts) and the chat's svg law (ai/deep-answer.ts), so a
+  // PAINTED figure and a DRAWN figure follow the same twelve shapes and the
+  // same hover contract.
+  const instruction = `${FIGURE_TOOL_INSTRUCTION}\n\n${SUBJECT_DIAGRAM_GUIDE}\n\n${FIGURE_ARCHETYPE_GUIDE}`;
   return context ? `${context}\n\n${instruction}` : instruction;
 }

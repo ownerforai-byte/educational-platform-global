@@ -3,6 +3,11 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { cn } from "@/lib/utils";
 import { renderNoteHtml } from "@/lib/content/pipeline";
+import { registerVeerArtifact } from "@/components/content/veer-artifact";
+
+// The ```run fence renders through this element, so the renderer that emits it
+// is also the one that registers it (no-op during SSR).
+registerVeerArtifact();
 
 type InteractiveMarkdownProps = {
   content: string;

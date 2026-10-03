@@ -46,10 +46,7 @@ export const CRITICAL_ENV_VARS = [
 ] as const;
 
 /** Any one of these is enough to answer AI requests. */
-export const AI_PROVIDER_KEY_VARS = [
-  "AGNES_API_KEY",
-  "GEMINI_API_KEY",
-] as const;
+export const AI_PROVIDER_KEY_VARS = ["AGNES_API_KEY"] as const;
 
 /** Numeric tuning knobs that silently disable a control when malformed. */
 const OPTIONAL_NUMBER_ENV_VARS = [

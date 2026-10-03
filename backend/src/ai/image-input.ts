@@ -7,7 +7,6 @@
  *
  *   - validation/limits for incoming data URLs (size + count + mime type),
  *   - mapping to OpenAI-compatible content parts (Agnes),
- *   - mapping to Gemini inlineData parts,
  *   - the prompt instruction that turns a photo into a grounded answer.
  *
  * Kept separate from service.ts so the rules are unit-testable without any
@@ -117,20 +116,6 @@ export function toOpenAIContent(
     parts.push({ type: "image_url", image_url: { url: original } });
   }
   return parts;
-}
-
-/** Gemini's inlineData part. */
-export interface GeminiInlineDataPart {
-  inlineData: { mimeType: string; data: string };
-}
-
-/** Map images to Gemini inlineData parts (malformed entries are skipped). */
-export function toGeminiImageParts(images: string[] | undefined): GeminiInlineDataPart[] {
-  return (images ?? [])
-    .map((url) => parseDataUrl(url))
-    .filter((p): p is ParsedImage => !!p)
-    .slice(0, MAX_CHAT_IMAGES)
-    .map((p) => ({ inlineData: { mimeType: p.mimeType, data: p.data } }));
 }
 
 /**

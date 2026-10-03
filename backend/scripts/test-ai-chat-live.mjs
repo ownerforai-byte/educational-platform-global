@@ -27,7 +27,7 @@ async function testService() {
   console.log("Default provider:", ai.getDefaultProvider());
 
   console.log("\nTesting AI Chat response for physics question...");
-  const reply = await ai.chat("gemini", [
+  const reply = await ai.chat("agnes", [
     { role: "user", content: "What is Newton's second law of motion? Give formula and 1 sentence explanation." }
   ]);
   console.log("\nAI Reply:\n", reply);

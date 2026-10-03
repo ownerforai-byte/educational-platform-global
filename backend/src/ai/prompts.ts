@@ -5,6 +5,8 @@ import { buildSyllabusAnchorBlock, floorWordsForQuestion } from "./syllabus-anch
 import { buildCurriculumContext, DEFAULT_RECORD_LIMIT } from "./curriculum-retrieval";
 import { CLASS_SCOPE_RULES, classifyScope } from "./class-scope";
 import { DEEP_ANSWER_RULES } from "./deep-answer";
+import { ARTIFACT_RULES } from "./artifact-rules";
+import { REPLY_CRAFT_RULES } from "./reply-craft";
 import { SOURCE_REGISTRY_RULES } from "./source-registry";
 
 /**
@@ -69,10 +71,18 @@ const SITE_TIMEOUT_MS = Number(process.env.AI_SEARCH_TIMEOUT_MS) || 9000;
  *                                    mind-map and flow output.
  *   4. DEEP_ANSWER_RULES            — scan-first, easy grammar, **Key words** under
  *                                    each idea, output-not-raw-code, visuals.
- *   5. CLASS_SCOPE_RULES            — strictly NEB Class 11/12, plus the rule for
+ *   5. ARTIFACT_RULES               — the run fence: code the platform EXECUTES
+ *                                    on screen as a live, responsive widget
+ *                                    (owner 2026-10-03), written unhurried.
+ *   6. REPLY_CRAFT_RULES            — the ChatGPT/Claude-grade reply craft:
+ *                                    direct answer first, meaningful headings,
+ *                                    rich formatting, worked examples, a
+ *                                    finished close, no cliffhangers
+ *                                    (owner 2026-10-03).
+ *   7. CLASS_SCOPE_RULES            — strictly NEB Class 11/12, plus the rule for
  *                                    prerequisite / beyond-12 / other-board /
  *                                    non-academic questions.
- *   6. SOURCE_REGISTRY_RULES        — source trust order and citation discipline.
+ *   8. SOURCE_REGISTRY_RULES        — source trust order and citation discipline.
  *
  * Everything below rides on this constant, so a new academic rule is added once,
  * in ./academic-intelligence.ts (or its sibling module when it is a new layer).
@@ -81,6 +91,8 @@ export const MASTER_ACADEMIC_PROMPT = [
   PROFESSOR_STYLE_RULES,
   MASTER_ACADEMIC_RULES,
   DEEP_ANSWER_RULES,
+  ARTIFACT_RULES,
+  REPLY_CRAFT_RULES,
   CLASS_SCOPE_RULES,
   SOURCE_REGISTRY_RULES,
 ].join("\n\n");

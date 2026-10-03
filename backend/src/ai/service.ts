@@ -2,7 +2,7 @@ import { supabaseAdmin } from "../db/supabase";
 import { PUBLIC_SITE_URL } from "../config/env";
 import { getSearchService } from "./search-engine";
 import { ACADEMIC_SEARCH_ADDENDUM } from "./academic-intelligence";
-import { toGeminiImageParts, toOpenAIContent, type GeminiInlineDataPart } from "./image-input";
+import { toOpenAIContent } from "./image-input";
 
 /**
  * Public origin of the frontend, used for links embedded in AI replies and
@@ -27,6 +27,13 @@ const SITE = (process.env.FRONTEND_URL || PUBLIC_SITE_URL).replace(/\/$/, "");
  * take, so tune both together on a slow deployment.
  */
 export const MAX_OUTPUT_TOKENS = Number(process.env.AI_MAX_OUTPUT_TOKENS) || 16384;
+
+/**
+ * Sampling temperature for every provider. ChatGPT/Claude-grade factual work
+ * (derivations, units, balanced equations) rewards a slightly calmer sampler;
+ * set AI_TEMPERATURE to tune it (0.0–2.0) without a code change.
+ */
+export const REPLY_TEMPERATURE = Number(process.env.AI_TEMPERATURE) || 0.7;
 
 export type SupportedProvider = "internal" | "agnes";
  
@@ -527,146 +534,6 @@ class InternalProvider implements AIProvider {
   }
 }
 
-class GeminiProvider implements AIProvider {
-  name = "gemini";
-  private apiKey: string;
-  // gemini-1.5-flash is retired (404 for new projects). "gemini-flash-latest"
-  // is a stable alias that always points to the current flash model.
-  private model = process.env.GEMINI_MODEL || "gemini-flash-latest";
-
-  constructor(apiKey: string) {
-    this.apiKey = apiKey;
-  }
-
-  private async callGemini(
-    prompt: string,
-    systemInstruction?: string,
-    useWebSearch = false,
-    imageParts: GeminiInlineDataPart[] = []
-  ): Promise<string> {
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${this.model}:generateContent`;
-    const body: any = {
-      contents: [{ role: "user", parts: [{ text: prompt }, ...imageParts] }],
-      generationConfig: { temperature: 0.7, maxOutputTokens: MAX_OUTPUT_TOKENS },
-    };
-    if (systemInstruction) {
-      body.systemInstruction = { parts: [{ text: systemInstruction }] };
-    }
-    // Real internet access: Gemini's native Google Search grounding lets the
-    // model search the live web widely and cite fresh sources. Set
-    // GEMINI_SEARCH_GROUNDING=off to disable (e.g. to conserve quota).
-    if (useWebSearch && process.env.GEMINI_SEARCH_GROUNDING !== "off") {
-      body.tools = [{ google_search: {} }];
-    }
-    const res = await fetch(url, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "x-goog-api-key": this.apiKey,
-      },
-      body: JSON.stringify(body),
-      // Fail fast so the provider chain can move on (web-grounded calls get more time).
-      signal: AbortSignal.timeout(useWebSearch ? 60000 : 30000),
-    });
-
-    if (!res.ok) {
-      const text = await res.text();
-      throw new Error(`Gemini error: ${res.status} ${text}`);
-    }
-
-    const data = await res.json();
-    const text = data?.candidates?.[0]?.content?.parts?.[0]?.text;
-    if (!text) throw new Error("Empty Gemini response");
-    return text;
-  }
-
-  async chat(messages: AIChatMessage[]): Promise<string> {
-    if (!this.apiKey) throw new Error("Missing Gemini API key");
-    const systemPrompt = messages.find((m) => m.role === "system")?.content ?? "";
-    const history = messages
-      .filter((m) => m.role !== "system")
-      .map((m) => ({
-        role: m.role === "assistant" ? "model" : "user",
-        parts: [{ text: m.content }],
-      }));
-
-    // Prepend system prompt to first user message for stronger enforcement
-    const enrichedHistory = history.map((h, i) => {
-      if (h.role === "user" && i === 0 && systemPrompt) {
-        return { ...h, parts: [{ text: `[SYSTEM INSTRUCTIONS]\n${systemPrompt}\n\n[USER QUERY]\n${h.parts[0].text}` }] };
-      }
-      return h;
-    });
-
-    const prompt = `${enrichedHistory.map((h) => `${h.role === "user" ? "User" : "Assistant"}: ${h.parts[0].text}`).join("\n\n")}\n\nAssistant:`;
-    // Only the LATEST user turn's photos are sent (history images are already
-    // described in the earlier text and re-sending them multiplies cost).
-    const lastUser = [...messages].reverse().find((m) => m.role === "user");
-    return this.callGemini(prompt, systemPrompt, true, toGeminiImageParts(lastUser?.images));
-  }
-
-  async *chatStream(messages: AIChatMessage[]): AsyncGenerator<string> {
-    if (!this.apiKey) throw new Error("Missing Gemini API key");
-    const systemPrompt = messages.find((m) => m.role === "system")?.content ?? "";
-    const history = messages
-      .filter((m) => m.role !== "system")
-      .map((m) => ({
-        role: m.role === "assistant" ? "model" : "user",
-        parts: [{ text: m.content }],
-      }));
-    const enriched = history.map((h, i) => {
-      if (h.role === "user" && i === 0 && systemPrompt) {
-        return { ...h, parts: [{ text: `[SYSTEM INSTRUCTIONS]\n${systemPrompt}\n\n[USER QUERY]\n${h.parts[0].text}` }] };
-      }
-      return h;
-    });
-    const prompt = `${enriched.map((h) => `${h.role === "user" ? "User" : "Assistant"}: ${h.parts[0].text}`).join("\n\n")}\n\nAssistant:`;
-    const lastUser = [...messages].reverse().find((m) => m.role === "user");
-    const body: any = {
-      contents: [{ role: "user", parts: [{ text: prompt }, ...toGeminiImageParts(lastUser?.images)] }],
-      generationConfig: { temperature: 0.7, maxOutputTokens: MAX_OUTPUT_TOKENS },
-    };
-    if (process.env.GEMINI_SEARCH_GROUNDING !== "off") body.tools = [{ google_search: {} }];
-    const url = `https://generativelanguage.googleapis.com/v1beta/models/${this.model}:streamGenerateContent?alt=sse`;
-    const res = await fetch(url, {
-      method: "POST",
-      headers: { "Content-Type": "application/json", "x-goog-api-key": this.apiKey },
-      body: JSON.stringify(body),
-      signal: AbortSignal.timeout(300000),
-    });
-    if (!res.ok) {
-      const text = await res.text();
-      throw new Error(`Gemini stream error: ${res.status} ${text.slice(0, 200)}`);
-    }
-    for await (const event of sseEvents(res)) {
-      const chunk = event?.candidates?.[0]?.content?.parts?.[0]?.text;
-      if (typeof chunk === "string" && chunk) yield chunk;
-    }
-  }
-
-  async search(query: string): Promise<AISearchResponse> {
-    if (!this.apiKey) throw new Error("Missing Gemini API key");
-    const syllabusContext = await buildSyllabusContext(query);
-
-    // Fetch real-time internet search context
-    const searchService = getSearchService();
-    const searchContext = await searchService.searchAsContext(query);
-
-    const prompt = `${SEARCH_SYSTEM_PROMPT}
-
-${searchContext ? searchContext + "\n" : ""}${syllabusContext}
-User query: ${query}`;
-
-    const reply = await this.callGemini(prompt, undefined, true);
-    return {
-      results: [],
-      fallbackMessage: reply,
-      syllabusHints: syllabusContext ? await extractSyllabusHints(query) : undefined,
-    };
-  }
-}
-
-
 class AgnesProvider implements AIProvider {
   name = "agnes";
   // Official Agnes AI gateway (OpenAI-compatible). api.agnes.ai is a different,
@@ -723,7 +590,7 @@ class AgnesProvider implements AIProvider {
         // compressing itself mid-derivation. The chain budget still bounds the
         // wait, and a slow deployment can lower this without a code change.
         max_tokens: MAX_OUTPUT_TOKENS,
-        temperature: 0.7,
+        temperature: REPLY_TEMPERATURE,
       }),
       // Agnes gateway can queue; cap the wait so the chain stays responsive.
       signal: AbortSignal.timeout(this.timeoutMs),
@@ -772,7 +639,7 @@ class AgnesProvider implements AIProvider {
           content: toOpenAIContent(m.content, m.images),
         })),
         max_tokens: MAX_OUTPUT_TOKENS,
-        temperature: 0.7,
+        temperature: REPLY_TEMPERATURE,
         stream: true,
       }),
       // Same envelope as the one-shot call: a streamed answer may run long.
@@ -851,10 +718,9 @@ function withDeadline<T>(promise: Promise<T>, ms: number): Promise<T> {
 
 /**
  * Read an SSE response body and yield every parsed JSON event. One shared
- * reader for all three streaming transports (Gemini native SSE, plus the two
- * OpenAI-compatible SSE responses from Agnes): OpenAI-family
- * servers separate events with blank lines, Gemini's alt=sse does not — the
- * blank-line split handles both.
+ * reader for every streaming transport (the OpenAI-compatible SSE responses
+ * from Agnes, both chat and search): OpenAI-family servers separate events
+ * with blank lines, and the blank-line split handles the merged case too.
  */
 async function* sseEvents(res: Response): AsyncGenerator<any> {
   if (!res.body) return;
@@ -911,10 +777,10 @@ export class AIService {
       .map((s) => s.trim().toLowerCase())
       .filter(Boolean);
     const ordered = configured.filter((n) => this.providers.has(n));
-    // A deployment with only GEMINI_API_KEY set must still reach an LLM:
-    // Gemini joins as the LAST link, never ahead of the owner's order.
-    if (ordered.length === 0 && this.providers.has("gemini")) {
-      ordered.push("gemini");
+    // A deployment with only AGNES_API_KEY set must still reach an LLM:
+    // Agnes joins as the LAST link, never ahead of the owner's order.
+    if (ordered.length === 0 && this.providers.has("agnes")) {
+      ordered.push("agnes");
     }
     return ordered.map((n) => this.providers.get(n)!);
   }
@@ -923,22 +789,16 @@ export class AIService {
     this.providers.set("internal", new InternalProvider());
 
     const agnesKey = process.env.AGNES_API_KEY;
-    const geminiKey = process.env.GEMINI_API_KEY;
     const defaultProvider = (
       process.env.AI_DEFAULT_PROVIDER ?? process.env.AI_PROVIDER
     )?.toLowerCase();
 
     if (agnesKey) this.providers.set("agnes", new AgnesProvider(agnesKey));
-    // Greptile review 2026-09-25: Gemini was never registered, so a deployment
-    // with only GEMINI_API_KEY set silently degraded to the keyword engine.
-    if (geminiKey) this.providers.set("gemini", new GeminiProvider(geminiKey));
 
     if (defaultProvider && this.providers.has(defaultProvider)) {
       this.defaultProvider = defaultProvider;
     } else if (agnesKey) {
       this.defaultProvider = "agnes";
-    } else if (geminiKey) {
-      this.defaultProvider = "gemini";
     }
   }
 

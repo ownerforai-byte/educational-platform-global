@@ -11,6 +11,11 @@ import { drawFigureWithPuter } from "@/lib/puter-image";
  *   2. puter.js txt2img    → the User-Pays browser fallback, used when the
  *      server endpoint fails for ANY reason (403, 503 engines down, network).
  *
+ * `requestHubFigure` prepends one more server engine for academic requests
+ * (owner request 2026-10-03): POST /api/ai/figure draws a labelled VECTOR
+ * figure whose parts open their details on hover, and only falls through to
+ * the raster chain above when the vector pass draws nothing.
+ *
  * Returns null only when BOTH engines fail — the hub shows that as an error
  * and keeps the prompt, never losing the student's (owner's) text.
  *
@@ -23,9 +28,47 @@ export type HubImageResult = {
   engine: "agnes" | "puter";
   /** Human label for the gallery badge, e.g. "agnes-image-2.1-flash". */
   label: string;
+  /**
+   * Discriminator for the gallery. Optional because a raster result is the
+   * only thing `requestHubImage` ever returns; `requestHubFigure` narrows the
+   * union with it.
+   */
+  kind?: "picture";
 };
 
-export type HubEngineFail = "agnes" | "puter";
+export type HubEngineFail = "figure" | "agnes" | "puter";
+
+/** One hoverable part of a vector figure: the label and its one-line detail. */
+export type HubFigurePart = { name: string; detail: string };
+
+/** A vector academic figure — every labelled part opens its detail on hover. */
+export type HubFigureResult = {
+  kind: "figure";
+  /** The validated SVG source, rendered through the platform's figure pipeline. */
+  svg: string;
+  caption: string;
+  /** Archetype the request was classified into ("Labelled structure", …). */
+  archetype: string;
+  parts: HubFigurePart[];
+  engine: "vector";
+  label: string;
+};
+
+export type HubFigureDeps = {
+  /** Vector call (default: POST /api/ai/figure). Resolve null on any failure. */
+  requestFigure?: (
+    prompt: string,
+  ) => Promise<{
+    svg?: string;
+    caption?: string;
+    kind?: string;
+    parts?: HubFigurePart[];
+  } | null>;
+  /** Raster chain, used when the vector pass produced nothing. */
+  requestServer?: HubImageDeps["requestServer"];
+  drawWithPuter?: HubImageDeps["drawWithPuter"];
+  onEngineFail?: (engine: HubEngineFail) => void;
+};
 
 export type HubImageDeps = {
   /** Server call (default: POST /api/ai/image). Resolve null on any failure. */
@@ -79,4 +122,62 @@ export async function requestHubImage(
   }
   deps.onEngineFail?.("puter");
   return null;
+}
+
+async function defaultRequestFigure(
+  prompt: string,
+): Promise<{ svg?: string; caption?: string; kind?: string; parts?: HubFigurePart[] } | null> {
+  try {
+    return await apiFetch<{
+      svg?: string;
+      caption?: string;
+      kind?: string;
+      parts?: HubFigurePart[];
+    }>("/api/ai/figure", { method: "POST", body: JSON.stringify({ prompt }) });
+  } catch {
+    return null;
+  }
+}
+
+/**
+ * Academic figures (owner request 2026-10-03): "train it for all kind of
+ * academic images like lifecycle, labelling, all parts name with their interface
+ * with supporting details which opens after hovering".
+ *
+ * A raster painter cannot spell, so it can never deliver "every part named" —
+ * the VECTOR writer is tried first and returns one SVG in which each labelled
+ * part carries `NAME — detail` that opens on hover. The raster chain stays as
+ * the fallback: if the vector pass fails, the picture engines (Agnes → puter.js)
+ * draw the same prompt, so the owner always gets an image.
+ *
+ * Engine order: figure → Agnes raster → puter.js. Returns null only when all
+ * three failed.
+ */
+export async function requestHubFigure(
+  prompt: string,
+  deps: HubFigureDeps = {},
+): Promise<HubFigureResult | HubImageResult | null> {
+  const clean = prompt.trim();
+  if (!clean) return null;
+
+  const figure = deps.requestFigure ?? defaultRequestFigure;
+  const fromFigure = await figure(clean);
+  if (fromFigure?.svg) {
+    return {
+      kind: "figure",
+      svg: fromFigure.svg,
+      caption: fromFigure.caption?.trim() || clean,
+      archetype: fromFigure.kind?.trim() || "figure",
+      parts: Array.isArray(fromFigure.parts) ? fromFigure.parts : [],
+      engine: "vector",
+      label: "vector figure",
+    };
+  }
+  deps.onEngineFail?.("figure");
+
+  return requestHubImage(clean, {
+    requestServer: deps.requestServer,
+    drawWithPuter: deps.drawWithPuter,
+    onEngineFail: deps.onEngineFail,
+  });
 }

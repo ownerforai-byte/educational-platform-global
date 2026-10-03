@@ -67,9 +67,36 @@ describe("PLATFORM_SYSTEM_PROMPT — the client mirror of the academic contract"
     expect(PLATFORM_SYSTEM_PROMPT).toContain("on the fence line");
   });
 
+  it("mirrors the run-fence law: the platform runs the tutor's code on screen", () => {
+    // Owner 2026-10-03: the tutor may write code AND present it live, and it is
+    // told never to hurry the code. Mirror of backend/src/ai/artifact-rules.ts.
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("ON-SCREEN ARTEFACTS — THE run FENCE");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("the platform RUNS your code");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("live, responsive widget");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("inline style and inline script only");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("the closing html tag on the very last line");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("no CDN, no remote image, no fetch");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("controls reachable at 360 pixels");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("NEVER rush it and never shorten it");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("no placeholders, no TODO");
+  });
+
   it("no longer caps a complete answer at three sources", () => {
     expect(PLATFORM_SYSTEM_PROMPT).toContain("use every source attached to the message");
     expect(PLATFORM_SYSTEM_PROMPT).not.toContain("AT MOST 3");
     expect(PLATFORM_SYSTEM_PROMPT).not.toContain("never more than three");
+  });
+
+  it("mirrors the ChatGPT/Claude-grade reply craft", () => {
+    // Owner 2026-10-03: "improve ai — like it replies like ChatGPT, Claude".
+    // Mirror of backend/src/ai/reply-craft.ts.
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("REPLY CRAFT — CHATGPT/CLAUDE GRADE");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("the direct answer lands in the first two or three lines");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("short MEANINGFUL headings");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("never mechanical labels");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("a table for any comparison or set of values");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("every formula and mechanism lands in a worked example");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("the ending a conclusion not a cliffhanger");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("an invitation to the natural next step");
   });
 });

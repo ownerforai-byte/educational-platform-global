@@ -6,12 +6,16 @@ import {
   Download,
   ExternalLink,
   Image as ImageIcon,
+  ListTree,
   Sparkles,
   Trash2,
 } from "lucide-react";
+import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
 import {
+  requestHubFigure,
   requestHubImage,
   type HubEngineFail,
+  type HubFigurePart,
   type HubImageResult,
 } from "./generate-image";
 
@@ -19,37 +23,94 @@ import {
  * IMAGE HUB (owner request 2026-10-02): "replace the mind console with
  * agnes 2.1 flash and js to generate image means it is image hub".
  *
- * This is the whole /mind-studio interface now — the diagram workspace is
- * gone. Describe a picture; the server draws it with the Agnes image chain
- * (agnes-image-2.1-flash first), and if that fails the browser retries the
- * same prompt through puter.js. Results accumulate in a gallery that
- * survives reloads (sessionStorage, this device only — the route itself is
- * owner-gated by app/(app)/mind-studio/layout.tsx).
+ * Two modes now, because one engine cannot do both jobs (owner request
+ * 2026-10-03: "agnes image is just drawing rough image ---- train it for all
+ * kind of academic images like lifecycle, labelling, all parts name with their
+ * interface with supporting details which opens after hovering"):
+ *
+ *   · ACADEMIC FIGURE (default) — the vector writer draws one exam-grade SVG
+ *     in the platform's house style: a life cycle, a labelled structure, an
+ *     apparatus, a process, a graph, a circuit, a ray diagram, a free-body
+ *     diagram, a geometry figure, a hierarchy, a comparison or a timeline.
+ *     Every labelled part is `<g><title>NAME — detail</title>`, so hovering or
+ *     tapping a part opens its explanation, and the same legend is listed as
+ *     "Parts & details" under the figure.
+ *   · PICTURE — the raster chain (Agnes image models, then puter.js in the
+ *     browser) for photos, watercolours and anything pictorial.
+ *
+ * The figure writer still falls back to the raster chain, so a failed drawing
+ * never leaves the owner empty-handed. The gallery keeps both kinds for this
+ * session (sessionStorage, this device only; the route is owner-gated by
+ * app/(app)/mind-studio/layout.tsx).
  */
 
-type GalleryItem = HubImageResult & {
+type Mode = "figure" | "picture";
+
+type GalleryFigure = {
+  kind: "figure";
+  id: string;
+  prompt: string;
+  at: number;
+  /** The validated SVG source. */
+  svg: string;
+  caption: string;
+  /** Archetype id from the writer ("lifecycle", "labelled", …). */
+  archetype: string;
+  parts: HubFigurePart[];
+};
+
+type GalleryPicture = HubImageResult & {
+  kind: "picture";
   id: string;
   prompt: string;
   at: number;
 };
 
+type GalleryItem = GalleryFigure | GalleryPicture;
+
 const STORE_KEY = "neb_image_hub_gallery";
 const MAX_PROMPT = 500;
 const GALLERY_CAP = 24;
+/** sessionStorage holds ~5 MB; keep the payload well under it. */
+const STORE_BUDGET = 2_000_000;
 
-const EXAMPLES = [
-  "A snow leopard resting on a Himalayan cliff at dawn, photorealistic",
-  "NEB physics ray diagram: convex lens with three principal rays",
-  "Watercolour plate of a dhaka topi beside a math notebook",
-];
+const EXAMPLES: Record<Mode, string[]> = {
+  figure: [
+    "Labelled diagram of the human heart with every part named",
+    "Life cycle of Plasmodium with the ploidy at each stage",
+    "Free-body diagram of a block sliding down an incline",
+    "Graph of binding energy per nucleon versus mass number",
+  ],
+  picture: [
+    "A snow leopard resting on a Himalayan cliff at dawn, photorealistic",
+    "Watercolour plate of a dhaka topi beside a math notebook",
+    "NEB physics ray diagram: convex lens with three principal rays",
+  ],
+};
 
-function newItem(p: string, result: HubImageResult): GalleryItem {
-  return {
-    id: `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`,
-    prompt: p,
-    at: Date.now(),
-    ...result,
-  };
+/** Archetype ids → the badge the owner reads. */
+const ARCHETYPE_LABELS: Record<string, string> = {
+  lifecycle: "Life cycle",
+  labelled: "Labelled structure",
+  apparatus: "Apparatus",
+  process: "Process",
+  graph: "Graph",
+  circuit: "Circuit",
+  ray: "Ray diagram",
+  "free-body": "Free-body diagram",
+  geometry: "Geometry figure",
+  hierarchy: "Hierarchy",
+  comparison: "Comparison",
+  timeline: "Timeline",
+  illustration: "Illustration",
+};
+
+function archetypeLabel(kind: string): string {
+  return ARCHETYPE_LABELS[kind] ?? (kind ? kind.replace(/-/g, " ") : "Figure");
+}
+
+function newId(): string {
+  return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
 }
 
 /** Cross-origin safe download: fetch → blob → click; window.open as last resort. */
@@ -71,7 +132,76 @@ async function downloadImage(url: string, filename: string): Promise<void> {
   }
 }
 
+/** A vector figure downloads as the .svg the writer drew. */
+function downloadSvg(svg: string, filename: string): void {
+  try {
+    const blob = new Blob([svg], { type: "image/svg+xml;charset=utf-8" });
+    const href = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = href;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    a.remove();
+    URL.revokeObjectURL(href);
+  } catch {
+    /* the figure is already on screen — nothing else to do */
+  }
+}
+
+/** The figure travels through the platform's sanitized figure pipeline. */
+function figureMarkdown(item: GalleryFigure): string {
+  const caption = item.caption.replace(/[`\r\n]+/g, " ").trim();
+  return "```svg " + caption + "\n" + item.svg + "\n```";
+}
+
+/**
+ * Rebuild one gallery item from sessionStorage. Runs on untrusted JSON (an old
+ * session, a hand-edited value), so it validates and NORMALISES — the `kind`
+ * discriminator is re-derived here rather than trusted, and anything that is
+ * not a figure or a picture is dropped.
+ */
+function parseStored(value: unknown): GalleryItem | null {
+  if (!value || typeof value !== "object") return null;
+  const item = value as Record<string, unknown>;
+  if (typeof item.id !== "string" || typeof item.prompt !== "string") return null;
+  const at = typeof item.at === "number" ? item.at : Date.now();
+
+  if (typeof item.svg === "string") {
+    return {
+      kind: "figure",
+      id: item.id,
+      prompt: item.prompt,
+      at,
+      svg: item.svg,
+      caption: typeof item.caption === "string" ? item.caption : "",
+      archetype: typeof item.archetype === "string" ? item.archetype : "figure",
+      parts: Array.isArray(item.parts)
+        ? item.parts.filter(
+            (part): part is HubFigurePart =>
+              !!part && typeof (part as HubFigurePart).name === "string",
+          )
+        : [],
+    };
+  }
+
+  if (typeof item.url === "string") {
+    return {
+      kind: "picture",
+      id: item.id,
+      prompt: item.prompt,
+      at,
+      url: item.url,
+      engine: item.engine === "puter" ? "puter" : "agnes",
+      label: typeof item.label === "string" ? item.label : "picture",
+    };
+  }
+
+  return null;
+}
+
 export function ImageHub() {
+  const [mode, setMode] = useState<Mode>("figure");
   const [prompt, setPrompt] = useState("");
   const [busy, setBusy] = useState<HubEngineFail | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -85,10 +215,9 @@ export function ImageHub() {
       const parsed: unknown = JSON.parse(raw);
       if (Array.isArray(parsed)) {
         setItems(
-          parsed.filter(
-            (it): it is GalleryItem =>
-              !!it && typeof (it as GalleryItem).url === "string",
-          ),
+          parsed
+            .map(parseStored)
+            .filter((item): item is GalleryItem => item !== null),
         );
       }
     } catch {
@@ -99,28 +228,75 @@ export function ImageHub() {
   const saveItems = (next: GalleryItem[]) => {
     setItems(next);
     try {
-      sessionStorage.setItem(STORE_KEY, JSON.stringify(next.slice(0, GALLERY_CAP)));
+      // Figures carry their whole drawing, so the payload is capped: newest
+      // first, keeping only what fits. The in-memory gallery keeps everything.
+      const kept: GalleryItem[] = [];
+      let size = 0;
+      for (const item of next) {
+        if (kept.length >= GALLERY_CAP) break;
+        const cost = JSON.stringify(item).length;
+        if (size + cost > STORE_BUDGET) break;
+        kept.push(item);
+        size += cost;
+      }
+      sessionStorage.setItem(STORE_KEY, JSON.stringify(kept));
     } catch {
       /* storage blocked — the in-memory gallery still works */
     }
   };
 
+  function newFigureItem(p: string, result: Extract<Awaited<ReturnType<typeof requestHubFigure>>, { kind: "figure" }>): GalleryFigure {
+    return {
+      kind: "figure",
+      id: newId(),
+      prompt: p,
+      at: Date.now(),
+      svg: result.svg,
+      caption: result.caption,
+      archetype: result.archetype,
+      parts: result.parts,
+    };
+  }
+
+  function newPictureItem(p: string, result: HubImageResult): GalleryPicture {
+    return { kind: "picture", id: newId(), prompt: p, at: Date.now(), ...result };
+  }
+
+  const failedBothEngines =
+    "Neither engine could draw this — the figure writer and the Agnes chain may be busy, and the puter.js fallback needs its browser sign-in. Your prompt is kept below; try again.";
+
   async function generate() {
     const p = prompt.trim();
     if (!p || busy) return;
     setError(null);
-    setBusy("agnes");
+    setBusy(mode === "figure" ? "figure" : "agnes");
     try {
+      if (mode === "figure") {
+        const result = await requestHubFigure(p, {
+          onEngineFail: (engine) => setBusy(engine),
+        });
+        if (!result) {
+          setError(failedBothEngines);
+          return;
+        }
+        saveItems([
+          result.kind === "figure"
+            ? newFigureItem(p, result)
+            : newPictureItem(p, result),
+          ...items,
+        ]);
+        setPrompt("");
+        return;
+      }
+
       const result = await requestHubImage(p, {
         onEngineFail: (engine) => setBusy(engine),
       });
       if (!result) {
-        setError(
-          "Neither engine could draw this — the Agnes chain may be busy, and the puter.js fallback needs its browser sign-in. Your prompt is kept below; try again.",
-        );
+        setError(failedBothEngines);
         return;
       }
-      saveItems([newItem(p, result), ...items]);
+      saveItems([newPictureItem(p, result), ...items]);
       setPrompt("");
     } finally {
       setBusy(null);
@@ -128,11 +304,31 @@ export function ImageHub() {
   }
 
   const status =
-    busy === "agnes"
-      ? "Drawing with Agnes 2.1 Flash…"
-      : busy === "puter"
-        ? "Agnes unavailable — drawing in your browser with puter.js…"
-        : null;
+    busy === "figure"
+      ? "Drawing the figure — naming every part…"
+      : busy === "agnes"
+        ? mode === "figure"
+          ? "Figure writer unavailable — drawing with Agnes 2.1 Flash…"
+          : "Drawing with Agnes 2.1 Flash…"
+        : busy === "puter"
+          ? "Agnes unavailable — drawing in your browser with puter.js…"
+          : null;
+
+  const modeButton = (value: Mode, label: string, hint: string) => (
+    <button
+      type="button"
+      onClick={() => setMode(value)}
+      aria-pressed={mode === value}
+      title={hint}
+      className={`rounded-xl border px-3 py-1.5 text-xs font-semibold transition-colors ${
+        mode === value
+          ? "border-violet-500/40 bg-violet-500/15 text-violet-600 dark:text-violet-300"
+          : "border-border/60 bg-muted/40 text-muted-foreground hover:text-foreground hover:border-primary/40"
+      }`}
+    >
+      {label}
+    </button>
+  );
 
   return (
     <div className="space-y-6">
@@ -149,14 +345,29 @@ export function ImageHub() {
             </span>
           </h1>
           <p className="text-sm text-muted-foreground">
-            Describe a picture — Agnes 2.1 Flash draws it, puter.js in your
-            browser as the fallback.
+            Academic figures drawn as labelled vector diagrams — every part
+            opens its detail on hover — plus Agnes 2.1 Flash pictures, with
+            puter.js in your browser as the fallback.
           </p>
         </div>
       </div>
 
       {/* ── Composer ── */}
       <div className="rounded-2xl border border-border/60 bg-card p-4 space-y-3">
+        <div className="flex flex-wrap items-center gap-2">
+          {modeButton(
+            "figure",
+            "Academic figure",
+            "Vector figure: life cycle, labelled structure, apparatus, graph, circuit, ray or free-body diagram…",
+          )}
+          {modeButton("picture", "Picture", "Agnes 2.1 Flash raster image — photos, art, mood boards")}
+          <span className="text-[11px] text-muted-foreground/70">
+            {mode === "figure"
+              ? "Every part is labelled and hoverable — the details open on hover or tap."
+              : "A painted image, no labels."}
+          </span>
+        </div>
+
         <textarea
           value={prompt}
           onChange={(e) => setPrompt(e.target.value)}
@@ -168,13 +379,17 @@ export function ImageHub() {
           }}
           maxLength={MAX_PROMPT}
           rows={3}
-          placeholder="Describe the image you want — subject, style, colours, mood…"
+          placeholder={
+            mode === "figure"
+              ? "Describe the image or figure you want — e.g. labelled diagram of the nephron, or the life cycle of a fern…"
+              : "Describe the image you want — subject, style, colours, mood…"
+          }
           className="w-full resize-y rounded-xl border border-border/60 bg-background/80 px-3.5 py-2.5 text-sm outline-none focus:border-primary/60 focus:ring-2 focus:ring-ring/30"
         />
 
         <div className="flex flex-wrap items-center justify-between gap-3">
           <div className="flex flex-wrap gap-1.5">
-            {EXAMPLES.map((ex) => (
+            {EXAMPLES[mode].map((ex) => (
               <button
                 key={ex}
                 type="button"
@@ -194,7 +409,7 @@ export function ImageHub() {
             className="inline-flex h-10 items-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-violet-500 px-5 text-sm font-bold text-white shadow-lg shadow-violet-500/20 transition-all hover:brightness-110 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <Sparkles className="h-4 w-4" />
-            {busy ? "Drawing…" : "Draw image"}
+            {busy ? "Drawing…" : mode === "figure" ? "Draw figure" : "Draw image"}
           </button>
         </div>
 
@@ -243,66 +458,133 @@ export function ImageHub() {
           </p>
           <p className="max-w-md text-xs text-muted-foreground/70">
             Everything you draw lands here — newest first, kept for this
-            session with a download button on each picture.
+            session, with hover explanations on every labelled part of a figure
+            and a download button on each item.
           </p>
         </div>
       ) : (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
-          {items.map((item) => (
-            <figure
-              key={item.id}
-              className="group overflow-hidden rounded-2xl border border-border/60 bg-card"
-            >
-              {/* eslint-disable-next-line @next/next/no-img-element -- runtime engine output: signed https URLs AND data: URLs from puter.js, which next/image cannot optimize */}
-              <img
-                src={item.url}
-                alt={item.prompt}
-                loading="lazy"
-                className="aspect-square w-full object-cover"
-              />
-              <figcaption className="space-y-2 p-3">
-                <p className="line-clamp-2 text-xs text-muted-foreground">
-                  {item.prompt}
-                </p>
-                <div className="flex items-center justify-between gap-2">
-                  <span
-                    className={`max-w-[60%] truncate rounded-full px-2 py-0.5 text-[10px] font-semibold ${
-                      item.engine === "agnes"
-                        ? "bg-sky-500/15 text-sky-500"
-                        : "bg-emerald-500/15 text-emerald-500"
-                    }`}
-                    title={item.label}
-                  >
-                    {item.label}
-                  </span>
+          {items.map((item) =>
+            item.kind === "figure" ? (
+              <figure
+                key={item.id}
+                className="group overflow-hidden rounded-2xl border border-border/60 bg-card sm:col-span-2 xl:col-span-3"
+              >
+                <div className="flex flex-wrap items-center justify-between gap-2 border-b border-border/60 px-4 py-2.5">
+                  <div className="min-w-0">
+                    <p className="text-[10px] font-bold uppercase tracking-widest text-violet-500">
+                      {archetypeLabel(item.archetype)} · vector figure
+                    </p>
+                    {/* The caption itself is rendered by the figure pipeline
+                        (its own <figcaption>), so the header carries the
+                        request instead of repeating it. */}
+                    <p className="truncate text-xs text-muted-foreground" title={item.prompt}>
+                      {item.prompt}
+                    </p>
+                  </div>
                   <span className="flex gap-1.5 opacity-80 transition-opacity group-hover:opacity-100">
                     <button
                       type="button"
-                      onClick={() =>
-                        void downloadImage(
-                          item.url,
-                          `image-hub-${item.id}.png`,
-                        )
-                      }
+                      onClick={() => downloadSvg(item.svg, `figure-${item.id}.svg`)}
                       className="rounded-lg border border-border/60 bg-muted/40 p-1.5 hover:border-primary/40 hover:text-primary transition-colors"
-                      title="Download"
+                      title="Download SVG"
                     >
                       <Download className="h-3.5 w-3.5" />
                     </button>
-                    <a
-                      href={item.url}
-                      target="_blank"
-                      rel="noreferrer"
-                      className="rounded-lg border border-border/60 bg-muted/40 p-1.5 hover:border-primary/40 hover:text-primary transition-colors"
-                      title="Open full size"
-                    >
-                      <ExternalLink className="h-3.5 w-3.5" />
-                    </a>
                   </span>
                 </div>
-              </figcaption>
-            </figure>
-          ))}
+
+                <div className="bg-white px-3 py-3">
+                  {/* The platform's figure pipeline: sanitized, and every
+                      labelled part opens its <title> on hover / focus / tap. */}
+                  <InteractiveMarkdown
+                    content={figureMarkdown(item)}
+                    className="prose-sm max-w-none"
+                  />
+                </div>
+
+                {item.parts.length > 0 && (
+                  <figcaption className="space-y-2 border-t border-border/60 p-3">
+                    <p className="inline-flex items-center gap-1.5 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
+                      <ListTree className="h-3.5 w-3.5" />
+                      Parts &amp; details ({item.parts.length})
+                    </p>
+                    <ul className="grid gap-1.5 sm:grid-cols-2">
+                      {item.parts.map((part, index) => (
+                        <li
+                          key={`${index}-${part.name}`}
+                          className="rounded-lg border border-border/50 bg-muted/40 px-2.5 py-1.5 text-[11px] leading-relaxed"
+                        >
+                          <span className="font-semibold text-foreground">
+                            {part.name}
+                          </span>
+                          {part.detail && (
+                            <span className="text-muted-foreground"> — {part.detail}</span>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                    <p className="text-[10px] text-muted-foreground/70">
+                      Hover, focus or tap a labelled part in the figure to open
+                      its explanation.
+                    </p>
+                  </figcaption>
+                )}
+
+              </figure>
+            ) : (
+              <figure
+                key={item.id}
+                className="group overflow-hidden rounded-2xl border border-border/60 bg-card"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element -- runtime engine output: signed https URLs AND data: URLs from puter.js, which next/image cannot optimize */}
+                <img
+                  src={item.url}
+                  alt={item.prompt}
+                  loading="lazy"
+                  className="aspect-square w-full object-cover"
+                />
+                <figcaption className="space-y-2 p-3">
+                  <p className="line-clamp-2 text-xs text-muted-foreground">
+                    {item.prompt}
+                  </p>
+                  <div className="flex items-center justify-between gap-2">
+                    <span
+                      className={`max-w-[60%] truncate rounded-full px-2 py-0.5 text-[10px] font-semibold ${
+                        item.engine === "agnes"
+                          ? "bg-sky-500/15 text-sky-500"
+                          : "bg-emerald-500/15 text-emerald-500"
+                      }`}
+                      title={item.label}
+                    >
+                      {item.label}
+                    </span>
+                    <span className="flex gap-1.5 opacity-80 transition-opacity group-hover:opacity-100">
+                      <button
+                        type="button"
+                        onClick={() =>
+                          void downloadImage(item.url, `image-hub-${item.id}.png`)
+                        }
+                        className="rounded-lg border border-border/60 bg-muted/40 p-1.5 hover:border-primary/40 hover:text-primary transition-colors"
+                        title="Download"
+                      >
+                        <Download className="h-3.5 w-3.5" />
+                      </button>
+                      <a
+                        href={item.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="rounded-lg border border-border/60 bg-muted/40 p-1.5 hover:border-primary/40 hover:text-primary transition-colors"
+                        title="Open full size"
+                      >
+                        <ExternalLink className="h-3.5 w-3.5" />
+                      </a>
+                    </span>
+                  </div>
+                </figcaption>
+              </figure>
+            ),
+          )}
         </div>
       )}
     </div>

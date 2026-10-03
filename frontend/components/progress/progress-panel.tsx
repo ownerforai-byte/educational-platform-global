@@ -7,11 +7,16 @@ import { Skeleton } from "@/components/ui/skeleton";
 import { getProgress, updateProgress } from "@/lib/api/progress";
 import type { ProgressEntry } from "@/types/api";
 
+export interface ProgressPanelProps {
+  onProgressLoaded?: (entries: ProgressEntry[]) => void;
+  onProgressChange?: (entries: ProgressEntry[]) => void;
+}
+
 /**
  * Shared learning-progress panel (ring summary + toggleable topic list).
  * Used by the /progress page and embedded as the default tab of /profile.
  */
-export function ProgressPanel() {
+export function ProgressPanel({ onProgressLoaded, onProgressChange }: ProgressPanelProps = {}) {
   const [progress, setProgress] = useState<ProgressEntry[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [error, setError] = useState<string | null>(null);
@@ -21,6 +26,8 @@ export function ProgressPanel() {
       try {
         const data = await getProgress();
         setProgress(data);
+        onProgressLoaded?.(data);
+        onProgressChange?.(data);
       } catch (err) {
         setError(err instanceof Error ? err.message : "Failed to load progress");
       } finally {
@@ -29,18 +36,20 @@ export function ProgressPanel() {
     };
 
     loadProgress();
-  }, []);
+  }, [onProgressLoaded, onProgressChange]);
 
   const toggleProgress = async (topicId: string, completed: boolean) => {
     try {
       await updateProgress({ topic_id: topicId, completed });
-      setProgress((prev) =>
-        prev.map((p) =>
+      setProgress((prev) => {
+        const next = prev.map((p) =>
           p.topicId === topicId
             ? { ...p, completed, completedAt: completed ? new Date().toISOString() : null }
             : p
-        )
-      );
+        );
+        onProgressChange?.(next);
+        return next;
+      });
     } catch {
       setError("Failed to update progress");
     }

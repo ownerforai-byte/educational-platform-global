@@ -77,6 +77,23 @@ function fmtTime(ms) {
   return ms ? new Date(ms).toISOString().replace("T", " ").slice(0, 19) + " UTC" : "unknown";
 }
 
+/**
+ * Pull the [vN] version tag out of a deployment's commit message. Vercel stores
+ * the commit message on each deployment (d.gitCommitMessage); because
+ * commit-version.mjs stamps every commit as "[vN] ...", this shows the version
+ * right here so you can read "keeping v5, v4 - deleting v3, v2, v1" in the
+ * dry run. Falls back to "-" for older commits that predate the versioning.
+ */
+function versionTag(deployment) {
+  const msg = deployment.gitCommitMessage || "";
+  const m = /\[v(\d+)\]/.exec(msg);
+  if (m) return `v${m[1]}`;
+  // Some older Vercel messages embed the message differently; try a loose match.
+  const loose = /v(\d+)\s*[\]\s]/.exec(msg);
+  if (loose) return `v${loose[1]}`;
+  return "-";
+}
+
 /** Fetch all READY production deployments for a project, newest first. */
 async function listProductionDeployments(token, team, projectId) {
   const all = [];
@@ -143,13 +160,22 @@ async function main() {
   console.log(`KEEP (${kept.length}):`);
   kept.forEach((d, i) => {
     const marker = currentAliasDeploymentId === d.id ? "  <== current production" : "";
-    console.log(`  ${i === 0 ? "*" : " "} ${d.id}  ${fmtTime(d.createdAt)}  ${d.url || ""}  ${d.branch || d.gitCommitBaseRef || ""}${marker}`);
+    console.log(`  ${i === 0 ? "*" : " "} [${versionTag(d)}] ${d.id}  ${fmtTime(d.createdAt)}  ${d.url || ""}  ${d.branch || d.gitCommitBaseRef || ""}${marker}`);
   });
   console.log("");
   console.log(`DELETE (${toDelete.length}):`);
   toDelete.forEach((d) => {
-    console.log(`  - ${d.id}  ${fmtTime(d.createdAt)}  ${d.url || ""}  ${d.branch || d.gitCommitBaseRef || ""}`);
+    console.log(`  - [${versionTag(d)}] ${d.id}  ${fmtTime(d.createdAt)}  ${d.url || ""}  ${d.branch || d.gitCommitBaseRef || ""}`);
   });
+
+  // Version-aware summary so it is obvious what stays vs. what goes.
+  const keepVers = kept.map((d) => versionTag(d)).filter((v) => v !== "-");
+  const delVers = toDelete.map((d) => versionTag(d)).filter((v) => v !== "-");
+  if (keepVers.length || delVers.length) {
+    console.log("");
+    console.log(`  Keeping version(s): ${keepVers.join(", ") || "(none tagged)"}`);
+    console.log(`  Deleting version(s): ${delVers.length ? delVers.join(", ") : "(none tagged)"}`);
+  }
 
   if (toDelete.length === 0) {
     console.log(`\nAlready within the keep window (${args.keep}). Nothing to delete.`);

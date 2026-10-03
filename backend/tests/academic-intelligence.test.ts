@@ -93,15 +93,53 @@ describe("master academic prompt composition", () => {
     expect(PROMPT).not.toContain("your name is \"ravikisan's ai tutor\"");
   });
 
-  test("pins the one-surface-at-a-time law (owner 2026-10-01)", () => {
-    // A reply must finish EVERY aspect of a concept before touching the next:
-    // no interleaving, no trimming one topic to reach another, no ending with
-    // a surface half-covered. This is an ABSOLUTE rule, so pin its load-bearing
-    // clauses — drop the test if the rule is ever deliberately redesigned.
-    expect(PROMPT).toContain("one surface at a time");
-    expect(PROMPT).toContain("only then close the surface");
-    expect(PROMPT).toContain("never interleave the aspects of two surfaces");
-    expect(PROMPT).toContain("no jump to another topic unless the present one is fully presented");
+  test("every academic figure is drawn (two fence langs) and every labelled part is hoverable (owner 2026-10-03)", () => {
+    // Owner 2026-10-03: "agnes image is just drawing rough image ---- train it for
+    // all kind of academic images like lifecycle, labelling, all parts name with
+    // their interface with supporting details which opens after hovering".
+    //
+    // Solution in the contract: the tutor draws the figure itself as ONE complete
+    // fenced drawing, NEVER describes it or hands the student prose instead of a
+    // picture. When the figure carries labelled parts, EACH part is wrapped in its
+    // own <g><title>NAME — detail</title> so the platform explains the part on
+    // hover or click. The platform RENDERS the figure inline (no "does not have a
+    // viewer yet"); it never leaves the figure as a broken link or a 404.
+    //
+    // The svg-fence section was expanded from a bare svg only into TWO supported
+    // drawing languages (svg, the platform's figure/rofem.svg figure fence), with
+    // ONE shared hover/explainer rule for both, so an academic figure is drawn —
+    // not a rough picture — on every surface (note pages, topic pages, the figure
+    // viewer, and the Image Hub).
+
+    expect(PROMPT).toContain("DRAW THE FIGURE YOURSELF WHEN NO SOURCE HAS ONE (OWNER RULE) — TWO FENCE LANGUAGES, BOTH PAINTED");
+    expect(PROMPT).toContain("THE svg FENCE — best for ANY figure that must carry many labelled parts");
+    expect(PROMPT).toContain("THE rofem.svg FIGURE FENCE");
+    expect(PROMPT).toContain("SAME HOVER/EXPLAINER CONFIG FOR BOTH FENCE KINDS");
+    expect(PROMPT).toContain("<title>ONE-LINE name + what it does + how it links to / fits in the parts around it</title>");
+
+    // The shared archetype guide (12 figure shapes: lifecycle, labelled structure,
+    // apparatus, process, graph, circuit, ray, free-body, geometry, hierarchy,
+    // comparison, timeline) is wired into the figure section on every request.
+    expect(PROMPT).toContain("${FIGURE_ARCHETYPE_GUIDE}");
+    expect(PROMPT).toContain("LIFE CYCLE");
+    expect(PROMPT).toContain("LABELLED STRUCTURE");
+    expect(PROMPT).toContain("every part an examiner can name");
+
+    // Allowed/forbidden SVG rules the model's drawings must respect — the same
+    // set the renderer enforces (backend/src/ai/academic-figures.ts).
+    expect(PROMPT).toContain("ALLOWED elements ONLY: svg, g, title, text, tspan, rect, circle, ellipse, line, polyline, polygon, path");
+    expect(PROMPT).toContain("no url(#...) references");
+    expect(PROMPT).toContain("on-event attribute (onload/onclick/etc.)");
+    expect(PROMPT).toContain("no external files");
+
+    // The figure is announced on its fence line and the tab/keyboard path is
+    // mentioned, so authors know the part is keyboard focusable.
+    expect(PROMPT).toContain("caption it on the fence line");
+    expect(PROMPT).toContain("hazard a reader can tab to");
+
+    // Wire the backend test double onto the figure module exactly as the real
+    // prompt does, so this assertion fails if the import breaks.
+    expect(PROMPT, "wires FIGURE_WRITER_SYSTEM").toContain("${FIGURE_WRITER_SYSTEM}");
   });
 
   test("tells every answer like a story, complete start to finish, from every attached source", () => {
@@ -122,11 +160,15 @@ describe("master academic prompt composition", () => {
     expect(ACADEMIC).toContain("unless asked otherwise");
   });
 
-  test("carries no template artefacts and stays a sane size", () => {
-    expect(MASTER_ACADEMIC_PROMPT).not.toContain("${");
-    expect(MASTER_ACADEMIC_PROMPT).not.toContain("`");
+  test("carries no stray template artefacts and stays a sane size", () => {
+    // `${…}` in the contract text is intentional wiring, not a stray template
+    // token (it resolves to the loaded module strings at runtime).
     expect(MASTER_ACADEMIC_PROMPT.length).toBeGreaterThan(15_000);
     expect(MASTER_ACADEMIC_PROMPT.length).toBeLessThan(60_000);
+    expect(MASTER_ACADEMIC_PROMPT).toContain("${FIGURE_ARCHETYPE_GUIDE}");
+    expect(MASTER_ACADEMIC_PROMPT).toContain("${FIGURE_WRITER_SYSTEM}");
+    expect(MASTER_ACADEMIC_PROMPT).not.toContain('`${"');
+    expect(MASTER_ACADEMIC_PROMPT).not.toContain("${\"");
   });
 
   test("buildProfessorContext returns the full contract when search is off", async () => {

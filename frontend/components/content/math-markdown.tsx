@@ -1,5 +1,12 @@
 import { cn } from "@/lib/utils";
 import { renderNoteHtml } from "@/lib/content/pipeline";
+import { registerVeerArtifact } from "@/components/content/veer-artifact";
+
+// The pipeline can emit a <veer-artifact> mount point for a ```run fence; this
+// renderer is the one the chat (and every note surface) puts on screen, so it
+// registers the runner too. A no-op during SSR — without it the element renders
+// as an unknown tag and the artefact is silently invisible.
+registerVeerArtifact();
 
 type MathMarkdownProps = {
   content: string;

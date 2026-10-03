@@ -6,7 +6,6 @@ import {
   imageInstruction,
   parseDataUrl,
   sanitizeChatImages,
-  toGeminiImageParts,
   toOpenAIContent,
 } from "../src/ai/image-input";
 
@@ -15,8 +14,7 @@ import {
  *
  *  1. data-URL parsing — image mime types only, junk rejected;
  *  2. the request-body guard — count cap, per-image size cap, never throws;
- *  3. provider mapping — OpenAI-compatible parts (Agnes) and
- *     Gemini inlineData;
+ *  3. provider mapping — OpenAI-compatible parts (Agnes);
  *  4. the prompt instruction — read the photo, never invent its content,
  *     keep the 150-word floor.
  */
@@ -95,14 +93,6 @@ describe("provider mapping", () => {
     const parts = toOpenAIContent("", [SMALL]) as Array<{ type: string; text?: string }>;
     expect(parts[0].type).toBe("text");
     expect(parts[0].text?.length).toBeGreaterThan(0);
-  });
-
-  test("Gemini parts carry mimeType + base64 payload", () => {
-    const parts = toGeminiImageParts([SMALL, "junk"]);
-    expect(parts).toHaveLength(1);
-    expect(parts[0].inlineData.mimeType).toBe("image/png");
-    expect(parts[0].inlineData.data.startsWith("AAAA")).toBe(true);
-    expect(toGeminiImageParts(undefined)).toEqual([]);
   });
 });
 
