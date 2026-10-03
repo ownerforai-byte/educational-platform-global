@@ -5,14 +5,13 @@ students: a free, offline-capable PWA with an AI tutor ("Veer") grounded in the 
 syllabus + ingested textbooks, live web cross-checks, streamed answers, and AI-drawn
 figures — across Physics, Chemistry, Biology, Mathematics, English and Nepali.
 
-This repository is maintained by an agentic workflow. Read **`AGENTS.md`** and
-**`BRANCHES.md`** before any edit — they are the authoritative spec for what is
-allowed and where each file's work belongs.
+> Agents and humans alike: read **[`BRANCHES.md`](BRANCHES.md)** first — it maps
+> every area of this codebase to its branch and defines the checks.
 
 ## Getting started
 
 Prerequisites: **Node 22+** (monorepo: `backend` workspace via npm workspaces).
-Optional, only if ingesting books: **poppler** (`pdftotext`) and `unzip`.
+Optional, only when ingesting books: **poppler** (`pdftotext`) and `unzip`.
 
 ```bash
 git clone https://github.com/ownerforai-byte/educational-platform-global.git
@@ -28,39 +27,40 @@ Run both halves:
 
 ```bash
 npm run dev:backend         # Express API (tsx watch, backend/src/index.ts)
-cd frontend && npm run dev  # Next.js 15 App Router (frontend)
+cd frontend && npm run dev  # Next.js 15 App Router
 ```
 
-## The gates (run these before any push to main)
+## Branch model
 
-```bash
-npm run check:all          # the full acceptance gate (all areas)
-npm run check              # scoped: only the areas you touched
-npm test                   # vitest suites in backend (security-policy, auth-flow,
-                           # hardening, AI pipeline, truncation, image-gen, …)
-npx tsc --noEmit -p backend/tsconfig.json
-cd frontend && npx tsc --noEmit
-```
+- `main` is the only deployable branch (pushing it triggers the Vercel
+  production deploy + Render backend deploy).
+- 48 area branches exist for parallel work: `content/*` (subjects),
+  `feature/*` (frontend routes), `backend/*` (API areas), `test/*`, `ci/*`,
+  `chore/tooling`, `docs/agents-guides`. All start at `main`.
+- One area per branch: keep your change inside your branch's area (see the
+  map in `BRANCHES.md` §2). Cross-area changes need justification in the PR.
+- Reserved branches — other sessions' live worktrees, never touch:
+  `agents/*`, `claude/*`, `worktree/*` (`BRANCHES.md` §4).
+- Merge back to `main` often; delete a branch only after
+  `git branch --merged main` confirms it. Never force-push; never push all
+  branches at once (each branch push costs a Vercel preview build).
 
-Pushing `main` triggers the production deploy (Vercel frontend + Render backend).
-**Never push main with failing checks.**
+## Checks
 
-## Branch model (short version)
-
-- `main` is the **only deployable branch**; 48 area branches (`content/physics`,
-  `feature/ai-chat`, `backend/auth-api`, …) stage work per area, then merge back.
-- One area per branch; merge back often; never force-push; never push all
-  branches (each costs a Vercel preview build).
-- Full map and sync policy: **`BRANCHES.md`**. Task classification, acceptance
-  criteria and model routing for agent work: **`project-conductor.md`**.
+| When | Command |
+|---|---|
+| Before every commit | `npm run check` — runs only the areas you touched |
+| Before pushing `main` | `npm run check:all` — full gate (content JSON + frontend tsc/tests + backend tsc/tests) |
+| Backend suites | `npm test` (security-policy, auth-flow, hardening, AI pipeline, truncation, image-gen, …) |
+| Type gates | `npx tsc --noEmit -p backend/tsconfig.json` · `cd frontend && npx tsc --noEmit` |
 
 ## Area guides
 
 | Area | Where the work lives |
 |---|---|
-| Notes & data (1,200+ JSON topics) | `content/ravikishan/**` — validated by Zod schemas, built with `npm run content:build` (check: `content:build:check`), health: `content:doctor` |
-| Topic registry (single source of truth for topic → place → route) | `frontend/lib/topic-registry.ts`, emitted via `npm run registry:build` / `registry:check` |
-| AI pipeline (chat chain, streaming, figures) | `backend/src/ai/**` — provider chain (Agnes → OpenRouter → internal), live SSE streaming, truncation repair, figure generation (`image-gen.ts`, Agnes image models + browser-side puter.js fallback). All of it is unit-tested (`backend/tests/ai/**`, `backend/tests/*image*.test.ts`) |
+| Notes & data (1,200+ JSON topics) | `content/ravikishan/**` — Zod-validated, `npm run content:build` (gate: `content:build:check`), health: `content:doctor` |
+| Topic registry (single source of truth: topic → place → route) | `frontend/lib/topic-registry.ts`, `npm run registry:build` / `registry:check` |
+| AI pipeline (chat chain, streaming, figures) | `backend/src/ai/**` — provider chain (Agnes → OpenRouter → internal), live SSE streaming, truncation repair, figure generation (`image-gen.ts`: Agnes image models + browser-side puter.js fallback), all unit-tested in `backend/tests/` |
 | Content UI / chat surfaces | `frontend/components/**`, `frontend/app/**` |
 | Security posture | generic error bodies only (`x-error-id` + internal correlation), every route scopes data by `req.user.id` (no IDOR), production CORS allowlist, auth rate limits |
 
@@ -71,21 +71,21 @@ verified against a coverage snapshot. Book ingestion (PDF/MD/DOCX → JSON recor
 lives in `backend/scripts/ingest-books.ts` and feeds the tutor's
 `[CURRICULUM SOURCE]` context.
 
-## Secrets hygiene (non-negotiable)
+## Commits & PRs
 
-- Never commit a generated secret. Before committing:
-  `git grep -n -E "vcp_|sbp_|AIza|sk-|KEY=|TOKEN=" -- . ':!node_modules' ':!*.md'`
-  must come back clean, and `git log -S "<key-value>" -- <file>` for anything
-  that was ever staged.
+- Use task labels from `project-conductor.md` §3: `feature:`, `bugfix:`,
+  `scrape:`, `transform:`, `load:`, `setup:`, `config:`, `docs:`, `test:`.
+- Fill in the PR template (area branch + check results).
+- No secrets in git — verify with
+  `git grep -n -E "vcp_|sbp_|AIza|sk-|KEY=|TOKEN=" -- . ':!node_modules' ':!*.md'`.
+- Read order for agents: `CLAUDE.md` / `AGENTS.md` → `BRANCHES.md` →
+  `project-conductor.md` → `AGENT_RULES.md`.
 
 ## Reporting & proposing
 
 - **Bugs**: open an issue with the exact repro (URL/route, subject, class, the
   failing command and its output).
-- **Content**: follow the `content/*` branch area for the subject you're touching;
+- **Content**: use the `content/*` area branch for the subject you're touching;
   run `npm run content:build` and the schema check before merging.
 - **Code**: open the relevant `feature/*` branch, keep it to one area, pass the
-  gates above, and merge back to `main`.
-
-Thanks for keeping the platform moving — every test and every merged branch
-makes the tutor better for the students using it.
+  gates above, then merge back to `main`.
