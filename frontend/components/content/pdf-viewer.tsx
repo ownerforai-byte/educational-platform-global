@@ -1,9 +1,18 @@
 "use client";
 
+import { useState } from "react";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
-import { ExternalLink } from "lucide-react";
+import { Download, ExternalLink } from "lucide-react";
 import { UnderDevelopment } from "@/components/content/under-development";
+import {
+  downloadDoc,
+  downloadFileName,
+  frameSrcFor,
+  isInlinePdf,
+  isViewableSrc,
+  pdfViewerHref,
+} from "@/lib/pdf-src";
 
 /**
  * In-page PDF reader for the resource system.
@@ -12,31 +21,22 @@ import { UnderDevelopment } from "@/components/content/under-development";
  * a direct .pdf host, or a Google Drive link). This viewer embeds it in an
  * `<iframe>` so a student reads it immediately inside the app — no download,
  * no leaving the page. It mirrors the existing `VideoViewer`/`NotesViewer`
- * surface, and falls back to "Open in new tab" for media the browser cannot
- * render inline.
+ * surface.
  *
- * URL handling:
- *  - Google Drive `/file/d/{id}/view` → rewritten to `/file/d/{id}/preview`,
- *    which is the Drive URL that renders inside an iframe.
+ * Open and download are deliberately two different controls:
+ *  - **Open in new tab** → the in-app viewer route (`/pdfs/read?src=…`), a
+ *    new browser tab running *our* reader inside *our* shell — never the
+ *    browser's native, chrome-less PDF page.
+ *  - **Download** → `downloadDoc`, a blob fetch that saves the file. It never
+ *    navigates, so a click can't turn into an open.
+ *
+ * URL handling lives in `@/lib/pdf-src`:
+ *  - Google Drive `/file/d/{id}/view` → `/file/d/{id}/preview` (the URL that
+ *    renders inside an iframe).
  *  - Direct `.pdf` URLs → embedded as-is (Chrome/Edge/Safari render native
  *    PDFs in iframes).
  *  - Anything else → not an inline-renderable PDF, so we show the plain link.
  */
-
-function drivePreviewUrl(url: string): string | null {
-  const match = url.match(/drive\.google\.com\/file\/d\/([A-Za-z0-9_-]+)/);
-  if (match) return `https://drive.google.com/file/d/${match[1]}/preview`;
-  return null;
-}
-
-function isGoogleDrive(url: string): boolean {
-  return url.includes("drive.google.com");
-}
-
-function isInlinePdf(url: string): boolean {
-  const bare = url.split("?")[0].toLowerCase();
-  return bare.endsWith(".pdf") || isGoogleDrive(url);
-}
 
 export function PdfViewer({
   title,
@@ -45,40 +45,66 @@ export function PdfViewer({
   title: string;
   mediaUrl: string | null;
 }) {
+  const [saving, setSaving] = useState(false);
+
   if (!mediaUrl) {
     return <UnderDevelopment />;
   }
 
-  const drivePreview = drivePreviewUrl(mediaUrl);
-  const frameSrc = drivePreview ?? mediaUrl;
+  const viewable = isViewableSrc(mediaUrl);
+  // Viewable media reads in our own viewer tab; anything else keeps its raw
+  // link (the viewer would refuse to frame it anyway).
+  const openHref = viewable ? pdfViewerHref(mediaUrl, title) : mediaUrl;
   const renderInline = isInlinePdf(mediaUrl);
+
+  const onDownload = async () => {
+    if (saving) return;
+    setSaving(true);
+    try {
+      await downloadDoc(mediaUrl, downloadFileName(mediaUrl, title));
+    } finally {
+      setSaving(false);
+    }
+  };
 
   return (
     <Card>
       <CardHeader className="flex flex-row items-center justify-between gap-3">
         <CardTitle className="truncate">{title}</CardTitle>
-        <Button
-          variant="outline"
-          size="sm"
-          asChild
-          aria-label="Open PDF in a new tab"
-        >
-          <a
-            href={mediaUrl}
-            target="_blank"
-            rel="noreferrer noopener"
+        <div className="flex shrink-0 items-center gap-2">
+          <Button
+            size="sm"
+            asChild
+            aria-label="Open PDF in a new tab"
+          >
+            <a
+              href={openHref}
+              target="_blank"
+              rel="noreferrer noopener"
+              className="inline-flex items-center gap-2"
+            >
+              <ExternalLink className="h-4 w-4" />
+              Open in new tab
+            </a>
+          </Button>
+          <Button
+            variant="outline"
+            size="sm"
+            onClick={onDownload}
+            disabled={saving}
+            aria-label="Download this PDF"
             className="inline-flex items-center gap-2"
           >
-            <ExternalLink className="h-4 w-4" />
-            Open in new tab
-          </a>
-        </Button>
+            <Download className="h-4 w-4" />
+            {saving ? "Saving…" : "Download"}
+          </Button>
+        </div>
       </CardHeader>
       <CardContent>
         {renderInline ? (
           <div className="w-full overflow-hidden rounded-md border border-border bg-white">
             <iframe
-              src={frameSrc}
+              src={frameSrcFor(mediaUrl)}
               title={title}
               className="h-[75vh] min-h-[480px] w-full"
               style={{ border: 0 }}
@@ -86,7 +112,7 @@ export function PdfViewer({
           </div>
         ) : (
           <a
-            href={mediaUrl}
+            href={openHref}
             target="_blank"
             rel="noreferrer noopener"
             className="text-primary hover:underline"

@@ -25,6 +25,7 @@ export {
   LOGIN_PATH,
   PUBLIC_PATHS,
   categoryForPath,
+  creditModuleKey,
   formatRemaining,
 } from "./constants";
 export type { ContentCategory, CategoryRule } from "./constants";

@@ -11,6 +11,8 @@
  * the module re-locks automatically (no page reload required).
  */
 
+import { PDF_VIEWER_PATH } from "@/lib/pdf-src";
+
 export type ContentCategory = "lab3d" | "visuals" | "theory" | "reference";
 
 export interface CategoryRule {
@@ -124,6 +126,21 @@ export function categoryForPath(pathname: string): ContentCategory | null {
   if (VISUAL_ROUTES.test(path)) return "visuals";
   if (REFERENCE_ROUTES.test(path)) return "reference";
   return "theory";
+}
+
+/**
+ * Unlock-window key for a route.
+ *
+ * `/pdfs/read` is the viewer tab every document on `/pdfs` opens into (each in
+ * its own browser tab). It must share the library's key, otherwise unlocking
+ * the PDF Library and then clicking "Open" would charge a second coin in the
+ * new tab — the window is persisted per key in `unlock-store.ts`, so one
+ * unlock covers the list and every document tab opened from it.
+ */
+export function creditModuleKey(pathname: string): string {
+  const path = pathname.split("?")[0] || "/";
+  if (path === PDF_VIEWER_PATH) return "route:/pdfs";
+  return `route:${path}`;
 }
 
 /** HH:MM:SS formatter for the unlock countdown badge. */

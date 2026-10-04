@@ -21,6 +21,7 @@ import { Lock, Coins, Loader2, Timer, ShieldCheck } from "lucide-react";
 import {
   TOKEN_MATRIX,
   categoryForPath,
+  creditModuleKey,
   type ContentCategory,
 } from "./constants";
 import { useCredit } from "./credit-provider";
@@ -39,7 +40,8 @@ export function RouteCreditGate({ children }: { children: ReactNode }) {
 
   const [working, setWorking] = useState(false);
   const category = categoryForPath(pathname ?? "/");
-  const moduleKey = `route:${pathname ?? "/"}`;
+  // PDF document tabs (/pdfs/read) share the PDF Library's unlock window.
+  const moduleKey = creditModuleKey(pathname ?? "/");
 
   // Public / exempt route → render untouched (home baseline integrity).
   if (category === null) return <>{children}</>;

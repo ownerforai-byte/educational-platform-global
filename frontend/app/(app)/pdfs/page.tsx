@@ -16,6 +16,7 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MathMarkdown } from "@/components/content/math-markdown";
+import { downloadFileName, pdfViewerHref } from "@/lib/pdf-src";
 
 type Kind = "pdf" | "html" | "md" | "docx";
 type Subject = "Biology" | "Physics" | "Chemistry" | "Mathematics";
@@ -271,20 +272,19 @@ export default function PdfLibraryPage() {
     [filter],
   );
 
+  // Only Markdown reads inline — it is rendered by this app. PDFs and HTML
+  // never do: their "Open" button hands the URL to the viewer tab below
+  // (`/pdfs/read`), and DOCX has no renderer, so it stays a plain open.
   const open = (doc: Doc) => {
-    if (doc.kind === "md") {
-      setMdText("");
-      setMdLoading(true);
-      setActive(doc);
-      fetch(doc.href)
-        .then((r) => r.text())
-        .then((t) => setMdText(t))
-        .catch(() => setMdText("Could not load this document."))
-        .finally(() => setMdLoading(false));
-    } else {
-      setMdText("");
-      setActive(doc);
-    }
+    if (doc.kind !== "md") return;
+    setMdText("");
+    setMdLoading(true);
+    setActive(doc);
+    fetch(doc.href)
+      .then((r) => r.text())
+      .then((t) => setMdText(t))
+      .catch(() => setMdText("Could not load this document."))
+      .finally(() => setMdLoading(false));
     requestAnimationFrame(() => {
       document.getElementById("study-reader")?.scrollIntoView({ behavior: "smooth", block: "start" });
     });
@@ -305,7 +305,8 @@ export default function PdfLibraryPage() {
           <div>
             <h1 className="text-2xl md:text-3xl font-bold tracking-tight">📄 Study Materials</h1>
             <p className="mt-1 text-sm text-muted-foreground">
-              All PDFs and notes, classified by subject — open them right here or download a copy.
+              All PDFs and notes, classified by subject — each opens in its own app tab, or
+              download a copy. Open and download are always two separate buttons.
             </p>
           </div>
         </div>
@@ -395,9 +396,17 @@ export default function PdfLibraryPage() {
                       {doc.description}
                     </p>
 
-                    {/* Three clear actions: Open · Download · Close */}
+                    {/* Two clearly separate actions. Open never downloads:
+                        PDF/HTML go to the in-app viewer tab (/pdfs/read),
+                        markdown reads inline, DOCX has no renderer so it stays
+                        a plain open. Download only ever saves the file. */}
                     <div className="mt-4 flex flex-wrap items-center gap-2">
-                      {doc.kind === "docx" ? (
+                      {doc.kind === "md" ? (
+                        <Button size="sm" onClick={() => open(doc)}>
+                          <BookOpen className="h-4 w-4 mr-1.5" />
+                          Open
+                        </Button>
+                      ) : doc.kind === "docx" ? (
                         <Button size="sm" asChild>
                           <a href={doc.href} target="_blank" rel="noreferrer noopener">
                             <BookOpen className="h-4 w-4 mr-1.5" />
@@ -405,26 +414,22 @@ export default function PdfLibraryPage() {
                           </a>
                         </Button>
                       ) : (
-                        <Button size="sm" onClick={() => open(doc)}>
-                          <BookOpen className="h-4 w-4 mr-1.5" />
-                          Open
+                        <Button size="sm" asChild>
+                          <a
+                            href={pdfViewerHref(doc.href, doc.title)}
+                            target="_blank"
+                            rel="noreferrer noopener"
+                          >
+                            <BookOpen className="h-4 w-4 mr-1.5" />
+                            Open
+                          </a>
                         </Button>
                       )}
                       <Button variant="outline" size="sm" asChild>
-                        <a href={doc.href} download>
+                        <a href={doc.href} download={downloadFileName(doc.href, doc.title)}>
                           <Download className="h-4 w-4 mr-1.5" />
                           Download
                         </a>
-                      </Button>
-                      <Button
-                        variant="ghost"
-                        size="sm"
-                        onClick={close}
-                        disabled={!isOpen}
-                        title={isOpen ? "Close this document" : "Open a document to close it"}
-                      >
-                        <X className="h-4 w-4 mr-1.5" />
-                        Close
                       </Button>
                     </div>
                   </div>
@@ -435,8 +440,8 @@ export default function PdfLibraryPage() {
         );
       })}
 
-      {/* Inline reader */}
-      {active && active.kind !== "docx" && (
+      {/* Inline reader — markdown only; PDFs and HTML open in their own tab. */}
+      {active && active.kind === "md" && (
         <div
           id="study-reader"
           className="rounded-2xl border border-primary/20 bg-card shadow-lg overflow-hidden scroll-mt-20"
@@ -450,7 +455,7 @@ export default function PdfLibraryPage() {
             </div>
             <div className="flex items-center gap-2 shrink-0">
               <Button variant="outline" size="sm" asChild>
-                <a href={active.href} download>
+                <a href={active.href} download={downloadFileName(active.href, active.title)}>
                   <Download className="h-4 w-4 mr-1.5" />
                   Download
                 </a>
@@ -462,24 +467,13 @@ export default function PdfLibraryPage() {
             </div>
           </div>
 
-          {active.kind === "md" ? (
-            <div className="max-w-3xl px-6 py-5">
-              {mdLoading ? (
-                <p className="text-sm text-muted-foreground">Loading document…</p>
-              ) : (
-                <MathMarkdown content={mdText} className="prose-sm" />
-              )}
-            </div>
-          ) : (
-            <div className="w-full bg-white">
-              <iframe
-                src={active.href}
-                title={active.title}
-                className="h-[78vh] min-h-[480px] w-full"
-                style={{ border: 0 }}
-              />
-            </div>
-          )}
+          <div className="max-w-3xl px-6 py-5">
+            {mdLoading ? (
+              <p className="text-sm text-muted-foreground">Loading document…</p>
+            ) : (
+              <MathMarkdown content={mdText} className="prose-sm" />
+            )}
+          </div>
         </div>
       )}
 
