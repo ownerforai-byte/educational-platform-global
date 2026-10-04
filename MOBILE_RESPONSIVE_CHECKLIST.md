@@ -15,6 +15,11 @@ Last updated: 2026-09-30. Audit at 375px (iPhone SE/13 mini class) + safe-area r
 - [x] `user-nav.tsx` — broken `xs:` variant (not a real breakpoint) fixed to `sm:`
 - [x] Verified clean at 375px: home hubs, subject hub (`SubjectHubView`),
       `notes-viewer`, `pyq-card`, `quiz-viewer`, `rich-note`, lab filter row
+- [x] Automated gate + CI: `npm run mobile:check`
+      (`scripts/mobile-responsive-check.mjs`) enforces the mechanically
+      checkable rules on every push — R1 invalid variants, R2 safe-area chrome,
+      R3 wide fixed minimums, R4 width-forcing tables. Batches A–C below remain
+      the human visual pass for what a static check cannot prove.
 
 ## Priority rules for remaining files
 
@@ -59,7 +64,7 @@ Last updated: 2026-09-30. Audit at 375px (iPhone SE/13 mini class) + safe-area r
 2. Check: horizontal scrollbar? clipped header? tappable targets ≥ 44px?
    floating chrome above the gesture bar?
 3. Fix with rules above; prefer wrapping over resizing.
-4. Re-run `npm run check` (repo gate) before committing.
+4. Re-run `npm run mobile:check` + `npm run check` (repo gate) before committing.
 
 ## Regenerate the "no responsive prefix" list
 

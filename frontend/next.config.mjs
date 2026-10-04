@@ -128,8 +128,22 @@ const nextConfig = {
         destination: "/notes",
         permanent: false,
       },
+      // Deep legacy links (/r-notes/physics/mechanics and
+      // /ravikishan-notes/{class}/{subject}/{unit}) used to 404: only the exact
+      // roots redirected. Every surviving shape forwards to the notes index,
+      // which resolves each note to a live curriculum page via noteRoute().
+      {
+        source: "/r-notes/:path*",
+        destination: "/notes",
+        permanent: false,
+      },
       {
         source: "/ravikishan-notes",
+        destination: "/notes",
+        permanent: false,
+      },
+      {
+        source: "/ravikishan-notes/:path*",
         destination: "/notes",
         permanent: false,
       },

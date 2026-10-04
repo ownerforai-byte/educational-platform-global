@@ -52,6 +52,7 @@
     "audit:scopes:fail": "node scripts/audit-empty-scopes.mjs --strict",
     "audit:mindmap": "node scripts/enrichment/mindmap-validate.mjs",
     "audit:visuals": "cd frontend && node ../node_modules/tsx/dist/cli.mjs scripts/audit-visuals.ts",
+    "mobile:check": "node scripts/mobile-responsive-check.mjs",
     "mindmaps:rebuild": "node scripts/enrichment/rebuild-legacy-mindmaps.mjs",
     "mindmaps:check": "node scripts/enrichment/rebuild-legacy-mindmaps.mjs --check",
     "visuals:py": "python visuals-py/run.py generate",

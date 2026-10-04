@@ -81,6 +81,9 @@ jobs:
       # and un-drifted, and a note that was authored must not silently become a
       # generated template. Live presence is proven separately (live-smoke.yml).
       - run: npm run ledger:check
+      # Mobile rules from MOBILE_RESPONSIVE_CHECKLIST.md that can be enforced
+      # mechanically: invalid variants, safe-area chrome, wide minimums, tables.
+      - run: npm run mobile:check
 
   frontend-build:
     needs: [frontend-lint, frontend-typecheck, frontend-test, content-schema]

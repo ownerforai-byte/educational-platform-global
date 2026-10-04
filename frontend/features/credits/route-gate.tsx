@@ -52,7 +52,7 @@ export function RouteCreditGate({ children }: { children: ReactNode }) {
   if (open) {
     return (
       <div className="relative">
-        <div className="pointer-events-none fixed bottom-4 left-4 z-40 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-emerald-500/15 px-3 py-1.5 text-xs font-bold text-emerald-500 backdrop-blur-sm shadow-lg">
+        <div className="pointer-events-none fixed bottom-safe left-4 z-40 inline-flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-emerald-500/15 px-3 py-1.5 text-xs font-bold text-emerald-500 backdrop-blur-sm shadow-lg">
           <Timer className="h-3.5 w-3.5" />
           {remainingClock(moduleKey)}
           <span className="font-medium text-emerald-500/80">until re-lock</span>

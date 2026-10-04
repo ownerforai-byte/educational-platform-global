@@ -1299,7 +1299,7 @@ body {
    notch / home indicator, so applying them unconditionally is safe.
    Fixed chrome (AI widget, back button) uses these together with
    viewport-fit=cover so nothing lands under the gesture bar. */
-.pb-safe-bottom { padding-bottom: env(safe-area-inset-bottom, 0px); }
+.pb-safe-bottom { padding-bottom: calc(0.5rem + env(safe-area-inset-bottom, 0px)); }
 .pt-safe-top { padding-top: env(safe-area-inset-top, 0px); }
 
 /* Hide horizontal scrollbars on phone quick-nav strips (still scrollable). */

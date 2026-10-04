@@ -4,40 +4,25 @@
 NEB Study Vault / Educational Platform Global
 
 ## STATUS
-PHASE 14 — PERFORMANCE & DEPLOYMENT (COMPLETE)
+LIVE — SYSTEM HARDENING (ACTIVE; content authoring continues in parallel)
 
 ## CURRENT_PHASE
-14 — Performance & Deployment (complete)
+15 — System hardening (active). Historical phase logs below; CURRENT TRUTH at the bottom is authoritative.
 
 ## REPOSITORY
-https://github.com/ravikisan1814-lang/educational-platform-global.git
+https://github.com/ownerforai-byte/educational-platform-global.git
 
 ## CURRENT_WORKSPACE
-C:\Users\ASUS\Desktop\educational-platform-global
+C:\Users\ASUS\Desktop\rn
 
 ## BRANCH
 main
 
 ## REPOSITORY STATE
-- Initial commit created and pushed to origin/main (commit 9dc767c).
-- Remote `origin` configured and up to date.
-- Control documents + Phase 2-4 application foundation committed.
-- `.env.local` exists locally (gitignored, placeholder only) so the app can boot.
-- Cloudflare Pages deployment fix committed (edge runtime migration, WSL build,
-  verified `_worker.js` output).
-- Recursion-safe build wrapper committed: `npm run build` = `node scripts/build.mjs`
-  (generates `.vercel/output/static/_worker.js/index.js`; plain `next build` inside
-  Vercel's recursive guard). Cloudflare dashboard can keep `npm run build`.
-- Resilient middleware committed: `middleware.ts` guards Supabase client creation +
-  `auth.getUser()` with an env-var presence check and try/catch — the site no longer
-  returns 500 on every page when Supabase env vars are missing/unconfigured.
-- Built-in AI recommendation engine committed: `lib/ai/providers/internal.ts` builds
-  a content index from `lib/syllabus.ts` and returns subject/unit recommendations
-  (real URLs like `/r-notes?subject=biology` + `#anchors`) for search and chat with
-  NO API keys. `lib/ai/service.ts` always registers it, falls back to it when no
-  external provider is configured or fails (e.g. invalid API key), and reads
-  `AI_PROVIDER` as an alias for `AI_DEFAULT_PROVIDER`. Env vars are no longer
-  required for the site to load.
+- Monorepo split complete: `frontend/` (Next.js 16 App Router) + `backend/` (Express 4 TS ESM).
+- Every push to `main` auto-deploys: Vercel (frontend) and Render (backend).
+- See CURRENT TRUTH (bottom) for the verified live state; SYSTEM_WORK_TRACKER.md tracks
+  each work type's completion.
 
 ## ORCHESTRATOR
 MASTER/ORCHESTRATOR AGENT active. Phase 2 executed directly (no overlapping
@@ -322,7 +307,7 @@ rebuilt `frontend/public/data/syllabus-notes/chemistry/**`.
 
 ---
 
-## CURRENT TRUTH (2026-09-25 — supersedes everything above where they conflict)
+## CURRENT TRUTH (2026-10-04 — supersedes everything above where they conflict)
 
 The sections above are historical phase logs (Cloudflare-era + pre-split). This section
 is the authoritative state. Owner: Codebuff (Buffy) + concurrent content agent.
@@ -330,10 +315,13 @@ is the authoritative state. Owner: Codebuff (Buffy) + concurrent content agent.
 ### Reality
 - **Workspace:** `C:\Users\ASUS\Desktop\rn` (monorepo: `frontend/` Next.js 15 + `backend/` Express 4 TS).
 - **Repo:** `github.com/ownerforai-byte/educational-platform-global` (branch `main`).
-- **Deploy:** backend auto-deploys to Render at `https://rn01.onrender.com` on every push to main.
-  **Frontend has NO confirmed production URL** — Supabase `site_url` still points at a dead (410)
-  Vercel URL. Wiring the real frontend URL into `FRONTEND_URL` + Supabase `site_url` is the
-  #1 open item.
+- **Deploy:** both halves auto-deploy on every push to `main`. Frontend: Vercel production
+  `https://ravikisan.vercel.app` (READY at `e66f731d`); backend: Render
+  `https://rn01.onrender.com` (`/health` reports `e66f731d`).
+- **CI:** 4 workflows — CI/CD, Content JSON, Live Smoke Test, URL Hygiene — green at
+  `e66f731d`. Gates: content schema / build parity / visuals / mindmaps / ledger, frontend
+  lint + typecheck + tests + build, backend tests + build, plus live smoke and the deployed
+  content-ledger audit after deploys.
 - **Supabase project:** `tsvbksfegvdjwczzfdcx` (Management API token in `backend/.env`).
 
 ### Auth architecture (as shipped 2026-09-25)
@@ -359,23 +347,29 @@ is the authoritative state. Owner: Codebuff (Buffy) + concurrent content agent.
 - **Supabase refresh-reuse quirk:** config says `security_refresh_token_reuse_interval=10` but
   old refresh tokens were still accepted at +65s and reuse did not revoke the token family
   (empirically verified). Low impact (httpOnly cookie, 30d expiry). File Supabase support ticket.
-- Next.js 14.2.15 CVE-2025-55184 upgrade to 14.2.35 still pending user approval (see advisory above).
-- CORS allowlist is **empty** until `FRONTEND_URL` is set on Render → in production only
-  same-origin (via the Next proxy) and localhost work. This is intentional until the real
-  frontend URL is known.
+- The Next.js **14.x** advisory above belongs to the retired pre-split tree — the frontend now
+  runs Next `^16.3.3` (`frontend/package.json`).
+- CORS: browser traffic reaches the backend through the frontend's `/api/*` proxy
+  (same-origin), so the Render `FRONTEND_URL` allowlist only matters for direct cross-origin
+  calls; re-check it when that env changes.
 
-### Verification state
-- Backend: 48/48 tests, `tsc --noEmit` clean. Frontend: 219/219 tests, `tsc --noEmit` clean.
-- Live rotation e2e on Render: 7/8 (login → refresh-cookie rotation → reuse → logout; the one
-  ⚠️ is the Supabase reuse quirk above).
+### Verification state (snapshot `e66f731d`)
+- CI at `e66f731d`: every workflow green (CI/CD all jobs, Content JSON, Live Smoke Test,
+  URL Hygiene); frontend lint + typecheck + tests + build and backend tests + build pass.
+- Backend suite passes on the committed tree; run it with the working tree clean (foreign
+  uncommitted WIP can produce one unrelated failure locally).
+- Live rotation e2e on Render: 7/8 (the one ⚠️ is the Supabase reuse quirk above).
 - **Permanent smoke test:** `backend/scripts/smoke-live.mjs` (`npm run smoke`), runs in CI via
   `.github/workflows/live-smoke.yml` after every push to main. Needs repo secrets
   `SMOKE_OWNER_EMAIL` + `SMOKE_OWNER_PASSWORD` for the auth round-trip (guest/health/401 checks run without).
+- **System work tracker:** [SYSTEM_WORK_TRACKER.md](SYSTEM_WORK_TRACKER.md), kept honest by
+  `node scripts/system-work-audit.mjs --check` (numbers + evidence paths).
 
-### Roadmap tracks (8-week plan)
-Track 1 foundation ✅ (2026-09-25) · Track 2 content gaps (concurrent agent, has coverage tool)
-· Track 3 architecture: partial (tests.ts deduped, N+1 batched in ai-generate, admin O(N) fixed,
-prod debug logs off) · Track 4 tests ✅ (48+219, smoke CI) · Track 5 UI polish (open)
-· Track 6 perf (open: bundle audit, Render cold-start keep-alive) · Track 7 deploy (blocked on
-real frontend URL).
+### Roadmap tracks (updated 2026-10-04)
+Track 1 foundation ✅ · Track 2 content gaps (class-11 authored + ledgered; class-12 authoring
+is the main open content campaign) · Track 3 architecture ✅ (tests.ts deduped, N+1 batched,
+admin O(N) fixed) · Track 4 tests ✅ (frontend + backend suites in CI) · Track 5 UI polish
+(ongoing) · Track 6 perf (open: bundle audit, Render cold-start keep-alive) · Track 7 deploy ✅
+(frontend Vercel + backend Render, verified live) · Track 8 system tracking ✅
+(`SYSTEM_WORK_TRACKER.md` + `scripts/system-work-audit.mjs`).
 
