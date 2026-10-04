@@ -1,0 +1,46 @@
+{
+  "title": "Conversation and role play",
+  "unitSlug": "oral-communication",
+  "topicSlug": "conversation-and-role-play",
+  "topicTitle": "Conversation and role play",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "root": {
+    "id": "topic-conversation-and-role-play",
+    "label": "Conversation and role play",
+    "children": [
+      {
+        "id": "conversation-and-role-play-branch-0",
+        "label": "Conversation",
+        "children": [
+          {
+            "id": "conversation-and-role-play-branch-0-def",
+            "label": "Definition"
+          },
+          {
+            "id": "conversation-and-role-play-branch-0-use",
+            "label": "Exam use"
+          }
+        ]
+      },
+      {
+        "id": "conversation-and-role-play-branch-1",
+        "label": "Role play",
+        "children": [
+          {
+            "id": "conversation-and-role-play-branch-1-def",
+            "label": "Definition"
+          },
+          {
+            "id": "conversation-and-role-play-branch-1-use",
+            "label": "Exam use"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "- Conversation and role play\n  - Conversation\n  - Role play"
+  ]
+}

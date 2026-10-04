@@ -1,0 +1,100 @@
+{
+  "title": "DC Circuits",
+  "unitSlug": "dc-circuits",
+  "type": "unit",
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "root": {
+    "id": "unit-dc-circuits",
+    "label": "DC Circuits",
+    "children": [
+      {
+        "id": "unit-topic-electric-currents-drift-velocity-and-its-relation-with-current",
+        "label": "Electric currents; drift velocity and its relation with current",
+        "children": [
+          {
+            "id": "unit-dc-circuits-electric-currents-drift-velocity-and-its-relation-with-current-0",
+            "label": "Drift velocity"
+          },
+          {
+            "id": "unit-dc-circuits-electric-currents-drift-velocity-and-its-relation-with-current-1",
+            "label": "Its relation with current"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-ohm-s-law-electrical-resistance-resistivity-conductivity",
+        "label": "Ohm's law; electrical resistance; resistivity; conductivity",
+        "children": [
+          {
+            "id": "unit-dc-circuits-ohm-s-law-electrical-resistance-resistivity-conductivity-0",
+            "label": "Electrical resistance"
+          },
+          {
+            "id": "unit-dc-circuits-ohm-s-law-electrical-resistance-resistivity-conductivity-1",
+            "label": "Resistivity"
+          },
+          {
+            "id": "unit-dc-circuits-ohm-s-law-electrical-resistance-resistivity-conductivity-2",
+            "label": "Conductivity"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-current-voltage-relations-ohmic-and-non-ohmic-resistance",
+        "label": "Current-voltage relations; ohmic and non-ohmic resistance",
+        "children": [
+          {
+            "id": "unit-dc-circuits-current-voltage-relations-ohmic-and-non-ohmic-resistance-0",
+            "label": "Ohmic"
+          },
+          {
+            "id": "unit-dc-circuits-current-voltage-relations-ohmic-and-non-ohmic-resistance-1",
+            "label": "Non-ohmic resistance"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-resistances-in-series-and-parallel",
+        "label": "Resistances in series and parallel",
+        "children": [
+          {
+            "id": "unit-dc-circuits-resistances-in-series-and-parallel-0",
+            "label": "Parallel"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-potential-divider",
+        "label": "Potential divider",
+        "children": []
+      },
+      {
+        "id": "unit-topic-electromotive-force-of-a-source-internal-resistance",
+        "label": "Electromotive force of a source, internal resistance",
+        "children": [
+          {
+            "id": "unit-dc-circuits-electromotive-force-of-a-source-internal-resistance-0",
+            "label": "Internal resistance"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-work-and-power-in-electrical-circuits",
+        "label": "Work and power in electrical circuits",
+        "children": [
+          {
+            "id": "unit-dc-circuits-work-and-power-in-electrical-circuits-0",
+            "label": "Power in electrical circuits"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "- DC Circuits\n  - Electric currents; drift velocity and its relation with current\n  - Ohm's law; electrical resistance; resistivity; conductivity\n  - Current-voltage relations; ohmic and non-ohmic resistance\n  - Resistances in series and parallel\n  - Potential divider\n  - Electromotive force of a source, internal resistance\n  - Work and power in electrical circuits"
+  ]
+}

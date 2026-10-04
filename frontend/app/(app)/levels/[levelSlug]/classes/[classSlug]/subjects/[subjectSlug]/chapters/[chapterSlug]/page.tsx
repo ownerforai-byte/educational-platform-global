@@ -1,8 +1,10 @@
+import { notFound } from "next/navigation";
 import { getChaptersBySubject } from "@/lib/curriculum";
 import { SYLLABUS, getSubjectSyllabus, type SubjectSyllabus } from "@/lib/syllabus";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { BackButton } from "@/components/navigation/back-button";
-import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { ChapterDetailView } from "@/features/syllabus/components/chapter-detail-view";
+import { resolveUnitIdFromChapterSlug } from "@/features/syllabus/queries";
 import Link from "next/link";
 
 export default async function ChapterPage({
@@ -11,6 +13,42 @@ export default async function ChapterPage({
   params: Promise<{ levelSlug: string; classSlug: string; subjectSlug: string; chapterSlug: string }>;
 }) {
   const { levelSlug, classSlug, subjectSlug, chapterSlug } = await params;
+
+  // Syllabus-backed tracks (class-11-notes / class-12-notes) render the real
+  // chapter workspace: official unit syllabus plus every topic with its notes.
+  // The canonical tree at /<class>/<subject> owns the section nav, so link
+  // there rather than duplicating routes that only exist under it.
+  const unitId = resolveUnitIdFromChapterSlug(classSlug, subjectSlug, chapterSlug);
+  if (unitId) {
+    const subjectName =
+      (getSubjectSyllabus(classSlug, subjectSlug) as SubjectSyllabus | undefined)?.name ??
+      subjectSlug;
+    return (
+      <div className="mx-auto max-w-5xl space-y-6 py-10">
+        <div className="flex items-center justify-between">
+          <Breadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Levels", href: "/levels" },
+              { label: classSlug, href: `/levels/${levelSlug}/classes/${classSlug}` },
+              {
+                label: subjectName,
+                href: `/levels/${levelSlug}/classes/${classSlug}/subjects/${subjectSlug}`,
+              },
+              { label: "Chapters" },
+            ]}
+          />
+          <BackButton />
+        </div>
+        <ChapterDetailView
+          classSlug={classSlug}
+          subjectSlug={subjectSlug}
+          unitId={unitId}
+          basePath={`/${classSlug}/${subjectSlug}`}
+        />
+      </div>
+    );
+  }
 
   // Try API first, fall back to syllabus
   let chapters: Array<{ id: string; slug: string; title: string; description: string | null }> = [];
@@ -24,19 +62,6 @@ export default async function ChapterPage({
       description: c.description,
     }));
   } catch {}
-
-  // Fall back to syllabus data (units are treated as chapters)
-  if (!chapters.length && classSlug.includes("notes")) {
-    const syllabusSubject = getSubjectSyllabus(classSlug, subjectSlug) as SubjectSyllabus | null;
-    if (syllabusSubject) {
-      chapters = syllabusSubject.units.map((u, i) => ({
-        id: u.id,
-        slug: `unit-${i + 1}`,
-        title: u.title,
-        description: `${u.topics.length} topics`,
-      }));
-    }
-  }
 
   const chapter = chapters.find((c) => c.slug === chapterSlug);
 
@@ -77,9 +102,8 @@ export default async function ChapterPage({
         )}
       </div>
 
-      {/* Note: Topics would need to be fetched per chapter. For now showing all topics */}
       <div className="rounded-xl border border-dashed border-border p-8 text-center text-sm text-muted-foreground">
-        Topics for this chapter will be available once the database is populated with API data.
+        No published topics are attached to this chapter yet.
         <br />
         <Link href={`/${classSlug}/${subjectSlug}`} className="text-primary hover:underline mt-2 inline-block">
           View all notes instead →
@@ -92,11 +116,11 @@ export default async function ChapterPage({
 export function generateStaticParams() {
   return SYLLABUS.flatMap((cls) =>
     cls.subjects.flatMap((subject) =>
-      subject.units.map((_, unitIndex) => ({
+      subject.units.map((unit) => ({
         levelSlug: "library",
         classSlug: cls.slug,
         subjectSlug: subject.slug,
-        chapterSlug: `unit-${unitIndex + 1}`,
+        chapterSlug: unit.id,
       }))
     )
   );

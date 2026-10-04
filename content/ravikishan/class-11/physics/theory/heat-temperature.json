@@ -1,0 +1,15 @@
+{
+  "title": "Heat, Temperature & Thermal Expansion",
+  "confusion": [
+    "❌ 'Heat and temperature mean the same thing.' ✅ Temperature = thermal state (intensive); Heat = energy in transit (extensive, measured in Joules).",
+    "❌ 'All objects expand by the same amount when heated equally.' ✅ ΔL = αL₀ΔT depends on original length and material.",
+    "❌ 'Latent heat means the substance contains heat.' ✅ Latent heat is energy used to BREAK intermolecular bonds during phase change.",
+    "❌ 'Ice at 0°C and water at 0°C have the same energy.' ✅ Water contains 3.36 × 10⁵ J/kg MORE (latent heat of fusion)."
+  ],
+  "notes": [
+    "**Temperature** is the degree of hotness measured on Celsius, Fahrenheit or Kelvin scale. T(K) = t(°C) + 273.15.",
+    "**Heat** is the energy transferred due to temperature difference. Specific heat capacity c: Q = mcΔt. Latent heat L: Q = mL.",
+    "**Newton's law of cooling:** rate of cooling ∝ temperature excess above surroundings (small excess).",
+    "**Thermal expansion:** linear ΔL = L₀αΔT, areal ΔA = A₀βΔT, volumetric ΔV = V₀γΔT with α:β:γ = 1:2:3."
+  ]
+}

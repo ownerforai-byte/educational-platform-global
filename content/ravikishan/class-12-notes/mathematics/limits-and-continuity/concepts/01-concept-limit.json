@@ -1,0 +1,164 @@
+{
+  "title": "Concept of Limit",
+  "unitSlug": "limits-and-continuity",
+  "topicSlug": "concept-limit",
+  "topicTitle": "Concept of Limit",
+  "relevance": 100,
+  "notes": [
+    "**Limit concept:** The limit of f(x) as x approaches a describes the value that f(x) approaches as x gets arbitrarily close to a (but not equal to a).",
+    "**Notation:** lim(x→a) f(x) = L means f(x) gets arbitrarily close to L as x approaches a.",
+    "**Direct substitution:** If f is continuous at a, then lim(x→a) f(x) = f(a).",
+    "**Indeterminate forms:** 0/0, ∞/∞, 0·∞, ∞-∞, 0⁰, 1^∞, ∞⁰ require special techniques.",
+    "**Standard limits:** lim(x→0) sin(x)/x = 1, lim(x→0) (1-cos x)/x = 0, lim(x→0) (eˣ-1)/x = 1, lim(x→0) ln(1+x)/x = 1.",
+    "**Algebraic properties:** lim[f±g] = lim f ± lim g, lim[f·g] = lim f · lim g, lim[f/g] = lim f / lim g (denominator ≠ 0).",
+    "**Continuity connection:** f is continuous at a if lim(x→a) f(x) = f(a)."
+  ],
+  "confusion": [
+    "❌ 'The limit of a function at a point is always its value at that point' ✅ The limit only concerns values *near* a, not *at* a; f(a) might not even be defined.",
+    "❌ 'If the limit doesn't exist, the function is undefined' ✅ A function can be well-defined at a point, but the limit might not exist (e.g., jump discontinuities or oscillations).",
+    "❌ 'Indeterminate form 0/0 means the result is 0 or undefined' ✅ 0/0 is a signal to apply algebraic manipulation or L'Hôpital's Rule to find the limit, which may be a finite number."
+  ],
+  "practice": [
+    "Solve at least 5 problems on concept of limit from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type."
+  ],
+  "universalFacts": [
+    "This topic is a cornerstone of the mathematics curriculum and appears consistently in examinations.",
+    "Understanding concept of limit builds the foundation for more advanced topics in mathematics.",
+    "Real-world applications of concept of limit span engineering, physics, economics, and computer science."
+  ],
+  "animation3D": "limits-and-continuity",
+  "motionGraphics": "limits-and-continuity",
+  "examples": [
+    "Example 1: Real-world application of Concept of Limit",
+    "Example 2: Practical demonstration of Concept of Limit concepts",
+    "Example 3: Numerical problem on Concept of Limit",
+    "Example 4: Diagram-based question on Concept of Limit",
+    "Example 5: Application in daily life involving Concept of Limit"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain Concept of Limit with suitable example.",
+    "Q2. Solve problems related to Concept of Limit.",
+    "Q3. Differentiate between various aspects of Concept of Limit.",
+    "Q4. Derive the key formula related to Concept of Limit.",
+    "Q5. What are the applications of Concept of Limit?"
+  ],
+  "formulas": [
+    "Key Formula 1: Definition formula for Concept of Limit",
+    "Key Formula 2: Mathematical expression of Concept of Limit",
+    "Key Formula 3: Application formula for Concept of Limit",
+    "Key Formula 4: Derivation result for Concept of Limit",
+    "Key Formula 5: Important relation in Concept of Limit"
+  ],
+  "keyPoints": [
+    "Key Point 1: Fundamental definition of Concept of Limit",
+    "Key Point 2: Essential theorem or principle related to Concept of Limit",
+    "Key Point 3: Important condition or constraint for Concept of Limit",
+    "Key Point 4: Common applications of Concept of Limit",
+    "Key Point 5: Connection to other topics in Science"
+  ],
+  "summary": "Concept of Limit is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Concept of Limit applies",
+    "Note 2: Concept of Limit connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Concept of Limit",
+    "Note 4: Remember the units and dimensions involved in Concept of Limit",
+    "Note 5: Concept of Limit frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Concept of Limit",
+    "Statement 2: Theorem related to Concept of Limit",
+    "Statement 3: Condition for Concept of Limit to be valid",
+    "Statement 4: Principle governing Concept of Limit",
+    "Statement 5: Corollary or consequence of Concept of Limit"
+  ],
+  "importantNotes": [
+    "Note 1: Concept of Limit is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Concept of Limit",
+    "Note 3: Concept of Limit has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Concept of Limit",
+    "Note 5: Cross-check your answers using alternative methods for Concept of Limit"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Concept of Limit formula",
+    "Trick 2: Elimination technique for Concept of Limit MCQs",
+    "Trick 3: Dimensional analysis shortcut for Concept of Limit",
+    "Trick 4: Memory aid for Concept of Limit formulas",
+    "Trick 5: Time-saving approach for Concept of Limit problems"
+  ],
+  "examNotes": [
+    "Exam Tip 1: Focus on numerical problems from Concept of Limit",
+    "Exam Tip 2: Practice previous year questions on Concept of Limit",
+    "Exam Tip 3: Concept of Limit carries significant marks in exams",
+    "Exam Tip 4: Learn the derivations for Concept of Limit thoroughly",
+    "Exam Tip 5: Review common mistakes related to Concept of Limit"
+  ],
+  "mcs": [
+    {
+      "question": "Which of the following best describes Concept of Limit?",
+      "options": [
+        "Option A describing ${title}",
+        "Option B with similar concept",
+        "Option C related term",
+        "Option D unrelated concept"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The primary application of Concept of Limit is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Concept of Limit, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Concept of Limit?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Concept of Limit is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Concept of Limit",
+    "Concept 2: Key theorem or principle in Concept of Limit",
+    "Concept 3: Important application area of Concept of Limit",
+    "Concept 4: Fundamental relationship in Concept of Limit",
+    "Concept 5: Connection between Concept of Limit and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Concept of Limit",
+    "Task 2: Derive the main formula for Concept of Limit",
+    "Task 3: Create a concept map for Concept of Limit",
+    "Task 4: Practice previous year exam questions on Concept of Limit",
+    "Task 5: Explain Concept of Limit to a peer or study group"
+  ]
+}

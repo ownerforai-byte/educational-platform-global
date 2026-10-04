@@ -1,0 +1,7 @@
+{
+  "title": "Q: Why does temperature approach but never mathematically reach the surrounding temperature?",
+  "notes": [
+    "The solution θ − θ₀ = (θ₁ − θ₀)·e^(−Kt/mc) is an exponential decay — it approaches zero asymptotically as t → ∞, but never equals exactly zero for any finite time",
+    "Physically, as θ gets very close to θ₀, the driving temperature difference (θ − θ₀) shrinks toward zero, so the rate of heat loss also shrinks toward zero — cooling effectively stalls near room temperature well before the math says it's 'finished'"
+  ]
+}

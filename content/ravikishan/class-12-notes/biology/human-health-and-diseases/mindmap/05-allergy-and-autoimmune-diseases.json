@@ -1,0 +1,46 @@
+{
+  "title": "Allergy and autoimmune diseases",
+  "unitSlug": "human-health-and-diseases",
+  "topicSlug": "allergy-and-autoimmune-diseases",
+  "topicTitle": "Allergy and autoimmune diseases",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "root": {
+    "id": "topic-allergy-and-autoimmune-diseases",
+    "label": "Allergy and autoimmune diseases",
+    "children": [
+      {
+        "id": "allergy-and-autoimmune-diseases-branch-0",
+        "label": "Allergy",
+        "children": [
+          {
+            "id": "allergy-and-autoimmune-diseases-branch-0-def",
+            "label": "Definition"
+          },
+          {
+            "id": "allergy-and-autoimmune-diseases-branch-0-use",
+            "label": "Exam use"
+          }
+        ]
+      },
+      {
+        "id": "allergy-and-autoimmune-diseases-branch-1",
+        "label": "Autoimmune diseases",
+        "children": [
+          {
+            "id": "allergy-and-autoimmune-diseases-branch-1-def",
+            "label": "Definition"
+          },
+          {
+            "id": "allergy-and-autoimmune-diseases-branch-1-use",
+            "label": "Exam use"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "- Allergy and autoimmune diseases\n  - Allergy\n  - Autoimmune diseases"
+  ]
+}

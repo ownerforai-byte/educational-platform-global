@@ -1,0 +1,27 @@
+{
+  "title": "NEB Class 11 Physics — 2019",
+  "year": 2019,
+  "examSource": "NEB",
+  "questions": [
+    {
+      "question": "Prove that the time of flight of a projectile is double the time taken to reach the maximum height.",
+      "marks": 3,
+      "solution": "Time to reach maximum height: at the top v_y = 0 ⇒ 0 = u sin θ − gt ⇒ t₁ = u sin θ/g.\n\nBy symmetry, the time of descent equals the time of ascent, so the total time of flight:\n\nT = 2t₁ = **2u sin θ/g**."
+    },
+    {
+      "question": "State Newton's law of gravitation. Does it obey Newton's third law of motion?",
+      "marks": 2,
+      "solution": "**Law:** every particle in the universe attracts every other particle with a force directly proportional to the product of their masses and inversely proportional to the square of the distance between them: F = Gm₁m₂/r².\n\nYes — the force exerted by m₁ on m₂ is equal and opposite to that exerted by m₂ on m₁, so it obeys Newton's third law."
+    },
+    {
+      "question": "A stone of mass 50 g is dropped from a height of 10 m. Find its kinetic energy just before reaching the ground.",
+      "marks": 2,
+      "solution": "By conservation of energy, the kinetic energy just before hitting the ground equals the initial potential energy:\n\nKE = mgh = 0.05 × 9.8 × 10 = **4.9 J**."
+    },
+    {
+      "question": "Define the coefficient of linear expansion. A metal rod is 1 m long at 0 °C and 1.0017 m at 100 °C. Find α.",
+      "marks": 2,
+      "solution": "α = ΔL/(L₀ΔT) = (1.0017 − 1)/(1 × 100) = 0.0017/100 = **1.7 × 10⁻⁵ °C⁻¹**."
+    }
+  ]
+}

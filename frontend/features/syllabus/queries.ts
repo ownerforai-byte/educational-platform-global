@@ -61,3 +61,27 @@ export function getUnitTopic(
   if (!topic) return null;
   return { unit, topic };
 }
+
+/**
+ * Resolve a syllabus unit id from a chapter URL segment.
+ *
+ * The `/levels/.../chapters/[chapterSlug]` tree historically linked chapters as
+ * `unit-1`, `unit-2`, ... while the canonical notes tree links the real unit id
+ * (e.g. `biomolecules-and-cell-biology`). Accept both so old links keep working.
+ * Returns `null` for classes outside the syllabus-backed `*-notes` tracks.
+ */
+export function resolveUnitIdFromChapterSlug(
+  classSlug: string,
+  subjectSlug: string,
+  chapterSlug: string,
+): string | null {
+  const subject = getSubjectSyllabus(classSlug, subjectSlug);
+  if (!subject) return null;
+  if (subject.units.some((u) => u.id === chapterSlug)) return chapterSlug;
+  const legacy = /^unit-(\d+)$/.exec(chapterSlug);
+  if (legacy) {
+    const index = Number(legacy[1]) - 1;
+    return subject.units[index]?.id ?? null;
+  }
+  return null;
+}

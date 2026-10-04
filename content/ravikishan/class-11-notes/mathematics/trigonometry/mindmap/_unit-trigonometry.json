@@ -1,0 +1,34 @@
+{
+  "title": "Trigonometry",
+  "unitSlug": "trigonometry",
+  "type": "unit",
+  "classSlug": "class-11-notes",
+  "subjectSlug": "mathematics",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "root": {
+    "id": "unit-trigonometry",
+    "label": "Trigonometry",
+    "children": [
+      {
+        "id": "unit-topic-inverse-circular-functions",
+        "label": "Inverse circular functions",
+        "children": []
+      },
+      {
+        "id": "unit-topic-trigonometric-equations-and-general-values",
+        "label": "Trigonometric equations and general values",
+        "children": [
+          {
+            "id": "unit-trigonometry-trigonometric-equations-and-general-values-0",
+            "label": "General values"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "- Trigonometry\n  - Inverse circular functions\n  - Trigonometric equations and general values"
+  ]
+}

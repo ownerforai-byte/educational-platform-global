@@ -1,0 +1,70 @@
+{
+  "title": "Elasticity",
+  "unitSlug": "elasticity",
+  "type": "unit",
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "root": {
+    "id": "unit-elasticity",
+    "label": "Elasticity",
+    "children": [
+      {
+        "id": "unit-topic-hooke-s-law-force-constant",
+        "label": "Hooke's law: force constant",
+        "children": []
+      },
+      {
+        "id": "unit-topic-stress-strain-elasticity-and-plasticity",
+        "label": "Stress; strain; elasticity and plasticity",
+        "children": [
+          {
+            "id": "unit-elasticity-stress-strain-elasticity-and-plasticity-0",
+            "label": "Strain"
+          },
+          {
+            "id": "unit-elasticity-stress-strain-elasticity-and-plasticity-1",
+            "label": "Elasticity"
+          },
+          {
+            "id": "unit-elasticity-stress-strain-elasticity-and-plasticity-2",
+            "label": "Plasticity"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-elastic-modulus-young-modulus-bulk-modulus-shear-modulus",
+        "label": "Elastic modulus: Young modulus, bulk modulus, shear modulus",
+        "children": [
+          {
+            "id": "unit-elasticity-elastic-modulus-young-modulus-bulk-modulus-shear-modulus-0",
+            "label": "Young modulus"
+          },
+          {
+            "id": "unit-elasticity-elastic-modulus-young-modulus-bulk-modulus-shear-modulus-1",
+            "label": "Bulk modulus"
+          },
+          {
+            "id": "unit-elasticity-elastic-modulus-young-modulus-bulk-modulus-shear-modulus-2",
+            "label": "Shear modulus"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-poisson-s-ratio",
+        "label": "Poisson's ratio",
+        "children": []
+      },
+      {
+        "id": "unit-topic-elastic-potential-energy",
+        "label": "Elastic potential energy",
+        "children": []
+      }
+    ]
+  },
+  "notes": [
+    "- Elasticity\n  - Hooke's law: force constant\n  - Stress; strain; elasticity and plasticity\n  - Elastic modulus: Young modulus, bulk modulus, shear modulus\n  - Poisson's ratio\n  - Elastic potential energy"
+  ]
+}

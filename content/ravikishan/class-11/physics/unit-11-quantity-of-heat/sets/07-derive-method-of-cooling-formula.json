@@ -1,0 +1,9 @@
+{
+  "title": "Q: Derive the working formula used in the 'method of cooling' experiment",
+  "notes": [
+    "Start from the identical-conditions result: m₁c₁(dθ/dt)₁ = m₂c₂(dθ/dt)₂",
+    "Replace each cooling rate with its time-based form: (dθ/dt)₁ = Δθ/t₁ and (dθ/dt)₂ = Δθ/t₂, where Δθ is the same fixed temperature range for both liquids",
+    "Substituting and cancelling Δθ from both sides: m₁c₁/t₁ = m₂c₂/t₂",
+    "**Solving for the unknown:** c₂ = (m₁c₁·t₂)/(m₂·t₁) — only masses, water's known c₁, and the two cooling times are needed"
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "title": "Matrices and determinants",
+  "unitSlug": "algebra",
+  "topicSlug": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint-",
+  "topicTitle": "Matrices and determinants: transpose of a matrix and its properties; minors and cofactors, adjoint, inverse matrix, determinant, properties of determinants (without proof)",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "root": {
+    "id": "topic-matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint-",
+    "label": "Matrices and determinants",
+    "children": [
+      {
+        "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-0",
+        "label": "Matrices",
+        "children": [
+          {
+            "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-0-def",
+            "label": "Definition"
+          },
+          {
+            "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-0-use",
+            "label": "Exam use"
+          }
+        ]
+      },
+      {
+        "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-1",
+        "label": "Determinants: transpose of a matrix",
+        "children": [
+          {
+            "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-1-def",
+            "label": "Definition"
+          },
+          {
+            "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-1-use",
+            "label": "Exam use"
+          }
+        ]
+      },
+      {
+        "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-2",
+        "label": "Its properties",
+        "children": [
+          {
+            "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-2-def",
+            "label": "Definition"
+          },
+          {
+            "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-2-use",
+            "label": "Exam use"
+          }
+        ]
+      },
+      {
+        "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-3",
+        "label": "Minors",
+        "children": [
+          {
+            "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-3-def",
+            "label": "Definition"
+          },
+          {
+            "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-3-use",
+            "label": "Exam use"
+          }
+        ]
+      },
+      {
+        "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-4",
+        "label": "Cofactors",
+        "children": [
+          {
+            "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-4-def",
+            "label": "Definition"
+          },
+          {
+            "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-4-use",
+            "label": "Exam use"
+          }
+        ]
+      },
+      {
+        "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-5",
+        "label": "Adjoint",
+        "children": [
+          {
+            "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-5-def",
+            "label": "Definition"
+          },
+          {
+            "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-5-use",
+            "label": "Exam use"
+          }
+        ]
+      },
+      {
+        "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-6",
+        "label": "Inverse matrix",
+        "children": [
+          {
+            "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-6-def",
+            "label": "Definition"
+          },
+          {
+            "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-6-use",
+            "label": "Exam use"
+          }
+        ]
+      },
+      {
+        "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-7",
+        "label": "Determinant",
+        "children": [
+          {
+            "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-7-def",
+            "label": "Definition"
+          },
+          {
+            "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-7-use",
+            "label": "Exam use"
+          }
+        ]
+      },
+      {
+        "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-8",
+        "label": "Properties of determinants",
+        "children": [
+          {
+            "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-8-def",
+            "label": "Definition"
+          },
+          {
+            "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-8-use",
+            "label": "Exam use"
+          }
+        ]
+      },
+      {
+        "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-9",
+        "label": "Without proof",
+        "children": [
+          {
+            "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-9-def",
+            "label": "Definition"
+          },
+          {
+            "id": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint--branch-9-use",
+            "label": "Exam use"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "- Matrices and determinants\n  - Matrices\n  - Determinants: transpose of a matrix\n  - Its properties\n  - Minors\n  - Cofactors\n  - Adjoint\n  - Inverse matrix\n  - Determinant\n  - Properties of determinants\n  - Without proof"
+  ]
+}

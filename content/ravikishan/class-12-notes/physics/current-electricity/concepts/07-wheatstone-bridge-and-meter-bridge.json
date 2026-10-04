@@ -1,0 +1,64 @@
+{
+  "title": "Wheatstone bridge and meter bridge",
+  "unitSlug": "current-electricity",
+  "topicSlug": "wheatstone-bridge-and-meter-bridge",
+  "topicTitle": "Wheatstone bridge and meter bridge",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Wheatstone bridge and meter bridge — Current Electricity, Physics (class-12-notes).",
+    "**Tested.** define it · list: wheatstone bridge, meter bridge · one worked example · one misconception each.",
+    "**Meter bridge.** one-line definition + one-line exam use."
+  ],
+  "confusion": [
+    "❌ treat \"Wheatstone bridge\" as one blob → ✅ split into: wheatstone bridge, meter bridge.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list."
+  ],
+  "bounds": [
+    "Covers only: wheatstone bridge, meter bridge (within Current Electricity).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "practice": [
+    "define + example each sub-idea: wheatstone bridge, meter bridge.",
+    "one worked example for \"Wheatstone bridge and meter bridge\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "answer pattern for \"Wheatstone bridge and meter bridge\": define → method → result. Structure earns the marks on 6–10 mark questions."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Wheatstone bridge and meter bridge\" with one example.",
+    "compare \"Wheatstone bridge\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Wheatstone bridge and meter bridge\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "Governing equation for \"Wheatstone bridge and meter bridge\" — state with units, then use in one numerical."
+  ],
+  "numericals": [
+    "Set up the defining equation for \"Wheatstone bridge and meter bridge\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "keyPoints": [
+    "• Wheatstone bridge",
+    "• Meter bridge"
+  ],
+  "summary": "Wheatstone bridge and meter bridge (Current Electricity, Physics, class-12-notes) covers Wheatstone bridge, meter bridge. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Wheatstone bridge and meter bridge\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ]
+}

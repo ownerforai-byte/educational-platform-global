@@ -1,0 +1,64 @@
+{
+  "title": "Quantity of Heat",
+  "unitSlug": "quantity-of-heat",
+  "type": "unit",
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "root": {
+    "id": "unit-quantity-of-heat",
+    "label": "Quantity of Heat",
+    "children": [
+      {
+        "id": "unit-topic-newton-s-law-of-cooling",
+        "label": "Newton's law of cooling",
+        "children": []
+      },
+      {
+        "id": "unit-topic-measurement-of-specific-heat-capacity-of-solids-and-liquids",
+        "label": "Measurement of specific heat capacity of solids and liquids",
+        "children": [
+          {
+            "id": "unit-quantity-of-heat-measurement-of-specific-heat-capacity-of-solids-and-liquids-0",
+            "label": "Liquids"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-change-of-phases-latent-heat",
+        "label": "Change of phases: latent heat",
+        "children": []
+      },
+      {
+        "id": "unit-topic-specific-latent-heat-of-fusion-and-vaporization",
+        "label": "Specific latent heat of fusion and vaporization",
+        "children": [
+          {
+            "id": "unit-quantity-of-heat-specific-latent-heat-of-fusion-and-vaporization-0",
+            "label": "Vaporization"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-measurement-of-specific-latent-heat-of-fusion-and-vaporization",
+        "label": "Measurement of specific latent heat of fusion and vaporization",
+        "children": [
+          {
+            "id": "unit-quantity-of-heat-measurement-of-specific-latent-heat-of-fusion-and-vaporization-0",
+            "label": "Vaporization"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-triple-point",
+        "label": "Triple point",
+        "children": []
+      }
+    ]
+  },
+  "notes": [
+    "- Quantity of Heat\n  - Newton's law of cooling\n  - Measurement of specific heat capacity of solids and liquids\n  - Change of phases: latent heat\n  - Specific latent heat of fusion and vaporization\n  - Measurement of specific latent heat of fusion and vaporization\n  - Triple point"
+  ]
+}

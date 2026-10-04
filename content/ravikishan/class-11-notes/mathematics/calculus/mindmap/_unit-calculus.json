@@ -1,0 +1,149 @@
+{
+  "title": "Calculus",
+  "unitSlug": "calculus",
+  "type": "unit",
+  "classSlug": "class-11-notes",
+  "subjectSlug": "mathematics",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "root": {
+    "id": "unit-calculus",
+    "label": "Calculus",
+    "children": [
+      {
+        "id": "unit-topic-limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-wi",
+        "label": "Limits and continuity: limits of a function, indeterminate forms, alg…",
+        "children": [
+          {
+            "id": "unit-calculus-limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-wi-0",
+            "label": "Continuity: limits of a function"
+          },
+          {
+            "id": "unit-calculus-limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-wi-1",
+            "label": "Indeterminate forms"
+          },
+          {
+            "id": "unit-calculus-limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-wi-2",
+            "label": "Algebraic properties of limits"
+          },
+          {
+            "id": "unit-calculus-limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-wi-3",
+            "label": "Without proof"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-continuity-of-a-function-types-of-discontinuity-graphs-of-discontinuous-function",
+        "label": "Continuity of a function, types of discontinuity, graphs of discontin…",
+        "children": [
+          {
+            "id": "unit-calculus-continuity-of-a-function-types-of-discontinuity-graphs-of-discontinuous-function-0",
+            "label": "Types of discontinuity"
+          },
+          {
+            "id": "unit-calculus-continuity-of-a-function-types-of-discontinuity-graphs-of-discontinuous-function-1",
+            "label": "Graphs of discontinuous function"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-derivatives-derivative-of-a-function-derivatives-of-algebraic-trigonometric-inverse-trigonometri",
+        "label": "Derivatives: derivative of a function, derivatives of algebraic, trig…",
+        "children": [
+          {
+            "id": "unit-calculus-derivatives-derivative-of-a-function-derivatives-of-algebraic-trigonometric-inverse-trigonometri-0",
+            "label": "Derivative of a function"
+          },
+          {
+            "id": "unit-calculus-derivatives-derivative-of-a-function-derivatives-of-algebraic-trigonometric-inverse-trigonometri-1",
+            "label": "Derivatives of algebraic"
+          },
+          {
+            "id": "unit-calculus-derivatives-derivative-of-a-function-derivatives-of-algebraic-trigonometric-inverse-trigonometri-2",
+            "label": "Trigonometric"
+          },
+          {
+            "id": "unit-calculus-derivatives-derivative-of-a-function-derivatives-of-algebraic-trigonometric-inverse-trigonometri-3",
+            "label": "Inverse trigonometric"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-rules-of-differentiation-derivatives-of-parametric-and-implicit-functions-higher-order-derivativ",
+        "label": "Rules of differentiation; derivatives of parametric and implicit func…",
+        "children": [
+          {
+            "id": "unit-calculus-rules-of-differentiation-derivatives-of-parametric-and-implicit-functions-higher-order-derivativ-0",
+            "label": "Derivatives of parametric"
+          },
+          {
+            "id": "unit-calculus-rules-of-differentiation-derivatives-of-parametric-and-implicit-functions-higher-order-derivativ-1",
+            "label": "Implicit functions"
+          },
+          {
+            "id": "unit-calculus-rules-of-differentiation-derivatives-of-parametric-and-implicit-functions-higher-order-derivativ-2",
+            "label": "Higher order derivatives"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-geometric-interpretation-of-derivative-monotonicity-of-a-function-interval-of-monotonicity-extre",
+        "label": "Geometric interpretation of derivative; monotonicity of a function, i…",
+        "children": [
+          {
+            "id": "unit-calculus-geometric-interpretation-of-derivative-monotonicity-of-a-function-interval-of-monotonicity-extre-0",
+            "label": "Monotonicity of a function"
+          },
+          {
+            "id": "unit-calculus-geometric-interpretation-of-derivative-monotonicity-of-a-function-interval-of-monotonicity-extre-1",
+            "label": "Interval of monotonicity"
+          },
+          {
+            "id": "unit-calculus-geometric-interpretation-of-derivative-monotonicity-of-a-function-interval-of-monotonicity-extre-2",
+            "label": "Extreme values of a function"
+          },
+          {
+            "id": "unit-calculus-geometric-interpretation-of-derivative-monotonicity-of-a-function-interval-of-monotonicity-extre-3",
+            "label": "Concavity"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-anti-derivatives-integration-using-basic-integrals-integration-by-substitution-and-by-parts-meth",
+        "label": "Anti-derivatives: integration using basic integrals, integration by s…",
+        "children": [
+          {
+            "id": "unit-calculus-anti-derivatives-integration-using-basic-integrals-integration-by-substitution-and-by-parts-meth-0",
+            "label": "Integration using basic integrals"
+          },
+          {
+            "id": "unit-calculus-anti-derivatives-integration-using-basic-integrals-integration-by-substitution-and-by-parts-meth-1",
+            "label": "Integration by substitution"
+          },
+          {
+            "id": "unit-calculus-anti-derivatives-integration-using-basic-integrals-integration-by-substitution-and-by-parts-meth-2",
+            "label": "By parts methods"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-the-definite-integral-the-definite-integral-as-an-area-under-the-given-curve-area-between-two-cu",
+        "label": "The definite integral; the definite integral as an area under the giv…",
+        "children": [
+          {
+            "id": "unit-calculus-the-definite-integral-the-definite-integral-as-an-area-under-the-given-curve-area-between-two-cu-0",
+            "label": "The definite integral as an area under the given curve"
+          },
+          {
+            "id": "unit-calculus-the-definite-integral-the-definite-integral-as-an-area-under-the-given-curve-area-between-two-cu-1",
+            "label": "Area between two curves"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "- Calculus\n  - Limits and continuity: limits of a function, indeterminate forms, alg…\n  - Continuity of a function, types of discontinuity, graphs of discontin…\n  - Derivatives: derivative of a function, derivatives of algebraic, trig…\n  - Rules of differentiation; derivatives of parametric and implicit func…\n  - Geometric interpretation of derivative; monotonicity of a function, i…\n  - Anti-derivatives: integration using basic integrals, integration by s…\n  - The definite integral; the definite integral as an area under the giv…"
+  ]
+}

@@ -1,0 +1,82 @@
+{
+  "title": "Diffraction of light — single slit diffraction",
+  "unitSlug": "wave-optics",
+  "topicSlug": "diffraction-of-light-single-slit-diffraction",
+  "topicTitle": "Diffraction of light — single slit diffraction",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "notes": [
+    "**Scope.** Diffraction of light — single slit diffraction — Wave Optics, Physics (class-12-notes).",
+    "**Tested.** define it · list: diffraction of light — single slit diffraction · one worked example · one misconception each.",
+    "**Fact.** Young's double slit: fringe width β = λD/d; 1st minimum of single slit: a sinθ = mλ.",
+    "**Fact.** Newton's rings: r_m = √(mRλ) (dark/dark convention); λ = 2(rₙ₊₁² − rₙ²)/N (interferometric use).",
+    "**Fact.** Brewster: i_p = arctan(n₂/n₁), reflected ray fully polarised at that angle."
+  ],
+  "confusion": [
+    "❌ treat \"Diffraction of light — single slit diffraction\" as one blob → ✅ split into: diffraction of light — single slit diffraction.",
+    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+    "❌ no diagram → ✅ add one labelled figure / structured list.",
+    "❌ skip the key fact → ✅ young's double slit: fringe width β = λd/d; 1st minimum of single slit: a sinθ = mλ.."
+  ],
+  "bounds": [
+    "Covers only: diffraction of light — single slit diffraction (within Wave Optics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: young's double slit: fringe width β = λd/d; 1st minimum of single slit: a sinθ = mλ."
+  ],
+  "practice": [
+    "define + example each sub-idea: diffraction of light — single slit diffraction.",
+    "one worked example for \"Diffraction of light — single slit diffraction\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
+  ],
+  "universalFacts": [
+    "Young's double slit: fringe width β = λD/d; 1st minimum of single slit: a sinθ = mλ.",
+    "Newton's rings: r_m = √(mRλ) (dark/dark convention); λ = 2(rₙ₊₁² − rₙ²)/N (interferometric use).",
+    "Brewster: i_p = arctan(n₂/n₁), reflected ray fully polarised at that angle."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Diffraction of light — single slit diffraction\" with one example.",
+    "compare \"Diffraction of light — single slit diffraction\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Diffraction of light — single slit diffraction\" and verify the answer is plausible."
+  ],
+  "formulas": [
+    "β = λD/d",
+    "a sinθ = mλ",
+    "r_m = √(mRλ)"
+  ],
+  "numericals": [
+    "Use  β = λD/d  — pick reasonable values, solve, and check the units.",
+    "Use  a sinθ = mλ  — pick reasonable values, solve, and check the units.",
+    "Use  r_m = √(mRλ)  — pick reasonable values, solve, and check the units."
+  ],
+  "keyPoints": [
+    "• Diffraction of light — single slit diffraction"
+  ],
+  "summary": "Diffraction of light — single slit diffraction (Wave Optics, Physics, class-12-notes) covers Diffraction of light — single slit diffraction. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Diffraction of light — single slit diffraction\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "Which of these is a governing / standard formula associated with \"Diffraction of light — single slit diffraction\"?",
+      "options": [
+        "β = λD/d",
+        "x + y = z (placeholder)",
+        "No formula applies",
+        "E = mc² only"
+      ],
+      "answer": "β = λD/d",
+      "explanation": "β = λD/d is the standard form used for this topic."
+    }
+  ]
+}

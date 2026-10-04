@@ -52,6 +52,10 @@ describe("concept corpus vs strict schema", () => {
     expect(files.length).toBeGreaterThan(500);
   });
 
+  // The restored NEB corpus holds ~3,100 concept notes; reading and
+  // Zod-parsing them costs more than the 5 s default (measured 5.4 s on
+  // Windows), so the gate gets an explicit budget. The assertion is untouched:
+  // every note must still parse clean beyond the baseline.
   it("every concept note parses clean against ConceptNoteSchema (beyond the baseline)", () => {
     const baselineRaw = JSON.parse(readFileSync(join(REPO, "scripts", "content-schema-baseline.json"), "utf8")) as {
       invalid?: string[];
@@ -80,7 +84,7 @@ describe("concept corpus vs strict schema", () => {
       invalid,
       `new schema violations beyond the ${baselined.size}-file baseline:\n${invalid.slice(0, 10).join("\n")}`,
     ).toEqual([]);
-  });
+  }, 20_000);
 });
 
 describe("built manifests vs ManifestEntrySchema", () => {

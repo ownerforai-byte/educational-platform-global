@@ -1,0 +1,31 @@
+{
+  "title": "Basic Theorems on Limits of Trigonometric Functions",
+  "unitSlug": "calculus",
+  "topicSlug": "limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-without-proof-basic-theorems-on-limits-of-algebraic-trigonometric-exponential-and-logarithmic-functions",
+  "topicTitle": "Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
+  "relevance": 100,
+  "notes": [
+    "**Fundamental trigonometric limit:** $\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$, where $x$ is measured in radians. This is the most important limit in introductory calculus.",
+    "**Corollary:** $\\lim_{x \\to 0} \\frac{\\tan x}{x} = 1$ and $\\lim_{x \\to 0} \\frac{1 - \\cos x}{x} = 0$.",
+    "**Generalised form:** $\\lim_{x \\to 0} \\frac{\\sin(ax)}{bx} = \\frac{a}{b}$ and $\\lim_{x \\to 0} \\frac{\\sin(ax)}{\\sin(bx)} = \\frac{a}{b}$.",
+    "**Limits at $\\pi/2$:** $\\lim_{x \\to \\pi/2} \\frac{\\cos x}{\\pi/2 - x} = 1$ and $\\lim_{x \\to \\pi/2} \\frac{\\sin x}{\\cos x} \\neq$ straightforward — use substitutions.",
+    "**Working strategy:** When you see $\\sin(\\text{something})$ in a limit, try to make the \"something\" match the other factor by multiplying and dividing.",
+    "**Example:** $\\lim_{x \\to 0} \\frac{\\sin 3x}{x} = \\lim_{x \\to 0} \\frac{\\sin 3x}{3x} \\cdot 3 = 1 \\cdot 3 = 3$.",
+    "**Example:** $\\lim_{x \\to 0} \\frac{\\sin x - x}{x^3}$ requires Taylor expansion or repeated applications of L'Hopital's rule (advanced).",
+    "**Reciprocal forms:** $\\lim_{x \\to 0} \\frac{x}{\\sin x} = 1$ follows immediately from the fundamental limit."
+  ],
+  "confusion": [
+    "The limit $\\lim_{x \\to 0} (\\sin x)/x = 1$ only works when $x$ is in RADIANS. In degrees, the limit would be $\\pi/180$.",
+    "Do not confuse $\\lim_{x \\to 0} (\\sin x)/x = 1$ with $\\lim_{x \\to \\infty} (\\sin x)/x = 0$ — these are completely different situations.",
+    "$\\lim_{x \\to 0} \\frac{\\sin x}{x} = 1$ does NOT mean $\\sin x = x$. It means they are approximately equal for very small $x$."
+  ],
+  "practice": [
+    "Evaluate $\\lim_{x \\to 0} \\frac{\\sin 5x}{\\sin 2x}$.",
+    "Find $\\lim_{x \\to 0} \\frac{1 - \\cos x}{x^2}$ using the identity $1 - \\cos x = 2\\sin^2(x/2)$.",
+    "Evaluate $\\lim_{x \\to \\pi/4} \\frac{\\tan x - 1}{x - \\pi/4}$."
+  ],
+  "universalFacts": [
+    "The small-angle approximation $\\sin x \\approx x$ (for small $x$) comes directly from this limit and is widely used in physics.",
+    "All other trigonometric limits at 0 can be derived from the fundamental limit $\\lim_{x \\to 0} (\\sin x)/x = 1$."
+  ]
+}

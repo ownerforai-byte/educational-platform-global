@@ -1,0 +1,15 @@
+{
+  "title": "Calculus: Limits, Derivatives & Integration",
+  "confusion": [
+    "❌ 'f'(c) = 0 always means max or min.' ✅ Could be a stationary inflection point (e.g., f(x) = x³ at x = 0). Check sign change of f'.",
+    "❌ 'Derivative of a constant is 1.' ✅ d/dx(c) = 0. Only d/dx(x) = 1.",
+    "❌ '∫f(x)dx and ∫ₐᵇ f(x)dx mean the same.' ✅ Indefinite = family of functions (+C); Definite = number (area).",
+    "❌ 'Area under curve is always positive.' ✅ Definite integral gives NET signed area. Below x-axis counts negative."
+  ],
+  "notes": [
+    "**Limit:** lim(x→a) f(x) = L means f(x) → L as x approaches a. Standard limits: lim sin x/x = 1 (x in radians), lim (1 + 1/n)ⁿ = e.",
+    "**Derivative:** dy/dx = lim(h→0) [f(x+h) − f(x)]/h. Rules: power rule d(xⁿ)/dx = nxⁿ⁻¹; product rule; quotient rule; chain rule. Derivatives of sin x = cos x, cos x = −sin x, eˣ = eˣ, ln x = 1/x.",
+    "**Applications:** rate of change, increasing/decreasing functions, maxima and minima (dy/dx = 0 with second-derivative test), tangents and normals.",
+    "**Integration:** antiderivative; ∫xⁿ dx = xⁿ⁺¹/(n+1) + C (n ≠ −1); definite integral ∫ₐᵇf(x)dx = F(b) − F(a) — area under the curve."
+  ]
+}

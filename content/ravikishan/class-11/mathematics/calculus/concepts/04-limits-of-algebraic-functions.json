@@ -1,0 +1,29 @@
+{
+  "title": "Basic Theorems on Limits of Algebraic Functions",
+  "unitSlug": "calculus",
+  "topicSlug": "limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-without-proof-basic-theorems-on-limits-of-algebraic-trigonometric-exponential-and-logarithmic-functions",
+  "topicTitle": "Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
+  "relevance": 100,
+  "notes": [
+    "**Polynomial limit theorem:** For any polynomial $p(x)$, $\\lim_{x \\to a} p(x) = p(a)$. Simply substitute $x = a$.",
+    "**Rational function theorem:** For a rational function $r(x) = p(x)/q(x)$, if $q(a) \\neq 0$, then $\\lim_{x \\to a} r(x) = p(a)/q(a)$. Direct substitution works.",
+    "**When direct substitution fails ($0/0$ form):** Factor the numerator and denominator, cancel common factors, then substitute.",
+    "**Limits at infinity for polynomials:** $\\lim_{x \\to \\infty} a_nx^n + \\cdots = \\begin{cases} \\infty & \\text{if } a_n > 0 \\\\ -\\infty & \\text{if } a_n < 0 \\end{cases}$ (for $n \\geq 1$).",
+    "**Limits at infinity for rational functions:** Divide every term by the highest power of $x$ in the denominator. If degree of numerator < degree of denominator, limit = 0. If equal, limit = ratio of leading coefficients.",
+    "**Example:** $\\lim_{x \\to \\infty} \\frac{3x^2 + 5x - 1}{2x^2 - 7} = \\frac{3}{2}$ (same degree, ratio of leading coefficients).",
+    "**Nested radicals:** For $\\lim_{x \\to a} (\\sqrt{f(x)} - L)$ type limits, rationalize by multiplying by the conjugate $\\sqrt{f(x)} + L$."
+  ],
+  "confusion": [
+    "For rational functions where both numerator and denominator approach 0 at $x = a$, do NOT simply say the limit is the ratio of leading coefficients — you must factor and simplify first.",
+    "At infinity, only the highest-degree terms matter. Lower-degree terms become negligible."
+  ],
+  "practice": [
+    "Evaluate $\\lim_{x \\to -1} \\frac{x^3 + 1}{x + 1}$ by factoring.",
+    "Find $\\lim_{x \\to \\infty} \\frac{5x^3 - 2x}{3x^3 + 4x^2}$.",
+    "Evaluate $\\lim_{x \\to 4} \\frac{\\sqrt{x} - 2}{x - 4}$ by rationalizing the numerator."
+  ],
+  "universalFacts": [
+    "For polynomials and rational functions, the first strategy is always direct substitution. Only when it fails do you need algebraic manipulation.",
+    "The degree comparison rule for limits at infinity is a quick diagnostic tool that avoids unnecessary computation."
+  ]
+}

@@ -1,0 +1,13 @@
+{
+  "title": "Vector Physics MCQ — Page 57–58 (Q22–Q27)",
+  "notes": [
+    "**Q22. If the vectors $(2i + 3j)$ and $2k$ form two sides of a triangle, then area of the triangle is:**\n\n(a) $\\sqrt{3}$ unit\n(b) $\\sqrt{13}$ unit\n(c) $2\\sqrt{2}$ unit\n(d) $3\\sqrt{2}$ unit\n\n**Answer:** (b) $\\sqrt{13}$ unit\n\n**Explanation:** Area $= 0.5 \\times |A \\times B| = 0.5 \\times |(2i + 3j) \\times 2k| = 0.5 \\times |-4j + 6i|$. Calculating cross-magnitude: $0.5 \\times \\sqrt{6^2 + (-4)^2} = 0.5 \\times \\sqrt{52} = 0.5 \\times 2\\sqrt{13} = \\sqrt{13}$.",
+    "**Q23. With respect to a rectangular Cartesian coordinate system, three vectors are expressed... the unit vector along the direction of their sum is:**\n\n(a) $(i+j+k)/\\sqrt{3}$\n(b) $(i+j+k)/3$\n(c) $(i-j+k)/\\sqrt{3}$\n(d) $(i+j-k)/\\sqrt{3}$\n\n**Answer:** (a) $(i+j+k)/\\sqrt{3}$\n\n**Explanation:** Summing symmetric vectors leads to a resultant with equivalent component steps along each dimension. Standardized normalization maps this directly to option (a).",
+    "**Q24. Which of the following figures represents the force of 10 N in a direction of 30° east of north?**\n\n(a) Figure A\n(b) Figure B\n(c) Figure C\n(d) Figure D\n\n**Answer:** (b) Figure B\n\n**Explanation:** A vector heading 'East of North' means the angular separation arc is centered directly on the North axis line and sweeps 30° outward toward the East quadrant.",
+    "**Q25. Three forces acting on a body keep it in equilibrium. If these forces are:**\n\n(a) 7N, 8N, 3N\n(b) 10N, 8N, 15N\n(c) 5N, 15N, 5N\n(d) 2N, 6N, 3N\n\n**Answer:** (d) 2N, 6N, 3N\n\n**Explanation:** For structural spatial static equilibrium, the vectors must satisfy the triangle inequality theorem: the sum of the magnitudes of any two forces must be greater than or equal to the third. Option (d) fails since $2 + 3 = 5 < 6$.",
+    "**Q26. If $P + Q = R$ and $|P| = |Q| = |R|$, then the angle between P and Q is:**\n\n(a) 60°\n(b) 120°\n(c) 90°\n(d) 180°\n\n**Answer:** (b) 120°\n\n**Explanation:** Equal magnitudes forming an equilibrium triad represent a perfect equilateral vector triangle geometry. The exterior angle representing the transition track between consecutive vector headings is $180° - 60° = 120°$.",
+    "**Q27. 20 coplanar forces each equal to 10 N act on a body. Each force makes angle $\\pi/10$ with preceding force. What is the resultant?**\n\n(a) 1000 N\n(b) 500 N\n(c) 250 N\n(d) Zero\n\n**Answer:** (d) Zero\n\n**Explanation:** The incremental shift value $\\pi/10$ converts to 18°. Total angular sweep across all elements tracking sequentially $= 20 \\times 18° = 360°$. This forms a perfectly closed polygon where vectors natively cancel to Zero."
+  ],
+  "type": "pyq",
+  "order": 5
+}

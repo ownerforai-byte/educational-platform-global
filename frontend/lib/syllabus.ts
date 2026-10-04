@@ -1826,18 +1826,40 @@ export function getUnitTopicEntries(unit: SyllabusUnit): SyllabusTopicEntry[] {
   });
 }
 
+/**
+ * Decode a route param that may arrive percent-encoded.
+ *
+ * Next passes non-ASCII dynamic segments percent-encoded (measured on
+ * 16.3.5: `[topicSlug]` = `%E0%A4%AA%E0%A4%BE…` for `पाठ-१-वीर-पुर्खा-कविता`),
+ * while syllabus slugs carry the raw characters — so every Devanagari topic
+ * slug failed the exact match and the page rendered notFound. ASCII slugs are
+ * unaffected: they contain no `%` and are returned untouched.
+ */
+function decodeRouteParam(value: string): string {
+  if (!value.includes("%")) return value;
+  try {
+    return decodeURIComponent(value) || value;
+  } catch {
+    // Malformed percent-escape: treat the input as already decoded.
+    return value;
+  }
+}
+
 export function getTopicEntryBySlug(
   unit: SyllabusUnit,
   topicSlug: string,
 ): SyllabusTopicEntry | undefined {
+  // Route params may be percent-encoded; callers also pass raw slugs.
+  const wanted = decodeRouteParam(topicSlug);
+
   // 1. Exact match first (fast path for full syllabus slugs).
-  const exact = getUnitTopicEntries(unit).find((t) => t.slug === topicSlug);
+  const exact = getUnitTopicEntries(unit).find((t) => t.slug === wanted);
   if (exact) return exact;
 
   // 2. Fallback: match by checking that each slug-word appears in the title.
   //    This bridges short manifest slugs (e.g. "biomolecules-functions") to
   //    the full syllabus slugs derived from long topic titles.
-  const slugWords = topicSlug.toLowerCase().split(/[-]+/).filter(Boolean);
+  const slugWords = wanted.toLowerCase().split(/[-]+/).filter(Boolean);
   if (slugWords.length === 0) return undefined;
   return getUnitTopicEntries(unit).find((t) => {
     const lowerTitle = t.title.toLowerCase();

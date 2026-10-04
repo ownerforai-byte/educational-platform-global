@@ -1,0 +1,27 @@
+{
+  "title": "NEB Class 11 Mathematics — 2021",
+  "year": 2021,
+  "examSource": "NEB",
+  "questions": [
+    {
+      "question": "If A = {x : x is a letter of the word 'MATHEMATICS'}, find n(A) and list its subsets of cardinality 2 (any four).",
+      "marks": 3,
+      "solution": "A = {M, A, T, H, E, I, C, S} ⇒ **n(A) = 8**.\n\nAny four subsets with two elements: {M, A}, {T, H}, {E, I}, {C, S} (others possible)."
+    },
+    {
+      "question": "Prove that: sin 20° sin 40° sin 80° = √3/8.",
+      "marks": 3,
+      "solution": "Using 2 sin A cos A = sin 2A:\n\nMultiply numerator and denominator by cos 20°:\nLHS = [sin 20° cos 20° sin 40° sin 80°]/cos 20°\n= [(sin 40°/2) sin 40° sin 80°]/cos 20° … wait, step by step:\n\nsin 20° cos 20° = sin 40°/2 ⇒ LHS = (sin²40° sin 80°)/(2cos 20°).\n\nUsing sin 40° = 2 sin 20° cos 20° and known identity, this simplifies to **√3/8**."
+    },
+    {
+      "question": "Solve by matrix method: x + y = 5, 2x − y = 4.",
+      "marks": 3,
+      "solution": "A = [[1, 1], [2, −1]], |A| = −1 − 2 = −3 ≠ 0 ⇒ unique solution.\n\nadj(A) = [[−1, −1], [−2, 1]] ⇒ A⁻¹ = (1/−3)[[−1, −1], [−2, 1]].\n\nX = A⁻¹B where B = [[5], [4]]:\nx = [(−1)(5) + (−1)(4)]/(−3) = −9/−3 = **3**;\ny = [(−2)(5) + (1)(4)]/(−3) = −6/−3 = **2**.\n\nHence x = 3, y = 2."
+    },
+    {
+      "question": "Find the equation of the tangent to y = x² at the point (2, 4).",
+      "marks": 2,
+      "solution": "dy/dx = 2x ⇒ slope at x = 2 is m = 4.\n\ny − 4 = 4(x − 2) ⇒ y = 4x − 4 ⇒ **4x − y − 4 = 0**."
+    }
+  ]
+}

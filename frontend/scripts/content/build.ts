@@ -55,6 +55,27 @@ const CHECK = ARGS.includes("--check");
 const STRICT_EXTRAS = ARGS.includes("--strict-extras");
 const SUBJECTS = ARGS.filter((a) => !a.startsWith("--"));
 
+/**
+ * Class dirs this build reads at all — copied files AND the emitted manifest.
+ *
+ * The built tree is FLAT per subject (`syllabus-notes/<subject>/<unit>/<file>`)
+ * and both class tracks share it: readers (`topic-vertical-notes.tsx`,
+ * `topic-content-index.ts`, the prefetcher) key the manifest on the SUBJECT
+ * only, because a class-11 page and a class-12 page pass the same subject slug.
+ * One manifest per class dir therefore cannot coexist — the second class pass
+ * overwrote the first, leaving that class's notes on disk but unreachable
+ * (every one of its topic pages rendered "Coming Soon").
+ *
+ * `class-11-notes` is the source, matching the legacy script this ports
+ * (`content-tools/build-syllabus-notes.js`, whose SRC is exactly
+ * `content/ravikishan/class-11-notes`). Class-12 notes stay reachable through
+ * the inline `public/data/ravikishan/manifest.json` supplementary path that
+ * `topic-vertical-notes.tsx` already consults; unioning both classes into the
+ * manifest would also expose class-12 topics with no curated high-yield
+ * fact-bank entry, which `tests/lib/high-yield-topic-facts.test.ts` guards.
+ */
+const BUILD_CLASS_DIRS = ["class-11-notes"];
+
 type Note = { file: string; data: Record<string, unknown> };
 
 /** Authored JSON for one unit, schema-validated. Order follows readdir. */
@@ -144,56 +165,73 @@ function emit(outRoot: string, rel: string, data: unknown) {
   fs.writeFileSync(target, body);
 }
 
-async function buildSubject(classDir: string, subject: string, outRoot: string): Promise<number> {
-  const classSlug = CLASS_DIR_TO_SLUG[classDir] ?? classDir;
-  const subjectDir = path.join(SRC, classDir, subject);
-  if (!fs.existsSync(subjectDir)) return 0;
-
-  const units = fs
-    .readdirSync(subjectDir, { withFileTypes: true })
-    .filter((d) => d.isDirectory())
-    .map((d) => d.name);
+/**
+ * Build one subject into `outRoot` and emit its `_manifest.json`.
+ *
+ * The built tree is FLAT per subject (`syllabus-notes/<subject>/<unit>/<file>`)
+ * and both class tracks share it: the reader (`topic-vertical-notes.tsx`,
+ * `topic-content-index.ts`) filters the manifest by `unitSlug` only, because a
+ * class-11 page and a class-12 page pass the same subject slug. So a second
+ * build pass over another class dir would silently overwrite the manifest and
+ * strand that class's notes on disk (pages rendered "Coming Soon" over a
+ * populated corpus) — hence the single source dir in `BUILD_CLASS_DIRS`.
+ */
+async function buildSubject(subject: string, outRoot: string): Promise<number> {
+  const classDirs = BUILD_CLASS_DIRS.filter((classDir) =>
+    fs.existsSync(path.join(SRC, classDir, subject)),
+  );
 
   const manifest: Record<string, unknown>[] = [];
   let copied = 0;
 
-  for (const unit of units) {
-    const tsNotes = await fromContentSrc(classSlug, subject, unit);
-    const notes = tsNotes.length > 0 ? tsNotes : readConcepts(classDir, subject, unit);
-    if (notes.length === 0) continue;
+  for (const classDir of classDirs) {
+    const classSlug = CLASS_DIR_TO_SLUG[classDir] ?? classDir;
+    const subjectDir = path.join(SRC, classDir, subject);
+    const units = fs
+      .readdirSync(subjectDir, { withFileTypes: true })
+      .filter((d) => d.isDirectory())
+      .map((d) => d.name);
 
-    // Group: original = no duplicateType; variant = duplicateType + tabGroup
-    const originals = new Map<string, Note>();
-    for (const n of notes) if (!n.data.duplicateType) originals.set(String(n.data.topicSlug), n);
+    for (const unit of units) {
+      const tsNotes = await fromContentSrc(classSlug, subject, unit);
+      const notes = tsNotes.length > 0 ? tsNotes : readConcepts(classDir, subject, unit);
+      if (notes.length === 0) continue;
 
-    for (const n of notes) {
-      const isVariant = Boolean(n.data.duplicateType && n.data.tabGroup);
-      const paired = isVariant && originals.has(String(n.data.tabGroup));
-      // Variants stay variants even when their tabGroup does not pair with an
-      // original in the same unit — the UI still renders them as extra tabs.
-      const duplicateType = isVariant ? Number(n.data.duplicateType) : 1;
-      const topicSlug = isVariant && paired ? String(n.data.tabGroup) : String(n.data.topicSlug);
-      const filename = paired ? n.file.replace(/\.json$/, `-${n.data.duplicateType}.json`) : n.file;
+      // Group: original = no duplicateType; variant = duplicateType + tabGroup
+      const originals = new Map<string, Note>();
+      for (const n of notes) if (!n.data.duplicateType) originals.set(String(n.data.topicSlug), n);
 
-      emit(outRoot, path.join(subject, unit, filename), n.data);
-      copied++;
+      for (const n of notes) {
+        const isVariant = Boolean(n.data.duplicateType && n.data.tabGroup);
+        const paired = isVariant && originals.has(String(n.data.tabGroup));
+        // Variants stay variants even when their tabGroup does not pair with an
+        // original in the same unit — the UI still renders them as extra tabs.
+        const duplicateType = isVariant ? Number(n.data.duplicateType) : 1;
+        const topicSlug = isVariant && paired ? String(n.data.tabGroup) : String(n.data.topicSlug);
+        const filename = paired ? n.file.replace(/\.json$/, `-${n.data.duplicateType}.json`) : n.file;
 
-      const blocks = Array.isArray(n.data.blocks) ? n.data.blocks : [];
-      manifest.push({
-        unitSlug: unit,
-        topicSlug,
-        title: n.data.title || n.data.topicTitle || topicSlug,
-        noteCount: Array.isArray(n.data.notes) ? n.data.notes.length : 0,
-        source: "ravikishan",
-        duplicateType,
-        filename,
-        ...(n.data.tabGroup ? { tabGroup: n.data.tabGroup } : {}),
-        hasMcqs: contentHasMcqs(n.data as { mcs?: { length: number } | null; mcqs?: { length: number } | null }),
-        universalFactsCount: Array.isArray(n.data.universalFacts) ? n.data.universalFacts.length : 0,
-        ...(blocks.length ? { blockCount: blocks.length } : {}),
-      });
+        emit(outRoot, path.join(subject, unit, filename), n.data);
+        copied++;
+
+        const blocks = Array.isArray(n.data.blocks) ? n.data.blocks : [];
+        manifest.push({
+          unitSlug: unit,
+          topicSlug,
+          title: n.data.title || n.data.topicTitle || topicSlug,
+          noteCount: Array.isArray(n.data.notes) ? n.data.notes.length : 0,
+          source: "ravikishan",
+          duplicateType,
+          filename,
+          ...(n.data.tabGroup ? { tabGroup: n.data.tabGroup } : {}),
+          hasMcqs: contentHasMcqs(n.data as { mcs?: { length: number } | null; mcqs?: { length: number } | null }),
+          universalFactsCount: Array.isArray(n.data.universalFacts) ? n.data.universalFacts.length : 0,
+          ...(blocks.length ? { blockCount: blocks.length } : {}),
+        });
+      }
     }
   }
+
+  if (manifest.length === 0) return 0;
 
   manifest.sort(
     (a, b) =>
@@ -212,7 +250,9 @@ async function buildSubject(classDir: string, subject: string, outRoot: string):
   }
 
   emit(outRoot, path.join(subject, "_manifest.json"), manifest);
-  console.log(`${subject}: ${manifest.length} manifest entries, ${copied} files ${CHECK ? "checked" : "copied"}`);
+  console.log(
+    `${subject}: ${manifest.length} manifest entries, ${copied} files ${CHECK ? "checked" : "copied"} (${classDirs.join(" + ")})`,
+  );
   return manifest.length;
 }
 
@@ -252,15 +292,18 @@ async function main() {
   const staging = CHECK ? fs.mkdtempSync(path.join(ROOT, ".content-build-check-")) : DEST;
   try {
     let total = 0;
-    for (const classDir of fs.readdirSync(SRC).sort()) {
-      if (!CLASS_DIR_TO_SLUG[classDir]) continue;
+    const subjects = new Set<string>();
+    for (const classDir of BUILD_CLASS_DIRS) {
       const classPath = path.join(SRC, classDir);
-      if (!fs.statSync(classPath).isDirectory()) continue;
+      if (!fs.existsSync(classPath)) continue;
       for (const subject of fs.readdirSync(classPath).sort()) {
         if (!fs.statSync(path.join(classPath, subject)).isDirectory()) continue;
-        if (SUBJECTS.length && !SUBJECTS.includes(subject)) continue;
-        total += await buildSubject(classDir, subject, staging);
+        subjects.add(subject);
       }
+    }
+    for (const subject of [...subjects].sort()) {
+      if (SUBJECTS.length && !SUBJECTS.includes(subject)) continue;
+      total += await buildSubject(subject, staging);
     }
     if (CHECK) {
       const { problems, extras } = diffTree();

@@ -137,6 +137,22 @@ const ExtendedFields = z.object({
   enrichedContent: NoteBlockSchema.optional(),
   source: z.string().max(300).optional(),
   filename: z.string().max(300).optional(),
+  /**
+   * Generator timestamp on the restored legacy notes (measured: 500 concept
+   * files carry `"2026-09-10T…"`). Metadata, never content — the backend corpus
+   * loader already lists it in META_KEYS, so declaring it here matches how the
+   * rest of the platform reads the field.
+   */
+  generatedAt: z.string().max(60).optional(),
+  /**
+   * "Bounds & Limits" strings (measured: 3–4 authored lines per note) written
+   * by the same older pipeline. This is NOT dead metadata: the UI reads it —
+   * `ConceptKnowledgeGrid` renders it as the "Bounds & Limits" card and the 3D
+   * rig lists it in `CONCEPT_FIELD_KEYS`. Declaring it (rather than stripping
+   * 500 notes) is exactly the Extended-fields doctrine above: a field the UI
+   * reads must be in the schema.
+   */
+  bounds: MdList.optional(),
 
   // ── visualisation descriptors ──
   /** Measured: { type, component, desc } (105 files). */

@@ -24,11 +24,20 @@ export const MdList = z.array(MdString).max(80);
 /** Titles and short descriptive strings. */
 export const ShortString = z.string().trim().min(1).max(400);
 
-/** Lowercase url-safe identifier, e.g. `capacitor`, `01-limits-of-function`. */
+/**
+ * Lowercase url-safe identifier, e.g. `capacitor`, `01-limits-of-function`.
+ *
+ * Devanagari (U+0900–U+097F) is accepted deliberately: `slugifySyllabusTopic`
+ * in `lib/syllabus.ts` keeps that exact range when it turns Nepali topic
+ * titles ("व्याकरण र शब्द जगत") into URL slugs, so the syllabus already emits
+ * these slugs for every Nepali topic link. An ASCII-only atom here rejected
+ * the restored Nepali concept notes whose `topicSlug` matches those links —
+ * the two slug producers must agree on the charset.
+ */
 export const Slug = z
   .string()
   .trim()
-  .regex(/^[a-z0-9][a-z0-9._-]*$/, "slug must be lowercase url-safe");
+  .regex(/^[a-z0-9\u0900-\u097f][a-z0-9\u0900-\u097f._-]*$/, "slug must be lowercase url-safe");
 
 /**
  * A formula symbol exactly as it appears in an authored `expr` (`Q`, `V`, `C`,

@@ -1,0 +1,26 @@
+{
+  "title": "Vectors Concept Map",
+  "notes": [
+    "- Vectors",
+    "  - Scalars vs vectors",
+    "  - Types",
+    "    - Unit, null, equal, collinear",
+    "    - Coplanar, position, displacement",
+    "  - Addition",
+    "    - Triangle law",
+    "    - Parallelogram law: R = √(P²+Q²+2PQcosθ)",
+    "    - Polygon law",
+    "  - Components / resolution",
+    "    - Ax = A cosθ, Ay = A sinθ",
+    "    - Unit vectors î, ĵ, k̂",
+    "  - Multiplication",
+    "    - Scalar (dot): A·B = AB cosθ",
+    "    - Vector (cross): A×B = AB sinθ n̂",
+    "  - Conditions",
+    "    - Perpendicular: A·B = 0",
+    "    - Parallel: A×B = 0",
+    "  - Applications",
+    "    - Work = F·s",
+    "    - Torque = r×F"
+  ]
+}

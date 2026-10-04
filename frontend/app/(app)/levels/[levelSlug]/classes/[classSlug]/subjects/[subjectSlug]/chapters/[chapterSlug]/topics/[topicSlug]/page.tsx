@@ -1,7 +1,12 @@
+import { notFound } from "next/navigation";
 import { SYLLABUS } from "@/lib/syllabus";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { BackButton } from "@/components/navigation/back-button";
+import { TopicDetailView } from "@/features/syllabus/components/topic-detail-view";
+import { getUnitTopic, resolveUnitIdFromChapterSlug } from "@/features/syllabus/queries";
 import Link from "next/link";
+
+export const dynamic = "force-dynamic";
 
 export default async function TopicPage({
   params,
@@ -16,6 +21,46 @@ export default async function TopicPage({
 }) {
   const { levelSlug, classSlug, subjectSlug, chapterSlug, topicSlug } = await params;
 
+  // Syllabus-backed tracks render the same topic workspace as the canonical
+  // /<class>/<subject>/chapters/<unit>/topics/<topic> route: authored notes,
+  // mindmap, resources and the official syllabus panel.
+  const unitId = resolveUnitIdFromChapterSlug(classSlug, subjectSlug, chapterSlug);
+  if (unitId) {
+    const data = getUnitTopic(classSlug, subjectSlug, unitId, topicSlug);
+    if (!data) notFound();
+    return (
+      <div className="mx-auto max-w-5xl space-y-6 py-10">
+        <div className="flex items-center justify-between">
+          <Breadcrumbs
+            items={[
+              { label: "Home", href: "/" },
+              { label: "Levels", href: "/levels" },
+              { label: classSlug, href: `/levels/${levelSlug}/classes/${classSlug}` },
+              {
+                label: subjectSlug,
+                href: `/levels/${levelSlug}/classes/${classSlug}/subjects/${subjectSlug}`,
+              },
+              {
+                label: chapterSlug,
+                href: `/levels/${levelSlug}/classes/${classSlug}/subjects/${subjectSlug}/chapters/${chapterSlug}`,
+              },
+              { label: data.topic.title },
+            ]}
+          />
+          <BackButton />
+        </div>
+        <TopicDetailView
+          classSlug={classSlug}
+          subjectSlug={subjectSlug}
+          unitId={unitId}
+          topicSlug={topicSlug}
+        />
+      </div>
+    );
+  }
+
+  // Database-backed levels keep the topic title lookup and point at whatever
+  // resources exist for the chapter.
   let topicTitle = topicSlug;
 
   if (classSlug.includes("notes")) {
@@ -77,12 +122,12 @@ export default async function TopicPage({
 export function generateStaticParams() {
   return SYLLABUS.flatMap((cls) =>
     cls.subjects.flatMap((subject) =>
-      subject.units.flatMap((unit, unitIndex) =>
-        Array.from({ length: unit.topics.length }, (_, topicIndex) => ({
+      subject.units.flatMap((unit) =>
+        unit.topics.map((_, topicIndex) => ({
           levelSlug: "library",
           classSlug: cls.slug,
           subjectSlug: subject.slug,
-          chapterSlug: `unit-${unitIndex + 1}`,
+          chapterSlug: unit.id,
           topicSlug: `topic-${topicIndex + 1}`,
         }))
       )

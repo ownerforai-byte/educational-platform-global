@@ -1,5 +1,5 @@
 import { getSubjectBySlug, getChaptersBySubject } from "@/lib/curriculum";
-import { SYLLABUS, getSubjectSyllabus } from "@/lib/syllabus";
+import { SYLLABUS, getSubjectSyllabus, getUnitTopicEntries } from "@/lib/syllabus";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { BackButton } from "@/components/navigation/back-button";
 import { Card, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
@@ -32,19 +32,21 @@ export default async function SubjectPage({
     }
   } catch {}
 
-  // Fall back to syllabus data
-  if (!chapters.length && classSlug.includes("notes")) {
-    const syllabusSubject = getSubjectSyllabus(classSlug, subjectSlug);
-    if (syllabusSubject) {
-      subjectName = syllabusSubject.name;
-      subjectDescription = syllabusSubject.description;
-      chapters = syllabusSubject.units.map((u, i) => ({
-        id: u.id,
-        slug: `unit-${i + 1}`,
-        title: u.title,
-        description: `${u.topics.length} topics`,
-      }));
-    }
+  // Syllabus data backs the `*-notes` tracks: subject name, unit list and the
+  // per-unit topic links into the authored notes workspace.
+  const syllabusSubject = classSlug.includes("notes")
+    ? getSubjectSyllabus(classSlug, subjectSlug)
+    : undefined;
+
+  if (!chapters.length && syllabusSubject) {
+    subjectName = syllabusSubject.name;
+    subjectDescription = syllabusSubject.description;
+    chapters = syllabusSubject.units.map((u) => ({
+      id: u.id,
+      slug: u.id,
+      title: u.title,
+      description: `${u.topics.length} topics`,
+    }));
   }
 
   if (!subjectName) {
@@ -97,6 +99,33 @@ export default async function SubjectPage({
               </Card>
             </Link>
           ))}
+        </div>
+      )}
+
+      {/* Topic shortcuts straight into the authored notes workspace */}
+      {syllabusSubject && syllabusSubject.units.length > 0 && (
+        <div className="space-y-3">
+          <h2 className="text-lg font-bold tracking-tight text-foreground">
+            Topics with notes
+          </h2>
+          <div className="space-y-4">
+            {syllabusSubject.units.map((unit) => (
+              <div key={unit.id} className="rounded-2xl border border-border/70 bg-card p-4">
+                <p className="text-sm font-semibold text-foreground">{unit.title}</p>
+                <div className="mt-2 flex flex-wrap gap-1.5">
+                  {getUnitTopicEntries(unit).map((topic) => (
+                    <Link
+                      key={topic.slug}
+                      href={`/${classSlug}/${subjectSlug}/chapters/${unit.id}/topics/${topic.slug}`}
+                      className="text-[11px] font-medium px-2.5 py-1 rounded-lg border border-border/70 bg-background/70 text-foreground/90 hover:border-primary/50 hover:text-primary transition-colors"
+                    >
+                      {topic.title}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>

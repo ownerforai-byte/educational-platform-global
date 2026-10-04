@@ -1,0 +1,160 @@
+{
+  "title": "Biot-Savart Law",
+  "unitSlug": "magnetism",
+  "topicSlug": "biot-savart-law",
+  "topicTitle": "Biot-Savart Law",
+  "relevance": 100,
+  "notes": [
+    "**Biot-Savart Law:** This topic covers the fundamental concepts of biot-savart law in the physics curriculum.",
+    "Understanding biot-savart law is essential for solving problems and building higher-level mathematical skills.",
+    "Key definitions and theorems related to biot-savart law should be memorized and practiced regularly."
+  ],
+  "confusion": [
+    "❌ 'Biot-Savart law gives the total magnetic field directly.' ✅ It gives the *contribution* dB from a tiny element dl; the total field requires integration over the entire conductor.",
+    "❌ 'The magnetic field is parallel to the current element.' ✅ dB is *perpendicular* to both dl and r̂ (given by the cross product dl × r̂).",
+    "❌ 'Biot-Savart law applies to moving charges but not currents.' ✅ A current is just moving charges; the law applies to *both* — for a charge: dB = (μ₀/4π)·(qv×r̂)/r²."
+  ],
+  "practice": [
+    "Solve at least 5 problems on biot-savart law from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type."
+  ],
+  "universalFacts": [
+    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
+    "Understanding biot-savart law builds the foundation for more advanced topics in mathematics.",
+    "Real-world applications of biot-savart law span engineering, physics, economics, and computer science."
+  ],
+  "animation3D": "magnetism",
+  "motionGraphics": "magnetism",
+  "examples": [
+    "Example 1: Real-world application of Biot-Savart Law",
+    "Example 2: Practical demonstration of Biot-Savart Law concepts",
+    "Example 3: Numerical problem on Biot-Savart Law",
+    "Example 4: Diagram-based question on Biot-Savart Law",
+    "Example 5: Application in daily life involving Biot-Savart Law"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain Biot-Savart Law with suitable example.",
+    "Q2. Solve problems related to Biot-Savart Law.",
+    "Q3. Differentiate between various aspects of Biot-Savart Law.",
+    "Q4. Derive the key formula related to Biot-Savart Law.",
+    "Q5. What are the applications of Biot-Savart Law?"
+  ],
+  "formulas": [
+    "Key Formula 1: Definition formula for Biot-Savart Law",
+    "Key Formula 2: Mathematical expression of Biot-Savart Law",
+    "Key Formula 3: Application formula for Biot-Savart Law",
+    "Key Formula 4: Derivation result for Biot-Savart Law",
+    "Key Formula 5: Important relation in Biot-Savart Law"
+  ],
+  "keyPoints": [
+    "Key Point 1: Fundamental definition of Biot-Savart Law",
+    "Key Point 2: Essential theorem or principle related to Biot-Savart Law",
+    "Key Point 3: Important condition or constraint for Biot-Savart Law",
+    "Key Point 4: Common applications of Biot-Savart Law",
+    "Key Point 5: Connection to other topics in Science"
+  ],
+  "summary": "Biot-Savart Law is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Biot-Savart Law applies",
+    "Note 2: Biot-Savart Law connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Biot-Savart Law",
+    "Note 4: Remember the units and dimensions involved in Biot-Savart Law",
+    "Note 5: Biot-Savart Law frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Biot-Savart Law",
+    "Statement 2: Theorem related to Biot-Savart Law",
+    "Statement 3: Condition for Biot-Savart Law to be valid",
+    "Statement 4: Principle governing Biot-Savart Law",
+    "Statement 5: Corollary or consequence of Biot-Savart Law"
+  ],
+  "importantNotes": [
+    "Note 1: Biot-Savart Law is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Biot-Savart Law",
+    "Note 3: Biot-Savart Law has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Biot-Savart Law",
+    "Note 5: Cross-check your answers using alternative methods for Biot-Savart Law"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Biot-Savart Law formula",
+    "Trick 2: Elimination technique for Biot-Savart Law MCQs",
+    "Trick 3: Dimensional analysis shortcut for Biot-Savart Law",
+    "Trick 4: Memory aid for Biot-Savart Law formulas",
+    "Trick 5: Time-saving approach for Biot-Savart Law problems"
+  ],
+  "examNotes": [
+    "Exam Tip 1: Focus on numerical problems from Biot-Savart Law",
+    "Exam Tip 2: Practice previous year questions on Biot-Savart Law",
+    "Exam Tip 3: Biot-Savart Law carries significant marks in exams",
+    "Exam Tip 4: Learn the derivations for Biot-Savart Law thoroughly",
+    "Exam Tip 5: Review common mistakes related to Biot-Savart Law"
+  ],
+  "mcs": [
+    {
+      "question": "Which of the following best describes Biot-Savart Law?",
+      "options": [
+        "Option A describing ${title}",
+        "Option B with similar concept",
+        "Option C related term",
+        "Option D unrelated concept"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The primary application of Biot-Savart Law is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Biot-Savart Law, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Biot-Savart Law?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Biot-Savart Law is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Biot-Savart Law",
+    "Concept 2: Key theorem or principle in Biot-Savart Law",
+    "Concept 3: Important application area of Biot-Savart Law",
+    "Concept 4: Fundamental relationship in Biot-Savart Law",
+    "Concept 5: Connection between Biot-Savart Law and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Biot-Savart Law",
+    "Task 2: Derive the main formula for Biot-Savart Law",
+    "Task 3: Create a concept map for Biot-Savart Law",
+    "Task 4: Practice previous year exam questions on Biot-Savart Law",
+    "Task 5: Explain Biot-Savart Law to a peer or study group"
+  ]
+}

@@ -1,0 +1,90 @@
+{
+  "title": "Electrostatics",
+  "unitSlug": "electrostatics",
+  "type": "unit",
+  "classSlug": "class-12-notes",
+  "subjectSlug": "physics",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "root": {
+    "id": "unit-electrostatics",
+    "label": "Electrostatics",
+    "children": [
+      {
+        "id": "unit-topic-coulomb-s-law-and-its-applications",
+        "label": "Coulomb's law and its applications",
+        "children": [
+          {
+            "id": "unit-electrostatics-coulomb-s-law-and-its-applications-0",
+            "label": "Its applications"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-electric-field-and-electric-field-intensity-due-to-point-charges-line-charges-and-charged-sheets",
+        "label": "Electric field and electric field intensity due to point charges, lin…",
+        "children": [
+          {
+            "id": "unit-electrostatics-electric-field-and-electric-field-intensity-due-to-point-charges-line-charges-and-charged-sheets-0",
+            "label": "Electric field intensity due to point charges"
+          },
+          {
+            "id": "unit-electrostatics-electric-field-and-electric-field-intensity-due-to-point-charges-line-charges-and-charged-sheets-1",
+            "label": "Line charges"
+          },
+          {
+            "id": "unit-electrostatics-electric-field-and-electric-field-intensity-due-to-point-charges-line-charges-and-charged-sheets-2",
+            "label": "Charged sheets"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-electric-potential-and-potential-difference",
+        "label": "Electric potential and potential difference",
+        "children": [
+          {
+            "id": "unit-electrostatics-electric-potential-and-potential-difference-0",
+            "label": "Potential difference"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-capacitance-and-capacitors-parallel-plate-series-and-parallel-combination",
+        "label": "Capacitance and capacitors — parallel plate, series and parallel comb…",
+        "children": [
+          {
+            "id": "unit-electrostatics-capacitance-and-capacitors-parallel-plate-series-and-parallel-combination-0",
+            "label": "Capacitors — parallel plate"
+          },
+          {
+            "id": "unit-electrostatics-capacitance-and-capacitors-parallel-plate-series-and-parallel-combination-1",
+            "label": "Series"
+          },
+          {
+            "id": "unit-electrostatics-capacitance-and-capacitors-parallel-plate-series-and-parallel-combination-2",
+            "label": "Parallel combination"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-dielectric-and-dielectric-constant",
+        "label": "Dielectric and dielectric constant",
+        "children": [
+          {
+            "id": "unit-electrostatics-dielectric-and-dielectric-constant-0",
+            "label": "Dielectric constant"
+          }
+        ]
+      },
+      {
+        "id": "unit-topic-energy-stored-in-a-capacitor",
+        "label": "Energy stored in a capacitor",
+        "children": []
+      }
+    ]
+  },
+  "notes": [
+    "- Electrostatics\n  - Coulomb's law and its applications\n  - Electric field and electric field intensity due to point charges, lin…\n  - Electric potential and potential difference\n  - Capacitance and capacitors — parallel plate, series and parallel comb…\n  - Dielectric and dielectric constant\n  - Energy stored in a capacitor"
+  ]
+}

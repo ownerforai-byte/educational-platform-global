@@ -1,0 +1,32 @@
+{
+  "title": "GPS",
+  "unitSlug": "gravitation",
+  "topicSlug": "gps",
+  "topicTitle": "GPS",
+  "relevance": 100,
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "root": {
+    "id": "topic-gps",
+    "label": "GPS",
+    "children": [
+      {
+        "id": "gps-branch-0",
+        "label": "GPS",
+        "children": [
+          {
+            "id": "gps-branch-0-def",
+            "label": "Definition"
+          },
+          {
+            "id": "gps-branch-0-use",
+            "label": "Exam use"
+          }
+        ]
+      }
+    ]
+  },
+  "notes": [
+    "- GPS\n  - GPS"
+  ]
+}

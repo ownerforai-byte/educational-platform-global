@@ -1,0 +1,32 @@
+{
+  "title": "Basic Theorems on Limits of Exponential and Logarithmic Functions",
+  "unitSlug": "calculus",
+  "topicSlug": "limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-without-proof-basic-theorems-on-limits-of-algebraic-trigonometric-exponential-and-logarithmic-functions",
+  "topicTitle": "Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
+  "relevance": 100,
+  "notes": [
+    "**Exponential function limits:** $\\lim_{x \\to a} e^x = e^a$ for all real $a$. The exponential function is continuous everywhere.",
+    "**Important exponential limit:** $\\lim_{x \\to 0} \\frac{e^x - 1}{x} = 1$. This is the exponential analogue of $\\lim_{x \\to 0} (\\sin x)/x = 1$.",
+    "**Generalised form:** $\\lim_{x \\to 0} \\frac{e^{ax} - 1}{bx} = \\frac{a}{b}$.",
+    "**Logarithmic function limits:** $\\lim_{x \\to a} \\ln x = \\ln a$ for all $a > 0$. The natural logarithm is continuous on $(0, \\infty)$.",
+    "**Important logarithmic limit:** $\\lim_{x \\to 0} \\frac{\\ln(1 + x)}{x} = 1$. Equivalently, $\\lim_{x \\to 0} \\frac{\\ln(1 + x)}{x} = 1$.",
+    "**Generalised form:** $\\lim_{x \\to 0} \\frac{\\ln(1 + ax)}{bx} = \\frac{a}{b}$.",
+    "**Limits at infinity for exponential:** $\\lim_{x \\to \\infty} e^x = \\infty$ and $\\lim_{x \\to -\\infty} e^x = 0$.",
+    "**Limits at infinity for logarithmic:** $\\lim_{x \\to \\infty} \\ln x = \\infty$ (slow growth) and $\\lim_{x \\to 0^+} \\ln x = -\\infty$.",
+    "**The number $e$ defined as a limit:** $e = \\lim_{n \\to \\infty} (1 + 1/n)^n \\approx 2.71828$."
+  ],
+  "confusion": [
+    "$\\ln x$ is only defined for $x > 0$. Never attempt $\\ln(0)$ or $\\ln(-1)$.",
+    "The limit $\\lim_{x \\to 0} (e^x - 1)/x = 1$ requires the exponent to be exactly $x$. For $e^{2x}$, adjust: $\\lim_{x \\to 0} (e^{2x} - 1)/x = 2$.",
+    "$e^x$ grows much faster than any polynomial $x^n$ as $x \\to \\infty$, and $\\ln x$ grows much slower than any positive power $x^n$."
+  ],
+  "practice": [
+    "Evaluate $\\lim_{x \\to 0} \\frac{e^{3x} - 1}{x}$.",
+    "Find $\\lim_{x \\to 0} \\frac{\\ln(1 + 5x)}{x}$.",
+    "Evaluate $\\lim_{x \\to \\infty} \\frac{e^x}{x^{10}}$ (answer: $\\infty$, since $e^x$ dominates)."
+  ],
+  "universalFacts": [
+    "The two key limits $\\lim_{x \\to 0} (e^x - 1)/x = 1$ and $\\lim_{x \\to 0} \\ln(1+x)/x = 1$ are the foundations for differentiating exponential and logarithmic functions.",
+    "The exponential function's unique property is that it is its own derivative: $\\frac{d}{dx}e^x = e^x$, which follows directly from the limit $\\lim_{h \\to 0}(e^h - 1)/h = 1$."
+  ]
+}

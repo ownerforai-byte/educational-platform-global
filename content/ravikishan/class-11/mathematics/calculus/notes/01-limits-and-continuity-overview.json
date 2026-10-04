@@ -1,0 +1,30 @@
+{
+  "title": "Limits and Continuity — Overview Notes",
+  "unitSlug": "calculus",
+  "topicSlug": "limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-without-proof-basic-theorems-on-limits-of-algebraic-trigonometric-exponential-and-logarithmic-functions",
+  "topicTitle": "Limits and continuity: limits of a function, indeterminate forms, algebraic properties of limits (without proof), basic theorems on limits of algebraic, trigonometric, exponential and logarithmic functions",
+  "relevance": 100,
+  "notes": [
+    "**What is calculus?** Calculus is the mathematics of change and motion. It has two main branches: differential calculus (rates of change) and integral calculus (accumulation and area). Both branches rest on the concept of a limit.",
+    "**Why limits matter:** Limits formalize the idea of \"approaching\" a value. Without limits, we cannot rigorously define the derivative (instantaneous rate of change) or the integral (area under a curve).",
+    "**Limits → Derivatives → Integration:** The derivative $f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}$ uses a limit to define instantaneous rate of change. The definite integral $\\int_a^b f(x)\\,dx$ is defined as a limit of Riemann sums.",
+    "**Continuity bridges limits and differentiation:** A function must be continuous (no breaks, holes, or jumps) at a point before it can be differentiated there. Continuity is necessary but not sufficient for differentiability.",
+    "**Key strategy for evaluating limits:** (1) Try direct substitution. (2) If it gives a number, that is the limit. (3) If it gives $0/0$ or another indeterminate form, use algebraic simplification, rationalisation, factoring, or standard limits.",
+    "**Standard limits to memorise:** $\\lim_{x \\to 0}(\\sin x)/x = 1$, $\\lim_{x \\to 0}(e^x - 1)/x = 1$, $\\lim_{x \\to 0}\\ln(1+x)/x = 1$, $e = \\lim_{n \\to \\infty}(1+1/n)^n$.",
+    "**Types of discontinuity:** Removable (hole), jump (step), infinite (vertical asymptote), essential (oscillatory). Understanding these helps in sketching graphs and later in integration.",
+    "**Connection to real-world:** Limits model instantaneous velocity, marginal cost in economics, population growth rates, and any quantity that changes continuously over time."
+  ],
+  "confusion": [
+    "Students often confuse \"the limit exists\" with \"the function is continuous\". A limit can exist at a point where the function is not continuous (e.g., a removable discontinuity).",
+    "Do not treat limits as just algebra exercises — they have deep geometric and physical meaning that makes the rest of calculus meaningful."
+  ],
+  "practice": [
+    "Review all standard limit forms and derive at least three of them from the fundamental limit $\\lim_{x \\to 0}(\\sin x)/x = 1$.",
+    "Given a piecewise function, determine at which points it is continuous and classify any discontinuities.",
+    "Explain in your own words why continuity is necessary for differentiability, using $f(x) = |x|$ as an example."
+  ],
+  "universalFacts": [
+    "Limits were first rigorously formalised by Weierstrass in the 19th century, though Newton and Leibniz used calculus intuitively a century earlier.",
+    "The concept of limits extends beyond single-variable calculus to multivariable calculus, real analysis, and topology."
+  ]
+}

@@ -1,0 +1,160 @@
+{
+  "title": "Ampere's Circuital Law",
+  "unitSlug": "magnetism",
+  "topicSlug": "ampere-circuital-law",
+  "topicTitle": "Ampere's Circuital Law",
+  "relevance": 100,
+  "notes": [
+    "**Ampere's Circuital Law:** This topic covers the fundamental concepts of ampere's circuital law in the physics curriculum.",
+    "Understanding ampere's circuital law is essential for solving problems and building higher-level mathematical skills.",
+    "Key definitions and theorems related to ampere's circuital law should be memorized and practiced regularly."
+  ],
+  "confusion": [
+    "❌ 'Ampere's law works for any current distribution.' ✅ It is most useful for *highly symmetric* situations (infinite wire, solenoid, toroid); for arbitrary shapes, Biot-Savart is needed.",
+    "❌ 'The enclosed current must be at the center of the Amperian loop.' ✅ The current only needs to pass *through* the loop; its position inside the loop does not matter for the line integral.",
+    "❌ 'Magnetic field outside a solenoid is always zero.' ✅ For an *ideal infinite* solenoid it is zero, but a real finite solenoid has a weak external field."
+  ],
+  "practice": [
+    "Solve at least 5 problems on ampere's circuital law from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type."
+  ],
+  "universalFacts": [
+    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
+    "Understanding ampere's circuital law builds the foundation for more advanced topics in mathematics.",
+    "Real-world applications of ampere's circuital law span engineering, physics, economics, and computer science."
+  ],
+  "animation3D": "magnetism",
+  "motionGraphics": "magnetism",
+  "examples": [
+    "Example 1: Real-world application of Ampere's Circuital Law",
+    "Example 2: Practical demonstration of Ampere's Circuital Law concepts",
+    "Example 3: Numerical problem on Ampere's Circuital Law",
+    "Example 4: Diagram-based question on Ampere's Circuital Law",
+    "Example 5: Application in daily life involving Ampere's Circuital Law"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain Ampere's Circuital Law with suitable example.",
+    "Q2. Solve problems related to Ampere's Circuital Law.",
+    "Q3. Differentiate between various aspects of Ampere's Circuital Law.",
+    "Q4. Derive the key formula related to Ampere's Circuital Law.",
+    "Q5. What are the applications of Ampere's Circuital Law?"
+  ],
+  "formulas": [
+    "Key Formula 1: Definition formula for Ampere's Circuital Law",
+    "Key Formula 2: Mathematical expression of Ampere's Circuital Law",
+    "Key Formula 3: Application formula for Ampere's Circuital Law",
+    "Key Formula 4: Derivation result for Ampere's Circuital Law",
+    "Key Formula 5: Important relation in Ampere's Circuital Law"
+  ],
+  "keyPoints": [
+    "Key Point 1: Fundamental definition of Ampere's Circuital Law",
+    "Key Point 2: Essential theorem or principle related to Ampere's Circuital Law",
+    "Key Point 3: Important condition or constraint for Ampere's Circuital Law",
+    "Key Point 4: Common applications of Ampere's Circuital Law",
+    "Key Point 5: Connection to other topics in Science"
+  ],
+  "summary": "Ampere's Circuital Law is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Ampere's Circuital Law applies",
+    "Note 2: Ampere's Circuital Law connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Ampere's Circuital Law",
+    "Note 4: Remember the units and dimensions involved in Ampere's Circuital Law",
+    "Note 5: Ampere's Circuital Law frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Ampere's Circuital Law",
+    "Statement 2: Theorem related to Ampere's Circuital Law",
+    "Statement 3: Condition for Ampere's Circuital Law to be valid",
+    "Statement 4: Principle governing Ampere's Circuital Law",
+    "Statement 5: Corollary or consequence of Ampere's Circuital Law"
+  ],
+  "importantNotes": [
+    "Note 1: Ampere's Circuital Law is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Ampere's Circuital Law",
+    "Note 3: Ampere's Circuital Law has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Ampere's Circuital Law",
+    "Note 5: Cross-check your answers using alternative methods for Ampere's Circuital Law"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Ampere's Circuital Law formula",
+    "Trick 2: Elimination technique for Ampere's Circuital Law MCQs",
+    "Trick 3: Dimensional analysis shortcut for Ampere's Circuital Law",
+    "Trick 4: Memory aid for Ampere's Circuital Law formulas",
+    "Trick 5: Time-saving approach for Ampere's Circuital Law problems"
+  ],
+  "examNotes": [
+    "Exam Tip 1: Focus on numerical problems from Ampere's Circuital Law",
+    "Exam Tip 2: Practice previous year questions on Ampere's Circuital Law",
+    "Exam Tip 3: Ampere's Circuital Law carries significant marks in exams",
+    "Exam Tip 4: Learn the derivations for Ampere's Circuital Law thoroughly",
+    "Exam Tip 5: Review common mistakes related to Ampere's Circuital Law"
+  ],
+  "mcs": [
+    {
+      "question": "Which of the following best describes Ampere's Circuital Law?",
+      "options": [
+        "Option A describing ${title}",
+        "Option B with similar concept",
+        "Option C related term",
+        "Option D unrelated concept"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The primary application of Ampere's Circuital Law is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Ampere's Circuital Law, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Ampere's Circuital Law?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Ampere's Circuital Law is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Ampere's Circuital Law",
+    "Concept 2: Key theorem or principle in Ampere's Circuital Law",
+    "Concept 3: Important application area of Ampere's Circuital Law",
+    "Concept 4: Fundamental relationship in Ampere's Circuital Law",
+    "Concept 5: Connection between Ampere's Circuital Law and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Ampere's Circuital Law",
+    "Task 2: Derive the main formula for Ampere's Circuital Law",
+    "Task 3: Create a concept map for Ampere's Circuital Law",
+    "Task 4: Practice previous year exam questions on Ampere's Circuital Law",
+    "Task 5: Explain Ampere's Circuital Law to a peer or study group"
+  ]
+}

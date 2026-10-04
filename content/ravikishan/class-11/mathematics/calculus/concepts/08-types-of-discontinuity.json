@@ -1,0 +1,29 @@
+{
+  "title": "Types of Discontinuity and Graphs of Discontinuous Functions",
+  "unitSlug": "calculus",
+  "topicSlug": "continuity-of-a-function-types-of-discontinuity-graphs-of-discontinuous-function",
+  "topicTitle": "Continuity of a function, types of discontinuity, graphs of discontinuous function",
+  "relevance": 100,
+  "notes": [
+    "**Removable discontinuity (hole):** The limit $\\lim_{x \\to a} f(x)$ exists, but either $f(a)$ is undefined or $f(a) \\neq \\lim_{x \\to a} f(x)$. The graph has a \"hole\" at $x = a$. Example: $f(x) = \\frac{x^2 - 1}{x - 1}$ at $x = 1$.",
+    "**Jump discontinuity:** The left-hand and right-hand limits both exist but are not equal: $\\lim_{x \\to a^-} f(x) \\neq \\lim_{x \\to a^+} f(x)$. The graph \"jumps\" at $x = a$. Example: the floor function $f(x) = \\lfloor x \\rfloor$ at every integer.",
+    "**Infinite discontinuity (asymptotic):** At least one of the one-sided limits is $\\pm \\infty$. The graph has a vertical asymptote at $x = a$. Example: $f(x) = 1/x$ at $x = 0$.",
+    "**Essential (oscillatory) discontinuity:** The function oscillates infinitely near the point, so the limit does not exist in any sense. Example: $f(x) = \\sin(1/x)$ at $x = 0$.",
+    "**Removable discontinuity fix:** If $\\lim_{x \\to a} f(x) = L$ but $f(a) \\neq L$ or is undefined, define a new function $g(x) = f(x)$ for $x \\neq a$ and $g(a) = L$. Then $g$ is continuous at $a$.",
+    "**Graph sketching tips for discontinuous functions:** Mark open circles (holes) at removable discontinuities, closed dots at defined points, and draw vertical dashed lines at vertical asymptotes."
+  ],
+  "confusion": [
+    "A removable discontinuity can be \"fixed\" by redefining the function at one point. Jump and infinite discontinuities cannot be removed this way.",
+    "The function $f(x) = \\sin(1/x)$ for $x \\neq 0$ and $f(0) = 0$ has an essential discontinuity at $x = 0$ — no matter how you define $f(0)$, the limit does not exist.",
+    "A vertical asymptote always indicates an infinite discontinuity, but not all discontinuities involve vertical asymptotes."
+  ],
+  "practice": [
+    "Classify the discontinuity of $f(x) = \\frac{x^2 - 4}{x - 2}$ at $x = 2$.",
+    "Sketch the graph of $f(x) = \\begin{cases} x + 1 & x < 0 \\\\ x^2 & x \\geq 0 \\end{cases}$ and classify any discontinuities.",
+    "For $f(x) = \\frac{1}{x - 3}$, identify the type of discontinuity at $x = 3$ and describe the behaviour from both sides."
+  ],
+  "universalFacts": [
+    "Every discontinuity of a function falls into one of four categories: removable, jump, infinite, or essential.",
+    "Understanding discontinuities is crucial for integration — a function with a finite number of removable or jump discontinuities can still be integrated."
+  ]
+}

@@ -114,10 +114,13 @@ describe("getHighYieldTopicData — topic resolution", () => {
   });
 
   it("returns null for a topic with no curated entry", () => {
+    // Fixture note: `sahitya-adhyayan` was uncurated when this test was written,
+    // but the Grade 11 Nepali literature unit now ships a bank entry (its topics
+    // appear in the class-11 manifest), so the fixture is a slug no entry claims.
     const data = getHighYieldTopicData(
       "nepali",
-      "sahitya-adhyayan",
-      "साहित्य अध्ययन",
+      "vyakaran-abhyas",
+      "व्याकरण अभ्यास",
     );
     expect(data).toBeNull();
   });
