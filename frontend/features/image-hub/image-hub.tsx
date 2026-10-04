@@ -10,6 +10,7 @@ import {
   ListTree,
   Sparkles,
   Trash2,
+  X,
 } from "lucide-react";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
 import {
@@ -19,6 +20,13 @@ import {
   type HubFigurePart,
   type HubImageResult,
 } from "./generate-image";
+import {
+  googleImagesLink,
+  searchGoogleImages,
+  type GoogleImageResult,
+} from "./google-search";
+import { ImageDetails } from "./image-details";
+import { downloadImage } from "./download";
 import {
   clearImageHistory,
   loadImageHistory,
@@ -55,7 +63,10 @@ import {
  *     browser) for photos, watercolours and anything pictorial.
  */
 
-type Mode = "figure" | "picture";
+type Mode = "figure" | "picture" | "google";
+
+/** The composer is busy with a drawing engine OR a Google search. */
+type Busy = HubEngineFail | "search";
 
 type GalleryFigure = {
   kind: "figure";
@@ -70,11 +81,13 @@ type GalleryFigure = {
   parts: HubFigurePart[];
 };
 
-type GalleryPicture = HubImageResult & {
+type GalleryPicture = Omit<HubImageResult, "engine"> & {
   kind: "picture";
   id: string;
   prompt: string;
   at: number;
+  /** "google" = saved from the direct-Google presenting mode. */
+  engine: HubImageResult["engine"] | "google";
 };
 
 type GalleryItem = GalleryFigure | GalleryPicture;
@@ -98,6 +111,11 @@ const EXAMPLES: Record<Mode, string[]> = {
     "A snow leopard resting on a Himalayan cliff at dawn, photorealistic",
     "Watercolour plate of a dhaka topi beside a math notebook",
     "NEB physics ray diagram: convex lens with three principal rays",
+  ],
+  google: [
+    "labelled diagram of the human heart",
+    "life cycle of a frog",
+    "ray diagram convex lens principal rays",
   ],
 };
 
@@ -137,25 +155,6 @@ function timeAgo(at: number): string {
   const days = Math.round(hours / 24);
   if (days < 7) return `${days} d ago`;
   return new Date(at).toLocaleDateString();
-}
-
-/** Cross-origin safe download: fetch → blob → click; window.open as last resort. */
-async function downloadImage(url: string, filename: string): Promise<void> {
-  try {
-    const res = await fetch(url);
-    if (!res.ok) throw new Error(`fetch ${res.status}`);
-    const blob = await res.blob();
-    const href = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = href;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    a.remove();
-    URL.revokeObjectURL(href);
-  } catch {
-    window.open(url, "_blank", "noopener");
-  }
 }
 
 /** A vector figure downloads as the .svg the writer drew. */
@@ -218,7 +217,12 @@ function parseStored(value: unknown): GalleryItem | null {
       prompt: item.prompt,
       at,
       url: item.url,
-      engine: item.engine === "puter" ? "puter" : "agnes",
+      engine:
+        item.engine === "puter"
+          ? "puter"
+          : item.engine === "google"
+            ? "google"
+            : "agnes",
       label: typeof item.label === "string" ? item.label : "picture",
     };
   }
@@ -255,7 +259,12 @@ function parseHistoryRow(row: ImageHistoryRow): GalleryItem | null {
     prompt,
     at: Number.isFinite(at) ? at : Date.now(),
     url: row.url,
-    engine: row.engine === "puter" ? "puter" : "agnes",
+    engine:
+      row.engine === "puter"
+        ? "puter"
+        : typeof row.engine === "string" && row.engine.startsWith("google")
+          ? "google"
+          : "agnes",
     label: typeof row.engine === "string" && row.engine ? row.engine : "agnes-image-2.1-flash",
   };
 }
@@ -268,10 +277,18 @@ function itemKey(item: GalleryItem): string {
 export function ImageHub() {
   const [mode, setMode] = useState<Mode>("figure");
   const [prompt, setPrompt] = useState("");
-  const [busy, setBusy] = useState<HubEngineFail | null>(null);
+  const [busy, setBusy] = useState<Busy | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [items, setItems] = useState<GalleryItem[]>([]);
   const [filter, setFilter] = useState<Filter>("all");
+
+  // Direct-Google presenting mode (owner 2026-10-04: "direct presenting from
+  // google is best … create the details interface"): results are transient
+  // search output (not gallery items) until the student saves one.
+  const [googleResults, setGoogleResults] = useState<GoogleImageResult[]>([]);
+  const [searchQuery, setSearchQuery] = useState("");
+  const [notConfiguredQuery, setNotConfiguredQuery] = useState<string | null>(null);
+  const [details, setDetails] = useState<GoogleImageResult | null>(null);
 
   // Restore the session cache first (instant paint), then merge the account
   // history on top of it. The account list is the truth — the server saved
@@ -352,10 +369,63 @@ export function ImageHub() {
   const failedBothEngines =
     "Neither engine could draw this — the figure writer and the Agnes chain may be busy, and the puter.js fallback needs its browser sign-in. Your prompt is kept below; try again.";
 
+  /** Save a Google result into the gallery + the account history. */
+  function saveGoogleResult(result: GoogleImageResult) {
+    const engineLabel = `google · ${result.host || "images"}`;
+    saveItems([
+      {
+        kind: "picture",
+        id: newId(),
+        prompt: searchQuery || result.title,
+        at: Date.now(),
+        url: result.url,
+        engine: "google",
+        label: engineLabel,
+      },
+      ...items,
+    ]);
+    void saveImageHistoryItem({
+      kind: "picture",
+      prompt: searchQuery || result.title,
+      url: result.url,
+      engine: engineLabel,
+    });
+  }
+
   async function generate() {
     const p = prompt.trim();
     if (!p || busy) return;
     setError(null);
+    setNotConfiguredQuery(null);
+
+    if (mode === "google") {
+      setBusy("search");
+      try {
+        const res = await searchGoogleImages(p);
+        setSearchQuery(p);
+        if (!res.configured) {
+          // Honest state: no backend credentials yet — offer the direct
+          // Google Images link instead of showing an empty silent grid.
+          setGoogleResults([]);
+          setNotConfiguredQuery(p);
+          setPrompt("");
+          return;
+        }
+        setGoogleResults(res.results);
+        setPrompt("");
+        setError(
+          res.results.length === 0
+            ? `Google returned no images for “${p}” — try different words.`
+            : null,
+        );
+      } catch {
+        setError("Google image search is unavailable right now — your query is kept below.");
+      } finally {
+        setBusy(null);
+      }
+      return;
+    }
+
     setBusy(mode === "figure" ? "figure" : "agnes");
     try {
       if (mode === "figure") {
@@ -418,15 +488,17 @@ export function ImageHub() {
   }
 
   const status =
-    busy === "figure"
-      ? "Drawing the figure — naming every part…"
-      : busy === "agnes"
-        ? mode === "figure"
-          ? "Figure writer unavailable — drawing with Agnes 2.1 Flash…"
-          : "Drawing with Agnes 2.1 Flash…"
-        : busy === "puter"
-          ? "Agnes unavailable — drawing in your browser with puter.js…"
-          : null;
+    busy === "search"
+      ? `Searching Google Images for “${prompt.trim() || searchQuery}”…`
+      : busy === "figure"
+        ? "Drawing the figure — naming every part…"
+        : busy === "agnes"
+          ? mode === "figure"
+            ? "Figure writer unavailable — drawing with Agnes 2.1 Flash…"
+            : "Drawing with Agnes 2.1 Flash…"
+          : busy === "puter"
+            ? "Agnes unavailable — drawing in your browser with puter.js…"
+            : null;
 
   const figureCount = items.filter((item) => item.kind === "figure").length;
   const pictureCount = items.length - figureCount;
@@ -484,8 +556,10 @@ export function ImageHub() {
           <p className="text-sm text-muted-foreground">
             Academic figures drawn as labelled vector diagrams — every part
             opens its detail on hover — plus Agnes 2.1 Flash pictures with
-            puter.js as the browser fallback. Everything you draw is kept in
-            your history, on any device you sign in from.
+            puter.js as the browser fallback, and Google mode presenting real
+            web images at full size with a details &amp; facts panel. Everything
+            you draw or save is kept in your history, on any device you sign in
+            from.
           </p>
         </div>
       </div>
@@ -499,10 +573,17 @@ export function ImageHub() {
             "Vector figure: life cycle, labelled structure, apparatus, graph, circuit, ray or free-body diagram…",
           )}
           {modeButton("picture", "Picture", "Agnes 2.1 Flash raster image — photos, art, mood boards")}
+          {modeButton(
+            "google",
+            "Google",
+            "Search Google Images and present the real web results at full size, with a details panel",
+          )}
           <span className="text-[11px] text-muted-foreground/70">
             {mode === "figure"
               ? "Every part is labelled and hoverable — the details open on hover or tap."
-              : "A painted image, no labels."}
+              : mode === "google"
+                ? "Real images from the web, presented directly — click one for its details."
+                : "A painted image, no labels."}
           </span>
         </div>
 
@@ -518,9 +599,11 @@ export function ImageHub() {
           maxLength={MAX_PROMPT}
           rows={3}
           placeholder={
-            mode === "figure"
-              ? "Describe the image or figure you want — e.g. labelled diagram of the nephron, or the life cycle of a fern…"
-              : "Describe the image you want — subject, style, colours, mood…"
+            mode === "google"
+              ? "What should Google find? e.g. ‘labelled diagram of the human heart’, ‘ray diagram convex lens’…"
+              : mode === "figure"
+                ? "Describe the image or figure you want — e.g. labelled diagram of the nephron, or the life cycle of a fern…"
+                : "Describe the image you want — subject, style, colours, mood…"
           }
           className="w-full resize-y rounded-xl border border-border/60 bg-background/80 px-3.5 py-2.5 text-sm outline-none focus:border-primary/60 focus:ring-2 focus:ring-ring/30"
         />
@@ -547,7 +630,15 @@ export function ImageHub() {
             className="inline-flex h-10 items-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-violet-500 px-5 text-sm font-bold text-white shadow-lg shadow-violet-500/20 transition-all hover:brightness-110 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             <Sparkles className="h-4 w-4" />
-            {busy ? "Drawing…" : mode === "figure" ? "Draw figure" : "Draw image"}
+            {busy
+              ? busy === "search"
+                ? "Searching…"
+                : "Drawing…"
+              : mode === "google"
+                ? "Search Google"
+                : mode === "figure"
+                  ? "Draw figure"
+                  : "Draw image"}
           </button>
         </div>
 
@@ -569,6 +660,120 @@ export function ImageHub() {
           <AlertTriangle className="mt-0.5 h-4 w-4 shrink-0" />
           <span>{error}</span>
         </div>
+      )}
+
+      {/* ── Direct-Google results (presented, not drawn) ── */}
+      {notConfiguredQuery && (
+        <div className="flex flex-wrap items-center gap-2.5 rounded-xl border border-amber-500/30 bg-amber-500/10 px-3.5 py-2.5 text-sm text-amber-600 dark:text-amber-300">
+          <AlertTriangle className="h-4 w-4 shrink-0" />
+          <span className="min-w-0 flex-1">
+            Direct Google presenting isn’t configured on this server yet (no
+            search credentials) — your query is kept below.
+          </span>
+          <a
+            href={googleImagesLink(notConfiguredQuery)}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex shrink-0 items-center gap-1.5 rounded-lg border border-amber-500/40 bg-amber-500/15 px-2.5 py-1.5 text-xs font-semibold transition hover:bg-amber-500/25"
+          >
+            Open “{notConfiguredQuery}” in Google Images
+            <ExternalLink className="h-3.5 w-3.5" />
+          </a>
+        </div>
+      )}
+      {googleResults.length > 0 && (
+        <section aria-label="Google image results" className="space-y-3">
+          <div className="flex flex-wrap items-center justify-between gap-2">
+            <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground">
+              Google results{" "}
+              <span className="text-foreground/60">
+                ({googleResults.length})
+              </span>{" "}
+              <span className="font-medium normal-case tracking-normal text-muted-foreground/70">
+                for “{searchQuery}”
+              </span>
+            </h2>
+            <button
+              type="button"
+              onClick={() => {
+                setGoogleResults([]);
+                setSearchQuery("");
+              }}
+              className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-destructive transition-colors"
+            >
+              <X className="h-3.5 w-3.5" />
+              Clear results
+            </button>
+          </div>
+
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 xl:grid-cols-4">
+            {googleResults.map((result) => (
+              <figure
+                key={result.url}
+                className="group overflow-hidden rounded-2xl border border-border/60 bg-card"
+              >
+                <button
+                  type="button"
+                  onClick={() => setDetails(result)}
+                  className="block w-full text-left"
+                  title="Open details"
+                >
+                  <div className="relative bg-muted/40">
+                    {/* eslint-disable-next-line @next/next/no-img-element -- Google thumbnail URL: next/image cannot optimize arbitrary foreign hosts */}
+                    <img
+                      src={result.thumb || result.url}
+                      alt={result.title}
+                      loading="lazy"
+                      className="aspect-square w-full object-cover transition group-hover:scale-[1.02]"
+                    />
+                    <span className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 to-transparent px-2.5 py-1.5 text-[10px] font-semibold text-white opacity-0 transition group-hover:opacity-100">
+                      Details, facts & save →
+                    </span>
+                  </div>
+                </button>
+                <figcaption className="space-y-2 p-2.5">
+                  <p className="line-clamp-2 text-xs text-muted-foreground">
+                    {result.title}
+                  </p>
+                  <div className="flex items-center justify-between gap-2">
+                    <span
+                      className="max-w-[55%] truncate text-[10px] font-semibold text-emerald-600 dark:text-emerald-400"
+                      title={result.page || result.host}
+                    >
+                      {result.host || "unknown source"}
+                    </span>
+                    <span className="flex items-center gap-1.5">
+                      <button
+                        type="button"
+                        onClick={() => setDetails(result)}
+                        className="rounded-lg border border-border/60 bg-muted/40 px-1.5 py-1 text-[10px] font-semibold hover:border-primary/40 hover:text-primary transition-colors"
+                      >
+                        Details
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => saveGoogleResult(result)}
+                        className="rounded-lg border border-border/60 bg-muted/40 p-1.5 hover:border-primary/40 hover:text-primary transition-colors"
+                        title="Save to my history"
+                      >
+                        <Download className="h-3.5 w-3.5" />
+                      </button>
+                      <a
+                        href={result.page || result.url}
+                        target="_blank"
+                        rel="noreferrer"
+                        className="rounded-lg border border-border/60 bg-muted/40 p-1.5 hover:border-primary/40 hover:text-primary transition-colors"
+                        title="Open the source page"
+                      >
+                        <ExternalLink className="h-3.5 w-3.5" />
+                      </a>
+                    </span>
+                  </div>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </section>
       )}
 
       {/* ── Gallery / history ── */}
@@ -740,6 +945,16 @@ export function ImageHub() {
             ),
           )}
         </div>
+      )}
+
+      {/* ── Details interface: full-size image + metadata + Veer facts ── */}
+      {details && (
+        <ImageDetails
+          result={details}
+          query={searchQuery}
+          onClose={() => setDetails(null)}
+          onSave={() => saveGoogleResult(details)}
+        />
       )}
     </div>
   );

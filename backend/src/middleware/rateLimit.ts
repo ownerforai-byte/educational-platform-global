@@ -79,9 +79,14 @@ function tierFor(originalUrl: string | undefined): Tier {
   if (url.startsWith("/api/ai/guest")) return "guest-ai";
   // Image drawing is public to every student but costs a real generation per
   // call — matched on the exact path so the cheap image-history CRUD below it
-  // is not charged against the drawing budget.
+  // is not charged against the drawing budget. The Google image search joins
+  // this tier: it burns the free CSE quota (100/day) instead of a generation.
   const pathOnly = (url.split("?")[0] ?? "").replace(/\/+$/, "");
-  if (pathOnly === "/api/ai/image" || pathOnly === "/api/ai/figure") {
+  if (
+    pathOnly === "/api/ai/image" ||
+    pathOnly === "/api/ai/figure" ||
+    pathOnly === "/api/ai/image-search"
+  ) {
     return "ai-image";
   }
   if (url.startsWith("/api/ai")) return "default-unlimited";

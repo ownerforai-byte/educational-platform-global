@@ -27,8 +27,24 @@ export interface GoogleDiagram {
   page: string;
   /** The result title, used as the human label. */
   title: string;
+  /** Google's description line — the details interface's "description" field. */
+  snippet?: string;
   width: number;
   height: number;
+  /** Google's thumbnail (grid preview) — present when CSE reported one. */
+  thumb?: string;
+}
+
+/**
+ * Options for reading a Custom Search payload.
+ * `requireRelevance` (default true) keeps only results whose text mentions one
+ * of `terms` — the right rule when results are REFERENCE for a chat concept.
+ * Direct presenting (the Image Hub search box) passes false: there Google's
+ * own query ranking already matched the search, and the strict word filter
+ * would drop good pictures whose titles simply word it differently.
+ */
+export interface ParseGoogleImagesOptions {
+  requireRelevance?: boolean;
 }
 
 const GOOGLE_ENDPOINT = "https://www.googleapis.com/customsearch/v1";
@@ -75,9 +91,14 @@ export function hostOf(url: string): string {
  * offline. Keeps only real, image-typed, reasonably large, context-relevant
  * results; drops everything else.
  */
-export function parseGoogleImages(payload: unknown, terms: string[]): GoogleDiagram[] {
+export function parseGoogleImages(
+  payload: unknown,
+  terms: string[],
+  options: ParseGoogleImagesOptions = {},
+): GoogleDiagram[] {
   const items = (payload as { items?: unknown })?.items;
   if (!Array.isArray(items)) return [];
+  const requireRelevance = options.requireRelevance !== false;
 
   const out: GoogleDiagram[] = [];
   const seen = new Set<string>();
@@ -99,10 +120,21 @@ export function parseGoogleImages(payload: unknown, terms: string[]): GoogleDiag
     const title = String(item.title ?? "").trim();
     const snippet = String(item.snippet ?? "");
     const page = String(image.contextLink ?? "").trim();
-    if (!googleRelevanceOf(`${title} ${snippet} ${url}`, terms)) continue;
+    const thumb = String(image.thumbnailLink ?? "").trim();
+    if (requireRelevance && !googleRelevanceOf(`${title} ${snippet} ${url}`, terms)) {
+      continue;
+    }
 
     seen.add(url.toLowerCase());
-    out.push({ url, page, title: title || "diagram", width, height });
+    out.push({
+      url,
+      page,
+      title: title || "diagram",
+      snippet,
+      width,
+      height,
+      ...(thumb ? { thumb } : {}),
+    });
   }
 
   return out;
@@ -116,6 +148,7 @@ export async function fetchGoogleDiagrams(
   diagramQuery: string,
   terms: string[],
   limit = GOOGLE_DIAGRAM_LIMIT,
+  options: ParseGoogleImagesOptions = {},
 ): Promise<GoogleDiagram[]> {
   const key = process.env.GOOGLE_CSE_API_KEY?.trim();
   const cx = process.env.GOOGLE_CSE_CX?.trim();
@@ -133,7 +166,7 @@ export async function fetchGoogleDiagrams(
   });
   if (!res.ok) throw new Error(`Google CSE ${res.status}`);
   const payload = await res.json();
-  return parseGoogleImages(payload, terms).slice(0, limit);
+  return parseGoogleImages(payload, terms, options).slice(0, limit);
 }
 
 /**

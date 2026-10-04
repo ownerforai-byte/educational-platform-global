@@ -1,5 +1,5 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
-import { render, screen, fireEvent, waitFor } from "@testing-library/react";
+import { render, screen, fireEvent, waitFor, within } from "@testing-library/react";
 import { ImageHub } from "@/features/image-hub";
 import type { ImageHistoryRow } from "@/features/image-hub/history";
 
@@ -16,11 +16,21 @@ import type { ImageHistoryRow } from "@/features/image-hub/history";
  *     on mount, and a browser-drawn puter.js picture is POSTed there right
  *     after it lands (server draws save themselves);
  *   · clearing the gallery also clears the account history (DELETE).
+ *
+ * Plus the direct-Google mode (owner 2026-10-04: "direct presenting from
+ * google is best … create the details interface"): results come from
+ * GET /api/ai/image-search, the not-configured answer offers the plain Google
+ * Images link, and the details dialog pulls POST /api/ai/image-facts and saves
+ * through the same account history.
  */
 
 const historyRows: ImageHistoryRow[] = [];
 /** When set, POST /api/ai/figure resolves with this instead of throwing. */
 let figureReply: unknown;
+/** When set, GET /api/ai/image-search resolves with this instead of throwing. */
+let searchReply: unknown;
+/** When set, POST /api/ai/image-facts resolves with this instead of throwing. */
+let factsReply: unknown;
 
 vi.mock("@/lib/api-client", () => ({
   apiFetch: vi.fn(async (path: string, init?: RequestInit) => {
@@ -44,6 +54,9 @@ vi.mock("@/lib/api-client", () => ({
       }
     }
     if (path === "/api/ai/figure" && figureReply !== undefined) return figureReply;
+    if (path.startsWith("/api/ai/image-search") && searchReply !== undefined)
+      return searchReply;
+    if (path === "/api/ai/image-facts" && factsReply !== undefined) return factsReply;
     throw new Error("503 engines down");
   }),
 }));
@@ -92,6 +105,8 @@ beforeEach(() => {
   sessionStorage.clear();
   historyRows.length = 0;
   figureReply = undefined;
+  searchReply = undefined;
+  factsReply = undefined;
   mockedApiFetch.mockClear();
   mockedPuter.mockClear();
 });
@@ -297,5 +312,186 @@ describe("ImageHub", () => {
 
     expect(promptBox().value).toBe("never drawn");
     expect(screen.getByText(/no images yet/i)).not.toBeNull();
+  });
+});
+
+/** The Google-mode search box (its placeholder differs from the draw modes). */
+function googleBox(): HTMLTextAreaElement {
+  return screen.getByPlaceholderText(/what should google find/i) as HTMLTextAreaElement;
+}
+
+const GOOGLE_RESULTS = {
+  configured: true,
+  results: [
+    {
+      url: "https://img.example/heart-full.png",
+      page: "https://anatomy.example/heart",
+      host: "anatomy.example",
+      title: "Labelled human heart — anterior view",
+      snippet: "The four chambers and the great vessels, labelled.",
+      width: 1200,
+      height: 900,
+      thumb: "https://thumb.example/heart.png",
+    },
+    {
+      url: "https://img.example/heart-section.png",
+      page: "",
+      host: "",
+      title: "Heart cross-section",
+      snippet: "",
+      width: 0,
+      height: 0,
+    },
+  ],
+};
+
+function searchPath(): string | null {
+  const call = mockedApiFetch.mock.calls.find(
+    ([path]) => typeof path === "string" && path.startsWith("/api/ai/image-search"),
+  );
+  return call ? String(call[0]) : null;
+}
+
+function factsCalls(): number {
+  return mockedApiFetch.mock.calls.filter(
+    ([path, init]) =>
+      path === "/api/ai/image-facts" &&
+      (init?.method ?? "GET").toUpperCase() === "POST",
+  ).length;
+}
+
+/** Switches to Google mode, types `query` and submits the search. */
+async function runGoogleSearch(query: string): Promise<void> {
+  fireEvent.click(screen.getByRole("button", { name: "Google" }));
+  fireEvent.change(googleBox(), { target: { value: query } });
+  fireEvent.click(screen.getByRole("button", { name: /search google/i }));
+  await waitFor(
+    () => {
+      expect(screen.getByText(/google results/i)).not.toBeNull();
+    },
+    { timeout: 4000 },
+  );
+}
+
+describe("ImageHub — direct Google presenting", () => {
+  it("presents Google results without touching any draw engine", async () => {
+    searchReply = GOOGLE_RESULTS;
+    render(<ImageHub />);
+
+    await runGoogleSearch("labelled diagram of the human heart");
+
+    // The query went to the search route, encoded — never to a draw engine.
+    expect(searchPath()).toContain("q=labelled%20diagram%20of%20the%20human%20heart");
+    expect(drawCalls()).toBe(0);
+    expect(mockedPuter).not.toHaveBeenCalled();
+
+    // Both results are presented with their titles and a source credit.
+    expect(screen.getByText("Labelled human heart — anterior view")).not.toBeNull();
+    expect(screen.getByText("Heart cross-section")).not.toBeNull();
+    expect(screen.getByText("anatomy.example")).not.toBeNull();
+    // The grid previews Google's thumbnail and falls back to the full size.
+    const img = screen.getByAltText("Labelled human heart — anterior view") as HTMLImageElement;
+    expect(img.getAttribute("src")).toBe("https://thumb.example/heart.png");
+    // The search box clears; the history is untouched (results are not saves).
+    expect(googleBox().value).toBe("");
+    expect(historyCalls("POST")).toBe(0);
+    expect(screen.getAllByRole("button", { name: "Details" })).toHaveLength(2);
+  });
+
+  it("offers the direct Google Images link when the backend has no key", async () => {
+    searchReply = { configured: false, results: [] };
+    render(<ImageHub />);
+
+    fireEvent.click(screen.getByRole("button", { name: "Google" }));
+    fireEvent.change(googleBox(), { target: { value: "ray diagram convex lens" } });
+    fireEvent.click(screen.getByRole("button", { name: /search google/i }));
+
+    await waitFor(
+      () => {
+        expect(screen.getByText(/configured on this server/i)).not.toBeNull();
+      },
+      { timeout: 4000 },
+    );
+
+    // Honest fallback: the real Google Images link for the exact query…
+    const link = screen.getByRole("link", {
+      name: /open “ray diagram convex lens” in google images/i,
+    });
+    expect(link.getAttribute("href")).toBe(
+      "https://www.google.com/search?tbm=isch&q=ray%20diagram%20convex%20lens",
+    );
+    // …instead of an empty grid pretending Google found nothing.
+    expect(screen.queryByText(/google results/i)).toBeNull();
+    expect(historyCalls("POST")).toBe(0);
+  });
+
+  it("opens the details interface with Google metadata and Veer facts", async () => {
+    searchReply = GOOGLE_RESULTS;
+    factsReply = {
+      facts: [
+        "The human heart has four chambers: two atria and two ventricles.",
+        "The right ventricle pumps deoxygenated blood to the lungs.",
+      ],
+    };
+    render(<ImageHub />);
+
+    await runGoogleSearch("labelled diagram of the human heart");
+    fireEvent.click(screen.getAllByRole("button", { name: "Details" })[0]);
+
+    const dialog = await screen.findByRole("dialog");
+    expect(dialog.getAttribute("aria-label")).toBe(
+      "Image details: Labelled human heart — anterior view",
+    );
+
+    // Every metadata field Google gave us, honestly labelled.
+    expect(within(dialog).getByText("anatomy.example")).not.toBeNull();
+    expect(screen.getByText("1200 × 900 px")).not.toBeNull();
+    expect(
+      screen.getByText("The four chambers and the great vessels, labelled."),
+    ).not.toBeNull();
+    expect(screen.getByText("Found for")).not.toBeNull();
+
+    // The facts card resolves through POST /api/ai/image-facts — best-effort.
+    await waitFor(
+      () => {
+        expect(
+          screen.getByText(/the human heart has four chambers/i),
+        ).not.toBeNull();
+      },
+      { timeout: 4000 },
+    );
+    expect(screen.getByText(/official syllabus sources/i)).not.toBeNull();
+    expect(factsCalls()).toBe(1);
+    expect(drawCalls()).toBe(0);
+  });
+
+  it("saves a Google result into the account history from the details interface", async () => {
+    searchReply = GOOGLE_RESULTS;
+    factsReply = { facts: ["One syllabus fact."] };
+    render(<ImageHub />);
+
+    await runGoogleSearch("labelled diagram of the human heart");
+    fireEvent.click(screen.getAllByRole("button", { name: "Details" })[0]);
+    const dialog = await screen.findByRole("dialog");
+
+    fireEvent.click(
+      within(dialog).getByRole("button", { name: /save to my history/i }),
+    );
+
+    // The save is the same account-history POST every other picture uses…
+    await waitFor(() => {
+      expect(historyCalls("POST")).toBe(1);
+    });
+    expect(
+      within(dialog).getByRole("button", { name: /saved to history/i }),
+    ).not.toBeNull();
+
+    // …and the gallery shows the saved item once the dialog closes.
+    fireEvent.click(within(dialog).getByRole("button", { name: "Close details" }));
+    await waitFor(() => {
+      expect(screen.getByText("google · anatomy.example")).not.toBeNull();
+    });
+    // The saved result is a picture in the gallery, counted by the filter.
+    expect(screen.getByRole("button", { name: /pictures \(1\)/i })).not.toBeNull();
   });
 });

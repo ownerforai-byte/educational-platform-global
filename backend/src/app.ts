@@ -8,6 +8,8 @@ import aiRoutes from "./api/ai";
 import aiGuestRoutes from "./api/ai-guest";
 import aiImageRoutes from "./api/ai-image";
 import aiImageHistoryRoutes from "./api/ai-image-history";
+import aiImageSearchRoutes from "./api/ai-image-search";
+import aiImageFactsRoutes from "./api/ai-image-facts";
 import aiFigureRoutes from "./api/ai-figure";
 import aiGenerateRoutes from "./api/ai-generate";
 import aiEnhanceRoutes from "./api/ai-enhance";
@@ -102,6 +104,11 @@ export function createApp(): express.Express {
   // drawing endpoints — open to every signed-in student (owner request
   // 2026-10-04) — and its per-user saved-history API.
   app.use("/api/ai/image-history", aiImageHistoryRoutes);
+  // The details interface's two reads: Google image results (key-gated, on
+  // the ai-image tier because it burns the free CSE quota) and the Veer facts
+  // card (authenticated AI — unlimited by policy, like every other LLM route).
+  app.use("/api/ai/image-search", aiImageSearchRoutes);
+  app.use("/api/ai/image-facts", aiImageFactsRoutes);
   app.use("/api/ai/image", aiImageRoutes);
   // The vector academic-figure writer (every labelled part hoverable) shares
   // the same every-user boundary.

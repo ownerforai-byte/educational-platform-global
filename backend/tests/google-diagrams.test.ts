@@ -85,6 +85,29 @@ describe("parseGoogleImages — only real, image-typed, relevant results", () =>
     expect(parseGoogleImages({}, terms)).toEqual([]);
     expect(parseGoogleImages(null, terms)).toEqual([]);
   });
+
+  it("carries Google's description as the snippet for the details interface", () => {
+    const images = parseGoogleImages({ items: [item()] }, terms);
+    expect(images[0].snippet).toBe(
+      "Structure of a nephron for class 11 biology",
+    );
+  });
+
+  it("requireRelevance:false keeps well-formed results Google's own ranking returned", () => {
+    const offTarget = item({
+      title: "Kidney tubule cross-section",
+      snippet: "Plate for junior biology",
+      link: "https://school.example/plate.png",
+    });
+    // Default (chat reference path): dropped — no term match.
+    expect(parseGoogleImages({ items: [offTarget] }, terms)).toEqual([]);
+    // Direct presenting (hub search): kept — the query already matched it.
+    const images = parseGoogleImages({ items: [offTarget] }, terms, {
+      requireRelevance: false,
+    });
+    expect(images).toHaveLength(1);
+    expect(images[0].url).toBe("https://school.example/plate.png");
+  });
 });
 
 describe("helpers", () => {
