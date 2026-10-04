@@ -70,12 +70,11 @@ export async function getTopicManifest(
  * this unit/topic AND its JSON file actually exists — mirroring the client
  * workspace, which loads the manifest entry and then the file itself.
  *
- * When the primary manifest has no entry for the topic, the supplementary
- * `ravikishan/manifest.json` is checked exactly the way the client workspace
- * checks it (path contains the unit id, and the topic slug matches either the
- * entry's `data.topicSlug` or its filename). Class-12 notes live only in that
- * supplementary manifest, so without this the page rendered "Coming Soon"
- * above the very notes it was showing.
+ * The supplementary `ravikishan/manifest.json` is deliberately NOT counted.
+ * Its class-12 entries are generated stubs ("This topic covers the fundamental
+ * concepts of …", "Key definitions and theorems related to … should be
+ * memorized") whose payload files are not shipped, so treating them as notes
+ * hid the honest placeholder state above three filler lines.
  */
 export async function hasTopicManifestNotes(
   subjectSlug: string,
@@ -101,48 +100,7 @@ export async function hasTopicManifestNotes(
       }
     }
   }
-  return hasSupplementaryNote(unitId, topicSlug);
-}
-
-interface SupplementaryEntry {
-  path: string;
-  data?: { topicSlug?: string };
-}
-
-let supplementaryCache: SupplementaryEntry[] | null = null;
-
-/** Cached read of `ravikishan/manifest.json` (the inline class-11+12 export). */
-async function readSupplementaryManifest(): Promise<SupplementaryEntry[]> {
-  if (supplementaryCache) return supplementaryCache;
-  for (const root of DATA_ROOTS) {
-    try {
-      const raw = await readFile(join(root, "ravikishan", "manifest.json"), "utf-8");
-      const parsed: unknown = JSON.parse(raw);
-      supplementaryCache = Array.isArray(parsed) ? (parsed as SupplementaryEntry[]) : [];
-      return supplementaryCache;
-    } catch {
-      // try next candidate root
-    }
-  }
-  supplementaryCache = [];
-  return supplementaryCache;
-}
-
-/** Same match the client workspace uses for its supplementary source. */
-async function hasSupplementaryNote(
-  unitId: string,
-  topicSlug: string,
-): Promise<boolean> {
-  const entries = await readSupplementaryManifest();
-  return entries.some((entry) => {
-    if (!entry?.data) return false;
-    const parts = String(entry.path ?? "").split("/");
-    return (
-      parts.includes(unitId) &&
-      (entry.data.topicSlug === topicSlug ||
-        parts[parts.length - 1].includes(topicSlug))
-    );
-  });
+  return false;
 }
 
 /** Sync variant backed by a pre-warmed cache (build-time / RSC prefetch). */
