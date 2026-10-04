@@ -1,0 +1,89 @@
+{
+  "subject": "chemistry",
+  "unit": "physical-chemistry",
+  "titlePrefix": "NEB Class 11 Chemistry — Physical Chemistry",
+  "description": "Past year questions on Foundation & Fundamentals, Stoichiometry, Atomic Structure, Classification of Elements, Chemical Bonding, Oxidation-Reduction, States of Matter, Chemical Equilibrium",
+  "categories": [
+    {
+      "category": "stoichiometry",
+      "questions": [
+        {
+          "question": "What is the mole concept? Calculate the number of molecules in 36 g of water.",
+          "marks": 3,
+          "year": "2023",
+          "source": "NEB Past",
+          "solution": "**Mole:** The amount of substance containing as many particles as there are atoms in exactly 12 g of carbon-12. One mole = 6.022 × 10²³ particles (Avogadro's number).\n\nMoles of H₂O = 36/18 = 2 mol\nNumber of molecules = 2 × 6.022 × 10²³ = **1.204 × 10²⁴ molecules**",
+          "knowledgeNote": "Molar mass of water = 18 g/mol (H=1×2 + O=16). At STP, 1 mol gas = 22.4 L."
+        },
+        {
+          "question": "Calculate the empirical formula of a compound containing 40% carbon, 6.67% hydrogen, and 53.33% oxygen by mass.",
+          "marks": 3,
+          "year": "2022",
+          "source": "NEB Past",
+          "solution": "Assume 100 g of compound.\nC: 40/12 = 3.33 mol\nH: 6.67/1 = 6.67 mol\nO: 53.33/16 = 3.33 mol\n\nDivide by smallest (3.33):\nC = 1, H = 2, O = 1\n\nEmpirical formula = **CH₂O**",
+          "knowledgeNote": "Empirical formula gives simplest whole-number ratio. Molecular formula = n × empirical formula."
+        }
+      ]
+    },
+    {
+      "category": "atomic-structure",
+      "questions": [
+        {
+          "question": "Write the four quantum numbers for the valence electron of sodium (Z = 11).",
+          "marks": 3,
+          "year": "2024",
+          "source": "NEB Model",
+          "solution": "Electronic configuration of Na (Z=11): 1s² 2s² 2p⁶ **3s¹**\n\nThe valence electron (3s¹) has:\nn = 3, l = 0, m_l = 0, m_s = +½",
+          "knowledgeNote": "n = principal quantum number (shell), l = azimuthal (subshell: 0=s, 1=p, 2=d, 3=f), m_l = magnetic, m_s = spin (+½ or -½)."
+        },
+        {
+          "question": "Explain Aufbau's principle with an example.",
+          "marks": 3,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "**Aufbau's principle:** Electrons fill orbitals in order of increasing energy: 1s < 2s < 2p < 3s < 3p < 4s < 3d < 4p...\n\nExample: Calcium (Z=20): 1s² 2s² 2p⁶ 3s² 3p⁶ 4s² — electrons fill 4s before 3d because 4s has lower energy.",
+          "knowledgeNote": "Use the (n+l) rule: lower (n+l) means lower energy. If equal, lower n fills first."
+        }
+      ]
+    },
+    {
+      "category": "chemical-bonding",
+      "questions": [
+        {
+          "question": "Write the Lewis dot structure of CO₂. What is its molecular shape?",
+          "marks": 3,
+          "year": "2022",
+          "source": "NEB Model",
+          "solution": "Carbon (4 valence e⁻) forms double bonds with each oxygen (6 valence e⁻ each).\n\nLewis structure: O=C=O\n\nUsing VSEPR: 2 bonding pairs, 0 lone pairs on C → **Linear** geometry, bond angle 180°.",
+          "knowledgeNote": "CO₂ is linear and non-polar despite having polar C=O bonds due to symmetry."
+        }
+      ]
+    },
+    {
+      "category": "states-of-matter",
+      "questions": [
+        {
+          "question": "State Boyle's law and Charles's law. Derive the ideal gas equation.",
+          "marks": 3,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "**Boyle's law:** At constant T, PV = constant (P ∝ 1/V).\n**Charles's law:** At constant P, V/T = constant (V ∝ T).\n\nCombining: PV/T = constant = nR → **PV = nRT** (ideal gas equation)\nwhere R = 8.314 J/(mol·K) or 0.0821 L·atm/(mol·K).",
+          "knowledgeNote": "At STP (0°C, 1 atm), 1 mol ideal gas occupies 22.4 L."
+        }
+      ]
+    },
+    {
+      "category": "chemical-equilibrium",
+      "questions": [
+        {
+          "question": "State Le Chatelier's principle. Predict the effect of increasing pressure on: N₂(g) + 3H₂(g) ⇌ 2NH₃(g)",
+          "marks": 3,
+          "year": "2024",
+          "source": "NEB Model",
+          "solution": "**Le Chatelier's principle:** If a system at equilibrium is disturbed, it shifts to counteract the change.\n\nIncreasing pressure favors the side with fewer moles of gas.\nReactants: 1+3 = 4 moles; Products: 2 moles.\nEquilibrium shifts **towards NH₃ (right)** — Haber's process uses high pressure for this reason.",
+          "knowledgeNote": "If Δn = 0, pressure change has no effect on equilibrium position."
+        }
+      ]
+    }
+  ]
+}

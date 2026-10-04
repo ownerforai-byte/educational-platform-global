@@ -1,0 +1,50 @@
+{
+  "subject": "mathematics",
+  "unit": "trigonometry",
+  "titlePrefix": "NEB Class 11 Mathematics — Trigonometry",
+  "description": "Past year questions on Inverse Circular Functions and Trigonometric Equations",
+  "categories": [
+    {
+      "category": "inverse-circular-functions",
+      "questions": [
+        {
+          "question": "Find the principal value of sin⁻¹(-1/2).",
+          "marks": 2,
+          "year": "2024",
+          "source": "NEB Model",
+          "solution": "sin⁻¹(-1/2) = -π/6 (or -30°)\n\nPrincipal value range of sin⁻¹ is [-π/2, π/2]. Since sin(-π/6) = -1/2, the answer is -π/6.",
+          "knowledgeNote": "sin⁻¹ range: [-π/2, π/2]; cos⁻¹ range: [0, π]; tan⁻¹ range: (-π/2, π/2)."
+        },
+        {
+          "question": "Find cos⁻¹(√3/2) + sin⁻¹(1/2).",
+          "marks": 2,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "cos⁻¹(√3/2) = π/6\ncos⁻¹(1/2) = π/3\nπ/6 + π/3 = **π/2**",
+          "knowledgeNote": "sin⁻¹(x) + cos⁻¹(x) = π/2 for all x ∈ [-1,1]. This identity is very useful."
+        }
+      ]
+    },
+    {
+      "category": "trigonometric-equations",
+      "questions": [
+        {
+          "question": "Solve: 2sin²θ - sin θ - 1 = 0 for 0 ≤ θ ≤ 2π",
+          "marks": 4,
+          "year": "2023",
+          "source": "NEB Past",
+          "solution": "2sin²θ - sin θ - 1 = 0\n(2sin θ + 1)(sin θ - 1) = 0\n\nCase 1: sin θ = -1/2 → θ = 7π/6, 11π/6\nCase 2: sin θ = 1 → θ = π/2\n\n**Solutions: θ = π/2, 7π/6, 11π/6**",
+          "knowledgeNote": "General solution: sin θ = sin α → θ = nπ + (-1)ⁿα. For specific intervals, check all valid n."
+        },
+        {
+          "question": "Solve: cos 2θ = cos θ",
+          "marks": 4,
+          "year": "2022",
+          "source": "NEB Past",
+          "solution": "cos 2θ = cos θ\n2cos²θ - 1 = cos θ\n2cos²θ - cos θ - 1 = 0\n(2cos θ + 1)(cos θ - 1) = 0\n\nCase 1: cos θ = 1 → θ = 0, 2π\nCase 2: cos θ = -1/2 → θ = 2π/3, 4π/3\n\n**Solutions: θ = 0, 2π/3, 4π/3, 2π**",
+          "knowledgeNote": "cos 2θ = 2cos²θ - 1 = 1 - 2sin²θ = cos²θ - sin²θ"
+        }
+      ]
+    }
+  ]
+}

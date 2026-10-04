@@ -1,0 +1,50 @@
+{
+  "subject": "biology",
+  "unit": "diversity-of-life",
+  "titlePrefix": "NEB Class 11 Biology — Diversity of Life",
+  "description": "Past year questions on Floral Diversity and Faunal Diversity",
+  "categories": [
+    {
+      "category": "floral-diversity",
+      "questions": [
+        {
+          "question": "Classify the five kingdoms of living organisms. Give one characteristic feature of each.",
+          "marks": 5,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "1. **Monera** — Prokaryotic, unicellular (bacteria)\n2. **Protista** — Eukaryotic, mostly unicellular (amoebozoa, algae)\n3. **Fungi** — Eukaryotic, heterotrophic, chitin cell wall (mushrooms, yeast)\n4. **Plantae** — Eukaryotic, autotrophic, cellulose cell wall (mosses, ferns, angiosperms)\n5. **Animalia** — Eukaryotic, heterotrophic, no cell wall (sponges to mammals)",
+          "knowledgeNote": "Five-kingdom system by Whittaker (1969). Viruses are not included — acellular."
+        },
+        {
+          "question": "Describe the general characteristics of the phylum Bryophyta. Give two economic importance.",
+          "marks": 3,
+          "year": "2022",
+          "source": "NEB Past",
+          "solution": "**Characteristics:**\n- Small, non-vascular plants (no true roots, stems, leaves)\n- Dominant gametophyte generation\n- Require water for fertilization\n- Thalloid or leafy body\n- Examples: Marchantia, Funaria\n\n**Economic importance:**\n1. Peat moss (Sphagnum) — fuel, packing material\n2. Used as ornamental plants; some used in traditional medicine",
+          "knowledgeNote": "Bryophytes are 'amphibians of plant kingdom' — need water for reproduction."
+        }
+      ]
+    },
+    {
+      "category": "faunal-diversity",
+      "questions": [
+        {
+          "question": "Write the diagnostic features of the phylum Arthropoda. Give one example.",
+          "marks": 3,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "**Phylum Arthropoda** (largest animal phylum):\n1. Jointed appendages\n2. Chitinous exoskeleton\n3. Segmental body (head, thorax, abdomen)\n4. Open circulatory system\n5. Tracheal/gill respiration\n6. Well-developed sense organs\n\nExample: Periplaneta (cockroach), Palaemon (prawn), Limulus (king crab)",
+          "knowledgeNote": "Arthropoda includes insects (75% of known species), arachnids, crustaceans, myriapods."
+        },
+        {
+          "question": "Describe the respiratory system of frog.",
+          "marks": 5,
+          "year": "2022",
+          "source": "NEB Past",
+          "solution": "**Frog respiration is multiple:**\n\n1. **Cutaneous** (skin) — moist skin allows gas exchange underwater; important in hibernation.\n2. ** Buccal** (mouth cavity) — rhythmic pumping moves air.\n3. **Pulmonary** (lungs) — simple sacs with internal folds; primary mode on land.\n\n**Mechanism:** Frog breathes by positive pressure ventilation — fills mouth with air, closes nostrils, pushes air into lungs via buccal pumping.",
+          "knowledgeNote": "Frog skin is permeable to water and gases. Tadpoles breathe via gills."
+        }
+      ]
+    }
+  ]
+}

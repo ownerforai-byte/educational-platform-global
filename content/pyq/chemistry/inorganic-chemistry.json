@@ -1,0 +1,55 @@
+{
+  "subject": "chemistry",
+  "unit": "inorganic-chemistry",
+  "titlePrefix": "NEB Class 11 Chemistry — Inorganic Chemistry",
+  "description": "Past year questions on Chemistry of Non-metals, Chemistry of Metals, Bio-inorganic Chemistry, Classification of Elements",
+  "categories": [
+    {
+      "category": "chemistry-of-non-metals",
+      "questions": [
+        {
+          "question": "Why is helium used in diving equipment instead of nitrogen?",
+          "marks": 2,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "Helium is less soluble in blood than nitrogen. Under high pressure, nitrogen dissolves in blood causing 'the bends' (decompression sickness). Helium's low solubility prevents this — divers use helium-oxygen mixtures.",
+          "knowledgeNote": "Helium is also used in deep-sea diving because it doesn't cause nitrogen narcosis."
+        },
+        {
+          "question": "Write the structure and properties of ozone (O₃).",
+          "marks": 3,
+          "year": "2022",
+          "source": "NEB Past",
+          "solution": "**Structure:** Bent molecule, bond angle 116.8°, bond length 128 pm. Resonance between two structures: O=O-O ↔ O-O=O.\n\n**Properties:**\n- Strong oxidizing agent\n- Bleaches organic dyes\n- Used in water purification\n- Dissipates in sunlight: 2O₃ → 3O₂",
+          "knowledgeNote": "Ozone layer absorbs harmful UV radiation. CFCs destroy ozone: CFCl₃ + UV → Cl· + ...; Cl· + O₃ → ClO· + O₂"
+        }
+      ]
+    },
+    {
+      "category": "chemistry-of-metals",
+      "questions": [
+        {
+          "question": "Explain Down's process for the extraction of sodium.",
+          "marks": 5,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "**Down's process:** Electrolysis of molten NaCl (with CaCl₂ added to lower melting point from 801°C to ~600°C).\n\n- Anode (graphite): 2Cl⁻ → Cl₂↑ + 2e⁻\n- Cathode (iron): Na⁺ + e⁻ → Na↓\n- Na metal collects under a steel bell\n- CaCl₂ addition lowers melting point and increases conductivity",
+          "knowledgeNote": "Sodium cannot be extracted from aqueous solution because Na⁺ is harder to reduce than H₂O."
+        }
+      ]
+    },
+    {
+      "category": "classification-of-elements",
+      "questions": [
+        {
+          "question": "What is the modern periodic law? Explain how it improved on Mendeleev's periodic law.",
+          "marks": 3,
+          "year": "2022",
+          "source": "NEB Model",
+          "solution": "**Modern periodic law:** Properties of elements are periodic functions of their **atomic numbers**.\n\nImprovements over Mendeleev's law:\n1. Fixed anomalous pairs (Co/Ni, Ar/K) — resolved by atomic number order.\n2. Predicted no new elements in gaps — all 118 elements discovered.\n3. Explained position of noble gases without arbitrary placement.",
+          "knowledgeNote": "Mendeleev used atomic mass; Moseley used atomic number (1913)."
+        }
+      ]
+    }
+  ]
+}

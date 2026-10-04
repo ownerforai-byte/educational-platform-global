@@ -1,0 +1,42 @@
+{
+  "subject": "biology",
+  "unit": "cell-biology",
+  "titlePrefix": "NEB Class 11 Biology — Cell Biology",
+  "description": "Past year questions on Introduction to Biology, Biomolecules, Introductory Microbiology",
+  "categories": [
+    {
+      "category": "biomolecules",
+      "questions": [
+        {
+          "question": "What are the main classes of biomolecules? Give one function each.",
+          "marks": 3,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "**Carbohydrates:** Energy source (glucose, starch)\n**Proteins:** Enzymes and structural components (hemoglobin, collagen)\n**Lipids:** Energy storage and membrane structure (fats, phospholipids)\n**Nucleic acids:** Genetic information (DNA, RNA)",
+          "knowledgeNote": "Biomolecules are essential for life. Carbohydrates = (CH₂O)n; Proteins = polymers of amino acids."
+        },
+        {
+          "question": "Describe the structure of a nucleotide and explain its role in DNA.",
+          "marks": 3,
+          "year": "2022",
+          "source": "NEB Model",
+          "solution": "A **nucleotide** consists of: (1) a pentose sugar (deoxyribose in DNA, ribose in RNA), (2) a nitrogenous base (A,T,G,C in DNA), (3) a phosphate group.\n\nIn DNA, nucleotides form a double helix via complementary base pairing (A-T, G-C) connected by hydrogen bonds.",
+          "knowledgeNote": "DNA = deoxyribonucleic acid; RNA = ribonucleic acid. DNA stores genetic info; RNA transfers it."
+        }
+      ]
+    },
+    {
+      "category": "introductory-microbiology",
+      "questions": [
+        {
+          "question": "What are the characteristic features of bacteria? Give one example each of beneficial and harmful bacteria.",
+          "marks": 3,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "**Bacteria (Kingdom Monera):** Prokaryotic, unicellular, no nucleus, cell wall present (peptidoglycan), reproduce by binary fission.\n\n- Beneficial: *Rhizobium* (nitrogen fixation), *Lactobacillus* (yogurt production)\n- Harmful: *Mycobacterium tuberculosis* (TB), *Salmonella typhi* (typhoid)",
+          "knowledgeNote": "Bacteria are classified by shape: cocci (spherical), bacilli (rod-shaped), spirilla (spiral)."
+        }
+      ]
+    }
+  ]
+}

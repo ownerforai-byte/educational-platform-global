@@ -1,0 +1,34 @@
+{
+  "subject": "chemistry",
+  "unit": "applied-chemistry",
+  "titlePrefix": "NEB Class 11 Chemistry — Applied Chemistry",
+  "description": "Past year questions on Applied Chemistry, Modern Chemical Manufactures",
+  "categories": [
+    {
+      "category": "hber-process",
+      "questions": [
+        {
+          "question": "Describe the Haber process for ammonia manufacture. Why is high pressure used?",
+          "marks": 5,
+          "year": "2024",
+          "source": "NEB Model",
+          "solution": "**Haber process:** N₂ + 3H₂ ⇌ 2NH₃ + heat\n\n**Conditions:**\n- Temperature: 450-500°C (compromise)\n- Pressure: 200 atm (high pressure favors NH₃)\n- Catalyst: Fe with Mo promoter\n- Unreacted gases recycled\n\n**Why high pressure?**\nReactants: 4 moles gas → Products: 2 moles gas.\nLe Chatelier: increased pressure shifts equilibrium to fewer moles (right → NH₃).\nAlso increases reaction rate.",
+          "knowledgeNote": "Ammonia is a precursor for fertilizers (NH₄NO₃, (NH₄)₂SO₄), explosives, and plastics."
+        }
+      ]
+    },
+    {
+      "category": "contact-process",
+      "questions": [
+        {
+          "question": "What is the Contact process? Write the key reactions and conditions.",
+          "marks": 4,
+          "year": "2022",
+          "source": "NEB Model",
+          "solution": "**Contact process:** Manufacturing sulfuric acid (H₂SO₄).\n\n**Reactions:**\n1. S + O₂ → SO₂\n2. 2SO₂ + O₂ ⇌ 2SO₃ (V₂O₅ catalyst, 450°C, 1-2 atm)\n3. SO₃ + H₂SO₄ → H₂S₂O₇ (oleum)\n4. H₂S₂O₇ + H₂O → 2H₂SO₄\n\n**Conditions:**\n- V₂O₅ catalyst, 450°C, excess O₂\n- SO₃ absorbed in H₂SO₄ (not directly in water — creates mist)",
+          "knowledgeNote": "Sulfuric acid is the most important industrial chemical — used in fertilizers, batteries, petroleum refining."
+        }
+      ]
+    }
+  ]
+}

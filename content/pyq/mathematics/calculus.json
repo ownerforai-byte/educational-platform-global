@@ -1,0 +1,134 @@
+{
+  "subject": "mathematics",
+  "unit": "calculus",
+  "titlePrefix": "NEB Class 11 Mathematics — Calculus",
+  "description": "Past year questions on Limits, Continuity, Differentiation, Integration. Also fills empty practice/questions/examples fields.",
+  "categories": [
+    {
+      "category": "limits",
+      "questions": [
+        {
+          "question": "Evaluate: lim(x→0) (sin 3x)/x",
+          "marks": 2,
+          "year": "2024",
+          "source": "NEB Model",
+          "solution": "Using standard limit: lim(x→0) (sin x)/x = 1\n\nlim(x→0) (sin 3x)/x = lim(x→0) [3·(sin 3x)/(3x)] = 3 × 1 = **3**",
+          "knowledgeNote": "Standard limits: lim(x→0) sin(ax)/x = a; lim(x→0) (1-cos x)/x² = 1/2; lim(x→0) tan x/x = 1"
+        },
+        {
+          "question": "Find lim(x→2) (x²-4)/(x-2)",
+          "marks": 2,
+          "year": "2023",
+          "source": "NEB Past",
+          "solution": " lim(x→2) (x²-4)/(x-2) = lim(x→2) (x+2)(x-2)/(x-2) = lim(x→2) (x+2) = **4**",
+          "knowledgeNote": "This is a 0/0 indeterminate form. Factorize and cancel common factors."
+        }
+      ],
+      "practice": [
+        "Evaluate: lim(x→0) (√(1+x)-1)/x — Answer: 1/2 (multiply by conjugate)",
+        "Evaluate: lim(x→∞) (3x²+2x+1)/(2x²-x+3) — Answer: 3/2 (divide by highest power)",
+        "Evaluate: lim(x→0) (1-cos 2x)/x² — Answer: 2"
+      ],
+      "examples": [
+        "lim(x→0) sin(5x)/x = 5 — using sin(ax)/x = a",
+        "lim(x→0) (e^x-1)/x = 1 — exponential limit"
+      ],
+      "practiceQuestions": [
+        "Evaluate: lim(x→0) (tan x)/x",
+        "Evaluate: lim(x→∞) (5x³+2x)/(3x³-x²+1)",
+        "Evaluate: lim(x→1) (x³-1)/(x-1)"
+      ]
+    },
+    {
+      "category": "differentiation",
+      "questions": [
+        {
+          "question": "Find dy/dx if y = x³ + 2x² - 5x + 3",
+          "marks": 2,
+          "year": "2024",
+          "source": "NEB Model",
+          "solution": "dy/dx = 3x² + 4x - 5\n\nUsing power rule: d/dx(x^n) = nx^(n-1)",
+          "knowledgeNote": "Sum rule: d/dx(f+g) = f'+g'. Constant rule: d/dx(c) = 0."
+        },
+        {
+          "question": "Find the derivative of y = sin x · cos x using product rule.",
+          "marks": 3,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "Using product rule: (uv)' = u'v + uv'\nu = sin x, v = cos x\nu' = cos x, v' = -sin x\n\ndy/dx = cos x · cos x + sin x · (-sin x) = cos²x - sin²x = **cos 2x**",
+          "knowledgeNote": "Note: sin x cos x = ½sin 2x, so dy/dx = cos 2x directly."
+        },
+        {
+          "question": "Find dy/dx for y = ln(sin x).",
+          "marks": 3,
+          "year": "2022",
+          "source": "NEB Past",
+          "solution": "Using chain rule: d/dx[ln(u)] = (1/u)·du/dx\n\nHere u = sin x, du/dx = cos x\n\ndy/dx = (1/sin x) · cos x = **cot x**",
+          "knowledgeNote": "Chain rule: d/dx[f(g(x))] = f'(g(x)) · g'(x)"
+        }
+      ],
+      "practice": [
+        "Find dy/dx if y = 3x⁴ - 2x³ + x - 7 — Answer: 12x³ - 6x² + 1",
+        "Find dy/dx if y = √x — Answer: 1/(2√x)",
+        "Find dy/dx if y = e^(2x) — Answer: 2e^(2x)"
+      ],
+      "examples": [
+        "d/dx(x³) = 3x² — power rule application",
+        "d/dx(sin x) = cos x — standard derivative"
+      ],
+      "practiceQuestions": [
+        "Find dy/dx if y = x⁵ - 3x³ + 2x",
+        "Find dy/dx if y = cos 3x",
+        "Find dy/dx if y = x² · e^x"
+      ]
+    },
+    {
+      "category": "integration",
+      "questions": [
+        {
+          "question": "Evaluate: ∫(3x² + 2x - 1) dx",
+          "marks": 3,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "∫(3x² + 2x - 1) dx = 3·(x³/3) + 2·(x²/2) - x + C\n= **x³ + x² - x + C**",
+          "knowledgeNote": "Integration is the reverse of differentiation. Don't forget +C (constant of integration)."
+        },
+        {
+          "question": "Evaluate: ∫₀¹ x² dx",
+          "marks": 2,
+          "year": "2022",
+          "source": "NEB Past",
+          "solution": "∫₀¹ x² dx = [x³/3]₀¹ = (1/3) - 0 = **1/3**",
+          "knowledgeNote": "Definite integral gives area under curve from a to b."
+        }
+      ],
+      "practice": [
+        "Evaluate: ∫(4x³) dx — Answer: x⁴ + C",
+        "Evaluate: ∫₀² 6x dx — Answer: 12",
+        "Evaluate: ∫sin x dx — Answer: -cos x + C"
+      ],
+      "examples": [
+        "∫x^n dx = x^(n+1)/(n+1) + C, n ≠ -1 — power rule for integration",
+        "∫e^x dx = e^x + C — exponential integral"
+      ],
+      "practiceQuestions": [
+        "Evaluate: ∫(2x + 3) dx",
+        "Evaluate: ∫₀^π sin x dx",
+        "Evaluate: ∫(1/x) dx"
+      ]
+    },
+    {
+      "category": "continuity",
+      "questions": [
+        {
+          "question": "What does it mean for a function to be continuous at x = a? Check if f(x) = x² is continuous at x = 1.",
+          "marks": 3,
+          "year": "2024",
+          "source": "NEB Model",
+          "solution": "**Continuous at x=a** if: (i) f(a) is defined, (ii) lim(x→a)f(x) exists, (iii) lim(x→a)f(x) = f(a).\n\nFor f(x) = x² at x=1:\nf(1) = 1 ✓\nlim(x→1)x² = 1 ✓\n1 = 1 ✓ → **continuous**",
+          "knowledgeNote": "Polynomials, sin x, cos x, e^x are continuous everywhere."
+        }
+      ]
+    }
+  ]
+}

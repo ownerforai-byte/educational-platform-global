@@ -1,0 +1,29 @@
+{
+  "subject": "biology",
+  "unit": "genetics-evolution",
+  "titlePrefix": "NEB Class 11 Biology — Genetics and Evolution",
+  "description": "Past year questions on Evolutionary Biology",
+  "categories": [
+    {
+      "category": "evolutionary-biology",
+      "questions": [
+        {
+          "question": "Explain Darwin's theory of natural selection with an example.",
+          "marks": 5,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "**Darwin's theory (1859):** Organisms produce more offspring than can survive. Individuals with favorable variations survive and reproduce (natural selection). Over generations, favorable traits become common.\n\n**Postulates:**\n1. Overproduction — more offspring produced\n2. Variation — individuals differ\n3. Struggle for existence — limited resources\n4. Survival of the fittest — better adapted survive\n5. Heredity — favorable traits passed on\n\n**Example:** Industrial melanism in moths — dark moths survived better in soot-covered trees during Industrial Revolution.",
+          "knowledgeNote": "Darwin called it 'descent with modification.' Modern synthesis combines Darwin with genetics."
+        },
+        {
+          "question": "What are the evidences of evolution? Explain with one example each from morphological and paleontological studies.",
+          "marks": 3,
+          "year": "2022",
+          "source": "NEB Past",
+          "solution": "**Morphological evidence:** Homologous structures — same basic plan, different functions. Example: Forelimbs of humans, whales, bats (all have same bone pattern but different uses).\n\n**Paleontological evidence:** Fossils in rock strata show progression from simple to complex. Example: Archaeopteryx (transitional fossil between reptiles and birds).",
+          "knowledgeNote": "Homologous = common ancestry; analogous = convergent evolution (similar function, different origin)."
+        }
+      ]
+    }
+  ]
+}

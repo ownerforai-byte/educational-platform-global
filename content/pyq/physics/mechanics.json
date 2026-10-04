@@ -1,0 +1,207 @@
+{
+  "subject": "physics",
+  "unit": "mechanics",
+  "titlePrefix": "NEB Class 11 Physics â€” Mechanics",
+  "description": "Past year questions and model questions on Mechanics: Physical Quantities, Vectors, Kinematics, Dynamics, Work-Energy-Power, Circular Motion, Gravitation, Elasticity",
+  "categories": [
+    {
+      "category": "physical-quantities",
+      "questions": [
+        {
+          "question": "What is the difference between accuracy and precision? Illustrate with an example.",
+          "marks": 2,
+          "year": "2024",
+          "source": "NEB Model",
+          "solution": "**Accuracy** = how close a measurement is to the true value; **Precision** = how close repeated measurements are to each other.\n\nExample: A dartboard â€” if all darts cluster near the bullseye, the throws are both accurate and precise. If they cluster far from the bullseye, they are precise but inaccurate. If they are scattered widely around the bullseye, they are accurate on average but not precise.",
+          "knowledgeNote": "Accuracy relates to systematic error; precision relates to random error. More measurements improve precision but not accuracy."
+        },
+        {
+          "question": "State the principle of homogeneity of dimensions. Check the dimensional consistency of the equation vÂ² = uÂ² + 2as.",
+          "marks": 3,
+          "year": "2023",
+          "source": "NEB Past",
+          "solution": "**Principle:** An equation is dimensionally consistent only if the dimensions of every term on the LHS match those on the RHS.\n\nvÂ² â†’ [L Tâ»Â²]Â² = [LÂ²Tâ»Â²]\nuÂ² â†’ [L Tâ»Â²]Â² = [LÂ²Tâ»Â²]\n2as â†’ [L Tâ»Â²][L] = [LÂ²Tâ»Â²]\n\nAll three terms have dimensions [LÂ²Tâ»Â²], so the equation is **dimensionally consistent**. âœ“",
+          "knowledgeNote": "Dimensional consistency is necessary but not sufficient for correctness. A dimensionally correct equation could still be numerically wrong."
+        },
+        {
+          "question": "How many seconds are there in a leap year (366 days)?",
+          "marks": 1,
+          "year": "2022",
+          "source": "NEB Past",
+          "solution": "1 leap year = 366 days = 366 Ã— 24 Ã— 60 Ã— 60 = **31,536,000 seconds** (â‰ˆ 3.154 Ã— 10â· s).",
+          "knowledgeNote": "Standard conversion used in physics: 1 year = Ï€ Ã— 10â· s (approximate, for order-of-magnitude)"
+        }
+      ]
+    },
+    {
+      "category": "vectors",
+      "questions": [
+        {
+          "question": "A vector A has magnitude 50 m and makes an angle of 37Â° with the positive x-axis. Find its rectangular components.",
+          "marks": 3,
+          "year": "2024",
+          "source": "NEB Model",
+          "solution": "Ax = A cos Î¸ = 50 Ã— cos 37Â° = 50 Ã— 0.7986 = **39.93 m**\nAy = A sin Î¸ = 50 Ã— sin 37Â° = 50 Ã— 0.6018 = **30.09 m**\n\nUsing standard values: cos 37Â° â‰ˆ 4/5, sin 37Â° â‰ˆ 3/5\nAx = 50 Ã— (4/5) = 40 m, Ay = 50 Ã— (3/5) = 30 m",
+          "knowledgeNote": "37Â° and 53Â° are standard angles in physics: cos 37Â° = 4/5, sin 37Â° = 3/5; cos 53Â° = 3/5, sin 53Â° = 4/5"
+        },
+        {
+          "question": "Define scalar product (dot product) and vector product (cross product) of two vectors. Give one example of each in physics.",
+          "marks": 3,
+          "year": "2023",
+          "source": "NEB Past",
+          "solution": "**Scalar (Dot) Product:** AÂ·B = |A||B|cos Î¸ â€” result is a scalar.\nExample: Work W = FÂ·d\n\n**Vector (Cross) Product:** AÃ—B = |A||B|sin Î¸ nÌ‚ (where nÌ‚ is perpendicular, right-hand rule) â€” result is a vector.\nExample: Torque Ï„ = rÃ—F",
+          "knowledgeNote": "Work is a dot product (scalar); torque and angular momentum are cross products (vectors)"
+        },
+        {
+          "question": "Two forces P and Q are acting at a point. The magnitude of P is 10 N and Q is 20 N. If the angle between them is 60Â°, find the magnitude and direction of the resultant.",
+          "marks": 5,
+          "year": "2021",
+          "source": "NEB Past",
+          "solution": "Magnitude: R = âˆš(PÂ² + QÂ² + 2PQ cos Î¸)\nR = âˆš(10Â² + 20Â² + 2Ã—10Ã—20Ã—cos 60Â°) = âˆš(100 + 400 + 200) = âˆš700 = **26.46 N**\n\nDirection: tan Î± = (Q sin Î¸)/(P + Q cos Î¸)\ntan Î± = (20 sin 60Â°)/(10 + 20 cos 60Â°) = (20Ã—0.866)/(10+10) = 17.32/20 = 0.866\nÎ± = **40.89Â°** from P.",
+          "knowledgeNote": "Resultant magnitude formula: RÂ² = PÂ² + QÂ² + 2PQ cos Î¸. This is the law of cosines applied to vector addition."
+        }
+      ]
+    },
+    {
+      "category": "kinematics",
+      "questions": [
+        {
+          "question": "Define position, velocity, and acceleration in kinematics.",
+          "marks": 2,
+          "year": "2024",
+          "source": "NEB Model",
+          "solution": "**Position:** Location of a particle relative to a reference frame (coordinate x, y, z).\n**Velocity:** Rate of change of position with time â€” v = dx/dt; SI unit m/s.\n**Acceleration:** Rate of change of velocity with time â€” a = dv/dt; SI unit m/sÂ².",
+          "knowledgeNote": "All three are vectors. Velocity is the first derivative of position; acceleration is the second derivative."
+        },
+        {
+          "question": "A stone is dropped from a height of 200 m. Calculate: (i) the time it takes to hit the ground, (ii) its velocity on impact. (g = 10 m/sÂ²)",
+          "marks": 3,
+          "year": "2023",
+          "source": "NEB Past",
+          "solution": "Given: u = 0, s = 200 m, g = 10 m/sÂ²\n\n(i) Using s = ut + Â½gtÂ²:\n200 = 0 + Â½(10)tÂ² â†’ tÂ² = 40 â†’ **t = 6.32 s**\n\n(ii) Using vÂ² = uÂ² + 2gs:\nvÂ² = 0 + 2(10)(200) = 4000 â†’ **v = 63.25 m/s**",
+          "knowledgeNote": "Time of fall from height h: t = âˆš(2h/g). Impact velocity: v = âˆš(2gh). These are independent of mass (Galileo's principle)"
+        },
+        {
+          "question": "A projectile is fired horizontally from a tower 80 m high with velocity 20 m/s. Find: (i) time of flight, (ii) horizontal range, (iii) velocity on striking the ground.",
+          "marks": 5,
+          "year": "2022",
+          "source": "NEB Past",
+          "solution": "(i) Vertical motion: h = Â½gtÂ² â†’ 80 = Â½(10)tÂ² â†’ tÂ² = 16 â†’ **t = 4 s**\n\n(ii) Horizontal range: R = u Ã— t = 20 Ã— 4 = **80 m**\n\n(iii) Vertical velocity at impact: vy = gt = 10 Ã— 4 = 40 m/s\nVelocity = âˆš(vxÂ² + vyÂ²) = âˆš(20Â² + 40Â²) = âˆš(400+1600) = âˆš2000 = **44.72 m/s** at angle tanâ»Â¹(40/20) = 63.4Â° below horizontal.",
+          "knowledgeNote": "Horizontal projectile: horizontal velocity is constant; vertical motion is free fall. Range = uâˆš(2h/g)"
+        }
+      ]
+    },
+    {
+      "category": "dynamics",
+      "questions": [
+        {
+          "question": "State Newton's three laws of motion. Give an example of each.",
+          "marks": 3,
+          "year": "2024",
+          "source": "NEB Model",
+          "solution": "**First Law (Inertia):** A body at rest stays at rest, and a body in motion continues in a straight line at constant velocity unless acted on by an external force. *Example: passengers in a bus lurch forward when brakes are applied.*\n\n**Second Law:** F = ma. *Example: a cricket ball accelerates when a bat applies force.*\n\n**Third Law:** For every action, there is an equal and opposite reaction. *Example: a rocket pushes gas downward and is propelled upward.*", "knowledgeNote": "The three laws hold in inertial frames only; the third implies momentum and force conservation."
+        },
+        {
+          "question": "A block of mass 5 kg rests on a horizontal plane. The coefficient of static friction is 0.4. What horizontal force is needed to start the block moving? (g = 10 m/sÂ²)",
+          "marks": 3,
+          "year": "2023",
+          "source": "NEB Past",
+          "solution": "Normal reaction R = mg = 5 Ã— 10 = 50 N\nLimiting friction fs = Î¼s Ã— R = 0.4 Ã— 50 = 20 N\n\n**Force needed = 20 N** â€” any horizontal force less than 20 N won't move the block.",
+          "knowledgeNote": "Maximum static friction fs = Î¼s Ã— R. Once motion starts, kinetic friction fk = Î¼k Ã— R (where Î¼k < Î¼s)"
+        }
+      ]
+    },
+    {
+      "category": "work-energy-power",
+      "questions": [
+        {
+          "question": "State and prove the work-energy theorem for a constant force.",
+          "marks": 5,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "**Work-energy theorem:** The work done by the net force on a body equals the change in its kinetic energy.\n\nProof: Let a constant force F act on a body of mass m, producing acceleration a. From vÂ² = uÂ² + 2as:\n  W = FÂ·s = (ma)s = m(aÂ·s)\nFrom vÂ² = uÂ² + 2as â†’ as = (vÂ²-uÂ²)/2\n  W = m(vÂ²-uÂ²)/2 = Â½mvÂ² - Â½muÂ² = Î”KE\n\nThus, work done = change in kinetic energy. Proved. âœ“",
+          "knowledgeNote": "Work-energy theorem applies to ALL forces (conservative and non-conservative). KE = Â½mvÂ²"
+        },
+        {
+          "question": "An electric motor has a power output of 2 kW. How much time will it take to lift a 500 kg mass through 20 m? (g = 10 m/sÂ²)",
+          "marks": 3,
+          "year": "2022",
+          "source": "NEB Past",
+          "solution": "Work done W = mgh = 500 Ã— 10 Ã— 20 = 100,000 J = 10âµ J\n\nPower P = W/t â†’ t = W/P = 10âµ/2000 = **50 seconds**",
+          "knowledgeNote": "Power = Work/Time. 1 W = 1 J/s. 1 HP = 746 W"
+        }
+      ]
+    },
+    {
+      "category": "circular-motion",
+      "questions": [
+        {
+          "question": "Define centripetal acceleration. Derive an expression for it.",
+          "marks": 5,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "**Centripetal acceleration** is the acceleration directed toward the center of a circular path. Derivation:\n\nConsider a particle moving in a circle of radius r with uniform speed v. In time Î”t, it moves through angle Î”Î¸.\nChange in velocity Î”v â‰ˆ v Î”Î¸ (for small Î”Î¸)\nAcceleration a = Î”v/Î”t = v(Î”Î¸/Î”t) = vÏ‰ = v(v/r) = **vÂ²/r**\n\nAlternatively: a = Ï‰Â²r where Ï‰ is angular velocity.",
+          "knowledgeNote": "Centripetal force F = mvÂ²/r = mÏ‰Â²r always directed toward center. Not a new forceâ€”just net force providing centripetal acceleration."
+        },
+        {
+          "question": "A car takes a turn of radius 50 m at a speed of 10 m/s. What is the angular velocity and centripetal acceleration?",
+          "marks": 3,
+          "year": "2022",
+          "source": "NEB Past",
+          "solution": "Angular velocity Ï‰ = v/r = 10/50 = **0.2 rad/s**\n\nCentripetal acceleration ac = vÂ²/r = 100/50 = **2 m/sÂ²**",
+          "knowledgeNote": "Ï‰ = v/r (rad/s). Period T = 2Ï€/Ï‰. Centripetal acceleration always points toward center."
+        }
+      ]
+    },
+    {
+      "category": "gravitation",
+      "questions": [
+        {
+          "question": "State Newton's law of gravitation. What is the gravitational constant G?",
+          "marks": 2,
+          "year": "2024",
+          "source": "NEB Model",
+          "solution": "**Newton's law of gravitation:** Every particle of matter attracts every other particle with a force directly proportional to the product of their masses and inversely proportional to the square of the distance between them: F = GMm/rÂ².\n\n**G (gravitational constant):** The constant of proportionality, G = 6.67 Ã— 10â»Â¹Â¹ NÂ·mÂ²/kgÂ². It is universal and applies everywhere in the universe.",
+          "knowledgeNote": "G is one of the least precisely known constants. Gravitational force is always attractive and acts along the line joining the particles."
+        },
+        {
+          "question": "What is escape velocity? Derive the expression for escape velocity of Earth. Hence calculate its value. (R = 6.4Ã—10â¶ m, g = 9.8 m/sÂ²)",
+          "marks": 5,
+          "year": "2023",
+          "source": "NEB Past",
+          "solution": "**Escape velocity** is the minimum velocity needed to escape a planet's gravitational field without further propulsion.\n\nThe work done to move a mass m from Earth's surface to infinity = GMm/R.\nThis work = Â½mvâ‚‘Â² (initial kinetic energy)\n\nSo: GMm/R = Â½mvâ‚‘Â² â†’ vâ‚‘ = âˆš(2GM/R)\nUsing g = GM/RÂ² â†’ vâ‚‘ = âˆš(2gR)\n\nvâ‚‘ = âˆš(2 Ã— 9.8 Ã— 6.4Ã—10â¶) = âˆš(1.254Ã—10â¸) = **11.2 km/s**",
+          "knowledgeNote": "Escape velocity is independent of the mass of the escaping object. Orbital velocity = âˆš(gR/2) = vâ‚‘/âˆš2. For Earth: vâ‚‘ â‰ˆ 11.2 km/s"
+        },
+        {
+          "question": "Find the gravitational potential energy of a satellite of mass 200 kg orbiting at a height of 400 km above Earth's surface. (R = 6.4Ã—10â¶ m, M = 6Ã—10Â²â´ kg, G = 6.67Ã—10â»Â¹Â¹)",
+          "marks": 3,
+          "year": "2021",
+          "source": "NEB Model",
+          "solution": "Orbital radius r = R + h = 6.4Ã—10â¶ + 4Ã—10âµ = 6.8Ã—10â¶ m\n\nGravitational potential energy U = -GMm/r\nU = -(6.67Ã—10â»Â¹Â¹ Ã— 6Ã—10Â²â´ Ã— 200)/(6.8Ã—10â¶)\nU = -(8.0Ã—10Â¹â¶)/(6.8Ã—10â¶) = **-1.18 Ã— 10Â¹â° J**\n\n(Negative sign indicates the satellite is bound to Earth.)",
+          "knowledgeNote": "Gravitational PE = -GMm/r. Zero PE is defined at infinity. Total energy = KE + PE = -GMm/2r for circular orbit."
+        }
+      ]
+    },
+    {
+      "category": "elasticity",
+      "questions": [
+        {
+          "question": "Define stress, strain, and Young's modulus. What are their SI units?",
+          "marks": 3,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "**Stress:** Force per unit area (F/A). SI unit: **Pascal (Pa)** = N/mÂ².\n**Strain:** Fractional change in dimension (Î”L/L). SI unit: **dimensionless**.\n**Young's modulus:** Ratio of stress to strain (Y = stress/strain). SI unit: **Pascal (Pa)**.",
+          "knowledgeNote": "Three elastic moduli: Young's modulus (tensile), Shear modulus (rigidity), Bulk modulus (compressibility). Steel has Y â‰ˆ 2Ã—10Â¹Â¹ Pa"
+        },
+        {
+          "question": "A steel wire of cross-sectional area 2 mmÂ² is stretched by 100 N force. Calculate the stress. If Young's modulus for steel is 2Ã—10Â¹Â¹ Pa, what is the strain?",
+          "marks": 3,
+          "year": "2022",
+          "source": "NEB Past",
+          "solution": "Stress = F/A = 100 N / (2 Ã— 10â»â¶ mÂ²) = **5 Ã— 10â· Pa**\n\nStrain = Stress / Y = (5 Ã— 10â·) / (2 Ã— 10Â¹Â¹) = **2.5 Ã— 10â»â´**",
+          "knowledgeNote": "Elastic limit of steel â‰ˆ 10â¸ Pa. Hooke's law: stress âˆ strain up to elastic limit."
+        }
+      ]
+    }
+  ]
+}

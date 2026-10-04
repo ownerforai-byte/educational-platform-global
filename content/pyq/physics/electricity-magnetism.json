@@ -1,0 +1,60 @@
+{
+  "subject": "physics",
+  "unit": "electricity-magnetism",
+  "titlePrefix": "NEB Class 11 Physics — Electricity and Magnetism",
+  "description": "Past year questions on Electric Charges, Electric Field, Potential, Capacitor, DC Circuits",
+  "categories": [
+    {
+      "category": "electric-charges",
+      "questions": [
+        {
+          "question": "State Coulomb's law. Calculate the force between two charges of 2 μC and 3 μC placed 0.1 m apart in air.",
+          "marks": 3,
+          "year": "2024",
+          "source": "NEB Model",
+          "solution": "**Coulomb's law:** F = kq₁q₂/r² where k = 1/(4πε₀) = 9×10⁹ N·m²/C²\n\nF = (9×10⁹ × 2×10⁻⁶ × 3×10⁻⁶)/(0.1)²\nF = (9×10⁹ × 6×10⁻¹²)/0.01 = 54×10⁻³/0.01 = **5.4 N** (repulsive)",
+          "knowledgeNote": "Coulomb's law: inverse square law. Force is along the line joining the charges."
+        }
+      ]
+    },
+    {
+      "category": "electric-field",
+      "questions": [
+        {
+          "question": "State Gauss's law. Use it to find the electric field due to an infinite plane sheet of charge.",
+          "marks": 5,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "**Gauss's law:** Total electric flux through a closed surface = q_enclosed/ε₀.\n\nFor infinite plane with surface charge σ: Use a cylindrical Gaussian pillbox.\nFlux = E×A (both sides) = σA/ε₀\n→ **E = σ/(2ε₀)** — uniform field independent of distance from sheet.",
+          "knowledgeNote": "Electric field due to infinite plane sheet is uniform and perpendicular to the sheet."
+        }
+      ]
+    },
+    {
+      "category": "capacitor",
+      "questions": [
+        {
+          "question": "Define capacitance. Derive the capacitance of a parallel plate capacitor.",
+          "marks": 5,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "**Capacitance:** C = Q/V — ability to store charge per unit voltage. SI unit: Farad (F).\n\n**Parallel plate capacitor:** Two plates of area A separated by distance d.\nE = σ/ε₀ = Q/(Aε₀)\nV = Ed = Qd/(Aε₀)\nC = Q/V = Q/(Qd/Aε₀) = **ε₀A/d**\n\nWith dielectric (εᵣ): C = εᵣε₀A/d",
+          "knowledgeNote": "1 F is very large. Typical capacitors: pF to mF range. Parallel plate: C = ε₀A/d"
+        }
+      ]
+    },
+    {
+      "category": "dc-circuits",
+      "questions": [
+        {
+          "question": "State Kirchhoff's laws. Use them to solve for current in a simple circuit.",
+          "marks": 5,
+          "year": "2022",
+          "source": "NEB Past",
+          "solution": "**Kirchhoff's Current Law (KCL):** Sum of currents at a junction = 0 (conservation of charge).\n**Kirchhoff's Voltage Law (KVL):** Sum of emfs in a loop = sum of potential drops (conservation of energy).\n\nExample: Two cells (E₁=2V, E₂=3V) in series with R=5Ω and r₁=r₂=1Ω:\nTotal E = 5V, total R = 7Ω → I = 5/7 = **0.71 A**",
+          "knowledgeNote": "KCL is based on charge conservation; KVL on energy conservation."
+        }
+      ]
+    }
+  ]
+}

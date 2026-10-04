@@ -1,0 +1,55 @@
+{
+  "subject": "mathematics",
+  "unit": "algebra",
+  "titlePrefix": "NEB Class 11 Mathematics — Algebra",
+  "description": "Past year questions on Logic and Sets, Real Numbers, Functions, Matrices, Quadratic Equations",
+  "categories": [
+    {
+      "category": "logic-and-sets",
+      "questions": [
+        {
+          "question": "If A = {1, 2, 3} and B = {2, 3, 4}, find A ∪ B, A ∩ B, and A - B.",
+          "marks": 3,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "A = {1, 2, 3}\nB = {2, 3, 4}\n\nA ∪ B = {1, 2, 3, 4}\nA ∩ B = {2, 3}\nA - B = {1}",
+          "knowledgeNote": "Union = all elements in either set. Intersection = elements common to both. A-B = elements in A but not B."
+        },
+        {
+          "question": "Prove: A ∪ (B ∩ C) = (A ∪ B) ∩ (A ∪ C) (distributive law of sets).",
+          "marks": 3,
+          "year": "2022",
+          "source": "NEB Model",
+          "solution": "LHS: x ∈ A ∪ (B ∩ C)\n⇔ x ∈ A or (x ∈ B and x ∈ C)\n\nRHS: x ∈ (A ∪ B) ∩ (A ∪ C)\n⇔ (x ∈ A or x ∈ B) and (x ∈ A or x ∈ C)\n\nUsing distributive law of logic: P or (Q and R) = (P or Q) and (P or R)\n∴ LHS = RHS. Proved.",
+          "knowledgeNote": "De Morgan's laws: (A∪B)' = A'∩B' and (A∩B)' = A'∪B'"
+        }
+      ]
+    },
+    {
+      "category": "matrices",
+      "questions": [
+        {
+          "question": "If A = [[2,1],[3,4]], find det(A) and A⁻¹.",
+          "marks": 3,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "det(A) = (2)(4) - (1)(3) = 8 - 3 = **5**\n\nA⁻¹ = (1/det A) · adj(A)\nadj(A) = [[4,-1],[-3,2]]\n\nA⁻¹ = (1/5)·[[4,-1],[-3,2]] = [[4/5,-1/5],[-3/5,2/5]]",
+          "knowledgeNote": "A·A⁻¹ = I (identity matrix). Inverse exists only if det ≠ 0."
+        }
+      ]
+    },
+    {
+      "category": "quadratic-equations",
+      "questions": [
+        {
+          "question": "Solve: x² - 5x + 6 = 0",
+          "marks": 2,
+          "year": "2024",
+          "source": "NEB Model",
+          "solution": "x² - 5x + 6 = 0\n(x-2)(x-3) = 0\n\n**x = 2 or x = 3**\n\nUsing quadratic formula: x = (5 ± √(25-24))/2 = (5±1)/2",
+          "knowledgeNote": "Discriminant D = b²-4ac. D > 0 → two real roots; D = 0 → equal roots; D < 0 → complex roots."
+        }
+      ]
+    }
+  ]
+}

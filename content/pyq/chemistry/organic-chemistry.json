@@ -1,0 +1,42 @@
+{
+  "subject": "chemistry",
+  "unit": "organic-chemistry",
+  "titlePrefix": "NEB Class 11 Chemistry — Organic Chemistry",
+  "description": "Past year questions on Fundamental Principles, Hydrocarbons, Aromatic Hydrocarbons, Basic Concepts",
+  "categories": [
+    {
+      "category": "fundamental-principles",
+      "questions": [
+        {
+          "question": "Write the IUPAC name of: CH₃CH(OH)CH₂CH₃",
+          "marks": 2,
+          "year": "2024",
+          "source": "NEB Model",
+          "solution": "Longest chain: 4 carbons = butane\nOH on C-2 → **Butan-2-ol**",
+          "knowledgeNote": "IUPAC priority: carboxylic acid > ester > aldehyde > ketone > alcohol > amine > alkene/alkyne."
+        },
+        {
+          "question": "What is resonance? Draw resonance structures of ozone and benzene.",
+          "marks": 3,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "**Resonance:** When a single Lewis structure cannot describe a molecule, multiple structures (resonance contributors) are needed.\n\n**Ozone (O₃):** O=O-O ↔ O-O=O (two equivalent structures)\n**Benzene (C₆H₆):** Two Kekulé structures with alternating double bonds — actual structure is a resonance hybrid with equal C-C bond lengths.",
+          "knowledgeNote": "Resonance stabilization energy of benzene ≈ 152 kJ/mol — explains its unusual stability."
+        }
+      ]
+    },
+    {
+      "category": "hydrocarbons",
+      "questions": [
+        {
+          "question": "How is ethane prepared from ethene? Write the reaction mechanism.",
+          "marks": 3,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "**Addition of H₂ across the double bond (hydrogenation):**\nCH₂=CH₂ + H₂ → CH₃-CH₃\n\nConditions: Ni/Pt catalyst, heat (~200°C)\n\n**Mechanism (catalytic hydrogenation):**\n1. H₂ adsorbs on metal surface\n2. C=C π-bond breaks and C-H bonds form\n3. Ethane desorbs from catalyst surface",
+          "knowledgeNote": "Alkenes undergo addition reactions; alkanes undergo substitution (free radical)."
+        }
+      ]
+    }
+  ]
+}

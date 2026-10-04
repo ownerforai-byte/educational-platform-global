@@ -1,0 +1,42 @@
+{
+  "subject": "biology",
+  "unit": "ecology-environment",
+  "titlePrefix": "NEB Class 11 Biology — Ecology and Environment",
+  "description": "Past year questions on Ecology, Biota and Environment, Conservation Biology, Vegetation",
+  "categories": [
+    {
+      "category": "ecology",
+      "questions": [
+        {
+          "question": "Define ecosystem. Describe the structure of an ecosystem with a diagram.",
+          "marks": 5,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "**Ecosystem:** A community of organisms interacting with their physical environment.\n\n**Structure:**\n- **Abiotic:** Temperature, light, water, soil, nutrients\n- **Biotic:** Producers (plants), Consumers (herbivores, carnivores), Decomposers (bacteria, fungi)\n\nTrophic levels: Producers → Primary consumers → Secondary consumers → Tertiary consumers\nDecomposers recycle nutrients from all levels.",
+          "knowledgeNote": "Energy flows one-way in ecosystems (10% rule); nutrients cycle."
+        },
+        {
+          "question": "What is ecological succession? Explain with the example of xerosere.",
+          "marks": 3,
+          "year": "2022",
+          "source": "NEB Model",
+          "solution": "**Ecological succession:** Gradual change in species composition of a community over time.\n\n**Xerosere** (dry habitat succession):\nLichen → Moss → Herbaceous plants → Shrub → Forest\n\nPioneer species (lichens) colonize bare rock, weather it, build soil, allowing larger plants to establish.",
+          "knowledgeNote": "Climax community = stable end stage. Hydrosere = succession in water."
+        }
+      ]
+    },
+    {
+      "category": "conservation-biology",
+      "questions": [
+        {
+          "question": "What is biodiversity? Explain the levels of biodiversity and their significance.",
+          "marks": 3,
+          "year": "2024",
+          "source": "NEB Model",
+          "solution": "**Biodiversity:** Variety of life at all levels.\n\n**Levels:**\n1. **Genetic diversity** — variation within species (crop varieties, breeds)\n2. **Species diversity** — number and abundance of species\n3. **Ecosystem diversity** — variety of habitats and ecological processes\n\n**Significance:** Ecosystem stability, resource provision (food, medicine), cultural value.",
+          "knowledgeNote": "Nepal has 44 protected areas. Chitwan National Park (UNESCO site) is a biodiversity hotspot."
+        }
+      ]
+    }
+  ]
+}

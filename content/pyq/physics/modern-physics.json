@@ -1,0 +1,79 @@
+{
+  "subject": "physics",
+  "unit": "modern-physics",
+  "titlePrefix": "NEB Class 11 Physics — Modern Physics",
+  "description": "Past year questions on Nuclear Physics, Solids, Recent Trends in Physics",
+  "categories": [
+    {
+      "category": "nuclear-physics",
+      "questions": [
+        {
+          "question": "What is mass defect? How is it related to binding energy?",
+          "marks": 3,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "**Mass defect (Δm):** The difference between the sum of masses of individual nucleons and the actual mass of the nucleus.\n\nΔm = [Zmp + (A-Z)mn] - M(nucleus)\n\n**Binding energy:** The energy equivalent of mass defect: E = Δm × c²\n\nHigher binding energy per nucleon → more stable nucleus.",
+          "knowledgeNote": "Binding energy per nucleon is maximum (~8.7 MeV) for iron-56. Heavier nuclei release energy by fission; lighter nuclei by fusion."
+        },
+        {
+          "question": "Define radioactive decay constant. Write the relation between half-life and decay constant.",
+          "marks": 2,
+          "year": "2024",
+          "source": "NEB Model",
+          "solution": "**Decay constant (λ):** Probability per unit time that a nucleus will decay.\n\nHalf-life: T₁/₂ = ln(2)/λ = 0.693/λ\n\nMean life: τ = 1/λ = T₁/₂/ln(2)",
+          "knowledgeNote": "Radioactive decay is random but predictable statistically. After n half-lives: N = N₀(1/2)ⁿ"
+        },
+        {
+          "question": "Distinguish between nuclear fission and nuclear fusion with one example each.",
+          "marks": 3,
+          "year": "2022",
+          "source": "NEB Past",
+          "solution": "**Nuclear fission:** A heavy nucleus splits into two lighter nuclei, releasing energy.\nExample: ²³⁵U + n → ¹⁴¹Ba + ⁹²Kr + 3n + energy (used in nuclear reactors)\n\n**Nuclear fusion:** Two light nuclei combine to form a heavier nucleus, releasing energy.\nExample: ²H + ³H → ⁴He + n + energy (powers the sun and hydrogen bombs)",
+          "knowledgeNote": "Fission requires critical mass; fusion requires extremely high temperature (~10⁷ K). Fusion releases more energy per kg than fission."
+        }
+      ]
+    },
+    {
+      "category": "solids",
+      "questions": [
+        {
+          "question": "Explain the energy band theory of solids. How does it differentiate metals, insulators, and semiconductors?",
+          "marks": 5,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "In solids, atomic energy levels split into bands due to overlapping wavefunctions.\n\n- **Metals:** Valence band overlaps conduction band (no gap), or conduction band is partially filled. Electrons move freely. Example: Cu, Ag.\n- **Insulators:** Large forbidden gap (Eg > 3 eV) between valence and conduction bands. Very few electrons can cross. Example: Diamond, SiO₂.\n- **Semiconductors:** Small forbidden gap (Eg ≈ 1 eV). At room temperature, some electrons cross to conduction band. Example: Si (Eg = 1.1 eV), Ge (Eg = 0.7 eV).",
+          "knowledgeNote": "The forbidden gap width determines conductivity. Intrinsic semiconductors: equal numbers of electrons and holes."
+        },
+        {
+          "question": "What is an intrinsic semiconductor? Define electrons and holes as charge carriers.",
+          "marks": 2,
+          "year": "2022",
+          "source": "NEB Model",
+          "solution": "**Intrinsic semiconductor:** Pure semiconductor material without any impurities (e.g., pure silicon or germanium).\n\n**Electron:** A negatively charged charge carrier promoted to the conduction band.\n**Hole:** The positively charged vacancy left in the valence band when an electron leaves. Holes move in the direction of electric field.",
+          "knowledgeNote": "In an intrinsic semiconductor, nₑ = nₕ (equal number of electrons and holes)."
+        }
+      ]
+    },
+    {
+      "category": "recent-trends",
+      "questions": [
+        {
+          "question": "State the Big Bang theory and the Hubble law. What evidence supports the expanding universe?",
+          "marks": 5,
+          "year": "2021",
+          "source": "NEB Model",
+          "solution": "**Big Bang theory:** The universe began as an extremely hot, dense point ~13.8 billion years ago and has been expanding ever since.\n\n**Hubble's law:** v = H₀d — galaxies recede from us at velocities proportional to their distance. H₀ ≈ 67-70 km/s/Mpc.\n\n**Evidence:**\n1. Redshift of distant galaxies (Doppler shift)\n2. Cosmic microwave background radiation (CMBR) at 2.7 K\n3. Abundance of light elements (H, He) matches Big Bang predictions",
+          "knowledgeNote": "Hubble's discovery (1929) showed that most galaxies are redshifted, meaning they are moving away — the universe is expanding."
+        },
+        {
+          "question": "What are elementary particles? List the four fundamental forces in order of decreasing strength.",
+          "marks": 2,
+          "year": "2022",
+          "source": "NEB Model",
+          "solution": "**Elementary particles:** Particles not made of smaller constituents — quarks, leptons, and gauge bosons.\n\nFour fundamental forces (decreasing strength):\n1. Strong nuclear force\n2. Electromagnetic force\n3. Weak nuclear force\n4. Gravitational force",
+          "knowledgeNote": "Strong force: holds quarks together. EM force: acts on charged particles. Weak force: responsible for beta decay. Gravity: acts on all mass."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "subject": "english",
+  "unit": "literature",
+  "titlePrefix": "NEB Class 11 English — Literature",
+  "description": "Past year questions on Prose Analysis, Poetry Analysis, Literary Devices",
+  "categories": [
+    {
+      "category": "literary-devices",
+      "questions": [
+        {
+          "question": "Identify the literary device used: 'The wind whispered through the trees.'",
+          "marks": 2,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "**Device: Personification** — the wind (non-human) is given the human quality of whispering.",
+          "knowledgeNote": "Common literary devices: Simile (like/as), Metaphor (direct comparison), Personification (human qualities to non-human), Alliteration (repeated initial sounds), Onomatopoeia (sound words)."
+        }
+      ]
+    },
+    {
+      "category": "prose-analysis",
+      "questions": [
+        {
+          "question": "What is the central theme of the prose piece 'The Last Lesson' by Alphonse Daudet?",
+          "marks": 3,
+          "year": "2022",
+          "source": "NEB Past",
+          "solution": "The central theme is **the loss of language and cultural identity** under foreign occupation. It shows how people take their mother tongue for granted until it is taken away. The story emphasizes patriotism, regret for wasted time, and the importance of preserving one's language and culture.",
+          "knowledgeNote": "'The Last Lesson' is set during the Franco-Prussian War when Alsace was ceded to Prussia. French was banned in schools."
+        }
+      ]
+    }
+  ]
+}

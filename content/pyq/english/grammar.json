@@ -1,0 +1,47 @@
+{
+  "subject": "english",
+  "unit": "grammar",
+  "titlePrefix": "NEB Class 11 English — Grammar",
+  "description": "Past year questions on Tenses, Voice, Narration, Modals, Parts of Speech",
+  "categories": [
+    {
+      "category": "tenses",
+      "questions": [
+        {
+          "question": "Fill in the blanks with correct tense: 'By the time we reached the station, the train ___ (already/leave).'",
+          "marks": 2,
+          "year": "2023",
+          "source": "NEB Model",
+          "solution": "'By the time we reached the station, the train **had already left**.'\n\nRule: Past perfect tense for the earlier action when two past actions are mentioned.",
+          "knowledgeNote": "Past perfect (had + V3) is used for the action completed before another past action."
+        }
+      ]
+    },
+    {
+      "category": "voice",
+      "questions": [
+        {
+          "question": "Change into passive voice: 'The teacher gave the students homework.'",
+          "marks": 2,
+          "year": "2024",
+          "source": "NEB Model",
+          "solution": "**Passive:** The students were given homework by the teacher.\n\nRule: Object becomes subject; verb becomes 'be + past participle'; original subject becomes 'by + agent'.",
+          "knowledgeNote": "Double object sentences: either object can become subject in passive voice."
+        }
+      ]
+    },
+    {
+      "category": "narration",
+      "questions": [
+        {
+          "question": "Change into indirect speech: She said, 'I am very happy.'",
+          "marks": 2,
+          "year": "2022",
+          "source": "NEB Past",
+          "solution": "**Indirect:** She said that she was very happy.\n\nRules applied: 'said' stays; tense shifts (present → past); 'I' → 'she'.",
+          "knowledgeNote": "If reporting verb is in present tense, no tense change is needed in reported speech."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,70 @@
+{
+  "dbVersion": "1.0",
+  "description": "NEB Class 11 Past Year Question database — organized by subject, unit, and topic. Each question includes marks, solution with step-by-step reasoning, and a 'knowledgeNote' field for concise facts. Sources: NEB model papers, past year questions, and curriculum-aligned pattern.",
+  "sources": [
+    "NEB Grade 11 Model Questions (Sanothimi Bhaktapur CDC)",
+    "NEB Past Year Papers (2020-2024)",
+    "WebNotee, NEB-Exam.com, Nepal Science Guru",
+    "NEB Science Hub"
+  ],
+  "subjects": {
+    "physics": {
+      "units": [
+        { "slug": "mechanics", "units": ["physical-quantities", "vectors", "kinematics", "dynamics", "work-energy-power", "circular-motion", "gravitation", "elasticity"] },
+        { "slug": "heat-thermodynamics", "units": ["heat-and-temperature", "thermal-expansion", "quantity-of-heat", "rate-of-heat-flow", "ideal-gas"] },
+        { "slug": "modern-physics", "units": ["nuclear-physics", "solids", "recent-trends-in-physics"] },
+        { "slug": "waves-optics", "units": ["reflection-at-curved-mirror", "refraction-at-plane-surfaces", "refraction-through-prisms", "lenses", "optics", "dispersion"] },
+        { "slug": "electricity-magnetism", "units": ["electric-charges", "electric-field", "potential-potential-difference-and-potential-energy", "capacitor", "dc-circuits"] }
+      ],
+      "yearsCovered": ["2020", "2021", "2022", "2023", "2024"]
+    },
+    "chemistry": {
+      "units": [
+        { "slug": "physical-chemistry", "units": ["foundation-and-fundamentals", "stoichiometry", "atomic-structure", "classification-of-elements-and-periodic-table", "chemical-bonding", "oxidation-reduction", "states-of-matter", "chemical-equilibrium"] },
+        { "slug": "inorganic-chemistry", "units": ["chemistry-of-non-metals", "chemistry-of-metals", "bio-inorganic-chemistry", "classification-of-elements"] },
+        { "slug": "organic-chemistry", "units": ["fundamental-principles-of-organic-chemistry", "hydrocarbons", "aromatic-hydrocarbons", "basic-concept-of-organic-chemistry"] },
+        { "slug": "applied-chemistry", "units": ["applied-chemistry", "modern-chemical-manufactures", "fundamentals-of-applied-chemistry", "modern-manufactures", "fundamental-principles-organic", "basic-concept-organic"] }
+      ],
+      "yearsCovered": ["2020", "2021", "2022", "2023", "2024"]
+    },
+    "biology": {
+      "units": [
+        { "slug": "cell-biology", "units": ["introduction-to-biology", "biomolecules-and-cell-biology", "introductory-microbiology"] },
+        { "slug": "genetics-evolution", "units": ["evolutionary-biology"] },
+        { "slug": "ecology-environment", "units": ["ecology", "biota-and-environment", "conservation-biology", "vegetation"] },
+        { "slug": "diversity-of-life", "units": ["floral-diversity", "faunal-diversity"] }
+      ],
+      "yearsCovered": ["2020", "2021", "2022", "2023"]
+    },
+    "mathematics": {
+      "units": [
+        { "slug": "algebra", "units": ["algebra"] },
+        { "slug": "trigonometry", "units": ["trigonometry"] },
+        { "slug": "analytical-geometry", "units": ["analytic-geometry"] },
+        { "slug": "calculus", "units": ["calculus"] },
+        { "slug": "vectors-and-spaces", "units": ["vectors"] },
+        { "slug": "statistics-probability", "units": ["statistics-and-probability"] },
+        { "slug": "computational-methods", "units": ["computational-methods-or-mechanics"] },
+        { "slug": "limits-continuity-extra", "units": ["limits-and-continuity"] }
+      ],
+      "yearsCovered": ["2020", "2021", "2022", "2023", "2024"]
+    },
+    "english": {
+      "units": [
+        { "slug": "grammar", "units": ["grammar"] },
+        { "slug": "reading", "units": ["reading-and-comprehension"] },
+        { "slug": "writing", "units": ["writing"] },
+        { "slug": "vocabulary", "units": ["vocabulary"] },
+        { "slug": "literature", "units": ["literature"] }
+      ],
+      "yearsCovered": ["2021", "2022", "2023", "2024"]
+    },
+    "nepali": {
+      "units": [
+        { "slug": "bhasha-vyakarana", "units": ["bhasha-ra-vyakarana"] },
+        { "slug": "sahitya-adhyayan", "units": ["sahitya-adhyayan"] }
+      ],
+      "yearsCovered": ["2021", "2022", "2023", "2024"]
+    }
+  }
+}
