@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Mathematics — Trigonometry — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "trigonometry",
+  "topicSlug": "trigonometry-pyq-2022",
+  "topicTitle": "NEB Class 11 Mathematics — Trigonometry — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Solve: cos 2θ = cos θ",
+      "marks": 4,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "cos 2θ = cos θ\n2cos²θ - 1 = cos θ\n2cos²θ - cos θ - 1 = 0\n(2cos θ + 1)(cos θ - 1) = 0\n\nCase 1: cos θ = 1 → θ = 0, 2π\nCase 2: cos θ = -1/2 → θ = 2π/3, 4π/3\n\n**Solutions: θ = 0, 2π/3, 4π/3, 2π**",
+      "knowledgeNote": "cos 2θ = 2cos²θ - 1 = 1 - 2sin²θ = cos²θ - sin²θ"
+    },
+    {
+      "question": "Solve for $x$, $0^{\\circ}<x<90^{\\circ}$: (i) $\\displaystyle \\frac{\\sin x}{1+\\cos x}+\\frac{1+\\cos x}{\\sin x}=2\\sqrt3$  (ii) $3\\sin^{2}x-4\\cos^{2}x+1=0$",
+      "marks": 4,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "**(i)** Multiply the second numerator and denominator by $(1-\\cos x)$:\n$$\\frac{\\sin x}{1+\\cos x}=\\frac{\\sin x(1-\\cos x)}{1-\\cos^{2}x}=\\frac{\\sin x(1-\\cos x)}{\\sin^{2}x}=\\frac{1-\\cos x}{\\sin x}$$\nSo the left side becomes\n$$\\frac{1-\\cos x}{\\sin x}+\\frac{1+\\cos x}{\\sin x}=\\frac{2}{\\sin x}$$\nHence $2\\sin x = 2\\sqrt3 \\Rightarrow \\sin x = \\dfrac{1}{\\sqrt3}$, giving\n$$x=\\sin^{-1}\\left(\\frac{1}{\\sqrt3}\\right)\\approx 35.264^{\\circ}\\approx\\boxed{35^{\\circ}16'\\text{ (approximately)}}$$\n\n**(ii)** Using $\\sin^{2}x=1-\\cos^{2}x$:\n$$3(1-\\cos^{2}x)-4\\cos^{2}x+1=0$$\n$$3-3\\cos^{2}x-4\\cos^{2}x+1=0\\Longrightarrow 4-7\\cos^{2}x=0$$\n$$\\cos x=\\frac{2}{\\sqrt7}\\quad(\\cos x>0\\text{ on }0^{\\circ}\\!<x\\!<90^{\\circ})$$\n$$x=\\cos^{-1}\\left(\\frac{2}{\\sqrt7}\\right)\\approx\\boxed{40.9^{\\circ}}$$",
+      "knowledgeNote": "$\\frac{\\sin x}{1+\\cos x}=\\frac{1-\\cos x}{\\sin x}=\\tan\\frac{x}{2}$; their sum collapses to $\\frac{2}{\\sin x}$."
+    }
+  ]
+}

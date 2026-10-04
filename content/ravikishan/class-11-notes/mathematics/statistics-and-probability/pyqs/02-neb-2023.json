@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Mathematics — Statistics And Probability — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "statistics-and-probability",
+  "topicSlug": "statistics-and-probability-pyq-2023",
+  "topicTitle": "NEB Class 11 Mathematics — Statistics And Probability — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "The variance of the first 10 natural numbers is (a) 8.25  (b) 9.25  (c) 10.25  (d) 11.25",
+      "marks": 1,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Known result:** for the first $n$ natural numbers (i.e. $1, 2, \\dots, n$) the variance is $\\dfrac{n^{2}-1}{12}$.\n\nPutting $n = 10$:\n$$v = \\frac{10^{2}-1}{12} = \\frac{100-1}{12} = \\frac{99}{12} = \\frac{33}{4} = 8.25$$\n\n(Check: mean $= \\frac{1+2+\\cdots+10}{10}=5.5$; the sum of squared deviations $= 247.5$, and $247.5/10 = 8.25$.)\n\n**Correct option: (a) 8.25**",
+      "knowledgeNote": "For the first $n$ natural numbers, variance $=\\frac{n^{2}-1}{12}$ and standard deviation $=\\sqrt{\\frac{n^{2}-1}{12}}$."
+    }
+  ]
+}

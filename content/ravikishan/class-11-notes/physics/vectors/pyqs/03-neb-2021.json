@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Physics — Vectors — 2021",
+  "year": 2021,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "vectors",
+  "topicSlug": "vectors-pyq-2021",
+  "topicTitle": "NEB Class 11 Physics — Vectors — 2021",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Two forces P and Q are acting at a point. The magnitude of P is 10 N and Q is 20 N. If the angle between them is 60Â°, find the magnitude and direction of the resultant.",
+      "marks": 5,
+      "year": 2021,
+      "source": "NEB Past",
+      "solution": "Magnitude: R = âˆš(PÂ² + QÂ² + 2PQ cos Î¸)\nR = âˆš(10Â² + 20Â² + 2Ã—10Ã—20Ã—cos 60Â°) = âˆš(100 + 400 + 200) = âˆš700 = **26.46 N**\n\nDirection: tan Î± = (Q sin Î¸)/(P + Q cos Î¸)\ntan Î± = (20 sin 60Â°)/(10 + 20 cos 60Â°) = (20Ã—0.866)/(10+10) = 17.32/20 = 0.866\nÎ± = **40.89Â°** from P.",
+      "knowledgeNote": "Resultant magnitude formula: RÂ² = PÂ² + QÂ² + 2PQ cos Î¸. This is the law of cosines applied to vector addition."
+    },
+    {
+      "question": "Add the vectors $(3\\hat{i} + 4\\hat{j})\\ \\text{m}$ and $(5\\hat{i} - 12\\hat{j})\\ \\text{m}$ and express the resultant in magnitude and direction form.",
+      "marks": 3,
+      "year": 2021,
+      "source": "NEB Model",
+      "solution": "**Step 1 — Add the corresponding components:**\n$$\\vec{A} = 3\\hat{i} + 4\\hat{j}, \\qquad \\vec{B} = 5\\hat{i} - 12\\hat{j}$$\n$$\\vec{R} = \\vec{A} + \\vec{B} = (3 + 5)\\hat{i} + (4 - 12)\\hat{j} = 8\\hat{i} - 8\\hat{j}$$\n\n**Step 2 — Magnitude of the resultant:**\n$$R = \\sqrt{R_x^2 + R_y^2} = \\sqrt{8^2 + (-8)^2} = \\sqrt{64 + 64} = \\sqrt{128}$$\n$$\\boxed{R = 8\\sqrt{2} \\approx \\mathbf{11.3\\ \\text{m}}}$$\n\n**Step 3 — Direction of the resultant:**\n$$\\tan\\theta = \\frac{R_y}{R_x} = \\frac{-8}{8} = -1 \\;\\Rightarrow\\; \\theta = -45^\\circ$$\n$$\\boxed{\\theta = \\mathbf{-45^\\circ},\\ \\text{i.e. } 45^\\circ \\text{ south of east}}$$\n\nThe resultant lies in the fourth quadrant since $R_x > 0$ and $R_y < 0$.",
+      "knowledgeNote": "Vector components add algebraically; magnitude is the root of the sum of squared components and direction from the tangent ratio."
+    }
+  ]
+}

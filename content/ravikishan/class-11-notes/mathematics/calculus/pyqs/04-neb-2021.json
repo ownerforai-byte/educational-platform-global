@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Mathematics — Calculus — 2021",
+  "year": 2021,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "calculus",
+  "topicSlug": "calculus-pyq-2021",
+  "topicTitle": "NEB Class 11 Mathematics — Calculus — 2021",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Using the first principles of differentiation, show that $\\displaystyle \\frac{d}{dx}\\left(x^{1/3}\\right)=\\frac{1}{3x^{2/3}}$. Hence find the derivative of $y=(2x+3)^{1/3}$.",
+      "marks": 4,
+      "year": 2021,
+      "source": "NEB Past",
+      "solution": "Let $y=x^{1/3}$. Then\n$$\\frac{dy}{dx}=\\lim_{h\\to 0}\\frac{(x+h)^{1/3}-x^{1/3}}{h}$$\nPut $a=x^{1/3}$ and $b=(x+h)^{1/3}$. Then\n$$b^{3}-a^{3}=h\\;\\Longrightarrow\\;(b-a)(b^{2}+ab+a^{2})=h\\;\\Longrightarrow\\;b-a=\\frac{h}{b^{2}+ab+a^{2}}$$\n$$\\therefore\\ \\frac{dy}{dx}=\\lim_{h\\to 0}\\frac{1}{b^{2}+ab+a^{2}}=\\frac{1}{3a^{2}}=\\frac{1}{3x^{2/3}}$$\n\n**Hence**, for $y=(2x+3)^{1/3}$:\n$$\\frac{dy}{dx}=\\frac{1}{3}(2x+3)^{-2/3}\\times 2=\\boxed{\\frac{2}{3(2x+3)^{2/3}}}$$",
+      "knowledgeNote": "First principles uses $a^{3}-b^{3}=(a-b)(a^{2}+ab+b^{2})$; the increment $h$ cancels and the result follows by substitution."
+    }
+  ]
+}

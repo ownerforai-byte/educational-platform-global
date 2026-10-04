@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Physics — Physical Quantities — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "physical-quantities",
+  "topicSlug": "physical-quantities-pyq-2023",
+  "topicTitle": "NEB Class 11 Physics — Physical Quantities — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State the principle of homogeneity of dimensions. Check the dimensional consistency of the equation vÂ² = uÂ² + 2as.",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Past",
+      "solution": "**Principle:** An equation is dimensionally consistent only if the dimensions of every term on the LHS match those on the RHS.\n\nvÂ² â†’ [L Tâ»Â²]Â² = [LÂ²Tâ»Â²]\nuÂ² â†’ [L Tâ»Â²]Â² = [LÂ²Tâ»Â²]\n2as â†’ [L Tâ»Â²][L] = [LÂ²Tâ»Â²]\n\nAll three terms have dimensions [LÂ²Tâ»Â²], so the equation is **dimensionally consistent**. âœ“",
+      "knowledgeNote": "Dimensional consistency is necessary but not sufficient for correctness. A dimensionally correct equation could still be numerically wrong."
+    },
+    {
+      "question": "Write any four fundamental quantities with their SI units and define the SI unit of mass.",
+      "marks": 2,
+      "year": 2023,
+      "source": "NEB Past",
+      "solution": "**Four fundamental quantities and SI units:**\n\n| Quantity | SI unit |\n|---|---|\n| Length | metre (m) |\n| Mass | kilogram (kg) |\n| Time | second (s) |\n| Electric current | ampere (A) |\n\n(Other fundamental quantities are thermodynamic temperature in kelvin (K), luminous intensity in candela (cd) and amount of substance in mole (mol).)\n\n**Definition of the unit of mass:** The **kilogram** is the unit of mass. It is defined as the mass of a prototype cylinder of platinum-iridium (90% platinum, 10% iridium) kept at the International Bureau of Weights and Measures (BIPM) at Sèvres, France.\n\n$1\\ \\text{kg} = \\dfrac{1}{1000}\\ \\text{grams}$.",
+      "knowledgeNote": "Mass is a fundamental quantity measured in kilogram, historically defined by an international platinum-iridium prototype cylinder."
+    }
+  ]
+}

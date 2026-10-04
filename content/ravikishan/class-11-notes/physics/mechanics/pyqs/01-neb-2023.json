@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Mechanics — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "mechanics",
+  "topicSlug": "mechanics-pyq-2023",
+  "topicTitle": "NEB Class 11 Physics — Mechanics — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "A body of mass 5 kg moving under a constant net force changes its velocity from 2 m/s to 10 m/s in 4 s. Calculate the force acting on it.",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Past",
+      "solution": "**Step 1 — Acceleration from the first equation of motion:**\n$$a = \\frac{v - u}{t} = \\frac{10 - 2}{4} = \\frac{8}{4} = 2\\ \\text{m/s}^2$$\n\n**Step 2 — Newton's second law:**\n$$F = ma = 5 \\times 2$$\n\n**Step 3 — Result:**\n$$F = \\mathbf{10\\ \\text{N}}$$\nThe force acts in the direction of motion of the body.",
+      "knowledgeNote": "Using Newton's second law, a constant net force on a constant mass gives constant acceleration."
+    }
+  ]
+}

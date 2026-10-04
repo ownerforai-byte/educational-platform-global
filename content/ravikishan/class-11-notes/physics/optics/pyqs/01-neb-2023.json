@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Optics — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "optics",
+  "topicSlug": "optics-pyq-2023",
+  "topicTitle": "NEB Class 11 Physics — Optics — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "What is meant by total internal reflection? State the conditions for it to occur and write the relation between refractive index and critical angle.",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Past",
+      "solution": "**Total internal reflection (TIR):** The phenomenon in which a ray of light travelling from a denser medium to a rarer medium is completely reflected back into the denser medium, without any refraction, is called total internal reflection.\n\n**Conditions:**\n1. Light must travel from a **denser** to a **rarer** medium ($\\mu_1 > \\mu_2$).\n2. The angle of incidence must be **greater than the critical angle** $C$.\n\n**Relation:** At the critical angle $C$, $r = 90^\\circ$, so by the law of refraction\n$$\\mu_1 = \\mu_2\\,\\frac{\\sin 90^\\circ}{\\sin C} \\;\\Rightarrow\\; \\boxed{\\mu = \\frac{1}{\\sin C}}$$\n\n**Examples:** TIR in a glass slab, sparkle of a diamond, mirage, and total internal reflection in optical fibres.",
+      "knowledgeNote": "TIR needs a denser-to-rarer medium with incidence angle exceeding critical angle, where mu equals one over sin C."
+    }
+  ]
+}

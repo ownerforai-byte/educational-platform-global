@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Electric Field — 2020",
+  "year": 2020,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "electric-field",
+  "topicSlug": "electric-field-pyq-2020",
+  "topicTitle": "NEB Class 11 Physics — Electric Field — 2020",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Two equal charges of +2 microC each are placed 10 cm apart. Find the electric field intensity at the midpoint of the line joining them.",
+      "marks": 3,
+      "year": 2020,
+      "source": "NEB Past",
+      "solution": "**Step 1 — Geometry:** The charges are $10\\ \\text{cm}$ apart, so the midpoint is $r = 5\\ \\text{cm} = 0.05\\ \\text{m}$ from each charge.\n\n**Step 2 — Field due to one charge at the midpoint:**\n$$E_1 = \\frac{kq}{r^2} = \\frac{(9 \\times 10^9)(2 \\times 10^{-6})}{(0.05)^2} = \\frac{18 \\times 10^3}{2.5 \\times 10^{-3}}$$\n$$E_1 = \\mathbf{7.2 \\times 10^6\\ \\text{N/C}}$$\n\n**Step 3 — Field due to the other charge:**\n$$E_2 = E_1 = 7.2 \\times 10^6\\ \\text{N/C}$$\n\n**Step 4 — Directions:** At the midpoint, $E_1$ acts **away from** the first positive charge (to the right) while $E_2$ acts **away from** the second (to the left). The two fields are **equal in magnitude but opposite in direction**, so they cancel.\n\n$$\\boxed{E_{net} = E_2 - E_1 = 7.2\\times10^6 - 7.2\\times10^6 = \\mathbf{0}}$$\n**The electric field at the midpoint of the line joining two equal like charges is zero.**",
+      "knowledgeNote": "At the midpoint between two equal like charges the fields are equal and opposite, so the net field is zero."
+    }
+  ]
+}

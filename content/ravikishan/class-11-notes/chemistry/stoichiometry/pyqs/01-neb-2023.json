@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Chemistry — Stoichiometry — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "stoichiometry",
+  "topicSlug": "stoichiometry-pyq-2023",
+  "topicTitle": "NEB Class 11 Chemistry — Stoichiometry — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "What is the mole concept? Calculate the number of molecules in 36 g of water.",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Past",
+      "solution": "**Mole:** The amount of substance containing as many particles as there are atoms in exactly 12 g of carbon-12. One mole = 6.022 × 10²³ particles (Avogadro's number).\n\nMoles of H₂O = 36/18 = 2 mol\nNumber of molecules = 2 × 6.022 × 10²³ = **1.204 × 10²⁴ molecules**",
+      "knowledgeNote": "Molar mass of water = 18 g/mol (H=1×2 + O=16). At STP, 1 mol gas = 22.4 L."
+    },
+    {
+      "question": "4.8 g of magnesium is burnt in 6.4 g of oxygen. Identify the limiting reactant and calculate the mass of magnesium oxide formed. ($A_r$: Mg = 24, O = 16)",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Step 1 — Balanced equation**\n\n$$2\\text{Mg} + \\text{O}_2 \\rightarrow 2\\text{MgO}$$\n\n**Step 2 — Moles available**\n\n$$n(\\text{Mg}) = \\frac{4.8}{24} = 0.20 \\ \\text{mol}$$\n\n$$n(\\text{O}_2) = \\frac{6.4}{32} = 0.20 \\ \\text{mol}$$\n\n**Step 3 — Compare with the stoichiometric ratio**\n\nFrom the equation, 2 mol Mg requires 1 mol O₂.\n\nO₂ required for 0.20 mol Mg $= 0.20/2 = 0.10$ mol, but 0.20 mol O₂ is available. Oxygen is in excess, so **Mg is the limiting reactant**.\n\n**Step 4 — Mass of MgO**\n\n$$n(\\text{MgO}) = n(\\text{Mg}) = 0.20 \\ \\text{mol}, \\qquad M(\\text{MgO}) = 24 + 16 = 40 \\ \\text{g mol}^{-1}$$\n\n$$m(\\text{MgO}) = 0.20 \\times 40 = \\textbf{8.0 \\ g}$$\n\nThe extra 0.10 mol of O₂ ($= 3.2$ g) remains unreacted.",
+      "knowledgeNote": "The limiting reactant is the one present in the smaller stoichiometric amount, and it fixes the yield of product."
+    }
+  ]
+}

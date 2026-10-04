@@ -1,32 +1,29 @@
 {
-  "title": "NEB 2023 â€” Thermodynamics",
-  "unitSlug": "heat-and-temperature",
-  "topicSlug": "meaning-of-thermal-equilibrium-and-zeroth-law-of-thermodynamics",
-  "topicTitle": "Meaning of thermal equilibrium and Zeroth law of thermodynamics",
-  "relevance": 73,
-  "notes": [
-    "Q1. State the first law of thermodynamics and explain its limitations. [2]",
-    "Q2. Derive an expression for the work done during the isothermal expansion of an ideal gas. [3]",
-    "Q3. Define entropy. Show that the entropy of the universe increases in a spontaneous process. [3]",
-    "Q4. A Carnot engine works between 600 K and 300 K. Find its efficiency. [2]"
-  ],
+  "title": "NEB Class 11 Physics — Heat And Temperature — 2023",
   "year": 2023,
   "examSource": "NEB",
-  "confusion": [
-    "Do not confuse this concept with similar-sounding terms. Check definitions carefully.",
-    "Always verify the conditions under which the formula applies — many formulas have restricted domains.",
-    "Sign conventions matter. Define your coordinate system before applying equations."
-  ],
-  "practice": [
-    "Solve one basic problem using the key formula from this topic.",
-    "Try a numerical problem where you must choose the correct formula from two similar options.",
-    "Apply this concept to a real-world situation and explain each step."
-  ],
-  "universalFacts": [
-    "This concept is fundamental and appears in multiple contexts across the subject.",
-    "Understanding the derivation helps more than memorizing the final formula.",
-    "Always check units and dimensions when applying this concept."
-  ],
-  "animation3D": "heat-and-temperature",
-  "motionGraphics": "heat-and-temperature"
+  "subject": "physics",
+  "unitSlug": "heat-and-temperature",
+  "topicSlug": "heat-and-temperature-pyq-2023",
+  "topicTitle": "NEB Class 11 Physics — Heat And Temperature — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State and explain the zeroth law of thermodynamics. Why is it called the zeroth law?",
+      "marks": 2,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "If two systems are each in thermal equilibrium with a third system, they are in thermal equilibrium with each other. It is called the 'zeroth' law because it logically precedes the first and second laws, and was recognized after them but is more fundamental â€” hence 'zero'.",
+      "knowledgeNote": "The zeroth law defines temperature and thermal equilibrium. It is the basis for temperature measurement."
+    },
+    {
+      "question": "A thermometer reads -5 degrees C when placed in ice water and 105 degrees C in boiling water. What reading does it give when placed in liquid at 40 degrees C?",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Past",
+      "solution": "Assume the thermometer scale is linear: $R = mT + c$.\n\n**Step 1 — Two calibration points:**\n$T = 0^\\circ\\text{C} \\Rightarrow R = -5$\n$T = 100^\\circ\\text{C} \\Rightarrow R = 105$\n\n**Step 2 — Slope of the scale:**\n$$m = \\frac{105 - (-5)}{100 - 0} = \\frac{110}{100} = 1.1$$\n\n**Step 3 — Intercept:**\n$$-5 = 1.1(0) + c \\;\\Rightarrow\\; c = -5$$\nSo the relation is $R = 1.1T - 5$.\n\n**Step 4 — Reading at $T = 40^\\circ\\text{C}$:**\n$$R = 1.1 \\times 40 - 5 = 44 - 5$$\n$$\\boxed{R = \\mathbf{39^\\circ\\text{C}}}$$\n\n**Verification by interpolation:** rise in reading $= -5 + (40 - 0) \\times \\frac{110}{100} = -5 + 44 = 39$ ✓\nSince the slope exceeds 1, this is a 'fool' or inaccurate thermometer.",
+      "knowledgeNote": "For a linear thermometer scale, interpolation between ice and steam points gives the intermediate reading."
+    }
+  ]
 }

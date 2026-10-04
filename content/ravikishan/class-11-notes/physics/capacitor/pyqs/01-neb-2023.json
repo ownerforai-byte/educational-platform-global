@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Capacitor — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "capacitor",
+  "topicSlug": "capacitor-pyq-2023",
+  "topicTitle": "NEB Class 11 Physics — Capacitor — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Define capacitance. Derive the capacitance of a parallel plate capacitor.",
+      "marks": 5,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Capacitance:** C = Q/V — ability to store charge per unit voltage. SI unit: Farad (F).\n\n**Parallel plate capacitor:** Two plates of area A separated by distance d.\nE = σ/ε₀ = Q/(Aε₀)\nV = Ed = Qd/(Aε₀)\nC = Q/V = Q/(Qd/Aε₀) = **ε₀A/d**\n\nWith dielectric (εᵣ): C = εᵣε₀A/d",
+      "knowledgeNote": "1 F is very large. Typical capacitors: pF to mF range. Parallel plate: C = ε₀A/d"
+    }
+  ]
+}

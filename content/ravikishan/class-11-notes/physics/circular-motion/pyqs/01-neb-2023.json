@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Physics — Circular Motion — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "circular-motion",
+  "topicSlug": "circular-motion-pyq-2023",
+  "topicTitle": "NEB Class 11 Physics — Circular Motion — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Define centripetal acceleration. Derive an expression for it.",
+      "marks": 5,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Centripetal acceleration** is the acceleration directed toward the center of a circular path. Derivation:\n\nConsider a particle moving in a circle of radius r with uniform speed v. In time Î”t, it moves through angle Î”Î¸.\nChange in velocity Î”v â‰ˆ v Î”Î¸ (for small Î”Î¸)\nAcceleration a = Î”v/Î”t = v(Î”Î¸/Î”t) = vÏ‰ = v(v/r) = **vÂ²/r**\n\nAlternatively: a = Ï‰Â²r where Ï‰ is angular velocity.",
+      "knowledgeNote": "Centripetal force F = mvÂ²/r = mÏ‰Â²r always directed toward center. Not a new forceâ€”just net force providing centripetal acceleration."
+    },
+    {
+      "question": "A flywheel of radius 0.5 m rotates at a constant speed of 300 revolutions per minute. Find its angular velocity, the linear speed of a point on the rim and the centripetal acceleration there.",
+      "marks": 4,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Step 1 — Convert rpm to rad/s:**\n$$\\omega = \\frac{300 \\times 2\\pi}{60} = \\frac{600\\pi}{60} = 10\\pi$$\n$$\\omega = \\mathbf{31.4\\ \\text{rad/s}}$$\n\n**Step 2 — Linear (tangential) speed** of a point on the rim:\n$$v = \\omega r = 31.4 \\times 0.5$$\n$$\\boxed{v = \\mathbf{15.7\\ \\text{m/s}}\\approx 15.7\\ \\text{m/s}}$$\n\n**Step 3 — Centripetal acceleration:**\n$$a_c = \\frac{v^2}{r} = \\omega^2 r$$\n$$a_c = \\frac{(15.7)^2}{0.5} = \\frac{246.49}{0.5} = 492.98\\ \\text{m/s}^2$$\n$$\\boxed{a_c \\approx \\mathbf{493\\ \\text{m/s}^2}}$$\n\n**Direction:** The acceleration is directed **towards the centre** (along the radius) and hence is a centripetal acceleration; its magnitude stays constant while the velocity direction changes continuously.",
+      "knowledgeNote": "Angular velocity equals 2 pi n over 60, linear speed equals omega times radius, and centripetal acceleration equals omega squared times radius."
+    }
+  ]
+}

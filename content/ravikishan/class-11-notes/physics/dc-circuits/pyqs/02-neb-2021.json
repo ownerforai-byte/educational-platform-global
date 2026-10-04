@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Dc Circuits — 2021",
+  "year": 2021,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "dc-circuits",
+  "topicSlug": "dc-circuits-pyq-2021",
+  "topicTitle": "NEB Class 11 Physics — Dc Circuits — 2021",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Three resistors of 2 ohm, 3 ohm and 6 ohm are connected in parallel across a 12 V battery of negligible internal resistance. Find the total resistance and the total current drawn.",
+      "marks": 4,
+      "year": 2021,
+      "source": "NEB Past",
+      "solution": "**Step 1 — For resistors in parallel,** the reciprocals add:\n$$\\frac{1}{R} = \\frac{1}{2} + \\frac{1}{3} + \\frac{1}{6} = \\frac{3 + 2 + 1}{6} = \\frac{6}{6} = 1$$\n$$\\boxed{R = 1\\ \\Omega}$$\n\n**Step 2 — Ohm's law for the whole combination:**\n$$I = \\frac{V}{R} = \\frac{12}{1}$$\n$$\\boxed{I = \\mathbf{12\\ \\text{A}}$$\n\n**Step 3 — Check by branch currents:**\n$$I_1 = 12/2 = 6\\ \\text{A}, \\quad I_2 = 12/3 = 4\\ \\text{A}, \\quad I_3 = 12/6 = 2\\ \\text{A}$$\n$$I_{total} = 6 + 4 + 2 = 12\\ \\text{A}$$ ✓\n\n**Note:** The equivalent resistance of a parallel combination is always **less than** the smallest individual resistance (1 $\\Omega < 2\\ \\Omega$ ✓). The potential difference across each branch is 12 V.",
+      "knowledgeNote": "In a parallel combination reciprocals of resistances add, so two, three and six ohm give one ohm total."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Physics — Electric Field — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "electric-field",
+  "topicSlug": "electric-field-pyq-2023",
+  "topicTitle": "NEB Class 11 Physics — Electric Field — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State Gauss's law. Use it to find the electric field due to an infinite plane sheet of charge.",
+      "marks": 5,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Gauss's law:** Total electric flux through a closed surface = q_enclosed/ε₀.\n\nFor infinite plane with surface charge σ: Use a cylindrical Gaussian pillbox.\nFlux = E×A (both sides) = σA/ε₀\n→ **E = σ/(2ε₀)** — uniform field independent of distance from sheet.",
+      "knowledgeNote": "Electric field due to infinite plane sheet is uniform and perpendicular to the sheet."
+    },
+    {
+      "question": "Find the electric field intensity at a point 2 m from a point charge of +4 microC. Take $k = 9 \\times 10^9\\ \\text{N m}^2\\text{C}^{-2}$.",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Past",
+      "solution": "**Step 1 — Given:** $q = 4 \\times 10^{-6}\\ \\text{C},\\ r = 2\\ \\text{m}$\n\n**Step 2 — Electric field intensity due to a point charge:**\n$$E = \\frac{kq}{r^2} = \\frac{(9 \\times 10^9)(4 \\times 10^{-6})}{(2)^2}$$\n$$E = \\frac{36 \\times 10^3}{4}$$\n$$\\boxed{E = \\mathbf{9 \\times 10^3\\ \\text{N/C}}$$\n\n**Step 3 — Direction:** The charge is positive, so the field is directed **radially outward** from the charge.\n\n**Step 4 — Alternative form using force on a test charge:**\n$$\\text{If } q_0 = 1\\ \\mu\\text{C}, \\quad F = kq q_0/r^2 = 9\\times10^9 \\times 4\\times10^{-6}\\times10^{-6}/4 = 9 \\times 10^{-3}\\ \\text{N}$$\n$$E = \\frac{F}{q_0} = \\frac{9 \\times 10^{-3}}{10^{-6}} = 9 \\times 10^3\\ \\text{N/C}$$ ✓",
+      "knowledgeNote": "Electric field intensity of a point charge equals kq divided by the square of the distance, in newtons per coulomb."
+    }
+  ]
+}

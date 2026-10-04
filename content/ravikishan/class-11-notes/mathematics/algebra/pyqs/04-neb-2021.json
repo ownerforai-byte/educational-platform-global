@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Mathematics — Algebra — 2021",
+  "year": 2021,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "algebra",
+  "topicSlug": "algebra-pyq-2021",
+  "topicTitle": "NEB Class 11 Mathematics — Algebra — 2021",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Factorise $2x^{3}-3x^{2}-10x+15$. Hence solve the equation $2x^{3}-3x^{2}-10x+15=0$.",
+      "marks": 3,
+      "year": 2021,
+      "source": "NEB Past",
+      "solution": "Group the terms in pairs:\n$$2x^{3}-3x^{2}-10x+15=x^{2}(2x-3)-5(2x-3)$$\n$$=(2x-3)(x^{2}-5)=(2x-3)(x-\\sqrt5)(x+\\sqrt5)$$\n\n**Solving:**\n$$(2x-3)(x-\\sqrt5)(x+\\sqrt5)=0$$\n$$x=\\frac{3}{2}\\quad\\text{or}\\quad x=\\sqrt5\\quad\\text{or}\\quad x=-\\sqrt5$$\n\n**Check:** $x=\\frac32$: $2(3.375)-3(2.25)-15+15=6.75-6.75=0$ ✓",
+      "knowledgeNote": "Factorising by grouping gives $(2x-3)(x^{2}-5)$; always split the difference of squares to get the linear factors."
+    }
+  ]
+}

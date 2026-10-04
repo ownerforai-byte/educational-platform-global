@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Elasticity — 2020",
+  "year": 2020,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "elasticity",
+  "topicSlug": "elasticity-pyq-2020",
+  "topicTitle": "NEB Class 11 Physics — Elasticity — 2020",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "A copper wire of length 2 m and cross-sectional area $2 \\times 10^{-5}\\ \\text{m}^2$ is stretched by 2 mm when a force of 200 N is applied. Find Young's modulus of copper.",
+      "marks": 4,
+      "year": 2020,
+      "source": "NEB Past",
+      "solution": "**Step 1 — Given and converted to SI:**\n$F = 200\\ \\text{N},\\ L = 2\\ \\text{m},\\ A = 2 \\times 10^{-5}\\ \\text{m}^2,\\ \\Delta L = 2\\ \\text{mm} = 2 \\times 10^{-3}\\ \\text{m}$\n\n**Step 2 — Young's modulus:**\n$$Y = \\frac{FL}{A\\Delta L}$$\n\n**Step 3 — Substitute:**\n$$Y = \\frac{200 \\times 2}{(2 \\times 10^{-5})(2 \\times 10^{-3})} = \\frac{400}{4 \\times 10^{-8}}$$\n\n**Step 4 — Result:**\n$$\\boxed{Y = 1.0 \\times 10^{10}\\ \\text{N m}^{-2} = 1.0 \\times 10^{10}\\ \\text{Pa}}$$\n\n**Verification:** Stress $= 200/2\\times10^{-5} = 1 \\times 10^{7}\\ \\text{Pa}$; Strain $= 2\\times10^{-3}/2 = 1 \\times 10^{-3}$.\n$$Y = \\frac{10^{7}}{10^{-3}} = 10^{10}\\ \\text{Pa}$$ ✓",
+      "knowledgeNote": "Young's modulus is computed as force times original length divided by area times extension."
+    }
+  ]
+}

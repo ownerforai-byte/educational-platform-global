@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Physics — Solids — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "solids",
+  "topicSlug": "solids-pyq-2022",
+  "topicTitle": "NEB Class 11 Physics — Solids — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "What is an intrinsic semiconductor? Define electrons and holes as charge carriers.",
+      "marks": 2,
+      "year": 2022,
+      "source": "NEB Model",
+      "solution": "**Intrinsic semiconductor:** Pure semiconductor material without any impurities (e.g., pure silicon or germanium).\n\n**Electron:** A negatively charged charge carrier promoted to the conduction band.\n**Hole:** The positively charged vacancy left in the valence band when an electron leaves. Holes move in the direction of electric field.",
+      "knowledgeNote": "In an intrinsic semiconductor, nₑ = nₕ (equal number of electrons and holes)."
+    },
+    {
+      "question": "Differentiate between an elastic body and a plastic body.",
+      "marks": 2,
+      "year": 2022,
+      "source": "NEB Model",
+      "solution": "**Elastic body:**\n- After the deforming force is removed, the body **regains its original size and shape** completely.\n- Deformation is **reversible** and the limit of elasticity is not crossed.\n- The restoring force lies within the elastic limit, so $F \\propto x$ (Hooke's law).\n- Property is measured by the **elastic modulus** (Young's modulus).\n- Examples: steel, rubber (up to elastic limit), quartz, glass fibre.\n\n**Plastic body:**\n- After the deforming force is removed, the body **does not** regain its original shape and size; it keeps a **permanent deformation**.\n- Deformation is **irreversible** and the elastic limit has been crossed.\n- The limit of elasticity is small, e.g. $0.5\\ \\text{mm/m}$ for putty.\n- Examples: putty, wet clay, wax, chewing gum, dough.\n\n**Note:** Plastic deformation is essential in shaping metals by rolling, forging and bending.",
+      "knowledgeNote": "An elastic body regains its original shape after removing the deforming force; a plastic body keeps permanent deformation."
+    }
+  ]
+}

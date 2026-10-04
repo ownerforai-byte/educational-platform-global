@@ -1,0 +1,45 @@
+{
+  "title": "NEB Class 11 Mathematics — Calculus — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "calculus",
+  "topicSlug": "calculus-pyq-2023",
+  "topicTitle": "NEB Class 11 Mathematics — Calculus — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Find lim(x→2) (x²-4)/(x-2)",
+      "marks": 2,
+      "year": 2023,
+      "source": "NEB Past",
+      "solution": " lim(x→2) (x²-4)/(x-2) = lim(x→2) (x+2)(x-2)/(x-2) = lim(x→2) (x+2) = **4**",
+      "knowledgeNote": "This is a 0/0 indeterminate form. Factorize and cancel common factors."
+    },
+    {
+      "question": "Find the derivative of y = sin x · cos x using product rule.",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "Using product rule: (uv)' = u'v + uv'\nu = sin x, v = cos x\nu' = cos x, v' = -sin x\n\ndy/dx = cos x · cos x + sin x · (-sin x) = cos²x - sin²x = **cos 2x**",
+      "knowledgeNote": "Note: sin x cos x = ½sin 2x, so dy/dx = cos 2x directly."
+    },
+    {
+      "question": "Evaluate: ∫(3x² + 2x - 1) dx",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "∫(3x² + 2x - 1) dx = 3·(x³/3) + 2·(x²/2) - x + C\n= **x³ + x² - x + C**",
+      "knowledgeNote": "Integration is the reverse of differentiation. Don't forget +C (constant of integration)."
+    },
+    {
+      "question": "If $y=(\\sin x)^{\\cos x}$, show that\n$$\\frac{dy}{dx}=y\\left(\\cos x\\,\\cot x-\\sin x\\,\\log_{e}(\\sin x)\\right)$$\nand hence find $\\dfrac{dy}{dx}$ when $x=\\dfrac{\\pi}{4}$.",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Past",
+      "solution": "Take logarithms of both sides:\n$$\\log y=\\cos x\\cdot\\log(\\sin x)$$\nDifferentiate (product rule):\n$$\\frac{1}{y}\\frac{dy}{dx}=-\\sin x\\log(\\sin x)+\\cos x\\cdot\\frac{\\cos x}{\\sin x}$$\n$$\\frac{dy}{dx}=y\\left[\\cos x\\cdot\\frac{\\cos x}{\\sin x}-\\sin x\\,\\log(\\sin x)\\right]=y\\left(\\cos x\\,\\cot x-\\sin x\\,\\log_{e}(\\sin x)\\right)$$\n\n**At $x=\\dfrac{\\pi}{4}$:** $\\sin x=\\cos x=\\dfrac{1}{\\sqrt2}$, $\\cot x=1$, $\\log_{e}\\tfrac{1}{\\sqrt2}=-\\tfrac12\\log_{e}2$, and $y=\\left(\\tfrac{1}{\\sqrt2}\\right)^{1/\\sqrt2}$.\n$$\\frac{dy}{dx}=\\left(\\frac{1}{\\sqrt2}\\right)^{1/\\sqrt2}\\cdot\\frac{1}{\\sqrt2}\\left(1+\\frac{1}{2}\\log_{e}2\\right)$$\n$$\\approx 0.7827\\times 0.7071\\times 1.3466\\approx \\boxed{0.745}$$",
+      "knowledgeNote": "Logarithmic differentiation of $u^{v}$ needs BOTH terms $v'\\log u$ and $v\\frac{u'}{u}$."
+    }
+  ]
+}

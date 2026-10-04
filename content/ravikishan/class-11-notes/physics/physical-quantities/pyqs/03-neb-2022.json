@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Physics — Physical Quantities — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "physical-quantities",
+  "topicSlug": "physical-quantities-pyq-2022",
+  "topicTitle": "NEB Class 11 Physics — Physical Quantities — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "How many seconds are there in a leap year (366 days)?",
+      "marks": 1,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "1 leap year = 366 days = 366 Ã— 24 Ã— 60 Ã— 60 = **31,536,000 seconds** (â‰ˆ 3.154 Ã— 10â· s).",
+      "knowledgeNote": "Standard conversion used in physics: 1 year = Ï€ Ã— 10â· s (approximate, for order-of-magnitude)"
+    },
+    {
+      "question": "The SI dimensional unit kg m2 s-2 represents: (a) work (b) force (c) power (d) impulse",
+      "marks": 1,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "**Correct option: (a) work.**\n\n**Step 1 — Check each quantity:**\n- Force: $F = ma = \\text{kg m s}^{-2}$ — does **not** match.\n- Work: $W = Fs = \\text{kg m s}^{-2} \\times \\text{m} = \\text{kg m}^{2}\\text{s}^{-2}$ — **matches**. ✓\n- Power: $P = W/t = \\text{kg m}^{2}\\text{s}^{-3}$ — does not match.\n- Impulse: $Ft = \\text{kg m s}^{-1}$ — does not match.\n\n**Step 2 — Conclusion:** $\\text{kg m}^{2}\\text{s}^{-2} = \\text{N m} = \\text{J}$, so it is **work (and energy)**.",
+      "knowledgeNote": "Kilogram metre squared per second squared equals newton metre, which is the joule used for work and energy."
+    }
+  ]
+}

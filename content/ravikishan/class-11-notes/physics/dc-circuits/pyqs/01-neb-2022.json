@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Dc Circuits — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "dc-circuits",
+  "topicSlug": "dc-circuits-pyq-2022",
+  "topicTitle": "NEB Class 11 Physics — Dc Circuits — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State Kirchhoff's laws. Use them to solve for current in a simple circuit.",
+      "marks": 5,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "**Kirchhoff's Current Law (KCL):** Sum of currents at a junction = 0 (conservation of charge).\n**Kirchhoff's Voltage Law (KVL):** Sum of emfs in a loop = sum of potential drops (conservation of energy).\n\nExample: Two cells (E₁=2V, E₂=3V) in series with R=5Ω and r₁=r₂=1Ω:\nTotal E = 5V, total R = 7Ω → I = 5/7 = **0.71 A**",
+      "knowledgeNote": "KCL is based on charge conservation; KVL on energy conservation."
+    }
+  ]
+}

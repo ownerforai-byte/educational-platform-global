@@ -1,0 +1,45 @@
+{
+  "title": "NEB Class 11 Mathematics — Calculus — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "calculus",
+  "topicSlug": "calculus-pyq-2024",
+  "topicTitle": "NEB Class 11 Mathematics — Calculus — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Evaluate: lim(x→0) (sin 3x)/x",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Using standard limit: lim(x→0) (sin x)/x = 1\n\nlim(x→0) (sin 3x)/x = lim(x→0) [3·(sin 3x)/(3x)] = 3 × 1 = **3**",
+      "knowledgeNote": "Standard limits: lim(x→0) sin(ax)/x = a; lim(x→0) (1-cos x)/x² = 1/2; lim(x→0) tan x/x = 1"
+    },
+    {
+      "question": "Find dy/dx if y = x³ + 2x² - 5x + 3",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "dy/dx = 3x² + 4x - 5\n\nUsing power rule: d/dx(x^n) = nx^(n-1)",
+      "knowledgeNote": "Sum rule: d/dx(f+g) = f'+g'. Constant rule: d/dx(c) = 0."
+    },
+    {
+      "question": "What does it mean for a function to be continuous at x = a? Check if f(x) = x² is continuous at x = 1.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Continuous at x=a** if: (i) f(a) is defined, (ii) lim(x→a)f(x) exists, (iii) lim(x→a)f(x) = f(a).\n\nFor f(x) = x² at x=1:\nf(1) = 1 ✓\nlim(x→1)x² = 1 ✓\n1 = 1 ✓ → **continuous**",
+      "knowledgeNote": "Polynomials, sin x, cos x, e^x are continuous everywhere."
+    },
+    {
+      "question": "The curve $y=x^{3}-6x^{2}+9x-2$ is given. Find (i) its stationary points, (ii) classify each of them, (iii) its point of inflection, and (iv) the equation of the tangent at the point of inflection.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Past",
+      "solution": "**(i) Stationary points:**\n$$\\frac{dy}{dx}=3x^{2}-12x+9=3(x-1)(x-3)$$\nStationary at $x=1$ and $x=3$.\n$$y(1)=1-6+9-2=2,\\qquad y(3)=27-54+27-2=-2$$\nSo the stationary points are $(1,2)$ and $(3,-2)$.\n\n**(ii) Classification:**\n$$\\frac{d^{2}y}{dx^{2}}=6x-12$$\nAt $x=1$: $\\frac{d^{2}y}{dx^{2}}=-6<0\\Rightarrow(1,2)$ is a **point of local maximum**.\nAt $x=3$: $\\frac{d^{2}y}{dx^{2}}=6>0\\Rightarrow(3,-2)$ is a **point of local minimum**.\n\n**(iii) Point of inflection:**\n$$\\frac{d^{2}y}{dx^{2}}=0\\Longrightarrow 6x-12=0\\Longrightarrow x=2,\\qquad y(2)=8-24+18-2=0$$\nSo the point of inflection is $(2,0)$.\n\n**(iv) Tangent at $(2,0)$:** slope $=\\dfrac{dy}{dx}\\Big|_{x=2}=3(2-1)(2-3)=-3$.\n$$y-0=-3(x-2)\\Longrightarrow\\boxed{3x+y-6=0}$$",
+      "knowledgeNote": "For a cubic, $\\frac{d^{2}y}{dx^{2}}=0$ gives the single inflection point, and the tangent there cuts the cubic with multiplicity 3."
+    }
+  ]
+}

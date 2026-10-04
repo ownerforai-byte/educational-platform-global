@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Dynamics — 2020",
+  "year": 2020,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "dynamics",
+  "topicSlug": "dynamics-pyq-2020",
+  "topicTitle": "NEB Class 11 Physics — Dynamics — 2020",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Differentiate between mass and weight.",
+      "marks": 2,
+      "year": 2020,
+      "source": "NEB Model",
+      "solution": "**Mass:**\n- The quantity of matter contained in a body; it is a **scalar** and a **fundamental quantity**.\n- Measured in kilograms (kg); SI base unit of mass.\n- It is **independent** of location, gravitational field and the state of motion.\n- It is **invariant** everywhere in the universe.\n- Invariant mass is given by $m_0 = \\dfrac{m_{rel}}{\\gamma}$.\n\n**Weight:**\n- The force with which the earth attracts a body; $W = mg$.\n- It is a **vector** (directed towards the centre of the earth) and a **derived quantity**.\n- Measured in newtons (N) or kilogram-force; SI unit is the newton.\n- It **varies** with $g$, so it changes with latitude, altitude and the celestial body.\n- On the moon, weight is one-sixth of that on the earth while mass is unchanged.\n\n**Apparent weight** $W_{app} = mg - F_{centrifugal}$ can even be zero during free fall.",
+      "knowledgeNote": "Mass is invariant scalar matter measured in kg; weight is the gravitational force mg measured in newton and varies with g."
+    }
+  ]
+}

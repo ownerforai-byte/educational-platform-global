@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Thermal Expansion — 2021",
+  "year": 2021,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "thermal-expansion",
+  "topicSlug": "thermal-expansion-pyq-2021",
+  "topicTitle": "NEB Class 11 Physics — Thermal Expansion — 2021",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "A metal rod of length 1 m at 20 degrees C is heated to 100 degrees C. If the coefficient of linear expansivity of the metal is $1.2 \\times 10^{-5}\\ \\text{K}^{-1}$, find the increase in length and the final length.",
+      "marks": 3,
+      "year": 2021,
+      "source": "NEB Past",
+      "solution": "**Step 1 — Given:** $L_0 = 1\\ \\text{m},\\ T_1 = 20^\\circ\\text{C},\\ T_2 = 100^\\circ\\text{C},\\ \\alpha = 1.2 \\times 10^{-5}\\ \\text{K}^{-1}$\n\n**Step 2 — Change in temperature:**\n$$\\Delta T = T_2 - T_1 = 100 - 20 = 80\\ \\text{K}$$\n\n**Step 3 — Increase in length:**\n$$\\Delta L = \\alpha L_0 \\Delta T = (1.2 \\times 10^{-5})(1)(80) = 96 \\times 10^{-5} = 9.6 \\times 10^{-4}\\ \\text{m}$$\n$$\\boxed{\\Delta L = \\mathbf{9.6 \\times 10^{-4}\\ \\text{m}} = \\mathbf{0.96\\ \\text{mm}}}$$\n\n**Step 4 — Final length:**\n$$L_2 = L_0 + \\Delta L = 1 + 9.6 \\times 10^{-4}$$\n$$\\boxed{L_2 = \\mathbf{1.00096\\ \\text{m}}$$\n\n**Note:** The expansion is very small, which is why gaps are left in railway tracks and bridges.",
+      "knowledgeNote": "Expansion equals alpha times original length times temperature rise; for a one-metre rod it is a fraction of a millimetre."
+    }
+  ]
+}

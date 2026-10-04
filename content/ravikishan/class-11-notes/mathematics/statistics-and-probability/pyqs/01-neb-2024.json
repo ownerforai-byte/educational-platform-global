@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Mathematics — Statistics And Probability — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "statistics-and-probability",
+  "topicSlug": "statistics-and-probability-pyq-2024",
+  "topicTitle": "NEB Class 11 Mathematics — Statistics And Probability — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "The marks obtained by 10 students in a test are 12, 15, 18, 20, 22, 25, 28, 30, 35 and 45. Calculate (i) the mean, and (ii) the standard deviation of the marks.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Past",
+      "solution": "**(i) Mean**\n$$\\bar{x}=\\frac{\\sum x}{N}=\\frac{12+15+18+20+22+25+28+30+35+45}{10}=\\frac{250}{10}=25$$\n\n**(ii) Standard deviation**\n\nDeviations $x-\\bar{x}$ and their squares:\n\n| $x$ | 12 | 15 | 18 | 20 | 22 | 25 | 28 | 30 | 35 | 45 |\n|---|---|---|---|---|---|---|---|---|---|---|\n| $x-25$ | $-13$ | $-10$ | $-7$ | $-5$ | $-3$ | $0$ | $3$ | $5$ | $10$ | $20$ |\n| $(x-25)^{2}$ | 169 | 100 | 49 | 25 | 9 | 0 | 9 | 25 | 100 | 400 |\n\n$$\\sum (x-\\bar{x})^{2}=169+100+49+25+9+0+9+25+100+400=886$$\n$$\\sigma^{2}=\\frac{\\sum (x-\\bar{x})^{2}}{N}=\\frac{886}{10}=88.6$$\n$$\\sigma=\\sqrt{88.6}\\approx 9.41$$\n\n**Answer:** mean $=25$, standard deviation $\\approx 9.41$. (Using the sample divisor $N-1$: $v = 886/9 = 98.44$, $\\sigma\\approx 9.92$.)",
+      "knowledgeNote": "Standard deviation is $\\sqrt{\\text{variance}}$; use divisor $N$ for complete data and $N-1$ when the data is a sample."
+    }
+  ]
+}

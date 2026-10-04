@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Physics — Ideal Gas — 2021",
+  "year": 2021,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "ideal-gas",
+  "topicSlug": "ideal-gas-pyq-2021",
+  "topicTitle": "NEB Class 11 Physics — Ideal Gas — 2021",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "What is the law of equipartition of energy? How many degrees of freedom does a monoatomic gas molecule have?",
+      "marks": 2,
+      "year": 2021,
+      "source": "NEB Model",
+      "solution": "The law states that energy is equally divided among all available degrees of freedom, each getting (1/2)kT of energy.\n\nA monoatomic gas molecule has **3 translational degrees of freedom** (motion along x, y, z). Its molar specific heat at constant volume: Cv = (3/2)R.",
+      "knowledgeNote": "At thermal equilibrium, a monatomic gas has 3 translational degrees of freedom, a diatomic gas 5."
+    },
+    {
+      "question": "State Boyle's law and Charles's law and explain them with the $\\mu$ notation.",
+      "marks": 3,
+      "year": 2021,
+      "source": "NEB Past",
+      "solution": "**Boyle's law:** At constant temperature, the pressure of a fixed mass of gas is **inversely proportional** to its volume.\n$$P \\propto \\frac{1}{V} \\;\\Rightarrow\\; \\boxed{PV = \\text{constant}} \\;\\Rightarrow\\; P_1V_1 = P_2V_2$$\nGraph of $P$ vs $V$ is a **rectangular hyperbola**; pressure increases when volume decreases. Follows Boyle's law $P \\propto 1/V$; used in breathing and in the piston of an engine.\n\n**Charles's law:** At constant pressure, the volume of a fixed mass of gas is **directly proportional** to its absolute temperature.\n$$V \\propto T \\;\\Rightarrow\\; \\boxed{\\frac{V}{T} = \\text{constant}} \\;\\Rightarrow\\; \\frac{V_1}{T_1} = \\frac{V_2}{T_2}$$\nGraph of $V$ vs $T$ is a **straight line through the origin**; the slope of $V$ vs $T$ (K) is the coefficient of cubical expansivity $\\gamma = \\dfrac{1}{V_0}\\left(\\dfrac{\\Delta V}{\\Delta T}\\right)$.",
+      "knowledgeNote": "Boyle's law gives PV constant at constant temperature; Charles's law gives V proportional to T at constant pressure."
+    }
+  ]
+}

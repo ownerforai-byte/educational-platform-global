@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Chemistry — Oxidation And Reduction — 2021",
+  "year": 2021,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "oxidation-and-reduction",
+  "topicSlug": "oxidation-and-reduction-pyq-2021",
+  "topicTitle": "NEB Class 11 Chemistry — Oxidation And Reduction — 2021",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Calculate the equivalent mass (equivalent weight) of potassium dichromate, K₂Cr₂O₇, acting as an oxidising agent in acidic (acidic medium) solution. ($A_r$: K = 39, Cr = 52, O = 16)",
+      "marks": 3,
+      "year": 2021,
+      "source": "NEB Past",
+      "solution": "**Step 1 — Molar mass**\n\n$$M = 2(39) + 2(52) + 7(16) = 78 + 104 + 112 = 294 \\ \\text{g mol}^{-1}$$\n\n**Step 2 — n-factor in acidic medium**\n\nIn acidic solution dichromate is reduced to Cr³⁺:\n\n$$\\text{Cr}_2\\text{O}_7^{2-} + 14\\text{H}^+ + 6e^- \\rightarrow 2\\text{Cr}^{3+} + 7\\text{H}_2\\text{O}$$\n\nEach chromium goes from +6 to +3, a gain of 3 electrons; with two chromium atoms the total $n$ = 2 × 3 = **6**.\n\n**Step 3 — Equivalent mass**\n\n$$E = \\frac{M}{n} = \\frac{294}{6} = \\textbf{49 \\ \\text{g equiv}^{-1}}$$\n\nSo 49 g of K₂Cr₂O₇ will oxidise or reduce 1 mole of electrons, i.e. 49 g of Zn (equivalent mass 32.7) is oxidised by 49 g of dichromate in acid.",
+      "knowledgeNote": "Equivalent mass equals molar mass divided by the n-factor, which for K₂Cr₂O₇ in acid is 6."
+    }
+  ]
+}

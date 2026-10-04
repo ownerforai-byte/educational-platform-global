@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Chemistry — Foundation And Fundamentals — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "foundation-and-fundamentals",
+  "topicSlug": "foundation-and-fundamentals-pyq-2023",
+  "topicTitle": "NEB Class 11 Chemistry — Foundation And Fundamentals — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "The density of a liquid is 0.8792 g cm⁻³. Calculate the mass of 45.6 cm³ of the liquid, and express your answer to three significant figures.",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "Mass is obtained from density and volume:\n\n$$m = \\rho \\times V$$\n\nSubstituting the values:\n\n$$m = 0.8792 \\ \\text{g cm}^{-3} \\times 45.6 \\ \\text{cm}^3$$\n\n$$m = 40.09152 \\ \\text{g}$$\n\nIn a product the number of significant figures equals the least number of significant figures present in the factors. The figures are 4 (for 0.8792) and 3 (for 45.6), so the answer is reported to **3 significant figures**, i.e. the last digit (9) is rounded up because the next digit is 1.\n\n$$m = 40.1 \\ \\text{g}$$",
+      "knowledgeNote": "In a product, significant figures equal the least number of significant figures among the factors, which here is three from 45.6."
+    }
+  ]
+}

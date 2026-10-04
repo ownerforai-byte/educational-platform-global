@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Physics — Recent Trends In Physics — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "recent-trends-in-physics",
+  "topicSlug": "recent-trends-in-physics-pyq-2022",
+  "topicTitle": "NEB Class 11 Physics — Recent Trends In Physics — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "What are elementary particles? List the four fundamental forces in order of decreasing strength.",
+      "marks": 2,
+      "year": 2022,
+      "source": "NEB Model",
+      "solution": "**Elementary particles:** Particles not made of smaller constituents — quarks, leptons, and gauge bosons.\n\nFour fundamental forces (decreasing strength):\n1. Strong nuclear force\n2. Electromagnetic force\n3. Weak nuclear force\n4. Gravitational force",
+      "knowledgeNote": "Strong force: holds quarks together. EM force: acts on charged particles. Weak force: responsible for beta decay. Gravity: acts on all mass."
+    },
+    {
+      "question": "Explain the working of a ruby laser with the help of a diagram and write any three uses of lasers.",
+      "marks": 5,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "**Principle (three-level laser):** A ruby laser is a **three-level solid-state laser** in which a ruby rod (Al2O3 doped with about $0.05\\%$ Cr$^{3+}$ ions) is placed inside a **helical flash lamp** inside a reflective cavity. The energy gap between the ground level and the pumping level is matched to the energy of the flash lamp photons.\n\n**Working:**\n1. On flashing, the ruby absorbs photons of wavelength about $694\\ \\text{nm}$... more precisely the flash lamp emits photons which raise the chromium ions from level $E_1$ to $E_3$ (a high unstable level).\n2. Ions in $E_3$ decay quickly (in $10^{-8}$ s) to the **metastable** level $E_2$ by **spontaneous emission** of non-resonant photons, which are absorbed by the mirror coating so they do not stimulate emission.\n3. Because the ions spend a long time (about $3 \\times 10^{-3}$ s) in $E_2$, **population inversion** builds up.\n4. An externally produced photon of wavelength $694.3\\ \\text{nm}$ (red) triggers **stimulated emission**: each incident photon reproduces itself and produces two identical photons. These photons multiply rapidly by repeated stimulation.\n5. **Optical resonance:** The rod ends are silvered, one fully and the other partially. Photons bouncing repeatedly amplify the beam until $30\\%$ of them emerge through the partially silvered end as a highly **collimated, monochromatic and coherent** red beam.\n\n**Uses:**\n1. **Surgery** — retina welding, kidney stone and cataract removal, brain tumour operations.\n2. **Communication** — optical fibre transmission of signals in telephone and satellite links.\n3. **Industry** — cutting, drilling and welding of very hard and thin materials, and aligning tunnel boring machines.\n(Also: holograms, CD/DVD players, ranging, and printing.)",
+      "knowledgeNote": "A ruby laser uses a three-level pumping scheme, with population inversion in metastable levels giving stimulated red emission at 694 nm."
+    }
+  ]
+}

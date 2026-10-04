@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Chemistry — Basic Concept Of Organic Chemistry — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "basic-concept-of-organic-chemistry",
+  "topicSlug": "basic-concept-of-organic-chemistry-pyq-2023",
+  "topicTitle": "NEB Class 11 Chemistry — Basic Concept Of Organic Chemistry — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Give the IUPAC name of the compound CH₃CH(CH₃)CH₂CH₂CH(CH₂CH₃)CH₂OH.",
+      "marks": 2,
+      "year": 2023,
+      "source": "NEB Past",
+      "solution": "**Step 1 — Choose the parent chain.** The longest continuous chain containing the –OH group has six carbon atoms, so the parent is **hexane**. The –OH carbon must be numbered as C1.\n\n$$\\text{C1 (CH}_2\\text{OH)} - \\text{C2 [CH(CH}_2\\text{CH}_3)]} - \\text{C3 (CH}_2\\text{) - C4 (CH}_2\\text{) - C5 [CH(CH}_3\\text{)] - C6 (CH}_3\\text{)}$$\n\n**Step 2 — Number the chain.** Numbering from the –OH end gives the hydroxy group locant 1; numbering from the other end would give it locant 6, which is not permitted.\n\n**Step 3 — Identify substituents.** An ethyl group on C2 and a methyl group on C5.\n\n**Step 4 — Assemble the name,** listing substituents alphabetically (ethyl before methyl) and adding the position and form of the suffix:\n\n$$\\boxed{\\text{2-ethyl-5-methylhexan-1-ol}}$$\n\nA hyphen is placed before a single-letter or single-digit prefix, and the final 'e' of the '-ane' is dropped before the vowel of '-ol'.",
+      "knowledgeNote": "The longest chain containing the –OH group is the parent, and numbering must give the hydroxy group the lowest locant."
+    }
+  ]
+}

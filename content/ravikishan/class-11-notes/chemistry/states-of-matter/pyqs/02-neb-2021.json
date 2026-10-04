@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Chemistry — States Of Matter — 2021",
+  "year": 2021,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "states-of-matter",
+  "topicSlug": "states-of-matter-pyq-2021",
+  "topicTitle": "NEB Class 11 Chemistry — States Of Matter — 2021",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "A sample of a gas occupies 500 cm³ at 27 °C and 1 atm pressure. Calculate the volume it will occupy at 127 °C if the pressure is kept constant. Assume the gas behaves ideally.",
+      "marks": 2,
+      "year": 2021,
+      "source": "NEB Past",
+      "solution": "At constant pressure, Charles's law applies: $\\dfrac{V_1}{T_1} = \\dfrac{V_2}{T_2}$, with temperature in kelvin.\n\n**Step 1 — Convert to kelvin**\n\n$$T_1 = 27 + 273 = 300 \\ \\text{K}, \\qquad T_2 = 127 + 273 = 400 \\ \\text{K}$$\n\n**Step 2 — Apply the law**\n\n$$\\frac{V_1}{T_1} = \\frac{V_2}{T_2} \\Rightarrow V_2 = V_1 \\times \\frac{T_2}{T_1} = 500 \\times \\frac{400}{300}$$\n\n$$V_2 = 666.7 \\ \\text{cm}^3$$\n\nSince $T_2 > T_1$, the volume increases, as expected for Charles's law. If a balloon burst on a hot summer afternoon, this is exactly why.",
+      "knowledgeNote": "At constant pressure a gas volume is directly proportional to its absolute temperature in kelvin."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Capacitor — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "capacitor",
+  "topicSlug": "capacitor-pyq-2022",
+  "topicTitle": "NEB Class 11 Physics — Capacitor — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "A capacitor of capacitance 6 microF is charged to a potential difference of 100 V. Calculate the energy stored in it.",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "**Step 1 — Given:** $C = 6\\times10^{-6}\\ \\text{F},\\ V = 100\\ \\text{V}$\n\n**Step 2 — Energy stored in a capacitor:**\n$$U = \\frac{1}{2}CV^2$$\n\n**Step 3 — Substitute:**\n$$U = \\frac{1}{2} \\times (6 \\times 10^{-6}) \\times (100)^2 = \\frac{1}{2} \\times 6\\times10^{-6} \\times 10^4$$\n$$U = 3 \\times 10^{-2}$$\n$$\\boxed{U = \\mathbf{0.03\\ \\text{J}} = \\mathbf{3.0 \\times 10^{-2}\\ \\text{J}} = 30\\ \\text{mJ}}$$\n\n**Step 4 — Verification:** Charge stored $Q = CV = 6\\times10^{-6}\\times100 = 6\\times10^{-4}\\ \\text{C}$, and $U = \\tfrac{1}{2}QV = \\tfrac{1}{2}\\times6\\times10^{-4}\\times100 = 0.03\\ \\text{J}$ ✓\n\n**Equivalent forms:** $U = \\frac{1}{2}CV^2 = \\frac{1}{2}Q^2C = \\frac{1}{2}QV$; energy density $= \\tfrac{1}{2}\\varepsilon_0E^2$.",
+      "knowledgeNote": "Energy stored in a capacitor equals one-half of capacitance times potential difference squared, here 0.03 joules."
+    }
+  ]
+}

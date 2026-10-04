@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Reflection At Curved Mirror — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "reflection-at-curved-mirror",
+  "topicSlug": "reflection-at-curved-mirror-pyq-2022",
+  "topicTitle": "NEB Class 11 Physics — Reflection At Curved Mirror — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "An object is placed 30 cm in front of a concave mirror of focal length 10 cm. Find the position and magnification of the image and state its nature.",
+      "marks": 4,
+      "year": 2022,
+      "source": "NEB Model",
+      "solution": "**Step 1 — Given:** $u = -30\\ \\text{cm},\\ f = -10\\ \\text{cm}$\n\n**Step 2 — Mirror formula:**\n$$\\frac{1}{v} + \\frac{1}{u} = \\frac{1}{f}$$\n$$\\frac{1}{v} + \\frac{1}{-30} = \\frac{1}{-10}$$\n$$\\frac{1}{v} = -\\frac{1}{10} + \\frac{1}{30} = \\frac{-3 + 1}{30} = -\\frac{2}{30} = -\\frac{1}{15}$$\n\n**Step 3 — Image position:**\n$$v = \\mathbf{-15\\ \\text{cm}}$$\nThe image is 15 cm **in front of** the mirror (on the same side as the object).\n\n**Step 4 — Magnification:**\n$$m = -\\frac{v}{u} = -\\frac{-15}{-30} = \\mathbf{-0.5}$$\n\n**Step 5 — Nature:** $v < 0$ → image is **real**; $m < 0$ → **inverted**; $|m| = 0.5 < 1$ → **diminished**.\n(The object is beyond $2f = 20$ cm, so the image is between $f$ and $2f$. ✓)",
+      "knowledgeNote": "With a concave mirror, an object beyond twice the focal length gives a real, inverted, diminished image between f and 2f."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Chemistry — Chemistry Of Non Metals — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "chemistry-of-non-metals",
+  "topicSlug": "chemistry-of-non-metals-pyq-2024",
+  "topicTitle": "NEB Class 11 Chemistry — Chemistry Of Non Metals — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Arrange the oxoacids of chlorine HClO, HClO₂, HClO₃ and HClO₄ in order of increasing acid strength and explain the trend. ($K_a$: 3.0 × 10⁻⁸, 4.0 × 10⁻², 5 × 10¹, 10¹⁰)",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Order of increasing acid strength:**\n\n$$\\text{HClO} < \\text{HClO}_2 < \\text{HClO}_3 < \\text{HClO}_4$$\n\nThis matches the increase in $K_a$ from $3.0 \\times 10^{-8}$ to $10^{10}$.\n\n**Explanation.**\n\nEach extra oxygen atom pulls electrons away from the O–H bond through its strong $-I$ inductive effect, so the O–H bond becomes weaker and the proton is lost more easily. The $O^-$ groups generated are also stabilised by resonance delocalisation over several oxygens, making the conjugate base more stable and the acid stronger.\n\nPauling's empirical rule, $pK_a \\approx 8 - 5m$ where $m$ is the number of non-protonated oxygen atoms, confirms it: HClO ($m=0$) gives $pK_a \\approx 8$; HClO₂ ($m=1$) $pK_a \\approx 3$; HClO₃ ($m=2$) $pK_a \\approx -2$; HClO₄ ($m=3$) $pK_a \\approx -7$. Perchloric acid is thus one of the strongest acids known.",
+      "knowledgeNote": "Acid strength of oxoacids rises with each added oxygen because of the inductive effect and resonance stabilisation of the anion."
+    }
+  ]
+}

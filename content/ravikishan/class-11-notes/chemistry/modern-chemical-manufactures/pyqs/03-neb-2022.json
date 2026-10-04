@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Chemistry — Modern Chemical Manufactures — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "modern-chemical-manufactures",
+  "topicSlug": "modern-chemical-manufactures-pyq-2022",
+  "topicTitle": "NEB Class 11 Chemistry — Modern Chemical Manufactures — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "What is the Contact process? Write the key reactions and conditions.",
+      "marks": 4,
+      "year": 2022,
+      "source": "NEB Model",
+      "solution": "**Contact process:** Manufacturing sulfuric acid (H₂SO₄).\n\n**Reactions:**\n1. S + O₂ → SO₂\n2. 2SO₂ + O₂ ⇌ 2SO₃ (V₂O₅ catalyst, 450°C, 1-2 atm)\n3. SO₃ + H₂SO₄ → H₂S₂O₇ (oleum)\n4. H₂S₂O₇ + H₂O → 2H₂SO₄\n\n**Conditions:**\n- V₂O₅ catalyst, 450°C, excess O₂\n- SO₃ absorbed in H₂SO₄ (not directly in water — creates mist)",
+      "knowledgeNote": "Sulfuric acid is the most important industrial chemical — used in fertilizers, batteries, petroleum refining."
+    },
+    {
+      "question": "Describe the Solvay process for the manufacture of sodium carbonate, giving balanced equations for each step.",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "**Stage 1 — Saturation of brine with ammonia and carbon dioxide.**\n\nA concentrated solution of sodium chloride is saturated first with ammonia and then with carbon dioxide. Sodium hydrogencarbonate has a low solubility and precipitates out, while ammonium chloride stays in solution:\n\n$$\\text{NaCl} + \\text{NH}_3 + \\text{CO}_2 + \\text{H}_2\\text{O} \\rightarrow \\text{NaHCO}_3\\downarrow + \\text{NH}_4\\text{Cl}$$\n\n**Stage 2 — Decomposition (calcination) of the bicarbonate.**\n\nThe precipitated $NaHCO_3$ is filtered off and heated at about 500 °C to give anhydrous sodium carbonate:\n\n$$2\\text{NaHCO}_3 \\xrightarrow{\\Delta} \\text{Na}_2\\text{CO}_3 + \\text{H}_2\\text{O} + \\text{CO}_2\\uparrow$$\n\n**Recovery of ammonia.** The $NH_4Cl$ from stage 1 is treated with lime, Ca(OH)₂, to release ammonia which is recycled:\n\n$$2\\text{NH}_4\\text{Cl} + \\text{Ca(OH)}_2 \\rightarrow \\text{CaCl}_2 + 2\\text{NH}_3\\uparrow + 2\\text{H}_2\\text{O}$$\n\nSince ammonia is recovered and reused, the net cost is low and the products are cheap.",
+      "knowledgeNote": "In the Solvay process brine is saturated with NH₃ and CO₂, and the precipitated NaHCO₃ is calcined to Na₂CO₃."
+    }
+  ]
+}

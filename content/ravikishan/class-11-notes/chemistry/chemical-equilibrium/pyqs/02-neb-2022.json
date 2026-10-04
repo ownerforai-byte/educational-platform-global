@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Chemistry — Chemical Equilibrium — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "chemical-equilibrium",
+  "topicSlug": "chemical-equilibrium-pyq-2022",
+  "topicTitle": "NEB Class 11 Chemistry — Chemical Equilibrium — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "For the equilibrium $N_2O_4(g) \\rightleftharpoons 2NO_2(g)$, $\\Delta H = +57$ kJ mol⁻¹, state and explain the effect on the position of equilibrium of: (a) increasing the pressure, (b) lowering the temperature, (c) adding more $N_2O_4$ at constant volume.",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "By Le Chatelier's principle, a system at equilibrium shifts to oppose the imposed change.\n\n**(a) Increasing the pressure → equilibrium shifts to the right (towards $NO_2$).**\n\nOn the left there is 1 mole of gas and on the right 2 moles. Increased pressure favours the side with fewer gaseous moles, so it opposes the volume decrease by converting $N_2O_4$ into $NO_2$. Here the greater number of moles is the more stable side at high pressure, so the shift is to the right.\n\n**(b) Lowering the temperature → equilibrium shifts to the left (towards $N_2O_4$).**\n\nThe forward reaction is endothermic ($\\Delta H > 0$), so heat behaves as a product. Cooling removes heat, and the system compensates by favouring the exothermic reverse reaction. Hence $N_2O_4$ forms and the colour lightens.\n\n**(c) Adding $N_2O_4$ at constant volume → equilibrium shifts to the right.**\n\nThe concentration of $N_2O_4$ increases, so the system consumes some of the added $N_2O_4$ to restore the original concentrations. $K_c$ itself is unchanged, since temperature has not changed.",
+      "knowledgeNote": "Le Chatelier's principle: added heat or pressure is countered by a shift towards the endothermic or less gaseous side."
+    }
+  ]
+}

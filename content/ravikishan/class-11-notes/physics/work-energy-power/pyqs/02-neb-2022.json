@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Physics — Work Energy Power — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "work-energy-power",
+  "topicSlug": "work-energy-power-pyq-2022",
+  "topicTitle": "NEB Class 11 Physics — Work Energy Power — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "An electric motor has a power output of 2 kW. How much time will it take to lift a 500 kg mass through 20 m? (g = 10 m/sÂ²)",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "Work done W = mgh = 500 Ã— 10 Ã— 20 = 100,000 J = 10âµ J\n\nPower P = W/t â†’ t = W/P = 10âµ/2000 = **50 seconds**",
+      "knowledgeNote": "Power = Work/Time. 1 W = 1 J/s. 1 HP = 746 W"
+    },
+    {
+      "question": "A person of mass 60 kg climbs a staircase of vertical height 8 m in 20 s. Assuming $g = 9.8\\ \\text{m/s}^2$, calculate the power developed by the person.",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Model",
+      "solution": "**Step 1 — Given:** $m = 60\\ \\text{kg},\\ h = 8\\ \\text{m},\\ t = 20\\ \\text{s}$\n\n**Step 2 — Work done against gravity** (the useful work in climbing):\n$$W = mgh = 60 \\times 9.8 \\times 8$$\n$$W = 4704\\ \\text{J}$$\n\n**Step 3 — Power developed:**\n$$P = \\frac{W}{t} = \\frac{mgh}{t} = \\frac{60 \\times 9.8 \\times 8}{20}$$\n$$\\boxed{P = \\mathbf{235.2\\ \\text{W}}\\approx \\mathbf{235\\ \\text{W}}$$\n\n**Note:** This is the useful mechanical power only; a human body is about $20\\%$ efficient, so the metabolic power consumed is much higher.",
+      "knowledgeNote": "Power developed while lifting a body equals mgh divided by time, which here is 235 watts."
+    }
+  ]
+}

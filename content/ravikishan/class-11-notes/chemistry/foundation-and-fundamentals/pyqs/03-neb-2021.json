@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Chemistry — Foundation And Fundamentals — 2021",
+  "year": 2021,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "foundation-and-fundamentals",
+  "topicSlug": "foundation-and-fundamentals-pyq-2021",
+  "topicTitle": "NEB Class 11 Chemistry — Foundation And Fundamentals — 2021",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Two readings for the length of a metallic wire are 10.4 cm and 10.6 cm. Calculate the mean value and the absolute error of the measurements, and comment on the precision of the data.",
+      "marks": 2,
+      "year": 2021,
+      "source": "NEB Past",
+      "solution": "**Mean value**\n\n$$\\bar{x} = \\frac{x_1 + x_2}{2} = \\frac{10.4 + 10.6}{2} = \\frac{21.0}{2} = 10.5 \\ \\text{cm}$$\n\n**Absolute error**\n\n$$\\Delta x = \\frac{x_{max} - x_{min}}{2} = \\frac{10.6 - 10.4}{2} = 0.1 \\ \\text{cm}$$\n\n**Relative (percentage) error**\n\n$$\\text{Percentage error} = \\frac{0.1}{10.5} \\times 100 \\approx 0.95\\%$$\n\nThe result is best written as **10.5 ± 0.1 cm**. Since the two readings differ by only 0.2 cm (less than 2%), the measurements are reasonably precise.",
+      "knowledgeNote": "The mean is the most probable value, while the absolute error is half the spread between the maximum and minimum readings."
+    }
+  ]
+}

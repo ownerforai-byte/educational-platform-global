@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Mathematics — Analytic Geometry — 2021",
+  "year": 2021,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "analytic-geometry",
+  "topicSlug": "analytic-geometry-pyq-2021",
+  "topicTitle": "NEB Class 11 Mathematics — Analytic Geometry — 2021",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Find the coordinates of the vertices and foci, the eccentricity and the length of the latus rectum of the hyperbola $9x^{2}-16y^{2}=144$.",
+      "marks": 3,
+      "year": 2021,
+      "source": "NEB Past",
+      "solution": "Divide throughout by 144 and put in standard form:\n$$\\frac{x^{2}}{16}-\\frac{y^{2}}{9}=1$$\nComparing with $\\dfrac{x^{2}}{a^{2}}-\\dfrac{y^{2}}{b^{2}}=1$, we have $a^{2}=16,\\; b^{2}=9$, so $a=4,\\; b=3$.\n\n**Vertices:** $(\\pm a, 0)=(\\pm 4, 0)$\n\n**Foci:** $c^{2}=a^{2}+b^{2}=16+9=25 \\implies c=5$, so foci are $(\\pm 5, 0)$.\n\n**Eccentricity:**\n$$e=\\frac{c}{a}=\\frac{5}{4}=1.25$$\n\n**Length of latus rectum:**\n$$\\frac{2b^{2}}{a}=\\frac{2\\times 9}{4}=\\frac{9}{2}=4.5\\text{ units}$$",
+      "knowledgeNote": "For $\\frac{x^{2}}{a^{2}}-\\frac{y^{2}}{b^{2}}=1$: $c^{2}=a^{2}+b^{2}$, $e=\\frac{c}{a}$ and latus rectum $=\\frac{2b^{2}}{a}$."
+    }
+  ]
+}

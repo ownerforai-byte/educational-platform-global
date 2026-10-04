@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Mathematics — Trigonometry — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "trigonometry",
+  "topicSlug": "trigonometry-pyq-2024",
+  "topicTitle": "NEB Class 11 Mathematics — Trigonometry — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Find the principal value of sin⁻¹(-1/2).",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "sin⁻¹(-1/2) = -π/6 (or -30°)\n\nPrincipal value range of sin⁻¹ is [-π/2, π/2]. Since sin(-π/6) = -1/2, the answer is -π/6.",
+      "knowledgeNote": "sin⁻¹ range: [-π/2, π/2]; cos⁻¹ range: [0, π]; tan⁻¹ range: (-π/2, π/2)."
+    },
+    {
+      "question": "If $\\tan\\alpha=2$ and $\\tan\\beta=3$, find (i) $\\tan(\\alpha+\\beta)$, (ii) $\\tan(\\alpha-\\beta)$, and (iii) verify your answer to (i) using $\\sin(\\alpha+\\beta)$ and $\\cos(\\alpha+\\beta)$.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Past",
+      "solution": "**(i)**\n$$\\tan(\\alpha+\\beta)=\\frac{\\tan\\alpha+\\tan\\beta}{1-\\tan\\alpha\\tan\\beta}=\\frac{2+3}{1-6}=\\frac{5}{-5}=\\boxed{-1}$$\n\n**(ii)**\n$$\\tan(\\alpha-\\beta)=\\frac{\\tan\\alpha-\\tan\\beta}{1+\\tan\\alpha\\tan\\beta}=\\frac{2-3}{1+6}=\\boxed{-\\frac{1}{7}}$$\n\n**(iii)** From $\\tan\\alpha=2$, take $\\sin\\alpha=\\frac{2}{\\sqrt5}$, $\\cos\\alpha=\\frac{1}{\\sqrt5}$; from $\\tan\\beta=3$, take $\\sin\\beta=\\frac{3}{\\sqrt{10}}$, $\\cos\\beta=\\frac{1}{\\sqrt{10}}$.\n$$\\sin(\\alpha+\\beta)=\\sin\\alpha\\cos\\beta+\\cos\\alpha\\sin\\beta=\\frac{2}{\\sqrt{50}}+\\frac{3}{\\sqrt{50}}=\\frac{5}{5\\sqrt2}=\\frac{1}{\\sqrt2}$$\n$$\\cos(\\alpha+\\beta)=\\cos\\alpha\\cos\\beta-\\sin\\alpha\\sin\\beta=\\frac{1}{\\sqrt{50}}-\\frac{6}{\\sqrt{50}}=-\\frac{5}{\\sqrt{50}}=-\\frac{1}{\\sqrt2}$$\n$$\\therefore\\ \\tan(\\alpha+\\beta)=\\frac{1/\\sqrt2}{-1/\\sqrt2}=-1$$\nwhich agrees with part (i). Also $\\sin(\\alpha+\\beta)>0$, $\\cos(\\alpha+\\beta)<0$, so $\\alpha+\\beta$ lies in the second quadrant.",
+      "knowledgeNote": "When $1-\\tan\\alpha\\tan\\beta=0$ the addition formula for $\\tan$ fails; find $\\alpha+\\beta$ from $\\sin$ and $\\cos$ instead."
+    }
+  ]
+}

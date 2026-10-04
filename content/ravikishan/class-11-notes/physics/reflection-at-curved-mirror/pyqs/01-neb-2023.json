@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Reflection At Curved Mirror — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "reflection-at-curved-mirror",
+  "topicSlug": "reflection-at-curved-mirror-pyq-2023",
+  "topicTitle": "NEB Class 11 Physics — Reflection At Curved Mirror — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Explain why an object placed at the focus of a concave mirror produces an image at infinity, and state what happens for objects placed at C and between C and F.",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Past",
+      "solution": "**Object at focus F ($u = f$):** Rays from any point on the object strike the mirror parallel to the principal axis. After reflection from a concave mirror, rays parallel to the principal axis pass through the focus and become **highly parallel**. So the reflected rays never meet at any finite point and the image is formed **at infinity**. This is used in searchlights, beam headlights and astronomical telescopes.\n\n**Object at centre of curvature C ($u = 2f$):** Rays retrace their path, so the image is formed at C itself — **real, inverted and same size** ($m = -1$).\n\n**Object between C and F ($f < u < 2f$):** The image forms **beyond $2f$** — **real, inverted and magnified** ($m > 1$), which is the principle of a projector.",
+      "knowledgeNote": "At the focus a concave mirror sends reflected rays parallel, giving an image at infinity; at C the image is same size."
+    }
+  ]
+}

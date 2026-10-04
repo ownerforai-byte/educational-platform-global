@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Physics — Quantity Of Heat — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "quantity-of-heat",
+  "topicSlug": "quantity-of-heat-pyq-2023",
+  "topicTitle": "NEB Class 11 Physics — Quantity Of Heat — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "What is latent heat? Distinguish between latent heat of fusion and latent heat of vaporization.",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "Latent heat is the heat required to change the state of a unit mass of a substance without changing its temperature.\n\n**Latent heat of fusion (Lf):** Heat to change 1 kg solid â†’ liquid (melting). Lf for ice = 334 kJ/kg.\n**Latent heat of vaporization (Lv):** Heat to change 1 kg liquid â†’ gas (boiling). Lv for water = 2260 kJ/kg.",
+      "knowledgeNote": "Lv > Lf because vaporization requires breaking all intermolecular bonds, while fusion only breaks some."
+    },
+    {
+      "question": "Define quantity of heat and specific heat capacity. Write the formula for the heat required to raise the temperature of a body and give the SI unit of specific heat capacity.",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Quantity of heat:** The amount of heat $Q$ supplied to a body is the mass of the body multiplied by its specific heat capacity and the rise in temperature.\n$$Q = mc\\Delta T$$\n\n**Specific heat capacity (c):** The amount of heat required to raise the temperature of **unit mass** of a substance by **one degree Celsius** (or one kelvin).\n$$c = \\frac{Q}{m\\Delta T}$$\n\n**SI unit:** $\\text{J kg}^{-1}\\text{K}^{-1}$ (also $\\text{J kg}^{-1}\\,^\\circ\\text{C}^{-1}$). Dimensional formula: $\\left[LT^{-2}\\right]$.\n\n**Values:** Water $= 4.2 \\times 10^3\\ \\text{J kg}^{-1}\\text{K}^{-1}$ (maximum), ice $= 3.36 \\times 10^3$, aluminium $= 0.9 \\times 10^3$, copper $= 0.39 \\times 10^3$, lead $= 0.13 \\times 10^3$, mercury $= 0.14 \\times 10^3$.\n\nThe large value for water is why water is an excellent coolant and why a hot bottle stays hot for long.",
+      "knowledgeNote": "Heat equals mass times specific heat capacity times temperature rise; specific heat capacity has SI unit J per kg per K."
+    }
+  ]
+}

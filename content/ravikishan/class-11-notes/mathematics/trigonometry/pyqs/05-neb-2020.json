@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Mathematics — Trigonometry — 2020",
+  "year": 2020,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "trigonometry",
+  "topicSlug": "trigonometry-pyq-2020",
+  "topicTitle": "NEB Class 11 Mathematics — Trigonometry — 2020",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Prove that\n$$\\cos\\theta+\\cos3\\theta+\\cos5\\theta+\\cdots+\\cos(2n-1)\\theta=\\frac{\\sin2n\\theta}{2\\sin\\theta}$$",
+      "marks": 3,
+      "year": 2020,
+      "source": "NEB Past",
+      "solution": "Multiply both sides by $2\\sin\\theta$ and use $2\\sin A\\cos B=\\sin(A+B)+\\sin(A-B)$:\n\n$$2\\sin\\theta\\cos\\theta=\\sin2\\theta$$\n$$2\\sin\\theta\\cos3\\theta=\\sin4\\theta-\\sin2\\theta$$\n$$2\\sin\\theta\\cos5\\theta=\\sin6\\theta-\\sin4\\theta$$\n$$\\vdots$$\n$$2\\sin\\theta\\cos(2n-1)\\theta=\\sin2n\\theta-\\sin(2n-2)\\theta$$\n\nAdding all these equations, every intermediate term cancels in pairs:\n$$2\\sin\\theta\\left[\\cos\\theta+\\cos3\\theta+\\cos5\\theta+\\cdots+\\cos(2n-1)\\theta\\right]=\\sin2n\\theta$$\nDividing by $2\\sin\\theta$:\n$$\\cos\\theta+\\cos3\\theta+\\cdots+\\cos(2n-1)\\theta=\\frac{\\sin2n\\theta}{2\\sin\\theta}$$\nwhich is the required result.",
+      "knowledgeNote": "Multiply an odd cosine series by $2\\sin\\theta$: the terms telescope to $\\sin2n\\theta$."
+    }
+  ]
+}

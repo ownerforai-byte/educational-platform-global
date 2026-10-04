@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Physics — Nuclear Physics — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "nuclear-physics",
+  "topicSlug": "nuclear-physics-pyq-2023",
+  "topicTitle": "NEB Class 11 Physics — Nuclear Physics — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "What is mass defect? How is it related to binding energy?",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Mass defect (Δm):** The difference between the sum of masses of individual nucleons and the actual mass of the nucleus.\n\nΔm = [Zmp + (A-Z)mn] - M(nucleus)\n\n**Binding energy:** The energy equivalent of mass defect: E = Δm × c²\n\nHigher binding energy per nucleon → more stable nucleus.",
+      "knowledgeNote": "Binding energy per nucleon is maximum (~8.7 MeV) for iron-56. Heavier nuclei release energy by fission; lighter nuclei by fusion."
+    },
+    {
+      "question": "A radioactive sample has a half-life of 8 days. What fraction of the sample remains after 24 days, and what will be its activity if the initial activity was 4 curie?",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Definition of half-life:** The half-life of a radioactive substance is the time required for **half** of its initial number of atoms to decay, or equivalently for its activity to become half of the original value.\n\n**Step 1 — Number of half-lives elapsed:**\n$$n = \\frac{24\\ \\text{days}}{8\\ \\text{days}} = 3$$\n\n**Step 2 — Fraction of the sample remaining:**\n$$\\frac{N}{N_0} = \\left(\\frac{1}{2}\\right)^3 = \\frac{1}{8}$$\n$$\\boxed{\\text{Fraction remaining} = \\mathbf{\\dfrac{1}{8}}\\ (=12.5\\%)}$$\n\n**Step 3 — Activity after 24 days:**\nActivity falls by half each half-life, so\n$$A = \\frac{4}{2^3} = \\frac{4}{8}$$\n$$\\boxed{A = \\mathbf{0.5\\ \\text{curie}}$$\n\n**Note:** $1\\ \\text{curie} = 3.7 \\times 10^{10}$ decays per second, so the final activity is $1.85 \\times 10^{10}\\ \\text{s}^{-1}$.",
+      "knowledgeNote": "After three half-lives of eight days each, one-eighth of the sample remains and the activity falls from 4 to 0.5 curie."
+    }
+  ]
+}

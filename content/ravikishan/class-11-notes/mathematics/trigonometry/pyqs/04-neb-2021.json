@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Mathematics — Trigonometry — 2021",
+  "year": 2021,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "trigonometry",
+  "topicSlug": "trigonometry-pyq-2021",
+  "topicTitle": "NEB Class 11 Mathematics — Trigonometry — 2021",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "$\\sin^{2}30^{\\circ}+\\cos^{2}60^{\\circ}-\\tan^{2}45^{\\circ}$ is (a) 1  (b) 0  (c) $\\frac{1}{2}$  (d) $-\\frac{1}{2}$",
+      "marks": 1,
+      "year": 2021,
+      "source": "NEB Model",
+      "solution": "Using $\\sin30^{\\circ}=\\frac12$, $\\cos60^{\\circ}=\\frac12$, $\\tan45^{\\circ}=1$:\n$$\\left(\\frac12\\right)^{2}+\\left(\\frac12\\right)^{2}-1^{2}=\\frac14+\\frac14-1=\\frac12-1=-\\frac12$$\n\n**Correct option: (d) $-\\frac{1}{2}$**",
+      "knowledgeNote": "$\\sin^{2}30^{\\circ}=\\cos^{2}60^{\\circ}=\\frac14$ and $\\tan^{2}45^{\\circ}=1$, which changes the sign of such expressions."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Mathematics — Vectors — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "vectors",
+  "topicSlug": "vectors-pyq-2022",
+  "topicTitle": "NEB Class 11 Mathematics — Vectors — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "What is the scalar triple product? Write its geometric significance.",
+      "marks": 2,
+      "year": 2022,
+      "source": "NEB Model",
+      "solution": "The scalar triple product is [a b c] = a · (b × c).\n\n**Geometric significance:** It gives the volume of the parallelepiped formed by vectors a, b, c.\n\nIf [a b c] = 0, the three vectors are coplanar (lie in the same plane).",
+      "knowledgeNote": "Scalar triple product is cyclic: [a b c] = [b c a] = [c a b]"
+    },
+    {
+      "question": "The position vectors of the points $A$ and $B$ are $\\mathbf{a}=2\\hat{i}+\\hat{j}-\\hat{k}$ and $\\mathbf{b}=\\hat{i}-3\\hat{j}+2\\hat{k}$. Find the position vector of the point which divides $AB$ internally in the ratio $2:3$.",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "If $P$ divides $AB$ internally in the ratio $m:n$ (i.e. $AP:PB=m:n$), then\n$$\\mathbf{p}=\\frac{n\\,\\mathbf{a}+m\\,\\mathbf{b}}{m+n}$$\nHere $m=2$, $n=3$:\n$$\\mathbf{p}=\\frac{3(2\\hat{i}+\\hat{j}-\\hat{k})+2(\\hat{i}-3\\hat{j}+2\\hat{k})}{5}$$\n$$=\\frac{(6\\hat{i}+3\\hat{j}-3\\hat{k})+(2\\hat{i}-6\\hat{j}+4\\hat{k})}{5}$$\n$$=\\frac{8\\hat{i}-3\\hat{j}+\\hat{k}}{5}$$\n$$\\boxed{\\mathbf{p}=\\frac{8}{5}\\hat{i}-\\frac{3}{5}\\hat{j}+\\frac{1}{5}\\hat{k}}$$\n\n**Verification:** $\\overrightarrow{AP}=\\left(-\\frac25,-\\frac85,\\frac65\\right)$ and $\\overrightarrow{PB}=\\left(-\\frac35,-\\frac{12}{5},\\frac95\\right)$, so $|AP|^{2}=\\frac{104}{25}$, $|PB|^{2}=\\frac{234}{25}$ and $|AP|:|PB|=\\sqrt{104:234}=2:3$.",
+      "knowledgeNote": "For $AP:PB=m:n$ the position vector is $\\frac{n\\mathbf{a}+m\\mathbf{b}}{m+n}$ — the weights are swapped."
+    }
+  ]
+}

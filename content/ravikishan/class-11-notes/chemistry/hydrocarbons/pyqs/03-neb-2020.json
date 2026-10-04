@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Chemistry — Hydrocarbons — 2020",
+  "year": 2020,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "hydrocarbons",
+  "topicSlug": "hydrocarbons-pyq-2020",
+  "topicTitle": "NEB Class 11 Chemistry — Hydrocarbons — 2020",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Explain the mechanism of the free-radical chlorination of methane in the presence of ultraviolet light, and account for the mixture of products formed.",
+      "marks": 3,
+      "year": 2020,
+      "source": "NEB Past",
+      "solution": "**Step 1 — Initiation (homolytic fission by UV light).**\n\n$$\\text{Cl}_2 \\xrightarrow{h\\nu} \\text{Cl}^\\bullet + \\text{Cl}^\\bullet$$\n\n**Step 2 — Propagation.**\n\n$$\\text{Cl}^\\bullet + \\text{CH}_4 \\rightarrow \\text{HCl} + \\text{CH}_3^\\bullet$$\n\n$$\\text{CH}_3^\\bullet + \\text{Cl}_2 \\rightarrow \\text{CH}_3\\text{Cl} + \\text{Cl}^\\bullet$$\n\nThe chlorine radical is regenerated, so the chain continues.\n\n**Step 3 — Termination.**\n\n$$\\text{Cl}^\\bullet + \\text{Cl}^\\bullet \\rightarrow \\text{Cl}_2 \\qquad \\text{CH}_3^\\bullet + \\text{Cl}^\\bullet \\rightarrow \\text{CH}_3\\text{Cl} \\qquad \\text{CH}_3^\\bullet + \\text{CH}_3^\\bullet \\rightarrow \\text{C}_2\\text{H}_6$$\n\n**Why a mixture forms.** The reaction is not selective: chlorine can attack any of the four equivalent C–H bonds of methane, and the process is highly random. A mixture of chloromethane, dichloromethane, chloroform and tetrachloromethane is obtained. Excess chlorine pushes the substitution further:\n\n$$\\text{CH}_4 + 4\\text{Cl}_2 \\xrightarrow{h\\nu} \\text{CCl}_4 + 4\\text{HCl}$$",
+      "knowledgeNote": "Chlorination of methane is a chain radical reaction with initiation, propagation and termination steps, giving a statistical mixture of products."
+    }
+  ]
+}

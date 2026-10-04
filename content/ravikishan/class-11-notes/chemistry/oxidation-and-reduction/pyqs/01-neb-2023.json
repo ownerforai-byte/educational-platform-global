@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Chemistry — Oxidation And Reduction — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "oxidation-and-reduction",
+  "topicSlug": "oxidation-and-reduction-pyq-2023",
+  "topicTitle": "NEB Class 11 Chemistry — Oxidation And Reduction — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Balance the following redox reaction by the oxidation number (half-reaction) method: $MnO_4^- + C_2O_4^{2-} + H^+ \\rightarrow Mn^{2+} + CO_2 + H_2O$. Give the oxidation and reduction half equations.",
+      "marks": 4,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Step 1 — Reduction half equation.** Mn goes from +7 to +2, a gain of 5 electrons:\n\n$$\\text{MnO}_4^- + 8\\text{H}^+ + 5e^- \\rightarrow \\text{Mn}^{2+} + 4\\text{H}_2\\text{O} \\qquad (\\times 2)$$\n\n**Step 2 — Oxidation half equation.** Carbon in $C_2O_4^{2-}$ is +3 and in $CO_2$ it is +4; two carbons lose 2 electrons:\n\n$$\\text{C}_2\\text{O}_4^{2-} \\rightarrow 2\\text{CO}_2 + 2e^- \\qquad (\\times 5)$$\n\n**Step 3 — Equalise and cancel electrons (LCM = 10)**\n\n$$2\\text{MnO}_4^- + 16\\text{H}^+ + 10e^- + 5\\text{C}_2\\text{O}_4^{2-} \\rightarrow 2\\text{Mn}^{2+} + 8\\text{H}_2\\text{O} + 10\\text{CO}_2 + 10e^-$$\n\n$$\\boxed{2\\text{MnO}_4^- + 5\\text{C}_2\\text{O}_4^{2-} + 16\\text{H}^+ \\rightarrow 2\\text{Mn}^{2+} + 10\\text{CO}_2 + 8\\text{H}_2\\text{O}}$$\n\n**Step 4 — Check.**\n\nMn: 2 = 2. C: 10 = 10. O: 8 + 20 = 28 on the left, 20 + 8 = 28 on the right. H: 16 = 16. Charge: $(-2 - 10 + 16) = +4$ on the left and $+4$ on the right.",
+      "knowledgeNote": "Balance oxygen with H₂O, hydrogen with H⁺, then charge with electrons until both atoms and charge agree."
+    }
+  ]
+}

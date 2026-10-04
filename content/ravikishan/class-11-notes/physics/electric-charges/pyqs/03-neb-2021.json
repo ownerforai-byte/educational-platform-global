@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Electric Charges — 2021",
+  "year": 2021,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "electric-charges",
+  "topicSlug": "electric-charges-pyq-2021",
+  "topicTitle": "NEB Class 11 Physics — Electric Charges — 2021",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "What is meant by quantisation of electric charge? Explain why a charge of 2.5 e can never be observed.",
+      "marks": 3,
+      "year": 2021,
+      "source": "NEB Past",
+      "solution": "**Quantisation of charge:** All electric charges are always an **integer multiple** of the elementary charge $e$. That is, $q = ne$, where $n$ is any integer (positive, negative or zero).\n$$e = 1.6 \\times 10^{-19}\\ \\text{C}$$\n**So possible charges are:** $\\ldots, -3e, -2e, -e, 0, +e, +2e, +3e, \\ldots$ — the value $0.5e$ or $2.5e$ can never occur.\n\n**Reason:** Charge is carried by **quark** particles inside protons and neutrons. Quarks carry fractional charges ($\\pm e/3$ and $\\pm 2e/3$) but quarks are **never found free** in nature — they are always bound in pairs or triplets of colour-neutral hadrons. Hence every observable particle (proton, neutron, electron) carries an **integral** multiple of $e$.\n\nThis is why the electrical charge is said to be **quantised**.",
+      "knowledgeNote": "Charge is quantised because free quarks never appear alone, so all observable charges are integer multiples of the elementary charge."
+    }
+  ]
+}

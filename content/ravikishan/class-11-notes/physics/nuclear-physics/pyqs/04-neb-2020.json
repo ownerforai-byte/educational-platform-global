@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Nuclear Physics — 2020",
+  "year": 2020,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "nuclear-physics",
+  "topicSlug": "nuclear-physics-pyq-2020",
+  "topicTitle": "NEB Class 11 Physics — Nuclear Physics — 2020",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "After n half-lives the fraction of radioactive atoms remaining is: (a) 1/2 to the power n (b) n/2 (c) 2 to the power n (d) 1 over n squared",
+      "marks": 1,
+      "year": 2020,
+      "source": "NEB Past",
+      "solution": "**Correct option: (a) $1/2^n$.**\n\n**Step 1:** In each half-life the number of undecayed atoms becomes half of the previous value.\nAfter 1 half-life: $N = N_0/2$\nAfter 2 half-lives: $N = N_0/4$\nAfter 3 half-lives: $N = N_0/8$\n\n**Step 2 — Generalising:**\n$$N = N_0\\left(\\frac{1}{2}\\right)^n \\Rightarrow \\frac{N}{N_0} = \\boxed{\\left(\\frac{1}{2}\\right)^n = \\frac{1}{2^n}}$$\n\n**Check:** For $n = 3$, the fraction is $1/8$ ✓, and the activity follows exactly the same law.\nHence options (b), (c) and (d) are incorrect.",
+      "knowledgeNote": "The fraction of radioactive atoms remaining after n half-lives is one over two to the power n."
+    }
+  ]
+}

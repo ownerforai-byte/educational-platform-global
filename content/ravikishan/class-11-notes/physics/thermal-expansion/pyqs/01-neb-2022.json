@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Physics — Thermal Expansion — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "thermal-expansion",
+  "topicSlug": "thermal-expansion-pyq-2022",
+  "topicTitle": "NEB Class 11 Physics — Thermal Expansion — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Define linear, superficial, and cubical expansivity. Derive the relationship between them.",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Model",
+      "solution": "**Linear expansivity (Î±):** Fractional change in length per degree temperature rise: Î”L = Î±Lâ‚€Î”T\n**Superficial expansivity (Î²):** Fractional change in area: Î”A = Î²Aâ‚€Î”T\n**Cubical expansivity (Î³):** Fractional change in volume: Î”V = Î³Vâ‚€Î”T\n\nRelationship: For isotropic solids, Î² = 2Î± and Î³ = 3Î±. This comes from expanding each dimension: L â†’ L(1+Î±Î”T), so A â†’ A(1+Î±Î”T)Â² â‰ˆ A(1+2Î±Î”T), and V â†’ V(1+Î±Î”T)Â³ â‰ˆ V(1+3Î±Î”T).",
+      "knowledgeNote": "For metals, Î± â‰ˆ 10â»âµ to 10â»â¶ Kâ»Â¹. Steel: Î± â‰ˆ 11Ã—10â»â¶ Kâ»Â¹"
+    },
+    {
+      "question": "Define the coefficient of linear expansivity and write its formula and SI unit.",
+      "marks": 2,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "**Definition:** The coefficient of linear expansivity $\\alpha$ of a solid is defined as the **increase in length per unit original length per unit rise in temperature**.\n\n**Formula:**\n$$\\alpha = \\frac{\\Delta L}{L_0 \\Delta T} = \\frac{L_T - L_0}{L_0 \\Delta T}$$\nwhere $\\Delta L = L_T - L_0$ is the change in length.\n\n**From the new length:** $L_T = L_0(1 + \\alpha\\Delta T)$\n\n**SI unit:** $\\text{K}^{-1}$ or $^\\circ\\text{C}^{-1}$ (same, since a temperature interval of 1 K equals 1 degree Celsius). Dimensional formula: $\\left[T^{-1}\\right]$.\n\n**Values:** Aluminium $\\approx 23 \\times 10^{-6}\\ \\text{K}^{-1}$, brass $\\approx 19 \\times 10^{-6}\\ \\text{K}^{-1}$, steel $\\approx 11 \\times 10^{-6}\\ \\text{K}^{-1}$, glass $\\approx 9 \\times 10^{-6}\\ \\text{K}^{-1}$.",
+      "knowledgeNote": "Linear expansivity is the fractional increase in length per degree rise in temperature, with SI unit per kelvin."
+    }
+  ]
+}

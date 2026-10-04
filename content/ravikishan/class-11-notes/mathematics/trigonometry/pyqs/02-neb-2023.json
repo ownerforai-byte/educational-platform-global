@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Mathematics — Trigonometry — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "trigonometry",
+  "topicSlug": "trigonometry-pyq-2023",
+  "topicTitle": "NEB Class 11 Mathematics — Trigonometry — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Find cos⁻¹(√3/2) + sin⁻¹(1/2).",
+      "marks": 2,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "cos⁻¹(√3/2) = π/6\ncos⁻¹(1/2) = π/3\nπ/6 + π/3 = **π/2**",
+      "knowledgeNote": "sin⁻¹(x) + cos⁻¹(x) = π/2 for all x ∈ [-1,1]. This identity is very useful."
+    },
+    {
+      "question": "Solve: 2sin²θ - sin θ - 1 = 0 for 0 ≤ θ ≤ 2π",
+      "marks": 4,
+      "year": 2023,
+      "source": "NEB Past",
+      "solution": "2sin²θ - sin θ - 1 = 0\n(2sin θ + 1)(sin θ - 1) = 0\n\nCase 1: sin θ = -1/2 → θ = 7π/6, 11π/6\nCase 2: sin θ = 1 → θ = π/2\n\n**Solutions: θ = π/2, 7π/6, 11π/6**",
+      "knowledgeNote": "General solution: sin θ = sin α → θ = nπ + (-1)ⁿα. For specific intervals, check all valid n."
+    }
+  ]
+}

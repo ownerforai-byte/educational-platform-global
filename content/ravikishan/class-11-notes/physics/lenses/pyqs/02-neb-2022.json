@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Lenses — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "lenses",
+  "topicSlug": "lenses-pyq-2022",
+  "topicTitle": "NEB Class 11 Physics — Lenses — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State the thin lens maker's formula. Derive it for a convex lens.",
+      "marks": 5,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "**Lens maker's formula:** 1/f = (μ-1)(1/R₁ - 1/R₂)\n\nDerivation: Using refraction at two spherical surfaces and applying sign convention for thin lens:\nFor first surface: (μ-1)/R₁ contribution\nFor second surface: -(μ-1)/R₂ contribution\nAdding: 1/f = (μ-1)(1/R₁ - 1/R₂)\n\nWhere μ = refractive index of lens material, R₁ and R₂ are radii of curvature of the two surfaces.",
+      "knowledgeNote": "For a double convex lens with equal radii R: 1/f = 2(μ-1)/R"
+    }
+  ]
+}

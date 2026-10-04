@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Physics — Elasticity — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "elasticity",
+  "topicSlug": "elasticity-pyq-2023",
+  "topicTitle": "NEB Class 11 Physics — Elasticity — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Define stress, strain, and Young's modulus. What are their SI units?",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Stress:** Force per unit area (F/A). SI unit: **Pascal (Pa)** = N/mÂ².\n**Strain:** Fractional change in dimension (Î”L/L). SI unit: **dimensionless**.\n**Young's modulus:** Ratio of stress to strain (Y = stress/strain). SI unit: **Pascal (Pa)**.",
+      "knowledgeNote": "Three elastic moduli: Young's modulus (tensile), Shear modulus (rigidity), Bulk modulus (compressibility). Steel has Y â‰ˆ 2Ã—10Â¹Â¹ Pa"
+    },
+    {
+      "question": "Define Young's modulus and write its formula and SI unit.",
+      "marks": 2,
+      "year": 2023,
+      "source": "NEB Past",
+      "solution": "**Definition:** Young's modulus is defined as the ratio of longitudinal stress (tensile force per unit area) to the corresponding longitudinal strain (extension per unit original length) within the **elastic limit**.\n\n**Formula:**\n$$Y = \\frac{\\text{Stress}}{\\text{Strain}} = \\frac{\\dfrac{F}{A}}{\\dfrac{\\Delta L}{L}} = \\boxed{\\frac{FL}{A\\Delta L}}$$\nwhere $F$ = tensile force, $A$ = cross-sectional area, $L$ = original length, $\\Delta L$ = extension.\n\n**SI unit:** $\\text{N m}^{-2}$ (pascal). Dimensional formula: $\\left[ML^{-1}T^{-2}\\right]$.\n\n**Significance:** A large Young's modulus means the material is stiff and resists deformation. Steel: $\\sim 2 \\times 10^{11}\\ \\text{Pa}$; rubber: $\\sim 5 \\times 10^6\\ \\text{Pa}$.",
+      "knowledgeNote": "Young's modulus is stress divided by strain, measured in pascals; high values indicate a stiff, rigid material."
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Physics — Circular Motion — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "circular-motion",
+  "topicSlug": "circular-motion-pyq-2022",
+  "topicTitle": "NEB Class 11 Physics — Circular Motion — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "A car takes a turn of radius 50 m at a speed of 10 m/s. What is the angular velocity and centripetal acceleration?",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "Angular velocity Ï‰ = v/r = 10/50 = **0.2 rad/s**\n\nCentripetal acceleration ac = vÂ²/r = 100/50 = **2 m/sÂ²**",
+      "knowledgeNote": "Ï‰ = v/r (rad/s). Period T = 2Ï€/Ï‰. Centripetal acceleration always points toward center."
+    },
+    {
+      "question": "An artificial satellite revolves in a circular orbit 600 km above the surface of the earth. Take the radius of the earth as $6.4 \\times 10^6$ m and $G = 6.67 \\times 10^{-11}\\ \\text{N m}^2\\text{kg}^{-2}$, $M = 6 \\times 10^{24}$ kg. Find the orbital speed of the satellite.",
+      "marks": 4,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "**Step 1 — Orbital radius from the centre of the earth:**\n$$r = R + h = 6.4 \\times 10^6 + 6 \\times 10^5 = 7.0 \\times 10^6\\ \\text{m}$$\n\n**Step 2 — For a circular orbit,** gravitational force provides the centripetal force:\n$$\\frac{GMm}{r^2} = \\frac{mv^2}{r} \\;\\Rightarrow\\; v = \\sqrt{\\frac{GM}{r}}$$\n\n**Step 3 — Substitute:**\n$$v = \\sqrt{\\frac{6.67 \\times 10^{-11} \\times 6 \\times 10^{24}}{7.0 \\times 10^6}}$$\n$$v = \\sqrt{\\frac{4.002 \\times 10^{14}}{7.0 \\times 10^6}} = \\sqrt{5.717 \\times 10^{7}}$$\n\n**Step 4 — Result:**\n$$\\boxed{v \\approx 7.56 \\times 10^3\\ \\text{m/s} \\approx 7.6\\ \\text{km/s}}$$\n\n**Step 5 — Period of revolution:**\n$$T = \\frac{2\\pi r}{v} = \\frac{2 \\times 3.142 \\times 7.0 \\times 10^6}{7.56 \\times 10^3} \\approx 5.82 \\times 10^3\\ \\text{s} \\approx \\mathbf{97\\ \\text{min}}$$",
+      "knowledgeNote": "Orbital speed in a circular orbit is the square root of GM divided by the orbital radius from the earth's centre."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Chemistry — Hydrocarbons — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "hydrocarbons",
+  "topicSlug": "hydrocarbons-pyq-2022",
+  "topicTitle": "NEB Class 11 Chemistry — Hydrocarbons — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "What happens when but-2-ene is treated with ozone followed by zinc and water? Give the equations involved and identify the products.",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Model",
+      "solution": "**Step 1 — Ozonide formation (at 195 K).** Ozone adds across the C=C double bond to give a cyclic ozonide:\n\n$$\\text{CH}_3\\text{CH} = \\text{CHCH}_3 + \\text{O}_3 \\rightarrow \\text{CH}_3\\text{CH–OO–CHCH}_3 \\quad (\\text{ozonide})$$\n\n**Step 2 — Reductive work-up with Zn dust and water.** The ozonide is cleaved and the Zn removes the excess oxygen as zinc oxide:\n\n$$\\text{CH}_3\\text{CH–OO–CHCH}_3 + \\text{Zn} \\rightarrow 2\\text{CH}_3\\text{CHO} + \\text{ZnO}$$\n\n**Products:** two molecules of **ethanal**.\n\n**Why it works.** In reductive work-up each carbon of the original double bond picks up an oxygen and a hydrogen; a carbon carrying an H gives an aldehyde, while a carbon carrying no H gives a ketone. Here both double-bond carbons bear one H each, so both fragments are aldehydes. Had the reaction been carried out with hydrogen peroxide (oxidative work-up), the aldehydes would have been further oxidised to ethanoic acid.",
+      "knowledgeNote": "Reductive ozonolysis cleaves C=C so that each carbon bearing a hydrogen yields an aldehyde; a carbon without hydrogen yields a ketone."
+    }
+  ]
+}

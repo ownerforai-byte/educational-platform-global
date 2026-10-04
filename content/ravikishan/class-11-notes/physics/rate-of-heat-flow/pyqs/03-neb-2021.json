@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Rate Of Heat Flow — 2021",
+  "year": 2021,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "rate-of-heat-flow",
+  "topicSlug": "rate-of-heat-flow-pyq-2021",
+  "topicTitle": "NEB Class 11 Physics — Rate Of Heat Flow — 2021",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Derive Newton's law of cooling.",
+      "marks": 4,
+      "year": 2021,
+      "source": "NEB Model",
+      "solution": "**Statement:** For a hot body cooling in air, the rate of loss of heat is directly proportional to the excess of temperature of the body over the surrounding temperature.\n\n**Derivation:**\nLet $\\dfrac{dQ}{dt}$ be the rate of cooling and $(\\theta - \\theta_0)$ the excess of temperature, where $\\theta$ is the body's temperature and $\\theta_0$ that of the surroundings.\nAt instant I: $\\left(\\dfrac{dQ}{dt}\\right)_1 = k(\\theta_1 - \\theta_0)$\nAt instant II: $\\left(\\dfrac{dQ}{dt}\\right)_2 = k(\\theta_2 - \\theta_0)$\n\n**Dividing the two equations:**\n$$\\frac{(dQ/dt)_1}{(dQ/dt)_2} = \\frac{\\theta_1 - \\theta_0}{\\theta_2 - \\theta_0}$$\n$$\\boxed{\\text{Rate of cooling} \\propto \\text{excess of temperature over surroundings}}$$\nThis law holds only for small differences of temperature; Stefan's law applies in general.",
+      "knowledgeNote": "Newton's law of cooling states rate of heat loss is proportional to excess temperature over surroundings."
+    }
+  ]
+}

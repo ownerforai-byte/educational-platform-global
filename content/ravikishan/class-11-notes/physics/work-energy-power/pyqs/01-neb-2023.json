@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Physics — Work Energy Power — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "work-energy-power",
+  "topicSlug": "work-energy-power-pyq-2023",
+  "topicTitle": "NEB Class 11 Physics — Work Energy Power — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State and prove the work-energy theorem for a constant force.",
+      "marks": 5,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Work-energy theorem:** The work done by the net force on a body equals the change in its kinetic energy.\n\nProof: Let a constant force F act on a body of mass m, producing acceleration a. From vÂ² = uÂ² + 2as:\n  W = FÂ·s = (ma)s = m(aÂ·s)\nFrom vÂ² = uÂ² + 2as â†’ as = (vÂ²-uÂ²)/2\n  W = m(vÂ²-uÂ²)/2 = Â½mvÂ² - Â½muÂ² = Î”KE\n\nThus, work done = change in kinetic energy. Proved. âœ“",
+      "knowledgeNote": "Work-energy theorem applies to ALL forces (conservative and non-conservative). KE = Â½mvÂ²"
+    },
+    {
+      "question": "A body of mass 4 kg is released from rest and falls freely through a height of 10 m. Take $g = 9.8\\ \\text{m/s}^2$ and find the kinetic energy and speed of the body just before striking the ground.",
+      "marks": 4,
+      "year": 2023,
+      "source": "NEB Past",
+      "solution": "**Step 1 — By the law of conservation of energy,** the loss of gravitational potential energy equals the gain in kinetic energy:\n$$mgh = \\frac{1}{2}mv^2$$\n\n**Step 2 — Kinetic energy:**\n$$KE = mgh = 4 \\times 9.8 \\times 10 = 392\\ \\text{J}$$\n$$\\boxed{KE = \\mathbf{392\\ \\text{J}}$$\n\n**Step 3 — Speed:**\n$$\\frac{1}{2}mv^2 = mgh \\;\\Rightarrow\\; v = \\sqrt{2gh} = \\sqrt{2 \\times 9.8 \\times 10} = \\sqrt{196}$$\n$$\\boxed{v = \\mathbf{14\\ \\text{m/s}}}$$\n\n**Step 4 — Check:** $\\frac{1}{2} \\times 4 \\times 14^2 = 2 \\times 196 = 392\\ \\text{J}$ ✓ (independent of mass, as expected for free fall).",
+      "knowledgeNote": "In free fall, mgh equals half mv squared, giving v equals square root of 2gh independent of mass."
+    }
+  ]
+}

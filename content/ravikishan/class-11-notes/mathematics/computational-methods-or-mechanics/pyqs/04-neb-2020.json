@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Mathematics — Computational Methods Or Mechanics — 2020",
+  "year": 2020,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "computational-methods-or-mechanics",
+  "topicSlug": "computational-methods-or-mechanics-pyq-2020",
+  "topicTitle": "NEB Class 11 Mathematics — Computational Methods Or Mechanics — 2020",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "The displacement of a particle at time $t$ second is $s = 2t^{3}-3t^{2}+5t-4$ metre. Find (i) its velocity and acceleration when $t=2$ second, and (ii) whether the particle is ever momentarily at rest.",
+      "marks": 4,
+      "year": 2020,
+      "source": "NEB Past",
+      "solution": "**Velocity** is $\\dfrac{ds}{dt}$ and **acceleration** is $\\dfrac{dv}{dt}=\\dfrac{d^{2}s}{dt^{2}}$.\n\n**(i)**\n$$v=\\frac{ds}{dt}=6t^{2}-6t+5$$\n$$a=\\frac{dv}{dt}=12t-6$$\nAt $t=2$ second:\n$$v=6(4)-6(2)+5=24-12+5=17\\ \\text{m/s}$$\n$$a=12(2)-6=18\\ \\text{m/s}^{2}$$\n\n**(ii)** The particle is at rest when $v=0$:\n$$6t^{2}-6t+5=0$$\nThe discriminant is\n$$\\Delta=(-6)^{2}-4(6)(5)=36-120=-84<0$$\nThere is no real root, so **the particle is never at rest**. (Confirmation: $v$ has its least value at $t=\\frac{6}{2\\times 6}=\\frac12$, where $v=6(0.25)-3+5=3.5>0$ m/s.)",
+      "knowledgeNote": "If $v=0$ has a negative discriminant the particle never stops; alternatively check $v$ at the vertex of the quadratic."
+    }
+  ]
+}

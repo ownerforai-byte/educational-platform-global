@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Chemistry — Atomic Structure — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "atomic-structure",
+  "topicSlug": "atomic-structure-pyq-2023",
+  "topicTitle": "NEB Class 11 Chemistry — Atomic Structure — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Explain Aufbau's principle with an example.",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Aufbau's principle:** Electrons fill orbitals in order of increasing energy: 1s < 2s < 2p < 3s < 3p < 4s < 3d < 4p...\n\nExample: Calcium (Z=20): 1s² 2s² 2p⁶ 3s² 3p⁶ 4s² — electrons fill 4s before 3d because 4s has lower energy.",
+      "knowledgeNote": "Use the (n+l) rule: lower (n+l) means lower energy. If equal, lower n fills first."
+    },
+    {
+      "question": "The quantum numbers of an electron are given below. (a) n = 3, l = 1, mₗ = +1, mₛ = +1/2 (b) n = 3, l = 1, mₗ = +2, mₛ = −1/2 (c) n = 3, l = 1, mₗ = −1, mₛ = −1/2 (d) n = 3, l = 0, mₗ = 0, mₛ = +1/2. Which set of quantum numbers is not possible?",
+      "marks": 2,
+      "year": 2023,
+      "source": "NEB Past",
+      "solution": "The allowed rules are:\n\n1. $l$ may have $(n-1)$ values, i.e. for $n = 3$, $l = 0, 1, 2$.\n2. $m_l$ may take $(2l+1)$ values from $-l$ to $+l$.\n3. $m_s$ is only $+1/2$ or $-1/2$.\n\nChecking each set:\n\n- **(a)** $l = 1$, $m_l = +1$ is allowed; $m_s = +1/2$ allowed. Possible.\n- **(b)** $l = 1$, so $m_l$ can only be $-1, 0$ or $+1$. The value $m_l = +2$ is **not allowed**. Not possible.\n- **(c)** $l = 1$, $m_l = -1$ and $m_s = -1/2$ are allowed. Possible (3p orbital).\n- **(d)** $l = 0$ corresponds to the 3s subshell, $m_l = 0$ and either spin. Possible.\n\n**Answer: (b)**",
+      "knowledgeNote": "For l = 1 the magnetic quantum number can take only the values −1, 0 or +1."
+    }
+  ]
+}

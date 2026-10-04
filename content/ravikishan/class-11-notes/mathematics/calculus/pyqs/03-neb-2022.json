@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 11 Mathematics — Calculus — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "calculus",
+  "topicSlug": "calculus-pyq-2022",
+  "topicTitle": "NEB Class 11 Mathematics — Calculus — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Find dy/dx for y = ln(sin x).",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "Using chain rule: d/dx[ln(u)] = (1/u)·du/dx\n\nHere u = sin x, du/dx = cos x\n\ndy/dx = (1/sin x) · cos x = **cot x**",
+      "knowledgeNote": "Chain rule: d/dx[f(g(x))] = f'(g(x)) · g'(x)"
+    },
+    {
+      "question": "Evaluate: ∫₀¹ x² dx",
+      "marks": 2,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "∫₀¹ x² dx = [x³/3]₀¹ = (1/3) - 0 = **1/3**",
+      "knowledgeNote": "Definite integral gives area under curve from a to b."
+    },
+    {
+      "question": "Differentiate with respect to $x$: (i) $y=x^{x}$  (ii) $y=\\sin^{2}x\\cdot e^{x}$  (iii) $y=(1+x)^{1/x}$",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "**(i) $y=x^{x}$** — write it in exponential form:\n$$y=e^{x\\log_{e}x}$$\n$$\\frac{dy}{dx}=x^{x}\\left(\\log_{e}x+x\\cdot\\frac{1}{x}\\right)=\\boxed{x^{x}(1+\\log_{e}x)}$$\n\n**(ii) $y=\\sin^{2}x\\,e^{x}$** — product rule:\n$$\\frac{dy}{dx}=2\\sin x\\cos x\\cdot e^{x}+\\sin^{2}x\\cdot e^{x}=\\boxed{e^{x}\\sin x\\left(\\sin x+2\\cos x\\right)}$$\n\n**(iii) $y=(1+x)^{1/x}$** — take logarithms:\n$$\\log y=\\frac{1}{x}\\log(1+x)$$\n$$\\frac{1}{y}\\frac{dy}{dx}=\\frac{1}{x}\\cdot\\frac{1}{1+x}-\\frac{1}{x^{2}}\\log(1+x)$$\n$$\\boxed{\\frac{dy}{dx}=(1+x)^{1/x}\\cdot\\frac{1}{x}\\left(\\frac{1}{1+x}-\\frac{\\log(1+x)}{x}\\right)}$$",
+      "knowledgeNote": "For $y=u(x)^{v(x)}$ take logs: $y'=y\\left[v'\\log u+v\\frac{u'}{u}\\right]$."
+    }
+  ]
+}

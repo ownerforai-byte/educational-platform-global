@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Gravitation — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "gravitation",
+  "topicSlug": "gravitation-pyq-2023",
+  "topicTitle": "NEB Class 11 Physics — Gravitation — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "What is escape velocity? Derive the expression for escape velocity of Earth. Hence calculate its value. (R = 6.4Ã—10â¶ m, g = 9.8 m/sÂ²)",
+      "marks": 5,
+      "year": 2023,
+      "source": "NEB Past",
+      "solution": "**Escape velocity** is the minimum velocity needed to escape a planet's gravitational field without further propulsion.\n\nThe work done to move a mass m from Earth's surface to infinity = GMm/R.\nThis work = Â½mvâ‚‘Â² (initial kinetic energy)\n\nSo: GMm/R = Â½mvâ‚‘Â² â†’ vâ‚‘ = âˆš(2GM/R)\nUsing g = GM/RÂ² â†’ vâ‚‘ = âˆš(2gR)\n\nvâ‚‘ = âˆš(2 Ã— 9.8 Ã— 6.4Ã—10â¶) = âˆš(1.254Ã—10â¸) = **11.2 km/s**",
+      "knowledgeNote": "Escape velocity is independent of the mass of the escaping object. Orbital velocity = âˆš(gR/2) = vâ‚‘/âˆš2. For Earth: vâ‚‘ â‰ˆ 11.2 km/s"
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Potential Potential Difference And Potential Energy — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "potential-potential-difference-and-potential-energy",
+  "topicSlug": "potential-potential-difference-and-potential-energy-pyq-2022",
+  "topicTitle": "NEB Class 11 Physics — Potential Potential Difference And Potential Energy — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Derive the relation between work done $W$, potential difference $V$ and the number of electrons $n$ flowing in a circuit.",
+      "marks": 4,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "**Step 1 — Potential difference:** Work done in moving a charge $q$ through a potential difference $V$ is\n$$W = qV$$\n\n**Step 2 — Charge carried by n electrons:**\nThe charge on one electron is $-e$ where $e = 1.6 \\times 10^{-19}\\ \\text{C}$, so the magnitude of charge carried by $n$ electrons is\n$$q = ne = ne \\quad \\text{(magnitude)}\n$$\n\n**Step 3 — Substituting:**\n$$\\boxed{W = neV}\\quad\\text{or}\\quad \\boxed{V = \\frac{W}{ne}}$$\n\n**Step 4 — In terms of current** (current $I = q/t$):\n$$W = neV = VIt$$\n\n**Check:** If $W = 1\\ \\text{J}$, $n = 6.25 \\times 10^{18}$ electrons and $V = 1\\ \\text{V}$, then $W = 6.25\\times10^{18} \\times 1.6\\times10^{-19} \\times 1 = 1\\ \\text{J}$. ✓",
+      "knowledgeNote": "Work equals the number of electrons times electronic charge times potential difference: W = neV."
+    }
+  ]
+}

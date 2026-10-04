@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Chemistry — Chemistry Of Metals — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "chemistry-of-metals",
+  "topicSlug": "chemistry-of-metals-pyq-2022",
+  "topicTitle": "NEB Class 11 Chemistry — Chemistry Of Metals — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Explain why aluminium cannot be extracted by carbon reduction of its oxide but is obtained by the electrolysis of a solution of alumina in molten cryolite. Give the relevant electrode reactions.",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "**Why carbon reduction fails.**\n\nThe Gibbs energy of formation of $Al_2O_3$ is very negative (about $-1580$ kJ mol⁻¹), so aluminium is far below carbon in the Ellingham diagram. Carbon is not strong enough to reduce it, and any attempt needs temperatures at which the oxide itself would melt and decompose.\n\n**The Hall–Héroult cell.**\n\nAlumina is dissolved in molten cryolite, $Na_3AlF_6$ (with $CaF_2$ as a flux). Cryolite lowers the fusion temperature from about $2072$ °C to about $950$ °C and improves conductivity, so much less heat is needed and molten aluminium (m.p. $660$ °C) is tapped off as liquid.\n\n**Cathode (carbon lining) — reduction:**\n\n$$\\text{Al}^{3+} + 3e^- \\rightarrow \\text{Al(l)}$$\n\n**Anode (graphite rods) — oxidation of oxide ions, the carbon burns away:**\n\n$$\\text{C} + 2\\text{O}^{2-} \\rightarrow \\text{CO}_2 + 4e^-$$\n\n**Overall:**\n\n$$2\\text{Al}_2\\text{O}_3 + 3\\text{C} \\rightarrow 4\\text{Al} + 3\\text{CO}_2$$",
+      "knowledgeNote": "Aluminium's oxide is too stable for carbon reduction, so Hall–Héroult electrolysis in molten cryolite is used instead."
+    }
+  ]
+}

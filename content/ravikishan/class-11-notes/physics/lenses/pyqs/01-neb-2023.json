@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Lenses — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "lenses",
+  "topicSlug": "lenses-pyq-2023",
+  "topicTitle": "NEB Class 11 Physics — Lenses — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "A convex lens of focal length 15 cm forms a real image which is twice the size of the object. Find the positions of the object and the image and the magnification.",
+      "marks": 4,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Step 1 — Sign of magnification:**\nSince the image is **real**, it is inverted, so $m$ is negative:\n$$m = -\\frac{v}{u} = -2 \\;\\Rightarrow\\; v = 2u$$\n\n**Step 2 — Lens formula** with $f = +15\\ \\text{cm}$:\n$$\\frac{1}{v} - \\frac{1}{u} = \\frac{1}{f}$$\n$$\\frac{1}{2u} - \\frac{1}{u} = \\frac{1}{15}$$\n$$-\\frac{1}{2u} = \\frac{1}{15} \\Rightarrow 2u = -15$$\n$$\\boxed{u = -7.5\\ \\text{cm}}$$\n\n**Step 3 — Image position:**\n$$v = 2u = 2 \\times (-7.5)$$\n$$\\boxed{v = -15\\ \\text{cm}}$$\n\n**Step 4 — Magnification:**\n$$m = -\\frac{v}{u} = -\\frac{-15}{-7.5} = \\mathbf{-2}$$\n\n**Step 5 — Verification with the lens formula:**\n$$\\frac{1}{-15} - \\frac{1}{-7.5} = -\\frac{1}{15} + \\frac{2}{15} = \\frac{1}{15} = \\frac{1}{f}$$ ✓\n\n**Nature:** Real, inverted and magnified (twice the object). The object lies between $f$ and $2f$, and the image is formed beyond $2f$.",
+      "knowledgeNote": "A convex lens giving a real image twice the size has the object between f and 2f and the image beyond 2f."
+    }
+  ]
+}

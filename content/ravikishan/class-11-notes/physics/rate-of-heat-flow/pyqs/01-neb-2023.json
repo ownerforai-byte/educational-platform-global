@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Rate Of Heat Flow — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "rate-of-heat-flow",
+  "topicSlug": "rate-of-heat-flow-pyq-2023",
+  "topicTitle": "NEB Class 11 Physics — Rate Of Heat Flow — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "A heater supplies 4200 J of heat to a body in 4 s. Calculate the rate of heat flow and state its SI unit.",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Past",
+      "solution": "**Step 1 — Given:** $Q = 4200\\ \\text{J},\\ t = 4\\ \\text{s}$\n\n**Step 2 — Rate of heat flow:**\n$$H = \\frac{Q}{t} = \\frac{4200}{4}$$\n$$\\boxed{H = \\mathbf{1050\\ \\text{W}}$$\n\n**Step 3 — SI unit:** The SI unit is **watt (W)**, defined as one joule per second.\n$$\\text{Verification: } \\frac{4200\\ \\text{J}}{4\\ \\text{s}} = 1050\\ \\text{J/s} = 1050\\ \\text{W}$$\nThis is a large value, typical of an electric immersion heater or a soldering iron.",
+      "knowledgeNote": "Rate of heat flow is heat divided by time, so 4200 joules in 4 seconds gives 1050 watts."
+    }
+  ]
+}

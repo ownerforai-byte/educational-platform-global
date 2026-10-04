@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Optics — 2021",
+  "year": 2021,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "optics",
+  "topicSlug": "optics-pyq-2021",
+  "topicTitle": "NEB Class 11 Physics — Optics — 2021",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "A convex lens of focal length 20 cm forms an image of an object placed 60 cm from the lens on the principal axis. Find the position and magnification of the image and state its nature.",
+      "marks": 4,
+      "year": 2021,
+      "source": "NEB Model",
+      "solution": "**Given:** $f = +20\\ \\text{cm},\\ u = -60\\ \\text{cm}$\n\n**Step 1 — Lens formula** (new Cartesian sign convention):\n$$\\frac{1}{v} - \\frac{1}{u} = \\frac{1}{f}$$\n$$\\frac{1}{v} - \\frac{1}{-60} = \\frac{1}{20}$$\n$$\\frac{1}{v} + \\frac{1}{60} = \\frac{3}{60}$$\n$$\\frac{1}{v} = \\frac{3 - 1}{60} = \\frac{2}{60} = \\frac{1}{30}$$\n\n**Step 2 — Image position:**\n$$v = \\mathbf{+30\\ \\text{cm}}$$\nSo the image is formed 30 cm on the **other side** of the lens.\n\n**Step 3 — Magnification:**\n$$m = -\\frac{v}{u} = -\\frac{30}{-60} = \\mathbf{-0.5}$$\n\n**Step 4 — Nature:** $v$ is positive so the image is **real**; $m < 1$ so it is **diminished**, and $m < 0$ so it is **inverted**.\n\n(Here the object lies between $f$ and $2f$, as expected.)",
+      "knowledgeNote": "For an object between f and 2f of a convex lens, the real image lies beyond 2f and is inverted and magnified."
+    }
+  ]
+}

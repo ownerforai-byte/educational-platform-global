@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Refraction Through Prisms — 2020",
+  "year": 2020,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "refraction-through-prisms",
+  "topicSlug": "refraction-through-prisms-pyq-2020",
+  "topicTitle": "NEB Class 11 Physics — Refraction Through Prisms — 2020",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Define minimum deviation and derive that the ray inside the prism is parallel to the base of the prism at minimum deviation.",
+      "marks": 4,
+      "year": 2020,
+      "source": "NEB Past",
+      "solution": "**Definition:** Minimum deviation is the **smallest angle of deviation** produced by a prism for a given pair of prism material and incident light, obtained when the ray passes symmetrically through the prism ($i = e$).\n\n**Derivation:**\nLet the ray travel through the two faces of the prism with internal angles $r_1$ and $r_2$ and internal deviations $\\delta_1$ and $\\delta_2$.\n$$\\delta_1 = i - r_1, \\qquad \\delta_2 = e - r_2$$\n$$\\delta = i + e - (r_1 + r_2) = i + e - A$$\n\n**Step 1 — The path inside the prism is the base of an isosceles triangle,** because the angle between the ray and the base is $90^\\circ - r_1$ and also $90^\\circ - r_2$.\n\n**Step 2 — The deviation is minimum when the ray is symmetric,** i.e. $i = e$ and hence $r_1 = r_2$.\n\n**Step 3 — Therefore:**\n$$r_1 = r_2 = \\frac{r_1 + r_2}{2} = \\frac{A}{2}$$\nand\n$$\\boxed{i = e = \\frac{A + \\delta_{min}}{2}, \\qquad \\mu = \\frac{\\sin\\left(\\frac{A + \\delta_{min}}{2}\\right)}{\\sin\\left(\\frac{A}{2}\\right)}}$$",
+      "knowledgeNote": "At minimum deviation the internal ray is parallel to the base, so r1 equals r2 equals A over 2."
+    }
+  ]
+}

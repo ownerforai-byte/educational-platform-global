@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Mechanics — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "mechanics",
+  "topicSlug": "mechanics-pyq-2022",
+  "topicTitle": "NEB Class 11 Physics — Mechanics — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "A bullet of mass 0.02 kg moving with a velocity of 500 m/s is embedded in a block of mass 4.98 kg initially at rest on a smooth horizontal surface. Find the velocity of the combined system.",
+      "marks": 4,
+      "year": 2022,
+      "source": "NEB Model",
+      "solution": "**Given:** $m_1 = 0.02\\ \\text{kg},\\ u_1 = 500\\ \\text{m/s},\\ m_2 = 4.98\\ \\text{kg},\\ u_2 = 0$\n\n**Step 1 — Apply conservation of momentum** (no external horizontal force):\n$$m_1u_1 + m_2u_2 = (m_1 + m_2)v$$\n\n**Step 2 — Substitute values:**\n$$0.02 \\times 500 + 4.98 \\times 0 = (0.02 + 4.98)v$$\n$$10 = 5.0\\,v$$\n\n**Step 3 — Solve:**\n$$v = \\frac{10}{5.0} = \\mathbf{2.0\\ \\text{m/s}}$$\nThe direction is that of the bullet's initial motion.",
+      "knowledgeNote": "In a perfectly inelastic collision the colliding bodies stick together and share a common velocity from momentum conservation."
+    }
+  ]
+}

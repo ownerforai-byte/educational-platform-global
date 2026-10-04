@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Mathematics — Vectors — 2020",
+  "year": 2020,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "vectors",
+  "topicSlug": "vectors-pyq-2020",
+  "topicTitle": "NEB Class 11 Mathematics — Vectors — 2020",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "(i) Find a unit vector perpendicular to the plane containing $\\mathbf{a}=\\hat{i}+\\hat{j}$ and $\\mathbf{b}=\\hat{j}+\\hat{k}$. (ii) Find the area of the triangle whose vertices are $A(1,1,1)$, $B(2,-1,3)$ and $C(-1,2,2)$.",
+      "marks": 4,
+      "year": 2020,
+      "source": "NEB Past",
+      "solution": "**(i)**\n$$\\mathbf{a}\\times\\mathbf{b}=\\begin{vmatrix}\\hat{i}&\\hat{j}&\\hat{k}\\\\1&1&0\\\\0&1&1\\end{vmatrix}=\\hat{i}(1\\cdot1-0\\cdot1)-\\hat{j}(1\\cdot1-0\\cdot0)+\\hat{k}(1\\cdot1-1\\cdot0)$$\n$$=\\hat{i}-\\hat{j}+\\hat{k}$$\n$$|\\mathbf{a}\\times\\mathbf{b}|=\\sqrt{1+1+1}=\\sqrt3$$\nThe required unit normal is\n$$\\hat{n}=\\frac{\\hat{i}-\\hat{j}+\\hat{k}}{\\sqrt{3}}$$\n\n**(ii)**\n$$\\overrightarrow{AB}=(2-1,\\,-1-1,\\,3-1)=(1,-2,2),\\qquad \\overrightarrow{AC}=(-1-1,\\,2-1,\\,2-1)=(-2,1,1)$$\n$$\\overrightarrow{AB}\\times\\overrightarrow{AC}=\\begin{vmatrix}\\hat{i}&\\hat{j}&\\hat{k}\\\\1&-2&2\\\\-2&1&1\\end{vmatrix}=\\hat{i}(-2\\cdot1-2\\cdot1)-\\hat{j}(1\\cdot1-2(-2))+\\hat{k}(1\\cdot1-(-2)(-2))$$\n$$=-4\\hat{i}-5\\hat{j}-3\\hat{k}$$\n$$|\\overrightarrow{AB}\\times\\overrightarrow{AC}|=\\sqrt{16+25+9}=\\sqrt{50}=5\\sqrt2$$\n$$\\text{Area of }\\triangle ABC=\\frac12|\\overrightarrow{AB}\\times\\overrightarrow{AC}|=\\boxed{\\frac{5\\sqrt2}{2}\\text{ square units}}$$",
+      "knowledgeNote": "Area of a triangle $=\\frac{1}{2}|\\overrightarrow{AB}\\times\\overrightarrow{AC}|$; the cross product gives the plane normal."
+    }
+  ]
+}

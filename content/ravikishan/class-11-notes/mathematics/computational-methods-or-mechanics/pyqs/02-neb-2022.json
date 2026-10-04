@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Mathematics — Computational Methods Or Mechanics — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "computational-methods-or-mechanics",
+  "topicSlug": "computational-methods-or-mechanics-pyq-2022",
+  "topicTitle": "NEB Class 11 Mathematics — Computational Methods Or Mechanics — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Newton's forward difference formula is applied to tabulated equal-interval values of $y$ in order to (a) extrapolate from the beginning of the table (b) extrapolate from the end of the table (c) interpolate anywhere in the table (d) differentiate the function",
+      "marks": 1,
+      "year": 2022,
+      "source": "NEB Model",
+      "solution": "Newton's forward formula is\n$$y(x)=y_{0}+p\\Delta y_{0}+\\frac{p(p-1)}{2!}\\Delta^{2}y_{0}+\\frac{p(p-1)(p-2)}{3!}\\Delta^{3}y_{0}+\\cdots,\\qquad p=\\frac{x-x_{0}}{h}$$\nHere $y_{0}$ is the **first** value in the table and the differences are built forward from it, so the method is efficient when $x$ lies near $x_{0}$ — i.e. at the beginning of the tabulation. (For values near the end, one uses the **backward** difference formula.)\n\n**Correct option: (a)**",
+      "knowledgeNote": "Newton's forward formula starts from $y_{0}$ (first tabulated value); near the end of the table use the backward formula instead."
+    }
+  ]
+}

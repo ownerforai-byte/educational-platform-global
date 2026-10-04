@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Chemistry — Chemical Equilibrium — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "chemical-equilibrium",
+  "topicSlug": "chemical-equilibrium-pyq-2024",
+  "topicTitle": "NEB Class 11 Chemistry — Chemical Equilibrium — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State Le Chatelier's principle. Predict the effect of increasing pressure on: N₂(g) + 3H₂(g) ⇌ 2NH₃(g)",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Le Chatelier's principle:** If a system at equilibrium is disturbed, it shifts to counteract the change.\n\nIncreasing pressure favors the side with fewer moles of gas.\nReactants: 1+3 = 4 moles; Products: 2 moles.\nEquilibrium shifts **towards NH₃ (right)** — Haber's process uses high pressure for this reason.",
+      "knowledgeNote": "If Δn = 0, pressure change has no effect on equilibrium position."
+    },
+    {
+      "question": "For the reaction $N_2(g) + 3H_2(g) \\rightleftharpoons 2NH_3(g)$, $K_c = 0.5$ at a certain temperature. If $[N_2] = 1.0$ M and $[H_2] = 0.5$ M at equilibrium, calculate the equilibrium concentration of ammonia.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Step 1 — Write the equilibrium constant expression**\n\nThe coefficient 3 on $H_2$ becomes a cube and the coefficient 2 on $NH_3$ becomes a square:\n\n$$K_c = \\frac{[\\text{NH}_3]^2}{[\\text{N}_2][\\text{H}_2]^3}$$\n\n**Step 2 — Substitute the values**\n\n$$0.5 = \\frac{[\\text{NH}_3]^2}{1.0 \\times (0.5)^3}$$\n\n$$[\\text{NH}_3]^2 = 0.5 \\times 1.0 \\times 0.125 = 0.0625$$\n\n**Step 3 — Take the square root**\n\n$$[\\text{NH}_3] = \\sqrt{0.0625} = 0.25 \\ \\text{M}$$\n\nHence the equilibrium concentration of ammonia is **0.25 M**. Notice that the very small value of $K_c$ is consistent with ammonia being formed only slowly at that temperature.",
+      "knowledgeNote": "Stoichiometric coefficients become powers in the equilibrium constant: $K_c = [NH₃]^2/([N₂][H₂]^3)$."
+    }
+  ]
+}

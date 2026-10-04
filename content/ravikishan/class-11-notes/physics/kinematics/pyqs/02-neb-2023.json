@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Physics — Kinematics — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "kinematics",
+  "topicSlug": "kinematics-pyq-2023",
+  "topicTitle": "NEB Class 11 Physics — Kinematics — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "A stone is dropped from a height of 200 m. Calculate: (i) the time it takes to hit the ground, (ii) its velocity on impact. (g = 10 m/sÂ²)",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Past",
+      "solution": "Given: u = 0, s = 200 m, g = 10 m/sÂ²\n\n(i) Using s = ut + Â½gtÂ²:\n200 = 0 + Â½(10)tÂ² â†’ tÂ² = 40 â†’ **t = 6.32 s**\n\n(ii) Using vÂ² = uÂ² + 2gs:\nvÂ² = 0 + 2(10)(200) = 4000 â†’ **v = 63.25 m/s**",
+      "knowledgeNote": "Time of fall from height h: t = âˆš(2h/g). Impact velocity: v = âˆš(2gh). These are independent of mass (Galileo's principle)"
+    },
+    {
+      "question": "A car moving at 10 m/s accelerates uniformly at 2 m/s2 for 4 s. Find the final velocity and the distance travelled in this time.",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Given:** $u = 10\\ \\text{m/s},\\ a = 2\\ \\text{m/s}^2,\\ t = 4\\ \\text{s}$\n\n**Step 1 — Final velocity:**\n$$v = u + at = 10 + (2)(4) = 10 + 8$$\n$$\\boxed{v = \\mathbf{18\\ \\text{m/s}}$$\n\n**Step 2 — Distance travelled:**\nUsing $s = ut + \\tfrac{1}{2}at^2$:\n$$s = (10)(4) + \\frac{1}{2}(2)(16) = 40 + 16$$\n$$\\boxed{s = \\mathbf{56\\ \\text{m}}$$\n\n**Step 3 — Verification** using the average velocity rule:\n$$s = \\frac{u + v}{2}\\times t = \\frac{10 + 18}{2} \\times 4 = 14 \\times 4 = 56\\ \\text{m}$$ ✓\n\n**Average speed** $= 56/4 = \\mathbf{14\\ \\text{m/s}}$ (equal to $\\tfrac{u+v}{2}$ for uniform acceleration).",
+      "knowledgeNote": "For uniform acceleration, v equals u plus at and distance equals ut plus half at squared."
+    }
+  ]
+}

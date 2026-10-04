@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Dispersion — 2021",
+  "year": 2021,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "dispersion",
+  "topicSlug": "dispersion-pyq-2021",
+  "topicTitle": "NEB Class 11 Physics — Dispersion — 2021",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Derive the expression for dispersive power of a prism in terms of refractive indices.",
+      "marks": 4,
+      "year": 2021,
+      "source": "NEB Past",
+      "solution": "**Step 1 — For a thin prism** the angle of deviation is very small and\n$$\\delta = (\\mu - 1)A$$\n\n**Step 2 — Deviation for the extreme colours:**\n$$\\delta_v = (\\mu_v - 1)A, \\qquad \\delta_r = (\\mu_r - 1)A$$\n\n**Step 3 — Angular dispersion** (deviation between violet and red):\n$$\\delta_v - \\delta_r = (\\mu_v - 1)A - (\\mu_r - 1)A = (\\mu_v - \\mu_r)A$$\n\n**Step 4 — Mean deviation** for yellow light:\n$$\\delta_y = (\\mu_y - 1)A$$\n\n**Step 5 — Dividing, the prism angle $A$ cancels:**\n$$\\text{Dispersive power} = \\frac{\\delta_v - \\delta_r}{\\delta_y} = \\frac{(\\mu_v - \\mu_r)A}{(\\mu_y - 1)A}$$\n$$\\boxed{\\omega = \\frac{\\mu_v - \\mu_r}{\\mu_y - 1}}$$\nDispersive power is a **dimensionless** quantity and depends only on the material of the prism, not on its angle.",
+      "knowledgeNote": "Dispersive power equals (mu_v minus mu_r) divided by (mu_y minus 1) and is dimensionless."
+    }
+  ]
+}

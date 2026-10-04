@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Refraction Through Prisms — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "refraction-through-prisms",
+  "topicSlug": "refraction-through-prisms-pyq-2022",
+  "topicTitle": "NEB Class 11 Physics — Refraction Through Prisms — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "A prism of refracting angle 60° has a refractive index of 1.5 for the light used. If the angle of incidence is 40° and the internal angle of refraction at the first face is 30°, find the angle of emergence and the angle of deviation.",
+      "marks": 4,
+      "year": 2022,
+      "source": "NEB Model",
+      "solution": "**Step 1 — Given:** $A = 60^\\circ,\\ \\mu = 1.5,\\ i = 40^\\circ,\\ r_1 = 30^\\circ$\n\n**Step 2 — Internal angle at the second face:**\n$$r_1 + r_2 = A \\;\\Rightarrow\\; r_2 = 60^\\circ - 30^\\circ = 30^\\circ$$\n\n**Step 3 — Angle of emergence** using the law of refraction at the second face:\n$$\\mu = \\frac{\\sin e}{\\sin r_2}$$\n$$\\sin e = \\mu \\sin r_2 = 1.5 \\times \\sin 30^\\circ = 1.5 \\times 0.5 = 0.75$$\n$$e = \\sin^{-1}(0.75) = \\mathbf{48.6^\\circ}$$\n\n**Step 4 — Angle of deviation:**\n$$\\delta = i + e - A = 40^\\circ + 48.6^\\circ - 60^\\circ$$\n$$\\boxed{\\delta = \\mathbf{28.6^\\circ}}$$\n\n**Note:** Since $i \\ne e$ the prism is **not** at minimum deviation.",
+      "knowledgeNote": "Using mu equals sin e over sin r2 and delta equals i plus e minus A gives the emergence angle and deviation."
+    }
+  ]
+}

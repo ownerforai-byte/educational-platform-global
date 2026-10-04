@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Dynamics — 2021",
+  "year": 2021,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "dynamics",
+  "topicSlug": "dynamics-pyq-2021",
+  "topicTitle": "NEB Class 11 Physics — Dynamics — 2021",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "A block of mass 10 kg rests on a rough inclined plane of angle 30 degrees with the horizontal. If the coefficient of friction is 0.2, find the magnitude of the frictional force acting on the block.",
+      "marks": 3,
+      "year": 2021,
+      "source": "NEB Past",
+      "solution": "**Step 1 — Resolve the weight vertically and normally:**\n$$N = mg\\cos\\theta = 10 \\times 9.8 \\times \\cos 30^\\circ = 98 \\times 0.866$$\n$$N = 84.87\\ \\text{N}$$\n\n**Step 2 — Frictional force** (since the block rests, friction balances the downslope component):\n$$F = \\mu N = 0.2 \\times 84.87$$\n$$\\boxed{F = \\mathbf{16.97\\ N} \\approx \\mathbf{17\\ N}}$$\n\n**Step 3 — Check:** The component of weight down the slope is\n$$mg\\sin 30^\\circ = 10 \\times 9.8 \\times 0.5 = 49\\ \\text{N}$$\nSince $49\\ \\text{N} > 17\\ \\text{N}$, friction is indeed sufficient to hold the block at rest, confirming the result.",
+      "knowledgeNote": "Friction equals mu times normal force, and on an incline the normal force equals mg cosine of the slope angle."
+    }
+  ]
+}

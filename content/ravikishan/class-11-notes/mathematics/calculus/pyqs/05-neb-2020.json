@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Mathematics — Calculus — 2020",
+  "year": 2020,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "calculus",
+  "topicSlug": "calculus-pyq-2020",
+  "topicTitle": "NEB Class 11 Mathematics — Calculus — 2020",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "$\\displaystyle \\frac{d}{dx}\\left[\\log_{a}(\\sin x)\\right]$ is (a) $\\frac{1}{\\sin x\\,\\log_{e}a}$  (b) $\\frac{\\cot x}{\\log_{e}a}$  (c) $\\frac{\\cos x}{\\sin x}$  (d) $\\tan x\\log a$",
+      "marks": 1,
+      "year": 2020,
+      "source": "NEB Model",
+      "solution": "Using $\\displaystyle\\frac{d}{dx}\\log_{a}u=\\frac{u'}{u\\log_{e}a}$ with $u=\\sin x$, $u'=\\cos x$:\n$$\\frac{d}{dx}\\log_{a}(\\sin x)=\\frac{\\cos x}{\\sin x\\cdot\\log_{e}a}=\\frac{\\cot x}{\\log_{e}a}$$\n\n**Correct option: (b)**",
+      "knowledgeNote": "$\\frac{d}{dx}\\log_{a}x=\\frac{1}{x\\ln a}$ — the extra $\\ln a$ in the denominator is easy to forget."
+    }
+  ]
+}

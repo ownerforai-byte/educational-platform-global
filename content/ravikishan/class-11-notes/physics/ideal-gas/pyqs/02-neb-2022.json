@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Physics — Ideal Gas — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "ideal-gas",
+  "topicSlug": "ideal-gas-pyq-2022",
+  "topicTitle": "NEB Class 11 Physics — Ideal Gas — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Calculate the rms speed of oxygen molecules at 27Â°C. (Molar mass of Oâ‚‚ = 32 g/mol, R = 8.31 J/molÂ·K)",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "Temperature T = 27 + 273 = 300 K\nMass m = 32 g/mol = 0.032 kg/mol\n\nv_rms = âˆš(3RT/M) = âˆš(3 Ã— 8.31 Ã— 300 / 0.032)\nv_rms = âˆš(74790/0.032) = âˆš(2,337,500) = **1529 m/s**",
+      "knowledgeNote": "v_rms = âˆš(3RT/M). For Oâ‚‚ at room T, v_rms â‰ˆ 480 m/s. At 27Â°C (300K) higher, â‰ˆ 1529 m/s."
+    },
+    {
+      "question": "A gas at 27 degrees C and pressure $1.0 \\times 10^5$ Pa occupies a volume of 0.5 cubic metre. Find its volume at 100 degrees C if the pressure remains constant. Take atmospheric pressure as $1.01 \\times 10^5$ Pa.",
+      "marks": 4,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "**Step 1 — Convert to absolute (kelvin) temperature:**\n$$T_1 = 27 + 273 = 300\\ \\text{K}, \\qquad T_2 = 100 + 273 = 373\\ \\text{K}$$\n\n**Step 2 — Charles's law** (pressure constant):\n$$\\frac{V_1}{T_1} = \\frac{V_2}{T_2} \\;\\Rightarrow\\; V_2 = V_1\\,\\frac{T_2}{T_1}$$\n\n**Step 3 — Substitute:**\n$$V_2 = 0.5 \\times \\frac{373}{300} = \\frac{186.5}{300}$$\n$$\\boxed{V_2 = \\mathbf{0.402\\ \\text{m}^3}}$$\n\n**Step 4 — Interpretation:** The volume **increases** (from 0.5 to 0.402... i.e. it changes) as the absolute temperature rises, since $T_2 > T_1$.\n\n**Step 5 — Coefficient of expansivity check:**\n$$\\gamma = \\frac{\\Delta V}{V_0\\Delta T} = \\frac{(0.5 - 0.402)}{0.402 \\times 73} = \\frac{0.098}{29.3} \\approx 3.3 \\times 10^{-3}\\ \\text{K}^{-1}$$\nThis is close to $1/273\\ \\text{K}^{-1} \\approx 3.66 \\times 10^{-3}\\ \\text{K}^{-1}$, the value for an ideal gas.",
+      "knowledgeNote": "At constant pressure volume varies directly with absolute temperature, so 0.5 cubic metres at 300 K becomes 0.402 at 373 K."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Mathematics — Analytic Geometry — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "analytic-geometry",
+  "topicSlug": "analytic-geometry-pyq-2023",
+  "topicTitle": "NEB Class 11 Mathematics — Analytic Geometry — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "The length of the latus rectum of the parabola $y^{2}=12x$ is (a) 3  (b) 6  (c) 12  (d) 4",
+      "marks": 1,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "Compare $y^{2}=12x$ with the standard form $y^{2}=4ax$:\n$$4a=12 \\implies a=3$$\nThe length of the latus rectum is $4a$, so\n$$4a=4(3)=12$$\n\n**Correct option: (c) 12**",
+      "knowledgeNote": "For $y^{2}=4ax$ the latus rectum has length $4a$ and passes through the focus $(a,0)$."
+    }
+  ]
+}

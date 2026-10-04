@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Chemistry — Stoichiometry — 2020",
+  "year": 2020,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "stoichiometry",
+  "topicSlug": "stoichiometry-pyq-2020",
+  "topicTitle": "NEB Class 11 Chemistry — Stoichiometry — 2020",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "A compound contains 40.0% carbon, 6.7% hydrogen and 53.3% oxygen by mass. Calculate its empirical formula. ($A_r$: C = 12, H = 1, O = 16)",
+      "marks": 3,
+      "year": 2020,
+      "source": "NEB Past",
+      "solution": "Assume 100 g of the compound, so that the masses are 40.0 g C, 6.7 g H and 53.3 g O.\n\n**Step 1 — Convert to moles**\n\n$$n(\\text{C}) = \\frac{40.0}{12} = 3.33 \\ \\text{mol}, \\qquad n(\\text{H}) = \\frac{6.7}{1} = 6.7 \\ \\text{mol}, \\qquad n(\\text{O}) = \\frac{53.3}{16} = 3.33 \\ \\text{mol}$$\n\n**Step 2 — Divide by the smallest value (3.33)**\n\n$$\\text{C} : \\text{H} : \\text{O} = \\frac{3.33}{3.33} : \\frac{6.7}{3.33} : \\frac{3.33}{3.33} = 1 : 2.01 : 1$$\n\n**Step 3 — Round to the nearest whole numbers**\n\n$$\\text{C} : \\text{H} : \\text{O} = 1 : 2 : 1$$\n\nSince the ratio 1 : 2 : 1 is already the simplest whole-number ratio, the empirical formula is\n\n$$\\boxed{\\text{CH}_2\\text{O}}$$\n\nNote that 6.7/3.33 = 2.01 ≈ 2, so no further multiplication is needed.",
+      "knowledgeNote": "An empirical formula is obtained by dividing elemental mole ratios by the smallest of them and simplifying."
+    }
+  ]
+}

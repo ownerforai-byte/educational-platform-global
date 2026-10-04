@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Refraction Through Prisms — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "refraction-through-prisms",
+  "topicSlug": "refraction-through-prisms-pyq-2023",
+  "topicTitle": "NEB Class 11 Physics — Refraction Through Prisms — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "The angle of deviation produced by a prism is: (a) always minimum when the ray passes symmetrically (b) always maximum when the ray passes symmetrically (c) independent of the angle of incidence (d) zero for a thin prism",
+      "marks": 1,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Correct option: (a) always minimum when the ray passes symmetrically.**\n\nThe deviation varies with the angle of incidence. For a given prism, $\\delta = i + e - A$. As $i$ is increased, $r_1$ increases, $r_2$ decreases and $e$ increases. At a certain value of $i$ we get $i = e$ (the ray passes **symmetrically** through the prism, so $r_1 = r_2 = A/2$), and at this position the deviation is **minimum**.\n$$\\boxed{i = e = \\frac{A + \\delta_{min}}{2}}$$\nHence options (b), (c) and (d) are all incorrect.",
+      "knowledgeNote": "Prism deviation is minimum when the ray passes symmetrically, so that i equals e and r1 equals r2."
+    }
+  ]
+}

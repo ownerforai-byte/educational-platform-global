@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Chemistry — Chemistry Of Metals — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "chemistry-of-metals",
+  "topicSlug": "chemistry-of-metals-pyq-2023",
+  "topicTitle": "NEB Class 11 Chemistry — Chemistry Of Metals — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Explain Down's process for the extraction of sodium.",
+      "marks": 5,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Down's process:** Electrolysis of molten NaCl (with CaCl₂ added to lower melting point from 801°C to ~600°C).\n\n- Anode (graphite): 2Cl⁻ → Cl₂↑ + 2e⁻\n- Cathode (iron): Na⁺ + e⁻ → Na↓\n- Na metal collects under a steel bell\n- CaCl₂ addition lowers melting point and increases conductivity",
+      "knowledgeNote": "Sodium cannot be extracted from aqueous solution because Na⁺ is harder to reduce than H₂O."
+    },
+    {
+      "question": "Compare the extraction of sodium by the Downs cell with the extraction of magnesium by the electrolysis of fused magnesium chloride. Give the electrode reactions and state the physical state of each metal obtained.",
+      "marks": 4,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Downs cell — sodium (NaCl melted with CaCl₂ at about 850 °C).**\n\nSodium is more reactive than magnesium, so its chloride must be reduced by electrolysis, not by carbon.\n\nCathode: $\\text{Na}^+ + e^- \\rightarrow \\text{Na}$. The working temperature of 850 °C is above the m.p. of sodium ($97.8$ °C), so **liquid sodium** floats up and is tapped through a separate pipe, away from the chlorine.\n\nAnode: $2\\text{Cl}^- \\rightarrow \\text{Cl}_2 + 2e^-$. Chlorine gas rises and escapes; the iron diaphragm prevents it from mixing with the sodium.\n\n$$2\\text{NaCl(l)} \\rightarrow 2\\text{Na(l)} + \\text{Cl}_2(g)$$\n\n**Electrolysis of fused MgCl₂ (about 750 °C).**\n\nCathode: $\\text{Mg}^{2+} + 2e^- \\rightarrow \\text{Mg}$. Magnesium melts at $650$ °C but the bath is kept hotter, so **solid magnesium** is deposited and scraped off, protecting it from further oxidation.\n\nAnode: $2\\text{Cl}^- \\rightarrow \\text{Cl}_2 + 2e^-$.\n\n$$\\text{MgCl}_2(l) \\rightarrow \\text{Mg(s)} + \\text{Cl}_2(g)$$\n\n**Contrast.** Both need electrolysis of a fused (anhydrous) halide and both yield chlorine at the anode, but sodium is obtained as a liquid (higher operating temperature) whereas magnesium is obtained as a solid (lower operating temperature).",
+      "knowledgeNote": "Both metals are extracted by electrolysis of fused chlorides; sodium comes off liquid, magnesium as a solid."
+    }
+  ]
+}

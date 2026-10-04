@@ -1,0 +1,29 @@
+{
+  "title": "NEB Class 11 Biology — Ecology — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "biology",
+  "unitSlug": "ecology",
+  "topicSlug": "ecology-pyq-2022",
+  "topicTitle": "NEB Class 11 Biology — Ecology — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "What is ecological succession? Explain with the example of xerosere.",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Model",
+      "solution": "**Ecological succession:** Gradual change in species composition of a community over time.\n\n**Xerosere** (dry habitat succession):\nLichen → Moss → Herbaceous plants → Shrub → Forest\n\nPioneer species (lichens) colonize bare rock, weather it, build soil, allowing larger plants to establish.",
+      "knowledgeNote": "Climax community = stable end stage. Hydrosere = succession in water."
+    },
+    {
+      "question": "A grassland ecosystem has a gross primary productivity of 4800 kcal m^-2 yr^-1 and plant respiration of 1200 kcal m^-2 yr^-1. (a) Calculate the net primary productivity. (b) If herbivore respiration is 400 kcal m^-2 yr^-1 and all the NPP is consumed by herbivores, how much energy is passed to the next trophic level as secondary production?",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "**Given:** GPP = 4800 kcal m⁻² yr⁻¹; respiration of plants (R) = 1200 kcal m⁻² yr⁻¹; respiration of herbivores (R₂) = 400 kcal m⁻² yr⁻¹.\n\n**Step 1 — Net primary productivity (NPP)**\n\nNPP is the amount of food energy actually stored as plant biomass after the plants have used some of the GPP for their own respiration.\n\n$$\\text{NPP} = \\text{GPP} - R = 4800 - 1200 = 3600\\ \\text{kcal m}^{-2}\\ \\text{yr}^{-1}$$\n\n**Step 2 — Secondary production of herbivores**\n\nThe energy that herbivores store as their own body tissue (secondary production) is what they ingest minus what they burn in respiration.\n\n$$\\text{Secondary production} = \\text{NPP} - R_2 = 3600 - 400 = 3200\\ \\text{kcal m}^{-2}\\ \\text{yr}^{-1}$$\n\n$$\\text{Energy passed to carnivores} = 3200\\ \\text{kcal m}^{-2}\\ \\text{yr}^{-1}$$\n\n**Interpretations:**\n- The plants of this grassland keep 3600 kcal m⁻² yr⁻¹ (75% of GPP) as net biomass; **primary productivity = NPP**, not GPP.\n- The value is high here only because *all* the NPP was assumed to be eaten. In a natural ecosystem only about **10%** of the energy at one trophic level is transferred to the next (**Lindeman's ten percent rule**), because most is lost as respiration, heat, excretion and to decomposers.",
+      "knowledgeNote": "NPP equals GPP minus plant respiration, and by the ten percent rule only about a tenth of energy passes to the next trophic level."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Mathematics — Computational Methods Or Mechanics — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "computational-methods-or-mechanics",
+  "topicSlug": "computational-methods-or-mechanics-pyq-2023",
+  "topicTitle": "NEB Class 11 Mathematics — Computational Methods Or Mechanics — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Solve $x^{3}-2x-5=0$ by Newton's-Raphson method correct to three decimal places, starting with $x_{0}=2$.",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Past",
+      "solution": "For $f(x)=x^{3}-2x-5$ we have $f'(x)=3x^{2}-2$, and Newton's formula is\n$$x_{n+1}=x_{n}-\\frac{f(x_{n})}{f'(x_{n})}$$\n\n$f(2)=8-4-5=-1$, $f'(2)=3(4)-2=10$.\n\n**First iteration:**\n$$x_{1}=2-\\frac{-1}{10}=2+0.1=2.1$$\n\n**Second iteration:**\n$f(2.1)=9.261-4.2-5=0.061$, $f'(2.1)=3(4.41)-2=11.23$.\n$$x_{2}=2.1-\\frac{0.061}{11.23}=2.1-0.005432=2.094568\\approx 2.0946$$\n\n**Third iteration:**\n$f(2.0946)\\approx 9.189743-4.1892-5=0.000543$, $f'(2.0946)=3(4.38735)-2=11.16205$.\n$$x_{3}=2.0946-\\frac{0.000543}{11.16205}=2.0946-0.0000486=2.0945514$$\n\nSince $x_{2}$ and $x_{3}$ agree to three decimal places,\n$$\\boxed{x\\approx 2.0946}$$",
+      "knowledgeNote": "Stop Newton-Raphson only when two successive approximations agree to the required number of decimal places."
+    }
+  ]
+}

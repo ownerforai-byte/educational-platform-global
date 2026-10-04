@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Dispersion — 2023",
+  "year": 2023,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "dispersion",
+  "topicSlug": "dispersion-pyq-2023",
+  "topicTitle": "NEB Class 11 Physics — Dispersion — 2023",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Derive the relation between angle of incidence, angle of emergence, angle of the prism and angle of deviation for a ray passing through a prism.",
+      "marks": 4,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "Consider a prism of refracting angle $A$. The ray bends at the first face through $\\delta_1$ and at the second face through $\\delta_2$.\n\n**Step 1 — Geometry inside the prism** gives:\n$$\\delta_1 = i - r_1, \\qquad \\delta_2 = e - r_2$$\n\n**Step 2 — Total deviation:**\n$$\\delta = \\delta_1 + \\delta_2 = (i - r_1) + (e - r_2) = i + e - (r_1 + r_2)$$\n\n**Step 3 — For a prism, the two refractions at its faces are complementary to the prism angle:**\n$$r_1 + r_2 = A$$\n\n**Step 4 — Substitute:**\n$$\\boxed{\\delta = i + e - A}\\quad\\text{or}\\quad \\boxed{i + e = A + \\delta}$$\n\n**Condition for minimum deviation:** When $i = e$ (ray passes symmetrically), $2i = A + \\delta_{min}$ and $r_1 = r_2 = \\dfrac{A}{2}$.",
+      "knowledgeNote": "For a prism the total deviation is i + e minus A, and minimum deviation occurs when the ray passes symmetrically."
+    }
+  ]
+}

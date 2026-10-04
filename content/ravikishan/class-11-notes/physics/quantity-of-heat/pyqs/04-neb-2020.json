@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Quantity Of Heat — 2020",
+  "year": 2020,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "quantity-of-heat",
+  "topicSlug": "quantity-of-heat-pyq-2020",
+  "topicTitle": "NEB Class 11 Physics — Quantity Of Heat — 2020",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Calculate the heat required to raise the temperature of 500 g of water from 20 degrees C to 60 degrees C. Take specific heat capacity of water as 4200 J/kg K.",
+      "marks": 3,
+      "year": 2020,
+      "source": "NEB Past",
+      "solution": "**Step 1 — Given:** $m = 500\\ \\text{g} = 0.5\\ \\text{kg},\\ c = 4200\\ \\text{J kg}^{-1}\\text{K}^{-1}$\n$$\\Delta T = 60 - 20 = 40\\ \\text{K}$$\n\n**Step 2 — Heat required:**\n$$Q = mc\\Delta T = 0.5 \\times 4200 \\times 40$$\n$$Q = 2100 \\times 40$$\n$$\\boxed{Q = \\mathbf{8.4 \\times 10^4\\ \\text{J}} = \\mathbf{84\\ kJ}}$$\n\n**Step 3 — In calories** (using $1\\ \\text{cal} = 4.2\\ \\text{J}$):\n$$Q = \\frac{8.4 \\times 10^4}{4.2} = 2.0 \\times 10^4\\ \\text{cal} = 20\\ \\text{kcal}$$\n\n**Check:** Doubling the mass ($m \\propto Q$) while keeping the temperature rise the same doubles the heat needed, which is consistent.",
+      "knowledgeNote": "Heat needed is mass times specific heat times temperature rise; 0.5 kg water through 40 K needs 84000 joules."
+    }
+  ]
+}

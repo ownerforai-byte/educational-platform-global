@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Work Energy Power — 2020",
+  "year": 2020,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "work-energy-power",
+  "topicSlug": "work-energy-power-pyq-2020",
+  "topicTitle": "NEB Class 11 Physics — Work Energy Power — 2020",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State and explain the work-energy theorem.",
+      "marks": 3,
+      "year": 2020,
+      "source": "NEB Model",
+      "solution": "**Statement:** The work done by the resultant (net) force on a body is equal to the change in its kinetic energy.\n$$\\boxed{W_{net} = K_f - K_i = \\frac{1}{2}mv^2 - \\frac{1}{2}mu^2}$$\n\n**Explanation:**\nLet a net force $F$ acting on a body of mass $m$ produce an acceleration $a$, so it moves from velocity $u$ to $v$ in time $t$ and covers a distance $s$.\n**Step 1 — Work done:**\n$$W = Fs = mat = m\\left(\\frac{v - u}{t}\\right)t = m(v - u)$$\n$$\n**Step 2 — Change in kinetic energy:**\n$$\\Delta K = \\frac{1}{2}mv^2 - \\frac{1}{2}mu^2 = \\frac{1}{2}m(v - u)(v + u)$$\n\n**Step 3 — From Newton's second law** $F = ma = m\\left(\\dfrac{v - u}{t}\\right)$, we get $mt = m(v - u)$, so\n$$\\boxed{W = m(v-u) = \\frac{1}{2}m(v^2 - u^2) = \\Delta K}$$\n\nIf the net work is zero, the speed stays constant, which explains why a body moves uniformly without net force.",
+      "knowledgeNote": "The work-energy theorem states net work done equals the change in kinetic energy of the body."
+    }
+  ]
+}

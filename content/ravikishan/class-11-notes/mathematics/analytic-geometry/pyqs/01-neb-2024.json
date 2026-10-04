@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Mathematics — Analytic Geometry — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "analytic-geometry",
+  "topicSlug": "analytic-geometry-pyq-2024",
+  "topicTitle": "NEB Class 11 Mathematics — Analytic Geometry — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Find the equation of the circle passing through the points $(0,-2)$, $(-4,0)$ and $(3,0)$. Hence find its centre and radius.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Past",
+      "solution": "Let the circle be\n$$x^{2}+y^{2}+Dx+Ey+F=0$$\nSubstituting the three given points:\n\n- $(0,-2):\\quad 4-2E+F=0 \\quad\\cdots(i)$\n- $(-4,0):\\quad 16-4D+F=0 \\quad\\cdots(ii)$\n- $(3,0):\\quad 9+3D+F=0 \\quad\\cdots(iii)$\n\nSubtracting $(iii)$ from $(ii)$:\n$$7-7D=0\\implies D=1$$\nFrom $(iii)$: $9+3+F=0\\implies F=-12$.\nFrom $(i)$: $4-2E-12=0\\implies E=-4$.\n\n**Equation of the circle:**\n$$x^{2}+y^{2}+x-4y-12=0$$\n\n**Centre:** $\\left(-\\frac{D}{2},-\\frac{E}{2}\\right)=\\left(-\\frac12,\\,2\\right)$\n\n**Radius:**\n$$r=\\sqrt{\\frac{D^{2}}{4}+\\frac{E^{2}}{4}-F}=\\sqrt{\\frac14+4+12}=\\sqrt{\\frac{65}{4}}=\\frac{\\sqrt{65}}{2}\\approx 4.03$$\n\nCheck: $(3,0):9+3-12=0$; $(-4,0):16-4-12=0$; $(0,-2):4+8-12=0$.",
+      "knowledgeNote": "For $x^{2}+y^{2}+Dx+Ey+F=0$ the centre is $\\left(-\\frac{D}{2},-\\frac{E}{2}\\right)$ and $r=\\sqrt{\\frac{D^{2}+E^{2}}{4}-F}$."
+    }
+  ]
+}

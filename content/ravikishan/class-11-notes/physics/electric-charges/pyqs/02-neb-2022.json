@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Physics — Electric Charges — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "electric-charges",
+  "topicSlug": "electric-charges-pyq-2022",
+  "topicTitle": "NEB Class 11 Physics — Electric Charges — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Two charges of +2 microC and -3 microC are placed 0.6 m apart. The force between them is: (a) 0.15 N attractive (b) 0.15 N repulsive (c) 1.5 N attractive (d) 0.05 N repulsive",
+      "marks": 1,
+      "year": 2022,
+      "source": "NEB Model",
+      "solution": "**Correct option: (a) 0.15 N attractive.**\n\n**Step 1 — Magnitude of the force:**\n$$F = \\frac{1}{4\\pi\\varepsilon_0}\\frac{q_1q_2}{r^2} = 9 \\times 10^9 \\times \\frac{(2 \\times 10^{-6})(3 \\times 10^{-6})}{(0.6)^2}$$\n$$F = 9 \\times 10^9 \\times \\frac{6 \\times 10^{-12}}{0.36} = 9 \\times 10^9 \\times 1.67 \\times 10^{-11}$$\n$$F = \\mathbf{0.15\\ \\text{N}}$$\n\n**Step 2 — Direction:** The charges have **opposite** signs, so the force is **attractive**.\n\nHence the correct answer is option **(a)**, and options (b), (c) and (d) are wrong.",
+      "knowledgeNote": "Opposite charges attract; using nine times ten to the ninth gives 0.15 newtons for these microCoulomb charges."
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Mathematics — Statistics And Probability — 2021",
+  "year": 2021,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "statistics-and-probability",
+  "topicSlug": "statistics-and-probability-pyq-2021",
+  "topicTitle": "NEB Class 11 Mathematics — Statistics And Probability — 2021",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "A lot contains 20 items of which 3 are defective. Two items are drawn at random without replacement and both are found to be defective. Find the probability that (i) both items drawn are defective, (ii) exactly one of the two items drawn is defective, and (iii) the third item drawn next is also defective.",
+      "marks": 3,
+      "year": 2021,
+      "source": "NEB Past",
+      "solution": "Total items $=20$, defective $=3$, good $=17$.\n\n**(i) Both defective:**\n$$P = \\frac{3}{20}\\times\\frac{2}{19} = \\frac{6}{380} = \\frac{3}{190}$$\n\n**(ii) Exactly one defective:** (mutually exclusive ways — D then G, or G then D)\n$$P = \\left(\\frac{3}{20}\\cdot\\frac{17}{19}\\right)+\\left(\\frac{17}{20}\\cdot\\frac{3}{19}\\right) = \\frac{2\\times 51}{380} = \\frac{102}{380} = \\frac{51}{190}$$\n\n**(iii) Third item also defective, given the first two were defective:**\nAfter removing 2 defectives, 18 items remain with only $1$ defective, so\n$$P = \\frac{1}{18}$$\n\n**Answers:** (i) $\\frac{3}{190}$  (ii) $\\frac{51}{190}$  (iii) $\\frac{1}{18}$",
+      "knowledgeNote": "Without replacement the numerators shrink as the draws proceed: $\\frac{3}{20},\\frac{2}{19},\\frac{1}{18}$ while the denominator drops by 1 each time."
+    }
+  ]
+}

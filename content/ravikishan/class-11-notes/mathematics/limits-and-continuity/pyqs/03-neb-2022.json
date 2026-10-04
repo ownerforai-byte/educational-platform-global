@@ -1,0 +1,21 @@
+{
+  "title": "NEB Class 11 Mathematics — Limits And Continuity — 2022",
+  "year": 2022,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "limits-and-continuity",
+  "topicSlug": "limits-and-continuity-pyq-2022",
+  "topicTitle": "NEB Class 11 Mathematics — Limits And Continuity — 2022",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "$\\displaystyle \\lim_{x\\to 0}\\frac{e^{x}-1}{x}$ equals (a) 0  (b) 1  (c) $e$  (d) $\\infty$",
+      "marks": 1,
+      "year": 2022,
+      "source": "NEB Model",
+      "solution": "The limit is of the form $\\frac{0}{0}$, so apply L'Hôpital's rule:\n$$\\lim_{x\\to 0}\\frac{e^{x}-1}{x}=\\lim_{x\\to 0}\\frac{e^{x}}{1}=e^{0}=1$$\n\n(Equivalently, $\\frac{d}{dx}e^{x}=e^{x}$ so $\\frac{e^{x}-1}{x-0}$ is the slope of the chord of $y=e^{x}$ between $0$ and $x$, tending to the derivative at $0$.)\n\n**Correct option: (b) 1**",
+      "knowledgeNote": "The fundamental limit $\\lim_{x\\to 0}\\frac{e^{x}-1}{x}=1$ is the base of all standard exponential limits."
+    }
+  ]
+}
