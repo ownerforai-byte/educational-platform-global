@@ -23,3 +23,9 @@ jobs:
           SMOKE_OWNER_PASSWORD: ${{ secrets.SMOKE_OWNER_PASSWORD }}
           CI: "true"
         run: node scripts/smoke-live.mjs
+
+      # Every note the registry claims must actually be served by the deployed
+      # site, byte for byte. This is the gate that stops a page promising content
+      # that was deleted, renamed or regenerated as a template.
+      - name: Content ledger live scan
+        run: node scripts/content-ledger-live.mjs

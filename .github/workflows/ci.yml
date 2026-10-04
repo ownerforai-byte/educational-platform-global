@@ -77,6 +77,10 @@ jobs:
       # The legacy mindmap branch files must stay rebuilt from their unit's own
       # concept notes (no scaffold, no empty branch, no filler).
       - run: npm run mindmaps:check
+      # Content ledger: every note the site claims must be registered, shipped
+      # and un-drifted, and a note that was authored must not silently become a
+      # generated template. Live presence is proven separately (live-smoke.yml).
+      - run: npm run ledger:check
 
   frontend-build:
     needs: [frontend-lint, frontend-typecheck, frontend-test, content-schema]
