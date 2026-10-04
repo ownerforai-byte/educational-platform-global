@@ -64,7 +64,9 @@ export default function OwnerLayout({ children }: { children: React.ReactNode })
   return (
     <div className="min-h-screen bg-background">
       {/* Top bar */}
-      <header className="sticky top-0 z-40 border-b border-border/60 bg-background/80 backdrop-blur">
+      {/* Solid — same reason as the AppShell bar: an /80 sticky header let a
+          fifth of the page show through it while scrolling. */}
+      <header className="sticky top-0 z-40 border-b border-border/60 bg-background">
         <div className="mx-auto flex h-14 max-w-7xl items-center gap-3 px-4">
           <Link href="/owner" className="flex items-center gap-2.5 shrink-0">
             <div className="flex h-7 w-7 items-center justify-center rounded-lg bg-gradient-to-br from-amber-500 to-amber-600 shadow-md shadow-amber-500/20">

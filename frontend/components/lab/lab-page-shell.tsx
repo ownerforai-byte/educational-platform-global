@@ -61,7 +61,8 @@ export function LabPageShell({
         {announcement}
       </div>
 
-      <header className="sticky top-0 z-40 flex items-center gap-3 border-b border-border/50 bg-background/95 backdrop-blur">
+      {/* Solid — the lab pages' own nav bar, same no-leak rule as AppShell. */}
+      <header className="sticky top-0 z-40 flex items-center gap-3 border-b border-border/50 bg-background">
         <Link href="/lab" className="flex h-10 w-10 items-center justify-center rounded-lg text-muted-foreground transition-colors hover:bg-muted hover:text-foreground" aria-label="Back to all labs">
           <ArrowLeft className="h-5 w-5" />
         </Link>
