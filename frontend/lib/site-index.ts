@@ -295,6 +295,37 @@ export function buildSiteIndex(): SiteIndexGroup[] {
   });
 
   groups.push({
+    id: "formulas",
+    name: "Formula sheets",
+    opening:
+      "Every Physics, Mathematics and Chemistry formula the Class 11 notes carry, unit by unit in official syllabus order — one sheet per unit, grouped by source note.",
+    href: "/formulas",
+    entries: [
+      {
+        name: "Physics Formula Sheet",
+        opening:
+          "Mechanics to nuclear physics: every formula of the Class 11 physics syllabus, unit by unit.",
+        href: "/formulas/physics",
+        meta: "Class 11",
+      },
+      {
+        name: "Mathematics Formula Sheet",
+        opening:
+          "Algebra, trigonometry, calculus and more — every formula of the Class 11 mathematics syllabus.",
+        href: "/formulas/mathematics",
+        meta: "Class 11",
+      },
+      {
+        name: "Chemistry Formula Sheet",
+        opening:
+          "Atomic structure to applied chemistry: every formula of the Class 11 chemistry syllabus, unit by unit.",
+        href: "/formulas/chemistry",
+        meta: "Class 11",
+      },
+    ],
+  });
+
+  groups.push({
     id: "theorems",
     name: "Theorems & formal proofs",
     opening:

@@ -35,6 +35,7 @@ import {
   LineChart,
   Compass,
   Globe,
+  Sigma,
   Target,
   Search,
   Lightbulb,
@@ -93,6 +94,7 @@ const stemAndRigorItems: NavItem[] = [
   { href: "/periodic-table", label: "Periodic Table & CEE", icon: Atom, badge: "118", badgeClass: "bg-cyan-500/15 text-cyan-500" },
   { href: "/theorems", label: "Theorems & Proofs", icon: Binary, badge: "Rigor", badgeClass: "bg-amber-500/15 text-amber-500" },
   { href: "/derivations", label: "Formula Derivations", icon: Layers, badge: "Steps", badgeClass: "bg-rose-500/15 text-rose-500" },
+  { href: "/formulas", label: "Formula Sheets", icon: Sigma, badge: "Phys · Math · Chem", badgeClass: "bg-cyan-500/15 text-cyan-500" },
   { href: "/graphs", label: "Science Graph Bank", icon: LineChart, badge: "Charts", badgeClass: "bg-indigo-500/15 text-indigo-500" },
   { href: "/mindmap", label: "Visual Mindmaps", icon: Workflow, badge: "Maps", badgeClass: "bg-purple-500/15 text-purple-500" },
 ];

@@ -2,49 +2,65 @@ import Link from "next/link";
 import {
   BookOpen,
   Brain,
-  Compass,
   FlaskConical,
   GraduationCap,
+  Sigma,
   Sparkles,
-  Trophy,
+  Zap,
+  type LucideIcon,
 } from "lucide-react";
+import { FORMULA_SUBJECTS, getFormulaSheetSummaries } from "@/lib/formula-sheet";
 
-const JOURNEY_STEPS = [
-  {
-    step: "01",
-    icon: Compass,
-    title: "Choose Your Stream",
-    text: "Grade 11 or Grade 12 — all six NEB subjects mapped to the official curriculum order, so you always know exactly where you are and what comes next.",
-    href: "/levels",
-    cta: "Browse the curriculum",
-  },
-  {
-    step: "02",
-    icon: FlaskConical,
-    title: "Learn by Seeing",
-    text: "Step into 50+ interactive 3D labs — spin a cell, build a molecule, bend light, launch projectiles. Concepts stick when you can grab them.",
-    href: "/lab",
-    cta: "Enter the 3D labs",
-  },
-  {
-    step: "03",
-    icon: Trophy,
-    title: "Master the Rigor",
-    text: "Step-by-step theorem proofs, verified derivations, solved numericals, and Veer-generated quizzes that turn reading marks into board-exam marks.",
-    href: "/theorems",
-    cta: "Theorems & derivations",
-  },
-  {
-    step: "04",
-    icon: Brain,
-    title: "Ask Veer",
-    text: "Stuck at 2 AM? Veer answers doubts in plain language with live web citations — and generates practice questions from your own syllabus.",
-    href: "/chat",
-    cta: "Meet Veer",
-  },
-];
+const FORMULA_ICONS: Record<string, LucideIcon> = {
+  physics: Zap,
+  mathematics: Sigma,
+  chemistry: FlaskConical,
+};
 
-export function HomeIntroduction() {
+/**
+ * Welcome introduction — the platform story plus the 4-step study journey.
+ *
+ * The journey cards were re-pointed at the formula sheets (owner request
+ * 2026-10-04: "replace these … with physics, math and chemistry formula section
+ * respectively"): steps 01–03 now open the Physics, Mathematics and Chemistry
+ * formula sheets, each card carrying the real formula/unit counts extracted
+ * from the shipped notes. Step 04 (Ask Veer) is unchanged.
+ */
+export async function HomeIntroduction() {
+  let summaries: Awaited<ReturnType<typeof getFormulaSheetSummaries>> = [];
+  try {
+    summaries = await getFormulaSheetSummaries();
+  } catch {
+    // Notes tree unavailable (e.g. stripped build) — cards render without counts.
+  }
+  const bySlug = new Map(summaries.map((s) => [s.slug, s]));
+
+  const journeySteps = [
+    ...FORMULA_SUBJECTS.map((subject, index) => {
+      const summary = bySlug.get(subject.slug);
+      return {
+        step: `0${index + 1}`,
+        icon: FORMULA_ICONS[subject.slug] ?? BookOpen,
+        title: `${subject.name} Formula Sheet`,
+        text: `Every ${subject.name.toLowerCase()} formula the Class 11 notes carry${
+          summary
+            ? ` — ${summary.formulaCount} formulas across ${summary.unitCount} unit sheets`
+            : ""
+        }, in official syllabus order and grouped under the note each one came from.`,
+        href: `/formulas/${subject.slug}`,
+        cta: `Open ${subject.name} formulas`,
+      };
+    }),
+    {
+      step: "04",
+      icon: Brain,
+      title: "Ask Veer",
+      text: "Stuck at 2 AM? Veer answers doubts in plain language with live web citations — and generates practice questions from your own syllabus.",
+      href: "/chat",
+      cta: "Meet Veer",
+    },
+  ];
+
   return (
     <section className="relative border-b border-border/60 py-14 sm:py-16">
       <div className="absolute top-8 right-1/3 h-64 w-64 rounded-full bg-sky-500/5 blur-[110px] pointer-events-none" />
@@ -73,16 +89,16 @@ export function HomeIntroduction() {
           </p>
 
           <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-            Whether you are catching up on Class 11 chemistry, drilling Grade 12
-            physics numericals, preparing for CEE entrance, or exploring Loksewa
-            general knowledge — pick a subject below and the platform walks with you,
-            topic by topic, in the official syllabus order.
+            Start with the formula sheets: every Physics, Mathematics and Chemistry
+            formula the notes carry, unit by unit in official syllabus order — or jump
+            straight to a subject below and the platform walks with you, topic by
+            topic.
           </p>
         </div>
 
         {/* Journey steps */}
         <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-          {JOURNEY_STEPS.map(({ step, icon: Icon, title, text, href, cta }) => (
+          {journeySteps.map(({ step, icon: Icon, title, text, href, cta }) => (
             <Link
               key={step}
               href={href}
