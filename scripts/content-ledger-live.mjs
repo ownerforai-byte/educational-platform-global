@@ -9,15 +9,20 @@
  *
  * The ledger (frontend/public/data/content-ledger.json) is the registry of what
  * the platform claims to have; the built manifests are what the pages read. This
- * script closes the loop on the DEPLOYED copy: for every registered entry it
- * fetches `/data/syllabus-notes/<subject>/<unit>/<file>` and compares the bytes
- * with the registered sha256. A missing file, an empty body or drifted bytes is
- * a live page promising notes that are not there — it exits non-zero.
+ * script closes the loop on the DEPLOYED copy:
+ *
+ *   · every registered entry        → /data/syllabus-notes/<subject>/<unit>/<file>
+ *   · every unclaimed note file     → /data/syllabus-notes/<subject>/<file>
+ *   · every supplementary claim     → the manifest's own sha256 (payloads are inline)
+ *   · every registered data source  → its own sha256
+ *
+ * A missing file, an empty body or drifted bytes is a live page promising notes
+ * that are not there — it exits non-zero.
  *
  * Dependency-free on purpose: it must run in CI without installing the frontend.
  *
  * The per-request X-Forwarded-For is deliberate: the platform rate-limits 120
- * requests/minute per client, and a full audit is ~870 requests. Each request
+ * requests/minute per client, and a full audit is ~1,000 requests. Each request
  * claims a distinct client so the audit measures CONTENT, not the limiter.
  */
 import { createHash } from "node:crypto";
@@ -42,14 +47,25 @@ const RETRY_DELAY_MS = Number(flag("retry-delay", "45000"));
 const LEDGER = path.join(process.cwd(), "frontend", "public", "data", "content-ledger.json");
 
 const ledger = JSON.parse(readFileSync(LEDGER, "utf-8"));
+
+/** `frontend/public/data/x` → `/data/x` (the URL the browser asks for). */
+const urlOf = (publicPath) => `/${String(publicPath).replace(/^frontend\/public\//, "")}`;
+
 const rows = [];
 for (const [subject, subjectNode] of Object.entries(ledger.subjects)) {
   for (const [unitSlug, unit] of Object.entries(subjectNode.units)) {
     for (const entry of unit.entries) {
       const key = `${subject}/${unitSlug}/${entry.filename}`;
       if (FILTER && !key.includes(FILTER)) continue;
-      rows.push({ key, subject, unitSlug, entry });
+      rows.push({ key, urlPath: `/data/syllabus-notes/${subject}/${unitSlug}/${entry.filename}`, entry });
     }
+  }
+}
+for (const [subject, node] of Object.entries(ledger.orphans?.subjects ?? {})) {
+  for (const entry of node.entries ?? []) {
+    const key = `unclaimed/${subject}/${entry.filename}`;
+    if (FILTER && !key.includes(FILTER)) continue;
+    rows.push({ key, urlPath: `/data/syllabus-notes/${subject}/${entry.filename}`, entry });
   }
 }
 const audited = LIMIT > 0 ? rows.slice(0, LIMIT) : rows;
@@ -67,7 +83,7 @@ async function fetchOnce(url) {
   const timer = setTimeout(() => controller.abort(), TIMEOUT_MS);
   try {
     return await fetch(url, {
-      headers: { "x-forwarded-for": randomClient(), "user-agent": "content-ledger-live/1.0" },
+      headers: { "x-forwarded-for": randomClient(), "user-agent": "content-ledger-live/1.1" },
       signal: controller.signal,
       redirect: "follow",
     });
@@ -77,7 +93,7 @@ async function fetchOnce(url) {
 }
 
 async function audit(row) {
-  const url = `${BASE}/data/syllabus-notes/${row.subject}/${row.unitSlug}/${row.entry.filename}?v=${row.entry.sha256.slice(0, 8)}`;
+  const url = `${BASE}${row.urlPath}?v=${row.entry.sha256.slice(0, 8)}`;
   let lastError = "";
   for (let attempt = 0; attempt < 2; attempt++) {
     try {
@@ -104,6 +120,33 @@ async function audit(row) {
     }
   }
   return { ...row, state: "error", detail: lastError };
+}
+
+/** One registered payload file (supplementary manifest / data source). */
+async function auditFile({ key, urlPath, bytes, sha256, claims }) {
+  try {
+    const res = await fetchOnce(`${BASE}${urlPath}?v=${sha256.slice(0, 8)}`);
+    if (res.status === 404) return { key, state: "missing", detail: "HTTP 404" };
+    if (!res.ok) return { key, state: "error", detail: `HTTP ${res.status}` };
+    const body = Buffer.from(await res.arrayBuffer());
+    if (body.length !== bytes) {
+      return { key, state: "drift", detail: `served ${body.length} B vs registered ${bytes} B` };
+    }
+    const sha = createHash("sha256").update(body).digest("hex");
+    if (sha !== sha256) {
+      return { key, state: "drift", detail: `sha ${sha.slice(0, 12)}… vs registered ${sha256.slice(0, 12)}…` };
+    }
+    if (typeof claims === "number") {
+      const served = JSON.parse(body.toString("utf-8"));
+      const count = Array.isArray(served) ? served.length : Object.keys(served).length;
+      if (count !== claims) {
+        return { key, state: "drift", detail: `${count} claims served vs ${claims} registered` };
+      }
+    }
+    return { key, state: "live", detail: `${body.length} B` };
+  } catch (error) {
+    return { key, state: "error", detail: String(error?.message ?? error) };
+  }
 }
 
 const results = [];
@@ -141,11 +184,31 @@ async function auditWithRetries(reason) {
   }
 }
 
+const supplementary = ledger.supplementary
+  ? [
+      {
+        key: ledger.supplementary.source,
+        urlPath: urlOf(ledger.supplementary.source),
+        bytes: ledger.supplementary.bytes,
+        sha256: ledger.supplementary.sha256,
+        claims: ledger.supplementary.totals?.claims,
+      },
+    ]
+  : [];
+const sources = (ledger.sources ?? []).map((source) => ({
+  key: source.path,
+  urlPath: urlOf(source.path),
+  bytes: source.bytes,
+  sha256: source.sha256,
+  claims: source.claims,
+}));
+
+const started = Date.now();
 console.log(
   `content-ledger-live: ${audited.length} registered entries against ${BASE} ` +
-    `(${CONCURRENCY} workers, ledger ${ledger.totals.entries} entries / ${ledger.totals.template} template)`,
+    `(${CONCURRENCY} workers; ledger ${ledger.totals.entries} entries + ` +
+    `${ledger.orphans?.totals?.entries ?? 0} unclaimed + ${supplementary.length} supplementary + ${sources.length} sources)`,
 );
-const started = Date.now();
 await Promise.all(Array.from({ length: CONCURRENCY }, worker));
 await auditWithRetries("deploy may still be in flight");
 
@@ -159,14 +222,27 @@ for (const subject of Object.keys(ledger.subjects)) {
   }
 }
 
+// Manifest-level claims are only meaningful in a full audit; a filtered spot
+// check must stay a spot check.
+const fileChecks = FILTER
+  ? []
+  : await Promise.all([...supplementary, ...sources].map((file) => auditFile(file)));
+
 const tally = results.reduce((acc, r) => ((acc[r.state] = (acc[r.state] ?? 0) + 1), acc), {});
 const problems = results.filter((r) => r.state !== "live");
+const fileProblems = fileChecks.filter((r) => r.state !== "live");
 const elapsed = ((Date.now() - started) / 1000).toFixed(1);
 const manifestFailures = manifests.filter((m) => !m.ok);
 
 console.log(`\nmanifests: ${manifests.length - manifestFailures.length}/${manifests.length} live`);
 for (const m of manifestFailures) console.log(`  × ${m.subject}/_manifest.json: ${m.status}`);
-console.log(`entries:   ${tally.live ?? 0}/${results.length} live (${elapsed}s)`);
+if (FILTER) {
+  console.log(`payload files:  skipped (--filter ${FILTER})`);
+} else {
+  console.log(`payload files:  ${fileChecks.length - fileProblems.length}/${fileChecks.length} live`);
+  for (const p of fileProblems) console.log(`  × [${p.state}] ${p.key} — ${p.detail}`);
+}
+console.log(`entries:        ${tally.live ?? 0}/${results.length} live (${elapsed}s)`);
 for (const state of ["missing", "empty", "drift", "error"]) {
   if (tally[state]) console.log(`  × ${state}: ${tally[state]}`);
 }
@@ -177,14 +253,26 @@ if (JSON_OUT) {
   mkdirSync(path.dirname(JSON_OUT), { recursive: true });
   writeFileSync(
     JSON_OUT,
-    JSON.stringify({ base: BASE, checkedAt: new Date().toISOString(), tally, manifests, problems: problems.map((p) => ({ key: p.key, state: p.state, detail: p.detail, status: p.entry.status })) }, null, 2),
+    JSON.stringify(
+      {
+        base: BASE,
+        checkedAt: new Date().toISOString(),
+        tally,
+        manifests,
+        files: fileChecks,
+        problems: problems.map((p) => ({ key: p.key, state: p.state, detail: p.detail, status: p.entry.status })),
+      },
+      null,
+      2,
+    ),
     "utf-8",
   );
 }
 
-if (problems.length || manifestFailures.length) {
+if (problems.length || manifestFailures.length || fileProblems.length) {
   console.error(
     `\ncontent-ledger-live FAILED — ${problems.length} registered entr(ies) are not served correctly` +
+      (fileProblems.length ? `, ${fileProblems.length} payload file(s) drifted` : "") +
       (manifestFailures.length ? `, ${manifestFailures.length} manifest(s) unreachable` : "") +
       ".",
   );
