@@ -280,15 +280,31 @@ describe("ensureDailyCredits", () => {
     expect(updates[1]?.args?.[0]).toEqual({ credits: DAILY_CREDIT_POOL, credits_reset_date: TODAY });
   });
 
-  test("non-owner emails return stored balance with zero writes (owner-only economy)", async () => {
+  test("non-owner emails draw the same daily pool (bill-everyone economy)", async () => {
     db.queue("profiles:select", {
-      data: { credits: 7 },
+      data: { credits: 0, credits_reset_date: null, premium_status: false, role: "STUDENT" },
+      error: null,
+    });
+    db.queue("profiles:update", { data: [{ id: USER }], error: null });
+    db.queue("credit_transactions:insert", { data: [], error: null });
+
+    const result = await ensureDailyCredits(USER, "student@example.com", "STUDENT", false);
+    expect(result).toEqual({ credits: DAILY_CREDIT_POOL, resetDone: true, unlimited: false });
+
+    const update = db.calls.find((c) => c.op === "update");
+    expect(update?.args?.[0]).toEqual({ credits: DAILY_CREDIT_POOL, credits_reset_date: TODAY });
+    const tx = db.calls.find((c) => c.table === "credit_transactions");
+    expect(tx?.args?.[0]).toMatchObject({ amount: DAILY_CREDIT_POOL, type: "GRANT" });
+  });
+
+  test("a student whose watermark is today keeps the stored balance with zero writes", async () => {
+    db.queue("profiles:select", {
+      data: { credits: 7, credits_reset_date: TODAY, premium_status: false, role: "STUDENT" },
       error: null,
     });
 
     const result = await ensureDailyCredits(USER, "student@example.com", "STUDENT", false);
     expect(result).toEqual({ credits: 7, resetDone: false, unlimited: false });
-    // Non-owner: one read, zero updates — no pool refill, no watermark write.
     expect(db.calls.filter((c) => c.op === "update")).toHaveLength(0);
     expect(db.calls.filter((c) => c.op === "insert")).toHaveLength(0);
   });

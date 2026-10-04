@@ -4,11 +4,10 @@ import { extractToken, hasFullAccess, isOwnerEmail } from "./auth";
 import { ensureDailyCredits, spendCredits, refundCredits, isCoinGateEnabled } from "../utils/credits";
 
 // ── Feature cost table ─────────────────────────────────────────────────────
-// As of 2026-09-10 all features are public (cost 0, no premium gate).
-// Bump values here to re-enable per-feature gating.
-// Owner policy 2026-09-26: every AI chat message costs 1 credit from the
-// user's daily pool (hardcoded 4 at 12:00 AM — see utils/credits.ts; no
-// env/refresh override, PRO/premium runs unlimited via hasFullAccess).
+// BILL-EVERYONE (corrected 2026-10-04): every AI chat message costs 1 credit
+// from the user's daily pool (hardcoded 4 at 12:00 AM — see utils/credits.ts;
+// no env/refresh override, PRO/premium runs unlimited). Owner emails follow
+// the profile toggle (ON → billed, OFF → free); students always pay.
 // Everything else stays public (cost 0, no premium gate).
 const PREMIUM_FEATURES = {
   lab: { cost: 0, requiresPremium: false },
@@ -50,29 +49,6 @@ export function requireCredit(
 
       const userId = authData.user.id;
 
-      // Coin gate OFF (owner toggle) → every gated feature is free.
-      if (!(await isCoinGateEnabled())) {
-        next();
-        return;
-      }
-
-      // OWNER-ONLY ECONOMY: non-owner emails are never billed or gated —
-      // free without a pool, so features stay usable offline.
-      if (!isOwnerEmail(authData.user.email)) {
-        next();
-        return;
-      }
-
-      const featureConfig = PREMIUM_FEATURES[feature];
-      const actualCost = cost > 0 ? cost : (featureConfig?.cost ?? 0);
-
-      // Free feature, no premium gate → nothing to bill or check. Skip the
-      // extra queries (this middleware guards bookmarks/progress/etc too).
-      if (actualCost === 0 && !featureConfig?.requiresPremium) {
-        next();
-        return;
-      }
-
       // Load role + premium in one pass
       const { data: profile } = await supabaseAdmin
         .from("profiles")
@@ -83,9 +59,24 @@ export function requireCredit(
       const role = (profile?.role as string | undefined)?.toUpperCase() ?? null;
       const premiumStatus = profile?.premium_status ?? false;
 
-      // Non-owner ADMIN/premium → skip all checks (owners always pay from
-      // the pool while the gate is ON — only PRO owners are unlimited).
-      if (!isOwnerEmail(authData.user.email) && hasFullAccess(role, premiumStatus)) {
+      // BILL-EVERYONE (corrected 2026-10-04): PRO is unlimited; owners are
+      // free only while their toggle is OFF; students/customers always pay.
+      if (premiumStatus === true) {
+        next();
+        return;
+      }
+      const gateOn = await isCoinGateEnabled();
+      if (isOwnerEmail(authData.user.email) && !gateOn) {
+        next();
+        return;
+      }
+
+      const featureConfig = PREMIUM_FEATURES[feature];
+      const actualCost = cost > 0 ? cost : (featureConfig?.cost ?? 0);
+
+      // Free feature, no premium gate → nothing to bill or check. Skip the
+      // extra queries (this middleware guards bookmarks/progress/etc too).
+      if (actualCost === 0 && !featureConfig?.requiresPremium) {
         next();
         return;
       }

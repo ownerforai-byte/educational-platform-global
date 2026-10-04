@@ -1,22 +1,24 @@
 import { supabaseAdmin } from "../db/supabase";
-import { isOwnerEmail } from "../middleware/auth";
 
 /**
- * Daily credit pool (owner policy 2026-09-26, owner-only 2026-10-04).
+ * Daily credit pool (owner policy 2026-09-26, corrected 2026-10-04).
  *
- *  - Every AI chat message costs 1 credit — for OWNER-ALLOWLIST emails only.
- *  - Every owner email gets a DAILY_POOL of 4 platform credits.
- *  - Everyone else is free without a pool (no balance, no billing, no locks).
+ *  - Every AI chat message costs 1 credit — for EVERY signed-in user.
+ *  - Every signed-in user gets a DAILY_POOL of 4 platform credits.
+ *  - Students/customers are ALWAYS billed (they must purchase/earn coins).
+ *  - Owner-allowlist emails follow the profile toggle:
+ *      gate ON  → owners are billed like everyone else;
+ *      gate OFF → owners chat free (no deduction, no lock).
  *  - Credits reset to DAILY_POOL at 12:00 AM (UTC day rollover) — enforced
  *    lazily here (first AI call after midnight resets) and eagerly by the
  *    midnight cron job in jobs/creditsResetJob.ts.
- *  - Owner/admin accounts keep their effectively-unlimited manual balance.
+ *  - PRO accounts (premium_status) stay unlimited and are never billed.
  *  - A credit is REFUNDED whenever the answer the student paid for never
  *    arrives (provider failure / timeout — see api/ai.ts + creditCheck).
  *  - HARDENED 2026-09-27 (owner): the pool is HARDCODED — no env var,
  *    config or refresh endpoint can refill it mid-day. A spent pool
  *    refills ONLY at the next UTC midnight; the only in-day escape is a
- *    PRO plan (premium_status → hasFullAccess → unlimited).
+ *    PRO plan (premium_status → unlimited).
  *
  * Concurrency: every balance write is a compare-and-swap (CAS) — the UPDATE
  * carries `.eq("credits", <value just read>)`, so two parallel requests can
@@ -40,12 +42,46 @@ export const DAILY_CREDIT_POOL = 4;
 /** Cost of one AI chat message, in credits. */
 export const AI_MESSAGE_COST = 1;
 
-// ── Coin gate (owner toggle 2026-10-02) ─────────────────────────────────────
-// Owners flip `coin_gate_enabled` in owner settings: ON (default) means AI chat
-// costs a credit; OFF means it is free for everyone. Read from the `settings`
-// table and cached briefly so the gate never adds a query to every message.
+// ── Coin gate (owner toggle 2026-10-02, corrected 2026-10-04) ───────────────
+// The profile button controls OWNER-allowlist emails ONLY:
+//   gate ON  → owners are billed 1 credit per AI message (like all students);
+//   gate OFF → owners chat free (no deduction, no lock).
+// Students/customers are ALWAYS billed regardless of the toggle — they must
+// purchase/earn coins (PRO/premium stays unlimited).
+//
+// The flag is GLOBAL: one row controls ALL owner-allowlist emails at once.
+// Profile toggle ON  → coin billing enabled for every owner gmail.
+// Profile toggle OFF → no owner gmail is asked for coins (free mode for owners).
 let coinGateCache: { enabled: boolean; at: number } | null = null;
 const COIN_GATE_TTL_MS = 15_000;
+
+/**
+ * Normalise any stored encoding of the flag to "is the gate OFF?".
+ *
+ * The settings.value column is untyped (boolean, number, or string depending
+ * on who wrote it), so a strict `=== false` check keeps the gate stuck ON
+ * when the row holds "false" / 0 / "0" / "off". Every falsy encoding counts
+ * as OFF; anything else (including missing) counts as ON (fail closed).
+ */
+export function isCoinGateOffValue(value: unknown): boolean {
+  if (value === false) return true;
+  if (value === 0) return true;
+  if (typeof value === "string") {
+    const v = value.trim().toLowerCase();
+    return v === "false" || v === "0" || v === "off" || v === "no" || v === "disabled";
+  }
+  if (value !== null && typeof value === "object") {
+    const rec = value as Record<string, unknown>;
+    if ("enabled" in rec) return isCoinGateOffValue(rec.enabled);
+    if ("value" in rec) return isCoinGateOffValue(rec.value);
+  }
+  return false;
+}
+
+/** Drop the cached flag so a profile toggle takes effect immediately. */
+export function invalidateCoinGateCache(): void {
+  coinGateCache = null;
+}
 
 /** True when the owner wants AI chat to cost credits (the default). */
 export async function isCoinGateEnabled(): Promise<boolean> {
@@ -60,7 +96,7 @@ export async function isCoinGateEnabled(): Promise<boolean> {
       .select("value")
       .eq("key", "coin_gate_enabled")
       .maybeSingle();
-    if (data && data.value === false) enabled = false;
+    if (data && isCoinGateOffValue((data as { value?: unknown }).value)) enabled = false;
   } catch {
     // Fail closed to billing — the safer default on a settings read error.
   }
@@ -98,20 +134,18 @@ interface ResetResult {
 /**
  * Ensure the user's balance reflects TODAY's daily pool.
  *
- * OWNER-ONLY ECONOMY (owner policy 2026-10-04): the coin pool exists only
- * for owner-allowlist emails. Anyone else is free without a pool — return
- * the stored balance untouched and perform ZERO writes (no refills, no
- * watermark updates), so non-owner traffic never mints credits.
+ * BILL-EVERYONE ECONOMY (corrected 2026-10-04): the coin pool exists for
+ * EVERY signed-in user. Students/customers are always billed; owner emails
+ * are billed when the gate is ON and free when it is OFF (handled by the
+ * caller — this function only maintains the pool, it never decides free).
  *
  * Called before any credit spend (and by /api/user/me + /api/auth/me so the
  * UI shows the refreshed pool right after midnight). When the watermark is
  * older than today's UTC date, the balance is topped up to DAILY_CREDIT_POOL
- * — top-up (max), never overwrite, so an owner-granted larger balance
- * survives the reset and only users who dipped into their pool refill.
+ * — top-up (max), never overwrite, so a granted larger balance survives the
+ * reset and only users who dipped into their pool refill.
  *
- * Privileged NON-OWNER roles (ADMIN/premium) skip the reset entirely.
- * Owner emails always flow through the pool logic (they are the only ones
- * who can be billed) unless PRO-unlimited.
+ * PRO accounts (premium_status) skip the reset entirely and stay unlimited.
  *
  * The write is CAS-guarded on the balance just read: if a parallel request
  * or the midnight cron reset first, this update matches zero rows — we then
@@ -126,18 +160,6 @@ export async function ensureDailyCredits(
   now: Date = new Date(),
 ): Promise<ResetResult> {
   const today = todayUtc(now);
-  const owner = isOwnerEmail(email);
-
-  // Non-owner emails are outside the coin economy: free without a pool.
-  // One read, zero writes — the balance is reported as stored.
-  if (!owner) {
-    const { data: profile } = await supabaseAdmin
-      .from("profiles")
-      .select("credits")
-      .eq("id", userId)
-      .maybeSingle();
-    return { credits: profile?.credits ?? 0, resetDone: false, unlimited: false };
-  }
 
   let currentCredits = 0;
   for (let attempt = 0; attempt < CAS_ATTEMPTS; attempt++) {
@@ -147,8 +169,7 @@ export async function ensureDailyCredits(
       .eq("id", userId)
       .maybeSingle();
 
-    // PRO owners stay unlimited; every other owner email draws the daily pool.
-    // (Non-owner ADMIN/premium never reach here — the early return above.)
+    // PRO accounts stay unlimited; everyone else draws the daily pool.
     const proUnlimited = (profile?.premium_status ?? !!premiumStatus) === true;
     if (proUnlimited) {
       return { credits: Infinity, resetDone: false, unlimited: true };

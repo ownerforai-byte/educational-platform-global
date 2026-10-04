@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import { z } from "zod";
 import { requireAuth, isOwnerEmail, type AuthedRequest } from "../middleware/auth";
 import { supabaseAdmin } from "../db/supabase";
+import { invalidateCoinGateCache } from "../utils/credits";
 import { authEmailsById } from "../utils/authEmails";
 import { sendApprovalEmail } from "../utils/mailer";
 
@@ -892,6 +893,12 @@ router.patch("/settings", requireAuth, async (req: Request, res: Response) => {
       console.error("[owner] settings PATCH failed:", error.message);
       res.status(500).json({ error: "Failed to update settings" });
       return;
+    }
+
+    // The coin gate is global for ALL owner gmails: bust the server cache so
+    // button OFF → free mode (and ON → billing) applies on the next message.
+    if (rows.some((r) => r.key === "coin_gate_enabled")) {
+      invalidateCoinGateCache();
     }
 
     res.json({ settings: data ?? [] });

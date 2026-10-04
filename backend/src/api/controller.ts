@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import { serverError } from "../middleware/errors";
 import { supabaseAdmin } from "../db/supabase";
 import { extractToken } from "../middleware/auth";
+import { invalidateCoinGateCache } from "../utils/credits";
 
 const router = Router();
 
@@ -186,6 +187,10 @@ router.patch("/settings", async (req: Request, res: Response) => {
       console.error("settings PATCH failed:", error.message);
       res.status(500).json({ error: "Failed to update settings" });
       return;
+    }
+
+    if (rows.some((r) => r.key === "coin_gate_enabled")) {
+      invalidateCoinGateCache();
     }
 
     const updated = (data ?? []).map((row: any) => ({

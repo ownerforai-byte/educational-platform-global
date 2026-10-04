@@ -1,19 +1,19 @@
 import { supabaseAdmin } from "../db/supabase";
 import { DAILY_CREDIT_POOL, todayUtc, updateMatchedRows } from "../utils/credits";
-import { hasFullAccess } from "../middleware/auth";
 import cron from "node-cron";
 
 /**
- * Midnight cron (owner policy 2026-09-26): refill EVERY regular logged user's
- * credit pool to DAILY_CREDIT_POOL at 12:00 AM.
+ * Midnight cron: refill EVERY regular logged user's credit pool to
+ * DAILY_CREDIT_POOL at 12:00 AM.
  *
  * A self-hosted node-cron timer runs inside the backend process — no external
  * scheduler needed on Render. The per-user lazy reset in utils/credits.ts is
  * the safety net: even if this job is delayed or the process restarts, the
  * first AI call (or /me fetch) of the day still applies the new pool.
  *
- * Owner/admin/premium profiles are excluded — their balances are managed
- * manually (owner grants) and must never be clobbered by the daily pool.
+ * PRO/premium profiles are excluded — unlimited accounts never need a refill.
+ * Owner emails are INCLUDED (they draw the same daily pool when the gate is
+ * ON; when it is OFF they simply aren't billed).
  */
 
 let started = false;
@@ -37,7 +37,7 @@ export async function runDailyCreditsReset(now: Date = new Date()): Promise<numb
   }
 
   const regular = (stale ?? []).filter(
-    (p) => !hasFullAccess(((p.role as string) ?? "").toUpperCase() || null, !!p.premium_status),
+    (p) => p.premium_status !== true,
   );
   if (regular.length === 0) return 0;
 

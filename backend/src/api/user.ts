@@ -143,13 +143,13 @@ const unlockSchema = z.object({
  * POST /api/user/credits/unlock
  * Deduct the category's coin cost and return the 20-minute window expiration.
  *
- * OWNER-ONLY ECONOMY: only owner-allowlist emails are ever charged, and only
- * while the owner coin-gate toggle is ON. Everyone else (and owners while
- * the gate is OFF) receives the window free with cost 0 — no deduction, so
- * unlocking works offline-friendly without spending anything.
+ * BILL-EVERYONE (corrected 2026-10-04): all users pay from the daily pool.
+ * PRO (premium_status) is unlimited and free. Owner-allowlist emails are free
+ * only while their profile toggle is OFF; when the gate is ON they pay like
+ * students. Students/customers ALWAYS pay (must purchase coins).
  *
  * 401 — unauthenticated
- * 402 — insufficient credits (owner email, gate ON, pool exhausted)
+ * 402 — insufficient credits (pool exhausted)
  * 400 — unknown category
  * 200 — { credits, expiresAt }
  */
@@ -183,16 +183,13 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
     const premiumStatus = profile?.premium_status ?? false;
     const owner = isOwnerEmail(user.email);
 
-    // Outside the coin economy (non-owner email) or gate OFF (owner toggle):
-    // free window, zero charge — the client opens it without spending.
-    if (!owner || !(await isCoinGateEnabled())) {
+    // PRO is unlimited and free. Owners are free only while their toggle is
+    // OFF — students/customers always pay from the pool.
+    if (premiumStatus) {
       res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0 });
       return;
     }
-
-    // Owner email + gate ON: PRO owners stay unlimited; otherwise the daily
-    // pool pays. (Non-owner ADMIN/premium never reach here — free above.)
-    if (premiumStatus) {
+    if (owner && !(await isCoinGateEnabled())) {
       res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0 });
       return;
     }

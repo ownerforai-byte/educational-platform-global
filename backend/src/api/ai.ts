@@ -63,11 +63,11 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
       }
     }
 
-    // ── Daily pool + 1-credit-per-message billing (owner policy) ──
-    // OWNER-ONLY ECONOMY: only owner-allowlist emails are ever billed, and
-    // only while the owner coin-gate toggle is ON. Everyone else chats free
-    // (no pool, no deduction) — including when the gate is OFF. PRO owners
-    // (premium_status) stay unlimited.
+    // ── Daily pool + 1-credit-per-message billing ──
+    // BILL-EVERYONE (corrected 2026-10-04): all signed-in users pay 1 credit
+    // per message. PRO (premium_status) is unlimited. Owner-allowlist emails
+    // follow the profile toggle: gate ON → billed like students; gate OFF →
+    // free (no deduction, no lock). Students/customers are ALWAYS billed.
     const user = (req as unknown as { user?: { id: string; email?: string; role?: string | null } }).user;
     if (!user) {
       res.status(401).json({ error: "Unauthorized" });
@@ -78,13 +78,14 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
       .select("role, premium_status")
       .eq("id", user.id)
       .maybeSingle();
-    const ownerBilling = isOwnerEmail(user?.email);
+    const isOwner = isOwnerEmail(user?.email);
     const proFree = (prof?.premium_status ?? false) === true;
 
     let creditsLeft: number | null = null;
-    // Coin gate OFF (owner toggle) → this message is free; skip billing.
+    // Owner toggle OFF frees OWNERS ONLY — students still pay.
     const coinGate = await isCoinGateEnabled();
-    if (ownerBilling && coinGate && !proFree) {
+    const ownerFree = isOwner && !coinGate;
+    if (!proFree && !ownerFree) {
       // Lazy midnight reset: first AI call of the day refills the pool.
       const ensured = await ensureDailyCredits(user.id, user.email, prof?.role as string | null, prof?.premium_status);
       const remaining = await spendCredits(
