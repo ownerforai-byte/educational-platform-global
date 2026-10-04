@@ -13,6 +13,7 @@ import {
   FigureStreamFilter,
   FIGURE_FENCE,
   FIGURE_TOOL_INSTRUCTION,
+  enrichImagePrompt,
   resolveFiguresInText,
   withFigureToolInstruction,
 } from "../../src/ai/image-gen";
@@ -175,6 +176,31 @@ describe("resolveFiguresInText", () => {
     }));
     expect(text).toBe(answer);
     expect(figures).toHaveLength(0);
+  });
+});
+
+describe("enrichImagePrompt — the 2026-10-04 accuracy upgrade", () => {
+  it("keeps the student's brief verbatim and pins the rendering law on academic kinds", () => {
+    const brief = enrichImagePrompt("labelled diagram of the human heart");
+    expect(brief).toContain("labelled diagram of the human heart");
+    expect(brief).toContain("Figure type");
+    expect(brief).toContain("leader line");
+    expect(brief).toContain("no artistic distortion");
+    // Biology words pull in the biology accuracy law.
+    expect(brief).toContain("Biology accuracy");
+  });
+
+  it("pulls in the matching subject's accuracy law", () => {
+    expect(enrichImagePrompt("ray diagram of a convex lens")).toContain("Physics accuracy");
+    expect(enrichImagePrompt("electrolysis of water apparatus")).toContain("Chemistry accuracy");
+    expect(enrichImagePrompt("graph of y = x squared")).toContain("Mathematics accuracy");
+  });
+
+  it("grades a pictorial request by real-world fidelity, never by labels", () => {
+    const brief = enrichImagePrompt("a snow leopard resting on a Himalayan cliff, photorealistic");
+    expect(brief).toContain("snow leopard");
+    expect(brief).toContain("real-world accuracy");
+    expect(brief).not.toContain("leader line");
   });
 });
 

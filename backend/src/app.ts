@@ -7,6 +7,7 @@ import authRoutes from "./api/auth";
 import aiRoutes from "./api/ai";
 import aiGuestRoutes from "./api/ai-guest";
 import aiImageRoutes from "./api/ai-image";
+import aiImageHistoryRoutes from "./api/ai-image-history";
 import aiFigureRoutes from "./api/ai-figure";
 import aiGenerateRoutes from "./api/ai-generate";
 import aiEnhanceRoutes from "./api/ai-enhance";
@@ -97,11 +98,13 @@ export function createApp(): express.Express {
   // history-search interface (search your own saved conversations), which is
   // free for signed-in students and blocked for guests.
   app.use("/api/ai/history-search", aiHistoryRoutes);
-  // Registered BEFORE /api/ai so the more specific path wins: the Image
-  // Hub's owner-only drawing endpoint (Agnes 2.1 image chain).
+  // Registered BEFORE /api/ai so the more specific paths win: the Image Hub's
+  // drawing endpoints — open to every signed-in student (owner request
+  // 2026-10-04) — and its per-user saved-history API.
+  app.use("/api/ai/image-history", aiImageHistoryRoutes);
   app.use("/api/ai/image", aiImageRoutes);
-  // Registered BEFORE /api/ai as well: the Image Hub's vector academic-figure
-  // writer (every labelled part hoverable) shares the same owner-only boundary.
+  // The vector academic-figure writer (every labelled part hoverable) shares
+  // the same every-user boundary.
   app.use("/api/ai/figure", aiFigureRoutes);
   app.use("/api/ai", aiRoutes);
   app.use("/api/ai/guest", aiGuestRoutes);

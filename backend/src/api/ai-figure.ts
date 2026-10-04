@@ -1,8 +1,8 @@
 import { Router, Request, Response } from "express";
-import { requireAuth, requireOwner } from "../middleware/auth";
-import { rateLimit } from "../middleware/rateLimit";
+import { requireAuth } from "../middleware/auth";
 import { drawAcademicFigure } from "../ai/figure-draw";
 import { classifyFigureKind, type FigureKind } from "../ai/academic-figures";
+import { saveImageHistoryRow } from "./ai-image-history";
 
 /**
  * POST /api/ai/figure — the Image Hub's ACADEMIC FIGURE endpoint.
@@ -17,9 +17,12 @@ import { classifyFigureKind, type FigureKind } from "../ai/academic-figures";
  * so the frontend opens that detail on hover/click. `parts` carries the same
  * legend as data, so the hub can also list every part without a pointer.
  *
- * OWNER-ONLY, exactly like /api/ai/image: this burns the platform's model key,
- * so it must never be reachable by the public. On failure it answers 503 with a
- * reason, and the hub falls back to the raster chain (Agnes → puter.js).
+ * OPEN TO EVERY SIGNED-IN USER (owner request 2026-10-04), exactly like
+ * /api/ai/image: `requireAuth` stays, the owner gate is gone, and the key is
+ * protected by the ai-image rate-limit tier instead. Every drawn figure is
+ * saved to the user's image history on the server (hardcoded, best-effort).
+ * On failure it answers 503 with a reason, and the hub falls back to the
+ * raster chain (Agnes → puter.js).
  */
 const router = Router();
 
@@ -39,7 +42,7 @@ const KINDS = new Set<string>([
   "illustration",
 ]);
 
-router.post("/", rateLimit, requireAuth, requireOwner, async (req: Request, res: Response) => {
+router.post("/", requireAuth, async (req: Request, res: Response) => {
   const prompt = typeof req.body?.prompt === "string" ? req.body.prompt.trim() : "";
   if (!prompt) {
     res.status(400).json({ error: "Prompt required" });
@@ -57,6 +60,16 @@ router.post("/", rateLimit, requireAuth, requireOwner, async (req: Request, res:
   });
 
   if (result.svg) {
+    const user = (req as Request & { user: { id: string } }).user;
+    await saveImageHistoryRow(user.id, {
+      kind: "figure",
+      prompt,
+      svg: result.svg,
+      caption: result.caption,
+      archetype: result.kind,
+      engine: "vector figure",
+      parts: result.parts,
+    });
     res.json({
       svg: result.svg,
       caption: result.caption,

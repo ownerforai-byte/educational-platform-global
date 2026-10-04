@@ -7,15 +7,15 @@ import type { Request, Response } from "express";
 import type { Server } from "node:http";
 
 /**
- * POST /api/ai/image — the Image Hub's owner-only drawing endpoint
- * (owner request 2026-10-02: "replace the mind console with agnes 2.1
- * flash and js to generate image").
+ * POST /api/ai/image — the Image Hub's drawing endpoint (owner request
+ * 2026-10-02: "replace the mind console with agnes 2.1 flash and js to
+ * generate image"; opened to every signed-in user 2026-10-04).
  *
- * Auth wiring is pinned at the source (the route file must keep
- * `requireAuth, requireOwner` — the endpoint burns the platform AGNES key
- * and the page gate is client-side only); the handler contract itself is
- * probed with the guards stubbed and the engine mocked, so no key and no
- * network are ever touched.
+ * Auth wiring is pinned at the source (the route file must keep `requireAuth`
+ * and must NOT carry the former owner gate — the Image Hub is every student's
+ * now, and the key is protected by the ai-image rate-limit tier instead); the
+ * handler contract itself is probed with the guards stubbed and the engine
+ * mocked, so no key and no network are ever touched.
  */
 
 vi.mock("../src/ai/image-gen", () => ({
@@ -26,12 +26,14 @@ vi.mock("../src/middleware/auth", async (importOriginal) => {
   const actual = await importOriginal<typeof import("../src/middleware/auth")>();
   return {
     ...actual,
-    // Stub the two guards: the SOURCE test below pins that they are wired.
+    // Stub the guard: the SOURCE test below pins that it is wired.
     requireAuth: (req: Request, _res: Response, next: () => void) => {
-      (req as unknown as { user: { role: string } }).user = { role: "OWNER" };
+      (req as unknown as { user: { id: string; role: string } }).user = {
+        id: "user-test",
+        role: "STUDENT",
+      };
       next();
     },
-    requireOwner: (_req: Request, _res: Response, next: () => void) => next(),
   };
 });
 
@@ -75,12 +77,17 @@ beforeEach(() => {
 });
 
 describe("POST /api/ai/image", () => {
-  test("is guarded by requireAuth AND requireOwner (source pin)", () => {
+  test("is guarded by requireAuth and open to EVERY signed-in user (source pin)", () => {
     const src = readFileSync(
       path.resolve(__dirname, "../src/api/ai-image.ts"),
       "utf8",
     );
-    expect(src).toContain("requireAuth, requireOwner");
+    expect(src).toContain("requireAuth");
+    // The owner gate is gone by design (owner request 2026-10-04: "enable
+    // saving of image for every user") — it must not creep back in.
+    expect(src).not.toContain("requireOwner");
+    // Every successful draw is hardcoded to save into the user's history.
+    expect(src).toContain("saveImageHistoryRow");
   });
 
   test("rejects a missing or blank prompt with 400", async () => {

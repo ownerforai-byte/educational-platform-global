@@ -32,6 +32,15 @@ const PASSWORD_RESET_WINDOW_MS = positiveNumber(
   60 * 60 * 1000,
 );
 
+// Image generation burns the platform Agnes key per drawing and is open to
+// EVERY signed-in user (owner request 2026-10-04) — its own modest tier keeps
+// one account/IP from draining the key while a normal study session still
+// draws freely (one figure-mode drawing = the vector pass + a raster retry).
+const AI_IMAGE_MAX_REQUESTS = positiveNumber(
+  process.env.AI_IMAGE_RATE_LIMIT_MAX_REQUESTS,
+  12,
+);
+
 const hits = new Map<string, { count: number; reset: number }>();
 
 function getClientId(req: Request): string {
@@ -44,7 +53,7 @@ function getClientId(req: Request): string {
   return ip;
 }
 
-type Tier = "auth" | "password-reset" | "guest-ai" | "default" | "default-unlimited";
+type Tier = "auth" | "password-reset" | "guest-ai" | "ai-image" | "default" | "default-unlimited";
 
 /** Which tier does this request fall into? */
 function tierFor(originalUrl: string | undefined): Tier {
@@ -68,6 +77,13 @@ function tierFor(originalUrl: string | undefined): Tier {
   // provider gateway. Use originalUrl (not req.path) so the check works both
   // at the app level and when this middleware is reused inside a router.
   if (url.startsWith("/api/ai/guest")) return "guest-ai";
+  // Image drawing is public to every student but costs a real generation per
+  // call — matched on the exact path so the cheap image-history CRUD below it
+  // is not charged against the drawing budget.
+  const pathOnly = (url.split("?")[0] ?? "").replace(/\/+$/, "");
+  if (pathOnly === "/api/ai/image" || pathOnly === "/api/ai/figure") {
+    return "ai-image";
+  }
   if (url.startsWith("/api/ai")) return "default-unlimited";
   return "default";
 }
@@ -81,6 +97,7 @@ const TIERS: Record<Tier, TierLimit> = {
   auth: { max: AUTH_MAX_REQUESTS, windowMs: WINDOW_MS },
   "password-reset": { max: PASSWORD_RESET_MAX_REQUESTS, windowMs: PASSWORD_RESET_WINDOW_MS },
   "guest-ai": { max: MAX_REQUESTS, windowMs: WINDOW_MS },
+  "ai-image": { max: AI_IMAGE_MAX_REQUESTS, windowMs: WINDOW_MS },
   default: { max: MAX_REQUESTS, windowMs: WINDOW_MS },
   "default-unlimited": { max: Infinity, windowMs: WINDOW_MS },
 };

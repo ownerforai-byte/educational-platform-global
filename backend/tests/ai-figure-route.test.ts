@@ -9,11 +9,11 @@ import type { Server } from "node:http";
 /**
  * POST /api/ai/figure — the Image Hub's vector academic-figure endpoint
  * (owner request 2026-10-03: lifecycle / labelling / all parts named, with the
- * details opening on hover).
+ * details opening on hover; opened to every signed-in user 2026-10-04).
  *
- * Same boundary as /api/ai/image: the route must keep `requireAuth,
- * requireOwner` at the source (it burns the platform model key), while the
- * handler contract is probed with the guards stubbed and the writer mocked.
+ * Same boundary as /api/ai/image: the route must keep `requireAuth` and must
+ * NOT carry the former owner gate at the source, while the handler contract is
+ * probed with the guard stubbed and the writer mocked.
  */
 
 vi.mock("../src/ai/figure-draw", () => ({
@@ -25,10 +25,12 @@ vi.mock("../src/middleware/auth", async (importOriginal) => {
   return {
     ...actual,
     requireAuth: (req: Request, _res: Response, next: () => void) => {
-      (req as unknown as { user: { role: string } }).user = { role: "OWNER" };
+      (req as unknown as { user: { id: string; role: string } }).user = {
+        id: "user-test",
+        role: "STUDENT",
+      };
       next();
     },
-    requireOwner: (_req: Request, _res: Response, next: () => void) => next(),
   };
 });
 
@@ -72,9 +74,14 @@ beforeEach(() => {
 });
 
 describe("POST /api/ai/figure", () => {
-  test("is guarded by requireAuth AND requireOwner (source pin)", () => {
+  test("is guarded by requireAuth and open to EVERY signed-in user (source pin)", () => {
     const src = readFileSync(path.resolve(__dirname, "../src/api/ai-figure.ts"), "utf8");
-    expect(src).toContain("requireAuth, requireOwner");
+    expect(src).toContain("requireAuth");
+    // The owner gate is gone by design (owner request 2026-10-04) — the
+    // ai-image rate-limit tier protects the key instead.
+    expect(src).not.toContain("requireOwner");
+    // Every drawn figure is hardcoded to save into the user's history.
+    expect(src).toContain("saveImageHistoryRow");
   });
 
   test("rejects a missing or blank prompt with 400 and no model call", async () => {

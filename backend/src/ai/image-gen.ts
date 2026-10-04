@@ -30,7 +30,11 @@
  * instruction + the fence scanner (answers simply never carry fences).
  */
 
-import { FIGURE_ARCHETYPE_GUIDE } from "./academic-figures";
+import {
+  FIGURE_ARCHETYPES,
+  FIGURE_ARCHETYPE_GUIDE,
+  classifyFigureKind,
+} from "./academic-figures";
 
 // ── config ────────────────────────────────────────────────────────────────────
 
@@ -72,6 +76,71 @@ export interface GeneratedFigure extends FigureSpec {
 // ── Agnes generator ───────────────────────────────────────────────────────────
 
 /**
+ * SUBJECT ACCURACY CLAUSES — the 2026-10-04 accuracy upgrade ("upgrade image
+ * accuracy"). One generic "textbook diagram" prefix let the painter drift into
+ * art; now the prompt's own words pull in the accuracy law of the subject it
+ * belongs to, so a ray diagram is judged by physics rules and a cell by
+ * biology rules.
+ */
+const SUBJECT_ACCURACY: Array<{ test: RegExp; clause: string }> = [
+  {
+    test: /(physic|optic|lens|mirror|prism|ray diagram|circuit|current|voltage|resist|capacit|magnet|wave|oscillat|pendulum|projectile|force|friction|velocity|acceleration|newton|electromagnet|electrostatic|electroscope|galvanometer|potentiometer|vernier|screw gauge|torque|momentum)/i,
+    clause:
+      "Physics accuracy: standard circuit/ray symbols only, arrowheads on every ray and vector in the physically correct direction, axes labelled with quantity and SI unit, true proportions and angles.",
+  },
+  {
+    test: /(chemistr|molecule|atomic|electron configuration|orbital|bond|lewis|titrat|distill|electrolys|electrochemical|electrode|reaction|periodic|acid|alkane|alkene|benzene|crystal|valency|salt bridge|galvanic|cathode|anode)/i,
+    clause:
+      "Chemistry accuracy: correct valency, bond lines and bond angles, apparatus drawn vessel-by-vessel with labels, reaction and electron flow shown with arrows, IUPAC-standard notation.",
+  },
+  {
+    test: /(biolog|cell|organelle|tissue|anatomy|organ|dna|rna|mitosis|meiosis|life ?cycle|plant|animal|photosynth|respirat|enzyme|protein|genetic|punnett|heart|kidney|nephron|neuron|brain|plasmodium|fern|flower|seed|root|stem|leaf)/i,
+    clause:
+      "Biology accuracy: anatomically correct proportions, orientation and relative sizes, every visible structure identified with a straight leader line, life-cycle stages in their true order with ploidy marked.",
+  },
+  {
+    test: /(math|graph|function|parabola|ellipse|hyperbola|circle theorem|vector|triangle|geometry|calculus|integral|derivative|probabilit|venn|unit circle|asymptote|matrix|coordinate)/i,
+    clause:
+      "Mathematics accuracy: exact shapes with correct curvature and symmetry, axes with scale marks and units, all points/vertices lettered, tangents and shaded regions precise.",
+  },
+];
+
+/**
+ * Turn a student's one-line brief into a drawing brief the painter can be
+ * graded against. Two lanes:
+ *   · academic kinds (lifecycle, labelled, apparatus, graph, …) — the
+ *     archetype's own `must` clauses plus the subject accuracy law plus the
+ *     rendering law (labels, leader lines, no art);
+ *   · `illustration` (photos, scenes, mood boards) — accuracy means fidelity
+ *     to the real world instead of labels.
+ */
+export function enrichImagePrompt(prompt: string): string {
+  const clean = (prompt ?? "").trim();
+  const kind = classifyFigureKind(clean);
+
+  if (kind === "illustration") {
+    return (
+      `${clean}. ` +
+      "Faithful real-world accuracy: correct anatomy, proportions and natural colours, " +
+      "photographic detail and lighting, no distortion, no invented objects, clean composition, high resolution."
+    );
+  }
+
+  const archetype = FIGURE_ARCHETYPES[kind];
+  const subject = SUBJECT_ACCURACY.find((s) => s.test.test(clean))?.clause;
+  return [
+    `Educational science textbook figure: ${clean}.`,
+    `Figure type — ${archetype.label}: ${archetype.must}`,
+    subject,
+    "Rendering law: crisp clean background, high contrast, thin precise outlines, " +
+      "every part labelled with a straight leader line to legible text, standard notation, " +
+      "syllabus-accurate content, no artistic distortion, no watermark.",
+  ]
+    .filter(Boolean)
+    .join(" ");
+}
+
+/**
  * Generate one figure with the ordered Agnes image chain.
  * Best-effort: every failure path resolves to { reason }, never throws —
  * a dead image engine must not cost the student their answer.
@@ -87,8 +156,9 @@ export async function generateVeerImage(
   const key = process.env.AGNES_API_KEY;
   const baseUrl = (process.env.AGNES_API_URL || "https://apihub.agnes-ai.com").replace(/\/v1\/?$/, "");
 
-  // Enforce textbook schematic format: eliminates random artistic hallucinations
-  const enrichedPrompt = `Educational science textbook diagram of ${clean}. Clear anatomical/physical labelling with leader lines, technical schematic style on crisp clean background, high-contrast, syllabus-accurate instructional figure, no artistic distortions.`;
+  // Enrich the brief with the subject + archetype accuracy laws (see above):
+  // eliminates random artistic hallucinations and pins label correctness.
+  const enrichedPrompt = enrichImagePrompt(clean);
 
   for (const model of IMAGE_MODELS) {
     try {
