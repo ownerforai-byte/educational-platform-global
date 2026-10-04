@@ -5,6 +5,7 @@ import {
   AlertTriangle,
   Download,
   ExternalLink,
+  History as HistoryIcon,
   Image as ImageIcon,
   ListTree,
   Sparkles,
@@ -18,15 +19,30 @@ import {
   type HubFigurePart,
   type HubImageResult,
 } from "./generate-image";
+import {
+  clearImageHistory,
+  loadImageHistory,
+  saveImageHistoryItem,
+  type ImageHistoryRow,
+} from "./history";
 
 /**
- * IMAGE HUB (owner request 2026-10-02): "replace the mind console with
- * agnes 2.1 flash and js to generate image means it is image hub".
+ * IMAGE HUB (owner request 2026-10-02: "replace the mind console with
+ * agnes 2.1 flash and js to generate image means it is image hub").
  *
- * Two modes now, because one engine cannot do both jobs (owner request
- * 2026-10-03: "agnes image is just drawing rough image ---- train it for all
- * kind of academic images like lifecycle, labelling, all parts name with their
- * interface with supporting details which opens after hovering"):
+ * OPEN TO EVERY SIGNED-IN STUDENT (owner request 2026-10-04: "enable saving
+ * of image for every user") — the former owner-only gate is gone, and the
+ * gallery is now the ACCOUNT's saved history, not a device session:
+ *
+ *   · every server draw (vector figure, Agnes picture) is saved by the
+ *     backend itself — hardcoded, no client opt-in;
+ *   · browser-drawn puter.js pictures are saved by the hub right after they
+ *     land;
+ *   · the session cache below stays as the offline/unmigrated fallback.
+ *
+ * Two modes (owner request 2026-10-03: "train it for all kind of academic
+ * images like lifecycle, labelling, all parts name with their interface with
+ * supporting details which opens after hovering"):
  *
  *   · ACADEMIC FIGURE (default) — the vector writer draws one exam-grade SVG
  *     in the platform's house style: a life cycle, a labelled structure, an
@@ -37,11 +53,6 @@ import {
  *     "Parts & details" under the figure.
  *   · PICTURE — the raster chain (Agnes image models, then puter.js in the
  *     browser) for photos, watercolours and anything pictorial.
- *
- * The figure writer still falls back to the raster chain, so a failed drawing
- * never leaves the owner empty-handed. The gallery keeps both kinds for this
- * session (sessionStorage, this device only; the route is owner-gated by
- * app/(app)/mind-studio/layout.tsx).
  */
 
 type Mode = "figure" | "picture";
@@ -68,9 +79,11 @@ type GalleryPicture = HubImageResult & {
 
 type GalleryItem = GalleryFigure | GalleryPicture;
 
+type Filter = "all" | "figure" | "picture";
+
 const STORE_KEY = "neb_image_hub_gallery";
 const MAX_PROMPT = 500;
-const GALLERY_CAP = 24;
+const GALLERY_CAP = 60;
 /** sessionStorage holds ~5 MB; keep the payload well under it. */
 const STORE_BUDGET = 2_000_000;
 
@@ -88,7 +101,7 @@ const EXAMPLES: Record<Mode, string[]> = {
   ],
 };
 
-/** Archetype ids → the badge the owner reads. */
+/** Archetype ids → the badge the student reads. */
 const ARCHETYPE_LABELS: Record<string, string> = {
   lifecycle: "Life cycle",
   labelled: "Labelled structure",
@@ -111,6 +124,19 @@ function archetypeLabel(kind: string): string {
 
 function newId(): string {
   return `${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 7)}`;
+}
+
+/** "just now" / "4 min ago" / "2 h ago" / "3 d ago" / a date — human, not ISO. */
+function timeAgo(at: number): string {
+  const seconds = Math.max(1, Math.round((Date.now() - at) / 1000));
+  if (seconds < 60) return "just now";
+  const minutes = Math.round(seconds / 60);
+  if (minutes < 60) return `${minutes} min ago`;
+  const hours = Math.round(minutes / 60);
+  if (hours < 24) return `${hours} h ago`;
+  const days = Math.round(hours / 24);
+  if (days < 7) return `${days} d ago`;
+  return new Date(at).toLocaleDateString();
 }
 
 /** Cross-origin safe download: fetch → blob → click; window.open as last resort. */
@@ -156,8 +182,8 @@ function figureMarkdown(item: GalleryFigure): string {
 }
 
 /**
- * Rebuild one gallery item from sessionStorage. Runs on untrusted JSON (an old
- * session, a hand-edited value), so it validates and NORMALISES — the `kind`
+ * Rebuild one gallery item from the session cache. Runs on untrusted JSON (an
+ * old session, a hand-edited value), so it validates and NORMALISES — the `kind`
  * discriminator is re-derived here rather than trusted, and anything that is
  * not a figure or a picture is dropped.
  */
@@ -200,29 +226,90 @@ function parseStored(value: unknown): GalleryItem | null {
   return null;
 }
 
+/** Rebuild one gallery item from a saved history row (server JSON, still validated). */
+function parseHistoryRow(row: ImageHistoryRow): GalleryItem | null {
+  const at = Date.parse(row.createdAt);
+  const prompt = typeof row.prompt === "string" ? row.prompt : "";
+  if (row.kind === "figure") {
+    if (typeof row.svg !== "string" || !row.svg || !prompt) return null;
+    return {
+      kind: "figure",
+      id: row.id,
+      prompt,
+      at: Number.isFinite(at) ? at : Date.now(),
+      svg: row.svg,
+      caption: typeof row.caption === "string" ? row.caption : "",
+      archetype: typeof row.archetype === "string" && row.archetype ? row.archetype : "figure",
+      parts: Array.isArray(row.parts)
+        ? row.parts.filter(
+            (part): part is HubFigurePart =>
+              !!part && typeof (part as HubFigurePart).name === "string",
+          )
+        : [],
+    };
+  }
+  if (typeof row.url !== "string" || !row.url || !prompt) return null;
+  return {
+    kind: "picture",
+    id: row.id,
+    prompt,
+    at: Number.isFinite(at) ? at : Date.now(),
+    url: row.url,
+    engine: row.engine === "puter" ? "puter" : "agnes",
+    label: typeof row.engine === "string" && row.engine ? row.engine : "agnes-image-2.1-flash",
+  };
+}
+
+/** Dedupe key: the same drawing saved by the server and cached locally matches. */
+function itemKey(item: GalleryItem): string {
+  return item.kind === "figure" ? `figure|${item.svg}` : `picture|${item.url}`;
+}
+
 export function ImageHub() {
   const [mode, setMode] = useState<Mode>("figure");
   const [prompt, setPrompt] = useState("");
   const [busy, setBusy] = useState<HubEngineFail | null>(null);
   const [error, setError] = useState<string | null>(null);
   const [items, setItems] = useState<GalleryItem[]>([]);
+  const [filter, setFilter] = useState<Filter>("all");
 
-  // Restore the gallery after mount (sessionStorage is client-only).
+  // Restore the session cache first (instant paint), then merge the account
+  // history on top of it. The account list is the truth — the server saved
+  // every server draw — so the session copy only survives when the server
+  // never saw the item (e.g. a puter.js save that failed).
   useEffect(() => {
+    let local: GalleryItem[] = [];
     try {
       const raw = sessionStorage.getItem(STORE_KEY);
-      if (!raw) return;
-      const parsed: unknown = JSON.parse(raw);
-      if (Array.isArray(parsed)) {
-        setItems(
-          parsed
+      if (raw) {
+        const parsed: unknown = JSON.parse(raw);
+        if (Array.isArray(parsed)) {
+          local = parsed
             .map(parseStored)
-            .filter((item): item is GalleryItem => item !== null),
-        );
+            .filter((item): item is GalleryItem => item !== null);
+        }
       }
     } catch {
       /* storage blocked — start with an empty gallery */
     }
+    setItems(local);
+
+    let cancelled = false;
+    void loadImageHistory().then((rows) => {
+      if (cancelled || rows.length === 0) return;
+      const fromServer = rows
+        .map(parseHistoryRow)
+        .filter((item): item is GalleryItem => item !== null);
+      if (fromServer.length === 0) return;
+      const seen = new Set(fromServer.map(itemKey));
+      const merged = [...fromServer, ...local.filter((item) => !seen.has(itemKey(item)))]
+        .sort((a, b) => b.at - a.at)
+        .slice(0, GALLERY_CAP);
+      setItems(merged);
+    });
+    return () => {
+      cancelled = true;
+    };
   }, []);
 
   const saveItems = (next: GalleryItem[]) => {
@@ -285,6 +372,18 @@ export function ImageHub() {
             : newPictureItem(p, result),
           ...items,
         ]);
+        // The vector writer and the Agnes chain save themselves server-side;
+        // when the raster fallback drew this instead, only this browser holds
+        // the picture — so the hub is the one that records it. (A raster
+        // result from this chain never carries kind: "figure".)
+        if (result.kind !== "figure" && result.engine === "puter") {
+          void saveImageHistoryItem({
+            kind: "picture",
+            prompt: p,
+            url: result.url,
+            engine: result.label,
+          });
+        }
         setPrompt("");
         return;
       }
@@ -297,10 +396,25 @@ export function ImageHub() {
         return;
       }
       saveItems([newPictureItem(p, result), ...items]);
+      // The Agnes chain saved itself server-side; a puter.js picture exists
+      // only in this browser, so the hub is the one that records it.
+      if (result.engine === "puter") {
+        void saveImageHistoryItem({
+          kind: "picture",
+          prompt: p,
+          url: result.url,
+          engine: result.label,
+        });
+      }
       setPrompt("");
     } finally {
       setBusy(null);
     }
+  }
+
+  function clearAll() {
+    saveItems([]);
+    void clearImageHistory();
   }
 
   const status =
@@ -313,6 +427,13 @@ export function ImageHub() {
         : busy === "puter"
           ? "Agnes unavailable — drawing in your browser with puter.js…"
           : null;
+
+  const figureCount = items.filter((item) => item.kind === "figure").length;
+  const pictureCount = items.length - figureCount;
+  const shown =
+    filter === "all"
+      ? items
+      : items.filter((item) => item.kind === filter);
 
   const modeButton = (value: Mode, label: string, hint: string) => (
     <button
@@ -330,6 +451,21 @@ export function ImageHub() {
     </button>
   );
 
+  const filterButton = (value: Filter, label: string, count: number) => (
+    <button
+      type="button"
+      onClick={() => setFilter(value)}
+      aria-pressed={filter === value}
+      className={`rounded-full border px-2.5 py-1 text-[11px] font-semibold transition-colors ${
+        filter === value
+          ? "border-primary/40 bg-primary/10 text-primary"
+          : "border-border/60 bg-muted/40 text-muted-foreground hover:text-foreground"
+      }`}
+    >
+      {label} <span className="opacity-70">({count})</span>
+    </button>
+  );
+
   return (
     <div className="space-y-6">
       {/* ── Header ── */}
@@ -338,16 +474,18 @@ export function ImageHub() {
           <ImageIcon className="h-6 w-6 text-white" />
         </div>
         <div>
-          <h1 className="text-2xl font-black tracking-tight">
+          <h1 className="flex flex-wrap items-center gap-2 text-2xl font-black tracking-tight">
             Image Hub
-            <span className="ml-2 align-middle text-[10px] font-bold uppercase tracking-widest rounded-full border border-violet-500/30 bg-violet-500/10 px-2 py-1 text-violet-500">
-              Owner only
+            <span className="inline-flex items-center gap-1 align-middle text-[10px] font-bold uppercase tracking-widest rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-1 text-emerald-600 dark:text-emerald-300">
+              <HistoryIcon className="h-3 w-3" />
+              Saved to your account
             </span>
           </h1>
           <p className="text-sm text-muted-foreground">
             Academic figures drawn as labelled vector diagrams — every part
-            opens its detail on hover — plus Agnes 2.1 Flash pictures, with
-            puter.js in your browser as the fallback.
+            opens its detail on hover — plus Agnes 2.1 Flash pictures with
+            puter.js as the browser fallback. Everything you draw is kept in
+            your history, on any device you sign in from.
           </p>
         </div>
       </div>
@@ -414,7 +552,8 @@ export function ImageHub() {
         </div>
 
         <p className="text-[11px] text-muted-foreground/70">
-          ⌘/Ctrl + Enter to draw · max {MAX_PROMPT} characters
+          ⌘/Ctrl + Enter to draw · max {MAX_PROMPT} characters · every drawing
+          is saved to your history automatically
         </p>
       </div>
 
@@ -432,21 +571,26 @@ export function ImageHub() {
         </div>
       )}
 
-      {/* ── Gallery ── */}
-      <div className="flex items-center justify-between">
+      {/* ── Gallery / history ── */}
+      <div className="flex flex-wrap items-center justify-between gap-2">
         <h2 className="text-sm font-bold uppercase tracking-widest text-muted-foreground">
-          Gallery{" "}
+          Your history{" "}
           <span className="text-foreground/60">({items.length})</span>
         </h2>
         {items.length > 0 && (
-          <button
-            type="button"
-            onClick={() => saveItems([])}
-            className="inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-destructive transition-colors"
-          >
-            <Trash2 className="h-3.5 w-3.5" />
-            Clear
-          </button>
+          <div className="flex flex-wrap items-center gap-1.5">
+            {filterButton("all", "All", items.length)}
+            {figureCount > 0 && filterButton("figure", "Figures", figureCount)}
+            {pictureCount > 0 && filterButton("picture", "Pictures", pictureCount)}
+            <button
+              type="button"
+              onClick={clearAll}
+              className="ml-1 inline-flex items-center gap-1.5 text-xs text-muted-foreground hover:text-destructive transition-colors"
+            >
+              <Trash2 className="h-3.5 w-3.5" />
+              Clear history
+            </button>
+          </div>
         )}
       </div>
 
@@ -457,14 +601,14 @@ export function ImageHub() {
             No images yet
           </p>
           <p className="max-w-md text-xs text-muted-foreground/70">
-            Everything you draw lands here — newest first, kept for this
-            session, with hover explanations on every labelled part of a figure
+            Everything you draw lands here — newest first, saved to your
+            account, with hover explanations on every labelled part of a figure
             and a download button on each item.
           </p>
         </div>
       ) : (
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 xl:grid-cols-3">
-          {items.map((item) =>
+          {shown.map((item) =>
             item.kind === "figure" ? (
               <figure
                 key={item.id}
@@ -482,16 +626,21 @@ export function ImageHub() {
                       {item.prompt}
                     </p>
                   </div>
-                  <span className="flex gap-1.5 opacity-80 transition-opacity group-hover:opacity-100">
-                    <button
-                      type="button"
-                      onClick={() => downloadSvg(item.svg, `figure-${item.id}.svg`)}
-                      className="rounded-lg border border-border/60 bg-muted/40 p-1.5 hover:border-primary/40 hover:text-primary transition-colors"
-                      title="Download SVG"
-                    >
-                      <Download className="h-3.5 w-3.5" />
-                    </button>
-                  </span>
+                  <div className="flex items-center gap-2">
+                    <span className="text-[10px] text-muted-foreground/70">
+                      {timeAgo(item.at)}
+                    </span>
+                    <span className="flex gap-1.5 opacity-80 transition-opacity group-hover:opacity-100">
+                      <button
+                        type="button"
+                        onClick={() => downloadSvg(item.svg, `figure-${item.id}.svg`)}
+                        className="rounded-lg border border-border/60 bg-muted/40 p-1.5 hover:border-primary/40 hover:text-primary transition-colors"
+                        title="Download SVG"
+                      >
+                        <Download className="h-3.5 w-3.5" />
+                      </button>
+                    </span>
+                  </div>
                 </div>
 
                 <div className="bg-white px-3 py-3">
@@ -559,26 +708,31 @@ export function ImageHub() {
                     >
                       {item.label}
                     </span>
-                    <span className="flex gap-1.5 opacity-80 transition-opacity group-hover:opacity-100">
-                      <button
-                        type="button"
-                        onClick={() =>
-                          void downloadImage(item.url, `image-hub-${item.id}.png`)
-                        }
-                        className="rounded-lg border border-border/60 bg-muted/40 p-1.5 hover:border-primary/40 hover:text-primary transition-colors"
-                        title="Download"
-                      >
-                        <Download className="h-3.5 w-3.5" />
-                      </button>
-                      <a
-                        href={item.url}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="rounded-lg border border-border/60 bg-muted/40 p-1.5 hover:border-primary/40 hover:text-primary transition-colors"
-                        title="Open full size"
-                      >
-                        <ExternalLink className="h-3.5 w-3.5" />
-                      </a>
+                    <span className="flex items-center gap-1.5">
+                      <span className="text-[10px] text-muted-foreground/70">
+                        {timeAgo(item.at)}
+                      </span>
+                      <span className="flex gap-1.5 opacity-80 transition-opacity group-hover:opacity-100">
+                        <button
+                          type="button"
+                          onClick={() =>
+                            void downloadImage(item.url, `image-hub-${item.id}.png`)
+                          }
+                          className="rounded-lg border border-border/60 bg-muted/40 p-1.5 hover:border-primary/40 hover:text-primary transition-colors"
+                          title="Download"
+                        >
+                          <Download className="h-3.5 w-3.5" />
+                        </button>
+                        <a
+                          href={item.url}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="rounded-lg border border-border/60 bg-muted/40 p-1.5 hover:border-primary/40 hover:text-primary transition-colors"
+                          title="Open full size"
+                        >
+                          <ExternalLink className="h-3.5 w-3.5" />
+                        </a>
+                      </span>
                     </span>
                   </div>
                 </figcaption>

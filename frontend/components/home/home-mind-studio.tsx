@@ -1,8 +1,8 @@
 import Link from "next/link";
 import {
   ArrowRight,
-  Crown,
   Download,
+  History as HistoryIcon,
   Image as ImageIcon,
   MousePointerClick,
   Sparkles,
@@ -12,12 +12,11 @@ import {
  * Image Hub launcher — the home entry for the image studio (owner request
  * 2026-10-02: the Mind Studio diagram workspace was REPLACED by the Image
  * Hub: Agnes 2.1 Flash image chain first, puter.js in the browser as the
- * fallback).
+ * fallback; opened to every student 2026-10-04).
  *
- * The section renders only for owner emails (wrapped in OwnerOnly on the
- * home page), so the copy can speak directly to the owner. The preview on
- * the right is a static mockup of a gallery card — purely decorative,
- * renders nothing interactive.
+ * The section renders for every signed-in visitor, so the copy speaks to a
+ * student, not to the owner. The preview on the right is a static mockup of a
+ * gallery card — purely decorative, renders nothing interactive.
  */
 export function HomeMindStudio() {
   return (
@@ -62,8 +61,8 @@ export function HomeMindStudio() {
                 in your browser through puter.js
               </span>{" "}
               — its User-Pays model costs the platform nothing and needs no
-              key. The workspace is owner-only: everyone else is bounced at
-              the door.
+              key. Every drawing is saved to your account history: newest
+              first, ready to download on any device you sign in from.
             </p>
 
             <ul className="mt-5 flex flex-wrap gap-2.5">
@@ -80,8 +79,8 @@ export function HomeMindStudio() {
                 Gallery + downloads
               </li>
               <li className="inline-flex items-center gap-1.5 rounded-xl border border-border/60 bg-card/80 px-3 py-2 text-xs font-semibold text-foreground/80">
-                <Crown className="h-3.5 w-3.5 text-amber-500" />
-                Owner emails only
+                <HistoryIcon className="h-3.5 w-3.5 text-amber-500" />
+                History saved to your account
               </li>
             </ul>
 
@@ -94,8 +93,8 @@ export function HomeMindStudio() {
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <p className="text-xs text-muted-foreground">
-                Owner-only — signed-out visitors go to login, other accounts
-                bounce home.
+                Open to every student — sign in and draw; the gallery is saved
+                to your account.
               </p>
             </div>
           </div>

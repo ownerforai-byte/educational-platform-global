@@ -4,10 +4,7 @@ import { ImageHub } from "@/features/image-hub";
 export const metadata: Metadata = {
   title: "Image Hub — Agnes 2.1 Flash · Ravikisan's Platform",
   description:
-    "Owner-only image studio: describe a picture and Agnes 2.1 Flash draws it (puter.js browser fallback), with a per-session gallery and downloads.",
-  // Owner-only (layout.tsx gates the render) — keep the studio out of
-  // search indexes too.
-  robots: { index: false, follow: false },
+    "Every student's image studio: describe a picture or an academic figure and Agnes 2.1 Flash draws it (puter.js browser fallback), with the gallery saved to your account and downloads.",
 };
 
 /**
@@ -15,8 +12,10 @@ export const metadata: Metadata = {
  * workspace is REPLACED — this route now hosts the whole image interface:
  * prompt → Agnes 2.1 Flash image chain → puter.js fallback → gallery.
  *
- * The owner-only gate lives in layout.tsx (login/home bounces); the backend
- * endpoint /api/ai/image enforces the same boundary server-side.
+ * Open to every signed-in student (owner request 2026-10-04: "enable saving
+ * of image for every user"): layout.tsx only asks for a login, and the
+ * backend endpoints /api/ai/image + /api/ai/figure enforce the same
+ * every-user boundary (with the ai-image rate-limit tier protecting the key).
  */
 export default function ImageHubPage() {
   return (

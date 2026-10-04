@@ -1,23 +1,51 @@
 import { describe, it, expect, vi, beforeEach } from "vitest";
 import { render, screen, fireEvent, waitFor } from "@testing-library/react";
 import { ImageHub } from "@/features/image-hub";
+import type { ImageHistoryRow } from "@/features/image-hub/history";
 
 /**
- * UI contract for the Image Hub. The route is owner-gated, so a browser can
- * never reach it during tests — this render test is the substitute.
+ * UI contract for the Image Hub. The route asks only for a login (open to
+ * every student since 2026-10-04), so a browser can reach it in production —
+ * this render suite still pins the behaviour without a network.
  *
- * Two modes now (owner request 2026-10-03: "train it for all kind of academic
- * images like lifecycle, labelling, all parts name with their interface with
- * supporting details which opens after hovering"):
- *
- *   · ACADEMIC FIGURE (default) → POST /api/ai/figure draws a labelled vector
- *     figure, the gallery shows its caption, its archetype and the "Parts &
- *     details" legend, and the raster chain is only used when it draws nothing;
- *   · PICTURE → the raster chain (Agnes server → puter.js) exactly as before.
+ * Three contracts now:
+ *   · the composer modes (ACADEMIC FIGURE → POST /api/ai/figure, PICTURE →
+ *     the Agnes raster chain, puter.js as the browser fallback) exactly as
+ *     before;
+ *   · the account history: the gallery loads from GET /api/ai/image-history
+ *     on mount, and a browser-drawn puter.js picture is POSTed there right
+ *     after it lands (server draws save themselves);
+ *   · clearing the gallery also clears the account history (DELETE).
  */
 
+const historyRows: ImageHistoryRow[] = [];
+/** When set, POST /api/ai/figure resolves with this instead of throwing. */
+let figureReply: unknown;
+
 vi.mock("@/lib/api-client", () => ({
-  apiFetch: vi.fn().mockRejectedValue(new Error("503 engines down")),
+  apiFetch: vi.fn(async (path: string, init?: RequestInit) => {
+    if (path.startsWith("/api/ai/image-history")) {
+      const method = init?.method ?? "GET";
+      if (method === "GET") return { items: [...historyRows], migrated: true };
+      if (method === "DELETE") {
+        historyRows.length = 0;
+        return { cleared: true };
+      }
+      if (method === "POST") {
+        historyRows.unshift({
+          id: `srv-${historyRows.length + 1}`,
+          kind: "picture",
+          prompt: String(JSON.parse(String(init?.body)).prompt),
+          url: String(JSON.parse(String(init?.body)).url),
+          engine: "puter.js (browser)",
+          createdAt: new Date().toISOString(),
+        });
+        return { saved: true };
+      }
+    }
+    if (path === "/api/ai/figure" && figureReply !== undefined) return figureReply;
+    throw new Error("503 engines down");
+  }),
 }));
 vi.mock("@/lib/puter-image", () => ({
   drawFigureWithPuter: vi.fn(async () => "data:image/png;base64,TESTPIXELS"),
@@ -44,9 +72,27 @@ function promptBox(): HTMLTextAreaElement {
   return screen.getByPlaceholderText(/describe the image/i) as HTMLTextAreaElement;
 }
 
+/** Calls to the DRAW endpoints only — the history CRUD is counted separately. */
+function drawCalls(): number {
+  return mockedApiFetch.mock.calls.filter(
+    ([path]) => path === "/api/ai/image" || path === "/api/ai/figure",
+  ).length;
+}
+
+function historyCalls(method: "GET" | "POST" | "DELETE"): number {
+  return mockedApiFetch.mock.calls.filter(
+    ([path, init]) =>
+      typeof path === "string" &&
+      path.startsWith("/api/ai/image-history") &&
+      (init?.method ?? "GET").toUpperCase() === method,
+  ).length;
+}
+
 beforeEach(() => {
   sessionStorage.clear();
-  mockedApiFetch.mockClear().mockRejectedValue(new Error("503 engines down"));
+  historyRows.length = 0;
+  figureReply = undefined;
+  mockedApiFetch.mockClear();
   mockedPuter.mockClear();
 });
 
@@ -60,11 +106,48 @@ describe("ImageHub", () => {
     // The figure mode is the default, so the button asks for a figure.
     expect(screen.getByRole("button", { name: /draw figure/i })).not.toBeNull();
     expect(screen.getByText(/no images yet/i)).not.toBeNull();
-    expect(screen.getByText(/Owner only/i)).not.toBeNull();
+    // The account-history badge (the empty state repeats the phrase, so count).
+    expect(screen.getAllByText(/saved to your account/i).length).toBeGreaterThan(0);
+  });
+
+  it("loads the account history on mount and shows both kinds", async () => {
+    historyRows.push(
+      {
+        id: "srv-fig",
+        kind: "figure",
+        prompt: "saved figure from another device",
+        svg: '<svg viewBox="0 0 900 640"><g><title>Wall — holds the cell firm</title></g></svg>',
+        caption: "Plant cell",
+        archetype: "labelled",
+        engine: "vector figure",
+        parts: [{ name: "Wall", detail: "holds the cell firm" }],
+        createdAt: new Date(Date.now() - 60_000).toISOString(),
+      },
+      {
+        id: "srv-pic",
+        kind: "picture",
+        prompt: "saved picture from another device",
+        url: "https://img.example/saved.png",
+        engine: "agnes-image-2.1-flash",
+        createdAt: new Date(Date.now() - 120_000).toISOString(),
+      },
+    );
+
+    render(<ImageHub />);
+
+    await waitFor(
+      () => {
+        expect(screen.getByText("saved picture from another device")).not.toBeNull();
+      },
+      { timeout: 4000 },
+    );
+    expect(screen.getByText(/Labelled structure · vector figure/)).not.toBeNull();
+    expect(screen.getByText(/Parts & details \(1\)/)).not.toBeNull();
+    expect(historyCalls("GET")).toBe(1);
   });
 
   it("draws a vector figure with its parts legend in the gallery", async () => {
-    mockedApiFetch.mockResolvedValueOnce(FIGURE_REPLY);
+    figureReply = FIGURE_REPLY;
     render(<ImageHub />);
 
     fireEvent.change(promptBox(), { target: { value: "labelled animal cell" } });
@@ -85,6 +168,8 @@ describe("ImageHub", () => {
     // exactly what the hover tooltip reads out.
     expect(screen.getAllByText(/controls the cell and holds the DNA/).length).toBeGreaterThan(0);
     expect(promptBox().value).toBe("");
+    // The server saved the figure itself — the hub never re-POSTs it.
+    expect(historyCalls("POST")).toBe(0);
   });
 
   it("keeps the raster chain as the figure-mode fallback (figure → Agnes → puter)", async () => {
@@ -100,9 +185,13 @@ describe("ImageHub", () => {
       { timeout: 4000 },
     );
 
-    // Both server engines were attempted before the browser fallback.
-    expect(mockedApiFetch).toHaveBeenCalledTimes(2);
+    // Both server DRAW engines were attempted before the browser fallback.
+    expect(drawCalls()).toBe(2);
     expect(mockedPuter).toHaveBeenCalledTimes(1);
+    // The puter picture exists only in the browser → the hub records it.
+    await waitFor(() => {
+      expect(historyCalls("POST")).toBe(1);
+    });
   });
 
   it("picture mode goes straight to the raster chain", async () => {
@@ -121,14 +210,17 @@ describe("ImageHub", () => {
       { timeout: 4000 },
     );
 
-    // Server first (mocked failure), then puter — never the figure writer.
-    expect(mockedApiFetch).toHaveBeenCalledTimes(1);
+    // Server draw first (mocked failure), then puter — never the figure writer.
+    expect(drawCalls()).toBe(1);
     expect(mockedPuter).toHaveBeenCalledTimes(1);
     expect(screen.getByText("a nebula over Kathmandu")).not.toBeNull();
     expect(promptBox().value).toBe("");
+    await waitFor(() => {
+      expect(historyCalls("POST")).toBe(1);
+    });
   });
 
-  it("restores a saved session and drops anything that is neither figure nor picture", () => {
+  it("restores a saved session and drops anything that is neither figure nor picture", async () => {
     sessionStorage.setItem(
       "neb_image_hub_gallery",
       JSON.stringify([
@@ -160,6 +252,33 @@ describe("ImageHub", () => {
     expect(screen.getByText(/Parts & details \(1\)/)).not.toBeNull();
     expect(screen.getByText("old picture")).not.toBeNull();
     expect(screen.queryByText("junk")).toBeNull();
+  });
+
+  it("clears the gallery AND the account history together", async () => {
+    historyRows.push({
+      id: "srv-pic",
+      kind: "picture",
+      prompt: "a saved picture",
+      url: "https://img.example/saved.png",
+      engine: "agnes-image-2.1-flash",
+      createdAt: new Date().toISOString(),
+    });
+
+    render(<ImageHub />);
+
+    await waitFor(
+      () => {
+        expect(screen.getByText("a saved picture")).not.toBeNull();
+      },
+      { timeout: 4000 },
+    );
+
+    fireEvent.click(screen.getByRole("button", { name: /clear history/i }));
+
+    await waitFor(() => {
+      expect(screen.getByText(/no images yet/i)).not.toBeNull();
+    });
+    expect(historyCalls("DELETE")).toBe(1);
   });
 
   it("keeps the prompt and shows an error when every engine fails", async () => {
