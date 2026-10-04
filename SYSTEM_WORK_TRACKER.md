@@ -9,7 +9,7 @@ checked by `npm run ledger:check` and audited live by `scripts/content-ledger-li
 
 State legend: **✅ Live** = committed and deployed; **🟡 In progress** = real code or data exists but part of it is uncommitted WIP; **🟠 Partial** = shipped with a known gap; **⛔ Not started**.
 
-Snapshot baseline: runtime code `7e6a9d26` (the four-partial completions, main == origin/main);
+Snapshot baseline: runtime code `0a52272b` (the foreign-WIP ship, main == origin/main);
 the commits carrying this tracker and the refreshed status doc are docs-only.
 
 <!-- system-audit:start -->
@@ -28,8 +28,8 @@ _Recomputed by `node scripts/system-work-audit.mjs --write`; `--check` fails whe
 | evidence paths named below that exist | 33 / 33 |
 <!-- system-audit:end -->
 
-Counts above describe the **working tree**: untracked WIP counts even though it is
-not on `main` yet (see §3).
+Counts above describe the committed tree: `main` == `origin/main` at the
+baseline, so there is no WIP gap left (see §3).
 
 ## 1. Work types — 31 tracked
 
@@ -38,12 +38,12 @@ not on `main` yet (see §3).
 | # | Work type | What it is | Evidence | State |
 | ---: | --- | --- | --- | --- |
 | 1 | Frontend app shell & routing | 148 app-router pages across 12 sections | `frontend/app/**` | ✅ Live |
-| 2 | Backend API & middleware | 34 API modules, 33 mounted `/api` groups (the newest group is untracked WIP); security headers, rate limit, CORS, error handler | [app.ts](backend/src/app.ts), `backend/src/api/**` | ✅ Live |
+| 2 | Backend API & middleware | 34 API modules, 33 mounted `/api` groups (newest: `/api/ai/image-history`); security headers, rate limit, CORS, error handler | [app.ts](backend/src/app.ts), `backend/src/api/**` | ✅ Live |
 | 3 | Auth & accounts | login / signup / forgot / reset / admin, sessions | `frontend/app/login`, [auth.ts](backend/src/api/auth.ts) | ✅ Live |
 | 4 | Owner console | 8 operator pages (users, credits, premium, tracking, content, settings, activity) + `/api/owner` | `frontend/app/owner/**` | ✅ Live |
-| 5 | Credits & coin economy | credit pool, reset job, coin gate, pro plan, route gating | [credits.ts](backend/src/utils/credits.ts), [creditCheck.ts](backend/src/middleware/creditCheck.ts), `frontend/features/credits/**` | 🟡 In progress |
+| 5 | Credits & coin economy | bill-everyone daily pool (premium unlimited; owner emails follow the global `coin_gate_enabled` toggle), reset job, gate-cache invalidation, mirrored UI gate + route gating | [credits.ts](backend/src/utils/credits.ts), [creditCheck.ts](backend/src/middleware/creditCheck.ts), [coin-gate.ts](frontend/lib/coin-gate.ts), `frontend/features/credits/**` | ✅ Live |
 | 6 | Deployment & CI | Vercel production + Render backend, 4 workflows, deploy gate on `main` | [ci.yml](.github/workflows/ci.yml), [live-smoke.yml](.github/workflows/live-smoke.yml) | ✅ Live |
-| 7 | Mobile / responsive | checklist + automated gate in CI — `npm run mobile:check` enforces R1 invalid variants, R2 safe-area chrome, R3 wide fixed minimums, R4 nowrap tables across 911 source files | [MOBILE_RESPONSIVE_CHECKLIST.md](MOBILE_RESPONSIVE_CHECKLIST.md), [mobile-responsive-check.mjs](scripts/mobile-responsive-check.mjs) | ✅ Live |
+| 7 | Mobile / responsive | checklist + automated gate in CI — `npm run mobile:check` enforces R1 invalid variants, R2 safe-area chrome, R3 wide fixed minimums, R4 nowrap tables across 912 source files | [MOBILE_RESPONSIVE_CHECKLIST.md](MOBILE_RESPONSIVE_CHECKLIST.md), [mobile-responsive-check.mjs](scripts/mobile-responsive-check.mjs) | ✅ Live |
 
 ### Content & curriculum systems
 
@@ -54,7 +54,7 @@ not on `main` yet (see §3).
 | 10 | Syllabus & level browsing | class / level / subject / chapter / topic navigation over the official syllabus | `frontend/app/(app)/syllabus`, `frontend/app/(app)/levels`, `frontend/features/syllabus/**` | ✅ Live |
 | 11 | Class 11 notes workspace | 867 topic notes; 763 authored / 104 still template | [content-ledger.json](frontend/public/data/content-ledger.json) | ✅ Live (88% authored) |
 | 12 | Class 12 track | full route parity with class 11 (hub, units, `[subject]/[unit]` shortcut, chapters, topics, theory, mindmap, syllabus); pages say an honest "coming soon" wherever authored notes are absent — the 698-file corpus is generated stubs, registered as supplementary claims | `frontend/app/(app)/class-12-notes/**` | ✅ Live (system; authored class-12 content is a content-side campaign) |
-| 13 | PYQ / past papers | 287 corpus banks shipped; served index live with 273 pyq keys, 285 solved questions; reader UI uncommitted | `content/ravikishan/**/pyqs/**`, [ravikishan/_index.json](frontend/public/data/ravikishan/_index.json) | 🟡 In progress |
+| 13 | PYQ / past papers | 287 corpus banks shipped; served index live with 273 pyq keys, 285 solved questions; reader shipped — `/pyqs` hub (year-aggregated banks), theory deep links, site-index entry; `content/pyq/` NEB corpus committed but unreferenced | `frontend/lib/pyq-bank.ts`, `frontend/app/(app)/pyqs/**`, [ravikishan/_index.json](frontend/public/data/ravikishan/_index.json) | ✅ Live |
 | 14 | Mindmaps | branch trees rebuilt from each unit's own concept notes; CI gate | `scripts/enrichment/rebuild-legacy-mindmaps.mjs`, `content/ravikishan/**/mindmap/**` | ✅ Live |
 | 15 | Labs / 3D / visuals | interactive lab pages, schematics, 3D rigs, visual audit gate | `frontend/app/(app)/lab/**`, `frontend/components/lab/**` | ✅ Live |
 | 16 | Graphs | graph viewer pages over per-subject graph banks | `frontend/app/(app)/graphs/**`, `frontend/lib/graphs-*.ts` | ✅ Live |
@@ -72,7 +72,7 @@ not on `main` yet (see §3).
 
 | # | Work type | What it is | Evidence | State |
 | ---: | --- | --- | --- | --- |
-| 26 | AI tutor & chat | streaming tutor, chat history, guest mode, provider routing; console UI edits uncommitted | `frontend/app/(app)/ai/**`, `backend/src/api/ai*.ts` | 🟡 In progress |
+| 26 | AI tutor & chat | streaming tutor, chat history, guest mode, provider routing; console UI + coin-gate mirror shipped | `frontend/app/(app)/ai/**`, `backend/src/api/ai*.ts` | ✅ Live |
 | 27 | AI generation suite | quiz generation, content enhance, figures, images | [ai-generate.ts](backend/src/api/ai-generate.ts), [ai-enhance.ts](backend/src/api/ai-enhance.ts), [ai-figure.ts](backend/src/api/ai-figure.ts) | ✅ Live |
 | 28 | Curriculum-grounded retrieval | corpus filtering (frames/boilerplate), coverage grading, depth tests | [curriculum-corpus.ts](backend/src/ai/curriculum-corpus.ts), [deep-source-depth.test.ts](backend/tests/deep-source-depth.test.ts) | ✅ Live |
 
@@ -80,7 +80,7 @@ not on `main` yet (see §3).
 
 | # | Work type | What it is | Evidence | State |
 | ---: | --- | --- | --- | --- |
-| 29 | Test suites | 61 frontend + 30 backend test files (the newest backend suite is untracked WIP); backend 452/453 (one pre-existing foreign-WIP failure) | `frontend/tests/**`, `backend/tests/**` | ✅ Live |
+| 29 | Test suites | 62 frontend + 30 backend test files; backend 463/463; frontend green in CI (two tests time out only in a full local run on the memory-tight Windows box — both pass solo and in CI) | `frontend/tests/**`, `backend/tests/**` | ✅ Live |
 | 30 | Honesty & quality audits | content health, empty scopes, URL hygiene, visuals, mindmaps, ledger | `scripts/*audit*`, `scripts/content-health-check.mjs` | ✅ Live |
 | 31 | Docs & status docs | AGENTS / RULES / PLANS / AUDIT docs current; PROJECT_STATUS.md refreshed 2026-10-04 (real workspace, repo, live deploys, CI, verification) | [PROJECT_STATUS.md](PROJECT_STATUS.md), [PLANS.md](PLANS.md) | ✅ Live |
 
@@ -88,8 +88,8 @@ not on `main` yet (see §3).
 
 | State | Work types | Share |
 | --- | ---: | ---: |
-| ✅ Live | 28 | 90% |
-| 🟡 In progress | 3 | 10% |
+| ✅ Live | 31 | 100% |
+| 🟡 In progress | 0 | 0% |
 | 🟠 Partial | 0 | 0% |
 | ⛔ Not started | 0 | 0% |
 | **Total** | **31** | **100%** |
@@ -99,40 +99,38 @@ class-11 topics shipped, **763 authored (88%) / 104 template**, 147 unclaimed
 files registered but unread, 2,467 supplementary claims of which 884 are
 template (mostly class-12 stubs).
 
-## 3. Current situation (baseline `7e6a9d26`)
+## 3. Current situation (baseline `0a52272b`)
 
 - **Deploys:** Vercel production and Render both auto-deploy from `main`; the
-  four-partial completions were verified READY at `7e6a9d26` (the commits after
-  them are docs-only and keep that same app code). The content ledger's live
-  audit last ran 1,014/1,014 entries plus the supplementary manifest and both
-  data sources — all byte-identical.
-- **CI:** every workflow run for this snapshot succeeded — CI/CD (all jobs, now
-  including the mobile-responsive gate), URL Hygiene, Live Smoke Test
-  (`content-schema` includes `ledger:check`; `live-smoke` includes the live
-  content scan).
-- **Live spot-checks after the deploy:** `/r-notes/physics/mechanics` and
-  `/ravikishan-notes/...` now 307 to `/notes`; the class-12 unit shortcut
-  resolves like its class-11 twin.
-- **This snapshot closes the four former 🟠 rows** (shipped together with this
-  tracker): the mobile gate (`scripts/mobile-responsive-check.mjs` + CI step),
-  the legacy deep redirects (`frontend/next.config.mjs` +
-  `frontend/tests/lib/legacy-redirects.test.ts`), the class-12 unit shortcut
-  (`frontend/app/(app)/class-12-notes/[subject]/[unit]/page.tsx`), and the
-  PROJECT_STATUS.md refresh.
-- **Uncommitted work still in the tree (the 🟡 rows + foreign WIP):** the PYQ
-  reader (`lib/pyq-bank.ts`, `app/(app)/pyqs/`, `pyq-card.tsx`), coin-gating
-  (`features/credits/**`, `lib/coin-gate.ts`), credits/API edits
-  (`backend/src/utils/credits.ts`, `creditCheck.ts`, `jobs/creditsResetJob.ts`,
-  `api/{ai,config,controller,owner,user}.ts`), the AI console UI, and a
-  `/syllabus/additions` page. Also WIP but not tied to a 🟡 row: an untracked
-  image-history feature (`api/ai-image-history.ts`, migration 007, route test,
-  `features/image-hub/history.ts` — this is what moves the audit counts to
-  34 API modules / 30 backend tests), rate-limit middleware edits, and
-  home / mind-studio layout edits. None of it is on `main` yet.
+  six-commit foreign-WIP ship was verified READY at `0a52272b` (Vercel
+  deployment `dpl_w5QGQGqZ`; Render `/health` reports the same SHA). The
+  earlier four-partial completions remain `7e6a9d26`.
+- **CI:** all four workflows succeeded on the ship push — CI/CD (all jobs,
+  including the mobile-responsive gate), Content JSON, Live Smoke Test, URL
+  Hygiene.
+- **This snapshot closes the three former 🟡 rows and lands the foreign WIP:**
+  the coin economy now bills every signed-in student (premium unlimited; owner
+  emails follow the global `coin_gate_enabled` toggle) with a mirrored UI gate;
+  the PYQ reader (`/pyqs` hub, year-aggregated banks) and `/syllabus/additions`
+  ship with navigation + site-index entries; the AI console UI edits ship; the
+  Image Hub opens to every student with account-saved history
+  (`/api/ai/image-history` + `public.image_history`, migration 007 applied
+  live), and the draw endpoints moved behind the `ai-image` rate-limit tier.
+- **Live verification on the ship commit:** `/pyqs` and `/syllabus/additions`
+  return 200; `/api/ai/image-history` answers 401 unauthenticated; a signed-in
+  draw through the hub produced a `figure` row in `public.image_history`
+  (checked with the service key) and the history survived a full reload.
 - **Known limitations:** 104 template class-11 entries; class-12 has no
   authored notes yet (its pages say so honestly, and authoring them is a
   content-side campaign); 147 unclaimed files (1.6 MB) that no page loads; 14
-  pre-existing dangling claims in the ravikishan index.
+  pre-existing dangling claims in the ravikishan index; `content/pyq/`
+  (24 banks / 103 solved questions) is committed but unreferenced — wiring it
+  into the reader or retiring it is a follow-up decision; `frontend/trace.txt`
+  is an 11 MB tracked tsc trace from 2026-09-25 (cleanup candidate);
+  `frontend/probe-nepali-slugs.mts` is a scratch probe left untracked on
+  purpose. Locally, the full frontend suite on the memory-tight Windows box
+  can trip two environment-only timeouts that pass solo and in CI.
+- **Local test note (backend):** the backend suite is 463/463 on this tree.
 
 ## 4. How to re-check
 

@@ -317,10 +317,12 @@ is the authoritative state. Owner: Codebuff (Buffy) + concurrent content agent.
 - **Repo:** `github.com/ownerforai-byte/educational-platform-global` (branch `main`).
 - **Deploy:** both halves auto-deploy on every push to `main`. Frontend: Vercel production
   `https://ravikisan.vercel.app`; backend: Render `https://rn01.onrender.com` (`/health`
-  reports the deployed SHA). The four-partial completions were verified READY at `7e6a9d26`;
-  the commits after them are docs-only.
+  reports the deployed SHA). The foreign-WIP ship was verified READY at `0a52272b` (six
+  commits: bill-everyone credits, AI image history, coin-gate UI, Image Hub for every
+  student, PYQ reader + syllabus-by-year, PYQ corpus); the four-partial completions
+  remain `7e6a9d26`.
 - **CI:** 4 workflows — CI/CD, Content JSON, Live Smoke Test, URL Hygiene — all green on
-  every push in this snapshot. Gates: content schema / build parity / visuals / mindmaps /
+  the `0a52272b` ship push (and on the earlier completion push `7e6a9d26`). Gates: content schema / build parity / visuals / mindmaps /
   ledger (+ the mobile-responsive gate), frontend lint + typecheck + tests + build, backend
   tests + build, plus live smoke and the deployed content-ledger audit after deploys.
 - **Supabase project:** `tsvbksfegvdjwczzfdcx` (Management API token in `backend/.env`).
@@ -345,6 +347,10 @@ is the authoritative state. Owner: Codebuff (Buffy) + concurrent content agent.
 - Guest AI capped in UI (7 messages, was `Infinity`); `streamChat` sends Bearer again.
 
 ### Known open issues
+- **`content/pyq/` is committed but unreferenced:** 24 banks / 103 solved questions that
+  no code reads yet (the shipped reader uses the ravikishan indexes) — wire it in or
+  retire it in a follow-up. `frontend/trace.txt` is an 11 MB tracked tsc trace from
+  2026-09-25 and is a cleanup candidate.
 - **Supabase refresh-reuse quirk:** config says `security_refresh_token_reuse_interval=10` but
   old refresh tokens were still accepted at +65s and reuse did not revoke the token family
   (empirically verified). Low impact (httpOnly cookie, 30d expiry). File Supabase support ticket.
@@ -355,12 +361,15 @@ is the authoritative state. Owner: Codebuff (Buffy) + concurrent content agent.
   calls; re-check it when that env changes.
 
 ### Verification state (2026-10-04)
-- CI on the completion push (`7e6a9d26`) and the follow-up docs commits: every workflow
-  green (CI/CD all jobs — including the new mobile-responsive gate — plus Content JSON,
-  Live Smoke Test, URL Hygiene); frontend lint + typecheck + tests + build and backend
-  tests + build pass.
-- Backend suite passes on the committed tree; run it with the working tree clean (foreign
-  uncommitted WIP can produce one unrelated failure locally).
+- CI on the ship push (`0a52272b`): every workflow green (CI/CD all jobs — including the
+  mobile-responsive gate — plus Content JSON, Live Smoke Test, URL Hygiene); frontend
+  lint + typecheck + tests + build and backend tests + build pass. The backend suite is
+  463/463 on the committed tree; the frontend suite is green in CI (two tests time out
+  only under a full local run on the memory-tight Windows box — both pass solo).
+- Live verification at `0a52272b`: `/pyqs` and `/syllabus/additions` return 200;
+  `/api/ai/image-history` answers 401 unauthenticated; a signed-in draw in the Image Hub
+  saved a `figure` row into `public.image_history` (migration 007 applied via
+  `scripts/run-sql.mjs`) and the history survived a reload.
 - Live rotation e2e on Render: 7/8 (the one ⚠️ is the Supabase reuse quirk above).
 - **Permanent smoke test:** `backend/scripts/smoke-live.mjs` (`npm run smoke`), runs in CI via
   `.github/workflows/live-smoke.yml` after every push to main. Needs repo secrets
