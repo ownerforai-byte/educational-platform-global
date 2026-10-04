@@ -5,9 +5,9 @@
   "topicTitle": "work energy and power — interactive concept map",
   "relevance": 100,
   "notes": [
-    "**Definition of work (constant force):** $W = F s \\\\\\\\cos\\ heta$, where $F$ is the magnitude of the constant force, $s$ is the displacement, and $\\ heta$ is…",
-    "**Sign of work:** Work is POSITIVE when $0^\\\\\\\\circ \\\\\\\\le \\ heta < 90^\\\\\\\\circ$ (force component along displacement). Work is ZERO when $\\ heta =…",
-    "**Work by multiple forces:** Total work is the sum of works by individual forces: $W_{\\ ext{net}} = \\\\\\\\sum W_i = \\\\\\\\sum F_i s \\\\\\\\cos\\ heta_i$. This is…"
+    "Work done by a constant force and a variable force (Work, Energy and Power, Physics, class-11-notes) covers Work done by a constant force, a variable force.…",
+    "**Scope.** Work done by a constant force and a variable force — Work, Energy and Power, Physics (class-11-notes).",
+    "**Tested.** define it · list: work done by a constant force, a variable force · one worked example · one misconception each."
   ],
   "uiConfig": {
     "allowZoom": true,
@@ -16,6 +16,35 @@
   "mindmap": {
     "centralConcept": "WORK ENERGY AND POWER",
     "branches": [
+      {
+        "topic": "Work done by a constant force and a variable force",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Work done by a constant force",
+              "• A variable force",
+              "**Scope.** Work done by a constant force and a variable force — Work, Energy and Power, Physics…",
+              "**Tested.** define it · list: work done by a constant force, a variable force · one worked example · one…",
+              "**A variable force.** one-line definition + one-line exam use."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Governing equation for \"Work done by a constant force and a variable force\" — state with units, then use in…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Work done by a constant force\" as one blob → ✅ split into: work done by a constant force, a…",
+              "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+              "❌ no diagram → ✅ add one labelled figure / structured list."
+            ]
+          }
+        ]
+      },
       {
         "topic": "Work Done by a Constant Force and a Variable Force",
         "subtopics": [
@@ -175,57 +204,6 @@
               "Friction does NOT have a potential energy. Many students try to write U_friction = μmgx or something…",
               "A force being 'conservative' does NOT mean the total energy of the system is conserved. It means mechanical…",
               "Normal force and tension are NOT conservative forces — they are constraint forces that do zero work (they…"
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Elastic and Inelastic Collisions",
-        "subtopics": [
-          {
-            "name": "Key points",
-            "points": [
-              "Elastic collision: both momentum AND kinetic energy are conserved.",
-              "Inelastic collision: momentum conserved, kinetic energy NOT conserved (some → heat/sound).",
-              "Perfectly inelastic: bodies stick together, KE loss is maximum.",
-              "Coefficient of restitution e = 1 (elastic), e = 0 (perfectly inelastic), 0 < e < 1 (inelastic).",
-              "Equal-mass elastic collision (one at rest): the masses exchange velocities."
-            ]
-          },
-          {
-            "name": "Formulas & relations",
-            "points": [
-              "Elastic collision (1D): v₁ = [(m₁−m₂)u₁ + 2m₂u₂]/(m₁+m₂); v₂ = [(m₂−m₁)u₂ + 2m₁u₁]/(m₁+m₂)",
-              "Perfectly inelastic: m₁u₁ + m₂u₂ = (m₁+m₂)v (common velocity v)",
-              "Coefficient of restitution: e = (v₂ − v₁)/(u₁ − u₂) = relative speed of separation / relative speed of…",
-              "KE loss in inelastic collision: ΔK = ½μv_rel²(1 − e²), where μ = m₁m₂/(m₁+m₂)",
-              "Equal mass elastic (one at rest): v₁ = 0, v₂ = u₁ (velocities exchanged)"
-            ]
-          },
-          {
-            "name": "Statements to quote",
-            "points": [
-              "In an elastic collision, both total momentum and total kinetic energy are conserved.",
-              "In an inelastic collision, momentum is conserved but kinetic energy is not — some converts to internal energy.",
-              "In a perfectly inelastic collision, the colliding bodies stick together and move with a common velocity."
-            ]
-          },
-          {
-            "name": "Exam focus",
-            "points": [
-              "One-dimensional elastic collision formulas are standard — know how to derive and apply them.",
-              "Equal-mass elastic collision (one at rest): the moving mass stops, the stationary one moves off at the…",
-              "Perfectly inelastic collision: find the common velocity using momentum conservation, then compute KE loss.",
-              "Equal mass shortcut: if m₁ = m₂ and the collision is elastic, the masses exchange velocities.",
-              "Perfectly inelastic shortcut: bodies stick together → use m₁u₁ + m₂u₂ = (m₁ + m₂)v to find the common…"
-            ]
-          },
-          {
-            "name": "Common misconceptions",
-            "points": [
-              "In a perfectly inelastic collision, the objects DO NOT lose ALL their kinetic energy. They lose the MAXIMUM…",
-              "The coefficient of restitution e is NOT the ratio of final to initial KE. e = (v₂ - v₁)/(u₁ - u₂) is the…",
-              "Momentum is ALWAYS conserved in an isolated system (no external forces). Kinetic energy is ONLY conserved in…"
             ]
           }
         ]

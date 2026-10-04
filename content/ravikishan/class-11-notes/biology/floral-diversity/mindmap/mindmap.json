@@ -5,9 +5,9 @@
   "topicTitle": "floral diversity — interactive concept map",
   "relevance": 100,
   "notes": [
-    "Modern taxonomy classifies life using two complementary systems: the three-domain system (Bacteria, Archaea, Eukarya) based on molecular evidence, and the…",
-    "Three-domain system (Woese, 1977): Bacteria, Archaea, Eukarya — based on 16S rRNA gene sequences.",
-    "Five-kingdom classification (Whittaker, 1969): Monera (prokaryotes), Protista, Fungi, Plantae, Animalia — based on cell type and mode of nutrition."
+    "Introduction: Three domains of life, binomial nomenclatur… (Floral Diversity, Biology, class-11-notes) covers Introduction, Three domains of life, binomial…",
+    "**Scope.** Introduction: Three domains of life, binomial nomenclatur… — Floral Diversity, Biology (class-11-notes).",
+    "**Tested.** define it · list: introduction, three domains of life, binomial nomenclature, five kingdom classification system · one worked example · one…"
   ],
   "uiConfig": {
     "allowZoom": true,
@@ -16,6 +16,35 @@
   "mindmap": {
     "centralConcept": "FLORAL DIVERSITY",
     "branches": [
+      {
+        "topic": "Introduction: Three domains of life, binomial…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Introduction",
+              "• Three domains of life",
+              "• Binomial nomenclature",
+              "• Five kingdom classification system",
+              "• Monera"
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Parent-chain + locant(s) + sub-prefix + suffix = IUPAC name"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Introduction\" as one blob → ✅ split into: introduction, three domains of life, binomial nomenclature.",
+              "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+              "❌ no diagram → ✅ add one labelled figure / structured list."
+            ]
+          }
+        ]
+      },
       {
         "topic": "Three Domains and Classification",
         "subtopics": [
@@ -115,6 +144,27 @@
         ]
       },
       {
+        "topic": "Status of flora in Nepal and world representation",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Status of flora in Nepal",
+              "• World representation",
+              "**Scope.** Status of flora in Nepal and world representation — Floral Diversity, Biology (class-11-notes).",
+              "**Tested.** define it · list: status of flora in nepal, world representation · one worked example · one…",
+              "**World representation.** one-line definition + one-line exam use."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Status of flora in Nepal\" as one blob → ✅ split into: status of flora in nepal, world representation."
+            ]
+          }
+        ]
+      },
+      {
         "topic": "Algae",
         "subtopics": [
           {
@@ -160,105 +210,6 @@
               "Algae are NOT plants in the strict sense: they lack true tissues, roots, and seeds. They are placed in…",
               "Cyanobacteria (blue-green algae) are prokaryotes, not true algae; they are in the domain Bacteria.",
               "Dinoflagellates (Pyrrophyceae) can cause harmful algal blooms (red tides); most algae are harmless."
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Bryophyta — Liverworts, Hornworts and Mosses",
-        "subtopics": [
-          {
-            "name": "Key points",
-            "points": [
-              "Marchantia thallus: upper air cavities + lower rhizoids + scales.",
-              "Gemma cups: asexual reproduction via gemmae.",
-              "Antheridia (male) + archegonia (female) at the base of the stalked reproductive bodies.",
-              "Fertilisation requires water (flagellated sperm).",
-              "Sporophyte: foot + seta + capsule with elaters; dependent on the thallus."
-            ]
-          },
-          {
-            "name": "Formulas & relations",
-            "points": [
-              "Thallus: upper (air cavities + chambers) + lower (rhizoids + scales)",
-              "Gemmae: asexual, in gemma cups",
-              "Fertilisation: sperm (2 flagella) + egg (in archegonium) → zygote (2n) → sporophyte (dependent)",
-              "Spore mother (2n) → meiosis → spores (n) → protonema → thallus (n, dominant)"
-            ]
-          },
-          {
-            "name": "Statements to quote",
-            "points": [
-              "The Marchantia thallus has upper air cavities and lower rhizoids.",
-              "Gemma cups produce asexual gemmae.",
-              "Fertilisation in bryophytes requires water."
-            ]
-          },
-          {
-            "name": "Exam focus",
-            "points": [
-              "Draw and label a detailed Marchantia thallus.",
-              "Explain asexual reproduction (gemma cups).",
-              "Explain sexual reproduction (antheridia, archegonia, fertilisation).",
-              "Marchantia thallus = Upper air + Lower rhizoids.",
-              "Gemma cups = asexual; Archegonium = sexual."
-            ]
-          },
-          {
-            "name": "Common misconceptions",
-            "points": [
-              "The thallus is NOT a true leaf or stem; it is a flattened gametophyte body.",
-              "Rhizoids are single-celled (in liverworts) or multicellular (in mosses) filaments; they are NOT true roots…",
-              "Gemmae are asexual propagules; spores are meiotic products — they are different."
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Bryophytes",
-        "subtopics": [
-          {
-            "name": "Key points",
-            "points": [
-              "Bryophytes: non-vascular (no xylem/phloem), rhizoids instead of roots.",
-              "Gametophyte (n) is the dominant, visible generation.",
-              "Sporophyte (2n) is dependent on the gametophyte for nutrition.",
-              "Three groups: mosses (Bryophyta), liverworts (Marchantiophyta), hornworts (Anthocerotophyta).",
-              "Reproduction requires water (flagellated sperm); gemmae for asexual reproduction."
-            ]
-          },
-          {
-            "name": "Formulas & relations",
-            "points": [
-              "Life cycle: Spore (n) → Gametophyte (n, dominant) → Gametes → Zygote (2n) → Sporophyte (2n, dependent) →…",
-              "Gemmae: asexual, multicellular, in gemma cups",
-              "Fertilisation: Sperm (flagellated) + Egg (in archegonium) → Zygote"
-            ]
-          },
-          {
-            "name": "Statements to quote",
-            "points": [
-              "Bryophytes are the first group of plants to colonise terrestrial habitats.",
-              "The gametophyte generation is dominant in bryophytes, unlike seed plants.",
-              "Water is essential for bryophyte fertilisation (sperm must swim to the egg)."
-            ]
-          },
-          {
-            "name": "Exam focus",
-            "points": [
-              "Draw and label Marchantia thallus — very common in NEB.",
-              "Describe the bryophyte life cycle with a labelled diagram.",
-              "Explain why bryophytes are \"amphibians of the plant kingdom\".",
-              "Bryophyte = no VASCULAR tissue = \"Bry\" (as in \"no BR\" in bryophyte).",
-              "Gametophyte DOMINANT in bryophytes; Sporophyte DOMINANT in seed plants."
-            ]
-          },
-          {
-            "name": "Common misconceptions",
-            "points": [
-              "Bryophytes lack TRUE roots, stems, and leaves; they have rhizoids, cauloids, and phylloids instead.",
-              "The gametophyte is the DOMINANT generation in bryophytes (unlike seed plants where the sporophyte dominates).",
-              "The sporophyte is dependent on the gametophyte for nutrition (it does not photosynthesise independently in…"
             ]
           }
         ]

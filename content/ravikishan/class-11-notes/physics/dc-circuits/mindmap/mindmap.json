@@ -40,6 +40,37 @@
         ]
       },
       {
+        "topic": "Current-voltage relations; ohmic and non-ohmic…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Current-voltage relations",
+              "• Ohmic",
+              "• Non-ohmic resistance",
+              "**Scope.** Current-voltage relations; ohmic and non-ohmic resistance — DC Circuits, Physics (class-11-notes).",
+              "**Tested.** define it · list: current-voltage relations, ohmic, non-ohmic resistance · one worked example ·…"
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "V = IR",
+              "P = IV = I²R = V²/R",
+              "V_term = E − Ir"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Current-voltage relations\" as one blob → ✅ split into: current-voltage relations, ohmic, non-ohmic…",
+              "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+              "❌ no diagram → ✅ add one labelled figure / structured list."
+            ]
+          }
+        ]
+      },
+      {
         "topic": "Potential Divider",
         "subtopics": [
           {

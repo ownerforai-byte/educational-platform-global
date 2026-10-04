@@ -55,6 +55,37 @@
         ]
       },
       {
+        "topic": "Numerical computation: roots of algebraic and…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Numerical computation",
+              "• Roots of algebraic",
+              "• Transcendental equations",
+              "• Bisection",
+              "• Newton-Raphson method"
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "F = ma",
+              "J = F·Δt = m·Δv",
+              "p = mv"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Numerical computation\" as one blob → ✅ split into: numerical computation, roots of algebraic,…",
+              "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+              "❌ answer with no steps → ✅ show each step and box the result."
+            ]
+          }
+        ]
+      },
+      {
         "topic": "Mechanics â€” Statics and Dynamics",
         "subtopics": [
           {
@@ -87,6 +118,36 @@
             "name": "Common misconceptions",
             "points": [
               "Distinguish concepts in Mechanics â€” Statics and Dynamics."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Numerical integration: Trapezoidal rule and…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Numerical integration",
+              "• Trapezoidal rule",
+              "• Simpson's rule",
+              "**Scope.** Numerical integration: Trapezoidal rule and Simpson's rule — Computational Methods or Mechanics,…",
+              "**Tested.** define it · list: numerical integration, trapezoidal rule, simpson's rule · one worked example ·…"
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "∫xⁿ dx = x^{n+1}/(n+1)+C",
+              "∫u dv = uv − ∫v du",
+              "∫_a^b f = F(b) − F(a)"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Numerical integration\" as one blob → ✅ split into: numerical integration, trapezoidal rule,…",
+              "❌ skip the key fact → ✅ ∫xⁿ dx = x^{n+1}/(n+1) + c (n ≠ −1); ∫dx/x = ln|x| + c. indefinite = family of…"
             ]
           }
         ]

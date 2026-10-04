@@ -5,9 +5,9 @@
   "topicTitle": "calculus — interactive concept map",
   "relevance": 100,
   "notes": [
-    "A limit fixes the value a function approaches as $x$ nears $a$, independently of whether $f(a)$ is defined, which is why $\\frac{x^2-4}{x-2}$ is undefined at 2…",
-    "**Meaning of a limit:** $\\lim_{x \\to a} f(x) = L$ means that as $x$ gets arbitrarily close to $a$ (from either side, and without ever requiring $x = a$) the…",
-    "**The $\\varepsilon$-$\\delta$ definition:** for every $\\varepsilon > 0$ there exists $\\delta > 0$ such that $0 < |x-a| < \\delta$ implies $|f(x)-L| <…"
+    "Limits and continuity: limits of a function, indeterminat… (Calculus, Mathematics, class-11-notes) covers Limits, continuity: limits of a function,…",
+    "**Scope.** Limits and continuity: limits of a function, indeterminat… — Calculus, Mathematics (class-11-notes).",
+    "**Tested.** define it · list: limits, continuity: limits of a function, indeterminate forms, algebraic properties of limits · one worked example · one…"
   ],
   "uiConfig": {
     "allowZoom": true,
@@ -16,6 +16,36 @@
   "mindmap": {
     "centralConcept": "CALCULUS",
     "branches": [
+      {
+        "topic": "Limits and continuity: limits of a function,…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Limits",
+              "• Continuity: limits of a function",
+              "• Indeterminate forms",
+              "• Algebraic properties of limits",
+              "• Without proof"
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "lim sin x/x = 1 (x→0, rad)",
+              "(1+x)^{1/x} → e as x→0"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Limits\" as one blob → ✅ split into: limits, continuity: limits of a function, indeterminate forms.",
+              "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+              "❌ answer with no steps → ✅ show each step and box the result."
+            ]
+          }
+        ]
+      },
       {
         "topic": "Limits of a Function",
         "subtopics": [
@@ -63,6 +93,27 @@
               "Substituting the point and stopping — the limit asks what the function APPROACHES, not what it equals there.",
               "Concluding the limit exists because both sides are 'big' — they must be the SAME FINITE number; $0/0$ or…",
               "Writing $\\lim = \\infty$ as a result — a divergent limit says the function is unbounded, not that it reached…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Continuity of a function, types of discontinuity,…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Continuity of a function",
+              "• Types of discontinuity",
+              "• Graphs of discontinuous function",
+              "**Scope.** Continuity of a function, types of discontinuity, graphs … — Calculus, Mathematics…",
+              "**Tested.** define it · list: continuity of a function, types of discontinuity, graphs of discontinuous…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Continuity of a function\" as one blob → ✅ split into: continuity of a function, types of…"
             ]
           }
         ]
@@ -162,105 +213,6 @@
               "Using the quotient law when the denominator's limit is 0 — the law does not apply and the form is…",
               "Taking $\\lim\\sqrt{f(x)}=\\sqrt{\\lim f}$ without checking the sign; an even root needs a non-negative limit.",
               "Applying the composition rule through a discontinuous outer function such as $\\tan$."
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Limits: Algebraic, Trigonometric, Exponential and…",
-        "subtopics": [
-          {
-            "name": "Key points",
-            "points": [
-              "All three standard trigonometric limits assume radians.",
-              "Continuous functions compose, so most limits need no special technique.",
-              "$1^\\infty$ limits are handled by taking logarithms first.",
-              "**The standard limits that unlock everything else:** $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$,…",
-              "**All three assume RADIANS.** In degrees each is scaled: $\\lim\\frac{\\sin x}{x}=\\frac{\\pi}{180}$ and…"
-            ]
-          },
-          {
-            "name": "Formulas & relations",
-            "points": [
-              "$\\lim_{x\\to0}\\frac{\\sin x}{x}=1$, $\\lim_{x\\to0}\\frac{\\tan x}{x}=1$",
-              "$\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}=\\frac12$",
-              "Degrees: $\\lim\\frac{\\sin x}{x}=\\frac{\\pi}{180}$",
-              "Rational: $\\lim_{x\\to a}\\frac{P}{Q}=\\frac{P(a)}{Q(a)}$ for $Q(a)\\ne0$",
-              "$\\lim_{x\\to a}e^{f}=e^{f(a)}$, $\\lim_{x\\to a}\\ln f=\\ln f(a)$ for $f(a)>0$"
-            ]
-          },
-          {
-            "name": "Statements to quote",
-            "points": [
-              "Statement 1: $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$ for $x$ in radians.",
-              "Statement 2: $\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}=\\frac12$.",
-              "Statement 3: For $Q(a)\\ne0$, $\\lim_{x\\to a}\\frac{P(x)}{Q(x)}=\\frac{P(a)}{Q(a)}$."
-            ]
-          },
-          {
-            "name": "Exam focus",
-            "points": [
-              "Combining a standard limit with a substitution such as $u=3x$ is a reliable 2–3 mark question.",
-              "Switch the calculator to radians before evaluating anything in this topic.",
-              "If the answer involves $\\frac{\\pi}{180}$, the degrees/radians conversion was missed.",
-              "Topic anchor: Composition of continuous functions settles most limits if $f$ is continuous at $a$ and $g$ is…"
-            ]
-          },
-          {
-            "name": "Common misconceptions",
-            "points": [
-              "Using the standard limits with x in degrees, which changes every value by a factor involving $\\pi$.",
-              "Applying $\\lim \\ln f = \\ln(\\lim f)$ when the limit of $f$ is negative, where the logarithm is not defined at…",
-              "Forgetting that the $1^\\infty$ case needs logarithms and cannot be handled by L'Hôpital directly."
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Continuity of Function",
-        "subtopics": [
-          {
-            "name": "Key points",
-            "points": [
-              "All three conditions must hold; the failing one names the type of discontinuity.",
-              "Continuity does not imply differentiability — $|x|$ at 0 proves it.",
-              "Polynomials are continuous everywhere; rational functions except where the denominator vanishes.",
-              "**The three conditions:** $f$ is continuous at $x=a$ if (i) $f(a)$ is DEFINED, (ii) $\\lim_{x \\to a} f(x)$…",
-              "**Intuitively:** the graph has no hole, no jump and no break at $a$ — it can be drawn without lifting the…"
-            ]
-          },
-          {
-            "name": "Formulas & relations",
-            "points": [
-              "Continuity at $a$: $f(a)$ defined, $\\lim_{x\\to a}f(x)=L$, and $f(a)=L$",
-              "One-sided test: $\\lim_{x\\to a^-}f(x)=f(a)=\\lim_{x\\to a^+}f(x)$",
-              "Composite: $g\\circ f$ continuous if $f$ is and $g$ is continuous at $f(x)$",
-              "Polynomial: $\\lim_{x\\to a}P(x)=P(a)$"
-            ]
-          },
-          {
-            "name": "Statements to quote",
-            "points": [
-              "Statement 1: $f$ is continuous at $a$ only if $f(a)$ is defined, the limit exists, and they are equal.",
-              "Statement 2: Every polynomial is continuous everywhere on the real line.",
-              "Statement 3: Continuity does not imply differentiability."
-            ]
-          },
-          {
-            "name": "Exam focus",
-            "points": [
-              "Testing continuity of a piece-wise function at a join point is a standard 2–3 mark question.",
-              "When asked 'is it continuous at $a$?', name which of the three conditions fails rather than answering only…",
-              "A hole with a well-defined limit is removable — always check for that case first.",
-              "Topic anchor: Composite and inverse $g circ f$ is continuous wherever $f$ is continuous and $g$ is…"
-            ]
-          },
-          {
-            "name": "Common misconceptions",
-            "points": [
-              "Checking only that $f(a)$ is defined and declaring continuity — the limit must exist and match.",
-              "Conflating continuity with differentiability — $|x|$ at 0 is continuous but not differentiable.",
-              "Using a one-sided limit in place of the two-sided one at a join point."
             ]
           }
         ]

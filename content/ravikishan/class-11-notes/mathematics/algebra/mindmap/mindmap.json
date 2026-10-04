@@ -5,9 +5,9 @@
   "topicTitle": "algebra — interactive concept map",
   "relevance": 100,
   "notes": [
-    "Logic and Set covers essential principles and applications.",
-    "**Logic and Set:** Class 11 concept.",
-    "**Why:** connects to other topics."
+    "Logic and set: statements, logical connectives, truth tab… (Algebra, Mathematics, class-11-notes) covers Logic, set: statements, logical connectives. Master…",
+    "**Scope.** Logic and set: statements, logical connectives, truth tab… — Algebra, Mathematics (class-11-notes).",
+    "**Tested.** define it · list: logic, set: statements, logical connectives, truth tables · one worked example · one misconception each."
   ],
   "uiConfig": {
     "allowZoom": true,
@@ -16,6 +16,35 @@
   "mindmap": {
     "centralConcept": "ALGEBRA",
     "branches": [
+      {
+        "topic": "Logic and set: statements, logical connectives,…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Logic",
+              "• Set: statements",
+              "• Logical connectives",
+              "• Truth tables",
+              "• Theorems based on set operations"
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Standard result for \"Logic and set: statements, logical connectives, truth tab…\" — state it and verify by…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Logic\" as one blob → ✅ split into: logic, set: statements, logical connectives.",
+              "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+              "❌ answer with no steps → ✅ show each step and box the result."
+            ]
+          }
+        ]
+      },
       {
         "topic": "Logic and Set",
         "subtopics": [
@@ -50,6 +79,33 @@
             "points": [
               "Distinguish concepts in Logic and Set.",
               "Check formula conditions."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Real numbers: geometric representation of real…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Real numbers",
+              "• Geometric representation of real numbers",
+              "• Interval",
+              "• Absolute value",
+              "**Scope.** Real numbers: geometric representation of real numbers, i… — Algebra, Mathematics (class-11-notes)."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Standard result for \"Real numbers: geometric representation of real numbers, i…\" — state it and verify by…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Real numbers\" as one blob → ✅ split into: real numbers, geometric representation of real numbers,…"
             ]
           }
         ]
@@ -92,112 +148,28 @@
         ]
       },
       {
-        "topic": "Function: Domain and Range",
+        "topic": "Function: domain and range of a function, inverse…",
         "subtopics": [
           {
             "name": "Key points",
             "points": [
-              "Core principle of Function: Domain and Range",
-              "Application of Function: Domain and Range",
-              "Connection of Function: Domain and Range to other topics",
-              "**Function: Domain and Range:** Class 11 concept.",
-              "Definition and significance of Function: Domain and Range."
+              "• Function",
+              "• Domain",
+              "• Range of a function",
+              "• Inverse function",
+              "• Composite function"
             ]
           },
           {
-            "name": "Statements to quote",
+            "name": "Formulas & relations",
             "points": [
-              "Statement 1: Definition of Function: Domain and Range",
-              "Statement 2: Theorem related to Function: Domain and Range",
-              "Statement 3: Condition for Function: Domain and Range to be valid"
-            ]
-          },
-          {
-            "name": "Exam focus",
-            "points": [
-              "Focus on Function: Domain and Range problems - significant marks.",
-              "Recall the formula for Function: Domain and Range.",
-              "Function: Domain and Range is based on fundamental principles."
+              "Standard result for \"Function: domain and range of a function, inverse functio…\" — state it and verify by…"
             ]
           },
           {
             "name": "Common misconceptions",
             "points": [
-              "Distinguish concepts in Function: Domain and Range."
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Curve Sketching",
-        "subtopics": [
-          {
-            "name": "Key points",
-            "points": [
-              "Core principle of Curve Sketching",
-              "Application of Curve Sketching",
-              "Connection of Curve Sketching to other topics",
-              "**Curve Sketching:** Class 11 concept.",
-              "Definition and significance of Curve Sketching."
-            ]
-          },
-          {
-            "name": "Statements to quote",
-            "points": [
-              "Statement 1: Definition of Curve Sketching",
-              "Statement 2: Theorem related to Curve Sketching",
-              "Statement 3: Condition for Curve Sketching to be valid"
-            ]
-          },
-          {
-            "name": "Exam focus",
-            "points": [
-              "Focus on Curve Sketching problems - significant marks.",
-              "Recall the formula for Curve Sketching.",
-              "Curve Sketching is based on fundamental principles."
-            ]
-          },
-          {
-            "name": "Common misconceptions",
-            "points": [
-              "Distinguish concepts in Curve Sketching."
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Sequence and Series",
-        "subtopics": [
-          {
-            "name": "Key points",
-            "points": [
-              "Core principle of Sequence and Series",
-              "Application of Sequence and Series",
-              "Connection of Sequence and Series to other topics",
-              "**Sequence and Series:** Class 11 concept.",
-              "Definition and significance of Sequence and Series."
-            ]
-          },
-          {
-            "name": "Statements to quote",
-            "points": [
-              "Statement 1: Definition of Sequence and Series",
-              "Statement 2: Theorem related to Sequence and Series",
-              "Statement 3: Condition for Sequence and Series to be valid"
-            ]
-          },
-          {
-            "name": "Exam focus",
-            "points": [
-              "Focus on Sequence and Series problems - significant marks.",
-              "Recall the formula for Sequence and Series.",
-              "Sequence and Series is based on fundamental principles."
-            ]
-          },
-          {
-            "name": "Common misconceptions",
-            "points": [
-              "Distinguish concepts in Sequence and Series."
+              "❌ treat \"Function\" as one blob → ✅ split into: function, domain, range of a function."
             ]
           }
         ]

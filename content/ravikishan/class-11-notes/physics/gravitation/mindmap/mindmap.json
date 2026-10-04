@@ -119,6 +119,38 @@
         ]
       },
       {
+        "topic": "Gravitational potential; gravitational potential…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Gravitational potential",
+              "• Gravitational potential energy",
+              "**Scope.** Gravitational potential; gravitational potential energy — Gravitation, Physics (class-11-notes).",
+              "**Tested.** define it · list: gravitational potential, gravitational potential energy · one worked example ·…",
+              "**Fact.** Newton: F = G m₁m₂/r²; g = GM/r²; at Earth's surface g = GM/R² ≈ 9.8 m/s²."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "g = GM/r²",
+              "v_orb = √(GM/r)",
+              "v_esc = √(2GM/r)",
+              "T² ∝ r³ (Kepler)"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Gravitational potential\" as one blob → ✅ split into: gravitational potential, gravitational…",
+              "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+              "❌ no diagram → ✅ add one labelled figure / structured list."
+            ]
+          }
+        ]
+      },
+      {
         "topic": "Variation in g due to Altitude and Depth",
         "subtopics": [
           {
@@ -170,103 +202,28 @@
         ]
       },
       {
-        "topic": "Centre of Mass and Centre of Gravity",
+        "topic": "Variation in value of 'g' due to altitude and depth",
         "subtopics": [
           {
             "name": "Key points",
             "points": [
-              "COM is a mass-weighted average position; CG is where the total weight acts.",
-              "In a uniform g, COM and CG coincide.",
-              "For uniform symmetric bodies, COM is at the geometric centre.",
-              "COM can lie outside the material (ring, L-shape, boomerang).",
-              "The motion of the COM is governed only by external forces."
+              "• Variation in value of 'g' due to altitude",
+              "• Depth",
+              "**Scope.** Variation in value of 'g' due to altitude and depth — Gravitation, Physics (class-11-notes).",
+              "**Tested.** define it · list: variation in value of 'g' due to altitude, depth · one worked example · one…",
+              "**Depth.** one-line definition + one-line exam use."
             ]
           },
           {
             "name": "Formulas & relations",
             "points": [
-              "Centre of mass (discrete): $R_{cm} = \\frac{\\Sigma m_i r_i}{\\Sigma m_i}$",
-              "Centre of mass (continuous): $R_{cm} = \\frac{\\int r dm}{\\int dm}$",
-              "Two masses: $x_{cm} = \\frac{m_1 x_1 + m_2 x_2}{m_1 + m_2}$",
-              "Velocity of COM: $V_{cm} = \\frac{\\Sigma m_i v_i}{M}$",
-              "Acceleration of COM: $a_{cm} = \\frac{\\Sigma m_i a_i}{M} = \\frac{F_{ext}}{M}$"
-            ]
-          },
-          {
-            "name": "Statements to quote",
-            "points": [
-              "The centre of mass of a system is the mass-weighted average position: $R_{cm} = \\frac{\\Sigma m_i r_i}{\\Sigma…",
-              "The centre of gravity is the point where the entire weight may be considered to act.",
-              "In a uniform gravitational field the centre of gravity coincides with the centre of mass."
-            ]
-          },
-          {
-            "name": "Exam focus",
-            "points": [
-              "COM calculation for two/three point masses is a standard numerical.",
-              "Comparing COM and CG is a frequent short-answer question.",
-              "Locating CG by suspending a lamina is a common practical question.",
-              "For two masses: COM divides the join inversely to the masses (closer to the heavier).",
-              "Uniform rod → COM at L/2; uniform square → centre; ring → centre (empty)."
+              "Governing equation for \"Variation in value of 'g' due to altitude and depth\" — state with units, then use in…"
             ]
           },
           {
             "name": "Common misconceptions",
             "points": [
-              "❌ 'COM and CG are always at the material centre.' ✅ Only for uniform, symmetric bodies. A ring's COM is at…",
-              "❌ 'COM and CG are always the same point.' ✅ They coincide in a UNIFORM gravitational field. For very large…",
-              "❌ 'COM is a force point.' ✅ COM is a mass-weighted average position — a geometric point for translational…"
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Motion of a Satellite — Orbital Velocity and Time…",
-        "subtopics": [
-          {
-            "name": "Key points",
-            "points": [
-              "v₀ = √(GM/r) — orbital speed depends only on radius, not satellite mass.",
-              "T = 2π√(r³/GM) — Kepler's third law: T² ∝ r³.",
-              "Higher orbit → slower speed, longer period.",
-              "E_total = −GMm/2r: bound orbit, with K = −U/2.",
-              "Astronauts float because of free fall, not absence of gravity."
-            ]
-          },
-          {
-            "name": "Formulas & relations",
-            "points": [
-              "Orbital velocity: v₀ = √(GM/r)",
-              "Near-surface orbital speed: v₀ = √(gR)",
-              "Time period: T = 2πr/v₀ = 2π√(r³/GM)",
-              "Kinetic energy: K = GMm/2r",
-              "Total energy: E = −GMm/2r (E = U/2, K = −U/2)"
-            ]
-          },
-          {
-            "name": "Statements to quote",
-            "points": [
-              "The orbital velocity of a satellite is v₀ = √(GM/r).",
-              "The period of revolution is T = 2π√(r³/GM).",
-              "Orbital speed is independent of the satellite's mass."
-            ]
-          },
-          {
-            "name": "Exam focus",
-            "points": [
-              "Deriving v₀ and T from equating gravity to centripetal force is a year-on-year question.",
-              "Finding the altitude for a given period (e.g., 2 h, 24 h) is a standard numerical.",
-              "Energy numericals (K, U, E) for a given orbit are frequently asked.",
-              "Near surface: v₀ = √(gR) ≈ 7.9 km/s — remember this anchor value.",
-              "T applet: for the ISS (≈ 90 min) confirm with T = 2π√(r³/GM)."
-            ]
-          },
-          {
-            "name": "Common misconceptions",
-            "points": [
-              "❌ 'A satellite must be above the atmosphere to feel no gravity.' ✅ A satellite feels gravity at every…",
-              "❌ 'Weightlessness means g = 0 on the ISS.' ✅ g at 400 km is ≈ 8.7 m/s² (89% of surface). Astronauts float…",
-              "❌ 'Heavier satellites orbit slower.' ✅ Orbital speed is independent of the satellite's mass: v₀ = √(GM/r)."
+              "❌ treat \"Variation in value of 'g' due to altitude\" as one blob → ✅ split into: variation in value of 'g'…"
             ]
           }
         ]

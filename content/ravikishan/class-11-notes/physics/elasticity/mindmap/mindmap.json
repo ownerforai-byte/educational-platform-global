@@ -186,52 +186,32 @@
         ]
       },
       {
-        "topic": "Poisson's Ratio",
+        "topic": "Elastic modulus: Young modulus, bulk modulus, shear…",
         "subtopics": [
           {
             "name": "Key points",
             "points": [
-              "Poisson's ratio is the (negative) ratio of lateral strain to longitudinal strain — always dimensionless.",
-              "σ typically lies between 0 and 0.5 for isotropic materials.",
-              "σ links E, B and G: E = 2G(1+σ) = 3B(1−2σ).",
-              "σ = 0.5 means incompressible (volume is conserved); σ = 0 means no lateral change (cork).",
-              "ΔV/V = ε(1 − 2σ) — volume change during stretching depends only on σ and strain."
+              "• Elastic modulus",
+              "• Young modulus",
+              "• Bulk modulus",
+              "• Shear modulus",
+              "**Scope.** Elastic modulus: Young modulus, bulk modulus, shear modulus — Elasticity, Physics (class-11-notes)."
             ]
           },
           {
             "name": "Formulas & relations",
             "points": [
-              "Poisson's ratio: σ = −(lateral strain)/(longitudinal strain)",
-              "Relation with moduli: E = 2G(1 + σ); E = 3B(1 − 2σ)",
-              "σ from E and B: σ = (3B − E)/(6B)",
-              "σ from E and G: σ = E/(2G) − 1",
-              "Fractional volume change: ΔV/V = ε(1 − 2σ)"
-            ]
-          },
-          {
-            "name": "Statements to quote",
-            "points": [
-              "Poisson's ratio is the ratio of lateral strain to longitudinal strain, taken with a negative sign.",
-              "Poisson's ratio is dimensionless and ranges between 0 and 0.5 for ordinary isotropic materials.",
-              "The moduli are linked by E = 2G(1 + σ) and E = 3B(1 − 2σ)."
-            ]
-          },
-          {
-            "name": "Exam focus",
-            "points": [
-              "Definitions and limits of Poisson's ratio are a standard short-answer.",
-              "Computing σ from E and G (or E and B) is a common numerical.",
-              "Conceptual: why cork for bottle stoppers → σ ≈ 0.",
-              "σ is dimensionless — any answer with units is automatically wrong.",
-              "From E and G: σ = E/(2G) − 1 — do this division first, then subtract 1."
+              "Y = FL/(A ΔL)",
+              "K = −P/(ΔV/V)",
+              "U = ½kx²"
             ]
           },
           {
             "name": "Common misconceptions",
             "points": [
-              "❌ 'Poisson's ratio has units of strain.' ✅ It is a RATIO of two strains — dimensionless.",
-              "❌ 'Poisson's ratio can be greater than 1.' ✅ No — the thermodynamic limit is 0.5 for isotropic materials (a…",
-              "❌ 'Lateral strain equals longitudinal strain.' ✅ Lateral strain = −σ × longitudinal strain, with σ typically…"
+              "❌ treat \"Elastic modulus\" as one blob → ✅ split into: elastic modulus, young modulus, bulk modulus.",
+              "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+              "❌ no diagram → ✅ add one labelled figure / structured list."
             ]
           }
         ]

@@ -68,6 +68,38 @@
         ]
       },
       {
+        "topic": "Electric field due to point charges; field lines",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Electric field due to point charges",
+              "• Field lines",
+              "**Scope.** Electric field due to point charges; field lines — Electric Field, Physics (class-11-notes).",
+              "**Tested.** define it · list: electric field due to point charges, field lines · one worked example · one…",
+              "**Fact.** Coulomb: F = (1/4πε₀)·q₁q₂/r². Electric field E = F/q = kq/r²; for a line/dipole use superposition."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "F = k q₁q₂/r²",
+              "E = F/q",
+              "∮E·dA = Q/ε₀",
+              "V = kq/r"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Electric field due to point charges\" as one blob → ✅ split into: electric field due to point…",
+              "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+              "❌ no diagram → ✅ add one labelled figure / structured list."
+            ]
+          }
+        ]
+      },
+      {
         "topic": "Gauss's Law and Electric Flux",
         "subtopics": [
           {
@@ -119,52 +151,55 @@
         ]
       },
       {
-        "topic": "Applications of Gauss's Law",
+        "topic": "Gauss law: electric flux",
         "subtopics": [
           {
             "name": "Key points",
             "points": [
-              "Line charge field decreases inversely with radial distance: $E \\propto 1/r$.",
-              "Infinite sheet field is completely uniform and distance-independent: $E = \\sigma / (2\\varepsilon_0)$.",
-              "Inside any hollow conductor or spherical shell in electrostatic equilibrium, $E = 0$ (electrostatic…",
-              "Outside a spherical charge distribution, the field behaves as if all charge is concentrated at the center…",
-              "Inside a uniformly charged solid dielectric sphere, field increases linearly from center to surface ($E…"
+              "• Gauss law",
+              "• Electric flux",
+              "**Scope.** Gauss law: electric flux — Electric Field, Physics (class-11-notes).",
+              "**Tested.** define it · list: gauss law, electric flux · one worked example · one misconception each.",
+              "**Electric flux.** one-line definition + one-line exam use."
             ]
           },
           {
             "name": "Formulas & relations",
             "points": [
-              "Infinite line charge: $E = \\frac{\\lambda}{2\\pi\\varepsilon_0 r} = \\frac{2k\\lambda}{r}$",
-              "Infinite non-conducting plane sheet: $E = \\frac{\\sigma}{2\\varepsilon_0}$",
-              "Conducting surface boundary: $E = \\frac{\\sigma}{\\varepsilon_0}$",
-              "Between oppositely charged plates: $E = \\frac{\\sigma}{\\varepsilon_0}$",
-              "Spherical shell (outside, $r \\ge R$): $E = \\frac{1}{4\\pi\\varepsilon_0} \\frac{Q}{r^2}$"
-            ]
-          },
-          {
-            "name": "Statements to quote",
-            "points": [
-              "Statement 1: The electric field due to an infinitely long straight wire carrying uniform linear charge…",
-              "Statement 2: The electric field due to an infinite plane sheet of charge is uniform and completely…",
-              "Statement 3: The electric field inside a uniformly charged conducting spherical shell is identically zero…"
-            ]
-          },
-          {
-            "name": "Exam focus",
-            "points": [
-              "Derivations for line charge, plane sheet, and spherical shell using Gauss's law are core long questions (4…",
-              "Distance dependency table: Infinite Sheet (E ∝ r⁰), Infinite Line (E ∝ 1/r), Point Charge (E ∝ 1/r²), Dipole…",
-              "Hollow shell inside: E = 0 always; potential V = constant = kQ/R.",
-              "Solid dielectric sphere inside: E(r) = (r / R) · E_surface.",
-              "Contrast the distance dependencies: point charge E ∝ 1/r², dipole E ∝ 1/r³, line charge E ∝ 1/r, infinite…"
+              "Governing equation for \"Gauss law: electric flux\" — state with units, then use in one numerical."
             ]
           },
           {
             "name": "Common misconceptions",
             "points": [
-              "Confusing field of a non-conducting infinite sheet with a conducting plate: An isolated non-conducting sheet…",
-              "Assuming field inside a charged sphere is always zero: Inside a hollow shell or conductor, $E = 0$. However,…",
-              "Neglecting Gaussian end-caps in line charge: Students often forget to justify why the two flat circular ends…"
+              "❌ treat \"Gauss law\" as one blob → ✅ split into: gauss law, electric flux."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Application of Gauss law: field of a charge sphere,…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Application of Gauss law: field of a charge sphere",
+              "• Line charge",
+              "• Charged plane conductor",
+              "**Scope.** Application of Gauss law: field of a charge sphere, line … — Electric Field, Physics…",
+              "**Tested.** define it · list: application of gauss law: field of a charge sphere, line charge, charged plane…"
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Governing equation for \"Application of Gauss law: field of a charge sphere, line …\" — state with units, then…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Application of Gauss law: field of a charge sphere\" as one blob → ✅ split into: application of…"
             ]
           }
         ]

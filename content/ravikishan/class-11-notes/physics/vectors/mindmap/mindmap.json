@@ -68,47 +68,72 @@
         ]
       },
       {
-        "topic": "Multiplication of Vectors — Vector (Cross) Product",
+        "topic": "Triangle, parallelogram and polygon laws of vectors",
         "subtopics": [
           {
             "name": "Key points",
             "points": [
-              "**Definition:** The cross product (vector product) of two vectors $\\vec{A}$ and $\\vec{B}$ is a vector…",
-              "**Magnitude:** $|\\vec{A} \\times \\vec{B}| = AB\\sin\\theta$, where $\\theta$ is the angle between the two…",
-              "**Direction — right-hand rule:** Point the fingers of your right hand in the direction of $\\vec{A}$, then…",
-              "**Unit vector form:** $\\vec{A} \\times \\vec{B} = AB\\sin\\theta \\, \\hat{n}$, where $\\hat{n}$ is the unit vector…",
-              "**Case 1 — Parallel vectors ($\\theta = 0°$ or $180°$):** $\\vec{A} \\times \\vec{B} = 0$. Parallel (or…"
+              "• Triangle",
+              "• Parallelogram",
+              "• Polygon laws of vectors",
+              "**Scope.** Triangle, parallelogram and polygon laws of vectors — Vectors, Physics (class-11-notes).",
+              "**Tested.** define it · list: triangle, parallelogram, polygon laws of vectors · one worked example · one…"
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "a·b = a₁b₁+a₂b₂+a₃b₃",
+              "|a×b| = |a||b|sinθ",
+              "|a| = √(a²+b²+c²)"
             ]
           },
           {
             "name": "Common misconceptions",
             "points": [
-              "❌ The cross product gives a scalar. ✅ The cross product gives a VECTOR. The result is perpendicular to both…",
-              "❌ $\\vec{A} \\times \\vec{B} = \\vec{B} \\times \\vec{A}$. ✅ The cross product is ANTI-COMMUTATIVE: $\\vec{A}…",
-              "❌ The cross product is defined for any number of vectors. ✅ The cross product is defined only for EXACTLY…"
+              "❌ treat \"Triangle\" as one blob → ✅ split into: triangle, parallelogram, polygon laws of vectors.",
+              "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+              "❌ no diagram → ✅ add one labelled figure / structured list."
             ]
           }
         ]
       },
       {
-        "topic": "Cross Product — Component Form and Area of…",
+        "topic": "Resolution of vectors; unit vectors",
         "subtopics": [
           {
             "name": "Key points",
             "points": [
-              "**Component form of cross product:** For $\\vec{A} = A_1\\hat{i} + A_2\\hat{j} + A_3\\hat{k}$ and $\\vec{B} =…",
-              "**Expanded form:** $\\vec{A} \\times \\vec{B} = (A_2B_3 - A_3B_2)\\hat{i} + (A_3B_1 - A_1B_3)\\hat{j} + (A_1B_2 -…",
-              "**Memory trick (Sarrus' rule):** Write the first two columns again to the right: $\\begin{array}{ccc|cc} A_1…",
-              "**Area of parallelogram:** The magnitude of the cross product equals the AREA of the parallelogram formed by…",
-              "**Area of triangle:** The area of the triangle formed by two vectors is HALF the parallelogram area:…"
+              "• Resolution of vectors",
+              "• Unit vectors",
+              "**Scope.** Resolution of vectors; unit vectors — Vectors, Physics (class-11-notes).",
+              "**Tested.** define it · list: resolution of vectors, unit vectors · one worked example · one misconception…"
             ]
           },
           {
             "name": "Common misconceptions",
             "points": [
-              "❌ The cross product of two vectors is a scalar. ✅ The cross product is a VECTOR. Its magnitude is a scalar…",
-              "❌ The area of the parallelogram is $|\\vec{A}| \\cdot |\\vec{B}|$. ✅ The area is $|\\vec{A} \\times \\vec{B}| =…",
-              "❌ You can cancel vectors in a cross product: if $\\vec{A} \\times \\vec{B} = \\vec{A} \\times \\vec{C}$, then…"
+              "❌ treat \"Resolution of vectors\" as one blob → ✅ split into: resolution of vectors, unit vectors."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Scalar and vector products",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Scalar",
+              "• Vector products",
+              "**Scope.** Scalar and vector products — Vectors, Physics (class-11-notes).",
+              "**Tested.** define it · list: scalar, vector products · one worked example · one misconception each."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Scalar\" as one blob → ✅ split into: scalar, vector products."
             ]
           }
         ]

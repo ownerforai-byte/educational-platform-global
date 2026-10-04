@@ -5,9 +5,9 @@
   "topicTitle": "vectors — interactive concept map",
   "relevance": 100,
   "notes": [
-    "Collinear and Non-collinear Vectors covers essential principles and applications.",
-    "**Collinear and Non-collinear Vectors:** Class 11 concept.",
-    "**Why:** connects to other topics."
+    "Collinear and non-collinear vectors, coplanar and non-cop… (Vectors, Mathematics, class-11-notes) covers Collinear, non-collinear vectors, coplanar. Master…",
+    "**Scope.** Collinear and non-collinear vectors, coplanar and non-cop… — Vectors, Mathematics (class-11-notes).",
+    "**Tested.** define it · list: collinear, non-collinear vectors, coplanar, non-coplanar vectors · one worked example · one misconception each."
   ],
   "uiConfig": {
     "allowZoom": true,
@@ -16,6 +16,37 @@
   "mindmap": {
     "centralConcept": "VECTORS",
     "branches": [
+      {
+        "topic": "Collinear and non-collinear vectors, coplanar and…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Collinear",
+              "• Non-collinear vectors",
+              "• Coplanar",
+              "• Non-coplanar vectors",
+              "**Scope.** Collinear and non-collinear vectors, coplanar and non-cop… — Vectors, Mathematics (class-11-notes)."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "a·b = a₁b₁+a₂b₂+a₃b₃",
+              "|a×b| = |a||b|sinθ",
+              "|a| = √(a²+b²+c²)"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Collinear\" as one blob → ✅ split into: collinear, non-collinear vectors, coplanar.",
+              "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+              "❌ answer with no steps → ✅ show each step and box the result."
+            ]
+          }
+        ]
+      },
       {
         "topic": "Collinear and Non-collinear Vectors",
         "subtopics": [
@@ -161,43 +192,6 @@
             "name": "Common misconceptions",
             "points": [
               "Distinguish concepts in Dot Product of Two Vectors."
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Linear Combination of Vectors",
-        "subtopics": [
-          {
-            "name": "Key points",
-            "points": [
-              "Core principle of Linear Combination of Vectors",
-              "Application of Linear Combination of Vectors",
-              "Connection of Linear Combination of Vectors to other topics",
-              "**Linear Combination of Vectors:** Class 11 concept.",
-              "Definition and significance of Linear Combination of Vectors."
-            ]
-          },
-          {
-            "name": "Statements to quote",
-            "points": [
-              "Statement 1: Definition of Linear Combination of Vectors",
-              "Statement 2: Theorem related to Linear Combination of Vectors",
-              "Statement 3: Condition for Linear Combination of Vectors to be valid"
-            ]
-          },
-          {
-            "name": "Exam focus",
-            "points": [
-              "Focus on Linear Combination of Vectors problems - significant marks.",
-              "Recall the formula for Linear Combination of Vectors.",
-              "Linear Combination of Vectors is based on fundamental principles."
-            ]
-          },
-          {
-            "name": "Common misconceptions",
-            "points": [
-              "Distinguish concepts in Linear Combination of Vectors."
             ]
           }
         ]

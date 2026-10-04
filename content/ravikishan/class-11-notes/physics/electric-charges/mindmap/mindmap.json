@@ -67,6 +67,63 @@
         ]
       },
       {
+        "topic": "Electric charges",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Electric charges",
+              "**Scope.** Electric charges — Electric Charges, Physics (class-11-notes).",
+              "**Tested.** define it · list: electric charges · one worked example · one misconception each.",
+              "**Fact.** Coulomb: F = (1/4πε₀)·q₁q₂/r². Electric field E = F/q = kq/r²; for a line/dipole use superposition.",
+              "**Fact.** Gauss's law: ∮E·dA = Q_enc/ε₀ — powerful for spherical/cylindrical/planar symmetry."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "F = k q₁q₂/r²",
+              "E = F/q",
+              "∮E·dA = Q/ε₀",
+              "V = kq/r"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Electric charges\" as one blob → ✅ split into: electric charges.",
+              "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+              "❌ no diagram → ✅ add one labelled figure / structured list."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Charging by induction",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Charging by induction",
+              "**Scope.** Charging by induction — Electric Charges, Physics (class-11-notes).",
+              "**Tested.** define it · list: charging by induction · one worked example · one misconception each."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Governing equation for \"Charging by induction\" — state with units, then use in one numerical."
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Charging by induction\" as one blob → ✅ split into: charging by induction."
+            ]
+          }
+        ]
+      },
+      {
         "topic": "Coulomb's Law and Force Between Multiple Charges",
         "subtopics": [
           {
@@ -113,6 +170,25 @@
               "Adding electrostatic forces as scalar algebraic quantities: Electric forces are vectors! When calculating…",
               "Ignoring the medium's dielectric screening: In water ($\\kappa \\approx 80$), the electrostatic force between…",
               "Applying Coulomb's law to extended charge distributions at close range: Coulomb's inverse-square formula…"
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Coulomb's law: force between two point charges",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Coulomb's law: force between two point charges",
+              "**Scope.** Coulomb's law: force between two point charges — Electric Charges, Physics (class-11-notes).",
+              "**Tested.** define it · list: coulomb's law: force between two point charges · one worked example · one…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Coulomb's law: force between two point charges\" as one blob → ✅ split into: coulomb's law: force…"
             ]
           }
         ]

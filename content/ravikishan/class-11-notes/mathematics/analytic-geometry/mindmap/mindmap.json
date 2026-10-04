@@ -55,6 +55,58 @@
         ]
       },
       {
+        "topic": "Straight line: length of perpendicular from a given…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Straight line",
+              "• Length of perpendicular from a given point to a given line",
+              "• Bisectors of the angles between two straight lines",
+              "**Scope.** Straight line: length of perpendicular from a given point… — Analytic Geometry, Mathematics…",
+              "**Tested.** define it · list: straight line, length of perpendicular from a given point to a given line,…"
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "d = |ax₁+by₁+c|/√(a²+b²)",
+              "h² ≥ ab ⟺ real pair",
+              "l²+m²+n² = 1"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Straight line\" as one blob → ✅ split into: straight line, length of perpendicular from a given…",
+              "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+              "❌ answer with no steps → ✅ show each step and box the result."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Pair of straight lines: general equation of second…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Pair of straight lines: general equation of second degree in x",
+              "• Condition for representing a pair of lines",
+              "• Homogenous second-degree equation in x",
+              "• Angle between pair of lines",
+              "• Bisectors of the angles between pair of lines"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Pair of straight lines: general equation of second degree in x\" as one blob → ✅ split into: pair of…"
+            ]
+          }
+        ]
+      },
+      {
         "topic": "Angle Bisector — Verifying with the tan θ Method",
         "subtopics": [
           {
@@ -92,75 +144,28 @@
         ]
       },
       {
-        "topic": "Coordinates in Space",
+        "topic": "Coordinates in space: points in space, distance…",
         "subtopics": [
           {
             "name": "Key points",
             "points": [
-              "Core principle of Coordinates in Space",
-              "Application of Coordinates in Space",
-              "Connection of Coordinates in Space to other topics",
-              "**Coordinates in Space:** Class 11 concept.",
-              "Definition and significance of Coordinates in Space."
+              "• Coordinates in space: points in space",
+              "• Distance between two points",
+              "• Direction cosines",
+              "• Ratios of a line",
+              "**Scope.** Coordinates in space: points in space, distance between t… — Analytic Geometry, Mathematics…"
             ]
           },
           {
-            "name": "Statements to quote",
+            "name": "Formulas & relations",
             "points": [
-              "Statement 1: Definition of Coordinates in Space",
-              "Statement 2: Theorem related to Coordinates in Space",
-              "Statement 3: Condition for Coordinates in Space to be valid"
-            ]
-          },
-          {
-            "name": "Exam focus",
-            "points": [
-              "Focus on Coordinates in Space problems - significant marks.",
-              "Recall the formula for Coordinates in Space.",
-              "Coordinates in Space is based on fundamental principles."
+              "Standard result for \"Coordinates in space: points in space, distance between t…\" — state it and verify by…"
             ]
           },
           {
             "name": "Common misconceptions",
             "points": [
-              "Distinguish concepts in Coordinates in Space."
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Geometry 9-1",
-        "subtopics": [
-          {
-            "name": "Key points",
-            "points": [
-              "Core principle of Geometry 9-1",
-              "Application of Geometry 9-1",
-              "Connection of Geometry 9-1 to other topics",
-              "**Geometry 9-1:** Class 11 concept.",
-              "Definition and significance of Geometry 9-1."
-            ]
-          },
-          {
-            "name": "Statements to quote",
-            "points": [
-              "Statement 1: Definition of Geometry 9-1",
-              "Statement 2: Theorem related to Geometry 9-1",
-              "Statement 3: Condition for Geometry 9-1 to be valid"
-            ]
-          },
-          {
-            "name": "Exam focus",
-            "points": [
-              "Focus on Geometry 9-1 problems - significant marks.",
-              "Recall the formula for Geometry 9-1.",
-              "Geometry 9-1 is based on fundamental principles."
-            ]
-          },
-          {
-            "name": "Common misconceptions",
-            "points": [
-              "Distinguish concepts in Geometry 9-1."
+              "❌ treat \"Coordinates in space: points in space\" as one blob → ✅ split into: coordinates in space: points in…"
             ]
           }
         ]

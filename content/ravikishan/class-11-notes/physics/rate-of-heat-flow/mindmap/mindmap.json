@@ -5,9 +5,9 @@
   "topicTitle": "rate of heat flow — interactive concept map",
   "relevance": 100,
   "notes": [
-    "**Conduction:** Heat transfer through a material without any bulk motion of the material itself. Energy is transferred from molecule to molecule via…",
-    "**Fourier's law of heat conduction:** The rate of heat flow through a material is given by $H = \\frac{Q}{t} = kA\\frac{T_1 - T_2}{L}$, where $k$ is the thermal…",
-    "**Thermal conductivity $k$:** A material property that quantifies how well a material conducts heat. Units: $\\text{W/(m·K)}$. Metals have high $k$ (copper:…"
+    "Conduction: thermal conductivity and measurement (Rate of Heat Flow, Physics, class-11-notes) covers Conduction, thermal conductivity, measurement. Master the…",
+    "**Scope.** Conduction: thermal conductivity and measurement — Rate of Heat Flow, Physics (class-11-notes).",
+    "**Tested.** define it · list: conduction, thermal conductivity, measurement · one worked example · one misconception each."
   ],
   "uiConfig": {
     "allowZoom": true,
@@ -16,6 +16,35 @@
   "mindmap": {
     "centralConcept": "RATE OF HEAT FLOW",
     "branches": [
+      {
+        "topic": "Conduction: thermal conductivity and measurement",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Conduction",
+              "• Thermal conductivity",
+              "• Measurement",
+              "**Scope.** Conduction: thermal conductivity and measurement — Rate of Heat Flow, Physics (class-11-notes).",
+              "**Tested.** define it · list: conduction, thermal conductivity, measurement · one worked example · one…"
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Governing equation for \"Conduction: thermal conductivity and measurement\" — state with units, then use in…"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Conduction\" as one blob → ✅ split into: conduction, thermal conductivity, measurement.",
+              "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+              "❌ no diagram → ✅ add one labelled figure / structured list."
+            ]
+          }
+        ]
+      },
       {
         "topic": "Conduction and Thermal Conductivity",
         "subtopics": [
@@ -104,29 +133,6 @@
               "❌ A black body is always black in color. ✅ A black body is defined by its RADIATION properties, not its…",
               "❌ Only hot objects emit radiation. ✅ ALL objects above absolute zero emit thermal radiation.…",
               "❌ Good reflectors are also good emitters. ✅ Good REFLECTORS are POOR emitters (and poor absorbers). By…"
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Stefan-Boltzmann Law",
-        "subtopics": [
-          {
-            "name": "Key points",
-            "points": [
-              "**Statement of the Stefan-Boltzmann law:** The total energy radiated per unit area per unit time by a black…",
-              "**For real bodies:** $E = e\\sigma T^4$, where $e$ is the emissivity ($0 < e \\leq 1$). A perfect black body…",
-              "**Net radiation formula:** If a body at temperature $T$ is surrounded by an enclosure at temperature $T_0$,…",
-              "**Why the fourth power:** The Stefan-Boltzmann law emerges from integrating Planck's radiation law over all…",
-              "**Stefan-Boltzmann constant derivation:** $\\sigma = \\frac{2\\pi^5 k_B^4}{15 c^2 h^3} = \\frac{\\pi^2 k_B^4}{60…"
-            ]
-          },
-          {
-            "name": "Common misconceptions",
-            "points": [
-              "❌ The Stefan-Boltzmann law gives the power per unit wavelength. ✅ It gives the TOTAL power integrated over…",
-              "❌ Doubling the temperature doubles the radiated power. ✅ Because of the $T^4$ dependence, doubling the…",
-              "❌ The $T$ in the Stefan-Boltzmann law can be in Celsius. ✅ The temperature MUST be in Kelvin. At 0°C (273…"
             ]
           }
         ]

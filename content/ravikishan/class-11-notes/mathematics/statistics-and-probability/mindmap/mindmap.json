@@ -5,9 +5,9 @@
   "topicTitle": "statistics and probability — interactive concept map",
   "relevance": 100,
   "notes": [
-    "Measures of Dispersion covers essential principles and applications.",
-    "**Measures of Dispersion:** Class 11 concept.",
-    "**Why:** connects to other topics."
+    "Measure of dispersion: standard deviation, variance, coef… (Statistics and Probability, Mathematics, class-11-notes) covers Measure of dispersion: standard…",
+    "**Scope.** Measure of dispersion: standard deviation, variance, coef… — Statistics and Probability, Mathematics (class-11-notes).",
+    "**Tested.** define it · list: measure of dispersion: standard deviation, variance, coefficient of variation, skewness · one worked example · one misconception…"
   ],
   "uiConfig": {
     "allowZoom": true,
@@ -16,6 +16,36 @@
   "mindmap": {
     "centralConcept": "STATISTICS AND PROBABILITY",
     "branches": [
+      {
+        "topic": "Measure of dispersion: standard deviation, variance,…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Measure of dispersion: standard deviation",
+              "• Variance",
+              "• Coefficient of variation",
+              "• Skewness",
+              "• Karl Pearson's coefficient of skewness"
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "ω = (μv − μr)/(μd − 1)",
+              "Power of achromatic combination → 0 net dispersion"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Measure of dispersion: standard deviation\" as one blob → ✅ split into: measure of dispersion:…",
+              "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+              "❌ answer with no steps → ✅ show each step and box the result."
+            ]
+          }
+        ]
+      },
       {
         "topic": "Measures of Dispersion",
         "subtopics": [
@@ -50,6 +80,36 @@
             "points": [
               "Distinguish concepts in Measures of Dispersion.",
               "Check formula conditions."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Probability: independent cases, mathematical and…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Probability",
+              "• Independent cases",
+              "• Mathematical",
+              "• Empirical definition of probability",
+              "• Two basic laws of probability"
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "P(A∪B) = P(A)+P(B)−P(A∩B)",
+              "P(A∩B) = P(A)P(B|A)",
+              "P(A') = 1 − P(A)"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Probability\" as one blob → ✅ split into: probability, independent cases, mathematical.",
+              "❌ skip the key fact → ✅ p(e) = favourable/total. additive law: p(a∪b) = p(a)+p(b)−p(a∩b). if mutually…"
             ]
           }
         ]

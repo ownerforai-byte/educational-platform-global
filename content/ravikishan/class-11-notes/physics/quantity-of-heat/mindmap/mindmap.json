@@ -40,24 +40,62 @@
         ]
       },
       {
-        "topic": "Newton's Law of Cooling — Purpose & Real-World…",
+        "topic": "Newton's law of cooling",
         "subtopics": [
           {
             "name": "Key points",
             "points": [
-              "**Purpose of Newton's law of cooling:** The law provides a simple mathematical model to predict how the…",
-              "**Forensic science — estimating time of death:** A corpse cools according to Newton's law after death (the…",
-              "**Engineering — cooling system design:** Engineers use Newton's law to size radiators, heat sinks, and…",
-              "**Food industry — pasteurization and chilling:** After pasteurization, milk must be cooled to below 4°C…",
-              "**Everyday life — coffee and tea:** A hot cup of coffee cools faster when the room is cold and slower when…"
+              "• Newton's law of cooling",
+              "**Scope.** Newton's law of cooling — Quantity of Heat, Physics (class-11-notes).",
+              "**Tested.** define it · list: newton's law of cooling · one worked example · one misconception each.",
+              "**Fact.** 1st law (inertia): a body stays in uniform motion unless acted on by a net external force.",
+              "**Fact.** 2nd law: net force = rate of change of momentum = m·a (for constant m)."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "F = ma",
+              "J = F·Δt = m·Δv",
+              "p = mv"
             ]
           },
           {
             "name": "Common misconceptions",
             "points": [
-              "❌ Newton's law of cooling tells you the exact time of death. ✅ It gives an ESTIMATE. The model ignores many…",
-              "❌ The law works equally well for very large temperature differences (e.g., a red-hot iron in air). ✅ For…",
-              "❌ A larger object always cools faster. ✅ Larger objects have larger heat capacity ($mc$), which slows…"
+              "❌ treat \"Newton's law of cooling\" as one blob → ✅ split into: newton's law of cooling.",
+              "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
+              "❌ no diagram → ✅ add one labelled figure / structured list."
+            ]
+          }
+        ]
+      },
+      {
+        "topic": "Measurement of specific heat capacity of solids and…",
+        "subtopics": [
+          {
+            "name": "Key points",
+            "points": [
+              "• Measurement of specific heat capacity of solids",
+              "• Liquids",
+              "**Scope.** Measurement of specific heat capacity of solids and liquids — Quantity of Heat, Physics…",
+              "**Tested.** define it · list: measurement of specific heat capacity of solids, liquids · one worked example…",
+              "**Fact.** Heat Q = mcΔT; specific heat c, thermal capacity C = mc, heat capacity per mole = C. molar."
+            ]
+          },
+          {
+            "name": "Formulas & relations",
+            "points": [
+              "Q = mcΔT",
+              "Q = mL",
+              "cp = 1.5×cv + R (Mayer, for ideal gas)"
+            ]
+          },
+          {
+            "name": "Common misconceptions",
+            "points": [
+              "❌ treat \"Measurement of specific heat capacity of solids\" as one blob → ✅ split into: measurement of…",
+              "❌ skip the key fact → ✅ heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c.…"
             ]
           }
         ]
@@ -104,44 +142,6 @@
               "❌ Heat capacity and specific heat are the same thing. ✅ Heat capacity ($C'$) depends on the object's mass;…",
               "❌ A larger object always has a larger heat capacity. ✅ For the SAME material, yes. But a small lead weight…",
               "❌ Heat capacity has no units. ✅ Heat capacity has units: J/K (SI) or cal/°C (CGS). Specific heat has units…"
-            ]
-          }
-        ]
-      },
-      {
-        "topic": "Triple Point",
-        "subtopics": [
-          {
-            "name": "Key points",
-            "points": [
-              "Core principle of Triple Point",
-              "Application of Triple Point",
-              "Connection of Triple Point to other topics",
-              "**Triple Point:** Class 11 concept.",
-              "**Why:** connects to other topics."
-            ]
-          },
-          {
-            "name": "Statements to quote",
-            "points": [
-              "Statement 1: Definition of Triple Point",
-              "Statement 2: Theorem related to Triple Point",
-              "Statement 3: Condition for Triple Point to be valid"
-            ]
-          },
-          {
-            "name": "Exam focus",
-            "points": [
-              "Focus on Triple Point problems - significant marks.",
-              "Recall the formula for Triple Point.",
-              "Triple Point is based on fundamental principles."
-            ]
-          },
-          {
-            "name": "Common misconceptions",
-            "points": [
-              "Distinguish concepts in Triple Point.",
-              "Check formula conditions."
             ]
           }
         ]
