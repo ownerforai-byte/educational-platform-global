@@ -7,27 +7,16 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Numerical computation: roots of algebraic and transcenden… — Computational Methods or Mechanics, Mathematics (class-11-notes).",
-    "**Tested.** define it · list: numerical computation, roots of algebraic, transcendental equations, bisection · one worked example · one misconception each.",
     "**Fact.** 1st law (inertia): a body stays in uniform motion unless acted on by a net external force.",
     "**Fact.** 2nd law: net force = rate of change of momentum = m·a (for constant m).",
     "**Fact.** 3rd law: forces are mutual, equal and opposite, acting on different bodies (never cancel on the same body).",
-    "**Fact.** Impulse = ∫F dt = Δp; F = ma gives F = m·(Δv/Δt).",
-    "**Roots of algebraic.** one-line definition + one-line exam use.",
-    "**Transcendental equations.** one-line definition + one-line exam use.",
-    "**Bisection.** one-line definition + one-line exam use.",
-    "**Newton-Raphson method.** one-line definition + one-line exam use."
+    "**Fact.** Impulse = ∫F dt = Δp; F = ma gives F = m·(Δv/Δt)."
   ],
   "confusion": [
-    "❌ treat \"Numerical computation\" as one blob → ✅ split into: numerical computation, roots of algebraic, transcendental equations.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ answer with no steps → ✅ show each step and box the result.",
     "❌ skip the key fact → ✅ 1st law (inertia): a body stays in uniform motion unless acted on by a net external force.."
   ],
   "bounds": [
-    "Covers only: numerical computation, roots of algebraic, transcendental equations, bisection (within Computational Methods or Mechanics).",
-    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: 1st law (inertia): a body stays in uniform motion unless acted on by a net external force."
   ],
   "practice": [

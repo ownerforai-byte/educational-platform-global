@@ -7,25 +7,16 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Straight line: length of perpendicular from a given point… — Analytic Geometry, Mathematics (class-11-notes).",
-    "**Tested.** define it · list: straight line, length of perpendicular from a given point to a given line, bisectors of the angles between two straight lines · one worked example · one misconception each.",
     "**Fact.** Line: point–slope y − y₁ = m(x − x₁); perpendicular distance from (x₁,y₁) to ax+by+c=0 is |ax₁+by₁+c|/√(a²+b²).",
     "**Fact.** Pair of lines: a·S ≡ ax² + 2hxy + by²; represents a real pair iff h² ≥ ab. Angle between: tanθ = 2√(h²−ab)/(a+b).",
     "**Fact.** Homogeneous: ax² + 2hxy + by² = 0 (two lines through origin); bisectors: (x² − y²)/(a−b) = xy/h.",
-    "**Fact.** Direction cosines of a line: l² + m² + n² = 1; distance between two points in space √(Δx²+Δy²+Δz²).",
-    "**Length of perpendicular from a given point to a given line.** one-line definition + one-line exam use.",
-    "**Bisectors of the angles between two straight lines.** one-line definition + one-line exam use."
+    "**Fact.** Direction cosines of a line: l² + m² + n² = 1; distance between two points in space √(Δx²+Δy²+Δz²)."
   ],
   "confusion": [
-    "❌ treat \"Straight line\" as one blob → ✅ split into: straight line, length of perpendicular from a given point to a given line, bisectors of the angles between two straight lines.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ answer with no steps → ✅ show each step and box the result.",
     "❌ skip the key fact → ✅ line: point–slope y − y₁ = m(x − x₁); perpendicular distance from (x₁,y₁) to ax+by+c=0 is |ax₁+by₁+c|/√(a²+b²).."
   ],
   "bounds": [
-    "Covers only: straight line, length of perpendicular from a given point to a given line, bisectors of the angles between two straight lines (within Analytic Geometry).",
-    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: line: point–slope y − y₁ = m(x − x₁); perpendicular distance from (x₁,y₁) to ax+by+c=0 is |ax₁+by₁+c|/√(a²+b²)."
   ],
   "practice": [

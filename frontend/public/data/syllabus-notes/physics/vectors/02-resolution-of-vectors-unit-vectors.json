@@ -7,23 +7,14 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Resolution of vectors; unit vectors — Vectors, Physics (class-11-notes).",
-    "**Tested.** define it · list: resolution of vectors, unit vectors · one worked example · one misconception each.",
     "**Fact.** Vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).",
     "**Fact.** Dot: a·b = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃ (scalar; =0 ⟂). Cross: a×b (vector, ⟂ to both; |a×b| = |a||b|sinθ; area = ½|a×b|).",
-    "**Fact.** Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative).",
-    "**Unit vectors.** one-line definition + one-line exam use."
+    "**Fact.** Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative)."
   ],
   "confusion": [
-    "❌ treat \"Resolution of vectors\" as one blob → ✅ split into: resolution of vectors, unit vectors.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
     "❌ skip the key fact → ✅ vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).."
   ],
   "bounds": [
-    "Covers only: resolution of vectors, unit vectors (within Vectors).",
-    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²)."
   ],
   "practice": [

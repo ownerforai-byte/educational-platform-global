@@ -7,22 +7,14 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Energy of charged capacitor — Capacitor, Physics (class-11-notes).",
-    "**Tested.** define it · list: energy of charged capacitor · one worked example · one misconception each.",
     "**Fact.** Capacitance C = Q/V; parallel-plate C = ε₀A/d (larger with dielectric: C = ε₀εᵣA/d).",
     "**Fact.** Energy stored U = ½CV² = Q²/2C.",
     "**Fact.** Series: 1/C = Σ1/C (same Q); Parallel: C = ΣC (same V)."
   ],
   "confusion": [
-    "❌ treat \"Energy of charged capacitor\" as one blob → ✅ split into: energy of charged capacitor.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
     "❌ skip the key fact → ✅ capacitance c = q/v; parallel-plate c = ε₀a/d (larger with dielectric: c = ε₀εᵣa/d).."
   ],
   "bounds": [
-    "Covers only: energy of charged capacitor (within Capacitor).",
-    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: capacitance c = q/v; parallel-plate c = ε₀a/d (larger with dielectric: c = ε₀εᵣa/d)."
   ],
   "practice": [

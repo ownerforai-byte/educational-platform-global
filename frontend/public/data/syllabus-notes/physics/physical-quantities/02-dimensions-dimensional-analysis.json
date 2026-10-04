@@ -38,13 +38,7 @@
   ],
   "animation3D": "physical-quantities",
   "motionGraphics": "physical-quantities",
-  "examples": [
-    "Example 1: Check $s = ut + \\\tfrac{1}{2}at^2$: $[LT^{-1}][T] + [LT^{-2}][T^2] = [L] + [L] = [L]$ ✓ — both terms are lengths, matching the LHS.",
-    "Example 2: A sphere of radius $r$ moving slowly with speed $v$ through a fluid of viscosity $\\eta$ experiences drag $F = k\\,\\eta^a r^b v^c$ (Stokes' law). Matching $[MLT^{-2}] = [ML^{-1}T^{-1}]^a [L]^b [LT^{-1}]^c$ gives $a = 1$, $b = 1$, $c = 1$ → $F = 6\\pi\\eta r v$.",
-    "Example 3: Convert a pressure of 1 pascal into CGS units: $[ML^{-1}T^{-2}]$ → $1 \\\times 1000 \\\times 10^{-2} = 10$ dyn cm⁻² = 10 barye.",
-    "Example 4: The energy $E$ of a photon is $hf$; verify: $h[ML^2T^{-1}] \\\times f[T^{-1}] = [ML^2T^{-2}]$ = dimensions of energy ✓.",
-    "Example 5: Find dimensions of $\\\frac{a}{b}$ in $P = \\\frac{a - b t^2}{x}$, where P = pressure, x = distance, t = time. Numerator must be $[ML^{-1}T^{-2}][L] = [MT^{-2}]$; so $[a] = [MT^{-2}]$ and $[b] = [MT^{-4}]$ → $\\\frac{a}{b} = [T^2]$."
-  ],
+  "examples": [],
   "practiceQuestions": [
     "Q2. State the principle of homogeneity of dimensions and use it to test the equation $v = u - at$.",
     "Q3. Assuming the period $T$ of a simple pendulum depends on its length $l$ and acceleration due to gravity $g$, derive the relation $T = k\\sqrt{l/g}$ dimensionally.",

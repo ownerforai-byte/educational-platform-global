@@ -7,25 +7,16 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Numerical integration: Trapezoidal rule and Simpson's rule — Computational Methods or Mechanics, Mathematics (class-11-notes).",
-    "**Tested.** define it · list: numerical integration, trapezoidal rule, simpson's rule · one worked example · one misconception each.",
     "**Fact.** ∫xⁿ dx = x^{n+1}/(n+1) + C (n ≠ −1); ∫dx/x = ln|x| + C. Indefinite = family of antiderivatives.",
     "**Fact.** Integration by parts: ∫u dv = uv − ∫v du (LIATE choice). Substitution: let t = g(x), adjust dx.",
     "**Fact.** Definite integral = accumulation; area under y=f over [a,b] when f ≥ 0; area between curves = ∫|f−g| dx.",
-    "**Fact.** Fundamental theorem: d/dx ∫_a^x f(t)dt = f(x); ∫_a^b f = F(b) − F(a).",
-    "**Trapezoidal rule.** one-line definition + one-line exam use.",
-    "**Simpson's rule.** one-line definition + one-line exam use."
+    "**Fact.** Fundamental theorem: d/dx ∫_a^x f(t)dt = f(x); ∫_a^b f = F(b) − F(a)."
   ],
   "confusion": [
-    "❌ treat \"Numerical integration\" as one blob → ✅ split into: numerical integration, trapezoidal rule, simpson's rule.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ answer with no steps → ✅ show each step and box the result.",
     "❌ skip the key fact → ✅ ∫xⁿ dx = x^{n+1}/(n+1) + c (n ≠ −1); ∫dx/x = ln|x| + c. indefinite = family of antiderivatives.."
   ],
   "bounds": [
-    "Covers only: numerical integration, trapezoidal rule, simpson's rule (within Computational Methods or Mechanics).",
-    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: ∫xⁿ dx = x^{n+1}/(n+1) + c (n ≠ −1); ∫dx/x = ln|x| + c. indefinite = family of antiderivatives."
   ],
   "practice": [

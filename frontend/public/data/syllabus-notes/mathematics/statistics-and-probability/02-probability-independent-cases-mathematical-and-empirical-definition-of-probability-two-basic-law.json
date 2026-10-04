@@ -7,27 +7,15 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Probability: independent cases, mathematical and empirica… — Statistics and Probability, Mathematics (class-11-notes).",
-    "**Tested.** define it · list: probability, independent cases, mathematical, empirical definition of probability · one worked example · one misconception each.",
     "**Fact.** P(E) = favourable/total. Additive law: P(A∪B) = P(A)+P(B)−P(A∩B). If mutually exclusive, P(A∪B)=P(A)+P(B).",
     "**Fact.** Multiplicative: P(A∩B) = P(A)P(B|A); independence: P(A∩B) = P(A)P(B).",
-    "**Fact.** Complement: P(A') = 1 − P(A). For discrete: ΣP = 1; expected value E(X) = Σxᵢpᵢ.",
-    "**Independent cases.** one-line definition + one-line exam use.",
-    "**Mathematical.** one-line definition + one-line exam use.",
-    "**Empirical definition of probability.** one-line definition + one-line exam use.",
-    "**Two basic laws of probability.** one-line definition + one-line exam use.",
-    "**Without proof.** one-line definition + one-line exam use."
+    "**Fact.** Complement: P(A') = 1 − P(A). For discrete: ΣP = 1; expected value E(X) = Σxᵢpᵢ."
   ],
   "confusion": [
-    "❌ treat \"Probability\" as one blob → ✅ split into: probability, independent cases, mathematical.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ answer with no steps → ✅ show each step and box the result.",
     "❌ skip the key fact → ✅ p(e) = favourable/total. additive law: p(a∪b) = p(a)+p(b)−p(a∩b). if mutually exclusive, p(a∪b)=p(a)+p(b).."
   ],
   "bounds": [
-    "Covers only: probability, independent cases, mathematical, empirical definition of probability (within Statistics and Probability).",
-    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: p(e) = favourable/total. additive law: p(a∪b) = p(a)+p(b)−p(a∩b). if mutually exclusive, p(a∪b)=p(a)+p(b)."
   ],
   "practice": [

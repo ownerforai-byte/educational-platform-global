@@ -7,24 +7,14 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Nuclear density; mass number; atomic number — Nuclear Physics, Physics (class-11-notes).",
-    "**Tested.** define it · list: nuclear density, mass number, atomic number · one worked example · one misconception each.",
     "**Fact.** Mass defect Δm = Z m_p + N m_n − M; binding energy BE = Δm c²; BE per nucleon peaks near Fe-56 (~8.8 MeV).",
     "**Fact.** Radioactive decay: N = N₀e^(−λt), t_½ = ln2/λ; activity A = λN.",
-    "**Fact.** Fission (heavy nucleus → two + 2–3 n + ~200 MeV); fusion (light → heavy + energy, powers stars).",
-    "**Mass number.** one-line definition + one-line exam use.",
-    "**Atomic number.** one-line definition + one-line exam use."
+    "**Fact.** Fission (heavy nucleus → two + 2–3 n + ~200 MeV); fusion (light → heavy + energy, powers stars)."
   ],
   "confusion": [
-    "❌ treat \"Nuclear density\" as one blob → ✅ split into: nuclear density, mass number, atomic number.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
     "❌ skip the key fact → ✅ mass defect δm = z m_p + n m_n − m; binding energy be = δm c²; be per nucleon peaks near fe-56 (~8.8 mev).."
   ],
   "bounds": [
-    "Covers only: nuclear density, mass number, atomic number (within Nuclear Physics).",
-    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: mass defect δm = z m_p + n m_n − m; binding energy be = δm c²; be per nucleon peaks near fe-56 (~8.8 mev)."
   ],
   "practice": [

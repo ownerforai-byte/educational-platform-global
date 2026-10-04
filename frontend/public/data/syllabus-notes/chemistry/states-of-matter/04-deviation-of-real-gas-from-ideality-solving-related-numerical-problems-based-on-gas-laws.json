@@ -7,23 +7,14 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Deviation of real gas from ideality (solving related nume… — States of Matter, Chemistry (class-11-notes).",
-    "**Tested.** define it · list: deviation of real gas from ideality, solving related numerical problems based on gas laws · one worked example · one misconception each.",
     "**Fact.** Ideal gas equation PV = nRT; from kinetic theory P = ⅓ (Nm/m)⟨c²⟩, so PV = ⅓N m⟨c²⟩.",
     "**Fact.** r.m.s. speed c_rms = √(3RT/M); mean kinetic energy per mole = 3RT/2, per molecule = 3k_BT/2.",
-    "**Fact.** Real gases deviate near condensation; Van der Waals: (P + a n²/V²)(V − nb) = nRT.",
-    "**Solving related numerical problems based on gas laws.** one-line definition + one-line exam use."
+    "**Fact.** Real gases deviate near condensation; Van der Waals: (P + a n²/V²)(V − nb) = nRT."
   ],
   "confusion": [
-    "❌ treat \"Deviation of real gas from ideality\" as one blob → ✅ split into: deviation of real gas from ideality, solving related numerical problems based on gas laws.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
     "❌ skip the key fact → ✅ ideal gas equation pv = nrt; from kinetic theory p = ⅓ (nm/m)⟨c²⟩, so pv = ⅓n m⟨c²⟩.."
   ],
   "bounds": [
-    "Covers only: deviation of real gas from ideality, solving related numerical problems based on gas laws (within States of Matter).",
-    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: ideal gas equation pv = nrt; from kinetic theory p = ⅓ (nm/m)⟨c²⟩, so pv = ⅓n m⟨c²⟩."
   ],
   "practice": [

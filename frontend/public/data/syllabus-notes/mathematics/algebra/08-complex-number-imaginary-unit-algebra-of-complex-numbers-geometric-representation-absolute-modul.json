@@ -7,31 +7,15 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Complex number: imaginary unit, algebra of complex number… — Algebra, Mathematics (class-11-notes).",
-    "**Tested.** define it · list: complex number, imaginary unit, algebra of complex numbers, geometric representation · one worked example · one misconception each.",
     "**Fact.** Stress = F/A, strain = ΔL/L (dimensionless). Hooke's law (elastic limit): stress ∝ strain.",
     "**Fact.** Elastic moduli: Young's Y = (F/A)/(ΔL/L); Bulk K = −P/(ΔV/V); Shear G = (F/A)/(Δx/L).",
-    "**Fact.** Elastic potential energy U = ½FΔL = ½kx². Poisson's ratio σ = −(lateral strain)/(longitudinal strain) ≈ 0.25–0.35 for most metals.",
-    "**Imaginary unit.** one-line definition + one-line exam use.",
-    "**Algebra of complex numbers.** one-line definition + one-line exam use.",
-    "**Geometric representation.** one-line definition + one-line exam use.",
-    "**Absolute.** one-line definition + one-line exam use.",
-    "**Modulus.** one-line definition + one-line exam use.",
-    "**Value.** one-line definition + one-line exam use.",
-    "**Conjugate of complex numbers.** one-line definition + one-line exam use.",
-    "**Their properties.** one-line definition + one-line exam use.",
-    "**Square root of a complex number.** one-line definition + one-line exam use."
+    "**Fact.** Elastic potential energy U = ½FΔL = ½kx². Poisson's ratio σ = −(lateral strain)/(longitudinal strain) ≈ 0.25–0.35 for most metals."
   ],
   "confusion": [
-    "❌ treat \"Complex number\" as one blob → ✅ split into: complex number, imaginary unit, algebra of complex numbers.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ answer with no steps → ✅ show each step and box the result.",
     "❌ skip the key fact → ✅ stress = f/a, strain = δl/l (dimensionless). hooke's law (elastic limit): stress ∝ strain.."
   ],
   "bounds": [
-    "Covers only: complex number, imaginary unit, algebra of complex numbers, geometric representation (within Algebra).",
-    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: stress = f/a, strain = δl/l (dimensionless). hooke's law (elastic limit): stress ∝ strain."
   ],
   "practice": [

@@ -40,13 +40,7 @@
   ],
   "animation3D": "kinematics",
   "motionGraphics": "kinematics",
-  "examples": [
-    "Example 1: $x(t) = 3t^2$ m → $v = 6t$ m/s; at $t = 2$ s the instantaneous velocity is 12 m/s, while the average velocity over 0–2 s is $\\frac{12-0}{2} = 6$ m/s — different because the motion speeds up.",
-    "Example 2: A metro train's $v$–$t$ graph: trapezoid of acceleration, cruise, braking. Displacement = area of trapezoid; acceleration = slope in each segment.",
-    "Example 3: $v(t) = 8 - 4t$: the particle reverses at $t = 2$ s where $v = 0$ but $a = -4$ m/s² throughout — illustrating reversal with constant acceleration.",
-    "Example 4: Two instants with equal speeds but different velocities: $v = +10$ m/s at $t_1$ and $v = -10$ m/s at $t_2$ — same speed, opposite direction of motion.",
-    "Example 5: From $a = 6t$ and $v(0) = 2$ m/s: integrate to $v = 3t^2 + 2$ and, with $x(0) = 0$, $x = t^3 + 2t$ — showing how derivatives run downward ($x \\to v \\to a$) and integrals run upward."
-  ],
+  "examples": [],
   "practiceQuestions": [
     "Q2. Distinguish between average acceleration and instantaneous acceleration with one example each.",
     "Q3. For $x(t) = 2t^3 - 9t^2 + 12t$ (m), find when the velocity is zero and classify each instant (pause vs reversal).",

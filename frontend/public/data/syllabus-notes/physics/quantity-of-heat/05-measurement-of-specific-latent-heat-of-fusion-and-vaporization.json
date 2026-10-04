@@ -7,23 +7,14 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Measurement of specific latent heat of fusion and vaporiz… — Quantity of Heat, Physics (class-11-notes).",
-    "**Tested.** define it · list: measurement of specific latent heat of fusion, vaporization · one worked example · one misconception each.",
     "**Fact.** Heat Q = mcΔT; specific heat c, thermal capacity C = mc, heat capacity per mole = C. molar.",
     "**Fact.** Latent heat L: Q = mL (change of state at constant T). Calorimetry: heat lost = heat gained.",
-    "**Fact.** Newton's law of cooling: rate of heat loss ∝ (T − T₀); dθ/dt = −k(θ − θ₀).",
-    "**Vaporization.** one-line definition + one-line exam use."
+    "**Fact.** Newton's law of cooling: rate of heat loss ∝ (T − T₀); dθ/dt = −k(θ − θ₀)."
   ],
   "confusion": [
-    "❌ treat \"Measurement of specific latent heat of fusion\" as one blob → ✅ split into: measurement of specific latent heat of fusion, vaporization.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
     "❌ skip the key fact → ✅ heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar.."
   ],
   "bounds": [
-    "Covers only: measurement of specific latent heat of fusion, vaporization (within Quantity of Heat).",
-    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: heat q = mcδt; specific heat c, thermal capacity c = mc, heat capacity per mole = c. molar."
   ],
   "practice": [

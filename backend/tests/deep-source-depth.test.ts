@@ -82,6 +82,17 @@ describe("corpus validation (the shallow source, measured)", () => {
       "Formula for First Law of Thermodynamics: [insert from textbook].",
       "Q2. Key formula for Introduction to Limits and Continuity.",
       "Core principle of First Law of Thermodynamics",
+      // The second generator mould (class-11/class-12 frames written per topic).
+      "**Scope.** First Law of Thermodynamics — Thermodynamics, Physics (class-11-notes).",
+      "**Tested.** define it · list: first law, thermodynamics · one worked example · one misconception each.",
+      "**Enthalpy.** one-line definition + one-line exam use.",
+      "Covers only: enthalpy (within Thermodynamics).",
+      "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+      "State the limit / condition where a formula or rule stops being valid before applying it.",
+      "❌ treat \"First Law\" as one blob → ✅ split into: first law, thermodynamics.",
+      "Standard result for \"First Law\" — state it and verify by substituting a simple case.",
+      "Key Formula 1: Definition formula for First Law of Thermodynamics",
+      "Example 3: Numerical problem on First Law of Thermodynamics",
     ]) {
       expect(isTemplateFrame(line), `frame not caught: ${line}`).toBe(true);
     }

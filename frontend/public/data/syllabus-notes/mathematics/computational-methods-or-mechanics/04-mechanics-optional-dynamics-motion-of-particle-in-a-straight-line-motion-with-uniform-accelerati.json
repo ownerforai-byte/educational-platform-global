@@ -7,28 +7,16 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Mechanics (optional): Dynamics — motion of particle in a … — Computational Methods or Mechanics, Mathematics (class-11-notes).",
-    "**Tested.** define it · list: mechanics, optional, : dynamics — motion of particle in a straight line, motion with uniform acceleration · one worked example · one misconception each.",
     "**Fact.** 1st law (inertia): a body stays in uniform motion unless acted on by a net external force.",
     "**Fact.** 2nd law: net force = rate of change of momentum = m·a (for constant m).",
     "**Fact.** 3rd law: forces are mutual, equal and opposite, acting on different bodies (never cancel on the same body).",
-    "**Fact.** Impulse = ∫F dt = Δp; F = ma gives F = m·(Δv/Δt).",
-    "**Optional.** one-line definition + one-line exam use.",
-    "**: Dynamics — motion of particle in a straight line.** one-line definition + one-line exam use.",
-    "**Motion with uniform acceleration.** one-line definition + one-line exam use.",
-    "**Motion under gravity.** one-line definition + one-line exam use.",
-    "**Motion down a smooth inclined plane.** one-line definition + one-line exam use."
+    "**Fact.** Impulse = ∫F dt = Δp; F = ma gives F = m·(Δv/Δt)."
   ],
   "confusion": [
-    "❌ treat \"Mechanics\" as one blob → ✅ split into: mechanics, optional, : dynamics — motion of particle in a straight line.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ answer with no steps → ✅ show each step and box the result.",
     "❌ skip the key fact → ✅ 1st law (inertia): a body stays in uniform motion unless acted on by a net external force.."
   ],
   "bounds": [
-    "Covers only: mechanics, optional, : dynamics — motion of particle in a straight line, motion with uniform acceleration (within Computational Methods or Mechanics).",
-    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: 1st law (inertia): a body stays in uniform motion unless acted on by a net external force."
   ],
   "practice": [

@@ -7,29 +7,15 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Sequence and series: arithmetic, geometric, harmonic sequ… — Algebra, Mathematics (class-11-notes).",
-    "**Tested.** define it · list: sequence, series: arithmetic, geometric, harmonic sequences · one worked example · one misconception each.",
     "**Fact.** AP: aₙ = a + (n−1)d; Sₙ = n/2 [2a + (n−1)d]. GP: aₙ = ar^{n−1}; Sₙ = a(rⁿ−1)/(r−1); infinite (|r|<1): S = a/(1−r).",
     "**Fact.** AM ≤ GM ≤ HM: AM = (a+b)/2, GM = √(ab), HM = 2ab/(a+b).",
-    "**Fact.** Convergence of a series needs term → 0 (necessary, not sufficient).",
-    "**Series: arithmetic.** one-line definition + one-line exam use.",
-    "**Geometric.** one-line definition + one-line exam use.",
-    "**Harmonic sequences.** one-line definition + one-line exam use.",
-    "**Series.** one-line definition + one-line exam use.",
-    "**Their properties.** one-line definition + one-line exam use.",
-    "**Their relations.** one-line definition + one-line exam use.",
-    "**Sum of infinite geometric series.** one-line definition + one-line exam use."
+    "**Fact.** Convergence of a series needs term → 0 (necessary, not sufficient)."
   ],
   "confusion": [
-    "❌ treat \"Sequence\" as one blob → ✅ split into: sequence, series: arithmetic, geometric.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ answer with no steps → ✅ show each step and box the result.",
     "❌ skip the key fact → ✅ ap: aₙ = a + (n−1)d; sₙ = n/2 [2a + (n−1)d]. gp: aₙ = ar^{n−1}; sₙ = a(rⁿ−1)/(r−1); infinite (|r|<1): s = a/(1−r).."
   ],
   "bounds": [
-    "Covers only: sequence, series: arithmetic, geometric, harmonic sequences (within Algebra).",
-    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: ap: aₙ = a + (n−1)d; sₙ = n/2 [2a + (n−1)d]. gp: aₙ = ar^{n−1}; sₙ = a(rⁿ−1)/(r−1); infinite (|r|<1): s = a/(1−r)."
   ],
   "practice": [

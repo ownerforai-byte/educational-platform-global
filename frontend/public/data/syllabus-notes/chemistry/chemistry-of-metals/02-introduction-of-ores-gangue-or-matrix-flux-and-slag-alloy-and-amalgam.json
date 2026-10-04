@@ -7,27 +7,14 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Introduction of ores; gangue or matrix, flux and slag, al… — Chemistry of Metals, Chemistry (class-11-notes).",
-    "**Tested.** define it · list: introduction of ores, gangue or matrix, flux, slag · one worked example · one misconception each.",
     "**Fact.** Transpose (AB)ᵀ = BᵀAᵀ. Inverse: A⁻¹ = adj(A)/det(A) (2×2: [d −b; −c a]/(ad−bc)).",
     "**Fact.** Properties: det(AB) = det A·det B; det A⁻¹ = 1/det A; det kA = kⁿ det A for n×n.",
-    "**Fact.** Cofactors: Cᵢⱼ = (−1)^{i+j} Mᵢⱼ; adj = cofactor matrix transposed; A·adj(A) = det(A) I.",
-    "**Gangue or matrix.** one-line definition + one-line exam use.",
-    "**Flux.** one-line definition + one-line exam use.",
-    "**Slag.** one-line definition + one-line exam use.",
-    "**Alloy.** one-line definition + one-line exam use.",
-    "**Amalgam.** one-line definition + one-line exam use."
+    "**Fact.** Cofactors: Cᵢⱼ = (−1)^{i+j} Mᵢⱼ; adj = cofactor matrix transposed; A·adj(A) = det(A) I."
   ],
   "confusion": [
-    "❌ treat \"Introduction of ores\" as one blob → ✅ split into: introduction of ores, gangue or matrix, flux.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
     "❌ skip the key fact → ✅ transpose (ab)ᵀ = bᵀaᵀ. inverse: a⁻¹ = adj(a)/det(a) (2×2: [d −b; −c a]/(ad−bc)).."
   ],
   "bounds": [
-    "Covers only: introduction of ores, gangue or matrix, flux, slag (within Chemistry of Metals).",
-    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: transpose (ab)ᵀ = bᵀaᵀ. inverse: a⁻¹ = adj(a)/det(a) (2×2: [d −b; −c a]/(ad−bc))."
   ],
   "practice": [

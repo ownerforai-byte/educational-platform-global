@@ -130,6 +130,29 @@ const TEMPLATE_FRAME_LINE = [
   /^\s*(q\s*\d+[.)]\s*)?(define|key formula for|problem on|state the definition of)\b/i,
   /\bappears in exams\b/i,
   /^\s*understand\s+(and|,)?.{0,60}\bfor\s+(the\s+)?(unit|topic|chapter)\b/i,
+  // The second generator mould, which wrote the class-11 and class-12 trees
+  // with the same frame vocabulary. One line per topic, so the cross-record
+  // frequency rule cannot see it, yet it teaches nothing:
+  //   "**Scope.** X — Unit, Subject (class-11-notes)."
+  //   "**Tested.** define it · list: X, y · one worked example · one misconception each."
+  //   "**Cell wall.** one-line definition + one-line exam use."
+  //   "Covers only: X (within Unit)."
+  //   "Out of scope here: topics of neighbouring units in Subject — don't mix them."
+  //   "State the limit / condition where a formula or rule stops being valid …"
+  //   "❌ treat \"X\" as one blob → ✅ split into: X, y."
+  //   "Standard result for \"X\" — state it and verify by substituting a simple case."
+  //   "Key Formula 1: Definition formula for X" / "Key Point 2: …" / "Example 3: …"
+  /^\*\*Scope\.\*\*.+\(class-(?:11|12)[a-z0-9-]*\)\.?\s*$/i,
+  /^\*\*Tested\.\*\*\s*define it\b/i,
+  /one-line definition \+ one-line exam use\.?\s*$/i,
+  /^Covers only:.+\(within .+\)\.?\s*$/i,
+  /^Out of scope here:/i,
+  /^State the limit \/ condition where a formula or rule stops being valid/i,
+  /treat .+ as one blob → ✅ split into:/i,
+  /state the rule without its limit → ✅ note when it applies/i,
+  /no diagram → ✅ add one labelled figure/i,
+  /^Standard result for .+ — state it and verify by substituting a simple case\.?\s*$/i,
+  /^\s*(key formula|key point|example)\s+\d+:/i,
 ];
 
 /** True when a line is a generator frame rather than knowledge. */

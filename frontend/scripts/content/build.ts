@@ -215,21 +215,25 @@ async function buildSubject(subject: string, outRoot: string): Promise<number> {
         const topicSlug = isVariant && paired ? String(n.data.tabGroup) : String(n.data.topicSlug);
         const filename = paired ? n.file.replace(/\.json$/, `-${n.data.duplicateType}.json`) : n.file;
 
-        emit(outRoot, path.join(subject, unit, filename), n.data);
+        // Count on the CLEANED payload: the manifest's `noteCount` is shown to
+        // students ("N notes"), so counting frame-only lines would keep the
+        // exact inflation the stripping exists to end.
+        const cleaned = stripGeneratorJunk(n.data);
+        emit(outRoot, path.join(subject, unit, filename), cleaned);
         copied++;
 
-        const blocks = Array.isArray(n.data.blocks) ? n.data.blocks : [];
+        const blocks = Array.isArray(cleaned.blocks) ? cleaned.blocks : [];
         manifest.push({
           unitSlug: unit,
           topicSlug,
-          title: n.data.title || n.data.topicTitle || topicSlug,
-          noteCount: Array.isArray(n.data.notes) ? n.data.notes.length : 0,
+          title: cleaned.title || cleaned.topicTitle || topicSlug,
+          noteCount: Array.isArray(cleaned.notes) ? cleaned.notes.length : 0,
           source: "ravikishan",
           duplicateType,
           filename,
-          ...(n.data.tabGroup ? { tabGroup: n.data.tabGroup } : {}),
-          hasMcqs: contentHasMcqs(n.data as { mcs?: { length: number } | null; mcqs?: { length: number } | null }),
-          universalFactsCount: Array.isArray(n.data.universalFacts) ? n.data.universalFacts.length : 0,
+          ...(cleaned.tabGroup ? { tabGroup: cleaned.tabGroup } : {}),
+          hasMcqs: contentHasMcqs(cleaned as { mcs?: { length: number } | null; mcqs?: { length: number } | null }),
+          universalFactsCount: Array.isArray(cleaned.universalFacts) ? cleaned.universalFacts.length : 0,
           ...(blocks.length ? { blockCount: blocks.length } : {}),
         });
       }

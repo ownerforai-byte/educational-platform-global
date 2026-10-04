@@ -7,23 +7,14 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Electromotive force of a source, internal resistance — DC Circuits, Physics (class-11-notes).",
-    "**Tested.** define it · list: electromotive force of a source, internal resistance · one worked example · one misconception each.",
     "**Fact.** Ohm's law: V = IR; R = ρL/A (resistivity ρ depends on material).",
     "**Fact.** Series: R = ΣR; same I, voltages add. Parallel: 1/R = Σ1/R; same V, currents add.",
-    "**Fact.** Power P = VI = I²R = V²/R; internal resistance makes terminal V = E − Ir.",
-    "**Internal resistance.** one-line definition + one-line exam use."
+    "**Fact.** Power P = VI = I²R = V²/R; internal resistance makes terminal V = E − Ir."
   ],
   "confusion": [
-    "❌ treat \"Electromotive force of a source\" as one blob → ✅ split into: electromotive force of a source, internal resistance.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
     "❌ skip the key fact → ✅ ohm's law: v = ir; r = ρl/a (resistivity ρ depends on material).."
   ],
   "bounds": [
-    "Covers only: electromotive force of a source, internal resistance (within DC Circuits).",
-    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: ohm's law: v = ir; r = ρl/a (resistivity ρ depends on material)."
   ],
   "practice": [

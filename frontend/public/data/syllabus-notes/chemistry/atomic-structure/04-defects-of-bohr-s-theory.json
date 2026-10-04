@@ -7,23 +7,15 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Defects of Bohr's theory — Atomic Structure, Chemistry (class-11-notes).",
-    "**Tested.** define it · list: defects of bohr's theory · one worked example · one misconception each.",
     "**Fact.** Bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy En = −13.6 eV·Z²/n² (for H, Z=1).",
     "**Fact.** Rydberg/Balmer series: 1/λ = R(H)(1/n₁² − 1/n₂²). Absorption/emission = ΔE = hν between levels.",
     "**Fact.** Four quantum numbers: n (shell), l (subshell, 0…n−1), mₗ (orientation, −l…+l), mₛ (spin ±½). Orbitals: s (spherical), p (dumbbell).",
     "**Fact.** Filling order (Aufbau, n+l rule): 1s 2s 2p 3s 3p 4s 3d…; Hund's rule: maximise unpaired spin before pairing; Pauli: no two electrons share all four quantum numbers."
   ],
   "confusion": [
-    "❌ treat \"Defects of Bohr's theory\" as one blob → ✅ split into: defects of bohr's theory.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
     "❌ skip the key fact → ✅ bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy en = −13.6 ev·z²/n² (for h, z=1).."
   ],
   "bounds": [
-    "Covers only: defects of bohr's theory (within Atomic Structure).",
-    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy en = −13.6 ev·z²/n² (for h, z=1)."
   ],
   "practice": [

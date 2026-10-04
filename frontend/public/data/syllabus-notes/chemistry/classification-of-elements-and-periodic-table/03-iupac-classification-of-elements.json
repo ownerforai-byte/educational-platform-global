@@ -7,22 +7,14 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** IUPAC classification of elements — Classification of Elements and Periodic Table, Chemistry (class-11-notes).",
-    "**Tested.** define it · list: iupac classification of elements · one worked example · one misconception each.",
     "**Fact.** v = V₀ sin ωt; i = I₀ sin(ωt + φ); RMS V_rms = V₀/√2.",
     "**Fact.** Impedance: pure R → Z = R; L → Z = ωL; C → Z = 1/(ωC); LCR resonance at ω₀ = 1/√(LC).",
     "**Fact.** Average power P = V_rms I_rms cosφ; in pure L or C, average power over a cycle = 0."
   ],
   "confusion": [
-    "❌ treat \"IUPAC classification of elements\" as one blob → ✅ split into: iupac classification of elements.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
     "❌ skip the key fact → ✅ v = v₀ sin ωt; i = i₀ sin(ωt + φ); rms v_rms = v₀/√2.."
   ],
   "bounds": [
-    "Covers only: iupac classification of elements (within Classification of Elements and Periodic Table).",
-    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: v = v₀ sin ωt; i = i₀ sin(ωt + φ); rms v_rms = v₀/√2."
   ],
   "practice": [

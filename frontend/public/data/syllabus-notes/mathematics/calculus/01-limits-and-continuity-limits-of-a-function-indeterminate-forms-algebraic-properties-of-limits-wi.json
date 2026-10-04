@@ -7,30 +7,15 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Limits and continuity: limits of a function, indeterminat… — Calculus, Mathematics (class-11-notes).",
-    "**Tested.** define it · list: limits, continuity: limits of a function, indeterminate forms, algebraic properties of limits · one worked example · one misconception each.",
     "**Fact.** Indeterminate forms 0/0, ∞/∞, 0·∞ → L'Hôpital: lim f/g = lim f'/g' (when applicable).",
     "**Fact.** Standard limits: lim_{x→0} sin x / x = 1; lim_{x→0} (1 + x)^{1/x} = e; lim_{x→∞} (1 + a/x)^x = e^a.",
-    "**Fact.** Continuity: f continuous at c iff lim_{x→c}f(x) = f(c). Types of discontinuity: removable, jump, infinite.",
-    "**Continuity: limits of a function.** one-line definition + one-line exam use.",
-    "**Indeterminate forms.** one-line definition + one-line exam use.",
-    "**Algebraic properties of limits.** one-line definition + one-line exam use.",
-    "**Without proof.** one-line definition + one-line exam use.",
-    "**Basic theorems on limits of algebraic.** one-line definition + one-line exam use.",
-    "**Trigonometric.** one-line definition + one-line exam use.",
-    "**Exponential.** one-line definition + one-line exam use.",
-    "**Logarithmic functions.** one-line definition + one-line exam use."
+    "**Fact.** Continuity: f continuous at c iff lim_{x→c}f(x) = f(c). Types of discontinuity: removable, jump, infinite."
   ],
   "confusion": [
-    "❌ treat \"Limits\" as one blob → ✅ split into: limits, continuity: limits of a function, indeterminate forms.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ answer with no steps → ✅ show each step and box the result.",
     "❌ skip the key fact → ✅ indeterminate forms 0/0, ∞/∞, 0·∞ → l'hôpital: lim f/g = lim f'/g' (when applicable).."
   ],
   "bounds": [
-    "Covers only: limits, continuity: limits of a function, indeterminate forms, algebraic properties of limits (within Calculus).",
-    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
-    "State the limit / condition where a formula or rule stops being valid before applying it.",
     "Limit to remember: indeterminate forms 0/0, ∞/∞, 0·∞ → l'hôpital: lim f/g = lim f'/g' (when applicable)."
   ],
   "practice": [
