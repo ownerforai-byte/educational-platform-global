@@ -89,6 +89,23 @@ export default function SyllabusPage() {
         </Link>
       </div>
 
+      {/* Year-wise additions banner */}
+      <Link
+        href="/syllabus/additions"
+        className="block rounded-3xl border border-violet-500/40 bg-gradient-to-r from-violet-500/10 via-card to-card p-6 shadow-md transition-all hover:shadow-lg"
+      >
+        <div className="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-violet-600 dark:text-violet-400">
+          <Calendar className="h-4 w-4" />
+          <span>Year-wise Syllabus Build-Up</span>
+        </div>
+        <h2 className="mt-1 text-lg sm:text-xl font-extrabold text-foreground">
+          Study the syllabus as it was actually added — year by year
+        </h2>
+        <p className="mt-1 text-xs text-muted-foreground max-w-2xl">
+          All +added / −removed / ~modified items across Physics, Chemistry, Biology, Mathematics, English, and Nepali for every BS year (2073–2082).
+        </p>
+      </Link>
+
       {/* Subjects Grid */}
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
         {[...subjectMap.entries()].map(([slug, data]) => {
@@ -146,6 +163,14 @@ export default function SyllabusPage() {
                 >
                   <span>Theory Syllabus</span>
                   <ArrowRight className="h-3.5 w-3.5" />
+                </Link>
+
+                <Link
+                  href={`/syllabus/${slug}#by-year`}
+                  className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold bg-violet-500/10 text-violet-600 dark:text-violet-400 hover:bg-violet-500 hover:text-white transition-all"
+                >
+                  <Calendar className="h-3 w-3" />
+                  <span>Year-wise</span>
                 </Link>
 
                 {isScience && (

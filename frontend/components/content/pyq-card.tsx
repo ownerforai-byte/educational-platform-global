@@ -78,7 +78,11 @@ export function PyqYearCard({ year, pyq }: { year: number; pyq: PyqYear }) {
           <div className="text-left">
             <p className="text-sm font-semibold">{pyq.title}</p>
             <p className="text-[11px] text-muted-foreground">
-              {pyq.questions.length} questions · {pyq.examSource ?? "NEB"}
+              {pyq.questions.length} question{pyq.questions.length === 1 ? "" : "s"}
+              {pyq.units.length > 0
+                ? ` · ${pyq.units.length} unit${pyq.units.length === 1 ? "" : "s"}`
+                : null}
+              {` · ${pyq.examSource ?? "NEB"}`}
             </p>
           </div>
         </div>

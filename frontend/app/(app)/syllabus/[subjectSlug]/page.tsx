@@ -6,6 +6,30 @@ import { useState } from "react";
 import Link from "next/link";
 import { ArrowRight, BookOpen, Clock, ListOrdered } from "lucide-react";
 import { SYLLABUS, type ClassSyllabus, type SubjectSyllabus } from "@/lib/syllabus";
+import { getSyllabusHistory } from "@/lib/syllabus-history";
+import { History } from "lucide-react";
+import {
+  BIOLOGY_DATA_MAP,
+  PHYSICS_DATA_MAP,
+  CHEMISTRY_DATA_MAP,
+  MATH_DATA_MAP,
+  ENGLISH_DATA_MAP,
+  NEPALI_DATA_MAP,
+  type SubjectKey,
+  type SyllabusSubjectData,
+} from "@/features/syllabus-history/data";
+import { SyllabusPairCompare } from "@/features/syllabus-history/components/version-comparison";
+
+const SUBJECT_DATA_MAP: Partial<Record<SubjectKey, Record<string, SyllabusSubjectData>>> = {
+  biology: BIOLOGY_DATA_MAP, physics: PHYSICS_DATA_MAP, chemistry: CHEMISTRY_DATA_MAP,
+  mathematics: MATH_DATA_MAP, english: ENGLISH_DATA_MAP, nepali: NEPALI_DATA_MAP,
+};
+
+function getSubjectHistoryData(subjectSlug: string): SyllabusSubjectData | null {
+  const subjectKey = subjectSlug as SubjectKey;
+  const map = SUBJECT_DATA_MAP[subjectKey];
+  return map?.["class-11-notes"] ?? map?.["class-12-notes"] ?? null;
+}
 
 const SUBJECT_EMOJI: Record<string, string> = {
   Biology: "🌿", Chemistry: "🧪", English: "📖",
@@ -247,6 +271,59 @@ export default function SubjectSyllabusPage({ params }: { params: Promise<{ subj
           Units in official NEB order · topics in teaching sequence
         </span>
       </div>
+
+      {/* ── Syllabus by year (additions timeline) ── */}
+      {(() => {
+        const history = getSyllabusHistory(subjectSlug);
+        if (!history || history.length === 0) return null;
+        const sorted = [...history].sort((a, b) => b.year - a.year);
+        return (
+          <section id="by-year" className="rounded-xl border border-border/70 bg-card p-5 space-y-3">
+            <h2 className="flex items-center gap-2 text-sm font-semibold uppercase tracking-widest text-muted-foreground">
+              <History className="h-4 w-4" />
+              Syllabus by year — what was added, removed, modified
+            </h2>
+            <div className="flex flex-wrap gap-2">
+              {sorted.map((y) => {
+                const added = y.changes.added.length;
+                const removed = y.changes.removed.length;
+                const modified = y.changes.modified.length;
+                return (
+                  <Link
+                    key={y.year}
+                    href={`/syllabus/${subjectSlug}/year/${y.year}`}
+                    className="group inline-flex items-center gap-2 rounded-lg border border-border bg-muted/30 px-3 py-2 text-sm transition-colors hover:border-primary/50 hover:bg-primary/5"
+                  >
+                    <span className="font-semibold text-foreground">{y.bsYear}</span>
+                    <span className="flex items-center gap-1.5 text-[11px] text-muted-foreground">
+                      {added > 0 && <span className="text-emerald-600 dark:text-emerald-400">+{added}</span>}
+                      {modified > 0 && <span className="text-amber-600 dark:text-amber-400">~{modified}</span>}
+                      {removed > 0 && <span className="text-red-600 dark:text-red-400">−{removed}</span>}
+                    </span>
+                  </Link>
+                );
+              })}
+            </div>
+            <p className="text-xs text-muted-foreground">
+              Pick a year to see the full added / removed / modified topic list for that BS year.
+            </p>
+          </section>
+        );
+      })()}
+
+      {/* ── Version compare (desktop only) ── */}
+      {(() => {
+        const data = getSubjectHistoryData(subjectSlug);
+        if (!data || data.versions.length < 2) return null;
+        return (
+          <section className="hidden md:block rounded-xl border border-border/70 bg-card p-5 space-y-4">
+            <h2 className="text-sm font-semibold uppercase tracking-widest text-muted-foreground">
+              Compare latest two versions
+            </h2>
+            <SyllabusPairCompare data={data} />
+          </section>
+        );
+      })()}
 
       {/* ── The syllabus sheet ── */}
       {activeSubject && activeClassTrack && (

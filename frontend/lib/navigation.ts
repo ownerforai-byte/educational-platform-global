@@ -16,6 +16,7 @@ import type { ComponentType } from "react";
 import {
   Home,
   BookOpen,
+  Calendar,
   FlaskConical,
   Layers,
   GraduationCap,
@@ -42,6 +43,7 @@ import {
   ListTree,
   Bot,
   Languages,
+  History,
 } from "lucide-react";
 
 export type NavIcon = ComponentType<{ className?: string }>;
@@ -76,7 +78,9 @@ const curriculumItems: NavItem[] = [
   { href: "/class-11-notes", label: "Class 11 Hub", icon: BookOpen, badge: "XI", badgeClass: "bg-sky-500/15 text-sky-500" },
   { href: "/class-12-notes", label: "Class 12 Hub", icon: BookOpen, badge: "XII", badgeClass: "bg-violet-500/15 text-violet-500" },
   { href: "/subjects", label: "All 6 Subjects", icon: Layers, badge: "Core", badgeClass: "bg-emerald-500/15 text-emerald-500" },
+  { href: "/pyqs", label: "Previous Year Questions", icon: History, badge: "Solved", badgeClass: "bg-teal-500/15 text-teal-500" },
   { href: "/syllabus", label: "Official CDC Syllabus", icon: GraduationCap },
+  { href: "/syllabus/additions", label: "Syllabus by Year", icon: Calendar, badge: "2073–82", badgeClass: "bg-violet-500/15 text-violet-500" },
   { href: "/practical", label: "Practical Lab Manuals", icon: FlaskConical, badge: "Labs", badgeClass: "bg-emerald-500/15 text-emerald-500" },
   { href: "/legend", label: "Concept Legends & Facts", icon: Lightbulb, badge: "Facts", badgeClass: "bg-amber-500/15 text-amber-500" },
   { href: "/notes", label: "Notes Archive", icon: FileText, badge: "Archive", badgeClass: "bg-blue-500/15 text-blue-500" },

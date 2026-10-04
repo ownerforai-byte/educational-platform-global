@@ -125,6 +125,13 @@ export function buildSiteIndex(): SiteIndexGroup[] {
         meta: "Reference",
       },
       {
+        name: "Syllabus by Year",
+        opening:
+          "Every NEB syllabus addition, removal and revision by BS year (2073–2082) across all six subjects.",
+        href: "/syllabus/additions",
+        meta: "2073–82",
+      },
+      {
         name: "Class 11 Hub",
         opening: "Class 11 in one place — six subjects, all units, notes, labs and derivations.",
         href: "/class-11-notes",
@@ -442,6 +449,13 @@ export function buildSiteIndex(): SiteIndexGroup[] {
           { label: "English Writing", href: "/knowledge/writing" },
           { label: "नेपाली व्याकरण", href: "/knowledge/byakaran" },
         ],
+      },
+      {
+        name: "Previous Year Questions",
+        opening:
+          "The real NEB paper archive for Class 11 — every subject's past questions grouped by exam year, tagged with their syllabus unit, each with a worked solution.",
+        href: "/pyqs",
+        meta: "PYQ archive",
       },
       {
         name: "Practice Quiz Bank",
