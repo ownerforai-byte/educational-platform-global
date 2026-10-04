@@ -28,7 +28,6 @@ import {
 } from "react";
 import { useAuth } from "@/providers/auth-provider";
 import type { SessionUser } from "@/features/auth/types";
-import { isOwnerEmail } from "@/lib/owner";
 import {
   TOKEN_MATRIX,
   type ContentCategory,
@@ -89,8 +88,6 @@ export function useCredit(): CreditContextValue {
   return ctx;
 }
 
-const OWNER_COIN_FLOOR = 999999;
-
 export function CreditProvider({ children }: { children: ReactNode }) {
   const { user, isLoading, refresh } = useAuth();
   const timer = useSessionTimer();
@@ -110,9 +107,8 @@ export function CreditProvider({ children }: { children: ReactNode }) {
 
   const coins = useMemo(() => {
     if (!user) return 0;
-    // OWNER-ONLY ECONOMY: only owner-allowlist emails see the infinite floor.
-    // Everyone else sees their stored balance (which is never billed).
-    if (isOwnerEmail(user.email)) return OWNER_COIN_FLOOR;
+    // BILL-EVERYONE: every account shows its real balance — students must
+    // buy coins, owners draw the same daily pool when their toggle is ON.
     return user.credits ?? 0;
   }, [user]);
 

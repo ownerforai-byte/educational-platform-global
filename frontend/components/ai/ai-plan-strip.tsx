@@ -14,6 +14,9 @@ import { GUEST_DAILY_LIMIT, readGuestCount } from "@/lib/ai/guest-quota";
  * trial for guests, daily credits for signed-in students, or the PRO badge —
  * and links to /credits for the full wallet. Guest usage is mirrored from
  * the shared day-keyed store, so it resets at midnight like the server pool.
+ *
+ * BILL-EVERYONE: students/customers always need coins. Owner emails need
+ * coins when the toggle is ON and are free when it is OFF.
  */
 export function AiPlanStrip() {
   const { user, isLoading } = useSession();
@@ -58,14 +61,16 @@ export function AiPlanStrip() {
   const premium = !!user.premiumStatus;
   const credits = user.credits ?? 0;
   const limit = user.creditsLimit;
-  // OWNER-ONLY ECONOMY: non-owner emails are always free — show "Free" instead
-  // of a coin balance they can never spend.
+  // BILL-EVERYONE: students always show their coin balance (they must buy
+  // coins). Owners show Free only while their toggle is OFF.
   const isOwner = isOwnerEmail(user.email);
+  const ownerFree = isOwner && freeMode;
+  const accountFree = premium ? false : ownerFree;
 
   return (
     <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-border/60 bg-muted/30 px-4 py-3">
       <span className="inline-flex flex-wrap items-center gap-2 text-xs">
-        {freeMode || !isOwner ? (
+        {accountFree ? (
           <span className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 font-bold text-emerald-600 dark:text-emerald-400">
             <Sparkles className="h-3.5 w-3.5" />
             Free
@@ -83,11 +88,11 @@ export function AiPlanStrip() {
           </span>
         )}
         <span className="text-muted-foreground">
-          {freeMode || !isOwner
-            ? "Veer replies are free — no coin billing for your account."
+          {accountFree
+            ? "Coin gate is OFF for owner emails — your replies are free."
             : premium
               ? "No daily cap on replies."
-              : "Daily credits refill at midnight — one reply costs one credit."}
+              : "Daily credits refill at midnight — one reply costs one credit. Buy coins to keep chatting."}
         </span>
       </span>
       <Link

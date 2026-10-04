@@ -562,14 +562,14 @@ export function TutorConsole({
 
   const guestCredits = Math.max(0, MAX_GUEST_MESSAGES - guestCount);
   const isGuestLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
-  // OWNER-ONLY ECONOMY: only owner-allowlist emails are ever billed.
-  // Everyone else (including ADMIN/premium) is always free.
+  // BILL-EVERYONE: students/customers always pay; owners pay only when the
+  // profile toggle is ON. PRO stays unlimited.
+  const isOwner = isOwnerEmail(user?.email);
   const privilegedUser =
-    !isOwnerEmail(user?.email) || !!user?.premiumStatus;
+    !!user?.premiumStatus || (isOwner && freeMode);
   const creditsExhausted =
     isLoggedIn &&
     !privilegedUser &&
-    !freeMode &&
     (poolEmpty ||
       dailyCredits === 0 ||
       (typeof user?.credits === "number" && user.credits <= 0));
@@ -1085,7 +1085,16 @@ export function TutorConsole({
                 {guestCredits > 0 ? "1 free trial message" : "Free trial used"}
               </span>
             )}
-            {isLoggedIn && (
+            {isLoggedIn && privilegedUser && (
+              <span
+                className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 font-semibold"
+                title="Coin gate is OFF for owner emails — your chats are free"
+              >
+                <Coins className="h-3 w-3" />
+                Free mode — no coins needed
+              </span>
+            )}
+            {isLoggedIn && !privilegedUser && (
               <span
                 className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-muted border border-border/60 font-semibold"
                 title={`1 credit per message · daily pool resets to ${DAILY_CREDIT_POOL} at 12:00 AM`}
@@ -1331,9 +1340,9 @@ export function TutorConsole({
               : `Today's ${DAILY_CREDIT_POOL}-credit pool is empty — it resets at 12:00 AM.`}
           </p>
         )}
-        {freeMode && isLoggedIn && !isGuestLimited && (
+        {freeMode && isOwner && isLoggedIn && !isGuestLimited && (
           <p className="mb-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
-            Free mode — the owner turned the coin gate off, so Veer is free for everyone right now.
+            Free mode — the coin gate is OFF for owner emails, so your chats are free. Students still need coins.
           </p>
         )}
         <ChatAttachPreview

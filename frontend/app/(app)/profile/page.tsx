@@ -37,6 +37,7 @@ import { ProgressPanel } from "@/components/progress/progress-panel";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { isOwnerUser } from "@/lib/owner";
 import { getOwnerSettings, updateOwnerSettings } from "@/lib/api/owner";
+import { broadcastCoinGate, parseCoinGateEnabled } from "@/lib/coin-gate";
 import type { ProgressEntry } from "@/types/api";
 
 const roleBadgeConfig: Record<
@@ -116,8 +117,9 @@ const subjectsOverview = [
  *
  * Opens straight into the Progress tab so the profile doubles as the
  * learning-progress view. Includes detailed Scholar Level & XP progression,
- * Academic Curriculum details for NEB Class 11/12, and an instant Coin Gate
- * ON/OFF toggle switch & controller for all owner emails.
+ * Academic Curriculum details for NEB Class 11/12, and the owner-only Coin
+ * Gate toggle: ON → owners pay coins like students; OFF → owners free.
+ * Students/customers ALWAYS pay regardless of the toggle.
  */
 export default function ProfilePage() {
   const router = useRouter();
@@ -164,15 +166,14 @@ export default function ProfilePage() {
 
   const owner = isOwnerUser(user);
 
-  // Load coin gate setting for owner accounts
+  // Load coin gate setting for owner accounts (GLOBAL for all owner emails)
   const loadCoinGate = useCallback(async () => {
     if (!owner) return;
     setIsLoadingGate(true);
     setGateErr(null);
     try {
       const res = await getOwnerSettings();
-      const gate = (res.settings ?? []).find((s) => s.key === "coin_gate_enabled");
-      setCoinGate(!gate || gate.value !== false);
+      setCoinGate(parseCoinGateEnabled(res.settings));
     } catch (err) {
       // Default to true (safe billing fallback)
       setCoinGate((prev) => (prev !== null ? prev : true));
@@ -196,10 +197,12 @@ export default function ProfilePage() {
     try {
       await updateOwnerSettings([{ key: "coin_gate_enabled", value: next }]);
       setCoinGate(next);
+      // Global switch: tell every chat surface immediately (all owner gmails).
+      broadcastCoinGate(next);
       setGateMsg(
         next
-          ? "Coin gate ENABLED — your AI chat messages require 1 platform coin."
-          : "Coin gate DISABLED — your AI chat is now completely FREE."
+          ? "Coin gate ENABLED — ALL owner emails now need coins like students (1 per AI message)."
+          : "Coin gate DISABLED — ALL owner emails are now FREE (no coin ask). Students still need coins."
       );
     } catch (err) {
       setGateErr(err instanceof Error ? err.message : "Failed to toggle coin gate");
@@ -302,16 +305,16 @@ export default function ProfilePage() {
                   {email}
                 </p>
                 <div className="mt-1.5 flex items-center gap-3 text-xs text-muted-foreground flex-wrap">
-                  {owner ? (
+                  {owner && coinGate === false && !user.premiumStatus ? (
+                    <span className="inline-flex items-center gap-1 text-emerald-500">
+                      <Sparkles className="h-3.5 w-3.5" />
+                      <span className="font-semibold">Free mode (gate OFF)</span>
+                    </span>
+                  ) : (
                     <span className="inline-flex items-center gap-1">
                       <Coins className="h-3.5 w-3.5 text-amber-500" />
                       <span className="font-semibold text-foreground">{user.credits ?? 0}</span>
                       {user.creditsLimit !== undefined && ` / ${user.creditsLimit}`} credits
-                    </span>
-                  ) : (
-                    <span className="inline-flex items-center gap-1 text-emerald-500">
-                      <Sparkles className="h-3.5 w-3.5" />
-                      <span className="font-semibold">Free access</span>
                     </span>
                   )}
                   <span className="text-muted-foreground/40">•</span>
@@ -382,7 +385,7 @@ export default function ProfilePage() {
                     </span>
                   </CardTitle>
                   <CardDescription className="text-xs">
-                    Universal switch for all owner emails to toggle AI chat coin gating.
+                    Owner-only switch — ON: owners pay coins like students. OFF: owners free, students still pay.
                   </CardDescription>
                 </div>
               </div>
@@ -421,8 +424,8 @@ export default function ProfilePage() {
           <CardContent className="pt-1 text-xs space-y-2">
             <p className="text-muted-foreground">
               {coinGate
-                ? "Active: Each AI chat message deducts 1 platform credit from your daily credit pool."
-                : "Free Mode: The coin gate is OFF. You can chat with the AI tutor freely without credit deduction."}
+                ? "ON: every owner email pays 1 coin per AI message (locked at 0) — students always pay."
+                : "OFF: every owner email chats FREE with no coin ask — students still pay per message."}
             </p>
             {gateMsg && (
               <div className="rounded-md border border-emerald-500/40 bg-emerald-500/10 px-3 py-1.5 text-xs text-emerald-600 font-medium">
@@ -715,13 +718,13 @@ export default function ProfilePage() {
               </div>
               <div className="flex items-center justify-between gap-4 py-1.5 border-b">
                 <span className="text-muted-foreground">Daily Credits</span>
-                {owner ? (
+                {owner && coinGate === false && !user.premiumStatus ? (
+                  <span className="font-medium text-emerald-500">Free — gate OFF for owners</span>
+                ) : (
                   <span className="font-medium">
                     {user.credits ?? 0}
                     {user.creditsLimit !== undefined && ` / ${user.creditsLimit}`}
                   </span>
-                ) : (
-                  <span className="font-medium text-emerald-500">Free — no coin billing</span>
                 )}
               </div>
               <div className="flex items-center justify-between gap-4 py-1.5 border-b">
@@ -732,15 +735,9 @@ export default function ProfilePage() {
               </div>
               <div className="flex items-center justify-between gap-4 py-1.5">
                 <span className="text-muted-foreground">Daily Reset Rule</span>
-                {owner ? (
-                  <span className="text-xs text-muted-foreground">
-                    4 platform credits replenished at 12:00 AM UTC
-                  </span>
-                ) : (
-                  <span className="text-xs text-emerald-500">
-                    Not applicable — your account is free
-                  </span>
-                )}
+                <span className="text-xs text-muted-foreground">
+                  4 platform credits replenished at 12:00 AM UTC
+                </span>
               </div>
             </CardContent>
           </Card>
@@ -760,9 +757,9 @@ export default function ProfilePage() {
               <CardContent className="space-y-3">
                 <div className="flex items-center justify-between gap-3 p-3 rounded-lg border bg-muted/20">
                   <div>
-                    <p className="text-xs font-semibold">Coin Gate (AI Chat Credit Billing)</p>
+                    <p className="text-xs font-semibold">Coin Gate — owner emails only (AI Chat Credit Billing)</p>
                     <p className="text-[11px] text-muted-foreground">
-                      {coinGate ? "Currently ON: AI chat deducts 1 coin from your daily pool." : "Currently OFF: AI chat is free for you."}
+                      {coinGate ? "Currently ON: owners pay 1 coin per message like students." : "Currently OFF: owners free, no coin ask. Students still pay."}
                     </p>
                   </div>
                   <Button

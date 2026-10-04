@@ -3,9 +3,9 @@ import { apiFetch } from "../api-client";
 /**
  * Public runtime flags from GET /api/config (no auth, no user data).
  *
- * The coin gate is an owner setting: when it is OFF, AI chat is free for
- * everyone. The chat surfaces read it so they lock the composer on a zero
- * balance only while the gate is actually ON.
+ * The coin gate is an owner-only toggle: when it is OFF, AI chat is free for
+ * owner emails (students still pay). Chat surfaces read it so owner accounts
+ * lock the composer on a zero balance only while the gate is actually ON.
  */
 export interface PublicConfig {
   /** True when AI chat bills credits (platform default). */
