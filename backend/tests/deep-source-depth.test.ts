@@ -221,6 +221,9 @@ describe("coverage grading (strong / weak / none — never faked)", () => {
     ["mathematics", "explain matrices and determinants"],
     ["mathematics", "explain the derivative of a function"],
     ["mathematics", "explain vectors and their resolution"],
+    // Restored class-12 authored records (see the not-taught list below).
+    ["physics", "explain the photoelectric effect"],
+    ["chemistry", "explain aldol condensation"],
   ];
 
   /**
@@ -261,10 +264,16 @@ describe("coverage grading (strong / weak / none — never faked)", () => {
     // must not be presented as the platform's coverage of it — the alternative
     // was a biology record citing binomial NOMENCLATURE as coverage of the
     // binomial THEOREM. See `gradeStrength`.
+    //
+    // The photoelectric effect and aldol condensation moved to COVERED on
+    // 2026-10-04: the restored class-12 corpus carries authored notes that
+    // name them ("Photoelectric Effect", "Name reactions: Aldol condensation,
+    // Cannizzaro reaction"), so the honest grade there is STRONG. The binomial
+    // theorem stayed — the class-12 probability note NAMES "binomial" but its
+    // only "theorem" is the shape word in "Key definitions and theorems related
+    // to binomial distribution", which is a passing mention, not coverage.
     for (const question of [
-      "explain the photoelectric effect",
       "describe the mechanism of SN1 and SN2 reactions",
-      "explain aldol condensation",
       "explain simple harmonic motion",
       "state the binomial theorem",
       "explain conic sections parabola",

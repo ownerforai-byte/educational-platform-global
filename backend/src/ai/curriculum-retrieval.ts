@@ -397,6 +397,16 @@ export const OWNER_SLOT_QUOTA = (() => {
  * its body teaches it — and that is the cheaper error: WEAK still answers
  * completely, from established knowledge, while a false STRONG hands the
  * student an irrelevant record as the spine of the answer.
+ *
+ * BREADTH EXCLUDES A BODY-ONLY SHAPE WORD (2026-10-04). Counting every matched
+ * word let an incidental mention close the ratio: "state the binomial theorem"
+ * matched "binomial" in the title of the class-12 probability note and the word
+ * "theorem" in its line "Key definitions and theorems related to binomial
+ * distribution", which read as 2/2 and graded the platform STRONG on a theorem
+ * it does not teach. A word the corpus repeats everywhere describes the shape of
+ * a question, not its subject (`isContentToken`), so a shape word found ONLY in
+ * a record's body is a passing mention — exactly the WEAK case — while the same
+ * word in the record's own title/slug/unit is the record naming the concept.
  */
 export function gradeStrength(
   hit: CurriculumHit,
@@ -406,7 +416,13 @@ export function gradeStrength(
   const allContent = target.every((term) => hit.matched.includes(term));
   if (!allContent) return "weak";
 
-  const questionRatio = hit.matched.length / Math.max(1, questionTokenCount);
+  // A matched word the record's own fields carry, or that is content-bearing,
+  // is evidence the record is about the question; a shape word buried in the
+  // body is not.
+  const substantiveMatches = hit.matched.filter(
+    (m) => hit.positionTokens.includes(m) || target.includes(m),
+  ).length;
+  const questionRatio = substantiveMatches / Math.max(1, questionTokenCount);
   const namesConcept = hit.positionTokens.some((t) => target.includes(t));
   const unitTokens = new Set(tokenize(hit.entry.unit.replace(/-/g, " ")).map(stem));
   const unitIsConcept = target.some((t) => unitTokens.has(t));
@@ -416,7 +432,7 @@ export function gradeStrength(
   // reached at a lower ratio because a chapter is not named after one idea.
   if (hit.entry.dropIn) return namesTheConcept ? "strong" : "weak";
 
-  return namesConcept && (questionRatio >= 0.6 || hit.matched.length >= 2 || unitIsConcept)
+  return namesConcept && (questionRatio >= 0.6 || substantiveMatches >= 2 || unitIsConcept)
     ? "strong"
     : "weak";
 }
