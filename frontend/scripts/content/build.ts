@@ -26,6 +26,7 @@ import { pathToFileURL } from "node:url";
 import { CLASS_DIR_TO_SLUG, ConceptNoteSchema } from "../../lib/content/schema/concept";
 import { ManifestSchema, contentHasMcqs } from "../../lib/content/schema/manifest";
 import { isPlaceholderContent } from "../../lib/content/placeholders";
+import { stripGeneratorJunk } from "../../lib/content/generator-junk";
 
 /** Works from the repo root AND from the frontend workspace. */
 function findRepoRoot(): string {
@@ -155,7 +156,11 @@ async function fromContentSrc(classSlug: string, subject: string, unit: string):
 /** Writes one file, or — in `--check` mode — records the expected bytes. */
 const expected = new Map<string, string>();
 function emit(outRoot: string, rel: string, data: unknown) {
-  const body = JSON.stringify(data, null, 2); // NO trailing newline — legacy parity
+  // Generator frames ("**X:** Class 11 concept.", "Core point for X.") are never
+  // knowledge: the backend strips them for the tutor, and the topic workspace
+  // must not display them either. Both writers of this tree go through here, so
+  // the working write and `--check` stay byte-identical.
+  const body = JSON.stringify(stripGeneratorJunk(data), null, 2); // NO trailing newline — legacy parity
   if (CHECK) {
     expected.set(rel.replaceAll(path.sep, "/"), body);
     return;

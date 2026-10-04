@@ -46,7 +46,6 @@
     "Example 5: Find dimensions of $\\\frac{a}{b}$ in $P = \\\frac{a - b t^2}{x}$, where P = pressure, x = distance, t = time. Numerator must be $[ML^{-1}T^{-2}][L] = [MT^{-2}]$; so $[a] = [MT^{-2}]$ and $[b] = [MT^{-4}]$ → $\\\frac{a}{b} = [T^2]$."
   ],
   "practiceQuestions": [
-    "Q1. Define dimensional formula and dimensional equation with one example each.",
     "Q2. State the principle of homogeneity of dimensions and use it to test the equation $v = u - at$.",
     "Q3. Assuming the period $T$ of a simple pendulum depends on its length $l$ and acceleration due to gravity $g$, derive the relation $T = k\\sqrt{l/g}$ dimensionally.",
     "Q4. Convert 1 newton into dyne using dimensional analysis.",
