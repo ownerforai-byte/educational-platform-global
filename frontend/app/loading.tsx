@@ -3,7 +3,10 @@ import { Skeleton } from "@/components/ui/skeleton";
 export default function Loading() {
   return (
     <div className="flex min-h-screen flex-col">
-      <header className="sticky top-0 z-40 border-b border-border bg-background/95 backdrop-blur">
+      {/* Solid, like the real bar in AppShell — a translucent loading skeleton
+          is still the nav bar for the second it is on screen, and it leaked the
+          same way. */}
+      <header className="sticky top-0 z-40 border-b border-border bg-background">
         <div className="flex h-14 items-center justify-between px-4 md:px-6">
           <Skeleton className="h-6 w-40" />
           <div className="flex items-center gap-2">

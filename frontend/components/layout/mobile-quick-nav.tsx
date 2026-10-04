@@ -32,10 +32,14 @@ export function MobileQuickNav() {
       ? pathname === "/" || pathname === "/home"
       : pathname.startsWith(href);
 
+  /* Solid for the same reason the bar above it is: /90 let 10% of the
+     scrolling page through, which was the worst of the three slabs — this
+     strip sits directly under the header, so its leak reads as the nav bar
+     itself bleeding. */
   return (
     <nav
       aria-label="Quick navigation"
-      className="no-scrollbar lg:hidden overflow-x-auto border-t border-border/40 bg-background/90 backdrop-blur-xl"
+      className="no-scrollbar lg:hidden overflow-x-auto border-t border-border/40 bg-background"
     >
       <div className="flex items-center gap-1.5 px-3 py-2">
         {QUICK_LINKS.map((link) => (

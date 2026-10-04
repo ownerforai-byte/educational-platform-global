@@ -80,13 +80,17 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
           setIsHovered(false);
           setIsClickedOpen(false);
         }}
-        /* The background is near-opaque on purpose: at /70 the bar is a
-           translucent panel, so whatever scrolls under it stayed legible
-           through the blur — the footer's own text ran visibly through the
-           nav at the bottom of every page. A blur cannot hide text that is
-           30% visible behind it; opacity has to do that. Kept at /95 rather
-           than solid so the tiniest hint of the nebula backdrop survives. */
-        className={`pt-safe-top sticky top-0 z-40 border-b border-border/40 bg-background/95 backdrop-blur-xl transition-transform duration-300 ease-in-out ${
+        /* SOLID, not translucent — owner report 2026-10-04: "while scrolling it
+           leaks a little". This is the third round of the same leak: /70 let the
+           footer read straight through the bar, /95 still left a 5% ghost of
+           whatever scrolled beneath it, and a 24px blur only smears that ghost
+           — the eye catches it anyway because it MOVES while you scroll. Only
+           opacity hides what is behind; a blur just defocuses it. So the layer
+           is opaque from the first screen all the way down to the footer, and
+           backdrop-blur goes with it: it can only filter what this opaque
+           background already covers. The price is the nebula hint, and it is
+           worth paying to never show content through the nav. */
+        className={`pt-safe-top sticky top-0 z-40 border-b border-border/40 bg-background transition-transform duration-300 ease-in-out ${
           navVisible ? "translate-y-0 shadow-md" : "-translate-y-full"
         }`}
       >
