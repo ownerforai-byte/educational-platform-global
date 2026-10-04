@@ -202,12 +202,60 @@ export interface ProgressTopic {
   };
 }
 
-export interface ProgressEntry {
+/**
+ * State of one syllabus topic in the student's journey.
+ *  - `not_started`  → no row yet (the topic has never been opened)
+ *  - `in_progress`  → opened at least once, not completed
+ *  - `completed`    → explicitly marked complete
+ */
+export type ProgressStatus = "not_started" | "in_progress" | "completed";
+
+/** Server-side status of a stored journey row (`public.user_journey`). */
+export type JourneyStatus = "started" | "completed";
+
+/**
+ * Status accepted by `POST /api/progress` — the row status plus the explicit
+ * un-complete intent, which is the only value allowed to clear `completedAt`.
+ */
+export type JourneyTrackStatus = "started" | "completed" | "not_completed";
+
+/**
+ * One tracked topic of the learning journey, keyed by the syllabus path
+ * (`frontend/lib/syllabus.ts`). Returned by `GET /api/progress` — only topics
+ * the user actually touched; the full 696-topic catalogue is merged back in
+ * client-side by `lib/progress/catalog.ts`.
+ */
+export interface JourneyRow {
   id: string;
+  classSlug: string;
+  subjectSlug: string;
+  unitSlug: string;
+  topicSlug: string;
+  status: JourneyStatus;
+  startedAt: string | null;
+  lastViewedAt: string | null;
+  viewCount: number;
+  completedAt: string | null;
+  updatedAt: string;
+}
+
+export interface ProgressEntry {
+  /** Row id, or `new:<path>` for a topic with no journey row yet. */
+  id: string;
+  /** Syllabus path id: `classSlug/subjectSlug/unitSlug/topicSlug`. */
   topicId: string;
   completed: boolean;
   completedAt: string | null;
   updatedAt: string;
+  /** Journey state; `not_started` when the entry is still untracked. */
+  status?: ProgressStatus;
+  startedAt?: string | null;
+  lastViewedAt?: string | null;
+  viewCount?: number;
+  classSlug?: string;
+  subjectSlug?: string;
+  unitSlug?: string;
+  topicSlug?: string;
   topic?: ProgressTopic;
 }
 

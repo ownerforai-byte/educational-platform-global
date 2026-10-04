@@ -426,6 +426,234 @@ describe("POST /api/progress validation", () => {
 });
 
 // ───────────────────────────────────────────────────────────────────────────
+// progress.ts — syllabus journey (the data source behind "My Progress")
+// ───────────────────────────────────────────────────────────────────────────
+describe("GET /api/progress journey", () => {
+  it("returns the session user's rows only, mapped camelCase", async () => {
+    const { request } = await mount(progressRouter, "/api/progress");
+    h.mockRole("STUDENT");
+    h.enqueue("user_journey", {
+      data: [
+        {
+          id: "j1",
+          class_slug: "class-11-notes",
+          subject_slug: "physics",
+          unit_slug: "kinematics",
+          topic_slug: "equations-of-motion",
+          status: "completed",
+          started_at: "2026-10-01T00:00:00Z",
+          last_viewed_at: "2026-10-02T00:00:00Z",
+          view_count: 4,
+          completed_at: "2026-10-02T00:00:00Z",
+          updated_at: "2026-10-02T00:00:00Z",
+        },
+      ],
+      error: null,
+    });
+
+    const res = await request("GET", "/api/progress");
+
+    expect(res.status).toBe(200);
+    expect(res.body).toEqual([
+      {
+        id: "j1",
+        classSlug: "class-11-notes",
+        subjectSlug: "physics",
+        unitSlug: "kinematics",
+        topicSlug: "equations-of-motion",
+        status: "completed",
+        startedAt: "2026-10-01T00:00:00Z",
+        lastViewedAt: "2026-10-02T00:00:00Z",
+        viewCount: 4,
+        completedAt: "2026-10-02T00:00:00Z",
+        updatedAt: "2026-10-02T00:00:00Z",
+      },
+    ]);
+
+    // Owner scoping: the read is filtered by the session user's id.
+    expect(
+      h.opsFor("user_journey").some((c) => c.method === "eq" && c.args[0] === "user_id" && c.args[1] === "user-1")
+    ).toBe(true);
+  });
+
+  it("401s without a token", async () => {
+    const { request } = await mount(progressRouter, "/api/progress");
+    const res = await request("GET", "/api/progress", undefined, "");
+    expect(res.status).toBe(401);
+  });
+});
+
+describe("POST /api/progress journey", () => {
+  const topic = {
+    classSlug: "class-11-notes",
+    subjectSlug: "physics",
+    unitSlug: "kinematics",
+    topicSlug: "equations-of-motion",
+  };
+
+  it("starts the journey: first touch inserts a started row", async () => {
+    const { request } = await mount(progressRouter, "/api/progress");
+    h.mockRole("STUDENT");
+    // 1st read: no existing row. 2nd (single): the inserted row.
+    h.enqueue("user_journey", { data: null, error: null });
+    h.enqueue("user_journey", {
+      data: [
+        {
+          id: "j1",
+          ...Object.fromEntries(
+            Object.entries(topic).map(([k, v]) => [k.replace(/([A-Z])/g, "_$1").toLowerCase(), v])
+          ),
+          status: "started",
+          started_at: "2026-10-04T00:00:00Z",
+          last_viewed_at: "2026-10-04T00:00:00Z",
+          view_count: 1,
+          completed_at: null,
+          updated_at: "2026-10-04T00:00:00Z",
+        },
+      ],
+      error: null,
+    });
+
+    const res = await request("POST", "/api/progress", topic);
+
+    expect(res.status).toBe(200);
+    expect(res.body).toMatchObject({ status: "started", viewCount: 1, completedAt: null });
+    const inserts = h.opsFor("user_journey").filter((c) => c.method === "insert");
+    expect(inserts).toHaveLength(1);
+    expect(inserts[0].args[0]).toMatchObject({
+      user_id: "user-1",
+      class_slug: "class-11-notes",
+      subject_slug: "physics",
+      unit_slug: "kinematics",
+      topic_slug: "equations-of-motion",
+      status: "started",
+      view_count: 1,
+    });
+  });
+
+  it("marks a topic completed on the first call", async () => {
+    const { request } = await mount(progressRouter, "/api/progress");
+    h.mockRole("STUDENT");
+    h.enqueue("user_journey", { data: null, error: null });
+    h.enqueue("user_journey", {
+      data: [
+        {
+          id: "j2",
+          ...Object.fromEntries(
+            Object.entries(topic).map(([k, v]) => [k.replace(/([A-Z])/g, "_$1").toLowerCase(), v])
+          ),
+          status: "completed",
+          started_at: "2026-10-04T00:00:00Z",
+          last_viewed_at: "2026-10-04T00:00:00Z",
+          view_count: 1,
+          completed_at: "2026-10-04T00:00:00Z",
+          updated_at: "2026-10-04T00:00:00Z",
+        },
+      ],
+      error: null,
+    });
+
+    const res = await request("POST", "/api/progress", { ...topic, status: "completed" });
+
+    expect(res.status).toBe(200);
+    expect(res.body).toMatchObject({ status: "completed" });
+    const inserts = h.opsFor("user_journey").filter((c) => c.method === "insert");
+    expect(inserts[0].args[0].completed_at).toBeTruthy();
+  });
+
+  it("never downgrades a completed topic back to started", async () => {
+    const { request } = await mount(progressRouter, "/api/progress");
+    h.mockRole("STUDENT");
+    // Existing row: already completed.
+    h.enqueue("user_journey", {
+      data: [{ id: "j3", status: "completed", completed_at: "2026-10-01T00:00:00Z", view_count: 7 }],
+      error: null,
+    });
+    h.enqueue("user_journey", {
+      data: [
+        {
+          id: "j3",
+          ...Object.fromEntries(
+            Object.entries(topic).map(([k, v]) => [k.replace(/([A-Z])/g, "_$1").toLowerCase(), v])
+          ),
+          status: "completed",
+          started_at: "2026-10-01T00:00:00Z",
+          last_viewed_at: "2026-10-04T00:00:00Z",
+          view_count: 8,
+          completed_at: "2026-10-01T00:00:00Z",
+          updated_at: "2026-10-04T00:00:00Z",
+        },
+      ],
+      error: null,
+    });
+
+    const res = await request("POST", "/api/progress", { ...topic, status: "started" });
+
+    expect(res.status).toBe(200);
+    expect(res.body.status).toBe("completed");
+    expect(res.body.completedAt).toBe("2026-10-01T00:00:00Z");
+    expect(res.body.viewCount).toBe(8);
+
+    const updates = h.opsFor("user_journey").filter((c) => c.method === "update");
+    expect(updates).toHaveLength(1);
+    expect(updates[0].args[0]).toMatchObject({ status: "completed", view_count: 8 });
+    // Nothing was written before the owner-scoped read completed.
+    expect(h.opsFor("user_journey").filter((c) => c.method === "insert")).toHaveLength(0);
+  });
+
+  it("an explicit un-complete DOES clear the completion", async () => {
+    const { request } = await mount(progressRouter, "/api/progress");
+    h.mockRole("STUDENT");
+    h.enqueue("user_journey", {
+      data: [{ id: "j4", status: "completed", completed_at: "2026-10-01T00:00:00Z", view_count: 2 }],
+      error: null,
+    });
+    h.enqueue("user_journey", {
+      data: [
+        {
+          id: "j4",
+          ...Object.fromEntries(
+            Object.entries(topic).map(([k, v]) => [k.replace(/([A-Z])/g, "_$1").toLowerCase(), v])
+          ),
+          status: "started",
+          started_at: "2026-10-01T00:00:00Z",
+          last_viewed_at: "2026-10-04T00:00:00Z",
+          view_count: 3,
+          completed_at: null,
+          updated_at: "2026-10-04T00:00:00Z",
+        },
+      ],
+      error: null,
+    });
+
+    const res = await request("POST", "/api/progress", { ...topic, status: "not_completed" });
+
+    expect(res.status).toBe(200);
+    expect(res.body.status).toBe("started");
+    expect(res.body.completedAt).toBeNull();
+
+    const updates = h.opsFor("user_journey").filter((c) => c.method === "update");
+    expect(updates).toHaveLength(1);
+    expect(updates[0].args[0]).toMatchObject({ status: "started", completed_at: null });
+  });
+
+  it("400s on an empty slug, an unknown status, or a partial payload", async () => {
+    const { request } = await mount(progressRouter, "/api/progress");
+    h.mockRole("STUDENT");
+
+    expect((await request("POST", "/api/progress", { ...topic, classSlug: "" })).status).toBe(400);
+    expect((await request("POST", "/api/progress", { ...topic, status: "done" })).status).toBe(400);
+    expect(
+      (await request("POST", "/api/progress", { classSlug: "class-11-notes" })).status
+    ).toBe(400);
+    expect((await request("POST", "/api/progress", { ...topic, role: "OWNER" })).status).toBe(400);
+
+    // Nothing reached the table on any rejected payload.
+    expect(h.opsFor("user_journey").filter((c) => c.method !== "eq")).toHaveLength(0);
+  });
+});
+
+// ───────────────────────────────────────────────────────────────────────────
 // bookmarks.ts
 // ───────────────────────────────────────────────────────────────────────────
 describe("POST /api/bookmarks idempotency", () => {

@@ -9,6 +9,7 @@ import { SubjectSectionNav } from "./subject-section-nav";
 import { getUnitTopic } from "../queries";
 import { ContentTabs } from "@/components/content/content-tabs";
 import { TopicVerticalNotes } from "@/components/content/topic-vertical-notes";
+import { TopicProgressControls } from "@/components/progress/topic-progress-controls";
 import { ChevronRight, ArrowLeft } from "lucide-react";
 
 export async function TopicDetailView({
@@ -87,6 +88,15 @@ export async function TopicDetailView({
         </div>
         <h1 className="text-3xl font-extrabold tracking-tight text-foreground">{topic.title}</h1>
       </div>
+
+      {/* Active journey tracking: opening this topic records a "started" row
+          for the signed-in student, who can flip it to completed from here. */}
+      <TopicProgressControls
+        classSlug={classSlug}
+        subjectSlug={subjectSlug}
+        unitSlug={unit.id}
+        topicSlug={topic.slug}
+      />
 
       {/* Explicit Coming Soon state when no authored notes exist yet */}
       {!hasNotes && (
