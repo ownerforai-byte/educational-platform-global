@@ -46,6 +46,7 @@
  * Live presence (`node scripts/content-ledger-live.mjs`) then proves the
  * deployed site serves every registered entry, byte for byte.
  */
+import { execFileSync } from "node:child_process";
 import { createHash } from "node:crypto";
 import fs from "node:fs";
 import path from "node:path";
@@ -281,7 +282,36 @@ function addTo(totals: Totals, entry: Entry): void {
 }
 
 const rel = (file: string) => path.relative(REPO, file).split(path.sep).join("/");
-const shaOf = (raw: Buffer) => createHash("sha256").update(raw).digest("hex");
+
+/**
+ * Content view of a file: CRLF folded to LF before it is measured or hashed.
+ * The registry records knowledge, not the host OS's newlines — this repo is
+ * authored on Windows and gated on Linux, where the same committed file checks
+ * out with different line endings. LF-only content hashes identically either way.
+ */
+function contentOf(raw: Buffer): { text: string; bytes: number } {
+  const text = raw.toString("utf-8").replace(/\r\n/g, "\n");
+  return { text, bytes: Buffer.byteLength(text, "utf-8") };
+}
+
+const shaOf = (text: string) => createHash("sha256").update(text, "utf-8").digest("hex");
+
+/**
+ * Data sources are read from HEAD: they are shipped artifacts, and the working
+ * copy may legitimately hold another agent's uncommitted regeneration. The
+ * registry must describe what the commit and the deploy actually serve. Falls
+ * back to the working file when git or the commit entry is unavailable.
+ */
+function committedBytes(file: string): Buffer {
+  try {
+    return execFileSync("git", ["show", `HEAD:${rel(file)}`], {
+      cwd: REPO,
+      maxBuffer: 64 * 1024 * 1024,
+    });
+  } catch {
+    return fs.readFileSync(file);
+  }
+}
 
 /** Every shipped entry, derived from the manifests — the site's own claim set. */
 function subjectsScan(): Record<string, SubjectNode> {
@@ -301,9 +331,10 @@ function subjectsScan(): Record<string, SubjectNode> {
         continue;
       }
       const raw = fs.readFileSync(file);
+      const { text, bytes } = contentOf(raw);
       let json: unknown;
       try {
-        json = JSON.parse(raw.toString("utf-8"));
+        json = JSON.parse(text);
       } catch {
         PROBLEMS.push(`${subject}/${claim.unitSlug}/${claim.filename}: unparsable JSON`);
         continue;
@@ -315,8 +346,8 @@ function subjectsScan(): Record<string, SubjectNode> {
       const entry: Entry = {
         topicSlug: claim.topicSlug,
         filename: claim.filename,
-        bytes: raw.length,
-        sha256: shaOf(raw),
+        bytes,
+        sha256: shaOf(text),
         status: statusOf(json),
       };
       unit.entries.push(entry);
@@ -366,9 +397,10 @@ function orphansScan(): Orphans {
         }
         if (claimed.has(key)) continue;
         const raw = fs.readFileSync(path.join(current, dirent.name));
+        const { text, bytes } = contentOf(raw);
         let json: unknown;
         try {
-          json = JSON.parse(raw.toString("utf-8"));
+          json = JSON.parse(text);
         } catch {
           PROBLEMS.push(`${subject}/${key}: unparsable JSON`);
           continue;
@@ -377,8 +409,8 @@ function orphansScan(): Orphans {
         entries.push({
           topicSlug: typeof data.topicSlug === "string" ? data.topicSlug : "",
           filename: key,
-          bytes: raw.length,
-          sha256: shaOf(raw),
+          bytes,
+          sha256: shaOf(text),
           status: statusOf(json),
         });
       }
@@ -417,10 +449,11 @@ function orphansScan(): Orphans {
  */
 function supplementaryScan(): Supplementary {
   const raw = fs.readFileSync(SUPPLEMENTARY);
+  const { text, bytes } = contentOf(raw);
   const groups: Record<string, SupplementaryGroup> = {};
   const totals = emptyClaimTotals();
 
-  const parsed: unknown = JSON.parse(raw.toString("utf-8"));
+  const parsed: unknown = JSON.parse(text);
   if (!Array.isArray(parsed)) {
     PROBLEMS.push(`${rel(SUPPLEMENTARY)}: expected an array of { path, data } entries`);
   } else {
@@ -452,8 +485,8 @@ function supplementaryScan(): Supplementary {
   return {
     source: "frontend/public/data/ravikishan/manifest.json",
     note: "second content family; entries carry their payload inline (readers use data, not the path)",
-    bytes: raw.length,
-    sha256: shaOf(raw),
+    bytes,
+    sha256: shaOf(text),
     totals,
     groups: Object.fromEntries(Object.entries(groups).sort(([a], [b]) => a.localeCompare(b))),
   };
@@ -468,10 +501,11 @@ function sourcesScan(): SourceFile[] {
       PROBLEMS.push(`${rel(file)}: registered data source is NOT shipped`);
       continue;
     }
-    const raw = fs.readFileSync(file);
+    const raw = committedBytes(file);
+    const { text, bytes } = contentOf(raw);
     let json: unknown;
     try {
-      json = JSON.parse(raw.toString("utf-8"));
+      json = JSON.parse(text);
     } catch {
       PROBLEMS.push(`${rel(file)}: unparsable JSON`);
       continue;
@@ -491,8 +525,8 @@ function sourcesScan(): SourceFile[] {
     out.push({
       path: rel(file),
       kind: isArray ? "array" : "map",
-      bytes: raw.length,
-      sha256: shaOf(raw),
+      bytes,
+      sha256: shaOf(text),
       claims: claims.length,
       authored,
       template,

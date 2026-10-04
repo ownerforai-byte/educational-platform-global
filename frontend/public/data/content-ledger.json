@@ -6940,7 +6940,7 @@
       "entries": 147,
       "authored": 146,
       "template": 1,
-      "bytes": 1663616
+      "bytes": 1644785
     },
     "subjects": {
       "biology": {
@@ -6948,112 +6948,112 @@
           "entries": 15,
           "authored": 15,
           "template": 0,
-          "bytes": 127252
+          "bytes": 125566
         },
         "entries": [
           {
             "topicSlug": "cell-structure-and-organelles",
             "filename": "03-cell-structure-and-organelles.json",
-            "bytes": 4723,
-            "sha256": "c546e1444ab0541657408adf46ef0e77e93a007bb6a5234046b930a6e2b259d6",
+            "bytes": 4639,
+            "sha256": "902e121d6236deed8db89fc5d8ffa86da9917df507045909b7be5ea7ca6a144e",
             "status": "authored"
           },
           {
             "topicSlug": "genetics-inheritance-and-mendelian-laws",
             "filename": "04-genetics-inheritance-and-mendelian-laws.json",
-            "bytes": 3855,
-            "sha256": "304cdc606f87905fb83e5531666d1f00df59564ec7b7c09240c2c30914b8782d",
+            "bytes": 3783,
+            "sha256": "c28efc9f65bd4fd980959c9a585d9bccd8416a8713758e0107deded79b720411",
             "status": "authored"
           },
           {
             "topicSlug": "evolution-and-natural-selection",
             "filename": "05-evolution-and-natural-selection.json",
-            "bytes": 4101,
-            "sha256": "a28aa014d0e1b91f947228f022b308adb42e444807359c996f8e2cd72a890757",
+            "bytes": 4028,
+            "sha256": "ae4610f68e70b737f6462e04c3b7180b2f456c0505f6f1b5f5e470346b7b7151",
             "status": "authored"
           },
           {
             "topicSlug": "human-physiology-and-homeostasis",
             "filename": "06-human-physiology-and-homeostasis.json",
-            "bytes": 3762,
-            "sha256": "87f0c4c0daa10d89c3b2a05d56074f4be59467d148b47dc24370669da437081c",
+            "bytes": 3693,
+            "sha256": "c437b3257770b76ccfc20259d19d870e796dd80e34d889c6258331cc73cf10d5",
             "status": "authored"
           },
           {
             "topicSlug": "biotechnology-applications-and-ethical-considerations",
             "filename": "07-biotechnology-applications-and-ethical-considerations.json",
-            "bytes": 3953,
-            "sha256": "023113603735348a264b32edeaca43fa71dc3aa38287c5a317746f67b33be9e2",
+            "bytes": 3882,
+            "sha256": "b478030a2570b087425b8b3e5234e586d271f038af13a3bb097b947d72a220e5",
             "status": "authored"
           },
           {
             "topicSlug": "environmental-science-and-sustainability",
             "filename": "08-environmental-science-and-sustainability.json",
-            "bytes": 3790,
-            "sha256": "879c6584ba9de5d5b1ef45774c4a6315764afce33ba24434210e6cc9a2805d25",
+            "bytes": 3719,
+            "sha256": "c23c023493059b2604c644208b9fe6dea2888e2ee33c20d1ab733328ba43a3b4",
             "status": "authored"
           },
           {
             "topicSlug": "ecology-and-ecosystems",
             "filename": "09-ecology-and-ecosystems.json",
-            "bytes": 4090,
-            "sha256": "32bccf58f74ddc1eb54ce7eccf9fe061132e828a0f7bc6a579c63f82609ab30f",
+            "bytes": 4018,
+            "sha256": "a88596f4a1db2e4413ca7b22b412c5cc17af5c49a1ad1bba728295560117a6b8",
             "status": "authored"
           },
           {
             "topicSlug": "biomolecules-introduction-and-functions-of-carbohydrates-proteins-lipids-nucleic-acids-minerals-enzymes-and-water",
             "filename": "biomolecules-and-cell-biology/01-biomolecules-introduction-and-functions-of-carbohydrates-proteins-lipids-nucleic-acids-minerals-enzymes-and-water.json",
-            "bytes": 13242,
-            "sha256": "99a42e034b0dcddd97501160cc574a273586e1b8da11e1bee39330dfdf69a2db",
+            "bytes": 13084,
+            "sha256": "b3d8acc3e0d7914b11dc2a353317960807eea48320e3e282ffeeb0c4e3ba1d12",
             "status": "authored"
           },
           {
             "topicSlug": "applications-in-agriculture-and-medicine",
             "filename": "biotechnology-applications/08-applications-in-agriculture-and-medicine.json",
-            "bytes": 13010,
-            "sha256": "194ff3bf31d3f7427d7b13d6579a9d701a5e5dc861916ab899066daa4a299527",
+            "bytes": 12866,
+            "sha256": "3412457c0e4e9d03a1ddd14be04d3350d914fedb677cdca281b8c8690b34df9c",
             "status": "authored"
           },
           {
             "topicSlug": "principles-of-biotechnology",
             "filename": "biotechnology-principles/07-principles-of-biotechnology.json",
-            "bytes": 12268,
-            "sha256": "d35b2ea7d4fc30c297c011938b1fd76be17eae79f3a3d978e49cf0200833f8a0",
+            "bytes": 12120,
+            "sha256": "c7bcec088d342701f51b09c30d29c437ae9f91589a327e4350b6943e00aee4db",
             "status": "authored"
           },
           {
             "topicSlug": "air-water-and-solid-waste-pollution",
             "filename": "environmental-issues/09-air-water-and-solid-waste-pollution.json",
-            "bytes": 13206,
-            "sha256": "3b005a50f39b8de8b704f1b56001501bd2a71b76ec1923be269a87abd1ae208a",
+            "bytes": 13055,
+            "sha256": "33f2b3205ba75dd2a42f2c2d64d57230ab688e010c7616aedb6e95cbb8e7532c",
             "status": "authored"
           },
           {
             "topicSlug": "mendels-laws-of-inheritance",
             "filename": "heredity-and-evolution/03-mendels-laws-of-inheritance.json",
-            "bytes": 11277,
-            "sha256": "24285d9573f04a7e89b536a1c9f5d1c9eff16fdfc0ffc06032241fc6b7024f7b",
+            "bytes": 11137,
+            "sha256": "819493d49a675ca8a8f384a4818799ff688aef95ee3924141f0949839c776d5e",
             "status": "authored"
           },
           {
             "topicSlug": "incomplete-dominance-and-codominance",
             "filename": "heredity-and-evolution/04-incomplete-dominance-and-codominance.json",
-            "bytes": 11867,
-            "sha256": "36090ea4945c83db0b36ac6f81149988793eabfe3cc5e8caca6db6e2c7019665",
+            "bytes": 11730,
+            "sha256": "cae61091792e514068b16ae07a44af9a57fa67ab1c0836f0cf52edce17a59be0",
             "status": "authored"
           },
           {
             "topicSlug": "pathogens-and-diseases",
             "filename": "human-health-and-diseases/05-pathogens-and-diseases.json",
-            "bytes": 12079,
-            "sha256": "5751d7cdf031ea299f81a9938b150f6b0cfa87c266f1e4542810f476a5d2e915",
+            "bytes": 11935,
+            "sha256": "4283a5cd616dcd11feedc01d654a2fd7221bd1a01bea207df43e5bef1edca9fc",
             "status": "authored"
           },
           {
             "topicSlug": "immune-system-and-immunity",
             "filename": "human-health-and-diseases/06-immune-system-and-immunity.json",
-            "bytes": 12029,
-            "sha256": "96f9efd970ccc7b2c82c239c58e4e9fc48685ba281746789a39ddf9d103afa05",
+            "bytes": 11877,
+            "sha256": "c9723bc553c044740baf34e5438df857aca7c004159f34b42b2c1ac124365ac9",
             "status": "authored"
           }
         ]
@@ -7063,56 +7063,56 @@
           "entries": 7,
           "authored": 7,
           "template": 0,
-          "bytes": 66210
+          "bytes": 65131
         },
         "entries": [
           {
             "topicSlug": "unit-1-education-and-humanity",
             "filename": "language-development/01-unit-1-education-and-humanity.json",
-            "bytes": 10240,
-            "sha256": "337dae824bb3fef4afa9ae57b7e723e61fc7c8aa4719508d7120f1d594e5d7de",
+            "bytes": 10088,
+            "sha256": "fe2ccd9249615b1f091d339c22a6be8d0fec827aaf61bc3b51dce42ce48f6a49",
             "status": "authored"
           },
           {
             "topicSlug": "unit-2-communication",
             "filename": "language-development/02-unit-2-communication.json",
-            "bytes": 9063,
-            "sha256": "8c7f4e693ba376a5d0df51e678d556130eb0c1a69d82ae3fcf15d21011fa6e21",
+            "bytes": 8908,
+            "sha256": "18fbdd9bc36c21d697cf68d3d2df6d6a13505f42321aaa4ede7cc35acf9b01da",
             "status": "authored"
           },
           {
             "topicSlug": "unit-3-media-and-society",
             "filename": "language-development/03-unit-3-media-and-society.json",
-            "bytes": 9198,
-            "sha256": "9734ca404a1e93c41c372f08a871a321a2e441e357fedbb296d61d4ad5e513c7",
+            "bytes": 9047,
+            "sha256": "699dca5307e45920d6e249a70b4e5c8c76123779f17c757d79870a974521a7cd",
             "status": "authored"
           },
           {
             "topicSlug": "short-story-1-the-selfish-giant-oscar-wilde",
             "filename": "reading-and-comprehension/04-short-story-1-the-selfish-giant-oscar-wilde.json",
-            "bytes": 9649,
-            "sha256": "d107cc0f0921530686f4dab1cdb7a542b6630caf210d333b8651eb1789a2f225",
+            "bytes": 9493,
+            "sha256": "bd1c59288f6c46df80fa2eefdfb4aa0cce98581b02b48d65f86b708bd87bd5e2",
             "status": "authored"
           },
           {
             "topicSlug": "short-story-2-the-oval-portrait-edgar-allan-poe",
             "filename": "reading-and-comprehension/05-short-story-2-the-oval-portrait-edgar-allan-poe.json",
-            "bytes": 9392,
-            "sha256": "41e7df3f8ef4cd6ad967e1f6a4a9b34b7cb90d9d9739e8cd64a97d95ec5dc1b7",
+            "bytes": 9234,
+            "sha256": "bb8d1e5383c2c2f3ce4e1821922addf355d943f699f4bfe189c95a432f2a0900",
             "status": "authored"
           },
           {
             "topicSlug": "essay-writing",
             "filename": "writing-and-composition/06-essay-writing.json",
-            "bytes": 9160,
-            "sha256": "4db32ba62271aed5b05f5ab6e19464b188bfcc8ebeff2e0832b0c569239b2de1",
+            "bytes": 9006,
+            "sha256": "08bf4101ec15aef6ae692ed20a4c3cbd8a687f649ecb643ca2dd65867cd5fc54",
             "status": "authored"
           },
           {
             "topicSlug": "letter-writing",
             "filename": "writing-and-composition/07-letter-writing.json",
-            "bytes": 9508,
-            "sha256": "3e63e0791a4bb1ea512f5fa9692f612025721b7df67a0afacb6d0c921eaf924b",
+            "bytes": 9355,
+            "sha256": "a014d12bcdfe06f44a4ce4d52a17308ce0b27c8e03318d47392b25dfb9419f9a",
             "status": "authored"
           }
         ]
@@ -7122,28 +7122,28 @@
           "entries": 6,
           "authored": 6,
           "template": 0,
-          "bytes": 67482
+          "bytes": 66938
         },
         "entries": [
           {
             "topicSlug": "function-domain-and-range-of-a-function-inverse-function",
             "filename": "algebra/01-function-domain-and-range-of-a-function-inverse-function.json",
-            "bytes": 9735,
-            "sha256": "a49f582dead939f35a299827de3751fbdc64a401df98b5ad7967dac3575c40e6",
+            "bytes": 9599,
+            "sha256": "93fa2e3f8b683460d816df37e41d5d9a1e2bbebb4ebd45f0e62c9b575701a9c0",
             "status": "authored"
           },
           {
             "topicSlug": "sequence-and-series-arithmetic-geometric-harmonic-sequences",
             "filename": "algebra/02-sequence-and-series-arithmetic-geometric-harmonic-sequences.json",
-            "bytes": 9174,
-            "sha256": "00ad1f03f47468b402cc968a428747c59a210f2cad7d409fd8cc59b577b62e9b",
+            "bytes": 9037,
+            "sha256": "caa2b5f7b24ed972774db2a96a5cc18be304d92b7ae285936f8dc5ce1c925521",
             "status": "authored"
           },
           {
             "topicSlug": "matrices-and-determinants-transpose-properties-inverse",
             "filename": "algebra/03-matrices-and-determinants-transpose-properties-inverse.json",
-            "bytes": 8738,
-            "sha256": "c9bf8060a95eb1112868013ecd35f557662e2a8d1717e4780324e0b1ce1203b0",
+            "bytes": 8602,
+            "sha256": "7d13156e6dd426df44686d42f280ec2bf246cce5330517a781fb30ecbbfed20a",
             "status": "authored"
           },
           {
@@ -7163,8 +7163,8 @@
           {
             "topicSlug": "trigonometric-ratios-and-identities",
             "filename": "trigonometry/06-trigonometric-ratios-and-identities.json",
-            "bytes": 9952,
-            "sha256": "2f2248207a6b93351e5c02007915a9f4090ddbe605406feb51d48309a8023205",
+            "bytes": 9817,
+            "sha256": "e286b011a1b81a7babdc9c919cdc8d969c81294b30d63016d19c7717cc83aa4f",
             "status": "authored"
           }
         ]
@@ -7310,7 +7310,7 @@
           "entries": 101,
           "authored": 100,
           "template": 1,
-          "bytes": 1339101
+          "bytes": 1323579
         },
         "entries": [
           {
@@ -7344,148 +7344,148 @@
           {
             "topicSlug": "angular-displacement-velocity-and-acceleration",
             "filename": "circular-motion/01-angular-displacement-velocity-and-acceleration.json",
-            "bytes": 12883,
-            "sha256": "a4fca9edacd6a4985e3a46259b8967ccaa8ce695b2ca12fd5c46996cd49e2074",
+            "bytes": 12711,
+            "sha256": "fc8ad205acb10fd5afd49802df7187ad4df18053135d44b9578fcf477b0cf4d4",
             "status": "authored"
           },
           {
             "topicSlug": "relation-between-angular-and-linear-velocity-and-acceleration",
             "filename": "circular-motion/02-relation-between-angular-and-linear-velocity-and-acceleration.json",
-            "bytes": 13920,
-            "sha256": "cdd4c5dc0ba25cc70e79ff85d48907717886eff88160834cf9a0e227aaa3756c",
+            "bytes": 13749,
+            "sha256": "26f51e87e0a57b1e140636212b5415f810743818b86cf2c257bc16596f6f18e4",
             "status": "authored"
           },
           {
             "topicSlug": "centripetal-acceleration-and-centripetal-force",
             "filename": "circular-motion/03-centripetal-acceleration-and-centripetal-force.json",
-            "bytes": 13353,
-            "sha256": "b0d456adc7bcf84fec3dd187d55fb8668275c98e5c6048180da98928f8dda586",
+            "bytes": 13181,
+            "sha256": "ababb0b80374768c469130079de50d4034171d9ef41858152bd46df46b6bd5c2",
             "status": "authored"
           },
           {
             "topicSlug": "conical-pendulum",
             "filename": "circular-motion/04-conical-pendulum.json",
-            "bytes": 11618,
-            "sha256": "1ccf54bad43d1c5ddd3d69d99409f4dce1619b87f01aff64eb0417e05321844b",
+            "bytes": 11446,
+            "sha256": "b6b75f48fceb62ba2308ba958508ffd11a88027a1dce36726293b4534de4d235",
             "status": "authored"
           },
           {
             "topicSlug": "motion-in-a-vertical-circle",
             "filename": "circular-motion/05-motion-in-a-vertical-circle.json",
-            "bytes": 12030,
-            "sha256": "4779d4455b52920c42b502b8cc5d5330c062e4b181ca8fca185f943639aab134",
+            "bytes": 11858,
+            "sha256": "8a3d6a923f6e374a54fceae2616599582a1fb24ba3cdd675834b47fac261afe8",
             "status": "authored"
           },
           {
             "topicSlug": "applications-of-banking",
             "filename": "circular-motion/06-applications-of-banking.json",
-            "bytes": 11719,
-            "sha256": "9120f03b8148b202450ab79b0099a8b72f2b064afc4bdc84d0fa700ab0f986f3",
+            "bytes": 11547,
+            "sha256": "f6400d1950bf89ac5e887fb776ba4d7930cacbce5e4057b97d4eb060dcffd7b5",
             "status": "authored"
           },
           {
             "topicSlug": "electric-current-drift-velocity",
             "filename": "dc-circuits/01-electric-current-drift-velocity.json",
-            "bytes": 8381,
-            "sha256": "f9c261b4740a0910ad67aeee1e6be1ad770124f91453623c1975bd82c35587c2",
+            "bytes": 8222,
+            "sha256": "3e854d4912d1af8eeab903b0facc9bfee491674a7c5c9caffbcb3491fad44a01",
             "status": "authored"
           },
           {
             "topicSlug": "electric-currents-drift-velocity-and-its-relation-with-current",
             "filename": "dc-circuits/01-electric-currents-drift-velocity-and-its-relation-with-current.json",
-            "bytes": 14707,
-            "sha256": "c3b9cd339002c5c8621195d1e81db2ce7a18cc626bd82b02fde0cd34a4ed1161",
+            "bytes": 14534,
+            "sha256": "e86f96163918b567dadb8309380914ef5447c86a920ad570248ff96bd55c3c2f",
             "status": "authored"
           },
           {
             "topicSlug": "ohms-law-resistance",
             "filename": "dc-circuits/02-ohms-law-resistance.json",
-            "bytes": 7599,
-            "sha256": "3a509d7fdf41461df4569086a8b2e4272e6b4f4e691453f3380f3534841315d9",
+            "bytes": 7440,
+            "sha256": "81afb9eb9a87e0c65d92e831bd0e8508e68ad8ac1b342cbb50ae98ceff1e722b",
             "status": "authored"
           },
           {
             "topicSlug": "potential-divider",
             "filename": "dc-circuits/04-potential-divider.json",
-            "bytes": 7107,
-            "sha256": "50db8e0edb71a6765ccdac5cced5a84b653d3e13c1bb9ac89d1386b28ce78218",
+            "bytes": 6948,
+            "sha256": "f14d7591c6f10fa2853c54c9ee1266f26699761b5175920f2f70ac6af2e75c2c",
             "status": "authored"
           },
           {
             "topicSlug": "resistances-in-series-and-parallel",
             "filename": "dc-circuits/04-resistances-in-series-and-parallel.json",
-            "bytes": 12136,
-            "sha256": "0d8de0734596ad915a1d6c7c2e506ae9367ed46faf5ef073c7e4356f621275dd",
+            "bytes": 11963,
+            "sha256": "1af31a40365f950198866e8d22e68dd013bc198d6f7ad5f089525085f1b12068",
             "status": "authored"
           },
           {
             "topicSlug": "emf-internal-resistance",
             "filename": "dc-circuits/05-emf-internal-resistance.json",
-            "bytes": 7813,
-            "sha256": "765fc0d3464345cb1946d0587bd18f19f0e6b4018f27335f45a1ddf1e8b7d2e0",
+            "bytes": 7654,
+            "sha256": "c0069103f56602296c02af6d8b98eede9d4409ef733e12127fc67e58ec3e4d08",
             "status": "authored"
           },
           {
             "topicSlug": "work-power-circuits",
             "filename": "dc-circuits/06-work-power-circuits.json",
-            "bytes": 7739,
-            "sha256": "2235bb135f97b186a4948ac0f6b8f166230fa65971b92f8ea454e07c6df0bc63",
+            "bytes": 7580,
+            "sha256": "9b827eac56e5582a0781a2ebf72a31f004e9b5ad4ce3bb8a8e7e04590035f973",
             "status": "authored"
           },
           {
             "topicSlug": "dispersive-power",
             "filename": "dispersion/01-dispersive-power-2.json",
-            "bytes": 13581,
-            "sha256": "c11aa989c4e6f09093e75f85df0e7901fa5c2c4a9b1a0946ea9f8b4b6238f3cc",
+            "bytes": 13409,
+            "sha256": "78da84d2674f647f7c4330969d5ef194a5426ace848350ec04a392df64ee805c",
             "status": "authored"
           },
           {
             "topicSlug": "chromatic-aberration",
             "filename": "dispersion/02-chromatic-aberration-2.json",
-            "bytes": 12889,
-            "sha256": "c02dd5b717a7e4bd37949bf71ec69a99f3f4eaf5e0bc8047f7bf10ecd6ecc1e8",
+            "bytes": 12718,
+            "sha256": "997981338e7b1b7d478c37d4c4800bb067bf7ea76248bce0730f35e0ad726e80",
             "status": "authored"
           },
           {
             "topicSlug": "achromatism",
             "filename": "dispersion/03-achromatism-2.json",
-            "bytes": 13568,
-            "sha256": "280c3b352ad07c682200dd17d684c751e3497e19be48cbae15b046dbbca8ea34",
+            "bytes": 13397,
+            "sha256": "8bb4c2beec16493b6199a1212476f0efba7c53cd27e5c73aa87fd10b4623657f",
             "status": "authored"
           },
           {
             "topicSlug": "conservation-linear-momentum",
             "filename": "dynamics/02-conservation-linear-momentum-2.json",
-            "bytes": 11786,
-            "sha256": "6a7a073cf8ae1a187adee2e09da0308cde2a9bc5a379ba921b937cd8f04cdc77",
+            "bytes": 11619,
+            "sha256": "efd2fcce11cb5c496012f3e8cb8dd99549e82e72db222ec6b0bc5702f9de43af",
             "status": "authored"
           },
           {
             "topicSlug": "application-of-newton-s-laws",
             "filename": "dynamics/03-application-of-newton-s-laws.json",
-            "bytes": 18917,
-            "sha256": "53c175b520f598190432574fc052335f45d781fbd5ec9d25590b9a7a612e158d",
+            "bytes": 18727,
+            "sha256": "c083be7f1358eac23c7bf9c37d0a9d1c02c908ad68a22e412f9bb010e850ccf1",
             "status": "authored"
           },
           {
             "topicSlug": "moment-torque-and-equilibrium",
             "filename": "dynamics/04-moment-torque-and-equilibrium.json",
-            "bytes": 17894,
-            "sha256": "7af0597fb43b45746df5af660bb1f3348f33d951f9eff801a8c482cdae012006",
+            "bytes": 17705,
+            "sha256": "93d793cad489d4b4f5e17252b3b8aeef4208403ea052aeb29f0aa031cbcb6b7c",
             "status": "authored"
           },
           {
             "topicSlug": "solid-friction-laws-and-verifications",
             "filename": "dynamics/05-solid-friction-laws-and-verifications.json",
-            "bytes": 14821,
-            "sha256": "329443b4d1e3411570817bfe4f73d05c6e15da6fe7fa82ee07a60503086205d1",
+            "bytes": 14651,
+            "sha256": "f49b1c94694cc44aad80e8a3ae2e37eaaf117c37b1a1d5309904c3dd2d29ed8c",
             "status": "authored"
           },
           {
             "topicSlug": "stress-strain-elasticity",
             "filename": "elasticity/02-stress-strain-elasticity-2.json",
-            "bytes": 11979,
-            "sha256": "40cf1c4c98147a4b50a8917646e98273dbdb640370a471a9569f7dfbc1b4990b",
+            "bytes": 11805,
+            "sha256": "e543033ceb0522b15a497f55266c5ee0873442a346cdfa64aaf450806acd5102",
             "status": "authored"
           },
           {
@@ -7526,43 +7526,43 @@
           {
             "topicSlug": "newton-law-gravitation",
             "filename": "gravitation/01-newton-law-gravitation-2.json",
-            "bytes": 11468,
-            "sha256": "25d60434f5c751df2bc3c1f9ff994b1ac40baf756cdae4a79f61dddc864167f6",
+            "bytes": 11294,
+            "sha256": "bad2e80f990967129a6b27702f39d8e82aed2416cda0bb4061922d6d7cff147a",
             "status": "authored"
           },
           {
             "topicSlug": "gravitational-potential-energy",
             "filename": "gravitation/03-gravitational-potential-energy-2.json",
-            "bytes": 11321,
-            "sha256": "6b4cfcb16bd5d457bf0f6aab7e518292eb2ad62987521b954e59590a126bae02",
+            "bytes": 11147,
+            "sha256": "c6a60dcf992242999be2a643782f1c534380d73aff07e99a649b259ea7e725cc",
             "status": "authored"
           },
           {
             "topicSlug": "variation-g-altitude-depth",
             "filename": "gravitation/04-variation-g-altitude-depth-2.json",
-            "bytes": 9834,
-            "sha256": "036270ea97954b433038c12cb3a0c090d4735fa2327b496f589ac6d87cc080f0",
+            "bytes": 9660,
+            "sha256": "974039eb140396b17b7bb30d82f015d70aaa03ecc05518b6263ffecd2e647f71",
             "status": "authored"
           },
           {
             "topicSlug": "centre-mass-gravity",
             "filename": "gravitation/05-centre-mass-gravity-2.json",
-            "bytes": 10576,
-            "sha256": "50674d136b737b84e57f4ccef3cceda6d81677a8fff22c18fb60fa242324e6aa",
+            "bytes": 10402,
+            "sha256": "df2c838b5674e66130bc948ffcbb8a3b50e6edd38b939df4cc65ef3ba5f6d5ff",
             "status": "authored"
           },
           {
             "topicSlug": "satellite-motion",
             "filename": "gravitation/06-satellite-motion-2.json",
-            "bytes": 10309,
-            "sha256": "5cf8fb678f04bcdc736e26012c9af52f4da7b0a4ac1e61b22bfcf6aef21d56cc",
+            "bytes": 10135,
+            "sha256": "37dc67432ea49f063c847b7e81606615c2483d84a5e72b8e97ae55b2b4adfea9",
             "status": "authored"
           },
           {
             "topicSlug": "thermal-energy-heat-temperature",
             "filename": "heat-and-temperature/01-thermal-energy-heat-temperature.json",
-            "bytes": 8478,
-            "sha256": "5c104e79b5a534dbace5526a726f2db34e98bac08898a0df6c80c4bb8394e793",
+            "bytes": 8319,
+            "sha256": "c6d7b126a1ed65b23de1f864508501369a8b82642476e06c2b7a708f7681c372",
             "status": "authored"
           },
           {
@@ -7575,106 +7575,106 @@
           {
             "topicSlug": "heat-and-temperature",
             "filename": "heat-and-temperature/heat-and-temperature.json",
-            "bytes": 38406,
-            "sha256": "2de23c244867a2689baad32dc150dc34ee8753c64e70e8755e01298a72cbbd43",
+            "bytes": 38092,
+            "sha256": "d0a2ed3d82255f7bbf1cca70dacc91d0b055c92f25661728c67eca310b6cd351",
             "status": "authored"
           },
           {
             "topicSlug": "kinetic-molecular-model",
             "filename": "ideal-gas/02-kinetic-molecular-model.json",
-            "bytes": 7527,
-            "sha256": "2617835bd3760ceea8edba6cd48974fbb20eb4b186cb0c58e1588df7f968189c",
+            "bytes": 7368,
+            "sha256": "904d12f1c7f0902defa6595fb3507d4b5fe99bec9b7663b07c168d7ff4ddfe37",
             "status": "authored"
           },
           {
             "topicSlug": "boltzmann-rms-speed",
             "filename": "ideal-gas/03-boltzmann-rms-speed.json",
-            "bytes": 8153,
-            "sha256": "0d0f72ebea6490df3548af5ca192489d5890bd90ae55d8a96fc318161b2c6ceb",
+            "bytes": 7994,
+            "sha256": "f02e4a93eea92dd6084a2d5565a8c02092f00559c9b9f80ab1f502c5a2ea6136",
             "status": "authored"
           },
           {
             "topicSlug": "kinetic-molecular-model-of-an-ideal-gas",
             "filename": "ideal-gas/03-kinetic-molecular-model-of-an-ideal-gas.json",
-            "bytes": 14434,
-            "sha256": "733390732b16d63b39ebb71152ecb92efe0abd3dcc19c6acafc67553404950a7",
+            "bytes": 14256,
+            "sha256": "cef90098dc18b4a0b2edb5c9c36ac8534e1413ccc7dcf31116e639bc0e79ee00",
             "status": "authored"
           },
           {
             "topicSlug": "derivation-of-pressure-exerted-by-gas",
             "filename": "ideal-gas/04-derivation-of-pressure-exerted-by-gas.json",
-            "bytes": 13831,
-            "sha256": "af495f000dfc0d8c6c3928db17a1f5e0a700ef9f8ee9c7236887ca2e89d45847",
+            "bytes": 13654,
+            "sha256": "bedde12e1bf2fe04f345a538a55c5cbded01208a119bf93c383ab6984c22cb4f",
             "status": "authored"
           },
           {
             "topicSlug": "heat-capacities-gases",
             "filename": "ideal-gas/04-heat-capacities-gases.json",
-            "bytes": 7595,
-            "sha256": "e6e1195e8034020fde2ee1b188fd1c213e9d9ef25e68f9005dde3210640584fa",
+            "bytes": 7436,
+            "sha256": "c6134f28a06096086cbf99b5a9e0d4cdd000379c97409c202d3bae323eca87e6",
             "status": "authored"
           },
           {
             "topicSlug": "heat-capacities-of-gases-and-solids",
             "filename": "ideal-gas/07-heat-capacities-of-gases-and-solids.json",
-            "bytes": 14614,
-            "sha256": "64850f6e6635ba054f7dc6277be6bacfe021f48243dbdfde9689cf7b7e4d94a1",
+            "bytes": 14439,
+            "sha256": "57ebb2a0f76e8481a7fc1bb0bf86e2de86c25d43d27d67b8d6d8e4deb6a5314c",
             "status": "authored"
           },
           {
             "topicSlug": "lens-maker-formula",
             "filename": "lenses/01-lens-maker-formula-2.json",
-            "bytes": 16039,
-            "sha256": "b82c22d547c17a732887e74ee1142b3dab5b5c81403bf056642a621f06765f59",
+            "bytes": 15856,
+            "sha256": "fcf188346212fb48014bd60a7483f123d059fa9ab4e0eca6c75c48d3e7ca5fb1",
             "status": "authored"
           },
           {
             "topicSlug": "power-of-lens",
             "filename": "lenses/02-power-of-lens-2.json",
-            "bytes": 13366,
-            "sha256": "daee54cdef502abbfc1b202c88d90fa5cc700e40f9fd2c7d7ebae717d591c00d",
+            "bytes": 13189,
+            "sha256": "b9e4506c797e232c6d5aaba425a31a58f3dfe2a7a060c0db02b3650e53ab37a7",
             "status": "authored"
           },
           {
             "topicSlug": "nucleus-discovery-density-mass-number-and-atomic-number",
             "filename": "nuclear-physics/01-nucleus-discovery-density-mass-number-and-atomic-number.json",
-            "bytes": 17956,
-            "sha256": "d6517f538a62e90513903f03b17583bf964edff7c1c1f3a314c17b2af97add2c",
+            "bytes": 17781,
+            "sha256": "bec70132dc0dee93748e3c572027387deb598ac9fa684d680002297c77283405",
             "status": "authored"
           },
           {
             "topicSlug": "mass-energy-binding-energy",
             "filename": "nuclear-physics/02-mass-energy-binding-energy.json",
-            "bytes": 8038,
-            "sha256": "a163c0ceb5bf9067be142dc86096d7b309921885e618a9bd23ea4d231bf77597",
+            "bytes": 7879,
+            "sha256": "a6a8bebb912a2a55c43ff40eb46184a327dbbe3a865dfa659e7a68ee6c877a4d",
             "status": "authored"
           },
           {
             "topicSlug": "einstein-s-mass-energy-relation-mass-defect-packing-fraction-and-binding-energy",
             "filename": "nuclear-physics/03-einstein-s-mass-energy-relation-mass-defect-packing-fraction-and-binding-energy.json",
-            "bytes": 18268,
-            "sha256": "c8e848487a321d92e012d34db22a1786ef9082d42f4fdf7220144bab48fa8652",
+            "bytes": 18094,
+            "sha256": "898cc5742516401b5339ded8d8ebaad550094b00640ad5d3baa157f70f0a6620",
             "status": "authored"
           },
           {
             "topicSlug": "fission-fusion",
             "filename": "nuclear-physics/03-fission-fusion-2.json",
-            "bytes": 16433,
-            "sha256": "0e4d9fa504c48a5502bf770c3f9972791ac4cd86ad46afa2168d78cfbde7cd77",
+            "bytes": 16257,
+            "sha256": "2756d26d62d162967d5b1e98b8f20c9a31c0c136d64f4851c3cecc0b64ed3d2a",
             "status": "authored"
           },
           {
             "topicSlug": "precision-and-significant-figures",
             "filename": "physical-quantities/01-precision-and-significant-figures.json",
-            "bytes": 15210,
-            "sha256": "bb124284f413d147869d5a11ba0875ef9c097dc3f1185466333212bd78fd3102",
+            "bytes": 15037,
+            "sha256": "977095861d56afd31bf5a058e67e188844515d800a8f7c57f82da3f8ab1b5af9",
             "status": "authored"
           },
           {
             "topicSlug": "dimensions-and-uses-of-dimensional-analysis",
             "filename": "physical-quantities/02-dimensions-and-uses-of-dimensional-analysis.json",
-            "bytes": 15466,
-            "sha256": "fc20cdd741e3837a72fed786ab49f7e16dacc27b673320e9c71ee05f69bc3e70",
+            "bytes": 15294,
+            "sha256": "90513907a758edca4369aeb04a173366eb55bb48bf6cfccb73b9ebdffeff9e2d",
             "status": "authored"
           },
           {
@@ -7694,330 +7694,330 @@
           {
             "topicSlug": "newton-law-cooling",
             "filename": "quantity-of-heat/01-newton-law-cooling.json",
-            "bytes": 7543,
-            "sha256": "b392f6d3fa3305d62ac21d0c148f4469744280d7c2680074e9472aca97edc9c9",
+            "bytes": 7384,
+            "sha256": "0c08c8d171d2e339463c6cb555f3487a445570db50ae09e7fbd930a07598bc65",
             "status": "authored"
           },
           {
             "topicSlug": "specific-heat-capacity",
             "filename": "quantity-of-heat/02-specific-heat-capacity.json",
-            "bytes": 7477,
-            "sha256": "922810d6f5fb6977d427fe3f8098bb8ee688f5bf393a9fee834a75b328e68720",
+            "bytes": 7318,
+            "sha256": "6adfcc4ac643bd922bbd9827bae341974b09660155ab961064d72d88518c724f",
             "status": "authored"
           },
           {
             "topicSlug": "change-of-phases-latent-heat",
             "filename": "quantity-of-heat/03-change-of-phases-latent-heat.json",
-            "bytes": 8183,
-            "sha256": "37c0a31cc0b87dc587f30fe8b8924c7c8e7da6c912f2aa4e702e6946a975dcc3",
+            "bytes": 8024,
+            "sha256": "06fa1647dd44f09dcc4435ec64405b5a7b23bf0dfef5c6cc728cdac506900a8d",
             "status": "authored"
           },
           {
             "topicSlug": "measurement-of-specific-heat-capacity-of-solids-and-liquids",
             "filename": "quantity-of-heat/11-unknown-specific-heat-via-cooling-rates.json",
-            "bytes": 20664,
-            "sha256": "2a22e9f2bad2e04bff8fc289f3473f7c9056f0f46cdd5136cece995b6df4614f",
+            "bytes": 20477,
+            "sha256": "0c48ea86409db130bf8a131b136b7447c8a6048d7df673b7eb10bda2482712ba",
             "status": "authored"
           },
           {
             "topicSlug": "newton-s-law-of-cooling",
             "filename": "quantity-of-heat/12-method-of-cooling-experiment.json",
-            "bytes": 18568,
-            "sha256": "9be5535166d45c9451d734f11c349b2fc6a8ba4ab72e5022f00a2582694e5341",
+            "bytes": 18379,
+            "sha256": "dd324ee4620300953fc95b4038e1fffbd7fafccc35b78dda13b7cc6a69b88c1f",
             "status": "authored"
           },
           {
             "topicSlug": "newton-s-law-of-cooling",
             "filename": "quantity-of-heat/13-newtons-law-limitations.json",
-            "bytes": 20771,
-            "sha256": "2c8d8fb61ec5abd4a80377d379e5d1ce224bd03da763a881d22a8b2f6d73ea0e",
+            "bytes": 20581,
+            "sha256": "2754e85d3c014cd14721f68d34a43380288b3c01d42bb14b4270b5b10eee42ef",
             "status": "authored"
           },
           {
             "topicSlug": "newton-s-law-of-cooling",
             "filename": "quantity-of-heat/14-water-equivalent.json",
-            "bytes": 20052,
-            "sha256": "c373cb5ae64c7340315cb9fad209dab39ea5e3733d0821cdcc147f8e72ed4368",
+            "bytes": 19863,
+            "sha256": "138db511394275033ada490e500ac766144cca87504343096461abdda3f6f0b8",
             "status": "authored"
           },
           {
             "topicSlug": "radiation-black-body",
             "filename": "rate-of-heat-flow/03-radiation-black-body.json",
-            "bytes": 8318,
-            "sha256": "6355bb723bc1fbd0c07e6e82a26a209faeb310086271a028f0508e23ae9b9d11",
+            "bytes": 8159,
+            "sha256": "a495a4cc50ce1787b8e9011bc0f088f13a0dfebea58e2b31ae08078f8d983692",
             "status": "authored"
           },
           {
             "topicSlug": "stefan-boltzmann-law",
             "filename": "rate-of-heat-flow/04-stefan-boltzmann-law.json",
-            "bytes": 7338,
-            "sha256": "b57c1e8021a8dd7a68aaf466146de4dd6ef980dc40f3166c05bd72551ebf9b32",
+            "bytes": 7179,
+            "sha256": "6e642e9e69a8d8e561d1badd35ab31aa453ca76bc16ce42b6d1602ce14d7310a",
             "status": "authored"
           },
           {
             "topicSlug": "particle-physics",
             "filename": "recent-trends-in-physics/01-particle-physics.json",
-            "bytes": 7075,
-            "sha256": "7e3d8384c0624afce853ebfac6da2a6ac893494f4b85b609733ec735266ac6f2",
+            "bytes": 6916,
+            "sha256": "669b7836287b1494fc10bdf157982e1f7f34942438bd0e609f04daaa5f37ec6d",
             "status": "authored"
           },
           {
             "topicSlug": "big-bang-and-hubble-law-expansion-of-the-universe",
             "filename": "recent-trends-in-physics/02-big-bang-and-hubble-law-expansion-of-the-universe.json",
-            "bytes": 19566,
-            "sha256": "a09f3a3eb3b2ba48d2d4d0f3d545edcf177f1fd8fcaf790bb1f1a0f5bd317fd5",
+            "bytes": 19386,
+            "sha256": "e456fba1bcfed01fa1342c3480c6cb0ac748f7ffccea498dd8c6bda026dbcebf",
             "status": "authored"
           },
           {
             "topicSlug": "universe-big-bang",
             "filename": "recent-trends-in-physics/02-universe-big-bang.json",
-            "bytes": 7426,
-            "sha256": "ed6f202a13adddd7b74603d356d670f9a0f6674aabf554fa3da9d5f648a891e0",
+            "bytes": 7267,
+            "sha256": "92790ba0c3ca8c94644706e6c5d2caf9d6e07ec4c1d93e581fbbf387a121558e",
             "status": "authored"
           },
           {
             "topicSlug": "dark-matter-black-hole-and-gravitational-wave",
             "filename": "recent-trends-in-physics/03-dark-matter-black-hole-and-gravitational-wave.json",
-            "bytes": 19820,
-            "sha256": "0f69b857a08c0770ffd481c537aa91fb2ce3a0a6a6ac2fafcbaa34e94539e765",
+            "bytes": 19638,
+            "sha256": "367330b471d03091a974154c9e9cf981a8d587fd8308255f8d0ae9776c5d5116",
             "status": "authored"
           },
           {
             "topicSlug": "dark-matter-black-holes",
             "filename": "recent-trends-in-physics/03-dark-matter-black-holes.json",
-            "bytes": 9322,
-            "sha256": "ecbe29690d9ebe24b707d32bda59f506a46c8ea1a5d4cdff99e4dec296fc47dc",
+            "bytes": 9163,
+            "sha256": "f98ac94e0c8589b8282d55dcf84ca160c995df1651e14cf4c83348a8636025e4",
             "status": "authored"
           },
           {
             "topicSlug": "mirror-formula",
             "filename": "reflection-at-curved-mirror/01-mirror-formula-2.json",
-            "bytes": 15560,
-            "sha256": "08fbec3bfd070421d3e74da9aca4abd97a468d1aed4dff7516c2a2c77a6ace43",
+            "bytes": 15378,
+            "sha256": "e07a0d532be3e78e12369bee9c88e00d2b302087882e3dd991be7c67aab6fbd8",
             "status": "authored"
           },
           {
             "topicSlug": "laws-of-refraction-and-refractive-index",
             "filename": "refraction-at-plane-surfaces/01-laws-of-refraction-and-refractive-index.json",
-            "bytes": 17653,
-            "sha256": "fcfe7f995a664d4049f5de42b7f1d65b55e37e87a993d58dcfc595724e226af0",
+            "bytes": 17471,
+            "sha256": "61a32818d1030b3c49baece7b26ae94abfccc0b41e44c5c9e8d854cebd0810d9",
             "status": "authored"
           },
           {
             "topicSlug": "laws-refraction-refractive-index",
             "filename": "refraction-at-plane-surfaces/01-laws-refraction-refractive-index.json",
-            "bytes": 7243,
-            "sha256": "d979609dbdae4e4c63d5bcf1fdc8c35f9d26a5c1e9fa74f286cd9d2281e49d29",
+            "bytes": 7084,
+            "sha256": "7b92d95a4ac310f25e6a109f830bd57f14a82dcbea8c0c72e07f12de6d252d04",
             "status": "authored"
           },
           {
             "topicSlug": "lateral-shift",
             "filename": "refraction-at-plane-surfaces/02-lateral-shift.json",
-            "bytes": 6874,
-            "sha256": "92064807cf990bb6a207cf96cd03cb4d3b782fd2d23dfc18a7c2eca7161a7e7e",
+            "bytes": 6715,
+            "sha256": "2b5fcfbc0f5cc660570202ea28809ed9b06e09fa0335a46df73e37e61380eca8",
             "status": "authored"
           },
           {
             "topicSlug": "total-internal-reflection",
             "filename": "refraction-at-plane-surfaces/03-total-internal-reflection.json",
-            "bytes": 7726,
-            "sha256": "e4d0759487b68e4e8e45212acd5f2f7b7932a39383f6922b4a9ac102f615ab26",
+            "bytes": 7567,
+            "sha256": "16917199792332f7ef8b82d2c7df02859b07e813f6095136bf696a4a6a321663",
             "status": "authored"
           },
           {
             "topicSlug": "minimum-deviation",
             "filename": "refraction-through-prisms/01-minimum-deviation.json",
-            "bytes": 7849,
-            "sha256": "d8b12f9269d7d2b01d61f3c41351dcb6e638e62110936dbaea63a54732345607",
+            "bytes": 7690,
+            "sha256": "23ea7994a31c80e5e7b58a579c02d7c4d7febe05276e545fa80518cb65a79ea1",
             "status": "authored"
           },
           {
             "topicSlug": "prism-deviation-formula",
             "filename": "refraction-through-prisms/02-prism-deviation-formula.json",
-            "bytes": 6875,
-            "sha256": "f3d3fb72daab9690a205ba008d7bfa325cdf9e63343e045e916a751cf6b9105d",
+            "bytes": 6716,
+            "sha256": "1ab1f330f368d379488dd6d40f308f50f91624537c442849d5e75143d90119af",
             "status": "authored"
           },
           {
             "topicSlug": "prism-formula",
             "filename": "refraction-through-prisms/02-relation-between-prism-angle-minimum-deviation-and-refractive-index.json",
-            "bytes": 16615,
-            "sha256": "06bf0e1739bbf6f368b621945d2d86011e8de13dc8283638a05c0a03adddf939",
+            "bytes": 16436,
+            "sha256": "48643b6ce313b559450f2ee1860ad6e21da498786d42d895a606a42250592fa5",
             "status": "authored"
           },
           {
             "topicSlug": "energy-bands",
             "filename": "solids/01-energy-bands-2.json",
-            "bytes": 16157,
-            "sha256": "a64dd162a42de35f0aeb6710b8a25ff31ca9ca98f55779381824d255e182667b",
+            "bytes": 15983,
+            "sha256": "c23db233dc0ca17b0def6cddd12df4643c0c98735709b02203f5d0ceceda7d5e",
             "status": "authored"
           },
           {
             "topicSlug": "difference-between-metals-insulators-and-semiconductors-using-band-theory",
             "filename": "solids/02-difference-between-metals-insulators-and-semiconductors-using-band-theory.json",
-            "bytes": 18911,
-            "sha256": "15e67d82ccf4edea439c36f0c5bfd48ae3e81f78d49e88f7bbe06c442c9fe006",
+            "bytes": 18739,
+            "sha256": "1b414ca0579779e7cffa51933c4ca9b62a2c67d3debd00f04bcbd9d3b2de4e88",
             "status": "authored"
           },
           {
             "topicSlug": "semiconductors",
             "filename": "solids/02-semiconductors.json",
-            "bytes": 8559,
-            "sha256": "a96ed656ff1ba1fdd35e2f7840e6523cae099becb80145ee0a96ded28c9faf85",
+            "bytes": 8400,
+            "sha256": "83b77f32e3e964ddd60bbe31d06c8af45385127b0db71f986a509b1e2d7ff485",
             "status": "authored"
           },
           {
             "topicSlug": "linear-expansion",
             "filename": "thermal-expansion/01-linear-expansion.json",
-            "bytes": 7054,
-            "sha256": "bcda280ad83202f9f969f7f213a7a0caf5377e29046500a63d13dbc910604b41",
+            "bytes": 6895,
+            "sha256": "782308e5a0d73025a7eeec249d017b646a3566f68023d802f5bad3220cc6937a",
             "status": "authored"
           },
           {
             "topicSlug": "cubical-and-superficial-expansion",
             "filename": "thermal-expansion/02-cubical-and-superficial-expansion.json",
-            "bytes": 17688,
-            "sha256": "ab5523de77977d66fd67b71f2a0c7bb47a20560e8437cd207f12fa2034cdce59",
+            "bytes": 17509,
+            "sha256": "9de46f31f17916fcdef1efcd1f42c0c725dd2f456b4c935cd5fb6c49bb7d3209",
             "status": "authored"
           },
           {
             "topicSlug": "cubical-superficial-expansion",
             "filename": "thermal-expansion/02-cubical-superficial-expansion.json",
-            "bytes": 8257,
-            "sha256": "bc21f31a8344db1549090ca18ece2f63dbc5db2683dc1b1f788baefc783f73df",
+            "bytes": 8098,
+            "sha256": "e47312cdaeaab18f91fc43a043e7f05563a5e3cd245e5db2b32847e882aeb24c",
             "status": "authored"
           },
           {
             "topicSlug": "liquid-expansion-absolute-and-apparent",
             "filename": "thermal-expansion/03-liquid-expansion-absolute-and-apparent.json",
-            "bytes": 15997,
-            "sha256": "9402cfe2bd92d511b73f209eac874ff881b86a33b4f83c5d628ea568a85dacc2",
+            "bytes": 15818,
+            "sha256": "e48fbb233df094e0afa7f1923db4c6376124f9b670cea9660fe55e94636ef9df",
             "status": "authored"
           },
           {
             "topicSlug": "liquid-expansion",
             "filename": "thermal-expansion/03-liquid-expansion.json",
-            "bytes": 7054,
-            "sha256": "0ef4109c0b9276269d7f8cfeb971984669802299dc3bb348e963efccc5992635",
+            "bytes": 6895,
+            "sha256": "aa6df66c9cdb2450c0701a8528b6b2e4e1baacba6455ef62356ef1e0373c7164",
             "status": "authored"
           },
           {
             "topicSlug": "dulong-and-petit-method-for-liquid-expansivity",
             "filename": "thermal-expansion/04-dulong-and-petit-method-for-liquid-expansivity.json",
-            "bytes": 17467,
-            "sha256": "2b27bc8a3f98a6282a4c0fc243233f9969c22e53eb158fb1316ddf9783910300",
+            "bytes": 17288,
+            "sha256": "6655e32c44c03bad4d25f6176a585d13730cb3eaa9e86ecd26cc14381b62a577",
             "status": "authored"
           },
           {
             "topicSlug": "dulong-petit-method",
             "filename": "thermal-expansion/04-dulong-petit-method.json",
-            "bytes": 7547,
-            "sha256": "6eb9fb32c611f33b508aae44262697f075bd9ebb5effdb2179be4194a68dd7a3",
+            "bytes": 7388,
+            "sha256": "24355d35896f658f5049d887ce8f88584bc4aa21ef963ba0bcaa2442bf929c33",
             "status": "authored"
           },
           {
             "topicSlug": "collinear-and-non-collinear-vectors-coplanar-and-non-coplanar-vectors",
             "filename": "vectors/01-scalars-and-vectors.json",
-            "bytes": 25546,
-            "sha256": "d99390def4d20a96bff3dc46c9ee6e66a27ab0741f79836dc26091f2a3aa8e2e",
+            "bytes": 25341,
+            "sha256": "f70fec970d62fa5e2c77091afc3ba09504bb04cd52426bd9fbd61fb9f226927c",
             "status": "authored"
           },
           {
             "topicSlug": "resolution-of-vectors-unit-vectors",
             "filename": "vectors/02-addition-of-vectors-same-and-opposite-directions.json",
-            "bytes": 20151,
-            "sha256": "8c5d523e773f2299c8aedfd07cb81815ba33eca1e27da3c1dbb6249e3b6a05bb",
+            "bytes": 19954,
+            "sha256": "28b641b41ff89bb08054b86ac20139f22b7092a75d52cfbe467f84e01b4ea4b1",
             "status": "authored"
           },
           {
             "topicSlug": "resolution-unit-vectors",
             "filename": "vectors/02-resolution-unit-vectors.json",
-            "bytes": 9008,
-            "sha256": "0a57622dbb406bc9497db580117ae4b7a90bf510b93def57ec5c21cbc1d247df",
+            "bytes": 8844,
+            "sha256": "b8a1f06216420ce9f7bbc309944cdbe425e03533e108b0317577a61f3010c9de",
             "status": "authored"
           },
           {
             "topicSlug": "triangle-parallelogram-and-polygon-laws-of-vectors",
             "filename": "vectors/03-law-of-triangle-of-vectors-statement-and-derivation.json",
-            "bytes": 21617,
-            "sha256": "33a5217a1031d3702d1cb1c822ba1400a8ba1e1e62603260efefb72127552054",
+            "bytes": 21417,
+            "sha256": "e877403a7f9985dcfd74d4fe2f2fc495a108a7fab67b0dc7663a567d3f5dcca2",
             "status": "authored"
           },
           {
             "topicSlug": "scalar-vector-products",
             "filename": "vectors/03-scalar-vector-products.json",
-            "bytes": 8215,
-            "sha256": "9c9eee9fc2ee83e1d51012bc1d21f4091f91543a599d45ed72e66334696ac30a",
+            "bytes": 8051,
+            "sha256": "e26a33ac780b8000cd1b937aae91f74fdf23a7032232c6bfb36fdabd56fc9c24",
             "status": "authored"
           },
           {
             "topicSlug": "triangle-parallelogram-and-polygon-laws-of-vectors",
             "filename": "vectors/04-law-of-parallelogram-of-vectors.json",
-            "bytes": 21036,
-            "sha256": "724de2ae76c46119b76c833583465df3092b7e80868e0493efaf21f932cae22a",
+            "bytes": 20836,
+            "sha256": "c93bb5fd2b087cc2d586317e1f45f68a47bd7ffffe06adc986b342df933a6061",
             "status": "authored"
           },
           {
             "topicSlug": "triangle-parallelogram-and-polygon-laws-of-vectors",
             "filename": "vectors/05-polygon-law-of-vectors.json",
-            "bytes": 22285,
-            "sha256": "bcf2435bb50bd6a08e32661906101cba03e7e30973cd969470da0afbd3b1f038",
+            "bytes": 22087,
+            "sha256": "57dd922ca5690410dff1cc6992214cd8755bbcbf553a2e3a9a34b94272775116",
             "status": "authored"
           },
           {
             "topicSlug": "resolution-of-vectors-unit-vectors",
             "filename": "vectors/06-resolution-of-a-vector.json",
-            "bytes": 20760,
-            "sha256": "3af2899c6c88a2e19771f483a791fe56f6850847dd002cffb552d57acf340209",
+            "bytes": 20560,
+            "sha256": "60896f955bab2aeb5440c8558503d85a30df0a7127ae2f20d8feeed575c025e3",
             "status": "authored"
           },
           {
             "topicSlug": "resolution-of-vectors-unit-vectors",
             "filename": "vectors/07-resolution-of-vectors-finding-components.json",
-            "bytes": 20564,
-            "sha256": "b60d2d3bf06fa5859a8c1c8e7710866fa1c77fbf63960f0280ac927ad913da7e",
+            "bytes": 20364,
+            "sha256": "3d11b10aeb012195def3da6a10ec418ee3a71b6632999eb4794c6053f78cdcc6",
             "status": "authored"
           },
           {
             "topicSlug": "resolution-of-vectors-unit-vectors",
             "filename": "vectors/08-types-of-vectors.json",
-            "bytes": 22982,
-            "sha256": "c533ee9587e4b32a4079421e467abf674edef5d8c7c25c599c34a021a5ec8ef0",
+            "bytes": 22779,
+            "sha256": "6c7eb7ce53f314a3ddfea45c4b1c1edc70bb1b95df2495c895f42255e594b60b",
             "status": "authored"
           },
           {
             "topicSlug": "scalar-and-vector-products",
             "filename": "vectors/09-unit-vector-definition-and-worked-example.json",
-            "bytes": 16671,
-            "sha256": "a31ed4d2bd814b535a9320fd4267c71a4c549d7ea42de9eee811751bd00dffd7",
+            "bytes": 16482,
+            "sha256": "6ecd6765421ca3f33031c29f034423ccc77d4f232691f57736c4c0a457f54d97",
             "status": "authored"
           },
           {
             "topicSlug": "scalar-and-vector-products",
             "filename": "vectors/10-multiplication-of-vectors-scalar-dot-product.json",
-            "bytes": 17266,
-            "sha256": "48d3326dd125392e4d4540c5ba2388f22fa2117ba114636ad2824899725a87b9",
+            "bytes": 17076,
+            "sha256": "c6450f8202964d0e2d183af69bbbf7db08bd946a178bb5035d0836bf7f56f54e",
             "status": "authored"
           },
           {
             "topicSlug": "work-energy-theorem-kinetic-and-potential-energy",
             "filename": "work-energy-and-power/03-work-energy-theorem-kinetic-and-potential-energy.json",
-            "bytes": 16603,
-            "sha256": "e01aeccde5b89269a3d3d1801c42755c4c4d35d7ed8726b6a0877afb74a885ec",
+            "bytes": 16429,
+            "sha256": "247a22775bf42e3271d3beb95e46088dc62b1c68e5001b62c2bde13cb2ad40f6",
             "status": "authored"
           },
           {
             "topicSlug": "work-energy-theorem",
             "filename": "work-energy-power/03-work-energy-theorem.json",
-            "bytes": 7267,
-            "sha256": "e10372d28be72588b2369be36c3daf95daa5b20369fe804a39b0b1784bc6da7c",
+            "bytes": 7108,
+            "sha256": "bb905cf664b19c0846fcdbef3f52eb933ff88768b6493deed8786a01dc7f8e41",
             "status": "authored"
           },
           {
             "topicSlug": "collisions",
             "filename": "work-energy-power/05-collisions.json",
-            "bytes": 8168,
-            "sha256": "e79e26e5be9e2af03166425a59eecf7355245d0d5c496476f5bc8251f9cdc869",
+            "bytes": 8009,
+            "sha256": "2fa8c3eee84ca04249137bfc87801c3672c0d85cf99d1b907e816dd897321798",
             "status": "authored"
           }
         ]
@@ -8027,8 +8027,8 @@
   "supplementary": {
     "source": "frontend/public/data/ravikishan/manifest.json",
     "note": "second content family; entries carry their payload inline (readers use data, not the path)",
-    "bytes": 6143081,
-    "sha256": "4a9957a10392e5f7ab4b073d9e2c24c07dc4699d980afe5b032f5c8c56428e52",
+    "bytes": 6046327,
+    "sha256": "b2f0cf020cfb2488074a059279ac3fd24887e75ee94152326d2d2cea4f31b3e1",
     "totals": {
       "claims": 2467,
       "authored": 1583,
@@ -18116,17 +18116,17 @@
     {
       "path": "frontend/public/data/ravikishan/_index.json",
       "kind": "map",
-      "bytes": 700754,
-      "sha256": "62126de87f86041bd5c7c779392bad8f518fad838b2ef9ca832acf41adf94f82",
-      "claims": 453,
-      "authored": 453,
+      "bytes": 255754,
+      "sha256": "3ddc35c0342581cd5ea63cf573d30d5f7d9381a570e5c84f64308c325da76c12",
+      "claims": 222,
+      "authored": 222,
       "template": 0
     },
     {
       "path": "frontend/public/data/r-export/manifest.json",
       "kind": "array",
-      "bytes": 522137,
-      "sha256": "edff598b604a3bdf9ae858818fa96cfe5309f6106694f07c7af786da69f30712",
+      "bytes": 517857,
+      "sha256": "d5ca478a39bb6844288dd9cbdd3658fda8ccf739b2f3fe842cc877e5acedb43d",
       "claims": 50,
       "authored": 50,
       "template": 0

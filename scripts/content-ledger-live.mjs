@@ -75,6 +75,18 @@ if (!audited.length) {
   process.exit(2);
 }
 
+/**
+ * Registry bytes fold CRLF to LF, because the repo is authored on Windows and
+ * deployed from Linux. Content that is already LF hashes identically either way.
+ */
+const contentOf = (body) => {
+  const text = body.toString("utf-8").replace(/\r\n/g, "\n");
+  return {
+    bytes: Buffer.byteLength(text, "utf-8"),
+    sha: createHash("sha256").update(text, "utf-8").digest("hex"),
+  };
+};
+
 const randomClient = () =>
   `10.${Math.floor(Math.random() * 250)}.${Math.floor(Math.random() * 250)}.${Math.floor(Math.random() * 250)}`;
 
@@ -106,15 +118,15 @@ async function audit(row) {
       }
       const body = Buffer.from(await res.arrayBuffer());
       if (body.length === 0) return { ...row, state: "empty", detail: "0 bytes" };
-      const sha = createHash("sha256").update(body).digest("hex");
-      if (sha !== row.entry.sha256) {
+      const served = contentOf(body);
+      if (served.sha !== row.entry.sha256) {
         return {
           ...row,
           state: "drift",
-          detail: `served ${body.length} B (sha ${sha.slice(0, 12)}…) vs registered ${row.entry.bytes} B (sha ${row.entry.sha256.slice(0, 12)}…)`,
+          detail: `served ${served.bytes} B (sha ${served.sha.slice(0, 12)}…) vs registered ${row.entry.bytes} B (sha ${row.entry.sha256.slice(0, 12)}…)`,
         };
       }
-      return { ...row, state: "live", detail: `${body.length} B` };
+      return { ...row, state: "live", detail: `${served.bytes} B` };
     } catch (error) {
       lastError = error?.name === "AbortError" ? "timeout" : String(error?.message ?? error);
     }
@@ -129,21 +141,21 @@ async function auditFile({ key, urlPath, bytes, sha256, claims }) {
     if (res.status === 404) return { key, state: "missing", detail: "HTTP 404" };
     if (!res.ok) return { key, state: "error", detail: `HTTP ${res.status}` };
     const body = Buffer.from(await res.arrayBuffer());
-    if (body.length !== bytes) {
-      return { key, state: "drift", detail: `served ${body.length} B vs registered ${bytes} B` };
+    const served = contentOf(body);
+    if (served.bytes !== bytes) {
+      return { key, state: "drift", detail: `served ${served.bytes} B vs registered ${bytes} B` };
     }
-    const sha = createHash("sha256").update(body).digest("hex");
-    if (sha !== sha256) {
-      return { key, state: "drift", detail: `sha ${sha.slice(0, 12)}… vs registered ${sha256.slice(0, 12)}…` };
+    if (served.sha !== sha256) {
+      return { key, state: "drift", detail: `sha ${served.sha.slice(0, 12)}… vs registered ${sha256.slice(0, 12)}…` };
     }
     if (typeof claims === "number") {
-      const served = JSON.parse(body.toString("utf-8"));
-      const count = Array.isArray(served) ? served.length : Object.keys(served).length;
+      const parsed = JSON.parse(body.toString("utf-8"));
+      const count = Array.isArray(parsed) ? parsed.length : Object.keys(parsed).length;
       if (count !== claims) {
         return { key, state: "drift", detail: `${count} claims served vs ${claims} registered` };
       }
     }
-    return { key, state: "live", detail: `${body.length} B` };
+    return { key, state: "live", detail: `${served.bytes} B` };
   } catch (error) {
     return { key, state: "error", detail: String(error?.message ?? error) };
   }
