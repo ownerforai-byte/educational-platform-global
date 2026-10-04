@@ -9,6 +9,7 @@ import {
   getUnitFormulaSheet,
   isFormulaSubjectSlug,
 } from "@/lib/formula-sheet";
+import { AnnotationBlock, AnnotationBlockLegend, ClassifiedNotes } from "@/components/formulas/classified-notes";
 
 /**
  * Prerendered at build (see the subject page): every populate-able unit gets
@@ -132,8 +133,10 @@ export default async function UnitFormulaPage({
           </div>
 
           <div className="space-y-2.5">
-            {topic.formulas.map((formula) => {
+            {topic.formulas.map((formula, fi) => {
               formulaNo += 1;
+              const annotations = topic.annotationsByFormula.get(formula);
+              const shortcut = topic.shortcuts[fi];
               return (
                 <article
                   key={`${topic.filename}-${formulaNo}`}
@@ -143,12 +146,28 @@ export default async function UnitFormulaPage({
                     {String(formulaNo).padStart(2, "0")}
                   </span>
                   <MathMarkdown content={formula} className="min-w-0 flex-1 text-sm" />
+                  {shortcut && (
+                    <div className="flex-1">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-violet-500/10 px-2 py-0.5 text-[10px] font-bold text-violet-700 dark:text-violet-300">
+                        Shortcut
+                      </span>
+                      <MathMarkdown content={shortcut} className="mt-1 text-xs text-foreground/80" />
+                    </div>
+                  )}
+                  {annotations && annotations.length > 0 && (
+                    <AnnotationBlock annotations={annotations} />
+                  )}
                 </article>
               );
             })}
           </div>
+          {topic.classifiedNotes && (
+            <ClassifiedNotes group={topic.classifiedNotes} />
+          )}
         </section>
       ))}
+
+      <AnnotationBlockLegend />
 
       <nav className="flex flex-wrap items-center gap-3 border-t border-border/60 pt-5 text-sm">
         <Link

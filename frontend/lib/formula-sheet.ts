@@ -52,6 +52,39 @@ export const FORMULA_SUBJECTS: FormulaSheetMeta[] = [
 ];
 
 /** One source note and the formulas it contributes to its unit. */
+export type FormulaAnnotationKind = "condition" | "solved-pyq" | "hint" | "exam-trick" | "shortcut";
+
+export interface FormulaAnnotation {
+  /** Classified study note kind. */
+  kind: FormulaAnnotationKind;
+  /** Short free-form note; may include `$…$` inline LaTeX. */
+  text: string;
+  /** Optional label shown before the text (e.g. exam year, trick name). */
+  label?: string;
+}
+
+const VALID_ANNOTATION_KINDS = new Set<FormulaAnnotationKind>([
+  "condition",
+  "solved-pyq",
+  "hint",
+  "exam-trick",
+  "shortcut",
+]);
+
+function normalizeAnnotation(raw: unknown, formulaText: string): FormulaAnnotation | null {
+  if (!raw || typeof raw !== "object") return null;
+  const obj = raw as Record<string, unknown>;
+  const kind = obj.kind;
+  if (typeof kind !== "string" || !VALID_ANNOTATION_KINDS.has(kind as FormulaAnnotationKind)) return null;
+  const text = obj.text;
+  if (typeof text !== "string" || text.trim().length === 0) return null;
+  return {
+    kind: kind as FormulaAnnotationKind,
+    text: text.trim(),
+    label: typeof obj.label === "string" ? obj.label.trim() : undefined,
+  };
+}
+
 export interface FormulaSheetTopic {
   /** Manifest topic slug (kept for debugging / future deep-links). */
   slug: string;
@@ -61,6 +94,33 @@ export interface FormulaSheetTopic {
   filename: string;
   /** Deduplicated formula lines (markdown with `$…$` LaTeX). */
   formulas: string[];
+  /** Per-formula shortcuts aligned by index to `formulas` (from the note's
+   *  `keyPoints` field). Shorter than `formulas`; missing slots are undefined. */
+  shortcuts: readonly (string | undefined)[];
+  /** Classified study notes attached to specific formulas in this topic.
+   *  Keyed by exact formula text (deduplicated line); values merge across all
+   *  notes in the topic that contribute the same formula. Absent keys are
+   *  treated as "no annotations for that formula". */
+  annotationsByFormula: ReadonlyMap<string, readonly FormulaAnnotation[]>;
+  /** Topic-level classified notes auto-mapped from the note's existing fields
+   *  (`specialNotes`, `examShortTricks`, `practice`, `mcs`, `confusion`,
+   *  `importantNotes`, `importantStatements`). Gives immediate classified
+   *  coverage across all subjects from the existing authored data. */
+  classifiedNotes: ClassifiedNoteGroup | null;
+}
+
+/** Topic-level classified notes, auto-mapped from existing note fields. Each
+ *  array is a curated (capped) subset so the sheet stays readable. */
+export interface ClassifiedNoteGroup {
+  /** Special conditions that bound the topic's formulas (from `specialNotes`). */
+  conditions: readonly string[];
+  /** Solved past-year / practice problems in short (from `practice`). */
+  solvedPyqs: readonly string[];
+  /** Exam tricks and MCQ memory aids (from `examShortTricks` + converted `mcs`). */
+  examTricks: readonly string[];
+  /** Hints: common pitfalls, must-remember notes, key statements (from
+   *  `confusion` + `importantNotes` + `importantStatements`). */
+  hints: readonly string[];
 }
 
 export interface FormulaSheetUnit {
@@ -116,6 +176,119 @@ interface NoteFile {
   title?: string;
   topicSlug?: string;
   formulas?: unknown;
+  notes?: unknown;
+  annotations?: unknown;
+  keyPoints?: unknown;
+  specialNotes?: unknown;
+  examShortTricks?: unknown;
+  examNotes?: unknown;
+  importantNotes?: unknown;
+  importantStatements?: unknown;
+  universalFacts?: unknown;
+  confusion?: unknown;
+  practice?: unknown;
+  mcs?: unknown;
+}
+
+/**
+ * Build a topic-level `ClassifiedNoteGroup` from a note's existing fields.
+ *
+ * Mapping (all note-level, so the same group is shown once per topic):
+ *  - `specialNotes`        → conditions
+ *  - `practice`            → solved-pyqs  (solved problems with full solutions)
+ *  - `examShortTricks`     → exam-tricks
+ *  - `mcs`                 → exam-tricks  (MCQ question + answer + explanation,
+ *                                          converted to a short text line)
+ *  - `confusion`           → hints        (common pitfalls / what NOT to do)
+ *  - `importantNotes`      → hints
+ *  - `importantStatements` → hints
+ *
+ * Each category is capped so the sheet stays scannable; the full content
+ * remains in the note itself.
+ */
+function buildClassifiedNotes(note: NoteFile): ClassifiedNoteGroup | null {
+  const conditions: string[] = Array.isArray(note.specialNotes)
+    ? note.specialNotes.filter((x): x is string => typeof x === "string" && Boolean(x.trim()))
+        .map((x) => x.trim())
+    : [];
+  const solvedPyqs: string[] = Array.isArray(note.practice)
+    ? note.practice.filter((x): x is string => typeof x === "string" && Boolean(x.trim()))
+        .map((x) => x.trim())
+    : [];
+  const examShortTricks: string[] = Array.isArray(note.examShortTricks)
+    ? note.examShortTricks.filter((x): x is string => typeof x === "string" && Boolean(x.trim()))
+        .map((x) => x.trim())
+    : [];
+  const mcs: Array<{ question: string; options: string[]; answer: string; explanation: string }> =
+    Array.isArray(note.mcs)
+      ? note.mcs.filter(
+          (x): x is { question: string; options: string[]; answer: string; explanation: string } =>
+            x &&
+            typeof x === "object" &&
+            Array.isArray(x.options) &&
+            typeof (x as Record<string, unknown>).question === "string" &&
+            typeof (x as Record<string, unknown>).answer === "string" &&
+            typeof (x as Record<string, unknown>).explanation === "string",
+        )
+      : [];
+  const confusion: string[] = Array.isArray(note.confusion)
+    ? note.confusion.filter((x): x is string => typeof x === "string" && Boolean(x.trim()))
+        .map((x) => x.trim())
+    : [];
+  const importantNotes: string[] = Array.isArray(note.importantNotes)
+    ? note.importantNotes.filter((x): x is string => typeof x === "string" && Boolean(x.trim()))
+        .map((x) => x.trim())
+    : [];
+  const importantStatements: string[] = Array.isArray(note.importantStatements)
+    ? note.importantStatements.filter((x): x is string => typeof x === "string" && Boolean(x.trim()))
+        .map((x) => x.trim())
+    : [];
+
+  const hasAny =
+    conditions.length +
+    solvedPyqs.length +
+    examShortTricks.length +
+    mcs.length +
+    confusion.length +
+    importantNotes.length +
+    importantStatements.length >
+    0;
+  if (!hasAny) return null;
+
+  // Convert MCQs to short text lines: "Q: … · Ans: <option text> — <explanation>"
+  const mcsLines: string[] = mcs.map((mc) => {
+    const ansOption = mc.options.find(
+      (o, i) => String.fromCharCode(65 + i) === mc.answer,
+    );
+    const ansText = ansOption ?? mc.answer;
+    // Keep it short: strip leading bold markers and truncate explanation
+    const q = mc.question.replace(/^\*\*|\*\*$|,$/g, "").trim();
+    const expl = mc.explanation.replace(/^\*\*|\*\*$/g, "").trim();
+    return `**Q:** ${q} · **Ans:** ${ansText} — ${expl}`;
+  });
+
+  const CAP = 3;
+  return {
+    conditions: conditions.slice(0, CAP),
+    solvedPyqs: solvedPyqs.slice(0, CAP),
+    examTricks: [...examShortTricks, ...mcsLines].slice(0, CAP),
+    hints: [...confusion, ...importantNotes, ...importantStatements]
+      .slice(0, CAP),
+  };
+}
+
+/**
+ * Per-formula shortcuts aligned by index to `formulas` (from the note's
+ * `keyPoints` field). Missing slots are undefined.
+ */
+function buildShortcuts(note: NoteFile, formulaCount: number): readonly (string | undefined)[] {
+  if (!Array.isArray(note.keyPoints)) return new Array(formulaCount).fill(undefined) as readonly (string | undefined)[];
+  const out: (string | undefined)[] = [];
+  for (let i = 0; i < formulaCount; i++) {
+    const kp = note.keyPoints[i];
+    out.push(typeof kp === "string" && kp.trim() ? kp.trim() : undefined);
+  }
+  return out as readonly (string | undefined)[];
 }
 
 function emptyUnit(id: string, title: string, unitNo: number | null, isExtra: boolean, syllabusTopicCount: number): FormulaSheetUnit {
@@ -215,14 +388,78 @@ async function loadSubjectFormulaSheet(subjectSlug: string): Promise<FormulaShee
       bucket.seen.add(formula);
       fresh.push(formula);
     }
-    if (fresh.length === 0) continue;
 
-    bucket.topics.push({
-      slug: note.topicSlug ?? entry.topicSlug ?? "",
-      title: note.title ?? entry.title ?? humanizeSlug(entry.topicSlug ?? filename),
-      filename,
-      formulas: fresh,
-    });
+    // Annotations from this note that link (by explicit `formula` field or
+    // positionally) to a formula carried by a note already in the bucket must
+    // be merged into that existing topic, otherwise they would be lost when a
+    // later note restates a formula that the first note already introduced.
+    const noteAnnotations = Array.isArray(note.annotations) ? note.annotations : [];
+    // Positional fallback: when an annotation omits the explicit `formula` field,
+    // attach it to the i-th formula line of the same note (before junk
+    // filtration, so the author can still target a formula that may later be
+    // merged into an earlier topic).
+    const positional = Array.isArray(note.formulas)
+      ? note.formulas.filter((n): n is string => typeof n === "string")
+      : [];
+    const linked: Array<{ ann: FormulaAnnotation; formula: string }> = [];
+    for (let i = 0; i < noteAnnotations.length; i++) {
+      const ann = normalizeAnnotation(noteAnnotations[i], "");
+      if (!ann) continue;
+      let formula: string | undefined;
+    const rawFormula = (noteAnnotations[i] as Record<string, unknown>).formula;
+    if (typeof rawFormula === "string") formula = rawFormula;
+      if (typeof formula !== "string" || !formula.trim()) {
+        formula = positional[i];
+      }
+      const key = formula?.trim();
+      if (!key) continue;
+      linked.push({ ann, formula: key });
+    }
+
+    if (fresh.length === 0 && linked.length === 0) continue;
+
+    if (fresh.length > 0) {
+      // Annotations that attach to the newly-introduced formulas live on this
+      // topic; the rest (attaching to already-seen formulas) are merged below.
+      const localMap = new Map<string, FormulaAnnotation[]>();
+      for (const f of fresh) localMap.set(f, []);
+      const leftover: Array<{ ann: FormulaAnnotation; formula: string }> = [];
+      for (const { ann, formula } of linked) {
+        if (localMap.has(formula)) localMap.get(formula)!.push(ann);
+        else leftover.push({ ann, formula });
+      }
+      bucket.topics.push({
+        slug: note.topicSlug ?? entry.topicSlug ?? "",
+        title:
+          note.title ?? entry.title ?? humanizeSlug(entry.topicSlug ?? filename),
+        filename,
+        formulas: fresh,
+        shortcuts: buildShortcuts(note, fresh.length),
+        annotationsByFormula: new Map(localMap),
+        classifiedNotes: buildClassifiedNotes(note),
+      });
+      // Merge annotations for already-seen formulas into the existing topics.
+      for (const { ann, formula } of leftover) {
+        for (const topic of bucket.topics) {
+          if (topic.formulas.includes(formula)) {
+            const list = topic.annotationsByFormula.get(formula);
+            if (list) (list as FormulaAnnotation[]).push(ann);
+          }
+        }
+      }
+    } else {
+      // fresh is empty: every formula this note carries is already in the
+      // bucket. Merge its annotations into whichever existing topics carry
+      // those formulas.
+      for (const { ann, formula } of linked) {
+        for (const topic of bucket.topics) {
+          if (topic.formulas.includes(formula)) {
+            const list = topic.annotationsByFormula.get(formula);
+            if (list) (list as FormulaAnnotation[]).push(ann);
+          }
+        }
+      }
+    }
   }
 
   const syllabusIds = new Set(subject.units.map((u) => u.id));

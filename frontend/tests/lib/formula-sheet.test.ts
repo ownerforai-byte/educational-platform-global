@@ -5,6 +5,7 @@ import {
   getSubjectFormulaSheet,
   getUnitFormulaSheet,
   isFormulaSubjectSlug,
+  type ClassifiedNoteGroup,
 } from "@/lib/formula-sheet";
 import { getSubjectSyllabus } from "@/lib/syllabus";
 
@@ -69,6 +70,68 @@ describe("formula-sheet — subject sheets", () => {
     expect(await getSubjectFormulaSheet("english")).toBeNull();
     expect(isFormulaSubjectSlug("physics")).toBe(true);
     expect(isFormulaSubjectSlug("biology")).toBe(false);
+  });
+
+  it("auto-surfaces classified notes (conditions, solved PYQs, exam tricks, hints)"
+    + " and per-formula shortcuts across every subject", async () => {
+    for (const subject of FORMULA_SUBJECTS) {
+      const sheet = await getSubjectFormulaSheet(subject.slug);
+      expect(sheet).not.toBeNull();
+      const allTopics = sheet!.units.flatMap((u) => u.topics);
+
+      const topicsWithFormulas = allTopics.filter((t) => t.formulas.length > 0);
+      const topicsWithShortcuts = topicsWithFormulas.filter((t) =>
+        t.shortcuts.some((s) => s),
+      );
+      const classifiedTopics = allTopics.filter((t) => t.classifiedNotes);
+      const classifiedLines = classifiedTopics.reduce<Record<keyof ClassifiedNoteGroup, number>>(
+        (acc, t) => {
+          if (!t.classifiedNotes) return acc;
+          for (const k of ["conditions", "solvedPyqs", "examTricks", "hints"] as const) {
+            acc[k] += t.classifiedNotes[k].length;
+          }
+          return acc;
+        },
+        { conditions: 0, solvedPyqs: 0, examTricks: 0, hints: 0 },
+      );
+      if (subject.slug === "chemistry") {
+        // Chemistry concept notes are mixed: many ship a matching `keyPoints`
+        // line per formula, some do not. Rather than assert shortcut coverage
+        // (which is partial), assert that chemistry's rich existing fields
+        // (`practice` solved problems, `examShortTricks`, `mcs`, `confusion`,
+        // `importantNotes`) still produce strong classified coverage.
+        expect(
+          classifiedLines.solvedPyqs,
+          `${subject.slug}: chemistry should expose many solved-PYQ lines from practice`,
+        ).toBeGreaterThan(20);
+        expect(
+          classifiedTopics.length,
+          `${subject.slug}: most chemistry formula topics should carry classified notes`,
+        ).toBeGreaterThanOrEqual(Math.ceil(topicsWithFormulas.length * 0.7));
+      } else {
+        expect(
+          topicsWithShortcuts,
+          `${subject.slug}: every formula topic should expose at least one shortcut`,
+        ).toEqual(topicsWithFormulas);
+      }
+
+      expect(
+        classifiedTopics.length,
+        `${subject.slug}: at least one topic carries classified notes`,
+      ).toBeGreaterThan(0);
+      expect(
+        classifiedLines.solvedPyqs + classifiedLines.examTricks,
+        `${subject.slug}: at least some solved-PYQ / exam-trick lines exist`,
+      ).toBeGreaterThan(0);
+
+      for (const t of classifiedTopics) {
+        if (!t.classifiedNotes) continue;
+        expect(t.classifiedNotes.conditions.length).toBeLessThanOrEqual(3);
+        expect(t.classifiedNotes.solvedPyqs.length).toBeLessThanOrEqual(3);
+        expect(t.classifiedNotes.examTricks.length).toBeLessThanOrEqual(3);
+        expect(t.classifiedNotes.hints.length).toBeLessThanOrEqual(3);
+      }
+    }
   });
 });
 
