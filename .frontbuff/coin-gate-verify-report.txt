@@ -1,0 +1,35 @@
+=== 6. render files must NOT reintroduce the removed phrases ===
+'Free mode — the coin gate is OFF' -> 
+'Free mode — no coins needed' -> 
+'Free mode — no credits needed' -> 
+'Coin gate is OFF for owner emails' -> 
+'ON .* Coins Required' -> 
+'OFF .* Free Mode' -> 
+'Coin gate ENABLED' -> 
+'Coin gate DISABLED' -> 
+'Currently ON: owners pay' -> 
+'Currently OFF: owners free' -> 
+'chat FREE with no coin ask' -> 
+'OFF: every owner email chats FREE' -> 
+'free mode — no coins needed' -> 
+'free mode — no credits needed' -> 
+'coin gate is OFF for owner emails' -> 
+'OFF for owner emails' -> 
+
+=== 7a. diff of edited files is clean of old text ===
+DIFF_EXIT=0
+FAIL: diff contains 'the coin gate is OFF for owner emails'
+FAIL: diff contains 'Coin gate is OFF for owner emails'
+OK: diff clean of 'OFF — free'
+FAIL: diff contains 'ON .* Coins Required'
+FAIL: diff contains 'OFF .* Free Mode'
+OK: diff clean of '.- asking for coins'
+OK: diff clean of '.- free'
+OK: diff clean of 'Coin gate OFF'
+OK: diff clean of 'Coin gate ON'
+
+=== 7b. targeted test suite run (exit status preserved) ===
+TESTS_EXIT=1
+
+
+verify_exit=diff=0 tests=1
