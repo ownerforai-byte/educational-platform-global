@@ -4,6 +4,7 @@ import Link from "next/link";
 import { Coins, Crown, Sparkles, UserRound } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { useCoinGateEnabled } from "@/features/credits/use-coin-gate";
+import { CoinGateDot } from "@/features/credits/coin-gate-dot";
 import { isOwnerEmail } from "@/lib/owner";
 import { GUEST_DAILY_LIMIT, readGuestCount } from "@/lib/ai/guest-quota";
 
@@ -71,10 +72,8 @@ export function AiPlanStrip() {
     <div className="flex flex-wrap items-center justify-between gap-3 rounded-2xl border border-border/60 bg-muted/30 px-4 py-3">
       <span className="inline-flex flex-wrap items-center gap-2 text-xs">
         {accountFree ? (
-          <span className="inline-flex items-center gap-1.5 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 font-bold text-emerald-600 dark:text-emerald-400">
-            <Sparkles className="h-3.5 w-3.5" />
-            Free
-          </span>
+          // Owner + gate OFF → the small windy dot is the whole message.
+          <CoinGateDot />
         ) : premium ? (
           <span className="inline-flex items-center gap-1.5 rounded-lg border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 font-bold text-amber-500">
             <Crown className="h-3.5 w-3.5" />
@@ -87,13 +86,13 @@ export function AiPlanStrip() {
             {limit !== undefined && ` / ${limit}`} credits
           </span>
         )}
-        <span className="text-muted-foreground">
-          {accountFree
-            ? "Coin gate is OFF for owner emails — your replies are free."
-            : premium
+        {!accountFree && (
+          <span className="text-muted-foreground">
+            {premium
               ? "No daily cap on replies."
               : "Daily credits refill at midnight — one reply costs one credit. Buy coins to keep chatting."}
-        </span>
+          </span>
+        )}
       </span>
       <Link
         href="/credits"

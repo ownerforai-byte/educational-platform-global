@@ -12,6 +12,7 @@
 export { CreditProvider, useCredit } from "./credit-provider";
 export type { CreditContextValue } from "./credit-provider";
 export { CreditGate } from "./credit-gate";
+export { CoinGateDot } from "./coin-gate-dot";
 export type { CreditGateProps } from "./credit-gate";
 export { DirectoryCard } from "./directory-card";
 export { AdminApprovalModal } from "./admin-approval-modal";

@@ -73,6 +73,7 @@ import {
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { useCoinGateEnabled } from "@/features/credits/use-coin-gate";
+import { CoinGateDot } from "@/features/credits/coin-gate-dot";
 import { isOwnerEmail } from "@/lib/owner";
 import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
@@ -1085,15 +1086,20 @@ export function TutorConsole({
                 {guestCredits > 0 ? "1 free trial message" : "Free trial used"}
               </span>
             )}
-            {isLoggedIn && privilegedUser && (
-              <span
-                className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 font-semibold"
-                title="Coin gate is OFF for owner emails — your chats are free"
-              >
-                <Coins className="h-3 w-3" />
-                Free mode — no coins needed
-              </span>
-            )}
+            {isLoggedIn && privilegedUser &&
+              (isOwner ? (
+                // Owner + gate OFF → only the small windy dot shows the state
+                // (long gate messages removed — owner request 2026-10-04).
+                <CoinGateDot className="hidden sm:inline-flex" />
+              ) : (
+                <span
+                  className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 font-semibold"
+                  title="PRO — unlimited, no coins needed"
+                >
+                  <Coins className="h-3 w-3" />
+                  Free mode — no coins needed
+                </span>
+              ))}
             {isLoggedIn && !privilegedUser && (
               <span
                 className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-muted border border-border/60 font-semibold"
@@ -1338,11 +1344,6 @@ export function TutorConsole({
             {isGuestLimited
               ? `Your free message for today is used — sign in to continue. Your daily credits and saved histories are waiting.`
               : `Today's ${DAILY_CREDIT_POOL}-credit pool is empty — it resets at 12:00 AM.`}
-          </p>
-        )}
-        {freeMode && isOwner && isLoggedIn && !isGuestLimited && (
-          <p className="mb-2 rounded-lg border border-emerald-500/30 bg-emerald-500/10 px-3 py-1.5 text-[11px] font-semibold text-emerald-600 dark:text-emerald-400">
-            Free mode — the coin gate is OFF for owner emails, so your chats are free. Students still need coins.
           </p>
         )}
         <ChatAttachPreview

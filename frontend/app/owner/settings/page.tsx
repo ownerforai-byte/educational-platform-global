@@ -8,6 +8,7 @@ import { Input } from "@/components/ui/input";
 import { Skeleton } from "@/components/ui/skeleton";
 import { getOwnerSettings, updateOwnerSettings } from "@/lib/api/owner";
 import type { OwnerSetting } from "@/lib/api/owner";
+import { CoinGateDot } from "@/features/credits/coin-gate-dot";
 
 export default function OwnerSettingsPage() {
   const [settings, setSettings] = useState<OwnerSetting[]>([]);
@@ -131,7 +132,7 @@ export default function OwnerSettingsPage() {
       await updateOwnerSettings([{ key: "coin_gate_enabled", value: next }]);
       setCoinGate(next);
       await load();
-      setSavedMsg(`Coin gate ${next ? "enabled — AI chat asks for coins" : "disabled — AI chat is free"}.`);
+      setSavedMsg("Coin gate saved.");
     } catch (err) {
       setError(err instanceof Error ? err.message : "Toggle failed");
     } finally {
@@ -180,19 +181,21 @@ export default function OwnerSettingsPage() {
 
       <Card className="border-primary/40">
         <CardHeader className="pb-2">
-          <CardTitle className="text-sm font-medium">Coin gate (AI chat billing)</CardTitle>
+          <CardTitle className="text-sm font-medium flex items-center gap-2">
+            Coin gate (whole library + AI chat)
+            {/* The only ON/OFF indicator — everything else is gone
+                (owner request 2026-10-04). */}
+            <CoinGateDot />
+          </CardTitle>
         </CardHeader>
-        <CardContent className="flex flex-col sm:flex-row sm:items-center justify-between gap-3">
-          <p className="text-sm text-muted-foreground">
-            When ON, every AI chat message costs a credit from each user's daily pool. When OFF, AI chat is free for everyone.
-          </p>
+        <CardContent className="flex items-center justify-end">
           <Button
             variant={coinGate ? "default" : "outline"}
             onClick={toggleCoinGate}
             disabled={isSaving || coinGate === null}
             className="shrink-0"
           >
-            Coin gate: {coinGate === null ? "…" : coinGate ? "ON — asking for coins" : "OFF — free"}
+            {isSaving ? "Saving…" : coinGate === null ? "…" : coinGate ? "Turn gate OFF" : "Turn gate ON"}
           </Button>
         </CardContent>
       </Card>

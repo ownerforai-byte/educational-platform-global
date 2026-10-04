@@ -38,6 +38,7 @@ import { useSession } from "@/features/auth/hooks/use-session";
 import { isOwnerUser } from "@/lib/owner";
 import { getOwnerSettings, updateOwnerSettings } from "@/lib/api/owner";
 import { broadcastCoinGate, parseCoinGateEnabled } from "@/lib/coin-gate";
+import { CoinGateDot } from "@/features/credits/coin-gate-dot";
 import type { ProgressEntry } from "@/types/api";
 
 const roleBadgeConfig: Record<
@@ -199,11 +200,9 @@ export default function ProfilePage() {
       setCoinGate(next);
       // Global switch: tell every chat surface immediately (all owner gmails).
       broadcastCoinGate(next);
-      setGateMsg(
-        next
-          ? "Coin gate ENABLED — ALL owner emails now need coins like students (1 per AI message)."
-          : "Coin gate DISABLED — ALL owner emails are now FREE (no coin ask). Students still need coins."
-      );
+      // The long ON/OFF announcements are gone (owner request 2026-10-04):
+      // the windy dot in the card carries the state now.
+      setGateMsg("Coin gate saved.");
     } catch (err) {
       setGateErr(err instanceof Error ? err.message : "Failed to toggle coin gate");
     } finally {
@@ -306,10 +305,7 @@ export default function ProfilePage() {
                 </p>
                 <div className="mt-1.5 flex items-center gap-3 text-xs text-muted-foreground flex-wrap">
                   {owner && coinGate === false && !user.premiumStatus ? (
-                    <span className="inline-flex items-center gap-1 text-emerald-500">
-                      <Sparkles className="h-3.5 w-3.5" />
-                      <span className="font-semibold">Free mode (gate OFF)</span>
-                    </span>
+                    <CoinGateDot />
                   ) : (
                     <span className="inline-flex items-center gap-1">
                       <Coins className="h-3.5 w-3.5 text-amber-500" />
@@ -370,22 +366,12 @@ export default function ProfilePage() {
                 <div>
                   <CardTitle className="text-sm font-semibold flex items-center gap-2">
                     Owner Coin Gate Control
-                    <span
-                      className={`text-[10px] font-bold px-2 py-0.5 rounded-full border ${
-                        coinGate
-                          ? "bg-emerald-500/15 border-emerald-500/30 text-emerald-500"
-                          : "bg-blue-500/15 border-blue-500/30 text-blue-500"
-                      }`}
-                    >
-                      {coinGate === null
-                        ? "Loading…"
-                        : coinGate
-                        ? "ON · Coins Required"
-                        : "OFF · Free Mode"}
-                    </span>
+                    {/* The only place the ON/OFF state shows now — a small
+                        windy dot (owner request 2026-10-04). */}
+                    <CoinGateDot />
                   </CardTitle>
                   <CardDescription className="text-xs">
-                    Owner-only switch — ON: owners pay coins like students. OFF: owners free, students still pay.
+                    Owner-only switch — the whole coin-gated library and AI chat.
                   </CardDescription>
                 </div>
               </div>
@@ -422,11 +408,6 @@ export default function ProfilePage() {
             </div>
           </CardHeader>
           <CardContent className="pt-1 text-xs space-y-2">
-            <p className="text-muted-foreground">
-              {coinGate
-                ? "ON: every owner email pays 1 coin per AI message (locked at 0) — students always pay."
-                : "OFF: every owner email chats FREE with no coin ask — students still pay per message."}
-            </p>
             {gateMsg && (
               <div className="rounded-md border border-emerald-500/40 bg-emerald-500/10 px-3 py-1.5 text-xs text-emerald-600 font-medium">
                 {gateMsg}
@@ -757,9 +738,9 @@ export default function ProfilePage() {
               <CardContent className="space-y-3">
                 <div className="flex items-center justify-between gap-3 p-3 rounded-lg border bg-muted/20">
                   <div>
-                    <p className="text-xs font-semibold">Coin Gate — owner emails only (AI Chat Credit Billing)</p>
-                    <p className="text-[11px] text-muted-foreground">
-                      {coinGate ? "Currently ON: owners pay 1 coin per message like students." : "Currently OFF: owners free, no coin ask. Students still pay."}
+                    <p className="text-xs font-semibold flex items-center gap-1.5">
+                      Coin Gate — owner emails only
+                      <CoinGateDot />
                     </p>
                   </div>
                   <Button

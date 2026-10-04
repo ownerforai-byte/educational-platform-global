@@ -4,6 +4,13 @@
  * RouteCreditGate — one integration point that puts the whole feature surface
  * behind the coin matrix.
  *
+ * COIN-GATE SCOPE (owner request 2026-10-04: make the owner's coin-gate
+ * toggle "applicable for whole coin gate library", not only AI chat): when
+ * the global `coin_gate_enabled` setting is OFF, every OWNER email passes
+ * this gate for free — no lock, no coin ask, no countdown. Students and
+ * guests always unlock for coins (the toggle has never freed them), and an
+ * owner with the toggle ON is billed like any student.
+ *
  * Mounted once in the (app) layout around `{children}`. For every route the
  * category resolver maps to a paid category it:
  *   - guests   → blurred layer, any click raises the AdminApprovalModal notice,
@@ -25,10 +32,13 @@ import {
   type ContentCategory,
 } from "./constants";
 import { useCredit } from "./credit-provider";
+import { useCoinGateEnabled } from "./use-coin-gate";
+import { isOwnerEmail } from "@/lib/owner";
 
 export function RouteCreditGate({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const {
+    user,
     isAuthenticated,
     isUnlocked,
     remainingClock,
@@ -37,14 +47,22 @@ export function RouteCreditGate({ children }: { children: ReactNode }) {
     noticeTitle,
     error,
   } = useCredit();
+  // Live owner gate: OFF → the WHOLE coin-gated library is free for owner
+  // emails (the toggle no longer stops at AI chat).
+  const coinGateEnabled = useCoinGateEnabled();
 
   const [working, setWorking] = useState(false);
   const category = categoryForPath(pathname ?? "/");
   // PDF document tabs (/pdfs/read) share the PDF Library's unlock window.
   const moduleKey = creditModuleKey(pathname ?? "/");
 
-  // Public / exempt route → render untouched (home baseline integrity).
-  if (category === null) return <>{children}</>;
+  // Owner + gate OFF → pass straight through: no lock, no countdown badge.
+  const libraryFree =
+    coinGateEnabled === false && !!user && isOwnerEmail(user.email);
+
+  // Public / exempt route OR free owner pass → render untouched (home
+  // baseline integrity).
+  if (category === null || libraryFree) return <>{children}</>;
 
   const open = isUnlocked(moduleKey);
 

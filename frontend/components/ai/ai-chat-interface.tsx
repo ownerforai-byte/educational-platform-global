@@ -49,6 +49,7 @@ import {
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { useCoinGateEnabled } from "@/features/credits/use-coin-gate";
+import { CoinGateDot } from "@/features/credits/coin-gate-dot";
 import { isOwnerEmail } from "@/lib/owner";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
 import { cn } from "@/lib/utils";
@@ -952,16 +953,23 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
           </div>
           <div className="p-3 border-t border-border/50">
             <div className="flex items-center gap-2 text-[10px] text-muted-foreground">
-              <Coins className="h-3.5 w-3.5 text-amber-500" />
-              <span className="font-semibold">
-                {isLoggedIn
-                  ? privilegedUser
-                    ? "Free mode — no credits needed"
-                    : `${Math.min(dailyCredits ?? user?.credits ?? DAILY_CREDIT_POOL, DAILY_CREDIT_POOL)}/${DAILY_CREDIT_POOL} credits today`
-                  : Math.max(0, MAX_GUEST_MESSAGES - guestCount) > 0
-                    ? `${Math.max(0, MAX_GUEST_MESSAGES - guestCount)} free message left today`
-                    : "Free trial used · sign in to continue"}
-              </span>
+              {isLoggedIn && privilegedUser && isOwner ? (
+                // Owner + gate OFF → only the small windy dot shows the state.
+                <CoinGateDot />
+              ) : (
+                <>
+                  <Coins className="h-3.5 w-3.5 text-amber-500" />
+                  <span className="font-semibold">
+                    {isLoggedIn
+                      ? privilegedUser
+                        ? "PRO — unlimited, no credits needed"
+                        : `${Math.min(dailyCredits ?? user?.credits ?? DAILY_CREDIT_POOL, DAILY_CREDIT_POOL)}/${DAILY_CREDIT_POOL} credits today`
+                      : Math.max(0, MAX_GUEST_MESSAGES - guestCount) > 0
+                        ? `${Math.max(0, MAX_GUEST_MESSAGES - guestCount)} free message left today`
+                        : "Free trial used · sign in to continue"}
+                  </span>
+                </>
+              )}
             </div>
           </div>
         </aside>
@@ -1010,15 +1018,18 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                 {Math.max(0, MAX_GUEST_MESSAGES - guestCount) > 0 ? "1 free trial message" : "Free trial used"}
               </span>
             )}
-            {isLoggedIn && privilegedUser && (
-              <span
-                className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 font-semibold"
-                title="Coin gate is OFF for owner emails — your chats are free (students still need coins)"
-              >
-                <Sparkles className="h-3 w-3" />
-                Free mode
-              </span>
-            )}
+            {isLoggedIn && privilegedUser &&
+              (isOwner ? (
+                <CoinGateDot className="hidden sm:inline-flex" />
+              ) : (
+                <span
+                  className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 font-semibold"
+                  title="PRO — unlimited, no coins needed"
+                >
+                  <Sparkles className="h-3 w-3" />
+                  Free mode
+                </span>
+              ))}
             {isLoggedIn && !privilegedUser && (
               <span
                 className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-muted border border-border/60 font-semibold"
