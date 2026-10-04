@@ -313,15 +313,16 @@ The sections above are historical phase logs (Cloudflare-era + pre-split). This 
 is the authoritative state. Owner: Codebuff (Buffy) + concurrent content agent.
 
 ### Reality
-- **Workspace:** `C:\Users\ASUS\Desktop\rn` (monorepo: `frontend/` Next.js 15 + `backend/` Express 4 TS).
+- **Workspace:** `C:\Users\ASUS\Desktop\rn` (monorepo: `frontend/` Next.js 16 + `backend/` Express 4 TS).
 - **Repo:** `github.com/ownerforai-byte/educational-platform-global` (branch `main`).
 - **Deploy:** both halves auto-deploy on every push to `main`. Frontend: Vercel production
-  `https://ravikisan.vercel.app` (READY at `7e6a9d26`); backend: Render
-  `https://rn01.onrender.com` (`/health` reports `7e6a9d26`).
-- **CI:** 4 workflows — CI/CD, Content JSON, Live Smoke Test, URL Hygiene — green at
-  `e66f731d`. Gates: content schema / build parity / visuals / mindmaps / ledger, frontend
-  lint + typecheck + tests + build, backend tests + build, plus live smoke and the deployed
-  content-ledger audit after deploys.
+  `https://ravikisan.vercel.app`; backend: Render `https://rn01.onrender.com` (`/health`
+  reports the deployed SHA). The four-partial completions were verified READY at `7e6a9d26`;
+  the commits after them are docs-only.
+- **CI:** 4 workflows — CI/CD, Content JSON, Live Smoke Test, URL Hygiene — all green on
+  every push in this snapshot. Gates: content schema / build parity / visuals / mindmaps /
+  ledger (+ the mobile-responsive gate), frontend lint + typecheck + tests + build, backend
+  tests + build, plus live smoke and the deployed content-ledger audit after deploys.
 - **Supabase project:** `tsvbksfegvdjwczzfdcx` (Management API token in `backend/.env`).
 
 ### Auth architecture (as shipped 2026-09-25)
@@ -354,9 +355,10 @@ is the authoritative state. Owner: Codebuff (Buffy) + concurrent content agent.
   calls; re-check it when that env changes.
 
 ### Verification state (2026-10-04)
-- CI at `7e6a9d26`: every workflow green (CI/CD all jobs — including the new
-  mobile-responsive gate — plus Content JSON, Live Smoke Test, URL Hygiene); frontend
-  lint + typecheck + tests + build and backend tests + build pass.
+- CI on the completion push (`7e6a9d26`) and the follow-up docs commits: every workflow
+  green (CI/CD all jobs — including the new mobile-responsive gate — plus Content JSON,
+  Live Smoke Test, URL Hygiene); frontend lint + typecheck + tests + build and backend
+  tests + build pass.
 - Backend suite passes on the committed tree; run it with the working tree clean (foreign
   uncommitted WIP can produce one unrelated failure locally).
 - Live rotation e2e on Render: 7/8 (the one ⚠️ is the Supabase reuse quirk above).

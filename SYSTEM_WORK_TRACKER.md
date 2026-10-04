@@ -9,7 +9,8 @@ checked by `npm run ledger:check` and audited live by `scripts/content-ledger-li
 
 State legend: **✅ Live** = committed and deployed; **🟡 In progress** = real code or data exists but part of it is uncommitted WIP; **🟠 Partial** = shipped with a known gap; **⛔ Not started**.
 
-Current HEAD when this snapshot was written: `7e6a9d26` (main == origin/main).
+Snapshot baseline: runtime code `7e6a9d26` (the four-partial completions, main == origin/main);
+the commits carrying this tracker and the refreshed status doc are docs-only.
 
 <!-- system-audit:start -->
 _Recomputed by `node scripts/system-work-audit.mjs --write`; `--check` fails when this block or any evidence path drifts._
@@ -98,13 +99,15 @@ class-11 topics shipped, **763 authored (88%) / 104 template**, 147 unclaimed
 files registered but unread, 2,467 supplementary claims of which 884 are
 template (mostly class-12 stubs).
 
-## 3. Current situation (snapshot at `7e6a9d26`)
+## 3. Current situation (baseline `7e6a9d26`)
 
-- **Deploys:** Vercel production READY at `7e6a9d26`; Render `/health` reports
-  `7e6a9d26`; the content ledger's live audit last ran 1,014/1,014 entries plus
-  the supplementary manifest and both data sources — all byte-identical.
-- **CI:** every workflow that ran on `7e6a9d26` succeeded — CI/CD (all jobs,
-  now including the mobile-responsive gate), URL Hygiene, Live Smoke Test
+- **Deploys:** Vercel production and Render both auto-deploy from `main`; the
+  four-partial completions were verified READY at `7e6a9d26` (the commits after
+  them are docs-only and keep that same app code). The content ledger's live
+  audit last ran 1,014/1,014 entries plus the supplementary manifest and both
+  data sources — all byte-identical.
+- **CI:** every workflow run for this snapshot succeeded — CI/CD (all jobs, now
+  including the mobile-responsive gate), URL Hygiene, Live Smoke Test
   (`content-schema` includes `ledger:check`; `live-smoke` includes the live
   content scan).
 - **Live spot-checks after the deploy:** `/r-notes/physics/mechanics` and
