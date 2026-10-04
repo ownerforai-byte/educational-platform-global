@@ -316,8 +316,8 @@ is the authoritative state. Owner: Codebuff (Buffy) + concurrent content agent.
 - **Workspace:** `C:\Users\ASUS\Desktop\rn` (monorepo: `frontend/` Next.js 15 + `backend/` Express 4 TS).
 - **Repo:** `github.com/ownerforai-byte/educational-platform-global` (branch `main`).
 - **Deploy:** both halves auto-deploy on every push to `main`. Frontend: Vercel production
-  `https://ravikisan.vercel.app` (READY at `e66f731d`); backend: Render
-  `https://rn01.onrender.com` (`/health` reports `e66f731d`).
+  `https://ravikisan.vercel.app` (READY at `7e6a9d26`); backend: Render
+  `https://rn01.onrender.com` (`/health` reports `7e6a9d26`).
 - **CI:** 4 workflows — CI/CD, Content JSON, Live Smoke Test, URL Hygiene — green at
   `e66f731d`. Gates: content schema / build parity / visuals / mindmaps / ledger, frontend
   lint + typecheck + tests + build, backend tests + build, plus live smoke and the deployed
@@ -353,9 +353,10 @@ is the authoritative state. Owner: Codebuff (Buffy) + concurrent content agent.
   (same-origin), so the Render `FRONTEND_URL` allowlist only matters for direct cross-origin
   calls; re-check it when that env changes.
 
-### Verification state (snapshot `e66f731d`)
-- CI at `e66f731d`: every workflow green (CI/CD all jobs, Content JSON, Live Smoke Test,
-  URL Hygiene); frontend lint + typecheck + tests + build and backend tests + build pass.
+### Verification state (2026-10-04)
+- CI at `7e6a9d26`: every workflow green (CI/CD all jobs — including the new
+  mobile-responsive gate — plus Content JSON, Live Smoke Test, URL Hygiene); frontend
+  lint + typecheck + tests + build and backend tests + build pass.
 - Backend suite passes on the committed tree; run it with the working tree clean (foreign
   uncommitted WIP can produce one unrelated failure locally).
 - Live rotation e2e on Render: 7/8 (the one ⚠️ is the Supabase reuse quirk above).

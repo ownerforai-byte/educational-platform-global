@@ -9,7 +9,7 @@ checked by `npm run ledger:check` and audited live by `scripts/content-ledger-li
 
 State legend: **✅ Live** = committed and deployed; **🟡 In progress** = real code or data exists but part of it is uncommitted WIP; **🟠 Partial** = shipped with a known gap; **⛔ Not started**.
 
-Current HEAD when this snapshot was written: `e66f731d` (main == origin/main).
+Current HEAD when this snapshot was written: `7e6a9d26` (main == origin/main).
 
 <!-- system-audit:start -->
 _Recomputed by `node scripts/system-work-audit.mjs --write`; `--check` fails when this block or any evidence path drifts._
@@ -98,14 +98,18 @@ class-11 topics shipped, **763 authored (88%) / 104 template**, 147 unclaimed
 files registered but unread, 2,467 supplementary claims of which 884 are
 template (mostly class-12 stubs).
 
-## 3. Current situation (snapshot at `e66f731d`)
+## 3. Current situation (snapshot at `7e6a9d26`)
 
-- **Deploys:** Vercel production READY at `e66f731d`; Render `/health` reports
-  `e66f731d`; the content ledger's live audit last ran 1,014/1,014 entries plus
+- **Deploys:** Vercel production READY at `7e6a9d26`; Render `/health` reports
+  `7e6a9d26`; the content ledger's live audit last ran 1,014/1,014 entries plus
   the supplementary manifest and both data sources — all byte-identical.
-- **CI:** every workflow that ran on `e66f731d` succeeded — CI/CD (all jobs),
-  URL Hygiene, Live Smoke Test (`content-schema` includes `ledger:check`;
-  `live-smoke` includes the live content scan).
+- **CI:** every workflow that ran on `7e6a9d26` succeeded — CI/CD (all jobs,
+  now including the mobile-responsive gate), URL Hygiene, Live Smoke Test
+  (`content-schema` includes `ledger:check`; `live-smoke` includes the live
+  content scan).
+- **Live spot-checks after the deploy:** `/r-notes/physics/mechanics` and
+  `/ravikishan-notes/...` now 307 to `/notes`; the class-12 unit shortcut
+  resolves like its class-11 twin.
 - **This snapshot closes the four former 🟠 rows** (shipped together with this
   tracker): the mobile gate (`scripts/mobile-responsive-check.mjs` + CI step),
   the legacy deep redirects (`frontend/next.config.mjs` +
