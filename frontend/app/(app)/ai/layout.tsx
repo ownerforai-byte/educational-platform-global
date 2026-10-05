@@ -6,14 +6,13 @@ import { useSession } from "@/features/auth/hooks/use-session";
 import { isOwnerUser } from "@/lib/owner";
 
 /**
- * Owner gate for the Image Hub.
+ * Owner gate for the Veer Studio Hub (/ai and every tab below it).
  *
- * Owner request 2026-10-05 ("make the image hub under owner emails only"):
- * drawings burn the platform key, so only allowlisted owner emails may open
- * this route. Signed-out visitors go to login and come back here;
- * signed-in non-owners bounce home.
+ * Owner request 2026-10-05 (AI under owner emails only, like the Image Hub):
+ * only allowlisted owner emails may open these routes. Signed-out visitors
+ * go to login and come back here; signed-in non-owners bounce home.
  */
-export default function MindStudioLayout({
+export default function AiLayout({
   children,
 }: {
   children: React.ReactNode;
@@ -24,7 +23,7 @@ export default function MindStudioLayout({
   useEffect(() => {
     if (isLoading) return;
     if (!user) {
-      window.location.href = "/login?next=/mind-studio";
+      window.location.href = "/login?next=/ai";
     } else if (!isOwner) {
       window.location.href = "/home";
     }
@@ -36,7 +35,7 @@ export default function MindStudioLayout({
         <div className="flex flex-col items-center gap-3">
           <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" />
           <p className="text-sm font-medium text-muted-foreground">
-            Opening the Image Hub…
+            Opening Veer Studio…
           </p>
         </div>
       </div>
@@ -52,7 +51,7 @@ export default function MindStudioLayout({
             Owner Access Only
           </h1>
           <p className="text-sm text-muted-foreground">
-            The Image Hub is restricted to the platform owner emails.
+            Veer Studio is restricted to the platform owner emails.
             Redirecting…
           </p>
         </div>

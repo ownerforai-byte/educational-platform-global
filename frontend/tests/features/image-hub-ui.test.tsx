@@ -4,9 +4,9 @@ import { ImageHub } from "@/features/image-hub";
 import type { ImageHistoryRow } from "@/features/image-hub/history";
 
 /**
- * UI contract for the Image Hub. The route asks only for a login (open to
- * every student since 2026-10-04), so a browser can reach it in production —
- * this render suite still pins the behaviour without a network.
+ * UI contract for the Image Hub. The route is owner-only (owner emails since
+ * 2026-10-05), so a browser can reach it in production only with an owner
+ * session — this render suite still pins the behaviour without a network.
  *
  * Three contracts now:
  *   · the composer modes (ACADEMIC FIGURE → POST /api/ai/figure, PICTURE →

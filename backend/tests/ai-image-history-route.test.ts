@@ -7,13 +7,10 @@ import type { Request, Response } from "express";
 import type { Server } from "node:http";
 
 /**
- * /api/ai/image-history — the Image Hub's per-user saved history (owner
- * request 2026-10-04: "enable saving of image for every user … hardcode its
- * history saving").
+ * /api/ai/image-history — the Image Hub's per-owner saved history.
  *
  * Pinned here:
- *   · the router keeps `requireAuth` (source pin) — the history is per
- *     account, so it must never be reachable without a session;
+ *   · the router keeps `requireAuth` AND `requireOwnerEmail` (source pin);
  *   · saves, loads and clears are scoped to the requesting user (no IDOR):
  *     a second account never sees or deletes the first account's drawings;
  *   · payload validation: a picture needs a url, a figure needs its svg.
@@ -24,14 +21,18 @@ import type { Server } from "node:http";
 
 vi.mock("../src/middleware/auth", async (importOriginal) => {
   const actual = await importOriginal<typeof import("../src/middleware/auth")>();
+  const ownerEmail = [...actual.OWNER_EMAILS][0] as string;
   return {
     ...actual,
     // The user identity comes from a header so the IDOR checks can switch
-    // accounts mid-test; the real middleware is pinned at the source instead.
+    // accounts mid-test; every stubbed account carries a real allowlisted
+    // email so the real owner gate passes. The gate itself is pinned at the
+    // source instead.
     requireAuth: (req: Request, _res: Response, next: () => void) => {
       const id = (req.headers["x-test-user"] as string) || "user-a";
-      (req as unknown as { user: { id: string; role: string } }).user = {
+      (req as unknown as { user: { id: string; email: string; role: string } }).user = {
         id,
+        email: ownerEmail,
         role: "STUDENT",
       };
       next();
@@ -97,13 +98,13 @@ const FIGURE = {
 };
 
 describe("/api/ai/image-history", () => {
-  test("is guarded by requireAuth on every route (source pin)", () => {
+  test("is guarded by requireAuth AND the owner gate on every route (source pin)", () => {
     const src = readFileSync(
       path.resolve(__dirname, "../src/api/ai-image-history.ts"),
       "utf8",
     );
     const routes = src.match(/router\.(get|post|delete)\(/g) ?? [];
-    const guarded = src.match(/router\.(get|post|delete)\("[^"]*", requireAuth/g) ?? [];
+    const guarded = src.match(/router\.(get|post|delete)\("[^"]*", requireAuth, requireOwnerEmail/g) ?? [];
     expect(routes).toHaveLength(3);
     expect(guarded).toHaveLength(3);
   });

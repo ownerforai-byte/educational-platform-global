@@ -3,45 +3,45 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 
 /**
- * Owner request (2026-10-04): "enable saving of image for every user" — the
- * Image Hub (formerly owner-only Mind Studio) now opens to every signed-in
- * student and keeps their drawings in the account history. Source-level pin,
- * same style as tests/lib/navigation.test.ts — the gate is client-side
+ * Owner request (2026-10-05): "make the image hub under owner emails only" —
+ * the Image Hub (owner-only Mind Studio successor) opens to allowlisted owner
+ * emails only and keeps their drawings in the account history. Source-level
+ * pin, same style as tests/lib/navigation.test.ts — the gate is client-side
  * (session resolves in the browser), so we pin the wiring instead of trying
  * to render a session in jsdom.
  */
 const read = (p: string) => readFileSync(path.resolve(p), "utf8");
 
 describe("Image Hub access gate", () => {
-  it("asks for a login but never for the owner allowlist", () => {
+  it("is owner-only: layout bounces non-owners home and signed-out to login", () => {
     const layout = read("app/(app)/mind-studio/layout.tsx");
     expect(layout).toContain('"use client"');
+    // Owner allowlist check — students never see the hub.
+    expect(layout).toContain("isOwnerUser");
     // Signed-out visitors still bounce to login and come back here.
     expect(layout).toContain('"/login?next=/mind-studio"');
-    // The former owner gate is gone: no owner check, no home bounce.
-    expect(layout).not.toContain("isOwnerUser");
-    expect(layout).not.toContain('"/home"');
+    // Signed-in non-owners bounce home.
+    expect(layout).toContain('"/home"');
   });
 
-  it("renders the hub as a normal public page with account-saved history", () => {
+  it("renders the hub as an owner page with account-saved history", () => {
     const page = read("app/(app)/mind-studio/page.tsx");
-    // The owner-only noindex was dropped with the gate.
-    expect(page).not.toContain("index: false");
-    expect(page).toContain("Every student's image studio");
+    expect(page).not.toContain("Every student's image studio");
+    expect(page).toContain("Owner");
   });
 
-  it("shows the home launcher to everyone, outside the owner gate", () => {
+  it("shows the home launcher inside the owner gate only", () => {
     const home = read("app/(app)/home/page.tsx");
     expect(home).toContain("<HomeMindStudio />");
     // The OwnerOnly helper itself still exists for the owner console.
     expect(read("features/auth/owner-only.tsx")).toContain("isOwnerUser(user)");
 
-    // The home page DOES carry an owner gate today — but only around the
-    // subject rails (owner request 2026-10-05: "make this features for owner
-    // emails only"). The Image Hub launcher must sit outside that block, so
-    // pin what the gate actually wraps instead of banning the tag outright.
-    const gate = home.match(/<OwnerOnly>[\s\S]*?<\/OwnerOnly>/)?.[0] ?? "";
-    expect(gate).toContain("<HomeSubjectRails />");
-    expect(gate).not.toContain("<HomeMindStudio />");
+    // Every HomeMindStudio occurrence must sit inside an <OwnerOnly> block.
+    const gates = home.match(/<OwnerOnly>[\s\S]*?<\/OwnerOnly>/g) ?? [];
+    expect(gates.length).toBeGreaterThan(0);
+    expect(gates.some((g) => g.includes("<HomeMindStudio />"))).toBe(true);
+    // No bare launcher outside the gate.
+    const stripped = home.replace(/<OwnerOnly>[\s\S]*?<\/OwnerOnly>/g, "");
+    expect(stripped).not.toContain("<HomeMindStudio />");
   });
 });

@@ -59,11 +59,12 @@ export default async function HomePage() {
       <HomeOwnerNotice />
 
       {/* Image Hub launcher (was Mind Studio) — Agnes 2.1 Flash images
-          (puter.js fallback). Open to every student (owner request
-          2026-10-04): the section renders for all visitors; the
-          /mind-studio route asks only for a login and the gallery is saved
-          to the account. */}
-      <HomeMindStudio />
+          (puter.js fallback). Owner emails only (owner request 2026-10-05):
+          the section renders inside the owner gate; the /mind-studio route
+          and the image endpoints enforce the same boundary. */}
+      <OwnerOnly>
+        <HomeMindStudio />
+      </OwnerOnly>
 
       {/* Unified academic directory — one card, gated behind Gmail sign-in.
           Hero + intro above stay public and structurally unchanged; the AI

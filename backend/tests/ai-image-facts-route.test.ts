@@ -12,7 +12,8 @@ import type { Server } from "node:http";
  * the opened picture shows.
  *
  * Pinned here:
- *   · the router keeps `requireAuth` (source pin) — it spends an LLM call;
+ *   · the router keeps `requireAuth` AND the owner gate (source pin) — it
+ *     spends an LLM call;
  *   · 400 without a subject;
  *   · bullet / numbering / bold noise is stripped into clean fact lines and
  *     the card is capped at six lines;
@@ -25,11 +26,13 @@ const chatMock = vi.fn();
 
 vi.mock("../src/middleware/auth", async (importOriginal) => {
   const actual = await importOriginal<typeof import("../src/middleware/auth")>();
+  const ownerEmail = [...actual.OWNER_EMAILS][0] as string;
   return {
     ...actual,
     requireAuth: (req: Request, _res: Response, next: () => void) => {
-      (req as unknown as { user: { id: string; role: string } }).user = {
+      (req as unknown as { user: { id: string; email: string; role: string } }).user = {
         id: (req.headers["x-test-user"] as string) || "user-a",
+        email: ownerEmail,
         role: "STUDENT",
       };
       next();

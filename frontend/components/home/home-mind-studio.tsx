@@ -12,11 +12,11 @@ import {
  * Image Hub launcher — the home entry for the image studio (owner request
  * 2026-10-02: the Mind Studio diagram workspace was REPLACED by the Image
  * Hub: Agnes 2.1 Flash image chain first, puter.js in the browser as the
- * fallback; opened to every student 2026-10-04).
+ * fallback; owner emails only since 2026-10-05).
  *
- * The section renders for every signed-in visitor, so the copy speaks to a
- * student, not to the owner. The preview on the right is a static mockup of a
- * gallery card — purely decorative, renders nothing interactive.
+ * The section renders inside <OwnerOnly> on the home page, so the copy speaks
+ * to the owner, not to the student. The preview on the right is a static
+ * mockup of a gallery card — purely decorative, renders nothing interactive.
  */
 export function HomeMindStudio() {
   return (
@@ -93,8 +93,8 @@ export function HomeMindStudio() {
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <p className="text-xs text-muted-foreground">
-                Open to every student — sign in and draw; the gallery is saved
-                to your account.
+                Owner-only studio — drawings burn the platform key and the
+                gallery is saved to your owner account.
               </p>
             </div>
           </div>

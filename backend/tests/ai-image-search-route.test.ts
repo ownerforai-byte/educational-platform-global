@@ -11,8 +11,9 @@ import type { Server } from "node:http";
  * presenting from google is best").
  *
  * Pinned here:
- *   · the router keeps `requireAuth` (source pin) — a search costs the
- *     platform's CSE quota, so it is never anonymous;
+ *   · the router keeps `requireAuth` AND the owner gate (source pin) — a
+ *     search costs the platform's CSE quota, so it is never anonymous and
+ *     never reachable by non-owner emails;
  *   · the honest `{ configured: false }` answer when no GOOGLE_CSE key exists,
  *     with NO upstream fetch (a key-gated source that leaks a request without
  *     a key is the bug this module exists to prevent);
@@ -31,11 +32,13 @@ import type { Server } from "node:http";
 
 vi.mock("../src/middleware/auth", async (importOriginal) => {
   const actual = await importOriginal<typeof import("../src/middleware/auth")>();
+  const ownerEmail = [...actual.OWNER_EMAILS][0] as string;
   return {
     ...actual,
     requireAuth: (req: Request, _res: Response, next: () => void) => {
-      (req as unknown as { user: { id: string; role: string } }).user = {
+      (req as unknown as { user: { id: string; email: string; role: string } }).user = {
         id: (req.headers["x-test-user"] as string) || "user-a",
+        email: ownerEmail,
         role: "STUDENT",
       };
       next();
@@ -115,12 +118,12 @@ const CSE_ITEM = {
 };
 
 describe("/api/ai/image-search", () => {
-  test("is guarded by requireAuth (source pin)", () => {
+  test("is guarded by requireAuth AND the owner gate (source pin)", () => {
     const src = readFileSync(
       path.resolve(__dirname, "../src/api/ai-image-search.ts"),
       "utf8",
     );
-    expect(src).toMatch(/router\.get\("[^"]*", requireAuth/);
+    expect(src).toMatch(/router\.get\("[^"]*", requireAuth, requireOwnerEmail/);
   });
 
   test("answers configured:false WITHOUT touching Google when no key exists", async () => {

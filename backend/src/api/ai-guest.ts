@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import { serverError, ERROR_ID_HEADER, logServerError, newErrorId } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { rateLimit } from "../middleware/rateLimit";
+import { requireAuth, requireOwnerEmail } from "../middleware/auth";
 import { appendConsoleRules, buildProfessorContext, withProfessorContext } from "../ai/prompts";
 import { completeAnswer } from "../ai/complete-answer";
 import { imageInstruction, sanitizeChatImages } from "../ai/image-input";
@@ -18,13 +19,10 @@ import {
 import { DAILY_CREDIT_POOL } from "../utils/credits";
 
 /**
- * Guest AI chat (no account). Owner policy 2026-10-01 supersedes 2026-09-26:
- *   - GUEST_DAILY_LIMIT = 1 — a FREE TRIAL. Each guest gets one free message
- *     per day; after that, sign-in is required. utils/guestQuota enforces it
- *     DB-side per hashed IP + device cookie, so clearing localStorage,
- *     rotating IPs or restarting the server cannot buy extra messages.
- *   - GUEST_DAILY_LIMIT is a one-constant flip: 0 = members-only (the gate
- *     answers before any key is read), 2+ = the old per-day pool.
+ * Guest AI chat — DISABLED for non-owners (owner request 2026-10-05: AI under
+ * owner emails only). The route now requires a session AND an allowlisted
+ * owner email, so signed-out visitors get a 401 and signed-in students a 403
+ * before any key is read or any quota slot is consumed.
  */
 
 const router = Router();
@@ -48,7 +46,7 @@ function getService() {
   return _service;
 }
 
-router.post("/", rateLimit, async (req: Request, res: Response) => {
+router.post("/", rateLimit, requireAuth, requireOwnerEmail, async (req: Request, res: Response) => {
   const ip = getClientId(req);
   // Dual identity: the HttpOnly device cookie (minted here on first contact)
   // AND the IP must BOTH have quota left — clearing one never refills the

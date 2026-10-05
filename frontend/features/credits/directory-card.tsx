@@ -10,9 +10,8 @@
  *   - Once authenticated, the full directory opens and every entry is routed
  *     through the coin matrix (lab 5 / visuals 2 / theory 1 / reference 1)
  *     with an unlock window per module.
- *   - AI Chat is the one entry that stays free and public: it is the platform's
- *     only surface allowed to link externally, and only when the vault lacks
- *     the answer.
+ *   - The Veer Study Assistant entry is owner-only (owner request 2026-10-05)
+ *     and hidden for students.
  *   - Every link is internal. No external hrefs leave this card.
  *
  * The home page baseline (hero, intro, nav) is untouched — this component
@@ -38,6 +37,7 @@ import {
   Timer,
 } from "lucide-react";
 import { useAuth } from "@/providers/auth-provider";
+import { isOwnerUser } from "@/lib/owner";
 import { TOKEN_MATRIX, type ContentCategory } from "./constants";
 import { useCredit } from "./credit-provider";
 
@@ -56,15 +56,16 @@ interface Portal {
   iconClass: string;
   gradientClass: string;
   chipClass: string;
-  /** null → free/public entry (AI Chat only). */
+  /** null → free/public entry. */
   category: ContentCategory | null;
+  /** Rendered only for allowlisted owner emails. */
+  ownerOnly?: boolean;
   links: PortalLink[];
 }
 
 /**
- * The unified directory. `category: null` on AI Study Assistant keeps the
- * tutor public — external links there are allowed only when the platform
- * vault cannot answer (handled inside the chat surface itself).
+ * The unified directory. The Veer Study Assistant entry is owner-only
+ * (owner request 2026-10-05) — students never see the card.
  */
 const OWNER_COIN_FLOOR = 999999;
 
@@ -186,7 +187,7 @@ const DIRECTORY: Portal[] = [
   },
   {
     title: "Veer Study Assistant",
-    badge: "24/7 VEER · FREE",
+    badge: "24/7 VEER · OWNER",
     desc: "Curriculum-aligned intelligent tutor for instant concept explanations, numerical solutions and study plans.",
     href: "/chat",
     icon: Brain,
@@ -194,6 +195,7 @@ const DIRECTORY: Portal[] = [
     gradientClass: "from-fuchsia-500/[0.08] via-card to-card",
     chipClass: "hover:border-fuchsia-500/50 hover:shadow-fuchsia-500/10",
     category: null,
+    ownerOnly: true,
     links: [
       { label: "Open Chat", href: "/chat", category: null },
       { label: "Credits & Plan", href: "/credits", category: null },
@@ -292,7 +294,9 @@ export function DirectoryCard() {
           }
         >
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-            {DIRECTORY.map((portal) => {
+            {DIRECTORY.filter(
+              (portal) => !portal.ownerOnly || isOwnerUser(user),
+            ).map((portal) => {
               const Icon = portal.icon;
               return (
                 <div
@@ -327,9 +331,14 @@ export function DirectoryCard() {
                         {TOKEN_MATRIX[portal.category].cost} coins · 2h
                       </span>
                     )}
-                    {!portal.category && (
+                    {!portal.category && !portal.ownerOnly && (
                       <span className="mt-3 inline-flex items-center gap-1 rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-0.5 text-[10px] font-bold text-emerald-500">
                         Free · Public
+                      </span>
+                    )}
+                    {!portal.category && portal.ownerOnly && (
+                      <span className="mt-3 inline-flex items-center gap-1 rounded-full border border-amber-500/30 bg-amber-500/10 px-2 py-0.5 text-[10px] font-bold text-amber-500">
+                        Owner only
                       </span>
                     )}
                   </div>
@@ -397,16 +406,18 @@ export function DirectoryCard() {
         )}
       </div>
 
-      {/* AI Chat stays a free, public shortcut outside the blur wrapper */}
-      <div className="mt-6 flex justify-center">
-        <Link
-          href="/chat"
-          className="inline-flex h-11 items-center gap-2 rounded-2xl border border-fuchsia-500/40 bg-fuchsia-500/10 px-5 text-sm font-bold text-fuchsia-500 transition-colors hover:bg-fuchsia-500/20 focus:outline-none focus:ring-2 focus:ring-ring"
-        >
-          <Brain className="h-4 w-4" />
-          Open Veer — free, no coins
-        </Link>
-      </div>
+      {/* Owner-only Veer shortcut outside the blur wrapper */}
+      {isOwnerUser(user) && (
+        <div className="mt-6 flex justify-center">
+          <Link
+            href="/chat"
+            className="inline-flex h-11 items-center gap-2 rounded-2xl border border-fuchsia-500/40 bg-fuchsia-500/10 px-5 text-sm font-bold text-fuchsia-500 transition-colors hover:bg-fuchsia-500/20 focus:outline-none focus:ring-2 focus:ring-ring"
+          >
+            <Brain className="h-4 w-4" />
+            Open Veer — owner studio
+          </Link>
+        </div>
+      )}
     </section>
   );
 }

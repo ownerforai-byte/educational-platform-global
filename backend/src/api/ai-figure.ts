@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { requireAuth } from "../middleware/auth";
+import { requireAuth, requireOwnerEmail } from "../middleware/auth";
 import { drawAcademicFigure } from "../ai/figure-draw";
 import { classifyFigureKind, type FigureKind } from "../ai/academic-figures";
 import { saveImageHistoryRow } from "./ai-image-history";
@@ -17,10 +17,11 @@ import { saveImageHistoryRow } from "./ai-image-history";
  * so the frontend opens that detail on hover/click. `parts` carries the same
  * legend as data, so the hub can also list every part without a pointer.
  *
- * OPEN TO EVERY SIGNED-IN USER (owner request 2026-10-04), exactly like
- * /api/ai/image: `requireAuth` stays, the owner gate is gone, and the key is
- * protected by the ai-image rate-limit tier instead. Every drawn figure is
- * saved to the user's image history on the server (hardcoded, best-effort).
+ * OPEN TO OWNER EMAILS ONLY (owner request 2026-10-05: "make the image
+ * hub under owner emails only"), exactly like /api/ai/image:
+ * `requireAuth` + `requireOwnerEmail`, and the key is protected by the
+ * ai-image rate-limit tier instead. Every drawn figure is saved to the
+ * owner's image history on the server (hardcoded, best-effort).
  * On failure it answers 503 with a reason, and the hub falls back to the
  * raster chain (Agnes → puter.js).
  */
@@ -42,7 +43,7 @@ const KINDS = new Set<string>([
   "illustration",
 ]);
 
-router.post("/", requireAuth, async (req: Request, res: Response) => {
+router.post("/", requireAuth, requireOwnerEmail, async (req: Request, res: Response) => {
   const prompt = typeof req.body?.prompt === "string" ? req.body.prompt.trim() : "";
   if (!prompt) {
     res.status(400).json({ error: "Prompt required" });

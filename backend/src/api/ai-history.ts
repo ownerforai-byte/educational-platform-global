@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 import { z } from "zod";
-import { requireAuth } from "../middleware/auth";
+import { requireAuth, requireOwnerEmail } from "../middleware/auth";
 import { supabaseAdmin } from "../db/supabase";
 import { logServerError, newErrorId } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
@@ -15,10 +15,10 @@ import {
  * /api/ai/history-search — "search my own saved conversations".
  *
  * Owner request (2026-09-30): the tutor gets a separate interface whose work is
- * to search chat history and present it as asked. Owner decision on pricing:
- * FREE FOR SIGNED-IN STUDENTS, GUESTS BLOCKED. `requireAuth` is therefore the
- * whole gate — no credit is spent and no daily pool is touched, which is why
- * this route never calls spendCredits().
+ * to search chat history and present it as asked. Owner decision on pricing
+ * (2026-10-05): OWNER EMAILS ONLY — `requireAuth` + `requireOwnerEmail` is
+ * therefore the whole gate — no credit is spent and no daily pool is touched,
+ * which is why this route never calls spendCredits().
  *
  * Two details that keep the guarantee honest:
  *   · the search itself is server-side (selectHistory), so the model only ever
@@ -50,7 +50,7 @@ function isMissingTable(error: { message?: string } | null): boolean {
   );
 }
 
-router.post("/", requireAuth, async (req: Request, res: Response) => {
+router.post("/", requireAuth, requireOwnerEmail, async (req: Request, res: Response) => {
   try {
     const parsed = searchSchema.safeParse(req.body);
     if (!parsed.success) {

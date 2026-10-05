@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 import { PUBLIC_SITE_URL } from "../config/env";
-import { requireAuth } from "../middleware/auth";
+import { requireAuth, requireOwnerEmail } from "../middleware/auth";
 import { createAIService } from "../ai/service";
 
 /**
@@ -17,6 +17,8 @@ import { createAIService } from "../ai/service";
  * Best-effort by contract: 402 when the provider chain has no LLM (same
  * contract as /api/ai/enhance), so the details panel degrades to its
  * metadata-only state instead of failing the modal.
+ *
+ * OWNER EMAILS ONLY (owner request 2026-10-05) — like the rest of the hub.
  */
 const router = Router();
 
@@ -69,7 +71,7 @@ function getService() {
   return _service;
 }
 
-router.post("/", requireAuth, async (req: Request, res: Response) => {
+router.post("/", requireAuth, requireOwnerEmail, async (req: Request, res: Response) => {
   const subject =
     typeof req.body?.q === "string" ? req.body.q.trim().slice(0, 300) : "";
   if (!subject) {

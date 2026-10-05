@@ -1,5 +1,5 @@
 import { Router, Request, Response } from "express";
-import { requireAuth } from "../middleware/auth";
+import { requireAuth, requireOwnerEmail } from "../middleware/auth";
 import {
   fetchGoogleDiagrams,
   googleDiagramsEnabled,
@@ -26,8 +26,8 @@ import {
  * matched the search, so the strict word filter used by the chat's reference
  * path would only drop good pictures whose titles word it differently.
  *
- * Auth + the ai-image rate-limit tier keep the daily CSE quota (100/day free)
- * from being drained by one session.
+ * Auth + owner gate + the ai-image rate-limit tier keep the daily CSE quota
+ * (100/day free) from being drained by one session.
  */
 const router = Router();
 
@@ -39,7 +39,7 @@ function termsOf(query: string): string[] {
   return query.toLowerCase().split(/\s+/).filter((word) => word.length >= 3);
 }
 
-router.get("/", requireAuth, async (req: Request, res: Response) => {
+router.get("/", requireAuth, requireOwnerEmail, async (req: Request, res: Response) => {
   const q = typeof req.query.q === "string" ? req.query.q.trim() : "";
   if (!q) {
     res.status(400).json({ error: "q required" });

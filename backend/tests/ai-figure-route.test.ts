@@ -9,11 +9,12 @@ import type { Server } from "node:http";
 /**
  * POST /api/ai/figure — the Image Hub's vector academic-figure endpoint
  * (owner request 2026-10-03: lifecycle / labelling / all parts named, with the
- * details opening on hover; opened to every signed-in user 2026-10-04).
+ * details opening on hover; owner emails only since 2026-10-05).
  *
- * Same boundary as /api/ai/image: the route must keep `requireAuth` and must
- * NOT carry the former owner gate at the source, while the handler contract is
- * probed with the guard stubbed and the writer mocked.
+ * Same boundary as /api/ai/image: the route must keep `requireAuth` AND the
+ * owner gate at the source, while the handler contract is probed with the
+ * guard stubbed (stub user carries a real allowlisted email) and the writer
+ * mocked.
  */
 
 vi.mock("../src/ai/figure-draw", () => ({
@@ -22,11 +23,13 @@ vi.mock("../src/ai/figure-draw", () => ({
 
 vi.mock("../src/middleware/auth", async (importOriginal) => {
   const actual = await importOriginal<typeof import("../src/middleware/auth")>();
+  const ownerEmail = [...actual.OWNER_EMAILS][0] as string;
   return {
     ...actual,
     requireAuth: (req: Request, _res: Response, next: () => void) => {
-      (req as unknown as { user: { id: string; role: string } }).user = {
+      (req as unknown as { user: { id: string; email: string; role: string } }).user = {
         id: "user-test",
+        email: ownerEmail,
         role: "STUDENT",
       };
       next();
@@ -74,12 +77,11 @@ beforeEach(() => {
 });
 
 describe("POST /api/ai/figure", () => {
-  test("is guarded by requireAuth and open to EVERY signed-in user (source pin)", () => {
+  test("is guarded by requireAuth AND the owner gate (source pin)", () => {
     const src = readFileSync(path.resolve(__dirname, "../src/api/ai-figure.ts"), "utf8");
     expect(src).toContain("requireAuth");
-    // The owner gate is gone by design (owner request 2026-10-04) — the
-    // ai-image rate-limit tier protects the key instead.
-    expect(src).not.toContain("requireOwner");
+    // Owner emails only (owner request 2026-10-05) — the gate must be wired.
+    expect(src).toContain("requireOwnerEmail");
     // Every drawn figure is hardcoded to save into the user's history.
     expect(src).toContain("saveImageHistoryRow");
   });

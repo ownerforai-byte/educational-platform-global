@@ -170,6 +170,10 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
     return true;
   };
 
+  /** Per-item owner gate (AI chat entries) — hidden for non-owners. */
+  const visibleItems = (section: (typeof NAV_SECTIONS)[number]) =>
+    section.items.filter((item) => !item.ownerOnly || isOwnerUser(user));
+
   const handleLogout = async () => {
     await logoutAction();
     refresh();
@@ -242,7 +246,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
             key={section.id}
             label={section.label}
             icon={section.icon}
-            items={section.items}
+            items={visibleItems(section)}
             pathname={pathname}
             collapsed={collapsedSections[section.id] ?? false}
             onToggle={() => toggleSection(section.id)}

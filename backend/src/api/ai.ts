@@ -1,7 +1,7 @@
 import { Router, Request, Response } from "express";
 import { serverError, ERROR_ID_HEADER } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
-import { requireAuth } from "../middleware/auth";
+import { requireAuth, requireOwnerEmail } from "../middleware/auth";
 import { isOwnerEmail } from "../middleware/auth";
 import { ensureDailyCredits, spendCredits, refundCredits, AI_MESSAGE_COST, DAILY_CREDIT_POOL, isCoinGateEnabled } from "../utils/credits";
 import { supabaseAdmin } from "../db/supabase";
@@ -30,7 +30,7 @@ router.get("/providers", (_req: Request, res: Response) => {
   res.json({ providers, defaultProvider });
 });
 
-router.post("/", requireAuth, async (req: Request, res: Response) => {
+router.post("/", requireAuth, requireOwnerEmail, async (req: Request, res: Response) => {
   // Set once the 1-credit message fee has been captured — refunded on any
   // failure path below so the student never pays for an answer they never
   // received (the "charged but got a 500" weak point).

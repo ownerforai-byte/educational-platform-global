@@ -62,10 +62,12 @@ export function MobileNav() {
     .map((sec) => ({
       ...sec,
       items: sec.items.filter((item) =>
-        searchQuery.trim() === ""
+        // Owner-only entries (AI chat) never reach non-owners, even by search.
+        (item.ownerOnly ? isOwnerUser(user) : true) &&
+        (searchQuery.trim() === ""
           ? true
           : item.label.toLowerCase().includes(searchQuery.toLowerCase()) ||
-            sec.label.toLowerCase().includes(searchQuery.toLowerCase())
+            sec.label.toLowerCase().includes(searchQuery.toLowerCase()))
       ),
     }))
     .filter((sec) => sec.items.length > 0);

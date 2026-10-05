@@ -20,11 +20,12 @@ import { AiPlanStrip } from "@/components/ai/ai-plan-strip";
 export const metadata: Metadata = {
   title: "Veer Studio Hub — Tutor, Quiz Generator & Curriculum Search",
   description:
-    "Every Veer tool on the platform, each on its own page: Veer study assistant, the tutor console with saved conversations, the adaptive quiz generator and Veer curriculum search.",
+    "Owner-only Veer tool hub: study assistant, tutor console with saved conversations, adaptive quiz generator and curriculum search.",
 };
 
 /**
- * /ai — the AI Studio HUB.
+ * /ai — the AI Studio HUB (owner emails only since 2026-10-05;
+ * ai/layout.tsx bounces everyone else, POST /api/ai enforces it).
  *
  * This page used to be the studio itself, with the tutor, the quiz generator
  * and the search engine hidden behind three in-page tabs — so all three shared
@@ -80,9 +81,8 @@ const TOOLS: {
   },
   {
     // Owner request (2026-09-30): a SEPARATE interface from the tutor console,
-    // whose work is to search the student's saved conversations and present
-    // them as asked. Signed-in only, and free — no coin is spent searching your
-    // own history.
+    // whose work is to search the owner's saved conversations and present
+    // them as asked. Owner-only like the rest of /ai.
     href: "/ai/history",
     title: "History Console",
     badge: "Search your chats",

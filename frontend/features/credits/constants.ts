@@ -60,20 +60,16 @@ export const NOTICE_COPY =
 export const LOGIN_PATH = "/login";
 
 /**
- * Routes that stay fully public: home baseline, the AI chat tutor (external
- * sources are allowed there only when the platform vault lacks the answer),
- * the credits wallet itself, and the profile/progress account surfaces.
- * 2026-09-27: /ai-quiz joins /ai — the same Quiz Studio is already free in
- * the AI Studio tab, so gating the standalone route made no sense (and the
- * quiz now runs on the shared 5/day guest pool instead of coins).
+ * Routes that stay fully public: home baseline, the credits wallet itself,
+ * the quiz (free guest pool), and the profile/progress account surfaces.
+ * 2026-09-27: /ai-quiz joins the public list. 2026-10-05: /ai and /chat left
+ * this list — Veer chat is owner-only now (own gate + EXEMPT_PATHS below).
  */
 export const PUBLIC_PATHS = [
   "/",
   "/home",
   "/login",
   "/signup",
-  "/chat",
-  "/ai",
   "/ai-quiz",
   "/credits",
   "/profile",
@@ -84,11 +80,6 @@ export const PUBLIC_PATHS = [
   // unlock button, no lock overlay).
   "/notice",
   "/pro-plan",
-  // Owner request (2026-10-04): the Image Hub (Agnes 2.1 Flash image &
-  // diagram drawing) is open to every signed-in student — generation runs on
-  // the server's shared key with its own rate limit, and history saves to the
-  // user's account. Free like /chat, never coin-gated.
-  "/mind-studio",
 ] as const;
 
 /**
@@ -100,6 +91,13 @@ export const EXEMPT_PATHS = [
   "/owner",
   "/admin",
   "/controller",
+  // Owner request (2026-10-05): the Image Hub is an owner-only studio — it
+  // carries its own owner gate, so it must never be blurred behind coins.
+  "/mind-studio",
+  // Owner request (2026-10-05): Veer chat (/ai + /chat) is owner-only too —
+  // same treatment, own gate, never blurred.
+  "/ai",
+  "/chat",
 ] as const;
 
 const LAB_ROUTES = /^\/(lab|sim|periodic-table)(\/|$)/;

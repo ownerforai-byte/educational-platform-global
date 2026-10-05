@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import { CaptainMark } from "@/components/ai/captain-logo";
+import { useSession } from "@/features/auth/hooks/use-session";
+import { isOwnerUser } from "@/lib/owner";
 
 /**
  * Floating AI launcher (bottom-left corner) — OWNER RULE CHANGE 2026-10-02:
@@ -19,6 +21,10 @@ import { CaptainMark } from "@/components/ai/captain-logo";
  * as a PAGE: /chat (assistant), /ai/tutor (studio tutor), /ai-quiz, /ai/search.
  */
 export function AIWidget() {
+  const { user, isLoading } = useSession();
+  // Owner emails only (owner request 2026-10-05): students never see the
+  // launcher. Hidden — never a redirect, this is a global floating button.
+  if (isLoading || !isOwnerUser(user)) return null;
   return (
     <Link
       href="/chat"

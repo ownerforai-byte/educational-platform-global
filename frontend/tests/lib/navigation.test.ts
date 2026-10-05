@@ -53,11 +53,17 @@ describe("navigation menu", () => {
 
   it("keeps owner-only destinations out of the public sections", () => {
     const publicHrefs = NAV_SECTIONS.filter((s) => !s.ownerOnly).flatMap((s) =>
-      s.items.map((i) => i.href),
+      s.items.filter((i) => !i.ownerOnly).map((i) => i.href),
     );
     for (const ownerHref of ["/owner", "/owner/users", "/controller"]) {
       expect(publicHrefs).not.toContain(ownerHref);
     }
+    // Veer chat entries are owner-only items (owner request 2026-10-05).
+    for (const aiHref of ["/ai", "/chat", "/chat/nepali", "/chat/grammar", "/ai/tutor", "/ai/search"]) {
+      expect(publicHrefs).not.toContain(aiHref);
+    }
+    // The quiz stays public for students.
+    expect(publicHrefs).toContain("/ai-quiz");
     const ownerSection = NAV_SECTIONS.find((s) => s.ownerOnly);
     expect(ownerSection).toBeDefined();
     expect(ownerSection?.items.map((i) => i.href)).toContain("/owner");

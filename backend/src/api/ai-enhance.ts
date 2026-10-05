@@ -1,6 +1,6 @@
 import { Router, Request, Response } from "express";
 import { PUBLIC_SITE_URL } from "../config/env";
-import { requireAuth } from "../middleware/auth";
+import { requireAuth, requireOwnerEmail } from "../middleware/auth";
 import { createAIService } from "../ai/service";
 import { getSearchService } from "../ai/search-engine";
 
@@ -72,7 +72,7 @@ function getService() {
   return _service;
 }
 
-router.post("/", requireAuth, async (req: Request, res: Response) => {
+router.post("/", requireAuth, requireOwnerEmail, async (req: Request, res: Response) => {
   const raw =
     typeof req.body?.prompt === "string" ? req.body.prompt.trim().slice(0, 2000) : "";
   if (!raw) {

@@ -4,7 +4,7 @@ import { TutorConsole } from "@/components/ai/tutor-console";
 export const metadata: Metadata = {
   title: "Veer & Study Assistant — NEB Science",
   description:
-    "Veer — ask any NEB Class 11 & 12 doubt and get a curriculum-aligned answer with formulas, derivations and study tips.",
+    "Veer — owner-only NEB Class 11 & 12 study assistant: curriculum-aligned answers with formulas, derivations and study tips.",
 };
 
 /**
@@ -16,7 +16,8 @@ export const metadata: Metadata = {
  * summarize, and a chat → AI-quiz handoff. The green "online" ping dot in
  * the header is kept exactly as it has always been.
  *
- * Public and free: guests share the 5/day pool with the AI quiz.
+ * Owner emails only (owner request 2026-10-05): chat/layout.tsx bounces
+ * everyone else, and POST /api/ai enforces the same boundary.
  */
 export default function ChatPage() {
   return (

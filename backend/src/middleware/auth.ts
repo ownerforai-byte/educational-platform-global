@@ -179,6 +179,31 @@ export const requireAdmin = requireRole("ADMIN", "OWNER");
 export const requireOwner = requireRole("OWNER");
 
 /**
+ * Express middleware: require an allowlisted owner email.
+ * Pairs with `requireAuth` (so `req.user` exists) — role alone is NOT enough,
+ * mirroring the owner console gate in `api/owner.ts`.
+ *
+ * Used by owner-only surfaces such as the Image Hub (/mind-studio):
+ * any signed-in non-owner email gets a 403.
+ */
+export function requireOwnerEmail(
+  req: Request,
+  res: Response,
+  next: NextFunction,
+): void {
+  const user = (req as AuthedRequest).user;
+  if (!user) {
+    res.status(401).json({ error: "Unauthorized" });
+    return;
+  }
+  if (!isOwnerEmail(user.email)) {
+    res.status(403).json({ error: "Forbidden — owner emails only" });
+    return;
+  }
+  next();
+}
+
+/**
  * Whether a role qualifies for unconditional premium access.
  * OWNER/ADMIN are always privileged; a `premiumStatus` flag grants it too.
  */

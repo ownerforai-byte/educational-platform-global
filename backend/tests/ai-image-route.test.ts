@@ -9,12 +9,12 @@ import type { Server } from "node:http";
 /**
  * POST /api/ai/image — the Image Hub's drawing endpoint (owner request
  * 2026-10-02: "replace the mind console with agnes 2.1 flash and js to
- * generate image"; opened to every signed-in user 2026-10-04).
+ * generate image"; owner emails only since 2026-10-05).
  *
  * Auth wiring is pinned at the source (the route file must keep `requireAuth`
- * and must NOT carry the former owner gate — the Image Hub is every student's
- * now, and the key is protected by the ai-image rate-limit tier instead); the
- * handler contract itself is probed with the guards stubbed and the engine
+ * AND the owner gate `requireOwnerEmail` — only allowlisted owner emails may
+ * burn the platform key); the handler contract itself is probed with the
+ * guards stubbed (stub user carries a real allowlisted email) and the engine
  * mocked, so no key and no network are ever touched.
  */
 
@@ -24,12 +24,17 @@ vi.mock("../src/ai/image-gen", () => ({
 
 vi.mock("../src/middleware/auth", async (importOriginal) => {
   const actual = await importOriginal<typeof import("../src/middleware/auth")>();
+  // Stub user carries a REAL allowlisted email so the real requireOwnerEmail
+  // (preserved via ...actual) passes; role stays STUDENT to pin that the
+  // email allowlist — not the role — is the boundary.
+  const ownerEmail = [...actual.OWNER_EMAILS][0] as string;
   return {
     ...actual,
     // Stub the guard: the SOURCE test below pins that it is wired.
     requireAuth: (req: Request, _res: Response, next: () => void) => {
-      (req as unknown as { user: { id: string; role: string } }).user = {
+      (req as unknown as { user: { id: string; email: string; role: string } }).user = {
         id: "user-test",
+        email: ownerEmail,
         role: "STUDENT",
       };
       next();
@@ -38,6 +43,7 @@ vi.mock("../src/middleware/auth", async (importOriginal) => {
 });
 
 import aiImageRoutes from "../src/api/ai-image";
+import { requireOwnerEmail } from "../src/middleware/auth";
 import { generateVeerImage } from "../src/ai/image-gen";
 
 const mockedGenerate = vi.mocked(generateVeerImage);
@@ -77,17 +83,35 @@ beforeEach(() => {
 });
 
 describe("POST /api/ai/image", () => {
-  test("is guarded by requireAuth and open to EVERY signed-in user (source pin)", () => {
+  test("is guarded by requireAuth AND the owner gate (source pin)", () => {
     const src = readFileSync(
       path.resolve(__dirname, "../src/api/ai-image.ts"),
       "utf8",
     );
     expect(src).toContain("requireAuth");
-    // The owner gate is gone by design (owner request 2026-10-04: "enable
-    // saving of image for every user") — it must not creep back in.
-    expect(src).not.toContain("requireOwner");
+    // Owner emails only (owner request 2026-10-05) — the gate must be wired.
+    expect(src).toContain("requireOwnerEmail");
     // Every successful draw is hardcoded to save into the user's history.
     expect(src).toContain("saveImageHistoryRow");
+  });
+
+  test("requireOwnerEmail rejects non-owner emails with 403", () => {
+    const req = {
+      user: { id: "u", email: "student@example.com", role: "STUDENT" },
+    } as Request;
+    let status = 0;
+    let next = false;
+    const res = {
+      status: (c: number) => {
+        status = c;
+        return { json: () => {} };
+      },
+    } as unknown as Response;
+    requireOwnerEmail(req, res, () => {
+      next = true;
+    });
+    expect(status).toBe(403);
+    expect(next).toBe(false);
   });
 
   test("rejects a missing or blank prompt with 400", async () => {
