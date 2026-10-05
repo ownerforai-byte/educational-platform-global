@@ -51,8 +51,8 @@ export function HomeMindStudio() {
               illustration — and the hub sends it through the Agnes image
               chain (<span className="font-mono text-foreground/80">agnes-image-2.1-flash</span>{" "}
               first, 2.0 as the step down) on the server. The picture lands in
-              a gallery with a download button, newest first, kept for your
-              session.
+              a gallery with a download button, newest first, saved to your
+              account.
             </p>
 
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">

@@ -84,6 +84,11 @@ export const PUBLIC_PATHS = [
   // unlock button, no lock overlay).
   "/notice",
   "/pro-plan",
+  // Owner request (2026-10-04): the Image Hub (Agnes 2.1 Flash image &
+  // diagram drawing) is open to every signed-in student — generation runs on
+  // the server's shared key with its own rate limit, and history saves to the
+  // user's account. Free like /chat, never coin-gated.
+  "/mind-studio",
 ] as const;
 
 /**
