@@ -1,0 +1,67 @@
+{
+  "schema": "home-rail/v1",
+  "draft": true,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "mathematics",
+  "unitSlug": "algebra",
+  "unitTitle": "Algebra",
+  "unitHours": 44,
+  "syllabusTopics": [
+    "Logic and set: statements, logical connectives, truth tables, theorems based on set operations",
+    "Real numbers: geometric representation of real numbers, interval, absolute value",
+    "Function: domain and range of a function, inverse function, composite function; algebraic (linear, quadratic and cubic) and transcendental (trigonometric, exponential, logarithmic) functions",
+    "Curve sketching: odd and even functions, periodicity, symmetry (about origin, X- and Y-axis), monotonicity; graphs of quadratic, cubic and rational functions, trigonometric (asinbx and acosbx), exponential (e^x), logarithmic (lnx)",
+    "Sequence and series: arithmetic, geometric, harmonic sequences and series and their properties; A.M, G.M, H.M and their relations; sum of infinite geometric series",
+    "Matrices and determinants: transpose of a matrix and its properties; minors and cofactors, adjoint, inverse matrix, determinant, properties of determinants (without proof)",
+    "Quadratic equation: nature and roots of a quadratic equation, relation between roots and coefficient, formation of a quadratic equation, symmetric roots, one or both roots common",
+    "Complex number: imaginary unit, algebra of complex numbers, geometric representation, absolute (modulus) value and conjugate of complex numbers and their properties, square root of a complex number"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Fill every row (LaTeX allowed in $...$), set draft to false, then run: npx tsx frontend/scripts/content/home-rails.ts --check",
+  "card": {
+    "tag": "Algebra",
+    "title": "TODO: Algebra — pick this card's anchor concept",
+    "href": "/class-11-notes/mathematics",
+    "icon": "Sigma",
+    "statKey": "pyq:mathematics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "TODO: write the Concept row for \"Algebra\" (Mathematics Class 11)."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "TODO: write the Formula row for \"Algebra\" (Mathematics Class 11)."
+    },
+    {
+      "label": "Conditions",
+      "text": "TODO: write the Conditions row for \"Algebra\" (Mathematics Class 11)."
+    },
+    {
+      "label": "Special cases",
+      "text": "TODO: write the Special cases row for \"Algebra\" (Mathematics Class 11)."
+    },
+    {
+      "label": "Solved",
+      "text": "TODO: write the Solved row for \"Algebra\" (Mathematics Class 11)."
+    },
+    {
+      "label": "Limitation",
+      "text": "TODO: write the Limitation row for \"Algebra\" (Mathematics Class 11)."
+    },
+    {
+      "label": "Derivation",
+      "text": "TODO: write the Derivation row for \"Algebra\" (Mathematics Class 11)."
+    },
+    {
+      "label": "Shortcut",
+      "text": "TODO: write the Shortcut row for \"Algebra\" (Mathematics Class 11)."
+    },
+    {
+      "label": "Board question",
+      "text": "TODO: write the Board question row for \"Algebra\" (Mathematics Class 11)."
+    }
+  ]
+}

@@ -1,0 +1,60 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "english",
+  "unitSlug": "critical-thinking",
+  "unitTitle": "Critical Thinking",
+  "syllabusTopics": [
+    "Critical Thinking",
+    "Literary Analysis and Interpretation"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Critical Thinking",
+    "title": "Arguments vs evidence — spotting the fallacy",
+    "href": "/class-11-notes/english",
+    "icon": "Lightbulb",
+    "statKey": "pyq:english"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "A claim is not an argument until evidence and reasoning link them; data without interpretation proves nothing, and interpretation without data persuades nobody. Critical thinking dissects debates into claim → evidence → warrant → rebuttal, then stress-tests each joint: sample size, correlation vs causation, sweeping quantifiers ('everybody'), missing voices. Literary analysis is the same surgery on texts — interpretation anchored in quoted moments."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "argument = claim + evidence + warrant (the link)  ·  fallacy scan: hasty generalisation ('everybody…') · false cause (phones⇢scores?) · sweeping 'so…will' predictions · missing counter-evidence  ·  data answers need: sample, comparison, confounds, conclusion-scope"
+    },
+    {
+      "label": "Conditions",
+      "text": "Critique the reasoning, never just the conclusion — a true claim can still be badly argued. Survey data (400 students, phones vs performance) speaks only with confounds controlled (study hours? school type?). Literary interpretation needs textual moments; unquoted readings are opinions."
+    },
+    {
+      "label": "Special cases",
+      "text": "'Everybody concentrates better without phones, so banning them will…' (NEB 2023, 5 marks): 'everybody' is unmeasured, the causal jump from correlation to ban is unearned — the answer names the generalisation and demands the missing evidence. The 2022 survey task reverses it: GIVEN data, reason carefully to scoped conclusions (compare groups, note confounds, resist overclaim)."
+    },
+    {
+      "label": "Solved",
+      "text": "Debate teardown: (1) isolate the claim (ban phones); (2) list offered evidence (asserted concentration gain — no data cited); (3) name the gaps (hasty generalisation via 'everybody', correlation/causation blur, no counter-case like educational phone use); (4) verdict: unproven as stated + what evidence WOULD prove it (controlled comparison). Four moves, full marks (NEB 2023 pattern)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Fallacy-spotting is not refutation — naming 'hasty generalisation' does not make the claim false, only unsupported. Data analysis cannot fix bad data (biased sample, loaded questions). Literary readings stay plural: two well-evidenced interpretations can both stand."
+    },
+    {
+      "label": "Derivation",
+      "text": "From survey to conclusion, step by step: describe the sample (who, how many) → compare the right groups (phone-heavy vs phone-light, matched otherwise) → check confounds (what else differs?) → scope the claim ('among THESE students' not 'all students') → state what further data would confirm. Each step is one mark; skipping confounds is the classic lost mark."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Underline quantifiers (all/everybody/never = red flags), causal verbs (proves/causes vs suggests/linked), and missing numbers. Data questions: sample → comparison → confound → scope. Always end with the verdict PLUS the evidence that would change it."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (5): mobile-ban debate — evaluate the argument (generalisation, evidence gaps). NEB 2022 (5): 400-student phone-vs-performance survey — reasoned answers with scoped conclusions. Literary-analysis readings follow claim→moment→technique→purpose."
+    }
+  ]
+}

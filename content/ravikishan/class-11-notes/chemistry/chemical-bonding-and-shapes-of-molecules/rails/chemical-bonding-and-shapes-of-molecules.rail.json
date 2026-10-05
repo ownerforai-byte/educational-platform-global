@@ -1,0 +1,70 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "chemical-bonding-and-shapes-of-molecules",
+  "unitTitle": "Chemical Bonding and Shapes of Molecules",
+  "unitHours": 8,
+  "syllabusTopics": [
+    "Valence shell, valence electron and octet theory",
+    "Ionic bond and its properties",
+    "Covalent bond, coordinate covalent bond and properties of covalent compounds",
+    "Lewis dot structure of common compounds of s- and p-block elements",
+    "Resonance",
+    "Elementary idea of valence bond theory",
+    "VSEPR theory and shapes of simple molecules (BeF2, BF3, CH4, CH3Cl, PCl5, SF6, H2O, NH3, CO2, H2S, PH3)",
+    "Hybridization involving s- and p-orbitals only",
+    "Bond characteristics: bond length, ionic character, dipole moment",
+    "van der Waals force, molecular solids, hydrogen bonding and its application",
+    "Metallic bonding and properties of metallic solids"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05 from the unit's VSEPR topic list (BeF2…PH3) and standard shapes table; board row is NEB-style, no fabricated paper citation.",
+  "card": {
+    "tag": "Chemical Bonding",
+    "title": "VSEPR — molecular shapes from electron domains",
+    "href": "/class-11-notes/chemistry",
+    "icon": "FlaskConical",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Electron domains around a central atom repel and settle as far apart as possible, so the steric number (sigma bonds + lone pairs) fixes the electron geometry, and hiding the lone pairs reveals the molecular shape. Count domains, not atoms: a double or triple bond is still one domain."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "SN 2 → linear 180° (sp)  ·  SN 3 → trigonal planar 120° (sp²)  ·  SN 4 → tetrahedral 109.5° (sp³)  ·  SN 5 → trigonal bipyramidal (sp³d)  ·  SN 6 → octahedral 90° (sp³d²)  ·  repulsion: lone–lone > lone–bond > bond–bond"
+    },
+    {
+      "label": "Conditions",
+      "text": "Applies to covalent main-group molecules with an identifiable central atom: draw the Lewis structure first, then count sigma bonds plus lone pairs on the central atom only. Works for the syllabus set — BeF2, BF3, CH4, CH3Cl, PCl5, SF6, H2O, NH3, CO2, H2S, PH3."
+    },
+    {
+      "label": "Special cases",
+      "text": "H2O is bent at 104.5° (two lone pairs squeeze hardest); NH3 is pyramidal at 107° (one lone pair). CH4 stays tetrahedral but CH3Cl distorts it — the electronegative Cl pulls the bonding pair. PCl5 splits bonds into axial and longer/weaker axial vs equatorial positions; SF6 is perfectly octahedral with all 90° angles."
+    },
+    {
+      "label": "Solved",
+      "text": "Shape of NH3: N has 5 valence electrons, three N–H bonds use 3, leaving 1 lone pair → steric number 4, tetrahedral electron geometry, pyramidal molecule. The lone pair compresses the angle to ~107°, below the ideal 109.5°."
+    },
+    {
+      "label": "Limitation",
+      "text": "VSEPR predicts shape, never bond energy or why bonds form (that needs valence-bond / MO theory). It stumbles on transition-metal complexes where d-orbitals dominate, and hydrides like PH3/H2S deviate from ideal angles because nearly pure p-orbitals bond with little hybridization."
+    },
+    {
+      "label": "Derivation",
+      "text": "Start from the parent geometry of the steric number, then delete the lone-pair positions: AX4 tetrahedron minus nothing gives CH4; minus one vertex gives pyramidal AX3E (NH3); minus two gives bent AX2E2 (H2O). AX5 gives trigonal-bipyramidal PCl5 and AX6 octahedral SF6 — every syllabus molecule falls out of one rule."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Memorise the ladder Be–B–C–N–O: BeF2 linear, BF3 trigonal, CH4 tetrahedral, NH3 pyramidal, H2O bent. Each added lone pair shaves ~2.5° off 109.5° (109.5 → 107 → 104.5). CO2 is linear like BeF2 — two double bonds still count as two domains."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: predict with reasons the shapes and bond angles of CH4, NH3 and H2O; state the hybridization in each; explain the angle order CH4 (109.5°) > NH3 (107°) > H2O (104.5°) using lone-pair repulsion."
+    }
+  ]
+}

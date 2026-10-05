@@ -1,0 +1,66 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "aromatic-hydrocarbons",
+  "unitTitle": "Aromatic Hydrocarbons",
+  "syllabusTopics": [
+    "Introduction and characteristics of aromatic compounds",
+    "Huckel's rule of aromaticity",
+    "Kekule structure of benzene",
+    "Resonance and isomerism in benzene",
+    "Preparation of benzene from decarboxylation of sodium benzoate, phenol, and ethyne only",
+    "Physical properties of benzene",
+    "Chemical properties of benzene: addition reactions (hydrogen, halogen); electrophilic substitution reactions: orientation of benzene derivatives (o, m and p), nitration, sulphonation, halogenation, Friedel-Crafts reaction (alkylation and acylation)",
+    "Combustion of benzene (free combustion only) and uses"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2022.json and 02-neb-2021.json in this unit.",
+  "card": {
+    "tag": "Aromatic",
+    "title": "Benzene — substitution, not addition, preserves the ring",
+    "href": "/class-11-notes/chemistry",
+    "icon": "Lightbulb",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Benzene's 6 π electrons satisfy Hückel (4n+2, planar ring) — delocalised, extra-stable, and hostile to addition (which would destroy aromaticity). So benzene SUBSTITUTES electrophilically instead: nitration, sulphonation, halogenation, Friedel–Crafts alkylation/acylation. Existing groups direct the next entry — activators ortho/para, deactivators meta. Prepared by decarboxylating sodium benzoate (soda lime), reducing phenol (Zn dust), or trimerising ethyne."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Hückel: planar ring + (4n+2) π e⁻ (benzene n = 1)  ·  nitration: C₆H₆ + HNO₃/H₂SO₄ → C₆H₅NO₂ (nitronium NO₂⁺)  ·  sulphonation: + fuming H₂SO₄ → C₆H₅SO₃H  ·  chlorination/FeCl₃ → C₆H₅Cl  ·  F–C alkylation: + RCl/AlCl₃ → C₆H₅R"
+    },
+    {
+      "label": "Conditions",
+      "text": "Electrophilic substitution needs a generated electrophile (NO₂⁺ from mixed acid, Br⁺ via FeBr₃, R⁺ via AlCl₃) — benzene ignores plain Br₂ water (unlike alkenes: the key distinction test). Hückel demands planarity + conjugation; non-planar 4n+2 rings stay non-aromatic. Free combustion only (sooty flame from high C%)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Phenol's −OH activates so fiercely that bromination needs no catalyst (white 2,4,6-tribromophenol). −NO₂/−COOH/−SO₃H deactivate to meta. Friedel–Crafts alkylation rearranges carbocations and over-alkylates; acylation then Clemmensen fixes both. Cyclooctatetraene (8 π, tub-shaped) fails Hückel by geometry."
+    },
+    {
+      "label": "Solved",
+      "text": "Benzene + conc. HNO₃/conc. H₂SO₄ → nitrobenzene (NO₂⁺ attacks, H⁺ leaves, aromaticity intact); + fuming H₂SO₄ → benzenesulphonic acid; + Cl₂/FeCl₃ → chlorobenzene (NEB 2022, 3 marks — three equations, three electrophiles, one mechanism pattern: generate E⁺, substitute, restore the ring)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Hückel is necessary, not sufficient (strain and heteroatom effects intrude). Orientation rules guide but mixtures still form (o/p split). Forcing addition needs extremes (Ni/H₂ heat → cyclohexane; Cl₂/UV → 666/gammexane) — proof of aromatic resistance, not everyday chemistry."
+    },
+    {
+      "label": "Derivation",
+      "text": "Mechanism template: E⁺ adds to the ring forming the arenium (σ-complex) ion — positive charge delocalised over three carbons (draw all three resonance forms) — then base removes the ring H⁺, restoring aromaticity. The slow step keeps the ring intact; addition would pay the ~150 kJ/mol resonance penalty, so substitution wins kinetically."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Director cheat: activators (OH, NH₂, alkyl) → o/p; deactivators (NO₂, COOH, SO₃H) → meta; halogens → o/p but deactivating (the exception). 'Benzene + Br₂ water' → NO reaction (vs alkenes decolourise) — the classic distinction question."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2022 (3): benzene + mixed acid / fuming H₂SO₄ / Cl₂-FeCl₃ reactions. NEB 2021 (3): resonance in benzene — contributing structures + two consequences. Prep routes and orientation rules rotate yearly."
+    }
+  ]
+}

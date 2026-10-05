@@ -1,0 +1,67 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "hydrocarbons",
+  "unitTitle": "Hydrocarbons",
+  "syllabusTopics": [
+    "Saturated hydrocarbons (Alkanes): preparation from haloalkanes (reduction and Wurtz reaction), decarboxylation, catalytic hydrogenation of alkene and alkyne",
+    "Chemical properties of alkanes: substitution reactions (halogenation, nitration and sulphonation only), oxidation of ethane",
+    "Unsaturated hydrocarbons (Alkenes): preparation by dehydration of alcohol, dehydrohalogenation, catalytic hydrogenation of alkyne",
+    "Chemical properties of alkenes: addition reaction with HX (Markovnikov's addition and peroxide effect), H2O, O3, H2SO4 only",
+    "Alkynes: preparation from carbon and hydrogen, 1,2-dibromoethane, chloroform/iodoform only",
+    "Chemical properties of alkynes: addition reaction with H2, HX, H2O; acidic nature (action with sodium, ammoniacal AgNO3 and ammoniacal Cu2Cl2)",
+    "Test of unsaturation (ethene and ethyne): bromine water test and Baeyer's test",
+    "Comparative studies of physical properties of alkane, alkene and alkyne",
+    "Kolbe's electrolysis methods for the preparation of alkanes, alkenes and alkynes"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Hydrocarbons",
+    "title": "Markovnikov's rule — the rich get richer (in H)",
+    "href": "/class-11-notes/chemistry",
+    "icon": "Ruler",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Alkanes substitute (free-radical halogenation), alkenes/alkynes ADD across the π bond. Markovnikov: the H of HX lands on the already H-rich carbon, via the more stable carbocation (3° > 2° > 1°) — peroxides flip it for HBr only (Kharasch/anti-Markovnikov). Terminal alkynes are weakly acidic (≡C–H + Na/ammoniacal Ag⁺/Cu⁺ salts). Brown bromine water and purple Baeyer's reagent both bleach at unsaturation."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Markovnikov: H→H-rich C, X→H-poor C (stable carbocation path)  ·  peroxide effect: HBr ONLY, reversed  ·  ethene + H₂/Ni → ethane  ·  but-2-ene + O₃/Zn,H₂O → 2 CH₃CHO (double bond location proof)  ·  acetylene + 2[Ag(NH₃)₂]⁺ → Ag–C≡C–Ag↓ (white) + …"
+    },
+    {
+      "label": "Conditions",
+      "text": "Markovnikov needs an unsymmetrical alkene + ionic (non-peroxide) HX addition. Peroxide reversal is HBr-specific (HCl/HI stay Markovnikov — bond-strength energetics). Catalytic hydrogenation needs Ni/Pt/Pd surface; Baeyer's stays alkaline and cold or it over-oxidises."
+    },
+    {
+      "label": "Special cases",
+      "text": "Ethene → ethane by H₂/Ni (NEB 2023, mechanism = surface adsorption, syn-addition). But-2-ene ozonolysis gives 2 ethanal — cleavage products map the old double bond (NEB 2022). Wurtz couples 2RX + 2Na → R–R (symmetrical alkanes best); Kolbe electrolyses RCOONa → R–R at the anode."
+    },
+    {
+      "label": "Solved",
+      "text": "Ethane from ethene: CH₂=CH₂ + H₂ →(Ni, heat) CH₃–CH₃ — H₂ adsorbs dissociatively on nickel, both H add syn to the π bond (NEB 2023, 3 marks). Ozonolysis proof: but-2-ene CH₃CH=CHCH₃ cleaves to 2×CH₃CHO; counting carbonyl fragments reconstructs the alkene skeleton (NEB 2022, 3 marks)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Markovnikov predicts the MAJOR product — rearrangements (hydride/methyl shifts to stabler carbocations) rewrite outcomes. Free-radical halogenation of alkanes gives mixtures (selectivity 3° > 2° > 1° only biases). Wurtz fails for mixed R–R′ (statistical trio) and bulky halides (elimination wins)."
+    },
+    {
+      "label": "Derivation",
+      "text": "HX adds via protonation: H⁺ attacks the π bond forming the more substituted carbocation (hyperconjugation + inductive stabilisation scale with alkyl count), X⁻ then captures it — product distribution follows carbocation stability, hence Markovnikov. Peroxide flips the FIRST step to Br· radical addition, whose stability order reverses the outcome for HBr."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'Addition of HX' → check symmetry first (symmetrical = one product, rule moot). Ozonolysis fragments: join carbonyl carbons back with C=C. Unsaturation tests: Br₂ water (brown→colourless) or Baeyer's (purple→brown MnO₂) — either proves π bonds."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (3): ethane from ethene + mechanism. NEB 2022 (3): but-2-ene ozonolysis — equations + products. Markovnikov/peroxide statements and alkyne acidity tests rotate yearly."
+    }
+  ]
+}

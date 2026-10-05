@@ -1,7 +1,16 @@
 import { Sparkles } from "lucide-react";
 import { getFormulaSheetSummaries } from "@/lib/formula-sheet";
 import { getSubjectPyqBank } from "@/lib/pyq-bank";
-import { HOME_SUBJECT_RAILS } from "@/lib/home-subject-slides";
+import {
+  HOME_RAIL_ICONS,
+  HOME_SUBJECT_RAILS,
+  type HomeSubjectRail,
+  type HomeSubjectSlide,
+} from "@/lib/home-subject-slides";
+import {
+  loadHomeRailCorpus,
+  toRailSlideData,
+} from "@/lib/home-rails-corpus";
 import { SubjectRails } from "./subject-rails";
 
 /**
@@ -71,6 +80,7 @@ async function collectRailStats(): Promise<RailStats> {
 
 export async function HomeSubjectRails() {
   const stats = await collectRailStats();
+  const rails = mergeCorpusRails();
 
   return (
     <section className="relative border-b border-border/60 py-14 sm:py-16">
@@ -104,7 +114,63 @@ export async function HomeSubjectRails() {
         </div>
       </div>
 
-      <SubjectRails stats={stats} />
+      <SubjectRails rails={rails} stats={stats} />
     </section>
   );
+}
+
+/**
+ * Agent-authored corpus cards for the rails.
+ *
+ * `content/ravikishan/class-11-notes/<subject>/<unit>/rails/*.rail.json`
+ * (contract: frontend/AGENTS.md §9) carries one canonical card per syllabus
+ * unit. Ready cards (draft flipped off, all nine rows written) stream here —
+ * after the hand-written opening cards, before the Class 12 teaser — so any
+ * agent adding content to the corpus changes what the home page shows on the
+ * next build, with zero frontend edits. Draft/TODO skeletons and broken files
+ * never reach the rail; `--check` reports them instead.
+ */
+function mergeCorpusRails(): HomeSubjectRail[] {
+  const bySubject = new Map<string, ReturnType<typeof toRailSlideData>[]>();
+  try {
+    for (const entry of loadHomeRailCorpus()) {
+      if (!entry.ready) continue;
+      const list = bySubject.get(entry.subjectSlug) ?? [];
+      list.push(toRailSlideData(entry));
+      bySubject.set(entry.subjectSlug, list);
+    }
+  } catch {
+    // Corpus unreadable (stripped build) — rails stream the built-in cards.
+    return HOME_SUBJECT_RAILS;
+  }
+
+  return HOME_SUBJECT_RAILS.map((rail) => {
+    const extra = bySubject.get(rail.slug) ?? [];
+    if (extra.length === 0) return rail;
+    const last = rail.slides[rail.slides.length - 1];
+    const curated = last?.teaser ? rail.slides.slice(0, -1) : rail.slides;
+    const teaser = last?.teaser ? [last] : [];
+    const slides: HomeSubjectSlide[] = [
+      ...curated,
+      ...extra.map((data) => ({
+        ...data,
+        icon: HOME_RAIL_ICONS[data.iconName] ?? rail.icon,
+      })),
+      ...teaser,
+    ];
+    return { ...rail, duration: rescaleDuration(rail.duration, rail.slides.length, slides.length), slides };
+  });
+}
+
+/**
+ * Keep the slide speed constant as agent cards join a rail: the curated
+ * duration covers the curated slide count, so each slide keeps ~the same
+ * seconds-per-card no matter how many corpus cards agents add.
+ */
+function rescaleDuration(base: string, baseSlides: number, slides: number): string {
+  const seconds = Number.parseFloat(base);
+  if (!Number.isFinite(seconds) || baseSlides <= 0 || slides <= baseSlides) {
+    return base;
+  }
+  return `${Math.round((seconds / baseSlides) * slides)}s`;
 }

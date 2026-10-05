@@ -1,0 +1,68 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "gravitation",
+  "unitTitle": "Gravitation",
+  "syllabusTopics": [
+    "Newton's law of gravitation",
+    "Gravitational field strength",
+    "Gravitational potential; gravitational potential energy",
+    "Variation in value of 'g' due to altitude and depth",
+    "Centre of mass and centre of gravity",
+    "Motion of a satellite: orbital velocity and time period of the satellite",
+    "Escape velocity",
+    "Potential and kinetic energy of the satellite",
+    "Geostationary satellite",
+    "GPS"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2024.json and 02-neb-2023.json in this unit.",
+  "card": {
+    "tag": "Gravitation",
+    "title": "Escape velocity — outrunning Earth's pull",
+    "href": "/class-11-notes/physics",
+    "icon": "ScrollText",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Every mass attracts every other mass (F = Gm₁m₂/r²). Near Earth this reads as weight mg, with g = GM/R² falling off with altitude and depth. A satellite stays up not by escaping gravity but by falling around Earth — its forward speed matches the curvature drop. Escape velocity is the one-way ticket: enough kinetic energy to reach infinity with nothing left."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "F = Gm₁m₂/r², G = 6.67×10⁻¹¹ N·m²/kg²  ·  g(h) = g(1−2h/R), g(d) = g(1−d/R)  ·  orbital v₀ = √(GM/R) = √(gR)  ·  T = 2π√(r³/GM)  ·  escape v_e = √(2GM/R) = √2·v₀ ≈ 11.2 km/s  ·  satellite: KE = +GMm/2r, PE = −GMm/r, E = −GMm/2r"
+    },
+    {
+      "label": "Conditions",
+      "text": "Point-mass (or spherical) approximation with r measured centre-to-centre. The altitude/depth g-formulas are first-order (h, d ≪ R). Escape derivation ignores air drag and other bodies — real launches pay extra. Geostationary demands equatorial orbit, 24 h period, ~35,800 km altitude."
+    },
+    {
+      "label": "Special cases",
+      "text": "At Earth's centre g → 0 (depth formula). Geostationary satellites hover over one longitude — the backbone of GPS and TV relays. Escape speed is √2 times the low-orbit speed, and independent of the projectile's mass: a pebble and a rocket need the same 11.2 km/s."
+    },
+    {
+      "label": "Solved",
+      "text": "Escape velocity of Earth (R = 6.4×10⁶ m, g = 9.8): v_e = √(2gR) = √(2 × 9.8 × 6.4×10⁶) ≈ √(1.25×10⁸) ≈ 11.2×10³ m/s (NEB 2023, 5 marks). Derivation: ½mv_e² = GMm/R → v_e = √(2GM/R), using GM = gR²."
+    },
+    {
+      "label": "Limitation",
+      "text": "Newton fails for extreme fields (Mercury's orbit needs Einstein) and the formulas treat extended bodies as points. 'Weightlessness' in orbit is free fall, not zero gravity — g at 400 km is still ~8.7 m/s². Centre of mass ≠ centre of gravity in a non-uniform field."
+    },
+    {
+      "label": "Derivation",
+      "text": "Energy ledger to infinity: ½mv_e² − GMm/R = 0 + 0 → v_e = √(2GM/R). For orbit: centripetal demand mv₀²/r met by GMm/r² → v₀ = √(GM/r); period T = 2πr/v₀ = 2π√(r³/GM) — Kepler's third law falls out with T² ∝ r³."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Remember 11.2 km/s and √2: escape = √2 × orbital. g-variations: up (altitude) and down (depth) both DECREASE g — draw the V-curve peaking at the surface. Satellite energy: KE = −E = −PE/2 (virial shortcut)."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (5): escape velocity — define, derive, calculate (R = 6.4×10⁶ m, g = 9.8). NEB 2024 (2): Newton's law + the value of G. Orbital velocity/period and g-variation derivations repeat yearly."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "english",
+  "unitSlug": "language-and-grammar",
+  "unitTitle": "Grammar & Vocabulary (integrated across Section I units)",
+  "syllabusTopics": [
+    "Grammar and Usage",
+    "Vocabulary Building",
+    "Communication Skills"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Filled 2026-10-05; board row cites the subject's grammar and vocabulary PYQ banks (alias dirs, same-subject content).",
+  "card": {
+    "tag": "Grammar · Articles",
+    "title": "Articles and prepositions — the small words that decide marks",
+    "href": "/class-11-notes/english",
+    "icon": "Ruler",
+    "statKey": "pyq:english"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Articles signal known-vs-new (a/an = first mention, the = identified) and prepositions anchor time, place and relation (in/on/at, for/since, by/with). They are daily-life glue — every shop sign, notice and message depends on them — and NEB's favourite 2-mark hunting ground because the rules are small, sharp and breakable."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "a/an = one-of-many (sound decides: an honest, a university) · the = identified/unique/superlative (the sun, the first, the promises she made) · zero article: plural/general truths, meals, languages, games · time: at (point) / on (day) / in (period) · since (point) / for (duration)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Sound, not spelling, picks a/an (vowel SOUND: an hour, an honest girl; 'w/u' consonants: a university, a European). 'The' needs identifiability — previously mentioned, unique, or post-modified ('the promises she made'). Prepositions pair by collocation (good AT, married TO, different FROM), not logic."
+    },
+    {
+      "label": "Special cases",
+      "text": "'She is AN honest girl' (silent h → vowel sound) and 'keeps THE promises she made' (post-modified → identified) — both NEB 2021 traps in one sentence. Superlatives and ordinals force 'the' (the best, the first). Uncountables take no a/an (advice, furniture, information — never 'an advice')."
+    },
+    {
+      "label": "Solved",
+      "text": "'She is ___ honest girl and always keeps ___ promises she ___ made': (1) AN honest (vowel sound); (2) THE promises (identified by the clause); (3) zero article before 'made' (verb, not noun) — full answer 'an / the / –' (NEB 2021, 2 marks). Three blanks, three different rules, one method: sound → identifiability → part of speech."
+    },
+    {
+      "label": "Limitation",
+      "text": "Collocations defeat rules ('in the morning' but 'at night'; 'on foot' but 'by bus') — memorise the pairs. Article systems differ across languages (Nepali has none), so transfer errors persist; only reading volume rewires the instinct."
+    },
+    {
+      "label": "Derivation",
+      "text": "Derive article choice as a decision tree: (1) uncountable/plural-general → zero; (2) singular countable → identified? the : a/an; (3) a/an → vowel sound? an : a. Prepositions derive from collocation sets, not geometry: time-scale (at<on<in), transport (by vehicle, on foot), attachment (good at, afraid of, married to)."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Read the blank's noun: proper/uncountable-general → likely zero; clause after it → the; vowel sound → an. Preposition blanks: check the adjective/verb before it (good AT, different FROM, arrive AT/IN). Superlative/ordinal nearby → the."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2021 (2): article trio — 'an honest girl … the promises'. NEB 2024 (2): economic/economical + verb-choice MCQ (vocabulary bank). Preposition collocations and article error-correction rotate yearly."
+    }
+  ]
+}

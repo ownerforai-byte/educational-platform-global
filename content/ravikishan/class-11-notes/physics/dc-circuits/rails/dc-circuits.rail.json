@@ -1,0 +1,65 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "dc-circuits",
+  "unitTitle": "DC Circuits",
+  "syllabusTopics": [
+    "Electric currents; drift velocity and its relation with current",
+    "Ohm's law; electrical resistance; resistivity; conductivity",
+    "Current-voltage relations; ohmic and non-ohmic resistance",
+    "Resistances in series and parallel",
+    "Potential divider",
+    "Electromotive force of a source, internal resistance",
+    "Work and power in electrical circuits"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2022.json and 02-neb-2021.json in this unit.",
+  "card": {
+    "tag": "DC Circuits",
+    "title": "Kirchhoff's laws — current and voltage bookkeeping",
+    "href": "/class-11-notes/physics",
+    "icon": "GitBranch",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Current is drifting electrons (I = nAev_d — slow drift, fast signal). Ohm's law (V = IR) makes metals linear; filaments and diodes bend the I–V curve (non-ohmic). Kirchhoff's two laws are conservation in disguise: charge at a junction (ΣI = 0), energy around any loop (ΣV = 0). Real batteries add internal resistance r, so terminal voltage sags under load: V = E − Ir."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "I = nAev_d · V = IR, R = ρL/A  ·  series: R = ΣRᵢ · parallel: 1/R = Σ1/Rᵢ  ·  junction: ΣI_in = ΣI_out · loop: Σ(EMF) = Σ(IR)  ·  terminal V = E − Ir  ·  divider: V₁ = V·R₁/(R₁+R₂)  ·  2/3/6 Ω parallel on 12 V: R_eq = 1 Ω, I_total = 12 A"
+    },
+    {
+      "label": "Conditions",
+      "text": "Ohm's law needs constant temperature (heating bends the line). Kirchhoff holds for lumped DC circuits (no changing magnetic flux through loops). Internal-resistance sag assumes the source model E + r; potential-divider formula needs the same series current (unloaded output)."
+    },
+    {
+      "label": "Special cases",
+      "text": "2 Ω, 3 Ω, 6 Ω in parallel: 1/R = 1/2+1/3+1/6 = 1 → R = 1 Ω; across 12 V the battery delivers 12 A (NEB 2021). Short circuit: R → 0, current limited only by r. Wheatstone balance (P/Q = R/S) and potentiometer null points are Kirchhoff applications."
+    },
+    {
+      "label": "Solved",
+      "text": "2/3/6 Ω parallel across 12 V (negligible r): conductances add — 1/R = (3+2+1)/6 = 1 → R_eq = 1 Ω; total current I = V/R = 12 A, splitting 6/4/2 A inverse to resistance (NEB 2021, 4 marks). Branch currents rejoin at the junction — Kirchhoff's first law visible."
+    },
+    {
+      "label": "Limitation",
+      "text": "Kirchhoff's loop law fails with induced EMF (changing flux needs Faraday). Ohm's law fails for non-ohmic devices and at temperature extremes (superconductors: R = 0 below Tc). Drift speed (~mm/s) is not signal speed (~c) — the field, not electrons, races down the wire."
+    },
+    {
+      "label": "Derivation",
+      "text": "Drift: electrons accelerated by E gain v between collisions every τ; averaging gives v_d = eEτ/m, and I = nAev_d = (ne²τA/mL)·V — the bracket is 1/R, deriving Ohm microscopically with ρ = m/(ne²τ). Loop law: carry a test charge around any closed path back to start — net energy change must be zero (conservative electrostatic field)."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Two resistors parallel: R = product/sum. Equal R in parallel: R/n. 'State Kirchhoff' = 5-mark opener (NEB 2022): junction (charge) + loop (energy), then apply to the given circuit. Sag questions: V = E − Ir, find r from two load points."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2022 (5): Kirchhoff's laws + solve a simple circuit. NEB 2021 (4): 2/3/6 Ω parallel on 12 V — total current. Series/parallel reduction, divider and internal-resistance numericals rotate yearly."
+    }
+  ]
+}

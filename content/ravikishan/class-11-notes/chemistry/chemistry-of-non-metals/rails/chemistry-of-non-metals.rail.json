@@ -1,0 +1,80 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "chemistry-of-non-metals",
+  "unitTitle": "Chemistry of Non-metals",
+  "syllabusTopics": [
+    "Hydrogen: chemistry of atomic and nascent hydrogen; isotopes of hydrogen and their uses",
+    "Application of hydrogen as fuel; heavy water and its applications",
+    "Allotropes of oxygen: definition of allotropy and examples; oxygen — types of oxides (acidic, basic, neutral, amphoteric, peroxide and mixed oxides)",
+    "Applications of hydrogen peroxide; medical and industrial application of oxygen",
+    "Ozone: occurrence, preparation of ozone from oxygen, structure of ozone, test for ozone, uses of ozone",
+    "Ozone layer depletion: causes, effects and control measures",
+    "Nitrogen: reason for inertness of nitrogen and active nitrogen",
+    "Chemical properties of ammonia (action with CuSO4 solution, water, FeCl3 solution, conc. HCl, mercurous nitrate paper, O2); applications and harmful effects of ammonia",
+    "Oxy-acids of nitrogen (name and formula)",
+    "Chemical properties of nitric acid: HNO3 as an acid and oxidizing agent (action with zinc, magnesium, iron, copper, sulphur, carbon, SO2 and H2S); ring test for nitrate ion",
+    "Halogens: general characteristics of halogens; comparative study on preparation, chemical properties (with water, alkali, ammonia, oxidizing character, bleaching action) and uses of Cl2, Br2 and I2",
+    "Test for Cl2, Br2 and I2",
+    "Haloacids (HCl, HBr and HI): comparative study on preparation, properties (reducing strength, acidic nature and solubility) and uses",
+    "Carbon: allotropes of carbon (crystalline and amorphous) including fullerenes (structure, general properties and uses only)",
+    "Properties (reducing action, reaction with metals and nonmetals) and uses of carbon monoxide",
+    "Phosphorus: allotropes of phosphorus (name only)",
+    "Phosphine: preparation, properties (basic nature, reducing nature, action with halogens and oxygen) and uses",
+    "Sulphur: allotropes of sulphur (name only) and uses of sulphur",
+    "Hydrogen sulphide: preparation from Kipp's apparatus (with diagram), properties (acidic nature, reducing nature, analytical reagent) and uses",
+    "Sulphur dioxide: properties (acidic nature, reducing nature, oxidising nature and bleaching action) and uses",
+    "Sulphuric acid: properties (acidic nature, oxidising nature, dehydrating nature) and uses",
+    "Sodium thiosulphate (formula and uses)"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2024.json and 02-neb-2023.json in this unit.",
+  "card": {
+    "tag": "Non-metals",
+    "title": "Oxoacid strength — more oxygens, stronger acid",
+    "href": "/class-11-notes/chemistry",
+    "icon": "Microscope",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Non-metal chemistry is the chemistry of electron-hunger: halogens oxidise and bleach, HNO₃/H₂SO₄ concentrate into oxidising/dehydrating agents, and oxoacid strength climbs with the central atom's oxidation state. HClO < HClO₂ < HClO₃ < HClO₄ (Ka from 3.0×10⁻⁸ upward) because each added oxygen pulls electron density off the O–H bond. Helium replaces nitrogen in diving gas — insoluble, narcotic-free."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "oxoacid strength ∝ oxidation state of central atom: HClO(+1) < HClO₂(+3) < HClO₃(+5) < HClO₄(+7)  ·  Ka(HClO) = 3.0×10⁻⁸ … rising per O  ·  diving: He instead of N₂ (low solubility, no narcosis)  ·  ring test: brown [Fe(H₂O)₅NO]²⁺ ring for NO₃⁻"
+    },
+    {
+      "label": "Conditions",
+      "text": "The oxidation-state rule compares oxoacids of the SAME central atom; across different atoms, size and electronegativity reorder things. Bleaching by Cl₂/SO₂ needs moisture (nascent oxygen / reduction chemistry). Ring-test nitrate detection needs fresh FeSO₄ + conc. H₂SO₄ layering."
+    },
+    {
+      "label": "Special cases",
+      "text": "Nitrogen's N≡N triple bond explains its inertness (huge bond energy); 'active nitrogen' is the atomic/plasma form. Ozone's bent structure with delocalised π gives its oxidising punch and UV-shield role; CFCs catalyse its destruction (one Cl kills ~10⁵ O₃). CO is a silent killer (haemoglobin binder) and a metallurgical reductant."
+    },
+    {
+      "label": "Solved",
+      "text": "Order HClO, HClO₂, HClO₃, HClO₄ by strength: Cl oxidation states +1, +3, +5, +7 — more terminal oxygens withdraw more electron density, weakening O–H and stabilising the anion → HClO < HClO₂ < HClO₃ < HClO₄, matching Ka 3.0×10⁻⁸ upward (NEB 2024, 3 marks)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Oxidation-state rules predict trends, not Ka values. 'Inert' nitrogen reacts at Haber temperatures/pressures and in lightning (NOₓ). Ozone is beneficial up high, toxic down low — location decides hero vs pollutant."
+    },
+    {
+      "label": "Derivation",
+      "text": "Acid strength = ease of O–H heterolysis + anion stability. Each =O on chlorine delocalises the conjugate base's negative charge over more oxygens (resonance), lowering the anion's energy — so deprotonation equilibrium shifts right per added oxygen. Same logic ranks H₂SO₄ above H₂SO₃ and HNO₃ above HNO₂."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Count oxygens: more O on the same centre = stronger oxoacid. Diving gas: He for N₂ (narcosis/solubility). Ammonia tests: white fumes with conc. HCl, deep-blue with CuSO₄. Nitrate: brown ring. Halogens: starch-iodide and litmus-bleach tests."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (3): order HClO→HClO₄ by strength with Ka trend + explanation. NEB 2023 (2): He in diving gear instead of N₂. HNO₃ oxidising action, ammonia reactions, ozone prep/tests rotate yearly."
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "states-of-matter",
+  "unitTitle": "States of Matter",
+  "syllabusTopics": [
+    "Gaseous state: Kinetic theory of gas and its postulates",
+    "Gas laws: Boyle's law, Charles' law, Avogadro's law, combined gas equation, Dalton's law of partial pressure, Graham's law of diffusion",
+    "Ideal gas and ideal gas equation; universal gas constant and its significance",
+    "Deviation of real gas from ideality (solving related numerical problems based on gas laws)",
+    "Liquid state: physical properties of liquids — evaporation and condensation, vapour pressure and boiling point, surface tension and viscosity (qualitative idea only)",
+    "Liquid crystals and their applications",
+    "Solid state: types of solids, amorphous and crystalline solids",
+    "Efflorescent, deliquescent and hygroscopic solids; crystallization and crystal growth; water of crystallization",
+    "Introduction to unit crystal lattice and unit cell"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2021.json in this unit.",
+  "card": {
+    "tag": "States of Matter",
+    "title": "Gas laws — Boyle and Charles fuse into PV = nRT",
+    "href": "/class-11-notes/chemistry",
+    "icon": "Workflow",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Boyle (P∝1/V at fixed T), Charles (V∝T at fixed P) and Avogadro (V∝n) each freeze two variables and watch the third — multiply all three proportionalities and the combined law (P₁V₁/T₁ = P₂V₂/T₂) appears, with R crowning it as PV = nRT. Dalton splits mixture pressures by mole fraction; Graham sorts diffusion speeds by 1/√M. Liquids add vapour pressure/boiling/surface tension/viscosity; solids add lattices, unit cells and water of crystallization."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Boyle: P₁V₁ = P₂V₂ · Charles: V₁/T₁ = V₂/T₂ (kelvin!) · combined: P₁V₁/T₁ = P₂V₂/T₂ · PV = nRT · Dalton: P_total = ΣPᵢ, Pᵢ = xᵢ·P  ·  Graham: r₁/r₂ = √(M₂/M₁)  ·  500 cm³ at 27 °C → 127 °C, same P: V = 500×400/300 ≈ 667 cm³"
+    },
+    {
+      "label": "Conditions",
+      "text": "Charles and the combined law demand KELVIN — Celsius silently breaks them. Gas laws assume ideal behaviour (low P, high T); real gases deviate via molecular volume and attractions (van der Waals). Dalton needs non-reacting components; Graham needs same T and P for both gases."
+    },
+    {
+      "label": "Special cases",
+      "text": "500 cm³ at 27 °C (300 K) → 127 °C (400 K), constant P: V₂ = 500 × 400/300 ≈ 667 cm³ (NEB 2021). Efflorescent salts lose water to air, deliquescent dissolve in absorbed water, hygroscopic merely attract it. Liquid crystals flow like liquids but order like solids (LCDs)."
+    },
+    {
+      "label": "Solved",
+      "text": "State Boyle (V∝1/P) and Charles (V∝T), then fuse: V ∝ T/P → PV/T = constant = nR for n moles → PV = nRT, with R = 8.314 J/mol·K the bridge between the gas world and energy (NEB 2023, 3 marks). Derivation beats memorisation — three laws, one product."
+    },
+    {
+      "label": "Limitation",
+      "text": "Ideal equations fail near condensation (high P, low T) — liquefaction is the visible rebellion. Viscosity/surface-tension pictures here are qualitative only (syllabus says so). Unit-cell counting assumes perfect crystals; defects run the real semiconductor world."
+    },
+    {
+      "label": "Derivation",
+      "text": "Combine: V ∝ 1/P (Boyle) and V ∝ T (Charles) and V ∝ n (Avogadro) → V = R·nT/P. Dalton: each gas exerts its mole-fraction share, Pᵢ = xᵢP, proved by applying PV = nRT per component in the shared V, T. Graham: equal KE (½mv²) at same T → v ∝ 1/√m → diffusion rates follow."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Temperature to kelvin FIRST — every year someone loses marks on 27 °C. Combined-law ladder: cross-multiply P₁V₁T₂ = P₂V₂T₁. Graham: lighter diffuses faster by √mass-ratio. R = 8.314 pairs with joules/m³; R = 0.0821 with L·atm."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (3): Boyle + Charles → derive ideal gas equation. NEB 2021 (2): 500 cm³ at 27 °C → volume at 127 °C, constant P. Dalton/Graham and liquid/solid-state definitions rotate yearly."
+    }
+  ]
+}

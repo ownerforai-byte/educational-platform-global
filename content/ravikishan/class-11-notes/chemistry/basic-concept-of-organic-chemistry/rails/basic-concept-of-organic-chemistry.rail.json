@@ -1,0 +1,65 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "basic-concept-of-organic-chemistry",
+  "unitTitle": "Basic Concept of Organic Chemistry",
+  "syllabusTopics": [
+    "Introduction to organic chemistry and organic compounds",
+    "Reasons for the separate study of organic compounds from inorganic compounds",
+    "Tetra-covalency and catenation properties of carbon",
+    "Classification of organic compounds",
+    "Alkyl groups, functional groups and homologous series",
+    "Idea of structural formula, contracted formula and bond line structural formula",
+    "Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2024.json and 02-neb-2023.json in this unit.",
+  "card": {
+    "tag": "Organic Basics",
+    "title": "Catenation and functional groups — why carbon gets its own chemistry",
+    "href": "/class-11-notes/chemistry",
+    "icon": "FileText",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Carbon's tetra-covalency plus unmatched catenation (C–C chains/rings of any length) explodes into millions of compounds — hence a separate organic chemistry. Functional groups (−OH, −CHO, −COOH, −NH₂…) are the reactive addresses: same group, same chemistry, whatever the chain. Homologous series (CH₂ steps) make properties march in trends. Cracking splits heavy fractions, reforming reshapes them; octane number grades petrol knock-resistance (iso-octane = 100), cetane grades diesel ignition."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "catenation: C–C ≈ 348 kJ/mol (strong enough to chain indefinitely)  ·  homologues differ by –CH₂–  ·  IUPAC reads: CH₃CH₂CH₂COOH = butanoic acid · CH₃CHO = ethanal · HOCH₂CH₂OH = ethane-1,2-diol · CH₃CH(CH₃)COOH = 2-methylpropanoic acid  ·  octane number: iso-octane 100, n-heptane 0"
+    },
+    {
+      "label": "Conditions",
+      "text": "Functional-group behaviour transfers across homologues only when the group dominates reactivity (long chains add van-der-Waals noise). IUPAC naming here caps at short chains — longest carbon backbone carrying the principal group wins. Octane/cetane scales compare against fixed reference fuels under standard test engines."
+    },
+    {
+      "label": "Special cases",
+      "text": "Branched isomers share formulas but split properties (branching lowers boiling point). Bond-line formulas hide C/H (vertices = carbon). Tetraethyl lead raised octane historically — phased out for lead toxicity; oxygenates (MTBE/ethanol) replaced it. Cetane is diesel's mirror scale (ignition quality, not knock)."
+    },
+    {
+      "label": "Solved",
+      "text": "Name CH₃CH₂CH₂COOH: 4-carbon chain with terminal −COOH → butanoic acid; CH₃CHO: 2 carbons, aldehyde → ethanal; HOCH₂CH₂OH: diol → ethane-1,2-diol; CH₃CH(CH₃)COOH: 3-carbon acid backbone + methyl at C2 → 2-methylpropanoic acid (NEB 2024, 3 marks — suffix picks the principal group)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Catenation is carbon's superlative, not monopoly (Si–Si chains exist but hydrolyse). Functional-group transferability breaks with conjugation/neighbouring groups. Octane number predicts knock, not energy content or emissions."
+    },
+    {
+      "label": "Derivation",
+      "text": "Why separate study? Count: tetravalent carbon × chain/branch/ring/finite functional permutations → combinatorial explosion (millions known) vs thousands of inorganics. Classification tames it: hydrocarbons vs derivatives; open/acyclic vs cyclic; then functional-group families, each with one characteristic reaction set."
+    },
+    {
+      "label": "Shortcut",
+      "text": "IUPAC: find principal group → longest chain holding it → number to give it lowest locant → name substituents alphabetically. Suffix decides family (−oic acid beats −al beats −ol). Octane = petrol knock scale; cetane = diesel ignition scale — never swap them."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (3): IUPAC names — butanoic acid, ethanal, ethane-1,2-diol, 2-methylpropanoic acid. NEB 2023 (2): long branched alcohol IUPAC. Catenation reasons + octane/cetane meanings rotate yearly."
+    }
+  ]
+}

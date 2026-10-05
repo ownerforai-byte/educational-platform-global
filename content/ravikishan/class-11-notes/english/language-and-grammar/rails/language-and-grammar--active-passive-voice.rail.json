@@ -1,0 +1,61 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "english",
+  "unitSlug": "language-and-grammar",
+  "unitTitle": "Grammar & Vocabulary (integrated across Section I units)",
+  "syllabusTopics": [
+    "Grammar and Usage",
+    "Vocabulary Building",
+    "Communication Skills"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Filled 2026-10-05; board row cites the subject's grammar PYQ bank (grammar/ alias dir, same-subject content).",
+  "card": {
+    "tag": "Grammar · Voice",
+    "title": "Active to passive — moving the spotlight to the action",
+    "href": "/class-11-notes/english",
+    "icon": "Workflow",
+    "statKey": "pyq:english"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Voice shifts attention: active spotlights the doer ('The teacher gave homework'), passive spotlights the receiver ('Homework was given to the students'). Daily life runs on passive — news ('Three people were injured'), science ('The solution was heated'), notices ('Candidates are requested to…'). The verb always becomes be + past participle; the old subject survives only as an optional by-phrase."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "active S + V + O → passive O + be(TENSED) + V3 (+ by S)  ·  gives→was given · is writing→is being written · has done→has been done · will do→will be done  ·  'The teacher gave the students homework' → 'The students were given homework' / 'Homework was given to the students'"
+    },
+    {
+      "label": "Conditions",
+      "text": "Only transitive verbs passivise — 'She sleeps well' has no object to promote. The be-verb carries the original tense (gave→was/were given, not 'is given'). Double-object verbs offer two passives (promote either object). Intransitives, reflexives and state verbs (have, lack, resemble) refuse the transformation."
+    },
+    {
+      "label": "Special cases",
+      "text": "Questions passivise too ('Who broke this?' → 'By whom was this broken?'). Imperatives go through 'let' ('Do it' → 'Let it be done') or modals ('You are requested to…'). Agentless passives dominate real use — the doer is unknown, obvious or deliberately hidden ('Mistakes were made')."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2024 (2): 'The teacher gave the students homework' → 'The students were given homework by the teacher' (promote the indirect object, gave→were given to match plural 'students'). Alternative full-mark answer: 'Homework was given to the students by the teacher.' Tense frozen, participle correct, agent optional."
+    },
+    {
+      "label": "Limitation",
+      "text": "Passivising unaccusatives ('He died' → nothing) or intransitives is ungrammatical, not just awkward. Overuse breeds fog — good style prefers active unless the receiver truly matters. Some passives change emphasis so far they mislead ('The window was broken' hides who did it — sometimes the point, sometimes evasion)."
+    },
+    {
+      "label": "Derivation",
+      "text": "Derive any passive mechanically: (1) identify S–V–O and the tense; (2) promote O to subject position; (3) rewrite the verb as be-in-that-tense + V3; (4) demote old S to by-phrase or drop it. Run 'She is writing a letter': O = a letter, tense = present continuous → 'A letter is being written by her' — continuous needs being, perfect needs been."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Spot the tense first — be-verb must mirror it (was/were for past, is/are for present). V3 is non-negotiable (given, written, done — never gave/wrote). If the sentence has no object, write 'no passive possible' and move on."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (2): passive of 'The teacher gave the students homework.' Voice transformation (both directions), tense-matched be-forms, and agentless-vs-agent choice complete the set."
+    }
+  ]
+}

@@ -10,6 +10,12 @@
  *   3. mindmap trees   UNIT_CONCEPTS (authored) vs HIGH_YIELD_TOPIC_BANK
  *   4. mindmap depth   the exceptional / fact / exam / trap packs
  *
+ * `rails/` card files are NOT a rendered layer: draft cards never stream
+ * (loader skips them — see frontend/lib/home-rails-corpus.ts), so counting
+ * their TODO skeletons here would false-positive every clean unit an agent
+ * scaffolds. Rail readiness is gated instead by
+ * `npx tsx frontend/scripts/content/home-rails.ts --check`.
+ *
  * A note file counts as AUTHORED only if it has >= 4 notes AND zero template
  * markers. Anything less is a scope a student can see as filler.
  */
@@ -70,7 +76,9 @@ function listFiles(dir) {
     for (const e of fs.readdirSync(d, { withFileTypes: true })) {
       const f = path.join(d, e.name);
       if (e.isDirectory()) {
-        if (e.name !== "mindmap") walk(f);
+        // mindmap/ has its own validators; rails/ cards never render until
+        // ready (drafts are TODO skeletons by design — see header comment).
+        if (e.name !== "mindmap" && e.name !== "rails") walk(f);
       } else if (e.name.endsWith(".json") && e.name !== "plan.json" && !e.name.startsWith("_")) {
         out.push(f);
       }

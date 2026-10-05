@@ -1,0 +1,61 @@
+{
+  "schema": "home-rail/v1",
+  "draft": true,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "mathematics",
+  "unitSlug": "trigonometry",
+  "unitTitle": "Trigonometry",
+  "unitHours": 12,
+  "syllabusTopics": [
+    "Inverse circular functions",
+    "Trigonometric equations and general values"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Fill every row (LaTeX allowed in $...$), set draft to false, then run: npx tsx frontend/scripts/content/home-rails.ts --check",
+  "card": {
+    "tag": "Trigonometry",
+    "title": "TODO: Trigonometry — pick this card's anchor concept",
+    "href": "/class-11-notes/mathematics",
+    "icon": "Sigma",
+    "statKey": "pyq:mathematics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "TODO: write the Concept row for \"Trigonometry\" (Mathematics Class 11)."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "TODO: write the Formula row for \"Trigonometry\" (Mathematics Class 11)."
+    },
+    {
+      "label": "Conditions",
+      "text": "TODO: write the Conditions row for \"Trigonometry\" (Mathematics Class 11)."
+    },
+    {
+      "label": "Special cases",
+      "text": "TODO: write the Special cases row for \"Trigonometry\" (Mathematics Class 11)."
+    },
+    {
+      "label": "Solved",
+      "text": "TODO: write the Solved row for \"Trigonometry\" (Mathematics Class 11)."
+    },
+    {
+      "label": "Limitation",
+      "text": "TODO: write the Limitation row for \"Trigonometry\" (Mathematics Class 11)."
+    },
+    {
+      "label": "Derivation",
+      "text": "TODO: write the Derivation row for \"Trigonometry\" (Mathematics Class 11)."
+    },
+    {
+      "label": "Shortcut",
+      "text": "TODO: write the Shortcut row for \"Trigonometry\" (Mathematics Class 11)."
+    },
+    {
+      "label": "Board question",
+      "text": "TODO: write the Board question row for \"Trigonometry\" (Mathematics Class 11)."
+    }
+  ]
+}

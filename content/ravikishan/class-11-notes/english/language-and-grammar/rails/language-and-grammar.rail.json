@@ -1,0 +1,61 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "english",
+  "unitSlug": "language-and-grammar",
+  "unitTitle": "Grammar & Vocabulary (integrated across Section I units)",
+  "syllabusTopics": [
+    "Grammar and Usage",
+    "Vocabulary Building",
+    "Communication Skills"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05: tense system is the backbone of the Grammar-and-Usage syllabus topic; board row is NEB-style, no fabricated paper citation.",
+  "card": {
+    "tag": "Grammar · Tenses",
+    "title": "The 12 tenses — the time × aspect grid",
+    "href": "/class-11-notes/english",
+    "icon": "BookOpen",
+    "statKey": "pyq:english"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Tense is two choices multiplied: TIME (past / present / future) × ASPECT (simple / continuous / perfect / perfect-continuous) = 12 forms from one grid. Simple states facts and habits, continuous frames ongoing action, perfect links an earlier event to a later reference point, perfect-continuous stresses duration up to that point."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "simple: V1 / V2 (does/do, did)  ·  continuous: be + V-ing (is writing / was writing / will be writing)  ·  perfect: have + V3 (has written / had written / will have written)  ·  perfect-continuous: have been + V-ing (has been writing / had been writing / will have been writing)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Time markers choose the form: since/for/duration → perfect or perfect-continuous; by + a time point → perfect; already/just/yet → perfect; last night / in 2015 (finished time) → simple past only. In reported speech the tense steps one notch back (sequence of tenses)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Present simple covers timetables and universal truths ('The train leaves at 6'). Present perfect needs UNSPECIFIED time ('I have visited Pokhara') vs simple past's finished time ('I visited Pokhara in 2020'). Stative verbs (know, belong, prefer) resist the continuous. Future plans take 'going to' or present continuous ('We are leaving tomorrow')."
+    },
+    {
+      "label": "Solved",
+      "text": "'By the time we arrived, the bus had left': two past events, so the earlier one (leaving) steps back to past perfect while the later one (arriving) stays simple past. Reversing them — 'had arrived … left' — reverses the story, which is exactly what the examiner tests."
+    },
+    {
+      "label": "Limitation",
+      "text": "Tense is not time: 'If I were rich' is past-form but present-meaning (subjunctive), and 'The train leaves at 6' is present-form but future-meaning. Aspect shades (temporary vs habitual, completed vs experienced) live in context, so no rule fires without reading the whole sentence."
+    },
+    {
+      "label": "Derivation",
+      "text": "Build the grid from one verb, 'write': rows past/present/future × columns simple/continuous/perfect/perfect-continuous → wrote–writes/will write; was writing–is writing–will be writing; had written–has written–will have written; had been writing–has been writing–will have been writing. Every tense question is a lookup in this single table."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Scan for signal words first: by → perfect; while/when → continuous pair; already/just/yet/ever → perfect; finished-time phrase → simple past, never perfect. When two clauses share 'when/after/before', the earlier action takes the 'more past' form."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: rewrite with the correct verb form ('She ___ (live) here since 2015' → has been living); error correction on tense consistency; combine with yet/already; reported-speech backshift ('I am tired' → He said he was tired)."
+    }
+  ]
+}

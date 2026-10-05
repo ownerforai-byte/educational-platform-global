@@ -1,0 +1,62 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "heat-and-temperature",
+  "unitTitle": "Heat and Temperature",
+  "unitHours": 3,
+  "syllabusTopics": [
+    "Molecular concept of thermal energy, heat and temperature; cause and direction of heat flow",
+    "Meaning of thermal equilibrium and Zeroth law of thermodynamics",
+    "Thermal equilibrium as a working principle of a mercury thermometer"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Heat and Temperature",
+    "title": "Zeroth law — why thermometers can exist at all",
+    "href": "/class-11-notes/physics",
+    "icon": "Lightbulb",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Heat is energy in transit (joules), temperature is the average molecular kinetic energy that decides its direction (kelvin) — heat flows hot→cold, never by itself the reverse. Thermal equilibrium (no net flow) is transitive: if A matches B and B matches C, A matches C. That transitivity IS the Zeroth law, and it is what makes temperature a meaningful, measurable number."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "heat Q (J) vs temperature T (K): different quantities, different units  ·  faulty-thermometer correction: T = (R − R_ice)/(R_steam − R_ice) × 100 °C  ·  K = °C + 273.15"
+    },
+    {
+      "label": "Conditions",
+      "text": "Equilibrium talk assumes the bodies are in thermal contact long enough for flow to stop. The Zeroth law needs all three pairwise contacts to be thermal (diathermic walls, no insulation). Mercury thermometry assumes uniform bore and linear expansion of mercury with T."
+    },
+    {
+      "label": "Special cases",
+      "text": "A thermometer reading −5 °C in ice and 105 °C in steam has a stretched scale: true T = (R+5)/110 × 100 — a liquid at true 40 °C reads 39 °C on it (NEB 2023). Mercury suits thermometers (uniform expansion, opaque, non-wetting); water does not (anomalous expansion near 4 °C)."
+    },
+    {
+      "label": "Solved",
+      "text": "Faulty thermometer: −5 °C at ice point, 105 °C at steam point. For a reading R, true temperature T = (R − (−5))/(105 − (−5)) × 100 = (R+5)/110 × 100 °C. The scale is stretched by 110/100, so every reading needs this two-point correction (NEB 2023, 3 marks)."
+    },
+    {
+      "label": "Limitation",
+      "text": "The Zeroth law defines temperature but sets no scale — Celsius, Kelvin and Fahrenheit all satisfy it. 'Heat flows hot to cold' governs NET flow only; individual molecules exchange both ways. Thermometers disturb tiny systems (finite heat capacity), so the reading is equilibrium of system + instrument."
+    },
+    {
+      "label": "Derivation",
+      "text": "Why it is 'zeroth': the First and Second laws were named first; temperature's logical foundation was recognised later and numbered before them. Formally: equilibrium is an equivalence relation (reflexive, symmetric, transitive) on thermodynamic states — transitivity is exactly the Zeroth law, and equivalence classes are isotherms labelled by T."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'Why zeroth?' → named after 1st/2nd, logically prior. Heat-vs-temperature difference + SI units (J vs K) is a 2-marker that repeats (NEB 2022). Faulty thermometer: always (R − lower)/(upper − lower) × 100."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (2): state and explain the Zeroth law + why 'zeroth'. NEB 2023 (3): −5 °C/105 °C faulty thermometer correction. NEB 2022 (2): heat vs temperature with SI units."
+    }
+  ]
+}

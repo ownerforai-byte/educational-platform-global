@@ -26,7 +26,8 @@ content/ravikishan/{classSlug}/{subjectSlug}/{unitSlug}/
   ├── pyqs/         ← previous year questions
   ├── sets/         ← problem sets
   ├── examples/     ← worked examples
-  └── mindmap/      ← concept map JSON
+  ├── mindmap/      ← concept map JSON
+  └── rails/        ← home-rail knowledge cards, ONE file per unit (see §9)
 ```
 
 ### 3. Before Adding Any Content — Follow This Flow
@@ -36,6 +37,8 @@ content/ravikishan/{classSlug}/{subjectSlug}/{unitSlug}/
 4. Create JSON with required fields: `title`, `unitSlug`, `topicSlug`, `topicTitle`, `relevance`, `notes`
 5. Place file in correct unit directory under correct sub-folder
 6. Run `npm run content:build` to regenerate mindmaps
+7. If the unit's home-rail card is still a draft, fill it too (see §9) —
+   the home page streams whatever is ready, no frontend edit needed
 
 ### 4. Never Do These Things
 - ❌ Create files outside `content/ravikishan/{class}/{subject}/{unit}/`
@@ -78,6 +81,29 @@ node node_modules/tsx/dist/cli.mjs frontend/scripts/content/validate.ts --strict
 - `scripts/validate-content.mjs` — content JSON parser (exit 1 on broken files)
 - `scripts/content-health-check.mjs` — BOM repair + `_index.json` completeness scan
 - `frontend/scripts/content/validate.ts` — strict schema gate (corpus + built manifests)
+- `frontend/lib/home-rails-corpus.ts` — rail-card reader (server-only) + readiness rules
+- `frontend/scripts/content/home-rails.ts` — rail scaffold + `--check`
+
+### 9. Home Rail Cards (`rails/`) — How Any Agent Adds Slides to the Home Page
+The six home-page subject rails stream one card per syllabus unit. Those cards
+are DATA, not code — any agent adds them without touching the frontend:
+1. Find the unit's file: `content/ravikishan/class-11-notes/<subject>/<unit>/rails/<unit>.rail.json`
+   (missing? run `npx tsx frontend/scripts/content/home-rails.ts` from the repo
+   root to scaffold it — never overwrites filled cards).
+2. Fill the 9 rows in order — Concept, Formula (`kind: "formula"`), Conditions,
+   Special cases, Solved, Limitation, Derivation, Shortcut, Board question.
+   Markdown + LaTeX in `$...$` allowed, same as concept `notes`.
+3. Keep `card.tag` short (unit chip), `card.title` the anchor concept,
+   `card.href` a route that already ships, `card.icon` one name from
+   `HOME_RAIL_ICONS` (`frontend/lib/home-subject-slides.ts`), `card.statKey`
+   as `pyq:<subject>`. Set `source: "web:<host>"` when the row came from the
+   web instead of the platform corpus.
+4. Flip `draft` to `false` and run `npx tsx frontend/scripts/content/home-rails.ts --check`.
+   Rules: `draft: true`, any row starting with `TODO`, or a missing row keeps
+   the card OFF the rail (reported as `draft`, never a gate failure). Broken
+   JSON or a wrong `schema` fails `--check`.
+5. Extra cards for a unit go in `<unit>--<kebab>.rail.json` (same schema);
+   they stream after the canonical card, before the Class 12 teaser.
 
 <!-- BEGIN:nextjs-agent-rules -->
 

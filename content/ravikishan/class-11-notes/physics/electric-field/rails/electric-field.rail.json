@@ -1,0 +1,61 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "electric-field",
+  "unitTitle": "Electric Field",
+  "syllabusTopics": [
+    "Electric field due to point charges; field lines",
+    "Gauss law: electric flux",
+    "Application of Gauss law: field of a charge sphere, line charge, charged plane conductor"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2020.json in this unit.",
+  "card": {
+    "tag": "Electric Field",
+    "title": "Gauss law — flux counts the enclosed charge",
+    "href": "/class-11-notes/physics",
+    "icon": "Network",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "The field E = F/q₀ maps the force a charge WOULD feel at every point; field lines sketch it (out of +, into −, never crossing, density ∝ strength). Gauss law counts flux through any closed surface: total outward flux equals enclosed charge over ε₀ — shape-independent. With symmetric charge layouts, that one count hands you E with no integration."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "E = kQ/r² (point charge)  ·  Φ = ∮E·dA = Q_enclosed/ε₀  ·  plane sheet: E = σ/2ε₀ (single) · charged conductor surface: E = σ/ε₀  ·  line charge: E = λ/(2πε₀r)  ·  +4 μC at 2 m: E = 9×10⁹×4×10⁻⁶/4 = 9000 N/C"
+    },
+    {
+      "label": "Conditions",
+      "text": "Gauss law is always true; Gauss law is USEFUL only with symmetry (spherical, cylindrical, planar) so E factors out of the flux integral. Field-line sketches assume static charges. The conductor result (σ/ε₀ just outside) needs electrostatic equilibrium (charges at rest on the surface)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Two equal +2 μC charges 10 cm apart: midpoint fields are equal and opposite → E = 0 exactly (NEB 2020). Inside a charged spherical shell E = 0 (no enclosed charge); outside, the whole charge acts as if centred. Infinite sheet: uniform E, distance-independent."
+    },
+    {
+      "label": "Solved",
+      "text": "+4 μC point charge, field at 2 m: E = kQ/r² = 9×10⁹ × 4×10⁻⁶ / 4 = 9000 N/C radially outward (NEB 2023, 3 marks). Plane-sheet variant: choose a pillbox Gaussian surface straddling the sheet — flux 2EA (both faces), enclosed σA → E = σ/2ε₀ (NEB 2023, 5 marks)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Gauss gives total flux, not E point-by-point, without symmetry. Field lines are a map, not a mechanism — they begin/end only on charges (or infinity). The law is electrostatic; changing magnetic fields add induced E (Faraday) outside this unit."
+    },
+    {
+      "label": "Derivation",
+      "text": "Point charge flux: E·4πr² = (kQ/r²)·4πr² = Q/ε₀ — the r² cancels, so ANY enclosing surface passes the same flux (field-line counting made rigorous). Superpose for distributions: flux adds linearly → Φ = ΣQ/ε₀. Then invert for symmetric cases: sphere → E·4πr² = Q/ε₀; pillbox on sheet → E = σ/2ε₀."
+    },
+    {
+      "label": "Shortcut",
+      "text": "See 'infinite sheet/line/sphere' → Gaussian surface matching the symmetry (pillbox / coaxial cylinder / sphere), write flux = enclosed/ε₀, solve. Midpoint-between-equal-charges → zero by symmetry, no calculation. Lines never cross — use that to kill wrong MCQ sketches."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (5): Gauss law + field of an infinite plane sheet. NEB 2023 (3): +4 μC at 2 m numerical. NEB 2020 (3): twin +2 μC, 10 cm apart — midpoint field."
+    }
+  ]
+}

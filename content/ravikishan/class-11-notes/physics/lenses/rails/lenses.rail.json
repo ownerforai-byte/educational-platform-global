@@ -1,0 +1,61 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "lenses",
+  "unitTitle": "Lenses",
+  "syllabusTopics": [
+    "Spherical lenses, angular magnification",
+    "Lens maker's formula",
+    "Power of a lens"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Lenses",
+    "title": "Lens maker formula — grinding glass into focus",
+    "href": "/class-11-notes/physics",
+    "icon": "Calculator",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "A lens is two spherical refracting surfaces back to back. Its focal length is manufactured in: flatter curves or lower index → weaker lens. Converging (convex) lenses form real images of real objects; diverging (concave) give only virtual ones. Power (dioptre = 1/m) adds in contact combinations. Angular magnification is the ratio of visual angles with and without the instrument."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "maker: 1/f = (μ − 1)·(1/R₁ − 1/R₂)  ·  lens: 1/f = 1/v − 1/u (Cartesian)  ·  m = v/u  ·  power P = 1/f(m) in dioptre; contact: P = P₁ + P₂  ·  symmetric biconvex R: 1/f = (μ−1)·2/R"
+    },
+    {
+      "label": "Conditions",
+      "text": "Thin-lens + paraxial approximations throughout; thick lenses shift principal planes. Sign convention fixed once (Cartesian: light left→right, R positive if centre is on the outgoing side). Maker formula assumes the lens sits in air — immerse it and (μ−1) becomes (μ_rel − 1)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Equiconvex glass (μ = 1.5): 1/f = 0.5·2/R → f = R — focal length equals the radius, a beloved shortcut. Plano-convex halves the power (one flat face contributes nothing). f = 15 cm lens imaging 2× real: 1/v − 1/u with m = v/u = −2 → u = −22.5 cm, v = −45 cm (NEB 2023)."
+    },
+    {
+      "label": "Solved",
+      "text": "f = 15 cm convex, real image twice the object: m = v/u = −2 → v = −2u. Lens formula 1/15 = 1/(−2u) − 1/u = −3/2u → u = −22.5 cm, v = −45 cm — object 22.5 cm out, image 45 cm out, inverted, doubled (NEB 2023, 4 marks; signs in Cartesian)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Real lenses carry chromatic aberration (μ varies with colour — next unit's problem) and spherical aberration (marginal rays focus short). The maker formula designs focal length, not image quality. Contact-power addition ignores inter-lens separation."
+    },
+    {
+      "label": "Derivation",
+      "text": "Refract through the first spherical surface (n₂/v − n₁/u = (n₂−n₁)/R), feed its image as the object of the second surface with sign care, thin-lens limit (thickness → 0): the intermediate distances cancel leaving 1/f = (μ−1)(1/R₁ − 1/R₂) — the NEB 5-marker for a convex lens."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Power in dioptre = 100/f(cm). Converging = positive f, diverging = negative. 'Derive for convex lens' → write the two-surface refraction chain, don't memorise the end. Real-image questions: m negative, v and u same sign side."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2022 (5): state + derive the thin lens maker's formula for a convex lens. NEB 2023 (4): f = 15 cm, real 2× image — object and image positions. Power/combination and magnification numericals rotate yearly."
+    }
+  ]
+}

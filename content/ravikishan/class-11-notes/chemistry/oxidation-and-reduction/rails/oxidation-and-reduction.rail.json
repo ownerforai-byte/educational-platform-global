@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "oxidation-and-reduction",
+  "unitTitle": "Oxidation and Reduction",
+  "syllabusTopics": [
+    "General and electronic concept of oxidation and reduction",
+    "Oxidation number and rules for assigning oxidation number",
+    "Balancing redox reactions by oxidation number and ion-electron (half reaction) method",
+    "Electrolysis: qualitative aspect",
+    "Electrolysis: quantitative aspect (Faraday's laws of electrolysis)"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Redox",
+    "title": "Oxidation numbers — balancing redox without guessing",
+    "href": "/class-11-notes/chemistry",
+    "icon": "GitBranch",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Oxidation is electron LOSS (oxidation number rises); reduction is electron GAIN (number falls) — OILRIG with numbers attached. The oxidising agent gets reduced, the reducing agent gets oxidised. Oxidation-number rules (F = −1, O = −2 except peroxides, H = +1 except hydrides, group 1 = +1, sum = charge) turn any equation into balanceable bookkeeping, finished by half-reactions and Faraday's laws at electrodes (W = ZQ, W = E·Q/96500)."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "OILRIG: oxidation = loss, reduction = gain  ·  rules: F −1 · O −2 (peroxide −1) · H +1 (hydride −1) · alkali +1 · Σ = charge  ·  Faraday I: W = Z·Q · Faraday II: W = E·Q/96500, 1 F = 96500 C/mol e⁻"
+    },
+    {
+      "label": "Conditions",
+      "text": "Oxidation numbers are bookkeeping fictions (not real charges) — valid only with the rule hierarchy applied in order. Half-reaction balancing runs acidic (H⁺/H₂O) or basic (OH⁻/H₂O) medium consistently. Faraday's laws need steady current and a single electrode reaction."
+    },
+    {
+      "label": "Special cases",
+      "text": "H₂O₂ plays both sides: oxidant with I⁻/Fe²⁺, reductant with MnO₄⁻/O₃ — oxidation state of O (−1) can move either way (NEB 2022). MnO₄⁻ + C₂O₄²⁻ in acid: Mn +7→+2 (gain 5e⁻), C +3→+4 (lose 1e⁻ each, 2 per oxalate) → 2:5 ratio (NEB 2023)."
+    },
+    {
+      "label": "Solved",
+      "text": "Balance MnO₄⁻ + C₂O₄²⁻ + H⁺ → Mn²⁺ + CO₂ + H₂O: Mn gains 5e⁻ (×2), each oxalate loses 2e⁻ (×5 for 10e⁻). Atoms: 2MnO₄⁻ + 5C₂O₄²⁻ + 16H⁺ → 2Mn²⁺ + 10CO₂ + 8H₂O — charge (−16 both sides) and atoms verify (NEB 2023, 4 marks)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Oxidation numbers mislead in non-innocent ligands and metal–metal bonds (assignment conventions, not physics). Faraday's laws assume 100% current efficiency — side reactions (gas evolution) steal charge in practice. Balancing proves atom/charge conservation, never the mechanism."
+    },
+    {
+      "label": "Derivation",
+      "text": "Half-reaction method: split into oxidation/reduction halves, balance atoms (O with H₂O, H with H⁺), balance charge with e⁻, scale halves to equal electrons, add and cancel spectators. Charge deposited: Q = It carries Q/96500 moles of electrons → mass = (M/n)·(Q/96500) — both Faraday laws in one line."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Find the two elements changing number first — everything else balances around them. Electrons lost = electrons gained: scale halves to the LCM. H₂O₂ dual-role questions: one ionic equation each way, states of O annotated."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (4): balance MnO₄⁻ + C₂O₄²⁻ + H⁺ by oxidation-number/half-reaction method. NEB 2022 (3): H₂O₂ as oxidant AND reductant with ionic equations. Faraday numericals and oxidant/reductant identifications rotate yearly."
+    }
+  ]
+}

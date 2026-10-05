@@ -1,0 +1,70 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "english",
+  "unitSlug": "reading-and-comprehension",
+  "unitTitle": "Reading and Comprehension",
+  "syllabusTopics": [
+    "Short Story 1 — The Selfish Giant (Oscar Wilde)",
+    "Short Story 2 — The Oval Portrait (Edgar Allan Poe)",
+    "Short Story 3 — God Sees the Truth but Waits (Leo Tolstoy)",
+    "Short Story 4 — The Wish (Roald Dahl)",
+    "Short Story 5 — Civil Peace (Chinua Achebe)",
+    "Short Story 6 — Two Little Soldiers (Guy de Maupassant)",
+    "Short Story 7 — An Astrologer's Day (R. K. Narayan)",
+    "Poem 1 — Corona Says (Vishnu S. Rai)",
+    "Poem 2 — A Red, Red Rose (Robert Burns)",
+    "Poem 3 — All the World's a Stage (William Shakespeare)",
+    "Poem 4 — Who are you, little i? (E. E. Cummings)",
+    "Poem 5 — The Gift in Wartime (Tran Mong Tu)"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2024.json and 02-neb-2023.json in this unit.",
+  "card": {
+    "tag": "Comprehension",
+    "title": "Unseen passages and note-making — read to answer",
+    "href": "/class-11-notes/english",
+    "icon": "FileText",
+    "statKey": "pyq:english"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Comprehension is evidence hunting: read the QUESTIONS first, then skim for structure, scan for answers, and lift exact supporting lines. Note-making compresses a passage into ≤30 words via flowcharts (boxes + arrows, noun phrases, no full sentences). The seven stories and five poems train the same muscle on theme, character and device — 'The wind whispered' is personification whether in Burns or an unseen passage."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "method: questions → skim (gist) → scan (locate) → answer (quote + rephrase)  ·  flowchart notes: ≤30 words · boxes = stages · arrows = sequence · noun phrases only  ·  notice answers: what + when + where + who + action"
+    },
+    {
+      "label": "Conditions",
+      "text": "Answers must stay inside the passage — outside knowledge scores zero even when true. Flowchart notes keep the passage's ORDER and drop examples, repetitions and opinions. Notice/passage questions want stated facts first, vocabulary-in-context second, inference only where asked."
+    },
+    {
+      "label": "Special cases",
+      "text": "'Importance of Clean Water' in ≤30 words as a flowchart (NEB 2024, 5 marks): source → treatment → supply → use → conserve — each box a noun phrase. Sports-day notice questions: report to the east ground — location traps hide in capitalised nouns. Literary device spot ('wind whispered' = personification, NEB 2023) works identically on seen poems and unseen lines."
+    },
+    {
+      "label": "Solved",
+      "text": "Flowchart drill: read the water passage once, underline the five process nouns, chain them source→treatment→storage→distribution→conservation with arrows, count words (drop articles first). Five boxes, ~20 words, full marks — compression, not summarising in sentences (NEB 2024, 5-mark pattern)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Skim-scan fails dense argumentative passages (read those fully). Flowcharts flatten cause-effect nuance — fine for notes, fatal for essays. Device-spotting without effect-commentary ('it creates…') earns half marks; NEB wants effect, not labels."
+    },
+    {
+      "label": "Derivation",
+      "text": "From story work to skill: 'The Selfish Giant' teaches theme-extraction (selfishness→sharing→redemption arc); transfer the same three-beat arc mapping to any unseen narrative. For poems: speaker → image → device → effect — run Burns's rose ('O my Luve's like a red, red rose' = simile + hyperbole of love) and the template fits any of the five poems."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Always read questions BEFORE the passage — they index where to scan. Numbers, names and capitals are visual anchors. Flowchart: nouns only, arrows only, count to 30. Device answers: name + quoted line + one-line effect."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (5): flowchart notes on 'Importance of Clean Water' (≤30 words). NEB 2023 (2–3): unseen global-warming passage + sports-day notice questions. Seen-text analysis (Last Lesson moment, device ID) from the literature bank."
+    }
+  ]
+}

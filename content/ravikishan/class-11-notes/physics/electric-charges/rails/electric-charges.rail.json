@@ -1,0 +1,62 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "electric-charges",
+  "unitTitle": "Electric Charges",
+  "syllabusTopics": [
+    "Electric charges",
+    "Charging by induction",
+    "Coulomb's law: force between two point charges",
+    "Force between multiple electric charges"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2024.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Electric Charges",
+    "title": "Coulomb's law — the inverse-square twin of gravity",
+    "href": "/class-11-notes/physics",
+    "icon": "Atom",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Charge is quantised (multiples of e = 1.6×10⁻¹⁹ C) and conserved (net charge never changes in an isolated system). Like charges repel, unlike attract, with a force following the inverse square — Coulomb's law, gravity's electrical twin but ~10³⁶ times stronger at atomic scales. Charging by induction moves no charge onto the body: it separates what is already there using earthing."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "F = k·q₁q₂/r², k = 1/(4πε₀) = 9×10⁹ N·m²/C²  ·  superposition: F_net = Σ Fᵢ (vector sum)  ·  2 μC + 3 μC at 0.1 m: F = 9×10⁹×6×10⁻¹²/0.01 = 5.4 N repulsion"
+    },
+    {
+      "label": "Conditions",
+      "text": "Point charges (or spherical, centre-to-centre) at rest in a uniform medium — k absorbs the medium via ε = ε₀εᵣ. Superposition needs linear media (vacuum/air fine). Induction charging needs an isolated conductor plus a momentary earth path."
+    },
+    {
+      "label": "Special cases",
+      "text": "+2 μC and −3 μC at 0.6 m: magnitude 9×10⁹×6×10⁻¹²/0.36 = 0.15 N, ATTRACTIVE (signs differ — NEB 2022 MCQ). Three charges: resolve x/y components and add — symmetry often kills one axis. Conductors share charge on contact; insulators keep it localised."
+    },
+    {
+      "label": "Solved",
+      "text": "2 μC and 3 μC, 0.1 m apart in air: F = 9×10⁹ × (2×10⁻⁶)(3×10⁻⁶) / (0.1)² = 9×10⁹ × 6×10⁻¹² / 0.01 = 5.4 N, repulsive (like signs) along the joining line (NEB 2024, 3 marks). Micro→10⁻⁶ and cm→m conversions first — always."
+    },
+    {
+      "label": "Limitation",
+      "text": "Coulomb is electrostatic only — moving charges add magnetism (next chapters' story). It fails inside nuclear distances (strong force dominates) and for continuous distributions needs integration, not the point formula. Induction cannot charge insulators (no free carriers to separate)."
+    },
+    {
+      "label": "Derivation",
+      "text": "Coulomb's torsion-balance experiment: force ∝ q₁q₂ (double either charge, double the twist) and ∝ 1/r² (halve the distance, quadruple the twist) → F = kq₁q₂/r² with k fixed by unit definition. Superposition is an experimental fact: pairwise forces add vectorially, verified by null-deflection tests."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Signs decide direction, magnitudes decide size — compute |F| first, assign push/pull after. MCQ trap: unlike signs attract (the 2022 option set tests exactly this). Multiple charges: look for symmetry axes before resolving components."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (3): Coulomb's law + 2 μC/3 μC at 0.1 m numerical. NEB 2022 (1): +2/−3 μC at 0.6 m — 0.15 N attractive (MCQ). Induction steps and multi-charge resultants complete the set."
+    }
+  ]
+}

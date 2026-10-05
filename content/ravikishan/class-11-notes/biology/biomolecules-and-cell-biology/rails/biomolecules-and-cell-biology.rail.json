@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "biomolecules-and-cell-biology",
+  "unitTitle": "Biomolecules and Cell Biology",
+  "unitHours": 15,
+  "syllabusTopics": [
+    "Biomolecules: Introduction and functions of carbohydrates, proteins, lipids, nucleic acids, minerals, enzymes and water",
+    "Cell: Introduction of cell, concepts of prokaryotic and eukaryotic cells",
+    "Detail structure of eukaryotic cells: cell wall, cell membrane, mitochondria, plastids, endoplasmic reticulum, golgi bodies, lysosomes, ribosomes, nucleus, chromosomes, cilia, flagella and cell inclusions",
+    "Cell division: Concept of cell cycle, types of cell division (amitosis, mitosis and meiosis) and significances"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05 from concepts/01-biomolecules-introduction-and-functions.json (notes, confusion, practice, keyPoints) in this same unit; board row uses that file's practice bank, no fabricated paper citation.",
+  "card": {
+    "tag": "Biomolecules",
+    "title": "Four macromolecules — structure is function",
+    "href": "/class-11-notes/biology",
+    "icon": "Dna",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Life runs on four carbon macromolecule classes, each with a signature monomer and job: carbohydrates (quick energy + structure), proteins (work: enzymes, transport, contraction, defence), lipids (dense storage + membranes), nucleic acids (heredity + protein synthesis) — completed by enzymes, water (~70% of the cell) and minerals as regulators."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "carbs (CH2O)n, C:H:O = 1:2:1  ·  peptide unit –C(=O)–NH–  ·  condensation: monomer + monomer → dimer + H2O (reverse = hydrolysis)  ·  DNA: A=T (2 H-bonds), G≡C (3 H-bonds); RNA: A=U, ribose, single strand"
+    },
+    {
+      "label": "Conditions",
+      "text": "Polymers assemble only by condensation (water released per bond) and break only by hydrolysis. Enzymes act within a narrow temperature–pH window and denature outside it. The 8 adult essential amino acids must arrive from food — the body cannot synthesise them."
+    },
+    {
+      "label": "Special cases",
+      "text": "Lipids are NOT true polymers — no repeating monomer (the favourite trap; the unit MCQ bank asks exactly this). Cellulose (β-glucose) builds walls while starch/glycogen (α-glucose) store energy. Denaturation unfolds a protein but is often reversible. tRNA folds into cloverleaf despite RNA being single-stranded."
+    },
+    {
+      "label": "Solved",
+      "text": "Join glycine + alanine: the –COOH of glycine faces the –NH2 of alanine, one H2O leaves, and the –CO–NH– link left behind is the peptide bond (circle it). Reverse the arrow — add water across that bond — and you have hydrolysis back to two amino acids."
+    },
+    {
+      "label": "Limitation",
+      "text": "'All enzymes are proteins' has ribozyme exceptions (catalytic RNA). Lock-and-key is only the first approximation — induced fit completes it. Energy values (4 kcal/g carbs/protein, 9 kcal/g lipid) are Atwater averages, not exact per molecule."
+    },
+    {
+      "label": "Derivation",
+      "text": "Start from one amino acid (NH2–CHR–COOH) and condense a chain: each new link ejects H2O, giving primary structure (sequence). Hydrogen bonding coils it (secondary: α-helix/β-sheet), R-group interactions fold it (tertiary), and multi-chain assembly gives quaternary structure — haemoglobin's four chains carrying haem are the textbook example."
+    },
+    {
+      "label": "Shortcut",
+      "text": "C–P–L–N: Carbs = quick energy, Proteins = do the work, Lipids = store + membranes, Nucleic acids = inform. In NEB answers pair EVERY macromolecule with both its monomer and its function — the unit's special-notes file says that pairing earns full marks. Starch test: iodine → blue-black."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style (unit practice bank): differentiate DNA and RNA by sugar, bases, strands and function; list the four protein structural levels with one quaternary example; explain why an enzyme is still present after catalysis; relate phenylalanine build-up to PKU disease."
+    }
+  ]
+}

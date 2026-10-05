@@ -1,0 +1,75 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "english",
+  "unitSlug": "language-development",
+  "unitTitle": "Language Development (17 lessons)",
+  "syllabusTopics": [
+    "Unit 1 — Education and Humanity",
+    "Unit 2 — Communication",
+    "Unit 3 — Media and Society",
+    "Unit 4 — History and Culture",
+    "Unit 5 — Life and Love",
+    "Unit 6 — Health and Exercise",
+    "Unit 7 — Ecology and Development",
+    "Unit 8 — Humour and Satire",
+    "Unit 9 — Democracy and Human Rights",
+    "Unit 10 — Home Life and Family Relationship",
+    "Unit 11 — Arts and Creation",
+    "Unit 12 — Fantasy",
+    "Unit 13 — Career and Entrepreneurship",
+    "Unit 14 — Power and Politics",
+    "Unit 15 — War and Peace",
+    "Unit 16 — Critical Thinking",
+    "Unit 17 — Globalization and Diaspora"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites the subject's vocabulary PYQ bank (vocabulary/ alias dir, same-subject content).",
+  "card": {
+    "tag": "Vocabulary",
+    "title": "Vocabulary attack — synonyms, antonyms, context clues",
+    "href": "/class-11-notes/english",
+    "icon": "Languages",
+    "statKey": "pyq:english"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Seventeen lessons, one recurring weapon: unknown words surrender to three attacks — synonym/antonym pairing (abundant↔plentiful/scarce), contextual guessing (surrounding sentence defines the word), and word-formation (prefix/root/suffix dissection). NEB tests vocabulary as choice (economical vs economic), completion (attach/ensure/collate) and production (one synonym + one antonym each)."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "attack order: context sentence → word parts → synonym/antonym  ·  abundant = plentiful (syn) / scarce (ant) · brave = courageous / cowardly · ancient = old/antique / modern  ·  economical (thrifty) ≠ economic (financial) ≠ economics (subject)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Contextual guessing needs the FULL sentence — half a clause misleads. Synonym answers must match part of speech and register ('attach' fits 'submit your assignment … files', not 'join'). Antonyms pair by the tested sense (ancient–modern for age, not ancient–new for objects)."
+    },
+    {
+      "label": "Special cases",
+      "text": "False friends: 'economical report' is wrong — governments produce ECONOMIC reports (NEB 2024). Collocations decide ('keep promises', 'make promises' never 'do promises'). Same word, two senses: 'honest girl' takes 'an' (vowel sound, not vowel letter) — the NEB 2021 article trap."
+    },
+    {
+      "label": "Solved",
+      "text": "Synonym + antonym for 'abundant', 'brave', 'ancient' (NEB 2023, 3 marks): abundant → plentiful/scarce; brave → courageous/cowardly; ancient → antique/modern. Method: fix the meaning from a known context first ('abundant harvest'), then pair both sides — never invent pairs for an unguessed word."
+    },
+    {
+      "label": "Limitation",
+      "text": "No synonym is exact — connotation and collocation differ (slim vs skinny vs thin). Context clues fail on deliberately low-context test sentences; word-part analysis fails on non-compositional words (butterfly ≠ butter + fly). Dictionaries confirm; guesses propose."
+    },
+    {
+      "label": "Derivation",
+      "text": "Take any lesson word through the full drill: (1) sentence context → rough sense; (2) prefix/root/suffix split (un+happi+ness); (3) synonym chain and antonym mirror; (4) fresh sentence using it. Four passes move a word from recognition to production — the actual NEB demand, since answers must be WRITTEN, not ticked."
+    },
+    {
+      "label": "Shortcut",
+      "text": "MCQ options: eliminate by part of speech first, collocation second. 'Economic/economical' pairs: money-word → economic, thrifty-word → economical. Articles: sound, not spelling (an honest, a university). Learn words in synonym–antonym PAIRS, never alone."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (2): vocabulary MCQ — 'economical/economic' report; 'attach/ensure' the files. NEB 2023 (3): one synonym + one antonym each for 'abundant', 'brave', 'ancient'. NEB 2021 (2): articles — 'an honest girl … the promises she made'."
+    }
+  ]
+}

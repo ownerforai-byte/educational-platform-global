@@ -1,0 +1,61 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "english",
+  "unitSlug": "language-and-grammar",
+  "unitTitle": "Grammar & Vocabulary (integrated across Section I units)",
+  "syllabusTopics": [
+    "Grammar and Usage",
+    "Vocabulary Building",
+    "Communication Skills"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Filled 2026-10-05; board row cites the subject's grammar PYQ bank (grammar/ alias dir, same-subject content).",
+  "card": {
+    "tag": "Grammar · Conditionals",
+    "title": "Conditionals — real, unreal, and the impossible past",
+    "href": "/class-11-notes/english",
+    "icon": "GitBranch",
+    "statKey": "pyq:english"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Conditionals grade reality: zero (always true — 'If you heat ice, it melts'), first (real future — 'If it rains, we will stay'), second (unreal present — 'If I were rich…'), third (impossible past — 'If you had left earlier, you would have caught the bus'). Daily bargaining, regretting and warning all live here. The classic error — 'If I would have known' — mixes second and third and NEB catches it yearly."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "zero: if + V1, V1  ·  first: if + V1, will + V1  ·  second: if + V2/were, would + V1  ·  third: if + had + V3, would have + V3  ·  NEVER 'would' in the if-clause  ·  'By the time we reached, the train had already left'"
+    },
+    {
+      "label": "Conditions",
+      "text": "Tense pairing is locked per type — crossing pairs (V1 with would-have) is ungrammatical. Third conditional needs a truly closed past; open possibilities take second. 'Were' holds for all persons in standard second conditional ('If I were / he were'). Unless = if…not (never double-negate it)."
+    },
+    {
+      "label": "Special cases",
+      "text": "'If I would have known about the flood…' must become 'If I HAD known…' — would never enters the if-clause (NEB 2023 correction). Mixed conditionals cross timelines legitimately ('If you had studied then, you would know now'). Imperative results take first conditional ('If you see her, tell her')."
+    },
+    {
+      "label": "Solved",
+      "text": "Correct and rewrite: 'If I would have known about the flood, I would have taken the bus' → 'If I HAD known about the flood, I would have taken the bus' (NEB 2023, 3 marks). Diagnosis: impossible past → third conditional both halves; the error sat entirely in the if-clause's 'would have'."
+    },
+    {
+      "label": "Limitation",
+      "text": "Real speech bends the ladder (polite 'would' requests, 'If you will' insistence) — exams enforce the standard forms, conversation tolerates more. Mixed and inverted conditionals ('Had I known…', 'Were it true…') sit beyond the basic four but appear in reading passages."
+    },
+    {
+      "label": "Derivation",
+      "text": "Derive from reality-distance: the further from real, the further back the tense steps — real future keeps present+will, imagined present retreats to past forms, dead past retreats to past perfect. 'Would' marks the RESULT's unreality, so planting it in the condition double-counts — hence the iron rule, hence the yearly trap."
+    },
+    {
+      "label": "Shortcut",
+      "text": "See 'would have' in the if-clause → replace with 'had + V3', done. Tense-fill with 'by the time / already' → past perfect ('had already left', NEB 2023). Zero vs first: scientific truth → zero; promise/threat → first."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (3): correct 'If I would have known…' → third conditional. NEB 2023 (2): 'the train ___ (already/leave)' → had already left. Type identification + if-clause error correction complete the set."
+    }
+  ]
+}

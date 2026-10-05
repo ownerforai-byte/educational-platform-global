@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "elasticity",
+  "unitTitle": "Elasticity",
+  "syllabusTopics": [
+    "Hooke's law: force constant",
+    "Stress; strain; elasticity and plasticity",
+    "Elastic modulus: Young modulus, bulk modulus, shear modulus",
+    "Poisson's ratio",
+    "Elastic potential energy"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Elasticity",
+    "title": "Hooke's law and Young modulus — stress over strain",
+    "href": "/class-11-notes/physics",
+    "icon": "Highlighter",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Stress (force per area) produces strain (fractional deformation); within the elastic limit their ratio is a material constant — the modulus. Young modulus stretches wires, bulk modulus squeezes volumes, shear modulus skews shapes. Poisson's ratio couples stretch to thinning. The stretched wire stores the work as elastic potential energy."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Hooke: F = −kx  ·  Young Y = (F/A)/(ΔL/L) = stress/strain (Pa)  ·  bulk B = −(ΔP)/(ΔV/V)  ·  shear η = (F/A)/θ  ·  Poisson σ = −(lateral strain)/(longitudinal strain)  ·  U = ½·stress·strain·volume = ½kx²"
+    },
+    {
+      "label": "Conditions",
+      "text": "Hooke's law holds only within the ELASTIC limit — past yield, permanent set begins and the ratio collapses. Moduli assume small, uniform, isothermal deformation of a homogeneous sample. Poisson's ratio for most metals sits near 0.3 (theoretical ceiling 0.5)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Rubber stretches far but with a non-linear curve (elastic, not Hookean). Steel wire under 100 N on 2 mm²: stress = F/A = 100/(2×10⁻⁶) = 5×10⁷ Pa (NEB 2022). Breaking stress ends the story at fracture; ductile vs brittle is decided by how far plastic flow runs first."
+    },
+    {
+      "label": "Solved",
+      "text": "Steel wire, A = 2 mm² = 2×10⁻⁶ m², F = 100 N → stress = 100/(2×10⁻⁶) = 5×10⁷ Pa. With Y = 2×10¹¹ Pa, strain = stress/Y = 2.5×10⁻⁴ — a 1 m wire stretches just 0.25 mm, which is why the modulus earns its 'stiffness' name (NEB 2022, 3 marks)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Moduli are bulk averages — defects, temperature and loading rate shift them. Hooke says nothing past yield: creep, fatigue and hysteresis live outside it. The U = ½kx² form counts only recoverable energy; plastic work is dissipated, not stored."
+    },
+    {
+      "label": "Derivation",
+      "text": "Energy in a stretched wire: dW = F·dx with F = (YA/L)x → W = ∫₀^ΔL (YA/L)x·dx = ½·(YA/L)(ΔL)² = ½·(F/A)(ΔL/L)·(AL) = ½·stress·strain·volume. Energy density is the area under the stress–strain curve — triangle while Hooke holds."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Modulus = stress/strain, always in Pa — if units mismatch, the answer is wrong. Y problems: write F/A over ΔL/L and solve the fraction ladder. 'Define + SI units' of stress, strain, Y is a guaranteed 2–3 marker (NEB 2023 asked exactly this)."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (3): define stress, strain, Young's modulus + SI units. NEB 2023 (2): Y formula + unit. NEB 2022 (3): 100 N on 2 mm² steel wire — stress, then strain with Y = 2×10¹¹ Pa."
+    }
+  ]
+}

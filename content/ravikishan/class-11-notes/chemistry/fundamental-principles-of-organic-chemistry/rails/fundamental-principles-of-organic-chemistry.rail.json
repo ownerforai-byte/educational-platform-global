@@ -1,0 +1,67 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "fundamental-principles-of-organic-chemistry",
+  "unitTitle": "Fundamental Principles of Organic Chemistry",
+  "syllabusTopics": [
+    "IUPAC Nomenclature of Organic Compounds (up to chain having 6-carbon atoms)",
+    "Qualitative analysis of organic compounds (detection of N, S and halogens by Lassaigne's test)",
+    "Isomerism in organic compounds: definition and classification of isomerism",
+    "Structural isomerism and its types: chain isomerism, position isomerism, functional isomerism, metamerism and tautomerism",
+    "Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form)",
+    "Preliminary idea of reaction mechanism: homolytic and heterolytic fission",
+    "Electrophiles, nucleophiles and free-radicals",
+    "Inductive effect: +I and -I effect",
+    "Resonance effect: +R and -R effect"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2024.json and 02-neb-2023.json in this unit.",
+  "card": {
+    "tag": "Organic Principles",
+    "title": "Resonance and isomerism — same atoms, different molecules",
+    "href": "/class-11-notes/chemistry",
+    "icon": "ScrollText",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Same molecular formula, different arrangement = isomers: structural (chain/position/functional/metamerism/tautomerism) vs stereo (cis–trans across rigid double bonds; d/l optical twins around chiral centres). Resonance delocalises π electrons over contributing structures — the real molecule is their weighted hybrid, stabilised beyond any single drawing. Lassaigne fuses the compound with Na to unmask N/S/halogens as CN⁻/S²⁻/X⁻. Fission splits bonds homolytically (radicals) or heterolytically (electrophile seeks electrons, nucleophile brings them); inductive (±I) and resonance (±R) effects steer them."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "resonance hybrid energy < any contributor  ·  benzene: two Kekulé rings ⇄ one 6π delocalised ring  ·  ozone: O=O⁺–O⁻ ⇄ O⁻–O⁺=O (bent, equal bonds)  ·  Lassaigne: Na + C + N → NaCN (Prussian blue test) · Na + S → Na₂S ·  IUPAC ≤ C6: CH₃CH(OH)CH₂CH₃ = butan-2-ol"
+    },
+    {
+      "label": "Conditions",
+      "text": "Geometrical isomerism needs restricted rotation AND two different groups per carbon (2-butene qualifies; 1-butene cannot). Optical isomerism needs a chiral centre (four different groups) — meso forms with internal compensation stay optically dead. Resonance contributors must share atom positions (electrons only move); Lassaigne needs complete fusion."
+    },
+    {
+      "label": "Special cases",
+      "text": "Tautomerism (keto⇌enol) is dynamic isomerism — interconverting in solution. Benzene's equal 1.39 Å bonds prove delocalisation (alternating single/double would differ). Butan-2-ol's CH₃CH(OH)CH₂CH₃ numbering gives −OH the lowest locant (NEB 2024)."
+    },
+    {
+      "label": "Solved",
+      "text": "Resonance in benzene: draw both Kekulé hexagons with alternating double bonds, then the circle-in-hexagon hybrid — consequences: all C–C bonds equal, extra stability (~150 kJ/mol resonance energy), substitution preferred over addition (NEB 2023, 3-mark pattern; ozone's bent pair drawn identically). IUPAC: longest chain 4 with −OH at C2 → butan-2-ol (NEB 2024, 2 marks)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Contributing structures are fictions — no single Kekulé form exists. Resonance explains stability, not reaction rates alone (kinetics needs orbitals/transition states). Lassaigne fails for volatile/low-melting samples that escape fusion; N-detection fails if S also present without the FeSO₄/FeCl₃ discrimination steps."
+    },
+    {
+      "label": "Derivation",
+      "text": "From overlap: adjacent p-orbitals merge π clouds across conjugated systems; the delocalised wavefunction's energy sits below any localised contributor by the resonance energy (measured via heats of hydrogenation vs predicted). Isomer counting follows from graph enumeration: C₄H₁₀ gives n-butane + 2-methylpropane (chain); C₄H₈ adds position/geometrical branches."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Isomer type? Ask: same connectivity? No → structural (which part moved: skeleton/position/group?). Yes → stereo (double bond? cis-trans; chiral centre? optical). Electrophile = electron-lover (H⁺, Br⁺, carbocation); nucleophile = electron-giver (OH⁻, CN⁻, carbanion)."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (2): IUPAC — butan-2-ol from CH₃CH(OH)CH₂CH₃. NEB 2023 (3): resonance — structures of ozone and benzene. Lassaigne steps, isomerism types and ±I/±R effects rotate yearly."
+    }
+  ]
+}

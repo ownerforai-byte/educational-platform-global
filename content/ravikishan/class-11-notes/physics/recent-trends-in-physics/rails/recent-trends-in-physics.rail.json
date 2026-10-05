@@ -1,0 +1,61 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "recent-trends-in-physics",
+  "unitTitle": "Recent Trends in Physics",
+  "syllabusTopics": [
+    "Particle physics: particles and antiparticles, quarks (baryons and mesons) and leptons (neutrinos)",
+    "Universe: Big Bang and Hubble law — expansion of the Universe",
+    "Dark matter, black hole and gravitational wave"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Recent Trends",
+    "title": "Particles to black holes — the syllabus frontier",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Matter's basement has two families: quarks (locked in threes as baryons like protons/neutrons, or pairs as mesons) and leptons (electrons, neutrinos — loners that skip the strong force), each with an antiparticle mirror. The Big Bang's expanding aftermath is read in galactic redshift (Hubble: v = H₀d). The dark side — dark matter (unseen gravity), black holes (escape velocity > c), gravitational waves (ripples from colliding giants, heard by LIGO) — is where the syllabus ends and research begins."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "forces strong → EM → weak → gravity (strength order)  ·  Hubble: v = H₀·d (recession ∝ distance)  ·  baryons = 3 quarks (p = uud, n = udd); mesons = quark + antiquark  ·  black hole: escape velocity ≥ c within Schwarzschild radius"
+    },
+    {
+      "label": "Conditions",
+      "text": "Quarks never appear free (confinement — only hadrons reach detectors). Hubble's linear law holds for cosmological (not local gravitationally-bound) distances. Black-hole talk assumes general relativity past the event horizon; gravitational-wave detection needs kilometre-scale interferometry (LIGO) for sub-proton strains."
+    },
+    {
+      "label": "Special cases",
+      "text": "Neutrinos: near-massless, ghost through Earth by the trillion. Antimatter annihilates on contact (PET scans use positrons deliberately). Superconductors expel magnetic fields (Meissner) below Tc — the NEB 2023 2-marker: definition + two properties + one material."
+    },
+    {
+      "label": "Solved",
+      "text": "List the four forces in decreasing strength: strong nuclear > electromagnetic > weak nuclear > gravitational — spanning ~10³⁸ from strongest to weakest (NEB 2022, 2 marks). Same template answers 'elementary particles': quarks (baryons/mesons) + leptons (neutrinos) + force carriers."
+    },
+    {
+      "label": "Limitation",
+      "text": "The Standard Model excludes gravity and dark matter/energy (~95% of the universe) — the syllabus frontier is honest about ignorance. Hubble 'constant' drifts with measurement tension. Tabletop claims (room-T superconductors) need extraordinary replication."
+    },
+    {
+      "label": "Derivation",
+      "text": "From redshift z = Δλ/λ ≈ v/c for nearby galaxies, plotting v against distance d gives a straight line through the origin — slope H₀, the expansion rate; extrapolating backward converges ~13.8 billion years ago (Big Bang). Black-hole radius follows from setting escape velocity √(2GM/R) equal to c."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Force order: Strong–EM–Weak–Gravity (memorise S-E-W-G). Baryon = 3 quarks, meson = 2 (one anti). Redshift = receding = expanding. Superconductivity 2-marker: zero resistance + Meissner expulsion + one material (mercury/lead/niobium)."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (2): superconductivity — definition + two properties + one material. NEB 2022 (2): elementary particles + four forces in decreasing strength. NEB 2022 (5): ruby laser working + diagram + three uses."
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "modern-chemical-manufactures",
+  "unitTitle": "Modern Chemical Manufactures",
+  "syllabusTopics": [
+    "Manufacture of ammonia by Haber's process (principle and flow sheet diagram only)",
+    "Manufacture of nitric acid by Ostwald's process",
+    "Manufacture of sulphuric acid by Contact process",
+    "Manufacture of sodium hydroxide by Diaphragm Cell",
+    "Manufacture of sodium carbonate by ammonia soda or Solvay process",
+    "Fertilizers: chemical fertilizers, types of chemical fertilizers, production of urea with flow-sheet diagram"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2024.json and 02-neb-2023.json in this unit.",
+  "card": {
+    "tag": "Manufactures",
+    "title": "Haber process — why high pressure makes ammonia",
+    "href": "/class-11-notes/chemistry",
+    "icon": "GraduationCap",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "N₂ + 3H₂ ⇌ 2NH₃ is exothermic with 4 gas moles collapsing to 2 — so high pressure (fewer moles) and low temperature (exothermic) favour yield, but low T starves the rate: industry compromises at ~450 °C, ~200 atm, iron catalyst. The same Le Chatelier logic designs Ostwald (Pt-catalysed NH₃ oxidation to HNO₃), Contact (V₂O₅, SO₂→SO₃→oleum→H₂SO₄), Solvay (NaCl + NH₃ + CO₂ → NaHCO₃) and urea (NH₃ + CO₂) plants — flow sheets included."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Haber: N₂ + 3H₂ ⇌ 2NH₃, ΔH = −92 kJ/mol · ~450 °C, ~200 atm, Fe/Mo catalyst  ·  Ostwald: 4NH₃ + 5O₂ →(Pt) 4NO → NO₂ → HNO₃  ·  Contact: 2SO₂ + O₂ →(V₂O₅) 2SO₃; oleum H₂S₂O₇ + H₂O → 2H₂SO₄  ·  Solvay: NaCl + NH₃ + CO₂ + H₂O → NaHCO₃↓ + NH₄Cl"
+    },
+    {
+      "label": "Conditions",
+      "text": "Haber pressure must pay for itself (compression cost vs yield gain — the economic optimum, not the chemical maximum). Iron catalyst needs pure feed (S/CO poison it). Ostwald's Pt gauze needs ~900 °C; Contact's V₂O₅ window is ~450 °C; Solvay recycles its NH₃ (ammonia-soda loop) or the economics collapse."
+    },
+    {
+      "label": "Special cases",
+      "text": "Hard-water softening with washing soda: Ca²⁺/Mg²⁺ precipitate as carbonates — temporary AND permanent hardness both yield (NEB 2023, 4 marks with reactions). Urea (NH₂CONH₂, 46% N) is the top-N fertiliser, made from NH₃ + CO₂. Diaphragm cells keep Cl₂ and NaOH apart to stop back-reaction."
+    },
+    {
+      "label": "Solved",
+      "text": "Why high pressure for Haber? 4 gaseous moles → 2: Le Chatelier pushes right as P rises — yield climbs steeply to ~200 atm, then compression costs outrun gains (NEB 2024, 5 marks: principle + flow-sheet description + the pressure economics, plus why ~450 °C compromises rate against yield)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Single-pass conversion is only ~15% — unreacted N₂/H₂ must be recycled (flow sheet's loop). Catalysts age (poisoning, sintering). Every process pays an environmental bill: NOₓ/N₂O emissions, acidic effluent, diaphragm-cell mercury legacy (membrane cells replace it)."
+    },
+    {
+      "label": "Derivation",
+      "text": "From equilibrium: Kp for ammonia synthesis falls with T (exothermic), so low T favours product — but Arrhenius starves the rate; the 450 °C compromise maximises rate×yield economics. Pressure: Qp vs Kp analysis shows conversion rising with P^(−2) dependence — the quantitative spine behind 'high pressure'."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Haber numbers: 450 °C, 200 atm, Fe — chant them. Every manufacture answer: principle (equilibrium/redox) + conditions + flow sheet + catalyst + uses. Hardness removal: washing soda precipitates Ca/Mg carbonates — write both reactions."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (5): Haber process + why high pressure. NEB 2023 (4): hard water — temporary/permanent removal with washing soda + reactions. Ostwald/Contact/Solvay principles with flow sheets rotate yearly."
+    }
+  ]
+}

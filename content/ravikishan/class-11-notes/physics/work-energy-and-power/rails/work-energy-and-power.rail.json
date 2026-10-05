@@ -1,0 +1,64 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "work-energy-and-power",
+  "unitTitle": "Work, Energy and Power",
+  "syllabusTopics": [
+    "Work done by a constant force and a variable force",
+    "Power",
+    "Work-energy theorem; kinetic and potential energy",
+    "Conservation of energy",
+    "Conservative and non-conservative forces",
+    "Elastic and inelastic collisions"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from the work-energy-power alias dir pyqs/01-neb-2023.json and 02-neb-2022.json (same syllabus unit).",
+  "card": {
+    "tag": "Work, Energy and Power",
+    "title": "Work-energy theorem — the ledger that solves motion",
+    "href": "/class-11-notes/physics",
+    "icon": "Calculator",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Work is force delivered along displacement (W = F·s·cosθ). Whatever net work flows into a body appears as kinetic energy — that is the theorem. Conservative forces (gravity, spring) store work as recoverable potential energy, so mechanical energy is conserved in their world; friction spends it as heat, permanently."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "W = F·s·cosθ (variable force: ∫F·ds)  ·  KE = ½mv², gravitational PE = mgh, elastic PE = ½kx²  ·  W_net = ΔKE  ·  P = W/t = F·v, 1 HP = 746 W, 1 kWh = 3.6 MJ  ·  elastic collision: momentum + KE both conserved"
+    },
+    {
+      "label": "Conditions",
+      "text": "The theorem uses NET work — every force counts, including friction. Mechanical-energy conservation additionally demands no non-conservative work. 'Elastic collision' means kinetic energy survives the impact (ideal atomic-scale truth, macroscopic approximation)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Zero work: force perpendicular to motion (centripetal force, carrying a load horizontally). Negative work: friction and brakes drain the ledger. Head-on elastic collision of equal masses swaps velocities. Motor lifting 500 kg through 20 m at 2 kW: t = mgh/P = 100 s (NEB 2022)."
+    },
+    {
+      "label": "Solved",
+      "text": "4 kg released from rest, falls 10 m (g = 9.8): lost PE = gained KE → KE = mgh = 4 × 9.8 × 10 = 392 J at impact (NEB 2023, 4 marks). No kinematics needed — the energy ledger jumps straight from height to speed."
+    },
+    {
+      "label": "Limitation",
+      "text": "The ledger tracks mechanical energy only: work against friction exits as heat and the theorem will not return it. Perfectly elastic macroscopic collisions do not exist (sound + deformation always tax the impact). Average power (W/t) hides the instantaneous story P = F·v."
+    },
+    {
+      "label": "Derivation",
+      "text": "Constant force proof (the NEB 5-marker): W = F·s with s = (v²−u²)/2a and F = ma → W = ma·(v²−u²)/2a = ½mv² − ½mu² = ΔKE. For variable force the same steps run under an integral, W = ∫F·dx — the area under the F–x graph."
+    },
+    {
+      "label": "Shortcut",
+      "text": "When time and path look messy, abandon kinematics for the energy ledger: write mgh + ½mv² + ½kx² at start and end, equate (minus friction loss). Height ↔ speed conversions collapse to v = √(2gh). Collisions: try momentum first, add KE-conservation only if 'elastic' is stated."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (5): state and prove the work-energy theorem for a constant force. NEB 2022 (3): 2 kW motor lifts 500 kg through 20 m — time taken. NEB 2022 (3): 60 kg person climbs 8 m in 20 s — power developed."
+    }
+  ]
+}

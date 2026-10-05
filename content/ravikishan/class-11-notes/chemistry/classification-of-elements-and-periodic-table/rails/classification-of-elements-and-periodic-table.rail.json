@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "classification-of-elements-and-periodic-table",
+  "unitTitle": "Classification of Elements and Periodic Table",
+  "syllabusTopics": [
+    "Modern periodic law and modern periodic table",
+    "Classification of elements into different groups, periods and blocks",
+    "IUPAC classification of elements",
+    "Nuclear charge and effective nuclear charge",
+    "Periodic trend and periodicity: atomic radii, ionic radii, ionization energy, electron affinity, electronegativity, metallic characters (general trend and explanation only)"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2024.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Periodic Table",
+    "title": "Periodicity — and the Mg/Al ionisation exception",
+    "href": "/class-11-notes/chemistry",
+    "icon": "Network",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Modern law: properties repeat with atomic NUMBER (fixing Mendeleev's inversions like Ar/K). Across a period, rising effective nuclear charge shrinks atoms and raises ionisation energy; down a group, new shells reverse both. The s/p/d/f blocks mirror the filling subshell. Every trend is a tug-of-war between nuclear pull and shielding — and the exceptions (Mg > Al, N > O) are where examiners hunt."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Z_eff = Z − shielding  ·  size: decreases → across, increases ↓ down  ·  IE, EN, EA: increase → across, decrease ↓ down  ·  Mg (3s², full subshell) IE > Al (3s²3p¹) despite Mg sitting left  ·  K(19): period 4, group 1; Ca(20): 4/2; Ga(31): 4/13; Kr(36): 4/18; Cs(55): 6/1"
+    },
+    {
+      "label": "Conditions",
+      "text": "Trends describe representative elements best; transition series buffer them with d-shielding. 'General trend and explanation only' — the syllabus wants reasons (Z_eff, shells, subshell stability), not memorised numbers. Group/period placement reads off the configuration's highest n and valence electrons."
+    },
+    {
+      "label": "Special cases",
+      "text": "Mg beats Al: removing a 3p electron is easier than breaking a full 3s² subshell — stability trumps position (NEB 2022). Half-filled N (2p³) similarly tops O. Noble gases anchor every period end with maxima in IE and minima in size-change logic."
+    },
+    {
+      "label": "Solved",
+      "text": "Place Z = 19 (K): configuration ends 4s¹ → highest n = 4 (period 4), one valence s electron (group 1). Z = 36 (Kr): …4s²4p⁶ → period 4, group 18. Same recipe: Z = 20 → 4/2, Z = 31 → 4/13, Z = 55 → 6/1 (NEB 2024, 3 marks)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Trends are tendencies with famous rebels (Mg/Al, N/O, d-block contractions from poor shielding). Electron affinity even flips sign for some elements (N, noble gases resist extra electrons). The table predicts chemistry, never exact properties — measurements still rule."
+    },
+    {
+      "label": "Derivation",
+      "text": "From Coulomb: outer electron feels Z_eff·e²/r². Across a period, added protons outpace added shielding (same shell) → r shrinks, IE climbs. Down a group, the new shell's distance dominates → r jumps, IE falls. Mg/Al: ionising Mg removes from stable full 3s (extra cost) while Al loses a lone higher 3p (discount) — subshell stability beats raw position."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Position from configuration: period = highest n, group = valence count (s+p for main groups). Trend arrows: size ↙ (down-right grows), IE/EN ↗. Any 'explain the irregularity' question → answer with subshell stability (full/half-filled) or shielding."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (3): place Z = 19, 20, 31, 36, 55 in period/group. NEB 2022 (3): Mg-vs-Al ionisation irregularity + companion exception. Modern-vs-Mendeleev law comparison (alias-dir bank, 2022)."
+    }
+  ]
+}

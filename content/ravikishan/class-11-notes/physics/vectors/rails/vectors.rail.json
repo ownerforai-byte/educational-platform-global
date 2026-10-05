@@ -1,0 +1,62 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "vectors",
+  "unitTitle": "Vectors",
+  "unitHours": 4,
+  "syllabusTopics": [
+    "Triangle, parallelogram and polygon laws of vectors",
+    "Resolution of vectors; unit vectors",
+    "Scalar and vector products"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. First agent-filled card (2026-10-05) — facts distilled from concepts/08-types-of-vectors.json in this same unit.",
+  "card": {
+    "tag": "Vectors",
+    "title": "Cross product — area, torque and the right-hand rule",
+    "href": "/class-11-notes/physics",
+    "icon": "Waypoints",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "The vector product $\\vec{C} = \\vec{A} \\times \\vec{B}$ of two vectors is a third vector: magnitude $AB\\sin\\theta$, direction perpendicular to the plane of $\\vec{A}$ and $\\vec{B}$ by the right-hand rule (fingers along A, curl toward B, thumb gives C). Dot product measures sameness (projection); cross product measures perpendicularity (area)."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "|A × B| = AB sinθ,  0° ≤ θ ≤ 180°  ·  A × B = AB sinθ n̂  ·  cyclic: î×ĵ=k̂, ĵ×k̂=î, k̂×î=ĵ  ·  î×î = ĵ×ĵ = k̂×k̂ = 0"
+    },
+    {
+      "label": "Conditions",
+      "text": "Defined for exactly two vectors in 3D space only (no A×B×C without brackets). θ is the smaller angle between them, 0° to 180°, so sinθ ≥ 0 and the magnitude is never negative."
+    },
+    {
+      "label": "Special cases",
+      "text": "Parallel (θ = 0°/180°) → A×B = 0, the test for parallelism. Perpendicular (θ = 90°) → |A×B| = AB, the maximum. Anti-commutative: B×A = −(A×B). Distributive over addition: A×(B+C) = A×B + A×C."
+    },
+    {
+      "label": "Solved",
+      "text": "Torque τ = r × F with r = 2î + 3ĵ m, F = 4î − 5ĵ N: τ = |î ĵ k̂; 2 3 0; 4 −5 0| = k̂(−10 − 12) = −22k̂ N·m — 22 N·m clockwise (into the page)."
+    },
+    {
+      "label": "Limitation",
+      "text": "A×B = 0 does NOT mean a zero vector — parallel vectors qualify too. Not associative: A×(B×C) ≠ (A×B)×C in general. No true cross product in 2D (only a scalar pseudo-product AxBy − AyBx)."
+    },
+    {
+      "label": "Derivation",
+      "text": "Expand by components: A×B = (Axî+Ayĵ+Azk̂)×(Bxî+Byĵ+Bzk̂). Self-products vanish, anti-cyclic pairs flip sign, leaving (AyBz−AzBy)î + (AzBx−AxBz)ĵ + (AxBy−AyBx)k̂ — exactly the determinant, with |A×B| = AB sinθ following from |A|²|B|² − (A·B)² = A²B²sin²θ."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Memorise the cyclic order î→ĵ→k̂→î: forward = +, backward = −. Parallel → 0, perpendicular → max. |A×B| = parallelogram area, half of it = triangle area. Torque, magnetic force qv×B and angular momentum r×p are all the same product."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style (see the unit's NEB exam focus note): define the vector product and state the right-hand rule; distinguish dot vs cross product; compute A×B for given vectors and use it for torque/magnetic-force numericals."
+    }
+  ]
+}

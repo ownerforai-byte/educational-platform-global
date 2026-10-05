@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "bio-inorganic-chemistry",
+  "unitTitle": "Bio-inorganic Chemistry",
+  "syllabusTopics": [
+    "Introduction to Bio-inorganic Chemistry",
+    "Micro and macro nutrients",
+    "Importance of metal ions in biological systems (ions of Na, K, Mg, Ca, Fe, Cu, Zn, Ni, Co, Cr)",
+    "Ion pumps (sodium-potassium and sodium-glucose pump)",
+    "Metal toxicity (toxicity due to iron, arsenic, mercury, lead and cadmium)"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Bio-inorganic",
+    "title": "Metal ions in life — Mg in leaves, Fe in blood",
+    "href": "/class-11-notes/chemistry",
+    "icon": "Dna",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Life runs on metal ions: bulk Na⁺/K⁺/Mg²⁺/Ca²⁺ move fluids, fire nerves and build bones, while trace Fe/Cu/Zn/Ni/Co/Cr catalyse enzymes in milligrams. Chlorophyll is a magnesium porphyrin — no Mg, no photosynthesis. Haemoglobin is an iron porphyrin — no Fe, no oxygen transport. The Na⁺/K⁺ pump burns ATP to hold the gradients nerves fire on; the same metals turn toxic in excess (Pb, Hg, Cd, As) or even iron overload."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "chlorophyll: Mg-centred chlorin (C₅₅H₇₂MgN₄O₅) — Mg deficiency → chlorosis (yellow leaves)  ·  haem: Fe²⁺ porphyrin ×4 in haemoglobin; Fe deficiency → anaemia  ·  Na⁺/K⁺-ATPase: 3 Na⁺ out, 2 K⁺ in per ATP  ·  trace MCQ answer: iron builds haemoglobin (NEB 2022)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Essentiality is dose-shaped: deficiency cripples, excess poisons (same element, U-shaped curve). Chlorophyll needs Mg specifically — other M²⁺ will not substitute in the ring. Pump stoichiometry (3:2) holds per ATP hydrolysed under physiological conditions."
+    },
+    {
+      "label": "Special cases",
+      "text": "Mg-deficient soil → yellow (chlorotic) leaves, stunted photosynthesis (NEB 2023). Cobalt centres vitamin B₁₂; zinc fingers grip DNA; copper rides in cytochrome oxidase and haemocyanin. Arsenic groundwater and Minamata mercury show the toxic end of the same periodic table."
+    },
+    {
+      "label": "Solved",
+      "text": "Chlorophyll formula centres on Mg²⁺ in a chlorin ring — magnesium harvests light energy into the photosystems; deficiency yellows leaves and stalls growth, corrected by Mg fertilisers like Epsom salt (NEB 2023, 3 marks). The haemoglobin MCQ resolves the same way: iron is the O₂-binding trace metal (NEB 2022)."
+    },
+    {
+      "label": "Limitation",
+      "text": "One ion, many jobs — assigning single functions oversimplifies (Ca²⁺ signals, structures AND clots). Soil/plant/animal transfer chains complicate deficiency diagnosis. Toxicity thresholds vary by species, age and chemical form (methylmercury ≫ elemental Hg)."
+    },
+    {
+      "label": "Derivation",
+      "text": "Why Mg for chlorophyll? Its size and +2 charge fit the chlorin cavity and tune the ring's absorption into the red/blue peaks — photochemistry follows from the metal–ligand electronics. Why Fe for blood? Fe²⁺ binds O₂ reversibly (oxy/deoxy flip) without oxidising — the porphyrin cage protects the +2 state that free Fe²⁺ would lose."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Green plant pigment → Mg; red blood pigment → Fe; nerve gradients → Na⁺/K⁺ pump (3-out-2-in); bones/teeth → Ca/P. Deficiency questions: match the metal to its flagship molecule and the symptom writes itself."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (3): chlorophyll formula + Mg's role + deficiency effect. NEB 2022 (1): trace element for haemoglobin — iron (MCQ). Ion-pump stoichiometry and metal-toxicity pairs rotate yearly."
+    }
+  ]
+}

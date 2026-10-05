@@ -1,0 +1,62 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "thermal-expansion",
+  "unitTitle": "Thermal Expansion",
+  "syllabusTopics": [
+    "Linear expansion and its measurement",
+    "Cubical expansion, superficial expansion and their relation with linear expansion",
+    "Liquid expansion: absolute and apparent",
+    "Dulong and Petit method of determining expansivity of liquid"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2022.json and 02-neb-2021.json in this unit.",
+  "card": {
+    "tag": "Thermal Expansion",
+    "title": "α, β, γ — one expansion, three faces, one relation",
+    "href": "/class-11-notes/physics",
+    "icon": "FileText",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Heated molecules vibrate wider and push neighbours apart, so solids grow: length (α), area (β) and volume (γ) expansivities each measure fractional growth per kelvin. Liquids need a container, so thermometers read APPARENT expansion (liquid minus vessel); absolute expansion adds the vessel's own cubical term back. Dulong–Petit U-tube and similar methods isolate the liquid's true expansivity."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "ΔL = α·L·ΔT (α in K⁻¹)  ·  β = 2α, γ = 3α (small ΔT, isotropic)  ·  liquid: γ_absolute = γ_apparent + γ_vessel  ·  rod numerical: ΔL = 1.2×10⁻⁵ × 1 × 80 ≈ 0.96 mm"
+    },
+    {
+      "label": "Conditions",
+      "text": "α:β:γ = 1:2:3 holds for small temperature rises in isotropic solids only — large ΔT or anisotropic crystals break the ratio. Apparent-vs-absolute bookkeeping assumes the vessel expands uniformly. Bimetallic bending needs two bonded metals with different α."
+    },
+    {
+      "label": "Special cases",
+      "text": "Water contracts to 4 °C then expands (anomalous — lakes freeze top-down). Invar barely expands (clocks, survey tapes). Railway gaps, sagging power lines and rivet fitting are expansion engineering. 1 m rod, α = 1.2×10⁻⁵/K, 20→100 °C: ΔL ≈ 0.96 mm (NEB 2021)."
+    },
+    {
+      "label": "Solved",
+      "text": "Metal rod L = 1 m at 20 °C heated to 100 °C, α = 1.2×10⁻⁵ K⁻¹: ΔL = αLΔT = 1.2×10⁻⁵ × 1 × 80 = 9.6×10⁻⁴ m ≈ 0.96 mm (NEB 2021, 3 marks). New length 1.00096 m — tiny per metre, but kilometres of rail make gaps mandatory."
+    },
+    {
+      "label": "Limitation",
+      "text": "Linear formulas fail for large ΔT (α itself drifts with T) and for composites/anisotropic solids. Apparent expansion is instrument-relative — change the vessel, change the reading. The 1:2:3 ratio is a small-strain approximation, not a law."
+    },
+    {
+      "label": "Derivation",
+      "text": "Cube of side L: V = L³ → dV = 3L²dL → dV/V = 3·dL/L, so γ = 3α; a square face gives β = 2α the same way. Hence α:β:γ = 1:2:3 (the NEB 3-marker). Absolute liquid expansivity: observed rise = liquid growth minus vessel growth → γ_abs = γ_app + γ_vessel."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'Define all three + relation' is the classic 3-marker — write definitions, then the cube derivation in three lines. Units: K⁻¹ (per kelvin). Apparent questions: always add the vessel term back."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2022 (3): define linear, superficial, cubical expansivity + derive their relation. NEB 2022 (2): α definition + formula + SI unit. NEB 2021 (3): 1 m rod, 20→100 °C, α = 1.2×10⁻⁵/K numerical."
+    }
+  ]
+}

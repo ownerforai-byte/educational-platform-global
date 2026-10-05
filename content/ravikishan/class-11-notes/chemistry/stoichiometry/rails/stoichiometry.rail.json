@@ -1,0 +1,67 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "stoichiometry",
+  "unitTitle": "Stoichiometry",
+  "syllabusTopics": [
+    "Dalton's atomic theory and its postulates",
+    "Laws of stoichiometry",
+    "Avogadro's law and some deductions: molecular mass and vapour density, molecular mass and volume of gas, molecular mass and number of particles",
+    "Mole and its relation with mass, volume and number of particles",
+    "Calculations based on mole concept",
+    "Limiting reactant and excess reactant",
+    "Theoretical yield, experimental yield and % yield",
+    "% yield",
+    "Calculation of empirical and molecular formula from % composition (solving related numerical problems)"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Stoichiometry",
+    "title": "Limiting reactant — the ingredient that runs out first",
+    "href": "/class-11-notes/chemistry",
+    "icon": "Calculator",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "A balanced equation is a mole recipe: coefficients fix the reacting ratios, so the reactant making the LEAST product caps the batch (limiting), while the rest sits excess. Theoretical yield is the recipe's promise; experimental yield is the bench reality; their ratio is % yield. Dalton's postulates plus Avogadro's law (equal volumes, equal molecules) built this entire accounting system."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "balanced equation → mole ratio  ·  limiting: min(moles ÷ coefficient) across reactants  ·  % yield = (actual/theoretical)×100  ·  M_r = 2 × vapour density  ·  36 g H₂O = 2 mol = 2×Nₐ molecules"
+    },
+    {
+      "label": "Conditions",
+      "text": "Limiting-reactant logic needs the BALANCED equation first — coefficients are the only legal ratios. Theoretical yield assumes 100% conversion with no side reactions. Vapour-density shortcut (M_r = 2×VD) applies to gases with H₂ = 2 as reference."
+    },
+    {
+      "label": "Special cases",
+      "text": "36 g water: 36/18 = 2 mol → 2 × 6.022×10²³ molecules (NEB 2023). Smallest MASS is not the limiter — smallest mole-ratio is (a classic trap). % yield above 100% means impure product or incomplete drying, never extra chemistry."
+    },
+    {
+      "label": "Solved",
+      "text": "4.8 g Mg (24) + 6.4 g O₂ (32) → MgO: n(Mg) = 0.2, n(O₂) = 0.2; reaction needs 2Mg : 1O₂, so 0.2 mol Mg needs only 0.1 mol O₂ — Mg limits, O₂ excess. MgO formed = 0.2 mol × 40 g/mol = 8.0 g (NEB 2023, 3 marks)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Stoichiometry predicts amounts, never rates or whether a reaction actually proceeds (thermodynamics/kinetics decide that). Side reactions and equilibria invalidate the single-recipe ledger. Dalton's 'indivisible atoms' postulate fell to subatomic physics — the laws survived, the postulate did not."
+    },
+    {
+      "label": "Derivation",
+      "text": "From the balanced equation aA + bB → products: divide each reactant's moles by its coefficient; the smallest quotient is limiting. Product moles = (limiting moles ÷ its coefficient) × product coefficient → × M_r for grams. Empirical-formula variant: %÷A_r, ÷smallest, integerise."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Grams → moles FIRST, always. Limiting test: moles ÷ coefficient, take the minimum. 40% C / 6.67% H / 53.33% O → ÷12, ÷1, ÷16 → 3.33:6.67:3.33 → ÷3.33 → 1:2:1 = CH₂O (NEB 2022 pattern)."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (3): mole concept + molecules in 36 g water. NEB 2023 (3): 4.8 g Mg + 6.4 g O₂ — limiting reactant + MgO mass. NEB 2022 (3): empirical formula from 40% C, 6.67% H, 53.33% O."
+    }
+  ]
+}

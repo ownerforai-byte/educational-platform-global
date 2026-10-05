@@ -1,0 +1,70 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "chemistry-of-metals",
+  "unitTitle": "Chemistry of Metals",
+  "syllabusTopics": [
+    "Metals and metallurgical principles: definition of metallurgy and its types (hydrometallurgy, pyrometallurgy, electrometallurgy)",
+    "Introduction of ores; gangue or matrix, flux and slag, alloy and amalgam",
+    "General principles of extraction of metals: concentration, calcination and roasting, smelting, carbon reduction, thermite and electrochemical reduction",
+    "Refining of metals (poling and electro-refinement)",
+    "Alkali metals: general characteristics of alkali metals",
+    "Sodium: extraction from Down's process, properties (action with oxygen, water, acids, nonmetals and ammonia) and uses",
+    "Sodium hydroxide: properties (precipitation reaction and action with carbon monoxide) and uses",
+    "Sodium carbonate: properties (action with CO2, SO2, water, precipitation reactions) and uses",
+    "Alkaline earth metals: general characteristics of alkaline earth metals",
+    "Molecular formula and uses of quick lime, bleaching powder, magnesia, plaster of paris and epsom salt",
+    "Solubility of hydroxides, carbonates and sulphates of alkaline earth metals (general trend with explanation)",
+    "Stability of carbonate and nitrate of alkaline earth metals (general trend with explanation)"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Metals",
+    "title": "Down's process — why sodium needs electricity, not carbon",
+    "href": "/class-11-notes/chemistry",
+    "icon": "Highlighter",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Extraction follows reactivity: carbon reduces middle ores (roasted sulphides, calcined carbonates), while Na/Al sit above carbon in the series — only electrolysis (electrometallurgy) rips them free. Down's cell electrolyses fused NaCl (with CaCl₂ to lower the melt point); cathode: Na⁺ + e⁻ → Na, anode: 2Cl⁻ → Cl₂ + 2e⁻. Refining (poling, electrorefining) then purifies; flux/slag chemistry floats gangue away."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "reactivity ladder decides: K Na Ca Mg Al | (C) | Zn Fe | Sn Pb | (H) | Cu Ag Au — above C: electrolysis only  ·  Down's: 2NaCl(fused) → 2Na + Cl₂ (cathode steel, anode graphite)  ·  carbon reduction: MO + C → M + CO (middle metals)  ·  thermite: Fe₂O₃ + 2Al → 2Fe + Al₂O₃"
+    },
+    {
+      "label": "Conditions",
+      "text": "Down's needs FUSED (molten) NaCl — aqueous solution would discharge H₂ instead (water reduces more easily than Na⁺). Carbon reduction needs the oxide below carbon's line on the Ellingham diagram at furnace T. Roasting (sulphides, in air) vs calcination (carbonates, no air) split by ore type."
+    },
+    {
+      "label": "Special cases",
+      "text": "Aluminium ignores carbon for the same reason — Hall-Héroult electrolyses alumina in cryolite instead (NEB 2022). Sodium explodes in water (H₂ + heat), forms peroxide with excess O₂, and gives blue solutions in liquid ammonia (solvated electrons). Bleaching powder = CaOCl₂, plaster of Paris = CaSO₄·½H₂O, Epsom = MgSO₄·7H₂O."
+    },
+    {
+      "label": "Solved",
+      "text": "Why not carbon for aluminium? Al sits above carbon in the reactivity series — carbon cannot reduce Al₂O₃ (ΔG positive); only electrolysis works: dissolve alumina in molten cryolite, electrolyse → Al at cathode, CO/CO₂ at the graphite anode (NEB 2022, 3-mark pattern, mirrored by the Down's 5-marker)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Reactivity-series order is for standard aqueous conditions — high-T Ellingham crossings (e.g. Mg reducing others) break the ladder. Electrolysis is energy-hungry (aluminium's cost is electricity). Bauxite impurities demand Bayer refining before Hall-Héroult even starts."
+    },
+    {
+      "label": "Derivation",
+      "text": "Down's cell logic: melt NaCl → mobile Na⁺/Cl⁻; apply potential above decomposition voltage; cathode reduces Na⁺ (liquid Na floats, collected), anode oxidises Cl⁻ (Cl₂ piped off). CaCl₂/CaF₂ addition lowers mp from 801 °C toward ~600 °C — less heat, less Na vaporisation loss. Sodium's violent water reaction (2Na + 2H₂O → 2NaOH + H₂) proves its series position."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'Explain extraction of X' → locate X vs carbon: above → electrolysis (name the cell + electrodes + reactions), middle → roast/calcine + carbon, below → heat alone. Down's 5-marker: cell + why fused + CaCl₂ role + both electrode reactions."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (5): Down's process for sodium extraction. NEB 2023 (4): Downs vs MgCl₂-electrolysis comparison. NEB 2022 (3): why carbon fails for aluminium (cryolite electrolysis instead)."
+    }
+  ]
+}

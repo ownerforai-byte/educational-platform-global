@@ -1,0 +1,62 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "foundation-and-fundamentals",
+  "unitTitle": "Foundation and Fundamentals",
+  "syllabusTopics": [
+    "General introduction of chemistry",
+    "Importance and scope of chemistry",
+    "Basic concepts of chemistry: atoms, molecules, relative masses of atoms and molecules, atomic mass unit (amu), radicals, molecular formula, empirical formula",
+    "Percentage composition from molecular formula"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Foundation",
+    "title": "Mole and formula — counting atoms by weighing them",
+    "href": "/class-11-notes/chemistry",
+    "icon": "BookOpen",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Atoms are too small to count, so chemists weigh them instead: relative atomic masses (¹²C = 12 exactly, 1 amu = 1.66×10⁻²⁴ g) turn any mass into a particle count via the mole (6.022×10²³ entities). Molecular formula states the actual atom inventory; empirical formula gives the simplest ratio; percentage composition prices each element's share of the mass."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "n = mass/M = V(STP)/22.4 L = N/Nₐ  ·  Nₐ = 6.022×10²³ mol⁻¹  ·  %E = (atoms×A_r / M_r)×100  ·  empirical → molecular: ×(M_r / empirical mass)  ·  SI unit of amount: mole"
+    },
+    {
+      "label": "Conditions",
+      "text": "The 22.4 L molar volume holds for ideal gases at STP (0 °C, 1 atm) only. Empirical→molecular scaling needs an independent molar mass (vapour density, freezing-point data). Percentage composition assumes a pure compound of known formula."
+    },
+    {
+      "label": "Special cases",
+      "text": "Liquid density 0.8792 g/cm³ × 45.6 cm³ = 40.09152 g → 40.1 g to three significant figures (NEB 2023): the answer keeps the FEWEST figures of the inputs (45.6 cm³ has three). Radicals (SO₄²⁻, NO₃⁻) travel as units through reactions — track them whole."
+    },
+    {
+      "label": "Solved",
+      "text": "Mass of 45.6 cm³ liquid, d = 0.8792 g/cm³: m = d×V = 0.8792 × 45.6 = 40.09152 g → 40.1 g (3 sf, limited by 45.6) (NEB 2023, 3 marks). Mole MCQ: SI base unit of amount of substance is the mole — not gram, kilogram or millimole (NEB 2022)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Relative masses are averages over isotopes — chlorine's 35.5 is not one atom's mass. The mole counts entities, not mass or volume, so '1 mole' of different substances differs in grams. Empirical formula alone never identifies a compound (glucose and formaldehyde share CH₂O)."
+    },
+    {
+      "label": "Derivation",
+      "text": "From % composition to formula: divide each % by A_r → mole ratios → divide by the smallest → round to integers (multiply through if .33/.5/.67 persist). Multiply the empirical mass to the measured M_r for the molecular formula — e.g. 40% C, 6.67% H, 53.33% O gives CH₂O, and M_r = 180 reveals C₆H₁₂O₆."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Mole triangle: cover what you want — mass/M, ×Nₐ for particles, ×22.4 for gas litres. Percent-to-formula: %→÷A_r→÷smallest→integers. Significant figures follow the weakest input; exact counts (2 atoms) never limit."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (3): 0.8792 g/cm³ liquid, 45.6 cm³ — mass to three significant figures. NEB 2022 (1): SI base unit of amount of substance (MCQ: mole). Empirical/molecular formula from % composition repeats yearly."
+    }
+  ]
+}

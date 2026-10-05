@@ -1,0 +1,66 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "english",
+  "unitSlug": "literature-essays-plays",
+  "unitTitle": "Literature — Essays and Plays",
+  "syllabusTopics": [
+    "Essay 1 — Sharing Tradition (Frank LaPena)",
+    "Essay 2 — How to Live Before You Die (Steve Jobs)",
+    "Essay 3 — What I Require From Life (J.B.S. Haldane)",
+    "Essay 4 — What is Poverty? (Jo Goodwin Parker)",
+    "Essay 5 — Scientific Research is a Token of Humankind's Survival (Vladimir Keilis-Borok)",
+    "One-Act Play 1 — Trifles (Susan Glaspell)",
+    "One-Act Play 2 — A Sunny Morning (Serafín and Joaquín Álvarez Quintero)",
+    "One-Act Play 3 — Refund (Fritz Karinthy)"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites the subject's literature PYQ bank (literature/ alias dir, same-subject content).",
+  "card": {
+    "tag": "Literature",
+    "title": "Essays and one-act plays — theme, character, moment",
+    "href": "/class-11-notes/english",
+    "icon": "ScrollText",
+    "statKey": "pyq:english"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Five essays argue (Jobs on death as life's clarifier, Parker on poverty as lived experience, Haldane on what life requires), three one-act plays compress full drama into one room and one crisis (Trifles' women reading what men miss, A Sunny Morning's bench romance, Refund's satire of schooling). Every answer runs theme → evidence (quoted moment) → technique → writer's purpose."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "answer spine: claim (theme in one line) → moment (quoted scene/line) → technique (device, irony, dialogue) → purpose (what the writer makes you feel/decide)  ·  essay tools: thesis, anecdote, rhetoric · play tools: dialogue, stage business, dramatic irony"
+    },
+    {
+      "label": "Conditions",
+      "text": "Claims need textual moments — unquoted assertions score thin. Separate the writer from the speaker (Jobs the speaker ≠ Jobs the man; narrators can mislead). One-act analysis stays inside the single setting and timespan; importing other works dilutes."
+    },
+    {
+      "label": "Special cases",
+      "text": "Daudet's 'Last Lesson' classroom-exit moment (mother's eyes leaving her son — NEB 2024, 5 marks): read gesture as theme (language = identity under occupation). Trifles turns 'trifles' (preserves, stitching) into the murder's evidence — the title is the thesis. Satire (Refund, Parker) argues through exaggeration; answer the target, not just the joke."
+    },
+    {
+      "label": "Solved",
+      "text": "Last-Lesson moment answer: claim — M. Hamel's final lesson makes language the homeland; moment — the mother's gaze torn from her son by the order; technique — Daudet freezes a gesture instead of explaining it; purpose — occupation steals even farewells, so the reader feels linguistic loss bodily (NEB 2024, 5-mark pattern)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Theme-hunting flattens texts into morals — examiners reward observed detail over slogans. Author intention is partly unknowable; argue from the text, not biography. One framework cannot fit satire and elegy identically — adjust the lens per genre."
+    },
+    {
+      "label": "Derivation",
+      "text": "Build any answer from the text outward: list striking moments → cluster them into a theme → name the technique carrying each (irony in Refund's exam-farce, symbolism in Trifles' birdcage, rhetoric in Jobs's three stories) → state the purpose as effect-on-reader. Four moves, any essay or play."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Titles are theses (Trifles, Refund, What is Poverty?). Endings reveal purpose — answer from the last scene backward. Always quote: one short exact line beats a paragraph of paraphrase. Device + effect, never device alone."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (5): Last Lesson exit moment — gesture as meaning (literature bank). NEB 2023 (2): device ID — 'wind whispered' = personification. Essay-theme and play-character questions follow the claim→moment→technique→purpose spine."
+    }
+  ]
+}

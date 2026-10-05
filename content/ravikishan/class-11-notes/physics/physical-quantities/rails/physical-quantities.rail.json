@@ -1,0 +1,60 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "physical-quantities",
+  "unitTitle": "Physical Quantities",
+  "syllabusTopics": [
+    "Precision and significant figures",
+    "Dimensions and uses of dimensional analysis"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2024.json and 02-neb-2023.json in this unit.",
+  "card": {
+    "tag": "Physical Quantities",
+    "title": "Dimensions — the homogeneity check that never lies (almost)",
+    "href": "/class-11-notes/physics",
+    "icon": "Ruler",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Every physical quantity is magnitude plus unit. Seven SI fundamentals (m, kg, s, A, K, mol, cd) build all derived quantities. Precision is repeatability of readings; accuracy is closeness to the true value — a precise-but-biased instrument clusters tightly off-target. Significant figures carry the honesty of a measurement: every certain digit plus one doubtful digit."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "dimensions: velocity [LT⁻¹] · force [MLT⁻²] · energy [ML²T⁻²]  ·  homogeneity: every +/− term must share dimensions  ·  errors: mult/div → add % errors; power n → ×n; add/sub → add absolute errors  ·  least count = 1 MSD / VSD"
+    },
+    {
+      "label": "Conditions",
+      "text": "Homogeneity applies only within one consistent unit system, and only to sums — each added term must match dimensionally. Error-propagation rules assume independent, small, random errors. Significant-figure rules bite only on measured (not counted or defined) numbers."
+    },
+    {
+      "label": "Special cases",
+      "text": "Systematic error shifts every reading one way (bad calibration); random error scatters both ways (averaging helps only this one). Trailing zeros without a decimal point are ambiguous ('2500' could be 2, 3 or 4 sf). Pure numbers like π, counts and conversion factors carry infinite figures."
+    },
+    {
+      "label": "Solved",
+      "text": "Check v² = u² + 2as: [v²] = (LT⁻¹)² = L²T⁻²; [u²] identical; [2as] = L·LT⁻² = L²T⁻². All three terms match → homogeneous, so the equation survives the dimensional filter (NEB 2023, 3 marks)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Homogeneity is necessary but NOT sufficient: v = u + 2at is dimensionally fine yet physically wrong — dimensionless constants (½, 2π) are invisible to the method. It cannot derive sums/differences, trig or exponential relations, and says nothing about numerical correctness."
+    },
+    {
+      "label": "Derivation",
+      "text": "Derive dimensions from definitions: velocity = displacement/time → L/T = LT⁻¹; acceleration → LT⁻²; force = mass × acceleration → MLT⁻²; work = force × distance → ML²T⁻²; power = work/time → ML²T⁻³. Then a homogeneity check is term-by-term substitution — three lines, full marks."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Memorise the M-L-T ladder: force MLT⁻², energy ML²T⁻², power ML²T⁻³, pressure ML⁻¹T⁻², charge IT, voltage ML²T⁻³I⁻¹. For error questions: multiplication → add percentage errors, power → multiply by the exponent. 'Check correctness' always means homogeneity first."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (3): state the principle of homogeneity of dimensions and check v² = u² + 2as. NEB 2024 (2): accuracy vs precision with an example. NEB 2023 (2): four fundamental quantities with SI units + define the kilogram."
+    }
+  ]
+}

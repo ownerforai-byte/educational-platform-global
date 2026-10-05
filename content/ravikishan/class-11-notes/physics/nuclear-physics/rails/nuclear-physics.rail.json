@@ -1,0 +1,65 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "nuclear-physics",
+  "unitTitle": "Nuclear Physics",
+  "syllabusTopics": [
+    "Nucleus: discovery of nucleus",
+    "Nuclear density; mass number; atomic number",
+    "Atomic mass; isotopes",
+    "Einstein's mass-energy relation",
+    "Mass defect, packing fraction, binding energy per nucleon",
+    "Creation and annihilation",
+    "Nuclear fission and fusion"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2024.json and 02-neb-2023.json in this unit.",
+  "card": {
+    "tag": "Nuclear Physics",
+    "title": "Half-life and binding energy — the nuclear ledger",
+    "href": "/class-11-notes/physics",
+    "icon": "Microscope",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Rutherford's scattering revealed the tiny dense nucleus (10⁻¹⁴ m in a 10⁻¹⁰ m atom). Assembled nucleons weigh LESS than their parts — the missing mass (defect) became binding energy via E = mc², peaking per nucleon at iron-56. Unstable nuclei decay exponentially with decay constant λ; half-life T½ = 0.693/λ is the statistical halving time. Fission splits heavy nuclei, fusion joins light ones — both climb toward iron, releasing the difference."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "E = mc² (1 u = 931.5 MeV)  ·  B.E. = Δm·c², curve peaks at Fe-56 (~8.8 MeV/nucleon)  ·  N = N₀e^(−λt), activity A = λN  ·  T½ = ln2/λ ≈ 0.693/λ  ·  T½ = 8 days → after 24 days (3 lives): (1/2)³ = 1/8 remains"
+    },
+    {
+      "label": "Conditions",
+      "text": "Exponential decay is statistical — exact for large N, meaningless for a few atoms. Binding-energy comparisons need per-NUCLEON values (totals mislead across masses). Fission needs a fissile seed + neutrons; stellar fusion needs million-kelvin confinement."
+    },
+    {
+      "label": "Special cases",
+      "text": "Pair production (γ → e⁻ + e⁺) and annihilation (e⁻ + e⁺ → 2γ) convert mass ↔ energy directly, with 1.02 MeV threshold. Isotopes share chemistry (same Z) but differ in stability. Carbon-14 dating and medical tracers are half-life applications."
+    },
+    {
+      "label": "Solved",
+      "text": "T½ = 8 days, after 24 days = 3 half-lives → remaining fraction (1/2)³ = 1/8; activity falls by the same factor (A = λN) (NEB 2023, 3 marks). Mass defect variant: Δm between parts and nucleus × 931.5 MeV/u = binding energy — divide by A for the per-nucleon ranking."
+    },
+    {
+      "label": "Limitation",
+      "text": "Half-life predicts populations, never single atoms (quantum randomness). E = mc² prices conversion but says nothing about reaction RATES (tunnelling, cross-sections rule). The liquid-drop picture behind binding trends is semi-empirical — shell structure adds the fine print."
+    },
+    {
+      "label": "Derivation",
+      "text": "Decay: dN/dt = −λN (constant per-nucleus probability) → separate and integrate → N = N₀e^(−λt); set N = N₀/2 → T½ = ln2/λ. Binding: weigh parts (Z·mₚ + N·mₙ + electrons) minus atomic mass → Δm → ×c²; the Fe-56 maximum explains why fission AND fusion both release energy."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Half-life questions: count lives n = t/T½, remaining = (1/2)ⁿ. 'Define decay constant + T½ relation' is a 2-marker (NEB 2024). Binding: defect → ×931.5 → ÷A. Fission = split heavy, fusion = join light, both → toward iron."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (2): decay constant + half-life relation. NEB 2023 (3): mass defect vs binding energy. NEB 2023 (3): T½ = 8 days — fraction after 24 days + activity change."
+    }
+  ]
+}

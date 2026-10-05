@@ -1,0 +1,64 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "fundamentals-of-applied-chemistry",
+  "unitTitle": "Fundamentals of Applied Chemistry",
+  "syllabusTopics": [
+    "Fundamentals of Applied Chemistry: chemical industry and its importance",
+    "Stages in producing a new product",
+    "Economics of production; cash flow in the production cycle",
+    "Running a chemical plant; designing a chemical plant",
+    "Continuous and batch processing",
+    "Environmental impact of the chemical industry"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; this unit has no year-PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Applied Chemistry",
+    "title": "Batch vs continuous — how chemical plants really run",
+    "href": "/class-11-notes/chemistry",
+    "icon": "CalendarCheck",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Industrial chemistry converts bench reactions into cash flow: research → pilot plant → full production, with economics (raw-material, energy, capital, waste costs) deciding survival. Batch processing runs one charge at a time (flexible, pharma/speciality); continuous processing flows non-stop (Haber ammonia, Contact sulphuric acid — huge volumes, steady state). Every plant balances yield against effluent: environmental impact (emissions, effluent, solid waste) is designed out, not cleaned up."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "plant pipeline: lab → pilot → production (scale-up ×10–1000)  ·  batch: charge → react → discharge → clean (flexible, small volume)  ·  continuous: steady in/out (bulk, Haber/Contact/Solvay)  ·  economics: profit = product value − (materials + energy + capital + waste + compliance)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Continuous suits massive steady demand with stable chemistry (equilibrium-limited reactions recycle unreacted feed). Batch suits low-volume, high-variety, frequent changeovers. Cash-flow analysis needs full-cycle costing — a cheap reaction with expensive separation loses to a dear reaction with easy workup."
+    },
+    {
+      "label": "Special cases",
+      "text": "Photography's AgBr chemistry (expose → develop → fix) is batch processing in miniature. Alloys beat pure metals (brass over gold for durability) — materials choice is applied chemistry too. Pharma stays batch (regulation + variety); fertilisers and acids run continuous (volume)."
+    },
+    {
+      "label": "Solved",
+      "text": "Choose the process: 10 tonnes/day of one fertiliser for a decade → continuous (steady state, heat integration, low unit cost). 50 kg batches of twenty different dyes → batch (changeover flexibility beats flow efficiency). The decision variable is volume × variety, not chemistry alone."
+    },
+    {
+      "label": "Limitation",
+      "text": "Continuous plants are inflexible (product switches cost weeks) and catastrophic on failure (runaway propagates). Batch suffers batch-to-batch variation and higher labour/unit cost. 'Green' redesigns (catalysis, atom economy, E-factor) constrain both — profit and planet negotiate every flow sheet."
+    },
+    {
+      "label": "Derivation",
+      "text": "From the syllabus stages: a product idea passes technical feasibility (does it work at scale?), economic feasibility (cash flow positive over plant life?), and environmental clearance (EIA, effluent limits) — three gates in series, any one fatal. Plant design then fixes reactor type, separation train and control loops around the chosen batch/continuous mode."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Bulk + steady = continuous; varied + small = batch. Stages chant: research–pilot–production. Economics: count energy and waste beside raw materials. Environment: emissions/effluent/solids — one example each (SO₂ scrubbing, ETP, slag reuse)."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: batch vs continuous processing with one industrial example each; stages from lab to plant; cash-flow factors in production economics; one environmental impact of the chemical industry with a control measure."
+    }
+  ]
+}

@@ -1290,6 +1290,17 @@ code, kbd, samp, pre {
 .subject-rail-viewport {
   -webkit-mask-image: linear-gradient(to right, transparent 0, #000 3rem, #000 calc(100% - 3rem), transparent 100%);
   mask-image: linear-gradient(to right, transparent 0, #000 3rem, #000 calc(100% - 3rem), transparent 100%);
+  /* Hand-scrubbing: horizontal swipes drive the track (see subject-rails.tsx
+     drag handling) while vertical swipes still scroll the page. */
+  touch-action: pan-y;
+  cursor: grab;
+}
+.subject-rail-viewport[data-dragging="true"] {
+  cursor: grabbing;
+  user-select: none;
+}
+.subject-rail-viewport[data-dragging="true"] a {
+  -webkit-user-drag: none;
 }
 
 @media (prefers-reduced-motion: reduce) {

@@ -1,0 +1,61 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "english",
+  "unitSlug": "language-and-grammar",
+  "unitTitle": "Grammar & Vocabulary (integrated across Section I units)",
+  "syllabusTopics": [
+    "Grammar and Usage",
+    "Vocabulary Building",
+    "Communication Skills"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Filled 2026-10-05 for daily-use narration; board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Grammar · Narration",
+    "title": "Reported speech — backshifting without breaking meaning",
+    "href": "/class-11-notes/english",
+    "icon": "Network",
+    "statKey": "pyq:english"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Reporting moves speech one step into the past: present→past, past→past perfect, will→would, can→could — because the reporting verb ('said') already sits in the past. Pronouns, places and times slide with the perspective (I→he, here→there, today→that day). Daily life reports constantly ('She said she was tired', 'They told me to wait'); mastering backshift is mastering everyday retelling."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "say + statement → said (that) + backshifted clause  ·  am/is→was · are→were · V1→V2 · V2→had+V3 · will→would · can→could · today→that day · tomorrow→the next day · here→there  ·  'I am tired' → He said (that) he was tired"
+    },
+    {
+      "label": "Conditions",
+      "text": "Backshift fires only under a PAST reporting verb; 'She says she IS tired' stays present. Universal truths and still-true facts resist shifting ('He said the earth moves round the sun'). Orders become infinitives ('told me to wait'), yes/no questions become if/whether clauses with statement word-order."
+    },
+    {
+      "label": "Special cases",
+      "text": "Questions lose their question order on reporting ('Where are you?' → 'asked where I was' — never 'where was I'). 'Said to me' becomes 'told me'; bare 'said' takes no object. Requests soften to 'asked/requested + infinitive'. Exclamations reframe as 'exclaimed with joy/sorrow that…'."
+    },
+    {
+      "label": "Solved",
+      "text": "'I am tired,' he said → He said (that) he was tired: pronoun I→he, present am→past was, 'that' optional. Two moves, both mandatory — miss the pronoun and the reporter claims the tiredness; miss the tense and the timeline breaks. Test both directions: direct↔indirect."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mechanical backshifting mangles still-true statements and habitual truths — meaning overrides the rule. Tone, sarcasm and emphasis evaporate in reported form ('Yeah, right' cannot backshift). Some languages report without shifting at all; English insists."
+    },
+    {
+      "label": "Derivation",
+      "text": "Derive the shift from timeline logic: the report happens AFTER the speech, so every time-reference steps back one notch along the tense ladder (present→past→past perfect), then stops — past perfect cannot shift further. Pronoun/place/time slides follow the same single principle: re-anchor every deictic word to the reporter's standpoint."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Ladder drill: will→would, can→could, V1→V2, V2→had+V3 — chant it. Questions: if/whether + statement order. Orders: told/asked + to-infinitive. Check pronouns LAST (most forgotten mark) — re-read with 'who is who?'."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: direct↔indirect pairs ('I am tired' → reported; 'Where are you going?' → asked-form); orders as infinitives; said-to→told conversion. Narration + tense backshift is the highest-frequency grammar pair."
+    }
+  ]
+}

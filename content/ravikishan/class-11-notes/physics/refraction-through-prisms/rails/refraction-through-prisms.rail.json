@@ -1,0 +1,61 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "refraction-through-prisms",
+  "unitTitle": "Refraction through Prisms",
+  "syllabusTopics": [
+    "Minimum deviation condition",
+    "Relation between the angle of prism, minimum deviation and refractive index",
+    "Deviation in small-angle prism"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Prisms",
+    "title": "Minimum deviation — the symmetric ray through a prism",
+    "href": "/class-11-notes/physics",
+    "icon": "Ruler",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "A prism bends light twice (entry + exit); total deviation δ = i + e − A. As incidence rises from grazing, deviation falls to a MINIMUM then climbs — at that minimum the ray travels symmetrically (i = e, r₁ = r₂ = A/2), and the symmetry unlocks μ. Small-angle prisms (A ≲ 10°) deviate proportionally to (μ−1)A with no minimum hunt needed."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "δ = i + e − A (A = r₁ + r₂)  ·  minimum: μ = sin[(A + δm)/2] / sin(A/2), with i = e, r = A/2  ·  small-angle: δ ≈ (μ − 1)·A"
+    },
+    {
+      "label": "Conditions",
+      "text": "The μ formula holds ONLY at minimum deviation (symmetric passage) for a single wavelength in a homogeneous prism. Small-angle form needs A in radians-ish smallness (≲10°) and paraxial rays. Both assume the prism surrounded by air (μ≈1)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Equilateral prism (A = 60°) with δm = 60° gives μ = sin60°/sin30° = √3 ≈ 1.732 — a favourite plug-in. Deviation is NOT always minimum: the NEB 2023 MCQ probes exactly this (symmetric passage is the condition, not a property). Immersed prisms rescale μ to relative index."
+    },
+    {
+      "label": "Solved",
+      "text": "Prism A = 60°, μ = 1.5: at minimum deviation sin[(60+δm)/2]/sin30° = 1.5 → sin[(60+δm)/2] = 0.75 → (60+δm)/2 ≈ 48.6° → δm ≈ 37.2° (NEB 2022, 4-mark pattern with i = 40° incidence working). Check: symmetric ray, i = e = (A+δm)/2 ≈ 48.6°."
+    },
+    {
+      "label": "Limitation",
+      "text": "The formula measures ONE wavelength's μ — white light smears δm into a spectrum (dispersion, next unit). Surface imperfections and non-parallelism break symmetry; thick prisms add lateral displacement the thin-prism model ignores."
+    },
+    {
+      "label": "Derivation",
+      "text": "At the δ minimum, dδ/di = 0 forces the reversible symmetric path i = e (Fermat/reversibility argument); then A = r₁+r₂ gives r = A/2, and Snell at entry sin i = μ·sin(A/2) with i = (A+δm)/2 from the δ relation — divide and the μ formula appears."
+    },
+    {
+      "label": "Shortcut",
+      "text": "See 'minimum deviation' → write i = e and r = A/2 immediately. 60°-prism + δm = 60° → μ = √3 on sight. Small-angle questions skip the minimum entirely: δ = (μ−1)A."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (1): deviation is minimum only for symmetric passage (MCQ). NEB 2022 (4): A = 60°, μ = 1.5 prism numerical with incidence/internal-angle working. Derive i–e–A–δ relation (asked via dispersion unit, 2023)."
+    }
+  ]
+}

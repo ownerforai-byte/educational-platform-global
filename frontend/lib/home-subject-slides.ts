@@ -145,6 +145,35 @@ const NEPALI: HomeSubjectAccent = {
   text: "text-rose-600 dark:text-rose-400",
 };
 
+/**
+ * Icon names agents may reference in `rails/*.rail.json` (`card.icon`).
+ * The server wrapper (`home-subject-rails.tsx`) resolves these to components
+ * — Lucide components can never cross into JSON, so agents pick names only.
+ * Unknown names fall back to the rail's own icon.
+ */
+export const HOME_RAIL_ICONS: Record<string, LucideIcon> = {
+  Atom,
+  BookOpen,
+  Calculator,
+  CalendarCheck,
+  Dna,
+  FileText,
+  FlaskConical,
+  GitBranch,
+  GraduationCap,
+  Highlighter,
+  Languages,
+  Lightbulb,
+  Microscope,
+  Network,
+  PenLine,
+  Ruler,
+  ScrollText,
+  Sigma,
+  Waypoints,
+  Workflow,
+};
+
 /** The one Class 12 card per rail — content for it lands later (owner note). */
 const classTwelveTeaser = (name: string): HomeSubjectSlide => ({
   tag: "Class 12",

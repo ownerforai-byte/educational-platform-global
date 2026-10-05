@@ -1,0 +1,62 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "refraction-at-plane-surfaces",
+  "unitTitle": "Refraction at Plane Surfaces",
+  "syllabusTopics": [
+    "Laws of refraction: refractive index",
+    "Relation between refractive indices",
+    "Lateral shift",
+    "Total internal reflection"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Refraction",
+    "title": "Snell to total internal reflection — when light refuses to leave",
+    "href": "/class-11-notes/physics",
+    "icon": "BookOpen",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Light bends toward the normal entering a denser medium, away leaving it — speed changes (v = c/μ), frequency does not. Refractive index μ = c/v = sin i/sin r (Snell). Past the critical angle going dense→rare, refraction becomes impossible and ALL light reflects: total internal reflection, the engine of fibre optics, diamonds and mirages."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Snell: μ₁·sin i = μ₂·sin r  ·  μ = c/v = λ_vacuum/λ_medium  ·  critical: sin C = 1/μ (dense→rare only)  ·  lateral shift through slab: d = t·sin(i−r)/cos r  ·  glass μ = 1.5 → v = c/1.5 = 2×10⁸ m/s"
+    },
+    {
+      "label": "Conditions",
+      "text": "Snell's sine form needs a single wavelength (μ varies with colour — dispersion). TIR needs BOTH denser-to-rarer travel AND i > C; miss either and ordinary partial reflection/refraction rules. Lateral shift assumes parallel slab faces and a narrow beam."
+    },
+    {
+      "label": "Special cases",
+      "text": "Normal incidence (i = 0) never deviates. Diamond's μ ≈ 2.4 gives C ≈ 24° — tiny critical angle, endless internal sparkle. Glass μ = 1.5 → light slows to 2×10⁸ m/s (NEB 2023). Optical fibre, endoscope and sparkling air bubbles in glass are TIR applications."
+    },
+    {
+      "label": "Solved",
+      "text": "Glass μ = 1.5: speed v = c/μ = 3×10⁸/1.5 = 2×10⁸ m/s; critical angle sin C = 1/1.5 → C ≈ 41.8° (NEB 2023, 3 marks). Any ray inside glass striking the boundary above ~42° cannot escape — it totally internally reflects."
+    },
+    {
+      "label": "Limitation",
+      "text": "Snell with one μ blurs for white light (each colour has its own μ — hence dispersion, next unit). The 'critical angle' exists only dense→rare; rare→dense always refracts. Real surfaces also polarise (Brewster) and absorb — Snell tracks direction only."
+    },
+    {
+      "label": "Derivation",
+      "text": "From wavefronts: in time t the incident front advances c₁t and the refracted front c₂t along the boundary; geometry gives sin i/sin r = c₁/c₂ = μ₂/μ₁. Set r = 90° for the grazing limit: sin C = μ_rarer/μ_denser = 1/μ — beyond this angle no real r satisfies Snell, so reflection takes 100%."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'State conditions' for TIR = 2 marks free: dense→rare + i > C. μ = c/v converts every speed question. Remember C_glass ≈ 42°, C_water ≈ 49°, C_diamond ≈ 24° — one line that answers many MCQs."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (3): Snell's law + speed of light in glass (μ = 1.5). NEB 2022 (2): TIR + its two conditions. Relation between refractive indices and lateral-shift numericals complete the set."
+    }
+  ]
+}

@@ -8,6 +8,12 @@ import {
   type HomeSubjectRail,
   type HomeSubjectSlide,
 } from "@/lib/home-subject-slides";
+import {
+  normalizeRailOffset,
+  parseDurationSecs,
+  railResumeDelaySecs,
+  resumeTrackFromFreeze,
+} from "@/lib/rail-motion";
 
 /**
  * The six continuous subject rails (owner request 2026-10-05).
@@ -29,14 +35,19 @@ import {
 type Props = {
   /** Real counts keyed by `statKey` (see home-subject-slides.ts). */
   stats?: Record<string, string>;
+  /**
+   * Rails to stream — the server wrapper merges agent-authored corpus cards
+   * into HOME_SUBJECT_RAILS and passes the result. Defaults to the built-in
+   * rails so the component also renders standalone (tests, previews).
+   */
+  rails?: HomeSubjectRail[];
 };
 
-const TOTAL_SLIDES = HOME_SUBJECT_RAILS.reduce(
-  (n, rail) => n + rail.slides.length,
-  0,
-);
-
-export function SubjectRails({ stats = {} }: Props) {
+export function SubjectRails({
+  stats = {},
+  rails = HOME_SUBJECT_RAILS,
+}: Props) {
+  const totalSlides = rails.reduce((n, rail) => n + rail.slides.length, 0);
   const rootRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
@@ -60,22 +71,146 @@ export function SubjectRails({ stats = {} }: Props) {
     return () => observer.disconnect();
   }, []);
 
+  /* Swipe / drag to scrub a rail: press and slide left or right to move the
+     stream by hand — cards that already left through the left edge come back
+     by swiping right, because the track wraps every loop. Release and the
+     rail resumes drifting on its own (in phase, no snap), unless its Pause
+     switch is on, in which case it holds exactly where it was dropped. The
+     click ending a real drag is swallowed so a card link never fires.
+     Reduced-motion readers get the native horizontal scroller instead, so no
+     drag handling is attached for them. */
+  useEffect(() => {
+    const root = rootRef.current;
+    if (!root || typeof window === "undefined") return;
+    if (window.matchMedia?.("(prefers-reduced-motion: reduce)").matches) {
+      return;
+    }
+
+    const cleanups: (() => void)[] = [];
+    root
+      .querySelectorAll<HTMLElement>(".subject-rail-viewport")
+      .forEach((viewport) => {
+        const track = viewport.querySelector<HTMLElement>(".subject-rail-track");
+        if (!track) return;
+
+        let activePointer = -1;
+        let dragging = false;
+        let suppressClick = false;
+        let startX = 0;
+        let startTx = 0;
+        let lastTx = 0;
+
+        const readTx = (): number => {
+          const matrix = new DOMMatrixReadOnly(
+            getComputedStyle(track).transform,
+          );
+          return Number.isFinite(matrix.m41) ? matrix.m41 : 0;
+        };
+        const freeze = (tx: number) => {
+          track.style.animation = "none";
+          track.style.transform = `translate3d(${tx}px, 0, 0)`;
+        };
+
+        const onPointerDown = (event: PointerEvent) => {
+          if (!event.isPrimary || activePointer !== -1) return;
+          activePointer = event.pointerId;
+          dragging = false;
+          suppressClick = false;
+          startX = event.clientX;
+          // Read the live position BEFORE killing the animation: a running
+          // or paused CSS animation overrides inline styles, so this order
+          // is what keeps the grab from jumping.
+          startTx = readTx();
+          lastTx = startTx;
+          try {
+            viewport.setPointerCapture(event.pointerId);
+          } catch {
+            /* pointer already released — the up handler no-ops */
+          }
+        };
+        const onPointerMove = (event: PointerEvent) => {
+          if (event.pointerId !== activePointer) return;
+          const dx = event.clientX - startX;
+          if (!dragging) {
+            if (Math.abs(dx) < 6) return;
+            dragging = true;
+            freeze(startTx);
+            viewport.dataset.dragging = "true";
+          }
+          lastTx = normalizeRailOffset(startTx + dx, track.scrollWidth / 2);
+          track.style.transform = `translate3d(${lastTx}px, 0, 0)`;
+        };
+        const endDrag = (event: PointerEvent) => {
+          if (event.pointerId !== activePointer) return;
+          activePointer = -1;
+          if (!dragging) return;
+          dragging = false;
+          delete viewport.dataset.dragging;
+          suppressClick = true;
+          window.setTimeout(() => {
+            suppressClick = false;
+          }, 0);
+          if (
+            track
+              .closest("section")
+              ?.classList.contains("subject-rail-paused") ??
+            false
+          ) {
+            // Button-paused: hold exactly where dropped; unpausing resumes
+            // the loop from there (see the Pause switch below).
+            freeze(lastTx);
+            return;
+          }
+          const duration = parseDurationSecs(
+            track.style.animationDuration ||
+              getComputedStyle(track).animationDuration,
+          );
+          track.style.animationDelay = `-${railResumeDelaySecs(lastTx, track.scrollWidth / 2, duration)}s`;
+          track.style.animation = "";
+        };
+        const onClickCapture = (event: MouseEvent) => {
+          if (!suppressClick) return;
+          suppressClick = false;
+          event.preventDefault();
+          event.stopPropagation();
+        };
+
+        viewport.addEventListener("pointerdown", onPointerDown);
+        viewport.addEventListener("pointermove", onPointerMove);
+        viewport.addEventListener("pointerup", endDrag);
+        viewport.addEventListener("pointercancel", endDrag);
+        viewport.addEventListener("click", onClickCapture, true);
+        cleanups.push(() => {
+          viewport.removeEventListener("pointerdown", onPointerDown);
+          viewport.removeEventListener("pointermove", onPointerMove);
+          viewport.removeEventListener("pointerup", endDrag);
+          viewport.removeEventListener("pointercancel", endDrag);
+          viewport.removeEventListener("click", onClickCapture, true);
+        });
+      });
+    return () => {
+      cleanups.forEach((fn) => fn());
+    };
+  }, []);
+
   return (
     <div ref={rootRef}>
       <div className="mx-auto mt-7 max-w-6xl px-4">
         <p className="text-xs leading-relaxed text-muted-foreground">
-          Six rails, {TOTAL_SLIDES} cards — each one drifts left on its own and
+          Six rails, {totalSlides} cards — each one drifts left on its own and
           loops forever, carrying only its own subject&apos;s knowledge. Cards
           are wide on purpose: concept, formula, conditions, special cases, a
           worked example, the limitation, the full derivation, the shortcut and
-          the board question, in that order. Hover a rail to hold it, or use the
-          pause switch in any rail&apos;s heading: the six are independent, so
-          Physics can keep moving while Chemistry stops.
+          the board question, in that order. Hover a rail to hold it, drag it
+          either way to scrub the stream by hand — swipe right to pull back
+          cards that already passed — or use the pause switch in any rail&apos;s
+          heading: the six are independent, so Physics can keep moving while
+          Chemistry stops.
         </p>
       </div>
 
       <div className="mt-6 space-y-9">
-        {HOME_SUBJECT_RAILS.map((rail) => (
+        {rails.map((rail) => (
           <SubjectRailSection key={rail.slug} rail={rail} stats={stats} />
         ))}
       </div>
@@ -92,10 +227,12 @@ function SubjectRailSection({
 }) {
   // Independent per-rail on/off — pausing one rail never touches the other five.
   const [paused, setPaused] = useState(false);
+  const sectionRef = useRef<HTMLElement>(null);
   const Icon = rail.icon;
 
   return (
     <section
+      ref={sectionRef}
       aria-label={`${rail.name} — continuous knowledge slides`}
       className={paused ? "subject-rail-paused" : undefined}
     >
@@ -121,7 +258,20 @@ function SubjectRailSection({
           {/* This rail's own pause/play switch. */}
           <button
             type="button"
-            onClick={() => setPaused((value) => !value)}
+            onClick={() =>
+              setPaused((value) => {
+                if (value) {
+                  // Resuming: drop any drag-freeze so the CSS loop takes over
+                  // in phase from the dropped position (see rail-motion.ts).
+                  const track =
+                    sectionRef.current?.querySelector<HTMLElement>(
+                      ".subject-rail-track",
+                    );
+                  if (track) resumeTrackFromFreeze(track);
+                }
+                return !value;
+              })
+            }
             aria-pressed={paused}
             aria-label={
               paused

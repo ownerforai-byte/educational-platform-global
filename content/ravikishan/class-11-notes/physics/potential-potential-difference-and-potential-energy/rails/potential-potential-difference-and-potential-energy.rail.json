@@ -1,0 +1,61 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "potential-potential-difference-and-potential-energy",
+  "unitTitle": "Electric Potential",
+  "syllabusTopics": [
+    "Potential difference, potential due to a point charge, potential energy, electron volt",
+    "Equipotential lines and surfaces",
+    "Potential gradient"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Electric Potential",
+    "title": "Potential — work per coulomb, and the electron-volt",
+    "href": "/class-11-notes/physics",
+    "icon": "Calculator",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Potential V is work per unit charge (J/C = volt) — a scalar landscape whose slopes push charges: E points downhill, from high V to low. Equipotentials are its contour lines (no work moving along one; field lines cut them at right angles). Potential energy U = qV prices a charge's position. The electron-volt (energy of one e⁻ across 1 V) is atomic-scale currency: 1 eV = 1.6×10⁻¹⁹ J."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "V = W/q, 1 V = 1 J/C (MCQ answer)  ·  point charge: V = kQ/r  ·  U = qV  ·  W = n·e·V for n electrons  ·  1 eV = 1.6×10⁻¹⁹ J  ·  gradient: E = −dV/dr (field = steepest descent)"
+    },
+    {
+      "label": "Conditions",
+      "text": "V = kQ/r takes zero at infinity (isolated charge convention). Equipotential ⟂ field-line geometry needs electrostatics (no induced fields). The eV shortcut applies per elementary charge — multiply by n for n electrons, by 2e for alpha particles."
+    },
+    {
+      "label": "Special cases",
+      "text": "One volt is one joule per coulomb — the NEB 2023 1-marker. A charge released from rest runs downhill in V (positive charges) or uphill (electrons). Inside a hollow charged conductor V is constant everywhere (E = 0, no gradient) — electrostatic shielding."
+    },
+    {
+      "label": "Solved",
+      "text": "Work moving n electrons across V: each electron gains eV, so W = n·e·V — e.g. 10¹⁸ electrons across 100 V do 10¹⁸ × 1.6×10⁻¹⁹ × 100 = 16 J (NEB 2022, 4-mark pattern). The eV unit skips the powers of ten: the same job is 10²⁰ eV."
+    },
+    {
+      "label": "Limitation",
+      "text": "Potential is relative — only DIFFERENCES move charges; the zero is a convention (infinity, earth, circuit ground). V = kQ/r fails inside charge distributions (integrate instead). Equipotential reasoning assumes static fields; time-varying fields break the scalar-potential picture."
+    },
+    {
+      "label": "Derivation",
+      "text": "Bring test charge q₀ from ∞ to r against kQ/r²: W = ∫F·dr = kQq₀/r → V = W/q₀ = kQ/r. Field from potential: a small step dr along E changes V by dV = −E·dr (work done BY the field), so E = −dV/dr — the gradient relation, with the minus encoding 'downhill'."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'1 volt =' → joule per coulomb, instantly. Energy questions: count charges × e × volts. Equipotential sketches: draw contours, then field lines perpendicular, pointing high→low V."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (1): one volt equals 1 joule per coulomb (MCQ). NEB 2022 (4): derive W from V and n flowing electrons. Point-charge V, equipotential properties and gradient relation rotate yearly."
+    }
+  ]
+}

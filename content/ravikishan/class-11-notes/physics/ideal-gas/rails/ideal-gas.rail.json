@@ -1,0 +1,66 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "ideal-gas",
+  "unitTitle": "Ideal Gas",
+  "unitHours": 8,
+  "syllabusTopics": [
+    "Ideal gas equation",
+    "Molecular properties of matter",
+    "Kinetic-molecular model of an ideal gas",
+    "Derivation of pressure exerted by gas",
+    "Average translational kinetic energy of gas molecule",
+    "Boltzmann constant, root mean square speed",
+    "Heat capacities of gases and solids"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Ideal Gas",
+    "title": "Kinetic theory — pressure from molecular bombardment",
+    "href": "/class-11-notes/physics",
+    "icon": "Atom",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "A gas is a swarm of tiny elastic billiard balls in random motion; pressure is just their collective hammering on the walls, and temperature is their average translational kinetic energy per molecule (½m·c²-bar = 3kT/2). The ideal gas equation PV = nRT is the macroscopic shadow of this microscopic storm. RMS speed ranks molecular speeds by energy, not by average."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "PV = nRT = NkT (R = 8.31 J/mol·K, k = 1.38×10⁻²³ J/K)  ·  P = (1/3)ρc²-bar  ·  average KE per molecule = 3kT/2 (∝ T only!)  ·  c_rms = √(3RT/M)  ·  O₂ at 27 °C (300 K): c_rms = √(3×8.31×300/0.032) ≈ 484 m/s"
+    },
+    {
+      "label": "Conditions",
+      "text": "Ideal behaviour needs point molecules, perfectly elastic collisions, no intermolecular forces, and negligible molecular volume — real gases oblige only at low pressure and high temperature. The model assumes a huge number of molecules so averages are sharp, and random isotropic motion (no bulk flow)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Average KE depends on T alone — same T, same molecular energy for every gas; RMS speed then sorts by mass (lighter = faster: H₂ outruns O₂). O₂ at 27 °C: c_rms ≈ 484 m/s (NEB 2022). Heat capacities split: Cp − Cv = R, with γ = Cp/Cv ≈ 1.4 (diatomic), 1.67 (monoatomic)."
+    },
+    {
+      "label": "Solved",
+      "text": "RMS speed of O₂ at 27 °C = 300 K, M = 0.032 kg/mol: c_rms = √(3RT/M) = √(3 × 8.31 × 300 / 0.032) = √(2.34×10⁵) ≈ 484 m/s (NEB 2022, 3 marks). Same formula with M = 0.002 gives H₂ ≈ 1930 m/s — the reason hydrogen escapes atmospheres."
+    },
+    {
+      "label": "Limitation",
+      "text": "Real gases deviate at high P (finite molecular volume) and low T (attractions matter) — van der Waals corrects both. The model ignores vibrations/rotations at room T (heat-capacity shortfalls) and quantum effects for light gases at cryogenic T. RMS ≠ mean ≠ most probable speed."
+    },
+    {
+      "label": "Derivation",
+      "text": "One molecule bouncing between walls distance L: momentum kick 2mvₓ per hit, hit rate vₓ/2L → force mvₓ²/L. Summing N molecules and averaging over isotropy (vₓ²-bar = c²-bar/3) over area L² gives P = (1/3)ρc²-bar; with ρ = Nm/V, PV = (2/3)N(½mc²-bar) = NkT, identifying temperature with molecular energy."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'State assumptions' is the 5-marker (NEB 2023 asked exactly this) — memorise: large N, point mass, elastic collisions, no forces, random motion. RMS: always kelvin, always kg/mol. KE per molecule = 3kT/2, per mole = 3RT/2."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (5): kinetic theory + its assumptions. NEB 2022 (3): rms speed of O₂ at 27 °C. NEB 2022 (4): gas at 27 °C, 10⁵ Pa, 0.5 m³ → volume at 100 °C constant pressure."
+    }
+  ]
+}

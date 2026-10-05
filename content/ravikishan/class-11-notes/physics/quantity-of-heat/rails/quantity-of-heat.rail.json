@@ -1,0 +1,64 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "quantity-of-heat",
+  "unitTitle": "Quantity of Heat",
+  "syllabusTopics": [
+    "Newton's law of cooling",
+    "Measurement of specific heat capacity of solids and liquids",
+    "Change of phases: latent heat",
+    "Specific latent heat of fusion and vaporization",
+    "Measurement of specific latent heat of fusion and vaporization",
+    "Triple point"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2024.json and 02-neb-2023.json in this unit.",
+  "card": {
+    "tag": "Quantity of Heat",
+    "title": "Specific vs latent heat — warming vs changing phase",
+    "href": "/class-11-notes/physics",
+    "icon": "CalendarCheck",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Specific heat capacity (c) is the heat per kilogram per kelvin to WARM a substance — temperature rises. Latent heat (L) is the heat per kilogram to CHANGE PHASE at constant temperature — bonds break, thermometer stalls. Newton's law of cooling (rate ∝ excess temperature) governs the approach to room temperature. The triple point is the unique (P, T) where solid, liquid and vapour coexist."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "sensible: Q = m·c·ΔT (c in J·kg⁻¹·K⁻¹)  ·  phase change: Q = m·L (fusion L_f, vaporization L_v)  ·  calorimetry: heat lost = heat gained  ·  cooling: dT/dt = −k(T − T₀)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Q = mcΔT needs no phase change in the interval and roughly constant c. Latent formulas need constant pressure and the pure substance at its transition point. Newton's law holds for small excess temperatures with convection-dominated loss. Mixture-method calorimetry assumes an isolated (no-loss) calorimeter."
+    },
+    {
+      "label": "Special cases",
+      "text": "Water's c = 4200 J/kg·K (huge — climate buffer); ice L_f = 3.34×10⁵ J/kg, steam L_v = 2.26×10⁶ J/kg (burns scald worse than boiling water at the same T). Aluminium block 200 g, 20→100 °C: Q = 0.2 × 900 × 80 = 14,400 J (NEB 2024 pattern)."
+    },
+    {
+      "label": "Solved",
+      "text": "200 g aluminium, 20 °C → 100 °C, c = 900 J/kg·K: Q = mcΔT = 0.2 × 900 × 80 = 14,400 J absorbed (NEB 2024, 3 marks). Same template with L answers 'how much ice melts' questions — just swap mcΔT for mL and hold T fixed."
+    },
+    {
+      "label": "Limitation",
+      "text": "c is not truly constant (rises with T; Dulong–Petit explains solids). Latent heat vanishes at the critical point (no phase boundary left). Newton's law fails for large ΔT (radiation ∝ T⁴ takes over) and forced convection."
+    },
+    {
+      "label": "Derivation",
+      "text": "Mixture method: hot solid (m₁, c₁, T₁) into water (m₂, c₂, T₂) reaching T: m₁c₁(T₁−T) = m₂c₂(T−T₂) + calorimeter term → solve for the unknown c. Latent-heat measurement runs the same ledger with one side as mL. Cooling law integrates to exponential decay T − T₀ = (Tᵢ−T₀)e^(−kt)."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'Heats / cools / mixes' → write the heat-lost = heat-gained ledger first. 'Melts / boils / condenses' → mL with NO ΔT. Triple point = one sentence (all three phases coexist). Units check: c in J/kg·K, L in J/kg."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (3): specific heat capacity + 200 g aluminium 20→100 °C numerical. NEB 2023 (3): latent heat — fusion vs vaporization. NEB 2023 (3): Q and c definitions + heat-to-raise-temperature formula."
+    }
+  ]
+}

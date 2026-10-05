@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "rate-of-heat-flow",
+  "unitTitle": "Rate of Heat Flow",
+  "syllabusTopics": [
+    "Conduction: thermal conductivity and measurement",
+    "Convection",
+    "Radiation: ideal radiator",
+    "Black-body radiation",
+    "Stefan-Boltzmann law"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Rate of Heat Flow",
+    "title": "Conduction to Stefan-Boltzmann — three highways of heat",
+    "href": "/class-11-notes/physics",
+    "icon": "Microscope",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Heat travels three ways: conduction (molecule-to-molecule in solids, metered by thermal conductivity K), convection (bulk fluid motion — hot rises), radiation (electromagnetic waves, no medium needed). An ideal black body absorbs and emits perfectly; its total radiated power follows Stefan-Boltzmann, E = σT⁴."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "conduction: Q/t = K·A·(ΔT)/L (K in W·m⁻¹·K⁻¹)  ·  rate of flow: joule/second = watt  ·  Stefan–Boltzmann: E = σT⁴, σ = 5.67×10⁻⁸ W·m⁻²·K⁻⁴ (T in kelvin, total power P = σAeT⁴)"
+    },
+    {
+      "label": "Conditions",
+      "text": "The conduction formula needs steady state (linear temperature gradient, no heat storage in the rod). K measurement (Searle's method) assumes one-dimensional flow with insulated sides. Stefan's law needs absolute temperature and a black (or grey, with emissivity e) surface radiating into cold surroundings."
+    },
+    {
+      "label": "Special cases",
+      "text": "Metals conduct (free electrons), gases insulate (wool, fur trap air, not heat). Heater supplying 4200 J in 4 s: rate = 1050 J/s = 1050 W (NEB 2023). Doubling absolute temperature multiplies radiated power 16× — the T⁴ leverage behind stars and furnaces."
+    },
+    {
+      "label": "Solved",
+      "text": "4200 J in 4 s → rate of heat flow = Q/t = 4200/4 = 1050 joule per second; SI unit watt (W) (NEB 2023, 3 marks). Conduction variant: same rate through a rod reads K = (Q/t)·L/(A·ΔT) — one formula, both directions."
+    },
+    {
+      "label": "Limitation",
+      "text": "Conduction's linear law breaks with large ΔT or non-steady heating. Convection resists formulas (geometry-dependent, empirical). Real bodies are grey (e < 1, wavelength-dependent); Stefan's T⁴ also demands net exchange — a body at room temperature in a room-temperature enclosure radiates and receives equally."
+    },
+    {
+      "label": "Derivation",
+      "text": "K from Searle's bar: steady heat Q/t through cross-section A over length L with end-temperatures T₁, T₂ gives K = (Q/t)·L/[A(T₁−T₂)] — measure the flow by the water calorimeter at the cold end. Stefan's law is empirical (Boltzmann derived it thermodynamically); Planck's quantum law explains it."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'Rate of heat flow' = Q/t in watts, always. Conduction questions: write K·A·ΔT/L and solve the fraction. T⁴ questions: convert to kelvin FIRST — the commonest lost mark. Black body = perfect absorber AND perfect emitter."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (3): 4200 J in 4 s — rate + SI unit. NEB 2022 (2): define rate of heat flow + formula + unit. Conduction/K-measurement and black-body/Stefan statements complete the set."
+    }
+  ]
+}

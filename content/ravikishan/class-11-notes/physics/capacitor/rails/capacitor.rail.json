@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "capacitor",
+  "unitTitle": "Capacitor",
+  "syllabusTopics": [
+    "Capacitance and capacitor",
+    "Parallel plate capacitor",
+    "Combination of capacitors",
+    "Energy of charged capacitor",
+    "Effect of a dielectric: polarization and displacement"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Capacitor",
+    "title": "C = ε₀A/d — storing charge, field and energy",
+    "href": "/class-11-notes/physics",
+    "icon": "FlaskConical",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Capacitance (C = Q/V, farad) prices a conductor's charge-holding ability per volt. A parallel-plate capacitor uniforms the field (E = σ/ε₀) between plates; series combinations share charge while parallel share voltage. Charging stores energy in the FIELD itself (½CV²), and a dielectric multiplies capacitance by polarising against the field."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "C = Q/V  ·  parallel plate: C = ε₀A/d (dielectric: ×K)  ·  series: 1/C = Σ1/Cᵢ · parallel: C = ΣCᵢ  ·  energy U = ½QV = ½CV² = Q²/2C  ·  6 μF at 100 V: U = ½×6×10⁻⁶×10⁴ = 0.03 J"
+    },
+    {
+      "label": "Conditions",
+      "text": "C = ε₀A/d needs plate dimensions ≫ separation (uniform field, negligible fringing). Series/parallel rules assume ideal wires and isolated combinations. Dielectric factor K applies to fully-filled gaps; partial filling needs series/parallel slicing of the gap."
+    },
+    {
+      "label": "Special cases",
+      "text": "1 F is enormous — real capacitors live in pF–mF. Isolated charged capacitor + dielectric insertion: Q fixed, V drops by K, energy drops (work done polarising). Battery-connected insertion: V fixed, Q and energy rise by K. Spherical/earth capacitance extends the idea beyond plates."
+    },
+    {
+      "label": "Solved",
+      "text": "Parallel-plate derivation (NEB 2023, 5 marks): E = σ/ε₀ = Q/(Aε₀); V = Ed = Qd/(Aε₀); C = Q/V = ε₀A/d. With dielectric K: C = Kε₀A/d. Energy check: 6 μF at 100 V stores ½ × 6×10⁻⁶ × 100² = 0.03 J (NEB 2022, 3 marks)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Every dielectric has a breakdown field — exceed it and the capacitor shorts. Formulas ignore edge fringing and lead inductance (fatal at high frequency). Electrolytics are polarised (DC, correct terminals only); leakage drains ideal U = ½CV² over time."
+    },
+    {
+      "label": "Derivation",
+      "text": "Gauss pillbox on one plate: E·A = Q/ε₀ → E = σ/ε₀ uniform. Potential across gap d: V = ∫E·dl = Ed. Capacitance C = Q/V = Q/(Qd/Aε₀) = ε₀A/d. Energy: charge incrementally, dW = V·dq = (q/C)dq → U = ∫₀^Q (q/C)dq = Q²/2C."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Series: same Q, voltages split, reciprocal sum (result SMALLER than smallest). Parallel: same V, charges add. Energy: pick the form matching knowns (½CV² for V-known, Q²/2C for isolated). 'Derive parallel-plate' → E, then V, then C — three lines."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (5): define capacitance + derive parallel-plate C. NEB 2022 (3): 6 μF at 100 V — stored energy. Series/parallel equivalents and dielectric-effect reasoning complete the set."
+    }
+  ]
+}

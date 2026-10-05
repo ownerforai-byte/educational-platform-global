@@ -1,0 +1,64 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "circular-motion",
+  "unitTitle": "Circular Motion",
+  "syllabusTopics": [
+    "Angular displacement, velocity and acceleration",
+    "Relation between angular and linear velocity and acceleration",
+    "Centripetal acceleration and centripetal force",
+    "Conical pendulum",
+    "Motion in a vertical circle",
+    "Applications of banking"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Circular Motion",
+    "title": "Centripetal force — the inward pull behind every turn",
+    "href": "/class-11-notes/physics",
+    "icon": "Workflow",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Circular motion is accelerated motion even at constant speed, because velocity keeps changing direction — and acceleration demands a net inward force, the centripetal force. It is not a new force but a role played by tension, friction, gravity or a normal reaction. Angular quantities (θ, ω, α) mirror linear ones through the radius: v = ωr."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "a_c = v²/r = ω²r · F_c = mv²/r  ·  v = ωr, a_t = αr  ·  ideal banking: tanθ = v²/rg  ·  conical pendulum: T·sinθ = mω²L·sinθ, T·cosθ = mg  ·  vertical circle top: v ≥ √(gr)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Uniform circular motion needs a CONSTANT-magnitude inward force — anything else adds a tangential component. The banking formula assumes no friction help (ideal design speed). A string-loop vertical circle needs enough speed at the top for tension to stay non-negative."
+    },
+    {
+      "label": "Special cases",
+      "text": "Conical pendulum: resolving tension gives ω² = g/(L·cosθ) — faster spin, wider cone. Vertical circle: tension is maximum at the bottom, minimum at the top, differing by 6mg. Banked highways let the normal reaction supply the turn so tyres do not have to."
+    },
+    {
+      "label": "Solved",
+      "text": "Flywheel r = 0.5 m at 300 rpm: 300 rev/min = 5 rev/s → ω = 2π×5 = 10π ≈ 31.4 rad/s; rim speed v = ωr ≈ 15.7 m/s (NEB 2023, 4 marks). Car turning r = 50 m at 10 m/s: ω = v/r = 0.2 rad/s, a_c = v²/r = 2 m/s² toward the centre (NEB 2022)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Centrifugal force exists only in the rotating frame — in an inertial frame there is only the inward pull, and 'being flung outward' is inertia in a straight line. Real banked roads need friction margins beyond the ideal formula, and elastic strings stretch, changing r mid-motion."
+    },
+    {
+      "label": "Derivation",
+      "text": "In Δt the velocity vector rotates by Δθ = ωΔt: the Δv triangle is similar to the displacement triangle, so Δv/v = vΔt/r → a = Δv/Δt = v²/r, directed inward (the NEB 5-marker). In calculus dress: differentiating r(cosωt î + sinωt ĵ) twice gives a = −ω²r."
+    },
+    {
+      "label": "Shortcut",
+      "text": "rpm → rad/s: multiply by 2π/60. Any 'smooth turn / banked / conical' question: resolve vertically (balances weight) and horizontally (provides mv²/r) — two equations, done. Vertical circle: check the top first with v² ≥ gr."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (5): define centripetal acceleration and derive its expression. NEB 2023 (4): flywheel numerical above. NEB 2022 (3–4): car-turn and satellite-orbit (600 km altitude) applications."
+    }
+  ]
+}

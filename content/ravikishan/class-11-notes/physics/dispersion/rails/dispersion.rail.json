@@ -1,0 +1,61 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "dispersion",
+  "unitTitle": "Dispersion",
+  "syllabusTopics": [
+    "Pure spectrum and dispersive power",
+    "Chromatic and spherical aberration",
+    "Achromatism and its applications"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Dispersion",
+    "title": "Why prisms paint rainbows — dispersive power",
+    "href": "/class-11-notes/physics",
+    "icon": "Highlighter",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Refractive index falls with wavelength (Cauchy: μ = A + B/λ²), so violet bends more than red and white light fans into VIBGYOR — dispersion. A PURE spectrum has no gaps or overlaps (achieved with proper slit + collimation). The same μ(λ) shifts every lens focus by colour (chromatic aberration) and spherical surfaces blur marginal rays (spherical aberration); cementing crown + flint glass cancels colour error — achromatism."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Cauchy: μ = A + B/λ² (μ_violet > μ_red)  ·  dispersive power ω = (μ_v − μ_r)/(μ_y − 1)  ·  angular dispersion = δ_v − δ_r  ·  achromatic doublet: ω₁/F₁ + ω₂/F₂ = 0 (opposite lenses, balanced powers)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Dispersion analysis needs the prism near minimum deviation per colour (else geometry muddies the physics). Pure spectrum demands a narrow slit, collimated beam and clean optics. Achromatism cancels TWO wavelengths exactly (usually red/blue) — the rest (secondary spectrum) only shrinks."
+    },
+    {
+      "label": "Special cases",
+      "text": "Rainbow: dispersion + TIR + refraction inside droplets. Flint glass disperses ~2× crown — hence the doublet pairing. Newton recombined the spectrum with a second inverted prism, proving white light is composite, not prism-stained. Camera lenses stack 5+ elements to tame both aberrations."
+    },
+    {
+      "label": "Solved",
+      "text": "Why does white light split in glass? Each colour carries its own μ (Cauchy), so Snell's bend differs per wavelength: violet (short λ, high μ) deviates most, red least — the prism sorts light by wavelength into seven bands (NEB 2022, 3 marks). No new physics beyond μ(λ) + refraction."
+    },
+    {
+      "label": "Limitation",
+      "text": "Cauchy's formula is empirical (fails near absorption bands — anomalous dispersion). A doublet achromatises two colours, never all. Spherical aberration needs aspheric surfaces or stops, not just glass choice — colour and shape errors are independent enemies."
+    },
+    {
+      "label": "Derivation",
+      "text": "Prism deviation δ ≈ (μ−1)A (small angle) differs per colour: angular spread = (μ_v − μ_r)A. Dividing by mean deviation (μ_y−1)A isolates the material property ω = (μ_v−μ_r)/(μ_y−1) — geometry cancels, leaving pure dispersive power. Doublet condition follows from zeroing total spread: ω₁δ₁ + ω₂δ₂ = 0 with opposite lens signs."
+    },
+    {
+      "label": "Shortcut",
+      "text": "VIBGYOR order = decreasing deviation = decreasing μ: violet bends most. 'Why disperse?' → one line: μ depends on λ. Achromatism = crown convex + flint concave cemented, powers in inverse ω ratio."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2022 (3): what is dispersion + why white light splits into seven colours in glass. NEB 2023 (4): derive i–e–A–δ relation through a prism. Dispersive power definition and achromatism applications round it out."
+    }
+  ]
+}

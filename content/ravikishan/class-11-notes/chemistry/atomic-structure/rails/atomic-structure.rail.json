@@ -1,0 +1,67 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "atomic-structure",
+  "unitTitle": "Atomic Structure",
+  "syllabusTopics": [
+    "Rutherford's atomic model and its limitations",
+    "Postulates of Bohr's atomic model and its application",
+    "Spectrum of hydrogen atom",
+    "Defects of Bohr's theory",
+    "Elementary idea of quantum mechanical model: de Broglie's wave equation",
+    "Heisenberg's Uncertainty Principle and concept of probability",
+    "Quantum numbers",
+    "Orbitals and shape of s and p orbitals only",
+    "Aufbau principle, Pauli's exclusion principle, Hund's rule and electronic configurations of atoms and ions (up to atomic no. 30)"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2024.json and 02-neb-2023.json in this unit.",
+  "card": {
+    "tag": "Atomic Structure",
+    "title": "Quantum numbers — the address of every electron",
+    "href": "/class-11-notes/chemistry",
+    "icon": "Atom",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Rutherford found the nucleus but his orbiting electrons should radiate and crash; Bohr quantised angular momentum (mvr = nh/2π) and explained hydrogen's lines, but failed beyond it. The quantum model replaces orbits with probability orbitals: four quantum numbers (n, l, mₗ, mₛ) address each electron, filled by Aufbau (lowest energy first), Pauli (one address per electron) and Hund (singly before pairing, parallel spins)."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Bohr: mvr = nh/2π · Eₙ = −13.6/n² eV (H)  ·  de Broglie λ = h/mv  ·  Δx·Δp ≥ h/4π  ·  n: 1..∞ · l: 0..n−1 (s,p,d,f) · mₗ: −l..+l · mₛ: ±½  ·  filling: 1s 2s 2p 3s 3p 4s 3d 4p…"
+    },
+    {
+      "label": "Conditions",
+      "text": "Bohr works for single-electron species only (H, He⁺, Li²⁺). Quantum numbers obey their ranges strictly (l < n; |mₗ| ≤ l). Aufbau ordering holds to Z = 30 for this syllabus — with the famous Cr/Cu exceptions safely beyond it. Heisenberg limits joint precision, never single measurements."
+    },
+    {
+      "label": "Special cases",
+      "text": "Sodium's valence electron (Z = 11, …3s¹): n = 3, l = 0, mₗ = 0, mₛ = +½ (NEB 2024). The set n = 3, l = 1, mₗ = +2 is IMPOSSIBLE (|mₗ| > l) — the NEB 2023 validity question. s orbitals are spheres, p orbitals dumbbells along x/y/z."
+    },
+    {
+      "label": "Solved",
+      "text": "Na (Z = 11): configuration 1s²2s²2p⁶3s¹ → valence electron n = 3 (third shell), l = 0 (s), mₗ = 0, mₛ = +½ (NEB 2024, 3 marks). Validity check: n = 3, l = 1, mₗ = +2 fails because mₗ = +2 exceeds l = 1 (NEB 2023, 2 marks)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Bohr cannot split lines in magnetic fields (Zeeman), handle multi-electron repulsion, or explain fine structure — the quantum model replaces it, keeping only quantised energy. Heisenberg is fundamental indeterminacy, not instrument clumsiness. de Broglie waves show measurably only for tiny masses (electrons, not cricket balls)."
+    },
+    {
+      "label": "Derivation",
+      "text": "Bohr: centripetal mv²/r = kZe²/r² plus mvr = nh/2π → eliminate v → rₙ = n²h²/(4π²mkZe²), Eₙ = −2π²mk²Z²e⁴/(n²h²) = −13.6Z²/n² eV. Differences ΔE = E₂−E₁ = hν generate the Lyman/Balmer/Paschen series — each line a quantum jump made visible."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Quantum-number validity: check l < n first, then |mₗ| ≤ l — two inequalities kill most MCQ options. Filling order chant: 1s 2s 2p 3s 3p 4s 3d. Aufbau example: always show the diagonal/Box diagram for full marks (NEB 2023 asked exactly this)."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (3): four quantum numbers of Na's valence electron. NEB 2023 (3): Aufbau principle with example. NEB 2023 (2): which given quantum-number sets are valid. Bohr postulates + hydrogen spectrum rotate yearly."
+    }
+  ]
+}

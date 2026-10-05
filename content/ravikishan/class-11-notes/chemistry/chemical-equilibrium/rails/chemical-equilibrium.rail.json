@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "chemical-equilibrium",
+  "unitTitle": "Chemical Equilibrium",
+  "syllabusTopics": [
+    "Physical and chemical equilibrium; dynamic nature of chemical equilibrium",
+    "Law of mass action",
+    "Expression for equilibrium constant and its importance",
+    "Relationship between Kp and Kc",
+    "Le Chatelier's Principle (numericals not required)"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2024.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Equilibrium",
+    "title": "Le Chatelier — the stressed equilibrium fights back",
+    "href": "/class-11-notes/chemistry",
+    "icon": "PenLine",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Equilibrium is DYNAMIC — forward and reverse reactions race on at equal speed, so concentrations freeze while molecules never rest. The mass-action ratio at that freeze is K (Kc in concentrations, Kp in partial pressures). Le Chatelier predicts the pushback: disturb the system (concentration, pressure, temperature) and it shifts to undo the disturbance."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Kc = [products]^p/[reactants]^r (equilibrium only!)  ·  Kp = Kc·(RT)^Δn  ·  N₂ + 3H₂ ⇌ 2NH₃: Kc = [NH₃]²/([N₂][H₂]³); Kc = 0.5 with [N₂] = 1.0, [H₂] = 0.5 → [NH₃] = √(0.5×1×0.125) = 0.25 M"
+    },
+    {
+      "label": "Conditions",
+      "text": "K is constant at CONSTANT temperature only — a new T means a new K. Pure solids/liquids vanish from K expressions (activity 1). Le Chatelier predicts DIRECTION, never speed (catalysts: no shift, faster arrival). Q vs K decides the shift: Q < K moves right."
+    },
+    {
+      "label": "Special cases",
+      "text": "N₂ + 3H₂ ⇌ 2NH₃ (4 gas moles → 2): raising pressure shifts RIGHT toward fewer moles (NEB 2024). N₂O₄ ⇌ 2NO₂ (ΔH = +57 kJ): heating shifts right (endothermic direction), cooling left (NEB 2022). Catalyst: reaches the same K faster — position untouched."
+    },
+    {
+      "label": "Solved",
+      "text": "Kc = 0.5 for ammonia synthesis, [N₂] = 1.0 M, [H₂] = 0.5 M at equilibrium: 0.5 = [NH₃]²/(1.0 × 0.125) → [NH₃]² = 0.0625 → [NH₃] = 0.25 M (NEB 2024, 3-mark pattern). Exponents mirror coefficients — the commonest mark-trap."
+    },
+    {
+      "label": "Limitation",
+      "text": "Le Chatelier is qualitative and occasionally fooled (complex multi-equilibrium systems, inert-gas addition at constant volume does nothing). K says nothing about HOW FAST (diamond is 'unstable' to graphite forever). Pressure shifts need Δn(gas) ≠ 0 — equal-mole reactions ignore pressure."
+    },
+    {
+      "label": "Derivation",
+      "text": "At equilibrium forward rate = reverse rate: kf[A]^a[B]^b = kr[C]^c[D]^d → K = kf/kr = products/reactants — the mass-action expression falls out of kinetics. Gas form: substitute Pᵢ = [i]RT per species → Kp = Kc(RT)^Δn with Δn = (product − reactant) gas moles."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Shift checklist: concentration (add → consume it), pressure (toward fewer gas moles), temperature (toward the heat-absorbing side), catalyst (no effect). Δn first, arrows second. Kc expressions: coefficients become exponents, solids/liquids deleted."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (3): Le Chatelier + pressure effect on N₂ + 3H₂ ⇌ 2NH₃. NEB 2024 (3): Kc = 0.5 numerical above. NEB 2022 (3): N₂O₄ ⇌ 2NO₂ (ΔH = +57 kJ) — T/P/concentration effects."
+    }
+  ]
+}

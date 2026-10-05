@@ -1,0 +1,60 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "reflection-at-curved-mirror",
+  "unitTitle": "Reflection at Curved Mirror",
+  "syllabusTopics": [
+    "Real and virtual images",
+    "Mirror formula"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Curved Mirrors",
+    "title": "Mirror formula — where concave mirrors put images",
+    "href": "/class-11-notes/physics",
+    "icon": "Network",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "A concave mirror converges parallel rays to its focus (f = R/2); convex always diverges. Real images form where rays actually meet (projectable on screen); virtual images where reflected rays only SEEM to meet behind the mirror (erect, unprojectable). Position decides everything: beyond C → diminished real between F and C; at F → image at infinity."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "1/f = 1/v + 1/u (Cartesian: distances from pole, incident light left-to-right)  ·  f = R/2  ·  magnification m = −v/u = h_image/h_object (− = inverted real, + = erect virtual)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Paraxial rays only (near the principal axis) — wide beams suffer spherical aberration and the formula blurs. Sign convention must stay consistent through the whole solution (Cartesian recommended: u negative for real objects, f negative for concave)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Object at F of a concave mirror → reflected rays parallel → image at infinity (torch/searchlight principle, NEB 2023). Object at C → image at C, same size, inverted. Convex mirror: image always virtual, erect, diminished, between P and F (vehicle mirrors)."
+    },
+    {
+      "label": "Solved",
+      "text": "Object 30 cm before a concave mirror, f = 10 cm (Cartesian: u = −30, f = −10): 1/v = 1/f − 1/u = −1/10 + 1/30 = −2/30 → v = −15 cm — real image 15 cm in front; m = −v/u = −(−15)/(−30) = −0.5: inverted, halved (NEB 2022, 4 marks)."
+    },
+    {
+      "label": "Limitation",
+      "text": "The formula is a paraxial approximation — large apertures need parabolic mirrors. It locates the image but says nothing about brightness or aberrations. Sign-convention slips (mixing real-is-positive with Cartesian) are the top mark-killer, not physics."
+    },
+    {
+      "label": "Derivation",
+      "text": "From two similar-triangle pairs (object/image heights against pole, and against focus): hᵢ/hₒ = v/u and hᵢ/hₒ = (v−f)/f for concave → v/u = (v−f)/f → vf = uv − uf → divide by uvf: 1/f = 1/v + 1/u. The focus-at-infinity case drops out: u = f makes 1/v = 0."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Memorise the six object positions and their images (infinity→F; beyond C→F–C diminished; C→C same; F–C→beyond C magnified; F→infinity; P–F→behind, erect magnified). Sign first, numbers second — fix Cartesian signs before touching the calculator."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (3): why an object at F images at infinity + what happens at C. NEB 2022 (4): 30 cm object, f = 10 cm concave — image position, magnification, nature. Real-vs-virtual differentiation repeats."
+    }
+  ]
+}

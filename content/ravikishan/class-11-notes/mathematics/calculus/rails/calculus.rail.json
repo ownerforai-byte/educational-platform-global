@@ -1,0 +1,65 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "mathematics",
+  "unitSlug": "calculus",
+  "unitTitle": "Calculus",
+  "unitHours": 12,
+  "syllabusTopics": [
+    "Limits of a function",
+    "Continuity",
+    "Derivatives and rules of differentiation",
+    "Applications of derivatives",
+    "Anti-derivatives and indefinite integrals",
+    "Definite integrals and area under curve"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05 from concepts/limits-intro.json (notes, confusion, formulas, practiceQuestions) in this same unit; board row quotes that file's practice bank, no fabricated paper citation.",
+  "card": {
+    "tag": "Calculus · Limits",
+    "title": "Limits — what a function approaches, not what it equals",
+    "href": "/class-11-notes/mathematics",
+    "icon": "Sigma",
+    "statKey": "pyq:mathematics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "lim(x→a) f(x) = L means f(x) gets arbitrarily close to L as x closes in on a — from either side, and crucially without ever requiring x = a. The point itself may be undefined and the limit still exist, which is why (x²−4)/(x−2), undefined at 2, still has limit 4. A speedometer shows a limit: average velocity over a shrinking interval."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "ε–δ: |f(x)−L|<ε whenever 0<|x−a|<δ (the 0< excludes the point itself)  ·  two-sided exists ⟺ lim(x→a⁻) = lim(x→a⁺) = L, finite  ·  standard: lim(x→0) sinx/x = 1 (radians only)  ·  signals, not answers: 0/0, ∞/∞, ∞−∞, 0·∞, 1^∞, 0^0, ∞^0"
+    },
+    {
+      "label": "Conditions",
+      "text": "Always substitute first; rewrite only when substitution fails with an indeterminate form. The two-sided limit demands both one-sided limits exist AND agree — equal-but-different, or −∞/+∞ splits, mean no limit. Infinity is shorthand for unbounded growth, never a value."
+    },
+    {
+      "label": "Special cases",
+      "text": "A jump discontinuity kills the two-sided limit (left ≠ right). Opposite-sign one-sided infinities mark a vertical asymptote; a finite limit at infinity marks a horizontal one (dominant-term rule). A 0/0 hole like (x²−4)/(x−2) is removable — factor, cancel, then substitute."
+    },
+    {
+      "label": "Solved",
+      "text": "lim(x→4) (x²−16)/(x−4): direct substitution gives 0/0, so factorise → (x−4)(x+4)/(x−4). Near (not at) x = 4 the factor cancels, leaving lim(x→4) (x+4) = 8. Contrast lim(x→5) (x−2)/(x−5): no 0/0, but the point itself is undefined — one-sided infinities, vertical asymptote, no limit."
+    },
+    {
+      "label": "Limitation",
+      "text": "Writing 'lim = ∞' as a result is wrong — divergence reports unboundedness, not a value. A limit is not continuity: continuity additionally needs f(a) defined and equal to the limit. sinx/x = 1 holds in radians only; in degrees the limit is π/180."
+    },
+    {
+      "label": "Derivation",
+      "text": "Why cancelling is legal: 0<|x−4| in the ε–δ definition excludes x = 4 itself, so (x−4)/(x−4) = 1 everywhere the limit examines, and (x²−16)/(x−4) coincides with x+4 on that punctured neighbourhood. Equal functions on the examined set share the limit — hence 8, rigorously, not by luck."
+    },
+    {
+      "label": "Shortcut",
+      "text": "0/0 → factor and cancel; ∞/∞ → divide by the highest power; roots → multiply by the conjugate; trig → force sinx/x. For asymptotes check one-sided signs, not just magnitudes. And the derivative itself is a limit — f′(x) = lim(h→0) [f(x+h)−f(x)]/h — so every differentiation rule rests on this card."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style (unit practice bank): state the ε–δ definition and explain why 0<|x−a| appears; evaluate lim(x→4)(x²−16)/(x−4) and lim(x→5)(x−2)/(x−5), stating which is undefined at the point; find the horizontal and vertical asymptotes of y = (2x+1)/(x²−4)."
+    }
+  ]
+}

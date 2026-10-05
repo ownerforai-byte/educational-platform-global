@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "kinematics",
+  "unitTitle": "Kinematics",
+  "syllabusTopics": [
+    "Instantaneous velocity and acceleration",
+    "Relative velocity",
+    "Equation of motion (graphical treatment)",
+    "Motion of a freely falling body",
+    "Projectile motion and its applications"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2024.json and 02-neb-2023.json in this unit.",
+  "card": {
+    "tag": "Kinematics",
+    "title": "Projectile motion — two independent motions, one parabola",
+    "href": "/class-11-notes/physics",
+    "icon": "PenLine",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Horizontal motion (no acceleration, ignoring air) and vertical motion (constant g downward) proceed independently — a projectile is just uniform x-motion stapled to accelerated y-motion, and the staple traces a parabola. Instantaneous velocity/acceleration are the slopes of the x–t and v–t graphs; relative velocity is vector subtraction (velocity of A as seen from B = vA − vB)."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "v = u + at · s = ut + ½at² · v² = u² + 2as  ·  projectile: T = 2u·sinθ/g · H = u²sin²θ/2g · R = u²sin2θ/g (max at 45°)  ·  free fall: t = √(2h/g), v = √(2gh)"
+    },
+    {
+      "label": "Conditions",
+      "text": "The three motion equations demand UNIFORM acceleration — switch to graphs or calculus the moment a varies. Projectile formulas assume launch and landing at the same height, negligible air resistance, and g constant (9.8 or 10 m/s² as the question states)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Free fall is projectile with u = 0 straight down. Complementary angles (θ and 90°−θ) give identical range. At 45° the range is maximum, u²/g. Relative velocity flips sign with the observer: a rain appearing vertical to a moving cyclist is actually slanted."
+    },
+    {
+      "label": "Solved",
+      "text": "Stone dropped from 200 m, g = 10 m/s²: h = ½gt² gives t = √(2·200/10) = √40 ≈ 6.3 s; impact velocity v = gt ≈ 63 m/s downward (NEB 2023, 3 marks). Same template solves the car: v = u + at = 10 + 2·4 = 18 m/s, s = 10·4 + ½·2·16 = 56 m."
+    },
+    {
+      "label": "Limitation",
+      "text": "Real projectiles meet air drag, so the trajectory is asymmetric and the range falls short of u²sin2θ/g — the formula is a vacuum idealisation. The equations say nothing about forces (that is dynamics), and relative-velocity reasoning must stay inside inertial frames to feed Newton's laws."
+    },
+    {
+      "label": "Derivation",
+      "text": "Write x = u·cosθ·t and y = u·sinθ·t − ½gt². Set y = 0 for landing: t(usinθ − ½gt) = 0 → T = 2usinθ/g. Substitute into x: R = ucosθ·2usinθ/g = u²·2sinθcosθ/g = u²sin2θ/g. Peak height follows from vy = 0 → t = usinθ/g in the y-equation."
+    },
+    {
+      "label": "Shortcut",
+      "text": "See 'maximum range' → write 45° instantly. See complementary angles → equal range, no calculation. Free-fall numbers: memorize t = √(2h/g), v = √(2gh). v–t graph area = displacement, slope = acceleration — faster than formulas for multi-stage motion."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (3): stone dropped from 200 m — time to ground and impact velocity (g = 10). NEB 2023 (3): car at 10 m/s, a = 2 m/s² for 4 s — final velocity and distance. NEB 2024 (2): define position, velocity and acceleration."
+    }
+  ]
+}

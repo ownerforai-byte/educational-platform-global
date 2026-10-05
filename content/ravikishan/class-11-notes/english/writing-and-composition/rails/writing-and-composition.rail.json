@@ -1,0 +1,72 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "english",
+  "unitSlug": "writing-and-composition",
+  "unitTitle": "Writing and Composition",
+  "syllabusTopics": [
+    "Essay Writing — argumentative, descriptive, narrative, expository",
+    "Paragraph Writing",
+    "Formal Letter Writing — editor, application, complaint, inquiry",
+    "Informal Letter Writing",
+    "Email Writing",
+    "Report Writing and Summarisation",
+    "Article Writing",
+    "Story Writing",
+    "Speech Writing",
+    "Dialogue Writing",
+    "Review Writing — book and film",
+    "Summary and Note-making",
+    "Comprehension and Unseen Passage",
+    "Grammar for Writing — sentences, clauses, punctuation"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit, plus the writing/ alias bank.",
+  "card": {
+    "tag": "Writing",
+    "title": "Essays and letters — architecture that carries marks",
+    "href": "/class-11-notes/english",
+    "icon": "PenLine",
+    "statKey": "pyq:english"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Every composition is architecture: essays (250 words, 10 marks) run introduction → thesis → 2–3 developed paragraphs → conclusion; formal letters run sender → date → receiver → subject → salutation → 3-paragraph body → subscription; notices answer what/when/where/who in a box; dialogues alternate speakers with personality intact. Examiners pay for structure, relevance, vocabulary range and accuracy — in that order."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "essay: hook + thesis → PEE paragraphs (Point, Evidence, Explain) → verdict  ·  formal letter: address/date/address/subject/Sir/body×3/Yours faithfully  ·  notice: title + WHAT + WHEN + WHERE + WHO + contact, ~50 words  ·  dialogue: name-colon turns, kept on one topic"
+    },
+    {
+      "label": "Conditions",
+      "text": "Word limits bind (250-word essay, 100–120-word paragraph, dialogue sustained but bounded) — overshooting wastes time, undershooting loses content marks. Formal register only for formal tasks (no contractions, no slang). Every required detail (health-camp date, venue, contact) must appear — missing one caps the score."
+    },
+    {
+      "label": "Special cases",
+      "text": "'Importance of Reading Books' (NEB 2023, 10 marks): thesis (reading builds mind and language) → paragraphs (knowledge, empathy, language) → verdict. Pokhara excursion letter to a friend (NEB 2022, 10 marks): informal warmth, chronological scenes. Librarian dialogue (NEB 2022, 5 marks): stay on the reserved-book grievance, polite persistence. Health-camp notice (alias bank 2023, 5 marks): all five W-details boxed."
+    },
+    {
+      "label": "Solved",
+      "text": "Health-camp notice skeleton: FREE HEALTH CAMP (title) → organised by [school], on [date] at [venue], for [whom] — services listed → contact [name/room]. Five details, fifty words, box drawn. Same checklist method builds the excursion letter (who/when/where/sights/feeling) and the paragraph (topic sentence → causes → effects → closer)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Templates organise but cannot invent content — empty essays fail regardless of shape. Memorised essays misfire on unseen titles (adapt, don't paste). Over-formality in informal letters and over-familiarity in formal ones both bleed register marks."
+    },
+    {
+      "label": "Derivation",
+      "text": "From the mark scheme backward: content (relevance + development) + organisation (paragraphing + cohesion) + language (range + accuracy) → each body paragraph earns its keep with one idea fully developed (PEE), transitions stitch paragraphs, and the conclusion answers 'so what?' — the grader's checklist becomes the writer's outline."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Plan 3 minutes, write to the plan. Essay: thesis first, then paragraphs that prove it. Letters: format memorised cold (losing format marks is free bleeding). Dialogue: voices distinct, topic single. Notice: five W-details, box it."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (10): essay on 'Importance of Reading Books' (~250 words). NEB 2022 (10): friend letter — Pokhara excursion. NEB 2022 (5): student–librarian dialogue. Alias bank 2023 (5): health-camp notice; 2021 (4): mobile-phones paragraph."
+    }
+  ]
+}

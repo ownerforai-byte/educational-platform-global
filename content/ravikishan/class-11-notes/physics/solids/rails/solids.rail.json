@@ -1,0 +1,61 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "solids",
+  "unitTitle": "Solids",
+  "syllabusTopics": [
+    "Energy bands in solids (qualitative ideas)",
+    "Difference between metals, insulators and semiconductors using band theory",
+    "Intrinsic and extrinsic semiconductors"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
+  "card": {
+    "tag": "Solids",
+    "title": "Band theory — why metals conduct and glass does not",
+    "href": "/class-11-notes/physics",
+    "icon": "BookOpen",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Crowded atoms split their energy levels into BANDS: filled valence band below, empty conduction band above, separated by a gap Eg. Metals have overlapping bands (free highway), insulators a ~5 eV+ chasm (no crossing), semiconductors a ~1 eV gap crossable by heat or light. Pure (intrinsic) silicon conducts feebly; doping (extrinsic) donates electrons (n-type, pentavalent) or holes (p-type, trivalent) — the entire electronics age in one paragraph."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "gap ladder: metals Eg ≈ 0 (overlap) · semiconductors Eg ~ 1 eV (Si 1.1, Ge 0.7) · insulators Eg ≳ 5 eV  ·  conductivity σ = n·e·μ (carriers × charge × mobility)  ·  holes behave as +e carriers moving opposite to electrons"
+    },
+    {
+      "label": "Conditions",
+      "text": "Band pictures assume crystalline periodicity (amorphous solids smear the edges). Intrinsic conduction needs enough kT to bridge Eg — at absolute zero even semiconductors insulate. Doping helps only at dilute levels (~1 in 10⁶); heavy doping turns degenerate (metallic)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Intrinsic carrier = thermally generated electron–hole pair. Forward-biased p–n junction floods carriers across (conducts); reverse bias strips them (blocks) — rectification. NEB 2022's elastic-vs-plastic 2-marker sits in this unit's bank as the odd one out — answer by deformation recovery, not bands."
+    },
+    {
+      "label": "Solved",
+      "text": "Classify by gap: overlapping bands → metal (copper conducts at any T); 1.1 eV gap → silicon (conducts when heated/illuminated, dopable both ways); 9 eV gap → diamond (insulator despite being pure carbon). Same element family, three behaviours — gap size decides (NEB 2023, 5-mark pattern)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Qualitative bands predict WHO conducts, not HOW WELL (mobility needs scattering theory). The rigid-band picture strains under heavy doping and strong fields. Superconductors (zero resistance below Tc) lie completely outside band logic — Cooper pairs, not free carriers."
+    },
+    {
+      "label": "Derivation",
+      "text": "N atoms → each atomic level splits into N sub-levels (Pauli), merging into quasi-continuous bands; the Fermi level marks the top filled state at 0 K. Metals: Fermi level inside a band (half-empty highway). Semiconductors: Fermi in the gap, with thermal tail n ∝ e^(−Eg/2kT) spilling carriers across — the exponential behind every thermistor."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'Explain band theory + differentiate the three' is the 5-marker — draw the three band diagrams (overlap / small gap / huge gap) and the answer writes itself. n-type = pentavalent donor, p-type = trivalent acceptor; intrinsic = pure + thermal pairs."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (5): band theory + metals/insulators/semiconductors differentiation. NEB 2022 (2): intrinsic semiconductor + electrons/holes as carriers. NEB 2022 (2): elastic vs plastic body."
+    }
+  ]
+}

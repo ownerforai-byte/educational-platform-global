@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "dynamics",
+  "unitTitle": "Dynamics",
+  "syllabusTopics": [
+    "Linear momentum, impulse",
+    "Conservation of linear momentum",
+    "Application of Newton's laws",
+    "Moment, torque and equilibrium",
+    "Solid friction: laws of solid friction and their verifications"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2024.json and 02-neb-2023.json in this unit.",
+  "card": {
+    "tag": "Dynamics",
+    "title": "Friction and momentum — where Newton's laws earn marks",
+    "href": "/class-11-notes/physics",
+    "icon": "GitBranch",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Force changes momentum (F = dp/dt, or F = ma at constant mass). In an isolated system total momentum never changes — recoil, collisions and explosions are all bookkeeping of one conserved ledger. Friction opposes relative motion or its imminence: static friction self-adjusts up to a ceiling, kinetic friction stays roughly constant once sliding."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "F = ma = dp/dt · J = F·Δt = Δp (impulse)  ·  static f ≤ μs·N, kinetic f = μk·N, μs > μk  ·  limiting f = μs·N  ·  equilibrium: ΣF = 0 and Στ = 0, τ = r × F"
+    },
+    {
+      "label": "Conditions",
+      "text": "Newton's laws hold in inertial frames only. Momentum conservation needs zero net EXTERNAL force — internal forces (collisions, friction between parts) cannot change the total. Static friction matches the applied push exactly until the limiting value; beyond it, motion starts and kinetic takes over."
+    },
+    {
+      "label": "Special cases",
+      "text": "Action–reaction pairs never act on the same body, so they never cancel in a free-body diagram. A gun recoils because the bullet's forward momentum must be balanced. Moment equilibrium (τ clockwise = τ anticlockwise) decides see-saws, beams and hinges alongside force balance."
+    },
+    {
+      "label": "Solved",
+      "text": "5 kg block, μs = 0.4 on a horizontal plane: normal N = mg = 49 N, limiting friction = μs·N = 0.4 × 49 = 19.6 N. Any push below 19.6 N is matched silently by static friction; 19.6 N is the minimum to start motion (NEB 2023, 3 marks)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Newton breaks at near-light speeds (relativity) and atomic scales (quantum), and in accelerating frames unless pseudo-forces are added. Friction 'laws' are empirical approximations: μ depends on surface pair and condition, and the area-independence holds only approximately."
+    },
+    {
+      "label": "Derivation",
+      "text": "From F = dp/dt with constant m: F = m·dv/dt = ma. Integrate over impact time: ∫F·dt = Δ(mv) = impulse-momentum theorem — the same statement behind airbags (long Δt, small F). For recoil: 0 = m_bullet·v + M_gun·V → V = −(m/M)v, momentum conserved from rest."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Always draw the free-body diagram first; friction points opposite the impending (not actual) motion. 'Smooth' means f = 0 — strike friction out. μs > μk always; if a question gives one μ, check which regime applies before multiplying."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (3): state Newton's three laws with one example each. NEB 2023 (3): 5 kg block, μs = 0.4 — horizontal force to start it sliding. Friction-vs-applied-force graph and moment-equilibrium numericals repeat most years."
+    }
+  ]
+}
