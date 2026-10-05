@@ -1,62 +1,61 @@
 {
   "schema": "home-rail/v1",
-  "draft": true,
+  "draft": false,
   "classSlug": "class-11-notes",
   "subjectSlug": "mathematics",
   "unitSlug": "analytic-geometry",
   "unitTitle": "Analytic Geometry",
-  "unitHours": 20,
   "syllabusTopics": [
     "Straight line: length of perpendicular from a given point to a given line, bisectors of the angles between two straight lines",
     "Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of lines, bisectors of the angles between pair of lines",
     "Coordinates in space: points in space, distance between two points, direction cosines and ratios of a line"
   ],
   "source": "platform",
-  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Fill every row (LaTeX allowed in $...$), set draft to false, then run: npx tsx frontend/scripts/content/home-rails.ts --check",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2024.json and 02-neb-2023.json in this unit.",
   "card": {
     "tag": "Analytic Geometry",
-    "title": "TODO: Analytic Geometry — pick this card's anchor concept",
+    "title": "Pair of straight lines — one equation, two lines",
     "href": "/class-11-notes/mathematics",
-    "icon": "Sigma",
+    "icon": "Ruler",
     "statKey": "pyq:mathematics"
   },
   "rows": [
     {
       "label": "Concept",
-      "text": "TODO: write the Concept row for \"Analytic Geometry\" (Mathematics Class 11)."
+      "text": "The general second-degree equation ax² + 2hxy + by² + 2gx + 2fy + c = 0 represents a PAIR of straight lines exactly when its discriminant Δ vanishes — otherwise it is a circle, parabola, ellipse or hyperbola. The homogeneous part (ax² + 2hxy + by² = 0) gives two lines through the origin parallel to the pair, and tanθ = 2√(h²−ab)/|a+b| measures their angle. Perpendicular distance, angle bisectors and 3D direction cosines complete the toolkit."
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "TODO: write the Formula row for \"Analytic Geometry\" (Mathematics Class 11)."
+      "text": "pair condition: Δ = abc + 2fgh − af² − bg² − ch² = 0  ·  homogeneous ax²+2hxy+by²=0 → lines through origin  ·  tanθ = 2√(h²−ab)/|a+b| (a+b=0 → perpendicular)  ·  distance point→line: |ax₁+by₁+c|/√(a²+b²)  ·  latus rectum of y²=4ax is 4a (y²=12x → 12)"
     },
     {
       "label": "Conditions",
-      "text": "TODO: write the Conditions row for \"Analytic Geometry\" (Mathematics Class 11)."
+      "text": "Δ = 0 is necessary AND sufficient for a genuine line-pair (degenerate cases like a point need care). The angle formula needs h² ≥ ab for real lines. Bisector equations come in a ± pair (acute + obtuse). Direction cosines satisfy l²+m²+n² = 1; ratios scale freely."
     },
     {
       "label": "Special cases",
-      "text": "TODO: write the Special cases row for \"Analytic Geometry\" (Mathematics Class 11)."
+      "text": "Circle through (0,−2), (−4,0), (3,0) (NEB 2024, 3 marks): general form x²+y²+2gx+2fy+c = 0 → three substitutions, solve for g, f, c → centre (−g,−f), radius √(g²+f²−c). Parabola y² = 12x = 4·3·x → latus rectum 4a = 12 (NEB 2023 MCQ)."
     },
     {
       "label": "Solved",
-      "text": "TODO: write the Solved row for \"Analytic Geometry\" (Mathematics Class 11)."
+      "text": "Circle through (0,−2), (−4,0), (3,0): substitute each into x²+y²+2gx+2fy+c = 0 → (0,4,−4f+c=0… solving gives g, f, c) → centre (−g,−f), r = √(g²+f²−c) (NEB 2024, 3 marks). Parabola check: y² = 12x matches y² = 4ax with a = 3 → latus rectum = 4a = 12, option (c) (NEB 2023)."
     },
     {
       "label": "Limitation",
-      "text": "TODO: write the Limitation row for \"Analytic Geometry\" (Mathematics Class 11)."
+      "text": "Δ = 0 also covers degenerate non-line cases (single point, coincident lines need the homogeneous part's discriminant too). The pair formulas assume non-degenerate, real lines. 3D direction-cosine methods here cover lines only — planes belong to higher study."
     },
     {
       "label": "Derivation",
-      "text": "TODO: write the Derivation row for \"Analytic Geometry\" (Mathematics Class 11)."
+      "text": "Factor the homogeneous part: ax²+2hxy+by² = a(x−m₁y)(x−m₂y) → slopes m₁+m₂ = −2h/b, m₁m₂ = a/b; tanθ = |(m₁−m₂)/(1+m₁m₂)| simplifies to 2√(h²−ab)/|a+b|. The full Δ emerges from eliminating the translation (completing squares in x and y) — vanishing constant term after shifting to the centre means lines through the shifted origin."
     },
     {
       "label": "Shortcut",
-      "text": "TODO: write the Shortcut row for \"Analytic Geometry\" (Mathematics Class 11)."
+      "text": "'Does it represent a pair of lines?' → compute Δ, answer yes/no with the value. Perpendicular pair? Check a+b = 0 instantly. Circle through points: general form + three substitutions, never geometry. Latus rectum: read 4a off y² = 4ax."
     },
     {
       "label": "Board question",
-      "text": "TODO: write the Board question row for \"Analytic Geometry\" (Mathematics Class 11)."
+      "text": "NEB 2024 (3): circle through (0,−2), (−4,0), (3,0) — centre + radius. NEB 2023 (1): latus rectum of y² = 12x (MCQ: 12). Pair-of-lines condition, angle and bisector derivations rotate yearly."
     }
   ]
 }

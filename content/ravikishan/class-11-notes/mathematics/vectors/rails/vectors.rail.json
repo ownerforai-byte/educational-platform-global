@@ -1,61 +1,60 @@
 {
   "schema": "home-rail/v1",
-  "draft": true,
+  "draft": false,
   "classSlug": "class-11-notes",
   "subjectSlug": "mathematics",
   "unitSlug": "vectors",
-  "unitTitle": "Vectors",
-  "unitHours": 12,
+  "unitTitle": "Vectors (Mathematics)",
   "syllabusTopics": [
     "Collinear and non-collinear vectors, coplanar and non-coplanar vectors",
     "Linear combination of vectors, linearly dependent and independent vectors"
   ],
   "source": "platform",
-  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Fill every row (LaTeX allowed in $...$), set draft to false, then run: npx tsx frontend/scripts/content/home-rails.ts --check",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
   "card": {
     "tag": "Vectors",
-    "title": "TODO: Vectors — pick this card's anchor concept",
+    "title": "Dot, cross and triple products — algebra with direction",
     "href": "/class-11-notes/mathematics",
-    "icon": "Sigma",
+    "icon": "GitBranch",
     "statKey": "pyq:mathematics"
   },
   "rows": [
     {
       "label": "Concept",
-      "text": "TODO: write the Concept row for \"Vectors\" (Mathematics Class 11)."
+      "text": "Vectors add tip-to-tail; their products split three ways: dot product (scalar — projection, work, angle finder), cross product (vector — area, normal direction), scalar triple product (scalar — volume, coplanarity test). Linear dependence asks whether one vector hides inside the span of others; independent sets build bases. Collinear/coplanar describe living on shared lines/planes."
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "TODO: write the Formula row for \"Vectors\" (Mathematics Class 11)."
+      "text": "a·b = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃  ·  |a×b| = |a||b|sinθ (area of parallelogram)  ·  [abc] = a·(b×c) = determinant (volume; = 0 ⟺ coplanar)  ·  projection of a on b: (a·b)/|b|  ·  a=(2,−1,4), b=(1,2,−2): a·b = 2−2−8 = −8, |b| = 3 → projection −8/3"
     },
     {
       "label": "Conditions",
-      "text": "TODO: write the Conditions row for \"Vectors\" (Mathematics Class 11)."
+      "text": "Dot/cross need the ANGLE between vectors tail-to-tail. Triple product needs exactly three 3D vectors; cyclic order preserves sign, swaps flip it. Dependence tests solve c₁v₁ + c₂v₂ + … = 0 — only the trivial solution means independence. Projection divides by |b| (non-zero b)."
     },
     {
       "label": "Special cases",
-      "text": "TODO: write the Special cases row for \"Vectors\" (Mathematics Class 11)."
+      "text": "a = 2i+3j−k, b = i−j+2k: a·b = 2−3−2 = −3; a×b = determinant → (5, −5, −5), magnitude 5√3 (NEB 2023, 3 marks). Scalar projection of (2,−1,4) on (1,2,−2): −8/3 — negative means against b's direction (NEB 2023 MCQ). Three vectors coplanar ⟺ triple product zero."
     },
     {
       "label": "Solved",
-      "text": "TODO: write the Solved row for \"Vectors\" (Mathematics Class 11)."
+      "text": "a·b for a = 2i+3j−k, b = i−j+2k: multiply components and add → 2(1) + 3(−1) + (−1)(2) = −3. Cross: |i j k; 2 3 −1; 1 −1 2| = i(6−1) − j(4+1) + k(−2−3) = 5i − 5j − 5k, |a×b| = √(25+25+25) = 5√3 (NEB 2023, 3 marks). Sign-check: obtuse angle (negative dot) matches."
     },
     {
       "label": "Limitation",
-      "text": "TODO: write the Limitation row for \"Vectors\" (Mathematics Class 11)."
+      "text": "Dot product loses direction (many vectors share one projection). Cross product exists only in 3D (and 7D exotically). Triple-product zero proves coplanarity, not which vector depends on which. Component formulas assume orthonormal î, ĵ, k̂."
     },
     {
       "label": "Derivation",
-      "text": "TODO: write the Derivation row for \"Vectors\" (Mathematics Class 11)."
+      "text": "Dot from the cosine rule: |a−b|² = |a|²+|b|²−2|a||b|cosθ expands component-wise to leave a·b = Σaᵢbᵢ — algebra meets geometry. Cross magnitude as parallelogram area: base|height| = |a||b|sinθ. Triple product as determinant: expanding along rows gives the signed volume; zero volume flattens to a plane (coplanar test proved)."
     },
     {
       "label": "Shortcut",
-      "text": "TODO: write the Shortcut row for \"Vectors\" (Mathematics Class 11)."
+      "text": "Angle questions → dot product first. Area/normal questions → cross. 'Coplanar?' → triple-product determinant = 0. Projection sign tells direction sense (negative = against). Position-vector problems: AB = b − a (tip minus tail), then compute."
     },
     {
       "label": "Board question",
-      "text": "TODO: write the Board question row for \"Vectors\" (Mathematics Class 11)."
+      "text": "NEB 2023 (3): a·b and |a×b| for (2,3,−1), (1,−1,2). NEB 2023 (1): scalar projection −8/3 (MCQ). NEB 2022 (2): scalar triple product + geometric meaning. NEB 2022 (3): position vector from A and B."
     }
   ]
 }

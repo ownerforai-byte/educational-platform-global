@@ -1,11 +1,10 @@
 {
   "schema": "home-rail/v1",
-  "draft": true,
+  "draft": false,
   "classSlug": "class-11-notes",
   "subjectSlug": "mathematics",
   "unitSlug": "algebra",
   "unitTitle": "Algebra",
-  "unitHours": 44,
   "syllabusTopics": [
     "Logic and set: statements, logical connectives, truth tables, theorems based on set operations",
     "Real numbers: geometric representation of real numbers, interval, absolute value",
@@ -17,51 +16,51 @@
     "Complex number: imaginary unit, algebra of complex numbers, geometric representation, absolute (modulus) value and conjugate of complex numbers and their properties, square root of a complex number"
   ],
   "source": "platform",
-  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Fill every row (LaTeX allowed in $...$), set draft to false, then run: npx tsx frontend/scripts/content/home-rails.ts --check",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2024.json and 02-neb-2023.json in this unit.",
   "card": {
-    "tag": "Algebra",
-    "title": "TODO: Algebra — pick this card's anchor concept",
+    "tag": "Algebra · Quadratics",
+    "title": "Quadratic equations — discriminant first, roots second",
     "href": "/class-11-notes/mathematics",
-    "icon": "Sigma",
+    "icon": "Calculator",
     "statKey": "pyq:mathematics"
   },
   "rows": [
     {
       "label": "Concept",
-      "text": "TODO: write the Concept row for \"Algebra\" (Mathematics Class 11)."
+      "text": "A quadratic ax² + bx + c = 0 has its fate sealed by the discriminant D = b² − 4ac before any solving: D > 0 gives two real (rational if D is a perfect square), D = 0 a repeated root, D < 0 a conjugate-complex pair. Roots and coefficients are locked together (sum = −b/a, product = c/a), so equations can be BUILT from roots, common-root conditions tested, and symmetric expressions evaluated without solving."
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "TODO: write the Formula row for \"Algebra\" (Mathematics Class 11)."
+      "text": "x = [−b ± √(b²−4ac)] / 2a  ·  D = b² − 4ac: >0 real distinct · =0 equal · <0 complex conjugate  ·  α+β = −b/a, αβ = c/a  ·  build: x² − (sum)x + product = 0  ·  x²−5x+6 = 0 → x = 2, 3"
     },
     {
       "label": "Conditions",
-      "text": "TODO: write the Conditions row for \"Algebra\" (Mathematics Class 11)."
+      "text": "a ≠ 0 (else it collapses to linear). Rational-root hunting (factor theorem) works over integers/rationals; irrational and complex roots need the formula. Common-root questions demand satisfying BOTH equations simultaneously. Complex roots of real-coefficient quadratics always pair conjugately."
     },
     {
       "label": "Special cases",
-      "text": "TODO: write the Special cases row for \"Algebra\" (Mathematics Class 11)."
+      "text": "x² − 5x + 6 = 0 factors to (x−2)(x−3) → x = 2, 3 (NEB 2024). Symmetric sums (α²+β², 1/α+1/β) rewrite via (α+β) and αβ — never solve first. Equal-roots condition (D = 0) finds unknown coefficients; common root: subtract the equations to linearise."
     },
     {
       "label": "Solved",
-      "text": "TODO: write the Solved row for \"Algebra\" (Mathematics Class 11)."
+      "text": "Solve x² − 5x + 6 = 0: D = 25 − 24 = 1 > 0 (two real, rational). Factor: need two numbers ×6, +5 → 2 and 3 → (x−2)(x−3) = 0 → x = 2 or 3 (NEB 2024, 2 marks). Matrix companion from the same bank: det[[2,1],[3,4]] = 8−3 = 5; A⁻¹ = (1/5)[[4,−1],[−3,2]] (NEB 2023, 3 marks)."
     },
     {
       "label": "Limitation",
-      "text": "TODO: write the Limitation row for \"Algebra\" (Mathematics Class 11)."
+      "text": "The formula solves quadratics only — cubics need other machinery. D classifies over the complexes; 'no real roots' still means two complex ones. Root-coefficient relations assume the STANDARD form (divide through by a first). Factoring works cleanly only for rational roots."
     },
     {
       "label": "Derivation",
-      "text": "TODO: write the Derivation row for \"Algebra\" (Mathematics Class 11)."
+      "text": "Complete the square: ax²+bx+c = a[(x + b/2a)² − (b²−4ac)/4a²] = 0 → (x + b/2a)² = D/4a² → the quadratic formula, with D's sign deciding root nature. Sum/product follow by comparing a(x−α)(x−β) = ax² − a(α+β)x + aαβ against ax²+bx+c term by term."
     },
     {
       "label": "Shortcut",
-      "text": "TODO: write the Shortcut row for \"Algebra\" (Mathematics Class 11)."
+      "text": "Compute D FIRST — it halves the work (and answers 'nature of roots' alone). Integer constant term? Try factor pairs before the formula. Formation: x² − Sx + P = 0 straight from sum/product. Matrices: 2×2 inverse = swap diagonal, negate off-diagonal, ÷det."
     },
     {
       "label": "Board question",
-      "text": "TODO: write the Board question row for \"Algebra\" (Mathematics Class 11)."
+      "text": "NEB 2024 (2): solve x² − 5x + 6 = 0. NEB 2023 (3): sets A∪B/A∩B/A−B for {1,2,3},{2,3,4}. NEB 2023 (3): det + inverse of [[2,1],[3,4]]. Nature-of-roots and common-root conditions rotate yearly."
     }
   ]
 }

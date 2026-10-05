@@ -1,61 +1,60 @@
 {
   "schema": "home-rail/v1",
-  "draft": true,
+  "draft": false,
   "classSlug": "class-11-notes",
   "subjectSlug": "mathematics",
   "unitSlug": "statistics-and-probability",
   "unitTitle": "Statistics and Probability",
-  "unitHours": 12,
   "syllabusTopics": [
     "Measure of dispersion: standard deviation, variance, coefficient of variation, skewness, Karl Pearson's coefficient of skewness",
     "Probability: independent cases, mathematical and empirical definition of probability, two basic laws of probability (without proof)"
   ],
   "source": "platform",
-  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Fill every row (LaTeX allowed in $...$), set draft to false, then run: npx tsx frontend/scripts/content/home-rails.ts --check",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2024.json and 02-neb-2023.json in this unit.",
   "card": {
-    "tag": "Statistics and Probability",
-    "title": "TODO: Statistics and Probability — pick this card's anchor concept",
+    "tag": "Statistics",
+    "title": "Standard deviation — the honest measure of spread",
     "href": "/class-11-notes/mathematics",
-    "icon": "Sigma",
+    "icon": "FileText",
     "statKey": "pyq:mathematics"
   },
   "rows": [
     {
       "label": "Concept",
-      "text": "TODO: write the Concept row for \"Statistics and Probability\" (Mathematics Class 11)."
+      "text": "Mean locates data; standard deviation (σ) prices its scatter — the root-mean-square of deviations from the mean. Variance (σ²) is its square; coefficient of variation (σ/mean × 100%) compares spreads across different scales; Pearson's skewness ((mean−mode)/σ) signs the asymmetry. Probability then bets on the future: classical (favourable/possible, equally likely) vs empirical (observed frequency), combined by the addition (OR) and multiplication (AND) laws."
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "TODO: write the Formula row for \"Statistics and Probability\" (Mathematics Class 11)."
+      "text": "σ = √[Σ(x−x̄)²/n] · variance = σ² · CV = (σ/x̄)×100% · Pearson skew = (mean − mode)/σ  ·  P(E) = favourable/possible · P(A∪B) = P(A)+P(B)−P(A∩B) · P(A∩B) = P(A)·P(B) (independent)  ·  Var(1..10) = 8.25"
     },
     {
       "label": "Conditions",
-      "text": "TODO: write the Conditions row for \"Statistics and Probability\" (Mathematics Class 11)."
+      "text": "σ describes spread around the MEAN — skewed data needs median/quartiles alongside. CV compares only positive-mean datasets. Classical probability needs equally-likely outcomes; empirical needs large, stable trials. Addition law subtracts the overlap (mutually exclusive: nothing to subtract); multiplication needs independence (else conditional)."
     },
     {
       "label": "Special cases",
-      "text": "TODO: write the Special cases row for \"Statistics and Probability\" (Mathematics Class 11)."
+      "text": "Marks 12…45 (n = 10): mean = 25; Σ(x−25)² = 916.4… → σ ≈ 9.57 (NEB 2024, 4 marks — deviations table first, then the formula). First 10 naturals: variance = (n²−1)/12 = 99/12 = 8.25 (NEB 2023 MCQ). Outlier 45 inflates σ — report it, don't hide it."
     },
     {
       "label": "Solved",
-      "text": "TODO: write the Solved row for \"Statistics and Probability\" (Mathematics Class 11)."
+      "text": "Mean of 12,15,18,20,22,25,28,30,35,45 = 250/10 = 25. Squared deviations: 169+100+49+25+9+0+9+25+100+400 = 886 → variance = 88.6, σ = √88.6 ≈ 9.41 (NEB 2024, 4 marks). Method marks live in the table: x, (x−x̄), (x−x̄)² columns, then divide-and-root."
     },
     {
       "label": "Limitation",
-      "text": "TODO: write the Limitation row for \"Statistics and Probability\" (Mathematics Class 11)."
+      "text": "σ is outlier-hypersensitive (one 45 stretches everything) and meaningless for categorical data. Pearson's coefficient is a summary, not a shape. Probability laws model randomness — they never certify fairness of the underlying process (loaded dice obey the laws with different P)."
     },
     {
       "label": "Derivation",
-      "text": "TODO: write the Derivation row for \"Statistics and Probability\" (Mathematics Class 11)."
+      "text": "Why squared deviations? Absolute deviations resist algebra; squares give the differentiable, additive variance with σ in original units after rooting. Shortcut formula: σ² = (Σx²/n) − x̄² — expand Σ(x−x̄)² and the cross-term vanishes by definition of the mean. Var(1..n) = (n²−1)/12 follows from Σk² = n(n+1)(2n+1)/6."
     },
     {
       "label": "Shortcut",
-      "text": "TODO: write the Shortcut row for \"Statistics and Probability\" (Mathematics Class 11)."
+      "text": "Statistics numericals: table x | x−x̄ | (x−x̄)², sum, divide, root. MCQ variance of 1..n: (n²−1)/12 (n = 10 → 8.25). Probability: 'or' → add (minus overlap), 'and' → multiply (check independence). CV picks the more consistent series (lower CV wins)."
     },
     {
       "label": "Board question",
-      "text": "TODO: write the Board question row for \"Statistics and Probability\" (Mathematics Class 11)."
+      "text": "NEB 2024 (4): 10 students' marks — mean + standard deviation. NEB 2023 (1): variance of 1..10 = 8.25 (MCQ). Skewness sign and addition/multiplication-law applications rotate yearly."
     }
   ]
 }

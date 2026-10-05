@@ -1,11 +1,10 @@
 {
   "schema": "home-rail/v1",
-  "draft": true,
+  "draft": false,
   "classSlug": "class-11-notes",
   "subjectSlug": "mathematics",
   "unitSlug": "computational-methods-or-mechanics",
-  "unitTitle": "Computational Methods or Mechanics",
-  "unitHours": 12,
+  "unitTitle": "Computational Methods (Mechanics optional)",
   "syllabusTopics": [
     "Numerical computation: roots of algebraic and transcendental equations (bisection and Newton-Raphson method)",
     "Numerical integration: Trapezoidal rule and Simpson's rule",
@@ -13,51 +12,51 @@
     "Mechanics (optional): Dynamics — motion of particle in a straight line, motion with uniform acceleration, motion under gravity, motion down a smooth inclined plane"
   ],
   "source": "platform",
-  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Fill every row (LaTeX allowed in $...$), set draft to false, then run: npx tsx frontend/scripts/content/home-rails.ts --check",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05; board row cites verbatim PYQs from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit.",
   "card": {
-    "tag": "Computational Methods or Mechanics",
-    "title": "TODO: Computational Methods or Mechanics — pick this card's anchor concept",
+    "tag": "Numerical Methods",
+    "title": "Newton-Raphson — tangent chasing the root",
     "href": "/class-11-notes/mathematics",
-    "icon": "Sigma",
+    "icon": "Workflow",
     "statKey": "pyq:mathematics"
   },
   "rows": [
     {
       "label": "Concept",
-      "text": "TODO: write the Concept row for \"Computational Methods or Mechanics\" (Mathematics Class 11)."
+      "text": "Unsolvable-by-formula equations surrender to iteration: bisection halves a bracketing interval (slow, certain), Newton-Raphson slides down the tangent (fast, needs a good start): xₙ₊₁ = xₙ − f(xₙ)/f′(xₙ). Numerical integration does the same for areas: trapezoidal averages heights into trapezoids, Simpson fits parabolas through triplets (needs even strips). The mechanics option mirrors physics: parallelogram of forces, inclined-plane motion."
     },
     {
       "label": "Formula",
       "kind": "formula",
-      "text": "TODO: write the Formula row for \"Computational Methods or Mechanics\" (Mathematics Class 11)."
+      "text": "Newton–Raphson: xₙ₊₁ = xₙ − f(xₙ)/f′(xₙ)  ·  bisection: halve [a,b] keeping f(a)·f(b) < 0  ·  trapezoidal: h/2·[y₀ + 2Σyᵢ + yₙ]  ·  Simpson 1/3: h/3·[y₀ + 4Σodd + 2Σeven + yₙ] (n EVEN)  ·  forward-difference tables extrapolate from the top (NEB 2022 MCQ)"
     },
     {
       "label": "Conditions",
-      "text": "TODO: write the Conditions row for \"Computational Methods or Mechanics\" (Mathematics Class 11)."
+      "text": "Newton needs f′ ≠ 0 near the root and a close x₀ — bad starts cycle or flee. Bisection needs a sign change on [a,b] (continuity assumed). Simpson demands an EVEN number of strips; trapezoidal accepts any n. Forward differences assume EQUAL x-intervals."
     },
     {
       "label": "Special cases",
-      "text": "TODO: write the Special cases row for \"Computational Methods or Mechanics\" (Mathematics Class 11)."
+      "text": "x³ − 2x − 5 = 0 from x₀ = 2: f = −1, f′ = 3x²−2 = 10 → x₁ = 2.1; iterate to 2.0946 (three decimals, NEB 2023). Multiple roots slow Newton to linear crawl. Simpson beats trapezoidal on smooth curves (exact for cubics); rough data favours trapezoidal's humility."
     },
     {
       "label": "Solved",
-      "text": "TODO: write the Solved row for \"Computational Methods or Mechanics\" (Mathematics Class 11)."
+      "text": "x³ − 2x − 5 = 0, x₀ = 2: f(2) = −1, f′(x) = 3x² − 2 → f′(2) = 10 → x₁ = 2 − (−1)/10 = 2.1. Next: f(2.1) = 0.061, f′ = 11.23 → x₂ ≈ 2.0946; one more pass stabilises 2.095 (NEB 2023, 3 marks). Always show f, f′, and each iterate."
     },
     {
       "label": "Limitation",
-      "text": "TODO: write the Limitation row for \"Computational Methods or Mechanics\" (Mathematics Class 11)."
+      "text": "Newton can diverge, oscillate (x²+1 = 0 has no real root to find) or stall at stationary points. Bisection converges surely but slowly (one binary digit per step). Simpson on odd strips is undefined — miscounting n is the classic lost mark."
     },
     {
       "label": "Derivation",
-      "text": "TODO: write the Derivation row for \"Computational Methods or Mechanics\" (Mathematics Class 11)."
+      "text": "Newton from Taylor: f(x) ≈ f(xₙ) + f′(xₙ)(x−xₙ) = 0 → x = xₙ − f/f′ — each step solves the LINEARISATION, converging quadratically near simple roots (correct digits roughly double). Trapezoidal from piecewise-linear area; Simpson from integrating the parabola through each (x₀,x₁,x₂) triplet, giving the 1–4–2–4…–1 weights."
     },
     {
       "label": "Shortcut",
-      "text": "TODO: write the Shortcut row for \"Computational Methods or Mechanics\" (Mathematics Class 11)."
+      "text": "Root questions: write f, f′, x₀, then iterate in a table — examiners award step marks per row. 'Three decimal places' means iterate until the 3rd decimal freezes. Integration: even strips + smooth → Simpson; else trapezoidal. Forward differences → top-of-table extrapolation (NEB 2022 MCQ)."
     },
     {
       "label": "Board question",
-      "text": "TODO: write the Board question row for \"Computational Methods or Mechanics\" (Mathematics Class 11)."
+      "text": "NEB 2023 (3): x³ − 2x − 5 = 0 by Newton-Raphson from x₀ = 2 (3 d.p.). NEB 2022 (1): forward differences extrapolate from the table's beginning (MCQ). Bisection steps and trapezoidal/Simpson area numericals rotate yearly."
     }
   ]
 }
