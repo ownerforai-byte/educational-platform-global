@@ -2,6 +2,8 @@ import { getTheoremIndex } from "@/lib/theorems";
 import { getDerivationIndex } from "@/lib/derivations";
 import { HomeCommandCenter } from "@/components/home/home-command-center";
 import { HomeIntroduction } from "@/components/home/home-introduction";
+import { HomeSubjectRails } from "@/components/home/home-subject-rails";
+import { OwnerOnly } from "@/features/auth/owner-only";
 import { HomeOwnerNotice } from "@/components/home/home-owner-notice";
 import { HomeMindStudio } from "@/components/home/home-mind-studio";
 import { DirectoryCard } from "@/features/credits";
@@ -43,6 +45,15 @@ export default async function HomePage() {
 
       {/* Welcome introduction: the platform story + 4-step learning journey */}
       <HomeIntroduction />
+
+      {/* Six subject rails — owner emails only (owner request 2026-10-05:
+          "make this features for owner emails only"). The continuous Class 11
+          knowledge marquee streams for the OWNER_EMAILS allowlist
+          (frontend/lib/owner.ts) and renders null for every guest, student and
+          non-owner account — hidden, never redirected. */}
+      <OwnerOnly>
+        <HomeSubjectRails />
+      </OwnerOnly>
 
       {/* Owner notice — public, never gated. Owner intro + internal login. */}
       <HomeOwnerNotice />

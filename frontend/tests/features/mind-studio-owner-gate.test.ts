@@ -30,11 +30,18 @@ describe("Image Hub access gate", () => {
     expect(page).toContain("Every student's image studio");
   });
 
-  it("shows the home launcher to everyone, with no OwnerOnly wrapper", () => {
+  it("shows the home launcher to everyone, outside the owner gate", () => {
     const home = read("app/(app)/home/page.tsx");
     expect(home).toContain("<HomeMindStudio />");
-    expect(home).not.toContain("<OwnerOnly>");
     // The OwnerOnly helper itself still exists for the owner console.
     expect(read("features/auth/owner-only.tsx")).toContain("isOwnerUser(user)");
+
+    // The home page DOES carry an owner gate today — but only around the
+    // subject rails (owner request 2026-10-05: "make this features for owner
+    // emails only"). The Image Hub launcher must sit outside that block, so
+    // pin what the gate actually wraps instead of banning the tag outright.
+    const gate = home.match(/<OwnerOnly>[\s\S]*?<\/OwnerOnly>/)?.[0] ?? "";
+    expect(gate).toContain("<HomeSubjectRails />");
+    expect(gate).not.toContain("<HomeMindStudio />");
   });
 });

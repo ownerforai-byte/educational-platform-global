@@ -1255,6 +1255,64 @@ code, kbd, samp, pre {
   animation: gradientShift 5s ease-in-out infinite;
 }
 
+/* ─── SUBJECT RAILS (2026-10-05) — six continuous knowledge streams ────────── */
+/* Each rail's <ul> renders its slide set TWICE and travels from 0 to -50%: one
+   whole set leaves through the left edge while the identical copy follows it
+   through the right edge, so a slide crosses the entire screen, reaches the end
+   and keeps going — no cut, no snap, no visible restart. The spacing lives on
+   each <li> (me-4) instead of a flex gap precisely so the two halves are
+   pixel-identical and -50% lands on the seam. */
+@keyframes subjectRailScroll {
+  from { transform: translate3d(0, 0, 0); }
+  to   { transform: translate3d(-50%, 0, 0); }
+}
+.subject-rail-track {
+  animation-name: subjectRailScroll;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+  animation-duration: 48s;
+  will-change: transform;
+}
+
+/* Per-rail Pause/Play switch (`.subject-rail-paused` on that rail's <section>)
+   — the six rails are independent, so pausing one never stops another. Hover or
+   keyboard focus inside a viewport holds just that rail for reading. */
+.subject-rail-paused .subject-rail-track,
+.subject-rail-viewport:hover .subject-rail-track,
+.subject-rail-viewport:focus-within .subject-rail-track,
+/* Rails scrolled out of view stop burning frames (set by IntersectionObserver). */
+.subject-rail-viewport.is-rail-offscreen .subject-rail-track {
+  animation-play-state: paused;
+}
+
+/* Feathered edges: a slide dissolves at the very edge of the screen instead of
+   being sliced by it, while still travelling the whole way through. */
+.subject-rail-viewport {
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 3rem, #000 calc(100% - 3rem), transparent 100%);
+  mask-image: linear-gradient(to right, transparent 0, #000 3rem, #000 calc(100% - 3rem), transparent 100%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* No marquee for readers who ask for less motion: the rail becomes a plain
+     horizontal scroller, the duplicate loop copy is dropped, and the mask is
+     released — every slide stays reachable by scrolling. Specificity beats the
+     global `*` reduced-motion rule above. */
+  .subject-rail-viewport {
+    overflow-x: auto;
+    scroll-snap-type: x proximity;
+    -webkit-mask-image: none;
+    mask-image: none;
+  }
+  .subject-rail-viewport .subject-rail-track {
+    animation: none !important;
+    transform: none !important;
+  }
+  .subject-rail-track .subject-rail-duplicate {
+    display: none;
+  }
+}
+
+
 /* ─── REDUCED MOTION (WCAG 2.3.3) ────────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
   *,
