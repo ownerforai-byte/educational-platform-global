@@ -5,6 +5,7 @@ import Link from "next/link";
 import { ArrowRight, Pause, Play } from "lucide-react";
 import {
   HOME_SUBJECT_RAILS,
+  resolveRailIcon,
   type HomeSubjectRail,
   type HomeSubjectSlide,
 } from "@/lib/home-subject-slides";
@@ -230,7 +231,7 @@ function SubjectRailSection({
   // Independent per-rail on/off — pausing one rail never touches the other five.
   const [paused, setPaused] = useState(false);
   const sectionRef = useRef<HTMLElement>(null);
-  const Icon = rail.icon;
+  const Icon = resolveRailIcon(rail.icon);
 
   return (
     <section
@@ -349,7 +350,7 @@ function SlideCard({
   stats: Record<string, string>;
   duplicate?: boolean;
 }) {
-  const Icon = slide.icon;
+  const Icon = resolveRailIcon(slide.icon);
   const stat = slide.statKey ? stats[slide.statKey] : undefined;
 
   // Unit divider: the slim section header that opens each syllabus-unit

@@ -64,7 +64,8 @@ export interface HomeSubjectSlide {
   /** Ordered academic rows — seven or eight per card, never a link blurb. */
   rows: SubjectSlideRow[];
   href: string;
-  icon: LucideIcon;
+  /** Lucide icon NAME — serialized across the server→client boundary. */
+  icon: string;
   /** Key into the `stats` map (`formula:<slug>` / `pyq:<slug>`). */
   statKey?: string;
   /** Class 12 placeholder card — the promise row, no academic rows. */
@@ -94,7 +95,8 @@ export interface HomeSubjectRail {
   slug: string;
   name: string;
   tagline: string;
-  icon: LucideIcon;
+  /** Lucide icon NAME — serialized across the server→client boundary. */
+  icon: string;
   accent: HomeSubjectAccent;
   /** One full pass of the rail, e.g. "58s" — also sets the scroll speed. */
   duration: string;
@@ -157,9 +159,11 @@ const NEPALI: HomeSubjectAccent = {
 
 /**
  * Icon names agents may reference in `rails/*.rail.json` (`card.icon`).
- * The server wrapper (`home-subject-rails.tsx`) resolves these to components
- * — Lucide components can never cross into JSON, so agents pick names only.
- * Unknown names fall back to the rail's own icon.
+ * Lucide components are not serializable, so icons cross the server→client
+ * boundary as NAMES only and the client rails resolve them here; an unknown
+ * name falls back to the rail's own icon. Passing a component object from a
+ * Server Component throws at build ("Functions cannot be passed directly to
+ * Client Components").
  */
 export const HOME_RAIL_ICONS: Record<string, LucideIcon> = {
   Atom,
@@ -184,12 +188,21 @@ export const HOME_RAIL_ICONS: Record<string, LucideIcon> = {
   Workflow,
 };
 
+/**
+ * Name → component for the rails, with the same `BookOpen` fallback the rails
+ * have always used for an unknown icon name. One resolver so the client rails
+ * and any future consumer resolve identically.
+ */
+export function resolveRailIcon(name: string): LucideIcon {
+  return HOME_RAIL_ICONS[name] ?? BookOpen;
+}
+
 /** The one Class 12 card per rail — content for it lands later (owner note). */
 const classTwelveTeaser = (name: string): HomeSubjectSlide => ({
   tag: "Class 12",
   title: `${name} Class 12 cards — next in this rail`,
   teaser: true,
-  icon: GraduationCap,
+  icon: "GraduationCap",
   href: "/class-12-notes",
   rows: [
     {
@@ -210,14 +223,14 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
     slug: "physics",
     name: "Physics",
     tagline: "Mechanics to electronics — laws, derivations and every mark-bearing numerical",
-    icon: Atom,
+    icon: "Atom",
     accent: PHYSICS,
     duration: "58s",
     slides: [
       {
         tag: "Dynamics",
         title: "Newton's second law — F = ma, and why it holds",
-        icon: Workflow,
+        icon: "Workflow",
         href: "/derivations/class-11-notes/physics",
         rows: [
           {
@@ -263,7 +276,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "Work, Energy and Power",
         title: "Work–energy theorem and the stopping-distance family",
-        icon: Ruler,
+        icon: "Ruler",
         href: "/formulas/physics",
         statKey: "formula:physics",
         rows: [
@@ -310,7 +323,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "Gravitation",
         title: "Universal gravitation, orbital and escape speed",
-        icon: Atom,
+        icon: "Atom",
         href: "/class-11-notes/physics",
         rows: [
           {
@@ -356,7 +369,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "Current Electricity",
         title: "Ohm's law, drift velocity and network reduction",
-        icon: Calculator,
+        icon: "Calculator",
         href: "/knowledge/numerical-physics",
         rows: [
           {
@@ -402,7 +415,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "Lenses",
         title: "Lens maker's formula and thin-lens image formation",
-        icon: GitBranch,
+        icon: "GitBranch",
         href: "/class-11-notes/physics/theory",
         statKey: "pyq:physics",
         rows: [
@@ -455,14 +468,14 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
     slug: "chemistry",
     name: "Chemistry",
     tagline: "Physical, inorganic and organic — mole, bonding, equilibrium and every exception",
-    icon: FlaskConical,
+    icon: "FlaskConical",
     accent: CHEMISTRY,
     duration: "62s",
     slides: [
       {
         tag: "Stoichiometry",
         title: "The mole concept — the bridge between mass and particles",
-        icon: Calculator,
+        icon: "Calculator",
         href: "/formulas/chemistry",
         statKey: "formula:chemistry",
         rows: [
@@ -509,7 +522,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "Atomic Structure",
         title: "Bohr energy levels, line spectra and de Broglie",
-        icon: FlaskConical,
+        icon: "FlaskConical",
         href: "/class-11-notes/chemistry/theory",
         statKey: "pyq:chemistry",
         rows: [
@@ -556,7 +569,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "Chemical Bonding",
         title: "VSEPR shapes and hybridisation — predicting geometry",
-        icon: Network,
+        icon: "Network",
         href: "/class-11-notes/chemistry",
         rows: [
           {
@@ -602,7 +615,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "Chemical Equilibrium",
         title: "Kp, Kc and Le Chatelier's principle",
-        icon: Workflow,
+        icon: "Workflow",
         href: "/knowledge/numerical-chemistry",
         rows: [
           {
@@ -648,7 +661,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "Basic Concepts of Organic Chemistry",
         title: "Inductive effect, acidity order and IUPAC naming",
-        icon: Highlighter,
+        icon: "Highlighter",
         href: "/class-11-notes/chemistry/mindmap",
         rows: [
           {
@@ -699,14 +712,14 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
     slug: "biology",
     name: "Biology",
     tagline: "Cells to conservation — labelled diagrams, laws, processes and the marks-point answers",
-    icon: Dna,
+    icon: "Dna",
     accent: BIOLOGY,
     duration: "66s",
     slides: [
       {
         tag: "Biomolecules and Cell Biology",
         title: "Cell structure — the labelled diagram every paper asks",
-        icon: PenLine,
+        icon: "PenLine",
         href: "/knowledge/biology-diagrams",
         rows: [
           {
@@ -751,7 +764,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "Heredity and Evolution",
         title: "Mendel's laws — monohybrid, dihybrid and test cross",
-        icon: Waypoints,
+        icon: "Waypoints",
         href: "/class-11-notes/biology/theory",
         statKey: "pyq:biology",
         rows: [
@@ -798,7 +811,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "Ecology",
         title: "Energy flow, Lindeman's 10 % law and ecological pyramids",
-        icon: GitBranch,
+        icon: "GitBranch",
         href: "/graphs",
         rows: [
           {
@@ -844,7 +857,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "Biotechnology",
         title: "rDNA technology — insulin, PCR and the five steps",
-        icon: Microscope,
+        icon: "Microscope",
         href: "/class-11-notes/biology",
         rows: [
           {
@@ -890,7 +903,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "Evolutionary Biology",
         title: "Hardy–Weinberg equilibrium and carrier frequency",
-        icon: Calculator,
+        icon: "Calculator",
         href: "/derivations/class-11-notes/biology",
         rows: [
           {
@@ -942,14 +955,14 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
     slug: "mathematics",
     name: "Mathematics",
     tagline: "Algebra to calculus — every proof, identity and the step-marking behind it",
-    icon: Sigma,
+    icon: "Sigma",
     accent: MATHEMATICS,
     duration: "60s",
     slides: [
       {
         tag: "Calculus · Differentiation",
         title: "Differentiation — first principles to maxima and minima",
-        icon: Workflow,
+        icon: "Workflow",
         href: "/derivations/class-11-notes/mathematics",
         rows: [
           {
@@ -995,7 +1008,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "Trigonometry",
         title: "Compound and multiple angles — the identity toolkit",
-        icon: Sigma,
+        icon: "Sigma",
         href: "/formulas/mathematics",
         statKey: "formula:mathematics",
         rows: [
@@ -1042,7 +1055,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "Analytic Geometry",
         title: "Straight line — slope, angle and distance forms",
-        icon: GitBranch,
+        icon: "GitBranch",
         href: "/graphs",
         rows: [
           {
@@ -1088,7 +1101,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "Vectors",
         title: "Dot and cross product — projection, angle, area",
-        icon: Calculator,
+        icon: "Calculator",
         href: "/class-11-notes/mathematics/theory",
         statKey: "pyq:mathematics",
         rows: [
@@ -1135,7 +1148,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "Statistics and Probability",
         title: "Probability — addition rule, independence, Bayes",
-        icon: CalendarCheck,
+        icon: "CalendarCheck",
         href: "/class-11-notes/mathematics",
         rows: [
           {
@@ -1186,14 +1199,14 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
     slug: "english",
     name: "English",
     tagline: "Grammar, writing and literature — the rules, the format and the error traps",
-    icon: BookOpen,
+    icon: "BookOpen",
     accent: ENGLISH,
     duration: "64s",
     slides: [
       {
         tag: "Grammar · Tenses",
         title: "The twelve tenses — structure, use and time markers",
-        icon: FileText,
+        icon: "FileText",
         href: "/knowledge/grammar",
         rows: [
           {
@@ -1235,7 +1248,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "Grammar · Voice and Narration",
         title: "Passive voice and indirect speech without losing marks",
-        icon: ScrollText,
+        icon: "ScrollText",
         href: "/class-11-notes/english/theory",
         statKey: "pyq:english",
         rows: [
@@ -1278,7 +1291,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "Writing and Composition",
         title: "Essay and paragraph structure that earns full marks",
-        icon: PenLine,
+        icon: "PenLine",
         href: "/knowledge/writing",
         rows: [
           {
@@ -1320,7 +1333,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "Critical Thinking",
         title: "Claims, evidence and the fallacies they ask you to spot",
-        icon: Lightbulb,
+        icon: "Lightbulb",
         href: "/class-11-notes/english",
         rows: [
           {
@@ -1362,7 +1375,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "Grammar and Vocabulary",
         title: "Word formation, idioms and the pairs that trap everyone",
-        icon: BookOpen,
+        icon: "BookOpen",
         href: "/class-11-notes/english/chapters",
         rows: [
           {
@@ -1410,14 +1423,14 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
     slug: "nepali",
     name: "Nepali",
     tagline: "व्याकरण, सन्धि, अलंकार र लेखन — कारकदेखि निबन्धसम्म, प्रश्नपत्रको ढाँचामा",
-    icon: Languages,
+    icon: "Languages",
     accent: NEPALI,
     duration: "68s",
     slides: [
       {
         tag: "भाषा र व्याकरण",
         title: "कारक — छ वटै कारक र चिन्ने उपाय",
-        icon: ScrollText,
+        icon: "ScrollText",
         href: "/knowledge/byakaran",
         rows: [
           {
@@ -1455,7 +1468,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "भाषा र व्याकरण",
         title: "सन्धि — स्वर र व्यंजनको मेल, विच्छेद र नियम",
-        icon: Highlighter,
+        icon: "Highlighter",
         href: "/class-11-notes/nepali/theory",
         statKey: "pyq:nepali",
         rows: [
@@ -1494,7 +1507,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "भाषा र व्याकरण",
         title: "अलंकार — उपमा, रूपक, यमक, अनुप्रास चिन्ने तरिका",
-        icon: Highlighter,
+        icon: "Highlighter",
         href: "/class-11-notes/nepali/mindmap",
         rows: [
           {
@@ -1532,7 +1545,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "लेखन र रचना",
         title: "निबन्ध लेखन — ढाँचा, शब्दसीमा र गल्तीहरू",
-        icon: PenLine,
+        icon: "PenLine",
         href: "/class-11-notes/nepali/chapters",
         rows: [
           {
@@ -1570,7 +1583,7 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
       {
         tag: "साहित्यिक विधा",
         title: "कविता, गीत, कथा, उपन्यास र निबन्धको भेद",
-        icon: BookOpen,
+        icon: "BookOpen",
         href: "/class-11-notes/nepali",
         rows: [
           {

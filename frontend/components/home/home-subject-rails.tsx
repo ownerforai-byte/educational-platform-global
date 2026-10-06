@@ -2,7 +2,6 @@ import { Sparkles } from "lucide-react";
 import { getFormulaSheetSummaries } from "@/lib/formula-sheet";
 import { getSubjectPyqBank } from "@/lib/pyq-bank";
 import {
-  HOME_RAIL_ICONS,
   HOME_SUBJECT_RAILS,
   type HomeSubjectRail,
   type HomeSubjectSlide,
@@ -154,11 +153,14 @@ function mergeCorpusRails(): HomeSubjectRail[] {
       (group) => group.classSlug === HOME_RAIL_CLASS_12_SLUG,
     );
     const teaser = last?.teaser && !hasClass12 ? [last] : [];
+    /* Icons cross to the client as NAMES (the client resolves them through
+       `HOME_RAIL_ICONS`) — a lucide component in these props would throw at
+       build: "Functions cannot be passed directly to Client Components." */
     const resolve = (
       data: ReturnType<typeof toRailSlideData>,
     ): HomeSubjectSlide => ({
       ...data,
-      icon: HOME_RAIL_ICONS[data.iconName] ?? rail.icon,
+      icon: data.iconName,
     });
     const grouped: HomeSubjectSlide[] = groups.flatMap((group) => [
       {
