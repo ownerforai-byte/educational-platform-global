@@ -248,8 +248,13 @@ const RULES: Record<string, RowRule> = {
     take: 1,
   },
   Conditions: {
-    require: [/condition|provided|only when|as long as/i],
-    prefer: [/\bconditions?\b/i, /provided that/i],
+    /* The scans state a condition far more often as "valid only for", "is true
+       only when" or "provided that" than as the bare noun — quoting those is
+       still verbatim, so they count. */
+    require: [
+      /condition|provided|only when|as long as|valid (?:only )?(?:for|when|if)|is true only|holds only/i,
+    ],
+    prefer: [/\bconditions?\b/i, /provided that/i, /\bonly when\b/i],
     minLen: 60,
     maxLen: 320,
     take: 1,
@@ -263,38 +268,50 @@ const RULES: Record<string, RowRule> = {
     take: 1,
   },
   Solved: {
-    require: [/^Given\b|Given,|\bSolution\b/],
+    /* A worked answer opens with "Given", "Here", "We have" or a numbered
+       "Ans." — all four appear in the scans. */
+    require: [/^Given\b|Given,|\bSolution\b|^Here\b|We have|\bAns\./],
     prefer: [/^Given\b/, /We know that/, /=/],
     minLen: 60,
     maxLen: 320,
     take: 1,
   },
   Limitation: {
-    require: [/limitation|cannot|not possible|is not valid|assumption|neglect/i],
-    prefer: [/\blimitations?\b/i, /\bcannot be\b/],
+    require: [
+      /limitation|cannot|not possible|is not valid|assumption|neglect|not applicable|fails (?:when|to)|ideal(?:ised)? assumption/i,
+    ],
+    prefer: [/\blimitations?\b/i, /\bcannot be\b/, /\bnot applicable\b/i],
     minLen: 60,
     maxLen: 320,
     take: 1,
   },
   Derivation: {
-    require: [/deriv|prove that|proof|let us consider/i],
-    prefer: [/\bderiv/i, /\bprove\b/i],
+    /* Proofs in these question banks announce themselves as "Prove that",
+       "Show that", "Let us consider" or "Hence proved" — and they run longer
+       than an ordinary sentence, so the cap is wider than the other rows
+       (still a single verbatim, self-contained sentence). */
+    require: [
+      /deriv|prove that|proof|let us (?:consider|assume|take)|show that|hence proved/i,
+    ],
+    prefer: [/\bderiv/i, /\bprove\b/i, /\bshow that\b/i, /\bhence proved\b/i],
     minLen: 60,
-    maxLen: 320,
+    maxLen: 420,
     take: 1,
   },
   Shortcut: {
-    require: [/\bnote\b|remember|in short|shortcut|trick/i],
-    prefer: [/\bnote that\b/i, /remember/i],
+    require: [/\bnote\b|remember|in short|shortcut|short cut|trick/i],
+    prefer: [/\bnote that\b/i, /remember(?: that)?/i],
     minLen: 55,
     maxLen: 300,
     take: 1,
   },
   "Board question": {
+    /* Past-board questions carry a year, a "Q.No." tag or a question mark, and
+       a long-answer question is longer than the other rows' cap. */
     require: [/\bOld Q\.?\s*No|\bQ\.?\s*No|\b(?:207\d|20[0-2]\d)\b|\?/],
     prefer: [/\b(?:207\d|20[0-2]\d)\b/, /\bOld Q\.?\s*No/, /\bFind\b|\bCalculate\b|\bDefine\b|\bState\b|\bDerive\b|\bShow that\b/],
     minLen: 45,
-    maxLen: 300,
+    maxLen: 380,
     take: 1,
   },
 };
