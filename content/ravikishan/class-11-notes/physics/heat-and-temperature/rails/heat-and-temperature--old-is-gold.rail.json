@@ -1,0 +1,62 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "heat-and-temperature",
+  "unitTitle": "Heat and Temperature",
+  "unitHours": 3,
+  "syllabusTopics": [
+    "Molecular concept of thermal energy, heat and temperature; cause and direction of heat flow",
+    "Meaning of thermal equilibrium and Zeroth law of thermodynamics",
+    "Thermal equilibrium as a working principle of a mercury thermometer"
+  ],
+  "source": "book:old-is-gold-physics-class-11",
+  "agentNotes": "Old is Gold rails — every row is SELECTED VERBATIM from the scanned question bank (Heat and Temperature, p. 92; OCR, not retyped). Source records: backend/kb/books/physics/heat-and-temperature-part-1-78.json, backend/kb/books/physics/heat-and-temperature-part-10-87.json, backend/kb/books/physics/heat-and-temperature-part-11-88.json, backend/kb/books/physics/heat-and-temperature-part-12-89.json, backend/kb/books/physics/heat-and-temperature-part-13-90.json, backend/kb/books/physics/heat-and-temperature-part-14-91.json, backend/kb/books/physics/heat-and-temperature-part-15-92.json, backend/kb/books/physics/heat-and-temperature-part-16-93.json, backend/kb/books/physics/heat-and-temperature-part-17-94.json, backend/kb/books/physics/heat-and-temperature-part-18-95.json, backend/kb/books/physics/heat-and-temperature-part-2-79.json, backend/kb/books/physics/heat-and-temperature-part-3-80.json, backend/kb/books/physics/heat-and-temperature-part-4-81.json, backend/kb/books/physics/heat-and-temperature-part-5-82.json, backend/kb/books/physics/heat-and-temperature-part-6-83.json, backend/kb/books/physics/heat-and-temperature-part-7-84.json, backend/kb/books/physics/heat-and-temperature-part-8-85.json, backend/kb/books/physics/heat-and-temperature-part-9-86.json. Regenerate: npx tsx frontend/scripts/content/book-rails.ts --write --subject=physics",
+  "card": {
+    "tag": "Old is Gold",
+    "title": "Heat and Temperature",
+    "href": "/class-11-notes/physics",
+    "icon": "Atom",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Specific heat capacity: The amount of heat energy required to increase the temperature of unit mass ofa substance by IOC is called its specific heat capacity."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "If one molecule of gas occupies a volume V at pressure P and at temperature (absolute) T, then PV = RT, Where R is universal gas constant."
+    },
+    {
+      "label": "Conditions",
+      "text": "Heat loss by human * m x Snx A 0 = 80 x 420 x 1 = 33600 J gas only hypothetical condition but the real gas is found in real life."
+    },
+    {
+      "label": "Special cases",
+      "text": "At absolute zero temperature, T = 0K, kinetic energy of gas is zero, However, all the molecules remain at rest and exist potential energy."
+    },
+    {
+      "label": "Solved",
+      "text": "Solution Given; Mass of ice (mi) = IOg Specific heatof ice (S) = 0.5 cal/g oc Amount of heat required to change ice at - IOOC to ice at OOC is Q = 10 x 0.5 x [0- (-10)) = 10 x 0.5 x 50 cals."
+    },
+    {
+      "label": "Limitation",
+      "text": "Two bodies cannot be in thermal equilibrium if the are at different tem eratures."
+    },
+    {
+      "label": "Derivation",
+      "text": "Derivation of Boyle's law: According to kinetic theory of gases, l."
+    },
+    {
+      "label": "Shortcut",
+      "text": "211 Why is spark produced when two stones are stricken against one another?"
+    },
+    {
+      "label": "Board question",
+      "text": "Define real and apparent expansivities of a liquid?"
+    }
+  ]
+}
