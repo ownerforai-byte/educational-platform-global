@@ -98,33 +98,31 @@ export function StarField() {
     };
 
     const spawnStreak = () => {
-      // A short "deep inside" flash: a tiny, thin, fast diagonal streak that
-      // happens far away (dim + brief), not a screen-crossing comet.
-      // Direction is limited to true diagonals (both |dx| and |dy| matter),
-      // picking one of the four diagonal quadrants at random.
-      const quadrant = Math.random() < 0.5 ? 1 : -1; // + / - X
-      const qY = Math.random() < 0.5 ? 1 : -1; // + / - Y
-      // Diagonal: keep the angle within ~30°–60° of the X axis so it always
-      // reads as a slant, never horizontal or vertical.
-      const diag = (30 + Math.random() * 30) * (Math.PI / 180); // 30–60°
-      const dx = Math.cos(diag) * quadrant;
-      const dy = Math.sin(diag) * qY;
+      // Always top → bottom, diagonal only: the streak enters from above
+      // the top edge and travels down (tilted 30°–60° off vertical, drifting
+      // left or right). Never horizontal, never upward.
+      const quadrant = Math.random() < 0.5 ? 1 : -1; // drift right / left
+      const tilt = (30 + Math.random() * 30) * (Math.PI / 180); // 30–60°
+      const dx = Math.sin(tilt) * quadrant;
+      const dy = Math.cos(tilt); // always positive → downward
 
-      const x0 = width * (0.15 + Math.random() * 0.7);
-      const y0 = height * (0.15 + Math.random() * 0.7);
+      const x0 = width * (0.05 + Math.random() * 0.9);
+      const y0 = -20 + Math.random() * 40; // just above the top edge
 
-      // Short travel (a quick dart), not a full traverse of the screen.
+      // Distance until it leaves the bottom edge; life is sized to that
+      // travel so it fades out exactly as it exits.
+      const speed = 900 + Math.random() * 700;
       const total = exitDist(x0, y0, dx, dy);
-      const life = 0.5 + Math.random() * 0.6; // brief flash, then fade
+      const life = total / speed;
 
       streaks.push({
         x0,
         y0,
         dirX: dx,
         dirY: dy,
-        speed: 900 + Math.random() * 700, // fast — a quick deep flash
-        tail: 70 + Math.random() * 70, // a short, thin dash
-        baseR: 0.7 + Math.random() * 0.5, // keep the head small/thin
+        speed,
+        tail: 90 + Math.random() * 70, // a short dash
+        baseR: 1.0 + Math.random() * 0.6, // slightly thicker head
         exitDist: total,
         traveled: 0,
         life,
@@ -211,7 +209,7 @@ export function StarField() {
         grad.addColorStop(0.7, `rgba(${light}, ${a * 0.5})`);
         grad.addColorStop(1, `rgba(${light}, ${a})`);
         ctx.strokeStyle = grad;
-        ctx.lineWidth = 0.9; // thin line
+        ctx.lineWidth = 2; // a little thicker
         ctx.lineCap = "round";
         ctx.beginPath();
         ctx.moveTo(tx, ty);
