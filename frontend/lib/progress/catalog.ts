@@ -230,6 +230,25 @@ export function entryStatus(entry: ProgressEntry): ProgressStatus {
   return "not_started";
 }
 
+/**
+ * Canonical URL of a syllabus topic.
+ *
+ * The journey records `unit.id`, which is exactly what the chapter routes use
+ * (`/${classSlug}/${subjectSlug}/chapters/${unit}/topics/${topic}`) — the same
+ * string the topic page builds for its own links — so a tracked row resolves
+ * straight back to the page that produced it. Anything that is not a
+ * class-11/12 notes topic falls back to the progress page: a link one level up
+ * beats a link that 404s on the front page.
+ */
+export function topicHref(entry: ProgressEntry): string {
+  const { classSlug, subjectSlug, unitSlug, topicSlug } = entry;
+  if (!classSlug || !subjectSlug || !unitSlug || !topicSlug) return "/progress";
+  if (classSlug !== "class-11-notes" && classSlug !== "class-12-notes") {
+    return "/progress";
+  }
+  return `/${classSlug}/${subjectSlug}/chapters/${unitSlug}/topics/${topicSlug}`;
+}
+
 export interface JourneySummary {
   /** Topics in the catalogue (tracked + untracked). */
   total: number;

@@ -53,6 +53,22 @@ export function HomeCommandCenter({
   const [activeTab, setActiveTab] = useState<"all" | "class11" | "class12" | "entrance" | "stem">("all");
   const inputRef = React.useRef<HTMLInputElement | null>(null);
 
+  // The shortcut badge should tell the truth on the visitor's own machine:
+  // the handler below fires on Ctrl+K *or* Cmd+K, so a Windows user should
+  // not be told to press a key that is not there. Decided after mount so the
+  // server render and the first client paint still agree (no hydration
+  // mismatch) — it starts at the Windows/Linux label, which is also the
+  // right fallback for anything we cannot identify.
+  const [isMacShortcut, setIsMacShortcut] = useState(false);
+
+  React.useEffect(() => {
+    const probe = `${window.navigator.platform ?? ""} ${window.navigator.userAgent ?? ""}`;
+    setIsMacShortcut(/mac|iphone|ipad|ipod/i.test(probe));
+  }, []);
+
+  const shortcutLabel = isMacShortcut ? "⌘K" : "Ctrl K";
+  const shortcutHint = isMacShortcut ? "⌘ + K" : "Ctrl + K";
+
   React.useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if ((e.ctrlKey || e.metaKey) && e.key === "k") {
@@ -108,7 +124,8 @@ export function HomeCommandCenter({
                 type="text"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
-                placeholder="Jump to any lab, subject, theorem, calculator, or note... (Ctrl + K)"
+                aria-label="Search labs, subjects, theorems, calculators and notes"
+                placeholder={`Jump to any lab, subject, theorem, calculator, or note... (${shortcutHint})`}
                 className="w-full rounded-2xl border border-border/70 bg-card/90 py-3.5 pl-11 pr-20 text-sm text-foreground placeholder:text-muted-foreground/70 shadow-lg backdrop-blur-md focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
               />
               <div className="absolute right-3 flex items-center gap-1.5">
@@ -121,7 +138,7 @@ export function HomeCommandCenter({
                   </button>
                 ) : (
                   <kbd className="hidden sm:inline-flex items-center gap-0.5 px-2 py-0.5 rounded border border-border/80 bg-muted/60 text-[10px] font-mono text-muted-foreground">
-                    Ctrl K
+                    {shortcutLabel}
                   </kbd>
                 )}
               </div>
@@ -155,7 +172,11 @@ export function HomeCommandCenter({
 
           {/* Academic Stream Switcher Tabs */}
           <div className="pt-2 flex items-center justify-center">
-            <div className="inline-flex flex-wrap items-center p-1 rounded-2xl bg-muted/60 border border-border/60 backdrop-blur-sm gap-1">
+            <div
+              role="tablist"
+              aria-label="Portal focus"
+              className="inline-flex flex-wrap items-center p-1 rounded-2xl bg-muted/60 border border-border/60 backdrop-blur-sm gap-1"
+            >
               {[
                 { id: "all", label: "All Portals" },
                 { id: "class11", label: "Grade 11 Focus" },
@@ -165,6 +186,9 @@ export function HomeCommandCenter({
               ].map((tab) => (
                 <button
                   key={tab.id}
+                  type="button"
+                  role="tab"
+                  aria-selected={activeTab === tab.id}
                   onClick={() => setActiveTab(tab.id as any)}
                   className={`px-3 py-1.5 rounded-xl text-xs font-bold transition-all ${
                     activeTab === tab.id

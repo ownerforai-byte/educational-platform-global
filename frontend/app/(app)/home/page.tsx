@@ -1,6 +1,7 @@
 import { getTheoremIndex } from "@/lib/theorems";
 import { getDerivationIndex } from "@/lib/derivations";
 import { HomeCommandCenter } from "@/components/home/home-command-center";
+import { HomeJourneyStrip } from "@/components/home/home-journey-strip";
 import { HomeIntroduction } from "@/components/home/home-introduction";
 import { HomeSubjectRails } from "@/components/home/home-subject-rails";
 import { OwnerOnly } from "@/features/auth/owner-only";
@@ -42,6 +43,14 @@ export default async function HomePage() {
         totalTheorems={theoremEntries.length}
         totalDerivations={derivationEntries.length}
       />
+
+      {/* My Progress strip — the only section that changes per visitor:
+          returning students get their completed/in-progress counts plus the
+          last topics they opened, newcomers get the "open a topic, it records
+          itself" line, guests get the sign-in door. Client component; renders
+          a skeleton while loading and nothing at all if the API is down, so
+          the sections below never shift. */}
+      <HomeJourneyStrip />
 
       {/* Welcome introduction: the platform story + 4-step learning journey */}
       <HomeIntroduction />

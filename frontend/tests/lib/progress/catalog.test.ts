@@ -7,6 +7,7 @@ import {
   journeyRowToEntry,
   parseTopicPathId,
   summarizeJourney,
+  topicHref,
   topicPathId,
 } from "@/lib/progress/catalog";
 import type { JourneyRow, ProgressEntry } from "@/types/api";
@@ -200,5 +201,35 @@ describe("groupJourney", () => {
     // The tracked topic sits in the first group.
     expect(groups[0].completed).toBe(1);
     expect(groups.reduce((n, g) => n + g.total, 0)).toBe(entries.length);
+  });
+});
+
+describe("topicHref", () => {
+  // The route both classes ship: /{class}/{subject}/chapters/{unit}/topics/{topic}
+  const route = `/${cls.slug}/${subject.slug}/chapters/${unit.id}/topics/${topic.slug}`;
+  const isNotesClass = cls.slug === "class-11-notes" || cls.slug === "class-12-notes";
+
+  it("resolves a tracked topic back to the page that produced it", () => {
+    const entry = journeyRowToEntry(makeRow({ status: "completed" }));
+    expect(topicHref(entry)).toBe(isNotesClass ? route : "/progress");
+  });
+
+  it("never invents a route for a foreign class", () => {
+    const entry = journeyRowToEntry(makeRow());
+    expect(topicHref({ ...entry, classSlug: "bachelor-4-year" })).toBe("/progress");
+    expect(topicHref({ ...entry, unitSlug: undefined })).toBe("/progress");
+    expect(topicHref({ ...entry, topicSlug: undefined })).toBe("/progress");
+  });
+
+  it("falls back for an entry with no path at all", () => {
+    expect(
+      topicHref({
+        id: "legacy-1",
+        topicId: "legacy-1",
+        completed: true,
+        completedAt: "2026-10-02T00:00:00.000Z",
+        updatedAt: "2026-10-02T00:00:00.000Z",
+      })
+    ).toBe("/progress");
   });
 });
