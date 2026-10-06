@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "alternating-current",
+  "unitTitle": "Alternating Current",
+  "unitHours": 8,
+  "syllabusTopics": [
+    "AC voltage applied to resistor, inductor, and capacitor",
+    "LC oscillations and resonance",
+    "LCR series circuit and power factor",
+    "Transformer — principle, types, and losses"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "AC · Class 12",
+    "title": "Resonance and transformers — AC at full power",
+    "href": "/class-12-notes/physics",
+    "icon": "Calculator",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "AC voltage V₀sinωt meets three personalities: resistors obey instantly (in phase), inductors lag current by 90° (X_L = ωL), capacitors lead by 90° (X_C = 1/ωC). In series LCR they partially cancel — at resonance X_L = X_C, impedance bottoms at R, current peaks, and energy sloshes between L and C (LC oscillations at f₀ = 1/2π√LC). Transformers scale AC voltage by turns ratio (mutual induction); real ones leak flux, heat cores and windings."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "X_L = ωL · X_C = 1/ωC  ·  Z = √[R² + (X_L−X_C)²], I₀ = V₀/Z  ·  resonance: X_L = X_C → f₀ = 1/2π√(LC), Z = R, power max  ·  P_avg = V_rms·I_rms·cosφ, cosφ = R/Z  ·  transformer: V₂/V₁ = N₂/N₁ = I₁/I₂ (ideal)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Sinusoidal steady state assumed (phasor math); transients settled. Resonance needs series LCR driven at f₀ (parallel variants differ). Ideal-transformer ratios ignore losses, magnetising current and winding resistance — real efficiency η = output/input < 1."
+    },
+    {
+      "label": "Special cases",
+      "text": "Pure L or C draws ZERO average power (cosφ = 0 — wattless current). At resonance the circuit looks purely resistive. Step-up raises voltage for transmission (I²R losses fall as 1/V²); step-down delivers safe mains. LC tank without R would oscillate forever — radio tuning dials f₀."
+    },
+    {
+      "label": "Solved",
+      "text": "Series LCR at resonance: net reactance X_L − X_C = 0 → Z = R (minimum) → I₀ = V₀/R (maximum), all source power dissipated in R (cosφ = 1). Off-resonance, current lags (inductive, X_L > X_C) or leads (capacitive) — the phasor triangle reads the phase at a glance."
+    },
+    {
+      "label": "Limitation",
+      "text": "Phasor analysis is steady-state sinusoidal only — square waves need Fourier. Real inductors carry resistance (Q-factor finite); real capacitors leak. Transformer ratios sag under load; DC cannot transform at all (no changing flux)."
+    },
+    {
+      "label": "Derivation",
+      "text": "LCR loop: V₀sinωt = IR + L(dI/dt) + Q/C — assume I = I₀sin(ωt−φ), substitute, match sine/cosine coefficients → Z and tanφ = (X_L−X_C)/R. Resonance dI₀/dω = 0 gives X_L = X_C. Transformer: same core flux links both coils → ε ∝ N per turn → V₂/V₁ = N₂/N₁; power conservation (ideal) gives the inverse current ratio."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Reactance ladder: DC → L short, C open; high f → L open, C short. Resonance checklist: X_L = X_C, Z = R, max current, cosφ = 1. Transformer: voltage follows turns, current opposes. Power questions: multiply by cosφ = R/Z."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: X_L/X_C behaviour + phasor phase relations; series-resonance condition with f₀ derivation; average power + power factor; transformer principle, types, losses and efficiency."
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "mathematics",
+  "unitSlug": "vector-algebra",
+  "unitTitle": "Vector Algebra",
+  "unitHours": 8,
+  "syllabusTopics": [
+    "Scalar and vector quantities, types of vectors",
+    "Addition, subtraction and scalar multiplication of vectors",
+    "Dot product (scalar product) and its applications",
+    "Cross product (vector product) and its applications",
+    "Scalar and vector triple products",
+    "Applications: work, torque, angular momentum"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Vectors · Class 12",
+    "title": "Work, torque, angular momentum — vectors in physics dress",
+    "href": "/class-12-notes/mathematics",
+    "icon": "Highlighter",
+    "statKey": "pyq:mathematics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Class 12 vectors pay physics wages: work W = F·d (dot — parallel pays, perpendicular earns nothing), torque τ = r×F (cross — lever arm times force, direction by right-hand rule), angular momentum L = r×p (conserved without external torque). Types (unit, null, like/unlike, collinear, coplanar, free/localised) plus addition laws (triangle, parallelogram, polygon) and scalar multiplication complete the algebra; dot/cross/triple products compute it all."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "W = F·d = |F||d|cosθ (zero at 90°)  ·  τ = r×F, |τ| = rF·sinθ  ·  L = r×p, dL/dt = τ (conserved if τ = 0)  ·  a·b = Σaᵢbᵢ · |a×b| = area of parallelogram  ·  [abc] = determinant = box volume (0 ⟺ coplanar)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Work needs the displacement ALONG the force (components only). Torque needs the perpendicular lever arm (r·sinθ). Angular-momentum conservation needs zero net EXTERNAL torque (internal torques cancel pairwise). Triple-product tests need exactly three 3D vectors."
+    },
+    {
+      "label": "Special cases",
+      "text": "Satellite in circular orbit: gravity ⊥ velocity → zero work, constant speed (cross-product geometry visible). Door pushing: force at 90° to the panel maximises torque; pushing at the hinge (r → 0) does nothing. Ice-skater spin-up: arms in → I falls → ω rises (L conserved)."
+    },
+    {
+      "label": "Solved",
+      "text": "Work by F = (3, −1, 2) over d = (2, 1, −1): W = 3·2 + (−1)·1 + 2·(−1) = 6 − 1 − 2 = 3 J. Torque about origin for r = (0, 2, 0), F = (5, 0, 0): τ = r×F = determinant → (0, 0, −10) N·m — clockwise viewed from +z, magnitude 10."
+    },
+    {
+      "label": "Limitation",
+      "text": "Dot products discard direction (many vectors, one projection). Cross products live in 3D only. Conservation laws need isolated systems — friction/gravity torques quietly drain textbook demos. Component formulas assume orthonormal bases."
+    },
+    {
+      "label": "Derivation",
+      "text": "Torque from rotation dynamics: tangential F_t = ma_t with a_t = rα → τ = rF_t = mr²α = Iα — Newton's second law in angular dress. Angular momentum: L = r×p differentiates to v×p (= 0, parallel) + r×F = τ — conservation when torque vanishes. Work–energy: integrating F·dr along paths."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Physics-word problems: 'work' → dot; 'moment/turning' → cross magnitude with lever arm; 'spinning/conserved' → L = r×p, set before = after. Perpendicular pairs zero the dot; parallel pairs zero the cross."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: work/torque/L numericals from given vectors; coplanarity verdict via triple product; area of parallelogram/triangle from cross magnitude; projection and angle computations."
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "aldehydes-ketones-carboxylic-acids",
+  "unitTitle": "Aldehydes, Ketones and Carboxylic Acids",
+  "unitHours": 10,
+  "syllabusTopics": [
+    "Aldehydes and ketones: preparation, physical properties, nucleophilic addition reactions",
+    "Carboxylic acids: preparation, physical properties, acidic character, reactions",
+    "Name reactions: Aldol condensation, Cannizzaro reaction, HVZ reaction"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Carbonyls · Class 12",
+    "title": "Nucleophilic addition — aldehydes beat ketones",
+    "href": "/class-12-notes/chemistry",
+    "icon": "BookOpen",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "The polar C=O bond invites nucleophiles to carbon: aldehydes (one alkyl group) react faster than ketones (two donating groups + crowding). HCN, NaHSO₃, alcohols (acetal), ammonia derivatives and Grignard all add this way; oxidation splits them (aldehydes → acids, ketones resist). α-hydrogens enable aldol condensation (dilute base, β-hydroxy carbonyl → enal); no-α-H aldehydes disproportionate (Cannizzaro: conc. base → alcohol + carboxylate); acids brominate at α via HVZ (P/Br₂)."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "reactivity: HCHO > RCHO > R₂CO (steric + +I)  ·  Tollens: Ag⁺ mirror (aldehydes only) · Fehling: brick-red Cu₂O (aliphatic aldehydes)  ·  aldol: 2CH₃CHO →(dil. NaOH) CH₃CH(OH)CH₂CHO → CH₃CH=CHCHO  ·  Cannizzaro: 2HCHO + conc. KOH → CH₃OH + HCOOK  ·  HVZ: RCH₂COOH + Br₂/P → RCHBrCOOH"
+    },
+    {
+      "label": "Conditions",
+      "text": "Nucleophilic addition needs the polarised carbonyl (acid catalysis helps by protonating O). Aldol needs α-H AND dilute base; concentrated base with no-α-H aldehydes diverts to Cannizzaro. Tollens/Fehling need fresh reagents and heat; HVZ needs red P with Br₂."
+    },
+    {
+      "label": "Special cases",
+      "text": "Formaldehyde (no α-H) Cannizzaros; acetaldehyde (has α-H) aldols — the α-H test predicts the path. Aromatic aldehydes skip aldol with themselves but cross-condense (Claisen–Schmidt). Formic acid reduces Tollens AND Fehling (aldehyde-like H–C=O end). Ketones give no Tollens/Fehling — the distinction panel."
+    },
+    {
+      "label": "Solved",
+      "text": "Distinguish ethanal vs propanone: warm each with Tollens — ethanal deposits a silver mirror (oxidised to acetate), propanone stays clear (no oxidation). Confirm with Fehling (brick red only for ethanal). Two tests, same logic: aldehydes oxidise, ketones do not."
+    },
+    {
+      "label": "Limitation",
+      "text": "Steric bulk can invert expected reactivity (hindered aldehydes sluggish). Tollens/Fehling detect reducing aldehydes, not all carbonyls (α-hydroxy ketones cheat Fehling). Aldol mixtures explode combinatorially with two different carbonyls (directed variants needed)."
+    },
+    {
+      "label": "Derivation",
+      "text": "Addition mechanism: nucleophile attacks carbonyl C (LUMO, δ+), π electrons retreat to O (tetrahedral alkoxide), protonation finishes — rate tracks carbonyl electrophilicity (aldehydes > ketones by +I + sterics). Aldol: base abstracts α-H (enolate resonance-stabilised) → attacks second carbonyl → dehydration conjugates the enal (thermodynamic sink)."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Test panel: Tollens mirror + Fehling red = aldehyde (aliphatic); both negative = ketone. α-H? Yes → aldol possible; No → Cannizzaro candidate. HVZ = α-bromination of acids only. Acidity: carboxylic > phenol > water > alcohol."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: aldehyde vs ketone distinction tests; aldol mechanism with dehydration; Cannizzaro conditions + disproportionation logic; HVZ α-bromination; acidity order of the four families."
+    }
+  ]
+}

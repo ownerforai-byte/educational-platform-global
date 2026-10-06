@@ -1,0 +1,68 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "gravitation",
+  "unitTitle": "Gravitation",
+  "syllabusTopics": [
+    "Newton's law of gravitation",
+    "Gravitational field strength",
+    "Gravitational potential; gravitational potential energy",
+    "Variation in value of 'g' due to altitude and depth",
+    "Centre of mass and centre of gravity",
+    "Motion of a satellite: orbital velocity and time period of the satellite",
+    "Escape velocity",
+    "Potential and kinetic energy of the satellite",
+    "Geostationary satellite",
+    "GPS"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank compiled 2026-10-06 from pyqs/01-neb-2024.json, 02-neb-2023.json, 03-neb-2022.json, 04-neb-2021.json (x2) in this unit (stems, marks, solutions verbatim in essence).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on gravitation",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Five questions: G statement (2024), escape-velocity derivation plus value (2023), alien-planet g scaling (2022: 8M at 2R doubles g to 19.6), satellite potential energy (2021: 200 kg at 400 km gives minus 1.18x10^9 J). Gravity scales as M/R2 — every numerical is that ratio in disguise."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "F = GMm/r2, G = 6.67x10^-11 · g = GM/R2 · v_escape = sqrt(2GM/R) = sqrt(2gR) = 11.2 km/s · v_orbit = sqrt(GM/r) · U = -GMm/r · E_total = -GMm/2r · g(h) = g(1-2h/R), g(d) = g(1-d/R)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Point-mass (or spherical) gravity with centre-to-centre r (meaning satellite r = R + h, never h alone). Escape derivation ignores drag and other bodies. The M/R2 scaling compares surfaces only. Bound orbits carry negative total energy (why the minus sign matters)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Planet 8M/2R: g scales 8/4 = 2x, so 19.6 m/s2 (NEB 2022). Satellite 200 kg at 400 km: r = 6.8x10^6 m, U = -GMm/r = -1.18x10^9 J (NEB 2021). Escape needs 11.2 km/s regardless of projectile mass."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2023 (5): half m v2 = GMm/R gives v = sqrt(2GM/R) = sqrt(2gR) = 11.2 km/s. NEB 2022 (3): g_p = G(8M)/(2R)2 = 2g = 19.6 m/s2. NEB 2021 (3): U = -(6.67x10^-11 x 6x10^24 x 200)/6.8x10^6 = -1.18x10^9 J. NEB 2024 (2): law statement plus G value."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: altitude used as orbital radius; G value forgotten (6.67x10^-11); positive PE for bound satellites; g-variation formulas applied beyond small h/d. Newton fails extreme fields (Mercury needs Einstein)."
+    },
+    {
+      "label": "Derivation",
+      "text": "Escape: kinetic equals binding energy GMm/R. Orbital: gravity supplies centripetal force (v = sqrt(GM/r), T = 2 pi sqrt(r3/GM) — Kepler III). g-variation from g = GM/r2 evaluated at R+h and R-d. Centre of mass vs gravity distinction for extended bodies."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Scaling questions: write the M/R2 ratio, plug multiples. Satellite questions: write r = R + h first line. Escape: sqrt(2gR) shortcut with gR known. Bound means negative total energy."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (2): gravitation law + G. NEB 2023 (5): escape velocity derive + value. NEB 2022 (3): 8M/2R planet g. NEB 2021 (3): 200 kg satellite at 400 km PE. NEB 2021 (3): planet mass/radius variant."
+    }
+  ]
+}

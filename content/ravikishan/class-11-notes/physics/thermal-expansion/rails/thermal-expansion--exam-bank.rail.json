@@ -1,0 +1,62 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "thermal-expansion",
+  "unitTitle": "Thermal Expansion",
+  "syllabusTopics": [
+    "Linear expansion and its measurement",
+    "Cubical expansion, superficial expansion and their relation with linear expansion",
+    "Liquid expansion: absolute and apparent",
+    "Dulong and Petit method of determining expansivity of liquid"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank: three-expansivity relation (2022), alpha definition (2022), 1 m rod numerical (2021).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on thermal expansion",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Three questions: define all three expansivities plus derive 1:2:3 (2022), alpha definition with formula and unit (2022), 1 m rod 20 to 100 C numerical (2021: ~0.96 mm). Cube geometry (dV/V = 3 dL/L) derives the ratio; absolute liquid expansion adds the vessel term back."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "dL = alpha L dT (1/K) · beta = 2 alpha, gamma = 3 alpha · liquid: gamma_abs = gamma_app + gamma_vessel · rod: 1.2x10^-5 x 1 x 80 ~ 0.96 mm"
+    },
+    {
+      "label": "Conditions",
+      "text": "1:2:3 needs small rises in isotropic solids (meaning large dT or anisotropic crystals break it). Apparent expansion is instrument-relative (change vessel, change reading). Bimetallic bending needs bonded differing alpha."
+    },
+    {
+      "label": "Special cases",
+      "text": "Water contracts to 4 C then expands (lakes freeze top-down). Invar barely expands (survey tapes). Rail gaps and sagging lines are expansion engineering made visible."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2021 (3): 1.2x10^-5 x 1 x 80 = 9.6x10^-4 m ~ 0.96 mm. NEB 2022 (3): three definitions, then cube dV = 3L2 dL giving gamma = 3 alpha (square face gives beta = 2 alpha). NEB 2022 (2): alpha as fractional length change per kelvin, 1/K."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: ratio quoted without small-strain caveat; apparent reported as absolute (vessel term dropped); alpha drifting with T ignored at large dT."
+    },
+    {
+      "label": "Derivation",
+      "text": "Cube V = L3 differentiates to dV/V = 3 dL/L; square face analogously doubles. Absolute liquid: observed rise equals liquid growth minus vessel growth. Dulong-Petit U-tube isolates true liquid expansivity."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'Define all three + relation' means definitions then the cube in three lines. Units per kelvin. Apparent questions always add the vessel term back."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2022 (3): three expansivities + relation. NEB 2022 (2): alpha + formula + unit. NEB 2021 (3): 1 m rod numerical."
+    }
+  ]
+}

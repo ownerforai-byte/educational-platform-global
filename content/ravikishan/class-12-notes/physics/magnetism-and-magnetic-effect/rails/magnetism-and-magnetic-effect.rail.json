@@ -1,0 +1,65 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "magnetism-and-magnetic-effect",
+  "unitTitle": "Magnetism and Magnetic Effect of Current",
+  "unitHours": 12,
+  "syllabusTopics": [
+    "Magnetic field and magnetic force on moving charges",
+    "Lorentz force and motion of charged particles in magnetic fields",
+    "Biot-Savart law and its applications (straight wire, circular loop, solenoid)",
+    "Ampere's circuital law and its applications",
+    "Force between two parallel current-carrying conductors",
+    "Moving coil galvanometer, ammeter, and voltmeter"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Magnetism · Class 12",
+    "title": "Biot-Savart to Ampere — field of currents",
+    "href": "/class-12-notes/physics",
+    "icon": "Workflow",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Moving charges feel F = qv×B (Lorentz) — perpendicular to both motion and field, so magnetism bends paths without doing work. Every current element contributes dB = (μ₀/4π)·Idl×r̂/r² (Biot-Savart); symmetric layouts surrender instead to Ampere's ∮B·dl = μ₀I. Parallel currents attract (antiparallel repel) with F/l = μ₀I₁I₂/2πd — the force that once DEFINED the ampere. Galvanometers read current by coil torque; shunts make ammeters, multipliers make voltmeters."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Lorentz: F = q(E + v×B)  ·  cyclotron: r = mv/qB, f = qB/2πm  ·  Biot-Savart → loop centre B = μ₀I/2R · solenoid B = μ₀nI · straight wire B = μ₀I/2πr  ·  Ampere: ∮B·dl = μ₀I_enclosed  ·  parallel wires: F/l = μ₀I₁I₂/2πd  ·  galvanometer: θ ∝ I; ammeter = G‖shunt, voltmeter = G+multiplier in series"
+    },
+    {
+      "label": "Conditions",
+      "text": "Biot-Savart needs steady currents; Ampere's loop must exploit symmetry (circle/coaxial path) to be useful. Lorentz magnetic part does no work (F ⊥ v) — speeds never change, only directions. Galvanometer linearity needs radial field + spring control; conversion formulas assume ideal shunt/multiplier."
+    },
+    {
+      "label": "Special cases",
+      "text": "Velocity selector: E = vB passes undeflected charges (mass spectrometry front end). Cyclotron frequency is mass-locked — the resonance trick behind accelerators and MRI magnets. Earth's field bends solar wind into aurorae. Tangent galvanometer is the classroom Biot-Savart application."
+    },
+    {
+      "label": "Solved",
+      "text": "Field at a loop centre: each element Idl sits at distance R, all contributions point one way (right-hand grip) → B = Σ(μ₀/4π)Idl/R² = (μ₀I/4πR²)·2πR = μ₀I/2R. Ampere shortcut for a solenoid: rectangular loop gives B·L = μ₀nLI → B = μ₀nI, uniform inside, ~zero outside."
+    },
+    {
+      "label": "Limitation",
+      "text": "Biot-Savart integrates painfully without symmetry — Ampere rescues only symmetric cases. Classical orbits radiate and collapse (Bohr fixed the atom, not magnetism). Ferromagnets add domain physics no current-loop model predicts. Hall probes measure B; compasses only point."
+    },
+    {
+      "label": "Derivation",
+      "text": "Straight wire via Biot-Savart: integrate dB = (μ₀I/4π)(dl·sinθ/r²) along infinite length → B = μ₀I/2πr. Ampere check: circular loop around the wire, ∮B·dl = B·2πr = μ₀I — same result, one line. Parallel-wire force: wire 2 sits in B₁ = μ₀I₁/2πd, feels F = I₂LB₁ → F/l formula; direction by Fleming's left hand."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Symmetry word → Ampere loop matching it (circle for wires, rectangle for solenoids/sheets). Direction: right-hand grip for fields, Fleming's left for forces, Fleming's right for induced current. Galvanometer→ammeter: shunt in PARALLEL (low range extension); →voltmeter: multiplier in SERIES."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: Biot-Savart + loop-centre/solenoid derivation; Ampere applications; parallel-conductor force; galvanometer conversion numericals; Lorentz circular-motion (cyclotron radius/frequency)."
+    }
+  ]
+}

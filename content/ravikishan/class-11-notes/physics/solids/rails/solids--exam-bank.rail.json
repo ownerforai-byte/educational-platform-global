@@ -1,0 +1,61 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "solids",
+  "unitTitle": "Solids",
+  "syllabusTopics": [
+    "Energy bands in solids (qualitative ideas)",
+    "Difference between metals, insulators and semiconductors using band theory",
+    "Intrinsic and extrinsic semiconductors"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank: band theory 5-marker (2023), intrinsic + carriers (2022), elastic-vs-plastic odd one (2022).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on solids",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Three questions: band theory differentiating the three (2023, 5 marks: overlapping bands, ~1 eV gap, 5 eV+ chasm), intrinsic semiconductor plus electrons/holes (2022), elastic-vs-plastic body (2022 odd one out). Gap size decides conductivity."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "metals Eg ~ 0 (overlap) · semiconductors ~1 eV (Si 1.1, Ge 0.7) · insulators 5 eV+ · sigma = n e mu · elastic: recovers shape; plastic: permanent set"
+    },
+    {
+      "label": "Conditions",
+      "text": "Band pictures assume crystalline periodicity (meaning amorphous solids smear edges). Intrinsic conduction needs kT-scale bridging (absolute zero insulates everything). Doping helps dilute (~1 in 10^6)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Diamond insulates despite pure carbon (9 eV gap). Doping: pentavalent donors (n-type), trivalent acceptors (p-type). Elastic-vs-plastic: recovery vs permanent set under load."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2023 (5): draw three band diagrams (overlap/small gap/huge gap), narrate conduction per case. NEB 2022 (2): intrinsic = pure + thermal pairs; electrons and holes both carry (opposite drift). NEB 2022 (2): elastic recovers, plastic keeps the set."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: quantitative conductivity from qualitative bands; superconductors forced into band logic (Cooper pairs instead); heavy-doping degeneracy ignored."
+    },
+    {
+      "label": "Derivation",
+      "text": "N atoms split levels into N sub-levels merging to bands (Pauli); Fermi level placement decides class; thermal tail n proportional to e^(-Eg/2kT) explains thermistors. Doping adds donor/acceptor levels near band edges."
+    },
+    {
+      "label": "Shortcut",
+      "text": "5-marker: three diagrams plus one line each. n-type pentavalent, p-type trivalent. Elastic recovers, plastic stays."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (5): band theory + three-way split. NEB 2022 (2): intrinsic + carriers. NEB 2022 (2): elastic vs plastic."
+    }
+  ]
+}

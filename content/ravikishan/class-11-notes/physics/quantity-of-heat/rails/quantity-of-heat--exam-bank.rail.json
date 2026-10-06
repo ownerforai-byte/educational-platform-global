@@ -1,0 +1,64 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "quantity-of-heat",
+  "unitTitle": "Quantity of Heat",
+  "syllabusTopics": [
+    "Newton's law of cooling",
+    "Measurement of specific heat capacity of solids and liquids",
+    "Change of phases: latent heat",
+    "Specific latent heat of fusion and vaporization",
+    "Measurement of specific latent heat of fusion and vaporization",
+    "Triple point"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank: Al block (2024), latent fusion vs vaporization (2023), Q/c definitions (2023).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on quantity of heat",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Three questions: aluminium block heating (2024: 200 g, 20 to 100 C absorbs 14,400 J), latent fusion vs vaporization distinction (2023), Q and c definitions plus warming formula (2023). Sensible heat warms (mc dT); latent heat transforms (mL) at fixed temperature."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Q = m c dT (c: J/kg K) · Q = m L (fusion/vaporization, J/kg) · mixture: lost = gained · cooling dT/dt = -k(T - T0)"
+    },
+    {
+      "label": "Conditions",
+      "text": "mc dT needs no phase change inside the interval (meaning c roughly constant). Latent formulas need constant pressure at the transition point. Mixture ledgers assume isolated calorimeters. Newton cooling needs small excess temperature."
+    },
+    {
+      "label": "Special cases",
+      "text": "200 g Al: 0.2 x 900 x 80 = 14,400 J. Fusion breaks lattice (3.34x10^5 J/kg ice); vaporization breaks all bonds (2.26x10^6 J/kg steam — why steam scalds worse). Triple point: all three phases coexist at one (P,T)."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2024 (3): Q = 0.2 x 900 x 80 = 14,400 J absorbed. NEB 2023 (3): fusion melts solids at fixed T, vaporization boils liquids at fixed T — both Q = mL with no thermometer movement. NEB 2023 (3): Q defined as transit energy, c as per-kg-per-kelvin cost, formula Q = mc dT."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: grams left unconverted (200 g = 0.2 kg); dT applied across phase changes; c treated constant over huge ranges. Latent heat vanishes at the critical point."
+    },
+    {
+      "label": "Derivation",
+      "text": "Mixture method: hot ledger equals cold ledger (plus calorimeter term) — solve for unknown c. Latent measurement runs the same ledger with one side mL. Cooling integrates to exponential decay."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Warming vs changing phase decides mc dT vs mL — read the verb (heats/melts/boils). Mixture: lost = gained first line. Triple point: one sentence (three phases, one point)."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (3): Al block heating numerical. NEB 2023 (3): fusion vs vaporization latent. NEB 2023 (3): Q/c definitions + warming formula."
+    }
+  ]
+}

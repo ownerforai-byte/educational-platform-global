@@ -1,0 +1,64 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "electromagnetic-induction",
+  "unitTitle": "Electromagnetic Induction",
+  "unitHours": 8,
+  "syllabusTopics": [
+    "Faraday's laws of electromagnetic induction",
+    "Lenz's law and conservation of energy",
+    "Self-induction and self-inductance",
+    "Mutual induction and mutual inductance",
+    "Growing and decaying current in LR circuits"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "EMI · Class 12",
+    "title": "Lenz's law — the minus sign that guards energy",
+    "href": "/class-12-notes/physics",
+    "icon": "Network",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Changing magnetic flux induces EMF (Faraday: ε = −dΦ/dt) — motion, changing current or rotating coils all generate electricity. Lenz's minus sign is energy conservation in disguise: induced effects always OPPOSE the change (push a magnet in, the coil repels it — you do the work that becomes electrical energy). Self-induction (coils fight their own current changes, L) and mutual induction (transformers, M) industrialise the effect; LR circuits grow/decay exponentially toward V/R."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "ε = −N·dΦ/dt (Φ = BA·cosθ)  ·  motional: ε = Blv  ·  self: ε = −L·dI/dt, solenoid L = μ₀N²A/l  ·  mutual: ε₂ = −M·dI₁/dt  ·  LR growth: I = (V/R)(1−e^(−Rt/L)) · decay: I = I₀e^(−Rt/L), τ = L/R"
+    },
+    {
+      "label": "Conditions",
+      "text": "Flux must CHANGE — static fields induce nothing. Lenz opposition assumes passive circuits (no batteries driving the other way). LR exponentials need constant R, L and step voltage. Motional ε = Blv needs perpendicular v, B, l (resolve components otherwise)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Dropping a magnet through a copper tube: eddy currents brake the fall (Lenz demo). AC in the primary drives transformer secondaries via mutual M. LR decay: at t = τ current falls to 37%; growth reaches 63% — mirror of RC charging with L↔C swapped."
+    },
+    {
+      "label": "Solved",
+      "text": "Rod of length l sliding at v on U-rails in field B: area grows at lv per second → dΦ/dt = Blv → ε = Blv, current ε/R opposing the motion (Lenz) — the mechanical work F·v you supply equals the electrical power ε²/R. Energy ledger closed, minus sign honoured."
+    },
+    {
+      "label": "Limitation",
+      "text": "Faraday gives EMF, not current direction alone — Lenz + right-hand rules complete it. Ideal-inductor formulas ignore winding resistance and core saturation. Lenz predicts opposition, never magnitude; quantitative work still needs the flux rate."
+    },
+    {
+      "label": "Derivation",
+      "text": "Lenz from energy: suppose induced current AIDED the change — growing flux makes more current makes more flux, free energy forever. The minus sign forbids it; pushing the magnet against repulsion supplies exactly the electrical output. Self-inductance: flux linkage NΦ ∝ I defines L = NΦ/I; solenoid gives L = μ₀N²A/l via B = μ₀nI."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'Direction of induced current?' → ask what change, oppose it (repel approaching N, attract receding N). LR circuits: write τ = L/R, then 63%/37% benchmarks. Transformer next unit leans entirely on mutual M — learn it here once."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: Faraday + Lenz statements with energy-conservation argument; motional-EMF derivation; self/mutual inductance definitions + solenoid L; LR growth/decay curves and time-constant numericals."
+    }
+  ]
+}

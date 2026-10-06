@@ -1,0 +1,66 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "environmental-issues",
+  "unitTitle": "Environmental Issues",
+  "unitHours": 8,
+  "syllabusTopics": [
+    "Air pollution — causes, effects, and control",
+    "Water pollution — causes, effects, and control",
+    "Solid waste management",
+    "Nuclear radiation hazards",
+    "Greenhouse effect, global warming, climate change",
+    "Ozone layer depletion",
+    "Rainwater harvesting and wasteland development"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Environment · Class 12",
+    "title": "Greenhouse vs ozone hole — two atmospheric stories",
+    "href": "/class-12-notes/biology",
+    "icon": "Ruler",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Two gases, two crises: greenhouse gases (CO₂, CH₄, N₂O, CFCs) trap outgoing infrared — natural warming plus anthropogenic surplus = global warming → climate shifts, sea rise, extremes. Ozone (stratospheric O₃) instead absorbs UV; CFC chlorine catalytically shreds it (one Cl ~10⁵ O₃), opening the Antarctic hole — healing under the Montreal Protocol. Air/water pollution (particulates, SO₂/NOₓ, sewage, heavy metals), solid waste (segregate–recycle–compost–landfill), nuclear hazards, plus remedies (rainwater harvesting, wasteland greening) complete the unit."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "greenhouse: solar in (shortwave) − IR out (trapped) = warming · gases: CO₂ (fossil) · CH₄ (paddy/livestock) · N₂O · CFCs  ·  ozone: O₂ + UV → 2O · O + O₂ → O₃ · Cl + O₃ → ClO + O₂ (catalytic)  ·  control ladder: reduce → treat → recycle → rehabilitate"
+    },
+    {
+      "label": "Conditions",
+      "text": "Warming attribution needs long baselines (decades, not weather). Ozone chemistry needs polar stratospheric clouds + spring sunlight (Antarctic specificity). Pollution controls assume source identification first (chimney vs traffic vs biomass). Harvesting math needs catchment × rainfall × runoff coefficient."
+    },
+    {
+      "label": "Special cases",
+      "text": "Kathmandu winter smog (valley inversion traps particulates) vs summer washout. Montreal Protocol: the rare solved crisis (CFC phase-out, hole recovering). Bhopal/MINAMATA-scale events anchor industrial-hazard answers. Nuclear: α/β/γ hierarchy, half-life logic for waste timescales."
+    },
+    {
+      "label": "Solved",
+      "text": "Distinguish the two crises in one table: greenhouse (tropospheric gases, traps heat, warming/climate, fix = cut emissions) vs ozone hole (stratospheric O₃ loss, CFC chlorine catalysis, UV rise, fix = Montreal phase-out). Conflating them is the classic zero-mark error — location and mechanism differ completely."
+    },
+    {
+      "label": "Limitation",
+      "text": "Single-issue framing misleads (warming + ozone + pollution interact). Local air quality ≠ global climate (different gases, different fixes). Nuclear risk debates mix physics (dose) with dread (perception) — answers need both acknowledged. Harvesting potentials overpromise without maintenance."
+    },
+    {
+      "label": "Derivation",
+      "text": "Energy-balance: Earth radiates σT⁴; greenhouse gases raise the effective emission height to colder layers → surface must warm to restore balance (ΔF = 5.35·ln(C/C₀) per CO₂ doubling). Ozone: Chapman cycle formation vs Cl-catalysed destruction kinetics — rate comparison shows parts-per-billion chlorine dominating natural sinks."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Crisis pairs: warming–CO₂/CH₄–cut emissions; ozone–CFC–Montreal. Pollution answers: source → effect → control (three beats each medium). Waste hierarchy: refuse–reduce–reuse–recycle–recover. Harvesting: rooftop + recharge pits."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: greenhouse mechanism vs ozone depletion (tabulated difference); air/water pollution triads (cause–effect–control); solid-waste hierarchy; Montreal Protocol significance; rainwater-harvesting design."
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "mathematics",
+  "unitSlug": "three-dimensional-geometry",
+  "unitTitle": "Three Dimensional Geometry",
+  "unitHours": 8,
+  "syllabusTopics": [
+    "Direction cosines and direction ratios of a line",
+    "Equation of a line in space — standard and general form",
+    "Equation of a plane — normal form, general form",
+    "Angle between two lines, two planes, and a line and a plane",
+    "Distance of a point from a plane and line"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "3D Geometry · Class 12",
+    "title": "Planes — normal form to point distance",
+    "href": "/class-12-notes/mathematics",
+    "icon": "Microscope",
+    "statKey": "pyq:mathematics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Space lines need direction cosines (l, m, n with l²+m²+n² = 1) or free ratios (a, b, c); symmetric form (x−x₀)/a = (y−y₀)/b = (z−z₀)/c walks the line. Planes pivot on their NORMAL: normal form lx+my+nz = p, general ax+by+c+d = 0 with (a,b,c) as normal ratios. Angles come from dot products (line–line, plane–plane via normals, line–plane as complement); point-to-plane distance drops perpendicularly."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "l² + m² + n² = 1 (cosines) · ratios scale freely  ·  line: (x−x₀)/a = (y−y₀)/b = (z−z₀)/c  ·  plane: lx+my+nz = p · ax+by+cz+d = 0  ·  cosθ = |a₁a₂+b₁b₂+c₁c₂|/(magnitudes)  ·  distance point→plane: |ax₀+by₀+cz₀+d|/√(a²+b²+c²)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Direction cosines must normalise (ratios need not). Symmetric line form needs all denominators non-zero (zero denominator = parallel to that axis plane — handle separately). Plane distance formula needs the general form (move everything left first). Angle formulas give acute values via absolute value."
+    },
+    {
+      "label": "Special cases",
+      "text": "Line parallel to a plane: direction ⊥ normal (dot = 0). Two planes perpendicular: normals perpendicular (a₁a₂+b₁b₂+c₁c₂ = 0). Skew lines (non-parallel, non-intersecting) need shortest-distance machinery. Coordinate planes: x = 0 (yz), y = 0 (xz), z = 0 (xy)."
+    },
+    {
+      "label": "Solved",
+      "text": "Distance from (1, 2, 3) to 2x − y + 2z = 5: rewrite 2x − y + 2z − 5 = 0 → |2(1) − 2 + 2(3) − 5|/√(4+1+4) = |2−2+6−5|/3 = 1/3. One substitution into the formula — the normal (2,−1,2) does all the work."
+    },
+    {
+      "label": "Limitation",
+      "text": "Direction-cosine uniqueness fails (two sign choices per line). Symmetric form breaks for axis-parallel lines (zero denominators need parametric fallback). Distance formulas measure perpendicular separation only — askew configurations need the full shortest-distance treatment."
+    },
+    {
+      "label": "Derivation",
+      "text": "Plane from perpendicularity: points X with (X − X₀)·n̂ = 0 → lx+my+nz = p (normal form); scaling gives general form. Line symmetric form eliminates the parameter t from x = x₀+at, y = y₀+bt, z = z₀+ct. Point–plane distance: project the joining vector onto the unit normal — absolute projection is the formula."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Read normals straight off plane equations (coefficients = normal ratios). Angles: dot the directions (lines) or normals (planes). Distance: substitute point, absolute value, divide by normal's magnitude. Parallelism/perpendicularity: dot = 0 vs ratios proportional."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: line in symmetric form from two points; plane through three points; angle between lines/planes; point-to-plane distance numerical; parallelism/perpendicularity verdicts."
+    }
+  ]
+}

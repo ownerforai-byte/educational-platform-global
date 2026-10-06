@@ -1,0 +1,64 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "human-health-and-diseases",
+  "unitTitle": "Human Health and Diseases",
+  "unitHours": 10,
+  "syllabusTopics": [
+    "Pathogens and diseases: malaria, dengue, filariasis, ascariasis, pneumonia, typhoid, tuberculosis, common cold, AIDS, ringworm",
+    "Immune system — innate and adaptive immunity",
+    "Antigens and antibodies, immune response",
+    "Vaccination and immunization",
+    "Allergy and autoimmune diseases"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Health · Class 12",
+    "title": "Immunity — innate barriers to antibody memory",
+    "href": "/class-12-notes/biology",
+    "icon": "Lightbulb",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Innate immunity (skin, lysozyme, phagocytes, interferons) strikes everything foreign within hours; adaptive immunity (B-cell antibodies, T-cell killers) learns specific antigens and remembers them — the basis of vaccination (weakened/killed antigen trains memory without disease). Allergies are immunity overshooting (IgE, histamine); autoimmunity is immunity misfiring at self (rheumatoid arthritis, lupus). The syllabus pathogen parade (Plasmodium, dengue virus, Ascaris, Mycobacterium, HIV, ringworm fungus) maps each invader to its route and control."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "innate (birth, non-specific): barriers + phagocytosis + inflammation  ·  adaptive (acquired, specific): humoral (B→antibodies IgG/A/M/E/D) + cell-mediated (T-killer/helper)  ·  primary response: slow, weak · secondary: fast, strong (memory)  ·  allergy: IgE + mast-cell histamine  ·  vaccines: live-attenuated / killed / toxoid / mRNA"
+    },
+    {
+      "label": "Conditions",
+      "text": "Vaccination needs an immunogenic but safe antigen plus time for memory formation (booster schedules). Antibodies bind specific epitopes — mismatched antibodies do nothing. Herd immunity thresholds assume random mixing and durable immunity. Autoimmune diagnosis needs self-reactive markers, not just symptoms."
+    },
+    {
+      "label": "Special cases",
+      "text": "Malaria (Plasmodium via Anopheles, cyclical fever), dengue (Aedes, breakbone + platelet crash), TB (Mycobacterium, DOTS therapy), AIDS (HIV kills helper-T, treatment not cure), ringworm (dermatophyte fungus, not worm). Colostrum gifts newborns maternal IgA — borrowed adaptive immunity."
+    },
+    {
+      "label": "Solved",
+      "text": "Why do vaccines prevent but rarely cure? Prevention pre-builds memory cells and circulating antibodies, so the real pathogen meets an armed secondary response (fast, overwhelming); curing an established infection must chase a replicating, sometimes latent enemy (HIV provirus, TB granulomas) that already outruns the same machinery."
+    },
+    {
+      "label": "Limitation",
+      "text": "Immunity is strain-specific (flu drifts yearly — new vaccines follow). Immunocompromised patients cannot take live vaccines. Allergies and autoimmunity show the system has no wisdom, only pattern-matching. Eradication worked for smallpox (no animal reservoir); most pathogens keep refuges."
+    },
+    {
+      "label": "Derivation",
+      "text": "From clonal selection: each lymphocyte carries one receptor specificity; antigen binding selects and expands its clone (primary = days, low titre) while survivors become memory cells (secondary = hours, high titre, higher affinity via somatic hypermutation). Vaccination runs this selection with a safe antigen — the derivation of every immunisation schedule."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Pathogen table: name → vector/route → symptom → control (five columns, ten rows — the unit's bank). Immunity answers: innate vs adaptive first, then humoral vs cellular. Allergy = IgE/histamine; autoimmune = self-attack (one example each)."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: innate vs adaptive immunity with components; antibody structure + classes; vaccination principle with schedule logic; allergy vs autoimmunity mechanism + example; any three pathogens with vector, symptom and control."
+    }
+  ]
+}

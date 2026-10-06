@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "elasticity",
+  "unitTitle": "Elasticity",
+  "syllabusTopics": [
+    "Hooke's law: force constant",
+    "Stress; strain; elasticity and plasticity",
+    "Elastic modulus: Young modulus, bulk modulus, shear modulus",
+    "Poisson's ratio",
+    "Elastic potential energy"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank compiled 2026-10-06 from pyqs/01-neb-2023.json (x2) and 02-neb-2022.json in this unit (stems, marks, solutions verbatim in essence).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on elasticity",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Three questions, one method: define stress/strain/Y with units (2023), repeat Y alone (2023), then compute stress and strain for the steel wire (2022: 100 N on 2 mm squared gives 5x10^7 Pa stress, 2.5x10^-4 strain). Stress is force per area, strain is fractional change (unitless), Y is their ratio — stiffness priced in pascals."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "stress = F/A (Pa) · strain = dL/L (unitless) · Y = stress/strain = FL/A dL · U = half stress strain volume"
+    },
+    {
+      "label": "Conditions",
+      "text": "Hooke and Y hold within the ELASTIC limit only — past yield the ratio collapses (meaning stiffness is a small-strain property). Strain's unitlessness is why Y inherits stress units. Steel's Y ~2x10^11 Pa is the benchmark that makes wire extensions millimetric."
+    },
+    {
+      "label": "Special cases",
+      "text": "Strain has NO unit — writing 'strain in Pa' fails instantly. Bulk/shear moduli extend the idea to volume/shape; Poisson couples stretch to thinning. The 2022 wire: strain 2.5x10^-4 means a 1 m wire stretches 0.25 mm."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2022 (3): stress = 100/(2x10^-6) = 5x10^7 Pa; strain = stress/Y = 5x10^7/2x10^11 = 2.5x10^-4. NEB 2023 (3+2): stress (Pa), strain (none), Y = stress/strain (Pa) — definitions first, substitution second, unit check last."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: units on strain; mm squared left unconverted (2 mm2 = 2x10^-6 m2); applying Hooke past yield. Moduli are small-strain averages — temperature, defects and rate shift real values."
+    },
+    {
+      "label": "Derivation",
+      "text": "Energy density: dW = F dx with F = (YA/L)x integrates to half stress times strain times volume — the triangular area under the Hookean line. No other derivation is asked; definitions plus this energy form cover the unit."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'Define + units' opens most elasticity questions — write all three with units in one block. Numericals: convert mm2 to m2 first, then stress, then strain. Y in Pa always; strain never has units."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (3): stress, strain, Y + SI units. NEB 2023 (2): Y definition + formula + unit. NEB 2022 (3): 100 N on 2 mm2 wire — stress, then strain."
+    }
+  ]
+}

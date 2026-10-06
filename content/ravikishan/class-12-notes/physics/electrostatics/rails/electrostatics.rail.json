@@ -1,0 +1,65 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "electrostatics",
+  "unitTitle": "Electrostatics",
+  "unitHours": 10,
+  "syllabusTopics": [
+    "Coulomb's law and its applications",
+    "Electric field and electric field intensity due to point charges, line charges, and charged sheets",
+    "Electric potential and potential difference",
+    "Capacitance and capacitors — parallel plate, series and parallel combination",
+    "Dielectric and dielectric constant",
+    "Energy stored in a capacitor"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Electrostatics · Class 12",
+    "title": "Gauss law at work — line, sheet and capacitor",
+    "href": "/class-12-notes/physics",
+    "icon": "Atom",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Class 12 electrostatics upgrades Class 11: Coulomb's force becomes a FIELD mapped by E = F/q₀, Gauss law (flux = Q/ε₀) extracts the field of symmetric distributions without integration, potential V = W/q prices positions in energy per coulomb, and capacitors store that energy in the field itself. Line charges, charged sheets and parallel plates are the three Gauss showcases; dielectrics multiply capacitance by polarising against the applied field."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "F = kq₁q₂/r² · E = kQ/r² · Φ = Q/ε₀ · line: E = λ/2πε₀r · sheet: E = σ/2ε₀ · conductor surface: E = σ/ε₀ · V = kQ/r · C = ε₀A/d (×K with dielectric) · U = ½CV²"
+    },
+    {
+      "label": "Conditions",
+      "text": "Gauss is useful only with symmetry (spherical/cylindrical/planar) so E leaves the flux integral. V = kQ/r pins zero at infinity. C = ε₀A/d needs plate size ≫ separation (uniform field). Dielectric factor applies to fully-filled gaps; series/parallel rules assume ideal connections."
+    },
+    {
+      "label": "Special cases",
+      "text": "Inside a charged shell E = 0 while V stays constant — shielding. Infinite sheet gives distance-independent uniform E. Battery-connected vs isolated capacitor on dielectric insertion: V-fixed raises Q and U; Q-fixed drops V. Two equal charges midpoint: field cancels to zero."
+    },
+    {
+      "label": "Solved",
+      "text": "Field of an infinite sheet, surface density σ: pillbox Gaussian surface straddling it — flux 2EA through both faces, enclosed σA → E = σ/2ε₀, uniform on each side, direction away for σ > 0. Same pillbox on a conductor (field inside zero) gives E = σ/ε₀ just outside."
+    },
+    {
+      "label": "Limitation",
+      "text": "Gauss yields total flux, not pointwise E, without symmetry. Point formulas fail inside continuous distributions. The dielectric constant is frequency- and field-dependent at extremes; breakdown caps every real capacitor. Electrostatics assumes static charges — moving charges add magnetism."
+    },
+    {
+      "label": "Derivation",
+      "text": "Point-charge flux: E·4πr² = (kQ/r²)·4πr² = Q/ε₀ — the r² cancels, so every enclosing surface passes identical flux. Superpose: Φ = ΣQ/ε₀. Capacitor: Gauss on one plate gives E = σ/ε₀, V = Ed, C = Q/V = ε₀A/d; charging incrementally, U = ∫(q/C)dq = Q²/2C."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Symmetry word → Gaussian surface matching it (sphere/pillbox/cylinder), flux = enclosed/ε₀, solve. 'Series or parallel?' → same Q (series) vs same V (parallel). Energy: pick ½CV², Q²/2C or ½QV by knowns."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: Gauss law + field of line charge / charged sheet / spherical shell; parallel-plate derivation with dielectric; series–parallel equivalent + energy numerical; potential-gradient relation."
+    }
+  ]
+}

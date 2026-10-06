@@ -1,0 +1,65 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "organisms-and-environment",
+  "unitTitle": "Organisms and Environment",
+  "unitHours": 10,
+  "syllabusTopics": [
+    "Adaptations of organisms to environmental conditions",
+    "Population ecology — growth, regulation, interactions",
+    "Ecosystem structure and function — productivity, decomposition",
+    "Ecological succession",
+    "Nutrient cycling — carbon, nitrogen, phosphorus",
+    "Ecological pyramids and energy flow"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Ecology · Class 12",
+    "title": "Energy flow and pyramids — why food chains stay short",
+    "href": "/class-12-notes/biology",
+    "icon": "Sigma",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Ecosystems run on captured light: GPP fixes it, respiration spends it, NPP stores the surplus; decomposers close the loop. Only ~10% transfers per trophic level (Lindeman) — hence upright energy pyramids, short food chains and tiny top-predator populations. Populations grow exponentially until K caps them (logistic dN/dt = rN(1−N/K)); succession marches bare ground → pioneers → climax; C/N/P cycles shuttle the same atoms through living and non-living pools."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "NPP = GPP − respiration  ·  10% law: ~10% per level (5 levels ⇒ 0.001% reaches top)  ·  logistic: dN/dt = rN(1 − N/K)  ·  pyramids: energy always upright; biomass/numbers can invert (pond/forest quirks)  ·  succession: nudation → invasion → competition → climax"
+    },
+    {
+      "label": "Conditions",
+      "text": "10% is an average (1–20% real range) for transfer EFFICIENCY between levels. Logistic growth needs density-dependent regulation (competition, predation, disease). Pyramid shape depends on currency (energy/mass/counts) — state which. Nutrient cycles need microbial transformers (nitrifiers, decomposers)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Pond biomass pyramid inverts (tiny fast-dividing producers support heavier fish). Parasitic food chains invert numbers pyramids. Nitrogen cycle's exclusive microbial steps (fixation → ammonification → nitrification → denitrification) make fertilisers leaky. Lichens pioneer bare rock (weathering + organic build-up)."
+    },
+    {
+      "label": "Solved",
+      "text": "Why can't food chains exceed 4–5 levels? Start 10,000 kJ at producers: 1,000 → 100 → 10 → 1 kJ by level five — insufficient to sustain a viable top population. The 10% compounding is the proof; inverted biomass pyramids survive only because turnover (rate), not standing crop, feeds the next level."
+    },
+    {
+      "label": "Limitation",
+      "text": "10% is descriptive, not lawlike — detritus chains and omnivory blur levels. Logistic K shifts with environment (not a constant). Succession-to-climax assumes stable climate (disturbance regimes rewrite endings). Cycles leak (N₂O emissions, P runoff) — human forcing breaks closure."
+    },
+    {
+      "label": "Derivation",
+      "text": "From thermodynamics: respiration + egestion dissipate ~90% as heat/waste per transfer (second law — energy quality degrades), leaving ~10% as production; iterate over levels for the pyramid shape. Logistic from exponential dN/dt = rN throttled by remaining capacity (1−N/K) — density dependence derived from competition."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Energy questions: 10% per level, count the transfers. Pyramid shape: ask the currency first (energy = always upright). Succession order chant: bare→pioneer→intermediate→climax. Cycles: name the microbial step (fixers, nitrifiers, decomposers)."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: NPP/GPP with decomposition role; 10% law with short-chain proof; logistic curve phases; succession stages with one pioneer example; C/N/P cycle with microbial steps."
+    }
+  ]
+}

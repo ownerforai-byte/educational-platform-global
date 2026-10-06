@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "wave-optics",
+  "unitTitle": "Wave Optics",
+  "unitHours": 8,
+  "syllabusTopics": [
+    "Wavefront and Huygens' principle",
+    "Interference of light — Young's double slit experiment",
+    "Diffraction of light — single slit diffraction",
+    "Polarization — Brewster's law and polaroids"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Wave Optics · Class 12",
+    "title": "YDSE — fringe width from path difference",
+    "href": "/class-12-notes/physics",
+    "icon": "Highlighter",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Huygens rebuilds every wavefront from secondary wavelets — reflection, refraction and TIR all follow geometrically. Coherent superpositions interfere: Young's double slit splits one wavefront into two coherent sources whose path difference paints bright/dark fringes. Single-slit diffraction spreads light into a central maximum twice as wide as the rest. Polarization filters the transverse vibration direction; Brewster's angle reflects fully polarised light."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "YDSE: path difference = d·sinθ · bright: d·sinθ = nλ · fringe width β = λD/d  ·  single slit minima: a·sinθ = nλ (central max 2× wide)  ·  Brewster: tanθ_p = μ  ·  Huygens: every point = new wavelet source"
+    },
+    {
+      "label": "Conditions",
+      "text": "Sustained interference needs coherent, monochromatic, same-polarisation sources with a small slit gap (d ~ mm for visible light). Fringe formula assumes D ≫ d (small-angle geometry). Brewster reflection polarises completely only at θ_p with unpolarised incidence on dielectrics."
+    },
+    {
+      "label": "Special cases",
+      "text": "White-light YDSE: central white fringe, coloured edges (β ∝ λ — red spreads widest). Narrower slit → wider diffraction spread (uncertainty in disguise). Polaroids in sunglasses kill horizontal glare (reflected light is partially polarised). Soap films and oil slicks: thin-film interference, same physics."
+    },
+    {
+      "label": "Solved",
+      "text": "YDSE fringe positions: geometry gives path difference S₂P − S₁P ≈ d·y/D (D ≫ d); bright when it equals nλ → y_n = nλD/d, so consecutive fringes space β = λD/d. Measure β, D, d → λ = βd/D — the classic wavelength-measurement experiment."
+    },
+    {
+      "label": "Limitation",
+      "text": "Ray optics is the λ → 0 limit — fringes vanish from its picture entirely. Real slits have finite width (interference × diffraction modulation). Partial coherence washes fringes out; lasers, not candles, make clean patterns."
+    },
+    {
+      "label": "Derivation",
+      "text": "Huygens → Snell: wavelets crossing the boundary at different speeds tilt the reconstructed front by exactly sin i/sin r = v₁/v₂. YDSE bright condition from path difference; single-slit minima by pairing wavelets across the slit width (first minimum where halves cancel: a·sinθ = λ). Brewster: reflected + refracted rays perpendicular → tanθ_p = μ."
+    },
+    {
+      "label": "Shortcut",
+      "text": "β = λD/d solves every YDSE numerical — identify which variable is asked. 'Missing fringes' = interference maxima coinciding with diffraction minima. Polarisation questions: Brewster tanθ_p = μ; crossed polaroids transmit nothing."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: YDSE theory + fringe-width derivation with labelled diagram; single-slit minima condition; Brewster's law statement + application; Huygens-based reflection/refraction proof."
+    }
+  ]
+}

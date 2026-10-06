@@ -1,0 +1,66 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "mathematics",
+  "unitSlug": "probability",
+  "unitTitle": "Probability",
+  "unitHours": 10,
+  "syllabusTopics": [
+    "Conditional probability and multiplication theorem",
+    "Independent events",
+    "Bayes' theorem and its applications",
+    "Random variable and its probability distribution",
+    "Mean, variance and standard deviation of a random variable",
+    "Binomial distribution — definition, mean, variance",
+    "Poisson distribution — definition, mean, variance"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Probability · Class 12",
+    "title": "Bayes' theorem — flipping the condition",
+    "href": "/class-12-notes/mathematics",
+    "icon": "CalendarCheck",
+    "statKey": "pyq:mathematics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Conditional probability P(A|B) re-weights the world given B; independence factorises (P(A∩B) = P(A)P(B)); Bayes flips conditions — from P(test|disease) to P(disease|test) — via prior-weighted partitions. Random variables tabulate outcomes with probabilities (mean = ΣxP, variance = Σx²P − mean²); Bernoulli trials compound into binomial B(n,p) (mean np, variance npq) and rare events into Poisson (mean = variance = λ)."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "P(A|B) = P(A∩B)/P(B)  ·  Bayes: P(Eᵢ|A) = P(Eᵢ)P(A|Eᵢ) / ΣP(Eⱼ)P(A|Eⱼ)  ·  E(X) = Σx·P(x) · Var = Σx²P − μ²  ·  binomial: P(r) = C(n,r)pʳqⁿ⁻ʳ, μ = np, σ² = npq  ·  Poisson: P(r) = e^(−λ)λʳ/r!, μ = σ² = λ"
+    },
+    {
+      "label": "Conditions",
+      "text": "Bayes needs a PARTITION (exhaustive, exclusive hypotheses) plus likelihoods. Binomial needs fixed n, two outcomes, constant p, independence. Poisson needs rare events in continuum (n large, p small, λ = np moderate). Independence must be verified, never assumed from wording alone."
+    },
+    {
+      "label": "Special cases",
+      "text": "Disease-testing paradox: 99%-accurate test on 0.1%-prevalence disease still yields mostly false positives — priors dominate (the Bayes lesson). Poisson models misprints-per-page, calls-per-hour. Mean = variance flags Poisson data; binomial variance always trails its mean (×q)."
+    },
+    {
+      "label": "Solved",
+      "text": "Two-machine Bayes template: machines A/B make 60%/40% of items with 2%/5% defect rates; a defective item appears → P(A|defective) = (0.6×0.02)/(0.6×0.02 + 0.4×0.05) = 0.012/0.032 = 0.375. Numerator = one branch, denominator = all branches — total probability below, target branch above."
+    },
+    {
+      "label": "Limitation",
+      "text": "Bayes outputs posteriors only as good as priors (garbage priors, garbage posteriors — sensitivity analysis answers). Binomial/Poisson idealise (constant p, homogeneity); real trials drift. Mean/variance summaries hide distribution shape (same μ,σ², different stories)."
+    },
+    {
+      "label": "Derivation",
+      "text": "Bayes from the multiplication theorem written both ways: P(Eᵢ∩A) = P(Eᵢ)P(A|Eᵢ) = P(A)P(Eᵢ|A) → divide by P(A), expand P(A) over the partition (total probability) → the theorem. Binomial from counting: C(n,r) sequences each with probability pʳqⁿ⁻ʳ; mean/variance via indicator sums (linearity + independence)."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'Given that' → conditional/Bayes tree immediately. Partition first (machines/urns/diseases), likelihoods second, Bayes fraction third. Distribution ID: counts in fixed trials → binomial; rare over time/space → Poisson; verify mean–variance signature."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: Bayes two-branch numericals (factory/disease templates); binomial mean/variance + term probabilities; Poisson rare-event applications; random-variable E(X)/Var(X) tables."
+    }
+  ]
+}

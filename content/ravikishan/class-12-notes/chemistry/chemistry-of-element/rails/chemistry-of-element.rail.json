@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "chemistry-of-element",
+  "unitTitle": "Chemistry of Element",
+  "unitHours": 8,
+  "syllabusTopics": [
+    "p-block elements (Group 15–18): important compounds, trends in properties",
+    "d-block elements: general characteristics, important compounds (KMnO₄, K₂Cr₂O₇)",
+    "f-block elements: lanthanoids and actinoids",
+    "Coordination compounds: Werner's theory, IUPAC nomenclature, VBT, CFT (qualitative), isomerism"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Elements · Class 12",
+    "title": "Coordination compounds — Werner's primary vs secondary valency",
+    "href": "/class-12-notes/chemistry",
+    "icon": "Network",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "The unit tours the blocks: p-block groups 15–18 (inert-pair effect, oxoacid trends, noble-gas aloofness), d-block (variable oxidation states, coloured paramagnetic ions, KMnO₄/K₂Cr₂O₇ oxidants, catalytic talent), f-block (lanthanoid contraction from poor 4f shielding). Coordination compounds crown it: Werner split valency into ionisable PRIMARY (oxidation state) and directional SECONDARY (coordination number) — [Co(NH₃)₆]Cl₃ conducts 3 ions, [Co(NH₃)₅Cl]Cl₂ only 2, proving the split. IUPAC names ligands alphabetically; VBT/CFT explain colour and magnetism qualitatively; ionisation vs hydrate isomerism completes the set."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Werner: primary = oxidation state (ionisable) · secondary = coordination number (directional)  ·  [Co(NH₃)₆]Cl₃ → 4 ions · [Co(NH₃)₅Cl]Cl₂ → 3 ions  ·  IUPAC: potassium hexacyanoferrate(II) = K₄[Fe(CN)₆]  ·  spin-only μ = √[n(n+2)] BM  ·  KMnO₄ (purple, +7 Mn) · K₂Cr₂O₇ (orange, +6 Cr)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Werner's conductivity test needs aqueous ionisation (non-electrolyte complexes give none). IUPAC ligand order is alphabetical ignoring multiplicative prefixes (di/tri). VBT hybridisation assignments (d²sp³ vs sp³d²) distinguish inner/outer orbital qualitatively. Lanthanoid contraction reasoning assumes steady 4f shielding failure."
+    },
+    {
+      "label": "Special cases",
+      "text": "Linkage isomerism (NO₂⁻ nitro vs nitrito) and ionisation isomerism ([Co(NH₃)₅SO₄]Br vs [Co(NH₃)₅Br]SO₄ — AgNO₃ precipitates only free Br⁻) are the favourite traps. KMnO₄ oxidises in acid (Mn²⁺, colourless), neutral (MnO₂) and alkaline (manganate green) — medium decides product. Prussian blue and chlorophyll-adjacent porphyrins show coordination everywhere."
+    },
+    {
+      "label": "Solved",
+      "text": "How many ions from [Co(NH₃)₅Cl]Cl₂? Secondary valency (coordination sphere) holds 5NH₃ + 1Cl⁻ bound to Co; primary valency frees 2Cl⁻ → 1 complex cation + 2 anions = 3 ions (vs 4 from [Co(NH₃)₆]Cl₃). Conductance and AgCl precipitation counts confirm — Werner's theory verified by counting."
+    },
+    {
+      "label": "Limitation",
+      "text": "VBT cannot explain spectra quantitatively or the spectrochemical series order from first principles (CFT does better, still qualitatively here). Werner predates orbitals — modern theory keeps his valencies, replaces his pictures. Lanthanoid/actinoid separations stay brutally hard (near-identical chemistry)."
+    },
+    {
+      "label": "Derivation",
+      "text": "From conductivity + precipitation data: count free ions per formula → subtract from total ligands → bound set = coordination sphere; varying NH₃/Cl⁻ ratios across the CoCl₃·xNH₃ series (x = 6,5,4) yields 3,2,1 free Cl⁻ — primary valency constant (3+), secondary saturated at 6. CFT: d-orbitals split (t₂g/eg) in ligand fields; pairing vs Hund decides spin, colour follows Δ₀."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Ions on dissociation = 1 + free counter-ions (brackets stay intact). IUPAC: ligands alphabetical + metal + oxidation Roman + 'ate' for anionic complexes. Colour/magnetism: count d-electrons, split t₂g/eg, apply Hund. p-block trends: inert pair deepens down group 13–14."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: Werner's theory with ion-count proof; IUPAC names of two complexes; ionisation vs hydrate isomerism with AgNO₃ test; KMnO₄/K₂Cr₂O₇ oxidising uses; lanthanoid contraction reason."
+    }
+  ]
+}

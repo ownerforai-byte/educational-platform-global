@@ -1,0 +1,64 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "english",
+  "unitSlug": "grammar",
+  "unitTitle": "Grammar",
+  "unitHours": 12,
+  "syllabusTopics": [
+    "Tenses and their uses",
+    "Clauses and sentence types",
+    "Voice and narration",
+    "Modals and conditionals",
+    "Punctuation and capitalisation"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Grammar · Class 12",
+    "title": "Clauses and modals — complex sentences, shaded meaning",
+    "href": "/class-12-notes/english",
+    "icon": "Calculator",
+    "statKey": "pyq:english"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Class 12 grammar compounds Class 11: clauses (main + subordinate: noun/adjective/adverbial) build simple/compound/complex/compound-complex sentences; modals shade meaning (can/could/may/might/must/should/would — ability, permission, obligation, probability); conditionals grade reality; punctuation (comma splices, apostrophes, reported-speech marks) and capitalisation carry meaning-level marks."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "sentence ladder: simple (1 clause) · compound (FANBOYS join) · complex (subordinator: because/although/which/who) · compound-complex (both)  ·  modals: can (ability) · may (permission/possibility) · must (obligation/deduction) · should (advice) · would (habit/request)  ·  punctuation: , ; : ' \" \" . ? ! — each with one job"
+    },
+    {
+      "label": "Conditions",
+      "text": "Subordinators create dependence (remove the main clause and fragments result). Modal choice follows function, not tense (past modals = could/would/might have + V3 for counterfactuals). Comma splices need conjunctions, semicolons or full stops — never bare commas between independent clauses."
+    },
+    {
+      "label": "Special cases",
+      "text": "Restrictive vs non-restrictive relatives (that vs which with commas) change meaning: 'students who cheat fail' vs 'students, who cheat, fail'. Dangling modifiers ('Walking home, the rain soaked me') attach to the wrong subject — NEB's favourite correction. Apostrophes mark possession/contraction, never plurals."
+    },
+    {
+      "label": "Solved",
+      "text": "Combine with a clause: 'He is rich. He is unhappy.' → concessive complex: 'Although he is rich, he is unhappy.' Modal shade: 'You must submit' (obligation) vs 'You should submit' (advice) vs 'You may submit' (permission) — same verb, three forces, chosen by intent."
+    },
+    {
+      "label": "Limitation",
+      "text": "Sentence-type labels describe structure, not quality (a perfect simple sentence beats a tangled complex one). Modal 'rules' bend in politeness ('Might I suggest…') and dialects. Punctuation guides prosody but cannot rescue incoherent thought."
+    },
+    {
+      "label": "Derivation",
+      "text": "From kernel sentences outward: deploy coordination (equal ideas, FANBOYS) vs subordination (unequal ideas, subordinators) by INFORMATION hierarchy — main clause carries the news, subordinate clauses carry background. Modals derive from speaker stance toward reality (possible/necessary/advisable), mapped onto the standard nine."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Joining two sentences? Equal weight → FANBOYS; unequal → subordinator. Modal blanks: obligation→must, advice→should, possibility→may/might, past counterfactual→would/could have V3. Punctuation: splice→semicolon, possession→apostrophe, direct speech→quotes+comma+capital."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: sentence combining with clause types; modal gap-fills by function; error correction (dangling modifiers, splices, apostrophes); reported-speech + conditional revision pairs."
+    }
+  ]
+}

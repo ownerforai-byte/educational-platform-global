@@ -24,6 +24,12 @@ import type {
 } from "./home-subject-slides";
 
 export const HOME_RAIL_CLASS_SLUG = "class-11-notes";
+export const HOME_RAIL_CLASS_12_SLUG = "class-12-notes";
+/** Rail corpus spans both classes — Class 11 first, Class 12 after. */
+export const HOME_RAIL_CLASS_SLUGS = [
+  HOME_RAIL_CLASS_SLUG,
+  HOME_RAIL_CLASS_12_SLUG,
+] as const;
 export const HOME_RAIL_SCHEMA = "home-rail/v1";
 export const RAIL_DIR_NAME = "rails";
 export const RAIL_FILE_SUFFIX = ".rail.json";
@@ -84,6 +90,7 @@ export interface HomeRailFile {
 }
 
 export interface HomeRailEntry {
+  classSlug: string;
   subjectSlug: string;
   unitId: string;
   /** Repo-relative path with forward slashes (stable for reports/tests). */
@@ -103,13 +110,15 @@ export function findCorpusRoot(start = process.cwd()): string {
   return path.resolve(start);
 }
 
-/** Class 11 subjects in rail order, straight from the syllabus. */
-export function homeRailSubjects(): {
+/** Subjects of one rail class in rail order, straight from the syllabus. */
+export function homeRailSubjects(
+  classSlug: string = HOME_RAIL_CLASS_SLUG,
+): {
   slug: string;
   name: string;
   units: { id: string; title: string; hours?: number; topics: string[] }[];
 }[] {
-  const cls = SYLLABUS.find((c) => c.slug === HOME_RAIL_CLASS_SLUG);
+  const cls = SYLLABUS.find((c) => c.slug === classSlug);
   if (!cls) return [];
   return cls.subjects.map((s) => ({
     slug: s.slug,
@@ -132,6 +141,7 @@ export function homeRailSubjects(): {
  */
 export function resolveUnitContentDir(
   corpusRoot: string,
+  classSlug: string,
   subjectSlug: string,
   unitId: string,
 ): string | undefined {
@@ -139,7 +149,7 @@ export function resolveUnitContentDir(
     corpusRoot,
     "content",
     "ravikishan",
-    HOME_RAIL_CLASS_SLUG,
+    classSlug,
     subjectSlug,
   );
   const exact = path.join(subjectDir, unitId);
@@ -213,14 +223,16 @@ export function railReadiness(record: HomeRailFile): string[] {
 
 /** Skeleton for a unit with no authored card yet — always draft, always TODO. */
 export function buildRailSkeleton(
+  classSlug: string,
   subjectSlug: string,
   subjectName: string,
   unit: { id: string; title: string; hours?: number; topics: string[] },
 ): HomeRailFile {
+  const isClass12 = classSlug === HOME_RAIL_CLASS_12_SLUG;
   return {
     schema: HOME_RAIL_SCHEMA,
     draft: true,
-    classSlug: HOME_RAIL_CLASS_SLUG,
+    classSlug,
     subjectSlug,
     unitSlug: unit.id,
     unitTitle: unit.title,
@@ -229,16 +241,16 @@ export function buildRailSkeleton(
     source: "platform",
     agentNotes: `Authoring contract: frontend/AGENTS.md §9. Fill every row (LaTeX allowed in $...$), set draft to false, then run: npx tsx frontend/scripts/content/home-rails.ts --check`,
     card: {
-      tag: unit.title,
+      tag: isClass12 ? `${unit.title} · Class 12` : unit.title,
       title: `${RAIL_TODO_MARKER}: ${unit.title} — pick this card's anchor concept`,
-      href: `/class-11-notes/${subjectSlug}`,
+      href: `/${classSlug}/${subjectSlug}`,
       icon: HOME_RAIL_SUBJECT_ICONS[subjectSlug] ?? "BookOpen",
       statKey: `pyq:${subjectSlug}`,
     },
     rows: HOME_RAIL_ROWS.map((row) => ({
       label: row.label,
       ...(row.kind === "formula" ? { kind: row.kind as "formula" } : {}),
-      text: `${RAIL_TODO_MARKER}: write the ${row.label} row for "${unit.title}" (${subjectName} Class 11).`,
+      text: `${RAIL_TODO_MARKER}: write the ${row.label} row for "${unit.title}" (${subjectName} ${isClass12 ? "Class 12" : "Class 11"}).`,
     })),
   };
 }
@@ -248,12 +260,17 @@ export function buildRailSkeleton(
  * dir contributes no entries, a broken file contributes an unreadable entry
  * the `--check` script reports (the rail itself only ever renders ready cards).
  */
-export function loadHomeRailCorpus(corpusRoot = findCorpusRoot()): HomeRailEntry[] {
+export function loadHomeRailCorpus(
+  corpusRoot = findCorpusRoot(),
+  classSlugs: readonly string[] = HOME_RAIL_CLASS_SLUGS,
+): HomeRailEntry[] {
   const entries: HomeRailEntry[] = [];
-  for (const subject of homeRailSubjects()) {
-    for (const unit of subject.units) {
+  for (const classSlug of classSlugs) {
+    for (const subject of homeRailSubjects(classSlug)) {
+      for (const unit of subject.units) {
       const unitDir = resolveUnitContentDir(
         corpusRoot,
+        classSlug,
         subject.slug,
         unit.id,
       );
@@ -279,6 +296,7 @@ export function loadHomeRailCorpus(corpusRoot = findCorpusRoot()): HomeRailEntry
           parsed = JSON.parse(fs.readFileSync(abs, "utf8"));
         } catch (err) {
           entries.push({
+            classSlug,
             subjectSlug: subject.slug,
             unitId: unit.id,
             file: rel,
@@ -291,6 +309,7 @@ export function loadHomeRailCorpus(corpusRoot = findCorpusRoot()): HomeRailEntry
         const shape = checkRailShape(parsed);
         if (shape.length > 0) {
           entries.push({
+            classSlug,
             subjectSlug: subject.slug,
             unitId: unit.id,
             file: rel,
@@ -303,6 +322,7 @@ export function loadHomeRailCorpus(corpusRoot = findCorpusRoot()): HomeRailEntry
         const record = parsed as HomeRailFile;
         const reasons = railReadiness(record);
         entries.push({
+          classSlug,
           subjectSlug: subject.slug,
           unitId: unit.id,
           file: rel,
@@ -310,6 +330,7 @@ export function loadHomeRailCorpus(corpusRoot = findCorpusRoot()): HomeRailEntry
           ready: reasons.length === 0,
           reasons,
         });
+      }
       }
     }
   }
@@ -342,4 +363,54 @@ export function toRailSlideData(entry: HomeRailEntry): Omit<HomeSubjectSlide, "i
       HOME_RAIL_SUBJECT_ICONS[entry.subjectSlug] ||
       "BookOpen",
   };
+}
+
+/** Unit order for one subject's rail, straight from the syllabus. */
+export function syllabusUnitOrder(
+  classSlug: string,
+  subjectSlug: string,
+): { id: string; title: string }[] {
+  const cls = SYLLABUS.find((c) => c.slug === classSlug);
+  const subject = cls?.subjects.find((s) => s.slug === subjectSlug);
+  return (subject?.units ?? []).map((u) => ({ id: u.id, title: u.title }));
+}
+
+export interface UnitSlideGroup {
+  classSlug: string;
+  subjectSlug: string;
+  unitId: string;
+  unitTitle: string;
+  entries: HomeRailEntry[];
+}
+
+/**
+ * Group ready corpus entries of one subject by unit, following syllabus order
+ * (Class 11 units first, then Class 12). Units with no ready cards are
+ * skipped — a rail never shows an empty divider.
+ */
+export function groupReadyByUnit(
+  entries: HomeRailEntry[],
+  subjectSlug: string,
+): UnitSlideGroup[] {
+  const byKey = new Map<string, HomeRailEntry[]>();
+  for (const entry of entries) {
+    if (!entry.ready || entry.subjectSlug !== subjectSlug) continue;
+    const key = `${entry.classSlug}/${entry.unitId}`;
+    byKey.set(key, [...(byKey.get(key) ?? []), entry]);
+  }
+  const groups: UnitSlideGroup[] = [];
+  for (const classSlug of HOME_RAIL_CLASS_SLUGS) {
+    for (const unit of syllabusUnitOrder(classSlug, subjectSlug)) {
+      const unitEntries = byKey.get(`${classSlug}/${unit.id}`) ?? [];
+      if (unitEntries.length === 0) continue;
+      groups.push({
+        classSlug,
+        subjectSlug,
+        unitId: unit.id,
+        unitTitle: unit.title,
+        entries: unitEntries,
+      });
+    }
+  }
+  return groups;
 }

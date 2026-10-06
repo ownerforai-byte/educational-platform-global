@@ -1,0 +1,78 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "english",
+  "unitSlug": "language-development",
+  "unitTitle": "Section I — Language Development (Units 1–20)",
+  "syllabusTopics": [
+    "Unit 1 — Critical Thinking",
+    "Unit 2 — Family",
+    "Unit 3 — Sports",
+    "Unit 4 — Technology",
+    "Unit 5 — Education",
+    "Unit 6 — Money and Economy",
+    "Unit 7 — Humour",
+    "Unit 8 — Human Culture",
+    "Unit 9 — Ecology and Environment",
+    "Unit 10 — Career Opportunities",
+    "Unit 11 — Hobbies",
+    "Unit 12 — Animal World",
+    "Unit 13 — History",
+    "Unit 14 — Human Rights",
+    "Unit 15 — Leisure and Entertainment",
+    "Unit 16 — Fantasy",
+    "Unit 17 — War and Peace",
+    "Unit 18 — Music and Creation",
+    "Unit 19 — Migration and Diaspora",
+    "Unit 20 — Power and Politics"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Vocabulary · Class 12",
+    "title": "Academic vocabulary across 20 units — collocation is king",
+    "href": "/class-12-notes/english",
+    "icon": "GraduationCap",
+    "statKey": "pyq:english"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Twenty units, one language spine: each theme (technology, ecology, power, migration…) deposits its academic word-stock — and NEB tests words the way adults use them, in COLLOCATION (make a decision, take responsibility, raise awareness), confusable pairs (economic/economical, historic/historical, sensible/sensitive) and contextual gap-fills. Knowing a word means knowing its neighbours, its register and its grammar (countable? which preposition?)."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "word knowledge = meaning + collocation + register + grammar  ·  confusables: economic (financial) / economical (thrifty) · historic (momentous) / historical (of history) · sensible (wise) / sensitive (touchy)  ·  collocation frames: make/take/have/do + noun (no logic — memorise pairs)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Collocations are conventional, not logical (heavy rain but strong wind) — exposure beats rules. Register decides synonyms (kids vs children vs offspring across casual/neutral/formal). Gap-fill answers must fit grammar AND sense AND collocation simultaneously."
+    },
+    {
+      "label": "Special cases",
+      "text": "Technology unit: 'artificial intelligence poses ethical questions' (poses, not asks). Ecology: 'raise awareness', 'combat climate change'. Power/politics: 'wield influence', 'abuse power'. Migration: 'flee persecution', 'seek asylum' — verb-noun pairs that examiners lift straight into blanks."
+    },
+    {
+      "label": "Solved",
+      "text": "Attack an unknown word in four passes: (1) sentence context → rough sense; (2) word parts (eco+logy, migr+ation); (3) collocation memory (which verbs hug this noun?); (4) register check (formal essay vs chat). Four passes turn recognition into production — the actual NEB demand."
+    },
+    {
+      "label": "Limitation",
+      "text": "No synonym is exact (slim/skinny/thin diverge in connotation). Lists memorised without contexts decay within weeks — spaced retrieval through the units beats cramming. Dictionary first-meanings mislead (check the field label: law? medicine? computing?)."
+    },
+    {
+      "label": "Derivation",
+      "text": "From corpus linguistics: words co-occur non-randomly (mutual-information scores prove it), so examinations test the high-MI pairs — 'commit a crime', not 'do a crime'. Learning one unit's theme deeply (say, ecology's raise/combat/preserve set) transfers the METHOD to all twenty units."
+    },
+    {
+      "label": "Shortcut",
+      "text": "MCQ options: kill by part of speech, then collocation, then sense. Confusable drills in pairs (economic/economical, historic/historical). Keep a theme-wise collocation diary — ten pairs per unit × twenty units = exam-proof vocabulary."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: confusable-pair MCQs; collocation gap-fills from unit themes; synonym/antonym production; contextual word-attack on unseen lines."
+    }
+  ]
+}

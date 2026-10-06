@@ -1,0 +1,62 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "alcohols-phenols-ethers",
+  "unitTitle": "Alcohols, Phenols and Ethers",
+  "unitHours": 7,
+  "syllabusTopics": [
+    "Alcohols: classification, preparation, physical and chemical properties",
+    "Phenols: acidity, electrophilic substitution, Kolbe's reaction, Reimer-Tiemann reaction",
+    "Ethers: preparation and chemical reactions (cleavage by HI)"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Oxygen Organics · Class 12",
+    "title": "Phenol acidity — resonance beats induction",
+    "href": "/class-12-notes/chemistry",
+    "icon": "FlaskConical",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Alcohols (R–OH) oxidise stepwise (1° → aldehyde → acid; 2° → ketone; 3° resist) and dehydrate to alkenes; phenols (Ar–OH) are ~10⁶× more acidic because the phenoxide anion delocalises into the ring, and brominate/substitute furiously without catalyst; ethers (R–O–R) are inert solvents until HI cleaves them (SN1/SN2 by substrate). Kolbe (phenoxide + CO₂ → salicylic acid) and Reimer–Tiemann (CHCl₃/OH⁻ → salicylaldehyde) functionalise phenol ortho-selectively."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "acidity: phenol > water > alcohols (phenoxide resonance-stabilised)  ·  Lucas: 3° instant turbidity · 2° slow · 1° heat needed  ·  Kolbe: C₆H₅ONa + CO₂ → o-HOC₆H₄COOH  ·  Reimer–Tiemann: C₆H₅OH + CHCl₃/OH⁻ → o-HOC₆H₄CHO (:CCl₂ carbene)  ·  ether cleavage: R–O–R′ + HI → RI + R′OH (smaller alkyl → iodide via SN2)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Phenol acidity comparisons need aqueous Ka (solvent levelling hides gas-phase orders). Lucas test runs at room temperature with conc. HCl/ZnCl₂. Kolbe needs high CO₂ pressure; Reimer–Tiemann needs the dichlorocarbene source (CHCl₃ + base). Ether cleavage with cold HI follows SN2 (smaller side gets I); hot conc. HI can flip mechanisms."
+    },
+    {
+      "label": "Special cases",
+      "text": "Picric acid (2,4,6-trinitrophenol) is mineral-acid strong — three −R/−I nitro groups stabilise the anion dramatically. Phenol + Br₂ water gives white 2,4,6-tribromophenol instantly (vs benzene needing FeBr₃). Ethers autoxidise to explosive peroxides on standing (test before distilling)."
+    },
+    {
+      "label": "Solved",
+      "text": "Why is phenol more acidic than ethanol? Ethoxide localises its charge on one oxygen; phenoxide spreads it over the ring's ortho/para positions through +R delocalisation — the anion's extra stability (no such resonance in ethoxide) shifts deprotonation right by ~6 pKa units. Draw both anions; the delocalised one wins."
+    },
+    {
+      "label": "Limitation",
+      "text": "Aqueous acidity orders scramble in gas phase or DMSO (solvation dominates). Lucas timing is qualitative (tertiary structure also matters). Reimer–Tiemann yields are modest (side products, dichlorocarbene promiscuity). Ether 'inertness' ends at strong acids/oxidants."
+    },
+    {
+      "label": "Derivation",
+      "text": "Acidity from anion stability: compare conjugate bases — phenoxide's charge delocalised over four atoms vs ethoxide's one → lower energy → larger Ka. Quantify via Hammett σ for substituted phenols (linear free-energy proof). Kolbe regioselectivity: Na⁺-coordinated transition state delivers CO₂ ortho; K⁺ gives more para (cation-size evidence for the mechanism)."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Alcohol class? Lucas timing (instant/slow/heat). Phenol? Br₂-water white precipitate, FeCl₃ violet complex. Acidity ladder: mineral > picric > phenol > water > alcohol. Ether + HI → smaller alkyl iodide (SN2 logic)."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: phenol-vs-ethanol acidity with anion structures; Lucas test distinctions; Kolbe and Reimer–Tiemann reactions with conditions; ether cleavage products; phenol electrophilic substitution trio."
+    }
+  ]
+}

@@ -87,9 +87,11 @@ node node_modules/tsx/dist/cli.mjs frontend/scripts/content/validate.ts --strict
 ### 9. Home Rail Cards (`rails/`) — How Any Agent Adds Slides to the Home Page
 The six home-page subject rails stream one card per syllabus unit. Those cards
 are DATA, not code — any agent adds them without touching the frontend:
-1. Find the unit's file: `content/ravikishan/class-11-notes/<subject>/<unit>/rails/<unit>.rail.json`
+1. Find the unit's file: `content/ravikishan/<class-11-notes|class-12-notes>/<subject>/<unit>/rails/<unit>.rail.json`
    (missing? run `npx tsx frontend/scripts/content/home-rails.ts` from the repo
-   root to scaffold it — never overwrites filled cards).
+   root to scaffold it — never overwrites filled cards). Class 12 cards carry
+   a `· Class 12` tag chip and stream after the Class 11 cards; a rail's
+   Class 12 teaser retires once that rail has any ready Class 12 card.
 2. Fill the 9 rows in order — Concept, Formula (`kind: "formula"`), Conditions,
    Special cases, Solved, Limitation, Derivation, Shortcut, Board question.
    Markdown + LaTeX in `$...$` allowed, same as concept `notes`.

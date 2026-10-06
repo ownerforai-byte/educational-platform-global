@@ -1,0 +1,62 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "communication-systems",
+  "unitTitle": "Communication Systems",
+  "unitHours": 4,
+  "syllabusTopics": [
+    "Elements of a communication system",
+    "Modulation — amplitude modulation and frequency modulation",
+    "Bandwidth and propagation of electromagnetic waves"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Communication · Class 12",
+    "title": "AM vs FM — riding information on carrier waves",
+    "href": "/class-12-notes/physics",
+    "icon": "Ruler",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Every link runs transmitter → channel → receiver: the message (baseband audio/data) modulates a high-frequency carrier because low frequencies need kilometre antennas and drown in noise. AM stamps the message on carrier AMPLITUDE (simple, noisy); FM stamps it on FREQUENCY (noise-resistant, needs more bandwidth). Bandwidth prices the channel; ground/sky/space-wave propagation picks the frequency band."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "AM: carrier amplitude ∝ message · FM: carrier frequency ∝ message  ·  antenna ~ λ/4 (high f → short antenna)  ·  bandwidth: AM ~ 2×message (kHz), FM ~ 200 kHz broadcast  ·  propagation: ground (<MHz) · sky (3–30 MHz, ionosphere) · space/LOS (>40 MHz, satellites)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Modulation needs carrier frequency ≫ message frequency (else sidebands tangle). Sky-wave hops need ionospheric reflection (night/day layers differ). Line-of-sight links need antenna height clearing the horizon (d ≈ √(2Rh)). Digital modes add sampling (Nyquist) beyond this syllabus."
+    },
+    {
+      "label": "Special cases",
+      "text": "FM radio sounds cleaner than AM because amplitude noise (lightning, motors) barely touches frequency-coded audio. Mobile towers are space-wave cells; shortwave crosses continents via ionosphere hops. Optical fibre replaces EM channels with guided light (TIR) for backbone bandwidth."
+    },
+    {
+      "label": "Solved",
+      "text": "Why not broadcast audio directly? A 5 kHz signal needs λ/4 ≈ 15 km antennas and all stations overlap. Modulate onto a 1 MHz carrier: antenna shrinks to ~75 m, stations separate by carrier frequency, receivers tune by resonance — three problems, one modulation."
+    },
+    {
+      "label": "Limitation",
+      "text": "AM wastes power in the carrier + twin sidebands (SSB trims it). FM buys quality with spectrum (wide channels). All analog links degrade gracefully but never perfectly — noise is managed, not removed (digital error-correction is the next course)."
+    },
+    {
+      "label": "Derivation",
+      "text": "AM math: [A_c + m(t)]·cos(ω_c t) expands to carrier plus two sidebands at ω_c ± ω_m — the 2×message bandwidth derived, not memorised. FM's constant amplitude follows from encoding in the argument's derivative; its noise immunity follows because most channel noise is additive in amplitude."
+    },
+    {
+      "label": "Shortcut",
+      "text": "AM = amplitude varies, noisy, narrow; FM = frequency varies, clean, wide. Propagation by band: low→ground, mid→sky/ionosphere, high→space/LOS. Block diagram: source→transducer→modulator→channel→demodulator→output — draw it for full process marks."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: block diagram of a communication system; AM vs FM comparison (quality, bandwidth, noise); why modulation is necessary (antenna + interference + multiplexing); propagation modes with frequency ranges."
+    }
+  ]
+}

@@ -69,6 +69,16 @@ export interface HomeSubjectSlide {
   statKey?: string;
   /** Class 12 placeholder card — the promise row, no academic rows. */
   teaser?: boolean;
+  /**
+   * Unit divider card — opens a syllabus-unit group inside a rail
+   * (`unitTitle` + `meta` like "Class 11 · 3 cards"). Dividers carry no rows;
+   * the renderer draws them as slim section headers in the stream.
+   */
+  unitDivider?: {
+    unitId: string;
+    unitTitle: string;
+    meta: string;
+  };
 }
 
 export interface HomeSubjectAccent {

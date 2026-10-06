@@ -1,0 +1,65 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "modern-physics",
+  "unitTitle": "Modern Physics",
+  "unitHours": 12,
+  "syllabusTopics": [
+    "Photoelectric effect and Einstein's photoelectric equation",
+    "De Broglie wavelength and matter waves",
+    "Atom — Bohr's model and hydrogen spectrum",
+    "Nucleus — binding energy, nuclear fission and fusion",
+    "Semiconductors — intrinsic and extrinsic, p-n junction, diode, transistor",
+    "Logic gates — AND, OR, NOT, NAND, NOR"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Modern Physics · Class 12",
+    "title": "Photoelectric equation — light as quanta",
+    "href": "/class-12-notes/physics",
+    "icon": "Microscope",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Light arrives as photons (E = hf): one photon ejects one electron iff hf exceeds the work function φ₀ — intensity raises numbers, never electron energy; frequency decides everything, with instant emission and a threshold wavelength. De Broglie mirrors it: matter carries wavelength λ = h/p. Bohr's quantised orbits explain hydrogen's lines; mass defect (×c²) binds nuclei with fission/fusion paying toward iron. Doped semiconductors (p-n, diode, transistor) plus logic gates close the unit in electronics."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Einstein: hf = φ₀ + K_max · K_max = eV₀ (stopping potential) · threshold: f₀ = φ₀/h  ·  de Broglie: λ = h/mv  ·  Bohr: Eₙ = −13.6/n² eV, mvr = nh/2π  ·  B.E. = Δm·c² ·  gates: AND(·) OR(+) NOT(¯), NAND/NOR universal"
+    },
+    {
+      "label": "Conditions",
+      "text": "Photoemission needs f > f₀ (any intensity); V₀ measures K_max only with sharp collector geometry. De Broglie matters measurably for electrons, not cricket balls. Bohr works for single-electron species. Diode/transistor behaviour assumes proper biasing; gates assume ideal 0/1 levels."
+    },
+    {
+      "label": "Special cases",
+      "text": "Doubling intensity doubles photocurrent, not electron energy — the wave-theory killer. Davisson–Germer diffracted electrons (matter waves confirmed). Hydrogen lines: Lyman (UV), Balmer (visible), Paschen (IR) from ΔE jumps. NAND/NOR build every other gate (universal). Zener regulates voltage in reverse breakdown."
+    },
+    {
+      "label": "Solved",
+      "text": "Stopping-potential reading: K_max = eV₀ plugs straight into hf = φ₀ + eV₀ — vary f, plot V₀ vs f: slope = h/e (Planck's constant measured!), intercept = −φ₀/e. Two points determine both constants; threshold frequency is the x-intercept."
+    },
+    {
+      "label": "Limitation",
+      "text": "Photon picture alone cannot explain interference (wave–particle duality is irreducible). Bohr fails multi-electron atoms and fine structure. Logic gates idealise away noise margins, delays and fan-out. E = mc² prices conversion, not reaction rates."
+    },
+    {
+      "label": "Derivation",
+      "text": "Energy ledger per photon: incoming hf splits into escape cost φ₀ plus leftover kinetic — conservation with quantisation assumed, yielding straight-line V₀–f graphs that Millikan verified. Bohr: centripetal + mvr = nh/2π → rₙ, Eₙ = −13.6/n² eV; differences ΔE = hν give every spectral series."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'Intensity vs frequency' questions: intensity→number, frequency→energy — always. Threshold: f₀ = φ₀/h, λ₀ = hc/φ₀. Hydrogen lines: 1/λ = R(1/n₁² − 1/n₂²). Gates: write truth tables (NAND = AND+NOT) rather than memorising."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: photoelectric laws + Einstein equation with V₀ graph; de Broglie numerical; Bohr postulates + hydrogen-series identification; binding-energy/fission-fusion reasoning; diode/transistor action + gate truth tables."
+    }
+  ]
+}

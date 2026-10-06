@@ -1,0 +1,62 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "mathematics",
+  "unitSlug": "linear-programming",
+  "unitTitle": "Linear Programming",
+  "unitHours": 6,
+  "syllabusTopics": [
+    "Linear programming — formulation of LPP",
+    "Graphical method for solving LPP with two variables",
+    "Maximization and minimization problems"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "LPP · Class 12",
+    "title": "Graphical LPP — corners hold the optimum",
+    "href": "/class-12-notes/mathematics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:mathematics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Linear programming optimises a linear objective (maximise profit, minimise cost) over a polygonal feasible region cut by linear constraints. The fundamental theorem: optima live at CORNERS — so graph the inequalities, shade feasibility, evaluate Z at each vertex, pick the extreme. Formulation (variables → objective → constraints → non-negativity) is half the marks."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "form: maximise Z = ax + by s.t. constraints + x,y ≥ 0  ·  method: graph lines → shade feasible polygon → list vertices → evaluate Z each → max/min wins  ·  iso-profit lines (parallel Z-slides) confirm visually"
+    },
+    {
+      "label": "Conditions",
+      "text": "Two variables only (graphical method's limit). Bounded feasible region guarantees a vertex optimum; unbounded needs an outward check (Z may run to infinity). Non-negativity (x, y ≥ 0) is a constraint, not optional decoration. Integer answers need integer programming (beyond syllabus — round with care)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Infeasible (empty region — contradictory constraints) and unbounded (infinite optimum) are valid answers, not errors. Multiple optima: a whole edge ties (objective parallel to a constraint). Degenerate vertices (3+ lines concurrent) still evaluate normally."
+    },
+    {
+      "label": "Solved",
+      "text": "Maximise Z = 3x + 4y s.t. x + y ≤ 4, x, y ≥ 0 (+ one more constraint): vertices (0,0), (4,0), (0,4) [with extra constraint, list all] → Z values 0, 12, 16 → max 16 at (0,4). Corner evaluation beats all calculus here — linearity guarantees it."
+    },
+    {
+      "label": "Limitation",
+      "text": "Graphical method dies at three variables (simplex territory). Linearity is assumed — diminishing returns need nonlinear programming. Corner theorem needs convex polygonal regions (non-convex feasibility breaks the guarantee)."
+    },
+    {
+      "label": "Derivation",
+      "text": "Why corners? Level sets of Z are parallel lines; sliding the line across a convex polygon, last contact must be a vertex (or full edge) — extreme of a linear function over a polytope always attained at extreme points. Formulation derives from accounting: decision variables × unit contributions = objective; resource caps = constraints."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Formulation first (Z + constraints + x,y ≥ 0) — half marks secured. Graph carefully (intercepts fastest). List ALL vertices (intersections pairwise). Evaluate Z at each — no calculus, no second-guessing."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: formulate an LPP from a word problem; graphical solution with feasible-region shading; max/min identification with vertex table; infeasible/unbounded verdicts."
+    }
+  ]
+}

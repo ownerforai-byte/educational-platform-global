@@ -1,0 +1,78 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "english",
+  "unitSlug": "literary-analysis",
+  "unitTitle": "Section II — Literature (Stories · Poems · Essays · One-Act Plays)",
+  "syllabusTopics": [
+    "Short Story 1 — Neighbours (Tim Winton)",
+    "Short Story 2 — A Respectable Woman (Kate Chopin)",
+    "Short Story 3 — A Devoted Son (Anita Desai)",
+    "Short Story 4 — The Treasure in the Forest (H. G. Wells)",
+    "Short Story 5 — My Old Home (Lu Xun)",
+    "Short Story 6 — The Half-closed Eyes of the Buddha and the Slowly Sinking Sun (Manjushree Thapa)",
+    "Short Story 7 — A Very Old Man with Enormous Wings (Gabriel García Márquez)",
+    "Poem 1 — A Day (Emily Dickinson)",
+    "Poem 2 — Every Morning I Wake (Dylan Thomas)",
+    "Poem 3 — I Was My Own Route (Julia de Burgos)",
+    "Poem 4 — The Awakening Age (Ben Okri)",
+    "Poem 5 — Soft Storm (Abhi Subedi)",
+    "Essay 1 — On Libraries (Oliver Sacks)",
+    "Essay 2 — Marriage as a Social Institution (Stephen L. Carter)",
+    "Essay 3 — Knowledge and Wisdom (Bertrand Russell)",
+    "Essay 4 — Humility (Yuval Noah Harari)",
+    "Essay 5 — Human Rights and the Age of Inequality (Samuel Moyn)",
+    "One-Act Play 1 — A Matter of Husbands (Ferenc Molnár)",
+    "One-Act Play 2 — Facing Death (August Strindberg)",
+    "One-Act Play 3 — The Bull (Bhimnidhi Tiwari)"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Literature · Class 12",
+    "title": "Reading across genres — one spine, four lenses",
+    "href": "/class-12-notes/english",
+    "icon": "Highlighter",
+    "statKey": "pyq:english"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Seven stories (Winton's Neighbours on migration unease, Desai's Devoted Son on filial duty curdling, Márquez's winged old man as magical-realist patience-test), five poems (Dickinson's slant Day, Thomas's waking prayer, de Burgos's self-route feminism), five essays (Sacks on libraries, Russell on knowledge vs wisdom, Harari on humility) and three one-act plays (Molnár's husbands, Strindberg's death, Tiwari's Bull). One spine answers all: claim → quoted moment → technique → purpose."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "every answer: theme-claim → textual moment (quote) → technique (irony/symbol/dialogue/image) → author purpose  ·  stories: character + turning point · poems: speaker + image + device · essays: thesis + argument moves · plays: conflict + stage moment"
+    },
+    {
+      "label": "Conditions",
+      "text": "Claims need quoted moments — unquoted readings score thin. Genre lenses differ (magical realism read literally collapses; satire read straight inverts meaning). Separate narrator from author (Desai ≠ her son; Thapa's Buddha-eyes narrator frames, not preaches)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Márquez demands symbolic patience (the wings resist single meaning — that IS the point). Russell's knowledge/wisdom split structures whole essays. One-act plays compress to a single crisis — answer from the climax backward. de Burgos and Okri reward postcolonial framing; Sacks rewards humanist detail."
+    },
+    {
+      "label": "Solved",
+      "text": "Sample spine on Neighbours: claim — migration unease dissolves through observed ritual; moment — the newcomers' garden slowly mirroring the street's rhythms (quote the turning passage); technique — Winton's patient accumulation of domestic detail; purpose — belonging as practice, not status. Four moves, any text."
+    },
+    {
+      "label": "Limitation",
+      "text": "Theme-hunting flattens texts into morals — detail first, slogan never. One framework cannot serve satire and elegy identically; adjust per genre. Author intention is partly unknowable — argue from the page, not biography."
+    },
+    {
+      "label": "Derivation",
+      "text": "From text outward: collect striking moments → cluster into theme → name each moment's technique (irony, image, dialogue, structure) → state the effect on the reader as purpose. The method is genre-parametric: swap the technique vocabulary (prosody for poems, stagecraft for plays) and the engine runs unchanged."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Titles are theses; endings reveal purpose — read backward from the close. One exact short quote beats paraphrase paragraphs. Device + effect, never device alone. Keep a two-line dossier per text (theme + killer quote) for revision week."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: theme-with-moments on any story/essay; device + effect on poems; character analysis via turning points; one-act conflict + stage significance; comparative theme pairs."
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "biomolecules",
+  "unitTitle": "Biomolecules",
+  "unitHours": 5,
+  "syllabusTopics": [
+    "Carbohydrates: monosaccharides (glucose, fructose), disaccharides, polysaccharides",
+    "Proteins: amino acids, peptide bond, primary to quaternary structure, denaturation",
+    "Enzymes: definition, classification, enzyme action",
+    "Vitamins: classification and functions",
+    "Hormones: definition, types, functions"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Biomolecules · Class 12",
+    "title": "Enzymes and vitamins — catalysts and co-factors",
+    "href": "/class-12-notes/chemistry",
+    "icon": "Dna",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Enzymes are protein catalysts (ribozyme exceptions noted) that cut activation energy via induced-fit active sites — specific, efficient, denaturable by heat/pH. Vitamins are organic co-factors in micro-doses: fat-soluble A/D/E/K stored in liver, water-soluble B-complex/C flushed daily (scurvy, beriberi, rickets mark their absence). Hormones (peptide/steroid/amine) are the body's long-distance signals. Carbohydrate/protein structure foundations carry over from Class 11."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "enzyme: E + S ⇄ ES → E + P (lock-and-key → induced fit)  ·  vitamins: fat-soluble A·D·E·K (stored) · water-soluble B·C (daily need)  ·  deficiencies: C→scurvy · D→rickets · B₁→beriberi · A→night blindness  ·  peptide bond –CO–NH– · levels 1°→4° (haemoglobin quaternary)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Enzymes demand narrow pH/temperature optima (human ~37 °C, specific pH per site); denaturation is usually irreversible in practice. Vitamins act in milligrams — megadoses of fat-soluble ones poison (hypervitaminosis A/D). Hormone action needs receptor specificity (lock-and-key at a distance)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Maltose (glucose+glucose) vs sucrose (glucose+fructose) vs lactose (glucose+galactose) — same atoms, different links, different digestion. Insulin (peptide hormone, 51 aa) vs thyroxine (amine, iodinated) vs steroids (lipid) — three chemical tribes, one signalling job. Zymogens (pepsinogen, trypsinogen) ship inactive, activate on site."
+    },
+    {
+      "label": "Solved",
+      "text": "Why does boiling destroy enzyme activity but not vitamin C's chemistry? Heat unravels the protein's 3D active site (denaturation — structure lost, catalysis gone), while ascorbic acid's covalent bonds survive short heating (only prolonged boiling oxidises it). Structure–function reasoning answers both halves."
+    },
+    {
+      "label": "Limitation",
+      "text": "'All enzymes are proteins' has ribozyme exceptions. Vitamin labels bundle unrelated molecules (B-complex spans 8+). Hormone classifications overlap (some peptides act locally as growth factors). Denaturation reversibility depends on severity — lab renaturation ≠ kitchen reality."
+    },
+    {
+      "label": "Derivation",
+      "text": "Catalysis from transition-state stabilisation: the active site binds the TRANSITION state tighter than substrate (induced fit), lowering Ea without touching ΔG — hence faster arrival, same equilibrium. Michaelis–Menten (v = Vmax[S]/(Km+[S])) quantifies it; Lineweaver–Burk linearises Km/Vmax for the exam graph."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Vitamins: fat ADEK (stored, toxic in excess) vs water BC (daily, flushed). Deficiency chant: A-night, B1-beri, C-scurvy, D-rickets. Enzymes: specificity + efficiency + mild conditions + denaturable — four adjectives, full definition marks."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: enzyme definition + lock-and-key vs induced fit; vitamin classification with two deficiency diseases; peptide bond + four protein levels; hormone types with one example each."
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "dynamics",
+  "unitTitle": "Dynamics",
+  "syllabusTopics": [
+    "Linear momentum, impulse",
+    "Conservation of linear momentum",
+    "Application of Newton's laws",
+    "Moment, torque and equilibrium",
+    "Solid friction: laws of solid friction and their verifications"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank compiled 2026-10-06 from pyqs/01-neb-2024.json, 02-neb-2023.json, 03-neb-2021.json, 04-neb-2020.json in this unit (stems, marks, solutions verbatim in essence).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on dynamics",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Four questions cover dynamics: three laws with examples (2024), limiting-friction numerical (2023: 5 kg, mu 0.4 gives 20 N), incline friction (2021: 10 kg at 30 degrees gives ~17 N), mass-vs-weight distinction (2020). Friction always equals mu times the NORMAL force — on inclines that means mg cos theta, never mg."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "F = ma = dp/dt · J = F dt = dp · limiting f = mu_s N · kinetic f = mu_k N (mu_k < mu_s) · incline: N = mg cos theta, downslope = mg sin theta · mass (kg, invariant) vs weight (mg, newton, varies)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Newton holds in inertial frames only (why the bank stresses it). Limiting friction is a ceiling: below it, static friction exactly matches the push (meaning 5 N of push meets 5 N of friction, not 20 N). On inclines the normal shrinks by cos theta — the meaning of resolving weight perpendicular to the surface."
+    },
+    {
+      "label": "Special cases",
+      "text": "Bus-brake lurch (first law), bat-ball acceleration (second), gun recoil (third) — the 2024 example set. Incline rest: friction balances mg sin theta but caps at mu N (check both: required vs available). Mass-vs-weight: 5 kg is 49 N on Earth, ~8 N on the Moon, 5 kg everywhere."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2023 (3): N = mg = 50 N; limiting f = 0.4 x 50 = 20 N to start motion. NEB 2021 (3): incline 30 degrees, N = 10 x 9.8 x cos30 = 84.9 N; resting friction = mu N = 0.2 x 84.9 = 17.0 N. NEB 2024 (3): three laws, one everyday example each."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: using mg instead of mg cos theta for N on inclines; quoting limiting friction when the block needs less (static self-adjusts); mixing mass and weight units. Third-law pairs never cancel (different bodies) — a yearly trap."
+    },
+    {
+      "label": "Derivation",
+      "text": "No heavy derivation is asked — the 'theory' answers are statements with examples (laws, mass-vs-weight table). Recoil/conservation sketches (gun-bullet momentum split) serve as the mechanism behind the third law. Moment equilibrium (clockwise = anticlockwise) extends force balance to rotation."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Friction numericals: N first (cos theta on slopes), then mu N, then compare with needed force. 'State laws' means statement + example each. Mass-weight: scalar-kg-invariant vs vector-newton-varying table."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (3): three laws + examples. NEB 2023 (3): 5 kg, mu 0.4 — starting force. NEB 2021 (3): 10 kg on 30-degree incline, mu 0.2 — friction magnitude. NEB 2020 (2): mass vs weight."
+    }
+  ]
+}

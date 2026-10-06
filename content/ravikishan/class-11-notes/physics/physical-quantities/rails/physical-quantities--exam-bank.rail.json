@@ -1,0 +1,60 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "physical-quantities",
+  "unitTitle": "Physical Quantities",
+  "syllabusTopics": [
+    "Precision and significant figures",
+    "Dimensions and uses of dimensional analysis"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank: accuracy-precision (2024), homogeneity v2=u2+2as (2023), four fundamentals + kg (2023).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on physical quantities",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Three questions: accuracy vs precision with example (2024), homogeneity check of v2 = u2 + 2as (2023), four fundamentals plus kilogram definition (2023). Precision repeats readings; accuracy nears truth. Homogeneity demands every added term share dimensions."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "velocity [LT-1] · force [MLT-2] · energy [ML2T-2] · homogeneity: all summed terms equal · errors: multiply/divide add percent, powers multiply, add/subtract absolutes"
+    },
+    {
+      "label": "Conditions",
+      "text": "Homogeneity works within one unit system and only constrains sums (meaning dimensionless constants stay invisible). Precision-accuracy examples need a target analogy (clustered off-target = precise, not accurate). Significant figures bind measured digits only."
+    },
+    {
+      "label": "Special cases",
+      "text": "v2 = u2 + 2as: L2T-2 everywhere, passes. Clustered-tight-off-centre shots illustrate precision without accuracy. SI fundamentals: m, kg, s, A, K, mol, cd — any four with units answers the 2023 recall."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2023 (3): [v2] = L2T-2, [u2] same, [2as] = L x LT-2 = L2T-2 — homogeneous. NEB 2024 (2): precise-but-biased instrument example (tight cluster off true value). NEB 2023 (2): metre, kilogram, second, ampere plus kilogram definition."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: calling homogeneity sufficient (v = u + 2at passes dimensionally yet errs); units on strain-like ratios; precision confused with accuracy. Dimensionless constants (half, 2 pi) escape the method."
+    },
+    {
+      "label": "Derivation",
+      "text": "Dimensions derive from definitions (velocity L/T through power ML2T-3); homogeneity checks substitute term by term. Error rules derive from differentials (relative errors add in products, scale by exponents)."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'Check correctness' means homogeneity first, three lines. Accuracy-precision: draw the target analogy. Fundamentals: any four SI pairs plus the asked definition."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (2): accuracy vs precision + example. NEB 2023 (3): homogeneity of v2 = u2 + 2as. NEB 2023 (2): four fundamentals + kilogram."
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "biodiversity-and-conservation",
+  "unitTitle": "Biodiversity and Conservation",
+  "unitHours": 6,
+  "syllabusTopics": [
+    "Biodiversity — genetic, species, and ecosystem levels",
+    "Patterns of biodiversity — global and Nepal",
+    "Biodiversity loss — causes and consequences",
+    "Conservation strategies — in-situ and ex-situ",
+    "Red Data Book and IUCN categories"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Biodiversity · Class 12",
+    "title": "Three levels, two strategies — saving variety",
+    "href": "/class-12-notes/biology",
+    "icon": "CalendarCheck",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Biodiversity stacks three levels — genetic (within species), species (counts), ecosystem (habitat variety) — peaking in the tropics (latitudinal gradient) with Nepal packing disproportionate variety into its altitude span. Loss drivers chant HIM: Habitat loss, Invasive species, overexploitation/climate (plus pollution). Conservation splits: in-situ (parks, reserves, sacred groves — evolution continues) vs ex-situ (zoos, seed banks, cryopreservation — backup copies). IUCN Red List ranks risk: extinct → critically endangered → … → least concern."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "levels: genetic < species < ecosystem  ·  loss drivers: habitat + invasives + overuse + pollution + climate  ·  in-situ: national parks / wildlife reserves / conservation areas (Nepal: Chitwan, Sagarmatha, Annapurna)  ·  ex-situ: zoos / botanical gardens / seed banks / cryo  ·  IUCN ladder: EX · EW · CR · EN · VU · NT · LC"
+    },
+    {
+      "label": "Conditions",
+      "text": "In-situ needs viable habitat size + corridors (fragments bleed species). Ex-situ needs genetic diversity sampled (few founders = inbreeding) plus reintroduction habitat waiting. Red-List categories need population data — data-deficient species wait in DD limbo. Nepal patterns need altitude-zone reading (tropical→alpine compression)."
+    },
+    {
+      "label": "Special cases",
+      "text": "One-horned rhino (Chitwan recovery via anti-poaching + habitat) vs tiger (territory-huge, corridor-dependent). Endemics (spiny babbler — Nepal-only bird) carry maximum conservation weight per individual. Sacred groves and community forests show culture doing in-situ work."
+    },
+    {
+      "label": "Solved",
+      "text": "Classify a case: dwindling vulture populations (diclofenac poisoning) → identify driver (chemical/pollution + overexploitation-adjacent) → prescribe in-situ (ban drug, safe zones) + ex-situ (captive breeding) → monitor via Red-List criteria. Driver→strategy mapping is the answer template."
+    },
+    {
+      "label": "Limitation",
+      "text": "Counting species undercounts microbes/fungi (the unknown majority). Ex-situ freezes evolution (no selection pressure). Parks displace people without buffer-zone justice. Red Lists lag behind field reality (assessment backlog)."
+    },
+    {
+      "label": "Derivation",
+      "text": "From island biogeography: species richness balances immigration vs extinction — shrink/fragment habitat and extinction wins (species–area curve S = cA^z predicts the loss). Conservation follows: bigger + connected + representative reserves minimise the bleed; corridors restore the immigration term."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Levels chant: genetic–species–ecosystem. Loss: HIM-plus (habitat, invasives, misuse, pollution, climate). In-situ = in place (parks); ex-situ = out of place (zoos/banks). IUCN: CR–EN–VU in descending danger. Nepal examples: rhino, tiger, spiny babbler."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: three biodiversity levels with examples; Nepal's pattern + one endemic; loss causes with consequences; in-situ vs ex-situ with two examples each; IUCN categories in order."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "vectors",
+  "unitTitle": "Vectors",
+  "syllabusTopics": [
+    "Triangle, parallelogram and polygon laws of vectors",
+    "Resolution of vectors; unit vectors",
+    "Scalar and vector products"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank: 50 m/37-degree components (2024), dot-vs-cross definitions (2023).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on vectors",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Two questions: rectangular components of 50 m at 37 degrees (2024: 40 i + 30 j) and dot-vs-cross definitions with one physics example each (2023). Dot measures sameness (projection, scalar); cross measures perpendicularity (area, vector). Resolution (Ax = A cos, Ay = A sin) precedes both products."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Ax = A cos theta, Ay = A sin theta · A.B = AB cos (scalar) · |AxB| = AB sin n-hat (vector) · 50 at 37 deg: 40, 30 (3-4-5 triangle)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Resolution needs the angle from a stated axis (meaning 37 degrees from +x fixes Ax = A cos). Dot/cross angle measured tail-to-tail. Unit-vector form needs orthonormal i, j, k."
+    },
+    {
+      "label": "Special cases",
+      "text": "37 degrees signals 3-4-5: 50 x 0.8 = 40, 50 x 0.6 = 30 (no calculator sweat). Dot examples: work, flux; cross examples: torque, magnetic force. Parallel gives cross zero; perpendicular gives max AB."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2024 (3): Ax = 50 cos37 ~ 40 m, Ay = 50 sin37 ~ 30 m. NEB 2023 (3): dot = AB cos (scalar, e.g. work) vs cross = AB sin n-hat (vector, e.g. torque) — definition plus one example each."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: sine/cosine swapped (draw the triangle first); cross treated as scalar; 2D pseudo-cross claimed as true cross product. Products need the tail-to-tail angle, not polygon interiors."
+    },
+    {
+      "label": "Derivation",
+      "text": "Component proof via right-triangle projection; dot via cosine rule (algebra meets geometry); cross magnitude as parallelogram area. Triangle/parallelogram/polygon laws derive from tip-to-tail chaining."
+    },
+    {
+      "label": "Shortcut",
+      "text": "37/53 degrees means 3-4-5 scaling (30-40-50 here). 'Define both products' means formula plus type (scalar/vector) plus one example each. Resolution before products, always."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (3): 50 m at 37 degrees components. NEB 2023 (3): dot vs cross definitions + examples. That is the complete bank."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "refraction-through-prisms",
+  "unitTitle": "Refraction through Prisms",
+  "syllabusTopics": [
+    "Minimum deviation condition",
+    "Relation between the angle of prism, minimum deviation and refractive index",
+    "Deviation in small-angle prism"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank: symmetric-passage MCQ (2023), 60-degree/1.5 numerical (2022).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on prisms",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Two questions: deviation is minimum only for symmetric passage (2023 MCQ) and the A = 60 degrees, mu = 1.5 numerical (2022: delta-m ~37.2 degrees). At minimum i = e and r = A/2, unlocking mu = sin[(A+dm)/2]/sin(A/2)."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "delta = i + e - A (A = r1 + r2) · minimum: mu = sin[(A+dm)/2]/sin(A/2), i = e, r = A/2 · small-angle: delta = (mu - 1) A"
+    },
+    {
+      "label": "Conditions",
+      "text": "The mu formula holds ONLY at minimum deviation (meaning symmetric passage, single wavelength). MCQ logic: symmetry is the condition, not a property — deviation is not always minimum. Small-angle form needs A under ~10 degrees."
+    },
+    {
+      "label": "Special cases",
+      "text": "A = 60, mu = 1.5: sin[(60+dm)/2] = 0.75 gives dm ~ 37.2 degrees. Equilateral with dm = 60 gives mu = sqrt(3). Immersed prisms rescale to relative index."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2022 (4): with i = 40 degrees given, work internal angles (r1 from Snell, r2 = A - r1), emerge, sum delta = i + e - A. NEB 2023 (1): deviation minimum only when the ray passes symmetrically — option (a)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: mu formula used off-minimum; white-light smear ignored; thick-prism displacement missed. Surface flaws break symmetry assumptions."
+    },
+    {
+      "label": "Derivation",
+      "text": "d delta/di = 0 forces the reversible symmetric path (Fermat); then r = A/2 and Snell gives the mu formula. Small-angle follows from sin x ~ x linearisation."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'Minimum deviation' means write i = e, r = A/2 instantly. 60-degree prism with dm 60 means mu root-3 on sight."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (1): symmetric-passage MCQ. NEB 2022 (4): 60-degree/1.5 prism numerical. That is the complete bank."
+    }
+  ]
+}

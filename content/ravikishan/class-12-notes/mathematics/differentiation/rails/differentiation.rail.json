@@ -1,0 +1,68 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "mathematics",
+  "unitSlug": "differentiation",
+  "unitTitle": "Differentiation",
+  "unitHours": 16,
+  "syllabusTopics": [
+    "Derivatives of algebraic, trigonometric, inverse trigonometric, exponential and logarithmic functions",
+    "Rules of differentiation: product rule, quotient rule, chain rule",
+    "Derivatives of parametric and implicit functions",
+    "Higher order derivatives",
+    "Logarithmic differentiation",
+    "Leibniz's theorem for nth derivative",
+    "Geometric interpretation — tangent and normal",
+    "Monotonicity, maxima and minima (first and second derivative tests)",
+    "Applications: rate of change, approximation, error estimation"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Differentiation · Class 12",
+    "title": "Maxima-minima — where the derivative signs the verdict",
+    "href": "/class-12-notes/mathematics",
+    "icon": "PenLine",
+    "statKey": "pyq:mathematics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Differentiation differentiates: product rule (first×d-second + second×d-first), quotient rule (low-d-high minus high-d-low over low²), chain rule (outside×inside, layered without limit). Parametric/implicit functions differentiate through their links; logarithmic differentiation tames products/powers/roots; Leibniz expands (uv)ⁿ. Geometry reads f′ as slope (tangent) with the normal perpendicular; f′ > 0 rises, f′ < 0 falls, f′ = 0 suspects extrema — confirmed by first-derivative sign change or second-derivative concavity."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "product: (uv)′ = u′v + uv′ · quotient: (u/v)′ = (u′v − uv′)/v² · chain: dy/dx = dy/du·du/dx  ·  tangent: y−y₀ = f′(x₀)(x−x₀) · normal slope −1/f′  ·  maxima: f′ = 0 with +→− (or f″ < 0) · minima: −→+ (or f″ > 0)  ·  d(sin x·cos x)/dx = cos2x (product-rule classic)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Rules need differentiability at the point (corners/cusps/discontinuities break them). Chain rule needs each link differentiable. Second-derivative test needs f″ ≠ 0 at the stationary point (f″ = 0 inconclusive — higher derivatives or first test decide). Parametric differentiation needs dt/dx invertible (dx/dt ≠ 0)."
+    },
+    {
+      "label": "Special cases",
+      "text": "y = sin x·cos x = ½sin2x → y′ = cos2x (product rule verified by identity). Logarithmic differentiation for y = x^x or huge products (ln both sides, differentiate implicitly). Tangent parallel to x-axis ⟺ f′ = 0. Optimisation: fence/area/volume word problems reduce to single-variable maxima."
+    },
+    {
+      "label": "Solved",
+      "text": "d/dx(sin x·cos x): product rule → cos x·cos x + sin x·(−sin x) = cos²x − sin²x = cos2x. Maxima drill: f′ = 0 gives suspects; sign chart +→− crowns maxima, −→+ minima, no-change saddles — first test never lies where the second test shrugs."
+    },
+    {
+      "label": "Limitation",
+      "text": "Differentiation describes smooth behaviour — Weierstrass monsters (continuous, nowhere differentiable) escape entirely. Leibniz's (uv)ⁿ needs n derivatives to exist. Optimisation on closed intervals must check ENDPOINTS (interior critical points miss boundary maxima)."
+    },
+    {
+      "label": "Derivation",
+      "text": "Product rule from the limit definition: Δ(uv)/Δx regroups to u·Δv/Δx + v·Δu/Δx → u′v + uv′ as Δx → 0 (continuity kills the cross term). Chain rule by Leibniz differentials (dy/dx = dy/du·du/dx, justified via limits). Tangent from secant limit; maxima tests from monotonicity flipping across stationary points."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Layered function? Chain first, ask questions later. Product vs quotient: plus vs minus-over-square. y = f(g(x)) forms: differentiate outside, keep inside, multiply by inside's derivative. Optimisation: single variable → f′ = 0 → sign chart → endpoints."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: product/quotient/chain rule applications; parametric + implicit differentiation; logarithmic differentiation of powers; tangent/normal equations; maxima-minima word problems with both tests."
+    }
+  ]
+}

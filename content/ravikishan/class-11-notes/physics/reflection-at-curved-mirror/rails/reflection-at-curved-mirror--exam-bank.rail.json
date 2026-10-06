@@ -1,0 +1,60 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "reflection-at-curved-mirror",
+  "unitTitle": "Reflection at Curved Mirror",
+  "syllabusTopics": [
+    "Real and virtual images",
+    "Mirror formula"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank: focus-at-F reasoning (2023), 30 cm/f10 numerical (2022).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on curved mirrors",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Two questions: why object-at-F images at infinity (2023: parallel reflected beam) and the 30 cm object with f = 10 cm numerical (2022: image at 15 cm, halved, inverted, real). Real images meet on screen; virtual images meet only in apparent extension."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "1/f = 1/v + 1/u · f = R/2 · m = -v/u (minus = inverted real, plus = erect virtual)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Paraxial rays only (meaning wide beams blur via spherical aberration). Cartesian signs fixed once (incident light left to right). Focus-at-F logic needs the concave geometry (parallel beam definition of focus)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Object at C images at C same-size inverted. Object inside F gives erect magnified virtual behind mirror. Convex always gives virtual erect diminished between P and F. At F: 1/v = 0, so v = infinity."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2022 (4): u = -30, f = -10 gives 1/v = -1/10 + 1/30 = -2/30, so v = -15 cm; m = -(-15)/(-30) = -0.5 (real, inverted, halved). NEB 2023 (3): at F every reflected ray parallels the axis (focus definition), hence meeting at infinity."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: sign mixing between conventions; real confused with virtual (screen test decides); formula applied to wide-aperture mirrors. Brightness and aberration sit outside the formula."
+    },
+    {
+      "label": "Derivation",
+      "text": "Similar triangles (object/pole and focus pairs) give v/u = (v-f)/f, dividing to 1/f = 1/v + 1/u. Six object positions memorised as image map (infinity-to-F through P-to-F) answer every ray question."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Signs first (Cartesian), numbers second. Real means negative m; virtual positive. 'At F' always means parallel out, image at infinity."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (3): object at F plus object at C behaviour. NEB 2022 (4): 30 cm/f10 numerical with nature. That is the complete bank."
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "chemistry-in-everyday-life",
+  "unitTitle": "Chemistry in Everyday Life",
+  "unitHours": 4,
+  "syllabusTopics": [
+    "Medicinal chemicals — analgesics, tranquilizers, antipyretics, antibiotics, antihistamines, antacids",
+    "Chemical cleansers — soaps and detergents",
+    "Food additives — preservatives and artificial sweetening agents"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Everyday Chemistry · Class 12",
+    "title": "Soap vs detergent — micelles that eat grease",
+    "href": "/class-12-notes/chemistry",
+    "icon": "CalendarCheck",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Cleaning is micelle chemistry: soap (sodium fatty-acid salts from saponification) and detergents (sulphonate surfactants) both hide hydrophobic tails in grease and expose hydrophilic heads to water, lifting dirt as rinsable micelles. Medicines dose the same molecular logic — analgesics/antipyretics (aspirin, paracetamol), antibiotics (penicillin), antihistamines, antacids (Mg(OH)₂) — each matched to a biochemical target. Preservatives and sweeteners (aspartame, saccharin) round out food chemistry."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "saponification: fat + NaOH → glycerol + soap (RCOONa)  ·  micelle: tails-in (grease) · heads-out (water)  ·  soap fails in hard water: 2RCOONa + Ca²⁺ → (RCOO)₂Ca↓ (scum); detergents stay soluble  ·  drugs: aspirin (analgesic/antipyretic) · penicillin (antibiotic) · cetirizine-type (antihistamine) · Mg(OH)₂ (antacid)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Micelles form above the critical micelle concentration (too dilute = no cleaning). Soap needs soft water (Ca²⁺/Mg²⁺ precipitate it); detergents tolerate hardness. Drug action needs correct dosage and target specificity — same molecule heals or harms by dose."
+    },
+    {
+      "label": "Special cases",
+      "text": "Hard-water scum is the soap-killer (calcium stearate precipitate); detergents' sulphonate heads ignore Ca²⁺. Aspartame sweetens ~200× sugar but degrades on heating (cold foods only). Penicillin allergy vs resistance: misuse breeds resistant strains — the public-health edge of antibiotic chemistry."
+    },
+    {
+      "label": "Solved",
+      "text": "Why does soap fail in hard water but detergent work? Soap anions meet Ca²⁺/Mg²⁺ and precipitate as insoluble scum ((RCOO)₂Ca), removing the surfactant; detergent sulphonates form soluble calcium salts, so micelles survive and cleaning continues. One precipitation equation explains the whole switch."
+    },
+    {
+      "label": "Limitation",
+      "text": "Detergents trade scum for foam pollution (phosphates eutrophy lakes — low-P formulations answer). 'Antibacterial' soaps add little over micelle action. Drug classes overlap (aspirin is analgesic + antipyretic + anti-inflammatory); self-medication ignores contraindications."
+    },
+    {
+      "label": "Derivation",
+      "text": "From amphiphile geometry: tail volume vs head area sets the packing parameter — cones make micelles, cylinders make bilayers. Cleaning follows: grease dissolves in the hydrophobic core, the charged corona keeps droplets dispersed, rinsing carries all away. Hardness chemistry is competing equilibria: Ksp of calcium carboxylate vs micelle stability."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Cleanser questions: micelle diagram (tails-in/heads-out) + hard-water equation. Drug questions: class → example → target (pain/fever/bacteria/histamine/acid). Additives: preservative (shelf life) vs sweetener (taste, aspartame/saccharin)."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: soap vs detergent with hard-water chemistry; saponification reaction; one example each of analgesic/antibiotic/antihistamine/antacid with use; preservative vs artificial sweetener with examples."
+    }
+  ]
+}

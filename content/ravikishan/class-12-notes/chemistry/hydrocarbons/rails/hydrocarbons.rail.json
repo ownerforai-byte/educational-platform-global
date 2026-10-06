@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "hydrocarbons",
+  "unitTitle": "Hydrocarbons",
+  "unitHours": 7,
+  "syllabusTopics": [
+    "Alkanes: conformations, combustion, free radical halogenation",
+    "Alkenes: preparation, geometrical isomerism, electrophilic addition (Markovnikov, anti-Markovnikov), ozonolysis, polymerisation",
+    "Alkynes: preparation, acidic character, addition reactions",
+    "Aromatic hydrocarbons: benzene — resonance, aromaticity, electrophilic substitution (halogenation, nitration, sulphonation, Friedel-Crafts)"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Hydrocarbons · Class 12",
+    "title": "Addition vs substitution — the π-bond decides",
+    "href": "/class-12-notes/chemistry",
+    "icon": "Ruler",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Alkanes substitute by free radicals (halogenation) and burn; alkenes/alkynes ADD across π bonds following Markovnikov (stable-carbocation path) with HBr-peroxide reversal; terminal alkynes donate ≡C–H (acidic, Ag/Cu salts). Benzene refuses addition (aromaticity worth ~150 kJ/mol) and substitutes electrophilically instead — nitration, sulphonation, halogenation, Friedel–Crafts — with directors choosing ortho/para or meta."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Markovnikov: H→H-rich C (carbocation stability 3°>2°>1°) · peroxide: HBr only, reversed  ·  ozonolysis: C=C → 2 C=O (skeleton proof)  ·  benzene: E⁺ replaces H, ring intact · activators o/p (OH, NH₂, alkyl) · deactivators meta (NO₂, COOH) · conformations: staggered > gauche > eclipsed"
+    },
+    {
+      "label": "Conditions",
+      "text": "Markovnikov needs unsymmetrical alkene + ionic HX; peroxide reversal is HBr-only. Ozonolysis needs reductive workup (Zn/H₂O) for aldehydes/ketones. Benzene substitution needs generated electrophiles (NO₂⁺, Br⁺/FeBr₃, R⁺/AlCl₃) — plain Br₂ water does nothing (the alkene distinction test). Conformation analysis rotates around σ bonds only."
+    },
+    {
+      "label": "Special cases",
+      "text": "Ozonolysis fragments map the old double bond (but-2-ene → 2 ethanal). Acetylene's acidity gives white Ag₂C₂ / red Cu₂C₂ precipitates. Phenol brominates without catalyst (super-activated); benzene needs FeBr₃. Polymerisation (Ziegler–Natta) chains ethene into polythene."
+    },
+    {
+      "label": "Solved",
+      "text": "Propene + HBr: protonate to the 2° carbocation (CH₃–C⁺H–CH₃, not primary) → Br⁻ captures → 2-bromopropane (Markovnikov). With peroxides: Br· adds first to give the more stable carbon radical → 1-bromopropane (anti-Markovnikov). Same substrate, opposite products — mechanism written, marks banked."
+    },
+    {
+      "label": "Limitation",
+      "text": "Carbocation rearrangements (hydride/methyl shifts) rewrite Markovnikov predictions. Free-radical halogenation gives mixtures (selectivity only biases). Wurtz couples symmetrically or statistically. Benzene's orientation rules guide; o/p splits still need separation."
+    },
+    {
+      "label": "Derivation",
+      "text": "Electrophilic addition via the lower-energy carbocation (hyperconjugation + +I count decides) — product ratios follow intermediate stability, hence the rule. Benzene's arenium ion delocalises over three carbons (draw all forms); restoring aromaticity by deprotonation beats addition by the resonance energy — substitution derived, not decreed."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Symmetrical substrate? Rule moot, one product. Ozonolysis: join carbonyl carbons back with C=C. Benzene + Br₂ water → no reaction (vs alkenes bleach) — the distinction MCQ. Conformations: staggered minimum, eclipsed maximum, always."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: Markovnikov vs peroxide-effect pairs; ozonolysis structure proof; benzene nitration/sulphonation/Friedel–Crafts with orientation; alkyne acidity tests; conformations energy order."
+    }
+  ]
+}

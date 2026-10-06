@@ -1,0 +1,64 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "solutions",
+  "unitTitle": "Solutions",
+  "unitHours": 7,
+  "syllabusTopics": [
+    "Types of solutions and expression of concentration",
+    "Solubility of gases and solids in liquids",
+    "Vapour pressure of solutions — Raoult's law",
+    "Colligative properties — relative lowering of vapour pressure, elevation of boiling point, depression of freezing point, osmosis and osmotic pressure",
+    "Van't Hoff factor and abnormal molar masses"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Solutions · Class 12",
+    "title": "Colligative properties — counting particles, not kinds",
+    "href": "/class-12-notes/chemistry",
+    "icon": "Sigma",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Dissolved particles lower the solvent's escaping tendency (vapour pressure drops by mole fraction — Raoult), so boiling needs more heat (ΔTb) and freezing comes easier (ΔTf); across a semipermeable membrane the same pull is osmotic pressure π = CRT. All four depend on particle COUNT, never identity — electrolytes multiply the effect by the van't Hoff factor i (dissociation) or shrink it (association)."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Raoult: P = x_solvent·P° · ΔP/P° = x_solute  ·  ΔTb = i·Kb·m · ΔTf = i·Kf·m · π = iCRT  ·  i = observed/calculated (NaCl → ~2, CaCl₂ → ~3, acetic-acid dimer → ~0.5)  ·  concentration: M, m, %w/w, ppm, mole fraction"
+    },
+    {
+      "label": "Conditions",
+      "text": "Colligative laws need dilute, non-volatile-solute solutions (solute must not join the vapour). Molality (not molarity) for ΔT laws — temperature-independent. van't Hoff corrections assume ideal dissociation/association equilibria; ion pairing at high concentration breaks ideality."
+    },
+    {
+      "label": "Special cases",
+      "text": "NaCl: i ≈ 2 doubles every effect (abnormal molar mass halves). Acetic acid dimerises in benzene: i ≈ 0.5, apparent mass doubles. Reverse osmosis desalinates against π with pressure. Antifreeze (ethylene glycol) and road salt are ΔTf applications; IV fluids match blood π (~0.9% NaCl isotonic)."
+    },
+    {
+      "label": "Solved",
+      "text": "Molar mass from ΔTf: dissolve w₂ grams in w₁ kg solvent, measure depression ΔTf → M₂ = (i·Kf·w₂)/(ΔTf·w₁). With association (benzoic acid in benzene), the computed mass doubles — the abnormality that reveals dimerisation. Same ladder climbs ΔTb and π."
+    },
+    {
+      "label": "Limitation",
+      "text": "Colligative laws fail concentrated solutions (activity replaces concentration) and volatile solutes (both components join vapour — fractional distillation territory). van't Hoff i is empirical per condition, not a molecular constant. Osmosis needs truly semipermeable membranes."
+    },
+    {
+      "label": "Derivation",
+      "text": "Raoult from escaping tendency: each surface molecule is solvent with probability x_solvent → P = x·P°. Chemical-potential equality (μ_liquid = μ_vapour) then forces boiling-point rise and freezing-point drop proportional to solute mole fraction; dilute-limit expansion gives ΔT = K·m with solvent constants Kb, Kf. Electrolytes: count the actual particles — i."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'Abnormal molar mass' → write i first (dissociate >1, associate <1). ΔT laws: molality always. Osmosis: π = CRT with T in kelvin. Concentration conversions: M↔m needs density; mole fraction needs no density."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: Raoult's law statement + derivation sketch; all four colligative properties with formulas; van't Hoff factor with dissociation/association numericals; molarity–molality–mole-fraction conversions."
+    }
+  ]
+}

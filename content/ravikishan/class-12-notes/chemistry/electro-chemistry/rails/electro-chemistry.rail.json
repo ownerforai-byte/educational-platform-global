@@ -1,0 +1,66 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "electro-chemistry",
+  "unitTitle": "Electrochemistry",
+  "unitHours": 8,
+  "syllabusTopics": [
+    "Oxidation and reduction — electrode reactions",
+    "Electrochemical cells — galvanic cell, cell potential, standard electrode potential",
+    "Nernst equation and its applications",
+    "Conductance of electrolytic solutions",
+    "Electrolysis and Faraday's laws",
+    "Batteries — primary and secondary cells",
+    "Fuel cells"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Electrochemistry · Class 12",
+    "title": "Nernst equation — cell potential off standard state",
+    "href": "/class-12-notes/chemistry",
+    "icon": "Languages",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Galvanic cells split redox halves across electrodes and harvest the electron flow (anode oxidises, cathode reduces; E°cell = E°cathode − E°anode). Off standard conditions the Nernst equation discounts the potential by the reaction quotient: E = E° − (0.0591/n)logQ at 298 K. Conductance (κ, Λm) tracks ion mobility; Faraday's laws price electrolysis products; dry cells, lead accumulators and H₂–O₂ fuel cells package it all."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "E°cell = E°(cathode) − E°(anode)  ·  Nernst: E = E° − (0.0591/n)·logQ (298 K)  ·  ΔG° = −nFE° · K from logK = nE°/0.0591  ·  Faraday: W = ZQ = E·Q/96500  ·  Λm = κ×1000/M, rises with dilution (weak electrolytes steeply)"
+    },
+    {
+      "label": "Conditions",
+      "text": "E° values need the standard hydrogen electrode reference (1 M, 1 atm, 298 K). Nernst's 0.0591 factor is 298 K only (2.303RT/F generally). Salt bridge required (no liquid-junction drift). Conductance comparisons need same temperature; Faraday needs single-electrode-reaction efficiency."
+    },
+    {
+      "label": "Special cases",
+      "text": "Daniel cell Zn|Zn²⁺‖Cu²⁺|Cu: E° = 0.34 − (−0.76) = 1.10 V. Lead accumulator recharges (secondary); dry cell does not (primary). Fuel cells feed H₂/O₂ continuously — Honda's clarity cars run the same Nernst math. Concentration cells: same electrodes, E from concentration difference alone."
+    },
+    {
+      "label": "Solved",
+      "text": "Cell EMF off-standard: E = E° − (0.0591/n)log([products]/[reactants]) — plug ion concentrations, get the working voltage (lower than E° as products build). Equilibrium constant from the same line: at E = 0, logK = nE°/0.0591 — electrochemistry measures K without waiting."
+    },
+    {
+      "label": "Limitation",
+      "text": "E° predicts spontaneity, never rate (overpotential slows real electrolysis). Liquid-junction potentials and activity coefficients blur textbook numbers. Batteries self-discharge; fuel cells need pure feeds (CO poisons Pt). Conductance plateaus (strong) or climbs (weak) — Kohlrausch extrapolates, not measures, Λ°m."
+    },
+    {
+      "label": "Derivation",
+      "text": "From thermodynamics: ΔG = ΔG° + RTlnQ with ΔG = −nFE → E = E° − (RT/nF)lnQ; at 298 K, 2.303RT/F = 0.0591 V. Faraday: Q coulombs carry Q/96500 mol e⁻ → mass = (M/n)(Q/96500). Kohlrausch: Λ°m = ν₊λ°₊ + ν₋λ°₋ (independent ion migration at infinite dilution)."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Cell diagrams: anode left (oxidation), cathode right, ‖ salt bridge. E°cell = right − left (reduction potentials). Nernst: n = electrons in the balanced halves; Q = products/reactants (solids omitted). Conductance up with dilution — always."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: galvanic-cell construction + E°cell; Nernst derivation with concentration numerical; Faraday's-law electrolysis mass; conductance-vs-dilution graphs; battery/fuel-cell working."
+    }
+  ]
+}

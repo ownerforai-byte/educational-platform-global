@@ -1,0 +1,62 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "electric-charges",
+  "unitTitle": "Electric Charges",
+  "syllabusTopics": [
+    "Electric charges",
+    "Charging by induction",
+    "Coulomb's law: force between two point charges",
+    "Force between multiple electric charges"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank compiled 2026-10-06 from pyqs/01-neb-2024.json and 02-neb-2022.json in this unit (stems, marks, solutions verbatim in essence).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on electric charges",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Two questions: Coulomb's law plus the 2/3 microCoulomb 0.1 m numerical (2024: 5.4 N repulsion) and the MCQ on +2/-3 microCoulomb at 0.6 m (2022: 0.15 N attractive). Signs decide push vs pull; magnitudes follow the inverse square. Induction charging (separate-then-earth) trails as theory."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "F = k q1 q2 / r2, k = 9x10^9 · superposition: vector sum · induction: separate, earth, remove earth, remove rod"
+    },
+    {
+      "label": "Conditions",
+      "text": "Point charges at rest in uniform medium (k absorbs it). The 0.1 m in the 2024 numerical is metres already — but microCoulomb needs 10^-6 each (meaning six powers of ten per charge, twelve total, decide the magnitude). Unlike signs attract: the MCQ tests reading, not arithmetic."
+    },
+    {
+      "label": "Special cases",
+      "text": "2024: 9x10^9 x 6x10^-12 / 0.01 = 5.4 N, repulsive (like signs). 2022 MCQ: 9x10^9 x 6x10^-12 / 0.36 = 0.15 N, attractive (unlike signs) — option (a). Multiple charges: resolve components, add vectorially."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2024 (3): state F = kq1q2/r2, substitute 9x10^9 x (2x10^-6)(3x10^-6)/(0.1)2 = 5.4 N along the joining line, repulsion. NEB 2022 (1): same template at 0.6 m gives 0.15 N; opposite signs make it attractive — read the signs before the options."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: micro-to-unit conversion (10^-6 each); cm left as cm; sign blindness in attraction/repulsion verdicts. Coulomb covers statics only — moving charges add magnetism."
+    },
+    {
+      "label": "Derivation",
+      "text": "Torsion-balance logic: force proportional to each charge, inverse-square in distance — twist measures both. Superposition is experimental fact (pairwise forces add vectorially). Induction steps derive from conductor mobility plus earthing."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Compute magnitude first (|F|), assign push/pull from signs after. MCQ: check attraction vs repulsion options before arithmetic — half the options die on signs. Convert micro and centi units in line one."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (3): Coulomb's law + 2/3 uC at 0.1 m. NEB 2022 (1): +2/-3 uC at 0.6 m MCQ (0.15 N attractive). That is the complete bank."
+    }
+  ]
+}

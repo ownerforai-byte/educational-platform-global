@@ -1,0 +1,64 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "chemical-kinetics",
+  "unitTitle": "Chemical Kinetics",
+  "unitHours": 6,
+  "syllabusTopics": [
+    "Rate of reaction — average and instantaneous rate",
+    "Factors affecting rate of reaction",
+    "Rate law and order of reaction",
+    "Integrated rate equations — zero order and first order reactions",
+    "Arrhenius equation and activation energy"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Kinetics · Class 12",
+    "title": "Rate law and Arrhenius — order, then energy barrier",
+    "href": "/class-12-notes/chemistry",
+    "icon": "Waypoints",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Thermodynamics says IF; kinetics says how FAST. Rate = −d[reactant]/dt, set by concentration (rate law, exponents = ORDER, found experimentally — never read off the equation), temperature (Arrhenius: k = Ae^(−Ea/RT)), surface area, and catalysts (new lower-Ea path, same ΔH). Integrated forms linearise the data: zero order [A] vs t, first order ln[A] vs t (half-life constant)."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "rate = k[A]^m[B]^n (order m+n, experimental!)  ·  zero: [A] = [A]₀ − kt  ·  first: ln[A] = ln[A]₀ − kt, t½ = 0.693/k  ·  Arrhenius: k = A·e^(−Ea/RT) · log(k₂/k₁) = (Ea/2.303R)(1/T₁ − 1/T₂)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Rate laws describe elementary-rate behaviour at fixed T — change T, change k. Order ≠ molecularity ≠ stoichiometric coefficients (the classic trap). First-order half-life is concentration-independent ONLY for true first order. Arrhenius needs a single dominant barrier."
+    },
+    {
+      "label": "Special cases",
+      "text": "N₂O₅ decomposition, radioactive decay, most hydrolyses: first order (t½ constant). Zero order: surface-saturated catalysis, photochemical (rate = constant while lit). Catalysts appear in neither rate law nor K — they only lower Ea. Rough rule: ~2× rate per 10 K rise."
+    },
+    {
+      "label": "Solved",
+      "text": "First-order test: plot ln[A] vs t — straight line slope −k confirms order and yields k; t½ = 0.693/k follows without further data. Arrhenius use: two k values at two T give Ea from the log ratio — activation energy from thermostats, not theory."
+    },
+    {
+      "label": "Limitation",
+      "text": "Rate laws are empirical snapshots — mechanisms hide behind them (slow step rules). Arrhenius bends for tunnelling, diffusion control and complex multi-barrier paths. Order can be fractional or negative; 'order = coefficients' is wrong until proven by experiment."
+    },
+    {
+      "label": "Derivation",
+      "text": "First order: d[A]/dt = −k[A] → separate → ∫d[A]/[A] = −k∫dt → ln[A] = ln[A]₀ − kt; half: ln(1/2) = −kt½ → t½ = 0.693/k. Zero order: d[A]/dt = −k → straight line. Arrhenius: fraction of molecules above Ea is e^(−Ea/RT) (Maxwell–Boltzmann tail) → k inherits the exponential."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Order questions: method of initial rates (vary one concentration, watch ratio) or integrated-plot linearity. t½ constant → first order, instantly. Arrhenius: log form, two-point version. Catalyst: lowers Ea, unchanged K and ΔH — chant it."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: order vs molecularity with examples; first-order integrated law + t½ derivation; Arrhenius statement with Ea-from-two-temperatures numerical; catalyst effect on Ea/K/ΔH."
+    }
+  ]
+}

@@ -1,0 +1,67 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "current-electricity",
+  "unitTitle": "Current Electricity",
+  "unitHours": 10,
+  "syllabusTopics": [
+    "Electric current, drift velocity, and relaxation time",
+    "Ohm's law and its limitations",
+    "Resistance and resistivity — temperature dependence",
+    "Series and parallel combination of resistors",
+    "Kirchhoff's laws and their applications",
+    "Electromotive force (emf), internal resistance, and cells in combination",
+    "Wheatstone bridge and meter bridge",
+    "Potentiometer and its applications"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Current Electricity · Class 12",
+    "title": "Wheatstone bridge — the null-point balance",
+    "href": "/class-12-notes/physics",
+    "icon": "GitBranch",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Drifting electrons (I = nAev_d) obey Ohm microscopically (ρ = m/ne²τ) until heat bends the line. Kirchhoff's junction (charge) and loop (energy) laws solve any network; real cells add internal r (V = E − Ir). The Wheatstone bridge weaponises balance: at null deflection no current crosses the middle, so ratios lock — P/Q = R/S — and unknown resistances, meter bridges and potentiometers all reduce to comparing lengths."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "I = nAev_d · V = IR, R = ρL/A (ρ rises with T for metals)  ·  junction ΣI = 0 · loop ΣEMF = ΣIR  ·  Wheatstone: P/Q = R/S at null  ·  meter bridge: R = S·l/(100−l)  ·  potentiometer: E₁/E₂ = l₁/l₂; internal r = R(l₁−l₂)/l₂"
+    },
+    {
+      "label": "Conditions",
+      "text": "Bridge balance needs the galvanometer at TRUE null (sensitive, tapped not continuously connected). Meter bridge assumes uniform wire (R ∝ length) — file the wire, ruin the ratio. Potentiometer comparison needs the same driver current through the wire for both measurements. Ohm's law needs steady temperature."
+    },
+    {
+      "label": "Special cases",
+      "text": "Balanced bridge: middle branch removable (no current) — redraw without it. Meter bridge with l = 40 cm against S = 60 Ω: R = 60×40/60 = 40 Ω. Potentiometer measures EMF without drawing current (no r-drop) — voltmeters cannot. Shorted resistor: current takes the zero path entirely."
+    },
+    {
+      "label": "Solved",
+      "text": "Meter bridge: unknown R balances standard S at null point l cm from the left: R/S = l/(100−l) → R = S·l/(100−l). Derivation: uniform wire splits resistance ∝ lengths; balance P/Q = R/S with P ∝ l, Q ∝ (100−l). Swap R and S and average to kill end-correction errors."
+    },
+    {
+      "label": "Limitation",
+      "text": "Bridges measure at balance only — off-null they are ordinary inaccurate networks. Contact and end resistances bias meter bridges (interchange + mean). Potentiometers need longer wires than the EMF under test. Kirchhoff's loop law fails with induced EMF (changing flux)."
+    },
+    {
+      "label": "Derivation",
+      "text": "Balance: no current in the middle branch → the two left nodes sit at equal potential and so do the right nodes. Left arm ratio P/Q equals right arm R/S because the same node-to-node drops scale identically: V_A − V_C over V_C − V_B is common to both sides → P/Q = R/S. Potentiometer: V ∝ l along a uniform current-carrying wire gives E₁/E₂ = l₁/l₂ directly."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'Balanced bridge' → erase the middle branch, recompute series/parallel. Meter bridge: R = S·l/(100−l), then interchange-and-mean. Two-resistor parallel: product/sum. Cells in series aiding/opposing: add/subtract EMFs, add internal r's."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: Wheatstone principle + unknown-resistance numerical; meter-bridge derivation with interchange correction; potentiometer EMF comparison + internal-resistance form; Kirchhoff network solution."
+    }
+  ]
+}

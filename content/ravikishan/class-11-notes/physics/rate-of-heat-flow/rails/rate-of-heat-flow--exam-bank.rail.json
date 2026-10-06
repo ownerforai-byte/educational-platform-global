@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "rate-of-heat-flow",
+  "unitTitle": "Rate of Heat Flow",
+  "syllabusTopics": [
+    "Conduction: thermal conductivity and measurement",
+    "Convection",
+    "Radiation: ideal radiator",
+    "Black-body radiation",
+    "Stefan-Boltzmann law"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank: 4200 J heater (2023), rate definition (2022).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on rate of heat flow",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Two questions: heater rate (2023: 4200 J in 4 s = 1050 W) and rate definition with formula plus unit (2022). Rate means joule per second (watt); conduction follows K A dT/L; black bodies radiate sigma T^4."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "rate = Q/t (W) · conduction Q/t = K A dT/L · Stefan E = sigma T4, sigma = 5.67x10^-8"
+    },
+    {
+      "label": "Conditions",
+      "text": "Conduction needs steady state (linear gradient, meaning no heat stored in the rod). K measurement assumes one-dimensional insulated flow. Stefan needs kelvin and black (or grey-with-e) surfaces."
+    },
+    {
+      "label": "Special cases",
+      "text": "4200/4 = 1050 W. Doubling kelvin multiplies radiation 16x (T4 leverage). Metals conduct via free electrons; trapped air insulates (wool, fur)."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2023 (3): 4200/4 = 1050 J/s = 1050 W. NEB 2022 (2): rate defined as heat per unit time with Q/t and watt. Conduction variant reads K from the same formula rearranged."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: rate confused with quantity (watt vs joule); Celsius in Stefan law; linear conduction assumed past steady state. Real bodies are grey, not black."
+    },
+    {
+      "label": "Derivation",
+      "text": "K from Searle bar: steady flow through known A, L, dT gives K = (Q/t) L/A dT (calorimeter measures Q/t at the cold end). Stefan is empirical with thermodynamic backing from Planck."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'Rate' always means divide by time, answer in watts. Conduction: write K A dT/L and solve the fraction. T4: kelvin first, always."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (3): 4200 J in 4 s rate + unit. NEB 2022 (2): rate definition + formula + unit. That is the complete bank."
+    }
+  ]
+}

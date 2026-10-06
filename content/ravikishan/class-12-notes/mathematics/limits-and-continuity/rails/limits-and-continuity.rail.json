@@ -1,0 +1,64 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "mathematics",
+  "unitSlug": "limits-and-continuity",
+  "unitTitle": "Limits and Continuity",
+  "unitHours": 8,
+  "syllabusTopics": [
+    "Concept of limit — geometric and physical interpretation",
+    "Standard limits and evaluation (algebraic, trigonometric, exponential, logarithmic)",
+    "Indeterminate forms: 0/0, ∞/∞, 0·∞, ∞−∞, 1^∞, 0^0, ∞^0",
+    "Continuity of algebraic, trigonometric, exponential, logarithmic functions",
+    "Differentiability and its relation with continuity"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Limits · Class 12",
+    "title": "Indeterminate forms — seven signals, four tools",
+    "href": "/class-12-notes/mathematics",
+    "icon": "BookOpen",
+    "statKey": "pyq:mathematics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Limits formalise approach (ε–δ: |f(x)−L| < ε whenever 0 < |x−a| < δ — the point itself excluded). Seven indeterminate forms (0/0, ∞/∞, 0·∞, ∞−∞, 1^∞, 0^0, ∞^0) signal substitution's failure, each with its rewrite tool: factorise, rationalise, divide by highest power, or deploy standard limits (sinx/x → 1, (1+1/n)^n → e). Continuity demands limit = value (no jumps/holes); differentiability demands continuity plus smoothness (no corners) — continuous need not be differentiable."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "forms: 0/0 · ∞/∞ · 0·∞ · ∞−∞ · 1^∞ · 0^0 · ∞^0  ·  tools: factor/cancel · conjugate · ÷highest power · sinx/x→1 · (1+x)^(1/x)→e  ·  continuous at a: lim = f(a) · differentiable ⟹ continuous (converse false: |x| at 0)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Two-sided limits need matching one-sided equals. Standard trig limits need radian measure. Continuity checks all three: f(a) defined, limit exists, equality holds. Differentiability additionally needs the left/right derivative match."
+    },
+    {
+      "label": "Special cases",
+      "text": "|x| at 0: continuous (limit 0 = value) but cornered — left derivative −1, right +1, so NOT differentiable (the canonical counterexample). 1^∞ forms (like (1+1/n)^n) resolve via logarithms to e-powers. Removable holes factor away; jumps and asymptotes never resolve."
+    },
+    {
+      "label": "Solved",
+      "text": "lim(x→0)(sin 3x)/x: scale to the standard form → 3·sin(3x)/(3x) → 3×1 = 3. Continuity drill: f(x) = (x²−4)/(x−2) for x≠2 with f(2) = 5 — limit is 4 ≠ 5, so discontinuous (removable); reset f(2) = 4 to heal it."
+    },
+    {
+      "label": "Limitation",
+      "text": "L'Hôpital-style shortcuts sit outside this syllabus's toolkit — rewrite, don't differentiate, the limit away. Graphical intuition misleads on wild oscillation (sin(1/x) near 0). Continuity at a point says nothing about intervals (uniform continuity is stronger)."
+    },
+    {
+      "label": "Derivation",
+      "text": "Why 0<|x−a| matters: excluding the point lets limits exist where functions don't (holes have limits). Differentiable⟹continuous proof: f(x)−f(a) = [f(x)−f(a)]/(x−a)·(x−a) → f′(a)·0 = 0. Contrapositive powers the |x| verdict: corner ⇒ not differentiable, while continuity holds separately."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Form radar: 0/0 → factor/conjugate · ∞/∞ → divide by highest power · exponential forms → take ln. Continuity checklist: defined? limit? equal? Differentiability: continuity first, then corner-hunt."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: seven forms with one rewrite tool each; standard-limit evaluations (trig + exponential); continuity verdicts with healing; |x|-style differentiability counterexample."
+    }
+  ]
+}

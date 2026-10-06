@@ -1,0 +1,65 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "ray-optics",
+  "unitTitle": "Ray Optics",
+  "unitHours": 10,
+  "syllabusTopics": [
+    "Reflection at plane and curved surfaces — mirrors",
+    "Refraction at plane surfaces — total internal reflection",
+    "Refraction through prisms — angle of deviation and minimum deviation",
+    "Thin lenses — lens maker's formula and power of lens",
+    "Combination of lenses and mirrors",
+    "Optical instruments — microscope and telescope"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Ray Optics · Class 12",
+    "title": "Microscope and telescope — magnification machines",
+    "href": "/class-12-notes/physics",
+    "icon": "BookOpen",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Class 12 ray optics unifies mirrors, refraction, TIR, prisms and lenses into instruments: the compound microscope stages two magnifications (objective makes a real enlarged image, eyepiece magnifies it as a loupe), while the astronomical telescope pairs a long-focus objective (light bucket) with a short eyepiece. Magnifying power is angular — apparent size versus naked-eye size at the near point."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "mirror/lens: 1/f = 1/v ± 1/u · maker: 1/f = (μ−1)(1/R₁−1/R₂) · μ = sin[(A+δm)/2]/sin(A/2) · microscope: M = (v₀/u₀)(1 + D/f_e) ≈ −(L/f₀)(1 + D/f_e) · telescope: M = −f₀/f_e, tube length f₀ + f_e (normal adjustment)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Paraxial rays and thin elements throughout; sign conventions fixed once per solution. Microscope formula needs the intermediate image inside the eyepiece focal length (virtual final image at D for relaxed viewing, or at infinity for normal adjustment). Telescope normal adjustment puts the final image at infinity (parallel emergent beam)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Simple microscope (loupe): M = 1 + D/f, object inside f. Compound: objective f₀ ~ mm, eyepiece f_e ~ cm — short tube, huge M. Astronomical: f₀ long, image inverted (fine for stars); terrestrial adds an erecting lens. Combination power adds in contact (P = P₁ + P₂)."
+    },
+    {
+      "label": "Solved",
+      "text": "Telescope with f₀ = 100 cm, f_e = 5 cm: M = −f₀/f_e = −20×, tube = 105 cm in normal adjustment. Microscope check: L = 16 cm tube, f₀ = 1 cm, f_e = 5 cm, D = 25 cm → M ≈ −(16/1)(1 + 25/5) = −96× — two stages multiply."
+    },
+    {
+      "label": "Limitation",
+      "text": "Magnification without resolution is empty enlargement — wave optics caps useful M (~1000×, oil immersion). Aberrations (chromatic, spherical) blur real instruments; ray optics cannot explain them away. Reflecting telescopes dodge chromatic error with mirrors instead of lenses."
+    },
+    {
+      "label": "Derivation",
+      "text": "Microscope: objective gives linear m₀ = v₀/u₀ ≈ L/f₀ (image near tube length L away); eyepiece as loupe multiplies by (1 + D/f_e) → total M product. Telescope: objective forms the image at its focus (parallel incoming beam), eyepiece views it under angle ≈ h/f_e vs naked-eye h/f₀ → M = −f₀/f_e."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Instrument questions: identify objective vs eyepiece roles first, then multiply stages. 'Normal adjustment' = final image at infinity. Prism/lens/mirror sub-parts reuse Class 11 formulas verbatim — the unit is integration, not new laws."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: microscope/telescope construction + magnification derivation with ray diagram; combination-of-lenses power numerical; prism minimum-deviation and TIR sub-questions."
+    }
+  ]
+}

@@ -8,8 +8,11 @@ import {
   type HomeSubjectSlide,
 } from "@/lib/home-subject-slides";
 import {
+  HOME_RAIL_CLASS_12_SLUG,
+  groupReadyByUnit,
   loadHomeRailCorpus,
   toRailSlideData,
+  type HomeRailEntry,
 } from "@/lib/home-rails-corpus";
 import { SubjectRails } from "./subject-rails";
 
@@ -120,44 +123,59 @@ export async function HomeSubjectRails() {
 }
 
 /**
- * Agent-authored corpus cards for the rails.
+ * Agent-authored corpus cards for the rails, classified by syllabus unit.
  *
- * `content/ravikishan/class-11-notes/<subject>/<unit>/rails/*.rail.json`
+ * `content/ravikishan/<class>/<subject>/<unit>/rails/*.rail.json`
  * (contract: frontend/AGENTS.md §9) carries one canonical card per syllabus
  * unit. Ready cards (draft flipped off, all nine rows written) stream here —
- * after the hand-written opening cards, before the Class 12 teaser — so any
- * agent adding content to the corpus changes what the home page shows on the
- * next build, with zero frontend edits. Draft/TODO skeletons and broken files
- * never reach the rail; `--check` reports them instead.
+ * grouped under a divider per unit in syllabus order (Class 11 units, then
+ * Class 12), after the hand-written opening cards and before the Class 12
+ * teaser — so any agent adding content to the corpus changes what the home
+ * page shows on the next build, with zero frontend edits. Draft/TODO
+ * skeletons and broken files never reach the rail; `--check` reports them
+ * instead. Class 12 cards retire the teaser once they exist.
  */
 function mergeCorpusRails(): HomeSubjectRail[] {
-  const bySubject = new Map<string, ReturnType<typeof toRailSlideData>[]>();
+  let entries: HomeRailEntry[] = [];
   try {
-    for (const entry of loadHomeRailCorpus()) {
-      if (!entry.ready) continue;
-      const list = bySubject.get(entry.subjectSlug) ?? [];
-      list.push(toRailSlideData(entry));
-      bySubject.set(entry.subjectSlug, list);
-    }
+    entries = loadHomeRailCorpus();
   } catch {
     // Corpus unreadable (stripped build) — rails stream the built-in cards.
     return HOME_SUBJECT_RAILS;
   }
 
   return HOME_SUBJECT_RAILS.map((rail) => {
-    const extra = bySubject.get(rail.slug) ?? [];
-    if (extra.length === 0) return rail;
+    const groups = groupReadyByUnit(entries, rail.slug);
+    if (groups.length === 0) return rail;
     const last = rail.slides[rail.slides.length - 1];
     const curated = last?.teaser ? rail.slides.slice(0, -1) : rail.slides;
-    const teaser = last?.teaser ? [last] : [];
-    const slides: HomeSubjectSlide[] = [
-      ...curated,
-      ...extra.map((data) => ({
-        ...data,
-        icon: HOME_RAIL_ICONS[data.iconName] ?? rail.icon,
-      })),
-      ...teaser,
-    ];
+    // Class 12 cards retire the teaser once they exist — the promise is kept.
+    const hasClass12 = groups.some(
+      (group) => group.classSlug === HOME_RAIL_CLASS_12_SLUG,
+    );
+    const teaser = last?.teaser && !hasClass12 ? [last] : [];
+    const resolve = (
+      data: ReturnType<typeof toRailSlideData>,
+    ): HomeSubjectSlide => ({
+      ...data,
+      icon: HOME_RAIL_ICONS[data.iconName] ?? rail.icon,
+    });
+    const grouped: HomeSubjectSlide[] = groups.flatMap((group) => [
+      {
+        tag: group.classSlug === HOME_RAIL_CLASS_12_SLUG ? "Class 12" : "Class 11",
+        title: group.unitTitle,
+        rows: [],
+        href: `/${group.classSlug}/${rail.slug}`,
+        icon: rail.icon,
+        unitDivider: {
+          unitId: group.unitId,
+          unitTitle: group.unitTitle,
+          meta: `${group.classSlug === HOME_RAIL_CLASS_12_SLUG ? "Class 12" : "Class 11"} · ${group.entries.length} card${group.entries.length === 1 ? "" : "s"}`,
+        },
+      },
+      ...group.entries.map((entry) => resolve(toRailSlideData(entry))),
+    ]);
+    const slides: HomeSubjectSlide[] = [...curated, ...grouped, ...teaser];
     return { ...rail, duration: rescaleDuration(rail.duration, rail.slides.length, slides.length), slides };
   });
 }

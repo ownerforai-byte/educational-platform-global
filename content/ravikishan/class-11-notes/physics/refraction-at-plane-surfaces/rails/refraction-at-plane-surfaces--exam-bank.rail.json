@@ -1,0 +1,62 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "refraction-at-plane-surfaces",
+  "unitTitle": "Refraction at Plane Surfaces",
+  "syllabusTopics": [
+    "Laws of refraction: refractive index",
+    "Relation between refractive indices",
+    "Lateral shift",
+    "Total internal reflection"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank: Snell + glass speed (2023), TIR conditions (2022).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on plane refraction",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Two questions: Snell's law plus light speed in glass (2023: mu 1.5 gives 2x10^8 m/s) and TIR with its two conditions (2022). Bending tracks speed change (frequency fixed); past the critical angle dense-to-rare, refraction dies and total reflection takes over."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "mu1 sin i = mu2 sin r · mu = c/v · sin C = 1/mu (dense to rare) · slab shift d = t sin(i-r)/cos r"
+    },
+    {
+      "label": "Conditions",
+      "text": "Snell needs single wavelength (meaning mu varies per colour). TIR needs BOTH denser-to-rarer travel and i beyond C (missing either gives ordinary refraction). Lateral shift needs parallel slab faces."
+    },
+    {
+      "label": "Special cases",
+      "text": "Glass mu 1.5: v = 2x10^8 m/s, C ~ 41.8 degrees. Diamond mu 2.4: C ~ 24 degrees (sparkle engine). Fibre optics, endoscopes, mirages all run TIR."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2023 (3): Snell stated (incident/refracted sines ratio constant), v = 3x10^8/1.5 = 2x10^8 m/s. NEB 2022 (2): TIR defined (100 percent reflection past critical) with both conditions named."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: critical angle claimed rare-to-dense; single-mu treatment of white light; polarisation/absorption ignored (Snell tracks direction only)."
+    },
+    {
+      "label": "Derivation",
+      "text": "Wavefront timing across the boundary gives sin i/sin r = c1/c2. Grazing limit r = 90 degrees yields sin C = 1/mu; beyond it no real r satisfies Snell, so reflection takes all."
+    },
+    {
+      "label": "Shortcut",
+      "text": "TIR conditions: dense-to-rare plus i beyond C (two marks free). mu = c/v converts speeds. C values: glass ~42, water ~49, diamond ~24."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (3): Snell + glass speed. NEB 2022 (2): TIR + two conditions. That is the complete bank."
+    }
+  ]
+}

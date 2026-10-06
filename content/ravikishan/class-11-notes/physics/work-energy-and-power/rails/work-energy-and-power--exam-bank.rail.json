@@ -1,0 +1,64 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "work-energy-and-power",
+  "unitTitle": "Work, Energy and Power",
+  "syllabusTopics": [
+    "Work done by a constant force and a variable force",
+    "Power",
+    "Work-energy theorem; kinetic and potential energy",
+    "Conservation of energy",
+    "Conservative and non-conservative forces",
+    "Elastic and inelastic collisions"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank compiled from the work-energy-power alias-dir PYQs (same syllabus unit): theorem proof (2023), falling-body KE (2023), motor/person power (2022 x2).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on work-energy-power",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Four questions: work-energy theorem proof (2023, 5 marks), 4 kg falling 10 m kinetic energy (2023: 392 J), 2 kW motor lifting 500 kg 20 m (2022: 100 s), 60 kg climbing 8 m in 20 s (2022: ~235 W). Net work becomes kinetic energy; power divides by time."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "W = F s cos · KE = half m v2 · PE = mgh · W_net = dKE · P = W/t = F v · 1 kWh = 3.6 MJ"
+    },
+    {
+      "label": "Conditions",
+      "text": "Theorem uses NET work (meaning friction counts). Mechanical conservation additionally needs zero non-conservative work. Power numericals assume steady rates (average, not instantaneous)."
+    },
+    {
+      "label": "Special cases",
+      "text": "4 kg x 9.8 x 10 = 392 J (no kinematics needed). Motor: t = mgh/P = 100 s. Climber: P = 60 x 9.8 x 8/20 ~ 235 W. Elastic equal-mass collision swaps velocities."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2023 (5): W = Fs with s = (v2-u2)/2a and F = ma gives W = half m v2 - half m u2. NEB 2023 (4): mgh = 392 J at impact. NEB 2022 pair: t = 100 s motor; P ~ 235 W climber."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: g = 10 vs 9.8 mixing; power confused with energy (watt vs joule); friction work dropped from net. Elastic-collision idealisation ignores sound/deformation losses."
+    },
+    {
+      "label": "Derivation",
+      "text": "Constant-force proof above; variable force integrates (area under F-x). Conservation follows when only conservative forces work (path independence). Collision analysis pairs momentum with KE condition."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Messy paths or times mean energy ledger, not kinematics. mgh + half m v2 at start and end, equate minus friction. Height-speed swaps collapse to sqrt(2gh)."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (5): theorem proof. NEB 2023 (4): 4 kg/10 m KE. NEB 2022 (3): motor time. NEB 2022 (3): climber power."
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "ideal-gas",
+  "unitTitle": "Ideal Gas",
+  "unitHours": 8,
+  "syllabusTopics": [
+    "Ideal gas equation",
+    "Molecular properties of matter",
+    "Kinetic-molecular model of an ideal gas",
+    "Derivation of pressure exerted by gas",
+    "Average translational kinetic energy of gas molecule",
+    "Boltzmann constant, root mean square speed",
+    "Heat capacities of gases and solids"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank: kinetic-theory assumptions (2023), O2 rms at 27 C (2022), Charles-volume numerical (2022).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on ideal gas",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Three questions: kinetic-theory assumptions (2023, 5 marks), rms speed of O2 at 27 C (2022: ~484 m/s), Charles-law volume change (2022: 0.5 m3 at 27 C to 100 C gives ~0.62 m3). Pressure is molecular bombardment; temperature is mean translational KE (3kT/2 per molecule)."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "PV = nRT = NkT · P = rho c-bar2/3 · KE per molecule = 3kT/2 · c_rms = sqrt(3RT/M) · O2 300 K: ~484 m/s"
+    },
+    {
+      "label": "Conditions",
+      "text": "Ideal behaviour needs point molecules, elastic collisions, no forces, huge N (meaning averages stay sharp). Assumptions question demands the full list — each missing postulate costs. Charles numerical needs kelvin (300 K to 373 K) and constant pressure."
+    },
+    {
+      "label": "Special cases",
+      "text": "Same T means same molecular KE for every gas (rms then sorts by mass: H2 outruns O2). Heat capacities split Cp - Cv = R. Real gases deviate at high P/low T (van der Waals corrects volume and attraction)."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2022 (3): c_rms = sqrt(3 x 8.31 x 300/0.032) = sqrt(2.34x10^5) ~ 484 m/s. NEB 2022 (4): V2 = 0.5 x 373/300 ~ 0.62 m3 at constant P. NEB 2023 (5): assumptions list (large N, point mass, elastic, no forces, random motion)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: Celsius in gas laws; M in g/mol inside sqrt(3RT/M) (needs kg/mol); rms confused with mean/most-probable. Model ignores vibrations/rotations and quantum effects."
+    },
+    {
+      "label": "Derivation",
+      "text": "Pressure derivation: one molecule's kicks (2mvx per hit, hit rate vx/2L) summed over N with isotropy (vx-bar2 = c-bar2/3) gives P = rho c-bar2/3; with rho = Nm/V, PV = NkT identifies temperature with molecular energy."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'State assumptions' means the five-postulate list. rms: kelvin plus kg/mol, always. Charles: V1/T1 = V2/T2 with T in kelvin. KE per molecule 3kT/2, per mole 3RT/2."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (5): kinetic theory + assumptions. NEB 2022 (3): O2 rms at 27 C. NEB 2022 (4): 0.5 m3 at 27 C to 100 C constant-P volume."
+    }
+  ]
+}

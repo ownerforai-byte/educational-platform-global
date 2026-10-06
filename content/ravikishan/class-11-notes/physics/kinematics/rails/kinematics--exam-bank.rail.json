@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "kinematics",
+  "unitTitle": "Kinematics",
+  "syllabusTopics": [
+    "Instantaneous velocity and acceleration",
+    "Relative velocity",
+    "Equation of motion (graphical treatment)",
+    "Motion of a freely falling body",
+    "Projectile motion and its applications"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank: definitions (2024), 200 m stone drop (2023), car acceleration (2023).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on kinematics",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Three questions: define position/velocity/acceleration (2024), stone dropped 200 m (2023: ~6.3 s, ~63 m/s impact), car 10 m/s at 2 m/s2 for 4 s (2023: 18 m/s, 56 m). Uniform-acceleration equations plus free-fall specials (t = sqrt(2h/g), v = sqrt(2gh)) cover everything."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "v = u + at · s = ut + half at2 · v2 = u2 + 2as · free fall: t = sqrt(2h/g), v = sqrt(2gh) · projectile R = u2 sin2theta/g"
+    },
+    {
+      "label": "Conditions",
+      "text": "Motion equations need UNIFORM acceleration (meaning constant slope on v-t graphs). Free-fall specials need u = 0 and negligible air. Definitions must separate instantaneous (slope/tangent) from average (chord/total)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Stone 200 m, g = 10: t = sqrt(40) ~ 6.3 s, v = 63 m/s. Car: v = 10 + 8 = 18 m/s, s = 40 + 16 = 56 m. Relative velocity flips with observer. Complementary launch angles share range."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2023 (3): h = half g t2 gives t = sqrt(2x200/10) ~ 6.3 s; v = gt ~ 63 m/s. Companion: v = u + at = 18 m/s; s = ut + half at2 = 56 m. NEB 2024 (2): position (where), velocity (rate of position), acceleration (rate of velocity)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: g = 10 vs 9.8 mixing within one solution; air resistance ignored silently in projectile symmetry; variable acceleration forced into uniform formulas."
+    },
+    {
+      "label": "Derivation",
+      "text": "Graphical treatment: v-t area gives displacement, slope gives acceleration — the equations read off the graphs. Projectile range derives from x-y separation with landing condition y = 0."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Free-fall numbers: sqrt(2h/g), sqrt(2gh). v-t area = displacement, slope = acceleration — faster than formulas for staged motion. 45 degrees max range; complementary angles equal range."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (2): define position, velocity, acceleration. NEB 2023 (3): 200 m stone drop (time + impact v). NEB 2023 (3): car 10 m/s, a = 2, 4 s (final v + distance). NEB 2022 (5): horizontal projectile from 80 m tower at 20 m/s (t = 4 s, R = 80 m, impact 44.72 m/s at 63.4 degrees). NEB 2022 (4): vertical projection 49 m/s (5 s up, max height, double flight time)."
+    }
+  ]
+}

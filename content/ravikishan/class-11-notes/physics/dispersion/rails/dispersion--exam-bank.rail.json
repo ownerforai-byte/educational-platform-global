@@ -1,0 +1,61 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "dispersion",
+  "unitTitle": "Dispersion",
+  "syllabusTopics": [
+    "Pure spectrum and dispersive power",
+    "Chromatic and spherical aberration",
+    "Achromatism and its applications"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank compiled 2026-10-06 from pyqs/01-neb-2023.json, 02-neb-2022.json, 03-neb-2021.json, 04-neb-2020.json in this unit (stems, marks, solutions verbatim in essence).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on dispersion",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Four questions span this unit: prism i-e-A-deviation derivation (2023), why white light splits (2022), dispersive-power derivation (2021), deviation-vs-dispersion distinction (2020). The through-line: deviation bends single rays (even monochromatic), dispersion sorts wavelengths because refractive index depends on colour."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "deviation = i + e - A (A = r1 + r2) · thin prism = (mu - 1)A · angular dispersion = (mu_v - mu_r)A · dispersive power = (mu_v - mu_r)/(mu_y - 1), dimensionless"
+    },
+    {
+      "label": "Conditions",
+      "text": "The i-e-A relation needs the two-face geometry (A = r1 + r2) — meaning each refraction obeys Snell at its own face. Dispersive-power derivation assumes a thin prism (small A, paraxial rays) so deviation stays proportional to (mu-1). Pure spectrum needs slit + collimation; overlapping orders muddy it."
+    },
+    {
+      "label": "Special cases",
+      "text": "Violet deviates most (highest mu), red least. Achromatic doublet (crown convex + flint concave) cancels colour error while keeping deviation. 2020's distinction trap: deviation happens for monochromatic light too; dispersion needs white light plus mu variation."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2023 (4): bend at face one gives d1 = i - r1, at face two d2 = e - r2; total d = (i - r1) + (e - r2) = i + e - (r1 + r2) = i + e - A. NEB 2021 (4): thin-prism deviations dv = (mu_v-1)A, dr = (mu_r-1)A; angular spread dv - dr = (mu_v - mu_r)A; divide by mean (mu_y-1)A for dispersive power."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: calling deviation and dispersion the same thing (2020 tested exactly this); applying the thin-prism form to large angles; forgetting that minimum deviation needs symmetric passage. Cauchy mu = A + B/lambda-squared explains but is empirical."
+    },
+    {
+      "label": "Derivation",
+      "text": "Two derivations rotate: (a) i-e-A-delta relation from face-by-face bending + quadrilateral geometry; (b) dispersive power from thin-prism deviations of extreme colours divided by mean deviation. Minimum-deviation mu formula belongs to the prisms unit — cite it, don't re-derive, unless asked."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'Derive relation' with i, e, A, delta in stem means the face-geometry derivation. 'Dispersive power' means thin-prism extreme-colour subtraction. 'Differentiate deviation vs dispersion' means one ray vs white-light sorting, with monochromatic counter-example."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (4): derive i-e-A-deviation relation. NEB 2022 (3): what is dispersion + why seven colours. NEB 2021 (4): dispersive power expression. NEB 2020 (3): deviation vs dispersion."
+    }
+  ]
+}

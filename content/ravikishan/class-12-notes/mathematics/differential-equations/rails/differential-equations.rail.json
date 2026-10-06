@@ -1,0 +1,62 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "mathematics",
+  "unitSlug": "differential-equations",
+  "unitTitle": "Differential Equations",
+  "unitHours": 8,
+  "syllabusTopics": [
+    "Formation of differential equations",
+    "Solving first order, first degree equations: variable separable, homogeneous, linear",
+    "Applications: growth and decay, population dynamics"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Diff. Equations · Class 12",
+    "title": "First-order toolkit — separable, homogeneous, linear",
+    "href": "/class-12-notes/mathematics",
+    "icon": "Waypoints",
+    "statKey": "pyq:mathematics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Differential equations model change itself: form them by eliminating arbitrary constants (one constant → differentiate once), then solve by type — separable (split x/y sides and integrate), homogeneous (y = vx substitution homogenises degree), linear (dy/dx + Py = Q via integrating factor e^∫Pdx). Growth/decay and population dynamics are the flagship applications (exponential solutions)."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "formation: differentiate n times to kill n constants  ·  separable: dy/dx = f(x)g(y) → ∫dy/g = ∫fdx  ·  homogeneous: y = vx → separable in v,x  ·  linear: IF = e^∫Pdx; y·IF = ∫Q·IF·dx + C  ·  growth: dN/dt = kN → N = N₀e^(kt)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Order/degree read after clearing radicals/fractions (degree undefined otherwise). Separable needs factorable form; homogeneous needs same-degree M/N; linear needs first-degree in y (Bernoulli yⁿ generalises with z = y^(1−n)). Solutions need the constant C fixed by given conditions."
+    },
+    {
+      "label": "Special cases",
+      "text": "Family of circles x² + y² = a² → differentiate: 2x + 2yy′ = 0 → x + yy′ = 0 (one constant, first order). Population doubling drills: N = N₀e^(kt) with k from doubling time. Orthogonal trajectories: replace y′ with −1/y′ and solve again."
+    },
+    {
+      "label": "Solved",
+      "text": "Solve dy/dx + y·tan x = sec x: linear with P = tan x → IF = e^∫tan x dx = e^(−ln cos x) = sec x. Then y·sec x = ∫sec²x dx = tan x + C → y = sin x + C·cos x. Template: IF → multiply → integrate → divide."
+    },
+    {
+      "label": "Limitation",
+      "text": "Only first-order first-degree types are in syllabus — higher orders need new machinery (auxiliary equations). Formation by elimination can introduce singular solutions the family never shows. Linear IF method fails nonlinear-in-y equations (Riccati and friends)."
+    },
+    {
+      "label": "Derivation",
+      "text": "Linear derivation: multiply dy/dx + Py = Q by IF = e^∫Pdx → left side collapses to d(y·IF)/dx (product rule in reverse) → integrate directly. Formation: n constants need n differentiations, then eliminate — the equation's order equals the constants killed."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Type radar: separable? split and integrate. Same-degree M/N? y = vx. y′ + Py = Q shape? Integrating factor immediately. Formation: count constants (= order), differentiate that many times, eliminate."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: formation from curve families; one separable, one homogeneous, one linear solution; growth/decay and population word problems to exponential form."
+    }
+  ]
+}

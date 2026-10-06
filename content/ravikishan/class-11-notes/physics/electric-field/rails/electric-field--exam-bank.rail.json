@@ -1,0 +1,61 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "electric-field",
+  "unitTitle": "Electric Field",
+  "syllabusTopics": [
+    "Electric field due to point charges; field lines",
+    "Gauss law: electric flux",
+    "Application of Gauss law: field of a charge sphere, line charge, charged plane conductor"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank compiled 2026-10-06 from pyqs/01-neb-2023.json and 02-neb-2020.json in this unit (stems, marks, solutions verbatim in essence).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on electric field",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Three questions: Gauss law applied to the infinite plane sheet (2023, 5 marks: pillbox gives sigma over 2 epsilon-naught), point-charge field numerical (2023: +4 microC at 2 m gives 9000 N/C), midpoint cancellation (2020: twin +2 microC charges give exactly zero at centre). Flux counts enclosed charge; symmetry turns counting into field values."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "E = kQ/r2 · flux = Q/epsilon0 · sheet E = sigma/2 epsilon0 · conductor E = sigma/epsilon0 · line E = lambda/2 pi epsilon0 r"
+    },
+    {
+      "label": "Conditions",
+      "text": "Gauss is always true but useful only with symmetry (why the sheet, sphere, line are the chosen three). The pillbox needs faces parallel to the sheet so flux splits cleanly (2EA). Midpoint cancellation needs EQUAL charges at EQUAL distances — symmetry does the arithmetic."
+    },
+    {
+      "label": "Special cases",
+      "text": "Sheet field is distance-independent (uniform) — unlike point charges. Inside a charged shell: zero (no enclosed charge). Conductor surface: sigma/epsilon0 (one-sided flux). Twin-charge midpoint: equal and opposite, net zero without calculation."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2023 (5): pillbox straddling sheet — flux 2EA both faces, enclosed sigma A, so E = sigma/2 epsilon0 uniform. NEB 2023 (3): E = 9x10^9 x 4x10^-6/4 = 9000 N/C outward. NEB 2020 (3): each +2 microC makes 7.2x10^6 N/C at midpoint from opposite sides — equal, opposite, net zero."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: pillbox on one side only (missing the factor 2); midpoint computed instead of symmetry-cancelled; flux confused with field (flux is the integral, field the integrand). No symmetry means no Gauss shortcut — integrate instead."
+    },
+    {
+      "label": "Derivation",
+      "text": "Point flux E times 4 pi r2 equals Q/epsilon0 (r2 cancels — every enclosing surface passes the same flux). Sphere, line, sheet follow by matching Gaussian surfaces. Field-line rules (out of plus, into minus, never crossing, density as strength) sketch what Gauss quantifies."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'Infinite sheet/line/sphere' means pillbox/coaxial-cylinder/sphere surface, flux equals enclosed over epsilon0. Symmetric equal charges at midpoint means zero by inspection. Point-charge numericals: kQ/r2 with micro and metre conversions first."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (5): Gauss law + plane-sheet field. NEB 2023 (3): +4 microC at 2 m field. NEB 2020 (3): twin +2 microC midpoint field."
+    }
+  ]
+}

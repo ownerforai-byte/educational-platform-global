@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "biotechnology-principles",
+  "unitTitle": "Biotechnology — Principles and Processes",
+  "unitHours": 8,
+  "syllabusTopics": [
+    "Principles of biotechnology — recombinant DNA technology",
+    "Tools: restriction enzymes, vectors, competent host",
+    "Processes: DNA isolation, PCR, gel electrophoresis, gene transfer",
+    "Applications of recombinant DNA technology"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Biotech Tools · Class 12",
+    "title": "rDNA pipeline — cut, paste, copy, separate",
+    "href": "/class-12-notes/biology",
+    "icon": "Network",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Recombinant DNA technology cuts and pastes genes across species: restriction endonucleases (molecular scissors, palindromic sites, sticky ends — EcoRI's GAATTC), vectors (plasmid pBR322, λ phage: origin + selectable markers + cloning sites), competent hosts (CaCl₂-treated E. coli take up DNA). The process chain runs DNA isolation → PCR amplification → gel electrophoresis separation → ligation → transformation → selection. PCR alone (denature–anneal–extend ×30 ≈ billion copies) revolutionised diagnostics and forensics."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "EcoRI: 5′-G|AATTC-3′ (sticky ends ligate)  ·  vector: ori + ampᴿ/tetᴿ markers + MCS  ·  PCR: 94 °C denature → ~54 °C anneal → 72 °C extend (Taq polymerase), 2ⁿ copies  ·  gel: DNA (−) migrates to anode; small fragments run farthest (EtBr/UV visualisation)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Restriction needs its exact palindrome (one-base mismatch usually blocks). Ligation needs compatible (sticky or blunt) ends plus ligase + ATP. Competence needs divalent cations + heat shock. PCR needs primers flanking the target, dNTPs and a thermostable polymerase."
+    },
+    {
+      "label": "Special cases",
+      "text": "Blue-white screening: insert disrupts lacZα → white recombinant colonies, blue non-recombinants. Agrobacterium Ti plasmid transforms plants naturally (crown gall → biotechnology's plant vector). Biolistics fires DNA-coated tungsten into cells that resist infection."
+    },
+    {
+      "label": "Solved",
+      "text": "Clone a human gene into E. coli: isolate donor + plasmid DNA → cut both with EcoRI (matching sticky ends) → ligate → transform competent E. coli → plate on ampicillin+X-gal → pick white ampicillin-resistant colonies → verify insert by gel. Seven steps, each with its tool named."
+    },
+    {
+      "label": "Limitation",
+      "text": "Bacteria cannot post-translate like eukaryotes (glycosylation gaps — insulin needed engineering). Restriction sites may chop inside the gene of interest. PCR amplifies contamination equally (sterile technique critical). Antibiotic markers raise biosafety eyebrows."
+    },
+    {
+      "label": "Derivation",
+      "text": "From the central dogma outward: isolate the coding DNA, amplify the signal (PCR exponential: N = N₀·2ⁿ), separate by size (gel mobility ∝ 1/log(bp)), paste into a replicating vector, and let bacterial binary fission mass-produce the product — each tool solves one bottleneck in the DNA-to-product pipeline."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Tool chant: scissors (restriction) – vehicle (vector) – host (competent E. coli) – copier (PCR) – sorter (gel). PCR temperatures: 94–54–72. Gel reading: small = far. Selection: antibiotic resistance + blue-white."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: restriction/vector/host roles with one example each; PCR three steps with temperatures + 2ⁿ math; gel-electrophoresis separation logic; complete rDNA cloning flowchart."
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "heat-and-temperature",
+  "unitTitle": "Heat and Temperature",
+  "unitHours": 3,
+  "syllabusTopics": [
+    "Molecular concept of thermal energy, heat and temperature; cause and direction of heat flow",
+    "Meaning of thermal equilibrium and Zeroth law of thermodynamics",
+    "Thermal equilibrium as a working principle of a mercury thermometer"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank compiled 2026-10-06 from pyqs/01-neb-2023.json (x2), 02-neb-2022.json, 03-neb-2021.json in this unit (stems, marks, solutions verbatim in essence).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on heat and temperature",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Four questions: Zeroth law plus why 'zeroth' (2023), faulty-thermometer correction (2023: -5/105 scale), heat-vs-temperature twice (2022, 2021). Heat is transit energy (joule); temperature is mean molecular kinetic energy (kelvin); equilibrium transitivity founds thermometry."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Q (J) vs T (K) · faulty scale: T = (R - lower)/(upper - lower) x 100 C · K = C + 273.15"
+    },
+    {
+      "label": "Conditions",
+      "text": "Equilibrium needs sustained thermal contact (why thermometers wait). The Zeroth law's transitivity requires all three pairwise contacts thermal. Faulty-scale correction assumes linearity between fixed points (meaning uniform bore, linear expansion)."
+    },
+    {
+      "label": "Special cases",
+      "text": "-5/105 thermometer: slope 110/100 = 1.1, true T = (R+5)/1.1; liquid at true 40 C reads 39 C. Heat-vs-temperature repeats across years because the confusion persists: transit vs state, extensive vs intensive, joule vs kelvin."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2023 (2): Zeroth law (A~B, B~C implies A~C) plus naming history (named after 1st/2nd, logically prior). NEB 2023 (3): T = (R+5)/110 x 100. NEB 2022/2021 (2): heat (J, transit, extensive) vs temperature (K, hotness, intensive) table."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: calling heat a state quantity; kelvin vs Celsius in scale math; 'zeroth' unexplained. Thermometers disturb tiny systems (finite heat capacity) — equilibrium includes the instrument."
+    },
+    {
+      "label": "Derivation",
+      "text": "Equilibrium as equivalence relation (reflexive, symmetric, transitive) — transitivity IS the Zeroth law, isotherms are its classes. Linear-scale correction derives from two-point calibration (ice, steam) with uniform-bore assumption."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'Why zeroth' means named-later-logically-first, one line. Faulty thermometer: (R-lower)/(upper-lower) x 100. Heat-vs-temperature: J-vs-K plus transit-vs-state table."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (2): Zeroth law + naming. NEB 2023 (3): -5/105 faulty scale. NEB 2022 (2) + NEB 2021 (2): heat vs temperature + SI units."
+    }
+  ]
+}

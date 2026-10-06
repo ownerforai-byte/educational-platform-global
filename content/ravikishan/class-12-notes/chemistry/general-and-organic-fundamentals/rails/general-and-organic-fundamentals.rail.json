@@ -1,0 +1,64 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "general-and-organic-fundamentals",
+  "unitTitle": "General and Fundamental Principles of Organic Chemistry",
+  "unitHours": 8,
+  "syllabusTopics": [
+    "Purification and qualitative/quantitative analysis of organic compounds",
+    "Inductive effect, resonance, hyperconjugation",
+    "Electrophilic and nucleophilic substitution reactions",
+    "Free radical reactions",
+    "Important organic reactions: oxidation, reduction, addition, elimination"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Organic Effects · Class 12",
+    "title": "Inductive, resonance, hyperconjugation — electron steering",
+    "href": "/class-12-notes/chemistry",
+    "icon": "FileText",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Reactions follow electrons: inductive effect pushes/pulls through σ bonds by electronegativity (±I, distance-fading), resonance delocalises π electrons over conjugated frames (±R, long-range), hyperconjugation leaks σ(C–H) density into empty p orbitals (carbocation stability ladder). Purification (distillation, crystallisation, chromatography) and Lassaigne analysis open every investigation; substitution/elimination/addition/redox close it."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "−I order: NO₂ > CN > COOH > halogens > OH > C≡C  ·  +I: alkyl, (CH₃)₃C > (CH₃)₂CH > CH₃  ·  carbocation stability: 3° > 2° > 1° (hyperconjugation +I count)  ·  Lassaigne: Na fusion → CN⁻/S²⁻/X⁻ detected  ·  fission: homolytic → radicals · heterolytic → ions"
+    },
+    {
+      "label": "Conditions",
+      "text": "Inductive effect dies within ~3 bonds; resonance needs planar conjugated p systems; hyperconjugation needs α-hydrogens aligned with the empty orbital. Lassaigne needs complete fusion (volatile samples escape). Electrophiles attack electron-rich sites, nucleophiles electron-poor — map the polarity first."
+    },
+    {
+      "label": "Special cases",
+      "text": "Formic acid out-acids acetic (no +I methyl to blunt it); chloroacetic beats both (−I Cl). Tert-butyl cation's 9 hyperconjugative C–H structures explain Markovnikov's preference quantitatively. Phenol's −OH pumps +R into the ring (super-activated); −NO₂ drains it (−R, meta-directing)."
+    },
+    {
+      "label": "Solved",
+      "text": "Acidity order HCOOH > CH₃COOH > CH₃CH₂COOH: alkyl +I donates into the carboxylate, destabilising the anion progressively — longer chain, weaker acid. Same logic ranks amines' basicity (with solvation twists) and carbocation rearrangement destinations."
+    },
+    {
+      "label": "Limitation",
+      "text": "Effects compete and sometimes cancel (aniline's +R vs −I nitrogen: +R wins for direction, −I taxes basicity). Gas-phase orders flip in solution (solvation). Hyperconjugation is a model, not a bond — over-invoking it explains everything and therefore nothing."
+    },
+    {
+      "label": "Derivation",
+      "text": "From electronegativity differences: polar σ bonds shift electron density measurably (dipole moments, pKa trends) — induction quantified. Resonance energy from heats of hydrogenation (benzene ~150 kJ/mol below Kekulé prediction). Hyperconjugation from C–H/C–C rotational barriers and the 3°>2°>1° rate ladder in SN1 solvolysis."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Acid/base ranking: count −I/+I groups near the centre, check resonance of the conjugate, then hyperconjugation. Reaction type? Find the electron move: pair splits uneven → ions (electrophile/nucleophile); even → radicals. Purification: bp gap → distillation; solubility gap → crystallisation."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: ±I/±R orders with acidity/basicity rankings; Lassaigne N/S/X detection steps; homolytic vs heterolytic fission with species matching; oxidation/reduction/addition/elimination classification drills."
+    }
+  ]
+}

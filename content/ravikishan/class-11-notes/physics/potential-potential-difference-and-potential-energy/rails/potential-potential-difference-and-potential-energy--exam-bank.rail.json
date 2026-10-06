@@ -1,0 +1,61 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "potential-potential-difference-and-potential-energy",
+  "unitTitle": "Electric Potential",
+  "syllabusTopics": [
+    "Potential difference, potential due to a point charge, potential energy, electron volt",
+    "Equipotential lines and surfaces",
+    "Potential gradient"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank: volt MCQ (2023), W-V-n derivation (2022).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on electric potential",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Two questions: one volt equals one joule per coulomb (2023 MCQ) and the W-V-n electron relation derivation (2022). Potential is work per charge; the electron-volt prices atomic energies (1 eV = 1.6x10^-19 J); field is the downhill gradient E = -dV/dr."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "V = W/q, 1 V = 1 J/C · V = kQ/r · U = qV · W = n e V · 1 eV = 1.6x10^-19 J · E = -dV/dr"
+    },
+    {
+      "label": "Conditions",
+      "text": "V = kQ/r pins zero at infinity (meaning isolated-charge convention). W = neV counts elementary charges only (alpha particles carry 2e). Equipotential-perpendicular field geometry needs electrostatics."
+    },
+    {
+      "label": "Special cases",
+      "text": " MCQ answer (b) joule per coulomb — joule alone, newton, ampere all die on units. Hollow-conductor interior: constant V, zero E (shielding). Electrons run uphill in V (negative charge)."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2022 (4): each electron crossing V gains eV, so n electrons do W = neV (e.g. 10^18 electrons over 100 V move 16 J). NEB 2023 (1): volt defined as joule per coulomb — unit analysis alone selects (b)."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: volt equated with joule (per-coulomb missing); eV treated as voltage instead of energy; absolute potential quoted without zero convention. Time-varying fields break scalar-potential reasoning."
+    },
+    {
+      "label": "Derivation",
+      "text": "Test charge from infinity against kQ/r2 integrates to V = kQ/r. Field from potential: dV = -E dr along the field, so E = -dV/dr (downhill). Equipotentials follow as constant-V contours cut squarely by field lines."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'1 volt =' means joule per coulomb, instantly. Energy: count charges times e times volts. Equipotentials sketched first, field lines perpendicular second."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (1): volt equals J/C (MCQ). NEB 2022 (4): W from V and n electrons. That is the complete bank."
+    }
+  ]
+}

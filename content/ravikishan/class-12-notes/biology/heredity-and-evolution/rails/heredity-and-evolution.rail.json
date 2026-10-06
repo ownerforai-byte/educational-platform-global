@@ -1,0 +1,67 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "heredity-and-evolution",
+  "unitTitle": "Heredity and Evolution",
+  "unitHours": 24,
+  "syllabusTopics": [
+    "Mendel's laws of inheritance — monohybrid and dihybrid cross",
+    "Incomplete dominance and codominance",
+    "Linkage and crossing over",
+    "Sex determination and sex-linked disorders",
+    "Chromosome theory of inheritance",
+    "Molecular basis of inheritance: DNA structure, replication, transcription, translation, gene regulation",
+    "Human genome project — objectives and significance",
+    "Evolution: evidences, adaptive radiation, Hardy-Weinberg equilibrium, human evolution"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Heredity · Class 12",
+    "title": "Dihybrid cross — the 9:3:3:1 that proves independence",
+    "href": "/class-12-notes/biology",
+    "icon": "BookOpen",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Mendel's three laws (dominance, segregation, independent assortment) emerge from one experiment: cross round-yellow × wrinkled-green peas and the F2 ratio 9:3:3:1 factorises into two independent 3:1 ratios — genes on different chromosomes assort independently. Incomplete dominance blends (snapdragon pink), codominance shows both (AB blood), linkage binds neighbours until crossing over swaps them. DNA's double helix (A=T, G≡C), semiconservative replication, transcription→translation (central dogma) and lac-operon regulation mechanise it all; Hardy–Weinberg (p²+2pq+q²) freezes allele frequencies without evolution."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "monohybrid F2: 3:1 (genotypic 1:2:1)  ·  dihybrid F2: 9:3:3:1 = (3:1)×(3:1)  ·  test cross: Aa × aa → 1:1 if heterozygous  ·  Hardy–Weinberg: p² + 2pq + q² = 1 (no selection/mutation/migration/drift)  ·  sex-linked: X-linked recessive hits males (one X, no mask)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Independent assortment needs genes on DIFFERENT chromosomes (linked genes break 9:3:3:1 toward parental combos). Mendelian ratios need large progeny, complete penetrance and no lethality. Hardy–Weinberg is a null model — any violation signals evolution in action. Central-dogma direction holds with retroviral exceptions noted."
+    },
+    {
+      "label": "Special cases",
+      "text": "ABO blood: IA/IB codominant, i recessive — six genotypes, four phenotypes. Haemophilia/colour-blindness ride the X into males. Linkage maps from crossover % (1% = 1 map unit). Human genome project: ~3 billion bases, ~20,000 genes — objectives were sequence, map and functional meaning."
+    },
+    {
+      "label": "Solved",
+      "text": "Dihybrid RrYy × RrYy: each trait segregates 3:1 independently; multiply — (3 round:1 wrinkled)×(3 yellow:1 green) = 9 round-yellow : 3 round-green : 3 wrinkled-yellow : 1 wrinkled-green. The Punnett square's 16 boxes just tabulate this product — write the two 3:1s and multiply."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mendel's laws fail linked genes, polygenic traits (height, skin — continuous, not ratios) and cytoplasmic inheritance. Hardy–Weinberg describes populations that by definition are NOT evolving. Molecular details (splicing, epigenetics) complicate the clean dogma."
+    },
+    {
+      "label": "Derivation",
+      "text": "Segregation from meiosis: homologous chromosomes part in anaphase I, so alleles part — the 1:2:1 genotypic ratio is combinatorics of two heterozygote gamete sets. Independent assortment from random metaphase orientation of DIFFERENT pairs — multiply the single-trait probabilities. Chromosome theory (Sutton–Boveriment) maps genes onto this mechanics; Morgan's white-eyed flies proved sex linkage."
+    },
+    {
+      "label": "Shortcut",
+      "text": "F2 ratio read: 9:3:3:1 = dihybrid; 3:1 = monohybrid; 1:1 = test cross; 1:2:1 = incomplete/codominance or genotypic. Linked genes? Expect parental excess over 9:3:3:1. Sex-linked recessive pedigree: affected fathers → carrier daughters → grandsons."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: dihybrid cross to 9:3:3:1 with checkerboard; incomplete vs codominance with blood-group application; linkage/crossing-over significance; DNA replication + central dogma flow; Hardy–Weinberg statement with one violation consequence."
+    }
+  ]
+}

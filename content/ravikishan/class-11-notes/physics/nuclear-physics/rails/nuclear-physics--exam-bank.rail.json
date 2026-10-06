@@ -1,0 +1,65 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "nuclear-physics",
+  "unitTitle": "Nuclear Physics",
+  "syllabusTopics": [
+    "Nucleus: discovery of nucleus",
+    "Nuclear density; mass number; atomic number",
+    "Atomic mass; isotopes",
+    "Einstein's mass-energy relation",
+    "Mass defect, packing fraction, binding energy per nucleon",
+    "Creation and annihilation",
+    "Nuclear fission and fusion"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank: decay constant (2024), mass defect (2023), 8-day half-life (2023).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on nuclear physics",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Three questions: decay constant plus half-life relation (2024), mass defect vs binding energy (2023), 8-day half-life fraction after 24 days (2023: 1/8 remains). Decay is statistical (N = N0 e^-lambda t); binding energy per nucleon peaks at iron-56, so fission splits heavies and fusion joins lights downhill."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "N = N0 e^(-lambda t) · A = lambda N · T-half = ln2/lambda = 0.693/lambda · E = m c2, 1 u = 931.5 MeV · remaining after n lives = (1/2)^n"
+    },
+    {
+      "label": "Conditions",
+      "text": "Exponential law needs large N (statistics meaningless for atoms few). Half-life relation is exact only for single-decay chains. Binding comparisons use per-NUCLEON values (totals mislead across masses). E = mc2 prices conversion, never reaction rates."
+    },
+    {
+      "label": "Special cases",
+      "text": "24 days at T-half 8 days = 3 lives, so 1/8 remains and activity falls identically. Mass defect means assembled nuclei weigh LESS than parts (missing mass became binding). Pair production needs 1.02 MeV threshold; annihilation returns 2 gamma."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2023 (3): n = 24/8 = 3 half-lives, remaining (1/2)3 = 1/8; activity A = lambda N drops by the same factor. NEB 2023 (3): mass defect (parts minus nucleus) times c2 equals binding energy. NEB 2024 (2): lambda defined via dN/dt = -lambda N with T-half = 0.693/lambda."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: half-life predicts populations, never single atoms; linear instead of exponential decay assumed; mass defect sign flipped. Liquid-drop trends are semi-empirical (shell structure adds fine print)."
+    },
+    {
+      "label": "Derivation",
+      "text": "dN/dt = -lambda N separates and integrates to exponential form; halving gives T-half. Binding from weighing parts vs nucleus times c2; iron-56 maximum explains why both fission and fusion release energy."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Half-life: count lives n = t/T, remaining (1/2)^n. 'Define decay constant' means dN/dt relation plus T-half link. Binding: defect, times 931.5, divide by A."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2024 (2): decay constant + half-life relation. NEB 2023 (3): mass defect vs binding energy. NEB 2023 (3): 8-day half-life, fraction after 24 days + activity."
+    }
+  ]
+}

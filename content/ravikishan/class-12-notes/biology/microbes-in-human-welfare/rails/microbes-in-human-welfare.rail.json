@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "microbes-in-human-welfare",
+  "unitTitle": "Microbes in Human Welfare",
+  "unitHours": 5,
+  "syllabusTopics": [
+    "Microorganisms in household products",
+    "Industrial production of antibiotics, alcoholic beverages, citric acid",
+    "Microbes as biocontrol agents and biofertilizers",
+    "Bioremediation, biogas"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Microbes · Class 12",
+    "title": "Fermentation to bioremediation — microbes at work",
+    "href": "/class-12-notes/biology",
+    "icon": "Atom",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "The same microbes that spoil food serve humanity: Lactobacillus curdles milk (lactic acid), Saccharomyces brews ethanol and leavens dough (CO₂), Penicillium yields penicillin, Aspergillus niger pours citric acid. As biocontrol, Bacillus thuringiensis toxin and baculoviruses kill pests specifically; as biofertilizers, microbes fix nitrogen. Bioremediation lets Pseudomonas digest oil spills; anaerobic digesters turn dung into biogas (methane) plus slurry manure."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "curd: Lactobacillus → lactic acid (pH drop curdles casein)  ·  brewing: C₆H₁₂O₆ →(yeast) 2C₂H₅OH + 2CO₂  ·  penicillin: Penicillium notatum/chrysogenum  ·  citric acid: Aspergillus niger  ·  biogas: cattle dung →(anaerobic) CH₄ + CO₂ + slurry  ·  Bt toxin: Cry protein vs insect gut"
+    },
+    {
+      "label": "Conditions",
+      "text": "Fermentations need sterile starter cultures, correct temperature/pH and oxygen control (aerobic for citric acid, anaerobic for ethanol/biogas). Antibiotic production needs strain selection plus downstream purification. Biocontrol specificity is the point (Bt spares non-targets) — broad poisons defeat the purpose."
+    },
+    {
+      "label": "Special cases",
+      "text": "Toddyinexcess turns to vinegar (Acetobacter oxidises ethanol — same pathway, unwanted). Statins (blood-cholesterol) come from Monascus yeast. Cyclosporin (immunosuppressant) from Trichoderma. Biogas slurry beats raw dung as manure (pathogens digested, nutrients kept)."
+    },
+    {
+      "label": "Solved",
+      "text": "Trace curd formation: warm milk + Lactobacillus starter → bacteria ferment lactose to lactic acid → pH falls → casein micelles destabilise and coagulate. Every step names microbe, substrate, product and condition — the four-column answer template for all household/industrial items."
+    },
+    {
+      "label": "Limitation",
+      "text": "Fermentation contamination ruins batches (sterility costs). Antibiotic overuse breeds resistance — production success creates the resistance crisis. Bioremediation is slow and site-specific; heavy metals are immobilised, never destroyed. Biogas needs steady feedstock and temperature."
+    },
+    {
+      "label": "Derivation",
+      "text": "From metabolism: microbes maximise their own growth; humans harvest the overflow (ethanol, acids, antibiotics as chemical warfare). Match microbe to pathway: lactic-acid bacteria (homofermentative), yeast (alcoholic), Penicillium (secondary metabolites under stress) — product follows lifestyle, so the organism predicts the industry."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Product↔microbe pairs: curd–Lactobacillus, ethanol–yeast, penicillin–Penicillium, citric–Aspergillus, biogas–methanogens, Bt–Bacillus thuringiensis. Biocontrol = living pesticide; biofertilizer = living nutrient; bioremediation = living cleanup."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: curd/bread/beverage fermentation with organisms + reactions; antibiotic and citric-acid industrial sources; Bt/baculovirus biocontrol logic; biogas plant working with labelled flow."
+    }
+  ]
+}

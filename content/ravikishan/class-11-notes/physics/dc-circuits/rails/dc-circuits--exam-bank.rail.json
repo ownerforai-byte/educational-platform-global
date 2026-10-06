@@ -1,0 +1,65 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "dc-circuits",
+  "unitTitle": "DC Circuits",
+  "syllabusTopics": [
+    "Electric currents; drift velocity and its relation with current",
+    "Ohm's law; electrical resistance; resistivity; conductivity",
+    "Current-voltage relations; ohmic and non-ohmic resistance",
+    "Resistances in series and parallel",
+    "Potential divider",
+    "Electromotive force of a source, internal resistance",
+    "Work and power in electrical circuits"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank compiled 2026-10-06 from pyqs/01-neb-2022.json and 02-neb-2021.json in this unit (stems, marks, solutions verbatim in essence).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on DC circuits",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Two questions carry this unit: Kirchhoff's laws applied to a circuit (5 marks: KCL = charge conservation at junctions, KVL = energy conservation around loops, worked on two cells + resistor giving 0.71 A) and the parallel-resistor numerical (2/3/6 ohm on 12 V gives 1 ohm, 12 A). Drift velocity and internal resistance trail behind."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "KCL: sum-I = 0 · KVL: sum-EMF = sum-IR · parallel 1/R = sum-1/Ri · series R = sum-Ri · V = E - Ir · divider V1 = V*R1/(R1+R2)"
+    },
+    {
+      "label": "Conditions",
+      "text": "KCL needs lumped junctions (no charge pile-up); KVL needs no changing magnetic flux through the loop (why it holds for DC networks). Parallel reciprocal-addition assumes the same voltage across all branches — the meaning of 'parallel'. Internal-resistance sag V = E - Ir assumes the simple E+r source model."
+    },
+    {
+      "label": "Special cases",
+      "text": "2/3/6 ohm parallel: reciprocals 3/6+2/6+1/6 = 1, so R = 1 ohm exactly (currents split 6/4/2 A, inverse to resistance). Two cells E1 = 2 V, E2 = 3 V with R = 5 ohm, r = 1 ohm each: total E = 5 V, total R = 7 ohm, I = 0.71 A. Short circuit: load to zero, current capped only by r."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2021 (4): 1/R = 1/2+1/3+1/6 = 1, so R = 1 ohm; I = V/R = 12/1 = 12 A drawn. NEB 2022 (5): state KCL (junction currents sum to zero — charge conserved) + KVL (loop EMFs equal drops — energy conserved), then solve the two-cell circuit for 0.71 A with sign discipline around the loop."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: adding parallel resistors directly; sign errors traversing loops against current; forgetting internal r in 'real battery' questions. Kirchhoff's loop law fails with induced EMF — DC-only territory."
+    },
+    {
+      "label": "Derivation",
+      "text": "No heavy derivation is asked — the 'derivation' IS Kirchhoff applied: label all branch currents, write one junction equation, write loop equations (rise = drop with signs), solve simultaneously. Drift-velocity relation I = nAev_d derives Ohm microscopically (rho = m/ne2tau) as backup theory."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'State Kirchhoff' means junction (charge) + loop (energy) + one solved circuit. Two-resistor parallel: product/sum. Equal R in parallel: R/n. Always redraw the circuit with currents labelled before writing equations."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2022 (5): Kirchhoff's laws + solved circuit current. NEB 2021 (4): 2/3/6 ohm parallel on 12 V — total R and current. That is the complete bank."
+    }
+  ]
+}

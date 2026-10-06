@@ -1,0 +1,61 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "recent-trends-in-physics",
+  "unitTitle": "Recent Trends in Physics",
+  "syllabusTopics": [
+    "Particle physics: particles and antiparticles, quarks (baryons and mesons) and leptons (neutrinos)",
+    "Universe: Big Bang and Hubble law — expansion of the Universe",
+    "Dark matter, black hole and gravitational wave"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank: superconductivity (2023), four forces (2022), ruby laser (2022).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on recent trends",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Three questions: superconductivity definition plus two properties plus one material (2023), elementary particles with four forces strongest-to-weakest (2022), ruby-laser working with diagram plus three uses (2022). Zero resistance plus Meissner expulsion define superconductors; S-E-W-G orders the forces."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "superconductor: R = 0 below Tc + Meissner field expulsion · forces: strong > EM > weak > gravity (~10^38 span) · laser: population inversion + stimulated emission + optical cavity"
+    },
+    {
+      "label": "Conditions",
+      "text": "Superconductivity needs T below Tc (material-specific). Force ordering compares strengths at comparable scales. Laser action needs population inversion plus resonant cavity (meaning pump energy plus mirrors)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Mercury/lead/niobium go superconducting (name one). Baryons pack 3 quarks, mesons pair quark-antiquark. Ruby laser: chromium ions in Al2O3 rod, xenon flash pump, red 694 nm pulses — surgery, ranging, cutting uses."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2023 (2): superconductivity (zero resistance below Tc) + Meissner + one material. NEB 2022 (2): particles (quarks/leptons) + S-E-W-G order. NEB 2022 (5): ruby rod, flashlamp pump, mirrors; stimulated cascade diagram; three uses."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: force order shuffled (gravity weakest always); laser confused with ordinary light (coherence/monochromaticity missing); room-temperature superconductor claims need replication caveats."
+    },
+    {
+      "label": "Derivation",
+      "text": "Laser logic: pump inverts populations, passing photon stimulates twins, mirrors recycle photons through the rod — coherent avalanche. Hubble expansion: redshift proportional to distance extrapolates to a hot dense origin."
+    },
+    {
+      "label": "Shortcut",
+      "text": "S-E-W-G chant for forces. Superconductivity: zero-R plus Meissner plus one metal. Laser: inversion, stimulated twins, cavity — then three uses."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (2): superconductivity + properties + material. NEB 2022 (2): particles + force order. NEB 2022 (5): ruby laser + diagram + uses."
+    }
+  ]
+}

@@ -1,0 +1,64 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "circular-motion",
+  "unitTitle": "Circular Motion",
+  "syllabusTopics": [
+    "Angular displacement, velocity and acceleration",
+    "Relation between angular and linear velocity and acceleration",
+    "Centripetal acceleration and centripetal force",
+    "Conical pendulum",
+    "Motion in a vertical circle",
+    "Applications of banking"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank compiled 2026-10-06 from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit (stems, marks, solutions verbatim in essence).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on circular motion",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Four board questions cover this unit: the 5-mark centripetal derivation, the flywheel numerical (rpm→rad/s), the car-turn numerical, and the satellite orbit application. Centripetal force is never a new force — always tension, friction, gravity or normal reaction playing the inward role."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "a_c = v²/r = ω²r · F_c = mv²/r · v = ωr · ω = 2πn/60 (rpm→rad/s) · banking tanθ = v²/rg · satellite v = √(GM/r)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Uniform circular motion needs constant-magnitude inward force (why derivation assumes constant v). Banking tanθ = v²/rg neglects friction — ideal design speed only. Satellite formula needs centre-to-centre r (R + h, not h) because gravity reaches from Earth's centre."
+    },
+    {
+      "label": "Special cases",
+      "text": "Flywheel 300 rpm = 5 rev/s → ω = 10π ≈ 31.4 rad/s (the rpm trap: divide by 60 FIRST). Car 50 m/10 m/s → ω = 0.2, a = 2. Satellite 600 km up: r = 6.4×10⁶ + 6×10⁵ = 7.0×10⁶ m — forgetting Earth's radius is the classic zero."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2023 (4): flywheel r = 0.5 m, 300 rpm → ω = 300×2π/60 = 10π ≈ 31.4 rad/s; rim v = ωr ≈ 15.7 m/s; a_c = ω²r ≈ 493 m/s². NEB 2023 (5): derivation via Δv triangle (similar triangles, Δt→0) → a = v²/r inward. NEB 2022 satellite: GMm/r² = mv²/r → v = √(GM/r) with r from Earth's centre."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: rpm without /60; orbital radius as altitude only; calling centrifugal a real force in inertial frames; vertical-circle minimum-speed condition forgotten at the top (v ≥ √(gr))."
+    },
+    {
+      "label": "Derivation",
+      "text": "Only one derivation is asked: centripetal acceleration. Similar-triangles Δv/v = vΔt/r → a = v²/r, direction inward as Δt→0. Conical pendulum and banking resolve forces (vertical balances weight, horizontal supplies mv²/r) — no calculus needed."
+    },
+    {
+      "label": "Shortcut",
+      "text": "rpm→rad/s: ×2π/60 first line, always. Turn/banking: resolve vertical vs horizontal. Satellite: write r = R + h before touching GM. Derivation: draw the Δv triangle, state similarity, take the limit."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (5): centripetal acceleration definition + derivation. NEB 2023 (4): flywheel 0.5 m/300 rpm — ω, rim speed, a_c. NEB 2022 (3): car turn 50 m/10 m/s — ω and a_c. NEB 2022 (4): satellite 600 km orbit speed."
+    }
+  ]
+}

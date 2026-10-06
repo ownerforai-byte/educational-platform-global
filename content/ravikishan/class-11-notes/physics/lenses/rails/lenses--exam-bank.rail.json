@@ -1,0 +1,61 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "lenses",
+  "unitTitle": "Lenses",
+  "syllabusTopics": [
+    "Spherical lenses, angular magnification",
+    "Lens maker's formula",
+    "Power of a lens"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank: f = 15 cm real 2x image (2023), maker derivation (2022).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on lenses",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Two questions: lens-maker derivation for convex lens (2022, 5 marks: two-surface refraction chain) and the f = 15 cm real double-size image numerical (2023: object 22.5 cm, image 45 cm out). Power adds in contact (dioptre = 1/m)."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "maker: 1/f = (mu - 1)(1/R1 - 1/R2) · lens: 1/f = 1/v - 1/u · m = v/u · P = 1/f(m), contact P = P1 + P2"
+    },
+    {
+      "label": "Conditions",
+      "text": "Thin-lens paraxial approximations (meaning thick lenses shift principal planes). Cartesian signs fixed once (light left to right). Maker formula assumes air surroundings (immersion rescales to relative index)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Real 2x image: m = -2, so v = -2u; with f = 15: 1/15 = -3/2u gives u = -22.5 cm, v = -45 cm. Equiconvex glass mu = 1.5: f = R. Plano-convex halves the power."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2023 (4): m = v/u = -2 (real, inverted). 1/f = 1/v - 1/u becomes 1/15 = -1/2u - 1/u = -3/2u, so u = -22.5 cm, v = -45 cm. NEB 2022 (5): refract at surface one, feed image to surface two, thin limit cancels thickness, maker formula appears."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: sign chaos (fix Cartesian first); real-image m sign (negative); maker formula applied to immersed lenses without relative index. Real lenses add chromatic/spherical aberration beyond the formula."
+    },
+    {
+      "label": "Derivation",
+      "text": "The asked derivation: n2/v - n1/u = (n2-n1)/R at surface one, chain into surface two, thin-lens limit kills thickness. Power combination follows from stacked deviations (contact only)."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Power in dioptre = 100/f(cm). Converging positive f, diverging negative. Real images: m negative. 'Derive maker' means the two-surface chain, never the memorised end."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2022 (5): maker formula derivation (convex). NEB 2023 (4): f = 15 cm real 2x image positions. That is the complete bank."
+    }
+  ]
+}

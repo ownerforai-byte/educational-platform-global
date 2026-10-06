@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "english",
+  "unitSlug": "oral-communication",
+  "unitTitle": "Oral Communication",
+  "unitHours": 8,
+  "syllabusTopics": [
+    "Conversation and role play",
+    "Presentation skills",
+    "Debate and discussion",
+    "Listening comprehension"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Speaking · Class 12",
+    "title": "Presentation and debate — structure spoken aloud",
+    "href": "/class-12-notes/english",
+    "icon": "Microscope",
+    "statKey": "pyq:english"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Spoken English is writing with breath: presentations run hook → signposted points → verdict (with visual aids supporting, never reading); debates run motion → definition → arguments → rebuttal → summing (points of information welcomed, heckling never); discussions trade turns with discourse markers (building on that…, to counter…); listening comprehension hunts gist, detail and inference across one hearing. Role plays rehearse real situations — interviews, complaints, requests — with register matched to role."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "presentation: hook + map + 3 points + verdict (+ Q&A)  ·  debate speech: definition + 2–3 arguments (claim+evidence) + rebuttal + summary  ·  discussion moves: agree/build/qualify/challenge + reason  ·  listening: predict → listen → verify (gist first, detail second)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Debates need the motion DEFINED before arguing (this house = scope lock). Presentations need timing rehearsal (10 slides ≈ 10 minutes breaks without practice). Role plays need briefs (who wants what); listening answers need the exact asked form (word limit, true/false/not-given discipline)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Points of information: accept, answer briefly, resume — refusing everything looks weak. Nerves management: breath, notes-as-map (never script), eye contact in thirds. Listening traps: distractors echoing question words with wrong details; order rarely matches option order."
+    },
+    {
+      "label": "Solved",
+      "text": "Two-minute motion speech drill ('Phones belong in classrooms'): define (regulated classroom use) → argument 1 (research tool + evidence) → argument 2 (emergency contact) → rebuttal (distraction solved by pouches/policy) → summary (tool, not toy). Five beats, timed, rebuttal mandatory."
+    },
+    {
+      "label": "Limitation",
+      "text": "Rhetoric persuades beyond evidence — debate rewards the better speaker, not the truer cause (judges must separate). Scripted 'role plays' test memory, not interaction; markers reward spontaneous repair. One hearing caps listening fairness — accents and speed vary uncontrollably."
+    },
+    {
+      "label": "Derivation",
+      "text": "From the written essay outward: thesis becomes stance, paragraphs become timed points, transitions become signposts ('my second argument…'), conclusion becomes verdict-plus-appeal. Listening derives from prediction: pre-read questions to build an information grid, then listen INTO the grid slots."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Speak in triplets (three points, three examples). Signpost everything ('first… second… finally'). Debate: define + rebut + summarise — the three non-negotiables. Listening: underline question keywords first, then listen for synonyms, not echoes."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: debate-speech outline on a motion; presentation plan with visual-aid notes; role-play dialogue in register; listening tasks (gist + detail + inference) from one hearing."
+    }
+  ]
+}

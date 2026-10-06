@@ -53,6 +53,11 @@ describe("Home subject rails owner gate", () => {
     expect(read("components/home/subject-rails.tsx")).toContain(
       "subject-rail-track",
     );
+    // Unit classification: divider cards open each syllabus-unit group.
+    expect(read("components/home/subject-rails.tsx")).toContain(
+      "unitDivider",
+    );
+    expect(read("lib/home-subject-slides.ts")).toContain("unitDivider");
     expect(read("app/globals.css")).toContain("subjectRailScroll");
   });
 });

@@ -197,8 +197,10 @@ export function SubjectRails({
     <div ref={rootRef}>
       <div className="mx-auto mt-7 max-w-6xl px-4">
         <p className="text-xs leading-relaxed text-muted-foreground">
-          Six rails, {totalSlides} cards — each one drifts left on its own and
-          loops forever, carrying only its own subject&apos;s knowledge. Cards
+          Six rails, {totalSlides} cards and unit dividers — each one drifts left on its own and
+          loops forever, carrying only its own subject&apos;s knowledge, grouped
+          by syllabus unit so a unit&apos;s cards always travel together behind
+          their divider. Cards
           are wide on purpose: concept, formula, conditions, special cases, a
           worked example, the limitation, the full derivation, the shortcut and
           the board question, in that order. Hover a rail to hold it, drag it
@@ -349,6 +351,49 @@ function SlideCard({
 }) {
   const Icon = slide.icon;
   const stat = slide.statKey ? stats[slide.statKey] : undefined;
+
+  // Unit divider: the slim section header that opens each syllabus-unit
+  // group in the stream (same loop mechanics, same duplicate treatment).
+  if (slide.unitDivider) {
+    return (
+      <li
+        className={`me-4 shrink-0 self-center${duplicate ? " subject-rail-duplicate" : ""}`}
+      >
+        <Link
+          href={slide.href}
+          aria-hidden={duplicate || undefined}
+          tabIndex={duplicate ? -1 : undefined}
+          aria-label={
+            duplicate
+              ? undefined
+              : `${slide.unitDivider.unitTitle} — ${slide.unitDivider.meta}`
+          }
+          className={`group relative flex w-[13rem] flex-col justify-center gap-1 overflow-hidden rounded-2xl border border-dashed bg-card/60 p-4 backdrop-blur-sm transition-all hover:-translate-y-1 sm:w-[16rem] sm:p-5 ${rail.accent.border}`}
+        >
+          <span
+            className={`text-[10px] font-bold uppercase tracking-wider ${rail.accent.text}`}
+          >
+            {slide.tag}
+          </span>
+          <span className="text-base font-black leading-snug tracking-tight text-foreground sm:text-lg">
+            {slide.unitDivider.unitTitle}
+          </span>
+          <span className="text-[11px] font-semibold text-muted-foreground">
+            {slide.unitDivider.meta}
+          </span>
+          <span
+            className={`relative inline-flex items-center gap-1 text-[11px] font-bold ${rail.accent.text}`}
+          >
+            Open
+            <ArrowRight
+              className="h-3 w-3 transition-transform group-hover:translate-x-0.5"
+              aria-hidden
+            />
+          </span>
+        </Link>
+      </li>
+    );
+  }
 
   return (
     <li

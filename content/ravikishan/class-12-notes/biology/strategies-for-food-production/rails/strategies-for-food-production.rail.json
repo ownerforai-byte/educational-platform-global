@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "strategies-for-food-production",
+  "unitTitle": "Strategies for Enhancement in Food Production",
+  "unitHours": 6,
+  "syllabusTopics": [
+    "Plant breeding — methods and examples",
+    "Single cell protein (SCP)",
+    "Animal husbandry — breeds and management",
+    "Biofertilizers and sustainable agriculture"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Food Production · Class 12",
+    "title": "Plant breeding and SCP — yield plus protein",
+    "href": "/class-12-notes/biology",
+    "icon": "FileText",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Food security stacks four strategies: plant breeding (selection → hybridisation → superior recombinants, e.g. high-yield rust-resistant wheat), single-cell protein (Spirulina/yeast biomass as cheap protein), scientific animal husbandry (breed selection, feed, disease management — Gir/Sahiwal cattle, Leghorn poultry), and biofertilizers (Rhizobium, Azotobacter, mycorrhiza, cyanobacteria) that fix or free nutrients sustainably."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "breeding pipeline: germplasm → selection → hybridisation → evaluation → release  ·  SCP: microbes (Spirulina, Methylophilus) = 50–70% protein biomass  ·  biofertilizers: Rhizobium (legume nodules) · Azotobacter (free-living N-fixer) · mycorrhiza (P uptake) · BGA/cyanobacteria (paddy)"
+    },
+    {
+      "label": "Conditions",
+      "text": "New varieties need multi-location trials (G×E interaction) before release. SCP needs sterile cheap substrate plus safety clearance (nucleic-acid limits). Biofertilizers need compatible host/soil (Rhizobium is legume-specific). Animal gains need feed + health + housing together — genetics alone underdelivers."
+    },
+    {
+      "label": "Special cases",
+      "text": "Green Revolution wheats (semi-dwarf, fertilizer-responsive) tripled yields — and taught input-dependence. Spirulina ponds turn wastewater-adjacent culture into protein. Apiculture/sericulture/pisciculture diversify farm income beyond crops and dairy."
+    },
+    {
+      "label": "Solved",
+      "text": "Design a breeding answer: objective (rust resistance + yield) → collect germplasm → cross resistant × high-yield parents → select recombinants over generations → multilocation trials → release. Each step earns its line; the pipeline order itself is frequently the question."
+    },
+    {
+      "label": "Limitation",
+      "text": "High-yield varieties often trade taste/nutrition and demand water/fertiliser (sustainability tension). SCP faces acceptance + nucleic-acid concerns. Biofertilizers act slowly and variably — supplements, not substitutes, at scale. Monoculture invites epidemics (Irish-blight lesson)."
+    },
+    {
+      "label": "Derivation",
+      "text": "From heterosis: F1 hybrids outyield parents (dominance/overdominance models), but segregate in F2 — hence hybrid seed repurchase yearly, the economics inside the biology. SCP math: microbial doubling in hours vs crops in months — exponential growth is the protein argument."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Four pillars chant: breeding–SCP–husbandry–biofertilizers, one example each. Breeding steps in order (5 words: collect–cross–select–trial–release). N-fixers: Rhizobium (nodules), Azotobacter (free), BGA (paddy)."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: plant-breeding steps with one released-variety example; SCP definition with two sources; biofertilizer types with host specificity; dairy/poultry breed + management triad."
+    }
+  ]
+}

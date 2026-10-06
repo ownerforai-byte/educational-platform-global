@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "capacitor",
+  "unitTitle": "Capacitor",
+  "syllabusTopics": [
+    "Capacitance and capacitor",
+    "Parallel plate capacitor",
+    "Combination of capacitors",
+    "Energy of charged capacitor",
+    "Effect of a dielectric: polarization and displacement"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9 (extra unit card). Exam bank compiled 2026-10-06 from pyqs/01-neb-2023.json and 02-neb-2022.json in this unit (stems, marks, solutions verbatim in essence).",
+  "card": {
+    "tag": "Exam Bank",
+    "title": "Exam bank — every board question on capacitors",
+    "href": "/class-11-notes/physics",
+    "icon": "GraduationCap",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "The board asks capacitors two ways: the 5-mark derivation (define C, derive ε₀A/d) and the 3-mark energy numerical (½CV²). Everything else — series/parallel, dielectrics — orbits these two. Capacitance means charge per volt (farad); 1 F is enormous, real capacitors live in pF–mF."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "C = Q/V · parallel plate C = ε₀A/d (×K dielectric) · series 1/C = Σ1/Cᵢ · parallel C = ΣCᵢ · U = ½QV = ½CV² = Q²/2C"
+    },
+    {
+      "label": "Conditions",
+      "text": "C = ε₀A/d needs plate size ≫ gap (uniform field — why the formula works: edge effects negligible). Series/parallel rules need ideal wires. The dielectric multiplier applies to fully-filled gaps. Energy forms are interchangeable — pick by knowns (V-known → ½CV²; isolated charge → Q²/2C), because each form hides one variable."
+    },
+    {
+      "label": "Special cases",
+      "text": "Isolated capacitor + dielectric: Q frozen, V falls, energy DROPS (work done polarising). Battery-connected: V frozen, Q and energy rise. Examiners love asking which stays constant — answer from the connection, not memory."
+    },
+    {
+      "label": "Solved",
+      "text": "NEB 2022 (3): 6 μF at 100 V → U = ½CV² = ½ × 6×10⁻⁶ × 10⁴ = 0.03 J. Steps: convert μF→F first, square the volts, halve last. NEB 2023 (5): define C = Q/V (charge per unit voltage, farad), then E = Q/Aε₀, V = Ed, C = Q/V = ε₀A/d — field, then voltage, then capacitance, in that order."
+    },
+    {
+      "label": "Limitation",
+      "text": "Mark-losers: forgetting μF→F conversion (10⁻⁶); mixing series/parallel rules (series shares charge, parallel shares voltage); stating the dielectric effect backwards for isolated vs connected cases. Breakdown field and fringing sit outside the syllabus model — never invoke them."
+    },
+    {
+      "label": "Derivation",
+      "text": "The only derivation asked: parallel-plate C. Gauss pillbox on one plate → E = σ/ε₀ = Q/Aε₀ → V = Ed = Qd/Aε₀ → C = Q/V = ε₀A/d. With dielectric K the field drops to E/K, so C rises by K. Memorise the three-line chain, not the end formula."
+    },
+    {
+      "label": "Shortcut",
+      "text": "'Derive' (5 marks) → definition + three-line chain + dielectric line. 'Calculate energy' (3 marks) → convert units, pick ½CV², show substitution. Two question shapes total — both rehearsed above."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB 2023 (5): define capacitance + derive parallel-plate C. NEB 2022 (3): 6 μF at 100 V — stored energy. That is the complete bank: one derivation, one numerical."
+    }
+  ]
+}

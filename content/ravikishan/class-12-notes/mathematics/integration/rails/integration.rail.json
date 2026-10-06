@@ -1,0 +1,64 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "mathematics",
+  "unitSlug": "integration",
+  "unitTitle": "Integration",
+  "unitHours": 14,
+  "syllabusTopics": [
+    "Integration as inverse of differentiation",
+    "Standard integrals and methods: substitution, parts, partial fractions",
+    "Definite integrals and properties",
+    "Integration of trigonometric functions",
+    "Applications: area under curve, area between two curves"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Integration · Class 12",
+    "title": "By parts and partial fractions — the method chooser",
+    "href": "/class-12-notes/mathematics",
+    "icon": "ScrollText",
+    "statKey": "pyq:mathematics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Integration reverses differentiation (+C for the lost constant). Three methods cover the syllabus: substitution (spot the inner function and its derivative), by parts (∫u·dv = uv − ∫v·du for products — ILATE picks u: Inverse/trig, Logarithmic, Algebraic, Trig, Exponential), partial fractions (split rational functions into summable pieces). Definite integrals add properties (limits swap, split, symmetry, King property) and measure area: under one curve, between two curves."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "∫u·dv = uv − ∫v·du (ILATE order)  ·  substitution: f(g(x))·g′(x) → f(u)  ·  partial: P(x)/Q(x) → A/(x−a) + B/(x−b) + …  ·  definite: ∫ₐᵇ = −∫ᵦᵃ · split · even/odd symmetry · King: ∫ₐᵇf = ∫ₐᵇf(a+b−x)  ·  area = ∫|top − bottom| between intersection points"
+    },
+    {
+      "label": "Conditions",
+      "text": "By parts needs a splittable product with an integrable dv. Partial fractions need proper fractions first (divide if degree numerator ≥ denominator) with factorable denominators. Definite symmetry tricks need symmetric limits (−a to a). Area between curves needs the correct top/bottom order per interval (split at crossings)."
+    },
+    {
+      "label": "Special cases",
+      "text": "∫x·eˣdx = (x−1)eˣ (parts once). ∫dx/(x²−a²) partial-splits to logarithms. Trig powers reduce via identities (sin² → (1−cos2x)/2). King property dissolves symmetric definite integrals (∫₀^π x·sinx/(1+cos²x)dx classics). Area under y = x² from 0 to 2: [x³/3] = 8/3."
+    },
+    {
+      "label": "Solved",
+      "text": "∫x·eˣdx: ILATE picks u = x, dv = eˣdx → du = dx, v = eˣ → x·eˣ − ∫eˣdx = (x−1)eˣ + C. Area between y = x² and y = x: intersect at 0, 1; top is x → ∫₀¹(x − x²)dx = [x²/2 − x³/3]₀¹ = 1/6."
+    },
+    {
+      "label": "Limitation",
+      "text": "Not every elementary function integrates elementarily (e^(−x²), sin x/x have no closed forms — numerical methods take over). ILATE is a heuristic with rebels (cyclic integrals need algebra, not order). Area formulas assume continuous bounded curves between limits."
+    },
+    {
+      "label": "Derivation",
+      "text": "By parts from the product rule: d(uv) = u·dv + v·du → integrate → ∫u·dv = uv − ∫v·du. Substitution from the chain rule read backward. Partial fractions from algebra: undetermined coefficients A, B forced by identity. Definite properties from limit arithmetic + geometric symmetry of even/odd graphs."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Method radar: inner function + its derivative → substitution; product of unlike types → parts (ILATE); rational function → partial fractions. Definite: check symmetry and King before computing. Area: intersections first, top-minus-bottom second."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: by-parts and partial-fraction integrals; substitution with trig identities; definite-integral property applications (symmetry, King); area under curve and between two curves."
+    }
+  ]
+}

@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-12-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "biotechnology-applications",
+  "unitTitle": "Biotechnology and Its Applications",
+  "unitHours": 8,
+  "syllabusTopics": [
+    "Biotechnological applications in agriculture: Bt cotton, nematode-resistant tobacco",
+    "Biotechnological applications in medicine: insulin, gene therapy, therapeutic proteins",
+    "Transgenic animals",
+    "Biopiracy and patent issues"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-06 (Class 12 track); no Class-12 PYQ bank in-corpus, so the board row is NEB-style with no fabricated citation.",
+  "card": {
+    "tag": "Biotech Uses · Class 12",
+    "title": "Bt crops to gene therapy — applied rDNA",
+    "href": "/class-12-notes/biology",
+    "icon": "GraduationCap",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Agriculture: Bt cotton carries bacterial cry genes (bollworm guts perforate on feeding); nematode-resistant tobacco silences parasite genes via RNAi. Medicine: recombinant insulin (1983 — first therapeutic, E. coli-assembled A+B chains), gene therapy (ADA deficiency: patient lymphocytes corrected ex vivo), therapeutic proteins (tPA, interferons, growth hormone). Transgenic animals model disease and manufacture drugs (Rosie cow's enriched milk). Biopiracy (patenting others' bioresources — neem, turmeric, basmati fights) closes with ethics and patents."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Bt: cryIAc/cryIIAb → gut-alkaline-activated toxin → pest death (plant-safe, human-safe)  ·  RNAi: dsRNA → Dicer → siRNA → RISC silences nematode mRNA  ·  insulin: proinsulin minus C-peptide, A+B chains + S–S bridges (E. coli)  ·  ADA therapy: lymphocyte harvest → corrected gene → reinfuse (not permanent — stem-cell fix needed)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Bt works on chewing pests ingesting toxin (sucking pests need other genes). RNAi needs sequence match to the target mRNA. Gene therapy needs ex-vivo cell survival + engraftment (lymphocytes die out — repeat doses). Patents need novelty + utility (traditional knowledge defeats biopiracy claims)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Golden rice (β-carotene pathway) fights vitamin-A blindness. Flavr Savr tomato delayed softening (antisense polygalacturonase). Dolly (cloned sheep) proved nuclear transfer; ANDi (fluorescent monkey) proved germline transgenesis. Bt resistance management mandates refuge (non-Bt) acres."
+    },
+    {
+      "label": "Solved",
+      "text": "Why is recombinant insulin safer than pig insulin? Sequence-identical human protein (no allergy), unlimited fermenter supply (no slaughterhouse limits), no animal-pathogen risk. Production: synthesise A and B chain genes → express in E. coli → extract, join disulphides → purify — Eli Lilly's 1983 Humulin pipeline."
+    },
+    {
+      "label": "Limitation",
+      "text": "Gene therapy is mostly somatic and transient (germline edits raise heritable-ethics walls). Bt selects resistant pests (refuge strategy slows, not stops). Transgene escape via pollen worries ecologists. Biopiracy battles show patents lag behind traditional knowledge documentation."
+    },
+    {
+      "label": "Derivation",
+      "text": "From tools to products: identify the gene (cry, insulin) → clone into a delivery vector (Ti plasmid for plants, retrovirus for ADA lymphocytes) → transform target → select expressers → scale (fields/fermenters/clinics). Each application reuses the principles-unit pipeline with a new cargo — the exam's favourite 'apply the pipeline' move."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Agri examples: Bt cotton (insect), RNAi tobacco (nematode), Golden rice (vitamin). Medicine: insulin (diabetes), ADA (gene therapy), tPA (clots). Ethics: biopiracy = patenting others' biodiversity (neem/turmeric/basmati defences)."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style: Bt mechanism with cry genes; nematode resistance via RNAi steps; insulin production pipeline; ADA gene-therapy procedure + limitation; biopiracy with one opposed patent."
+    }
+  ]
+}
