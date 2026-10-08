@@ -16,6 +16,84 @@ type InteractiveMarkdownProps = {
 
 type PartTip = { text: string; x: number; y: number } | null;
 
+/** Source of one :::copy box: its title (for pairing) and body (for copying). */
+type CopySource = { title: string; body: string };
+
+/**
+ * Markdown body of every :::copy block in document order (owner request
+ * 2026-10-08: "present important information in a separate rectangular block
+ * so that you can copy at once … answers, emails, letters, long answers,
+ * explanations"). Pairing with the rendered boxes happens by TITLE in the
+ * hydration effect below, so a box that arrives by another route — the
+ * > [!copy] alert spelling — can never shift its neighbours onto the wrong
+ * payload. Fenced code is skipped: a reply that SHOWS the syntax inside a
+ * fence must not register a phantom source.
+ *
+ * An unclosed block (mid-stream) yields nothing, mirroring the pipeline,
+ * which refuses to convert an unclosed :::copy either — no box, no source.
+ */
+function extractCopySources(content: string): CopySource[] {
+  const sources: CopySource[] = [];
+  let inFence = false;
+  let title: string | null = null;
+  let body: string[] = [];
+
+  for (const line of content.split("\n")) {
+    if (/^```/.test(line)) {
+      inFence = !inFence;
+      continue;
+    }
+    if (inFence) continue;
+
+    if (title === null) {
+      const open = /^:{3,}\s*copy\b\s*(.*)$/i.exec(line);
+      if (open) {
+        title = open[1].trim();
+        body = [];
+      }
+      continue;
+    }
+    if (/^:{3,}\s*$/.test(line)) {
+      sources.push({ title, body: body.join("\n").trim() });
+      title = null;
+      body = [];
+      continue;
+    }
+    body.push(line);
+  }
+  return sources;
+}
+
+/**
+ * One-tap clipboard write: Clipboard API first (secure contexts), then a
+ * hidden textarea + execCommand for older WebViews and plain-http dev, false
+ * when both refuse (the button then asks for the manual shortcut).
+ */
+async function copyTextToClipboard(text: string): Promise<boolean> {
+  try {
+    if (navigator.clipboard?.writeText) {
+      await navigator.clipboard.writeText(text);
+      return true;
+    }
+  } catch {
+    // private mode / permission denied — fall through to the legacy path
+  }
+  try {
+    const field = document.createElement("textarea");
+    field.value = text;
+    field.setAttribute("readonly", "");
+    field.style.position = "fixed";
+    field.style.opacity = "0";
+    document.body.appendChild(field);
+    field.select();
+    const ok = document.execCommand("copy");
+    field.remove();
+    return ok;
+  } catch {
+    return false;
+  }
+}
+
 /**
  * INTERACTIVE MARKDOWN — MathMarkdown's renderer plus live figure explainers.
  *
@@ -43,6 +121,7 @@ export function InteractiveMarkdown({ content, className }: InteractiveMarkdownP
   const rootRef = useRef<HTMLDivElement>(null);
   const [tip, setTip] = useState<PartTip>(null);
   const html = useMemo(() => renderNoteHtml(content), [content]);
+  const copySources = useMemo(() => extractCopySources(content), [content]);
 
   useEffect(() => {
     const root = rootRef.current;
@@ -102,8 +181,52 @@ export function InteractiveMarkdown({ content, className }: InteractiveMarkdownP
       });
     });
 
+    // ONE-TAP COPY BLOCKS (owner 2026-10-08): every :::copy rectangle gets its
+    // own button, so a lift-ready chunk — final answer, email, letter, worked
+    // solution — copies on ONE click, independent of the whole-reply copy that
+    // already sits below the bubble. The payload is the box's MARKDOWN source
+    // (LaTeX and all), paired by the box's own title before the button exists,
+    // so the button's label can never leak into what gets copied; when no
+    // source matches (alert-spelled box), the box's visible text is copied.
+    const remaining = [...copySources];
+    root.querySelectorAll<HTMLElement>(".edu-callout--copy").forEach((block) => {
+      const heading =
+        block.querySelector(".edu-callout__heading")?.textContent?.trim() ?? "";
+      const at = heading ? remaining.findIndex((s) => s.title === heading) : -1;
+      const matched = at >= 0 ? remaining.splice(at, 1)[0].body : "";
+      const source = matched || (block.innerText || block.textContent || "").trim();
+
+      const button = document.createElement("button");
+      button.type = "button";
+      button.className = "edu-copy-btn";
+      button.textContent = "Copy";
+      button.setAttribute("aria-label", "Copy this block");
+      let resetTimer: ReturnType<typeof setTimeout> | undefined;
+
+      const onClick = () => {
+        void (async () => {
+          const ok = await copyTextToClipboard(source);
+          button.textContent = ok ? "Copied ✓" : "Press Ctrl+C";
+          button.classList.toggle("edu-copy-btn--done", ok);
+          if (resetTimer) clearTimeout(resetTimer);
+          resetTimer = setTimeout(() => {
+            button.textContent = "Copy";
+            button.classList.remove("edu-copy-btn--done");
+          }, 1600);
+        })();
+      };
+
+      button.addEventListener("click", onClick);
+      block.appendChild(button);
+      cleanups.push(() => {
+        if (resetTimer) clearTimeout(resetTimer);
+        button.removeEventListener("click", onClick);
+        button.remove();
+      });
+    });
+
     return () => cleanups.forEach((off) => off());
-  }, [html]);
+  }, [html, copySources]);
 
   return (
     <div className="relative">

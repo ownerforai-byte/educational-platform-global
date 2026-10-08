@@ -37,6 +37,10 @@ export const EDU_CALLOUT_LABELS = {
   example: "Worked Example",
   warning: "Caution",
   tip: "Quick Tip",
+  // One-tap copy boxes (owner 2026-10-08): the chat's lift-ready chunks —
+  // final answers, emails, letters, worked solutions — rendered as their own
+  // rectangle carrying a Copy button (components/content/interactive-markdown.tsx).
+  copy: "Copy Block",
 } as const;
 
 export type EduCalloutType = keyof typeof EDU_CALLOUT_LABELS;
@@ -59,6 +63,7 @@ export const EDU_CALLOUT_CLASSES: Record<EduCalloutType, string> = {
   example: "edu-callout edu-callout--example",
   warning: "edu-callout edu-callout--warning",
   tip: "edu-callout edu-callout--tip",
+  copy: "edu-callout edu-callout--copy",
 };
 
 /** Friendly spellings authors are likely to reach for. */

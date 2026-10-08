@@ -291,6 +291,20 @@ describe("deep-answer contract + source hierarchy reach every chat request", () 
     expect(MASTER_ACADEMIC_PROMPT).not.toContain("`");
     expect(MASTER_ACADEMIC_PROMPT).not.toContain("${");
   });
+
+  test("lift-ready chunks ride in :::copy blocks for one-tap copying (owner 2026-10-08)", () => {
+    // The UI renders each block as its own rectangle with a Copy button
+    // (frontend components/content/interactive-markdown.tsx) — the ENFORCED
+    // server prompt must tell the tutor to actually write them, so raw API
+    // callers get the same lift-ready structure as the site.
+    expect(MASTER_ACADEMIC_PROMPT).toContain("COPY BLOCKS — LIFT-READY CHUNKS");
+    expect(MASTER_ACADEMIC_PROMPT).toContain(":::copy");
+    expect(MASTER_ACADEMIC_PROMPT).toContain("one-tap Copy button");
+    expect(MASTER_ACADEMIC_PROMPT).toContain("Never wrap the whole reply");
+    // The artefact contract above must keep holding for the new rule too.
+    expect(MASTER_ACADEMIC_PROMPT).not.toContain("`");
+    expect(MASTER_ACADEMIC_PROMPT).not.toContain("${");
+  });
 });
 
 

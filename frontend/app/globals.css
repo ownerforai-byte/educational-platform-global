@@ -1238,6 +1238,42 @@ code, kbd, samp, pre {
   .edu-callout--trap       { --cal: var(--accent-rose); }
   .edu-callout--exam       { --cal: var(--primary); }
   .edu-callout--example    { --cal: var(--muted-foreground); }
+  .edu-callout--copy       { --cal: var(--primary); }
+
+  /* One-tap copy button — injected onto every :::copy box by
+     components/content/interactive-markdown.tsx (owner 2026-10-08: lift-ready
+     chunks get their own rectangle so they can be copied in one click).
+     Class names appear in full in scanned source (callouts.ts and
+     interactive-markdown.tsx) so the Tailwind scanner keeps these rules. */
+  .edu-copy-btn {
+    position: absolute;
+    top: 0.55em;
+    right: 0.6em;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.3em;
+    padding: 0.26em 0.7em;
+    border: 1px solid hsl(var(--cal) / 0.45);
+    border-radius: 9999px;
+    background: hsl(var(--cal) / 0.14);
+    color: color-mix(in oklab, hsl(var(--cal)) 62%, hsl(var(--foreground)));
+    font-family: "Inter", system-ui, sans-serif;
+    font-size: 0.6875em;
+    font-weight: 800;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: background 150ms ease, color 150ms ease, transform 100ms ease;
+  }
+  .edu-copy-btn:hover { background: hsl(var(--cal) / 0.26); }
+  .edu-copy-btn:active { transform: scale(0.96); }
+  .edu-copy-btn--done {
+    background: hsl(var(--accent-emerald) / 0.2);
+    border-color: hsl(var(--accent-emerald) / 0.55);
+    color: hsl(var(--accent-emerald));
+  }
+  /* Keep the label/title row clear of the absolutely-positioned button. */
+  .edu-callout--copy .edu-callout__head { padding-right: 5em; }
 }
 
 @keyframes fadeIn {
@@ -1277,7 +1313,7 @@ code, kbd, samp, pre {
   animation: gradientShift 5s ease-in-out infinite;
 }
 
-/* ─── WELCOME GREETING (2026-10-08) — self-dismissing chat bubble ──────────
+/* ─── WELCOME GREETING (2026-10-08) — site-wide self-dismissing bubble (site-welcome.tsx, mounted once in the root layout so every visitor, public or signed-in, is greeted on page open) ──────────
    One keyframe owns the whole 5s lifecycle so the unmount and the animation
    stay in sync: a quick drop-in (0→8%), a long readable hold (8→84%), then a
    fade-out (84→100%) that lands on opacity 0 exactly as the React timer
