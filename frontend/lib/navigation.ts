@@ -102,7 +102,7 @@ const stemAndRigorItems: NavItem[] = [
 ];
 
 const toolsItems: NavItem[] = [
-  { href: "/ai", label: "Veer Studio Hub", icon: Bot, badge: "4 Tools", badgeClass: "bg-violet-500/15 text-violet-500", ownerOnly: true },
+  { href: "/ai", label: "AI Console", icon: Bot, badge: "4 Tools", badgeClass: "bg-violet-500/15 text-violet-500", ownerOnly: true },
   { href: "/chat", label: "Veer Study Assistant", icon: Sparkles, badge: "Chat", badgeClass: "bg-fuchsia-500/15 text-fuchsia-500", ownerOnly: true },
   { href: "/chat/nepali", label: "नेपाली Console", icon: Languages, badge: "Pure नेपाली", badgeClass: "bg-rose-500/15 text-rose-500", ownerOnly: true },
   { href: "/chat/grammar", label: "Grammar Console", icon: BookOpen, badge: "English", badgeClass: "bg-indigo-500/15 text-indigo-500", ownerOnly: true },
