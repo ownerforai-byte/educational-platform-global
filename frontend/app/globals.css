@@ -838,6 +838,28 @@ code, kbd, samp, pre {
   }
   .prose tbody tr:nth-child(even) { background: hsl(var(--muted) / 0.25); }
 
+  /* Dense tutor answers (owner request 2026-10-08 — /chat TutorConsole):
+     a 12px base with tightened rhythm so a single topic answer can carry its
+     table, its code-drawn svg diagram and its worked steps without the student
+     scrolling past the concept. Em-based children follow the 12px base
+     automatically; only the block rhythm is compressed here. */
+  .tutor-dense.prose p { margin: 0.55em 0; }
+  .tutor-dense.prose h1 { margin: 0.9em 0 0.4em; }
+  .tutor-dense.prose h2 { margin: 1em 0 0.4em; }
+  .tutor-dense.prose h3 { margin: 0.85em 0 0.35em; }
+  .tutor-dense.prose h4 { margin: 0.75em 0 0.3em; }
+  .tutor-dense.prose ul, .tutor-dense.prose ol { margin: 0.5em 0; }
+  .tutor-dense.prose li { margin: 0.2em 0; }
+  .tutor-dense.prose li > p { margin: 0.2em 0; }
+  .tutor-dense.prose table { margin: 0.7em 0; font-size: 0.95em; }
+  .tutor-dense.prose th { padding: 0.4em 0.6em; }
+  .tutor-dense.prose td { padding: 0.35em 0.6em; }
+  .tutor-dense.prose pre { margin: 0.7em 0; padding: 0.7em 0.85em; }
+  .tutor-dense.prose blockquote { margin: 0.7em 0; padding: 0.55em 0.85em; }
+  .tutor-dense.prose hr { margin: 1em 0; }
+  .tutor-dense.prose figure { margin: 0.8em 0; }
+  .tutor-dense .edu-visual { margin: 0.8em 0; padding: 0.6em; }
+
   .prose blockquote {
     margin: 1.1em 0;
     padding: 0.8em 1.1em;
@@ -1253,6 +1275,27 @@ code, kbd, samp, pre {
 .animate-gradient-text {
   background-size: 200% auto;
   animation: gradientShift 5s ease-in-out infinite;
+}
+
+/* ─── WELCOME GREETING (2026-10-08) — self-dismissing chat bubble ──────────
+   One keyframe owns the whole 5s lifecycle so the unmount and the animation
+   stay in sync: a quick drop-in (0→8%), a long readable hold (8→84%), then a
+   fade-out (84→100%) that lands on opacity 0 exactly as the React timer
+   removes the node — no pop, no flash on the way out. */
+@keyframes welcomeFloat {
+  0%   { opacity: 0; transform: translateY(-14px) scale(0.94); }
+  8%   { opacity: 1; transform: translateY(0) scale(1); }
+  84%  { opacity: 1; transform: translateY(0) scale(1); }
+  100% { opacity: 0; transform: translateY(-10px) scale(0.97); }
+}
+.animate-welcome-in {
+  animation: welcomeFloat 5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+/* Readable without motion: it appears instantly and simply sits there until
+   the 5s timer unmounts it (the fade is only visual — the timeout is what
+   actually dismisses it). */
+@media (prefers-reduced-motion: reduce) {
+  .animate-welcome-in { animation: none; opacity: 1; transform: none; }
 }
 
 /* ─── SUBJECT RAILS (2026-10-05) — six continuous knowledge streams ────────── */

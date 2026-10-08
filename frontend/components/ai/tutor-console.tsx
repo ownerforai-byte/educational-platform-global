@@ -555,6 +555,19 @@ export function TutorConsole({
   /** Photos queued for the next message (camera / gallery). */
   const [pendingImages, setPendingImages] = useState<string[]>([]);
 
+  /**
+   * Transient greeting bubble (owner request 2026-10-08): a warm, multi-colour
+   * "welcome" that greets EVERYONE (guest or signed-in) and removes itself
+   * after 5 seconds. Deliberately kept OUT of `messages` — it is never sent to
+   * the server and never written to guest/server history, so it can't pollute a
+   * saved thread; it exists purely in this component's local render.
+   */
+  const [showWelcome, setShowWelcome] = useState(true);
+  useEffect(() => {
+    const id = setTimeout(() => setShowWelcome(false), 5000);
+    return () => clearTimeout(id);
+  }, []);
+
   const streamRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const historyLoadedRef = useRef(false);
@@ -1025,7 +1038,7 @@ export function TutorConsole({
   })();
 
   return (
-    <div className="flex h-[calc(100vh-8rem)] lg:h-[calc(100vh-7rem)] min-h-[520px] flex-col overflow-hidden bg-card border-t border-border/50">
+    <div className="relative flex h-[calc(100vh-8rem)] lg:h-[calc(100vh-7rem)] min-h-[520px] flex-col overflow-hidden bg-card border-t border-border/50">
       {/* ── Header: identity + the green light (kept exactly) + actions ── */}
       <div className="shrink-0 border-b border-border/60 bg-gradient-to-r from-emerald-500/5 via-transparent to-primary/5">
         <div className="flex items-center justify-between gap-3 px-5 sm:px-8 pt-4 pb-3">
@@ -1257,7 +1270,7 @@ export function TutorConsole({
                   <div key={index} className="flex justify-end animate-pop-in">
                     <div className="flex items-end gap-2.5 max-w-[85%]">
                       <div className="rounded-2xl rounded-br-md bg-gradient-to-br from-primary to-violet-500 text-primary-foreground px-4 py-2.5 shadow-sm">
-                        <p className="text-sm leading-relaxed whitespace-pre-wrap font-medium">
+                        <p className="text-xs leading-relaxed whitespace-pre-wrap font-medium">
                           {msg.content}
                         </p>
                       </div>
@@ -1276,8 +1289,19 @@ export function TutorConsole({
                     <CaptainAvatar className="h-3.5 w-3.5" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <div className="rounded-2xl rounded-tl-md border border-border/60 bg-muted/25 px-5 py-4">
-                      <InteractiveMarkdown content={msg.content} />
+                    <div className="rounded-2xl rounded-tl-md border border-border/60 bg-muted/25 px-3.5 py-2.5">
+                      {/* Dense study answers: tables, code-drawn diagrams, KaTeX
+                          and multi-section write-ups all render here, so the
+                          wrapper carries the base size — the hand-rolled .prose
+                          scale is em-based and follows whatever text-* lands on
+                          the call site (globals.css "NOTE TYPOGRAPHY").
+                          12px base keeps long answers, wide GFM tables and
+                          fenced-svg figures on screen without scrolling past
+                          the concept (owner request 2026-10-08). */}
+                      <InteractiveMarkdown
+                        content={msg.content}
+                        className="tutor-dense text-[12px] leading-[1.55]"
+                      />
                     </div>
 
                     {/* Shared per-answer actions — identical to the widget's */}
@@ -1412,6 +1436,49 @@ export function TutorConsole({
               : "Free trial used · sign in for daily credits & saved history"}
         </p>
       </div>
+
+      {/* ── Transient welcome bubble (owner request 2026-10-08) ─────────────
+          A warm, multi-colour greeting that greets EVERYONE — guest or
+          signed-in — then removes itself after 5s (state + timer above).
+
+          Rendered as an OVERLAY (absolute, pointer-events-none) so it never
+          enters the flow of the stream: it can't shift messages, can't be
+          scrolled into history, and — because it is not part of `messages` —
+          is never posted or saved anywhere. The single `animate-welcome-in`
+          keyframe drives the whole lifecycle (enter → hold → fade), so by the
+          time the 5s timer unmounts it, it has already faded to transparent;
+          the reduced-motion fallback in globals.css shows it statically. */}
+      {showWelcome && (
+        <div
+          role="status"
+          aria-live="polite"
+          className="pointer-events-none absolute inset-x-0 top-16 z-20 flex justify-center px-4 sm:px-6"
+        >
+          <div className="animate-welcome-in max-w-md rounded-2xl border border-border/70 bg-card/95 p-[1.5px] shadow-xl shadow-primary/10 backdrop-blur-sm">
+            <div className="rounded-[15px] bg-gradient-to-br from-rose-500/10 via-amber-500/10 to-emerald-500/10 px-4 py-3">
+              <p className="text-[13px] font-bold leading-tight">
+                <span className="bg-gradient-to-r from-rose-500 via-amber-500 to-emerald-500 bg-clip-text text-transparent">
+                  Namaste {user?.fullName ? user.fullName.split(" ")[0] : "friend"}! 🎉
+                </span>{" "}
+                <span className="text-foreground/90">Welcome to</span>{" "}
+                <span className="bg-gradient-to-r from-violet-500 to-sky-500 bg-clip-text text-transparent">
+                  Veer
+                </span>
+                <span className="text-foreground/90">.</span>
+              </p>
+              <p className="mt-1 text-[12px] leading-snug text-muted-foreground">
+                Ask anything from your syllabus — I reply with{" "}
+                <span className="font-semibold text-sky-600 dark:text-sky-400">tables</span>,{" "}
+                <span className="font-semibold text-violet-600 dark:text-violet-400">diagrams</span> &amp;{" "}
+                <span className="font-semibold text-amber-600 dark:text-amber-400">worked steps</span>.
+                <span className="ml-1 font-medium text-emerald-600 dark:text-emerald-400">
+                  Let's learn something brilliant ✨
+                </span>
+              </p>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }
