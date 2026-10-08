@@ -11,6 +11,7 @@ import { OfflineBanner } from "@/components/pwa/offline-banner";
 import { RawEventRejectionGuard } from "@/components/dev/raw-event-rejection-guard";
 import { DevContrastAudit } from "@/lib/color-contrast";
 import { AIWidget } from "@/components/layout/ai-widget";
+import { SiteWelcome } from "@/components/layout/site-welcome";
 
 export const metadata: Metadata = {
   title: "Ravikisan's Platform",
@@ -67,6 +68,10 @@ export default function RootLayout({
                 {/* Floating AI chat — the full chat lives in its own panel (owner rule):
                     history, colorful typing dots and the green live dot all ride along. */}
                 <AIWidget />
+                {/* Site-wide greeting — greets every visitor (public or
+                    signed-in) once when they open the site, then removes
+                    itself after 5 seconds. */}
+                <SiteWelcome />
               </CreditProvider>
             </AuthProvider>
           </ThemeProvider>
