@@ -872,7 +872,7 @@ export function TutorConsole({
           // re-throws so the failure banner shows.
           if (!liveAcc.trim()) throw streamErr;
         }
-        // Agent picks the engine: anything Agnes could not draw gets a
+        // Agent picks the engine: anything the server could not draw gets a
         // browser-side puter.js attempt (User-Pays, free for the platform).
         for (const f of figs.values()) {
           if (f.status === "failed") {
@@ -1025,10 +1025,10 @@ export function TutorConsole({
   })();
 
   return (
-    <div className="flex h-[calc(100vh-10rem)] max-h-[850px] min-h-[500px] flex-col rounded-3xl border border-border/80 bg-card shadow-lg overflow-hidden">
+    <div className="flex h-[calc(100vh-8rem)] lg:h-[calc(100vh-7rem)] min-h-[520px] flex-col overflow-hidden bg-card border-t border-border/50">
       {/* ── Header: identity + the green light (kept exactly) + actions ── */}
       <div className="shrink-0 border-b border-border/60 bg-gradient-to-r from-emerald-500/5 via-transparent to-primary/5">
-        <div className="flex items-center justify-between gap-3 px-4 sm:px-6 pt-3.5 pb-2.5">
+        <div className="flex items-center justify-between gap-3 px-5 sm:px-8 pt-4 pb-3">
           <div className="flex items-center gap-2.5 min-w-0">
             <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-primary to-violet-500 flex items-center justify-center text-white shadow-md shadow-primary/30 shrink-0">
               <CaptainAvatar className="h-5 w-5" />
@@ -1129,7 +1129,7 @@ export function TutorConsole({
 
         {/* History panel — switch between saved conversations */}
         {isLoggedIn && historyOpen && (
-          <div className="mx-4 sm:mx-6 mb-2 max-h-52 overflow-y-auto rounded-xl border border-border/70 bg-background p-2 space-y-1">
+          <div className="mx-5 sm:mx-8 mb-3 max-h-64 overflow-y-auto rounded-xl border border-border/70 bg-background p-2 space-y-1">
             <p className="px-1.5 pt-0.5 pb-1 text-[10px] font-bold uppercase tracking-wider text-muted-foreground">
               Your chat histories
             </p>
@@ -1165,7 +1165,7 @@ export function TutorConsole({
         )}
 
         {/* Subject-mode picker — this console's own feature */}
-        <div className="flex gap-1.5 overflow-x-auto px-4 sm:px-6 pb-2.5">
+        <div className="flex gap-1.5 overflow-x-auto px-5 sm:px-8 pb-3">
           {MODES.map((m) => {
             const Icon = m.icon;
             const active = mode === m.id;
@@ -1191,16 +1191,16 @@ export function TutorConsole({
 
       {/* ── Error banner ─────────────────────────────────────────────── */}
       {error && (
-        <div className="mx-4 sm:mx-6 mt-3 flex items-start gap-2 rounded-xl border border-destructive/30 bg-destructive/10 px-3 py-2 text-xs text-destructive shrink-0">
+        <div className="mx-5 sm:mx-8 mt-3 flex items-start gap-2 rounded-xl border border-destructive/30 bg-destructive/10 px-3 py-2 text-xs text-destructive shrink-0">
           <AlertCircle className="h-3.5 w-3.5 mt-0.5 shrink-0" />
           <span>{error}</span>
         </div>
       )}
 
       {/* ── Stream ───────────────────────────────────────────────────── */}
-      <div ref={streamRef} className="flex-1 overflow-y-auto px-4 sm:px-6 py-5 space-y-5">
+      <div ref={streamRef} className="flex-1 overflow-y-auto px-5 sm:px-8 py-6 space-y-6">
         {!hasConversation && !sending ? (
-          <div className="min-h-full flex flex-col justify-center max-w-2xl mx-auto space-y-6 py-6">
+          <div className="min-h-full flex flex-col justify-center max-w-3xl mx-auto space-y-7 py-8">
             <div className="text-center space-y-2">
               <div className="relative h-14 w-14 rounded-2xl bg-gradient-to-br from-emerald-500 to-primary shadow-lg shadow-emerald-500/25 text-white mx-auto flex items-center justify-center">
                 <CaptainMark className="h-7 w-7" />
@@ -1210,20 +1210,20 @@ export function TutorConsole({
                   ? "What are we learning today?"
                   : `${mode} mode — pick a starter or ask anything`}
               </h3>
-              <p className="text-xs text-muted-foreground max-w-md mx-auto leading-relaxed">
+              <p className="text-sm text-muted-foreground max-w-lg mx-auto leading-relaxed">
                 Derivations, mechanisms, wild &quot;why&quot; questions, misconceptions,
                 past NEB questions — broken down step by step.
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
               {starters.map((prompt, i) => {
                 const Icon = prompt.icon;
                 return (
                   <button
                     key={i}
                     onClick={() => handleSend(prompt.text)}
-                    className="p-3 rounded-2xl border border-border/70 bg-muted/15 hover:bg-muted/40 hover:border-emerald-500/50 hover:-translate-y-0.5 hover:shadow-md hover:shadow-emerald-500/10 active:scale-[0.98] text-left transition-all duration-200 group flex flex-col justify-between space-y-1.5"
+                    className="p-4 rounded-2xl border border-border/70 bg-muted/15 hover:bg-muted/40 hover:border-emerald-500/50 hover:-translate-y-0.5 hover:shadow-md hover:shadow-emerald-500/10 active:scale-[0.98] text-left transition-all duration-200 group flex flex-col justify-between space-y-2"
                   >
                     <span
                       className={`text-[10px] font-bold px-2 py-0.5 rounded-md border w-fit flex items-center gap-1 ${prompt.color}`}
@@ -1231,7 +1231,7 @@ export function TutorConsole({
                       <Icon className="h-2.5 w-2.5" />
                       <span>{prompt.category}</span>
                     </span>
-                    <p className="text-xs text-foreground/90 font-medium group-hover:text-emerald-600 transition-colors leading-relaxed">
+                    <p className="text-sm text-foreground/90 font-medium group-hover:text-emerald-600 transition-colors leading-relaxed">
                       {prompt.text}
                     </p>
                   </button>
@@ -1257,7 +1257,7 @@ export function TutorConsole({
                   <div key={index} className="flex justify-end animate-pop-in">
                     <div className="flex items-end gap-2.5 max-w-[85%]">
                       <div className="rounded-2xl rounded-br-md bg-gradient-to-br from-primary to-violet-500 text-primary-foreground px-4 py-2.5 shadow-sm">
-                        <p className="text-xs leading-relaxed whitespace-pre-wrap font-medium">
+                        <p className="text-sm leading-relaxed whitespace-pre-wrap font-medium">
                           {msg.content}
                         </p>
                       </div>
@@ -1276,7 +1276,7 @@ export function TutorConsole({
                     <CaptainAvatar className="h-3.5 w-3.5" />
                   </div>
                   <div className="min-w-0 flex-1">
-                    <div className="rounded-2xl rounded-tl-md border border-border/60 bg-muted/25 px-4 py-3">
+                    <div className="rounded-2xl rounded-tl-md border border-border/60 bg-muted/25 px-5 py-4">
                       <InteractiveMarkdown content={msg.content} />
                     </div>
 
@@ -1319,7 +1319,7 @@ export function TutorConsole({
 
       {/* ── Thread tools ─────────────────────────────────────────────── */}
       {hasConversation && !sending && (
-        <div className="shrink-0 px-4 sm:px-6 pt-2 flex flex-wrap items-center gap-1.5 border-t border-border/40">
+        <div className="shrink-0 px-5 sm:px-8 pt-3 flex flex-wrap items-center gap-2 border-t border-border/40">
           <button
             onClick={() => followUp(SUMMARIZE_INSTRUCTION)}
             className="inline-flex items-center gap-1 rounded-lg border border-border/60 bg-background px-2 py-1 text-[10px] font-semibold text-muted-foreground hover:text-foreground hover:border-emerald-500/40 transition-colors"
@@ -1338,7 +1338,7 @@ export function TutorConsole({
       )}
 
       {/* ── Composer ─────────────────────────────────────────────────── */}
-      <div className="shrink-0 border-t border-border/60 bg-muted/20 px-4 sm:px-6 py-3">
+      <div className="shrink-0 border-t border-border/60 bg-muted/20 px-5 sm:px-8 py-4">
         {composerLocked && (
           <p className="mb-2 rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-1.5 text-[11px] font-semibold text-amber-600">
             {isGuestLimited
@@ -1364,7 +1364,7 @@ export function TutorConsole({
             value={input}
             onChange={(e) => setInput(e.target.value)}
             onKeyDown={handleKeyDown}
-            rows={2}
+            rows={3}
             placeholder={
               mode === "General"
                 ? "Ask any Class 11 & 12 doubt… (Enter to send)"
@@ -1375,7 +1375,7 @@ export function TutorConsole({
                     : `Ask a ${mode} question… (Enter to send)`
             }
             disabled={composerLocked || sending}
-            className="flex-1 resize-none rounded-2xl border border-input bg-background px-3.5 py-2.5 text-xs leading-relaxed placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 disabled:opacity-60"
+            className="flex-1 resize-none rounded-2xl border border-input bg-background px-4 py-3 text-sm leading-relaxed placeholder:text-muted-foreground/70 focus:outline-none focus:ring-2 focus:ring-emerald-500/30 disabled:opacity-60"
           />
           <button
             onClick={handleEnhance}

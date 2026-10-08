@@ -21,7 +21,7 @@ export const metadata: Metadata = {
  */
 export default function ChatPage() {
   return (
-    <div className="mx-auto w-full max-w-5xl px-2 sm:px-4 py-4 sm:py-6">
+    <div className="-mx-4 -mt-6 md:-mx-6 lg:-mx-8">
       <TutorConsole />
     </div>
   );
