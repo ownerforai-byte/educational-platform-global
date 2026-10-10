@@ -1,5 +1,4 @@
 import express from "express";
-import path from "path";
 import cors from "cors";
 import morgan from "morgan";
 import cookieParser from "cookie-parser";
@@ -43,11 +42,16 @@ import { isOriginAllowed } from "./middleware/cors";
 import { securityHeaders, LEGACY_STATIC_PAGE_CSP } from "./middleware/securityHeaders";
 import { errorHandler, notFoundHandler } from "./middleware/errors";
 import { logRegisteredRoutes } from "./utils/routeDebug";
+import {
+  JSON_BODY_LIMIT,
+  STATIC_PUBLIC_DIRS,
+  TRUST_PROXY_HOPS,
+} from "./config/server";
 
 export function createApp(): express.Express {
   const app = express();
 
-  app.set("trust proxy", 1);
+  app.set("trust proxy", TRUST_PROXY_HOPS);
   app.use(securityHeaders);
   app.use(
     cors({
@@ -61,16 +65,12 @@ export function createApp(): express.Express {
   );
   app.use(morgan("combined"));
   app.use(rateLimit);
-  // 15mb: base64 storage uploads (~10MB decoded) must survive the JSON body parser.
-  app.use(express.json({ limit: "15mb" }));
+  // Body limit rationale lives in config/server.ts (JSON_BODY_LIMIT).
+  app.use(express.json({ limit: JSON_BODY_LIMIT }));
   app.use(cookieParser());
 
   // Serve static assets from public directory
-  const publicPaths = [
-    path.join(process.cwd(), "public"),
-    path.join(process.cwd(), "..", "public"),
-  ];
-  for (const p of publicPaths) {
+  for (const p of STATIC_PUBLIC_DIRS) {
     app.use(
       express.static(p, {
         setHeaders(res) {

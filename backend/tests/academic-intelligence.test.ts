@@ -93,6 +93,39 @@ describe("master academic prompt composition", () => {
     expect(PROMPT).not.toContain("your name is \"ravikisan's ai tutor\"");
   });
 
+  test("answers the owner's exact self-introduction when asked who made it (owner 2026-10-07)", () => {
+    // The owner's own words, kept as ONE unbroken sentence — asserted on the
+    // whitespace-collapsed haystack so a line wrap can never break it silently.
+    const line =
+      "i am veer ai, trained and created by ravikisan. he is an undergraduate student who started this platform from the beginning of class 11, along with his studies.";
+    expect(PROMPT).toContain(line);
+    expect(PROMPT).toContain("identity — who you are and who made you");
+
+    // The "never AI" ban and this line would otherwise contradict each other,
+    // and a model given two contradictory rules picks whichever it likes — so
+    // the ban must carve out exactly this one exception.
+    expect(PROMPT).toContain("the one sanctioned exception");
+
+    // Identity questions are short by design: they are exempt from the
+    // 250-word floor, the new-word rule and links-last, or the model would pad
+    // this sentence out to a wall of text nobody asked for.
+    expect(PROMPT).toContain("exempt from the 250-word floor");
+    expect(PROMPT).toContain("links-last rule");
+    expect(PROMPT).toContain("say it verbatim every single time");
+    // Live check 2026-10-07: without these two the model still tacked an
+    // "Explore further:" block onto the identity reply, because links-last is
+    // an absolute rule everywhere else in the prompt.
+    expect(PROMPT).toContain('do not append an "explore further:" link block');
+    expect(PROMPT).toContain("the links-last rule does not apply to this reply");
+    // Live check 2026-10-07: without this the search grounding matched
+    // "creation" as a PHYSICS topic and answered pair-production instead.
+    expect(PROMPT).toContain("identity question short-circuits every other rule");
+    expect(PROMPT).toContain("no physics, no derivation, no worked example");
+
+    // Still never any OTHER name.
+    expect(PROMPT).toContain("never call yourself any other name or title");
+  });
+
   test("every academic figure is drawn (two fence langs) and every labelled part is hoverable (owner 2026-10-03)", () => {
     // Owner 2026-10-03: "agnes image is just drawing rough image ---- train it for
     // all kind of academic images like lifecycle, labelling, all parts name with

@@ -125,17 +125,18 @@ router.post("/credits/request", requireAuth, async (req: Request, res: Response)
 });
 
 // ── Token value allocation matrix (authoritative — mirrors the client) ───────
-const UNLOCK_COSTS: Record<"lab3d" | "visuals" | "theory" | "reference", number> = {
+const UNLOCK_COSTS: Record<"lab3d" | "visuals" | "theory" | "reference" | "imagehub", number> = {
   lab3d: 5,
   visuals: 2,
   theory: 1,
   reference: 1,
+  imagehub: 5,
 };
 
 const UNLOCK_WINDOW_SECONDS = 1200; // 20 minutes
 
 const unlockSchema = z.object({
-  category: z.enum(["lab3d", "visuals", "theory", "reference"]),
+  category: z.enum(["lab3d", "visuals", "theory", "reference", "imagehub"]),
   moduleKey: z.string().min(1).max(200).optional(),
 });
 
@@ -182,6 +183,22 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
     const role = (profile?.role as string | undefined)?.toUpperCase() ?? null;
     const premiumStatus = profile?.premium_status ?? false;
     const owner = isOwnerEmail(user.email);
+
+    // DIAGRAM HUB (owner request 2026-10-06: "available for owner emails only …
+    // under coin gate of 5 coin but free for owner and only for owner"): the
+    // section is priced at 5 coins, but only owner emails may open it at all —
+    // a non-owner unlock attempt is refused here, never charged. Owners always
+    // pass free, independent of the bill-everyone toggle.
+    if (category === "imagehub") {
+      if (!owner) {
+        res.status(403).json({
+          error: "The Diagram Hub is reserved for owner accounts.",
+        });
+        return;
+      }
+      res.json({ credits: profile?.credits ?? 0, expiresAt, cost: 0 });
+      return;
+    }
 
     // PRO is unlimited and free. Owners are free only while their toggle is
     // OFF — students/customers always pay from the pool.

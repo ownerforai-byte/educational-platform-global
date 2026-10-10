@@ -13,7 +13,7 @@
  * the frontend already opens on hover/click.
  *
  * Contract: never throws. Every failure path resolves to `{ reason }` so the
- * Image Hub can fall back to the raster chain (Agnes → puter.js) and the
+ * Diagram Hub can fall back to the raster chain (server raster → puter.js) and the
  * student still gets a picture.
  *
  * Kill-switch: AI_FIGURE_GEN=off disables the writer entirely.

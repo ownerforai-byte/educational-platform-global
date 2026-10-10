@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import { requireAuth, requireOwnerEmail } from "../middleware/auth";
 import { generateVeerImage } from "../ai/image-gen";
 import { saveImageHistoryRow } from "./ai-image-history";
+import { asyncHandler } from "../middleware/asyncHandler";
 
 /**
  * POST /api/ai/image — the Image Hub's drawing endpoint (owner request
@@ -26,7 +27,7 @@ import { saveImageHistoryRow } from "./ai-image-history";
  */
 const router = Router();
 
-router.post("/", requireAuth, requireOwnerEmail, async (req: Request, res: Response) => {
+router.post("/", requireAuth, requireOwnerEmail, asyncHandler(async (req: Request, res: Response) => {
   const prompt = typeof req.body?.prompt === "string" ? req.body.prompt.trim() : "";
   if (!prompt) {
     res.status(400).json({ error: "Prompt required" });
@@ -52,6 +53,6 @@ router.post("/", requireAuth, requireOwnerEmail, async (req: Request, res: Respo
     error: "Image engines unavailable",
     reason: result.reason ?? "all image models failed",
   });
-});
+}));
 
 export default router;

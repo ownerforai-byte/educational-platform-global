@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import { z } from "zod";
 import { requireAuth, requireOwnerEmail } from "../middleware/auth";
 import { supabaseAdmin } from "../db/supabase";
+import { asyncHandler } from "../middleware/asyncHandler";
 
 /**
  * IMAGE HISTORY — every picture and figure an owner draws is saved to their
@@ -94,7 +95,7 @@ export async function saveImageHistoryRow(
 }
 
 /** GET /api/ai/image-history?limit=60 — the user's saved draws, newest first. */
-router.get("/", requireAuth, requireOwnerEmail, async (req: Request, res: Response) => {
+router.get("/", requireAuth, requireOwnerEmail, asyncHandler(async (req: Request, res: Response) => {
   const user = (req as Request & { user: { id: string } }).user;
   const limitRaw = Number(req.query.limit);
   const limit = Number.isFinite(limitRaw)
@@ -132,10 +133,10 @@ router.get("/", requireAuth, requireOwnerEmail, async (req: Request, res: Respon
   }));
 
   res.json({ items, migrated: true });
-});
+}));
 
 /** POST /api/ai/image-history — save one browser-drawn (puter.js) result. */
-router.post("/", requireAuth, requireOwnerEmail, async (req: Request, res: Response) => {
+router.post("/", requireAuth, requireOwnerEmail, asyncHandler(async (req: Request, res: Response) => {
   const parsed = imageHistorySaveSchema.safeParse(req.body);
   if (!parsed.success) {
     res.status(400).json({ error: "Invalid image history payload" });
@@ -145,10 +146,10 @@ router.post("/", requireAuth, requireOwnerEmail, async (req: Request, res: Respo
   const user = (req as Request & { user: { id: string } }).user;
   const saved = await saveImageHistoryRow(user.id, parsed.data);
   res.json({ saved, migrated: true });
-});
+}));
 
 /** DELETE /api/ai/image-history?id=<uuid> — clear one item, or the whole history. */
-router.delete("/", requireAuth, requireOwnerEmail, async (req: Request, res: Response) => {
+router.delete("/", requireAuth, requireOwnerEmail, asyncHandler(async (req: Request, res: Response) => {
   const user = (req as Request & { user: { id: string } }).user;
   const id = typeof req.query.id === "string" ? req.query.id.trim() : null;
 
@@ -168,6 +169,6 @@ router.delete("/", requireAuth, requireOwnerEmail, async (req: Request, res: Res
   }
 
   res.json({ cleared: true, migrated: true });
-});
+}));
 
 export default router;

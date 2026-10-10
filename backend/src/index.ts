@@ -2,6 +2,7 @@ import dotenv from "dotenv";
 import path from "path";
 import { fileURLToPath } from "url";
 import { checkStartupEnv } from "./config/env";
+import { HOST, PORT } from "./config/server";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
@@ -18,14 +19,12 @@ if (!checkStartupEnv()) {
 const { createApp } = await import("./app");
 const { startCreditsResetJob } = await import("./jobs/creditsResetJob");
 
-const PORT = Number(process.env.PORT) || 3000;
-
 const app = createApp();
 
 // Daily platform-credit pool: refill every logged user to 8 credits at
 // 12:00 AM (lazy per-user reset in utils/credits.ts is the safety net).
 startCreditsResetJob();
 
-app.listen(PORT, "0.0.0.0", () => {
-  console.log(`Backend server running on http://0.0.0.0:${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`Backend server running on http://${HOST}:${PORT}`);
 });

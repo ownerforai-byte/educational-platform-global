@@ -152,7 +152,31 @@ interface ResetResult {
  * re-read and return the winner's fresh balance (never double-grant, never
  * report a stale 0 that would cause a false 402).
  */
+/** Concurrent same-user resets share one CAS round (see ensureDailyCredits). */
+const resetInFlight = new Map<string, Promise<ResetResult>>();
+
 export async function ensureDailyCredits(
+  userId: string,
+  email?: string | null,
+  role?: string | null,
+  premiumStatus?: boolean | null,
+  now: Date = new Date(),
+): Promise<ResetResult> {
+  // One page load fires several API requests in parallel and each used to run
+  // its own reset when the watermark was stale — the log showed four
+  // "daily reset" lines for the same user in the same second. Collapse the
+  // concurrent burst into a single CAS round; nothing is cached beyond the
+  // burst, so the result is never stale for the next caller.
+  const inFlight = resetInFlight.get(userId);
+  if (inFlight) return inFlight;
+  const run = doEnsureDailyCredits(userId, email, role, premiumStatus, now).finally(() => {
+    resetInFlight.delete(userId);
+  });
+  resetInFlight.set(userId, run);
+  return run;
+}
+
+async function doEnsureDailyCredits(
   userId: string,
   email?: string | null,
   role?: string | null,

@@ -4,7 +4,7 @@
 -- "enable saving of image for every user … hardcode its history saving").
 --
 -- One row per drawing a student makes in the Image Hub:
---   kind = 'picture' → a raster image drawn by the Agnes chain or puter.js
+--   kind = 'picture' → a raster image drawn by the server chain or puter.js
 --                       (url points at the generated image)
 --   kind = 'figure'  → a vector academic figure (svg holds the whole drawing,
 --                       parts carries the hoverable legend as JSON)

@@ -2,6 +2,7 @@ import { Router, Request, Response } from "express";
 import { z } from "zod";
 import { supabaseAdmin } from "../db/supabase";
 import { requireAuth } from "../middleware/auth";
+import { asyncHandler } from "../middleware/asyncHandler";
 
 /**
  * Per-user AI chat history, persisted in Supabase (`chat_messages` table).
@@ -59,7 +60,7 @@ async function insertWithRetry(
  * One row per session: name, message count, last activity, and a preview
  * snippet (first user message) so the sidebar can label each history.
  */
-router.get("/sessions", requireAuth, async (req: Request, res: Response) => {
+router.get("/sessions", requireAuth, asyncHandler(async (req: Request, res: Response) => {
   const user = (req as Request & { user: { id: string } }).user;
 
   const { data, error } = await supabaseAdmin
@@ -95,10 +96,10 @@ router.get("/sessions", requireAuth, async (req: Request, res: Response) => {
   }
 
   res.json({ sessions: Array.from(map.values()), migrated: true });
-});
+}));
 
 /** GET /api/chat-history?session=default&limit=200 — newest-last. */
-router.get("/", requireAuth, async (req: Request, res: Response) => {
+router.get("/", requireAuth, asyncHandler(async (req: Request, res: Response) => {
   const user = (req as Request & { user: { id: string } }).user;
   const session = typeof req.query.session === "string" ? req.query.session.slice(0, 64) : "default";
   const limitRaw = Number(req.query.limit);
@@ -125,10 +126,10 @@ router.get("/", requireAuth, async (req: Request, res: Response) => {
   }
 
   res.json({ messages: (data ?? []).slice().reverse(), migrated: true });
-});
+}));
 
 /** POST /api/chat-history — { session, messages: [{role, content}, ...] }. */
-router.post("/", requireAuth, async (req: Request, res: Response) => {
+router.post("/", requireAuth, asyncHandler(async (req: Request, res: Response) => {
   const parsed = saveSchema.safeParse(req.body);
   if (!parsed.success) {
     res.status(400).json({ error: "Invalid chat history payload" });
@@ -157,10 +158,10 @@ router.post("/", requireAuth, async (req: Request, res: Response) => {
   }
 
   res.json({ saved: rows.length, migrated: true });
-});
+}));
 
 /** DELETE /api/chat-history?session=default — clear one session (or all). */
-router.delete("/", requireAuth, async (req: Request, res: Response) => {
+router.delete("/", requireAuth, asyncHandler(async (req: Request, res: Response) => {
   const user = (req as Request & { user: { id: string } }).user;
   const session = typeof req.query.session === "string" ? req.query.session.slice(0, 64) : null;
 
@@ -179,6 +180,6 @@ router.delete("/", requireAuth, async (req: Request, res: Response) => {
   }
 
   res.json({ cleared: true, migrated: true });
-});
+}));
 
 export default router;

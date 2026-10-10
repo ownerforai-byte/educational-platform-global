@@ -32,7 +32,7 @@ const PASSWORD_RESET_WINDOW_MS = positiveNumber(
   60 * 60 * 1000,
 );
 
-// Image generation burns the platform Agnes key per drawing and is open to
+// Image generation burns the platform image key per drawing and is open to
 // EVERY signed-in user (owner request 2026-10-04) — its own modest tier keeps
 // one account/IP from draining the key while a normal study session still
 // draws freely (one figure-mode drawing = the vector pass + a raster retry).

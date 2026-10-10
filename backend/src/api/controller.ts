@@ -3,6 +3,7 @@ import { serverError } from "../middleware/errors";
 import { supabaseAdmin } from "../db/supabase";
 import { extractToken } from "../middleware/auth";
 import { invalidateCoinGateCache } from "../utils/credits";
+import { asyncHandler } from "../middleware/asyncHandler";
 
 const router = Router();
 
@@ -36,7 +37,7 @@ async function requireAdmin(req: Request, res: Response) {
   return { user: data.user, profile };
 }
 
-router.get("/health", async (req: Request, res: Response) => {
+router.get("/health", asyncHandler(async (req: Request, res: Response) => {
   const auth = await requireAdmin(req, res);
   if (!auth) return;
 
@@ -45,9 +46,9 @@ router.get("/health", async (req: Request, res: Response) => {
     timestamp: new Date().toISOString(),
     uptime: process.uptime(),
   });
-});
+}));
 
-router.get("/content-stats", async (req: Request, res: Response) => {
+router.get("/content-stats", asyncHandler(async (req: Request, res: Response) => {
   const auth = await requireAdmin(req, res);
   if (!auth) return;
 
@@ -83,9 +84,9 @@ router.get("/content-stats", async (req: Request, res: Response) => {
     console.error(err);
     serverError(res, err);
   }
-});
+}));
 
-router.get("/settings", async (req: Request, res: Response) => {
+router.get("/settings", asyncHandler(async (req: Request, res: Response) => {
   const auth = await requireAdmin(req, res);
   if (!auth) return;
 
@@ -124,13 +125,13 @@ router.get("/settings", async (req: Request, res: Response) => {
     console.error(err);
     serverError(res, err);
   }
-});
+}));
 
 // Settings PATCH (ADMIN/OWNER only).
 // Body: {key, value} or {settings: [{key, value}]}.
 // Upserts into the settings table with updated_by set to the caller's user id
 // (service-role key makes RLS inert; this route gate is the only guard).
-router.patch("/settings", async (req: Request, res: Response) => {
+router.patch("/settings", asyncHandler(async (req: Request, res: Response) => {
   const auth = await requireAdmin(req, res);
   if (!auth) return;
 
@@ -202,6 +203,6 @@ router.patch("/settings", async (req: Request, res: Response) => {
     console.error(err);
     serverError(res, err);
   }
-});
+}));
 
 export default router;
