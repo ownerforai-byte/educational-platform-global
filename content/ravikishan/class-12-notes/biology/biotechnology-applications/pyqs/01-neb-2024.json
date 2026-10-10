@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Biology — Biotechnology Applications — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "biology",
+  "unitSlug": "biotechnology-applications",
+  "topicSlug": "biotechnology-applications-pyq-2024",
+  "topicTitle": "NEB Class 12 Biology — Biotechnology Applications — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "What is Bt cotton? Explain how the Bt toxin kills the insect pest.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Bt cotton** is a transgenic crop carrying **cry genes** from the soil bacterium *Bacillus thuringiensis*, introduced by recombinant DNA technology so that the plant makes its own insecticidal protein.\n\nThe introduced gene is expressed as an **inactive protoxin crystal** in the plant. When the insect larva eats the plant tissue, the crystals enter its gut, where the **alkaline pH dissolves them** and converts the protoxin into active toxin. The active toxin binds to the surface of midgut epithelial cells, creating pores; cells swell and lyse, the gut is perforated, the larva stops feeding and dies.\n\nThe toxin is harmless to the plant, to humans and to mammals because their gut is acidic and the protoxin is not activated.",
+      "knowledgeNote": "The alkaline-gut requirement is the crucial safety argument — Bt toxin is species specific, not a general poison."
+    },
+    {
+      "question": "What is gene therapy? Describe its use in ADA deficiency with the steps of the first clinical procedure.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Gene therapy** is the correction of a genetic defect by introducing a normal functional gene into a person's cells or tissues.\n\n**ADA deficiency** (adenosine deaminase deficiency) causes severe combined immunodeficiency: without the enzyme, deoxyadenosine accumulates and destroys lymphocytes, so the child has no immune defence.\n\n**Procedure:** lymphocytes are taken from the patient's blood, a functional ADA cDNA is introduced with a retroviral vector, and the corrected cells are returned to the patient. The lymphocytes have a limited life, so the treatment must be **repeated periodically**. A permanent cure requires the gene to be introduced into bone-marrow stem cells at an early embryonic stage.",
+      "knowledgeNote": "Because the corrected cells do not divide indefinitely, gene therapy here is a treatment, not a cure — a standard examiner's follow-up question."
+    },
+    {
+      "question": "Explain RNA interference and how it was used to develop nematode-resistant tobacco.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**RNA interference (RNAi)** is a natural cellular defence in which double-stranded RNA (dsRNA) is cut by an enzyme into small interfering RNAs; these bind to the complementary mRNA and prevent its translation, silencing the gene (and the parasite's protein production).\n\nIn tobacco, the nematode *Meloidogyne incognita* infects the roots. A dsRNA corresponding to a nematode-specific gene was introduced into the host plant; when the nematode feeds on the plant, the dsRNA is taken up and silences its vital gene, so the parasite cannot survive — the plant becomes **nematode resistant**.",
+      "knowledgeNote": "RNAi silences the parasite's gene, not the plant's — the plant is used only as the delivery vehicle for the dsRNA."
+    }
+  ]
+}

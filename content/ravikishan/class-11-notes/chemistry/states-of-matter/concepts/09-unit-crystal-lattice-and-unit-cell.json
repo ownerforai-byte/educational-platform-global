@@ -35,12 +35,13 @@
     "❌ Unit cell dimensions cannot be measured. ✅ They are measured routinely from X-ray diffraction patterns using Bragg's law."
   ],
   "practice": [
-    "Define crystal lattice, unit cell and lattice parameters.",
     "List the seven crystal systems and state the relationship between the number of Bravais lattices and them.",
     "Calculate the number of atoms per unit cell for simple cubic, BCC and FCC lattices, showing the share of corner, face and body-centre particles.",
     "Derive the relation between edge length and atomic radius for BCC and FCC cells.",
     "The edge length of a FCC unit cell of copper is 361 pm; calculate the density of copper (M = 63.5 g mol⁻¹).",
-    "State the limitations of the ideal unit-cell model."
+    "State the limitations of the ideal unit-cell model.",
+    "one worked example for \"Introduction to unit crystal lattice and unit cell\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "formulas": [
     "$$\\text{Particles per cell: corner }\\frac{1}{8},\\ \\text{edge }\\frac{1}{4},\\ \\text{face }\\frac{1}{2},\\ \\text{body }1$$",
@@ -50,11 +51,13 @@
   "universalFacts": [
     "Seven crystal systems combine with four centering types to give 14 Bravais lattices.",
     "Coordination numbers: simple cubic 6, BCC 8, FCC (and HCP) 12.",
-    "Polonium is the standard 'real-life' example of a simple cubic metal; NaCl crystallises in a face-centred cubic array of ions."
+    "Polonium is the standard 'real-life' example of a simple cubic metal; NaCl crystallises in a face-centred cubic array of ions.",
+    "answer pattern for \"Introduction to unit crystal lattice and unit cell\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [
     "**Problem:** Copper (FCC, a = 361 pm, M = 63.5 g mol⁻¹) — find the density. **Solution:** Z = 4; ρ = ZM/(a³N_A) = (4 × 63.5)/((3.61×10⁻⁸ cm)³ × 6.022×10²³) ≈ 8.97 g cm⁻³, matching the known value for copper.",
-    "**Problem:** Show that the radius of an atom in a BCC lattice is r = √3a/4. **Solution:** along the body diagonal of length √3a, the atoms touch: √3a = 4r, hence r = √3a/4 ≈ 0.433a."
+    "**Problem:** Show that the radius of an atom in a BCC lattice is r = √3a/4. **Solution:** along the body diagonal of length √3a, the atoms touch: √3a = 4r, hence r = √3a/4 ≈ 0.433a.",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "importantNotes": [
     "Quote the sharing fractions (1/8, 1/4, 1/2, 1) and Z values 1, 2, 4 — these are the most frequently asked points.",
@@ -62,5 +65,32 @@
     "For any structural question, identify the lattice type first, then the values Z, r and packing efficiency follow."
   ],
   "visualType": "unit-cell",
-  "tabGroup": "States-Of-Matter-Learner-Notes"
+  "keyPoints": [
+    "• Introduction to unit crystal lattice",
+    "• Unit cell"
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Introduction to unit crystal lattice and unit cell\" with one example.",
+    "compare \"Introduction to unit crystal lattice\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Introduction to unit crystal lattice and unit cell\" and verify the answer is plausible."
+  ],
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Introduction to unit crystal lattice and unit cell\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: introduction to unit crystal lattice, unit cell (within States of Matter).",
+    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "summary": "Introduction to unit crystal lattice and unit cell (States of Matter, Chemistry, class-11-notes) covers Introduction to unit crystal lattice, unit cell. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
 }

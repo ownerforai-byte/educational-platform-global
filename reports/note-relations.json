@@ -1,0 +1,1087 @@
+{
+  "generatedBy": "scripts/merge-related-notes.ts",
+  "mode": "dry-run (no files written)",
+  "rule": "A. same topic identity (family+class family+subject+normalized unit+topic key) · B. identical content fingerprint · C. near-duplicate names only when content is a subset · D. stem prefix pairs (short name ⊂ long name in the same scope)",
+  "totals": {
+    "filesConsidered": 1113,
+    "relationGroups": 8,
+    "filesAbsorbed": 0,
+    "groupsRefused": 8,
+    "junkLinesDropped": 47,
+    "placeholderBefore": 0,
+    "placeholderAfter": 0,
+    "deletedFiles": 0,
+    "residualThinMergedNotes": 0
+  },
+  "fuzzyRelations": [
+    {
+      "a": "class-11/chemistry/unit-2-stoichiometry/concepts/02-law-of-definite-proportions.json",
+      "b": "class-11/chemistry/unit-2-stoichiometry/concepts/03-law-of-multiple-proportions.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11/chemistry/unit-2-stoichiometry/concepts/02-law-of-definite-proportions.json",
+      "b": "class-11/chemistry/unit-2-stoichiometry/concepts/04-law-of-reciprocal-proportions.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11/chemistry/unit-2-stoichiometry/concepts/03-law-of-multiple-proportions.json",
+      "b": "class-11/chemistry/unit-2-stoichiometry/concepts/02-law-of-definite-proportions.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11/chemistry/unit-2-stoichiometry/concepts/03-law-of-multiple-proportions.json",
+      "b": "class-11/chemistry/unit-2-stoichiometry/concepts/04-law-of-reciprocal-proportions.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11/chemistry/unit-2-stoichiometry/concepts/04-law-of-reciprocal-proportions.json",
+      "b": "class-11/chemistry/unit-2-stoichiometry/concepts/02-law-of-definite-proportions.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11/chemistry/unit-2-stoichiometry/concepts/04-law-of-reciprocal-proportions.json",
+      "b": "class-11/chemistry/unit-2-stoichiometry/concepts/03-law-of-multiple-proportions.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11/physics/unit-1-physical-quantities/concepts/03-uses-and-limitations-of-dimensional-analysis.json",
+      "b": "class-11-notes/physics/physical-quantities/concepts/02-dimensions-and-uses-of-dimensional-analysis.json",
+      "score": 0.71,
+      "merged": false
+    },
+    {
+      "a": "class-11/physics/unit-1-physical-quantities/concepts/04-precision-accuracy-significant-figures.json",
+      "b": "class-11-notes/physics/physical-quantities/concepts/01-precision-and-significant-figures.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11/physics/unit-1-physical-quantities/concepts/04-precision-accuracy-significant-figures.json",
+      "b": "class-11-notes/physics/physical-quantities/concepts/01-precision-significant-figures.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/biology/biota-and-environment/concepts/03-environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution-pesticides-and-their-effects.json",
+      "b": "class-11-notes/biology/biota-and-environment/concepts/04-environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution.json",
+      "score": 0.85,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/biology/biota-and-environment/concepts/04-environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution.json",
+      "b": "class-11-notes/biology/biota-and-environment/concepts/03-environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution-pesticides-and-their-effects.json",
+      "score": 0.85,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/biology/ecology/concepts/01-ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions-concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem.json",
+      "b": "class-11-notes/biology/ecology/concepts/02-concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/biology/ecology/concepts/02-concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem.json",
+      "b": "class-11-notes/biology/ecology/concepts/01-ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions-concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/biology/ecology/concepts/05-ecological-imbalances-climate-change.json",
+      "b": "class-11-notes/biology/ecology/concepts/06-ecological-imbalances-greenhouse-effects-and-climate-change-depletion-of-ozone-layer-acid-rain-a.json",
+      "score": 0.81,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/biology/ecology/concepts/06-ecological-imbalances-greenhouse-effects-and-climate-change-depletion-of-ozone-layer-acid-rain-a.json",
+      "b": "class-11-notes/biology/ecology/concepts/05-ecological-imbalances-climate-change.json",
+      "score": 0.81,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/biology/faunal-diversity/concepts/02-animalia-level-of-organization-body-plan-body-symmetry-body-cavity-and-segmentation-in-animals-diagnostic-features-and-classification-of-phyla-up-to-class.json",
+      "b": "class-11-notes/biology/faunal-diversity/concepts/04-animalia-level-of-organization-body-plan-body-symmetry-body-cavity-and-segmentation-in-animals.json",
+      "score": 0.63,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/biology/faunal-diversity/concepts/04-animalia-level-of-organization-body-plan-body-symmetry-body-cavity-and-segmentation-in-animals.json",
+      "b": "class-11-notes/biology/faunal-diversity/concepts/02-animalia-level-of-organization-body-plan-body-symmetry-body-cavity-and-segmentation-in-animals-diagnostic-features-and-classification-of-phyla-up-to-class.json",
+      "score": 0.63,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/biology/floral-diversity/concepts/05-pteridophytes-detailed.json",
+      "b": "class-11-notes/biology/floral-diversity/concepts/09-pteridophyta-general-introduction-and-characteristic-features-of-pteridophytes-morphological-str.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/biology/floral-diversity/concepts/06-gymnosperms-detailed.json",
+      "b": "class-11-notes/biology/floral-diversity/concepts/10-gymnosperm-general-introduction-and-characteristic-features-of-gymnosperms-morphology-and-reprod.json",
+      "score": 0.64,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/biology/floral-diversity/concepts/09-pteridophyta-general-introduction-and-characteristic-features-of-pteridophytes-morphological-str.json",
+      "b": "class-11-notes/biology/floral-diversity/concepts/05-pteridophytes-detailed.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/biology/floral-diversity/concepts/10-gymnosperm-general-introduction-and-characteristic-features-of-gymnosperms-morphology-and-reprod.json",
+      "b": "class-11-notes/biology/floral-diversity/concepts/06-gymnosperms-detailed.json",
+      "score": 0.64,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/biology/introductory-microbiology/concepts/01-monera-detailed.json",
+      "b": "class-11-notes/biology/introductory-microbiology/concepts/01-monera-general-introduction-structure-of-bacterial-cell-mode-of-nutrition-bacterial-growth-cyano.json",
+      "score": 0.63,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/biology/introductory-microbiology/concepts/01-monera-general-introduction-structure-of-bacterial-cell-mode-of-nutrition-bacterial-growth-cyano.json",
+      "b": "class-11-notes/biology/introductory-microbiology/concepts/01-monera-detailed.json",
+      "score": 0.63,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/aromatic-hydrocarbons/concepts/02-kekule-structure-of-benzene-resonance-and-isomerism-in-benzene.json",
+      "b": "class-11-notes/chemistry/aromatic-hydrocarbons/concepts/04-resonance-and-isomerism-in-benzene.json",
+      "score": 0.63,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/aromatic-hydrocarbons/concepts/04-resonance-and-isomerism-in-benzene.json",
+      "b": "class-11-notes/chemistry/aromatic-hydrocarbons/concepts/02-kekule-structure-of-benzene-resonance-and-isomerism-in-benzene.json",
+      "score": 0.63,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/atomic-structure/concepts/21-electron-and-cathode-rays.json",
+      "b": "class-11-notes/chemistry/atomic-structure/concepts/22-proton-and-anode-rays.json",
+      "score": 0.71,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/atomic-structure/concepts/22-proton-and-anode-rays.json",
+      "b": "class-11-notes/chemistry/atomic-structure/concepts/21-electron-and-cathode-rays.json",
+      "score": 0.71,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/basic-concept-of-organic-chemistry/concepts/05-preliminary-idea-of-cracking-and-reforming-quality-of-gasoline-octane-number-cetane-number-and-gasoline-additive.json",
+      "b": "class-11-notes/chemistry/basic-concept-of-organic-chemistry/concepts/07-preliminary-idea-of-cracking-and-reforming-quality-of-gasoline-octane-number-cetane-number-and-g.json",
+      "score": 0.85,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/basic-concept-of-organic-chemistry/concepts/07-preliminary-idea-of-cracking-and-reforming-quality-of-gasoline-octane-number-cetane-number-and-g.json",
+      "b": "class-11-notes/chemistry/basic-concept-of-organic-chemistry/concepts/05-preliminary-idea-of-cracking-and-reforming-quality-of-gasoline-octane-number-cetane-number-and-gasoline-additive.json",
+      "score": 0.85,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/chemical-bonding-and-shapes-of-molecules/concepts/03-covalent-bond-and-coordinate-covalent-bond-and-properties-of-covalent-compounds.json",
+      "b": "class-11-notes/chemistry/chemical-bonding-and-shapes-of-molecules/concepts/03-covalent-bond-and-coordinate-covalent-bond-properties-of-covalent-compounds.json",
+      "score": 1,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/chemical-bonding-and-shapes-of-molecules/concepts/03-covalent-bond-and-coordinate-covalent-bond-properties-of-covalent-compounds.json",
+      "b": "class-11-notes/chemistry/chemical-bonding-and-shapes-of-molecules/concepts/03-covalent-bond-and-coordinate-covalent-bond-and-properties-of-covalent-compounds.json",
+      "score": 1,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/chemical-equilibrium/concepts/02-law-mass-action.json",
+      "b": "class-11-notes/chemistry/chemical-equilibrium/concepts/02-law-of-mass-action.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/chemical-equilibrium/concepts/02-law-of-mass-action.json",
+      "b": "class-11-notes/chemistry/chemical-equilibrium/concepts/02-law-mass-action.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/chemistry-of-metals/concepts/03-alkaline-earth-metals.json",
+      "b": "class-11-notes/chemistry/chemistry-of-metals/concepts/07-alkaline-earth-metals-general-characteristics.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/chemistry-of-metals/concepts/04-alkali-metals-general-characteristics.json",
+      "b": "class-11-notes/chemistry/chemistry-of-metals/concepts/05-alkali-metals-general-characteristics-of-alkali-metals.json",
+      "score": 0.8,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/chemistry-of-metals/concepts/05-alkali-metals-general-characteristics-of-alkali-metals.json",
+      "b": "class-11-notes/chemistry/chemistry-of-metals/concepts/04-alkali-metals-general-characteristics.json",
+      "score": 0.8,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/chemistry-of-metals/concepts/05-sodium-extraction-from-down-s-process-properties-action-with-oxygen-water-acids-nonmetals-and-ammonia-and-uses.json",
+      "b": "class-11-notes/chemistry/chemistry-of-metals/concepts/06-sodium-extraction-from-down-s-process-properties-action-with-oxygen-water-acids-nonmetals-and-am.json",
+      "score": 0.82,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/chemistry-of-metals/concepts/06-sodium-compounds-detailed.json",
+      "b": "class-11-notes/chemistry/chemistry-of-metals/concepts/07-sodium-hydroxide-properties-precipitation-reaction-and-action-with-carbon-monoxide-and-uses.json",
+      "score": 0.69,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/chemistry-of-metals/concepts/06-sodium-compounds-detailed.json",
+      "b": "class-11-notes/chemistry/chemistry-of-metals/concepts/08-sodium-carbonate-properties-action-with-co2-so2-water-precipitation-reactions-and-uses.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/chemistry-of-metals/concepts/06-sodium-extraction-from-down-s-process-properties-action-with-oxygen-water-acids-nonmetals-and-am.json",
+      "b": "class-11-notes/chemistry/chemistry-of-metals/concepts/05-sodium-extraction-from-down-s-process-properties-action-with-oxygen-water-acids-nonmetals-and-ammonia-and-uses.json",
+      "score": 0.82,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/chemistry-of-metals/concepts/07-alkaline-earth-metals-general-characteristics.json",
+      "b": "class-11-notes/chemistry/chemistry-of-metals/concepts/03-alkaline-earth-metals.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/chemistry-of-metals/concepts/07-alkaline-earth-metals-general-characteristics.json",
+      "b": "class-11-notes/chemistry/chemistry-of-metals/concepts/09-alkaline-earth-metals-general-characteristics-of-alkaline-earth-metals.json",
+      "score": 0.83,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/chemistry-of-metals/concepts/07-sodium-hydroxide-properties-precipitation-reaction-and-action-with-carbon-monoxide-and-uses.json",
+      "b": "class-11-notes/chemistry/chemistry-of-metals/concepts/06-sodium-compounds-detailed.json",
+      "score": 0.69,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/chemistry-of-metals/concepts/08-sodium-carbonate-properties-action-with-co2-so2-water-precipitation-reactions-and-uses.json",
+      "b": "class-11-notes/chemistry/chemistry-of-metals/concepts/06-sodium-compounds-detailed.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/chemistry-of-metals/concepts/09-alkaline-earth-metals-general-characteristics-of-alkaline-earth-metals.json",
+      "b": "class-11-notes/chemistry/chemistry-of-metals/concepts/07-alkaline-earth-metals-general-characteristics.json",
+      "score": 0.83,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/chemistry-of-non-metals/concepts/02-allotropes-of-oxygen-oxides-applications-of-hydrogen-peroxide-medical-and-industrial-application-of-oxygen.json",
+      "b": "class-11-notes/chemistry/chemistry-of-non-metals/concepts/04-applications-of-hydrogen-peroxide-medical-and-industrial-application-of-oxygen.json",
+      "score": 0.82,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/chemistry-of-non-metals/concepts/04-applications-of-hydrogen-peroxide-medical-and-industrial-application-of-oxygen.json",
+      "b": "class-11-notes/chemistry/chemistry-of-non-metals/concepts/02-allotropes-of-oxygen-oxides-applications-of-hydrogen-peroxide-medical-and-industrial-application-of-oxygen.json",
+      "score": 0.82,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/foundation-and-fundamentals/concepts/01-general-introduction-and-importance-of-chemistry.json",
+      "b": "class-11-notes/chemistry/foundation-and-fundamentals/concepts/01-general-introduction-of-chemistry.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/foundation-and-fundamentals/concepts/01-general-introduction-of-chemistry.json",
+      "b": "class-11-notes/chemistry/foundation-and-fundamentals/concepts/01-general-introduction-and-importance-of-chemistry.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/foundation-and-fundamentals/concepts/02-basic-concepts-atoms-molecules-relative-masses-and-formulae.json",
+      "b": "class-11-notes/chemistry/foundation-and-fundamentals/concepts/03-basic-concepts-of-chemistry-atoms-molecules-relative-masses-of-atoms-and-molecules-atomic-mass-u.json",
+      "score": 0.61,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/foundation-and-fundamentals/concepts/03-basic-concepts-of-chemistry-atoms-molecules-relative-masses-of-atoms-and-molecules-atomic-mass-u.json",
+      "b": "class-11-notes/chemistry/foundation-and-fundamentals/concepts/02-basic-concepts-atoms-molecules-relative-masses-and-formulae.json",
+      "score": 0.61,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/fundamental-principles-of-organic-chemistry/concepts/02-qualitative-analysis-of-organic-compounds-detection-of-n-s-and-halogens-by-lassaigne-s-test.json",
+      "b": "class-11-notes/chemistry/fundamental-principles-of-organic-chemistry/concepts/02-qualitative-analysis-of-organic-compounds-detection-of-n-s-and-halogens-by-lassigne-s-test.json",
+      "score": 0.86,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/fundamental-principles-of-organic-chemistry/concepts/02-qualitative-analysis-of-organic-compounds-detection-of-n-s-and-halogens-by-lassigne-s-test.json",
+      "b": "class-11-notes/chemistry/fundamental-principles-of-organic-chemistry/concepts/02-qualitative-analysis-of-organic-compounds-detection-of-n-s-and-halogens-by-lassaigne-s-test.json",
+      "score": 0.86,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/fundamental-principles-of-organic-chemistry/concepts/04-concept-of-geometrical-isomerism-and-optical-isomerism-d-and-l-form.json",
+      "b": "class-11-notes/chemistry/fundamental-principles-of-organic-chemistry/concepts/05-concept-of-geometrical-isomerism-cis-and-trans-and-optical-isomerism-d-and-l-form.json",
+      "score": 0.82,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/fundamental-principles-of-organic-chemistry/concepts/05-concept-of-geometrical-isomerism-cis-and-trans-and-optical-isomerism-d-and-l-form.json",
+      "b": "class-11-notes/chemistry/fundamental-principles-of-organic-chemistry/concepts/04-concept-of-geometrical-isomerism-and-optical-isomerism-d-and-l-form.json",
+      "score": 0.82,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/fundamental-principles-of-organic-chemistry/concepts/06-inductive-effect-plus-i-and-minus-i-effect.json",
+      "b": "class-11-notes/chemistry/fundamental-principles-of-organic-chemistry/concepts/08-inductive-effect-i-and-i-effect.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/fundamental-principles-of-organic-chemistry/concepts/07-resonance-effect-plus-r-and-minus-r-effect.json",
+      "b": "class-11-notes/chemistry/fundamental-principles-of-organic-chemistry/concepts/09-resonance-effect-r-and-r-effect.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/fundamental-principles-of-organic-chemistry/concepts/08-inductive-effect-i-and-i-effect.json",
+      "b": "class-11-notes/chemistry/fundamental-principles-of-organic-chemistry/concepts/06-inductive-effect-plus-i-and-minus-i-effect.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/fundamental-principles-of-organic-chemistry/concepts/09-resonance-effect-r-and-r-effect.json",
+      "b": "class-11-notes/chemistry/fundamental-principles-of-organic-chemistry/concepts/07-resonance-effect-plus-r-and-minus-r-effect.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/hydrocarbons/concepts/04-hydrocarbons-unsaturation-detailed.json",
+      "b": "class-11-notes/chemistry/hydrocarbons/concepts/08-comparative-studies-of-physical-properties-of-alkane-alkene-and-alkyne.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/hydrocarbons/concepts/08-comparative-studies-of-physical-properties-of-alkane-alkene-and-alkyne.json",
+      "b": "class-11-notes/chemistry/hydrocarbons/concepts/04-hydrocarbons-unsaturation-detailed.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/oxidation-and-reduction/concepts/04-electrolysis-qualitative-and-quantitative-aspect.json",
+      "b": "class-11-notes/chemistry/oxidation-and-reduction/concepts/04-electrolysis-qualitative-aspect.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/chemistry/oxidation-and-reduction/concepts/04-electrolysis-qualitative-aspect.json",
+      "b": "class-11-notes/chemistry/oxidation-and-reduction/concepts/04-electrolysis-qualitative-and-quantitative-aspect.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/english/writing-and-composition/concepts/04-informal-letter-writing.json",
+      "b": "class-11-notes/english/writing-and-composition/concepts/07-letter-writing.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/english/writing-and-composition/concepts/07-letter-writing.json",
+      "b": "class-11-notes/english/writing-and-composition/concepts/04-informal-letter-writing.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/mathematics/algebra/concepts/01-function-domain-and-range-of-a-function-inverse-function.json",
+      "b": "class-11-notes/mathematics/algebra/concepts/03-function-domain-and-range-of-a-function-inverse-function-composite-function-algebraic-linear-qua.json",
+      "score": 0.64,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/mathematics/algebra/concepts/02-sequence-and-series-arithmetic-geometric-harmonic-sequences.json",
+      "b": "class-11-notes/mathematics/algebra/concepts/05-sequence-and-series-arithmetic-geometric-harmonic-sequences-and-series-and-their-properties-a-m-.json",
+      "score": 0.64,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/mathematics/algebra/concepts/03-function-domain-and-range-of-a-function-inverse-function-composite-function-algebraic-linear-qua.json",
+      "b": "class-11-notes/mathematics/algebra/concepts/01-function-domain-and-range-of-a-function-inverse-function.json",
+      "score": 0.64,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/mathematics/algebra/concepts/05-sequence-and-series-arithmetic-geometric-harmonic-sequences-and-series-and-their-properties-a-m-.json",
+      "b": "class-11-notes/mathematics/algebra/concepts/02-sequence-and-series-arithmetic-geometric-harmonic-sequences.json",
+      "score": 0.64,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/mathematics/analytic-geometry/concepts/01-straight-line-length-of-perpendicular-from-a-given-point-to-a-given-line-bisectors-of-the-angles.json",
+      "b": "class-11-notes/mathematics/analytic-geometry/concepts/02-angle-bisector-worked-example.json",
+      "score": 0.81,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/mathematics/analytic-geometry/concepts/02-angle-bisector-worked-example.json",
+      "b": "class-11-notes/mathematics/analytic-geometry/concepts/01-straight-line-length-of-perpendicular-from-a-given-point-to-a-given-line-bisectors-of-the-angles.json",
+      "score": 0.81,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/mathematics/analytic-geometry/concepts/02-pair-of-straight-lines-general-equation-of-second-degree-in-x-and-y-condition-for-representing-a.json",
+      "b": "class-11-notes/mathematics/analytic-geometry/concepts/03-angle-bisector-tan-theta-verification.json",
+      "score": 0.73,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/mathematics/analytic-geometry/concepts/03-angle-bisector-tan-theta-verification.json",
+      "b": "class-11-notes/mathematics/analytic-geometry/concepts/02-pair-of-straight-lines-general-equation-of-second-degree-in-x-and-y-condition-for-representing-a.json",
+      "score": 0.73,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/mathematics/calculus/concepts/03-derivatives-derivative-of-a-function-derivatives-of-algebraic-trigonometric-inverse-trigonometri.json",
+      "b": "class-11-notes/mathematics/calculus/concepts/04-derivatives-derivative-of-a-function-derivatives-of-algebraic-and-trigonometric-functions.json",
+      "score": 0.64,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/mathematics/calculus/concepts/04-derivatives-derivative-of-a-function-derivatives-of-algebraic-and-trigonometric-functions.json",
+      "b": "class-11-notes/mathematics/calculus/concepts/03-derivatives-derivative-of-a-function-derivatives-of-algebraic-trigonometric-inverse-trigonometri.json",
+      "score": 0.64,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/mathematics/calculus/concepts/05-the-definite-integral-as-an-area-under-a-curve.json",
+      "b": "class-11-notes/mathematics/calculus/concepts/07-the-definite-integral-the-definite-integral-as-an-area-under-the-given-curve-area-between-two-cu.json",
+      "score": 0.62,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/mathematics/calculus/concepts/07-the-definite-integral-the-definite-integral-as-an-area-under-the-given-curve-area-between-two-cu.json",
+      "b": "class-11-notes/mathematics/calculus/concepts/05-the-definite-integral-as-an-area-under-a-curve.json",
+      "score": 0.62,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/mathematics/vectors/concepts/01-collinear-and-non-collinear-vectors-coplanar-and-non-coplanar-vectors.json",
+      "b": "class-11-notes/mathematics/vectors/concepts/01-collinear-non-collinear-vectors.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/mathematics/vectors/concepts/01-collinear-non-collinear-vectors.json",
+      "b": "class-11-notes/mathematics/vectors/concepts/01-collinear-and-non-collinear-vectors-coplanar-and-non-coplanar-vectors.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/mathematics/vectors/concepts/02-dot-product-and-its-applications.json",
+      "b": "class-11-notes/mathematics/vectors/concepts/03-cross-product-and-its-applications.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/mathematics/vectors/concepts/02-dot-product-of-two-vectors.json",
+      "b": "class-11-notes/mathematics/vectors/concepts/03-cross-product-of-two-vectors.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/mathematics/vectors/concepts/03-cross-product-and-its-applications.json",
+      "b": "class-11-notes/mathematics/vectors/concepts/02-dot-product-and-its-applications.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/mathematics/vectors/concepts/03-cross-product-of-two-vectors.json",
+      "b": "class-11-notes/mathematics/vectors/concepts/02-dot-product-of-two-vectors.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/capacitor/concepts/03-energy-charged-capacitor.json",
+      "b": "class-11-notes/physics/capacitor/concepts/04-energy-of-charged-capacitor.json",
+      "score": 0.8,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/capacitor/concepts/04-energy-of-charged-capacitor.json",
+      "b": "class-11-notes/physics/capacitor/concepts/03-energy-charged-capacitor.json",
+      "score": 0.8,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/circular-motion/concepts/02-centripetal-acceleration-force.json",
+      "b": "class-11-notes/physics/circular-motion/concepts/03-centripetal-acceleration-and-centripetal-force.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/circular-motion/concepts/03-centripetal-acceleration-and-centripetal-force.json",
+      "b": "class-11-notes/physics/circular-motion/concepts/02-centripetal-acceleration-force.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/circular-motion/concepts/05-banking-applications.json",
+      "b": "class-11-notes/physics/circular-motion/concepts/06-applications-of-banking.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/circular-motion/concepts/06-applications-of-banking.json",
+      "b": "class-11-notes/physics/circular-motion/concepts/05-banking-applications.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/dc-circuits/concepts/03-current-voltage-relations-and-ohmic-and-non-ohmic-resistance.json",
+      "b": "class-11-notes/physics/dc-circuits/concepts/03-current-voltage-relations-ohmic-and-non-ohmic-resistance.json",
+      "score": 1,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/dc-circuits/concepts/03-current-voltage-relations-ohmic-and-non-ohmic-resistance.json",
+      "b": "class-11-notes/physics/dc-circuits/concepts/03-current-voltage-relations-and-ohmic-and-non-ohmic-resistance.json",
+      "score": 1,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/dynamics/concepts/02-conservation-linear-momentum.json",
+      "b": "class-11-notes/physics/dynamics/concepts/02-conservation-of-linear-momentum.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/dynamics/concepts/02-conservation-of-linear-momentum.json",
+      "b": "class-11-notes/physics/dynamics/concepts/02-conservation-linear-momentum.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/dynamics/concepts/03-application-of-newton-s-laws.json",
+      "b": "class-11-notes/physics/dynamics/concepts/03-newton-laws-application.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/dynamics/concepts/03-newton-laws-application.json",
+      "b": "class-11-notes/physics/dynamics/concepts/03-application-of-newton-s-laws.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/elasticity/concepts/01-hooke-law-force-constant.json",
+      "b": "class-11-notes/physics/elasticity/concepts/01-hooke-s-law-force-constant.json",
+      "score": 0.8,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/elasticity/concepts/01-hooke-s-law-force-constant.json",
+      "b": "class-11-notes/physics/elasticity/concepts/01-hooke-law-force-constant.json",
+      "score": 0.8,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/elasticity/concepts/04-poisson-ratio.json",
+      "b": "class-11-notes/physics/elasticity/concepts/04-poisson-s-ratio.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/elasticity/concepts/04-poisson-s-ratio.json",
+      "b": "class-11-notes/physics/elasticity/concepts/04-poisson-ratio.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/gravitation/concepts/01-newton-law-gravitation.json",
+      "b": "class-11-notes/physics/gravitation/concepts/01-newton-s-law-of-gravitation.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/gravitation/concepts/01-newton-s-law-of-gravitation.json",
+      "b": "class-11-notes/physics/gravitation/concepts/01-newton-law-gravitation.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/gravitation/concepts/03-gravitational-potential-energy.json",
+      "b": "class-11-notes/physics/gravitation/concepts/03-gravitational-potential-gravitational-potential-energy.json",
+      "score": 1,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/gravitation/concepts/03-gravitational-potential-gravitational-potential-energy.json",
+      "b": "class-11-notes/physics/gravitation/concepts/03-gravitational-potential-energy.json",
+      "score": 1,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/nuclear-physics/concepts/04-creation-and-annihilation-nuclear-fission-and-fusion.json",
+      "b": "class-11-notes/physics/nuclear-physics/concepts/07-nuclear-fission-and-fusion.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/nuclear-physics/concepts/07-nuclear-fission-and-fusion.json",
+      "b": "class-11-notes/physics/nuclear-physics/concepts/04-creation-and-annihilation-nuclear-fission-and-fusion.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/physical-quantities/concepts/01-precision-and-significant-figures.json",
+      "b": "class-11/physics/unit-1-physical-quantities/concepts/04-precision-accuracy-significant-figures.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/physical-quantities/concepts/01-precision-and-significant-figures.json",
+      "b": "class-11-notes/physics/physical-quantities/concepts/01-precision-significant-figures.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/physical-quantities/concepts/01-precision-significant-figures.json",
+      "b": "class-11/physics/unit-1-physical-quantities/concepts/04-precision-accuracy-significant-figures.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/physical-quantities/concepts/01-precision-significant-figures.json",
+      "b": "class-11-notes/physics/physical-quantities/concepts/01-precision-and-significant-figures.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/physical-quantities/concepts/02-dimensions-and-uses-of-dimensional-analysis.json",
+      "b": "class-11/physics/unit-1-physical-quantities/concepts/03-uses-and-limitations-of-dimensional-analysis.json",
+      "score": 0.71,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/quantity-of-heat/concepts/01-newton-law-cooling.json",
+      "b": "class-11-notes/physics/quantity-of-heat/concepts/13-newtons-law-limitations.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/quantity-of-heat/concepts/02-specific-heat-capacity.json",
+      "b": "class-11-notes/physics/quantity-of-heat/concepts/04-heat-capacity-thermal-capacity.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/quantity-of-heat/concepts/04-heat-capacity-thermal-capacity.json",
+      "b": "class-11-notes/physics/quantity-of-heat/concepts/02-specific-heat-capacity.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/quantity-of-heat/concepts/04-specific-latent-heat-of-fusion-and-vaporization.json",
+      "b": "class-11-notes/physics/quantity-of-heat/concepts/05-measurement-of-specific-latent-heat-of-fusion-and-vaporization.json",
+      "score": 0.88,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/quantity-of-heat/concepts/05-measurement-of-specific-latent-heat-of-fusion-and-vaporization.json",
+      "b": "class-11-notes/physics/quantity-of-heat/concepts/04-specific-latent-heat-of-fusion-and-vaporization.json",
+      "score": 0.88,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/quantity-of-heat/concepts/13-newtons-law-limitations.json",
+      "b": "class-11-notes/physics/quantity-of-heat/concepts/01-newton-law-cooling.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/rate-of-heat-flow/concepts/03-radiation-black-body.json",
+      "b": "class-11-notes/physics/rate-of-heat-flow/concepts/04-black-body-radiation.json",
+      "score": 1,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/rate-of-heat-flow/concepts/04-black-body-radiation.json",
+      "b": "class-11-notes/physics/rate-of-heat-flow/concepts/03-radiation-black-body.json",
+      "score": 1,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/refraction-at-plane-surfaces/concepts/01-laws-of-refraction-and-refractive-index.json",
+      "b": "class-11-notes/physics/refraction-at-plane-surfaces/concepts/01-laws-of-refraction-refractive-index.json",
+      "score": 0.83,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/refraction-at-plane-surfaces/concepts/01-laws-of-refraction-and-refractive-index.json",
+      "b": "class-11-notes/physics/refraction-at-plane-surfaces/concepts/01-laws-refraction-refractive-index.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/refraction-at-plane-surfaces/concepts/01-laws-of-refraction-refractive-index.json",
+      "b": "class-11-notes/physics/refraction-at-plane-surfaces/concepts/01-laws-of-refraction-and-refractive-index.json",
+      "score": 0.83,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/refraction-at-plane-surfaces/concepts/01-laws-of-refraction-refractive-index.json",
+      "b": "class-11-notes/physics/refraction-at-plane-surfaces/concepts/01-laws-refraction-refractive-index.json",
+      "score": 0.8,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/refraction-at-plane-surfaces/concepts/01-laws-refraction-refractive-index.json",
+      "b": "class-11-notes/physics/refraction-at-plane-surfaces/concepts/01-laws-of-refraction-and-refractive-index.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/refraction-at-plane-surfaces/concepts/01-laws-refraction-refractive-index.json",
+      "b": "class-11-notes/physics/refraction-at-plane-surfaces/concepts/01-laws-of-refraction-refractive-index.json",
+      "score": 0.8,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/refraction-through-prisms/concepts/02-prism-deviation-formula.json",
+      "b": "class-11-notes/physics/refraction-through-prisms/concepts/02-relation-between-prism-angle-minimum-deviation-and-refractive-index.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/refraction-through-prisms/concepts/02-relation-between-prism-angle-minimum-deviation-and-refractive-index.json",
+      "b": "class-11-notes/physics/refraction-through-prisms/concepts/02-prism-deviation-formula.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/refraction-through-prisms/concepts/03-deviation-in-a-small-angle-prism.json",
+      "b": "class-11-notes/physics/refraction-through-prisms/concepts/03-deviation-in-small-angle-prism.json",
+      "score": 0.83,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/refraction-through-prisms/concepts/03-deviation-in-small-angle-prism.json",
+      "b": "class-11-notes/physics/refraction-through-prisms/concepts/03-deviation-in-a-small-angle-prism.json",
+      "score": 0.83,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/thermal-expansion/concepts/02-cubical-and-superficial-expansion.json",
+      "b": "class-11-notes/physics/thermal-expansion/concepts/02-cubical-superficial-expansion.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/thermal-expansion/concepts/02-cubical-superficial-expansion.json",
+      "b": "class-11-notes/physics/thermal-expansion/concepts/02-cubical-and-superficial-expansion.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/thermal-expansion/concepts/04-dulong-and-petit-method-for-liquid-expansivity.json",
+      "b": "class-11-notes/physics/thermal-expansion/concepts/04-dulong-and-petit-method-of-determining-expansivity-of-liquid.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/thermal-expansion/concepts/04-dulong-and-petit-method-of-determining-expansivity-of-liquid.json",
+      "b": "class-11-notes/physics/thermal-expansion/concepts/04-dulong-and-petit-method-for-liquid-expansivity.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/vectors/concepts/02-addition-of-vectors-same-and-opposite-directions.json",
+      "b": "class-11-notes/physics/vectors/concepts/02-resolution-unit-vectors.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/vectors/concepts/06-resolution-of-a-vector.json",
+      "b": "class-11-notes/physics/vectors/concepts/02-resolution-unit-vectors.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/vectors/concepts/07-resolution-of-vectors-finding-components.json",
+      "b": "class-11-notes/physics/vectors/concepts/02-resolution-unit-vectors.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/vectors/concepts/08-types-of-vectors.json",
+      "b": "class-11-notes/physics/vectors/concepts/02-resolution-unit-vectors.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/vectors/concepts/11-multiplication-of-vectors-vector-cross-product.json",
+      "b": "class-11-notes/physics/vectors/concepts/02-resolution-unit-vectors.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/vectors/concepts/02-resolution-unit-vectors.json",
+      "b": "class-11-notes/physics/vectors/concepts/02-addition-of-vectors-same-and-opposite-directions.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/vectors/concepts/02-resolution-unit-vectors.json",
+      "b": "class-11-notes/physics/vectors/concepts/06-resolution-of-a-vector.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/vectors/concepts/02-resolution-unit-vectors.json",
+      "b": "class-11-notes/physics/vectors/concepts/07-resolution-of-vectors-finding-components.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/vectors/concepts/02-resolution-unit-vectors.json",
+      "b": "class-11-notes/physics/vectors/concepts/08-types-of-vectors.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/vectors/concepts/02-resolution-unit-vectors.json",
+      "b": "class-11-notes/physics/vectors/concepts/11-multiplication-of-vectors-vector-cross-product.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/vectors/concepts/03-scalar-vector-products.json",
+      "b": "class-11-notes/physics/vectors/concepts/10-multiplication-of-vectors-scalar-dot-product.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/vectors/concepts/10-multiplication-of-vectors-scalar-dot-product.json",
+      "b": "class-11-notes/physics/vectors/concepts/03-scalar-vector-products.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/work-energy-and-power/concepts/01-work-done-by-a-constant-force-and-a-variable-force.json",
+      "b": "class-11-notes/physics/work-energy-and-power/concepts/01-work-done-by-constant-and-variable-force.json",
+      "score": 0.88,
+      "merged": false
+    },
+    {
+      "a": "class-11-notes/physics/work-energy-and-power/concepts/01-work-done-by-constant-and-variable-force.json",
+      "b": "class-11-notes/physics/work-energy-and-power/concepts/01-work-done-by-a-constant-force-and-a-variable-force.json",
+      "score": 0.88,
+      "merged": false
+    },
+    {
+      "a": "class-12-notes/biology/environmental-issues/concepts/01-air-pollution-causes-effects-and-control.json",
+      "b": "class-12-notes/biology/environmental-issues/concepts/02-water-pollution-causes-effects-and-control.json",
+      "score": 0.71,
+      "merged": false
+    },
+    {
+      "a": "class-12-notes/biology/environmental-issues/concepts/02-water-pollution-causes-effects-and-control.json",
+      "b": "class-12-notes/biology/environmental-issues/concepts/01-air-pollution-causes-effects-and-control.json",
+      "score": 0.71,
+      "merged": false
+    },
+    {
+      "a": "class-12-notes/biology/environmental-issues/concepts/03-solid-waste-management.json",
+      "b": "class-12-notes/biology/environmental-issues-12/concepts/02-solid-waste.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-12-notes/biology/environmental-issues-12/concepts/02-solid-waste.json",
+      "b": "class-12-notes/biology/environmental-issues/concepts/03-solid-waste-management.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-12-notes/mathematics/differential-equations/concepts/01-formation-differential-equations.json",
+      "b": "class-12-notes/mathematics/differential-equations/concepts/01-formation-of-differential-equations.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-12-notes/mathematics/differential-equations/concepts/01-formation-of-differential-equations.json",
+      "b": "class-12-notes/mathematics/differential-equations/concepts/01-formation-differential-equations.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-12-notes/mathematics/integration/concepts/01-integration-as-inverse-of-differentiation.json",
+      "b": "class-12-notes/mathematics/integration/concepts/01-integration-inverse-differentiation.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-12-notes/mathematics/integration/concepts/01-integration-inverse-differentiation.json",
+      "b": "class-12-notes/mathematics/integration/concepts/01-integration-as-inverse-of-differentiation.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-12-notes/mathematics/probability/concepts/06-binomial-distribution-definition-mean-variance.json",
+      "b": "class-12-notes/mathematics/probability/concepts/07-poisson-distribution-definition-mean-variance.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-12-notes/mathematics/probability/concepts/07-poisson-distribution-definition-mean-variance.json",
+      "b": "class-12-notes/mathematics/probability/concepts/06-binomial-distribution-definition-mean-variance.json",
+      "score": 0.67,
+      "merged": false
+    },
+    {
+      "a": "class-12-notes/physics/alternating-current/concepts/01-ac-voltage-applied-to-resistor-inductor-and-capacitor.json",
+      "b": "class-12-notes/physics/alternating-current/concepts/01-ac-voltage-resistor-inductor-capacitor.json",
+      "score": 0.63,
+      "merged": false
+    },
+    {
+      "a": "class-12-notes/physics/alternating-current/concepts/01-ac-voltage-resistor-inductor-capacitor.json",
+      "b": "class-12-notes/physics/alternating-current/concepts/01-ac-voltage-applied-to-resistor-inductor-and-capacitor.json",
+      "score": 0.63,
+      "merged": false
+    },
+    {
+      "a": "class-12-notes/physics/current-electricity/concepts/05-wheatstone-meter-bridge.json",
+      "b": "class-12-notes/physics/current-electricity/concepts/07-wheatstone-bridge-and-meter-bridge.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-12-notes/physics/current-electricity/concepts/07-wheatstone-bridge-and-meter-bridge.json",
+      "b": "class-12-notes/physics/current-electricity/concepts/05-wheatstone-meter-bridge.json",
+      "score": 0.75,
+      "merged": false
+    },
+    {
+      "a": "class-12-notes/physics/electromagnetic-induction/concepts/03-self-induction-and-self-inductance.json",
+      "b": "class-12-notes/physics/electromagnetic-induction/concepts/04-mutual-induction-and-mutual-inductance.json",
+      "score": 0.6,
+      "merged": false
+    },
+    {
+      "a": "class-12-notes/physics/electromagnetic-induction/concepts/04-mutual-induction-and-mutual-inductance.json",
+      "b": "class-12-notes/physics/electromagnetic-induction/concepts/03-self-induction-and-self-inductance.json",
+      "score": 0.6,
+      "merged": false
+    }
+  ],
+  "residualThin": [],
+  "groups": [
+    {
+      "key": "concepts|class-11|chemistry|stoichiometry|law-of-conservation-of-mass",
+      "canonical": "class-11-notes/chemistry/stoichiometry/concepts/01-law-of-conservation-of-mass.json",
+      "absorbed": [],
+      "mergedNotes": 0,
+      "junkDropped": 0,
+      "slugsDropped": [],
+      "status": "refused",
+      "reason": "schema: notes Array must contain at most 80 element(s)"
+    },
+    {
+      "key": "concepts|class-11|chemistry|atomic-structure|rutherford-alpha-particle-scattering",
+      "canonical": "class-11-notes/chemistry/atomic-structure/concepts/01-rutherford-alpha-particle-scattering.json",
+      "absorbed": [],
+      "mergedNotes": 0,
+      "junkDropped": 0,
+      "slugsDropped": [],
+      "status": "refused",
+      "reason": "schema: notes Array must contain at most 80 element(s)"
+    },
+    {
+      "key": "concepts|class-11|physics|quantity-of-heat|unknown-specific-heat-via-cooling-rates",
+      "canonical": "class-11-notes/physics/quantity-of-heat/concepts/02-measurement-of-specific-heat-capacity-of-solids-and-liquids.json",
+      "absorbed": [],
+      "mergedNotes": 0,
+      "junkDropped": 0,
+      "slugsDropped": [],
+      "status": "refused",
+      "reason": "variant class-11-notes/physics/quantity-of-heat/concepts/11-unknown-specific-heat-via-cooling-rates.json tabGroup→\"specific-heat-capacity\" pairs with another topic's original in its unit"
+    },
+    {
+      "key": "concepts|class-11|physics|vectors|addition-of-vectors-same-and-opposite-directions",
+      "canonical": "class-11-notes/physics/vectors/concepts/02-addition-of-vectors-same-and-opposite-directions.json",
+      "absorbed": [],
+      "mergedNotes": 0,
+      "junkDropped": 0,
+      "slugsDropped": [],
+      "status": "refused",
+      "reason": "schema: notes Array must contain at most 80 element(s)"
+    },
+    {
+      "key": "concepts|class-11|physics|dynamics|moment-torque-and-equilibrium",
+      "canonical": "class-11-notes/physics/dynamics/concepts/04-moment-torque-and-equilibrium.json",
+      "absorbed": [],
+      "mergedNotes": 0,
+      "junkDropped": 0,
+      "slugsDropped": [],
+      "status": "refused",
+      "reason": "variant class-11-notes/physics/dynamics/concepts/04-moment-torque-and-equilibrium.json tabGroup→\"torque-equilibrium\" pairs with another topic's original in its unit"
+    },
+    {
+      "key": "examples|class-11|biology|faunal-diversity|paramecium-caudatum-plasmodium-vivax-habits-and-habitat-structure-reproduction-life-cycle",
+      "canonical": "class-11e/biology/faunal-diversity/examples/01-plasmodium-life-cycle-practice.json",
+      "absorbed": [
+        "class-11e/biology/unit-8-faunal-diversity/examples/01-plasmodium-life-cycle-practice.json"
+      ],
+      "mergedNotes": 6,
+      "junkDropped": 0,
+      "slugsDropped": [],
+      "status": "refused",
+      "before": "2 files, 12 notes",
+      "after": "1 file, 6 notes",
+      "reason": "would worsen the empty-scope invariants"
+    },
+    {
+      "key": "concepts|class-12|english|writing-skills|article-writing",
+      "canonical": "class-12-notes/english/writing-skills/concepts/05-article-writing.json",
+      "absorbed": [
+        "class-12/english/writing-skills/concepts/01-article-writing.json"
+      ],
+      "mergedNotes": 5,
+      "junkDropped": 23,
+      "slugsDropped": [],
+      "status": "refused",
+      "before": "2 files, 7 notes",
+      "after": "1 file, 5 notes",
+      "reason": "would worsen the empty-scope invariants"
+    },
+    {
+      "key": "concepts|class-12|chemistry|alcohols-phenols-ethers|alcohols-classification-preparation-physical-and-chemical-properties",
+      "canonical": "class-12-notes/chemistry/alcohols-phenols-ethers-12/concepts/01-alcohols.json",
+      "absorbed": [
+        "class-12-notes/chemistry/alcohols-phenols-ethers/concepts/01-alcohols-classification-preparation-physical-and-chemical-properties.json"
+      ],
+      "mergedNotes": 6,
+      "junkDropped": 24,
+      "slugsDropped": [
+        "alcohols-classification-preparation-physical-and-chemical-properties"
+      ],
+      "status": "refused",
+      "before": "2 files, 12 notes",
+      "after": "1 file, 6 notes",
+      "reason": "would worsen the empty-scope invariants"
+    }
+  ]
+}

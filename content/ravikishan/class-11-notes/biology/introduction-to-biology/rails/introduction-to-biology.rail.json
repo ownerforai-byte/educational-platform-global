@@ -1,0 +1,61 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "introduction-to-biology",
+  "unitTitle": "Introduction to Biology",
+  "unitHours": 5,
+  "syllabusTopics": [
+    "Introduction to Biology: scope and fields of biology",
+    "Relation of biology with other sciences"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05 from this unit's concepts/01-introduction-to-biology-scope-and-fields-of-biology.json and 02-relation-of-biology-with-other-sciences.json (notes, keyPoints, formulas, specialNotes, examShortTricks, practice) — board row quotes that practice bank, no fabricated paper citation.",
+  "card": {
+    "tag": "Introduction to Biology",
+    "title": "The scope of biology — nine levels and seven signs of life",
+    "href": "/class-11-notes/biology/chapters/introduction-to-biology",
+    "icon": "Microscope",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Biology (Greek bios = life, logos = study) is the scientific study of living organisms. One ladder of organisation runs from molecules to the biosphere, and each rung has its own branch — botany, zoology, microbiology, genetics, ecology, physiology, anatomy, taxonomy and biotechnology."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Biology = Bios (life) + Logos (study)  ·  Scope: molecule → cell → tissue → organ → organism → population → community → ecosystem → biosphere  ·  Method: Observation → Question → Hypothesis → Experiment → Data → Conclusion"
+    },
+    {
+      "label": "Conditions",
+      "text": "A claim enters biology only when it is testable and reproducible: a controlled experiment, one measurable variable and repeatable data. The label 'living' needs all seven signs — cellular organisation, metabolism, homeostasis, growth, reproduction, response to stimuli and adaptation/evolution — and classification needs characters actually observed, not assumed."
+    },
+    {
+      "label": "Special cases",
+      "text": "Viruses sit on the border of life — nucleic acid plus capsid only, they replicate inside a host but never metabolise on their own; prions are infectious proteins with no nucleic acid at all; a dormant seed and an encysted protozoan show no measurable metabolism yet stay alive; fire and crystals grow but are never called living."
+    },
+    {
+      "label": "Solved",
+      "text": "Scope arithmetic: ~8.7 million species are estimated and only ~15 % described, so named species ≈ 0.15 × 8.7 million ≈ 1.3 million. Branch matching: Oryza sativa → botany/taxonomy, Escherichia coli → microbiology, Rana tigrina → zoology, Mendel's peas → genetics."
+    },
+    {
+      "label": "Limitation",
+      "text": "Biology is largely descriptive and statistical, so almost every rule has exceptions (unicellular versus colonial 'organism', parasites with reduced organelles). Unlike physics it rarely predicts from first principles — it explains after observing, and a single counterexample turns a rule into 'usually true'."
+    },
+    {
+      "label": "Derivation",
+      "text": "The scientific method is the derivation of the whole subject: observation 'a plant grows toward light' → question 'why?' → hypothesis 'light direction controls growth' → controlled experiment (light one side, dark the other) → data → conclusion → repeated confirmation builds a theory — exactly how the cell theory and the theory of evolution were established."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Three mnemonics settle the unit: scope = M-C-T-O-O-P-C-E-B (nine levels); life signs = C-M-H-G-R-R-E (cellular, metabolism, homeostasis, growth, reproduction, response, evolution); method = O-H-E-C (Observe, Hypothesise, Experiment, Conclude). Write botany-versus-zoology as four paired points, never prose."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style (unit practice bank): define biology and state its scope (nine levels); list any eight branches with one focus each; state the seven characteristics of life; explain the scientific method in six steps; differentiate botany from zoology (four points); show how biology links with chemistry, physics and mathematics."
+    }
+  ]
+}

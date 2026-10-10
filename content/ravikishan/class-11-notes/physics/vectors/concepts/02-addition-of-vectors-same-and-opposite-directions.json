@@ -3,51 +3,175 @@
   "unitSlug": "vectors",
   "topicSlug": "resolution-of-vectors-unit-vectors",
   "topicTitle": "Resolution of vectors; unit vectors",
-  "relevance": 90,
+  "relevance": 88,
   "notes": [
-    "**Definition:** The cross product (vector product) of two vectors $\\vec{A}$ and $\\vec{B}$ is a vector $\\vec{C} = \\vec{A} \\times \\vec{B}$ whose magnitude is $AB\\sin\\theta$ and whose direction is perpendicular to the plane containing $\\vec{A}$ and $\\vec{B}$.",
-    "**Magnitude:** $|\\vec{A} \\times \\vec{B}| = AB\\sin\\theta$, where $\\theta$ is the angle between the two vectors ($0° \\leq \\theta \\leq 180°$).",
-    "**Direction — right-hand rule:** Point the fingers of your right hand in the direction of $\\vec{A}$, then curl them toward $\\vec{B}$. Your thumb points in the direction of $\\vec{A} \\times \\vec{B}$. The result is a vector perpendicular to both $\\vec{A}$ and $\\vec{B}$.",
-    "**Unit vector form:** $\\vec{A} \\times \\vec{B} = AB\\sin\\theta \\, \\hat{n}$, where $\\hat{n}$ is the unit vector perpendicular to the plane of $\\vec{A}$ and $\\vec{B}$, given by the right-hand rule.",
-    "**Case 1 — Parallel vectors ($\\theta = 0°$ or $180°$):** $\\vec{A} \\times \\vec{B} = 0$. Parallel (or anti-parallel) vectors have zero cross product. This is the condition for parallelism: $\\vec{A} \\times \\vec{B} = 0 \\iff \\vec{A} \\parallel \\vec{B}$.",
-    "**Case 2 — Perpendicular vectors ($\\theta = 90°$):** $|\\vec{A} \\times \\vec{B}| = AB$ (maximum possible magnitude). Perpendicular vectors produce the largest cross product.",
-    "**Non-commutative property:** $\\vec{A} \\times \\vec{B} = -(\\vec{B} \\times \\vec{A})$. Reversing the order reverses the direction. The cross product is ANTI-COMMUTATIVE, unlike the dot product which is commutative.",
-    "**Cross products of unit vectors:** $\\hat{i} \\times \\hat{i} = \\hat{j} \\times \\hat{j} = \\hat{k} \\times \\hat{k} = 0$. Cyclic: $\\hat{i} \\times \\hat{j} = \\hat{k}$, $\\hat{j} \\times \\hat{k} = \\hat{i}$, $\\hat{k} \\times \\hat{i} = \\hat{j}$. Anti-cyclic: $\\hat{j} \\times \\hat{i} = -\\hat{k}$, $\\hat{k} \\times \\hat{j} = -\\hat{i}$, $\\hat{i} \\times \\hat{k} = -\\hat{j}$.",
-    "**Distributive property:** $\\vec{A} \\times (\\vec{B} + \\vec{C}) = \\vec{A} \\times \\vec{B} + \\vec{A} \\times \\vec{C}$. The cross product distributes over vector addition.",
-    "**Physical applications:** (1) Torque: $\\vec{\\tau} = \\vec{r} \\times \\vec{F}$. (2) Magnetic force: $\\vec{F} = q\\vec{v} \\times \\vec{B}$. (3) Angular momentum: $\\vec{L} = \\vec{r} \\times \\vec{p}$. (4) Linear velocity: $\\vec{v} = \\vec{\\omega} \\times \\vec{r}$.",
-    "**NEB exam focus:** Define the cross product. State the right-hand rule. Calculate cross products of given vectors. Distinguish between dot product (scalar result) and cross product (vector result). Solve torque and magnetic force problems.",
-    "**Comparison with dot product:** Dot product: $\\vec{A} \\cdot \\vec{B} = AB\\cos\\theta$ (scalar, commutative). Cross product: $\\vec{A} \\times \\vec{B} = AB\\sin\\theta \\, \\hat{n}$ (vector, anti-commutative). The dot product measures \"sameness\" (projection); the cross product measures \"perpendicularity\" (area).",
-    "**Geometric interpretation:** $|\\vec{A} \\times \\vec{B}|$ equals the AREA of the parallelogram formed by $\\vec{A}$ and $\\vec{B}$. The direction of the cross product is normal to this parallelogram.",
-    "**Cross product and motion:** If $\\vec{v}$ is the velocity and $\\vec{r}$ is the position vector, then $\\vec{r} \\times \\vec{v}$ is twice the areal velocity (area swept per unit time). This is the basis of Kepler's second law.",
-    "**Scalar triple product:** $\\vec{A} \\cdot (\\vec{B} \\times \\vec{C})$ gives the volume of the parallelepiped formed by the three vectors. It is cyclic: $\\vec{A} \\cdot (\\vec{B} \\times \\vec{C}) = \\vec{B} \\cdot (\\vec{C} \\times \\vec{A}) = \\vec{C} \\cdot (\\vec{A} \\times \\vec{B})$."
+    "**Case 1 — same direction**: when two vectors $\\vec{P}$ and $\\vec{Q}$ point in exactly the same direction ($\\theta = 0°$), their resultant has maximum magnitude: $\\vec{R} = \\vec{P} + \\vec{Q}$ with $R = P + Q$. The direction is the same as both original vectors.",
+    "**Case 2 — opposite direction**: when $\\vec{P}$ and $\\vec{Q}$ point in exactly opposite directions ($\\theta = 180°$), the resultant is $\\vec{R} = \\vec{P} - \\vec{Q}$ (assuming $P > Q$) with magnitude $R = |P - Q|$, acting along the direction of the larger vector.",
+    "**General formula** (parallelogram/triangle law): for any angle $\\theta$ between $\\vec{P}$ and $\\vec{Q}$: $R = \\sqrt{P^2 + Q^2 + 2PQ\\cos\\theta}$ and the direction $\\alpha$ from $\\vec{P}$ is $\\alpha = \\tan^{-1}\\!\\left(\\dfrac{Q\\sin\\theta}{P + Q\\cos\\theta}\\right)$.",
+    "**Graphical method (head-to-tail)**: place the tail of $\\vec{Q}$ at the head of $\\vec{P}$. The resultant $\\vec{R}$ is the vector from the tail of $\\vec{P}$ to the head of $\\vec{Q}$. This works for any angle, not just 0° and 180°.",
+    "**Collinear vectors**: vectors lying along the same line (same or opposite direction) are called collinear. Their addition reduces to ordinary algebraic addition with appropriate signs: $\\vec{R} = \\pm P \\pm Q$.",
+    "**Component method for general addition**: resolve each vector into x and y components, add components separately: $R_x = P_x + Q_x$, $R_y = P_y + Q_y$, then $R = \\sqrt{R_x^2 + R_y^2}$ and $\\alpha = \\tan^{-1}(R_y/R_x)$.",
+    "**Three or more vectors**: vector addition is associative: $\\vec{P} + (\\vec{Q} + \\vec{S}) = (\\vec{P} + \\vec{Q}) + \\vec{S}$. The order of addition does not affect the resultant. Use the polygon method for 3+ vectors.",
+    "**Special angles summary**: (i) $\\theta=0°$: $R_{max} = P+Q$, $\\alpha=0°$. (ii) $\\theta=90°$: $R=\\sqrt{P^2+Q^2}$, $\\alpha=\\tan^{-1}(Q/P)$. (iii) $\\theta=180°$: $R_{min}=|P-Q|$, direction of larger vector. (iv) $\\theta=60°$: $R=\\sqrt{P^2+Q^2+PQ}$. (v) $\\theta=120°$ with $P=Q$: $R=P=Q$.",
+    "**Equilibrium condition**: if the resultant of multiple forces is zero ($\\vec{R}=\\vec{0}$), the system is in equilibrium. For two forces, this means they must be equal in magnitude and opposite in direction.",
+    "The resultant of two equal vectors $P=Q$ inclined at angle $\\theta$ bisects the angle between them: $R = 2P\\cos(\\theta/2)$ and $\\alpha = \\theta/2$. This is a frequently used shortcut in NEB problems.",
+    "**Triangle inequality**: for any two vectors, $|P - Q| \\leq R \\leq P + Q$. The resultant can never exceed the sum of magnitudes nor be less than their difference.",
+    "**Physical example**: two people pulling a crate — if both pull east with 50 N each, the resultant is 100 N east. If one pulls east with 50 N and the other west with 30 N, the resultant is 20 N east.",
+    "Vector subtraction $\\vec{P} - \\vec{Q}$ is defined as $\\vec{P} + (-\\vec{Q})$, where $-\\vec{Q}$ has the same magnitude as $\\vec{Q}$ but opposite direction. Graphically, it is the vector from the head of $\\vec{Q}$ to the head of $\\vec{P}$ when both tails are at the same point.",
+    "**Order doesn't matter** (commutative law): $\\vec{P} + \\vec{Q} = \\vec{Q} + \\vec{P}$. The resultant is the same regardless of which vector you place first in the head-to-tail construction.",
+    "When $\\theta = 90°$, the Pythagorean theorem gives $R^2 = P^2 + Q^2$ — this is the most common special case in NEB examinations. Students should memorize this form instantly.",
+    "**Vector subtraction from addition**: $\\vec{P} - \\vec{Q} = \\vec{P} + (-\\vec{Q})$. The magnitude of the difference is $|\\vec{P} - \\vec{Q}| = \\sqrt{P^2+Q^2-2PQ\\cos\\theta}$. Note the minus sign — it is the same formula with $\\theta$ replaced by $180°-\\theta$.",
+    "**Resultant of three vectors in a line**: for vectors along the same line, assign positive/negative signs based on direction, then add algebraically: $R = \\pm P \\pm Q \\pm S$. The sign convention is arbitrary but must be consistent.",
+    "**Geometric interpretation of triangle inequality**: for any two vectors, the straight-line distance between two points is the shortest path. Thus the magnitude of the resultant (straight line) is always less than or equal to the sum of magnitudes (two sides of triangle): $|\\vec{A}+\\vec{B}| \\leq |\\vec{A}|+|\\vec{B}|$.",
+    "**Adding vectors with unknown angle**: if the resultant of two vectors of magnitudes $P$ and $Q$ is $R$, the angle between them is $\\theta = \\cos^{-1}\\!\\left(\\frac{R^2-P^2-Q^2}{2PQ}\\right)$. This inverse form is frequently tested.",
+    "**Resultant when one vector is doubled**: if $\\vec{Q}$ is doubled to $2\\vec{Q}$, the new resultant is $\\vec{R}' = \\vec{P}+2\\vec{Q}$ with magnitude $R' = \\sqrt{P^2+4Q^2+4PQ\\cos\\theta}$. This changes both magnitude and direction of the resultant.",
+    "**Relative velocity** is an application of vector subtraction: $\\vec{v}_{A/B} = \\vec{v}_A - \\vec{v}_B$. If two cars move in the same direction at 60 km/h and 80 km/h, the relative speed is 20 km/h; if opposite directions, it is 140 km/h."
   ],
   "confusion": [
-    "❌ The cross product gives a scalar. ✅ The cross product gives a VECTOR. The result is perpendicular to both input vectors. The dot product gives a scalar; the cross product gives a vector.",
-    "❌ $\\vec{A} \\times \\vec{B} = \\vec{B} \\times \\vec{A}$. ✅ The cross product is ANTI-COMMUTATIVE: $\\vec{A} \\times \\vec{B} = -(\\vec{B} \\times \\vec{A})$. Reversing the order flips the direction by 180°.",
-    "❌ The cross product is defined for any number of vectors. ✅ The cross product is defined only for EXACTLY TWO vectors in 3D space. You cannot take $\\vec{A} \\times \\vec{B} \\times \\vec{C}$ without parentheses — it is not associative.",
-    "❌ If $\\vec{A} \\times \\vec{B} = 0$, then both $\\vec{A}$ and $\\vec{B}$ must be zero vectors. ✅ If $\\vec{A} \\times \\vec{B} = 0$, then either $\\vec{A} = 0$, $\\vec{B} = 0$, OR $\\vec{A}$ and $\\vec{B}$ are PARALLEL. Any one of these conditions makes the cross product zero.",
-    "❌ The right-hand rule is arbitrary and any convention works. ✅ The right-hand rule is a CONVENTION, but it must be consistent throughout physics. Using the left-hand rule would flip the sign of torque, angular momentum, and magnetic force, causing contradictions.",
-    "❌ $\\vec{A} \\times (\\vec{B} \\times \\vec{C}) = (\\vec{A} \\times \\vec{B}) \\times \\vec{C}$. ✅ The cross product is NOT ASSOCIATIVE. In general, $\\vec{A} \\times (\\vec{B} \\times \\vec{C}) \\neq (\\vec{A} \\times \\vec{B}) \\times \\vec{C}$. The vector triple product identity is: $\\vec{A} \\times (\\vec{B} \\times \\vec{C}) = (\\vec{A} \\cdot \\vec{C})\\vec{B} - (\\vec{A} \\cdot \\vec{B})\\vec{C}$.",
-    "❌ The cross product exists in 2D. ✅ The cross product is defined in 3D (and 7D with special structure). In 2D, you can compute a \"pseudo-cross product\" that gives a scalar ($A_x B_y - A_y B_x$), but this is not a true vector cross product."
+    "Adding vectors is the same as adding numbers — Vectors have direction, so you cannot simply add magnitudes unless they point in the same direction. Two 5 N forces at 120° give a resultant of only 5 N, not 10 N.",
+    "The resultant is always larger than either component — The resultant can be smaller than one or both components. For opposite directions, $R = |P - Q|$; if $P = Q$, the resultant is zero.",
+    "You can add vectors pointing in different directions by just adding their magnitudes — You must use the parallelogram law, triangle law, or component method. The magnitude of the resultant depends critically on the angle between the vectors.",
+    "If the resultant is zero, the vectors must be zero — Two non-zero vectors can have a zero resultant if they are equal in magnitude and opposite in direction ($\\vec{P} + (-\\vec{P}) = \\vec{0}$).",
+    "The angle in the formula is the angle between the tails of the vectors — In the formula $R = \\sqrt{P^2+Q^2+2PQ\\cos\\theta}$, $\\theta$ is the angle between the vectors when placed tail-to-tail. If given the exterior angle, use $180° - \\text{angle}$.",
+    "Vector addition is not commutative — Vector addition IS commutative: $\\vec{P} + \\vec{Q} = \\vec{Q} + \\vec{P}$. What is non-commutative is vector multiplication (cross product): $\\vec{A} \\times \\vec{B} \\neq \\vec{B} \\times \\vec{A}$.",
+    "A zero resultant means no forces are acting — A zero resultant means all forces balance. Multiple forces can act simultaneously with a net effect of zero (equilibrium).",
+    "The direction of the resultant is always between the two vectors — This is true only for $0° < \\theta < 180°$. In the special case of opposite vectors ($\\theta = 180°$), the resultant lies along the larger vector, not 'between' them.",
+    "The difference of two vectors has a larger magnitude than their sum — No. For $0° < \\theta < 90°$, $|\\vec{P}-\\vec{Q}| < |\\vec{P}+\\vec{Q}|$ because $\\cos\\theta > 0$. The difference is only larger when $\\theta > 90°$.",
+    "You can cancel vectors by just writing them with opposite signs — You must be careful about what 'cancels' what. $\\vec{P} + (-\\vec{P}) = \\vec{0}$ only if they act at the same point. If they act at different points (non-concurrent forces), they produce a couple, not cancellation."
   ],
   "practice": [
-    "Find $\\vec{A} \\times \\vec{B}$ where $\\vec{A} = 2\\hat{i} + 3\\hat{j} - \\hat{k}$ and $\\vec{B} = \\hat{i} - 2\\hat{j} + 4\\hat{k}$. Using the determinant: $\\vec{A} \\times \\vec{B} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ 2 & 3 & -1 \\\\ 1 & -2 & 4 \\end{vmatrix} = \\hat{i}(12 - 2) - \\hat{j}(8 + 1) + \\hat{k}(-4 - 3) = 10\\hat{i} - 9\\hat{j} - 7\\hat{k}$.",
-    "Show that $\\vec{A} = 3\\hat{i} + 4\\hat{j}$ and $\\vec{B} = 6\\hat{i} + 8\\hat{j}$ are parallel using the cross product. $\\vec{A} \\times \\vec{B} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ 3 & 4 & 0 \\\\ 6 & 8 & 0 \\end{vmatrix} = \\hat{k}(24 - 24) = 0$. Since the cross product is zero, the vectors are parallel. ✓",
-    "Find the unit vector perpendicular to both $\\vec{A} = \\hat{i} + \\hat{j}$ and $\\vec{B} = \\hat{j} + \\hat{k}$. $\\vec{A} \\times \\vec{B} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ 1 & 1 & 0 \\\\ 0 & 1 & 1 \\end{vmatrix} = \\hat{i}(1) - \\hat{j}(1) + \\hat{k}(1) = \\hat{i} - \\hat{j} + \\hat{k}$. Magnitude: $\\sqrt{1 + 1 + 1} = \\sqrt{3}$. Unit vector: $\\hat{n} = \\frac{1}{\\sqrt{3}}(\\hat{i} - \\hat{j} + \\hat{k})$.",
-    "Calculate the torque $\\vec{\\tau} = \\vec{r} \\times \\vec{F}$ where $\\vec{r} = 2\\hat{i} + 3\\hat{j}$ m and $\\vec{F} = 4\\hat{i} - 5\\hat{j}$ N. $\\vec{\\tau} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ 2 & 3 & 0 \\\\ 4 & -5 & 0 \\end{vmatrix} = \\hat{k}(-10 - 12) = -22\\hat{k}$ N·m. The torque is 22 N·m clockwise (into the page).",
-    "Find the area of the triangle with vertices at $A(1,0,0)$, $B(0,2,0)$, and $C(0,0,3)$. Vectors: $\\vec{AB} = -\\hat{i} + 2\\hat{j}$, $\\vec{AC} = -\\hat{i} + 3\\hat{k}$. $\\vec{AB} \\times \\vec{AC} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ -1 & 2 & 0 \\\\ -1 & 0 & 3 \\end{vmatrix} = \\hat{i}(6) - \\hat{j}(-3) + \\hat{k}(2) = 6\\hat{i} + 3\\hat{j} + 2\\hat{k}$. Area = $\\frac{1}{2}|\\vec{AB} \\times \\vec{AC}| = \\frac{1}{2}\\sqrt{36 + 9 + 4} = \\frac{\\sqrt{49}}{2} = 3.5$ square units.",
-    "If $\\vec{A} \\times \\vec{B} = 6\\hat{k}$ and $|\\vec{A}| = 3$, $|\\vec{B}| = 4$, find the angle between $\\vec{A}$ and $\\vec{B}$. $|\\vec{A} \\times \\vec{B}| = AB\\sin\\theta$. $6 = 3 \\times 4 \\times \\sin\\theta$. $\\sin\\theta = 6/12 = 0.5$. $\\theta = 30°$ or $150°$. Since the result is $+6\\hat{k}$, using the right-hand rule, the angle from $\\vec{A}$ to $\\vec{B}$ is 30° (counterclockwise looking down the +z axis)."
+    "Two forces of 8 N and 6 N act at a point. Find the resultant when (a) they are in the same direction, (b) they are opposite, (c) they are perpendicular. [Solution: (a) $R = 8+6 = 14\\,\\text{N}$, same direction. (b) $R = 8-6 = 2\\,\\text{N}$, along the 8 N force. (c) $R = \\sqrt{64+36} = \\sqrt{100} = 10\\,\\text{N}$, at $\\tan^{-1}(6/8) = 36.9°$ from the 8 N force.]",
+    "Two equal forces of 10 N each have a resultant of 10 N. Find the angle between them. [Solution: $R = 2P\\cos(\\theta/2)$, so $10 = 2(10)\\cos(\\theta/2)$, giving $\\cos(\\theta/2) = 1/2$, so $\\theta/2 = 60°$ and $\\theta = 120°$.]",
+    "A force of 20 N acts due east and a force of 15 N acts due north. Find the magnitude and direction of the resultant. [Solution: $R = \\sqrt{20^2+15^2} = \\sqrt{400+225} = \\sqrt{625} = 25\\,\\text{N}$. Direction: $\\alpha = \\tan^{-1}(15/20) = \\tan^{-1}(3/4) \\approx 36.9°$ north of east.]",
+    "Three forces of 3 N, 4 N, and 5 N act along the sides of a right triangle taken in order. Find their resultant. [Solution: Since $3^2+4^2=5^2$, these forces form a closed triangle. By the triangle law, the resultant is $\\vec{R} = \\vec{0}$. The system is in equilibrium.]",
+    "Two vectors $\\vec{A} = 3\\hat{i} + 4\\hat{j}$ and $\\vec{B} = 5\\hat{i} - 2\\hat{j}$ are added. Find the magnitude and direction of the resultant. [Solution: $\\vec{R} = \\vec{A}+\\vec{B} = 8\\hat{i} + 2\\hat{j}$. $R = \\sqrt{64+4} = \\sqrt{68} \\approx 8.25$. $\\alpha = \\tan^{-1}(2/8) = \\tan^{-1}(0.25) \\approx 14.0°$ from the positive x-axis.]",
+    "A boat heads north at 12 km/h in a river flowing east at 5 km/h. Find the boat's actual speed and direction relative to the ground. [Solution: $\\vec{v}_{actual} = 12\\hat{j} + 5\\hat{i}$. Speed $= \\sqrt{144+25} = 13\\,\\text{km/h}$. Direction $= \\tan^{-1}(12/5) \\approx 67.4°$ east of north (or $22.6°$ north of east).]",
+    "Find the resultant of two forces $P$ and $Q$ when the angle between them is $\\theta$. If $\\theta$ increases from 0° to 180°, describe qualitatively how $R$ changes. [Solution: $R = \\sqrt{P^2+Q^2+2PQ\\cos\\theta}$. As $\\theta$ increases, $\\cos\\theta$ decreases from 1 to -1, so $R$ decreases from $P+Q$ to $|P-Q|$. The resultant is maximum when vectors are parallel and minimum when anti-parallel.]",
+    "Two forces act at a point: $\\vec{F}_1 = 10\\,\\text{N}$ at 30° north of east, and $\\vec{F}_2 = 15\\,\\text{N}$ at 60° north of west. Find the resultant using component method. [Solution: $F_{1x} = 10\\cos30° = 8.66$, $F_{1y} = 10\\sin30° = 5.00$. $F_{2x} = -15\\cos60° = -7.50$, $F_{2y} = 15\\sin60° = 12.99$. $R_x = 1.16$, $R_y = 17.99$. $R = \\sqrt{1.35+323.64} \\approx 18.0\\,\\text{N}$, $\\alpha = \\tan^{-1}(17.99/1.16) \\approx 86.3°$ north of east.]",
+    "Three forces of 4 N, 5 N, and 6 N act along the three sides of a triangle taken in order. Find the magnitude and direction of their resultant. [Solution: If taken head-to-tail around a closed triangle, the resultant is $\\vec{R} = \\vec{0}$. The forces form a closed polygon, so the system is in equilibrium.]",
+    "A force of 30 N acts at 0°, another at 90°, and a third at 180°. Find the resultant. [Solution: $\\vec{F}_1 = 30\\hat{i}$, $\\vec{F}_2 = 30\\hat{j}$, $\\vec{F}_3 = -30\\hat{i}$. $\\vec{R} = 30\\hat{i} + 30\\hat{j} - 30\\hat{i} = 30\\hat{j}$. The resultant is 30 N in the +y direction.]"
   ],
   "universalFacts": [
-    "The cross product was independently developed by Josiah Willard Gibbs and Oliver Heaviside in the 1880s as part of their effort to simplify vector calculus for physics applications.",
-    "The cross product is unique to three dimensions (and seven dimensions with a special construction). In 3D, it is essential for describing rotation, angular momentum, and magnetic forces.",
-    "In computer graphics, the cross product is used to compute surface normals for lighting calculations. The normal vector determines how light reflects off a 3D surface, creating the illusion of depth and texture.",
-    "The scalar triple product $\\vec{A} \\cdot (\\vec{B} \\times \\vec{C})$ is used to determine if three vectors are coplanar — if the volume they enclose is zero, the vectors lie in the same plane.",
-    "In quantum mechanics, the commutation relation $[x, p_x] = i\\hbar$ is analogous to the cross product's anti-commutative property — order matters, and swapping changes the sign."
+    "The parallelogram law of vector addition was first clearly stated by **Simon Stevin** (1548–1620) in his treatise on statics. He showed that two forces acting at a point are equivalent to a single force represented by the diagonal of the parallelogram.",
+    "NEB exam priority: addition of collinear vectors (same/opposite direction) is a guaranteed question type. Master the sign convention: assign one direction as positive, the opposite as negative, then add algebraically.",
+    "The component method of vector addition works in any number of dimensions — 2D, 3D, or even higher-dimensional spaces. This makes it the most versatile method for finding resultants.",
+    "In navigation and aviation, vector addition is essential. A pilot must account for wind velocity (a vector) to maintain the desired ground track. This is called wind correction angle calculation.",
+    "The concept of **resultant force** is central to Newton's second law: $\\vec{F}_{net} = m\\vec{a}$. The acceleration of an object is determined by the vector sum of all forces acting on it, not by any single force.",
+    "Force polygons are used in engineering to check equilibrium. If the force vectors drawn head-to-tail form a closed polygon, the resultant is zero and the system is in equilibrium.",
+    "When resolving vectors for addition, always draw a clear diagram first. Label all angles, choose convenient axes (often along and perpendicular to an incline), and be consistent with sign conventions.",
+    "For NEB: the formula $R = \\sqrt{P^2+Q^2+2PQ\\cos\\theta}$ applies to ANY two vectors at angle $\\theta$. Remember that $\\cos 0°=1$ gives maximum, $\\cos 90°=0$ gives Pythagorean, and $\\cos 180°=-1$ gives minimum.",
+    "The **equilibrant** is the vector that balances a system — it equals $-\\vec{R}$ (same magnitude as resultant, opposite direction). For equilibrium, the equilibrant must be applied.",
+    "In **relative motion**, vector subtraction is ubiquitous: $\\vec{v}_{A/B} = \\vec{v}_A - \\vec{v}_B$ gives the velocity of A as seen from B. This is a direct application of vector subtraction in the same direction (1D) or at angles (2D)."
   ],
   "animation3D": "vectors",
   "motionGraphics": "vectors",
-  "duplicateType": 2,
-  "tabGroup": "resolution-of-vectors-unit-vectors",
-  "visualType": "vector-basics"
+  "examples": [
+    "Real-world application of Resolution of vectors; unit vectors",
+    "Practical demonstration of Resolution of vectors; unit vectors concepts",
+    "Diagram-based question on Resolution of vectors; unit vectors",
+    "Application in daily life involving Resolution of vectors; unit vectors"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain Resolution of vectors; unit vectors with suitable example.",
+    "Q2. Solve problems related to Resolution of vectors; unit vectors.",
+    "Q3. Differentiate between various aspects of Resolution of vectors; unit vectors.",
+    "Q4. Derive the key formula related to Resolution of vectors; unit vectors.",
+    "Q5. What are the applications of Resolution of vectors; unit vectors?"
+  ],
+  "formulas": [
+    "Application formula for Resolution of vectors; unit vectors",
+    "Derivation result for Resolution of vectors; unit vectors"
+  ],
+  "keyPoints": [],
+  "summary": "Resolution of vectors; unit vectors is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Resolution of vectors; unit vectors applies",
+    "Note 2: Resolution of vectors; unit vectors connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Resolution of vectors; unit vectors",
+    "Note 4: Remember the units and dimensions involved in Resolution of vectors; unit vectors",
+    "Note 5: Resolution of vectors; unit vectors frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Resolution of vectors; unit vectors",
+    "Statement 2: Theorem related to Resolution of vectors; unit vectors",
+    "Statement 3: Condition for Resolution of vectors; unit vectors to be valid",
+    "Statement 4: Principle governing Resolution of vectors; unit vectors",
+    "Statement 5: Corollary or consequence of Resolution of vectors; unit vectors"
+  ],
+  "importantNotes": [
+    "Note 1: Resolution of vectors; unit vectors is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Resolution of vectors; unit vectors",
+    "Note 3: Resolution of vectors; unit vectors has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Resolution of vectors; unit vectors",
+    "Note 5: Cross-check your answers using alternative methods for Resolution of vectors; unit vectors"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Resolution of vectors; unit vectors formula",
+    "Trick 2: Elimination technique for Resolution of vectors; unit vectors MCQs",
+    "Trick 3: Dimensional analysis shortcut for Resolution of vectors; unit vectors",
+    "Trick 4: Memory aid for Resolution of vectors; unit vectors formulas",
+    "Trick 5: Time-saving approach for Resolution of vectors; unit vectors problems"
+  ],
+  "examNotes": [
+    "Focus on numerical problems from Resolution of vectors; unit vectors",
+    "Practice previous year questions on Resolution of vectors; unit vectors",
+    "Learn the derivations for Resolution of vectors; unit vectors thoroughly",
+    "Review common mistakes related to Resolution of vectors; unit vectors"
+  ],
+  "mcs": [
+    {
+      "question": "The primary application of Resolution of vectors; unit vectors is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Resolution of vectors; unit vectors, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Resolution of vectors; unit vectors?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Resolution of vectors; unit vectors is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Resolution of vectors; unit vectors",
+    "Concept 2: Key theorem or principle in Resolution of vectors; unit vectors",
+    "Concept 3: Important application area of Resolution of vectors; unit vectors",
+    "Concept 4: Fundamental relationship in Resolution of vectors; unit vectors",
+    "Concept 5: Connection between Resolution of vectors; unit vectors and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Resolution of vectors; unit vectors",
+    "Task 2: Derive the main formula for Resolution of vectors; unit vectors",
+    "Task 3: Create a concept map for Resolution of vectors; unit vectors",
+    "Task 4: Practice previous year exam questions on Resolution of vectors; unit vectors",
+    "Task 5: Explain Resolution of vectors; unit vectors to a peer or study group"
+  ]
 }

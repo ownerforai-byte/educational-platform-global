@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Mathematics — Integration — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "integration",
+  "topicSlug": "integration-pyq-2024",
+  "topicTitle": "NEB Class 12 Mathematics — Integration — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Evaluate: (a) ∫ x eˣ dx, (b) ∫ dx/(x² − 4).",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**(a) By parts** (∫u dv = uv − ∫v du): take u = x, dv = eˣdx → du = dx, v = eˣ.\n\n∫x eˣ dx = x eˣ − ∫eˣ dx = **x eˣ − eˣ + C = eˣ(x − 1) + C**.\n\n**(b) Partial fractions:** 1/(x² − 4) = 1/[(x − 2)(x + 2)] = (1/4)[1/(x − 2) − 1/(x + 2)].\n\nSo ∫dx/(x² − 4) = **(1/4) ln|(x − 2)/(x + 2)| + C** (using ∫dx/(x − a) = ln|x − a|).",
+      "knowledgeNote": "For by-parts choose u by the ILATE order (Inverse, Log, Algebraic, Trigonometric, Exponential) — here the algebraic x is u."
+    },
+    {
+      "question": "Evaluate ∫₀^(π/2) sin²x dx.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Use the identity sin²x = (1 − cos2x)/2:\n\n∫sin²x dx = ∫(1 − cos2x)/2 dx = x/2 − sin2x/4.\n\nApplying the limits 0 to π/2: [π/4 − 0] − [0 − 0] = **π/4 ≈ 0.785**.\n\n(Check by symmetry: ∫₀^(π/2) sin²x dx = ∫₀^(π/2) cos²x dx, and their sum is π/2, so each is π/4.)",
+      "knowledgeNote": "Reducing powers with double-angle identities converts a definite trigonometric integral into elementary terms — the standard NEB approach."
+    },
+    {
+      "question": "Evaluate ∫ dx/(1 + cos x).",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Use 1 + cos x = 2cos²(x/2):\n\n∫ dx/(1 + cosx) = ∫ dx/(2cos²(x/2)) = (1/2)∫ sec²(x/2) dx = (1/2)·2 tan(x/2) + C = **tan(x/2) + C**.\n\nSo the integral is tan(x/2) + C (valid where cos(x/2) ≠ 0).",
+      "knowledgeNote": "Half-angle identities turn rational trigonometric integrands into standard sec² forms — remember ∫sec²u du = tan u."
+    }
+  ]
+}

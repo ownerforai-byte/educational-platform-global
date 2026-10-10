@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Chemistry — Chemical Kinetics — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "chemical-kinetics",
+  "topicSlug": "chemical-kinetics-pyq-2024",
+  "topicTitle": "NEB Class 12 Chemistry — Chemical Kinetics — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Derive the integrated rate equation for a first-order reaction and obtain the expression for its half-life.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "For A → products, rate = −d[A]/dt = k[A].\n\nSeparate and integrate: ∫d[A]/[A] = −k∫dt → ln[A] = −kt + C, and at t = 0, C = ln[A]₀:\n\n**k = (2.303/t) log([A]₀/[A])**.\n\nSetting [A] = [A]₀/2 at t = T½: k = 2.303 log2/T½, so\n\n**T½ = 0.693/k** — independent of the initial concentration, the signature of a first-order reaction.",
+      "knowledgeNote": "A zero-order reaction has T½ = [A]₀/2k and a constant rate; distinguishing the two from units and from half-life behaviour is a standard NEB question."
+    },
+    {
+      "question": "Explain the effect of temperature on the rate of a reaction using the Arrhenius equation and define activation energy.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Most collisions do not lead to reaction; only molecules with energy ≥ the **activation energy** E_a (the threshold energy) react.\n\nThe number of such molecules rises steeply with temperature, so the rate constant follows\n\n**k = A e^(−E_a/RT)**, or ln k = ln A − E_a/RT.\n\nA plot of ln k against 1/T is a straight line of slope −E_a/R, giving E_a; a 10 °C rise typically doubles the rate because the exponential term grows sharply.",
+      "knowledgeNote": "A catalyst lowers E_a by providing an alternative path — k rises, but ΔH and the equilibrium constant are unchanged."
+    },
+    {
+      "question": "For a reaction A + B → products, the rate law is rate = k[A][B]². State the order and molecularity, and calculate the rate constant if the rate is 2.0 × 10⁻³ mol L⁻¹ s⁻¹ when [A] = 0.1 M and [B] = 0.2 M.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Order = 1 + 2 = **3 (third order)**; molecularity is the number of species in the elementary step — here the stoichiometry suggests a termolecular step only if elementary, so molecularity is generally not equated with order.\n\nk = rate/([A][B]²) = (2.0×10⁻³)/(0.1 × 0.04) = (2.0×10⁻³)/(4.0×10⁻³) = **0.5 mol⁻² L² s⁻¹**.",
+      "knowledgeNote": "Units of k reveal the order: mol¹⁻ⁿ Lⁿ⁻¹ s⁻¹; order is experimental, molecularity theoretical — they coincide only for elementary reactions."
+    }
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Chemistry — Amines — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "amines",
+  "topicSlug": "amines-pyq-2024",
+  "topicTitle": "NEB Class 12 Chemistry — Amines — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Arrange the primary, secondary and tertiary amines in the order of basicity in aqueous solution and explain the order.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "In aqueous solution: **(C₂H₅)₂NH > (C₂H₅)₃N ≈ C₂H₅NH₂ > NH₃** for ethylamines.\n\nThe observed order is a balance of two opposing factors: the **+I effect** of alkyl groups increases electron density on nitrogen (raising basicity as the number of alkyl groups grows), while **solvation/stabilisation of the conjugate acid** (hydrogen bonding with water) decreases as N−H hydrogens are replaced, and steric hindrance around the lone pair reduces protonation for tertiary amines.",
+      "knowledgeNote": "In the gas phase basicity simply follows the +I effect: 3° > 2° > 1° > NH₃ — the reversal in water is the favourite NEB trap."
+    },
+    {
+      "question": "Describe the Hinsberg test and use it to distinguish between primary, secondary and tertiary amines.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Benzenesulphonyl chloride (C₆H₅SO₂Cl) reacts in aqueous alkali:\n\n- **Primary amine:** forms a mono-substituted sulphonamide with an acidic N−H, so it dissolves in alkali to give a clear solution (soluble in KOH).\n- **Secondary amine:** forms a di-substituted sulphonamide with no acidic hydrogen — insoluble in alkali, giving a precipitate.\n- **Tertiary amine:** no reaction at all (no N−H to replace) and no precipitate; it remains as the free amine, distinguishable by odour and by its failure to react.",
+      "knowledgeNote": "Hinsberg's reagent separates the three classes in one test; the carbylamine (Hofmann isocyanide) test confirms a primary amine specifically."
+    },
+    {
+      "question": "Write the reactions involved in the preparation and synthetic use of diazonium salts from aniline.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Preparation (diazotisation):** aniline + NaNO₂ + HCl at 0–5 °C → **benzenediazonium chloride** (unstable above 5 °C, so kept cold).\n\n**Synthetic uses:**\n- with CuCN/KCN → benzonitrile (Sandmeyer);\n- with CuCl/HCl → chlorobenzene;\n- with H₃PO₂ or ethanol → benzene;\n- with phenol in mild alkali → an **azo dye** (p-hydroxyazobenzene), the coupling reaction that makes dyes;\n- hydrolysis by warm water → phenol.",
+      "knowledgeNote": "Coupling of the diazonium ion with phenol or an aromatic amine gives the intensely coloured azo compounds — the key commercial use."
+    }
+  ]
+}

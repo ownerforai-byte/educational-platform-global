@@ -18,42 +18,42 @@
     "Solve at least 5 problems on electric potential from your textbook.",
     "Try to derive the key formulas from first principles.",
     "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type."
+    "Practice identifying which method/formula to apply in each problem type.",
+    "one worked example for \"Electric potential and potential difference\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "universalFacts": [
     "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
     "Understanding electric potential builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of electric potential span engineering, physics, economics, and computer science."
+    "Real-world applications of electric potential span engineering, physics, economics, and computer science.",
+    "answer pattern for \"Electric potential and potential difference\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "animation3D": "electrostatics",
   "motionGraphics": "electrostatics",
   "examples": [
-    "Example 1: Real-world application of Electric Potential",
-    "Example 2: Practical demonstration of Electric Potential concepts",
-    "Example 3: Numerical problem on Electric Potential",
-    "Example 4: Diagram-based question on Electric Potential",
-    "Example 5: Application in daily life involving Electric Potential"
+    "Real-world application of Electric Potential",
+    "Practical demonstration of Electric Potential concepts",
+    "Diagram-based question on Electric Potential",
+    "Application in daily life involving Electric Potential",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Electric Potential with suitable example.",
     "Q2. Solve problems related to Electric Potential.",
     "Q3. Differentiate between various aspects of Electric Potential.",
     "Q4. Derive the key formula related to Electric Potential.",
-    "Q5. What are the applications of Electric Potential?"
+    "Q5. What are the applications of Electric Potential?",
+    "state + explain the main idea of \"Electric potential and potential difference\" with one example.",
+    "compare \"Electric potential\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Electric potential and potential difference\" and verify the answer is plausible."
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Electric Potential",
-    "Key Formula 2: Mathematical expression of Electric Potential",
-    "Key Formula 3: Application formula for Electric Potential",
-    "Key Formula 4: Derivation result for Electric Potential",
-    "Key Formula 5: Important relation in Electric Potential"
+    "Application formula for Electric Potential",
+    "Derivation result for Electric Potential",
+    "Governing equation for \"Electric potential and potential difference\" — state with units, then use in one numerical."
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of Electric Potential",
-    "Key Point 2: Essential theorem or principle related to Electric Potential",
-    "Key Point 3: Important condition or constraint for Electric Potential",
-    "Key Point 4: Common applications of Electric Potential",
-    "Key Point 5: Connection to other topics in Science"
+    "• Electric potential",
+    "• Potential difference"
   ],
   "summary": "Electric Potential is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
@@ -85,23 +85,12 @@
     "Trick 5: Time-saving approach for Electric Potential problems"
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Electric Potential",
-    "Exam Tip 2: Practice previous year questions on Electric Potential",
-    "Exam Tip 3: Electric Potential carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Electric Potential thoroughly",
-    "Exam Tip 5: Review common mistakes related to Electric Potential"
+    "Focus on numerical problems from Electric Potential",
+    "Practice previous year questions on Electric Potential",
+    "Learn the derivations for Electric Potential thoroughly",
+    "Review common mistakes related to Electric Potential"
   ],
   "mcs": [
-    {
-      "question": "Which of the following best describes Electric Potential?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
-      "answer": "A"
-    },
     {
       "question": "The primary application of Electric Potential is in:",
       "options": [
@@ -156,5 +145,28 @@
     "Task 3: Create a concept map for Electric Potential",
     "Task 4: Practice previous year exam questions on Electric Potential",
     "Task 5: Explain Electric Potential to a peer or study group"
+  ],
+  "numericals": [
+    "Set up the defining equation for \"Electric potential and potential difference\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Electric potential and potential difference\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: electric potential, potential difference (within Electrostatics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
   ]
 }

@@ -1,0 +1,946 @@
+{
+  "generatedBy": "scripts/platform-ledger.mjs",
+  "generatedAt": "2026-10-10T15:57:19.498Z",
+  "totals": {
+    "files": 7926,
+    "tracked": 6860,
+    "untracked": 1055,
+    "modifiedTracked": 2019,
+    "rootIgnored": 11,
+    "byClass": {
+      "tool-scratch": 7,
+      "config": 22,
+      "ci": 5,
+      "docs": 13,
+      "external-project": 15,
+      "data": 3,
+      "backend-tooling": 1983,
+      "backend-core": 91,
+      "backend-tests": 33,
+      "content-tooling": 53,
+      "content-source": 3374,
+      "frontend-config": 74,
+      "frontend-app": 168,
+      "frontend-components": 150,
+      "frontend-lab": 351,
+      "frontend-features": 78,
+      "frontend-lib": 190,
+      "content-runtime": 1073,
+      "content-assets": 21,
+      "frontend-tests": 78,
+      "routed-moved": 1,
+      "tooling-scripts": 134,
+      "reports": 6,
+      "secret": 3
+    }
+  },
+  "secrets": {
+    "files": [
+      {
+        "path": ".env",
+        "git": "ignored",
+        "cls": "secret",
+        "area": "n/a — never commit",
+        "branch": "n/a",
+        "action": "keep ignored; rotate if exposed"
+      },
+      {
+        "path": "cloudflare-token.txt",
+        "git": "ignored",
+        "cls": "secret",
+        "area": "n/a — never commit",
+        "branch": "n/a",
+        "action": "keep ignored; rotate if exposed"
+      },
+      {
+        "path": "vercel-token.txt",
+        "git": "ignored",
+        "cls": "secret",
+        "area": "n/a — never commit",
+        "branch": "n/a",
+        "action": "keep ignored; rotate if exposed"
+      }
+    ],
+    "grepHits": [],
+    "patternNoise": 48
+  },
+  "externals": [
+    "agnes-bridge",
+    "cell-architecture-studio",
+    "visuals-py"
+  ],
+  "strays": [],
+  "content": {
+    "gateScopes": [
+      "biology/floral-diversity",
+      "chemistry/atomic-structure",
+      "chemistry/basic-concept-of-organic-chemistry",
+      "chemistry/classification-of-elements-and-periodic-table",
+      "chemistry/stoichiometry",
+      "english/reading-and-comprehension",
+      "english/writing-and-composition",
+      "physics/capacitor",
+      "physics/elasticity",
+      "physics/electric-charges",
+      "physics/electric-field",
+      "physics/potential-potential-difference-and-potential-energy"
+    ],
+    "diversity": [
+      {
+        "key": "source:class-12-notes/biology",
+        "thin": 63,
+        "empty": 0,
+        "duplicates": 6,
+        "variants": 0,
+        "legacy": 0,
+        "files": 90
+      },
+      {
+        "key": "source:class-12-notes/chemistry",
+        "thin": 45,
+        "empty": 0,
+        "duplicates": 10,
+        "variants": 0,
+        "legacy": 0,
+        "files": 93
+      },
+      {
+        "key": "source:class-12-notes/physics",
+        "thin": 48,
+        "empty": 0,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 85
+      },
+      {
+        "key": "source:class-11-notes/mathematics",
+        "thin": 6,
+        "empty": 36,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 127
+      },
+      {
+        "key": "source:class-12-notes/mathematics",
+        "thin": 41,
+        "empty": 0,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 89
+      },
+      {
+        "key": "source:class-11-notes/chemistry",
+        "thin": 40,
+        "empty": 0,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 306
+      },
+      {
+        "key": "source:class-11-notes/physics",
+        "thin": 23,
+        "empty": 13,
+        "duplicates": 2,
+        "variants": 0,
+        "legacy": 0,
+        "files": 306
+      },
+      {
+        "key": "source:class-11/chemistry",
+        "thin": 8,
+        "empty": 29,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 73
+      },
+      {
+        "key": "source:class-11/physics",
+        "thin": 11,
+        "empty": 20,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 78
+      },
+      {
+        "key": "source:class-11-notes/nepali",
+        "thin": 19,
+        "empty": 5,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 44
+      },
+      {
+        "key": "runtime:chemistry/chemistry-of-non-metals",
+        "thin": 3,
+        "empty": 15,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 33
+      },
+      {
+        "key": "runtime:mathematics/limits-and-continuity",
+        "thin": 0,
+        "empty": 17,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 17
+      },
+      {
+        "key": "source:class-12-notes/nepali",
+        "thin": 15,
+        "empty": 0,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 22
+      },
+      {
+        "key": "runtime:chemistry/chemistry-of-metals",
+        "thin": 3,
+        "empty": 8,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 22
+      },
+      {
+        "key": "runtime:mathematics/algebra",
+        "thin": 4,
+        "empty": 7,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 14
+      },
+      {
+        "key": "source:class-12-notes/english",
+        "thin": 10,
+        "empty": 0,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 29
+      },
+      {
+        "key": "runtime:mathematics/vectors",
+        "thin": 2,
+        "empty": 8,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 11
+      },
+      {
+        "key": "runtime:biology/faunal-diversity",
+        "thin": 1,
+        "empty": 8,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 19
+      },
+      {
+        "key": "runtime:chemistry/hydrocarbons",
+        "thin": 4,
+        "empty": 5,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 13
+      },
+      {
+        "key": "runtime:chemistry/aromatic-hydrocarbons",
+        "thin": 2,
+        "empty": 5,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 12
+      },
+      {
+        "key": "runtime:nepali/bhasha-ra-vyakarana",
+        "thin": 0,
+        "empty": 7,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 8
+      },
+      {
+        "key": "runtime:physics/nuclear-physics",
+        "thin": 3,
+        "empty": 4,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 12
+      },
+      {
+        "key": "source:class-11-notes/biology",
+        "thin": 6,
+        "empty": 0,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 132
+      },
+      {
+        "key": "runtime:chemistry/fundamental-principles-of-organic-chemistry",
+        "thin": 3,
+        "empty": 3,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 13
+      },
+      {
+        "key": "runtime:chemistry/modern-chemical-manufactures",
+        "thin": 1,
+        "empty": 5,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 7
+      },
+      {
+        "key": "runtime:mathematics/calculus",
+        "thin": 5,
+        "empty": 1,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 30
+      },
+      {
+        "key": "runtime:nepali/bhasha-tatha-vyakaran",
+        "thin": 0,
+        "empty": 6,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 6
+      },
+      {
+        "key": "source:class-11-notes/english",
+        "thin": 5,
+        "empty": 0,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 76
+      },
+      {
+        "key": "source:class-11e/physics",
+        "thin": 5,
+        "empty": 0,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 29
+      },
+      {
+        "key": "runtime:physics/ideal-gas",
+        "thin": 3,
+        "empty": 2,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 10
+      },
+      {
+        "key": "runtime:chemistry/bio-inorganic-chemistry",
+        "thin": 0,
+        "empty": 4,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 8
+      },
+      {
+        "key": "runtime:chemistry/fundamentals-of-applied-chemistry",
+        "thin": 2,
+        "empty": 2,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 6
+      },
+      {
+        "key": "runtime:nepali/lekhan-koushal",
+        "thin": 0,
+        "empty": 4,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 4
+      },
+      {
+        "key": "source:class-11/mathematics",
+        "thin": 3,
+        "empty": 0,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 22
+      },
+      {
+        "key": "runtime:biology/biota-and-environment",
+        "thin": 0,
+        "empty": 3,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 6
+      },
+      {
+        "key": "runtime:biology/conservation-biology",
+        "thin": 1,
+        "empty": 2,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 7
+      },
+      {
+        "key": "runtime:chemistry/foundation-and-fundamentals",
+        "thin": 3,
+        "empty": 0,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 8
+      },
+      {
+        "key": "runtime:english/language-and-grammar",
+        "thin": 0,
+        "empty": 3,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 3
+      },
+      {
+        "key": "runtime:nepali/katha-natak-ra-sanskriti",
+        "thin": 0,
+        "empty": 3,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 3
+      },
+      {
+        "key": "runtime:nepali/sanskriti-tatha-samaj",
+        "thin": 0,
+        "empty": 3,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 3
+      },
+      {
+        "key": "runtime:physics/gravitation",
+        "thin": 2,
+        "empty": 1,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 13
+      },
+      {
+        "key": "runtime:physics/heat-and-temperature",
+        "thin": 1,
+        "empty": 2,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 8
+      },
+      {
+        "key": "runtime:physics/optics",
+        "thin": 0,
+        "empty": 3,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 3
+      },
+      {
+        "key": "runtime:physics/quantity-of-heat",
+        "thin": 3,
+        "empty": 0,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 13
+      },
+      {
+        "key": "runtime:biology/ecology",
+        "thin": 0,
+        "empty": 2,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 9
+      },
+      {
+        "key": "runtime:biology/evolutionary-biology",
+        "thin": 0,
+        "empty": 2,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 9
+      },
+      {
+        "key": "runtime:biology/vegetation",
+        "thin": 0,
+        "empty": 2,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 5
+      },
+      {
+        "key": "runtime:chemistry/oxidation-and-reduction",
+        "thin": 2,
+        "empty": 0,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 6
+      },
+      {
+        "key": "runtime:english/critical-thinking",
+        "thin": 0,
+        "empty": 2,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 2
+      },
+      {
+        "key": "runtime:mathematics/analytic-geometry",
+        "thin": 0,
+        "empty": 2,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 6
+      },
+      {
+        "key": "runtime:mathematics/computational-methods-or-mechanics",
+        "thin": 0,
+        "empty": 2,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 5
+      },
+      {
+        "key": "runtime:mathematics/statistics-and-probability",
+        "thin": 2,
+        "empty": 0,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 2
+      },
+      {
+        "key": "runtime:mathematics/trigonometry",
+        "thin": 0,
+        "empty": 2,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 3
+      },
+      {
+        "key": "runtime:nepali/lekhan-ra-rachana",
+        "thin": 0,
+        "empty": 2,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 2
+      },
+      {
+        "key": "runtime:nepali/sahitya-adhyayan",
+        "thin": 0,
+        "empty": 2,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 7
+      },
+      {
+        "key": "runtime:physics/dc-circuits",
+        "thin": 2,
+        "empty": 0,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 12
+      },
+      {
+        "key": "runtime:physics/lenses",
+        "thin": 1,
+        "empty": 1,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 4
+      },
+      {
+        "key": "runtime:physics/refraction-through-prisms",
+        "thin": 2,
+        "empty": 0,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 6
+      },
+      {
+        "key": "runtime:physics/solids",
+        "thin": 1,
+        "empty": 1,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 5
+      },
+      {
+        "key": "runtime:physics/work-energy-and-power",
+        "thin": 0,
+        "empty": 2,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 7
+      },
+      {
+        "key": "runtime:physics/work-energy-power",
+        "thin": 1,
+        "empty": 1,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 4
+      },
+      {
+        "key": "runtime:biology/introductory-microbiology",
+        "thin": 0,
+        "empty": 1,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 6
+      },
+      {
+        "key": "runtime:chemistry/chemical-bonding-and-shapes-of-molecules",
+        "thin": 0,
+        "empty": 1,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 12
+      },
+      {
+        "key": "runtime:chemistry/chemical-equilibrium",
+        "thin": 0,
+        "empty": 1,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 9
+      },
+      {
+        "key": "runtime:physics/dispersion",
+        "thin": 0,
+        "empty": 1,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 4
+      },
+      {
+        "key": "runtime:physics/reflection-at-curved-mirror",
+        "thin": 0,
+        "empty": 1,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 2
+      },
+      {
+        "key": "runtime:physics/refraction-at-plane-surfaces",
+        "thin": 1,
+        "empty": 0,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 6
+      },
+      {
+        "key": "runtime:physics/thermal-expansion",
+        "thin": 1,
+        "empty": 0,
+        "duplicates": 0,
+        "variants": 0,
+        "legacy": 0,
+        "files": 8
+      }
+    ],
+    "totals": {
+      "thin": 407,
+      "empty": 262,
+      "duplicates": 18,
+      "variants": 0,
+      "legacy": 0
+    }
+  },
+  "links": [
+    {
+      "unit": "class-11-notes/biology",
+      "source": "content/ravikishan/**/class-11-notes/biology/",
+      "runtime": "frontend/public/data/syllabus-notes/class-11-notes/biology/",
+      "manifest": "frontend/public/data/syllabus-notes/class-11-notes/_manifest.json",
+      "sourceFiles": 132,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-11-notes/chemistry",
+      "source": "content/ravikishan/**/class-11-notes/chemistry/",
+      "runtime": "frontend/public/data/syllabus-notes/class-11-notes/chemistry/",
+      "manifest": "frontend/public/data/syllabus-notes/class-11-notes/_manifest.json",
+      "sourceFiles": 306,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-11-notes/english",
+      "source": "content/ravikishan/**/class-11-notes/english/",
+      "runtime": "frontend/public/data/syllabus-notes/class-11-notes/english/",
+      "manifest": "frontend/public/data/syllabus-notes/class-11-notes/_manifest.json",
+      "sourceFiles": 76,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-11-notes/mathematics",
+      "source": "content/ravikishan/**/class-11-notes/mathematics/",
+      "runtime": "frontend/public/data/syllabus-notes/class-11-notes/mathematics/",
+      "manifest": "frontend/public/data/syllabus-notes/class-11-notes/_manifest.json",
+      "sourceFiles": 127,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-11-notes/nepali",
+      "source": "content/ravikishan/**/class-11-notes/nepali/",
+      "runtime": "frontend/public/data/syllabus-notes/class-11-notes/nepali/",
+      "manifest": "frontend/public/data/syllabus-notes/class-11-notes/_manifest.json",
+      "sourceFiles": 44,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-11-notes/physics",
+      "source": "content/ravikishan/**/class-11-notes/physics/",
+      "runtime": "frontend/public/data/syllabus-notes/class-11-notes/physics/",
+      "manifest": "frontend/public/data/syllabus-notes/class-11-notes/_manifest.json",
+      "sourceFiles": 306,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-11/biology",
+      "source": "content/ravikishan/**/class-11/biology/",
+      "runtime": "frontend/public/data/syllabus-notes/class-11/biology/",
+      "manifest": "frontend/public/data/syllabus-notes/class-11/_manifest.json",
+      "sourceFiles": 6,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-11/chemistry",
+      "source": "content/ravikishan/**/class-11/chemistry/",
+      "runtime": "frontend/public/data/syllabus-notes/class-11/chemistry/",
+      "manifest": "frontend/public/data/syllabus-notes/class-11/_manifest.json",
+      "sourceFiles": 73,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-11/english",
+      "source": "content/ravikishan/**/class-11/english/",
+      "runtime": "frontend/public/data/syllabus-notes/class-11/english/",
+      "manifest": "frontend/public/data/syllabus-notes/class-11/_manifest.json",
+      "sourceFiles": 10,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-11/mathematics",
+      "source": "content/ravikishan/**/class-11/mathematics/",
+      "runtime": "frontend/public/data/syllabus-notes/class-11/mathematics/",
+      "manifest": "frontend/public/data/syllabus-notes/class-11/_manifest.json",
+      "sourceFiles": 22,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-11/nepali",
+      "source": "content/ravikishan/**/class-11/nepali/",
+      "runtime": "frontend/public/data/syllabus-notes/class-11/nepali/",
+      "manifest": "frontend/public/data/syllabus-notes/class-11/_manifest.json",
+      "sourceFiles": 4,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-11/physics",
+      "source": "content/ravikishan/**/class-11/physics/",
+      "runtime": "frontend/public/data/syllabus-notes/class-11/physics/",
+      "manifest": "frontend/public/data/syllabus-notes/class-11/_manifest.json",
+      "sourceFiles": 78,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-11e/biology",
+      "source": "content/ravikishan/**/class-11e/biology/",
+      "runtime": "frontend/public/data/syllabus-notes/class-11e/biology/",
+      "manifest": "frontend/public/data/syllabus-notes/class-11e/_manifest.json",
+      "sourceFiles": 2,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-11e/mathematics",
+      "source": "content/ravikishan/**/class-11e/mathematics/",
+      "runtime": "frontend/public/data/syllabus-notes/class-11e/mathematics/",
+      "manifest": "frontend/public/data/syllabus-notes/class-11e/_manifest.json",
+      "sourceFiles": 1,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-11e/physics",
+      "source": "content/ravikishan/**/class-11e/physics/",
+      "runtime": "frontend/public/data/syllabus-notes/class-11e/physics/",
+      "manifest": "frontend/public/data/syllabus-notes/class-11e/_manifest.json",
+      "sourceFiles": 29,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-12-notes/biology",
+      "source": "content/ravikishan/**/class-12-notes/biology/",
+      "runtime": "frontend/public/data/syllabus-notes/class-12-notes/biology/",
+      "manifest": "frontend/public/data/syllabus-notes/class-12-notes/_manifest.json",
+      "sourceFiles": 90,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-12-notes/chemistry",
+      "source": "content/ravikishan/**/class-12-notes/chemistry/",
+      "runtime": "frontend/public/data/syllabus-notes/class-12-notes/chemistry/",
+      "manifest": "frontend/public/data/syllabus-notes/class-12-notes/_manifest.json",
+      "sourceFiles": 93,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-12-notes/english",
+      "source": "content/ravikishan/**/class-12-notes/english/",
+      "runtime": "frontend/public/data/syllabus-notes/class-12-notes/english/",
+      "manifest": "frontend/public/data/syllabus-notes/class-12-notes/_manifest.json",
+      "sourceFiles": 29,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-12-notes/mathematics",
+      "source": "content/ravikishan/**/class-12-notes/mathematics/",
+      "runtime": "frontend/public/data/syllabus-notes/class-12-notes/mathematics/",
+      "manifest": "frontend/public/data/syllabus-notes/class-12-notes/_manifest.json",
+      "sourceFiles": 89,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-12-notes/nepali",
+      "source": "content/ravikishan/**/class-12-notes/nepali/",
+      "runtime": "frontend/public/data/syllabus-notes/class-12-notes/nepali/",
+      "manifest": "frontend/public/data/syllabus-notes/class-12-notes/_manifest.json",
+      "sourceFiles": 22,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-12-notes/physics",
+      "source": "content/ravikishan/**/class-12-notes/physics/",
+      "runtime": "frontend/public/data/syllabus-notes/class-12-notes/physics/",
+      "manifest": "frontend/public/data/syllabus-notes/class-12-notes/_manifest.json",
+      "sourceFiles": 85,
+      "runtimeFiles": 0
+    },
+    {
+      "unit": "class-12/english",
+      "source": "content/ravikishan/**/class-12/english/",
+      "runtime": "frontend/public/data/syllabus-notes/class-12/english/",
+      "manifest": "frontend/public/data/syllabus-notes/class-12/_manifest.json",
+      "sourceFiles": 1,
+      "runtimeFiles": 0
+    }
+  ],
+  "completionOrder": [
+    {
+      "step": 1,
+      "task": "Worktree/branch consolidation",
+      "status": "done 2026-10-10 (49 worktrees removed, 0 loss; 54 branches kept)"
+    },
+    {
+      "step": 2,
+      "task": "Deepen gate-blocking thin files in 12 empty-scope-gate scopes",
+      "detail": [
+        "biology/floral-diversity",
+        "chemistry/atomic-structure",
+        "chemistry/basic-concept-of-organic-chemistry",
+        "chemistry/classification-of-elements-and-periodic-table",
+        "chemistry/stoichiometry",
+        "english/reading-and-comprehension",
+        "english/writing-and-composition",
+        "physics/capacitor",
+        "physics/elasticity",
+        "physics/electric-charges",
+        "physics/electric-field",
+        "physics/potential-potential-difference-and-potential-energy"
+      ],
+      "status": "done 2026-10-10 (38 files deepened via scripts/deepen-thin-notes.mjs; empty-scope gate PASS)"
+    },
+    {
+      "step": 3,
+      "task": "Deepen the 8 residual thin merge survivors",
+      "detail": "reports/note-relations.json → residualThin",
+      "status": "done 2026-10-10 (covered by the same deepening pass)"
+    },
+    {
+      "step": 4,
+      "task": "Fix cross-topic contamination (wrong-topic Fact. notes, e.g. calculus facts in the Rutherford file)",
+      "status": "done 2026-10-10 (replaced by topic-correct notes in the deepening pass)"
+    },
+    {
+      "step": 5,
+      "task": "Route strays (see strays[]) into registered homes or delete",
+      "detail": [],
+      "status": "done 2026-10-10 (0 strays left; drift gate green)"
+    },
+    {
+      "step": 6,
+      "task": "Consolidate legacy/duplicate/variant content files (see content.diversity)",
+      "status": "done 2026-10-10 (merge-related-notes rules D prefix-pairs + content-only fingerprints; 3 apply passes: 204 files absorbed; 51 wrong-topic biology recaps stripped from chemistry; 14 pure-mould legacy files deleted, 3 renamed/re-slugged; 131 second-family files imported into the corpus; superseded runtime extras pruned; 14 regressed thin files deepened). Classification pass: 16 imported same-slug twins absorbed into their variant-tab bases (fixing a build emit-collision), 6 empty variant tabs deleted after moving their real specificConditions into the tab originals, 23 numeric-prefixed topicSlugs renamed numberless (slug + tabGroup + index sync), diversity scan made metadata-aware (authored duplicateType+tabGroup tabs are structure, not duplication) — variants 90→0, legacy 34→0, duplicates 257→18. Residual: 18 duplicate-stem files = the 8 by-design merge refusals (variant-tab pairing, notes>80, empty-scope invariants) + 1 un-importable extra physics/heat-and-temperature/heat-and-temperature.json (159 notes > schema cap)"
+    },
+    {
+      "step": 7,
+      "task": "Commit untracked content batches (pyqs/, rails/, materials/, pdfs/, new tests) on their area branches",
+      "status": "pending"
+    },
+    {
+      "step": 8,
+      "task": "Bulk-deepen remaining thin corpus below the gate threshold",
+      "status": "pending"
+    }
+  ]
+}

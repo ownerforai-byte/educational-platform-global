@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Mathematics — Limits And Continuity — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "limits-and-continuity",
+  "topicSlug": "limits-and-continuity-pyq-2024",
+  "topicTitle": "NEB Class 12 Mathematics — Limits And Continuity — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Evaluate: (a) lim(x→0) sin5x/3x, (b) lim(x→2) (x² − 4)/(x − 2).",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**(a)** lim(x→0) sin5x/3x = (5/3)·lim(x→0) sin5x/(5x) = (5/3)(1) = **5/3**, using lim(θ→0) sinθ/θ = 1.\n\n**(b)** 0/0 form, so factorise: (x² − 4)/(x − 2) = (x + 2)(x − 2)/(x − 2) = x + 2 for x ≠ 2. Hence the limit is 2 + 2 = **4**.\n\nThe theorem used is that for a rational function the limit at a removable discontinuity is obtained by cancelling the common factor.",
+      "knowledgeNote": "Always try substitution first; if you get 0/0 or ∞/∞, factorise, rationalise or use the standard limit — never divide by zero directly."
+    },
+    {
+      "question": "Define continuity of a function at a point. For what value of k is the function f(x) = (x² − 9)/(x − 3) for x ≠ 3, f(3) = k, continuous at x = 3?",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Continuity at x = a** requires three conditions: f(a) is defined, lim(x→a) f(x) exists, and lim(x→a) f(x) = f(a).\n\nHere lim(x→3) (x² − 9)/(x − 3) = lim(x→3) (x + 3) = 6.\n\nFor continuity this limit must equal f(3) = k, so **k = 6**. With any other k the graph has a removable hole at x = 3.",
+      "knowledgeNote": "A function can have a limit at a point without being defined there (removable discontinuity) — continuity demands both plus equality."
+    },
+    {
+      "question": "Evaluate lim(x→0) (1 − cos 2x)/x².",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Use the identity 1 − cos 2x = 2 sin²x:\n\nlim(x→0) 2sin²x/x² = 2·lim(x→0) (sinx/x)² = 2 × 1 = **2**.\n\n(Equivalently, use the expansion cos2x = 1 − (2x)²/2 + …, giving (2x²)/x² = 2.)",
+      "knowledgeNote": "Standard expansions — sinx ≈ x, 1 − cosx ≈ x²/2 — solve most 0/0 limit questions faster than L'Hospital's rule."
+    }
+  ]
+}

@@ -7,53 +7,62 @@
   "notes": [
     "**Electric Current and Drift Velocity:** This topic covers the fundamental concepts of electric current and drift velocity in the physics curriculum.",
     "Understanding electric current and drift velocity is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to electric current and drift velocity should be memorized and practiced regularly."
+    "Key definitions and theorems related to electric current and drift velocity should be memorized and practiced regularly.",
+    "**Fact.** Ohm's law: V = IR; R = ρL/A (resistivity ρ depends on material).",
+    "**Fact.** Series: R = ΣR; same I, voltages add. Parallel: 1/R = Σ1/R; same V, currents add.",
+    "**Fact.** Power P = VI = I²R = V²/R; internal resistance makes terminal V = E − Ir."
   ],
   "confusion": [
     "❌ 'Electrons move at the speed of light in a wire.' ✅ Electrons move at a very slow *drift velocity* (mm/s); the *electric field* (the signal) travels near the speed of light.",
     "❌ 'Electric current is the flow of electrons only.' ✅ By convention, current is defined as the *flow of positive charge*. In many cases (like electrolytes), negative charges also flow, but current is still in the opposite direction of electron flow.",
-    "❌ 'Drift velocity is the average velocity of all electrons at all times.' ✅ It is the *net average velocity* of the electrons due to an applied electric field, superimposed on their random thermal motion."
+    "❌ 'Drift velocity is the average velocity of all electrons at all times.' ✅ It is the *net average velocity* of the electrons due to an applied electric field, superimposed on their random thermal motion.",
+    "❌ skip the key fact → ✅ ohm's law: v = ir; r = ρl/a (resistivity ρ depends on material).."
   ],
   "practice": [
     "Solve at least 5 problems on electric current and drift velocity from your textbook.",
     "Try to derive the key formulas from first principles.",
     "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type."
+    "Practice identifying which method/formula to apply in each problem type.",
+    "one worked example for \"Electric current, drift velocity, and relaxation time\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "universalFacts": [
     "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
     "Understanding electric current and drift velocity builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of electric current and drift velocity span engineering, physics, economics, and computer science."
+    "Real-world applications of electric current and drift velocity span engineering, physics, economics, and computer science.",
+    "Ohm's law: V = IR; R = ρL/A (resistivity ρ depends on material).",
+    "Series: R = ΣR; same I, voltages add. Parallel: 1/R = Σ1/R; same V, currents add.",
+    "Power P = VI = I²R = V²/R; internal resistance makes terminal V = E − Ir."
   ],
   "animation3D": "current-electricity",
   "motionGraphics": "current-electricity",
   "examples": [
-    "Example 1: Real-world application of Electric Current and Drift Velocity",
-    "Example 2: Practical demonstration of Electric Current and Drift Velocity concepts",
-    "Example 3: Numerical problem on Electric Current and Drift Velocity",
-    "Example 4: Diagram-based question on Electric Current and Drift Velocity",
-    "Example 5: Application in daily life involving Electric Current and Drift Velocity"
+    "Real-world application of Electric Current and Drift Velocity",
+    "Practical demonstration of Electric Current and Drift Velocity concepts",
+    "Diagram-based question on Electric Current and Drift Velocity",
+    "Application in daily life involving Electric Current and Drift Velocity",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Electric Current and Drift Velocity with suitable example.",
     "Q2. Solve problems related to Electric Current and Drift Velocity.",
     "Q3. Differentiate between various aspects of Electric Current and Drift Velocity.",
     "Q4. Derive the key formula related to Electric Current and Drift Velocity.",
-    "Q5. What are the applications of Electric Current and Drift Velocity?"
+    "Q5. What are the applications of Electric Current and Drift Velocity?",
+    "state + explain the main idea of \"Electric current, drift velocity, and relaxation time\" with one example.",
+    "compare \"Electric current\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Electric current, drift velocity, and relaxation time\" and verify the answer is plausible."
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Electric Current and Drift Velocity",
-    "Key Formula 2: Mathematical expression of Electric Current and Drift Velocity",
-    "Key Formula 3: Application formula for Electric Current and Drift Velocity",
-    "Key Formula 4: Derivation result for Electric Current and Drift Velocity",
-    "Key Formula 5: Important relation in Electric Current and Drift Velocity"
+    "Application formula for Electric Current and Drift Velocity",
+    "Derivation result for Electric Current and Drift Velocity",
+    "V = IR",
+    "P = IV = I²R = V²/R",
+    "V_term = E − Ir"
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of Electric Current and Drift Velocity",
-    "Key Point 2: Essential theorem or principle related to Electric Current and Drift Velocity",
-    "Key Point 3: Important condition or constraint for Electric Current and Drift Velocity",
-    "Key Point 4: Common applications of Electric Current and Drift Velocity",
-    "Key Point 5: Connection to other topics in Science"
+    "• Electric current",
+    "• Drift velocity",
+    "• Relaxation time"
   ],
   "summary": "Electric Current and Drift Velocity is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
@@ -85,23 +94,12 @@
     "Trick 5: Time-saving approach for Electric Current and Drift Velocity problems"
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Electric Current and Drift Velocity",
-    "Exam Tip 2: Practice previous year questions on Electric Current and Drift Velocity",
-    "Exam Tip 3: Electric Current and Drift Velocity carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Electric Current and Drift Velocity thoroughly",
-    "Exam Tip 5: Review common mistakes related to Electric Current and Drift Velocity"
+    "Focus on numerical problems from Electric Current and Drift Velocity",
+    "Practice previous year questions on Electric Current and Drift Velocity",
+    "Learn the derivations for Electric Current and Drift Velocity thoroughly",
+    "Review common mistakes related to Electric Current and Drift Velocity"
   ],
   "mcs": [
-    {
-      "question": "Which of the following best describes Electric Current and Drift Velocity?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
-      "answer": "A"
-    },
     {
       "question": "The primary application of Electric Current and Drift Velocity is in:",
       "options": [
@@ -156,5 +154,40 @@
     "Task 3: Create a concept map for Electric Current and Drift Velocity",
     "Task 4: Practice previous year exam questions on Electric Current and Drift Velocity",
     "Task 5: Explain Electric Current and Drift Velocity to a peer or study group"
+  ],
+  "numericals": [
+    "Use  V = IR  — pick reasonable values, solve, and check the units.",
+    "Use  P = IV = I²R = V²/R  — pick reasonable values, solve, and check the units.",
+    "Use  V_term = E − Ir  — pick reasonable values, solve, and check the units."
+  ],
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Electric current, drift velocity, and relaxation time\"?",
+      "options": [
+        "Electric current",
+        "Drift velocity",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "A",
+      "explanation": "Electric current is listed among the official sub-ideas of Electric current, drift velocity, and relaxation time; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Electric current, drift velocity, and relaxation time\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: electric current, drift velocity, relaxation time (within Current Electricity).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: ohm's law: v = ir; r = ρl/a (resistivity ρ depends on material)."
   ]
 }

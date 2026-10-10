@@ -20,41 +20,145 @@
     "• Explains quantisation of energy levels, the origin of quantum numbers, quantum tunnelling (STM, tunnel diodes, alpha decay) and the whole wave-mechanical picture of the atom.",
     "• Underlies semiconductor physics, quantum dots, lasers and matter-wave interferometry (atom interferometers, BEC experiments).",
     "### 7. Limitations of the elementary treatment",
-    "λ = h/mv is non-relativistic (for v close to c use λ = h/√(p² + (mv)²/c²) type corrections); the wave function is a *probability amplitude*, not a mechanical wave in a medium; the simple equation applies to a single free particle and needs the Schrödinger equation in a potential; the wavelength of everyday objects is far too small to detect."
+    "λ = h/mv is non-relativistic (for v close to c use λ = h/√(p² + (mv)²/c²) type corrections); the wave function is a *probability amplitude*, not a mechanical wave in a medium; the simple equation applies to a single free particle and needs the Schrödinger equation in a potential; the wavelength of everyday objects is far too small to detect.",
+    "### Focus of this tab",
+    "The derivation of λ = h/mv from the photon equations and the experimental proof — the two parts of de Broglie's idea that complete the main note.",
+    "### Derivation from the photon picture",
+    "For a photon: $E=h\\nu$ and $E=mc^{2}$ (equivalence of energy and mass). Equating: $mc^{2}=h\\nu=h\\frac{c}{\\lambda}$ → $\\lambda=\\frac{h}{mc}=\\frac{h}{p}$. de Broglie's 1924 leap: the same relation must hold for **matter**, so a particle of momentum p = mv has wavelength $\\lambda=\\frac{h}{mv}$. For accelerated electrons, $\\lambda=\\frac{h}{\\sqrt{2meV}}=\\frac{12.27}{\\sqrt{V}}\\ \\text{Å}$ (V in volts).",
+    "### Why the wave nature is only microscopic",
+    "λ ∝ 1/m: a 1 g body at 1 m s⁻¹ has λ ≈ 6.6 × 10⁻³¹ m (undetectable), while a 100 V electron has λ ≈ 1.23 Å — the size of atomic spacings, so crystals diffract electrons. Wave behaviour is not absent for large bodies; it is unobservable.",
+    "### Experimental proof (Davisson–Germer, 1927)",
+    "Electrons accelerated through ≈54 V strike a single nickel crystal; the detector records a maximum at φ = 50°. Bragg's law gives the wavelength: nλ = 2d sin θ with d = 0.091 nm → λ ≈ 0.165 nm; the de Broglie value for 54 V is λ = 12.27/√54 ≈ 1.67 Å = 0.167 nm — agreement within experiment. G. P. Thomson's high-energy electron diffraction through thin films confirmed it independently (both shared the 1937 Nobel Prize).",
+    "### Consequences that matter for chemistry",
+    "• Justifies Bohr's quantisation: nλ = 2πr → mvr = nh/2π.",
+    "• Basis of the Schrödinger equation and the orbital concept.",
+    "• Electron diffraction and the electron microscope (λ ≈ 0.005 nm at 50 kV → atomic resolution); neutron diffraction for structure determination.",
+    "• Quantum tunnelling and matter-wave interferometry (atom interferometers, BEC) are direct technologies of matter waves.",
+    "The equation that turned de Broglie's matter waves into the quantum-mechanical model — what ψ means, what solving it gives, and how the four quantum numbers appear.",
+    "### The equation (elementary form)",
+    "For a particle moving in one dimension: $-\\frac{h^{2}}{8\\pi^{2}m}\\frac{d^{2}\\psi}{dx^{2}}+V\\psi=E\\psi$, i.e. $\\hat{H}\\psi=E\\psi$ — a wave equation in which the 'wave property' comes from de Broglie (through the momentum operator) and the energy from classical mechanics. For the hydrogen atom V is the Coulomb potential, and the equation is solved in spherical coordinates $(r,\\theta,\\phi)$.",
+    "### What ψ and ψ² mean",
+    "ψ itself has no direct physical meaning; the measurable quantity is **|ψ|², the probability density** — the chance of finding the electron in a unit volume at that point. Max Born supplied this interpretation. The total probability over all space is normalised to 1 (∫|ψ|²dV = 1). Regions where ψ = 0 are **nodes**.",
+    "### What solving the hydrogen atom gives",
+    "• A set of allowed wave functions ψₙ,ₗ,ₘ (orbitals) labelled by three quantum numbers — n (size/energy), l (shape), m (orientation) — that arise automatically from the boundary conditions (ψ must be single-valued, finite and vanish at infinity).",
+    "• Energies $E_{n}=-13.6/n^{2}$ eV, agreeing with Bohr — but degeneracy appears: for n = 2 the solutions 2s and 2p have the same energy, which Bohr cannot give.",
+    "• Probability distributions instead of paths: the electron cloud, radial probability maxima (0.529 Å for 1s), and orbital shapes (spherical s, dumbbell p).",
+    "### Why this replaces Bohr",
+    "The uncertainty principle forbids definite orbits; Schrödinger's equation never uses a trajectory. It works for multi-electron atoms (approximately, with effective nuclear charge), explains fine structure when spin is added, and predicts molecular bonding — every defect of Bohr's theory is repaired."
   ],
   "confusion": [
     "❌ Matter waves are electromagnetic waves. ✅ They are probability (matter) waves carrying no charge; they are not E–B oscillations.",
     "❌ Heavier bodies have longer wavelengths. ✅ λ = h/mv — larger mass means a *shorter* (unobservable) wavelength.",
     "❌ de Broglie's hypothesis was accepted immediately on publication. ✅ It became convincing only after the Davisson–Germer electron-diffraction experiment (1927).",
     "❌ de Broglie's waves replace Bohr's quantisation with nothing. ✅ They *justify* it through the standing-wave condition nλ = 2πr.",
-    "❌ An electron microscope uses electron particles and light waves together. ✅ It uses the electron's short de Broglie wavelength, not visible light."
+    "❌ An electron microscope uses electron particles and light waves together. ✅ It uses the electron's short de Broglie wavelength, not visible light.",
+    "❌ de Broglie waves travel at the speed of light. ✅ They travel with the particle (v ≪ c); the phase velocity even exceeds c, while the group velocity equals v.",
+    "❌ The derivation needs relativistic mass. ✅ For non-relativistic particles λ = h/mv directly; the photon derivation only motivates the form.",
+    "❌ Davisson–Germer proved light has particle nature. ✅ It proved *electrons* have wave nature — the converse of the photoelectric effect.",
+    "❌ ψ is a measurable wave like a light wave. ✅ ψ is a probability amplitude; only |ψ|² is physically meaningful.",
+    "❌ Quantum numbers are put in by hand. ✅ They emerge from solving the equation with boundary conditions.",
+    "❌ Solving the equation gives exact paths. ✅ It gives probability distributions; trajectories do not exist."
   ],
   "practice": [
     "State and explain de Broglie's wave equation; derive λ = h/mv for a material particle.",
     "Explain why the wave nature of matter is not observed for ordinary objects.",
     "Show that the standing-wave condition nλ = 2πr leads to Bohr's quantisation of angular momentum.",
     "Calculate the de Broglie wavelength of an electron accelerated through 100 V.",
-    "Describe the Davisson–Germer experiment as evidence for matter waves and give two applications of electron waves."
+    "Describe the Davisson–Germer experiment as evidence for matter waves and give two applications of electron waves.",
+    "one worked example for \"Elementary idea of quantum mechanical model: de Broglie's…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid.",
+    "Derive de Broglie's relation from the photon equations E = hν and E = mc².",
+    "Calculate λ for an electron accelerated through 100 V and through 50 V.",
+    "Describe the Davisson–Germer experiment and show how it verifies λ = h/mv.",
+    "Why is the wave nature of a cricket ball unobservable?",
+    "Write the time-independent Schrödinger equation for a particle in one dimension and explain each term.",
+    "What is the physical significance of ψ and ψ²?",
+    "How do the quantum numbers arise from the solution for the hydrogen atom?",
+    "Give two results of the quantum-mechanical model that Bohr's model cannot provide."
   ],
   "formulas": [
     "$$\\lambda=\\frac{h}{mv}=\\frac{h}{p}=\\frac{h}{\\sqrt{2mKE}}$$",
     "$$\\lambda_{\\text{electron}}=\\frac{h}{\\sqrt{2meV}}=\\frac{12.27}{\\sqrt{V}}\\ \\text{Å}\\quad (V\\text{ in volts})$$",
-    "$$n\\lambda=2\\pi r\\;\\Rightarrow\\;mvr=\\frac{nh}{2\\pi}$$"
+    "$$n\\lambda=2\\pi r\\;\\Rightarrow\\;mvr=\\frac{nh}{2\\pi}$$",
+    "$$\\lambda=\\frac{h}{\\sqrt{2meV}}=\\frac{12.27}{\\sqrt{V}}\\ \\text{Å};\\qquad n\\lambda=2\\pi r$$",
+    "$$\\hat{H}\\psi=E\\psi,\\qquad \\frac{d^{2}\\psi}{dx^{2}}+\\frac{8\\pi^{2}m}{h^{2}}(E-V)\\psi=0$$",
+    "$$\\int|\\psi|^{2}dV=1\\ (\\text{normalisation});\\qquad |\\psi|^{2}=\\text{probability density}$$"
   ],
   "universalFacts": [
     "de Broglie proposed matter waves in his 1924 PhD thesis and won the 1929 Nobel Prize in Physics.",
     "Davisson and Germer confirmed electron diffraction in 1927 (Nobel Prize 1937).",
-    "λ for a 100 V electron ≈ 1.23 Å; a 1 g body at 1 m s⁻¹ has λ ≈ 6.6 × 10⁻³¹ m — undetectable."
+    "λ for a 100 V electron ≈ 1.23 Å; a 1 g body at 1 m s⁻¹ has λ ≈ 6.6 × 10⁻³¹ m — undetectable.",
+    "answer pattern for \"Elementary idea of quantum mechanical model: de Broglie's…\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "de Broglie received the 1929 Nobel Prize for his 1924 thesis — the first Nobel awarded for a PhD thesis.",
+    "λ(54 V electron) ≈ 1.67 Å matched the Davisson–Germer Bragg analysis (d = 0.091 nm, φ = 50°).",
+    "Electron microscopes reach ≈0.1 nm resolution because λ(electron) is ~10⁵ times shorter than visible light.",
+    "Schrödinger published the equation in 1926 and received the Nobel Prize in 1933 (shared with Dirac).",
+    "The hydrogen solution reproduces Bohr's −13.6/n² eV energies exactly, plus the degeneracy Bohr missed.",
+    "The name 'orbital' replaced 'orbit' because ψ² gives a probability cloud, not a path."
   ],
   "examples": [
     "**Problem:** de Broglie wavelength of an electron moving at 10⁶ m s⁻¹. **Solution:** λ = 6.626×10⁻³⁴/(9.11×10⁻³¹ × 10⁶) = 7.27 × 10⁻¹⁰ m = 0.727 nm.",
-    "**Problem:** Wavelength of a 1.0 g bullet moving at 300 m s⁻¹. **Solution:** λ = 6.626×10⁻³⁴/(10⁻³ × 300) = 2.2 × 10⁻³³ m — many orders of magnitude smaller than any aperture, so no diffraction is observed."
+    "**Problem:** Wavelength of a 1.0 g bullet moving at 300 m s⁻¹. **Solution:** λ = 6.626×10⁻³⁴/(10⁻³ × 300) = 2.2 × 10⁻³³ m — many orders of magnitude smaller than any aperture, so no diffraction is observed.",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges.",
+    "**Problem:** λ of an electron with KE = 13.6 eV. **Solution:** λ = 12.27/√13.6 ≈ 3.33 Å — exactly one circumference of the first Bohr orbit, linking the two topics.",
+    "**Problem:** Why does the equation give discrete energies? **Solution:** acceptable ψ must be continuous, single-valued and normalisable; these boundary conditions are satisfied only for special values of E — the same logic that quantises a vibrating guitar string."
   ],
   "importantNotes": [
     "Quotes the two key results for the exam: λ = h/mv and λ(electron) = 12.27/√V Å.",
     "Matter waves are not electromagnetic — say 'probability wave', not 'light wave'.",
-    "Keep mass in kg, speed in m s⁻¹ and h = 6.626 × 10⁻³⁴ J s to avoid order-of-magnitude errors."
+    "Keep mass in kg, speed in m s⁻¹ and h = 6.626 × 10⁻³⁴ J s to avoid order-of-magnitude errors.",
+    "Quote both the general form λ = h/mv and the electron form 12.27/√V Å.",
+    "Name Davisson–Germer as the experimental proof with the year 1927.",
+    "State that ψ has no physical meaning by itself; the probability interpretation is Born's.",
+    "Mention the boundary conditions — they are the reason for quantisation."
   ],
   "visualType": "de-broglie",
-  "tabGroup": "Atomic-Structure-Learner-Notes"
+  "keyPoints": [
+    "• Elementary idea of quantum mechanical model: de Broglie's…"
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Elementary idea of quantum mechanical model: de Broglie's…\" with one example.",
+    "compare \"Elementary idea of quantum mechanical model: de Broglie's…\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Elementary idea of quantum mechanical model: de Broglie's…\" and verify the answer is plausible."
+  ],
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Elementary idea of quantum mechanical model: de Broglie's…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "The de Broglie wavelength of a particle is inversely proportional to its:",
+      "options": [
+        "Mass only",
+        "Velocity only",
+        "Momentum",
+        "Kinetic energy squared"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The physically significant quantity in the quantum-mechanical model is:",
+      "options": [
+        "ψ",
+        "ψ²",
+        "E",
+        "V"
+      ],
+      "answer": "B"
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: elementary idea of quantum mechanical model: de broglie's… (within Atomic Structure).",
+    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "summary": "Elementary idea of quantum mechanical model: de Broglie's… (Atomic Structure, Chemistry, class-11-notes) covers Elementary idea of quantum mechanical model: de Broglie's…. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "filename": "05-de-broglie-waves.json"
 }

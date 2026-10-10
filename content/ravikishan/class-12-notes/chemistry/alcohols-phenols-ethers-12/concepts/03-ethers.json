@@ -7,55 +7,66 @@
   "notes": [
     "**Ethers:** This topic covers the fundamental concepts of ethers in the chemistry curriculum.",
     "Understanding ethers is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to ethers should be memorized and practiced regularly."
+    "Key definitions and theorems related to ethers should be memorized and practiced regularly.",
+    "**Fact.** Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
+    "**Fact.** Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
+    "**Fact.** Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in ethers.",
     "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "Practice with multiple examples to solidify your understanding.",
+    "❌ skip the key fact → ✅ force on moving charge f = q(v×b); on a wire f = bil sinθ.."
   ],
   "practice": [
     "Solve at least 5 problems on ethers from your textbook.",
     "Try to derive the key formulas from first principles.",
     "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type."
+    "Practice identifying which method/formula to apply in each problem type.",
+    "one worked example for \"Ethers: preparation and chemical reactions (cleavage by HI)\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "universalFacts": [
     "This topic is a cornerstone of the chemistry curriculum and appears consistently in examinations.",
     "Understanding ethers builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of ethers span engineering, physics, economics, and computer science."
+    "Real-world applications of ethers span engineering, physics, economics, and computer science.",
+    "Force on moving charge F = q(v×B); on a wire F = BIL sinθ.",
+    "Faraday: EMF ε = −dΦ/dt; Lenz's law gives the sign (induced current opposes the change in flux).",
+    "Self-inductance L = NΦ/I; inductance stores energy U = ½LI². Mutual inductance M couples two coils."
   ],
   "animation3D": "alcohols-phenols-ethers-12",
   "motionGraphics": "alcohols-phenols-ethers-12",
   "examples": [
-    "Example 1: Real-world application of Ethers",
-    "Example 2: Practical demonstration of Ethers concepts",
-    "Example 3: Numerical problem on Ethers",
-    "Example 4: Diagram-based question on Ethers",
-    "Example 5: Application in daily life involving Ethers"
+    "Real-world application of Ethers",
+    "Practical demonstration of Ethers concepts",
+    "Diagram-based question on Ethers",
+    "Application in daily life involving Ethers",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Ethers with suitable example.",
     "Q2. Solve problems related to Ethers.",
     "Q3. Differentiate between various aspects of Ethers.",
     "Q4. Derive the key formula related to Ethers.",
-    "Q5. What are the applications of Ethers?"
+    "Q5. What are the applications of Ethers?",
+    "state + explain the main idea of \"Ethers: preparation and chemical reactions (cleavage by HI)\" with one example.",
+    "compare \"Ethers\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Ethers: preparation and chemical reactions (cleavage by HI)\" and verify the answer is plausible."
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Ethers",
-    "Key Formula 2: Mathematical expression of Ethers",
-    "Key Formula 3: Application formula for Ethers",
-    "Key Formula 4: Derivation result for Ethers",
-    "Key Formula 5: Important relation in Ethers"
+    "Application formula for Ethers",
+    "Derivation result for Ethers",
+    "F = qvB sinθ",
+    "ε = −N dΦ/dt",
+    "F = BIL",
+    "L = NΦ/I"
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of Ethers",
-    "Key Point 2: Essential theorem or principle related to Ethers",
-    "Key Point 3: Important condition or constraint for Ethers",
-    "Key Point 4: Common applications of Ethers",
-    "Key Point 5: Connection to other topics in Science"
+    "• Ethers",
+    "• Preparation",
+    "• Chemical reactions",
+    "• Cleavage by HI"
   ],
-  "summary": "Ethers is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "Ethers is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics. Ethers: preparation and chemical reactions (cleavage by HI) (Alcohols, Phenols and Ethers, Chemistry, class-12-notes) covers Ethers, preparation, chemical reactions. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Ethers applies",
     "Note 2: Ethers connects to multiple other topics in Science",
@@ -85,23 +96,12 @@
     "Trick 5: Time-saving approach for Ethers problems"
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Ethers",
-    "Exam Tip 2: Practice previous year questions on Ethers",
-    "Exam Tip 3: Ethers carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Ethers thoroughly",
-    "Exam Tip 5: Review common mistakes related to Ethers"
+    "Focus on numerical problems from Ethers",
+    "Practice previous year questions on Ethers",
+    "Learn the derivations for Ethers thoroughly",
+    "Review common mistakes related to Ethers"
   ],
   "mcs": [
-    {
-      "question": "Which of the following best describes Ethers?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
-      "answer": "A"
-    },
     {
       "question": "The primary application of Ethers is in:",
       "options": [
@@ -156,5 +156,40 @@
     "Task 3: Create a concept map for Ethers",
     "Task 4: Practice previous year exam questions on Ethers",
     "Task 5: Explain Ethers to a peer or study group"
+  ],
+  "numericals": [
+    "Use  F = qvB sinθ  — pick reasonable values, solve, and check the units.",
+    "Use  ε = −N dΦ/dt  — pick reasonable values, solve, and check the units.",
+    "Use  F = BIL  — pick reasonable values, solve, and check the units."
+  ],
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Ethers: preparation and chemical reactions (cleavage by HI)\"?",
+      "options": [
+        "Ethers",
+        "Preparation",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "Ethers",
+      "explanation": "Ethers is listed among the official sub-ideas of Ethers: preparation and chemical reactions (cleavage by HI); the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Ethers: preparation and chemical reactions (cleavage by HI)\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: ethers, preparation, chemical reactions, cleavage by hi (within Alcohols, Phenols and Ethers).",
+    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: force on moving charge f = q(v×b); on a wire f = bil sinθ."
   ]
 }

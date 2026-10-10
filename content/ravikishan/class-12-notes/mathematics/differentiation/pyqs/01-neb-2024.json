@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Mathematics — Differentiation — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "differentiation",
+  "topicSlug": "differentiation-pyq-2024",
+  "topicTitle": "NEB Class 12 Mathematics — Differentiation — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Differentiate: (a) y = x³ tan x, (b) y = ln(sinx).",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**(a)** product rule: dy/dx = 3x²·tan x + x³·sec²x = **x²(3 tan x + x sec²x)**.\n\n**(b)** chain rule: dy/dx = (1/sinx)·cosx = **cot x** (valid for sinx > 0).\n\nState the rule used for each: product rule for (a), chain rule for (b).",
+      "knowledgeNote": "With more than two factors, differentiate one factor at a time and add the terms — the same rule extends to a triple product."
+    },
+    {
+      "question": "If y = √(1 + x²), prove that (1 + x²)y″ + x y′ = y.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "y² = 1 + x², so differentiating: 2y y′ = 2x → y′ = x/y.\n\nDifferentiate again: y″ = (y·1 − x·y′)/y² = (y − x·(x/y))/y² = (y² − x²)/y³.\n\nSince y² − x² = 1, we get y″ = 1/y³.\n\nNow (1 + x²)y″ + x y′ = y²·(1/y³) + x·(x/y) = 1/y + x²/y = (1 + x²)/y = y²/y = **y**, as required.",
+      "knowledgeNote": "This style of proof (square first, differentiate implicitly) avoids ugly square roots in the second derivative — always look for it."
+    },
+    {
+      "question": "Find dy/dx if x = a(θ − sin θ) and y = a(1 − cos θ).",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "dx/dθ = a(1 − cosθ), dy/dθ = a sinθ.\n\ndy/dx = (dy/dθ)/(dx/dθ) = a sinθ / a(1 − cosθ) = sinθ/(1 − cosθ).\n\nUsing the half-angle identities: = [2 sin(θ/2)cos(θ/2)]/[2 sin²(θ/2)] = **cot(θ/2)**. At θ = π/2 the slope is cot(π/4) = 1.",
+      "knowledgeNote": "For parametric curves always divide the derivatives, and simplify with half-angle identities — the cycloid slope simplification is a standard question."
+    }
+  ]
+}

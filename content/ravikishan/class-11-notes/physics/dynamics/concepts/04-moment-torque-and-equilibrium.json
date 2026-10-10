@@ -354,7 +354,26 @@
     "**Worked example — seesaw:** a 40 kg child sits 2 m from the fulcrum. Where must a 50 kg child sit to balance? Torque balance: $40 \\times 9.8 \\times 2 = 50 \\times 9.8 \\times x \rightarrow x = 1.6 \\text{ m}$. The heavier child sits closer to the fulcrum.",
     "**Worked example — ladder:** a uniform ladder of length L leans against a smooth wall at angle $\\theta$. The wall reaction is horizontal (smooth), the ground reaction has both normal and friction components. Torque about the base eliminates the unknown ground reaction: $N_{\\text{wall}} \\times L \\sin \\theta = mg \\times (L/2) \\cos \\theta$.",
     "**Equilibrium in the NEB exam:** the standard problem is a beam/ladder/plank with multiple forces — apply $\\sum F_x = 0$, $\\sum F_y = 0$, and $\\sum \\tau = 0$ (choosing the pivot wisely to eliminate unknowns). Three equations for up to three unknowns.",
-    "**Practical examples:** opening a door (push at the handle, not near the hinge — larger r gives more $\\tau$), using a spanner (longer handle = more torque for the same force), a wheelbarrow (load CG near the wheel reduces the lifting torque)."
+    "**Practical examples:** opening a door (push at the handle, not near the hinge — larger r gives more $\\tau$), using a spanner (longer handle = more torque for the same force), a wheelbarrow (load CG near the wheel reduces the lifting torque).",
+    "**Moment of a force (torque):** $\\tau = rF\\sin\\theta$, where $r$ is the distance from the pivot to the point of application and $\\theta$ is the angle between $\\vec{r}$ and $\\vec{F}$. The perpendicular distance $d = r\\sin\\theta$ is called the moment arm or lever arm.",
+    "**Vector form:** $\\vec{\\tau} = \\vec{r} \\times \\vec{F}$. Torque is a vector perpendicular to the plane containing $\\vec{r}$ and $\\vec{F}$, following the right-hand rule. Its magnitude is $\\tau = rF\\sin\\theta$.",
+    "**Units:** torque has units of N·m. Note: while dimensionally equivalent to joules, torque is NOT energy and is never expressed in joules. Torque is a vector; energy is a scalar.",
+    "**Couple:** two equal and opposite forces whose lines of action do not coincide. A couple produces pure rotation with zero net force, so it causes angular acceleration without translation.",
+    "**Moment of a couple:** $\\tau = F \\cdot d$, where $d$ is the perpendicular distance between the lines of action. The moment of a couple is the same about ANY point — it is a free vector, independent of the reference point.",
+    "**Equilibrium conditions:** for a rigid body to be in static equilibrium: (1) $\\sum\\vec{F} = 0$ (translational equilibrium) and (2) $\\sum\\vec{\\tau} = 0$ about any point (rotational equilibrium). Both conditions must be satisfied simultaneously.",
+    "**Types of equilibrium:** (1) Stable — body returns to equilibrium when displaced slightly (centre of gravity rises). (2) Unstable — body moves further from equilibrium when displaced (centre of gravity falls). (3) Neutral — body stays in new position (centre of gravity at same height).",
+    "**Center of gravity:** the point where the entire weight of the body may be considered to act. For a uniform body, it coincides with the geometrical center. For irregular bodies, it can be found experimentally by suspension.",
+    "**Principle of moments:** for a body in equilibrium, the sum of clockwise moments about any point equals the sum of anticlockwise moments about that point. This is a direct consequence of $\\sum\\vec{\\tau} = 0$.",
+    "**Lever classes:** (1) Class 1: fulcrum between effort and load (seesaw). (2) Class 2: load between fulcrum and effort (wheelbarrow). (3) Class 3: effort between fulcrum and load (tweezers, human forearm). Mechanical advantage differs for each class.",
+    "**Calculating torque about a point:** choose a pivot point and calculate the torque of each force about that point. A force whose line of action passes through the pivot produces zero torque. Choose the pivot to eliminate unknown forces from the torque equation.",
+    "**Stability and center of gravity:** a body is stable when its center of gravity is low and its base of support is wide. Tipping occurs when the vertical line through the CG falls outside the base. This principle explains why racing cars have wide wheelbases and low centers of gravity.",
+    "**Torque and angular acceleration:** just as $F = ma$ governs translational motion, $\\tau = I\\alpha$ governs rotational motion, where $I$ is the moment of inertia and $\\alpha$ is the angular acceleration.",
+    "**Static vs dynamic equilibrium:** static equilibrium means the body is at rest ($\\vec{v} = 0$, $\\vec{\\omega} = 0$). Dynamic equilibrium means the body moves with constant velocity and constant angular velocity ($\\vec{a} = 0$, $\\vec{\\alpha} = 0$). Both require $\\sum\\vec{F} = 0$ and $\\sum\\vec{\\tau} = 0$.",
+    "**Finding the center of gravity experimentally:** suspend the body from two different points. The CG lies at the intersection of the vertical lines through each suspension point. This method works for any irregular shape.",
+    "**Torque balance in biological systems:** the human body uses lever systems extensively. The biceps muscle exerts a large force at a short distance from the elbow joint to lift a smaller weight at a longer distance — a class 3 lever with mechanical advantage less than 1.",
+    "**Torque and power:** rotational power is $P = \\tau\\omega$. For a given power, a larger torque produces slower rotation and vice versa. This is why bicycles use gear ratios — changing the effective torque at the wheel.",
+    "**Resultant of concurrent forces:** if multiple forces act on a body and their lines of action intersect at a point, you can find the resultant by vector addition. The body is in translational equilibrium if the resultant is zero.",
+    "**Non-concurrent forces:** when forces do not intersect at a single point, you must check both force equilibrium and torque equilibrium. A body can have zero net force but non-zero net torque (pure couple), causing rotation without translation."
   ],
   "confusion": [
     "❌ 'Torque and moment are different.' ✅ In physics problems, they are the same quantity: $\\tau = rF \\sin \\theta$. Engineers sometimes distinguish 'moment' (bending) from 'torque' (twisting), but here they are interchangeable.",
@@ -362,42 +381,76 @@
     "❌ 'The torque depends on the pivot chosen.' ✅ The torque of a single force depends on the pivot, but the NET torque in equilibrium is zero about ANY pivot. Choose the pivot to eliminate unknowns.",
     "❌ 'Heavier bodies always produce more torque.' ✅ Torque depends on BOTH force and distance. A small force far from the pivot can produce more torque than a large force close to it.",
     "❌ 'The centre of gravity is always inside the body.' ✅ For a ring, the CG is at the centre (in empty space). For an L-shaped body, it lies outside the material.",
-    "❌ 'A ladder leaning against a wall is safe if $\\sum F = 0$.' ✅ You also need $\\sum \\tau = 0$ AND friction at the ground to be $\\le \\mu N$. The ladder slips when the required friction exceeds $\\mu N_{\\text{ground}}$."
+    "❌ 'A ladder leaning against a wall is safe if $\\sum F = 0$.' ✅ You also need $\\sum \\tau = 0$ AND friction at the ground to be $\\le \\mu N$. The ladder slips when the required friction exceeds $\\mu N_{\\text{ground}}$.",
+    "Torque depends on the choice of pivot point, but the moment of a couple does NOT — it is the same about any point. This is because a couple produces pure rotation with no net force.",
+    "Zero net force does not imply zero net torque, and zero net torque does not imply zero net force. A body can be in rotational equilibrium but accelerating translationally, or vice versa.",
+    "The N·m unit for torque is NOT the same as the joule (energy), even though they are dimensionally equivalent. Torque is a vector (or pseudovector); energy is a scalar.",
+    "The point about which you calculate torque is arbitrary for equilibrium problems — if the body is in equilibrium, the net torque is zero about ANY point. Choose the point that minimizes the number of unknowns.",
+    "A body can have zero acceleration but non-zero torque if it is rotating with constant angular velocity — this is dynamic equilibrium, not static equilibrium.",
+    "In a class 3 lever (like a seesaw where the fulcrum is in the middle), the effort and load are on opposite sides. The mechanical advantage is less than 1, meaning you need more effort force than the load, but the load moves farther.",
+    "When calculating torque, only the component of force perpendicular to the position vector contributes. The parallel component ($F\\cos\\theta$) produces no torque about the pivot.",
+    "A body in stable equilibrium has its center of gravity at a minimum height. When displaced, the CG rises, and gravity provides a restoring torque that returns the body to equilibrium."
   ],
   "practice": [
     "Solve 5 torque-calculation problems for forces applied at different angles and distances from the pivot.",
     "Solve 5 equilibrium problems (beams, planks, seesaws) using $\\sum F = 0$ and $\\sum \\tau = 0$.",
     "Solve 3 ladder problems (smooth wall, rough ground) for reactions and the minimum angle before slipping.",
     "Find the centre of gravity of composite bodies (rod + disk, L-shaped body) by taking moments.",
-    "Solve 3 couple problems showing that the torque is independent of the pivot chosen."
+    "Solve 3 couple problems showing that the torque is independent of the pivot chosen.",
+    "A uniform beam of length 4 m and weight 100 N is supported at its ends. A 200 N weight is placed 1.5 m from the left end. Find the reactions at the supports. Solution: Let $R_L$ and $R_R$ be the left and right reactions. Force equilibrium: $R_L + R_R = 100 + 200 = 300$ N. Taking moments about the left end: $200 \\times 1.5 + 100 \\times 2 = R_R \\times 4$. $300 + 200 = 4R_R$, so $R_R = 125$ N and $R_L = 175$ N.",
+    "A couple consists of two forces of 50 N each, acting at the ends of a 0.4 m rod. Find the torque of the couple. Solution: $\\tau = F \\times d = 50 \\times 0.4 = 20$ N·m. This torque is the same about any point on or off the rod.",
+    "A ladder of length 5 m and weight 200 N leans against a smooth vertical wall with its foot 3 m from the wall. Find the friction force at the ground. Solution: The ladder forms a 3-4-5 triangle, so the height on the wall is 4 m. Taking moments about the foot: $200 \\times 1.5 = N_{wall} \\times 4$, so $N_{wall} = 75$ N. Since the wall is smooth, friction at the ground balances the wall reaction: $f = 75$ N. Force equilibrium gives $N_{ground} = 200$ N. Coefficient of friction: $\\mu = \\frac{f}{N} = \\frac{75}{200} = 0.375$.",
+    "A see-saw 4 m long is pivoted at its centre. A 30 kg child sits 1.5 m from the pivot. Where must a 20 kg child sit to balance the see-saw? Solution: For rotational equilibrium: $30 \\times g \\times 1.5 = 20 \\times g \\times d$. $45 = 20d$, so $d = 2.25$ m from the pivot.",
+    "A horizontal cantilever beam of length 2 m projects from a wall. A load of 500 N is applied at the free end. Find the torque about the wall support. Solution: $\\tau = F \\times r = 500 \\times 2 = 1000$ N·m. The wall must exert an equal and opposite torque to maintain equilibrium.",
+    "A uniform meter rule of weight 1.2 N is pivoted at the 40 cm mark. Where must a 0.8 N weight be placed to balance the rule? Solution: The weight of the rule acts at the 50 cm mark, 10 cm from the pivot. Taking moments about the pivot: $0.8 \\times d = 1.2 \\times 10$, so $d = 15$ cm. The 0.8 N weight must be placed at the 25 cm mark (15 cm to the left of the pivot).",
+    "A horizontal boom of length 3 m and weight 200 N is hinged at a wall and supported by a cable making 30° with the horizontal at the far end. A 500 N weight hangs from the far end. Find the tension in the cable and the hinge reaction. Solution: Taking moments about the hinge: $500 \\times 3 + 200 \\times 1.5 = T\\sin 30° \\times 3$. $1500 + 300 = 1.5T$, so $T = 1200$ N. Vertical forces: $R_y + T\\sin 30° = 500 + 200$, so $R_y = 700 - 600 = 100$ N. Horizontal forces: $R_x = T\\cos 30° = 1200 \\times 0.866 = 1039$ N. Hinge reaction: $R = \\sqrt{100^2 + 1039^2} \\approx 1044$ N.",
+    "A uniform ladder of weight $W$ and length $L$ rests against a smooth wall with its foot on rough ground ($\\mu = 0.4$). Find the minimum angle with the horizontal for the ladder not to slip. Solution: Taking moments about the foot: $W \\cdot \\frac{L}{2}\\cos\\theta = N_{wall} \\cdot L\\sin\\theta$, so $N_{wall} = \\frac{W\\cos\\theta}{2\\sin\\theta} = \\frac{W}{2\\tan\\theta}$. Horizontal equilibrium: $f = N_{wall}$. At limiting friction: $f = \\mu W = 0.4W$. So $\\frac{W}{2\\tan\\theta} = 0.4W$, giving $\\tan\\theta = \\frac{1}{0.8} = 1.25$, so $\\theta = 51.3°$."
   ],
   "universalFacts": [
     "Torque is the rotational analogue of force — just as force causes linear acceleration, torque causes angular acceleration.",
     "The principle of moments ($\\sum \\tau = 0$ for equilibrium) is the basis of all lever, beam, and structure problems.",
     "Every rigid-body equilibrium problem in the NEB exam requires both $\\sum F = 0$ and $\\sum \\tau = 0$.",
     "The centre of gravity is a powerful simplification — it reduces a distributed weight to a single point force.",
-    "Couples produce pure rotation — they are used in steering wheels, screwdrivers, and any tool that applies a twisting force."
+    "Couples produce pure rotation — they are used in steering wheels, screwdrivers, and any tool that applies a twisting force.",
+    "The concept of torque was formalized by Archimedes, who stated: \"Give me a place to stand, and I shall move the Earth\" — referring to the principle of the lever.",
+    "In SI units, torque is expressed in newton-metres (N·m), while energy is expressed in joules (J). Though dimensionally identical, they represent different physical quantities.",
+    "The human body uses many lever systems: the elbow joint is a class 3 lever (force between fulcrum and load), while the ankle joint acts as a class 2 lever (load between fulcrum and force).",
+    "A torque of 1 N·m is the torque produced by a 1 N force applied perpendicularly at a distance of 1 m from the pivot — roughly the torque needed to loosen a tight bolt by hand.",
+    "Cars specify engine torque (e.g., 300 N·m) rather than just power because torque determines the twisting force available at the wheels, which is crucial for acceleration and towing capacity.",
+    "The stability of a standing person depends on the position of their center of gravity relative to their feet. Spreading the feet apart widens the base of support and increases stability.",
+    "In engineering, the principle of moments is used to design bridges, cranes, and beams. The reactions at supports are calculated by ensuring both force and torque equilibrium.",
+    "A torque wrench allows precise application of a specific torque to a bolt, preventing over-tightening. The calibration ensures the torque applied equals the desired value regardless of the handle length used."
   ],
   "examples": [
     "Seesaw: A 30 kg child sits 1.5 m from the fulcrum. A 45 kg child sits on the other side. Balance distance = $30 \\times 1.5 / 45 = 1.0 \\text{ m}$.",
     "Spanner: A 200 N force is applied at 0.25 m from a bolt. Torque = $200 \\times 0.25 = 50 \\text{ Nm}$.",
     "Uniform beam: A 6 m uniform beam (mass 20 kg) supports a 10 kg load at its end. The support force at the free end: torque about the wall $\rightarrow T \\times 6 = 20 \\times 9.8 \\times 3 + 10 \\times 9.8 \\times 6 \rightarrow T = 196 \\text{ N}$.",
     "Ladder: A 5 m uniform ladder (mass 15 kg) leans at $60^\\circ$ against a smooth wall. Wall reaction $N = \\frac{15 \\times 9.8 \\times 2.5 \\times \\cos 60^\\circ}{5 \\times \\sin 60^\\circ} = 42.4 \\text{ N}$.",
-    "Couple: Two 30 N forces act on opposite sides of a wheel (radius 0.4 m). Torque = $30 \\times 0.8 = 24 \\text{ Nm}$ (same about any point)."
+    "Couple: Two 30 N forces act on opposite sides of a wheel (radius 0.4 m). Torque = $30 \\times 0.8 = 24 \\text{ Nm}$ (same about any point).",
+    "Real-world application of Moment, torque and equilibrium",
+    "Practical demonstration of Moment, torque and equilibrium concepts",
+    "Diagram-based question on Moment, torque and equilibrium",
+    "Application in daily life involving Moment, torque and equilibrium"
   ],
   "practiceQuestions": [
     "A 50 N force is applied at $30^\\circ$ to a spanner of length 0.3 m. Find the torque about the bolt.",
     "A uniform beam of length 4 m and mass 10 kg supports a 20 kg load at its end. Find the support forces at both ends.",
     "A 3 m ladder of mass 8 kg leans against a smooth wall at $50^\\circ$ to the horizontal. Find the reactions at the wall and ground.",
     "Two children of masses 25 kg and 35 kg sit on a seesaw 3 m long. Where should the fulcrum be placed?",
-    "A couple consists of two 20 N forces separated by 0.5 m. Find the torque and show it is the same about any point."
+    "A couple consists of two 20 N forces separated by 0.5 m. Find the torque and show it is the same about any point.",
+    "Q2. Solve problems related to Moment, torque and equilibrium.",
+    "Q3. Differentiate between various aspects of Moment, torque and equilibrium.",
+    "Q4. Derive the key formula related to Moment, torque and equilibrium.",
+    "Q5. What are the applications of Moment, torque and equilibrium?"
   ],
   "formulas": [
     "Torque of a force: $\\tau = rF \\sin \\theta$ (positive = anticlockwise, negative = clockwise)",
     "Equilibrium conditions: $\\sum F = 0$ (translational) AND $\\sum \\tau = 0$ (rotational)",
     "Couple torque: $\\tau = F \\times d$ (independent of pivot position)",
     "Centre of gravity: $x_{CG} = \\frac{\\sum (m_i x_i)}{\\sum m_i}$ (weighted average of positions)",
-    "Principle of moments: for equilibrium, sum of clockwise torques = sum of anticlockwise torques"
+    "Principle of moments: for equilibrium, sum of clockwise torques = sum of anticlockwise torques",
+    "Application formula for Moment, torque and equilibrium",
+    "Derivation result for Moment, torque and equilibrium"
   ],
   "keyPoints": [
     "Torque = $rF \\sin \\theta$ — it depends on force, distance, AND the angle between them.",
@@ -411,7 +464,12 @@
     "Torque sign convention: anticlockwise = positive, clockwise = negative (or vice versa — just be consistent).",
     "For a uniform beam, the weight acts at the centre ($L/2$ from either end).",
     "A ladder against a smooth wall has only a horizontal reaction at the wall (no friction).",
-    "NEB equilibrium problems always require all three equations: $\\sum F_x = 0$, $\\sum F_y = 0$, $\\sum \\tau = 0$."
+    "NEB equilibrium problems always require all three equations: $\\sum F_x = 0$, $\\sum F_y = 0$, $\\sum \\tau = 0$.",
+    "Note 1: Pay attention to the conditions under which Moment, torque and equilibrium applies",
+    "Note 2: Moment, torque and equilibrium connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Moment, torque and equilibrium",
+    "Note 4: Remember the units and dimensions involved in Moment, torque and equilibrium",
+    "Note 5: Moment, torque and equilibrium frequently appears in examination questions"
   ],
   "importantStatements": [
     "Torque is the rotational effect of a force: $\\tau = \\mathbf{r} \\times \\mathbf{F}$ (vector cross product), magnitude $rF \\sin \\theta$.",
@@ -425,37 +483,60 @@
     "The two equilibrium conditions ($\\sum F = 0$, $\\sum \\tau = 0$) are independent — both must be checked.",
     "A couple's torque is independent of the pivot — this is why a steering wheel feels the same no matter where you push.",
     "The centre of gravity coincides with the centre of mass only in a uniform gravitational field.",
-    "NEB equilibrium problems: always draw the FBD first, then choose the pivot to eliminate unknowns."
+    "NEB equilibrium problems: always draw the FBD first, then choose the pivot to eliminate unknowns.",
+    "Note 2: Remember the distinction between different types in Moment, torque and equilibrium",
+    "Note 3: Moment, torque and equilibrium has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Moment, torque and equilibrium",
+    "Note 5: Cross-check your answers using alternative methods for Moment, torque and equilibrium"
   ],
   "examShortTricks": [
     "Pivot trick: place the pivot at the point of an unknown force — that force drops out of the torque equation.",
     "Seesaw shortcut: $m_1 r_1 = m_2 r_2$ — the product of mass and distance must be equal on both sides.",
     "Ladder shortcut: take torques about the ground contact point — the ground reaction (both N and f) drops out.",
     "Couple shortcut: $\\tau = F \\times d$ — just multiply one force by the perpendicular distance between them.",
-    "CG shortcut: for a uniform rod, the weight acts at $L/2$ — no calculation needed."
+    "CG shortcut: for a uniform rod, the weight acts at $L/2$ — no calculation needed.",
+    "Trick 1: Quick method to identify applicable Moment, torque and equilibrium formula",
+    "Trick 2: Elimination technique for Moment, torque and equilibrium MCQs",
+    "Trick 3: Dimensional analysis shortcut for Moment, torque and equilibrium",
+    "Trick 4: Memory aid for Moment, torque and equilibrium formulas",
+    "Trick 5: Time-saving approach for Moment, torque and equilibrium problems"
   ],
   "examNotes": [
     "The FBD is essential — draw ALL forces with their correct points of application.",
     "Choose the pivot wisely: at the point of an unknown force, that force contributes zero torque.",
     "Ladder problems (smooth wall, rough ground) are standard — know the torque equation about the base.",
     "Seesaw and beam problems use the principle of moments: clockwise torques = anticlockwise torques.",
-    "Couple problems: remember that the torque is the same about any point — pick the easiest one."
+    "Couple problems: remember that the torque is the same about any point — pick the easiest one.",
+    "Focus on numerical problems from Moment, torque and equilibrium",
+    "Practice previous year questions on Moment, torque and equilibrium",
+    "Learn the derivations for Moment, torque and equilibrium thoroughly",
+    "Review common mistakes related to Moment, torque and equilibrium"
   ],
   "importantConcepts": [
     "Torque ($\\tau = rF \\sin \\theta$) is the rotational analogue of force — it causes angular acceleration.",
     "A rigid body is in equilibrium only when both $\\sum F = 0$ and $\\sum \\tau = 0$ — both conditions are independent.",
     "The principle of moments: in equilibrium, clockwise torques balance anticlockwise torques about any pivot.",
     "A couple produces a pure torque $\\tau = Fd$ that is independent of the pivot position.",
-    "The centre of gravity is the single point where the total weight may be considered to act."
+    "The centre of gravity is the single point where the total weight may be considered to act.",
+    "Concept 1: Core definition of Moment, torque and equilibrium",
+    "Concept 2: Key theorem or principle in Moment, torque and equilibrium",
+    "Concept 3: Important application area of Moment, torque and equilibrium",
+    "Concept 4: Fundamental relationship in Moment, torque and equilibrium",
+    "Concept 5: Connection between Moment, torque and equilibrium and other topics"
   ],
   "importantTasks": [
     "Solve 5 torque-calculation problems for forces at different angles and distances from the pivot.",
     "Solve 5 equilibrium problems (beams, seesaws) using $\\sum F = 0$ and $\\sum \\tau = 0$.",
     "Solve 3 ladder problems for reactions and the minimum angle before slipping.",
     "Find the centre of gravity of composite bodies by taking moments.",
-    "Solve 3 couple problems showing that the torque is independent of the pivot."
+    "Solve 3 couple problems showing that the torque is independent of the pivot.",
+    "Task 1: Solve 10 numerical problems on Moment, torque and equilibrium",
+    "Task 2: Derive the main formula for Moment, torque and equilibrium",
+    "Task 3: Create a concept map for Moment, torque and equilibrium",
+    "Task 4: Practice previous year exam questions on Moment, torque and equilibrium",
+    "Task 5: Explain Moment, torque and equilibrium to a peer or study group"
   ],
-  "summary": "Torque ($\\tau = rF \\sin \\theta$) is the rotational analogue of force. A rigid body is in equilibrium only when both $\\sum F = 0$ (no linear acceleration) and $\\sum \\tau = 0$ (no angular acceleration). The principle of moments, couples, and centre of gravity are the key tools for solving beam, ladder, and structure problems.",
+  "summary": "Torque ($\\tau = rF \\sin \\theta$) is the rotational analogue of force. A rigid body is in equilibrium only when both $\\sum F = 0$ (no linear acceleration) and $\\sum \\tau = 0$ (no angular acceleration). The principle of moments, couples, and centre of gravity are the key tools for solving beam, ladder, and structure problems. Moment, torque and equilibrium is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "mcs": [
     {
       "question": "A 40 N force is applied perpendicularly at the end of a 0.5 m spanner. The torque is:",
@@ -504,6 +585,46 @@
         "$\\sum \\tau = 0$ only",
         "Both $\\sum F = 0$ and $\\sum \\tau = 0$",
         "Either $\\sum F = 0$ or $\\sum \\tau = 0$"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The primary application of Moment, torque and equilibrium is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Moment, torque and equilibrium, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Moment, torque and equilibrium?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Moment, torque and equilibrium is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
       ],
       "answer": "C"
     }

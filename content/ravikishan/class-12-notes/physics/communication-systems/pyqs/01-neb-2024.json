@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Physics — Communication Systems — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "communication-systems",
+  "topicSlug": "communication-systems-pyq-2024",
+  "topicTitle": "NEB Class 12 Physics — Communication Systems — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "What is modulation? Distinguish between amplitude modulation and frequency modulation, and state one advantage of FM over AM.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Modulation** is the process of superimposing a low-frequency message signal on a high-frequency carrier wave so the signal can be radiated over long distances by an antenna of practical size.\n\n**AM:** the amplitude of the carrier varies with the message; the sideband bandwidth is 2f_m, and noise affects amplitude strongly.\n\n**FM:** the frequency varies with the message; bandwidth ≈ 2(f_m + Δf), which is wider.\n\n**Advantage of FM:** noise immunity — amplitude noise (lightning, sparks) can be clipped away, so reception is much clearer.",
+      "knowledgeNote": "Antenna length must be comparable to λ/4, which is why audio (≈20 Hz–20 kHz) cannot be radiated directly and needs a carrier in the MHz range."
+    },
+    {
+      "question": "Explain the terms ground wave, sky wave and space wave propagation with one suitable use of each.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Ground wave:** the wave travels along the Earth's surface; useful for medium-wave broadcast over short ranges, attenuated as frequency rises.\n\n**Sky wave:** the wave is refracted back by the ionosphere and can travel thousands of kilometres; used for short-wave radio, but is unstable as ionisation changes with time of day.\n\n**Space wave:** line-of-sight propagation direct from transmitter to receiver (plus a ground-reflected component); used for VHF/UHF TV, radar and satellite links, with range limited by the horizon.",
+      "knowledgeNote": "Satellite communication uses space waves above ~30 MHz, where the ionosphere no longer reflects the signal."
+    },
+    {
+      "question": "Define bandwidth of a signal and calculate the bandwidth needed if a message of 5 kHz is transmitted by (a) AM and (b) FM with a frequency deviation of 20 kHz.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Bandwidth** is the range of frequencies a signal occupies.\n\n**(a) AM:** 2f_m = 2 × 5 = **10 kHz**.\n\n**(b) FM:** 2(f_m + Δf) = 2(5 + 20) = **50 kHz**, using Carson's rule.",
+      "knowledgeNote": "FM needs a wider channel than AM but trades bandwidth for noise immunity — a recurring NEB comparison."
+    }
+  ]
+}

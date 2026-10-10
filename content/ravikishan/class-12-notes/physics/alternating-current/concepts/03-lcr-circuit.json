@@ -28,11 +28,11 @@
   "animation3D": "alternating-current",
   "motionGraphics": "alternating-current",
   "examples": [
-    "Example 1: Calculating impedance and phase angle",
-    "Example 2: Finding resonance frequency",
-    "Example 3: Interpreting phasor diagrams at resonance",
-    "Example 4: Calculating power dissipation",
-    "Example 5: Determining bandwidth and Q-factor"
+    "Calculating impedance and phase angle",
+    "Finding resonance frequency",
+    "Interpreting phasor diagrams at resonance",
+    "Calculating power dissipation",
+    "Determining bandwidth and Q-factor"
   ],
   "practiceQuestions": [
     "Q1. Derive the expression for impedance Z in a series LCR circuit.",
@@ -42,18 +42,18 @@
     "Q5. Calculate the resonance frequency if L=2H, C=5µF, R=10Ω."
   ],
   "formulas": [
-    "Key Formula 1: Impedance Z = √(R² + (X_L - X_C)²)",
-    "Key Formula 2: Resonance frequency f_r = 1 / (2π√LC)",
-    "Key Formula 3: Phase angle φ = tan⁻¹((X_L - X_C) / R)",
-    "Key Formula 4: Current I = V / Z",
-    "Key Formula 5: Quality Factor Q = (1/R)√(L/C)"
+    "Impedance Z = √(R² + (X_L - X_C)²)",
+    "Resonance frequency f_r = 1 / (2π√LC)",
+    "Phase angle φ = tan⁻¹((X_L - X_C) / R)",
+    "Current I = V / Z",
+    "Quality Factor Q = (1/R)√(L/C)"
   ],
   "keyPoints": [
-    "Key Point 1: Condition for Resonance (X_L = X_C)",
-    "Key Point 2: Phasor diagram analysis",
-    "Key Point 3: Frequency dependence of Impedance",
-    "Key Point 4: Power factor cos φ",
-    "Key Point 5: Sharpness of resonance (Q-factor)"
+    "Condition for Resonance (X_L = X_C)",
+    "Phasor diagram analysis",
+    "Frequency dependence of Impedance",
+    "Power factor cos φ",
+    "Sharpness of resonance (Q-factor)"
   ],
   "summary": "A series LCR circuit combines resistance, inductance, and capacitance. It demonstrates resonance when inductive and capacitive reactances cancel, leading to minimum impedance and maximum current.",
   "specialNotes": [
@@ -85,11 +85,11 @@
     "Trick 5: Q = (1/R)√(L/C)."
   ],
   "examNotes": [
-    "Exam Tip 1: Resonance conditions are highly examinable.",
-    "Exam Tip 2: Be comfortable with phasor diagrams for RLC.",
-    "Exam Tip 3: Know the definition of Q-factor.",
-    "Exam Tip 4: Watch for units (convert mH, µF to H, F).",
-    "Exam Tip 5: Understand the frequency variation of impedance."
+    "Resonance conditions are highly examinable.",
+    "Be comfortable with phasor diagrams for RLC.",
+    "Know the definition of Q-factor.",
+    "Watch for units (convert mH, µF to H, F).",
+    "Understand the frequency variation of impedance."
   ],
   "mcs": [
     {

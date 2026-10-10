@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "faunal-diversity",
+  "unitTitle": "Faunal Diversity",
+  "unitHours": 17,
+  "syllabusTopics": [
+    "Protista: outline classification; Protozoa: diagnostic features and classification up to class with examples",
+    "Animalia: level of organisation, body plan, body symmetry, body cavity and segmentation; diagnostic features and classification of phyla up to class",
+    "Earthworm (Pheretima posthuma): habit and habitat, external features, digestive, excretory, nervous and reproductive systems",
+    "Frog (Rana tigrina): habit and habitat, external features, digestive, blood vascular, respiratory and reproductive systems"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05 from this unit's concepts/01-protista...json, 02-animalia...json, 03-earthworm.json and 04-frog.json (notes, keyPoints, formulas, specialNotes, examShortTricks, mcs) — the labelled-diagram card the owner's 'diagrams of biology' asked for. Board row from the unit practice bank; no fabricated citation.",
+  "card": {
+    "tag": "Faunal Diversity",
+    "title": "Earthworm and frog — the two specimens, fully labelled",
+    "href": "/class-11-notes/biology/chapters/faunal-diversity",
+    "icon": "PenLine",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "The animal half of NEB runs from the four protozoan classes to nine animal phyla, then stops at two model specimens for dissection-level detail: Pheretima posthuma (earthworm — segmented annelid, true coelom) and Rana tigrina (tiger frog — amphibian, semi-aquatic). Every phylum is placed by four criteria: level of organisation, symmetry, body cavity and segmentation — and the two specimens are where those criteria become visible anatomy."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Phylum order: Porifera → Cnidaria → Platyhelminthes → Nematoda → Annelida → Arthropoda → Mollusca → Echinodermata → Chordata  ·  Cavity: acoelom (no cavity) / pseudocoelom (partly lined) / coelom (fully mesoderm-lined)  ·  Chordate features: notochord + dorsal hollow nerve cord + pharyngeal slits + post-anal tail  ·  Earthworm: prostomium + 100–150 segments + clitellum (segments 15–31) + setae"
+    },
+    {
+      "label": "Conditions",
+      "text": "Classification only works when the criteria are applied in order — organisation level, then symmetry, then cavity, then segmentation. The specimens set their own conditions: Pheretima must stay in moist soil because it breathes through the skin (cutaneous respiration), which is why it surfaces after rain, and Rana must return to water to breed because fertilisation is external."
+    },
+    {
+      "label": "Special cases",
+      "text": "Paramecium carries two nuclei (macro + micro), trichocysts for defence and two contractile vacuoles for osmoregulation; Plasmodium (Sporozoa, no locomotory organelle) rides the Anopheles mosquito. Echinoderm adults are radially symmetrical but their larvae are bilateral — the criterion's famous exception. Pheretima is a hermaphrodite that cross-fertilises; the clitellum makes the cocoon. Frog: four digits on the forelimb, five webbed digits on the hindlimb, nictitating membrane over the eye, no tail in the adult (the tadpole has one)."
+    },
+    {
+      "label": "Solved",
+      "text": "Build the label lists examiners tick: Amoeba — cell membrane, cytoplasm, nucleus, food vacuole, contractile vacuole, pseudopodium; Paramecium — cilia, oral groove, food vacuole, macro-nucleus, micro-nucleus, contractile vacuoles; Pheretima — prostomium, clitellum (15–31), setae, septa, coelom; frog — tympanum, nictitating membrane, webbed hindlimbs. Classify on the spot: starfish → Echinodermata (radial, coelom); Ascaris → Nematoda (pseudocoelom); tapeworm → Platyhelminthes (acoelom)."
+    },
+    {
+      "label": "Limitation",
+      "text": "The nine-phylum ladder is a teaching order, not a family tree — molecular data keeps redrawing protists, and 'Protozoa' is a convenience group, not a natural one. Two specimens cannot stand for two whole phyla: most annelids are marine, most amphibians never look like Rana tigrina. And dissection diagrams show structure, never function — physiology must be described, not drawn."
+    },
+    {
+      "label": "Derivation",
+      "text": "Derive the animal kingdom from germ layers: diploblastic (Porifera, Cnidaria) split from triploblastic at tissue level; triploblasts divide by cavity — acoelomate (Platyhelminthes) → pseudocoelomate (Nematoda) → coelomate (Annelida onward); the coelomates then split into protostomes and deuterostomes (Echinodermata + Chordata). Derive earthworm locomotion from mechanics: circular muscles squeeze the hydrostatic coelom to lengthen the body, longitudinal muscles shorten it, setae grip the soil, and the wave of contractions crawls the worm forward."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Strings: phyla P-C-P-N-A-A-M-E-C; chordates C-D-P-P; cavities read as 'A = none, P = part, C = complete'. Species facts that always earn a mark: Paramecium = cilia + two nuclei; Amoeba = pseudopodia; Plasmodium = malaria + Anopheles; earthworm = skin breather + clitellum 15–31 + hermaphrodite; frog = fore-4/hind-5-webbed + tympanum + no tail. For any 'draw and label' answer, write the label list first, then draw around it."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style (unit practice bank): draw and label Paramecium; tabulate the four protozoan classes with locomotory organelle and one example each; list the nine animal phyla with one class each; differentiate acoelom, pseudocoelom and coelom with phylum examples; draw and label the external features of Pheretima; describe the frog's external features and its blood vascular system; state the significance of earthworms to soil."
+    }
+  ]
+}

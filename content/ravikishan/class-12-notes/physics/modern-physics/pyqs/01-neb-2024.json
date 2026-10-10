@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Physics — Modern Physics — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "modern-physics",
+  "topicSlug": "modern-physics-pyq-2024",
+  "topicTitle": "NEB Class 12 Physics — Modern Physics — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State the laws of photoelectric emission and explain them using Einstein's photoelectric equation.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Laws:** (i) emission is instantaneous; (ii) for a given metal, the number of photoelectrons (hence the saturation current) is proportional to the intensity; (iii) there is a threshold frequency below which no emission occurs, whatever the intensity; (iv) the maximum kinetic energy depends on frequency, not intensity.\n\n**Einstein's equation:** hν = φ + K_max, where φ = hν₀ is the work function. Emission needs hν ≥ φ, so a threshold exists; K_max rises linearly with ν and is independent of intensity — explaining (iii) and (iv), while (ii) follows from more photons liberating more electrons.",
+      "knowledgeNote": "Stopping potential V₀ satisfies eV₀ = K_max, so a graph of V₀ against ν has slope h/e and intercept −ν₀."
+    },
+    {
+      "question": "Derive Bohr's expression for the radius of the nth orbit of a hydrogen atom and hence write the energy expression.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "For a stable orbit the Coulomb force supplies the centripetal force: mv²/r = e²/(4πε₀r²), and Bohr's quantisation requires angular momentum mvr = nh/2π.\n\nSolving the pair, the radius is **r_n = (4πε₀n²h²)/(πme²) = n²a₀** with a₀ ≈ 0.53 Å.\n\nEnergy: K = e²/(8πε₀r), U = −e²/(4πε₀r), so E = K + U = **−13.6/n² eV**.",
+      "knowledgeNote": "Energy is negative for bound orbits and the levels converge as n → ∞, where the electron becomes free (E = 0)."
+    },
+    {
+      "question": "Define half-life and derive the relation between half-life and decay constant. A radioactive sample has a half-life of 20 days — what fraction remains after 60 days?",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "From N = N₀e^(−λt), set N = N₀/2 at t = T½: ½ = e^(−λT½) →\n\n**T½ = ln2/λ = 0.693/λ**.\n\n60 days = 3 half-lives, so the remaining fraction is (1/2)³ = **1/8 = 12.5%**.",
+      "knowledgeNote": "Half-life is statistical: it predicts populations, not individual atoms, and the same (1/2)ⁿ rule applies to activity A = λN."
+    }
+  ]
+}

@@ -1,0 +1,69 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "physics",
+  "unitSlug": "dynamics",
+  "unitTitle": "Dynamics",
+  "unitHours": 6,
+  "syllabusTopics": [
+    "Linear momentum, impulse",
+    "Conservation of linear momentum",
+    "Application of Newton's laws",
+    "Moment, torque and equilibrium",
+    "Solid friction: laws of solid friction and their verifications"
+  ],
+  "source": "authored:rail-diagram",
+  "agentNotes": "Diagram card — the figure is authored SVG (frontend/lib/rail-diagrams.ts) drawn in the rectangular .rail-figure box at the row it explains (frontend/AGENTS.md §9). This is an EXTRA card for the unit, so it streams right after the unit's canonical card and before the Class 12 teaser. Figures cross the note-visuals guard in frontend/lib/content/visuals.ts (one svg block, no script/style/defs/external refs); an unusable figure is skipped, never half-drawn. Check: npx tsx frontend/scripts/content/home-rails.ts --check",
+  "card": {
+    "tag": "Dynamics · Diagram",
+    "title": "Free-body diagrams: the forces acting on one body",
+    "href": "/class-11-notes/physics",
+    "icon": "Workflow",
+    "statKey": "pyq:physics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "A free-body diagram isolates ONE body and draws every force acting on it: the applied force F, friction f, its weight mg and the normal reaction R. Arrows start at the body's centre and their lengths stand for the magnitudes, so the diagram is the equation before the algebra.",
+      "figure": {
+        "svg": "<svg viewBox=\"0 0 640 340\" role=\"img\">\n  <title>Free-body diagram of a block on a rough surface</title>\n  <rect x=\"250\" y=\"170\" width=\"140\" height=\"70\" fill=\"#e2e8f0\" stroke=\"#0f172a\" stroke-width=\"2.5\"/>\n  <line x1=\"60\" y1=\"240\" x2=\"580\" y2=\"240\" stroke=\"#0f172a\" stroke-width=\"2.5\"/>\n  <line x1=\"90\" y1=\"240\" x2=\"70\" y2=\"262\" stroke=\"#94a3b8\" stroke-width=\"1.5\"/>\n  <line x1=\"150\" y1=\"240\" x2=\"130\" y2=\"262\" stroke=\"#94a3b8\" stroke-width=\"1.5\"/>\n  <line x1=\"210\" y1=\"240\" x2=\"190\" y2=\"262\" stroke=\"#94a3b8\" stroke-width=\"1.5\"/>\n  <line x1=\"270\" y1=\"240\" x2=\"250\" y2=\"262\" stroke=\"#94a3b8\" stroke-width=\"1.5\"/>\n  <line x1=\"330\" y1=\"240\" x2=\"310\" y2=\"262\" stroke=\"#94a3b8\" stroke-width=\"1.5\"/>\n  <line x1=\"390\" y1=\"240\" x2=\"370\" y2=\"262\" stroke=\"#94a3b8\" stroke-width=\"1.5\"/>\n  <line x1=\"450\" y1=\"240\" x2=\"430\" y2=\"262\" stroke=\"#94a3b8\" stroke-width=\"1.5\"/>\n  <line x1=\"510\" y1=\"240\" x2=\"490\" y2=\"262\" stroke=\"#94a3b8\" stroke-width=\"1.5\"/>\n  <line x1=\"320\" y1=\"170\" x2=\"320\" y2=\"96\" stroke=\"#16a34a\" stroke-width=\"3\"/>\n  <polygon points=\"320,86 311,105 329,105\" fill=\"#16a34a\"/>\n  <text x=\"330\" y=\"112\" font-size=\"15\" font-weight=\"bold\" fill=\"#15803d\">R</text>\n  <line x1=\"320\" y1=\"240\" x2=\"320\" y2=\"315\" stroke=\"#dc2626\" stroke-width=\"3\"/>\n  <polygon points=\"320,327 311,308 329,308\" fill=\"#dc2626\"/>\n  <text x=\"330\" y=\"322\" font-size=\"15\" font-weight=\"bold\" fill=\"#b91c1c\">mg</text>\n  <line x1=\"392\" y1=\"205\" x2=\"500\" y2=\"205\" stroke=\"#2563eb\" stroke-width=\"3\"/>\n  <polygon points=\"512,205 494,196 494,214\" fill=\"#2563eb\"/>\n  <text x=\"452\" y=\"196\" font-size=\"15\" font-weight=\"bold\" fill=\"#1d4ed8\">F</text>\n  <line x1=\"248\" y1=\"215\" x2=\"160\" y2=\"215\" stroke=\"#c2410c\" stroke-width=\"3\"/>\n  <polygon points=\"148,215 166,206 166,224\" fill=\"#c2410c\"/>\n  <text x=\"196\" y=\"206\" font-size=\"15\" font-weight=\"bold\" fill=\"#c2410c\">f</text>\n  <text x=\"470\" y=\"300\" font-size=\"13\" fill=\"#475569\">net force = F − f</text>\n</svg>",
+        "caption": "Free-body diagram — F applied, f friction, mg weight and R the normal reaction; the net force is their vector sum."
+      }
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "ΣF = ma;  along x: F − f = ma;  along y: R − mg = 0  ⇒  R = mg"
+    },
+    {
+      "label": "Conditions",
+      "text": "Draw one body at a time, in an inertial frame, including every contact and field force exactly once — no more and no less."
+    },
+    {
+      "label": "Special cases",
+      "text": "On a smooth floor f = 0 so a = F/m; if F is smaller than the limiting friction the body stays at rest and friction self-adjusts to f = F."
+    },
+    {
+      "label": "Solved",
+      "text": "m = 4 kg, F = 12 N, μ = 0.2, g = 10 m/s²: R = mg = 40 N, f = μR = 8 N, so a = (12 − 8)/4 = 1 m/s²."
+    },
+    {
+      "label": "Limitation",
+      "text": "The diagram shows only the forces ON this body; the third-law partners it exerts on the surroundings act on different bodies and must be drawn separately."
+    },
+    {
+      "label": "Derivation",
+      "kind": "formula",
+      "text": "Vertical equilibrium: R = mg.  Horizontal: F − f = ma  ⇒  a = (F − μR)/m = F/m − μg"
+    },
+    {
+      "label": "Shortcut",
+      "text": "Normal reaction first, then friction f = μR, then a = (F − f)/m; never start from acceleration."
+    },
+    {
+      "label": "Board question",
+      "text": "Draw the free-body diagram of a block pulled along a rough horizontal surface and derive its acceleration."
+    }
+  ]
+}

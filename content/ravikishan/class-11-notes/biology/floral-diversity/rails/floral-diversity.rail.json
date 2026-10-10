@@ -1,0 +1,66 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "floral-diversity",
+  "unitTitle": "Floral Diversity",
+  "unitHours": 15,
+  "syllabusTopics": [
+    "Introduction: three domains of life, binomial nomenclature, five kingdom classification system (Monera, Protista, Fungi, Plantae and Animalia)",
+    "Fungi: general introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes; structure and reproduction of Mucor and yeast; mushrooms; economic importance of fungi; lichen",
+    "Algae: general introduction and characteristic features of green, brown and red algae, structure and reproduction; economic importance",
+    "Bryophyta: general introduction and characteristic features of liverworts, hornworts and moss; morphological structure and reproduction of Marchantia; economic importance",
+    "Pteridophyta: general introduction and characteristic features; morphology, anatomy and reproduction of ferns; economic importance",
+    "Gymnosperm: general introduction and characteristic features; morphology and reproduction; economic importance",
+    "Angiosperm: morphology of root, stem, leaves, inflorescences, flowers and fruit; taxonomic study of Brassicaceae, Fabaceae, Solanaceae and Liliaceae"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05 from this unit's concepts/01-life-classification.json, 02-fungi.json, 03-algae.json, 04-bryophytes-detailed.json, 05-06 (pteridophytes/gymnosperms) and 12-13 (taxonomic study) — notes, keyPoints, formulas, specialNotes, examShortTricks, practice bank. No fabricated paper citation.",
+  "card": {
+    "tag": "Floral Diversity",
+    "title": "The plant ladder — algae to angiosperm, and the generation that flips",
+    "href": "/class-11-notes/biology/chapters/floral-diversity",
+    "icon": "GitBranch",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "NEB's plant side is one evolutionary ladder with one shared trick. Ladder: algae → bryophytes (non-vascular; 'amphibians of the plant kingdom') → pteridophytes (first true vascular tissue) → gymnosperms (first seed, naked) → angiosperms (flower + fruit). Trick: every land plant alternates a haploid gametophyte with a diploid sporophyte — and the dominant generation flips from gametophyte (bryophytes) to sporophyte (seed plants) as you climb."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Hierarchy: Domain → Kingdom → Phylum/Division → Class → Order → Family → Genus → Species  ·  Binomial = Genus + specific epithet (Rhododendron arboreum)  ·  Alternation: sporophyte (2n) →(meiosis)→ spores (n) → gametophyte (n) → gametes → zygote (2n)"
+    },
+    {
+      "label": "Conditions",
+      "text": "Classification follows observed characters — cell type, cell wall, mode of nutrition, body organisation and reproduction (Whittaker 1969), while the three-domain system (Woese 1977) rests on 16S rRNA sequencing. Fertilisation in bryophytes and pteridophytes needs a water film because the sperm is flagellated; the seed habit of gymnosperms and angiosperms removes that condition."
+    },
+    {
+      "label": "Special cases",
+      "text": "Fungi are NOT plants — chitin wall, absorptive heterotrophy, no chloroplast (the standard 'why fungi are not plants' question). Cyanobacteria are not true algae (prokaryotic). Deuteromycetes have no known sexual stage. Algal pigments and stores are the trap: green = chl a + b, starch; brown = a + c + fucoxanthin, laminarin; red = a + d + phycobilins, floridean starch; diatoms wall themselves with SiO₂."
+    },
+    {
+      "label": "Solved",
+      "text": "Walk one plant through the hierarchy: Rhododendron arboreum → Angiospermae (Division) → Dicotyledonae → Ericales → Ericaceae → Rhododendron → arboreum. Fungal spore table the same way: Rhizopus → Phycomycetes (non-septate) · Penicillium → Ascomycetes (ascospores in asci) · Agaricus → Basidiomycetes (basidiospores on basidia) · Aspergillus → Deuteromycetes (imperfect)."
+    },
+    {
+      "label": "Limitation",
+      "text": "The systems keep moving: molecular data broke the old two-kingdom scheme and reclassified many deuteromycetes; Protista remains a grab-bag group that is not monophyletic. Alternation descriptions also oversimplify — algae can be haplontic, diplontic or haplo-diplontic, and the label 'lower plant' is convenience, not taxonomy."
+    },
+    {
+      "label": "Derivation",
+      "text": "Derive the ladder from one selection pressure — drying land. Water-dwelling algae need no protection; bryophytes keep flagellated sperm, so they stay small and moist; vascular tissue (xylem + phloem + lignin) lets pteridophytes stand tall but sperm still swims; pollen and the ovule free reproduction from water in gymnosperms; the flower, double fertilisation and fruit make angiosperms the most successful terrestrial group. Each innovation is one problem solved."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Four strings carry the unit: kingdoms M-P-F-P-A, domains B-A-E, hierarchy D-K-P-C-O-F-G-S, and 'Bryophyte = dominant gametophyte, seed plant = dominant sporophyte'. Algal stores rhyme — green/starch, brown/laminarin, red/floridean. Asco = sac, Basidio = club, Deutero = imperfect. Moss life cycle sequence: spore → protonema → leafy gametophyte → archegonium/antheridium → zygote → dependent sporophyte."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style (unit practice bank): tabulate the five kingdoms with cell type, nutrition and one example each; explain the three-domain system with its 16S rRNA evidence; draw and label Marchantia (air cavities, rhizoids, gemma cups, antheridia, archegonia) and its alternation cycle; differentiate bryophytes from pteridophytes; give scientific names of three Nepali plants with family and division."
+    }
+  ]
+}

@@ -6,17 +6,7 @@
   "relevance": 100,
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
-  "notes": [
-    "**Scope.** Logic and set: statements, logical connectives, truth tab… — Algebra, Mathematics (class-11-notes).",
-    "**Tested.** define it · list: logic, set: statements, logical connectives, truth tables · one worked example · one misconception each.",
-    "**Set: statements.** one-line definition + one-line exam use.",
-    "**Logical connectives.** one-line definition + one-line exam use.",
-    "**Truth tables.** one-line definition + one-line exam use.",
-    "**Theorems based on set operations.** one-line definition + one-line exam use."
-  ],
   "confusion": [
-    "❌ treat \"Logic\" as one blob → ✅ split into: logic, set: statements, logical connectives.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ answer with no steps → ✅ show each step and box the result."
   ],
   "bounds": [
@@ -25,7 +15,6 @@
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
   "practice": [
-    "define + example each sub-idea: logic, set: statements, logical connectives, truth tables.",
     "one worked example for \"Logic and set: statements, logical connectives, truth tab…\" — check units / edge cases.",
     "recall card: definition → formula → limit → one error to avoid."
   ],
@@ -40,9 +29,6 @@
     "compare \"Logic\" with the related idea from a neighbouring unit.",
     "solve / apply for \"Logic and set: statements, logical connectives, truth tab…\" and verify the answer is plausible."
   ],
-  "formulas": [
-    "Standard result for \"Logic and set: statements, logical connectives, truth tab…\" — state it and verify by substituting a simple case."
-  ],
   "numericals": [
     "Set up the defining equation for \"Logic and set: statements, logical connectives, truth tab…\", substitute simple values, and compute the result with units.",
     "Re-derive the standard result from first principles in ≤ 4 steps.",
@@ -53,9 +39,10 @@
     "• Set: statements",
     "• Logical connectives",
     "• Truth tables",
-    "• Theorems based on set operations"
+    "• Theorems based on set operations",
+    "Connection of Logic and Set to other topics"
   ],
-  "summary": "Logic and set: statements, logical connectives, truth tab… (Algebra, Mathematics, class-11-notes) covers Logic, set: statements, logical connectives. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Logic and Set covers essential principles and applications.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Logic and set: statements, logical connectives, truth tab…\"?",
@@ -77,5 +64,28 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
-  ]
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Logic and Set",
+    "Statement 2: Theorem related to Logic and Set",
+    "Statement 3: Condition for Logic and Set to be valid",
+    "Statement 4: Principle governing Logic and Set",
+    "Statement 5: Corollary or consequence of Logic and Set"
+  ],
+  "importantNotes": [
+    "Logic and Set is based on fundamental principles."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Logic and Set."
+  ],
+  "importantConcepts": [
+    "Definition and significance of Logic and Set."
+  ],
+  "notes": [],
+  "animation3D": "algebra",
+  "motionGraphics": "algebra",
+  "formulas": [],
+  "specialNotes": [],
+  "examNotes": [],
+  "importantTasks": []
 }

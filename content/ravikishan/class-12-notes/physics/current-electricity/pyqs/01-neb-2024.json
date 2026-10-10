@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Physics — Current Electricity — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "current-electricity",
+  "topicSlug": "current-electricity-pyq-2024",
+  "topicTitle": "NEB Class 12 Physics — Current Electricity — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Define drift velocity and derive the relation I = neAv_d for a conductor.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Drift velocity** is the average velocity with which free electrons move opposite the field.\n\nIn time t, electrons travel v_d·t, so all electrons in a cylinder of volume A·v_d·t cross the section. Number = n·A·v_d·t carrying charge q = ne·A·v_d·t.\n\nI = q/t = **neAv_d**. Since v_d = eEτ/m, also I = ne²AτE/m.",
+      "knowledgeNote": "Drift speed is only ~10⁻⁴ m s⁻¹ while the signal travels near light speed — the field, not the electron, carries the message."
+    },
+    {
+      "question": "State Kirchhoff's laws for electric circuits and use them to obtain the balance condition of a Wheatstone bridge.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Junction rule:** sum of currents entering = sum leaving (charge conservation). **Loop rule:** algebraic sum of potential changes round any closed loop is zero (energy conservation).\n\nFor the bridge, at balance no current flows through the galvanometer, so current divides into P,Q and R,S branches: I₁P = I₂R and I₁Q = I₂S. Dividing,\n\n**P/Q = R/S** — the balance condition.",
+      "knowledgeNote": "At balance the galvanometer branch may be removed or replaced by any resistance without changing the currents — the basis of the metre bridge."
+    },
+    {
+      "question": "A cell of emf 2 V and internal resistance 0.5 Ω is connected to a 3.5 Ω resistor. Calculate the current in the circuit and the terminal potential difference across the cell.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "I = E/(R + r) = 2/(3.5 + 0.5) = **0.5 A**.\n\nTerminal p.d. V = IR = 0.5 × 3.5 = **1.75 V** (equivalently V = E − Ir = 2 − 0.5×0.5).",
+      "knowledgeNote": "Terminal voltage is always less than emf while discharging; it equals emf only in an open circuit (I = 0)."
+    }
+  ]
+}

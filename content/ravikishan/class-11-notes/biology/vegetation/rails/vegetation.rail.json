@@ -1,0 +1,62 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "vegetation",
+  "unitTitle": "Vegetation",
+  "unitHours": 8,
+  "syllabusTopics": [
+    "Vegetation: introduction, types of vegetation in Nepal",
+    "In-situ (protected areas) and ex-situ (botanical garden, seed bank) conservation",
+    "Natural environment-vegetation and human activities"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05 from this unit's concepts/01-vegetation-introduction-types-of-vegetation-in-nepal...json and 02-conservation-in-situ-ex-situ.json (notes, keyPoints, formulas, specialNotes, examShortTricks, mcs) — board row quotes the unit practice bank; no fabricated paper citation.",
+  "card": {
+    "tag": "Vegetation",
+    "title": "Nepal's vegetation zones — Terai to nival, and how we keep them",
+    "href": "/class-11-notes/biology/chapters/vegetation",
+    "icon": "Network",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Vegetation is the natural plant cover of a region, set by four forces — climate, altitude, soil and human activity. In Nepal it reads as a ladder: Terai sal and grassland → sub-montane mixed deciduous → temperate oak and rhododendron → sub-alpine pine, fir and juniper → alpine meadows and dwarf shrubs → nival bare rock and snow. Keeping that ladder alive takes in-situ conservation (protect the habitat) and ex-situ conservation (keep the material outside it)."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Zonation: Terai → sub-montane → temperate → sub-alpine → alpine → nival  ·  In-situ = protected areas + community forests + sacred groves (deval-ghari)  ·  Ex-situ = botanical gardens + seed banks + tissue culture + herbaria  ·  Importance: oxygen, climate, soil, water, biodiversity, food, medicine, culture"
+    },
+    {
+      "label": "Conditions",
+      "text": "Zones follow physics: temperature falls roughly 6.5 °C per km of altitude and the monsoon delivers the most rain mid-hill, so the same species band appears only where temperature and moisture both allow it. In-situ conservation needs the habitat still intact and connected; ex-situ works whenever seed or tissue survives storage and re-planting."
+    },
+    {
+      "label": "Special cases",
+      "text": "Nival is the rung where vegetation technically stops — bare rock and snow, only lichens and stray alpines. Sacred groves (deval-ghari) are in-situ conservation that predates modern parks. Community forestry is Nepal's headline: 22,000+ user groups managing about 36 % of forest land. Jhum — shifting/slash-and-burn agriculture — is the classic hill-deforestation factor alongside grazing, firewood and illegal logging. The Nepal National Herbarium sits at Tripureshwor, Kathmandu — an ex-situ storehouse of dried specimens."
+    },
+    {
+      "label": "Solved",
+      "text": "Place each species on the ladder: sal → Terai/subtropical; oak and rhododendron → temperate; pine, fir, juniper → sub-alpine; meadow herbs and dwarf shrubs → alpine; lichen on rock → nival. Sort the strategies the same way: national park, community forest, deval-ghari → in-situ; botanical garden, seed bank, tissue-culture lab, herbarium → ex-situ. Then explain the water link: canopy intercepts rain → infiltration feeds hill springs → roots hold soil; strip the forest by jhum and the same rain becomes runoff and landslide."
+    },
+    {
+      "label": "Limitation",
+      "text": "The zonation map is a simplification — aspect, soil type and centuries of grazing or terracing shift the boundaries, so a 'temperate' slope can carry subtropical species. Ex-situ conservation saves genes but not interactions (no pollinators, no food web), and seed banks fail for recalcitrant seeds that cannot dry. Community forestry can also drift toward fuel and fodder species, favouring usefulness over biodiversity."
+    },
+    {
+      "label": "Derivation",
+      "text": "Derive the zones from altitude: as temperature drops and moisture peaks mid-hill, only adapted life forms persist — this is why the dominant species change with elevation, not latitude. Derive the conservation split from the threat: jhum, grazing, firewood, logging and climate change fragment the habitat, so the first answer is always in-situ protection; ex-situ is insurance taken only because fragmentation cannot be stopped everywhere."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Zones: T-S-T-S-A-N (Terai, sub-montane, temperate, sub-alpine, alpine, nival). 'In-situ = IN habitat, ex-situ = EX (outside) habitat' — the two-word answer examiners want. Remember 'jhum = hill deforestation', 'community forestry ≈ 36 % of forest land', and the importance string oxygen-climate-soil-water-biodiversity-food-medicine. For any human-activity question write four threats plus one control measure each."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style (unit practice bank): define vegetation and state its determinants; list Nepal's vegetation types by altitude with one species each; differentiate in-situ from ex-situ conservation with Nepali examples; explain community forestry as a success story; list the human activities degrading vegetation and their control; explain how vegetation regulates the water cycle and prevents erosion."
+    }
+  ]
+}

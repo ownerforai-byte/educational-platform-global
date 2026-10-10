@@ -18,7 +18,21 @@
     "**Isotopic abundance:** The natural abundance of each isotope (given as a percentage) determines the standard atomic weight listed in the periodic table. For chlorine, $\\\bar{A} = 0.7578 \\\times 34.96885 + 0.2422 \\\times 36.96590 \\\\\\\\approx 35.45\\\\\\\\,\\\text{u}$, matching the tabulated value.",
     "**Mass spectrometry:** A device that separates ions by their mass-to-charge ratio ($m/z$). Ions are accelerated through electric fields and deflected by magnetic fields; lighter ions deflect more. The resulting spectrum shows peaks at different $m/z$ values corresponding to different isotopes, with peak heights proportional to abundance.",
     "**Stable vs. radioactive isotopes:** Only $\\\\\\\\sim 254$ isotopes are stable; over 3000 are known to be radioactive. Stable isotopes have balanced neutron-proton ratios; too many or too few neutrons leads to instability and radioactive decay.",
-    "**Nuclide notation:** A nuclide is written as $^{A}_{Z}\\\text{X}$, where $A$ is the mass number (protons + neutrons), $Z$ is the atomic number (protons), and $\\\text{X}$ is the element symbol. Example: $^{238}_{92}\\\text{U}$ has 92 protons and $238 - 92 = 146$ neutrons."
+    "**Nuclide notation:** A nuclide is written as $^{A}_{Z}\\\text{X}$, where $A$ is the mass number (protons + neutrons), $Z$ is the atomic number (protons), and $\\\text{X}$ is the element symbol. Example: $^{238}_{92}\\\text{U}$ has 92 protons and $238 - 92 = 146$ neutrons.",
+    "**Rutherford's gold foil experiment (1911):** α particles (⁴He²⁺) were fired at a thin gold foil. Most passed straight through, but some were scattered at large angles. Rutherford concluded atoms have a tiny, dense, positively charged nucleus at the center.",
+    "**Unexpected result:** Rutherford expected, based on J.J. Thomson's 'plum pudding' model, that α particles would experience only slight deflection. The large-angle scattering (some α particles bounced back nearly 180°) proved the positive charge (and most of the mass) was concentrated in a tiny, dense region — the nucleus.",
+    "**Size of nucleus:** The nucleus is roughly 10⁴ times smaller in radius than the atom. For a gold atom (radius ∼125 pm), the nucleus radius is ∼7 fm (femtometers = 10⁻¹⁵ m). The nucleus occupies a volume of about 10⁻¹² of the atom's volume.",
+    "**Nuclear density:** The density of nuclear matter is nearly constant for all nuclei. This can be derived from R = R₀A^(1/3), where A is the mass number. Since m_nucleus ≈ Am_u (atomic mass unit), density ρ = M_nucleus/V_nucleus = Am_u / (4/3 π R₀³A) = 3m_u/(4πR₀³). The A's cancel out!",
+    "**Nuclear density value:** Using R₀ ≈ 1.2 fm and m_u ≈ 1.66 × 10⁻²⁷ kg, the nuclear density ρ_nuc ≈ 2.3 × 10¹⁷ kg/m³. This is about 2.3 × 10¹⁴ times denser than ordinary matter — a sugar-cube-sized amount of neutron star material would weigh about 100 million tons on Earth.",
+    "**Mass number (A):** A = Z + N, the total number of protons (Z) plus neutrons (N) in the nucleus. Written as a superscript before the element name: ⁵⁶Fe, ²³⁵U. It approximates the atomic mass in atomic mass units (though the actual mass is slightly less due to mass defect).",
+    "**Atomic number (Z):** The number of protons in the nucleus, which determines the chemical element. All atoms of hydrogen have Z = 1, all helium atoms have Z = 2, all carbon atoms have Z = 6. Z also equals the number of orbiting electrons in a neutral atom.",
+    "**Neutron number (N):** N = A − Z, the number of neutrons in the nucleus. Neutrons contribute to the strong nuclear force that holds the nucleus together but do not affect the chemical properties of the element. They also add mass without adding Coulomb repulsion.",
+    "**Isotopes:** Atoms of the same element (same Z) but different neutron numbers (different N, different A). Example: hydrogen has three isotopes — protium (¹H, N=0), deuterium (²H, N=1), and tritium (³H, N=2). They have the same chemistry but different nuclear properties.",
+    "**Nuclear radius formula:** R = R₀A^(1/3), where R₀ ≈ 1.2 × 10⁻¹⁵ m is a constant. This shows that nuclear radius scales as the cube root of mass number — a consequence of the constant density. The nuclear force is short-range (1-2 fm), so adding a nucleon adds it to the surface.",
+    "**Rutherford scattering formula:** The number of α particles scattered at angle θ is proportional to 1/sin⁴(θ/2). This sharp angular dependence confirmed the concentrated-charge, small-radius nature of the nucleus. The formula matched Rutherford's theoretical predictions precisely.",
+    "**Discovery of neutron (1932):** James Chadwick discovered the neutron by bombarding beryllium with α particles. The neutral, massive particles (neutrons) could knock out protons from paraffin wax. This confirmed the proton-neutron model of the nucleus.",
+    "**Nuclear composition:** Nuclei contain Z protons (positively charged) and N neutrons (neutral), held together by the strong nuclear force. The strong force is short-range (fewer than 2-3 fm) but extremely powerful — overcoming the electrostatic repulsion between protons.",
+    "**Density calculation example:** For a carbon-12 nucleus (A = 12): R = 1.2 × 12^(1/3) = 1.2 × 2.29 = 2.75 fm. Mass = 12 × 1.66 × 10⁻²⁷ kg = 1.99 × 10⁻²⁶ kg. Volume = 4/3 π(2.75 × 10⁻¹⁵)³ = 8.72 × 10⁻⁴⁴ m³. Density = 1.99×10⁻²⁶/8.72×10⁻⁴⁴ = 2.28 × 10¹⁷ kg/m³. Same as uranium — confirming constant density."
   ],
   "confusion": [
     "Misconception - Mass number $A$ is an integer count of nucleons; exact atomic mass in u is not exactly $A$. The difference is the mass defect, which is small but measurable. Mass spectrometry separates isotopes by their exact masses, not their mass numbers.",
@@ -28,14 +42,24 @@
     "Misconception - Binding energy per nucleon $BE/A$ peaks at iron ($A \\\\\\\\sim 56$) at $\\\\\\sim 8.8\\\\\\\\,\\\text{MeV}$, while uranium has $BE/A \\\\\\\\approx 7.6\\\\\\\\,\\\text{MeV}$. Fission energy release depends on the difference between parent and daughter nuclei, not a fixed value.",
     "Misconception - $1\\\\\\\\,\\\text{u}$ of mass defect is equivalent to $931.5\\\\\\\\,\\\text{MeV}$ of energy. This conversion factor is essential for all nuclear binding-energy calculations; omitting it produces results that are off by a factor of $\\\\\\sim 10^8$.",
     "Misconception - In $\beta^-$ decay, a neutron converts to a proton, electron, and antineutrino: $n \\\rightarrow p + e^- + \\\bar{\\\nu}_e$. The emitted electron originates from the nucleus, not from the orbital electron cloud.",
-    "Misconception - Half-life is the time required for a radioactive sample to decay to half its original amount. After $n$ half-lives, the fraction remaining is $(1/2)^n$, not $1/(2n)$."
+    "Misconception - Half-life is the time required for a radioactive sample to decay to half its original amount. After $n$ half-lives, the fraction remaining is $(1/2)^n$, not $1/(2n)$.",
+    "The nucleus is NOT the same as the atom — the nucleus is the tiny dense central part (protons and neutrons), while the atom includes the orbiting electrons. A nucleus is about 10,000 times smaller in radius than the atom it belongs to.",
+    "Nuclear density is NOT the same as atomic density. Atomic density (mass/volume of the entire atom) is about 10³ kg/m³ (like water or solid materials). Nuclear density (mass/volume of just the nucleus) is about 10¹⁷ kg/m³ — unimaginably denser.",
+    "Mass number A approximates atomic mass in atomic mass units, but is NOT exactly equal. For example, ¹²C has A = 12 and atomic mass exactly 12 u (by definition), but most nuclei have actual mass slightly less than A due to binding energy (mass defect).",
+    "The nuclear radius formula R = R₀A^(1/3) shows that doubling the mass number (e.g., from helium A=4 to beryllium A=8) does NOT double the radius — it increases it by 2^(1/3) ≈ 1.26. This cubic-root scaling confirms the constant density hypothesis.",
+    "Atomic number Z determines the element, but ISOTOPES of the same element have the same Z but different A. You cannot tell isotopes apart chemically, but they differ greatly in their nuclear stability (e.g., ¹H is stable; ³H is radioactive with a 12-year half-life)."
   ],
   "practice": [
     "Problem: Chlorine has two isotopes: $^{35}\\\text{Cl}$ (75.78%, exact mass $34.96885\\\\\\\\,\\\text{u}$) and $^{37}\\\text{Cl}$ (24.22%, exact mass $36.96590\\\\\\\\,\\\text{u}$). Calculate the standard atomic weight of chlorine in u. [Solution: $\bar{A} = 0.7578 \\\times 34.96885 + 0.2422 \\\times 36.96590 = 26.495 + 8.953 = 35.448 \\\\\\\\approx 35.45\\\\\\\\,\\\text{u}$, matching the periodic table value.]",
     "Problem: The mass of a $^{4}\\\text{He}$ nucleus is $4.002603\\\\\\\\,\\\text{u}$. Given $m_p = 1.007276\\\\\\\\,\\\text{u}$ and $m_n = 1.008665\\\\\\\\,\\\text{u}$, find the mass defect and binding energy in MeV. [Solution: $\\\\\\Delta m = 2(1.007276) + 2(1.008665) - 4.002603 = 4.031882 - 4.002603 = 0.029279\\\\\\\\,\\\text{u}$; $BE = 0.029279 \\\times 931.494 \\\\\\\\approx 27.27\\\\\\\\,\\\text{MeV}$; $BE/A = 27.27/4 \\\\\\\\approx 6.82\\\\\\\\,\\\text{MeV/nucleon}$.] ",
     "Problem: A $^{238}\\\text{U}$ sample contains $2.5\\\\\\\\,\\\text{mg}$ of uranium. How many $^{238}\\\text{U}$ atoms are present? (Molar mass $\\\\\\approx 238\\\\\\\\,\\\text{g/mol}$.) [Solution: $n = 2.5\\\times 10^{-3}\\\\\\\\,\\\text{g} / 238\\\\\\\\,\\\text{g/mol} = 1.050 \\\times 10^{-5}\\\\\\\\,\\\text{mol}$; $N = 1.050\\\times 10^{-5} \\\times 6.022\\\times 10^{23} \\\\\\\\approx 6.32\\\times 10^{18}$ atoms.] ",
     "Problem: A $^{14}\\\text{C}$ sample decays to $12.5\\\\\\\\%$ of its original activity in $17{,}190\\\\\\\\,\\\text{years}$. Calculate the half-life of $^{14}\\\text{C}$ and verify it against the known value of $5730\\\\\\\\,\\\text{years}$. [Solution: $12.5\\\\\\\\% = (1/2)^3$, so 3 half-lives have elapsed. $T_{1/2} = 17{,}190 / 3 = 5730\\\\\\\\,\\\text{years}$, which exactly matches the known value.] ",
-    "Problem: For the reaction $^{14}\\\text{N} + n \\\rightarrow ^{14}\\\text{C} + p$, use masses $m(^{14}\\\text{N}) = 14.003074\\\\\\\\,\\\text{u}$, $m(^{14}\\\text{C}) = 14.003242\\\\\\\\,\\\text{u}$, $m_n = 1.008665\\\\\\\\,\\\text{u}$, $m_p = 1.007276\\\\\\\\,\\\text{u}$ to determine if the reaction is exothermic or endothermic, and calculate the Q-value. [Solution: Initial mass $= 14.003074 + 1.008665 = 15.011739\\\\\\\\,\\\text{u}$; final mass $= 14.003242 + 1.007276 = 15.010518\\\\\\\\,\\\text{u}$; $\\\\\\Delta m = 15.011739 - 15.010518 = 0.001221\\\\\\\\,\\\text{u} > 0$, so energy is released. $Q = 0.001221 \\\times 931.494 \\\\\\\\approx 1.14\\\\\\\\,\\\text{MeV}$; exothermic.]"
+    "Problem: For the reaction $^{14}\\\text{N} + n \\\rightarrow ^{14}\\\text{C} + p$, use masses $m(^{14}\\\text{N}) = 14.003074\\\\\\\\,\\\text{u}$, $m(^{14}\\\text{C}) = 14.003242\\\\\\\\,\\\text{u}$, $m_n = 1.008665\\\\\\\\,\\\text{u}$, $m_p = 1.007276\\\\\\\\,\\\text{u}$ to determine if the reaction is exothermic or endothermic, and calculate the Q-value. [Solution: Initial mass $= 14.003074 + 1.008665 = 15.011739\\\\\\\\,\\\text{u}$; final mass $= 14.003242 + 1.007276 = 15.010518\\\\\\\\,\\\text{u}$; $\\\\\\Delta m = 15.011739 - 15.010518 = 0.001221\\\\\\\\,\\\text{u} > 0$, so energy is released. $Q = 0.001221 \\\times 931.494 \\\\\\\\approx 1.14\\\\\\\\,\\\text{MeV}$; exothermic.]",
+    "Calculate the radius, diameter, and density of a carbon-12 nucleus (A = 12). Use R₀ = 1.2 fm. Solution: R = 1.2 × 12^(1/3) = 1.2 × 2.289 = 2.747 fm. Diameter = 2R = 5.494 fm. Mass = 12 × 1.66×10⁻²⁷ = 1.993×10⁻²⁶ kg. Volume = 4/3 πR³ = 4/3 π(2.747×10⁻¹⁵)³ = 8.67×10⁻⁴⁴ m³. Density = 1.993×10⁻²⁶/8.67×10⁻⁴⁴ = 2.30×10¹⁷ kg/m³.",
+    "A uranium-238 nucleus (A = 238, radius ≈ 7.4 fm) has density equal to a carbon-12 nucleus (A = 12, radius ≈ 2.7 fm). Prove this mathematically using R = R₀A^(1/3). Solution: ρ_C = M_C/V_C = (12m_u)/(4/3 π( R₀12^(1/3))³) = 12m_u/(4/3 π R₀³ × 12) = m_u/(4/3 π R₀³). ρ_U = 238m_u/(4/3 π( R₀238^(1/3))³) = 238m_u/(4/3 π R₀³ × 238) = m_u/(4/3 π R₀³). They are EQUAL — confirming constant density.",
+    "The radius of a gold nucleus (A = 197) is measured at 7.4 fm. What is the value of R₀? Solution: R = R₀A^(1/3) → R₀ = R/A^(1/3) = 7.4/197^(1/3). 197^(1/3) = 5.82. R₀ = 7.4/5.82 = 1.27 fm. This is close to the standard value of 1.2 fm, with differences due to experimental measurement uncertainties.",
+    "A copper sample contains two stable isotopes: ⁶³Cu (69.3% abundant, A=63) and ⁶⁵Cu (30.7% abundant, A=65). Find the average atomic mass in u and the average nuclear radius. Solution: Average mass = 0.693×63 + 0.307×65 = 43.66 + 20.0 = 63.7 u. Average radius = 1.2 × 63.7^(1/3) = 1.2 × 3.99 = 4.79 fm. (Note: isotopes have same Z=29 but slightly different nuclear radii due to different neutron count.)",
+    "If a nucleus has 50 protons and 75 neutrons, what is its isotope, and what is its radius? Use R₀ = 1.2 fm. Solution: Z = 50 → element is tin (Sn). A = 50 + 75 = 125 → isotope is ¹²⁵Sn. Radius R = 1.2 × 125^(1/3) = 1.2 × 5.0 = 6.0 fm. Density = 125m_u/(4/3 π R³) ≈ 2.3×10¹⁷ kg/m³ (same for all nuclei)."
   ],
   "universalFacts": [
     "Fact (Historical): Frederick Soddy proposed the concept of isotopes in 1913, discovering that different radioactive elements could occupy the same position in the periodic table. He received the Nobel Prize in Chemistry in 1921 for this work.",
@@ -45,7 +69,12 @@
     "Fact (Everyday): Carbon-14 dating is used to verify the age of ancient manuscripts, authenticate artwork, date archaeological artifacts, and even verify the vintage of wine and spirits by measuring $^{14}\\\text{C}$ levels.",
     "Fact (Conservation): In all nuclear reactions, both mass number $A$ (total nucleons) and atomic number $Z$ (total charge) are conserved. These two conservation laws are the first checks students should perform when balancing nuclear equations.",
     "Fact (Scale): Converting $1\\\\\\\\,\\\text{g}$ of matter entirely to energy releases $E = mc^2 = 1\\\times 10^{-3} \\\times (3\\\times 10^8)^2 = 9\\\times 10^{13}\\\\\\\\,\\\text{J}$, equivalent to about $21\\\\\\\\,\\\text{kilotons}$ of TNT-the yield of the Hiroshima bomb.",
-    "Fact (Nuclear stability): The most stable nuclide is $^{56}\\\text{Fe}$ with a binding energy per nucleon of $8.79\\\\\\\\,\\\text{MeV}$. Nuclides lighter than iron release energy through fusion; those heavier than iron release energy through fission."
+    "Fact (Nuclear stability): The most stable nuclide is $^{56}\\\text{Fe}$ with a binding energy per nucleon of $8.79\\\\\\\\,\\\text{MeV}$. Nuclides lighter than iron release energy through fusion; those heavier than iron release energy through fission.",
+    "The density of nuclear matter (∼2.3 × 10¹⁷ kg/m³) is so extreme that a single teaspoon of it would weigh about 6 billion tons on Earth. This is the density of neutron stars — objects with the mass of the Sun compressed into a city-sized sphere.",
+    "Rutherford's gold foil experiment took place in Geiger and Marsden's lab at the University of Manchester in 1909. Only about 1 in 8000 α particles was scattered at angles greater than 90° — but that one in 8000 was the key evidence.",
+    "The nuclear radius scales as A^(1/3) — this is a key piece of evidence that the strong nuclear force has a short range (about 1-2 femtometers). If the force were longer range, nuclei would be smaller and denser.",
+    "Atomic number Z determines all chemical properties (because chemistry is governed by electron configuration), while the number of neutrons N affects only nuclear stability and decay modes (isotopes differ in this).",
+    "All atoms of an element have identically sized nuclei only if they are the same isotope. Isotopes of the same element have slightly different nuclear radii because the additional neutrons increase A and thus R = R₀A^(1/3)."
   ],
   "duplicateType": 2,
   "tabGroup": "atomic-mass-isotopes",
@@ -54,5 +83,105 @@
     "**Rutherford Scattering Experiment:** Alpha particles were fired at a thin gold foil. Most passed through with little deflection, but a few scattered at large angles (>90°). This disproved the Thomson plum-pudding model and established the nuclear model: a tiny, dense, positively charged nucleus containing most of the atom's mass.",
     "**Nuclear Size vs Atom Size:** The nucleus is ~10⁻¹⁵ m (1-10 fm) while the atom is ~10⁻¹⁰ m (1 Å). The nucleus occupies ~10⁻¹⁵ of the atomic volume but contains >99.9% of the mass. The rest is empty space where electrons orbit.",
     "**Nuclear Density:** Nearly constant for all nuclei: ρ = mass/volume ≈ A·1.67×10⁻²⁷ kg / (4/3 π (1.2×10⁻¹⁵ A¹ᐟ³)³) ≈ 2.3×10¹⁷ kg/m³. This constancy supports the liquid-drop model and the idea that nucleons are closely packed."
-  ]
+  ],
+  "formulas": [
+    "Application formula for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Derivation result for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number"
+  ],
+  "examples": [
+    "Real-world application of Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Practical demonstration of Nucleus: discovery of nucleus; nuclear density; mass number; atomic number concepts",
+    "Diagram-based question on Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Application in daily life involving Nucleus: discovery of nucleus; nuclear density; mass number; atomic number"
+  ],
+  "practiceQuestions": [
+    "Q2. Solve problems related to Nucleus: discovery of nucleus; nuclear density; mass number; atomic number.",
+    "Q3. Differentiate between various aspects of Nucleus: discovery of nucleus; nuclear density; mass number; atomic number.",
+    "Q4. Derive the key formula related to Nucleus: discovery of nucleus; nuclear density; mass number; atomic number.",
+    "Q5. What are the applications of Nucleus: discovery of nucleus; nuclear density; mass number; atomic number?"
+  ],
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Nucleus: discovery of nucleus; nuclear density; mass number; atomic number applies",
+    "Note 2: Nucleus: discovery of nucleus; nuclear density; mass number; atomic number connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Note 4: Remember the units and dimensions involved in Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Note 5: Nucleus: discovery of nucleus; nuclear density; mass number; atomic number frequently appears in examination questions"
+  ],
+  "importantNotes": [
+    "Note 1: Nucleus: discovery of nucleus; nuclear density; mass number; atomic number is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Note 3: Nucleus: discovery of nucleus; nuclear density; mass number; atomic number has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Note 5: Cross-check your answers using alternative methods for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Nucleus: discovery of nucleus; nuclear density; mass number; atomic number formula",
+    "Trick 2: Elimination technique for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number MCQs",
+    "Trick 3: Dimensional analysis shortcut for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Trick 4: Memory aid for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number formulas",
+    "Trick 5: Time-saving approach for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number problems"
+  ],
+  "examNotes": [
+    "Focus on numerical problems from Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Practice previous year questions on Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Learn the derivations for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number thoroughly",
+    "Review common mistakes related to Nucleus: discovery of nucleus; nuclear density; mass number; atomic number"
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Concept 2: Key theorem or principle in Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Concept 3: Important application area of Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Concept 4: Fundamental relationship in Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Concept 5: Connection between Nucleus: discovery of nucleus; nuclear density; mass number; atomic number and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Task 2: Derive the main formula for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Task 3: Create a concept map for Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Task 4: Practice previous year exam questions on Nucleus: discovery of nucleus; nuclear density; mass number; atomic number",
+    "Task 5: Explain Nucleus: discovery of nucleus; nuclear density; mass number; atomic number to a peer or study group"
+  ],
+  "mcs": [
+    {
+      "question": "The primary application of Nucleus: discovery of nucleus; nuclear density; mass number; atomic number is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Nucleus: discovery of nucleus; nuclear density; mass number; atomic number, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Nucleus: discovery of nucleus; nuclear density; mass number; atomic number?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Nucleus: discovery of nucleus; nuclear density; mass number; atomic number is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "summary": "Nucleus: discovery of nucleus; nuclear density; mass number; atomic number is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics."
 }

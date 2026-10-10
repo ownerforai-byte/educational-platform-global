@@ -1,0 +1,62 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "introductory-microbiology",
+  "unitTitle": "Introductory Microbiology",
+  "unitHours": 10,
+  "syllabusTopics": [
+    "Monera: general introduction, structure of bacterial cell, mode of nutrition, bacterial growth, cyanobacteria",
+    "Virus: general introduction, structure and importance of virus, bacteriophage",
+    "Impacts of biotechnology in the field of microbiology"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05 from this unit's concepts/01-monera-detailed.json, 02-virus.json and 02-impacts-of-biotechnology-in-the-field-of-microbiology.json (notes, keyPoints, formulas, specialNotes, examShortTricks, exercises) — the growth numerical is that file's own exercise; board row quotes its practice bank, no fabricated paper citation.",
+  "card": {
+    "tag": "Microbiology",
+    "title": "Bacterial cell and T4 phage — Gram walls, growth curve, lytic cycle",
+    "href": "/class-11-notes/biology/chapters/introductory-microbiology",
+    "icon": "Microscope",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Two cells textbooks keep confusing: the bacterial cell — naked circular DNA, 70S ribosomes, peptidoglycan wall, no nucleus — and the virus, which is not a cell at all: nucleic acid in a protein capsid, inert until it hijacks a host. Monera covers the first; the T4 bacteriophage's lytic cycle is the NEB model for the second."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Growth: lag → log (N = N₀·2ⁿ) → stationary → death  ·  Gram +ve: thick peptidoglycan (+ mesosome) → purple  ·  Gram −ve: thin peptidoglycan + LPS outer membrane → pink  ·  Lytic cycle: Adsorption → Penetration → Biosynthesis → Assembly → Release"
+    },
+    {
+      "label": "Conditions",
+      "text": "The Gram result is a property of the wall, not the species — a thick peptidoglycan layer retains crystal violet (Gram +ve), a thin layer under an LPS outer membrane washes out (Gram −ve). Endospores appear only when nutrients run out. A virus needs a living host cell with the right receptors, and cyanobacterial nitrogen fixation needs the anaerobic heterocyst."
+    },
+    {
+      "label": "Special cases",
+      "text": "Mycoplasma has no wall at all and is the smallest living cell; Archaebacteria (Halobacterium, Methanobacterium, Thermoplasma) live in extreme habitats; an endospore is a survival structure, NOT reproduction — the standard MCQ trap; a virus carries DNA or RNA, never both; cyanobacteria (Nostoc, Anabaena) are photosynthetic prokaryotes, not true algae; the 'are viruses alive?' debate wants both sides — no metabolism of their own, yet they replicate and evolve."
+    },
+    {
+      "label": "Solved",
+      "text": "Growth numerical (unit exercise): a broth starts with 100 cells and generation time is 30 min. After 3 h = 180 min → n = 180/30 = 6 generations → N = 100 × 2⁶ = 6,400 cells. Lytic sequence in words: T4 attaches by tail fibres → injects DNA through the wall → host machinery makes phage parts → parts assemble → lysozyme bursts the cell and ~100–200 phage escape."
+    },
+    {
+      "label": "Limitation",
+      "text": "One description never fits all bacteria: Mycoplasma defeats the wall-based schemes, obligate anaerobes die in air, and 'prokaryote = simple' collapses in front of plasmids, mesosomes and signal systems. And because viruses sit outside every kingdom, the five-kingdom table cannot place them — they are classified by nucleic acid type and host instead."
+    },
+    {
+      "label": "Derivation",
+      "text": "Derive the growth law from binary fission: one cell → two after one generation → four after two → N = N₀·2ⁿ. To pull n back out of a count, invert it: n = log₂(N/N₀). Then derive the lytic cycle as one causal chain — without adsorption no entry, without the host's ribosomes no biosynthesis, and without assembly and release the phage never reaches the next cell."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Strings: shapes are C-B-S-S (cocci, bacilli, spirilla, spirochaetes); growth is L-L-S-D; lytic is A-P-B-A-R; genetic exchange is C-T-T (conjugation, transformation, transduction). Virus = V-O-I (Very small, Obligate, Infectious). Remember 'endo = survival, not reproduction', and read Gram −ve as 'thin wall + LPS = pink'."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style (unit practice bank): draw and label a T4 bacteriophage; describe the lytic cycle in five steps; differentiate DNA and RNA viruses with an example each; explain why viruses are not living organisms; tabulate Gram +ve and Gram −ve walls; state the role of plasmids; explain how rDNA technology makes human insulin in E. coli (isolate → cut → ligate → transform → select → express → harvest)."
+    }
+  ]
+}

@@ -7,18 +7,12 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Meaning of thermal equilibrium and Zeroth law of thermody… — Heat and Temperature, Physics (class-11-notes).",
-    "**Tested.** define it · list: meaning of thermal equilibrium, zeroth law of thermodynamics · one worked example · one misconception each.",
     "**Fact.** 1st law (inertia): a body stays in uniform motion unless acted on by a net external force.",
     "**Fact.** 2nd law: net force = rate of change of momentum = m·a (for constant m).",
     "**Fact.** 3rd law: forces are mutual, equal and opposite, acting on different bodies (never cancel on the same body).",
-    "**Fact.** Impulse = ∫F dt = Δp; F = ma gives F = m·(Δv/Δt).",
-    "**Zeroth law of thermodynamics.** one-line definition + one-line exam use."
+    "**Fact.** Impulse = ∫F dt = Δp; F = ma gives F = m·(Δv/Δt)."
   ],
   "confusion": [
-    "❌ treat \"Meaning of thermal equilibrium\" as one blob → ✅ split into: meaning of thermal equilibrium, zeroth law of thermodynamics.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
     "❌ skip the key fact → ✅ 1st law (inertia): a body stays in uniform motion unless acted on by a net external force.."
   ],
   "bounds": [
@@ -28,7 +22,6 @@
     "Limit to remember: 1st law (inertia): a body stays in uniform motion unless acted on by a net external force."
   ],
   "practice": [
-    "define + example each sub-idea: meaning of thermal equilibrium, zeroth law of thermodynamics.",
     "one worked example for \"Meaning of thermal equilibrium and Zeroth law of thermody…\" — check units / edge cases.",
     "recall card: definition → formula → limit → one error to avoid."
   ],
@@ -57,9 +50,10 @@
   ],
   "keyPoints": [
     "• Meaning of thermal equilibrium",
-    "• Zeroth law of thermodynamics"
+    "• Zeroth law of thermodynamics",
+    "Connection of First Law of Thermodynamics to other topics"
   ],
-  "summary": "Meaning of thermal equilibrium and Zeroth law of thermody… (Heat and Temperature, Physics, class-11-notes) covers Meaning of thermal equilibrium, Zeroth law of thermodynamics. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Meaning of thermal equilibrium and Zeroth law of thermody… (Heat and Temperature, Physics, class-11-notes) covers Meaning of thermal equilibrium, Zeroth law of thermodynamics. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these. First Law of Thermodynamics covers essential principles and applications.",
   "mcqs": [
     {
       "question": "A common examiner point on \"Meaning of thermal equilibrium and Zeroth law of thermody…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -69,17 +63,35 @@
       ],
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    },
-    {
-      "question": "Which of these is a governing / standard formula associated with \"Meaning of thermal equilibrium and Zeroth law of thermody…\"?",
-      "options": [
-        "F = ma",
-        "x + y = z (placeholder)",
-        "No formula applies",
-        "E = mc² only"
-      ],
-      "answer": "F = ma",
-      "explanation": "F = ma is the standard form used for this topic."
     }
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Meaning of thermal equilibrium and Zeroth law of thermodynamics",
+    "Statement 2: Theorem related to Meaning of thermal equilibrium and Zeroth law of thermodynamics",
+    "Statement 3: Condition for Meaning of thermal equilibrium and Zeroth law of thermodynamics to be valid",
+    "Statement 4: Principle governing Meaning of thermal equilibrium and Zeroth law of thermodynamics",
+    "Statement 5: Corollary or consequence of Meaning of thermal equilibrium and Zeroth law of thermodynamics"
+  ],
+  "importantNotes": [
+    "First Law of Thermodynamics is based on fundamental principles."
+  ],
+  "examShortTricks": [
+    "Recall the formula for First Law of Thermodynamics."
+  ],
+  "importantConcepts": [
+    "Definition and significance of First Law of Thermodynamics."
+  ],
+  "animation3D": "heat-and-temperature",
+  "motionGraphics": "heat-and-temperature",
+  "specialNotes": [],
+  "examNotes": [],
+  "importantTasks": [],
+  "specificConditions": [
+    "**Energy Conservation Foundation:** The first law ($\\Delta U = Q - W$) is energy conservation applied to thermodynamic systems. Internal energy $U$ is a state function; heat $Q$ and work $W$ are path-dependent energy transfers. The sign convention: $Q > 0$ when heat enters the system, $W > 0$ when work is done BY the system.",
+    "**Process Dependence:** $Q$ and $W$ depend on the thermodynamic path (isothermal, adiabatic, isobaric, isochoric), but $\\Delta U$ depends only on initial and final states. For a cyclic process, $\\Delta U = 0$ and $Q = W$ — net heat in equals net work out.",
+    "**Work in Thermodynamics:** Only $PV$-work is considered in the basic first law: $W = \\int P_{ext} dV$. Reversible work uses the system pressure $W = \\int P dV$. Other work forms (electrical, surface tension, magnetic) must be added as extra terms if present.",
+    "**Thermal Equilibrium Definition:** Two systems are in thermal equilibrium if no net heat flows between them when brought into thermal contact. This means they have the *same temperature*. Thermal equilibrium is a transitive, symmetric, and reflexive relation.",
+    "**Zeroth Law Statement:** If system A is in thermal equilibrium with system B, and B is in thermal equilibrium with system C, then A is in thermal equilibrium with C. This transitive property allows temperature to be defined as a state variable that can be measured with a thermometer.",
+    "**Thermometer as 'System B':** The Zeroth law justifies using a thermometer: the thermometer (B) reaches equilibrium with the system (A), and if two systems give the same reading on the same thermometer, they are in equilibrium with each other."
   ]
 }

@@ -7,19 +7,11 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Introduction: Three domains of life, binomial nomenclatur… — Floral Diversity, Biology (class-11-notes).",
-    "**Tested.** define it · list: introduction, three domains of life, binomial nomenclature, five kingdom classification system · one worked example · one misconception each.",
-    "**Fact.** IUPAC: identify parent chain (longest), number from end nearer the functional group / first substituent; suffix by priority (−ol, −al, −one, −oic acid…).",
-    "**Fact.** Carbocation/carbanion stability: 3° > 2° > 1° > methyl; resonance stabilises; inductive effect transmits through sigma bonds.",
-    "**Fact.** Functional group priority (high → low) governs the suffix; others become prefixes with locants.",
-    "**Three domains of life.** one-line definition + one-line exam use.",
-    "**Binomial nomenclature.** one-line definition + one-line exam use.",
-    "**Five kingdom classification system.** one-line definition + one-line exam use.",
-    "**Monera.** one-line definition + one-line exam use.",
-    "**Protista.** one-line definition + one-line exam use.",
-    "**Fungi.** one-line definition + one-line exam use.",
-    "**Plantae.** one-line definition + one-line exam use.",
-    "**Animalia.** one-line definition + one-line exam use."
+    "**Binomial nomenclature.** Carolus Linnaeus gave the two-word naming system: the first word is the capitalised genus and the second the lowercase species, italicised or underlined — for example, Homo sapiens.",
+    "**Five-kingdom classification.** R.H. Whittaker grouped life into Monera, Protista, Fungi, Plantae and Animalia using cell structure, thallus organisation, nutrition and reproduction as criteria.",
+    "**Three domains.** Carl Woese's rRNA studies split living organisms into Archaea, Bacteria and Eukarya; Monera falls in the prokaryotic domains while the other kingdoms lie in Eukarya.",
+    "**Kingdom criteria.** Prokaryotic cell structure places an organism in Monera, eukaryotic unicellular forms in Protista, absorptive heterotrophs in Fungi, and photosynthetic or ingestive eukaryotes in Plantae and Animalia.",
+    "**Taxonomic hierarchy.** Every organism is placed in a sequence of categories — Kingdom, Phylum, Class, Order, Family, Genus, Species — with species as the basic unit of classification."
   ],
   "confusion": [
     "❌ treat \"Introduction\" as one blob → ✅ split into: introduction, three domains of life, binomial nomenclature.",
@@ -86,17 +78,6 @@
       ],
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    },
-    {
-      "question": "Which of these is a governing / standard formula associated with \"Introduction: Three domains of life, binomial nomenclatur…\"?",
-      "options": [
-        "Parent-chain + locant(s) + sub-prefix + suffix = IUPAC name",
-        "x + y = z (placeholder)",
-        "No formula applies",
-        "E = mc² only"
-      ],
-      "answer": "A",
-      "explanation": "Parent-chain + locant(s) + sub-prefix + suffix = IUPAC name is the standard form used for this topic."
     }
   ]
 }

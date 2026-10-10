@@ -4,8 +4,6 @@
   "topicSlug": "instantaneous-velocity-acceleration",
   "topicTitle": "Instantaneous Velocity and Acceleration",
   "relevance": 100,
-  "duplicateType": 2,
-  "tabGroup": "instantaneous-velocity-and-acceleration",
   "notes": [
     "**Type 2 — alternate treatment:** this version complements the original note with the limit-definition approach, calculus forms and graphical slope reasoning for instantaneous velocity and acceleration.",
     "**Average quantities first:** average velocity $v_{avg} = \\frac{\\Delta x}{\\Delta t}$ uses the whole interval; average acceleration $a_{avg} = \\frac{\\Delta v}{\\Delta t}$ likewise. They smooth out everything that happened in between — a car doing 100 km in 2 h has $v_{avg} = 50$ km/h regardless of traffic.",
@@ -40,15 +38,7 @@
   ],
   "animation3D": "kinematics",
   "motionGraphics": "kinematics",
-  "examples": [
-    "Example 1: $x(t) = 3t^2$ m → $v = 6t$ m/s; at $t = 2$ s the instantaneous velocity is 12 m/s, while the average velocity over 0–2 s is $\\frac{12-0}{2} = 6$ m/s — different because the motion speeds up.",
-    "Example 2: A metro train's $v$–$t$ graph: trapezoid of acceleration, cruise, braking. Displacement = area of trapezoid; acceleration = slope in each segment.",
-    "Example 3: $v(t) = 8 - 4t$: the particle reverses at $t = 2$ s where $v = 0$ but $a = -4$ m/s² throughout — illustrating reversal with constant acceleration.",
-    "Example 4: Two instants with equal speeds but different velocities: $v = +10$ m/s at $t_1$ and $v = -10$ m/s at $t_2$ — same speed, opposite direction of motion.",
-    "Example 5: From $a = 6t$ and $v(0) = 2$ m/s: integrate to $v = 3t^2 + 2$ and, with $x(0) = 0$, $x = t^3 + 2t$ — showing how derivatives run downward ($x \\to v \\to a$) and integrals run upward."
-  ],
   "practiceQuestions": [
-    "Q1. Define instantaneous velocity with the limit definition and explain its graphical meaning on an $x$–$t$ graph.",
     "Q2. Distinguish between average acceleration and instantaneous acceleration with one example each.",
     "Q3. For $x(t) = 2t^3 - 9t^2 + 12t$ (m), find when the velocity is zero and classify each instant (pause vs reversal).",
     "Q4. Sketch the $v$–$t$ graph for a ball thrown vertically upward and returning; mark where $v = 0$ and the sign of $a$ throughout.",
@@ -67,9 +57,10 @@
     "$v = 0$ does not imply $a = 0$ — turning points have zero velocity but non-zero acceleration.",
     "Speeding up ⟺ $v$ and $a$ share the same sign; slowing down ⟺ opposite signs.",
     "Derivatives go down the chain $x \\to v \\to a$; integrals go up $a \\to v \\to x$, using initial conditions.",
-    "The limit definition is valid for ANY motion — SUVAT equations are special cases of constant acceleration only."
+    "The limit definition is valid for ANY motion — SUVAT equations are special cases of constant acceleration only.",
+    "Connection of Instantaneous Velocity & Instantaneous Acceleration to other topics"
   ],
-  "summary": "Instantaneous velocity and acceleration are defined as limits: $v = dx/dt$ and $a = dv/dt = d^2x/dt^2$. Graphically, $v$ is the tangent slope of the $x$–$t$ curve and $a$ the tangent slope of the $v$–$t$ curve, while areas under $v$–$t$ and $a$–$t$ curves give displacement and velocity change. These definitions work for all motion — uniform or not — making them more fundamental than the constant-acceleration equations. Key exam skills: differentiating given $x(t)$, locating rest/reversal instants, and reading slopes and areas correctly with attention to signs.",
+  "summary": "Instantaneous velocity and acceleration are defined as limits: $v = dx/dt$ and $a = dv/dt = d^2x/dt^2$. Graphically, $v$ is the tangent slope of the $x$–$t$ curve and $a$ the tangent slope of the $v$–$t$ curve, while areas under $v$–$t$ and $a$–$t$ curves give displacement and velocity change. These definitions work for all motion — uniform or not — making them more fundamental than the constant-acceleration equations. Key exam skills: differentiating given $x(t)$, locating rest/reversal instants, and reading slopes and areas correctly with attention to signs. Instantaneous Velocity & Instantaneous Acceleration covers essential principles and applications.",
   "specialNotes": [
     "Note 1: Carry units through calculus: if $x$ is in metres and $t$ in seconds, $v$ is m/s and $a$ is m/s² automatically.",
     "Note 2: NEB graph questions award marks for BOTH slope reasoning and area reasoning — label which you used.",
@@ -80,20 +71,27 @@
     "Statement 1: Instantaneous velocity is the limit of average velocity as the time interval tends to zero: $v = dx/dt$.",
     "Statement 2: Instantaneous acceleration is the derivative of velocity with respect to time: $a = dv/dt$.",
     "Statement 3: On a position–time graph the slope of the tangent at any instant gives the instantaneous velocity at that instant.",
-    "Statement 4: The area under a velocity–time curve between two instants equals the displacement in that interval, regardless of whether the acceleration is constant."
+    "Statement 4: The area under a velocity–time curve between two instants equals the displacement in that interval, regardless of whether the acceleration is constant.",
+    "Statement 1: Definition of Instantaneous Velocity & Instantaneous Acceleration",
+    "Statement 2: Theorem related to Instantaneous Velocity & Instantaneous Acceleration",
+    "Statement 3: Condition for Instantaneous Velocity & Instantaneous Acceleration to be valid",
+    "Statement 4: Principle governing Instantaneous Velocity & Instantaneous Acceleration",
+    "Statement 5: Corollary or consequence of Instantaneous Velocity & Instantaneous Acceleration"
   ],
   "importantNotes": [
     "Note 1: Zero instantaneous velocity does not imply zero acceleration (turning points).",
     "Note 2: Instantaneous speed equals the magnitude of instantaneous velocity, but never carries a direction.",
     "Note 3: For constant acceleration only, $v_{avg} = (u+v)/2$; this shortcut fails when $a$ varies.",
-    "Note 4: The calculus definitions apply to ALL motion; SUVAT equations are the special case of constant $a$."
+    "Note 4: The calculus definitions apply to ALL motion; SUVAT equations are the special case of constant $a$.",
+    "Instantaneous Velocity & Instantaneous Acceleration is based on fundamental principles."
   ],
   "examShortTricks": [
     "Trick 1: 'At rest' ⇒ set $dx/dt = 0$ and solve for $t$; then check the sign of $v$ on both sides to classify pause vs reversal.",
     "Trick 2: In graph MCQs, remember: slope of $x$–$t$ = $v$; slope of $v$–$t$ = $a$; area of $v$–$t$ = $x$; area of $a$–$t$ = $v$.",
     "Trick 3: If $x(t)$ is a polynomial, differentiate term-by-term ($d(t^n)/dt = nt^{n-1}$) — no formula sheet needed.",
     "Trick 4: 'Maximum/minimum position' questions ⇒ set $v = dx/dt = 0$, exactly like turning points in calculus.",
-    "Trick 5: Units self-check: differentiate $x$ in metres → $v$ in m/s → $a$ in m/s²; if your units don't cascade, recheck the algebra."
+    "Trick 5: Units self-check: differentiate $x$ in metres → $v$ in m/s → $a$ in m/s²; if your units don't cascade, recheck the algebra.",
+    "Recall the formula for Instantaneous Velocity & Instantaneous Acceleration."
   ],
   "examNotes": [
     "Exam Tip 1: NEB regularly sets 2-3 mark calculus questions: differentiate $x(t)$, evaluate $v$ and $a$ at a given time — show the derivative step explicitly.",
@@ -158,7 +156,8 @@
     "Concept 2: Derivative chain: $x \\xrightarrow{d/dt} v \\xrightarrow{d/dt} a$; integrals run the reverse way with initial conditions.",
     "Concept 3: Graph duality — slopes give rates (v, a); areas give accumulations (x, v).",
     "Concept 4: Sign logic — direction of motion from sign of $v$; speeding up/slowing down from relative signs of $v$ and $a$.",
-    "Concept 5: Generality — the derivative definitions hold for any acceleration; constant-$a$ equations are a special case."
+    "Concept 5: Generality — the derivative definitions hold for any acceleration; constant-$a$ equations are a special case.",
+    "Definition and significance of Instantaneous Velocity & Instantaneous Acceleration."
   ],
   "importantTasks": [
     "Task 1: Differentiate five polynomial position functions, evaluating $v$ and $a$ at specified instants.",
@@ -172,5 +171,12 @@
     "**Limit Definition Universality:** Instantaneous velocity $v = dx/dt$ and acceleration $a = dv/dt$ are defined as limits ($\\Delta t \to 0$). They apply to *any* motion — uniform or non-uniform, constant or variable acceleration. The SUVAT equations ($v = u + at$, etc.) are special cases valid *only* for constant $a$.",
     "**Graph Duality — Slopes vs Areas:** On $x$-$t$ graph: slope of tangent = $v$. On $v$-$t$ graph: slope of tangent = $a$; area under curve = displacement. On $a$-$t$ graph: area under curve = change in velocity. Mixing up slope/area is the most common graph error.",
     "**Sign Logic for Speeding/Slowing:** Speeding up $\\Leftrightarrow$ $v$ and $a$ have *same* sign. Slowing down $\\Leftrightarrow$ $v$ and $a$ have *opposite* signs. This is true regardless of coordinate choice. At a turning point ($v=0$), $a \neq 0$ (e.g., ball at top of flight: $v=0$, $a=g$)."
+  ],
+  "examples": [
+    "Example 1: $x(t) = 3t^2$ m → $v = 6t$ m/s; at $t = 2$ s the instantaneous velocity is 12 m/s, while the average velocity over 0–2 s is $\\frac{12-0}{2} = 6$ m/s — different because the motion speeds up.",
+    "Example 2: A metro train's $v$–$t$ graph: trapezoid of acceleration, cruise, braking. Displacement = area of trapezoid; acceleration = slope in each segment.",
+    "Example 3: $v(t) = 8 - 4t$: the particle reverses at $t = 2$ s where $v = 0$ but $a = -4$ m/s² throughout — illustrating reversal with constant acceleration.",
+    "Example 4: Two instants with equal speeds but different velocities: $v = +10$ m/s at $t_1$ and $v = -10$ m/s at $t_2$ — same speed, opposite direction of motion.",
+    "Example 5: From $a = 6t$ and $v(0) = 2$ m/s: integrate to $v = 3t^2 + 2$ and, with $x(0) = 0$, $x = t^3 + 2t$ — showing how derivatives run downward ($x \\to v \\to a$) and integrals run upward."
   ]
 }

@@ -7,20 +7,12 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Numerical computation: roots of algebraic and transcenden… — Computational Methods or Mechanics, Mathematics (class-11-notes).",
-    "**Tested.** define it · list: numerical computation, roots of algebraic, transcendental equations, bisection · one worked example · one misconception each.",
     "**Fact.** 1st law (inertia): a body stays in uniform motion unless acted on by a net external force.",
     "**Fact.** 2nd law: net force = rate of change of momentum = m·a (for constant m).",
     "**Fact.** 3rd law: forces are mutual, equal and opposite, acting on different bodies (never cancel on the same body).",
-    "**Fact.** Impulse = ∫F dt = Δp; F = ma gives F = m·(Δv/Δt).",
-    "**Roots of algebraic.** one-line definition + one-line exam use.",
-    "**Transcendental equations.** one-line definition + one-line exam use.",
-    "**Bisection.** one-line definition + one-line exam use.",
-    "**Newton-Raphson method.** one-line definition + one-line exam use."
+    "**Fact.** Impulse = ∫F dt = Δp; F = ma gives F = m·(Δv/Δt)."
   ],
   "confusion": [
-    "❌ treat \"Numerical computation\" as one blob → ✅ split into: numerical computation, roots of algebraic, transcendental equations.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ answer with no steps → ✅ show each step and box the result.",
     "❌ skip the key fact → ✅ 1st law (inertia): a body stays in uniform motion unless acted on by a net external force.."
   ],
@@ -31,7 +23,6 @@
     "Limit to remember: 1st law (inertia): a body stays in uniform motion unless acted on by a net external force."
   ],
   "practice": [
-    "define + example each sub-idea: numerical computation, roots of algebraic, transcendental equations, bisection.",
     "one worked example for \"Numerical computation: roots of algebraic and transcenden…\" — check units / edge cases.",
     "recall card: definition → formula → limit → one error to avoid."
   ],
@@ -63,9 +54,11 @@
     "• Roots of algebraic",
     "• Transcendental equations",
     "• Bisection",
-    "• Newton-Raphson method"
+    "• Newton-Raphson method",
+    "Connection of Numerical Computation: Roots of Equations to other topics",
+    "Connection of Numerical Computation and Integration Methods to other topics"
   ],
-  "summary": "Numerical computation: roots of algebraic and transcenden… (Computational Methods or Mechanics, Mathematics, class-11-notes) covers Numerical computation, roots of algebraic, transcendental equations. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Numerical Computation: Roots of Equations covers essential principles and applications. Numerical Computation and Integration Methods covers essential principles and applications.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Numerical computation: roots of algebraic and transcenden…\"?",
@@ -86,17 +79,30 @@
       ],
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    },
-    {
-      "question": "Which of these is a governing / standard formula associated with \"Numerical computation: roots of algebraic and transcenden…\"?",
-      "options": [
-        "F = ma",
-        "x + y = z (placeholder)",
-        "No formula applies",
-        "E = mc² only"
-      ],
-      "answer": "F = ma",
-      "explanation": "F = ma is the standard form used for this topic."
     }
-  ]
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Numerical computation: roots of algebraic and transcendental equations (bisection and Newton-Raphson method); numerical integration: Trapezoidal rule and Simpson's rule",
+    "Statement 2: Theorem related to Numerical computation: roots of algebraic and transcendental equations (bisection and Newton-Raphson method); numerical integration: Trapezoidal rule and Simpson's rule",
+    "Statement 3: Condition for Numerical computation: roots of algebraic and transcendental equations (bisection and Newton-Raphson method); numerical integration: Trapezoidal rule and Simpson's rule to be valid",
+    "Statement 4: Principle governing Numerical computation: roots of algebraic and transcendental equations (bisection and Newton-Raphson method); numerical integration: Trapezoidal rule and Simpson's rule",
+    "Statement 5: Corollary or consequence of Numerical computation: roots of algebraic and transcendental equations (bisection and Newton-Raphson method); numerical integration: Trapezoidal rule and Simpson's rule"
+  ],
+  "importantNotes": [
+    "Numerical Computation: Roots of Equations is based on fundamental principles.",
+    "Numerical Computation and Integration Methods is based on fundamental principles."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Numerical Computation: Roots of Equations.",
+    "Recall the formula for Numerical Computation and Integration Methods."
+  ],
+  "importantConcepts": [
+    "Definition and significance of Numerical Computation: Roots of Equations.",
+    "Definition and significance of Numerical Computation and Integration Methods."
+  ],
+  "animation3D": "computational-methods-or-mechanics",
+  "motionGraphics": "computational-methods-or-mechanics",
+  "specialNotes": [],
+  "examNotes": [],
+  "importantTasks": []
 }

@@ -7,20 +7,12 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Pair of straight lines: general equation of second degree… — Analytic Geometry, Mathematics (class-11-notes).",
-    "**Tested.** define it · list: pair of straight lines: general equation of second degree in x, condition for representing a pair of lines, homogenous second-degree equation in x, angle between pair of lines · one worked example · one misconception each.",
     "**Fact.** Line: point–slope y − y₁ = m(x − x₁); perpendicular distance from (x₁,y₁) to ax+by+c=0 is |ax₁+by₁+c|/√(a²+b²).",
     "**Fact.** Pair of lines: a·S ≡ ax² + 2hxy + by²; represents a real pair iff h² ≥ ab. Angle between: tanθ = 2√(h²−ab)/(a+b).",
     "**Fact.** Homogeneous: ax² + 2hxy + by² = 0 (two lines through origin); bisectors: (x² − y²)/(a−b) = xy/h.",
-    "**Fact.** Direction cosines of a line: l² + m² + n² = 1; distance between two points in space √(Δx²+Δy²+Δz²).",
-    "**Condition for representing a pair of lines.** one-line definition + one-line exam use.",
-    "**Homogenous second-degree equation in x.** one-line definition + one-line exam use.",
-    "**Angle between pair of lines.** one-line definition + one-line exam use.",
-    "**Bisectors of the angles between pair of lines.** one-line definition + one-line exam use."
+    "**Fact.** Direction cosines of a line: l² + m² + n² = 1; distance between two points in space √(Δx²+Δy²+Δz²)."
   ],
   "confusion": [
-    "❌ treat \"Pair of straight lines: general equation of second degree in x\" as one blob → ✅ split into: pair of straight lines: general equation of second degree in x, condition for representing a pair of lines, homogenous second-degree equation in x.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ answer with no steps → ✅ show each step and box the result.",
     "❌ skip the key fact → ✅ line: point–slope y − y₁ = m(x − x₁); perpendicular distance from (x₁,y₁) to ax+by+c=0 is |ax₁+by₁+c|/√(a²+b²).."
   ],
@@ -31,7 +23,6 @@
     "Limit to remember: line: point–slope y − y₁ = m(x − x₁); perpendicular distance from (x₁,y₁) to ax+by+c=0 is |ax₁+by₁+c|/√(a²+b²)."
   ],
   "practice": [
-    "define + example each sub-idea: pair of straight lines: general equation of second degree in x, condition for representing a pair of lines, homogenous second-degree equation in x, angle between pair of lines.",
     "one worked example for \"Pair of straight lines: general equation of second degree…\" — check units / edge cases.",
     "recall card: definition → formula → limit → one error to avoid."
   ],
@@ -63,9 +54,10 @@
     "• Condition for representing a pair of lines",
     "• Homogenous second-degree equation in x",
     "• Angle between pair of lines",
-    "• Bisectors of the angles between pair of lines"
+    "• Bisectors of the angles between pair of lines",
+    "Connection of Pair of Straight Lines to other topics"
   ],
-  "summary": "Pair of straight lines: general equation of second degree… (Analytic Geometry, Mathematics, class-11-notes) covers Pair of straight lines: general equation of second degree in x, condition for representing a pair of lines, homogenous second-degree equation in x. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Pair of Straight Lines covers essential principles and applications.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Pair of straight lines: general equation of second degree…\"?",
@@ -86,17 +78,28 @@
       ],
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    },
-    {
-      "question": "Which of these is a governing / standard formula associated with \"Pair of straight lines: general equation of second degree…\"?",
-      "options": [
-        "d = |ax₁+by₁+c|/√(a²+b²)",
-        "x + y = z (placeholder)",
-        "No formula applies",
-        "E = mc² only"
-      ],
-      "answer": "A",
-      "explanation": "d = |ax₁+by₁+c|/√(a²+b²) is the standard form used for this topic."
     }
-  ]
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of lines, bisectors of the angles between pair of lines",
+    "Statement 2: Theorem related to Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of lines, bisectors of the angles between pair of lines",
+    "Statement 3: Condition for Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of lines, bisectors of the angles between pair of lines to be valid",
+    "Statement 4: Principle governing Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of lines, bisectors of the angles between pair of lines",
+    "Statement 5: Corollary or consequence of Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of lines, bisectors of the angles between pair of lines"
+  ],
+  "importantNotes": [
+    "Pair of Straight Lines is based on fundamental principles."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Pair of Straight Lines."
+  ],
+  "importantConcepts": [
+    "Definition and significance of Pair of Straight Lines."
+  ],
+  "animation3D": "analytic-geometry",
+  "motionGraphics": "analytic-geometry",
+  "specialNotes": [],
+  "examNotes": [],
+  "importantTasks": [],
+  "visualType": "pair-of-lines-condition"
 }

@@ -97,14 +97,59 @@
     "Explain why the first ionization enthalpy of Nitrogen is greater than that of Oxygen, but the second ionization enthalpy of Oxygen is greater than that of Nitrogen.",
     "Give reasons: (a) Why are alkali metals stored under kerosene? (b) Why is Lithium the strongest reducing agent in aqueous solution?",
     "Distinguish between typical transition metals and non-typical volatile metals with three points of difference.",
-    "Explain the Inert Pair Effect and justify why PbCl₂ is stable while PbCl₄ readily decomposes on heating."
+    "Explain the Inert Pair Effect and justify why PbCl₂ is stable while PbCl₄ readily decomposes on heating.",
+    "one worked example for \"Classification of elements into different groups, periods…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "universalFacts": [
     "Atomic number (Z), representing nuclear charge, uniquely dictates chemical identity and electron configurations.",
     "Half-filled (p³, d⁵, f⁷) and fully filled (p⁶, d¹⁰, f¹⁴) subshells possess maximum symmetry and exchange energy stability.",
     "The periodic table represents the direct geometric visualization of quantum mechanical energy level solutions (Aufbau principle and Hund's rule).",
-    "Poor shielding ability follows the order: s > p > d > f; this fundamental rule dictates both the inert pair effect and lanthanide contraction."
+    "Poor shielding ability follows the order: s > p > d > f; this fundamental rule dictates both the inert pair effect and lanthanide contraction.",
+    "answer pattern for \"Classification of elements into different groups, periods…\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "visualType": "periodic-table-blocks",
-  "tabGroup": "Periodic-Table-Trends-Learner-Notes"
+  "keyPoints": [
+    "• Classification of elements into different groups",
+    "• Periods",
+    "• Blocks"
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Classification of elements into different groups, periods…\" with one example.",
+    "compare \"Classification of elements into different groups\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Classification of elements into different groups, periods…\" and verify the answer is plausible."
+  ],
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Classification of elements into different groups, periods…\"?",
+      "options": [
+        "Classification of elements into different groups",
+        "Periods",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "A",
+      "explanation": "Classification of elements into different groups is listed among the official sub-ideas of Classification of elements into different groups, periods…; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Classification of elements into different groups, periods…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: classification of elements into different groups, periods, blocks (within Classification of Elements and Periodic Table).",
+    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "summary": "Classification of elements into different groups, periods… (Classification of Elements and Periodic Table, Chemistry, class-11-notes) covers Classification of elements into different groups, periods, blocks. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
 }

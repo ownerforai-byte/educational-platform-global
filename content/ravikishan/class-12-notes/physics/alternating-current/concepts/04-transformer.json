@@ -18,42 +18,53 @@
     "Solve problems using the transformer ratio formula: V_s / V_p = N_s / N_p = I_p / I_s.",
     "List and explain the causes of energy loss in a transformer (hysteresis, eddy currents, flux leakage, resistance).",
     "Analyze the efficiency of a transformer: Efficiency = (Output Power / Input Power) × 100%.",
-    "Differentiate between step-up and step-down transformers."
+    "Differentiate between step-up and step-down transformers.",
+    "one worked example for \"Transformer — principle, types, and losses\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "universalFacts": [
     "Transformers are essential for efficient power transmission over long distances by using high voltages.",
     "An ideal transformer assumes no energy loss (100% efficiency).",
-    "Transformers do not change the frequency of the AC input."
+    "Transformers do not change the frequency of the AC input.",
+    "answer pattern for \"Transformer — principle, types, and losses\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "animation3D": "alternating-current",
   "motionGraphics": "alternating-current",
   "examples": [
-    "Example 1: Calculating output voltage for a step-down transformer",
-    "Example 2: Determining turns ratio for a specific voltage increase",
-    "Example 3: Calculating efficiency given power loss",
-    "Example 4: Analyzing why transformers fail with DC input",
-    "Example 5: Explaining how eddy currents are minimized"
+    "Calculating output voltage for a step-down transformer",
+    "Determining turns ratio for a specific voltage increase",
+    "Calculating efficiency given power loss",
+    "Analyzing why transformers fail with DC input",
+    "Explaining how eddy currents are minimized",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "practiceQuestions": [
     "Q1. State the principle of a transformer and describe its construction.",
     "Q2. Derive the transformer ratio formula (V_s/V_p = N_s/N_p).",
     "Q3. Explain the different types of energy losses in a transformer and how they are minimized.",
     "Q4. Why are transformers not used for DC?",
-    "Q5. Calculate output current for a step-up transformer with given primary parameters."
+    "Q5. Calculate output current for a step-up transformer with given primary parameters.",
+    "state + explain the main idea of \"Transformer — principle, types, and losses\" with one example.",
+    "compare \"Transformer — principle\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Transformer — principle, types, and losses\" and verify the answer is plausible."
   ],
   "formulas": [
-    "Key Formula 1: Transformer Ratio V_s / V_p = N_s / N_p",
-    "Key Formula 2: Power relation V_p I_p = V_s I_s (for ideal)",
-    "Key Formula 3: Efficiency η = (P_out / P_in) × 100%",
-    "Key Formula 4: Current ratio V_p / V_s = I_s / I_p",
-    "Key Formula 5: Power loss in primary/secondary P_loss = I²R"
+    "Transformer Ratio V_s / V_p = N_s / N_p",
+    "Power relation V_p I_p = V_s I_s (for ideal)",
+    "Efficiency η = (P_out / P_in) × 100%",
+    "Current ratio V_p / V_s = I_s / I_p",
+    "Power loss in primary/secondary P_loss = I²R",
+    "Governing equation for \"Transformer — principle, types, and losses\" — state with units, then use in one numerical."
   ],
   "keyPoints": [
-    "Key Point 1: Principle of Mutual Induction",
-    "Key Point 2: Step-up vs Step-down transformers",
-    "Key Point 3: Causes of Energy Loss (Hysteresis, Eddy currents, etc.)",
-    "Key Point 4: Transformer Ratio (Voltage and Turns)",
-    "Key Point 5: Efficiency"
+    "Principle of Mutual Induction",
+    "Step-up vs Step-down transformers",
+    "Causes of Energy Loss (Hysteresis, Eddy currents, etc.)",
+    "Transformer Ratio (Voltage and Turns)",
+    "Efficiency",
+    "• Transformer — principle",
+    "• Types",
+    "• Losses"
   ],
   "summary": "A transformer changes AC voltage based on mutual induction. It uses the turns ratio to step voltage up or down, while ideally conserving power. Energy losses are mitigated through core design and winding techniques.",
   "specialNotes": [
@@ -85,11 +96,11 @@
     "Trick 5: Eddy current = laminated core."
   ],
   "examNotes": [
-    "Exam Tip 1: Be ready to list all 4 types of energy losses.",
-    "Exam Tip 2: The transformer ratio formula is the most important numerical tool.",
-    "Exam Tip 3: Understand clearly why DC does not work.",
-    "Exam Tip 4: Efficiency calculations are standard.",
-    "Exam Tip 5: Explain *how* eddy currents are minimized, not just *why*."
+    "Be ready to list all 4 types of energy losses.",
+    "The transformer ratio formula is the most important numerical tool.",
+    "Understand clearly why DC does not work.",
+    "Efficiency calculations are standard.",
+    "Explain *how* eddy currents are minimized, not just *why*."
   ],
   "mcs": [
     {
@@ -156,5 +167,39 @@
     "Task 3: Identify energy loss mechanisms.",
     "Task 4: Explain construction features (lamination).",
     "Task 5: Compare step-up and step-down types."
+  ],
+  "numericals": [
+    "Set up the defining equation for \"Transformer — principle, types, and losses\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Transformer — principle, types, and losses\"?",
+      "options": [
+        "Transformer — principle",
+        "Types",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "A",
+      "explanation": "Transformer — principle is listed among the official sub-ideas of Transformer — principle, types, and losses; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Transformer — principle, types, and losses\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: transformer — principle, types, losses (within Alternating Current).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
   ]
 }

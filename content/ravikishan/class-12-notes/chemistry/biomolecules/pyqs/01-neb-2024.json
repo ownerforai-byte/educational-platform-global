@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Chemistry — Biomolecules — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "biomolecules",
+  "topicSlug": "biomolecules-pyq-2024",
+  "topicTitle": "NEB Class 12 Chemistry — Biomolecules — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Classify carbohydrates and explain with one example each the difference between reducing and non-reducing sugars.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Carbohydrates** are polyhydroxy aldehydes/ketones or their derivatives, classified as monosaccharides (glucose, fructose), disaccharides (sucrose, maltose, lactose) and polysaccharides (starch, cellulose, glycogen).\n\n**Reducing sugars** have a free anomeric (aldehyde/ketal) centre, so they reduce Tollens' and Fehling's reagents — glucose, maltose, lactose.\n\n**Non-reducing sugars** have both anomeric carbons locked in the glycosidic linkage — sucrose; it must first be hydrolysed before it responds to the tests.",
+      "knowledgeNote": "Starch and glycogen are storage polysaccharides of α-glucose; cellulose is structural, built from β-glucose, which is why humans cannot digest it."
+    },
+    {
+      "question": "Explain the primary and secondary structure of proteins and describe denaturation.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Primary structure:** the sequence of amino acids joined by peptide bonds — determined genetically and unique to each protein.\n\n**Secondary structure:** local folding of the chain into regular patterns — the α-helix (intramolecular hydrogen bonds along the backbone) and the β-pleated sheet (intermolecular hydrogen bonds between strands). Tertiary structure is the overall 3-D shape from disulphide, hydrogen, ionic and hydrophobic interactions; quaternary structure is the assembly of subunits (e.g. haemoglobin's four chains).\n\n**Denaturation:** loss of secondary and higher structure by heat, pH change, urea or heavy-metal ions, without breaking peptide bonds — the protein coagulates and loses biological function (boiled egg white, curdled milk).",
+      "knowledgeNote": "Denaturation destroys function but not the primary sequence — the distinction between hydrolysis and denaturation is a common exam point."
+    },
+    {
+      "question": "What are enzymes? State their characteristics and explain the two models for enzyme action briefly.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Enzymes** are biological catalysts, almost always proteins, that increase the rate of biochemical reactions by lowering activation energy without being consumed or altering the equilibrium.\n\n**Characteristics:** highly specific, effective in very small amounts, active in a narrow pH and temperature range, and inhibited or regulated by other molecules.\n\n**Models:** the **lock-and-key** model assumes a rigid active site complementary to the substrate; the **induced-fit** model says the active site is flexible and moulds itself around the substrate, which explains non-competitive inhibition and allosteric regulation better.",
+      "knowledgeNote": "Enzyme activity falls sharply beyond the optimum temperature because the protein denatures — unlike a general catalyst, which is not structure-dependent."
+    }
+  ]
+}

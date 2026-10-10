@@ -7,17 +7,17 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Electric charges — Electric Charges, Physics (class-11-notes).",
-    "**Tested.** define it · list: electric charges · one worked example · one misconception each.",
-    "**Fact.** Coulomb: F = (1/4πε₀)·q₁q₂/r². Electric field E = F/q = kq/r²; for a line/dipole use superposition.",
-    "**Fact.** Gauss's law: ∮E·dA = Q_enc/ε₀ — powerful for spherical/cylindrical/planar symmetry.",
-    "**Fact.** Potential V = kq/r; ΔV = W/q; U of a charge in potential = qV. Equipotential surfaces are ⟂ to field lines."
+    "**Nature of charge.** Charge is the property that produces electric force; like charges repel and unlike attract, and the SI unit is the coulomb (C).",
+    "**Quantisation and conservation.** Charge is quantised in units of e = 1.6 × 10⁻¹⁹ C (q = ne) and is conserved — the net charge of an isolated system never changes.",
+    "**Conductors and insulators.** Conductors (metals) allow charge to move freely, while insulators hold charge in place; excess charge resides on the outer surface of a conductor.",
+    "**Charging methods.** Bodies are charged by friction (transfer of electrons), conduction (contact) and induction (redistribution without contact, followed by earthing).",
+    "**Coulomb's law.** Two point charges q₁ and q₂ separated by r exert force F = (1/4πε₀)q₁q₂/r²; the constant 1/4πε₀ = 9 × 10⁹ N m² C⁻²."
   ],
   "confusion": [
-    "❌ treat \"Electric charges\" as one blob → ✅ split into: electric charges.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
-    "❌ no diagram → ✅ add one labelled figure / structured list.",
-    "❌ skip the key fact → ✅ coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition.."
+    "❌ skip the key fact → ✅ coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition..",
+    "Thinking induction creates new charge: Induction does not generate charge from nothing; it redistributes existing mobile valence electrons within the conductor while preserving net charge conservation of the combined system.",
+    "Believing grounding always pulls electrons down to Earth: If a positively charged rod is inducing negative charge near it, grounding pulls electrons UP from the Earth into the conductor. If a negative rod is near, electrons flow DOWN into the Earth.",
+    "Assuming insulators can be charged permanently by induction: Only materials with delocalized mobile charges (conductors) can be charged by induction and grounding. Insulators experience only molecular dielectric polarization."
   ],
   "bounds": [
     "Covers only: electric charges (within Electric Charges).",
@@ -26,28 +26,41 @@
     "Limit to remember: coulomb: f = (1/4πε₀)·q₁q₂/r². electric field e = f/q = kq/r²; for a line/dipole use superposition."
   ],
   "practice": [
-    "define + example each sub-idea: electric charges.",
     "one worked example for \"Electric charges\" — check units / edge cases.",
-    "recall card: definition → formula → limit → one error to avoid."
+    "recall card: definition → formula → limit → one error to avoid.",
+    "A neutral metallic sphere on an insulating stand is to be charged with $+3.2 \\times 10^{-10}\\,\\text{C}$ using an inducing rod. (a) What sign of charge must the inducing rod carry? (b) How many electrons must be removed from the sphere? Solution: (a) To induce a net positive charge on the conductor, a negatively charged rod must be brought near it, driving electrons to ground when earthed. (b) Using quantization $q = ne$: $n = \\frac{q}{e} = \\frac{3.2 \\times 10^{-10}\\,\\text{C}}{1.602 \\times 10^{-19}\\,\\text{C}} = 2.0 \\times 10^9$ electrons transferred to Earth."
   ],
   "universalFacts": [
     "Coulomb: F = (1/4πε₀)·q₁q₂/r². Electric field E = F/q = kq/r²; for a line/dipole use superposition.",
     "Gauss's law: ∮E·dA = Q_enc/ε₀ — powerful for spherical/cylindrical/planar symmetry.",
-    "Potential V = kq/r; ΔV = W/q; U of a charge in potential = qV. Equipotential surfaces are ⟂ to field lines."
+    "Potential V = kq/r; ΔV = W/q; U of a charge in potential = qV. Equipotential surfaces are ⟂ to field lines.",
+    "Charge is an absolute relativistic invariant: an electron's charge remains exactly $1.602176634 \\times 10^{-19}\\,\\text{C}$ whether at rest in a laboratory or traveling at $99.999\\%$ the speed of light in the Large Hadron Collider.",
+    "Quarks carry fractional charges ($+\\frac{2}{3}e$ and $-\\frac{1}{3}e$), but because of quantum chromodynamic color confinement, quarks never exist as isolated free particles; all observable free entities have integer charge multiples $ne$."
   ],
   "examples": [
-    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges.",
+    "Electrostatic precipitators: Industrial smoke stacks ionize airborne fly ash and soot particles, which are attracted to grounded collecting plates, purifying factory exhaust by over 99%.",
+    "Photocopier (Xerography): An aluminum drum coated with photoconductive selenium is charged by corona wire in the dark; light from the document discharges illuminated areas, leaving an electrostatic latent image that attracts toner powder.",
+    "Electrostatic spray painting: Paint droplets are given a uniform negative charge as they leave the nozzle, while the metal car frame is grounded/positive. Mutual repulsion atomizes the spray into a fine mist that wraps uniformly around the car."
   ],
   "practiceQuestions": [
     "state + explain the main idea of \"Electric charges\" with one example.",
     "compare \"Electric charges\" with the related idea from a neighbouring unit.",
-    "solve / apply for \"Electric charges\" and verify the answer is plausible."
+    "solve / apply for \"Electric charges\" and verify the answer is plausible.",
+    "Q1. State the fundamental law of electrostatics and discuss the three fundamental properties of electric charges.",
+    "Q2. Explain the principle and step-by-step procedural sequence for charging an insulated metallic sphere negatively by induction.",
+    "Q3. Can a body possess a net static charge of $4.0 \\times 10^{-19}\\,\\text{C}$? Justify your answer using the principle of charge quantization.",
+    "Q4. A glass rod rubbed with silk attracts tiny bits of paper. Why does a piece of paper jump to the rod, touch it, and then vigorously fly away?"
   ],
   "formulas": [
     "F = k q₁q₂/r²",
     "E = F/q",
     "∮E·dA = Q/ε₀",
-    "V = kq/r"
+    "V = kq/r",
+    "Quantization of electric charge: $q = \\pm n e \\quad (n \\in \\mathbb{Z}^+)$",
+    "Conservation of electric charge: $\\sum q_{\\text{initial}} = \\sum q_{\\text{final}}$",
+    "Charge sharing between identical conducting spheres in contact: $q' = \\frac{q_1 + q_2}{2}$",
+    "Fractional quark composition of nucleon: $p = uud \\; (+1e), \\quad n = udd \\; (0)$"
   ],
   "numericals": [
     "Use  F = k q₁q₂/r²  — pick reasonable values, solve, and check the units.",
@@ -55,9 +68,14 @@
     "Use  ∮E·dA = Q/ε₀  — pick reasonable values, solve, and check the units."
   ],
   "keyPoints": [
-    "• Electric charges"
+    "• Electric charges",
+    "Electric charge is quantized in integral multiples of $e = 1.602 \\times 10^{-19}\\,\\text{C}$.",
+    "Charge is an isolated invariant scalar conserved across all nuclear and electromagnetic interactions.",
+    "Induction charges a conductor with the sign opposite to that of the inducing charged body without contact loss.",
+    "Grounding neutralizes electrostatic potential by allowing electron exchange with Earth's infinite charge reservoir.",
+    "Electrostatic attraction occurs between unlike charges and between any charged body and a neutral conductor via polarization."
   ],
-  "summary": "Electric charges (Electric Charges, Physics, class-11-notes) covers Electric charges. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Electric charge is a fundamental, quantized ($q = ne$), and conserved property of matter. Objects can be charged by triboelectric friction, conduction, or electrostatic induction. Charging by induction polarizes mobile electrons in an insulated conductor; momentary grounding allows electron exchange with Earth, permanently trapping an opposite net charge on the conductor without losing inducing charge.",
   "mcqs": [
     {
       "question": "A common examiner point on \"Electric charges\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -67,17 +85,77 @@
       ],
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "specialNotes": [
+    "Grounding must be removed BEFORE withdrawing the inducing charged body; otherwise, mobile charges equalize back through ground, leaving the sphere neutral.",
+    "Repulsion is the only sure test of electrification because an uncharged body can be attracted by a charged body due to electrostatic polarization."
+  ],
+  "importantStatements": [
+    "Statement 1: Electric charge is quantized, meaning it exists only in integral multiples of the fundamental charge e = 1.602 × 10⁻¹⁹ C.",
+    "Statement 2: The total electric charge of an isolated system remains constant over time regardless of physical or chemical reactions.",
+    "Statement 3: Electrostatic induction allows charging a conductor with a sign opposite to that of the inducing charged object without physical contact.",
+    "Statement 4: Repulsion is the definitive test of electrification, since neutral matter is attracted to any charged body by polarization.",
+    "Statement 5: Charge is invariant under relativistic transformations, independent of the relative velocity of the frame of reference."
+  ],
+  "importantNotes": [
+    "Remember that in conductors, only negative charges (free conduction electrons) physically move; positive ionic cores remain fixed in the crystal lattice."
+  ],
+  "examShortTricks": [
+    "Quantization check: divide given charge Q by 1.6 × 10⁻¹⁹ C; if n is not an integer, the charge is physically impossible.",
+    "Induction charge sign: Induced net charge on conductor is ALWAYS opposite to the sign of the inducing rod.",
+    "Identical spheres contact trick: Touching identical spheres of charges q₁ and q₂ redistributes charge equally to (q₁ + q₂)/2 each."
+  ],
+  "examNotes": [
+    "Explaining the four steps of charging a sphere by induction with neatly labeled diagrams is a frequent 3-mark NEB Board question."
+  ],
+  "importantConcepts": [
+    "Quantization and conservation of electric charge.",
+    "Step-by-step mechanism of electrostatic induction and earthing.",
+    "Origin of triboelectric series and conduction charge sharing.",
+    "Gold-leaf electroscope working and repulsion as the sure test of electrification."
+  ],
+  "importantTasks": [
+    "Draw sequential schematic diagrams showing charging a conductor by induction.",
+    "Calculate electron deficiency or excess for a given charge magnitude.",
+    "Compute resulting charges when identical conductors are touched and separated."
+  ],
+  "mcs": [
+    {
+      "question": "Which of the following charges cannot exist on an isolated physical body?",
+      "options": [
+        "3.2 × 10⁻¹⁹ C",
+        "4.8 × 10⁻¹⁹ C",
+        "2.4 × 10⁻¹⁹ C",
+        "6.4 × 10⁻¹⁹ C"
+      ],
+      "answer": "C",
+      "explanation": "From quantization q = ne, n = (2.4 × 10⁻¹⁹) / (1.6 × 10⁻¹⁹) = 1.5, which is not an integer. Therefore, this charge cannot exist."
     },
     {
-      "question": "Which of these is a governing / standard formula associated with \"Electric charges\"?",
+      "question": "Charging a metallic sphere by induction using a positively charged glass rod leaves the sphere:",
       "options": [
-        "F = k q₁q₂/r²",
-        "x + y = z (placeholder)",
-        "No formula applies",
-        "E = mc² only"
+        "positively charged",
+        "negatively charged",
+        "uncharged",
+        "either positive or negative depending on sphere size"
       ],
-      "answer": "A",
-      "explanation": "F = k q₁q₂/r² is the standard form used for this topic."
+      "answer": "B",
+      "explanation": "A positively charged rod attracts electrons from ground during the earthing phase, leaving the sphere with an excess of electrons (negatively charged)."
+    },
+    {
+      "question": "The surest test to confirm whether a body is electrified is:",
+      "options": [
+        "attraction",
+        "repulsion",
+        "polarization",
+        "earthing"
+      ],
+      "answer": "B",
+      "explanation": "Repulsion occurs exclusively between two bodies carrying like charges. Attraction can also occur between a charged body and a neutral body via polarization."
     }
-  ]
+  ],
+  "animation3D": "electric-charges",
+  "motionGraphics": "electric-charges",
+  "visualType": "electric-charges"
 }

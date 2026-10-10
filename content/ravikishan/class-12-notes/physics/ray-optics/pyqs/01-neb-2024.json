@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Physics — Ray Optics — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "ray-optics",
+  "topicSlug": "ray-optics-pyq-2024",
+  "topicTitle": "NEB Class 12 Physics — Ray Optics — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Derive the relation between the focal length and the radius of curvature of a concave mirror, and state the mirror formula.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "For a ray parallel and close to the principal axis striking at height h on a mirror of radius R, the normal is the radius. By the small-angle geometry, the reflected ray crosses the axis at F where the angle of incidence equals the angle of reflection, giving h/R ≈ 2(h/f) for paraxial rays, hence **f = R/2**.\n\nThe mirror formula follows from similar triangles for a general object distance u, image distance v: **1/v + 1/u = 1/f** (with the Cartesian sign convention).",
+      "knowledgeNote": "The result holds only for paraxial rays — spherical aberration is the failure for wide beams."
+    },
+    {
+      "question": "What is total internal reflection? State the conditions for it to occur and one application.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Total internal reflection** is the complete return of light into a denser medium when it strikes the boundary with a rarer medium beyond the critical angle.\n\n**Conditions:** (i) light must travel from denser to rarer medium, (ii) the angle of incidence must exceed the critical angle C, where sin C = 1/n.\n\n**Application:** optical fibres (also: totally reflecting prisms in periscopes, brilliance of diamonds).",
+      "knowledgeNote": "sin C = 1/n gives C = 42° for glass–air and about 49° for water–air — the denser the medium, the smaller the critical angle."
+    },
+    {
+      "question": "A convex lens of focal length 20 cm forms a real image 30 cm from the lens. Find the object distance and the magnification.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "1/v − 1/u = 1/f → 1/30 − 1/u = 1/20 → −1/u = 1/20 − 1/30 = 1/60, so u = **−60 cm** (object 60 cm in front).\n\nm = v/u = 30/(−60) = **−0.5** — the image is real, inverted and half the size.",
+      "knowledgeNote": "Real images have positive v and negative m (inverted); virtual images have negative v and positive m."
+    }
+  ]
+}

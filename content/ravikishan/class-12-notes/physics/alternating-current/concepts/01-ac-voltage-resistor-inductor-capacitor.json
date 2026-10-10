@@ -28,11 +28,11 @@
   "animation3D": "alternating-current",
   "motionGraphics": "alternating-current",
   "examples": [
-    "Example 1: Calculating impedance for an RL circuit",
-    "Example 2: Determining resonance frequency of a series LCR circuit",
-    "Example 3: Constructing a phasor diagram for an RC circuit",
-    "Example 4: Calculating power factor in an AC circuit",
-    "Example 5: Analyzing the effect of frequency on capacitive reactance"
+    "Calculating impedance for an RL circuit",
+    "Determining resonance frequency of a series LCR circuit",
+    "Constructing a phasor diagram for an RC circuit",
+    "Calculating power factor in an AC circuit",
+    "Analyzing the effect of frequency on capacitive reactance"
   ],
   "practiceQuestions": [
     "Q1. Derive an expression for the impedance of a series LCR circuit.",
@@ -42,18 +42,18 @@
     "Q5. Calculate the current in a circuit with known R, L, C values at a specific frequency."
   ],
   "formulas": [
-    "Key Formula 1: Inductive Reactance X_L = 2πfL",
-    "Key Formula 2: Capacitive Reactance X_C = 1 / (2πfC)",
-    "Key Formula 3: Impedance Z = √(R² + (X_L - X_C)²)",
-    "Key Formula 4: Resonance frequency f_r = 1 / (2π√LC)",
-    "Key Formula 5: Power Factor cos φ = R/Z"
+    "Inductive Reactance X_L = 2πfL",
+    "Capacitive Reactance X_C = 1 / (2πfC)",
+    "Impedance Z = √(R² + (X_L - X_C)²)",
+    "Resonance frequency f_r = 1 / (2π√LC)",
+    "Power Factor cos φ = R/Z"
   ],
   "keyPoints": [
-    "Key Point 1: Phasor diagram representations",
-    "Key Point 2: Definition of Impedance and Reactance",
-    "Key Point 3: Condition for Resonance",
-    "Key Point 4: Power in AC circuits",
-    "Key Point 5: Frequency dependence of reactances"
+    "Phasor diagram representations",
+    "Definition of Impedance and Reactance",
+    "Condition for Resonance",
+    "Power in AC circuits",
+    "Frequency dependence of reactances"
   ],
   "summary": "This topic covers the analysis of AC voltage applied to resistors, inductors, and capacitors. It focuses on understanding impedance, phase relationships through phasor diagrams, and the concept of resonance.",
   "specialNotes": [
@@ -85,11 +85,11 @@
     "Trick 5: Use phasor diagrams to quickly determine the phase of voltage relative to current."
   ],
   "examNotes": [
-    "Exam Tip 1: Always draw the phasor diagram first.",
-    "Exam Tip 2: Be precise with units and calculations in reactance formulas.",
-    "Exam Tip 3: Understand the definition and importance of Q-factor.",
-    "Exam Tip 4: Focus on the meaning of 'phase angle' and how to calculate it.",
-    "Exam Tip 5: Review previous exam questions on series resonance."
+    "Always draw the phasor diagram first.",
+    "Be precise with units and calculations in reactance formulas.",
+    "Understand the definition and importance of Q-factor.",
+    "Focus on the meaning of 'phase angle' and how to calculate it.",
+    "Review previous exam questions on series resonance."
   ],
   "mcs": [
     {

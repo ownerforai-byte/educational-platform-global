@@ -1,0 +1,73 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "atomic-structure",
+  "unitTitle": "Atomic Structure",
+  "unitHours": 8,
+  "syllabusTopics": [
+    "Rutherford's atomic model and its limitations",
+    "Postulates of Bohr's atomic model and its application",
+    "Spectrum of hydrogen atom",
+    "Defects of Bohr's theory",
+    "Elementary idea of quantum mechanical model: de Broglie's wave equation",
+    "Heisenberg's Uncertainty Principle and concept of probability",
+    "Quantum numbers",
+    "Orbitals and shape of s and p orbitals only",
+    "Aufbau principle, Pauli's exclusion principle, Hund's rule and electronic configurations of atoms and ions (up to atomic no. 30)"
+  ],
+  "source": "authored:rail-diagram",
+  "agentNotes": "Diagram card — the figure is authored SVG (frontend/lib/rail-diagrams.ts) drawn in the rectangular .rail-figure box at the row it explains (frontend/AGENTS.md §9). This is an EXTRA card for the unit, so it streams right after the unit's canonical card and before the Class 12 teaser. Figures cross the note-visuals guard in frontend/lib/content/visuals.ts (one svg block, no script/style/defs/external refs); an unusable figure is skipped, never half-drawn. Check: npx tsx frontend/scripts/content/home-rails.ts --check",
+  "card": {
+    "tag": "Atomic Structure · Diagram",
+    "title": "Bohr energy levels and the spectral lines they explain",
+    "href": "/class-11-notes/chemistry",
+    "icon": "Atom",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Hydrogen's electron can occupy only the fixed levels Eₙ = −13.6/n² eV. Light appears only when it drops to a lower level, which is why the spectrum is a set of sharp lines instead of a continuous band.",
+      "figure": {
+        "svg": "<svg viewBox=\"0 0 640 320\" role=\"img\">\n  <title>Bohr energy levels of hydrogen and the three to two transition</title>\n  <circle cx=\"78\" cy=\"200\" r=\"26\" fill=\"#fee2e2\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <text x=\"78\" y=\"207\" font-size=\"17\" text-anchor=\"middle\" fill=\"#b91c1c\">+</text>\n  <text x=\"78\" y=\"248\" font-size=\"12\" text-anchor=\"middle\" fill=\"#475569\">nucleus</text>\n  <line x1=\"140\" y1=\"290\" x2=\"470\" y2=\"290\" stroke=\"#0f172a\" stroke-width=\"2.5\"/>\n  <line x1=\"140\" y1=\"225\" x2=\"470\" y2=\"225\" stroke=\"#0f172a\" stroke-width=\"2.5\"/>\n  <line x1=\"140\" y1=\"165\" x2=\"470\" y2=\"165\" stroke=\"#0f172a\" stroke-width=\"2.5\"/>\n  <line x1=\"140\" y1=\"115\" x2=\"470\" y2=\"115\" stroke=\"#0f172a\" stroke-width=\"2.5\"/>\n  <text x=\"132\" y=\"295\" font-size=\"14\" text-anchor=\"end\" fill=\"#0f172a\">n = 1</text>\n  <text x=\"132\" y=\"230\" font-size=\"14\" text-anchor=\"end\" fill=\"#0f172a\">n = 2</text>\n  <text x=\"132\" y=\"170\" font-size=\"14\" text-anchor=\"end\" fill=\"#0f172a\">n = 3</text>\n  <text x=\"132\" y=\"120\" font-size=\"14\" text-anchor=\"end\" fill=\"#0f172a\">n = 4</text>\n  <text x=\"480\" y=\"295\" font-size=\"13\" fill=\"#334155\">−13.6 eV</text>\n  <text x=\"480\" y=\"230\" font-size=\"13\" fill=\"#334155\">−3.40 eV</text>\n  <text x=\"480\" y=\"170\" font-size=\"13\" fill=\"#334155\">−1.51 eV</text>\n  <text x=\"480\" y=\"120\" font-size=\"13\" fill=\"#334155\">−0.85 eV</text>\n  <line x1=\"300\" y1=\"165\" x2=\"300\" y2=\"214\" stroke=\"#dc2626\" stroke-width=\"2.5\"/>\n  <polygon points=\"300,226 293,210 307,210\" fill=\"#dc2626\"/>\n  <text x=\"292\" y=\"200\" font-size=\"13\" text-anchor=\"end\" fill=\"#b91c1c\">electron falls</text>\n  <polyline points=\"306,196 318,186 330,206 342,186 354,206 366,186 378,196 392,196\" fill=\"none\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/>\n  <text x=\"400\" y=\"192\" font-size=\"13\" fill=\"#6d28d9\">photon, 1.89 eV</text>\n  <text x=\"400\" y=\"212\" font-size=\"13\" fill=\"#6d28d9\">λ = 656 nm</text>\n</svg>",
+        "caption": "Hydrogen levels and the n = 3 → 2 jump that emits the 656 nm H-alpha photon."
+      }
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Eₙ = −13.6 Z²/n² eV;  1/λ = R(1/n₁² − 1/n₂²);  ΔE = hν = hc/λ;  R = 1.097 × 10⁷ m⁻¹"
+    },
+    {
+      "label": "Conditions",
+      "text": "Exact only for one-electron species such as H and He⁺; every transition has Δn ≠ 0 and the photon carries exactly E_high − E_low."
+    },
+    {
+      "label": "Special cases",
+      "text": "n = 3 → 2 gives the red 656 nm H-alpha line of the Balmer series; the Lyman series lies in the ultraviolet and its limit is the 13.6 eV ionisation energy."
+    },
+    {
+      "label": "Solved",
+      "text": "E₃ = −13.6/9 = −1.51 eV and E₂ = −3.40 eV, so ΔE = 1.89 eV and λ = 1240/1.89 ≈ 656 nm."
+    },
+    {
+      "label": "Limitation",
+      "text": "It cannot explain line splitting in a magnetic field or any multi-electron spectrum, and it keeps the definite orbit that quantum mechanics replaces with an orbital."
+    },
+    {
+      "label": "Derivation",
+      "kind": "formula",
+      "text": "mv r = nh/2π with mv²/r = Ze²/(4πε₀r²) ⇒ r = 0.529 n²/Z Å and E = −13.6 Z²/n² eV;  then hc/λ = E₂ − E₁"
+    },
+    {
+      "label": "Shortcut",
+      "text": "λ(nm) = 1240 / ΔE(eV) skips every unit conversion; for hydrogen λ(Å) = 1216.3 n₁²n₂²/(n₂² − n₁²)."
+    },
+    {
+      "label": "Board question",
+      "text": "Draw the energy-level diagram of hydrogen and explain how the Balmer series is produced."
+    }
+  ]
+}

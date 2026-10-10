@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Mathematics — Differential Equations — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "differential-equations",
+  "topicSlug": "differential-equations-pyq-2024",
+  "topicTitle": "NEB Class 12 Mathematics — Differential Equations — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Solve dy/dx + y/x = x².",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "This is linear, dy/dx + Py = Q with P = 1/x, Q = x².\n\nIntegrating factor IF = e^(∫P dx) = e^(lnx) = x.\n\nMultiplying through: x·dy/dx + y = x³, i.e. d(xy)/dx = x³.\n\nIntegrating: xy = x⁴/4 + C, so **y = x³/4 + C/x**.",
+      "knowledgeNote": "The integrating factor always makes the left side collapse into the derivative of (IF × y) — check this before integrating."
+    },
+    {
+      "question": "Solve the differential equation dy/dx = (1 + y²)/(1 + x²).",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "The variables separate:\n\ndy/(1 + y²) = dx/(1 + x²).\n\nIntegrating both sides: tan⁻¹y = tan⁻¹x + C.\n\n**General solution:** tan⁻¹y − tan⁻¹x = C (equivalently (y − x)/(1 + xy) = tan C after applying the difference formula).",
+      "knowledgeNote": "Recognise the separable form first; standard integrals ∫dx/(1 + x²) = tan⁻¹x are the whole content of the question."
+    },
+    {
+      "question": "Write the order and degree of the differential equation (d²y/dx²)² + (dy/dx)³ = 0.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Order** = the order of the highest derivative present = **2** (d²y/dx²).\n\n**Degree** = the power of the highest-order derivative when the equation is polynomial in derivatives = **(d²y/dx²)² has power 2**, so degree = 2.\n\nThe equation is thus of order 2 and degree 2 (it is not linear, since it contains the square of the second derivative).",
+      "knowledgeNote": "Degree is read only after clearing radicals and fractions in the derivatives — always rewrite in polynomial form before reading it off."
+    }
+  ]
+}

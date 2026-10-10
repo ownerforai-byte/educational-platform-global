@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Chemistry — General And Organic Fundamentals — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "general-and-organic-fundamentals",
+  "topicSlug": "general-and-organic-fundamentals-pyq-2024",
+  "topicTitle": "NEB Class 12 Chemistry — General And Organic Fundamentals — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Distinguish between SN1 and SN2 mechanisms with respect to rate law, stereochemistry and effect of substrate structure.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**SN2:** one-step bimolecular process; rate = k[substrate][nucleophile]; the nucleophile attacks from the side opposite the leaving group, giving inversion of configuration (Walden inversion); favoured by methyl and primary substrates, aprotic solvents and strong nucleophiles.\n\n**SN1:** two-step unimolecular process; rate = k[substrate]; the carbocation intermediate is planar, so attack from either face gives a racemic mixture; favoured by tertiary substrates, protic polar solvents and weak nucleophiles, and the rate follows carbocation stability 3° > 2° > 1°.",
+      "knowledgeNote": "The rate-determining step decides the order: bond-making and bond-breaking together (SN2) or ionisation alone (SN1)."
+    },
+    {
+      "question": "Explain (a) inductive effect, (b) resonance effect and (c) hyperconjugation with one example each, and arrange the carbocations in order of stability.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**(a) Inductive effect** — permanent polarisation transmitted through σ bonds by electronegativity difference, e.g. the −I effect of Cl in CH₃CH₂Cl weakening the C–Cl bond and increasing acidity near the group.\n\n**(b) Resonance effect** — delocalisation of π or lone-pair electrons, e.g. the +R effect of −OH in phenol, which makes the ring electron-rich and directs ortho/para.\n\n**(c) Hyperconjugation** — σ(C–H) electrons delocalise into an empty p orbital, e.g. the stabilisation of the ethyl cation.\n\n**Stability:** (CH₃)₃C⁺ > (CH₃)₂CH⁺ > CH₃CH₂⁺ > CH₃⁺, matching the number of hyperconjugative structures and alkyl +I effects.",
+      "knowledgeNote": "Electron-donating groups stabilise carbocations (and destabilise carbanions); electron-withdrawing groups do the reverse."
+    },
+    {
+      "question": "Give the IUPAC names: (a) CH₃CH(OH)CH₂CHO, (b) CH₃COCH₂COOH, (c) the isomer of C₄H₁₀O that is optically active.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**(a)** the aldehyde carbon is C1, so the name is **3-hydroxybutanal** (OH takes the lower locant rule priority for suffix aldehyde).\n\n**(b)** carboxylic acid carbon is C1: **3-oxobutanoic acid** (CH₃COCH₂COOH, acetoacetic acid).\n\n**(c)** **butan-2-ol**, CH₃CH(OH)CH₂CH₃, which has a chiral C-2 and shows optical activity; butan-1-ol and the ethers are achiral.",
+      "knowledgeNote": "Choose the principal functional group for the suffix and name all others as prefixes with the lowest locants — the single most common mark-loser in IUPAC questions."
+    }
+  ]
+}

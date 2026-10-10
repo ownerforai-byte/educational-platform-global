@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Physics — Wave Optics — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "wave-optics",
+  "topicSlug": "wave-optics-pyq-2024",
+  "topicTitle": "NEB Class 12 Physics — Wave Optics — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Derive the expression for the fringe width in Young's double-slit experiment and state two conditions for sustained interference.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Path difference at a point distance y from the centre is Δ = yd/D, where d is the slit separation and D the screen distance.\n\nBright fringes: yd/D = nλ → y_n = nλD/d, so the fringe width is\n\n**β = y_{n+1} − y_n = λD/d** — equal spacing for all fringes.\n\n**Conditions:** the two sources must be coherent (constant phase difference) and of nearly equal amplitude, with the slit separation small compared with D.",
+      "knowledgeNote": "β ∝ λ, so red fringes are wider than blue; β ∝ 1/d, so bringing the slits closer widens the pattern."
+    },
+    {
+      "question": "What is diffraction of light? Explain the difference between interference and diffraction.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Diffraction** is the bending of light around obstacles or through narrow apertures, significant when the aperture is comparable to the wavelength.\n\n**Interference:** superposition of waves from two (or a few) separate coherent sources; fringes are of equal width and equal intensity, with clear minima.\n\n**Diffraction:** superposition of secondary wavelets from the SAME wavefront over one aperture; the central maximum is brightest and wider, and successive maxima fall off in intensity.",
+      "knowledgeNote": "Single-slit minima occur at a sinθ = nλ; the central maximum spans twice the width of the others."
+    },
+    {
+      "question": "State Brewster's law and explain how a polaroid can be used to verify it.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Brewster's law:** at the polarising angle θ_p, the reflected light is completely plane polarised and tan θ_p = n (the refractive index).\n\n**Verification:** shine light at the reflecting surface, set the angle of incidence to θ_p, then rotate a polaroid in the reflected beam — at one orientation the light is extinguished, proving the reflected beam is fully polarised. At θ_p the reflected and refracted rays are 90° apart.",
+      "knowledgeNote": "tan θ_p = n means θ_p ≈ 57° for glass (n = 1.5); the polaroid transmits light whose electric vector lies along its axis."
+    }
+  ]
+}

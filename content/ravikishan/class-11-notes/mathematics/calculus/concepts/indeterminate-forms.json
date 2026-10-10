@@ -17,15 +17,12 @@
     "Applying L'Hôpital to $0\\cdot\\infty$ or $\\infty-\\infty$ without first rewriting as a quotient.",
     "Differentiating only the numerator and forgetting the denominator."
   ],
-  "practice": [],
   "universalFacts": [
     "Euler's number is defined as a limit, $e=\\lim_{n\\to\\infty}(1+\\frac1n)^n$ — the compound-interest form of the $1^\\infty$ case.",
     "Numerical differentiation avoids $f(x+h)-f(x)$ over $h$ precisely because at tiny $h$ this $0/0$ suffers catastrophic cancellation."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [],
-  "practiceQuestions": [],
   "formulas": [
     "Forms: $0/0$, $\\infty/\\infty$, $0\\cdot\\infty$, $\\infty-\\infty$, $1^\\infty$, $0^0$, $\\infty^0$",
     "$a^n-b^n = (a-b)(a^{n-1}+a^{n-2}b+\\dots+b^{n-1})$",
@@ -105,11 +102,13 @@
   "importantTasks": [
     "Work through the authored practice problems and re-derive each key formula from the definition."
   ],
-  "duplicateType": 1,
   "visualType": "indeterminate",
   "numericals": [
     "**1. [Idea: the denominator's limit does not exist, so the limit cannot either]** Determine $\\lim_{x \\to 0}\\dfrac{x^2}{2x^2 + \\sin^2(1/x)}$.\\newline\\newline**Solution:** Substitute: the numerator tends to $0$ and the denominator oscillates, so the form is not even $\\frac00$ and L'Hôpital is unavailable. Divide by $x^2$:$\\newline\\dfrac{1}{2 + \\left(\\frac{\\sin(1/x)}{x}\\right)^2}$. Put $u = 1/x$, so $u \\to \\infty$ and the squared term becomes $u^2\\sin^2 u$.\\newline\\newline**Examine two sequences:**$^{\\bullet}$ $x_n = \\frac{1}{n\\pi}$ gives $\\sin u = 0$, so the fraction is exactly $\\frac12$.$^{\\bullet}$ $y_n = \\frac{1}{\\frac\\pi2 + 2n\\pi}$ gives $|\\sin u| = 1$, so the fraction is $\\dfrac{1}{2+y_n^2} \\to 0$.\\newline\\newlineSince the two sequences give different values, **the limit does not exist**.\\newline\\newline**Answer:** DNE. **This is the concept the question tests** — students who see $\\frac00$ and reach for L'Hôpital get a wrong answer.",
     "**2. [Idea: repeated L'Hôpital, one application per order of vanishing]** Evaluate $\\lim_{x \\to 0}\\dfrac{x - \\sin x}{x^3}$.\\newline\\newline**Solution:** Direct substitution gives $\\frac00$. The numerator vanishes to **third order** because $x - \\sin x$ starts with the $x^3$ term, so exactly three applications are needed.$^{\\bullet}$ 1st: $\\lim\\dfrac{1 - \\cos x}{3x^2}$ — still $\\frac00$.$^{\\bullet}$ 2nd: $\\lim\\dfrac{\\sin x}{6x}$ — still $\\frac00$.$^{\\bullet}$ 3rd: $\\lim\\dfrac{\\cos x}{6} = \\frac16$.\\newline\\newline**Answer:** $\\frac16$. **Warning:** a fourth application would be differentiating an already non-zero limit, which is meaningless.",
     "**3. [Idea: substitute $t = 1/x$ to convert an infinity-limit into a zero-limit]** Evaluate $\\lim_{x \\to \\infty} x^3\\left(\\tan^{-1}\\dfrac1x - \\dfrac1x\\right)$.\\newline\\newline**Solution:** Naive substitution gives $\\infty^3 \\cdot 0$, so a change of variable is required. Let $t = \\frac1x$, so $t \\to 0$ and $x^3 = \\frac1{t^3}$:$\\newline\\lim_{t \\to 0}\\dfrac{\\tan^{-1}t - t}{t^3}$, a $\\frac00$ form.\\newline\\newlineL'Hôpital:$\\newline\\lim_{t \\to 0}\\dfrac{\\frac{1}{1+t^2} - 1}{3t^2} = \\lim_{t \\to 0}\\dfrac{\\frac{1-(1+t^2)}{1+t^2}}{3t^2} = \\lim_{t \\to 0}\\dfrac{-t^2}{3t^2(1+t^2)} = -\\lim_{t\\to0}\\dfrac{1}{3(1+t^2)}$.\\newline\\newline**Answer:** $-\\frac13$. **Check:** $\\tan^{-1}t = t - \\frac{t^3}{3} + \\cdots$, so the difference is $-\\frac{t^3}{3}$ and multiplying by $x^3=\\frac1{t^3}$ indeed gives $-\\frac13$."
-  ]
+  ],
+  "practice": [],
+  "examples": [],
+  "practiceQuestions": []
 }

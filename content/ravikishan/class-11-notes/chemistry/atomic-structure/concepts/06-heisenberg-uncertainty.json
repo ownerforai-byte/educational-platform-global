@@ -16,14 +16,35 @@
     "• **Natural line width:** an excited state living Δt ≈ 10⁻⁸ s has ΔE ≥ h/4πΔt, so spectral lines are broadened; the same relation explains tunnelling and virtual-particle processes.",
     "• **Zero-point energy** of confined particles, resolution limits of electron microscopes, quantum-dot behaviour and NMR line widths all follow from the principle, and all quantum-mechanical predictions (average radii, orbital shapes) are probabilistic.",
     "### 5. Limitations and cautions",
-    "The relation matters only for microscopic particles — for a 1 g body the product is utterly negligible, so classical mechanics holds. It forbids *simultaneous* exact knowledge, not knowledge of one quantity: perfect momentum knowledge leaves position completely undefined. Interpretations differ (Copenhagen versus measurement-disturbance readings), so it is safest to state it as a property of quantum ensembles; it is not a statement about instrument precision and does not mean measurement is impossible."
+    "The relation matters only for microscopic particles — for a 1 g body the product is utterly negligible, so classical mechanics holds. It forbids *simultaneous* exact knowledge, not knowledge of one quantity: perfect momentum knowledge leaves position completely undefined. Interpretations differ (Copenhagen versus measurement-disturbance readings), so it is safest to state it as a property of quantum ensembles; it is not a statement about instrument precision and does not mean measurement is impossible.",
+    "**Fact.** P(E) = favourable/total. Additive law: P(A∪B) = P(A)+P(B)−P(A∩B). If mutually exclusive, P(A∪B)=P(A)+P(B).",
+    "**Fact.** Multiplicative: P(A∩B) = P(A)P(B|A); independence: P(A∩B) = P(A)P(B).",
+    "**Fact.** Complement: P(A') = 1 − P(A). For discrete: ΣP = 1; expected value E(X) = Σxᵢpᵢ.",
+    "### Focus of this tab",
+    "The three standard forms of the principle and the two numerical patterns NEB asks (electron in an atom; electron in the nucleus). The probability interpretation is in the main note.",
+    "### The three forms",
+    "• Position–momentum: $\\Delta x\\,\\Delta p\\ge\\frac{h}{4\\pi}$, or with velocity $\\Delta x\\,\\Delta v\\ge\\frac{h}{4\\pi m}$.",
+    "• Energy–time: $\\Delta E\\,\\Delta t\\ge\\frac{h}{4\\pi}$ — an excited state living Δt has a minimum energy spread ΔE, which broadens spectral lines (natural line width).",
+    "• Angular momentum–angle: $\\Delta L\\,\\Delta\\theta\\ge\\frac{h}{4\\pi}$.",
+    "### Numerical pattern 1 — electron localised to atomic size",
+    "Δx = 10⁻¹⁰ m: Δv ≥ h/(4πmΔx) = 6.626×10⁻³⁴/(4π × 9.11×10⁻³¹ × 10⁻¹⁰) ≈ 5.8 × 10⁵ m s⁻¹. This is comparable with the electron's own speed (2.2 × 10⁶ m s⁻¹), so a definite orbit is impossible — the standard argument against Bohr orbits.",
+    "### Numerical pattern 2 — electron inside the nucleus",
+    "Δx = 10⁻¹⁴ m (nuclear size): Δp ≈ h/(4πΔx) ≈ 5.3 × 10⁻¹⁸ kg m s⁻¹ → KE ≈ (Δp)²/2m ≈ 1.5 × 10⁻⁴ J ≈ 10⁹ eV. Nuclear binding energies are ~10⁷ eV, so the electron cannot be confined in the nucleus — proof that electrons are not nuclear constituents (β-particles are created at emission).",
+    "### Relation to the probability concept",
+    "Because r and p cannot both be sharp, the electron's state is described by ψ with |ψ|² = probability density. The 1s radial probability peaks at 0.529 Å — Bohr's radius reappears as the *most probable* distance. 'Electron cloud', boundary surfaces and atomic radii averages all follow from this probabilistic description.",
+    "### Limits of the principle",
+    "It matters only for microscopic particles: for a 1 g body at Δx = 10⁻¹⁰ m, Δv ≈ 10⁻²⁴ m s⁻¹ — utterly negligible, so classical mechanics remains valid for everyday objects."
   ],
   "confusion": [
     "❌ The principle is due to clumsy instruments. ✅ It is fundamental; better instruments cannot beat h/4π.",
     "❌ It says nothing about the electron can be known. ✅ Either quantity may be exact; only the *product* of uncertainties is bounded below.",
     "❌ It applies equally to a moving cricket ball. ✅ For macroscopic bodies the uncertainty product is negligible, so classical physics applies.",
     "❌ The principle proves electrons do not exist in atoms. ✅ It replaces fixed orbits by probability distributions (orbitals) described by |ψ|².",
-    "❌ ΔE·Δt ≥ h/4π is a different law. ✅ It is the energy–time form of the same principle, explaining natural line broadening."
+    "❌ ΔE·Δt ≥ h/4π is a different law. ✅ It is the energy–time form of the same principle, explaining natural line broadening.",
+    "❌ skip the key fact → ✅ p(e) = favourable/total. additive law: p(a∪b) = p(a)+p(b)−p(a∩b). if mutually exclusive, p(a∪b)=p(a)+p(b)..",
+    "❌ The principle sets a limit on *both* quantities individually. ✅ Only the *product* of the two uncertainties is bounded; either one alone can be exact.",
+    "❌ ΔE·Δt means energy conservation is violated. ✅ It permits transient fluctuations within ΔE for times shorter than Δt — the basis of virtual processes and tunnelling.",
+    "❌ A better microscope can beat the limit. ✅ The limit is fundamental, not technical."
   ],
   "practice": [
     "State and explain Heisenberg's uncertainty principle; why is it not a limit of instruments?",
@@ -31,27 +52,92 @@
     "Explain the concept of probability and the meaning of |ψ|² in the quantum-mechanical atom.",
     "An electron is confined to 10⁻¹⁰ m; estimate the minimum uncertainty in its velocity.",
     "Use ΔE·Δt ≥ h/4π to explain line broadening for an excited-state lifetime of 10⁻⁸ s.",
-    "Show numerically why an electron cannot exist inside a nucleus of radius 10⁻¹⁵ m."
+    "Show numerically why an electron cannot exist inside a nucleus of radius 10⁻¹⁵ m.",
+    "one worked example for \"Heisenberg's Uncertainty Principle and concept of probabi…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid.",
+    "State the uncertainty principle and write its three forms.",
+    "Estimate the minimum uncertainty in the velocity of an electron confined to 10⁻¹⁰ m.",
+    "Use the principle to prove that electrons cannot exist inside the nucleus.",
+    "How does the principle justify the probability description of the electron?"
   ],
   "formulas": [
     "$$\\Delta x\\cdot\\Delta p\\ge\\frac{h}{4\\pi},\\qquad \\Delta x\\cdot\\Delta v\\ge\\frac{h}{4\\pi m}$$",
     "$$\\Delta E\\cdot\\Delta t\\ge\\frac{h}{4\\pi},\\qquad \\Delta L\\cdot\\Delta\\theta\\ge\\frac{h}{4\\pi}$$",
-    "$$\\Delta p=m\\Delta v,\\qquad KE=\\frac{(\\Delta p)^{2}}{2m}$$"
+    "$$\\Delta p=m\\Delta v,\\qquad KE=\\frac{(\\Delta p)^{2}}{2m}$$",
+    "P(A∪B) = P(A)+P(B)−P(A∩B)",
+    "P(A∩B) = P(A)P(B|A)",
+    "P(A') = 1 − P(A)",
+    "$$\\Delta x\\,\\Delta p\\ge\\frac{h}{4\\pi};\\quad \\Delta E\\,\\Delta t\\ge\\frac{h}{4\\pi};\\quad \\Delta L\\,\\Delta\\theta\\ge\\frac{h}{4\\pi}$$",
+    "$$KE\\approx\\frac{(\\Delta p)^{2}}{2m}$$"
   ],
   "universalFacts": [
     "Heisenberg published the principle in 1927 and received the 1932 Nobel Prize in Physics.",
     "ħ = h/2π = 1.054 × 10⁻³⁴ J s; the bound is often written Δx·Δp ≥ ħ/2.",
-    "The most probable distance of the 1s electron is 0.529 Å — the value Bohr called the first-orbit radius."
+    "The most probable distance of the 1s electron is 0.529 Å — the value Bohr called the first-orbit radius.",
+    "P(E) = favourable/total. Additive law: P(A∪B) = P(A)+P(B)−P(A∩B). If mutually exclusive, P(A∪B)=P(A)+P(B).",
+    "Multiplicative: P(A∩B) = P(A)P(B|A); independence: P(A∩B) = P(A)P(B).",
+    "Complement: P(A') = 1 − P(A). For discrete: ΣP = 1; expected value E(X) = Σxᵢpᵢ.",
+    "ħ = h/2π = 1.055 × 10⁻³⁴ J s; the bound is often written Δx·Δp ≥ ħ/2 (numerically equal to h/4π).",
+    "Natural line width of an excited state (Δt ≈ 10⁻⁸ s): ΔE ≈ 10⁻⁸ eV — the origin of the intrinsic sharpness limit of spectral lines.",
+    "Tunnelling (STM, α-decay) is the practical use of the energy–time form."
   ],
   "examples": [
     "**Problem:** Minimum velocity uncertainty for an electron localised within 10⁻¹⁰ m. **Solution:** Δv ≥ h/(4πmΔx) = 6.626×10⁻³⁴/(4π × 9.11×10⁻³¹ × 10⁻¹⁰) ≈ 5.8 × 10⁵ m s⁻¹ — comparable to the electron's own speed, so the orbit picture collapses.",
-    "**Problem:** Can an electron be confined in a nucleus of radius 10⁻¹⁵ m? **Solution:** Δp ≈ h/(4πΔx) ≈ 5.3 × 10⁻²⁰ kg m s⁻¹ → KE ≈ (Δp)²/2m ≈ 10¹⁰ eV, far beyond nuclear binding energies; β-particles are therefore created during decay, not stored in the nucleus."
+    "**Problem:** Can an electron be confined in a nucleus of radius 10⁻¹⁵ m? **Solution:** Δp ≈ h/(4πΔx) ≈ 5.3 × 10⁻²⁰ kg m s⁻¹ → KE ≈ (Δp)²/2m ≈ 10¹⁰ eV, far beyond nuclear binding energies; β-particles are therefore created during decay, not stored in the nucleus.",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges.",
+    "**Problem:** Δx = 5 × 10⁻¹¹ m for an electron — find Δv. **Solution:** Δv = h/(4πmΔx) = 6.626×10⁻³⁴/(4π × 9.11×10⁻³¹ × 5×10⁻¹¹) ≈ 1.2 × 10⁶ m s⁻¹ — over half the orbital speed, confirming the orbit picture's collapse."
   ],
   "importantNotes": [
     "Write both forms: Δx·Δp ≥ h/4π and Δx·Δv ≥ h/4πm — questions often ask about velocity.",
     "Use the principle to justify atomic size (~10⁻¹⁰ m) and stability; these are standard 3-mark applications.",
-    "State clearly that the limit is fundamental, not instrumental."
+    "State clearly that the limit is fundamental, not instrumental.",
+    "Write the form the question asks for (momentum or velocity); mixing m into the denominator wrongly is the common error.",
+    "Conclude numericals with the physical meaning (no definite orbit / no electron in the nucleus)."
   ],
   "visualType": "heisenberg-uncertainty",
-  "tabGroup": "Atomic-Structure-Learner-Notes"
+  "keyPoints": [
+    "• Heisenberg's Uncertainty Principle",
+    "• Concept of probability"
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Heisenberg's Uncertainty Principle and concept of probabi…\" with one example.",
+    "compare \"Heisenberg's Uncertainty Principle\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Heisenberg's Uncertainty Principle and concept of probabi…\" and verify the answer is plausible."
+  ],
+  "numericals": [
+    "Use  P(A∪B) = P(A)+P(B)−P(A∩B)  — pick reasonable values, solve, and check the units.",
+    "Use  P(A∩B) = P(A)P(B|A)  — pick reasonable values, solve, and check the units.",
+    "Use  P(A') = 1 − P(A)  — pick reasonable values, solve, and check the units."
+  ],
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Heisenberg's Uncertainty Principle and concept of probabi…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "The uncertainty principle is significant for:",
+      "options": [
+        "Moving cars",
+        "Microscopic particles like electrons",
+        "Planets",
+        "All objects equally"
+      ],
+      "answer": "B"
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: heisenberg's uncertainty principle, concept of probability (within Atomic Structure).",
+    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: p(e) = favourable/total. additive law: p(a∪b) = p(a)+p(b)−p(a∩b). if mutually exclusive, p(a∪b)=p(a)+p(b)."
+  ],
+  "summary": "Heisenberg's Uncertainty Principle and concept of probabi… (Atomic Structure, Chemistry, class-11-notes) covers Heisenberg's Uncertainty Principle, concept of probability. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "filename": "06-heisenberg-uncertainty.json"
 }

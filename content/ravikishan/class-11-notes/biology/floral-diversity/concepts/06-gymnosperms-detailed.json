@@ -6,8 +6,6 @@
   "relevance": 100,
   "animation3D": "chemistry",
   "motionGraphics": "chemistry",
-  "duplicateType": 2,
-  "tabGroup": "06-gymnosperm-general-introduction-characteristic-features-of-gymnosperms-morphology-and-reproduction-of-pinus-economic-importance-of-gymnosperm",
   "mcqs": [
     {
       "question": "The Pinus pollen grain has a body and a:",
@@ -48,6 +46,36 @@
         "Wind pollination"
       ],
       "answer": "C"
+    },
+    {
+      "question": "Gymnosperms are called \"naked-seed\" plants because:",
+      "options": [
+        "They have no seeds",
+        "Seeds are not in a fruit",
+        "They are pollinated by wind",
+        "They lack cones"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Pinus is pollinated by:",
+      "options": [
+        "Insects",
+        "Water",
+        "Wind",
+        "Birds"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Deodar (Cedrus deodara) is an example of:",
+      "options": [
+        "Angiosperm",
+        "Gymnosperm",
+        "Bryophyte",
+        "Pteridophyte"
+      ],
+      "answer": "B"
     }
   ],
   "visualType": "haber-process-flow",
@@ -424,7 +452,14 @@
     "Key differences from angiosperms: no flowers, no fruits, no double fertilisation; seeds exposed on cone scales.",
     "Economic importance: timber (construction, paper), resin (turpentine from Pinus), ornamental (conifers in gardens), soil stabilisation in alpine regions; Deodar is a sacred tree in Nepali tradition.",
     "Other gymnosperms: Ginkgo (living fossil, deciduous), Cycas (cycad, palm-like), Gnetum (angiosperm-like).",
-    "NEB focus: detailed Pinus male + female cone structure, pollen, ovule, seed, and the life cycle; economic importance in Nepal."
+    "NEB focus: detailed Pinus male + female cone structure, pollen, ovule, seed, and the life cycle; economic importance in Nepal.",
+    "Gymnosperms: seed plants with \"naked\" seeds (seeds not enclosed in a fruit); include conifers (Pinus, Deodar), ginkgo, cycads, and gnetophytes.",
+    "Body: woody stem (trunk), needle-like or scale-like leaves; no true flowers; reproduction via cones (strobili).",
+    "Pinus (model): conifer; male cones (pollen cones) produce microspores → pollen grains; female cones (seed cones) produce ovules → seeds after pollination.",
+    "Life cycle: sporophyte (2n) dominant; microsporangia → microspores (n) → pollen (male gametophyte); megasporangia → megaspores (n) → female gametophyte; pollination → fertilisation (no water needed; wind-pollinated).",
+    "Key differences from angiosperms: no flowers, no fruits, no double fertilisation; seeds are exposed on cone scales.",
+    "Economic importance: timber (Deodar, Pine for construction, paper), resin (turpentine from Pinus), ornamental (conifers in gardens), soil stabilisation in alpine regions.",
+    "NEB focus: Pinus morphology (male and female cones) and reproduction; economic importance of gymnosperms in Nepal."
   ],
   "confusion": [
     "Gymnosperms produce SEEDS but NOT fruits; angiosperms produce both.",
@@ -432,40 +467,67 @@
     "Pinus is wind-pollinated (anemophilous); no flowers, no nectar, no insects involved.",
     "Gymnosperms do NOT undergo double fertilisation (angiosperm feature).",
     "The gametophyte in gymnosperms is reduced and non-photosynthetic (unlike bryophytes where the gametophyte is dominant).",
-    "Deodar (Cedrus deodara) and Pine (Pinus) are both in the family Pinaceae; they differ in leaf form and cone structure."
+    "Deodar (Cedrus deodara) and Pine (Pinus) are both in the family Pinaceae; they differ in leaf form and cone structure.",
+    "Gymnosperms produce SEEDS but NOT fruits; angiosperms produce both seeds AND fruits.",
+    "Gymnosperm seeds are \"naked\" (exposed on cone scales); angiosperm seeds are enclosed in a fruit.",
+    "Pinus is wind-pollinated (anemophilous); no flowers or nectar are involved.",
+    "Gymnosperms do NOT undergo double fertilisation; that is unique to angiosperms.",
+    "Deodar (Cedrus deodara) and Pine (Pinus) are both conifers in the family Pinaceae; they differ in leaf form (needle-like vs scale-like) and cone structure.",
+    "Gymnosperms have a dominant sporophyte; the gametophyte is reduced and non-photosynthetic."
   ],
   "practice": [
     "Draw and label a detailed Pinus male cone (microsporangium, microspore, pollen).",
     "Draw and label a detailed Pinus female cone (ovule, archegonium, seed).",
     "Describe the pollen grain structure (body + air-sac).",
     "Explain the life cycle of a gymnosperm (Pinus).",
-    "Explain the economic importance of gymnosperms in Nepal."
+    "Explain the economic importance of gymnosperms in Nepal.",
+    "Draw and label a Pinus male cone and a female cone.",
+    "Describe the life cycle of a gymnosperm (Pinus) with a labelled diagram.",
+    "Differentiate gymnosperms from angiosperms (5 points).",
+    "Explain the economic importance of gymnosperms in Nepal (5 points).",
+    "Describe the structure of a pine seed."
   ],
   "universalFacts": [
     "Gymnosperms appeared ~300 Ma (Carboniferous); they dominated the Mesozoic era.",
     "A single Pinus male cone can release millions of pollen grains for wind dispersal.",
     "The Deodar (Cedrus deodara) is a sacred tree in Nepali Hindu and Buddhist tradition.",
-    "Gymnosperms include over 1,000 species; conifers are the most common in temperate regions."
+    "Gymnosperms include over 1,000 species; conifers are the most common in temperate regions.",
+    "Gymnosperms appeared ~300 million years ago (Carboniferous); they dominated the Mesozoic era.",
+    "Pinus is wind-pollinated; a single male cone can release millions of pollen grains.",
+    "The Deodar (Cedrus deodara) is the national tree of Afghanistan and a sacred tree in Hindu and Buddhist tradition.",
+    "Gymnosperms include over 1,000 species; conifers are the most common gymnosperms in temperate regions."
   ],
   "examples": [
     "Pinus male cone: microsporangium → microspore (n) → pollen grain (body + air-sac).",
     "Pinus female cone: ovule on the cone scale → archegonium → fertilisation → seed (naked).",
     "Pollen: two-celled (tube + generative); air-sac aids wind dispersal.",
     "Seed: embryo + endosperm + seed coat; no fruit.",
-    "Economic: timber (Deodar, Pine), resin (turpentine), ornamental, sacred (Deodar), soil stabilisation."
+    "Economic: timber (Deodar, Pine), resin (turpentine), ornamental, sacred (Deodar), soil stabilisation.",
+    "Pinus merkusii — conifer, gymnosperm; wind-pollinated; produces resin and timber.",
+    "Deodar (Cedrus deodara) — Himalayan conifer; sacred tree; timber and ornamental.",
+    "Ginkgo biloba — living fossil; deciduous gymnosperm; leaves used in traditional medicine.",
+    "Cycas revoluta — cycad; palm-like; produces seeds in strobili; ornamental."
   ],
   "practiceQuestions": [
     "Describe the detailed structure of a Pinus male cone.",
     "Describe the detailed structure of a Pinus female cone.",
     "Explain the pollen grain structure and its wind-dispersal adaptation.",
     "Draw the life cycle of a gymnosperm (Pinus).",
-    "What is the economic importance of gymnosperms in Nepal?"
+    "What is the economic importance of gymnosperms in Nepal?",
+    "Why are gymnosperms called \"naked-seed\" plants?",
+    "Differentiate a male and female Pinus cone (structure and function).",
+    "Describe the life cycle of a gymnosperm (Pinus).",
+    "How does pollination in gymnosperms differ from that in angiosperms?"
   ],
   "formulas": [
     "Male cone: microsporangium → microspore (n) → pollen (male gametophyte)",
     "Female cone: ovule on scale → megaspore (n) → female gametophyte (archegonia)",
     "Pollination: pollen → ovule (wind) → pollen tube → fertilisation (no water)",
-    "Seed: embryo + endosperm (n) + seed coat (no fruit)"
+    "Seed: embryo + endosperm (n) + seed coat (no fruit)",
+    "Life cycle: Microsporangium → Microspore (n) → Pollen (male gametophyte)",
+    "Megasporangium → Megaspore (n) → Female gametophyte (archegonia)",
+    "Pollination: Pollen → Ovule (on cone scale) → Fertilisation (no water needed)",
+    "Seed: Embryo + Endosperm + Seed coat (no fruit)"
   ],
   "keyPoints": [
     "Pinus: woody, needle-like leaves, cones; no flowers or fruits.",
@@ -474,22 +536,34 @@
     "Pollen: body + air-sac; two-celled; wind dispersal.",
     "Life cycle: sporophyte (2n) dominant; gametophyte reduced.",
     "No double fertilisation (unlike angiosperms).",
-    "Economic: timber, resin, ornamental, sacred (Deodar), soil stabilisation."
+    "Economic: timber, resin, ornamental, sacred (Deodar), soil stabilisation.",
+    "Gymnosperms: seeds NOT enclosed in fruit; naked seeds on cone scales.",
+    "No true flowers; reproduction via cones (strobili).",
+    "Pinus: wind-pollinated; male cones produce pollen; female cones bear ovules.",
+    "Life cycle: sporophyte dominant; gametophyte reduced, non-photosynthetic.",
+    "Economic: timber, resin, ornamental, soil, sacred trees (Deodar)."
   ],
-  "summary": "A detailed study of Pinus (gymnosperm) reveals a woody plant with needle-like leaves and cones. The male cone bears microsporangia that produce pollen grains (each with a body and an air-sac for wind dispersal). The female cone bears the ovule on the cone scale; pollination is anemophilous (wind), and fertilisation does not require water. The resulting seed is \"naked\" (exposed on the cone scale, no fruit). The life cycle has a dominant sporophyte and a reduced, non-photosynthetic gametophyte. Gymnosperms are economically important in Nepal as timber (Deodar, Pine), resin sources, ornamentals, and sacred trees. NEB focuses on the detailed cone structures, pollen, ovule, seed, and the life cycle.",
+  "summary": "A detailed study of Pinus (gymnosperm) reveals a woody plant with needle-like leaves and cones. The male cone bears microsporangia that produce pollen grains (each with a body and an air-sac for wind dispersal). The female cone bears the ovule on the cone scale; pollination is anemophilous (wind), and fertilisation does not require water. The resulting seed is \"naked\" (exposed on the cone scale, no fruit). The life cycle has a dominant sporophyte and a reduced, non-photosynthetic gametophyte. Gymnosperms are economically important in Nepal as timber (Deodar, Pine), resin sources, ornamentals, and sacred trees. NEB focuses on the detailed cone structures, pollen, ovule, seed, and the life cycle. Gymnosperms are seed plants with naked (exposed) seeds, not enclosed in fruits. They reproduce via cones; Pinus is the NEB model. Pollination is wind-based (anemophilous); no flowers or nectar are involved. The life cycle has a dominant sporophyte and a reduced gametophyte. Gymnosperms are economically important in Nepal as timber (Deodar, Pine), resin sources, ornamentals, and sacred trees. They differ from angiosperms in lacking flowers, fruits, and double fertilisation.",
   "specialNotes": [
     "NEB expects detailed Pinus male + female cone diagrams.",
     "The pollen structure (body + air-sac) and wind dispersal are key exam points.",
     "The ovule on the cone scale (naked seed) is the defining gymnosperm feature.",
     "No double fertilisation — a contrast with angiosperms.",
     "Economic importance in Nepal: timber, resin, ornamental, sacred (Deodar).",
-    "Deodar (Cedrus deodara) is a sacred Himalayan tree."
+    "Deodar (Cedrus deodara) is a sacred Himalayan tree.",
+    "NEB expects a labelled diagram of Pinus male and female cones.",
+    "The key distinction: gymnosperms = naked seeds (no fruit); angiosperms = enclosed seeds (fruit).",
+    "Deodar (Cedrus deodara) is a sacred Himalayan tree; its economic and cultural importance is a common application question.",
+    "Pinus is wind-pollinated; no insect or water is needed for pollination."
   ],
   "importantStatements": [
     "Gymnosperms produce naked seeds on cone scales.",
     "Pinus is wind-pollinated (anemophilous).",
     "The pollen grain has a body and an air-sac for wind dispersal.",
-    "Gymnosperms do not undergo double fertilisation."
+    "Gymnosperms do not undergo double fertilisation.",
+    "Gymnosperms are the first seed-bearing plants to evolve.",
+    "Their seeds are \"naked\" — exposed on the surface of cone scales.",
+    "Pollination in Pinus is anemophilous (wind-pollinated)."
   ],
   "importantNotes": [
     "Memorise the detailed male + female cone structure.",
@@ -497,13 +571,22 @@
     "Explain wind pollination in Pinus.",
     "Draw the life cycle (sporophyte dominant).",
     "List the economic importance in Nepal (timber, resin, sacred).",
-    "Note that Deodar is a sacred tree."
+    "Note that Deodar is a sacred tree.",
+    "Memorise the structure of Pinus male and female cones.",
+    "Learn the gymnosperm life cycle (no water needed for fertilisation).",
+    "Differentiate gymnosperms from angiosperms (5 points).",
+    "List economic importance of gymnosperms in Nepal (timber, resin, ornamental).",
+    "Note the cultural significance of Deodar in Nepali tradition."
   ],
   "examShortTricks": [
     "Pinus = needle + cone + wind (anemophilous).",
     "Male cone = pollen (body + air-sac); Female cone = ovule → seed.",
     "No flowers, no fruits, no double fertilisation.",
-    "Deodar = sacred + timber + resin (Pinaceae)."
+    "Deodar = sacred + timber + resin (Pinaceae).",
+    "Gymno = naked; Angio = vessel (fruit encloses seed).",
+    "Pinus = wind-pollinated = no flowers = no nectar.",
+    "Male cone = pollen; Female cone = ovules → seeds.",
+    "No double fertilisation in gymnosperms (angiosperm feature)."
   ],
   "examNotes": [
     "Draw and label a detailed Pinus male cone.",
@@ -511,7 +594,10 @@
     "Explain the pollen grain structure and wind dispersal.",
     "Draw the life cycle of a gymnosperm.",
     "Explain the economic importance of gymnosperms in Nepal.",
-    "Why is Pinus wind-pollinated?"
+    "Why is Pinus wind-pollinated?",
+    "Draw and label Pinus male and female cones — very common.",
+    "Describe the life cycle of a gymnosperm.",
+    "Differentiate gymnosperms from angiosperms (5 points)."
   ],
   "mcs": [
     {
@@ -553,6 +639,36 @@
         "Wind pollination"
       ],
       "answer": "C"
+    },
+    {
+      "question": "Gymnosperms are called \"naked-seed\" plants because:",
+      "options": [
+        "They have no seeds",
+        "Seeds are not in a fruit",
+        "They are pollinated by wind",
+        "They lack cones"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Pinus is pollinated by:",
+      "options": [
+        "Insects",
+        "Water",
+        "Wind",
+        "Birds"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Deodar (Cedrus deodara) is an example of:",
+      "options": [
+        "Angiosperm",
+        "Gymnosperm",
+        "Bryophyte",
+        "Pteridophyte"
+      ],
+      "answer": "B"
     }
   ],
   "importantConcepts": [
@@ -564,14 +680,25 @@
     "Reduced gametophyte",
     "No double fertilisation",
     "Economic importance in Nepal",
-    "Deodar (sacred tree)"
+    "Deodar (sacred tree)",
+    "Naked seeds",
+    "Cones (strobili)",
+    "Wind pollination",
+    "Pinus life cycle",
+    "Male vs female cones",
+    "Economic importance",
+    "Difference from angiosperms"
   ],
   "importantTasks": [
     "Label detailed Pinus cones",
     "Explain pollen structure",
     "Describe wind pollination",
     "Draw the life cycle",
-    "List economic importance in Nepal"
+    "List economic importance in Nepal",
+    "Label Pinus cones",
+    "Draw gymnosperm life cycle",
+    "Differentiate gymnosperms vs angiosperms",
+    "Explain wind pollination"
   ],
   "exercises": [
     {

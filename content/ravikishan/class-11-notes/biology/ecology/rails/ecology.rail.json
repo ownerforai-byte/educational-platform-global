@@ -1,0 +1,65 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "ecology",
+  "unitTitle": "Ecology",
+  "unitHours": 11,
+  "syllabusTopics": [
+    "Ecosystem ecology: concept of ecology, biotic and abiotic factors, species interactions",
+    "Concept of ecosystem, structural and functional aspects of pond and forest ecosystem",
+    "Food chain, food web, trophic level, ecological pyramids, productivity",
+    "Biogeochemical cycles: carbon and nitrogen cycles; concept of succession",
+    "Ecological adaptation: concept of adaptation, hydrophytes and xerophytes",
+    "Ecological imbalances: greenhouse effects and climate change, depletion of ozone layer, acid rain and biological invasion"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05 from this unit's concepts/03-biogeochemical-cycles-succession.json and 01-ecosystem-ecology-detailed.json (notes, keyPoints, formulas, specialNotes, examShortTricks, mcs). Deliberately anchored on cycles + succession so the card adds a second exam facet instead of repeating the built-in ecology slide (10 % law). Board row from the unit practice bank; no fabricated citation.",
+  "card": {
+    "tag": "Ecology",
+    "title": "Carbon and nitrogen cycles — the four bacteria that run the loop",
+    "href": "/class-11-notes/biology/chapters/ecology",
+    "icon": "Workflow",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Energy flows one way, but matter must come back — that return path is the biogeochemical cycle. Carbon travels as CO₂ (photosynthesis down, respiration and combustion back up); nitrogen needs four bacterial guilds to climb the redox ladder; and succession is the same idea in time — bare rock or cleared soil matures stage by stage into a stable climax community."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Carbon: CO₂ →(photosynthesis)→ organic C →(respiration/decomposition/combustion)→ CO₂  ·  Nitrogen: N₂ →(fixation) NH₃ →(nitrification) NO₂⁻ → NO₃⁻ →(assimilation) plants →(ammonification) NH₃ →(denitrification) N₂  ·  Succession: primary (bare rock) or secondary (existing soil) → seral stages → climax"
+    },
+    {
+      "label": "Conditions",
+      "text": "Each microbial step needs its own redox conditions: nitrogenase only works anaerobically (heterocyst of Anabaena, microaerobic nodule of Rhizobium); nitrification needs well-aerated soil, which is why waterlogged fields lose nitrogen; denitrification runs only when oxygen is short (Pseudomonas in waterlogged soil). Succession needs a disturbed-but-stable patch and time — remove the disturbance and the seral stages proceed."
+    },
+    {
+      "label": "Special cases",
+      "text": "The phosphorus cycle has NO gaseous phase and is the slowest of the four. Atmospheric N₂ is 78 % of air but unusable to most organisms until fixed — lightning fixes a little, Rhizobium (symbiotic), Azotobacter (free-living) and cyanobacteria do the rest. Legumes plus Rhizobium is the classic symbiosis; Nitrosomonas makes nitrite and Nitrobacter makes nitrate (never swap them); a climax oak–rhododendron forest is the Nepali example."
+    },
+    {
+      "label": "Solved",
+      "text": "Follow one nitrogen atom end to end: N₂ in air → fixed by Rhizobium in a legume nodule → NH₄⁺ in soil → oxidised by Nitrosomonas to NO₂⁻ → by Nitrobacter to NO₃⁻ → absorbed by the plant into protein → the plant is eaten and the protein digested → decomposers release NH₃ (ammonification) → in waterlogged soil Pseudomonas reduces NO₃⁻ back to N₂, closing the loop. Carbon mirror: burning fossil fuel adds CO₂ the slow carbon cycle cannot bury fast."
+    },
+    {
+      "label": "Limitation",
+      "text": "The textbook loops are idealised — oceans and carbonate rocks are huge sinks the cycle diagrams only hint at, and human intervention has roughly doubled reactive nitrogen (Haber process plus fertiliser), driving eutrophication and algal blooms. The climax idea is also too tidy: real communities are disturbance-driven, rarely standing still long enough to be 'final'."
+    },
+    {
+      "label": "Derivation",
+      "text": "Derive both cycles from redox economics. Nitrogen changes oxidation state from 0 (N₂) to −3 (NH₃), then climbs to +3 (NO₂⁻) and +5 (NO₃⁻), then falls back to 0 — every step pays ATP, so nitrogen fixation is one of the most expensive reactions in nature (about 16 ATP per N₂). Succession derives from niche construction: lichens and mosses on bare rock create soil; grasses, shrubs and trees then find a habitat the pioneers built, until the climax is the community the local climate can hold."
+    },
+    {
+      "label": "Shortcut",
+      "text": "One mnemonic carries the whole unit: 'Rhizobium fixes, Nitrosomonas nitrites, Nitrobacter nitrates, Pseudomonas denitrifies' — F-N-A-A-D (fixation, nitrification, assimilation, ammonification, denitrification). Remember 'phosphorus = no gas, slowest'; 'primary starts on bare rock, secondary on existing soil, both end in a climax'. Write energy as 'one-way arrow' and cycles as 'closed loops' in every compare answer."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style (unit practice bank): draw and explain the carbon cycle; draw and explain the nitrogen cycle naming each bacterium; state why the phosphorus cycle is different; differentiate primary and secondary succession and give a Nepali climax example; name the five species interactions with an example each; explain why an energy pyramid is always upright while a pyramid of numbers can invert."
+    }
+  ]
+}

@@ -5,6 +5,9 @@
   "topicTitle": "Total Internal Reflection",
   "relevance": 100,
   "notes": [
+    "**Total Internal Reflection:** This topic covers the fundamental concepts of total internal reflection in the physics curriculum.",
+    "Understanding total internal reflection is essential for solving problems and building higher-level mathematical skills.",
+    "Key definitions and theorems related to total internal reflection should be memorized and practiced regularly.",
     "**Definition:** Total internal reflection (TIR) occurs when a ray of light traveling in a denser medium strikes the boundary with a rarer medium at an angle of incidence greater than the critical angle. All the light is reflected back into the denser medium — no refraction occurs.",
     "**Two essential conditions:** (1) Light must travel from a DENSER medium to a RARER medium ($n_1 > n_2$). (2) The angle of incidence must EXCEED the critical angle ($i > \\theta_c$).",
     "**Critical angle formula:** $\\sin\\theta_c = \\frac{n_2}{n_1}$, where $n_1$ is the refractive index of the denser medium and $n_2$ is the refractive index of the rarer medium. At the critical angle, the refracted ray travels along the boundary ($r = 90°$).",
@@ -23,6 +26,9 @@
     "**Energy conservation in TIR:** Since no light is transmitted, all the incident energy is reflected. The intensity of the reflected ray equals the intensity of the incident ray (ignoring absorption in the medium). This is why TIR prisms are preferred over silvered mirrors in precision optics."
   ],
   "confusion": [
+    "Carefully distinguish between similar-looking concepts in total internal reflection.",
+    "Pay attention to the conditions under which formulas and theorems apply.",
+    "Practice with multiple examples to solidify your understanding.",
     "❌ TIR can occur when light goes from rarer to denser medium. ✅ TIR ONLY occurs when light travels from DENSER to RARER medium ($n_1 > n_2$). From rarer to denser, the ray always bends toward the normal and always enters the second medium.",
     "❌ The critical angle exists for any pair of media. ✅ The critical angle only exists when $n_1 > n_2$. If light goes from air to glass ($n_1 < n_2$), there is no critical angle — refraction always occurs.",
     "❌ At the critical angle, all light is reflected. ✅ At the critical angle ($i = \\theta_c$), the refracted ray travels ALONG the boundary ($r = 90°$). TIR begins only when $i > \\theta_c$, not at $i = \\theta_c$.",
@@ -32,6 +38,10 @@
     "❌ TIR can occur at any interface, including solid-solid interfaces. ✅ TIR requires a boundary between two media with DIFFERENT refractive indices. It can occur at any such boundary (glass-air, water-glass, fibre core-cladding) as long as light travels from the higher-index to the lower-index medium."
   ],
   "practice": [
+    "Solve at least 5 problems on total internal reflection from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type.",
     "Find the critical angle for light going from glass ($n = 1.52$) to water ($n = 1.33$). $\\sin\\theta_c = n_2/n_1 = 1.33/1.52 = 0.875$. $\\theta_c = \\arcsin(0.875) = 61.0°$. Light going from water to glass would not have a critical angle (it's going to a denser medium).",
     "A ray in water ($n = 1.33$) strikes the water-air interface at 40°. Does TIR occur? The critical angle is $\\theta_c = \\arcsin(1/1.33) = 48.8°$. Since $i = 40° < 48.8°$, TIR does NOT occur. The ray is partially reflected and partially refracted into the air.",
     "A ray in water ($n = 1.33$) strikes the water-air interface at 60°. Does TIR occur? Since $i = 60° > 48.8° = \\theta_c$, TIR DOES occur. All light is reflected back into the water. This is why underwater swimmers looking up see a mirror-like surface at steep angles.",
@@ -40,6 +50,9 @@
     "Explain why a crack in a glass window appears silvery when viewed from certain angles. Light traveling inside the glass reaches the crack (which is filled with air) at angles that may exceed the critical angle for glass-air ($\\theta_c \\approx 42°$). When this happens, TIR occurs at the crack surface, making it appear shiny and silvery — like a mirror."
   ],
   "universalFacts": [
+    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
+    "Understanding total internal reflection builds the foundation for more advanced topics in mathematics.",
+    "Real-world applications of total internal reflection span engineering, physics, economics, and computer science.",
     "The phenomenon of total internal reflection was first observed and described by Augustin-Jean Fresnel in 1818. His mathematical treatment of TIR predicted the evanescent wave that penetrates into the rarer medium.",
     "Optical fibre communication, invented by Charles Kao in the 1960s, revolutionized global communications. Kao won the Nobel Prize in Physics in 2009 for his work. A single fibre can carry terabits of data per second over thousands of kilometers.",
     "The \"sparkle\" of a cut diamond is directly related to its small critical angle (24.4°). A poorly cut diamond allows light to escape through the bottom, making it appear dull. Expert cutters angle the facets to maximize TIR and light return to the viewer's eye.",
@@ -48,7 +61,104 @@
   ],
   "animation3D": "refraction-at-plane-surfaces",
   "motionGraphics": "refraction-at-plane-surfaces",
-  "duplicateType": 2,
-  "tabGroup": "total-internal-reflection",
+  "examples": [
+    "Real-world application of Total Internal Reflection",
+    "Practical demonstration of Total Internal Reflection concepts",
+    "Diagram-based question on Total Internal Reflection",
+    "Application in daily life involving Total Internal Reflection"
+  ],
+  "practiceQuestions": [
+    "Q2. Solve problems related to Total Internal Reflection.",
+    "Q3. Differentiate between various aspects of Total Internal Reflection.",
+    "Q4. Derive the key formula related to Total Internal Reflection.",
+    "Q5. What are the applications of Total Internal Reflection?"
+  ],
+  "formulas": [
+    "Application formula for Total Internal Reflection",
+    "Derivation result for Total Internal Reflection"
+  ],
+  "summary": "Total Internal Reflection is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Total Internal Reflection applies",
+    "Note 2: Total Internal Reflection connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Total Internal Reflection",
+    "Note 4: Remember the units and dimensions involved in Total Internal Reflection",
+    "Note 5: Total Internal Reflection frequently appears in examination questions"
+  ],
+  "importantNotes": [
+    "Note 2: Remember the distinction between different types in Total Internal Reflection",
+    "Note 3: Total Internal Reflection has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Total Internal Reflection",
+    "Note 5: Cross-check your answers using alternative methods for Total Internal Reflection"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Total Internal Reflection formula",
+    "Trick 2: Elimination technique for Total Internal Reflection MCQs",
+    "Trick 3: Dimensional analysis shortcut for Total Internal Reflection",
+    "Trick 4: Memory aid for Total Internal Reflection formulas",
+    "Trick 5: Time-saving approach for Total Internal Reflection problems"
+  ],
+  "examNotes": [
+    "Focus on numerical problems from Total Internal Reflection",
+    "Practice previous year questions on Total Internal Reflection",
+    "Learn the derivations for Total Internal Reflection thoroughly",
+    "Review common mistakes related to Total Internal Reflection"
+  ],
+  "mcs": [
+    {
+      "question": "The primary application of Total Internal Reflection is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Total Internal Reflection, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Total Internal Reflection?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Total Internal Reflection is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Total Internal Reflection",
+    "Concept 2: Key theorem or principle in Total Internal Reflection",
+    "Concept 3: Important application area of Total Internal Reflection",
+    "Concept 4: Fundamental relationship in Total Internal Reflection",
+    "Concept 5: Connection between Total Internal Reflection and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Total Internal Reflection",
+    "Task 2: Derive the main formula for Total Internal Reflection",
+    "Task 3: Create a concept map for Total Internal Reflection",
+    "Task 4: Practice previous year exam questions on Total Internal Reflection",
+    "Task 5: Explain Total Internal Reflection to a peer or study group"
+  ],
   "visualType": "tir"
 }

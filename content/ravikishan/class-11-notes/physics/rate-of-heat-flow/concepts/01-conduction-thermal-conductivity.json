@@ -37,16 +37,69 @@
     "A rectangular slab has dimensions 20 cm × 10 cm × 5 cm. Heat flows along the 20 cm direction with a temperature difference of 100°C. If $k = 0.5$ W/(m·K), find the heat flow rate. Area $A = 10 \\times 5 = 50$ cm² = $5 \\times 10^{-3}$ m². $H = 0.5 \\times 5 \\times 10^{-3} \\times \\frac{100}{0.2} = 1.25$ W.",
     "Explain why a double-walled vacuum flask minimizes heat loss by conduction. The vacuum between the walls removes air (poor conductor), and the glass walls have low $k$. This dramatically reduces conductive heat transfer. The silvered surfaces further reduce radiative transfer.",
     "A composite slab has two materials of equal thickness $L$ and thermal conductivities $k_1$ and $k_2$. Derive the equivalent thermal conductivity. $R_{total} = \\frac{L}{k_1 A} + \\frac{L}{k_2 A} = \\frac{L}{A}\\left(\\frac{1}{k_1} + \\frac{1}{k_2}\\right)$. For equivalent single slab: $\\frac{2L}{k_{eq} A} = \\frac{L}{A}\\left(\\frac{1}{k_1} + \\frac{1}{k_2}\\right)$. So $k_{eq} = \\frac{2k_1 k_2}{k_1 + k_2}$.",
-    "The thermal conductivity of a metal rod is to be measured using Searle's apparatus. Steam enters at one end and water exits at the other. Temperature difference across a 20 cm section is 15°C. The water flow rate is 0.5 kg/min and the temperature rise of water is 20°C. Find $k$. Heat absorbed by water = $0.5/60 \\times 4200 \\times 20 = 700$ W. $H = kA\\frac{15}{0.2}$. Need area from apparatus dimensions to solve completely."
+    "The thermal conductivity of a metal rod is to be measured using Searle's apparatus. Steam enters at one end and water exits at the other. Temperature difference across a 20 cm section is 15°C. The water flow rate is 0.5 kg/min and the temperature rise of water is 20°C. Find $k$. Heat absorbed by water = $0.5/60 \\times 4200 \\times 20 = 700$ W. $H = kA\\frac{15}{0.2}$. Need area from apparatus dimensions to solve completely.",
+    "one worked example for \"Conduction: thermal conductivity and measurement\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "universalFacts": [
     "Joseph Fourier developed the mathematical theory of heat conduction in 1822, introducing the concept of thermal conductivity and the partial differential equation that bears his name — the heat equation.",
     "Diamond has the highest thermal conductivity of any known bulk material at room temperature (~2200 W/(m·K)), exceeding copper (~400 W/(m·K)). This is because of its rigid crystal lattice and strong covalent bonds.",
     "Superfluid helium (He-4 below 2.17 K) has an extraordinarily high thermal conductivity — millions of times greater than ordinary helium — because of quantum mechanical effects in the superfluid state.",
     "In building construction, the thermal resistance (R-value) of insulation is a critical specification. Higher R-values mean better insulation. A typical wall requires R-13 to R-21, while attics need R-30 to R-60.",
-    "The thermal conductivity of graphene is approximately 5000 W/(m·K) in the plane direction, making it the strongest and best thermal conductor known at the atomic scale."
+    "The thermal conductivity of graphene is approximately 5000 W/(m·K) in the plane direction, making it the strongest and best thermal conductor known at the atomic scale.",
+    "answer pattern for \"Conduction: thermal conductivity and measurement\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "animation3D": "rate-of-heat-flow",
   "motionGraphics": "rate-of-heat-flow",
-  "visualType": "fourier-conduction"
+  "visualType": "fourier-conduction",
+  "keyPoints": [
+    "• Conduction",
+    "• Thermal conductivity",
+    "• Measurement"
+  ],
+  "formulas": [
+    "Governing equation for \"Conduction: thermal conductivity and measurement\" — state with units, then use in one numerical."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Conduction: thermal conductivity and measurement\" with one example.",
+    "compare \"Conduction\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Conduction: thermal conductivity and measurement\" and verify the answer is plausible."
+  ],
+  "numericals": [
+    "Set up the defining equation for \"Conduction: thermal conductivity and measurement\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Conduction: thermal conductivity and measurement\"?",
+      "options": [
+        "Conduction",
+        "Thermal conductivity",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "Conduction",
+      "explanation": "Conduction is listed among the official sub-ideas of Conduction: thermal conductivity and measurement; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Conduction: thermal conductivity and measurement\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: conduction, thermal conductivity, measurement (within Rate of Heat Flow).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ]
 }

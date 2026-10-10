@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Biology — Heredity And Evolution — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "biology",
+  "unitSlug": "heredity-and-evolution",
+  "topicSlug": "heredity-and-evolution-pyq-2024",
+  "topicTitle": "NEB Class 12 Biology — Heredity And Evolution — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State Mendel's law of independent assortment and explain the dihybrid cross of round-yellow with wrinkled-green peas, showing the 9:3:3:1 ratio.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Law of independent assortment:** when two pairs of contrasting characters are considered together, the segregation of one pair is independent of the other pair.\n\nCross RRYY × rryy: F₁ is all RrYy (round yellow). The F₁ makes four kinds of gametes — RY, Ry, rY, ry — in equal numbers, so the F₁ × F₁ cross has 16 combinations.\n\nCounting the phenotypes: 9 round yellow : 3 round green : 3 wrinkled yellow : 1 wrinkled green, because each character segregates in a 3:1 ratio and (3:1) × (3:1) = 9:3:3:1 by independent recombination.",
+      "knowledgeNote": "The 9:3:3:1 ratio fails whenever the two genes are linked — recombinants then fall far below 50% and parental types dominate."
+    },
+    {
+      "question": "What is incomplete dominance? Explain with the snapdragon example and give the F₂ ratio.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Incomplete dominance** is the condition in which the heterozygote shows an intermediate phenotype because neither allele completely masks the other.\n\nIn snapdragon (Antirrhinum), red (RR) × white (rr) gives pink (Rr) F₁. Selfing F₁ gives **1 red : 2 pink : 1 white** — the genotypic and phenotypic ratios coincide, which never happens with complete dominance.",
+      "knowledgeNote": "In codominance (AB blood group) BOTH alleles are expressed together rather than blended — that is the difference from incomplete dominance."
+    },
+    {
+      "question": "State the Hardy–Weinberg principle and derive its equation. In a population, 4% of individuals show a recessive trait — calculate the frequency of heterozygotes.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Principle:** in a large, randomly mating population with no mutation, migration or selection, allele frequencies remain constant from generation to generation and the genotype frequencies are given by\n\n**p² + 2pq + q² = 1**, where p + q = 1 (derived by combining the gamete frequencies p and q).\n\nRecessive phenotype frequency = q² = 0.04 → q = 0.2, so p = 0.8.\n\nHeterozygotes = 2pq = 2 × 0.8 × 0.2 = **0.32, i.e. 32% of the population** — carriers are eight times more common than affected individuals.",
+      "knowledgeNote": "Any of the five conditions being broken means evolution is occurring — the equation is the null model against which change is measured."
+    }
+  ]
+}

@@ -7,12 +7,11 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Rutherford's atomic model and its limitations — Atomic Structure, Chemistry (class-11-notes).",
-    "**Tested.** define it · list: rutherford's atomic model, its limitations · one worked example · one misconception each.",
-    "**Fact.** Indeterminate forms 0/0, ∞/∞, 0·∞ → L'Hôpital: lim f/g = lim f'/g' (when applicable).",
-    "**Fact.** Standard limits: lim_{x→0} sin x / x = 1; lim_{x→0} (1 + x)^{1/x} = e; lim_{x→∞} (1 + a/x)^x = e^a.",
-    "**Fact.** Continuity: f continuous at c iff lim_{x→c}f(x) = f(c). Types of discontinuity: removable, jump, infinite.",
-    "**Its limitations.** one-line definition + one-line exam use."
+    "**Alpha-particle scattering.** Rutherford bombarded a thin gold foil with fast alpha particles and observed their deflection with a fluorescent screen — the experiment that revealed the nucleus.",
+    "**Observations.** Most alpha particles passed straight through, a few were deflected at large angles, and about one in 8000 bounced back, showing the positive charge and mass sit in a tiny core.",
+    "**Nuclear model.** The atom is mostly empty space: a dense, positively charged nucleus of about 10⁻¹⁵ m radius is surrounded by electrons moving in the remaining space (atom ~10⁻¹⁰ m).",
+    "**Limitation — stability.** By Maxwell's theory an orbiting electron radiates energy and should spiral into the nucleus in about 10⁻¹¹ s, so the model cannot explain atomic stability.",
+    "**Limitation — spectra.** The model predicts a continuous spectrum, but hydrogen emits a discrete line spectrum; it also could not explain the chemical behaviour of atoms."
   ],
   "confusion": [
     "❌ treat \"Rutherford's atomic model\" as one blob → ✅ split into: rutherford's atomic model, its limitations.",
@@ -66,17 +65,6 @@
       ],
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    },
-    {
-      "question": "Which of these is a governing / standard formula associated with \"Rutherford's atomic model and its limitations\"?",
-      "options": [
-        "lim sin x/x = 1 (x→0, rad)",
-        "x + y = z (placeholder)",
-        "No formula applies",
-        "E = mc² only"
-      ],
-      "answer": "A",
-      "explanation": "lim sin x/x = 1 (x→0, rad) is the standard form used for this topic."
     }
   ]
 }

@@ -4,8 +4,6 @@
   "topicSlug": "projectile-motion",
   "topicTitle": "Projectile Motion",
   "relevance": 100,
-  "duplicateType": 2,
-  "tabGroup": "projectile-motion-and-its-applications",
   "notes": [
     "**Type 2 — alternate treatment:** this version builds projectile motion from the independence of the two components and derives all standard results step by step — the derivation chain NEB expects.",
     "**The governing idea:** horizontal and vertical motions are INDEPENDENT. Gravity acts only vertically, so the horizontal velocity stays constant ($v_x = u\\cos\\theta$) while the vertical motion is free fall with initial speed $u\\sin\\theta$. The path is the combination — a parabola.",
@@ -68,9 +66,10 @@
     "At the top: $v_y = 0$, speed $= u\\cos\\theta$ (minimum), $a = g$ downward.",
     "Landing speed equals launch speed; landing angle equals −launch angle (symmetry).",
     "$R$ is maximum at 45°; complementary angles give equal ranges but different heights.",
-    "$R \\propto u^2$ and $H \\propto u^2$ — doubling launch speed quadruples both."
+    "$R \\propto u^2$ and $H \\propto u^2$ — doubling launch speed quadruples both.",
+    "Connection of Projectile Motion & Its Applications to other topics"
   ],
-  "summary": "Projectile motion is the superposition of constant horizontal velocity and vertical free fall, giving a parabolic path. The three headline results — $T = 2u\\sin\\theta/g$, $H = u^2\\sin^2\\theta/2g$, $R = u^2\\sin2\\theta/g$ — all follow from the component equations, with maximum range at 45° and equal ranges at complementary angles. Speed at the top is $u\\cos\\theta$ (never zero), landing speed equals launch speed, and horizontal-launch problems are handled by letting the vertical fall set the time. These results assume no air resistance and constant $g$.",
+  "summary": "Projectile motion is the superposition of constant horizontal velocity and vertical free fall, giving a parabolic path. The three headline results — $T = 2u\\sin\\theta/g$, $H = u^2\\sin^2\\theta/2g$, $R = u^2\\sin2\\theta/g$ — all follow from the component equations, with maximum range at 45° and equal ranges at complementary angles. Speed at the top is $u\\cos\\theta$ (never zero), landing speed equals launch speed, and horizontal-launch problems are handled by letting the vertical fall set the time. These results assume no air resistance and constant $g$. Projectile Motion & Its Applications covers essential principles and applications. Projectile motion is the superposition of constant horizontal velocity and vertical free fall, giving a parabolic path. The three headline results — $T = 2u\\sin\\theta/g$, $H = u^2\\sin^2\\theta/2g$, $R = u^2\\sin2\\theta/g$ — all follow from the component equations, with maximum range at 45° and equal ranges at complementary angles. Speed at the top is $u\\cos\\theta$ (never zero), landing speed equals launch speed, and horizontal-launch problems are handled by letting the vertical fall set the time. These results assume no air resistance and constant $g$.",
   "specialNotes": [
     "Note 1: In horizontal-launch problems, get the time from the VERTICAL fall first, then multiply by $v_x$.",
     "Note 2: Memorise $\\sin 37° = 0.6$, $\\cos 37° = 0.8$ and $\\sin 2\\theta$ values for 30°/45°/60° — NEB numericals use them constantly.",
@@ -81,20 +80,27 @@
     "Statement 1: A projectile's horizontal and vertical motions are completely independent; gravity acts only on the vertical component.",
     "Statement 2: The horizontal velocity of a projectile remains constant throughout the flight (no air resistance).",
     "Statement 3: The trajectory of an ideal projectile is a parabola.",
-    "Statement 4: The horizontal range is maximum at 45° and equal for complementary angles of projection."
+    "Statement 4: The horizontal range is maximum at 45° and equal for complementary angles of projection.",
+    "Statement 1: Definition of Projectile Motion & Its Applications",
+    "Statement 2: Theorem related to Projectile Motion & Its Applications",
+    "Statement 3: Condition for Projectile Motion & Its Applications to be valid",
+    "Statement 4: Principle governing Projectile Motion & Its Applications",
+    "Statement 5: Corollary or consequence of Projectile Motion & Its Applications"
   ],
   "importantNotes": [
     "Note 1: At the highest point the velocity is purely horizontal: $v = u\\cos\\theta$ — not zero.",
     "Note 2: Landing speed equals launch speed and the landing angle mirrors the launch angle (energy/symmetry).",
     "Note 3: $R \\propto u^2$: small speed increases at launch produce large range gains.",
-    "Note 4: For horizontal projection from a height, time of flight depends ONLY on the height: $t = \\sqrt{2h/g}$."
+    "Note 4: For horizontal projection from a height, time of flight depends ONLY on the height: $t = \\sqrt{2h/g}$.",
+    "Projectile Motion & Its Applications is based on fundamental principles."
   ],
   "examShortTricks": [
     "Trick 1: $R = u^2\\sin2\\theta/g$ — for 30° and 60°, $\\sin 2\\theta = \\sin 60° = 0.866$; write the common range instantly.",
     "Trick 2: At 45°, $R = 4H$ — if a question gives one, the other is a division away.",
     "Trick 3: Horizontal launch from height $h$: time $= \\sqrt{2h/g}$, landing speed $= \\sqrt{v_x^2 + 2gh}$.",
     "Trick 4: Velocity direction at time $t$: $\\tan\\phi = \\dfrac{u\\sin\\theta - gt}{u\\cos\\theta}$ — positive above the horizontal, negative below.",
-    "Trick 5: In 'bomb released from plane' questions, the bomb retains the plane's horizontal speed — range = plane speed × fall time."
+    "Trick 5: In 'bomb released from plane' questions, the bomb retains the plane's horizontal speed — range = plane speed × fall time.",
+    "Recall the formula for Projectile Motion & Its Applications."
   ],
   "examNotes": [
     "Exam Tip 1: Derivations of $T$, $H$ and $R$ from components are standard 4-mark questions — write the two component tables first.",
@@ -160,7 +166,8 @@
     "Concept 2: Component kinematics — $v_x$ constant, $v_y$ with $-gt$; time is the shared variable.",
     "Concept 3: Standard results: $T = 2u\\sin\\theta/g$, $H = u^2\\sin^2\\theta/2g$, $R = u^2\\sin2\\theta/g$.",
     "Concept 4: Symmetry — equal speeds at equal heights; landing mirrors launching.",
-    "Concept 5: Trajectory parabola and the $R$–$H$ relation $R = 4H\\cot\\theta$."
+    "Concept 5: Trajectory parabola and the $R$–$H$ relation $R = 4H\\cot\\theta$.",
+    "Definition and significance of Projectile Motion & Its Applications."
   ],
   "importantTasks": [
     "Task 1: Derive $T$, $H$, $R$ from components in writing, then specialise to $\\theta = 45°$.",
@@ -169,5 +176,10 @@
     "Task 4: Trace the full trajectory table ($x, y, v_x, v_y$ each 0.5 s) for $u = 20$ m/s at 30° and plot it.",
     "Task 5: Explain in words why a horizontally thrown stone and a dropped stone hit the ground together."
   ],
-  "visualType": "projectile-motion"
+  "visualType": "projectile-motion",
+  "specificConditions": [
+    "**Independence of Components:** Horizontal motion (constant $v_x = u\\cos\theta$) and vertical motion (free fall $v_y = u\\sin\theta - gt$) are completely independent. They share only the time variable $t$. This is the foundational principle — no horizontal force means $v_x$ is constant.",
+    "**Trajectory is a Parabola:** Eliminating $t$ gives $y = x\tan\theta - \frac{g x^2}{2u^2\\cos^2\theta}$, a downward-opening parabola. This assumes no air resistance, constant $g$, and flat ground. With drag, the trajectory is not a parabola and range decreases.",
+    "**Symmetry and Range Maxima:** Time of flight $T = \frac{2u\\sin\theta}{g}$, max height $H = \frac{u^2\\sin^2\theta}{2g}$, range $R = \frac{u^2\\sin 2\theta}{g}$. Maximum range at $\theta = 45^\\circ$. Complementary angles ($\theta$ and $90^\\circ-\theta$) give identical ranges because $\\sin 2\theta = \\sin(180^\\circ-2\theta)$. Speed at launch = speed at landing (symmetry)."
+  ]
 }

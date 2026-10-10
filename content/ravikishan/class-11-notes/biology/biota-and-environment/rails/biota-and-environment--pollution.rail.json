@@ -1,0 +1,60 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "biota-and-environment",
+  "unitTitle": "Biota and Environment",
+  "unitHours": 10,
+  "syllabusTopics": [
+    "Environmental pollution: sources, effects and control measures of air, water and soil pollution; pesticides and their effects"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Extra card for the unit's third topic (concept 03-environmental-pollution...json) — the canonical card covers adaptation and behaviour, this one covers pollution and pesticides. Board row from the unit practice bank; no fabricated citation.",
+  "card": {
+    "tag": "Pollution",
+    "title": "Air, water, soil and pesticides — sources, effects, control",
+    "href": "/class-11-notes/biology/chapters/biota-and-environment",
+    "icon": "FlaskConical",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Pollution is not just 'something dirty in the air' — it is a substance or energy added faster than the environment can dilute, degrade or absorb it. Exam answers sort it into three compartments (air, water, soil) and treat pesticides separately, because pesticides are the one pollutant deliberately released and then magnified all the way up the food chain."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Air pollutants: SO₂ (coal), NOx (vehicles), CO (incomplete combustion), PM2.5/PM10, ground-level O₃, CFCs  ·  Water: domestic waste + industrial effluent + agricultural runoff + oil + thermal  ·  Soil: heavy metals + pesticides + plastics + industrial waste  ·  Biomagnification: concentration INCREASES at each trophic level up the chain"
+    },
+    {
+      "label": "Conditions",
+      "text": "Harm depends on concentration, duration and the environment's assimilative capacity — the same effluent is lethal in a stagnant pond and diluted in a fast river. Acid rain needs SO₂ and NOx plus atmospheric moisture; ozone depletion needs CFCs reaching the stratosphere and releasing chlorine under UV — two different mechanisms that textbooks keep pairing. Biomagnification needs a fat-soluble, persistent compound such as DDT — water-soluble pollutants simply wash out."
+    },
+    {
+      "label": "Special cases",
+      "text": "Kathmandu Valley's winter PM2.5 exceeds WHO limits roughly 10× (stove smoke, vehicles, road dust) — the standard Nepali application. Eutrophication from fertiliser runoff kills water by feeding it; thermal pollution lowers dissolved oxygen; DDT magnifies until raptor eggshells thin. Pesticides carry three extra costs: resistance, non-target deaths (bees, predators) and residues on food. Acid rain and ozone depletion are NOT the same process."
+    },
+    {
+      "label": "Solved",
+      "text": "Trace one DDT molecule: sprayed on a field → rain washes it into a pond → algae absorb it → zooplankton eat many algae → small fish eat many zooplankton → large fish or a raptor eats many small fish, so the dose magnifies at every step → eggshell thinning at the top. Now match controls to sources: vehicles → catalytic converters and electric transport; biomass stoves → improved cookstoves; industry → scrubbers and effluent treatment; farms → organic farming and integrated pest management."
+    },
+    {
+      "label": "Limitation",
+      "text": "Pollution limits are administrative, not natural: WHO guidelines, national standards and local measurements keep diverging, so 'safe' is a policy line. Biomagnification factors vary with species and compound, and pollution never works alone — particulates and greenhouse gases share sources, so control measures interact with climate policy. And no measure self-enforces: a written standard without monitoring changes nothing."
+    },
+    {
+      "label": "Derivation",
+      "text": "Derive biomagnification from an unequal rate: a fat-soluble pollutant is absorbed faster than it is excreted, so each organism accumulates a body burden; eat many contaminated organisms and the burden multiplies — that is why the top predator carries the highest dose. Derive acid rain from simple chemistry: SO₂ and NOx + atmospheric water → H₂SO₄ and HNO₃ → rain with low pH → soil nutrients leached, lakes acidified, monuments eroded."
+    },
+    {
+      "label": "Shortcut",
+      "text": "One line per compartment: air = SO₂, NOx, CO, PM2.5, O₃, CFCs; water = domestic + industrial + agricultural; soil = heavy metals + pesticides + plastics; pesticides = biomagnify + resistance + non-target death; control = reduce emissions + renewable energy + tree planting + waste treatment + organic farming. For every 'sources/effects/control' question write three columns — sources first, effects second, at least five controls last."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style (unit practice bank): list the sources, effects and control measures of air pollution; do the same for water and soil; explain biomagnification with the DDT example; classify pesticides and state their four effects; account for Kathmandu Valley's winter PM2.5; differentiate acid rain from ozone depletion; explain eutrophication and thermal pollution."
+    }
+  ]
+}

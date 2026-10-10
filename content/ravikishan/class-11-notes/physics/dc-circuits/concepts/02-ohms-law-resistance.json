@@ -5,47 +5,137 @@
   "topicTitle": "Ohm's Law and Resistance",
   "relevance": 100,
   "notes": [
-    "**Ohmic conductor:** obeys Ohm's law. The $I$-$V$ graph is a straight line through the origin. Resistance is constant.",
-    "**Non-ohmic conductor:** does not obey Ohm's law. The $I$-$V$ graph is curved. Resistance changes with voltage or current.",
-    "**Examples of non-ohmic:** diode (conducts easily in one direction only), filament lamp (resistance increases with temperature as current increases), thermistor (resistance decreases with temperature).",
-    "**Why filament lamp is non-ohmic:** as current increases, the filament heats up, increasing its resistivity. The $I$-$V$ curve bends because $R$ is not constant.",
-    "**Dynamic resistance:** $R_d = dV/dI$ at a point on the $I$-$V$ curve. For non-ohmic devices, this is the useful measure of resistance at a specific operating point.",
-    "**Forward bias diode:** current flows easily once the voltage exceeds the threshold ($\\\\\\\\approx 0.7$ V for silicon, $\\\\\\\\approx 0.3$ V for germanium). Below threshold, very little current flows.",
-    "**Reverse bias diode:** almost no current flows (except a tiny leakage current). At the breakdown voltage, current increases sharply and the diode may be damaged.",
-    "**Thermistor:** a semiconductor device whose resistance decreases sharply with temperature (NTC type). Used as temperature sensors and inrush current limiters.",
-    "**Zener diode:** operates in reverse breakdown at a precise voltage. It maintains a nearly constant voltage across it, used as a voltage regulator.",
-    "**Filament lamp $I$-$V$ curve:** starts linearly at low voltage (cool filament, low resistance). At higher voltages, the curve bends toward the voltage axis as the filament heats and resistance increases.",
-    "**Temperature coefficient of filament:** tungsten has $\\\\\\\\alpha \\\\\\\\approx 0.0045$ $^{\\\\\\\\circ}$C$^{-1}$. A 100 W, 230 V bulb has cold resistance of about $50\\\\\\\\,\\\\\\\\Omega$ but hot resistance of $529\\\\\\\\,\\\\\\\\Omega$."
+    "**Ohm's law.** At constant physical conditions (temperature, state) the potential difference across a conductor is directly proportional to the current: V ∝ I, or V = IR.",
+    "**Resistance and resistivity.** R = ρL/A: resistance grows with length L and falls with area A; resistivity ρ (unit Ω·m) is a property of the material itself.",
+    "**Temperature dependence.** For metals R_t = R_0(1 + αt) with α > 0; semiconductors have negative temperature coefficient as carrier density rises with heat.",
+    "**Conductance and conductivity.** Conductance G = 1/R (siemens) and conductivity σ = 1/ρ; better conductors have large σ and small ρ.",
+    "**Limitations.** Ohm's law does not hold for diodes, electrolytes, superconductors or conductors at changing temperature — there V–I is not a straight line through the origin."
   ],
   "confusion": [
-    "Ohm's law $V = IR$ is a definition of resistance, not a law that all materials obey. Only ohmic conductors have a linear $I$-$V$ relationship. For non-ohmic devices, $R = V/I$ is still defined but varies.",
-    "A filament lamp becomes a better conductor (lower resistance) when cold. This is why bulbs often burn out at the moment they are switched on - the initial current surge is 10 times the steady-state current.",
-    "The dynamic resistance $dV/dI$ is different from the static resistance $V/I$. For a non-ohmic device, the static resistance is $V/I$ while the dynamic resistance is the slope of the $I$-$V$ curve at that point.",
-    "A diode is not simply a 'one-way valve' for current. In reverse bias, a tiny leakage current (nA to $\\\\\\mu$A range) still flows. In forward bias, the current is exponentially related to voltage, not linearly.",
-    "Thermistors are not simply temperature-dependent resistors. Their resistance changes exponentially with temperature: $R = R_0 e^{\\\beta(1/T - 1/T_0)}$, which makes them highly sensitive to small temperature changes."
+    "Carefully distinguish between similar-looking concepts in ohm's law and resistance.",
+    "Pay attention to the conditions under which formulas and theorems apply.",
+    "Practice with multiple examples to solidify your understanding."
   ],
   "practice": [
-    "A filament lamp has a resistance of $20\\\\\\\\,\\\\\\\\Omega$ when cold and $240\\\\\\\\,\\\\\\\\Omega$ when glowing at full brightness. If connected to a 12 V supply, find the current when cold and when glowing. Solution: Cold: $I = V/R = 12/20 = 0.6$ A. Glowing: $I = V/R = 12/240 = 0.05$ A. The inrush current is 12 times the steady-state current.",
-    "A silicon diode has a forward voltage drop of 0.7 V at a current of 10 mA. It is connected in series with a 500 $\\\\\\Omega$ resistor and a 5 V battery. Find the current. Solution: The diode drops 0.7 V, so the resistor sees $5 - 0.7 = 4.3$ V. $I = 4.3/500 = 8.6$ mA.",
-    "A thermistor has resistance $R_0 = 10\\\\\\\\,\\\text{k}\\\\\\\\Omega$ at 25$^{\\\\\\\\circ}$C and $R = 2\\\\\\\\,\\\text{k}\\\\\\\\Omega$ at 50$^{\\\\\\\\circ}$C. Find the resistance at 0$^{\\\\\\\\circ}$C assuming a linear temperature coefficient. Solution: $\\\\\\\\alpha = (R_0 - R)/(R \\\\\\\\cdot \\\\\\\\Delta T) = (10000 - 2000)/(2000 \\\times 25) = 0.16$ $^{\\\\\\\\circ}$C$^{-1}$. At 0$^{\\\\\\\\circ}$C: $R = R_0/(1 + \\\\\\\\alpha \\\\\\\\cdot 25) = 10000/(1 + 4) = 2000\\\\\\\\,\\\\\\\\Omega$.",
-    "A $I$-$V$ graph of a device shows that at $V = 3$ V, the current is 0.15 A, and the tangent at that point has slope $dI/dV = 0.02$ A/V. Find the static resistance and dynamic resistance. Solution: Static resistance $R_s = V/I = 3/0.15 = 20\\\\\\\\,\\\\\\\\Omega$. Dynamic resistance $R_d = 1/(dI/dV) = 1/0.02 = 50\\\\\\\\,\\\\\\\\Omega$.",
-    "A Zener diode with breakdown voltage 6 V is connected in parallel with a load resistor of 1 k$\\\\\\Omega$ across a 10 V battery with series resistor of 500 $\\\\\\Omega$. Find the current through the Zener diode. Solution: Voltage across load: 6 V (clamped by Zener). Current through 500 $\\\\\\Omega$: $I = (10 - 6)/500 = 8$ mA. Current through load: $I_L = 6/1000 = 6$ mA. Current through Zener: $I_Z = 8 - 6 = 2$ mA."
+    "Solve at least 5 problems on ohm's law and resistance from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type."
   ],
   "universalFacts": [
-    "A tungsten filament lamp has a resistance that changes by a factor of 10-15 between cold and hot, making it a classic example of non-ohmic behavior due to temperature-dependent resistivity.",
-    "The threshold voltage of a silicon diode is approximately 0.7 V because this is the energy needed to overcome the potential barrier of the p-n junction, corresponding to the band gap energy of silicon.",
-    "Semiconductors have a negative temperature coefficient of resistance (NTC thermistors) because more charge carriers are thermally excited across the band gap, increasing conductivity.",
-    "Ohmic materials include most metals at constant temperature. Non-ohmic materials include all semiconductors, electrolytes, and any device where temperature or other conditions change with current.",
-    "The $I$-$V$ characteristic of a diode is exponential: $I = I_0(e^{eV/kT} - 1)$, where $I_0$ is the reverse saturation current, $k$ is Boltzmann's constant, and $T$ is temperature."
+    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
+    "Understanding ohm's law and resistance builds the foundation for more advanced topics in mathematics.",
+    "Real-world applications of ohm's law and resistance span engineering, physics, economics, and computer science."
   ],
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits",
-  "duplicateType": 2,
-  "tabGroup": "current-voltage-relations-and-ohmic-and-non-ohmic-resistance",
-    "specificConditions": [
-      "**Ohm's Law Validity:** Ohm's law ($V = IR$) applies strictly to ohmic conductors at *constant temperature*. For metals, resistance increases with temperature, so the law holds only if temperature is held constant (isothermal conditions).",
-      "**Resistivity vs. Resistance:** Resistivity ($\rho$) is an *intensive* material property (independent of geometry), while resistance ($R = \rho L/A$) is an *extensive* property depending on the conductor's length and cross-section. Temperature changes affect $\rho$, which in turn changes $R$.",
-      "**Conductivity Definition:** Conductivity ($\\sigma = 1/\rho$) is the proportionality constant in the microscopic Ohm's law $\\vec{J} = \\sigma \\vec{E}$, where $\\vec{J}$ is current density and $\\vec{E}$ is the electric field. This form is valid for homogeneous, isotropic materials."
-    ],
-  "visualType": "ohms-law-circuit"
+  "examples": [
+    "Real-world application of Ohm's Law and Resistance",
+    "Practical demonstration of Ohm's Law and Resistance concepts",
+    "Diagram-based question on Ohm's Law and Resistance",
+    "Application in daily life involving Ohm's Law and Resistance"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain Ohm's Law and Resistance with suitable example.",
+    "Q2. Solve problems related to Ohm's Law and Resistance.",
+    "Q3. Differentiate between various aspects of Ohm's Law and Resistance.",
+    "Q4. Derive the key formula related to Ohm's Law and Resistance.",
+    "Q5. What are the applications of Ohm's Law and Resistance?"
+  ],
+  "formulas": [
+    "Application formula for Ohm's Law and Resistance",
+    "Derivation result for Ohm's Law and Resistance"
+  ],
+  "keyPoints": [],
+  "summary": "Ohm's Law and Resistance is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Ohm's Law and Resistance applies",
+    "Note 2: Ohm's Law and Resistance connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Ohm's Law and Resistance",
+    "Note 4: Remember the units and dimensions involved in Ohm's Law and Resistance",
+    "Note 5: Ohm's Law and Resistance frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Ohm's Law and Resistance",
+    "Statement 2: Theorem related to Ohm's Law and Resistance",
+    "Statement 3: Condition for Ohm's Law and Resistance to be valid",
+    "Statement 4: Principle governing Ohm's Law and Resistance",
+    "Statement 5: Corollary or consequence of Ohm's Law and Resistance"
+  ],
+  "importantNotes": [
+    "Note 1: Ohm's Law and Resistance is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Ohm's Law and Resistance",
+    "Note 3: Ohm's Law and Resistance has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Ohm's Law and Resistance",
+    "Note 5: Cross-check your answers using alternative methods for Ohm's Law and Resistance"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Ohm's Law and Resistance formula",
+    "Trick 2: Elimination technique for Ohm's Law and Resistance MCQs",
+    "Trick 3: Dimensional analysis shortcut for Ohm's Law and Resistance",
+    "Trick 4: Memory aid for Ohm's Law and Resistance formulas",
+    "Trick 5: Time-saving approach for Ohm's Law and Resistance problems"
+  ],
+  "examNotes": [
+    "Focus on numerical problems from Ohm's Law and Resistance",
+    "Practice previous year questions on Ohm's Law and Resistance",
+    "Learn the derivations for Ohm's Law and Resistance thoroughly",
+    "Review common mistakes related to Ohm's Law and Resistance"
+  ],
+  "mcs": [
+    {
+      "question": "The primary application of Ohm's Law and Resistance is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Ohm's Law and Resistance, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Ohm's Law and Resistance?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Ohm's Law and Resistance is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Ohm's Law and Resistance",
+    "Concept 2: Key theorem or principle in Ohm's Law and Resistance",
+    "Concept 3: Important application area of Ohm's Law and Resistance",
+    "Concept 4: Fundamental relationship in Ohm's Law and Resistance",
+    "Concept 5: Connection between Ohm's Law and Resistance and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Ohm's Law and Resistance",
+    "Task 2: Derive the main formula for Ohm's Law and Resistance",
+    "Task 3: Create a concept map for Ohm's Law and Resistance",
+    "Task 4: Practice previous year exam questions on Ohm's Law and Resistance",
+    "Task 5: Explain Ohm's Law and Resistance to a peer or study group"
+  ]
 }

@@ -7,20 +7,11 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Probability: independent cases, mathematical and empirica… — Statistics and Probability, Mathematics (class-11-notes).",
-    "**Tested.** define it · list: probability, independent cases, mathematical, empirical definition of probability · one worked example · one misconception each.",
     "**Fact.** P(E) = favourable/total. Additive law: P(A∪B) = P(A)+P(B)−P(A∩B). If mutually exclusive, P(A∪B)=P(A)+P(B).",
     "**Fact.** Multiplicative: P(A∩B) = P(A)P(B|A); independence: P(A∩B) = P(A)P(B).",
-    "**Fact.** Complement: P(A') = 1 − P(A). For discrete: ΣP = 1; expected value E(X) = Σxᵢpᵢ.",
-    "**Independent cases.** one-line definition + one-line exam use.",
-    "**Mathematical.** one-line definition + one-line exam use.",
-    "**Empirical definition of probability.** one-line definition + one-line exam use.",
-    "**Two basic laws of probability.** one-line definition + one-line exam use.",
-    "**Without proof.** one-line definition + one-line exam use."
+    "**Fact.** Complement: P(A') = 1 − P(A). For discrete: ΣP = 1; expected value E(X) = Σxᵢpᵢ."
   ],
   "confusion": [
-    "❌ treat \"Probability\" as one blob → ✅ split into: probability, independent cases, mathematical.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ answer with no steps → ✅ show each step and box the result.",
     "❌ skip the key fact → ✅ p(e) = favourable/total. additive law: p(a∪b) = p(a)+p(b)−p(a∩b). if mutually exclusive, p(a∪b)=p(a)+p(b).."
   ],
@@ -31,7 +22,6 @@
     "Limit to remember: p(e) = favourable/total. additive law: p(a∪b) = p(a)+p(b)−p(a∩b). if mutually exclusive, p(a∪b)=p(a)+p(b)."
   ],
   "practice": [
-    "define + example each sub-idea: probability, independent cases, mathematical, empirical definition of probability.",
     "one worked example for \"Probability: independent cases, mathematical and empirica…\" — check units / edge cases.",
     "recall card: definition → formula → limit → one error to avoid."
   ],
@@ -64,9 +54,11 @@
     "• Mathematical",
     "• Empirical definition of probability",
     "• Two basic laws of probability",
-    "• Without proof"
+    "• Without proof",
+    "Connection of Probability to other topics",
+    "Connection of Probability â€” Definitions and Basic Laws to other topics"
   ],
-  "summary": "Probability: independent cases, mathematical and empirica… (Statistics and Probability, Mathematics, class-11-notes) covers Probability, independent cases, mathematical. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Probability covers essential principles and applications. Probability â€” Definitions and Basic Laws covers essential principles and applications.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Probability: independent cases, mathematical and empirica…\"?",
@@ -87,17 +79,35 @@
       ],
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    },
-    {
-      "question": "Which of these is a governing / standard formula associated with \"Probability: independent cases, mathematical and empirica…\"?",
-      "options": [
-        "P(A∪B) = P(A)+P(B)−P(A∩B)",
-        "x + y = z (placeholder)",
-        "No formula applies",
-        "E = mc² only"
-      ],
-      "answer": "A",
-      "explanation": "P(A∪B) = P(A)+P(B)−P(A∩B) is the standard form used for this topic."
     }
-  ]
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Probability",
+    "Statement 2: Theorem related to Probability",
+    "Statement 3: Condition for Probability to be valid",
+    "Statement 4: Principle governing Probability",
+    "Statement 5: Corollary or consequence of Probability",
+    "Statement 1: Definition of Probability: independent cases, mathematical and empirical definition of probability, two basic laws of probability (without proof)",
+    "Statement 2: Theorem related to Probability: independent cases, mathematical and empirical definition of probability, two basic laws of probability (without proof)",
+    "Statement 3: Condition for Probability: independent cases, mathematical and empirical definition of probability, two basic laws of probability (without proof) to be valid",
+    "Statement 4: Principle governing Probability: independent cases, mathematical and empirical definition of probability, two basic laws of probability (without proof)",
+    "Statement 5: Corollary or consequence of Probability: independent cases, mathematical and empirical definition of probability, two basic laws of probability (without proof)"
+  ],
+  "importantNotes": [
+    "Probability is based on fundamental principles.",
+    "Probability â€” Definitions and Basic Laws is based on fundamental principles."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Probability.",
+    "Recall the formula for Probability â€” Definitions and Basic Laws."
+  ],
+  "importantConcepts": [
+    "Definition and significance of Probability.",
+    "Definition and significance of Probability â€” Definitions and Basic Laws."
+  ],
+  "animation3D": "statistics-and-probability",
+  "motionGraphics": "statistics-and-probability",
+  "specialNotes": [],
+  "examNotes": [],
+  "importantTasks": []
 }

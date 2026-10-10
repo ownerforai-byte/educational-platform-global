@@ -18,42 +18,42 @@
     "Solve at least 5 problems on logic gates from your textbook.",
     "Try to derive the key formulas from first principles.",
     "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type."
+    "Practice identifying which method/formula to apply in each problem type.",
+    "one worked example for \"Logic gates — AND, OR, NOT, NAND, NOR\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "universalFacts": [
     "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
     "Understanding logic gates builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of logic gates span engineering, physics, economics, and computer science."
+    "Real-world applications of logic gates span engineering, physics, economics, and computer science.",
+    "answer pattern for \"Logic gates — AND, OR, NOT, NAND, NOR\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "animation3D": "modern-physics-12",
   "motionGraphics": "modern-physics-12",
   "examples": [
-    "Example 1: Real-world application of Logic Gates",
-    "Example 2: Practical demonstration of Logic Gates concepts",
-    "Example 3: Numerical problem on Logic Gates",
-    "Example 4: Diagram-based question on Logic Gates",
-    "Example 5: Application in daily life involving Logic Gates"
+    "Real-world application of Logic Gates",
+    "Practical demonstration of Logic Gates concepts",
+    "Diagram-based question on Logic Gates",
+    "Application in daily life involving Logic Gates",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Logic Gates with suitable example.",
     "Q2. Solve problems related to Logic Gates.",
     "Q3. Differentiate between various aspects of Logic Gates.",
     "Q4. Derive the key formula related to Logic Gates.",
-    "Q5. What are the applications of Logic Gates?"
+    "Q5. What are the applications of Logic Gates?",
+    "state + explain the main idea of \"Logic gates — AND, OR, NOT, NAND, NOR\" with one example.",
+    "compare \"Logic gates —\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Logic gates — AND, OR, NOT, NAND, NOR\" and verify the answer is plausible."
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Logic Gates",
-    "Key Formula 2: Mathematical expression of Logic Gates",
-    "Key Formula 3: Application formula for Logic Gates",
-    "Key Formula 4: Derivation result for Logic Gates",
-    "Key Formula 5: Important relation in Logic Gates"
+    "Application formula for Logic Gates",
+    "Derivation result for Logic Gates",
+    "Governing equation for \"Logic gates — AND, OR, NOT, NAND, NOR\" — state with units, then use in one numerical."
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of Logic Gates",
-    "Key Point 2: Essential theorem or principle related to Logic Gates",
-    "Key Point 3: Important condition or constraint for Logic Gates",
-    "Key Point 4: Common applications of Logic Gates",
-    "Key Point 5: Connection to other topics in Science"
+    "• Logic gates —",
+    "• NAND"
   ],
   "summary": "Logic Gates is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
@@ -85,23 +85,12 @@
     "Trick 5: Time-saving approach for Logic Gates problems"
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Logic Gates",
-    "Exam Tip 2: Practice previous year questions on Logic Gates",
-    "Exam Tip 3: Logic Gates carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Logic Gates thoroughly",
-    "Exam Tip 5: Review common mistakes related to Logic Gates"
+    "Focus on numerical problems from Logic Gates",
+    "Practice previous year questions on Logic Gates",
+    "Learn the derivations for Logic Gates thoroughly",
+    "Review common mistakes related to Logic Gates"
   ],
   "mcs": [
-    {
-      "question": "Which of the following best describes Logic Gates?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
-      "answer": "A"
-    },
     {
       "question": "The primary application of Logic Gates is in:",
       "options": [
@@ -156,5 +145,28 @@
     "Task 3: Create a concept map for Logic Gates",
     "Task 4: Practice previous year exam questions on Logic Gates",
     "Task 5: Explain Logic Gates to a peer or study group"
+  ],
+  "numericals": [
+    "Set up the defining equation for \"Logic gates — AND, OR, NOT, NAND, NOR\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Logic gates — AND, OR, NOT, NAND, NOR\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: logic gates —, nand (within Modern Physics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
   ]
 }

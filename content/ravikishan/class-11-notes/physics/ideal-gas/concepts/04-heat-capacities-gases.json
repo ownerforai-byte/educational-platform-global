@@ -5,48 +5,135 @@
   "topicTitle": "Heat Capacities of Gases",
   "relevance": 100,
   "notes": [
-    "**Boltzmann constant:** $k_B = R/N_A = 1.38 \\times 10^{-23}$ J/K. It connects microscopic and macroscopic thermodynamics. Named after Ludwig Boltzmann (1844-1906).",
-    "**RMS speed:** $v_{rms} = \\sqrt{3RT/M}$, where $M$ is molar mass in kg/mol. At STP (273 K), $v_{rms}$ for air is about 479 m/s. At 300 K, about 484 m/s. Lighter gases move faster on average.",
-    "**Most probable speed:** $v_p = \\sqrt{2RT/M}$. This is the speed at which the Maxwell-Boltzmann distribution peaks. At 300 K for air: $v_p \\approx 364$ m/s. At 300 K for Hâ‚‚: $v_p \\approx 1650$ m/s.",
-    "**Mean speed:** $v_{mean} = \\sqrt{8RT/\\pi M}$. The average of all molecular speeds. At 300 K for air: $v_{mean} \\approx 464$ m/s. At 300 K for Hâ‚‚: $v_{mean} \\approx 1760$ m/s.",
-    "**Heat capacities - monatomic gases:** $C_V = \\frac{3}{2}R$, $C_P = \\frac{5}{2}R$. The ratio $\\gamma = C_P/C_V = 5/3 \\approx 1.67$. Monatomic gases (He, Ne, Ar) only have translational degrees of freedom.",
-    "**Heat capacities - diatomic gases:** $C_V = \\frac{5}{2}R$, $C_P = \\frac{7}{2}R$ at ordinary temperatures ($\\gamma = 7/5 = 1.4$). Includes 3 translational + 2 rotational DOF. At high temperature, vibration adds more, so $C_V \\rightarrow 4R$, $C_P \\rightarrow 5R$, $\\gamma \\rightarrow 9/7 \\approx 1.29$.",
-    "**Dulong-Petit law for solids:** Molar heat capacity of most solid elements at room temperature $\\approx 3R \\approx 25$ J/(molÂ·K). This comes from 3 quadratic degrees of freedom per atom (one for each spatial axis), each contributing $R$ per mole of atoms.",
-    "**Why heat capacities differ:** The ratio $C_P/C_V = \\gamma$ matters for adiabatic processes ($PV^\\gamma = \\text{const}$). This affects everything from engine cycles to atmospheric science. $\\gamma \\approx 1.4$ for air is crucial in meteorology.",
-    "**Experimental verification:** Heat capacities were measured by Regnault and others in the 19th century. The agreement with kinetic theory predictions was one of the great successes of molecular physics.",
-    "**Units:** $k_B = 1.38 \\times 10^{-23}$ J/K. $C_P, C_V$ have units J/(molÂ·K). Gas constant R has the same units.",
-    "**Connection to energy:** Each degree of freedom contributes $\\frac{1}{2}R$ per mole or $\\frac{1}{2}k_B$ per molecule. 3 translational DOF $\rightarrow 3 \\times \\frac{1}{2}R = \\frac{3}{2}R$ for $C_V$"
+    "**Heat Capacities of Gases:** This topic covers the fundamental concepts of heat capacities of gases in the physics curriculum.",
+    "Understanding heat capacities of gases is essential for solving problems and building higher-level mathematical skills.",
+    "Key definitions and theorems related to heat capacities of gases should be memorized and practiced regularly."
   ],
   "confusion": [
-    "The ratio $\\gamma = C_P/C_V$ is NOT always 5/3 or 7/5. It depends on temperature and molecular structure. At very high temperatures, vibrational modes activate, changing $\\gamma$.",
-    "The formula $C_V = \\frac{3}{2}R$ applies ONLY to monatomic ideal gases. For diatomic or polyatomic gases, rotational (and sometimes vibrational) modes contribute.",
-    "Dulong's law ($C \\approx 3R$) for solids works well at room temperature but fails at very low temperatures (quantum effects freeze out degrees of freedom). Einstein and Debye developed low-temperature models.",
-    "The Boltzmann constant $k_B$ is NOT the same as the gas constant R. $k_B = 1.38 \\times 10^{-23}$ J/K per molecule. R = 8.314 J/(molÂ·K) per mole. $R = N_A k_B$.",
-    "Most probable speed is NOT the average speed. For the Maxwell-Boltzmann distribution: $v_p \\cdot \\sqrt{2} < v_{mean} < v_{rms}$. The order is always $v_p < v_{mean} < v_{rms}$ at the same temperature."
+    "Carefully distinguish between similar-looking concepts in heat capacities of gases.",
+    "Pay attention to the conditions under which formulas and theorems apply.",
+    "Practice with multiple examples to solidify your understanding."
   ],
   "practice": [
-    "Calculate the root-mean-square speed of nitrogen molecules (Nâ‚‚, M = 0.028 kg/mol) at 350 K. Solution: $v_{rms} = \\sqrt{3RT/M} = \\sqrt{3 \\times 8.314 \\times 350 / 0.028} = \\sqrt{3471.8 / 0.028} = \\sqrt{123,993} = 352$ m/s.",
-    "Find the most probable speed of helium atoms (He, M = 0.004 kg/mol) at 400 K. Solution: $v_p = \\sqrt{2RT/M} = \\sqrt{2 \\times 8.314 \\times 400 / 0.004} = \\sqrt{6651.2 / 0.004} = \\sqrt{1662800} = 1290$ m/s.",
-    "Calculate the mean speed of oxygen molecules (Oâ‚‚, M = 0.032 kg/mol) at 273 K. Solution: $v_{mean} = \\sqrt{8RT/\\pi M} = \\sqrt{8 \\times 8.314 \\times 273 / (\\pi \\times 0.032)} = \\sqrt{18136 / 0.1005} = \\sqrt{180,458} = 425$ m/s.",
-    "If the rms speed of helium at 300 K is 1250 m/s, what is the rms speed at 600 K? Solution: $v_{rms} \\propto \\sqrt{T}$. $v_{rms}(600) = v_{rms}(300) \\times \\sqrt{600/300} = 1250 \\times \\sqrt{2} = 1768$ m/s.",
-    "A container has 1 mol of gas at 300 K. What is the total internal energy for (a) monatomic gas? Solution: $U = \\frac{3}{2}nRT = \\frac{3}{2} \\times 1 \\times 8.314 \\times 300 = 3741$ J.",
-    "Find the heat capacity ratio $\\gamma$ for a diatomic gas at room temperature. Solution: $\\gamma = C_P/C_V = (7/2R)/(5/2R) = 7/5 = 1.4$."
+    "Solve at least 5 problems on heat capacities of gases from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type."
   ],
   "universalFacts": [
-    "The Maxwell-Boltzmann distribution was first derived by James Clerk Maxwell in 1860 and later generalized by Ludwig Boltzmann. It describes the distribution of speeds in an ideal gas and is one of the most important results of kinetic theory.",
-    "At 300 K, the three speed measures for nitrogen (M=28 g/mol) are: most probable $v_p \\approx 422$ m/s, mean speed $v_{mean} \\approx 477$ m/s, and rms speed $v_{rms} \\approx 517$ m/s. The ratios are always $v_p : v_{mean} : v_{rms} = \\sqrt{2} : \\sqrt{8/\\pi} : \\sqrt{3} \\approx 1.414 : 1.596 : 1.732$.",
-    "The Boltzmann constant $k_B$ was first introduced by Max Planck in his derivation of the blackbody radiation formula (1900). He used it to connect the energy of oscillators to temperature: $E = k_BT$.",
-    "Dulong and Petit's law ($C \\approx 3R$ for solids) was discovered in 1819. It took nearly 150 years to understand why it works - the kinetic theory's 3 degrees of freedom per atom (1859-1870s) provided the explanation.",
-    "The ratio $\\gamma = C_P/C_V$ determines whether sound speed is faster in an adiabatic process: $v_{sound} = \\sqrt{\\gamma RT/M}$. For air ($\\gamma \\approx 1.4$), $v_{sound} \\approx 343$ m/s at 300 K. For helium ($\\gamma = 5/3 \\approx 1.67$), $v_{sound} \\approx 965$ m/s at 300 K."
+    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
+    "Understanding heat capacities of gases builds the foundation for more advanced topics in mathematics.",
+    "Real-world applications of heat capacities of gases span engineering, physics, economics, and computer science."
   ],
   "animation3D": "ideal-gas",
   "motionGraphics": "ideal-gas",
-  "duplicateType": 2,
-  "tabGroup": "boltzmann-constant-root-mean-square-speed-and-heat-capacities",
-  "visualType": "heat-capacity",
-  "specificConditions": [
-    "**Degrees of Freedom Rule:** $C_V = \frac{f}{2}R$, $C_P = C_V + R = \frac{f+2}{2}R$, where $f$ is active degrees of freedom. Monatomic: $f=3$ (translational). Diatomic: $f=5$ (3 trans + 2 rot) at room temp. Polyatomic: $f=6$ (3 trans + 3 rot). Vibrational modes activate at high temperatures.",
-    "**Mayer's Relation:** $C_P - C_V = R$ holds for all ideal gases regardless of $f$. This follows from $H = U + PV$ and $dH = C_P dT$, $dU = C_V dT$, $d(PV) = R dT$. The difference is purely due to $PV$-work.",
-    "**Adiabatic Index:** $\\gamma = C_P/C_V = (f+2)/f$. For monatomic: $\\gamma = 5/3 \\approx 1.67$. For diatomic: $\\gamma = 7/5 = 1.4$. For polyatomic: $\\gamma = 8/6 = 4/3 \\approx 1.33$. Higher $f$ means more energy storage, smaller $\\gamma$."
+  "examples": [
+    "Real-world application of Heat Capacities of Gases",
+    "Practical demonstration of Heat Capacities of Gases concepts",
+    "Diagram-based question on Heat Capacities of Gases",
+    "Application in daily life involving Heat Capacities of Gases"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain Heat Capacities of Gases with suitable example.",
+    "Q2. Solve problems related to Heat Capacities of Gases.",
+    "Q3. Differentiate between various aspects of Heat Capacities of Gases.",
+    "Q4. Derive the key formula related to Heat Capacities of Gases.",
+    "Q5. What are the applications of Heat Capacities of Gases?"
+  ],
+  "formulas": [
+    "Application formula for Heat Capacities of Gases",
+    "Derivation result for Heat Capacities of Gases"
+  ],
+  "keyPoints": [],
+  "summary": "Heat Capacities of Gases is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Heat Capacities of Gases applies",
+    "Note 2: Heat Capacities of Gases connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Heat Capacities of Gases",
+    "Note 4: Remember the units and dimensions involved in Heat Capacities of Gases",
+    "Note 5: Heat Capacities of Gases frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Heat Capacities of Gases",
+    "Statement 2: Theorem related to Heat Capacities of Gases",
+    "Statement 3: Condition for Heat Capacities of Gases to be valid",
+    "Statement 4: Principle governing Heat Capacities of Gases",
+    "Statement 5: Corollary or consequence of Heat Capacities of Gases"
+  ],
+  "importantNotes": [
+    "Note 1: Heat Capacities of Gases is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Heat Capacities of Gases",
+    "Note 3: Heat Capacities of Gases has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Heat Capacities of Gases",
+    "Note 5: Cross-check your answers using alternative methods for Heat Capacities of Gases"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Heat Capacities of Gases formula",
+    "Trick 2: Elimination technique for Heat Capacities of Gases MCQs",
+    "Trick 3: Dimensional analysis shortcut for Heat Capacities of Gases",
+    "Trick 4: Memory aid for Heat Capacities of Gases formulas",
+    "Trick 5: Time-saving approach for Heat Capacities of Gases problems"
+  ],
+  "examNotes": [
+    "Focus on numerical problems from Heat Capacities of Gases",
+    "Practice previous year questions on Heat Capacities of Gases",
+    "Learn the derivations for Heat Capacities of Gases thoroughly",
+    "Review common mistakes related to Heat Capacities of Gases"
+  ],
+  "mcs": [
+    {
+      "question": "The primary application of Heat Capacities of Gases is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Heat Capacities of Gases, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Heat Capacities of Gases?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Heat Capacities of Gases is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Heat Capacities of Gases",
+    "Concept 2: Key theorem or principle in Heat Capacities of Gases",
+    "Concept 3: Important application area of Heat Capacities of Gases",
+    "Concept 4: Fundamental relationship in Heat Capacities of Gases",
+    "Concept 5: Connection between Heat Capacities of Gases and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Heat Capacities of Gases",
+    "Task 2: Derive the main formula for Heat Capacities of Gases",
+    "Task 3: Create a concept map for Heat Capacities of Gases",
+    "Task 4: Practice previous year exam questions on Heat Capacities of Gases",
+    "Task 5: Explain Heat Capacities of Gases to a peer or study group"
   ]
 }

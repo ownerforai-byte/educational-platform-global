@@ -23,42 +23,252 @@
     "• **Atomic size and stability:** explains radii of the order 10⁻¹⁰ m growing as n², and shows why the atom does not collapse — stationary orbits do not radiate.",
     "• **Spectra of hydrogen-like ions** (He⁺, Li²⁺) and energy-level diagrams still used in spectroscopy and astrophysics for highly ionised plasmas.",
     "### 5. Successes and the edge of validity",
-    "Successes: atomic stability, hydrogen line spectrum and its series limits, the Rydberg constant, ionisation energy and orbital radii. It stops working for more than one electron and cannot explain fine structure, line intensities or the Zeeman and Stark effects (see 'Defects of Bohr's Theory')."
+    "Successes: atomic stability, hydrogen line spectrum and its series limits, the Rydberg constant, ionisation energy and orbital radii. It stops working for more than one electron and cannot explain fine structure, line intensities or the Zeeman and Stark effects (see 'Defects of Bohr's Theory').",
+    "**Fact.** Bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy En = −13.6 eV·Z²/n² (for H, Z=1).",
+    "**Fact.** Rydberg/Balmer series: 1/λ = R(H)(1/n₁² − 1/n₂²). Absorption/emission = ΔE = hν between levels.",
+    "**Fact.** Four quantum numbers: n (shell), l (subshell, 0…n−1), mₗ (orientation, −l…+l), mₛ (spin ±½). Orbitals: s (spherical), p (dumbbell).",
+    "**Fact.** Filling order (Aufbau, n+l rule): 1s 2s 2p 3s 3p 4s 3d…; Hund's rule: maximise unpaired spin before pairing; Pauli: no two electrons share all four quantum numbers.",
+    "### Focus of this tab",
+    "The application machinery of Bohr's postulates: how each standard numerical is produced from the formulas, with the n-, Z- and mass-dependences made explicit. Use this tab to drill the calculation patterns.",
+    "### The four workhorse formulas",
+    "Radius: $r_{n}=0.529\\frac{n^{2}}{Z}$ Å. Speed: $v_{n}=2.18\\times10^{6}\\frac{Z}{n}$ m s⁻¹. Energy: $E_{n}=-13.6\\frac{Z^{2}}{n^{2}}$ eV $=-1312\\frac{Z^{2}}{n^{2}}$ kJ mol⁻¹. Wave number: $\\bar{\\nu}=RZ^{2}(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}})$, R = 1.097 × 10⁷ m⁻¹.",
+    "### Dependences to memorise",
+    "• r ∝ n²/Z (larger orbit for larger n, smaller for larger Z).",
+    "• v ∝ Z/n (fastest in the innermost orbit of the heaviest one-electron ion).",
+    "• E ∝ −Z²/n² (energy spacing shrinks as 1/n³ in difference form: ΔE ≈ 2 × 13.6 Z²/n³ for adjacent high levels).",
+    "• λ of a line ∝ n³/(Z²) roughly for adjacent-level transitions.",
+    "### Standard numerical patterns",
+    "• Radius of the nth orbit of a one-electron ion: substitute n and Z (He⁺ Z = 2, Li²⁺ Z = 3).",
+    "• Ionisation energy: IE = 13.6 Z²/n² eV (from the level n to ∞). For H ground state 13.6 eV = 1312 kJ mol⁻¹; for He⁺ (n = 1, Z = 2) 54.4 eV.",
+    "• Excitation energy: ΔE = 13.6 Z²(1/n₁² − 1/n₂²) eV; convert with λ(nm) = 1240/ΔE(eV).",
+    "• Velocity ratio: v(n₁, Z₁)/v(n₂, Z₂) = (Z₁/n₁)/(Z₂/n₂).",
+    "### Two results worth memorising",
+    "• The ground-state speed of the H electron is c/137 ≈ 2.19 × 10⁶ m s⁻¹ — non-relativistic, validating the model.",
+    "• The energy of the nth level approaches 0 as n → ∞, and the level spacing → 0: that is why spectral lines crowd toward the series limit.",
+    "The four postulates, stated cleanly with the physical meaning of each — the fastest way to secure full marks on the 'state the postulates' question. Derivations and applications are in the main note and the companion application tab.",
+    "### Postulate 1 — stationary orbits",
+    "The electron in a hydrogen atom revolves only in certain fixed circular orbits around the nucleus. While in such an orbit it does **not** emit or absorb energy, although it is accelerating. Each orbit is a *stationary state* with a definite energy. Meaning: this postulate suspends classical electrodynamics inside the atom.",
+    "### Postulate 2 — quantisation of angular momentum",
+    "Only those orbits are permitted for which the angular momentum is an integral multiple of h/2π: $mvr=\\frac{nh}{2\\pi}$, n = 1, 2, 3, … The integer n is the principal quantum number. Meaning: the allowed orbits are discrete because the angular momentum comes in packets of ħ.",
+    "### Postulate 3 — frequency (energy) condition",
+    "Energy is emitted or absorbed only when the electron jumps between orbits: $h\\nu=E_{2}-E_{1}$ (emission when it falls to a lower level, absorption when it is raised). Meaning: this is exactly Planck's quantum hypothesis applied to atoms, and it is what produces sharp spectral lines.",
+    "### Postulate 4 — force condition",
+    "The Coulomb attraction of the nucleus provides the centripetal force for the circular motion: $\\frac{mv^{2}}{r}=\\frac{kZe^{2}}{r^{2}}$. Meaning: the mechanics is classical; only the *allowed states* are quantum — a hybrid (semi-classical) model.",
+    "### Vocabulary attached to the postulates",
+    "Ground state: lowest energy orbit (n = 1). Excited state: any higher orbit. Ionisation: complete removal of the electron (n = ∞). Binding energy: −Eₙ, the energy holding the electron. All definitions follow directly from the postulates.",
+    "How Bohr's frequency condition produces the two kinds of line spectra, why absorption lines and emission lines fall at the *same* wavelengths, and where each spectrum is used. Complements the main postulates tab.",
+    "### Emission spectrum (bright lines)",
+    "Atoms are excited — by a flame, discharge tube, or collision — to higher levels n₂. The electron falls back to a lower level n₁ and emits one photon per jump with $h\\nu=E_{2}-E_{1}$. The spectrum is a set of bright lines on a dark background: each line = one allowed transition. In a discharge tube both atoms and electrons collide, so many levels are populated and several series appear at once.",
+    "### Absorption spectrum (dark lines)",
+    "Cool gas (ground-state atoms) is placed in front of a continuous white-light source. The atoms absorb only those photons whose energy exactly equals a level gap from the populated (usually ground) state: the transmitted light is missing those wavelengths — dark lines on a bright continuum. Fraunhofer's solar lines are exactly this: the cool solar atmosphere absorbing against the hot photosphere.",
+    "### Why the lines coincide",
+    "The same energy difference E₂ − E₁ is involved in both directions, so absorption and emission lines fall at identical wavelengths (Kirchhoff's law). The *pattern* differs, though: absorption requires the lower level to be populated, so absorption lines start mainly from the ground state (only the Lyman series in cold hydrogen gas), while emission can populate every series (Lyman, Balmer, Paschen …).",
+    "### Energy-level diagram language",
+    "Vertical arrows up = absorption; arrows down = emission. The ground level is the zero-height reference; higher levels crowd together as n grows; the n = ∞ limit is the ionisation continuum. Every allowed jump must obey the selection Δn = any (Bohr) — quantum mechanics later restricts it by Δl = ±1.",
+    "### Applications",
+    "• Chemical analysis: every element's line pattern is unique → qualitative and quantitative spectroscopy (flame tests, AAS, ICP).",
+    "• Astronomy: composition, temperature and Doppler velocity of stars from line positions and shifts; redshift of galaxies.",
+    "• Lasers: population inversion and stimulated emission between discrete levels (He–Ne 632.8 nm).",
+    "• Neon signs, fireworks and street lamps: line colours of excited atoms (Ne red-orange, Na yellow D-line 589 nm).",
+    "Why Bohr energies are negative, what the zero of energy means, and the three energy relations (E, KE, PE) that follow from the force condition.",
+    "### Where the negative sign comes from",
+    "Bohr takes the zero of energy at infinite separation — the electron just free of the atom, at rest. Any bound orbit is *below* that reference, so all bound-state energies are negative: $E_{n}=-13.6\\,Z^{2}/n^{2}$ eV. The magnitude |E| is the binding energy — exactly the energy that must be supplied to free the electron (ionisation).",
+    "### The three relations",
+    "From the Coulomb force condition, $\\frac{mv^{2}}{r}=\\frac{kZe^{2}}{r^{2}}$ gives $KE=\\frac{kZe^{2}}{2r}$ and $PE=-\\frac{kZe^{2}}{r}$. Therefore: **KE = −E** and **PE = 2E = −2|E|**, with E = KE + PE. Check for hydrogen ground state: E = −13.6 eV, KE = +13.6 eV, PE = −27.2 eV. As n grows: E → 0⁻, KE → 0, PE → 0⁻ (a loosely bound, slow electron).",
+    "### Reading the numbers",
+    "• n = 1: E = −13.6 eV (most tightly bound, v = c/137).",
+    "• n = 2: E = −3.4 eV; n = 3: −1.51 eV; n = 4: −0.85 eV — level differences shrink as 1/n², hence the converging spectral series.",
+    "• n = ∞: E = 0 — ionisation; the electron is free.",
+    "### Why the sign matters in chemistry",
+    "Ionisation energy = |Eₙ| (positive number supplied); electron affinity and bond energies follow the same convention (energy *released* on going to a bound state is positive when reported as 'released'). Mixing the two sign conventions is the standard source of error — always state which convention you use."
   ],
   "confusion": [
     "❌ 'Stationary orbit' means the electron is at rest. ✅ The electron moves, but the orbit is stationary *in energy* — it does not radiate.",
     "❌ Bohr orbits and orbitals are the same. ✅ Orbits are fixed 2D circular paths of definite radius/energy; orbitals are 3D probability regions from the Schrödinger equation.",
     "❌ A bound electron has positive energy. ✅ Its energy is negative (zero at infinite separation).",
     "❌ Bohr's model works for all atoms. ✅ Only for one-electron species: H, He⁺, Li²⁺, Be³⁺.",
-    "❌ The electron radiates while revolving in an allowed orbit. ✅ Radiation occurs only during a jump."
+    "❌ The electron radiates while revolving in an allowed orbit. ✅ Radiation occurs only during a jump.",
+    "❌ skip the key fact → ✅ bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy en = −13.6 ev·z²/n² (for h, z=1)..",
+    "❌ rₙ ∝ n/Z. ✅ rₙ = 0.529 n²/Z Å — the n-dependence is squared.",
+    "❌ Ionisation energy from level n is 13.6 Z²/n² eV multiplied by n. ✅ It is exactly 13.6 Z²/n² eV (removal from that level to ∞).",
+    "❌ Speed increases with n. ✅ v decreases as 1/n; outer electrons move slower.",
+    "❌ Stationary orbit means the electron is at rest. ✅ It revolves, but the orbit is stationary *in energy* (non-radiating).",
+    "❌ Bohr's postulates were derived from classical mechanics. ✅ They were imposed; only the force condition is classical.",
+    "❌ The frequency condition applies to the electron's own motion. ✅ It concerns the emitted/absorbed photon only.",
+    "❌ Absorption lines are produced when atoms emit energy. ✅ They appear when atoms *remove* matching photons from a continuous beam.",
+    "❌ Absorption and emission lines occur at different wavelengths. ✅ They coincide; only the pattern/populated series differ.",
+    "❌ A ground-state hydrogen atom can emit any Balmer line. ✅ Emission requires prior excitation; a ground-state atom can only absorb (Lyman lines).",
+    "❌ Negative energy means the calculation is wrong. ✅ It is a *bound state* referenced to infinite separation.",
+    "❌ KE is also negative. ✅ KE = −E is positive (½mv²); only total E and PE are negative.",
+    "❌ The electron loses mass when bound. ✅ Mass–energy differences are negligible here (13.6 eV vs 511 keV rest mass)."
   ],
   "practice": [
     "State the postulates of Bohr's model and derive the radius of the nth orbit.",
     "Derive En = −13.6 Z²/n² eV and hence calculate the ionisation energy of He⁺.",
     "Show that KE = −E and PE = 2E for an electron in a Bohr orbit.",
     "Calculate the radius and velocity of the electron in the second orbit of hydrogen.",
-    "Explain, using Bohr's postulates, why the hydrogen atom is stable and why its spectrum is a line spectrum."
+    "Explain, using Bohr's postulates, why the hydrogen atom is stable and why its spectrum is a line spectrum.",
+    "one worked example for \"Postulates of Bohr's atomic model and its application\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid.",
+    "Calculate the radius of the 2nd Bohr orbit of He⁺ and compare it with the 1st orbit of H.",
+    "Find the energy needed to ionise Li²⁺ from its ground state.",
+    "Compute the speed of the electron in the 3rd orbit of Be³⁺ (Z = 4).",
+    "An electron falls from n = 4 to n = 2 in hydrogen; find the wavelength of the emitted photon.",
+    "Show that the ratio of speeds in the 1st orbits of H and He⁺ is 1 : 2.",
+    "State the four postulates of Bohr's atomic model and explain the physical meaning of each.",
+    "Which postulate accounts for the stability of the atom and which for the line spectrum?",
+    "Show that postulate 2 together with postulate 4 fixes the orbit radii.",
+    "Distinguish between emission and absorption spectra with one example each.",
+    "Explain, using Bohr's frequency condition, why absorption and emission lines coincide.",
+    "Why does the absorption spectrum of cold hydrogen show only the Lyman series?",
+    "What are Fraunhofer lines and how are they explained?",
+    "Why are the energies of bound electrons negative?",
+    "Show that PE = 2E and KE = −E for a Bohr orbit.",
+    "Calculate E, KE and PE for the n = 2 orbit of hydrogen.",
+    "Explain why the level spacing decreases as n increases."
   ],
   "formulas": [
     "$$mvr=\\frac{nh}{2\\pi},\\qquad \\frac{mv^{2}}{r}=\\frac{kZe^{2}}{r^{2}}$$",
     "$$r_{n}=0.529\\frac{n^{2}}{Z}\\ \\text{Å},\\qquad v_{n}=2.18\\times10^{6}\\frac{Z}{n}\\ \\text{m s}^{-1}$$",
     "$$E_{n}=-13.6\\frac{Z^{2}}{n^{2}}\\ \\text{eV}=-2.18\\times10^{-18}\\frac{Z^{2}}{n^{2}}\\ \\text{J}$$",
-    "$$h\\nu=E_{2}-E_{1},\\qquad \\bar{\\nu}=RZ^{2}\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right)$$"
+    "$$h\\nu=E_{2}-E_{1},\\qquad \\bar{\\nu}=RZ^{2}\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right)$$",
+    "En(H) = −13.6 Z²/n² eV",
+    "hν = ΔE",
+    "λ = h/(mv) (de Broglie)",
+    "$$E_{n}=-13.6\\frac{Z^{2}}{n^{2}}\\ \\text{eV},\\qquad IE_{n}=13.6\\frac{Z^{2}}{n^{2}}\\ \\text{eV}$$",
+    "$$\\lambda(\\text{nm})=\\frac{1240}{\\Delta E(\\text{eV})}$$",
+    "$$mvr=\\frac{nh}{2\\pi},\\qquad \\frac{mv^{2}}{r}=\\frac{kZe^{2}}{r^{2}},\\qquad h\\nu=E_{2}-E_{1}$$",
+    "$$h\\nu=E_{2}-E_{1}=13.6\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right)\\ \\text{eV}$$",
+    "$$\\text{emission: }n_{2}\\rightarrow n_{1}\\ (\\downarrow);\\qquad \\text{absorption: }n_{1}\\rightarrow n_{2}\\ (\\uparrow)$$",
+    "$$E_{n}=-13.6\\frac{Z^{2}}{n^{2}}\\ \\text{eV};\\qquad KE=-E_{n};\\qquad PE=2E_{n}$$",
+    "$$\\text{IE from level }n=|E_{n}|=13.6\\frac{Z^{2}}{n^{2}}\\ \\text{eV}$$"
   ],
   "universalFacts": [
     "Bohr radius a₀ = 0.529 Å = 52.9 pm; ground-state speed of the H electron = 2.18 × 10⁶ m s⁻¹ = c/137.",
     "Ionisation energy of H = 13.6 eV = 1312 kJ mol⁻¹; ionisation energy of He⁺ = 54.4 eV.",
-    "Ground-state energy of hydrogen = −13.6 eV, and level spacing decreases as 1/n² increases."
+    "Ground-state energy of hydrogen = −13.6 eV, and level spacing decreases as 1/n² increases.",
+    "Bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy En = −13.6 eV·Z²/n² (for H, Z=1).",
+    "Rydberg/Balmer series: 1/λ = R(H)(1/n₁² − 1/n₂²). Absorption/emission = ΔE = hν between levels.",
+    "Four quantum numbers: n (shell), l (subshell, 0…n−1), mₗ (orientation, −l…+l), mₛ (spin ±½). Orbitals: s (spherical), p (dumbbell).",
+    "r₁(H) = 0.529 Å; r₁(He⁺) = 0.265 Å; r₁(Li²⁺) = 0.176 Å — all scale as 1/Z.",
+    "IE(H) = 13.6 eV; IE(He⁺) = 54.4 eV; IE(Li²⁺) = 122.4 eV — the Z² scaling in action.",
+    "v₁(H) = c/137 = 2.19 × 10⁶ m s⁻¹.",
+    "Bohr's model was published in 1913 — one year after Bohr joined Rutherford in Manchester.",
+    "The postulates apply strictly to one-electron species: H, He⁺, Li²⁺, Be³⁺.",
+    "Postulate 2 was later *derived* by de Broglie (standing matter waves) — turning an assumption into a consequence.",
+    "The Na D-line at 589 nm is the classic emission/absorption pair — street lamps and the sodium flame test share it.",
+    "Fraunhofer catalogued over 570 solar absorption lines in 1814, decades before Bohr explained them.",
+    "Neon signs glow red-orange from Ne emission lines — pure line spectra in commercial use.",
+    "Hydrogen ground state: E = −13.6 eV, KE = +13.6 eV, PE = −27.2 eV.",
+    "The virial theorem for Coulomb systems (2KE + PE = 0) is the general reason behind PE = 2E.",
+    "IE of hydrogen in molar units is 1312 kJ mol⁻¹ — the value measured calorimetrically."
   ],
   "examples": [
     "**Problem:** Radius and energy of the electron in the n = 2 orbit of Li²⁺. **Solution:** r₂ = 0.529 × 2²/3 = 0.705 Å = 70.5 pm; E₂ = −13.6 × 3²/2² = −30.6 eV.",
-    "**Problem:** Energy to excite H from n = 1 to n = 3? **Solution:** ΔE = 13.6(1 − 1/9) = 12.09 eV; λ = 1240/12.09 ≈ 102.6 nm (Lyman series)."
+    "**Problem:** Energy to excite H from n = 1 to n = 3? **Solution:** ΔE = 13.6(1 − 1/9) = 12.09 eV; λ = 1240/12.09 ≈ 102.6 nm (Lyman series).",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges.",
+    "**Problem:** Energy to excite He⁺ from n = 1 to n = 2. **Solution:** ΔE = 13.6 × 2² × (1 − 1/4) = 13.6 × 4 × 0.75 = 40.8 eV — three times the corresponding H value, because of the Z² factor.",
+    "**Problem:** Why do the postulates make the atom stable? **Solution:** in a stationary orbit (postulate 1) the electron accelerates without radiating, so it neither loses energy nor spirals in — stability is postulated, not explained classically.",
+    "**Problem:** Which line does a hydrogen atom absorb when illuminated with 102.6 nm light? **Solution:** ΔE = 1240/102.6 = 12.09 eV = 13.6(1 − 1/n₂²) → n₂ = 3: the Lyman-β absorption line (1 → 3).",
+    "**Problem:** Photon energy to move H from n = 2 to n = ∞? **Solution:** 0 − (−3.4) = 3.4 eV — the second ionisation step of the excited atom; the photon must supply at least 3.4 eV (λ ≈ 364.6 nm, the Balmer limit)."
   ],
   "importantNotes": [
     "Quote all four postulates; the marks sit on 'stationary orbit', 'mvr = nh/2π' and 'hν = E₂ − E₁'.",
     "Negative total energy signals a bound state — always mention that the zero of energy is taken at infinite separation.",
-    "Keep Z = 1 for hydrogen: forgetting Z is the commonest numerical error in rn, vn and En."
+    "Keep Z = 1 for hydrogen: forgetting Z is the commonest numerical error in rn, vn and En.",
+    "Never forget Z in r, v, E for ions — substitute Z = 2, 3, 4 explicitly.",
+    "Negative E means a bound electron; report ionisation energy as a positive number.",
+    "Quote the four postulates in order; examiners look for 'stationary orbit', 'mvr = nh/2π' and 'hν = E₂ − E₁' verbatim.",
+    "Say 'one-electron species' when quoting applicability — the commonest precision slip.",
+    "Draw the energy-level diagram with arrows up (absorption) and down (emission) — it is nearly a guaranteed mark.",
+    "State the population condition for absorption lines (lower level must be occupied).",
+    "Always define the zero of energy (infinite separation) when explaining negative energies.",
+    "Report ionisation energy as a positive magnitude; keep Eₙ negative."
   ],
   "visualType": "bohr-model",
-  "tabGroup": "Atomic-Structure-Learner-Notes"
+  "keyPoints": [
+    "• Postulates of Bohr's atomic model",
+    "• Its application"
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Postulates of Bohr's atomic model and its application\" with one example.",
+    "compare \"Postulates of Bohr's atomic model\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Postulates of Bohr's atomic model and its application\" and verify the answer is plausible."
+  ],
+  "numericals": [
+    "Use  En(H) = −13.6 Z²/n² eV  — pick reasonable values, solve, and check the units.",
+    "Use  hν = ΔE  — pick reasonable values, solve, and check the units.",
+    "Use  λ = h/(mv) (de Broglie)  — pick reasonable values, solve, and check the units."
+  ],
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Postulates of Bohr's atomic model and its application\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "The radius of the 2nd Bohr orbit of Li²⁺ is:",
+      "options": [
+        "0.529 Å",
+        "0.705 Å",
+        "1.058 Å",
+        "1.587 Å"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Bohr's quantisation condition for angular momentum is:",
+      "options": [
+        "mvr = nh",
+        "mvr = nh/2π",
+        "mvr = n²h",
+        "mvr = h/2πn"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "While revolving in a stationary orbit, the electron:",
+      "options": [
+        "Radiates continuously",
+        "Absorbs energy",
+        "Neither radiates nor absorbs",
+        "Emits a line spectrum"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "Fraunhofer lines in the solar spectrum are:",
+      "options": [
+        "Emission lines",
+        "Absorption lines",
+        "Band spectra",
+        "Continuous radiation"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "For an electron in a Bohr orbit, PE equals:",
+      "options": [
+        "E",
+        "−E",
+        "2E",
+        "−2E"
+      ],
+      "answer": "C"
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: postulates of bohr's atomic model, its application (within Atomic Structure).",
+    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy en = −13.6 ev·z²/n² (for h, z=1)."
+  ],
+  "summary": "Postulates of Bohr's atomic model and its application (Atomic Structure, Chemistry, class-11-notes) covers Postulates of Bohr's atomic model, its application. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "filename": "02-bohr-postulates.json"
 }

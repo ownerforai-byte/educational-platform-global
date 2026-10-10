@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Chemistry — Hydrocarbons — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "hydrocarbons",
+  "topicSlug": "hydrocarbons-pyq-2024",
+  "topicTitle": "NEB Class 12 Chemistry — Hydrocarbons — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State Markovnikov's rule and explain it on the basis of the carbocation mechanism; also state the peroxide (Kharasch) effect.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Markovnikov's rule:** in the addition of HX to an unsymmetrical alkene, the negative part goes to the carbon carrying the smaller number of hydrogens.\n\n**Reason:** the first step is protonation of the double bond, and the more stable carbocation decides the product. Addition of H⁺ to propene gives CH₃CH⁺CH₃ (2°, more stable) rather than CH₃CH₂CH₂⁺ (1°), so Br⁻ attaches to C-2 and the product is 2-bromopropane.\n\n**Peroxide effect:** with peroxides the mechanism becomes free-radical, giving the anti-Markovnikov product (1-bromopropane) because the more stable secondary radical forms.",
+      "knowledgeNote": "Only HBr shows the peroxide effect; HCl and HI add by the ionic path regardless, since their radical steps are unfavourable."
+    },
+    {
+      "question": "Write the reactions of benzene with (a) conc. HNO₃/H₂SO₄, (b) Cl₂/FeCl₃, (c) CH₃Cl/anhydrous AlCl₃, and name the type of mechanism involved.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "All three are **electrophilic substitution** on the aromatic ring, though the ring's delocalised π electrons are preserved:\n\n**(a)** nitration — the nitronium ion NO₂⁺ attacks, giving nitrobenzene;\n\n**(b)** chlorination — the Cl⁺/FeCl₄⁻ complex gives chlorobenzene;\n\n**(c)** Friedel–Crafts alkylation — the methyl cation gives toluene (with polyalkylation and rearrangement as side reactions).\n\nMechanism: electrophile attacks → arenium (σ-complex) intermediate → loss of H⁺ restores aromaticity.",
+      "knowledgeNote": "Benzene prefers substitution to addition precisely because addition would destroy its aromatic stabilisation (about 150 kJ mol⁻¹)."
+    },
+    {
+      "question": "How will you distinguish between ethane, ethene and ethyne using simple chemical tests?",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "- **Bromine water:** decolourised by ethene and ethyne (addition), unchanged by ethane.\n- **Ammoniacal AgNO₃ or Cu₂Cl₂:** a white (Ag) or red-brown (Cu) precipitate identifies ethyne (terminal ≡CH, acidic hydrogen); ethene gives no precipitate.\n- **Alkaline KMnO₄ (Baeyer's reagent):** decolourised by both unsaturated gases, giving a diol — confirms unsaturation while distinguishing them from ethane.",
+      "knowledgeNote": "Terminal alkynes are acidic because the sp-carbon holds the electron pair tightly — the basis of the silver/copper acetylide tests."
+    }
+  ]
+}

@@ -27,37 +27,49 @@
     "### 8. Numerical work",
     "Typical problems: compute Z from P, V, T; compare gases for near-ideal behaviour (smallest a and b, e.g. He); use the van der Waals equation to find P or V; and obtain Tc, Pc, Vc from a and b (or vice versa).",
     "### 9. Limitations of the van der Waals equation",
-    "It is a qualitative improvement, not an exact theory: a and b are treated as constants although they vary with temperature; molecular shape, polarity and association (hydrogen bonding in water, ammonia) are ignored; the predicted Zc = 0.375 exceeds the measured values (0.23–0.31 for most gases); the equation does not reproduce isotherms precisely near the critical point and has no term for attractive forces acting over different ranges. Better results need more elaborate equations of state or computer simulation."
+    "It is a qualitative improvement, not an exact theory: a and b are treated as constants although they vary with temperature; molecular shape, polarity and association (hydrogen bonding in water, ammonia) are ignored; the predicted Zc = 0.375 exceeds the measured values (0.23–0.31 for most gases); the equation does not reproduce isotherms precisely near the critical point and has no term for attractive forces acting over different ranges. Better results need more elaborate equations of state or computer simulation.",
+    "**Fact.** Ideal gas equation PV = nRT; from kinetic theory P = ⅓ (Nm/m)⟨c²⟩, so PV = ⅓N m⟨c²⟩.",
+    "**Fact.** r.m.s. speed c_rms = √(3RT/M); mean kinetic energy per mole = 3RT/2, per molecule = 3k_BT/2.",
+    "**Fact.** Real gases deviate near condensation; Van der Waals: (P + a n²/V²)(V − nb) = nRT."
   ],
   "confusion": [
     "❌ A real gas always has Z > 1. ✅ Z < 1 at moderate pressure (attraction dominates) and Z > 1 at high pressure (molecular volume dominates); hydrogen is a special case with Z > 1 throughout.",
     "❌ Deviation from ideality increases as temperature rises. ✅ It decreases with rising temperature and increases at high pressure and low temperature.",
     "❌ The constant b is the molecular volume. ✅ b is the excluded volume per mole, about four times the actual molecular volume.",
     "❌ Gases can always be liquefied by increasing pressure. ✅ Above the critical temperature no amount of pressure can liquefy a gas.",
-    "❌ Zc = 0.375 is exact for all gases. ✅ It is the van der Waals *prediction*; experiment gives 0.23–0.31, which is a limitation of the equation."
+    "❌ Zc = 0.375 is exact for all gases. ✅ It is the van der Waals *prediction*; experiment gives 0.23–0.31, which is a limitation of the equation.",
+    "❌ skip the key fact → ✅ ideal gas equation pv = nrt; from kinetic theory p = ⅓ (nm/m)⟨c²⟩, so pv = ⅓n m⟨c²⟩.."
   ],
   "practice": [
     "What is meant by deviation of a real gas from ideality? Explain with a graph of Z versus P.",
     "Explain the two corrections applied by van der Waals and write the corrected equation.",
-    "Define Tc, Pc and Vc and derive Vc = 3b, Pc = a/27b², Tc = 8a/27Rb.",
     "Calculate Z for 1 mol of a gas occupying 0.5 L at 300 K and 50 atm and comment on the deviation.",
     "Which of H₂, N₂ and SO₂ is closest to ideal behaviour and why?",
-    "State the limitations of the van der Waals equation."
+    "State the limitations of the van der Waals equation.",
+    "one worked example for \"Deviation of real gas from ideality (solving related nume…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "formulas": [
     "$$Z=\\frac{PV}{nRT}\\ \\ (Z=1\\ \\text{ideal},\\ Z<1\\ \\text{attraction},\\ Z>1\\ \\text{finite volume})$$",
     "$$\\left(P+\\frac{an^{2}}{V^{2}}\\right)(V-nb)=nRT$$",
     "$$V_{c}=3b,\\quad P_{c}=\\frac{a}{27b^{2}},\\quad T_{c}=\\frac{8a}{27Rb},\\quad Z_{c}=\\frac{P_{c}V_{c}}{RT_{c}}=\\frac{3}{8}$$",
-    "$$P_{r}=\\frac{P}{P_{c}},\\quad V_{r}=\\frac{V}{V_{c}},\\quad T_{r}=\\frac{T}{T_{c}}$$"
+    "$$P_{r}=\\frac{P}{P_{c}},\\quad V_{r}=\\frac{V}{V_{c}},\\quad T_{r}=\\frac{T}{T_{c}}$$",
+    "PV = nRT",
+    "c_rms = √(3RT/M)",
+    "KE_mole = 3RT/2"
   ],
   "universalFacts": [
     "Zc(observed) for most gases lies between 0.23 and 0.31, below the van der Waals value 0.375.",
     "Hydrogen and helium have the smallest a and b values and stay closest to ideal behaviour; SO₂ and CO₂ deviate most among common gases.",
-    "Critical temperatures: He −268 °C, N₂ −147 °C, CO₂ 31 °C, water 374 °C — the reason He is the hardest gas to liquefy."
+    "Critical temperatures: He −268 °C, N₂ −147 °C, CO₂ 31 °C, water 374 °C — the reason He is the hardest gas to liquefy.",
+    "Ideal gas equation PV = nRT; from kinetic theory P = ⅓ (Nm/m)⟨c²⟩, so PV = ⅓N m⟨c²⟩.",
+    "r.m.s. speed c_rms = √(3RT/M); mean kinetic energy per mole = 3RT/2, per molecule = 3k_BT/2.",
+    "Real gases deviate near condensation; Van der Waals: (P + a n²/V²)(V − nb) = nRT."
   ],
   "examples": [
     "**Problem:** Compute Z for 1 mol of gas at 300 K occupying 0.5 L at 50 atm. **Solution:** Z = PV/RT = (50 × 0.5)/(0.0821 × 300) ≈ 1.015 → slightly greater than 1, so the finite molecular volume effect dominates.",
-    "**Problem:** For a gas with a = 3.6 L² atm mol⁻² and b = 0.043 L mol⁻¹, find Tc and Pc. **Solution:** Tc = 8a/27Rb = (8 × 3.6)/(27 × 0.0821 × 0.043) ≈ 302 K; Pc = a/27b² = 3.6/(27 × 0.043²) ≈ 72 atm."
+    "**Problem:** For a gas with a = 3.6 L² atm mol⁻² and b = 0.043 L mol⁻¹, find Tc and Pc. **Solution:** Tc = 8a/27Rb = (8 × 3.6)/(27 × 0.0821 × 0.043) ≈ 302 K; Pc = a/27b² = 3.6/(27 × 0.043²) ≈ 72 atm.",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "importantNotes": [
     "Explain the sign of Z before quoting numbers: Z < 1 means attraction dominates, Z > 1 means molecular volume dominates.",
@@ -65,5 +77,38 @@
     "State that the van der Waals equation explains the critical point only approximately — Zc = 0.375 versus experimental 0.23–0.31."
   ],
   "visualType": "real-gas-deviation",
-  "tabGroup": "States-Of-Matter-Learner-Notes"
+  "keyPoints": [
+    "• Deviation of real gas from ideality",
+    "• Solving related numerical problems based on gas laws"
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Deviation of real gas from ideality (solving related nume…\" with one example.",
+    "compare \"Deviation of real gas from ideality\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Deviation of real gas from ideality (solving related nume…\" and verify the answer is plausible."
+  ],
+  "numericals": [
+    "Use  PV = nRT  — pick reasonable values, solve, and check the units.",
+    "Use  c_rms = √(3RT/M)  — pick reasonable values, solve, and check the units.",
+    "Use  KE_mole = 3RT/2  — pick reasonable values, solve, and check the units."
+  ],
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Deviation of real gas from ideality (solving related nume…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: deviation of real gas from ideality, solving related numerical problems based on gas laws (within States of Matter).",
+    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: ideal gas equation pv = nrt; from kinetic theory p = ⅓ (nm/m)⟨c²⟩, so pv = ⅓n m⟨c²⟩."
+  ],
+  "summary": "Deviation of real gas from ideality (solving related nume… (States of Matter, Chemistry, class-11-notes) covers Deviation of real gas from ideality, solving related numerical problems based on gas laws. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
 }

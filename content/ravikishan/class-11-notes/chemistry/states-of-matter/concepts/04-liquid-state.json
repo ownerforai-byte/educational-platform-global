@@ -35,11 +35,10 @@
   ],
   "practice": [
     "Distinguish between evaporation and boiling.",
-    "Define vapour pressure and explain why it does not depend on the amount of liquid.",
     "Explain why water boils below 100 °C on a mountain and above 100 °C in a pressure cooker.",
-    "Define surface tension and explain its molecular origin with two examples.",
-    "Define viscosity, give its SI unit, and explain why it decreases with rise in temperature.",
-    "State the limitations of the simple description of liquid properties."
+    "State the limitations of the simple description of liquid properties.",
+    "one worked example for \"Liquid state: physical properties of liquids — evaporatio…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "formulas": [
     "$$\\gamma=\\frac{F}{l}\\ (\\text{N m}^{-1});\\qquad \\eta\\ \\text{in Pa s}\\ (1\\ \\text{poise}=0.1\\ \\text{Pa s})$$",
@@ -49,11 +48,13 @@
   "universalFacts": [
     "Vapour pressure of water: 23.8 mm Hg at 25 °C, 760 mm Hg at 100 °C (normal boiling point).",
     "Surface tension of water ≈ 72 mN m⁻¹ at 25 °C, falling to zero at the critical temperature (374 °C).",
-    "Viscosity of water ≈ 1.0 × 10⁻³ Pa s at 20 °C; glycerol ≈ 1.5 Pa s — about a thousand times greater."
+    "Viscosity of water ≈ 1.0 × 10⁻³ Pa s at 20 °C; glycerol ≈ 1.5 Pa s — about a thousand times greater.",
+    "answer pattern for \"Liquid state: physical properties of liquids — evaporatio…\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [
     "**Problem:** Why does a wet cloth dry faster on a windy day? **Solution:** wind removes the vapour layer above the surface, keeping the vapour pressure below saturation so the net evaporation rate stays high; higher temperature and larger exposed area act in the same direction.",
-    "**Problem:** Estimate the boiling point of water at 8000 m where the pressure is about 0.36 atm. **Solution:** the boiling temperature is reached when vapour pressure equals 0.36 atm ≈ 274 mm Hg; from vapour-pressure tables this corresponds to about 72 °C — hence cooking takes much longer at altitude."
+    "**Problem:** Estimate the boiling point of water at 8000 m where the pressure is about 0.36 atm. **Solution:** the boiling temperature is reached when vapour pressure equals 0.36 atm ≈ 274 mm Hg; from vapour-pressure tables this corresponds to about 72 °C — hence cooking takes much longer at altitude.",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "importantNotes": [
     "Remember the three marks-carrying definitions: vapour pressure (equilibrium), boiling point (vapour pressure = external pressure), surface tension (force per unit length).",
@@ -61,5 +62,47 @@
     "Syllabus asks for qualitative treatment only: describe causes, trends and applications, not derivations."
   ],
   "visualType": "liquid-state",
-  "tabGroup": "States-Of-Matter-Learner-Notes"
+  "keyPoints": [
+    "• Liquid state",
+    "• Physical properties of liquids — evaporation",
+    "• Condensation",
+    "• Vapour pressure",
+    "• Boiling point",
+    "• Surface tension"
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Liquid state: physical properties of liquids — evaporatio…\" with one example.",
+    "compare \"Liquid state\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Liquid state: physical properties of liquids — evaporatio…\" and verify the answer is plausible."
+  ],
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Liquid state: physical properties of liquids — evaporatio…\"?",
+      "options": [
+        "Liquid state",
+        "Physical properties of liquids — evaporation",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "A",
+      "explanation": "Liquid state is listed among the official sub-ideas of Liquid state: physical properties of liquids — evaporatio…; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Liquid state: physical properties of liquids — evaporatio…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: liquid state, physical properties of liquids — evaporation, condensation, vapour pressure (within States of Matter).",
+    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "summary": "Liquid state: physical properties of liquids — evaporatio… (States of Matter, Chemistry, class-11-notes) covers Liquid state, physical properties of liquids — evaporation, condensation. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
 }

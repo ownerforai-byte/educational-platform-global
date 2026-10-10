@@ -1,0 +1,86 @@
+{
+  "title": "Biotechnology Applications and Ethical Considerations",
+  "unitSlug": "biomolecules-and-cell-biology",
+  "topicSlug": "biotechnology-applications-and-ethical-considerations",
+  "topicTitle": "Biotechnology Applications and Ethical Considerations",
+  "relevance": 92,
+  "notes": [
+    "### 1. Types of Biotechnology",
+    "- Genetic engineering: modifying organisms' DNA",
+    "- Synthetic biology: designing new biological systems",
+    "- Agricultural biotech: GM crops, livestock improvement",
+    "- Medical biotech: gene therapy, vaccines, regenerative medicine"
+  ],
+  "importantConcepts": [
+    "CRISPR-Cas9: genome editing tool that allows precise DNA modifications",
+    "Recombinant DNA technology: combining DNA from different sources",
+    "Bioinformatics: computational analysis of biological data",
+    "Ethical issues: consent, equity, unintended consequences, designer babies"
+  ],
+  "importantStatements": [
+    "CRISPR enables targeted gene knock-out or knock-in in living organisms.",
+    "GMOs are genetically modified organisms with traits introduced through genetic engineering.",
+    "Ethical debates center on safety, accessibility, and potential misuse of biotech."
+  ],
+  "keyPoints": [
+    "Biotechnology combines biology, chemistry, and engineering to develop new products and processes.",
+    "Applications range from medicine (insulin production) to agriculture (pest-resistant crops).",
+    "Ethical considerations require balancing innovation with societal values and regulations."
+  ],
+  "specialNotes": [
+    "The first FDA-approved gene therapy (for Leber congenital amaurosis) was developed using viral vectors.",
+    "Synthetic biology aims to create novel organisms for biofuels, bioremediation, and pharmaceuticals.",
+    "Germline editing (embryo modification) is highly controversial due to heritable changes."
+  ],
+  "examShortTricks": [
+    "CRISPR = genome editing technology.",
+    "GMOs = genetically modified organisms.",
+    "Ethical concerns: safety, equity, consent, designer babies."
+  ],
+  "examNotes": [
+    "Distinguish between somatic gene therapy (affects only the patient) and germline editing (heritable).",
+    "Consider the precautionary principle in biotech development.",
+    "Discuss the role of international regulatory bodies (WHO, FDA, EMA)."
+  ],
+  "practiceQuestions": [
+    "What is CRISPR-Cas9 and how does it work?",
+    "Give an example of a medical biotechnology application.",
+    "What are the main ethical concerns regarding gene editing?",
+    "How might synthetic biology be used for environmental remediation?"
+  ],
+  "mcs": [
+    {
+      "question": "What is CRISPR-Cas9?",
+      "options": [
+        "A type of antibiotic",
+        "A genome editing tool",
+        "A vaccine platform",
+        "A diagnostic test for cancer"
+      ],
+      "answer": "B",
+      "explanation": "CRISPR-Cas9 is a revolutionary gene-editing technology derived from bacterial immune systems that allows precise modification of DNA sequences."
+    },
+    {
+      "question": "Give an example of a medical biotechnology application.",
+      "options": [
+        "Vaccines produced in yeast",
+        "Insulin produced by recombinant bacteria",
+        "CRISPR gene therapy",
+        "Synthetic DNA storage"
+      ],
+      "answer": "B",
+      "explanation": "Recombinant DNA technology was first used commercially to produce human insulin in E. coli, revolutionizing diabetes treatment."
+    },
+    {
+      "question": "What are the main ethical concerns regarding gene editing?",
+      "options": [
+        "High cost of treatments",
+        "Lack of scientific evidence",
+        "Safety risks and unintended mutations",
+        "Religious opposition to science"
+      ],
+      "answer": "C",
+      "explanation": "Off-target effects in CRISPR editing and unpredictable long-term consequences are major safety concerns."
+    }
+  ]
+}

@@ -7,11 +7,11 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Coulomb's law: force between two point charges — Electric Charges, Physics (class-11-notes).",
-    "**Tested.** define it · list: coulomb's law: force between two point charges · one worked example · one misconception each.",
-    "**Fact.** Coulomb: F = (1/4πε₀)·q₁q₂/r². Electric field E = F/q = kq/r²; for a line/dipole use superposition.",
-    "**Fact.** Gauss's law: ∮E·dA = Q_enc/ε₀ — powerful for spherical/cylindrical/planar symmetry.",
-    "**Fact.** Potential V = kq/r; ΔV = W/q; U of a charge in potential = qV. Equipotential surfaces are ⟂ to field lines."
+    "**Coulomb's law.** The force between two point charges is directly proportional to the product of the charges and inversely proportional to the square of the distance: F = (1/4πε₀)q₁q₂/r².",
+    "**Direction.** The force acts along the line joining the charges — repulsive for like charges, attractive for unlike charges — and obeys Newton's third law.",
+    "**Permittivity.** In a medium of dielectric constant K the force falls to F = q₁q₂/4πε₀Kr²; for vacuum K = 1 and ε₀ = 8.85 × 10⁻¹² C² N⁻¹ m⁻².",
+    "**Vector form.** F₁₂ = (q₁q₂/4πε₀) × (r₂ − r₁)/|r₂ − r₁|³ gives both magnitude and direction automatically, with the sign of the charges deciding attraction or repulsion.",
+    "**Limitations.** The law holds for point charges at rest and for spherically symmetric charge distributions; it is an inverse-square law like gravitation but far stronger."
   ],
   "confusion": [
     "❌ treat \"Coulomb's law: force between two point charges\" as one blob → ✅ split into: coulomb's law: force between two point charges.",
@@ -67,17 +67,6 @@
       ],
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    },
-    {
-      "question": "Which of these is a governing / standard formula associated with \"Coulomb's law: force between two point charges\"?",
-      "options": [
-        "F = k q₁q₂/r²",
-        "x + y = z (placeholder)",
-        "No formula applies",
-        "E = mc² only"
-      ],
-      "answer": "A",
-      "explanation": "F = k q₁q₂/r² is the standard form used for this topic."
     }
   ]
 }

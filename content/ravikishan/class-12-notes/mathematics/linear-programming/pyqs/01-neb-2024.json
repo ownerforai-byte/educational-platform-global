@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Mathematics — Linear Programming — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "linear-programming",
+  "topicSlug": "linear-programming-pyq-2024",
+  "topicTitle": "NEB Class 12 Mathematics — Linear Programming — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Maximise Z = 40x + 50y subject to 2x + y ≤ 20, x + 2y ≤ 20, x ≥ 0, y ≥ 0. Solve graphically.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Feasible region:** bounded by the axes and the two constraint lines.\n\nCorner points from the intersections:\n- (0, 0) → Z = 0\n- (10, 0) → Z = 400\n- (0, 10) → Z = 500\n- intersection of 2x + y = 20 and x + 2y = 20: solving gives x = y = **20/3 ≈ 6.67** → Z = 40(20/3) + 50(20/3) = 600.\n\nBy the corner-point theorem the optimum is at a vertex: **maximum Z = 600 at x = y = 20/3**.\n\n(Checking the interior point confirms the value is below 600, and the region is bounded, so the maximum exists.)",
+      "knowledgeNote": "Evaluate Z at EVERY corner: the optimum is always at a vertex for a linear objective on a convex feasible region."
+    },
+    {
+      "question": "Define feasible region, optimal solution and corner-point theorem in linear programming.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Feasible region:** the common region satisfying all the constraints (including non-negativity) of a linear programming problem — it is a convex polygon.\n\n**Optimal solution:** the feasible point (set of values of the decision variables) at which the objective function attains its maximum or minimum value.\n\n**Corner-point theorem (fundamental theorem of LPP):** if the feasible region is bounded, the objective function attains its optimum at a corner (vertex) of the feasible region; if two adjacent vertices give the same optimum, every point on the segment joining them is optimal.",
+      "knowledgeNote": "This is why the graphical method evaluates only vertices — it is a theorem, not a shortcut, and the examiner expects it stated."
+    },
+    {
+      "question": "A factory makes two products A and B. A needs 2 hours of machine time and 1 hour of labour; B needs 1 hour of machine time and 3 hours of labour. The factory has 40 machine hours and 60 labour hours per day. If the profit is Rs 30 on A and Rs 40 on B, formulate the LPP to maximise the profit.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Let x = units of A and y = units of B produced per day.\n\n**Objective:** maximise Z = 30x + 40y (profit in rupees).\n\n**Constraints:**\n- machine time: 2x + y ≤ 40\n- labour time: x + 3y ≤ 60\n- non-negativity: x ≥ 0, y ≥ 0.\n\nThe solution is obtained by plotting the two lines, finding the feasible region and evaluating Z at its corner points (one of which is the intersection x = 12, y = 16 giving Z = 1000).",
+      "knowledgeNote": "Always define the variables and write the non-negativity restrictions explicitly — they are part of the formulation and carry marks."
+    }
+  ]
+}

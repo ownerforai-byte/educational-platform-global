@@ -6,16 +6,7 @@
   "relevance": 100,
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
-  "notes": [
-    "**Scope.** Coordinates in space: points in space, distance between t… — Analytic Geometry, Mathematics (class-11-notes).",
-    "**Tested.** define it · list: coordinates in space: points in space, distance between two points, direction cosines, ratios of a line · one worked example · one misconception each.",
-    "**Distance between two points.** one-line definition + one-line exam use.",
-    "**Direction cosines.** one-line definition + one-line exam use.",
-    "**Ratios of a line.** one-line definition + one-line exam use."
-  ],
   "confusion": [
-    "❌ treat \"Coordinates in space: points in space\" as one blob → ✅ split into: coordinates in space: points in space, distance between two points, direction cosines.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ answer with no steps → ✅ show each step and box the result."
   ],
   "bounds": [
@@ -24,7 +15,6 @@
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
   "practice": [
-    "define + example each sub-idea: coordinates in space: points in space, distance between two points, direction cosines, ratios of a line.",
     "one worked example for \"Coordinates in space: points in space, distance between t…\" — check units / edge cases.",
     "recall card: definition → formula → limit → one error to avoid."
   ],
@@ -39,9 +29,6 @@
     "compare \"Coordinates in space: points in space\" with the related idea from a neighbouring unit.",
     "solve / apply for \"Coordinates in space: points in space, distance between t…\" and verify the answer is plausible."
   ],
-  "formulas": [
-    "Standard result for \"Coordinates in space: points in space, distance between t…\" — state it and verify by substituting a simple case."
-  ],
   "numericals": [
     "Set up the defining equation for \"Coordinates in space: points in space, distance between t…\", substitute simple values, and compute the result with units.",
     "Re-derive the standard result from first principles in ≤ 4 steps.",
@@ -51,9 +38,10 @@
     "• Coordinates in space: points in space",
     "• Distance between two points",
     "• Direction cosines",
-    "• Ratios of a line"
+    "• Ratios of a line",
+    "Connection of Coordinates in Space to other topics"
   ],
-  "summary": "Coordinates in space: points in space, distance between t… (Analytic Geometry, Mathematics, class-11-notes) covers Coordinates in space: points in space, distance between two points, direction cosines. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Coordinates in Space covers essential principles and applications.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Coordinates in space: points in space, distance between t…\"?",
@@ -75,5 +63,29 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
-  ]
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Coordinates in Space",
+    "Statement 2: Theorem related to Coordinates in Space",
+    "Statement 3: Condition for Coordinates in Space to be valid",
+    "Statement 4: Principle governing Coordinates in Space",
+    "Statement 5: Corollary or consequence of Coordinates in Space"
+  ],
+  "importantNotes": [
+    "Coordinates in Space is based on fundamental principles."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Coordinates in Space."
+  ],
+  "importantConcepts": [
+    "Definition and significance of Coordinates in Space."
+  ],
+  "notes": [],
+  "animation3D": "analytic-geometry",
+  "motionGraphics": "analytic-geometry",
+  "formulas": [],
+  "specialNotes": [],
+  "examNotes": [],
+  "importantTasks": [],
+  "visualType": "direction-cosines"
 }

@@ -34,7 +34,6 @@
     "Nucleosome-free grounding of tall buildings: Lightning-induced potential differences of 10⁸ V are bled harmlessly to earth through lightning rods and thick grounding strips, since $W = qV$ for a large charge at huge potential would otherwise be catastrophic."
   ],
   "practiceQuestions": [
-    "Q1. Define electrostatic potential at a point. State its SI unit and dimensional formula, and explain why electric potential is a scalar while electric field is a vector.",
     "Q2. Derive an expression for the potential at a point due to a point charge Q, and compare its distance dependence with that of the electric field.",
     "Q3. A charge q is brought from infinity to a point in the field of a dipole of moment p placed along the x-axis. Show that the potential energy is $U = -kq p \\cos\\theta / r^2$.",
     "Q4. An electron is accelerated from rest through a potential difference of 500 V. Calculate the energy gained in joules and in electron volts, and the resulting speed. (e = 1.6 × 10⁻¹⁹ C, m = 9.1 × 10⁻³¹ kg)"
@@ -127,7 +126,5 @@
     "Calculate the potential and potential energy of a two-charge configuration.",
     "Convert energy values between joules, electron volts, and multiples (keV, MeV)."
   ],
-  "duplicateType": 2,
-  "visualType": "potential",
-  "tabGroup": "potential-difference-potential-due-to-point-charge-potential-energy-and-electron-volt"
+  "visualType": "potential"
 }

@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Chemistry — Aldehydes Ketones Carboxylic Acids — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "aldehydes-ketones-carboxylic-acids",
+  "topicSlug": "aldehydes-ketones-carboxylic-acids-pyq-2024",
+  "topicTitle": "NEB Class 12 Chemistry — Aldehydes Ketones Carboxylic Acids — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Describe the mechanism of nucleophilic addition to a carbonyl group and explain why aldehydes are more reactive than ketones.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "The carbonyl carbon is electron-deficient (sp², δ⁺) and the π bond is polarised, so nucleophiles attack the carbon:\n\n(i) Nu⁻ attacks the carbon, the π electrons move to oxygen giving a tetrahedral alkoxide intermediate; (ii) protonation of the alkoxide by the medium completes the addition, giving an alcohol (or a derivative if the nucleophile is followed by loss of water).\n\n**Aldehydes vs ketones:** two alkyl groups in a ketone release electron density by +I effect, reducing the carbon's δ⁺, and their bulk also hinders attack. Hence aldehydes react faster; formaldehyde is the most reactive.",
+      "knowledgeNote": "Acid catalysis helps weak nucleophiles (protonation increases electrophilicity); base catalysis helps strong ones — the intermediate is stabilised."
+    },
+    {
+      "question": "What is the aldol condensation? Write the reaction of acetaldehyde with dilute NaOH and state the product.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Aldol condensation:** an aldehyde or ketone with at least one α-hydrogen forms a carbanion (enolate) in dilute base; this attacks the carbonyl carbon of a second molecule, giving a β-hydroxy aldehyde (aldol). On heating, aldol loses water to give an α,β-unsaturated carbonyl.\n\nFor acetaldehyde: CH₃CHO + CH₃CHO → **CH₃CH(OH)CH₂CHO (aldol)** → on heating, **CH₃CH=CHCHO (crotonaldehyde)**.",
+      "knowledgeNote": "No α-hydrogen → no aldol: benzaldehyde (no α-H) instead undergoes the Cannizzaro reaction with conc. NaOH, giving benzyl alcohol and benzoate."
+    },
+    {
+      "question": "How will you distinguish between (a) an aldehyde and a ketone, (b) acetaldehyde and benzaldehyde, (c) a carboxylic acid and a phenol?",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**(a)** Tollens' reagent gives a silver mirror and Fehling's solution a red-brown Cu₂O precipitate with aldehydes only; ketones do not respond.\n\n**(b)** Iodoform test — acetaldehyde (CH₃CO− group) gives a yellow precipitate of CHI₃ with I₂/NaOH; benzaldehyde does not.\n\n**(c)** Carboxylic acids liberate CO₂ from NaHCO₃ with brisk effervescence; phenols do not (phenol dissolves only in NaOH).",
+      "knowledgeNote": "The iodoform test detects the CH₃CO− group or a CH₃CH(OH)− group, so it also identifies ethanol and methyl ketones."
+    }
+  ]
+}

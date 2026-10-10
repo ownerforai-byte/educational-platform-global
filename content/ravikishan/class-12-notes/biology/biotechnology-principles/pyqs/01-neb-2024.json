@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Biology — Biotechnology Principles — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "biology",
+  "unitSlug": "biotechnology-principles",
+  "topicSlug": "biotechnology-principles-pyq-2024",
+  "topicTitle": "NEB Class 12 Biology — Biotechnology Principles — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "What are restriction enzymes? Explain their role in recombinant DNA technology with reference to palindromic sequences.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Restriction enzymes (restriction endonucleases)** are molecular scissors that cut double-stranded DNA at specific recognition sites. They are named after the bacterium from which they are isolated — EcoRI comes from *Escherichia coli*, RY13, strain I.\n\nEach enzyme recognises a **palindromic** base sequence (reading the same 5′→3′ on both strands, e.g. GAATTC/CTTAAG for EcoRI) and cuts between the same two bases on both strands, leaving **sticky ends** — short single-stranded overhangs.\n\nIn rDNA technology the same enzyme cuts both the vector (e.g. pBR322) and the foreign DNA, so the complementary sticky ends base-pair; **DNA ligase** then seals the phosphodiester backbone to give recombinant DNA, which can be cloned in a host.",
+      "knowledgeNote": "Sticky ends make ligation efficient; the same enzyme for vector and insert is the key design rule of cloning."
+    },
+    {
+      "question": "Describe the polymerase chain reaction and state its three steps with the enzymes used.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**PCR** amplifies a specific DNA segment in vitro, producing billions of copies.\n\n**Steps (each cycle):**\n1. **Denaturation** — heat to about 94 °C so the double helix separates into single strands.\n2. **Annealing** — cool to about 50–60 °C so synthetic primers (short oligonucleotides complementary to the ends) bind to each strand.\n3. **Extension** — raise to about 72 °C, where **Taq polymerase** (from *Thermus aquaticus*) extends the primers using dNTPs.\n\nRepeat for 30–35 cycles: the target multiplies about 2ⁿ times. Uses: diagnosis of infections and genetic disorders, DNA fingerprinting, and amplifying a gene before cloning.",
+      "knowledgeNote": "Taq polymerase is used because it survives the high denaturation temperature — a thermolabile enzyme would be destroyed each cycle."
+    },
+    {
+      "question": "Explain gel electrophoresis and the techniques used to visualise separated DNA fragments.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Gel electrophoresis** separates DNA fragments according to size. DNA is negatively charged, so in an electric field it migrates towards the anode through an agarose gel; **smaller fragments move farther**, larger ones lag near the well.\n\nThe separated bands are visualised by staining with **ethidium bromide** followed by exposure to **UV light**, where the DNA–dye complex fluoresces bright orange. A known marker (ladder) run alongside identifies fragment sizes.\n\nThe separated band of interest is then cut from the gel and the DNA eluted (recovered) — this **elution** step purifies the fragment for use in cloning or sequencing.",
+      "knowledgeNote": "The gel acts as a molecular sieve: pore size and agarose concentration decide the range of sizes resolved."
+    }
+  ]
+}

@@ -7,11 +7,11 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Classification of organic compounds — Basic Concept of Organic Chemistry, Chemistry (class-11-notes).",
-    "**Tested.** define it · list: classification of organic compounds · one worked example · one misconception each.",
-    "**Fact.** IUPAC: identify parent chain (longest), number from end nearer the functional group / first substituent; suffix by priority (−ol, −al, −one, −oic acid…).",
-    "**Fact.** Carbocation/carbanion stability: 3° > 2° > 1° > methyl; resonance stabilises; inductive effect transmits through sigma bonds.",
-    "**Fact.** Functional group priority (high → low) governs the suffix; others become prefixes with locants."
+    "**Open-chain compounds.** Aliphatic compounds have open carbon chains — straight-chain (n-butane) or branched-chain (isobutane) — and may be saturated or unsaturated.",
+    "**Cyclic compounds.** Closed-ring compounds divide into carbocycles (alicyclic like cyclohexane; aromatic like benzene) and heterocycles (furan, pyridine) that contain non-carbon atoms in the ring.",
+    "**Functional group classes.** Compounds are grouped by their functional group: halides (—X), alcohols (—OH), aldehydes (—CHO), ketones (>C=O), carboxylic acids (—COOH) and amines (—NH₂).",
+    "**Saturated vs unsaturated.** Compounds with only single C—C bonds are saturated; those with double or triple bonds are unsaturated and decolourise bromine water.",
+    "**Why classification matters.** Members of one class show similar chemical properties, so classifying a compound immediately predicts its reactions and its name."
   ],
   "confusion": [
     "❌ treat \"Classification of organic compounds\" as one blob → ✅ split into: classification of organic compounds.",
@@ -62,17 +62,6 @@
       ],
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    },
-    {
-      "question": "Which of these is a governing / standard formula associated with \"Classification of organic compounds\"?",
-      "options": [
-        "Parent-chain + locant(s) + sub-prefix + suffix = IUPAC name",
-        "x + y = z (placeholder)",
-        "No formula applies",
-        "E = mc² only"
-      ],
-      "answer": "A",
-      "explanation": "Parent-chain + locant(s) + sub-prefix + suffix = IUPAC name is the standard form used for this topic."
     }
   ]
 }

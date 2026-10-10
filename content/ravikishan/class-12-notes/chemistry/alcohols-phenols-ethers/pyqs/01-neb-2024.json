@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Chemistry — Alcohols Phenols Ethers — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "alcohols-phenols-ethers",
+  "topicSlug": "alcohols-phenols-ethers-pyq-2024",
+  "topicTitle": "NEB Class 12 Chemistry — Alcohols Phenols Ethers — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Explain why phenol is more acidic than ethanol, and compare their reactions with NaOH and NaHCO₃.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "In phenol the −OH oxygen is joined to an sp² carbon of the ring, and the phenoxide ion is stabilised by **resonance** (the negative charge delocalises into the ring). In ethanol the ethoxide ion has no such stabilisation and the ethyl group is electron-donating, destabilising the anion.\n\nHence phenol ionises readily (pKa ≈ 10) while ethanol does not (pKa ≈ 16):\n\n- Phenol dissolves in **NaOH** forming sodium phenoxide; ethanol does not react with NaOH.\n- Neither reacts with **NaHCO₃** (phenol is not acidic enough, pKa 10 vs carbonic acid 6.4) — this distinguishes phenol from carboxylic acids, which liberate CO₂.",
+      "knowledgeNote": "Electron-withdrawing substituents such as −NO₂ increase phenol's acidity; the picrate is strong enough to decompose carbonates."
+    },
+    {
+      "question": "Write the reactions of phenol with (a) bromine water, (b) conc. HNO₃ and (c) Zn dust, and explain why phenol is more reactive than benzene towards electrophiles.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**(a)** bromine water gives 2,4,6-tribromophenol (a white precipitate) without a catalyst.\n\n**(b)** conc. HNO₃ gives picric acid (2,4,6-trinitrophenol).\n\n**(c)** Zn dust distils phenol to benzene, removing the OH group.\n\n**Reason:** the −OH group has a strong +R effect, so the ring is activated; the ortho and para positions acquire high electron density, allowing mild electrophiles to attack — benzene needs a Lewis-acid catalyst and gives only mono-substitution.",
+      "knowledgeNote": "The −OH group is ortho/para-directing as well as ring-activating; halogenation in phenol needs no FeBr₃ whereas benzene does."
+    },
+    {
+      "question": "Give the Williamson synthesis of an ether and explain why it fails for tertiary alkyl halides.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Williamson synthesis:** sodium alkoxide + primary alkyl halide →\n\nR−ONa + R′X → R−O−R′ + NaX (SN2, best with primary halides).\n\n**Failure with tertiary halides:** the bulky tertiary substrate cannot undergo backside SN2 attack; it ionises to a carbocation that is attacked by the alkoxide as a base, so **elimination (alkene)** dominates instead of substitution.",
+      "knowledgeNote": "For unsymmetrical ethers choose the more hindered group as the alkoxide and the less hindered as the halide."
+    }
+  ]
+}

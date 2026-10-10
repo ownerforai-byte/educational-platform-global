@@ -3,50 +3,14 @@
   "unitSlug": "analytic-geometry",
   "topicSlug": "straight-line-length-of-perpendicular-from-a-given-point-to-a-given-line-bisectors-of-the-angles-between-two-straight-lines",
   "topicTitle": "Straight line: length of perpendicular from a given point to a given line, bisectors of the angles between two straight lines",
-  "relevance": 73,
-  "notes": [
-    "**Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method):** Class 11 concept.",
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
-  ],
-  "confusion": [
-    "Distinguish concepts in Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method).",
-    "Check formula conditions."
-  ],
-  "practice": [
-    "Solve 5 problems on Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method).",
-    "Derive the key formula for Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method)."
-  ],
-  "universalFacts": [
-    "Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method) appears in exams.",
-    "Foundational for advanced topics."
-  ],
+  "relevance": 79,
   "animation3D": "analytic-geometry",
   "motionGraphics": "analytic-geometry",
-  "examples": [
-    "Application of Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method)",
-    "Numerical problem on Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method)",
-    "Daily life use of Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method)"
-  ],
-  "practiceQuestions": [
-    "Q1. Define Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method).",
-    "Q2. Key formula for Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method).",
-    "Q3. Problem on Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method)."
-  ],
-  "formulas": [
-    "Formula for Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method): [insert from textbook].",
-    "Key relationship: [variable formula]."
-  ],
   "keyPoints": [
-    "Core principle of Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method)",
-    "Application of Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method)",
-    "Connection of Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method) to other topics"
+    "Connection of Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method) to other topics",
+    "Connection of Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule to other topics"
   ],
-  "summary": "Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method) covers essential principles and applications.",
-  "specialNotes": [
-    "Check conditions for Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method).",
-    "Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method) connects to other topics."
-  ],
+  "summary": "Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method) covers essential principles and applications. Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule covers essential principles and applications.",
   "importantStatements": [
     "Statement 1: Definition of Straight line: length of perpendicular from a given point to a given line, bisectors of the angles between two straight lines",
     "Statement 2: Theorem related to Straight line: length of perpendicular from a given point to a given line, bisectors of the angles between two straight lines",
@@ -55,32 +19,23 @@
     "Statement 5: Corollary or consequence of Straight line: length of perpendicular from a given point to a given line, bisectors of the angles between two straight lines"
   ],
   "importantNotes": [
-    "Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method) is based on fundamental principles."
+    "Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method) is based on fundamental principles.",
+    "Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule is based on fundamental principles."
   ],
   "examShortTricks": [
-    "Recall the formula for Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method)."
-  ],
-  "examNotes": [
-    "Focus on Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method) problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Which describes Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method)?",
-      "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
-      ],
-      "answer": "A"
-    }
+    "Recall the formula for Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method).",
+    "Recall the formula for Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule."
   ],
   "importantConcepts": [
-    "Definition and significance of Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method)."
+    "Definition and significance of Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method).",
+    "Definition and significance of Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule."
   ],
-  "importantTasks": [
-    "Solve 5 problems on Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method)."
-  ],
-  "duplicateType": 1,
-  "visualType": "angle-bisector-formula"
+  "visualType": "angle-bisector-formula",
+  "notes": [
+    "**Bisector equations.** The angle bisectors of the lines a₁x + b₁y + c₁ = 0 and a₂x + b₂y + c₂ = 0 are (a₁x + b₁y + c₁)/√(a₁² + b₁²) = ± (a₂x + b₂y + c₂)/√(a₂² + b₂²).",
+    "**Equal distance property.** Any point on a bisector is equidistant from the two lines, using the perpendicular distance |ax + by + c|/√(a² + b²).",
+    "**Acute vs obtuse.** The two bisectors are perpendicular; when a₁a₂ + b₁b₂ < 0 the '+' combination bisects the acute angle, and when a₁a₂ + b₁b₂ > 0 it bisects the obtuse angle.",
+    "**Worked steps.** Write both equations in general form, divide each by the square root of the sum of its squared coefficients, combine with ±, and simplify each result.",
+    "**Use of the result.** The bisector equations locate the in-centre of a triangle (intersection of internal bisectors) and solve locus problems requiring equal distance from two lines."
+  ]
 }

@@ -1,0 +1,62 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "biota-and-environment",
+  "unitTitle": "Biota and Environment",
+  "unitHours": 10,
+  "syllabusTopics": [
+    "Animal adaptation: aquatic (primary and secondary), terrestrial (cursorial, fossorial and arboreal) and volant adaptation",
+    "Animal behaviour: reflex action, taxes, dominance and leadership; fish and bird migration",
+    "Environmental pollution: sources, effects and control measures of air, water and soil pollution; pesticides and their effects"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05 from this unit's concepts/01-animal-adaptation-aquatic-terrestrial-and-volant-adaptation.json and 02-animal-behavior-reflex-action-taxes-dominance-and-leadership-fish-and-bird-migration.json (notes, keyPoints, formulas, specialNotes, examShortTricks, mcs). The pollution/pesticides topic (concept 03) is deliberately left to a separate extra card so one card never crams three topics. Board row from the unit practice bank; no fabricated citation.",
+  "card": {
+    "tag": "Biota and Environment",
+    "title": "Adaptation and behaviour — fusiform fish, reflex arc, migration",
+    "href": "/class-11-notes/biology/chapters/biota-and-environment",
+    "icon": "Dna",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Adaptation is the population's answer to a habitat — structural, physiological and behavioural, never a choice an animal makes. Habitats come in three brackets: aquatic (primary, water-born like fish; secondary, land-born that returned like whales and seals), terrestrial (cursorial running, fossorial digging, arboreal tree-dwelling) and volant (true flight). Behaviour is the fastest branch of adaptation: reflex action, taxes, social dominance and migration."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Reflex arc: Receptor → Sensory neuron → CNS → Motor neuron → Effector  ·  Taxis = directional movement (± toward/away); kinesis = non-directional/random  ·  Aquatic kit: fusiform body + fins + gills (countercurrent exchange) + lateral line + webbed feet  ·  Volant kit: wings + hollow (pneumatic) bones + air sacs (double respiration) + strong pectoral muscles + beak"
+    },
+    {
+      "label": "Conditions",
+      "text": "Countercurrent exchange needs water and blood flowing in opposite directions across the gill lamellae — that counter-flow is what pushes oxygen uptake to roughly 80 % of what the water carries. A reflex needs only the spinal cord (the brain is not consulted, which is why it is fast), taxes need a directed stimulus, and migration is triggered seasonally by photoperiod, temperature and food shortage, then navigated by sun, stars and magnetic cues."
+    },
+    {
+      "label": "Special cases",
+      "text": "Primary versus secondary aquatic is the standard trap: a fish is primary, a whale is secondary (lungs, mammary glands and vestigial pelvis give the land ancestry away). Taxis versus kinesis: taxis is directional, kinesis is random — never swap them. Dominance hierarchies need group-living animals (primates, wolves); the dominant individual gets first access to food, mates and territory. Migration is generically programmed behaviour, not learned: mackerel move upstream in Terai rivers while birds such as the bar-headed goose cross the Himalaya to the Terai."
+    },
+    {
+      "label": "Solved",
+      "text": "Walk the knee-jerk reflex: patellar tendon is struck (stimulus) → stretch receptor fires → sensory neuron carries the impulse to the spinal cord → motor neuron returns along the same pathway → quadriceps contracts (effector) — no brain input anywhere in the loop. Then classify on sight: fish → primary aquatic; whale, seal → secondary; cheetah, horse → cursorial; mole, earthworm → fossorial; monkey, sloth → arboreal; eagle → volant."
+    },
+    {
+      "label": "Limitation",
+      "text": "Adaptation is not an individual doing something clever — Lamarck's 'use and disuse' reading is wrong; a variant is inherited, then selected. The habitat categories also overlap: a frog is aquatic and terrestrial (the reason the class is named Amphibia), and flightless birds lost volant adaptations, so no single feature defines a bracket. 'Countercurrent gives 80 % oxygen uptake' is a textbook approximation for gills, not a fixed constant."
+    },
+    {
+      "label": "Derivation",
+      "text": "Derive every adaptation from one selection pressure. Water resists motion → fusiform body and fins; oxygen is scarce in water → gills and countercurrent exchange; land dries bodies → keratinised waterproof skin and internal fertilisation; air is thin → pneumatic bones, air sacs and huge pectorals; trees reward grip and depth perception → opposable thumbs and forward eyes. Derive behaviour the same way and migration becomes a real-time solution: when food runs out seasonally, a heritable seasonal route that follows the resource survives."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Four strings: 'Aquatic = A-F-G-L (adapted, fusiform, gills, lateral line)'; 'primary = always water, secondary = land → water'; 'taxis = toward/away, kinesis = kicking around randomly'; 'cursorial = run, fossorial = dig, arboreal = tree'. Reflex arc = R-S-C-M-E, spinal, fast. Volant = hollow bones + air sacs + wings + beak. Always finish an adaptation answer with one Nepali example — fish (Terai), snow leopard (cursorial), eagle (volant)."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style (unit practice bank): explain the aquatic adaptations of a fish; differentiate primary from secondary aquatic animals with examples; draw and explain the reflex arc; differentiate taxis from kinesis and name the four taxes; explain dominance and leadership with a social animal; describe fish and bird migration with Nepali examples; explain why adaptation is an evolutionary (population-level) process, not an individual one."
+    }
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "mathematics",
+  "unitSlug": "trigonometry",
+  "unitTitle": "Trigonometry",
+  "unitHours": 12,
+  "syllabusTopics": [
+    "Inverse circular functions",
+    "Trigonometric equations and general values"
+  ],
+  "source": "authored:rail-diagram",
+  "agentNotes": "Diagram card — the figure is authored SVG (frontend/lib/rail-diagrams.ts) drawn in the rectangular .rail-figure box at the row it explains (frontend/AGENTS.md §9). This is an EXTRA card for the unit, so it streams right after the unit's canonical card and before the Class 12 teaser. Figures cross the note-visuals guard in frontend/lib/content/visuals.ts (one svg block, no script/style/defs/external refs); an unusable figure is skipped, never half-drawn. Check: npx tsx frontend/scripts/content/home-rails.ts --check",
+  "card": {
+    "tag": "Trigonometry · Diagram",
+    "title": "The unit circle behind every identity",
+    "href": "/class-11-notes/mathematics",
+    "icon": "Sigma",
+    "statKey": "pyq:mathematics"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "On a circle of radius 1 the point at angle θ has coordinates (cos θ, sin θ), so the horizontal leg is cos θ and the vertical leg is sin θ — every trigonometric identity is that one right triangle rearranged.",
+      "figure": {
+        "svg": "<svg viewBox=\"0 0 640 380\" role=\"img\">\n  <title>The unit circle and the sine and cosine of an angle</title>\n  <text x=\"52\" y=\"52\" font-size=\"15\" fill=\"#334155\">x² + y² = 1</text>\n  <circle cx=\"250\" cy=\"190\" r=\"115\" fill=\"none\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <line x1=\"80\" y1=\"190\" x2=\"450\" y2=\"190\" stroke=\"#64748b\" stroke-width=\"1.5\"/>\n  <polygon points=\"460,190 444,184 444,196\" fill=\"#64748b\"/>\n  <line x1=\"250\" y1=\"340\" x2=\"250\" y2=\"40\" stroke=\"#64748b\" stroke-width=\"1.5\"/>\n  <polygon points=\"250,30 244,46 256,46\" fill=\"#64748b\"/>\n  <text x=\"466\" y=\"186\" font-size=\"14\" fill=\"#475569\">x</text>\n  <text x=\"258\" y=\"40\" font-size=\"14\" fill=\"#475569\">y</text>\n  <line x1=\"250\" y1=\"190\" x2=\"338\" y2=\"116\" stroke=\"#2563eb\" stroke-width=\"2.5\"/>\n  <line x1=\"338\" y1=\"116\" x2=\"338\" y2=\"190\" stroke=\"#16a34a\" stroke-width=\"2.5\"/>\n  <line x1=\"250\" y1=\"190\" x2=\"338\" y2=\"190\" stroke=\"#dc2626\" stroke-width=\"2.5\"/>\n  <path d=\"M 298 190 A 48 48 0 0 0 286.8 159.1\" fill=\"none\" stroke=\"#7c3aed\" stroke-width=\"2\"/>\n  <text x=\"302\" y=\"180\" font-size=\"15\" fill=\"#6d28d9\">θ</text>\n  <text x=\"294\" y=\"212\" font-size=\"14\" text-anchor=\"middle\" fill=\"#b91c1c\">cos θ</text>\n  <text x=\"346\" y=\"158\" font-size=\"14\" fill=\"#15803d\">sin θ</text>\n  <circle cx=\"338\" cy=\"116\" r=\"4.5\" fill=\"#1d4ed8\"/>\n  <text x=\"348\" y=\"110\" font-size=\"14\" fill=\"#1d4ed8\">P (cos θ, sin θ)</text>\n  <text x=\"196\" y=\"212\" font-size=\"13\" fill=\"#475569\">O</text>\n  <text x=\"252\" y=\"150\" font-size=\"13\" fill=\"#475569\">r = 1</text>\n</svg>",
+        "caption": "Unit circle: radius 1, cos θ as the horizontal leg and sin θ as the vertical leg."
+      }
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "x = cos θ, y = sin θ;  x² + y² = 1;  sin²θ + cos²θ = 1;  tan θ = sin θ / cos θ"
+    },
+    {
+      "label": "Conditions",
+      "text": "θ is measured anticlockwise from the positive x-axis and must be in radians in calculus; wherever cos θ = 0 the tangent is undefined."
+    },
+    {
+      "label": "Special cases",
+      "text": "30°, 45° and 60° give the standard ratios, and the maximum of a sin θ + b cos θ is √(a² + b²) — the amplitude circle's radius."
+    },
+    {
+      "label": "Solved",
+      "text": "θ = 40°: cos 40° ≈ 0.766 and sin 40° ≈ 0.643, and indeed 0.766² + 0.643² = 1.000."
+    },
+    {
+      "label": "Limitation",
+      "text": "The circle fixes the sign by quadrant but says nothing about triangles beyond 180°, which is where the CAST rule and the general solution take over."
+    },
+    {
+      "label": "Derivation",
+      "kind": "formula",
+      "text": "Right triangle with hypotenuse 1 ⇒ x = cos θ, y = sin θ;  Pythagoras gives x² + y² = 1 ⇒ sin²θ + cos²θ = 1"
+    },
+    {
+      "label": "Shortcut",
+      "text": "Learn the circle instead of four quadrant rules: read the sign of cos θ off the x-axis and the sign of sin θ off the y-axis."
+    },
+    {
+      "label": "Board question",
+      "text": "Using the unit circle, prove sin²θ + cos²θ = 1 and find every θ in [0, 2π] for which sin θ = 1/√2."
+    }
+  ]
+}

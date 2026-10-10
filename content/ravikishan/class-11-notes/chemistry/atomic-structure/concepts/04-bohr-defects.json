@@ -24,39 +24,198 @@
     "### 9. No probability interpretation, no subshell structure",
     "It cannot describe electron density ('where the electron is most likely'), degeneracy of subshells, hybridisation or directional bonds — all of which need the four quantum numbers of the quantum-mechanical model.",
     "### 10. Rescue and replacement",
-    "Sommerfeld (1916) used elliptical orbits and the azimuthal quantum number for fine structure; de Broglie (1924), Heisenberg (1927) and Schrödinger (1926) produced the quantum-mechanical model, which removes every defect listed above."
+    "Sommerfeld (1916) used elliptical orbits and the azimuthal quantum number for fine structure; de Broglie (1924), Heisenberg (1927) and Schrödinger (1926) produced the quantum-mechanical model, which removes every defect listed above.",
+    "**Fact.** Bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy En = −13.6 eV·Z²/n² (for H, Z=1).",
+    "**Fact.** Rydberg/Balmer series: 1/λ = R(H)(1/n₁² − 1/n₂²). Absorption/emission = ΔE = hν between levels.",
+    "**Fact.** Four quantum numbers: n (shell), l (subshell, 0…n−1), mₗ (orientation, −l…+l), mₛ (spin ±½). Orbitals: s (spherical), p (dumbbell).",
+    "**Fact.** Filling order (Aufbau, n+l rule): 1s 2s 2p 3s 3p 4s 3d…; Hund's rule: maximise unpaired spin before pairing; Pauli: no two electrons share all four quantum numbers.",
+    "### Focus of this tab",
+    "The Bohr–Bury scheme (1921) — the shell-filling rules that Bohr's model alone could not give. It explains how the periodic table was first built from orbits and where it needed repair (a defect of the Bohr framework).",
+    "### The three Bohr–Bury rules",
+    "1. **Capacity rule:** the maximum number of electrons in a shell n is 2n² — K 2, L 8, M 18, N 32.",
+    "2. **Octet rule (valence shells):** the outermost shell cannot hold more than 8 electrons; when it has 8 (noble-gas configuration: He duplet, Ne octet) the shell is stable and a new shell begins.",
+    "3. **Filling order:** shells fill roughly in order of increasing energy; within a shell, electrons enter before a new shell starts — except that 4s begins filling before 3d is complete (the (n + l) order in modern language).",
+    "### What the scheme achieved",
+    "• Explained chemical inertness of the noble gases (closed shells) and the valency pattern of the main groups.",
+    "• Connected atomic number with the periodic law: element 11 (Na) starts the third shell, so period 3 begins — the periodicity of properties follows from shell structure.",
+    "• Predicted the electron configurations up to about Z = 20 reliably (K, Ca).",
+    "### Where the scheme fails (defects of the Bohr framework)",
+    "• No subshell concept: it cannot explain why 4s fills before 3d, the 8/18/32 period lengths beyond period 3, or the s/p/d/f blocks.",
+    "• It ignores electron–electron repulsion and exchange energy, so anomalies like Cr ([Ar]3d⁵4s¹) and Cu ([Ar]3d¹⁰4s¹) are impossible for it.",
+    "• Orbits are still definite paths — the uncertainty principle and orbital shapes are outside the scheme; 'subshell energy order' needs penetration and shielding, i.e. the quantum-mechanical model.",
+    "### Bridge to the modern picture",
+    "The 2n² capacity survives in modern form as Σ2(2l + 1) over the subshells of shell n; the octet rule survives as the special stability of filled s + p valence sets; and the filling order is the Madelung (n + l) rule. The Bohr–Bury scheme is thus the correct skeleton with the wrong (orbital-free) flesh.",
+    "A compressed revision list of Bohr's defects, each with its one-line reason — the fast recall version. The fully argued list is in the main defects note.",
+    "### The eight defects (with one-line reasons)",
+    "1. **One-electron only** — electron–electron repulsion and screening (Z_eff) are ignored; fails for He, Li, all multi-electron atoms.",
+    "2. **No fine structure** — no relativity, no spin; cannot explain doublets (Na D 589.0/589.6 nm; Hα doublet).",
+    "3. **No Zeeman/Stark splitting** — no magnetic quantum number or orbital magnetic moment; cannot explain splitting in magnetic/electric fields.",
+    "4. **No line intensities or selection rules** — gives possible wavelengths, not probabilities of transitions.",
+    "5. **Contradicts the uncertainty principle** — definite r and p simultaneously is impossible (Δx·Δp ≥ h/4π); orbits cannot be real trajectories.",
+    "6. **Ignores wave–particle duality** — treats the electron as a particle in a path; de Broglie/Schrödinger replace orbits by orbitals.",
+    "7. **Ad hoc postulates** — mvr = nh/2π is imposed, not derived (de Broglie's standing waves later justified it).",
+    "8. **No probability, no chemistry** — cannot give electron density, orbital shapes, subshell structure, bonding or molecular spectra; only the crude Bohr–Bury scheme for periodicity.",
+    "### The rescue timeline",
+    "1916 Sommerfeld (elliptical orbits, azimuthal quantum number → fine structure) → 1924 de Broglie (matter waves) → 1925 Pauli/Uhlenbeck–Goudsmit (spin) → 1926 Schrödinger (wave equation, orbitals) → 1927 Heisenberg (uncertainty). Each repair targets one defect above.",
+    "The single postulate mvr = nh/2π — how Bohr used it, why it was 'ad hoc', and how de Broglie's standing waves turned it into a consequence (this bridge is also where the defects discussion begins).",
+    "### Bohr's use of the postulate",
+    "Combined with the classical force condition $\\frac{mv^{2}}{r}=\\frac{kZe^{2}}{r^{2}}$, the quantisation rule fixes the allowed orbits: eliminating v gives $r_{n}=\\frac{n^{2}h^{2}\\varepsilon_{0}}{\\pi m e^{2}Z}$ (numerically 0.529 n²/Z Å) and $v_{n}=\\frac{2\\pi ke^{2}Z}{nh}$. Without the rule, classical mechanics permits a continuum of orbits and no discrete spectrum.",
+    "### Why it was a defect",
+    "The rule was *imposed*, not derived — no classical argument forces the angular momentum to come in packets of ħ. Critics (and Bohr himself) treated it as an arbitrary rule that happened to work. This is defect 'ad hoc postulates' in the limitations list.",
+    "### de Broglie's rescue (1924)",
+    "If the electron is a wave of wavelength λ = h/mv, a stable orbit must be a **standing wave**: the circumference must contain a whole number of wavelengths, nλ = 2πr. Substituting λ gives n(h/mv) = 2πr → mvr = nh/2π — Bohr's condition *derived*, not assumed. For other orbits the wave interferes destructively with itself and the state is forbidden.",
+    "### The remaining problem",
+    "Even with de Broglie's justification, the orbit picture keeps a definite trajectory (definite r and p), which the uncertainty principle forbids — so the standing-wave argument is the *bridge* from Bohr to Schrödinger, not the destination: the wave must be treated in three dimensions, giving orbitals.",
+    "### Check the numbers",
+    "n = 1: mvr = h/2π = 1.055 × 10⁻³⁴ J s. Circumference 2πr₁ = 3.32 × 10⁻¹⁰ m and λ = h/mv = 3.32 × 10⁻¹⁰ m — exactly one wavelength fits the first orbit; n = 2 fits two, and so on. The integer n literally counts the waves around the orbit."
   ],
   "confusion": [
     "❌ Bohr's theory is completely wrong and useless. ✅ It is quantitatively excellent for one-electron species (H, He⁺) and is still used there; the defects appear beyond that scope.",
     "❌ Fine structure arises because of many electrons. ✅ It arises from relativistic effects and electron spin even in a one-electron atom.",
     "❌ The uncertainty principle reflects imperfect instruments. ✅ It is a fundamental limit of nature, not a measurement limitation.",
     "❌ Bohr failed because orbits are not circular. ✅ The fatal objection is that a definite orbit (simultaneous r and p) cannot exist; probability orbitals replace them.",
-    "❌ Zeeman splitting is explained by Bohr's model. ✅ It requires the magnetic quantum number and orbital magnetic moment of the quantum-mechanical model."
+    "❌ Zeeman splitting is explained by Bohr's model. ✅ It requires the magnetic quantum number and orbital magnetic moment of the quantum-mechanical model.",
+    "❌ skip the key fact → ✅ bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy en = −13.6 ev·z²/n² (for h, z=1)..",
+    "❌ The M shell can hold 18 electrons before the N shell starts. ✅ The outermost shell is capped at 8; after 8 electrons in M, filling of N begins.",
+    "❌ The Bohr–Bury scheme is a quantum-mechanical theory. ✅ It is a shell-filling rule set from the Bohr orbit picture; subshells and orbital shapes are absent.",
+    "❌ 2n² applies to the outermost shell. ✅ 2n² is the *capacity*; the octet rule (8) restricts the valence shell's occupancy.",
+    "❌ Bohr's theory failed completely. ✅ It is exact for one-electron species (H, He⁺) — defects appear only beyond that scope.",
+    "❌ Fine structure needs many electrons. ✅ It comes from spin and relativity even in hydrogen.",
+    "❌ Defect 5 means measurements are inaccurate. ✅ It is a fundamental limit of nature, not an instrument problem.",
+    "❌ Bohr derived his quantisation from classical mechanics. ✅ He postulated it; de Broglie justified it in 1924.",
+    "❌ A non-integer number of waves still gives a stable orbit. ✅ Destructive interference destroys the wave; only nλ = 2πr orbits survive.",
+    "❌ Standing waves remove the uncertainty objection. ✅ They justify quantisation but keep the trajectory idea; Schrödinger's orbitals are needed for that."
   ],
   "practice": [
     "State the defects of Bohr's theory, giving the physical reason for each.",
     "Why does Bohr's theory fail for multi-electron atoms? Use screening and electron–electron repulsion.",
     "How does Heisenberg's uncertainty principle destroy the concept of a Bohr orbit?",
     "Distinguish the Zeeman and Stark effects and explain why Bohr's model cannot explain them.",
-    "Describe the modifications by Sommerfeld and Schrödinger that corrected Bohr's model."
+    "Describe the modifications by Sommerfeld and Schrödinger that corrected Bohr's model.",
+    "one worked example for \"Defects of Bohr's theory\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid.",
+    "State the Bohr–Bury scheme with the 2n² and octet rules.",
+    "Write the Bohr–Bury configuration of calcium (Z = 20) and point out where the scheme needs 4s before 3d.",
+    "Why does the scheme fail for chromium and copper?",
+    "Show how the octet rule explains the inertness of argon.",
+    "List the defects of Bohr's theory with a one-line reason for each.",
+    "Which defect does the uncertainty principle expose, and how?",
+    "Match each defect with the later theory that repaired it.",
+    "Why does Bohr's model fail for helium but work for He⁺?",
+    "Show that the standing-wave condition nλ = 2πr leads to Bohr's quantisation of angular momentum.",
+    "Verify numerically that exactly one de Broglie wavelength fits the first Bohr orbit of hydrogen.",
+    "Why was mvr = nh/2π considered a defect of the theory?",
+    "How does the uncertainty principle still limit the standing-wave picture?"
   ],
   "formulas": [
     "$$\\Delta x\\,\\Delta p\\ge\\frac{h}{4\\pi}$$ (forbids definite orbits)",
-    "$$Z_{\\text{eff}}=Z-S$$ (screening, ignored by Bohr's model — cause of failure for multi-electron atoms)"
+    "$$Z_{\\text{eff}}=Z-S$$ (screening, ignored by Bohr's model — cause of failure for multi-electron atoms)",
+    "En(H) = −13.6 Z²/n² eV",
+    "hν = ΔE",
+    "λ = h/(mv) (de Broglie)",
+    "$$\\text{shell capacity}=2n^{2}:\\ K\\ 2,\\ L\\ 8,\\ M\\ 18,\\ N\\ 32;\\qquad \\text{valence shell}\\le 8$$",
+    "$$\\Delta x\\,\\Delta p\\ge\\frac{h}{4\\pi}\\ (\\text{forbids definite orbits});\\qquad Z_{\\text{eff}}=Z-S\\ (\\text{screening, absent from Bohr})$$",
+    "$$n\\lambda=2\\pi r\\ \\text{with }\\lambda=\\frac{h}{mv}\\ \\Rightarrow\\ mvr=\\frac{nh}{2\\pi}$$",
+    "$$\\lambda=\\frac{h}{mv}=\\frac{3.32\\times10^{-10}\\ \\text{m for }n=1\\ (\\text{H})}{}$$"
   ],
   "universalFacts": [
     "Sommerfeld (1916) added elliptical orbits and the azimuthal quantum number to explain fine structure.",
     "Schrödinger's wave equation (1926) replaced orbits with orbitals and remains the working theory of the atom.",
-    "Sodium D lines (589.0 and 589.6 nm) are the standard example of fine structure unexplained by Bohr's model."
+    "Sodium D lines (589.0 and 589.6 nm) are the standard example of fine structure unexplained by Bohr's model.",
+    "Bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy En = −13.6 eV·Z²/n² (for H, Z=1).",
+    "Rydberg/Balmer series: 1/λ = R(H)(1/n₁² − 1/n₂²). Absorption/emission = ΔE = hν between levels.",
+    "Four quantum numbers: n (shell), l (subshell, 0…n−1), mₗ (orientation, −l…+l), mₛ (spin ±½). Orbitals: s (spherical), p (dumbbell).",
+    "The scheme is credited to Bohr (1921) and Charles Bury (1921) independently.",
+    "It correctly predicted the closure of shells at Z = 2, 10, 18 — matching the noble gases known then.",
+    "Its failure beyond Ca (Z = 20) is the historical trigger for introducing subshells.",
+    "Sodium D lines 589.0/589.6 nm — the standard fine-structure exhibit.",
+    "Sommerfeld's elliptical orbits introduced the azimuthal quantum number l in 1916.",
+    "Schrödinger's 1926 equation removed orbits in favour of orbitals and repaired every defect at once.",
+    "One full matter wave fits the n = 1 orbit of hydrogen; n counts the waves.",
+    "de Broglie proposed matter waves in his 1924 thesis; the Davisson–Germer diffraction (1927) confirmed them.",
+    "Bohr's postulate predates de Broglie's derivation by 11 years — the clearest example of a successful ad hoc rule in physics."
   ],
   "examples": [
     "**Problem:** Why is the ground-state radius of He⁺ half that of hydrogen? **Solution:** r₁ = 0.529 n²/Z Å = 0.529/2 = 0.2645 Å — the formula works because He⁺ has one electron, and fails for neutral helium.",
-    "**Problem:** Show a Bohr orbit violates the uncertainty principle for H (n = 1). **Solution:** a fixed r gives Δx ≈ 0 and a definite speed gives Δp ≈ 0, so Δx·Δp → 0 < h/4π — impossible; hence the orbit is not a real trajectory."
+    "**Problem:** Show a Bohr orbit violates the uncertainty principle for H (n = 1). **Solution:** a fixed r gives Δx ≈ 0 and a definite speed gives Δp ≈ 0, so Δx·Δp → 0 < h/4π — impossible; hence the orbit is not a real trajectory.",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges.",
+    "**Problem:** Where does the Bohr–Bury scheme first fail? **Solution:** at potassium (Z = 19): the 2n²/sequence rules put the 19th electron in the M shell, but experiment and the (n + l) rule place it in 4s — the first sign that subshell energies, not shells, control filling.",
+    "**Problem:** Why can Bohr's model not predict the relative brightness of Hα and Hβ? **Solution:** intensities depend on transition probabilities (population of levels and dipole strengths) — concepts absent from the model; quantum mechanics supplies them.",
+    "**Problem:** Compute the electron's de Broglie wavelength in the n = 1 orbit (v = 2.18 × 10⁶ m s⁻¹). **Solution:** λ = h/mv = 6.626×10⁻³⁴/(9.11×10⁻³¹ × 2.18×10⁶) = 3.33 × 10⁻¹⁰ m = 2πr₁ (r₁ = 0.529 Å) — the standing-wave condition verified."
   ],
   "importantNotes": [
     "Answer in this order: one-electron only → fine structure → Zeeman/Stark → intensities → uncertainty principle → wave–particle duality → ad hoc postulates.",
-    "Do not mix 'defects of Bohr's theory' with 'limitations of Rutherford's model' — marks are lost by quoting the wrong list."
+    "Do not mix 'defects of Bohr's theory' with 'limitations of Rutherford's model' — marks are lost by quoting the wrong list.",
+    "Present the scheme as a historical rule set, then contrast it with the (n + l) order and Hund/Pauli rules.",
+    "The octet rule is for the valence shell only — quote both numbers (2n² and 8) when asked.",
+    "Do not confuse this list with Rutherford's limitations — the examiner checks scope.",
+    "Order the answer: one-electron limit → fine structure → Zeeman/Stark → intensities → uncertainty → duality → ad hoc postulates → chemistry.",
+    "This tab is the standard answer to 'justify Bohr's second postulate'.",
+    "State clearly that the justification is de Broglie's, not Bohr's own."
   ],
   "visualType": "bohr-model",
-  "tabGroup": "Atomic-Structure-Learner-Notes"
+  "keyPoints": [
+    "• Defects of Bohr's theory"
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Defects of Bohr's theory\" with one example.",
+    "compare \"Defects of Bohr's theory\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Defects of Bohr's theory\" and verify the answer is plausible."
+  ],
+  "numericals": [
+    "Use  En(H) = −13.6 Z²/n² eV  — pick reasonable values, solve, and check the units.",
+    "Use  hν = ΔE  — pick reasonable values, solve, and check the units.",
+    "Use  λ = h/(mv) (de Broglie)  — pick reasonable values, solve, and check the units."
+  ],
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Defects of Bohr's theory\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "According to the Bohr–Bury scheme, the maximum electrons in the outermost shell is:",
+      "options": [
+        "2n²",
+        "8",
+        "18",
+        "32"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "Bohr's theory cannot explain the splitting of spectral lines in a magnetic field, known as the:",
+      "options": [
+        "Stark effect",
+        "Zeeman effect",
+        "Raman effect",
+        "Photoelectric effect"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The standing-wave condition for a stable orbit is:",
+      "options": [
+        "nλ = πr",
+        "nλ = 2πr",
+        "λ = 2πr/n²",
+        "nλ = 4πr"
+      ],
+      "answer": "B"
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: defects of bohr's theory (within Atomic Structure).",
+    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: bohr model: electron in fixed circular orbits; angular momentum mvr = nh/2π; energy en = −13.6 ev·z²/n² (for h, z=1)."
+  ],
+  "summary": "Defects of Bohr's theory (Atomic Structure, Chemistry, class-11-notes) covers Defects of Bohr's theory. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "filename": "04-bohr-defects.json"
 }

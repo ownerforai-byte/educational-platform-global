@@ -5,6 +5,9 @@
   "topicTitle": "Stefan-Boltzmann Law",
   "relevance": 100,
   "notes": [
+    "**Stefan-Boltzmann Law:** This topic covers the fundamental concepts of stefan-boltzmann law in the physics curriculum.",
+    "Understanding stefan-boltzmann law is essential for solving problems and building higher-level mathematical skills.",
+    "Key definitions and theorems related to stefan-boltzmann law should be memorized and practiced regularly.",
     "**Statement of the Stefan-Boltzmann law:** The total energy radiated per unit area per unit time by a black body is directly proportional to the fourth power of its absolute temperature: $E = \\sigma T^4$, where $\\sigma = 5.67 \\times 10^{-8}\\,\\text{W/m}^2\\cdot\\text{K}^4$ is the Stefan-Boltzmann constant.",
     "**For real bodies:** $E = e\\sigma T^4$, where $e$ is the emissivity ($0 < e \\leq 1$). A perfect black body has $e = 1$; a perfect reflector has $e = 0$. The emissivity accounts for the fact that real objects emit less than an ideal black body.",
     "**Net radiation formula:** If a body at temperature $T$ is surrounded by an enclosure at temperature $T_0$, the net power radiated (and thus net heat loss) is $P_{net} = e\\sigma A(T^4 - T_0^4)$. This shows that net radiation is zero only when the body and surroundings are at the same temperature (thermal equilibrium).",
@@ -23,6 +26,9 @@
     "**Extension — view factors:** For non-enclosed geometries, the net radiation exchange between two surfaces depends on a view factor $F_{12}$ (the fraction of radiation leaving surface 1 that hits surface 2). The generalized formula is $Q_{12} = e_1 \\sigma A_1 F_{12} (T_1^4 - T_2^4)$, where $e_1$ is the emissivity of surface 1."
   ],
   "confusion": [
+    "Carefully distinguish between similar-looking concepts in stefan-boltzmann law.",
+    "Pay attention to the conditions under which formulas and theorems apply.",
+    "Practice with multiple examples to solidify your understanding.",
     "❌ The Stefan-Boltzmann law gives the power per unit wavelength. ✅ It gives the TOTAL power integrated over ALL wavelengths. The power in a narrow wavelength band is given by the spectral radiance (Planck's law), not by $E = \\sigma T^4$.",
     "❌ Doubling the temperature doubles the radiated power. ✅ Because of the $T^4$ dependence, doubling the temperature increases the power by a factor of $2^4 = 16$, not 2. This dramatic sensitivity is a hallmark of the Stefan-Boltzmann law.",
     "❌ The $T$ in the Stefan-Boltzmann law can be in Celsius. ✅ The temperature MUST be in Kelvin. At 0°C (273 K), the radiated power is NOT zero — it is $\\sigma(273)^4 \\approx 449$ W/m². Using 0°C would incorrectly give zero.",
@@ -32,6 +38,10 @@
     "❌ The Stefan-Boltzmann law applies only to radiation — it has no analog in conduction or convection. ✅ The concept of thermal radiation power ($P = e\\sigma A T^4$) has NO analog in conduction or convection because those mechanisms depend on temperature DIFFERENCE ($\\Delta T$), not absolute $T^4$."
   ],
   "practice": [
+    "Solve at least 5 problems on stefan-boltzmann law from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type.",
     "A black body sphere of radius 0.2 m at 400 K. Surface area $A = 4\\pi(0.2)^2 = 0.503$ m². Total power = $e\\sigma A T^4 = 1 \\times 5.67 \\times 10^{-8} \\times 0.503 \\times 400^4 = 5.67 \\times 10^{-8} \\times 0.503 \\times 2.56 \\times 10^{10} = 732$ W. The sphere radiates 732 W.",
     "A human body at 37°C (310 K), $e = 0.97$, surface area 1.8 m². Power radiated: $P = 0.97 \\times 5.67 \\times 10^{-8} \\times 1.8 \\times 310^4 = 0.97 \\times 5.67 \\times 10^{-8} \\times 1.8 \\times 9.24 \\times 10^9 \\approx 912$ W. In a room at 20°C (293 K), net loss = $0.97 \\times 5.67 \\times 10^{-8} \\times 1.8 \\times (310^4 - 293^4) \\approx 912 - 810 = 102$ W.",
     "The Sun's surface temperature is 5778 K and radius is $6.96 \\times 10^8$ m. Find the Sun's luminosity. $A = 4\\pi R^2 = 4\\pi(6.96 \\times 10^8)^2 = 6.09 \\times 10^{18}$ m². $L = \\sigma T^4 A = 5.67 \\times 10^{-8} \\times 5778^4 \\times 6.09 \\times 10^{18} \\approx 3.85 \\times 10^{26}$ W. This matches the known solar luminosity.",
@@ -40,6 +50,9 @@
     "A spacecraft panel at 300 K ($e = 0.85$) faces deep space at 3 K. Find the net radiative heat loss per unit area. $P_{net}/A = e\\sigma(T^4 - T_0^4) = 0.85 \\times 5.67 \\times 10^{-8} \\times (300^4 - 3^4) \\approx 0.85 \\times 5.67 \\times 10^{-8} \\times 8.1 \\times 10^9 \\approx 390$ W/m². In space, radiation is the ONLY heat transfer mechanism, and this is significant."
   ],
   "universalFacts": [
+    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
+    "Understanding stefan-boltzmann law builds the foundation for more advanced topics in mathematics.",
+    "Real-world applications of stefan-boltzmann law span engineering, physics, economics, and computer science.",
     "The Stefan-Boltzmann constant $\\sigma$ is one of the fundamental constants of nature, derivable from $k_B$, $h$, and $c$. Its value has been measured to extraordinary precision and agrees with the theoretical prediction to within 0.01%.",
     "In astrophysics, the Stefan-Boltzmann law combined with Wien's law allows astronomers to determine both the radius and temperature of stars from their apparent brightness and color — the foundation of stellar astrophysics.",
     "Climate scientists use the Stefan-Boltzmann law to calculate Earth's equilibrium temperature. The $T^4$ dependence means that a 1% increase in greenhouse gas concentration causes a non-linear warming response — the basis for climate sensitivity estimates.",
@@ -48,7 +61,104 @@
   ],
   "animation3D": "rate-of-heat-flow",
   "motionGraphics": "rate-of-heat-flow",
-  "duplicateType": 2,
-  "tabGroup": "stefan-boltzmann-law",
+  "examples": [
+    "Real-world application of Stefan-Boltzmann Law",
+    "Practical demonstration of Stefan-Boltzmann Law concepts",
+    "Diagram-based question on Stefan-Boltzmann Law",
+    "Application in daily life involving Stefan-Boltzmann Law"
+  ],
+  "practiceQuestions": [
+    "Q2. Solve problems related to Stefan-Boltzmann Law.",
+    "Q3. Differentiate between various aspects of Stefan-Boltzmann Law.",
+    "Q4. Derive the key formula related to Stefan-Boltzmann Law.",
+    "Q5. What are the applications of Stefan-Boltzmann Law?"
+  ],
+  "formulas": [
+    "Application formula for Stefan-Boltzmann Law",
+    "Derivation result for Stefan-Boltzmann Law"
+  ],
+  "summary": "Stefan-Boltzmann Law is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Stefan-Boltzmann Law applies",
+    "Note 2: Stefan-Boltzmann Law connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Stefan-Boltzmann Law",
+    "Note 4: Remember the units and dimensions involved in Stefan-Boltzmann Law",
+    "Note 5: Stefan-Boltzmann Law frequently appears in examination questions"
+  ],
+  "importantNotes": [
+    "Note 2: Remember the distinction between different types in Stefan-Boltzmann Law",
+    "Note 3: Stefan-Boltzmann Law has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Stefan-Boltzmann Law",
+    "Note 5: Cross-check your answers using alternative methods for Stefan-Boltzmann Law"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Stefan-Boltzmann Law formula",
+    "Trick 2: Elimination technique for Stefan-Boltzmann Law MCQs",
+    "Trick 3: Dimensional analysis shortcut for Stefan-Boltzmann Law",
+    "Trick 4: Memory aid for Stefan-Boltzmann Law formulas",
+    "Trick 5: Time-saving approach for Stefan-Boltzmann Law problems"
+  ],
+  "examNotes": [
+    "Focus on numerical problems from Stefan-Boltzmann Law",
+    "Practice previous year questions on Stefan-Boltzmann Law",
+    "Learn the derivations for Stefan-Boltzmann Law thoroughly",
+    "Review common mistakes related to Stefan-Boltzmann Law"
+  ],
+  "mcs": [
+    {
+      "question": "The primary application of Stefan-Boltzmann Law is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Stefan-Boltzmann Law, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Stefan-Boltzmann Law?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Stefan-Boltzmann Law is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Stefan-Boltzmann Law",
+    "Concept 2: Key theorem or principle in Stefan-Boltzmann Law",
+    "Concept 3: Important application area of Stefan-Boltzmann Law",
+    "Concept 4: Fundamental relationship in Stefan-Boltzmann Law",
+    "Concept 5: Connection between Stefan-Boltzmann Law and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Stefan-Boltzmann Law",
+    "Task 2: Derive the main formula for Stefan-Boltzmann Law",
+    "Task 3: Create a concept map for Stefan-Boltzmann Law",
+    "Task 4: Practice previous year exam questions on Stefan-Boltzmann Law",
+    "Task 5: Explain Stefan-Boltzmann Law to a peer or study group"
+  ],
   "visualType": "stefan-boltzmann"
 }

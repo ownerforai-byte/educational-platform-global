@@ -32,9 +32,7 @@
     "Laser toner transfer: Controlled electrostatic fields attract charged polymer toner particles from the photoconductor drum onto paper, which is subsequently thermally fused."
   ],
   "practiceQuestions": [
-    "Q1. Define electric field intensity. Derive an expression for the electric field at a distance r due to an isolated point charge Q in vacuum.",
     "Q2. State four essential characteristics of electric field lines and explain why two field lines can never intersect each other.",
-    "Q3. Define electric dipole moment. Derive expressions for the electric field intensity due to a short electric dipole at (a) an axial point, and (b) an equatorial point.",
     "Q4. An electron is released from rest in a uniform horizontal electric field of intensity 2.0 × 10⁴ N/C. Calculate its acceleration and the time taken to travel a distance of 1.5 cm."
   ],
   "formulas": [
@@ -123,7 +121,5 @@
     "Sketch electric field lines for unlike charges, like charges, and uniform fields.",
     "Calculate the net electric field and neutral point for two collinear point charges."
   ],
-  "duplicateType": 2,
-  "visualType": "electric-field",
-  "tabGroup": "electric-field-due-to-point-charges-and-field-lines"
+  "visualType": "electric-field"
 }

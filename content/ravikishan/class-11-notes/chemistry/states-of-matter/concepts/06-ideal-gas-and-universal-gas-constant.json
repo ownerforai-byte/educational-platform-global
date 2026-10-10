@@ -23,35 +23,47 @@
     "• PV = nRT is exact only for an ideal gas; real gases deviate measurably, and grossly at high pressure or near the critical temperature.",
     "• Both central assumptions are unattainable — molecules always have finite size and always attract one another (otherwise no gas could be liquefied).",
     "• It cannot describe condensation, critical phenomena or the liquid state, and fails for associating (H-bonded) or highly polar gases even at ordinary pressure.",
-    "• R is constant only for an ideal gas; for a real gas PV/T varies with pressure, so the van der Waals equation or Z = PV/nRT corrections are needed."
+    "• R is constant only for an ideal gas; for a real gas PV/T varies with pressure, so the van der Waals equation or Z = PV/nRT corrections are needed.",
+    "**Fact.** Ideal gas equation PV = nRT; from kinetic theory P = ⅓ (Nm/m)⟨c²⟩, so PV = ⅓N m⟨c²⟩.",
+    "**Fact.** r.m.s. speed c_rms = √(3RT/M); mean kinetic energy per mole = 3RT/2, per molecule = 3k_BT/2.",
+    "**Fact.** Real gases deviate near condensation; Van der Waals: (P + a n²/V²)(V − nb) = nRT."
   ],
   "confusion": [
     "❌ An ideal gas is merely a light gas such as hydrogen. ✅ Ideality is about behaviour (no forces, no molecular volume), not mass; hydrogen merely approaches it best.",
     "❌ R changes from gas to gas. ✅ R is universal; only the real-gas constants a and b differ between gases.",
     "❌ R and k are the same constant. ✅ k = R/N_A is the per-molecule (Boltzmann) constant.",
-    "❌ PV = nRT works at 100 atm without error. ✅ Deviation becomes severe (Z ≠ 1) and the van der Waals equation is required."
+    "❌ PV = nRT works at 100 atm without error. ✅ Deviation becomes severe (Z ≠ 1) and the van der Waals equation is required.",
+    "❌ skip the key fact → ✅ ideal gas equation pv = nrt; from kinetic theory p = ⅓ (nm/m)⟨c²⟩, so pv = ⅓n m⟨c²⟩.."
   ],
   "practice": [
-    "Define an ideal gas and derive the ideal gas equation from the gas laws.",
     "Explain why R is called universal and give its value in three sets of units.",
     "Calculate the molar mass of a gas of density 1.25 g L⁻¹ at 27 °C and 1 atm.",
     "Find the volume occupied by 8 g of oxygen at 27 °C and 750 mm Hg.",
     "Discuss the significance of R in the kinetic theory and in thermodynamics.",
-    "State the limitations of the ideal gas equation."
+    "State the limitations of the ideal gas equation.",
+    "one worked example for \"Ideal gas and ideal gas equation; universal gas constant …\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "formulas": [
     "$$PV=nRT,\\qquad PV=\\frac{m}{M}RT,\\qquad PM=dRT,\\qquad P=CRT$$",
     "$$R=8.314\\ \\text{J K}^{-1}\\text{mol}^{-1}=0.0821\\ \\text{L atm K}^{-1}\\text{mol}^{-1}=2\\ \\text{cal K}^{-1}\\text{mol}^{-1}$$",
-    "$$k=\\frac{R}{N_{A}}=1.38\\times10^{-23}\\ \\text{J K}^{-1},\\quad KE_{\\text{molar}}=\\frac{3}{2}RT,\\quad C_{p}-C_{v}=R$$"
+    "$$k=\\frac{R}{N_{A}}=1.38\\times10^{-23}\\ \\text{J K}^{-1},\\quad KE_{\\text{molar}}=\\frac{3}{2}RT,\\quad C_{p}-C_{v}=R$$",
+    "PV = nRT",
+    "c_rms = √(3RT/M)",
+    "KE_mole = 3RT/2"
   ],
   "universalFacts": [
     "1 mol of ideal gas occupies 22.4 L at STP (273 K, 1 atm) and 22.7 L at 273 K, 1 bar.",
     "R = 8.314 J K⁻¹ mol⁻¹ = 0.0821 L atm K⁻¹ mol⁻¹ = 1.987 cal K⁻¹ mol⁻¹.",
-    "Cp − Cv = R shows the molar heat capacity at constant pressure always exceeds that at constant volume."
+    "Cp − Cv = R shows the molar heat capacity at constant pressure always exceeds that at constant volume.",
+    "Ideal gas equation PV = nRT; from kinetic theory P = ⅓ (Nm/m)⟨c²⟩, so PV = ⅓N m⟨c²⟩.",
+    "r.m.s. speed c_rms = √(3RT/M); mean kinetic energy per mole = 3RT/2, per molecule = 3k_BT/2.",
+    "Real gases deviate near condensation; Van der Waals: (P + a n²/V²)(V − nb) = nRT."
   ],
   "examples": [
     "**Problem:** Molar mass of a gas with d = 1.25 g L⁻¹ at 27 °C and 1 atm. **Solution:** M = dRT/P = (1.25 × 0.0821 × 300)/1 ≈ 30.8 g mol⁻¹.",
-    "**Problem:** Volume of 8 g O₂ at 27 °C and 750 mm Hg. **Solution:** n = 0.25 mol; V = nRT/P = (0.25 × 0.0821 × 300)/(750/760) ≈ 6.24 L."
+    "**Problem:** Volume of 8 g O₂ at 27 °C and 750 mm Hg. **Solution:** n = 0.25 mol; V = nRT/P = (0.25 × 0.0821 × 300)/(750/760) ≈ 6.24 L.",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "importantNotes": [
     "Convert T to kelvin and match R to the units used (8.314 with Pa and m³; 0.0821 with atm and L).",
@@ -59,5 +71,51 @@
     "Quote R's physical significance (work per mole per kelvin), not only its numerical value."
   ],
   "visualType": "ideal-gas",
-  "tabGroup": "States-Of-Matter-Learner-Notes"
+  "keyPoints": [
+    "• Ideal gas",
+    "• Ideal gas equation",
+    "• Universal gas constant",
+    "• Its significance"
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Ideal gas and ideal gas equation; universal gas constant …\" with one example.",
+    "compare \"Ideal gas\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Ideal gas and ideal gas equation; universal gas constant …\" and verify the answer is plausible."
+  ],
+  "numericals": [
+    "Use  PV = nRT  — pick reasonable values, solve, and check the units.",
+    "Use  c_rms = √(3RT/M)  — pick reasonable values, solve, and check the units.",
+    "Use  KE_mole = 3RT/2  — pick reasonable values, solve, and check the units."
+  ],
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Ideal gas and ideal gas equation; universal gas constant …\"?",
+      "options": [
+        "Ideal gas",
+        "Ideal gas equation",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "Ideal gas",
+      "explanation": "Ideal gas is listed among the official sub-ideas of Ideal gas and ideal gas equation; universal gas constant …; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Ideal gas and ideal gas equation; universal gas constant …\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: ideal gas, ideal gas equation, universal gas constant, its significance (within States of Matter).",
+    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: ideal gas equation pv = nrt; from kinetic theory p = ⅓ (nm/m)⟨c²⟩, so pv = ⅓n m⟨c²⟩."
+  ],
+  "summary": "Ideal gas and ideal gas equation; universal gas constant … (States of Matter, Chemistry, class-11-notes) covers Ideal gas, ideal gas equation, universal gas constant. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
 }

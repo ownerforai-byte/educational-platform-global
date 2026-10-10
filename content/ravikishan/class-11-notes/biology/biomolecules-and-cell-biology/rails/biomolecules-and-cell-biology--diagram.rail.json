@@ -1,0 +1,67 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "biomolecules-and-cell-biology",
+  "unitTitle": "Biomolecules and Cell Biology",
+  "unitHours": 15,
+  "syllabusTopics": [
+    "Biomolecules: Introduction and functions of carbohydrates, proteins, lipids, nucleic acids, minerals, enzymes and water",
+    "Cell: Introduction of cell, concepts of prokaryotic and eukaryotic cells",
+    "Detail structure of eukaryotic cells: cell wall, cell membrane, mitochondria, plastids, endoplasmic reticulum, golgi bodies, lysosomes, ribosomes, nucleus, chromosomes, cilia, flagella and cell inclusions",
+    "Cell division: Concept of cell cycle, types of cell division (amitosis, mitosis and meiosis) and significances"
+  ],
+  "source": "authored:rail-diagram",
+  "agentNotes": "Diagram card — the figure is authored SVG (frontend/lib/rail-diagrams.ts) drawn in the rectangular .rail-figure box at the row it explains (frontend/AGENTS.md §9). This is an EXTRA card for the unit, so it streams right after the unit's canonical card and before the Class 12 teaser. Figures cross the note-visuals guard in frontend/lib/content/visuals.ts (one svg block, no script/style/defs/external refs); an unusable figure is skipped, never half-drawn. Check: npx tsx frontend/scripts/content/home-rails.ts --check",
+  "card": {
+    "tag": "Cell Biology · Diagram",
+    "title": "The labelled animal cell examiners expect",
+    "href": "/class-11-notes/biology",
+    "icon": "PenLine",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Each organelle is a compartment that lets incompatible chemistry run at the same time, and a labelled drawing is how the paper asks you to prove you know them.",
+      "figure": {
+        "svg": "<svg viewBox=\"0 0 640 400\" role=\"img\">\n  <title>Labelled animal cell</title>\n  <ellipse cx=\"250\" cy=\"200\" rx=\"172\" ry=\"132\" fill=\"#eef7f1\"/>\n  <ellipse cx=\"250\" cy=\"200\" rx=\"178\" ry=\"138\" fill=\"none\" stroke=\"#94a3b8\" stroke-width=\"1.5\" stroke-dasharray=\"7 5\"/>\n  <ellipse cx=\"250\" cy=\"200\" rx=\"185\" ry=\"145\" fill=\"none\" stroke=\"#0f172a\" stroke-width=\"2.5\"/>\n  <circle cx=\"215\" cy=\"185\" r=\"52\" fill=\"#dbeafe\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <circle cx=\"232\" cy=\"196\" r=\"17\" fill=\"#93c5fd\" stroke=\"#1e3a8a\" stroke-width=\"1.5\"/>\n  <path d=\"M 272 140 q 20 -14 40 0 q 20 14 40 0\" fill=\"none\" stroke=\"#7c3aed\" stroke-width=\"2.5\"/>\n  <circle cx=\"286\" cy=\"136\" r=\"2.6\" fill=\"#7c3aed\"/>\n  <circle cx=\"316\" cy=\"132\" r=\"2.6\" fill=\"#7c3aed\"/>\n  <circle cx=\"346\" cy=\"136\" r=\"2.6\" fill=\"#7c3aed\"/>\n  <ellipse cx=\"335\" cy=\"258\" rx=\"44\" ry=\"21\" fill=\"#fee2e2\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <polyline points=\"316,272 328,256 340,272 352,256 364,272\" fill=\"none\" stroke=\"#b91c1c\" stroke-width=\"1.8\"/>\n  <path d=\"M 300 300 q 34 -20 68 0\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2.5\"/>\n  <path d=\"M 306 313 q 28 -18 56 0\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2.5\"/>\n  <path d=\"M 312 326 q 22 -16 44 0\" fill=\"none\" stroke=\"#0f766e\" stroke-width=\"2.5\"/>\n  <line x1=\"436\" y1=\"66\" x2=\"402\" y2=\"86\" stroke=\"#94a3b8\" stroke-width=\"1.2\"/>\n  <line x1=\"436\" y1=\"101\" x2=\"262\" y2=\"150\" stroke=\"#94a3b8\" stroke-width=\"1.2\"/>\n  <line x1=\"436\" y1=\"136\" x2=\"243\" y2=\"188\" stroke=\"#94a3b8\" stroke-width=\"1.2\"/>\n  <line x1=\"436\" y1=\"171\" x2=\"330\" y2=\"138\" stroke=\"#94a3b8\" stroke-width=\"1.2\"/>\n  <line x1=\"436\" y1=\"230\" x2=\"370\" y2=\"250\" stroke=\"#94a3b8\" stroke-width=\"1.2\"/>\n  <line x1=\"436\" y1=\"290\" x2=\"350\" y2=\"300\" stroke=\"#94a3b8\" stroke-width=\"1.2\"/>\n  <line x1=\"436\" y1=\"336\" x2=\"190\" y2=\"300\" stroke=\"#94a3b8\" stroke-width=\"1.2\"/>\n  <text x=\"442\" y=\"70\" font-size=\"13\" fill=\"#0f172a\">Cell membrane</text>\n  <text x=\"442\" y=\"105\" font-size=\"13\" fill=\"#0f172a\">Nucleus</text>\n  <text x=\"442\" y=\"140\" font-size=\"13\" fill=\"#0f172a\">Nucleolus</text>\n  <text x=\"442\" y=\"175\" font-size=\"13\" fill=\"#0f172a\">Rough ER + ribosomes</text>\n  <text x=\"442\" y=\"234\" font-size=\"13\" fill=\"#0f172a\">Mitochondrion</text>\n  <text x=\"442\" y=\"294\" font-size=\"13\" fill=\"#0f172a\">Golgi body</text>\n  <text x=\"442\" y=\"340\" font-size=\"13\" fill=\"#0f172a\">Cytoplasm</text>\n</svg>",
+        "caption": "Labelled animal cell with membrane, nucleus, nucleolus, rough ER, mitochondrion, Golgi body and cytoplasm."
+      }
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "RBC 7.5 μm;  membrane 7.5 nm trilaminar;  mitochondrion 1–10 μm;  ribosome 15–20 nm;  light-microscope limit 0.2 μm"
+    },
+    {
+      "label": "Conditions",
+      "text": "Draw only what that magnification can resolve — a light microscope cannot show ribosomes or the bilayer, so a drawing must not pretend to."
+    },
+    {
+      "label": "Special cases",
+      "text": "A mature human RBC has neither nucleus nor mitochondria; a plant cell adds a cell wall, a large central vacuole and plastids."
+    },
+    {
+      "label": "Solved",
+      "text": "Full-mark answer: name the part, then give its function — membrane: the selective barrier; nucleus: stores the DNA and controls the cell's activity; mitochondrion: aerobic respiration releasing ATP; ribosome: protein synthesis; Golgi body: packaging and secretion of proteins."
+    },
+    {
+      "label": "Limitation",
+      "text": "A diagram alone earns nothing: every label needs its function on its own line, and leader lines must not cross each other."
+    },
+    {
+      "label": "Derivation",
+      "text": "The organelle model is testable: mitochondria carry their own DNA and 70S ribosomes behind a double membrane, the signature of an engulfed bacterium (endosymbiotic theory)."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Draw the outline last and the organelles first, then give every label one function on a single line — tick marks follow labels and functions separately."
+    },
+    {
+      "label": "Board question",
+      "text": "Draw a fully labelled diagram of an animal cell and give the function of any five labelled parts."
+    }
+  ]
+}

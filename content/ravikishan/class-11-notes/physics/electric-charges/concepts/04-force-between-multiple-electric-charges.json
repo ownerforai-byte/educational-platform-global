@@ -7,11 +7,11 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Force between multiple electric charges — Electric Charges, Physics (class-11-notes).",
-    "**Tested.** define it · list: force between multiple electric charges · one worked example · one misconception each.",
-    "**Fact.** Coulomb: F = (1/4πε₀)·q₁q₂/r². Electric field E = F/q = kq/r²; for a line/dipole use superposition.",
-    "**Fact.** Gauss's law: ∮E·dA = Q_enc/ε₀ — powerful for spherical/cylindrical/planar symmetry.",
-    "**Fact.** Potential V = kq/r; ΔV = W/q; U of a charge in potential = qV. Equipotential surfaces are ⟂ to field lines."
+    "**Superposition principle.** The force on any one charge due to several others equals the vector sum of the individual pairwise forces, each calculated as if the rest were absent.",
+    "**Method.** Draw each Coulomb force on the chosen charge, resolve into components along convenient axes, sum the components, then combine for the net force.",
+    "**Collinear charges.** For three charges on a line the middle charge feels opposing forces; the net force points toward the weaker side and vanishes only in a carefully balanced position.",
+    "**Link to electric field.** The net force can be written F = qE, where E is the total field produced at the charge's position by all the other charges.",
+    "**System energy.** The potential energy of a charge system is the sum of the pairwise terms kqᵢqⱼ/rᵢⱼ — counted once per pair, never twice."
   ],
   "confusion": [
     "❌ treat \"Force between multiple electric charges\" as one blob → ✅ split into: force between multiple electric charges.",
@@ -67,17 +67,6 @@
       ],
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    },
-    {
-      "question": "Which of these is a governing / standard formula associated with \"Force between multiple electric charges\"?",
-      "options": [
-        "F = k q₁q₂/r²",
-        "x + y = z (placeholder)",
-        "No formula applies",
-        "E = mc² only"
-      ],
-      "answer": "A",
-      "explanation": "F = k q₁q₂/r² is the standard form used for this topic."
     }
   ]
 }

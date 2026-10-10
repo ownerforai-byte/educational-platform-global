@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Physics — Magnetism And Magnetic Effect — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "magnetism-and-magnetic-effect",
+  "topicSlug": "magnetism-and-magnetic-effect-pyq-2024",
+  "topicTitle": "NEB Class 12 Physics — Magnetism And Magnetic Effect — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Derive the expression for the magnetic field at a point on the axis of a current-carrying circular coil using Biot–Savart law.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "For a coil of radius a carrying current I, each element dl is perpendicular to the position vector from the element to an axial point distance x away, and perpendicular components cancel by symmetry.\n\ndB = (μ₀I dl)/(4π(a²+x²)); the axial component is dB·cosθ with cosθ = a/√(a²+x²).\n\nIntegrating over 2πa: **B = μ₀Ia²/(2(a²+x²)^{3/2})**. At the centre (x = 0): B = μ₀I/2a.",
+      "knowledgeNote": "Perpendicular components cancel because opposite elements contribute equal and opposite sideways fields — always state this symmetry argument for full marks."
+    },
+    {
+      "question": "What is a cyclotron? Derive the expression for the cyclotron frequency and explain why it cannot accelerate electrons to very high energies.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "A cyclotron accelerates charged particles in a magnetic field between two dees with an alternating potential.\n\nThe magnetic force supplies the centripetal force: qvB = mv²/r → r = mv/qB. Period T = 2πr/v = 2πm/qB, so **f = qB/2πm**, independent of speed.\n\nAs the particle speeds up, relativistic mass increases, so the revolution frequency falls out of step with the oscillator and resonance is lost — hence the energy limit.",
+      "knowledgeNote": "The cyclotron frequency is mass-dependent, so the constant-frequency design only works while m ≈ m₀."
+    },
+    {
+      "question": "A galvanometer of resistance 100 Ω gives a full-scale deflection for a current of 1 mA. How will you convert it into (a) an ammeter of range 1 A and (b) a voltmeter of range 10 V?",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**(a) Ammeter:** shunt S in parallel — S = I_gG/(I − I_g) = (10⁻³ × 100)/(1 − 10⁻³) = **0.1 Ω** (approximately), i.e. a very small shunt.\n\n**(b) Voltmeter:** series resistance R = V/I_g − G = 10/10⁻³ − 100 = 10 000 − 100 = **9900 Ω**.",
+      "knowledgeNote": "An ideal ammeter has zero resistance (shunt in parallel); an ideal voltmeter has infinite resistance (high series resistance)."
+    }
+  ]
+}

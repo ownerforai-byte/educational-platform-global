@@ -17,15 +17,12 @@
     "Conflating continuity with differentiability — $|x|$ at 0 is continuous but not differentiable.",
     "Using a one-sided limit in place of the two-sided one at a join point."
   ],
-  "practice": [],
   "universalFacts": [
     "The intermediate value theorem — a continuous function on $[a,b]$ takes every value between $f(a)$ and $f(b)$ — is why a graph with a hole can skip a root but a graph with a jump cannot.",
     "Physical laws are modelled as continuous because the world is, to measurement precision, free of instantaneous jumps; discontinuities in models are usually deliberate idealisations."
   ],
   "animation3D": "calculus",
   "motionGraphics": "calculus",
-  "examples": [],
-  "practiceQuestions": [],
   "formulas": [
     "Continuity at $a$: $f(a)$ defined, $\\lim_{x\\to a}f(x)=L$, and $f(a)=L$",
     "One-sided test: $\\lim_{x\\to a^-}f(x)=f(a)=\\lim_{x\\to a^+}f(x)$",
@@ -102,7 +99,6 @@
   "importantTasks": [
     "Work through the authored practice problems and re-derive each key formula from the definition."
   ],
-  "duplicateType": 1,
   "visualType": "continuity",
   "numericals": [
     "**1. [Idea: a parameter must make the limit finite, and the point must then be defined]** Find all $a$ for which $f(x) = \\dfrac{x^2+ax+3}{x-1}$ has a removable discontinuity at $x = 1$, and give the repaired value.\\newline\\newline**Solution:** For the limit to be finite the numerator must also vanish at 1:$^{\\bullet}$ $1 + a + 3 = 0 \\Rightarrow a = -4$.\\newline\\newline**Check:** with $a=-4$, $x^2-4x+3 = (x-1)(x-3)$, so $f(x)=x-3$ for $x\\ne1$, giving $\\lim_{x\\to1}f = -2$.\\newline\\newline$f(1)$ is still undefined, but the break is removable: assign $f(1)=-2$.\\newline\\newline**Answer:** $a=-4$, repaired value $f(1)=-2$. **Trap:** cancelling the denominator makes the limit finite, but the function is not continuous until the point itself is defined.",
@@ -110,5 +106,8 @@
     "**3. [Idea: exhibit both one-sided limits rather than assert them]** Show that $f(x)=\\dfrac{2^{1/x}-1}{2^{-1/x}+1}$ has no limit as $x \\to 0$, and classify the discontinuity.\\newline\\newline**Solution:** Put $u = 1/x$.$^{\\bullet}$ **$x\\to0^+$: $u\\to+\\infty$**, so $2^u \\to \\infty$. Divide numerator and denominator by $2^u$:$\\newline\\lim_{x\\to0^+}\\dfrac{2^u-1}{2^{-u}+1} = \\lim\\dfrac{1-2^{-u}}{2^{-u}+1} = \\dfrac{1-0}{0+1} = 1$.$^{\\bullet}$ **$x\\to0^-$: $u\\to-\\infty$**, so $2^u \\to 0$. Numerator $\\to -1$, denominator $\\to 2$, giving $-\\frac12$.\\newline\\newlineThe one-sided limits are $1$ and $-\\frac12$ — both finite but UNEQUAL.\\newline\\newline**Answer:** no limit; a **JUMP** discontinuity of size $\\left|1+\\frac12\\right| = \\frac32$.",
     "**4. [Idea: the derivative test resolves $0/0$ at any point where the numerator also vanishes]** Classify the discontinuity of $g(x)=\\dfrac{\\sin(\\pi x)}{x(x-1)}$ at $x=0$ and at $x=1$.\\newline\\newline**Solution:** The form is $\\frac00$ at both, so apply the ratio-of-derivatives test.$^{\\bullet}$ **At 0:** $\\lim_{x\\to0}\\dfrac{\\pi\\cos(\\pi x)}{2x-1} = \\dfrac{\\pi}{1} = \\pi$. Finite ⇒ **removable**, $g(0)=\\pi$.$^{\\bullet}$ **At 1:** $\\lim_{x\\to1}\\dfrac{\\pi\\cos(\\pi x)}{2x-1} = \\dfrac{-\\pi}{1} = -\\pi$. Finite ⇒ **removable**, $g(1)=-\\pi$.\\newline\\newline**Answer:** removable at both, repaired values $\\pi$ and $-\\pi$. **Note:** the test succeeds at both points only because $\\sin(\\pi x)$ vanishes at BOTH $0$ and $1$; had it vanished at 0 but not 1, $x=1$ would have been an infinite discontinuity.",
     "**5. [Idea: compose the two limit statements, and notice where the hypothesis is used]** $f$ is continuous on $[a,b]$, $g$ is continuous on $[c,d]$, and $f([a,b])\\subseteq[c,d]$. Prove $g\\circ f$ is continuous on $[a,b]$.\\newline\\newline**Solution:** Fix $x_0\\in[a,b]$.$^{\\bullet}$ $f$ continuous at $x_0$: $\\lim_{x\\to x_0}f(x)=f(x_0)$.$^{\\bullet}$ $f(x_0)\\in[c,d]$ and $g$ continuous there: $\\lim_{u\\to f(x_0)}g(u)=g(f(x_0))$.\\newline\\newline$^{\\bullet}$ As $x\\to x_0$, $f(x)\\to f(x_0)$, so substituting $u=f(x)$ in the second statement gives$\\newline\\lim_{x\\to x_0}g(f(x)) = g(f(x_0))$.\\newline\\newlineThat is precisely continuity of $g\\circ f$ at $x_0$, and $x_0$ was arbitrary.\\newline\\newline**Answer:** $g\\circ f$ continuous on $[a,b]$. **Where the hypothesis matters:** the inclusion $f([a,b])\\subseteq[c,d]$ ensures the second limit is taken where $g$ is actually continuous — otherwise $f(x_0)$ could land on a hole in $g$."
-  ]
+  ],
+  "practice": [],
+  "examples": [],
+  "practiceQuestions": []
 }

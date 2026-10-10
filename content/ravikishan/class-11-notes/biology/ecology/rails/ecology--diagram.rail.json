@@ -1,0 +1,70 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "ecology",
+  "unitTitle": "Ecology",
+  "unitHours": 11,
+  "syllabusTopics": [
+    "Ecosystem ecology: Concept of ecology, biotic and abiotic factors, species interactions",
+    "Concept of ecosystem, structural and functional aspects of pond and forest ecosystem",
+    "Food chain, food web, trophic level, ecological pyramids, productivity",
+    "Biogeochemical cycles: carbon and nitrogen cycles; concept of succession",
+    "Ecological adaptation: Concept of adaptation, hydrophytes and xerophytes",
+    "Ecological imbalances: Greenhouse effects and climate change, depletion of ozone layer, acid rain and biological invasion"
+  ],
+  "source": "authored:rail-diagram",
+  "agentNotes": "Diagram card — the figure is authored SVG (frontend/lib/rail-diagrams.ts) drawn in the rectangular .rail-figure box at the row it explains (frontend/AGENTS.md §9). This is an EXTRA card for the unit, so it streams right after the unit's canonical card and before the Class 12 teaser. Figures cross the note-visuals guard in frontend/lib/content/visuals.ts (one svg block, no script/style/defs/external refs); an unusable figure is skipped, never half-drawn. Check: npx tsx frontend/scripts/content/home-rails.ts --check",
+  "card": {
+    "tag": "Ecology · Diagram",
+    "title": "Energy flow and the ten per cent law as a pyramid",
+    "href": "/class-11-notes/biology",
+    "icon": "GitBranch",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Green plants fix the Sun's energy and hand it up the food chain, but most of it is spent and lost as heat at every step — which is why a food chain can never be long.",
+      "figure": {
+        "svg": "<svg viewBox=\"0 0 640 320\" role=\"img\">\n  <title>Upright energy pyramid and the ten percent law</title>\n  <polygon points=\"300,60 340,60 363,108 277,108\" fill=\"#dcfce7\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <polygon points=\"277,108 363,108 386,156 254,156\" fill=\"#bbf7d0\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <polygon points=\"254,156 386,156 409,204 231,204\" fill=\"#86efac\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <polygon points=\"231,204 409,204 432,252 208,252\" fill=\"#4ade80\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <line x1=\"176\" y1=\"84\" x2=\"296\" y2=\"84\" stroke=\"#94a3b8\" stroke-width=\"1.2\"/>\n  <line x1=\"176\" y1=\"132\" x2=\"274\" y2=\"132\" stroke=\"#94a3b8\" stroke-width=\"1.2\"/>\n  <line x1=\"176\" y1=\"180\" x2=\"251\" y2=\"180\" stroke=\"#94a3b8\" stroke-width=\"1.2\"/>\n  <line x1=\"176\" y1=\"228\" x2=\"228\" y2=\"228\" stroke=\"#94a3b8\" stroke-width=\"1.2\"/>\n  <text x=\"170\" y=\"88\" font-size=\"12\" text-anchor=\"end\" fill=\"#0f172a\">Tertiary consumers</text>\n  <text x=\"170\" y=\"136\" font-size=\"12\" text-anchor=\"end\" fill=\"#0f172a\">Secondary consumers</text>\n  <text x=\"170\" y=\"184\" font-size=\"12\" text-anchor=\"end\" fill=\"#0f172a\">Primary consumers</text>\n  <text x=\"170\" y=\"232\" font-size=\"12\" text-anchor=\"end\" fill=\"#0f172a\">Producers</text>\n  <text x=\"320\" y=\"92\" font-size=\"12\" text-anchor=\"middle\" fill=\"#14532d\">10 kJ</text>\n  <text x=\"320\" y=\"140\" font-size=\"12\" text-anchor=\"middle\" fill=\"#14532d\">100 kJ</text>\n  <text x=\"320\" y=\"188\" font-size=\"12\" text-anchor=\"middle\" fill=\"#14532d\">1 000 kJ</text>\n  <text x=\"320\" y=\"236\" font-size=\"12\" text-anchor=\"middle\" fill=\"#14532d\">10 000 kJ</text>\n  <line x1=\"500\" y1=\"252\" x2=\"500\" y2=\"84\" stroke=\"#0284c7\" stroke-width=\"3\"/>\n  <polygon points=\"500,68 491,90 509,90\" fill=\"#0284c7\"/>\n  <text x=\"520\" y=\"168\" font-size=\"13\" text-anchor=\"middle\" fill=\"#0369a1\" transform=\"rotate(-90 520 168)\">energy flow</text>\n</svg>",
+        "caption": "Upright energy pyramid: each trophic level holds about a tenth of the energy below it."
+      }
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Only about 10 % of the energy at one trophic level reaches the next;  GPP − R = NPP;  Eₙ = E₁(0.1)ⁿ⁻¹"
+    },
+    {
+      "label": "Conditions",
+      "text": "Lindeman's ten per cent law is an average for energy transfer between trophic levels, and the energy pyramid it draws is always upright."
+    },
+    {
+      "label": "Special cases",
+      "text": "The pyramid of biomass inverts in a pond where phytoplankton turn over fast, and the pyramid of number inverts under one tree hosting thousands of insects."
+    },
+    {
+      "label": "Solved",
+      "text": "Producers 10 000 kJ → primary consumers 1 000 kJ → secondary consumers 100 kJ → tertiary consumers 10 kJ, nine tenths lost at each step."
+    },
+    {
+      "label": "Limitation",
+      "text": "Ten per cent is only an average (a transfer can reach twenty) and it applies to energy alone — nutrient cycles are closed loops while energy flow is one-way."
+    },
+    {
+      "label": "Derivation",
+      "kind": "formula",
+      "text": "NPP = GPP − R;  energy to the next level = NPP × 0.1, applied once per level ⇒ Eₙ = E₁(0.1)ⁿ⁻¹"
+    },
+    {
+      "label": "Shortcut",
+      "text": "Draw the energy pyramid upright before writing anything; one line of Eₙ = E₁(0.1)ⁿ⁻¹ carries the method mark by itself."
+    },
+    {
+      "label": "Board question",
+      "text": "Explain Lindeman's ten per cent law with a labelled energy pyramid and calculate the energy available at the third trophic level."
+    }
+  ]
+}

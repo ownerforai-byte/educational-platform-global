@@ -1,0 +1,174 @@
+{
+  "title": "Principles of biotechnology",
+  "unitSlug": "biotechnology-principles",
+  "topicSlug": "principles-of-biotechnology",
+  "topicTitle": "Principles of biotechnology",
+  "relevance": 100,
+  "notes": [
+    "### 1. What is Biotechnology?",
+    "Biotechnology is the use of living organisms or their products to make or modify products for practical use. Modern biotechnology involves genetic engineering.",
+    "### 2. Core Techniques",
+    "- **Recombinant DNA (rDNA) Technology**: Combining DNA from different sources",
+    "- **PCR (Polymerase Chain Reaction)**: Amplifying DNA segments",
+    "- **Gel Electrophoresis**: Separating DNA fragments by size",
+    "- **Gene Cloning**: Making copies of genes",
+    "### 3. Tools of Recombinant DNA Technology",
+    "- **Restriction Enzymes (Molecular Scissors)**: Cut DNA at specific sequences (palindromes)",
+    "- **Examples**: EcoRI (cuts at GAATTC), HindIII (cuts at AAGCTT)",
+    "- **Sticky ends**: Overhanging single-stranded ends after cutting",
+    "- **Blunt ends**: No overhang after cutting",
+    "- **Vectors (Molecular Vehicles)**: Carry foreign DNA into host",
+    "- **Examples**: Plasmids, bacteriophages, cosmids, Ti plasmid",
+    "- **Competent Host**: Modified to accept foreign DNA (CaCl2 treatment for bacteria)",
+    "### 4. Steps in rDNA Technology",
+    "1. Isolation of genetic material (DNA extraction)",
+    "2. Cutting DNA with restriction enzymes",
+    "3. Separation by gel electrophoresis",
+    "4. Insertion of DNA into vector",
+    "5. Transformation into host cell",
+    "6. Expression of desired gene",
+    "### 5. PCR (Polymerase Chain Reaction)",
+    "- Amplifies specific DNA segment millions of times",
+    "- **Steps**: Denaturation (94°C), Annealing (50-65°C), Extension (72°C)",
+    "- **Enzyme**: Taq polymerase (heat-stable from Thermus aquaticus)",
+    "- **Components**: Template DNA, primers, dNTPs, Taq polymerase",
+    "- **Applications**: Forensics, disease diagnosis, genetic research",
+    "### 6. Gel Electrophoresis",
+    "- Separates DNA fragments by size using electric field",
+    "- DNA is negatively charged, moves toward positive electrode",
+    "- Smaller fragments move faster through agarose gel",
+    "- Visualized with ethidium bromide under UV light",
+    "### 7. Entrance Exam Focus",
+    "Identify restriction enzymes; Describe PCR steps; Explain vector requirements."
+  ],
+  "confusion": [
+    "x Any enzyme can cut DNA. x Only specific restriction enzymes recognize specific sequences.",
+    "x PCR makes infinite copies. x Each cycle doubles DNA - limited by reagents.",
+    "x DNA moves to positive electrode because it's positive. x DNA is NEGATIVE, moves to POSITIVE."
+  ],
+  "practice": [
+    "What is the function of restriction enzymes? Give an example.",
+    "Describe the three steps of PCR.",
+    "Why is Taq polymerase used in PCR?",
+    "Explain how gel electrophoresis separates DNA fragments."
+  ],
+  "formulas": [],
+  "summary": "Biotechnology is the use of living organisms or their products to make or modify products for practical use, and modern biotechnology is built on recombinant DNA (rDNA) technology. The essential tools are restriction enzymes, which cut DNA at specific palindromic recognition sequences such as EcoRI at GAATTC to give sticky or blunt ends, and vectors such as plasmids, bacteriophages and cosmids, which carry foreign DNA into a competent host. rDNA technology proceeds through six steps from isolation of DNA to expression of the gene, while PCR amplifies a chosen DNA segment using thermostable Taq polymerase and gel electrophoresis separates fragments according to size. These techniques together underpin every product of modern biotechnology.",
+  "importantConcepts": [
+    "Recombinant DNA technology isolates DNA from two sources, cuts both with the same restriction enzyme and joins the fragments with DNA ligase to form recombinant DNA.",
+    "Restriction enzymes, called molecular scissors, recognise specific palindromic sequences and cut them — EcoRI at GAATTC, HindIII at AAGCTT — producing sticky ends with single-stranded overhangs or blunt ends.",
+    "Vectors, called molecular vehicles, carry foreign DNA into the host cell: plasmids, bacteriophages, cosmids, and the Ti plasmid of Agrobacterium tumefaciens for plant transformation.",
+    "The host cell must be made competent so that it will take up DNA, which in bacteria is achieved by treatment with CaCl2, and transformants are usually selected using an antibiotic-resistance marker on the vector.",
+    "PCR amplifies a chosen DNA segment from template DNA, two primers, dNTPs and Taq polymerase through repeated cycles of denaturation at about 94 °C, annealing at 50-65 °C and extension at about 72 °C.",
+    "Gel electrophoresis separates DNA fragments by size: DNA is negatively charged and migrates towards the positive electrode, and smaller fragments move fastest through the agarose gel."
+  ],
+  "importantStatements": [
+    "Only specific restriction enzymes cut DNA, and each recognises its own sequence; a random nuclease such as DNase I cannot be used for rDNA work.",
+    "Sticky ends produced by the same restriction enzyme are complementary, so they base-pair with each other and DNA ligase then seals the backbone.",
+    "Each cycle of PCR approximately doubles the target DNA, so amplification is exponential but becomes limited by reagent quantity and primer exhaustion.",
+    "DNA carries a net negative charge on its phosphate backbone, so in an electric field it migrates towards the anode, the positive electrode.",
+    "Taq polymerase is used in PCR because it is thermostable and survives the 94-95 °C denaturation step that would denature an ordinary enzyme.",
+    "A good vector needs an origin of replication so it multiplies in the host, a selectable marker, and a cloning site containing single sites for the restriction enzymes used."
+  ],
+  "importantTasks": [
+    "State the function of a restriction enzyme and give the recognition sequence and type of end produced by one example such as EcoRI or HindIII.",
+    "Describe the three steps of a PCR cycle, stating the temperature of each step and naming the enzyme used.",
+    "Explain why Taq polymerase is used in PCR and state what would happen if a heat-labile enzyme were used instead.",
+    "Explain how gel electrophoresis separates DNA fragments of different sizes and how the bands are made visible.",
+    "Write the six steps of rDNA technology in order and identify the step in which DNA ligase is used."
+  ],
+  "keyPoints": [
+    "DNA ligase seals the sugar-phosphate backbone after complementary sticky ends pair, forming the recombinant plasmid.",
+    "EcoRI cuts 5'-GAATTC-3' to leave 5' AATT overhangs, and HindIII cuts 5'-AAGCTT-3' to leave 5' AGCT overhangs.",
+    "The rDNA steps are: isolation of DNA, cutting with restriction enzymes, separation by gel electrophoresis, insertion into a vector, transformation of the host, and expression of the gene.",
+    "PCR components are template DNA, forward and reverse primers, the four dNTPs, Taq polymerase and a buffer containing Mg2+ ions.",
+    "Bands are visualised after staining with ethidium bromide under UV light; smaller fragments travel furthest from the wells.",
+    "Gene cloning in a vector produces many identical copies, that is clones, of a single DNA fragment."
+  ],
+  "specialNotes": [
+    "Restriction enzyme recognition sites are palindromes, read the same 5' to 3' on both strands, which is what allows the enzyme to cut both strands of the double helix.",
+    "The same restriction enzyme must be used on both the vector and the insert, otherwise the ends will not be complementary and the fragments will not join.",
+    "Each PCR cycle doubles the target DNA, so after n cycles there are 2 to the power n copies of the target sequence (2 to the power 10 = 1024).",
+    "Ethidium bromide is a powerful mutagen, so safer dyes such as SYBR Safe are now preferred; the principle of visualising bands under UV light is unchanged.",
+    "A plasmid is chosen over a bacteriophage for many cloning jobs because it is small, easy to isolate, and its host cells can be grown in large numbers to give high yield."
+  ],
+  "examShortTricks": [
+    "'Scissors cut, ligase seals' — the restriction enzyme cuts, DNA ligase joins.",
+    "PCR temperature code: about 94 degrees melts (denaturation), about 60 degrees sticks (annealing), about 72 degrees builds (extension).",
+    "DNA is negative so it runs to the positive electrode, and the smaller the fragment, the faster it travels.",
+    "Vector checklist: origin of replication, selectable marker, and a single cloning site.",
+    "Taq comes from Thermus aquaticus, a hot-spring thermophile, which is exactly why it survives 94 degrees."
+  ],
+  "examNotes": [
+    "PCR steps with temperatures and Taq polymerase are asked almost every year as a 3-5 mark question; memorise about 94 degrees, 50-65 degrees and about 72 degrees.",
+    "Recognition sequences (EcoRI GAATTC, HindIII AAGCTT) and the type of end each produces are frequent one-mark MCQs.",
+    "The rDNA steps in order, and the requirements of a vector, form a standard 5-mark structured question.",
+    "Gel electrophoresis questions commonly test why DNA moves towards the positive electrode and why smaller fragments travel further.",
+    "A frequent 2-mark question asks why a heat-stable enzyme is needed in PCR and how a competent host is prepared using CaCl2."
+  ],
+  "practiceQuestions": [
+    "What is the function of a restriction enzyme? Give an example with its recognition sequence.",
+    "Describe the three steps of PCR, stating the temperature of each.",
+    "Why is Taq polymerase used in PCR?",
+    "Explain how gel electrophoresis separates DNA fragments.",
+    "Write the six steps of rDNA technology and state where DNA ligase is used.",
+    "What features should a good cloning vector possess?"
+  ],
+  "mcs": [
+    {
+      "question": "EcoRI recognises and cuts the DNA sequence:",
+      "options": [
+        "AAGCTT",
+        "GAATTC",
+        "CTGCAG",
+        "TTAAGA"
+      ],
+      "answer": "B",
+      "explanation": "EcoRI cuts 5'-GAATTC-3' and leaves 5' AATT sticky ends. AAGCTT is the site recognised by HindIII and CTGCAG by PstI."
+    },
+    {
+      "question": "The enzyme used in PCR that survives the 94 degrees C denaturation step is:",
+      "options": [
+        "DNA ligase",
+        "Reverse transcriptase",
+        "Taq polymerase",
+        "Restriction endonuclease"
+      ],
+      "answer": "C",
+      "explanation": "Taq polymerase from the thermophilic bacterium Thermus aquaticus is thermostable, so it survives repeated heating to about 94 degrees; other enzymes would denature."
+    },
+    {
+      "question": "In gel electrophoresis, DNA fragments move through the gel towards the:",
+      "options": [
+        "Negative electrode, because DNA is negatively charged",
+        "Positive electrode, because DNA is negatively charged",
+        "Positive electrode, because DNA is positively charged",
+        "Both electrodes equally, whatever the fragment size"
+      ],
+      "answer": "B",
+      "explanation": "The phosphate backbone gives DNA a net negative charge, so it migrates to the anode, the positive electrode, and smaller fragments move fastest through the agarose."
+    },
+    {
+      "question": "Which of the following is a suitable vector for carrying foreign DNA into a bacterial cell?",
+      "options": [
+        "Ribosome",
+        "Plasmid",
+        "Mitochondrion",
+        "Cell membrane"
+      ],
+      "answer": "B",
+      "explanation": "A plasmid is small circular extra-chromosomal DNA with its own origin of replication, a selectable marker and a single restriction site, which makes it ideal for cloning in bacteria."
+    },
+    {
+      "question": "The enzyme that joins two DNA fragments by sealing the sugar-phosphate backbone is:",
+      "options": [
+        "Restriction endonuclease",
+        "DNA ligase",
+        "Helicase",
+        "Taq polymerase"
+      ],
+      "answer": "B",
+      "explanation": "DNA ligase forms phosphodiester bonds to seal the nicks left after complementary sticky ends pair, producing recombinant DNA; a restriction endonuclease makes the cut in the first place."
+    }
+  ]
+}

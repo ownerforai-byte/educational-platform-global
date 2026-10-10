@@ -1,0 +1,75 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "chemistry",
+  "unitSlug": "chemical-bonding-and-shapes-of-molecules",
+  "unitTitle": "Chemical Bonding and Shapes of Molecules",
+  "unitHours": 9,
+  "syllabusTopics": [
+    "Valence shell, valence electron and octet theory",
+    "Ionic bond and its properties",
+    "Covalent bond and coordinate covalent bond; properties of covalent compounds",
+    "Lewis dot structure of some common compounds of s and p block elements",
+    "Resonance",
+    "VSEPR theory and shapes of simple molecules (BeF2, BF3, CH4, CH3Cl, PCl5, SF6, H2O, NH3, CO2, H2S, PH3)",
+    "Elementary idea of Valence Bond Theory",
+    "Hybridization involving s and p orbitals only",
+    "Bond characteristics: bond length, ionic character, dipole moment",
+    "Vander Waal's force and molecular solids; hydrogen bonding and its application",
+    "Metallic bonding and properties of metallic solids"
+  ],
+  "source": "authored:rail-diagram",
+  "agentNotes": "Diagram card — the figure is authored SVG (frontend/lib/rail-diagrams.ts) drawn in the rectangular .rail-figure box at the row it explains (frontend/AGENTS.md §9). This is an EXTRA card for the unit, so it streams right after the unit's canonical card and before the Class 12 teaser. Figures cross the note-visuals guard in frontend/lib/content/visuals.ts (one svg block, no script/style/defs/external refs); an unusable figure is skipped, never half-drawn. Check: npx tsx frontend/scripts/content/home-rails.ts --check",
+  "card": {
+    "tag": "Chemical Bonding · Diagram",
+    "title": "VSEPR shapes read off the steric number",
+    "href": "/class-11-notes/chemistry",
+    "icon": "Network",
+    "statKey": "pyq:chemistry"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Electron pairs around a central atom repel one another and spread as far apart as they can, so counting σ bonds plus lone pairs — the steric number — fixes both the shape and the hybridisation.",
+      "figure": {
+        "svg": "<svg viewBox=\"0 0 640 215\" role=\"img\">\n  <title>VSEPR shapes with their bond angles</title>\n  <text x=\"80\" y=\"26\" font-size=\"13\" text-anchor=\"middle\" fill=\"#334155\">CO₂</text>\n  <text x=\"240\" y=\"26\" font-size=\"13\" text-anchor=\"middle\" fill=\"#334155\">BF₃</text>\n  <text x=\"400\" y=\"26\" font-size=\"13\" text-anchor=\"middle\" fill=\"#334155\">H₂O</text>\n  <text x=\"560\" y=\"26\" font-size=\"13\" text-anchor=\"middle\" fill=\"#334155\">CH₄</text>\n  <line x1=\"74\" y1=\"100\" x2=\"36\" y2=\"100\" stroke=\"#475569\" stroke-width=\"2.5\"/>\n  <line x1=\"86\" y1=\"100\" x2=\"124\" y2=\"100\" stroke=\"#475569\" stroke-width=\"2.5\"/>\n  <circle cx=\"80\" cy=\"100\" r=\"9\" fill=\"#0f172a\"/>\n  <circle cx=\"28\" cy=\"100\" r=\"8\" fill=\"#93c5fd\" stroke=\"#1e3a8a\" stroke-width=\"1.5\"/>\n  <circle cx=\"132\" cy=\"100\" r=\"8\" fill=\"#93c5fd\" stroke=\"#1e3a8a\" stroke-width=\"1.5\"/>\n  <line x1=\"240\" y1=\"94\" x2=\"240\" y2=\"56\" stroke=\"#475569\" stroke-width=\"2.5\"/>\n  <line x1=\"246\" y1=\"104\" x2=\"284\" y2=\"124\" stroke=\"#475569\" stroke-width=\"2.5\"/>\n  <line x1=\"234\" y1=\"104\" x2=\"196\" y2=\"124\" stroke=\"#475569\" stroke-width=\"2.5\"/>\n  <circle cx=\"240\" cy=\"100\" r=\"9\" fill=\"#0f172a\"/>\n  <circle cx=\"240\" cy=\"48\" r=\"8\" fill=\"#a7f3d0\" stroke=\"#065f46\" stroke-width=\"1.5\"/>\n  <circle cx=\"291\" cy=\"128\" r=\"8\" fill=\"#a7f3d0\" stroke=\"#065f46\" stroke-width=\"1.5\"/>\n  <circle cx=\"189\" cy=\"128\" r=\"8\" fill=\"#a7f3d0\" stroke=\"#065f46\" stroke-width=\"1.5\"/>\n  <circle cx=\"380\" cy=\"68\" r=\"4\" fill=\"#7c3aed\"/>\n  <circle cx=\"394\" cy=\"58\" r=\"4\" fill=\"#7c3aed\"/>\n  <circle cx=\"406\" cy=\"58\" r=\"4\" fill=\"#7c3aed\"/>\n  <circle cx=\"420\" cy=\"68\" r=\"4\" fill=\"#7c3aed\"/>\n  <line x1=\"394\" y1=\"102\" x2=\"352\" y2=\"132\" stroke=\"#475569\" stroke-width=\"2.5\"/>\n  <line x1=\"406\" y1=\"102\" x2=\"448\" y2=\"132\" stroke=\"#475569\" stroke-width=\"2.5\"/>\n  <circle cx=\"400\" cy=\"98\" r=\"9\" fill=\"#0f172a\"/>\n  <circle cx=\"345\" cy=\"138\" r=\"8\" fill=\"#fecaca\" stroke=\"#991b1b\" stroke-width=\"1.5\"/>\n  <circle cx=\"455\" cy=\"138\" r=\"8\" fill=\"#fecaca\" stroke=\"#991b1b\" stroke-width=\"1.5\"/>\n  <line x1=\"560\" y1=\"94\" x2=\"560\" y2=\"54\" stroke=\"#475569\" stroke-width=\"2.5\"/>\n  <line x1=\"552\" y1=\"104\" x2=\"514\" y2=\"128\" stroke=\"#475569\" stroke-width=\"2.5\"/>\n  <line x1=\"568\" y1=\"104\" x2=\"606\" y2=\"128\" stroke=\"#475569\" stroke-width=\"2.5\"/>\n  <polygon points=\"560,100 543,126 577,126\" fill=\"#cbd5e1\" stroke=\"#475569\" stroke-width=\"1.5\"/>\n  <circle cx=\"560\" cy=\"100\" r=\"9\" fill=\"#0f172a\"/>\n  <circle cx=\"560\" cy=\"46\" r=\"8\" fill=\"#fde68a\" stroke=\"#92400e\" stroke-width=\"1.5\"/>\n  <circle cx=\"506\" cy=\"134\" r=\"8\" fill=\"#fde68a\" stroke=\"#92400e\" stroke-width=\"1.5\"/>\n  <circle cx=\"614\" cy=\"134\" r=\"8\" fill=\"#fde68a\" stroke=\"#92400e\" stroke-width=\"1.5\"/>\n  <circle cx=\"560\" cy=\"140\" r=\"8\" fill=\"#fde68a\" stroke=\"#92400e\" stroke-width=\"1.5\"/>\n  <text x=\"80\" y=\"196\" font-size=\"12\" text-anchor=\"middle\" fill=\"#0f172a\">Linear · 180°</text>\n  <text x=\"240\" y=\"196\" font-size=\"12\" text-anchor=\"middle\" fill=\"#0f172a\">Trigonal planar · 120°</text>\n  <text x=\"400\" y=\"196\" font-size=\"12\" text-anchor=\"middle\" fill=\"#0f172a\">Bent · 104.5°</text>\n  <text x=\"560\" y=\"196\" font-size=\"12\" text-anchor=\"middle\" fill=\"#0f172a\">Tetrahedral · 109.5°</text>\n</svg>",
+        "caption": "Steric number 2, 3 and 4 give linear, trigonal planar and tetrahedral; lone pairs squeeze the angle."
+      }
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "SN = σ bonds + lone pairs;  2 → sp, 180°;  3 → sp², 120°;  4 → sp³, 109.5°;  5 → sp³d;  6 → sp³d²"
+    },
+    {
+      "label": "Conditions",
+      "text": "Start from a correct Lewis structure, take the repulsion order lone pair–lone pair > lone pair–bond pair > bond pair–bond pair, and apply it to the central atom only."
+    },
+    {
+      "label": "Special cases",
+      "text": "CH₄ 109.5°, NH₃ 107° with one lone pair, H₂O 104.5° with two; CO₂ linear, BF₃ trigonal planar, SF₆ octahedral, XeF₄ square planar."
+    },
+    {
+      "label": "Solved",
+      "text": "H₂O: 2 σ bonds + 2 lone pairs = steric number 4 → sp³, but the molecular shape is bent and the angle closes to 104.5°."
+    },
+    {
+      "label": "Limitation",
+      "text": "It is a repulsion model rather than a calculation: transition-metal complexes, d-orbital participation and strongly electronegative substituents break its predictions."
+    },
+    {
+      "label": "Derivation",
+      "kind": "formula",
+      "text": "Count valence electrons → draw the Lewis structure → σ bonds + lone pairs = SN → electron-pair geometry → remove lone pairs for the molecular shape"
+    },
+    {
+      "label": "Shortcut",
+      "text": "Lone pairs decide the angle but are never named in the shape: steric number 4 with two lone pairs still reads bent, not tetrahedral."
+    },
+    {
+      "label": "Board question",
+      "text": "Predict the shape, hybridisation and bond angle of H₂O and NH₃, and explain why they differ from CH₄."
+    }
+  ]
+}

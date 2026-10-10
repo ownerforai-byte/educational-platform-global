@@ -7,11 +7,11 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Calculations based on mole concept — Stoichiometry, Chemistry (class-11-notes).",
-    "**Tested.** define it · list: calculations based on mole concept · one worked example · one misconception each.",
-    "**Fact.** 1 mole = 6.022×10²³ entities (Avogadro constant, Nₐ). Molar mass (M) is g·mol⁻¹; for a compound M = Σ(atomic masses).",
-    "**Fact.** n (mol) = mass/M = volume(ideal gas, STP)/22.4 L = N/Nₐ.",
-    "**Fact.** Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100."
+    "**The mole.** One mole contains 6.022 × 10²³ entities (Avogadro's number, Nₐ); the molar mass M in g/mol equals the atomic or molecular mass numerically.",
+    "**Mass–moles conversion.** n = m/M; for example 36 g of water (M = 18 g/mol) is 2 mol. One mole of any gas at STP occupies 22.4 L.",
+    "**Percentage composition.** The percentage of an element = (mass of the element in one mole of compound ÷ molar mass) × 100.",
+    "**Empirical and molecular formula.** The empirical formula gives the simplest atomic ratio and the molecular formula the actual count; molecular mass ÷ empirical formula mass gives the multiplier.",
+    "**Limiting reagent and yield.** The limiting reagent governs product mass; percentage yield = (actual yield ÷ theoretical yield) × 100."
   ],
   "confusion": [
     "❌ treat \"Calculations based on mole concept\" as one blob → ✅ split into: calculations based on mole concept.",
@@ -66,17 +66,6 @@
       ],
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    },
-    {
-      "question": "Which of these is a governing / standard formula associated with \"Calculations based on mole concept\"?",
-      "options": [
-        "n = m / M",
-        "x + y = z (placeholder)",
-        "No formula applies",
-        "E = mc² only"
-      ],
-      "answer": "n = m / M",
-      "explanation": "n = m / M is the standard form used for this topic."
     }
   ]
 }

@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Mathematics — Three Dimensional Geometry — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "three-dimensional-geometry",
+  "topicSlug": "three-dimensional-geometry-pyq-2024",
+  "topicTitle": "NEB Class 12 Mathematics — Three Dimensional Geometry — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Find the direction cosines of the line joining the points A(1, 2, 3) and B(4, 5, 6), and write the equation of the line.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Direction ratios: AB = (4 − 1, 5 − 2, 6 − 3) = (3, 3, 3).\n\nMagnitude = √(9 + 9 + 9) = 3√3, so the direction cosines are (3, 3, 3)/(3√3) = **(1/√3, 1/√3, 1/√3)**, and they satisfy l² + m² + n² = 1.\n\n**Equation of the line:** (x − 1)/3 = (y − 2)/3 = (z − 3)/3, i.e. x − 1 = y − 2 = z − 3, or in vector form r = (i + 2j + 3k) + λ(i + j + k).",
+      "knowledgeNote": "Direction ratios need not be unit vectors; direction cosines are the normalised ratios, and only for these does l² + m² + n² = 1 hold."
+    },
+    {
+      "question": "Find the angle between the lines (x − 1)/2 = (y + 3)/−1 = z/3 and (x − 2)/1 = (y − 1)/2 = (z + 1)/−2.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "The direction ratios are d₁ = (2, −1, 3) and d₂ = (1, 2, −2).\n\ncosθ = |d₁·d₂|/(|d₁||d₂|) = |2(1) + (−1)(2) + 3(−2)| / (√14 × 3) = |2 − 2 − 6|/(3√14) = 6/(3√14) = **2/√14 ≈ 0.535** → **θ ≈ 57.7°**.\n\nTaking the absolute value gives the acute angle between the lines.",
+      "knowledgeNote": "Use the absolute value in the numerator, otherwise the formula returns the obtuse supplement — a very frequent marking deduction."
+    },
+    {
+      "question": "Find the equation of the plane passing through the point (2, 3, −1) with normal vector n = 2i − j + 3k.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "The plane through r₀ with normal n satisfies n·(r − r₀) = 0:\n\n2(x − 2) − 1(y − 3) + 3(z + 1) = 0\n2x − 4 − y + 3 + 3z + 3 = 0\n\n**2x − y + 3z + 2 = 0**, i.e. 2x − y + 3z = −2.\n\nIn vector form: r·(2i − j + 3k) = 3 (since 2(2) − 3 + 3(−1) = −2... check: the constant equals n·r₀ = 4 − 3 − 3 = −2).",
+      "knowledgeNote": "The plane's cartesian coefficients are exactly the normal's components — read the normal straight off the equation ax + by + cz + d = 0."
+    }
+  ]
+}

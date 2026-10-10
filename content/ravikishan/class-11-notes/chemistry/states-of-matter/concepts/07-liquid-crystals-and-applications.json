@@ -38,12 +38,13 @@
     "❌ A liquid crystal thermometer measures heat capacity. ✅ It uses the temperature dependence of the helical pitch, which shifts the reflected colour."
   ],
   "practice": [
-    "Define a liquid crystal and explain why it is intermediate between a solid and a liquid.",
     "Distinguish thermotropic from lyotropic liquid crystals and describe nematic, smectic and cholesteric mesophases.",
     "Explain the working of a twisted-nematic liquid crystal display.",
     "List four applications of liquid crystals in everyday life and industry.",
     "Explain how liquid crystals measure temperature and map thermal hot spots.",
-    "State the limitations of liquid-crystal materials in devices."
+    "State the limitations of liquid-crystal materials in devices.",
+    "one worked example for \"Liquid crystals and their applications\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "formulas": [
     "$$\\text{Order parameter }S=\\tfrac{1}{2}\\left\\langle 3\\cos^{2}\\theta-1\\right\\rangle\\ (S=0\\ \\text{isotropic},\\ S=1\\ \\text{perfect crystal})$$",
@@ -53,11 +54,13 @@
   "universalFacts": [
     "Cholesteryl benzoate (Reinitzer, 1888) was the first liquid crystal studied.",
     "Display nematic LCs are usually cyanobiphenyl homologues with a mesophase range of only a few tens of degrees.",
-    "Kevlar, a liquid-crystal polymer, has a strength-to-weight ratio several times that of steel."
+    "Kevlar, a liquid-crystal polymer, has a strength-to-weight ratio several times that of steel.",
+    "answer pattern for \"Liquid crystals and their applications\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [
     "**Problem:** Why does an LCD watch darken in a very hot car? **Solution:** heating pushes the material above its mesophase range, the ordered phase is lost, polarisation can no longer be controlled and the display becomes unreadable.",
-    "**Problem:** A thermochromic LC strip shows red at 30 °C and blue at 35 °C. Why? **Solution:** the helical pitch shortens with rising temperature, so the reflected (Bragg) wavelength moves from red towards blue — a visual thermometer."
+    "**Problem:** A thermochromic LC strip shows red at 30 °C and blue at 35 °C. Why? **Solution:** the helical pitch shortens with rising temperature, so the reflected (Bragg) wavelength moves from red towards blue — a visual thermometer.",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "importantNotes": [
     "Describe the mesophase with both halves: 'ordered like a crystal, mobile like a liquid'.",
@@ -65,5 +68,32 @@
     "Quote the narrow temperature window as the main practical limitation."
   ],
   "visualType": "liquid-crystals",
-  "tabGroup": "States-Of-Matter-Learner-Notes"
+  "keyPoints": [
+    "• Liquid crystals",
+    "• Their applications"
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Liquid crystals and their applications\" with one example.",
+    "compare \"Liquid crystals\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Liquid crystals and their applications\" and verify the answer is plausible."
+  ],
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Liquid crystals and their applications\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: liquid crystals, their applications (within States of Matter).",
+    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "summary": "Liquid crystals and their applications (States of Matter, Chemistry, class-11-notes) covers Liquid crystals, their applications. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
 }

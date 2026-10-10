@@ -7,9 +7,16 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Dulong and Petit method of determining expansivity of liquid — Thermal Expansion, Physics (class-11-notes).",
-    "**Tested.** define it · list: dulong, petit method of determining expansivity of liquid · one worked example · one misconception each.",
-    "**Petit method of determining expansivity of liquid.** one-line definition + one-line exam use."
+    "**Linear expansion definition:** When a solid is heated, its length increases. The fractional increase in length per unit rise in temperature is called the coefficient of linear expansion, $\\alpha$.",
+    "**Formula:** $\\Delta L = L_0 \\alpha \\Delta T$, where $L_0$ is the original length, $\\alpha$ is the coefficient of linear expansion (unit: K⁻¹ or °C⁻¹), and $\\Delta T$ is the temperature change.",
+    "**New length:** $L = L_0(1 + \\alpha\\Delta T)$. For small $\\alpha\\Delta T$, this is an excellent approximation. For large temperature ranges, $\\alpha$ may vary and must be treated as a function of temperature.",
+    "**Physical origin:** Heating increases the amplitude of atomic vibrations in the lattice. Because the interatomic potential is asymmetric (steeper on the compression side), the average separation increases with temperature, causing expansion.",
+    "**Coefficient of linear expansion for common materials:** Steel: $\\alpha \\approx 12 \\times 10^{-6}$ K⁻¹. Aluminum: $\\alpha \\approx 24 \\times 10^{-6}$ K⁻¹. Copper: $\\alpha \\approx 17 \\times 10^{-6}$ K⁻¹. Invar (Fe-Ni alloy): $\\alpha \\approx 1.2 \\times 10^{-6}$ K⁻¹. Quartz: $\\alpha \\approx 0.5 \\times 10^{-6}$ K⁻¹.",
+    "**Why metals expand more:** Metals with weaker interatomic bonds (larger bond length, lower melting point) tend to have larger $\\alpha$. Lead ($\\alpha \\approx 29 \\times 10^{-6}$) expands more than steel because its atomic bonds are weaker.",
+    "**Bimetallic strip:** Two metals with different $\\alpha$ bonded together bend when heated — the higher-$\\alpha$ metal expands more, forcing the strip to curve. Used in thermostats, circuit breakers, and temperature indicators.",
+    "**Railway tracks — expansion gaps:** Steel rails expand by $\\Delta L = L_0 \\alpha \\Delta T$. For a 12 m rail and $\\Delta T = 40°C$: $\\Delta L = 12 \\times 12 \\times 10^{-6} \\times 40 = 5.76$ mm. Gaps are left between rails to accommodate this expansion, otherwise buckling occurs.",
+    "**Measuring $\\alpha$ — Searle's apparatus:** A metal rod is heated uniformly. The expansion is measured by a micrometer screw gauge. $\\alpha = \\frac{\\Delta L}{L_0 \\Delta T}$. The apparatus minimizes errors from thermal expansion of the frame.",
+    "**Measuring $\\alpha$ — Hoke's apparatus:** Uses a glass tube filled with liquid. As the solid rod inside expands, it displaces liquid. The volume of displaced liquid gives $\\Delta L$ indirectly. This is an elegant optical-mechanical method."
   ],
   "confusion": [
     "❌ treat \"Dulong\" as one blob → ✅ split into: dulong, petit method of determining expansivity of liquid.",

@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "conservation-biology",
+  "unitTitle": "Conservation Biology",
+  "unitHours": 8,
+  "syllabusTopics": [
+    "Conservation biology: concept of biodiversity, biodiversity conservation",
+    "National parks, wildlife reserves, conservation areas, biodiversity hotspots, wetland and Ramsar sites",
+    "Wildlife: importance, causes of extinction and conservation strategies",
+    "IUCN categories of threatened species: meaning of extinct, endangered, vulnerable, rare and threatened species; endangered species in Nepal"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05 from this unit's concepts/01-conservation-biology-concept-of-biodiversity-biodiversity-conservation.json and 02-protected-areas-conservation.json (notes, keyPoints, formulas, specialNotes, examShortTricks, mcs). Anchored on the IUCN ladder + Nepal's protected areas so it complements the vegetation card (which carries the zonation and community-forestry angle). Board row from the unit practice bank; no fabricated citation.",
+  "card": {
+    "tag": "Conservation",
+    "title": "The IUCN ladder and Nepal's parks — what is actually at risk",
+    "href": "/class-11-notes/biology/chapters/conservation-biology",
+    "icon": "ScrollText",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Conservation biology is triage with a ledger. Biodiversity counts at three levels — genetic variety inside species, species number in an area, ecosystem variety across a region. Conservation then runs in two directions, in-situ (protect the habitat) and ex-situ (keep a backup outside), while the IUCN Red List records how close each species is to the exit: Extinct → Extinct in the Wild → Critically Endangered → Endangered → Vulnerable → Near Threatened → Least Concern."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Biodiversity = genetic + species + ecosystem diversity  ·  IUCN ladder (high → low risk): EX → EW → CR → EN → VU → NT → LC  ·  Nepal: 10 national parks + 6 conservation areas + 1 hunting reserve + Ramsar wetlands  ·  Threats: H-O-P-I-C (Habitat loss, Overexploitation/poaching, Pollution, Invasive species, Climate change)"
+    },
+    {
+      "label": "Conditions",
+      "text": "An IUCN category is an assessment, not a label — it follows criteria on population size, rate of decline, range area and fragmentation, and it is global, so a species can be safer worldwide than it is locally in Nepal. Protected-area categories also differ by law: a national park enforces strict protection with no settlement or resource use, while a conservation area is managed with the people living in it. Ramsar listing requires a wetland of international importance."
+    },
+    {
+      "label": "Special cases",
+      "text": "Chitwan (1973) was Nepal's first national park and is UNESCO World Heritage — Bengal tiger plus one-horned rhino. Sagarmatha (1976) is the Everest park, also UNESCO. Nepal's key threatened species: Bengal tiger (Endangered), Asian elephant (Endangered), one-horned rhino (Vulnerable), snow leopard (Vulnerable), red panda (Vulnerable). Ramsar wetlands include Koshi Tappu, Rara and Chitwan. Nepal sits in the Himalaya biodiversity hotspot, and community forestry — 22,000+ groups managing ~36 % of forest land — is the country's globally cited success."
+    },
+    {
+      "label": "Solved",
+      "text": "Use the ladder like a decision tree. 'Population crashed by more than half, range shrinking fast' → CR or EN depending on numbers (tiger → EN). 'Numbers falling but range still large' → VU (rhino, snow leopard). 'No living individual anywhere' → EX. Then match species to protection: rhino and tiger → Chitwan/Bardia; snow leopard → Sagarmatha, Annapurna, Kanchenjunga; red panda → Langtang and Kanchenjunga. Name the tool for each threat: poaching → anti-poaching units + CITES; habitat loss → parks and corridors; local conflict → community-based conservation."
+    },
+    {
+      "label": "Limitation",
+      "text": "The numbers move and the sources disagree — Nepal's park count is commonly written as 10 but newer additions push it to 11–14, and IUCN statuses change with every assessment. A park on paper is not protection on the ground: poaching, human–wildlife conflict and unmanaged tourism continue inside boundaries. Ex-situ conservation saves individuals but loses genetic flow, and hotspot maps are qualitative, not measurable targets."
+    },
+    {
+      "label": "Derivation",
+      "text": "Derive the whole unit from small-population genetics: habitat loss fragments a population → numbers fall → genetic diversity drops → inbreeding depression and disease vulnerability rise → lower reproduction → still fewer individuals — the extinction vortex. Every strategy is aimed at one link: in-situ protection keeps the population large, corridors restore gene flow, anti-poaching and CITES cut the harvest, ex-situ is insurance once the population is too small to survive alone, and community management works because the vortex starts on land people use."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Three strings answer most of the paper: biodiversity = G-S-E; threats = H-O-P-I-C; IUCN = EX-EW-CR-EN-VU-NT-LC. Nepal facts to keep ready: 10 NP + 6 CA + 1 HR + Ramsar; Chitwan 1973 (tiger + rhino, UNESCO); Sagarmatha 1976 (Everest, UNESCO); tiger EN, elephant EN, rhino VU, snow leopard VU, red panda VU. One-line rule: 'in-situ = in the habitat, ex-situ = outside it'."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style (unit practice bank): define biodiversity and explain its three levels with examples; differentiate in-situ from ex-situ conservation with Nepali examples; list Nepal's national parks with one key feature each; explain the IUCN categories with one species each; name Nepal's endangered species and their status; give five causes of extinction with a conservation strategy against each; differentiate a national park from a conservation area; name Nepal's Ramsar sites and why wetlands matter."
+    }
+  ]
+}

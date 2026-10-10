@@ -1,0 +1,640 @@
+{
+  "mode": "dry-run (no files moved)",
+  "generatedFrom": "content/ravikishan",
+  "note": "Covers source notes only. The audit's 915 thin files also include the runtime tree frontend/public/data/syllabus-notes, which this plan does not read.",
+  "rule": "thin = no template marker, notes<4, not a question bank; target = a CLEAN scope with the same subject and normalized unit name",
+  "totals": {
+    "thinFiles": 565,
+    "scopesWithThin": 130,
+    "routableScopes": 13,
+    "routableThinFiles": 47,
+    "unroutableScopes": 117
+  },
+  "plan": [
+    {
+      "from": "class-12-notes/english/writing-skills",
+      "thinFiles": 9,
+      "to": "class-12/english/writing-skills",
+      "alsoCandidates": [],
+      "files": [
+        "concepts/02-letter-writing-formal-and-informal.json",
+        "concepts/03-email-writing.json",
+        "concepts/04-report-writing-and-summarisation.json",
+        "concepts/05-article-writing.json",
+        "concepts/06-note-making-and-summary.json",
+        "concepts/07-story-writing.json",
+        "concepts/08-speech-and-dialogue-writing.json",
+        "concepts/09-review-writing-book-and-film.json",
+        "concepts/10-comprehension-and-paraphrasing.json"
+      ]
+    },
+    {
+      "from": "class-11/physics/unit-3-kinematics",
+      "thinFiles": 6,
+      "to": "class-11-notes/physics/kinematics",
+      "alsoCandidates": [],
+      "files": [
+        "concepts/01-motion-frame-of-reference-and-branches-of-mechanics.json",
+        "concepts/02-instantaneous-velocity-and-acceleration.json",
+        "concepts/03-relative-velocity.json",
+        "concepts/04-equations-of-motion-graphical.json",
+        "concepts/05-freely-falling-body.json",
+        "concepts/06-projectile-motion.json"
+      ]
+    },
+    {
+      "from": "class-11/physics/unit-1-physical-quantities",
+      "thinFiles": 5,
+      "to": "class-11-notes/physics/physical-quantities",
+      "alsoCandidates": [],
+      "files": [
+        "concepts/01-physical-quantities-fundamental-and-derived.json",
+        "concepts/02-dimensions-and-dimensional-formula.json",
+        "concepts/03-uses-and-limitations-of-dimensional-analysis.json",
+        "concepts/04-precision-accuracy-significant-figures.json",
+        "concepts/05-errors-measurement-scientific-notation-order-of-magnitude.json"
+      ]
+    },
+    {
+      "from": "class-12-notes/english/grammar",
+      "thinFiles": 5,
+      "to": "class-11-notes/english/grammar",
+      "alsoCandidates": [],
+      "files": [
+        "concepts/01-tenses-and-their-uses.json",
+        "concepts/02-clauses-and-sentence-types.json",
+        "concepts/03-voice-and-narration.json",
+        "concepts/04-modals-and-conditionals.json",
+        "concepts/05-punctuation-and-capitalisation.json"
+      ]
+    },
+    {
+      "from": "class-11/physics/unit-4-dynamics",
+      "thinFiles": 4,
+      "to": "class-11-notes/physics/dynamics",
+      "alsoCandidates": [],
+      "files": [
+        "concepts/01-newtons-laws-of-motion.json",
+        "concepts/02-momentum-impulse-and-conservation.json",
+        "concepts/03-moment-torque-and-equilibrium.json",
+        "concepts/04-solid-friction.json"
+      ]
+    },
+    {
+      "from": "class-12-notes/chemistry/hydrocarbons-12",
+      "thinFiles": 4,
+      "to": "class-11-notes/chemistry/hydrocarbons",
+      "alsoCandidates": [
+        "class-12-notes/chemistry/hydrocarbons"
+      ],
+      "files": [
+        "concepts/01-alkanes-12.json",
+        "concepts/02-alkenes-12.json",
+        "concepts/03-alkynes-12.json",
+        "concepts/04-aromatic-hydrocarbons-12.json"
+      ]
+    },
+    {
+      "from": "class-12-notes/chemistry/alcohols-phenols-ethers-12",
+      "thinFiles": 3,
+      "to": "class-12-notes/chemistry/alcohols-phenols-ethers",
+      "alsoCandidates": [],
+      "files": [
+        "concepts/01-alcohols.json",
+        "concepts/02-phenols.json",
+        "concepts/03-ethers.json"
+      ]
+    },
+    {
+      "from": "class-12-notes/chemistry/biomolecules-12",
+      "thinFiles": 3,
+      "to": "class-12-notes/chemistry/biomolecules",
+      "alsoCandidates": [],
+      "files": [
+        "concepts/01-carbohydrates.json",
+        "concepts/02-proteins-enzymes.json",
+        "concepts/03-vitamins-hormones.json"
+      ]
+    },
+    {
+      "from": "class-12-notes/nepali/sahitya-adhyayan",
+      "thinFiles": 3,
+      "to": "class-11-notes/nepali/sahitya-adhyayan",
+      "alsoCandidates": [],
+      "files": [
+        "concepts/03-व्यङ्ग्य-साहित्यको-अध्-ययन.json",
+        "concepts/04-आधुनिक-नेपाली-साहित्यको-इतिहास.json",
+        "concepts/05-निबन्ध-र-लेखन-कौशल.json"
+      ]
+    },
+    {
+      "from": "class-12-notes/chemistry/amines-12",
+      "thinFiles": 2,
+      "to": "class-12-notes/chemistry/amines",
+      "alsoCandidates": [],
+      "files": [
+        "concepts/01-amines-preparation-properties.json",
+        "concepts/02-diazotisation-coupling.json"
+      ]
+    },
+    {
+      "from": "class-11-notes/biology/faunal-diversity",
+      "thinFiles": 1,
+      "to": "class-11e/biology/faunal-diversity",
+      "alsoCandidates": [
+        "class-11e/biology/unit-8-faunal-diversity"
+      ],
+      "files": [
+        "concepts/03-economic-importance-of-p-falciparum.json"
+      ]
+    },
+    {
+      "from": "class-11e/physics/kinematics",
+      "thinFiles": 1,
+      "to": "class-11-notes/physics/kinematics",
+      "alsoCandidates": [],
+      "files": [
+        "graph/01-projectile-trajectory.json"
+      ]
+    },
+    {
+      "from": "class-11e/physics/unit-3-kinematics",
+      "thinFiles": 1,
+      "to": "class-11-notes/physics/kinematics",
+      "alsoCandidates": [],
+      "files": [
+        "graph/01-projectile-trajectory.json"
+      ]
+    }
+  ],
+  "unroutable": [
+    {
+      "from": "class-11/chemistry/unit-3-atomic-structure",
+      "thinFiles": 35
+    },
+    {
+      "from": "class-11/physics/unit-11-quantity-of-heat",
+      "thinFiles": 20
+    },
+    {
+      "from": "class-11/physics/unit-2-vectors",
+      "thinFiles": 17
+    },
+    {
+      "from": "class-11-notes/mathematics/limits-and-continuity",
+      "thinFiles": 17
+    },
+    {
+      "from": "class-11-notes/chemistry/stoichiometry",
+      "thinFiles": 14
+    },
+    {
+      "from": "class-11-notes/mathematics/algebra",
+      "thinFiles": 13
+    },
+    {
+      "from": "class-11-notes/chemistry/atomic-structure",
+      "thinFiles": 12
+    },
+    {
+      "from": "class-11-notes/english/writing-and-composition",
+      "thinFiles": 11
+    },
+    {
+      "from": "class-11-notes/mathematics/vectors",
+      "thinFiles": 10
+    },
+    {
+      "from": "class-12-notes/physics/current-electricity",
+      "thinFiles": 10
+    },
+    {
+      "from": "class-11-notes/mathematics/analytic-geometry",
+      "thinFiles": 9
+    },
+    {
+      "from": "class-12-notes/mathematics/three-dimensional-geometry",
+      "thinFiles": 9
+    },
+    {
+      "from": "class-11-notes/physics/quantity-of-heat",
+      "thinFiles": 8
+    },
+    {
+      "from": "class-12-notes/biology/heredity-evolution",
+      "thinFiles": 8
+    },
+    {
+      "from": "class-11-notes/nepali/bhasha-ra-vyakarana",
+      "thinFiles": 7
+    },
+    {
+      "from": "class-11-notes/physics/mechanics",
+      "thinFiles": 7
+    },
+    {
+      "from": "class-11-notes/physics/nuclear-physics",
+      "thinFiles": 7
+    },
+    {
+      "from": "class-12-notes/mathematics/differentiation",
+      "thinFiles": 7
+    },
+    {
+      "from": "class-12-notes/physics/electrostatics",
+      "thinFiles": 7
+    },
+    {
+      "from": "class-11-notes/mathematics/computational-methods-or-mechanics",
+      "thinFiles": 6
+    },
+    {
+      "from": "class-11-notes/physics/dispersion",
+      "thinFiles": 6
+    },
+    {
+      "from": "class-11-notes/physics/optics",
+      "thinFiles": 6
+    },
+    {
+      "from": "class-12-notes/biology/heredity-and-evolution",
+      "thinFiles": 6
+    },
+    {
+      "from": "class-12-notes/chemistry/solutions",
+      "thinFiles": 6
+    },
+    {
+      "from": "class-12-notes/mathematics/linear-programming",
+      "thinFiles": 6
+    },
+    {
+      "from": "class-12-notes/physics/alternating-current",
+      "thinFiles": 6
+    },
+    {
+      "from": "class-12-notes/physics/modern-physics-12",
+      "thinFiles": 6
+    },
+    {
+      "from": "class-11/chemistry/unit-2-stoichiometry",
+      "thinFiles": 5
+    },
+    {
+      "from": "class-11-notes/biology/ecology",
+      "thinFiles": 5
+    },
+    {
+      "from": "class-11-notes/physics/lenses",
+      "thinFiles": 5
+    },
+    {
+      "from": "class-11-notes/physics/vectors",
+      "thinFiles": 5
+    },
+    {
+      "from": "class-12-notes/chemistry/chemical-kinetics",
+      "thinFiles": 5
+    },
+    {
+      "from": "class-12-notes/chemistry/electrochemistry",
+      "thinFiles": 5
+    },
+    {
+      "from": "class-12-notes/mathematics/differential-equations",
+      "thinFiles": 5
+    },
+    {
+      "from": "class-12-notes/mathematics/probability-12",
+      "thinFiles": 5
+    },
+    {
+      "from": "class-12-notes/nepali/bhasha-tatha-vyakaran",
+      "thinFiles": 5
+    },
+    {
+      "from": "class-11-notes/chemistry/modern-chemical-manufactures",
+      "thinFiles": 4
+    },
+    {
+      "from": "class-11-notes/physics/heat-and-temperature",
+      "thinFiles": 4
+    },
+    {
+      "from": "class-12-notes/biology/human-health-diseases",
+      "thinFiles": 4
+    },
+    {
+      "from": "class-12-notes/biology/organisms-environment-12",
+      "thinFiles": 4
+    },
+    {
+      "from": "class-12-notes/biology/strategies-for-food-production",
+      "thinFiles": 4
+    },
+    {
+      "from": "class-12-notes/english/oral-communication",
+      "thinFiles": 4
+    },
+    {
+      "from": "class-12-notes/mathematics/integration",
+      "thinFiles": 4
+    },
+    {
+      "from": "class-12-notes/nepali/lekhan-koushal",
+      "thinFiles": 4
+    },
+    {
+      "from": "class-12-notes/physics/emi",
+      "thinFiles": 4
+    },
+    {
+      "from": "class-12-notes/physics/magnetism",
+      "thinFiles": 4
+    },
+    {
+      "from": "class-11/english/writing-and-composition",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-11/mathematics/analytic-geometry",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-11-notes/chemistry/aromatic-hydrocarbons",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-11-notes/chemistry/fundamentals-of-applied-chemistry",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-11-notes/english/language-and-grammar",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-11-notes/english/reading-and-comprehension",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-11-notes/mathematics/statistics-and-probability",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-11-notes/mathematics/trigonometry",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-11-notes/nepali/katha-natak-ra-sanskriti",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-11-notes/physics/reflection-at-curved-mirror",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-11-notes/physics/solids",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-12-notes/biology/biodiversity-and-conservation",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-12-notes/biology/biodiversity-conservation-12",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-12-notes/biology/biotech-applications",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-12-notes/biology/biotechnology-applications",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-12-notes/biology/environmental-issues",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-12-notes/biology/environmental-issues-12",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-12-notes/biology/food-production",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-12-notes/biology/human-health-and-diseases",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-12-notes/biology/microbes-in-human-welfare",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-12-notes/biology/microbes-welfare",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-12-notes/biology/organisms-and-environment",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-12-notes/chemistry/aldehydes-ketones-acids-12",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-12-notes/chemistry/chemistry-element-12",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-12-notes/chemistry/chemistry-everyday-life-12",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-12-notes/chemistry/electro-chemistry",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-12-notes/chemistry/organic-fundamentals-12",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-12-notes/mathematics/vector-algebra",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-12-notes/nepali/sanskriti-tatha-samaj",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-12-notes/physics/communication-systems",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-12-notes/physics/electromagnetic-induction",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-12-notes/physics/wave-optics-12",
+      "thinFiles": 3
+    },
+    {
+      "from": "class-11-notes/biology/biota-and-environment",
+      "thinFiles": 2
+    },
+    {
+      "from": "class-11-notes/biology/conservation-biology",
+      "thinFiles": 2
+    },
+    {
+      "from": "class-11-notes/biology/evolutionary-biology",
+      "thinFiles": 2
+    },
+    {
+      "from": "class-11-notes/biology/introductory-microbiology",
+      "thinFiles": 2
+    },
+    {
+      "from": "class-11-notes/chemistry/bio-inorganic-chemistry",
+      "thinFiles": 2
+    },
+    {
+      "from": "class-11-notes/chemistry/chemistry-of-metals",
+      "thinFiles": 2
+    },
+    {
+      "from": "class-11-notes/chemistry/fundamental-principles-of-organic-chemistry",
+      "thinFiles": 2
+    },
+    {
+      "from": "class-11-notes/english/critical-thinking",
+      "thinFiles": 2
+    },
+    {
+      "from": "class-11-notes/nepali/lekhan-ra-rachana",
+      "thinFiles": 2
+    },
+    {
+      "from": "class-11-notes/physics/gravitation",
+      "thinFiles": 2
+    },
+    {
+      "from": "class-11-notes/physics/ideal-gas",
+      "thinFiles": 2
+    },
+    {
+      "from": "class-11-notes/physics/work-energy-and-power",
+      "thinFiles": 2
+    },
+    {
+      "from": "class-11e/physics/unit-01-vectors",
+      "thinFiles": 2
+    },
+    {
+      "from": "class-11e/physics/vectors",
+      "thinFiles": 2
+    },
+    {
+      "from": "class-12-notes/biology/biotech-principles",
+      "thinFiles": 2
+    },
+    {
+      "from": "class-12-notes/biology/biotechnology-principles",
+      "thinFiles": 2
+    },
+    {
+      "from": "class-12-notes/chemistry/general-and-organic-fundamentals",
+      "thinFiles": 2
+    },
+    {
+      "from": "class-12-notes/mathematics/probability",
+      "thinFiles": 2
+    },
+    {
+      "from": "class-12-notes/physics/magnetism-and-magnetic-effect",
+      "thinFiles": 2
+    },
+    {
+      "from": "class-12-notes/physics/modern-physics",
+      "thinFiles": 2
+    },
+    {
+      "from": "class-12-notes/physics/ray-optics-12",
+      "thinFiles": 2
+    },
+    {
+      "from": "class-12-notes/physics/wave-optics",
+      "thinFiles": 2
+    },
+    {
+      "from": "class-11/physics/thermodynamics",
+      "thinFiles": 1
+    },
+    {
+      "from": "class-11-notes/biology/vegetation",
+      "thinFiles": 1
+    },
+    {
+      "from": "class-11-notes/chemistry/chemical-equilibrium",
+      "thinFiles": 1
+    },
+    {
+      "from": "class-11-notes/chemistry/chemistry-of-non-metals",
+      "thinFiles": 1
+    },
+    {
+      "from": "class-11-notes/english/grammar/active-passive-voice",
+      "thinFiles": 1
+    },
+    {
+      "from": "class-11-notes/english/grammar/conjunctions",
+      "thinFiles": 1
+    },
+    {
+      "from": "class-11-notes/english/grammar/direct-indirect-speech",
+      "thinFiles": 1
+    },
+    {
+      "from": "class-11-notes/english/grammar/modals",
+      "thinFiles": 1
+    },
+    {
+      "from": "class-11-notes/english/grammar/parts-of-speech",
+      "thinFiles": 1
+    },
+    {
+      "from": "class-11-notes/english/grammar/prepositions",
+      "thinFiles": 1
+    },
+    {
+      "from": "class-11-notes/english/grammar/subject-verb-agreement",
+      "thinFiles": 1
+    },
+    {
+      "from": "class-11-notes/english/writing/essay-writing",
+      "thinFiles": 1
+    },
+    {
+      "from": "class-11-notes/english/writing/letter-writing",
+      "thinFiles": 1
+    },
+    {
+      "from": "class-11-notes/physics/work-energy-power",
+      "thinFiles": 1
+    },
+    {
+      "from": "class-12-notes/chemistry/chemistry-in-everyday-life",
+      "thinFiles": 1
+    },
+    {
+      "from": "class-12-notes/mathematics/limits-and-continuity",
+      "thinFiles": 1
+    },
+    {
+      "from": "class-12-notes/physics/ray-optics",
+      "thinFiles": 1
+    }
+  ]
+}

@@ -18,6 +18,13 @@
  *
  * A note file counts as AUTHORED only if it has >= 4 notes AND zero template
  * markers. Anything less is a scope a student can see as filler.
+ *
+ * Question banks (`pyqs/NN-neb-YYYY.json` and the CBSE banks) are a different
+ * schema: their body is a `questions[]` array of past-paper questions with
+ * worked solutions, never a `notes[]` list. The notes rule cannot grade them
+ * (a bank with the year's real questions would read as "empty"), so a bank is
+ * AUTHORED when it carries >= 1 real question and zero template markers — the
+ * same "renders real content, not filler" test applied to its own body shape.
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -100,7 +107,12 @@ function auditUnitDir(dir) {
       continue;
     }
     const notes = Array.isArray(d.notes) ? d.notes.length : 0;
+    const questions = Array.isArray(d.questions)
+      ? d.questions.filter((q) => q && typeof q.question === "string" && q.question.trim()).length
+      : 0;
+    const isBank = questions > 0 && !Array.isArray(d.notes);
     if (markerHits(raw) > 0) res.placeholder++;
+    else if (isBank) res.authored++; // question bank: graded on its questions body
     else if (notes < MIN_NOTES) res.thin++;
     else res.authored++;
   }

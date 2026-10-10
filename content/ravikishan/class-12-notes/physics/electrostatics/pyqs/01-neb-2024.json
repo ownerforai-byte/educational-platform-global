@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Physics — Electrostatics — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "electrostatics",
+  "topicSlug": "electrostatics-pyq-2024",
+  "topicTitle": "NEB Class 12 Physics — Electrostatics — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State Gauss's law in electrostatics and use it to find the electric field due to an infinite plane sheet of charge of surface charge density σ.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Gauss's law:** the total electric flux through a closed surface equals 1/ε₀ times the net charge enclosed — Φ = ∮E·dA = Q/ε₀.\n\n**Infinite sheet:** take a pillbox of cross-section A straddling the sheet. By symmetry E is perpendicular to the sheet, so flux leaves only through the two flat faces: Φ = 2EA. Enclosed charge Q = σA.\n\n2EA = σA/ε₀ → **E = σ/2ε₀**, directed away from the sheet for positive σ, and independent of distance.",
+      "knowledgeNote": "The sheet field is uniform; for a charged conductor surface the same pillbox (with E = 0 inside) gives E = σ/ε₀, twice the sheet value."
+    },
+    {
+      "question": "Derive an expression for the capacitance of a parallel plate capacitor with a dielectric slab of dielectric constant K filling the space between the plates.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Field of one plate E₀ = σ/ε₀ = Q/(Aε₀); with a dielectric the field reduces to E = E₀/K = Q/(Aε₀K).\n\nPotential V = Ed = Qd/(Aε₀K).\n\nC = Q/V = **ε₀KA/d** — the dielectric multiplies the vacuum capacitance ε₀A/d by K.",
+      "knowledgeNote": "For a battery-connected capacitor the charge rises by K (V fixed); for an isolated one the potential falls by K (Q fixed) and U = Q²/2C drops."
+    },
+    {
+      "question": "Two point charges +4 μC and −2 μC are 20 cm apart in air. Find the force between them and the electric potential at the midpoint of the line joining them.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "F = kq₁q₂/r² = (9×10⁹ × 4×10⁻⁶ × 2×10⁻⁶)/(0.2)² = 0.072/0.04 = **1.8 N** (attractive, unlike charges).\n\nMidpoint r₁ = r₂ = 0.1 m. V = k(q₁ + q₂)/r = (9×10⁹ × 2×10⁻⁶)/0.1 = **1.8×10⁵ V** (scalar sum, since potential adds algebraically).",
+      "knowledgeNote": "Force is a vector (opposite charges attract); potential is a scalar and adds algebraically — a favourite trap in NEB numericals."
+    }
+  ]
+}

@@ -7,53 +7,61 @@
   "notes": [
     "**Photoelectric Effect:** This topic covers the fundamental concepts of photoelectric effect in the physics curriculum.",
     "Understanding photoelectric effect is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to photoelectric effect should be memorized and practiced regularly."
+    "Key definitions and theorems related to photoelectric effect should be memorized and practiced regularly.",
+    "**Fact.** Photoelectric effect: hν = φ + K_max; K_max = eV_s; stopping voltage V_s = (h/e)(ν − ν₀).",
+    "**Fact.** Threshold frequency ν₀ = φ/h; no emission below ν₀ regardless of intensity (evidence of photons).",
+    "**Fact.** Momentum of light p = h/λ; De Broglie: λ = h/p = h/√(2mK)."
   ],
   "confusion": [
     "❌ 'Higher intensity light always causes photoelectric emission' ✅ Emission only occurs if the light frequency is *above* the threshold frequency, regardless of intensity.",
     "❌ 'Photoelectric current increases with frequency' ✅ Current (number of electrons) increases with *intensity* (number of photons), not frequency.",
-    "❌ 'Stopping potential depends on light intensity' ✅ Stopping potential depends only on the *maximum kinetic energy* of emitted electrons, which is determined by the light *frequency*."
+    "❌ 'Stopping potential depends on light intensity' ✅ Stopping potential depends only on the *maximum kinetic energy* of emitted electrons, which is determined by the light *frequency*.",
+    "❌ skip the key fact → ✅ photoelectric effect: hν = φ + k_max; k_max = ev_s; stopping voltage v_s = (h/e)(ν − ν₀).."
   ],
   "practice": [
     "Solve at least 5 problems on photoelectric effect from your textbook.",
     "Try to derive the key formulas from first principles.",
     "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type."
+    "Practice identifying which method/formula to apply in each problem type.",
+    "one worked example for \"Photoelectric effect and Einstein's photoelectric equation\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "universalFacts": [
     "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
     "Understanding photoelectric effect builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of photoelectric effect span engineering, physics, economics, and computer science."
+    "Real-world applications of photoelectric effect span engineering, physics, economics, and computer science.",
+    "Photoelectric effect: hν = φ + K_max; K_max = eV_s; stopping voltage V_s = (h/e)(ν − ν₀).",
+    "Threshold frequency ν₀ = φ/h; no emission below ν₀ regardless of intensity (evidence of photons).",
+    "Momentum of light p = h/λ; De Broglie: λ = h/p = h/√(2mK)."
   ],
   "animation3D": "modern-physics-12",
   "motionGraphics": "modern-physics-12",
   "examples": [
-    "Example 1: Real-world application of Photoelectric Effect",
-    "Example 2: Practical demonstration of Photoelectric Effect concepts",
-    "Example 3: Numerical problem on Photoelectric Effect",
-    "Example 4: Diagram-based question on Photoelectric Effect",
-    "Example 5: Application in daily life involving Photoelectric Effect"
+    "Real-world application of Photoelectric Effect",
+    "Practical demonstration of Photoelectric Effect concepts",
+    "Diagram-based question on Photoelectric Effect",
+    "Application in daily life involving Photoelectric Effect",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Photoelectric Effect with suitable example.",
     "Q2. Solve problems related to Photoelectric Effect.",
     "Q3. Differentiate between various aspects of Photoelectric Effect.",
     "Q4. Derive the key formula related to Photoelectric Effect.",
-    "Q5. What are the applications of Photoelectric Effect?"
+    "Q5. What are the applications of Photoelectric Effect?",
+    "state + explain the main idea of \"Photoelectric effect and Einstein's photoelectric equation\" with one example.",
+    "compare \"Photoelectric effect\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Photoelectric effect and Einstein's photoelectric equation\" and verify the answer is plausible."
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Photoelectric Effect",
-    "Key Formula 2: Mathematical expression of Photoelectric Effect",
-    "Key Formula 3: Application formula for Photoelectric Effect",
-    "Key Formula 4: Derivation result for Photoelectric Effect",
-    "Key Formula 5: Important relation in Photoelectric Effect"
+    "Application formula for Photoelectric Effect",
+    "Derivation result for Photoelectric Effect",
+    "K_max = hν − φ",
+    "V_s = (h/e)(ν − ν₀)",
+    "p = h/λ"
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of Photoelectric Effect",
-    "Key Point 2: Essential theorem or principle related to Photoelectric Effect",
-    "Key Point 3: Important condition or constraint for Photoelectric Effect",
-    "Key Point 4: Common applications of Photoelectric Effect",
-    "Key Point 5: Connection to other topics in Science"
+    "• Photoelectric effect",
+    "• Einstein's photoelectric equation"
   ],
   "summary": "Photoelectric Effect is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
@@ -85,23 +93,12 @@
     "Trick 5: Time-saving approach for Photoelectric Effect problems"
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Photoelectric Effect",
-    "Exam Tip 2: Practice previous year questions on Photoelectric Effect",
-    "Exam Tip 3: Photoelectric Effect carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Photoelectric Effect thoroughly",
-    "Exam Tip 5: Review common mistakes related to Photoelectric Effect"
+    "Focus on numerical problems from Photoelectric Effect",
+    "Practice previous year questions on Photoelectric Effect",
+    "Learn the derivations for Photoelectric Effect thoroughly",
+    "Review common mistakes related to Photoelectric Effect"
   ],
   "mcs": [
-    {
-      "question": "Which of the following best describes Photoelectric Effect?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
-      "answer": "A"
-    },
     {
       "question": "The primary application of Photoelectric Effect is in:",
       "options": [
@@ -156,5 +153,29 @@
     "Task 3: Create a concept map for Photoelectric Effect",
     "Task 4: Practice previous year exam questions on Photoelectric Effect",
     "Task 5: Explain Photoelectric Effect to a peer or study group"
+  ],
+  "numericals": [
+    "Use  K_max = hν − φ  — pick reasonable values, solve, and check the units.",
+    "Use  V_s = (h/e)(ν − ν₀)  — pick reasonable values, solve, and check the units.",
+    "Use  p = h/λ  — pick reasonable values, solve, and check the units."
+  ],
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Photoelectric effect and Einstein's photoelectric equation\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: photoelectric effect, einstein's photoelectric equation (within Modern Physics).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: photoelectric effect: hν = φ + k_max; k_max = ev_s; stopping voltage v_s = (h/e)(ν − ν₀)."
   ]
 }

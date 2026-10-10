@@ -7,11 +7,11 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Energy of charged capacitor — Capacitor, Physics (class-11-notes).",
-    "**Tested.** define it · list: energy of charged capacitor · one worked example · one misconception each.",
-    "**Fact.** Capacitance C = Q/V; parallel-plate C = ε₀A/d (larger with dielectric: C = ε₀εᵣA/d).",
-    "**Fact.** Energy stored U = ½CV² = Q²/2C.",
-    "**Fact.** Series: 1/C = Σ1/C (same Q); Parallel: C = ΣC (same V)."
+    "**Energy stored.** The work done charging a capacitor is stored as electrostatic energy U = ½CV² = Q²/2C = ½QV, where C is capacitance, Q the charge and V the potential difference.",
+    "**Energy density.** The energy per unit volume between the plates is u = ½ε₀E²; the same expression gives the energy density of any electric field in vacuum.",
+    "**Charging a capacitor.** A battery of emf V supplies energy QV while charging, but only half (½QV) is stored — the rest is dissipated as heat in the circuit resistance.",
+    "**Sharing between capacitors.** When a charged capacitor shares charge with an uncharged one, total charge is conserved but energy is lost as heat until the potentials equalise.",
+    "**Applications.** Stored capacitor energy drives camera flashes, defibrillators and pulsed lasers, where energy must be released very rapidly."
   ],
   "confusion": [
     "❌ treat \"Energy of charged capacitor\" as one blob → ✅ split into: energy of charged capacitor.",
@@ -66,17 +66,6 @@
       ],
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    },
-    {
-      "question": "Which of these is a governing / standard formula associated with \"Energy of charged capacitor\"?",
-      "options": [
-        "C = Q/V",
-        "x + y = z (placeholder)",
-        "No formula applies",
-        "E = mc² only"
-      ],
-      "answer": "C = Q/V",
-      "explanation": "C = Q/V is the standard form used for this topic."
     }
   ]
 }

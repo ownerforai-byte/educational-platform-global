@@ -1,0 +1,63 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "evolutionary-biology",
+  "unitTitle": "Evolutionary Biology",
+  "unitHours": 12,
+  "syllabusTopics": [
+    "Life and its origin: Oparin-Haldane theory, Miller and Urey's experiment",
+    "Evidences of evolution: morphological, anatomical, paleontological, embryological and biochemical",
+    "Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Human evolution: position of man in animal kingdom; differences between new world and old world monkeys; evolution of modern man from anthropoid ancestors"
+  ],
+  "source": "platform",
+  "agentNotes": "Authoring contract: frontend/AGENTS.md §9. Filled 2026-10-05 from this unit's concepts/01-life-and-its-origin...json, 02-evidences-of-evolution...json and 03-theories-of-evolution...json (notes, keyPoints, formulas, specialNotes, examShortTricks, mcs). Anchored on origin + evidence so it does not repeat the built-in evolutionary-biology slide (Hardy–Weinberg). Board row from the unit practice bank; no fabricated citation.",
+  "card": {
+    "tag": "Evolution",
+    "title": "Origin of life and the proof — Miller–Urey to Archaeopteryx",
+    "href": "/class-11-notes/biology/chapters/evolutionary-biology",
+    "icon": "Waypoints",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Evolution answers two questions with one framework. Where did life come from? Chemical evolution — Oparin–Haldane's reducing early atmosphere built organics, then polymers, then coacervate proto-cells, then self-replication, and Miller–Urey (1953) made the first step in a flask. How do we know descent happened? Five independent evidence lines — morphology, anatomy, fossils, embryology and biochemistry — plus the theories that explain them: Lamarck → Darwin → neo-Darwinism."
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Chemical evolution: inorganic (CH₄, NH₃, H₂O, H₂; no O₂) → simple organics (amino acids, sugars, bases) → polymers → proto-cells (coacervates) → self-replicating systems  ·  Miller–Urey: electric discharge + reducing atmosphere → amino acids  ·  Homologous = same structure, different function (divergent); analogous = different structure, same function (convergent)"
+    },
+    {
+      "label": "Conditions",
+      "text": "The origin story needs an oxygen-free, reducing atmosphere — free O₂ would oxidise the new organics before they could assemble — plus an energy source (lightning, UV, volcanic heat) and water to concentrate them. In the evidence lines: fossils need hard parts and rapid burial; homology must be judged on structure and common origin, not on appearance or use; molecular comparisons assume a roughly steady mutation rate (the molecular clock)."
+    },
+    {
+      "label": "Special cases",
+      "text": "Abiogenesis is NOT spontaneous generation — Pasteur killed that idea; abiogenesis means slow chemical evolution over millions of years (the standard trick question). Wings of a bird and a bat are analogous (same job, different origin) while the forelimbs of whale, bat and human are homologous (same bones, different jobs). Vestigial leftovers — appendix, coccyx, pelvic bones in whales. Archaeopteryx carries reptile and bird features together, a true transitional fossil. RNA world: ribozymes both store information and catalyse. Genetic drift is random; selection is not."
+    },
+    {
+      "label": "Solved",
+      "text": "Classify any pair by asking 'same structure or same function?': bird wing vs insect wing → analogous; whale flipper vs human arm → homologous; human appendix → vestigial; cytochrome c similarity across species → molecular. Theories test: giraffe neck — Lamarck says stretching during life was inherited; Darwin says longer-necked variants already existed and survived better; neo-Darwinism names the mechanism: selection changing allele frequencies across generations."
+    },
+    {
+      "label": "Limitation",
+      "text": "Miller–Urey makes amino acids, not a self-replicating cell — no experiment yet links the last chemical step to the first organism, and chirality (why life uses only left-handed amino acids) is unexplained. The fossil record is biased toward hard-bodied, buried organisms. Molecular clocks carry calibration error, and Lamarckism is kept in textbooks mainly as the rejected alternative — useful contrast, not current science."
+    },
+    {
+      "label": "Derivation",
+      "text": "Derive natural selection in four moves: variation already exists in a population → overproduction makes resources limiting → a struggle follows → the variants that survive and reproduce pass their alleles on, so allele frequencies shift and the population evolves. Derive the RNA world from a chicken-and-egg: proteins need RNA to be built, RNA needs proteins to be copied — unless one molecule does both, which catalytic RNA (ribozyme) does."
+    },
+    {
+      "label": "Shortcut",
+      "text": "Four one-liners carry the unit: 'abiogenesis ≠ spontaneous generation'; 'homo = same origin, ana = same function'; 'vestigial = a leftover vest'; 'Lamarck learned-and-acquired is wrong, Darwin's D-N-S survives'. Chemical evolution stages = O-P-C-S (organics, polymers, coacervates, self-replication). For experiments always write setup → conditions → result → significance, four lines, in that order."
+    },
+    {
+      "label": "Board question",
+      "text": "NEB-style (unit practice bank): explain the Oparin–Haldane theory in four stages; describe Miller–Urey's experiment with setup, conditions and results; state the RNA-world hypothesis; differentiate homologous from analogous organs with two examples each; explain vestigial organs and Archaeopteryx as evidence; compare Lamarckism and Darwinism; describe neo-Darwinism (modern synthesis) and differentiate natural selection from genetic drift."
+    }
+  ]
+}

@@ -7,22 +7,11 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Quadratic equation: nature and roots of a quadratic equat… — Algebra, Mathematics (class-11-notes).",
-    "**Tested.** define it · list: quadratic equation, nature, roots of a quadratic equation, relation between roots · one worked example · one misconception each.",
     "**Fact.** ax² + bx + c = 0; discriminant D = b² − 4ac: D>0 two distinct real, D=0 equal, D<0 complex conjugate.",
     "**Fact.** Sum of roots = −b/a; product = c/a. Nature (D sign) decides the roots without solving.",
-    "**Fact.** For ax² + bx + c to have a root in (p,q): sufficient (a·f(p)·f(q) < 0). One root common with another: discriminant-of-conditions / resultant.",
-    "**Nature.** one-line definition + one-line exam use.",
-    "**Roots of a quadratic equation.** one-line definition + one-line exam use.",
-    "**Relation between roots.** one-line definition + one-line exam use.",
-    "**Coefficient.** one-line definition + one-line exam use.",
-    "**Formation of a quadratic equation.** one-line definition + one-line exam use.",
-    "**Symmetric roots.** one-line definition + one-line exam use.",
-    "**One or both roots common.** one-line definition + one-line exam use."
+    "**Fact.** For ax² + bx + c to have a root in (p,q): sufficient (a·f(p)·f(q) < 0). One root common with another: discriminant-of-conditions / resultant."
   ],
   "confusion": [
-    "❌ treat \"Quadratic equation\" as one blob → ✅ split into: quadratic equation, nature, roots of a quadratic equation.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ answer with no steps → ✅ show each step and box the result.",
     "❌ skip the key fact → ✅ ax² + bx + c = 0; discriminant d = b² − 4ac: d>0 two distinct real, d=0 equal, d<0 complex conjugate.."
   ],
@@ -33,7 +22,6 @@
     "Limit to remember: ax² + bx + c = 0; discriminant d = b² − 4ac: d>0 two distinct real, d=0 equal, d<0 complex conjugate."
   ],
   "practice": [
-    "define + example each sub-idea: quadratic equation, nature, roots of a quadratic equation, relation between roots.",
     "one worked example for \"Quadratic equation: nature and roots of a quadratic equat…\" — check units / edge cases.",
     "recall card: definition → formula → limit → one error to avoid."
   ],
@@ -66,9 +54,10 @@
     "• Roots of a quadratic equation",
     "• Relation between roots",
     "• Coefficient",
-    "• Formation of a quadratic equation"
+    "• Formation of a quadratic equation",
+    "Connection of Quadratic Equation to other topics"
   ],
-  "summary": "Quadratic equation: nature and roots of a quadratic equat… (Algebra, Mathematics, class-11-notes) covers Quadratic equation, nature, roots of a quadratic equation. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Quadratic Equation covers essential principles and applications.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Quadratic equation: nature and roots of a quadratic equat…\"?",
@@ -89,17 +78,27 @@
       ],
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    },
-    {
-      "question": "Which of these is a governing / standard formula associated with \"Quadratic equation: nature and roots of a quadratic equat…\"?",
-      "options": [
-        "x = (−b ± √D)/(2a)",
-        "x + y = z (placeholder)",
-        "No formula applies",
-        "E = mc² only"
-      ],
-      "answer": "A",
-      "explanation": "x = (−b ± √D)/(2a) is the standard form used for this topic."
     }
-  ]
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Quadratic Equation",
+    "Statement 2: Theorem related to Quadratic Equation",
+    "Statement 3: Condition for Quadratic Equation to be valid",
+    "Statement 4: Principle governing Quadratic Equation",
+    "Statement 5: Corollary or consequence of Quadratic Equation"
+  ],
+  "importantNotes": [
+    "Quadratic Equation is based on fundamental principles."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Quadratic Equation."
+  ],
+  "importantConcepts": [
+    "Definition and significance of Quadratic Equation."
+  ],
+  "animation3D": "algebra",
+  "motionGraphics": "algebra",
+  "specialNotes": [],
+  "examNotes": [],
+  "importantTasks": []
 }

@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Physics — Electromagnetic Induction — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "electromagnetic-induction",
+  "topicSlug": "electromagnetic-induction-pyq-2024",
+  "topicTitle": "NEB Class 12 Physics — Electromagnetic Induction — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State Faraday's laws of electromagnetic induction and explain Lenz's law as a consequence of energy conservation.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Faraday's laws:** (i) whenever the magnetic flux linked with a circuit changes, an emf is induced; (ii) the magnitude of the emf equals the rate of change of flux, |e| = dΦ/dt. For a coil of N turns, e = −N dΦ/dt.\n\n**Lenz's law:** the induced current opposes the change producing it. If it aided the change, the flux would grow without limit and give free energy; the work done against the opposition appears as electrical energy, so Lenz's law is energy conservation in electromagnetic form.",
+      "knowledgeNote": "The minus sign in e = −N dΦ/dt is Lenz's law written mathematically."
+    },
+    {
+      "question": "Derive the expression for the motional emf induced in a rod of length l moving with velocity v perpendicular to a uniform magnetic field B, and find the induced current if the rod slides on rails closed by a resistance R.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Each free charge q in the rod experiences force qvB along the rod, so work per unit charge (the emf) is\n\n**e = Bvl** = Bvl (since e = ∫(v×B)·dl and v ⊥ B ⊥ l).\n\nIf the rails are closed by resistance R and the rod resistance is negligible, I = e/R = **Bvl/R**, and the power dissipated I²R equals the mechanical power Fv with F = BIl — energy bookkeeping confirms the result.",
+      "knowledgeNote": "Force needed to keep the rod moving at constant v is F = B²l²v/R, since the induced current produces a retarding magnetic force (Lenz)."
+    },
+    {
+      "question": "What is self-inductance? Derive the energy stored in an inductor carrying current I.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Self-inductance** L of a coil is the flux linkage per unit current, e = −L dI/dt, measured in henry.\n\nWhile the current grows, the source does work against the back emf: dW = −e·I dt = L I dI.\n\nIntegrating from 0 to I: **U = ½LI²**, stored in the magnetic field.",
+      "knowledgeNote": "Compare U = ½LI² (magnetic, inductor) with U = ½CV² (electric, capacitor) — a common comparison question."
+    }
+  ]
+}

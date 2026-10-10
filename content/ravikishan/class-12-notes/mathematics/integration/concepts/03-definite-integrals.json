@@ -12,48 +12,48 @@
   "confusion": [
     "Carefully distinguish between similar-looking concepts in definite integrals.",
     "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "Practice with multiple examples to solidify your understanding.",
+    "❌ answer with no steps → ✅ show each step and box the result."
   ],
   "practice": [
     "Solve at least 5 problems on definite integrals from your textbook.",
     "Try to derive the key formulas from first principles.",
     "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type."
+    "Practice identifying which method/formula to apply in each problem type.",
+    "one worked example for \"Definite integrals and properties\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "universalFacts": [
     "This topic is a cornerstone of the mathematics curriculum and appears consistently in examinations.",
     "Understanding definite integrals builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of definite integrals span engineering, physics, economics, and computer science."
+    "Real-world applications of definite integrals span engineering, physics, economics, and computer science.",
+    "answer pattern for \"Definite integrals and properties\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "animation3D": "integration",
   "motionGraphics": "integration",
   "examples": [
-    "Example 1: Real-world application of Definite Integrals",
-    "Example 2: Practical demonstration of Definite Integrals concepts",
-    "Example 3: Numerical problem on Definite Integrals",
-    "Example 4: Diagram-based question on Definite Integrals",
-    "Example 5: Application in daily life involving Definite Integrals"
+    "Real-world application of Definite Integrals",
+    "Practical demonstration of Definite Integrals concepts",
+    "Diagram-based question on Definite Integrals",
+    "Application in daily life involving Definite Integrals",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Definite Integrals with suitable example.",
     "Q2. Solve problems related to Definite Integrals.",
     "Q3. Differentiate between various aspects of Definite Integrals.",
     "Q4. Derive the key formula related to Definite Integrals.",
-    "Q5. What are the applications of Definite Integrals?"
+    "Q5. What are the applications of Definite Integrals?",
+    "state + explain the main idea of \"Definite integrals and properties\" with one example.",
+    "compare \"Definite integrals\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Definite integrals and properties\" and verify the answer is plausible."
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Definite Integrals",
-    "Key Formula 2: Mathematical expression of Definite Integrals",
-    "Key Formula 3: Application formula for Definite Integrals",
-    "Key Formula 4: Derivation result for Definite Integrals",
-    "Key Formula 5: Important relation in Definite Integrals"
+    "Application formula for Definite Integrals",
+    "Derivation result for Definite Integrals"
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of Definite Integrals",
-    "Key Point 2: Essential theorem or principle related to Definite Integrals",
-    "Key Point 3: Important condition or constraint for Definite Integrals",
-    "Key Point 4: Common applications of Definite Integrals",
-    "Key Point 5: Connection to other topics in Science"
+    "• Definite integrals",
+    "• Properties"
   ],
   "summary": "Definite Integrals is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
@@ -85,23 +85,12 @@
     "Trick 5: Time-saving approach for Definite Integrals problems"
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Definite Integrals",
-    "Exam Tip 2: Practice previous year questions on Definite Integrals",
-    "Exam Tip 3: Definite Integrals carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Definite Integrals thoroughly",
-    "Exam Tip 5: Review common mistakes related to Definite Integrals"
+    "Focus on numerical problems from Definite Integrals",
+    "Practice previous year questions on Definite Integrals",
+    "Learn the derivations for Definite Integrals thoroughly",
+    "Review common mistakes related to Definite Integrals"
   ],
   "mcs": [
-    {
-      "question": "Which of the following best describes Definite Integrals?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
-      "answer": "A"
-    },
     {
       "question": "The primary application of Definite Integrals is in:",
       "options": [
@@ -156,5 +145,28 @@
     "Task 3: Create a concept map for Definite Integrals",
     "Task 4: Practice previous year exam questions on Definite Integrals",
     "Task 5: Explain Definite Integrals to a peer or study group"
+  ],
+  "numericals": [
+    "Set up the defining equation for \"Definite integrals and properties\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Definite integrals and properties\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: definite integrals, properties (within Integration).",
+    "Out of scope here: topics of neighbouring units in Mathematics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
   ]
 }

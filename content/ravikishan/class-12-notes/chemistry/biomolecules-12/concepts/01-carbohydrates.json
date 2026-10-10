@@ -18,44 +18,47 @@
     "Solve at least 5 problems on carbohydrates from your textbook.",
     "Try to derive the key formulas from first principles.",
     "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type."
+    "Practice identifying which method/formula to apply in each problem type.",
+    "one worked example for \"Carbohydrates: monosaccharides (glucose, fructose), disac…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "universalFacts": [
     "This topic is a cornerstone of the chemistry curriculum and appears consistently in examinations.",
     "Understanding carbohydrates builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of carbohydrates span engineering, physics, economics, and computer science."
+    "Real-world applications of carbohydrates span engineering, physics, economics, and computer science.",
+    "answer pattern for \"Carbohydrates: monosaccharides (glucose, fructose), disac…\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "animation3D": "biomolecules-12",
   "motionGraphics": "biomolecules-12",
   "examples": [
-    "Example 1: Real-world application of Carbohydrates",
-    "Example 2: Practical demonstration of Carbohydrates concepts",
-    "Example 3: Numerical problem on Carbohydrates",
-    "Example 4: Diagram-based question on Carbohydrates",
-    "Example 5: Application in daily life involving Carbohydrates"
+    "Real-world application of Carbohydrates",
+    "Practical demonstration of Carbohydrates concepts",
+    "Diagram-based question on Carbohydrates",
+    "Application in daily life involving Carbohydrates",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Carbohydrates with suitable example.",
     "Q2. Solve problems related to Carbohydrates.",
     "Q3. Differentiate between various aspects of Carbohydrates.",
     "Q4. Derive the key formula related to Carbohydrates.",
-    "Q5. What are the applications of Carbohydrates?"
+    "Q5. What are the applications of Carbohydrates?",
+    "state + explain the main idea of \"Carbohydrates: monosaccharides (glucose, fructose), disac…\" with one example.",
+    "compare \"Carbohydrates\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Carbohydrates: monosaccharides (glucose, fructose), disac…\" and verify the answer is plausible."
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Carbohydrates",
-    "Key Formula 2: Mathematical expression of Carbohydrates",
-    "Key Formula 3: Application formula for Carbohydrates",
-    "Key Formula 4: Derivation result for Carbohydrates",
-    "Key Formula 5: Important relation in Carbohydrates"
+    "Application formula for Carbohydrates",
+    "Derivation result for Carbohydrates"
   ],
   "keyPoints": [
-    "Key Point 1: Fundamental definition of Carbohydrates",
-    "Key Point 2: Essential theorem or principle related to Carbohydrates",
-    "Key Point 3: Important condition or constraint for Carbohydrates",
-    "Key Point 4: Common applications of Carbohydrates",
-    "Key Point 5: Connection to other topics in Science"
+    "• Carbohydrates",
+    "• Monosaccharides",
+    "• Glucose",
+    "• Fructose",
+    "• Disaccharides",
+    "• Polysaccharides"
   ],
-  "summary": "Carbohydrates is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "Carbohydrates is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics. Carbohydrates: monosaccharides (glucose, fructose), disac… (Biomolecules, Chemistry, class-12-notes) covers Carbohydrates, monosaccharides, glucose. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Carbohydrates applies",
     "Note 2: Carbohydrates connects to multiple other topics in Science",
@@ -85,23 +88,12 @@
     "Trick 5: Time-saving approach for Carbohydrates problems"
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Carbohydrates",
-    "Exam Tip 2: Practice previous year questions on Carbohydrates",
-    "Exam Tip 3: Carbohydrates carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Carbohydrates thoroughly",
-    "Exam Tip 5: Review common mistakes related to Carbohydrates"
+    "Focus on numerical problems from Carbohydrates",
+    "Practice previous year questions on Carbohydrates",
+    "Learn the derivations for Carbohydrates thoroughly",
+    "Review common mistakes related to Carbohydrates"
   ],
   "mcs": [
-    {
-      "question": "Which of the following best describes Carbohydrates?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
-      "answer": "A"
-    },
     {
       "question": "The primary application of Carbohydrates is in:",
       "options": [
@@ -156,5 +148,34 @@
     "Task 3: Create a concept map for Carbohydrates",
     "Task 4: Practice previous year exam questions on Carbohydrates",
     "Task 5: Explain Carbohydrates to a peer or study group"
+  ],
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Carbohydrates: monosaccharides (glucose, fructose), disac…\"?",
+      "options": [
+        "Carbohydrates",
+        "Monosaccharides",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "A",
+      "explanation": "Carbohydrates is listed among the official sub-ideas of Carbohydrates: monosaccharides (glucose, fructose), disac…; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Carbohydrates: monosaccharides (glucose, fructose), disac…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: carbohydrates, monosaccharides, glucose, fructose (within Biomolecules).",
+    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
   ]
 }

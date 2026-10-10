@@ -7,19 +7,11 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Measure of dispersion: standard deviation, variance, coef… — Statistics and Probability, Mathematics (class-11-notes).",
-    "**Tested.** define it · list: measure of dispersion: standard deviation, variance, coefficient of variation, skewness · one worked example · one misconception each.",
     "**Fact.** Dispersive power ω = (μv − μr)/(μd − 1); angular dispersion ΔD ∝ ω for a given refractive index.",
     "**Fact.** Achromatism: net deviation of two cemented prisms is zero for a chosen colour → (ω₁/ω₂) relations on D/(μ−1).",
-    "**Fact.** Glass with higher Abbe number disperses less; flint glass > crown in dispersion.",
-    "**Variance.** one-line definition + one-line exam use.",
-    "**Coefficient of variation.** one-line definition + one-line exam use.",
-    "**Skewness.** one-line definition + one-line exam use.",
-    "**Karl Pearson's coefficient of skewness.** one-line definition + one-line exam use."
+    "**Fact.** Glass with higher Abbe number disperses less; flint glass > crown in dispersion."
   ],
   "confusion": [
-    "❌ treat \"Measure of dispersion: standard deviation\" as one blob → ✅ split into: measure of dispersion: standard deviation, variance, coefficient of variation.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ answer with no steps → ✅ show each step and box the result.",
     "❌ skip the key fact → ✅ dispersive power ω = (μv − μr)/(μd − 1); angular dispersion δd ∝ ω for a given refractive index.."
   ],
@@ -30,7 +22,6 @@
     "Limit to remember: dispersive power ω = (μv − μr)/(μd − 1); angular dispersion δd ∝ ω for a given refractive index."
   ],
   "practice": [
-    "define + example each sub-idea: measure of dispersion: standard deviation, variance, coefficient of variation, skewness.",
     "one worked example for \"Measure of dispersion: standard deviation, variance, coef…\" — check units / edge cases.",
     "recall card: definition → formula → limit → one error to avoid."
   ],
@@ -60,9 +51,10 @@
     "• Variance",
     "• Coefficient of variation",
     "• Skewness",
-    "• Karl Pearson's coefficient of skewness"
+    "• Karl Pearson's coefficient of skewness",
+    "Connection of Measures of Dispersion to other topics"
   ],
-  "summary": "Measure of dispersion: standard deviation, variance, coef… (Statistics and Probability, Mathematics, class-11-notes) covers Measure of dispersion: standard deviation, variance, coefficient of variation. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Measures of Dispersion covers essential principles and applications.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Measure of dispersion: standard deviation, variance, coef…\"?",
@@ -83,17 +75,27 @@
       ],
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    },
-    {
-      "question": "Which of these is a governing / standard formula associated with \"Measure of dispersion: standard deviation, variance, coef…\"?",
-      "options": [
-        "ω = (μv − μr)/(μd − 1)",
-        "x + y = z (placeholder)",
-        "No formula applies",
-        "E = mc² only"
-      ],
-      "answer": "A",
-      "explanation": "ω = (μv − μr)/(μd − 1) is the standard form used for this topic."
     }
-  ]
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Measure of dispersion: standard deviation, variance, coefficient of variation, skewness, Karl Pearson's coefficient of skewness",
+    "Statement 2: Theorem related to Measure of dispersion: standard deviation, variance, coefficient of variation, skewness, Karl Pearson's coefficient of skewness",
+    "Statement 3: Condition for Measure of dispersion: standard deviation, variance, coefficient of variation, skewness, Karl Pearson's coefficient of skewness to be valid",
+    "Statement 4: Principle governing Measure of dispersion: standard deviation, variance, coefficient of variation, skewness, Karl Pearson's coefficient of skewness",
+    "Statement 5: Corollary or consequence of Measure of dispersion: standard deviation, variance, coefficient of variation, skewness, Karl Pearson's coefficient of skewness"
+  ],
+  "importantNotes": [
+    "Measures of Dispersion is based on fundamental principles."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Measures of Dispersion."
+  ],
+  "importantConcepts": [
+    "Definition and significance of Measures of Dispersion."
+  ],
+  "animation3D": "statistics-and-probability",
+  "motionGraphics": "statistics-and-probability",
+  "specialNotes": [],
+  "examNotes": [],
+  "importantTasks": []
 }

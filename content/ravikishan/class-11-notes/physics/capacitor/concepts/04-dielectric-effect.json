@@ -33,7 +33,6 @@
   ],
   "practiceQuestions": [
     "Q1. Differentiate between polar and non-polar dielectrics with two examples of each.",
-    "Q2. Define electric polarization vector P and electric displacement vector D. Write their SI units and dimensional formulas.",
     "Q3. Derive the relation between dielectric constant κ and electric susceptibility χ_e, showing that κ = 1 + χ_e.",
     "Q4. A parallel plate capacitor is charged and isolated. Explain what happens to the electric field, potential difference, and capacitance when a dielectric slab fills the plate gap."
   ],
@@ -120,7 +119,5 @@
     "Derive the relation κ = 1 + χ_e.",
     "Calculate induced bound surface charge density σ_p from free plate charge and dielectric constant κ."
   ],
-  "duplicateType": 2,
-  "visualType": "parallel-plate-capacitor",
-  "tabGroup": "effect-of-a-dielectric-polarization-and-displacement"
+  "visualType": "parallel-plate-capacitor"
 }

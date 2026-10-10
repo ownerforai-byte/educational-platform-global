@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Chemistry — Solutions — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "solutions",
+  "topicSlug": "solutions-pyq-2024",
+  "topicTitle": "NEB Class 12 Chemistry — Solutions — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State Raoult's law for a solution of volatile liquids and explain how it leads to the relation for relative lowering of vapour pressure.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Raoult's law:** the partial vapour pressure of each volatile component is proportional to its mole fraction in the solution: p_A = p_A°x_A, p_B = p_B°x_B.\n\nTotal pressure p = p_A + p_B = p_A° + (p_B° − p_A°)x_B.\n\nFor a non-volatile solute (p_B° = 0), p = p_A°x_A = p_A°(1 − x_B), so\n\n**(p_A° − p)/p_A° = x_B** — the relative lowering of vapour pressure equals the mole fraction of solute.",
+      "knowledgeNote": "This is the basis for determining molar mass: (p° − p)/p° = w₂M₁/(M₂w₁)."
+    },
+    {
+      "question": "Calculate the elevation in boiling point when 6 g of urea (M = 60 g mol⁻¹) is dissolved in 200 g of water (K_b = 0.52 K kg mol⁻¹).",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Molality m = (6/60) mol ÷ 0.200 kg = 0.5 mol kg⁻¹.\n\nΔT_b = K_b·m = 0.52 × 0.5 = **0.26 K** (so the solution boils at 100.26 °C at 1 atm).\n\nFor a non-electrolyte the van't Hoff factor i = 1; for NaCl-type solutes i ≈ 2, doubling the effect.",
+      "knowledgeNote": "Colligative properties depend on the number of particles, not their identity — i must be included for electrolytes."
+    },
+    {
+      "question": "State Henry's law and give two applications.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Henry's law:** at constant temperature the solubility of a gas in a liquid is proportional to its partial pressure above the liquid: p = K_H·x (x = mole fraction of the dissolved gas).\n\n**Applications:** (i) soft drinks are bottled under high CO₂ pressure so the gas dissolves well; (ii) scuba divers breathe diluted air (nitrogen is less soluble at high pressure, causing bends on a sudden ascent); also explained: oxygen depletion in warm water and anoxia in high-altitude climbers.",
+      "knowledgeNote": "K_H rises with temperature, so gas solubility falls as the liquid warms — why warm soda effervesces."
+    }
+  ]
+}

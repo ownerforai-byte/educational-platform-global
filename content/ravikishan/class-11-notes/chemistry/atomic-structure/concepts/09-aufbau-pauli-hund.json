@@ -36,7 +36,9 @@
     "Apply the (n + l) rule to arrange 3d, 4s, 4p, 3p and 5s in order of filling.",
     "Give the configurations of Z = 24, 26 and 29 and explain the anomalies.",
     "Write Fe, Fe²⁺ and Fe³⁺ configurations and explain why Fe³⁺ is extra stable.",
-    "How many unpaired electrons occur in Mn²⁺ and Cu²⁺? State the magnetic behaviour of each."
+    "How many unpaired electrons occur in Mn²⁺ and Cu²⁺? State the magnetic behaviour of each.",
+    "one worked example for \"Aufbau principle, Pauli's exclusion principle, Hund's rul…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "formulas": [
     "$$\\text{Aufbau: smaller }(n+l)\\text{ first; tie} \\rightarrow \\text{smaller }n$$",
@@ -45,16 +47,60 @@
   ],
   "universalFacts": [
     "Cr (24) = [Ar]3d⁵4s¹ and Cu (29) = [Ar]3d¹⁰4s¹ are the only anomalies within Z ≤ 30.",
-    "Fe³⁺ = [Ar]3d⁵ (5 unpaired); Zn²⁺ = [Ar]3d¹⁰ (0 unpaired)."
+    "Fe³⁺ = [Ar]3d⁵ (5 unpaired); Zn²⁺ = [Ar]3d¹⁰ (0 unpaired).",
+    "answer pattern for \"Aufbau principle, Pauli's exclusion principle, Hund's rul…\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [
     "**Problem:** Configuration and magnetic behaviour of Cu²⁺. **Solution:** Cu = [Ar]3d¹⁰4s¹ → Cu²⁺ = [Ar]3d⁹ → one unpaired electron → paramagnetic, μ ≈ 1.73 BM.",
-    "**Problem:** How many Zn electrons have l = 2? **Solution:** Zn = [Ar]3d¹⁰4s² — the 3d subshell (l = 2) holds 10 electrons."
+    "**Problem:** How many Zn electrons have l = 2? **Solution:** Zn = [Ar]3d¹⁰4s² — the 3d subshell (l = 2) holds 10 electrons.",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "importantNotes": [
     "For ions always remove electrons from the highest-n shell first (4s before 3d) — a standard exam trap.",
     "Explain the Cr/Cu anomalies with exchange energy and half-filled stability, not as arbitrary exceptions."
   ],
   "visualType": "electronic-configuration",
-  "tabGroup": "Atomic-Structure-Learner-Notes"
+  "keyPoints": [
+    "• Aufbau principle",
+    "• Pauli's exclusion principle",
+    "• Hund's rule",
+    "• Electronic configurations of atoms",
+    "• Ions",
+    "• Up to atomic no. 30"
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Aufbau principle, Pauli's exclusion principle, Hund's rul…\" with one example.",
+    "compare \"Aufbau principle\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Aufbau principle, Pauli's exclusion principle, Hund's rul…\" and verify the answer is plausible."
+  ],
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Aufbau principle, Pauli's exclusion principle, Hund's rul…\"?",
+      "options": [
+        "Aufbau principle",
+        "Pauli's exclusion principle",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "A",
+      "explanation": "Aufbau principle is listed among the official sub-ideas of Aufbau principle, Pauli's exclusion principle, Hund's rul…; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Aufbau principle, Pauli's exclusion principle, Hund's rul…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: aufbau principle, pauli's exclusion principle, hund's rule, electronic configurations of atoms (within Atomic Structure).",
+    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "summary": "Aufbau principle, Pauli's exclusion principle, Hund's rul… (Atomic Structure, Chemistry, class-11-notes) covers Aufbau principle, Pauli's exclusion principle, Hund's rule. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
 }

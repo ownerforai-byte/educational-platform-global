@@ -1,0 +1,70 @@
+{
+  "schema": "home-rail/v1",
+  "draft": false,
+  "classSlug": "class-11-notes",
+  "subjectSlug": "biology",
+  "unitSlug": "evolutionary-biology",
+  "unitTitle": "Evolutionary Biology",
+  "unitHours": 15,
+  "syllabusTopics": [
+    "Life and its origin: Oparin-Haldane theory, Miller and Urey's experiment",
+    "Evidences of evolution: Morphological, Anatomical, Paleontological, Embryological and Biochemical",
+    "Theories of evolution: Lamarckism, Darwinism and concept of Neo-Darwinism",
+    "Human evolution: Position of man in animal kingdom",
+    "Differences between new world monkeys and old-world monkeys, apes and man",
+    "Evolution of modern man starting from anthropoid ancestor"
+  ],
+  "source": "authored:rail-diagram",
+  "agentNotes": "Diagram card — the figure is authored SVG (frontend/lib/rail-diagrams.ts) drawn in the rectangular .rail-figure box at the row it explains (frontend/AGENTS.md §9). This is an EXTRA card for the unit, so it streams right after the unit's canonical card and before the Class 12 teaser. Figures cross the note-visuals guard in frontend/lib/content/visuals.ts (one svg block, no script/style/defs/external refs); an unusable figure is skipped, never half-drawn. Check: npx tsx frontend/scripts/content/home-rails.ts --check",
+  "card": {
+    "tag": "Evolution · Diagram",
+    "title": "A monohybrid cross as a Punnett square",
+    "href": "/class-11-notes/biology",
+    "icon": "Waypoints",
+    "statKey": "pyq:biology"
+  },
+  "rows": [
+    {
+      "label": "Concept",
+      "text": "Traits travel as discrete factors called alleles; writing the gametes on the two axes of a square and filling it shows how they recombine at fertilisation, and the square is the ratio drawn out.",
+      "figure": {
+        "svg": "<svg viewBox=\"0 0 640 330\" role=\"img\">\n  <title>Punnett square for a monohybrid cross</title>\n  <text x=\"200\" y=\"40\" font-size=\"15\" fill=\"#334155\">Parents: Tt × Tt</text>\n  <text x=\"245\" y=\"74\" font-size=\"18\" text-anchor=\"middle\" fill=\"#1d4ed8\">T</text>\n  <text x=\"335\" y=\"74\" font-size=\"18\" text-anchor=\"middle\" fill=\"#1d4ed8\">t</text>\n  <text x=\"178\" y=\"144\" font-size=\"18\" text-anchor=\"middle\" fill=\"#1d4ed8\">T</text>\n  <text x=\"178\" y=\"234\" font-size=\"18\" text-anchor=\"middle\" fill=\"#1d4ed8\">t</text>\n  <rect x=\"200\" y=\"90\" width=\"90\" height=\"90\" fill=\"#eff6ff\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <rect x=\"290\" y=\"90\" width=\"90\" height=\"90\" fill=\"#dbeafe\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <rect x=\"200\" y=\"180\" width=\"90\" height=\"90\" fill=\"#dbeafe\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <rect x=\"290\" y=\"180\" width=\"90\" height=\"90\" fill=\"#bfdbfe\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <text x=\"245\" y=\"146\" font-size=\"22\" text-anchor=\"middle\" fill=\"#0f172a\">TT</text>\n  <text x=\"335\" y=\"146\" font-size=\"22\" text-anchor=\"middle\" fill=\"#0f172a\">Tt</text>\n  <text x=\"245\" y=\"236\" font-size=\"22\" text-anchor=\"middle\" fill=\"#0f172a\">Tt</text>\n  <text x=\"335\" y=\"236\" font-size=\"22\" text-anchor=\"middle\" fill=\"#0f172a\">tt</text>\n  <text x=\"400\" y=\"140\" font-size=\"13\" fill=\"#0f172a\">1 TT : 2 Tt : 1 tt</text>\n  <text x=\"400\" y=\"164\" font-size=\"13\" fill=\"#0f172a\">genotype ratio</text>\n  <text x=\"400\" y=\"210\" font-size=\"13\" fill=\"#0f172a\">3 tall : 1 dwarf</text>\n  <text x=\"400\" y=\"234\" font-size=\"13\" fill=\"#0f172a\">phenotype ratio</text>\n  <text x=\"200\" y=\"302\" font-size=\"13\" fill=\"#475569\">Every gamete carries one factor; the squares recombine them at random.</text>\n</svg>",
+        "caption": "Punnett square for Tt × Tt: 1 TT : 2 Tt : 1 tt, read as 3 tall : 1 dwarf."
+      }
+    },
+    {
+      "label": "Formula",
+      "kind": "formula",
+      "text": "Monohybrid phenotype 3 : 1, genotype 1 : 2 : 1;  dihybrid 9 : 3 : 3 : 1;  test cross 1 : 1"
+    },
+    {
+      "label": "Conditions",
+      "text": "Segregation and independent assortment need the genes on different chromosomes (or far apart on one), complete dominance and equally viable gametes."
+    },
+    {
+      "label": "Special cases",
+      "text": "Incomplete dominance gives 1 : 2 : 1 red : pink : white, codominance shows both alleles at once, and an X-linked allele appears far more often in males."
+    },
+    {
+      "label": "Solved",
+      "text": "Tt × Tt gives TT, Tt, Tt, tt → 1 TT : 2 Tt : 1 tt → 3 tall : 1 dwarf; the test cross tt × TT gives every offspring Tt."
+    },
+    {
+      "label": "Limitation",
+      "text": "Linked genes, epistasis, polygenic inheritance and cytoplasmic inheritance all break the neat ratios, so say so whenever a question hints at an exception."
+    },
+    {
+      "label": "Derivation",
+      "kind": "formula",
+      "text": "Tt → gametes T and t → 2 × 2 squares → 1 TT : 2 Tt : 1 tt;  T dominates, so the phenotype reads 3 : 1"
+    },
+    {
+      "label": "Shortcut",
+      "text": "Write the gametes on the axes before filling any square, and sanity-check the ratio by its sum: 4 for one gene, 16 for two."
+    },
+    {
+      "label": "Board question",
+      "text": "Work out a monohybrid cross with a Punnett square and state the phenotypic ratio obtained in the F₂ generation."
+    }
+  ]
+}

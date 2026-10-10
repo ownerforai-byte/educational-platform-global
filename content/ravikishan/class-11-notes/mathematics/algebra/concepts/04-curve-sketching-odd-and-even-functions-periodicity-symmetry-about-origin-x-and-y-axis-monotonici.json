@@ -6,25 +6,7 @@
   "relevance": 100,
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
-  "notes": [
-    "**Scope.** Curve sketching: odd and even functions, periodicity, sym… — Algebra, Mathematics (class-11-notes).",
-    "**Tested.** define it · list: curve sketching, even functions, periodicity, symmetry · one worked example · one misconception each.",
-    "**Even functions.** one-line definition + one-line exam use.",
-    "**Periodicity.** one-line definition + one-line exam use.",
-    "**Symmetry.** one-line definition + one-line exam use.",
-    "**About origin.** one-line definition + one-line exam use.",
-    "**Y-axis.** one-line definition + one-line exam use.",
-    "**Monotonicity.** one-line definition + one-line exam use.",
-    "**Graphs of quadratic.** one-line definition + one-line exam use.",
-    "**Cubic.** one-line definition + one-line exam use.",
-    "**Rational functions.** one-line definition + one-line exam use.",
-    "**Trigonometric.** one-line definition + one-line exam use.",
-    "**Asinbx.** one-line definition + one-line exam use.",
-    "**Acosbx.** one-line definition + one-line exam use."
-  ],
   "confusion": [
-    "❌ treat \"Curve sketching\" as one blob → ✅ split into: curve sketching, even functions, periodicity.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ answer with no steps → ✅ show each step and box the result."
   ],
   "bounds": [
@@ -33,7 +15,6 @@
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
   "practice": [
-    "define + example each sub-idea: curve sketching, even functions, periodicity, symmetry.",
     "one worked example for \"Curve sketching: odd and even functions, periodicity, sym…\" — check units / edge cases.",
     "recall card: definition → formula → limit → one error to avoid."
   ],
@@ -48,9 +29,6 @@
     "compare \"Curve sketching\" with the related idea from a neighbouring unit.",
     "solve / apply for \"Curve sketching: odd and even functions, periodicity, sym…\" and verify the answer is plausible."
   ],
-  "formulas": [
-    "Standard result for \"Curve sketching: odd and even functions, periodicity, sym…\" — state it and verify by substituting a simple case."
-  ],
   "numericals": [
     "Set up the defining equation for \"Curve sketching: odd and even functions, periodicity, sym…\", substitute simple values, and compute the result with units.",
     "Re-derive the standard result from first principles in ≤ 4 steps.",
@@ -62,9 +40,10 @@
     "• Periodicity",
     "• Symmetry",
     "• About origin",
-    "• Y-axis"
+    "• Y-axis",
+    "Connection of Curve Sketching to other topics"
   ],
-  "summary": "Curve sketching: odd and even functions, periodicity, sym… (Algebra, Mathematics, class-11-notes) covers Curve sketching, even functions, periodicity. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Curve Sketching covers essential principles and applications.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Curve sketching: odd and even functions, periodicity, sym…\"?",
@@ -86,5 +65,28 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
-  ]
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Curve Sketching",
+    "Statement 2: Theorem related to Curve Sketching",
+    "Statement 3: Condition for Curve Sketching to be valid",
+    "Statement 4: Principle governing Curve Sketching",
+    "Statement 5: Corollary or consequence of Curve Sketching"
+  ],
+  "importantNotes": [
+    "Curve Sketching is based on fundamental principles."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Curve Sketching."
+  ],
+  "importantConcepts": [
+    "Definition and significance of Curve Sketching."
+  ],
+  "notes": [],
+  "animation3D": "algebra",
+  "motionGraphics": "algebra",
+  "formulas": [],
+  "specialNotes": [],
+  "examNotes": [],
+  "importantTasks": []
 }

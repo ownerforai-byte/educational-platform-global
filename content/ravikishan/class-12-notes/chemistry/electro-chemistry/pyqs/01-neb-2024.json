@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Chemistry — Electro Chemistry — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "electro-chemistry",
+  "topicSlug": "electro-chemistry-pyq-2024",
+  "topicTitle": "NEB Class 12 Chemistry — Electro Chemistry — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State Kohlrausch's law of independent migration of ions and use it to calculate the molar conductivity of a weak electrolyte.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Kohlrausch's law:** at infinite dilution, the molar conductivity of an electrolyte is the sum of the independent contributions of its cation and anion: Λ°_m = ν₊λ°₊ + ν₋λ°₋.\n\nFor a weak electrolyte such as acetic acid, Λ° cannot be found by extrapolation (the curve does not meet the axis). Instead combine strong-electrolyte values by Hess-type subtraction:\n\n**Λ°(CH₃COOH) = Λ°(CH₃COONa) + Λ°(HCl) − Λ°(NaCl)**.",
+      "knowledgeNote": "For strong electrolytes molar conductivity rises slowly with dilution (interionic attraction); for weak ones it rises steeply as dissociation increases."
+    },
+    {
+      "question": "Derive the Nernst equation for the electrode potential of a single electrode and calculate the emf of a Daniell cell at 25 °C with [Zn²⁺] = 0.1 M and [Cu²⁺] = 0.01 M, given E°cell = 1.10 V.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "For Mⁿ⁺ + ne⁻ → M, the free-energy change gives ΔG = ΔG° + RT ln Q; with ΔG = −nFE,\n\n**E = E° − (RT/nF) ln Q = E° − (0.0591/n) log([products]/[reactants])** at 25 °C.\n\nThe cell reaction Zn + Cu²⁺ → Zn²⁺ + Cu transfers n = 2 electrons, so Q = [Zn²⁺]/[Cu²⁺] = 0.1/0.01 = 10.\n\nE = 1.10 − (0.0591/2) log 10 = 1.10 − 0.0296 = **1.07 V**.",
+      "knowledgeNote": "An increase in the concentration of the reactant ion (Cu²⁺) raises the emf; the reverse lowers it — entirely consistent with E° and the reaction quotient."
+    },
+    {
+      "question": "State Faraday's laws of electrolysis and calculate the mass of copper deposited when a current of 2 A flows through CuSO₄ solution for 30 minutes (equivalent mass of Cu = 31.75).",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**First law:** the mass deposited is proportional to the quantity of charge, m ∝ It. **Second law:** for the same charge, masses deposited are proportional to their equivalent masses, m = ZIt with Z = E/96500.\n\nQ = It = 2 × 1800 = 3600 C.\n\nm = (31.75 × 3600)/96500 = **1.185 g of copper**.",
+      "knowledgeNote": "The gram-equivalent charge 96 500 C is one faraday; m = (E/96500)Q is the workhorse formula for electrolysis numericals."
+    }
+  ]
+}

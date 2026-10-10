@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Physics — Alternating Current — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "alternating-current",
+  "topicSlug": "alternating-current-pyq-2024",
+  "topicTitle": "NEB Class 12 Physics — Alternating Current — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Derive the expression for the impedance of a series LCR circuit and state the condition for resonance.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "With the same current I through all elements, the phasor sum of the voltages gives\n\nV = √(V_R² + (V_L − V_C)²) = I√(R² + (X_L − X_C)²),\n\nso **Z = √(R² + (ωL − 1/ωC)²)**.\n\n**Resonance** occurs when X_L = X_C, i.e. ω = 1/√(LC); then Z = R (minimum) and the current is maximum, with the circuit purely resistive.",
+      "knowledgeNote": "At resonance the voltage across L and C can greatly exceed the supply voltage (voltage magnification Q = ω₀L/R)."
+    },
+    {
+      "question": "Define root-mean-square value of alternating current. Show that for a sinusoidal current the rms value is 1/√2 times the peak value.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "The **rms value** is the steady direct current that would produce the same average heating in a resistor: I_rms = √(mean of I²).\n\nWith I = I₀ sin ωt, I² = I₀²sin²ωt = I₀²(1 − cos2ωt)/2. The cosine term averages to zero over a cycle, so mean I² = I₀²/2 and\n\n**I_rms = I₀/√2 ≈ 0.707 I₀**.",
+      "knowledgeNote": "Meters read rms values; a.c. power P = I_rms V_rms cos φ, where cos φ is the power factor."
+    },
+    {
+      "question": "A transformer with 1000 turns in the primary and 100 turns in the secondary is connected to a 220 V a.c. mains. Find the secondary voltage and the secondary current when the primary current is 0.2 A (assume an ideal transformer).",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "V_s/V_p = N_s/N_p → V_s = 220 × 100/1000 = **22 V**.\n\nFor an ideal transformer, V_pI_p = V_sI_s → I_s = (220 × 0.2)/22 = **2 A** — the voltage steps down by 10, so the current steps up by 10.",
+      "knowledgeNote": "A step-down transformer gives lower voltage but higher current; energy conservation (ideal case) requires V_pI_p = V_sI_s."
+    }
+  ]
+}

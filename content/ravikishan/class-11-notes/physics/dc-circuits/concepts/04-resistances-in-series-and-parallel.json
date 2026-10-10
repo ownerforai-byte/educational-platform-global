@@ -5,47 +5,149 @@
   "topicTitle": "Resistances in series and parallel",
   "relevance": 100,
   "notes": [
-    "**Electrical work:** $W = VIt = I^2Rt = V^2t/R$. Work done by a current is the energy transferred.",
-    "**Electrical power:** $P = VI = I^2R = V^2/R$. Power is the rate of energy transfer.",
-    "**Joule heating:** $P = I^2R$ is the power dissipated as heat in a resistor. This is also called $I^2R$ loss.",
-    "**Kilowatt-hour:** unit of electrical energy. $1\\\\\\\\,\\\text{kWh} = 3.6 \\\times 10^6\\\\\\\\,\\\text{J}$. This is what electricity meters measure.",
-    "**Efficiency:** useful power output divided by total power input. Transmission lines use high voltage to reduce $I^2R$ losses because $P_{loss} \\\\\\\\propto I^2$.",
-    "**Power in different elements:** in a resistor, all electrical energy is converted to heat: $P = I^2R$. In a motor, electrical energy converts to mechanical work plus heat: $P_{input} = VI = I^2R + P_{mech}$. In a battery being charged, electrical energy is stored as chemical energy: $P_{input} = \\\\\\\\mathcal{E}I + I^2r$.",
-    "**Energy conservation in circuits:** the total electrical energy supplied equals the sum of energy dissipated as heat and energy converted to other forms: $V_{source} \\\\\\\\cdot I \\\\\\\\cdot t = I^2Rt + \\\text{other forms}$.",
-    "**Power rating of resistors:** resistors are rated by the maximum power they can dissipate without damage. Common ratings are 0.25 W, 0.5 W, and 1 W. Exceeding this causes overheating and failure.",
-    "**Domestic electrical cost:** the cost of running an appliance is $\\\text{Cost} = P(\\\text{kW}) \\\times t(\\\text{h}) \\\times \\\text{rate (per kWh)}$. A 100 W bulb running for 5 hours uses 0.5 kWh.",
-    "**Power factor:** for AC circuits, $P = VI\\\\\\\\cos\\\\\\\\phi$, where $\\\\\\\\cos\\\\\\\\phi$ is the power factor. For DC circuits, $\\\\\\\\cos\\\\\\\\phi = 1$, so $P = VI$ always.",
-    "**Heat energy in calories:** $H = 0.24 I^2 R t$ calories (mechanical equivalent of heat). In SI units, $H = I^2 R t$ joules."
+    "**Series:** same current through all resistors. $R_{eq} = R_1 + R_2 + \\ldots$. Voltage divides: $V_i = I R_i$.",
+    "**Parallel:** same voltage across all resistors. $1/R_{eq} = 1/R_1 + 1/R_2 + \\ldots$. Current divides: $I_i = V/R_i$.",
+    "**Why series increases resistance:** the current must pass through each resistor sequentially, so each adds its opposition to the total.",
+    "**Why parallel decreases resistance:** multiple paths allow more current for the same voltage, equivalent to increasing the cross-sectional area of a single conductor.",
+    "**Special case — two parallel resistors:** $R_{eq} = \\frac{R_1 R_2}{R_1 + R_2}$. This is always less than the smaller resistor.",
+    "**Series voltage divider:** in a series chain, each resistor gets a fraction of the total voltage proportional to its resistance: $V_i = V_{total} \\cdot R_i / R_{total}$.",
+    "**Parallel current divider:** in a parallel group, each resistor gets a fraction of the total current inversely proportional to its resistance: $I_i = I_{total} \\cdot R_{eq}/R_i$.",
+    "**Power in series:** $P = I^2 R$. Larger resistors dissipate more power in series because they carry the same current but have larger voltage drop.",
+    "**Power in parallel:** $P = V^2/R$. Smaller resistors dissipate more power in parallel because they draw more current at the same voltage.",
+    "**Identical resistors in parallel:** $n$ identical resistors of value $R$ in parallel give $R_{eq} = R/n$. This is useful for sharing current among multiple resistors.",
+    "**Kirchhoff's laws:** series resistors satisfy KVL (sum of voltages equals source). Parallel resistors satisfy KCL (sum of currents equals total).",
+    "**Mixed networks:** reduce step by step — find series or parallel groups, replace with equivalents, and repeat until one resistor remains."
   ],
   "confusion": [
-    "Power $P = I^2R$ and $P = V^2/R$ are both correct but apply in different contexts. Use $I^2R$ when current is known (series circuits). Use $V^2/R$ when voltage is known (parallel circuits). Using the wrong one gives a wrong answer because $V$ and $I$ are not independent.",
-    "Electrical energy is measured in joules (J) or kilowatt-hours (kWh), NOT in watts (W). Watt is a unit of power (energy per time). $1\\\\\\\\,\\\text{kWh} = 3.6 \\\times 10^6$ J.",
-    "A 100 W bulb connected to 230 V draws less current than a 60 W bulb (because $I = P/V$, so the 100 W bulb has $I = 0.43$ A vs $I = 0.26$ A for the 60 W bulb). The 100 W bulb actually has LOWER resistance.",
-    "In a series circuit, the higher-wattage bulb glows dimmer because it has lower resistance, and in series the same current flows through both: $P = I^2R$, so the higher resistance (60 W bulb) gets more power.",
-    "Power dissipated in internal resistance ($I^2r$) is wasted energy. This is why battery-powered devices get warm - the internal resistance converts some chemical energy to heat instead of useful work."
+    "Resistors in series add (like capacitors in parallel). Resistors in parallel combine inversely (like capacitors in series). The rules for resistors and capacitors are always opposite.",
+    "The equivalent resistance of a parallel combination is always less than the smallest individual resistor. Do not think of it as simply 'dividing' — the math is $R_{eq} = (R_1 R_2)/(R_1 + R_2)$.",
+    "In series, the same current flows through all resistors, but the voltage drop across each is different (proportional to its resistance). In parallel, the same voltage is across each, but current differs.",
+    "When a resistor is added in parallel, the equivalent resistance decreases. When added in series, it increases. This is because parallel paths provide more conduction channels.",
+    "Two resistors of equal value $R$ in parallel give $R/2$. Two resistors of equal value in series give $2R$. These are the most common benchmark results in circuit analysis."
   ],
   "practice": [
-    "A 60 W, 230 V bulb is connected to a 230 V supply. Find the current, resistance, and energy consumed in 5 hours. Solution: $I = P/V = 60/230 = 0.261$ A. $R = V/I = 230/0.261 = 881\\\\\\\\,\\\\\\\\Omega$. $W = Pt = 60 \\\times 5 = 300\\\\\\\\,\\\text{Wh} = 0.3\\\\\\\\,\\\text{kWh} = 1.08 \\\times 10^6$ J.",
-    "A 12 V car headlamp draws 5 A. Find the power, resistance, and cost of running it for 4 hours at 8 pence per kWh. Solution: $P = VI = 12 \\\times 5 = 60$ W. $R = V/I = 12/5 = 2.4\\\\\\\\,\\\\\\\\Omega$. Energy $= 60 \\\times 4/1000 = 0.24\\\\\\\\,\\\text{kWh}$. Cost $= 0.24 \\\times 8 = 1.92$ pence.",
-    "A 100 $\\\\\\Omega$ resistor carries a current of 2 A for 5 minutes. Find the heat produced in joules and calories. Solution: $H = I^2Rt = 4 \\\times 100 \\\times 300 = 120000$ J. In calories: $H = 120000/4.184 = 28681$ cal $\\\\\\\\approx 28.7$ kcal.",
-    "A transmission line carries 100 A at 11 kV over a total resistance of 5 $\\\\\\Omega$. Find the power loss and the percentage of power lost. Solution: $P_{loss} = I^2R = 10000 \\\times 5 = 50000$ W $= 50$ kW. Power transmitted $= VI = 11000 \\\times 100 = 1.1 \\\times 10^6$ W $= 1100$ kW. Percentage loss $= 50/1100 = 4.5\\\\\\\\%$.",
-    "A 1.5 V cell with internal resistance 0.5 $\\\\\\Omega$ is connected to a variable resistor. Find the resistance for maximum power transfer and the power delivered. Solution: $R = r = 0.5\\\\\\\\,\\\\\\\\Omega$. $I = 1.5/(0.5+0.5) = 1.5$ A. $P_{max} = I^2R = 2.25 \\\times 0.5 = 1.125$ W."
+    "Three resistors $4\\,\\Omega$, $6\\,\\Omega$, and $12\\,\\Omega$ are in parallel. Find the equivalent resistance. Solution: $1/R_{eq} = 1/4 + 1/6 + 1/12 = 3/12 + 2/12 + 1/12 = 6/12 = 1/2$. $R_{eq} = 2\\,\\Omega$.",
+    "Resistors $3\\,\\Omega$ and $6\\,\\Omega$ are in parallel, and this combination is in series with a $2\\,\\Omega$ resistor. Find the total resistance. Solution: Parallel: $R_p = (3 \\times 6)/(3 + 6) = 2\\,\\Omega$. Total: $R = 2 + 2 = 4\\,\\Omega$.",
+    "A 24 V battery is connected across a series combination of $4\\,\\Omega$ and $8\\,\\Omega$. Find the current, voltage across each, and power dissipated by each. Solution: $R_{eq} = 12\\,\\Omega$. $I = 24/12 = 2$ A. $V_1 = 2 \\times 4 = 8$ V, $V_2 = 2 \\times 8 = 16$ V. $P_1 = I^2 R_1 = 4 \\times 4 = 16$ W. $P_2 = I^2 R_2 = 4 \\times 8 = 32$ W.",
+    "A 60 V battery is connected across a parallel combination of $10\\,\\Omega$ and $15\\,\\Omega$. Find the current through each and the total current. Solution: $I_1 = 60/10 = 6$ A. $I_2 = 60/15 = 4$ A. $I_{total} = 10$ A. $R_{eq} = 60/10 = 6\\,\\Omega$. Check: $1/R_{eq} = 1/10 + 1/15 = 1/6$.",
+    "Find the equivalent resistance between points A and B for a network of five $1\\,\\Omega$ resistors arranged in a pentagon, with one resistor across each diagonal. Solution: This is a complex network. Using symmetry and nodal analysis, the equivalent resistance between adjacent vertices is $7/12\\,\\Omega$."
   ],
   "universalFacts": [
-    "A 100 W incandescent bulb is only about 5% efficient - most electrical energy is converted to heat rather than visible light. LEDs are about 15-20% efficient but produce far more lumens per watt.",
-    "Electric transmission lines carry power at very high voltages (up to 765 kV) to minimize $I^2R$ losses. Halving the voltage doubles the current and quadruples the power loss, which is why high-voltage transmission is essential.",
-    "The unit of electrical energy consumption, the kilowatt-hour, is not an SI unit. The SI unit of energy is the joule: $1\\\\\\\\,\\\text{kWh} = 3.6 \\\times 10^6$ J.",
-    "A typical household circuit breaker is rated for 15-20 A at 120-240 V, giving a maximum power of 1.8-4.8 kW. Connecting too many high-power appliances can trip the breaker or cause a fire.",
-    "The heating effect of current was discovered by James Prescott Joule in 1841. His law $H = I^2Rt$ is a fundamental result of energy conservation in electrical circuits."
+    "The equivalent resistance of resistors in series is always greater than the largest individual resistance. The equivalent resistance of resistors in parallel is always less than the smallest individual resistance.",
+    "In household wiring, all appliances are connected in parallel so each receives the full supply voltage and can be operated independently.",
+    "Fuse wires are connected in series with the load because they must carry the same current as the load to protect it from overcurrent.",
+    "The current divider rule for two parallel resistors: $I_1 = I_{total} \\cdot R_2/(R_1 + R_2)$. The current splits inversely with resistance — the smaller resistor gets more current.",
+    "For $n$ identical resistors of value $R$: series gives $nR$, parallel gives $R/n$. A resistance box achieves any resistance by switching resistors in series or parallel."
   ],
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits",
-  "duplicateType": 2,
-  "tabGroup": "work-and-power-in-electrical-circuits",
-    "specificConditions": [
-      "**Series Circuit Constraint:** In series, the same current flows through all elements. Power in each resistor is $P_i = I^2 R_i$, so the power dissipation is proportional to resistance. The total power is $P_{total} = I^2 R_{eq}$.",
-      "**Parallel Circuit Constraint:** In parallel, the same voltage appears across all elements. Power in each resistor is $P_i = V^2/R_i$, so power dissipation is inversely proportional to resistance. The total power is $P_{total} = V^2/R_{eq}$.",
-      "**Maximum Power Transfer:** For a source with internal resistance $r$, maximum power is delivered to a load $R$ when $R = r$. At this condition, efficiency is only 50% (half the power is dissipated internally)."
-    ],
-  "visualType": "resistor-network"
+  "examples": [
+    "Real-world application of Resistances in series and parallel",
+    "Practical demonstration of Resistances in series and parallel concepts",
+    "Diagram-based question on Resistances in series and parallel",
+    "Application in daily life involving Resistances in series and parallel"
+  ],
+  "practiceQuestions": [
+    "Q1. Define and explain Resistances in series and parallel with suitable example.",
+    "Q2. Solve problems related to Resistances in series and parallel.",
+    "Q3. Differentiate between various aspects of Resistances in series and parallel.",
+    "Q4. Derive the key formula related to Resistances in series and parallel.",
+    "Q5. What are the applications of Resistances in series and parallel?"
+  ],
+  "formulas": [
+    "Application formula for Resistances in series and parallel",
+    "Derivation result for Resistances in series and parallel"
+  ],
+  "keyPoints": [],
+  "summary": "Resistances in series and parallel is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Resistances in series and parallel applies",
+    "Note 2: Resistances in series and parallel connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Resistances in series and parallel",
+    "Note 4: Remember the units and dimensions involved in Resistances in series and parallel",
+    "Note 5: Resistances in series and parallel frequently appears in examination questions"
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Resistances in series and parallel",
+    "Statement 2: Theorem related to Resistances in series and parallel",
+    "Statement 3: Condition for Resistances in series and parallel to be valid",
+    "Statement 4: Principle governing Resistances in series and parallel",
+    "Statement 5: Corollary or consequence of Resistances in series and parallel"
+  ],
+  "importantNotes": [
+    "Note 1: Resistances in series and parallel is based on fundamental principles",
+    "Note 2: Remember the distinction between different types in Resistances in series and parallel",
+    "Note 3: Resistances in series and parallel has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Resistances in series and parallel",
+    "Note 5: Cross-check your answers using alternative methods for Resistances in series and parallel"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Resistances in series and parallel formula",
+    "Trick 2: Elimination technique for Resistances in series and parallel MCQs",
+    "Trick 3: Dimensional analysis shortcut for Resistances in series and parallel",
+    "Trick 4: Memory aid for Resistances in series and parallel formulas",
+    "Trick 5: Time-saving approach for Resistances in series and parallel problems"
+  ],
+  "examNotes": [
+    "Focus on numerical problems from Resistances in series and parallel",
+    "Practice previous year questions on Resistances in series and parallel",
+    "Learn the derivations for Resistances in series and parallel thoroughly",
+    "Review common mistakes related to Resistances in series and parallel"
+  ],
+  "mcs": [
+    {
+      "question": "The primary application of Resistances in series and parallel is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Resistances in series and parallel, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Resistances in series and parallel?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Resistances in series and parallel is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Resistances in series and parallel",
+    "Concept 2: Key theorem or principle in Resistances in series and parallel",
+    "Concept 3: Important application area of Resistances in series and parallel",
+    "Concept 4: Fundamental relationship in Resistances in series and parallel",
+    "Concept 5: Connection between Resistances in series and parallel and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Resistances in series and parallel",
+    "Task 2: Derive the main formula for Resistances in series and parallel",
+    "Task 3: Create a concept map for Resistances in series and parallel",
+    "Task 4: Practice previous year exam questions on Resistances in series and parallel",
+    "Task 5: Explain Resistances in series and parallel to a peer or study group"
+  ]
 }

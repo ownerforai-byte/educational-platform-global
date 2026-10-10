@@ -4,8 +4,6 @@
   "topicSlug": "freely-falling-body",
   "topicTitle": "Motion of a Freely Falling Body",
   "relevance": 100,
-  "duplicateType": 2,
-  "tabGroup": "motion-of-a-freely-falling-body",
   "notes": [
     "**Type 2 — alternate treatment:** this version works free fall entirely through the equations of motion with sign conventions and the up-and-down symmetry argument — the pattern NEB numericals follow.",
     "**Definition:** a freely falling body moves under gravity ALONE — no air resistance, no push after release. All bodies fall with the same acceleration $g \\approx 9.8$ m/s² (take 10 m/s² in numericals) independent of mass — Galileo's famous result.",
@@ -67,9 +65,10 @@
     "Up–down symmetry: equal speeds at equal heights, equal times up and down.",
     "Use ONE sign convention throughout a problem; put $g$'s sign in consistently.",
     "'Dropped' = $u = 0$; 'thrown' = $u \\ne 0$ — the equations differ by the $ut$ term.",
-    "Air resistance is neglected in free fall; it is what produces terminal velocity in reality."
+    "Air resistance is neglected in free fall; it is what produces terminal velocity in reality.",
+    "Connection of Motion of a Freely Falling Body to other topics"
   ],
-  "summary": "Free fall is uniform acceleration $g$ with no air resistance: all bodies fall alike. With one consistent sign convention, the three equations of motion give every free-fall result — dropped bodies ($h = \\tfrac{1}{2}gt^2$, $v = \\sqrt{2gh}$), bodies thrown up ($h_{max} = u^2/2g$, $T = 2u/g$), and mixed cases. The up–down symmetry (equal times and speeds) is the key structural insight, and $v = 0$ with $a = g$ at the top is the classic conceptual test point.",
+  "summary": "Free fall is uniform acceleration $g$ with no air resistance: all bodies fall alike. With one consistent sign convention, the three equations of motion give every free-fall result — dropped bodies ($h = \\tfrac{1}{2}gt^2$, $v = \\sqrt{2gh}$), bodies thrown up ($h_{max} = u^2/2g$, $T = 2u/g$), and mixed cases. The up–down symmetry (equal times and speeds) is the key structural insight, and $v = 0$ with $a = g$ at the top is the classic conceptual test point. Motion of a Freely Falling Body covers essential principles and applications.",
   "specialNotes": [
     "Note 1: Take $g = 9.8$ m/s² unless the question says 10 — and say which you used.",
     "Note 2: For a body thrown up, do not put $t = T/2$ anywhere except the top; the position equation is valid for the whole flight.",
@@ -80,20 +79,27 @@
     "Statement 1: In free fall, every body accelerates at $g$ regardless of its mass — gravity acts identically on all masses.",
     "Statement 2: At the highest point of vertical flight the velocity is zero but the acceleration is still $g$ downward.",
     "Statement 3: Neglecting air resistance, the time of ascent equals the time of descent, and the body returns with its launch speed.",
-    "Statement 4: A body falling from rest covers distances in the ratio 1 : 3 : 5 : 7 in successive equal time intervals."
+    "Statement 4: A body falling from rest covers distances in the ratio 1 : 3 : 5 : 7 in successive equal time intervals.",
+    "Statement 1: Definition of Motion of a Freely Falling Body",
+    "Statement 2: Theorem related to Motion of a Freely Falling Body",
+    "Statement 3: Condition for Motion of a Freely Falling Body to be valid",
+    "Statement 4: Principle governing Motion of a Freely Falling Body",
+    "Statement 5: Corollary or consequence of Motion of a Freely Falling Body"
   ],
   "importantNotes": [
     "Note 1: Fix one positive direction per problem; the sign of $g$ follows from it (up positive ⇒ $a = -g$).",
     "Note 2: $v = \\sqrt{2gh}$ gives impact speed without needing time — quickest route for drop problems.",
     "Note 3: Inside a freely falling lift, objects appear weightless — relative acceleration between cabin and objects is zero.",
-    "Note 4: Real falls approach terminal velocity because air resistance grows with speed; the free-fall model ignores this."
+    "Note 4: Real falls approach terminal velocity because air resistance grows with speed; the free-fall model ignores this.",
+    "Motion of a Freely Falling Body is based on fundamental principles."
   ],
   "examShortTricks": [
     "Trick 1: 'Maximum height' ⇒ remember $u^2/2g$; 'time to top' ⇒ $u/g$; both come from $v = 0$ in the first and third equations.",
     "Trick 2: Total flight time of a return throw: $T = 2u/g$ — read the word 'returns' and write it instantly.",
     "Trick 3: For drops, ratio the times: heights fallen in $t$, $2t$, $3t$ are in ratio $1:4:9$; per-second distances $1:3:5$.",
     "Trick 4: Sign shortcut: throw up ⇒ $a$ enters negative; throw down or drop ⇒ $a$ and motion share sign — no algebra mistakes.",
-    "Trick 5: Ball dropped from a moving lift: relative to the lift it simply falls from rest ($g$) — use the lift frame to halve the work."
+    "Trick 5: Ball dropped from a moving lift: relative to the lift it simply falls from rest ($g$) — use the lift frame to halve the work.",
+    "Recall the formula for Motion of a Freely Falling Body."
   ],
   "examNotes": [
     "Exam Tip 1: NEB loves the ascent = descent proof — quote $v = u - gt$ at top and bottom points and use symmetry.",
@@ -160,7 +166,8 @@
     "Concept 2: Sign-convention discipline — one axis, one consistent $g$ sign per problem.",
     "Concept 3: Top-of-flight state — $v = 0$, $a = g$: zero velocity is not zero acceleration.",
     "Concept 4: Up–down symmetry — equal times and speeds at equal heights.",
-    "Concept 5: Odd-number/1:4:9 patterns for falls from rest — quick checks on fall distances."
+    "Concept 5: Odd-number/1:4:9 patterns for falls from rest — quick checks on fall distances.",
+    "Definition and significance of Motion of a Freely Falling Body."
   ],
   "importantTasks": [
     "Task 1: Solve five thrown-up problems: $h_{max}$, $t_{up}$, $T$, and return speed, all from $u$ and $g$.",

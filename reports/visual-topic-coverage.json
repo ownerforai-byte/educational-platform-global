@@ -1,0 +1,4212 @@
+{
+  "generatedAt": "2026-10-10T16:25:28.525Z",
+  "units": 116,
+  "summary": {
+    "branchOk": 116,
+    "schemaOk": 696,
+    "totalTopics": 696,
+    "legacyOk": 59,
+    "legacyTotal": 59,
+    "high": 0,
+    "medium": 0,
+    "low": 3
+  },
+  "schematicCoverage": [
+    {
+      "topic": "class-11-notes/biology/biomolecules-introduction-and-functions-of-carbohydrates-proteins-lipids-nucleic-acids-minerals-",
+      "source": "authored-unit",
+      "name": "Cell Structure, Organelles & Biomolecules",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/biology/cell-introduction-of-cell-concepts-of-prokaryotic-and-eukaryotic-cells",
+      "source": "authored-unit",
+      "name": "Cell Structure, Organelles & Biomolecules",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/biology/detail-structure-of-eukaryotic-cells-cell-wall-cell-membrane-mitochondria-plastids-endoplasmic-r",
+      "source": "authored-concept",
+      "name": "Cell Division — Mitosis / Meiosis",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/biology/cell-division-concept-of-cell-cycle-types-of-cell-division-amitosis-mitosis-and-meiosis-and-sign",
+      "source": "authored-concept",
+      "name": "Cell Division — Mitosis / Meiosis",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/biology/introduction-three-domains-of-life-binomial-nomenclature-five-kingdom-classification-system-mone",
+      "source": "topic-derived",
+      "name": "Introduction: Three domains of life, binomial nomenclature, five kingdom classification system (Monera, Protista, Fungi, Plantae and Animalia) — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/status-of-flora-in-nepal-and-world-representation",
+      "source": "topic-derived",
+      "name": "Status of flora in Nepal and world representation — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/fungi-general-introduction-and-characteristic-features-of-phycomycetes-ascomycetes-basidiomycete",
+      "source": "topic-derived",
+      "name": "Fungi: General introduction and characteristic features of phycomycetes, ascomycetes, basidiomycetes and deuteromycetes — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/structure-and-reproduction-of-mucor-and-yeast",
+      "source": "topic-derived",
+      "name": "Structure and reproduction of Mucor and Yeast — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/introduction-of-mushrooms-poisonous-and-non-poisonous-mushrooms-economic-importance-of-fungi",
+      "source": "topic-derived",
+      "name": "Introduction of Mushrooms, poisonous and non-poisonous mushrooms, economic importance of fungi — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/lichen-general-introduction-characteristic-features-and-economic-importance-of-lichen",
+      "source": "topic-derived",
+      "name": "Lichen: General introduction, characteristic features and economic importance of lichen — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/algae-general-introduction-and-characteristic-features-of-green-brown-and-red-algae-structure-an",
+      "source": "topic-derived",
+      "name": "Algae: General introduction and characteristic features of green, brown and red algae; structure and reproduction of Spirogyra; economic importance of algae — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/bryophyta-general-introduction-and-characteristic-features-of-liverworts-hornworts-and-moss-morp",
+      "source": "authored-concept",
+      "name": "Small Intestine — Digestion & Absorption",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/biology/pteridophyta-general-introduction-and-characteristic-features-of-pteridophytes-morphological-str",
+      "source": "topic-derived",
+      "name": "Pteridophyta: General introduction and characteristic features of pteridophytes; morphological structure and reproduction of Dryopteris; economic importance of pteridophytes — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/gymnosperm-general-introduction-and-characteristic-features-of-gymnosperms-morphology-and-reprod",
+      "source": "topic-derived",
+      "name": "Gymnosperm: General introduction and characteristic features of Gymnosperms; morphology and reproduction of Pinus; economic importance of gymnosperm — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/angiosperm-morphology-of-root-stem-leaves-inflorescences-flowers-and-fruit",
+      "source": "authored-concept",
+      "name": "Angiosperm Flower & Double Fertilisation",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/biology/taxonomic-study-definition-taxonomic-hierarchy-classification-systems-artificial-natural-and-phy",
+      "source": "authored-concept",
+      "name": "Angiosperm Flower & Double Fertilisation",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/biology/angiosperm-families-with-economic-importance-brassicaceae-fabaceae-solanaceae-and-liliaceae",
+      "source": "authored-concept",
+      "name": "Angiosperm Flower & Double Fertilisation",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/biology/monera-general-introduction-structure-of-bacterial-cell-mode-of-nutrition-bacterial-growth-cyano",
+      "source": "authored-unit",
+      "name": "Cell Structure, Organelles & Biomolecules",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/biology/virus-general-introduction-structure-and-importance-of-virus-bacteriophage",
+      "source": "topic-derived",
+      "name": "Virus: General introduction, structure and importance of virus, bacteriophage — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/impacts-of-biotechnology-in-the-field-of-microbiology",
+      "source": "topic-derived",
+      "name": "Impacts of biotechnology in the field of microbiology — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions",
+      "source": "topic-derived",
+      "name": "Ecosystem ecology: Concept of ecology, biotic and abiotic factors, species interactions — Cyclic process sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem",
+      "source": "topic-derived",
+      "name": "Concept of ecosystem, structural and functional aspects of pond and forest ecosystem — Cyclic process sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/food-chain-food-web-trophic-level-ecological-pyramids-productivity",
+      "source": "authored-concept",
+      "name": "Food Chain, Food Web & Ecological Pyramids",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/biology/biogeochemical-cycles-carbon-and-nitrogen-cycles-concept-of-succession",
+      "source": "authored-concept",
+      "name": "Biogeochemical Cycles & Ecological Succession",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/biology/ecological-adaptation-concept-of-adaptation-hydrophytes-and-xerophytes",
+      "source": "topic-derived",
+      "name": "Ecological adaptation: Concept of adaptation, hydrophytes and xerophytes — Cyclic process sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/ecological-imbalances-greenhouse-effects-and-climate-change-depletion-of-ozone-layer-acid-rain-a",
+      "source": "topic-derived",
+      "name": "Ecological imbalances: Greenhouse effects and climate change, depletion of ozone layer, acid rain and biological invasion — Cyclic process sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/vegetation-introduction-types-of-vegetation-in-nepal",
+      "source": "topic-derived",
+      "name": "Vegetation: Introduction, types of vegetation in Nepal — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/in-situ-protected-areas-and-ex-situ-botanical-garden-seed-bank-conservation",
+      "source": "topic-derived",
+      "name": "In-situ (protected areas) and Ex-situ (botanical garden, seed bank) conservation — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/natural-environment-vegetation-and-human-activities",
+      "source": "topic-derived",
+      "name": "Natural environment-vegetation and human activities — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/introduction-to-biology-scope-and-fields-of-biology",
+      "source": "topic-derived",
+      "name": "Introduction to Biology: Scope and fields of biology — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/relation-of-biology-with-other-sciences",
+      "source": "topic-derived",
+      "name": "Relation of biology with other sciences — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/life-and-its-origin-oparin-haldane-theory-miller-and-urey-s-experiment",
+      "source": "topic-derived",
+      "name": "Life and its origin: Oparin-Haldane theory, Miller and Urey's experiment — Side-by-side comparison sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/evidences-of-evolution-morphological-anatomical-paleontological-embryological-and-biochemical",
+      "source": "authored-unit",
+      "name": "Mendelian Genetics, DNA & Evolution",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/biology/theories-of-evolution-lamarckism-darwinism-and-concept-of-neo-darwinism",
+      "source": "authored-unit",
+      "name": "Mendelian Genetics, DNA & Evolution",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/biology/human-evolution-position-of-man-in-animal-kingdom",
+      "source": "authored-unit",
+      "name": "Mendelian Genetics, DNA & Evolution",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/biology/differences-between-new-world-monkeys-and-old-world-monkeys-apes-and-man",
+      "source": "topic-derived",
+      "name": "Differences between new world monkeys and old-world monkeys, apes and man — Side-by-side comparison sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/evolution-of-modern-man-starting-from-anthropoid-ancestor",
+      "source": "authored-unit",
+      "name": "Mendelian Genetics, DNA & Evolution",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/biology/protista-outline-classification-protozoa-diagnostic-features-and-classification-up-to-class-with",
+      "source": "topic-derived",
+      "name": "Protista: Outline classification. Protozoa: diagnostic features and classification up to class with examples — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/paramecium-caudatum-plasmodium-vivax-habits-and-habitat-structure-reproduction-life-cycle",
+      "source": "topic-derived",
+      "name": "Paramecium caudatum, Plasmodium vivax: habits and habitat, structure, reproduction, life-cycle — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/economic-importance-of-p-falciparum",
+      "source": "topic-derived",
+      "name": "Economic importance of P. falciparum — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/animalia-level-of-organization-body-plan-body-symmetry-body-cavity-and-segmentation-in-animals",
+      "source": "topic-derived",
+      "name": "Animalia: Level of organization, body plan, body symmetry, body cavity and segmentation in animals — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/diagnostic-features-and-classification-of-phyla-up-to-class-porifera-coelenterata-cnidaria-platy",
+      "source": "topic-derived",
+      "name": "Diagnostic features and classification of phyla (up to class): Porifera, Coelenterata (Cnidaria), Platyhelminthes, Aschelminthes (Nemathelminthes), Annelida, Arthropoda, Mollusca, Echinodermata and Chordata — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/earthworm-pheretima-posthuma-habit-and-habitat-external-features-digestive-system-alimentary-can",
+      "source": "authored-concept",
+      "name": "Small Intestine — Digestion & Absorption",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/biology/earthworm-excretory-system-types-of-nephridia-structure-and-arrangement-of-septal-nephridia-nerv",
+      "source": "authored-concept",
+      "name": "Neuron & Reflex Arc",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/biology/earthworm-reproductive-systems-male-and-female-reproductive-organs-copulation-cocoon-formation-a",
+      "source": "topic-derived",
+      "name": "Earthworm: Reproductive systems (male and female reproductive organs), copulation, cocoon formation and economic importance — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/frog-rana-tigrina-habit-and-habitat-external-features-digestive-system-alimentary-canal-digestiv",
+      "source": "authored-concept",
+      "name": "Small Intestine — Digestion & Absorption",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/biology/frog-blood-vascular-system-structure-and-working-mechanism-of-heart-respiratory-system-respirato",
+      "source": "authored-concept",
+      "name": "Heart Structure & Cardiac Cycle",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/biology/frog-reproductive-system-male-and-female-reproductive-organs",
+      "source": "topic-derived",
+      "name": "Frog: Reproductive system (male and female reproductive organs) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/animal-adaptation-aquatic-primary-and-secondary-terrestrial-cursorial-fossorial-and-arboreal-and",
+      "source": "topic-derived",
+      "name": "Animal adaptation: Aquatic (primary and secondary), terrestrial (cursorial, fossorial and arboreal) and volant adaptation — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/animal-behavior-reflex-action-taxes-dominance-and-leadership",
+      "source": "topic-derived",
+      "name": "Animal behavior: Reflex action, taxes, dominance and leadership — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/fish-and-bird-migration",
+      "source": "topic-derived",
+      "name": "Fish and bird migration — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution",
+      "source": "topic-derived",
+      "name": "Environmental pollution: Sources, effects and control measures of air, water and soil pollution — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/pesticides-and-their-effects",
+      "source": "topic-derived",
+      "name": "Pesticides and their effects — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/conservation-biology-concept-of-biodiversity-biodiversity-conservation",
+      "source": "topic-derived",
+      "name": "Conservation biology: Concept of biodiversity, biodiversity conservation — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/national-parks-wildlife-reserves-conservation-areas-biodiversity-hotspots-wetland-and-ramsar-sit",
+      "source": "topic-derived",
+      "name": "National parks, wildlife reserves, conservation areas, biodiversity hotspots, wetland and Ramsar sites — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/wildlife-importance-causes-of-extinction-and-conservation-strategies",
+      "source": "topic-derived",
+      "name": "Wildlife: Importance, causes of extinction and conservation strategies — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/iucn-categories-of-threatened-species-meaning-of-extinct-endangered-vulnerable-rare-and-threaten",
+      "source": "topic-derived",
+      "name": "IUCN categories of threatened species: meaning of extinct, endangered, vulnerable, rare and threatened species — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/biology/endangered-species-in-nepal",
+      "source": "topic-derived",
+      "name": "Endangered species in Nepal — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/general-introduction-of-chemistry",
+      "source": "topic-derived",
+      "name": "General introduction of chemistry — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/importance-and-scope-of-chemistry",
+      "source": "topic-derived",
+      "name": "Importance and scope of chemistry — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/basic-concepts-of-chemistry-atoms-molecules-relative-masses-of-atoms-and-molecules-atomic-mass-u",
+      "source": "authored-unit",
+      "name": "Mole Concept & Stoichiometric Calculations",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/percentage-composition-from-molecular-formula",
+      "source": "authored-unit",
+      "name": "Mole Concept & Stoichiometric Calculations",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/dalton-s-atomic-theory-and-its-postulates",
+      "source": "topic-derived",
+      "name": "Dalton's atomic theory and its postulates — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/laws-of-stoichiometry",
+      "source": "authored-unit",
+      "name": "Mole Concept & Stoichiometric Calculations",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/avogadro-s-law-and-some-deductions-molecular-mass-and-vapour-density-molecular-mass-and-volume-o",
+      "source": "authored-unit",
+      "name": "Mole Concept & Stoichiometric Calculations",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/mole-and-its-relation-with-mass-volume-and-number-of-particles",
+      "source": "authored-unit",
+      "name": "Mole Concept & Stoichiometric Calculations",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/calculations-based-on-mole-concept",
+      "source": "authored-unit",
+      "name": "Mole Concept & Stoichiometric Calculations",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/limiting-reactant-and-excess-reactant",
+      "source": "authored-unit",
+      "name": "Mole Concept & Stoichiometric Calculations",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/theoretical-yield-experimental-yield-and-yield",
+      "source": "authored-unit",
+      "name": "Mole Concept & Stoichiometric Calculations",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/calculation-of-empirical-and-molecular-formula-from-composition-solving-related-numerical-proble",
+      "source": "authored-unit",
+      "name": "Mole Concept & Stoichiometric Calculations",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/rutherford-s-atomic-model-and-its-limitations",
+      "source": "topic-derived",
+      "name": "Rutherford's atomic model and its limitations — Trend / gradient sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/postulates-of-bohr-s-atomic-model-and-its-application",
+      "source": "topic-derived",
+      "name": "Postulates of Bohr's atomic model and its application — Trend / gradient sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/spectrum-of-hydrogen-atom",
+      "source": "topic-derived",
+      "name": "Spectrum of hydrogen atom — Trend / gradient sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/defects-of-bohr-s-theory",
+      "source": "topic-derived",
+      "name": "Defects of Bohr's theory — Trend / gradient sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/elementary-idea-of-quantum-mechanical-model-de-broglie-s-wave-equation",
+      "source": "topic-derived",
+      "name": "Elementary idea of quantum mechanical model: de Broglie's wave equation — Trend / gradient sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/heisenberg-s-uncertainty-principle-and-concept-of-probability",
+      "source": "topic-derived",
+      "name": "Heisenberg's Uncertainty Principle and concept of probability — Trend / gradient sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/quantum-numbers",
+      "source": "authored-concept",
+      "name": "Quantum Numbers & Orbital Address",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/orbitals-and-shape-of-s-and-p-orbitals-only",
+      "source": "authored-unit",
+      "name": "Chemical Bonding, VSEPR & Hybridisation",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/aufbau-principle-pauli-s-exclusion-principle-hund-s-rule-and-electronic-configurations-of-atoms-",
+      "source": "topic-derived",
+      "name": "Aufbau principle, Pauli's exclusion principle, Hund's rule and electronic configurations of atoms and ions (up to atomic no. 30) — Trend / gradient sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/modern-periodic-law-and-modern-periodic-table",
+      "source": "authored-concept",
+      "name": "Periodic Trends — Atomic Radius & Ionisation",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/classification-of-elements-into-different-groups-periods-and-blocks",
+      "source": "topic-derived",
+      "name": "Classification of elements into different groups, periods and blocks — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/iupac-classification-of-elements",
+      "source": "topic-derived",
+      "name": "IUPAC classification of elements — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/nuclear-charge-and-effective-nuclear-charge",
+      "source": "topic-derived",
+      "name": "Nuclear charge and effective nuclear charge — Trend / gradient sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/periodic-trend-and-periodicity-atomic-radii-ionic-radii-ionization-energy-electron-affinity-elec",
+      "source": "authored-concept",
+      "name": "Periodic Trends — Atomic Radius & Ionisation",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/valence-shell-valence-electron-and-octet-theory",
+      "source": "topic-derived",
+      "name": "Valence shell, valence electron and octet theory — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/ionic-bond-and-its-properties",
+      "source": "authored-unit",
+      "name": "Chemical Bonding, VSEPR & Hybridisation",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/covalent-bond-and-coordinate-covalent-bond-properties-of-covalent-compounds",
+      "source": "authored-unit",
+      "name": "Chemical Bonding, VSEPR & Hybridisation",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/lewis-dot-structure-of-some-common-compounds-of-s-and-p-block-elements",
+      "source": "topic-derived",
+      "name": "Lewis dot structure of some common compounds of s and p block elements — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/resonance",
+      "source": "topic-derived",
+      "name": "Resonance — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/vsepr-theory-and-shapes-of-simple-molecules-bef2-bf3-ch4-ch3cl-pcl5-sf6-h2o-nh3-co2-h2s-ph3",
+      "source": "authored-concept",
+      "name": "VSEPR Theory & Molecular Shape",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/elementary-idea-of-valence-bond-theory",
+      "source": "authored-unit",
+      "name": "Chemical Bonding, VSEPR & Hybridisation",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/hybridization-involving-s-and-p-orbitals-only",
+      "source": "authored-unit",
+      "name": "Chemical Bonding, VSEPR & Hybridisation",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/bond-characteristics-bond-length-ionic-character-dipole-moment",
+      "source": "authored-unit",
+      "name": "Chemical Bonding, VSEPR & Hybridisation",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/vander-waal-s-force-and-molecular-solids-hydrogen-bonding-and-its-application",
+      "source": "authored-unit",
+      "name": "Mole Concept & Stoichiometric Calculations",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/metallic-bonding-and-properties-of-metallic-solids",
+      "source": "authored-unit",
+      "name": "Chemical Bonding, VSEPR & Hybridisation",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/general-and-electronic-concept-of-oxidation-and-reduction",
+      "source": "topic-derived",
+      "name": "General and electronic concept of oxidation and reduction — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/oxidation-number-and-rules-for-assigning-oxidation-number",
+      "source": "authored-concept",
+      "name": "Oxidation Number & Redox Balancing",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/balancing-redox-reactions-by-oxidation-number-and-ion-electron-half-reaction-method",
+      "source": "authored-concept",
+      "name": "Standard Electrode Potential & Electrochemical Series",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/electrolysis-qualitative-aspect",
+      "source": "topic-derived",
+      "name": "Electrolysis: qualitative aspect — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/electrolysis-quantitative-aspect-faraday-s-laws-of-electrolysis",
+      "source": "topic-derived",
+      "name": "Electrolysis: quantitative aspect (Faraday's laws of electrolysis) — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/gaseous-state-kinetic-theory-of-gas-and-its-postulates",
+      "source": "topic-derived",
+      "name": "Gaseous state: Kinetic theory of gas and its postulates — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/gas-laws-boyle-s-law-charles-law-avogadro-s-law-combined-gas-equation-dalton-s-law-of-partial-pr",
+      "source": "authored-unit",
+      "name": "Mole Concept & Stoichiometric Calculations",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/ideal-gas-and-ideal-gas-equation-universal-gas-constant-and-its-significance",
+      "source": "topic-derived",
+      "name": "Ideal gas and ideal gas equation; universal gas constant and its significance — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/deviation-of-real-gas-from-ideality-solving-related-numerical-problems-based-on-gas-laws",
+      "source": "topic-derived",
+      "name": "Deviation of real gas from ideality (solving related numerical problems based on gas laws) — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/liquid-state-physical-properties-of-liquids-evaporation-and-condensation-vapour-pressure-and-boi",
+      "source": "topic-derived",
+      "name": "Liquid state: physical properties of liquids — evaporation and condensation, vapour pressure and boiling point, surface tension and viscosity (qualitative idea only) — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/liquid-crystals-and-their-applications",
+      "source": "topic-derived",
+      "name": "Liquid crystals and their applications — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/solid-state-types-of-solids-amorphous-and-crystalline-solids",
+      "source": "topic-derived",
+      "name": "Solid state: types of solids, amorphous and crystalline solids — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/efflorescent-deliquescent-and-hygroscopic-solids-crystallization-and-crystal-growth-water-of-cry",
+      "source": "topic-derived",
+      "name": "Efflorescent, deliquescent and hygroscopic solids; crystallization and crystal growth; water of crystallization — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/introduction-to-unit-crystal-lattice-and-unit-cell",
+      "source": "authored-special",
+      "name": "Introduction to unit crystal lattice and unit cell",
+      "parts": 0
+    },
+    {
+      "topic": "class-11-notes/chemistry/physical-and-chemical-equilibrium-dynamic-nature-of-chemical-equilibrium",
+      "source": "authored-concept",
+      "name": "Chemical Equilibrium & Le Chatelier's Principle",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/law-of-mass-action",
+      "source": "topic-derived",
+      "name": "Law of mass action — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/expression-for-equilibrium-constant-and-its-importance",
+      "source": "authored-concept",
+      "name": "Chemical Equilibrium & Le Chatelier's Principle",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/relationship-between-kp-and-kc",
+      "source": "topic-derived",
+      "name": "Relationship between Kp and Kc — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/le-chatelier-s-principle-numericals-not-required",
+      "source": "authored-concept",
+      "name": "Chemical Equilibrium & Le Chatelier's Principle",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/hydrogen-chemistry-of-atomic-and-nascent-hydrogen-isotopes-of-hydrogen-and-their-uses",
+      "source": "topic-derived",
+      "name": "Hydrogen: chemistry of atomic and nascent hydrogen; isotopes of hydrogen and their uses — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/application-of-hydrogen-as-fuel-heavy-water-and-its-applications",
+      "source": "topic-derived",
+      "name": "Application of hydrogen as fuel; heavy water and its applications — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/allotropes-of-oxygen-definition-of-allotropy-and-examples-oxygen-types-of-oxides-acidic-basic-ne",
+      "source": "topic-derived",
+      "name": "Allotropes of oxygen: definition of allotropy and examples; oxygen — types of oxides (acidic, basic, neutral, amphoteric, peroxide and mixed oxides) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/applications-of-hydrogen-peroxide-medical-and-industrial-application-of-oxygen",
+      "source": "topic-derived",
+      "name": "Applications of hydrogen peroxide; medical and industrial application of oxygen — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/ozone-occurrence-preparation-of-ozone-from-oxygen-structure-of-ozone-test-for-ozone-uses-of-ozon",
+      "source": "topic-derived",
+      "name": "Ozone: occurrence, preparation of ozone from oxygen, structure of ozone, test for ozone, uses of ozone — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/ozone-layer-depletion-causes-effects-and-control-measures",
+      "source": "topic-derived",
+      "name": "Ozone layer depletion: causes, effects and control measures — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/nitrogen-reason-for-inertness-of-nitrogen-and-active-nitrogen",
+      "source": "topic-derived",
+      "name": "Nitrogen: reason for inertness of nitrogen and active nitrogen — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/chemical-properties-of-ammonia-action-with-cuso4-solution-water-fecl3-solution-conc-hcl-mercurou",
+      "source": "topic-derived",
+      "name": "Chemical properties of ammonia (action with CuSO4 solution, water, FeCl3 solution, conc. HCl, mercurous nitrate paper, O2); applications and harmful effects of ammonia — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/oxy-acids-of-nitrogen-name-and-formula",
+      "source": "topic-derived",
+      "name": "Oxy-acids of nitrogen (name and formula) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/chemical-properties-of-nitric-acid-hno3-as-an-acid-and-oxidizing-agent-action-with-zinc-magnesiu",
+      "source": "topic-derived",
+      "name": "Chemical properties of nitric acid: HNO3 as an acid and oxidizing agent (action with zinc, magnesium, iron, copper, sulphur, carbon, SO2 and H2S); ring test for nitrate ion — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/halogens-general-characteristics-of-halogens-comparative-study-on-preparation-chemical-propertie",
+      "source": "topic-derived",
+      "name": "Halogens: general characteristics of halogens; comparative study on preparation, chemical properties (with water, alkali, ammonia, oxidizing character, bleaching action) and uses of Cl2, Br2 and I2 — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/test-for-cl2-br2-and-i2",
+      "source": "topic-derived",
+      "name": "Test for Cl2, Br2 and I2 — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/haloacids-hcl-hbr-and-hi-comparative-study-on-preparation-properties-reducing-strength-acidic-na",
+      "source": "topic-derived",
+      "name": "Haloacids (HCl, HBr and HI): comparative study on preparation, properties (reducing strength, acidic nature and solubility) and uses — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/carbon-allotropes-of-carbon-crystalline-and-amorphous-including-fullerenes-structure-general-pro",
+      "source": "topic-derived",
+      "name": "Carbon: allotropes of carbon (crystalline and amorphous) including fullerenes (structure, general properties and uses only) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/properties-reducing-action-reaction-with-metals-and-nonmetals-and-uses-of-carbon-monoxide",
+      "source": "topic-derived",
+      "name": "Properties (reducing action, reaction with metals and nonmetals) and uses of carbon monoxide — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/phosphorus-allotropes-of-phosphorus-name-only",
+      "source": "topic-derived",
+      "name": "Phosphorus: allotropes of phosphorus (name only) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/phosphine-preparation-properties-basic-nature-reducing-nature-action-with-halogens-and-oxygen-an",
+      "source": "topic-derived",
+      "name": "Phosphine: preparation, properties (basic nature, reducing nature, action with halogens and oxygen) and uses — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/sulphur-allotropes-of-sulphur-name-only-and-uses-of-sulphur",
+      "source": "topic-derived",
+      "name": "Sulphur: allotropes of sulphur (name only) and uses of sulphur — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/hydrogen-sulphide-preparation-from-kipp-s-apparatus-with-diagram-properties-acidic-nature-reduci",
+      "source": "topic-derived",
+      "name": "Hydrogen sulphide: preparation from Kipp's apparatus (with diagram), properties (acidic nature, reducing nature, analytical reagent) and uses — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/sulphur-dioxide-properties-acidic-nature-reducing-nature-oxidising-nature-and-bleaching-action-a",
+      "source": "topic-derived",
+      "name": "Sulphur dioxide: properties (acidic nature, reducing nature, oxidising nature and bleaching action) and uses — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/sulphuric-acid-properties-acidic-nature-oxidising-nature-dehydrating-nature-and-uses",
+      "source": "topic-derived",
+      "name": "Sulphuric acid: properties (acidic nature, oxidising nature, dehydrating nature) and uses — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/sodium-thiosulphate-formula-and-uses",
+      "source": "topic-derived",
+      "name": "Sodium thiosulphate (formula and uses) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/metals-and-metallurgical-principles-definition-of-metallurgy-and-its-types-hydrometallurgy-pyrom",
+      "source": "topic-derived",
+      "name": "Metals and metallurgical principles: definition of metallurgy and its types (hydrometallurgy, pyrometallurgy, electrometallurgy) — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/introduction-of-ores-gangue-or-matrix-flux-and-slag-alloy-and-amalgam",
+      "source": "topic-derived",
+      "name": "Introduction of ores; gangue or matrix, flux and slag, alloy and amalgam — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/general-principles-of-extraction-of-metals-concentration-calcination-and-roasting-smelting-carbo",
+      "source": "authored-special",
+      "name": "General principles of extraction of metals: concentration, calcination and roasting, smelting, carbon reduction, thermite and electrochemical reduction",
+      "parts": 0
+    },
+    {
+      "topic": "class-11-notes/chemistry/refining-of-metals-poling-and-electro-refinement",
+      "source": "topic-derived",
+      "name": "Refining of metals (poling and electro-refinement) — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/alkali-metals-general-characteristics-of-alkali-metals",
+      "source": "topic-derived",
+      "name": "Alkali metals: general characteristics of alkali metals — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/sodium-extraction-from-down-s-process-properties-action-with-oxygen-water-acids-nonmetals-and-am",
+      "source": "topic-derived",
+      "name": "Sodium: extraction from Down's process, properties (action with oxygen, water, acids, nonmetals and ammonia) and uses — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/sodium-hydroxide-properties-precipitation-reaction-and-action-with-carbon-monoxide-and-uses",
+      "source": "topic-derived",
+      "name": "Sodium hydroxide: properties (precipitation reaction and action with carbon monoxide) and uses — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/sodium-carbonate-properties-action-with-co2-so2-water-precipitation-reactions-and-uses",
+      "source": "topic-derived",
+      "name": "Sodium carbonate: properties (action with CO2, SO2, water, precipitation reactions) and uses — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/alkaline-earth-metals-general-characteristics-of-alkaline-earth-metals",
+      "source": "topic-derived",
+      "name": "Alkaline earth metals: general characteristics of alkaline earth metals — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/molecular-formula-and-uses-of-quick-lime-bleaching-powder-magnesia-plaster-of-paris-and-epsom-sa",
+      "source": "authored-unit",
+      "name": "Mole Concept & Stoichiometric Calculations",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/solubility-of-hydroxides-carbonates-and-sulphates-of-alkaline-earth-metals-general-trend-with-ex",
+      "source": "topic-derived",
+      "name": "Solubility of hydroxides, carbonates and sulphates of alkaline earth metals (general trend with explanation) — Trend / gradient sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/stability-of-carbonate-and-nitrate-of-alkaline-earth-metals-general-trend-with-explanation",
+      "source": "topic-derived",
+      "name": "Stability of carbonate and nitrate of alkaline earth metals (general trend with explanation) — Trend / gradient sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/introduction-to-bio-inorganic-chemistry",
+      "source": "topic-derived",
+      "name": "Introduction to Bio-inorganic Chemistry — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/micro-and-macro-nutrients",
+      "source": "topic-derived",
+      "name": "Micro and macro nutrients — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/importance-of-metal-ions-in-biological-systems-ions-of-na-k-mg-ca-fe-cu-zn-ni-co-cr",
+      "source": "topic-derived",
+      "name": "Importance of metal ions in biological systems (ions of Na, K, Mg, Ca, Fe, Cu, Zn, Ni, Co, Cr) — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/ion-pumps-sodium-potassium-and-sodium-glucose-pump",
+      "source": "topic-derived",
+      "name": "Ion pumps (sodium-potassium and sodium-glucose pump) — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/metal-toxicity-toxicity-due-to-iron-arsenic-mercury-lead-and-cadmium",
+      "source": "topic-derived",
+      "name": "Metal toxicity (toxicity due to iron, arsenic, mercury, lead and cadmium) — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/introduction-to-organic-chemistry-and-organic-compounds",
+      "source": "authored-concept",
+      "name": "Organic Reaction Mechanism (SN1 / SN2)",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/reasons-for-the-separate-study-of-organic-compounds-from-inorganic-compounds",
+      "source": "topic-derived",
+      "name": "Reasons for the separate study of organic compounds from inorganic compounds — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/tetra-covalency-and-catenation-properties-of-carbon",
+      "source": "topic-derived",
+      "name": "Tetra-covalency and catenation properties of carbon — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/classification-of-organic-compounds",
+      "source": "topic-derived",
+      "name": "Classification of organic compounds — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/alkyl-groups-functional-groups-and-homologous-series",
+      "source": "authored-concept",
+      "name": "Organic Reaction Mechanism (SN1 / SN2)",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/idea-of-structural-formula-contracted-formula-and-bond-line-structural-formula",
+      "source": "authored-unit",
+      "name": "Chemical Bonding, VSEPR & Hybridisation",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/preliminary-idea-of-cracking-and-reforming-quality-of-gasoline-octane-number-cetane-number-and-g",
+      "source": "topic-derived",
+      "name": "Preliminary idea of cracking and reforming, quality of gasoline, octane number, cetane number and gasoline additive — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/iupac-nomenclature-of-organic-compounds-up-to-chain-having-6-carbon-atoms",
+      "source": "topic-derived",
+      "name": "IUPAC Nomenclature of Organic Compounds (up to chain having 6-carbon atoms) — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/qualitative-analysis-of-organic-compounds-detection-of-n-s-and-halogens-by-lassaigne-s-test",
+      "source": "topic-derived",
+      "name": "Qualitative analysis of organic compounds (detection of N, S and halogens by Lassaigne's test) — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/isomerism-in-organic-compounds-definition-and-classification-of-isomerism",
+      "source": "topic-derived",
+      "name": "Isomerism in organic compounds: definition and classification of isomerism — Classification tree sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/structural-isomerism-and-its-types-chain-isomerism-position-isomerism-functional-isomerism-metam",
+      "source": "topic-derived",
+      "name": "Structural isomerism and its types: chain isomerism, position isomerism, functional isomerism, metamerism and tautomerism — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/concept-of-geometrical-isomerism-cis-and-trans-and-optical-isomerism-d-and-l-form",
+      "source": "topic-derived",
+      "name": "Concept of geometrical isomerism (cis and trans) and optical isomerism (d and l form) — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/preliminary-idea-of-reaction-mechanism-homolytic-and-heterolytic-fission",
+      "source": "authored-concept",
+      "name": "Organic Reaction Mechanism (SN1 / SN2)",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/electrophiles-nucleophiles-and-free-radicals",
+      "source": "authored-concept",
+      "name": "Organic Reaction Mechanism (SN1 / SN2)",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/inductive-effect-i-and-i-effect",
+      "source": "topic-derived",
+      "name": "Inductive effect: +I and -I effect — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/resonance-effect-r-and-r-effect",
+      "source": "topic-derived",
+      "name": "Resonance effect: +R and -R effect — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/saturated-hydrocarbons-alkanes-preparation-from-haloalkanes-reduction-and-wurtz-reaction-decarbo",
+      "source": "topic-derived",
+      "name": "Saturated hydrocarbons (Alkanes): preparation from haloalkanes (reduction and Wurtz reaction), decarboxylation, catalytic hydrogenation of alkene and alkyne — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/chemical-properties-of-alkanes-substitution-reactions-halogenation-nitration-and-sulphonation-on",
+      "source": "authored-concept",
+      "name": "Organic Reaction Mechanism (SN1 / SN2)",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/unsaturated-hydrocarbons-alkenes-preparation-by-dehydration-of-alcohol-dehydrohalogenation-catal",
+      "source": "topic-derived",
+      "name": "Unsaturated hydrocarbons (Alkenes): preparation by dehydration of alcohol, dehydrohalogenation, catalytic hydrogenation of alkyne — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/chemical-properties-of-alkenes-addition-reaction-with-hx-markovnikov-s-addition-and-peroxide-eff",
+      "source": "topic-derived",
+      "name": "Chemical properties of alkenes: addition reaction with HX (Markovnikov's addition and peroxide effect), H2O, O3, H2SO4 only — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/alkynes-preparation-from-carbon-and-hydrogen-1-2-dibromoethane-chloroform-iodoform-only",
+      "source": "topic-derived",
+      "name": "Alkynes: preparation from carbon and hydrogen, 1,2-dibromoethane, chloroform/iodoform only — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/chemical-properties-of-alkynes-addition-reaction-with-h2-hx-h2o-acidic-nature-action-with-sodium",
+      "source": "topic-derived",
+      "name": "Chemical properties of alkynes: addition reaction with H2, HX, H2O; acidic nature (action with sodium, ammoniacal AgNO3 and ammoniacal Cu2Cl2) — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/test-of-unsaturation-ethene-and-ethyne-bromine-water-test-and-baeyer-s-test",
+      "source": "topic-derived",
+      "name": "Test of unsaturation (ethene and ethyne): bromine water test and Baeyer's test — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/comparative-studies-of-physical-properties-of-alkane-alkene-and-alkyne",
+      "source": "topic-derived",
+      "name": "Comparative studies of physical properties of alkane, alkene and alkyne — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/kolbe-s-electrolysis-methods-for-the-preparation-of-alkanes-alkenes-and-alkynes",
+      "source": "topic-derived",
+      "name": "Kolbe's electrolysis methods for the preparation of alkanes, alkenes and alkynes — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/introduction-and-characteristics-of-aromatic-compounds",
+      "source": "topic-derived",
+      "name": "Introduction and characteristics of aromatic compounds — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/huckel-s-rule-of-aromaticity",
+      "source": "topic-derived",
+      "name": "Huckel's rule of aromaticity — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/kekule-structure-of-benzene",
+      "source": "topic-derived",
+      "name": "Kekule structure of benzene — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/resonance-and-isomerism-in-benzene",
+      "source": "topic-derived",
+      "name": "Resonance and isomerism in benzene — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/preparation-of-benzene-from-decarboxylation-of-sodium-benzoate-phenol-and-ethyne-only",
+      "source": "topic-derived",
+      "name": "Preparation of benzene from decarboxylation of sodium benzoate, phenol, and ethyne only — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/physical-properties-of-benzene",
+      "source": "topic-derived",
+      "name": "Physical properties of benzene — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/chemical-properties-of-benzene-addition-reactions-hydrogen-halogen-electrophilic-substitution-re",
+      "source": "authored-concept",
+      "name": "Organic Reaction Mechanism (SN1 / SN2)",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/chemistry/combustion-of-benzene-free-combustion-only-and-uses",
+      "source": "topic-derived",
+      "name": "Combustion of benzene (free combustion only) and uses — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/fundamentals-of-applied-chemistry-chemical-industry-and-its-importance",
+      "source": "topic-derived",
+      "name": "Fundamentals of Applied Chemistry: chemical industry and its importance — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/stages-in-producing-a-new-product",
+      "source": "topic-derived",
+      "name": "Stages in producing a new product — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/economics-of-production-cash-flow-in-the-production-cycle",
+      "source": "topic-derived",
+      "name": "Economics of production; cash flow in the production cycle — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/running-a-chemical-plant-designing-a-chemical-plant",
+      "source": "topic-derived",
+      "name": "Running a chemical plant; designing a chemical plant — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/continuous-and-batch-processing",
+      "source": "topic-derived",
+      "name": "Continuous and batch processing — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/environmental-impact-of-the-chemical-industry",
+      "source": "topic-derived",
+      "name": "Environmental impact of the chemical industry — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/manufacture-of-ammonia-by-haber-s-process-principle-and-flow-sheet-diagram-only",
+      "source": "topic-derived",
+      "name": "Manufacture of ammonia by Haber's process (principle and flow sheet diagram only) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/manufacture-of-nitric-acid-by-ostwald-s-process",
+      "source": "topic-derived",
+      "name": "Manufacture of nitric acid by Ostwald's process — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/manufacture-of-sulphuric-acid-by-contact-process",
+      "source": "topic-derived",
+      "name": "Manufacture of sulphuric acid by contact process — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/manufacture-of-sodium-hydroxide-by-diaphragm-cell",
+      "source": "authored-special",
+      "name": "Manufacture of sodium hydroxide by Diaphragm Cell",
+      "parts": 0
+    },
+    {
+      "topic": "class-11-notes/chemistry/manufacture-of-sodium-carbonate-by-ammonia-soda-or-solvay-process",
+      "source": "topic-derived",
+      "name": "Manufacture of sodium carbonate by ammonia soda or Solvay process — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/chemistry/fertilizers-chemical-fertilizers-types-of-chemical-fertilizers-production-of-urea-with-flow-shee",
+      "source": "topic-derived",
+      "name": "Fertilizers: chemical fertilizers, types of chemical fertilizers, production of urea with flow-sheet diagram — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/unit-1-education-and-humanity",
+      "source": "topic-derived",
+      "name": "Unit 1 — Education and Humanity — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/unit-2-communication",
+      "source": "topic-derived",
+      "name": "Unit 2 — Communication — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/unit-3-media-and-society",
+      "source": "topic-derived",
+      "name": "Unit 3 — Media and Society — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/unit-4-history-and-culture",
+      "source": "topic-derived",
+      "name": "Unit 4 — History and Culture — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/unit-5-life-and-love",
+      "source": "topic-derived",
+      "name": "Unit 5 — Life and Love — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/unit-6-health-and-exercise",
+      "source": "topic-derived",
+      "name": "Unit 6 — Health and Exercise — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/unit-7-ecology-and-development",
+      "source": "topic-derived",
+      "name": "Unit 7 — Ecology and Development — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/unit-8-humour-and-satire",
+      "source": "topic-derived",
+      "name": "Unit 8 — Humour and Satire — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/unit-9-democracy-and-human-rights",
+      "source": "topic-derived",
+      "name": "Unit 9 — Democracy and Human Rights — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/unit-10-home-life-and-family-relationship",
+      "source": "topic-derived",
+      "name": "Unit 10 — Home Life and Family Relationship — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/unit-11-arts-and-creation",
+      "source": "topic-derived",
+      "name": "Unit 11 — Arts and Creation — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/unit-12-fantasy",
+      "source": "topic-derived",
+      "name": "Unit 12 — Fantasy — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/unit-13-career-and-entrepreneurship",
+      "source": "topic-derived",
+      "name": "Unit 13 — Career and Entrepreneurship — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/unit-14-power-and-politics",
+      "source": "topic-derived",
+      "name": "Unit 14 — Power and Politics — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/unit-15-war-and-peace",
+      "source": "topic-derived",
+      "name": "Unit 15 — War and Peace — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/unit-16-critical-thinking",
+      "source": "topic-derived",
+      "name": "Unit 16 — Critical Thinking — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/unit-17-globalization-and-diaspora",
+      "source": "topic-derived",
+      "name": "Unit 17 — Globalization and Diaspora — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/grammar-and-usage",
+      "source": "topic-derived",
+      "name": "Grammar and Usage — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/vocabulary-building",
+      "source": "topic-derived",
+      "name": "Vocabulary Building — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/communication-skills",
+      "source": "topic-derived",
+      "name": "Communication Skills — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/short-story-1-the-selfish-giant-oscar-wilde",
+      "source": "topic-derived",
+      "name": "Short Story 1 — The Selfish Giant (Oscar Wilde) — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/short-story-2-the-oval-portrait-edgar-allan-poe",
+      "source": "topic-derived",
+      "name": "Short Story 2 — The Oval Portrait (Edgar Allan Poe) — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/short-story-3-god-sees-the-truth-but-waits-leo-tolstoy",
+      "source": "topic-derived",
+      "name": "Short Story 3 — God Sees the Truth but Waits (Leo Tolstoy) — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/short-story-4-the-wish-roald-dahl",
+      "source": "topic-derived",
+      "name": "Short Story 4 — The Wish (Roald Dahl) — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/short-story-5-civil-peace-chinua-achebe",
+      "source": "topic-derived",
+      "name": "Short Story 5 — Civil Peace (Chinua Achebe) — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/short-story-6-two-little-soldiers-guy-de-maupassant",
+      "source": "topic-derived",
+      "name": "Short Story 6 — Two Little Soldiers (Guy de Maupassant) — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/short-story-7-an-astrologer-s-day-r-k-narayan",
+      "source": "topic-derived",
+      "name": "Short Story 7 — An Astrologer's Day (R. K. Narayan) — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/poem-1-corona-says-vishnu-s-rai",
+      "source": "topic-derived",
+      "name": "Poem 1 — Corona Says (Vishnu S. Rai) — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/poem-2-a-red-red-rose-robert-burns",
+      "source": "topic-derived",
+      "name": "Poem 2 — A Red, Red Rose (Robert Burns) — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/poem-3-all-the-world-s-a-stage-william-shakespeare",
+      "source": "topic-derived",
+      "name": "Poem 3 — All the World's a Stage (William Shakespeare) — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/poem-4-who-are-you-little-i-e-e-cummings",
+      "source": "topic-derived",
+      "name": "Poem 4 — Who are you, little i? (E. E. Cummings) — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/poem-5-the-gift-in-wartime-tran-mong-tu",
+      "source": "topic-derived",
+      "name": "Poem 5 — The Gift in Wartime (Tran Mong Tu) — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/essay-1-sharing-tradition-frank-lapena",
+      "source": "topic-derived",
+      "name": "Essay 1 — Sharing Tradition (Frank LaPena) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/essay-2-how-to-live-before-you-die-steve-jobs",
+      "source": "topic-derived",
+      "name": "Essay 2 — How to Live Before You Die (Steve Jobs) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/essay-3-what-i-require-from-life-j-b-s-haldane",
+      "source": "topic-derived",
+      "name": "Essay 3 — What I Require From Life (J.B.S. Haldane) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/essay-4-what-is-poverty-jo-goodwin-parker",
+      "source": "topic-derived",
+      "name": "Essay 4 — What is Poverty? (Jo Goodwin Parker) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/essay-5-scientific-research-is-a-token-of-humankind-s-survival-vladimir-keilis-borok",
+      "source": "topic-derived",
+      "name": "Essay 5 — Scientific Research is a Token of Humankind's Survival (Vladimir Keilis-Borok) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/one-act-play-1-trifles-susan-glaspell",
+      "source": "topic-derived",
+      "name": "One-Act Play 1 — Trifles (Susan Glaspell) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/one-act-play-2-a-sunny-morning-serafin-and-joaquin-alvarez-quintero",
+      "source": "topic-derived",
+      "name": "One-Act Play 2 — A Sunny Morning (Serafín and Joaquín Álvarez Quintero) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/one-act-play-3-refund-fritz-karinthy",
+      "source": "topic-derived",
+      "name": "One-Act Play 3 — Refund (Fritz Karinthy) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/essay-writing-argumentative-descriptive-narrative-expository",
+      "source": "topic-derived",
+      "name": "Essay Writing — argumentative, descriptive, narrative, expository — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/paragraph-writing",
+      "source": "topic-derived",
+      "name": "Paragraph Writing — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/formal-letter-writing-editor-application-complaint-inquiry",
+      "source": "topic-derived",
+      "name": "Formal Letter Writing — editor, application, complaint, inquiry — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/informal-letter-writing",
+      "source": "topic-derived",
+      "name": "Informal Letter Writing — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/email-writing",
+      "source": "topic-derived",
+      "name": "Email Writing — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/report-writing-and-summarisation",
+      "source": "topic-derived",
+      "name": "Report Writing and Summarisation — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/article-writing",
+      "source": "topic-derived",
+      "name": "Article Writing — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/story-writing",
+      "source": "topic-derived",
+      "name": "Story Writing — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/speech-writing",
+      "source": "topic-derived",
+      "name": "Speech Writing — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/dialogue-writing",
+      "source": "topic-derived",
+      "name": "Dialogue Writing — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/review-writing-book-and-film",
+      "source": "topic-derived",
+      "name": "Review Writing — book and film — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/summary-and-note-making",
+      "source": "topic-derived",
+      "name": "Summary and Note-making — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/comprehension-and-unseen-passage",
+      "source": "topic-derived",
+      "name": "Comprehension and Unseen Passage — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/grammar-for-writing-sentences-clauses-punctuation",
+      "source": "topic-derived",
+      "name": "Grammar for Writing — sentences, clauses, punctuation — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/critical-thinking",
+      "source": "topic-derived",
+      "name": "Critical Thinking — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/english/literary-analysis-and-interpretation",
+      "source": "topic-derived",
+      "name": "Literary Analysis and Interpretation — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/mathematics/logic-and-set-statements-logical-connectives-truth-tables-theorems-based-on-set-operations",
+      "source": "topic-derived",
+      "name": "Logic and set: statements, logical connectives, truth tables, theorems based on set operations — Graph & variation sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/mathematics/real-numbers-geometric-representation-of-real-numbers-interval-absolute-value",
+      "source": "topic-derived",
+      "name": "Real numbers: geometric representation of real numbers, interval, absolute value — Graph & variation sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/mathematics/function-domain-and-range-of-a-function-inverse-function-composite-function-algebraic-linear-qua",
+      "source": "authored-concept",
+      "name": "Quadratic Equation & Nature of Roots",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/mathematics/curve-sketching-odd-and-even-functions-periodicity-symmetry-about-origin-x-and-y-axis-monotonici",
+      "source": "authored-concept",
+      "name": "Quadratic Equation & Nature of Roots",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/mathematics/sequence-and-series-arithmetic-geometric-harmonic-sequences-and-series-and-their-properties-a-m-",
+      "source": "topic-derived",
+      "name": "Sequence and series: arithmetic, geometric, harmonic sequences and series and their properties; A.M, G.M, H.M and their relations; sum of infinite geometric series — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/mathematics/matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint-",
+      "source": "authored-concept",
+      "name": "Matrix, Determinant & Cramer's Rule",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/mathematics/quadratic-equation-nature-and-roots-of-a-quadratic-equation-relation-between-roots-and-coefficie",
+      "source": "authored-concept",
+      "name": "Quadratic Equation & Nature of Roots",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/mathematics/complex-number-imaginary-unit-algebra-of-complex-numbers-geometric-representation-absolute-modul",
+      "source": "authored-concept",
+      "name": "Complex Numbers & the Argand Plane",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/mathematics/inverse-circular-functions",
+      "source": "topic-derived",
+      "name": "Inverse circular functions — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/mathematics/trigonometric-equations-and-general-values",
+      "source": "authored-unit",
+      "name": "Trigonometric Ratios, Identities & Equations",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/mathematics/straight-line-length-of-perpendicular-from-a-given-point-to-a-given-line-bisectors-of-the-angles",
+      "source": "topic-derived",
+      "name": "Straight line: length of perpendicular from a given point to a given line, bisectors of the angles between two straight lines — Construction & proof sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/mathematics/pair-of-straight-lines-general-equation-of-second-degree-in-x-and-y-condition-for-representing-a",
+      "source": "topic-derived",
+      "name": "Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of lines, bisectors of the angles between pair of lines — Construction & proof sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/mathematics/coordinates-in-space-points-in-space-distance-between-two-points-direction-cosines-and-ratios-of",
+      "source": "authored-concept",
+      "name": "Unit Circle & Trigonometric Ratios",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/mathematics/collinear-and-non-collinear-vectors-coplanar-and-non-coplanar-vectors",
+      "source": "topic-derived",
+      "name": "Collinear and non-collinear vectors, coplanar and non-coplanar vectors — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/mathematics/linear-combination-of-vectors-linearly-dependent-and-independent-vectors",
+      "source": "topic-derived",
+      "name": "Linear combination of vectors, linearly dependent and independent vectors — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/mathematics/measure-of-dispersion-standard-deviation-variance-coefficient-of-variation-skewness-karl-pearson",
+      "source": "topic-derived",
+      "name": "Measure of dispersion: standard deviation, variance, coefficient of variation, skewness, Karl Pearson's coefficient of skewness — Graph & variation sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/mathematics/probability-independent-cases-mathematical-and-empirical-definition-of-probability-two-basic-law",
+      "source": "topic-derived",
+      "name": "Probability: independent cases, mathematical and empirical definition of probability, two basic laws of probability (without proof) — Construction & proof sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/mathematics/limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-wi",
+      "source": "authored-concept",
+      "name": "Limit & Continuity (Removable Discontinuity)",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/mathematics/continuity-of-a-function-types-of-discontinuity-graphs-of-discontinuous-function",
+      "source": "authored-concept",
+      "name": "Limit & Continuity (Removable Discontinuity)",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/mathematics/derivatives-derivative-of-a-function-derivatives-of-algebraic-trigonometric-inverse-trigonometri",
+      "source": "authored-unit",
+      "name": "Limits, Derivatives & Their Geometry",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/mathematics/rules-of-differentiation-derivatives-of-parametric-and-implicit-functions-higher-order-derivativ",
+      "source": "authored-unit",
+      "name": "Limits, Derivatives & Their Geometry",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/mathematics/geometric-interpretation-of-derivative-monotonicity-of-a-function-interval-of-monotonicity-extre",
+      "source": "authored-unit",
+      "name": "Limits, Derivatives & Their Geometry",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/mathematics/anti-derivatives-integration-using-basic-integrals-integration-by-substitution-and-by-parts-meth",
+      "source": "authored-unit",
+      "name": "Limits, Derivatives & Their Geometry",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/mathematics/the-definite-integral-the-definite-integral-as-an-area-under-the-given-curve-area-between-two-cu",
+      "source": "authored-concept",
+      "name": "Definite Integral & Area Under a Curve",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/mathematics/numerical-computation-roots-of-algebraic-and-transcendental-equations-bisection-and-newton-raphs",
+      "source": "topic-derived",
+      "name": "Numerical computation: roots of algebraic and transcendental equations (bisection and Newton-Raphson method) — Construction & proof sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/mathematics/numerical-integration-trapezoidal-rule-and-simpson-s-rule",
+      "source": "topic-derived",
+      "name": "Numerical integration: Trapezoidal rule and Simpson's rule — Construction & proof sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/mathematics/mechanics-optional-statics-forces-and-resultant-forces-parallelogram-law-of-forces-composition-a",
+      "source": "authored-concept",
+      "name": "Law of Parallelogram of Vectors",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/mathematics/mechanics-optional-dynamics-motion-of-particle-in-a-straight-line-motion-with-uniform-accelerati",
+      "source": "inclined-plane",
+      "name": "Mechanics (optional): Dynamics — motion of particle in a straight line, motion with uniform acceleration, motion under gravity, motion down a smooth inclined plane — Construction & proof sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/पदप्रकरण-लिङ्ग-पुरुष-वचन-कारक-र-विभक्ति",
+      "source": "topic-derived",
+      "name": "पदप्रकरण — लिङ्ग, पुरुष, वचन, कारक र विभक्ति — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/क्रियाप्रकरण-धातु-काल-वाच्य-र-सार्वनामिक-क्रिया",
+      "source": "topic-derived",
+      "name": "क्रियाप्रकरण — धातु, काल, वाच्य र सार्वनामिक क्रिया — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/समास-तत्पुरुष-कर्मधारय-द्वन्द्व-र-बहुव्रीहि",
+      "source": "topic-derived",
+      "name": "समास — तत्पुरुष, कर्मधारय, द्वन्द्व र बहुव्रीहि — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/शब्द-परिवर्तन-शब्द-रूपान्तर-समानार्थक-र-विपरीतार्थक-शब्द",
+      "source": "topic-derived",
+      "name": "शब्द परिवर्तन — शब्द रूपान्तर, समानार्थक र विपरीतार्थक शब्द — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/राष्ट्रभाषा-नेपाली-ऐतिहासिक-विकास-र-भाषा-नीति",
+      "source": "topic-derived",
+      "name": "राष्ट्रभाषा नेपाली — ऐतिहासिक विकास र भाषा नीति — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/पाठ-१-वीर-पुर्खा-कविता",
+      "source": "topic-derived",
+      "name": "पाठ १ — वीर पुर्खा (कविता) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/पाठ-२-गाउँको-माया-सामाजिक-कथा",
+      "source": "topic-derived",
+      "name": "पाठ २ — गाउँको माया (सामाजिक कथा) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/पाठ-३-संस्कृतिको-नयाँ-यात्रा-आत्मपरक-निबन्ध",
+      "source": "topic-derived",
+      "name": "पाठ ३ — संस्कृतिको नयाँ यात्रा (आत्मपरक निबन्ध) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/पाठ-४-योगमाया-राष्ट्रिय-जीवनी",
+      "source": "topic-derived",
+      "name": "पाठ ४ — योगमाया (राष्ट्रिय जीवनी) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/पाठ-५-साथीलाई-चिठी-चिठी",
+      "source": "topic-derived",
+      "name": "पाठ ५ — साथीलाई चिठी (चिठी) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/पाठ-६-त्यो-फेरि-फर्कला-मनोवैज्ञानिक-कथा",
+      "source": "topic-derived",
+      "name": "पाठ ६ — त्यो फेरि फर्कला? (मनोवैज्ञानिक कथा) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/पाठ-७-पर्यापर्यटनका-सम्भावना-र-आयाम-वस्तुपरक-निबन्ध",
+      "source": "topic-derived",
+      "name": "पाठ ७ — पर्यापर्यटनका सम्भावना र आयाम (वस्तुपरक निबन्ध) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/पाठ-८-लौ-आयो-ताजा-खबर-लघु-नाटक",
+      "source": "topic-derived",
+      "name": "पाठ ८ — लौ आयो ताजा खबर (लघु नाटक) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/पाठ-९-सफलताको-कथा-रिपोर्ताजमूलक-रचना",
+      "source": "topic-derived",
+      "name": "पाठ ९ — सफलताको कथा (रिपोर्ताजमूलक रचना) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/पाठ-१०-कृषिशालामा-एक-दिन-संवाद",
+      "source": "topic-derived",
+      "name": "पाठ १० — कृषिशालामा एक दिन (संवाद) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/पाठ-११-रारा-भ्रमण-दैनिकी",
+      "source": "topic-derived",
+      "name": "पाठ ११ — रारा भ्रमण (दैनिकी) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/पाठ-१२-जलस्रोत-र-ऊर्जा-वक्तृता",
+      "source": "topic-derived",
+      "name": "पाठ १२ — जलस्रोत र ऊर्जा (वक्तृता) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/निबन्ध-लेखन-आत्मपरक-र-वस्तुपरक",
+      "source": "topic-derived",
+      "name": "निबन्ध लेखन — आत्मपरक र वस्तुपरक — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/चिठी-लेखन-औपचारिक-र-अनौपचारिक",
+      "source": "topic-derived",
+      "name": "चिठी लेखन — औपचारिक र अनौपचारिक — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/संवाद-लेखन",
+      "source": "topic-derived",
+      "name": "संवाद लेखन — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/दैनिकी-लेखन",
+      "source": "topic-derived",
+      "name": "दैनिकी लेखन — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/वक्तृता-र-रिपोर्ताजमूलक-रचना",
+      "source": "topic-derived",
+      "name": "वक्तृता र रिपोर्ताजमूलक रचना — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/कथा-कविता-र-नाटकका-विधागत-विशेषता",
+      "source": "topic-derived",
+      "name": "कथा, कविता र नाटकका विधागत विशेषता — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/व्यंग्य-र-हास्यव्यंग्य",
+      "source": "topic-derived",
+      "name": "व्यंग्य र हास्यव्यंग्य — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/नेपाली-सांस्कृतिक-विविधता-चाडपर्व-र-परम्परा",
+      "source": "topic-derived",
+      "name": "नेपाली सांस्कृतिक विविधता, चाडपर्व र परम्परा — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/nepali/भाषा-साहित्यमा-योगदान-पुर्-याउने-साहित्यकार",
+      "source": "topic-derived",
+      "name": "भाषा-साहित्यमा योगदान पुर्‍याउने साहित्यकार — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/precision-and-significant-figures",
+      "source": "authored-unit",
+      "name": "Measurement, Dimensions & Significant Figures",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/dimensions-and-uses-of-dimensional-analysis",
+      "source": "authored-unit",
+      "name": "Measurement, Dimensions & Significant Figures",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/triangle-parallelogram-and-polygon-laws-of-vectors",
+      "source": "authored-unit",
+      "name": "Vector Algebra & Resolution",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/resolution-of-vectors-unit-vectors",
+      "source": "authored-unit",
+      "name": "Vector Algebra & Resolution",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/scalar-and-vector-products",
+      "source": "authored-unit",
+      "name": "Vector Algebra & Resolution",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/instantaneous-velocity-and-acceleration",
+      "source": "topic-derived",
+      "name": "Instantaneous velocity and acceleration — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/relative-velocity",
+      "source": "topic-derived",
+      "name": "Relative velocity — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/equation-of-motion-graphical-treatment",
+      "source": "topic-derived",
+      "name": "Equation of motion (graphical treatment) — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/motion-of-a-freely-falling-body",
+      "source": "topic-derived",
+      "name": "Motion of a freely falling body — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/projectile-motion-and-its-applications",
+      "source": "authored-special",
+      "name": "Projectile motion and its applications",
+      "parts": 0
+    },
+    {
+      "topic": "class-11-notes/physics/linear-momentum-impulse",
+      "source": "authored-concept",
+      "name": "Linear Momentum & Impulse",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/conservation-of-linear-momentum",
+      "source": "authored-concept",
+      "name": "Linear Momentum & Impulse",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/application-of-newton-s-laws",
+      "source": "topic-derived",
+      "name": "Application of Newton's laws — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/moment-torque-and-equilibrium",
+      "source": "topic-derived",
+      "name": "Moment, torque and equilibrium — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/solid-friction-laws-of-solid-friction-and-their-verifications",
+      "source": "topic-derived",
+      "name": "Solid friction: laws of solid friction and their verifications — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/work-done-by-a-constant-force-and-a-variable-force",
+      "source": "authored-unit",
+      "name": "Work, Energy, Conservation & Power",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/power",
+      "source": "authored-unit",
+      "name": "Work, Energy, Conservation & Power",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/work-energy-theorem-kinetic-and-potential-energy",
+      "source": "authored-unit",
+      "name": "Work, Energy, Conservation & Power",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/conservation-of-energy",
+      "source": "authored-unit",
+      "name": "Work, Energy, Conservation & Power",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/conservative-and-non-conservative-forces",
+      "source": "topic-derived",
+      "name": "Conservative and non-conservative forces — Construction & proof sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/elastic-and-inelastic-collisions",
+      "source": "authored-concept",
+      "name": "Elastic & Inelastic Collisions",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/angular-displacement-velocity-and-acceleration",
+      "source": "topic-derived",
+      "name": "Angular displacement, velocity and acceleration — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/relation-between-angular-and-linear-velocity-and-acceleration",
+      "source": "topic-derived",
+      "name": "Relation between angular and linear velocity and acceleration — Graph & variation sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/centripetal-acceleration-and-centripetal-force",
+      "source": "authored-concept",
+      "name": "Centripetal Acceleration & Force",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/conical-pendulum",
+      "source": "topic-derived",
+      "name": "Conical pendulum — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/motion-in-a-vertical-circle",
+      "source": "topic-derived",
+      "name": "Motion in a vertical circle — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/applications-of-banking",
+      "source": "topic-derived",
+      "name": "Applications of banking — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/newton-s-law-of-gravitation",
+      "source": "topic-derived",
+      "name": "Newton's law of gravitation — Graph & variation sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/gravitational-field-strength",
+      "source": "topic-derived",
+      "name": "Gravitational field strength — Graph & variation sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/gravitational-potential-gravitational-potential-energy",
+      "source": "authored-unit",
+      "name": "Work, Energy, Conservation & Power",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/variation-in-value-of-g-due-to-altitude-and-depth",
+      "source": "topic-derived",
+      "name": "Variation in value of 'g' due to altitude and depth — Graph & variation sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/centre-of-mass-and-centre-of-gravity",
+      "source": "topic-derived",
+      "name": "Centre of mass and centre of gravity — Graph & variation sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/motion-of-a-satellite-orbital-velocity-and-time-period-of-the-satellite",
+      "source": "topic-derived",
+      "name": "Motion of a satellite: orbital velocity and time period of the satellite — Graph & variation sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/escape-velocity",
+      "source": "authored-concept",
+      "name": "Escape Velocity & Orbital Energy",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/potential-and-kinetic-energy-of-the-satellite",
+      "source": "authored-unit",
+      "name": "Work, Energy, Conservation & Power",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/geostationary-satellite",
+      "source": "topic-derived",
+      "name": "Geostationary satellite — Graph & variation sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/gps",
+      "source": "topic-derived",
+      "name": "GPS — Graph & variation sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/hooke-s-law-force-constant",
+      "source": "topic-derived",
+      "name": "Hooke's law: force constant — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/stress-strain-elasticity-and-plasticity",
+      "source": "topic-derived",
+      "name": "Stress; strain; elasticity and plasticity — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/elastic-modulus-young-modulus-bulk-modulus-shear-modulus",
+      "source": "topic-derived",
+      "name": "Elastic modulus: Young modulus, bulk modulus, shear modulus — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/poisson-s-ratio",
+      "source": "topic-derived",
+      "name": "Poisson's ratio — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/elastic-potential-energy",
+      "source": "authored-unit",
+      "name": "Work, Energy, Conservation & Power",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/molecular-concept-of-thermal-energy-heat-and-temperature-cause-and-direction-of-heat-flow",
+      "source": "authored-unit",
+      "name": "Work, Energy, Conservation & Power",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/meaning-of-thermal-equilibrium-and-zeroth-law-of-thermodynamics",
+      "source": "authored-concept",
+      "name": "Thermodynamics & Carnot Cycle",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/thermal-equilibrium-as-a-working-principle-of-a-mercury-thermometer",
+      "source": "authored-unit",
+      "name": "Work, Energy, Conservation & Power",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/linear-expansion-and-its-measurement",
+      "source": "authored-unit",
+      "name": "Measurement, Dimensions & Significant Figures",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/cubical-expansion-superficial-expansion-and-their-relation-with-linear-expansion",
+      "source": "topic-derived",
+      "name": "Cubical expansion, superficial expansion and their relation with linear expansion — Graph & variation sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/liquid-expansion-absolute-and-apparent",
+      "source": "topic-derived",
+      "name": "Liquid expansion: absolute and apparent — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/dulong-and-petit-method-of-determining-expansivity-of-liquid",
+      "source": "topic-derived",
+      "name": "Dulong and Petit method of determining expansivity of liquid — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/newton-s-law-of-cooling",
+      "source": "topic-derived",
+      "name": "Newton's law of cooling — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/measurement-of-specific-heat-capacity-of-solids-and-liquids",
+      "source": "authored-unit",
+      "name": "Measurement, Dimensions & Significant Figures",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/change-of-phases-latent-heat",
+      "source": "topic-derived",
+      "name": "Change of phases: latent heat — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/specific-latent-heat-of-fusion-and-vaporization",
+      "source": "topic-derived",
+      "name": "Specific latent heat of fusion and vaporization — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/measurement-of-specific-latent-heat-of-fusion-and-vaporization",
+      "source": "authored-unit",
+      "name": "Measurement, Dimensions & Significant Figures",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/triple-point",
+      "source": "topic-derived",
+      "name": "Triple point — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/conduction-thermal-conductivity-and-measurement",
+      "source": "authored-unit",
+      "name": "Measurement, Dimensions & Significant Figures",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/convection",
+      "source": "topic-derived",
+      "name": "Convection — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/radiation-ideal-radiator",
+      "source": "topic-derived",
+      "name": "Radiation: ideal radiator — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/black-body-radiation",
+      "source": "topic-derived",
+      "name": "Black-body radiation — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/stefan-boltzmann-law",
+      "source": "topic-derived",
+      "name": "Stefan-Boltzmann law — Sequential flow sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/ideal-gas-equation",
+      "source": "topic-derived",
+      "name": "Ideal gas equation — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/molecular-properties-of-matter",
+      "source": "topic-derived",
+      "name": "Molecular properties of matter — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/kinetic-molecular-model-of-an-ideal-gas",
+      "source": "topic-derived",
+      "name": "Kinetic-molecular model of an ideal gas — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/derivation-of-pressure-exerted-by-gas",
+      "source": "topic-derived",
+      "name": "Derivation of pressure exerted by gas — Construction & proof sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/average-translational-kinetic-energy-of-gas-molecule",
+      "source": "authored-unit",
+      "name": "Work, Energy, Conservation & Power",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/boltzmann-constant-root-mean-square-speed",
+      "source": "topic-derived",
+      "name": "Boltzmann constant, root mean square speed — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/heat-capacities-of-gases-and-solids",
+      "source": "topic-derived",
+      "name": "Heat capacities of gases and solids — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/real-and-virtual-images",
+      "source": "topic-derived",
+      "name": "Real and virtual images — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/mirror-formula",
+      "source": "topic-derived",
+      "name": "Mirror formula — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/laws-of-refraction-refractive-index",
+      "source": "topic-derived",
+      "name": "Laws of refraction: refractive index — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/relation-between-refractive-indices",
+      "source": "topic-derived",
+      "name": "Relation between refractive indices — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/lateral-shift",
+      "source": "topic-derived",
+      "name": "Lateral shift — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/total-internal-reflection",
+      "source": "topic-derived",
+      "name": "Total internal reflection — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/minimum-deviation-condition",
+      "source": "topic-derived",
+      "name": "Minimum deviation condition — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/relation-between-the-angle-of-prism-minimum-deviation-and-refractive-index",
+      "source": "topic-derived",
+      "name": "Relation between the angle of prism, minimum deviation and refractive index — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/deviation-in-small-angle-prism",
+      "source": "topic-derived",
+      "name": "Deviation in small-angle prism — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/spherical-lenses-angular-magnification",
+      "source": "topic-derived",
+      "name": "Spherical lenses, angular magnification — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/lens-maker-s-formula",
+      "source": "topic-derived",
+      "name": "Lens maker's formula — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/power-of-a-lens",
+      "source": "authored-unit",
+      "name": "Work, Energy, Conservation & Power",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/pure-spectrum-and-dispersive-power",
+      "source": "authored-unit",
+      "name": "Work, Energy, Conservation & Power",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/chromatic-and-spherical-aberration",
+      "source": "topic-derived",
+      "name": "Chromatic and spherical aberration — Trend / gradient sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/achromatism-and-its-applications",
+      "source": "topic-derived",
+      "name": "Achromatism and its applications — Trend / gradient sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/electric-charges",
+      "source": "topic-derived",
+      "name": "Electric charges — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/charging-by-induction",
+      "source": "authored-concept",
+      "name": "Electromagnetic Induction & Lenz's Law",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/coulomb-s-law-force-between-two-point-charges",
+      "source": "topic-derived",
+      "name": "Coulomb's law: force between two point charges — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/force-between-multiple-electric-charges",
+      "source": "topic-derived",
+      "name": "Force between multiple electric charges — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/electric-field-due-to-point-charges-field-lines",
+      "source": "topic-derived",
+      "name": "Electric field due to point charges; field lines — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/gauss-law-electric-flux",
+      "source": "topic-derived",
+      "name": "Gauss law: electric flux — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/application-of-gauss-law-field-of-a-charge-sphere-line-charge-charged-plane-conductor",
+      "source": "topic-derived",
+      "name": "Application of Gauss law: field of a charge sphere, line charge, charged plane conductor — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/potential-difference-potential-due-to-a-point-charge-potential-energy-electron-volt",
+      "source": "authored-unit",
+      "name": "Work, Energy, Conservation & Power",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/equipotential-lines-and-surfaces",
+      "source": "topic-derived",
+      "name": "Equipotential lines and surfaces — Side-by-side comparison sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/potential-gradient",
+      "source": "topic-derived",
+      "name": "Potential gradient — Side-by-side comparison sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/capacitance-and-capacitor",
+      "source": "authored-concept",
+      "name": "Capacitor & RC Discharge",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/parallel-plate-capacitor",
+      "source": "authored-concept",
+      "name": "Capacitor & RC Discharge",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/combination-of-capacitors",
+      "source": "authored-concept",
+      "name": "Capacitor & RC Discharge",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/energy-of-charged-capacitor",
+      "source": "authored-concept",
+      "name": "Capacitor & RC Discharge",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/effect-of-a-dielectric-polarization-and-displacement",
+      "source": "topic-derived",
+      "name": "Effect of a dielectric: polarization and displacement — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/electric-currents-drift-velocity-and-its-relation-with-current",
+      "source": "topic-derived",
+      "name": "Electric currents; drift velocity and its relation with current — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/ohm-s-law-electrical-resistance-resistivity-conductivity",
+      "source": "authored-unit",
+      "name": "DC Circuits — Ohm, Kirchhoff & Networks",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/current-voltage-relations-ohmic-and-non-ohmic-resistance",
+      "source": "authored-unit",
+      "name": "DC Circuits — Ohm, Kirchhoff & Networks",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/resistances-in-series-and-parallel",
+      "source": "authored-unit",
+      "name": "DC Circuits — Ohm, Kirchhoff & Networks",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/potential-divider",
+      "source": "topic-derived",
+      "name": "Potential divider — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/electromotive-force-of-a-source-internal-resistance",
+      "source": "authored-unit",
+      "name": "DC Circuits — Ohm, Kirchhoff & Networks",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/work-and-power-in-electrical-circuits",
+      "source": "authored-unit",
+      "name": "Work, Energy, Conservation & Power",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/nucleus-discovery-of-nucleus",
+      "source": "topic-derived",
+      "name": "Nucleus: discovery of nucleus — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/nuclear-density-mass-number-atomic-number",
+      "source": "topic-derived",
+      "name": "Nuclear density; mass number; atomic number — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/atomic-mass-isotopes",
+      "source": "topic-derived",
+      "name": "Atomic mass; isotopes — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/einstein-s-mass-energy-relation",
+      "source": "authored-unit",
+      "name": "Work, Energy, Conservation & Power",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/mass-defect-packing-fraction-binding-energy-per-nucleon",
+      "source": "authored-unit",
+      "name": "Work, Energy, Conservation & Power",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/creation-and-annihilation",
+      "source": "topic-derived",
+      "name": "Creation and annihilation — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/nuclear-fission-and-fusion",
+      "source": "topic-derived",
+      "name": "Nuclear fission and fusion — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/energy-bands-in-solids-qualitative-ideas",
+      "source": "authored-unit",
+      "name": "Work, Energy, Conservation & Power",
+      "parts": 5
+    },
+    {
+      "topic": "class-11-notes/physics/difference-between-metals-insulators-and-semiconductors-using-band-theory",
+      "source": "topic-derived",
+      "name": "Difference between metals, insulators and semiconductors using band theory — Side-by-side comparison sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/intrinsic-and-extrinsic-semiconductors",
+      "source": "topic-derived",
+      "name": "Intrinsic and extrinsic semiconductors — Side-by-side comparison sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/particle-physics-particles-and-antiparticles-quarks-baryons-and-mesons-and-leptons-neutrinos",
+      "source": "topic-derived",
+      "name": "Particle physics: particles and antiparticles, quarks (baryons and mesons) and leptons (neutrinos) — Trend / gradient sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/universe-big-bang-and-hubble-law-expansion-of-the-universe",
+      "source": "topic-derived",
+      "name": "Universe: Big Bang and Hubble law — expansion of the Universe — Trend / gradient sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-11-notes/physics/dark-matter-black-hole-and-gravitational-wave",
+      "source": "authored-concept",
+      "name": "Wave Propagation",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/biology/mendel-s-laws-of-inheritance-monohybrid-and-dihybrid-cross",
+      "source": "authored-unit",
+      "name": "Mendelian Genetics, DNA & Evolution",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/biology/incomplete-dominance-and-codominance",
+      "source": "topic-derived",
+      "name": "Incomplete dominance and codominance — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/biology/linkage-and-crossing-over",
+      "source": "topic-derived",
+      "name": "Linkage and crossing over — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/biology/sex-determination-and-sex-linked-disorders",
+      "source": "topic-derived",
+      "name": "Sex determination and sex-linked disorders — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/biology/chromosome-theory-of-inheritance",
+      "source": "authored-concept",
+      "name": "Cell Division — Mitosis / Meiosis",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/biology/molecular-basis-of-inheritance-dna-structure-replication-transcription-translation-gene-regulati",
+      "source": "authored-unit",
+      "name": "Mendelian Genetics, DNA & Evolution",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/biology/human-genome-project-objectives-and-significance",
+      "source": "topic-derived",
+      "name": "Human genome project — objectives and significance — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/biology/evolution-evidences-adaptive-radiation-hardy-weinberg-equilibrium-human-evolution",
+      "source": "authored-unit",
+      "name": "Mendelian Genetics, DNA & Evolution",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/biology/pathogens-and-diseases-malaria-dengue-filariasis-ascariasis-pneumonia-typhoid-tuberculosis-commo",
+      "source": "topic-derived",
+      "name": "Pathogens and diseases: malaria, dengue, filariasis, ascariasis, pneumonia, typhoid, tuberculosis, common cold, AIDS, ringworm — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/biology/immune-system-innate-and-adaptive-immunity",
+      "source": "topic-derived",
+      "name": "Immune system — innate and adaptive immunity — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/biology/antigens-and-antibodies-immune-response",
+      "source": "topic-derived",
+      "name": "Antigens and antibodies, immune response — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/biology/vaccination-and-immunization",
+      "source": "topic-derived",
+      "name": "Vaccination and immunization — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/biology/allergy-and-autoimmune-diseases",
+      "source": "topic-derived",
+      "name": "Allergy and autoimmune diseases — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/biology/plant-breeding-methods-and-examples",
+      "source": "topic-derived",
+      "name": "Plant breeding — methods and examples — Labelled structure sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/biology/single-cell-protein-scp",
+      "source": "authored-unit",
+      "name": "Cell Structure, Organelles & Biomolecules",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/biology/animal-husbandry-breeds-and-management",
+      "source": "topic-derived",
+      "name": "Animal husbandry — breeds and management — Labelled structure sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/biology/biofertilizers-and-sustainable-agriculture",
+      "source": "topic-derived",
+      "name": "Biofertilizers and sustainable agriculture — Labelled structure sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/biology/microorganisms-in-household-products",
+      "source": "topic-derived",
+      "name": "Microorganisms in household products — Labelled structure sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/biology/industrial-production-of-antibiotics-alcoholic-beverages-citric-acid",
+      "source": "topic-derived",
+      "name": "Industrial production of antibiotics, alcoholic beverages, citric acid — Labelled structure sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/biology/microbes-as-biocontrol-agents-and-biofertilizers",
+      "source": "topic-derived",
+      "name": "Microbes as biocontrol agents and biofertilizers — Labelled structure sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/biology/bioremediation-biogas",
+      "source": "topic-derived",
+      "name": "Bioremediation, biogas — Labelled structure sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/biology/principles-of-biotechnology-recombinant-dna-technology",
+      "source": "authored-unit",
+      "name": "Mendelian Genetics, DNA & Evolution",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/biology/tools-restriction-enzymes-vectors-competent-host",
+      "source": "topic-derived",
+      "name": "Tools: restriction enzymes, vectors, competent host — Labelled structure sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/biology/processes-dna-isolation-pcr-gel-electrophoresis-gene-transfer",
+      "source": "authored-unit",
+      "name": "Mendelian Genetics, DNA & Evolution",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/biology/applications-of-recombinant-dna-technology",
+      "source": "authored-unit",
+      "name": "Mendelian Genetics, DNA & Evolution",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/biology/biotechnological-applications-in-agriculture-bt-cotton-nematode-resistant-tobacco",
+      "source": "topic-derived",
+      "name": "Biotechnological applications in agriculture: Bt cotton, nematode-resistant tobacco — Labelled structure sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/biology/biotechnological-applications-in-medicine-insulin-gene-therapy-therapeutic-proteins",
+      "source": "topic-derived",
+      "name": "Biotechnological applications in medicine: insulin, gene therapy, therapeutic proteins — Labelled structure sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/biology/transgenic-animals",
+      "source": "topic-derived",
+      "name": "Transgenic animals — Labelled structure sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/biology/biopiracy-and-patent-issues",
+      "source": "topic-derived",
+      "name": "Biopiracy and patent issues — Labelled structure sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/biology/adaptations-of-organisms-to-environmental-conditions",
+      "source": "topic-derived",
+      "name": "Adaptations of organisms to environmental conditions — Cyclic process sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/biology/population-ecology-growth-regulation-interactions",
+      "source": "topic-derived",
+      "name": "Population ecology — growth, regulation, interactions — Cyclic process sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/biology/ecosystem-structure-and-function-productivity-decomposition",
+      "source": "topic-derived",
+      "name": "Ecosystem structure and function — productivity, decomposition — Cyclic process sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/biology/ecological-succession",
+      "source": "authored-concept",
+      "name": "Biogeochemical Cycles & Ecological Succession",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/biology/nutrient-cycling-carbon-nitrogen-phosphorus",
+      "source": "topic-derived",
+      "name": "Nutrient cycling — carbon, nitrogen, phosphorus — Cyclic process sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/biology/ecological-pyramids-and-energy-flow",
+      "source": "authored-concept",
+      "name": "Food Chain, Food Web & Ecological Pyramids",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/biology/biodiversity-genetic-species-and-ecosystem-levels",
+      "source": "authored-unit",
+      "name": "Mendelian Genetics, DNA & Evolution",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/biology/patterns-of-biodiversity-global-and-nepal",
+      "source": "topic-derived",
+      "name": "Patterns of biodiversity — global and Nepal — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/biology/biodiversity-loss-causes-and-consequences",
+      "source": "topic-derived",
+      "name": "Biodiversity loss — causes and consequences — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/biology/conservation-strategies-in-situ-and-ex-situ",
+      "source": "topic-derived",
+      "name": "Conservation strategies — in-situ and ex-situ — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/biology/red-data-book-and-iucn-categories",
+      "source": "topic-derived",
+      "name": "Red Data Book and IUCN categories — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/biology/air-pollution-causes-effects-and-control",
+      "source": "topic-derived",
+      "name": "Air pollution — causes, effects, and control — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/biology/water-pollution-causes-effects-and-control",
+      "source": "topic-derived",
+      "name": "Water pollution — causes, effects, and control — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/biology/solid-waste-management",
+      "source": "topic-derived",
+      "name": "Solid waste management — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/biology/nuclear-radiation-hazards",
+      "source": "topic-derived",
+      "name": "Nuclear radiation hazards — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/biology/greenhouse-effect-global-warming-climate-change",
+      "source": "topic-derived",
+      "name": "Greenhouse effect, global warming, climate change — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/biology/ozone-layer-depletion",
+      "source": "topic-derived",
+      "name": "Ozone layer depletion — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/biology/rainwater-harvesting-and-wasteland-development",
+      "source": "topic-derived",
+      "name": "Rainwater harvesting and wasteland development — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/chemistry/types-of-solutions-and-expression-of-concentration",
+      "source": "topic-derived",
+      "name": "Types of solutions and expression of concentration — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/solubility-of-gases-and-solids-in-liquids",
+      "source": "topic-derived",
+      "name": "Solubility of gases and solids in liquids — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/vapour-pressure-of-solutions-raoult-s-law",
+      "source": "topic-derived",
+      "name": "Vapour pressure of solutions — Raoult's law — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/colligative-properties-relative-lowering-of-vapour-pressure-elevation-of-boiling-point-depressio",
+      "source": "topic-derived",
+      "name": "Colligative properties — relative lowering of vapour pressure, elevation of boiling point, depression of freezing point, osmosis and osmotic pressure — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/van-t-hoff-factor-and-abnormal-molar-masses",
+      "source": "topic-derived",
+      "name": "Van't Hoff factor and abnormal molar masses — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/oxidation-and-reduction-electrode-reactions",
+      "source": "topic-derived",
+      "name": "Oxidation and reduction — electrode reactions — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/chemistry/electrochemical-cells-galvanic-cell-cell-potential-standard-electrode-potential",
+      "source": "authored-concept",
+      "name": "Standard Electrode Potential & Electrochemical Series",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/nernst-equation-and-its-applications",
+      "source": "topic-derived",
+      "name": "Nernst equation and its applications — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/chemistry/conductance-of-electrolytic-solutions",
+      "source": "topic-derived",
+      "name": "Conductance of electrolytic solutions — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/chemistry/electrolysis-and-faraday-s-laws",
+      "source": "topic-derived",
+      "name": "Electrolysis and Faraday's laws — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/chemistry/batteries-primary-and-secondary-cells",
+      "source": "topic-derived",
+      "name": "Batteries — primary and secondary cells — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/chemistry/fuel-cells",
+      "source": "topic-derived",
+      "name": "Fuel cells — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/chemistry/rate-of-reaction-average-and-instantaneous-rate",
+      "source": "topic-derived",
+      "name": "Rate of reaction — average and instantaneous rate — Reaction & mechanism sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/factors-affecting-rate-of-reaction",
+      "source": "topic-derived",
+      "name": "Factors affecting rate of reaction — Reaction & mechanism sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/rate-law-and-order-of-reaction",
+      "source": "topic-derived",
+      "name": "Rate law and order of reaction — Reaction & mechanism sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/integrated-rate-equations-zero-order-and-first-order-reactions",
+      "source": "topic-derived",
+      "name": "Integrated rate equations — zero order and first order reactions — Reaction & mechanism sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/arrhenius-equation-and-activation-energy",
+      "source": "topic-derived",
+      "name": "Arrhenius equation and activation energy — Reaction & mechanism sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/purification-and-qualitative-quantitative-analysis-of-organic-compounds",
+      "source": "topic-derived",
+      "name": "Purification and qualitative/quantitative analysis of organic compounds — Reaction & mechanism sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/inductive-effect-resonance-hyperconjugation",
+      "source": "topic-derived",
+      "name": "Inductive effect, resonance, hyperconjugation — Reaction & mechanism sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/electrophilic-and-nucleophilic-substitution-reactions",
+      "source": "authored-concept",
+      "name": "Organic Reaction Mechanism (SN1 / SN2)",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/free-radical-reactions",
+      "source": "topic-derived",
+      "name": "Free radical reactions — Reaction & mechanism sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/important-organic-reactions-oxidation-reduction-addition-elimination",
+      "source": "topic-derived",
+      "name": "Important organic reactions: oxidation, reduction, addition, elimination — Reaction & mechanism sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/alkanes-conformations-combustion-free-radical-halogenation",
+      "source": "topic-derived",
+      "name": "Alkanes: conformations, combustion, free radical halogenation — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/chemistry/alkenes-preparation-geometrical-isomerism-electrophilic-addition-markovnikov-anti-markovnikov-oz",
+      "source": "topic-derived",
+      "name": "Alkenes: preparation, geometrical isomerism, electrophilic addition (Markovnikov, anti-Markovnikov), ozonolysis, polymerisation — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/chemistry/alkynes-preparation-acidic-character-addition-reactions",
+      "source": "topic-derived",
+      "name": "Alkynes: preparation, acidic character, addition reactions — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/chemistry/aromatic-hydrocarbons-benzene-resonance-aromaticity-electrophilic-substitution-halogenation-nitr",
+      "source": "authored-concept",
+      "name": "Organic Reaction Mechanism (SN1 / SN2)",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/alcohols-classification-preparation-physical-and-chemical-properties",
+      "source": "topic-derived",
+      "name": "Alcohols: classification, preparation, physical and chemical properties — Classification tree sheet",
+      "parts": 3
+    },
+    {
+      "topic": "class-12-notes/chemistry/phenols-acidity-electrophilic-substitution-kolbe-s-reaction-reimer-tiemann-reaction",
+      "source": "authored-concept",
+      "name": "Organic Reaction Mechanism (SN1 / SN2)",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/ethers-preparation-and-chemical-reactions-cleavage-by-hi",
+      "source": "topic-derived",
+      "name": "Ethers: preparation and chemical reactions (cleavage by HI) — Reaction & mechanism sheet",
+      "parts": 3
+    },
+    {
+      "topic": "class-12-notes/chemistry/aldehydes-and-ketones-preparation-physical-properties-nucleophilic-addition-reactions",
+      "source": "topic-derived",
+      "name": "Aldehydes and ketones: preparation, physical properties, nucleophilic addition reactions — Reaction & mechanism sheet",
+      "parts": 3
+    },
+    {
+      "topic": "class-12-notes/chemistry/carboxylic-acids-preparation-physical-properties-acidic-character-reactions",
+      "source": "topic-derived",
+      "name": "Carboxylic acids: preparation, physical properties, acidic character, reactions — Reaction & mechanism sheet",
+      "parts": 3
+    },
+    {
+      "topic": "class-12-notes/chemistry/name-reactions-aldol-condensation-cannizzaro-reaction-hvz-reaction",
+      "source": "topic-derived",
+      "name": "Name reactions: Aldol condensation, Cannizzaro reaction, HVZ reaction — Reaction & mechanism sheet",
+      "parts": 3
+    },
+    {
+      "topic": "class-12-notes/chemistry/classification-nomenclature-and-preparation",
+      "source": "topic-derived",
+      "name": "Classification, nomenclature and preparation — Classification tree sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/chemistry/physical-and-chemical-properties",
+      "source": "topic-derived",
+      "name": "Physical and chemical properties — Classification tree sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/chemistry/basic-character-of-amines",
+      "source": "topic-derived",
+      "name": "Basic character of amines — Classification tree sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/chemistry/reactions-diazotisation-coupling-reactions-hinsberg-test",
+      "source": "topic-derived",
+      "name": "Reactions: diazotisation, coupling reactions, Hinsberg test — Classification tree sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/chemistry/carbohydrates-monosaccharides-glucose-fructose-disaccharides-polysaccharides",
+      "source": "topic-derived",
+      "name": "Carbohydrates: monosaccharides (glucose, fructose), disaccharides, polysaccharides — Reaction & mechanism sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/proteins-amino-acids-peptide-bond-primary-to-quaternary-structure-denaturation",
+      "source": "authored-unit",
+      "name": "Chemical Bonding, VSEPR & Hybridisation",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/enzymes-definition-classification-enzyme-action",
+      "source": "topic-derived",
+      "name": "Enzymes: definition, classification, enzyme action — Reaction & mechanism sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/vitamins-classification-and-functions",
+      "source": "topic-derived",
+      "name": "Vitamins: classification and functions — Classification tree sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/hormones-definition-types-functions",
+      "source": "topic-derived",
+      "name": "Hormones: definition, types, functions — Reaction & mechanism sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/chemistry/medicinal-chemicals-analgesics-tranquilizers-antipyretics-antibiotics-antihistamines-antacids",
+      "source": "topic-derived",
+      "name": "Medicinal chemicals — analgesics, tranquilizers, antipyretics, antibiotics, antihistamines, antacids — Labelled structure sheet",
+      "parts": 3
+    },
+    {
+      "topic": "class-12-notes/chemistry/chemical-cleansers-soaps-and-detergents",
+      "source": "topic-derived",
+      "name": "Chemical cleansers — soaps and detergents — Labelled structure sheet",
+      "parts": 3
+    },
+    {
+      "topic": "class-12-notes/chemistry/food-additives-preservatives-and-artificial-sweetening-agents",
+      "source": "topic-derived",
+      "name": "Food additives — preservatives and artificial sweetening agents — Labelled structure sheet",
+      "parts": 3
+    },
+    {
+      "topic": "class-12-notes/chemistry/p-block-elements-group-15-18-important-compounds-trends-in-properties",
+      "source": "topic-derived",
+      "name": "p-block elements (Group 15–18): important compounds, trends in properties — Trend / gradient sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/chemistry/d-block-elements-general-characteristics-important-compounds-kmno4-k2cr2o7",
+      "source": "topic-derived",
+      "name": "d-block elements: general characteristics, important compounds (KMnO₄, K₂Cr₂O₇) — Classification tree sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/chemistry/f-block-elements-lanthanoids-and-actinoids",
+      "source": "topic-derived",
+      "name": "f-block elements: lanthanoids and actinoids — Classification tree sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/chemistry/coordination-compounds-werner-s-theory-iupac-nomenclature-vbt-cft-qualitative-isomerism",
+      "source": "topic-derived",
+      "name": "Coordination compounds: Werner's theory, IUPAC nomenclature, VBT, CFT (qualitative), isomerism — Classification tree sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/english/unit-1-critical-thinking",
+      "source": "topic-derived",
+      "name": "Unit 1 — Critical Thinking — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/unit-2-family",
+      "source": "topic-derived",
+      "name": "Unit 2 — Family — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/unit-3-sports",
+      "source": "topic-derived",
+      "name": "Unit 3 — Sports — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/unit-4-technology",
+      "source": "topic-derived",
+      "name": "Unit 4 — Technology — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/unit-5-education",
+      "source": "topic-derived",
+      "name": "Unit 5 — Education — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/unit-6-money-and-economy",
+      "source": "topic-derived",
+      "name": "Unit 6 — Money and Economy — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/unit-7-humour",
+      "source": "topic-derived",
+      "name": "Unit 7 — Humour — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/unit-8-human-culture",
+      "source": "topic-derived",
+      "name": "Unit 8 — Human Culture — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/unit-9-ecology-and-environment",
+      "source": "topic-derived",
+      "name": "Unit 9 — Ecology and Environment — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/unit-10-career-opportunities",
+      "source": "topic-derived",
+      "name": "Unit 10 — Career Opportunities — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/unit-11-hobbies",
+      "source": "topic-derived",
+      "name": "Unit 11 — Hobbies — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/unit-12-animal-world",
+      "source": "topic-derived",
+      "name": "Unit 12 — Animal World — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/unit-13-history",
+      "source": "topic-derived",
+      "name": "Unit 13 — History — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/unit-14-human-rights",
+      "source": "topic-derived",
+      "name": "Unit 14 — Human Rights — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/unit-15-leisure-and-entertainment",
+      "source": "topic-derived",
+      "name": "Unit 15 — Leisure and Entertainment — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/unit-16-fantasy",
+      "source": "topic-derived",
+      "name": "Unit 16 — Fantasy — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/unit-17-war-and-peace",
+      "source": "topic-derived",
+      "name": "Unit 17 — War and Peace — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/unit-18-music-and-creation",
+      "source": "topic-derived",
+      "name": "Unit 18 — Music and Creation — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/unit-19-migration-and-diaspora",
+      "source": "topic-derived",
+      "name": "Unit 19 — Migration and Diaspora — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/unit-20-power-and-politics",
+      "source": "topic-derived",
+      "name": "Unit 20 — Power and Politics — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/short-story-1-neighbours-tim-winton",
+      "source": "topic-derived",
+      "name": "Short Story 1 — Neighbours (Tim Winton) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/short-story-2-a-respectable-woman-kate-chopin",
+      "source": "topic-derived",
+      "name": "Short Story 2 — A Respectable Woman (Kate Chopin) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/short-story-3-a-devoted-son-anita-desai",
+      "source": "topic-derived",
+      "name": "Short Story 3 — A Devoted Son (Anita Desai) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/short-story-4-the-treasure-in-the-forest-h-g-wells",
+      "source": "topic-derived",
+      "name": "Short Story 4 — The Treasure in the Forest (H. G. Wells) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/short-story-5-my-old-home-lu-xun",
+      "source": "topic-derived",
+      "name": "Short Story 5 — My Old Home (Lu Xun) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/short-story-6-the-half-closed-eyes-of-the-buddha-and-the-slowly-sinking-sun-manjushree-thapa",
+      "source": "topic-derived",
+      "name": "Short Story 6 — The Half-closed Eyes of the Buddha and the Slowly Sinking Sun (Manjushree Thapa) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/short-story-7-a-very-old-man-with-enormous-wings-gabriel-garcia-marquez",
+      "source": "topic-derived",
+      "name": "Short Story 7 — A Very Old Man with Enormous Wings (Gabriel García Márquez) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/poem-1-a-day-emily-dickinson",
+      "source": "topic-derived",
+      "name": "Poem 1 — A Day (Emily Dickinson) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/poem-2-every-morning-i-wake-dylan-thomas",
+      "source": "topic-derived",
+      "name": "Poem 2 — Every Morning I Wake (Dylan Thomas) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/poem-3-i-was-my-own-route-julia-de-burgos",
+      "source": "topic-derived",
+      "name": "Poem 3 — I Was My Own Route (Julia de Burgos) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/poem-4-the-awakening-age-ben-okri",
+      "source": "topic-derived",
+      "name": "Poem 4 — The Awakening Age (Ben Okri) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/poem-5-soft-storm-abhi-subedi",
+      "source": "topic-derived",
+      "name": "Poem 5 — Soft Storm (Abhi Subedi) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/essay-1-on-libraries-oliver-sacks",
+      "source": "topic-derived",
+      "name": "Essay 1 — On Libraries (Oliver Sacks) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/essay-2-marriage-as-a-social-institution-stephen-l-carter",
+      "source": "topic-derived",
+      "name": "Essay 2 — Marriage as a Social Institution (Stephen L. Carter) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/essay-3-knowledge-and-wisdom-bertrand-russell",
+      "source": "topic-derived",
+      "name": "Essay 3 — Knowledge and Wisdom (Bertrand Russell) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/essay-4-humility-yuval-noah-harari",
+      "source": "topic-derived",
+      "name": "Essay 4 — Humility (Yuval Noah Harari) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/essay-5-human-rights-and-the-age-of-inequality-samuel-moyn",
+      "source": "topic-derived",
+      "name": "Essay 5 — Human Rights and the Age of Inequality (Samuel Moyn) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/one-act-play-1-a-matter-of-husbands-ferenc-molnar",
+      "source": "topic-derived",
+      "name": "One-Act Play 1 — A Matter of Husbands (Ferenc Molnár) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/one-act-play-2-facing-death-august-strindberg",
+      "source": "topic-derived",
+      "name": "One-Act Play 2 — Facing Death (August Strindberg) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/one-act-play-3-the-bull-bhimnidhi-tiwari",
+      "source": "topic-derived",
+      "name": "One-Act Play 3 — The Bull (Bhimnidhi Tiwari) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/essay-writing-argumentative-descriptive-narrative-expository",
+      "source": "topic-derived",
+      "name": "Essay writing — argumentative, descriptive, narrative, expository — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/letter-writing-formal-and-informal",
+      "source": "topic-derived",
+      "name": "Letter writing — formal and informal — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/email-writing",
+      "source": "topic-derived",
+      "name": "Email writing — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/report-writing-and-summarisation",
+      "source": "topic-derived",
+      "name": "Report writing and summarisation — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/article-writing",
+      "source": "topic-derived",
+      "name": "Article writing — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/note-making-and-summary",
+      "source": "topic-derived",
+      "name": "Note-making and summary — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/story-writing",
+      "source": "topic-derived",
+      "name": "Story writing — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/speech-and-dialogue-writing",
+      "source": "topic-derived",
+      "name": "Speech and dialogue writing — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/review-writing-book-and-film",
+      "source": "topic-derived",
+      "name": "Review writing — book and film — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/comprehension-and-paraphrasing",
+      "source": "topic-derived",
+      "name": "Comprehension and paraphrasing — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/grammar-for-writing-sentences-clauses-punctuation",
+      "source": "topic-derived",
+      "name": "Grammar for writing — sentences, clauses, punctuation — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/english/conversation-and-role-play",
+      "source": "topic-derived",
+      "name": "Conversation and role play — Labelled structure sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/english/presentation-skills",
+      "source": "topic-derived",
+      "name": "Presentation skills — Labelled structure sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/english/debate-and-discussion",
+      "source": "topic-derived",
+      "name": "Debate and discussion — Labelled structure sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/english/listening-comprehension",
+      "source": "topic-derived",
+      "name": "Listening comprehension — Labelled structure sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/english/tenses-and-their-uses",
+      "source": "topic-derived",
+      "name": "Tenses and their uses — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/english/clauses-and-sentence-types",
+      "source": "topic-derived",
+      "name": "Clauses and sentence types — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/english/voice-and-narration",
+      "source": "topic-derived",
+      "name": "Voice and narration — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/english/modals-and-conditionals",
+      "source": "topic-derived",
+      "name": "Modals and conditionals — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/english/punctuation-and-capitalisation",
+      "source": "topic-derived",
+      "name": "Punctuation and capitalisation — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/concept-of-limit-geometric-and-physical-interpretation",
+      "source": "authored-concept",
+      "name": "Limit & Continuity (Removable Discontinuity)",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/standard-limits-and-evaluation-algebraic-trigonometric-exponential-logarithmic",
+      "source": "authored-concept",
+      "name": "Limit & Continuity (Removable Discontinuity)",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/indeterminate-forms-0-0-0-1-0-0-0",
+      "source": "topic-derived",
+      "name": "Indeterminate forms: 0/0, ∞/∞, 0·∞, ∞−∞, 1^∞, 0^0, ∞^0 — Relation map sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/mathematics/continuity-of-algebraic-trigonometric-exponential-logarithmic-functions",
+      "source": "authored-concept",
+      "name": "Limit & Continuity (Removable Discontinuity)",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/differentiability-and-its-relation-with-continuity",
+      "source": "authored-concept",
+      "name": "Limit & Continuity (Removable Discontinuity)",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/derivatives-of-algebraic-trigonometric-inverse-trigonometric-exponential-and-logarithmic-functio",
+      "source": "authored-unit",
+      "name": "Limits, Derivatives & Their Geometry",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/rules-of-differentiation-product-rule-quotient-rule-chain-rule",
+      "source": "authored-unit",
+      "name": "Limits, Derivatives & Their Geometry",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/derivatives-of-parametric-and-implicit-functions",
+      "source": "authored-unit",
+      "name": "Limits, Derivatives & Their Geometry",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/higher-order-derivatives",
+      "source": "authored-unit",
+      "name": "Limits, Derivatives & Their Geometry",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/logarithmic-differentiation",
+      "source": "authored-unit",
+      "name": "Limits, Derivatives & Their Geometry",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/leibniz-s-theorem-for-nth-derivative",
+      "source": "authored-unit",
+      "name": "Limits, Derivatives & Their Geometry",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/geometric-interpretation-tangent-and-normal",
+      "source": "authored-concept",
+      "name": "Unit Circle & Trigonometric Ratios",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/monotonicity-maxima-and-minima-first-and-second-derivative-tests",
+      "source": "authored-unit",
+      "name": "Limits, Derivatives & Their Geometry",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/applications-rate-of-change-approximation-error-estimation",
+      "source": "topic-derived",
+      "name": "Applications: rate of change, approximation, error estimation — Construction & proof sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/mathematics/integration-as-inverse-of-differentiation",
+      "source": "authored-unit",
+      "name": "Limits, Derivatives & Their Geometry",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/standard-integrals-and-methods-substitution-parts-partial-fractions",
+      "source": "topic-derived",
+      "name": "Standard integrals and methods: substitution, parts, partial fractions — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/definite-integrals-and-properties",
+      "source": "authored-concept",
+      "name": "Definite Integral & Area Under a Curve",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/integration-of-trigonometric-functions",
+      "source": "authored-unit",
+      "name": "Trigonometric Ratios, Identities & Equations",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/applications-area-under-curve-area-between-two-curves",
+      "source": "authored-concept",
+      "name": "Definite Integral & Area Under a Curve",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/formation-of-differential-equations",
+      "source": "authored-unit",
+      "name": "Limits, Derivatives & Their Geometry",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/solving-first-order-first-degree-equations-variable-separable-homogeneous-linear",
+      "source": "topic-derived",
+      "name": "Solving first order, first degree equations: variable separable, homogeneous, linear — Relation map sheet",
+      "parts": 3
+    },
+    {
+      "topic": "class-12-notes/mathematics/applications-growth-and-decay-population-dynamics",
+      "source": "topic-derived",
+      "name": "Applications: growth and decay, population dynamics — Relation map sheet",
+      "parts": 3
+    },
+    {
+      "topic": "class-12-notes/mathematics/scalar-and-vector-quantities-types-of-vectors",
+      "source": "topic-derived",
+      "name": "Scalar and vector quantities, types of vectors — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/mathematics/addition-subtraction-and-scalar-multiplication-of-vectors",
+      "source": "topic-derived",
+      "name": "Addition, subtraction and scalar multiplication of vectors — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/mathematics/dot-product-scalar-product-and-its-applications",
+      "source": "topic-derived",
+      "name": "Dot product (scalar product) and its applications — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/mathematics/cross-product-vector-product-and-its-applications",
+      "source": "topic-derived",
+      "name": "Cross product (vector product) and its applications — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/mathematics/scalar-and-vector-triple-products",
+      "source": "topic-derived",
+      "name": "Scalar and vector triple products — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/mathematics/applications-work-torque-angular-momentum",
+      "source": "topic-derived",
+      "name": "Applications: work, torque, angular momentum — Reaction & mechanism sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/mathematics/direction-cosines-and-direction-ratios-of-a-line",
+      "source": "authored-concept",
+      "name": "Unit Circle & Trigonometric Ratios",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/equation-of-a-line-in-space-standard-and-general-form",
+      "source": "topic-derived",
+      "name": "Equation of a line in space — standard and general form — Construction & proof sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/equation-of-a-plane-normal-form-general-form",
+      "source": "topic-derived",
+      "name": "Equation of a plane — normal form, general form — Construction & proof sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/angle-between-two-lines-two-planes-and-a-line-and-a-plane",
+      "source": "topic-derived",
+      "name": "Angle between two lines, two planes, and a line and a plane — Construction & proof sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/distance-of-a-point-from-a-plane-and-line",
+      "source": "topic-derived",
+      "name": "Distance of a point from a plane and line — Construction & proof sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/mathematics/linear-programming-formulation-of-lpp",
+      "source": "topic-derived",
+      "name": "Linear programming — formulation of LPP — Relation map sheet",
+      "parts": 3
+    },
+    {
+      "topic": "class-12-notes/mathematics/graphical-method-for-solving-lpp-with-two-variables",
+      "source": "topic-derived",
+      "name": "Graphical method for solving LPP with two variables — Relation map sheet",
+      "parts": 3
+    },
+    {
+      "topic": "class-12-notes/mathematics/maximization-and-minimization-problems",
+      "source": "topic-derived",
+      "name": "Maximization and minimization problems — Relation map sheet",
+      "parts": 3
+    },
+    {
+      "topic": "class-12-notes/mathematics/conditional-probability-and-multiplication-theorem",
+      "source": "topic-derived",
+      "name": "Conditional probability and multiplication theorem — Construction & proof sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/mathematics/independent-events",
+      "source": "topic-derived",
+      "name": "Independent events — Graph & variation sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/mathematics/bayes-theorem-and-its-applications",
+      "source": "topic-derived",
+      "name": "Bayes' theorem and its applications — Construction & proof sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/mathematics/random-variable-and-its-probability-distribution",
+      "source": "topic-derived",
+      "name": "Random variable and its probability distribution — Graph & variation sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/mathematics/mean-variance-and-standard-deviation-of-a-random-variable",
+      "source": "topic-derived",
+      "name": "Mean, variance and standard deviation of a random variable — Graph & variation sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/mathematics/binomial-distribution-definition-mean-variance",
+      "source": "topic-derived",
+      "name": "Binomial distribution — definition, mean, variance — Graph & variation sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/mathematics/poisson-distribution-definition-mean-variance",
+      "source": "topic-derived",
+      "name": "Poisson distribution — definition, mean, variance — Graph & variation sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/nepali/शब्द-वर्ग-पद-वर्ग-र-पदबन्ध",
+      "source": "topic-derived",
+      "name": "शब्द-वर्ग, पद-वर्ग र पदबन्ध — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/nepali/कारक-विभक्ति-र-समास-तत्पुरुष-कर्मधारय-द्वन्द्व-बहुव्रीहि",
+      "source": "topic-derived",
+      "name": "कारक, विभक्ति र समास (तत्पुरुष, कर्मधारय, द्वन्द्व, बहुव्रीहि) — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/nepali/क्रिया-काल-वाच्य-र-पदबन्ध",
+      "source": "topic-derived",
+      "name": "क्रिया — काल, वाच्य र पदबन्ध — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/nepali/वाक्य-रचना-सरल-मिश्रित-र-संयुक्त-वाक्य-शुद्ध-अशुद्ध-वाक्य",
+      "source": "topic-derived",
+      "name": "वाक्य रचना — सरल, मिश्रित र संयुक्त वाक्य; शुद्ध-अशुद्ध वाक्य — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/nepali/मुहावरा-लोकोक्ति-र-शब्द-सम्पदा",
+      "source": "topic-derived",
+      "name": "मुहावरा, लोकोक्ति र शब्द-सम्पदा — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/nepali/पाठ-१-आमाको-सपना-कविता-गोपालप्रसाद-रिमाल",
+      "source": "topic-derived",
+      "name": "पाठ १ — आमाको सपना (कविता, गोपालप्रसाद रिमाल) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/nepali/पाठ-२-विरहिणी-दमयन्ती-कथा-मदनमणि-दीक्षित",
+      "source": "topic-derived",
+      "name": "पाठ २ — विरहिणी दमयन्ती (कथा, मदनमणि दीक्षित) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/nepali/पाठ-३-घनघस्याको-उकालो-काट्दा-निबन्ध",
+      "source": "topic-derived",
+      "name": "पाठ ३ — घनघस्याको उकालो काट्दा (निबन्ध) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/nepali/पाठ-४-व्यावसायिक-पत्र-पत्र-लेखन",
+      "source": "topic-derived",
+      "name": "पाठ ४ — व्यावसायिक पत्र (पत्र लेखन) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/nepali/पाठ-५-एक-चिहान-उपन्यास-पारिजात",
+      "source": "topic-derived",
+      "name": "पाठ ५ — एक चिहान (उपन्यास, पारिजात) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/nepali/पाठ-६-स्टिफन-विलियम-हकिङ-जीवनी",
+      "source": "topic-derived",
+      "name": "पाठ ६ — स्टिफन विलियम हकिङ (जीवनी) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/nepali/पाठ-७-हामीलाई-बोलाउँछन्-हिमचुली-कविता-भूपी-शेरचन",
+      "source": "topic-derived",
+      "name": "पाठ ७ — हामीलाई बोलाउँछन् हिमचुली (कविता, भूपी शेरचन) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/nepali/पाठ-८-मातृत्व-निबन्ध",
+      "source": "topic-derived",
+      "name": "पाठ ८ — मातृत्व (निबन्ध) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/nepali/पाठ-९-गोर्खे-कथा",
+      "source": "topic-derived",
+      "name": "पाठ ९ — गोर्खे (कथा) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/nepali/पाठ-१०-नेपाली-पहिचान-निबन्ध",
+      "source": "topic-derived",
+      "name": "पाठ १० — नेपाली पहिचान (निबन्ध) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/nepali/पाठ-११-सहकारी-कथा",
+      "source": "topic-derived",
+      "name": "पाठ ११ — सहकारी (कथा) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/nepali/पाठ-१२-जीवन-मार्ग-कविता",
+      "source": "topic-derived",
+      "name": "पाठ १२ — जीवन मार्ग (कविता) — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/nepali/आवधिक-निबन्ध-लेखन",
+      "source": "topic-derived",
+      "name": "आवधिक निबन्ध लेखन — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/nepali/पत्र-लेखन-आधिकारिक-र-अनौपचारिक-व्यावसायिक-पत्र-सहित",
+      "source": "topic-derived",
+      "name": "पत्र लेखन — आधिकारिक र अनौपचारिक (व्यावसायिक पत्र सहित) — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/nepali/प्रतिवेदन-र-सम्पादन-लेखन",
+      "source": "topic-derived",
+      "name": "प्रतिवेदन र सम्पादन लेखन — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/nepali/समीक्षा-र-सारांश-लेखन",
+      "source": "topic-derived",
+      "name": "समीक्षा र सारांश लेखन — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/nepali/सृजनात्मक-लेखन-कथा-कविता-संवाद",
+      "source": "topic-derived",
+      "name": "सृजनात्मक लेखन — कथा, कविता, संवाद — Labelled structure sheet",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/nepali/नेपाली-संस्कृति-रीतिरिवाज-र-सामाजिक-संरचना",
+      "source": "topic-derived",
+      "name": "नेपाली संस्कृति, रीतिरिवाज र सामाजिक संरचना — Labelled structure sheet",
+      "parts": 3
+    },
+    {
+      "topic": "class-12-notes/nepali/साहित्यमा-सामाजिक-वास्तविकताको-प्रतिनिधित्व",
+      "source": "topic-derived",
+      "name": "साहित्यमा सामाजिक वास्तविकताको प्रतिनिधित्व — Labelled structure sheet",
+      "parts": 3
+    },
+    {
+      "topic": "class-12-notes/nepali/भाषा-र-पहिचान-नेपाली-पहिचानका-पाठहरूसँग-सम्बन्ध",
+      "source": "topic-derived",
+      "name": "भाषा र पहिचान — नेपाली पहिचानका पाठहरूसँग सम्बन्ध — Labelled structure sheet",
+      "parts": 3
+    },
+    {
+      "topic": "class-12-notes/physics/coulomb-s-law-and-its-applications",
+      "source": "topic-derived",
+      "name": "Coulomb's law and its applications — Side-by-side comparison sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/physics/electric-field-and-electric-field-intensity-due-to-point-charges-line-charges-and-charged-sheets",
+      "source": "topic-derived",
+      "name": "Electric field and electric field intensity due to point charges, line charges, and charged sheets — Side-by-side comparison sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/physics/electric-potential-and-potential-difference",
+      "source": "topic-derived",
+      "name": "Electric potential and potential difference — Side-by-side comparison sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/physics/capacitance-and-capacitors-parallel-plate-series-and-parallel-combination",
+      "source": "authored-concept",
+      "name": "Capacitor & RC Discharge",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/physics/dielectric-and-dielectric-constant",
+      "source": "topic-derived",
+      "name": "Dielectric and dielectric constant — Side-by-side comparison sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/physics/energy-stored-in-a-capacitor",
+      "source": "authored-concept",
+      "name": "Capacitor & RC Discharge",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/physics/electric-current-drift-velocity-and-relaxation-time",
+      "source": "topic-derived",
+      "name": "Electric current, drift velocity, and relaxation time — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/physics/ohm-s-law-and-its-limitations",
+      "source": "authored-unit",
+      "name": "DC Circuits — Ohm, Kirchhoff & Networks",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/physics/resistance-and-resistivity-temperature-dependence",
+      "source": "authored-unit",
+      "name": "DC Circuits — Ohm, Kirchhoff & Networks",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/physics/series-and-parallel-combination-of-resistors",
+      "source": "topic-derived",
+      "name": "Series and parallel combination of resistors — Trend / gradient sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/physics/kirchhoff-s-laws-and-their-applications",
+      "source": "authored-unit",
+      "name": "DC Circuits — Ohm, Kirchhoff & Networks",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/physics/electromotive-force-emf-internal-resistance-and-cells-in-combination",
+      "source": "authored-unit",
+      "name": "DC Circuits — Ohm, Kirchhoff & Networks",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/physics/wheatstone-bridge-and-meter-bridge",
+      "source": "authored-unit",
+      "name": "DC Circuits — Ohm, Kirchhoff & Networks",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/physics/potentiometer-and-its-applications",
+      "source": "topic-derived",
+      "name": "Potentiometer and its applications — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/physics/magnetic-field-and-magnetic-force-on-moving-charges",
+      "source": "topic-derived",
+      "name": "Magnetic field and magnetic force on moving charges — Cyclic process sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/physics/lorentz-force-and-motion-of-charged-particles-in-magnetic-fields",
+      "source": "topic-derived",
+      "name": "Lorentz force and motion of charged particles in magnetic fields — Cyclic process sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/physics/biot-savart-law-and-its-applications-straight-wire-circular-loop-solenoid",
+      "source": "topic-derived",
+      "name": "Biot-Savart law and its applications (straight wire, circular loop, solenoid) — Cyclic process sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/physics/ampere-s-circuital-law-and-its-applications",
+      "source": "authored-unit",
+      "name": "DC Circuits — Ohm, Kirchhoff & Networks",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/physics/force-between-two-parallel-current-carrying-conductors",
+      "source": "topic-derived",
+      "name": "Force between two parallel current-carrying conductors — Cyclic process sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/physics/moving-coil-galvanometer-ammeter-and-voltmeter",
+      "source": "topic-derived",
+      "name": "Moving coil galvanometer, ammeter, and voltmeter — Cyclic process sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/physics/faraday-s-laws-of-electromagnetic-induction",
+      "source": "authored-concept",
+      "name": "Electromagnetic Induction & Lenz's Law",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/physics/lenz-s-law-and-conservation-of-energy",
+      "source": "authored-concept",
+      "name": "Electromagnetic Induction & Lenz's Law",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/physics/self-induction-and-self-inductance",
+      "source": "authored-concept",
+      "name": "Electromagnetic Induction & Lenz's Law",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/physics/mutual-induction-and-mutual-inductance",
+      "source": "authored-concept",
+      "name": "Electromagnetic Induction & Lenz's Law",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/physics/growing-and-decaying-current-in-lr-circuits",
+      "source": "authored-unit",
+      "name": "DC Circuits — Ohm, Kirchhoff & Networks",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/physics/ac-voltage-applied-to-resistor-inductor-and-capacitor",
+      "source": "authored-concept",
+      "name": "Capacitor & RC Discharge",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/physics/lc-oscillations-and-resonance",
+      "source": "authored-concept",
+      "name": "Simple Harmonic Motion & Oscillation",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/physics/lcr-series-circuit-and-power-factor",
+      "source": "authored-unit",
+      "name": "Work, Energy, Conservation & Power",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/physics/transformer-principle-types-and-losses",
+      "source": "topic-derived",
+      "name": "Transformer — principle, types, and losses — Trend / gradient sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/physics/reflection-at-plane-and-curved-surfaces-mirrors",
+      "source": "topic-derived",
+      "name": "Reflection at plane and curved surfaces — mirrors — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/physics/refraction-at-plane-surfaces-total-internal-reflection",
+      "source": "topic-derived",
+      "name": "Refraction at plane surfaces — total internal reflection — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/physics/refraction-through-prisms-angle-of-deviation-and-minimum-deviation",
+      "source": "topic-derived",
+      "name": "Refraction through prisms — angle of deviation and minimum deviation — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/physics/thin-lenses-lens-maker-s-formula-and-power-of-lens",
+      "source": "authored-unit",
+      "name": "Work, Energy, Conservation & Power",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/physics/combination-of-lenses-and-mirrors",
+      "source": "topic-derived",
+      "name": "Combination of lenses and mirrors — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/physics/optical-instruments-microscope-and-telescope",
+      "source": "topic-derived",
+      "name": "Optical instruments — microscope and telescope — Labelled structure sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/physics/wavefront-and-huygens-principle",
+      "source": "authored-concept",
+      "name": "Wave Propagation",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/physics/interference-of-light-young-s-double-slit-experiment",
+      "source": "topic-derived",
+      "name": "Interference of light — Young's double slit experiment — Relation map sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/physics/diffraction-of-light-single-slit-diffraction",
+      "source": "topic-derived",
+      "name": "Diffraction of light — single slit diffraction — Relation map sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/physics/polarization-brewster-s-law-and-polaroids",
+      "source": "topic-derived",
+      "name": "Polarization — Brewster's law and polaroids — Relation map sheet",
+      "parts": 4
+    },
+    {
+      "topic": "class-12-notes/physics/photoelectric-effect-and-einstein-s-photoelectric-equation",
+      "source": "topic-derived",
+      "name": "Photoelectric effect and Einstein's photoelectric equation — Trend / gradient sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/physics/de-broglie-wavelength-and-matter-waves",
+      "source": "authored-concept",
+      "name": "Wave Propagation",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/physics/atom-bohr-s-model-and-hydrogen-spectrum",
+      "source": "topic-derived",
+      "name": "Atom — Bohr's model and hydrogen spectrum — Trend / gradient sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/physics/nucleus-binding-energy-nuclear-fission-and-fusion",
+      "source": "authored-unit",
+      "name": "Work, Energy, Conservation & Power",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/physics/semiconductors-intrinsic-and-extrinsic-p-n-junction-diode-transistor",
+      "source": "topic-derived",
+      "name": "Semiconductors — intrinsic and extrinsic, p-n junction, diode, transistor — Trend / gradient sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/physics/logic-gates-and-or-not-nand-nor",
+      "source": "topic-derived",
+      "name": "Logic gates — AND, OR, NOT, NAND, NOR — Trend / gradient sheet",
+      "parts": 6
+    },
+    {
+      "topic": "class-12-notes/physics/elements-of-a-communication-system",
+      "source": "topic-derived",
+      "name": "Elements of a communication system — Relation map sheet",
+      "parts": 3
+    },
+    {
+      "topic": "class-12-notes/physics/modulation-amplitude-modulation-and-frequency-modulation",
+      "source": "authored-concept",
+      "name": "Wave Propagation",
+      "parts": 5
+    },
+    {
+      "topic": "class-12-notes/physics/bandwidth-and-propagation-of-electromagnetic-waves",
+      "source": "authored-concept",
+      "name": "Wave Propagation",
+      "parts": 5
+    }
+  ],
+  "findings": [
+    {
+      "kind": "CROSS_SUBJECT_TREE",
+      "severity": "low",
+      "where": "class-11-notes/mathematics/vectors",
+      "detail": "tree shares 89% of class-11-notes/physics/vectors's vocabulary — same-named sibling unit in another subject (the NEB vectors units share core terminology by design); tree resolved subject-scoped from this unit's own material"
+    },
+    {
+      "kind": "CROSS_SUBJECT_TREE",
+      "severity": "low",
+      "where": "class-12-notes/mathematics/vector-algebra",
+      "detail": "tree matches 78% of class-11-notes/physics/vectors (another subject) while the units' own syllabus vocabularies overlap only 44% — low-severity observation: review whether the shared vocabulary is generic to the topic"
+    },
+    {
+      "kind": "GENERIC_SCHEMATIC",
+      "severity": "low",
+      "where": "class-11-notes/mathematics/mechanics-optional-dynamics-motion-of-particle-in-a-straight-line-motion-with-uniform-accelerati",
+      "detail": "inclined-plane sheet (correct for this topic)"
+    }
+  ]
+}

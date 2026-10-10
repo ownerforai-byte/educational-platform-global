@@ -1,0 +1,37 @@
+{
+  "title": "NEB Class 12 Chemistry — Chemistry Of Element — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "chemistry-of-element",
+  "topicSlug": "chemistry-of-element-pyq-2024",
+  "topicTitle": "NEB Class 12 Chemistry — Chemistry Of Element — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 12 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Explain the characteristics of transition metals with reference to electronic configuration, variable oxidation states and colour.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Transition metals have an incompletely filled (n−1)d subshell in the atom or in a common oxidation state — e.g. Fe: [Ar]3d⁶4s².\n\n**Variable oxidation states:** the 3d and 4s energies are close, so both sets of electrons can be lost; oxidation states differ by 1 (Fe²⁺/Fe³⁺, Mn²⁺ to Mn⁷⁺).\n\n**Colour:** in an octahedral field the d orbitals split, and d–d transitions absorb visible light, giving coloured ions (Cu²⁺ blue, Fe³⁺ yellow-brown). Ions with d⁰ or d¹⁰ have no d–d transition: Zn²⁺ and Sc³⁺ are colourless.\n\n**Other features:** catalytic activity (Fe in Haber, V₂O₅ in contact process) and paramagnetism from unpaired electrons.",
+      "knowledgeNote": "Zn is a transition element structurally but not typically classed as one chemically, since Zn²⁺ is d¹⁰ (no variable states, no colour)."
+    },
+    {
+      "question": "Describe the general principles of extraction of metals from their oxide ores with examples of the reducing agents used.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Extraction involves concentration of the ore, conversion to the oxide, reduction to the metal and finally refining.\n\n**Reduction choices follow the reactivity series:**\n- the most reactive metals (Na, K, Ca, Al) are obtained by **electrolysis** of their molten salts or oxides (Al by Hall–Héroult);\n- metals of medium reactivity (Fe, Zn, Cu) are reduced by **carbon or CO** in the blast furnace — Fe₂O₃ + 3CO → 2Fe + 3CO₂;\n- less reactive and sulphide/special ores use self-reduction or **displacement** — e.g. Cu₂S with the oxide, or Cr₂O₃ reduced by Al (thermite, ΔH very negative);\n- the most unreactive metals occur free (Au, Ag) or are refined by electrolysis after cyanide extraction.",
+      "knowledgeNote": "The Ellingham diagram formalises this: a reducing agent will reduce only those oxides whose formation free energy is lower on the plot — hence carbon above 983 K for iron."
+    },
+    {
+      "question": "What are lanthanoid contraction and its consequences? Write one use of a lanthanoid.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Lanthanoid contraction** is the steady decrease in atomic and ionic radii from La to Lu, caused by the poor shielding of the increasing nuclear charge by the 4f electrons.\n\n**Consequences:** (i) Zr and Hf resemble each other so closely that their separation is difficult; (ii) the basicity of the hydroxides decreases steadily across the series; (iii) the lanthanoids themselves show very similar chemical properties, making separation (usually by ion exchange) a demanding process.\n\n**Use:** mischmetal (alloy of lanthanoids) in lighter flints; Gd and other lanthanoids in phosphors and magnets.",
+      "knowledgeNote": "4f electrons shield the nuclear charge badly because their shape is diffuse — the same reason the 5d electrons are pulled in, explaining the transactinide behaviour."
+    }
+  ]
+}

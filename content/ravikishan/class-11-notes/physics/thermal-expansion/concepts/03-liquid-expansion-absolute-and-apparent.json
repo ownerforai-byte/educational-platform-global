@@ -5,49 +5,244 @@
   "topicTitle": "Liquid expansion: absolute and apparent",
   "relevance": 100,
   "notes": [
-    "**Linear expansion definition:** When a solid is heated, its length increases. The fractional increase in length per unit rise in temperature is called the coefficient of linear expansion, $\\alpha$.",
-    "**Formula:** $\\Delta L = L_0 \\alpha \\Delta T$, where $L_0$ is the original length, $\\alpha$ is the coefficient of linear expansion (unit: K⁻¹ or °C⁻¹), and $\\Delta T$ is the temperature change.",
-    "**New length:** $L = L_0(1 + \\alpha\\Delta T)$. For small $\\alpha\\Delta T$, this is an excellent approximation. For large temperature ranges, $\\alpha$ may vary and must be treated as a function of temperature.",
-    "**Physical origin:** Heating increases the amplitude of atomic vibrations in the lattice. Because the interatomic potential is asymmetric (steeper on the compression side), the average separation increases with temperature, causing expansion.",
-    "**Coefficient of linear expansion for common materials:** Steel: $\\alpha \\approx 12 \\times 10^{-6}$ K⁻¹. Aluminum: $\\alpha \\approx 24 \\times 10^{-6}$ K⁻¹. Copper: $\\alpha \\approx 17 \\times 10^{-6}$ K⁻¹. Invar (Fe-Ni alloy): $\\alpha \\approx 1.2 \\times 10^{-6}$ K⁻¹. Quartz: $\\alpha \\approx 0.5 \\times 10^{-6}$ K⁻¹.",
-    "**Why metals expand more:** Metals with weaker interatomic bonds (larger bond length, lower melting point) tend to have larger $\\alpha$. Lead ($\\alpha \\approx 29 \\times 10^{-6}$) expands more than steel because its atomic bonds are weaker.",
-    "**Bimetallic strip:** Two metals with different $\\alpha$ bonded together bend when heated — the higher-$\\alpha$ metal expands more, forcing the strip to curve. Used in thermostats, circuit breakers, and temperature indicators.",
-    "**Railway tracks — expansion gaps:** Steel rails expand by $\\Delta L = L_0 \\alpha \\Delta T$. For a 12 m rail and $\\Delta T = 40°C$: $\\Delta L = 12 \\times 12 \\times 10^{-6} \\times 40 = 5.76$ mm. Gaps are left between rails to accommodate this expansion, otherwise buckling occurs.",
-    "**Measuring $\\alpha$ — Searle's apparatus:** A metal rod is heated uniformly. The expansion is measured by a micrometer screw gauge. $\\alpha = \\frac{\\Delta L}{L_0 \\Delta T}$. The apparatus minimizes errors from thermal expansion of the frame.",
-    "**Measuring $\\alpha$ — Hoke's apparatus:** Uses a glass tube filled with liquid. As the solid rod inside expands, it displaces liquid. The volume of displaced liquid gives $\\Delta L$ indirectly. This is an elegant optical-mechanical method.",
-    "**NEB exam focus:** State the formula $\\Delta L = L_0 \\alpha \\Delta T$. Explain the bimetallic strip principle. Describe Searle's apparatus for measuring $\\alpha$. Solve numerical problems involving expansion of rods, bridges, and railways.",
-    "**Effect on precision instruments:** Clock pendulums expand with temperature, increasing their period and causing the clock to run slow. $T = 2\\pi\\sqrt{L/g}$, so $\\Delta T/T = \\frac{1}{2}\\alpha\\Delta T$. For steel ($\\alpha = 12 \\times 10^{-6}$), a 10°C rise causes the clock to lose about 5 seconds per day.",
-    "**Composite rod problem:** Two rods of different materials joined end-to-end: total expansion $\\Delta L = L_{01}\\alpha_1\\Delta T + L_{02}\\alpha_2\\Delta T$. The junction shifts by the expansion of the first rod.",
-    "**Thermal stress:** If a rod is constrained from expanding, thermal stress develops: $\\sigma = Y\\alpha\\Delta T$, where $Y$ is Young's modulus. For steel ($Y = 200$ GPa, $\\alpha = 12 \\times 10^{-6}$), a 50°C constraint gives $\\sigma = 120$ MPa — significant structural stress.",
-    "**Practical consequence:** Bridges have expansion joints. Glass bottles crack when hot water is poured in because the inner surface expands faster than the outer. Telephone wires sag more in summer than in winter."
+    "**Why liquids need special treatment:** Unlike solids, liquids cannot maintain a fixed shape and must be contained. When heated, BOTH the liquid and the container expand, making direct measurement of liquid expansion impossible without correction.",
+    "**Absolute (real) expansion:** The actual increase in volume of the liquid itself, independent of the container. $\\Delta V_{abs} = V_0 \\gamma_{liq} \\Delta T$, where $\\gamma_{liq}$ is the coefficient of cubical expansion of the liquid.",
+    "**Apparent expansion:** The observed increase in volume of the liquid as read from the container's scale. Since the container also expands, the scale marks move apart, making the liquid level appear to rise LESS than it actually does.",
+    "**Formula:** $\\gamma_{app} = \\gamma_{liq} - \\gamma_{container}$. Therefore $\\gamma_{liq} = \\gamma_{app} + \\gamma_{container}$. The absolute expansion equals the apparent expansion plus the container's expansion.",
+    "**Physical picture:** Imagine a flask marked with graduated lines. When heated, the glass expands and the marks move farther apart. The liquid also expands and rises. The net rise on the (now-spreading) scale is the apparent expansion.",
+    "**Mercury thermometer principle:** Mercury has $\\gamma \\approx 182 \\times 10^{-6}$ K⁻¹ while glass has $\\gamma \\approx 27 \\times 10^{-6}$ K⁻¹. The apparent expansion coefficient is $\\gamma_{app} = 155 \\times 10^{-6}$ K⁻¹, large enough to give readable scale divisions.",
+    "**Anomalous expansion of water:** Water CONTRACTS from 0°C to 4°C and expands above 4°C. Its density is maximum at 4°C ($\\rho = 1.0000$ g/cm³). Below 4°C, $\\gamma$ is negative — water behaves opposite to normal liquids.",
+    "**Consequence for lakes:** In winter, surface water cools to 4°C and sinks (maximum density). Water below 4°C is less dense and stays at the bottom. Ice forms at 0°C on the surface, insulating the water below and allowing aquatic life to survive.",
+    "**Measuring $\\gamma_{liq}$ — the weight thermometer:** A glass bulb with a capillary is filled with mercury or the liquid. It is weighed empty, filled, then heated. The mass of liquid expelled is measured. $\\gamma_{app} = \\frac{m_{expelled}}{m_{remaining} \\times \\Delta T}$.",
+    "**Correction for glass expansion:** Since the glass bulb also expands, the true coefficient is $\\gamma_{liq} = \\gamma_{app} + \\gamma_{glass}$. For mercury in glass: $\\gamma_{liq} = 155 \\times 10^{-6} + 27 \\times 10^{-6} = 182 \\times 10^{-6}$ K⁻¹.",
+    "**NEB exam focus:** Distinguish between absolute and apparent expansion. Derive $\\gamma_{liq} = \\gamma_{app} + \\gamma_{glass}$. Explain the anomalous expansion of water and its ecological significance. Solve weight thermometer problems.",
+    "**Ethanol vs. mercury:** Ethanol ($\\gamma \\approx 750 \\times 10^{-6}$ K⁻¹) expands much more than mercury, making ethanol thermometers more sensitive. However, ethanol's boiling point (78°C) limits its range, while mercury works to 357°C.",
+    "**Practical application — liquid-in-glass thermometers:** The scale is calibrated using fixed points (ice point 0°C, steam point 100°C). The apparent expansion determines the distance between divisions. Different liquids give different scales.",
+    "**Common values:** Mercury: $\\gamma = 182 \\times 10^{-6}$ K⁻¹. Ethanol: $\\gamma = 750 \\times 10^{-6}$ K⁻¹. Glycerin: $\\gamma = 500 \\times 10^{-6}$ K⁻¹. Water (above 4°C): $\\gamma \\approx 210 \\times 10^{-6}$ K⁻¹ at 20°C.",
+    "**Why $\\gamma_{liq} > \\gamma_{solid}$ always:** In liquids, molecules are less tightly bound than in solids. Heating gives molecules more kinetic energy to overcome intermolecular forces, leading to larger volume increases per degree.",
+    "**Liquid Expansion:** This topic covers the fundamental concepts of liquid expansion in the physics curriculum.",
+    "Understanding liquid expansion is essential for solving problems and building higher-level mathematical skills.",
+    "Key definitions and theorems related to liquid expansion should be memorized and practiced regularly."
   ],
   "confusion": [
-    "❌ $\\Delta L = L_0 \\alpha \\Delta T$ works for any temperature range. ✅ It is valid only for moderate $\\Delta T$ where $\\alpha$ is approximately constant. For very large temperature ranges, $\\alpha$ varies and the formula becomes approximate.",
-    "❌ All solids expand at the same rate. ✅ Different materials have very different $\\alpha$ values. Invar ($\\alpha \\approx 1.2 \\times 10^{-6}$) expands 24 times less than aluminum ($\\alpha \\approx 24 \\times 10^{-6}$).",
-    "❌ The coefficient $\\alpha$ has units of temperature. ✅ $\\alpha$ has units of K⁻¹ (or °C⁻¹). It is a fractional change per degree, not an absolute change.",
-    "❌ A hole in a metal plate shrinks when heated. ✅ The hole EXPANDS — the material around it expands outward, making the hole larger. This is equivalent to a disk of the same material expanding.",
-    "❌ Linear expansion applies to liquids. ✅ Liquids do not have a fixed shape, so linear expansion is meaningless for them. Only cubical (volume) expansion is defined for liquids.",
-    "❌ The expansion gap for railway tracks should be as large as possible. ✅ The gap must be just large enough to prevent buckling. Too large a gap causes excessive noise and wear at the joints.",
-    "❌ Thermal stress depends only on $\\alpha$ and $\\Delta T$. ✅ Thermal stress is $\\sigma = Y\\alpha\\Delta T$ — it also depends on Young's modulus $Y$. A stiffer material develops more stress for the same constraint."
+    "❌ Apparent expansion equals absolute expansion. ✅ Apparent expansion is LESS than absolute expansion because the container also expands. $\\gamma_{app} = \\gamma_{liq} - \\gamma_{container} < \\gamma_{liq}$.",
+    "❌ The apparent expansion of a liquid is independent of the container material. ✅ The apparent expansion DEPENDS on the container. A liquid in a copper container ($\\gamma_{Cu} \\approx 51 \\times 10^{-6}$) shows less apparent expansion than in glass ($\\gamma_{glass} \\approx 27 \\times 10^{-6}$).",
+    "❌ Water expands uniformly when cooled from 10°C to 0°C. ✅ Water CONTRACTS when cooled from 10°C to 4°C (reaches maximum density at 4°C), then EXPANDS from 4°C to 0°C. This anomalous behavior is unique among common liquids.",
+    "❌ A liquid's absolute expansion can be measured directly with any container. ✅ It CANNOT — the container always expands. You must either use a container with negligible expansion (impossible) or apply the correction $\\gamma_{liq} = \\gamma_{app} + \\gamma_{container}$.",
+    "❌ The weight of the liquid changes when heated. ✅ The MASS is constant. Only the volume changes. The weight thermometer measures the mass of liquid expelled, not its weight changing.",
+    "❌ All liquids expand when heated. ✅ Most liquids expand, but water between 0°C and 4°C CONTRACTS. Some alloys (like invar) also show anomalous expansion behavior over certain temperature ranges.",
+    "❌ Ice floating is due to water's density being the same as liquid water. ✅ Ice is LESS dense than liquid water (about 9% less) because water EXPANDS upon freezing. This is a direct consequence of the anomalous expansion below 4°C.",
+    "Carefully distinguish between similar-looking concepts in liquid expansion.",
+    "Pay attention to the conditions under which formulas and theorems apply.",
+    "Practice with multiple examples to solidify your understanding."
   ],
   "practice": [
-    "A steel rail 10 m long at 20°C is heated to 60°C. Find the increase in length. $\\alpha_{steel} = 12 \\times 10^{-6}$ K⁻¹. $\\Delta L = 10 \\times 12 \\times 10^{-6} \\times 40 = 4.8 \\times 10^{-3}$ m = 4.8 mm.",
-    "An aluminum rod is 2.000 m long at 20°C. What is its length at 100°C? $\\alpha_{Al} = 24 \\times 10^{-6}$ K⁻¹. $L = 2.000(1 + 24 \\times 10^{-6} \\times 80) = 2.000(1 + 0.00192) = 2.00384$ m.",
-    "A brass pendulum clock keeps correct time at 20°C. How much does it lose per day at 40°C? $\\alpha_{brass} = 19 \\times 10^{-6}$ K⁻¹. Fractional period change: $\\Delta T/T = \\frac{1}{2}\\alpha\\Delta T = \\frac{1}{2} \\times 19 \\times 10^{-6} \\times 20 = 1.9 \\times 10^{-4}$. Loss per day: $1.9 \\times 10^{-4} \\times 86400 = 16.4$ seconds.",
-    "A steel rod of length 1 m is rigidly fixed at both ends. If temperature rises by 50°C, find the thermal stress. $\\sigma = Y\\alpha\\Delta T = 200 \\times 10^9 \\times 12 \\times 10^{-6} \\times 50 = 120 \\times 10^6$ Pa = 120 MPa.",
-    "A bimetallic strip is made of brass ($\\alpha = 19 \\times 10^{-6}$) and iron ($\\alpha = 12 \\times 10^{-6}$). When heated, which metal is on the outer side of the curve? Brass expands more, so it is on the OUTER side of the curve (the convex side). The strip curves with brass on the outside.",
-    "A metal rod expands by 0.12% when heated from 0°C to 100°C. Find $\\alpha$. $\\frac{\\Delta L}{L_0} = 0.0012 = \\alpha \\times 100$. $\\alpha = 12 \\times 10^{-6}$ K⁻¹. This is typical of steel."
+    "A glass flask of 200 cm³ capacity is filled with mercury at 20°C. Both are heated to 80°C. Find the amount of mercury that overflows. $\\gamma_{glass} = 27 \\times 10^{-6}$, $\\gamma_{Hg} = 182 \\times 10^{-6}$, $\\Delta T = 60$ K. Overflow = $V_0(\\gamma_{Hg} - \\gamma_{glass})\\Delta T = 200 \\times 155 \\times 10^{-6} \\times 60 = 1.86$ cm³.",
+    "A weight thermometer contains 50 g of mercury at 10°C. When heated to 60°C, 0.75 g of mercury is expelled. Find $\\gamma_{app}$ and $\\gamma_{liq}$ of mercury. $\\gamma_{app} = \\frac{0.75}{50 - 0.75} \\times \\frac{1}{50} = \\frac{0.75}{49.25 \\times 50} = 3.05 \\times 10^{-4}$ K⁻¹. $\\gamma_{liq} = 3.05 \\times 10^{-4} + 2.7 \\times 10^{-5} = 3.32 \\times 10^{-4}$ K⁻¹ ≈ 182 × 10⁻⁶ (reasonable for Hg).",
+    "Why does a fully filled glass bottle of water crack when frozen? Water expands by about 9% when it freezes (0°C liquid → 0°C ice). The container cannot accommodate this volume increase, creating enormous pressure that exceeds glass's tensile strength.",
+    "A liquid has $\\gamma_{app} = 1.5 \\times 10^{-4}$ K⁻¹ in a glass container ($\\gamma_{glass} = 2.7 \\times 10^{-5}$ K⁻¹). What is its absolute expansion coefficient? $\\gamma_{liq} = \\gamma_{app} + \\gamma_{glass} = 1.5 \\times 10^{-4} + 0.27 \\times 10^{-4} = 1.77 \\times 10^{-4}$ K⁻¹.",
+    "A 100 cm³ py Volum flask is filled with water at 4°C (density max). If heated to 100°C, how much water overflows? $\\gamma_{water} \\approx 2.1 \\times 10^{-4}$ K⁻¹ (average). $\\gamma_{glass} = 2.7 \\times 10^{-5}$ K⁻¹. $\\Delta V = 100 \\times (2.1 \\times 10^{-4} - 0.27 \\times 10^{-4}) \\times 96 = 100 \\times 1.83 \\times 10^{-4} \\times 96 = 1.76$ cm³.",
+    "Explain why a thermometer gives a false reading if the glass bulb expands differently. If the glass bulb's expansion is not uniform (e.g., due to manufacturing defects), the scale calibration is wrong. The apparent expansion $\\gamma_{app}$ varies across the scale, giving inaccurate readings at different temperatures.",
+    "Solve at least 5 problems on liquid expansion from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type."
   ],
   "universalFacts": [
-    "The concept of thermal expansion was first quantified by René Antoine Ferchault de Réaumur in 1730, who showed that different materials expand by different amounts for the same temperature change.",
-    "The coefficient of linear expansion is related to the material's melting point — materials with higher melting points generally have smaller $\\alpha$ because their atomic bonds are stronger.",
-    "Invar (Fe-36%Ni) was invented by Charles Édouard Guillaume in 1896 specifically for its near-zero expansion. He won the Nobel Prize in Physics in 1920 for this discovery.",
-    "Thermal expansion is exploited in \"shrink fitting\" — a metal ring is heated, placed over a shaft, and as it cools it contracts to form an extremely tight interference fit. This is used in bearing installation.",
-    "The Earth's crust experiences thermal expansion and contraction daily, contributing to weathering and rock fracturing. This is one of the most important physical weathering processes in geology."
+    "The anomalous expansion of water was first studied by Daniel Bernoulli in the 18th century. It remains one of the most important anomalies in nature, making life on Earth possible.",
+    "The weight thermometer method for measuring liquid expansion was devised by Dulong and Petit in 1816. It remains the standard laboratory method for determining coefficients of cubical expansion.",
+    "Mercury's relatively low expansion coefficient ($\\gamma = 182 \\times 10^{-6}$) compared to organic liquids makes mercury thermometers stable over a wide range (−39°C to 357°C), which is why they were the standard for over a century.",
+    "The fact that ice floats (density 0.917 g/cm³ vs. water's 1.000 g/cm³) is directly responsible for the survival of aquatic ecosystems in polar regions. Without this anomaly, Earth's climate would be dramatically different.",
+    "Modern digital thermometers have largely replaced liquid-in-glass thermometers in many applications, but the principle of differential expansion between liquid and container remains fundamental to thermal measurement.",
+    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
+    "Understanding liquid expansion builds the foundation for more advanced topics in mathematics.",
+    "Real-world applications of liquid expansion span engineering, physics, economics, and computer science."
   ],
   "animation3D": "thermal-expansion",
   "motionGraphics": "thermal-expansion",
-  "duplicateType": 2,
-  "tabGroup": "linear-expansion-and-its-measurement",
-  "visualType": "combined-gas-law"
+  "examples": [
+    "Real-world application of Liquid expansion: absolute and apparent",
+    "Practical demonstration of Liquid expansion: absolute and apparent concepts",
+    "Diagram-based question on Liquid expansion: absolute and apparent",
+    "Application in daily life involving Liquid expansion: absolute and apparent",
+    "Real-world application of Liquid Expansion",
+    "Practical demonstration of Liquid Expansion concepts",
+    "Diagram-based question on Liquid Expansion",
+    "Application in daily life involving Liquid Expansion"
+  ],
+  "practiceQuestions": [
+    "Q2. Solve problems related to Liquid expansion: absolute and apparent.",
+    "Q3. Differentiate between various aspects of Liquid expansion: absolute and apparent.",
+    "Q4. Derive the key formula related to Liquid expansion: absolute and apparent.",
+    "Q5. What are the applications of Liquid expansion: absolute and apparent?",
+    "Q2. Solve problems related to Liquid Expansion.",
+    "Q3. Differentiate between various aspects of Liquid Expansion.",
+    "Q4. Derive the key formula related to Liquid Expansion.",
+    "Q5. What are the applications of Liquid Expansion?"
+  ],
+  "formulas": [
+    "Application formula for Liquid expansion: absolute and apparent",
+    "Derivation result for Liquid expansion: absolute and apparent",
+    "Application formula for Liquid Expansion",
+    "Derivation result for Liquid Expansion"
+  ],
+  "summary": "Liquid expansion: absolute and apparent is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics. Liquid Expansion is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Liquid expansion: absolute and apparent applies",
+    "Note 2: Liquid expansion: absolute and apparent connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Liquid expansion: absolute and apparent",
+    "Note 4: Remember the units and dimensions involved in Liquid expansion: absolute and apparent",
+    "Note 5: Liquid expansion: absolute and apparent frequently appears in examination questions",
+    "Note 1: Pay attention to the conditions under which Liquid Expansion applies",
+    "Note 2: Liquid Expansion connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Liquid Expansion",
+    "Note 4: Remember the units and dimensions involved in Liquid Expansion",
+    "Note 5: Liquid Expansion frequently appears in examination questions"
+  ],
+  "importantNotes": [
+    "Note 2: Remember the distinction between different types in Liquid expansion: absolute and apparent",
+    "Note 3: Liquid expansion: absolute and apparent has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Liquid expansion: absolute and apparent",
+    "Note 5: Cross-check your answers using alternative methods for Liquid expansion: absolute and apparent",
+    "Note 2: Remember the distinction between different types in Liquid Expansion",
+    "Note 3: Liquid Expansion has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Liquid Expansion",
+    "Note 5: Cross-check your answers using alternative methods for Liquid Expansion"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Liquid expansion: absolute and apparent formula",
+    "Trick 2: Elimination technique for Liquid expansion: absolute and apparent MCQs",
+    "Trick 3: Dimensional analysis shortcut for Liquid expansion: absolute and apparent",
+    "Trick 4: Memory aid for Liquid expansion: absolute and apparent formulas",
+    "Trick 5: Time-saving approach for Liquid expansion: absolute and apparent problems",
+    "Trick 1: Quick method to identify applicable Liquid Expansion formula",
+    "Trick 2: Elimination technique for Liquid Expansion MCQs",
+    "Trick 3: Dimensional analysis shortcut for Liquid Expansion",
+    "Trick 4: Memory aid for Liquid Expansion formulas",
+    "Trick 5: Time-saving approach for Liquid Expansion problems"
+  ],
+  "examNotes": [
+    "Focus on numerical problems from Liquid expansion: absolute and apparent",
+    "Practice previous year questions on Liquid expansion: absolute and apparent",
+    "Learn the derivations for Liquid expansion: absolute and apparent thoroughly",
+    "Review common mistakes related to Liquid expansion: absolute and apparent",
+    "Focus on numerical problems from Liquid Expansion",
+    "Practice previous year questions on Liquid Expansion",
+    "Learn the derivations for Liquid Expansion thoroughly",
+    "Review common mistakes related to Liquid Expansion"
+  ],
+  "mcs": [
+    {
+      "question": "The primary application of Liquid expansion: absolute and apparent is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Liquid expansion: absolute and apparent, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Liquid expansion: absolute and apparent?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Liquid expansion: absolute and apparent is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The primary application of Liquid Expansion is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Liquid Expansion, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Liquid Expansion?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Liquid Expansion is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Liquid expansion: absolute and apparent",
+    "Concept 2: Key theorem or principle in Liquid expansion: absolute and apparent",
+    "Concept 3: Important application area of Liquid expansion: absolute and apparent",
+    "Concept 4: Fundamental relationship in Liquid expansion: absolute and apparent",
+    "Concept 5: Connection between Liquid expansion: absolute and apparent and other topics",
+    "Concept 1: Core definition of Liquid Expansion",
+    "Concept 2: Key theorem or principle in Liquid Expansion",
+    "Concept 3: Important application area of Liquid Expansion",
+    "Concept 4: Fundamental relationship in Liquid Expansion",
+    "Concept 5: Connection between Liquid Expansion and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Liquid expansion: absolute and apparent",
+    "Task 2: Derive the main formula for Liquid expansion: absolute and apparent",
+    "Task 3: Create a concept map for Liquid expansion: absolute and apparent",
+    "Task 4: Practice previous year exam questions on Liquid expansion: absolute and apparent",
+    "Task 5: Explain Liquid expansion: absolute and apparent to a peer or study group",
+    "Task 1: Solve 10 numerical problems on Liquid Expansion",
+    "Task 2: Derive the main formula for Liquid Expansion",
+    "Task 3: Create a concept map for Liquid Expansion",
+    "Task 4: Practice previous year exam questions on Liquid Expansion",
+    "Task 5: Explain Liquid Expansion to a peer or study group"
+  ],
+  "keyPoints": [],
+  "importantStatements": [
+    "Statement 1: Definition of Liquid Expansion",
+    "Statement 2: Theorem related to Liquid Expansion",
+    "Statement 3: Condition for Liquid Expansion to be valid",
+    "Statement 4: Principle governing Liquid Expansion",
+    "Statement 5: Corollary or consequence of Liquid Expansion"
+  ]
 }

@@ -7,12 +7,11 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Scope.** Electric field due to point charges; field lines — Electric Field, Physics (class-11-notes).",
-    "**Tested.** define it · list: electric field due to point charges, field lines · one worked example · one misconception each.",
-    "**Fact.** Coulomb: F = (1/4πε₀)·q₁q₂/r². Electric field E = F/q = kq/r²; for a line/dipole use superposition.",
-    "**Fact.** Gauss's law: ∮E·dA = Q_enc/ε₀ — powerful for spherical/cylindrical/planar symmetry.",
-    "**Fact.** Potential V = kq/r; ΔV = W/q; U of a charge in potential = qV. Equipotential surfaces are ⟂ to field lines.",
-    "**Field lines.** one-line definition + one-line exam use."
+    "**Electric field intensity.** The field at a point is the force per unit positive test charge placed there: E = F/q₀ = (1/4πε₀)q/r² for a point charge, directed away from a positive charge.",
+    "**Field lines.** These imaginary lines are drawn so that the tangent at any point gives the field direction and their density shows field strength.",
+    "**Field line rules.** Lines start on positive charges and end on negative ones, never cross each other, and never form closed loops in electrostatics.",
+    "**Uniform field.** Between two parallel oppositely charged plates the field is uniform (E = V/d), so a charge experiences the same force everywhere between the plates.",
+    "**Superposition.** The total field from several charges is the vector sum of their individual fields — the same principle that gives the net force."
   ],
   "confusion": [
     "❌ treat \"Electric field due to point charges\" as one blob → ✅ split into: electric field due to point charges, field lines.",
@@ -69,17 +68,6 @@
       ],
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    },
-    {
-      "question": "Which of these is a governing / standard formula associated with \"Electric field due to point charges; field lines\"?",
-      "options": [
-        "F = k q₁q₂/r²",
-        "x + y = z (placeholder)",
-        "No formula applies",
-        "E = mc² only"
-      ],
-      "answer": "A",
-      "explanation": "F = k q₁q₂/r² is the standard form used for this topic."
     }
   ]
 }

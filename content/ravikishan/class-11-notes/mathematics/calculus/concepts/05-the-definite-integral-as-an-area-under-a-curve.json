@@ -1,0 +1,162 @@
+{
+  "title": "The definite integral as an area under a curve",
+  "unitSlug": "calculus",
+  "topicSlug": "the-definite-integral-as-an-area-under-a-curve",
+  "topicTitle": "The definite integral as an area under a curve",
+  "relevance": 100,
+  "notes": [
+    "### 1. Definite Integral Definition",
+    "int_a^b f(x)dx = lim(n->inf) sum[i=1 to n] f(xi*) Dx",
+    "Represents the net area between f(x) and the x-axis from x = a to x = b.",
+    "### 2. Fundamental Theorem of Calculus",
+    "If F is an antiderivative of f, then: int_a^b f(x)dx = F(b) - F(a)",
+    "Connects differentiation and integration -- they are inverse operations.",
+    "### 3. Area Under Curve",
+    "- Area above x-axis: positive contribution",
+    "- Area below x-axis: negative contribution",
+    "- Total area = int_a^b |f(x)|dx",
+    "### 4. Properties of Definite Integrals",
+    "- int_a^a f(x)dx = 0",
+    "- int_a^b f(x)dx = -int_b^a f(x)dx",
+    "- int_a^b [f(x) +/- g(x)]dx = int_a^b f(x)dx +/- int_a^b g(x)dx",
+    "### 5. Standard Integrals",
+    "- int x^n dx = x^(n+1)/(n+1) + C (n != -1)",
+    "- int 1/x dx = ln|x| + C",
+    "- int e^x dx = e^x + C",
+    "- int sin x dx = -cos x + C",
+    "- int cos x dx = sin x + C",
+    "### 6. Entrance Exam Focus",
+    "Evaluate definite integrals; Find area between curves; Use properties to simplify."
+  ],
+  "confusion": [
+    "x Definite integral always positive. x Can be negative if curve is below x-axis.",
+    "x int f(x)dx = F(x) + C (definite). x C cancels in definite integrals.",
+    "x Area = int f(x)dx always. x Use |f(x)| for total geometric area."
+  ],
+  "practice": [],
+  "formulas": [
+    "int_a^b f(x)dx = F(b) - F(a)",
+    "Area = int_a^b |f(x)|dx"
+  ],
+  "summary": "The definite integral int_a^b f(x)dx = lim(n->inf) sum f(xi*) Dx is the limit of the Riemann sums, and by the Fundamental Theorem of Calculus it equals F(b) - F(a) whenever F is an antiderivative of f, so differentiation and integration are inverse operations. The integral gives the net area between the curve and the x-axis, with a negative contribution wherever the curve lies below the axis, while the total geometric area is int_a^b |f(x)|dx. The properties int_a^a f = 0, int_a^b f = -int_b^a f and linearity in f simplify long integrals, and the standard antiderivatives are x^(n+1)/(n+1), ln|x|, e^x, -cos x and sin x.",
+  "importantConcepts": [
+    "Definite integral as a limit of Riemann sums: int_a^b f(x)dx = lim(n->inf) sum(i=1 to n) f(xi*) Dx, the signed area between the curve and the x-axis from a to b.",
+    "Fundamental Theorem of Calculus: if F' = f then int_a^b f(x)dx = F(b) - F(a), so an antiderivative and a definite integral are two sides of one idea.",
+    "Net area versus total area: the integral is signed, counting regions below the axis negatively, while the geometric area is int_a^b |f(x)|dx.",
+    "Linearity: int_a^b [f(x) ± g(x)]dx = int_a^b f(x)dx ± int_a^b g(x)dx, and a constant multiple can be taken outside the integral.",
+    "Reversal and degeneracy: int_a^b f(x)dx = -int_b^a f(x)dx, and int_a^a f(x)dx = 0 for every integrable f.",
+    "Standard antiderivatives: int x^n dx = x^(n+1)/(n+1) + C for n != -1, int 1/x dx = ln|x| + C, int e^x dx = e^x + C, int sin x dx = -cos x + C, int cos x dx = sin x + C."
+  ],
+  "importantStatements": [
+    "int_a^b f(x)dx = lim(n->inf) sum(i=1 to n) f(xi*) Dx, the limit of the sums of areas of rectangles inscribed under the curve.",
+    "If F is an antiderivative of f then int_a^b f(x)dx = F(b) - F(a); the constant of integration cancels because the same C appears in both terms.",
+    "The value of a definite integral is the net area, since regions below the x-axis subtract, and the total geometric area is int_a^b |f(x)|dx.",
+    "int_a^a f(x)dx = 0, int_a^b f(x)dx = -int_b^a f(x)dx, and int_a^b [f(x) ± g(x)]dx = int_a^b f(x)dx ± int_a^b g(x)dx.",
+    "The rule int x^n dx = x^(n+1)/(n+1) + C holds only for n != -1, so the case n = -1 must be treated separately as int 1/x dx = ln|x| + C."
+  ],
+  "importantTasks": [
+    "Evaluate a definite integral by finding an antiderivative F and computing F(b) - F(a) at the two limits.",
+    "Find the area under a curve from a to b, deciding from the sign of f whether the answer is the integral itself or the integral of |f(x)|.",
+    "Find the area bounded by two curves by locating their points of intersection and integrating the difference of the two functions between them.",
+    "Use the properties of definite integrals to simplify an expression, for instance by reversing the limits or splitting a long integral into convenient pieces."
+  ],
+  "keyPoints": [
+    "int_a^b f(x)dx = F(b) - F(a): the upper limit is evaluated first and the lower limit second, and the sign follows that order.",
+    "The constant of integration never appears in a definite integral, because F(b) + C minus (F(a) + C) cancels it.",
+    "int x^n dx = x^(n+1)/(n+1) + C, so the exponent n in the integrand becomes n + 1 in the antiderivative.",
+    "When the curve crosses the axis inside [a, b], split the integral at the crossing point and use absolute values for the geometric area.",
+    "Reversing the limits changes the sign, so int_a^b f(x)dx = -int_b^a f(x)dx."
+  ],
+  "specialNotes": [
+    "A definite integral can be negative, because the region below the x-axis contributes negatively; only the area given by int |f(x)|dx is never negative.",
+    "The power rule for integration fails at n = -1, so int 1/x dx = ln|x| + C keeps the absolute value bars, and the integrand is undefined at x = 0.",
+    "An antiderivative of a continuous f exists on [a, b] and the definite integral exists there too, so F(b) - F(a) is always well defined.",
+    "int_a^b f(x)dx depends on the limits as well as on f, so two different integrals of the same function can differ in value and even in sign.",
+    "Adding a constant to f changes the integral by that constant times (b - a), not by the constant itself."
+  ],
+  "examShortTricks": [
+    "Strip the limits off, integrate, then put them back: write int sin x dx = -cos x first and finish with -cos b + cos a.",
+    "int sin x dx = -cos x and int cos x dx = sin x, and the negative sign on cosine is the single most common source of lost marks.",
+    "For area between curves, solve the intersection equation first, then integrate (top - bottom) over exactly that interval.",
+    "Check the sign of your answer against the graph, since a curve below the axis over the whole interval must give a negative integral."
+  ],
+  "examNotes": [
+    "Evaluating a standard definite integral is a 2-mark question, while one needing a substitution or a step by parts is a 5-mark question.",
+    "Area under a curve and area bounded by two curves are the standard 5-mark application, and always require the limits of intersection first.",
+    "Using the properties to simplify an integral, for example by reversing the limits, is a common 2 to 5 mark item.",
+    "MCQs test the sign convention, so options giving a positive value where the curve lies below the axis act as distractors."
+  ],
+  "practiceQuestions": [
+    "Evaluate int_0^pi sin x dx.",
+    "Find the area under y = x^2 from x = 0 to x = 3.",
+    "Evaluate int_1^e (1/x) dx.",
+    "Find the area bounded by y = x and y = x^2.",
+    "Evaluate int_0^2 (3x^2 - 4x + 1) dx and use the sign of the answer to describe the region.",
+    "Evaluate int_0^1 (2x + 3)^2 dx by substitution."
+  ],
+  "mcs": [
+    {
+      "question": "The value of the definite integral from 0 to pi of sin x dx is",
+      "options": [
+        "2",
+        "0",
+        "1",
+        "-2"
+      ],
+      "answer": "A",
+      "explanation": "An antiderivative of sin x is -cos x, so the value is -cos(pi) - (-cos 0) = 1 - (-1) = 2. The value 0 is the trap of writing the answer as cos(b) - cos(a)."
+    },
+    {
+      "question": "The value of the definite integral from 1 to e of (1/x) dx is",
+      "options": [
+        "0",
+        "1",
+        "e - 1",
+        "1/e"
+      ],
+      "answer": "B",
+      "explanation": "An antiderivative of 1/x is ln|x|, so the value is ln(e) - ln(1) = 1 - 0 = 1."
+    },
+    {
+      "question": "The area of the region bounded by the curves y = x and y = x^2 is",
+      "options": [
+        "1/6",
+        "1/2",
+        "1/3",
+        "1/4"
+      ],
+      "answer": "A",
+      "explanation": "The curves meet where x = x^2, that is at x = 0 and x = 1, and x lies above x^2 in between, so the area is the integral of (x - x^2) from 0 to 1, which is 1/2 - 1/3 = 1/6."
+    },
+    {
+      "question": "For every integrable function f, the definite integral from a to a of f(x) dx equals",
+      "options": [
+        "f(a)",
+        "a",
+        "0",
+        "1"
+      ],
+      "answer": "C",
+      "explanation": "An interval of zero length encloses no area, so the integral is 0. This also follows from F(a) - F(a) = 0 by the Fundamental Theorem of Calculus."
+    },
+    {
+      "question": "If f(x) is negative on part of the interval [a, b], the total geometric area between the curve and the x-axis is given by",
+      "options": [
+        "the integral from a to b of f(x) dx",
+        "the integral from a to b of |f(x)| dx",
+        "the integral from b to a of f(x) dx",
+        "minus the integral from a to b of f(x) dx"
+      ],
+      "answer": "B",
+      "explanation": "The definite integral counts the region below the axis negatively, so it gives a net area. Taking the absolute value of the integrand turns every contribution positive and yields the total geometric area."
+    }
+  ],
+  "numericals": [
+    "**1. [Idea: an integral with a shifted inner function where the bounds must transform]** Evaluate $\\int_0^1 \\dfrac{2x}{(x^2+1)^3}\\,dx$.\\newline\\newline**Solution:** Let $u = x^2+1$, so $du = 2x\\,dx$. The limits transform: $x=0 \\Rightarrow u=1$, and $x=1 \\Rightarrow u=2$.\\newline\\newlineThe integral becomes$\\newline\\int_1^2 u^{-3}du = \\left[\\frac{u^{-2}}{-2}\\right]_1^2 = -\\frac12\\left[\\frac{1}{u^2}\\right]_1^2 = -\\frac12\\left(\\frac14 - 1\\right) = \\frac{3}{8}$.\\newline\\newline**Answer:** $\\frac38$.\\newline\\newline**Trap:** keeping limits $0$ and $1$ while integrating with respect to $u$. That gives $\\left[-\\frac{1}{2u^2}\\right]_0^1$, which is undefined at $u=0$ — the tell-tale sign that the substitution was mishandled.",
+    "**2. [Idea: by parts where the LIATE rule chooses the log term as $u$]** Evaluate $\\int x\\ln x\\,dx$.\\newline\\newline**Solution:** By parts, $\\int u\\,dv = uv - \\int v\\,du$.$^{\\bullet}$ **LIATE** orders: Logarithmic before Algebraic, so take $u=\\ln x$ and $dv=x\\,dx$. Then $du=\\frac{dx}{x}$ and $v=\\frac{x^2}{2}$.\\newline\\newline$\\newline\\int x\\ln x\\,dx = \\frac{x^2}{2}\\ln x - \\int \\frac{x^2}{2}\\cdot\\frac{dx}{x} = \\frac{x^2}{2}\\ln x - \\frac12\\int x\\,dx = \\frac{x^2}{2}\\ln x - \\frac{x^2}{4} + C$.\\newline\\newline**Answer:** $\\frac{x^2}{2}\\ln x - \\frac{x^2}{4}+C$, for $x>0$.\\newline\\newline**What went wrong if $u$ is chosen wrongly:** taking $u=x$, $dv=\\ln x\\,dx$ needs $\\int \\ln x\\,dx$ first, which is itself an integral by parts — the problem gets strictly harder. **Also note:** on $[0,1]$ this integral is a proper one and $\\int_0^1 x\\ln x\\,dx$ converges even though $\\ln 0$ is undefined, since $x\\ln x \\to 0$.",
+    "**3. [Idea: repeated by parts that must be stopped at a vanishing term]** Evaluate $\\int x^2 e^x\\,dx$.\\newline\\newline**Solution:**$^{\\bullet}$ 1st application, $u=x^2$, $dv=e^x dx$, $du=2x\\,dx$, $v=e^x$:$\\newline I = x^2e^x - 2\\int xe^x\\,dx$.$^{\\bullet}$ 2nd application to the remaining integral, $u=x$, $dv=e^x dx$:$\\newline\\int xe^x dx = xe^x - e^x$.\\newline\\newlineSubstitute back:$^{\\newline}I = x^2e^x - 2(xe^x - e^x) = x^2e^x - 2xe^x + 2e^x = e^x(x^2 - 2x + 2) + C$.\\newline\\newline**Verify by differentiating:** $\\frac{d}{dx}\\left[e^x(x^2-2x+2)\\right] = e^x(x^2-2x+2) + e^x(2x-2) = e^x\\cdot x^2$. ✓\\newline\\newline**Answer:** $e^x(x^2-2x+2)+C$. **The stopping rule:** stop as soon as a term becomes $0$; had a fourth application been attempted it would be meaningless.",
+    "**4. [Idea: symmetry collapses the work before any integration happens]** Evaluate $\\int_{-2}^{2}\\left(x^3\\cos x + \\sqrt{4-x^2}\\right)dx$.\\newline\\newline**Solution: split by parity first.**$^{\\bullet}$ $x^3$ is ODD and $\\cos x$ is EVEN, so $x^3\\cos x$ is ODD. An odd function integrates to $0$ over $[-2,2]$:$\\newline\\int_{-2}^2 x^3\\cos x\\,dx = 0$.$^{\\bullet}$ $\\sqrt{4-x^2}$ is EVEN, so by King's rule $\\int_{-2}^{2}\\sqrt{4-x^2}\\,dx = 2\\int_0^2 \\sqrt{4-x^2}\\,dx$.\\newline\\newlineThis remaining integral is the area of a quarter circle of radius 2:$\\newline\\int_0^2\\sqrt{4-x^2}\\,dx = \\frac14 \\pi(2)^2 = \\pi$.\\newline\\newlineSo the total is $0 + 2\\pi$.\\newline\\newline**Answer:** $2\\pi$. **The idea:** the odd part was dispatched with no calculus at all. Attempting to integrate $x^3\\cos x$ directly needs repeated by parts for nothing.",
+    "**5. [Idea: the bounds do not determine the top curve — solve the intersection first]** Find the area bounded by $y=x^2$ and $y=\\sqrt{x}$ for $x \\ge 0$.\\newline\\newline**Solution:** Find the intersections: $x^2 = \\sqrt{x} \\Rightarrow x^4 = x \\Rightarrow x(x^3-1)=0$, so $x=0$ and $x=1$.\\newline\\newline**Determine which is on top.** At $x=\\frac12$: $y_1 = x^2 = \\frac14$ and $y_2 = \\sqrt{x} = \\frac{1}{\\sqrt2} \\approx 0.707$. Since $\\sqrt{x} > x^2$ there, $\\sqrt{x}$ is the TOP curve.\\newline\\newline**Area:**$^{\\bullet}$ $\\displaystyle A = \\int_0^1 \\left(\\sqrt{x} - x^2\\right)dx = \\left[\\frac{2}{3}x^{3/2} - \\frac{x^3}{3}\\right]_0^1 = \\frac23 - \\frac13 = \\frac13$.\\newline\\newline**Answer:** $\\frac13$ square units. **Trap:** integrating $x^2-\\sqrt{x}$ and getting $-\\frac13$. The top-minus-bottom convention means a negative answer signals the curves were named backwards, not that the area is negative.",
+    "**6. [Idea: the region is split because the bounding curve changes]** Find the area enclosed by $y=2x+1$, $y=x^2+2$ and the $y$-axis.\\newline\\newline**Solution:**$^{\\bullet}$ The two curves meet where $2x+1 = x^2+2$, i.e. $x^2-2x+1=0$, i.e. $(x-1)^2=0$, so they are **tangent at $x=1$**, meeting at $(1,3)$.\\newline\\newline$^{\\bullet}$ At $x=0$ the line gives $1$ and the parabola $2$, so the LINE is on top for $0\\le x \\le 1$ (tangent means they only just touch at $x=1$).$^{\\bullet}$ The $y$-axis closes the region at $x=0$.\\newline\\newline**Area:**$^{\\bullet}$ $\\displaystyle A = \\int_0^1 \\left[(2x+1)-(x^2+2)\\right]dx = \\int_0^1\\left(-x^2+2x-1\\right)dx = \\left[-\\frac{x^3}{3}+x^2-x\\right]_0^1 = -\\frac13+1-1 = -\\frac13$.\\newline\\newline**Answer:** area $= \\frac13$ square units (the negative integral confirms the curves were named the wrong way round, so the true area is $\\frac13$). **Note:** tangency gives a single intersection, so only one integral is needed — but the sign check is what catches the reversal."
+  ]
+}

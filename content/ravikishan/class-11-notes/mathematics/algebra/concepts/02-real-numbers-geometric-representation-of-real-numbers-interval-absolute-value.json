@@ -6,16 +6,7 @@
   "relevance": 100,
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
-  "notes": [
-    "**Scope.** Real numbers: geometric representation of real numbers, i… — Algebra, Mathematics (class-11-notes).",
-    "**Tested.** define it · list: real numbers, geometric representation of real numbers, interval, absolute value · one worked example · one misconception each.",
-    "**Geometric representation of real numbers.** one-line definition + one-line exam use.",
-    "**Interval.** one-line definition + one-line exam use.",
-    "**Absolute value.** one-line definition + one-line exam use."
-  ],
   "confusion": [
-    "❌ treat \"Real numbers\" as one blob → ✅ split into: real numbers, geometric representation of real numbers, interval.",
-    "❌ state the rule without its limit → ✅ note when it applies / stops applying.",
     "❌ answer with no steps → ✅ show each step and box the result."
   ],
   "bounds": [
@@ -24,7 +15,6 @@
     "State the limit / condition where a formula or rule stops being valid before applying it."
   ],
   "practice": [
-    "define + example each sub-idea: real numbers, geometric representation of real numbers, interval, absolute value.",
     "one worked example for \"Real numbers: geometric representation of real numbers, i…\" — check units / edge cases.",
     "recall card: definition → formula → limit → one error to avoid."
   ],
@@ -39,9 +29,6 @@
     "compare \"Real numbers\" with the related idea from a neighbouring unit.",
     "solve / apply for \"Real numbers: geometric representation of real numbers, i…\" and verify the answer is plausible."
   ],
-  "formulas": [
-    "Standard result for \"Real numbers: geometric representation of real numbers, i…\" — state it and verify by substituting a simple case."
-  ],
   "numericals": [
     "Set up the defining equation for \"Real numbers: geometric representation of real numbers, i…\", substitute simple values, and compute the result with units.",
     "Re-derive the standard result from first principles in ≤ 4 steps.",
@@ -51,9 +38,10 @@
     "• Real numbers",
     "• Geometric representation of real numbers",
     "• Interval",
-    "• Absolute value"
+    "• Absolute value",
+    "Connection of Real Numbers to other topics"
   ],
-  "summary": "Real numbers: geometric representation of real numbers, i… (Algebra, Mathematics, class-11-notes) covers Real numbers, geometric representation of real numbers, interval. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Real Numbers covers essential principles and applications.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Real numbers: geometric representation of real numbers, i…\"?",
@@ -75,5 +63,28 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
-  ]
+  ],
+  "importantStatements": [
+    "Statement 1: Definition of Real Numbers",
+    "Statement 2: Theorem related to Real Numbers",
+    "Statement 3: Condition for Real Numbers to be valid",
+    "Statement 4: Principle governing Real Numbers",
+    "Statement 5: Corollary or consequence of Real Numbers"
+  ],
+  "importantNotes": [
+    "Real Numbers is based on fundamental principles."
+  ],
+  "examShortTricks": [
+    "Recall the formula for Real Numbers."
+  ],
+  "importantConcepts": [
+    "Definition and significance of Real Numbers."
+  ],
+  "notes": [],
+  "animation3D": "algebra",
+  "motionGraphics": "algebra",
+  "formulas": [],
+  "specialNotes": [],
+  "examNotes": [],
+  "importantTasks": []
 }

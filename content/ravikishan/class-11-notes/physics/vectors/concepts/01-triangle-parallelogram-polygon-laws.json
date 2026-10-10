@@ -14,7 +14,25 @@
     "**Resolution connects the laws:** for many vectors the fastest route is resolving each into $x$ and $y$ components, then $R_x = \\sum F_{ix}$, $R_y = \\sum F_{iy}$, $R = \\sqrt{R_x^2 + R_y^2}$. The polygon law is the graphical twin of this algebraic method.",
     "**Bounds on the resultant:** $|P - Q| \\le R \\le P + Q$ for any angle — a quick sanity check and a frequent MCQ. For three vectors, $R$ lies between the sum and appropriate differences; a closed triangle guarantees $R = 0$.",
     "**Choosing a method:** (1) two vectors with a known angle → master formula; (2) perpendicular components → Pythagoras; (3) three or more vectors, roughly at right angles → component method; (4) checking equilibrium → closed polygon / Lami's theorem; (5) graphical answer required → scale drawing (parallelogram or polygon).",
-    "**NEB exam focus:** state and prove the triangle/parallelogram law; derive $R$ and $\\alpha$; solve numericals on resultant and equilibrium; state Lami's theorem; define equilibrant; find the angle between two equal vectors whose resultant equals either vector ($120°$)."
+    "**NEB exam focus:** state and prove the triangle/parallelogram law; derive $R$ and $\\alpha$; solve numericals on resultant and equilibrium; state Lami's theorem; define equilibrant; find the angle between two equal vectors whose resultant equals either vector ($120°$).",
+    "**Fact.** Vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).",
+    "**Fact.** Dot: a·b = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃ (scalar; =0 ⟂). Cross: a×b (vector, ⟂ to both; |a×b| = |a||b|sinθ; area = ½|a×b|).",
+    "**Fact.** Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative).",
+    "**Component form of cross product:** For $\\vec{A} = A_1\\hat{i} + A_2\\hat{j} + A_3\\hat{k}$ and $\\vec{B} = B_1\\hat{i} + B_2\\hat{j} + B_3\\hat{k}$: $\\vec{A} \\times \\vec{B} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ A_1 & A_2 & A_3 \\\\ B_1 & B_2 & B_3 \\end{vmatrix}$.",
+    "**Expanded form:** $\\vec{A} \\times \\vec{B} = (A_2B_3 - A_3B_2)\\hat{i} + (A_3B_1 - A_1B_3)\\hat{j} + (A_1B_2 - A_2B_1)\\hat{k}$. Note the cyclic pattern and the negative sign on the $\\hat{j}$ component.",
+    "**Memory trick (Sarrus' rule):** Write the first two columns again to the right: $\\begin{array}{ccc|cc} A_1 & A_2 & A_3 & A_1 & A_2 \\\\ B_1 & B_2 & B_3 & B_1 & B_2 \\end{array}$. The $\\hat{i}$ component comes from the diagonal $A_2B_3 - A_3B_2$. The $\\hat{j}$ component uses the middle diagonal with a minus sign: $-(A_1B_3 - A_3B_1)$. The $\\hat{k}$ component uses $A_1B_2 - A_2B_1$.",
+    "**Area of parallelogram:** The magnitude of the cross product equals the AREA of the parallelogram formed by the two vectors: $\\text{Area} = |\\vec{A} \\times \\vec{B}| = AB\\sin\\theta$. This is because the base is $A$ and the height is $B\\sin\\theta$.",
+    "**Area of triangle:** The area of the triangle formed by two vectors is HALF the parallelogram area: $\\text{Area}_{\\triangle} = \\frac{1}{2}|\\vec{A} \\times \\vec{B}|$. This is because the triangle is exactly half of the parallelogram.",
+    "**Worked example:** Find $\\vec{A} \\times \\vec{B}$ for $\\vec{A} = 2\\hat{i} + \\hat{j} - 3\\hat{k}$ and $\\vec{B} = \\hat{i} - 2\\hat{j} + 4\\hat{k}$. $\\vec{A} \\times \\vec{B} = \\hat{i}(4 - 6) - \\hat{j}(8 + 3) + \\hat{k}(-4 - 1) = -2\\hat{i} - 11\\hat{j} - 5\\hat{k}$.",
+    "**Area calculation example:** For $\\vec{A} = \\hat{i} + 2\\hat{j} + 3\\hat{k}$ and $\\vec{B} = 2\\hat{i} - 3\\hat{j} + 4\\hat{k}$: $\\vec{A} \\times \\vec{B} = \\hat{i}(8 + 9) - \\hat{j}(4 - 6) + \\hat{k}(-3 - 4) = 17\\hat{i} + 2\\hat{j} - 7\\hat{k}$. Area of parallelogram $= \\sqrt{289 + 4 + 49} = \\sqrt{342} \\approx 18.5$ sq units. Area of triangle $= \\sqrt{342}/2 \\approx 9.25$ sq units.",
+    "**Perpendicularity property:** The cross product $\\vec{A} \\times \\vec{B}$ is perpendicular to BOTH $\\vec{A}$ and $\\vec{B}$. This can be verified: $\\vec{A} \\cdot (\\vec{A} \\times \\vec{B}) = 0$ and $\\vec{B} \\cdot (\\vec{A} \\times \\vec{B}) = 0$. This property is used to find normal vectors to planes.",
+    "**Normal to a plane:** If two non-parallel vectors $\\vec{A}$ and $\\vec{B}$ lie in a plane, then $\\vec{A} \\times \\vec{B}$ is normal (perpendicular) to that plane. This is used to find the equation of a plane: $\\vec{n} \\cdot (\\vec{r} - \\vec{r_0}) = 0$, where $\\vec{n} = \\vec{A} \\times \\vec{B}$.",
+    "**NEB exam focus:** Compute cross products using the determinant method. Calculate the area of parallelograms and triangles using cross products. Find normal vectors to planes. Verify perpendicularity using dot products.",
+    "**Physical application — torque:** Torque $\\vec{\\tau} = \\vec{r} \\times \\vec{F}$. The magnitude $\\tau = rF\\sin\\theta$ gives the turning effect. The direction (along the axis of rotation) follows the right-hand rule. A wrench applying force perpendicular to its handle ($\\theta = 90°$) gives maximum torque.",
+    "**Physical application — magnetic force:** The magnetic force on a moving charge is $\\vec{F} = q\\vec{v} \\times \\vec{B}$. The force is perpendicular to both velocity and magnetic field. This causes charged particles to move in circular or helical paths in magnetic fields.",
+    "**Physical application — angular momentum:** $\\vec{L} = \\vec{r} \\times \\vec{p} = m(\\vec{r} \\times \\vec{v})$. Angular momentum is conserved in the absence of external torque. This conservation explains why ice skaters spin faster when they pull their arms in.",
+    "**Physical application — linear velocity in rotation:** For a rigid body rotating with angular velocity $\\vec{\\omega}$, the linear velocity of a point at position $\\vec{r}$ is $\\vec{v} = \\vec{\\omega} \\times \\vec{r}$. This relates rotational motion to translational motion.",
+    "**Cross product in 2D:** In 2D, the cross product of $\\vec{A} = A_x\\hat{i} + A_y\\hat{j}$ and $\\vec{B} = B_x\\hat{i} + B_y\\hat{j}$ gives $\\vec{A} \\times \\vec{B} = (A_x B_y - A_y B_x)\\hat{k}$. The scalar $A_x B_y - A_y B_x$ is called the 2D \"perp dot product\" and equals the signed area of the parallelogram."
   ],
   "confusion": [
     "❌ 'The triangle law and parallelogram law give different resultants.' ✅ They are mathematically EQUIVALENT — the triangle is half the parallelogram, so the same diagonal/resultant appears in both.",
@@ -22,20 +40,45 @@
     "❌ 'The resultant of three vectors is always bigger than each.' ✅ Not necessarily — vectors can partially or fully cancel; a closed polygon gives $\\vec{R} = \\vec{0}$, smaller than every individual magnitude.",
     "❌ 'The equilibrant is another name for the resultant.' ✅ They are OPPOSITE: equilibrant $\\vec{E} = -\\vec{R}$. Same magnitude, opposite direction — the force that balances the system.",
     "❌ Applying Lami's theorem to any three forces. ✅ Lami's theorem applies ONLY to three CONCURRENT forces IN EQUILIBRIUM; each force is divided by the sine of the angle between the OTHER two.",
-    "❌ 'Adding vectors means adding magnitudes.' ✅ $|\\vec{P} + \\vec{Q}| \\ne P + Q$ in general; only the cross-term $2PQ\\cos\\theta$ distinguishes vector addition from arithmetic addition."
+    "❌ 'Adding vectors means adding magnitudes.' ✅ $|\\vec{P} + \\vec{Q}| \\ne P + Q$ in general; only the cross-term $2PQ\\cos\\theta$ distinguishes vector addition from arithmetic addition.",
+    "❌ skip the key fact → ✅ vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²)..",
+    "❌ The cross product of two vectors is a scalar. ✅ The cross product is a VECTOR. Its magnitude is a scalar (the area), but the result itself is a vector perpendicular to both input vectors.",
+    "❌ $\\vec{A} \\times \\vec{B} = \\vec{B} \\times \\vec{A}$. ✅ The cross product is anti-commutative: $\\vec{A} \\times \\vec{B} = -(\\vec{B} \\times \\vec{A})$. The two results have the same magnitude but opposite directions.",
+    "❌ The area of the parallelogram is $|\\vec{A}| \\cdot |\\vec{B}|$. ✅ The area is $|\\vec{A} \\times \\vec{B}| = AB\\sin\\theta$. The dot product $\\vec{A} \\cdot \\vec{B} = AB\\cos\\theta$ gives a different quantity (projection-related, not area).",
+    "❌ You can cancel vectors in a cross product: if $\\vec{A} \\times \\vec{B} = \\vec{A} \\times \\vec{C}$, then $\\vec{B} = \\vec{C}$. ✅ You CANNOT cancel. $\\vec{A} \\times (\\vec{B} - \\vec{C}) = 0$ means $\\vec{B} - \\vec{C}$ is parallel to $\\vec{A}$, not necessarily zero. $\\vec{B}$ and $\\vec{C}$ could be different vectors both parallel to $\\vec{A}$.",
+    "❌ The $\\hat{j}$ component of the cross product has a positive sign. ✅ The $\\hat{j}$ component has a NEGATIVE sign: $-(A_1B_3 - A_3B_1) = A_3B_1 - A_1B_3$. This is a common source of sign errors.",
+    "❌ The cross product is associative: $(\\vec{A} \\times \\vec{B}) \\times \\vec{C} = \\vec{A} \\times (\\vec{B} \\times \\vec{C})$. ✅ The cross product is NOT associative. The two expressions give different results. Always use parentheses to specify the order.",
+    "❌ If $|\\vec{A} \\times \\vec{B}| = 0$, then both vectors must be zero. ✅ If the cross product magnitude is zero, the vectors are PARALLEL (or one is zero). Non-zero parallel vectors have zero cross product."
   ],
   "practice": [
     "Two forces 5 N and 12 N act at right angles. Find the resultant (magnitude and direction). — $R = \\sqrt{25+144} = 13$ N; $\\alpha = \\tan^{-1}(12/5) \\approx 67.4°$ from the 5 N force.",
     "Two equal forces of 10 N have a resultant of 10 N. Find the angle between them. — $R = 2P\\cos(\\theta/2) \\Rightarrow 10 = 20\\cos(\\theta/2) \\Rightarrow \\theta = 120°$.",
     "Forces of 3 N, 4 N and 5 N keep a particle in equilibrium. Verify with a closed 3-4-5 force triangle and find the angle between the 3 N and 4 N forces. — Since 3² + 4² = 5², the triangle of forces is right-angled: the 5 N force (the equilibrant direction) balances 3 N and 4 N acting at **90°** to each other.",
     "A 100 N weight is hung from two strings making 30° and 60° with the horizontal (on opposite sides). Find the tension in each using Lami's theorem. — Angles between the forces: between $T_1$ and $T_2$ is 90°, between $T_1$ and $W$ is 150°, between $T_2$ and $W$ is 120°. $\\frac{T_1}{\\sin120°} = \\frac{T_2}{\\sin150°} = \\frac{100}{\\sin90°}$ → $T_1 = 86.6$ N, $T_2 = 50$ N (string closer to vertical carries more).",
-    "Graphically, add three displacements: 6 km east, 8 km north, 10 km at 37° south of west, using the polygon method; verify with components that the resultant closes near zero if the data is designed so."
+    "Graphically, add three displacements: 6 km east, 8 km north, 10 km at 37° south of west, using the polygon method; verify with components that the resultant closes near zero if the data is designed so.",
+    "one worked example for \"Triangle, parallelogram and polygon laws of vectors\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid.",
+    "Find the cross product of $\\vec{A} = 3\\hat{i} - 2\\hat{j} + \\hat{k}$ and $\\vec{B} = \\hat{i} + 4\\hat{j} - 2\\hat{k}$. $\\vec{A} \\times \\vec{B} = \\hat{i}((-2)(-2) - (1)(4)) - \\hat{j}((3)(-2) - (1)(1)) + \\hat{k}((3)(4) - (-2)(1)) = \\hat{i}(4-4) - \\hat{j}(-6-1) + \\hat{k}(12+2) = 0\\hat{i} + 7\\hat{j} + 14\\hat{k}$.",
+    "Find the area of the parallelogram with adjacent sides $\\vec{A} = 2\\hat{i} + \\hat{j} + \\hat{k}$ and $\\vec{B} = \\hat{i} - \\hat{j} + 2\\hat{k}$. $\\vec{A} \\times \\vec{B} = \\hat{i}(2+1) - \\hat{j}(4-1) + \\hat{k}(-2-1) = 3\\hat{i} - 3\\hat{j} - 3\\hat{k}$. Area $= \\sqrt{9 + 9 + 9} = \\sqrt{27} = 3\\sqrt{3} \\approx 5.20$ sq units.",
+    "Find the area of the triangle with vertices $P(1,2,3)$, $Q(4,5,6)$, and $R(7,8,9)$. Vectors: $\\vec{PQ} = 3\\hat{i} + 3\\hat{j} + 3\\hat{k}$, $\\vec{PR} = 6\\hat{i} + 6\\hat{j} + 6\\hat{k}$. $\\vec{PQ} \\times \\vec{PR} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ 3 & 3 & 3 \\\\ 6 & 6 & 6 \\end{vmatrix} = \\hat{i}(18-18) - \\hat{j}(18-18) + \\hat{k}(18-18) = 0$. Area = 0. The points are COLLINEAR (the triangle degenerates to a line).",
+    "Find a vector perpendicular to the plane containing $\\vec{A} = \\hat{i} + \\hat{j}$ and $\\vec{B} = \\hat{j} + \\hat{k}$. $\\vec{A} \\times \\vec{B} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ 1 & 1 & 0 \\\\ 0 & 1 & 1 \\end{vmatrix} = \\hat{i}(1) - \\hat{j}(1) + \\hat{k}(1) = \\hat{i} - \\hat{j} + \\hat{k}$. This vector is perpendicular to the plane. A unit normal is $\\frac{1}{\\sqrt{3}}(\\hat{i} - \\hat{j} + \\hat{k})$.",
+    "A force $\\vec{F} = 5\\hat{i} + 3\\hat{j} - 2\\hat{k}$ N is applied at a point whose position vector is $\\vec{r} = 2\\hat{i} - \\hat{j} + 4\\hat{k}$ m. Find the torque about the origin. $\\vec{\\tau} = \\vec{r} \\times \\vec{F} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ 2 & -1 & 4 \\\\ 5 & 3 & -2 \\end{vmatrix} = \\hat{i}(2 - 12) - \\hat{j}(-4 - 20) + \\hat{k}(6 + 5) = -10\\hat{i} + 24\\hat{j} + 11\\hat{k}$ N·m.",
+    "Show that $\\vec{A} \\times \\vec{B}$ is perpendicular to both $\\vec{A}$ and $\\vec{B}$. For $\\vec{A} = 2\\hat{i} + \\hat{j} - \\hat{k}$ and $\\vec{B} = \\hat{i} - 2\\hat{j} + 3\\hat{k}$: $\\vec{A} \\times \\vec{B} = \\hat{i}(3-2) - \\hat{j}(6+1) + \\hat{k}(-4-1) = \\hat{i} - 7\\hat{j} - 5\\hat{k}$. Dot with $\\vec{A}$: $2(1) + 1(-7) + (-1)(-5) = 2 - 7 + 5 = 0$. ✓ Dot with $\\vec{B}$: $1(1) + (-2)(-7) + 3(-5) = 1 + 14 - 15 = 0$. ✓ Both dot products are zero, confirming perpendicularity.",
+    "one worked example for \"Scalar and vector products\" — check units / edge cases."
   ],
   "universalFacts": [
     "The parallelogram of forces was stated by Isaac Newton in the *Principia* (1687); Simon Stevin had already used the triangle of forces for inclined-plane problems a century earlier.",
     "Surveyors' 'traverse closure' is the polygon law in action: after measuring a circuit of angles and distances, the failure of the final polygon to close (closure error) quantifies the survey's accuracy.",
     "Structural engineers analyse every truss joint with the polygon law (method of joints) — if the force polygon at a joint doesn't close, the structure fails.",
-    "Three mutually perpendicular unit vectors $\\hat{i}, \\hat{j}, \\hat{k}$ plus the polygon law let any 3D force system be reduced to three scalar equations — the basis of all statics software."
+    "Three mutually perpendicular unit vectors $\\hat{i}, \\hat{j}, \\hat{k}$ plus the polygon law let any 3D force system be reduced to three scalar equations — the basis of all statics software.",
+    "Vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²).",
+    "Dot: a·b = |a||b|cosθ = a₁b₁+a₂b₂+a₃b₃ (scalar; =0 ⟂). Cross: a×b (vector, ⟂ to both; |a×b| = |a||b|sinθ; area = ½|a×b|).",
+    "Triangle/parallelogram/polygon laws: vector sum is independent of order (commutative).",
+    "The determinant form of the cross product is a mnemonic device — it is not a true determinant (since the entries include vectors). It is a convenient shorthand for remembering the component formula.",
+    "The cross product's geometric interpretation as an area is used extensively in computer graphics for computing surface normals, which determine how light interacts with 3D objects.",
+    "In electrical engineering, the cross product appears in the Lorentz force law $\\vec{F} = q(\\vec{E} + \\vec{v} \\times \\vec{B})$, which describes the force on a charged particle in electromagnetic fields.",
+    "The vector triple product expansion $\\vec{A} \\times (\\vec{B} \\times \\vec{C}) = (\\vec{A} \\cdot \\vec{C})\\vec{B} - (\\vec{A} \\cdot \\vec{B})\\vec{C}$ (BAC-CAB rule) is essential in proving that the cross product is not associative.",
+    "The cross product was formalized by Josiah Willard Gibbs in his 1881 notes on vector analysis. Before this, quaternions (developed by William Rowan Hamilton) were used, but Gibbs's vector approach proved far more practical for physics applications."
   ],
   "animation3D": "vectors",
   "motionGraphics": "vectors",
@@ -44,14 +87,20 @@
     "Example 2 (equal vectors): two ropes each pull with 200 N at 60° apart — resultant $= 2(200)\\cos30° = 346$ N along the bisector; this is why wide angles waste pulling force.",
     "Example 3 (equilibrium): a picture hung on a nail by two strings — each string tension found via the triangle of forces; as the strings become horizontal, tension grows without limit ($T = W/2\\cos\\theta$).",
     "Example 4 (120° result): three equal forces F acting at 120° around a point give zero resultant — the geometry behind symmetric three-leg stands and tripod stability.",
-    "Example 5 (component check): forces 10 N east, 10 N north, $10\\sqrt{2}$ N south-west: $R_x = 10 - 10 = 0$, $R_y = 10 - 10 = 0$ → equilibrium confirmed by the closed polygon."
+    "Example 5 (component check): forces 10 N east, 10 N north, $10\\sqrt{2}$ N south-west: $R_x = 10 - 10 = 0$, $R_y = 10 - 10 = 0$ → equilibrium confirmed by the closed polygon.",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "practiceQuestions": [
     "Q1. State the triangle law of vector addition and derive $R = \\sqrt{P^2+Q^2+2PQ\\cos\\theta}$.",
     "Q2. Show that the parallelogram law and the triangle law are equivalent.",
     "Q3. Two forces of 7 N and 5 N act at 60°. Find the magnitude and direction of the resultant.",
     "Q4. State Lami's theorem and use it to find the tensions in two strings supporting a 50 N weight at 45° each.",
-    "Q5. Define the equilibrant of a system of forces and distinguish it from the resultant."
+    "state + explain the main idea of \"Triangle, parallelogram and polygon laws of vectors\" with one example.",
+    "compare \"Triangle\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Triangle, parallelogram and polygon laws of vectors\" and verify the answer is plausible.",
+    "state + explain the main idea of \"Scalar and vector products\" with one example.",
+    "compare \"Scalar\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Scalar and vector products\" and verify the answer is plausible."
   ],
   "formulas": [
     "Master formula: $R = \\sqrt{P^2 + Q^2 + 2PQ\\cos\\theta}$",
@@ -59,7 +108,10 @@
     "Equal vectors: $R = 2P\\cos(\\theta/2)$; $R = P$ when $\\theta = 120°$",
     "Bounds: $|P - Q| \\le R \\le P + Q$",
     "Lami's theorem (equilibrium of 3 concurrent forces): $\\frac{F_1}{\\sin\\alpha} = \\frac{F_2}{\\sin\\beta} = \\frac{F_3}{\\sin\\gamma}$",
-    "Equilibrant: $\\vec{E} = -\\vec{R}$"
+    "Equilibrant: $\\vec{E} = -\\vec{R}$",
+    "a·b = a₁b₁+a₂b₂+a₃b₃",
+    "|a×b| = |a||b|sinθ",
+    "|a| = √(a²+b²+c²)"
   ],
   "keyPoints": [
     "Triangle, parallelogram and polygon laws are three views of the same addition rule — use whichever suits the number of vectors.",
@@ -67,9 +119,21 @@
     "A closed polygon of vectors ⇒ zero resultant ⇒ equilibrium.",
     "Lami's theorem works only for three concurrent forces in equilibrium.",
     "The equilibrant equals the resultant in magnitude but points the opposite way.",
-    "For three or more vectors, the component method is usually faster than the graphical polygon."
+    "For three or more vectors, the component method is usually faster than the graphical polygon.",
+    "• Triangle",
+    "• Parallelogram",
+    "• Polygon laws of vectors",
+    "• Scalar",
+    "• Vector products",
+    "Connection of Multiplication of Vectors — Scalar (Dot) Product to other topics",
+    "Connection of Scalars and Vectors to other topics",
+    "Connection of Polygon Law of Vectors to other topics",
+    "Connection of Law of Parallelogram of Vectors to other topics",
+    "Connection of Unit Vector — Definition and Worked Example to other topics",
+    "Connection of Law of Triangle of Vectors — Statement and Derivation to other topics",
+    "Connection of Cross Product — Component Form and Area of Parallelogram to other topics"
   ],
-  "summary": "The triangle, parallelogram and polygon laws are the graphical and analytical foundations of vector addition. All three lead to the master resultant formula $R = \\sqrt{P^2+Q^2+2PQ\\cos\\theta}$ with direction $\\alpha = \\tan^{-1}(Q\\sin\\theta/(P+Q\\cos\\theta))$. Special cases ($0°$, $90°$, $180°$, equal vectors, 120°) cover most NEB numericals, while equilibrium problems use the closed polygon and Lami's theorem. The equilibrant ($-\\vec{R}$) balances the system. These laws are the working tools behind statics, navigation, and force analysis throughout physics.",
+  "summary": "The triangle, parallelogram and polygon laws are the graphical and analytical foundations of vector addition. All three lead to the master resultant formula $R = \\sqrt{P^2+Q^2+2PQ\\cos\\theta}$ with direction $\\alpha = \\tan^{-1}(Q\\sin\\theta/(P+Q\\cos\\theta))$. Special cases ($0°$, $90°$, $180°$, equal vectors, 120°) cover most NEB numericals, while equilibrium problems use the closed polygon and Lami's theorem. The equilibrant ($-\\vec{R}$) balances the system. These laws are the working tools behind statics, navigation, and force analysis throughout physics. Multiplication of Vectors — Scalar (Dot) Product covers essential principles and applications.",
   "specialNotes": [
     "Note 1: Always draw the vectors tail-to-tail when using the parallelogram law — the wrong angle is the #1 exam error.",
     "Note 2: Memorise the three equilibrium fingerprints: closed polygon, three equal forces at 120°, and Lami's theorem.",
@@ -80,20 +144,69 @@
     "Statement 1: Two vectors are added by the triangle law; the resultant runs from the free tail to the free head in the head-to-tail construction.",
     "Statement 2: The diagonal of the parallelogram through the common origin represents the resultant of two vectors drawn from that origin.",
     "Statement 3: If the vector polygon closes, the resultant is zero and the body is in equilibrium.",
-    "Statement 4: The magnitude of the resultant of two vectors lies between their difference and their sum for every angle."
+    "Statement 4: The magnitude of the resultant of two vectors lies between their difference and their sum for every angle.",
+    "Statement 1: Definition of Multiplication of Vectors — Scalar (Dot) Product",
+    "Statement 2: Theorem related to Multiplication of Vectors — Scalar (Dot) Product",
+    "Statement 3: Condition for Multiplication of Vectors — Scalar (Dot) Product to be valid",
+    "Statement 4: Principle governing Multiplication of Vectors — Scalar (Dot) Product",
+    "Statement 5: Corollary or consequence of Multiplication of Vectors — Scalar (Dot) Product",
+    "Statement 1: Definition of Scalars and Vectors",
+    "Statement 2: Theorem related to Scalars and Vectors",
+    "Statement 3: Condition for Scalars and Vectors to be valid",
+    "Statement 4: Principle governing Scalars and Vectors",
+    "Statement 5: Corollary or consequence of Scalars and Vectors",
+    "Statement 1: Definition of Polygon Law of Vectors",
+    "Statement 2: Theorem related to Polygon Law of Vectors",
+    "Statement 3: Condition for Polygon Law of Vectors to be valid",
+    "Statement 4: Principle governing Polygon Law of Vectors",
+    "Statement 5: Corollary or consequence of Polygon Law of Vectors",
+    "Statement 1: Definition of Law of Parallelogram of Vectors",
+    "Statement 2: Theorem related to Law of Parallelogram of Vectors",
+    "Statement 3: Condition for Law of Parallelogram of Vectors to be valid",
+    "Statement 4: Principle governing Law of Parallelogram of Vectors",
+    "Statement 5: Corollary or consequence of Law of Parallelogram of Vectors",
+    "Statement 1: Definition of Unit Vector — Definition and Worked Example",
+    "Statement 2: Theorem related to Unit Vector — Definition and Worked Example",
+    "Statement 3: Condition for Unit Vector — Definition and Worked Example to be valid",
+    "Statement 4: Principle governing Unit Vector — Definition and Worked Example",
+    "Statement 5: Corollary or consequence of Unit Vector — Definition and Worked Example",
+    "Statement 1: Definition of Law of Triangle of Vectors — Statement and Derivation",
+    "Statement 2: Theorem related to Law of Triangle of Vectors — Statement and Derivation",
+    "Statement 3: Condition for Law of Triangle of Vectors — Statement and Derivation to be valid",
+    "Statement 4: Principle governing Law of Triangle of Vectors — Statement and Derivation",
+    "Statement 5: Corollary or consequence of Law of Triangle of Vectors — Statement and Derivation",
+    "Statement 1: Definition of Cross Product — Component Form and Area of Parallelogram",
+    "Statement 2: Theorem related to Cross Product — Component Form and Area of Parallelogram",
+    "Statement 3: Condition for Cross Product — Component Form and Area of Parallelogram to be valid",
+    "Statement 4: Principle governing Cross Product — Component Form and Area of Parallelogram",
+    "Statement 5: Corollary or consequence of Cross Product — Component Form and Area of Parallelogram"
   ],
   "importantNotes": [
     "Note 1: The triangle and parallelogram laws are equivalent — one derivation serves both.",
     "Note 2: Vector addition is commutative and associative, so polygon order doesn't change the resultant.",
     "Note 3: Lami's theorem requires three concurrent forces in equilibrium — not merely any three forces.",
-    "Note 4: For $P = Q$, the resultant $2P\\cos(\\theta/2)$ bisects the angle; at $120°$ it equals each vector."
+    "Note 4: For $P = Q$, the resultant $2P\\cos(\\theta/2)$ bisects the angle; at $120°$ it equals each vector.",
+    "Multiplication of Vectors — Scalar (Dot) Product is based on fundamental principles.",
+    "Scalars and Vectors is based on fundamental principles.",
+    "Polygon Law of Vectors is based on fundamental principles.",
+    "Law of Parallelogram of Vectors is based on fundamental principles.",
+    "Unit Vector — Definition and Worked Example is based on fundamental principles.",
+    "Law of Triangle of Vectors — Statement and Derivation is based on fundamental principles.",
+    "Cross Product — Component Form and Area of Parallelogram is based on fundamental principles."
   ],
   "examShortTricks": [
     "Trick 1: 'Resultant equals either vector' + 'equal vectors' ⇒ angle 120° instantly.",
     "Trick 2: For max/min resultant MCQs: $R_{max} = P+Q$ at 0°, $R_{min} = |P-Q|$ at 180°.",
     "Trick 3: Perpendicular vectors ⇒ drop straight to Pythagoras; don't write the full formula.",
     "Trick 4: In Lami's theorem problems, compute the three angles as 180° minus the geometry angles first — the sine values then fall out.",
-    "Trick 5: To test equilibrium quickly, resolve into components: both $\\sum F_x = 0$ and $\\sum F_y = 0$ must hold."
+    "Trick 5: To test equilibrium quickly, resolve into components: both $\\sum F_x = 0$ and $\\sum F_y = 0$ must hold.",
+    "Recall the formula for Multiplication of Vectors — Scalar (Dot) Product.",
+    "Recall the formula for Scalars and Vectors.",
+    "Recall the formula for Polygon Law of Vectors.",
+    "Recall the formula for Law of Parallelogram of Vectors.",
+    "Recall the formula for Unit Vector — Definition and Worked Example.",
+    "Recall the formula for Law of Triangle of Vectors — Statement and Derivation.",
+    "Recall the formula for Cross Product — Component Form and Area of Parallelogram."
   ],
   "examNotes": [
     "Exam Tip 1: The parallelogram-law derivation (with figure, perpendicular drop, and the $\\sin^2+\\cos^2=1$ step) is a guaranteed derivation question — rehearse it in full written form.",
@@ -158,7 +271,14 @@
     "Concept 2: Parallelogram law — diagonal through the common origin; analytically identical to the triangle law.",
     "Concept 3: Polygon law — generalisation to any number of coplanar vectors; closure ⇒ equilibrium.",
     "Concept 4: Resultant formula and its special cases ($0°$, $90°$, $180°$, equal vectors, 120°).",
-    "Concept 5: Lami's theorem and the equilibrant — the quantitative and graphical language of equilibrium."
+    "Concept 5: Lami's theorem and the equilibrant — the quantitative and graphical language of equilibrium.",
+    "Definition and significance of Multiplication of Vectors — Scalar (Dot) Product.",
+    "Definition and significance of Scalars and Vectors.",
+    "Definition and significance of Polygon Law of Vectors.",
+    "Definition and significance of Law of Parallelogram of Vectors.",
+    "Definition and significance of Unit Vector — Definition and Worked Example.",
+    "Definition and significance of Law of Triangle of Vectors — Statement and Derivation.",
+    "Definition and significance of Cross Product — Component Form and Area of Parallelogram."
   ],
   "importantTasks": [
     "Task 1: Derive the parallelogram law in writing (figure + perpendicular + Pythagoras + direction) without notes.",
@@ -167,5 +287,49 @@
     "Task 4: Solve the classic two-string hanging-weight problem with Lami's theorem for angles 30°/60° and 45°/45°.",
     "Task 5: Draw scale polygons for a given set of five forces and verify the resultant against the component method."
   ],
-  "visualType": "vsepr-theory"
+  "visualType": "vsepr-theory",
+  "numericals": [
+    "Use  a·b = a₁b₁+a₂b₂+a₃b₃  — pick reasonable values, solve, and check the units.",
+    "Use  |a×b| = |a||b|sinθ  — pick reasonable values, solve, and check the units.",
+    "Use  |a| = √(a²+b²+c²)  — pick reasonable values, solve, and check the units."
+  ],
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Triangle, parallelogram and polygon laws of vectors\"?",
+      "options": [
+        "Triangle",
+        "Parallelogram",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "Triangle",
+      "explanation": "Triangle is listed among the official sub-ideas of Triangle, parallelogram and polygon laws of vectors; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Triangle, parallelogram and polygon laws of vectors\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "A common examiner point on \"Scalar and vector products\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: triangle, parallelogram, polygon laws of vectors (within Vectors).",
+    "Out of scope here: topics of neighbouring units in Physics — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it.",
+    "Limit to remember: vectors have magnitude + direction; a = aî + bĵ + c k̂. |a| = √(a²+b²+c²)."
+  ]
 }

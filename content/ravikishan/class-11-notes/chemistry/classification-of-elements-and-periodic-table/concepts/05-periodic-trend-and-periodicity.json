@@ -36,12 +36,11 @@
     "❌ Electronegativity is directly measurable. ✅ It is a derived, scale-dependent parameter (Pauling, Mulliken, Allred–Rochow)."
   ],
   "practice": [
-    "Define atomic radius and explain the period and group trends using Z_eff.",
     "Arrange N³⁻, O²⁻, F⁻, Na⁺ and Mg²⁺ in order of increasing radius and justify the order.",
-    "Define ionisation energy and account for the Be > B and N > O anomalies.",
     "Why is the electron affinity of chlorine greater than that of fluorine?",
-    "Define electronegativity and use ΔEN to classify the bonds in HF, HCl and CH₄.",
-    "Explain the variation of metallic character across a period and down a group with examples."
+    "Explain the variation of metallic character across a period and down a group with examples.",
+    "one worked example for \"Periodic trend and periodicity: atomic radii, ionic radii…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "formulas": [
     "$$IE:\\ X(g)\\rightarrow X^{+}(g)+e^{-},\\qquad EA:\\ X(g)+e^{-}\\rightarrow X^{-}(g)$$",
@@ -51,11 +50,13 @@
   "universalFacts": [
     "H IE₁ = 1312 kJ mol⁻¹ (13.6 eV); He has the highest IE₁ (2372 kJ mol⁻¹); Cs one of the lowest (~376 kJ mol⁻¹).",
     "F is the most electronegative element (Pauling 4.0); Cs/Fr least (~0.7).",
-    "Isoelectronic radii: N³⁻ > O²⁻ > F⁻ > Na⁺ > Mg²⁺ > Al³⁺."
+    "Isoelectronic radii: N³⁻ > O²⁻ > F⁻ > Na⁺ > Mg²⁺ > Al³⁺.",
+    "answer pattern for \"Periodic trend and periodicity: atomic radii, ionic radii…\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [
     "**Problem:** Arrange Mg²⁺, Na⁺, F⁻, O²⁻ in decreasing size. **Solution:** they are isoelectronic (10 electrons), so the smallest nuclear charge gives the largest radius → O²⁻ (Z = 8) > F⁻ (9) > Na⁺ (11) > Mg²⁺ (12).",
-    "**Problem:** Which has the higher first ionisation energy, Be or B? **Solution:** Be (899 kJ mol⁻¹) > B (801 kJ mol⁻¹), since Be's 2s² is a filled subshell and its electron penetrates closer to the nucleus than B's 2p electron."
+    "**Problem:** Which has the higher first ionisation energy, Be or B? **Solution:** Be (899 kJ mol⁻¹) > B (801 kJ mol⁻¹), since Be's 2s² is a filled subshell and its electron penetrates closer to the nucleus than B's 2p electron.",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "importantNotes": [
     "Explain every trend with Z_eff (across) and n plus shielding (down) — the mark is for the reason, not the direction.",
@@ -63,5 +64,47 @@
     "State the radius type and the electronegativity scale whenever numbers are quoted."
   ],
   "visualType": "periodic-trends",
-  "tabGroup": "Periodic-Table-Trends-Learner-Notes"
+  "keyPoints": [
+    "• Periodic trend",
+    "• Periodicity: atomic radii",
+    "• Ionic radii",
+    "• Ionization energy",
+    "• Electron affinity",
+    "• Electronegativity"
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Periodic trend and periodicity: atomic radii, ionic radii…\" with one example.",
+    "compare \"Periodic trend\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Periodic trend and periodicity: atomic radii, ionic radii…\" and verify the answer is plausible."
+  ],
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Periodic trend and periodicity: atomic radii, ionic radii…\"?",
+      "options": [
+        "Periodic trend",
+        "Periodicity: atomic radii",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "A",
+      "explanation": "Periodic trend is listed among the official sub-ideas of Periodic trend and periodicity: atomic radii, ionic radii…; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Periodic trend and periodicity: atomic radii, ionic radii…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Covers only: periodic trend, periodicity: atomic radii, ionic radii, ionization energy (within Classification of Elements and Periodic Table).",
+    "Out of scope here: topics of neighbouring units in Chemistry — don't mix them.",
+    "State the limit / condition where a formula or rule stops being valid before applying it."
+  ],
+  "summary": "Periodic trend and periodicity: atomic radii, ionic radii… (Classification of Elements and Periodic Table, Chemistry, class-11-notes) covers Periodic trend, periodicity: atomic radii, ionic radii. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
 }
