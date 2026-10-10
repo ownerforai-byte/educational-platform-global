@@ -43,32 +43,20 @@
   "animation3D": "nuclear-physics",
   "motionGraphics": "nuclear-physics",
   "examples": [
-    "Example 1: Real-world application of Creation and annihilation; nuclear fission and fusion",
-    "Example 2: Practical demonstration of Creation and annihilation; nuclear fission and fusion concepts",
-    "Example 3: Numerical problem on Creation and annihilation; nuclear fission and fusion",
-    "Example 4: Diagram-based question on Creation and annihilation; nuclear fission and fusion",
-    "Example 5: Application in daily life involving Creation and annihilation; nuclear fission and fusion"
+    "Real-world application of Creation and annihilation; nuclear fission and fusion",
+    "Practical demonstration of Creation and annihilation; nuclear fission and fusion concepts",
+    "Diagram-based question on Creation and annihilation; nuclear fission and fusion",
+    "Application in daily life involving Creation and annihilation; nuclear fission and fusion"
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Creation and annihilation; nuclear fission and fusion with suitable example.",
     "Q2. Solve problems related to Creation and annihilation; nuclear fission and fusion.",
     "Q3. Differentiate between various aspects of Creation and annihilation; nuclear fission and fusion.",
     "Q4. Derive the key formula related to Creation and annihilation; nuclear fission and fusion.",
     "Q5. What are the applications of Creation and annihilation; nuclear fission and fusion?"
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Creation and annihilation; nuclear fission and fusion",
-    "Key Formula 2: Mathematical expression of Creation and annihilation; nuclear fission and fusion",
-    "Key Formula 3: Application formula for Creation and annihilation; nuclear fission and fusion",
-    "Key Formula 4: Derivation result for Creation and annihilation; nuclear fission and fusion",
-    "Key Formula 5: Important relation in Creation and annihilation; nuclear fission and fusion"
-  ],
-  "keyPoints": [
-    "Key Point 1: Fundamental definition of Creation and annihilation; nuclear fission and fusion",
-    "Key Point 2: Essential theorem or principle related to Creation and annihilation; nuclear fission and fusion",
-    "Key Point 3: Important condition or constraint for Creation and annihilation; nuclear fission and fusion",
-    "Key Point 4: Common applications of Creation and annihilation; nuclear fission and fusion",
-    "Key Point 5: Connection to other topics in Science"
+    "Application formula for Creation and annihilation; nuclear fission and fusion",
+    "Derivation result for Creation and annihilation; nuclear fission and fusion"
   ],
   "summary": "Creation and annihilation; nuclear fission and fusion is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
@@ -78,15 +66,7 @@
     "Note 4: Remember the units and dimensions involved in Creation and annihilation; nuclear fission and fusion",
     "Note 5: Creation and annihilation; nuclear fission and fusion frequently appears in examination questions"
   ],
-  "importantStatements": [
-    "Statement 1: Definition of Creation and annihilation; nuclear fission and fusion",
-    "Statement 2: Theorem related to Creation and annihilation; nuclear fission and fusion",
-    "Statement 3: Condition for Creation and annihilation; nuclear fission and fusion to be valid",
-    "Statement 4: Principle governing Creation and annihilation; nuclear fission and fusion",
-    "Statement 5: Corollary or consequence of Creation and annihilation; nuclear fission and fusion"
-  ],
   "importantNotes": [
-    "Note 1: Creation and annihilation; nuclear fission and fusion is based on fundamental principles",
     "Note 2: Remember the distinction between different types in Creation and annihilation; nuclear fission and fusion",
     "Note 3: Creation and annihilation; nuclear fission and fusion has both theoretical and practical significance",
     "Note 4: Study the derivations step by step for Creation and annihilation; nuclear fission and fusion",
@@ -100,23 +80,12 @@
     "Trick 5: Time-saving approach for Creation and annihilation; nuclear fission and fusion problems"
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Creation and annihilation; nuclear fission and fusion",
-    "Exam Tip 2: Practice previous year questions on Creation and annihilation; nuclear fission and fusion",
-    "Exam Tip 3: Creation and annihilation; nuclear fission and fusion carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Creation and annihilation; nuclear fission and fusion thoroughly",
-    "Exam Tip 5: Review common mistakes related to Creation and annihilation; nuclear fission and fusion"
+    "Focus on numerical problems from Creation and annihilation; nuclear fission and fusion",
+    "Practice previous year questions on Creation and annihilation; nuclear fission and fusion",
+    "Learn the derivations for Creation and annihilation; nuclear fission and fusion thoroughly",
+    "Review common mistakes related to Creation and annihilation; nuclear fission and fusion"
   ],
   "mcs": [
-    {
-      "question": "Which of the following best describes Creation and annihilation; nuclear fission and fusion?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
-      "answer": "A"
-    },
     {
       "question": "The primary application of Creation and annihilation; nuclear fission and fusion is in:",
       "options": [
@@ -172,6 +141,12 @@
     "Task 4: Practice previous year exam questions on Creation and annihilation; nuclear fission and fusion",
     "Task 5: Explain Creation and annihilation; nuclear fission and fusion to a peer or study group"
   ],
-  "duplicateType": 2,
-  "tabGroup": "creation-and-annihilation-nuclear-fission-and-fusion"
+  "keyPoints": [],
+  "importantStatements": [],
+  "visualType": "nuclear-reactions",
+  "specificConditions": [
+    "**Fission vs Fusion Energy Release:** Both release energy by moving toward higher $BE/A$ (iron peak). Fission splits heavy nuclei ($A > 56$) into medium fragments. Fusion combines light nuclei ($A < 56$) into heavier ones. Both increase the average $BE/A$ of the system.",
+    "**Chain Reaction Requirement:** Fission of $^{235}$U by thermal neutrons produces ~2.4 fast neutrons/fission. A sustained chain reaction requires at least 1 neutron to cause another fission ($k \\ge 1$). Critical mass is the minimum mass where neutron losses are balanced by productions. Moderators (graphite, water) slow neutrons to thermal energies to increase capture probability.",
+    "**Fusion Conditions:** Requires extreme temperature ($T \\sim 10^7-10^8$ K) for nuclei to overcome Coulomb barrier ($kT \\sim 1$ keV vs barrier $\\sim 1$ MeV). Quantum tunneling allows fusion at lower energies. Plasma confinement (magnetic/inertial) is needed to maintain density and temperature long enough for significant fusion (Lawson criterion: $n\\tau > 10^{20}$ m⁻³·s)."
+  ]
 }

@@ -15,7 +15,6 @@
     "Concluding the limit exists because both sides are 'big' — they must be the SAME FINITE number; $0/0$ or $-\\infty/+\\infty$ is a jump.",
     "Writing $\\lim = \\infty$ as a result — a divergent limit says the function is unbounded, not that it reached a value."
   ],
-  "practice": [],
   "universalFacts": [
     "The derivative is itself a limit, $f'(x)=\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}$, so differential calculus rests entirely on the limit concept.",
     "A speedometer reports a limit, not an average: it is the limit of average velocities as the averaging interval shrinks to zero."
@@ -50,13 +49,7 @@
     "The exclusion of $x=a$ in the epsilon-delta definition is the key subtlety: it is what makes a limit independent of the function's value at the point.",
     "$\\lim_{x\\to0}\\frac{\\sin x}{x}=1$ holds only in radians; in degrees the value is $\\frac{\\pi}{180}$."
   ],
-  "importantStatements": [
-    "Statement 1: $\\lim_{x\\to a}f(x)=L$ does not require $f(a)$ to be defined.",
-    "Statement 2: The two-sided limit exists if and only if both one-sided limits equal the same finite number.",
-    "Statement 3: $0/0$ indicates that substitution failed, not that the limit is zero.",
-    "Statement 4: A vertical asymptote occurs where the one-sided limits diverge with opposite signs.",
-    "Statement 5: If $\\lim_{x\\to\\infty}f(x)=L$ then $y=L$ is a horizontal asymptote."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "A limit is a boundary of behaviour, never an attained value — the same reason $f'(a)$ is independent of $f(a)$."
   ],
@@ -114,7 +107,6 @@
     "Evaluate limits using factorisation, conjugates and standard trigonometric limits.",
     "Locate vertical and horizontal asymptotes from limits."
   ],
-  "duplicateType": 1,
   "visualType": "limit",
   "topicSlug": "limitc",
   "numericals": [
@@ -124,5 +116,6 @@
     "**4. [Idea: the $1^\\infty$ family with a trigonometric inner function]** Evaluate $\\lim_{x \\to 0}\\left(1+\\sin x\\right)^{\\frac{1}{\\sin x}}$.\\newline\\newline**Solution:** Let $y = \\left(1+\\sin x\\right)^{1/\\sin x}$ and take logarithms:$\\newline\\ln y = \\dfrac{\\ln(1+\\sin x)}{\\sin x}$, which is $\\frac00$.\\newline\\newlineL'Hôpital:$\\newline\\lim_{x\\to0}\\dfrac{\\frac{\\cos x}{1+\\sin x}}{\\cos x} = \\lim_{x\\to0}\\dfrac{1}{1+\\sin x} = 1$.\\newline\\newlineSo $\\ln y \\to 1$, hence $y \\to e$.\\newline\\newline**Answer:** $e$. **Check:** this is the general identity $\\lim_{u\\to0}(1+u)^{1/u}=e$ with $u = \\sin x$.",
     "**5. [Idea: the standard limit $\\lim\\frac{e^u-1}{u}=1$ does all the work]** Evaluate $\\lim_{x \\to 0}\\dfrac{2^{\\sin^2 x} - 1}{x^2}$.\\newline\\newline**Solution:** The form is $\\frac00$. Direct differentiation is circular, and a squeeze using $-x^2 \\le \\sin^2x \\le x^2$ only bounds the expression by $\\frac{2^{x^2}-1}{x^2}$, which tends to $\\ln 2$ — **a non-zero bound proves nothing**.\\newline\\newlineConvert the base instead: $2^{\\sin^2x} = e^{\\sin^2x \\ln 2}$. Set $u = \\sin^2 x\\,\\ln 2$, so $u \\to 0$, and factor the expression into three pieces each with a known limit:$\\newline\\lim_{x\\to0}\\underbrace{\\frac{e^u-1}{u}}_{\\to\\,1}\\cdot\\underbrace{\\frac{u}{\\sin^2x}}_{\\to\\,\\ln2}\\cdot\\underbrace{\\frac{\\sin^2x}{x^2}}_{\\to\\,1}$.\\newline\\newline**Answer:** $1 \\times \\ln 2 \\times 1 = \\ln 2$. **Lesson:** when a squeeze bound tends to a non-zero constant, switch to factorisation.",
     "**6. [Idea: chain an unknown function's limit through a rationalising identity]** Given $\\lim_{x \\to 2}\\dfrac{f(x)-f(2)}{x-2} = 3$ and $f(2) = 6$, evaluate $\\lim_{x \\to 2}\\dfrac{f^2(x) - 36}{x^2-4}$.\\newline\\newline**Solution:** Direct substitution gives $\\frac00$ and nothing can be computed without more information, so factor both sides:$^{\\bullet}$ Numerator: $f^2(x)-36 = \\left(f(x)-f(2)\\right)\\left(f(x)+f(2)\\right)$ since $36 = f^2(2)$.$^{\\bullet}$ Denominator: $x^2-4 = (x-2)(x+2)$.\\newline\\newlineThen$\\newline\\lim_{x\\to2}\\dfrac{f(x)-f(2)}{x-2}\\cdot\\dfrac{f(x)+f(2)}{x+2} = 3 \\cdot \\dfrac{6+6}{2+2} = 3 \\cdot 3$.\\newline\\newline**Answer:** $9$."
-  ]
+  ],
+  "practice": []
 }

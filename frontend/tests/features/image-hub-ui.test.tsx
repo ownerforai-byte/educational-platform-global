@@ -4,13 +4,13 @@ import { ImageHub } from "@/features/image-hub";
 import type { ImageHistoryRow } from "@/features/image-hub/history";
 
 /**
- * UI contract for the Image Hub. The route is owner-only (owner emails since
+ * UI contract for the Diagram Hub. The route is owner-only (owner emails since
  * 2026-10-05), so a browser can reach it in production only with an owner
  * session — this render suite still pins the behaviour without a network.
  *
  * Three contracts now:
  *   · the composer modes (ACADEMIC FIGURE → POST /api/ai/figure, PICTURE →
- *     the Agnes raster chain, puter.js as the browser fallback) exactly as
+ *     the server raster chain, puter.js as the browser fallback) exactly as
  *     before;
  *   · the account history: the gallery loads from GET /api/ai/image-history
  *     on mount, and a browser-drawn puter.js picture is POSTed there right
@@ -158,6 +158,11 @@ describe("ImageHub", () => {
     );
     expect(screen.getByText(/Labelled structure · vector figure/)).not.toBeNull();
     expect(screen.getByText(/Parts & details \(1\)/)).not.toBeNull();
+    // The saved picture row above stores the provider's raw model id — that is
+    // what sessions wrote before the rename — so the badge must still read the
+    // hub's own wording and never surface the vendor name (owner 2026-10-07).
+    expect(screen.getAllByText("Diagram").length).toBeGreaterThan(0);
+    expect(screen.queryByText(/agnes/i)).toBeNull();
     expect(historyCalls("GET")).toBe(1);
   });
 
@@ -187,7 +192,7 @@ describe("ImageHub", () => {
     expect(historyCalls("POST")).toBe(0);
   });
 
-  it("keeps the raster chain as the figure-mode fallback (figure → Agnes → puter)", async () => {
+  it("keeps the raster chain as the figure-mode fallback (figure → server → puter)", async () => {
     render(<ImageHub />);
 
     fireEvent.change(promptBox(), { target: { value: "a figure the writer refuses" } });

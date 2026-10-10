@@ -53,6 +53,28 @@ const TEMPLATE_FRAME_LINE = [
   /no diagram → ✅ add one labelled figure/i,
   /^Standard result for .+ — state it and verify by substituting a simple case\.?\s*$/i,
   /^\s*(key formula|key point|example)\s+\d+:/i,
+  // The third generator mould, which wrapped every topic title as
+  // "X (Unit, Subject, class-N-notes) covers Y. Master the standard form, the
+  // sub-ideas and one worked example; most exam questions … are built from
+  // exactly these." — pure meta-advice, no subject knowledge. Anchored on the
+  // line START and on the first parenthesis pair, so a real recap that merely
+  // CONTAINS the frame mid-line is never killed with it.
+  /^\s*[^()]{1,240}\(\s*[^()]*\bclass-(?:11|12)[a-z0-9-]*\s*\)\s*covers\b.*\bmaster the standard form\b/i,
+  // …and its short form, written for scaffold files that never got a real
+  // summary: "X covers essential principles and applications."
+  /^\s*[^()]{1,120}\s+covers\s+(only\s+)?essential principles and applications\.?\s*$/i,
+  // The empty-crosslink frame the audit already knew as "connects to other
+  // topics": "Connection of X to other topics" names nothing and teaches less.
+  /^\s*connection of .+ to other topics\.?\s*$/i,
+  // …and the rest of the same scaffold family the deepening pass kept meeting
+  // in placeholder files: numbered statements, theorem/condition stubs,
+  // "based on fundamental principles", "recall the formula for".
+  /^\s*statement\s+\d+\s*:/i,
+  /^\s*theorem related to\b/i,
+  /^\s*condition for .+ to be valid\.?\s*$/i,
+  /^\s*.{1,80}\s+is based on fundamental principles\.?\s*$/i,
+  /^\s*definition and significance of\b/i,
+  /^\s*recall the formula for\b/i,
 ];
 
 /** True when a line is a generator frame rather than knowledge. */

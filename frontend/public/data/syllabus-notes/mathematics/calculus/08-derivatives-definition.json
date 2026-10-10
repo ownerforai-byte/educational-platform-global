@@ -42,13 +42,7 @@
     "Where a formula is quoted it is valid only under the conditions stated; Treating $\\frac{dy}{dx}$ as an ordinary fraction and cancelling terms across the derivative.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [
-    "Statement 1: $f'(x)=\\lim_{h\\to0}\\frac{f(x+h)-f(x)}{h}$.",
-    "Statement 2: Differentiability at a point implies continuity at that point.",
-    "Statement 3: A differentiable function need not have a continuous derivative.",
-    "Statement 4: $f'(x)$ exists only if $f'(x^-)=f'(x^+)$.",
-    "Statement 5: A vertical tangent corresponds to an infinite derivative, not to a finite one."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Topic anchor: Two practical routes  for a familiar function use the rule table, but for an unfamiliar one use first principles."
   ],

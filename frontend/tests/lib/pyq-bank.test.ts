@@ -33,8 +33,9 @@ const SUBJECTS = ["physics", "chemistry", "mathematics", "biology", "english", "
 type YearBucket = { questions: unknown[]; units: string[]; titles: string[] };
 
 /** Mirrors getSubjectPyqBank()'s year aggregation for a subject. */
-function aggregate(subjectSlug: string): Map<number, YearBucket> {
-  const prefixes = [`class-11-notes/${subjectSlug}/`, `class-11/${subjectSlug}/`];
+function aggregate(subjectSlug: string, classSlug = "class-11-notes"): Map<number, YearBucket> {
+  const classFolder = classSlug.replace(/-notes$/, "");
+  const prefixes = [`${classSlug}/${subjectSlug}/`, `${classFolder}/${subjectSlug}/`];
   const byYear = new Map<number, YearBucket>();
   for (const [path, file] of Object.entries(index)) {
     if (!prefixes.some((p) => path.startsWith(p))) continue;
@@ -73,6 +74,39 @@ describe("PYQ bank — data source actually carries questions", () => {
   });
 });
 
+describe("PYQ bank — Class 12 banks reach the loader", () => {
+  // getSubjectPyqBank("class-12-notes", …) accepts keys under either
+  // "class-12-notes/<subject>/" or "class-12/<subject>/" — a bank registered
+  // under any other prefix renders nothing while looking healthy.
+  it.each(SUBJECTS)("class-12 %s has indexed PYQ questions", (subject) => {
+    const byYear = aggregate(subject, "class-12-notes");
+    expect(byYear.size).toBeGreaterThan(0);
+    const total = [...byYear.values()].reduce((n, b) => n + b.questions.length, 0);
+    expect(total).toBeGreaterThan(0);
+  });
+
+  it.each(SUBJECTS)("class-12 %s covers every authored unit within the year cap", (subject) => {
+    // A unit is unreachable if every card it appears on is dropped by maxYears.
+    const MAX_YEARS = 10;
+    const all = aggregate(subject, "class-12-notes");
+    const surviving = new Set(
+      [...all.entries()]
+        .sort((a, b) => b[0] - a[0])
+        .slice(0, MAX_YEARS)
+        .flatMap(([, b]) => b.units),
+    );
+    const authored = new Set(
+      Object.entries(index)
+        .filter(([p, f]) => p.startsWith(`class-12-notes/${subject}/`) && (f.questions?.length ?? 0) > 0)
+        .map(([, f]) => f.unitSlug ?? "general"),
+    );
+    expect(authored.size).toBeGreaterThan(0);
+    for (const unit of authored) {
+      expect(surviving.has(unit), `class-12 ${subject}/${unit} is outside the ${MAX_YEARS}-year cap`).toBe(true);
+    }
+  });
+});
+
 describe("PYQ bank — one card per exam year, spanning units", () => {
   it.each(SUBJECTS)("%s aggregates multiple units into a year card", (subject) => {
     for (const [year, bucket] of aggregate(subject)) {
@@ -93,14 +127,27 @@ describe("PYQ bank — one card per exam year, spanning units", () => {
     // The card for an aggregated year must not read like a single unit's bank
     // (that was the bug: "…— Dynamics — 2023 + others"). Every file in a year
     // shares one subject prefix, so the subject-level title is recoverable.
+    //
+    // A subject has more than one legitimate label. Nepali-medium papers in the
+    // older `class-11/<subject>/pyqs/` tree are titled "NEB Class 11 नेपाली",
+    // which is the CORRECT subject-level name for them — the invariant being
+    // protected is "subject level, not unit level", so the localized label
+    // satisfies it and rejecting it would only force a wrong title back on a
+    // real paper.
+    const SUBJECT_LABELS: Record<string, string[]> = {
+      nepali: ["Nepali", "नेपाली"],
+    };
     for (const subject of SUBJECTS) {
-      const label = `NEB Class 11 ${subject[0].toUpperCase()}${subject.slice(1)}`;
+      const labels = [
+        `NEB Class 11 ${subject[0].toUpperCase()}${subject.slice(1)}`,
+        ...(SUBJECT_LABELS[subject] ?? []).map((localized) => `NEB Class 11 ${localized}`),
+      ];
       for (const [year, bucket] of aggregate(subject)) {
         if (bucket.units.length < 2) continue; // single-unit years keep their own title
         for (const title of bucket.titles) {
           expect(
-            title.startsWith(label),
-            `${subject} ${year}: "${title}" does not start with "${label}"`,
+            labels.some((label) => title.startsWith(label)),
+            `${subject} ${year}: "${title}" starts with none of ${JSON.stringify(labels)}`,
           ).toBe(true);
         }
         // titles differ only by unit/year, so they share a real common prefix
@@ -138,22 +185,26 @@ describe("PYQ bank — one card per exam year, spanning units", () => {
 describe("PYQ bank — authored banks are registered", () => {
   it("every unit/year bank on disk has an index entry with questions", () => {
     const fs = require("node:fs") as typeof import("node:fs");
-    const contentRoot = join(process.cwd(), "..", "content/ravikishan/class-11-notes");
+    const classSlugs = ["class-11-notes", "class-12-notes"] as const;
     const missing: string[] = [];
     let banks = 0;
-    for (const subject of SUBJECTS) {
-      const subjectDir = join(contentRoot, subject);
-      if (!fs.existsSync(subjectDir)) continue;
-      for (const unit of fs.readdirSync(subjectDir)) {
-        const pyqDir = join(subjectDir, unit, "pyqs");
-        if (!fs.existsSync(pyqDir)) continue;
-        for (const f of fs.readdirSync(pyqDir)) {
-          if (!/^\d{2}-neb-\d{4}\.json$/.test(f)) continue;
-          banks += 1;
-          const key = `class-11-notes/${subject}/${unit}/pyqs/${f}`;
-          const entry = index[key];
-          if (!entry || !Array.isArray(entry.questions) || entry.questions.length === 0) {
-            missing.push(key);
+    for (const classSlug of classSlugs) {
+      const contentRoot = join(process.cwd(), "..", "content/ravikishan", classSlug);
+      if (!fs.existsSync(contentRoot)) continue;
+      for (const subject of SUBJECTS) {
+        const subjectDir = join(contentRoot, subject);
+        if (!fs.existsSync(subjectDir)) continue;
+        for (const unit of fs.readdirSync(subjectDir)) {
+          const pyqDir = join(subjectDir, unit, "pyqs");
+          if (!fs.existsSync(pyqDir)) continue;
+          for (const f of fs.readdirSync(pyqDir)) {
+            if (!/^\d{2}-neb-\d{4}\.json$/.test(f)) continue;
+            banks += 1;
+            const key = `${classSlug}/${subject}/${unit}/pyqs/${f}`;
+            const entry = index[key];
+            if (!entry || !Array.isArray(entry.questions) || entry.questions.length === 0) {
+              missing.push(key);
+            }
           }
         }
       }

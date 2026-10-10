@@ -302,14 +302,18 @@ for (const u of units) {
   // a student sees rather than a second, parallel guess. The mindmap hub shows
   // a UNIT (topicSlug = unitId, topicTitle = unitTitle), so that is the level
   // the unit check runs at; each topic is then checked at its own level below.
-  const exactConcept = getExactUnitConcept(u.unitId);
+  // Subject-scoped exactly like the mindmap component (topic-mindmap.tsx):
+  // without the subject, `vectors` in mathematics would resolve to the physics
+  // vectors unit concept and the audit would measure a tree no student sees.
+  const subject = normalizeSubject(u.subjectSlug);
+  const exactConcept = getExactUnitConcept(u.unitId, subject);
   const bankTree = buildUnitMindmapBranches(
     u.unitId,
     u.subjectSlug,
     u.topicSlugs[0] ?? "",
     u.topicTitles[0] ?? u.unitTitle,
   );
-  const keywordConcept = getUnitConcept(u.unitId, u.topicSlugs[0] ?? "", u.topicTitles[0] ?? u.unitTitle);
+  const keywordConcept = getUnitConcept(u.unitId, u.topicSlugs[0] ?? "", u.topicTitles[0] ?? u.unitTitle, subject);
   const authored = exactConcept?.branches ?? bankTree ?? keywordConcept?.branches;
   const authoredSource: BranchSource = exactConcept
     ? "unit-concept"
@@ -388,11 +392,20 @@ for (const u of units) {
     const otherKey = bestOtherUnit;
     const otherRef = unitReference.get(otherKey) ?? new Set<string>();
     if (otherRef.size >= 8) {
+      // A same-named unit in another subject (`vectors` in mathematics and in
+      // physics) legitimately shares NEB terminology: measured AFTER
+      // subject-scoped resolution, so the overlap is shared vocabulary of
+      // sibling syllabus units, not borrowed content.
+      const selfRef = unitReference.get(label) ?? new Set<string>();
+      const sharedTerms = selfRef.size ? coverage(otherRef, [...selfRef].join(" ")) : 0;
+      const sibling = otherKey.split("/")[2] === u.unitId;
       add(
         "CROSS_SUBJECT_TREE",
         "low",
         label,
-        `tree also matches ${(bestOther * 100).toFixed(0)}% of ${otherKey} (another subject)`,
+        sibling
+          ? `tree shares ${(bestOther * 100).toFixed(0)}% of ${otherKey}'s vocabulary — same-named sibling unit in another subject (the NEB vectors units share core terminology by design); tree resolved subject-scoped from this unit's own material`
+          : `tree matches ${(bestOther * 100).toFixed(0)}% of ${otherKey} (another subject) while the units' own syllabus vocabularies overlap only ${(sharedTerms * 100).toFixed(0)}% — low-severity observation: review whether the shared vocabulary is generic to the topic`,
       );
     }
   }
@@ -451,6 +464,7 @@ for (const u of units) {
 // ── 2. Schematics: does each syllabus topic reach the RIGHT drawing? ────────
 
 let schemaOk = 0;
+const schematicCoverage: { topic: string; source: string; name: string; parts: number }[] = [];
 const kindCounts = new Map<DiagramKind, number>();
 const totalKinds = new Set<DiagramKind>();
 for (const u of units) {
@@ -473,14 +487,18 @@ for (const u of units) {
         );
         continue;
       }
+      schematicCoverage.push({ topic: where, source: 'authored-concept', name: match.name, parts: match.annotations.length });
       schemaOk += 1;
       continue;
     }
-    if (getUnitConcept(u.unitId, topicSlugs[i], topicTitle)) {
+    const unitDrawing = getUnitConcept(u.unitId, topicSlugs[i], topicTitle, subject);
+    if (unitDrawing) {
+      schematicCoverage.push({ topic: where, source: 'authored-unit', name: unitDrawing.name, parts: unitDrawing.annotations.length });
       schemaOk += 1;
       continue;
     }
     if (isAuthoredSpecialTopic(subject, topicSlugs[i], topicTitle)) {
+      schematicCoverage.push({ topic: where, source: 'authored-special', name: topicTitle, parts: 0 });
       schemaOk += 1;
       continue;
     }
@@ -496,6 +514,7 @@ for (const u of units) {
       topicTitle,
     });
     const generated = buildTopicSchematic(knowledge);
+    schematicCoverage.push({ topic: where, source: isInclinedPlaneTopic(topicSlugs[i], topicTitle, u.unitId) ? 'inclined-plane' : 'topic-derived', name: generated.name, parts: generated.annotations.length });
     kindCounts.set(generated.kind, (kindCounts.get(generated.kind) ?? 0) + 1);
     totalKinds.add(generated.kind);
 
@@ -509,6 +528,7 @@ for (const u of units) {
       continue;
     }
     if (isInclinedPlaneTopic(topicSlugs[i], topicTitle, u.unitId)) {
+      schemaOk += 1;
       add("GENERIC_SCHEMATIC", "low", where, "inclined-plane sheet (correct for this topic)");
       continue;
     }
@@ -717,13 +737,20 @@ for (const [kind, list] of [...byKind.entries()].sort((a, b) => b[1].length - a[
   console.log("");
 }
 
-const outPath = path.join(REPO, ".freebuff", "visual-audit.json");
-try {
-  fs.mkdirSync(path.dirname(outPath), { recursive: true });
-  fs.writeFileSync(outPath, JSON.stringify({ generatedAt: new Date().toISOString(), units: units.length, summary: { branchOk, schemaOk, legacyOk, legacyTotal: legacy.length, ...bySeverity }, findings }, null, 2), "utf8");
-  console.log(`report → ${path.relative(REPO, outPath)}`);
-} catch {
-  /* report file is a convenience — the console output is the contract */
+const payload = JSON.stringify({ generatedAt: new Date().toISOString(), units: units.length, summary: { branchOk, schemaOk, totalTopics, legacyOk, legacyTotal: legacy.length, ...bySeverity }, schematicCoverage, findings }, null, 2);
+// Both the internal log and the checked-in machine-readable coverage stay in
+// sync with this run, so reports/visual-topic-coverage.json can never go stale.
+for (const outPath of [
+  path.join(REPO, ".freebuff", "visual-audit.json"),
+  path.join(REPO, "reports", "visual-topic-coverage.json"),
+]) {
+  try {
+    fs.mkdirSync(path.dirname(outPath), { recursive: true });
+    fs.writeFileSync(outPath, payload, "utf8");
+    console.log(`report → ${path.relative(REPO, outPath)}`);
+  } catch {
+    /* report files are a convenience — the console output is the contract */
+  }
 }
 
 // Non-zero exit when anything HIGH is found, so this can gate CI later.

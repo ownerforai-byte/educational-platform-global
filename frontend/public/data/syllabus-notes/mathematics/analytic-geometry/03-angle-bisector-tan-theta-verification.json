@@ -5,63 +5,19 @@
   "topicTitle": "Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of lines, bisectors of the angles between pair of lines",
   "relevance": 71,
   "notes": [
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
-  ],
-  "confusion": [
-    "Check formula conditions."
-  ],
-  "practice": [],
-  "universalFacts": [
-    "Foundational for advanced topics."
+    "As a cross-check, find the angle θ between one of the original lines and one candidate bisector using: tan θ = |(m₁ − m_b)/(1 + m₁·m_b)|, where m₁ is the original line's slope and m_b is the bisector's slope",
+    "**If tan θ < 1** (θ < 45°): since θ is half the angle between the two original lines, the total angle is less than 90°, so this bisector is the **acute** angle bisector",
+    "**If tan θ > 1** (θ > 45°): this bisector is the **obtuse** angle bisector",
+    "**Worked check:** slope of Bisector 1 (6x + 6y − 1 = 0) is m_b = −6/6 = −1; with the original line's slope m₁ = −1/2: tan θ = |(−1/2 − (−1))/(1 + (−1/2)(−1))| = |(1/2)/(3/2)| = 1/3",
+    "Since tan θ = 1/3 < 1, this confirms 6x + 6y − 1 = 0 is definitively the **acute angle bisector** — matching the a₁a₂ + b₁b₂ method"
   ],
   "animation3D": "analytic-geometry",
   "motionGraphics": "analytic-geometry",
-  "examples": [],
-  "practiceQuestions": [],
-  "formulas": [
-    "Key relationship: [variable formula]."
-  ],
-  "keyPoints": [
-    "Connection of Angle Bisector — Verifying with the tan θ Method to other topics"
-  ],
+  "keyPoints": [],
   "summary": "Angle Bisector — Verifying with the tan θ Method covers essential principles and applications.",
-  "specialNotes": [
-    "Check conditions for Angle Bisector — Verifying with the tan θ Method.",
-    "Angle Bisector — Verifying with the tan θ Method connects to other topics."
-  ],
-  "importantStatements": [
-    "Statement 1: Definition of Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of lines, bisectors of the angles between pair of lines",
-    "Statement 2: Theorem related to Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of lines, bisectors of the angles between pair of lines",
-    "Statement 3: Condition for Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of lines, bisectors of the angles between pair of lines to be valid",
-    "Statement 4: Principle governing Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of lines, bisectors of the angles between pair of lines",
-    "Statement 5: Corollary or consequence of Pair of straight lines: general equation of second degree in x and y, condition for representing a pair of lines, homogenous second-degree equation in x and y, angle between pair of lines, bisectors of the angles between pair of lines"
-  ],
-  "importantNotes": [
-    "Angle Bisector — Verifying with the tan θ Method is based on fundamental principles."
-  ],
-  "examShortTricks": [
-    "Recall the formula for Angle Bisector — Verifying with the tan θ Method."
-  ],
-  "examNotes": [
-    "Focus on Angle Bisector — Verifying with the tan θ Method problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Which describes Angle Bisector — Verifying with the tan θ Method?",
-      "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Definition and significance of Angle Bisector — Verifying with the tan θ Method."
-  ],
-  "importantTasks": [],
-  "duplicateType": 1,
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
+  "importantConcepts": [],
   "visualType": "angle-bisector-formula"
 }

@@ -1382,6 +1382,42 @@ code, kbd, samp, pre {
   -webkit-user-drag: none;
 }
 
+/* Row diagrams (owner request 2026-10-06: "insert the diagrams, in a
+   rectangular box at conceptual place based on their need"). A rail row may
+   carry a `figure`; it renders as this rectangular box directly under the row's
+   own text, so the picture sits AT the concept it explains — Concept, Formula,
+   Derivation, Special cases, wherever the card attached it — instead of in a
+   detached figure gallery. Like note figures (.edu-visual), a drawing is inked
+   on white "paper" in both themes because the strokes are dark and the fills
+   translucent, exactly how a textbook figure is printed. Height is capped so
+   one figure can never stretch a card past its neighbours in the rail. */
+.rail-figure {
+  display: block;
+  margin-top: 0.55rem;
+  padding: 0.5rem;
+  border: 1px solid hsl(var(--border) / 0.9);
+  border-radius: 0.625rem;
+  background: #ffffff;
+}
+.rail-figure__canvas svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 15rem;
+  margin: 0 auto;
+  color: #0f172a;
+}
+.rail-figure__canvas svg text {
+  font-family: inherit;
+}
+.rail-figure__caption {
+  margin-top: 0.3rem;
+  text-align: center;
+  font-size: 0.68rem;
+  line-height: 1.35;
+  color: #475569;
+}
+
 @media (prefers-reduced-motion: reduce) {
   /* No marquee for readers who ask for less motion: the rail becomes a plain
      horizontal scroller, the duplicate loop copy is dropped, and the mask is

@@ -7,9 +7,11 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** 1 mole = 6.022×10²³ entities (Avogadro constant, Nₐ). Molar mass (M) is g·mol⁻¹; for a compound M = Σ(atomic masses).",
-    "**Fact.** n (mol) = mass/M = volume(ideal gas, STP)/22.4 L = N/Nₐ.",
-    "**Fact.** Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100."
+    "**Law of conservation of mass.** Lavoisier: matter is neither created nor destroyed in a chemical reaction, so total reactant mass equals total product mass.",
+    "**Law of definite proportions.** Proust: a pure compound always contains the same elements in the same fixed proportion by mass, whatever its source — water is always 11.1% hydrogen and 88.9% oxygen by mass.",
+    "**Law of multiple proportions.** Dalton: when two elements form several compounds, the masses of one combining with a fixed mass of the other stand in simple whole-number ratios — CO and CO₂ contain 16 g and 32 g oxygen per 12 g carbon.",
+    "**Gay-Lussac's law of gaseous volumes.** Gaseous reactants and products at the same temperature and pressure combine in simple whole-number ratios of volume.",
+    "**Avogadro's law.** Equal volumes of gases at the same temperature and pressure contain equal numbers of molecules, which explains Gay-Lussac's volume ratios."
   ],
   "confusion": [
     "❌ skip the key fact → ✅ 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses).."
@@ -57,17 +59,6 @@
       ],
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    },
-    {
-      "question": "Which of these is a governing / standard formula associated with \"Laws of stoichiometry\"?",
-      "options": [
-        "n = m / M",
-        "x + y = z (placeholder)",
-        "No formula applies",
-        "E = mc² only"
-      ],
-      "answer": "n = m / M",
-      "explanation": "n = m / M is the standard form used for this topic."
     }
   ]
 }

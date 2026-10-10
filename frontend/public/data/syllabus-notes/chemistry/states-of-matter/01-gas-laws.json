@@ -28,14 +28,18 @@
     "• Each law needs a fixed mass of gas and holds P, or V, or T constant — applying two at once to a changing mass gives wrong answers.",
     "• Dalton's law applies only to non-reacting, non-associated ideal gases; it fails for reacting mixtures (NH₃ + HCl → NH₄Cl) and for gases that dissolve appreciably in the liquid present.",
     "• Graham's law is strictly valid for gases at equal temperature and pressure and for effusion through a small hole; it needs correction for high pressures, for heavier/polyatomic molecules and for diffusion through porous media.",
-    "• Avogadro's law assumes equal molecular behaviour, though real molecules of different size and polarity behave differently; and the combined equation cannot represent a real gas — the van der Waals equation is required."
+    "• Avogadro's law assumes equal molecular behaviour, though real molecules of different size and polarity behave differently; and the combined equation cannot represent a real gas — the van der Waals equation is required.",
+    "**Fact.** Ideal gas equation PV = nRT; from kinetic theory P = ⅓ (Nm/m)⟨c²⟩, so PV = ⅓N m⟨c²⟩.",
+    "**Fact.** r.m.s. speed c_rms = √(3RT/M); mean kinetic energy per mole = 3RT/2, per molecule = 3k_BT/2.",
+    "**Fact.** Real gases deviate near condensation; Van der Waals: (P + a n²/V²)(V − nb) = nRT."
   ],
   "confusion": [
     "❌ Boyle's law means PV is always constant. ✅ Only for a *fixed mass* at *constant temperature*; PV changes when T or n changes.",
     "❌ Doubling the Celsius temperature doubles the volume. ✅ Charles' law uses kelvin: 10 °C → 40 °C is a 293 → 313 K change, not a ×4 change.",
     "❌ Dalton's law works for any gas mixture. ✅ It requires non-reacting gases; NH₃ and HCl react, so partial pressures are not additive.",
     "❌ Graham's law compares diffusion rates directly with molar masses. ✅ Rates compare as the inverse square root of molar mass (or density).",
-    "❌ Gases obey PV = nRT exactly. ✅ Real gases obey it only at low P and high T; deviation is measured by the compressibility factor Z."
+    "❌ Gases obey PV = nRT exactly. ✅ Real gases obey it only at low P and high T; deviation is measured by the compressibility factor Z.",
+    "❌ skip the key fact → ✅ ideal gas equation pv = nrt; from kinetic theory p = ⅓ (nm/m)⟨c²⟩, so pv = ⅓n m⟨c²⟩.."
   ],
   "practice": [
     "State Boyle's, Charles' and Avogadro's laws and sketch their graphical representations.",
@@ -43,22 +47,31 @@
     "Derive the combined gas equation from Boyle's, Charles' and Avogadro's laws and hence obtain PV = nRT.",
     "State Dalton's law of partial pressures and explain how it is used when a gas is collected over water.",
     "State Graham's law of diffusion and use it to find the ratio of diffusion rates of O₂ and H₂.",
-    "State the limitations of the gas laws."
+    "State the limitations of the gas laws.",
+    "one worked example for \"Gas laws: Boyle's law, Charles' law, Avogadro's law, comb…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "formulas": [
     "$$\\text{Boyle: }P_{1}V_{1}=P_{2}V_{2};\\qquad \\text{Charles: }\\frac{V_{1}}{T_{1}}=\\frac{V_{2}}{T_{2}};\\qquad \\text{Gay-Lussac: }\\frac{P_{1}}{T_{1}}=\\frac{P_{2}}{T_{2}}$$",
     "$$\\text{Combined: }\\frac{P_{1}V_{1}}{T_{1}}=\\frac{P_{2}V_{2}}{T_{2}};\\qquad \\text{Ideal: }PV=nRT$$",
     "$$P_{\\text{total}}=P_{1}+P_{2}+\\dots;\\qquad P_{i}=x_{i}P_{\\text{total}}$$",
-    "$$\\frac{r_{1}}{r_{2}}=\\sqrt{\\frac{d_{2}}{d_{1}}}=\\sqrt{\\frac{M_{2}}{M_{1}}}$$"
+    "$$\\frac{r_{1}}{r_{2}}=\\sqrt{\\frac{d_{2}}{d_{1}}}=\\sqrt{\\frac{M_{2}}{M_{1}}}$$",
+    "PV = nRT",
+    "c_rms = √(3RT/M)",
+    "KE_mole = 3RT/2"
   ],
   "universalFacts": [
     "Molar volume of any gas = 22.4 L at STP (0 °C, 1 atm) and ≈24 L at RTP (25 °C, 1 bar).",
     "R = 8.314 J K⁻¹ mol⁻¹ = 0.0821 L atm K⁻¹ mol⁻¹ = 1.987 cal K⁻¹ mol⁻¹.",
-    "Absolute zero = −273.15 °C = 0 K; Charles' plot extrapolates to zero volume there."
+    "Absolute zero = −273.15 °C = 0 K; Charles' plot extrapolates to zero volume there.",
+    "Ideal gas equation PV = nRT; from kinetic theory P = ⅓ (Nm/m)⟨c²⟩, so PV = ⅓N m⟨c²⟩.",
+    "r.m.s. speed c_rms = √(3RT/M); mean kinetic energy per mole = 3RT/2, per molecule = 3k_BT/2.",
+    "Real gases deviate near condensation; Van der Waals: (P + a n²/V²)(V − nb) = nRT."
   ],
   "examples": [
     "**Problem:** 500 cm³ of a gas at 27 °C and 700 mm Hg — find the volume at STP. **Solution:** V₂ = P₁V₁T₂/(P₂T₁) = (700 × 500 × 273)/(760 × 300) ≈ 419 cm³.",
-    "**Problem:** Ratio of diffusion rates of H₂ and O₂. **Solution:** r(H₂)/r(O₂) = √(32/2) = 4, i.e. hydrogen diffuses four times faster."
+    "**Problem:** Ratio of diffusion rates of H₂ and O₂. **Solution:** r(H₂)/r(O₂) = √(32/2) = 4, i.e. hydrogen diffuses four times faster.",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "importantNotes": [
     "Always convert temperature to kelvin and keep pressure units consistent before substituting in the combined gas equation.",
@@ -66,5 +79,50 @@
     "Cite the limitation near the critical point — liquefaction by compression alone fails above T_c."
   ],
   "visualType": "gas-laws",
-  "tabGroup": "States-Of-Matter-Learner-Notes"
+  "keyPoints": [
+    "• Gas laws",
+    "• Boyle's law",
+    "• Charles' law",
+    "• Avogadro's law",
+    "• Combined gas equation",
+    "• Dalton's law of partial pressure"
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Gas laws: Boyle's law, Charles' law, Avogadro's law, comb…\" with one example.",
+    "compare \"Gas laws\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Gas laws: Boyle's law, Charles' law, Avogadro's law, comb…\" and verify the answer is plausible."
+  ],
+  "numericals": [
+    "Use  PV = nRT  — pick reasonable values, solve, and check the units.",
+    "Use  c_rms = √(3RT/M)  — pick reasonable values, solve, and check the units.",
+    "Use  KE_mole = 3RT/2  — pick reasonable values, solve, and check the units."
+  ],
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Gas laws: Boyle's law, Charles' law, Avogadro's law, comb…\"?",
+      "options": [
+        "Gas laws",
+        "Boyle's law",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "Gas laws",
+      "explanation": "Gas laws is listed among the official sub-ideas of Gas laws: Boyle's law, Charles' law, Avogadro's law, comb…; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Gas laws: Boyle's law, Charles' law, Avogadro's law, comb…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Limit to remember: ideal gas equation pv = nrt; from kinetic theory p = ⅓ (nm/m)⟨c²⟩, so pv = ⅓n m⟨c²⟩."
+  ],
+  "summary": "Gas laws: Boyle's law, Charles' law, Avogadro's law, comb… (States of Matter, Chemistry, class-11-notes) covers Gas laws, Boyle's law, Charles' law. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
 }

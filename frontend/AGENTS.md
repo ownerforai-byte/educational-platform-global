@@ -106,6 +106,25 @@ are DATA, not code — any agent adds them without touching the frontend:
    JSON or a wrong `schema` fails `--check`.
 5. Extra cards for a unit go in `<unit>--<kebab>.rail.json` (same schema);
    they stream after the canonical card, before the Class 12 teaser.
+6. A row may carry a DIAGRAM: add `figure: { "svg": "<svg …>…</svg>",
+   "caption": "…" }` to that row. The drawing renders in the rectangular
+   `.rail-figure` box immediately under that row's own text, so it lands at the
+   conceptual place it explains — Concept, Formula, Derivation, Special cases,
+   wherever the card attached it. `svg` must be ONE complete `<svg>…</svg>`
+   block (≤40 kB, ≤900 elements) and it goes through the same guard as note
+   figures (`lib/content/visuals.ts`): no `<script>`/`<style>`/`<defs>`/
+   gradients/markers/`<use>`/external fetches/`url(#…)`/inline `on*=`; arrowheads
+   are `<polygon>`s and shading is translucent flat fill. An unusable drawing is
+   skipped (the row still prints its text), never drawn half-stripped — and
+   `--check` reports a figure that is not a non-empty string. Diagram-led extra
+   cards are named `<unit>--diagram.rail.json`; the curated cards' drawings live
+   in `lib/rail-diagrams.ts`.
+7. The rails themselves are swipable — a slow drag scrubs the stream, a quick
+   flick steps exactly one card (swipe left = next, right = previous), and a
+   hand-swiped rail HOLDS its place, continuing its cycle only after 3 s with no
+   interaction AND a click outside that rail's area (or its Pause switch, which
+   overrides both). Motion math lives in `lib/rail-motion.ts`. Cards need no
+   change for any of this.
 
 <!-- BEGIN:nextjs-agent-rules -->
 

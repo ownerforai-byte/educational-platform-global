@@ -129,6 +129,7 @@ export function TopicVerticalNotes({
   const [visualKey, setVisualKey] = useState(0);
   const [isVisualRefreshing, setIsVisualRefreshing] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [fullscreenError, setFullscreenError] = useState<string | null>(null);
   const visualPanelRef = useRef<HTMLDivElement>(null);
 
   const handleRefreshVisualWorkspace = () => {
@@ -141,16 +142,18 @@ export function TopicVerticalNotes({
   // so every call is fire-and-forget — the button simply does nothing there
   // instead of throwing.
   const handleToggleFullscreen = async () => {
+    setFullscreenError(null);
     try {
-      if (document.fullscreenElement) await document.exitFullscreen();
-      else await visualPanelRef.current?.requestFullscreen?.();
+      if (document.fullscreenElement === visualPanelRef.current) await document.exitFullscreen();
+      else if (visualPanelRef.current?.requestFullscreen) await visualPanelRef.current.requestFullscreen();
+      else setFullscreenError('Fullscreen is not supported in this browser. You can still zoom and pan the diagram.');
     } catch {
-      /* fullscreen unavailable */
+      setFullscreenError('Fullscreen could not be opened. You can still zoom and pan the diagram.');
     }
   };
 
   useEffect(() => {
-    const sync = () => setIsFullscreen(Boolean(document.fullscreenElement));
+    const sync = () => setIsFullscreen(document.fullscreenElement === visualPanelRef.current);
     document.addEventListener("fullscreenchange", sync);
     return () => document.removeEventListener("fullscreenchange", sync);
   }, []);
@@ -388,7 +391,7 @@ export function TopicVerticalNotes({
       )}
 
       {/* ── 1. CONCEPTUAL DIAGRAM, CLEAR MINDMAP & 3D INTERACTIVE VISUAL ───────────────── */}
-      <section className="rounded-3xl border border-border/70 bg-card overflow-hidden shadow-sm">
+      <section ref={visualPanelRef} className={`rounded-3xl border border-border/70 bg-card shadow-sm ${isFullscreen ? 'h-screen overflow-y-auto' : 'overflow-hidden'}`}>
         <div className="px-6 py-4 border-b border-border/60 bg-muted/20 flex flex-wrap items-center justify-between gap-3">
           <div className="flex items-center gap-2.5">
             <FlaskConical className="h-5 w-5 text-sky-400" />
@@ -417,8 +420,10 @@ export function TopicVerticalNotes({
               <span>{isFullscreen ? "Exit" : "Full Screen"}</span>
             </button>
 
-            <div className="flex items-center gap-1.5 rounded-xl border border-border/60 bg-background/80 p-1 text-xs">
+            <div role="group" aria-label="Visual mode" className="flex flex-wrap items-center gap-1.5 rounded-xl border border-border/60 bg-background/80 p-1 text-xs [&>button]:min-h-10">
               <button
+                type="button"
+                aria-pressed={visualTab === 'schematic'}
                 onClick={() => setVisualTab("schematic")}
                 className={`px-3 py-1 rounded-lg font-bold transition-all flex items-center gap-1.5 ${
                   visualTab === "schematic"
@@ -430,6 +435,8 @@ export function TopicVerticalNotes({
                 <span>Interactive Schematic</span>
               </button>
               <button
+                type="button"
+                aria-pressed={visualTab === 'mindmap'}
                 onClick={() => setVisualTab("mindmap")}
                 className={`px-3 py-1 rounded-lg font-bold transition-all flex items-center gap-1.5 ${
                   visualTab === "mindmap"
@@ -438,10 +445,12 @@ export function TopicVerticalNotes({
                 }`}
               >
                 <Workflow className="h-3.5 w-3.5" />
-                <span>Clear Mindmap (5 Branches)</span>
+                <span>Topic Mindmap</span>
               </button>
               {TopicVisual3D && (
                 <button
+                  type="button"
+                  aria-pressed={visualTab === '3d'}
                   onClick={() => setVisualTab("3d")}
                   className={`px-3 py-1 rounded-lg font-bold transition-all flex items-center gap-1.5 ${
                     visualTab === "3d"
@@ -458,9 +467,9 @@ export function TopicVerticalNotes({
         </div>
 
         <div
-          ref={visualPanelRef}
-          className={`relative p-6 space-y-6 ${isFullscreen ? "bg-background overflow-auto" : ""}`}
+          className="relative min-w-0 space-y-6 bg-background/30 p-3 sm:p-6"
         >
+          {fullscreenError && <p role="status" className="text-sm text-muted-foreground">{fullscreenError}</p>}
           <div className="pointer-events-none absolute bottom-3 right-4 z-10 rounded-full border border-border/60 bg-background/85 px-3 py-1 text-[10px] font-semibold text-muted-foreground backdrop-blur-sm">
             {visualTab === "3d"
               ? "Drag to rotate · Scroll to zoom · Pinch on touch"

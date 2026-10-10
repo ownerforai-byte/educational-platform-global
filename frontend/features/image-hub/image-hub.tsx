@@ -14,6 +14,7 @@ import {
 } from "lucide-react";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
 import {
+  SERVER_DRAW_LABEL,
   requestHubFigure,
   requestHubImage,
   type HubEngineFail,
@@ -35,14 +36,16 @@ import {
 } from "./history";
 
 /**
- * IMAGE HUB (owner request 2026-10-02: "replace the mind console with
- * agnes 2.1 flash and js to generate image means it is image hub").
+ * DIAGRAM HUB (owner request 2026-10-02: replace the mind console with an
+ * image generator — that generator is what the hub is). Renamed Diagram Hub on
+ * 2026-10-07: the owner asked that no vendor name and no "AI" wording appear
+ * anywhere in it, so the engine is named for what it does, not who makes it.
  *
  * OPEN TO EVERY SIGNED-IN STUDENT (owner request 2026-10-04: "enable saving
  * of image for every user") — the former owner-only gate is gone, and the
  * gallery is now the ACCOUNT's saved history, not a device session:
  *
- *   · every server draw (vector figure, Agnes picture) is saved by the
+ *   · every server draw (vector figure, picture) is saved by the
  *     backend itself — hardcoded, no client opt-in;
  *   · browser-drawn puter.js pictures are saved by the hub right after they
  *     land;
@@ -59,7 +62,7 @@ import {
  *     Every labelled part is `<g><title>NAME — detail</title>`, so hovering or
  *     tapping a part opens its explanation, and the same legend is listed as
  *     "Parts & details" under the figure.
- *   · PICTURE — the raster chain (Agnes image models, then puter.js in the
+ *   · PICTURE — the raster chain (server image models, then puter.js in the
  *     browser) for photos, watercolours and anything pictorial.
  */
 
@@ -186,6 +189,18 @@ function figureMarkdown(item: GalleryFigure): string {
  * discriminator is re-derived here rather than trusted, and anything that is
  * not a figure or a picture is dropped.
  */
+/**
+ * The badge shown under a picture. Server rows persist whatever engine
+ * answered — a vendor model id the owner asked never to see (2026-10-07) — so
+ * only the two engines that name themselves keep their label and everything
+ * else folds into the hub's own neutral wording.
+ */
+function pictureLabel(raw: unknown): string {
+  const value = typeof raw === "string" ? raw.trim() : "";
+  if (value.startsWith("google") || value.startsWith("puter")) return value;
+  return SERVER_DRAW_LABEL;
+}
+
 function parseStored(value: unknown): GalleryItem | null {
   if (!value || typeof value !== "object") return null;
   const item = value as Record<string, unknown>;
@@ -222,8 +237,8 @@ function parseStored(value: unknown): GalleryItem | null {
           ? "puter"
           : item.engine === "google"
             ? "google"
-            : "agnes",
-      label: typeof item.label === "string" ? item.label : "picture",
+            : "diagram",
+      label: pictureLabel(item.label),
     };
   }
 
@@ -264,8 +279,8 @@ function parseHistoryRow(row: ImageHistoryRow): GalleryItem | null {
         ? "puter"
         : typeof row.engine === "string" && row.engine.startsWith("google")
           ? "google"
-          : "agnes",
-    label: typeof row.engine === "string" && row.engine ? row.engine : "agnes-image-2.1-flash",
+          : "diagram",
+    label: pictureLabel(row.engine),
   };
 }
 
@@ -367,7 +382,7 @@ export function ImageHub() {
   }
 
   const failedBothEngines =
-    "Neither engine could draw this — the figure writer and the Agnes chain may be busy, and the puter.js fallback needs its browser sign-in. Your prompt is kept below; try again.";
+    "Neither engine could draw this — the figure writer and the server engine may be busy, and the puter.js fallback needs its browser sign-in. Your prompt is kept below; try again.";
 
   /** Save a Google result into the gallery + the account history. */
   function saveGoogleResult(result: GoogleImageResult) {
@@ -426,7 +441,7 @@ export function ImageHub() {
       return;
     }
 
-    setBusy(mode === "figure" ? "figure" : "agnes");
+    setBusy(mode === "figure" ? "figure" : "diagram");
     try {
       if (mode === "figure") {
         const result = await requestHubFigure(p, {
@@ -442,7 +457,7 @@ export function ImageHub() {
             : newPictureItem(p, result),
           ...items,
         ]);
-        // The vector writer and the Agnes chain save themselves server-side;
+        // The vector writer and the server chain save themselves server-side;
         // when the raster fallback drew this instead, only this browser holds
         // the picture — so the hub is the one that records it. (A raster
         // result from this chain never carries kind: "figure".)
@@ -466,7 +481,7 @@ export function ImageHub() {
         return;
       }
       saveItems([newPictureItem(p, result), ...items]);
-      // The Agnes chain saved itself server-side; a puter.js picture exists
+      // The server chain saved itself server-side; a puter.js picture exists
       // only in this browser, so the hub is the one that records it.
       if (result.engine === "puter") {
         void saveImageHistoryItem({
@@ -492,12 +507,12 @@ export function ImageHub() {
       ? `Searching Google Images for “${prompt.trim() || searchQuery}”…`
       : busy === "figure"
         ? "Drawing the figure — naming every part…"
-        : busy === "agnes"
+        : busy === "diagram"
           ? mode === "figure"
-            ? "Figure writer unavailable — drawing with Agnes 2.1 Flash…"
-            : "Drawing with Agnes 2.1 Flash…"
+            ? "Figure writer unavailable — drawing with the server engine…"
+            : "Drawing with the server engine…"
           : busy === "puter"
-            ? "Agnes unavailable — drawing in your browser with puter.js…"
+            ? "Server engine unavailable — drawing in your browser with puter.js…"
             : null;
 
   const figureCount = items.filter((item) => item.kind === "figure").length;
@@ -547,7 +562,7 @@ export function ImageHub() {
         </div>
         <div>
           <h1 className="flex flex-wrap items-center gap-2 text-2xl font-black tracking-tight">
-            Image Hub
+            Diagram Hub
             <span className="inline-flex items-center gap-1 align-middle text-[10px] font-bold uppercase tracking-widest rounded-full border border-emerald-500/30 bg-emerald-500/10 px-2 py-1 text-emerald-600 dark:text-emerald-300">
               <HistoryIcon className="h-3 w-3" />
               Saved to your account
@@ -555,7 +570,7 @@ export function ImageHub() {
           </h1>
           <p className="text-sm text-muted-foreground">
             Academic figures drawn as labelled vector diagrams — every part
-            opens its detail on hover — plus Agnes 2.1 Flash pictures with
+            opens its detail on hover — plus server-drawn pictures with
             puter.js as the browser fallback, and Google mode presenting real
             web images at full size with a details &amp; facts panel. Everything
             you draw or save is kept in your history, on any device you sign in
@@ -572,7 +587,7 @@ export function ImageHub() {
             "Academic figure",
             "Vector figure: life cycle, labelled structure, apparatus, graph, circuit, ray or free-body diagram…",
           )}
-          {modeButton("picture", "Picture", "Agnes 2.1 Flash raster image — photos, art, mood boards")}
+          {modeButton("picture", "Picture", "Server raster image — photos, art, mood boards")}
           {modeButton(
             "google",
             "Google",
@@ -905,7 +920,7 @@ export function ImageHub() {
                   <div className="flex items-center justify-between gap-2">
                     <span
                       className={`max-w-[60%] truncate rounded-full px-2 py-0.5 text-[10px] font-semibold ${
-                        item.engine === "agnes"
+                        item.engine === "diagram"
                           ? "bg-sky-500/15 text-sky-500"
                           : "bg-emerald-500/15 text-emerald-500"
                       }`}
@@ -921,7 +936,7 @@ export function ImageHub() {
                         <button
                           type="button"
                           onClick={() =>
-                            void downloadImage(item.url, `image-hub-${item.id}.png`)
+                            void downloadImage(item.url, `diagram-hub-${item.id}.png`)
                           }
                           className="rounded-lg border border-border/60 bg-muted/40 p-1.5 hover:border-primary/40 hover:text-primary transition-colors"
                           title="Download"

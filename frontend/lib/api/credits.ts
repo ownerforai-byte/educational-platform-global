@@ -85,7 +85,7 @@ export interface UnlockResponse {
  * 402 → insufficient credits (apiFetch surfaces the message).
  */
 export async function unlockContent(
-  category: "lab3d" | "visuals" | "theory" | "reference",
+  category: "lab3d" | "visuals" | "theory" | "reference" | "imagehub",
   moduleKey?: string,
 ): Promise<UnlockResponse> {
   return apiFetch<UnlockResponse>("/api/user/credits/unlock", {

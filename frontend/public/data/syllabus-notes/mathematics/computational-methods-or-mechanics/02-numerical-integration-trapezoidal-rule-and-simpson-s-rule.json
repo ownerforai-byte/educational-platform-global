@@ -51,7 +51,7 @@
     "• Trapezoidal rule",
     "• Simpson's rule"
   ],
-  "summary": "Numerical integration: Trapezoidal rule and Simpson's rule (Computational Methods or Mechanics, Mathematics, class-11-notes) covers Numerical integration, Trapezoidal rule, Simpson's rule. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Numerical Integration covers essential principles and applications.",
   "mcqs": [
     {
       "question": "Which of the following is a distinct sub-topic under \"Numerical integration: Trapezoidal rule and Simpson's rule\"?",
@@ -72,17 +72,15 @@
       ],
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    },
-    {
-      "question": "Which of these is a governing / standard formula associated with \"Numerical integration: Trapezoidal rule and Simpson's rule\"?",
-      "options": [
-        "∫xⁿ dx = x^{n+1}/(n+1)+C",
-        "x + y = z (placeholder)",
-        "No formula applies",
-        "E = mc² only"
-      ],
-      "answer": "A",
-      "explanation": "∫xⁿ dx = x^{n+1}/(n+1)+C is the standard form used for this topic."
     }
-  ]
+  ],
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
+  "importantConcepts": [],
+  "animation3D": "computational-methods-or-mechanics",
+  "motionGraphics": "computational-methods-or-mechanics",
+  "specialNotes": [],
+  "examNotes": [],
+  "importantTasks": []
 }

@@ -2,7 +2,7 @@
 
 /**
  * PUTER.JS FALLBACK — the second drawing engine of the "agent picks the
- * engine" policy (owner 2026-09-30): the server-side Agnes image models try
+ * engine" policy (owner 2026-09-30): the server-side image models try
  * first; when they fail, the browser draws the same prompt via Puter.js.
  *
  * Puter.js runs CLIENT-SIDE under the User-Pays model: the student signs in

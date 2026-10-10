@@ -1,5 +1,15 @@
 import type { LucideIcon } from "lucide-react";
 import {
+  ANIMAL_CELL,
+  BOHR_LEVELS,
+  ENERGY_PYRAMID,
+  FBD_NEWTON,
+  LENS_RAY_DIAGRAM,
+  PUNNETT_SQUARE,
+  UNIT_CIRCLE,
+  VSEPR_SHAPES,
+} from "./rail-diagrams";
+import {
   Atom,
   BookOpen,
   Calculator,
@@ -54,6 +64,22 @@ export interface SubjectSlideRow {
   text: string;
   /** `formula` renders the row as a monospace equation block. */
   kind?: "formula" | "text";
+  /**
+   * The drawing this row needs, drawn in a rectangular box directly under the
+   * row — so it sits at the CONCEPTUAL place (the concept, the derivation, the
+   * special case it illustrates) rather than in a detached figure gallery.
+   * `svg` is one `<svg>…</svg>` block; it is put through the note-visuals
+   * guard before rendering (see `lib/rail-figures.ts`) and an unusable drawing
+   * is dropped, never shown half-stripped.
+   */
+  figure?: SubjectSlideFigure;
+}
+
+export interface SubjectSlideFigure {
+  /** Inline `<svg viewBox="…">…</svg>` markup — a single, self-contained drawing. */
+  svg: string;
+  /** Optional caption shown under the drawing. */
+  caption?: string;
 }
 
 export interface HomeSubjectSlide {
@@ -236,6 +262,11 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
           {
             label: "Concept",
             text: "The net external force on a body equals the rate of change of its momentum. It tells you how motion changes and defines mass as the measure of inertia.",
+            figure: {
+              svg: FBD_NEWTON,
+              caption:
+                "Free-body diagram — the net force is the vector sum of the applied force, friction, weight and the normal reaction.",
+            },
           },
           {
             label: "Formula",
@@ -422,6 +453,11 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
           {
             label: "Concept",
             text: "A lens bends light at two spherical surfaces; a convex lens converges in a rarer medium, a concave lens diverges, and power is 1/f in metres.",
+            figure: {
+              svg: LENS_RAY_DIAGRAM,
+              caption:
+                "Two rays from the object cross at the real, inverted image; the ray parallel to the axis leaves through the far focus F'. The ray through the optical centre goes straight.",
+            },
           },
           {
             label: "Formula",
@@ -529,6 +565,11 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
           {
             label: "Concept",
             text: "Electrons sit in quantised levels; a photon is emitted or absorbed only when a jump happens — which is why line spectra are sharp, not continuous.",
+            figure: {
+              svg: BOHR_LEVELS,
+              caption:
+                "Hydrogen energy levels: the n = 3 to n = 2 jump releases a 1.89 eV photon — the red 656 nm H-alpha line of the Balmer series.",
+            },
           },
           {
             label: "Formula",
@@ -575,6 +616,11 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
           {
             label: "Concept",
             text: "Bonding and lone pairs around a central atom repel and spread out; the steric number (σ bonds + lone pairs) fixes both shape and hybridisation.",
+            figure: {
+              svg: VSEPR_SHAPES,
+              caption:
+                "Steric number decides the shape: 2 linear, 3 trigonal planar, 4 tetrahedral — lone pairs squeeze the bond angle, so water closes to 104.5°.",
+            },
           },
           {
             label: "Formula",
@@ -725,6 +771,11 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
           {
             label: "Concept",
             text: "The cell is the structural and functional unit of life; organelles split the work so that incompatible reactions (digestion vs building) run at once.",
+            figure: {
+              svg: ANIMAL_CELL,
+              caption:
+                "Labelled animal cell: membrane, nucleus with its nucleolus, rough ER with ribosomes, a mitochondrion, the Golgi body and the cytoplasm.",
+            },
           },
           {
             label: "Key numbers",
@@ -771,6 +822,11 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
           {
             label: "Concept",
             text: "Traits pass as discrete factors (alleles) that separate in gamete formation and recombine independently — inheritance is particulate, not blended.",
+            figure: {
+              svg: PUNNETT_SQUARE,
+              caption:
+                "Punnett square for Tt × Tt: 1 TT : 2 Tt : 1 tt, which reads as 3 tall : 1 dwarf because T dominates.",
+            },
           },
           {
             label: "Ratios",
@@ -817,6 +873,11 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
           {
             label: "Concept",
             text: "Sunlight is fixed by producers and passed up trophic levels, losing most of it as heat at every step — which is why food chains stay short.",
+            figure: {
+              svg: ENERGY_PYRAMID,
+              caption:
+                "Energy pyramid: only about a tenth of the energy passes to the next trophic level, so the pyramid is always upright and the steps shrink by ten.",
+            },
           },
           {
             label: "Law",
@@ -1015,6 +1076,11 @@ export const HOME_SUBJECT_RAILS: HomeSubjectRail[] = [
           {
             label: "Concept",
             text: "Compound-angle identities split any angle you can build from standard ones, and they are the proof engine of every trigonometric question.",
+            figure: {
+              svg: UNIT_CIRCLE,
+              caption:
+                "Unit circle: the radius is 1, cos θ is the horizontal leg, sin θ the vertical leg — so every identity follows from the same right triangle.",
+            },
           },
           {
             label: "Formula",

@@ -1,7 +1,7 @@
 import { apiFetch } from "@/lib/api-client";
 
 /**
- * GOOGLE IMAGE SEARCH CLIENT — the Image Hub's "present directly from Google"
+ * GOOGLE IMAGE SEARCH CLIENT — the Diagram Hub's "present directly from Google"
  * mode (owner request 2026-10-04: "the image produced are too low, so direct
  * presenting from google is best … create the details interface").
  *

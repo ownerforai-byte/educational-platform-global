@@ -35,7 +35,9 @@
     "Problem: The mass of a $^{4}\\\text{He}$ nucleus is $4.002603\\\\\\\\,\\\text{u}$. Given $m_p = 1.007276\\\\\\\\,\\\text{u}$ and $m_n = 1.008665\\\\\\\\,\\\text{u}$, find the mass defect and binding energy in MeV. [Solution: $\\\\\\Delta m = 2(1.007276) + 2(1.008665) - 4.002603 = 4.031882 - 4.002603 = 0.029279\\\\\\\\,\\\text{u}$; $BE = 0.029279 \\\times 931.494 \\\\\\\\approx 27.27\\\\\\\\,\\\text{MeV}$; $BE/A = 27.27/4 \\\\\\\\approx 6.82\\\\\\\\,\\\text{MeV/nucleon}$.]",
     "Problem: A $^{238}\\\text{U}$ sample contains $2.5\\\\\\\\,\\\text{mg}$ of uranium. How many $^{238}\\\text{U}$ atoms are present? (Molar mass $\\\\\\approx 238\\\\\\\\,\\\text{g/mol}$.) [Solution: $n = 2.5\\\times 10^{-3}\\\\\\\\,\\\text{g} / 238\\\\\\\\,\\\text{g/mol} = 1.050 \\\times 10^{-5}\\\\\\\\,\\\text{mol}$; $N = 1.050\\\times 10^{-5} \\\times 6.022\\\times 10^{23} \\\\\\\\approx 6.32\\\times 10^{18}$ atoms.]",
     "Problem: A $^{14}\\\text{C}$ sample decays to $12.5\\\\\\\\%$ of its original activity in $17{,}190\\\\\\\\,\\\text{years}$. Calculate the half-life of $^{14}\\\text{C}$ and verify it against the known value of $5730\\\\\\\\,\\\text{years}$. [Solution: $12.5\\\\\\\\% = (1/2)^3$, so 3 half-lives have elapsed. $T_{1/2} = 17{,}190 / 3 = 5730\\\\\\\\,\\\text{years}$, which exactly matches the known value.]",
-    "Problem: For the reaction $^{14}\\\text{N} + n \\\rightarrow ^{14}\\\text{C} + p$, use masses $m(^{14}\\\text{N}) = 14.003074\\\\\\\\,\\\text{u}$, $m(^{14}\\\text{C}) = 14.003242\\\\\\\\,\\\text{u}$, $m_n = 1.008665\\\\\\\\,\\\text{u}$, $m_p = 1.007276\\\\\\\\,\\\text{u}$ to determine if the reaction is exothermic or endothermic, and calculate the Q-value. [Solution: Initial mass $= 14.003074 + 1.008665 = 15.011739\\\\\\\\,\\\text{u}$; final mass $= 14.003242 + 1.007276 = 15.010518\\\\\\\\,\\\text{u}$; $\\\\\\Delta m = 15.011739 - 15.010518 = 0.001221\\\\\\\\,\\\text{u} > 0$, so energy is released. $Q = 0.001221 \\\times 931.494 \\\\\\\\approx 1.14\\\\\\\\,\\\text{MeV}$; exothermic.]"
+    "Problem: For the reaction $^{14}\\\text{N} + n \\\rightarrow ^{14}\\\text{C} + p$, use masses $m(^{14}\\\text{N}) = 14.003074\\\\\\\\,\\\text{u}$, $m(^{14}\\\text{C}) = 14.003242\\\\\\\\,\\\text{u}$, $m_n = 1.008665\\\\\\\\,\\\text{u}$, $m_p = 1.007276\\\\\\\\,\\\text{u}$ to determine if the reaction is exothermic or endothermic, and calculate the Q-value. [Solution: Initial mass $= 14.003074 + 1.008665 = 15.011739\\\\\\\\,\\\text{u}$; final mass $= 14.003242 + 1.007276 = 15.010518\\\\\\\\,\\\text{u}$; $\\\\\\Delta m = 15.011739 - 15.010518 = 0.001221\\\\\\\\,\\\text{u} > 0$, so energy is released. $Q = 0.001221 \\\times 931.494 \\\\\\\\approx 1.14\\\\\\\\,\\\text{MeV}$; exothermic.]",
+    "one worked example for \"Atomic mass; isotopes\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "universalFacts": [
     "Fact (Historical): Frederick Soddy proposed the concept of isotopes in 1913, discovering that different radioactive elements could occupy the same position in the periodic table. He received the Nobel Prize in Chemistry in 1921 for this work.",
@@ -45,12 +47,48 @@
     "Fact (Everyday): Carbon-14 dating is used to verify the age of ancient manuscripts, authenticate artwork, date archaeological artifacts, and even verify the vintage of wine and spirits by measuring $^{14}\\\text{C}$ levels.",
     "Fact (Conservation): In all nuclear reactions, both mass number $A$ (total nucleons) and atomic number $Z$ (total charge) are conserved. These two conservation laws are the first checks students should perform when balancing nuclear equations.",
     "Fact (Scale): Converting $1\\\\\\\\,\\\text{g}$ of matter entirely to energy releases $E = mc^2 = 1\\\times 10^{-3} \\\times (3\\\times 10^8)^2 = 9\\\times 10^{13}\\\\\\\\,\\\text{J}$, equivalent to about $21\\\\\\\\,\\\text{kilotons}$ of TNT-the yield of the Hiroshima bomb.",
-    "Fact (Nuclear stability): The most stable nuclide is $^{56}\\\text{Fe}$ with a binding energy per nucleon of $8.79\\\\\\\\,\\\text{MeV}$. Nuclides lighter than iron release energy through fusion; those heavier than iron release energy through fission."
+    "Fact (Nuclear stability): The most stable nuclide is $^{56}\\\text{Fe}$ with a binding energy per nucleon of $8.79\\\\\\\\,\\\text{MeV}$. Nuclides lighter than iron release energy through fusion; those heavier than iron release energy through fission.",
+    "answer pattern for \"Atomic mass; isotopes\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "visualType": "isotopes",
   "specificConditions": [
     "**Mass Defect Definition:** $\\Delta m = Z m_p + N m_n - M_{\\text{nucleus}}$ where $m_p \\approx 1.007276$ u, $m_n \\approx 1.008665$ u. The defect is always positive — the bound nucleus is lighter than its free constituents.",
     "**Binding Energy Conversion:** $BE = \\Delta m \\cdot c^2 = \\Delta m \\times 931.494$ MeV. The binding energy is the energy needed to separate the nucleus into free nucleons. It is positive for bound nuclei.",
     "**Isotope Chemistry vs Nuclear Properties:** Isotopes (same Z, different A) have identical chemical properties (electron configuration) but different nuclear masses, stabilities, and half-lives. Chemical separation is impossible; nuclear methods (centrifugation, diffusion, laser) are required."
-  ]
+  ],
+  "keyPoints": [
+    "• Atomic mass",
+    "• Isotopes"
+  ],
+  "formulas": [
+    "Governing equation for \"Atomic mass; isotopes\" — state with units, then use in one numerical."
+  ],
+  "examples": [
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Atomic mass; isotopes\" with one example.",
+    "compare \"Atomic mass\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Atomic mass; isotopes\" and verify the answer is plausible."
+  ],
+  "numericals": [
+    "Set up the defining equation for \"Atomic mass; isotopes\", substitute simple values, and compute the result with units.",
+    "Re-derive the standard result from first principles in ≤ 4 steps.",
+    "Apply it to one boundary case (where the limit applies) and state the answer."
+  ],
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Atomic mass; isotopes\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [],
+  "summary": "Atomic mass; isotopes (Nuclear Physics, Physics, class-11-notes) covers Atomic mass, isotopes. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
 }

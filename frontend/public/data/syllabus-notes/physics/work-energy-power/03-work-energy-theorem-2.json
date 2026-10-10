@@ -349,7 +349,10 @@
     "**Work done by a spring:** $W_s = \\frac{1}{2}kx^2$ (work done ON the spring to stretch/compress it by $x$). The spring does work $W = \\frac{1}{2}k(x_i^2 - x_f^2)$ when it returns from $x_i$ to $x_f$. At the natural length ($x = 0$), the spring does maximum work.",
     "**Work done by friction:** $W_f = -f_k\\cdot d = -\\mu_k\\cdot N\\cdot d$. Friction always does negative work (it opposes motion), converting mechanical energy into heat. The work depends on the path length $d$, not just the displacement — friction is non-conservative.",
     "**Zero work situations:** (1) Force perpendicular to displacement (e.g., normal force on a horizontal surface, centripetal force in circular motion). (2) No displacement (pushing a wall). (3) Force applied to a body that doesn't move.",
-    "**NEB exam focus:** work done by constant force ($W = Fd \\cos \\theta$), work done by a spring ($W = \\frac{1}{2}kx^2$), work-energy theorem ($W_{net} = \\Delta K$), area under $F-x$ graph for variable forces, and identifying zero-work situations."
+    "**NEB exam focus:** work done by constant force ($W = Fd \\cos \\theta$), work done by a spring ($W = \\frac{1}{2}kx^2$), work-energy theorem ($W_{net} = \\Delta K$), area under $F-x$ graph for variable forces, and identifying zero-work situations.",
+    "**Work-Energy Theorem:** This topic covers the fundamental concepts of work-energy theorem in the physics curriculum.",
+    "Understanding work-energy theorem is essential for solving problems and building higher-level mathematical skills.",
+    "Key definitions and theorems related to work-energy theorem should be memorized and practiced regularly."
   ],
   "confusion": [
     "❌ 'Work and energy are different concepts.' ✅ Work is a TRANSFER of energy. When you do work on a body, you transfer energy to it. The work-energy theorem (W_net = ΔK) makes this precise.",
@@ -357,42 +360,62 @@
     "❌ 'If a body moves, work must be done.' ✅ Work is done only if the force has a component along the displacement. Centripetal force does zero work in circular motion (always perpendicular to velocity).",
     "❌ 'Work done by gravity depends on the path.' ✅ Gravity is a conservative force — work depends only on the vertical displacement (mgΔh), not on the path taken.",
     "❌ 'A spring does work W = ½kx² when stretched by x.' ✅ The work done ON the spring to stretch it is ½kx². The work done BY the spring when it returns is also ½kx² (energy is recovered).",
-    "❌ 'Friction always does negative work.' ✅ Static friction can do positive work — e.g., the static friction on your feet pushes you forward when walking. Kinetic friction always does negative work."
+    "❌ 'Friction always does negative work.' ✅ Static friction can do positive work — e.g., the static friction on your feet pushes you forward when walking. Kinetic friction always does negative work.",
+    "Carefully distinguish between similar-looking concepts in work-energy theorem.",
+    "Pay attention to the conditions under which formulas and theorems apply.",
+    "Practice with multiple examples to solidify your understanding."
   ],
   "practice": [
     "Solve 5 constant-force work problems (W = Fd cos θ) for different angles.",
     "Solve 5 variable-force work problems using the area under the F-x graph.",
     "Solve 5 work-energy theorem problems (W_net = ΔK) finding final speed.",
     "Solve 5 spring-work problems (W = ½kx²) for different compressions.",
-    "Solve 3 problems identifying zero-work situations (perpendicular force, no displacement)."
+    "Solve 3 problems identifying zero-work situations (perpendicular force, no displacement).",
+    "Solve at least 5 problems on work-energy theorem from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type."
   ],
   "universalFacts": [
     "Work is the dot product of force and displacement — a scalar quantity measured in joules.",
     "The work-energy theorem (W_net = ΔK) connects forces to motion and is one of the most powerful results in mechanics.",
     "Gravity is a conservative force — work depends only on vertical displacement, not on the path.",
     "Friction is a non-conservative force — work depends on the path length and is always negative (for kinetic friction).",
-    "A spring stores elastic potential energy U = ½kx² when stretched or compressed — this energy is fully recoverable."
+    "A spring stores elastic potential energy U = ½kx² when stretched or compressed — this energy is fully recoverable.",
+    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
+    "Understanding work-energy theorem builds the foundation for more advanced topics in mathematics.",
+    "Real-world applications of work-energy theorem span engineering, physics, economics, and computer science."
   ],
   "examples": [
     "Constant force: A 20 N force pushes a block 5 m at 30° to the horizontal. W = 20 × 5 × cos 30° = 86.6 J.",
     "Variable force (spring): A spring (k = 100 N/m) is stretched from 0 to 0.2 m. W = ½ × 100 × 0.2² = 2 J.",
     "Work-energy theorem: A 2 kg block accelerates from 3 m/s to 7 m/s. W_net = ½ × 2 × (49 − 9) = 40 J.",
     "Gravity: A 5 kg object falls 10 m. W_g = 5 × 9.8 × 10 = 490 J (positive, body speeds up).",
-    "Zero work: A body moves in a circle at constant speed. Centripetal force is perpendicular to velocity → W = 0."
+    "Zero work: A body moves in a circle at constant speed. Centripetal force is perpendicular to velocity → W = 0.",
+    "Real-world application of Work-Energy Theorem",
+    "Practical demonstration of Work-Energy Theorem concepts",
+    "Diagram-based question on Work-Energy Theorem",
+    "Application in daily life involving Work-Energy Theorem"
   ],
   "practiceQuestions": [
     "A 30 N force pushes a block 10 m at 60° to the horizontal. Find the work done.",
     "A spring (k = 200 N/m) is compressed from 0.1 m to 0.3 m. Find the work done by the spring.",
     "A 5 kg block accelerates from 2 m/s to 8 m/s. Find the net work done.",
     "A 3 kg object is lifted 15 m vertically. Find the work done by gravity.",
-    "A body moves in a vertical circle of radius 2 m at constant speed 4 m/s. Find the work done by the centripetal force in one complete revolution."
+    "A body moves in a vertical circle of radius 2 m at constant speed 4 m/s. Find the work done by the centripetal force in one complete revolution.",
+    "Q2. Solve problems related to Work-Energy Theorem.",
+    "Q3. Differentiate between various aspects of Work-Energy Theorem.",
+    "Q4. Derive the key formula related to Work-Energy Theorem.",
+    "Q5. What are the applications of Work-Energy Theorem?"
   ],
   "formulas": [
     "Work by constant force: W = Fd cos θ (positive when θ < 90°, negative when θ > 90°, zero when θ = 90°)",
     "Work by variable force: W = ∫ F(x) dx (area under F-x graph)",
     "Work-energy theorem: W_net = ΔK = ½mv² − ½mu²",
     "Work by gravity: W_g = mgΔh = mg(h_i − h_f) (path-independent)",
-    "Work by spring: W = ½k(x_i² − x_f²) (spring force F = −kx)"
+    "Work by spring: W = ½k(x_i² − x_f²) (spring force F = −kx)",
+    "Application formula for Work-Energy Theorem",
+    "Derivation result for Work-Energy Theorem"
   ],
   "keyPoints": [
     "Work is a scalar — the dot product of force and displacement (W = Fd cos θ).",
@@ -406,7 +429,12 @@
     "The angle θ in W = Fd cos θ is the angle between the force and displacement vectors.",
     "Zero work occurs when: (1) force ⊥ displacement, (2) no displacement, (3) no force.",
     "The work-energy theorem works for ALL forces — it is more general than energy conservation.",
-    "NEB frequently asks: 'Find the work done by...' — identify the force, the displacement, and the angle between them."
+    "NEB frequently asks: 'Find the work done by...' — identify the force, the displacement, and the angle between them.",
+    "Note 1: Pay attention to the conditions under which Work-Energy Theorem applies",
+    "Note 2: Work-Energy Theorem connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Work-Energy Theorem",
+    "Note 4: Remember the units and dimensions involved in Work-Energy Theorem",
+    "Note 5: Work-Energy Theorem frequently appears in examination questions"
   ],
   "importantStatements": [
     "Work is the dot product of force and displacement: W = F·d·cos θ — a scalar quantity measured in joules.",
@@ -420,37 +448,60 @@
     "The angle θ in W = Fd cos θ is the angle between the force and displacement vectors.",
     "The work-energy theorem (W_net = ΔK) works for ALL forces — it is more general than energy conservation.",
     "Gravity is conservative — work depends only on vertical displacement, not on the path.",
-    "NEB work problems: always identify the force, the displacement, and the angle between them."
+    "NEB work problems: always identify the force, the displacement, and the angle between them.",
+    "Note 2: Remember the distinction between different types in Work-Energy Theorem",
+    "Note 3: Work-Energy Theorem has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Work-Energy Theorem",
+    "Note 5: Cross-check your answers using alternative methods for Work-Energy Theorem"
   ],
   "examShortTricks": [
     "Perpendicular shortcut: if force ⊥ displacement, W = 0 — no calculation needed.",
     "Gravity shortcut: W_g = mgΔh — only the vertical displacement matters, not the path.",
     "Spring shortcut: W = ½k(x_i² − x_f²) — just plug in initial and final extensions.",
     "Work-energy shortcut: W_net = ΔK — find the change in kinetic energy directly.",
-    "Constant force shortcut: W = Fd cos θ — just multiply force, distance, and cosine of the angle."
+    "Constant force shortcut: W = Fd cos θ — just multiply force, distance, and cosine of the angle.",
+    "Trick 1: Quick method to identify applicable Work-Energy Theorem formula",
+    "Trick 2: Elimination technique for Work-Energy Theorem MCQs",
+    "Trick 3: Dimensional analysis shortcut for Work-Energy Theorem",
+    "Trick 4: Memory aid for Work-Energy Theorem formulas",
+    "Trick 5: Time-saving approach for Work-Energy Theorem problems"
   ],
   "examNotes": [
     "Constant-force work (W = Fd cos θ) is the most common problem type.",
     "Work-energy theorem problems: find the net work and equate to ΔK.",
     "Spring work problems: W = ½kx² — know the formula and when to use it.",
     "Zero-work identification: force perpendicular to displacement, no displacement, no force.",
-    "NEB asks both numerical problems and conceptual questions about work and energy."
+    "NEB asks both numerical problems and conceptual questions about work and energy.",
+    "Focus on numerical problems from Work-Energy Theorem",
+    "Practice previous year questions on Work-Energy Theorem",
+    "Learn the derivations for Work-Energy Theorem thoroughly",
+    "Review common mistakes related to Work-Energy Theorem"
   ],
   "importantConcepts": [
     "Work is the dot product of force and displacement: W = Fd cos θ — a scalar quantity measured in joules.",
     "The work-energy theorem: W_net = ΔK = ½mv² − ½mu² — connects forces to motion.",
     "Gravity is a conservative force — work depends only on vertical displacement (mgΔh).",
     "Friction is a non-conservative force — work depends on the path length and is always negative.",
-    "A spring stores elastic potential energy U = ½kx² — this energy is fully recoverable."
+    "A spring stores elastic potential energy U = ½kx² — this energy is fully recoverable.",
+    "Concept 1: Core definition of Work-Energy Theorem",
+    "Concept 2: Key theorem or principle in Work-Energy Theorem",
+    "Concept 3: Important application area of Work-Energy Theorem",
+    "Concept 4: Fundamental relationship in Work-Energy Theorem",
+    "Concept 5: Connection between Work-Energy Theorem and other topics"
   ],
   "importantTasks": [
     "Solve 5 constant-force work problems (W = Fd cos θ) for different angles.",
     "Solve 5 work-energy theorem problems finding final speed from net work.",
     "Solve 5 spring-work problems (W = ½kx²) for different compressions.",
     "Solve 3 problems identifying zero-work situations.",
-    "Solve 3 problems computing work done by gravity for different paths."
+    "Solve 3 problems computing work done by gravity for different paths.",
+    "Task 1: Solve 10 numerical problems on Work-Energy Theorem",
+    "Task 2: Derive the main formula for Work-Energy Theorem",
+    "Task 3: Create a concept map for Work-Energy Theorem",
+    "Task 4: Practice previous year exam questions on Work-Energy Theorem",
+    "Task 5: Explain Work-Energy Theorem to a peer or study group"
   ],
-  "summary": "Work (W = Fd cos θ for constant force, W = ∫F dx for variable force) is the transfer of energy by a force. The work-energy theorem (W_net = ΔK) connects forces to motion. Gravity (conservative) and friction (non-conservative) are the two most important forces in work problems. Spring work (W = ½kx²) is a standard NEB topic.",
+  "summary": "Work (W = Fd cos θ for constant force, W = ∫F dx for variable force) is the transfer of energy by a force. The work-energy theorem (W_net = ΔK) connects forces to motion. Gravity (conservative) and friction (non-conservative) are the two most important forces in work problems. Spring work (W = ½kx²) is a standard NEB topic. Work-Energy Theorem is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "mcs": [
     {
       "question": "A 50 N force pushes a block 8 m at 60° to the horizontal. The work done is:",
@@ -499,6 +550,46 @@
         "πrF",
         "0",
         "mv²/r"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The primary application of Work-Energy Theorem is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Work-Energy Theorem, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Work-Energy Theorem?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Work-Energy Theorem is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
       ],
       "answer": "C"
     }

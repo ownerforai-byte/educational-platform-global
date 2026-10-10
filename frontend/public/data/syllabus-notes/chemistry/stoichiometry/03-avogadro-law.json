@@ -24,14 +24,18 @@
     "• It fails for gases that **dissociate or associate** in the vapour state: PCl₅, N₂O₄ and NH₄Cl give anomalously high or low vapour densities, and a correction factor (degree of dissociation/association) is needed.",
     "• It provides no information about the size, shape or mass of individual molecules; 'equal numbers of molecules' says nothing about molecular structure.",
     "• The law was ignored for nearly half a century because Berzelius and Dalton did not accept the atom–molecule distinction — a reminder that it depends on the concept of a molecule, not merely on measurement.",
-    "• The molar volume figures are defined at specified T and P (22.4 L at STP, 24 L at RTP), so results must always state the conditions."
+    "• The molar volume figures are defined at specified T and P (22.4 L at STP, 24 L at RTP), so results must always state the conditions.",
+    "**Fact.** 1 mole = 6.022×10²³ entities (Avogadro constant, Nₐ). Molar mass (M) is g·mol⁻¹; for a compound M = Σ(atomic masses).",
+    "**Fact.** n (mol) = mass/M = volume(ideal gas, STP)/22.4 L = N/Nₐ.",
+    "**Fact.** Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100."
   ],
   "confusion": [
     "❌ Equal volumes of any two gases have equal masses. ✅ They have equal *numbers of molecules*; masses differ because molecular masses differ.",
     "❌ Vapour density is the same as density. ✅ Vapour density is a *relative* quantity measured with respect to hydrogen (or air); density is an absolute mass per unit volume.",
     "❌ 1 mole of every gas occupies 22.4 L under all conditions. ✅ Only at STP (273.15 K, 1 atm); at other conditions use PV = nRT.",
     "❌ Molecular mass equals vapour density. ✅ Molecular mass = 2 × vapour density (for the hydrogen reference).",
-    "❌ Avogadro's law can be applied to a dissociating gas without correction. ✅ Dissociation/association changes the number of particles, so an apparent (abnormal) vapour density results."
+    "❌ Avogadro's law can be applied to a dissociating gas without correction. ✅ Dissociation/association changes the number of particles, so an apparent (abnormal) vapour density results.",
+    "❌ skip the key fact → ✅ 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses).."
   ],
   "practice": [
     "State Avogadro's law and deduce the relation between molecular mass and vapour density.",
@@ -39,21 +43,30 @@
     "Calculate the molecular mass of a gas whose vapour density is 30.",
     "The vapour density of an oxide of nitrogen is 46; find its molecular formula if it contains 30.4% nitrogen.",
     "Explain how Avogadro's law established that hydrogen and oxygen are diatomic.",
-    "State the limitations of Avogadro's law."
+    "State the limitations of Avogadro's law.",
+    "one worked example for \"Avogadro's law and some deductions: molecular mass and va…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "formulas": [
     "$$V\\propto n\\ \\text{at constant }T,P;\\qquad \\frac{V_{1}}{n_{1}}=\\frac{V_{2}}{n_{2}}$$",
     "$$M=2\\times VD\\ (\\text{H}_{2}\\ \\text{reference});\\qquad M=28.94\\times VD\\ (\\text{air reference})$$",
-    "$$n=\\frac{V\\ (\\text{STP})}{22.4\\ \\text{L}},\\qquad n=\\frac{N}{N_{A}},\\qquad V_{\\text{molar}}=22.4\\ \\text{L at STP}$$"
+    "$$n=\\frac{V\\ (\\text{STP})}{22.4\\ \\text{L}},\\qquad n=\\frac{N}{N_{A}},\\qquad V_{\\text{molar}}=22.4\\ \\text{L at STP}$$",
+    "n = m / M",
+    "n = V / 22.4 (g at STP)",
+    "% yield = (actual / theoretical) × 100"
   ],
   "universalFacts": [
     "Avogadro number N_A = 6.022 × 10²³ mol⁻¹ (exactly 6.02214076 × 10²³ since the 2019 SI revision).",
     "Molar volume: 22.4 L at STP (0 °C, 1 atm) and 24.0 L at RTP (25 °C, 1 bar).",
-    "Avogadro's hypothesis (1811) was accepted only after Cannizzaro (1858) explained it, and one mole of water is just 18 mL of liquid — yet it contains 6.022 × 10²³ molecules."
+    "Avogadro's hypothesis (1811) was accepted only after Cannizzaro (1858) explained it, and one mole of water is just 18 mL of liquid — yet it contains 6.022 × 10²³ molecules.",
+    "1 mole = 6.022×10²³ entities (Avogadro constant, Nₐ). Molar mass (M) is g·mol⁻¹; for a compound M = Σ(atomic masses).",
+    "n (mol) = mass/M = volume(ideal gas, STP)/22.4 L = N/Nₐ.",
+    "Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100."
   ],
   "examples": [
     "**Problem:** VD of a gas is 22; find its molar mass and the mass of 5.6 L at STP. **Solution:** M = 2 × 22 = 44 g mol⁻¹; n = 5.6/22.4 = 0.25 mol → mass = 0.25 × 44 = 11 g.",
-    "**Problem:** Calculate the number of molecules in 11.2 L of CH₄ at STP and the number of hydrogen atoms present. **Solution:** n = 11.2/22.4 = 0.5 mol → molecules = 0.5 × 6.022 × 10²³ = 3.011 × 10²³; H atoms = 4 × that = 1.204 × 10²⁴."
+    "**Problem:** Calculate the number of molecules in 11.2 L of CH₄ at STP and the number of hydrogen atoms present. **Solution:** n = 11.2/22.4 = 0.5 mol → molecules = 0.5 × 6.022 × 10²³ = 3.011 × 10²³; H atoms = 4 × that = 1.204 × 10²⁴.",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "importantNotes": [
     "Quote both numbers with the law: N_A = 6.022 × 10²³ mol⁻¹ and molar volume = 22.4 L at STP.",
@@ -61,5 +74,49 @@
     "Remember the abnormal vapour density correction for dissociating gases such as PCl₅ and N₂O₄."
   ],
   "visualType": "avogadros-law-deduction",
-  "tabGroup": "Stoichiometry-Learner-Notes"
+  "keyPoints": [
+    "• Avogadro's law",
+    "• Some deductions: molecular mass",
+    "• Vapour density",
+    "• Molecular mass",
+    "• Volume of gas"
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Avogadro's law and some deductions: molecular mass and va…\" with one example.",
+    "compare \"Avogadro's law\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Avogadro's law and some deductions: molecular mass and va…\" and verify the answer is plausible."
+  ],
+  "numericals": [
+    "Use  n = m / M  — pick reasonable values, solve, and check the units.",
+    "Use  n = V / 22.4 (g at STP)  — pick reasonable values, solve, and check the units.",
+    "Use  % yield = (actual / theoretical) × 100  — pick reasonable values, solve, and check the units."
+  ],
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Avogadro's law and some deductions: molecular mass and va…\"?",
+      "options": [
+        "Avogadro's law",
+        "Some deductions: molecular mass",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "A",
+      "explanation": "Avogadro's law is listed among the official sub-ideas of Avogadro's law and some deductions: molecular mass and va…; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Avogadro's law and some deductions: molecular mass and va…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Limit to remember: 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses)."
+  ],
+  "summary": "Avogadro's law and some deductions: molecular mass and va… (Stoichiometry, Chemistry, class-11-notes) covers Avogadro's law, some deductions: molecular mass, vapour density. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
 }

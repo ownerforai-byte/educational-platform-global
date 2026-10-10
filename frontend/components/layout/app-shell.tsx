@@ -1,6 +1,7 @@
 "use client";
 
 import { useEffect, useState, Suspense } from "react";
+import { useRouter } from "next/navigation";
 import Link from "next/link";
 import { PanelLeftClose, PanelLeftOpen, Atom, Pin, PinOff, ChevronDown, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -18,6 +19,8 @@ interface AppShellProps {
 }
 
 export function AppShell({ children, breadcrumbs }: AppShellProps) {
+  const router = useRouter();
+  const [preferencesLoaded, setPreferencesLoaded] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   // Visible by default: an auto-hiding bar hid the whole nav (incl. the mobile
   // hamburger) behind a 12px hover strip on first load for every visitor.
@@ -26,6 +29,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
   const [isClickedOpen, setIsClickedOpen] = useState(false);
 
   useEffect(() => {
+    try {
     const savedSidebar = localStorage.getItem("sidebar-collapsed");
     if (savedSidebar !== null) {
       setSidebarCollapsed(savedSidebar === "true");
@@ -37,20 +41,36 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
     if (savedPinned === "false") {
       setNavPinned(false);
     }
+    } catch { /* Storage may be unavailable in private/embedded browsers. */ }
+    setPreferencesLoaded(true);
   }, []);
 
   useEffect(() => {
-    localStorage.setItem("sidebar-collapsed", String(sidebarCollapsed));
-  }, [sidebarCollapsed]);
+    const onKey = (event: KeyboardEvent) => {
+      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
+        event.preventDefault();
+        router.push('/search');
+      }
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [router]);
 
   useEffect(() => {
-    localStorage.setItem("nav-pinned-v2", String(navPinned));
-  }, [navPinned]);
+    if (!preferencesLoaded) return;
+    try { localStorage.setItem("sidebar-collapsed", String(sidebarCollapsed)); } catch { /* Optional preference. */ }
+  }, [sidebarCollapsed, preferencesLoaded]);
+
+  useEffect(() => {
+    if (!preferencesLoaded) return;
+    try { localStorage.setItem("nav-pinned-v2", String(navPinned)); } catch { /* Optional preference. */ }
+  }, [navPinned, preferencesLoaded]);
 
   const navVisible = navPinned || isHovered || isClickedOpen;
 
   return (
     <div className="flex min-h-screen flex-col bg-background">
+      <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-background focus:px-4 focus:py-3 focus:text-primary focus:shadow-lg">Skip to content</a>
       {/* ── Top Sensor & Reveal Tab for Auto-Hiding Navbar ── */}
       {!navPinned && (
         <>
@@ -137,7 +157,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             >
               <Search className="h-3.5 w-3.5 text-muted-foreground" />
               <span>Search</span>
-              <kbd className="text-[9px] font-mono px-1 py-0.5 rounded bg-muted border border-border/60">⌘K</kbd>
+              <kbd className="text-[9px] font-mono px-1 py-0.5 rounded bg-muted border border-border/60">Ctrl/⌘ K</kbd>
             </Link>
 
             {/* Pin / Unpin button */}
@@ -196,9 +216,9 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
         </aside>
 
         {/* Main content — auto-fits, no max-width constraint */}
-        <main className="flex-1 min-w-0 px-4 py-6 md:px-6 lg:px-8">
+        <main id="main-content" tabIndex={-1} className="flex-1 min-w-0 px-4 py-6 md:px-6 lg:px-8 focus:outline-none">
           {breadcrumbs && breadcrumbs.length > 0 && (
-            <nav className="mb-4 text-sm text-muted-foreground">
+            <nav aria-label="Breadcrumbs" className="mb-4 flex flex-wrap text-sm text-muted-foreground">
               {breadcrumbs.map((crumb, i) => (
                 <span key={i}>
                   {i > 0 && <span className="mx-2">/</span>}

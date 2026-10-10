@@ -43,13 +43,7 @@
     "Where a formula is quoted it is valid only under the conditions stated; Omitting the constant of integration on a definite integral, where it must be absent because the bounds cancel it.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [
-    "Statement 1: If $F'=f$ then $F$ is an antiderivative of $f$.",
-    "Statement 2: Every antiderivative of $f$ is of the form $F+C$.",
-    "Statement 3: $\\int x^n\\,dx=\\frac{x^{n+1}}{n+1}+C$ for $n\\ne-1$.",
-    "Statement 4: $\\int\\frac1x\\,dx=\\ln|x|+C$.",
-    "Statement 5: The definite integral is a signed accumulation, so odd functions integrate to zero on symmetric intervals."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Topic anchor: Some functions have no elementary antiderivative  $ int e^{-x^2} ,dx$ has no expression in elementary functions and is written as $ frac{ sqrt pi}{2} operatorname{erf}(x)$."
   ],

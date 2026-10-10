@@ -4,8 +4,6 @@
   "topicSlug": "linear-momentum-impulse",
   "topicTitle": "Linear momentum, impulse",
   "relevance": 100,
-  "duplicateType": 2,
-  "tabGroup": "linear-momentum-impulse",
   "animation3D": "dynamics",
   "motionGraphics": "dynamics",
   "visualType": "impulse-momentum",
@@ -86,12 +84,7 @@
       "Note 3: For force–time graphs, rectangular pulses are $F\\Delta t$; triangular pulses are $\\frac{1}{2}F_{max}\\Delta t$.",
       "Note 4: When a question says 'average force', it means $\\Delta p/\\Delta t$ — the constant force delivering the same impulse."
     ],
-    "importantStatements": [
-      "Statement 1: The linear momentum of a body is the product of its mass and velocity — a vector along the velocity.",
-      "Statement 2: The rate of change of momentum of a body equals the net force acting on it (general form of Newton's second law).",
-      "Statement 3: Impulse of a force is the product of the force and the time for which it acts, equal to the change in momentum produced.",
-      "Statement 4: For a fixed momentum change, the average force is inversely proportional to the collision time."
-    ],
+    "importantStatements": [],
     "importantNotes": [
       "Note 1: Impulse units (N·s) and momentum units (kg·m/s) are identical — that is the theorem speaking.",
       "Note 2: Momentum is directional: a rebound doubles the magnitude change versus a stop at the same speeds.",
@@ -258,12 +251,7 @@
       "Note 3: For force–time graphs, rectangular pulses are $F\\Delta t$; triangular pulses are $\\frac{1}{2}F_{max}\\Delta t$.",
       "Note 4: When a question says 'average force', it means $\\Delta p/\\Delta t$ — the constant force delivering the same impulse."
     ],
-    "importantStatements": [
-      "Statement 1: The linear momentum of a body is the product of its mass and velocity — a vector along the velocity.",
-      "Statement 2: The rate of change of momentum of a body equals the net force acting on it (general form of Newton's second law).",
-      "Statement 3: Impulse of a force is the product of the force and the time for which it acts, equal to the change in momentum produced.",
-      "Statement 4: For a fixed momentum change, the average force is inversely proportional to the collision time."
-    ],
+    "importantStatements": [],
     "importantNotes": [
       "Note 1: Impulse units (N·s) and momentum units (kg·m/s) are identical — that is the theorem speaking.",
       "Note 2: Momentum is directional: a rebound doubles the magnitude change versus a stop at the same speeds.",
@@ -370,7 +358,8 @@
     "**Why airbags/crumple zones work:** to stop a passenger, $\\Delta p$ is fixed by the crash; extending the collision time $\\Delta t$ cuts the average force $F_{avg} = \\Delta p/\\Delta t$. Bending your knees on landing, catching a cricket ball with draw-back hands, and jumping with flexed legs are all the same physics.",
     "**Worked example:** a 0.15 kg cricket ball at 30 m/s is stopped in 0.1 s. $\\Delta p = 0.15 \\times 30 = 4.5$ kg·m/s → $F_{avg} = 45$ N. If caught in 0.02 s: 225 N — five times the force from the same momentum change.",
     "**Variable force:** when $F(t)$ is a curve, impulse is the area under it; for $F = F_0 e^{-t/\\tau}$-style impacts, $J = F_0\\tau$. NEB usually gives triangular or rectangular force–time pulses — count the areas.",
-    "**NEB exam focus:** define momentum and impulse with units; state and use $F = dp/dt$; compute impulse from force–time graphs; apply $J = \\Delta p$ to catches, kicks and landings; explain safety devices via the force–time argument."
+    "**NEB exam focus:** define momentum and impulse with units; state and use $F = dp/dt$; compute impulse from force–time graphs; apply $J = \\Delta p$ to catches, kicks and landings; explain safety devices via the force–time argument.",
+    "**Linear momentum:** $\\vec{p} = m\\vec{v}$ — mass in motion, SI unit kg·m/s. It is a VECTOR along the velocity. A 1 kg ball at 10 m/s and a 10 kg cart at 1 m/s carry equal momentum but very different kinetic energies ($\\frac{1}{2}mv^2$: 50 J vs 5 J)."
   ],
   "confusion": [
     "❌ 'Momentum and kinetic energy are interchangeable measures of motion.' ✅ Momentum $mv$ is a vector conserved in ALL collisions; kinetic energy $\\frac{1}{2}mv^2$ is a scalar conserved only in elastic ones. Both grow with speed but differently.",
@@ -433,12 +422,7 @@
     "Note 3: For force–time graphs, rectangular pulses are $F\\Delta t$; triangular pulses are $\\frac{1}{2}F_{max}\\Delta t$.",
     "Note 4: When a question says 'average force', it means $\\Delta p/\\Delta t$ — the constant force delivering the same impulse."
   ],
-  "importantStatements": [
-    "Statement 1: The linear momentum of a body is the product of its mass and velocity — a vector along the velocity.",
-    "Statement 2: The rate of change of momentum of a body equals the net force acting on it (general form of Newton's second law).",
-    "Statement 3: Impulse of a force is the product of the force and the time for which it acts, equal to the change in momentum produced.",
-    "Statement 4: For a fixed momentum change, the average force is inversely proportional to the collision time."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Note 1: Impulse units (N·s) and momentum units (kg·m/s) are identical — that is the theorem speaking.",
     "Note 2: Momentum is directional: a rebound doubles the magnitude change versus a stop at the same speeds.",

@@ -395,16 +395,16 @@
     "**A patient from a malaria-endemic area shows periodic fever with chills every 48 hours. Identify the parasite and explain which stage of Plasmodium causes fever.** **Answer:** Plasmodium vivax (tertian malaria). Fever occurs during erythrocytic schizogony when RBCs rupture simultaneously, releasing toxins and merozoites that trigger immune response.",
     "**",
     "Why is Euglena considered a connecting link between plants and animals?\"** **Answer:** Euglena possesses chloroplasts and performs photosynthesis like plants, but it also lacks a cell wall and can feed heterotrophically in the dark like animals. This mixotrophic nature places it between the plant and animal kingdoms.",
-    "**",
     "Describe the encystment process in Amoeba and explain its adaptive significance.\"** **Answer:** Under adverse conditions (desiccation, food scarcity), Amoeba retracts pseudopodia, secretes a thick protective cyst wall, and enters dormancy. This helps survival through unfavorable periods. When conditions improve, the cyst excysts and the active trophozoite emerges. This is analogous to sporulation but serves a survival function, not reproduction.",
-    "**",
     "Differentiate between exo-erythrocytic and erythrocytic schizogony in Plasmodium.\"** **Answer:** Exo-erythrocytic schizogony occurs in liver hepatocytes after sporozoites enter from mosquito bite; this produces merozoites that then invade RBCs. Erythrocytic schizogony occurs inside RBCs, producing more merozoites that burst RBCs and cause malaria symptoms. Only P. vivax and P. ovale have a dormant liver stage (hypnozoites) causing relapses.",
     "**Compare the contractile vacuole in Amoeba and Paramecium in terms of structure and mechanism.** **Answer:** In Amoeba, a single contractile vacuole collects water from radial canals and periodically expels it. In Paramecium, there are two contractile vacuoles (anterior and posterior) each surrounded by a network of 5-8 radiating canals. The vacuoles alternate in filling and emptying in a regular cycle. Both serve osmoregulation but Paramecium's system is more complex due to its larger size and higher water intake.",
     "**Explain the significance of VSG (variant surface glycoprotein) switching in Trypanosoma.** **Answer:** Trypanosoma brucei coats its entire surface with a dense layer of VSG proteins. The host immune system produces antibodies against the initial VSG type, but a small subset of trypanosomes periodically switches to expressing a different VSG variant. This antigenic variation allows the parasite to stay ahead of the immune response, causing recurrent waves of parasitemia and chronic infection. It is a major obstacle to vaccine development.",
     "**Compare and contrast the life cycles of Plasmodium and Trypanosoma in terms of hosts and transmission.** **Answer:** Plasmodium requires two hosts — a vertebrate host (human, where asexual replication occurs in liver and RBCs) and an invertebrate vector (female Anopheles mosquito, where sexual reproduction occurs). Trypanosoma brucei also requires two hosts — a vertebrate host (mammal, including human) and an invertebrate vector (tsetse fly). However, Trypanosoma replicates extracellularly in blood/lymph, while Plasmodium is intracellular in host cells. Trypanosoma also uses VSG switching for immune evasion, while Plasmodium uses antigenic variation of surface proteins on infected RBCs.",
     "**A patient presents with cyclic fever every 72 hours, anaemia, and splenomegaly. Identify the Plasmodium species and explain the timing.** **Answer:** Plasmodium malariae causes quartan malaria with fever cycles every 72 hours. This is because its erythrocytic schizogony cycle takes 72 hours (the longest among human malaria species). P. vivax and P. ovale cause tertian malaria (48-hour cycles), while P. falciparum causes irregular/cyclical fevers. P. malariae is notable for causing chronic, low-level persistent infections that can last for decades if untreated.",
     "**Describe the endosymbiotic theory and its relevance to protist evolution.** **Answer:** The endosymbiotic theory proposes that mitochondria and chloroplasts originated as free-living bacteria engulfed by an ancestral eukaryotic cell. Evidence: (1) Both organelles have their own circular DNA (bacterial-type). (2) They have 70S ribosomes (bacterial). (3) They reproduce by binary fission. (4) Their membranes are double (inner from bacterium, outer from host engulfment). Primary endosymbiosis gave rise to chloroplasts in Archaeplastida (green/red algae, plants). Secondary endosymbiosis (engulfment of a eukaryotic alga) gave rise to complex plastids in dinoflagellates, apicomplexans, and euglenoids.",
-    "**What are the diagnostic features that separate the four classes of Protozoa, and why is Sporozoa unique?** **Answer:** The four classes are distinguished by locomotion: (1) Mastigophora — flagella (Euglena, Trypanosoma). (2) Sarcodina — pseudopodia (Amoeba, Entamoeba). (3) Ciliophora — cilia (Paramecium, Vorticella). (4) Sporozoa — no locomotory organelles in adult stage, all parasitic with an apical complex for host cell penetration (Plasmodium, Toxoplasma). Sporozoa is unique because it completely lacks locomotory structures in its adult form, relying on gliding motility or passive transmission, and it possesses a specialised apical complex (conoid, rhoptries, micronemes) not found in any other protozoan class."
+    "**What are the diagnostic features that separate the four classes of Protozoa, and why is Sporozoa unique?** **Answer:** The four classes are distinguished by locomotion: (1) Mastigophora — flagella (Euglena, Trypanosoma). (2) Sarcodina — pseudopodia (Amoeba, Entamoeba). (3) Ciliophora — cilia (Paramecium, Vorticella). (4) Sporozoa — no locomotory organelles in adult stage, all parasitic with an apical complex for host cell penetration (Plasmodium, Toxoplasma). Sporozoa is unique because it completely lacks locomotory structures in its adult form, relying on gliding motility or passive transmission, and it possesses a specialised apical complex (conoid, rhoptries, micronemes) not found in any other protozoan class.",
+    "one worked example for \"Protista: Outline classification. Protozoa: diagnostic fe…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "universalFacts": [
     "This concept is fundamental and appears in multiple contexts across the subject.",
@@ -418,7 +418,8 @@
     "Paramecium caudatum has a well-defined cell anatomy with a fixed body shape maintained by the pellicle, and its size (0.25-0.35 mm) makes it visible to the naked eye — an unusual feature among single-celled organisms.",
     "The apicomplexan parasites (Sporozoa) include Plasmodium, Toxoplasma, and Eimeria — collectively causing more human illness and death than any other single group of protists, primarily through malaria (600,000+ deaths annually worldwide).",
     "Some protists exhibit 'green tides' — massive blooms of green algae (e.g., Ulva lactuca) caused by nutrient pollution (eutrophication). These blooms can cover hundreds of square kilometers, block sunlight, and deplete oxygen when they decompose, creating dead zones.",
-    "Conjugation in Paramecium is a form of genetic recombination (not reproduction) that can occur when nutritional stress triggers it, producing genetically novel individuals that may be better adapted to changing environments — an example of asexual organisms employing sexual mechanisms for survival."
+    "Conjugation in Paramecium is a form of genetic recombination (not reproduction) that can occur when nutritional stress triggers it, producing genetically novel individuals that may be better adapted to changing environments — an example of asexual organisms employing sexual mechanisms for survival.",
+    "answer pattern for \"Protista: Outline classification. Protozoa: diagnostic fe…\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "animation3D": "faunal-diversity",
   "motionGraphics": "faunal-diversity",
@@ -462,20 +463,44 @@
         "Spores"
       ],
       "answer": "C"
+    },
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Protista: Outline classification. Protozoa: diagnostic fe…\"?",
+      "options": [
+        "Protista",
+        "Protozoa: diagnostic features",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "Protista",
+      "explanation": "Protista is listed among the official sub-ideas of Protista: Outline classification. Protozoa: diagnostic fe…; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Protista: Outline classification. Protozoa: diagnostic fe…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
   ],
   "examples": [
     "Amoeba proteus — Sarcodina; pseudopodia; no fixed shape.",
     "Paramecium caudatum — Ciliophora; cilia; two nuclei; oral groove.",
     "Trypanosoma brucei — Mastigophora; flagellum; causes sleeping sickness.",
-    "Plasmodium falciparum — Sporozoa; no locomotion; causes malaria; Anopheles vector."
+    "Plasmodium falciparum — Sporozoa; no locomotion; causes malaria; Anopheles vector.",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "practiceQuestions": [
     "Why is Protista called a \"kingdom of convenience\"?",
     "Classify Protozoa up to class with diagnostic features.",
     "Explain the structure and locomotion of Paramecium.",
     "Describe the life cycle of Plasmodium with the role of Anopheles.",
-    "Differentiate the four protozoan classes."
+    "Differentiate the four protozoan classes.",
+    "state + explain the main idea of \"Protista: Outline classification. Protozoa: diagnostic fe…\" with one example.",
+    "compare \"Protista\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Protista: Outline classification. Protozoa: diagnostic fe…\" and verify the answer is plausible."
   ],
   "formulas": [
     "Protozoa classes: Sarcodina (pseudopodia), Mastigophora (flagella), Ciliophora (cilia), Sporozoa (spores/non-motile)",
@@ -488,7 +513,10 @@
     "Sarcodina (Amoeba) — pseudopodia; Ciliophora (Paramecium) — cilia.",
     "Mastigophora (Trypanosoma) — flagella; Sporozoa (Plasmodium) — non-motile spores.",
     "Paramecium has two nuclei (macro + micro) and contractile vacuoles.",
-    "Plasmodium: malaria; Anopheles vector; human + mosquito life cycle."
+    "Plasmodium: malaria; Anopheles vector; human + mosquito life cycle.",
+    "• Protista",
+    "• Protozoa: diagnostic features",
+    "• Classification up to class with examples"
   ],
   "summary": "Protozoa are animal-like, mostly unicellular eukaryotes classified by their locomotion into four classes: Sarcodina (pseudopodia, e.g. Amoeba), Mastigophora (flagella, e.g. Trypanosoma), Ciliophora (cilia, e.g. Paramecium), and Sporozoa (non-motile spores, e.g. Plasmodium). Paramecium and Amoeba are model organisms. Plasmodium (malaria) with its Anopheles vector is a key NEB examination topic. Protozoa are the most diverse single-celled eukaryotes in aquatic environments.",
   "specialNotes": [
@@ -592,5 +620,8 @@
       ],
       "answer": "Paramecium; Ciliophora"
     }
-  ]
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": []
 }

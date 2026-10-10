@@ -58,13 +58,7 @@
     "The electric field just outside any arbitrarily shaped conductor in electrostatic equilibrium is always perpendicular to the surface and has magnitude E = σ / ε₀.",
     "A graph of E versus r for a thin spherical shell shows zero field for 0 ≤ r < R, a step discontinuity to E_max = kQ/R² at r = R, and smooth 1/r² decay for r > R."
   ],
-  "importantStatements": [
-    "Statement 1: The electric field due to an infinitely long straight wire carrying uniform linear charge density is inversely proportional to distance from the wire (E ∝ 1/r).",
-    "Statement 2: The electric field due to an infinite plane sheet of charge is uniform and completely independent of the distance from the sheet.",
-    "Statement 3: The electric field inside a uniformly charged conducting spherical shell is identically zero everywhere.",
-    "Statement 4: Outside a spherically symmetric charge distribution, the field is identical to that of a point charge located at the sphere's geometric center.",
-    "Statement 5: Inside a uniformly charged non-conducting sphere, the electric field increases linearly with radial distance from the center (E ∝ r)."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Contrast the distance dependencies: point charge E ∝ 1/r², dipole E ∝ 1/r³, line charge E ∝ 1/r, infinite plane sheet E ∝ r⁰ (independent of distance)."
   ],
@@ -123,7 +117,5 @@
     "Derive Gauss's law application for an infinite plane sheet.",
     "Derive Gauss's law application for a spherical shell and sketch E-r and V-r graphs."
   ],
-  "duplicateType": 2,
-  "visualType": "gauss-applications",
-  "tabGroup": "applications-of-gauss-law"
+  "visualType": "gauss-applications"
 }

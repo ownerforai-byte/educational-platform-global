@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
@@ -51,6 +51,8 @@ function NavSection({
                 key={item.href}
                 href={item.href}
                 title={item.label}
+                aria-label={item.label}
+                aria-current={isActive ? 'page' : undefined}
                 className={cn(
                   "group relative flex items-center justify-center rounded-lg p-2.5 transition-all",
                   isActive
@@ -74,15 +76,17 @@ function NavSection({
   return (
     <div className="mb-2">
       <button
+        type="button"
         onClick={onToggle}
+        aria-expanded={!collapsed}
+        aria-label={`${collapsed ? 'Expand' : 'Collapse'} ${label}`}
         className={cn(
           "flex w-full items-center gap-2 rounded-lg px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground/70 hover:text-foreground hover:bg-muted/50 transition-all",
           collapsed && "justify-center"
         )}
       >
         <Icon className="h-3.5 w-3.5 shrink-0" />
-        {!collapsed && (
-          <>
+        <>
             <span className="flex-1 text-left">{label}</span>
             {activeCount > 0 && (
               <span className="flex h-4 min-w-4 items-center justify-center rounded-full bg-primary/15 px-1 text-[9px] font-bold text-primary">
@@ -91,7 +95,6 @@ function NavSection({
             )}
             <ChevronsUp className={cn("h-3 w-3 opacity-50 transition-transform", collapsed && "rotate-180")} />
           </>
-        )}
       </button>
       {!collapsed && (
         <div className="mt-0.5 space-y-0.5 pl-1">
@@ -102,6 +105,7 @@ function NavSection({
               <Link
                 key={item.href}
                 href={item.href}
+                aria-current={isActive ? 'page' : undefined}
                 className={cn(
                   "group flex items-center gap-3 rounded-lg px-3 py-2 text-xs font-medium transition-all relative overflow-hidden",
                   isActive
@@ -144,7 +148,13 @@ interface SidebarNavigationProps {
 
 export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps) {
   const pathname = usePathname();
-  const { user, refresh } = useSession();
+  const { user: cachedUser, refresh } = useSession();
+  // The session can hydrate from the client cache on the first render, which
+  // the server never sees. Treat the viewer as signed out until mounted so the
+  // first client pass matches the server HTML (no sidebar hydration mismatch).
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
+  const user = mounted ? cachedUser : null;
   const isLoggedIn = !!user;
 
   const [collapsedSections, setCollapsedSections] = useState<Record<string, boolean>>({
@@ -207,6 +217,8 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
                 key={item.href}
                 href={item.href}
                 title={item.label}
+                aria-label={item.label}
+                aria-current={isActive ? 'page' : undefined}
                 className={cn(
                   "group flex items-center gap-3 rounded-xl px-3 py-2 text-xs font-semibold transition-all relative overflow-hidden",
                   isActive

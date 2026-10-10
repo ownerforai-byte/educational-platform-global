@@ -56,13 +56,7 @@
     "Electrostatic field lines do not form closed loops because electrostatic fields are conservative: the closed loop line integral ∮ E · dr = 0.",
     "A charged particle projected perpendicularly into a uniform electric field follows a parabolic trajectory, analogous to projectile motion in a uniform gravitational field."
   ],
-  "importantStatements": [
-    "Statement 1: The electric field at any point in space is the electrostatic force experienced per unit infinitesimal positive test charge.",
-    "Statement 2: Electric field lines originate on positive charges, terminate on negative charges, and cannot intersect at any point.",
-    "Statement 3: The electric field due to a point charge obeys an inverse-square distance relationship (E ∝ 1/r²).",
-    "Statement 4: The electric field due to a short electric dipole decays inversely with the cube of distance (E ∝ 1/r³).",
-    "Statement 5: In a uniform electric field, an electric dipole experiences zero translational net force but a net aligning torque τ = p × E."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Remember that the SI units N/C and V/m are completely interchangeable: 1 N/C = 1 (J/m) / C = 1 (J/C) / m = 1 V/m."
   ],
@@ -121,7 +115,5 @@
     "Sketch electric field lines for unlike charges, like charges, and uniform fields.",
     "Calculate the net electric field and neutral point for two collinear point charges."
   ],
-  "duplicateType": 2,
-  "visualType": "electric-field",
-  "tabGroup": "electric-field-due-to-point-charges-and-field-lines"
+  "visualType": "electric-field"
 }

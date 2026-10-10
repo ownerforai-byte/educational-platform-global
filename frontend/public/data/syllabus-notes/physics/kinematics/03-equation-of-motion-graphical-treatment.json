@@ -4,8 +4,6 @@
   "topicSlug": "equation-of-motion-graphical-treatment",
   "topicTitle": "Equation of motion (graphical treatment)",
   "relevance": 100,
-  "duplicateType": 2,
-  "tabGroup": "equation-of-motion-graphical",
   "notes": [
     "**Type 2 — alternate treatment:** this version derives all three equations of motion graphically (from the velocity–time graph) — the derivation style NEB asks for 'using a graphical method'.",
     "**Setup:** a body starts with initial velocity $u$ and accelerates uniformly at $a$; after time $t$ its velocity is $v$. On a $v$–$t$ graph this is a straight line from $(0, u)$ to $(t, v)$ — the straightness is exactly the meaning of uniform acceleration.",
@@ -76,12 +74,7 @@
     "Note 3: Convert km/h to m/s before substituting (divide by 3.6) — the most common numerical slip.",
     "Note 4: If the body reverses direction, compute each leg separately and add magnitudes for distance, not displacement."
   ],
-  "importantStatements": [
-    "Statement 1: For uniformly accelerated motion, the velocity–time graph is a straight line whose slope equals the acceleration.",
-    "Statement 2: The displacement in uniformly accelerated motion equals the area of the trapezoid under the $v$–$t$ line.",
-    "Statement 3: The three equations of motion are valid only when acceleration is constant in magnitude and direction.",
-    "Statement 4: The area under an acceleration–time graph equals the change in velocity over that interval."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Note 1: $v^2 = u^2 + 2as$ contains no time — use it whenever $t$ is unknown or irrelevant.",
     "Note 2: The mean-velocity form $s = \\frac{u+v}{2}t$ is valid only for constant acceleration (it is the trapezoid's average height).",

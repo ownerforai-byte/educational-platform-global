@@ -42,6 +42,7 @@ import "@/lib/mindmap-depth-index";
 
 // Motion styles (scoped `mm-` prefix; injected once). Pure CSS — no dependency.
 const MM_CSS = `
+@media(prefers-reduced-motion:reduce){.mm-pop,.mm-conn,.mm-tip{animation:none!important;stroke-dashoffset:0!important}}
 @keyframes mm-pop{0%{opacity:0;transform:translate(-50%,-50%) scale(.5)}100%{opacity:1;transform:translate(-50%,-50%) scale(1)}}
 @keyframes mm-draw{to{stroke-dashoffset:0}}
 @keyframes mm-fade{from{opacity:0}to{opacity:1}}
@@ -211,7 +212,7 @@ export function TopicMindMap({
     //   c) authored entry reached only by topic keywords (shared — last resort)
     //   d) subject-level generic tree (bottom fallback)
     // ─────────────────────────────────────────────────────────────
-    const exactConcept = getExactUnitConcept(unitId || "");
+    const exactConcept = getExactUnitConcept(unitId || "", s);
     if (exactConcept) return exactConcept.branches;
 
     const bankBranches = buildUnitMindmapBranches(
@@ -222,7 +223,7 @@ export function TopicMindMap({
     );
     if (bankBranches) return bankBranches;
 
-    const unitConcept = getUnitConcept(unitId || "", topicSlug, topicTitle);
+    const unitConcept = getUnitConcept(unitId || "", topicSlug, topicTitle, subjectSlug);
     if (unitConcept) return unitConcept.branches;
 
     // ─────────────────────────────────────────────────────────────
@@ -1979,7 +1980,7 @@ export function TopicMindMap({
   // Rendered through MathMarkdown so inline $…$ KaTeX in the packs works here
   // exactly as it does on a leaf.
   const unitDepthRows: KnowledgeRow[] | null = useMemo(() => {
-    const d = getUnitConcept(unitId || "", topicSlug, topicTitle)?.depth;
+    const d = getUnitConcept(unitId || "", topicSlug, topicTitle, subjectSlug)?.depth;
     if (!d) return null;
     const groups: [keyof typeof DEPTH_SYMBOLS, string[] | undefined][] = [
       ["keyFacts", d.unitFacts],
@@ -2150,7 +2151,7 @@ export function TopicMindMap({
   const canvasPanRef = useRef<HTMLDivElement>(null);
 
   const handleCanvasPointerDown = (e: React.PointerEvent<HTMLDivElement>) => {
-    if (e.button !== 0) return;
+    if (e.button !== 0 || (e.target as Element).closest('button, input, select, [data-knowledge-block]')) return;
     panStartRef.current = { x: e.clientX - pan.x, y: e.clientY - pan.y };
   };
   const handleCanvasPointerMove = (e: React.PointerEvent<HTMLDivElement>) => {
@@ -2160,10 +2161,17 @@ export function TopicMindMap({
   const handleCanvasPointerUp = () => {
     panStartRef.current = null;
   };
-  const handleCanvasWheel = (e: React.WheelEvent<HTMLDivElement>) => {
-    e.preventDefault();
-    setZoomLevel((z) => Math.max(0.35, Math.min(2.6, z * (e.deltaY > 0 ? 0.9 : 1.1))));
-  };
+  useEffect(() => {
+    const canvas = canvasPanRef.current;
+    if (!canvas) return;
+    const onWheel = (event: WheelEvent) => {
+      if (!event.ctrlKey && !event.metaKey) return;
+      event.preventDefault();
+      setZoomLevel((z) => Math.max(0.35, Math.min(2.6, z * (event.deltaY > 0 ? 0.9 : 1.1))));
+    };
+    canvas.addEventListener('wheel', onWheel, { passive: false });
+    return () => canvas.removeEventListener('wheel', onWheel);
+  }, []);
 
   // ── Motion + hover-preview plumbing ──
   const mmReduceMotion =
@@ -2619,7 +2627,6 @@ export function TopicMindMap({
           onPointerMove={handleCanvasPointerMove}
           onPointerUp={handleCanvasPointerUp}
           onPointerLeave={handleCanvasPointerUp}
-          onWheel={handleCanvasWheel}
           style={{ cursor: panStartRef.current ? "grabbing" : "grab" }}
         >
           {/* Floating knowledge block — hover/click facts over the canvas */}

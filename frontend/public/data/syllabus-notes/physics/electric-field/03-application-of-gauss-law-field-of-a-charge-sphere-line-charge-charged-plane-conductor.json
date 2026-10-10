@@ -6,7 +6,13 @@
   "relevance": 100,
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
-  "notes": [],
+  "notes": [
+    "**Gauss's law.** The total electric flux through any closed surface equals the enclosed charge divided by ε₀: Φ_E = ∮E·dA = q_in/ε₀; the surface is called a Gaussian surface.",
+    "**Charged sphere.** For a uniformly charged spherical shell, E = kQ/r² outside the shell and E = 0 inside; for a solid insulating sphere the inner field grows linearly with r.",
+    "**Line charge.** For an infinite line of charge with linear density λ, a cylindrical Gaussian surface gives E = λ/2πε₀r — the field falls off as 1/r.",
+    "**Infinite plane sheet.** For a uniformly charged infinite sheet with surface density σ, E = σ/2ε₀ on each side — uniform and independent of distance.",
+    "**Conductor surface.** Just outside a charged conductor E = σ/ε₀, and the field inside the conductor's material is zero at electrostatic equilibrium."
+  ],
   "confusion": [],
   "bounds": [],
   "practice": [

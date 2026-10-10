@@ -104,31 +104,56 @@
   "mcs": [
     {
       "question": "If sin theta = 3/5 for an acute angle theta, then cos theta is",
-      "options": ["3/4", "4/5", "5/4", "4/3"],
+      "options": [
+        "3/4",
+        "4/5",
+        "5/4",
+        "4/3"
+      ],
       "answer": "B",
       "explanation": "The identity sin^2 theta + cos^2 theta = 1 gives cos^2 theta = 1 - 9/25 = 16/25, and cosine is positive in the first quadrant, so cos theta = 4/5. The 3/4 option is tan theta, not cos theta."
     },
     {
       "question": "The solutions of 2sin^2 x - sin x - 1 = 0 for 0 <= x <= 360 degrees are",
-      "options": ["x = 90° only", "x = 30°, 150°, 210° and 330°", "x = 90°, 210° and 330°", "x = 210° and 330° only"],
+      "options": [
+        "x = 90° only",
+        "x = 30°, 150°, 210° and 330°",
+        "x = 90°, 210° and 330°",
+        "x = 210° and 330° only"
+      ],
       "answer": "C",
       "explanation": "Factorising gives (2 sin x + 1)(sin x - 1) = 0, so sin x = -1/2 or sin x = 1. In the given interval sin x = 1 gives x = 90° and sin x = -1/2 gives x = 210° and x = 330°."
     },
     {
       "question": "If sin A = 3/5 and sin B = 4/5, then sin(A + B) sin(A - B) equals",
-      "options": ["7/25", "-7/25", "24/25", "0"],
+      "options": [
+        "7/25",
+        "-7/25",
+        "24/25",
+        "0"
+      ],
       "answer": "B",
       "explanation": "The identity gives sin(A + B) sin(A - B) = sin^2 A - sin^2 B = 9/25 - 16/25 = -7/25. The value 24/25 comes from wrongly adding the two squares."
     },
     {
       "question": "If cos A = 4/5, then cos 2A equals",
-      "options": ["7/25", "-7/25", "9/25", "24/25"],
+      "options": [
+        "7/25",
+        "-7/25",
+        "9/25",
+        "24/25"
+      ],
       "answer": "A",
       "explanation": "Use cos 2A = 2cos^2 A - 1 = 2(16/25) - 1 = 32/25 - 25/25 = 7/25. Using cos 2A = 1 - 2sin^2 A with sin A = 3/5 gives the same result."
     },
     {
       "question": "tan 2A is equal to",
-      "options": ["2 tan A", "2 tan A/(1 - tan^2 A)", "tan A/2", "2 tan A/(1 + tan^2 A)"],
+      "options": [
+        "2 tan A",
+        "2 tan A/(1 - tan^2 A)",
+        "tan A/2",
+        "2 tan A/(1 + tan^2 A)"
+      ],
       "answer": "B",
       "explanation": "The double angle formula is tan 2A = 2 tan A/(1 - tan^2 A), which comes from the compound angle formula. It is undefined when tan A = ±1, and the first option is the common error."
     }

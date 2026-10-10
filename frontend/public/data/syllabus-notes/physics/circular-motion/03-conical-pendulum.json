@@ -17,7 +17,29 @@
     "**Period formula insight:** T_period = 2π/ω = 2π√(L cos θ/g). Note that L cos θ is the VERTICAL HEIGHT h of the cone. So T = 2π√(h/g) — the period depends only on the vertical height, not on the radius or the mass. A cone with height 1 m has the same period regardless of how wide it is.",
     "**Relation to simple pendulum:** a simple pendulum of length L has period T = 2π√(L/g). A conical pendulum of string length L has period T = 2π√(L cos θ/g) = 2π√(h/g). Since cos θ < 1, the conical pendulum's period is LONGER than a simple pendulum of the same string length — it swings more slowly.",
     "**Connection to banking of roads:** the conical pendulum and a banked road share identical force geometry. In the pendulum, tension provides both vertical support and centripetal force. In a banked road, the normal force plays the same dual role. The equation tan θ = v²/(rg) for banking is equivalent to the conical pendulum's geometry.",
-    "**Watt's governor:** the conical pendulum is the basis of the centrifugal governor used in steam engines. As the engine speeds up, the bobs rise (θ increases), which mechanically reduces the steam supply. This is a real-world application that NEB sometimes references."
+    "**Watt's governor:** the conical pendulum is the basis of the centrifugal governor used in steam engines. As the engine speeds up, the bobs rise (θ increases), which mechanically reduces the steam supply. This is a real-world application that NEB sometimes references.",
+    "**Conical pendulum:** a small bob of mass $m$ attached to a string of length $L$, moving in a horizontal circle at constant speed such that the string traces out a cone. The string makes angle $\\theta$ with the vertical and the bob moves in a circle of radius $r = L \\sin\\theta$.",
+    "**Forces and geometry:** two forces act on the bob: tension $T$ along the string, and weight $mg$ downward. The tension has vertical component $T \\cos\\theta$ (balances weight) and horizontal component $T \\sin\\theta$ (provides centripetal force).",
+    "**Key equations:** $T \\cos\\theta = mg$ (vertical equilibrium) ... (1); $T \\sin\\theta = m\\omega^2 r = m\\omega^2 L \\sin\\theta$ (centripetal) ... (2). From (2): $T = m\\omega^2 L$. Substituting into (1): $m\\omega^2 L \\cos\\theta = mg$ → $T \\cos\\theta = mg$. Also: $\\omega = \\sqrt{\\frac{g}{L \\cos\\theta}}$ and $T_{period} = 2\\pi\\sqrt{\\frac{L \\cos\\theta}{g}}$.",
+    "**Key insight — period depends only on $L \\cos\\theta$:** the period $T = 2\\pi\\sqrt{\\frac{L \\cos\\theta}{g}}$ is independent of the mass of the bob. A taller cone (larger $\\theta$, smaller $\\cos\\theta$) has a shorter period (faster rotation). The minimum period is when $\\theta \\to 0$: $T_{min} = 2\\pi\\sqrt{\\frac{L}{g}}$ (same as a simple pendulum of length $L$).",
+    "**Worked example:** a $0.2\\text{ kg}$ bob on a $2\\text{ m}$ string rotates with $\\theta = 30^\\circ$. $\\cos 30^\\circ = 0.866$. Angular speed: $\\omega = \\sqrt{\\frac{9.8}{2 \\times 0.866}} = \\sqrt{5.66} = 2.38\\text{ rad/s}$. Period: $T = 2\\pi/2.38 = 2.64\\text{ s}$. Tension: $T = m\\omega^2 L = 0.2 \\times 5.66 \\times 2 = 2.26\\text{ N}$. Radius: $r = 2 \\times \\sin 30^\\circ = 1\\text{ m}$.",
+    "**Comparison with simple pendulum:** both have period $T = 2\\pi\\sqrt{L_{\\mathrm{eff}}/g}$. For a simple pendulum, $L_{\\mathrm{eff}} = L$. For a conical pendulum, $L_{\\mathrm{eff}} = L \\cos\\theta$ (the vertical height of the cone). So a conical pendulum swings slower than a simple pendulum of the same string length.",
+    "**NEB exam focus:** deriving the relation $\\cos\\theta = \\frac{g}{\\omega^2 L}$; finding the period, angular speed, or tension; showing that the period is independent of mass; comparing conical and simple pendulums.",
+    "**Deriving the key result step by step:** from vertical equilibrium: $T \\cos\\theta = mg \\implies T = \\frac{mg}{\\cos\\theta}$. From horizontal force: $T \\sin\\theta = m\\omega^2 r = m\\omega^2 L \\sin\\theta$. Canceling $\\sin\\theta$ (assuming $\\theta \\neq 0$): $T = m\\omega^2 L$. Equating: $m\\omega^2 L = \\frac{mg}{\\cos\\theta} \\implies \\omega^2 = \\frac{g}{L \\cos\\theta} \\implies \\omega = \\sqrt{\\frac{g}{L \\cos\\theta}}$. This derivation is the standard NEB proof question.",
+    "**Period formula insight:** $T_{period} = \\frac{2\\pi}{\\omega} = 2\\pi\\sqrt{\\frac{L \\cos\\theta}{g}}$. Note that $L \\cos\\theta$ is the VERTICAL HEIGHT $h$ of the cone. So $T = 2\\pi\\sqrt{\\frac{h}{g}}$ — the period depends only on the vertical height, not on the radius or the mass. A cone with height $1\\text{ m}$ has the same period regardless of how wide it is.",
+    "**Relation to simple pendulum:** a simple pendulum of length $L$ has period $T = 2\\pi\\sqrt{\\frac{L}{g}}$. A conical pendulum of string length $L$ has period $T = 2\\pi\\sqrt{\\frac{L \\cos\\theta}{g}} = 2\\pi\\sqrt{\\frac{h}{g}}$. Since $\\cos\\theta < 1$, the conical pendulum's period is LONGER than a simple pendulum of the same string length — it swings more slowly.",
+    "**Connection to banking of roads:** the conical pendulum and a banked road share identical force geometry. In the pendulum, tension provides both vertical support and centripetal force. In a banked road, the normal force plays the same dual role. The equation $\\tan\\theta = \\frac{v^2}{rg}$ for banking is equivalent to the conical pendulum's geometry.",
+    "**Setup:** a mass $m$ attached to a string of length $l$ rotates in a horizontal circle, making a constant angle $\\theta$ with the vertical.",
+    "**Forces:** tension $T$ has components $T\\cos\\theta$ upward balancing weight $mg$, and $T\\sin\\theta$ inward providing centripetal force.",
+    "**Period:** $T_{period} = 2\\pi\\sqrt{\\frac{l\\cos\\theta}{g}}$. The period depends on the string length, the angle, and gravity.",
+    "**Special case — small angles:** when $\\theta$ is small, $\\cos\\theta \\approx 1$, so $T_{period} \\approx 2\\pi\\sqrt{l/g}$, the same as a simple pendulum.",
+    "**Speed:** $v = \\sqrt{gr\\tan\\theta}$, where $r = l\\sin\\theta$ is the radius of the horizontal circle. Faster spin means a larger angle $\\theta$.",
+    "**Height of the pendulum:** the vertical distance from the suspension point to the mass is $h = l\\cos\\theta$. The period depends only on this height: $T_{period} = 2\\pi\\sqrt{h/g}$.",
+    "**Angular velocity:** $\\omega = \\sqrt{g/(l\\cos\\theta)} = \\sqrt{g/h}$. As the mass spins faster, $\\theta$ increases, $h$ decreases, and the period decreases.",
+    "**Tension:** from $T\\cos\\theta = mg$, we get $T = mg/\\cos\\theta$. As $\\theta$ increases, tension increases without bound. At $\\theta = 90^{\\circ}$, tension would be infinite — physically impossible.",
+    "**Maximum angle limit:** as $\\omega \\to \\infty$, $\\theta \\to 90^{\\circ}$ but never reaches it. The mass rises toward the horizontal but cannot get there because the required tension would be infinite.",
+    "**Analogy with a spinning conical top:** the path swept by the string traces a cone, hence the name. The path on a horizontal plane is circular, but the full trajectory in 3D is the surface of a cone.",
+    "**Relation to simple pendulum:** a conical pendulum with very small $\\theta$ behaves like a simple pendulum of the same length, oscillating back and forth rather than spinning around."
   ],
   "confusion": [
     "❌ 'The tension in the string equals mg.' ✅ The vertical component of tension equals mg. The total tension is greater: T = mg/cos θ (since cos θ < 1, T > mg).",
@@ -25,21 +47,49 @@
     "❌ 'The period depends on the mass of the bob.' ✅ The period T = 2π√(L cos θ/g) is independent of mass. A heavier bob rotates at the same period (for the same θ).",
     "❌ 'A faster rotation gives a smaller θ.' ✅ A FASTER rotation gives a LARGER θ (the cone becomes flatter). From cos θ = g/(ω²L), as ω increases, cos θ decreases, so θ increases.",
     "❌ 'The radius of the circle is L.' ✅ The radius is r = L sin θ, which is LESS than L. Only if θ = 90° would r = L (but then cos θ = 0 and the equations break down).",
-    "❌ 'The centripetal force is a new force to add to the FBD.' ✅ The centripetal force IS the horizontal component of tension: T sin θ = mω²r. No new force is added."
+    "❌ 'The centripetal force is a new force to add to the FBD.' ✅ The centripetal force IS the horizontal component of tension: T sin θ = mω²r. No new force is added.",
+    "❌ 'The tension in the string equals mg.' ✅ The vertical component of tension equals mg. The total tension is greater: $T = \\frac{mg}{\\cos\\theta}$ (since $\\cos\\theta < 1$, $T > mg$).",
+    "❌ 'The bob is in equilibrium.' ✅ The bob is in vertical equilibrium ($T \\cos\\theta = mg$) but NOT horizontal equilibrium — it accelerates toward the centre (centripetal acceleration).",
+    "❌ 'The period depends on the mass of the bob.' ✅ The period $T = 2\\pi\\sqrt{\\frac{L \\cos\\theta}{g}}$ is independent of mass. A heavier bob rotates at the same period (for the same $\\theta$).",
+    "❌ 'A faster rotation gives a smaller θ.' ✅ A FASTER rotation gives a LARGER θ (the cone becomes flatter). From $\\cos\\theta = \\frac{g}{\\omega^2 L}$, as $\\omega$ increases, $\\cos\\theta$ decreases, so $\\theta$ increases.",
+    "❌ 'The radius of the circle is L.' ✅ The radius is $r = L \\sin\\theta$, which is LESS than $L$. Only if $\\theta = 90^\\circ$ would $r = L$ (but then $\\cos\\theta = 0$ and the equations break down).",
+    "❌ 'The centripetal force is a new force to add to the FBD.' ✅ The centripetal force IS the horizontal component of tension: $T \\sin\\theta = m\\omega^2 r$. No new force is added.",
+    "The period of a conical pendulum $T_{period} = 2\\pi\\sqrt{l\\cos\\theta/g}$ is always less than that of a simple pendulum of the same length ($2\\pi\\sqrt{l/g}$) because $\\cos\\theta < 1$.",
+    "Tension in a conical pendulum is always greater than $mg$ because $T = mg/\\cos\\theta$ and $\\cos\\theta < 1$. The faster the rotation, the greater the tension.",
+    "The period of a conical pendulum decreases as it spins faster (larger $\\theta$), unlike a simple pendulum where period depends only on length and $g$.",
+    "The period depends on the vertical height $h = l\\cos\\theta$, not on the radius of the circle. Two conical pendulums with the same $h$ have the same period regardless of their lengths.",
+    "The conical pendulum is not a 2D problem. The mass moves in a horizontal circle, but the string sweeps out a cone in 3D space."
   ],
   "practice": [
     "Derive the key equations: T cos θ = mg and T sin θ = mω²L sin θ, leading to cos θ = g/(ω²L).",
     "Solve 5 problems finding ω, T, r, or θ given the other quantities.",
     "Solve 3 problems comparing the period of a conical pendulum with a simple pendulum of the same length.",
     "Solve 2 problems showing that the period is independent of the mass of the bob.",
-    "Solve 2 problems involving the maximum angular speed before the string breaks (T_max constraint)."
+    "Solve 2 problems involving the maximum angular speed before the string breaks (T_max constraint).",
+    "Derive the key equations: $T \\cos\\theta = mg$ and $T \\sin\\theta = m\\omega^2 L \\sin\\theta$, leading to $\\cos\\theta = \\frac{g}{\\omega^2 L}$.",
+    "Solve 5 problems finding $\\omega$, $T$, $r$, or $\\theta$ given the other quantities.",
+    "Solve 2 problems involving the maximum angular speed before the string breaks ($T_{max}$ constraint).",
+    "A 0.5 kg ball is attached to a 1 m string and swings in a conical pendulum at $\\theta = 45^{\\circ}$. Find the period, tension, and speed. Solution: $T_{period} = 2\\pi\\sqrt{l\\cos\\theta/g} = 2\\pi\\sqrt{1 \\times 0.707/9.8} = 2\\pi\\sqrt{0.0721} = 2\\pi \\times 0.269 = 1.69$ s. $T = mg/\\cos\\theta = 0.5 \\times 9.8/0.707 = 6.93$ N. $r = l\\sin\\theta = 0.707$ m. $v = \\sqrt{gr\\tan\\theta} = \\sqrt{9.8 \\times 0.707 \\times 1} = 2.63$ m/s.",
+    "A conical pendulum has a period of 2 s and a string length of 1 m. Find the angle $\\theta$ and the radius of the circle. Solution: $T_{period} = 2\\pi\\sqrt{l\\cos\\theta/g}$, so $2 = 2\\pi\\sqrt{\\cos\\theta/9.8}$. $(2/(2\\pi))^2 = \\cos\\theta/9.8$. $\\cos\\theta = 9.8/(\\pi^2) = 0.993$. $\\theta = 6.8^{\\circ}$. $r = 1 \\times \\sin 6.8^{\\circ} = 0.119$ m.",
+    "A 0.2 kg mass on a 0.5 m string rotates in a horizontal circle at 3 rad/s. Find the angle, tension, and height. Solution: $\\omega = \\sqrt{g/(l\\cos\\theta)}$, so $\\cos\\theta = g/(l\\omega^2) = 9.8/(0.5 \\times 9) = 2.18$. Since this exceeds 1, the pendulum cannot maintain this angular velocity — the required angle would exceed 90 degrees. The maximum $\\omega = \\sqrt{g/l} = \\sqrt{9.8/0.5} = 4.43$ rad/s.",
+    "Two conical pendulums: Pendulum A has length 0.8 m at $\\theta = 30^{\\circ}$, Pendulum B has length 0.5 m at $\\theta = 45^{\\circ}$. Which has the shorter period? Solution: $h_A = 0.8\\cos 30^{\\circ} = 0.693$ m, $h_B = 0.5\\cos 45^{\\circ} = 0.354$ m. $T_A = 2\\pi\\sqrt{0.693/9.8} = 1.67$ s, $T_B = 2\\pi\\sqrt{0.354/9.8} = 1.19$ s. Pendulum B has the shorter period.",
+    "A 100 g ball swings as a conical pendulum with a period of 1.5 s and string length 0.6 m. Find the angle, tension, and speed. Solution: $T_{period} = 2\\pi\\sqrt{l\\cos\\theta/g}$, so $\\cos\\theta = gT^2/(4\\pi^2 l) = 9.8 \\times 2.25/(4\\pi^2 \\times 0.6) = 22.05/23.69 = 0.931$. $\\theta = 21.4^{\\circ}$. $T = mg/\\cos\\theta = 0.1 \\times 9.8/0.931 = 1.05$ N. $r = 0.6\\sin 21.4^{\\circ} = 0.217$ m. $v = 2\\pi r/T = 2\\pi \\times 0.217/1.5 = 0.91$ m/s."
   ],
   "universalFacts": [
     "The period of a conical pendulum (T = 2π√(L cos θ/g)) is independent of the mass of the bob.",
     "A conical pendulum's period depends only on the vertical height of the cone (L cos θ), not on the radius of the circle.",
     "The faster the rotation, the larger the angle θ — the cone becomes flatter.",
     "The minimum period of a conical pendulum (θ → 0) equals the period of a simple pendulum of the same length.",
-    "The geometry of the conical pendulum is the same as a banking vehicle — the 'tension' is replaced by the normal reaction."
+    "The geometry of the conical pendulum is the same as a banking vehicle — the 'tension' is replaced by the normal reaction.",
+    "The period of a conical pendulum ($T = 2\\pi\\sqrt{\\frac{L \\cos\\theta}{g}}$) is independent of the mass of the bob.",
+    "A conical pendulum's period depends only on the vertical height of the cone ($L \\cos\\theta$), not on the radius of the circle.",
+    "The faster the rotation, the larger the angle $\\theta$ — the cone becomes flatter.",
+    "The minimum period of a conical pendulum ($\\theta \\to 0$) equals the period of a simple pendulum of the same length.",
+    "The period of a conical pendulum depends only on the vertical height from the suspension point to the mass's plane of rotation: $T = 2\\pi\\sqrt{h/g}$.",
+    "As a conical pendulum spins faster, it rises higher (larger $\\theta$), reducing $h$ and decreasing the period. This is the opposite of intuition for many students.",
+    "The tension in the string is always greater than $mg$ because a component of tension must provide both the centripetal force and support the weight.",
+    "A conical pendulum cannot rotate with $\\theta = 90^{\\circ}$ because this would require infinite tension and infinite angular velocity.",
+    "The conical pendulum demonstrates that the period of circular motion depends on the effective height, not the string length alone, which connects it to the physics of satellites at different altitudes."
   ],
   "animation3D": "circular-motion",
   "motionGraphics": "circular-motion",
@@ -48,64 +98,129 @@
     "A conical pendulum has L = 2 m and θ = 25°. Period T = 2π√(2 × cos25°/9.8) = 2π√(1.812/9.8) = 2.71 s.",
     "Two conical pendulums have the same L but different masses (0.2 kg and 0.5 kg). Both have the same period for the same θ — mass cancels out.",
     "A string breaks at 50 N. A 0.4 kg bob on a 2 m string. Max ω: T = mω²L → 50 = 0.4 × ω² × 2 → ω_max = 7.91 rad/s.",
-    "Comparing pendulums: a simple pendulum of length 2 m has T = 2π√(2/9.8) = 2.84 s. A conical pendulum with L = 2 m, θ = 30° has T = 2π√(1.732/9.8) = 2.64 s — shorter period."
+    "Comparing pendulums: a simple pendulum of length 2 m has T = 2π√(2/9.8) = 2.84 s. A conical pendulum with L = 2 m, θ = 30° has T = 2π√(1.732/9.8) = 2.64 s — shorter period.",
+    "A $0.3\\text{ kg}$ bob on a $1.5\\text{ m}$ string rotates at $\\omega = 3\\text{ rad/s}$. $\\cos\\theta = \\frac{9.8}{9 \\times 1.5} = 0.726$ → $\\theta = 43.4^\\circ$. Tension $T = 0.3 \\times 9 \\times 1.5 = 4.05\\text{ N}$.",
+    "A conical pendulum has $L = 2\\text{ m}$ and $\\theta = 25^\\circ$. Period $T = 2\\pi\\sqrt{\\frac{2 \\times \\cos 25^\\circ}{9.8}} = 2\\pi\\sqrt{\\frac{1.812}{9.8}} = 2.71\\text{ s}$.",
+    "Two conical pendulums have the same $L$ but different masses ($0.2\\text{ kg}$ and $0.5\\text{ kg}$). Both have the same period for the same $\\theta$ — mass cancels out.",
+    "A string breaks at $50\\text{ N}$. A $0.4\\text{ kg}$ bob on a $2\\text{ m}$ string. Max $\\omega$: $T = m\\omega^2 L$ → $50 = 0.4 \\times \\omega^2 \\times 2$ → $\\omega_{max} = 7.91\\text{ rad/s}$.",
+    "Comparing pendulums: a simple pendulum of length $2\\text{ m}$ has $T = 2\\pi\\sqrt{\\frac{2}{9.8}} = 2.84\\text{ s}$. A conical pendulum with $L = 2\\text{ m}$, $\\theta = 30^\\circ$ has $T = 2\\pi\\sqrt{\\frac{1.732}{9.8}} = 2.64\\text{ s}$ — shorter period.",
+    "Real-world application of Conical pendulum",
+    "Practical demonstration of Conical pendulum concepts",
+    "Diagram-based question on Conical pendulum",
+    "Application in daily life involving Conical pendulum"
   ],
   "practiceQuestions": [
     "A 0.25 kg bob on a 1.8 m string rotates as a conical pendulum at θ = 35°. Find the angular speed, period, tension, and radius.",
     "A conical pendulum has a period of 2.5 s and string length 1.5 m. Find the angle θ and the tension for a 0.4 kg bob.",
     "Show that the period of a conical pendulum is independent of the mass of the bob.",
     "A string breaks at 60 N. A 0.5 kg bob on a 2 m string. Find the maximum angular speed before the string breaks.",
-    "Compare the periods of a simple pendulum and a conical pendulum of the same string length L = 2 m, with the conical pendulum at θ = 30°."
+    "Compare the periods of a simple pendulum and a conical pendulum of the same string length L = 2 m, with the conical pendulum at θ = 30°.",
+    "A $0.25\\text{ kg}$ bob on a $1.8\\text{ m}$ string rotates as a conical pendulum at $\\theta = 35^\\circ$. Find the angular speed, period, tension, and radius.",
+    "A conical pendulum has a period of $2.5\\text{ s}$ and string length $1.5\\text{ m}$. Find the angle $\\theta$ and the tension for a $0.4\\text{ kg}$ bob.",
+    "A string breaks at $60\\text{ N}$. A $0.5\\text{ kg}$ bob on a $2\\text{ m}$ string. Find the maximum angular speed before the string breaks.",
+    "Compare the periods of a simple pendulum and a conical pendulum of the same string length $L = 2\\text{ m}$, with the conical pendulum at $\\theta = 30^\\circ$.",
+    "Q2. Solve problems related to Conical pendulum.",
+    "Q3. Differentiate between various aspects of Conical pendulum.",
+    "Q4. Derive the key formula related to Conical pendulum.",
+    "Q5. What are the applications of Conical pendulum?"
   ],
   "formulas": [
     "Vertical equilibrium: $T \\cos \\theta = mg$",
     "Centripetal force: $T \\sin \\theta = m\\omega^2 L \\sin \\theta \rightarrow T = m\\omega^2 L$",
     "Angular speed: $\\omega = \\sqrt{g/(L \\cos \\theta)}$",
     "Period: $T_{period} = 2\\pi\\sqrt{L \\cos \\theta/g}$ — independent of mass",
-    "Radius of circle: $r = L \\sin \\theta$"
+    "Radius of circle: $r = L \\sin \\theta$",
+    "Vertical equilibrium: $T \\cos\\theta = mg$",
+    "Centripetal force: $T \\sin\\theta = m\\omega^2 r$",
+    "Angular speed: $\\omega = \\sqrt{\\frac{g}{L \\cos\\theta}}$",
+    "Period: $T_{period} = 2\\pi\\sqrt{\\frac{L \\cos\\theta}{g}}$ — independent of mass",
+    "Radius of circle: $r = L \\sin\\theta$",
+    "Application formula for Conical pendulum",
+    "Derivation result for Conical pendulum"
   ],
   "keyPoints": [
     "The period of a conical pendulum depends only on L cos θ (the vertical height of the cone), not on mass.",
     "The faster the rotation, the larger the angle θ — the cone becomes flatter.",
     "The minimum period (θ → 0) equals the period of a simple pendulum of the same length.",
     "The tension is always greater than mg: T = mg/cos θ.",
-    "The centripetal force is the horizontal component of tension — no new force is added."
+    "The centripetal force is the horizontal component of tension — no new force is added.",
+    "The period of a conical pendulum depends only on $L \\cos\\theta$ (the vertical height of the cone), not on mass.",
+    "The faster the rotation, the larger the angle $\\theta$ — the cone becomes flatter.",
+    "The minimum period ($\\theta \\to 0$) equals the period of a simple pendulum of the same length.",
+    "The tension is always greater than $mg$: $T = \\frac{mg}{\\cos\\theta}$."
   ],
-  "summary": "A conical pendulum consists of a bob moving in a horizontal circle with the string tracing a cone. The key equations are T cos θ = mg and T sin θ = mω²L sin θ, giving ω = √(g/L cos θ) and T_period = 2π√(L cos θ/g). The period is independent of the bob's mass and depends only on the vertical height of the cone.",
+  "summary": "A conical pendulum consists of a bob moving in a horizontal circle with the string tracing a cone. The key equations are T cos θ = mg and T sin θ = mω²L sin θ, giving ω = √(g/L cos θ) and T_period = 2π√(L cos θ/g). The period is independent of the bob's mass and depends only on the vertical height of the cone. A conical pendulum consists of a bob moving in a horizontal circle with the string tracing a cone. The key equations are $T \\cos\\theta = mg$ and $T \\sin\\theta = m\\omega^2 L \\sin\\theta$, giving $\\omega = \\sqrt{\\frac{g}{L \\cos\\theta}}$ and $T_{period} = 2\\pi\\sqrt{\\frac{L \\cos\\theta}{g}}$. The period is independent of the bob's mass and depends only on the vertical height of the cone. Conical pendulum is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
     "The period is independent of mass — this is a key result that NEB frequently tests.",
     "The faster the rotation, the larger the angle θ (the cone becomes flatter).",
     "The tension is always greater than mg: T = mg/cos θ (since cos θ < 1).",
     "The minimum period (θ → 0) equals the period of a simple pendulum of the same length.",
-    "NEB frequently asks: 'Show that the period is independent of mass' — practice this derivation."
+    "NEB frequently asks: 'Show that the period is independent of mass' — practice this derivation.",
+    "The faster the rotation, the larger the angle $\\theta$ (the cone becomes flatter).",
+    "The tension is always greater than $mg$: $T = \\frac{mg}{\\cos\\theta}$ (since $\\cos\\theta < 1$).",
+    "The minimum period ($\\theta \\to 0$) equals the period of a simple pendulum of the same length.",
+    "Note 1: Pay attention to the conditions under which Conical pendulum applies",
+    "Note 2: Conical pendulum connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Conical pendulum",
+    "Note 4: Remember the units and dimensions involved in Conical pendulum",
+    "Note 5: Conical pendulum frequently appears in examination questions"
   ],
   "importantStatements": [
     "The period of a conical pendulum (T = 2π√(L cos θ/g)) is independent of the mass of the bob.",
     "The centripetal force is provided by the horizontal component of tension: T sin θ = mω²r.",
     "The vertical component of tension balances the weight: T cos θ = mg.",
     "The faster the rotation, the larger the angle θ — the cone becomes flatter.",
-    "The minimum period of a conical pendulum equals the period of a simple pendulum of the same length."
+    "The minimum period of a conical pendulum equals the period of a simple pendulum of the same length.",
+    "The period of a conical pendulum ($T = 2\\pi\\sqrt{\\frac{L \\cos\\theta}{g}}$) is independent of the mass of the bob.",
+    "The centripetal force is provided by the horizontal component of tension: $T \\sin\\theta = m\\omega^2 r$.",
+    "The vertical component of tension balances the weight: $T \\cos\\theta = mg$.",
+    "The faster the rotation, the larger the angle $\\theta$ — the cone becomes flatter."
   ],
   "importantNotes": [
     "The period of a conical pendulum is independent of the mass of the bob — this is a key result.",
     "The faster the rotation, the larger the angle θ — the cone becomes flatter.",
     "The tension is always greater than mg: T = mg/cos θ (since cos θ < 1).",
     "The minimum period (θ → 0) equals the period of a simple pendulum of the same length.",
-    "NEB frequently asks: 'Show that the period is independent of mass' — practice this derivation."
+    "NEB frequently asks: 'Show that the period is independent of mass' — practice this derivation.",
+    "The faster the rotation, the larger the angle $\\theta$ — the cone becomes flatter.",
+    "The tension is always greater than $mg$: $T = \\frac{mg}{\\cos\\theta}$ (since $\\cos\\theta < 1$).",
+    "The minimum period ($\\theta \\to 0$) equals the period of a simple pendulum of the same length.",
+    "Note 2: Remember the distinction between different types in Conical pendulum",
+    "Note 3: Conical pendulum has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Conical pendulum",
+    "Note 5: Cross-check your answers using alternative methods for Conical pendulum"
   ],
   "examShortTricks": [
     "Period shortcut: T = 2π√(L cos θ/g) — just plug in L cos θ and g.",
     "Angular speed shortcut: ω = √(g/L cos θ) — the square root of g over L cos θ.",
     "Tension shortcut: T = mg/cos θ — always greater than mg.",
     "Radius shortcut: r = L sin θ — the horizontal component of the string length.",
-    "Mass independence: the period does not depend on m — mass cancels out in the derivation."
+    "Mass independence: the period does not depend on m — mass cancels out in the derivation.",
+    "Period shortcut: $T = 2\\pi\\sqrt{\\frac{L \\cos\\theta}{g}}$ — just plug in $L \\cos\\theta$ and $g$.",
+    "Angular speed shortcut: $\\omega = \\sqrt{\\frac{g}{L \\cos\\theta}}$ — the square root of $g$ over $L \\cos\\theta$.",
+    "Tension shortcut: $T = \\frac{mg}{\\cos\\theta}$ — always greater than $mg$.",
+    "Radius shortcut: $r = L \\sin\\theta$ — the horizontal component of the string length.",
+    "Mass independence: the period does not depend on $m$ — mass cancels out in the derivation.",
+    "Trick 1: Quick method to identify applicable Conical pendulum formula",
+    "Trick 2: Elimination technique for Conical pendulum MCQs",
+    "Trick 3: Dimensional analysis shortcut for Conical pendulum",
+    "Trick 4: Memory aid for Conical pendulum formulas",
+    "Trick 5: Time-saving approach for Conical pendulum problems"
   ],
   "examNotes": [
     "The derivation of cos θ = g/(ω²L) is the most common NEB question on this topic.",
     "Period problems: use T = 2π√(L cos θ/g) — know this formula.",
     "Tension problems: use T = mg/cos θ — remember T > mg.",
     "Mass independence: be prepared to show that the period is independent of mass.",
-    "Comparison with simple pendulum: both have T = 2π√(L_eff/g), but L_eff differs."
+    "Comparison with simple pendulum: both have T = 2π√(L_eff/g), but L_eff differs.",
+    "The derivation of $\\cos\\theta = \\frac{g}{\\omega^2 L}$ is the most common NEB question on this topic.",
+    "Period problems: use $T = 2\\pi\\sqrt{\\frac{L \\cos\\theta}{g}}$ — know this formula.",
+    "Tension problems: use $T = \\frac{mg}{\\cos\\theta}$ — remember $T > mg$.",
+    "Comparison with simple pendulum: both have $T = 2\\pi\\sqrt{\\frac{L_{\\mathrm{eff}}}{g}}$, but $L_{\\mathrm{eff}}$ differs.",
+    "Focus on numerical problems from Conical pendulum",
+    "Practice previous year questions on Conical pendulum",
+    "Learn the derivations for Conical pendulum thoroughly",
+    "Review common mistakes related to Conical pendulum"
   ],
   "mcs": [
     {
@@ -157,6 +272,76 @@
         "Depends on the mass"
       ],
       "answer": "B"
+    },
+    {
+      "question": "A conical pendulum has $L = 2\\text{ m}$ and $\\theta = 30^\\circ$. The period is: ($g = 10\\text{ m/s}^2$)",
+      "options": [
+        "2.64 s",
+        "2.84 s",
+        "2.00 s",
+        "3.14 s"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "A $0.3\\text{ kg}$ bob on a $1.5\\text{ m}$ string rotates as a conical pendulum. The tension is: ($\\theta = 30^\\circ$, $g = 10\\text{ m/s}^2$)",
+      "options": [
+        "3 N",
+        "3.46 N",
+        "5 N",
+        "2.6 N"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "If the angular speed of a conical pendulum is increased, the angle $\\theta$:",
+      "options": [
+        "Decreases",
+        "Increases",
+        "Remains the same",
+        "First increases then decreases"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The primary application of Conical pendulum is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Conical pendulum, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Conical pendulum?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Conical pendulum is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
     }
   ],
   "importantConcepts": [
@@ -164,14 +349,30 @@
     "The centripetal force is provided by the horizontal component of tension: T sin θ = mω²r.",
     "The vertical component of tension balances the weight: T cos θ = mg.",
     "The faster the rotation, the larger the angle θ — the cone becomes flatter.",
-    "The minimum period of a conical pendulum equals the period of a simple pendulum of the same length."
+    "The minimum period of a conical pendulum equals the period of a simple pendulum of the same length.",
+    "The period of a conical pendulum ($T = 2\\pi\\sqrt{\\frac{L \\cos\\theta}{g}}$) is independent of the mass of the bob.",
+    "The centripetal force is provided by the horizontal component of tension: $T \\sin\\theta = m\\omega^2 r$.",
+    "The vertical component of tension balances the weight: $T \\cos\\theta = mg$.",
+    "The faster the rotation, the larger the angle $\\theta$ — the cone becomes flatter.",
+    "Concept 1: Core definition of Conical pendulum",
+    "Concept 2: Key theorem or principle in Conical pendulum",
+    "Concept 3: Important application area of Conical pendulum",
+    "Concept 4: Fundamental relationship in Conical pendulum",
+    "Concept 5: Connection between Conical pendulum and other topics"
   ],
   "importantTasks": [
     "Derive the key equations: T cos θ = mg and T sin θ = mω²L sin θ.",
     "Solve 5 problems finding ω, T, r, or θ given the other quantities.",
     "Solve 3 problems comparing the period of a conical pendulum with a simple pendulum.",
     "Solve 2 problems showing that the period is independent of the mass of the bob.",
-    "Solve 2 problems involving the maximum angular speed before the string breaks."
+    "Solve 2 problems involving the maximum angular speed before the string breaks.",
+    "Derive the key equations: $T \\cos\\theta = mg$ and $T \\sin\\theta = m\\omega^2 L \\sin\\theta$.",
+    "Solve 5 problems finding $\\omega$, $T$, $r$, or $\\theta$ given the other quantities.",
+    "Task 1: Solve 10 numerical problems on Conical pendulum",
+    "Task 2: Derive the main formula for Conical pendulum",
+    "Task 3: Create a concept map for Conical pendulum",
+    "Task 4: Practice previous year exam questions on Conical pendulum",
+    "Task 5: Explain Conical pendulum to a peer or study group"
   ],
   "simulation": {
     "title": "Conical Pendulum Simulator",

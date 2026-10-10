@@ -23,41 +23,156 @@
     "• They explain spectral fine structure, the Zeeman and Stark effects, spin-orbit coupling, MRI/NMR (nuclear spin), lasers and selection rules.",
     "• They let us test validity of a given set (e.g. l = n is forbidden) and count orbitals, unpaired electrons and quantum states in a subshell.",
     "### 8. Limitations",
-    "Quantum numbers describe one electron at a time (not a pair or an atom as a whole); they do not give an electron's position, only the probability; the exact energies for multi-electron atoms need Z_eff and electron–electron interaction; mₛ comes from relativistic Dirac theory and is not contained in the simple Schrödinger solution; and spin–orbit coupling requires the total angular-momentum quantum number J, which is beyond Bohr's picture."
+    "Quantum numbers describe one electron at a time (not a pair or an atom as a whole); they do not give an electron's position, only the probability; the exact energies for multi-electron atoms need Z_eff and electron–electron interaction; mₛ comes from relativistic Dirac theory and is not contained in the simple Schrödinger solution; and spin–orbit coupling requires the total angular-momentum quantum number J, which is beyond Bohr's picture.",
+    "### Focus of this tab",
+    "Where the quantum numbers come from mathematically and the counting metrics (orbitals, capacities, designations) in one table.",
+    "### Origins",
+    "• n, l and m arise as **separation constants** when the Schrödinger equation for the hydrogen atom is solved in spherical coordinates — the radial equation gives n, the angular equations give l and m. They are not assumptions; they are forced by the boundary conditions.",
+    "• mₛ does **not** come from the Schrödinger equation: it enters through the relativistic Dirac equation (1928) and was inferred earlier (1925, Uhlenbeck–Goudsmit) from the Stern–Gerlach experiment and spectral doublets.",
+    "### The metrics table",
+    "Shell n: orbitals n², electrons 2n² (K 1/2, L 4/8, M 9/18, N 16/32). Subshell l: orbitals 2l + 1 (s 1, p 3, d 5, f 7), electrons 2(2l + 1) (s 2, p 6, d 10, f 14). Nodes: radial n − l − 1, angular l, total n − 1. Orbital designation nl (1s, 2p, 3d, 4f).",
+    "### Energy order within a shell",
+    "For hydrogen all subshells of a shell are degenerate (E depends only on n). In multi-electron atoms penetration makes $E_{ns}<E_{np}<E_{nd}<E_{nf}$, and across shells the (n + l) Madelung order governs filling — the two facts the Bohr–Bury scheme could not express.",
+    "### Counting patterns (exam drills)",
+    "• Electrons with n = 4, l = 2 → 4d: 2(2·2+1) = 10.",
+    "• Orbitals with n = 3 → 9 = 3² (1 s + 3 p + 5 d).",
+    "• Electrons with n = 3 and m = 0 → 6 (one each in 3s, 3p, 3d, doubled by spin).",
+    "• Unpaired electrons in a subshell from Hund's rule → paramagnetism; fully paired → diamagnetism.",
+    "How (n, l, m) triples map onto orbital designations, and what the spin quantum number adds — including the box-and-arrow notation used in configuration questions.",
+    "### The designation matrix",
+    "• l = 0 → s, 1 orbital (m = 0): 1s, 2s, 3s, 4s …",
+    "• l = 1 → p, 3 orbitals (m = −1, 0, +1): 2p, 3p, 4p … each written px, py, pz.",
+    "• l = 2 → d, 5 orbitals (m = −2 … +2): 3d, 4d … (dxy, dyz, dxz, dx²−y², dz²).",
+    "• l = 3 → f, 7 orbitals (m = −3 … +3): 4f, 5f …",
+    "The full designation combines n and the subshell letter (3p) or, fully, (n, l, m) — e.g. (3, 1, 0) is the 3pz orbital.",
+    "### The spin quantum number",
+    "mₛ = +½ (↑) or −½ (↓). Electron spin is an intrinsic angular momentum with magnitude √(3/4)·h/2π = √3/2 ħ — it is not literally a spinning ball, but the name survives. Evidence: Stern–Gerlach (silver atoms split into two beams) and doublet structure of alkali spectra. With spin, each orbital (defined by n, l, m) holds exactly two electrons of opposite spin — Pauli's exclusion principle.",
+    "### Box-and-arrow notation (configuration drawing)",
+    "Draw one box per orbital; fill per Aufbau/Pauli/Hund. Nitrogen: 2p ↑ ↑ ↑ (three boxes, parallel arrows); oxygen: 2p ↑↓ ↑ ↑. The notation encodes unpaired-electron counts, hence magnetic behaviour: N has 3 unpaired (paramagnetic), Ne has 0 (diamagnetic).",
+    "### Magnetic behaviour from the matrix",
+    "Count unpaired electrons u: spin-only magnetic moment μ = √(u(u + 2)) BM. Fe³⁺ (3d⁵): u = 5 → μ ≈ 5.92 BM; Cu²⁺ (3d⁹): u = 1 → 1.73 BM; Zn²⁺ (3d¹⁰): u = 0 → diamagnetic.",
+    "The four quantum numbers through one concrete example — the 2p electron of carbon — the fastest route to the 'write the quantum numbers' question. Definitions and the full metric table are in the main note and the metrics tab.",
+    "### The example worked through",
+    "Carbon (Z = 6): 1s² 2s² 2p². Take a 2p electron: n = 2 (L shell, second energy level); l = 1 (p subshell, dumbbell shape); m = −1, 0 or +1 (which of px, py, pz the orbital is); mₛ = +½ or −½ (spin). Hund's rule puts the two 2p electrons in different p orbitals with parallel spins, so a valid full set for the first is n = 2, l = 1, m = −1, mₛ = +½ and for the second n = 2, l = 1, m = 0, mₛ = +½.",
+    "### What each number fixes",
+    "• **n:** shell, size and energy (r ∝ n²; capacity 2n²).",
+    "• **l:** subshell and shape (s spherical, p dumbbell, d clover, f complex); angular momentum √(l(l+1))·h/2π; permitted values 0 … n − 1.",
+    "• **m:** orientation in space; 2l + 1 values; explains Zeeman splitting.",
+    "• **mₛ:** spin ±½; Pauli exclusion follows — no two electrons share all four numbers.",
+    "### The validity ladder (check in this order)",
+    "n ≥ 1 → l ≤ n − 1 → |m| ≤ l → mₛ = ±½. So (n = 2, l = 2) is invalid (l = n), (n = 3, l = 2, m = −3) is invalid (|m| > l), and (n = 2, l = 1, m = 0, mₛ = ±½) is valid.",
+    "### Degeneracy and pairing",
+    "The three p orbitals are degenerate in a free atom; a magnetic field splits them (Zeeman). Filling follows Hund's rule: singly with parallel spins first — the origin of carbon's two unpaired 2p electrons and hence its divalent/paramagnetic behaviour."
   ],
   "confusion": [
     "❌ n determines shape and l determines size. ✅ n → size/energy (shell); l → shape (subshell).",
     "❌ l can equal n. ✅ l = 0 to n − 1, so 1s has l = 0 and 2p has l = 1.",
     "❌ mₗ is the spin quantum number. ✅ mₗ gives orientation; spin is mₛ = ±1/2.",
     "❌ A p subshell holds 3 electrons. ✅ It has 2l + 1 = 3 *orbitals*, so it holds up to 6 electrons.",
-    "❌ Orbital angular momentum is l(h/2π). ✅ It is √(l(l+1))h/2π."
+    "❌ Orbital angular momentum is l(h/2π). ✅ It is √(l(l+1))h/2π.",
+    "❌ mₛ comes from solving the Schrödinger equation. ✅ Only n, l, m do; spin needs the Dirac equation.",
+    "❌ 2n² counts orbitals. ✅ It counts electrons; orbitals in a shell number n².",
+    "❌ All subshells of a shell have equal energy in every atom. ✅ True only for hydrogen; multi-electron atoms order them by penetration.",
+    "❌ Spin means the electron literally spins on its axis. ✅ Spin is an intrinsic quantum property; the classical picture is only an analogy.",
+    "❌ The five d orbitals have five different energies in a free atom. ✅ They are degenerate; ligand or magnetic fields split them.",
+    "❌ A full designation needs only n and l. ✅ A complete state needs all four numbers (n, l, m, mₛ).",
+    "❌ mₛ determines the orbital orientation. ✅ mₗ gives orientation; mₛ gives spin.",
+    "❌ l can take the value n. ✅ l runs 0 to n − 1.",
+    "❌ Two 2p electrons of carbon must have opposite spins. ✅ Hund's rule: parallel spins in different degenerate orbitals first."
   ],
   "practice": [
     "Write the quantum numbers of the 3p electrons and of a 3d electron in the ground state.",
     "Calculate the maximum number of electrons in the M shell and in a 4f subshell.",
     "How many orbitals and electrons are there in the n = 3 shell? Justify with quantum numbers.",
     "Which of these sets is impossible: (a) n = 2, l = 2 (b) n = 3, l = 2, m = −2 (c) n = 2, l = 1, m = 0, s = +1/2?",
-    "Explain how the magnetic quantum number accounts for the Zeeman effect."
+    "Explain how the magnetic quantum number accounts for the Zeeman effect.",
+    "Show how n, l and m arise from solving the Schrödinger equation.",
+    "Tabulate orbitals and electron capacities for the K, L, M and N shells.",
+    "How many orbitals and electrons are possible for n = 4?",
+    "Why is the 4s orbital filled before 3d in potassium?",
+    "Draw the designation matrix for l = 0, 1, 2, 3 with m values and orbital capacities.",
+    "Explain the Stern–Gerlach experiment as evidence for spin.",
+    "Using box notation, show the 2p electrons of N and O and count unpaired electrons.",
+    "Calculate the spin-only magnetic moment of Mn²⁺ (3d⁵).",
+    "Write all four quantum numbers for each of the two 2p electrons of carbon.",
+    "State the quantum numbers for a 3d electron and count its m values.",
+    "Which of these sets are impossible: (2,2,0,+½), (3,2,−2,−½), (2,1,0,0)?",
+    "How does the magnetic quantum number explain the Zeeman effect?"
   ],
   "formulas": [
     "$$l=0,1,2,\\dots,(n-1);\\qquad m=-l,\\dots,0,\\dots,+l;\\qquad m_{s}=\\pm\\tfrac{1}{2}$$",
     "$$\\text{orbitals in a subshell}=2l+1;\\qquad \\text{electrons}=2(2l+1)$$",
     "$$\\text{orbitals in a shell}=n^{2};\\qquad \\text{electrons}=2n^{2}$$",
-    "$$L=\\sqrt{l(l+1)}\\,\\frac{h}{2\\pi}$$"
+    "$$L=\\sqrt{l(l+1)}\\,\\frac{h}{2\\pi}$$",
+    "$$\\text{orbitals: shell }n^{2},\\ \\text{subshell }2l+1;\\qquad \\text{electrons: }2n^{2},\\ 2(2l+1)$$",
+    "$$\\text{radial nodes}=n-l-1,\\quad \\text{angular nodes}=l,\\quad \\text{total}=n-1$$",
+    "$$\\mu=\\sqrt{u(u+2)}\\ \\text{BM},\\qquad s=\\tfrac{1}{2},\\ |s|=\\sqrt{s(s+1)}\\,\\hbar=\\tfrac{\\sqrt{3}}{2}\\hbar$$",
+    "$$l=0,1,\\dots,n-1;\\quad m=-l,\\dots,+l;\\quad m_{s}=\\pm\\tfrac{1}{2};\\quad L=\\sqrt{l(l+1)}\\,h/2\\pi$$"
   ],
   "universalFacts": [
     "s, p, d, f stand for sharp, principal, diffuse, fundamental — the old spectroscopic series names.",
     "Shell capacities: K 2, L 8, M 18, N 32 (2n²); subshell capacities: s 2, p 6, d 10, f 14.",
-    "Spin was proposed in 1925 (Uhlenbeck and Goudsmit) after the Stern–Gerlach experiment (1922)."
+    "Spin was proposed in 1925 (Uhlenbeck and Goudsmit) after the Stern–Gerlach experiment (1922).",
+    "The 4f subshell (l = 3) holds 14 electrons — the width of the lanthanide series.",
+    "Stern–Gerlach (1922) split a silver atomic beam into two — the first spin evidence.",
+    "Degeneracy of the n = 2 level in hydrogen: 4 orbitals (2s + three 2p).",
+    "The five d orbitals carry the spectroscopic labels dxy, dyz, dxz, dx²−y², dz².",
+    "Silver's single unpaired 5s electron produced exactly two Stern–Gerlach beams.",
+    "Pauli stated his exclusion principle in 1925, before spin was formally introduced.",
+    "Carbon's two unpaired 2p electrons make atomic carbon paramagnetic.",
+    "The letters s, p, d, f come from the old spectroscopic terms sharp, principal, diffuse, fundamental.",
+    "Pauli's exclusion principle is the reason any orbital holds at most two electrons."
   ],
   "examples": [
     "**Problem:** Maximum number of electrons with n = 4 and l = 2? **Solution:** 4d subshell: 2(2l + 1) = 2(5) = 10 electrons.",
-    "**Problem:** How many electrons in an atom can have n = 3, m = 0? **Solution:** For n = 3: 3s (m = 0 only), 3p (m = 0 available), 3d (m = 0 available) → 1 + 2 + 2 = 6 electrons."
+    "**Problem:** How many electrons in an atom can have n = 3, m = 0? **Solution:** For n = 3: 3s (m = 0 only), 3p (m = 0 available), 3d (m = 0 available) → 1 + 2 + 2 = 6 electrons.",
+    "**Problem:** Count orbitals with n = 4, l = 3 and the electrons they hold. **Solution:** 2l + 1 = 7 orbitals (4f), holding 14 electrons; nodes: radial 0, angular 3.",
+    "**Problem:** Give the designation of an electron with (n, l, m, mₛ) = (4, 2, −1, +½). **Solution:** n = 4, l = 2 → 4d; m = −1 selects one of the five d orbitals; mₛ = +½ — an up-spin electron in a 4d orbital.",
+    "**Problem:** How many electrons in an atom can have n = 3 and m = 0? **Solution:** 3s (1 orbital, m = 0), 3p (one of three orbitals has m = 0), 3d (one of five) → 1 + 2 + 2 = 6 electrons."
   ],
   "importantNotes": [
     "Remember the two counting rules: 2l + 1 orbitals per subshell and 2n² electrons per shell.",
-    "Check validity sets in the order n ≥ 1, l ≤ n − 1, |m| ≤ l, mₛ = ±1/2 — a favourite one-mark question."
+    "Check validity sets in the order n ≥ 1, l ≤ n − 1, |m| ≤ l, mₛ = ±1/2 — a favourite one-mark question.",
+    "Memorise the three counting numbers: 2l + 1 (orbitals), 2(2l + 1) (subshell electrons), 2n² (shell electrons).",
+    "Attribute spin to Dirac/Stern–Gerlach, not to Schrödinger.",
+    "Use box notation whenever a configuration question asks about unpaired electrons or magnetism.",
+    "Pauli's principle is stated in terms of the four quantum numbers — quote all four.",
+    "Answer 'write the quantum numbers' questions by naming the element and configuration first, then the set per electron.",
+    "Check validity with the ladder n → l → m → mₛ."
   ],
   "visualType": "quantum-numbers",
-  "tabGroup": "Atomic-Structure-Learner-Notes"
+  "mcqs": [
+    {
+      "question": "The number of orbitals in the M shell (n = 3) is:",
+      "options": [
+        "3",
+        "6",
+        "9",
+        "18"
+      ],
+      "answer": "C"
+    },
+    {
+      "question": "The spin-only magnetic moment of Cu²⁺ (3d⁹) is about:",
+      "options": [
+        "0 BM",
+        "1.73 BM",
+        "2.83 BM",
+        "5.92 BM"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "For a 3d electron, l and the number of m values are:",
+      "options": [
+        "l = 2, five m values",
+        "l = 3, seven m values",
+        "l = 1, three m values",
+        "l = 2, three m values"
+      ],
+      "answer": "A"
+    }
+  ],
+  "source": "ravikishan",
+  "filename": "07-quantum-numbers.json"
 }

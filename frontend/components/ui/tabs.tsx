@@ -6,6 +6,7 @@ import { cn } from "@/lib/utils";
 type TabsContextValue = {
   value: string;
   onValueChange: (value: string) => void;
+  id: string;
 };
 
 const TabsContext = React.createContext<TabsContextValue | null>(null);
@@ -31,10 +32,12 @@ export function Tabs({
 }) {
   const [internalValue, setInternalValue] = React.useState(defaultValue ?? "");
   const currentValue = value ?? internalValue;
+  const id = React.useId();
 
   return (
     <TabsContext.Provider
       value={{
+        id,
         value: currentValue,
         onValueChange: (v) => {
           setInternalValue(v);
@@ -60,7 +63,7 @@ export function TabsList({
     <div
       role="tablist"
       className={cn(
-        "inline-flex h-10 items-center rounded-md bg-muted p-1 text-muted-foreground",
+        "flex min-h-10 max-w-full flex-wrap items-center gap-1 rounded-md bg-muted p-1 text-muted-foreground",
         className
       )}
       style={style}
@@ -79,12 +82,16 @@ export function TabsTrigger({
   children: React.ReactNode;
   className?: string;
 }) {
-  const { value: selected, onValueChange } = useTabs();
+  const { value: selected, onValueChange, id } = useTabs();
   const isActive = selected === value;
 
   return (
     <button
+      type="button"
       role="tab"
+      id={`${id}-tab-${value}`}
+      aria-controls={`${id}-panel-${value}`}
+      tabIndex={isActive ? 0 : -1}
       aria-selected={isActive}
       data-state={isActive ? "active" : "inactive"}
       className={cn(
@@ -96,6 +103,18 @@ export function TabsTrigger({
         className
       )}
       onClick={() => onValueChange(value)}
+      onKeyDown={(event) => {
+        const keys = ['ArrowRight', 'ArrowLeft', 'Home', 'End'];
+        if (!keys.includes(event.key)) return;
+        const list = event.currentTarget.closest('[role="tablist"]');
+        const tabs = Array.from(list?.querySelectorAll<HTMLButtonElement>('[role="tab"]:not(:disabled)') ?? []);
+        const index = tabs.indexOf(event.currentTarget);
+        if (index < 0 || !tabs.length) return;
+        event.preventDefault();
+        const next = event.key === 'Home' ? 0 : event.key === 'End' ? tabs.length - 1 : (index + (event.key === 'ArrowRight' ? 1 : -1) + tabs.length) % tabs.length;
+        tabs[next].focus();
+        tabs[next].click();
+      }}
     >
       {children}
     </button>
@@ -111,7 +130,7 @@ export function TabsContent({
   children: React.ReactNode;
   className?: string;
 }) {
-  const { value: selected } = useTabs();
+  const { value: selected, id } = useTabs();
   const isActive = selected === value;
   const hasBeenActive = React.useRef(false);
 
@@ -123,6 +142,10 @@ export function TabsContent({
   return (
     <div
       role="tabpanel"
+      id={`${id}-panel-${value}`}
+      aria-labelledby={`${id}-tab-${value}`}
+      tabIndex={0}
+      hidden={!isActive}
       data-state={isActive ? "active" : "inactive"}
       className={cn(
         "mt-2 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary",

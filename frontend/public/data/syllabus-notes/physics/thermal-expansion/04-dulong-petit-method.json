@@ -5,9 +5,11 @@
   "topicTitle": "Dulong and Petit Method",
   "relevance": 100,
   "notes": [
-    "**Dulong and Petit Method:** This topic covers the fundamental concepts of dulong and petit method in the physics curriculum.",
-    "Understanding dulong and petit method is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to dulong and petit method should be memorized and practiced regularly."
+    "**Dulong–Petit law.** The molar heat capacity of a solid is about 3R ≈ 25 J mol⁻¹ K⁻¹ near room temperature — each atom behaves as an independent oscillator with 3 kinetic + 3 potential degrees of freedom.",
+    "**Finding atomic mass.** Atomic mass ≈ 3R / specific heat; measuring a metal's specific heat therefore gives its equivalent/atomic mass — the classic experiment.",
+    "**Compounds (Kopp's rule).** For a compound the molecular heat capacity is the sum of the atomic contributions, letting unknown element masses be estimated from measured C.",
+    "**Limitations.** The law fails at low temperatures — C falls toward zero as T³ (Debye) for metals and much faster for diamond/beryllium; quantum statistics, not classical, explains the falloff.",
+    "**Exam angle.** Typical questions: state the law with its value, deduce atomic mass from specific heat, or name the solids that obey it least at low temperature."
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in dulong and petit method.",
@@ -28,33 +30,22 @@
   "animation3D": "thermal-expansion",
   "motionGraphics": "thermal-expansion",
   "examples": [
-    "Example 1: Real-world application of Dulong and Petit Method",
-    "Example 2: Practical demonstration of Dulong and Petit Method concepts",
-    "Example 3: Numerical problem on Dulong and Petit Method",
-    "Example 4: Diagram-based question on Dulong and Petit Method",
-    "Example 5: Application in daily life involving Dulong and Petit Method"
+    "Real-world application of Dulong and Petit Method",
+    "Practical demonstration of Dulong and Petit Method concepts",
+    "Diagram-based question on Dulong and Petit Method",
+    "Application in daily life involving Dulong and Petit Method"
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Dulong and Petit Method with suitable example.",
     "Q2. Solve problems related to Dulong and Petit Method.",
     "Q3. Differentiate between various aspects of Dulong and Petit Method.",
     "Q4. Derive the key formula related to Dulong and Petit Method.",
     "Q5. What are the applications of Dulong and Petit Method?"
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Dulong and Petit Method",
-    "Key Formula 2: Mathematical expression of Dulong and Petit Method",
-    "Key Formula 3: Application formula for Dulong and Petit Method",
-    "Key Formula 4: Derivation result for Dulong and Petit Method",
-    "Key Formula 5: Important relation in Dulong and Petit Method"
+    "Application formula for Dulong and Petit Method",
+    "Derivation result for Dulong and Petit Method"
   ],
-  "keyPoints": [
-    "Key Point 1: Fundamental definition of Dulong and Petit Method",
-    "Key Point 2: Essential theorem or principle related to Dulong and Petit Method",
-    "Key Point 3: Important condition or constraint for Dulong and Petit Method",
-    "Key Point 4: Common applications of Dulong and Petit Method",
-    "Key Point 5: Connection to other topics in Science"
-  ],
+  "keyPoints": [],
   "summary": "Dulong and Petit Method is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Dulong and Petit Method applies",
@@ -63,15 +54,8 @@
     "Note 4: Remember the units and dimensions involved in Dulong and Petit Method",
     "Note 5: Dulong and Petit Method frequently appears in examination questions"
   ],
-  "importantStatements": [
-    "Statement 1: Definition of Dulong and Petit Method",
-    "Statement 2: Theorem related to Dulong and Petit Method",
-    "Statement 3: Condition for Dulong and Petit Method to be valid",
-    "Statement 4: Principle governing Dulong and Petit Method",
-    "Statement 5: Corollary or consequence of Dulong and Petit Method"
-  ],
+  "importantStatements": [],
   "importantNotes": [
-    "Note 1: Dulong and Petit Method is based on fundamental principles",
     "Note 2: Remember the distinction between different types in Dulong and Petit Method",
     "Note 3: Dulong and Petit Method has both theoretical and practical significance",
     "Note 4: Study the derivations step by step for Dulong and Petit Method",
@@ -85,23 +69,12 @@
     "Trick 5: Time-saving approach for Dulong and Petit Method problems"
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Dulong and Petit Method",
-    "Exam Tip 2: Practice previous year questions on Dulong and Petit Method",
-    "Exam Tip 3: Dulong and Petit Method carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Dulong and Petit Method thoroughly",
-    "Exam Tip 5: Review common mistakes related to Dulong and Petit Method"
+    "Focus on numerical problems from Dulong and Petit Method",
+    "Practice previous year questions on Dulong and Petit Method",
+    "Learn the derivations for Dulong and Petit Method thoroughly",
+    "Review common mistakes related to Dulong and Petit Method"
   ],
   "mcs": [
-    {
-      "question": "Which of the following best describes Dulong and Petit Method?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
-      "answer": "A"
-    },
     {
       "question": "The primary application of Dulong and Petit Method is in:",
       "options": [

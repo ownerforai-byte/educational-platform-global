@@ -37,6 +37,11 @@ import { useSession } from "@/features/auth/hooks/use-session";
 export function SiteWelcome() {
   const { user } = useSession();
   const [showWelcome, setShowWelcome] = useState(true);
+  // The session can hydrate from the client cache on the first render, which
+  // the server never sees. Keep the server's "friend" text until mounted so
+  // the first client pass matches the server HTML.
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
 
   // Owner rule: the greeting removes itself after 5 seconds.
   useEffect(() => {
@@ -46,7 +51,8 @@ export function SiteWelcome() {
 
   if (!showWelcome) return null;
 
-  const firstName = user?.fullName ? user.fullName.split(" ")[0] : "friend";
+  const firstName =
+    mounted && user?.fullName ? user.fullName.split(" ")[0] : "friend";
 
   return (
     <div

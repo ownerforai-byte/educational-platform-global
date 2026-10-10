@@ -19,6 +19,8 @@ import {
   X,
   MousePointerClick,
   Shapes,
+  Hand,
+  Download,
 } from "lucide-react";
 import {
   KnowledgeBlock,
@@ -43,6 +45,7 @@ const MAX_ZOOM = 3;
 
 // Motion styles (scoped `sd-` prefix; injected once). Pure CSS so we add no dependency.
 const SD_CSS = `
+@media(prefers-reduced-motion:reduce){.sd-art,.sd-chip,.sd-pin,.sd-conn,.sd-drawer,.sd-tip{animation:none!important;stroke-dashoffset:0!important}}
 @keyframes sd-pop{0%{opacity:0;transform:scale(.35)}70%{opacity:1;transform:scale(1.06)}100%{opacity:1;transform:scale(1)}}
 @keyframes sd-fade-up{0%{opacity:0;transform:translateY(8px)}100%{opacity:1;transform:translateY(0)}}
 @keyframes sd-draw{to{stroke-dashoffset:0}}
@@ -156,6 +159,8 @@ export function SchematicDiagram({
   const [hoveredId, setHoveredId] = useState<string | null>(null);
   const [tour, setTour] = useState<number | null>(null);
   const [showIndex, setShowIndex] = useState(false);
+  const [panEnabled, setPanEnabled] = useState(false);
+  const [exportError, setExportError] = useState<string | null>(null);
   const dragRef = useRef<{ px: number; py: number; ox: number; oy: number; moved: boolean } | null>(null);
   const didDragRef = useRef(false);
 
@@ -166,6 +171,8 @@ export function SchematicDiagram({
     const el = svgRef.current;
     if (!el) return;
     const onWheel = (e: WheelEvent) => {
+      // Plain scrolling belongs to the page, not the drawing.
+      if (!e.ctrlKey && !e.metaKey) return;
       e.preventDefault();
       const rect = el.getBoundingClientRect();
       const px = ((e.clientX - rect.left) / rect.width) * VIEW_W;
@@ -182,7 +189,9 @@ export function SchematicDiagram({
   }, []);
 
   const onPointerDown = (e: React.PointerEvent<SVGSVGElement>) => {
-    if (e.button !== 0 && e.pointerType === "mouse") return;
+    if (!panEnabled || (e.button !== 0 && e.pointerType === "mouse")) return;
+    if ((e.target as Element).closest('[role="button"]')) return;
+    didDragRef.current = false;
     svgRef.current?.setPointerCapture(e.pointerId);
     dragRef.current = { px: e.clientX, py: e.clientY, ox: view.x, oy: view.y, moved: false };
   };
@@ -211,7 +220,43 @@ export function SchematicDiagram({
   };
   const resetView = () => setView({ x: 0, y: 0, k: 1 });
   const nudgeZoom = (dir: 1 | -1) =>
-    setView((v) => ({ ...v, k: clampZoom(v.k * (dir === 1 ? 1.25 : 1 / 1.25)) }));
+    setView((v) => {
+      const k = clampZoom(v.k * (dir === 1 ? 1.25 : 1 / 1.25));
+      const s = k / v.k;
+      return { k, x: VIEW_W / 2 - (VIEW_W / 2 - v.x) * s, y: VIEW_H / 2 - (VIEW_H / 2 - v.y) * s };
+    });
+
+  const exportDrawing = () => {
+    const svg = svgRef.current;
+    if (!svg) return;
+    setExportError(null);
+    let url: string | undefined;
+    try {
+      const copy = svg.cloneNode(true) as SVGSVGElement;
+      // Export the complete sheet, not the current zoomed/cropped viewport.
+      copy.querySelector('[data-diagram-layer]')?.removeAttribute('transform');
+      copy.setAttribute('xmlns', 'http://www.w3.org/2000/svg');
+      copy.setAttribute('width', String(VIEW_W));
+      copy.setAttribute('height', String(VIEW_H));
+      copy.removeAttribute('class');
+      copy.removeAttribute('style');
+      const style = document.createElementNS('http://www.w3.org/2000/svg', 'style');
+      style.textContent = '.fill-card{fill:#0f172a}.sd-conn{stroke-dashoffset:0}';
+      copy.prepend(style);
+      url = URL.createObjectURL(new Blob([new XMLSerializer().serializeToString(copy)], { type: 'image/svg+xml' }));
+      const link = document.createElement('a');
+      link.href = url;
+      link.download = `${topicSlug.replace(/[^a-z0-9-]/gi, '-') || 'schematic'}.svg`;
+      link.click();
+    } catch {
+      setExportError('The drawing could not be exported. Please try again.');
+    } finally {
+      if (url) {
+        const downloadUrl = url;
+        window.setTimeout(() => URL.revokeObjectURL(downloadUrl), 1000);
+      }
+    }
+  };
 
   const normalizedSubject = useMemo(() => {
     const s = subjectSlug.toLowerCase();
@@ -252,7 +297,7 @@ export function SchematicDiagram({
     // Unit concept registry: every syllabus unit carries its own annotated
     // schematic, so a topic never falls back to the generic drawing unless
     // its unit is genuinely unauthored.
-    const unitConcept = getUnitConcept(unitId, topicSlug, topicTitle);
+    const unitConcept = getUnitConcept(unitId, topicSlug, topicTitle, normalizedSubject);
     if (unitConcept) {
       return {
         viewBox: sharedViewBox,
@@ -503,9 +548,13 @@ export function SchematicDiagram({
 
     if (
       normalizedSubject === "mathematics" &&
-      (t.includes("parabol") || t.includes("conic") || title.includes("parabol") || u.includes("conic") || u.includes("coordinate"))
+      (t.includes("parabol") || t.includes("conic") || title.includes("parabol"))
     ) {
-      const yAt = (x: number) => (x * x) / 240;
+      const a = 60;
+      const parabolaPoints = Array.from({ length: 81 }, (_, i) => {
+        const y = -190 + i * 4.75;
+        return `${450 + (y * y) / (4 * a)},${260 - y}`;
+      });
       return {
         viewBox: sharedViewBox,
         specific,
@@ -543,7 +592,7 @@ export function SchematicDiagram({
             examNote: "CEE: e = PS/PM = 1 for parabola; tangent bisects angle between PS and perpendicular to directrix.",
             labelX: 150,
             labelY: 420,
-            targetX: 330,
+            targetX: 390,
             targetY: 260,
             controlX: 230,
             controlY: 340,
@@ -553,7 +602,7 @@ export function SchematicDiagram({
             id: "latus",
             label: "Latus Rectum LL'",
             formulaOrValue: "Length = 4a; endpoints (a, ±2a)",
-            examNote: "NEB: Latus rectum ⊥ axis through focus; y = 4a x gives latus rectum end at (a, 2a); slope of tangent at L = 1.",
+            examNote: "NEB: Latus rectum ⊥ axis through focus; y² = 4ax gives endpoints (a, ±2a); the upper endpoint has tangent slope 1.",
             labelX: 560,
             labelY: 420,
             targetX: 510,
@@ -577,25 +626,15 @@ export function SchematicDiagram({
           },
         ] as DiagramAnnotation[],
         renderSvg: () => {
-          const pts = [];
-          for (let x = -240; x <= 360; x += 6) {
-            const y = yAt(x + 240);
-            pts.push([x + 330, 260 - y]);
-          }
-          const bottom = [];
-          for (let x = 360; x >= -240; x -= 6) {
-            const y = yAt(x + 240);
-            bottom.push([x + 330, 260 + y]);
-          }
-          const dPath = "M " + [...pts, ...bottom].map(p => p[0].toFixed(1) + " " + p[1].toFixed(1)).join(" L ") + " Z";
+          const dPath = 'M ' + parabolaPoints.join(' L ');
           return (
             <g>
               <line x1="80" y1="260" x2="820" y2="260" stroke="#f59e0b" strokeWidth="1.6" strokeDasharray="6 4" opacity="0.75" />
               <text x="825" y="255" fill="#f59e0b" fontSize="10" fontWeight="bold">axis x</text>
               <line x1="450" y1="60" x2="450" y2="470" stroke="#94a3b8" strokeWidth="1.2" strokeDasharray="4 4" opacity="0.5" />
               <text x="455" y="70" fill="#94a3b8" fontSize="9">y</text>
-              <line x1="330" y1="50" x2="330" y2="470" stroke="#a855f7" strokeWidth="2.2" />
-              <text x="310" y="50" fill="#a855f7" fontSize="10" fontWeight="bold">x = −a</text>
+              <line x1="390" y1="50" x2="390" y2="470" stroke="#a855f7" strokeWidth="2.2" />
+              <text x="370" y="50" fill="#a855f7" fontSize="10" fontWeight="bold">x = −a</text>
               <path d={dPath} fill="none" stroke="#64748b" strokeWidth="2.6" />
               <circle cx="450" cy="260" r="5" fill="#ef4444" stroke="#ffffff" strokeWidth="1.5" />
               <text x="455" y="252" fill="#ef4444" fontSize="10" fontWeight="bold">V</text>
@@ -608,7 +647,7 @@ export function SchematicDiagram({
               </g>
               <text x="515" y="138" fill="#10b981" fontSize="10" fontWeight="bold">L</text>
               <text x="515" y="396" fill="#10b981" fontSize="10" fontWeight="bold">L'</text>
-              <line x1="510" y1="260" x2="330" y2="260" stroke="#38bdf8" strokeWidth="1.4" strokeDasharray="3 3" opacity="0.7" />
+              <line x1="510" y1="260" x2="390" y2="260" stroke="#38bdf8" strokeWidth="1.4" strokeDasharray="3 3" opacity="0.7" />
               <g stroke="#10b981" strokeWidth="1.4" fill="none" opacity="0.85">
                 <path d="M 620 200 Q 510 220 510 260" markerEnd="url(#arrow-emerald)" />
                 <path d="M 700 260 Q 550 250 510 260" markerEnd="url(#arrow-emerald)" />
@@ -621,11 +660,12 @@ export function SchematicDiagram({
 
     if (
       normalizedSubject === "physics" &&
-      (t.includes("projectil") || t.includes("kinemat") || title.includes("projectil") || u.includes("kinemat") || u.includes("mechanic"))
+      (t.includes("projectil") || t.includes("kinemat") || title.includes("projectil"))
     ) {
       const rad = (projectileAngle * Math.PI) / 180;
-      const v = 185;
-      const g = 2.5;
+      const v = 20;
+      const g = 9.8;
+      const pixelsPerMetre = 16;
       const tMax = (2 * v * Math.sin(rad)) / g;
       const origin: [number, number] = [140, 400];
       const points = [];
@@ -633,12 +673,12 @@ export function SchematicDiagram({
         const tt = (tMax * k) / 40;
         const x = v * Math.cos(rad) * tt;
         const y = v * Math.sin(rad) * tt - 0.5 * g * tt * tt;
-        points.push([origin[0] + x * 1.15, origin[1] - y * 1.15]);
+        points.push([origin[0] + x * pixelsPerMetre, origin[1] - y * pixelsPerMetre]);
       }
       const traj = "M " + points.map(p => `${p[0].toFixed(1)} ${p[1].toFixed(1)}`).join(" L ");
-      const peakX = origin[0] + v * Math.cos(rad) * (tMax / 2) * 1.15;
-      const peakY = origin[1] - ((v * v * Math.sin(rad) * Math.sin(rad)) / (2 * g)) * 1.15;
-      const rangeX = origin[0] + v * Math.cos(rad) * tMax * 1.15;
+      const peakX = origin[0] + v * Math.cos(rad) * (tMax / 2) * pixelsPerMetre;
+      const peakY = origin[1] - ((v * v * Math.sin(rad) * Math.sin(rad)) / (2 * g)) * pixelsPerMetre;
+      const rangeX = origin[0] + v * Math.cos(rad) * tMax * pixelsPerMetre;
       return {
         viewBox: sharedViewBox,
         specific,
@@ -771,6 +811,7 @@ export function SchematicDiagram({
           specific: true,
           annotations: topicSchematic.annotations,
           renderSvg: topicSchematic.renderSvg,
+          generated: true,
         };
       }
     }
@@ -853,11 +894,8 @@ export function SchematicDiagram({
           <g transform="translate(430, 240) rotate(-23)">
             <rect x="-35" y="-25" width="70" height="50" rx="6" fill="#3b82f6" fillOpacity="0.25" stroke="#3b82f6" strokeWidth="3" />
             <text x="0" y="5" fill="#ffffff" textAnchor="middle" fontSize="12" fontWeight="bold">Mass m</text>
-          </g>
-          <line x1="430" y1="240" x2="400" y2="170" stroke="#38bdf8" strokeWidth="3.5" markerEnd="url(#arrow-cyan)" />
-          <line x1="430" y1="240" x2="540" y2="190" stroke="#10b981" strokeWidth="3.5" markerEnd="url(#arrow-emerald)" />
-          <line x1="430" y1="240" x2="430" y2="330" stroke="#ef4444" strokeWidth="3.5" markerEnd="url(#arrow-red)" />
-          <line x1="430" y1="240" x2="350" y2="275" stroke="#f59e0b" strokeWidth="3.5" markerEnd="url(#arrow-amber)" />
+          </g>            <line x1="430" y1="240" x2="400" y2="170" stroke="#10b981" strokeWidth="3.5" markerEnd="url(#arrow-emerald)" />            <line x1="430" y1="240" x2="540" y2="190" stroke="#f59e0b" strokeWidth="3.5" markerEnd="url(#arrow-amber)" />
+          <line x1="430" y1="240" x2="430" y2="330" stroke="#ef4444" strokeWidth="3.5" markerEnd="url(#arrow-red)" />            <line x1="430" y1="240" x2="350" y2="275" stroke="#38bdf8" strokeWidth="3.5" markerEnd="url(#arrow-cyan)" />
         </g>
       ),
     };
@@ -917,7 +955,7 @@ export function SchematicDiagram({
     left = Math.max(8, Math.min(left, c.width - b.width - 8));
     top = Math.max(8, Math.min(top, c.height - b.height - 8));
     setBlockPos({ left, top });
-  }, [activeAnn]);
+  }, [activeAnn, view, showIndex]);
 
   conceptAnnotationsRef.current = diagramData.annotations;
   const revealedCount = diagramData.annotations.filter((a) => expandedMap[a.id]).length;
@@ -948,10 +986,16 @@ export function SchematicDiagram({
   // Reset pan/zoom + UI state when the topic changes.
   useEffect(() => {
     setView({ x: 0, y: 0, k: 1 });
+    cancelHoverClear();
+    setExpandedMap({});
+    setSelectedId(null);
+    setHoverId(null);
     setHoveredId(null);
     setTour(null);
     setShowIndex(false);
-  }, [diagramData]);
+    setPanEnabled(false);
+    setExportError(null);
+  }, [diagramData, cancelHoverClear]);
 
   const goToTourIndex = useCallback(
     (i: number) => {
@@ -973,6 +1017,15 @@ export function SchematicDiagram({
   }, [orderedIds, goToTourIndex]);
 
   const onKeyDown = (e: React.KeyboardEvent) => {
+    // Child controls own their keys; do not activate a hotspot twice.
+    if (e.target !== e.currentTarget) return;
+    if (e.key === 'Escape') {
+      collapseAll();
+      return;
+    }
+    if (e.key === '+' || e.key === '=') { e.preventDefault(); nudgeZoom(1); return; }
+    if (e.key === '-') { e.preventDefault(); nudgeZoom(-1); return; }
+    if (e.key === '0') { e.preventDefault(); resetView(); return; }
     if (!orderedIds.length) return;
     if (tour !== null) {
       if (e.key === "ArrowRight") {
@@ -1028,12 +1081,11 @@ export function SchematicDiagram({
 
   return (
     <div
-      className={`viz-in space-y-3 ${className}`}
+      className={`viz-in min-w-0 space-y-3 rounded-xl focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary ${className}`}
       tabIndex={0}
       role="group"
       aria-label="Interactive schematic"
       onKeyDown={onKeyDown}
-      style={{ outline: "none" }}
     >
       <style>{SD_CSS}</style>
       {/* ── ISO title block: what this drawing is + reveal controls ── */}
@@ -1051,11 +1103,11 @@ export function SchematicDiagram({
           data-variant={diagramData.specific ? undefined : "neb"}
           title={
             diagramData.specific
-              ? "This drawing was authored for this concept"
-              : "This topic has no dedicated drawing — showing the general fallback sheet"
+              ? ('generated' in diagramData ? 'Concept map derived from topic knowledge; not an authored physical illustration' : 'Authored schematic matched to this topic')
+              : 'Inclined-plane schematic for this topic'
           }
         >
-          {diagramData.specific ? "Topic-matched drawing" : "General fallback drawing"}
+          {diagramData.specific ? ('generated' in diagramData ? 'Topic-derived concept map' : 'Authored topic drawing') : 'Inclined-plane drawing'}
         </span>
 
         <div className="hidden min-w-4 flex-1 sm:block" />
@@ -1067,7 +1119,7 @@ export function SchematicDiagram({
           revealed
         </span>
 
-        <div className="flex items-center gap-1.5">
+        <div className="flex flex-wrap items-center gap-1.5 [&>button]:min-h-10 [&>button]:min-w-10">
           <button
             type="button"
             onClick={startTour}
@@ -1137,11 +1189,19 @@ export function SchematicDiagram({
           </button>
         </div>
 
+        <button type="button" onClick={() => setPanEnabled((value) => !value)} aria-pressed={panEnabled} className="inline-flex min-h-10 items-center gap-1.5 rounded-lg border border-border px-3 text-xs">
+          <Hand className="h-4 w-4" /> {panEnabled ? 'Pan on' : 'Pan off'}
+        </button>
+        <button type="button" onClick={exportDrawing} className="inline-flex min-h-10 items-center gap-1.5 rounded-lg border border-border px-3 text-xs">
+          <Download className="h-4 w-4" /> Save SVG
+        </button>
         <span className="iso-drawing-no hidden shrink-0 whitespace-nowrap md:inline-flex" aria-hidden>
           {drawingNo}
         </span>
       </div>
 
+      {exportError && <p role="alert" className="text-sm text-destructive">{exportError}</p>}
+      <p className="text-xs text-muted-foreground">Scroll to read · Ctrl/⌘ + scroll to zoom · Enable Pan to drag · Focus the drawing and use + / − / 0 or ← / →</p>
       {/* ── Guided walk-through banner ── */}
       {tour !== null && (
         <div className="flex flex-wrap items-center justify-between gap-2 rounded-xl border border-primary/30 bg-primary/5 px-3 py-2">
@@ -1182,19 +1242,20 @@ export function SchematicDiagram({
       )}
 
       {/* ── Drawing sheet: blueprint grid, pans instead of shrinking ── */}
-      <div className="viz-canvas" ref={canvasRef}>
+      <div className="viz-canvas" ref={canvasRef} data-schematic-source={'generated' in diagramData ? 'topic-derived' : 'authored'}>
         <div ref={wrapRef} className="viz-scroll relative z-10 overflow-x-auto px-3 py-6 sm:px-5">
       <svg
         ref={svgRef}
         viewBox={diagramData.viewBox}
-        className="sd-art block h-auto w-full min-w-[640px] select-none sm:min-w-[720px]"
-        style={{ overflow: "visible", touchAction: "none", cursor: "grab" }}
+        className="sd-art block h-auto w-full select-none"
+        style={{ overflow: "hidden", touchAction: panEnabled ? "none" : "pan-y", cursor: panEnabled ? "grab" : "default" }}
         role="img"
         aria-label={`Annotated schematic: ${topicTitle}`}
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
         onPointerUp={endDrag}
-        onPointerLeave={endDrag}
+        onPointerCancel={endDrag}
+        onLostPointerCapture={endDrag}
         onDoubleClick={resetView}
       >
       <defs>
@@ -1215,7 +1276,7 @@ export function SchematicDiagram({
         </marker>
       </defs>
 
-      <g transform={`translate(${view.x} ${view.y}) scale(${view.k})`}>
+      <g data-diagram-layer="" transform={`translate(${view.x} ${view.y}) scale(${view.k})`}>
       {diagramData.renderSvg()}
 
       {/* ── Label chips: always-visible, clickable ── */}
@@ -1235,7 +1296,7 @@ export function SchematicDiagram({
         return (
           <g
             key={`chip-${ann.id}`}
-            className="schem-chip sd-chip"
+            className="schem-chip sd-chip focus-visible:outline focus-visible:outline-2 focus-visible:outline-primary"
             data-ann-id={ann.id}
             role="button"
             tabIndex={0}
@@ -1252,9 +1313,12 @@ export function SchematicDiagram({
               setHoverId(ann.id);
             }}
             onPointerLeave={scheduleHoverClear}
+            onFocus={() => { cancelHoverClear(); setHoverId(ann.id); }}
+            onBlur={scheduleHoverClear}
             onKeyDown={(e) => {
               if (e.key === "Enter" || e.key === " ") {
                 e.preventDefault();
+                e.stopPropagation();
                 toggleExpanded(ann.id);
               }
             }}
@@ -1270,7 +1334,7 @@ export function SchematicDiagram({
               x={rectX}
               y={-15}
               width={chipW}
-              height={21}
+              height={30}
               rx={10.5}
               className="fill-card"
               stroke={cColor}
@@ -1494,7 +1558,7 @@ export function SchematicDiagram({
 
         </div>
         <p className="viz-pan-hint relative z-10 px-4 pb-3 text-center text-[10px] font-semibold uppercase tracking-wider text-muted-foreground sm:hidden">
-          ↔ Drag the sheet sideways to pan
+          {panEnabled ? 'Drag to pan · Turn Pan off to scroll the page' : 'Use zoom buttons for detail · Tap Parts index for readable labels'}
         </p>
 
         {/* Floating knowledge block — dense symbol-led facts over the sheet */}

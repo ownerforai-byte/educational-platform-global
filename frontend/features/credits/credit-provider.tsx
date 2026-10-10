@@ -28,6 +28,7 @@ import {
 } from "react";
 import { useAuth } from "@/providers/auth-provider";
 import type { SessionUser } from "@/features/auth/types";
+import { isOwnerUser } from "@/lib/owner";
 import {
   TOKEN_MATRIX,
   type ContentCategory,
@@ -173,6 +174,26 @@ export function CreditProvider({ children }: { children: ReactNode }) {
 
       // 2. Window already open → free (no double charge).
       if (isUnlockedIn(unlocks, key)) return true;
+
+      // 2b. The Diagram Hub is owner-exclusive (owner request 2026-10-06:
+      // "available for owner emails only … free for owner and only for
+      // owner"). Non-owners see its 5-coin lock but must never be charged
+      // for it — refuse before any coin moves. The unlock server enforces
+      // the same rule authoritatively.
+      if (category === "imagehub") {
+        const current = stateRef.current.user;
+        const owner =
+          !!current &&
+          (isOwnerUser(current) ||
+            current.role === "OWNER" ||
+            current.role === "ADMIN");
+        if (!owner) {
+          setError(
+            "The Diagram Hub is reserved for owner accounts — it cannot be unlocked with coins.",
+          );
+          return false;
+        }
+      }
 
       const rule = TOKEN_MATRIX[category];
       if (!rule) {

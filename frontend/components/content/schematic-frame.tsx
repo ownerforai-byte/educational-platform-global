@@ -8,6 +8,7 @@
 "use client";
 
 import type React from "react";
+import { useState } from 'react';
 
 export type LegendItem = {
   color: string;
@@ -64,6 +65,7 @@ export function Schematic({
   yTickLabel,
   children,
 }: SchematicProps) {
+  const [zoom, setZoom] = useState(1);
   const sx = scaleX ?? scale;
   const sy = scaleY ?? scale;
   const X = (u: number) => ox + u * sx;
@@ -135,10 +137,19 @@ export function Schematic({
           ))}
         </div>
       )}
+      <div className="mb-2 flex flex-wrap items-center gap-2" role="group" aria-label="Plot controls">
+        <button type="button" aria-label="Zoom plot out" disabled={zoom <= 1} onClick={() => setZoom((v) => Math.max(1, v - 0.25))} className="min-h-10 rounded-lg border px-3 text-xs disabled:opacity-40">−</button>
+        <button type="button" aria-label="Reset plot zoom" onClick={() => setZoom(1)} className="min-h-10 rounded-lg border px-3 text-xs">{Math.round(zoom * 100)}% · Reset</button>
+        <button type="button" aria-label="Zoom plot in" disabled={zoom >= 3} onClick={() => setZoom((v) => Math.min(3, v + 0.25))} className="min-h-10 rounded-lg border px-3 text-xs disabled:opacity-40">+</button>
+        <span className="text-xs text-muted-foreground">Zoom for detail; scroll the plot to explore.</span>
+      </div>
+      <div className="max-w-full overflow-auto rounded-lg" tabIndex={0} role="region" aria-label="Scrollable coordinate plot">
       <svg
+        role="img"
+        aria-label={`Coordinate plot with ${xLabel} and ${yLabel} axes`}
         viewBox={`0 0 ${w} ${h}`}
         className="w-full border rounded-lg bg-slate-950"
-        style={{ aspectRatio: `${w}/${h}` }}
+        style={{ aspectRatio: `${w}/${h}`, width: `${zoom * 100}%`, maxWidth: 'none' }}
       >
         {gridV}
         {gridH}
@@ -162,6 +173,7 @@ export function Schematic({
         {ticks}
         {children}
       </svg>
+      </div>
     </div>
   );
 }

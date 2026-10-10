@@ -4,63 +4,28 @@
   "topicSlug": "applications-of-vectors-work-torque-angular-momentum",
   "topicTitle": "Applications: work, torque, angular momentum",
   "relevance": 100,
-  "notes": [
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
-  ],
-  "confusion": [
-    "Check formula conditions."
-  ],
-  "practice": [],
-  "universalFacts": [
-    "Foundational for advanced topics."
-  ],
   "animation3D": "vectors",
   "motionGraphics": "vectors",
+  "keyPoints": [],
+  "summary": "Applications of Vectors â€” Work, Torque and Angular Momentum covers essential principles and applications. Applications of Vectors — Work, Torque, Angular Momentum covers essential principles and applications.",
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
+  "importantConcepts": [],
+  "notes": [
+    "**Work.** Work done by a constant force is the dot product W = F·s = Fs cosθ; it is maximum when force and displacement are parallel and zero when they are perpendicular.",
+    "**Torque.** The moment of a force about a point is τ = r × F, with magnitude rF sinθ and direction given by the right-hand rule; torque measures the turning effect.",
+    "**Angular momentum.** The angular momentum of a particle is L = r × p = r × mv, and for a rigid body rotating about a fixed axis L = Iω.",
+    "**Newton's law for rotation.** The net external torque equals the rate of change of angular momentum, τ = dL/dt, in exact analogy with F = dp/dt.",
+    "**Conservation.** If the net external torque on a system is zero, its angular momentum stays constant — a spinning skater speeds up when pulling in their arms."
+  ],
+  "confusion": [],
+  "practice": [],
+  "universalFacts": [],
   "examples": [],
   "practiceQuestions": [],
-  "formulas": [
-    "Key relationship: [variable formula]."
-  ],
-  "keyPoints": [
-    "Connection of Applications of Vectors â€” Work, Torque and Angular Momentum to other topics"
-  ],
-  "summary": "Applications of Vectors â€” Work, Torque and Angular Momentum covers essential principles and applications.",
-  "specialNotes": [
-    "Check conditions for Applications of Vectors â€” Work, Torque and Angular Momentum.",
-    "Applications of Vectors â€” Work, Torque and Angular Momentum connects to other topics."
-  ],
-  "importantStatements": [
-    "Statement 1: Definition of Applications: work, torque, angular momentum",
-    "Statement 2: Theorem related to Applications: work, torque, angular momentum",
-    "Statement 3: Condition for Applications: work, torque, angular momentum to be valid",
-    "Statement 4: Principle governing Applications: work, torque, angular momentum",
-    "Statement 5: Corollary or consequence of Applications: work, torque, angular momentum"
-  ],
-  "importantNotes": [
-    "Applications of Vectors â€” Work, Torque and Angular Momentum is based on fundamental principles."
-  ],
-  "examShortTricks": [
-    "Recall the formula for Applications of Vectors â€” Work, Torque and Angular Momentum."
-  ],
-  "examNotes": [
-    "Focus on Applications of Vectors â€” Work, Torque and Angular Momentum problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Which describes Applications of Vectors â€” Work, Torque and Angular Momentum?",
-      "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Definition and significance of Applications of Vectors â€” Work, Torque and Angular Momentum."
-  ],
-  "importantTasks": [],
-  "duplicateType": 1
+  "formulas": [],
+  "specialNotes": [],
+  "examNotes": [],
+  "importantTasks": []
 }

@@ -40,7 +40,9 @@
     "Classify crystalline solids according to the nature of the binding force and give two examples of each type.",
     "Explain why diamond is extremely hard and why glass softens over a range of temperature.",
     "Compare the melting behaviour and X-ray diffraction patterns of crystalline and amorphous solids.",
-    "State the limitations of the crystalline/amorphous classification."
+    "State the limitations of the crystalline/amorphous classification.",
+    "one worked example for \"Solid state: types of solids, amorphous and crystalline s…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "formulas": [
     "$$\\text{Glass-transition temperature }T_{g}:\\ \\text{softening region of an amorphous solid}$$",
@@ -49,11 +51,13 @@
   "universalFacts": [
     "Quartz, diamond and graphite are allotropic forms of giant covalent crystals; graphite is anisotropic (conducts along layers).",
     "Glass is a supercooled liquid — very old window glass is measurably thicker at the bottom because of slow flow.",
-    "Amorphous silicon is used in thin-film solar cells and LCD backplanes, where its cheaper deposition outweighs its lower efficiency."
+    "Amorphous silicon is used in thin-film solar cells and LCD backplanes, where its cheaper deposition outweighs its lower efficiency.",
+    "answer pattern for \"Solid state: types of solids, amorphous and crystalline s…\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [
     "**Problem:** Why does glass not show a sharp melting point on heating? **Solution:** amorphous solids lack a periodic lattice, so bonds break over a range of energies — the material softens gradually between the glass-transition and melting regions instead of melting at one temperature.",
-    "**Problem:** Graphite conducts electricity while diamond does not, though both are carbon. **Solution:** in graphite each carbon uses three of four valence electrons in σ bonds; the fourth electron is delocalised between layers enabling conduction, whereas in diamond all four electrons are localised in σ bonds."
+    "**Problem:** Graphite conducts electricity while diamond does not, though both are carbon. **Solution:** in graphite each carbon uses three of four valence electrons in σ bonds; the fourth electron is delocalised between layers enabling conduction, whereas in diamond all four electrons are localised in σ bonds.",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "importantNotes": [
     "Answer the crystalline vs amorphous question as a six-point comparison — order, melting point, shape, cleavage, isotropy, X-ray pattern.",
@@ -61,5 +65,41 @@
     "Mention that amorphous solids are metastable and that polycrystalline materials lie between the two extremes."
   ],
   "visualType": "solid-state",
-  "tabGroup": "States-Of-Matter-Learner-Notes"
+  "keyPoints": [
+    "• Solid state",
+    "• Types of solids",
+    "• Amorphous",
+    "• Crystalline solids"
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Solid state: types of solids, amorphous and crystalline s…\" with one example.",
+    "compare \"Solid state\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Solid state: types of solids, amorphous and crystalline s…\" and verify the answer is plausible."
+  ],
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Solid state: types of solids, amorphous and crystalline s…\"?",
+      "options": [
+        "Solid state",
+        "Types of solids",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "A",
+      "explanation": "Solid state is listed among the official sub-ideas of Solid state: types of solids, amorphous and crystalline s…; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Solid state: types of solids, amorphous and crystalline s…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [],
+  "summary": "Solid state: types of solids, amorphous and crystalline s… (States of Matter, Chemistry, class-11-notes) covers Solid state, types of solids, amorphous. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
 }

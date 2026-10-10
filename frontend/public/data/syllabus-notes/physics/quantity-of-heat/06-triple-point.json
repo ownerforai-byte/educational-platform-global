@@ -6,8 +6,6 @@
   "relevance": 100,
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
-  "notes": [],
-  "confusion": [],
   "bounds": [],
   "practice": [
     "one worked example for \"Triple point\" — check units / edge cases.",
@@ -35,7 +33,7 @@
   "keyPoints": [
     "• Triple point"
   ],
-  "summary": "Triple point (Quantity of Heat, Physics, class-11-notes) covers Triple point. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "summary": "Triple point (Quantity of Heat, Physics, class-11-notes) covers Triple point. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these. Triple Point covers essential principles and applications.",
   "mcqs": [
     {
       "question": "A common examiner point on \"Triple point\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
@@ -46,5 +44,22 @@
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
     }
-  ]
+  ],
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
+  "importantConcepts": [],
+  "notes": [
+    "**Definition.** The triple point of a substance is the single temperature and pressure at which its solid, liquid and vapour phases coexist in stable equilibrium.",
+    "**Water's triple point.** For water it occurs at 273.16 K (0.01 °C) and 611.73 Pa (about 4.58 mmHg) — the fixed reference point of the Kelvin temperature scale.",
+    "**Phase diagram.** On a pressure–temperature diagram the triple point is where the melting, boiling and sublimation curves meet; below its pressure a solid sublimes instead of melting.",
+    "**Per-substance value.** Each pure substance has its own triple point (for CO₂ it is −56.6 °C at 5.1 atm), so the value identifies the substance's phase behaviour.",
+    "**Thermometric use.** Because it is reproducible and substance-specific, the triple point of water is used to calibrate precision thermometers."
+  ],
+  "confusion": [],
+  "animation3D": "quantity-of-heat",
+  "motionGraphics": "quantity-of-heat",
+  "specialNotes": [],
+  "examNotes": [],
+  "importantTasks": []
 }

@@ -1,17 +1,6 @@
 [
   {
     "unitSlug": "algebra",
-    "topicSlug": "complex-number",
-    "title": "Complex Number",
-    "noteCount": 2,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "08-complex-number.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "algebra",
     "topicSlug": "complex-number-imaginary-unit-algebra-of-complex-numbers-geometric-representation-absolute-modul",
     "title": "Complex number: imaginary unit, algebra of complex number…",
     "noteCount": 3,
@@ -23,17 +12,6 @@
   },
   {
     "unitSlug": "algebra",
-    "topicSlug": "curve-sketching",
-    "title": "Curve Sketching",
-    "noteCount": 2,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "04-curve-sketching.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "algebra",
     "topicSlug": "curve-sketching-odd-and-even-functions-periodicity-symmetry-about-origin-x-and-y-axis-monotonici",
     "title": "Curve sketching: odd and even functions, periodicity, sym…",
     "noteCount": 0,
@@ -42,6 +20,17 @@
     "filename": "04-curve-sketching-odd-and-even-functions-periodicity-symmetry-about-origin-x-and-y-axis-monotonici.json",
     "hasMcqs": true,
     "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "algebra",
+    "topicSlug": "function-domain-and-range-of-a-function-inverse-function",
+    "title": "Function: domain and range of a function, inverse function",
+    "noteCount": 23,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "01-function-domain-and-range-of-a-function-inverse-function.json",
+    "hasMcqs": true,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "algebra",
@@ -58,23 +47,12 @@
     "unitSlug": "algebra",
     "topicSlug": "function-domain-range",
     "title": "Function: Domain and Range",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "03-function-domain-range.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "algebra",
-    "topicSlug": "logic-and-set",
-    "title": "Logic and Set",
-    "noteCount": 2,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-logic-and-set.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "algebra",
@@ -100,81 +78,25 @@
   },
   {
     "unitSlug": "algebra",
-    "topicSlug": "matrices-determinants",
-    "title": "Matrices and Determinants",
-    "noteCount": 2,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "06-matrices-determinants.json",
-    "tabGroup": "minors-cofactors-determinants",
-    "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "algebra",
-    "topicSlug": "matrix-0001",
-    "title": "Matrix.0001",
-    "noteCount": 2,
+    "topicSlug": "matrices-and-determinants-transpose-properties-inverse",
+    "title": "Matrices and determinants: transpose, properties, inverse",
+    "noteCount": 26,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "matrix-0001.json",
+    "filename": "03-matrices-and-determinants-transpose-properties-inverse.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "algebra",
-    "topicSlug": "matrix-5-02",
-    "title": "Matrix5.02",
-    "noteCount": 2,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "matrix-5-02.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "algebra",
-    "topicSlug": "matrix-5-2",
-    "title": "Matrix5.2",
-    "noteCount": 2,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "matrix-5-2.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "algebra",
-    "topicSlug": "matrix5-2",
-    "title": "Matrix5.2",
-    "noteCount": 2,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "matrix5-2.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "algebra",
     "topicSlug": "minors-cofactors-determinants",
     "title": "Matrix 5.2 - Theory: Minors, Cofactors, Determinants",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "minors-cofactors-determinants.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "algebra",
-    "topicSlug": "quadratic-equation",
-    "title": "Quadratic Equation",
-    "noteCount": 2,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "07-quadratic-equation.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "algebra",
@@ -189,17 +111,6 @@
   },
   {
     "unitSlug": "algebra",
-    "topicSlug": "real-numbers",
-    "title": "Real Numbers",
-    "noteCount": 2,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-real-numbers.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "algebra",
     "topicSlug": "real-numbers-geometric-representation-of-real-numbers-interval-absolute-value",
     "title": "Real numbers: geometric representation of real numbers, i…",
     "noteCount": 0,
@@ -208,6 +119,17 @@
     "filename": "02-real-numbers-geometric-representation-of-real-numbers-interval-absolute-value.json",
     "hasMcqs": true,
     "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "algebra",
+    "topicSlug": "sequence-and-series-arithmetic-geometric-harmonic-sequences",
+    "title": "Sequence and series: arithmetic, geometric, harmonic sequences",
+    "noteCount": 23,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "02-sequence-and-series-arithmetic-geometric-harmonic-sequences.json",
+    "hasMcqs": true,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "algebra",
@@ -224,23 +146,12 @@
     "unitSlug": "algebra",
     "topicSlug": "sequence-series",
     "title": "Sequence and Series",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "05-sequence-series.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "analytic-geometry",
-    "topicSlug": "coordinates-in-space",
-    "title": "Coordinates in Space",
-    "noteCount": 2,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "03-coordinates-in-space.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "analytic-geometry",
@@ -257,24 +168,12 @@
     "unitSlug": "analytic-geometry",
     "topicSlug": "geometry-9-1",
     "title": "Geometry 9-1",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "geometry-9-1.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "analytic-geometry",
-    "topicSlug": "pair-of-straight-lines",
-    "title": "Pair of Straight Lines",
-    "noteCount": 2,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "02-pair-of-straight-lines.json",
-    "tabGroup": "pair-of-straight-lines-general-equation-of-second-degree-in-x-and-y-condition-for-representing-a-pair-of-lines-homogenous-second-degree-equation-in-x-and-y-angle-between-pair-of-lines-bisectors-of-the-angles-between-pair-of-lines",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "analytic-geometry",
@@ -291,24 +190,12 @@
     "unitSlug": "analytic-geometry",
     "topicSlug": "pair-of-straight-lines-general-equation-of-second-degree-in-x-and-y-condition-for-representing-a-pair-of-lines-homogenous-second-degree-equation-in-x-and-y-angle-between-pair-of-lines-bisectors-of-the-angles-between-pair-of-lines",
     "title": "Angle Bisector — Verifying with the tan θ Method",
-    "noteCount": 2,
+    "noteCount": 5,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "03-angle-bisector-tan-theta-verification.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "analytic-geometry",
-    "topicSlug": "straight-line",
-    "title": "Straight Line",
-    "noteCount": 2,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "01-straight-line.json",
-    "tabGroup": "straight-line-length-of-perpendicular-from-a-given-point-to-a-given-line-bisectors-of-the-angles-between-two-straight-lines",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "analytic-geometry",
@@ -324,24 +211,13 @@
   {
     "unitSlug": "analytic-geometry",
     "topicSlug": "straight-line-length-of-perpendicular-from-a-given-point-to-a-given-line-bisectors-of-the-angles-between-two-straight-lines",
-    "title": "Angle Bisector Between Two Lines — The a₁a₂ + b₁b₂ Rule",
-    "noteCount": 2,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-angle-bisector-a1a2-plus-b1b2-rule.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "analytic-geometry",
-    "topicSlug": "straight-line-length-of-perpendicular-from-a-given-point-to-a-given-line-bisectors-of-the-angles-between-two-straight-lines",
     "title": "Angle Bisector — Worked Example (a₁a₂ + b₁b₂ method)",
-    "noteCount": 2,
+    "noteCount": 5,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-angle-bisector-worked-example.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "calculus",
@@ -413,23 +289,12 @@
     "unitSlug": "calculus",
     "topicSlug": "continuity-of-a-function-types-of-discontinuity-graphs-of-discontinuous-function",
     "title": "Continuity of a function, types of discontinuity, graphs …",
-    "noteCount": 3,
+    "noteCount": 16,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-continuity-of-a-function-types-of-discontinuity-graphs-of-discontinuous-function.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "calculus",
-    "topicSlug": "continuity-of-function",
-    "title": "Continuity of Function",
-    "noteCount": 6,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "05-continuity-of-function.json",
-    "hasMcqs": true,
-    "universalFactsCount": 2
+    "universalFactsCount": 7
   },
   {
     "unitSlug": "calculus",
@@ -477,6 +342,17 @@
   },
   {
     "unitSlug": "calculus",
+    "topicSlug": "derivatives-derivative-of-a-function-derivatives-of-algebraic-and-trigonometric-functions",
+    "title": "Derivatives: derivative of a function, derivatives of algebraic and trigonometric functions",
+    "noteCount": 28,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "04-derivatives-derivative-of-a-function-derivatives-of-algebraic-and-trigonometric-functions.json",
+    "hasMcqs": true,
+    "universalFactsCount": 0
+  },
+  {
+    "unitSlug": "calculus",
     "topicSlug": "derivatives-derivative-of-a-function-derivatives-of-algebraic-trigonometric-inverse-trigonometri",
     "title": "Derivatives: derivative of a function, derivatives of alg…",
     "noteCount": 3,
@@ -521,35 +397,12 @@
   },
   {
     "unitSlug": "calculus",
-    "topicSlug": "graphs-of-discontinuous-function",
-    "title": "Continuity of Function",
-    "noteCount": 6,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "07-graphs-of-discontinuous-function.json",
-    "tabGroup": "limits-of-function",
-    "hasMcqs": true,
-    "universalFactsCount": 2
-  },
-  {
-    "unitSlug": "calculus",
     "topicSlug": "higher-order-derivatives",
     "title": "Higher Order Derivatives",
     "noteCount": 6,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "13-higher-order-derivatives.json",
-    "hasMcqs": true,
-    "universalFactsCount": 2
-  },
-  {
-    "unitSlug": "calculus",
-    "topicSlug": "indeterminate-forms",
-    "title": "Indeterminate Forms",
-    "noteCount": 6,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-indeterminate-forms.json",
     "hasMcqs": true,
     "universalFactsCount": 2
   },
@@ -577,45 +430,12 @@
   },
   {
     "unitSlug": "calculus",
-    "topicSlug": "limit5-01",
-    "title": "Indeterminate Forms",
-    "noteCount": 6,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "limit5-01.json",
-    "hasMcqs": true,
-    "universalFactsCount": 2
-  },
-  {
-    "unitSlug": "calculus",
     "topicSlug": "limitc",
     "title": "Limits of a Function",
     "noteCount": 5,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "limitc.json",
-    "hasMcqs": true,
-    "universalFactsCount": 2
-  },
-  {
-    "unitSlug": "calculus",
-    "topicSlug": "limits",
-    "title": "Limits of a Function",
-    "noteCount": 5,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "limits-intro.json",
-    "hasMcqs": true,
-    "universalFactsCount": 2
-  },
-  {
-    "unitSlug": "calculus",
-    "topicSlug": "limits",
-    "title": "Limits of a Function",
-    "noteCount": 5,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "limits.json",
     "hasMcqs": true,
     "universalFactsCount": 2
   },
@@ -633,13 +453,13 @@
   {
     "unitSlug": "calculus",
     "topicSlug": "limits-and-continuity",
-    "title": "Continuity of Function",
-    "noteCount": 6,
+    "title": "Limits of a Function",
+    "noteCount": 17,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "limits-resources.json",
+    "filename": "limits.json",
     "hasMcqs": true,
-    "universalFactsCount": 2
+    "universalFactsCount": 6
   },
   {
     "unitSlug": "calculus",
@@ -651,50 +471,6 @@
     "filename": "01-limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-wi.json",
     "hasMcqs": true,
     "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "calculus",
-    "topicSlug": "limits-of-function",
-    "title": "Limits of a Function",
-    "noteCount": 5,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-limits-of-function.json",
-    "hasMcqs": true,
-    "universalFactsCount": 2
-  },
-  {
-    "unitSlug": "calculus",
-    "topicSlug": "limits5-1",
-    "title": "Algebraic Properties of Limits",
-    "noteCount": 6,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "limits5-1.json",
-    "hasMcqs": true,
-    "universalFactsCount": 2
-  },
-  {
-    "unitSlug": "calculus",
-    "topicSlug": "limits5-2",
-    "title": "Algebraic Properties of Limits",
-    "noteCount": 6,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "limits5-2.json",
-    "hasMcqs": true,
-    "universalFactsCount": 2
-  },
-  {
-    "unitSlug": "calculus",
-    "topicSlug": "limits5-3",
-    "title": "Algebraic Properties of Limits",
-    "noteCount": 6,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "limits5-3.json",
-    "hasMcqs": true,
-    "universalFactsCount": 2
   },
   {
     "unitSlug": "calculus",
@@ -742,6 +518,17 @@
   },
   {
     "unitSlug": "calculus",
+    "topicSlug": "the-definite-integral-as-an-area-under-a-curve",
+    "title": "The definite integral as an area under a curve",
+    "noteCount": 22,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "05-the-definite-integral-as-an-area-under-a-curve.json",
+    "hasMcqs": true,
+    "universalFactsCount": 0
+  },
+  {
+    "unitSlug": "calculus",
     "topicSlug": "the-definite-integral-the-definite-integral-as-an-area-under-the-given-curve-area-between-two-cu",
     "title": "The definite integral; the definite integral as an area u…",
     "noteCount": 0,
@@ -761,18 +548,6 @@
     "filename": "06-types-of-discontinuity.json",
     "hasMcqs": true,
     "universalFactsCount": 2
-  },
-  {
-    "unitSlug": "computational-methods-or-mechanics",
-    "topicSlug": "mechanics-dynamics",
-    "title": "Mechanics: Dynamics",
-    "noteCount": 2,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "04-mechanics-dynamics.json",
-    "tabGroup": "mechanics-statics-and-dynamics",
-    "hasMcqs": true,
-    "universalFactsCount": 1
   },
   {
     "unitSlug": "computational-methods-or-mechanics",
@@ -798,49 +573,14 @@
   },
   {
     "unitSlug": "computational-methods-or-mechanics",
-    "topicSlug": "mechanics-statics",
-    "title": "Mechanics: Statics",
-    "noteCount": 2,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "03-mechanics-statics.json",
-    "tabGroup": "mechanics-statics-and-dynamics",
-    "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "computational-methods-or-mechanics",
     "topicSlug": "mechanics-statics-and-dynamics",
     "title": "Mechanics â€” Statics and Dynamics",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-mechanics-statics-and-dynamics.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "computational-methods-or-mechanics",
-    "topicSlug": "numerical-computation",
-    "title": "Numerical Computation and Integration Methods",
-    "noteCount": 2,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-numerical-computation-roots-and-integration-methods.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "computational-methods-or-mechanics",
-    "topicSlug": "numerical-computation-roots",
-    "title": "Numerical Computation: Roots of Equations",
-    "noteCount": 2,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "01-numerical-computation-roots.json",
-    "tabGroup": "numerical-computation",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "computational-methods-or-mechanics",
@@ -852,17 +592,6 @@
     "filename": "01-numerical-computation-roots-of-algebraic-and-transcendental-equations-bisection-and-newton-raphs.json",
     "hasMcqs": true,
     "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "computational-methods-or-mechanics",
-    "topicSlug": "numerical-integration",
-    "title": "Numerical Integration",
-    "noteCount": 2,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-numerical-integration.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
   },
   {
     "unitSlug": "computational-methods-or-mechanics",
@@ -879,199 +608,188 @@
     "unitSlug": "limits-and-continuity",
     "topicSlug": "continuity-formal",
     "title": "Continuity at a Point (Formal Definition)",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "09-continuity-formal.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "limits-and-continuity",
     "topicSlug": "continuity-intuitive",
     "title": "Continuity of a Function (Intuitive Definition)",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "08-continuity-intuitive.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "limits-and-continuity",
     "topicSlug": "exercise-15-1",
     "title": "Exercise 15.1: Limits of Algebraic Functions",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "15-exercise-15-1.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "limits-and-continuity",
     "topicSlug": "exercise-15-2",
     "title": "Exercise 15.2: Limits of Trigonometric Functions",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "16-exercise-15-2.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "limits-and-continuity",
     "topicSlug": "exercise-15-3",
     "title": "Exercise 15.3: Continuity and Discontinuity",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "17-exercise-15-3.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "limits-and-continuity",
     "topicSlug": "existence-of-limit",
     "title": "Existence of Limit (LHL = RHL)",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "06-existence-of-limit.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "limits-and-continuity",
     "topicSlug": "function-definition-and-notation",
     "title": "Function Definition and Notation",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-function-definition-and-notation.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "limits-and-continuity",
     "topicSlug": "infinite-discontinuity",
     "title": "Types of Discontinuity: Infinite",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "12-infinite-discontinuity.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "limits-and-continuity",
     "topicSlug": "introduction-to-limits-and-continuity",
     "title": "Introduction to Limits and Continuity",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-introduction-to-limits-and-continuity.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "limits-and-continuity",
     "topicSlug": "jump-discontinuity",
     "title": "Types of Discontinuity: Jump",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "11-jump-discontinuity.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "limits-and-continuity",
     "topicSlug": "left-hand-limit",
     "title": "Left Hand Limit",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "05-left-hand-limit.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "limits-and-continuity",
     "topicSlug": "log-exp-limits",
     "title": "Limits of Logarithmic and Exponential Functions",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "14-log-exp-limits.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "limits-and-continuity",
     "topicSlug": "removable-discontinuity",
     "title": "Types of Discontinuity: Removable",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "10-removable-discontinuity.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "limits-and-continuity",
     "topicSlug": "right-hand-limit",
     "title": "Right Hand Limit",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "04-right-hand-limit.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "limits-and-continuity",
     "topicSlug": "standard-limits",
     "title": "Standard Limits",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "07-standard-limits.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "limits-and-continuity",
     "topicSlug": "trigonometric-limits",
     "title": "Limits of Trigonometric Functions",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "13-trigonometric-limits.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "limits-and-continuity",
     "topicSlug": "value-of-function-at-a-point",
     "title": "Value of a Function at a Point",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "03-value-of-function-at-a-point.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "statistics-and-probability",
-    "topicSlug": "measure-of-dispersion",
-    "title": "Measures of Dispersion",
-    "noteCount": 2,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-measure-of-dispersion.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "statistics-and-probability",
@@ -1086,17 +804,6 @@
   },
   {
     "unitSlug": "statistics-and-probability",
-    "topicSlug": "probability-independent-cases",
-    "title": "Probability",
-    "noteCount": 2,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-probability-independent-cases.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "statistics-and-probability",
     "topicSlug": "probability-independent-cases-mathematical-and-empirical-definition-of-probability-two-basic-law",
     "title": "Probability: independent cases, mathematical and empirica…",
     "noteCount": 3,
@@ -1107,71 +814,48 @@
     "universalFactsCount": 3
   },
   {
-    "unitSlug": "statistics-and-probability",
-    "topicSlug": "probability-independent-cases-mathematical-and-empirical-definition-of-probability-two-basic-laws-of-probability",
-    "title": "Probability â€” Definitions and Basic Laws",
-    "noteCount": 2,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-probability-independent-cases-mathematical-and-empirical-definition-of-probability-two-basic-laws-of-probability.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
     "unitSlug": "trigonometry",
     "topicSlug": "inverse-circular-functions",
     "title": "Inverse Circular Functions",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-inverse-circular-functions.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "trigonometry",
-    "topicSlug": "trigonometric-equations",
-    "title": "Trigonometric Equations and General Values",
-    "noteCount": 2,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "02-trigonometric-equations.json",
-    "tabGroup": "trigonometric-equations-and-general-values",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "trigonometry",
     "topicSlug": "trigonometric-equations-and-general-values",
     "title": "Trigonometric Equations and General Values",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-trigonometric-equations-and-general-values.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
-    "unitSlug": "vectors",
-    "topicSlug": "applications-of-vectors-work-torque-angular-momentum",
-    "title": "Applications of Vectors — Work, Torque, Angular Momentum",
-    "noteCount": 2,
+    "unitSlug": "trigonometry",
+    "topicSlug": "trigonometric-ratios-and-identities",
+    "title": "Trigonometric ratios and identities",
+    "noteCount": 25,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "05-applications-of-vectors-work-torque-angular-momentum.json",
+    "filename": "06-trigonometric-ratios-and-identities.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "vectors",
     "topicSlug": "applications-of-vectors-work-torque-angular-momentum",
     "title": "Applications of Vectors â€” Work, Torque and Angular Momentum",
-    "noteCount": 2,
+    "noteCount": 5,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "05-applications-work-torque-angular-momentum.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "vectors",
@@ -1188,56 +872,56 @@
     "unitSlug": "vectors",
     "topicSlug": "collinear-non-collinear-vectors",
     "title": "Collinear and Non-collinear Vectors",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-collinear-non-collinear-vectors.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "vectors",
     "topicSlug": "cross-product-and-its-applications",
     "title": "Cross Product and Its Applications",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "03-cross-product-and-its-applications.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "vectors",
     "topicSlug": "cross-product-of-two-vectors",
     "title": "Cross Product of Two Vectors",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "03-cross-product-of-two-vectors.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "vectors",
     "topicSlug": "dot-product-and-its-applications",
     "title": "Dot Product and Its Applications",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-dot-product-and-its-applications.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "vectors",
     "topicSlug": "dot-product-of-two-vectors",
     "title": "Dot Product of Two Vectors",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-dot-product-of-two-vectors.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "vectors",
@@ -1254,33 +938,33 @@
     "unitSlug": "vectors",
     "topicSlug": "linear-combination-vectors",
     "title": "Linear Combination of Vectors",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-linear-combination-vectors.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "vectors",
     "topicSlug": "scalar-and-vector-triple-products",
     "title": "Scalar and Vector Triple Products",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "04-scalar-and-vector-triple-products.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "vectors",
     "topicSlug": "vector-algebra",
     "title": "Vector Algebra — Types, Addition and Scalar Multiplication",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-vector-algebra-types-addition-and-scalar-multiplication.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   }
 ]

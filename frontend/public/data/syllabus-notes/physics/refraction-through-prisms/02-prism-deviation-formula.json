@@ -5,9 +5,11 @@
   "topicTitle": "Prism Formula",
   "relevance": 100,
   "notes": [
-    "**Prism Formula:** This topic covers the fundamental concepts of prism formula in the physics curriculum.",
-    "Understanding prism formula is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to prism formula should be memorized and practiced regularly."
+    "**Geometry of a prism.** The refracting angle of the prism equals the sum of the internal angles, A = r₁ + r₂, whatever the incidence.",
+    "**Angle of deviation.** The ray turns through δ = (i₁ + i₂) − A, where i₁ and i₂ are the angles at the two faces.",
+    "**Minimum deviation.** Deviation is least when the ray passes symmetrically (i₁ = i₂, r₁ = r₂ = A/2); then δ_m = 2i − A — the setting used in all prism measurements.",
+    "**Prism formula.** At minimum deviation the refractive index is n = sin[(A + δ_m)/2] / sin(A/2) — how n of a glass prism is found experimentally.",
+    "**Dispersion and thin prisms.** For a thin prism δ = (n − 1)A; violet deviates most and red least, and the angular dispersion is θ = δ_v − δ_r, giving the dispersive power ω = θ/δ_y."
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in prism formula.",
@@ -28,33 +30,22 @@
   "animation3D": "refraction-through-prisms",
   "motionGraphics": "refraction-through-prisms",
   "examples": [
-    "Example 1: Real-world application of Prism Formula",
-    "Example 2: Practical demonstration of Prism Formula concepts",
-    "Example 3: Numerical problem on Prism Formula",
-    "Example 4: Diagram-based question on Prism Formula",
-    "Example 5: Application in daily life involving Prism Formula"
+    "Real-world application of Prism Formula",
+    "Practical demonstration of Prism Formula concepts",
+    "Diagram-based question on Prism Formula",
+    "Application in daily life involving Prism Formula"
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Prism Formula with suitable example.",
     "Q2. Solve problems related to Prism Formula.",
     "Q3. Differentiate between various aspects of Prism Formula.",
     "Q4. Derive the key formula related to Prism Formula.",
     "Q5. What are the applications of Prism Formula?"
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Prism Formula",
-    "Key Formula 2: Mathematical expression of Prism Formula",
-    "Key Formula 3: Application formula for Prism Formula",
-    "Key Formula 4: Derivation result for Prism Formula",
-    "Key Formula 5: Important relation in Prism Formula"
+    "Application formula for Prism Formula",
+    "Derivation result for Prism Formula"
   ],
-  "keyPoints": [
-    "Key Point 1: Fundamental definition of Prism Formula",
-    "Key Point 2: Essential theorem or principle related to Prism Formula",
-    "Key Point 3: Important condition or constraint for Prism Formula",
-    "Key Point 4: Common applications of Prism Formula",
-    "Key Point 5: Connection to other topics in Science"
-  ],
+  "keyPoints": [],
   "summary": "Prism Formula is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Prism Formula applies",
@@ -63,15 +54,8 @@
     "Note 4: Remember the units and dimensions involved in Prism Formula",
     "Note 5: Prism Formula frequently appears in examination questions"
   ],
-  "importantStatements": [
-    "Statement 1: Definition of Prism Formula",
-    "Statement 2: Theorem related to Prism Formula",
-    "Statement 3: Condition for Prism Formula to be valid",
-    "Statement 4: Principle governing Prism Formula",
-    "Statement 5: Corollary or consequence of Prism Formula"
-  ],
+  "importantStatements": [],
   "importantNotes": [
-    "Note 1: Prism Formula is based on fundamental principles",
     "Note 2: Remember the distinction between different types in Prism Formula",
     "Note 3: Prism Formula has both theoretical and practical significance",
     "Note 4: Study the derivations step by step for Prism Formula",
@@ -85,23 +69,12 @@
     "Trick 5: Time-saving approach for Prism Formula problems"
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Prism Formula",
-    "Exam Tip 2: Practice previous year questions on Prism Formula",
-    "Exam Tip 3: Prism Formula carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Prism Formula thoroughly",
-    "Exam Tip 5: Review common mistakes related to Prism Formula"
+    "Focus on numerical problems from Prism Formula",
+    "Practice previous year questions on Prism Formula",
+    "Learn the derivations for Prism Formula thoroughly",
+    "Review common mistakes related to Prism Formula"
   ],
   "mcs": [
-    {
-      "question": "Which of the following best describes Prism Formula?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
-      "answer": "A"
-    },
     {
       "question": "The primary application of Prism Formula is in:",
       "options": [

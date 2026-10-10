@@ -1,4 +1,4 @@
-import { apiFetch, setStoredToken, clearStoredToken, getStoredToken } from "../api-client";
+import { apiFetch, refreshSessionShared, setStoredToken, clearStoredToken, getStoredToken } from "../api-client";
 import {
   clearCachedSession,
   writeCachedSession,
@@ -56,18 +56,23 @@ export async function signup(
 
 /**
  * Refresh the current session (revalidates the active token).
+ *
+ * Routed through the app-wide single-flight refresh: a burst of concurrent
+ * 401s (this call, the apiFetch retry, the AuthProvider renewal) collapses
+ * into ONE POST /api/auth/refresh instead of one per caller.
  */
 export async function refreshSession(): Promise<AuthRefreshResponse> {
-  const res = await apiFetch<AuthRefreshResponse>("/api/auth/refresh", {
-    method: "POST",
-  });
-  if (res?.accessToken) {
-    setStoredToken(res.accessToken);
+  const r = await refreshSessionShared();
+  if (!r.ok) {
+    throw Object.assign(new Error("Session refresh failed"), {
+      status: 401,
+      code: "UNAUTHORIZED",
+    });
   }
-  if (res?.user) {
-    writeCachedSession(res.user, res.accessToken ?? getStoredToken());
+  if (r.user) {
+    writeCachedSession(r.user as SessionUser, r.accessToken ?? getStoredToken());
   }
-  return res;
+  return { user: r.user as SessionUser, accessToken: r.accessToken };
 }
 
 /**

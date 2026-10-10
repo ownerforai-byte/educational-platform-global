@@ -16,34 +16,60 @@
     "• Proton (p): +1.602 × 10⁻¹⁹ C (+1), 1.673 × 10⁻²⁷ kg = 1.00728 u; Goldstein's rays/identified by Thomson, named by Rutherford (1919–20); location: nucleus.",
     "• Neutron (n): 0, 1.675 × 10⁻²⁷ kg = 1.00867 u (heaviest of the three); Chadwick (1932); location: nucleus. Free neutrons β-decay (half-life ≈ 11 min) because they are slightly heavier than a proton plus an electron.",
     "### What the trio explains",
-    "Isotopes (same Z, different N), radioactivity (nuclear instability), nuclear stability (N/Z ratio ≈ 1 for light nuclei, rising to ≈1.5 for heavy), fission/fusion energy, and the notation ᴬZX that summarises every nuclide."
+    "Isotopes (same Z, different N), radioactivity (nuclear instability), nuclear stability (N/Z ratio ≈ 1 for light nuclei, rising to ≈1.5 for heavy), fission/fusion energy, and the notation ᴬZX that summarises every nuclide.",
+    "Mass number A, the isotope concept it makes possible, and the average-atomic-mass calculation — the accounting that sits on top of the fundamental particles.",
+    "### Mass number",
+    "A = number of protons + number of neutrons = Z + N. It is always a whole number because it counts particles; the *atomic mass* measured for an element is usually not a whole number because it is a weighted average over isotopes (e.g. Cl = 35.45 u). Notation ᴬZX places A upper-left, Z lower-left.",
+    "### Isotopes (same Z, different A)",
+    "• Hydrogen: ¹H protium, ²H deuterium (D, in heavy water D₂O), ³H tritium (radioactive) — the only element whose isotopes have separate names.",
+    "• Carbon: ¹²C (98.9%, the amu standard), ¹³C (NMR), ¹⁴C (dating). Chlorine: ³⁵Cl (75%), ³⁷Cl (25%). Uranium: ²³⁵U (fissile, 0.7%), ²³⁸U (99.3%).",
+    "• Chemical properties are almost identical (same electron configuration); physical properties differ with mass (density, diffusion rate, spectra — the D line shift identified deuterium).",
+    "### Average atomic mass (the numerical pattern)",
+    "Average = Σ(abundance × isotopic mass). Cl: 0.75 × 35 + 0.25 × 37 = 35.5 u. Ne: 0.905 × 20 + 0.0027 × 21 + 0.0923 × 22 ≈ 20.18 u. Working backwards: given the average and one abundance, the second isotopic mass can be found.",
+    "### Separation and uses",
+    "Because isotopes differ only in mass, separation uses mass-dependent processes: gaseous diffusion (UF₆) or centrifugation for ²³⁵U, electrolysis/distillation for D₂O. Uses: ¹⁴C dating, ¹³¹I thyroid therapy, ⁶⁰Co radiotherapy, D₂O as a neutron moderator, tracer studies in metabolism.",
+    "### Relation to Dalton's theory",
+    "Isotopes violate Dalton's postulate that all atoms of an element are identical in mass; the nuclear model plus the neutron explains them — same proton count, different neutron count."
   ],
   "confusion": [
     "❌ The neutron is lighter than the proton. ✅ It is heavier (1.675 vs 1.673 × 10⁻²⁷ kg) — hence free-neutron β-decay.",
     "❌ The neutron was discovered before the proton was named. ✅ Proton named 1919–20; neutron 1932.",
-    "❌ Neutrons carry a small charge. ✅ Exactly zero charge; that is why they penetrate deeply and leave no ion tracks."
+    "❌ Neutrons carry a small charge. ✅ Exactly zero charge; that is why they penetrate deeply and leave no ion tracks.",
+    "❌ Mass number is the atomic mass. ✅ A is a whole-number particle count; atomic mass is the weighted average in u.",
+    "❌ Isotopes have different chemical properties. ✅ Nearly identical chemically; they differ in mass and nuclear stability.",
+    "❌ ²³⁵U and ²³⁸U are isobars. ✅ They are isotopes (same Z = 92); isobars need equal A."
   ],
   "practice": [
     "Explain the mass and charge problems that predicted the neutron's existence.",
     "Describe Chadwick's beryllium experiment with the nuclear equation.",
     "Complete the fundamental-particles table (particle, charge, mass, discoverer, location).",
-    "Why is the N/Z ratio higher in heavy stable nuclei?"
+    "Why is the N/Z ratio higher in heavy stable nuclei?",
+    "Why is the atomic mass of chlorine 35.5 and not a whole number?",
+    "List the three isotopes of hydrogen with one use of deuterium.",
+    "An element has 90% of an isotope of mass 20 and 10% of mass 22; find the average atomic mass and identify the element."
   ],
   "formulas": [
     "$$^{9}\\text{Be}+^{4}\\text{He}\\rightarrow^{12}\\text{C}+^{1}\\text{n};\\qquad A=Z+N$$",
-    "$$m_{n}=1.675\\times10^{-27}\\ \\text{kg}>m_{p}+m_{e}\\ \\Rightarrow\\ \\text{free neutron decays}$$"
+    "$$m_{n}=1.675\\times10^{-27}\\ \\text{kg}>m_{p}+m_{e}\\ \\Rightarrow\\ \\text{free neutron decays}$$",
+    "$$A=Z+N;\\qquad \\text{average mass}=\\sum(\\text{abundance}\\times\\text{isotopic mass})$$"
   ],
   "universalFacts": [
     "Chadwick received the 1935 Nobel Prize for the neutron; it made the fission chain reaction conceivable.",
     "Neutron half-life outside the nucleus ≈ 10.7 min.",
-    "The neutron's magnetic moment is not zero (−1.91 nuclear magnetons) despite zero charge — evidence of internal quark structure."
+    "The neutron's magnetic moment is not zero (−1.91 nuclear magnetons) despite zero charge — evidence of internal quark structure.",
+    "¹²C defines the unified mass unit: 1 u = 1/12 mass of a ¹²C atom = 1.66 × 10⁻²⁷ kg.",
+    "Heavy water (D₂O) is used as moderator-cum-coolant in CANDU reactors.",
+    "Uranium enrichment to ≈3–5% ²³⁵U is what reactor fuel requires (weapons need ≈90%)."
   ],
   "examples": [
-    "**Problem:** An atom has Z = 6 and A = 14. Give p, n, e and its isotope name. **Solution:** 6 protons, 8 neutrons, 6 electrons — carbon-14 (¹⁴C), the dating isotope."
+    "**Problem:** An atom has Z = 6 and A = 14. Give p, n, e and its isotope name. **Solution:** 6 protons, 8 neutrons, 6 electrons — carbon-14 (¹⁴C), the dating isotope.",
+    "**Problem:** An element of average mass 10.8 consists of isotopes 10 and 11. Find abundances. **Solution:** let x be the 10-isotope fraction: 10x + 11(1 − x) = 10.8 → x = 0.2 → 20% mass-10 (boron)."
   ],
   "importantNotes": [
     "The table (charge, mass, discoverer, location) is a guaranteed short-question — memorise all four columns.",
-    "Use the uncertainty principle (electron cannot fit in the nucleus) as the conceptual argument for the neutron."
+    "Use the uncertainty principle (electron cannot fit in the nucleus) as the conceptual argument for the neutron.",
+    "Keep 'mass number' (integer count) and 'atomic mass' (average in u) strictly separate.",
+    "Attach the isotope discussion to Dalton's limitation — it is the standard link."
   ],
   "mcqs": [
     {
@@ -65,11 +91,30 @@
         "Hydrogen with γ-rays"
       ],
       "answer": "B"
+    },
+    {
+      "question": "The number of neutrons in ⁴¹Ca (Z = 20) is:",
+      "options": [
+        "20",
+        "21",
+        "41",
+        "61"
+      ],
+      "answer": "B"
     }
   ],
   "visualType": "atomic-particles",
-  "tabGroup": "Atomic-Structure-Learner-Notes",
   "source": "ravikishan",
-  "duplicateType": 2,
-  "filename": "23-neutron-and-fundamental-particles.json"
+  "filename": "23-neutron-and-fundamental-particles.json",
+  "keyPoints": [],
+  "importantStatements": [],
+  "examShortTricks": [],
+  "importantConcepts": [],
+  "practiceQuestions": [],
+  "summary": "The Neutron — Discovery & Fundamental Particle Characteristics covers essential principles and applications.",
+  "specialNotes": [],
+  "examNotes": [],
+  "importantTasks": [],
+  "animation3D": "chemistry",
+  "motionGraphics": "chemistry"
 }

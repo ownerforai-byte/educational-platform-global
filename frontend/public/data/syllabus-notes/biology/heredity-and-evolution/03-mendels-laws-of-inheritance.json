@@ -109,31 +109,56 @@
   "mcs": [
     {
       "question": "A tall pea plant (T) crossed with a short pea plant (t) produces only tall offspring. The genotype of the tall parent is most likely:",
-      "options": ["tt", "Tt", "TT", "Either Tt or TT"],
+      "options": [
+        "tt",
+        "Tt",
+        "TT",
+        "Either Tt or TT"
+      ],
       "answer": "C",
       "explanation": "All tall offspring from a short (tt) parent means the tall parent supplied only T alleles, so it must be homozygous dominant TT. A Tt parent would have given a 1:1 ratio of tall and short."
     },
     {
       "question": "The phenotypic ratio obtained in the F2 generation of a monohybrid cross is:",
-      "options": ["1:1", "3:1", "1:2:1", "9:3:3:1"],
+      "options": [
+        "1:1",
+        "3:1",
+        "1:2:1",
+        "9:3:3:1"
+      ],
       "answer": "B",
       "explanation": "3:1 is the F2 phenotypic ratio of a monohybrid cross with complete dominance. 1:2:1 is its genotypic ratio, 1:1 comes from a test cross and 9:3:3:1 from a dihybrid cross."
     },
     {
       "question": "In a test cross with a homozygous recessive plant, a heterozygous dominant parent produces:",
-      "options": ["All dominant offspring", "All recessive offspring", "A 1:1 dominant to recessive ratio", "A 3:1 ratio"],
+      "options": [
+        "All dominant offspring",
+        "All recessive offspring",
+        "A 1:1 dominant to recessive ratio",
+        "A 3:1 ratio"
+      ],
       "answer": "C",
       "explanation": "Tt x tt gives one-half Tt (dominant) and one-half tt (recessive), a 1:1 ratio that identifies the unknown dominant parent as heterozygous."
     },
     {
       "question": "The law of independent assortment applies to:",
-      "options": ["All genes in a cell", "Only genes on the same chromosome", "Genes located on different chromosomes", "Only dominant genes"],
+      "options": [
+        "All genes in a cell",
+        "Only genes on the same chromosome",
+        "Genes located on different chromosomes",
+        "Only dominant genes"
+      ],
       "answer": "C",
       "explanation": "Genes on different chromosomes assort independently during meiosis. Genes on the same chromosome are linked and are inherited together unless crossing over separates them."
     },
     {
       "question": "In the dihybrid cross TtRr x TtRr the F2 offspring occur in the genotypic ratio:",
-      "options": ["9:3:3:1", "1:2:1", "1:4:6:4:1", "1:1:1:1"],
+      "options": [
+        "9:3:3:1",
+        "1:2:1",
+        "1:4:6:4:1",
+        "1:1:1:1"
+      ],
       "answer": "C",
       "explanation": "1:4:6:4:1 is the genotypic (and phenotypic) ratio of the F2 dihybrid, while 9:3:3:1 is the phenotypic ratio produced when dominance is complete."
     }

@@ -159,10 +159,17 @@ describe("CoinGateDot — the only ON/OFF indicator", () => {
     expect(dot.className).not.toContain("emerald");
   });
 
-  it("renders nothing while the config is still loading", () => {
+  it("renders nothing while the config is still loading", async () => {
     state.pendingConfig = true;
+    // The gate flag is a module-level shared store now (one poll for every
+    // consumer), so earlier tests in this file have already resolved it.
+    // First-load behaviour must be observed from a fresh module registry.
+    vi.resetModules();
+    const { CoinGateDot: FreshCoinGateDot } = await import(
+      "@/features/credits/coin-gate-dot"
+    );
 
-    const { container } = render(<CoinGateDot />);
+    const { container } = render(<FreshCoinGateDot />);
 
     expect(container.firstChild).toBeNull();
   });

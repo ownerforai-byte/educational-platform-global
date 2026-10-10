@@ -117,31 +117,56 @@
   "mcs": [
     {
       "question": "EcoRI recognises and cuts the DNA sequence:",
-      "options": ["AAGCTT", "GAATTC", "CTGCAG", "TTAAGA"],
+      "options": [
+        "AAGCTT",
+        "GAATTC",
+        "CTGCAG",
+        "TTAAGA"
+      ],
       "answer": "B",
       "explanation": "EcoRI cuts 5'-GAATTC-3' and leaves 5' AATT sticky ends. AAGCTT is the site recognised by HindIII and CTGCAG by PstI."
     },
     {
       "question": "The enzyme used in PCR that survives the 94 degrees C denaturation step is:",
-      "options": ["DNA ligase", "Reverse transcriptase", "Taq polymerase", "Restriction endonuclease"],
+      "options": [
+        "DNA ligase",
+        "Reverse transcriptase",
+        "Taq polymerase",
+        "Restriction endonuclease"
+      ],
       "answer": "C",
       "explanation": "Taq polymerase from the thermophilic bacterium Thermus aquaticus is thermostable, so it survives repeated heating to about 94 degrees; other enzymes would denature."
     },
     {
       "question": "In gel electrophoresis, DNA fragments move through the gel towards the:",
-      "options": ["Negative electrode, because DNA is negatively charged", "Positive electrode, because DNA is negatively charged", "Positive electrode, because DNA is positively charged", "Both electrodes equally, whatever the fragment size"],
+      "options": [
+        "Negative electrode, because DNA is negatively charged",
+        "Positive electrode, because DNA is negatively charged",
+        "Positive electrode, because DNA is positively charged",
+        "Both electrodes equally, whatever the fragment size"
+      ],
       "answer": "B",
       "explanation": "The phosphate backbone gives DNA a net negative charge, so it migrates to the anode, the positive electrode, and smaller fragments move fastest through the agarose."
     },
     {
       "question": "Which of the following is a suitable vector for carrying foreign DNA into a bacterial cell?",
-      "options": ["Ribosome", "Plasmid", "Mitochondrion", "Cell membrane"],
+      "options": [
+        "Ribosome",
+        "Plasmid",
+        "Mitochondrion",
+        "Cell membrane"
+      ],
       "answer": "B",
       "explanation": "A plasmid is small circular extra-chromosomal DNA with its own origin of replication, a selectable marker and a single restriction site, which makes it ideal for cloning in bacteria."
     },
     {
       "question": "The enzyme that joins two DNA fragments by sealing the sugar-phosphate backbone is:",
-      "options": ["Restriction endonuclease", "DNA ligase", "Helicase", "Taq polymerase"],
+      "options": [
+        "Restriction endonuclease",
+        "DNA ligase",
+        "Helicase",
+        "Taq polymerase"
+      ],
       "answer": "B",
       "explanation": "DNA ligase forms phosphodiester bonds to seal the nicks left after complementary sticky ends pair, producing recombinant DNA; a restriction endonuclease makes the cut in the first place."
     }

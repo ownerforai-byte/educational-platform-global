@@ -3,16 +3,16 @@ import {
   ArrowRight,
   Download,
   History as HistoryIcon,
-  Image as ImageIcon,
   MousePointerClick,
   Sparkles,
 } from "lucide-react";
 
 /**
- * Image Hub launcher — the home entry for the image studio (owner request
- * 2026-10-02: the Mind Studio diagram workspace was REPLACED by the Image
- * Hub: Agnes 2.1 Flash image chain first, puter.js in the browser as the
- * fallback; owner emails only since 2026-10-05).
+ * Diagram Hub launcher — the home entry for the drawing studio (owner request
+ * 2026-10-02: the Mind Studio workspace became the hub; renamed Diagram Hub on
+ * 2026-10-07, when the owner asked that no vendor name and no "AI" wording
+ * appear anywhere in it). The server drawing engine runs first, puter.js in
+ * the browser is the fallback; owner emails only since 2026-10-05.
  *
  * The section renders inside <OwnerOnly> on the home page, so the copy speaks
  * to the owner, not to the student. The preview on the right is a static
@@ -31,32 +31,24 @@ export function HomeMindStudio() {
         <div className="grid items-center gap-8 lg:grid-cols-[1.2fr_1fr] lg:gap-10">
           {/* ── Copy + CTA ─────────────────────────────────────────── */}
           <div>
-            <div className="inline-flex items-center gap-2 rounded-full border border-violet-500/25 bg-violet-500/10 px-3.5 py-1.5 text-xs font-semibold text-violet-600 dark:text-violet-300">
-              <ImageIcon className="h-3.5 w-3.5" />
-              <span>Images · Agnes 2.1 Flash first, puter.js fallback</span>
-            </div>
-
             <h2
               id="mind-studio-heading"
               className="mt-4 text-2xl sm:text-4xl font-black tracking-tight text-foreground leading-tight"
             >
-              Image Hub —{" "}
               <span className="bg-gradient-to-r from-sky-400 via-violet-400 to-emerald-400 bg-clip-text text-transparent">
-                describe it, Agnes draws it
+                Diagram Hub
               </span>
             </h2>
 
             <p className="mt-4 text-sm sm:text-base leading-relaxed text-muted-foreground">
-              Type what you want to see — a diagram, a nature scene, a study
-              illustration — and the hub sends it through the Agnes image
-              chain (<span className="font-mono text-foreground/80">agnes-image-2.1-flash</span>{" "}
-              first, 2.0 as the step down) on the server. The picture lands in
-              a gallery with a download button, newest first, saved to your
-              account.
+              Type what you want to see — a labelled diagram, a structure, an
+              apparatus, a nature scene — and the hub draws it on the server.
+              The picture lands in a gallery with a download button, newest
+              first, saved to your account.
             </p>
 
             <p className="mt-3 text-sm leading-relaxed text-muted-foreground">
-              When Agnes is busy, the same prompt retries{" "}
+              When the server engine is busy, the same prompt retries{" "}
               <span className="font-semibold text-foreground/80">
                 in your browser through puter.js
               </span>{" "}
@@ -68,7 +60,7 @@ export function HomeMindStudio() {
             <ul className="mt-5 flex flex-wrap gap-2.5">
               <li className="inline-flex items-center gap-1.5 rounded-xl border border-border/60 bg-card/80 px-3 py-2 text-xs font-semibold text-foreground/80">
                 <Sparkles className="h-3.5 w-3.5 text-violet-500" />
-                Agnes 2.1 Flash image chain
+                Server drawing engine
               </li>
               <li className="inline-flex items-center gap-1.5 rounded-xl border border-border/60 bg-card/80 px-3 py-2 text-xs font-semibold text-foreground/80">
                 <MousePointerClick className="h-3.5 w-3.5 text-sky-500" />
@@ -89,7 +81,7 @@ export function HomeMindStudio() {
                 href="/mind-studio"
                 className="group inline-flex h-11 items-center gap-2 rounded-2xl bg-gradient-to-r from-sky-500 to-violet-500 px-6 text-sm font-bold text-white shadow-lg shadow-violet-500/25 transition-all hover:brightness-110 hover:shadow-xl focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 focus:ring-offset-background"
               >
-                Open Image Hub
+                Open Diagram Hub
                 <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
               </Link>
               <p className="text-xs text-muted-foreground">
@@ -106,7 +98,7 @@ export function HomeMindStudio() {
           >
             <div className="flex items-center justify-between border-b border-white/10 bg-white/5 px-4 py-3">
               <span className="text-xs font-medium text-slate-200">
-                Image Hub · gallery
+                Diagram Hub · gallery
               </span>
               <span className="inline-flex h-2 w-2 rounded-full bg-emerald-400" />
             </div>
@@ -130,7 +122,7 @@ export function HomeMindStudio() {
               </svg>
 
               <span className="absolute left-4 top-4 rounded-lg border border-sky-400/40 bg-sky-400/10 px-2.5 py-1 text-[11px] font-semibold text-sky-100 backdrop-blur">
-                agnes-image-2.1-flash
+                server draw
               </span>
               <span className="absolute left-4 bottom-12 rounded-lg border border-violet-400/40 bg-violet-400/10 px-2.5 py-1 font-mono text-[11px] font-semibold text-violet-100 backdrop-blur">
                 512 × 512

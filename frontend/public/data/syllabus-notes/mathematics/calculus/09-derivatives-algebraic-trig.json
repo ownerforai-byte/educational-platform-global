@@ -45,13 +45,7 @@
     "Where a formula is quoted it is valid only under the conditions stated; Forgetting the negative sign on $\\frac{d}{dx}\\cos x$ and on $\\frac{d}{dx}\\csc x$.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [
-    "Statement 1: $\\frac{d}{dx}x^n = nx^{n-1}$ for $x>0$.",
-    "Statement 2: The quotient rule gives $\\frac{u'v - uv'}{v^2}$.",
-    "Statement 3: $\\frac{d}{dx}\\cos x = -\\sin x$.",
-    "Statement 4: $\\frac{d}{dx}\\tan x = \\sec^2x$.",
-    "Statement 5: These derivatives are valid for arguments measured in radians."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Topic anchor: Derivatives of nested forms need the chain rule  $ frac{d}{dx} sin^2x = 2 sin x cos x =  sin 2x$ and $ frac{d}{dx}(3x+1)^5 = 15(3x+1)^4$."
   ],

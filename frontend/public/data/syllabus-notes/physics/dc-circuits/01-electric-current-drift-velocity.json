@@ -5,9 +5,11 @@
   "topicTitle": "Electric Current and Drift Velocity",
   "relevance": 100,
   "notes": [
-    "**Electric Current and Drift Velocity:** This topic covers the fundamental concepts of electric current and drift velocity in the physics curriculum.",
-    "Understanding electric current and drift velocity is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to electric current and drift velocity should be memorized and practiced regularly."
+    "**Electric current.** Current is the rate of flow of charge, I = q/t; its SI unit is the ampere (1 A = 1 C/s) and conventional current is taken from positive to negative.",
+    "**Drift velocity.** Free electrons gain a tiny average velocity v_d along the field between collisions: v_d = eEτ/m = eVτ/(ml); it is of the order of mm/s even in strong currents.",
+    "**Relation I = nAev_d.** In time t electrons move v_d·t, so the charge crossing area A is q = nAev_d·t, giving I = nAev_d, where n is the number of free electrons per unit volume.",
+    "**Current density and mobility.** J = I/A = nev_d is the current density; mobility μ = v_d/E, and conductivity σ = neμ connects drift to the microscopic picture.",
+    "**Macroscopic vs microscopic.** Ohm's law in microscopic form is J = σE; the same field that drives the drift also sustains the current the ammeter reads."
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in electric current and drift velocity.",
@@ -28,33 +30,22 @@
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits",
   "examples": [
-    "Example 1: Real-world application of Electric Current and Drift Velocity",
-    "Example 2: Practical demonstration of Electric Current and Drift Velocity concepts",
-    "Example 3: Numerical problem on Electric Current and Drift Velocity",
-    "Example 4: Diagram-based question on Electric Current and Drift Velocity",
-    "Example 5: Application in daily life involving Electric Current and Drift Velocity"
+    "Real-world application of Electric Current and Drift Velocity",
+    "Practical demonstration of Electric Current and Drift Velocity concepts",
+    "Diagram-based question on Electric Current and Drift Velocity",
+    "Application in daily life involving Electric Current and Drift Velocity"
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Electric Current and Drift Velocity with suitable example.",
     "Q2. Solve problems related to Electric Current and Drift Velocity.",
     "Q3. Differentiate between various aspects of Electric Current and Drift Velocity.",
     "Q4. Derive the key formula related to Electric Current and Drift Velocity.",
     "Q5. What are the applications of Electric Current and Drift Velocity?"
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Electric Current and Drift Velocity",
-    "Key Formula 2: Mathematical expression of Electric Current and Drift Velocity",
-    "Key Formula 3: Application formula for Electric Current and Drift Velocity",
-    "Key Formula 4: Derivation result for Electric Current and Drift Velocity",
-    "Key Formula 5: Important relation in Electric Current and Drift Velocity"
+    "Application formula for Electric Current and Drift Velocity",
+    "Derivation result for Electric Current and Drift Velocity"
   ],
-  "keyPoints": [
-    "Key Point 1: Fundamental definition of Electric Current and Drift Velocity",
-    "Key Point 2: Essential theorem or principle related to Electric Current and Drift Velocity",
-    "Key Point 3: Important condition or constraint for Electric Current and Drift Velocity",
-    "Key Point 4: Common applications of Electric Current and Drift Velocity",
-    "Key Point 5: Connection to other topics in Science"
-  ],
+  "keyPoints": [],
   "summary": "Electric Current and Drift Velocity is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Electric Current and Drift Velocity applies",
@@ -63,15 +54,8 @@
     "Note 4: Remember the units and dimensions involved in Electric Current and Drift Velocity",
     "Note 5: Electric Current and Drift Velocity frequently appears in examination questions"
   ],
-  "importantStatements": [
-    "Statement 1: Definition of Electric Current and Drift Velocity",
-    "Statement 2: Theorem related to Electric Current and Drift Velocity",
-    "Statement 3: Condition for Electric Current and Drift Velocity to be valid",
-    "Statement 4: Principle governing Electric Current and Drift Velocity",
-    "Statement 5: Corollary or consequence of Electric Current and Drift Velocity"
-  ],
+  "importantStatements": [],
   "importantNotes": [
-    "Note 1: Electric Current and Drift Velocity is based on fundamental principles",
     "Note 2: Remember the distinction between different types in Electric Current and Drift Velocity",
     "Note 3: Electric Current and Drift Velocity has both theoretical and practical significance",
     "Note 4: Study the derivations step by step for Electric Current and Drift Velocity",
@@ -85,23 +69,12 @@
     "Trick 5: Time-saving approach for Electric Current and Drift Velocity problems"
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Electric Current and Drift Velocity",
-    "Exam Tip 2: Practice previous year questions on Electric Current and Drift Velocity",
-    "Exam Tip 3: Electric Current and Drift Velocity carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Electric Current and Drift Velocity thoroughly",
-    "Exam Tip 5: Review common mistakes related to Electric Current and Drift Velocity"
+    "Focus on numerical problems from Electric Current and Drift Velocity",
+    "Practice previous year questions on Electric Current and Drift Velocity",
+    "Learn the derivations for Electric Current and Drift Velocity thoroughly",
+    "Review common mistakes related to Electric Current and Drift Velocity"
   ],
   "mcs": [
-    {
-      "question": "Which of the following best describes Electric Current and Drift Velocity?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
-      "answer": "A"
-    },
     {
       "question": "The primary application of Electric Current and Drift Velocity is in:",
       "options": [

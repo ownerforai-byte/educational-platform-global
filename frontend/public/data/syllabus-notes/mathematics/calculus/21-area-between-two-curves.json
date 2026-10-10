@@ -42,13 +42,7 @@
     "Where a formula is quoted it is valid only under the conditions stated; Integrating one curve and ignoring the other instead of taking the difference.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [
-    "Statement 1: The intersection points of the curves bound the region.",
-    "Statement 2: The integrand is the top function minus the bottom function.",
-    "Statement 3: The interval must be split wherever the curves exchange order.",
-    "Statement 4: A negative computed area indicates the curves were named in reverse.",
-    "Statement 5: Symmetry about a vertical axis halves the integration range."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Topic anchor: Symmetry halves the work  if the region is symmetric about the $y$-axis or a vertical line, integrate over half and double, then multiply by 2 again if it is symmetric about the $x$-axis as well."
   ],

@@ -113,31 +113,56 @@
   "mcs": [
     {
       "question": "Which of the following diseases is caused by a bacterium?",
-      "options": ["Dengue", "Malaria", "Tuberculosis", "Ringworm"],
+      "options": [
+        "Dengue",
+        "Malaria",
+        "Tuberculosis",
+        "Ringworm"
+      ],
       "answer": "C",
       "explanation": "Tuberculosis is caused by the bacterium Mycobacterium tuberculosis; dengue is viral, malaria is caused by the protozoan Plasmodium, and ringworm is a fungal infection."
     },
     {
       "question": "Dengue fever is transmitted by the bite of:",
-      "options": ["Anopheles mosquito", "Aedes aegypti mosquito", "Tsetse fly", "Sandfly"],
+      "options": [
+        "Anopheles mosquito",
+        "Aedes aegypti mosquito",
+        "Tsetse fly",
+        "Sandfly"
+      ],
       "answer": "B",
       "explanation": "Aedes aegypti is the vector of dengue and chikungunya. Anopheles transmits malaria, the tsetse fly transmits sleeping sickness and the sandfly transmits kala-azar."
     },
     {
       "question": "Antibiotics are ineffective against influenza because:",
-      "options": ["The influenza virus is too large to absorb them", "Viruses lack a peptidoglycan cell wall and bacterial ribosomes, which are the antibiotic targets", "Antibiotics are destroyed by stomach acid before reaching the lung", "Influenza is caused by a fungus"],
+      "options": [
+        "The influenza virus is too large to absorb them",
+        "Viruses lack a peptidoglycan cell wall and bacterial ribosomes, which are the antibiotic targets",
+        "Antibiotics are destroyed by stomach acid before reaching the lung",
+        "Influenza is caused by a fungus"
+      ],
       "answer": "B",
       "explanation": "Antibiotics target bacterial structures such as the cell wall and the 70S ribosome. The influenza virus has neither and can multiply only inside host cells, so prevention, supportive care and antivirals are used instead."
     },
     {
       "question": "Which disease is caused by a parasitic helminth (worm)?",
-      "options": ["Ascariasis", "Malaria", "Cholera", "Dengue"],
+      "options": [
+        "Ascariasis",
+        "Malaria",
+        "Cholera",
+        "Dengue"
+      ],
       "answer": "A",
       "explanation": "Ascaris lumbricoides is a roundworm, that is a helminth. Malaria is caused by the unicellular protozoan Plasmodium, while cholera is bacterial and dengue is viral."
     },
     {
       "question": "HIV/AIDS is characterised by the destruction of:",
-      "options": ["Red blood cells", "CD4+ helper T lymphocytes", "Platelets", "Bone marrow stem cells only"],
+      "options": [
+        "Red blood cells",
+        "CD4+ helper T lymphocytes",
+        "Platelets",
+        "Bone marrow stem cells only"
+      ],
       "answer": "B",
       "explanation": "HIV infects CD4+ helper T cells, depleting them and gradually destroying cell-mediated immunity, which allows opportunistic infections to develop."
     }

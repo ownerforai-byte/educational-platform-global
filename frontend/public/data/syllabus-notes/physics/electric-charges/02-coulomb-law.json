@@ -55,13 +55,7 @@
     "Coulomb's law is strictly valid only for stationary point charges in an inertial reference frame. Accelerating charges radiate electromagnetic energy.",
     "Definition of 1 Coulomb: That charge which, when placed in vacuum at a distance of 1 meter from an identical charge, repels it with a force of 9 × 10⁹ N."
   ],
-  "importantStatements": [
-    "Statement 1: The electrostatic force between two stationary point charges varies inversely with the square of the distance between them.",
-    "Statement 2: Electrostatic forces are central forces acting strictly along the straight line joining the centers of two interacting charges.",
-    "Statement 3: Electrostatic forces satisfy Newton's third law: the force on charge 1 by charge 2 is equal in magnitude and opposite in direction to the force on charge 2 by charge 1.",
-    "Statement 4: The electrostatic force between two charges is independent of the presence of any other surrounding charges.",
-    "Statement 5: In any dielectric medium with relative permittivity κ, the electrostatic force between two charges is attenuated by a factor of κ."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Remember that the permittivity of free space ε₀ has SI units of C²/(N·m²) or F/m, with value 8.854 × 10⁻¹² F/m."
   ],
@@ -119,7 +113,5 @@
     "Solve problems calculating net force at a polygon vertex using vector components.",
     "Determine position and magnitude of a third charge for complete electrostatic equilibrium."
   ],
-  "duplicateType": 2,
-  "visualType": "coulomb-law",
-  "tabGroup": "coulomb-s-law-and-force-between-multiple-charges"
+  "visualType": "coulomb-law"
 }

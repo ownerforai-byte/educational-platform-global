@@ -54,13 +54,7 @@
     "The relation E = -∇V holds only for electrostatic fields. In a time-varying magnetic field, the generalized relation is E = -∇V - dA/dt, so potential alone no longer determines the field (Faraday's law).",
     "Wherever the potential is constant, the potential gradient and hence the electric field are exactly zero. This is why the interior of a conductor in electrostatic equilibrium is field-free even though its potential is finite."
   ],
-  "importantStatements": [
-    "Statement 1: The potential gradient is defined as the rate of change of potential with distance along a specified direction.",
-    "Statement 2: The electric field at any point equals the negative of the potential gradient at that point (E = -dV/dx).",
-    "Statement 3: The SI unit of potential gradient is volt per metre, which is dimensionally and numerically equal to newton per coulomb.",
-    "Statement 4: The electric field always points in the direction of steepest decrease of electric potential.",
-    "Statement 5: The potential gradient in a current-carrying conductor equals V/l, which is numerically equal to the electric field existing within that conductor."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "The gradient operator ∇V always points in the direction of maximum increase of V; the electric field is its negative, so E points toward maximum decrease."
   ],

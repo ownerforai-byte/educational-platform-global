@@ -2,12 +2,12 @@ import { apiFetch } from "@/lib/api-client";
 import { drawFigureWithPuter } from "@/lib/puter-image";
 
 /**
- * Engine order for the Image Hub (owner request 2026-10-02: "agnes 2.1
- * flash and js to generate image"). Exactly the platform's established
+ * Engine order for the Diagram Hub (owner request 2026-10-02: replace the
+ * mind console with an image generator). Exactly the platform's established
  * policy — SERVER first, BROWSER second:
  *
- *   1. POST /api/ai/image  → Agnes image chain (agnes-image-2.1-flash →
- *      2.0-flash), owner-gated server-side.
+ *   1. POST /api/ai/image  → the server's raster image chain, owner-gated
+ *      server-side.
  *   2. puter.js txt2img    → the User-Pays browser fallback, used when the
  *      server endpoint fails for ANY reason (403, 503 engines down, network).
  *
@@ -23,10 +23,17 @@ import { drawFigureWithPuter } from "@/lib/puter-image";
  * network or a DOM.
  */
 
+/**
+ * The badge the hub shows for anything the server drew. The server persists
+ * whatever model answered, which is a vendor id the owner asked never to see
+ * (2026-10-07) — so the UI names the engine by what it does.
+ */
+export const SERVER_DRAW_LABEL = "Diagram";
+
 export type HubImageResult = {
   url: string;
-  engine: "agnes" | "puter";
-  /** Human label for the gallery badge, e.g. "agnes-image-2.1-flash". */
+  engine: "diagram" | "puter";
+  /** Human label for the gallery badge, e.g. "Diagram". */
   label: string;
   /**
    * Discriminator for the gallery. Optional because a raster result is the
@@ -36,7 +43,7 @@ export type HubImageResult = {
   kind?: "picture";
 };
 
-export type HubEngineFail = "figure" | "agnes" | "puter";
+export type HubEngineFail = "figure" | "diagram" | "puter";
 
 /** One hoverable part of a vector figure: the label and its one-line detail. */
 export type HubFigurePart = { name: string; detail: string };
@@ -110,11 +117,11 @@ export async function requestHubImage(
   if (fromServer?.url) {
     return {
       url: fromServer.url,
-      engine: "agnes",
-      label: fromServer.model || "agnes-image-2.1-flash",
+      engine: "diagram",
+      label: SERVER_DRAW_LABEL,
     };
   }
-  deps.onEngineFail?.("agnes");
+  deps.onEngineFail?.("diagram");
 
   const fromPuter = await puter(clean);
   if (fromPuter) {
@@ -147,10 +154,10 @@ async function defaultRequestFigure(
  * A raster painter cannot spell, so it can never deliver "every part named" —
  * the VECTOR writer is tried first and returns one SVG in which each labelled
  * part carries `NAME — detail` that opens on hover. The raster chain stays as
- * the fallback: if the vector pass fails, the picture engines (Agnes → puter.js)
- * draw the same prompt, so the owner always gets an image.
+ * the fallback: if the vector pass fails, the picture engines (server raster →
+ * puter.js) draw the same prompt, so the owner always gets an image.
  *
- * Engine order: figure → Agnes raster → puter.js. Returns null only when all
+ * Engine order: figure → server raster → puter.js. Returns null only when all
  * three failed.
  */
 export async function requestHubFigure(

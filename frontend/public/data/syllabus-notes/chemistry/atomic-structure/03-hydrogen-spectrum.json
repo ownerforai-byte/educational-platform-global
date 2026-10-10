@@ -22,40 +22,157 @@
     "• Technology: atomic emission/absorption spectroscopy (AAS, ICP), flame tests, He–Ne gas lasers (632.8 nm) and spectrometer calibration all rest on hydrogen-like energy levels.",
     "• Frank–Hertz and discharge-tube experiments confirm discrete energy levels and the Bohr energy expression.",
     "### 6. Limitations of this treatment",
-    "The Bohr/Rydberg picture gives series positions but not line *fine structure* (Hα is really a doublet), relative intensities, or splitting in magnetic (Zeeman) and electric (Stark) fields; beyond hydrogen it needs multi-electron and relativistic corrections."
+    "The Bohr/Rydberg picture gives series positions but not line *fine structure* (Hα is really a doublet), relative intensities, or splitting in magnetic (Zeeman) and electric (Stark) fields; beyond hydrogen it needs multi-electron and relativistic corrections.",
+    "### Focus of this tab",
+    "A series-by-series reference table for the hydrogen spectrum, plus the line-counting rule — the data side of the main spectrum note.",
+    "### The five series at a glance",
+    "• **Lyman** (n₁ = 1): UV. First line 121.6 nm (2→1); series limit 91.2 nm. Discovered by Lyman, 1906.",
+    "• **Balmer** (n₁ = 2): visible. Hα 656.3 nm (3→2), Hβ 486.1 nm (4→2), Hγ 434.0 nm (5→2), Hδ 410.2 nm (6→2); limit 364.6 nm. Discovered by Balmer, 1885.",
+    "• **Paschen** (n₁ = 3): near IR. First line 1875 nm (4→3); limit 820.4 nm. Discovered 1908.",
+    "• **Brackett** (n₁ = 4): IR. First line 4051 nm (5→4); limit 1458 nm. Discovered 1922.",
+    "• **Pfund** (n₁ = 5): far IR. First line 7460 nm (6→5); limit 2279 nm. Discovered 1924. (A sixth, Humphreys, n₁ = 6, lies in the far IR.)",
+    "### Counting lines",
+    "• From a single excited level n: the number of different lines = n(n − 1)/2 (e.g. n = 4 → 6 lines: 3 Lyman + 2 Balmer + 1 Paschen).",
+    "• In one series, from level n to fixed n₁: n − n₁ lines (e.g. Balmer lines down from n = 4: two lines).",
+    "### Line spacing within a series",
+    "Successive lines crowd together and converge at the series limit (n₂ → ∞): $\\bar{\\nu}_{limit}=R/n_{1}^{2}$. The Balmer limit 364.6 nm marks the end of visible lines; beyond it the atom ionises and the spectrum becomes continuous.",
+    "### Wavelength ↔ energy conversions",
+    "$\\Delta E(\\text{eV})=\\frac{1240}{\\lambda(\\text{nm})}$ and $\\Delta E=13.6(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}})$. Every line position follows from these two relations; the wavelength of any hydrogen-like ion scales as 1/Z² (He⁺ lines are 4× more energetic, shifted to ¼ wavelength).",
+    "How the Rydberg equation follows from Bohr's theory, what the Rydberg constant means, and the standard numerical patterns built on it.",
+    "### Derivation (short form)",
+    "Photon energy for a jump n₂ → n₁: $h\\nu=E_{2}-E_{1}=\\frac{2\\pi^{2}me^{4}Z^{2}}{h^{2}}\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right)$. With $\\nu=c/\\lambda$ and $\\bar{\\nu}=1/\\lambda=\\nu/c$: $\\bar{\\nu}=RZ^{2}\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right)$ where $R=\\frac{2\\pi^{2}me^{4}}{h^{3}c}=1.097\\times10^{7}\\ \\text{m}^{-1}$. The empirical Balmer/Rydberg formula thus *emerged* from theory — Bohr's greatest success.",
+    "### Meaning of R",
+    "R is the wave number of the hydrogen series limit (n₁ = 1, n₂ → ∞): $\\bar{\\nu}_{limit}=R$, λ = 91.2 nm. Because m appears in R, the constant is slightly isotope-dependent (reduced-mass correction): R(²H) ≈ R(¹H) × 1.00027 — the basis of measuring deuterium in heavy water spectroscopically.",
+    "### Numerical patterns",
+    "• Wavelength of a given line: pick n₁ (series) and n₂ (upper level); compute $\\bar{\\nu}$, invert for λ.",
+    "• Series limit: set n₂ → ∞ → $\\bar{\\nu}=RZ^{2}/n_{1}^{2}$.",
+    "• First line of a series: n₂ = n₁ + 1.",
+    "• Identification: given λ and a series, solve for n₂; given two lines, form their difference to get a third line (Ritz combination principle).",
+    "• Hydrogen-like ions: multiply by Z² (He⁺ Balmer lines are 4× the wave number of hydrogen's).",
+    "### Units trap",
+    "R is quoted both as 1.097 × 10⁷ m⁻¹ and 109 677 cm⁻¹. Convert before mixing: 1 cm⁻¹ = 100 m⁻¹; λ(nm) = 10⁷/ν̄(cm⁻¹)."
   ],
   "confusion": [
     "❌ The Balmer series lies in the ultraviolet. ✅ Balmer (n₁ = 2) is visible; Lyman (n₁ = 1) is UV and Paschen onward are IR.",
     "❌ A ground-state hydrogen atom can emit a line. ✅ Emission needs excitation first; the ground state can only absorb.",
     "❌ Within a series the lines get farther apart. ✅ They crowd together and converge at the series limit.",
     "❌ Absorption lines mean the atom lost energy. ✅ The atom absorbs exactly the photons matching its level gaps, so those wavelengths are missing from the transmitted beam.",
-    "❌ Every line requires n₂ − n₁ = 1. ✅ Any n₂ > n₁ gives a line; the number of lines from level n is n(n − 1)/2."
+    "❌ Every line requires n₂ − n₁ = 1. ✅ Any n₂ > n₁ gives a line; the number of lines from level n is n(n − 1)/2.",
+    "❌ The Balmer series starts from n = 1. ✅ Balmer lines end at n₁ = 2; the lower level defines the series, not the upper one.",
+    "❌ The number of lines from level n is n − 1. ✅ That counts one series only; the total is n(n − 1)/2.",
+    "❌ The series limit is the strongest line. ✅ It is the *convergence* point where lines merge into the ionisation continuum.",
+    "❌ R is an empirical fitted constant with no origin. ✅ Bohr derived it from m, e, h and c — a theoretical prediction confirmed by experiment.",
+    "❌ ν̄ is the frequency. ✅ It is the wave number (1/λ); frequency ν = c·ν̄.",
+    "❌ The same R applies unchanged to He⁺. ✅ Multiply by Z² (and apply the reduced-mass correction for precision)."
   ],
   "practice": [
     "Explain the origin of the line spectrum of hydrogen using Bohr's postulates.",
     "Write the Rydberg equation and compute the wavelength of the first Balmer line.",
     "Name the hydrogen series lying in the visible region and give the regions of the others.",
     "Calculate the wave number and photon energy for the n = 4 → 2 transition in hydrogen.",
-    "How many spectral lines are possible when an excited hydrogen atom de-excites from n = 5?"
+    "How many spectral lines are possible when an excited hydrogen atom de-excites from n = 5?",
+    "one worked example for \"Spectrum of hydrogen atom\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid.",
+    "Tabulate the five series of hydrogen with their regions, first members and series limits.",
+    "How many spectral lines are emitted when an electron de-excites from n = 6 to the ground state?",
+    "Calculate the series limit of the Paschen series.",
+    "Name the series whose lines fall in the visible region and identify its first line.",
+    "Derive the Rydberg equation from Bohr's energy levels.",
+    "Calculate the wavelength of the second line of the Balmer series (4 → 2).",
+    "Find the series limit of the Brackett series.",
+    "A line of He⁺ has the same wavelength as a Balmer line of H; relate their quantum numbers using the Z² factor."
   ],
   "formulas": [
     "$$\\frac{1}{\\lambda}=RZ^{2}\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right),\\quad R=1.097\\times10^{7}\\ \\text{m}^{-1}$$",
     "$$h\\nu=\\Delta E=E_{2}-E_{1},\\qquad \\lambda(\\text{nm})=\\frac{1240}{\\Delta E(\\text{eV})}$$",
-    "$$\\text{number of lines from level } n=\\frac{n(n-1)}{2}$$"
+    "$$\\text{number of lines from level } n=\\frac{n(n-1)}{2}$$",
+    "$$\\bar{\\nu}=R\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right),\\qquad \\bar{\\nu}_{limit}=\\frac{R}{n_{1}^{2}}$$",
+    "$$\\text{lines from level }n=\\frac{n(n-1)}{2}$$",
+    "$$R=\\frac{2\\pi^{2}me^{4}}{h^{3}c}=1.097\\times10^{7}\\ \\text{m}^{-1}=109677\\ \\text{cm}^{-1}$$",
+    "$$\\bar{\\nu}=RZ^{2}\\left(\\frac{1}{n_{1}^{2}}-\\frac{1}{n_{2}^{2}}\\right);\\qquad \\lambda(\\text{nm})=\\frac{10^{7}}{\\bar{\\nu}(\\text{cm}^{-1})}$$"
   ],
   "universalFacts": [
     "Hα = 656.3 nm (red) is the first Balmer line; Lyman limit = 91.2 nm; Balmer limit = 364.6 nm.",
     "R = 1.097 × 10⁷ m⁻¹ = 109 678 cm⁻¹ for hydrogen.",
-    "The Balmer series was discovered first (1885) because it alone lies in the visible region."
+    "The Balmer series was discovered first (1885) because it alone lies in the visible region.",
+    "answer pattern for \"Spectrum of hydrogen atom\": define → method → result. Structure earns the marks on 6–10 mark questions.",
+    "Balmer (1885) found the visible series before the electron was discovered — a purely empirical formula at first.",
+    "The Lyman limit 91.2 nm marks the ionisation threshold of ground-state hydrogen.",
+    "Hα at 656.3 nm is the reddest strong line in astronomy — used to map hydrogen nebulae.",
+    "R was known experimentally to 6 figures before Bohr — the theory matched without fitting.",
+    "The reduced-mass shift of the D line (²H) versus H line identified deuterium in 1932.",
+    "Ritz's combination principle: the wave number of one line equals the sum/difference of two others sharing a level."
   ],
   "examples": [
     "**Problem:** Wavelength of the first Balmer line (n = 3 → 2). **Solution:** 1/λ = 1.097×10⁷(1/4 − 1/9) = 1.524×10⁶ m⁻¹ → λ = 656 nm (Hα).",
-    "**Problem:** Energy of the photon for n = 4 → 2. **Solution:** ΔE = 13.6(1/4 − 1/16) = 2.55 eV; λ = 1240/2.55 ≈ 486 nm (Hβ)."
+    "**Problem:** Energy of the photon for n = 4 → 2. **Solution:** ΔE = 13.6(1/4 − 1/16) = 2.55 eV; λ = 1240/2.55 ≈ 486 nm (Hβ).",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges.",
+    "**Problem:** Lines from n = 5 to ground. **Solution:** 5(5−1)/2 = 10 lines — 4 Lyman, 3 Balmer, 2 Paschen, 1 Brackett.",
+    "**Problem:** Shortest Balmer wavelength. **Solution:** the series limit, n₂ → ∞: λ = 1/(R/4) = 4/R = 364.6 nm.",
+    "**Problem:** λ of the Hβ line (4 → 2). **Solution:** ν̄ = 1.097×10⁷(1/4 − 1/16) = 1.097×10⁷ × 0.1875 = 2.057×10⁶ m⁻¹ → λ = 486 nm.",
+    "**Problem:** Wave number of the Paschen limit. **Solution:** ν̄ = R/9 = 1.22×10⁶ m⁻¹ → λ = 820.4 nm."
   ],
   "importantNotes": [
     "Remember the series-to-region mapping: Lyman UV, Balmer visible, Paschen/Brackett/Pfund IR — a standard one-mark question.",
-    "Convert cm⁻¹ to m⁻¹ (× 100) before using R in SI; unit slips are the commonest error here."
+    "Convert cm⁻¹ to m⁻¹ (× 100) before using R in SI; unit slips are the commonest error here.",
+    "Memorise the three visible-region Balmer wavelengths (656, 486, 434 nm) — they recur in numericals.",
+    "Series is named by its *lower* level n₁; the upper level varies.",
+    "Keep R in one unit system throughout a calculation; the cm⁻¹↔m⁻¹ factor of 100 is the classic slip.",
+    "For He⁺, Li²⁺ multiply by Z² before inverting for λ."
   ],
   "visualType": "hydrogen-spectrum",
-  "tabGroup": "Atomic-Structure-Learner-Notes"
+  "keyPoints": [
+    "• Spectrum of hydrogen atom"
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Spectrum of hydrogen atom\" with one example.",
+    "compare \"Spectrum of hydrogen atom\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Spectrum of hydrogen atom\" and verify the answer is plausible."
+  ],
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Spectrum of hydrogen atom\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    },
+    {
+      "question": "The first line of the Balmer series is produced by the transition:",
+      "options": [
+        "2 → 1",
+        "3 → 2",
+        "4 → 2",
+        "3 → 1"
+      ],
+      "answer": "B"
+    },
+    {
+      "question": "The series limit of the Lyman series corresponds to:",
+      "options": [
+        "91.2 nm",
+        "121.6 nm",
+        "364.6 nm",
+        "656.3 nm"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "The Rydberg constant in SI units is:",
+      "options": [
+        "1.097 × 10⁷ m⁻¹",
+        "1.097 × 10⁵ m⁻¹",
+        "6.626 × 10⁻³⁴ m⁻¹",
+        "1.097 × 10⁷ cm⁻¹"
+      ],
+      "answer": "A"
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [],
+  "summary": "Spectrum of hydrogen atom (Atomic Structure, Chemistry, class-11-notes) covers Spectrum of hydrogen atom. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these.",
+  "filename": "03-hydrogen-spectrum.json"
 }

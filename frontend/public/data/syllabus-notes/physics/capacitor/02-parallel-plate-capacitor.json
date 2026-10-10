@@ -58,13 +58,7 @@
     "When a conducting slab of thickness t (t < d) is inserted, κ → ∞, so C = ε₀A / (d - t). If t = d, the plates short-circuit.",
     "If multiple dielectric slabs of thicknesses t₁, t₂ with constants κ₁, κ₂ fill the gap, C = ε₀A / (t₁/κ₁ + t₂/κ₂)."
   ],
-  "importantStatements": [
-    "Statement 1: The electric field between two infinite oppositely charged parallel plates is uniform and equal to σ/ε₀.",
-    "Statement 2: The capacitance of a parallel plate capacitor with air is given by C = ε₀A/d.",
-    "Statement 3: Inserting a dielectric slab of thickness t increases capacitance by reducing the effective plate separation by t(1 - 1/κ).",
-    "Statement 4: For an isolated charged capacitor, the attractive force between plates does not change when plate separation is altered.",
-    "Statement 5: Fringing fields at plate edges lead to a slightly higher actual capacitance than predicted by C = ε₀A/d."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Remember the fundamental difference between inserting a dielectric with battery connected (V constant, C↑, Q↑, U↑) versus disconnected (Q constant, C↑, V↓, U↓)."
   ],
@@ -122,6 +116,5 @@
     "Derive C = ε₀A / [d - t(1 - 1/κ)] for a slab of thickness t.",
     "Calculate changes in Q, V, E, and U when a dielectric is inserted with battery connected vs disconnected."
   ],
-  "duplicateType": 1,
   "visualType": "parallel-plate-capacitor"
 }

@@ -8,11 +8,15 @@ import {
   resolveRailIcon,
   type HomeSubjectRail,
   type HomeSubjectSlide,
+  type SubjectSlideFigure,
 } from "@/lib/home-subject-slides";
+import { prepareRailFigure } from "@/lib/rail-figures";
 import {
+  RAIL_IDLE_RESUME_MS,
+  freezeTrack,
+  isRailFlick,
   normalizeRailOffset,
-  parseDurationSecs,
-  railResumeDelaySecs,
+  railFlickTarget,
   resumeTrackFromFreeze,
 } from "@/lib/rail-motion";
 
@@ -72,12 +76,21 @@ export function SubjectRails({
     return () => observer.disconnect();
   }, []);
 
-  /* Swipe / drag to scrub a rail: press and slide left or right to move the
-     stream by hand — cards that already left through the left edge come back
-     by swiping right, because the track wraps every loop. Release and the
-     rail resumes drifting on its own (in phase, no snap), unless its Pause
-     switch is on, in which case it holds exactly where it was dropped. The
-     click ending a real drag is swallowed so a card link never fires.
+  /* Swipe / drag to browse a rail by hand (owner request 2026-10-06).
+
+     A slow drag scrubs the stream freely; a quick FLICK steps exactly one card
+     from the nearest card boundary, so a swipe reliably shows the previous
+     (swipe right) or next (swipe left) card. Releasing leaves the rail HELD
+     exactly where the reader dropped it — it keeps that position while they
+     read — and the cycle only continues once BOTH halves of the owner's rule
+     are met: RAIL_IDLE_RESUME_MS with no further interaction on that rail, AND
+     the reader has moved outside that rail's area (a click outside, or simply
+     no longer hovering it, so the rail can never stay frozen forever). A click
+     outside before the 3 s are up arms the resume for the 3 s mark, so the
+     cycle always comes back in phase. The rail's own Pause switch still
+     overrides all of it and holds until Play. The click that ends a real drag
+     is swallowed so a card link never fires, and a mostly-vertical gesture is
+     left alone as a page scroll instead of hijacking it as a swipe.
      Reduced-motion readers get the native horizontal scroller instead, so no
      drag handling is attached for them. */
   useEffect(() => {
@@ -94,22 +107,107 @@ export function SubjectRails({
         const track = viewport.querySelector<HTMLElement>(".subject-rail-track");
         if (!track) return;
 
+        const section = track.closest("section");
+
         let activePointer = -1;
         let dragging = false;
         let suppressClick = false;
         let startX = 0;
+        let startY = 0;
         let startTx = 0;
         let lastTx = 0;
+        let dragStartAt = 0;
+        /* Held by hand: frozen where the reader left it, waiting for the
+           "3 s untouched AND outside its area" rule to give it back to the
+           loop. `clickedOutside` is the second half of that rule. */
+        let held = false;
+        let clickedOutside = false;
+        let resumeTimer = 0;
+        let lastInteraction = 0;
 
         const readTx = (): number => {
-          const matrix = new DOMMatrixReadOnly(
-            getComputedStyle(track).transform,
-          );
-          return Number.isFinite(matrix.m41) ? matrix.m41 : 0;
+          const value = getComputedStyle(track).transform;
+          if (!value || value === "none") return 0;
+          try {
+            const matrix = new DOMMatrixReadOnly(value);
+            return Number.isFinite(matrix.m41) ? matrix.m41 : 0;
+          } catch {
+            return 0;
+          }
         };
-        const freeze = (tx: number) => {
-          track.style.animation = "none";
-          track.style.transform = `translate3d(${tx}px, 0, 0)`;
+        const buttonPaused = (): boolean =>
+          section?.classList.contains("subject-rail-paused") ?? false;
+        /** Width of one card step (card + its own margin) straight from the DOM. */
+        const cardStep = (): number => {
+          const first = track.children[0] as HTMLElement | undefined;
+          const second = track.children[1] as HTMLElement | undefined;
+          if (!first || !second) return 0;
+          return second.offsetLeft - first.offsetLeft;
+        };
+
+        const clearResumeTimer = () => {
+          if (resumeTimer) window.clearTimeout(resumeTimer);
+          resumeTimer = 0;
+        };
+        /** Continue the cycle from where the rail was frozen (in phase). */
+        const release = () => {
+          if (!held || buttonPaused()) return;
+          held = false;
+          clickedOutside = false;
+          clearResumeTimer();
+          resumeTrackFromFreeze(track);
+        };
+        /**
+         * (Re)arm the idle half of the rule. When it fires the rail resumes
+         * only if the reader has also left its area — a click outside, or the
+         * pointer no longer hovering it (which the CSS hover pause would hold
+         * anyway) — so the cycle continues without ever trapping the rail.
+         */
+        const armResumeTimer = () => {
+          clearResumeTimer();
+          const wait = Math.max(
+            0,
+            RAIL_IDLE_RESUME_MS - (Date.now() - lastInteraction),
+          );
+          resumeTimer = window.setTimeout(() => {
+            resumeTimer = 0;
+            let stillHovering = false;
+            try {
+              stillHovering = section?.matches(":hover") ?? false;
+            } catch {
+              /* engines without :hover in matches() — treat it as not hovered */
+            }
+            if (clickedOutside || !stillHovering) release();
+          }, wait);
+        };
+        /** Take the rail by hand: freeze it here and start the resume rule. */
+        const hold = () => {
+          if (held || buttonPaused()) return;
+          held = true;
+          clickedOutside = false;
+          lastInteraction = Date.now();
+          freezeTrack(track, readTx());
+          armResumeTimer();
+        };
+        /** Any interaction with this rail restarts the 3 s idle countdown. */
+        const noteInteraction = () => {
+          lastInteraction = Date.now();
+          clickedOutside = false;
+          if (held) armResumeTimer();
+        };
+
+        /* The "clicked outside its area" half of the resume rule: a click
+           anywhere outside this rail's <section> tells the rail the reader is
+           done with it. Clicking inside only restarts the 3 s countdown. */
+        const onDocumentPointerDown = (event: Event) => {
+          if (!held) return;
+          if (section?.contains(event.target as Node)) {
+            noteInteraction();
+            return;
+          }
+          clickedOutside = true;
+          if (Date.now() - lastInteraction >= RAIL_IDLE_RESUME_MS) release();
+          else armResumeTimer();
         };
 
         const onPointerDown = (event: PointerEvent) => {
@@ -118,24 +216,30 @@ export function SubjectRails({
           dragging = false;
           suppressClick = false;
           startX = event.clientX;
-          // Read the live position BEFORE killing the animation: a running
-          // or paused CSS animation overrides inline styles, so this order
-          // is what keeps the grab from jumping.
+          startY = event.clientY;
+          dragStartAt = Date.now();
+          // Read the live position BEFORE the animation is frozen: a running or
+          // paused CSS animation overrides inline styles, so this order is what
+          // keeps the grab from jumping.
           startTx = readTx();
           lastTx = startTx;
-          try {
-            viewport.setPointerCapture(event.pointerId);
-          } catch {
-            /* pointer already released — the up handler no-ops */
-          }
+          noteInteraction();
         };
         const onPointerMove = (event: PointerEvent) => {
           if (event.pointerId !== activePointer) return;
           const dx = event.clientX - startX;
+          const dy = event.clientY - startY;
           if (!dragging) {
-            if (Math.abs(dx) < 6) return;
+            // Horizontal intent only — a mostly-vertical gesture stays a page
+            // scroll rather than being hijacked into a rail swipe.
+            if (Math.abs(dx) < 6 || Math.abs(dx) <= Math.abs(dy)) return;
             dragging = true;
-            freeze(startTx);
+            hold();
+            try {
+              viewport.setPointerCapture(event.pointerId);
+            } catch {
+              /* pointer already released — the up handler no-ops */
+            }
             viewport.dataset.dragging = "true";
           }
           lastTx = normalizeRailOffset(startTx + dx, track.scrollWidth / 2);
@@ -151,23 +255,28 @@ export function SubjectRails({
           window.setTimeout(() => {
             suppressClick = false;
           }, 0);
-          if (
-            track
-              .closest("section")
-              ?.classList.contains("subject-rail-paused") ??
-            false
-          ) {
-            // Button-paused: hold exactly where dropped; unpausing resumes
-            // the loop from there (see the Pause switch below).
-            freeze(lastTx);
+          const dx = lastTx - startTx;
+          // A quick flick means "one card": step to the previous (right) or
+          // next (left) card from the nearest boundary instead of leaving the
+          // reader wherever the finger happened to stop.
+          if (isRailFlick(dx, Date.now() - dragStartAt)) {
+            lastTx = railFlickTarget(
+              lastTx,
+              cardStep(),
+              dx,
+              track.scrollWidth / 2,
+            );
+          }
+          // Button-paused: hold exactly where dropped; the Pause switch is then
+          // the only thing that starts it again (see the Pause switch below).
+          if (buttonPaused()) {
+            freezeTrack(track, lastTx);
             return;
           }
-          const duration = parseDurationSecs(
-            track.style.animationDuration ||
-              getComputedStyle(track).animationDuration,
-          );
-          track.style.animationDelay = `-${railResumeDelaySecs(lastTx, track.scrollWidth / 2, duration)}s`;
-          track.style.animation = "";
+          // Hand-held: stay exactly here until the resume rule is satisfied.
+          lastInteraction = Date.now();
+          freezeTrack(track, lastTx);
+          armResumeTimer();
         };
         const onClickCapture = (event: MouseEvent) => {
           if (!suppressClick) return;
@@ -181,12 +290,15 @@ export function SubjectRails({
         viewport.addEventListener("pointerup", endDrag);
         viewport.addEventListener("pointercancel", endDrag);
         viewport.addEventListener("click", onClickCapture, true);
+        document.addEventListener("pointerdown", onDocumentPointerDown, true);
         cleanups.push(() => {
           viewport.removeEventListener("pointerdown", onPointerDown);
           viewport.removeEventListener("pointermove", onPointerMove);
           viewport.removeEventListener("pointerup", endDrag);
           viewport.removeEventListener("pointercancel", endDrag);
           viewport.removeEventListener("click", onClickCapture, true);
+          document.removeEventListener("pointerdown", onDocumentPointerDown, true);
+          clearResumeTimer();
         });
       });
     return () => {
@@ -204,11 +316,15 @@ export function SubjectRails({
           their divider. Cards
           are wide on purpose: concept, formula, conditions, special cases, a
           worked example, the limitation, the full derivation, the shortcut and
-          the board question, in that order. Hover a rail to hold it, drag it
-          either way to scrub the stream by hand — swipe right to pull back
-          cards that already passed — or use the pause switch in any rail&apos;s
-          heading: the six are independent, so Physics can keep moving while
-          Chemistry stops.
+          the board question, in that order — and wherever a row needs a
+          picture, the diagram is drawn in a rectangular box right under that
+          row, at the concept it explains. Swipe a rail left or right (or flick
+          it) to step to the next or the previous card; it then holds that spot
+          while you read, and picks its cycle back up once you have been away
+          from it for three seconds and clicked outside it. Hover a rail to
+          hold it, drag it slowly to scrub the stream by hand, or use the pause
+          switch in any rail&apos;s heading: the six are independent, so Physics
+          can keep moving while Chemistry stops.
         </p>
       </div>
 
@@ -339,8 +455,7 @@ function SubjectRailSection({
   );
 }
 
-function SlideCard({
-  rail,
+function SlideCard({  rail,
   slide,
   stats,
   duplicate = false,
@@ -450,6 +565,7 @@ function SlideCard({
                 </dt>
                 <dd className="whitespace-pre-wrap break-words rounded-lg border border-border/60 bg-background/60 px-2.5 py-1.5 font-mono text-[11.5px] leading-relaxed text-foreground/90">
                   {row.text}
+                  <RailFigureBox figure={row.figure} />
                 </dd>
               </div>
             ) : (
@@ -462,6 +578,7 @@ function SlideCard({
                 </dt>
                 <dd className="text-[12px] leading-relaxed text-muted-foreground">
                   {row.text}
+                  <RailFigureBox figure={row.figure} />
                 </dd>
               </div>
             ),
@@ -479,5 +596,38 @@ function SlideCard({
         </span>
       </Link>
     </li>
+  );
+}
+
+/**
+ * The drawing a row asked for, in the rectangular box the owner asked for
+ * (2026-10-06): "insert the diagrams, in a rectangular box at conceptual place
+ * based on their need". It renders directly under that row's text, so the
+ * picture sits at the concept — Concept, Derivation, Special cases, wherever
+ * the card attached it — and never in a separate gallery.
+ *
+ * The card only supplies a string. `prepareRailFigure` puts it through the
+ * note-visuals guard (one bounded `<svg>` block, no scripting/styling/external
+ * refs/`id` references) and returns null for anything it refuses, so a figure
+ * that would be wrong is skipped rather than half-drawn. A drawing is inked on
+ * white "paper" in both themes, exactly like a textbook figure.
+ */
+function RailFigureBox({ figure }: { figure?: SubjectSlideFigure }) {
+  const prepared = prepareRailFigure(figure);
+  if (!prepared) return null;
+  return (
+    <figure className="rail-figure">
+      <div
+        className="rail-figure__canvas"
+        // Guard-checked twice before it reaches this raw-HTML pass: on the
+        // server in home-rails-corpus.ts, and again in prepareRailFigure.
+        dangerouslySetInnerHTML={{ __html: prepared.svg }}
+      />
+      {prepared.caption ? (
+        <figcaption className="rail-figure__caption">
+          {prepared.caption}
+        </figcaption>
+      ) : null}
+    </figure>
   );
 }

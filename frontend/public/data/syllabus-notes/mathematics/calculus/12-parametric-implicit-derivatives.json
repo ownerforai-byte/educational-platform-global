@@ -42,13 +42,7 @@
     "Where a formula is quoted it is valid only under the conditions stated; Inverting the ratio in the parametric rule, giving $\\frac{dx}{dt}/\\frac{dy}{dt}$ instead.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [
-    "Statement 1: $\\frac{dy}{dx}=\\frac{dy/dt}{dx/dt}$ for parametric equations when $dx/dt\\ne0$.",
-    "Statement 2: $\\frac{dx}{dt}=0$ indicates a vertical tangent.",
-    "Statement 3: Implicit differentiation requires $y$ to be a differentiable function of $x$.",
-    "Statement 4: For $x^2+y^2=r^2$, $\\frac{dy}{dx}=-\\frac{x}{y}$.",
-    "Statement 5: A parametric second derivative divides by $\\frac{dx}{dt}$ a second time."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Topic anchor: Higher-order implicit derivatives substitute back the expression obtained for $ frac{dy}{dx}$ before differentiating again, so for a circle $ frac{d^2y}{dx^2}=- frac{r^2}{y^3}$ once $x^2+y^2=r^2$ is used."
   ],

@@ -16,6 +16,7 @@
 import fs from "node:fs";
 import path from "node:path";
 
+import { prepareRailFigure } from "./rail-figures";
 import { LEGACY_UNIT_INDEX } from "./topic-registry";
 import { SYLLABUS } from "./syllabus";
 import type {
@@ -66,6 +67,14 @@ export interface HomeRailFileRow {
   label: string;
   kind?: "formula" | "text";
   text: string;
+  /**
+   * Optional drawing for this row, rendered in the rectangular `.rail-figure`
+   * box right under the row text — the diagram lands at the
+   * conceptual place that needs it. `svg` is one `<svg>…</svg>` block and goes
+   * through the note-visuals guard before it is ever rendered
+   * (`lib/rail-figures.ts`); an unusable drawing is skipped, not fatal.
+   */
+  figure?: { svg: string; caption?: string };
 }
 
 export interface HomeRailFile {
@@ -195,7 +204,23 @@ export function checkRailShape(value: unknown): string[] {
       }
     }
   }
-  if (!Array.isArray(rec.rows)) problems.push('"rows" must be an array');
+  const rows = rec.rows;
+  if (!Array.isArray(rows)) {
+    problems.push('"rows" must be an array');
+  } else {
+    rows.forEach((row, index) => {
+      const figure = (row as Record<string, unknown> | null)?.figure;
+      if (figure === undefined) return;
+      if (
+        !figure ||
+        typeof figure !== "object" ||
+        typeof (figure as Record<string, unknown>).svg !== "string" ||
+        !((figure as Record<string, unknown>).svg as string).trim()
+      ) {
+        problems.push(`rows[${index}].figure must carry a non-empty "svg" string`);
+      }
+    });
+  }
   return problems;
 }
 
@@ -345,11 +370,19 @@ export function loadHomeRailCorpus(
 export function toRailSlideData(entry: HomeRailEntry): Omit<HomeSubjectSlide, "icon"> & {
   iconName: string;
 } {
-  const rows: SubjectSlideRow[] = entry.record.rows.map((row) => ({
-    label: row.label,
-    text: row.text,
-    ...(row.kind === "formula" ? { kind: row.kind as "formula" } : {}),
-  }));
+  const rows: SubjectSlideRow[] = entry.record.rows.map((row) => {
+    // The drawing is guard-checked on the server too: only a figure that already
+    // survived the note-visuals allowlist crosses into the client props.
+    const figure = prepareRailFigure(row.figure);
+    return {
+      label: row.label,
+      text: row.text,
+      ...(row.kind === "formula" ? { kind: row.kind as "formula" } : {}),
+      ...(figure
+        ? { figure: { svg: figure.svg, ...(figure.caption ? { caption: figure.caption } : {}) } }
+        : {}),
+    };
+  });
   return {
     tag: entry.record.card.tag,
     title: entry.record.card.title,

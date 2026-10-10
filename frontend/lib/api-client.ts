@@ -71,6 +71,48 @@ function unauthorizedError(): Error {
   return Object.assign(new Error("Unauthorized"), { status: 401, code: "UNAUTHORIZED" });
 }
 
+/** Minimal shape of POST /api/auth/refresh's body (only fields the client uses). */
+interface RefreshBody {
+  accessToken?: string;
+  user?: unknown;
+}
+
+/** One refresh promise shared by every 401 path in the app. */
+let inFlightRefresh: Promise<{ ok: boolean } & RefreshBody> | null = null;
+
+/**
+ * Single-flight session refresh.
+ *
+ * Three independent callers hit POST /api/auth/refresh on a 401 — this
+ * fetch layer's retry, `ensureSession()` and the AuthProvider renewal — and
+ * when several requests 401 in the same moment (page load after the access
+ * token expired) each used to fire its own refresh: five parallel 401s meant
+ * five refresh calls in one second. Every caller now shares this one
+ * in-flight promise; the burst after it settles starts a fresh one.
+ */
+export function refreshSessionShared(): Promise<{ ok: boolean } & RefreshBody> {
+  if (!inFlightRefresh) {
+    inFlightRefresh = (async () => {
+      try {
+        const res = await fetch(`${API_BASE}/api/auth/refresh`, {
+          method: "POST",
+          credentials: "include",
+          headers: { "Content-Type": "application/json" },
+        });
+        if (!res.ok) return { ok: false };
+        const body = (await res.json().catch(() => null)) as RefreshBody | null;
+        if (body?.accessToken) setStoredToken(body.accessToken);
+        return { ok: true, accessToken: body?.accessToken, user: body?.user };
+      } catch {
+        return { ok: false };
+      }
+    })().finally(() => {
+      inFlightRefresh = null;
+    });
+  }
+  return inFlightRefresh;
+}
+
 async function request<T>(path: string, init?: RequestInit, isRetry = false): Promise<T> {
   let response: Response;
   try {
@@ -90,11 +132,7 @@ async function request<T>(path: string, init?: RequestInit, isRetry = false): Pr
 
   // Refresh-and-retry only for resource endpoints, and only once.
   if (response.status === 401 && !isRetry && !isAuthPath(path)) {
-    const refreshed = await fetch(`${API_BASE}/api/auth/refresh`, {
-      method: "POST",
-      credentials: "include",
-      headers: { "Content-Type": "application/json" },
-    });
+    const refreshed = await refreshSessionShared();
     if (refreshed.ok) {
       return request<T>(path, init, true);
     }

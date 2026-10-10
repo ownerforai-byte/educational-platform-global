@@ -24,7 +24,7 @@ export function MobileNav() {
   const [open, setOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const pathname = usePathname();
-  const { user, refresh, logoutUser } = useSession();
+  const { user, logoutUser } = useSession();
   const panelRef = useRef<HTMLDivElement>(null);
   const triggerRef = useRef<HTMLButtonElement>(null);
 
@@ -41,8 +41,19 @@ export function MobileNav() {
     if (!open) return;
     const onKey = (e: KeyboardEvent) => {
       if (e.key === "Escape") {
+        e.preventDefault();
         setOpen(false);
-        triggerRef.current?.focus();
+      }
+      if (e.key === 'Tab') {
+        const controls = Array.from(panelRef.current?.querySelectorAll<HTMLElement>('a[href], button:not(:disabled), input, [tabindex="0"]') ?? []);
+        const first = controls[0];
+        const last = controls[controls.length - 1];
+        if (!first || !last) { e.preventDefault(); return; }
+        if (e.shiftKey && (document.activeElement === first || document.activeElement === panelRef.current)) {
+          e.preventDefault(); last.focus();
+        } else if (!e.shiftKey && (document.activeElement === last || document.activeElement === panelRef.current)) {
+          e.preventDefault(); first.focus();
+        }
       }
     };
     document.addEventListener("keydown", onKey);
@@ -53,11 +64,12 @@ export function MobileNav() {
     return () => {
       document.removeEventListener("keydown", onKey);
       document.body.style.overflow = prevOverflow;
+      triggerRef.current?.focus();
     };
   }, [open]);
 
   const filteredSections = NAV_SECTIONS.filter(
-    (sec) => !sec.ownerOnly || isOwnerUser(user),
+    (sec) => (sec.id !== 'account' || !!user) && (!sec.ownerOnly || isOwnerUser(user)),
   )
     .map((sec) => ({
       ...sec,
@@ -80,7 +92,7 @@ export function MobileNav() {
           ref={triggerRef}
           variant="ghost"
           size="icon"
-          className="h-8 w-8 rounded-xl"
+          className="h-11 w-11 rounded-xl"
           onClick={() => setOpen(true)}
           aria-label="Open navigation"
           aria-expanded={open}
@@ -127,7 +139,7 @@ export function MobileNav() {
               <Button
                 variant="ghost"
                 size="icon"
-                className="h-8 w-8 rounded-xl"
+                className="h-11 w-11 rounded-xl"
                 aria-label="Close navigation"
                 onClick={() => setOpen(false)}
               >
@@ -139,7 +151,8 @@ export function MobileNav() {
             <div className="relative mb-3">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
               <input
-                type="text"
+                type="search"
+                aria-label="Filter navigation"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
                 placeholder="Quick jump to any subject or tool..."
@@ -147,6 +160,8 @@ export function MobileNav() {
               />
               {searchQuery && (
                 <button
+                  type="button"
+                  aria-label="Clear navigation filter"
                   onClick={() => setSearchQuery("")}
                   className="absolute right-2.5 top-1/2 -translate-y-1/2 text-[10px] text-muted-foreground hover:text-foreground px-1.5 py-0.5 rounded bg-muted"
                 >
@@ -156,7 +171,8 @@ export function MobileNav() {
             </div>
 
             {/* Scrollable links */}
-            <nav className="flex-1 overflow-y-auto pr-1 space-y-4">
+            <nav aria-label="Mobile navigation" className="flex-1 overflow-y-auto pr-1 space-y-4">
+              {filteredSections.length === 0 && <p role="status" className="px-3 py-4 text-sm text-muted-foreground">No destinations match “{searchQuery}”. Try a subject or tool name.</p>}
               {filteredSections.map((sec) => (
                 <div key={sec.id} className="space-y-1">
                   <p className="text-[10px] font-bold uppercase tracking-wider text-muted-foreground/80 px-2.5 py-1">
@@ -170,6 +186,7 @@ export function MobileNav() {
                         <Link
                           key={item.href}
                           href={item.href}
+                          aria-current={active ? 'page' : undefined}
                           onClick={() => setOpen(false)}
                           className={`flex items-center justify-between rounded-xl px-2.5 py-2 text-xs font-medium transition-all ${
                             active

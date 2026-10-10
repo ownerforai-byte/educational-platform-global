@@ -5,9 +5,11 @@
   "topicTitle": "Ohm's Law and Resistance",
   "relevance": 100,
   "notes": [
-    "**Ohm's Law and Resistance:** This topic covers the fundamental concepts of ohm's law and resistance in the physics curriculum.",
-    "Understanding ohm's law and resistance is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to ohm's law and resistance should be memorized and practiced regularly."
+    "**Ohm's law.** At constant physical conditions (temperature, state) the potential difference across a conductor is directly proportional to the current: V ∝ I, or V = IR.",
+    "**Resistance and resistivity.** R = ρL/A: resistance grows with length L and falls with area A; resistivity ρ (unit Ω·m) is a property of the material itself.",
+    "**Temperature dependence.** For metals R_t = R_0(1 + αt) with α > 0; semiconductors have negative temperature coefficient as carrier density rises with heat.",
+    "**Conductance and conductivity.** Conductance G = 1/R (siemens) and conductivity σ = 1/ρ; better conductors have large σ and small ρ.",
+    "**Limitations.** Ohm's law does not hold for diodes, electrolytes, superconductors or conductors at changing temperature — there V–I is not a straight line through the origin."
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in ohm's law and resistance.",
@@ -28,33 +30,22 @@
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits",
   "examples": [
-    "Example 1: Real-world application of Ohm's Law and Resistance",
-    "Example 2: Practical demonstration of Ohm's Law and Resistance concepts",
-    "Example 3: Numerical problem on Ohm's Law and Resistance",
-    "Example 4: Diagram-based question on Ohm's Law and Resistance",
-    "Example 5: Application in daily life involving Ohm's Law and Resistance"
+    "Real-world application of Ohm's Law and Resistance",
+    "Practical demonstration of Ohm's Law and Resistance concepts",
+    "Diagram-based question on Ohm's Law and Resistance",
+    "Application in daily life involving Ohm's Law and Resistance"
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Ohm's Law and Resistance with suitable example.",
     "Q2. Solve problems related to Ohm's Law and Resistance.",
     "Q3. Differentiate between various aspects of Ohm's Law and Resistance.",
     "Q4. Derive the key formula related to Ohm's Law and Resistance.",
     "Q5. What are the applications of Ohm's Law and Resistance?"
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Ohm's Law and Resistance",
-    "Key Formula 2: Mathematical expression of Ohm's Law and Resistance",
-    "Key Formula 3: Application formula for Ohm's Law and Resistance",
-    "Key Formula 4: Derivation result for Ohm's Law and Resistance",
-    "Key Formula 5: Important relation in Ohm's Law and Resistance"
+    "Application formula for Ohm's Law and Resistance",
+    "Derivation result for Ohm's Law and Resistance"
   ],
-  "keyPoints": [
-    "Key Point 1: Fundamental definition of Ohm's Law and Resistance",
-    "Key Point 2: Essential theorem or principle related to Ohm's Law and Resistance",
-    "Key Point 3: Important condition or constraint for Ohm's Law and Resistance",
-    "Key Point 4: Common applications of Ohm's Law and Resistance",
-    "Key Point 5: Connection to other topics in Science"
-  ],
+  "keyPoints": [],
   "summary": "Ohm's Law and Resistance is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Ohm's Law and Resistance applies",
@@ -63,15 +54,8 @@
     "Note 4: Remember the units and dimensions involved in Ohm's Law and Resistance",
     "Note 5: Ohm's Law and Resistance frequently appears in examination questions"
   ],
-  "importantStatements": [
-    "Statement 1: Definition of Ohm's Law and Resistance",
-    "Statement 2: Theorem related to Ohm's Law and Resistance",
-    "Statement 3: Condition for Ohm's Law and Resistance to be valid",
-    "Statement 4: Principle governing Ohm's Law and Resistance",
-    "Statement 5: Corollary or consequence of Ohm's Law and Resistance"
-  ],
+  "importantStatements": [],
   "importantNotes": [
-    "Note 1: Ohm's Law and Resistance is based on fundamental principles",
     "Note 2: Remember the distinction between different types in Ohm's Law and Resistance",
     "Note 3: Ohm's Law and Resistance has both theoretical and practical significance",
     "Note 4: Study the derivations step by step for Ohm's Law and Resistance",
@@ -85,23 +69,12 @@
     "Trick 5: Time-saving approach for Ohm's Law and Resistance problems"
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Ohm's Law and Resistance",
-    "Exam Tip 2: Practice previous year questions on Ohm's Law and Resistance",
-    "Exam Tip 3: Ohm's Law and Resistance carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Ohm's Law and Resistance thoroughly",
-    "Exam Tip 5: Review common mistakes related to Ohm's Law and Resistance"
+    "Focus on numerical problems from Ohm's Law and Resistance",
+    "Practice previous year questions on Ohm's Law and Resistance",
+    "Learn the derivations for Ohm's Law and Resistance thoroughly",
+    "Review common mistakes related to Ohm's Law and Resistance"
   ],
   "mcs": [
-    {
-      "question": "Which of the following best describes Ohm's Law and Resistance?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
-      "answer": "A"
-    },
     {
       "question": "The primary application of Ohm's Law and Resistance is in:",
       "options": [

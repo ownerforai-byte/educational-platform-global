@@ -31,7 +31,7 @@ import {
  *
  * So this page does not teach. You ask it about your OWN saved conversations
  * ("what did we discuss about capacitors?", "where did we leave the lens
- * derivation?") and the AI — Agnes first in the chain, like every other reply —
+ * derivation?") and the tutor — the server chain first, like every other reply —
  * presents what it finds, conversation by conversation. The search itself
  * happens on the server (backend/src/ai/history-search.ts): only matching
  * messages are attached, matched exchanges bring their other half, and when

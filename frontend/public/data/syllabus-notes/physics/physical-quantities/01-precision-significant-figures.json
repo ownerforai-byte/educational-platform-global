@@ -39,7 +39,6 @@
   ],
   "animation3D": "physical-quantities",
   "motionGraphics": "physical-quantities",
-  "examples": [],
   "practiceQuestions": [
     "Q1. Distinguish between accuracy and precision with one example of each combination (accurate-not-precise, precise-not-accurate).",
     "Q2. State the number of significant figures in: 0.00650, 123.40, 5000, $6.02 \\times 10^{23}$, 0.0300.",
@@ -69,12 +68,7 @@
     "Note 3: Angular measure in radians is dimensionless but its precision still limits results in formulas like $s = r\\theta$.",
     "Note 4: Instruments: vernier callipers (0.01 cm) and screw gauge (0.001 cm) reduce least count — the practical way to gain significant figures."
   ],
-  "importantStatements": [
-    "Statement 1: A measurement is meaningful only when stated with its uncertainty — a bare number is an incomplete experimental result.",
-    "Statement 2: In multiplication and division, the result cannot have more significant figures than the least precise factor.",
-    "Statement 3: In addition and subtraction, the result cannot be more precise (more decimal places) than the least precise term.",
-    "Statement 4: Systematic errors shift all readings the same way (affecting accuracy); random errors scatter readings (affecting precision)."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Note 1: Counted quantities and defined constants (π, 2, 100 cm = 1 m) are exact — they never limit significant figures.",
     "Note 2: The uncertainty of a single reading is conventionally ± half the least count of the instrument.",
@@ -160,5 +154,11 @@
     "Task 4: Solve the past-year NEB question: 'The percentage errors in mass and velocity are 2% and 3%. Find the maximum percentage error in kinetic energy.' (Answer: 2% + 2×3% = 8%.)",
     "Task 5: Write a one-page summary comparing accuracy, precision, least count and resolution with one instrument example for each."
   ],
-  "visualType": "heisenberg-uncertainty"
+  "visualType": "heisenberg-uncertainty",
+  "examples": [],
+  "specificConditions": [
+    "**Intermediate Calculations:** Keep at least one extra 'guard' digit during intermediate calculation steps. Only round the final answer to the required number of significant figures to avoid compounding rounding errors.",
+    "**Constants & Conversion Factors:** Treat mathematical constants (e.g., π, √2) and exact conversion factors (e.g., 100 cm = 1 m) as having infinite significant figures. They should never limit the precision of the measured data.",
+    "**Parallax Error:** For analog measurements (metre rules, thermometers), ensure the line of sight is perpendicular to the scale; this is a necessary physical condition that must be met before determining the significant figure precision of the measurement."
+  ]
 }

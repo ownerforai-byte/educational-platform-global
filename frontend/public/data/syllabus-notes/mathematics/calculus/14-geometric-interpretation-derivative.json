@@ -43,13 +43,7 @@
     "Where a formula is quoted it is valid only under the conditions stated; Computing $f'(a)$ and reporting it as the angle of inclination, forgetting to apply $\\theta=\\tan^{-1}(f'(a))$.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [
-    "Statement 1: $f'(a)$ is the slope of the tangent to the curve at $x=a$.",
-    "Statement 2: $f'(a)=0$ indicates a horizontal tangent.",
-    "Statement 3: The angle of inclination satisfies $\\tan\\theta=f'(a)$.",
-    "Statement 4: A horizontal tangent makes the normal vertical, so the normal has no finite slope.",
-    "Statement 5: The tangent line agrees with the curve to first order near the point of contact."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Topic anchor: Normal lines are perpendicular to the tangent, so their slope is $- frac1{f'(a)}$, undefined when $f'(a)=0$ — precisely the case that gives a horizontal tangent and hence a VERTICAL normal."
   ],

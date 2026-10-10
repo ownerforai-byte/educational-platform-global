@@ -66,7 +66,7 @@ export interface StreamImageSuccess {
   url: string;
 }
 
-/** Agnes failed to draw — the client falls back to puter.js for the same prompt. */
+/** The server could not draw — the client falls back to puter.js for the same prompt. */
 export interface StreamImageFailed {
   imageFailed: number;
   reason?: string;

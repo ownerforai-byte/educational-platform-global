@@ -45,7 +45,9 @@
     "100 g of CaCO₃ on heating gives 47.6 g of CaO. Calculate the percentage yield.",
     "0.25 mol of ethene is hydrated to ethanol but only 9.2 g is obtained. Calculate the percentage yield. (M(C₂H₅OH) = 46 g mol⁻¹)",
     "Explain why a student may report a yield greater than 100% and how the error can be corrected.",
-    "Distinguish between percentage yield and atom economy and state the limitations of each."
+    "Distinguish between percentage yield and atom economy and state the limitations of each.",
+    "one worked example for \"Theoretical yield, experimental yield and % yield\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "formulas": [
     "$$\\%\\text{yield}=\\frac{\\text{experimental (actual) yield}}{\\text{theoretical yield}}\\times100$$",
@@ -55,11 +57,13 @@
   "universalFacts": [
     "Haber process: about 15% conversion per pass with recycling; the overall yield is raised by recycling unreacted N₂ and H₂.",
     "Typical undergraduate yields: aspirin 70–85%, soap 80–90%, esterification (equilibrium-limited) 60–70%.",
-    "Atom economy of addition reactions is 100%, whereas substitution reactions lose part of the reactant mass as by-product."
+    "Atom economy of addition reactions is 100%, whereas substitution reactions lose part of the reactant mass as by-product.",
+    "answer pattern for \"Theoretical yield, experimental yield and % yield\": define → method → result. Structure earns the marks on 6–10 mark questions."
   ],
   "examples": [
     "**Problem:** 100 g CaCO₃ gives 47.6 g CaO. Find the % yield. **Solution:** n(CaCO₃) = 1 mol → theoretical CaO = 56 g; % yield = 47.6/56 × 100 = 85%.",
-    "**Problem:** 7.0 g of ethene (0.25 mol) is hydrated to give 9.2 g ethanol. Find the % yield. **Solution:** theoretical ethanol = 0.25 × 46 = 11.5 g; % yield = 9.2/11.5 × 100 = 80%."
+    "**Problem:** 7.0 g of ethene (0.25 mol) is hydrated to give 9.2 g ethanol. Find the % yield. **Solution:** theoretical ethanol = 0.25 × 46 = 11.5 g; % yield = 9.2/11.5 × 100 = 80%.",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "importantNotes": [
     "Always quote the limiting reactant when explaining the theoretical yield — it is the only reactant that fixes it.",
@@ -67,5 +71,40 @@
     "For reversible processes (Haber, esterification) state that equilibrium limits the yield and recycling is used to improve the overall figure."
   ],
   "visualType": "yield-calculations",
-  "tabGroup": "Stoichiometry-Learner-Notes"
+  "keyPoints": [
+    "• Theoretical yield",
+    "• Experimental yield",
+    "• % yield"
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Theoretical yield, experimental yield and % yield\" with one example.",
+    "compare \"Theoretical yield\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Theoretical yield, experimental yield and % yield\" and verify the answer is plausible."
+  ],
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Theoretical yield, experimental yield and % yield\"?",
+      "options": [
+        "Theoretical yield",
+        "Experimental yield",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "A",
+      "explanation": "Theoretical yield is listed among the official sub-ideas of Theoretical yield, experimental yield and % yield; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Theoretical yield, experimental yield and % yield\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [],
+  "summary": "Theoretical yield, experimental yield and % yield (Stoichiometry, Chemistry, class-11-notes) covers Theoretical yield, experimental yield, % yield. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
 }

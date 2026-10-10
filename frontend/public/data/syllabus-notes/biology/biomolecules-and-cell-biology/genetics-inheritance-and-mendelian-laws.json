@@ -1,0 +1,86 @@
+{
+  "title": "Genetics and Inheritance",
+  "unitSlug": "biomolecules-and-cell-biology",
+  "topicSlug": "genetics-inheritance-and-mendelian-laws",
+  "topicTitle": "Genetics and Inheritance",
+  "relevance": 90,
+  "notes": [
+    "### 1. Mendel's Experiments",
+    "- Gregor Mendel studied pea plants (Pisum sativum) in the 1860s",
+    "- He identified seven traits he could study",
+    "- His experiments established the foundation of modern genetics"
+  ],
+  "importantConcepts": [
+    "Mendelian inheritance: traits follow predictable patterns",
+    "Dominant and recessive alleles",
+    "Heterozygous (Aa) and homozygous (AA, aa) genotypes",
+    "Phenotype vs genotype",
+    "Punnett square: a method for predicting offspring genotypes"
+  ],
+  "importantStatements": [
+    "In a monohybrid cross (Aa × Aa), the genotypic ratio is 1:2:1 (AA:Aa:aa) and the phenotypic ratio is 3:1 (dominant:recessive).",
+    "Dominant alleles mask recessive alleles in heterozygous individuals.",
+    "Mendel's law of segregation states that alleles separate during gamete formation."
+  ],
+  "keyPoints": [
+    "Mendelian ratios: 3:1 for dominant/recessive in monohybrid crosses.",
+    "Punnett squares are essential for predicting offspring genotypes and phenotypes.",
+    "Dominant traits appear in the phenotype even when recessive allele is present (heterozygous).",
+    "Recessive traits only appear in homozygous recessive individuals (aa)."
+  ],
+  "specialNotes": [
+    "Mendel worked with pea plants but his laws apply to all sexually reproducing organisms.",
+    "The concept of incomplete dominance (e.g., flower color in snapdragons) deviates from classical Mendelian ratios.",
+    "Sex-linked inheritance (X-linked traits) follows a different pattern due to sex chromosomes."
+  ],
+  "examShortTricks": [
+    "3:1 ratio in monohybrid cross = dominant:recessive phenotype.",
+    "Punnett square predicts 25% AA, 50% Aa, 25% aa in Aa × Aa cross.",
+    "Dominant allele masks recessive allele in heterozygotes (Aa looks like AA)."
+  ],
+  "examNotes": [
+    "Be careful with terminology: genotype = genetic makeup, phenotype = observable traits.",
+    "Use Punnett squares for dihybrid crosses (9:3:3:1 ratio for independent assortment).",
+    "Mendel's laws apply to autosomal traits; sex-linked traits require different analysis."
+  ],
+  "practiceQuestions": [
+    "In a cross between Aa and aa, what are the expected genotypes and phenotypes?",
+    "Draw a Punnett square for a monohybrid cross (Aa × Aa).",
+    "Explain why a heterozygous individual (Aa) shows the dominant phenotype.",
+    "What is incomplete dominance and give an example?"
+  ],
+  "mcs": [
+    {
+      "question": "In a monohybrid cross (Aa × Aa), what is the phenotypic ratio?",
+      "options": [
+        "1:1",
+        "3:1",
+        "1:2:1",
+        "9:3:3:1"
+      ],
+      "answer": "B",
+      "explanation": "The phenotypic ratio is 3 dominant : 1 recessive (e.g., tall:short in peas)."
+    },
+    {
+      "question": "What is a Punnett square?",
+      "options": [
+        "A grid showing all possible gamete combinations",
+        "A diagram of cell organelles",
+        "A flowchart of metabolic pathways"
+      ],
+      "answer": "A",
+      "explanation": "A Punnett square is a visual tool for predicting offspring genotypes from parental cross."
+    },
+    {
+      "question": "Why does a heterozygous individual (Aa) show the dominant phenotype?",
+      "options": [
+        "Because dominant alleles always dominate",
+        "Because the dominant allele is expressed in heterozygotes",
+        "Because recessive alleles are silenced",
+        "Both A and C"
+      ],
+      "answer": "D",
+      "explanation": "In heterozygotes (Aa), the dominant allele (A) is expressed in the phenotype because it is dominant over the recessive allele (a)."
+    }
+  ]
+}

@@ -39,32 +39,20 @@
   "animation3D": "dispersion",
   "motionGraphics": "dispersion",
   "examples": [
-    "Example 1: Real-world application of Pure spectrum and dispersive power",
-    "Example 2: Practical demonstration of Pure spectrum and dispersive power concepts",
-    "Example 3: Numerical problem on Pure spectrum and dispersive power",
-    "Example 4: Diagram-based question on Pure spectrum and dispersive power",
-    "Example 5: Application in daily life involving Pure spectrum and dispersive power"
+    "Real-world application of Pure spectrum and dispersive power",
+    "Practical demonstration of Pure spectrum and dispersive power concepts",
+    "Diagram-based question on Pure spectrum and dispersive power",
+    "Application in daily life involving Pure spectrum and dispersive power"
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Pure spectrum and dispersive power with suitable example.",
     "Q2. Solve problems related to Pure spectrum and dispersive power.",
     "Q3. Differentiate between various aspects of Pure spectrum and dispersive power.",
     "Q4. Derive the key formula related to Pure spectrum and dispersive power.",
     "Q5. What are the applications of Pure spectrum and dispersive power?"
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Pure spectrum and dispersive power",
-    "Key Formula 2: Mathematical expression of Pure spectrum and dispersive power",
-    "Key Formula 3: Application formula for Pure spectrum and dispersive power",
-    "Key Formula 4: Derivation result for Pure spectrum and dispersive power",
-    "Key Formula 5: Important relation in Pure spectrum and dispersive power"
-  ],
-  "keyPoints": [
-    "Key Point 1: Fundamental definition of Pure spectrum and dispersive power",
-    "Key Point 2: Essential theorem or principle related to Pure spectrum and dispersive power",
-    "Key Point 3: Important condition or constraint for Pure spectrum and dispersive power",
-    "Key Point 4: Common applications of Pure spectrum and dispersive power",
-    "Key Point 5: Connection to other topics in Science"
+    "Application formula for Pure spectrum and dispersive power",
+    "Derivation result for Pure spectrum and dispersive power"
   ],
   "summary": "Pure spectrum and dispersive power is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
@@ -74,15 +62,7 @@
     "Note 4: Remember the units and dimensions involved in Pure spectrum and dispersive power",
     "Note 5: Pure spectrum and dispersive power frequently appears in examination questions"
   ],
-  "importantStatements": [
-    "Statement 1: Definition of Pure spectrum and dispersive power",
-    "Statement 2: Theorem related to Pure spectrum and dispersive power",
-    "Statement 3: Condition for Pure spectrum and dispersive power to be valid",
-    "Statement 4: Principle governing Pure spectrum and dispersive power",
-    "Statement 5: Corollary or consequence of Pure spectrum and dispersive power"
-  ],
   "importantNotes": [
-    "Note 1: Pure spectrum and dispersive power is based on fundamental principles",
     "Note 2: Remember the distinction between different types in Pure spectrum and dispersive power",
     "Note 3: Pure spectrum and dispersive power has both theoretical and practical significance",
     "Note 4: Study the derivations step by step for Pure spectrum and dispersive power",
@@ -96,23 +76,12 @@
     "Trick 5: Time-saving approach for Pure spectrum and dispersive power problems"
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Pure spectrum and dispersive power",
-    "Exam Tip 2: Practice previous year questions on Pure spectrum and dispersive power",
-    "Exam Tip 3: Pure spectrum and dispersive power carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Pure spectrum and dispersive power thoroughly",
-    "Exam Tip 5: Review common mistakes related to Pure spectrum and dispersive power"
+    "Focus on numerical problems from Pure spectrum and dispersive power",
+    "Practice previous year questions on Pure spectrum and dispersive power",
+    "Learn the derivations for Pure spectrum and dispersive power thoroughly",
+    "Review common mistakes related to Pure spectrum and dispersive power"
   ],
   "mcs": [
-    {
-      "question": "Which of the following best describes Pure spectrum and dispersive power?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
-      "answer": "A"
-    },
     {
       "question": "The primary application of Pure spectrum and dispersive power is in:",
       "options": [
@@ -168,6 +137,12 @@
     "Task 4: Practice previous year exam questions on Pure spectrum and dispersive power",
     "Task 5: Explain Pure spectrum and dispersive power to a peer or study group"
   ],
-  "duplicateType": 2,
-  "tabGroup": "pure-spectrum-and-dispersive-power"
+  "keyPoints": [],
+  "importantStatements": [],
+  "specificConditions": [
+    "**Dispersion Definition:** Dispersion is the separation of white light into its constituent colors (spectrum) due to the dependence of the refractive index $n$ on the wavelength $\\lambda$ of light ($n(\\lambda)$).",
+    "**Cauchy's Equation:** For many transparent materials, the refractive index follows Cauchy's equation $n(\\lambda) = A + B/\\lambda^2 + C/\\lambda^4$. This explains why blue light ($\\lambda$ smaller) is refracted more than red light ($\\lambda$ larger).",
+    "**Prism Validity:** The formula for dispersive power $\\omega = (n_v - n_r)/(n_y - 1)$ assumes small angle of deviation and that the prism is in air. For non-thin prisms or different mediums, angular dispersion depends on the geometry."
+  ],
+  "visualType": "dispersion"
 }

@@ -604,9 +604,18 @@ function enrich(entry: UnitConcept, unitId: string): UnitConcept {
   return { ...entry, branches: applyDepth(entry.branches, depth), depth };
 }
 
+const UNIT_SUBJECTS: Record<string, string> = {
+  'physical-quantities': 'physics', vectors: 'physics', 'work-energy-and-power': 'physics',
+  'dc-circuits': 'physics', stoichiometry: 'chemistry',
+  'chemical-bonding-and-shapes-of-molecules': 'chemistry',
+  'biomolecules-and-cell-biology': 'biology', 'heredity-and-evolution': 'biology',
+  calculus: 'mathematics', trigonometry: 'mathematics',
+};
+
 /** Exact unit-id lookup with no keyword guessing — lets callers prefer
  *  unit-specific branches over a shared keyword match. */
-export function getExactUnitConcept(unitId: string): UnitConcept | undefined {
+export function getExactUnitConcept(unitId: string, subject?: string): UnitConcept | undefined {
+  if (subject && UNIT_SUBJECTS[unitId] !== subject) return undefined;
   const direct = UNIT_CONCEPTS[unitId];
   return direct ? enrich(direct, unitId) : undefined;
 }
@@ -616,15 +625,17 @@ export function getUnitConcept(
   unitId: string,
   topicSlug = "",
   topicTitle = "",
+  subject?: string,
 ): UnitConcept | undefined {
-  const direct = UNIT_CONCEPTS[unitId];
-  if (direct) return enrich(direct, unitId);
+  const direct = getExactUnitConcept(unitId, subject);
+  // A unit overview is not an individually authored diagram for every topic.
+  if (direct && (!topicSlug || topicSlug === unitId)) return direct;
 
   // Keyword pass: a topic may sit in a unit we haven't authored but share a
   // concept with an authored one (e.g. unit aliases, merged units).
-  const hay = `${topicSlug} ${topicTitle} ${unitId}`.toLowerCase();
+  const hay = `${topicSlug} ${topicTitle}`.toLowerCase();
   const KEY_HINTS: Record<string, string[]> = {
-    "physical-quantities": ["dimension", "significant", "measurement", "precision", "unit"],
+    "physical-quantities": ["dimension", "significant", "measurement", "precision"],
     vectors: ["vector", "resultant", "scalar", "resolution"],
     "work-energy-and-power": ["work", "energy", "power", "conservation"],
     "dc-circuits": ["kirchhoff", "ohm", "wheatstone", "circuit", "resistance"],
@@ -633,10 +644,12 @@ export function getUnitConcept(
     "biomolecules-and-cell-biology": ["cell", "organelle", "biomolecule", "membrane", "mitochondri"],
     "heredity-and-evolution": ["heredity", "mendel", "dna", "evolution", "genetic"],
     calculus: ["limit", "derivative", "differenti", "maxima", "minima"],
-    trigonometry: ["trigonometr", "sin", "cos", "identity", "angle"],
+    trigonometry: ["trigonometr", "sine", "cosine", "trigonometric identity"],
   };
   for (const [uid, hints] of Object.entries(KEY_HINTS)) {
-    if (UNIT_CONCEPTS[uid] && hints.some((h) => hay.includes(h))) {
+    if (subject && UNIT_SUBJECTS[uid] !== subject) continue;
+    // Match words/stems at the start of a word: 'sin' must not match 'using'.
+    if (UNIT_CONCEPTS[uid] && hints.some((h) => new RegExp(`\\b${h}`).test(hay))) {
       return enrich(UNIT_CONCEPTS[uid], uid);
     }
   }

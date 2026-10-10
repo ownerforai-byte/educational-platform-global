@@ -43,13 +43,7 @@
     "Where a formula is quoted it is valid only under the conditions stated; Using the standard limits with x in degrees, which changes every value by a factor involving $\\pi$.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [
-    "Statement 1: $\\lim_{x\\to0}\\frac{\\sin x}{x}=1$ for $x$ in radians.",
-    "Statement 2: $\\lim_{x\\to0}\\frac{1-\\cos x}{x^2}=\\frac12$.",
-    "Statement 3: For $Q(a)\\ne0$, $\\lim_{x\\to a}\\frac{P(x)}{Q(x)}=\\frac{P(a)}{Q(a)}$.",
-    "Statement 4: $\\lim_{x\\to a}\\ln f(x)=\\ln f(a)$ requires $f(a)>0$.",
-    "Statement 5: $\\lim_{n\\to\\infty}(1+\\frac1n)^n=e$."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Topic anchor: Composition of continuous functions settles most limits  if $f$ is continuous at $a$ and $g$ is continuous at $f(a)$, then $ lim_{x to a}g(f(x))=g(f(a))$."
   ],

@@ -1,6 +1,14 @@
 import { describe, it, expect } from "vitest";
 import { buildSiteIndex } from "@/lib/site-index";
 import { NAV_HREFS } from "@/lib/navigation";
+import { getUnitTopic } from "@/features/syllabus/queries";
+import { buildTopicKnowledge, KIND_LABEL } from "@/lib/topic-visuals";
+import { getUnitConcept } from "@/lib/visual-concept-map";
+import { matchConceptSchematic } from "@/components/lab/schematic-concepts";
+import {
+  isAuthoredSpecialTopic,
+  isInclinedPlaneTopic,
+} from "@/lib/topic-visuals";
 import { collectRoutes, isResolvable } from "../helpers/route-tree";
 
 /**
@@ -54,6 +62,47 @@ describe("Everything Index coverage", () => {
   it("only links to pages that exist", () => {
     const broken = [...indexedHrefs].filter((href) => !isResolvable(href, routes));
     expect(broken, `/site-index links to non-existent routes: ${broken.join(", ")}`).toEqual([]);
+  });
+
+  it("indexes every topic-derived concept map at its syllabus topic page", () => {
+    const diagrams = groups.find((group) => group.id === "topic-schematics");
+    expect(diagrams).toBeDefined();
+    // 538 at the index's creation; authored schematics since then claim their
+    // topics out of the generated pool (see schematic-concepts.tsx).
+    expect(diagrams?.entries).toHaveLength(524);
+
+    for (const entry of diagrams?.entries ?? []) {
+      const parts = entry.href.split("/").filter(Boolean);
+      expect(parts).toHaveLength(6);
+      expect(parts[2]).toBe("chapters");
+      expect(parts[4]).toBe("topics");
+
+      const resolved = getUnitTopic(parts[0], parts[1], parts[3], parts[5]);
+      expect(resolved?.topic.slug, `unresolved schematic link: ${entry.href}`).toBe(parts[5]);
+      expect(resolved?.topic.title, `wrong topic for schematic link: ${entry.href}`).toBe(entry.name);
+      expect(isResolvable(entry.href, routes), `route does not exist: ${entry.href}`).toBe(true);
+
+      const { classSlug, subjectSlug, unitId, topicSlug, topicTitle } = {
+        classSlug: parts[0],
+        subjectSlug: parts[1],
+        unitId: parts[3],
+        topicSlug: parts[5],
+        topicTitle: entry.name,
+      };
+      expect(matchConceptSchematic(subjectSlug, topicSlug, topicTitle, unitId)).toBeUndefined();
+      expect(getUnitConcept(unitId, topicSlug, topicTitle, subjectSlug)).toBeUndefined();
+      expect(isAuthoredSpecialTopic(subjectSlug, topicSlug, topicTitle)).toBe(false);
+      expect(isInclinedPlaneTopic(topicSlug, topicTitle, unitId)).toBe(false);
+
+      const knowledge = buildTopicKnowledge({
+        classSlug,
+        subjectSlug,
+        unitId,
+        topicSlug,
+        topicTitle,
+      });
+      expect(entry.opening).toContain(KIND_LABEL[knowledge.kind]);
+    }
   });
 
   it("never lists the same page twice", () => {

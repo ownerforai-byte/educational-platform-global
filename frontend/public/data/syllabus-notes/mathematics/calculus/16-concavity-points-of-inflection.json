@@ -42,13 +42,7 @@
     "Where a formula is quoted it is valid only under the conditions stated; Declaring an inflection wherever $f''=0$, which incorrectly includes $x^4$ at 0.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [
-    "Statement 1: $f''>0$ on an interval means the curve is concave up there.",
-    "Statement 2: An inflection point requires $f''$ to change sign.",
-    "Statement 3: $f''(a)=0$ makes the second-derivative test inconclusive.",
-    "Statement 4: An inflection point need not be a stationary point.",
-    "Statement 5: A point where $f''$ is undefined may still be an inflection."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Topic anchor: Use the second-derivative test to classify stationary points, not the first-derivative test's sign chart  $f''(a)>0$ local minimum, $f''(a)<0$ local maximum, and $f''(a)=0$ inconclusive, requiring a return to the first-d"
   ],

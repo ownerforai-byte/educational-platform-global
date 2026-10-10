@@ -42,13 +42,7 @@
     "Where a formula is quoted it is valid only under the conditions stated; Reporting the signed integral as the area when the curve dips below the axis.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [
-    "Statement 1: Area $A=\\int_a^b|f(x)|dx$ is an absolute accumulation.",
-    "Statement 2: The integral must be split at the zeros of the integrand.",
-    "Statement 3: No constant of integration appears in an area calculation.",
-    "Statement 4: On an infinite interval the integral is defined by an improper limit.",
-    "Statement 5: An unbounded integrand may still have a finite integral."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Topic anchor: Worked example, $y=x^2$ on $[0,3]$  since $x^2 ge0$ there is no split, and the area is $ left[ frac{x^3}{3} right]_0^3 = 9$ square units."
   ],

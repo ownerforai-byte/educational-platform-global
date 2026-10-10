@@ -55,13 +55,7 @@
     "Induced bound surface charge density σ_p is always less than free surface charge density σ: σ_p = σ(1 - 1/κ). For an ideal conductor, κ → ∞, so σ_p = σ, completely canceling the electric field inside.",
     "Dielectric breakdown occurs when external electric field strips bound electrons from molecular parent atoms, turning the insulator into a conductor."
   ],
-  "importantStatements": [
-    "Statement 1: In a dielectric placed in an electric field, induced bound charges appear on opposite faces, producing an internal electric field that opposes the applied field.",
-    "Statement 2: The electric polarization vector P is defined as the induced electric dipole moment per unit volume of the dielectric.",
-    "Statement 3: The magnitude of the polarization vector P is equal to the induced bound surface charge density σ_p.",
-    "Statement 4: The electric displacement vector D satisfies Gauss's law for free charges only, independent of the dielectric medium.",
-    "Statement 5: The dielectric constant κ and electric susceptibility χ_e are related by the identity κ = 1 + χ_e."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Remember that dielectric constant κ is dimensionless, whereas electric permittivity ε has SI units of Farads per meter (F/m) or C²/(N·m²)."
   ],
@@ -119,7 +113,5 @@
     "Derive the relation κ = 1 + χ_e.",
     "Calculate induced bound surface charge density σ_p from free plate charge and dielectric constant κ."
   ],
-  "duplicateType": 2,
-  "visualType": "parallel-plate-capacitor",
-  "tabGroup": "effect-of-a-dielectric-polarization-and-displacement"
+  "visualType": "parallel-plate-capacitor"
 }

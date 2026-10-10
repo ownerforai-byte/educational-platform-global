@@ -3,12 +3,12 @@
     "unitSlug": "bhasha-ra-vyakarana",
     "topicSlug": "aagantuk-shabda",
     "title": "आगन्तुक शब्द (Loanwords)",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "aagantuk-shabda.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "bhasha-ra-vyakarana",
@@ -25,45 +25,45 @@
     "unitSlug": "bhasha-ra-vyakarana",
     "topicSlug": "swar-varna",
     "title": "स्वर वर्ण (Vowel Letters)",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "swar-varna.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "bhasha-ra-vyakarana",
     "topicSlug": "tadbhav-shabda",
     "title": "तद्भव शब्द (Tadbhava Words)",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "tadbhav-shabda.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "bhasha-ra-vyakarana",
     "topicSlug": "vyanjan-vargikaran",
     "title": "व्यञ्जन वर्गीकरण (Consonant Classification)",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "vyanjan-vargikaran.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "bhasha-ra-vyakarana",
     "topicSlug": "vyanjan-varna",
     "title": "व्यञ्जन वर्ण (Consonant Letters)",
-    "noteCount": 2,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "vyanjan-varna.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "hasMcqs": false,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "bhasha-ra-vyakarana",
@@ -84,6 +84,72 @@
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-व्याकरण-र-शब्द-जगत.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "bhasha-tatha-vyakaran",
+    "topicSlug": "क्रिया-र-तत्सम्बन्धी-विषय",
+    "title": "क्रिया र तत्सम्बन्धी विषय",
+    "noteCount": 0,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "04-क्रिया-र-तत्सम्बन्धी-विषय.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "bhasha-tatha-vyakaran",
+    "topicSlug": "पद-विभक्त-र-तत्पुरुष-समास",
+    "title": "पद विभक्त र तत्पुरुष समास",
+    "noteCount": 0,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "02-पद-विभक्त-र-तत्पुरुष-समास.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "bhasha-tatha-vyakaran",
+    "topicSlug": "बहुव्रीहि-कर्मधारय-द्वन्द्व-समास",
+    "title": "बहुव्रीहि, कर्मधारय, द्वन्द्व समास",
+    "noteCount": 0,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "03-बहुव्रीहि-कर्मधारय-द्वन्द्व-समास.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "bhasha-tatha-vyakaran",
+    "topicSlug": "मुहावा-र-वाङ्मय-प्रयोग",
+    "title": "मुहावा र वाङ्मय प्रयोग",
+    "noteCount": 0,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "06-मुहावा-र-वाङ्मय-प्रयोग.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "bhasha-tatha-vyakaran",
+    "topicSlug": "वाक्य-र-उसको-विध",
+    "title": "वाक्य र उसको विध",
+    "noteCount": 0,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "05-वाक्य-र-उसको-विध.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "bhasha-tatha-vyakaran",
+    "topicSlug": "शब्द-र-उसको-विभाग",
+    "title": "शब्द र उसको विभाग",
+    "noteCount": 0,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "01-शब्द-र-उसको-विभाग.json",
     "hasMcqs": true,
     "universalFactsCount": 1
   },
@@ -121,6 +187,50 @@
     "universalFactsCount": 1
   },
   {
+    "unitSlug": "lekhan-koushal",
+    "topicSlug": "आवधिव-निबन्ध-लेखन",
+    "title": "आवधिव निबन्ध लेखन",
+    "noteCount": 0,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "01-आवधिव-निबन्ध-लेखन.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "lekhan-koushal",
+    "topicSlug": "पत्र-लेखन-आधिकारिक-र-अनौपचारिक",
+    "title": "पत्र लेखन (आधिकारिक र अनौपचारिक)",
+    "noteCount": 0,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "02-पत्र-लेखन-आधिकारिक-र-अनौपचारिक.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "lekhan-koushal",
+    "topicSlug": "प्रेषणात्मक-लेखन",
+    "title": "प्रेषणात्मक लेखन",
+    "noteCount": 0,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "03-प्रेषणात्मक-लेखन.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "lekhan-koushal",
+    "topicSlug": "समावेशक-लेखन",
+    "title": "समावेशक लेखन",
+    "noteCount": 0,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "04-समावेशक-लेखन.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
     "unitSlug": "lekhan-ra-rachana",
     "topicSlug": "कविता-र-गीति",
     "title": "कविता र गीति",
@@ -144,9 +254,53 @@
   },
   {
     "unitSlug": "sahitya-adhyayan",
+    "topicSlug": "आधुनिक-नेपाली-साहित्यको-इतिहास",
+    "title": "आधुनिक नेपाली साहित्यको इतिहास",
+    "noteCount": 5,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "04-आधुनिक-नेपाली-साहित्यको-इतिहास.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "sahitya-adhyayan",
+    "topicSlug": "कविता-र-गीत-रस-अलङ्कार-छन्द",
+    "title": "कविता र गीत: रस, अलङ्कार, छन्द",
+    "noteCount": 0,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "01-कविता-र-गीत-रस-अलङ्कार-छन्द.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "sahitya-adhyayan",
+    "topicSlug": "निबन्ध-र-लेखन-कौशल",
+    "title": "निबन्ध र लेखन कौशल",
+    "noteCount": 5,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "05-निबन्ध-र-लेखन-कौशल.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "sahitya-adhyayan",
+    "topicSlug": "निर्धारित-पाठ-कथा-उपन्यास-नाटक",
+    "title": "निर्धारित पाठ: कथा, उपन्यास, नाटक",
+    "noteCount": 0,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "02-निर्धारित-पाठ-कथा-उपन्यास-नाटक.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "sahitya-adhyayan",
     "topicSlug": "पाठ-योगदान",
     "title": "पाठ योगदान",
-    "noteCount": 0,
+    "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-पाठ-योगदान.json",
@@ -155,12 +309,56 @@
   },
   {
     "unitSlug": "sahitya-adhyayan",
+    "topicSlug": "व्यङ्ग्य-साहित्यको-अध्-ययन",
+    "title": "व्यङ्ग्य साहित्यको अध्‍ययन",
+    "noteCount": 5,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "03-व्यङ्ग्य-साहित्यको-अध्-ययन.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "sahitya-adhyayan",
     "topicSlug": "साहित्यिक-रूप-र-शैली",
     "title": "साहित्यिक रूप र शैली",
-    "noteCount": 0,
+    "noteCount": 5,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-साहित्यिक-रूप-र-शैली.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "sanskriti-tatha-samaj",
+    "topicSlug": "नेपाली-संस्कृति-र-परम्परा",
+    "title": "नेपाली संस्कृति र परम्परा",
+    "noteCount": 0,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "01-नेपाली-संस्कृति-र-परम्परा.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "sanskriti-tatha-samaj",
+    "topicSlug": "भारतीय-सांस्कृतिक-प्रभाव",
+    "title": "भारतीय सांस्कृतिक प्रभाव",
+    "noteCount": 0,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "02-भारतीय-सांस्कृतिक-प्रभाव.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "sanskriti-tatha-samaj",
+    "topicSlug": "सामाजिक-परिवर्तन-र-नेपाली-साहित्य",
+    "title": "सामाजिक परिवर्तन र नेपाली साहित्य",
+    "noteCount": 0,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "03-सामाजिक-परिवर्तन-र-नेपाली-साहित्य.json",
     "hasMcqs": true,
     "universalFactsCount": 1
   }

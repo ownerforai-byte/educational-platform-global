@@ -268,10 +268,13 @@ async function buildSubject(subject: string, outRoot: string): Promise<number> {
 /**
  * `--check`: every file this build produces must exist byte-identical. Files in
  * `public/data/syllabus-notes/` that this build does NOT produce are reported
- * separately and do not fail the gate by default: the tree carries a second,
- * hand-managed content family (measured 130 files — `english/*`,
- * `biology/*-<topic>.json` legacy topic files) that `content/ravikishan` has no
- * source for. Pass `--strict-extras` to fail on those too.
+ * separately and do not fail the gate by default: the tree may carry files with
+ * no source in `content/ravikishan`. The 2026-10-10 consolidation imported the
+ * old hand-managed second family (131 files) into the corpus and pruned the
+ * superseded copies, so exactly ONE extra remains today:
+ * `physics/heat-and-temperature/heat-and-temperature.json` (159 notes, over
+ * the schema 80-note cap — it needs its own splitting pass before import).
+ * Pass `--strict-extras` to fail on extras too.
  */
 function diffTree(): { problems: string[]; extras: string[] } {
   const problems: string[] = [];

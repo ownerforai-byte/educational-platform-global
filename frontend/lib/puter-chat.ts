@@ -2,8 +2,8 @@
 
 /**
  * PUTER.JS TEXT ENGINE — the browser-side half of the platform's
- * "Agnes first, puter.js fallback" policy (owner 2026-09-30), now also used
- * for diagram text generation in Mind Studio.
+ * "server first, puter.js fallback" policy (owner 2026-09-30), now also used
+ * for diagram text generation in the Diagram Hub.
  *
  * Puter.js runs CLIENT-SIDE under the User-Pays model: the student signs in
  * to their own free Puter account and their allocation covers the cost — the
@@ -11,7 +11,7 @@
  * same one lib/puter-image.ts loads, shared through loadPuter().
  *
  * A declined sign-in or any error throws; callers decide what that means
- * (Mind Studio surfaces it alongside the Agnes failure notes).
+ * (the Diagram Hub surfaces it alongside the server failure notes).
  */
 
 import { loadPuter } from "./puter-image";

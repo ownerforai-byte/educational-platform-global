@@ -67,10 +67,11 @@ export default async function HomePage() {
       {/* Owner notice — public, never gated. Owner intro + internal login. */}
       <HomeOwnerNotice />
 
-      {/* Image Hub launcher (was Mind Studio) — Agnes 2.1 Flash images
-          (puter.js fallback). Owner emails only (owner request 2026-10-05):
-          the section renders inside the owner gate; the /mind-studio route
-          and the image endpoints enforce the same boundary. */}
+      {/* Diagram Hub launcher (was Mind Studio, then the hub). Server drawing
+          with a puter.js fallback. Owner emails only (owner request
+          2026-10-05): the section renders inside the owner gate; the
+          /mind-studio route and the drawing endpoints enforce the same
+          boundary. */}
       <OwnerOnly>
         <HomeMindStudio />
       </OwnerOnly>

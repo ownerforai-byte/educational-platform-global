@@ -49,6 +49,16 @@ const DOCS: Doc[] = [
     kind: "pdf",
   },
   {
+    key: "pioneer-grade11-biology-examcram-original",
+    title: "Pioneer Grade 11 Biology — Exam Cram (Original)",
+    subject: "Biology",
+    topic: "Class 11 · Full syllabus",
+    description:
+      "The source cram file behind the Enhanced edition — every Class 11 Biology unit condensed onto rapid-revision pages.",
+    href: `${PDFS_DIR}/pioneer-grade11-biology-examcram-original.pdf`,
+    kind: "pdf",
+  },
+  {
     key: "bacteria-nutrition-classified-v2",
     title: "Nutrition in Bacteria — Fully Classified",
     subject: "Biology",
@@ -66,6 +76,16 @@ const DOCS: Doc[] = [
     description:
       "Sixteen probable long-answer questions with full model answers, diagrams and marking points.",
     href: `${PDFS_DIR}/biology-8mark-long-questions.pdf`,
+    kind: "pdf",
+  },
+  {
+    key: "biology-8mark-core-outlets",
+    title: "Biology — 8-Mark Core Outlets",
+    subject: "Biology",
+    topic: "Class 11 · Night-before",
+    description:
+      "Night-before deck — one card per question, so every probable 8-mark outlet is a single flip.",
+    href: `${PDFS_DIR}/biology-8mark-core-outlets.pdf`,
     kind: "pdf",
   },
   {
@@ -154,6 +174,16 @@ const DOCS: Doc[] = [
     kind: "html",
   },
   {
+    key: "neb-physics-all-probable-questions-answers-diagrams",
+    title: "NEB Physics — All Probable Questions, Answers & Diagrams",
+    subject: "Physics",
+    topic: "Class 11 · Probable set",
+    description:
+      "The whole probable set in one illustrated page — long questions with model answers, MCQs and labelled diagrams.",
+    href: `${MAT_DIR}/neb-physics-all-probable-questions-answers-diagrams.html`,
+    kind: "html",
+  },
+  {
     key: "physics-mcq-test",
     title: "Physics — MCQ Test",
     subject: "Physics",
@@ -190,6 +220,16 @@ const DOCS: Doc[] = [
     description: "Optimised multiple-choice practice set.",
     href: `${MAT_DIR}/chemistry-mcq-test.md`,
     kind: "md",
+  },
+  {
+    key: "neb-chem11-probable-long-qs-atomic-bonding-periodic",
+    title: "NEB Chemistry 11 — Probable Long Questions",
+    subject: "Chemistry",
+    topic: "Class 11 · Probable set",
+    description:
+      "Probable long-answer questions across Atomic Structure, Chemical Bonding and the Periodic Table.",
+    href: `${MAT_DIR}/neb-chem11-probable-long-qs-atomic-bonding-periodic.docx`,
+    kind: "docx",
   },
 
   // ── Mathematics ───────────────────────────────────────────────────────

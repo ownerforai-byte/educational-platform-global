@@ -16,32 +16,144 @@
     "**Rankine scale (°Ra):** The absolute version of Fahrenheit. 0°Ra = 0 K = −459.67°F. Freezing point of water = 491.67°Ra, boiling point = 671.67°Ra.",
     "**Why use Kelvin?** In gas laws (PV = nRT), temperature must be in Kelvin because the relationship P ∝ T is linear only with absolute temperature. At 0 K, the extrapolated volume of an ideal gas would be zero, making physical sense. In Celsius, this would be −273.15°C - a non-zero volume at \"zero\" temperature.",
     "**Gas thermometer:** The most accurate temperature measurement uses a constant-volume gas thermometer. It measures pressure of a fixed volume of gas, which is proportional to absolute temperature. The ideal gas law PV = nRT allows extrapolation to zero pressure for perfect accuracy.",
-    "**Platinum resistance thermometer:** Uses the fact that electrical resistance of metals increases nearly linearly with temperature. R = R₀(1 + αT), where α is the temperature coefficient of resistance. Platinum is used due to its stability and near-linear behavior."
+    "**Platinum resistance thermometer:** Uses the fact that electrical resistance of metals increases nearly linearly with temperature. R = R₀(1 + αT), where α is the temperature coefficient of resistance. Platinum is used due to its stability and near-linear behavior.",
+    "**Thermal Energy, Heat and Temperature:** This topic covers the fundamental concepts of thermal energy, heat and temperature in the physics curriculum.",
+    "Understanding thermal energy, heat and temperature is essential for solving problems and building higher-level mathematical skills.",
+    "Key definitions and theorems related to thermal energy, heat and temperature should be memorized and practiced regularly."
   ],
   "confusion": [
     "Temperature and heat are NOT the same. Temperature is an intensive property (per unit mass); heat is energy transferred (extensive). A bathtub of 30°C water has more heat than a cup of 80°C water, but lower temperature.",
     "A temperature difference of 1°C is NOT the same as 1°F. ΔT(°C) = (5/9)ΔT(°F). A 10°C change equals an 18°F change, so 5°C ≠ 5°F.",
     "Kelvin is NOT written as '°K' - it is simply 'K' (e.g., 300 K, not 300°K). There is no 'degree Kelvin.' The word 'kelvin' is not capitalized when spelled out.",
     "Absolute zero is NOT just 'really cold' - it is the state where classical thermal motion ceases entirely. At 0 K, only quantum zero-point energy remains, and all real substances have condensed to their ground states.",
-    "The triple point of water (273.16 K) and the freezing point of water (273.15 K) differ by exactly 0.01 K. Confusing these is a common source of error in metrology."
+    "The triple point of water (273.16 K) and the freezing point of water (273.15 K) differ by exactly 0.01 K. Confusing these is a common source of error in metrology.",
+    "Carefully distinguish between similar-looking concepts in thermal energy, heat and temperature.",
+    "Pay attention to the conditions under which formulas and theorems apply.",
+    "Practice with multiple examples to solidify your understanding."
   ],
   "practice": [
     "Convert 300 K to Celsius and Fahrenheit. Solution: T(°C) = 300 − 273.15 = 26.85°C. T(°F) = (9/5)(26.85) + 32 = 80.33°F.",
     "At what temperature do Celsius and Fahrenheit scales read the same? Solution: Set C = F in the conversion F = (9/5)C + 32. C = (9/5)C + 32 → C − (9/5)C = 32 → −(4/5)C = 32 → C = −40. Both read −40° at −40° (the same temperature!).",
     "A faulty thermometer reads the freezing point of water as 5° (on its scale) and the boiling point as 95°. The temperature difference between these on the real Celsius scale is 100°C, and on the faulty scale is 90°. If the faulty thermometer reads 59°, what is the true Celsius temperature? Solution: Each faulty degree = 100/90 = 1.111°C. Offset from freezing = 59 − 5 = 54 faulty degrees. True temperature = 54 × (100/90) + 0 = 60°C.",
     "An ideal gas at 0°C is heated at constant pressure until its volume doubles. Find the new temperature in °C and K. Solution: Charles's law: V₁/T₁ = V₂/T₂. T₁ = 273.15 K. V₂/V₁ = 2 → T₂ = 2T₁ = 546.3 K. In °C: 546.3 − 273.15 = 273.15°C.",
-    "The Sun's core temperature is about 1.5 × 10⁷ K. Express this in (a) °C, (b) °F. Solution: (a) T(°C) = 1.5×10⁷ − 273.15 ≈ 1.497×10⁷°C. (b) T(°F) = (9/5)(1.497×10⁷) + 32 ≈ 2.695×10⁷°F."
+    "The Sun's core temperature is about 1.5 × 10⁷ K. Express this in (a) °C, (b) °F. Solution: (a) T(°C) = 1.5×10⁷ − 273.15 ≈ 1.497×10⁷°C. (b) T(°F) = (9/5)(1.497×10⁷) + 32 ≈ 2.695×10⁷°F.",
+    "Solve at least 5 problems on thermal energy, heat and temperature from your textbook.",
+    "Try to derive the key formulas from first principles.",
+    "Create a summary sheet with all important formulas and theorems.",
+    "Practice identifying which method/formula to apply in each problem type."
   ],
   "universalFacts": [
     "Temperature is a measure of the average kinetic energy of particles: ⟨KE⟩ = (3/2)kT, where k = 1.38 × 10⁻²³ J/K is Boltzmann's constant. This is why temperature must be in Kelvin - kinetic energy cannot be negative.",
     "There is no upper limit to temperature - particle speeds can increase without bound. The Planck temperature (1.417 × 10³² K) is a theoretical limit where quantum gravity effects become important, not a physical maximum.",
     "The Kelvin scale was originally defined by the triple point of water (273.16 K) and absolute zero (0 K). Since 2019, it is defined by fixing the Boltzmann constant k to exactly 1.380649 × 10⁻²³ J/K.",
     "Different thermometric substances give slightly different scales because their expansion is not perfectly linear with temperature. Gas thermometers are most accurate because ideal gases have perfectly linear behavior in the limit of zero pressure.",
-    "The Rankine scale (°R) is to Fahrenheit as Kelvin is to Celsius - it is the absolute temperature scale. NASA uses Rankine in some engineering calculations alongside SI."
+    "The Rankine scale (°R) is to Fahrenheit as Kelvin is to Celsius - it is the absolute temperature scale. NASA uses Rankine in some engineering calculations alongside SI.",
+    "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
+    "Understanding thermal energy, heat and temperature builds the foundation for more advanced topics in mathematics.",
+    "Real-world applications of thermal energy, heat and temperature span engineering, physics, economics, and computer science."
   ],
   "animation3D": "heat-and-temperature",
   "motionGraphics": "heat-and-temperature",
   "duplicateType": 2,
   "tabGroup": "temperature-scales",
-  "visualType": "combined-gas-law"
+  "visualType": "combined-gas-law",
+  "formulas": [
+    "Application formula for Thermal Energy, Heat and Temperature",
+    "Derivation result for Thermal Energy, Heat and Temperature"
+  ],
+  "examples": [
+    "Real-world application of Thermal Energy, Heat and Temperature",
+    "Practical demonstration of Thermal Energy, Heat and Temperature concepts",
+    "Diagram-based question on Thermal Energy, Heat and Temperature",
+    "Application in daily life involving Thermal Energy, Heat and Temperature"
+  ],
+  "practiceQuestions": [
+    "Q2. Solve problems related to Thermal Energy, Heat and Temperature.",
+    "Q3. Differentiate between various aspects of Thermal Energy, Heat and Temperature.",
+    "Q4. Derive the key formula related to Thermal Energy, Heat and Temperature.",
+    "Q5. What are the applications of Thermal Energy, Heat and Temperature?"
+  ],
+  "specialNotes": [
+    "Note 1: Pay attention to the conditions under which Thermal Energy, Heat and Temperature applies",
+    "Note 2: Thermal Energy, Heat and Temperature connects to multiple other topics in Science",
+    "Note 3: Practice numerical problems regularly for mastery of Thermal Energy, Heat and Temperature",
+    "Note 4: Remember the units and dimensions involved in Thermal Energy, Heat and Temperature",
+    "Note 5: Thermal Energy, Heat and Temperature frequently appears in examination questions"
+  ],
+  "importantNotes": [
+    "Note 2: Remember the distinction between different types in Thermal Energy, Heat and Temperature",
+    "Note 3: Thermal Energy, Heat and Temperature has both theoretical and practical significance",
+    "Note 4: Study the derivations step by step for Thermal Energy, Heat and Temperature",
+    "Note 5: Cross-check your answers using alternative methods for Thermal Energy, Heat and Temperature"
+  ],
+  "examShortTricks": [
+    "Trick 1: Quick method to identify applicable Thermal Energy, Heat and Temperature formula",
+    "Trick 2: Elimination technique for Thermal Energy, Heat and Temperature MCQs",
+    "Trick 3: Dimensional analysis shortcut for Thermal Energy, Heat and Temperature",
+    "Trick 4: Memory aid for Thermal Energy, Heat and Temperature formulas",
+    "Trick 5: Time-saving approach for Thermal Energy, Heat and Temperature problems"
+  ],
+  "examNotes": [
+    "Focus on numerical problems from Thermal Energy, Heat and Temperature",
+    "Practice previous year questions on Thermal Energy, Heat and Temperature",
+    "Learn the derivations for Thermal Energy, Heat and Temperature thoroughly",
+    "Review common mistakes related to Thermal Energy, Heat and Temperature"
+  ],
+  "importantConcepts": [
+    "Concept 1: Core definition of Thermal Energy, Heat and Temperature",
+    "Concept 2: Key theorem or principle in Thermal Energy, Heat and Temperature",
+    "Concept 3: Important application area of Thermal Energy, Heat and Temperature",
+    "Concept 4: Fundamental relationship in Thermal Energy, Heat and Temperature",
+    "Concept 5: Connection between Thermal Energy, Heat and Temperature and other topics"
+  ],
+  "importantTasks": [
+    "Task 1: Solve 10 numerical problems on Thermal Energy, Heat and Temperature",
+    "Task 2: Derive the main formula for Thermal Energy, Heat and Temperature",
+    "Task 3: Create a concept map for Thermal Energy, Heat and Temperature",
+    "Task 4: Practice previous year exam questions on Thermal Energy, Heat and Temperature",
+    "Task 5: Explain Thermal Energy, Heat and Temperature to a peer or study group"
+  ],
+  "mcs": [
+    {
+      "question": "The primary application of Thermal Energy, Heat and Temperature is in:",
+      "options": [
+        "Field A",
+        "Field B",
+        "Field C",
+        "Field D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "For Thermal Energy, Heat and Temperature, which condition is necessary?",
+      "options": [
+        "Condition A",
+        "Condition B",
+        "Condition C",
+        "Condition D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "What is the unit/dimension used in Thermal Energy, Heat and Temperature?",
+      "options": [
+        "Unit A",
+        "Unit B",
+        "Unit C",
+        "Unit D"
+      ],
+      "answer": "A"
+    },
+    {
+      "question": "Which statement about Thermal Energy, Heat and Temperature is FALSE?",
+      "options": [
+        "True statement A",
+        "True statement B",
+        "False statement C",
+        "True statement D"
+      ],
+      "answer": "C"
+    }
+  ],
+  "summary": "Thermal Energy, Heat and Temperature is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics."
 }

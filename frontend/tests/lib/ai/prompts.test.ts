@@ -87,6 +87,50 @@ describe("PLATFORM_SYSTEM_PROMPT — the client mirror of the academic contract"
     expect(PLATFORM_SYSTEM_PROMPT).not.toContain("never more than three");
   });
 
+  it("gives the owner's exact self-introduction for identity questions (owner 2026-10-07)", () => {
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("IDENTITY — WHO YOU ARE AND WHO MADE YOU");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain(
+      "I am Veer AI, trained and created by Ravikisan. He is an undergraduate student who started this platform from the beginning of Class 11, along with his studies.",
+    );
+
+    // The "never AI" ban and this line contradict each other, so the ban must
+    // carve out exactly this one exception on this surface too.
+    expect(PLATFORM_SYSTEM_PROMPT).toContain(
+      "The ONE sanctioned exception is the owner's own self-introduction",
+    );
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("never \"assistant\"");
+
+    // Short by design — exempt from the 250-word floor and links-last, or the
+    // sentence would get padded out on its way to the student.
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("EXEMPT from the 250-word floor");
+    expect(PLATFORM_SYSTEM_PROMPT).toContain("links-last rule");
+    // Live check 2026-10-07: without this the model tacks "Explore further:"
+    // onto the identity reply, because links-last is absolute everywhere else.
+    expect(PLATFORM_SYSTEM_PROMPT).toContain(
+      'do NOT append an "Explore further:" link block',
+    );
+    expect(PLATFORM_SYSTEM_PROMPT).toContain(
+      "the links-last rule does not apply to this reply",
+    );
+    // Grounding must not turn this into a syllabus lesson: live check
+    // 2026-10-07, "who created you?" matched "creation" physics.
+    expect(PLATFORM_SYSTEM_PROMPT).toContain(
+      "An identity question SHORT-CIRCUITS every other rule",
+    );
+    expect(PLATFORM_SYSTEM_PROMPT).toContain(
+      "no physics, no derivation, no worked example",
+    );
+
+    // The first-hello rule must point at the new block instead of the old
+    // "answer that you are Veer" wording it used to carry.
+    expect(PLATFORM_SYSTEM_PROMPT).toContain(
+      "give the owner's exact self-introduction verbatim",
+    );
+    expect(PLATFORM_SYSTEM_PROMPT).not.toContain(
+      "answer that you are Veer, using that greeting line",
+    );
+  });
+
   it("mirrors the ChatGPT/Claude-grade reply craft", () => {
     // Owner 2026-10-03: "improve ai — like it replies like ChatGPT, Claude".
     // Mirror of backend/src/ai/reply-craft.ts.

@@ -5,9 +5,11 @@
   "topicTitle": "Cubical and Superficial Expansion",
   "relevance": 100,
   "notes": [
-    "**Cubical and Superficial Expansion:** This topic covers the fundamental concepts of cubical and superficial expansion in the physics curriculum.",
-    "Understanding cubical and superficial expansion is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to cubical and superficial expansion should be memorized and practiced regularly."
+    "**Superficial expansion.** A heated sheet grows in area as ΔA = A₀βt where β is the areal expansion coefficient; for isotropic solids β = 2α, α being the linear coefficient.",
+    "**Cubical expansion.** A heated solid grows in volume as ΔV = V₀γt with γ = 3α — the cube relation follows because V = L³, so ΔV/V = 3ΔL/L.",
+    "**Derivation.** From V = L³, differentiating gives dV/V = 3 dL/L; similarly dA/A = 2 dL/L — hence β : γ = 2 : 3 relative to α.",
+    "**Holes and gaps.** A hole in a heated plate expands exactly as solid material would — the hole gets bigger, not smaller; railway gaps and bimetal strips exploit this.",
+    "**Numerical habit.** Convert every temperature rise to Δt, pick the right coefficient (α, β or γ), then apply Δ = initial × coefficient × Δt with consistent units."
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in cubical and superficial expansion.",
@@ -28,33 +30,22 @@
   "animation3D": "thermal-expansion",
   "motionGraphics": "thermal-expansion",
   "examples": [
-    "Example 1: Real-world application of Cubical and Superficial Expansion",
-    "Example 2: Practical demonstration of Cubical and Superficial Expansion concepts",
-    "Example 3: Numerical problem on Cubical and Superficial Expansion",
-    "Example 4: Diagram-based question on Cubical and Superficial Expansion",
-    "Example 5: Application in daily life involving Cubical and Superficial Expansion"
+    "Real-world application of Cubical and Superficial Expansion",
+    "Practical demonstration of Cubical and Superficial Expansion concepts",
+    "Diagram-based question on Cubical and Superficial Expansion",
+    "Application in daily life involving Cubical and Superficial Expansion"
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Cubical and Superficial Expansion with suitable example.",
     "Q2. Solve problems related to Cubical and Superficial Expansion.",
     "Q3. Differentiate between various aspects of Cubical and Superficial Expansion.",
     "Q4. Derive the key formula related to Cubical and Superficial Expansion.",
     "Q5. What are the applications of Cubical and Superficial Expansion?"
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Cubical and Superficial Expansion",
-    "Key Formula 2: Mathematical expression of Cubical and Superficial Expansion",
-    "Key Formula 3: Application formula for Cubical and Superficial Expansion",
-    "Key Formula 4: Derivation result for Cubical and Superficial Expansion",
-    "Key Formula 5: Important relation in Cubical and Superficial Expansion"
+    "Application formula for Cubical and Superficial Expansion",
+    "Derivation result for Cubical and Superficial Expansion"
   ],
-  "keyPoints": [
-    "Key Point 1: Fundamental definition of Cubical and Superficial Expansion",
-    "Key Point 2: Essential theorem or principle related to Cubical and Superficial Expansion",
-    "Key Point 3: Important condition or constraint for Cubical and Superficial Expansion",
-    "Key Point 4: Common applications of Cubical and Superficial Expansion",
-    "Key Point 5: Connection to other topics in Science"
-  ],
+  "keyPoints": [],
   "summary": "Cubical and Superficial Expansion is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Cubical and Superficial Expansion applies",
@@ -63,15 +54,8 @@
     "Note 4: Remember the units and dimensions involved in Cubical and Superficial Expansion",
     "Note 5: Cubical and Superficial Expansion frequently appears in examination questions"
   ],
-  "importantStatements": [
-    "Statement 1: Definition of Cubical and Superficial Expansion",
-    "Statement 2: Theorem related to Cubical and Superficial Expansion",
-    "Statement 3: Condition for Cubical and Superficial Expansion to be valid",
-    "Statement 4: Principle governing Cubical and Superficial Expansion",
-    "Statement 5: Corollary or consequence of Cubical and Superficial Expansion"
-  ],
+  "importantStatements": [],
   "importantNotes": [
-    "Note 1: Cubical and Superficial Expansion is based on fundamental principles",
     "Note 2: Remember the distinction between different types in Cubical and Superficial Expansion",
     "Note 3: Cubical and Superficial Expansion has both theoretical and practical significance",
     "Note 4: Study the derivations step by step for Cubical and Superficial Expansion",
@@ -85,23 +69,12 @@
     "Trick 5: Time-saving approach for Cubical and Superficial Expansion problems"
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Cubical and Superficial Expansion",
-    "Exam Tip 2: Practice previous year questions on Cubical and Superficial Expansion",
-    "Exam Tip 3: Cubical and Superficial Expansion carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Cubical and Superficial Expansion thoroughly",
-    "Exam Tip 5: Review common mistakes related to Cubical and Superficial Expansion"
+    "Focus on numerical problems from Cubical and Superficial Expansion",
+    "Practice previous year questions on Cubical and Superficial Expansion",
+    "Learn the derivations for Cubical and Superficial Expansion thoroughly",
+    "Review common mistakes related to Cubical and Superficial Expansion"
   ],
   "mcs": [
-    {
-      "question": "Which of the following best describes Cubical and Superficial Expansion?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
-      "answer": "A"
-    },
     {
       "question": "The primary application of Cubical and Superficial Expansion is in:",
       "options": [

@@ -45,7 +45,6 @@
   "practice": [
     "How is human insulin produced using recombinant DNA technology?",
     "What is Bt cotton and how does it work?",
-    "Define biopiracy with examples from India/Nepal.",
     "What are the applications of transgenic animals?"
   ],
   "formulas": [],
@@ -69,7 +68,6 @@
   "importantTasks": [
     "Explain, step by step, how human insulin is produced using recombinant DNA technology, naming the restriction enzyme, vector, host organism and the joining of the A and B chains.",
     "Describe how Bt cotton resists insect attack and explain why the toxin does not harm humans.",
-    "Define biopiracy and discuss the neem, basmati rice and wheat patent cases as disputes over the misappropriation of biological resources.",
     "List the three main uses of transgenic animals and give one example of each use.",
     "Describe how bioremediation can be used to clear an oil spill and how microbes remove heavy metals from contaminated sites."
   ],
@@ -105,7 +103,6 @@
   "practiceQuestions": [
     "How is human insulin produced using recombinant DNA technology?",
     "What is Bt cotton and how does it protect the plant from insect pests?",
-    "Define biopiracy and give two examples of biopiracy cases from South Asia.",
     "What are the applications of transgenic animals? Give one example of each.",
     "How can bioremediation be used to control an oil spill?",
     "Compare Bt crops with chemical pesticides for pest control, listing two advantages and one limitation."
@@ -113,31 +110,56 @@
   "mcs": [
     {
       "question": "The cry gene used in Bt cotton is obtained from:",
-      "options": ["Agrobacterium tumefaciens", "Bacillus thuringiensis", "Escherichia coli", "Pseudomonas putida"],
+      "options": [
+        "Agrobacterium tumefaciens",
+        "Bacillus thuringiensis",
+        "Escherichia coli",
+        "Pseudomonas putida"
+      ],
       "answer": "B",
       "explanation": "The cry gene of Bacillus thuringiensis codes for a toxin protein that kills susceptible insect larvae. Agrobacterium supplies the Ti plasmid used as a plant vector, and Pseudomonas putida is used in bioremediation."
     },
     {
       "question": "Golden Rice has been genetically modified to increase:",
-      "options": ["Resistance to herbicides", "The content of beta-carotene (provitamin A)", "Resistance to insect pests", "The time of ripening of the fruit"],
+      "options": [
+        "Resistance to herbicides",
+        "The content of beta-carotene (provitamin A)",
+        "Resistance to insect pests",
+        "The time of ripening of the fruit"
+      ],
       "answer": "B",
       "explanation": "Golden Rice accumulates beta-carotene, a precursor of vitamin A, in the grain and aims to reduce vitamin A deficiency. Bt crops target insect pests and herbicide-resistant crops target weeds."
     },
     {
       "question": "The first step in producing recombinant human insulin in bacteria is:",
-      "options": ["Injecting the insulin into the host cell", "Isolating the human insulin gene and cutting it with a restriction enzyme", "Screening the cells for antibiotic resistance", "Fermenting the bacteria at 37 degrees C"],
+      "options": [
+        "Injecting the insulin into the host cell",
+        "Isolating the human insulin gene and cutting it with a restriction enzyme",
+        "Screening the cells for antibiotic resistance",
+        "Fermenting the bacteria at 37 degrees C"
+      ],
       "answer": "B",
       "explanation": "The human A and B chain genes are isolated, amplified and cut with a restriction enzyme so that they can be inserted into a plasmid vector, which is then introduced into the host bacterium."
     },
     {
       "question": "Biopiracy refers to:",
-      "options": ["The scientific study of biodiversity", "The authorised use of plant genes in research", "The unauthorised commercial use of biological resources and traditional knowledge", "The legal patenting of human genes"],
+      "options": [
+        "The scientific study of biodiversity",
+        "The authorised use of plant genes in research",
+        "The unauthorised commercial use of biological resources and traditional knowledge",
+        "The legal patenting of human genes"
+      ],
       "answer": "C",
       "explanation": "Biopiracy is the unauthorised appropriation of genetic resources or indigenous knowledge for commercial gain, without permission or benefit sharing, as challenged in the neem and basmati rice patent cases."
     },
     {
       "question": "Transgenic animals used to secrete therapeutic human proteins in their milk are an example of:",
-      "options": ["Bioremediation", "Biopiracy", "Pharming", "Bioinformatics"],
+      "options": [
+        "Bioremediation",
+        "Biopiracy",
+        "Pharming",
+        "Bioinformatics"
+      ],
       "answer": "C",
       "explanation": "Pharming, or biopharming, uses transgenic animals as living factories that secrete human therapeutic proteins in milk; bioremediation instead uses organisms to clean up pollutants."
     }

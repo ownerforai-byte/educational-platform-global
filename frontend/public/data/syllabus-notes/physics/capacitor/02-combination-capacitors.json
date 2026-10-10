@@ -55,13 +55,7 @@
     "To obtain 9 μF from three 6 μF capacitors: connect two in parallel (12 μF) in series with the third: (12 × 6)/(12 + 6) = 4 μF. For 9 μF: two in series (3 μF) in parallel with the third: 3 + 6 = 9 μF.",
     "For N identical capacitors of capacitance C: Series combination yields C/N; Parallel combination yields NC. The ratio C_p / C_s = N²."
   ],
-  "importantStatements": [
-    "Statement 1: In a series combination of capacitors, each capacitor carries the same magnitude of electric charge regardless of its capacitance.",
-    "Statement 2: The equivalent capacitance of a series combination is always less than the smallest capacitance in the group.",
-    "Statement 3: In a parallel combination of capacitors, the potential difference across every individual capacitor is equal to the applied terminal voltage.",
-    "Statement 4: When two capacitors are joined in parallel, total electric charge is conserved, but total electrostatic energy decreases.",
-    "Statement 5: The ratio of equivalent parallel capacitance to equivalent series capacitance for N identical capacitors is N²."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "In bridge networks of capacitors, if C₁/C₂ = C₃/C₄, the bridge is balanced; no charge flows through the diagonal branch, which can be removed from calculation."
   ],
@@ -118,7 +112,5 @@
     "Derive the common potential V_c and energy loss ΔU when two capacitors share charge.",
     "Solve mixed bridge and ladder capacitor network numerical problems."
   ],
-  "duplicateType": 2,
-  "visualType": "parallel-plate-capacitor",
-  "tabGroup": "combination-of-capacitors"
+  "visualType": "parallel-plate-capacitor"
 }

@@ -43,13 +43,7 @@
     "Where a formula is quoted it is valid only under the conditions stated; Adding a constant of integration to a definite integral — it cancels.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [
-    "Statement 1: $\\int_a^b f=F(b)-F(a)$ when $F'=f$.",
-    "Statement 2: A definite integral carries no constant of integration.",
-    "Statement 3: $\\int_b^a f=-\\int_a^b f$.",
-    "Statement 4: A definite integral is a signed accumulation.",
-    "Statement 5: If $f\\le g$ on $[a,b]$ then $\\int_a^b f\\le\\int_a^b g$."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Topic anchor: Positivity and comparison follow from the definition  if $f le g$ on $[a,b]$ then $ int_a^b f  le  int_a^b g$, which is what makes integral comparison tests possible."
   ],

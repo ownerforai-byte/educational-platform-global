@@ -1,0 +1,991 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NEB Physics – Probable Long Questions, MCQs, Answers & Diagrams</title>
+<style>
+  :root{--ink:#1a1a2e;--blue:#1565c0;--red:#c62828;--green:#2e7d32;--amber:#e65100;--purple:#6a1b9a;--gray:#555;}
+  body{font-family:Georgia,'Times New Roman',serif;line-height:1.65;color:var(--ink);max-width:980px;margin:0 auto;padding:22px;background:#fff;}
+  h1{font-size:26px;border-bottom:3px solid var(--blue);padding-bottom:8px;}
+  h2.unit{font-size:22px;color:#fff;background:var(--blue);padding:8px 12px;border-radius:6px;margin-top:40px;}
+  h3{font-size:17px;color:var(--ink);margin-top:24px;border-left:4px solid var(--amber);padding-left:8px;}
+  .q{background:#fff9c4;border-left:5px solid var(--amber);padding:12px 14px;margin:18px 0;border-radius:6px;font-family:Arial,sans-serif;}
+  .q .qlabel{font-size:12px;font-weight:bold;color:var(--amber);letter-spacing:.5px;}
+  .q p.qtext{margin:4px 0;font-size:15px;font-weight:bold;}
+  .q .marks{font-size:11px;color:#888;}
+  .ans{background:#e8f5e9;border-left:5px solid var(--green);padding:12px 14px;margin:6px 0 18px;border-radius:6px;font-family:Arial,sans-serif;}
+  .ans .alabel{font-size:12px;font-weight:bold;color:var(--green);letter-spacing:.5px;margin-bottom:6px;}
+  .ans p{font-size:14px;margin:5px 0;}
+  .ans .step{margin:3px 0;font-size:14px;}
+  .ans .final{font-weight:bold;color:var(--green);border-top:1px dashed #999;margin-top:8px;padding-top:6px;}
+  .ans .note{font-size:12px;color:var(--gray);font-style:italic;}
+  .diagram{margin:14px 0;text-align:center;border:1px solid #ccc;border-radius:8px;padding:6px;background:#fafafa;}
+  .diagram img{max-width:100%;height:auto;}
+  .diagram .cap{font-size:12px;color:var(--gray);font-family:Arial,sans-serif;margin-top:5px;font-style:italic;}
+  .keybox{background:#e3f2fd;border:1px solid #90caf9;padding:10px 14px;margin:12px 0;font-family:Arial,sans-serif;font-size:13px;border-radius:6px;}
+  .tag{display:inline-block;background:var(--purple);color:#fff;font-size:10px;padding:2px 7px;border-radius:10px;font-family:Arial;margin-left:6px;vertical-align:middle;}
+  .legend{background:#fff;border:1px solid #ddd;padding:12px;font-family:Arial;font-size:13px;margin-bottom:20px;border-radius:6px;}
+  .legend b{color:var(--blue);}
+</style>
+</head>
+<body>
+
+<h1>NEB Physics – Probable Long Questions,<br>MCQs, Full Answers &amp; Diagrams</h1>
+<p><b>Coverage:</b> 8 units · (1) Physical Quantities · (2) Vectors · (3) Kinematics · (4) Heat &amp; Temperature · (5) Quantity of Heat · (6) Reflection at Curved Mirrors · (7) Refraction at Plane Surfaces · (8) Refraction through Prism.<br><b>Each unit has:</b> probable long questions with worked answers &amp; diagrams, <b>plus</b> a single-choice MCQ bank with one-line concept answers and a master key.</p>
+
+<div class="legend">
+<b>How to read:</b> Each <span style="background:#fff9c4;padding:1px 5px;">yellow block</span> is a probable long question in the real NEB sub-part style — <b>(a)</b> define/explain · <b>(b)</b> derive "show that" · <b>(c)</b> numerical. Each <span style="background:#e8f5e9;padding:1px 5px;">green block</span> is the full worked answer with steps, formulas and boxed result. Diagrams are embedded where they're needed for the answer.
+<div style="margin-top:8px;"><span class="tag">RASTER</span> = a labelled diagram accompanies this answer.</div>
+</div>
+
+<h2 class="unit">Unit 1 – Physical Quantities (Units &amp; Measurement)</h2>
+
+<h3>Q1.1 — Dimensional analysis: period of a simple pendulum</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Define dimensional formula and state its three uses. <span class="marks">[2]</span></p>
+<p class="qtext">(b) Using dimensional analysis, show that the period T of a simple pendulum depends only on length L and g, and deduce T ∝ √(L/g). <span class="marks">[3]</span></p>
+<p class="qtext">(c) A quantity P = A²B/C has relative errors 1%, 2%, 3% in A, B, C. Find the maximum relative error in P. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> <b>Dimensional formula</b> of a physical quantity = the product of powers to which the base quantities M, L, T (and Θ, I, N, J as needed) must be raised to express its unit. Example: force = [M L T⁻²].<br>
+<b>Three uses:</b> ① check dimensional correctness (homogeneity) of an equation; ② convert between unit systems; ③ deduce / verify a relation between quantities (up to a constant).</p>
+<p class="step"><b>(b)</b> Assume T = k · Lˣ · gʸ where k is dimensionless. Take dimensions:</p>
+<p class="step">[T] = [L]ˣ · [L T⁻²]ʸ = L^(x+y) · T^(−2y).</p>
+<p class="step">Equating powers of L and T on both sides (LHS = [T] → L⁰T¹):</p>
+<p class="step">Power of L: 0 = x + y → x = −y.<br>Power of T: 1 = −2y → y = −½, so x = ½.</p>
+<p class="final">∴ T ∝ L^(1/2) g^(−1/2) = √(L/g). The constant 2π cannot be found by dimensional analysis, giving T = 2π√(L/g).</p>
+<p class="step"><b>(c)</b> P = A²·B·C⁻¹ → relative error in P = 2(ΔA/A) + 1(ΔB/B) + 1(ΔC/C) = 2(1%) + 2% + 3%.</p>
+<p class="final">Maximum relative error in P = 7%.</p>
+</div>
+
+<h3>Q1.2 — Systematic vs random error; significant figures</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Distinguish between systematic and random errors, one example each. <span class="marks">[2]</span></p>
+<p class="qtext">(b) Explain why random error can be reduced by averaging but systematic error cannot. <span class="marks">[3]</span></p>
+<p class="qtext">(c) A length is recorded as 5.034 cm ± 0.002 cm. Give the number of significant figures and the percentage error. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> <b>Systematic (bias) error</b> is a directional, repeatable error — always high or always low — caused by faulty calibration, a zero error, or a personal habit (e.g. a ruler worn by 0.5 mm). <b>Random (statistical) error</b> is non-directional scatter caused by unpredictable small variations in reading, temperature, vibration.</p>
+<p class="step"><b>(b)</b> Random errors are distributed ± around the true value, so taking the mean of N readings reduces the mean error as σ/√N — positive and negative deviations cancel. Systematic errors are a constant bias; averaging only shifts the whole set but leaves the bias intact, so only recalibration (or a correction) can remove them.</p>
+<p class="step"><b>(c)</b> 5.034 cm → leading 5, 0, 3, 4 all significant → <b>4 significant figures</b>. Percentage error = (0.002 / 5.034) × 100 = 0.0397%.</p>
+<p class="final">∴ ≈ 0.04%.</p>
+</div>
+
+<h3>Q1.3 — Accuracy vs precision; measurement result</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Define accuracy and precision; why can a measurement be precise but not accurate? <span class="marks">[2]</span></p>
+<p class="qtext">(b) Masses 10.2, 10.1, 10.3, 10.2, 10.1 g. Find the mean, the mean absolute error and the limit error; report the final value. <span class="marks">[3]</span></p>
+<p class="qtext">(c) State the rules for counting significant figures and apply to 0.004200. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> <b>Accuracy</b> = closeness of the reading to the true value; <b>precision</b> = closeness / repeatability of readings to each other. A clock that is 5 min fast is precise (always 5 min high) but not accurate.</p>
+<p class="step"><b>(b)</b> Mean = (10.2+10.1+10.3+10.2+10.1)/5 = 50.9/5 = <b>10.18 g</b>.<br>
+Deviations: +0.02, −0.08, +0.12, +0.02, −0.08 → absolute: 0.02, 0.08, 0.12, 0.02, 0.08. Mean absolute error = (0.32)/5 ≈ 0.064 g. Limit (maximum) error = 0.12 g.</p>
+<p class="final">Reported value = 10.18 ± 0.06 g (mean ± mean absolute error) — to consistent significant figures, ≈ 10.2 ± 0.1 g.</p>
+<p class="step"><b>(c)</b> Rules: (1) non-zero digits always significant; (2) zeros between non-zeros significant; (3) leading zeros NOT; (4) trailing zeros after the decimal point significant; (5) trailing zeros without a decimal are ambiguous. In 0.004200: leading zeros don't count; 4, 2, 0, 0 count → <b>4 significant figures</b>.</p>
+</div>
+
+<h3>Q1.4 — Derived quantities; viscosity vs surface tension dimensions</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Define a derived quantity and give four examples with SI units. <span class="marks">[2]</span></p>
+<p class="qtext">(b) Obtain the dimensional formula of coefficient of viscosity and surface tension, and show they differ. <span class="marks">[3]</span></p>
+<p class="qtext">(c) Two quantities X and Y have the same dimensions. Does X = Y? Give a reason and example. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> A <b>derived quantity</b> is expressed in terms of base quantities. Examples: velocity m/s, force N, pressure Pa, energy J.</p>
+<p class="step"><b>(b)</b> <b>Viscosity η:</b> from Newton's law of viscous force F = ηA(v/h) → η = F·h/(A·v). Dimensions = [M L T⁻²]·[L] / ([L²]·[L T⁻¹]) = [M L⁻¹ T⁻¹].<br>
+<b>Surface tension σ:</b> force per unit length = [M L T⁻²] / [L] = [M T⁻¹].<br>
+Comparing: η = [M L⁻¹ T⁻¹] and σ = [M L⁰ T⁻¹] — clearly different (one has L⁻¹, the other L⁰).</p>
+<p class="final">∴ They are distinct physical quantities.</p>
+<p class="step"><b>(c)</b> No. Identical dimensions do not imply identical quantities — e.g. <b>work, energy and torque</b> all equal [M L² T⁻²] but work and energy are scalars while torque is a vector. Same dimensional formula, different physical meaning.</p>
+</div>
+
+<h2 class="unit">Unit 2 – Vectors</h2>
+
+<h3>Q2.1 — Dot &amp; cross product; A + B + C = 0 identity</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Distinguish between the dot product and the cross product (four differences). <span class="marks">[2]</span></p>
+<p class="qtext">(b) Show that if A + B + C = 0, then B × C = C × A = A × B. <span class="marks">[3]</span></p>
+<p class="qtext">(c) Two vectors of magnitude 3 and 4 have a resultant of 5. Find the angle between them. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> Four differences: ① Dot gives a <b>scalar</b>, cross gives a <b>vector</b>; ② Dot is commutative (A·B = B·A), cross is anti-commutative (B×A = −A×B); ③ A·B = |A||B|cosθ, A×B = |A||B|sinθ n̂; ④ A·B = 0 when A ⊥ B, but A×B = 0 when A ∥ B.</p>
+<p class="step"><b>(b)</b> Given A + B + C = 0 → A + B = −C. Cross both sides by C:</p>
+<p class="step">C × (A + B) = C × (−C) → C×A + C×B = −(C×C) = 0 → C×A = −C×B = B×C. …(i)<br>
+Similarly A + C = −B, cross by A: A×(A+C) = −B×A → A×C = −B×A = A×B. …(ii)<br>
+From (i) and (ii): B×C = A×B = C×A. Q.E.D.</p>
+<p class="step"><b>(c)</b> |R|² = |A|² + |B|² + 2|A||B|cosθ = 9 + 16 + 2(3)(4)cosθ = 25 → 48cosθ = 0 → cosθ = 0.</p>
+<p class="final">∴ θ = 90° (the two vectors are perpendicular).</p>
+</div>
+
+<div class="diagram">
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NjAgMzYwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiPgogIDxyZWN0IHdpZHRoPSI3NjAiIGhlaWdodD0iMzYwIiBmaWxsPSIjZjhmOWZhIiByeD0iOCIvPgogIDx0ZXh0IHg9IjM4MCIgeT0iMjUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMWExYTJlIj5WRUNUT1IgUFJPRFVDVFMg4oCTIGRvdCAoc2NhbGFyKSB2cyBjcm9zcyAodmVjdG9yKTwvdGV4dD4KCiAgPCEtLSBEb3QgcHJvZHVjdCAtLT4KICA8dGV4dCB4PSI2MCIgeT0iNjAiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMTU2NWMwIj5ET1QgUFJPRFVDVCAgQSDCtyBCICAoc2NhbGFyKTwvdGV4dD4KICA8bGluZSB4MT0iMTIwIiB5MT0iMTgwIiB4Mj0iMTIwIiB5Mj0iMTgwIiBzdHJva2U9IiM0MjQyNDIiLz4KICA8Y2lyY2xlIGN4PSIxMjAiIGN5PSIxODAiIHI9IjQiIGZpbGw9IiM0MjQyNDIiLz4KICA8bGluZSB4MT0iMTIwIiB5MT0iMTgwIiB4Mj0iMjYwIiB5Mj0iMTIwIiBzdHJva2U9IiMxNTY1YzAiIHN0cm9rZS13aWR0aD0iMi41IiBtYXJrZXItZW5kPSJ1cmwoI24xKSIvPgogIDxsaW5lIHgxPSIxMjAiIHkxPSIxODAiIHgyPSIzMDAiIHkyPSIxNTAiIHN0cm9rZT0iI2U2NTEwMCIgc3Ryb2tlLXdpZHRoPSIyLjUiIG1hcmtlci1lbmQ9InVybCgjbjIpIi8+CiAgPHRleHQgeD0iMjY1IiB5PSIxMTUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiMxNTY1YzAiPkE8L3RleHQ+CiAgPHRleHQgeD0iMzA1IiB5PSIxNDgiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiNlNjUxMDAiPkI8L3RleHQ+CiAgPHBhdGggZD0iTTIwMCAxODAgQTQwIDQwIDAgMCAwIDIyMCAxNjUiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzQyNDI0MiIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8dGV4dCB4PSIyMTAiIHk9IjE5NSIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzQyNDI0MiI+zrg8L3RleHQ+CiAgPCEtLSBwcm9qZWN0aW9uIC0tPgogIDxsaW5lIHgxPSIzMDAiIHkxPSIxNTAiIHgyPSIzMDAiIHkyPSIxODAiIHN0cm9rZT0iIzJlN2QzMiIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1kYXNoYXJyYXk9IjMsMyIvPgogIDx0ZXh0IHg9IjE1MCIgeT0iMjE1IiBmb250LXNpemU9IjExIiBmaWxsPSIjMTU2NWMwIj5BwrdCID0gfEF8fEJ8Y29zzrggPSBwcm9qZWN0aW9uIG9mIEIgb24gQSDDlyB8QXw8L3RleHQ+CiAgPHRleHQgeD0iMTUwIiB5PSIyMzMiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM0MjQyNDIiPkHCt0IgPSAwIOKfuSBBIOKKpSBCIMK3IEHCt0EgPSB8QXzCsiDCtyBjb21tdXRhdGl2ZTwvdGV4dD4KCiAgPCEtLSBDcm9zcyBwcm9kdWN0IC0tPgogIDx0ZXh0IHg9IjQyMCIgeT0iNjAiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjNmExYjlhIj5DUk9TUyBQUk9EVUNUICBBIMOXIEIgICh2ZWN0b3IpPC90ZXh0PgogIDxjaXJjbGUgY3g9IjUwMCIgY3k9IjE4MCIgcj0iNCIgZmlsbD0iIzQyNDI0MiIvPgogIDxsaW5lIHgxPSI1MDAiIHkxPSIxODAiIHgyPSI2MjAiIHkyPSIxMzAiIHN0cm9rZT0iIzE1NjVjMCIgc3Ryb2tlLXdpZHRoPSIyLjUiIG1hcmtlci1lbmQ9InVybCgjbjEpIi8+CiAgPGxpbmUgeDE9IjUwMCIgeTE9IjE4MCIgeDI9IjY2MCIgeTI9IjE2NSIgc3Ryb2tlPSIjZTY1MTAwIiBzdHJva2Utd2lkdGg9IjIuNSIgbWFya2VyLWVuZD0idXJsKCNuMikiLz4KICA8bGluZSB4MT0iNTAwIiB5MT0iMTgwIiB4Mj0iNTEwIiB5Mj0iOTAiIHN0cm9rZT0iIzZhMWI5YSIgc3Ryb2tlLXdpZHRoPSIyLjUiIG1hcmtlci1lbmQ9InVybCgjbjMpIi8+CiAgPHRleHQgeD0iNjI1IiB5PSIxMjUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiMxNTY1YzAiPkE8L3RleHQ+CiAgPHRleHQgeD0iNjY1IiB5PSIxNjMiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiNlNjUxMDAiPkI8L3RleHQ+CiAgPHRleHQgeD0iNTE1IiB5PSI4NSIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzZhMWI5YSI+QcOXQiAo4oqlIHBsYW5lLCBSSFIpPC90ZXh0PgogIDx0ZXh0IHg9IjQ1MCIgeT0iMjE1IiBmb250LXNpemU9IjExIiBmaWxsPSIjNmExYjlhIj58QcOXQnwgPSB8QXx8QnxzaW7OuCA9IGFyZWEgb2YgcGFyYWxsZWxvZ3JhbTwvdGV4dD4KICA8dGV4dCB4PSI0NTAiIHk9IjIzMyIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzQyNDI0MiI+QcOXQiA9IDAg4p+5IEEg4oilIEIgwrcgYW50aS1jb21tOiBCw5dBID0g4oiSKEHDl0IpPC90ZXh0PgoKICA8IS0tIEJBQy1DQUIgLS0+CiAgPHJlY3QgeD0iNjAiIHk9IjI2MCIgd2lkdGg9IjY0MCIgaGVpZ2h0PSI4MCIgcng9IjgiIGZpbGw9IiNmZmYzZTAiIHN0cm9rZT0iI2U2NTEwMCIvPgogIDx0ZXh0IHg9IjgwIiB5PSIyODUiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjYmYzNjBjIj5CQUMtQ0FCICh2ZWN0b3IgdHJpcGxlIHByb2R1Y3QpOjwvdGV4dD4KICA8dGV4dCB4PSI4MCIgeT0iMzA4IiBmb250LXNpemU9IjEzIiBmaWxsPSIjNDI0MjQyIj5BIMOXIChCIMOXIEMpICA9ICBCKEHCt0MpIOKIkiBDKEHCt0IpPC90ZXh0PgogIDx0ZXh0IHg9IjgwIiB5PSIzMjgiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM0MjQyNDIiPkFsc28gQcK3KELDl0MpID0gdm9sdW1lIG9mIHBhcmFsbGVsZXBpcGVkID0gfELDl0N8wrdBwrduzIIgKHNjYWxhciB0cmlwbGUgcHJvZHVjdCk8L3RleHQ+CgogIDxkZWZzPgogICAgPG1hcmtlciBpZD0ibjEiIG1hcmtlcldpZHRoPSIxMCIgbWFya2VySGVpZ2h0PSI3IiByZWZYPSIxMCIgcmVmWT0iMy41IiBvcmllbnQ9ImF1dG8iPjxwb2x5Z29uIHBvaW50cz0iMCAwLCAxMCAzLjUsIDAgNyIgZmlsbD0iIzE1NjVjMCIvPjwvbWFya2VyPgogICAgPG1hcmtlciBpZD0ibjIiIG1hcmtlcldpZHRoPSIxMCIgbWFya2VySGVpZ2h0PSI3IiByZWZYPSIxMCIgcmVmWT0iMy41IiBvcmllbnQ9ImF1dG8iPjxwb2x5Z29uIHBvaW50cz0iMCAwLCAxMCAzLjUsIDAgNyIgZmlsbD0iI2U2NTEwMCIvPjwvbWFya2VyPgogICAgPG1hcmtlciBpZD0ibjMiIG1hcmtlcldpZHRoPSIxMCIgbWFya2VySGVpZ2h0PSI3IiByZWZYPSIxMCIgcmVmWT0iMy41IiBvcmllbnQ9ImF1dG8iPjxwb2x5Z29uIHBvaW50cz0iMCAwLCAxMCAzLjUsIDAgNyIgZmlsbD0iIzZhMWI5YSIvPjwvbWFya2VyPgogIDwvZGVmcz4KPC9zdmc+Cg==" alt="Dot and cross product vector diagrams">
+<div class="cap">Fig 2.1 – Dot product (projection, scalar) vs cross product (perpendicular, RHR) and BAC-CAB identity.</div>
+</div>
+
+<h3>Q2.2 — Unit &amp; axial vectors; equal magnitudes</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Define a unit vector and explain the concept of an axial (pseudo) vector. <span class="marks">[2]</span></p>
+<p class="qtext">(b) If two vectors A and B have equal magnitudes and |A + B| also equals that magnitude, find the angle between A and B. <span class="marks">[3]</span></p>
+<p class="qtext">(c) A body of mass m moves in a circle of radius r with angular speed ω. Derive the centripetal acceleration. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> A <b>unit vector</b> has magnitude 1 and specifies direction only (â = A/|A|). An <b>axial (pseudo) vector</b> (ω, τ, L, B) follows the right-hand rule and, unlike a polar vector, does NOT reverse under a mirror inversion — it represents a rotation, not a straight-line quantity.</p>
+<p class="step"><b>(b)</b> Let |A| = |B| = A. Squaring |A+B| = A: |A+B|² = A² + A² + 2A²cosθ = 3A² = A² + A² + 2A²cosθ → 2A²cosθ = A² → cosθ = ½.</p>
+<p class="final">∴ θ = 60°.</p>
+<p class="step"><b>(c)</b> In a small time Δt the velocity vector turns through Δθ = ωΔt while keeping magnitude v. The change in velocity has magnitude Δv = v·Δθ (small-angle). Hence a = Δv/Δt = v(ωΔt)/Δt = vω.</p>
+<p class="final">∴ a_c = vω = v²/r = ω²r, directed toward the centre (centripetal).</p>
+</div>
+
+<h3>Q2.3 — Vector resolution; 3D identity; river crossing</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Explain resolution of a vector into rectangular components. <span class="marks">[2]</span></p>
+<p class="qtext">(b) Show that the sum of the squares of the three components equals the square of the magnitude. <span class="marks">[3]</span></p>
+<p class="qtext">(c) A boat crosses a river of width d with boat-speed v_b (perpendicular to flow) and current v_c. Derive the crossing time and the downstream drift. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> A vector A in 3D is resolved into components along the axes: A = Aₓî + A_yĵ + A_zk̂, where Aₓ = |A|cosα, A_y = |A|cosβ, A_z = |A|cosγ are the projections on the x, y, z axes.</p>
+<p class="step"><b>(b)</b> By the 3-D Pythagoras theorem: |A|² = Aₓ² + A_y² + A_z². Equivalently, A·A = |A|² (from the dot product A·A = |A||A|cos0 = |A|²). Q.E.D.</p>
+<p class="step"><b>(c)</b> The crossing depends only on the transverse component of the boat's velocity. Crossing time t = d/v_b. During this time the current carries the boat downstream by</p>
+<p class="final">drift = v_c · t = d · (v_c/v_b).</p>
+</div>
+
+<h2 class="unit">Unit 3 – Kinematics</h2>
+
+<h3>Q3.1 — Distance vs displacement; x = t³ − 6t² + 9t; vertical projection</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Distinguish between distance and displacement (four points). <span class="marks">[2]</span></p>
+<p class="qtext">(b) A particle moves in a straight line, x = t³ − 6t² + 9t (SI). Find v and a, and the time(s) when v = 0. <span class="marks">[3]</span></p>
+<p class="qtext">(c) A body is projected vertically up with speed u. Show that the time of flight is 2u/g and the maximum height is u²/2g. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> ① Distance is the total <b>path length</b> (scalar, always ≥ |displacement|); displacement is the <b>net change in position</b> (vector). ② Distance depends on the actual path; displacement depends only on start &amp; end points. ③ Distance is never negative; displacement can be +, − or 0. ④ For a closed path, displacement = 0 but distance ≠ 0.</p>
+<p class="step"><b>(b)</b> v = dx/dt = 3t² − 12t + 9 = 3(t − 1)(t − 3). Setting v = 0 → <b>t = 1 s or t = 3 s</b>. Acceleration a = dv/dt = 6t − 12.</p>
+<p class="step"><b>(c)</b> Upward: v = 0 at top → 0 = u − gt_up → t_up = u/g, so total time of flight T = 2t_up = 2u/g.<br>
+At the top, using v² = u² − 2gH with v = 0 → u² = 2gH → H = u²/2g.</p>
+<p class="final">∴ T = 2u/g and H = u²/2g.</p>
+</div>
+
+<h3>Q3.2 — Equations of motion; projectile range; complementary angles</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) State the three equations of uniformly accelerated linear motion. <span class="marks">[2]</span></p>
+<p class="qtext">(b) A projectile is fired at angle θ with speed v₀. Derive the range and show it is maximum at θ = 45°. <span class="marks">[3]</span></p>
+<p class="qtext">(c) For the same speed, two projectiles fired at complementary angles θ and 90° − θ have equal range. Show this and note the difference in time of flight. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> For constant acceleration a: ① v = u + at; ② s = ut + ½at²; ③ v² = u² + 2as.</p>
+<p class="step"><b>(b)</b> Resolving: v₀ₓ = v₀cosθ (horizontal, no acceleration), v₀y = v₀sinθ (vertical). Time of flight T = 2v₀sinθ/g (from ①, using a = −g). Range = horizontal velocity × time:</p>
+<p class="step">R = v₀cosθ · (2v₀sinθ/g) = v₀²(2sinθcosθ)/g = v₀²sin2θ/g.</p>
+<p class="final">R is maximum when sin2θ = 1 → 2θ = 90° → θ = 45°, giving R_max = v₀²/g.</p>
+<p class="step"><b>(c)</b> R(θ) = v₀²sin2θ/g and R(90°−θ) = v₀²sin(180°−2θ)/g = v₀²sin2θ/g → <b>equal ranges</b>. But T(θ) = 2v₀sinθ/g differs from T(90°−θ) = 2v₀cosθ/g (except at 45°).</p>
+</div>
+
+<div class="diagram">
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NjAgMzYwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiPgogIDxyZWN0IHdpZHRoPSI3NjAiIGhlaWdodD0iMzYwIiBmaWxsPSIjZjhmOWZhIiByeD0iOCIvPgogIDx0ZXh0IHg9IjM4MCIgeT0iMjUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMWExYTJlIj5QUk9KRUNUSUxFIE1PVElPTiDigJMgcGFyYWJvbGEsIHJhbmdlLCBtYXggaGVpZ2h0PC90ZXh0PgogIDwhLS0gYXhlcyAtLT4KICA8bGluZSB4MT0iODAiIHkxPSIzMDAiIHgyPSI3MjAiIHkyPSIzMDAiIHN0cm9rZT0iIzQyNDI0MiIgc3Ryb2tlLXdpZHRoPSIyIiBtYXJrZXItZW5kPSJ1cmwoI2wxKSIvPgogIDxsaW5lIHgxPSI4MCIgeTE9IjMwMCIgeDI9IjgwIiB5Mj0iNjAiIHN0cm9rZT0iIzQyNDI0MiIgc3Ryb2tlLXdpZHRoPSIyIiBtYXJrZXItZW5kPSJ1cmwoI2wxKSIvPgogIDx0ZXh0IHg9IjcyNSIgeT0iMzA1IiBmb250LXNpemU9IjExIiBmaWxsPSIjNDI0MjQyIj54PC90ZXh0PgogIDx0ZXh0IHg9IjcwIiB5PSI1NSIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzQyNDI0MiI+eTwvdGV4dD4KICA8IS0tIGxhdW5jaCBhbmdsZSAtLT4KICA8bGluZSB4MT0iODAiIHkxPSIzMDAiIHgyPSIxODAiIHkyPSIyNTAiIHN0cm9rZT0iI2U2NTEwMCIgc3Ryb2tlLXdpZHRoPSIyIiBtYXJrZXItZW5kPSJ1cmwoI2wyKSIvPgogIDxwYXRoIGQ9Ik0xMjAgMzAwIEE0MCA0MCAwIDAgMCAxMTIgMjg4IiBmaWxsPSJub25lIiBzdHJva2U9IiNlNjUxMDAiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPHRleHQgeD0iMTI1IiB5PSIyODUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiNlNjUxMDAiPs64PC90ZXh0PgogIDwhLS0gdiBjb21wb25lbnRzIC0tPgogIDxsaW5lIHgxPSI4MCIgeTE9IjMwMCIgeDI9IjE4MCIgeTI9IjMwMCIgc3Ryb2tlPSIjMmU3ZDMyIiBzdHJva2Utd2lkdGg9IjIiIHN0cm9rZS1kYXNoYXJyYXk9IjQsMyIvPgogIDxsaW5lIHgxPSIxODAiIHkxPSIzMDAiIHgyPSIxODAiIHkyPSIyNTAiIHN0cm9rZT0iIzZhMWI5YSIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtZGFzaGFycmF5PSI0LDMiLz4KICA8dGV4dCB4PSIxMTAiIHk9IjMxNSIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzJlN2QzMiI+duKCgGNvc864IChjb25zdGFudCk8L3RleHQ+CiAgPHRleHQgeD0iMTg1IiB5PSIyODAiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiM2YTFiOWEiPnbigoBzaW7OuDwvdGV4dD4KICA8IS0tIHBhcmFib2xhIC0tPgogIDxwYXRoIGQ9Ik04MCAzMDAgUTMwMCA2MCA2MjAgMzAwIiBmaWxsPSJub25lIiBzdHJva2U9IiMxNTY1YzAiIHN0cm9rZS13aWR0aD0iMyIvPgogIDwhLS0gbWF4IGhlaWdodCAtLT4KICA8bGluZSB4MT0iMzUwIiB5MT0iMzAwIiB4Mj0iMzUwIiB5Mj0iMTgwIiBzdHJva2U9IiNjNjI4MjgiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWRhc2hhcnJheT0iNCwzIi8+CiAgPHRleHQgeD0iMzU1IiB5PSIxNzUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiNjNjI4MjgiPkggPSB24oKAwrJzaW7Css64IC8gMmc8L3RleHQ+CiAgPCEtLSByYW5nZSAtLT4KICA8bGluZSB4MT0iODAiIHkxPSIzMDAiIHgyPSI2MjAiIHkyPSIzMDAiIHN0cm9rZT0iIzE1NjVjMCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8dGV4dCB4PSIzMDAiIHk9IjI5NSIgZm9udC1zaXplPSIxMiIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiMxNTY1YzAiPlJhbmdlIFIgPSB24oKAwrJzaW4yzrggLyBnICAobWF4IGF0IM64ID0gNDXCsCk8L3RleHQ+CiAgPCEtLSB2ZWxvY2l0aWVzIC0tPgogIDx0ZXh0IHg9IjQ4MCIgeT0iMTUwIiBmb250LXNpemU9IjExIiBmaWxsPSIjNDI0MjQyIj5BdCBtYXggaGVpZ2h0OiB2X3kgPSAwLCBhID0gZyAoc3RpbGwhKTwvdGV4dD4KICA8IS0tIGVxdWF0aW9ucyBib3ggLS0+CiAgPHJlY3QgeD0iNDMwIiB5PSIxOTAiIHdpZHRoPSIzMTAiIGhlaWdodD0iMTEwIiByeD0iOCIgZmlsbD0iI2ZmZiIgc3Ryb2tlPSIjMTU2NWMwIi8+CiAgPHRleHQgeD0iNDQ1IiB5PSIyMTAiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMGQ0N2ExIj5FcXVhdGlvbnMgKG5vIGFpciByZXNpc3RhbmNlKTo8L3RleHQ+CiAgPHRleHQgeD0iNDQ1IiB5PSIyMzIiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM0MjQyNDIiPnggPSB24oKAY29zzrggwrcgdCDCtyB5ID0gduKCgHNpbs64wrd0IOKIkiDCvWd0wrI8L3RleHQ+CiAgPHRleHQgeD0iNDQ1IiB5PSIyNTIiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM0MjQyNDIiPlQgPSAyduKCgHNpbs64L2c8L3RleHQ+CiAgPHRleHQgeD0iNDQ1IiB5PSIyNzIiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM0MjQyNDIiPkNvbXBsZW1lbnRhcnkgYW5nbGVzIM64ICZhbXA7IDkwwrDiiJLOuCDihpIgc2FtZSBSPC90ZXh0PgogIDx0ZXh0IHg9IjQ0NSIgeT0iMjkyIiBmb250LXNpemU9IjExIiBmaWxsPSIjYzYyODI4Ij5SX21heCA9IHbigoDCsi9nIGF0IM64ID0gNDXCsDwvdGV4dD4KICA8ZGVmcz4KICAgIDxtYXJrZXIgaWQ9ImwxIiBtYXJrZXJXaWR0aD0iMTAiIG1hcmtlckhlaWdodD0iNyIgcmVmWD0iMTAiIHJlZlk9IjMuNSIgb3JpZW50PSJhdXRvIj48cG9seWdvbiBwb2ludHM9IjAgMCwgMTAgMy41LCAwIDciIGZpbGw9IiM0MjQyNDIiLz48L21hcmtlcj4KICAgIDxtYXJrZXIgaWQ9ImwyIiBtYXJrZXJXaWR0aD0iMTAiIG1hcmtlckhlaWdodD0iNyIgcmVmWD0iMTAiIHJlZlk9IjMuNSIgb3JpZW50PSJhdXRvIj48cG9seWdvbiBwb2ludHM9IjAgMCwgMTAgMy41LCAwIDciIGZpbGw9IiNlNjUxMDAiLz48L21hcmtlcj4KICA8L2RlZnM+Cjwvc3ZnPgo=" alt="Projectile motion parabola with range and height">
+<div class="cap">Fig 3.1 – Projectile: velocity components, parabolic path, max height H and range R.</div>
+</div>
+
+<h3>Q3.3 — Uniform circular motion; centripetal force; rolling wheel</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Define uniform circular motion and centripetal acceleration. <span class="marks">[2]</span></p>
+<p class="qtext">(b) A body of mass m moves in a circle of radius r with speed v. Derive the centripetal force. <span class="marks">[3]</span></p>
+<p class="qtext">(c) A wheel of radius 0.5 m rolls without slipping at 10 m/s. Find ω and the angular acceleration if it decelerates to 5 m/s in 2 s. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> <b>Uniform circular motion</b> = motion in a circle at constant speed (|v| constant, direction changing). <b>Centripetal acceleration</b> = the inward acceleration a_c = v²/r required to keep the body on the circular path.</p>
+<p class="step"><b>(b)</b> In time Δt the body moves through angle Δθ = ωΔt. The velocity vector changes direction by Δθ but keeps magnitude v. The change in velocity has magnitude Δv = v·Δθ (small angle), so</p>
+<p class="step">a = Δv/Δt = v(ωΔt)/Δt = vω = v²/r (since v = ωr). Multiplying by mass, F_c = m v²/r = mω²r, directed toward the centre.</p>
+<p class="final">∴ Centripetal force F_c = m v²/r.</p>
+<p class="step"><b>(c)</b> Rolling without slipping: v = ωR → ω = 10/0.5 = <b>20 rad/s</b>. Angular deceleration α = Δv/(R·Δt) = (5 − 10)/(0.5 × 2) = −5/1 = <b>−5 rad/s²</b> (decelerating).</p>
+</div>
+
+<div class="diagram">
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NjAgMzQwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiPgogIDxyZWN0IHdpZHRoPSI3NjAiIGhlaWdodD0iMzQwIiBmaWxsPSIjZjhmOWZhIiByeD0iOCIvPgogIDx0ZXh0IHg9IjM4MCIgeT0iMjUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMWExYTJlIj5VTklGT1JNIENJUkNVTEFSIE1PVElPTiDigJMgdiB0YW5nZW50aWFsLCBhIGNlbnRyaXBldGFsPC90ZXh0PgogIDwhLS0gY2lyY2xlIC0tPgogIDxjaXJjbGUgY3g9IjMwMCIgY3k9IjE4MCIgcj0iMTAwIiBmaWxsPSJub25lIiBzdHJva2U9IiMxNTY1YzAiIHN0cm9rZS13aWR0aD0iMi41Ii8+CiAgPGNpcmNsZSBjeD0iMzAwIiBjeT0iMTgwIiByPSI0IiBmaWxsPSIjNDI0MjQyIi8+CiAgPCEtLSBwb2ludCBvbiBjaXJjbGUgLS0+CiAgPGNpcmNsZSBjeD0iNDAwIiBjeT0iMTgwIiByPSI2IiBmaWxsPSIjYzYyODI4Ii8+CiAgPHRleHQgeD0iNDEwIiB5PSIxNzUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiNjNjI4MjgiPm1hc3MgbTwvdGV4dD4KICA8IS0tIHYgdGFuZ2VudGlhbCAtLT4KICA8bGluZSB4MT0iNDAwIiB5MT0iMTgwIiB4Mj0iNDAwIiB5Mj0iODAiIHN0cm9rZT0iIzJlN2QzMiIgc3Ryb2tlLXdpZHRoPSIyLjUiIG1hcmtlci1lbmQ9InVybCgjbTEpIi8+CiAgPHRleHQgeD0iNDA4IiB5PSI5MCIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzJlN2QzMiI+diAodGFuZ2VudGlhbCk8L3RleHQ+CiAgPCEtLSBhIGNlbnRyaXBldGFsIGlud2FyZCAtLT4KICA8bGluZSB4MT0iNDAwIiB5MT0iMTgwIiB4Mj0iMzAwIiB5Mj0iMTgwIiBzdHJva2U9IiNlNjUxMDAiIHN0cm9rZS13aWR0aD0iMi41IiBtYXJrZXItZW5kPSJ1cmwoI20yKSIvPgogIDx0ZXh0IHg9IjMzMCIgeT0iMTc1IiBmb250LXNpemU9IjExIiBmaWxsPSIjZTY1MTAwIj5hX2MgKHRvd2FyZCBDKTwvdGV4dD4KICA8IS0tIHJhZGl1cyAtLT4KICA8bGluZSB4MT0iMzAwIiB5MT0iMTgwIiB4Mj0iNDAwIiB5Mj0iMTgwIiBzdHJva2U9IiM0MjQyNDIiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWRhc2hhcnJheT0iNCwzIi8+CiAgPHRleHQgeD0iMzM1IiB5PSIyMDAiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiM0MjQyNDIiPnI8L3RleHQ+CiAgPCEtLSDPiSAtLT4KICA8cGF0aCBkPSJNMzYwIDE1MCBBNDAgNDAgMCAwIDEgMzkwIDE0MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjNmExYjlhIiBzdHJva2Utd2lkdGg9IjEuNSIgbWFya2VyLWVuZD0idXJsKCNtMykiLz4KICA8dGV4dCB4PSIzNjAiIHk9IjE0MCIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzZhMWI5YSI+z4k8L3RleHQ+CiAgPCEtLSBmb3JtdWxhcyAtLT4KICA8cmVjdCB4PSI0ODAiIHk9IjkwIiB3aWR0aD0iMjcwIiBoZWlnaHQ9IjE5MCIgcng9IjgiIGZpbGw9IiNmZmYiIHN0cm9rZT0iIzZhMWI5YSIvPgogIDx0ZXh0IHg9IjQ5NSIgeT0iMTEyIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzRhMTQ4YyI+S2V5IHJlbGF0aW9uczo8L3RleHQ+CiAgPHRleHQgeD0iNDk1IiB5PSIxMzgiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM0MjQyNDIiPnYgPSDPiXIgIChsaW5lYXIgc3BlZWQpPC90ZXh0PgogIDx0ZXh0IHg9IjQ5NSIgeT0iMTYyIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNDI0MjQyIj5hX2MgPSB2wrIvciA9IM+JwrJyPC90ZXh0PgogIDx0ZXh0IHg9IjQ5NSIgeT0iMTg2IiBmb250LXNpemU9IjEyIiBmaWxsPSIjNDI0MjQyIj5GX2MgPSBtIHbCsi9yID0gbc+JwrJyPC90ZXh0PgogIDx0ZXh0IHg9IjQ5NSIgeT0iMjEwIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNDI0MjQyIj5UID0gMs+AL8+JID0gMs+Aci92PC90ZXh0PgogIDx0ZXh0IHg9IjQ5NSIgeT0iMjM0IiBmb250LXNpemU9IjEyIiBmaWxsPSIjNDI0MjQyIj5mID0gMS9UID0gz4kvMs+APC90ZXh0PgogIDx0ZXh0IHg9IjQ5NSIgeT0iMjU4IiBmb250LXNpemU9IjExIiBmaWxsPSIjYzYyODI4Ij5hX2Mg4oqlIHYgIChjaGFuZ2VzIGRpcmVjdGlvbiw8L3RleHQ+CiAgPHRleHQgeD0iNDk1IiB5PSIyNzMiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiNjNjI4MjgiPm5vdCB0aGUgc3BlZWQpIOKGkiBjb25zdGFudCB8dnw8L3RleHQ+CiAgPHRleHQgeD0iNjAiIHk9IjMxNSIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzQyNDI0MiIgZm9udC1zdHlsZT0iaXRhbGljIj5VQ006IHNwZWVkIGNvbnN0YW50LCB2ZWxvY2l0eSAmYW1wOyBhY2NlbGVyYXRpb24gY2hhbmdlIGRpcmVjdGlvbiBldmVyeSBpbnN0YW50LjwvdGV4dD4KICA8ZGVmcz4KICAgIDxtYXJrZXIgaWQ9Im0xIiBtYXJrZXJXaWR0aD0iMTAiIG1hcmtlckhlaWdodD0iNyIgcmVmWD0iMTAiIHJlZlk9IjMuNSIgb3JpZW50PSJhdXRvIj48cG9seWdvbiBwb2ludHM9IjAgMCwgMTAgMy41LCAwIDciIGZpbGw9IiMyZTdkMzIiLz48L21hcmtlcj4KICAgIDxtYXJrZXIgaWQ9Im0yIiBtYXJrZXJXaWR0aD0iMTAiIG1hcmtlckhlaWdodD0iNyIgcmVmWD0iMTAiIHJlZlk9IjMuNSIgb3JpZW50PSJhdXRvIj48cG9seWdvbiBwb2ludHM9IjAgMCwgMTAgMy41LCAwIDciIGZpbGw9IiNlNjUxMDAiLz48L21hcmtlcj4KICAgIDxtYXJrZXIgaWQ9Im0zIiBtYXJrZXJXaWR0aD0iMTAiIG1hcmtlckhlaWdodD0iNyIgcmVmWD0iMTAiIHJlZlk9IjMuNSIgb3JpZW50PSJhdXRvIj48cG9seWdvbiBwb2ludHM9IjAgMCwgMTAgMy41LCAwIDciIGZpbGw9IiM2YTFiOWEiLz48L21hcmtlcj4KICA8L2RlZnM+Cjwvc3ZnPgo=" alt="Uniform circular motion with tangential velocity and centripetal acceleration">
+<div class="cap">Fig 3.2 – UCM: v tangential, a_c centripetal (inward), ω angular velocity, key relations.</div>
+</div>
+
+<h3>Q3.4 — Simple harmonic motion: definitions, v &amp; a, energy</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Define simple harmonic motion and state its two defining conditions. <span class="marks">[2]</span></p>
+<p class="qtext">(b) Show that for SHM the velocity v = ω√(A² − x²), the acceleration a = −ω²x, and that the total energy is constant. <span class="marks">[3]</span></p>
+<p class="qtext">(c) A mass–spring system (k = 200 N/m, m = 0.5 kg) oscillates. Find its period and frequency. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> <b>Simple harmonic motion (SHM)</b> = periodic to-and-fro motion about a fixed mean position such that: ① the acceleration is proportional to displacement, a ∝ −x (restoring); ② the acceleration is always directed toward the mean position.</p>
+<p class="step"><b>(b)</b> At displacement x, acceleration a = −ω²x, so KE = ½mv² and PE = ½kx² (spring, k = mω²). Total energy E = ½mv² + ½kx². Since x = A sinωt, substituting:</p>
+<p class="step">v² = ω²(A² − x²) → v = ω√(A² − x²) (velocity). Then E = ½mω²(A² − x²) + ½mω²x² = ½mω²A² = ½kA².</p>
+<p class="final">∴ E = ½kA² = constant, and a = −ω²x (restoring). Q.E.D.</p>
+<p class="step"><b>(c)</b> T = 2π√(m/k) = 2π√(0.5/200) = 2π√(0.0025) = 2π(0.05) = 0.314 s. Frequency f = 1/T = 1/0.314 ≈ <b>3.18 Hz</b>.</p>
+</div>
+
+<div class="diagram">
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NjAgMzQwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiPgogIDxyZWN0IHdpZHRoPSI3NjAiIGhlaWdodD0iMzQwIiBmaWxsPSIjZjhmOWZhIiByeD0iOCIvPgogIDx0ZXh0IHg9IjM4MCIgeT0iMjUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMWExYTJlIj5TSU1QTEUgSEFSTU9OSUMgTU9USU9OIOKAkyB4LCB2LCBhICZhbXA7IGVuZXJneTwvdGV4dD4KICA8IS0tIG1lYW4gbGluZSAtLT4KICA8bGluZSB4MT0iNjAiIHkxPSIxNTAiIHgyPSI3MDAiIHkyPSIxNTAiIHN0cm9rZT0iIzQyNDI0MiIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtZGFzaGFycmF5PSI0LDMiLz4KICA8dGV4dCB4PSIyMCIgeT0iMTUzIiBmb250LXNpemU9IjExIiBmaWxsPSIjNDI0MjQyIj5tZWFuPC90ZXh0PgogIDwhLS0geCA9IEEgY29zKHd0KSAtLT4KICA8cGF0aCBkPSJNODAgOTAgQzE1MCA5MCAxNTAgMjEwIDIyMCAyMTAgQzI5MCAyMTAgMjkwIDkwIDM2MCA5MCBDNDMwIDkwIDQzMCAyMTAgNTAwIDIxMCBDNTcwIDIxMCA1NzAgOTAgNjQwIDkwIiBmaWxsPSJub25lIiBzdHJva2U9IiMxNTY1YzAiIHN0cm9rZS13aWR0aD0iMi41Ii8+CiAgPHRleHQgeD0iNjAwIiB5PSI4NSIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzE1NjVjMCI+eCA9IEEgY29zKM+JdCvPhik8L3RleHQ+CiAgPCEtLSBhbXBsaXR1ZGUgLS0+CiAgPGxpbmUgeDE9IjgwIiB5MT0iOTAiIHgyPSI4MCIgeTI9IjE1MCIgc3Ryb2tlPSIjYzYyODI4IiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1kYXNoYXJyYXk9IjMsMyIvPgogIDx0ZXh0IHg9IjYwIiB5PSIxMjUiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiNjNjI4MjgiPkE8L3RleHQ+CiAgPCEtLSB2IChzaGlmdGVkKSAtLT4KICA8cGF0aCBkPSJNODAgMTUwIEMxNTAgMjEwIDE1MCAyMTAgMjIwIDIxMCBDMjkwIDkwIDI5MCA5MCAzNjAgMTUwIEM0MzAgMjEwIDQzMCAyMTAgNTAwIDIxMCBDNTcwIDkwIDU3MCA5MCA2NDAgMTUwIiBmaWxsPSJub25lIiBzdHJva2U9IiMyZTdkMzIiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWRhc2hhcnJheT0iNiwzIi8+CiAgPHRleHQgeD0iNjAwIiB5PSIxNjAiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiMyZTdkMzIiPnY8L3RleHQ+CiAgPCEtLSBmb3JtdWxhcyAtLT4KICA8cmVjdCB4PSI0NDAiIHk9IjYwIiB3aWR0aD0iMzAwIiBoZWlnaHQ9IjIzMCIgcng9IjgiIGZpbGw9IiNmZmYiIHN0cm9rZT0iIzE1NjVjMCIvPgogIDx0ZXh0IHg9IjQ1NSIgeT0iODIiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMGQ0N2ExIj5TSE0gcmVsYXRpb25zOjwvdGV4dD4KICA8dGV4dCB4PSI0NTUiIHk9IjEwOCIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzQyNDI0MiI+eCA9IEEgY29zKM+JdCvPhik8L3RleHQ+CiAgPHRleHQgeD0iNDU1IiB5PSIxMzIiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM0MjQyNDIiPnYgPSDPieKImihBwrLiiJJ4wrIpLCB2X21heCA9IM+JQTwvdGV4dD4KICA8dGV4dCB4PSI0NTUiIHk9IjE1NiIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzQyNDI0MiI+YSA9IOKIks+JwrJ4LCBhX21heCA9IM+JwrJBPC90ZXh0PgogIDx0ZXh0IHg9IjQ1NSIgeT0iMTgwIiBmb250LXNpemU9IjEyIiBmaWxsPSIjNDI0MjQyIj5UID0gMs+AL8+JIMK3IM+JID0g4oiaKGsvbSk8L3RleHQ+CiAgPHRleHQgeD0iNDU1IiB5PSIyMDQiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM0MjQyNDIiPktFID0gwr1rKEHCsuKIknjCsik8L3RleHQ+CiAgPHRleHQgeD0iNDU1IiB5PSIyMjgiIGZvbnQtc2l6ZT0iMTIiIGZpbGw9IiM0MjQyNDIiPlBFID0gwr1reMKyPC90ZXh0PgogIDx0ZXh0IHg9IjQ1NSIgeT0iMjUyIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI2M2MjgyOCI+VEUgPSDCvWtBwrIgKGNvbnN0YW50KTwvdGV4dD4KICA8dGV4dCB4PSI0NTUiIHk9IjI3NiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzQyNDI0MiI+YSDiiJ0g4oiSeCAocmVzdG9yaW5nKSDihpIgU0hNPC90ZXh0PgogIDx0ZXh0IHg9IjYwIiB5PSIzMDAiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM0MjQyNDIiPkF0IHggPSDCsUE6IHYgPSAwLCB8YXwgbWF4IMK3IEF0IHggPSAwOiB2IG1heCwgYSA9IDAgwrcgRW5lcmd5IHN3YXBzIEtF4oaUUEUsIHN1bSBjb25zdGFudDwvdGV4dD4KPC9zdmc+Cg==" alt="SHM displacement, velocity, acceleration and energy">
+<div class="cap">Fig 3.3 – SHM: x = A cos(ωt+φ), v, a and constant total energy ½kA².</div>
+</div>
+
+<h3>Q3.5 — Oscillatory vs periodic vs SHM; circular projection; damping</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Distinguish oscillatory, periodic and simple harmonic motion. <span class="marks">[2]</span></p>
+<p class="qtext">(b) Derive x = A cos(ωt + φ) for SHM from the projection of uniform circular motion. <span class="marks">[3]</span></p>
+<p class="qtext">(c) Explain the effect of damping on the amplitude and frequency of oscillations. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> <b>Oscillatory</b> = to-and-fro motion about a mean position. <b>Periodic</b> = a motion that repeats after a fixed time T (oscillatory motion is usually periodic). <b>SHM</b> = a special periodic oscillation with a restoring force a ∝ −x (sinusoidal).</p>
+<p class="step"><b>(b)</b> Consider a point P moving in a circle of radius A with angular speed ω; its x-projection Q moves in SHM. If P makes an angle (ωt + φ) from the +x axis at time t, then the projection position is</p>
+<p class="final">x = A cos(ωt + φ) — the equation of SHM. (Differentiating gives v and a as in Q3.4.)</p>
+<p class="step"><b>(c)</b> Damping removes energy, so the amplitude decays exponentially: A(t) = A₀e^(−γt). The damped frequency ω' = √(ω₀² − γ²) is slightly <b>lower</b> than the undamped ω₀ (heavy damping can suppress oscillation entirely).</p>
+</div>
+
+<h2 class="unit">Unit 4 – Heat &amp; Temperature</h2>
+
+<h3>Q4.1 — Temperature vs heat; scale conversion; temperature rise</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Define temperature and heat; state how they differ. <span class="marks">[2]</span></p>
+<p class="qtext">(b) Derive the general conversion relation among the Celsius, Fahrenheit, Kelvin and Rankine scales, and find each at absolute zero. <span class="marks">[3]</span></p>
+<p class="qtext">(c) A body's temperature rises from 25°C to 100°C. Find the rise in kelvin and in degrees Fahrenheit. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> <b>Temperature</b> = the property that determines the direction of heat flow; a measure of the average kinetic energy of molecules (intensive, unit K). <b>Heat</b> = energy in transit from a higher-temperature body to a lower-temperature one due to temperature difference (unit J, extensive, not storable).</p>
+<p class="step"><b>(b)</b> All four scales are linear in T, so equal fractions of the range from ice-point to steam-point are equal: C/100 = (F − 32)/180 = (K − 273.15)/100 = °R/671.7.<br>
+At <b>absolute zero</b>: K = 0, °C = −273.15, °F = (9/5)(−273.15) + 32 = −459.67, °R = 0.</p>
+<p class="step"><b>(c)</b> ΔT = 100 − 25 = 75 K (kelvin and Celsius have the same unit size). In Fahrenheit: Δ°F = (9/5)·75 = <b>135°F</b>.</p>
+</div>
+
+<h3>Q4.2 — Three modes of heat transfer; Fourier's law; thermal conductivity</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Explain the three modes of heat transfer with one example each. <span class="marks">[2]</span></p>
+<p class="qtext">(b) State Fourier's law of heat conduction and define thermal conductivity. <span class="marks">[3]</span></p>
+<p class="qtext">(c) A metal rod (k = 400 W/m·K, area 0.01 m², length 0.2 m) has a temperature difference of 60 K across it. Find the rate of heat flow. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> <b>Conduction</b> – heat through solids by molecular collisions (spoon in hot tea); <b>convection</b> – heat by bulk movement of fluids (boiling water, sea breeze); <b>radiation</b> – heat by electromagnetic waves, needs no medium (sunlight reaching Earth through vacuum).</p>
+<p class="step"><b>(b)</b> <b>Fourier's law:</b> the rate of heat flow is proportional to area and temperature gradient: dQ/dt = kA(ΔT/L), where ΔT/L is the temperature gradient along the rod. The proportionality constant <b>k is the thermal conductivity</b> (heat per unit area, per unit time, per unit gradient), SI unit W/(m·K).</p>
+<p class="step"><b>(c)</b> dQ/dt = kA·ΔT/L = 400 × 0.01 × 60 / 0.2 = 1200/0.2 · 0.01... computing: 400×0.01 = 4; 4×60 = 240; 240/0.2 = 1200 W.</p>
+<p class="final">∴ Rate of heat flow = 1200 W.</p>
+</div>
+
+<h3>Q4.3 — Specific &amp; linear expansion; β ≈ 3α; brass rod</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Define specific heat capacity and coefficient of linear expansion. <span class="marks">[2]</span></p>
+<p class="qtext">(b) Show that for an isotropic solid the coefficient of volume expansion is approximately 3 times the linear coefficient. <span class="marks">[3]</span></p>
+<p class="qtext">(c) A 1 m brass rod (α = 1.9×10⁻⁵ K⁻¹) is heated by 100°C. Find its increase in length. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> <b>Specific heat capacity c</b> = heat to raise the temperature of unit mass by one kelvin (J kg⁻¹ K⁻¹). <b>Coefficient of linear expansion α</b> = fractional increase in length per unit rise in temperature, α = (ΔL/L₀)/ΔT.</p>
+<p class="step"><b>(b)</b> For a cube of side L, V = L³. Heating by ΔT gives ΔL = αL₀ΔT. Differentiating V = L³: ΔV = 3L²ΔL. Hence β = ΔV/(V₀ΔT) = 3L²(αL₀ΔT)/L³ΔT = 3α (first order, ignoring higher-order terms).</p>
+<p class="final">∴ β ≈ 3α for an isotropic solid.</p>
+<p class="step"><b>(c)</b> ΔL = αL₀ΔT = 1.9×10⁻⁵ × 1 × 100 = 1.9×10⁻³ m.</p>
+<p class="final">∴ Increase in length = 1.9 mm.</p>
+</div>
+
+<h3>Q4.4 — C_p vs C_v; Mayer's relation; γ values</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Distinguish specific heat at constant pressure and at constant volume. <span class="marks">[2]</span></p>
+<p class="qtext">(b) Show that for an ideal gas C_p − C_v = R (Mayer's relation). <span class="marks">[3]</span></p>
+<p class="qtext">(c) Find C_p/C_v for a monatomic and a diatomic ideal gas. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> <b>C_v</b> = specific heat at constant volume (all heat raises internal energy). <b>C_p</b> = specific heat at constant pressure. Since at constant pressure the gas also does expansion work PΔV, <b>C_p &gt; C_v</b>.</p>
+<p class="step"><b>(b)</b> Per mole, raising by 1 K: at constant volume, heat in = C_v = ΔU. At constant pressure, heat in = C_p = ΔU + PΔV. Subtracting: C_p − C_v = PΔV. For an ideal gas, PΔV = R·ΔT = R (for 1 K). Hence</p>
+<p class="final">C_p − C_v = R. Q.E.D.</p>
+<p class="step"><b>(c)</b> Monatomic: C_v = 3R/2, C_p = 5R/2 → γ = C_p/C_v = 5/3. Diatomic (ordinary T): C_v = 5R/2, C_p = 7R/2 → γ = 7/5.</p>
+</div>
+
+<h2 class="unit">Unit 5 &mdash; Quantity of Heat</h2>
+
+<div class="keybox">
+<b>Key formulas:</b> Q = mc&Delta;T (sensible heat, c = specific heat capacity); Q = mL (latent heat, L = latent heat of fusion/vaporization); Principle of mixtures: heat lost = heat gained (no loss to surroundings, c<sub>water</sub> = 4186 J kg&sup1;&deg;C&sup1;, c<sub>Al</sub> &asymp; 900, c<sub>copper</sub> &asymp; 390 J kg&sup1;&deg;C&sup1;; L<sub>f</sub>(ice) = 334 kJ/kg, L<sub>v</sub>(water) = 2.26 &times; 10&sup6; J/kg, c<sub>ice</sub> &asymp; 2090 J kg&sup1;&deg;C&sup1;, 1 cal = 4.186 J). Heating curve: temperature rises, then plateaus at phase-change points while latent heat is absorbed.
+</div>
+
+<h3>Q5.1 &mdash; Specific heat capacity; principle of mixtures; numerical</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Define specific heat capacity; explain why water is used as a coolant. <span class="marks">[2]</span></p>
+<p class="qtext">(b) State the principle of mixtures and describe the mixing method for determining the specific heat capacity of a solid metal. <span class="marks">[3]</span></p>
+<p class="qtext">(c) A copper vessel of mass 0.5 kg contains 1 kg of water at 20&deg;C. How much heat is needed to raise the temperature of the whole to 60&deg;C? (c<sub>water</sub> = 4186 J kg&sup1;&deg;C&sup1;, c<sub>copper</sub> = 390 J kg&sup1;&deg;C&sup1;) <span class="marks">[3]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> <b>Specific heat capacity (c):</b> the heat required to raise the temperature of 1 kg of a substance by 1 K (or 1 &deg;C); unit J kg&sup1; K&sup1;. Water has a very high c (4186 J kg&sup1;K&sup1;), so it absorbs a lot of heat per degree without its temperature changing much &mdash; ideal as a <b>coolant</b> (radiators, engine cooling, thermal storage).</p>
+<p class="step"><b>(b)</b> <b>Principle of mixtures:</b> when two bodies at different temperatures are mixed in an insulated container, heat lost by the hotter = heat gained by the colder (neglecting the container and losses). <b>Mixing method:</b> heat a metal block to a known temperature (&asymp;100&deg;C in boiling water), quickly transfer it into cold water in a calorimeter; measure the rise in water temperature; equate heat lost by metal to heat gained by water + calorimeter: m<sub>s</sub>c<sub>s</sub>(T<sub>s</sub> &minus; T) = (m<sub>w</sub>c<sub>w</sub> + C)(T &minus; T<sub>w</sub>) &rArr; c<sub>s</sub> obtained.</p>
+<p class="step"><b>(c)</b> Heat to water: Q<sub>w</sub> = 1 &times; 4186 &times; (60 &minus; 20) = 4186 &times; 40 = 167 440 J.</p>
+<p class="step">Heat to vessel: Q<sub>c</sub> = 0.5 &times; 390 &times; 40 = 7800 J.</p>
+<p class="step">Total Q = 167 440 + 7800 = <b>175 240 J &asymp; 1.75 &times; 10&sup5; J &asymp; 419 cal &times; 418.6 &asymp; 1.75 &times; 10&sup5; J.</b></p>
+<p class="final">Total heat required &asymp; 1.75 &times; 10&sup5; J.</p>
+</div>
+
+<h3>Q5.2 &mdash; Latent heat: fusion &amp; vaporization; numerical with ice</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Define latent heat; distinguish latent heat of fusion from latent heat of vaporization and explain why L<sub>v</sub> &gt; L<sub>f</sub> for water. <span class="marks">[2]</span></p>
+<p class="qtext">(b) Find the mass of ice at 0&deg;C required to cool 200 g of water at 40&deg;C to 0&deg;C. (L<sub>f</sub> = 334 kJ/kg) <span class="marks">[3]</span></p>
+<p class="qtext">(c) How much heat is required to convert 100 g of ice at &minus;10&deg;C to steam at 100&deg;C? (c<sub>ice</sub> = 2090 J kg&sup1;K&sup1;, L<sub>f</sub> = 334 kJ/kg, c<sub>water</sub> = 4186 J kg&sup1;K&sup1;, L<sub>v</sub> = 2.26 &times; 10&sup6; J/kg) <span class="marks">[3]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> <b>Latent heat (L):</b> the heat absorbed or released per unit mass during a change of state at constant temperature. <b>Fusion</b> (solid&rarr;liquid): breaks some bonds, L<sub>f</sub>(water) = 334 kJ/kg. <b>Vaporization</b> (liquid&rarr;gas): molecules are fully separated with a large volume increase and work against pressure, so L<sub>v</sub>(water) = 2.26 &times; 10&sup6; J/kg &asymp; 6.8 L<sub>f</sub>, hence L<sub>v</sub> &gt; L<sub>f</sub>.</p>
+<p class="step"><b>(b)</b> Heat lost by water = m<sub>w</sub>c<sub>w</sub>&Delta;T = 0.2 &times; 4186 &times; 40 = 33 488 J. Heat gained by ice = m<sub>i</sub> L<sub>f</sub> = m<sub>i</sub> &times; 334 000.</p>
+<p class="step">m<sub>i</sub> = 33 488 / 334 000 &asymp; 0.1 kg = <b>100 g</b> of ice.</p>
+<p class="step"><b>(c)</b> Stage 1 (ice &minus;10&rarr;0&deg;C): Q<sub>1</sub> = 0.1 &times; 2090 &times; 10 = 2090 J. Stage 2 (fusion): Q<sub>2</sub> = 0.1 &times; 334 000 = 33 400 J. Stage 3 (water 0&rarr;100&deg;C): Q<sub>3</sub> = 0.1 &times; 4186 &times; 100 = 41 860 J. Stage 4 (vaporization): Q<sub>4</sub> = 0.1 &times; 2.26 &times; 10&sup6; = 226 000 J.</p>
+<p class="step">Total = 2090 + 33 400 + 41 860 + 226 000 = 303 350 J &asymp; <b>3.03 &times; 10&sup5; J.</b></p>
+<p class="final">100 g of ice; total heat to convert ice at &minus;10&deg;C into steam at 100&deg;C &asymp; 3.03 &times; 10&sup5; J.</p>
+</div>
+
+<div class="diagram">
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA4MDAgNTYwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiPgogIDxyZWN0IHdpZHRoPSI4MDAiIGhlaWdodD0iNTYwIiBmaWxsPSIjZjhmOWZhIiByeD0iOCIvPgogIDx0ZXh0IHg9IjQwMCIgeT0iMjgiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTgiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMWExYTJlIj5RVUFOVElUWSBPRiBIRUFUIOKAkyBIRUFUSU5HIENVUlZFICZhbXA7IFBIQVNFIENIQU5HRVM8L3RleHQ+CgogIDwhLS0gSGVhdGluZyBjdXJ2ZSAtLT4KICA8cmVjdCB4PSIyMCIgeT0iNDUiIHdpZHRoPSI0NTAiIGhlaWdodD0iMzYwIiByeD0iOCIgZmlsbD0iI2UzZjJmZCIgc3Ryb2tlPSIjMTU2NWMwIiBzdHJva2Utd2lkdGg9IjIiLz4KICA8dGV4dCB4PSI0MCIgeT0iNjgiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMGQ0N2ExIj5IRUFUSU5HIENVUlZFIChUIHZzIEhlYXQgUSk8L3RleHQ+CiAgPCEtLSBheGVzIC0tPgogIDxsaW5lIHgxPSI3MCIgeTE9IjM4MCIgeDI9IjcwIiB5Mj0iOTAiIHN0cm9rZT0iIzBkNDdhMSIgc3Ryb2tlLXdpZHRoPSIyIiBtYXJrZXItZW5kPSJ1cmwoI2hCKSIvPgogIDxsaW5lIHgxPSI3MCIgeTE9IjM4MCIgeDI9IjQ1MCIgeTI9IjM4MCIgc3Ryb2tlPSIjMGQ0N2ExIiBzdHJva2Utd2lkdGg9IjIiIG1hcmtlci1lbmQ9InVybCgjaEIpIi8+CiAgPHRleHQgeD0iMzAiIHk9IjEwMCIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzBkNDdhMSI+VDwvdGV4dD4KICA8dGV4dCB4PSI0NTUiIHk9IjM3NSIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzBkNDdhMSI+UTwvdGV4dD4KICA8dGV4dCB4PSI0MCIgeT0iMzY1IiBmb250LXNpemU9IjkiIGZpbGw9IiMwZDQ3YTEiPk88L3RleHQ+CiAgPCEtLSBjdXJ2ZSBzZWdtZW50cyAtLT4KICA8IS0tIHNvbGlkIGhlYXRpbmcgKHNsb3BlKSAtLT4KICA8cG9seWxpbmUgcG9pbnRzPSI3MCwzNjAgMTQwLDMwMCAxNDAsMzAwIiBmaWxsPSJub25lIiBzdHJva2U9IiNjNjI4MjgiIHN0cm9rZS13aWR0aD0iMyIvPgogIDwhLS0gcGxhdGVhdSBmdXNpb24gLS0+CiAgPGxpbmUgeDE9IjE0MCIgeTE9IjMwMCIgeDI9IjIxMCIgeTI9IjMwMCIgc3Ryb2tlPSIjZjlhODI1IiBzdHJva2Utd2lkdGg9IjUiLz4KICA8IS0tIGxpcXVpZCBoZWF0aW5nIC0tPgogIDxwb2x5bGluZSBwb2ludHM9IjIxMCwzMDAgMjgwLDIzMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMmU3ZDMyIiBzdHJva2Utd2lkdGg9IjMiLz4KICA8IS0tIHBsYXRlYXUgdmFwb3JpemF0aW9uIC0tPgogIDxsaW5lIHgxPSIyODAiIHkxPSIyMzAiIHgyPSI0MDAiIHkyPSIyMzAiIHN0cm9rZT0iIzZhMWI5YSIgc3Ryb2tlLXdpZHRoPSI1Ii8+CiAgPCEtLSBnYXMgaGVhdGluZyAtLT4KICA8cG9seWxpbmUgcG9pbnRzPSI0MDAsMjMwIDQ0MCwxOTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzE1NjVjMCIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPCEtLSBsYWJlbHMgLS0+CiAgPHRleHQgeD0iODAiIHk9IjMzMCIgZm9udC1zaXplPSIxMCIgZmlsbD0iI2M2MjgyOCI+U29saWQ8L3RleHQ+CiAgPHRleHQgeD0iODAiIHk9IjM0NSIgZm9udC1zaXplPSI5IiBmaWxsPSIjYzYyODI4Ij5RPW1jzpRUPC90ZXh0PgogIDx0ZXh0IHg9IjE0NSIgeT0iMjg4IiBmb250LXNpemU9IjkiIGZpbGw9IiNmOWE4MjUiPk1FTFQ8L3RleHQ+CiAgPHRleHQgeD0iMTQ1IiB5PSIzMDAiIGZvbnQtc2l6ZT0iOCIgZmlsbD0iI2Y5YTgyNSI+UT1tTF9mPC90ZXh0PgogIDx0ZXh0IHg9IjIyMCIgeT0iMjcwIiBmb250LXNpemU9IjEwIiBmaWxsPSIjMmU3ZDMyIj5MaXF1aWQ8L3RleHQ+CiAgPHRleHQgeD0iMjIwIiB5PSIyODUiIGZvbnQtc2l6ZT0iOSIgZmlsbD0iIzJlN2QzMiI+UT1tY86UVDwvdGV4dD4KICA8dGV4dCB4PSIzMDAiIHk9IjIxOCIgZm9udC1zaXplPSI5IiBmaWxsPSIjNmExYjlhIj5CT0lMPC90ZXh0PgogIDx0ZXh0IHg9IjMwMCIgeT0iMjMwIiBmb250LXNpemU9IjgiIGZpbGw9IiM2YTFiOWEiPlE9bUxfdjwvdGV4dD4KICA8dGV4dCB4PSI0MDUiIHk9IjIxNSIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzE1NjVjMCI+R2FzPC90ZXh0PgogIDwhLS0gcGxhdGVhdSB0ZW1wIG1hcmtlcnMgLS0+CiAgPGxpbmUgeDE9IjcwIiB5MT0iMzAwIiB4Mj0iNDUwIiB5Mj0iMzAwIiBzdHJva2U9IiNjNjI4MjgiIHN0cm9rZS13aWR0aD0iMC41IiBzdHJva2UtZGFzaGFycmF5PSIyLDIiLz4KICA8bGluZSB4MT0iNzAiIHkxPSIyMzAiIHgyPSI0NTAiIHkyPSIyMzAiIHN0cm9rZT0iIzZhMWI5YSIgc3Ryb2tlLXdpZHRoPSIwLjUiIHN0cm9rZS1kYXNoYXJyYXk9IjIsMiIvPgogIDx0ZXh0IHg9IjQxMCIgeT0iMzA1IiBmb250LXNpemU9IjkiIGZpbGw9IiM0MjQyNDIiPlRfbWVsdDwvdGV4dD4KICA8dGV4dCB4PSI0MTAiIHk9IjIzNSIgZm9udC1zaXplPSI5IiBmaWxsPSIjNDI0MjQyIj5UX2JvaWw8L3RleHQ+CiAgPHRleHQgeD0iNDAiIHk9IjQwNSIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzQyNDI0MiIgZm9udC1zdHlsZT0iaXRhbGljIj5QbGF0ZWF1cyA9IHBoYXNlIGNoYW5nZSAoVCBjb25zdGFudCwgUSBhYnNvcmJzIGxhdGVudCBoZWF0KTwvdGV4dD4KCiAgPCEtLSBTcGVjaWZpYyB2cyBMYXRlbnQgLS0+CiAgPHJlY3QgeD0iNDkwIiB5PSI0NSIgd2lkdGg9IjI5MCIgaGVpZ2h0PSIzNjAiIHJ4PSI4IiBmaWxsPSIjZmZmM2UwIiBzdHJva2U9IiNlNjUxMDAiIHN0cm9rZS13aWR0aD0iMiIvPgogIDx0ZXh0IHg9IjUwNSIgeT0iNjgiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjYmYzNjBjIj5TUEVDSUZJQyB2cyBMQVRFTlQgSEVBVDwvdGV4dD4KICA8dGV4dCB4PSI1MDUiIHk9IjkwIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iI2U2NTEwMCI+U1BFQ0lGSUMgSEVBVCBjPC90ZXh0PgogIDx0ZXh0IHg9IjUwNSIgeT0iMTA4IiBmb250LXNpemU9IjEwIiBmaWxsPSIjNDI0MjQyIj5TeW46IHNwZWNpZmljIHRoZXJtYWwgY2FwYWNpdHksIHRoZXJtYWwgaW5lcnRpYTwvdGV4dD4KICA8dGV4dCB4PSI1MDUiIHk9IjEyNSIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzQyNDI0MiI+VCBjaGFuZ2VzIMK3IM6UVCDiiaAgMCDCtyBRID0gbWPOlFQ8L3RleHQ+CiAgPHRleHQgeD0iNTA1IiB5PSIxNDIiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiM0MjQyNDIiPlVuaXQ6IEovKGtnwrdLKSDCtyByYWlzZXMgS0U8L3RleHQ+CiAgPHRleHQgeD0iNTA1IiB5PSIxNjIiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjZTY1MTAwIj5MQVRFTlQgSEVBVCBMPC90ZXh0PgogIDx0ZXh0IHg9IjUwNSIgeT0iMTgwIiBmb250LXNpemU9IjEwIiBmaWxsPSIjNDI0MjQyIj5TeW46IGhlYXQgb2YgZnVzaW9uL3ZhcG9yaXphdGlvbiwgZW50aGFscHkgb2YgdHJhbnNmb3JtYXRpb248L3RleHQ+CiAgPHRleHQgeD0iNTA1IiB5PSIxOTciIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiM0MjQyNDIiPlQgY29uc3RhbnQgwrcgzpRUID0gMCDCtyBRID0gbUw8L3RleHQ+CiAgPHRleHQgeD0iNTA1IiB5PSIyMTQiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiM0MjQyNDIiPlVuaXQ6IEova2cgwrcgYnJlYWtzIGJvbmRzIChQRSk8L3RleHQ+CiAgPGxpbmUgeDE9IjUwNSIgeTE9IjIyOCIgeDI9Ijc2NSIgeTI9IjIyOCIgc3Ryb2tlPSIjZTY1MTAwIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1kYXNoYXJyYXk9IjMsMyIvPgogIDx0ZXh0IHg9IjUwNSIgeT0iMjQ4IiBmb250LXNpemU9IjEwIiBmaWxsPSIjNDI0MjQyIj5MX2YgKGZ1c2lvbikgPSAzMzQga0ova2cgKHdhdGVyKTwvdGV4dD4KICA8dGV4dCB4PSI1MDUiIHk9IjI2NSIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzQyNDI0MiI+TF92ICh2YXApID0gMjI2MCBrSi9rZyAod2F0ZXIpPC90ZXh0PgogIDx0ZXh0IHg9IjUwNSIgeT0iMjgyIiBmb250LXNpemU9IjEwIiBmaWxsPSIjNDI0MjQyIj5MX3Yg4omrIExfZiAoZ2FzIG5lZWRzIG1vc3QgZW5lcmd5KTwvdGV4dD4KICA8dGV4dCB4PSI1MDUiIHk9IjMwMiIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzQyNDI0MiI+TF9zIChzdWJsaW1hdGlvbikgPSBzb2xpZOKGlGdhczwvdGV4dD4KICA8dGV4dCB4PSI1MDUiIHk9IjMyNSIgZm9udC1zaXplPSIxMSIgZm9udC13ZWlnaHQ9ImJvbGQiIGZpbGw9IiNjNjI4MjgiPldIWSBzdGVhbSA+IGhvdCB3YXRlciBidXJuPzwvdGV4dD4KICA8dGV4dCB4PSI1MDUiIHk9IjM0MyIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzQyNDI0MiI+U3RlYW0gcmVsZWFzZXMgTF92ICgyMjYwIGtKL2tnKSBvbjwvdGV4dD4KICA8dGV4dCB4PSI1MDUiIHk9IjM2MCIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzQyNDI0MiI+Y29uZGVuc2luZyArIGNvb2xzIOKAlCBtdWNoIG1vcmUgaGVhdDwvdGV4dD4KICA8dGV4dCB4PSI1MDUiIHk9IjM3OCIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzQyNDI0MiI+dGhhbiB3YXRlciBhdCBzYW1lIHRlbXA8L3RleHQ+CgogIDwhLS0gRm9ybXVsYXMgLS0+CiAgPHJlY3QgeD0iMjAiIHk9IjQyMCIgd2lkdGg9Ijc2MCIgaGVpZ2h0PSIxMjAiIHJ4PSI4IiBmaWxsPSIjZThmNWU5IiBzdHJva2U9IiMyZTdkMzIiIHN0cm9rZS13aWR0aD0iMiIvPgogIDx0ZXh0IHg9IjQwIiB5PSI0NDMiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMWI1ZTIwIj5BTEwgSEVBVCBGT1JNVUxBUyAocXVpY2sgcmVmZXJlbmNlKTwvdGV4dD4KICA8dGV4dCB4PSI0MCIgeT0iNDY1IiBmb250LXNpemU9IjExIiBmaWxsPSIjMmU3ZDMyIj5TZW5zaWJsZTogUSA9IG1jzpRUIMK3IG1vbGFyOiBRID0gbsK3Y19twrfOlFQgwrcgSGVhdCBjYXBhY2l0eTogUSA9IEPCt86UVDwvdGV4dD4KICA8dGV4dCB4PSI0MCIgeT0iNDgzIiBmb250LXNpemU9IjExIiBmaWxsPSIjMmU3ZDMyIj5MYXRlbnQ6IFEgPSBtwrdMX2YgKG1lbHQpIMK3IFEgPSBtwrdMX3YgKGJvaWwpIMK3IFEgPSBtwrdMX3MgKHN1YmxpbWF0ZSkgwrcgbW9sYXI6IFEgPSBuwrdMX208L3RleHQ+CiAgPHRleHQgeD0iNDAiIHk9IjUwMyIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzJlN2QzMiI+Q2Fsb3JpbWV0cnkgKG1peHR1cmVzKTogbeKCgWPigoEoVOKCgeKIklRfZikgPSBt4oKCY+KCgihUX2biiJJU4oKCKSBbaGVhdCBsb3N0ID0gaGVhdCBnYWluZWRdPC90ZXh0PgogIDx0ZXh0IHg9IjQwIiB5PSI1MjMiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiMyZTdkMzIiPkVudGhhbHB5IChjb25zdCBQKTogUSA9IM6USCDCtyBUb3RhbCBjdXJ2ZTogUSA9IM6jbWPOlFQgKyDOo21MPC90ZXh0PgogIDx0ZXh0IHg9IjQwIiB5PSI1NDMiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiM0MjQyNDIiIGZvbnQtc3R5bGU9Iml0YWxpYyI+U3lub255bXM6IHNlbnNpYmxlIGhlYXQgKFQgY2hhbmdlKSB2cyBsYXRlbnQgaGVhdCAocGhhc2UgY2hhbmdlKSDCtyBtZXRob2Qgb2YgbWl4dHVyZXMgwrcgdGhlcm1hbCBlcXVpbGlicml1bTwvdGV4dD4KCiAgPGRlZnM+CiAgICA8bWFya2VyIGlkPSJoQiIgbWFya2VyV2lkdGg9IjEwIiBtYXJrZXJIZWlnaHQ9IjciIHJlZlg9IjEwIiByZWZZPSIzLjUiIG9yaWVudD0iYXV0byI+PHBvbHlnb24gcG9pbnRzPSIwIDAsIDEwIDMuNSwgMCA3IiBmaWxsPSIjMGQ0N2ExIi8+PC9tYXJrZXI+CiAgPC9kZWZzPgo8L3N2Zz4=" alt="Heating curve showing phase changes">
+<div class="cap">Fig 5.1 &mdash; Heating curve: temperature rises (Q = mc&Delta;T) then plateaus at 0&deg;C (fusion) and 100&deg;C (vaporization) while latent heat is absorbed.</div>
+</div>
+
+<h3>Q5.3 &mdash; Calorimetry: steam &amp; ice; equivalent weight; mechanical equivalent</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Explain the use of steam at 100&deg;C in heating systems; define the mechanical equivalent of heat. <span class="marks">[2]</span></p>
+<p class="qtext">(b) 50 g of water at 0&deg;C is in a calorimeter. Dry steam at 100&deg;C is passed in. Find the mass of steam that condenses to bring the whole to 50&deg;C. (L<sub>v</sub> = 2.26 &times; 10&sup6; J/kg, c<sub>w</sub> = 4186 J kg&sup1;K&sup1;) <span class="marks">[3]</span></p>
+<p class="qtext">(c) A 2 kg metal at 80&deg;C is dropped into 3 kg of water at 10&deg;C; the final temperature is 20&deg;C. Find the specific heat of the metal. <span class="marks">[3]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> Steam at 100&deg;C delivers both sensible heat (as it cools) and a large latent heat of vaporization on condensing, so it transfers far more heat per kg than hot water &mdash; efficient heating. <b>Mechanical equivalent of heat (J):</b> the work needed to produce one unit of heat; J = 4.186 J/cal (1 cal = 4.186 J), experimentally found by Joule.</p>
+<p class="step"><b>(b)</b> Heat needed to raise 50 g water from 0&rarr;50&deg;C: Q = 0.05 &times; 4186 &times; 50 = 10 465 J.</p>
+<p class="step">Heat released per kg of steam: condense at 100&deg;C (L<sub>v</sub> = 2.26 &times; 10&sup6; J) + cool 100&rarr;50&deg;C (4186 &times; 50 = 209 300 J) &asymp; 2.469 &times; 10&sup6; J/kg.</p>
+<p class="step">Mass of steam = 10 465 / 2.469 &times; 10&sup6; &asymp; 4.24 &times; 10&sup3; g &mdash; i.e. &asymp; <b>4.2 g</b>.</p>
+<p class="step"><b>(c)</b> Heat lost = heat gained: 2 &times; c<sub>m</sub> &times; (80 &minus; 20) = 3 &times; 4186 &times; (20 &minus; 10) &rArr; 120 c<sub>m</sub> = 125 580 &rArr; c<sub>m</sub> = <b>1046.5 J kg&sup1;K&sup1; &asymp; 1050 J kg&sup1;K&sup1;</b> (brass/bronze class).</p>
+<p class="final">Steam used &asymp; 4.2 g; c<sub>metal</sub> &asymp; 1050 J kg&sup1;K&sup1;.</p>
+</div>
+
+<h2 class="unit">Unit 6 – Reflection at Curved Mirrors</h2>
+
+<div class="keybox">
+<b>Sign convention used throughout (New Cartesian / Indian standard):</b> Light travels left → right. Pole P = origin. Object is to the left → u is negative. For a <b>concave</b> mirror the focus F and C are to the left → f = −R/2 (negative). For a <b>convex</b> mirror F and C are to the right → f = +R/2 (positive). Real image (in front, same side as object) → v is negative; virtual image (behind the mirror) → v is positive. m = −v/u; m &lt; 0 → inverted, m &gt; 0 → erect.
+</div>
+
+<h3>Q6.1 — Concave mirror: real image, object beyond C</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Define a concave mirror and its focal length; state the sign convention used. <span class="marks">[2]</span></p>
+<p class="qtext">(b) Draw ray diagrams to show how a concave mirror forms a real, inverted image when the object is beyond C; state the nature of the image when the object is between F and the pole. <span class="marks">[3]</span></p>
+<p class="qtext">(c) An object 4 cm tall is placed 30 cm in front of a concave mirror (R = 20 cm). Find the image position, size and nature. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> A <b>concave mirror</b> is a converging (caved-in) spherical mirror; its focal length is f = R/2 in magnitude. Using the New Cartesian convention: object to the left → u &lt; 0; concave mirror focus is on the left → f &lt; 0; a real image (in front of the mirror) has v &lt; 0, a virtual image (behind) has v &gt; 0. Magnification m = −v/u.</p>
+<p class="step"><b>(b)</b> See Fig 6.1. Three principal rays from the object's top: ① a ray parallel to the axis reflects through F; ② a ray through C reflects back on itself; ③ a ray aimed at F reflects parallel to the axis. For an object <b>beyond C</b> these three reflected rays meet <b>in front</b> of the mirror (between F and C) → <b>real, inverted, diminished</b> image. When the object is <b>between F and the pole</b>, the reflected rays diverge; traced backwards they meet <b>behind</b> the mirror → <b>virtual, erect, magnified</b> image (dentist / shaving mirror).</p>
+<p class="step"><b>(c)</b> u = −30 cm, R = 20 cm → f = −R/2 = −10 cm. Mirror equation: 1/v + 1/u = 1/f → 1/v = 1/f − 1/u = 1/(−10) − 1/(−30) = −3/30 + 1/30 = −2/30 = −1/15.</p>
+<p class="step">∴ v = −15 cm (negative → real image, 15 cm in front of the mirror, between F and C). Magnification m = −v/u = −(−15)/(−30) = −1/2. Image height = m × h_o = −½ × 4 cm = −2 cm.</p>
+<p class="final">The image is 15 cm in front of the mirror; it is real, inverted, and half the object's size (2 cm tall).</p>
+</div>
+
+<div class="diagram">
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NjAgMzIwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiPgogIDxyZWN0IHdpZHRoPSI3NjAiIGhlaWdodD0iMzIwIiBmaWxsPSIjZjhmOWZhIiByeD0iOCIvPgogIDx0ZXh0IHg9IjM4MCIgeT0iMjUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMWExYTJlIj5DT05DQVZFIE1JUlJPUiDigJMgUkFZIERJQUdSQU0gKE9iamVjdCBiZXlvbmQgQyDihpIgcmVhbCwgaW52ZXJ0ZWQsIGRpbWluaXNoZWQpPC90ZXh0PgogIDwhLS0gbWlycm9yIC0tPgogIDxwYXRoIGQ9Ik05MCA1MCBBMTYwIDE2MCAwIDAgMCA5MCAzMDAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzE1NjVjMCIgc3Ryb2tlLXdpZHRoPSI0Ii8+CiAgPGxpbmUgeDE9IjkwIiB5MT0iNTAiIHgyPSI5MCIgeTI9IjMwMCIgc3Ryb2tlPSIjMTU2NWMwIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1kYXNoYXJyYXk9IjQsMyIvPgogIDwhLS0gYXhpcyAtLT4KICA8bGluZSB4MT0iOTAiIHkxPSIxNzUiIHgyPSI3MjAiIHkyPSIxNzUiIHN0cm9rZT0iIzQyNDI0MiIgc3Ryb2tlLXdpZHRoPSIxLjUiIG1hcmtlci1lbmQ9InVybCgjZDEpIi8+CiAgPCEtLSBQLCBGLCBDIC0tPgogIDxjaXJjbGUgY3g9IjkwIiBjeT0iMTc1IiByPSI0IiBmaWxsPSIjMTU2NWMwIi8+PHRleHQgeD0iODIiIHk9IjE5NSIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzE1NjVjMCI+UDwvdGV4dD4KICA8Y2lyY2xlIGN4PSIxNzAiIGN5PSIxNzUiIHI9IjQiIGZpbGw9IiNjNjI4MjgiLz48dGV4dCB4PSIxNjIiIHk9IjE2NSIgZm9udC1zaXplPSIxMSIgZmlsbD0iI2M2MjgyOCI+RjwvdGV4dD4KICA8Y2lyY2xlIGN4PSIyNTAiIGN5PSIxNzUiIHI9IjQiIGZpbGw9IiMyZTdkMzIiLz48dGV4dCB4PSIyNDIiIHk9IjE2NSIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzJlN2QzMiI+QzwvdGV4dD4KICA8dGV4dCB4PSI5NSIgeT0iMTY4IiBmb250LXNpemU9IjEwIiBmaWxsPSIjNDI0MjQyIj5mID0gUi8yPC90ZXh0PgogIDwhLS0gb2JqZWN0IChiZXlvbmQgQykgLS0+CiAgPGxpbmUgeDE9IjU2MCIgeTE9IjE3NSIgeDI9IjU2MCIgeTI9IjkwIiBzdHJva2U9IiM0MjQyNDIiIHN0cm9rZS13aWR0aD0iMyIgbWFya2VyLWVuZD0idXJsKCNkMSkiLz4KICA8dGV4dCB4PSI1NjgiIHk9Ijg4IiBmb250LXNpemU9IjExIiBmaWxsPSIjNDI0MjQyIj5PYmplY3QgKHUgJmd0OyBSKTwvdGV4dD4KICA8IS0tIGltYWdlIChiZXR3ZWVuIEYgYW5kIEMpIC0tPgogIDxsaW5lIHgxPSIyMDUiIHkxPSIxNzUiIHgyPSIyMDUiIHkyPSIyMTIiIHN0cm9rZT0iI2M2MjgyOCIgc3Ryb2tlLXdpZHRoPSIzIiBtYXJrZXItZW5kPSJ1cmwoI2QyKSIvPgogIDx0ZXh0IHg9IjE1MCIgeT0iMjI4IiBmb250LXNpemU9IjExIiBmaWxsPSIjYzYyODI4Ij5JbWFnZTogcmVhbCwgaW52ZXJ0ZWQsIGRpbWluaXNoZWQgKEYgJmx0OyB2ICZsdDsgQyk8L3RleHQ+CiAgPCEtLSBSYXkgMTogcGFyYWxsZWwg4oaSIHRocm91Z2ggRiAtLT4KICA8bGluZSB4MT0iNTYwIiB5MT0iMTA1IiB4Mj0iOTAiIHkyPSIxMDUiIHN0cm9rZT0iI2U2NTEwMCIgc3Ryb2tlLXdpZHRoPSIxLjUiLz4KICA8bGluZSB4MT0iOTAiIHkxPSIxMDUiIHgyPSIyMDUiIHkyPSIyMDUiIHN0cm9rZT0iI2U2NTEwMCIgc3Ryb2tlLXdpZHRoPSIxLjUiIG1hcmtlci1lbmQ9InVybCgjZDMpIi8+CiAgPHRleHQgeD0iMjcwIiB5PSI5OCIgZm9udC1zaXplPSIxMCIgZmlsbD0iI2U2NTEwMCI+MS4gUGFyYWxsZWwgcmF5IOKGkiByZWZsZWN0cyB0aHJvdWdoIEY8L3RleHQ+CiAgPCEtLSBSYXkgMjogdGhyb3VnaCBDIOKGkiBiYWNrIC0tPgogIDxsaW5lIHgxPSI1NjAiIHkxPSIxMTIiIHgyPSI5MCIgeTI9IjE3NSIgc3Ryb2tlPSIjNmExYjlhIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDxsaW5lIHgxPSI5MCIgeTE9IjE3NSIgeDI9IjIwNSIgeTI9IjIwOCIgc3Ryb2tlPSIjNmExYjlhIiBzdHJva2Utd2lkdGg9IjEuNSIgbWFya2VyLWVuZD0idXJsKCNkNCkiLz4KICA8dGV4dCB4PSIzMDAiIHk9IjE0NSIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzZhMWI5YSI+Mi4gUmF5IHRocm91Z2ggQyDihpIgcmVmbGVjdHMgYmFjayBvbiBpdHNlbGY8L3RleHQ+CiAgPCEtLSBSYXkgMzogdG8gRiDihpIgcGFyYWxsZWwgLS0+CiAgPGxpbmUgeDE9IjU2MCIgeTE9IjExOCIgeDI9IjE3MCIgeTI9IjE3NSIgc3Ryb2tlPSIjMmU3ZDMyIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDxsaW5lIHgxPSIxNzAiIHkxPSIxNzUiIHgyPSI5MCIgeTI9IjEzMiIgc3Ryb2tlPSIjMmU3ZDMyIiBzdHJva2Utd2lkdGg9IjEuNSIgbWFya2VyLWVuZD0idXJsKCNkNSkiLz4KICA8dGV4dCB4PSIzMTAiIHk9IjE3MiIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzJlN2QzMiI+My4gUmF5IGFpbWVkIGF0IEYg4oaSIHJlZmxlY3RzIHBhcmFsbGVsPC90ZXh0PgogIDx0ZXh0IHg9IjkwIiB5PSIzMTIiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMTU2NWMwIj5BbGwgMyByZWZsZWN0ZWQgcmF5cyBNRUVUIGluIGZyb250IOKGkiBpbWFnZSBpcyBSRUFMIChwcm9qZWN0YWJsZSkgwrcgbSA9IOKIknYvdTwvdGV4dD4KCiAgPGRlZnM+CiAgICA8bWFya2VyIGlkPSJkMSIgbWFya2VyV2lkdGg9IjEwIiBtYXJrZXJIZWlnaHQ9IjciIHJlZlg9IjEwIiByZWZZPSIzLjUiIG9yaWVudD0iYXV0byI+PHBvbHlnb24gcG9pbnRzPSIwIDAsIDEwIDMuNSwgMCA3IiBmaWxsPSIjNDI0MjQyIi8+PC9tYXJrZXI+CiAgICA8bWFya2VyIGlkPSJkMiIgbWFya2VyV2lkdGg9IjEwIiBtYXJrZXJIZWlnaHQ9IjciIHJlZlg9IjEwIiByZWZZPSIzLjUiIG9yaWVudD0iYXV0byI+PHBvbHlnb24gcG9pbnRzPSIwIDAsIDEwIDMuNSwgMCA3IiBmaWxsPSIjYzYyODI4Ii8+PC9tYXJrZXI+CiAgICA8bWFya2VyIGlkPSJkMyIgbWFya2VyV2lkdGg9IjEwIiBtYXJrZXJIZWlnaHQ9IjciIHJlZlg9IjEwIiByZWZZPSIzLjUiIG9yaWVudD0iYXV0byI+PHBvbHlnb24gcG9pbnRzPSIwIDAsIDEwIDMuNSwgMCA3IiBmaWxsPSIjZTY1MTAwIi8+PC9tYXJrZXI+CiAgICA8bWFya2VyIGlkPSJkNCIgbWFya2VyV2lkdGg9IjEwIiBtYXJrZXJIZWlnaHQ9IjciIHJlZlg9IjEwIiByZWZZPSIzLjUiIG9yaWVudD0iYXV0byI+PHBvbHlnb24gcG9pbnRzPSIwIDAsIDEwIDMuNSwgMCA3IiBmaWxsPSIjNmExYjlhIi8+PC9tYXJrZXI+CiAgICA8bWFya2VyIGlkPSJkNSIgbWFya2VyV2lkdGg9IjEwIiBtYXJrZXJIZWlnaHQ9IjciIHJlZlg9IjEwIiByZWZZPSIzLjUiIG9yaWVudD0iYXV0byI+PHBvbHlnb24gcG9pbnRzPSIwIDAsIDEwIDMuNSwgMCA3IiBmaWxsPSIjMmU3ZDMyIi8+PC9tYXJrZXI+CiAgPC9kZWZzPgo8L3N2Zz4K" alt="Concave mirror ray diagram object beyond C">
+<div class="cap">Fig 6.1 – Concave mirror, object beyond C → three principal rays meet in front → real, inverted, diminished image.</div>
+</div>
+
+<h3>Q6.2 — Concave vs convex; mirror equation &amp; magnification; convex numerical</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Distinguish between a concave and a convex mirror (five differences). <span class="marks">[2]</span></p>
+<p class="qtext">(b) Derive the mirror equation 1/v + 1/u = 1/f and the magnification relation m = −v/u. <span class="marks">[3]</span></p>
+<p class="qtext">(c) A convex mirror (f = +15 cm) forms a virtual image 5 cm behind it. Find the object distance and the nature of the image. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> ① Concave reflects from the inner (caved) side; convex from the outer (bulged) side. ② Concave converges parallel rays (f &lt; 0); convex diverges them (f &gt; 0). ③ Concave can form real <b>and</b> virtual images; convex only virtual. ④ A concave image may be magnified; a convex image is always diminished. ⑤ Concave has a narrow field of view; convex has a wide field (rear-view / road-corner mirrors).</p>
+<p class="step"><b>(b)</b> From similar triangles for a small object h_o at distance u and image h_i at distance v (paraxial, R = 2f): h_i/h_o = (R − u)/(R − v). Also the lateral magnification is m = h_i/h_o = −v/u. Combining the two relations and using R = 2f, after simplification (cross-multiply and divide by R), one obtains</p>
+<p class="final">1/v + 1/u = 1/f   and   m = h_i/h_o = −v/u. Q.E.D.</p>
+<p class="step"><b>(c)</b> Convex mirror: f = +15 cm. Virtual image 5 cm behind the mirror → v = +5 cm. 1/u = 1/f − 1/v = 1/15 − 1/5 = 1/15 − 3/15 = −2/15 → u = −7.5 cm (object 7.5 cm in front).</p>
+<p class="step">Magnification m = −v/u = −(+5)/(−7.5) = +0.667 (positive → erect). Since |m| &lt; 1 the image is diminished.</p>
+<p class="final">Object is 7.5 cm in front; the image is virtual, erect and diminished (about 2/3 the object size).</p>
+</div>
+
+<div class="diagram">
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NjAgMzAwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiPgogIDxyZWN0IHdpZHRoPSI3NjAiIGhlaWdodD0iMzAwIiBmaWxsPSIjZjhmOWZhIiByeD0iOCIvPgogIDx0ZXh0IHg9IjM4MCIgeT0iMjUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMWExYTJlIj5DT05WRVggTUlSUk9SIOKAkyBBTFdBWVMgdmlydHVhbCwgZXJlY3QsIGRpbWluaXNoZWQ8L3RleHQ+CiAgPCEtLSBtaXJyb3IgYnVsZ2luZyBvdXQgLS0+CiAgPHBhdGggZD0iTTY3MCA2MCBBMTYwIDE2MCAwIDAgMSA2NzAgMjg1IiBmaWxsPSJub25lIiBzdHJva2U9IiMyZTdkMzIiIHN0cm9rZS13aWR0aD0iNCIvPgogIDxsaW5lIHgxPSI2NzAiIHkxPSI2MCIgeDI9IjY3MCIgeTI9IjI4NSIgc3Ryb2tlPSIjMmU3ZDMyIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1kYXNoYXJyYXk9IjQsMyIvPgogIDxsaW5lIHgxPSI2NzAiIHkxPSIxNzIiIHgyPSIzMCIgeTI9IjE3MiIgc3Ryb2tlPSIjNDI0MjQyIiBzdHJva2Utd2lkdGg9IjEuNSIgbWFya2VyLWVuZD0idXJsKCNmMSkiLz4KICA8Y2lyY2xlIGN4PSI2NzAiIGN5PSIxNzIiIHI9IjQiIGZpbGw9IiMyZTdkMzIiLz48dGV4dCB4PSI2NzUiIHk9IjE5MiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzJlN2QzMiI+UDwvdGV4dD4KICA8Y2lyY2xlIGN4PSI1OTAiIGN5PSIxNzIiIHI9IjQiIGZpbGw9IiNjNjI4MjgiLz48dGV4dCB4PSI1ODIiIHk9IjE2MiIgZm9udC1zaXplPSIxMSIgZmlsbD0iI2M2MjgyOCI+RjwvdGV4dD4KICA8Y2lyY2xlIGN4PSI1MTAiIGN5PSIxNzIiIHI9IjQiIGZpbGw9IiM2YTFiOWEiLz48dGV4dCB4PSI1MDIiIHk9IjE2MiIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzZhMWI5YSI+QzwvdGV4dD4KICA8IS0tIG9iamVjdCAtLT4KICA8bGluZSB4MT0iMzAwIiB5MT0iMTcyIiB4Mj0iMzAwIiB5Mj0iOTUiIHN0cm9rZT0iIzQyNDI0MiIgc3Ryb2tlLXdpZHRoPSIzIiBtYXJrZXItZW5kPSJ1cmwoI2YxKSIvPgogIDx0ZXh0IHg9IjMwNSIgeT0iOTAiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM0MjQyNDIiPk9iamVjdDwvdGV4dD4KICA8IS0tIGltYWdlIHZpcnR1YWwsIGJlaGluZCBtaXJyb3IsIGVyZWN0LCBzbWFsbCAtLT4KICA8bGluZSB4MT0iNjIwIiB5MT0iMTcyIiB4Mj0iNjIwIiB5Mj0iMTM1IiBzdHJva2U9IiM2YTFiOWEiIHN0cm9rZS13aWR0aD0iMyIgbWFya2VyLWVuZD0idXJsKCNmMikiIHN0cm9rZS1kYXNoYXJyYXk9IjUsMyIvPgogIDx0ZXh0IHg9IjYyNSIgeT0iMTMyIiBmb250LXNpemU9IjExIiBmaWxsPSIjNmExYjlhIj5WaXJ0dWFsIGltYWdlIChiZWhpbmQgUCk8L3RleHQ+CiAgPCEtLSByYXkgMTogcGFyYWxsZWwg4oaSIHJlZmxlY3RzIGFzIGlmIGZyb20gRiAtLT4KICA8bGluZSB4MT0iMzAwIiB5MT0iMTA1IiB4Mj0iNjcwIiB5Mj0iMTA1IiBzdHJva2U9IiNlNjUxMDAiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPGxpbmUgeDE9IjY3MCIgeTE9IjEwNSIgeDI9IjczMCIgeTI9IjkwIiBzdHJva2U9IiNlNjUxMDAiIHN0cm9rZS13aWR0aD0iMS41IiBtYXJrZXItZW5kPSJ1cmwoI2YzKSIvPgogIDxsaW5lIHgxPSI2MjAiIHkxPSIxMzUiIHgyPSI2NzAiIHkyPSIxMDUiIHN0cm9rZT0iI2U2NTEwMCIgc3Ryb2tlLXdpZHRoPSIxLjUiIHN0cm9rZS1kYXNoYXJyYXk9IjQsMiIvPgogIDx0ZXh0IHg9IjQ3MCIgeT0iOTgiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiNlNjUxMDAiPjEuIFBhcmFsbGVsIOKGkiBhcHBlYXJzIHRvIGRpdmVyZ2UgZnJvbSBGPC90ZXh0PgogIDwhLS0gcmF5IDI6IGFpbWVkIGF0IEMgLS0+CiAgPGxpbmUgeDE9IjMwMCIgeTE9IjExNSIgeDI9IjY3MCIgeTI9IjE3MiIgc3Ryb2tlPSIjMTU2NWMwIiBzdHJva2Utd2lkdGg9IjEuNSIvPgogIDxsaW5lIHgxPSI2NzAiIHkxPSIxNzIiIHgyPSI3MzUiIHkyPSIxNTAiIHN0cm9rZT0iIzE1NjVjMCIgc3Ryb2tlLXdpZHRoPSIxLjUiIG1hcmtlci1lbmQ9InVybCgjZjQpIi8+CiAgPGxpbmUgeDE9IjYyMCIgeTE9IjEzNSIgeDI9IjY3MCIgeTI9IjE2NSIgc3Ryb2tlPSIjMTU2NWMwIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWRhc2hhcnJheT0iNCwyIi8+CiAgPHRleHQgeD0iNDcwIiB5PSIxNjAiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiMxNTY1YzAiPjIuIEFpbWVkIGF0IEMg4oaSIHJlZmxlY3RzIGFzIGlmIGZyb20gQzwvdGV4dD4KICA8dGV4dCB4PSIzMzAiIHk9IjIxNSIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzQyNDI0MiI+UmVmbGVjdGVkIHJheXMgZGl2ZXJnZSDihpIgdHJhY2VkIGJhY2sgbWVldCBiZWhpbmQgbWlycm9yIOKGkiBWSVJUVUFMPC90ZXh0PgogIDx0ZXh0IHg9IjMzMCIgeT0iMjMzIiBmb250LXNpemU9IjEwIiBmaWxsPSIjNDI0MjQyIj5pbWFnZSBpcyBBTFdBWVMgZXJlY3QsIGRpbWluaXNoZWQgKHxtfCAmbHQ7IDEpIOKGkiB3aWRlIGZpZWxkIG9mIHZpZXcg4oaSIGNhciByZWFyLXZpZXcgbWlycm9yczwvdGV4dD4KICA8dGV4dCB4PSI5MCIgeT0iMjcwIiBmb250LXNpemU9IjExIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzJlN2QzMiI+Q29udmV4OiBmICZsdDsgMCDCtyB2ICZndDsgMCAodmlydHVhbCkgwrcgbSAmZ3Q7IDAsIHxtfCAmbHQ7IDEgZm9yIGFsbCByZWFsIG9iamVjdHM8L3RleHQ+CiAgPGRlZnM+CiAgICA8bWFya2VyIGlkPSJmMSIgbWFya2VyV2lkdGg9IjEwIiBtYXJrZXJIZWlnaHQ9IjciIHJlZlg9IjEwIiByZWZZPSIzLjUiIG9yaWVudD0iYXV0byI+PHBvbHlnb24gcG9pbnRzPSIwIDAsIDEwIDMuNSwgMCA3IiBmaWxsPSIjNDI0MjQyIi8+PC9tYXJrZXI+CiAgICA8bWFya2VyIGlkPSJmMiIgbWFya2VyV2lkdGg9IjEwIiBtYXJrZXJIZWlnaHQ9IjciIHJlZlg9IjEwIiByZWZZPSIzLjUiIG9yaWVudD0iYXV0byI+PHBvbHlnb24gcG9pbnRzPSIwIDAsIDEwIDMuNSwgMCA3IiBmaWxsPSIjNmExYjlhIi8+PC9tYXJrZXI+CiAgICA8bWFya2VyIGlkPSJmMyIgbWFya2VyV2lkdGg9IjEwIiBtYXJrZXJIZWlnaHQ9IjciIHJlZlg9IjEwIiByZWZZPSIzLjUiIG9yaWVudD0iYXV0byI+PHBvbHlnb24gcG9pbnRzPSIwIDAsIDEwIDMuNSwgMCA3IiBmaWxsPSIjZTY1MTAwIi8+PC9tYXJrZXI+CiAgICA8bWFya2VyIGlkPSJmNCIgbWFya2VyV2lkdGg9IjEwIiBtYXJrZXJIZWlnaHQ9IjciIHJlZlg9IjEwIiByZWZZPSIzLjUiIG9yaWVudD0iYXV0byI+PHBvbHlnb24gcG9pbnRzPSIwIDAsIDEwIDMuNSwgMCA3IiBmaWxsPSIjMTU2NWMwIi8+PC9tYXJrZXI+CiAgPC9kZWZzPgo8L3N2Zz4K" alt="Convex mirror ray diagram">
+<div class="cap">Fig 6.2 – Convex mirror: reflected rays diverge → traced back meet behind the mirror → virtual, erect, diminished image.</div>
+</div>
+
+<h3>Q6.3 — Real vs virtual image; searchlight; convex numerical (2 m object)</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Define a real image and a virtual image. <span class="marks">[2]</span></p>
+<p class="qtext">(b) Explain why a concave mirror used as a searchlight must have its source placed at the focus. <span class="marks">[3]</span></p>
+<p class="qtext">(c) A convex mirror has a radius of curvature 60 cm. An object 2 m tall is placed 3 m in front. Find the image position and its height. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> A <b>real image</b> is formed where the actual reflected / refracted rays meet; it can be projected on a screen and, for a concave mirror, lies in front of the mirror (v &lt; 0). A <b>virtual image</b> is formed where the rays only <b>appear</b> to diverge from (extended backwards); it cannot be projected and is seen behind the mirror (v &gt; 0), as with plane and convex mirrors.</p>
+<p class="step"><b>(b)</b> By the reversibility of light paths, a ray that starts at the focus F of a concave mirror reflects parallel to the principal axis (the reverse of "a parallel ray reflects through F"). Placing the source at F therefore makes all reflected rays leave parallel → a strong, collimated beam, exactly what a searchlight or headlight requires.</p>
+<p class="step"><b>(c)</b> Convex: R = 60 cm → f = +R/2 = +30 cm. u = −300 cm (3 m). 1/v = 1/f − 1/u = 1/30 − 1/(−300) = 1/30 + 1/300 = 10/300 + 1/300 = 11/300 → v = 300/11 ≈ +27.3 cm (virtual, 27.3 cm behind the mirror).</p>
+<p class="step">Magnification m = −v/u = −(27.3)/(−300) = 0.091. Image height = m × h_o = 0.091 × 200 cm ≈ 18.2 cm.</p>
+<p class="final">The image is virtual, erect and highly diminished: about 18 cm tall, 27.3 cm behind the mirror.</p>
+</div>
+
+<h3>Q6.4 — Laws of reflection; lateral inversion; plane mirror numerical</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) State the laws of reflection and explain lateral inversion. <span class="marks">[2]</span></p>
+<p class="qtext">(b) Using a ray diagram, show that the image in a plane mirror is virtual, erect and the same size as the object. <span class="marks">[3]</span></p>
+<p class="qtext">(c) A 1.8 m tall person stands 1 m in front of a plane mirror. Find the distance between the person and the image, and the size of the image. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> <b>Laws of reflection:</b> ① the angle of incidence equals the angle of reflection (θ_i = θ_r), both measured from the normal; ② the incident ray, the reflected ray and the normal at the point of incidence all lie in the same plane. <b>Lateral inversion</b>: a plane mirror reverses the direction perpendicular to its surface (front ↔ back), which makes left and right appear interchanged; it does <b>not</b> reverse top–bottom.</p>
+<p class="step"><b>(b)</b> Two rays from the top of the object strike the mirror and reflect; extending the reflected rays backwards (dashed), they meet behind the mirror at a point as far behind the mirror as the object is in front. Repeating for the base gives an image that is virtual (behind the mirror), erect, and the same size as the object, at equal distance behind the mirror. Q.E.D.</p>
+<p class="step"><b>(c)</b> Image distance behind the mirror = object distance = 1 m. Distance from person to image = 1 m + 1 m = 2 m. A plane mirror has magnification m = 1, so the image size equals the object size = 1.8 m.</p>
+<p class="final">The person and image are 2 m apart; the image is 1.8 m tall — erect, virtual and the same size.</p>
+</div>
+
+<h2 class="unit">Unit 7 &mdash; Refraction at Plane Surfaces</h2>
+
+<div class="keybox">
+<b>Key formulas (refraction at plane surfaces):</b> Snell&rsquo;s law: n&sub1; sin i = n&sub2; sin r. Refractive index of 2 w.r.t. 1: &mu; = n&sub2;/n&sub1; = sin i / sin r = (speed of light in 1)/(speed in 2). Apparent depth = real depth / &mu; (for near-normal rays, observer above denser medium). True depth = real depth (actual). &mu; = true depth / apparent depth. For total internal reflection: &theta;c = sin&sup1;(1/&mu;), where &mu; is of the denser medium relative to rarer. &mu;glass/&mu;water = apparent depth of glass slab in air... standard relations: &mu;12 = &mu;1 / &mu;2.
+</div>
+
+<h3>Q7.1 &mdash; Refractive index; Snell&rsquo;s law; apparent depth numerical</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Define refractive index of a medium; state Snell&rsquo;s law of refraction and explain why a pencil looks broken in water. <span class="marks">[2]</span></p>
+<p class="qtext">(b) A ray of light passes from air into a liquid and the angle of refraction is 30&deg; when the angle of incidence is 60&deg;. Find the refractive index of the liquid and its speed of light. <span class="marks">[3]</span></p>
+<p class="qtext">(c) A water tank 1.2 m deep is viewed from above. If &mu; of water = 4/3, find the apparent depth and the rise of the image. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> <b>Refractive index (&mu;):</b> the ratio of the speed of light in vacuum (or air) to its speed in the medium, &mu; = c/v; equivalently by Snell&rsquo;s law &mu; = sin i / sin r for air&rarr;medium. <b>Snell&rsquo;s law:</b> (i) the incident ray, the refracted ray and the normal at the point of incidence lie in the same plane; (ii) n&sub1; sin i = n&sub2; sin r. A pencil partly in water looks <b>broken</b> because rays from the submerged part bend away from the normal when going water&rarr;air (rarer medium); the eye traces them back in straight lines, so the submerged part appears raised (apparent depth &lt; true depth) at the water surface.</p>
+<p class="step"><b>(b)</b> Snell&rsquo;s law: n<sub>air</sub> sin i = n<sub>liq</sub> sin r &rArr; &mu; = sin 60&deg; / sin 30&deg; = (√3/2) / (1/2) = √3 &asymp; 1.73.</p>
+<p class="step">Speed in the liquid: v = c / &mu; = 3 &times; 10&sup8; / √3 = 1.73 &times; 10&sup8; m/s.</p>
+<p class="step"><b>(c)</b> Apparent depth = real depth / &mu; = 1.2 / (4/3) = 0.9 m. Rise of the image = true depth &minus; apparent depth = 1.2 &minus; 0.9 = <b>0.3 m</b>.</p>
+<p class="final">&mu; = √3 &asymp; 1.73, v = 1.73 &times; 10&sup8; m/s; apparent depth = 0.9 m and the image rises by 0.3 m.</p>
+</div>
+
+<div class="diagram">
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NjAgMzQwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiPgogIDxyZWN0IHdpZHRoPSI3NjAiIGhlaWdodD0iMzQwIiBmaWxsPSIjZjhmOWZhIiByeD0iOCIvPgogIDx0ZXh0IHg9IjM4MCIgeT0iMjUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMWExYTJlIj5BUFBBUkVOVCBERVBUSCDigJMgb2JqZWN0IGFwcGVhcnMgcmFpc2VkIChyZWZyYWN0aW9uKTwvdGV4dD4KICA8IS0tIGFpciAvIHdhdGVyIC0tPgogIDxyZWN0IHg9IjE4MCIgeT0iNDUiIHdpZHRoPSI0MDAiIGhlaWdodD0iNDAiIGZpbGw9IiNmZmZmZmYiIHN0cm9rZT0ibm9uZSIvPgogIDxyZWN0IHg9IjE4MCIgeT0iODUiIHdpZHRoPSI0MDAiIGhlaWdodD0iMTcwIiBmaWxsPSIjYmJkZWZiIiBzdHJva2U9Im5vbmUiLz4KICA8bGluZSB4MT0iMTgwIiB5MT0iODUiIHgyPSI1ODAiIHkyPSI4NSIgc3Ryb2tlPSIjMTU2NWMwIiBzdHJva2Utd2lkdGg9IjMiLz4KICA8dGV4dCB4PSIxODUiIHk9IjY1IiBmb250LXNpemU9IjExIiBmaWxsPSIjMTU2NWMwIj5BaXIgKG7igoEgPSAxLCByYXJlcik8L3RleHQ+CiAgPHRleHQgeD0iMTg1IiB5PSIxMTAiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiMxNTY1YzAiPldhdGVyIChu4oKCID0gNC8zLCBkZW5zZXIpPC90ZXh0PgogIDwhLS0gcmVhbCBvYmplY3QgYXQgYm90dG9tIC0tPgogIDxjaXJjbGUgY3g9IjM4MCIgY3k9IjI0MCIgcj0iNyIgZmlsbD0iI2M2MjgyOCIvPgogIDx0ZXh0IHg9IjM5NSIgeT0iMjQ1IiBmb250LXNpemU9IjExIiBmaWxsPSIjYzYyODI4Ij5SZWFsIG9iamVjdCBPIChkZXB0aCBkX3IpPC90ZXh0PgogIDwhLS0gYXBwYXJlbnQgaW1hZ2UgcmFpc2VkIC0tPgogIDxjaXJjbGUgY3g9IjM4MCIgY3k9IjE4NSIgcj0iNyIgZmlsbD0iIzZhMWI5YSIgc3Ryb2tlLWRhc2hhcnJheT0iMywyIi8+CiAgPHRleHQgeD0iMzk1IiB5PSIxODMiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM2YTFiOWEiPkFwcGFyZW50IGltYWdlIEkgKGRlcHRoIGRfYSk8L3RleHQ+CiAgPCEtLSBvYnNlcnZlciBleWUgLS0+CiAgPHRleHQgeD0iNDcwIiB5PSI3MCIgZm9udC1zaXplPSIyMiI+8J+RgTwvdGV4dD4KICA8dGV4dCB4PSI0NTAiIHk9IjcwIiBmb250LXNpemU9IjExIiBmaWxsPSIjNDI0MjQyIj5vYnNlcnZlcjwvdGV4dD4KICA8IS0tIHJheXMgZnJvbSBvYmplY3QgLS0+CiAgPGxpbmUgeDE9IjM4MCIgeTE9IjI0MCIgeDI9IjMzMCIgeTI9Ijg1IiBzdHJva2U9IiNlNjUxMDAiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPGxpbmUgeDE9IjM4MCIgeTE9IjI0MCIgeDI9IjQzMCIgeTI9Ijg1IiBzdHJva2U9IiNlNjUxMDAiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPCEtLSByZWZyYWN0ZWQgcmF5cyB0b3dhcmQgZXllIChiZW5kIGF3YXkgZnJvbSBub3JtYWwpIC0tPgogIDxsaW5lIHgxPSIzMzAiIHkxPSI4NSIgeDI9IjQ4MCIgeTI9IjYwIiBzdHJva2U9IiNlNjUxMDAiIHN0cm9rZS13aWR0aD0iMS41IiBtYXJrZXItZW5kPSJ1cmwoI2cxKSIvPgogIDxsaW5lIHgxPSI0MzAiIHkxPSI4NSIgeDI9IjQ5MCIgeTI9IjU1IiBzdHJva2U9IiNlNjUxMDAiIHN0cm9rZS13aWR0aD0iMS41IiBtYXJrZXItZW5kPSJ1cmwoI2cxKSIvPgogIDwhLS0gbm9ybWFsIC0tPgogIDxsaW5lIHgxPSIzODAiIHkxPSI0NSIgeDI9IjM4MCIgeTI9IjI0MCIgc3Ryb2tlPSIjNDI0MjQyIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1kYXNoYXJyYXk9IjQsMyIvPgogIDx0ZXh0IHg9IjM4NSIgeT0iMjU1IiBmb250LXNpemU9IjEwIiBmaWxsPSIjNDI0MjQyIj5Ob3JtYWw8L3RleHQ+CiAgPCEtLSBhcHBhcmVudCBpbWFnZSBiYWNrLXRyYWNlIC0tPgogIDxsaW5lIHgxPSIzODAiIHkxPSIxODUiIHgyPSIzMzAiIHkyPSI4NSIgc3Ryb2tlPSIjNmExYjlhIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1kYXNoYXJyYXk9IjQsMiIvPgogIDxsaW5lIHgxPSIzODAiIHkxPSIxODUiIHgyPSI0MzAiIHkyPSI4NSIgc3Ryb2tlPSIjNmExYjlhIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1kYXNoYXJyYXk9IjQsMiIvPgogIDwhLS0gbGFiZWxzIC0tPgogIDx0ZXh0IHg9IjU5MCIgeT0iMTUwIiBmb250LXNpemU9IjExIiBmaWxsPSIjNDI0MjQyIj5SYXlzIGJlbmQgQVdBWSBmcm9tIG5vcm1hbDwvdGV4dD4KICA8dGV4dCB4PSI1OTAiIHk9IjE2OCIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzQyNDI0MiI+KHJhcmVyIHNpZGUpIOKGkiBleWUgc2VlcyBvYmplY3Q8L3RleHQ+CiAgPHRleHQgeD0iNTkwIiB5PSIxODYiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM0MjQyNDIiPlJBSVNFRCDihpIgcG9vbCBsb29rcyBzaGFsbG93ZXI8L3RleHQ+CiAgPHRleHQgeD0iMTgwIiB5PSIzMDAiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMGQ0N2ExIj5kX2EgPSBkX3IgLyBuICAg4oaSICAgYXBwYXJlbnQgZGVwdGggPSByZWFsIGRlcHRoIMO3IHJlZnJhY3RpdmUgaW5kZXg8L3RleHQ+CiAgPHRleHQgeD0iMTgwIiB5PSIzMjAiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM0MjQyNDIiPkZvciB3YXRlciBuID0gNC8zOiAgZF9hID0gwr4gwrcgZF9yICAgKG9iamVjdCBhcHBlYXJzIMK+IG9mIGl0cyB0cnVlIGRlcHRoKTwvdGV4dD4KICA8ZGVmcz4KICAgIDxtYXJrZXIgaWQ9ImcxIiBtYXJrZXJXaWR0aD0iMTAiIG1hcmtlckhlaWdodD0iNyIgcmVmWD0iMTAiIHJlZlk9IjMuNSIgb3JpZW50PSJhdXRvIj48cG9seWdvbiBwb2ludHM9IjAgMCwgMTAgMy41LCAwIDciIGZpbGw9IiNlNjUxMDAiLz48L21hcmtlcj4KICA8L2RlZnM+Cjwvc3ZnPgo=" alt="Apparent depth refraction diagram">
+<div class="cap">Fig 7.1 &mdash; Refracted rays from the pencil tip P bend away from the normal; the eye traces them straight back to apparent point P&prime;, so apparent depth &lt; true depth.</div>
+</div>
+
+<h3>Q7.2 &mdash; Laws of refraction; total internal reflection; critical angle</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) State the laws of refraction and explain total internal reflection with conditions for it to occur. <span class="marks">[2]</span></p>
+<p class="qtext">(b) Define critical angle; derive the relation &theta;c = sin&sup1;(1/&mu;). A glass prism has &mu; = 1.5. Find its critical angle. <span class="marks">[3]</span></p>
+<p class="qtext">(c) A light ray is incident on a water&ndash;air surface from water. If &mu;<sub>water</sub> = 4/3, find the critical angle and state whether a ray incident at 50&deg; is refracted or totally internally reflected. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> <b>Laws of refraction:</b> (1) incident ray, refracted ray and the normal at the point of incidence are coplanar; (2) n&sub1; sin i = n&sub2; sin r (Snell&rsquo;s law). <b>Total internal reflection (TIR):</b> when a ray travels from a denser to a rarer medium and the angle of incidence exceeds the critical angle, no refraction occurs and the ray is entirely reflected back into the denser medium &mdash; like a perfect mirror. <b>Conditions:</b> (i) the ray must travel from denser &rarr; rarer medium; (ii) the angle of incidence must be greater than the critical angle for that pair of media; (iii) there is no loss of intensity (unlike partial reflection at a surface).</p>
+<p class="step"><b>(b)</b> <b>Critical angle (&theta;c):</b> the angle of incidence in the denser medium for which the angle of refraction in the rarer medium is exactly 90&deg;. At this point Snell&rsquo;s law gives &mu; sin &theta;c = 1 &times; sin 90&deg; = 1 &rArr; <b>&theta;c = sin&sup1;(1/&mu;)</b>.</p>
+<p class="step">For glass (&mu; = 1.5): &theta;c = sin&sup1;(1/1.5) = sin&sup1;(0.667) &asymp; 41.8&deg;.</p>
+<p class="step"><b>(c)</b> &theta;c = sin&sup1;(3/4) = sin&sup1;(0.75) &asymp; 48.6&deg;. Since 50&deg; &gt; 48.6&deg;, the ray exceeds the critical angle &rArr; it undergoes <b>total internal reflection</b> at the water&ndash;air surface and does not emerge.</p>
+<p class="final">&theta;c = sin&sup1;(1/&mu;); glass: 41.8&deg;; water: 48.6&deg; &mdash; a 50&deg; ray in water is totally internally reflected.</p>
+</div>
+
+<div class="diagram">
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NjAgMzIwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiPgogIDxyZWN0IHdpZHRoPSI3NjAiIGhlaWdodD0iMzIwIiBmaWxsPSIjZjhmOWZhIiByeD0iOCIvPgogIDx0ZXh0IHg9IjM4MCIgeT0iMjUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMWExYTJlIj5UT1RBTCBJTlRFUk5BTCBSRUZMRUNUSU9OIOKAkyBkZW5zZXIgdG8gcmFyZXIsIM64ICZndDsgzrhfYzwvdGV4dD4KICA8IS0tIHNsYWIgLS0+CiAgPHJlY3QgeD0iMTgwIiB5PSI4MCIgd2lkdGg9IjQwMCIgaGVpZ2h0PSIxODAiIGZpbGw9IiNiYmRlZmIiLz4KICA8cmVjdCB4PSIxODAiIHk9IjYwIiB3aWR0aD0iNDAwIiBoZWlnaHQ9IjIwIiBmaWxsPSIjZmZmZmZmIi8+CiAgPGxpbmUgeDE9IjE4MCIgeTE9IjgwIiB4Mj0iNTgwIiB5Mj0iODAiIHN0cm9rZT0iIzE1NjVjMCIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPHRleHQgeD0iMTg1IiB5PSI3NSIgZm9udC1zaXplPSIxMCIgZmlsbD0iIzE1NjVjMCI+QWlyIChyYXJlciwgbuKCgik8L3RleHQ+CiAgPHRleHQgeD0iMTg1IiB5PSIxMDAiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiMxNTY1YzAiPldhdGVyL0dsYXNzIChkZW5zZXIsIG7igoEpPC90ZXh0PgogIDwhLS0gbm9ybWFsIC0tPgogIDxsaW5lIHgxPSIzODAiIHkxPSI4MCIgeDI9IjM4MCIgeTI9IjI2MCIgc3Ryb2tlPSIjNDI0MjQyIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1kYXNoYXJyYXk9IjQsMyIvPgogIDwhLS0gaW5jaWRlbnQgcmF5IC0tPgogIDxsaW5lIHgxPSIyNTAiIHkxPSIxMjAiIHgyPSIzODAiIHkyPSIyMDAiIHN0cm9rZT0iI2M2MjgyOCIgc3Ryb2tlLXdpZHRoPSIyLjUiIG1hcmtlci1lbmQ9InVybCgjaDEpIi8+CiAgPHRleHQgeD0iMjU1IiB5PSIxNDAiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiNjNjI4MjgiPmluY2lkZW50ICjOuOKCgSAmZ3Q7IM64X2MpPC90ZXh0PgogIDwhLS0gcmVmbGVjdGVkIHJheSAoVElSKSAtLT4KICA8bGluZSB4MT0iMzgwIiB5MT0iMjAwIiB4Mj0iNTEwIiB5Mj0iMTIwIiBzdHJva2U9IiMyZTdkMzIiIHN0cm9rZS13aWR0aD0iMi41IiBtYXJrZXItZW5kPSJ1cmwoI2gyKSIvPgogIDx0ZXh0IHg9IjQ3NSIgeT0iMTE1IiBmb250LXNpemU9IjExIiBmaWxsPSIjMmU3ZDMyIj5yZWZsZWN0ZWQgKFRJUikg4oCUIG5vIHJlZnJhY3Rpb248L3RleHQ+CiAgPCEtLSBhbmdsZSBhcmNzIC0tPgogIDxwYXRoIGQ9Ik0zODAgMjMwIEEzMCAzMCAwIDAgMCAzNTUgMjE1IiBmaWxsPSJub25lIiBzdHJva2U9IiNjNjI4MjgiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPHRleHQgeD0iMzQ1IiB5PSIyNDUiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiNjNjI4MjgiPs644oKBPC90ZXh0PgogIDwhLS0gZm9ybXVsYXMgLS0+CiAgPHRleHQgeD0iMTgwIiB5PSIyODUiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMGQ0N2ExIj5zaW4gzrhfYyA9IG7igoIgLyBu4oKBICAgKGZvciBu4oKBICZndDsgbuKCgik8L3RleHQ+CiAgPHRleHQgeD0iMTgwIiB5PSIzMDUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM0MjQyNDIiPldhdGVy4oaSYWlyOiDOuF9jIOKJiCA0OC42wrAgIMK3ICBHbGFzc+KGkmFpciAoMS41KTogzrhfYyDiiYggNDEuOMKwICDCtyAgRGlhbW9uZOKGkmFpciAoMi40Mik6IM64X2Mg4omIIDI0LjTCsDwvdGV4dD4KICA8dGV4dCB4PSI0MzAiIHk9IjI4NSIgZm9udC1zaXplPSIxMSIgZmlsbD0iIzZhMWI5YSI+SWYgzrjigoEgJmx0OyDOuF9jIOKGkiBwYXJ0aWFsIHJlZnJhY3Rpb24gKyBwYXJ0aWFsIHJlZmxlY3Rpb24gKG5vdCB0b3RhbCk8L3RleHQ+CiAgPGRlZnM+CiAgICA8bWFya2VyIGlkPSJoMSIgbWFya2VyV2lkdGg9IjEwIiBtYXJrZXJIZWlnaHQ9IjciIHJlZlg9IjEwIiByZWZZPSIzLjUiIG9yaWVudD0iYXV0byI+PHBvbHlnb24gcG9pbnRzPSIwIDAsIDEwIDMuNSwgMCA3IiBmaWxsPSIjYzYyODI4Ii8+PC9tYXJrZXI+CiAgICA8bWFya2VyIGlkPSJoMiIgbWFya2VyV2lkdGg9IjEwIiBtYXJrZXJIZWlnaHQ9IjciIHJlZlg9IjEwIiByZWZZPSIzLjUiIG9yaWVudD0iYXV0byI+PHBvbHlnb24gcG9pbnRzPSIwIDAsIDEwIDMuNSwgMCA3IiBmaWxsPSIjMmU3ZDMyIi8+PC9tYXJrZXI+CiAgPC9kZWZzPgo8L3N2Zz4K" alt="Total internal reflection diagram showing critical angle">
+<div class="cap">Fig 7.2 &mdash; As incidence exceeds &theta;c, refraction disappears; at i &gt; &theta;c the ray is totally reflected back into the denser medium (TIR).</div>
+</div>
+
+<h3>Q7.3 &mdash; Real vs apparent depth; glass slab; &mu; relations</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Distinguish between real depth and apparent depth; explain why swimming pools look shallower than they are. <span class="marks">[2]</span></p>
+<p class="qtext">(b) A glass slab (n = 1.5, thickness 3 cm) is placed over a mark. Find the lateral shift... find the apparent shift of the mark when the slab is viewed normally. <span class="marks">[3]</span></p>
+<p class="qtext">(c) The apparent depth of a pool bottom is 1.5 m and its real depth is 2.0 m. Find the refractive index of water and the speed of light in it. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> <b>Real depth:</b> the actual vertical distance of the object from the surface. <b>Apparent depth:</b> the shallower distance at which the object appears when viewed from the rarer medium above, apparent depth = real depth / &mu;. Pools look shallower because light from the bottom bends away from the normal at the water&ndash;air boundary, making the bottom appear raised.</p>
+<p class="step"><b>(b)</b> For near-normal viewing, shift = t(1 &minus; 1/&mu;) = 3(1 &minus; 1/1.5) = 3(1/3) = 1 cm. The mark appears 1 cm closer (raised by 1 cm).</p>
+<p class="step"><b>(c)</b> &mu; = real depth / apparent depth = 2.0 / 1.5 = 4/3 &asymp; 1.33. Speed of light: v = c / &mu; = 3 &times; 10&sup8; / 1.33 = 2.25 &times; 10&sup8; m/s.</p>
+<p class="final">Apparent shift of the mark = 1 cm; &mu;<sub>water</sub> = 4/3 and v = 2.25 &times; 10&sup8; m/s.</p>
+</div>
+
+<h2 class="unit">Unit 8 &mdash; Refraction through a Prism</h2>
+
+<div class="keybox">
+<b>Prism formulas:</b> Deviation &delta; = i + e &minus; A, where i = angle of incidence, e = angle of emergence, A = refracting/prism angle. Minimum deviation &delta;m satisfies <b>&mu; = sin((A + &delta;m)/2) / sin(A/2)</b>. At minimum deviation the prism is symmetric: i = e and r&sub1; = r&sub2; = A/2. Dispersion: &mu;violet &gt; &mu;red so violet bends most; angular dispersion = &delta;v &minus; &delta;r. Power of prism P = &delta;(&mu; &minus; 1) in prism units.
+</div>
+
+<h3>Q8.1 &mdash; Deviation formula; minimum deviation; &mu; numerical</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Draw the path of a ray through a prism; define angle of deviation and derive &delta; = i + e &minus; A. <span class="marks">[3]</span></p>
+<p class="qtext">(b) Derive the formula &mu; = sin((A + &delta;m)/2) / sin(A/2) for refractive index at minimum deviation. <span class="marks">[3]</span></p>
+<p class="qtext">(c) A prism has A = 60&deg; and &delta;m = 38&deg;. Find the refractive index of its material. <span class="marks">[2]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p class="step"><b>(a)</b> In the prism, let i = angle of incidence at the first face, r&sub1; = refraction angle inside at the first face, r&sub2; = incidence at the second face, e = emergence angle. Snell&rsquo;s law: &mu; = sin i / sin r&sub1; = sin e / sin r&sub2;. In triangle A&prime;BC: A + r&sub1; + r&sub2; = 180&deg; and the quadrilateral at the two faces gives i + e = &delta; + A &rArr; <b>&delta; = i + e &minus; A</b>.</p>
+<p class="step"><b>(b)</b> At minimum deviation the ray is symmetric: i = e and r&sub1; = r&sub2; = A/2. Hence &delta;m = i + e &minus; A &rArr; i = (A + &delta;m)/2. From Snell&rsquo;s law at the first face: &mu; = sin i / sin r&sub1; = <b>sin((A + &delta;m)/2) / sin(A/2)</b>. Q.E.D.</p>
+<p class="step"><b>(c)</b> &mu; = sin((60 + 38)/2) / sin(60/2) = sin 49&deg; / sin 30&deg; = 0.7547 / 0.5 &asymp; 1.51.</p>
+<p class="final">&delta; = i + e &minus; A; &mu; = sin((A+&delta;m)/2)/sin(A/2); &mu; &asymp; 1.51 for this prism.</p>
+</div>
+
+<div class="diagram">
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NjAgMzYwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiPgogIDxyZWN0IHdpZHRoPSI3NjAiIGhlaWdodD0iMzYwIiBmaWxsPSIjZjhmOWZhIiByeD0iOCIvPgogIDx0ZXh0IHg9IjM4MCIgeT0iMjUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMWExYTJlIj5QUklTTSDigJMgTUlOSU1VTSBERVZJQVRJT04gKHN5bW1ldHJpYyBwYXNzYWdlLCByYXkg4oilIGJhc2UpPC90ZXh0PgogIDwhLS0gcHJpc20gLS0+CiAgPHBvbHlnb24gcG9pbnRzPSIxODAsMzAwIDU4MCwzMDAgMzgwLDExMCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTU2NWMwIiBzdHJva2Utd2lkdGg9IjMiLz4KICA8bGluZSB4MT0iMzgwIiB5MT0iMTEwIiB4Mj0iMzgwIiB5Mj0iMzAwIiBzdHJva2U9IiMxNTY1YzAiIHN0cm9rZS13aWR0aD0iMSIgc3Ryb2tlLWRhc2hhcnJheT0iNSwzIi8+CiAgPHRleHQgeD0iMzg1IiB5PSIxMDUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiNjNjI4MjgiPkEgKGFwZXgpPC90ZXh0PgogIDx0ZXh0IHg9IjM3MCIgeT0iMjMwIiBmb250LXNpemU9IjExIiBmaWxsPSIjMTU2NWMwIj5BLzI8L3RleHQ+CiAgPHRleHQgeD0iMzcwIiB5PSIxOTUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiMxNTY1YzAiPkEvMjwvdGV4dD4KICA8IS0tIGJhc2UgLS0+CiAgPHRleHQgeD0iMzc1IiB5PSIzMTUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM0MjQyNDIiPmJhc2U8L3RleHQ+CiAgPCEtLSBzeW1tZXRyaWMgcmF5IC0tPgogIDxsaW5lIHgxPSIxMjAiIHkxPSIyMzAiIHgyPSIzMDAiIHkyPSIyNTUiIHN0cm9rZT0iI2M2MjgyOCIgc3Ryb2tlLXdpZHRoPSIyLjUiIG1hcmtlci1lbmQ9InVybCgjajEpIi8+CiAgPGxpbmUgeDE9IjMwMCIgeTE9IjI1NSIgeDI9IjQ2MCIgeTI9IjI1NSIgc3Ryb2tlPSIjMmU3ZDMyIiBzdHJva2Utd2lkdGg9IjIuNSIgbWFya2VyLWVuZD0idXJsKCNqMikiLz4KICA8bGluZSB4MT0iNDYwIiB5MT0iMjU1IiB4Mj0iNjYwIiB5Mj0iMjgwIiBzdHJva2U9IiNlNjUxMDAiIHN0cm9rZS13aWR0aD0iMi41IiBtYXJrZXItZW5kPSJ1cmwoI2ozKSIvPgogIDx0ZXh0IHg9IjkwIiB5PSIyMjUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiNjNjI4MjgiPmkgKGluY2lkZW5jZSk8L3RleHQ+CiAgPHRleHQgeD0iNjY1IiB5PSIyODAiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiNlNjUxMDAiPmkgKGVtZXJnZW5jZSk8L3RleHQ+CiAgPHRleHQgeD0iMzYwIiB5PSIyNTAiIGZvbnQtc2l6ZT0iMTAiIGZpbGw9IiMyZTdkMzIiPnLigoEgPSBy4oKCID0gQS8yICjiiKUgYmFzZSk8L3RleHQ+CiAgPCEtLSBvcmlnaW5hbCBkaXJlY3Rpb24gLS0+CiAgPGxpbmUgeDE9IjEyMCIgeTE9IjIzMCIgeDI9IjY2MCIgeTI9IjIzMCIgc3Ryb2tlPSIjNmExYjlhIiBzdHJva2Utd2lkdGg9IjEuNSIgc3Ryb2tlLWRhc2hhcnJheT0iNSwzIi8+CiAgPHRleHQgeD0iNDgwIiB5PSIyMjUiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM2YTFiOWEiPm9yaWdpbmFsIHN0cmFpZ2h0IHBhdGg8L3RleHQ+CiAgPCEtLSBkZXZpYXRpb24gYXJjIC0tPgogIDxwYXRoIGQ9Ik02MDAgMjUwIEE0MCA0MCAwIDAgMSA2NDAgMjc1IiBmaWxsPSJub25lIiBzdHJva2U9IiM2YTFiOWEiIHN0cm9rZS13aWR0aD0iMS41Ii8+CiAgPHRleHQgeD0iNjQ1IiB5PSIyNzAiIGZvbnQtc2l6ZT0iMTMiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjNmExYjlhIj7OtF9tPC90ZXh0PgogIDwhLS0gZm9ybXVsYXMgLS0+CiAgPHRleHQgeD0iMTIwIiB5PSIzNDAiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMGQ0N2ExIj5TeW1tZXRyeTogaeKCgSA9IGnigoIgPSBpLCAgcuKCgSA9IHLigoIgPSBBLzI8L3RleHQ+CiAgPHRleHQgeD0iNDIwIiB5PSIzNDAiIGZvbnQtc2l6ZT0iMTIiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMGQ0N2ExIj7OtF9tID0gMmkg4oiSIEEgwrcgIG4gPSBzaW5bKEErzrRfbSkvMl0vc2luKEEvMik8L3RleHQ+CiAgPGRlZnM+CiAgICA8bWFya2VyIGlkPSJqMSIgbWFya2VyV2lkdGg9IjEwIiBtYXJrZXJIZWlnaHQ9IjciIHJlZlg9IjEwIiByZWZZPSIzLjUiIG9yaWVudD0iYXV0byI+PHBvbHlnb24gcG9pbnRzPSIwIDAsIDEwIDMuNSwgMCA3IiBmaWxsPSIjYzYyODI4Ii8+PC9tYXJrZXI+CiAgICA8bWFya2VyIGlkPSJqMiIgbWFya2VyV2lkdGg9IjEwIiBtYXJrZXJIZWlnaHQ9IjciIHJlZlg9IjEwIiByZWZZPSIzLjUiIG9yaWVudD0iYXV0byI+PHBvbHlnb24gcG9pbnRzPSIwIDAsIDEwIDMuNSwgMCA3IiBmaWxsPSIjMmU3ZDMyIi8+PC9tYXJrZXI+CiAgICA8bWFya2VyIGlkPSJqMyIgbWFya2VyV2lkdGg9IjEwIiBtYXJrZXJIZWlnaHQ9IjciIHJlZlg9IjEwIiByZWZZPSIzLjUiIG9yaWVudD0iYXV0byI+PHBvbHlnb24gcG9pbnRzPSIwIDAsIDEwIDMuNSwgMCA3IiBmaWxsPSIjZTY1MTAwIi8+PC9tYXJrZXI+CiAgPC9kZWZzPgo8L3N2Zz4K" alt="Prism minimum deviation ray path">
+<div class="cap">Fig 8.1 &mdash; Ray path through a prism; at minimum deviation the ray is symmetric, i = e and r&sub1; = r&sub2; = A/2.</div>
+</div>
+
+<h3>Q8.2 &mdash; Minimum deviation conditions; spectrum; dispersion &amp; power</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Explain minimum deviation; state the two conditions satisfied at minimum deviation and why deviation is minimum there. <span class="marks">[2]</span></p>
+<p class="qtext">(b) Explain dispersion of white light by a prism and why a spectrum is obtained; state why violet is deviated most. <span class="marks">[3]</span></p>
+<p class="qtext">(c) A prism (A = 60&deg;) gives minimum deviation &delta;v = 42&deg; for violet and &delta;r = 38&deg; for red. Find &mu; for each and the angular dispersion. <span class="marks">[3]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> As i is varied, &delta; (and hence e) changes; &delta; passes through a minimum &delta;m. <b>Conditions at minimum deviation:</b> (i) the incident ray and emergent ray make equal angles with the base, i.e. i = e; (ii) the path inside the prism is symmetric, r&sub1; = r&sub2; = A/2. This happens because &delta;(i) is a symmetric function and its minimum occurs at the symmetric position, also corresponding to a ray parallel to the base inside.</p>
+<p class="step"><b>(b)</b> White light contains all colours; &mu; depends on wavelength (&lambda;): &mu;violet &gt; &mu;blue &gt; &hellip; &gt; &mu;red (Cauchy&rsquo;s law, &mu; &propto; 1/&lambda;&sup2;). Since &delta; depends on &mu;, each colour deviates by a different amount &mdash; violet least speed / most &mu; bends most, red least. The colours separate into a <b>spectrum</b> (red end least deviated, violet end most). Angular dispersion = &delta;v &minus; &delta;r.</p>
+<p class="step"><b>(c)</b> &mu;v = sin((60+42)/2)/sin 30&deg; = sin 51&deg;/0.5 = 0.7771/0.5 &asymp; 1.55.</p>
+<p class="step">&mu;r = sin((60+38)/2)/sin 30&deg; = sin 49&deg;/0.5 = 0.7547/0.5 &asymp; 1.51.</p>
+<p class="step">Angular dispersion = &delta;v &minus; &delta;r = 42&deg; &minus; 38&deg; = <b>4&deg;</b>. Power of dispersion = &Delta;&mu; = &mu;v &minus; &mu;r &asymp; 0.04.</p>
+<p class="final">&mu;v &asymp; 1.55, &mu;r &asymp; 1.51, angular dispersion = 4&deg;; violet bends most because &mu;violet &gt; &mu;red.</p>
+</div>
+
+<div class="diagram">
+<img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA3NjAgMzYwIiBmb250LWZhbWlseT0iQXJpYWwsIHNhbnMtc2VyaWYiPgogIDxyZWN0IHdpZHRoPSI3NjAiIGhlaWdodD0iMzYwIiBmaWxsPSIjZjhmOWZhIiByeD0iOCIvPgogIDx0ZXh0IHg9IjM4MCIgeT0iMjUiIHRleHQtYW5jaG9yPSJtaWRkbGUiIGZvbnQtc2l6ZT0iMTUiIGZvbnQtd2VpZ2h0PSJib2xkIiBmaWxsPSIjMWExYTJlIj5QUklTTSBESVNQRVJTSU9OIOKAkyB3aGl0ZSBsaWdodCBzcGxpdHMgaW50byBzcGVjdHJ1bTwvdGV4dD4KICA8IS0tIHdoaXRlIGluIC0tPgogIDxsaW5lIHgxPSI5MCIgeTE9IjE4NSIgeDI9IjI4MCIgeTI9IjE4NSIgc3Ryb2tlPSIjNDI0MjQyIiBzdHJva2Utd2lkdGg9IjUiIG1hcmtlci1lbmQ9InVybCgjazEpIi8+CiAgPHRleHQgeD0iNjAiIHk9IjE3NSIgZm9udC1zaXplPSIxMiIgZmlsbD0iIzQyNDI0MiI+d2hpdGUgbGlnaHQ8L3RleHQ+CiAgPCEtLSBwcmlzbSAtLT4KICA8cG9seWdvbiBwb2ludHM9IjI4MCwzMjAgNDcwLDMyMCAzNzUsMTEwIiBmaWxsPSJub25lIiBzdHJva2U9IiM2YTFiOWEiIHN0cm9rZS13aWR0aD0iMyIvPgogIDxsaW5lIHgxPSIzNzUiIHkxPSIxMTAiIHgyPSIzNzUiIHkyPSIzMjAiIHN0cm9rZT0iIzZhMWI5YSIgc3Ryb2tlLXdpZHRoPSIxIiBzdHJva2UtZGFzaGFycmF5PSI1LDMiLz4KICA8dGV4dCB4PSIzODAiIHk9IjEwNSIgZm9udC1zaXplPSIxMSIgZmlsbD0iI2M2MjgyOCI+QTwvdGV4dD4KICA8IS0tIHNwZWN0cnVtIG91dCAodmlvbGV0IG1vc3QgYmVudCkgLS0+CiAgPGxpbmUgeDE9IjQ3MCIgeTE9IjIzMCIgeDI9IjY0MCIgeTI9IjIyMCIgc3Ryb2tlPSIjYzYyODI4IiBzdHJva2Utd2lkdGg9IjIuNSIgbWFya2VyLWVuZD0idXJsKCNrMikiLz4KICA8bGluZSB4MT0iNDcwIiB5MT0iMjMwIiB4Mj0iNjQ1IiB5Mj0iMjQwIiBzdHJva2U9IiNlNjUxMDAiIHN0cm9rZS13aWR0aD0iMi41Ii8+CiAgPGxpbmUgeDE9IjQ3MCIgeTE9IjIzMCIgeDI9IjY1MCIgeTI9IjI2MiIgc3Ryb2tlPSIjZjlhODI1IiBzdHJva2Utd2lkdGg9IjIuNSIvPgogIDxsaW5lIHgxPSI0NzAiIHkxPSIyMzAiIHgyPSI2NTIiIHkyPSIyODgiIHN0cm9rZT0iIzJlN2QzMiIgc3Ryb2tlLXdpZHRoPSIyLjUiLz4KICA8bGluZSB4MT0iNDcwIiB5MT0iMjMwIiB4Mj0iNjU1IiB5Mj0iMzE1IiBzdHJva2U9IiMxNTY1YzAiIHN0cm9rZS13aWR0aD0iMi41Ii8+CiAgPGxpbmUgeDE9IjQ3MCIgeTE9IjIzMCIgeDI9IjY2MCIgeTI9IjM0NSIgc3Ryb2tlPSIjNDUyN2EwIiBzdHJva2Utd2lkdGg9IjIuNSIvPgogIDx0ZXh0IHg9IjY0NSIgeT0iMjE4IiBmb250LXNpemU9IjExIiBmaWxsPSIjYzYyODI4Ij5SZWQgKGxlYXN0IGRldmlhdGlvbik8L3RleHQ+CiAgPHRleHQgeD0iNjYwIiB5PSIzNTAiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM0NTI3YTAiPlZpb2xldCAobW9zdCBkZXZpYXRpb24pPC90ZXh0PgogIDwhLS0gaW50ZXJuYWwgc3BsaXQgLS0+CiAgPGxpbmUgeDE9IjI4MCIgeTE9IjE4NSIgeDI9IjM3NSIgeTI9IjE4NSIgc3Ryb2tlPSIjOWU5ZTllIiBzdHJva2Utd2lkdGg9IjEiIHN0cm9rZS1kYXNoYXJyYXk9IjMsMyIvPgogIDx0ZXh0IHg9IjE4MCIgeT0iMzAwIiBmb250LXNpemU9IjEyIiBmb250LXdlaWdodD0iYm9sZCIgZmlsbD0iIzRhMTQ4YyI+bl92aW9sZXQgJmd0OyBuX3JlZCDihpIgdmlvbGV0IGJlbmRzIE1PUkUgdGhhbiByZWQ8L3RleHQ+CiAgPHRleHQgeD0iMTgwIiB5PSIzMjAiIGZvbnQtc2l6ZT0iMTEiIGZpbGw9IiM0MjQyNDIiPkFuZ3VsYXIgZGlzcGVyc2lvbiBEID0gzrRfdiDiiJIgzrRfciDCtyAgRGlzcGVyc2luZyBwb3dlciDPiSA9IEQvzrRfeTwvdGV4dD4KICA8ZGVmcz4KICAgIDxtYXJrZXIgaWQ9ImsxIiBtYXJrZXJXaWR0aD0iMTAiIG1hcmtlckhlaWdodD0iNyIgcmVmWD0iMTAiIHJlZlk9IjMuNSIgb3JpZW50PSJhdXRvIj48cG9seWdvbiBwb2ludHM9IjAgMCwgMTAgMy41LCAwIDciIGZpbGw9IiM0MjQyNDIiLz48L21hcmtlcj4KICAgIDxtYXJrZXIgaWQ9ImsyIiBtYXJrZXJXaWR0aD0iMTAiIG1hcmtlckhlaWdodD0iNyIgcmVmWD0iMTAiIHJlZlk9IjMuNSIgb3JpZW50PSJhdXRvIj48cG9seWdvbiBwb2ludHM9IjAgMCwgMTAgMy41LCAwIDciIGZpbGw9IiNjNjI4MjgiLz48L21hcmtlcj4KICA8L2RlZnM+Cjwvc3ZnPgo=" alt="Prism dispersion spectrum diagram">
+<div class="cap">Fig 8.2 &mdash; White light disperses into a spectrum; violet (larger &mu;) deviates most, red least &mdash; giving the angular dispersion &delta;v &minus; &delta;r.</div>
+</div>
+
+<h3>Q8.3 &mdash; Prism numerical: &mu; &amp; A; deviation &amp; power; isosceles condition</h3>
+<div class="q">
+<span class="qlabel">PROBABLE LONG QUESTION</span>
+<p class="qtext">(a) Explain the power of a prism and its unit; state when two prisms produce no net deviation (dispersive combination). <span class="marks">[2]</span></p>
+<p class="qtext">(b) Find the minimum deviation of a prism with A = 45&deg; and &mu; = 1.42 (use sin&sup1;1.42/2 where needed); take sin 40&deg; = 0.643 if required. <span class="marks">[3]</span></p>
+<p class="qtext">(c) A ray is incident at 45&deg; on a 60&deg; prism (&mu; = 1.50) and emerges at 45&deg;. Verify this is the minimum-deviation case and find &delta;. <span class="marks">[3]</span></p>
+</div>
+<div class="ans">
+<div class="alabel">FULL WORKED ANSWER</div>
+<p><b>(a)</b> <b>Power of a prism:</b> P = &delta; &times; &mu; (in prism-angle units, or P = A(&mu; &minus; 1) for small A). Two prisms in a <b>dispersive combination</b> (prism + flint glass of opposite deviation) give zero net deviation (P&sub1;A&sub1; = P&sub2;A&sub2;) while producing dispersion &mdash; used in achromatic doublets.</p>
+<p class="step"><b>(b)</b> &delta;m = 2 sin&sup1;(&mu; sin(A/2)) &minus; A = 2 sin&sup1;(1.42 &times; sin 22.5&deg;) &minus; 45&deg;. sin 22.5&deg; &asymp; 0.383 &rArr; 1.42 &times; 0.383 &asymp; 0.544 &rArr; sin&sup1;0.544 &asymp; 33&deg;. Hence &delta;m &asymp; 2 &times; 33&deg; &minus; 45&deg; = <b>21&deg;</b>.</p>
+<p class="step"><b>(c)</b> i = e = 45&deg; satisfies the symmetric (minimum-deviation) condition, and the ray inside runs parallel to the base. &delta;m = i + e &minus; A = 45&deg; + 45&deg; &minus; 60&deg; = <b>30&deg;</b>. Check with &mu; = sin(52.5&deg;)/sin 30&deg; = 0.793/0.5 &asymp; 1.59 &asymp; consistent order of 1.5 (small A approximation).</p>
+<p class="final">P = A(&mu;&minus;1); &delta;m &asymp; 21&deg; for A = 45&deg;, &mu; = 1.42; minimum deviation &delta;m = 30&deg; in part (c).</p>
+</div>
+
+<h2 class="unit">MCQ Bank &mdash; All 8 Units (Single-Choice, One-Line Answers + Concepts)</h2>
+
+<div class="keybox">
+<b>How to use:</b> Each question has 4 options. The <b style="color:#2e7d32">bold green</b> option is the single correct answer. Under each is a <b>one-line concept</b> that lets you re-derive the answer in the exam. An answer key is listed at the bottom of each unit.
+</div>
+
+<style>
+  .mcq{background:#f5f5f5;border:1px solid #ddd;border-left:5px solid var(--blue);border-radius:6px;padding:10px 14px;margin:10px 0;font-family:Arial,sans-serif;font-size:14px;}
+  .mcq .qno{font-weight:bold;color:var(--blue);}
+  .mcq .opt{margin:3px 0 3px 8px;color:#1a1a2e;}
+  .mcq .opt.correct{color:#2e7d32;font-weight:bold;}
+  .mcq .conc{font-size:12.5px;color:#333;background:#fff;padding:6px 8px;margin-top:7px;border-left:3px solid #6a1b9a;border-radius:4px;font-style:italic;}
+  .mcq .conc b{color:#6a1b9a;font-style:normal;}
+  .anskey{background:#e8f5e9;border:1px solid #a5d6a7;padding:8px 12px;margin:10px 0 24px;font-family:Arial;font-size:13px;border-radius:6px;}
+  .anskey b{color:#2e7d32;}
+</style>
+
+<!-- ================= UNIT 1 ================= -->
+<h3>Unit 1 &mdash; Physical Quantities &amp; Measurement</h3>
+
+<div class="mcq"><span class="qno">1.1</span> How many base SI units are there?
+<div class="opt">A) 5</div><div class="opt">B) 7</div><div class="opt correct">C) 7 &mdash; metre, kilogram, second, ampere, kelvin, mole, candela</div><div class="opt">D) 4</div>
+<div class="conc"><b>Concept:</b> SI has exactly 7 base quantities; every other unit is derived from them.</div></div>
+
+<div class="mcq"><span class="qno">1.2</span> Which of the following is <b>not</b> a base quantity?
+<div class="opt">A) Length</div><div class="opt">B) Time</div><div class="opt">C) Mass</div><div class="opt correct">D) Force (a derived quantity, F = ma)</div>
+<div class="conc"><b>Concept:</b> Force = mass &times; acceleration has units kg&middot;m/s&sup2; = newton, a derived unit.</div></div>
+
+<div class="mcq"><span class="qno">1.3</span> The dimensional formula of <b>pressure</b> is:
+<div class="opt">A) [M L T<sup>&minus;2</sup>]</div><div class="opt">B) [M L<sup>&minus;1</sup> T]</div><div class="opt correct">C) [M L<sup>&minus;1</sup> T<sup>&minus;2</sup>] &mdash; M L<sup>&minus;1</sup> T<sup>&minus;2</sup></div><div class="opt">D) [L T<sup>&minus;2</sup>]</div>
+<div class="conc"><b>Concept:</b> Pressure = Force&divide;Area = (M L T<sup>&minus;2</sup>) &divide; L<sup>2</sup> = <b>M L<sup>&minus;1</sup> T<sup>&minus;2</sup></b>.</div></div>
+
+<div class="mcq"><span class="qno">1.4</span> The dimensional formula of the <b>coefficient of viscosity</b> (&eta;) is:
+<div class="opt correct">A) [M L<sup>&minus;1</sup> T<sup>&minus;1</sup>] &mdash; M L<sup>&minus;1</sup> T<sup>&minus;1</sup></div><div class="opt">B) [M L T<sup>&minus;1</sup>]</div><div class="opt">C) [M L<sup>&minus;1</sup> T<sup>&minus;2</sup>]</div><div class="opt">D) [L T<sup>&minus;1</sup>]</div>
+<div class="conc"><b>Concept:</b> &eta; = (shear stress)&divide;(velocity gradient) = (M L<sup>&minus;1</sup> T<sup>&minus;2</sup>) &divide; (T<sup>&minus;1</sup>) = <b>M L<sup>&minus;1</sup> T<sup>&minus;1</sup></b>.</div></div>
+
+<div class="mcq"><span class="qno">1.5</span> Dimensional analysis can <b>not</b>:
+<div class="opt">A) check homogeneity of an equation</div><div class="opt">B) suggest a form of a relation between quantities</div><div class="opt correct">C) give the numerical value of a dimensionless constant (like &frac12; or &pi;)</div><div class="opt">D) verify dimensional consistency of a formula</div>
+<div class="conc"><b>Concept:</b> Dimensions track only powers of M, L, T; they cannot produce pure numbers or verify sums of unlike terms.</div></div>
+
+<div class="mcq"><span class="qno">1.6</span> The period T of a simple pendulum depends on L, g, and m. Dimensional analysis gives:
+<div class="opt">A) T &propto; L g m</div><div class="opt correct">B) T &propto; &radic;(L/g) (independent of mass)</div><div class="opt">C) T &propto; L/g&sup2;</div><div class="opt">D) T &propto; m L&sup1;g</div>
+<div class="conc"><b>Concept:</b> Matching [T] = L&sup1; a&sup3; b&sup3; gives a = &frac12;, b = &minus;&frac12;, c = 0 &rArr; T = 2&pi;&radic;(L/g).</div></div>
+
+<div class="mcq"><span class="qno">1.7</span> Which statement about a <b>random error</b> is correct?
+<div class="opt">A) It always has the same sign</div><div class="opt correct">B) Its sign varies irregularly; it is reduced by averaging many readings</div><div class="opt">C) It is eliminated by recalibrating the instrument</div><div class="opt">D) It is proportional to the true value</div>
+<div class="conc"><b>Concept:</b> Random errors are unpredictable; averaging N readings cuts the standard error by &radic;N. Systematic errors are one-directional and need calibration.</div></div>
+
+<div class="mcq"><span class="qno">1.8</span> The number of significant figures in 0.00320 m is:
+<div class="opt">A) 5</div><div class="opt">B) 2</div><div class="opt correct">C) 3 &mdash; the digits 3, 2, and the trailing zero</div><div class="opt">D) 4</div>
+<div class="conc"><b>Concept:</b> Leading zeros (before the first non-zero) are <b>never</b> significant. Trailing zeros after a decimal point <b>are</b>.</div></div>
+
+<div class="mcq"><span class="qno">1.9</span> Taking N independent readings of a quantity, the standard error of the mean is:
+<div class="opt">A) &sigma;N</div><div class="opt">B) &sigma;&sup2;N</div><div class="opt correct">C) &sigma;&divide;&radic;N</div><div class="opt">D) N&divide;&sigma;</div>
+<div class="conc"><b>Concept:</b> The mean of N readings is more precise by a factor of &radic;N &mdash; averaging reduces random error.</div></div>
+
+<div class="mcq"><span class="qno">1.10</span> The SI base unit for electric current is:
+<div class="opt">A) volt</div><div class="opt">B) coulomb</div><div class="opt correct">C) ampere</div><div class="opt">D) ohm</div>
+<div class="conc"><b>Concept:</b> Ampere is the 4th base SI unit. Coulomb (charge) = ampere&times;second is derived.</div></div>
+
+<div class="anskey"><b>Unit 1 &mdash; Answer key:</b> 1.1 C &middot; 1.2 D &middot; 1.3 C &middot; 1.4 A &middot; 1.5 C &middot; 1.6 B &middot; 1.7 B &middot; 1.8 C &middot; 1.9 C &middot; 1.10 C</div>
+
+<!-- ================= UNIT 2 ================= -->
+<h3>Unit 2 &mdash; Vectors</h3>
+
+<div class="mcq"><span class="qno">2.1</span> The magnitude of the <b>cross product</b> A&times;B is:
+<div class="opt">A) |A||B| cos&theta;</div><div class="opt correct">B) |A||B| sin&theta; &mdash; depends on the perpendicular component</div><div class="opt">C) |A||B| tan&theta;</div><div class="opt">D) |A||B|</div>
+<div class="conc"><b>Concept:</b> |A&times;B| = |A||B| sin&theta;; the dot product A&middot;B = |A||B| cos&theta; uses the parallel component.</div></div>
+
+<div class="mcq"><span class="qno">2.2</span> If A&middot;B = 0, vectors A and B are:
+<div class="opt">A) parallel</div><div class="opt correct">B) perpendicular (90&deg;)</div><div class="opt">C) anti-parallel</div><div class="opt">D) equal in magnitude</div>
+<div class="conc"><b>Concept:</b> A&middot;B = |A||B| cos&theta; = 0 requires cos&theta; = 0, i.e. &theta; = 90&deg;.</div></div>
+
+<div class="mcq"><span class="qno">2.3</span> The cross product A&times;B is:
+<div class="opt">A) commutative &mdash; A&times;B = B&times;A</div><div class="opt correct">B) anti-commutative &mdash; A&times;B = &minus;(B&times;A)</div><div class="opt">C) always a scalar</div><div class="opt">D) zero for all vectors</div>
+<div class="conc"><b>Concept:</b> Swapping the order reverses the direction (right-hand rule), so the sign flips.</div></div>
+
+<div class="mcq"><span class="qno">2.4</span> Two vectors of equal magnitude A, angle 60&deg; between them: the magnitude of their resultant is:
+<div class="opt">A) A</div><div class="opt correct">B) &radic;3 A</div><div class="opt">C) 2A</div><div class="opt">D) &frac12;A</div>
+<div class="conc"><b>Concept:</b> R = &radic;(A&sup2; + A&sup2; + 2A&sup2; cos60&deg;) = &radic;(2A&sup2; + A&sup2;) = &radic;3 A.</div></div>
+
+<div class="mcq"><span class="qno">2.5</span> The resultant of two equal vectors with angle 90&deg; is:
+<div class="opt">A) 2A</div><div class="opt correct">B) &radic;2 A, directed at 45&deg; to each vector</div><div class="opt">C) A</div><div class="opt">D) zero</div>
+<div class="conc"><b>Concept:</b> R = &radic;(A&sup2; + A&sup2; + 0) = &radic;2 A; by symmetry it bisects the 90&deg; angle.</div></div>
+
+<div class="mcq"><span class="qno">2.6</span> A unit vector has magnitude:
+<div class="opt">A) equal to the original vector</div><div class="opt correct">B) exactly 1</div><div class="opt">C) 0</div><div class="opt">D) 10</div>
+<div class="conc"><b>Concept:</b> Unit vector = vector&divide;|vector|; by definition its magnitude is 1.</div></div>
+
+<div class="mcq"><span class="qno">2.7</span> A boat crossing a river with current: to minimise crossing time, aim:
+<div class="opt">A) upstream</div><div class="opt">B) downstream</div><div class="opt correct">C) perpendicular to the current</div><div class="opt">D) at 45&deg; to the bank</div>
+<div class="conc"><b>Concept:</b> Crossing time = width&divide;v<sub>cross</sub>; it is smallest when the full boat speed is used across the river.</div></div>
+
+<div class="mcq"><span class="qno">2.8</span> The dot product of a vector with itself (A&middot;A) equals:
+<div class="opt">A) |A|</div><div class="opt correct">B) |A|&sup2;</div><div class="opt">C) 0</div><div class="opt">D) 2|A|</div>
+<div class="conc"><b>Concept:</b> A&middot;A = |A||A| cos0&deg; = |A|&sup2;.</div></div>
+
+<div class="mcq"><span class="qno">2.9</span> The cross product A&times;B is a vector that:
+<div class="opt">A) lies in the plane of A and B</div><div class="opt correct">B) is perpendicular to the plane containing A and B (right-hand rule)</div><div class="opt">C) is always zero</div><div class="opt">D) points along A</div>
+<div class="conc"><b>Concept:</b> The result is perpendicular to both input vectors, direction given by the right-hand rule.</div></div>
+
+<div class="mcq"><span class="qno">2.10</span> The minimum number of non-coplanar vectors needed to add up to a non-zero resultant is:
+<div class="opt">A) 2</div><div class="opt">B) 3</div><div class="opt correct">C) 3 &mdash; three vectors in a plane can sum to zero (triangle)</div><div class="opt">D) 4</div>
+<div class="conc"><b>Concept:</b> In 2D, three vectors form a closed triangle and sum to zero; three 3D vectors can close a tetrahedron. Two vectors can never close a loop unless anti-parallel.</div></div>
+
+<div class="anskey"><b>Unit 2 &mdash; Answer key:</b> 2.1 B &middot; 2.2 B &middot; 2.3 B &middot; 2.4 B &middot; 2.5 B &middot; 2.6 B &middot; 2.7 C &middot; 2.8 B &middot; 2.9 B &middot; 2.10 C</div>
+
+<!-- ================= UNIT 3 ================= -->
+<h3>Unit 3 &mdash; Kinematics</h3>
+
+<div class="mcq"><span class="qno">3.1</span> Distance travelled in 1 s from rest with uniform acceleration a = 2 m/s&sup2;:
+<div class="opt">A) 2 m</div><div class="opt">B) 4 m</div><div class="opt correct">C) 1 m &mdash; s = &frac12;at&sup2; = &frac12;&times;2&times;1&sup2; = 1 m</div><div class="opt">D) 0.5 m</div>
+<div class="conc"><b>Concept:</b> From rest, s = &frac12;at&sup2;; in the first second the body travels only 1 m, not 2 m.</div></div>
+
+<div class="mcq"><span class="qno">3.2</span> The range of a projectile is maximum at angle:
+<div class="opt">A) 30&deg;</div><div class="opt">B) 60&deg;</div><div class="opt correct">C) 45&deg; &mdash; R = u&sup2;sin2&theta;/g, peaks at sin90&deg; = 1</div><div class="opt">D) 90&deg;</div>
+<div class="conc"><b>Concept:</b> R = u&sup2;sin2&theta;/g; sin2&theta; is maximum (= 1) when 2&theta; = 90&deg;, i.e. &theta; = 45&deg;.</div></div>
+
+<div class="mcq"><span class="qno">3.3</span> Projectiles launched at 30&deg; and 60&deg; (same speed, same level) have:
+<div class="opt">A) different ranges, 60&deg; is larger</div><div class="opt correct">B) the same range (complementary angles) but different times of flight</div><div class="opt">C) the same range and same time of flight</div><div class="opt">D) the 30&deg; launch has the larger range</div>
+<div class="conc"><b>Concept:</b> sin2(30&deg;) = sin2(60&deg;) = sin60&deg; &rArr; R is the same. But time of flight &propto; sin&theta; differs.</div></div>
+
+<div class="mcq"><span class="qno">3.4</span> Time to reach maximum height for a projectile at angle &theta;:
+<div class="opt">A) u cos&theta;/g</div><div class="opt">B) u/g</div><div class="opt correct">C) u sin&theta;/g &mdash; vertical velocity becomes zero at the apex</div><div class="opt">D) 2u sin&theta;/g</div>
+<div class="conc"><b>Concept:</b> v<sub>y</sub> = u sin&theta; &minus; gt = 0 &rArr; t = u sin&theta;/g. Total time of flight = 2u sin&theta;/g.</div></div>
+
+<div class="mcq"><span class="qno">3.5</span> Centripetal acceleration for circular motion with speed v and radius r is:
+<div class="opt">A) vr</div><div class="opt correct">B) v&sup2;/r &mdash; directed radially inward</div><div class="opt">C) r/v</div><div class="opt">D) &omega;&sup2;/v</div>
+<div class="conc"><b>Concept:</b> a = v&sup2;/r = &omega;&sup2;r; it always points toward the centre, changing direction not speed.</div></div>
+
+<div class="mcq"><span class="qno">3.6</span> In uniform circular motion, which of the following is <b>constant</b>?
+<div class="opt">A) the velocity vector</div><div class="opt">B) the acceleration vector</div><div class="opt correct">C) the speed (magnitude of velocity) and the magnitude of centripetal acceleration</div><div class="opt">D) the position vector</div>
+<div class="conc"><b>Concept:</b> |v| and |a| are constant, but the <i>directions</i> of v and a change continuously.</div></div>
+
+<div class="mcq"><span class="qno">3.7</span> A stone tied to a string is whirled in a circle; when the string breaks, the stone:
+<div class="opt">A) continues in a circle</div><div class="opt">B) moves radially outward</div><div class="opt correct">C) moves tangentially in a straight line (Newton&rsquo;s 1st law)</div><div class="opt">D) stops instantly</div>
+<div class="conc"><b>Concept:</b> With centripetal force gone, the stone continues in the instantaneous tangent direction.</div></div>
+
+<div class="mcq"><span class="qno">3.8</span> In SHM, the acceleration is:
+<div class="opt">A) constant</div><div class="opt">B) maximum at the mean position</div><div class="opt correct">C) proportional to displacement and directed toward the mean (a = &minus;&omega;&sup2;x)</div><div class="opt">D) zero at the extremes</div>
+<div class="conc"><b>Concept:</b> a = &minus;&omega;&sup2;x: zero at x = 0, maximum at x = &plusmn;A (extremes).</div></div>
+
+<div class="mcq"><span class="qno">3.9</span> In SHM, the velocity is maximum at:
+<div class="opt">A) the extreme positions</div><div class="opt correct">B) the mean position (x = 0)</div><div class="opt">C) halfway to the extreme</div><div class="opt">D) never; velocity is always zero</div>
+<div class="conc"><b>Concept:</b> v = &omega;&radic;(A&sup2; &minus; x&sup2;); maximum at x = 0, zero at x = &plusmn;A.</div></div>
+
+<div class="mcq"><span class="qno">3.10</span> The total mechanical energy of a body in SHM:
+<div class="opt">A) is maximum at the mean position</div><div class="opt">B) is maximum at the extremes</div><div class="opt correct">C) is constant throughout the motion</div><div class="opt">D) varies periodically</div>
+<div class="conc"><b>Concept:</b> KE and PE exchange (KE &harr; PE) but the sum E = &frac12;m&omega;&sup2;A&sup2; is conserved.</div></div>
+
+<div class="mcq"><span class="qno">3.11</span> A wheel of radius r rolls without slipping on a road with centre speed v. The speed of the topmost point is:
+<div class="opt">A) 0</div><div class="opt">B) v</div><div class="opt correct">C) 2v</div><div class="opt">D) v/2</div>
+<div class="conc"><b>Concept:</b> Instantaneous rotation about the contact point: top = 2r&times;&omega; = 2v; contact point = 0.</div></div>
+
+<div class="mcq"><span class="qno">3.12</span> The amplitude of a damped oscillation:
+<div class="opt">A) grows with time</div><div class="opt">B) stays constant</div><div class="opt correct">C) decreases exponentially</div><div class="opt">D) oscillates</div>
+<div class="conc"><b>Concept:</b> A resistive force continuously drains energy, so amplitude falls as e&sup3;&frac12;&times;.</div></div>
+
+<div class="anskey"><b>Unit 3 &mdash; Answer key:</b> 3.1 C &middot; 3.2 C &middot; 3.3 B &middot; 3.4 C &middot; 3.5 B &middot; 3.6 C &middot; 3.7 C &middot; 3.8 C &middot; 3.9 B &middot; 3.10 C &middot; 3.11 C &middot; 3.12 C</div>
+
+<!-- ================= UNIT 4 ================= -->
+<h3>Unit 4 &mdash; Heat &amp; Temperature</h3>
+
+<div class="mcq"><span class="qno">4.1</span> The key difference between <b>heat</b> and <b>temperature</b> is that:
+<div class="opt">A) temperature is a process quantity</div><div class="opt correct">B) heat is energy in transit; temperature is a state property of a body</div><div class="opt">C) both are measured in kelvin</div><div class="opt">D) heat is a state function</div>
+<div class="conc"><b>Concept:</b> A body does not "contain heat"; it contains internal energy. Heat flows because of a temperature difference.</div></div>
+
+<div class="mcq"><span class="qno">4.2</span> The temperature at which the Celsius and Fahrenheit scales read the same value is:
+<div class="opt">A) 0&deg;</div><div class="opt">B) 100&deg;</div><div class="opt correct">C) &minus;40&deg; (C&deg; = F&deg; = &minus;40)</div><div class="opt">D) 32&deg;</div>
+<div class="conc"><b>Concept:</b> Setting &frac95;C + 32 = F with C = F gives C = &minus;40.</div></div>
+
+<div class="mcq"><span class="qno">4.3</span> Absolute zero in degrees Celsius is:
+<div class="opt">A) 0&deg;C</div><div class="opt">B) &minus;100&deg;C</div><div class="opt correct">C) &minus;273.15&deg;C (= 0 K)</div><div class="opt">D) &minus;459.67&deg;C</div>
+<div class="conc"><b>Concept:</b> 0 K = &minus;273.15&deg;C; the lowest possible temperature where molecular kinetic energy is minimum.</div></div>
+
+<div class="mcq"><span class="qno">4.4</span> Heat is <b>not</b> transferred by convection in:
+<div class="opt">A) air</div><div class="opt">B) water</div><div class="opt correct">C) a vacuum (no material to carry the heat)</div><div class="opt">D) oil</div>
+<div class="conc"><b>Concept:</b> Convection requires a fluid (liquid or gas) to move; a vacuum has none &mdash; only radiation can cross it.</div></div>
+
+<div class="mcq"><span class="qno">4.5</span> Which material has the highest thermal conductivity?
+<div class="opt">A) wood</div><div class="opt">B) glass</div><div class="opt">C) air</div><div class="opt correct">D) copper (good metals conduct best; silver &gt; copper &gt; brass)</div>
+<div class="conc"><b>Concept:</b> Metal &asymp; 200&ndash;400 W/mK; wood &asymp; 0.1&ndash;0.2; air &asymp; 0.026 &mdash; metals are far better conductors.</div></div>
+
+<div class="mcq"><span class="qno">4.6</span> The coefficient of volume expansion &beta; for a solid is approximately:
+<div class="opt">A) &beta; = &alpha; (the linear coefficient)</div><div class="opt correct">B) &beta; &asymp; 3&alpha; (three linear dimensions expand)</div><div class="opt">C) &beta; &asymp; &alpha;&sup2;</div><div class="opt">D) &beta; = 0</div>
+<div class="conc"><b>Concept:</b> Volume has three linear dimensions: dV/V = 3 dL/L &rArr; &beta; &asymp; 3&alpha;.</div></div>
+
+<div class="mcq"><span class="qno">4.7</span> For an ideal <b>monatomic</b> gas, &gamma; = C<sub>p</sub>/C<sub>v</sub> is:
+<div class="opt">A) 1.4 (7/5)</div><div class="opt">B) 1.33 (4/3)</div><div class="opt correct">C) 1.67 (5/3)</div><div class="opt">D) 1.0</div>
+<div class="conc"><b>Concept:</b> &gamma;: monatomic = 5/3 &asymp; 1.67; diatomic = 7/5 = 1.4; polyatomic = 4/3 &asymp; 1.33.</div></div>
+
+<div class="mcq"><span class="qno">4.8</span> Mayer&rsquo;s relation for an ideal gas (per mole) is:
+<div class="opt">A) C<sub>p</sub> &times; C<sub>v</sub> = R</div><div class="opt">B) C<sub>p</sub> + C<sub>v</sub> = R</div><div class="opt correct">C) C<sub>p</sub> &minus; C<sub>v</sub> = R</div><div class="opt">D) C<sub>p</sub> &minus; C<sub>v</sub> = 2R</div>
+<div class="conc"><b>Concept:</b> The difference C<sub>p</sub> &minus; C<sub>v</sub> equals the universal gas constant R = 8.314 J/mol/K (per mole).</div></div>
+
+<div class="mcq"><span class="qno">4.9</span> A good thermal <b>conductor</b> is a:
+<div class="opt">A) good thermal insulator</div><div class="opt correct">B) poor thermal insulator</div><div class="opt">C) the same thing as an insulator</div><div class="opt">D) a vacuum</div>
+<div class="conc"><b>Concept:</b> Conductor and insulator are opposites; a material with high &kappa; is a bad insulator.</div></div>
+
+<div class="mcq"><span class="qno">4.10</span> Heat radiation from the Sun reaches Earth through:
+<div class="opt">A) conduction in air</div><div class="opt">B) convection currents in space</div><div class="opt correct">C) electromagnetic radiation in a vacuum (infrared waves)</div><div class="opt">D) both A and B</div>
+<div class="conc"><b>Concept:</b> Space is a vacuum &mdash; only radiation (infrared light) can carry the heat across it.</div></div>
+
+<div class="anskey"><b>Unit 4 &mdash; Answer key:</b> 4.1 B &middot; 4.2 C &middot; 4.3 C &middot; 4.4 C &middot; 4.5 D &middot; 4.6 B &middot; 4.7 C &middot; 4.8 C &middot; 4.9 B &middot; 4.10 C</div>
+
+<!-- ================= UNIT 5 ================= -->
+<h3>Unit 5 &mdash; Quantity of Heat</h3>
+
+<div class="mcq"><span class="qno">5.1</span> The specific heat capacity of water is approximately:
+<div class="opt">A) 418 J kg&sup3;K&sup3;</div><div class="opt">B) 41860 J kg&sup3;K&sup3;</div><div class="opt correct">C) 4186 J kg&sup3;K&sup3; (= 4.186 kJ kg&sup3;K&sup3;)</div><div class="opt">D) 2090 J kg&sup3;K&sup3;</div>
+<div class="conc"><b>Concept:</b> Water has one of the highest c values; ice is about half at 2090 J kg&sup3;K&sup3;.</div></div>
+
+<div class="mcq"><span class="qno">5.2</span> During a phase change (ice &rarr; water at 0&deg;C), the temperature:
+<div class="opt">A) rises steadily</div><div class="opt">B) falls</div><div class="opt correct">C) stays constant while latent heat is absorbed</div><div class="opt">D) oscillates</div>
+<div class="conc"><b>Concept:</b> All energy goes into breaking molecular bonds (latent heat); no energy is available to raise T.</div></div>
+
+<div class="mcq"><span class="qno">5.3</span> The latent heat of <b>fusion</b> of ice is:
+<div class="opt">A) 2.26 &times; 10&sup3; J/kg</div><div class="opt">B) 33.4 kJ/kg</div><div class="opt correct">C) 334 kJ/kg (= 3.34 &times; 10&sup3; J/kg)</div><div class="opt">D) 418 kJ/kg</div>
+<div class="conc"><b>Concept:</b> L<sub>f</sub>(ice) = 334 kJ/kg; L<sub>v</sub>(water) = 2.26 &times; 10&sup3; kJ/kg &asymp; 6.8&times; L<sub>f</sub>.</div></div>
+
+<div class="mcq"><span class="qno">5.4</span> The mechanical equivalent of heat (J) is:
+<div class="opt">A) 4186 cal/J</div><div class="opt">B) 1 J/cal</div><div class="opt correct">C) 4.186 J per calorie</div><div class="opt">D) 4.186 cal/J</div>
+<div class="conc"><b>Concept:</b> 1 cal = 4.186 J, so J (work per calorie) = 4.186 J/cal (Joule found this experimentally).</div></div>
+
+<div class="mcq"><span class="qno">5.5</span> One calorie is defined as:
+<div class="opt">A) the energy to raise 1 kg of water by 1&deg;C</div><div class="opt correct">B) the energy to raise approximately 1 g of water by 1&deg;C (4.186 J)</div><div class="opt">C) the work to lift 1 kg by 1 m</div><div class="opt">D) the SI unit of energy</div>
+<div class="conc"><b>Concept:</b> 1 cal &asymp; 4.186 J; the SI unit of energy is the joule, not the calorie.</div></div>
+
+<div class="mcq"><span class="qno">5.6</span> The principle of mixtures (calorimetry) assumes:
+<div class="opt">A) heat is lost to the surroundings</div><div class="opt">B) the container absorbs all the heat</div><div class="opt correct">C) no heat is lost &mdash; total heat lost = total heat gained (perfectly insulated)</div><div class="opt">D) both bodies reach the same temperature instantly</div>
+<div class="conc"><b>Concept:</b> With an insulated calorimeter, &Sigma;Q<sub>lost</sub> = &Sigma;Q<sub>gained</sub>; final temperature is found by energy conservation.</div></div>
+
+<div class="mcq"><span class="qno">5.7</span> Which requires more heat: 1 kg of water from 0&rarr;100&deg;C, or 1 kg of ice from &minus;20&rarr;0&deg;C?
+<div class="opt">A) The ice from &minus;20&rarr;0&deg;C (smaller &Delta;T but low c)</div><div class="opt correct">B) Water from 0&rarr;100&deg;C (large &Delta;T and high c = 4186)</div><div class="opt">C) Both are equal</div><div class="opt">D) Cannot be determined</div>
+<div class="conc"><b>Concept:</b> Q<sub>water</sub> = 4186&times;100 = 418.6 kJ; Q<sub>ice</sub> = 2090&times;20 = 41.8 kJ; water needs &asymp;10&times; more.</div></div>
+
+<div class="mcq"><span class="qno">5.8</span> Steam at 100&deg;C burns more severely than water at 100&deg;C because:
+<div class="opt">A) steam has a higher temperature</div><div class="opt">B) steam has a higher specific heat</div><div class="opt correct">C) on condensing, steam releases the large latent heat L<sub>v</sub> (2.26 &times; 10&sup3; J/kg)</div><div class="opt">D) steam is denser than water</div>
+<div class="conc"><b>Concept:</b> Both are at 100&deg;C, but condensing steam gives up 2.26 &times; 10&sup3; J/kg extra &mdash; that is the burn.</div></div>
+
+<div class="mcq"><span class="qno">5.9</span> The specific heat of <b>ice</b> compared with liquid water is:
+<div class="opt">A) larger (4186 J kg&sup3;K&sup3;)</div><div class="opt correct">B) smaller (&asymp; 2090 J kg&sup3;K&sup3;) &mdash; about half</div><div class="opt">C) the same</div><div class="opt">D) zero</div>
+<div class="conc"><b>Concept:</b> c<sub>ice</sub> &asymp; 2090 &asymp; &frac12; c<sub>water</sub>; ice warms up faster than water for the same heat input.</div></div>
+
+<div class="mcq"><span class="qno">5.10</span> The <b>water equivalent</b> of a body of mass m and specific heat c<sub>body</sub> is:
+<div class="opt">A) m &times; c<sub>body</sub></div><div class="opt correct">B) m &times; c<sub>body</sub> / c<sub>water</sub> &mdash; the mass of water with the same heat capacity</div><div class="opt">C) c<sub>body</sub> / m</div><div class="opt">D) m / c<sub>water</sub></div>
+<div class="conc"><b>Concept:</b> Water equivalent is the "as if" mass of water that stores the same energy as the body.</div></div>
+
+<div class="anskey"><b>Unit 5 &mdash; Answer key:</b> 5.1 C &middot; 5.2 C &middot; 5.3 C &middot; 5.4 C &middot; 5.5 B &middot; 5.6 C &middot; 5.7 B &middot; 5.8 C &middot; 5.9 B &middot; 5.10 B</div>
+
+<!-- ================= UNIT 6 ================= -->
+<h3>Unit 6 &mdash; Reflection at Curved Mirrors</h3>
+
+<div class="mcq"><span class="qno">6.1</span> A concave mirror forms a <b>real, inverted</b> image when the object is placed:
+<div class="opt">A) between F and the pole</div><div class="opt">B) at the focus</div><div class="opt correct">C) beyond the centre of curvature C</div><div class="opt">D) at the pole</div>
+<div class="conc"><b>Concept:</b> Object beyond C &rarr; real, inverted, diminished image between F and C; between F and pole &rarr; virtual, erect, magnified.</div></div>
+
+<div class="mcq"><span class="qno">6.2</span> A convex mirror <b>always</b> forms:
+<div class="opt">A) a real, inverted image</div><div class="opt">B) a virtual, inverted image</div><div class="opt correct">C) a virtual, erect, diminished image (behind the mirror)</div><div class="opt">D) a magnified real image</div>
+<div class="conc"><b>Concept:</b> Convex mirrors diverge rays; the eye traces them back to a smaller, upright image behind the mirror (used in car mirrors).</div></div>
+
+<div class="mcq"><span class="qno">6.3</span> The focal length f of a spherical mirror (radius R) is:
+<div class="opt">A) R</div><div class="opt">B) 2R</div><div class="opt correct">C) R/2</div><div class="opt">D) R&sup2;2</div>
+<div class="conc"><b>Concept:</b> For a paraxial spherical mirror, f = R/2 (the focus is halfway between the pole and the centre of curvature).</div></div>
+
+<div class="mcq"><span class="qno">6.4</span> The mirror equation (New Cartesian convention) is:
+<div class="opt correct">A) 1/v + 1/u = 1/f</div><div class="opt">B) f = u + v</div><div class="opt">C) v = f/u</div><div class="opt">D) u = &minus;v</div>
+<div class="conc"><b>Concept:</b> 1/v + 1/u = 1/f; with the New Cartesian sign convention, u &lt; 0, f &lt; 0 for a concave mirror.</div></div>
+
+<div class="mcq"><span class="qno">6.5</span> A plane mirror image is:
+<div class="opt">A) real and inverted</div><div class="opt">B) real and erect</div><div class="opt correct">C) virtual, erect, laterally inverted, same size (m = 1)</div><div class="opt">D) magnified and virtual</div>
+<div class="conc"><b>Concept:</b> |m| = 1; the image is behind the mirror at the same distance as the object is in front.</div></div>
+
+<div class="mcq"><span class="qno">6.6</span> When the object is placed exactly at C of a concave mirror, the image is:
+<div class="opt">A) at F, real and diminished</div><div class="opt correct">B) at C, real, inverted, same size (m = &minus;1)</div><div class="opt">C) virtual and magnified</div><div class="opt">D) at the pole</div>
+<div class="conc"><b>Concept:</b> u = &minus;R = &minus;2f &rArr; v = &minus;R; the image coincides with the object position and m = &minus;1.</div></div>
+
+<div class="mcq"><span class="qno">6.7</span> A concave mirror is most suitably used as a <b>shaving/dentist mirror</b> because it:
+<div class="opt">A) always forms a diminished image</div><div class="opt">B) always forms a virtual inverted image</div><div class="opt correct">C) forms an erect, magnified virtual image when the object is between F and the pole</div><div class="opt">D) absorbs light</div>
+<div class="conc"><b>Concept:</b> Object inside F &rarr; reflected rays diverge; traced back they form an erect, magnified virtual image behind the mirror.</div></div>
+
+<div class="mcq"><span class="qno">6.8</span> A searchlight uses a source placed at:
+<div class="opt">A) C</div><div class="opt correct">B) the focus F &mdash; reflected rays emerge parallel to the axis</div><div class="opt">C) the pole</div><div class="opt">D) 2F</div>
+<div class="conc"><b>Concept:</b> Light from F reflects as a parallel beam; conversely, parallel light focuses at F.</div></div>
+
+<div class="mcq"><span class="qno">6.9</span> For a concave mirror, u = &minus;30 cm and f = &minus;10 cm. The image distance v is:
+<div class="opt">A) &minus;30 cm</div><div class="opt correct">B) &minus;15 cm (real image, between F and C)</div><div class="opt">C) +15 cm</div><div class="opt">D) +30 cm</div>
+<div class="conc"><b>Concept:</b> 1/v = 1/f &minus; 1/u = &minus;1/10 + 1/30 = &minus;2/30 &rArr; v = &minus;15 cm (real, 15 cm in front).</div></div>
+
+<div class="mcq"><span class="qno">6.10</span> The magnification of a mirror is:
+<div class="opt">A) u/v</div><div class="opt correct">B) m = &minus;v/u (= image height &divide; object height)</div><div class="opt">C) f/v</div><div class="opt">D) v &minus; u</div>
+<div class="conc"><b>Concept:</b> m &lt; 0 &rArr; inverted; |m| &gt; 1 &rArr; magnified; m = &minus;1 &rArr; same size, inverted.</div></div>
+
+<div class="anskey"><b>Unit 6 &mdash; Answer key:</b> 6.1 C &middot; 6.2 C &middot; 6.3 C &middot; 6.4 A &middot; 6.5 C &middot; 6.6 B &middot; 6.7 C &middot; 6.8 B &middot; 6.9 B &middot; 6.10 B</div>
+
+<!-- ================= UNIT 7 ================= -->
+<h3>Unit 7 &mdash; Refraction at Plane Surfaces</h3>
+
+<div class="mcq"><span class="qno">7.1</span> When light passes from air into glass, it:
+<div class="opt">A) speeds up and bends away from the normal</div><div class="opt correct">B) slows down and bends toward the normal</div><div class="opt">C) keeps the same speed and direction</div><div class="opt">D) stops completely</div>
+<div class="conc"><b>Concept:</b> Denser medium &rarr; slower light (v = c/&mu;) &rarr; the ray bends toward the normal.</div></div>
+
+<div class="mcq"><span class="qno">7.2</span> Snell&rsquo;s law of refraction states:
+<div class="opt">A) n<sub>2</sub> sin i = n<sub>1</sub> sin r (swapped order)</div><div class="opt correct">B) n<sub>1</sub> sin i = n<sub>2</sub> sin r</div><div class="opt">C) &mu; = sin r / sin i for all media</div><div class="opt">D) n = i/r</div>
+<div class="conc"><b>Concept:</b> n<sub>1</sub> sin i = n<sub>2</sub> sin r; for air&rarr;medium, &mu; = sin i / sin r = n<sub>2</sub> / n<sub>1</sub>.</div></div>
+
+<div class="mcq"><span class="qno">7.3</span> The apparent depth of an object viewed through a liquid (near-normal rays) is:
+<div class="opt">A) greater than the real depth</div><div class="opt correct">B) less than the real depth (= real depth / &mu;)</div><div class="opt">C) equal to the real depth</div><div class="opt">D) infinite</div>
+<div class="conc"><b>Concept:</b> &mu; = true depth / apparent depth &gt; 1 &rArr; apparent depth = true/&mu; &lt; true; objects look raised.</div></div>
+
+<div class="mcq"><span class="qno">7.4</span> Total internal reflection occurs when:
+<div class="opt">A) light goes from rarer to denser and i &gt; &theta;c</div><div class="opt correct">B) light goes from denser to rarer and the angle of incidence exceeds the critical angle &theta;c</div><div class="opt">C) light hits any surface at any angle</div><div class="opt">D) light goes from rarer to denser</div>
+<div class="conc"><b>Concept:</b> Two conditions are both needed: denser&rarr;rarer, and i &gt; &theta;c = sin&sup3;&sup3;(1/&mu;).</div></div>
+
+<div class="mcq"><span class="qno">7.5</span> The critical angle for glass with &mu; = 1.5 (glass&ndash;air) is approximately:
+<div class="opt">A) 30&deg;</div><div class="opt">B) 45&deg;</div><div class="opt correct">C) 41.8&deg; (= sin&sup3;&sup3;(1/1.5) = sin&sup3;&sup3;(0.667))</div><div class="opt">D) 60&deg;</div>
+<div class="conc"><b>Concept:</b> &theta;c = sin&sup3;&sup3;(1/&mu;); for &mu; = 1.5, &theta;c = sin&sup3;&sup3;(0.667) &asymp; 41.8&deg;.</div></div>
+
+<div class="mcq"><span class="qno">7.6</span> The refractive index of <b>water</b> is approximately:
+<div class="opt">A) 1.5</div><div class="opt correct">B) 1.33 (= 4/3)</div><div class="opt">C) 1.0</div><div class="opt">D) 2.0</div>
+<div class="conc"><b>Concept:</b> &mu;<sub>water</sub> = 4/3 &asymp; 1.33; &mu;<sub>glass</sub> &asymp; 1.5 &mdash; glass is denser optically.</div></div>
+
+<div class="mcq"><span class="qno">7.7</span> A pencil half-immersed in water looks "bent" at the surface because:
+<div class="opt">A) the water refracts the part below the surface, making it appear raised relative to the part above</div><div class="opt correct">B) light from the submerged part bends away from the normal at the water&ndash;air boundary</div><div class="opt">C) it is purely a reflection effect</div><div class="opt">D) the pencil physically bends in water</div>
+<div class="conc"><b>Concept:</b> Rays from the submerged tip bend away from the normal; the eye traces them straight back to a raised apparent position.</div></div>
+
+<div class="mcq"><span class="qno">7.8</span> A ray bends <b>toward the normal</b> when it enters a medium with:
+<div class="opt">A) lower refractive index</div><div class="opt correct">B) higher refractive index (slower speed of light)</div><div class="opt">C) the same refractive index</div><div class="opt">D) no refractive index</div>
+<div class="conc"><b>Concept:</b> Higher &mu; &rarr; slower light &rarr; the ray leans toward the normal on entry.</div></div>
+
+<div class="mcq"><span class="qno">7.9</span> The speed of light in water (c = 3 &times; 10&sup3; m/s, &mu; = 4/3) is:
+<div class="opt">A) 3 &times; 10&sup3; m/s</div><div class="opt correct">B) 2.25 &times; 10&sup3; m/s (= c/&mu; = 3&times;10&sup3;&divide;1.33)</div><div class="opt">C) 1.0 &times; 10&sup3; m/s</div><div class="opt">D) 4.0 &times; 10&sup3; m/s</div>
+<div class="conc"><b>Concept:</b> v = c/&mu; = 3 &times; 10&sup3; / (4/3) = 2.25 &times; 10&sup3; m/s.</div></div>
+
+<div class="mcq"><span class="qno">7.10</span> A glass slab (n = 1.5, thickness 3 cm) viewed normally: the image shift is:
+<div class="opt">A) 3 cm (the full thickness)</div><div class="opt">B) 1.5 cm</div><div class="opt correct">C) 1 cm (= t(1 &minus; 1/n) = 3(1 &minus; &frac12;) = 1 cm, toward the observer)</div><div class="opt">D) 0</div>
+<div class="conc"><b>Concept:</b> Apparent shift = t(1 &minus; 1/n) = 3(1 &minus; &frac12;) = 1 cm; the mark appears raised by 1 cm.</div></div>
+
+<div class="anskey"><b>Unit 7 &mdash; Answer key:</b> 7.1 B &middot; 7.2 B &middot; 7.3 B &middot; 7.4 B &middot; 7.5 C &middot; 7.6 B &middot; 7.7 B &middot; 7.8 B &middot; 7.9 B &middot; 7.10 C</div>
+
+<!-- ================= UNIT 8 ================= -->
+<h3>Unit 8 &mdash; Refraction through a Prism</h3>
+
+<div class="mcq"><span class="qno">8.1</span> The angle of deviation &delta; of a prism (with refracting angle A) is:
+<div class="opt">A) i + e</div><div class="opt correct">B) i + e &minus; A</div><div class="opt">C) A + i &minus; e</div><div class="opt">D) 2A &minus; i</div>
+<div class="conc"><b>Concept:</b> From face geometry: &delta; = i + e &minus; A (i = angle of incidence, e = angle of emergence).</div></div>
+
+<div class="mcq"><span class="qno">8.2</span> At <b>minimum deviation</b>, the ray through the prism:
+<div class="opt">A) is asymmetric (i &ne; e)</div><div class="opt">B) passes through the apex</div><div class="opt correct">C) is symmetric: i = e and r<sub>1</sub> = r<sub>2</sub> = A/2 (parallel to the base)</div><div class="opt">D) is absorbed</div>
+<div class="conc"><b>Concept:</b> Minimum deviation occurs at the symmetric path where i = e and the ray runs parallel to the base.</div></div>
+
+<div class="mcq"><span class="qno">8.3</span> The refractive index of a prism material, expressed in terms of A and &delta;, is:
+<div class="opt correct">A) &mu; = sin((A + &delta;)/2) / sin(A/2)</div><div class="opt">B) &mu; = cos(A/2) / sin(&delta;/2)</div><div class="opt">C) &mu; = &delta;/A</div><div class="opt">D) &mu; = sin A / sin &delta;</div>
+<div class="conc"><b>Concept:</b> At minimum deviation, i = (A + &delta;)/2 and r = A/2; applying Snell&rsquo;s law gives &mu; = sin((A+&delta;)/2)/sin(A/2).</div></div>
+
+<div class="mcq"><span class="qno">8.4</span> In a white-light prism spectrum, which colour is deviated the <b>most</b>?
+<div class="opt">A) red (longest &lambda;, smallest &mu;)</div><div class="opt">B) green</div><div class="opt correct">C) violet (shortest &lambda;, largest &mu;) &mdash; most deviation</div><div class="opt">D) all the same</div>
+<div class="conc"><b>Concept:</b> &mu; &propto; 1/&lambda;&sup3; (Cauchy&rsquo;s law): violet has the largest &mu; &rArr; greatest deviation; red the least.</div></div>
+
+<div class="mcq"><span class="qno">8.5</span> Angular dispersion of a prism is defined as:
+<div class="opt">A) &delta; (total deviation of one colour)</div><div class="opt">B) A/2</div><div class="opt correct">C) &delta;<sub>violet</sub> &minus; &delta;<sub>red</sub> &mdash; the difference in deviations of two extreme colours</div><div class="opt">D) &mu;<sub>violet</sub> + &mu;<sub>red</sub></div>
+<div class="conc"><b>Concept:</b> Angular dispersion = &delta;v &minus; &delta;r; a prism separates colours by this difference.</div></div>
+
+<div class="mcq"><span class="qno">8.6</span> The <b>power of a prism</b> P is:
+<div class="opt">A) P = &delta;/&mu;</div><div class="opt">B) P = A + &mu;</div><div class="opt correct">C) P = A(&mu; &minus; 1) (for small A)</div><div class="opt">D) P = &mu;A</div>
+<div class="conc"><b>Concept:</b> For small A, &delta; = A(&mu;&minus;1), so the deviation per unit angle A is P = A(&mu;&minus;1).</div></div>
+
+<div class="mcq"><span class="qno">8.7</span> A prism (A = 60&deg;) gives minimum deviation &delta; = 38&deg;. The refractive index is approximately:
+<div class="opt">A) 1.20</div><div class="opt">B) 1.00</div><div class="opt correct">C) 1.51 (= sin((60+38)/2)/sin(60/2) = sin 49&deg;/sin 30&deg; &asymp; 0.755/0.5)</div><div class="opt">D) 2.00</div>
+<div class="conc"><b>Concept:</b> &mu; = sin(49&deg;)/sin(30&deg;) = 0.7547/0.5 &asymp; 1.51 &mdash; typical crown glass.</div></div>
+
+<div class="mcq"><span class="qno">8.8</span> Two prisms arranged to cancel each other&rsquo;s deviation but still separate colours form a:
+<div class="opt">A) total internal reflection setup</div><div class="opt correct">B) achromatic (dispersive) combination &mdash; used in lenses to remove colour fringing</div><div class="opt">C) a plain refracting prism</div><div class="opt">D) a flat mirror system</div>
+<div class="conc"><b>Concept:</b> Crown + flint prisms in opposition: P<sub>1</sub>A<sub>1</sub> = P<sub>2</sub>A<sub>2</sub> (net deviation zero) but dispersion remains.</div></div>
+
+<div class="mcq"><span class="qno">8.9</span> The red end of a prism spectrum is:
+<div class="opt">A) most deviated (further from the base)</div><div class="opt correct">B) least deviated (closest to the base)</div><div class="opt">C) not present</div><div class="opt">D) in the middle</div>
+<div class="conc"><b>Concept:</b> Red has the smallest &mu; &rArr; the least deviation &rArr; it appears nearest the base of the spectrum.</div></div>
+
+<div class="mcq"><span class="qno">8.10</span> At minimum deviation, the ray inside the prism runs:
+<div class="opt">A) parallel to the incident face</div><div class="opt correct">B) parallel to the base of the prism</div><div class="opt">C) straight through the apex</div><div class="opt">D) perpendicular to the base</div>
+<div class="conc"><b>Concept:</b> The symmetric (minimum-deviation) path is parallel to the base &mdash; i = e and r<sub>1</sub> = r<sub>2</sub> = A/2.</div></div>
+
+<div class="anskey"><b>Unit 8 &mdash; Answer key:</b> 8.1 B &middot; 8.2 C &middot; 8.3 A &middot; 8.4 C &middot; 8.5 C &middot; 8.6 C &middot; 8.7 C &middot; 8.8 B &middot; 8.9 B &middot; 8.10 B</div>
+
+<!-- MASTER KEY -->
+<div class="anskey" style="background:#fff3e0;border-color:#ffb74f;">
+<b>MASTER ANSWER KEY (all units, one line):</b><br>
+Unit 1: C D C A C B B C C C &middot; Unit 2: B B B B B B C B B C &middot; Unit 3: C C B C B C C C B C C C &middot; Unit 4: B C C C D B C C B C &middot; Unit 5: C C C C B C B C B B &middot; Unit 6: C C C A C B C B B B &middot; Unit 7: B B B B C B B B B C &middot; Unit 8: B C A C C C C B B B
+</div>
+
+<h2 class="unit">Quick Exam Tips &mdash; All 8 Units</h2>
+<div class="keybox">
+<b>Before the exam:</b> memorize the mirror equation &amp; sign convention, Snell&rsquo;s law, &theta;c = sin&sup1;(1/&mu;), &delta; = i + e &minus; A, &mu; = sin((A+&delta;m)/2)/sin(A/2), Q = mc&Delta;T &amp; Q = mL, v = &omega;r, a = &omega;&sup2;r, T = 2&pi;&radic;(L/g), range R = u&sup2;sin2&theta;/g (complementary angles &rArr; equal range). In derivations, always show the diagram first, label angles, then apply the two laws (Snell / mirror geometry) step by step. In numericals, write down the formula, substitute with signs, box the final answer with units.
+</div>
+</body>
+</html>

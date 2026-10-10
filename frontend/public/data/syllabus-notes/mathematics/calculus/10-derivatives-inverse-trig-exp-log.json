@@ -43,13 +43,7 @@
     "Where a formula is quoted it is valid only under the conditions stated; Omitting the minus sign on the arccos derivative — it is the one inverse trig derivative that is negative among the three principal ones.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [
-    "Statement 1: $\\frac{d}{dx}\\arccos x = -\\frac1{\\sqrt{1-x^2}}$.",
-    "Statement 2: $\\frac{d}{dx}\\arctan x = \\frac1{1+x^2}$.",
-    "Statement 3: $\\frac{d}{dx}e^x = e^x$ but $\\frac{d}{dx}a^x = a^x\\ln a$.",
-    "Statement 4: $\\frac{d}{dx}\\ln x = \\frac1x$.",
-    "Statement 5: The arcsec and arccsc derivatives involve $|x|$ in the denominator."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Topic anchor: The derivative of $ ln$ inverts the exponent  since $e^x$ is its own derivative, $ frac{d}{dx} ln x =  frac1x$ follows by inverse-function differentiation."
   ],

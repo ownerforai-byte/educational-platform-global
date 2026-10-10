@@ -25,34 +25,46 @@
     "• Comparison must be made in **moles**; comparing masses directly (5 g H₂ with 5 g O₂) leads to wrong conclusions.",
     "• In a kinetically controlled reaction the slowest step may govern the rate even though the reagent is stoichiometrically in excess — the limiting reagent is not automatically the rate-determining species.",
     "• When a reactant acts as the solvent or medium (water, large excess of acid), the concept loses meaning.",
-    "• The yield computed from the limiting reactant is an upper limit only; actual yields are lower because of incomplete reaction, side products and handling losses."
+    "• The yield computed from the limiting reactant is an upper limit only; actual yields are lower because of incomplete reaction, side products and handling losses.",
+    "**Fact.** Indeterminate forms 0/0, ∞/∞, 0·∞ → L'Hôpital: lim f/g = lim f'/g' (when applicable).",
+    "**Fact.** Standard limits: lim_{x→0} sin x / x = 1; lim_{x→0} (1 + x)^{1/x} = e; lim_{x→∞} (1 + a/x)^x = e^a.",
+    "**Fact.** Continuity: f continuous at c iff lim_{x→c}f(x) = f(c). Types of discontinuity: removable, jump, infinite."
   ],
   "confusion": [
     "❌ The reactant present in the smallest mass is limiting. ✅ The limiting reactant is found in *moles* divided by the stoichiometric coefficient, not by mass.",
     "❌ The limiting reactant is the one that runs out last. ✅ It is used up first and stops the reaction; the other reactant is in excess.",
     "❌ Excess reactant also becomes product. ✅ Only the consumed part reacts; the remainder is unreacted excess.",
     "❌ Every reaction has a limiting reactant. ✅ Only when the reactants are not in the exact stoichiometric mole ratio.",
-    "❌ Limiting-reactant reasoning gives the actual yield of a reversible reaction. ✅ It gives the maximum possible yield; the equilibrium position decides the actual extent."
+    "❌ Limiting-reactant reasoning gives the actual yield of a reversible reaction. ✅ It gives the maximum possible yield; the equilibrium position decides the actual extent.",
+    "❌ skip the key fact → ✅ indeterminate forms 0/0, ∞/∞, 0·∞ → l'hôpital: lim f/g = lim f'/g' (when applicable).."
   ],
   "practice": [
     "Explain how the limiting reactant is identified from mole ratios.",
     "N₂ + 3H₂ → 2NH₃: 3 mol N₂ and 6 mol H₂ are mixed. Find the limiting reactant, the mass of NH₃ formed and the excess left.",
     "Calculate the mass of water formed when 4 g H₂ reacts with 32 g O₂ and identify the excess reactant.",
     "Why is excess air supplied in combustion, and what are the disadvantages of too much excess air?",
-    "State the limitations of the limiting-reactant concept."
+    "State the limitations of the limiting-reactant concept.",
+    "one worked example for \"Limiting reactant and excess reactant\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "formulas": [
     "$$\\text{Limiting reactant}:\\ \\text{smallest }\\frac{n_{\\text{reactant}}}{\\nu_{\\text{reactant}}}\\ (\\nu=\\text{stoichiometric coefficient})$$",
-    "$$n_{\\text{product}}=\\frac{\\nu_{\\text{product}}}{\\nu_{\\text{limiting}}}\\times n_{\\text{limiting}},\\qquad \\text{theoretical yield}=n_{\\text{product}}M_{\\text{product}}$$"
+    "$$n_{\\text{product}}=\\frac{\\nu_{\\text{product}}}{\\nu_{\\text{limiting}}}\\times n_{\\text{limiting}},\\qquad \\text{theoretical yield}=n_{\\text{product}}M_{\\text{product}}$$",
+    "lim sin x/x = 1 (x→0, rad)",
+    "(1+x)^{1/x} → e as x→0"
   ],
   "universalFacts": [
     "In the Haber process the industrial ratio N₂ : H₂ is chosen with a slight excess of nitrogen because hydrogen is costlier and excess hydrogen lowers equilibrium conversion.",
     "Burning methane with 10% excess air ensures complete combustion of carbon but increases NOₓ and heat loss — the classical trade-off.",
-    "In a titration the limiting reactant changes at the equivalence point, which is why an indicator is needed to detect it."
+    "In a titration the limiting reactant changes at the equivalence point, which is why an indicator is needed to detect it.",
+    "Indeterminate forms 0/0, ∞/∞, 0·∞ → L'Hôpital: lim f/g = lim f'/g' (when applicable).",
+    "Standard limits: lim_{x→0} sin x / x = 1; lim_{x→0} (1 + x)^{1/x} = e; lim_{x→∞} (1 + a/x)^x = e^a.",
+    "Continuity: f continuous at c iff lim_{x→c}f(x) = f(c). Types of discontinuity: removable, jump, infinite."
   ],
   "examples": [
     "**Problem:** 3 mol N₂ and 6 mol H₂ with N₂ + 3H₂ → 2NH₃. **Solution:** quotients 3/1 = 3 (N₂) and 6/3 = 2 (H₂) → H₂ limiting. NH₃ = (2/3) × 6 = 4 mol = 68 g; N₂ consumed = 2 mol, so 1 mol N₂ (28 g) remains excess.",
-    "**Problem:** 4 g H₂ + 32 g O₂ (2H₂ + O₂ → 2H₂O). **Solution:** n(H₂) = 2 mol, n(O₂) = 1 mol; quotients 1 and 1 → exact stoichiometric mixture, no excess, and 2 mol H₂O = 36 g forms."
+    "**Problem:** 4 g H₂ + 32 g O₂ (2H₂ + O₂ → 2H₂O). **Solution:** n(H₂) = 2 mol, n(O₂) = 1 mol; quotients 1 and 1 → exact stoichiometric mixture, no excess, and 2 mol H₂O = 36 g forms.",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "importantNotes": [
     "Convert every quantity to moles before comparing coefficients — the commonest source of error.",
@@ -60,5 +72,34 @@
     "Note explicitly that the theoretical yield is computed from the limiting reactant alone."
   ],
   "visualType": "limiting-reactant",
-  "tabGroup": "Stoichiometry-Learner-Notes"
+  "keyPoints": [
+    "• Limiting reactant",
+    "• Excess reactant"
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Limiting reactant and excess reactant\" with one example.",
+    "compare \"Limiting reactant\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Limiting reactant and excess reactant\" and verify the answer is plausible."
+  ],
+  "numericals": [
+    "Use  lim sin x/x = 1 (x→0, rad)  — pick reasonable values, solve, and check the units.",
+    "Use  (1+x)^{1/x} → e as x→0  — pick reasonable values, solve, and check the units."
+  ],
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"Limiting reactant and excess reactant\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Limit to remember: indeterminate forms 0/0, ∞/∞, 0·∞ → l'hôpital: lim f/g = lim f'/g' (when applicable)."
+  ],
+  "summary": "Limiting reactant and excess reactant (Stoichiometry, Chemistry, class-11-notes) covers Limiting reactant, excess reactant. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
 }

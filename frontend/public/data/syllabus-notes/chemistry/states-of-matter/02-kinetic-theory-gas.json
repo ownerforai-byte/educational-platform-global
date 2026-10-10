@@ -30,14 +30,18 @@
     "2. Intermolecular attractive forces exist; they make a real gas more compressible at moderate pressure and are responsible for liquefaction — neither is in the model.",
     "3. Collisions are not perfectly elastic and molecules are not rigid spheres; polyatomic gases store energy in rotation and vibration, which the simple theory ignores (so it cannot give their specific heats correctly).",
     "4. It presumes a Maxwell–Boltzmann distribution and neglects quantum and relativistic effects (important for very light gases at low temperature).",
-    "5. It cannot describe the liquid state, critical phenomena or any structured/condensed behaviour, and it fails near the critical temperature where the ideal-gas picture collapses."
+    "5. It cannot describe the liquid state, critical phenomena or any structured/condensed behaviour, and it fails near the critical temperature where the ideal-gas picture collapses.",
+    "**Fact.** Ideal gas equation PV = nRT; from kinetic theory P = ⅓ (Nm/m)⟨c²⟩, so PV = ⅓N m⟨c²⟩.",
+    "**Fact.** r.m.s. speed c_rms = √(3RT/M); mean kinetic energy per mole = 3RT/2, per molecule = 3k_BT/2.",
+    "**Fact.** Real gases deviate near condensation; Van der Waals: (P + a n²/V²)(V − nb) = nRT."
   ],
   "confusion": [
     "❌ Molecules keep moving at the rms speed. ✅ Speeds obey a Maxwell–Boltzmann distribution; the rms value is only an average measure.",
     "❌ Kinetic theory says molecules never interact. ✅ Interaction is neglected *except during collisions* — this idealisation is exactly what limits the model.",
     "❌ Collisions destroy kinetic energy. ✅ Collisions are elastic; energy is redistributed, not lost.",
     "❌ Pressure is a continuous push by molecules. ✅ Pressure is the average rate of momentum transfer during wall collisions.",
-    "❌ The theory is equally valid at 200 atm. ✅ Ideal-gas assumptions break down at high pressure and low temperature."
+    "❌ The theory is equally valid at 200 atm. ✅ Ideal-gas assumptions break down at high pressure and low temperature.",
+    "❌ skip the key fact → ✅ ideal gas equation pv = nrt; from kinetic theory p = ⅓ (nm/m)⟨c²⟩, so pv = ⅓n m⟨c²⟩.."
   ],
   "practice": [
     "State the postulates of the kinetic theory and identify the idealisations among them.",
@@ -45,26 +49,77 @@
     "Obtain expressions for rms, average and most probable speeds and arrange them in order.",
     "Calculate the rms speed of oxygen molecules at 300 K (M = 32 g mol⁻¹).",
     "Explain why hydrogen escapes the Earth's atmosphere more easily than oxygen.",
-    "State the limitations of the kinetic theory of gases."
+    "State the limitations of the kinetic theory of gases.",
+    "one worked example for \"Gaseous state: Kinetic theory of gas and its postulates\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "formulas": [
     "$$PV=\\frac{1}{3}mn\\bar{c}^{2},\\qquad KE=\\frac{3}{2}kT\\ (\\text{molecule})=\\frac{3}{2}RT\\ (\\text{mole})$$",
     "$$v_{rms}=\\sqrt{\\frac{3RT}{M}},\\quad \\bar{c}=\\sqrt{\\frac{8RT}{\\pi M}},\\quad v_{mp}=\\sqrt{\\frac{2RT}{M}}$$",
-    "$$M=\\frac{3RT}{v_{rms}^{2}}$$"
+    "$$M=\\frac{3RT}{v_{rms}^{2}}$$",
+    "PV = nRT",
+    "c_rms = √(3RT/M)",
+    "KE_mole = 3RT/2"
   ],
   "universalFacts": [
     "Maxwell–Boltzmann curve: the fraction of molecules at a given speed falls exponentially at high speed; heating shifts the peak to higher speed.",
     "Mean free path at 1 atm, 300 K ≈ 10⁻⁷ m — about a thousand molecular diameters.",
-    "v_mp : c̄ : v_rms = √2 : √(8/π) : √3 ≈ 1 : 1.128 : 1.225."
+    "v_mp : c̄ : v_rms = √2 : √(8/π) : √3 ≈ 1 : 1.128 : 1.225.",
+    "Ideal gas equation PV = nRT; from kinetic theory P = ⅓ (Nm/m)⟨c²⟩, so PV = ⅓N m⟨c²⟩.",
+    "r.m.s. speed c_rms = √(3RT/M); mean kinetic energy per mole = 3RT/2, per molecule = 3k_BT/2.",
+    "Real gases deviate near condensation; Van der Waals: (P + a n²/V²)(V − nb) = nRT."
   ],
   "examples": [
     "**Problem:** rms speed of O₂ at 300 K. **Solution:** M = 0.032 kg mol⁻¹; v_rms = √(3 × 8.314 × 300/0.032) ≈ 483 m s⁻¹.",
-    "**Problem:** Ratio of rms speeds of H₂ and O₂ at the same temperature. **Solution:** v ∝ 1/√M → v(H₂)/v(O₂) = √(32/2) = 4; hydrogen molecules are four times faster, hence its escape from the atmosphere."
+    "**Problem:** Ratio of rms speeds of H₂ and O₂ at the same temperature. **Solution:** v ∝ 1/√M → v(H₂)/v(O₂) = √(32/2) = 4; hydrogen molecules are four times faster, hence its escape from the atmosphere.",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "importantNotes": [
     "Quote at least six postulates and identify which are idealisations — 'negligible molecular volume' and 'no intermolecular forces' generate all the limitations.",
     "Use R = 8.314 J K⁻¹ mol⁻¹ with SI units (kg, m³, Pa) in every speed calculation."
   ],
   "visualType": "kinetic-theory-gas-derive",
-  "tabGroup": "States-Of-Matter-Learner-Notes"
+  "keyPoints": [
+    "• Gaseous state",
+    "• Kinetic theory of gas",
+    "• Its postulates"
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Gaseous state: Kinetic theory of gas and its postulates\" with one example.",
+    "compare \"Gaseous state\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Gaseous state: Kinetic theory of gas and its postulates\" and verify the answer is plausible."
+  ],
+  "numericals": [
+    "Use  PV = nRT  — pick reasonable values, solve, and check the units.",
+    "Use  c_rms = √(3RT/M)  — pick reasonable values, solve, and check the units.",
+    "Use  KE_mole = 3RT/2  — pick reasonable values, solve, and check the units."
+  ],
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Gaseous state: Kinetic theory of gas and its postulates\"?",
+      "options": [
+        "Gaseous state",
+        "Kinetic theory of gas",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "A",
+      "explanation": "Gaseous state is listed among the official sub-ideas of Gaseous state: Kinetic theory of gas and its postulates; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Gaseous state: Kinetic theory of gas and its postulates\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Limit to remember: ideal gas equation pv = nrt; from kinetic theory p = ⅓ (nm/m)⟨c²⟩, so pv = ⅓n m⟨c²⟩."
+  ],
+  "summary": "Gaseous state: Kinetic theory of gas and its postulates (States of Matter, Chemistry, class-11-notes) covers Gaseous state, Kinetic theory of gas, its postulates. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
 }

@@ -65,7 +65,7 @@ function setSecurityHeaders(response: NextResponse) {
     [
       "default-src 'self'",
       // puter.js (js.puter.com) is the platform's browser-side AI fallback —
-      // image drawing since 2026-09-30 and Mind Studio diagram generation.
+      // image drawing since 2026-09-30 and Diagram Hub generation.
       // Without these two origins the CDN script itself never loads.
       "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://js.puter.com",
       // fonts.googleapis.com: globals.css @imports Google Fonts — blocking it

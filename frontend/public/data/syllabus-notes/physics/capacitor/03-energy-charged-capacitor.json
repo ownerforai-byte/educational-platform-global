@@ -54,13 +54,7 @@
     "When plates of an isolated charged capacitor are separated further from d to 2d, capacitance halves to C/2. Stored energy U = Q² / (2C) doubles. The increase in energy ΔU = U_initial comes directly from the external mechanical work done pulling apart the oppositely charged attractive plates.",
     "When plate separation is doubled while connected to a battery, voltage V remains constant. Capacitance halves, so stored energy U = ½ CV² is halved."
   ],
-  "importantStatements": [
-    "Statement 1: The electrostatic potential energy of a capacitor is stored in the electric field existing between its conducting plates.",
-    "Statement 2: The total work done in charging a capacitor to charge Q at potential V is U = ½ QV.",
-    "Statement 3: Regardless of the resistance in the charging circuit, exactly half of the energy delivered by the charging source is dissipated as heat.",
-    "Statement 4: The electrostatic energy density in vacuum is proportional to the square of the electric field intensity (u = ½ ε₀ E²).",
-    "Statement 5: For an isolated capacitor, external mechanical work performed against plate attraction increases stored electrostatic energy."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Always identify if Q or V is constant when evaluating work and energy changes: use U = Q²/(2C) when isolated (Q constant); use U = ½ CV² when connected (V constant)."
   ],
@@ -117,7 +111,5 @@
     "Derive energy density u = ½ ε₀ E² for a parallel plate capacitor.",
     "Calculate energy changes and work done when plate separation is altered under connected vs isolated conditions."
   ],
-  "duplicateType": 2,
-  "visualType": "parallel-plate-capacitor",
-  "tabGroup": "energy-of-a-charged-capacitor"
+  "visualType": "parallel-plate-capacitor"
 }

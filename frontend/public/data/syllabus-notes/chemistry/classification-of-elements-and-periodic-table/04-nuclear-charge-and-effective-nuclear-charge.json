@@ -7,9 +7,11 @@
   "source": "generated",
   "generatedAt": "2026-09-10T13:48:26.104Z",
   "notes": [
-    "**Fact.** Mass defect Δm = Z m_p + N m_n − M; binding energy BE = Δm c²; BE per nucleon peaks near Fe-56 (~8.8 MeV).",
-    "**Fact.** Radioactive decay: N = N₀e^(−λt), t_½ = ln2/λ; activity A = λN.",
-    "**Fact.** Fission (heavy nucleus → two + 2–3 n + ~200 MeV); fusion (light → heavy + energy, powers stars)."
+    "**Nuclear charge.** The total positive charge of the nucleus is Ze, where Z is the atomic number and e the elementary charge; it is the nucleus's pull on the electron cloud.",
+    "**Shielding effect.** Inner-shell electrons repel outer electrons and cancel part of the nuclear pull; this screening is greatest in multi-electron atoms.",
+    "**Effective nuclear charge.** Zeff = Z − σ, where σ is the shielding constant; outer electrons feel this reduced attraction rather than the full nuclear charge.",
+    "**Trends across a period.** Electrons enter the same shell while Z rises, so shielding changes little and Zeff increases — atomic radius falls and ionisation enthalpy rises.",
+    "**Trends down a group.** Each new shell adds shielding that nearly cancels the added nuclear charge, so radius grows and ionisation enthalpy falls down the group."
   ],
   "confusion": [
     "❌ skip the key fact → ✅ mass defect δm = z m_p + n m_n − m; binding energy be = δm c²; be per nucleon peaks near fe-56 (~8.8 mev).."
@@ -58,17 +60,6 @@
       ],
       "answer": "True",
       "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
-    },
-    {
-      "question": "Which of these is a governing / standard formula associated with \"Nuclear charge and effective nuclear charge\"?",
-      "options": [
-        "BE = Δm c²",
-        "x + y = z (placeholder)",
-        "No formula applies",
-        "E = mc² only"
-      ],
-      "answer": "BE = Δm c²",
-      "explanation": "BE = Δm c² is the standard form used for this topic."
     }
   ]
 }

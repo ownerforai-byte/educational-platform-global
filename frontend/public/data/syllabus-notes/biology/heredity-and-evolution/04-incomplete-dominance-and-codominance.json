@@ -106,31 +106,56 @@
   "mcs": [
     {
       "question": "Red (RR) x white (WW) snapdragon plants produce only pink F1 offspring. When two F1 plants are crossed, the F2 phenotypic ratio is:",
-      "options": ["3 red : 1 white", "1 red : 2 pink : 1 white", "9 red : 3 pink : 3 white : 1", "1 red : 1 white"],
+      "options": [
+        "3 red : 1 white",
+        "1 red : 2 pink : 1 white",
+        "9 red : 3 pink : 3 white : 1",
+        "1 red : 1 white"
+      ],
       "answer": "B",
       "explanation": "Because the heterozygote is distinguishable as pink, the phenotypic ratio equals the genotypic ratio of 1 RR : 2 RW : 1 WW, which is the signature of incomplete dominance."
     },
     {
       "question": "Which of the following best distinguishes codominance from incomplete dominance?",
-      "options": ["Codominance occurs only in blood groups", "In codominance both alleles are fully expressed, while the heterozygote of incomplete dominance shows an intermediate phenotype", "Codominance occurs only in plants", "Incomplete dominance involves the blending of genes"],
+      "options": [
+        "Codominance occurs only in blood groups",
+        "In codominance both alleles are fully expressed, while the heterozygote of incomplete dominance shows an intermediate phenotype",
+        "Codominance occurs only in plants",
+        "Incomplete dominance involves the blending of genes"
+      ],
       "answer": "B",
       "explanation": "Codominance expresses both parental traits together (IAIB blood type, roan cattle), whereas incomplete dominance gives one intermediate phenotype (pink snapdragon). Blending of genes is a misconception; alleles never blend."
     },
     {
       "question": "How many alleles of the ABO gene exist in the human population, and how many does one individual carry?",
-      "options": ["Three in the population, two in each individual", "Two in the population, two in each individual", "Three in the population, three in each individual", "Four in the population, two in each individual"],
+      "options": [
+        "Three in the population, two in each individual",
+        "Two in the population, two in each individual",
+        "Three in the population, three in each individual",
+        "Four in the population, two in each individual"
+      ],
       "answer": "A",
       "explanation": "IA, IB and i are the three alleles found in the population, but a diploid individual carries only two, one contributed by each parent."
     },
     {
       "question": "A child with blood group O (genotype ii) is born to a type A father and a type B mother. The parental genotypes are:",
-      "options": ["IAIA x IBIB", "IAi x IBi", "IAi x IBIB", "IAIB x ii"],
+      "options": [
+        "IAIA x IBIB",
+        "IAi x IBi",
+        "IAi x IBIB",
+        "IAIB x ii"
+      ],
       "answer": "B",
       "explanation": "The O child must receive an i allele from each parent, so the type A and the type B parents must both be heterozygous. IAi x IBi gives 25 per cent each of A, B, AB and O."
     },
     {
       "question": "Which statement about a type AB individual is correct?",
-      "options": ["Carries both anti-A and anti-B antibodies in the plasma", "Has the recessive genotype ii", "Carries codominant alleles IA and IB, so the red cells show both A and B antigens", "Cannot donate red cells to any group"],
+      "options": [
+        "Carries both anti-A and anti-B antibodies in the plasma",
+        "Has the recessive genotype ii",
+        "Carries codominant alleles IA and IB, so the red cells show both A and B antigens",
+        "Cannot donate red cells to any group"
+      ],
       "answer": "C",
       "explanation": "AB results from the codominant alleles IA and IB, and because the plasma holds neither anti-A nor anti-B, AB red cells can be donated to all four groups. Plasma, however, can be received only from AB."
     }

@@ -1,17 +1,18 @@
 "use client";
 
 import { useEffect } from "react";
-import { Crown } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { isOwnerUser } from "@/lib/owner";
 
 /**
- * Owner gate for the Image Hub.
+ * Diagram Hub route guard.
  *
- * Owner request 2026-10-05 ("make the image hub under owner emails only"):
- * drawings burn the platform key, so only allowlisted owner emails may open
- * this route. Signed-out visitors go to login and come back here;
- * signed-in non-owners bounce home.
+ * Owner request 2026-10-06: the hub sits under the coin gate priced at 5
+ * coins, opens free for owner emails, and is reserved to owner emails —
+ * non-owners are refused the unlock itself (credit provider + the server
+ * unlock route), so this layout no longer bounces signed-in non-owners.
+ * They reach the route and the RouteCreditGate renders the lock.
+ *
+ * Signed-out visitors still go to login and come back here.
  */
 export default function MindStudioLayout({
   children,
@@ -19,16 +20,13 @@ export default function MindStudioLayout({
   children: React.ReactNode;
 }) {
   const { user, isLoading } = useSession();
-  const isOwner = isOwnerUser(user);
 
   useEffect(() => {
     if (isLoading) return;
     if (!user) {
       window.location.href = "/login?next=/mind-studio";
-    } else if (!isOwner) {
-      window.location.href = "/home";
     }
-  }, [isLoading, user, isOwner]);
+  }, [isLoading, user]);
 
   if (isLoading) {
     return (
@@ -36,29 +34,14 @@ export default function MindStudioLayout({
         <div className="flex flex-col items-center gap-3">
           <div className="h-8 w-8 animate-spin rounded-full border-2 border-primary border-t-transparent" />
           <p className="text-sm font-medium text-muted-foreground">
-            Opening the Image Hub…
+            Opening the Diagram Hub…
           </p>
         </div>
       </div>
     );
   }
 
-  if (!user || !isOwner) {
-    return (
-      <div className="flex min-h-[50vh] items-center justify-center px-4">
-        <div className="max-w-sm text-center space-y-3">
-          <Crown className="h-10 w-10 mx-auto text-amber-500" />
-          <h1 className="text-xl font-bold tracking-tight">
-            Owner Access Only
-          </h1>
-          <p className="text-sm text-muted-foreground">
-            The Image Hub is restricted to the platform owner emails.
-            Redirecting…
-          </p>
-        </div>
-      </div>
-    );
-  }
+  if (!user) return null;
 
   return <>{children}</>;
 }

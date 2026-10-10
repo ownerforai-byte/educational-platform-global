@@ -121,31 +121,56 @@
   "mcs": [
     {
       "question": "Which of the following features belongs only to adaptive immunity?",
-      "options": ["It is present from birth", "It has immunological memory", "It uses neutrophils and macrophages", "It acts as the first line of defence"],
+      "options": [
+        "It is present from birth",
+        "It has immunological memory",
+        "It uses neutrophils and macrophages",
+        "It acts as the first line of defence"
+      ],
       "answer": "B",
       "explanation": "Only adaptive immunity forms memory cells after the first exposure. Innate immunity is present at birth, acts immediately and responds in the same non-specific way every time."
     },
     {
       "question": "Which antibody class appears first in a primary immune response?",
-      "options": ["IgG", "IgA", "IgM", "IgE"],
+      "options": [
+        "IgG",
+        "IgA",
+        "IgM",
+        "IgE"
+      ],
       "answer": "C",
       "explanation": "IgM is secreted first because its large pentameric structure gives high binding strength; IgG follows and provides the long-term immunity."
     },
     {
       "question": "A newborn receives antibodies from its mother's milk. This is an example of:",
-      "options": ["Naturally acquired active immunity", "Artificially acquired active immunity", "Naturally acquired passive immunity", "Artificially acquired passive immunity"],
+      "options": [
+        "Naturally acquired active immunity",
+        "Artificially acquired active immunity",
+        "Naturally acquired passive immunity",
+        "Artificially acquired passive immunity"
+      ],
       "answer": "C",
       "explanation": "The baby receives ready-made IgA instead of producing it, so the transfer is natural (mother to infant) and passive (no memory cells are formed)."
     },
     {
       "question": "The main class of antibody involved in allergic reactions is:",
-      "options": ["IgG", "IgE", "IgM", "IgD"],
+      "options": [
+        "IgG",
+        "IgE",
+        "IgM",
+        "IgD"
+      ],
       "answer": "B",
       "explanation": "IgE binds to mast cells; when the allergen binds to this IgE, the mast cells release histamine, producing sneezing, itching and rash, and in severe cases anaphylaxis."
     },
     {
       "question": "Protection given by an antivenom injection is:",
-      "options": ["Slow to act but long lasting", "Immediate but temporary, with no memory cells formed", "Slow and permanent", "Effective only after the immune system makes memory cells"],
+      "options": [
+        "Slow to act but long lasting",
+        "Immediate but temporary, with no memory cells formed",
+        "Slow and permanent",
+        "Effective only after the immune system makes memory cells"
+      ],
       "answer": "B",
       "explanation": "An antivenom supplies pre-formed antibodies, giving instant protection that is broken down over a few weeks. Immunity from a vaccine is slower to develop but produces memory cells."
     }

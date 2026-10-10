@@ -3,7 +3,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 
 /**
- * Owner request (2026-10-05): AI under owner emails only, like the Image Hub.
+ * Owner request (2026-10-05): AI under owner emails only, like the Diagram Hub.
  * Source-level pins — the /ai and /chat routes bounce non-owners, the widget
  * hides for non-owners, the nav marks every Veer chat entry owner-only, and
  * the coin-gate lists treat /ai + /chat as exempt owner surfaces.

@@ -28,35 +28,48 @@
     "• The empirical formula does **not** identify the compound. Many different compounds share one empirical formula — CH₂O represents formaldehyde, acetic acid, lactic acid and glucose — so the molecular mass (or mass-spectrometric data) is essential to fix the molecular formula.",
     "• Molecular masses obtained from vapour density assume ideal-gas behaviour; association or dissociation (carboxylic acids, PCl₅, N₂O₄) gives an apparent molecular mass and hence a wrong n.",
     "• The method suits pure, well-defined compounds. For non-stoichiometric compounds, polymers with a distribution of chain lengths, hydrates of variable composition and mixtures, no single empirical formula exists.",
-    "• Combustion analysis cannot distinguish elements present in small amounts (nitrogen, halogens, sulfur) unless special absorption trains or instrumental methods (CHN analyser) are used, and hygroscopic or volatile samples give poor data."
+    "• Combustion analysis cannot distinguish elements present in small amounts (nitrogen, halogens, sulfur) unless special absorption trains or instrumental methods (CHN analyser) are used, and hygroscopic or volatile samples give poor data.",
+    "**Fact.** 1 mole = 6.022×10²³ entities (Avogadro constant, Nₐ). Molar mass (M) is g·mol⁻¹; for a compound M = Σ(atomic masses).",
+    "**Fact.** n (mol) = mass/M = volume(ideal gas, STP)/22.4 L = N/Nₐ.",
+    "**Fact.** Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100."
   ],
   "confusion": [
     "❌ Empirical and molecular formula are the same for every compound. ✅ They coincide only when n = 1; for glucose the empirical formula is CH₂O but the molecular formula is C₆H₁₂O₆.",
     "❌ The empirical formula can be found without the molecular mass. ✅ It can — but the molecular formula needs the molecular mass (or vapour density) to give n.",
     "❌ A ratio of 1 : 1.5 is acceptable as an empirical formula. ✅ Ratios must be whole numbers, so multiply by 2 to obtain 2 : 3.",
     "❌ Oxygen must always be estimated directly. ✅ In combustion analysis oxygen is normally found by difference (total mass − mass of C − mass of H).",
-    "❌ Two compounds with the same empirical formula are the same substance. ✅ They may be isomers or entirely different compounds with different molecular masses."
+    "❌ Two compounds with the same empirical formula are the same substance. ✅ They may be isomers or entirely different compounds with different molecular masses.",
+    "❌ skip the key fact → ✅ 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses).."
   ],
   "practice": [
     "A compound contains 40% C, 6.67% H and 53.33% O and has molecular mass 180. Determine its empirical and molecular formula.",
     "0.2 g of an organic compound on combustion gives 0.44 g CO₂ and 0.18 g H₂O. Find its empirical formula.",
     "An oxide of nitrogen contains 30.4% nitrogen and has vapour density 46. Find its molecular formula.",
     "A hydrated salt contains 36.1% water of crystallisation and its anhydrous salt has molar mass 120 g mol⁻¹. Find the number of water molecules per formula unit.",
-    "Explain why an empirical formula alone cannot identify a compound, with a suitable example."
+    "Explain why an empirical formula alone cannot identify a compound, with a suitable example.",
+    "one worked example for \"Calculation of empirical and molecular formula from % com…\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
   "formulas": [
     "$$\\text{molecular formula}=(\\text{empirical formula})_{n},\\qquad n=\\frac{\\text{molecular mass}}{\\text{empirical formula mass}}$$",
     "$$n(\\text{element})=\\frac{\\%\\text{element}}{100}\\times\\frac{1}{A_{\\text{element}}};\\qquad \\text{divide all values by the smallest}$$",
-    "$$\\text{mass of C}=\\text{mass of }CO_{2}\\times\\frac{12}{44},\\qquad \\text{mass of H}=\\text{mass of }H_{2}O\\times\\frac{2}{18}$$"
+    "$$\\text{mass of C}=\\text{mass of }CO_{2}\\times\\frac{12}{44},\\qquad \\text{mass of H}=\\text{mass of }H_{2}O\\times\\frac{2}{18}$$",
+    "n = m / M",
+    "n = V / 22.4 (g at STP)",
+    "% yield = (actual / theoretical) × 100"
   ],
   "universalFacts": [
     "Glucose, fructose, formaldehyde, acetic acid and lactic acid all have the empirical formula CH₂O but different molecular formulas.",
     "Molecular mass from vapour density: M = 2 × VD (hydrogen reference).",
-    "Modern instruments (CHN analysers and mass spectrometers) determine the empirical and molecular formula in minutes, but the arithmetic logic remains the same as the classical combustion-train method."
+    "Modern instruments (CHN analysers and mass spectrometers) determine the empirical and molecular formula in minutes, but the arithmetic logic remains the same as the classical combustion-train method.",
+    "1 mole = 6.022×10²³ entities (Avogadro constant, Nₐ). Molar mass (M) is g·mol⁻¹; for a compound M = Σ(atomic masses).",
+    "n (mol) = mass/M = volume(ideal gas, STP)/22.4 L = N/Nₐ.",
+    "Limiting reactant is the one consumed first; % yield = (experimental/theoretical)×100."
   ],
   "examples": [
     "**Problem:** 0.2 g of an organic compound gives 0.44 g CO₂ and 0.18 g H₂O. Find the empirical formula. **Solution:** mass C = 0.44 × 12/44 = 0.12 g (0.01 mol); mass H = 0.18 × 2/18 = 0.02 g (0.02 mol); oxygen by difference = 0.2 − 0.12 − 0.02 = 0.06 g = 0.00375 mol. Divide by 0.00375 → C : H : O = 2.67 : 5.33 : 1 → ×3 → 8 : 16 : 3, so the empirical formula is C₈H₁₆O₃ — illustrating how careful the ratio step must be.",
-    "**Problem:** An oxide of nitrogen contains 30.4% N and has VD = 46. **Solution:** N = 30.4/14 = 2.17, O = 69.6/16 = 4.35 → divide by 2.17 → 1 : 2, empirical formula NO₂, formula mass 46; n = 92/46 = 2 → molecular formula N₂O₄."
+    "**Problem:** An oxide of nitrogen contains 30.4% N and has VD = 46. **Solution:** N = 30.4/14 = 2.17, O = 69.6/16 = 4.35 → divide by 2.17 → 1 : 2, empirical formula NO₂, formula mass 46; n = 92/46 = 2 → molecular formula N₂O₄.",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "importantNotes": [
     "Learn the sequence exactly: percentage → mass → moles → divide by the smallest → whole numbers → n → molecular formula.",
@@ -64,5 +77,47 @@
     "Remember the by-difference rule for oxygen and the conversion factors 12/44 for carbon and 2/18 for hydrogen."
   ],
   "visualType": "empirical-molecular-formula",
-  "tabGroup": "Stoichiometry-Learner-Notes"
+  "keyPoints": [
+    "• Calculation of empirical",
+    "• Molecular formula from % composition",
+    "• Solving related numerical problems"
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"Calculation of empirical and molecular formula from % com…\" with one example.",
+    "compare \"Calculation of empirical\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"Calculation of empirical and molecular formula from % com…\" and verify the answer is plausible."
+  ],
+  "numericals": [
+    "Use  n = m / M  — pick reasonable values, solve, and check the units.",
+    "Use  n = V / 22.4 (g at STP)  — pick reasonable values, solve, and check the units.",
+    "Use  % yield = (actual / theoretical) × 100  — pick reasonable values, solve, and check the units."
+  ],
+  "mcqs": [
+    {
+      "question": "Which of the following is a distinct sub-topic under \"Calculation of empirical and molecular formula from % com…\"?",
+      "options": [
+        "Calculation of empirical",
+        "Molecular formula from % composition",
+        "Unrelated topic",
+        "None of the above"
+      ],
+      "answer": "A",
+      "explanation": "Calculation of empirical is listed among the official sub-ideas of Calculation of empirical and molecular formula from % com…; the others are not part of this topic."
+    },
+    {
+      "question": "A common examiner point on \"Calculation of empirical and molecular formula from % com…\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Limit to remember: 1 mole = 6.022×10²³ entities (avogadro constant, nₐ). molar mass (m) is g·mol⁻¹; for a compound m = σ(atomic masses)."
+  ],
+  "summary": "Calculation of empirical and molecular formula from % com… (Stoichiometry, Chemistry, class-11-notes) covers Calculation of empirical, molecular formula from % composition, solving related numerical problems. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
 }

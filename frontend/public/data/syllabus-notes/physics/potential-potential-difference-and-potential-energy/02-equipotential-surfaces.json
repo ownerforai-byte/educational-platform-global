@@ -55,13 +55,7 @@
     "Inside a charged conductor there is no field direction, so the concept of perpendicularity does not apply there; the whole cavity is simply at the constant potential of the conductor's surface.",
     "For a dipole, the V = 0 equipotential surface is the perpendicular bisector plane of the axis — the only region in the dipole's field where V is exactly zero, though E is non-zero there."
   ],
-  "importantStatements": [
-    "Statement 1: No work is done by the electrostatic field in moving a charge along an equipotential surface, since W = qΔV = 0.",
-    "Statement 2: Equipotential surfaces are always perpendicular to the electric field lines at the points of intersection.",
-    "Statement 3: Two distinct equipotential surfaces can never intersect each other.",
-    "Statement 4: The closeness of successive equipotential surfaces is inversely proportional to the strength of the electric field in that region.",
-    "Statement 5: The entire surface of a conductor in electrostatic equilibrium is at a single constant potential."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Equipotential surfaces are the two-dimensional analogue of contour lines on a topographic map: equal potential means equal 'height' of the potential field, and gradient magnitude equals field magnitude."
   ],
@@ -119,7 +113,5 @@
     "Sketch equipotential diagrams for the three canonical charge distributions.",
     "Calculate work and potential energy differences between two equipotential surfaces."
   ],
-  "duplicateType": 2,
-  "visualType": "equipotential",
-  "tabGroup": "equipotential-lines-and-surfaces"
+  "visualType": "equipotential"
 }

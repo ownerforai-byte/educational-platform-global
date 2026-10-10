@@ -43,13 +43,7 @@
     "Where a formula is quoted it is valid only under the conditions stated; Believing $f''=0$ implies an inflection — $x^4$ at 0 disproves it; a sign CHANGE is required.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [
-    "Statement 1: The $n$-th derivative of a degree-$n$ polynomial is a nonzero constant.",
-    "Statement 2: $f''>0$ means the slope is increasing (concave up).",
-    "Statement 3: An inflection point requires $f''$ to change sign, not merely vanish.",
-    "Statement 4: Newton's method is $x_{n+1}=x_n-\\frac{f(x_n)}{f'(x_n)}$.",
-    "Statement 5: Repeated differentiation of a composite multiplies the inner derivative each time."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Topic anchor: Leibniz's rule for products  $ frac{d^n}{dx^n}(uv)= sum_{k=0}^{n} binom{n}{k}u^{(k)}v^{(n-k)}$, generalising the product rule so products can be differentiated repeatedly without expansion."
   ],

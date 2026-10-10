@@ -4,68 +4,28 @@
   "topicSlug": "ideal-gas-equation",
   "topicTitle": "Ideal gas equation",
   "relevance": 100,
-  "notes": [
-    "**Why:** connects to other topics.",
-    "**Study:** learn definitions, formulas, practice."
-  ],
-  "confusion": [
-    "Check formula conditions."
-  ],
+  "notes": [],
+  "confusion": [],
   "practice": [],
-  "universalFacts": [
-    "Foundational for advanced topics."
-  ],
+  "universalFacts": [],
   "animation3D": "ideal-gas",
   "motionGraphics": "ideal-gas",
   "examples": [],
   "practiceQuestions": [],
-  "formulas": [
-    "Key relationship: [variable formula]."
-  ],
-  "keyPoints": [
-    "Connection of Ideal Gas Equation to other topics"
-  ],
+  "formulas": [],
+  "keyPoints": [],
   "summary": "Ideal Gas Equation covers essential principles and applications.",
-  "specialNotes": [
-    "Check conditions for Ideal Gas Equation.",
-    "Ideal Gas Equation connects to other topics."
-  ],
-  "importantStatements": [
-    "Statement 1: Definition of Ideal gas equation",
-    "Statement 2: Theorem related to Ideal gas equation",
-    "Statement 3: Condition for Ideal gas equation to be valid",
-    "Statement 4: Principle governing Ideal gas equation",
-    "Statement 5: Corollary or consequence of Ideal gas equation"
-  ],
-  "importantNotes": [
-    "Ideal Gas Equation is based on fundamental principles."
-  ],
-  "examShortTricks": [
-    "Recall the formula for Ideal Gas Equation."
-  ],
-  "examNotes": [
-    "Focus on Ideal Gas Equation problems - significant marks."
-  ],
-  "mcs": [
-    {
-      "question": "Which describes Ideal Gas Equation?",
-      "options": [
-        "Correct definition",
-        "Related concept",
-        "Incorrect description",
-        "Unrelated"
-      ],
-      "answer": "A"
-    }
-  ],
-  "importantConcepts": [
-    "Definition and significance of Ideal Gas Equation."
-  ],
+  "specialNotes": [],
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
+  "examNotes": [],
+  "importantConcepts": [],
   "importantTasks": [],
   "specificConditions": [
     "**Ideal Gas Assumptions:** The equation $PV = nRT$ assumes (1) molecules are point particles with zero volume, (2) no intermolecular forces except during elastic collisions, (3) motion is random and obeys Newton's laws. These hold best at high temperature and low pressure; real gases deviate near condensation.",
     "**Universal Gas Constant:** $R = 8.314 \text{ J/mol·K}$ is the same for all ideal gases. It connects macroscopic ($P, V, n, T$) to microscopic ($k_B, N_A$) via $R = N_A k_B$. The value depends on units: $R = 0.0821 \text{ L·atm/mol·K}$ in common chemistry units.",
-    "**Temperature Must Be Absolute:** $T$ must be in Kelvin for $PV = nRT$ to hold. Using Celsius gives incorrect results because $T=0^\\circ\text{C} \neq 0$ kinetic energy. The linear proportionality $P \\propto T$ and $V \\propto T$ only works with absolute temperature."
+    "**Temperature Must Be Absolute:** $T$ must be in Kelvin for $PV = nRT$ to hold. Using Celsius gives incorrect results because $T=0^\\circ\text{C}\neq 0$ kinetic energy. The linear proportionality $P \\propto T$ and $V \\propto T$ only works with absolute temperature."
   ],
   "duplicateType": 1
 }

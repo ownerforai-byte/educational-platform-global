@@ -16,7 +16,15 @@ import { LAB_REGISTRY } from "./lab-registry";
 import { ALL_GRAPHS, GRAPH_SUBJECTS, type GraphSubject } from "./graphs";
 import { PRO_SECTIONS } from "@/features/knowledge/pro";
 import { KNOWLEDGE_KINDS } from "@/features/knowledge/types";
-import { SYLLABUS } from "./syllabus";
+import { getUnitConcept } from "./visual-concept-map";
+import { matchConceptSchematic } from "@/components/lab/schematic-concepts";
+import {
+  buildTopicKnowledge,
+  isAuthoredSpecialTopic,
+  isInclinedPlaneTopic,
+  KIND_LABEL,
+} from "./topic-visuals";
+import { SYLLABUS, getUnitTopicEntries } from "./syllabus";
 import { getTheoremProofRoutes, getSyllabusTheoremItems } from "./theorem-topics";
 import type { SiteIndexEntry, SiteIndexGroup, SiteIndexLink } from "./site-index-types";
 
@@ -90,6 +98,43 @@ function labEntry(lab: (typeof LAB_REGISTRY)[number]): SiteIndexEntry {
 }
 
 /* ────────────────────────────── builder ────────────────────────────── */
+
+/** Topic pages whose schematic is generated from that topic's syllabus scope. */
+function buildTopicSchematicEntries(): SiteIndexEntry[] {
+  const entries: SiteIndexEntry[] = [];
+
+  for (const cls of SYLLABUS) {
+    for (const subject of cls.subjects) {
+      for (const unit of subject.units) {
+        for (const topic of getUnitTopicEntries(unit)) {
+          // Mirror SchematicDiagram's authored-drawing precedence. Only topics
+          // that reach its topic-derived builder belong in this index.
+          if (matchConceptSchematic(subject.slug, topic.slug, topic.title, unit.id)) continue;
+          if (getUnitConcept(unit.id, topic.slug, topic.title, subject.slug)) continue;
+          if (isAuthoredSpecialTopic(subject.slug, topic.slug, topic.title)) continue;
+          if (isInclinedPlaneTopic(topic.slug, topic.title, unit.id)) continue;
+
+          const knowledge = buildTopicKnowledge({
+            subjectSlug: subject.slug,
+            classSlug: cls.slug,
+            unitId: unit.id,
+            topicSlug: topic.slug,
+            topicTitle: topic.title,
+          });
+
+          entries.push({
+            name: topic.title,
+            opening: `${KIND_LABEL[knowledge.kind]} generated from this topic's syllabus scope and available notes.`,
+            href: `/${cls.slug}/${subject.slug}/chapters/${unit.id}/topics/${topic.slug}`,
+            meta: `${CLASS_LABEL[cls.slug] ?? cls.name} · ${subject.name}`,
+          });
+        }
+      }
+    }
+  }
+
+  return entries;
+}
 
 export function buildSiteIndex(): SiteIndexGroup[] {
   const groups: SiteIndexGroup[] = [];
@@ -213,6 +258,17 @@ export function buildSiteIndex(): SiteIndexGroup[] {
           links,
         };
       }),
+    });
+  }
+
+  /* Generated schematics are listed at their own syllabus topic destinations. */
+  const topicSchematicEntries = buildTopicSchematicEntries();
+  if (topicSchematicEntries.length > 0) {
+    groups.push({
+      id: "topic-schematics",
+      name: "Generated topic concept maps",
+      opening: `${topicSchematicEntries.length} topic-derived diagrams, each linked to the syllabus topic page that displays it.`,
+      entries: topicSchematicEntries,
     });
   }
 

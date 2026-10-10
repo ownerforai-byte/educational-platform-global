@@ -75,7 +75,6 @@
   ],
   "importantTasks": [
     "Explain the cause and the effects of acid rain, including the chemical reactions involved and one control measure.",
-    "Define the greenhouse effect, list the major greenhouse gases and describe the consequences of the enhanced greenhouse effect.",
     "Describe the mechanism of ozone-layer depletion by CFCs and state the consequences of extra UV-B radiation reaching the surface.",
     "Explain step by step how eutrophication develops in a lake and what happens to the aquatic ecosystem as a result.",
     "Classify a list of solid wastes as biodegradable, non-biodegradable or hazardous and recommend a suitable disposal method for each."
@@ -120,31 +119,56 @@
   "mcs": [
     {
       "question": "Which of the following is a secondary air pollutant?",
-      "options": ["Carbon monoxide", "Sulphur dioxide", "Ground-level ozone", "Smoke"],
+      "options": [
+        "Carbon monoxide",
+        "Sulphur dioxide",
+        "Ground-level ozone",
+        "Smoke"
+      ],
       "answer": "C",
       "explanation": "Ground-level ozone forms when nitrogen oxides and volatile organic compounds react in sunlight. Carbon monoxide, sulphur dioxide and smoke are primary pollutants emitted directly from a source."
     },
     {
       "question": "Rainwater is classified as acid rain when its pH is:",
-      "options": ["Above 7", "Below 5.6", "Exactly 7", "Always below 3"],
+      "options": [
+        "Above 7",
+        "Below 5.6",
+        "Exactly 7",
+        "Always below 3"
+      ],
       "answer": "B",
       "explanation": "Normal rain is about pH 5.6 because carbon dioxide forms carbonic acid in it, while acid rain produced by SO2 and NOx, which form H2SO4 and HNO3, falls below 5.6."
     },
     {
       "question": "Which set correctly lists the main greenhouse gases?",
-      "options": ["O2, N2, Ar and CO2", "CO2, CH4, N2O, CFCs and water vapour", "SO2, NOx, CO and particulates", "O2, O3, H2 and He"],
+      "options": [
+        "O2, N2, Ar and CO2",
+        "CO2, CH4, N2O, CFCs and water vapour",
+        "SO2, NOx, CO and particulates",
+        "O2, O3, H2 and He"
+      ],
       "answer": "B",
       "explanation": "CO2, CH4, N2O, CFCs and water vapour absorb outgoing infrared radiation. The substances in the third option are air pollutants, but they are not the main greenhouse gases."
     },
     {
       "question": "Ozone-layer depletion is caused mainly by:",
-      "options": ["Carbon dioxide emissions from vehicles", "Chlorofluorocarbons releasing chlorine radicals that destroy stratospheric ozone", "Sulphur dioxide released by industries", "Deforestation in the tropics"],
+      "options": [
+        "Carbon dioxide emissions from vehicles",
+        "Chlorofluorocarbons releasing chlorine radicals that destroy stratospheric ozone",
+        "Sulphur dioxide released by industries",
+        "Deforestation in the tropics"
+      ],
       "answer": "B",
       "explanation": "Ultraviolet radiation breaks CFCs into chlorine radicals, which catalytically convert O3 to O2. The Montreal Protocol of 1987 phased out CFCs, and the Antarctic ozone hole was reported in 1985."
     },
     {
       "question": "In a lake receiving excess fertiliser runoff, eutrophication first leads to:",
-      "options": ["Rapid fish death caused by cold water", "An algal bloom caused by nutrient enrichment", "A rise in BOD caused by fish waste", "An increase in dissolved oxygen at the surface"],
+      "options": [
+        "Rapid fish death caused by cold water",
+        "An algal bloom caused by nutrient enrichment",
+        "A rise in BOD caused by fish waste",
+        "An increase in dissolved oxygen at the surface"
+      ],
       "answer": "B",
       "explanation": "Excess nitrates and phosphates trigger an algal bloom; when the algae die, aerobic decomposition raises the BOD and depletes dissolved oxygen, and the fish then die."
     }

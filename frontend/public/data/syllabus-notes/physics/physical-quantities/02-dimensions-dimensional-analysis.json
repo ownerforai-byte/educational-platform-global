@@ -38,7 +38,6 @@
   ],
   "animation3D": "physical-quantities",
   "motionGraphics": "physical-quantities",
-  "examples": [],
   "practiceQuestions": [
     "Q2. State the principle of homogeneity of dimensions and use it to test the equation $v = u - at$.",
     "Q3. Assuming the period $T$ of a simple pendulum depends on its length $l$ and acceleration due to gravity $g$, derive the relation $T = k\\sqrt{l/g}$ dimensionally.",
@@ -67,11 +66,7 @@
     "Note 3: When converting units, keep the dimensional exponents of the QUANTITY (not of the units) — the commonest source of sign errors.",
     "Note 4: Dimensionless groups (Reynolds number, Mach number) are the basis of scale-model testing in engineering — same dimensions in, same physics out."
   ],
-  "importantStatements": [
-    "Statement 1: The dimensions of every term in a physically valid equation must be identical (principle of dimensional homogeneity).",
-    "Statement 2: Dimensional methods can determine the FORM of a relation but never its dimensionless constants.",
-    "Statement 3: The numerical value of a physical quantity changes with the unit system, but the quantity itself ($n \\\times u$) is invariant."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Note 1: Work and torque share dimensions $[ML^2T^{-2}]$ but differ physically (scalar vs vector) — dimensions do not define a quantity.",
     "Note 2: The pendulum derivation gives $T = k\\sqrt{l/g}$; the constant $k = 2\\pi$ must come from experiment or full theory.",
@@ -162,5 +157,6 @@
     "**Function Argument Constraint:** The arguments of trigonometric (e.g., sin θ, cos θ), exponential (e.g., $e^x$), and logarithmic functions must be dimensionless. This is a critical check for determining the dimensions of unknown constants in an equation.",
     "**Dimensionless Constant Constraint:** Dimensional analysis inherently cannot identify or verify dimensionless constants (e.g., $2\\pi$, 0.5). These factors must be determined via independent theoretical derivation or experimental calibration."
   ],
-  "visualType": "dimensional-analysis"
+  "visualType": "dimensional-analysis",
+  "examples": []
 }

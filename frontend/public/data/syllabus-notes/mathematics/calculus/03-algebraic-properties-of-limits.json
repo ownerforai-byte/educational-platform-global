@@ -44,13 +44,7 @@
     "Where a formula is quoted it is valid only under the conditions stated; Using the quotient law when the denominator's limit is 0 — the law does not apply and the form is indeterminate.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [
-    "Statement 1: $\\lim(f\\pm g)=L\\pm M$ whenever both limits exist.",
-    "Statement 2: $\\lim\\frac{f}{g}=\\frac{L}{M}$ is valid only when $M\\ne0$.",
-    "Statement 3: $\\lim f^n=L^n$ holds for positive integers; an even root also needs a non-negative limit.",
-    "Statement 4: $\\lim g(f(x))=g(L)$ requires $g$ continuous at $L$.",
-    "Statement 5: If $g\\le f\\le h$ near $a$ and $\\lim g=\\lim h=L$ then $\\lim f=L$."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Topic anchor: Why the laws survive discontinuity  none of these need $f$ defined at $a$, only the limits to exist."
   ],

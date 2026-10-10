@@ -2,21 +2,23 @@ import type { Metadata } from "next";
 import { ImageHub } from "@/features/image-hub";
 
 export const metadata: Metadata = {
-  title: "Image Hub — Agnes 2.1 Flash · Ravikisan's Platform",
+  title: "Diagram Hub · Ravikisan's Platform",
   description:
-    "Owner-only image studio: describe a picture or an academic figure and Agnes 2.1 Flash draws it (puter.js browser fallback), with the gallery saved to your account and downloads.",
+    "Owner-only drawing studio: describe a labelled diagram, an academic figure or a picture and the hub draws it (puter.js browser fallback), with the gallery saved to your account and downloads.",
 };
 
 /**
- * IMAGE HUB (owner request 2026-10-02): the former Mind Studio diagram
- * workspace is REPLACED — this route now hosts the whole image interface:
- * prompt → Agnes 2.1 Flash image chain → puter.js fallback → gallery.
+ * DIAGRAM HUB (owner request 2026-10-02): the former Mind Studio workspace is
+ * REPLACED — this route now hosts the whole drawing interface:
+ * prompt → server drawing engine → puter.js fallback → gallery. Renamed
+ * Diagram Hub on 2026-10-07 (owner: no vendor name, no "AI" wording).
  *
- * Owner emails only (owner request 2026-10-05: "make the image hub under
- * owner emails only"): layout.tsx bounces everyone else, and the backend
- * endpoints /api/ai/image + /api/ai/figure + /api/ai/image-history +
- * /api/ai/image-search + /api/ai/image-facts enforce the same boundary
- * (with the ai-image rate-limit tier protecting the key).
+ * Owner emails only (owner requests 2026-10-05 / 2026-10-06): the route sits
+ * under the coin gate priced at 5 coins — owners open it free, and a
+ * non-owner's unlock is refused (provider + the server unlock route), so
+ * only owner emails ever reach the studio. The backend gates
+ * /api/ai/image + /api/ai/figure with requireOwnerEmail as the real
+ * boundary (with the ai-image rate-limit tier protecting the key).
  */
 export default function ImageHubPage() {
   return (

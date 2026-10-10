@@ -6,6 +6,11 @@ import {
   type SyllabusTopicEntry,
 } from "@/lib/syllabus";
 import type { UnitVM } from "./types";
+import {
+  parseSubjectParams,
+  parseUnitParams,
+  parseTopicParams,
+} from "./schema";
 
 export function listSubjects(classSlug: string): { slug: string; name: string }[] {
   return (
@@ -23,6 +28,12 @@ export function getSubjectNav(
   subject: ReturnType<typeof getSubjectSyllabus>;
   units: UnitVM[];
 } {
+  // Reject a malformed subject slug before it reaches the data layer; an
+  // invalid one resolves to the same "no subject, no units" the caller already
+  // handles for an unknown slug.
+  if (!parseSubjectParams({ subject: subjectSlug })) {
+    return { subject: undefined, units: [] };
+  }
   const subject = getSubjectSyllabus(classSlug, subjectSlug);
   const units: UnitVM[] = subject
     ? subject.units.map((u) => ({
@@ -42,6 +53,7 @@ export function getUnit(
   subjectSlug: string,
   unitId: string,
 ): UnitVM | null {
+  if (!parseUnitParams({ subject: subjectSlug, unit: unitId })) return null;
   const { units } = getSubjectNav(classSlug, subjectSlug);
   return units.find((u) => u.id === unitId) ?? null;
 }
@@ -52,6 +64,7 @@ export function getUnitTopic(
   unitId: string,
   topicSlug: string,
 ): { unit: UnitVM; topic: SyllabusTopicEntry } | null {
+  if (!parseTopicParams({ subject: subjectSlug, unit: unitId, topicSlug })) return null;
   const unit = getUnit(classSlug, subjectSlug, unitId);
   if (!unit) return null;
   const topic = getTopicEntryBySlug(

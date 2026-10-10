@@ -1,13 +1,13 @@
 [
   {
     "unitSlug": "applied-chemistry",
-    "topicSlug": "01-chemical-industry",
+    "topicSlug": "chemical-industry",
     "title": "01 CHEMICAL INDUSTRY",
     "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 2,
     "filename": "01-chemical-industry.json",
-    "tabGroup": "01-chemical-industry",
+    "tabGroup": "chemical-industry",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
@@ -32,7 +32,7 @@
     "duplicateType": 2,
     "filename": "02-benzene.json",
     "tabGroup": "02-benzene",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -156,79 +156,19 @@
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "09-aufbau-pauli-hund.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 2
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "aufbau-principle-pauli-s-exclusion-principle-hund-s-rule-and-electronic-configurations-of-atoms-",
-    "title": "Aufbau principle, Pauli's exclusion principle, Hund's rul…",
-    "noteCount": 0,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "09-aufbau-principle-pauli-s-exclusion-principle-hund-s-rule-and-electronic-configurations-of-atoms-.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 3
   },
   {
     "unitSlug": "atomic-structure",
     "topicSlug": "defects-of-bohr-s-theory",
     "title": "Defects (Limitations) of Bohr's Theory",
-    "noteCount": 20,
+    "noteCount": 63,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "04-bohr-defects.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "defects-of-bohr-s-theory",
-    "title": "Defects of Bohr's theory",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "04-defects-of-bohr-s-theory.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "defects-of-bohr-s-theory",
-    "title": "Defects of Bohr's Theory — Quick Revision List",
-    "noteCount": 13,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "05-bohr-defects.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": true,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "defects-of-bohr-s-theory",
-    "title": "Quantisation of Angular Momentum — Bohr's Postulate and de Broglie's Proof",
-    "noteCount": 12,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "07-bohr-quantization-of-angular-momentum.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": true,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "defects-of-bohr-s-theory",
-    "title": "The Bohr–Bury Scheme of Electronic Configuration",
-    "noteCount": 16,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "14-bohr-bury-scheme.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 15
   },
   {
     "unitSlug": "atomic-structure",
@@ -236,9 +176,8 @@
     "title": "Discovery of the Electron — Cathode Rays",
     "noteCount": 13,
     "source": "ravikishan",
-    "duplicateType": 2,
+    "duplicateType": 1,
     "filename": "21-electron-and-cathode-rays.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
     "hasMcqs": true,
     "universalFactsCount": 3
   },
@@ -246,25 +185,12 @@
     "unitSlug": "atomic-structure",
     "topicSlug": "discovery-of-neutron-and-fundamental-particles",
     "title": "The Neutron and the Fundamental Particles Table",
-    "noteCount": 12,
+    "noteCount": 25,
     "source": "ravikishan",
-    "duplicateType": 2,
+    "duplicateType": 1,
     "filename": "23-neutron-and-fundamental-particles.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
     "hasMcqs": true,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "discovery-of-neutron-and-fundamental-particles",
-    "title": "Mass Number and Isotopes",
-    "noteCount": 14,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "25-mass-number-and-isotopes.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 6
   },
   {
     "unitSlug": "atomic-structure",
@@ -272,9 +198,8 @@
     "title": "Discovery of the Proton — Anode Rays and Nuclear Transmutation",
     "noteCount": 10,
     "source": "ravikishan",
-    "duplicateType": 2,
+    "duplicateType": 1,
     "filename": "22-proton-and-anode-rays.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
     "hasMcqs": true,
     "universalFactsCount": 3
   },
@@ -282,249 +207,56 @@
     "unitSlug": "atomic-structure",
     "topicSlug": "elementary-idea-of-quantum-mechanical-model-de-broglie-s-wave-equation",
     "title": "Elementary Idea of the Quantum Mechanical Model — de Broglie's Wave Equation",
-    "noteCount": 16,
+    "noteCount": 40,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "05-de-broglie-waves.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "elementary-idea-of-quantum-mechanical-model-de-broglie-s-wave-equation",
-    "title": "Elementary idea of quantum mechanical model: de Broglie's…",
-    "noteCount": 0,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "05-elementary-idea-of-quantum-mechanical-model-de-broglie-s-wave-equation.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "elementary-idea-of-quantum-mechanical-model-de-broglie-s-wave-equation",
-    "title": "de Broglie Matter Waves — Equation, Derivation and Experimental Proof",
-    "noteCount": 13,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "11-de-broglie-matter-waves.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": true,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "elementary-idea-of-quantum-mechanical-model-de-broglie-s-wave-equation",
-    "title": "Schrödinger's Wave Equation — Elementary Idea",
-    "noteCount": 12,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "13-schrodinger-wave-equation.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": true,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "heisenberg-s-uncertainty-principle-and-concept-of-probability",
-    "title": "Heisenberg's Uncertainty Principle and concept of probabi…",
-    "noteCount": 3,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "06-heisenberg-s-uncertainty-principle-and-concept-of-probability.json",
-    "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 10
   },
   {
     "unitSlug": "atomic-structure",
     "topicSlug": "heisenberg-s-uncertainty-principle-and-concept-of-probability",
     "title": "Heisenberg's Uncertainty Principle and the Concept of Probability",
-    "noteCount": 12,
+    "noteCount": 29,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "06-heisenberg-uncertainty.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "heisenberg-s-uncertainty-principle-and-concept-of-probability",
-    "title": "Heisenberg's Uncertainty Principle — Statement, Forms and Numericals",
-    "noteCount": 14,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "12-heisenberg-uncertainty-principle.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
     "hasMcqs": true,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "orbitals-and-shape-of-s-and-p-orbitals-only",
-    "title": "Orbitals and shape of s and p orbitals only",
-    "noteCount": 0,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "08-orbitals-and-shape-of-s-and-p-orbitals-only.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 9
   },
   {
     "unitSlug": "atomic-structure",
     "topicSlug": "orbitals-and-shape-of-s-and-p-orbitals-only",
     "title": "Orbitals and the Shapes of s and p Orbitals",
-    "noteCount": 23,
+    "noteCount": 55,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "08-orbitals-shapes.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "orbitals-and-shape-of-s-and-p-orbitals-only",
-    "title": "Orbit versus Orbital — and the Spherical s Orbital",
-    "noteCount": 16,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "15-orbit-vs-orbital-and-s-orbital.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
     "hasMcqs": true,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "orbitals-and-shape-of-s-and-p-orbitals-only",
-    "title": "Electron Spin, Box Notation and Shell Mapping",
-    "noteCount": 17,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "19-electron-spin-notation-and-shell-mapping.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 10
   },
   {
     "unitSlug": "atomic-structure",
     "topicSlug": "postulates-of-bohr-s-atomic-model-and-its-application",
     "title": "Postulates of Bohr's Atomic Model and their Applications",
-    "noteCount": 19,
+    "noteCount": 76,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-bohr-postulates.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "postulates-of-bohr-s-atomic-model-and-its-application",
-    "title": "Postulates of Bohr's atomic model and its application",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-postulates-of-bohr-s-atomic-model-and-its-application.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "postulates-of-bohr-s-atomic-model-and-its-application",
-    "title": "Bohr's Postulates — Concise Statement and Meaning",
-    "noteCount": 12,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "03-bohr-postulates.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": true,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "postulates-of-bohr-s-atomic-model-and-its-application",
-    "title": "Applying Bohr's Model — Radii, Speeds and Energies (Worked Pattern)",
-    "noteCount": 17,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "04-bohr-practical-application.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": true,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "postulates-of-bohr-s-atomic-model-and-its-application",
-    "title": "Absorption and Emission Spectra — Bohr's Explanation",
-    "noteCount": 15,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "06-bohr-absorption-vs-emission.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": true,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "postulates-of-bohr-s-atomic-model-and-its-application",
-    "title": "Negative Electronic Energy and the Zero of Energy",
-    "noteCount": 12,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "10-negative-electronic-energy-and-bohr-critique.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 18
   },
   {
     "unitSlug": "atomic-structure",
     "topicSlug": "quantum-numbers",
     "title": "Quantum Numbers",
-    "noteCount": 19,
+    "noteCount": 58,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "07-quantum-numbers.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "quantum-numbers",
-    "title": "The Four Quantum Numbers and the 2p Electron",
-    "noteCount": 13,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "16-p-orbital-and-four-quantum-numbers.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
     "hasMcqs": true,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "quantum-numbers",
-    "title": "Quantum Numbers — Origins and Subshell Metrics",
-    "noteCount": 14,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "17-quantum-number-origins-and-subshell-metrics.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": true,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "quantum-numbers",
-    "title": "Orbital Designation Matrix and the Spin Quantum Number",
-    "noteCount": 14,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "18-orbital-designation-matrix-and-magnetic-spin.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 12
   },
   {
     "unitSlug": "atomic-structure",
@@ -542,7 +274,7 @@
     "unitSlug": "atomic-structure",
     "topicSlug": "rutherford-s-atomic-model-and-its-limitations",
     "title": "Rutherford's atomic model and its limitations",
-    "noteCount": 3,
+    "noteCount": 5,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-rutherford-s-atomic-model-and-its-limitations.json",
@@ -637,54 +369,18 @@
     "unitSlug": "atomic-structure",
     "topicSlug": "spectrum-of-hydrogen-atom",
     "title": "Spectrum of the Hydrogen Atom",
-    "noteCount": 18,
+    "noteCount": 46,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "03-hydrogen-spectrum.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "spectrum-of-hydrogen-atom",
-    "title": "Spectrum of hydrogen atom",
-    "noteCount": 0,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "03-spectrum-of-hydrogen-atom.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "spectrum-of-hydrogen-atom",
-    "title": "Origin of Spectral Lines and the Five Series of Hydrogen",
-    "noteCount": 15,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "08-hydrogen-spectrum-origin-and-series.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": true,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "atomic-structure",
-    "topicSlug": "spectrum-of-hydrogen-atom",
-    "title": "Rydberg Equation — Derivation from Bohr's Model and Numericals",
-    "noteCount": 14,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "09-hydrogen-spectrum-rydberg-equation.json",
-    "tabGroup": "Atomic-Structure-Learner-Notes",
-    "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 10
   },
   {
     "unitSlug": "basic-concept-of-organic-chemistry",
     "topicSlug": "alkyl-groups-functional-groups-and-homologous-series",
     "title": "Alkyl groups, functional groups and homologous series",
-    "noteCount": 0,
+    "noteCount": 5,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "05-alkyl-groups-functional-groups-and-homologous-series.json",
@@ -695,7 +391,7 @@
     "unitSlug": "basic-concept-of-organic-chemistry",
     "topicSlug": "classification-of-organic-compounds",
     "title": "Classification of organic compounds",
-    "noteCount": 3,
+    "noteCount": 5,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "04-classification-of-organic-compounds.json",
@@ -706,24 +402,12 @@
     "unitSlug": "basic-concept-of-organic-chemistry",
     "topicSlug": "idea-of-structural-formula-contracted-formula-and-bond-line-structural-formula",
     "title": "Idea of structural formula, contracted formula and bond l…",
-    "noteCount": 0,
+    "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "06-idea-of-structural-formula-contracted-formula-and-bond-line-structural-formula.json",
     "hasMcqs": true,
     "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "basic-concept-of-organic-chemistry",
-    "topicSlug": "idea-of-structural-formula-contracted-formula-and-bond-line-structural-formula",
-    "title": "Structural Formula, Contracted Formula and Bond Line Notation",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "04-idea-of-structural-formula-contracted-formula-and-bond-line-structural-formula.json",
-    "tabGroup": "04-idea-of-structural-formula-contracted-formula-and-bond-line-structural-formula",
-    "hasMcqs": true,
-    "universalFactsCount": 0
   },
   {
     "unitSlug": "basic-concept-of-organic-chemistry",
@@ -741,7 +425,7 @@
     "unitSlug": "basic-concept-of-organic-chemistry",
     "topicSlug": "preliminary-idea-of-cracking-and-reforming-quality-of-gasoline-octane-number-cetane-number-and-g",
     "title": "Preliminary idea of cracking and reforming, quality of ga…",
-    "noteCount": 0,
+    "noteCount": 5,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "07-preliminary-idea-of-cracking-and-reforming-quality-of-gasoline-octane-number-cetane-number-and-g.json",
@@ -764,7 +448,7 @@
     "unitSlug": "basic-concept-of-organic-chemistry",
     "topicSlug": "reasons-for-the-separate-study-of-organic-compounds-from-inorganic-compounds",
     "title": "Reasons for the separate study of organic compounds from …",
-    "noteCount": 3,
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-reasons-for-the-separate-study-of-organic-compounds-from-inorganic-compounds.json",
@@ -773,21 +457,9 @@
   },
   {
     "unitSlug": "basic-concept-of-organic-chemistry",
-    "topicSlug": "reasons-for-the-separate-study-of-organic-compounds-from-inorganic-compounds",
-    "title": "Reasons for Separate Study of Organic Compounds",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "02-reasons-for-separate-study-of-organic-compounds.json",
-    "tabGroup": "02-reasons-for-separate-study-of-organic-compounds",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "basic-concept-of-organic-chemistry",
     "topicSlug": "tetra-covalency-and-catenation-properties-of-carbon",
     "title": "Tetra-covalency and catenation properties of carbon",
-    "noteCount": 0,
+    "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "03-tetra-covalency-and-catenation-properties-of-carbon.json",
@@ -795,38 +467,26 @@
     "universalFactsCount": 1
   },
   {
-    "unitSlug": "basic-concept-of-organic-chemistry",
-    "topicSlug": "tetra-covalency-and-catenation-properties-of-carbon-classification-of-organic-compounds",
-    "title": "Tetra-covalency, Catenation and Classification",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "03-tetra-covalency-and-catenation-properties-of-carbon-classification-of-organic-compounds.json",
-    "tabGroup": "03-tetra-covalency-and-catenation-properties-of-carbon-classification-of-organic-compounds",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
     "unitSlug": "basic-concept-organic",
-    "topicSlug": "01-organic-chemistry-intro",
-    "title": "01 ORGANIC CHEMISTRY INTRO",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "01-organic-chemistry-intro.json",
-    "tabGroup": "01-organic-chemistry-intro",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "basic-concept-organic",
-    "topicSlug": "02-classification-organic",
+    "topicSlug": "classification-organic",
     "title": "02 CLASSIFICATION ORGANIC",
     "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 2,
     "filename": "02-classification-organic.json",
-    "tabGroup": "02-classification-organic",
+    "tabGroup": "classification-organic",
+    "hasMcqs": true,
+    "universalFactsCount": 0
+  },
+  {
+    "unitSlug": "basic-concept-organic",
+    "topicSlug": "organic-chemistry-intro",
+    "title": "01 ORGANIC CHEMISTRY INTRO",
+    "noteCount": 4,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "01-organic-chemistry-intro.json",
+    "tabGroup": "organic-chemistry-intro",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
@@ -839,7 +499,7 @@
     "duplicateType": 2,
     "filename": "01-bio-inorganic-intro.json",
     "tabGroup": "01-bio-inorganic-intro",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -857,24 +517,12 @@
     "unitSlug": "bio-inorganic-chemistry",
     "topicSlug": "introduction-to-bio-inorganic-chemistry",
     "title": "Introduction to Bio-inorganic Chemistry",
-    "noteCount": 3,
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-introduction-to-bio-inorganic-chemistry.json",
     "hasMcqs": true,
     "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "bio-inorganic-chemistry",
-    "topicSlug": "introduction-to-bio-inorganic-chemistry-micro-and-macro-nutrients-importance-of-metal-ions-in-biological-systems",
-    "title": "Bio-inorganic Chemistry — Metal Ions in Biological Systems",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "01-introduction-to-bio-inorganic-chemistry-micro-and-macro-nutrients-importance-of-metal-ions-in-biological-systems.json",
-    "tabGroup": "01-introduction-to-bio-inorganic-chemistry-micro-and-macro-nutrients-importance-of-metal-ions-in-biological-systems",
-    "hasMcqs": true,
-    "universalFactsCount": 0
   },
   {
     "unitSlug": "bio-inorganic-chemistry",
@@ -908,7 +556,7 @@
     "duplicateType": 2,
     "filename": "02-metal-ions-biological-systems.json",
     "tabGroup": "02-metal-ions-biological-systems",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -935,49 +583,49 @@
   },
   {
     "unitSlug": "chemical-bonding",
-    "topicSlug": "01-ionic-covalent-bond",
-    "title": "01 IONIC COVALENT BOND",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "01-ionic-covalent-bond.json",
-    "tabGroup": "01-ionic-covalent-bond",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "chemical-bonding",
-    "topicSlug": "02-vsepr-theory",
-    "title": "02 VSEPR THEORY",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "02-vsepr-theory.json",
-    "tabGroup": "02-vsepr-theory",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "chemical-bonding",
-    "topicSlug": "03-hybridization",
+    "topicSlug": "hybridization",
     "title": "03 HYBRIDIZATION",
     "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 2,
     "filename": "03-hybridization.json",
-    "tabGroup": "03-hybridization",
+    "tabGroup": "hybridization",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
     "unitSlug": "chemical-bonding",
-    "topicSlug": "04-molecular-orbital-theory",
+    "topicSlug": "ionic-covalent-bond",
+    "title": "01 IONIC COVALENT BOND",
+    "noteCount": 4,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "01-ionic-covalent-bond.json",
+    "tabGroup": "ionic-covalent-bond",
+    "hasMcqs": true,
+    "universalFactsCount": 0
+  },
+  {
+    "unitSlug": "chemical-bonding",
+    "topicSlug": "molecular-orbital-theory",
     "title": "04 MOLECULAR ORBITAL THEORY",
     "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 2,
     "filename": "04-molecular-orbital-theory.json",
-    "tabGroup": "04-molecular-orbital-theory",
+    "tabGroup": "molecular-orbital-theory",
+    "hasMcqs": true,
+    "universalFactsCount": 0
+  },
+  {
+    "unitSlug": "chemical-bonding",
+    "topicSlug": "vsepr-theory",
+    "title": "02 VSEPR THEORY",
+    "noteCount": 4,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "02-vsepr-theory.json",
+    "tabGroup": "vsepr-theory",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
@@ -1002,7 +650,7 @@
     "duplicateType": 2,
     "filename": "03-covalent-bond-and-coordinate-covalent-bond-and-properties-of-covalent-compounds.json",
     "tabGroup": "03-covalent-bond-and-coordinate-covalent-bond-and-properties-of-covalent-compounds",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1025,7 +673,7 @@
     "duplicateType": 2,
     "filename": "07-elementary-idea-of-valence-bond-theory.json",
     "tabGroup": "07-elementary-idea-of-valence-bond-theory",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1037,7 +685,7 @@
     "duplicateType": 2,
     "filename": "08-hybridization-involving-s-and-p-orbitals-only.json",
     "tabGroup": "08-hybridization-involving-s-and-p-orbitals-only",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1049,7 +697,7 @@
     "duplicateType": 2,
     "filename": "02-ionic-bond-and-its-properties.json",
     "tabGroup": "02-ionic-bond-and-its-properties",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1061,7 +709,7 @@
     "duplicateType": 2,
     "filename": "04-lewis-dot-structure-of-some-common-compounds-of-s-and-p-block-elements.json",
     "tabGroup": "04-lewis-dot-structure-of-some-common-compounds-of-s-and-p-block-elements",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1073,7 +721,7 @@
     "duplicateType": 2,
     "filename": "11-metallic-bonding-and-properties-of-metallic-solids.json",
     "tabGroup": "11-metallic-bonding-and-properties-of-metallic-solids",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1085,7 +733,7 @@
     "duplicateType": 2,
     "filename": "05-resonance.json",
     "tabGroup": "05-resonance",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1097,7 +745,7 @@
     "duplicateType": 2,
     "filename": "01-valence-shell-valence-electron-and-octet-theory.json",
     "tabGroup": "01-valence-shell-valence-electron-and-octet-theory",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1109,26 +757,14 @@
     "duplicateType": 2,
     "filename": "10-vander-waal-s-force-and-molecular-solids-hydrogen-bonding-and-its-application.json",
     "tabGroup": "10-vander-waal-s-force-and-molecular-solids-hydrogen-bonding-and-its-application",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "chemical-bonding-and-shapes-of-molecules",
-    "topicSlug": "vsepr-theory-and-shapes-of-simple-molecules",
-    "title": "VSEPR Theory and Shapes of Simple Molecules",
-    "noteCount": 5,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "06-vsepr-theory-and-shapes-of-simple-molecules.json",
-    "tabGroup": "06-vsepr-theory-and-shapes-of-simple-molecules",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
     "unitSlug": "chemical-bonding-and-shapes-of-molecules",
     "topicSlug": "vsepr-theory-and-shapes-of-simple-molecules-bef2-bf3-ch4-ch3cl-pcl5-sf6-h2o-nh3-co2-h2s-ph3",
     "title": "VSEPR theory and shapes of simple molecules (BeF2, BF3, C…",
-    "noteCount": 3,
+    "noteCount": 8,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "06-vsepr-theory-and-shapes-of-simple-molecules-bef2-bf3-ch4-ch3cl-pcl5-sf6-h2o-nh3-co2-h2s-ph3.json",
@@ -1220,21 +856,9 @@
   },
   {
     "unitSlug": "chemical-equilibrium",
-    "topicSlug": "physical-and-chemical-equilibrium-dynamic-nature",
-    "title": "Physical and Chemical Equilibrium — Dynamic Nature",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "01-physical-and-chemical-equilibrium-dynamic-nature.json",
-    "tabGroup": "01-physical-and-chemical-equilibrium-dynamic-nature",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "chemical-equilibrium",
     "topicSlug": "physical-and-chemical-equilibrium-dynamic-nature-of-chemical-equilibrium",
     "title": "Physical and chemical equilibrium; dynamic nature of chem…",
-    "noteCount": 3,
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-physical-and-chemical-equilibrium-dynamic-nature-of-chemical-equilibrium.json",
@@ -1262,7 +886,7 @@
     "duplicateType": 2,
     "filename": "02-alkali-metals.json",
     "tabGroup": "02-alkali-metals",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1274,7 +898,7 @@
     "duplicateType": 2,
     "filename": "04-alkali-metals-general-characteristics.json",
     "tabGroup": "04-alkali-metals-general-characteristics",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1297,7 +921,7 @@
     "duplicateType": 2,
     "filename": "03-alkaline-earth-metals.json",
     "tabGroup": "03-alkaline-earth-metals",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1309,7 +933,7 @@
     "duplicateType": 2,
     "filename": "07-alkaline-earth-metals-general-characteristics.json",
     "tabGroup": "07-alkaline-earth-metals-general-characteristics",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1332,7 +956,7 @@
     "duplicateType": 2,
     "filename": "02-general-principles-of-extraction-of-metals.json",
     "tabGroup": "02-general-principles-of-extraction-of-metals",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1366,31 +990,19 @@
     "duplicateType": 2,
     "filename": "01-metallurgical-principles.json",
     "tabGroup": "01-metallurgical-principles",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
     "unitSlug": "chemistry-of-metals",
     "topicSlug": "metals-and-metallurgical-principles-definition-of-metallurgy-and-its-types-hydrometallurgy-pyrom",
     "title": "Metals and metallurgical principles: definition of metall…",
-    "noteCount": 0,
+    "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-metals-and-metallurgical-principles-definition-of-metallurgy-and-its-types-hydrometallurgy-pyrom.json",
     "hasMcqs": true,
     "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "chemistry-of-metals",
-    "topicSlug": "metals-and-metallurgical-principles-definition-of-metallurgy-and-its-types-ore-gangue-flux-slag-alloy-and-amalgam",
-    "title": "Metallurgy — Principles and Extraction Methods",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "01-metals-and-metallurgical-principles.json",
-    "tabGroup": "01-metals-and-metallurgical-principles",
-    "hasMcqs": true,
-    "universalFactsCount": 0
   },
   {
     "unitSlug": "chemistry-of-metals",
@@ -1412,7 +1024,7 @@
     "duplicateType": 2,
     "filename": "08-alkaline-earth-compounds-detailed.json",
     "tabGroup": "08-molecular-formula-and-uses-of-quick-lime-bleaching-powder-magnesia-plaster-of-paris-and-epsom-salt-solubility-of-hydroxides-carbonates-and-sulphates-of-alkaline-earth-metals-stability-of-carbonate-and-nitrate-of-alkaline-earth-metals",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1424,7 +1036,7 @@
     "duplicateType": 2,
     "filename": "03-refining-of-metals.json",
     "tabGroup": "03-refining-of-metals",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1469,7 +1081,7 @@
     "duplicateType": 2,
     "filename": "05-sodium-extraction-from-down-s-process-properties-action-with-oxygen-water-acids-nonmetals-and-ammonia-and-uses.json",
     "tabGroup": "05-sodium-extraction-from-down-s-process-properties-action-with-oxygen-water-acids-nonmetals-and-ammonia-and-uses",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1492,7 +1104,7 @@
     "duplicateType": 2,
     "filename": "06-sodium-compounds-detailed.json",
     "tabGroup": "06-sodium-hydroxide-properties-precipitation-reaction-and-action-with-carbon-monoxide-and-uses-sodium-carbonate-properties-action-with-co2-so2-water-precipitation-reactions-and-uses",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1537,7 +1149,7 @@
     "duplicateType": 2,
     "filename": "02-allotropes-of-oxygen-oxides-applications-of-hydrogen-peroxide-medical-and-industrial-application-of-oxygen.json",
     "tabGroup": "02-allotropes-of-oxygen-oxides-applications-of-hydrogen-peroxide-medical-and-industrial-application-of-oxygen",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1571,7 +1183,7 @@
     "duplicateType": 2,
     "filename": "06-carbon.json",
     "tabGroup": "06-carbon",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1594,7 +1206,7 @@
     "duplicateType": 2,
     "filename": "07-carbon-allotropes-detailed.json",
     "tabGroup": "07-carbon-allotropes-of-carbon-crystalline-and-amorphous-including-fullerenes-structure-general-properties-and-uses-properties-reducing-action-reaction-with-metals-and-nonmetals-and-uses-of-carbon-monoxide",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1639,7 +1251,7 @@
     "duplicateType": 2,
     "filename": "05-halogens.json",
     "tabGroup": "05-halogens",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1655,33 +1267,9 @@
   },
   {
     "unitSlug": "chemistry-of-non-metals",
-    "topicSlug": "hydrogen",
-    "title": "Hydrogen",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "01-hydrogen.json",
-    "tabGroup": "01-hydrogen",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "chemistry-of-non-metals",
-    "topicSlug": "hydrogen-chemistry-of-atomic-and-nascent-hydrogen-isotopes-and-their-uses-application-of-hydrogen-as-fuel-heavy-water-and-its-applications",
-    "title": "Hydrogen — Chemistry and Uses",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "01-hydrogen-chemistry-of-atomic-and-nascent-hydrogen-isotopes-and-their-uses-application-of-hydrogen-as-fuel-heavy-water-and-its-applications.json",
-    "tabGroup": "01-hydrogen-chemistry-of-atomic-and-nascent-hydrogen-isotopes-and-their-uses-application-of-hydrogen-as-fuel-heavy-water-and-its-applications",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "chemistry-of-non-metals",
     "topicSlug": "hydrogen-chemistry-of-atomic-and-nascent-hydrogen-isotopes-of-hydrogen-and-their-uses",
     "title": "Hydrogen: chemistry of atomic and nascent hydrogen; isoto…",
-    "noteCount": 3,
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-hydrogen-chemistry-of-atomic-and-nascent-hydrogen-isotopes-of-hydrogen-and-their-uses.json",
@@ -1708,7 +1296,7 @@
     "duplicateType": 2,
     "filename": "04-nitrogen.json",
     "tabGroup": "04-nitrogen",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1731,7 +1319,7 @@
     "duplicateType": 2,
     "filename": "05-nitrogen-reason-for-inertness-of-nitrogen-and-active-nitrogen-chemical-properties-of-ammonia-and-its-applications.json",
     "tabGroup": "05-nitrogen-reason-for-inertness-of-nitrogen-and-active-nitrogen-chemical-properties-of-ammonia-and-its-applications",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1743,7 +1331,7 @@
     "duplicateType": 2,
     "filename": "06-nitrogen-halogen-compounds-detailed.json",
     "tabGroup": "06-oxy-acids-of-nitrogen-chemical-properties-of-nitric-acid-ring-test-for-nitrate-ion-halogens-general-characteristics-comparative-study-on-preparation-chemical-properties-and-uses-of-cl2-br2-i2-test-for-cl2-br2-i2-haloacids",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1766,7 +1354,7 @@
     "duplicateType": 2,
     "filename": "02-oxygen.json",
     "tabGroup": "02-oxygen",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1775,34 +1363,21 @@
     "title": "Ozone",
     "noteCount": 4,
     "source": "ravikishan",
-    "duplicateType": 2,
+    "duplicateType": 1,
     "filename": "03-ozone.json",
-    "tabGroup": "03-ozone",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
     "unitSlug": "chemistry-of-non-metals",
     "topicSlug": "ozone-layer-depletion-causes-effects-and-control-measures",
     "title": "Ozone layer depletion: causes, effects and control measures",
-    "noteCount": 0,
+    "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "06-ozone-layer-depletion-causes-effects-and-control-measures.json",
     "hasMcqs": true,
     "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "chemistry-of-non-metals",
-    "topicSlug": "ozone-layer-depletion-causes-effects-and-control-measures",
-    "title": "Ozone Layer Depletion",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "04-ozone-layer-depletion-causes-effects-and-control-measures.json",
-    "tabGroup": "04-ozone-layer-depletion-causes-effects-and-control-measures",
-    "hasMcqs": true,
-    "universalFactsCount": 0
   },
   {
     "unitSlug": "chemistry-of-non-metals",
@@ -1814,18 +1389,6 @@
     "filename": "05-ozone-occurrence-preparation-of-ozone-from-oxygen-structure-of-ozone-test-for-ozone-uses-of-ozon.json",
     "hasMcqs": true,
     "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "chemistry-of-non-metals",
-    "topicSlug": "ozone-occurrence-preparation-structure-test-for-ozone-uses",
-    "title": "Ozone — Occurrence, Preparation, Structure and Uses",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "03-ozone-occurrence-preparation-structure-test-for-ozone-uses.json",
-    "tabGroup": "03-ozone-occurrence-preparation-structure-test-for-ozone-uses",
-    "hasMcqs": true,
-    "universalFactsCount": 0
   },
   {
     "unitSlug": "chemistry-of-non-metals",
@@ -1858,7 +1421,7 @@
     "duplicateType": 2,
     "filename": "08-phosphorus-sulphur-compounds-detailed.json",
     "tabGroup": "08-phosphorus-allotropes-phosphine-preparation-properties-and-uses-sulphur-allotropes-and-uses-hydrogen-sulphide-preparation-properties-and-uses-sulphur-dioxide-properties-and-uses-sulphuric-acid-properties-and-uses",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1876,24 +1439,12 @@
     "unitSlug": "chemistry-of-non-metals",
     "topicSlug": "sodium-thiosulphate-formula-and-uses",
     "title": "Sodium thiosulphate (formula and uses)",
-    "noteCount": 0,
+    "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "22-sodium-thiosulphate-formula-and-uses.json",
     "hasMcqs": true,
     "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "chemistry-of-non-metals",
-    "topicSlug": "sodium-thiosulphate-formula-and-uses",
-    "title": "Sodium Thiosulphate",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "09-sodium-thiosulphate-formula-and-uses.json",
-    "tabGroup": "09-sodium-thiosulphate-formula-and-uses",
-    "hasMcqs": true,
-    "universalFactsCount": 0
   },
   {
     "unitSlug": "chemistry-of-non-metals",
@@ -1904,7 +1455,7 @@
     "duplicateType": 2,
     "filename": "07-sulphur.json",
     "tabGroup": "07-sulphur",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -1953,25 +1504,25 @@
   },
   {
     "unitSlug": "classification-of-elements",
-    "topicSlug": "01-modern-periodic-law",
+    "topicSlug": "modern-periodic-law",
     "title": "01 MODERN PERIODIC LAW",
     "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 2,
     "filename": "01-modern-periodic-law.json",
-    "tabGroup": "01-modern-periodic-law",
+    "tabGroup": "modern-periodic-law",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
     "unitSlug": "classification-of-elements",
-    "topicSlug": "02-periodic-trends",
+    "topicSlug": "periodic-trends",
     "title": "02 PERIODIC TRENDS",
     "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 2,
     "filename": "02-periodic-trends.json",
-    "tabGroup": "02-periodic-trends",
+    "tabGroup": "periodic-trends",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
@@ -1983,43 +1534,19 @@
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-classification-into-groups-periods-and-blocks.json",
-    "tabGroup": "Periodic-Table-Trends-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 4
-  },
-  {
-    "unitSlug": "classification-of-elements-and-periodic-table",
-    "topicSlug": "classification-of-elements-into-different-groups-periods-and-blocks",
-    "title": "Classification of elements into different groups, periods…",
-    "noteCount": 0,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-classification-of-elements-into-different-groups-periods-and-blocks.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 5
   },
   {
     "unitSlug": "classification-of-elements-and-periodic-table",
     "topicSlug": "iupac-classification-of-elements",
     "title": "IUPAC Classification of Elements",
-    "noteCount": 20,
+    "noteCount": 23,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "03-iupac-classification-and-periodic-trends.json",
-    "tabGroup": "Periodic-Table-Trends-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "classification-of-elements-and-periodic-table",
-    "topicSlug": "iupac-classification-of-elements",
-    "title": "IUPAC classification of elements",
-    "noteCount": 3,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "03-iupac-classification-of-elements.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 6
   },
   {
     "unitSlug": "classification-of-elements-and-periodic-table",
@@ -2037,7 +1564,7 @@
     "unitSlug": "classification-of-elements-and-periodic-table",
     "topicSlug": "nuclear-charge-and-effective-nuclear-charge",
     "title": "Nuclear charge and effective nuclear charge",
-    "noteCount": 3,
+    "noteCount": 5,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "04-nuclear-charge-and-effective-nuclear-charge.json",
@@ -2047,37 +1574,13 @@
   {
     "unitSlug": "classification-of-elements-and-periodic-table",
     "topicSlug": "periodic-trend-and-periodicity-atomic-radii-ionic-radii-ionization-energy-electron-affinity-elec",
-    "title": "Periodic trend and periodicity: atomic radii, ionic radii…",
-    "noteCount": 0,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "05-periodic-trend-and-periodicity-atomic-radii-ionic-radii-ionization-energy-electron-affinity-elec.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
-  },
-  {
-    "unitSlug": "classification-of-elements-and-periodic-table",
-    "topicSlug": "periodic-trend-and-periodicity-atomic-radii-ionic-radii-ionization-energy-electron-affinity-elec",
     "title": "Periodic Trend and Periodicity: Radii, Ionization Energy, Electron Affinity, Electronegativity, Metallic Character",
     "noteCount": 22,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "05-periodic-trend-and-periodicity.json",
-    "tabGroup": "Periodic-Table-Trends-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "foundation-and-fundamentals",
-    "topicSlug": "basic-concepts-atoms-molecules",
-    "title": "Basic Concepts: Atoms, Molecules, Formulas",
-    "noteCount": 5,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "02-basic-concepts-atoms-molecules.json",
-    "tabGroup": "02-basic-concepts-atoms-molecules",
     "hasMcqs": true,
-    "universalFactsCount": 0
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "foundation-and-fundamentals",
@@ -2096,10 +1599,9 @@
     "title": "Basic Concepts — Atoms, Molecules, Relative Masses and Formulae",
     "noteCount": 5,
     "source": "ravikishan",
-    "duplicateType": 2,
+    "duplicateType": 1,
     "filename": "02-basic-concepts-atoms-molecules-relative-masses-and-formulae.json",
-    "tabGroup": "02-basic-concepts-atoms-molecules-relative-masses-and-formulae",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -2111,7 +1613,7 @@
     "duplicateType": 2,
     "filename": "01-general-introduction-and-importance-of-chemistry.json",
     "tabGroup": "01-general-introduction-and-importance-of-chemistry",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -2145,7 +1647,7 @@
     "duplicateType": 2,
     "filename": "01-introduction-importance-chemistry.json",
     "tabGroup": "01-introduction-importance-chemistry",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -2157,31 +1659,19 @@
     "duplicateType": 2,
     "filename": "03-percentage-composition.json",
     "tabGroup": "03-percentage-composition",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
     "unitSlug": "foundation-and-fundamentals",
     "topicSlug": "percentage-composition-from-molecular-formula",
     "title": "Percentage composition from molecular formula",
-    "noteCount": 3,
+    "noteCount": 8,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "04-percentage-composition-from-molecular-formula.json",
     "hasMcqs": true,
     "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "foundation-and-fundamentals",
-    "topicSlug": "percentage-composition-from-molecular-formula",
-    "title": "Percentage Composition from Molecular Formula",
-    "noteCount": 5,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "03-percentage-composition-from-molecular-formula.json",
-    "tabGroup": "03-percentage-composition-from-molecular-formula",
-    "hasMcqs": true,
-    "universalFactsCount": 0
   },
   {
     "unitSlug": "fundamental-principles-of-organic-chemistry",
@@ -2237,31 +1727,19 @@
     "duplicateType": 2,
     "filename": "06-inductive-effect-plus-i-and-minus-i-effect.json",
     "tabGroup": "06-inductive-effect-plus-i-and-minus-i-effect",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
     "unitSlug": "fundamental-principles-of-organic-chemistry",
     "topicSlug": "isomerism-in-organic-compounds-definition-and-classification-of-isomerism",
     "title": "Isomerism in organic compounds: definition and classifica…",
-    "noteCount": 3,
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "03-isomerism-in-organic-compounds-definition-and-classification-of-isomerism.json",
     "hasMcqs": true,
     "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "fundamental-principles-of-organic-chemistry",
-    "topicSlug": "isomerism-in-organic-compounds-definition-and-classification-of-isomerism-structural-isomerism-and-its-types",
-    "title": "Isomerism — Classification and Types",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "03-isomerism-in-organic-compounds-definition-and-classification-of-isomerism-structural-isomerism-and-its-types.json",
-    "tabGroup": "03-isomerism-in-organic-compounds-definition-and-classification-of-isomerism-structural-isomerism-and-its-types",
-    "hasMcqs": true,
-    "universalFactsCount": 0
   },
   {
     "unitSlug": "fundamental-principles-of-organic-chemistry",
@@ -2279,24 +1757,12 @@
     "unitSlug": "fundamental-principles-of-organic-chemistry",
     "topicSlug": "preliminary-idea-of-reaction-mechanism-homolytic-and-heterolytic-fission",
     "title": "Preliminary idea of reaction mechanism: homolytic and het…",
-    "noteCount": 3,
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "06-preliminary-idea-of-reaction-mechanism-homolytic-and-heterolytic-fission.json",
     "hasMcqs": true,
     "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "fundamental-principles-of-organic-chemistry",
-    "topicSlug": "preliminary-idea-of-reaction-mechanism-homolytic-and-heterolytic-fission",
-    "title": "Preliminary Idea of Reaction Mechanism",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "05-preliminary-idea-of-reaction-mechanism-homolytic-and-heterolytic-fission-electrophiles-nucleophiles-and-free-radicals.json",
-    "tabGroup": "05-preliminary-idea-of-reaction-mechanism-homolytic-and-heterolytic-fission-electrophiles-nucleophiles-and-free-radicals",
-    "hasMcqs": true,
-    "universalFactsCount": 0
   },
   {
     "unitSlug": "fundamental-principles-of-organic-chemistry",
@@ -2330,7 +1796,7 @@
     "duplicateType": 2,
     "filename": "07-resonance-effect-plus-r-and-minus-r-effect.json",
     "tabGroup": "07-resonance-effect-plus-r-and-minus-r-effect",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -2357,61 +1823,61 @@
   },
   {
     "unitSlug": "fundamental-principles-organic",
-    "topicSlug": "01-iupac-nomenclature",
-    "title": "01 IUPAC NOMENCLATURE",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "01-iupac-nomenclature.json",
-    "tabGroup": "01-iupac-nomenclature",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "fundamental-principles-organic",
-    "topicSlug": "02-isomerism",
-    "title": "02 ISOMERISM",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "02-isomerism.json",
-    "tabGroup": "02-isomerism",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "fundamental-principles-organic",
-    "topicSlug": "03-reaction-mechanism",
-    "title": "03 REACTION MECHANISM",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "03-reaction-mechanism.json",
-    "tabGroup": "03-reaction-mechanism",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "fundamental-principles-organic",
-    "topicSlug": "04-inductive-effect",
+    "topicSlug": "inductive-effect",
     "title": "04 INDUCTIVE EFFECT",
     "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 2,
     "filename": "04-inductive-effect.json",
-    "tabGroup": "04-inductive-effect",
+    "tabGroup": "inductive-effect",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
     "unitSlug": "fundamental-principles-organic",
-    "topicSlug": "05-resonance-effect",
+    "topicSlug": "isomerism",
+    "title": "02 ISOMERISM",
+    "noteCount": 4,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "02-isomerism.json",
+    "tabGroup": "isomerism",
+    "hasMcqs": true,
+    "universalFactsCount": 0
+  },
+  {
+    "unitSlug": "fundamental-principles-organic",
+    "topicSlug": "iupac-nomenclature",
+    "title": "01 IUPAC NOMENCLATURE",
+    "noteCount": 4,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "01-iupac-nomenclature.json",
+    "tabGroup": "iupac-nomenclature",
+    "hasMcqs": true,
+    "universalFactsCount": 0
+  },
+  {
+    "unitSlug": "fundamental-principles-organic",
+    "topicSlug": "reaction-mechanism",
+    "title": "03 REACTION MECHANISM",
+    "noteCount": 4,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "03-reaction-mechanism.json",
+    "tabGroup": "reaction-mechanism",
+    "hasMcqs": true,
+    "universalFactsCount": 0
+  },
+  {
+    "unitSlug": "fundamental-principles-organic",
+    "topicSlug": "resonance-effect",
     "title": "05 RESONANCE EFFECT",
     "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 2,
     "filename": "05-resonance-effect.json",
-    "tabGroup": "05-resonance-effect",
+    "tabGroup": "resonance-effect",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
@@ -2451,20 +1917,8 @@
   {
     "unitSlug": "fundamentals-of-applied-chemistry",
     "topicSlug": "fundamentals-of-applied-chemistry",
-    "title": "Fundamentals of Applied Chemistry",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "01-fundamentals-of-applied-chemistry.json",
-    "tabGroup": "01-fundamentals-of-applied-chemistry",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "fundamentals-of-applied-chemistry",
-    "topicSlug": "fundamentals-of-applied-chemistry-chemical-industry-and-its-importance",
     "title": "Fundamentals of Applied Chemistry: chemical industry and …",
-    "noteCount": 3,
+    "noteCount": 7,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-fundamentals-of-applied-chemistry-chemical-industry-and-its-importance.json",
@@ -2486,7 +1940,7 @@
     "unitSlug": "fundamentals-of-applied-chemistry",
     "topicSlug": "stages-in-producing-a-new-product",
     "title": "Stages in producing a new product",
-    "noteCount": 0,
+    "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-stages-in-producing-a-new-product.json",
@@ -2494,86 +1948,35 @@
     "universalFactsCount": 1
   },
   {
-    "unitSlug": "fundamentals-of-applied-chemistry",
-    "topicSlug": "stages-in-producing-a-new-product-economics-of-production-running-a-chemical-plant-continuous-and-batch-processing-environmental-impact",
-    "title": "Chemical Plant Design and Environmental Impact",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "02-stages-in-producing-a-new-product-economics-of-production-running-a-chemical-plant-continuous-and-batch-processing-environmental-impact.json",
-    "tabGroup": "02-stages-in-producing-a-new-product-economics-of-production-running-a-chemical-plant-continuous-and-batch-processing-environmental-impact",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
     "unitSlug": "hydrocarbons",
-    "topicSlug": "01-alkanes",
+    "topicSlug": "alkanes",
     "title": "01 ALKANES",
     "noteCount": 4,
     "source": "ravikishan",
-    "duplicateType": 2,
+    "duplicateType": 1,
     "filename": "01-alkanes.json",
-    "tabGroup": "01-alkanes",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
     "unitSlug": "hydrocarbons",
-    "topicSlug": "02-alkenes",
+    "topicSlug": "alkenes",
     "title": "02 ALKENES",
     "noteCount": 4,
     "source": "ravikishan",
-    "duplicateType": 2,
+    "duplicateType": 1,
     "filename": "02-alkenes.json",
-    "tabGroup": "02-alkenes",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
     "unitSlug": "hydrocarbons",
-    "topicSlug": "03-alkynes",
+    "topicSlug": "alkynes",
     "title": "03 ALKYNES",
     "noteCount": 4,
     "source": "ravikishan",
-    "duplicateType": 2,
+    "duplicateType": 1,
     "filename": "03-alkynes.json",
-    "tabGroup": "03-alkynes",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "hydrocarbons",
-    "topicSlug": "alkanes-preparation-and-chemical-properties",
-    "title": "Alkanes — Preparation and Chemical Properties",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "01-alkanes-preparation-and-chemical-properties.json",
-    "tabGroup": "01-alkanes-preparation-and-chemical-properties",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "hydrocarbons",
-    "topicSlug": "alkenes-preparation-and-chemical-properties",
-    "title": "Alkenes — Preparation and Chemical Properties",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "02-alkenes-preparation-and-chemical-properties.json",
-    "tabGroup": "02-alkenes-preparation-and-chemical-properties",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "hydrocarbons",
-    "topicSlug": "alkynes-preparation-and-chemical-properties",
-    "title": "Alkynes — Preparation and Chemical Properties",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "03-alkynes-preparation-and-chemical-properties.json",
-    "tabGroup": "03-alkynes-preparation-and-chemical-properties",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
@@ -2663,7 +2066,7 @@
     "duplicateType": 2,
     "filename": "04-hydrocarbons-unsaturation-detailed.json",
     "tabGroup": "04-test-of-unsaturation-and-comparative-study-of-physical-properties-of-alkane-alkene-and-alkyne-kolbe-s-electrolysis-methods-for-the-preparation-of-alkanes-alkenes-and-alkynes",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
@@ -2763,54 +2166,42 @@
     "duplicateType": 2,
     "filename": "01-modern-chemical-manufactures.json",
     "tabGroup": "01-modern-chemical-manufactures",
-    "hasMcqs": true,
+    "hasMcqs": false,
     "universalFactsCount": 0
   },
   {
     "unitSlug": "modern-manufactures",
-    "topicSlug": "01-hber-process",
-    "title": "01 HBER PROCESS",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "01-hber-process.json",
-    "tabGroup": "01-hber-process",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "modern-manufactures",
-    "topicSlug": "02-contact-process",
+    "topicSlug": "contact-process",
     "title": "02 CONTACT PROCESS",
     "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 2,
     "filename": "02-contact-process.json",
-    "tabGroup": "02-contact-process",
+    "tabGroup": "contact-process",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
     "unitSlug": "modern-manufactures",
-    "topicSlug": "03-solvay-process",
+    "topicSlug": "hber-process",
+    "title": "01 HBER PROCESS",
+    "noteCount": 4,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "01-hber-process.json",
+    "tabGroup": "hber-process",
+    "hasMcqs": true,
+    "universalFactsCount": 0
+  },
+  {
+    "unitSlug": "modern-manufactures",
+    "topicSlug": "solvay-process",
     "title": "03 SOLVAY PROCESS",
     "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 2,
     "filename": "03-solvay-process.json",
-    "tabGroup": "03-solvay-process",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "oxidation-and-reduction",
-    "topicSlug": "balancing-redox-reactions",
-    "title": "Balancing Redox Reactions",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "03-balancing-redox-reactions.json",
-    "tabGroup": "03-balancing-redox-reactions",
+    "tabGroup": "solvay-process",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
@@ -2818,7 +2209,7 @@
     "unitSlug": "oxidation-and-reduction",
     "topicSlug": "balancing-redox-reactions-by-oxidation-number-and-ion-electron-half-reaction-method",
     "title": "Balancing redox reactions by oxidation number and ion-ele…",
-    "noteCount": 0,
+    "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "03-balancing-redox-reactions-by-oxidation-number-and-ion-electron-half-reaction-method.json",
@@ -2885,37 +2276,37 @@
   },
   {
     "unitSlug": "oxidation-reduction",
-    "topicSlug": "01-redox-concepts",
-    "title": "01 REDOX CONCEPTS",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "01-redox-concepts.json",
-    "tabGroup": "01-redox-concepts",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "oxidation-reduction",
-    "topicSlug": "02-balancing-redox",
+    "topicSlug": "balancing-redox",
     "title": "02 BALANCING REDOX",
     "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 2,
     "filename": "02-balancing-redox.json",
-    "tabGroup": "02-balancing-redox",
+    "tabGroup": "balancing-redox",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
     "unitSlug": "oxidation-reduction",
-    "topicSlug": "03-electrolysis",
+    "topicSlug": "electrolysis",
     "title": "03 ELECTROLYSIS",
     "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 2,
     "filename": "03-electrolysis.json",
-    "tabGroup": "03-electrolysis",
+    "tabGroup": "electrolysis",
+    "hasMcqs": true,
+    "universalFactsCount": 0
+  },
+  {
+    "unitSlug": "oxidation-reduction",
+    "topicSlug": "redox-concepts",
+    "title": "01 REDOX CONCEPTS",
+    "noteCount": 4,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "01-redox-concepts.json",
+    "tabGroup": "redox-concepts",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
@@ -2923,35 +2314,12 @@
     "unitSlug": "states-of-matter",
     "topicSlug": "deviation-of-real-gas-from-ideality-solving-related-numerical-problems-based-on-gas-laws",
     "title": "Deviation of Real Gases from Ideality",
-    "noteCount": 23,
+    "noteCount": 26,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "03-real-gas-deviation.json",
-    "tabGroup": "States-Of-Matter-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "states-of-matter",
-    "topicSlug": "deviation-of-real-gas-from-ideality-solving-related-numerical-problems-based-on-gas-laws",
-    "title": "Deviation of real gas from ideality (solving related nume…",
-    "noteCount": 3,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "04-deviation-of-real-gas-from-ideality-solving-related-numerical-problems-based-on-gas-laws.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "states-of-matter",
-    "topicSlug": "efflorescent-deliquescent-and-hygroscopic-solids-crystallization-and-crystal-growth-water-of-cry",
-    "title": "Efflorescent, deliquescent and hygroscopic solids; crysta…",
-    "noteCount": 0,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "08-efflorescent-deliquescent-and-hygroscopic-solids-crystallization-and-crystal-growth-water-of-cry.json",
-    "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 6
   },
   {
     "unitSlug": "states-of-matter",
@@ -2961,9 +2329,8 @@
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "08-efflorescent-deliquescent-and-hygroscopic-solids.json",
-    "tabGroup": "States-Of-Matter-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "states-of-matter",
@@ -2981,105 +2348,45 @@
     "unitSlug": "states-of-matter",
     "topicSlug": "gas-laws-boyle-s-law-charles-law-avogadro-s-law-combined-gas-equation-dalton-s-law-of-partial-pr",
     "title": "Gas Laws: Boyle's, Charles', Avogadro's, Combined Gas Equation, Dalton's Law of Partial Pressure and Graham's Law of Diffusion",
-    "noteCount": 24,
+    "noteCount": 27,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-gas-laws.json",
-    "tabGroup": "States-Of-Matter-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "states-of-matter",
-    "topicSlug": "gas-laws-boyle-s-law-charles-law-avogadro-s-law-combined-gas-equation-dalton-s-law-of-partial-pr",
-    "title": "Gas laws: Boyle's law, Charles' law, Avogadro's law, comb…",
-    "noteCount": 3,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-gas-laws-boyle-s-law-charles-law-avogadro-s-law-combined-gas-equation-dalton-s-law-of-partial-pr.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 6
   },
   {
     "unitSlug": "states-of-matter",
     "topicSlug": "gaseous-state",
     "title": "The Gaseous State — Characteristics and Measurable Properties",
-    "noteCount": 17,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "gas-state.json",
-    "tabGroup": "States-Of-Matter-Learner-Notes",
-    "hasMcqs": true,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "states-of-matter",
-    "topicSlug": "gaseous-state",
-    "title": "Kinetic Theory of Gases — Postulates Mapped to Consequences",
-    "noteCount": 14,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "kinetic-theory-of-gases-and-its-postulates.json",
-    "tabGroup": "States-Of-Matter-Learner-Notes",
-    "hasMcqs": true,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "states-of-matter",
-    "topicSlug": "gaseous-state-kinetic-theory-of-gas-and-its-postulates",
-    "title": "Gaseous state: Kinetic theory of gas and its postulates",
-    "noteCount": 3,
+    "noteCount": 30,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "01-gaseous-state-kinetic-theory-of-gas-and-its-postulates.json",
+    "filename": "gas-state.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 6
   },
   {
     "unitSlug": "states-of-matter",
     "topicSlug": "gaseous-state-kinetic-theory-of-gas-and-its-postulates",
     "title": "Gaseous State: Kinetic Theory of Gases and its Postulates",
-    "noteCount": 26,
+    "noteCount": 29,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-kinetic-theory-gas.json",
-    "tabGroup": "States-Of-Matter-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "states-of-matter",
-    "topicSlug": "ideal-gas-and-ideal-gas-equation-universal-gas-constant-and-its-significance",
-    "title": "Ideal gas and ideal gas equation; universal gas constant …",
-    "noteCount": 3,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "03-ideal-gas-and-ideal-gas-equation-universal-gas-constant-and-its-significance.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 6
   },
   {
     "unitSlug": "states-of-matter",
     "topicSlug": "ideal-gas-and-ideal-gas-equation-universal-gas-constant-and-its-significance",
     "title": "Ideal Gas and the Ideal Gas Equation: Universal Gas Constant and its Significance",
-    "noteCount": 19,
+    "noteCount": 22,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "06-ideal-gas-and-universal-gas-constant.json",
-    "tabGroup": "States-Of-Matter-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "states-of-matter",
-    "topicSlug": "introduction-to-unit-crystal-lattice-and-unit-cell",
-    "title": "Introduction to unit crystal lattice and unit cell",
-    "noteCount": 0,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "09-introduction-to-unit-crystal-lattice-and-unit-cell.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 6
   },
   {
     "unitSlug": "states-of-matter",
@@ -3089,20 +2396,8 @@
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "09-unit-crystal-lattice-and-unit-cell.json",
-    "tabGroup": "States-Of-Matter-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "states-of-matter",
-    "topicSlug": "liquid-crystals-and-their-applications",
-    "title": "Liquid crystals and their applications",
-    "noteCount": 0,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "06-liquid-crystals-and-their-applications.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "states-of-matter",
@@ -3112,9 +2407,8 @@
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "07-liquid-crystals-and-applications.json",
-    "tabGroup": "States-Of-Matter-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "states-of-matter",
@@ -3124,20 +2418,8 @@
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "04-liquid-state.json",
-    "tabGroup": "States-Of-Matter-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "states-of-matter",
-    "topicSlug": "liquid-state-physical-properties-of-liquids-evaporation-and-condensation-vapour-pressure-and-boi",
-    "title": "Liquid state: physical properties of liquids — evaporatio…",
-    "noteCount": 0,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "05-liquid-state-physical-properties-of-liquids-evaporation-and-condensation-vapour-pressure-and-boi.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "states-of-matter",
@@ -3147,72 +2429,36 @@
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "05-solid-state.json",
-    "tabGroup": "States-Of-Matter-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "states-of-matter",
-    "topicSlug": "solid-state-types-of-solids-amorphous-and-crystalline-solids",
-    "title": "Solid state: types of solids, amorphous and crystalline s…",
-    "noteCount": 0,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "07-solid-state-types-of-solids-amorphous-and-crystalline-solids.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "stoichiometry",
     "topicSlug": "avogadro-s-law-and-some-deductions-molecular-mass-and-vapour-density-molecular-mass-and-volume-o",
     "title": "Avogadro's Law and its Deductions (Molecular Mass, Vapour Density, Volume and Number of Particles)",
-    "noteCount": 20,
+    "noteCount": 23,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "03-avogadro-law.json",
-    "tabGroup": "Stoichiometry-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "stoichiometry",
-    "topicSlug": "avogadro-s-law-and-some-deductions-molecular-mass-and-vapour-density-molecular-mass-and-volume-o",
-    "title": "Avogadro's law and some deductions: molecular mass and va…",
-    "noteCount": 3,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "03-avogadro-s-law-and-some-deductions-molecular-mass-and-vapour-density-molecular-mass-and-volume-o.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 6
   },
   {
     "unitSlug": "stoichiometry",
     "topicSlug": "calculation-of-empirical-and-molecular-formula-from-composition-solving-related-numerical-proble",
     "title": "Calculation of Empirical and Molecular Formula from Percentage Composition",
-    "noteCount": 24,
+    "noteCount": 27,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "07-empirical-molecular-formula.json",
-    "tabGroup": "Stoichiometry-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "stoichiometry",
-    "topicSlug": "calculation-of-empirical-and-molecular-formula-from-composition-solving-related-numerical-proble",
-    "title": "Calculation of empirical and molecular formula from % com…",
-    "noteCount": 3,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "08-calculation-of-empirical-and-molecular-formula-from-composition-solving-related-numerical-proble.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 6
   },
   {
     "unitSlug": "stoichiometry",
     "topicSlug": "calculations-based-on-mole-concept",
     "title": "Calculations based on mole concept",
-    "noteCount": 3,
+    "noteCount": 5,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "05-calculations-based-on-mole-concept.json",
@@ -3227,26 +2473,14 @@
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "01-dalton-atomic-theory.json",
-    "tabGroup": "Stoichiometry-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "stoichiometry",
-    "topicSlug": "dalton-s-atomic-theory-and-its-postulates",
-    "title": "Dalton's atomic theory and its postulates",
-    "noteCount": 0,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-dalton-s-atomic-theory-and-its-postulates.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "stoichiometry",
     "topicSlug": "laws-of-stoichiometry",
     "title": "Laws of stoichiometry",
-    "noteCount": 3,
+    "noteCount": 5,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "02-laws-of-stoichiometry.json",
@@ -3329,47 +2563,23 @@
     "unitSlug": "stoichiometry",
     "topicSlug": "limiting-reactant-and-excess-reactant",
     "title": "Limiting Reactant and Excess Reactant",
-    "noteCount": 21,
+    "noteCount": 24,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "05-limiting-reactant.json",
-    "tabGroup": "Stoichiometry-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "stoichiometry",
-    "topicSlug": "limiting-reactant-and-excess-reactant",
-    "title": "Limiting reactant and excess reactant",
-    "noteCount": 3,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "06-limiting-reactant-and-excess-reactant.json",
     "hasMcqs": true,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "stoichiometry",
-    "topicSlug": "mole-and-its-relation-with-mass-volume-and-number-of-particles",
-    "title": "Mole and its relation with mass, volume and number of par…",
-    "noteCount": 3,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "04-mole-and-its-relation-with-mass-volume-and-number-of-particles.json",
-    "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 6
   },
   {
     "unitSlug": "stoichiometry",
     "topicSlug": "mole-and-its-relation-with-mass-volume-and-number-of-particles",
     "title": "Mole and its Relation with Mass, Volume and Number of Particles",
-    "noteCount": 19,
+    "noteCount": 22,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "04-mole-concept.json",
-    "tabGroup": "Stoichiometry-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
+    "hasMcqs": true,
+    "universalFactsCount": 6
   },
   {
     "unitSlug": "stoichiometry",
@@ -3379,19 +2589,7 @@
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "06-yield-calculations.json",
-    "tabGroup": "Stoichiometry-Learner-Notes",
-    "hasMcqs": false,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "stoichiometry",
-    "topicSlug": "theoretical-yield-experimental-yield-and-yield",
-    "title": "Theoretical yield, experimental yield and % yield",
-    "noteCount": 0,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "07-theoretical-yield-experimental-yield-and-yield.json",
     "hasMcqs": true,
-    "universalFactsCount": 1
+    "universalFactsCount": 4
   }
 ]

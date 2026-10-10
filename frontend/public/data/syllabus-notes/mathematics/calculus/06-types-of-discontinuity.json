@@ -43,13 +43,7 @@
     "Where a formula is quoted it is valid only under the conditions stated; Calling $|x|$ at 0 removable — it is a JUMP, because the one-sided limits are governed by different branches rather than one wrong value.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [
-    "Statement 1: A removable discontinuity has equal one-sided limits.",
-    "Statement 2: A jump discontinuity has two finite but unequal one-sided limits.",
-    "Statement 3: An infinite discontinuity has at least one one-sided limit equal to $\\pm\\infty$.",
-    "Statement 4: A function cannot be differentiable where it is discontinuous.",
-    "Statement 5: The jump magnitude is $|f(a^+)-f(a^-)|$."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Topic anchor: Effect on the derivative  differentiability presupposes continuity, so a discontinuity of ANY type rules out a derivative there — even a removable one, until the hole is filled."
   ],

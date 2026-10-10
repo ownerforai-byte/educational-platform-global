@@ -8,7 +8,7 @@ import { isOwnerUser } from "@/lib/owner";
 /**
  * Owner gate for the Veer Studio Hub (/ai and every tab below it).
  *
- * Owner request 2026-10-05 (AI under owner emails only, like the Image Hub):
+ * Owner request 2026-10-05 (AI under owner emails only, like the Diagram Hub):
  * only allowlisted owner emails may open these routes. Signed-out visitors
  * go to login and come back here; signed-in non-owners bounce home.
  */

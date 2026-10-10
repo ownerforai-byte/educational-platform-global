@@ -4,8 +4,6 @@
   "topicSlug": "instantaneous-velocity-acceleration",
   "topicTitle": "Instantaneous Velocity and Acceleration",
   "relevance": 100,
-  "duplicateType": 2,
-  "tabGroup": "instantaneous-velocity-and-acceleration",
   "notes": [
     "**Type 2 — alternate treatment:** this version complements the original note with the limit-definition approach, calculus forms and graphical slope reasoning for instantaneous velocity and acceleration.",
     "**Average quantities first:** average velocity $v_{avg} = \\frac{\\Delta x}{\\Delta t}$ uses the whole interval; average acceleration $a_{avg} = \\frac{\\Delta v}{\\Delta t}$ likewise. They smooth out everything that happened in between — a car doing 100 km in 2 h has $v_{avg} = 50$ km/h regardless of traffic.",
@@ -40,7 +38,6 @@
   ],
   "animation3D": "kinematics",
   "motionGraphics": "kinematics",
-  "examples": [],
   "practiceQuestions": [
     "Q2. Distinguish between average acceleration and instantaneous acceleration with one example each.",
     "Q3. For $x(t) = 2t^3 - 9t^2 + 12t$ (m), find when the velocity is zero and classify each instant (pause vs reversal).",
@@ -62,19 +59,14 @@
     "Derivatives go down the chain $x \\to v \\to a$; integrals go up $a \\to v \\to x$, using initial conditions.",
     "The limit definition is valid for ANY motion — SUVAT equations are special cases of constant acceleration only."
   ],
-  "summary": "Instantaneous velocity and acceleration are defined as limits: $v = dx/dt$ and $a = dv/dt = d^2x/dt^2$. Graphically, $v$ is the tangent slope of the $x$–$t$ curve and $a$ the tangent slope of the $v$–$t$ curve, while areas under $v$–$t$ and $a$–$t$ curves give displacement and velocity change. These definitions work for all motion — uniform or not — making them more fundamental than the constant-acceleration equations. Key exam skills: differentiating given $x(t)$, locating rest/reversal instants, and reading slopes and areas correctly with attention to signs.",
+  "summary": "Instantaneous velocity and acceleration are defined as limits: $v = dx/dt$ and $a = dv/dt = d^2x/dt^2$. Graphically, $v$ is the tangent slope of the $x$–$t$ curve and $a$ the tangent slope of the $v$–$t$ curve, while areas under $v$–$t$ and $a$–$t$ curves give displacement and velocity change. These definitions work for all motion — uniform or not — making them more fundamental than the constant-acceleration equations. Key exam skills: differentiating given $x(t)$, locating rest/reversal instants, and reading slopes and areas correctly with attention to signs. Instantaneous Velocity & Instantaneous Acceleration covers essential principles and applications.",
   "specialNotes": [
     "Note 1: Carry units through calculus: if $x$ is in metres and $t$ in seconds, $v$ is m/s and $a$ is m/s² automatically.",
     "Note 2: NEB graph questions award marks for BOTH slope reasoning and area reasoning — label which you used.",
     "Note 3: When integrating acceleration, always determine integration constants from given initial conditions.",
     "Note 4: In 'is the particle speeding up?' questions, compare signs of $v$ and $a$ at that instant — not the sign of $a$ alone."
   ],
-  "importantStatements": [
-    "Statement 1: Instantaneous velocity is the limit of average velocity as the time interval tends to zero: $v = dx/dt$.",
-    "Statement 2: Instantaneous acceleration is the derivative of velocity with respect to time: $a = dv/dt$.",
-    "Statement 3: On a position–time graph the slope of the tangent at any instant gives the instantaneous velocity at that instant.",
-    "Statement 4: The area under a velocity–time curve between two instants equals the displacement in that interval, regardless of whether the acceleration is constant."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Note 1: Zero instantaneous velocity does not imply zero acceleration (turning points).",
     "Note 2: Instantaneous speed equals the magnitude of instantaneous velocity, but never carries a direction.",
@@ -165,5 +157,6 @@
     "**Limit Definition Universality:** Instantaneous velocity $v = dx/dt$ and acceleration $a = dv/dt$ are defined as limits ($\\Delta t \to 0$). They apply to *any* motion — uniform or non-uniform, constant or variable acceleration. The SUVAT equations ($v = u + at$, etc.) are special cases valid *only* for constant $a$.",
     "**Graph Duality — Slopes vs Areas:** On $x$-$t$ graph: slope of tangent = $v$. On $v$-$t$ graph: slope of tangent = $a$; area under curve = displacement. On $a$-$t$ graph: area under curve = change in velocity. Mixing up slope/area is the most common graph error.",
     "**Sign Logic for Speeding/Slowing:** Speeding up $\\Leftrightarrow$ $v$ and $a$ have *same* sign. Slowing down $\\Leftrightarrow$ $v$ and $a$ have *opposite* signs. This is true regardless of coordinate choice. At a turning point ($v=0$), $a \neq 0$ (e.g., ball at top of flight: $v=0$, $a=g$)."
-  ]
+  ],
+  "examples": []
 }

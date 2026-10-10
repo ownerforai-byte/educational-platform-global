@@ -24,20 +24,30 @@
     "• Standard atomic weights (from terrestrial isotopic abundance) and systematic naming keep trade, industry and metrology consistent — for example in specifying semiconductor-grade silicon or alloy composition.",
     "• The naming and verification procedure for superheavy elements is a direct product of this classification work.",
     "### 6. Limitations",
-    "IUPAC classification is a labelling and standardisation scheme, not an explanation — it does not say *why* properties repeat (that needs Z_eff, quantum numbers and electronic configuration). Some boundaries are arbitrary: the metal–non-metal change is gradual and metalloid membership differs between sources; H sits in Group 1 yet resembles the halogens; He is a Group 18 noble gas with the s-block configuration 1s². The composition of Group 3 for periods 6 and 7 (La/Ac versus Lu/Lr) has been debated for decades, and the '-ium' systematic names are stopgaps, so older books still print them. The chemistry of elements with Z > 103 is largely predicted, not measured."
+    "IUPAC classification is a labelling and standardisation scheme, not an explanation — it does not say *why* properties repeat (that needs Z_eff, quantum numbers and electronic configuration). Some boundaries are arbitrary: the metal–non-metal change is gradual and metalloid membership differs between sources; H sits in Group 1 yet resembles the halogens; He is a Group 18 noble gas with the s-block configuration 1s². The composition of Group 3 for periods 6 and 7 (La/Ac versus Lu/Lr) has been debated for decades, and the '-ium' systematic names are stopgaps, so older books still print them. The chemistry of elements with Z > 103 is largely predicted, not measured.",
+    "**Fact.** v = V₀ sin ωt; i = I₀ sin(ωt + φ); RMS V_rms = V₀/√2.",
+    "**Fact.** Impedance: pure R → Z = R; L → Z = ωL; C → Z = 1/(ωC); LCR resonance at ω₀ = 1/√(LC).",
+    "**Fact.** Average power P = V_rms I_rms cosφ; in pure L or C, average power over a cycle = 0."
   ],
   "formulas": [
     "$$\\text{systematic name}=\\text{digit roots}+\\text{'-ium'}\\quad Z=118:\\ \\text{un}+\\text{un}+\\text{oct}+\\text{ium}=\\text{ununoctium}$$",
-    "$$0\\,\\text{nil},1\\,\\text{un},2\\,\\text{bi},3\\,\\text{tri},4\\,\\text{quad},5\\,\\text{pent},6\\,\\text{hex},7\\,\\text{sept},8\\,\\text{oct},9\\,\\text{enn}$$"
+    "$$0\\,\\text{nil},1\\,\\text{un},2\\,\\text{bi},3\\,\\text{tri},4\\,\\text{quad},5\\,\\text{pent},6\\,\\text{hex},7\\,\\text{sept},8\\,\\text{oct},9\\,\\text{enn}$$",
+    "V_rms = V₀/√2",
+    "Z_L = ωL, Z_C = 1/(ωC)",
+    "ω₀ = 1/√(LC)"
   ],
   "universalFacts": [
     "Oganesson (Og, Z = 118) is named after Yuri Oganessian; Nihonium (Nh, 113) after Japan; Tennessine (Ts, 117) after Tennessee.",
     "IUPAC numbering 1–18 was recommended in 1988 to replace the conflicting European and American schemes.",
-    "The f-block spans periods 6 and 7: lanthanides (58–71) and actinides (90–103)."
+    "The f-block spans periods 6 and 7: lanthanides (58–71) and actinides (90–103).",
+    "v = V₀ sin ωt; i = I₀ sin(ωt + φ); RMS V_rms = V₀/√2.",
+    "Impedance: pure R → Z = R; L → Z = ωL; C → Z = 1/(ωC); LCR resonance at ω₀ = 1/√(LC).",
+    "Average power P = V_rms I_rms cosφ; in pure L or C, average power over a cycle = 0."
   ],
   "examples": [
     "**Problem:** Systematic name and symbol for Z = 115. **Solution:** digits 1, 1, 5 → un + un + pent + ium = ununpentium (Uup); now permanently named Moscovium (Mc).",
-    "**Problem:** Predict the oxide character of period-3 oxides from the IUPAC group classification. **Solution:** Na₂O and MgO (Groups 1, 2) basic; Al₂O₃ (13) amphoteric; SiO₂ (14) weakly acidic; P₄O₁₀ and SO₃ (15, 16) strongly acidic."
+    "**Problem:** Predict the oxide character of period-3 oxides from the IUPAC group classification. **Solution:** Na₂O and MgO (Groups 1, 2) basic; Al₂O₃ (13) amphoteric; SiO₂ (14) weakly acidic; P₄O₁₀ and SO₃ (15, 16) strongly acidic.",
+    "Worked: identify given → pick sub-concept → apply standard form → check units / edges."
   ],
   "importantNotes": [
     "Learn the ten digit roots — the naming question is a standard 2-mark item.",
@@ -50,7 +60,8 @@
     "❌ The '-ium' names are permanent. ✅ They are systematic temporary names used until a permanent name is approved (Unq → Rf).",
     "❌ Hydrogen belongs unambiguously to Group 1. ✅ It is placed there but behaves partly like Group 17 and remains anomalous.",
     "❌ Lanthanides and actinides are d-block elements. ✅ They are f-block (inner transition); La and Ac are sometimes treated as d-block.",
-    "❌ Metalloids are a fixed chemical class. ✅ Membership is conventional (B, Si, Ge, As, Sb, Te are the usual members)."
+    "❌ Metalloids are a fixed chemical class. ✅ Membership is conventional (B, Si, Ge, As, Sb, Te are the usual members).",
+    "❌ skip the key fact → ✅ v = v₀ sin ωt; i = i₀ sin(ωt + φ); rms v_rms = v₀/√2.."
   ],
   "practice": [
     "State the IUPAC group/period numbering and list the collective names of Groups 1, 2, 15, 16, 17 and 18.",
@@ -58,7 +69,38 @@
     "Classify elements into s, p, d and f blocks and explain how the IUPAC scheme removes ambiguity.",
     "Why is helium classified in Group 18 although its configuration is 1s²?",
     "Give the IUPAC classification into metals, non-metals and metalloids with two examples each.",
-    "State the limitations of the IUPAC classification of elements."
+    "State the limitations of the IUPAC classification of elements.",
+    "one worked example for \"IUPAC classification of elements\" — check units / edge cases.",
+    "recall card: definition → formula → limit → one error to avoid."
   ],
-  "tabGroup": "Periodic-Table-Trends-Learner-Notes"
+  "keyPoints": [
+    "• IUPAC classification of elements"
+  ],
+  "practiceQuestions": [
+    "state + explain the main idea of \"IUPAC classification of elements\" with one example.",
+    "compare \"IUPAC classification of elements\" with the related idea from a neighbouring unit.",
+    "solve / apply for \"IUPAC classification of elements\" and verify the answer is plausible."
+  ],
+  "numericals": [
+    "Use  V_rms = V₀/√2  — pick reasonable values, solve, and check the units.",
+    "Use  Z_L = ωL, Z_C = 1/(ωC)  — pick reasonable values, solve, and check the units.",
+    "Use  ω₀ = 1/√(LC)  — pick reasonable values, solve, and check the units."
+  ],
+  "mcqs": [
+    {
+      "question": "A common examiner point on \"IUPAC classification of elements\" is that a statement is only valid when its condition of applicability is met. Is that TRUE or FALSE?",
+      "options": [
+        "True",
+        "False"
+      ],
+      "answer": "True",
+      "explanation": "Every NEB rule has a scope (e.g. a specific range, temperature, or sign convention); stating the condition earns full marks."
+    }
+  ],
+  "source": "generated",
+  "generatedAt": "2026-09-10T13:48:26.104Z",
+  "bounds": [
+    "Limit to remember: v = v₀ sin ωt; i = i₀ sin(ωt + φ); rms v_rms = v₀/√2."
+  ],
+  "summary": "IUPAC classification of elements (Classification of Elements and Periodic Table, Chemistry, class-11-notes) covers IUPAC classification of elements. Master the standard form, the sub-ideas and one worked example; most exam questions on this topic are built from exactly these."
 }

@@ -43,13 +43,7 @@
     "Where a formula is quoted it is valid only under the conditions stated; Differentiating only the outer function of a composite and forgetting the inner derivative.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [
-    "Statement 1: $\\frac{d}{dx}f(u(x)) = f'(u(x))\\cdot u'(x)$.",
-    "Statement 2: $\\frac{d}{dx}(u^n)$ requires the chain rule unless $u$ is constant.",
-    "Statement 3: Implicit differentiation assumes $y$ is a differentiable function of $x$.",
-    "Statement 4: For parametric equations $\\frac{dy}{dx}=\\frac{dy/dt}{dx/dt}$ when $dx/dt\\ne0$.",
-    "Statement 5: $y=u^v$ with $v$ variable requires logarithmic differentiation."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Topic anchor: Logarithmic differentiation handles awkward powers  for $y=u^v$ take logs, $ ln y = v ln u$, differentiate, then exponentiate."
   ],

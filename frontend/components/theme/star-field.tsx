@@ -3,20 +3,6 @@
 import { useEffect, useRef } from "react";
 import { useTheme } from "./theme-provider";
 
-type Streak = {
-  x0: number;
-  y0: number;
-  dirX: number;
-  dirY: number;
-  speed: number; // px/sec along the path (fast — a quick deep flash)
-  tail: number; // px length of the thin visible trail
-  baseR: number; // head radius (kept small/thin)
-  exitDist: number; // distance until it leaves the screen
-  traveled: number;
-  life: number; // seconds the flash lasts, then it fades out on its own
-  age: number;
-};
-
 type StaticStar = {
   x: number;
   y: number;
@@ -24,29 +10,49 @@ type StaticStar = {
   alpha: number;
 };
 
+/**
+ * A star in 3D "world" space (camera at the origin, looking down +Z).
+ * Each frame the star advances toward the camera (z shrinks); the projected
+ * screen position is `cx + x*f/z, cy + y*f/z`, so a far star sits tiny near
+ * the vanishing point and a near one streaks out large and fast — real
+ * perspective depth, not a 2D translate.
+ */
+type Star3D = {
+  x: number;
+  y: number;
+  z: number;
+  v: number; // forward speed toward the camera (world units/sec)
+  drift: number; // constant +x world drift → the stream flows left → right
+  brightness: number;
+};
 
 const STATIC_STAR_DENSITY = 0.000016; // a quiet, sparse sky
 const MAX_STATIC_STARS = 64;
-const MAX_STREAKS = 3; // at most a few comets on screen at once
 
-/* "Natural" but LARGE gap: always at least 40s, with longer random waits
-   on top — e.g. 40s then 60s then 120s then 45s … */
-const naturalGap = () => {
-  const r = Math.random();
-  if (r < 0.45) return 40 + Math.random() * 20; // 40–60s
-  if (r < 0.8) return 60 + Math.random() * 40; // 60–100s
-  return 100 + Math.random() * 50; // 100–150s (the long, quiet wait)
+const STAR3D_COUNT = 90; // keep the 3D stream sparse so the sky stays calm
+const SPREAD = 1500; // half-extent of the spawn box (world units)
+const Z_FAR = 4200; // just behind the far spawn plane
+const Z_NEAR = 2; // "right in front of the camera"
+
+const seedStar = (s: Star3D, randomDepth: boolean) => {
+  s.x = (Math.random() * 2 - 1) * SPREAD;
+  s.y = (Math.random() * 2 - 1) * SPREAD;
+  s.z = randomDepth
+    ? Z_NEAR + Math.random() * (Z_FAR - Z_NEAR) // initial fill: depth everywhere
+    : Z_FAR * (0.86 + Math.random() * 0.14); // respawn: come from deep space
+  s.v = 500 + Math.random() * 900;
+  s.drift = 30 + Math.random() * 90; // always pushes the flow to the right
+  s.brightness = 0.5 + Math.random() * 0.5;
 };
 
 /**
- * "Nebula Sky" overlay: a quiet sky with the occasional comet that arrives
- * from deep inside — starting dim, slightly blurred and dark-violet, then
- * sharpening and flashing vibrant spring green as it crosses the screen
- * toward the bottom-right base (past the mid of the bottom/right edges, with
- * only a rare shot elsewhere). Purely decorative:
+ * "Nebula Sky" overlay: a quiet sky with a sparse 3D perspective stream —
+ * stars fly from deep space toward the viewer (growing + accelerating as
+ * they approach, like real depth) and the whole flow goes left → right.
+ * Purely decorative:
  *  - `mix-blend-mode: screen` + `pointer-events: none` (via .starfield CSS).
  *  - Pauses its RAF loop when the tab is hidden.
- *  - `prefers-reduced-motion`: static faint stars only, no comets.
+ *  - `prefers-reduced-motion`: static faint stars only, no 3D stream.
  *
  * Mounted exactly once in the root layout so every page shows the sky.
  */
@@ -59,7 +65,7 @@ export function StarField() {
     const canvas = canvasRef.current;
     if (!canvas) return;
 
-    // Comets only make sense on the dark/space themes — nothing to do here.
+    // The space stream only makes sense on the dark/space themes.
     if (!dark) return;
 
     const ctx = canvas.getContext("2d");
@@ -68,67 +74,13 @@ export function StarField() {
     let width = 0;
     let height = 0;
     let staticStars: StaticStar[] = [];
-    let streaks: Streak[] = [];
-    let nextSpawnAt = 0;
+    let stars: Star3D[] = [];
     let rafId = 0;
     let running = true;
     let lastTs = 0;
-    let now = 0;
 
     const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const dpr = () => Math.min(window.devicePixelRatio || 1, 2);
-
-    // How far a straight line from (x0,y0) heading (dirX,dirY) travels before
-    // it leaves the screen (with a small margin). Used as the total path
-    // length and to know when a comet is done.
-    const exitDist = (
-      x0: number,
-      y0: number,
-      dirX: number,
-      dirY: number,
-      margin = 90,
-    ) => {
-      let d = Infinity;
-      if (dirX > 0) d = Math.min(d, (width + margin - x0) / dirX);
-      else if (dirX < 0) d = Math.min(d, (-margin - x0) / dirX);
-      if (dirY > 0) d = Math.min(d, (height + margin - y0) / dirY);
-      else if (dirY < 0) d = Math.min(d, (-margin - y0) / dirY);
-      if (!isFinite(d) || d <= 0) d = width * 2; // fallback, just let it run
-      return d;
-    };
-
-    const spawnStreak = () => {
-      // Always top → bottom, diagonal only: the streak enters from above
-      // the top edge and travels down (tilted 30°–60° off vertical, drifting
-      // left or right). Never horizontal, never upward.
-      const quadrant = Math.random() < 0.5 ? 1 : -1; // drift right / left
-      const tilt = (30 + Math.random() * 30) * (Math.PI / 180); // 30–60°
-      const dx = Math.sin(tilt) * quadrant;
-      const dy = Math.cos(tilt); // always positive → downward
-
-      const x0 = width * (0.05 + Math.random() * 0.9);
-      const y0 = -20 + Math.random() * 40; // just above the top edge
-
-      // Distance until it leaves the bottom edge; life is sized to that
-      // travel so it fades out exactly as it exits.
-      const speed = 900 + Math.random() * 700;
-      const total = exitDist(x0, y0, dx, dy);
-      const life = total / speed;
-
-      streaks.push({
-        x0,
-        y0,
-        dirX: dx,
-        dirY: dy,
-        speed,
-        tail: 90 + Math.random() * 70, // a short dash
-        baseR: 1.0 + Math.random() * 0.6, // slightly thicker head
-        exitDist: total,
-        traveled: 0,
-        life,
-        age: 0,
-      });
-    };
 
     const build = () => {
       width = window.innerWidth;
@@ -150,8 +102,12 @@ export function StarField() {
         r: 0.35 + Math.random() * 0.85,
         alpha: 0.1 + Math.random() * 0.26,
       }));
-      // First comet arrives shortly, then a natural rhythm takes over.
-      nextSpawnAt = 1;
+
+      stars = Array.from({ length: STAR3D_COUNT }, () => {
+        const s: Star3D = { x: 0, y: 0, z: 1, v: 0, drift: 0, brightness: 1 };
+        seedStar(s, true);
+        return s;
+      });
     };
 
     const paintStatic = () => {
@@ -168,7 +124,6 @@ export function StarField() {
       if (!running) return;
       const dt = lastTs ? Math.min(0.05, (ts - lastTs) / 1000) : 0;
       lastTs = ts;
-      now += dt;
 
       ctx.clearRect(0, 0, width, height);
 
@@ -180,51 +135,57 @@ export function StarField() {
         ctx.fill();
       }
 
-      // Natural rhythm: spawn when due, then wait a random short/med/long gap.
-      if (now >= nextSpawnAt && streaks.length < MAX_STREAKS) {
-        spawnStreak();
-        nextSpawnAt = now + naturalGap();
-      }
+      // Perspective projection: the vanishing point sits on the LEFT
+      // (cx = 12% of the width) so the whole stream fans out toward the
+      // right — "coming forward from us, one direction, left to right".
+      const cx = width * 0.12;
+      const cy = height * 0.5;
+      const f = height * 0.9; // focal length
 
       ctx.globalCompositeOperation = "lighter"; // glows sum up on the dark sky
-      streaks = streaks.filter((st) => st.age < st.life && st.traveled < st.exitDist);
-      for (const st of streaks) {
-        st.age += dt;
-        st.traveled += st.speed * dt;
-        const x = st.x0 + st.dirX * st.traveled;
-        const y = st.y0 + st.dirY * st.traveled;
+      const light = "224, 232, 255";
+      for (const s of stars) {
+        const z1 = s.z;
+        const z2 = z1 - s.v * dt; // advance toward the camera
+        if (z2 <= Z_NEAR) {
+          // It reached "right in front of us" → send it back to deep space.
+          seedStar(s, false);
+          continue;
+        }
+        s.z = z2;
+        s.x += s.drift * dt; // lateral push → left-to-right flow
 
-        // Brief fade-in/out envelope so it "happens far away": appears,
-        // darts diagonally, then disappears on its own (no screen traverse).
-        const p = Math.min(1, st.age / st.life);
-        const envelope = Math.sin(Math.PI * p); // 0 → 1 → 0
+        // Project old and new positions (the segment between them is the
+        // streak; it is short when far, long when near — real depth cue).
+        const ox = s.x - s.drift * dt;
+        const sx = cx + (ox / z1) * f;
+        const sy = cy + (s.y / z1) * f;
+        const nx = cx + (s.x / z2) * f;
+        const ny = cy + (s.y / z2) * f;
 
-        // Subtle blue-white streak, kept dim so it reads as "deep inside".
-        const light = "224, 232, 255";
-        const a = 0.5 * envelope; // peak brightness, still soft
-        const tx = x - st.dirX * st.tail;
-        const ty = y - st.dirY * st.tail;
-        const grad = ctx.createLinearGradient(tx, ty, x, y);
+        // Skip drawing off-screen stars (they keep advancing in 3D).
+        if (
+          nx < -80 ||
+          nx > width + 80 ||
+          ny < -80 ||
+          ny > height + 80
+        )
+          continue;
+
+        // Depth 0 (far/deep) → 1 (right in front): controls size + light.
+        const depth = 1 - z2 / Z_FAR;
+        const a =
+          s.brightness * Math.min(0.6, 0.04 + Math.pow(depth, 1.6) * 0.55);
+        const grad = ctx.createLinearGradient(sx, sy, nx, ny);
         grad.addColorStop(0, `rgba(${light}, 0)`);
-        grad.addColorStop(0.7, `rgba(${light}, ${a * 0.5})`);
         grad.addColorStop(1, `rgba(${light}, ${a})`);
         ctx.strokeStyle = grad;
-        ctx.lineWidth = 2; // a little thicker
+        ctx.lineWidth = 0.6 + depth * 2.0;
         ctx.lineCap = "round";
         ctx.beginPath();
-        ctx.moveTo(tx, ty);
-        ctx.lineTo(x, y);
+        ctx.moveTo(sx, sy);
+        ctx.lineTo(nx, ny);
         ctx.stroke();
-
-        // A small, soft head glow at the leading tip.
-        const haloR = st.baseR * 4;
-        const halo = ctx.createRadialGradient(x, y, 0, x, y, haloR);
-        halo.addColorStop(0, `rgba(${light}, ${a * 0.6})`);
-        halo.addColorStop(1, `rgba(${light}, 0)`);
-        ctx.fillStyle = halo;
-        ctx.beginPath();
-        ctx.arc(x, y, haloR, 0, Math.PI * 2);
-        ctx.fill();
       }
       ctx.globalCompositeOperation = "source-over";
 
@@ -249,7 +210,7 @@ export function StarField() {
 
     build();
     if (reduceMotion.matches) {
-      paintStatic(); // no comets for reduced motion
+      paintStatic(); // no 3D stream for reduced motion
     } else {
       rafId = requestAnimationFrame(paintFrame);
     }

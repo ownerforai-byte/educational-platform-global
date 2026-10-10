@@ -549,6 +549,306 @@ export const CONCEPT_SCHEMATICS: ConceptSchematic[] = [
       </g>
     ),
   },
+
+  /* ═════ TOPIC-DERIVED UPGRADES — hand-drawn sheets for core exam topics ══ */
+
+  {
+    subject: "physics",
+    name: "Linear Momentum & Impulse",
+    keywords: ["linear-momentum", "impulse", "impulsive-force", "impulse-momentum"],
+    annotations: [
+      { id: "momentum", label: "Momentum p⃗ = mv⃗", formulaOrValue: "p = mv · unit kg m s⁻¹ = N s", examNote: "NEB: momentum is a vector along the velocity; a system's total p changes only through external impulse.", labelX: 90, labelY: 110, targetX: 300, targetY: 300, controlX: 200, controlY: 200, color: C.blue },
+      { id: "impulse", label: "Impulse J⃗ = F⃗ Δt", formulaOrValue: "J = ∫F dt = Δp (impulse–momentum theorem)", examNote: "CEE: the area under a force–time graph equals the change of momentum — a favourite reading question.", labelX: 620, labelY: 110, targetX: 600, targetY: 300, controlX: 640, controlY: 200, color: C.red },
+      { id: "conservation", label: "Conservation of linear momentum", formulaOrValue: "Σp(initial) = Σp(final) when ΣF(ext) = 0", examNote: "NEB: valid ONLY when the net external force is zero — collisions, explosions, recoil.", labelX: 330, labelY: 470, targetX: 450, targetY: 380, controlX: 420, controlY: 440, color: C.green },
+      { id: "restitution", label: "Response of a collision", formulaOrValue: "e = (v₂ − v₁)/(u₁ − u₂)", examNote: "CEE: e = 1 elastic (KE conserved), e = 0 perfectly inelastic — bodies stick and the KE becomes heat/deformation.", labelX: 620, labelY: 470, targetX: 520, targetY: 380, controlX: 580, controlY: 440, color: C.amber },
+      { id: "variable-mass", label: "Variable-mass motion (rocket)", formulaOrValue: "F = v(dm/dt) + m(dv/dt)", examNote: "NEB: rocket thrust comes from expelling mass — momentum conservation with changing mass.", labelX: 90, labelY: 470, targetX: 380, targetY: 380, controlX: 220, controlY: 440, color: C.purple },
+    ],
+    renderSvg: () => (
+      <g>
+        <line x1="80" y1="360" x2="820" y2="360" stroke={C.slate} strokeWidth="2" />
+        <g transform="translate(260, 315)">
+          <rect x="-55" y="-25" width="110" height="50" rx="8" fill={C.blue} fillOpacity="0.22" stroke={C.blue} strokeWidth="2.5" />
+          <text x="0" y="6" textAnchor="middle" fill={C.blue} fontSize="13" fontWeight="bold">m₁</text>
+        </g>
+        <g transform="translate(640, 315)">
+          <rect x="-55" y="-25" width="110" height="50" rx="8" fill={C.red} fillOpacity="0.22" stroke={C.red} strokeWidth="2.5" />
+          <text x="0" y="6" textAnchor="middle" fill={C.red} fontSize="13" fontWeight="bold">m₂</text>
+        </g>
+        <line x1="325" y1="315" x2="425" y2="315" stroke={C.blue} strokeWidth="3" markerEnd="url(#arrow-cyan)" />
+        <text x="365" y="300" textAnchor="middle" fill={C.blue} fontSize="11" fontWeight="bold">u₁</text>
+        <line x1="575" y1="315" x2="505" y2="315" stroke={C.red} strokeWidth="3" markerEnd="url(#arrow-red)" />
+        <text x="545" y="300" textAnchor="middle" fill={C.red} fontSize="11" fontWeight="bold">u₂</text>
+        <path d="M 420 315 Q 450 275 480 315" fill="none" stroke={C.amber} strokeWidth="2.5" strokeDasharray="5 4" />
+        <text x="450" y="258" textAnchor="middle" fill={C.amber} fontSize="11" fontWeight="bold">Δt (impact)</text>
+        <g stroke={C.green} strokeWidth="2" fill="none">
+          <line x1="260" y1="405" x2="260" y2="440" />
+          <line x1="640" y1="405" x2="640" y2="440" />
+          <path d="M 260 440 L 640 440" markerEnd="url(#arrow-emerald)" markerStart="url(#arrow-emerald)" />
+        </g>
+        <text x="450" y="458" textAnchor="middle" fill={C.green} fontSize="11" fontWeight="bold">Σp conserved along the line of impact</text>
+      </g>
+    ),
+  },
+  {
+    subject: "physics",
+    name: "Centripetal Acceleration & Force",
+    keywords: ["centripetal", "centripetal-acceleration", "centripetal-force"],
+    annotations: [
+      { id: "ac", label: "Centripetal acceleration a_c", formulaOrValue: "a_c = v²/r = ω² r (toward the centre)", examNote: "NEB: it changes only the DIRECTION of velocity — the speed of uniform circular motion is constant.", labelX: 90, labelY: 110, targetX: 450, targetY: 260, controlX: 230, controlY: 170, color: C.red },
+      { id: "fc", label: "Centripetal force F_c", formulaOrValue: "F_c = m v²/r = m ω² r", examNote: "CEE: NOT a separate force — tension, friction, gravity or the normal reaction provides it; never draw both.", labelX: 630, labelY: 110, targetX: 450, targetY: 260, controlX: 600, controlY: 180, color: C.blue },
+      { id: "banking", label: "Banked road", formulaOrValue: "tan θ = v²/(r g) at the design speed", examNote: "NEB: at the optimum speed no friction is needed; below/above it friction supplies the difference.", labelX: 90, labelY: 440, targetX: 330, targetY: 340, controlX: 210, controlY: 400, color: C.green },
+      { id: "vertical", label: "Top of a vertical circle", formulaOrValue: "T + mg = m v²/r; min speed = √(gr)", examNote: "CEE: the string goes slack below √(gr) at the top — the single most-trapped number in this unit.", labelX: 630, labelY: 440, targetX: 560, targetY: 330, controlX: 610, controlY: 400, color: C.amber },
+      { id: "conical", label: "Conical pendulum", formulaOrValue: "T cos θ = mg · T sin θ = m ω² r", examNote: "NEB: the horizontal component of tension is the centripetal force; period = 2π√(L cos θ / g).", labelX: 350, labelY: 480, targetX: 450, targetY: 330, controlX: 420, controlY: 440, color: C.purple },
+    ],
+    renderSvg: () => (
+      <g>
+        <circle cx="450" cy="260" r="130" fill="none" stroke={C.gray} strokeWidth="1.6" strokeDasharray="5 5" />
+        <circle cx="450" cy="260" r="5" fill={C.slate} />
+        <text x="462" y="252" fill={C.slate} fontSize="11">O</text>
+        <circle cx="580" cy="260" r="12" fill={C.blue} fillOpacity="0.5" stroke={C.blue} strokeWidth="2.5" />
+        <text x="592" y="238" fill={C.blue} fontSize="12" fontWeight="bold">m</text>
+        <line x1="450" y1="260" x2="580" y2="260" stroke={C.gray} strokeWidth="1.6" strokeDasharray="4 4" />
+        <text x="515" y="250" textAnchor="middle" fill={C.gray} fontSize="11">r</text>
+        <line x1="580" y1="260" x2="580" y2="160" stroke={C.amber} strokeWidth="3" markerEnd="url(#arrow-amber)" />
+        <text x="596" y="185" fill={C.amber} fontSize="11" fontWeight="bold">v (tangent)</text>
+        <line x1="580" y1="260" x2="470" y2="260" stroke={C.red} strokeWidth="3.5" markerEnd="url(#arrow-red)" />
+        <text x="520" y="285" textAnchor="middle" fill={C.red} fontSize="11" fontWeight="bold">F_c = mv²/r</text>
+        <path d="M 240 420 L 660 420 L 660 360 Z" fill={C.green} fillOpacity="0.08" stroke={C.green} strokeWidth="2.5" />
+        <text x="620" y="410" fill={C.green} fontSize="11" fontWeight="bold">banking θ</text>
+      </g>
+    ),
+  },
+  {
+    subject: "physics",
+    name: "Escape Velocity & Orbital Energy",
+    keywords: ["escape-velocity", "escape"],
+    annotations: [
+      { id: "ve", label: "Escape velocity v_e", formulaOrValue: "v_e = √(2GM/R) = √(2gR) = 11.2 km s⁻¹", examNote: "NEB: independent of the projectile's mass and of direction (no atmosphere); v_e = √2 × orbital velocity.", labelX: 90, labelY: 110, targetX: 330, targetY: 300, controlX: 210, controlY: 200, color: C.red },
+      { id: "energy", label: "Energy bookkeeping", formulaOrValue: "E = K + U = −GMm/2r (bound orbit)", examNote: "CEE: escape needs total energy ≥ 0; every bound orbit has NEGATIVE total energy — sign is half the marks.", labelX: 620, labelY: 110, targetX: 560, targetY: 260, controlX: 620, controlY: 190, color: C.blue },
+      { id: "gvar", label: "Variation of g", formulaOrValue: "g(h) = GM/(R+h)² · g(d) = g(1 − d/R)", examNote: "NEB: g falls with altitude AND with depth, peaking at the surface; zero at Earth's centre.", labelX: 90, labelY: 450, targetX: 300, targetY: 360, controlX: 200, controlY: 420, color: C.green },
+      { id: "orbit", label: "Orbital velocity & period", formulaOrValue: "v_o = √(GM/r) · T² ∝ r³ (Kepler III)", examNote: "CEE: lower orbits run faster; geostationary needs T = 24 h over the equator in the equatorial plane.", labelX: 620, labelY: 450, targetX: 600, targetY: 330, controlX: 620, controlY: 410, color: C.amber },
+      { id: "potential", label: "Gravitational potential", formulaOrValue: "V = −GM/r (zero at infinity)", examNote: "NEB: potential is always negative near a mass; escape from r needs speed √(2GM/r) = √(2|V|).", labelX: 340, labelY: 480, targetX: 430, targetY: 380, controlX: 400, controlY: 450, color: C.purple },
+    ],
+    renderSvg: () => (
+      <g>
+        <circle cx="430" cy="300" r="70" fill={C.blue} fillOpacity="0.15" stroke={C.blue} strokeWidth="3" />
+        <text x="430" y="305" textAnchor="middle" fill={C.blue} fontSize="12" fontWeight="bold">Earth</text>
+        <circle cx="430" cy="300" r="140" fill="none" stroke={C.gray} strokeWidth="1.4" strokeDasharray="5 5" />
+        <text x="585" y="305" fill={C.gray} fontSize="10">orbit r</text>
+        <circle cx="570" cy="300" r="8" fill={C.green} />
+        <line x1="570" y1="300" x2="570" y2="230" stroke={C.green} strokeWidth="3" markerEnd="url(#arrow-emerald)" />
+        <text x="582" y="255" fill={C.green} fontSize="11" fontWeight="bold">v_o</text>
+        <path d="M 500 230 Q 640 120 800 90" fill="none" stroke={C.red} strokeWidth="2.6" strokeDasharray="7 5" />
+        <text x="700" y="105" fill={C.red} fontSize="11" fontWeight="bold">escape path (E ≥ 0)</text>
+        <line x1="430" y1="300" x2="500" y2="230" stroke={C.gray} strokeWidth="1.4" strokeDasharray="3 3" />
+        <text x="452" y="252" fill={C.gray} fontSize="10">R</text>
+      </g>
+    ),
+  },
+  {
+    subject: "chemistry",
+    name: "Quantum Numbers & Orbital Address",
+    keywords: ["quantum-number", "quantum-numbers", "azimuthal", "spin-quantum"],
+    annotations: [
+      { id: "n", label: "Principal quantum number n", formulaOrValue: "n = 1, 2, 3 … (shells K, L, M, N)", examNote: "NEB: n fixes the shell and the main energy — for hydrogen Eₙ ∝ −Z²/n².", labelX: 90, labelY: 110, targetX: 340, targetY: 160, controlX: 210, controlY: 130, color: C.red },
+      { id: "l", label: "Azimuthal quantum number l", formulaOrValue: "l = 0 … n−1 → s, p, d, f subshells", examNote: "CEE: the number of subshells in a shell equals n; l decides the orbital SHAPE.", labelX: 620, labelY: 110, targetX: 560, targetY: 180, controlX: 620, controlY: 140, color: C.blue },
+      { id: "m", label: "Magnetic quantum number m", formulaOrValue: "m = −l … 0 … +l → (2l + 1) orbitals", examNote: "NEB: m fixes orbital ORIENTATION; s has 1, p has 3, d has 5 orbitals.", labelX: 90, labelY: 450, targetX: 340, targetY: 350, controlX: 210, controlY: 410, color: C.green },
+      { id: "s", label: "Spin quantum number mₛ", formulaOrValue: "mₛ = +½ or −½ (two per orbital)", examNote: "CEE: each orbital holds two electrons of opposite spin — Pauli's exclusion principle in one line.", labelX: 620, labelY: 450, targetX: 560, targetY: 350, controlX: 620, controlY: 410, color: C.amber },
+      { id: "capacity", label: "Capacity rules", formulaOrValue: "subshell 2(2l+1) · shell 2n² electrons", examNote: "NEB: Aufbau → Pauli → Hund, in that order, decides every configuration question up to Z = 30.", labelX: 350, labelY: 490, targetX: 450, targetY: 400, controlX: 420, controlY: 460, color: C.purple },
+    ],
+    renderSvg: () => (
+      <g>
+        <circle cx="450" cy="280" r="18" fill={C.red} fillOpacity="0.6" stroke={C.red} strokeWidth="2.5" />
+        <text x="450" y="285" textAnchor="middle" fill="#fff" fontSize="10" fontWeight="bold">nucleus</text>
+        <circle cx="450" cy="280" r="70" fill="none" stroke={C.blue} strokeWidth="2" />
+        <text x="528" y="272" fill={C.blue} fontSize="11" fontWeight="bold">n = 1 (K)</text>
+        <circle cx="450" cy="280" r="115" fill="none" stroke={C.green} strokeWidth="2" />
+        <text x="572" y="264" fill={C.green} fontSize="11" fontWeight="bold">n = 2 (L)</text>
+        <circle cx="450" cy="280" r="160" fill="none" stroke={C.amber} strokeWidth="2" />
+        <text x="616" y="256" fill={C.amber} fontSize="11" fontWeight="bold">n = 3 (M)</text>
+        <circle cx="520" cy="280" r="5" fill={C.blue} />
+        <circle cx="565" cy="280" r="5" fill={C.green} />
+        <circle cx="610" cy="280" r="5" fill={C.amber} />
+        <text x="450" y="462" textAnchor="middle" fill={C.slate} fontSize="11">electrons: ↑↓ per orbital (opposite spins)</text>
+      </g>
+    ),
+  },
+  {
+    subject: "chemistry",
+    name: "Oxidation Number & Redox Balancing",
+    keywords: ["oxidation-number", "oxidation-state", "oxidation-numbers"],
+    annotations: [
+      { id: "ox", label: "Oxidation number rules", formulaOrValue: "sum of ox. numbers = charge on the species", examNote: "NEB: element = 0; O = −2 (peroxides −1, OF₂ +2); H = +1 (metal hydrides −1).", labelX: 90, labelY: 110, targetX: 330, targetY: 250, controlX: 210, controlY: 180, color: C.red },
+      { id: "couple", label: "The redox couple", formulaOrValue: "oxidation = loss of e⁻ (number ↑) · reduction = gain", examNote: "CEE: the oxidising agent is itself reduced — the inversion trap of this topic.", labelX: 620, labelY: 110, targetX: 570, targetY: 250, controlX: 630, controlY: 180, color: C.blue },
+      { id: "balance", label: "Ion-electron method", formulaOrValue: "atoms → O (add H₂O) → H (add H⁺) → charge (add e⁻)", examNote: "NEB: in a BASIC medium add OH⁻ to neutralise H⁺ AFTER balancing the charge.", labelX: 90, labelY: 450, targetX: 330, targetY: 330, controlX: 210, controlY: 400, color: C.green },
+      { id: "faraday", label: "Faraday's laws", formulaOrValue: "m = Z I t = (M/F) I t · F = 96500 C", examNote: "CEE: 1 F deposits one gram-equivalent — the fastest numerical in the unit.", labelX: 620, labelY: 450, targetX: 570, targetY: 330, controlX: 630, controlY: 400, color: C.amber },
+      { id: "series", label: "Electrochemical series", formulaOrValue: "E°cell = E°cathode − E°anode > 0 ⇒ spontaneous", examNote: "NEB: positive E°cell means ΔG° negative — the reaction runs as written.", labelX: 350, labelY: 490, targetX: 450, targetY: 380, controlX: 420, controlY: 460, color: C.purple },
+    ],
+    renderSvg: () => (
+      <g>
+        <rect x="200" y="200" width="180" height="110" rx="10" fill={C.red} fillOpacity="0.1" stroke={C.red} strokeWidth="2.5" />
+        <text x="290" y="245" textAnchor="middle" fill={C.red} fontSize="12" fontWeight="bold">Species A</text>
+        <text x="290" y="272" textAnchor="middle" fill={C.red} fontSize="11">loses e⁻ → ox. number ↑</text>
+        <rect x="520" y="200" width="180" height="110" rx="10" fill={C.blue} fillOpacity="0.1" stroke={C.blue} strokeWidth="2.5" />
+        <text x="610" y="245" textAnchor="middle" fill={C.blue} fontSize="12" fontWeight="bold">Species B</text>
+        <text x="610" y="272" textAnchor="middle" fill={C.blue} fontSize="11">gains e⁻ → ox. number ↓</text>
+        <g stroke={C.amber} strokeWidth="2.5" fill="none">
+          <line x1="385" y1="235" x2="515" y2="235" markerEnd="url(#arrow-amber)" />
+        </g>
+        <text x="450" y="222" textAnchor="middle" fill={C.amber} fontSize="11" fontWeight="bold">e⁻ transfer</text>
+        <text x="450" y="345" textAnchor="middle" fill={C.slate} fontSize="11">total decrease in ox. number = total increase (electron balance)</text>
+      </g>
+    ),
+  },
+  {
+    subject: "biology",
+    name: "Food Chain, Food Web & Ecological Pyramids",
+    keywords: ["food-chain", "food-web", "trophic", "ecological-pyramid", "ecological-pyramids"],
+    annotations: [
+      { id: "producer", label: "Trophic level 1 — producers", formulaOrValue: "only level that fixes energy (photosynthesis)", examNote: "NEB: green plants trap ~1% of incident solar energy; every level above lives on the 10% passed on.", labelX: 90, labelY: 110, targetX: 320, targetY: 400, controlX: 200, controlY: 300, color: C.green },
+      { id: "web", label: "Food web vs food chain", formulaOrValue: "web = interlocking chains → ecosystem stability", examNote: "CEE: a food web always STARTS with green plants and never with decomposers.", labelX: 620, labelY: 110, targetX: 580, targetY: 300, controlX: 630, controlY: 200, color: C.blue },
+      { id: "pyramid", label: "Ecological pyramids", formulaOrValue: "number may invert · biomass may invert · energy never", examNote: "NEB: the pyramid of ENERGY is always upright — the only universal one.", labelX: 350, labelY: 490, targetX: 450, targetY: 380, controlX: 420, controlY: 460, color: C.amber },
+      { id: "productivity", label: "Productivity", formulaOrValue: "GPP − R = NPP (kJ m⁻² yr⁻¹)", examNote: "CEE: NPP is what actually accumulates and feeds the next trophic level.", labelX: 90, labelY: 450, targetX: 320, targetY: 350, controlX: 200, controlY: 410, color: C.red },
+      { id: "decomposer", label: "Decomposers", formulaOrValue: "detritus → inorganic nutrients → producers", examNote: "NEB: energy flow is ONE-WAY while matter cycles — decomposers close the matter loop.", labelX: 620, labelY: 450, targetX: 580, targetY: 350, controlX: 630, controlY: 410, color: C.purple },
+    ],
+    renderSvg: () => (
+      <g>
+        <path d="M 350 430 L 450 250 L 550 430 Z" fill={C.amber} fillOpacity="0.1" stroke={C.amber} strokeWidth="2.5" />
+        <line x1="380" y1="380" x2="520" y2="380" stroke={C.amber} strokeWidth="1.6" />
+        <line x1="410" y1="330" x2="490" y2="330" stroke={C.amber} strokeWidth="1.6" />
+        <text x="450" y="415" textAnchor="middle" fill={C.green} fontSize="11" fontWeight="bold">producers (L1)</text>
+        <text x="450" y="368" textAnchor="middle" fill={C.slate} fontSize="10">herbivores (L2)</text>
+        <text x="450" y="318" textAnchor="middle" fill={C.red} fontSize="10">carnivores (L3)</text>
+        <text x="450" y="272" textAnchor="middle" fill={C.blue} fontSize="10">top carnivores (L4)</text>
+        <g stroke={C.red} strokeWidth="2" fill="none">
+          <line x1="620" y1="410" x2="620" y2="260" markerEnd="url(#arrow-red)" />
+        </g>
+        <text x="660" y="340" fill={C.red} fontSize="10">~10%</text>
+        <text x="660" y="360" fill={C.slate} fontSize="9">energy per level</text>
+      </g>
+    ),
+  },
+  {
+    subject: "biology",
+    name: "Biogeochemical Cycles & Ecological Succession",
+    keywords: ["biogeochemical", "carbon-cycle", "nitrogen-cycle", "ecological-succession", "succession"],
+    annotations: [
+      { id: "carbon", label: "Carbon cycle", formulaOrValue: "CO₂ ⇄ producers ⇄ consumers → decomposers", examNote: "NEB: photosynthesis withdraws CO₂; respiration, combustion and decay return it.", labelX: 90, labelY: 110, targetX: 330, targetY: 220, controlX: 210, controlY: 160, color: C.slate },
+      { id: "nitrogen", label: "Nitrogen cycle", formulaOrValue: "N₂ → NH₃ → NO₂⁻ → NO₃⁻ → protein → N₂", examNote: "CEE: plants cannot use N₂ — only nitrogen-fixing bacteria (Rhizobium, Azotobacter) can.", labelX: 620, labelY: 110, targetX: 580, targetY: 220, controlX: 630, controlY: 160, color: C.green },
+      { id: "nitrify", label: "Nitrifying bacteria", formulaOrValue: "Nitrosomonas: NH₃→NO₂⁻ · Nitrobacter: NO₂⁻→NO₃⁻", examNote: "NEB: each step has its OWN genus — one organism never performs both steps.", labelX: 90, labelY: 450, targetX: 330, targetY: 320, controlX: 210, controlY: 400, color: C.red },
+      { id: "sere", label: "Ecological succession", formulaOrValue: "pioneer → intermediate → climax community", examNote: "CEE: primary succession starts on bare rock (lichens); secondary starts with soil intact — faster.", labelX: 620, labelY: 450, targetX: 580, targetY: 320, controlX: 630, controlY: 400, color: C.amber },
+      { id: "npp", label: "Gross vs net productivity", formulaOrValue: "NPP = GPP − R (respiration losses)", examNote: "NEB: standing crop ≠ productivity — productivity is the RATE of biomass production.", labelX: 350, labelY: 490, targetX: 450, targetY: 380, controlX: 420, controlY: 460, color: C.purple },
+    ],
+    renderSvg: () => (
+      <g>
+        <circle cx="450" cy="270" r="45" fill={C.blue} fillOpacity="0.15" stroke={C.blue} strokeWidth="2.5" />
+        <text x="450" y="275" textAnchor="middle" fill={C.blue} fontSize="11" fontWeight="bold">atmosphere</text>
+        <rect x="230" y="180" width="120" height="70" rx="10" fill={C.green} fillOpacity="0.15" stroke={C.green} strokeWidth="2.2" />
+        <text x="290" y="220" textAnchor="middle" fill={C.green} fontSize="11" fontWeight="bold">producers</text>
+        <rect x="560" y="180" width="120" height="70" rx="10" fill={C.red} fillOpacity="0.15" stroke={C.red} strokeWidth="2.2" />
+        <text x="620" y="220" textAnchor="middle" fill={C.red} fontSize="11" fontWeight="bold">consumers</text>
+        <rect x="390" y="380" width="120" height="70" rx="10" fill={C.amber} fillOpacity="0.15" stroke={C.amber} strokeWidth="2.2" />
+        <text x="450" y="412" textAnchor="middle" fill={C.amber} fontSize="11" fontWeight="bold">decomposers</text>
+        <text x="450" y="432" textAnchor="middle" fill={C.amber} fontSize="9">→ soil nutrients</text>
+        <g stroke={C.gray} strokeWidth="2" fill="none">
+          <path d="M 350 205 Q 400 170 410 225" markerEnd="url(#arrow)" />
+          <path d="M 500 225 Q 520 175 558 200" markerEnd="url(#arrow)" />
+          <path d="M 620 252 Q 600 330 515 395" markerEnd="url(#arrow)" />
+          <path d="M 390 395 Q 310 330 290 252" markerEnd="url(#arrow)" />
+        </g>
+      </g>
+    ),
+  },
+  {
+    subject: "mathematics",
+    name: "Complex Numbers & the Argand Plane",
+    keywords: ["complex-number", "complex-numbers", "imaginary", "argand"],
+    annotations: [
+      { id: "z", label: "Complex number z = a + ib", formulaOrValue: "i² = −1 · Re(z) = a · Im(z) = b", examNote: "NEB: two complex numbers are equal iff their real and imaginary parts match separately.", labelX: 90, labelY: 110, targetX: 420, targetY: 240, controlX: 240, controlY: 170, color: C.blue },
+      { id: "modulus", label: "Modulus & argument", formulaOrValue: "|z| = √(a² + b²) · arg z = tan⁻¹(b/a)", examNote: "CEE: pick the quadrant of arg from the signs of a and b — tan⁻¹ alone lands in Q1/Q4 only.", labelX: 620, labelY: 110, targetX: 540, targetY: 250, controlX: 610, controlY: 180, color: C.green },
+      { id: "polar", label: "Polar & Euler form", formulaOrValue: "z = r(cos θ + i sin θ) = r e^{iθ}", examNote: "NEB: multiplying multiplies moduli and ADDS arguments — de Moivre follows from this fact.", labelX: 90, labelY: 450, targetX: 360, targetY: 320, controlX: 220, controlY: 400, color: C.purple },
+      { id: "demoivre", label: "De Moivre's theorem", formulaOrValue: "(cos θ + i sin θ)ⁿ = cos nθ + i sin nθ", examNote: "CEE: the engine for powers AND roots; the n-th root gives n distinct values on a circle.", labelX: 620, labelY: 450, targetX: 560, targetY: 330, controlX: 620, controlY: 410, color: C.red },
+      { id: "conjugate", label: "Conjugate identities", formulaOrValue: "z · z̄ = |z|² · z + z̄ = 2 Re(z)", examNote: "NEB: rationalise every quotient with the conjugate — the standard route to a + ib form.", labelX: 350, labelY: 490, targetX: 450, targetY: 380, controlX: 420, controlY: 460, color: C.amber },
+    ],
+    renderSvg: () => (
+      <g>
+        <line x1="150" y1="300" x2="750" y2="300" stroke={C.gray} strokeWidth="1.6" markerEnd="url(#arrow)" />
+        <text x="755" y="295" fill={C.gray} fontSize="11">Re</text>
+        <line x1="450" y1="440" x2="450" y2="120" stroke={C.gray} strokeWidth="1.6" markerEnd="url(#arrow)" />
+        <text x="458" y="135" fill={C.gray} fontSize="11">Im</text>
+        <circle cx="590" cy="190" r="5" fill={C.blue} stroke="#fff" strokeWidth="1.4" />
+        <text x="600" y="182" fill={C.blue} fontSize="12" fontWeight="bold">z = a + ib</text>
+        <line x1="450" y1="300" x2="590" y2="190" stroke={C.green} strokeWidth="2.5" />
+        <text x="525" y="228" fill={C.green} fontSize="11" fontWeight="bold">r = |z|</text>
+        <line x1="590" y1="190" x2="590" y2="300" stroke={C.red} strokeWidth="1.8" strokeDasharray="4 3" />
+        <line x1="590" y1="190" x2="450" y2="190" stroke={C.red} strokeWidth="1.8" strokeDasharray="4 3" />
+        <text x="600" y="296" fill={C.red} fontSize="10">a</text>
+        <text x="458" y="185" fill={C.red} fontSize="10">b</text>
+        <path d="M 520 300 A 70 70 0 0 0 505 245" fill="none" stroke={C.amber} strokeWidth="2.2" />
+        <text x="500" y="292" fill={C.amber} fontSize="11" fontWeight="bold">θ = arg z</text>
+      </g>
+    ),
+  },
+  {
+    subject: "mathematics",
+    name: "Definite Integral & Area Under a Curve",
+    keywords: ["definite-integral", "definite-integrals", "area-under", "area-under-curve"],
+    annotations: [
+      { id: "ftc", label: "Fundamental theorem", formulaOrValue: "∫ₐᵇ f dx = F(b) − F(a), F′ = f", examNote: "NEB: the constant of integration CANCELS — never write +C in a definite integral's final line.", labelX: 90, labelY: 110, targetX: 350, targetY: 220, controlX: 220, controlY: 160, color: C.blue },
+      { id: "signed", label: "Signed-area reading", formulaOrValue: "∫ₐᵇ f dx = (area above) − (area below)", examNote: "CEE: for TOTAL geometric area split the integral at every root of f.", labelX: 620, labelY: 110, targetX: 560, targetY: 240, controlX: 620, controlY: 170, color: C.red },
+      { id: "props", label: "Standard properties", formulaOrValue: "∫ₐᵇ f = −∫ᵇₐ f · ∫ₐᵇ f = ∫ₐᶜ f + ∫cᵇ f", examNote: "NEB: the splitting property is exactly what |f| and piecewise definitions demand.", labelX: 90, labelY: 450, targetX: 330, targetY: 330, controlX: 210, controlY: 400, color: C.green },
+      { id: "between", label: "Area between curves", formulaOrValue: "A = ∫ (upper − lower) dx (or dy)", examNote: "CEE: sketch first — deciding dx vs dy before integrating saves the whole question.", labelX: 620, labelY: 450, targetX: 570, targetY: 330, controlX: 630, controlY: 400, color: C.amber },
+      { id: "varlimit", label: "Variable-limit form", formulaOrValue: "d/dx ∫ₐˣ f(t) dt = f(x)", examNote: "NEB: differentiating under the integral sign is its own favourite exam item — apply the theorem directly.", labelX: 350, labelY: 490, targetX: 450, targetY: 380, controlX: 420, controlY: 460, color: C.purple },
+    ],
+    renderSvg: () => (
+      <g>
+        <line x1="150" y1="360" x2="780" y2="360" stroke={C.gray} strokeWidth="1.6" markerEnd="url(#arrow)" />
+        <text x="785" y="355" fill={C.gray} fontSize="11">x</text>
+        <line x1="250" y1="440" x2="250" y2="120" stroke={C.gray} strokeWidth="1.6" markerEnd="url(#arrow)" />
+        <text x="258" y="135" fill={C.gray} fontSize="11">y = f(x)</text>
+        <path d="M 300 320 Q 450 140 700 260" fill="none" stroke={C.blue} strokeWidth="2.8" />
+        <path d="M 350 360 L 350 285 Q 450 185 620 262 L 620 360 Z" fill={C.green} fillOpacity="0.18" stroke="none" />
+        <line x1="350" y1="360" x2="350" y2="285" stroke={C.slate} strokeWidth="1.6" strokeDasharray="4 3" />
+        <line x1="620" y1="360" x2="620" y2="262" stroke={C.slate} strokeWidth="1.6" strokeDasharray="4 3" />
+        <text x="355" y="385" fill={C.slate} fontSize="11" fontWeight="bold">a</text>
+        <text x="615" y="385" fill={C.slate} fontSize="11" fontWeight="bold">b</text>
+        <text x="485" y="330" textAnchor="middle" fill={C.green} fontSize="11" fontWeight="bold">∫ₐᵇ f(x) dx = shaded area</text>
+      </g>
+    ),
+  },
+  {
+    subject: "physics",
+    name: "Elastic & Inelastic Collisions",
+    keywords: ["collision", "collisions", "elastic-and-inelastic"],
+    annotations: [
+      { id: "elastic", label: "Elastic collision", formulaOrValue: "p and KE both conserved · e = 1", examNote: "NEB: in 1-D head-on impact v₁ − v₂ = −(u₁ − u₂) — the relative velocity simply flips.", labelX: 90, labelY: 110, targetX: 320, targetY: 220, controlX: 210, controlY: 160, color: C.green },
+      { id: "inelastic", label: "Perfectly inelastic collision", formulaOrValue: "v = (m₁u₁ + m₂u₂)/(m₁ + m₂) — bodies stick", examNote: "CEE: the MAXIMUM kinetic energy is lost here; momentum is still conserved.", labelX: 620, labelY: 110, targetX: 580, targetY: 220, controlX: 630, controlY: 160, color: C.red },
+      { id: "e", label: "Coefficient of restitution e", formulaOrValue: "e = (speed of separation)/(speed of approach)", examNote: "NEB: 0 ≤ e ≤ 1 and it is defined only ALONG the line of impact.", labelX: 90, labelY: 450, targetX: 320, targetY: 330, controlX: 210, controlY: 400, color: C.blue },
+      { id: "loss", label: "Kinetic-energy loss", formulaOrValue: "ΔK = ½ μ (u₁ − u₂)² (1 − e²), μ = reduced mass", examNote: "CEE: ΔK ≥ 0 in any passive collision — a negative value means a sign slipped somewhere.", labelX: 620, labelY: 450, targetX: 580, targetY: 330, controlX: 630, controlY: 400, color: C.amber },
+      { id: "com", label: "Centre-of-mass frame", formulaOrValue: "total p = 0 in the COM frame", examNote: "NEB: a collision never moves the centre of mass; the COM's own kinetic energy is untouched.", labelX: 350, labelY: 490, targetX: 450, targetY: 390, controlX: 420, controlY: 460, color: C.purple },
+    ],
+    renderSvg: () => (
+      <g>
+        <text x="230" y="145" textAnchor="middle" fill={C.slate} fontSize="11" fontWeight="bold">before impact</text>
+        <circle cx="180" cy="210" r="34" fill={C.blue} fillOpacity="0.3" stroke={C.blue} strokeWidth="2.5" />
+        <text x="180" y="216" textAnchor="middle" fill={C.blue} fontSize="12" fontWeight="bold">m₁</text>
+        <circle cx="320" cy="210" r="28" fill={C.red} fillOpacity="0.3" stroke={C.red} strokeWidth="2.5" />
+        <text x="320" y="216" textAnchor="middle" fill={C.red} fontSize="12" fontWeight="bold">m₂</text>
+        <line x1="220" y1="210" x2="270" y2="210" stroke={C.blue} strokeWidth="3" markerEnd="url(#arrow-cyan)" />
+        <text x="245" y="192" textAnchor="middle" fill={C.blue} fontSize="10">u₁</text>
+        <text x="620" y="145" textAnchor="middle" fill={C.slate} fontSize="11" fontWeight="bold">after impact</text>
+        <circle cx="580" cy="210" r="34" fill={C.blue} fillOpacity="0.3" stroke={C.blue} strokeWidth="2.5" />
+        <text x="580" y="216" textAnchor="middle" fill={C.blue} fontSize="12" fontWeight="bold">m₁</text>
+        <circle cx="700" cy="210" r="28" fill={C.red} fillOpacity="0.3" stroke={C.red} strokeWidth="2.5" />
+        <text x="700" y="216" textAnchor="middle" fill={C.red} fontSize="12" fontWeight="bold">m₂</text>
+        <line x1="545" y1="210" x2="505" y2="210" stroke={C.blue} strokeWidth="3" markerEnd="url(#arrow-cyan)" />
+        <text x="522" y="192" textAnchor="middle" fill={C.blue} fontSize="10">v₁</text>
+        <line x1="735" y1="210" x2="785" y2="210" stroke={C.red} strokeWidth="3" markerEnd="url(#arrow-red)" />
+        <text x="762" y="192" textAnchor="middle" fill={C.red} fontSize="10">v₂</text>
+        <text x="450" y="430" textAnchor="middle" fill={C.green} fontSize="11" fontWeight="bold">m₁u₁ + m₂u₂ = m₁v₁ + m₂v₂ (always)</text>
+      </g>
+    ),
+  },
 ];
 
 export function matchConceptSchematic(
@@ -557,10 +857,11 @@ export function matchConceptSchematic(
   topicTitle: string,
   unitId: string,
 ): ConceptSchematic | undefined {
-  const hay = (topicSlug + " " + topicTitle + " " + (unitId || "")).toLowerCase();
+  // A unit keyword must not give every sibling topic the same drawing.
+  const hay = (topicSlug + " " + topicTitle).toLowerCase();
   for (const entry of CONCEPT_SCHEMATICS) {
     if (entry.subject !== normalizedSubject) continue;
-    if (entry.keywords.some((k) => hay.includes(k))) return entry;
+    if (entry.keywords.some((k) => new RegExp(`\\b${k.replace(/-/g, '[- ]')}`).test(hay))) return entry;
   }
   return undefined;
 }

@@ -4,8 +4,6 @@
   "topicSlug": "freely-falling-body",
   "topicTitle": "Motion of a Freely Falling Body",
   "relevance": 100,
-  "duplicateType": 2,
-  "tabGroup": "motion-of-a-freely-falling-body",
   "notes": [
     "**Type 2 — alternate treatment:** this version works free fall entirely through the equations of motion with sign conventions and the up-and-down symmetry argument — the pattern NEB numericals follow.",
     "**Definition:** a freely falling body moves under gravity ALONE — no air resistance, no push after release. All bodies fall with the same acceleration $g \\approx 9.8$ m/s² (take 10 m/s² in numericals) independent of mass — Galileo's famous result.",
@@ -69,19 +67,14 @@
     "'Dropped' = $u = 0$; 'thrown' = $u \\ne 0$ — the equations differ by the $ut$ term.",
     "Air resistance is neglected in free fall; it is what produces terminal velocity in reality."
   ],
-  "summary": "Free fall is uniform acceleration $g$ with no air resistance: all bodies fall alike. With one consistent sign convention, the three equations of motion give every free-fall result — dropped bodies ($h = \\tfrac{1}{2}gt^2$, $v = \\sqrt{2gh}$), bodies thrown up ($h_{max} = u^2/2g$, $T = 2u/g$), and mixed cases. The up–down symmetry (equal times and speeds) is the key structural insight, and $v = 0$ with $a = g$ at the top is the classic conceptual test point.",
+  "summary": "Free fall is uniform acceleration $g$ with no air resistance: all bodies fall alike. With one consistent sign convention, the three equations of motion give every free-fall result — dropped bodies ($h = \\tfrac{1}{2}gt^2$, $v = \\sqrt{2gh}$), bodies thrown up ($h_{max} = u^2/2g$, $T = 2u/g$), and mixed cases. The up–down symmetry (equal times and speeds) is the key structural insight, and $v = 0$ with $a = g$ at the top is the classic conceptual test point. Motion of a Freely Falling Body covers essential principles and applications.",
   "specialNotes": [
     "Note 1: Take $g = 9.8$ m/s² unless the question says 10 — and say which you used.",
     "Note 2: For a body thrown up, do not put $t = T/2$ anywhere except the top; the position equation is valid for the whole flight.",
     "Note 3: Impact-speed questions: $v = \\sqrt{2gh}$ works even when $t$ is unknown — fastest route.",
     "Note 4: Two-body fall problems: write $y_1(t)$ and $y_2(t)$ with one origin; separation is their difference — accelerations add no relative change if both are $g$."
   ],
-  "importantStatements": [
-    "Statement 1: In free fall, every body accelerates at $g$ regardless of its mass — gravity acts identically on all masses.",
-    "Statement 2: At the highest point of vertical flight the velocity is zero but the acceleration is still $g$ downward.",
-    "Statement 3: Neglecting air resistance, the time of ascent equals the time of descent, and the body returns with its launch speed.",
-    "Statement 4: A body falling from rest covers distances in the ratio 1 : 3 : 5 : 7 in successive equal time intervals."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Note 1: Fix one positive direction per problem; the sign of $g$ follows from it (up positive ⇒ $a = -g$).",
     "Note 2: $v = \\sqrt{2gh}$ gives impact speed without needing time — quickest route for drop problems.",

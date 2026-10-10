@@ -13,7 +13,7 @@
 
 import { PDF_VIEWER_PATH } from "@/lib/pdf-src";
 
-export type ContentCategory = "lab3d" | "visuals" | "theory" | "reference";
+export type ContentCategory = "lab3d" | "visuals" | "theory" | "reference" | "imagehub";
 
 export interface CategoryRule {
   /** Coin cost for one 20-minute unlock window. */
@@ -44,6 +44,11 @@ export const TOKEN_MATRIX: Record<ContentCategory, CategoryRule> = {
     cost: 1,
     label: "Auxiliary Reference Material (Questions / Sets)",
     emoji: "📝",
+  },
+  imagehub: {
+    cost: 5,
+    label: "Diagram Hub (Drawing Studio)",
+    emoji: "🎨",
   },
 };
 
@@ -91,10 +96,7 @@ export const EXEMPT_PATHS = [
   "/owner",
   "/admin",
   "/controller",
-  // Owner request (2026-10-05): the Image Hub is an owner-only studio — it
-  // carries its own owner gate, so it must never be blurred behind coins.
-  "/mind-studio",
-  // Owner request (2026-10-05): Veer chat (/ai + /chat) is owner-only too —
+  // Owner request (2026-10-05): Veer chat (/ai + /chat) is owner-only —
   // same treatment, own gate, never blurred.
   "/ai",
   "/chat",
@@ -114,7 +116,13 @@ function isPublicPath(pathname: string): boolean {
 
 /**
  * Map any internal route to the coin category that gates it.
- * Returns null for public routes (home, AI chat, auth, credits wallet).
+ * Returns null for public routes (home, auth, credits wallet) and exempt
+ * privileged surfaces (owner console, owner-only Veer chat).
+ *
+ * Owner request 2026-10-06: /mind-studio resolves to the `imagehub` category
+ * (5 coins) — the Diagram Hub is displayed as a premium coin-gated section,
+ * owners open it free (the unlock server charges owner emails 0), and
+ * non-owners are refused the unlock entirely (provider + server guard).
  *
  * Everything not matched explicitly falls back to `theory` (1 coin) so that
  * notes, syllabus, theorems, derivations, knowledge hubs and subject pages are
@@ -125,6 +133,8 @@ export function categoryForPath(pathname: string): ContentCategory | null {
 
   if (isPublicPath(path)) return null;
   if (matchesList(path, EXEMPT_PATHS)) return null;
+  // The Diagram Hub: its own 5-coin tier (never the theory fallback).
+  if (path === "/mind-studio" || path.startsWith("/mind-studio/")) return "imagehub";
   if (LAB_ROUTES.test(path)) return "lab3d";
   if (VISUAL_ROUTES.test(path)) return "visuals";
   if (REFERENCE_ROUTES.test(path)) return "reference";

@@ -5,8 +5,8 @@ import { requestHubFigure, requestHubImage } from "@/features/image-hub/generate
 // ORDER and the failure reporting, never the network.
 vi.mock("@/lib/api-client", () => ({ apiFetch: vi.fn() }));
 
-describe("Image Hub engine order (owner request 2026-10-02)", () => {
-  it("draws through the Agnes server chain first and never touches puter.js on success", async () => {
+describe("Diagram Hub engine order (owner request 2026-10-02)", () => {
+  it("draws through the server chain first and never touches puter.js on success", async () => {
     const puter = vi.fn(async () => "unused");
     const fails: string[] = [];
 
@@ -19,10 +19,12 @@ describe("Image Hub engine order (owner request 2026-10-02)", () => {
       onEngineFail: (e) => fails.push(e),
     });
 
+    // `model` is the provider's own model id on the wire, but the gallery badge
+    // is the hub's wording — no vendor name reaches the UI (owner 2026-10-07).
     expect(res).toEqual({
       url: "https://img.example/x.png",
-      engine: "agnes",
-      label: "agnes-image-2.1-flash",
+      engine: "diagram",
+      label: "Diagram",
     });
     expect(puter).not.toHaveBeenCalled();
     expect(fails).toEqual([]);
@@ -42,7 +44,7 @@ describe("Image Hub engine order (owner request 2026-10-02)", () => {
       engine: "puter",
       label: "puter.js (browser)",
     });
-    expect(fails).toEqual(["agnes"]);
+    expect(fails).toEqual(["diagram"]);
   });
 
   it("returns null only when BOTH engines failed, reporting each", async () => {
@@ -55,7 +57,7 @@ describe("Image Hub engine order (owner request 2026-10-02)", () => {
     });
 
     expect(res).toBeNull();
-    expect(fails).toEqual(["agnes", "puter"]);
+    expect(fails).toEqual(["diagram", "puter"]);
   });
 
   it("ignores blank prompts without calling any engine", async () => {
@@ -76,7 +78,7 @@ describe("Image Hub engine order (owner request 2026-10-02)", () => {
  * A raster painter cannot spell, so the VECTOR writer is tried first and the
  * raster chain only takes over when it draws nothing.
  */
-describe("Image Hub academic figures", () => {
+describe("Diagram Hub academic figures", () => {
   const FIGURE = {
     svg: '<svg viewBox="0 0 900 640"><g><title>Nucleus — controls the cell</title></g></svg>',
     caption: "Labelled animal cell",
@@ -110,7 +112,7 @@ describe("Image Hub academic figures", () => {
     expect(fails).toEqual([]);
   });
 
-  it("falls back to the Agnes raster chain when the vector writer draws nothing", async () => {
+  it("falls back to the server raster chain when the vector writer draws nothing", async () => {
     const fails: string[] = [];
 
     const res = await requestHubFigure("a snow leopard at dawn", {
@@ -125,8 +127,8 @@ describe("Image Hub academic figures", () => {
 
     expect(res).toEqual({
       url: "https://img.example/x.png",
-      engine: "agnes",
-      label: "agnes-image-2.1-flash",
+      engine: "diagram",
+      label: "Diagram",
     });
     expect(fails).toEqual(["figure"]);
   });
@@ -142,7 +144,7 @@ describe("Image Hub academic figures", () => {
     });
 
     expect(res).toBeNull();
-    expect(fails).toEqual(["figure", "agnes", "puter"]);
+    expect(fails).toEqual(["figure", "diagram", "puter"]);
   });
 
   it("ignores a blank figure prompt without calling any engine", async () => {

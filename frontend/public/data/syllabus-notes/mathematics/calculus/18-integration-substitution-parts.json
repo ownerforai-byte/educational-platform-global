@@ -43,13 +43,7 @@
     "Where a formula is quoted it is valid only under the conditions stated; Applying substitution without using the new limits in a definite integral, or changing limits without substituting the integrand.",
     "Every result here follows from the definitions, so a first-principles derivation is always a valid fallback in the exam."
   ],
-  "importantStatements": [
-    "Statement 1: Substitution sets $u=g(x)$ and replaces $g'(x)dx$ by $du$.",
-    "Statement 2: By parts gives $\\int u\\,dv=uv-\\int v\\,du$.",
-    "Statement 3: In a definite integral the constant of integration cancels and is omitted.",
-    "Statement 4: With changed limits, $\\int_a^b f(g(x))g'(x)dx=\\int_{g(a)}^{g(b)}f(u)du$.",
-    "Statement 5: $e^{-x^2}$ and $\\frac{\\sin x}{x}$ have no elementary antiderivative."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "Topic anchor: Both methods fail on the same hard cases."
   ],

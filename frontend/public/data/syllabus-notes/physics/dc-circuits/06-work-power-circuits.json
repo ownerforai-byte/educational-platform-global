@@ -5,9 +5,11 @@
   "topicTitle": "Work and Power in Circuits",
   "relevance": 100,
   "notes": [
-    "**Work and Power in Circuits:** This topic covers the fundamental concepts of work and power in circuits in the physics curriculum.",
-    "Understanding work and power in circuits is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to work and power in circuits should be memorized and practiced regularly."
+    "**Electrical work.** Moving charge q through potential V costs W = qV = VIt; in a pure resistance this equals I²Rt = V²t/R — the energy converted.",
+    "**Electric power.** P = VI = I²R = V²/R, measured in watts; 1 horsepower ≈ 746 W and commercial rating is often in kW.",
+    "**Energy unit.** 1 kWh (one 'unit' on a meter bill) = 3.6 × 10⁶ J — the energy a 1000 W appliance uses in an hour.",
+    "**Joule's heating.** A current I through resistance R heats it by H = I²Rt (Joule's law); this is the working principle of heaters, bulbs and fuses.",
+    "**Maximum power transfer.** A source of emf E and internal r delivers maximum power to an external R when R = r; the efficiency of energy transfer is then only 50%."
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in work and power in circuits.",
@@ -28,33 +30,22 @@
   "animation3D": "dc-circuits",
   "motionGraphics": "dc-circuits",
   "examples": [
-    "Example 1: Real-world application of Work and Power in Circuits",
-    "Example 2: Practical demonstration of Work and Power in Circuits concepts",
-    "Example 3: Numerical problem on Work and Power in Circuits",
-    "Example 4: Diagram-based question on Work and Power in Circuits",
-    "Example 5: Application in daily life involving Work and Power in Circuits"
+    "Real-world application of Work and Power in Circuits",
+    "Practical demonstration of Work and Power in Circuits concepts",
+    "Diagram-based question on Work and Power in Circuits",
+    "Application in daily life involving Work and Power in Circuits"
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Work and Power in Circuits with suitable example.",
     "Q2. Solve problems related to Work and Power in Circuits.",
     "Q3. Differentiate between various aspects of Work and Power in Circuits.",
     "Q4. Derive the key formula related to Work and Power in Circuits.",
     "Q5. What are the applications of Work and Power in Circuits?"
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Work and Power in Circuits",
-    "Key Formula 2: Mathematical expression of Work and Power in Circuits",
-    "Key Formula 3: Application formula for Work and Power in Circuits",
-    "Key Formula 4: Derivation result for Work and Power in Circuits",
-    "Key Formula 5: Important relation in Work and Power in Circuits"
+    "Application formula for Work and Power in Circuits",
+    "Derivation result for Work and Power in Circuits"
   ],
-  "keyPoints": [
-    "Key Point 1: Fundamental definition of Work and Power in Circuits",
-    "Key Point 2: Essential theorem or principle related to Work and Power in Circuits",
-    "Key Point 3: Important condition or constraint for Work and Power in Circuits",
-    "Key Point 4: Common applications of Work and Power in Circuits",
-    "Key Point 5: Connection to other topics in Science"
-  ],
+  "keyPoints": [],
   "summary": "Work and Power in Circuits is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Work and Power in Circuits applies",
@@ -63,15 +54,8 @@
     "Note 4: Remember the units and dimensions involved in Work and Power in Circuits",
     "Note 5: Work and Power in Circuits frequently appears in examination questions"
   ],
-  "importantStatements": [
-    "Statement 1: Definition of Work and Power in Circuits",
-    "Statement 2: Theorem related to Work and Power in Circuits",
-    "Statement 3: Condition for Work and Power in Circuits to be valid",
-    "Statement 4: Principle governing Work and Power in Circuits",
-    "Statement 5: Corollary or consequence of Work and Power in Circuits"
-  ],
+  "importantStatements": [],
   "importantNotes": [
-    "Note 1: Work and Power in Circuits is based on fundamental principles",
     "Note 2: Remember the distinction between different types in Work and Power in Circuits",
     "Note 3: Work and Power in Circuits has both theoretical and practical significance",
     "Note 4: Study the derivations step by step for Work and Power in Circuits",
@@ -85,23 +69,12 @@
     "Trick 5: Time-saving approach for Work and Power in Circuits problems"
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Work and Power in Circuits",
-    "Exam Tip 2: Practice previous year questions on Work and Power in Circuits",
-    "Exam Tip 3: Work and Power in Circuits carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Work and Power in Circuits thoroughly",
-    "Exam Tip 5: Review common mistakes related to Work and Power in Circuits"
+    "Focus on numerical problems from Work and Power in Circuits",
+    "Practice previous year questions on Work and Power in Circuits",
+    "Learn the derivations for Work and Power in Circuits thoroughly",
+    "Review common mistakes related to Work and Power in Circuits"
   ],
   "mcs": [
-    {
-      "question": "Which of the following best describes Work and Power in Circuits?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
-      "answer": "A"
-    },
     {
       "question": "The primary application of Work and Power in Circuits is in:",
       "options": [

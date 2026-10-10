@@ -5,7 +5,7 @@ import type { Code, Root, RootContent } from "mdast";
  * MODEL-DRAWN VISUALS — a fenced `svg` block becomes a real picture.
  *
  * Owner request (2026-09-30): "it should create visuals on screen with the help
- * of codes". The tutor (Agnes, which writes code well) answers with a fenced
+ * of codes". The tutor (which writes code well) answers with a fenced
  * block whose language is `svg`; this plugin turns that block into an inline
  * figure, so the student SEES the ray diagram, the circuit, the free-body
  * arrows, the cell or the plotted curve instead of reading a description of it.

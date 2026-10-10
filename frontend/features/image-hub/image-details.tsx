@@ -23,7 +23,7 @@ import { downloadImage } from "./download";
 /**
  * DETAILS INTERFACE (owner request 2026-10-04: "best detailed, info fact and
  * create the details interface") — what opens when a Google result is clicked
- * in the Image Hub.
+ * in the Diagram Hub.
  *
  * Three blocks, richest first:
  *   1. the FULL-SIZE image on a calm backdrop (Google's link, not a thumbnail),

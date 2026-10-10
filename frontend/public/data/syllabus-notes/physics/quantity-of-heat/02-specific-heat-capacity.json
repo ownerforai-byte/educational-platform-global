@@ -7,55 +7,110 @@
   "notes": [
     "**Specific Heat Capacity:** This topic covers the fundamental concepts of specific heat capacity in the physics curriculum.",
     "Understanding specific heat capacity is essential for solving problems and building higher-level mathematical skills.",
-    "Key definitions and theorems related to specific heat capacity should be memorized and practiced regularly."
+    "Key definitions and theorems related to specific heat capacity should be memorized and practiced regularly.",
+    "**Definition:** Specific heat capacity ($c$) is the amount of heat energy required to raise the temperature of **1 kg** (SI) or **1 g** (CGS) of a substance by **1 K** (or 1°C). It is an intrinsic property of the material.",
+    "**Formula:** From $H = mc\\Delta\\theta$, solving for $c$: **$c = \\frac{H}{m \\cdot \\Delta\\theta}$**. This shows $c$ is the heat per unit mass per unit temperature change.",
+    "**Water - the benchmark:** $c_{water} = 4186\\text{ J/kg·K}$ (more precisely 4181.3 J/kg·K at 15°C, but 4200 J/kg·K is standard for exam work). This is unusually high compared to most substances, making water an excellent thermal buffer.",
+    "**Ice vs. liquid water:** $c_{ice} \\approx 2100\\text{ J/kg·K}$ - about HALF of liquid water's specific heat. This means ice heats up twice as fast as liquid water for the same mass. During melting, the $c$ changes discontinuously.",
+    "**Metals - low specific heats:** Copper: $c = 390\\text{ J/kg·K}$, Aluminum: $c = 900\\text{ J/kg·K}$, Iron: $c = 450\\text{ J/kg·K}$, Lead: $c = 130\\text{ J/kg·K}$, Gold: $c = 129\\text{ J/kg·K}$. Low $c$ means metals respond quickly to heating - useful for cookware, bad for thermal storage.",
+    "**Solids (Dulong-Petit Law):** For most solid elements at room temperature, $c \\times M \\approx 25\\text{ J/mol·K}$ (molar heat capacity). So $c \\approx 25/M$ where $M$ is molar mass in kg/mol. Heavy atoms → low $c$ per kg; light atoms → high $c$ per kg.",
+    "**Liquids:** Water: 4186, Ethanol: 2440, Mercury: 140, Glycerin: 2430, Ammonia (liquid): 4700. Gases have two specific heats ($c_p$ and $c_v$); most liquids have only one since they don't expand significantly.",
+    "**Gases - two specific heats:** For gases, $c_p > c_v$ always. At constant pressure, gas expands and does work, needing MORE heat for the same temperature rise. For air: $c_p = 1005\\text{ J/kg·K}$, $c_v = 718\\text{ J/kg·K}$. Ratio $\\gamma = c_p/c_v \\approx 1.4$.",
+    "**Temperature dependence:** Specific heat capacity is NOT truly constant - it varies with temperature. For water, $c$ changes from 4217 J/kg·K at 0°C to 4181 J/kg·K at 15°C to 4219 J/kg·K at 100°C. For most school problems, treat $c$ as constant.",
+    "**Molar heat capacity vs. specific heat:** Molar heat capacity $C_m = c \\times M$ (where $M$ = molar mass). For water: $C_m = 4186 \\times 0.018 = 75.3\\text{ J/mol·K}$. This is useful for comparing substances on a per-molecule basis.",
+    "**Why specific heat differs:** The specific heat depends on how energy is distributed among molecular degrees of freedom. Monatomic gases store energy only in translation (3 DOF). Diatomic gases also store in rotation (2 DOF). Polyatomic molecules add vibration. More ways to store energy → higher $c$.",
+    "**Water's anomalous value:** Water's $c = 4186$ is about 5× that of copper and 10× that of lead. This is because water molecules form hydrogen bonds that must be partially broken before molecules can move faster (higher temperature). This \"hidden\" energy cost makes $c$ high.",
+    "**Practical - mixing two substances:** When a hot substance (mass $m_1$, $c_1$, $T_1$) is mixed with a cold substance ($m_2$, $c_2$, $T_2$), the equilibrium temperature is: $T_{eq} = \\frac{m_1 c_1 T_1 + m_2 c_2 T_2}{m_1 c_1 + m_2 c_2}$. This is a weighted average by heat capacity.",
+    "**NEB focus:** Know the formula $H = mc\\Delta\\theta$, the values of $c$ for water and common metals, the distinction between $c$ and heat capacity ($C = mc$), and unit conversion between J/kg·K and cal/g·°C ($1\\text{ J/kg·K} = 0.000239\\text{ cal/g·°C}$).",
+    "**Common misconception:** \"Specific\" means \"per unit mass\" - it does NOT mean \"typical\" or \"usual.\" Specific heat capacity is a very specific property that varies enormously between materials. Gold ($c=129$) and water ($c=4186$) differ by a factor of 32.",
+    "**SI unit:** $\\text{J} \\cdot \\text{kg}^{-1} \\cdot \\text{K}^{-1}$ (joule per kilogram per kelvin). Since a temperature INTERVAL of 1 K equals 1°C, this is also written as $\\text{J} \\cdot \\text{kg}^{-1} \\cdot \\text{°C}^{-1}$.",
+    "**CGS unit:** $\\text{cal} \\cdot \\text{g}^{-1} \\cdot \\text{°C}^{-1}$ (calorie per gram per degree Celsius). Numerically, water has $c = 1\\text{ cal/g·°C}$ in CGS, making calculations simpler in this system.",
+    "**Conversion between systems:** $1\\text{ J/kg·K} = 0.000239\\text{ cal/g·°C}$. Conversely, $1\\text{ cal/g·°C} = 4184\\text{ J/kg·K}$. The factor 4184 comes from $1\\text{ cal} = 4.184\\text{ J}$ and $1\\text{ g} = 0.001\\text{ kg}$.",
+    "**Dimensional formula derivation:** $c = \\frac{H}{m \\cdot \\Delta\\theta}$. Heat $H$ has the same dimensions as energy: $[ML^2T^{-2}]$. Mass: $[M]$. Temperature: $[\\Theta]$ (or $[K]$). Therefore: **$[c] = [M^0 L^2 T^{-2} \\Theta^{-1}]$**.",
+    "**Dimensionless mass:** Notice $[M^0]$ - mass cancels out. This reflects that specific heat is an INTENSIVE property. Two objects of the same material but different masses have the same $c$.",
+    "**Alternative form using force:** Since work = force × distance, $[H] = [MLT^{-2}] \\cdot [L] = [ML^2T^{-2}]$. So $[c] = [ML^2T^{-2}\\Theta^{-1}] / ([M][\\Theta]) = [L^2T^{-2}\\Theta^{-1}]$.",
+    "**Common values in both systems:** Water: $1\\text{ cal/g·°C} = 4186\\text{ J/kg·K}$. Ice: $0.5\\text{ cal/g·°C} = 2100\\text{ J/kg·K}$. Copper: $0.093\\text{ cal/g·°C} = 390\\text{ J/kg·K}$. Aluminum: $0.215\\text{ cal/g·°C} = 900\\text{ J/kg·K}$.",
+    "**Dimensional check example:** For $H = mc\\Delta\\theta$: $[H] = [M] \\cdot [L^2T^{-2}\\Theta^{-1}] \\cdot [\\Theta] = [ML^2T^{-2}]$. This matches the dimension of energy. ✓",
+    "**Heat capacity dimensional formula:** $C = mc$, so $[C] = [M] \\cdot [L^2T^{-2}\\Theta^{-1}] = [ML^2T^{-2}\\Theta^{-1}]$. Unlike specific heat, heat capacity DOES depend on mass (it's extensive).",
+    "**Molar heat capacity dimensions:** $C_m = c \\times M$ (molar mass), so $[C_m] = [L^2T^{-2}\\Theta^{-1}] \\cdot [M] = [ML^2T^{-2}\\Theta^{-1}]$. Same dimensions as specific heat, but per mole instead of per kg.",
+    "**In terms of base SI units:** $[c] = [kg^0 \\cdot m^2 \\cdot s^{-2} \\cdot K^{-1}] = [m^2 \\cdot s^{-2} \\cdot K^{-1}]$. This is the simplest form - just length-squared per time-squared per kelvin.",
+    "**Why $\\Theta$ appears in the denominator:** Specific heat is defined PER UNIT TEMPERATURE CHANGE. If $\\Delta\\theta$ doubles, $H$ doubles. The $\\Theta^{-1}$ dimension captures this inverse proportionality.",
+    "**Practical importance of correct units:** In $H = mc\\Delta\\theta$, if $m$ is in kg and $c$ in J/kg·K, then $H$ is in joules. If $m$ is in g and $c$ in cal/g·°C, then $H$ is in calories. Mixing systems (e.g., kg with cal/g·°C) gives WRONG answers.",
+    "**NEB exam focus:** Be able to derive $[c] = [M^0L^2T^{-2}\\Theta^{-1}]$, convert between J/kg·K and cal/g·°C, and use the correct units consistently in numerical problems.",
+    "**Dimensional homogeneity test:** Any correct formula for heat must have $[H] = [ML^2T^{-2}]$ on both sides. If a proposed formula gives different dimensions, it is immediately wrong - no calculation needed."
   ],
   "confusion": [
     "Carefully distinguish between similar-looking concepts in specific heat capacity.",
     "Pay attention to the conditions under which formulas and theorems apply.",
-    "Practice with multiple examples to solidify your understanding."
+    "Practice with multiple examples to solidify your understanding.",
+    "❌ Specific heat capacity is the same for all states of a substance. ✅ Ice ($c=2100$), liquid water ($c=4186$), and steam ($c=2010$) all have different specific heats. The value changes at phase transitions.",
+    "❌ Specific heat depends on the shape/size of the object. ✅ Specific heat is an INTENSIVE property - it depends only on the material, not on the object's shape, size, or mass. A gold ring and a gold bar have the same $c$.",
+    "❌ $c_p$ and $c_v$ are the same for all substances. ✅ For solids and liquids, $c_p \\approx c_v$ because they barely expand. For gases, $c_p > c_v$ significantly because gases expand and do work. The difference is $c_p - c_v = R/M$ (per kg) or $R$ (per mole).",
+    "❌ A substance with high specific heat is always \"hotter.\" ✅ High $c$ means the substance RESISTS temperature change - it takes a lot of heat to raise its temperature. Water at 20°C has high $c$ but isn't \"hot\" - it just requires a lot of energy to change its temperature.",
+    "❌ The specific heat of water is 1 cal/g·°C everywhere. ✅ The calorie is DEFINED using water's specific heat, but that specific heat varies slightly with temperature. At 15°C, $c = 4.1855\\text{ J/g·K}$ (giving 1 cal = 4.1855 J). The modern exact value is $1\\text{ cal} = 4.184\\text{ J}$ (thermochemical calorie).",
+    "❌ Gases have only one specific heat capacity. ✅ Gases have TWO: $c_p$ (constant pressure) and $c_v$ (constant volume). $c_p - c_v = R$ per mole, or $c_p - c_v = R/M$ per unit mass. For air, $c_p = 1005$ and $c_v = 718\\text{ J/kg·K}$.",
+    "❌ Metals always have low specific heat. ✅ While most metals do have low $c$ (because they're dense and atoms are heavy), beryllium ($c = 1825$) and lithium ($c = 3580$) are exceptions - they have low atomic mass, so per kg they have many atoms and high heat capacity.",
+    "❌ $c$ has dimensions of $[ML^2T^{-2}]$. ✅ $c = H/(m\\Delta\\theta)$, so $[c] = [ML^2T^{-2}] / ([M][\\Theta]) = [L^2T^{-2}\\Theta^{-1}]$. Mass dimension CANCELS. The $[M^0]$ is the key difference from heat capacity.",
+    "❌ J/kg·K and J/kg·°C are different units. ✅ Since these units involve a TEMPERATURE INTERVAL (Δθ), and 1 K = 1°C in size, J/kg·K and J/kg·°C are EXACTLY the same. Only absolute temperatures differ.",
+    "❌ The dimensional formula depends on the system of units. ✅ Dimensional formulas are system-independent. Whether you use SI or CGS, $[c] = [L^2T^{-2}\\Theta^{-1}]$. Only the numerical VALUES change, not the dimensions.",
+    "❌ Heat capacity has the same dimensions as specific heat. ✅ Heat capacity $C = mc$ has $[C] = [ML^2T^{-2}\\Theta^{-1}]$ - it includes the mass dimension $[M]$ because it depends on the amount of substance.",
+    "❌ $c$ can have negative dimensions. ✅ Specific heat is always positive for normal materials. Negative $c$ would mean adding heat lowers temperature, which violates thermodynamics (except in exotic gravitational systems like stars).",
+    "❌ $1\\text{ cal/g·°C} = 1\\text{ J/kg·K}$. ✅ They differ by a factor of 4184. The calorie is about 4184 times larger than the joule, and the gram is 1/1000 of a kilogram, so the ratio is $4184 \\times 1000 / 1000 = 4184$."
   ],
   "practice": [
     "Solve at least 5 problems on specific heat capacity from your textbook.",
     "Try to derive the key formulas from first principles.",
     "Create a summary sheet with all important formulas and theorems.",
-    "Practice identifying which method/formula to apply in each problem type."
+    "Practice identifying which method/formula to apply in each problem type.",
+    "What is the specific heat capacity of a metal if 500 J raises 0.2 kg by 10°C? $c = H/(m\\Delta\\theta) = 500/(0.2 \\times 10) = 500/2 = 250\\text{ J/kg·K}$. This matches lead or gold.",
+    "How much heat is needed to raise 3 kg of aluminum from 20°C to 100°C? $H = mc\\Delta\\theta = 3 \\times 900 \\times 80 = 216{,}000\\text{ J} = 216\\text{ kJ}$. Compare: same mass of water would need $3 \\times 4200 \\times 80 = 1{,}008{,}000\\text{ J}$ - nearly 5× more!",
+    "Find the equilibrium temperature when 0.5 kg of copper ($c=390$) at 90°C is mixed with 0.2 kg of water ($c=4200$) at 20°C. $0.5 \\times 390 \\times (90-T) = 0.2 \\times 4200 \\times (T-20)$. $195(90-T) = 840(T-20)$. $17550 - 195T = 840T - 16800$. $1035T = 34350 \\Rightarrow T \\approx 33.2°\\text{C}$.",
+    "A 0.1 kg metal at 100°C is dropped into 0.3 kg of water at 15°C. The equilibrium is 18°C. Find the metal's specific heat. Heat lost by metal: $0.1 \\times c \\times 82 = 8.2c$. Heat gained by water: $0.3 \\times 4200 \\times 3 = 3780$. $8.2c = 3780 \\Rightarrow c \\approx 461\\text{ J/kg·K}$ (close to iron).",
+    "Why does a coastal city have smaller temperature swings than an inland city? Water has $c = 4186\\text{ J/kg·K}$ - about 5× that of sand/rock ($\\sim 800$). The ocean absorbs/releases enormous heat with minimal temperature change, moderating the nearby air temperature through convection and wind.",
+    "Convert 0.5 cal/g·°C to J/kg·K. $0.5\\text{ cal/g·°C} \\times 4.184\\text{ J/cal} \\times 1000\\text{ g/kg} = 2092\\text{ J/kg·K}$. The factor 1000 comes from g→kg; the factor 4.184 from cal→J.",
+    "Derive the dimensional formula of specific heat capacity from $c = H/(m\\Delta\\theta)$. $[H] = [ML^2T^{-2}]$, $[m] = [M]$, $[\\Delta\\theta] = [\\Theta]$. Therefore $[c] = [ML^2T^{-2}] / ([M][\\Theta]) = [M^0L^2T^{-2}\\Theta^{-1}]$.",
+    "Convert 0.215 cal/g·°C (aluminum) to J/kg·K. $0.215 \\times 4184 = 900\\text{ J/kg·K}$. ✓ This matches the standard value.",
+    "Check dimensional homogeneity of $H = mc\\Delta\\theta$. LHS: $[H] = [ML^2T^{-2}]$. RHS: $[m][c][\\Delta\\theta] = [M] \\cdot [L^2T^{-2}\\Theta^{-1}] \\cdot [\\Theta] = [ML^2T^{-2}]$. ✓ LHS = RHS.",
+    "A substance has $c = 390\\text{ J/kg·K}$. Express this in cal/g·°C. $390 / 4184 = 0.0932\\text{ cal/g·°C}$. This is copper.",
+    "What are the dimensions of molar heat capacity $C_m$? $C_m = c \\times M$ (molar mass). $[C_m] = [L^2T^{-2}\\Theta^{-1}] \\cdot [M] = [ML^2T^{-2}\\Theta^{-1}]$.",
+    "Use dimensional analysis to show that $H = mc\\Delta\\theta$ is the only possible form (given $H$ depends on $m$, $c$, and $\\Delta\\theta$). $[H] = [M]^a [L^2T^{-2}\\Theta^{-1}]^b [\\Theta]^c = [ML^2T^{-2}]$. Equating powers: $M$: $a=1$; $L$: $2b=2 \\Rightarrow b=1$; $T$: $-2b=-2 \\Rightarrow b=1$; $\\Theta$: $-b+c=0 \\Rightarrow c=1$. So $H \\propto m^1 c^1 \\Delta\\theta^1$. ✓"
   ],
   "universalFacts": [
     "This topic is a cornerstone of the physics curriculum and appears consistently in examinations.",
     "Understanding specific heat capacity builds the foundation for more advanced topics in mathematics.",
-    "Real-world applications of specific heat capacity span engineering, physics, economics, and computer science."
+    "Real-world applications of specific heat capacity span engineering, physics, economics, and computer science.",
+    "The Dulong-Petit law (1819) states that molar heat capacity of most solid elements is approximately $3R = 24.9\\text{ J/mol·K}$ at room temperature. This arises because each atom in a solid has 6 quadratic degrees of freedom (3 kinetic + 3 potential), each contributing $\\frac{1}{2}k_BT$.",
+    "Water's specific heat is the highest of any common liquid. This is due to hydrogen bonding - energy goes into partially breaking H-bonds before molecules can move faster. This property is why Earth's oceans store vast amounts of solar energy.",
+    "Mercury has one of the lowest specific heats among liquids ($c = 140\\text{ J/kg·K}$). This is why mercury thermometers respond quickly to temperature changes - they need very little heat to change temperature.",
+    "The concept of \"thermal inertia\" in climate science comes directly from specific heat. Land has lower thermal inertia than ocean, so continents heat and cool faster. This drives monsoon patterns and sea breezes.",
+    "Historical note: The word \"calorimeter\" comes from Latin \"calor",
+    "(heat). Antoine Lavoisier built the first ice calorimeter in 1780",
+    "measuring heat by the amount of ice melted. This was the first quantitative calorimetry.",
+    "The dimensional formula $[L^2T^{-2}\\Theta^{-1}]$ is the same as \"specific energy per kelvin\" - it tells you how much energy per unit mass is needed per degree of temperature change.",
+    "In the CGS system, specific heat of water is exactly 1 cal/g·°C by definition. This makes the calorie a \"natural\" unit for heat calculations, though the SI joule is the standard in modern physics.",
+    "Dimensional analysis is a powerful check: if you derive a formula for $c$ and it has wrong dimensions, you know immediately that an error was made - even before plugging in numbers.",
+    "The specific heat's dimensions $[L^2T^{-2}\\Theta^{-1}]$ are the same as \"velocity squared per kelvin.\" This reflects that temperature is fundamentally a measure of molecular kinetic energy (velocity).",
+    "The dimensional formula is independent of the substance. Whether it's water, iron, or helium, $[c] = [M^0L^2T^{-2}\\Theta^{-1}]$. Only the numerical value changes from material to material."
   ],
   "animation3D": "quantity-of-heat",
   "motionGraphics": "quantity-of-heat",
   "examples": [
-    "Example 1: Real-world application of Specific Heat Capacity",
-    "Example 2: Practical demonstration of Specific Heat Capacity concepts",
-    "Example 3: Numerical problem on Specific Heat Capacity",
-    "Example 4: Diagram-based question on Specific Heat Capacity",
-    "Example 5: Application in daily life involving Specific Heat Capacity"
+    "Real-world application of Specific Heat Capacity",
+    "Practical demonstration of Specific Heat Capacity concepts",
+    "Diagram-based question on Specific Heat Capacity",
+    "Application in daily life involving Specific Heat Capacity"
   ],
   "practiceQuestions": [
-    "Q1. Define and explain Specific Heat Capacity with suitable example.",
     "Q2. Solve problems related to Specific Heat Capacity.",
     "Q3. Differentiate between various aspects of Specific Heat Capacity.",
     "Q4. Derive the key formula related to Specific Heat Capacity.",
     "Q5. What are the applications of Specific Heat Capacity?"
   ],
   "formulas": [
-    "Key Formula 1: Definition formula for Specific Heat Capacity",
-    "Key Formula 2: Mathematical expression of Specific Heat Capacity",
-    "Key Formula 3: Application formula for Specific Heat Capacity",
-    "Key Formula 4: Derivation result for Specific Heat Capacity",
-    "Key Formula 5: Important relation in Specific Heat Capacity"
+    "Application formula for Specific Heat Capacity",
+    "Derivation result for Specific Heat Capacity"
   ],
-  "keyPoints": [
-    "Key Point 1: Fundamental definition of Specific Heat Capacity",
-    "Key Point 2: Essential theorem or principle related to Specific Heat Capacity",
-    "Key Point 3: Important condition or constraint for Specific Heat Capacity",
-    "Key Point 4: Common applications of Specific Heat Capacity",
-    "Key Point 5: Connection to other topics in Science"
-  ],
-  "summary": "Specific Heat Capacity is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
+  "summary": "Specific Heat Capacity is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics. Specific Heat Capacity (c) — Definition & Key Values covers essential principles and applications.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Specific Heat Capacity applies",
     "Note 2: Specific Heat Capacity connects to multiple other topics in Science",
@@ -63,15 +118,7 @@
     "Note 4: Remember the units and dimensions involved in Specific Heat Capacity",
     "Note 5: Specific Heat Capacity frequently appears in examination questions"
   ],
-  "importantStatements": [
-    "Statement 1: Definition of Specific Heat Capacity",
-    "Statement 2: Theorem related to Specific Heat Capacity",
-    "Statement 3: Condition for Specific Heat Capacity to be valid",
-    "Statement 4: Principle governing Specific Heat Capacity",
-    "Statement 5: Corollary or consequence of Specific Heat Capacity"
-  ],
   "importantNotes": [
-    "Note 1: Specific Heat Capacity is based on fundamental principles",
     "Note 2: Remember the distinction between different types in Specific Heat Capacity",
     "Note 3: Specific Heat Capacity has both theoretical and practical significance",
     "Note 4: Study the derivations step by step for Specific Heat Capacity",
@@ -85,23 +132,12 @@
     "Trick 5: Time-saving approach for Specific Heat Capacity problems"
   ],
   "examNotes": [
-    "Exam Tip 1: Focus on numerical problems from Specific Heat Capacity",
-    "Exam Tip 2: Practice previous year questions on Specific Heat Capacity",
-    "Exam Tip 3: Specific Heat Capacity carries significant marks in exams",
-    "Exam Tip 4: Learn the derivations for Specific Heat Capacity thoroughly",
-    "Exam Tip 5: Review common mistakes related to Specific Heat Capacity"
+    "Focus on numerical problems from Specific Heat Capacity",
+    "Practice previous year questions on Specific Heat Capacity",
+    "Learn the derivations for Specific Heat Capacity thoroughly",
+    "Review common mistakes related to Specific Heat Capacity"
   ],
   "mcs": [
-    {
-      "question": "Which of the following best describes Specific Heat Capacity?",
-      "options": [
-        "Option A describing ${title}",
-        "Option B with similar concept",
-        "Option C related term",
-        "Option D unrelated concept"
-      ],
-      "answer": "A"
-    },
     {
       "question": "The primary application of Specific Heat Capacity is in:",
       "options": [
@@ -156,5 +192,8 @@
     "Task 3: Create a concept map for Specific Heat Capacity",
     "Task 4: Practice previous year exam questions on Specific Heat Capacity",
     "Task 5: Explain Specific Heat Capacity to a peer or study group"
-  ]
+  ],
+  "visualType": "specific-heat",
+  "keyPoints": [],
+  "importantStatements": []
 }

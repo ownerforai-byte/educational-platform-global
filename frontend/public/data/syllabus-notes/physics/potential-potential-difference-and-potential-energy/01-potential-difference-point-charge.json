@@ -61,13 +61,7 @@
     "Inside a hollow charged conductor the potential is constant (not zero): V = kQ/R, whereas the electric field there is zero. Zero field does not imply zero potential.",
     "Because V depends on position but not on the path taken, a charge can reach a point via any route with identical work done, which is why parallel-plate capacitor calculations ignore the fringing geometry at the edges."
   ],
-  "importantStatements": [
-    "Statement 1: Electric potential at a point is defined as the work done per unit positive charge in bringing a test charge from infinity to that point.",
-    "Statement 2: The potential due to a point charge varies inversely with distance (V ∝ 1/r), whereas the electric field varies inversely with distance squared (E ∝ 1/r²).",
-    "Statement 3: The electric field at any point is the negative gradient of the potential at that point (E = -∇V).",
-    "Statement 4: The potential energy of two like charges is positive, indicating a repulsive, unbound configuration, whereas for two unlike charges it is negative, indicating an attractive, bound configuration.",
-    "Statement 5: One electron volt is the energy gained by an electron accelerated through a potential difference of one volt, equal to 1.602 × 10⁻¹⁹ J."
-  ],
+  "importantStatements": [],
   "importantNotes": [
     "The SI unit of potential is the volt (V), where 1 V = 1 J/C, and its dimensional formula is [M L² T⁻³ I⁻¹], identical to that of energy per unit charge."
   ],
@@ -126,7 +120,5 @@
     "Calculate the potential and potential energy of a two-charge configuration.",
     "Convert energy values between joules, electron volts, and multiples (keV, MeV)."
   ],
-  "duplicateType": 2,
-  "visualType": "potential",
-  "tabGroup": "potential-difference-potential-due-to-point-charge-potential-energy-and-electron-volt"
+  "visualType": "potential"
 }
