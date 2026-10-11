@@ -41293,6 +41293,67 @@
       }
     ]
   },
+  "class-11-notes/physics/capacitor/pyqs/03-neb-2024.json": {
+    "title": "NEB Class 11 Physics — Capacitor — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "physics",
+    "unitSlug": "capacitor",
+    "topicSlug": "capacitor-pyq-2024",
+    "topicTitle": "NEB Class 11 Physics — Capacitor — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "Define capacitance. Derive the capacitance of a parallel plate capacitor.",
+        "marks": 5,
+        "year": 2023,
+        "source": "NEB Model",
+        "solution": "**Capacitance** C = Q/V: charge stored per unit voltage. SI unit: **farad (F)**.\n\nTwo plates of area A, separation d, charge ±Q: field E = σ/ε₀ = Q/(Aε₀). Potential V = Ed = Qd/(Aε₀).\n\nC = Q/V = **ε₀A/d**. With a dielectric of constant εᵣ filling the gap: C = εᵣε₀A/d.",
+        "knowledgeNote": "1 F is enormous — real capacitors live in the pF–mF range, so NEB answers in μF/pF are a sanity check."
+      },
+      {
+        "question": "A parallel plate air capacitor has plates of area 0.04 m² separated by 2 mm. Calculate its capacitance. (ε₀ = 8.85 × 10⁻¹² F/m)",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "C = ε₀A/d = (8.85 × 10⁻¹² × 0.04)/(2 × 10⁻³)\n\nC = 3.54 × 10⁻¹³/2 × 10⁻³ = 1.77 × 10⁻¹⁰ F ≈ **177 pF**.",
+        "knowledgeNote": "C ∝ A/d — doubling the plate area or halving the gap doubles the capacitance."
+      },
+      {
+        "question": "Capacitors of 2 μF and 3 μF are connected (i) in series and (ii) in parallel. Find the equivalent capacitance in each case.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "(i) Series: 1/C = 1/2 + 1/3 = 5/6 → C = **1.2 μF** (series is always smaller than the smallest).\n\n(ii) Parallel: C = 2 + 3 = **5 μF**.",
+        "knowledgeNote": "Capacitors combine oppositely to resistors: series shrinks, parallel adds — mixing them up is the standard trap."
+      },
+      {
+        "question": "A 12 μF capacitor is charged to 100 V. How much energy is stored in it?",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "U = ½CV² = ½ × (12 × 10⁻⁶) × (100)² = ½ × 12 × 10⁻⁶ × 10⁴ = **0.06 J**.",
+        "knowledgeNote": "U = ½CV² = Q²/2C = ½QV — pick the form matching the given pair (C,V), (C,Q), or (Q,V)."
+      },
+      {
+        "question": "What is a dielectric? Explain how inserting a dielectric slab increases the capacitance of a capacitor.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "A **dielectric** is an insulating material whose molecules polarise in an electric field.\n\nThe induced surface charges oppose the plate charges, weakening the internal field E. Since V = Ed falls while Q stays fixed, C = Q/V **rises by the dielectric constant εᵣ** (C = εᵣC₀).",
+        "knowledgeNote": "Battery connected (V fixed) vs isolated (Q fixed) give opposite energy answers — always check which is held constant."
+      },
+      {
+        "question": "Write any four uses of capacitors.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "(1) Smoothing/filtering ripples in power supplies. (2) Tuning radio circuits (with an inductor). (3) Storing the firing energy in camera flashes and defibrillators. (4) Power-factor correction in factories; (5) blocking DC while passing AC between amplifier stages.",
+        "knowledgeNote": "Every use exploits one property: capacitors store charge, block DC, and pass AC."
+      }
+    ]
+  },
   "class-11-notes/physics/circular-motion/concepts/01-angular-displacement-velocity.json": {
     "title": "Angular Displacement, Velocity and Acceleration",
     "unitSlug": "circular-motion",
@@ -43744,6 +43805,67 @@
         "source": "NEB Past",
         "solution": "**Step 1 — For resistors in parallel,** the reciprocals add:\n$$\\frac{1}{R} = \\frac{1}{2} + \\frac{1}{3} + \\frac{1}{6} = \\frac{3 + 2 + 1}{6} = \\frac{6}{6} = 1$$\n$$\\boxed{R = 1\\ \\Omega}$$\n\n**Step 2 — Ohm's law for the whole combination:**\n$$I = \\frac{V}{R} = \\frac{12}{1}$$\n$$\\boxed{I = \\mathbf{12\\ \\text{A}}$$\n\n**Step 3 — Check by branch currents:**\n$$I_1 = 12/2 = 6\\ \\text{A}, \\quad I_2 = 12/3 = 4\\ \\text{A}, \\quad I_3 = 12/6 = 2\\ \\text{A}$$\n$$I_{total} = 6 + 4 + 2 = 12\\ \\text{A}$$ ✓\n\n**Note:** The equivalent resistance of a parallel combination is always **less than** the smallest individual resistance (1 $\\Omega < 2\\ \\Omega$ ✓). The potential difference across each branch is 12 V.",
         "knowledgeNote": "In a parallel combination reciprocals of resistances add, so two, three and six ohm give one ohm total."
+      }
+    ]
+  },
+  "class-11-notes/physics/dc-circuits/pyqs/03-neb-2024.json": {
+    "title": "NEB Class 11 Physics — DC Circuits — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "physics",
+    "unitSlug": "dc-circuits",
+    "topicSlug": "dc-circuits-pyq-2024",
+    "topicTitle": "NEB Class 11 Physics — DC Circuits — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "State Kirchhoff's laws. A battery of 5 V total emf with 2 Ω total internal resistance drives a 5 Ω external resistor. Find the current.",
+        "marks": 5,
+        "year": 2022,
+        "source": "NEB Past",
+        "solution": "**KCL (junction rule):** the algebraic sum of currents at a junction is zero — charge is conserved.\n\n**KVL (loop rule):** the algebraic sum of emfs round any closed loop equals the sum of the IR drops — energy is conserved.\n\nSingle loop: E = I(R + r) → I = 5/(5 + 2) = **0.71 A**.",
+        "knowledgeNote": "KCL ← charge conservation; KVL ← energy conservation — stating the conservation root earns the explanation mark."
+      },
+      {
+        "question": "Resistors of 6 Ω and 3 Ω are connected in parallel across a 12 V battery. Find the current through each resistor and the total current.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Parallel branches share the full voltage: I₁ = V/R₁ = 12/6 = **2 A**; I₂ = 12/3 = **4 A**.\n\nTotal I = 2 + 4 = **6 A** (check: R_eq = 2 Ω, 12/2 = 6 A ✓).",
+        "knowledgeNote": "In parallel, the smaller resistor hogs the current — current divides in the inverse resistance ratio."
+      },
+      {
+        "question": "State the principle of the Wheatstone bridge and write its balance condition.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Four resistors form a diamond; the bridge is **balanced** when no current flows through the middle galvanometer, so the two branch points are at equal potential.\n\nBalance condition: **P/Q = R/S** (ratios of adjacent arms equal). An unknown resistance follows from three known ones.",
+        "knowledgeNote": "The metre bridge is a Wheatstone bridge stretched into a wire — same P/Q = R/S, with lengths standing in for two arms."
+      },
+      {
+        "question": "A cell of emf 2 V and internal resistance 0.5 Ω is connected to a 3.5 Ω resistor. Calculate the terminal voltage of the cell.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Current I = E/(R + r) = 2/(3.5 + 0.5) = **0.5 A**.\n\nTerminal voltage V = E − Ir = 2 − (0.5 × 0.5) = **1.75 V** (equivalently V = IR = 0.5 × 3.5 = 1.75 V).",
+        "knowledgeNote": "V = E only on open circuit — the moment current flows, Ir is lost inside the cell."
+      },
+      {
+        "question": "Define drift velocity and derive the relation I = neAv_d.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Drift velocity** is the slow average velocity electrons acquire along a wire under an electric field (≈ mm/s).\n\nIn time t, electrons in length v_d·t cross a section: N = n·A·v_d·t carriers, charge Q = Ne = neAv_d·t. So I = Q/t = **neAv_d**.",
+        "knowledgeNote": "Signals travel near light speed (field propagation) while electrons merely drift — that is why the bulb lights 'instantly'."
+      },
+      {
+        "question": "State the principle of a potentiometer. How is it used to compare the emfs of two cells?",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Principle:** for a uniform wire carrying steady current, the potential drop per unit length is constant — balancing length ∝ emf.\n\nEach cell in turn is balanced against the wire (null deflection): E₁/E₂ = **l₁/l₂**. Because readings are taken at null, the cell supplies no current — the true emf, not the terminal voltage, is compared.",
+        "knowledgeNote": "Null-method advantage: no current drawn from the test cell, so internal resistance never corrupts the result."
       }
     ]
   },
@@ -48240,6 +48362,67 @@
         "source": "NEB Past",
         "solution": "**Step 1 — Geometry:** The charges are $10\\ \\text{cm}$ apart, so the midpoint is $r = 5\\ \\text{cm} = 0.05\\ \\text{m}$ from each charge.\n\n**Step 2 — Field due to one charge at the midpoint:**\n$$E_1 = \\frac{kq}{r^2} = \\frac{(9 \\times 10^9)(2 \\times 10^{-6})}{(0.05)^2} = \\frac{18 \\times 10^3}{2.5 \\times 10^{-3}}$$\n$$E_1 = \\mathbf{7.2 \\times 10^6\\ \\text{N/C}}$$\n\n**Step 3 — Field due to the other charge:**\n$$E_2 = E_1 = 7.2 \\times 10^6\\ \\text{N/C}$$\n\n**Step 4 — Directions:** At the midpoint, $E_1$ acts **away from** the first positive charge (to the right) while $E_2$ acts **away from** the second (to the left). The two fields are **equal in magnitude but opposite in direction**, so they cancel.\n\n$$\\boxed{E_{net} = E_2 - E_1 = 7.2\\times10^6 - 7.2\\times10^6 = \\mathbf{0}}$$\n**The electric field at the midpoint of the line joining two equal like charges is zero.**",
         "knowledgeNote": "At the midpoint between two equal like charges the fields are equal and opposite, so the net field is zero."
+      }
+    ]
+  },
+  "class-11-notes/physics/electric-field/pyqs/03-neb-2024.json": {
+    "title": "NEB Class 11 Physics — Electric Field — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "physics",
+    "unitSlug": "electric-field",
+    "topicSlug": "electric-field-pyq-2024",
+    "topicTitle": "NEB Class 11 Physics — Electric Field — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "State Gauss's law. Use it to find the electric field due to an infinite plane sheet of charge.",
+        "marks": 5,
+        "year": 2023,
+        "source": "NEB Model",
+        "solution": "**Gauss's law:** the total electric flux through any closed surface equals q_enclosed/ε₀.\n\nFor an infinite sheet of surface charge density σ, take a cylindrical Gaussian pillbox piercing the sheet. Flux leaves through both faces: Φ = E·A + E·A = 2EA. Enclosed charge = σA.\n\n2EA = σA/ε₀ → **E = σ/(2ε₀)** — uniform, independent of distance, pointing away on both sides.",
+        "knowledgeNote": "One sheet gives σ/2ε₀; two oppositely charged parallel sheets (a capacitor) give σ/ε₀ between them and zero outside."
+      },
+      {
+        "question": "Calculate the electric field strength at 0.3 m from a point charge of 6 μC in air.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "E = kq/r² = (9 × 10⁹ × 6 × 10⁻⁶)/(0.3)² = 54,000/0.09 = **6 × 10⁵ N/C**, directed away from the (positive) charge.",
+        "knowledgeNote": "Point-charge field falls as 1/r² while its potential falls only as 1/r — field is the steeper quantity."
+      },
+      {
+        "question": "State any four properties of electric field lines.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "(1) They start on positive charges and end on negative charges (or infinity). (2) They never cross — crossing would mean two field directions at one point. (3) Their density measures field strength (crowded = strong). (4) They meet a conductor's surface at right angles.",
+        "knowledgeNote": "Field lines are a map, not a physical thing — a test charge's path coincides with them only if it starts from rest."
+      },
+      {
+        "question": "Use Gauss's law to find the electric field due to a uniformly charged spherical shell of radius R carrying charge Q, at points outside and inside the shell.",
+        "marks": 5,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Outside (r > R):** a spherical Gaussian surface encloses all Q: E·4πr² = Q/ε₀ → **E = Q/(4πε₀r²)** — as if all charge sat at the centre.\n\n**Inside (r < R):** the Gaussian surface encloses no charge: E·4πr² = 0 → **E = 0** everywhere inside.",
+        "knowledgeNote": "Zero field inside is why a car (a rough metal shell) shields you in a lightning storm — the Faraday-cage effect."
+      },
+      {
+        "question": "An electric dipole consists of +4 μC and −4 μC charges 0.2 m apart. Calculate its dipole moment and the field on its axis 0.5 m from its centre.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Dipole moment p = q·d = (4 × 10⁻⁶)(0.2) = **8 × 10⁻⁷ C·m**.\n\nAxial field (r ≫ d): E = 2kpr/(r²)³ ≈ 2kp/r³ = (2 × 9 × 10⁹ × 8 × 10⁻⁷)/(0.5)³ = 14,400/0.125 = **1.15 × 10⁵ N/C** along the dipole axis.",
+        "knowledgeNote": "Axial field (2kp/r³) is twice the equatorial field (kp/r³) at the same distance — the factor 2 is the classic comparison question."
+      },
+      {
+        "question": "Why is the electric field zero everywhere inside a conductor in electrostatic equilibrium?",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Free electrons in the conductor move until no net force acts on them — and zero force means zero field. Any internal field would keep pushing charges around, contradicting equilibrium.\n\nSo all excess charge ends up on the outer surface, arranged exactly so its field cancels inside.",
+        "knowledgeNote": "This is also why the whole volume of a conductor is an equipotential — no field means no potential difference to cross."
       }
     ]
   },
@@ -56018,6 +56201,67 @@
         "source": "NEB Model",
         "solution": "**Step 1 — Work done:**\n$$W = qV = 2 \\times 10^{-19} \\times 300 = \\mathbf{6.0 \\times 10^{-17}\\ \\text{J}}$$\n\n**Step 2 — Convert to electron volts:**\n$$1\\ \\text{eV} = 1.6 \\times 10^{-19}\\ \\text{J}$$\n$$W = \\frac{6.0 \\times 10^{-17}}{1.6 \\times 10^{-19}} = \\frac{6.0}{1.6} \\times 10^{2}$$\n$$W = \\mathbf{375\\ \\text{eV}}$$\n\n**Note:** The work done in moving one electron through 1 V is 1 eV, so $W\\ (\\text{eV}) = V$ (in volts) for a single electron.",
         "knowledgeNote": "Work in joules is qV, and dividing by 1.6 times ten to the minus nineteen joules converts it to electron volts."
+      }
+    ]
+  },
+  "class-11-notes/physics/potential-potential-difference-and-potential-energy/pyqs/05-neb-2024.json": {
+    "title": "NEB Class 11 Physics — Potential and Potential Energy — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "physics",
+    "unitSlug": "potential-potential-difference-and-potential-energy",
+    "topicSlug": "potential-potential-difference-and-potential-energy-pyq-2024",
+    "topicTitle": "NEB Class 11 Physics — Potential and Potential Energy — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "Define electric potential at a point. State its SI unit and the relation between electric field and potential.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Electric potential** is the work done per unit positive charge in bringing it from infinity to the point (W/q₀). SI unit: **volt (V) = J/C**.\n\nField and potential are linked by **E = −dV/dr** — the field points down the steepest potential slope.",
+        "knowledgeNote": "Potential is a scalar (no direction) while field is a vector — potential problems need half the bookkeeping."
+      },
+      {
+        "question": "Calculate the electric potential at 0.5 m from a point charge of 2 μC in air.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "V = kq/r = (9 × 10⁹ × 2 × 10⁻⁶)/0.5 = 18,000/0.5 = **36,000 V (36 kV)**.",
+        "knowledgeNote": "V ∝ 1/r but E ∝ 1/r² — at large distances the potential outlives the field."
+      },
+      {
+        "question": "What are equipotential surfaces? Write any three of their properties.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Surfaces (real or imaginary) over which the potential is constant everywhere.\n\n(1) No work is done moving a charge along one. (2) Field lines always cross them at right angles. (3) Two equipotential surfaces never intersect (that would give one point two potentials).",
+        "knowledgeNote": "For a point charge they are concentric spheres; for a uniform field, parallel planes."
+      },
+      {
+        "question": "Define the electron-volt. Convert 1 eV into joules.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**1 eV** is the kinetic energy an electron gains crossing a 1 V potential difference.\n\n1 eV = e × 1 V = (1.6 × 10⁻¹⁹)(1) = **1.6 × 10⁻¹⁹ J**.",
+        "knowledgeNote": "Atomic energies live in eV, nuclear in MeV — converting to joules first is the safe route in combined problems."
+      },
+      {
+        "question": "Two charges +3 μC and −2 μC are placed 0.3 m apart in air. Calculate the electric potential energy of the system.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "U = kq₁q₂/r = (9 × 10⁹)(3 × 10⁻⁶)(−2 × 10⁻⁶)/0.3\n\nU = −54 × 10⁻³/0.3 = **−0.18 J**.\n\nThe negative sign means work must be done to separate them — opposite charges bind the system.",
+        "knowledgeNote": "Like charges give positive U (work stored pushing them together); unlike charges give negative U (bound)."
+      },
+      {
+        "question": "Show that the electric potential everywhere inside a uniformly charged hollow sphere equals its surface value.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Inside the shell E = 0 (Gauss's law — no enclosed charge). Since E = −dV/dr, zero field means dV/dr = 0: V is constant throughout the interior.\n\nAt the surface r = R it must join the outside value Q/(4πε₀R), so **V = Q/(4πε₀R) everywhere inside**, right up to the centre.",
+        "knowledgeNote": "Constant potential ≠ zero potential — the interior sits at the full surface voltage, which is why a hollow conductor is still dangerous to touch."
       }
     ]
   },

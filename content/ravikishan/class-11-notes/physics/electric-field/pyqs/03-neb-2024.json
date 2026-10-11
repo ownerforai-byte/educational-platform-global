@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Physics — Electric Field — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "electric-field",
+  "topicSlug": "electric-field-pyq-2024",
+  "topicTitle": "NEB Class 11 Physics — Electric Field — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State Gauss's law. Use it to find the electric field due to an infinite plane sheet of charge.",
+      "marks": 5,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Gauss's law:** the total electric flux through any closed surface equals q_enclosed/ε₀.\n\nFor an infinite sheet of surface charge density σ, take a cylindrical Gaussian pillbox piercing the sheet. Flux leaves through both faces: Φ = E·A + E·A = 2EA. Enclosed charge = σA.\n\n2EA = σA/ε₀ → **E = σ/(2ε₀)** — uniform, independent of distance, pointing away on both sides.",
+      "knowledgeNote": "One sheet gives σ/2ε₀; two oppositely charged parallel sheets (a capacitor) give σ/ε₀ between them and zero outside."
+    },
+    {
+      "question": "Calculate the electric field strength at 0.3 m from a point charge of 6 μC in air.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "E = kq/r² = (9 × 10⁹ × 6 × 10⁻⁶)/(0.3)² = 54,000/0.09 = **6 × 10⁵ N/C**, directed away from the (positive) charge.",
+      "knowledgeNote": "Point-charge field falls as 1/r² while its potential falls only as 1/r — field is the steeper quantity."
+    },
+    {
+      "question": "State any four properties of electric field lines.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "(1) They start on positive charges and end on negative charges (or infinity). (2) They never cross — crossing would mean two field directions at one point. (3) Their density measures field strength (crowded = strong). (4) They meet a conductor's surface at right angles.",
+      "knowledgeNote": "Field lines are a map, not a physical thing — a test charge's path coincides with them only if it starts from rest."
+    },
+    {
+      "question": "Use Gauss's law to find the electric field due to a uniformly charged spherical shell of radius R carrying charge Q, at points outside and inside the shell.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Outside (r > R):** a spherical Gaussian surface encloses all Q: E·4πr² = Q/ε₀ → **E = Q/(4πε₀r²)** — as if all charge sat at the centre.\n\n**Inside (r < R):** the Gaussian surface encloses no charge: E·4πr² = 0 → **E = 0** everywhere inside.",
+      "knowledgeNote": "Zero field inside is why a car (a rough metal shell) shields you in a lightning storm — the Faraday-cage effect."
+    },
+    {
+      "question": "An electric dipole consists of +4 μC and −4 μC charges 0.2 m apart. Calculate its dipole moment and the field on its axis 0.5 m from its centre.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Dipole moment p = q·d = (4 × 10⁻⁶)(0.2) = **8 × 10⁻⁷ C·m**.\n\nAxial field (r ≫ d): E = 2kpr/(r²)³ ≈ 2kp/r³ = (2 × 9 × 10⁹ × 8 × 10⁻⁷)/(0.5)³ = 14,400/0.125 = **1.15 × 10⁵ N/C** along the dipole axis.",
+      "knowledgeNote": "Axial field (2kp/r³) is twice the equatorial field (kp/r³) at the same distance — the factor 2 is the classic comparison question."
+    },
+    {
+      "question": "Why is the electric field zero everywhere inside a conductor in electrostatic equilibrium?",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Free electrons in the conductor move until no net force acts on them — and zero force means zero field. Any internal field would keep pushing charges around, contradicting equilibrium.\n\nSo all excess charge ends up on the outer surface, arranged exactly so its field cancels inside.",
+      "knowledgeNote": "This is also why the whole volume of a conductor is an equipotential — no field means no potential difference to cross."
+    }
+  ]
+}

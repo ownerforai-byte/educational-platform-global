@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Physics — Capacitor — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "capacitor",
+  "topicSlug": "capacitor-pyq-2024",
+  "topicTitle": "NEB Class 11 Physics — Capacitor — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Define capacitance. Derive the capacitance of a parallel plate capacitor.",
+      "marks": 5,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Capacitance** C = Q/V: charge stored per unit voltage. SI unit: **farad (F)**.\n\nTwo plates of area A, separation d, charge ±Q: field E = σ/ε₀ = Q/(Aε₀). Potential V = Ed = Qd/(Aε₀).\n\nC = Q/V = **ε₀A/d**. With a dielectric of constant εᵣ filling the gap: C = εᵣε₀A/d.",
+      "knowledgeNote": "1 F is enormous — real capacitors live in the pF–mF range, so NEB answers in μF/pF are a sanity check."
+    },
+    {
+      "question": "A parallel plate air capacitor has plates of area 0.04 m² separated by 2 mm. Calculate its capacitance. (ε₀ = 8.85 × 10⁻¹² F/m)",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "C = ε₀A/d = (8.85 × 10⁻¹² × 0.04)/(2 × 10⁻³)\n\nC = 3.54 × 10⁻¹³/2 × 10⁻³ = 1.77 × 10⁻¹⁰ F ≈ **177 pF**.",
+      "knowledgeNote": "C ∝ A/d — doubling the plate area or halving the gap doubles the capacitance."
+    },
+    {
+      "question": "Capacitors of 2 μF and 3 μF are connected (i) in series and (ii) in parallel. Find the equivalent capacitance in each case.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "(i) Series: 1/C = 1/2 + 1/3 = 5/6 → C = **1.2 μF** (series is always smaller than the smallest).\n\n(ii) Parallel: C = 2 + 3 = **5 μF**.",
+      "knowledgeNote": "Capacitors combine oppositely to resistors: series shrinks, parallel adds — mixing them up is the standard trap."
+    },
+    {
+      "question": "A 12 μF capacitor is charged to 100 V. How much energy is stored in it?",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "U = ½CV² = ½ × (12 × 10⁻⁶) × (100)² = ½ × 12 × 10⁻⁶ × 10⁴ = **0.06 J**.",
+      "knowledgeNote": "U = ½CV² = Q²/2C = ½QV — pick the form matching the given pair (C,V), (C,Q), or (Q,V)."
+    },
+    {
+      "question": "What is a dielectric? Explain how inserting a dielectric slab increases the capacitance of a capacitor.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "A **dielectric** is an insulating material whose molecules polarise in an electric field.\n\nThe induced surface charges oppose the plate charges, weakening the internal field E. Since V = Ed falls while Q stays fixed, C = Q/V **rises by the dielectric constant εᵣ** (C = εᵣC₀).",
+      "knowledgeNote": "Battery connected (V fixed) vs isolated (Q fixed) give opposite energy answers — always check which is held constant."
+    },
+    {
+      "question": "Write any four uses of capacitors.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "(1) Smoothing/filtering ripples in power supplies. (2) Tuning radio circuits (with an inductor). (3) Storing the firing energy in camera flashes and defibrillators. (4) Power-factor correction in factories; (5) blocking DC while passing AC between amplifier stages.",
+      "knowledgeNote": "Every use exploits one property: capacitors store charge, block DC, and pass AC."
+    }
+  ]
+}

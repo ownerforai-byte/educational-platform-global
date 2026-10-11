@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Physics — Potential and Potential Energy — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "potential-potential-difference-and-potential-energy",
+  "topicSlug": "potential-potential-difference-and-potential-energy-pyq-2024",
+  "topicTitle": "NEB Class 11 Physics — Potential and Potential Energy — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Define electric potential at a point. State its SI unit and the relation between electric field and potential.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Electric potential** is the work done per unit positive charge in bringing it from infinity to the point (W/q₀). SI unit: **volt (V) = J/C**.\n\nField and potential are linked by **E = −dV/dr** — the field points down the steepest potential slope.",
+      "knowledgeNote": "Potential is a scalar (no direction) while field is a vector — potential problems need half the bookkeeping."
+    },
+    {
+      "question": "Calculate the electric potential at 0.5 m from a point charge of 2 μC in air.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "V = kq/r = (9 × 10⁹ × 2 × 10⁻⁶)/0.5 = 18,000/0.5 = **36,000 V (36 kV)**.",
+      "knowledgeNote": "V ∝ 1/r but E ∝ 1/r² — at large distances the potential outlives the field."
+    },
+    {
+      "question": "What are equipotential surfaces? Write any three of their properties.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Surfaces (real or imaginary) over which the potential is constant everywhere.\n\n(1) No work is done moving a charge along one. (2) Field lines always cross them at right angles. (3) Two equipotential surfaces never intersect (that would give one point two potentials).",
+      "knowledgeNote": "For a point charge they are concentric spheres; for a uniform field, parallel planes."
+    },
+    {
+      "question": "Define the electron-volt. Convert 1 eV into joules.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**1 eV** is the kinetic energy an electron gains crossing a 1 V potential difference.\n\n1 eV = e × 1 V = (1.6 × 10⁻¹⁹)(1) = **1.6 × 10⁻¹⁹ J**.",
+      "knowledgeNote": "Atomic energies live in eV, nuclear in MeV — converting to joules first is the safe route in combined problems."
+    },
+    {
+      "question": "Two charges +3 μC and −2 μC are placed 0.3 m apart in air. Calculate the electric potential energy of the system.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "U = kq₁q₂/r = (9 × 10⁹)(3 × 10⁻⁶)(−2 × 10⁻⁶)/0.3\n\nU = −54 × 10⁻³/0.3 = **−0.18 J**.\n\nThe negative sign means work must be done to separate them — opposite charges bind the system.",
+      "knowledgeNote": "Like charges give positive U (work stored pushing them together); unlike charges give negative U (bound)."
+    },
+    {
+      "question": "Show that the electric potential everywhere inside a uniformly charged hollow sphere equals its surface value.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Inside the shell E = 0 (Gauss's law — no enclosed charge). Since E = −dV/dr, zero field means dV/dr = 0: V is constant throughout the interior.\n\nAt the surface r = R it must join the outside value Q/(4πε₀R), so **V = Q/(4πε₀R) everywhere inside**, right up to the centre.",
+      "knowledgeNote": "Constant potential ≠ zero potential — the interior sits at the full surface voltage, which is why a hollow conductor is still dangerous to touch."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Physics — DC Circuits — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "dc-circuits",
+  "topicSlug": "dc-circuits-pyq-2024",
+  "topicTitle": "NEB Class 11 Physics — DC Circuits — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State Kirchhoff's laws. A battery of 5 V total emf with 2 Ω total internal resistance drives a 5 Ω external resistor. Find the current.",
+      "marks": 5,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "**KCL (junction rule):** the algebraic sum of currents at a junction is zero — charge is conserved.\n\n**KVL (loop rule):** the algebraic sum of emfs round any closed loop equals the sum of the IR drops — energy is conserved.\n\nSingle loop: E = I(R + r) → I = 5/(5 + 2) = **0.71 A**.",
+      "knowledgeNote": "KCL ← charge conservation; KVL ← energy conservation — stating the conservation root earns the explanation mark."
+    },
+    {
+      "question": "Resistors of 6 Ω and 3 Ω are connected in parallel across a 12 V battery. Find the current through each resistor and the total current.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Parallel branches share the full voltage: I₁ = V/R₁ = 12/6 = **2 A**; I₂ = 12/3 = **4 A**.\n\nTotal I = 2 + 4 = **6 A** (check: R_eq = 2 Ω, 12/2 = 6 A ✓).",
+      "knowledgeNote": "In parallel, the smaller resistor hogs the current — current divides in the inverse resistance ratio."
+    },
+    {
+      "question": "State the principle of the Wheatstone bridge and write its balance condition.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Four resistors form a diamond; the bridge is **balanced** when no current flows through the middle galvanometer, so the two branch points are at equal potential.\n\nBalance condition: **P/Q = R/S** (ratios of adjacent arms equal). An unknown resistance follows from three known ones.",
+      "knowledgeNote": "The metre bridge is a Wheatstone bridge stretched into a wire — same P/Q = R/S, with lengths standing in for two arms."
+    },
+    {
+      "question": "A cell of emf 2 V and internal resistance 0.5 Ω is connected to a 3.5 Ω resistor. Calculate the terminal voltage of the cell.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Current I = E/(R + r) = 2/(3.5 + 0.5) = **0.5 A**.\n\nTerminal voltage V = E − Ir = 2 − (0.5 × 0.5) = **1.75 V** (equivalently V = IR = 0.5 × 3.5 = 1.75 V).",
+      "knowledgeNote": "V = E only on open circuit — the moment current flows, Ir is lost inside the cell."
+    },
+    {
+      "question": "Define drift velocity and derive the relation I = neAv_d.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Drift velocity** is the slow average velocity electrons acquire along a wire under an electric field (≈ mm/s).\n\nIn time t, electrons in length v_d·t cross a section: N = n·A·v_d·t carriers, charge Q = Ne = neAv_d·t. So I = Q/t = **neAv_d**.",
+      "knowledgeNote": "Signals travel near light speed (field propagation) while electrons merely drift — that is why the bulb lights 'instantly'."
+    },
+    {
+      "question": "State the principle of a potentiometer. How is it used to compare the emfs of two cells?",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Principle:** for a uniform wire carrying steady current, the potential drop per unit length is constant — balancing length ∝ emf.\n\nEach cell in turn is balanced against the wire (null deflection): E₁/E₂ = **l₁/l₂**. Because readings are taken at null, the cell supplies no current — the true emf, not the terminal voltage, is compared.",
+      "knowledgeNote": "Null-method advantage: no current drawn from the test cell, so internal resistance never corrupts the result."
+    }
+  ]
+}
