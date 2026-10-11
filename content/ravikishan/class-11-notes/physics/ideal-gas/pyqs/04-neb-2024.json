@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Physics — Ideal Gas — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "ideal-gas",
+  "topicSlug": "ideal-gas-pyq-2024",
+  "topicTitle": "NEB Class 11 Physics — Ideal Gas — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State the kinetic theory of gases. Also state its assumptions.",
+      "marks": 5,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Kinetic theory:** gas pressure arises from countless molecular collisions with the container walls; pressure is proportional to the average kinetic energy of the molecules.\n\n**Assumptions:** (1) huge number of molecules in random motion; (2) molecules are point masses of negligible volume; (3) no intermolecular forces except during collisions; (4) collisions are perfectly elastic; (5) collision time is negligible; (6) molecules move uniformly between collisions.",
+      "knowledgeNote": "Kinetic theory gives P = (1/3)ρ⟨v²⟩ — pressure from density times mean-square speed."
+    },
+    {
+      "question": "What is the law of equipartition of energy? How many degrees of freedom does a monoatomic gas molecule have?",
+      "marks": 2,
+      "year": 2021,
+      "source": "NEB Model",
+      "solution": "**Equipartition:** at thermal equilibrium, energy is shared equally among all degrees of freedom, each getting (1/2)kT per molecule.\n\nA monoatomic molecule has **3 translational** degrees of freedom (x, y, z), so its molar heat at constant volume is Cv = (3/2)R.",
+      "knowledgeNote": "Diatomic adds 2 rotational → 5 degrees; vibrational modes unfreeze only at high temperatures."
+    },
+    {
+      "question": "Calculate the rms speed of oxygen molecules at 27°C. (Molar mass of O₂ = 32 g/mol, R = 8.31 J/mol·K)",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "T = 27 + 273 = 300 K; M = 0.032 kg/mol.\n\nv_rms = √(3RT/M) = √(3 × 8.31 × 300 / 0.032) = √(7479/0.032) = √233,719 ≈ **483 m/s**.",
+      "knowledgeNote": "v_rms = √(3RT/M): lighter gases and higher temperatures mean faster molecules — Graham's law of diffusion follows directly."
+    },
+    {
+      "question": "State Boyle's law, Charles's law, and the pressure law. Combine them to obtain the ideal gas equation.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Boyle (T const):** V ∝ 1/P. **Charles (P const):** V ∝ T. **Pressure law (V const):** P ∝ T.\n\nTogether V ∝ T/P, i.e. PV/T = constant. For n moles the constant is nR:\n\n**PV = nRT** — the ideal gas equation.",
+      "knowledgeNote": "T must be in kelvin — the laws fail on the Celsius scale because the proportionality needs a true zero."
+    },
+    {
+      "question": "Two moles of an ideal gas at 300 K occupy 0.05 m³. Calculate its pressure. (R = 8.31 J/mol·K)",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "P = nRT/V = (2 × 8.31 × 300)/0.05 = 4986/0.05 = **99,720 Pa ≈ 1 atm**.",
+      "knowledgeNote": "One mole at STP (0°C, 1 atm) occupies 22.4 L — a instant check for gas-arithmetic answers."
+    },
+    {
+      "question": "Calculate the average kinetic energy per molecule of a gas at 300 K. (k = 1.38 × 10⁻²³ J/K)",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "⟨KE⟩ = (3/2)kT = 1.5 × (1.38 × 10⁻²³) × 300 = **6.21 × 10⁻²¹ J**.",
+      "knowledgeNote": "Temperature IS average molecular KE — this single formula is the bridge between the microscopic and macroscopic pictures."
+    }
+  ]
+}

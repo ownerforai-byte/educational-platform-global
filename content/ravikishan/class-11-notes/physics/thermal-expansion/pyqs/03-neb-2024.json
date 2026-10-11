@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Physics — Thermal Expansion — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "thermal-expansion",
+  "topicSlug": "thermal-expansion-pyq-2024",
+  "topicTitle": "NEB Class 11 Physics — Thermal Expansion — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Define linear, superficial, and cubical expansivity. Derive the relationship between them.",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Model",
+      "solution": "**Linear expansivity (α):** fractional change in length per kelvin, ΔL = αL₀ΔT.\n\n**Superficial expansivity (β):** fractional change in area, ΔA = βA₀ΔT.\n\n**Cubical expansivity (γ):** fractional change in volume, ΔV = γV₀ΔT.\n\nRelation: each side L → L(1 + αΔT), so A → A(1 + αΔT)² ≈ A(1 + 2αΔT) and V → V(1 + αΔT)³ ≈ V(1 + 3αΔT). Hence **β = 2α and γ = 3α** for isotropic solids.",
+      "knowledgeNote": "For metals α ≈ 10⁻⁵–10⁻⁶ K⁻¹; steel α ≈ 11 × 10⁻⁶ K⁻¹."
+    },
+    {
+      "question": "A steel rod 2 m long at 20°C is heated to 120°C. By how much does it expand? (α for steel = 12 × 10⁻⁶ K⁻¹)",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "ΔL = αL₀ΔT = (12 × 10⁻⁶) × 2 × (120 − 20)\n\nΔL = 12 × 10⁻⁶ × 200 = 2.4 × 10⁻³ m = **2.4 mm**.",
+      "knowledgeNote": "ΔT in °C equals ΔT in K — never add 273 when only a temperature *change* is needed."
+    },
+    {
+      "question": "Why are small gaps left between consecutive rails of a railway track?",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "In summer the rails expand (ΔL = αL₀ΔT). With no gap, the constrained expansion produces huge compressive stress that buckles the track sideways.\n\nThe gaps give each rail room to lengthen freely, so no thermal stress builds up.",
+      "knowledgeNote": "Same physics as sagging overhead power lines in summer and the rollers under bridge ends."
+    },
+    {
+      "question": "A pendulum clock keeps correct time in winter but loses time in summer. Explain why.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "In summer the pendulum rod expands, so its length L increases. Period T = 2π√(L/g) grows with L.\n\nEach swing takes slightly longer, so the clock ticks fewer times per hour — it **loses time**.",
+      "knowledgeNote": "Gridiron (compensation) pendulums pair high-α and low-α rods so the effective length stays constant."
+    },
+    {
+      "question": "What is the anomalous expansion of water? Explain its importance for aquatic life in cold climates.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Water **contracts** when heated from 0°C to 4°C and only expands above 4°C — so it is densest at **4°C**, the reverse of normal behaviour.\n\nIn a freezing lake, the 4°C water sinks to the bottom while 0°C ice floats on top. The ice sheet insulates the water below, which stays liquid at 4°C — so fish and plants survive winter under the ice.",
+      "knowledgeNote": "Hope's apparatus demonstrates this: water in the middle of the trough stays at 4°C while top and bottom freeze."
+    },
+    {
+      "question": "What is a bimetallic strip? Explain its working with one application.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "A strip of two metals with different expansivities (e.g. brass and invar) bonded together. On heating, the high-α side lengthens more, so the strip **bends toward the low-α side**; it straightens on cooling.\n\n**Application:** the thermostat in an electric iron — the bending strip breaks the heating circuit at the set temperature and remakes it as it cools.",
+      "knowledgeNote": "Bimetallic thermometers, fire alarms, and blinkers all use the same bend-with-temperature trick."
+    }
+  ]
+}

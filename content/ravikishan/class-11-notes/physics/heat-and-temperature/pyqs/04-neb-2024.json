@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Physics — Heat and Temperature — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "heat-and-temperature",
+  "topicSlug": "heat-and-temperature-pyq-2024",
+  "topicTitle": "NEB Class 11 Physics — Heat and Temperature — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State and explain the zeroth law of thermodynamics. Why is it called the zeroth law?",
+      "marks": 2,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "If two systems are each in thermal equilibrium with a third system, they are in thermal equilibrium with each other.\n\nIt is called 'zeroth' because it logically precedes the first and second laws — it was recognised after them but is more fundamental, so it was numbered zero.",
+      "knowledgeNote": "The zeroth law defines temperature itself and is the basis of all temperature measurement."
+    },
+    {
+      "question": "What is the difference between heat and temperature? Give their SI units.",
+      "marks": 2,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "**Heat** is energy transferred between systems because of a temperature difference. SI unit: **joule (J)**.\n\n**Temperature** measures the average kinetic energy of the particles — the degree of hotness. SI unit: **kelvin (K)**.",
+      "knowledgeNote": "Heat is energy in transit; a body contains thermal energy and has a temperature, but it never 'contains heat'."
+    },
+    {
+      "question": "Convert 104°F into the Celsius and Kelvin scales.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "C = (F − 32) × 5/9 = (104 − 32) × 5/9 = 72 × 5/9 = **40°C**.\n\nK = C + 273 = **313 K**.",
+      "knowledgeNote": "°F↔°C pivots at −40° (the same number on both scales) — a handy check for conversion arithmetic."
+    },
+    {
+      "question": "What is absolute zero? Why is it unattainable in practice?",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Absolute zero (0 K = −273.15°C)** is the temperature at which molecular motion is minimal — the zero of the Kelvin scale.\n\nIt is unattainable because each cooling step removes a fraction of the remaining thermal energy (third law of thermodynamics): an infinite sequence of steps would be needed to remove it all.",
+      "knowledgeNote": "The third law: the entropy of a perfect crystal approaches zero as T → 0 K — no process can reach 0 K in finite steps."
+    },
+    {
+      "question": "What is the triple point of water? Why is it used to define the Kelvin scale?",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "The **triple point of water (273.16 K, 611 Pa)** is the single condition where ice, liquid water, and vapour coexist in equilibrium.\n\nIt defines the Kelvin scale (1 K = 1/273.16 of this temperature) because it is a unique, reproducible fixed point — unlike melting or boiling points, it needs no specified pressure.",
+      "knowledgeNote": "Triple point (273.16 K) vs ice point (273.15 K): the 0.01 K gap is itself an NEB favourite."
+    },
+    {
+      "question": "Body A is in thermal equilibrium with body C, and body B is also in thermal equilibrium with body C. What can you conclude about A and B? Name the law used.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "A and B are in **thermal equilibrium with each other** — they are at the same temperature.\n\nThis is the **zeroth law of thermodynamics**, and it is exactly how thermometers work: the thermometer (C) certifies that two bodies share a temperature without them ever touching.",
+      "knowledgeNote": "Every temperature measurement is a zeroth-law comparison between the object and the thermometer."
+    }
+  ]
+}

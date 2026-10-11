@@ -52093,6 +52093,67 @@
       }
     ]
   },
+  "class-11-notes/physics/heat-and-temperature/pyqs/04-neb-2024.json": {
+    "title": "NEB Class 11 Physics — Heat and Temperature — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "physics",
+    "unitSlug": "heat-and-temperature",
+    "topicSlug": "heat-and-temperature-pyq-2024",
+    "topicTitle": "NEB Class 11 Physics — Heat and Temperature — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "State and explain the zeroth law of thermodynamics. Why is it called the zeroth law?",
+        "marks": 2,
+        "year": 2023,
+        "source": "NEB Model",
+        "solution": "If two systems are each in thermal equilibrium with a third system, they are in thermal equilibrium with each other.\n\nIt is called 'zeroth' because it logically precedes the first and second laws — it was recognised after them but is more fundamental, so it was numbered zero.",
+        "knowledgeNote": "The zeroth law defines temperature itself and is the basis of all temperature measurement."
+      },
+      {
+        "question": "What is the difference between heat and temperature? Give their SI units.",
+        "marks": 2,
+        "year": 2022,
+        "source": "NEB Past",
+        "solution": "**Heat** is energy transferred between systems because of a temperature difference. SI unit: **joule (J)**.\n\n**Temperature** measures the average kinetic energy of the particles — the degree of hotness. SI unit: **kelvin (K)**.",
+        "knowledgeNote": "Heat is energy in transit; a body contains thermal energy and has a temperature, but it never 'contains heat'."
+      },
+      {
+        "question": "Convert 104°F into the Celsius and Kelvin scales.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "C = (F − 32) × 5/9 = (104 − 32) × 5/9 = 72 × 5/9 = **40°C**.\n\nK = C + 273 = **313 K**.",
+        "knowledgeNote": "°F↔°C pivots at −40° (the same number on both scales) — a handy check for conversion arithmetic."
+      },
+      {
+        "question": "What is absolute zero? Why is it unattainable in practice?",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Absolute zero (0 K = −273.15°C)** is the temperature at which molecular motion is minimal — the zero of the Kelvin scale.\n\nIt is unattainable because each cooling step removes a fraction of the remaining thermal energy (third law of thermodynamics): an infinite sequence of steps would be needed to remove it all.",
+        "knowledgeNote": "The third law: the entropy of a perfect crystal approaches zero as T → 0 K — no process can reach 0 K in finite steps."
+      },
+      {
+        "question": "What is the triple point of water? Why is it used to define the Kelvin scale?",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "The **triple point of water (273.16 K, 611 Pa)** is the single condition where ice, liquid water, and vapour coexist in equilibrium.\n\nIt defines the Kelvin scale (1 K = 1/273.16 of this temperature) because it is a unique, reproducible fixed point — unlike melting or boiling points, it needs no specified pressure.",
+        "knowledgeNote": "Triple point (273.16 K) vs ice point (273.15 K): the 0.01 K gap is itself an NEB favourite."
+      },
+      {
+        "question": "Body A is in thermal equilibrium with body C, and body B is also in thermal equilibrium with body C. What can you conclude about A and B? Name the law used.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "A and B are in **thermal equilibrium with each other** — they are at the same temperature.\n\nThis is the **zeroth law of thermodynamics**, and it is exactly how thermometers work: the thermometer (C) certifies that two bodies share a temperature without them ever touching.",
+        "knowledgeNote": "Every temperature measurement is a zeroth-law comparison between the object and the thermometer."
+      }
+    ]
+  },
   "class-11-notes/physics/heat-and-temperature/sets/01-drill-set.json": {
     "title": "Practice Set 1 â€” MCQ Drill",
     "unitSlug": "heat-and-temperature",
@@ -52560,6 +52621,67 @@
         "source": "NEB Past",
         "solution": "**Boyle's law:** At constant temperature, the pressure of a fixed mass of gas is **inversely proportional** to its volume.\n$$P \\propto \\frac{1}{V} \\;\\Rightarrow\\; \\boxed{PV = \\text{constant}} \\;\\Rightarrow\\; P_1V_1 = P_2V_2$$\nGraph of $P$ vs $V$ is a **rectangular hyperbola**; pressure increases when volume decreases. Follows Boyle's law $P \\propto 1/V$; used in breathing and in the piston of an engine.\n\n**Charles's law:** At constant pressure, the volume of a fixed mass of gas is **directly proportional** to its absolute temperature.\n$$V \\propto T \\;\\Rightarrow\\; \\boxed{\\frac{V}{T} = \\text{constant}} \\;\\Rightarrow\\; \\frac{V_1}{T_1} = \\frac{V_2}{T_2}$$\nGraph of $V$ vs $T$ is a **straight line through the origin**; the slope of $V$ vs $T$ (K) is the coefficient of cubical expansivity $\\gamma = \\dfrac{1}{V_0}\\left(\\dfrac{\\Delta V}{\\Delta T}\\right)$.",
         "knowledgeNote": "Boyle's law gives PV constant at constant temperature; Charles's law gives V proportional to T at constant pressure."
+      }
+    ]
+  },
+  "class-11-notes/physics/ideal-gas/pyqs/04-neb-2024.json": {
+    "title": "NEB Class 11 Physics — Ideal Gas — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "physics",
+    "unitSlug": "ideal-gas",
+    "topicSlug": "ideal-gas-pyq-2024",
+    "topicTitle": "NEB Class 11 Physics — Ideal Gas — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "State the kinetic theory of gases. Also state its assumptions.",
+        "marks": 5,
+        "year": 2023,
+        "source": "NEB Model",
+        "solution": "**Kinetic theory:** gas pressure arises from countless molecular collisions with the container walls; pressure is proportional to the average kinetic energy of the molecules.\n\n**Assumptions:** (1) huge number of molecules in random motion; (2) molecules are point masses of negligible volume; (3) no intermolecular forces except during collisions; (4) collisions are perfectly elastic; (5) collision time is negligible; (6) molecules move uniformly between collisions.",
+        "knowledgeNote": "Kinetic theory gives P = (1/3)ρ⟨v²⟩ — pressure from density times mean-square speed."
+      },
+      {
+        "question": "What is the law of equipartition of energy? How many degrees of freedom does a monoatomic gas molecule have?",
+        "marks": 2,
+        "year": 2021,
+        "source": "NEB Model",
+        "solution": "**Equipartition:** at thermal equilibrium, energy is shared equally among all degrees of freedom, each getting (1/2)kT per molecule.\n\nA monoatomic molecule has **3 translational** degrees of freedom (x, y, z), so its molar heat at constant volume is Cv = (3/2)R.",
+        "knowledgeNote": "Diatomic adds 2 rotational → 5 degrees; vibrational modes unfreeze only at high temperatures."
+      },
+      {
+        "question": "Calculate the rms speed of oxygen molecules at 27°C. (Molar mass of O₂ = 32 g/mol, R = 8.31 J/mol·K)",
+        "marks": 3,
+        "year": 2022,
+        "source": "NEB Past",
+        "solution": "T = 27 + 273 = 300 K; M = 0.032 kg/mol.\n\nv_rms = √(3RT/M) = √(3 × 8.31 × 300 / 0.032) = √(7479/0.032) = √233,719 ≈ **483 m/s**.",
+        "knowledgeNote": "v_rms = √(3RT/M): lighter gases and higher temperatures mean faster molecules — Graham's law of diffusion follows directly."
+      },
+      {
+        "question": "State Boyle's law, Charles's law, and the pressure law. Combine them to obtain the ideal gas equation.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Boyle (T const):** V ∝ 1/P. **Charles (P const):** V ∝ T. **Pressure law (V const):** P ∝ T.\n\nTogether V ∝ T/P, i.e. PV/T = constant. For n moles the constant is nR:\n\n**PV = nRT** — the ideal gas equation.",
+        "knowledgeNote": "T must be in kelvin — the laws fail on the Celsius scale because the proportionality needs a true zero."
+      },
+      {
+        "question": "Two moles of an ideal gas at 300 K occupy 0.05 m³. Calculate its pressure. (R = 8.31 J/mol·K)",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "P = nRT/V = (2 × 8.31 × 300)/0.05 = 4986/0.05 = **99,720 Pa ≈ 1 atm**.",
+        "knowledgeNote": "One mole at STP (0°C, 1 atm) occupies 22.4 L — a instant check for gas-arithmetic answers."
+      },
+      {
+        "question": "Calculate the average kinetic energy per molecule of a gas at 300 K. (k = 1.38 × 10⁻²³ J/K)",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "⟨KE⟩ = (3/2)kT = 1.5 × (1.38 × 10⁻²³) × 300 = **6.21 × 10⁻²¹ J**.",
+        "knowledgeNote": "Temperature IS average molecular KE — this single formula is the bridge between the microscopic and macroscopic pictures."
       }
     ]
   },
@@ -57848,6 +57970,67 @@
       }
     ]
   },
+  "class-11-notes/physics/rate-of-heat-flow/pyqs/05-neb-2024.json": {
+    "title": "NEB Class 11 Physics — Rate of Heat Flow — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "physics",
+    "unitSlug": "rate-of-heat-flow",
+    "topicSlug": "rate-of-heat-flow-pyq-2024",
+    "topicTitle": "NEB Class 11 Physics — Rate of Heat Flow — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "Define conduction, convection, and radiation, giving one example of each.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Conduction:** heat flows through a material by molecular collisions, no bulk motion — e.g. a metal spoon heating in tea.\n\n**Convection:** heat carried by the bulk movement of fluid — e.g. hot air rising in a room.\n\n**Radiation:** heat transferred as electromagnetic waves, needing no medium — e.g. warmth from the Sun.",
+        "knowledgeNote": "Solids conduct; fluids convect; everything radiates — most real situations mix at least two."
+      },
+      {
+        "question": "State Fourier's law of heat conduction and explain each term.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Fourier's law:** Q/t = kA(ΔT/d).\n\nQ/t = rate of heat flow (J/s); k = thermal conductivity of the material; A = cross-sectional area; ΔT = temperature difference between the ends; d = length along the flow.\n\nHeat flows faster through short, fat, highly conducting bars with a steep temperature drop.",
+        "knowledgeNote": "k has units W/m·K — copper (~400) vs air (~0.026) explains why metals feel cold and wool feels warm."
+      },
+      {
+        "question": "A metal rod 0.5 m long with cross-section 4 cm² has its ends at 100°C and 0°C. If k = 400 W/m·K, find the rate of heat flow through the rod.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "A = 4 cm² = 4 × 10⁻⁴ m².\n\nQ/t = kAΔT/d = (400 × 4 × 10⁻⁴ × 100)/0.5 = 16/0.5 = **32 W**.",
+        "knowledgeNote": "Steady state is assumed — the ends held at fixed temperatures so no heat accumulates in the rod."
+      },
+      {
+        "question": "State Stefan's law of black-body radiation. If the absolute temperature of a body is doubled, by what factor does its radiated power increase?",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Stefan's law:** the total energy radiated per unit area per second is E = σT⁴ (σ = 5.67 × 10⁻⁸ W/m²K⁴).\n\nSince E ∝ T⁴, doubling T multiplies the power by 2⁴ = **16 times**.",
+        "knowledgeNote": "T⁴ sensitivity is why a small rise in filament temperature makes a bulb dramatically brighter."
+      },
+      {
+        "question": "Why are cooking utensils blackened at the bottom, and why do people prefer white clothes in summer?",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Black surfaces are the best absorbers (and emitters) of radiation: a blackened bottom **absorbs the flame's radiant heat** fastest, cooking food quicker.\n\nWhite clothes **reflect** most of the Sun's radiation instead of absorbing it, keeping the wearer cooler — the same reason houses in hot regions are painted white.",
+        "knowledgeNote": "Good absorber = good emitter (Kirchhoff's law) — which is also why blackened utensils cool faster once off the flame."
+      },
+      {
+        "question": "State Newton's law of cooling and give one practical application.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Newton's law of cooling:** the rate of loss of heat of a body is directly proportional to the temperature difference between the body and its surroundings (for small differences).\n\n**Application:** forensic estimation of time of death from body temperature, or judging how long tea has been standing from its temperature.",
+        "knowledgeNote": "The law holds only for small ΔT and still air — forced draughts (a fan on hot tea) cool faster than it predicts."
+      }
+    ]
+  },
   "class-11-notes/physics/recent-trends-in-physics/concepts/01-particle-physics-particles-and-antiparticles-quarks-baryons-and-mesons-and-leptons-neutrinos.json": {
     "title": "Particle physics: particles and antiparticles, quarks (ba…",
     "unitSlug": "recent-trends-in-physics",
@@ -59873,6 +60056,67 @@
         "source": "NEB Past",
         "solution": "**Step 1 — Given:** $L_0 = 1\\ \\text{m},\\ T_1 = 20^\\circ\\text{C},\\ T_2 = 100^\\circ\\text{C},\\ \\alpha = 1.2 \\times 10^{-5}\\ \\text{K}^{-1}$\n\n**Step 2 — Change in temperature:**\n$$\\Delta T = T_2 - T_1 = 100 - 20 = 80\\ \\text{K}$$\n\n**Step 3 — Increase in length:**\n$$\\Delta L = \\alpha L_0 \\Delta T = (1.2 \\times 10^{-5})(1)(80) = 96 \\times 10^{-5} = 9.6 \\times 10^{-4}\\ \\text{m}$$\n$$\\boxed{\\Delta L = \\mathbf{9.6 \\times 10^{-4}\\ \\text{m}} = \\mathbf{0.96\\ \\text{mm}}}$$\n\n**Step 4 — Final length:**\n$$L_2 = L_0 + \\Delta L = 1 + 9.6 \\times 10^{-4}$$\n$$\\boxed{L_2 = \\mathbf{1.00096\\ \\text{m}}$$\n\n**Note:** The expansion is very small, which is why gaps are left in railway tracks and bridges.",
         "knowledgeNote": "Expansion equals alpha times original length times temperature rise; for a one-metre rod it is a fraction of a millimetre."
+      }
+    ]
+  },
+  "class-11-notes/physics/thermal-expansion/pyqs/03-neb-2024.json": {
+    "title": "NEB Class 11 Physics — Thermal Expansion — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "physics",
+    "unitSlug": "thermal-expansion",
+    "topicSlug": "thermal-expansion-pyq-2024",
+    "topicTitle": "NEB Class 11 Physics — Thermal Expansion — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "Define linear, superficial, and cubical expansivity. Derive the relationship between them.",
+        "marks": 3,
+        "year": 2022,
+        "source": "NEB Model",
+        "solution": "**Linear expansivity (α):** fractional change in length per kelvin, ΔL = αL₀ΔT.\n\n**Superficial expansivity (β):** fractional change in area, ΔA = βA₀ΔT.\n\n**Cubical expansivity (γ):** fractional change in volume, ΔV = γV₀ΔT.\n\nRelation: each side L → L(1 + αΔT), so A → A(1 + αΔT)² ≈ A(1 + 2αΔT) and V → V(1 + αΔT)³ ≈ V(1 + 3αΔT). Hence **β = 2α and γ = 3α** for isotropic solids.",
+        "knowledgeNote": "For metals α ≈ 10⁻⁵–10⁻⁶ K⁻¹; steel α ≈ 11 × 10⁻⁶ K⁻¹."
+      },
+      {
+        "question": "A steel rod 2 m long at 20°C is heated to 120°C. By how much does it expand? (α for steel = 12 × 10⁻⁶ K⁻¹)",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "ΔL = αL₀ΔT = (12 × 10⁻⁶) × 2 × (120 − 20)\n\nΔL = 12 × 10⁻⁶ × 200 = 2.4 × 10⁻³ m = **2.4 mm**.",
+        "knowledgeNote": "ΔT in °C equals ΔT in K — never add 273 when only a temperature *change* is needed."
+      },
+      {
+        "question": "Why are small gaps left between consecutive rails of a railway track?",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "In summer the rails expand (ΔL = αL₀ΔT). With no gap, the constrained expansion produces huge compressive stress that buckles the track sideways.\n\nThe gaps give each rail room to lengthen freely, so no thermal stress builds up.",
+        "knowledgeNote": "Same physics as sagging overhead power lines in summer and the rollers under bridge ends."
+      },
+      {
+        "question": "A pendulum clock keeps correct time in winter but loses time in summer. Explain why.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "In summer the pendulum rod expands, so its length L increases. Period T = 2π√(L/g) grows with L.\n\nEach swing takes slightly longer, so the clock ticks fewer times per hour — it **loses time**.",
+        "knowledgeNote": "Gridiron (compensation) pendulums pair high-α and low-α rods so the effective length stays constant."
+      },
+      {
+        "question": "What is the anomalous expansion of water? Explain its importance for aquatic life in cold climates.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Water **contracts** when heated from 0°C to 4°C and only expands above 4°C — so it is densest at **4°C**, the reverse of normal behaviour.\n\nIn a freezing lake, the 4°C water sinks to the bottom while 0°C ice floats on top. The ice sheet insulates the water below, which stays liquid at 4°C — so fish and plants survive winter under the ice.",
+        "knowledgeNote": "Hope's apparatus demonstrates this: water in the middle of the trough stays at 4°C while top and bottom freeze."
+      },
+      {
+        "question": "What is a bimetallic strip? Explain its working with one application.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "A strip of two metals with different expansivities (e.g. brass and invar) bonded together. On heating, the high-α side lengthens more, so the strip **bends toward the low-α side**; it straightens on cooling.\n\n**Application:** the thermostat in an electric iron — the bending strip breaks the heating circuit at the set temperature and remakes it as it cools.",
+        "knowledgeNote": "Bimetallic thermometers, fire alarms, and blinkers all use the same bend-with-temperature trick."
       }
     ]
   },

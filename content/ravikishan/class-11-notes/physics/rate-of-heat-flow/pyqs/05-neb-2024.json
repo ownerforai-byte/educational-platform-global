@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Physics — Rate of Heat Flow — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "rate-of-heat-flow",
+  "topicSlug": "rate-of-heat-flow-pyq-2024",
+  "topicTitle": "NEB Class 11 Physics — Rate of Heat Flow — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Define conduction, convection, and radiation, giving one example of each.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Conduction:** heat flows through a material by molecular collisions, no bulk motion — e.g. a metal spoon heating in tea.\n\n**Convection:** heat carried by the bulk movement of fluid — e.g. hot air rising in a room.\n\n**Radiation:** heat transferred as electromagnetic waves, needing no medium — e.g. warmth from the Sun.",
+      "knowledgeNote": "Solids conduct; fluids convect; everything radiates — most real situations mix at least two."
+    },
+    {
+      "question": "State Fourier's law of heat conduction and explain each term.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Fourier's law:** Q/t = kA(ΔT/d).\n\nQ/t = rate of heat flow (J/s); k = thermal conductivity of the material; A = cross-sectional area; ΔT = temperature difference between the ends; d = length along the flow.\n\nHeat flows faster through short, fat, highly conducting bars with a steep temperature drop.",
+      "knowledgeNote": "k has units W/m·K — copper (~400) vs air (~0.026) explains why metals feel cold and wool feels warm."
+    },
+    {
+      "question": "A metal rod 0.5 m long with cross-section 4 cm² has its ends at 100°C and 0°C. If k = 400 W/m·K, find the rate of heat flow through the rod.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "A = 4 cm² = 4 × 10⁻⁴ m².\n\nQ/t = kAΔT/d = (400 × 4 × 10⁻⁴ × 100)/0.5 = 16/0.5 = **32 W**.",
+      "knowledgeNote": "Steady state is assumed — the ends held at fixed temperatures so no heat accumulates in the rod."
+    },
+    {
+      "question": "State Stefan's law of black-body radiation. If the absolute temperature of a body is doubled, by what factor does its radiated power increase?",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Stefan's law:** the total energy radiated per unit area per second is E = σT⁴ (σ = 5.67 × 10⁻⁸ W/m²K⁴).\n\nSince E ∝ T⁴, doubling T multiplies the power by 2⁴ = **16 times**.",
+      "knowledgeNote": "T⁴ sensitivity is why a small rise in filament temperature makes a bulb dramatically brighter."
+    },
+    {
+      "question": "Why are cooking utensils blackened at the bottom, and why do people prefer white clothes in summer?",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Black surfaces are the best absorbers (and emitters) of radiation: a blackened bottom **absorbs the flame's radiant heat** fastest, cooking food quicker.\n\nWhite clothes **reflect** most of the Sun's radiation instead of absorbing it, keeping the wearer cooler — the same reason houses in hot regions are painted white.",
+      "knowledgeNote": "Good absorber = good emitter (Kirchhoff's law) — which is also why blackened utensils cool faster once off the flame."
+    },
+    {
+      "question": "State Newton's law of cooling and give one practical application.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Newton's law of cooling:** the rate of loss of heat of a body is directly proportional to the temperature difference between the body and its surroundings (for small differences).\n\n**Application:** forensic estimation of time of death from body temperature, or judging how long tea has been standing from its temperature.",
+      "knowledgeNote": "The law holds only for small ΔT and still air — forced draughts (a fan on hot tea) cool faster than it predicts."
+    }
+  ]
+}
