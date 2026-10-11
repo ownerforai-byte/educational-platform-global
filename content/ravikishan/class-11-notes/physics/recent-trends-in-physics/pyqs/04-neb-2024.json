@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Physics — Recent Trends in Physics — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "recent-trends-in-physics",
+  "topicSlug": "recent-trends-in-physics-pyq-2024",
+  "topicTitle": "NEB Class 11 Physics — Recent Trends in Physics — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State the Big Bang theory and Hubble's law. What evidence supports the expanding universe?",
+      "marks": 5,
+      "year": 2021,
+      "source": "NEB Model",
+      "solution": "**Big Bang:** the universe began ~13.8 billion years ago as an extremely hot, dense state and has expanded and cooled ever since.\n\n**Hubble's law:** v = H₀d — recession velocity proportional to distance (H₀ ≈ 70 km/s/Mpc).\n\n**Evidence:** (1) galactic redshifts; (2) the 2.7 K cosmic microwave background; (3) light-element (H, He) abundances matching predictions.",
+      "knowledgeNote": "Three pillars — redshift, CMBR, element abundances — each independently points to a hot dense origin."
+    },
+    {
+      "question": "What are elementary particles? List the four fundamental forces in order of decreasing strength.",
+      "marks": 2,
+      "year": 2022,
+      "source": "NEB Model",
+      "solution": "**Elementary particles** have no smaller constituents — quarks, leptons, and force-carrying bosons.\n\nStrongest to weakest: (1) **strong nuclear**, (2) **electromagnetic**, (3) **weak nuclear**, (4) **gravitational**.",
+      "knowledgeNote": "Gravity is ~10³⁶ times weaker than the strong force — the hierarchy problem behind unification theories."
+    },
+    {
+      "question": "What is the photoelectric effect? Write Einstein's photoelectric equation and explain each term.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Emission of electrons when light of sufficient frequency strikes a metal surface.\n\n**Einstein's equation:** hf = φ + KEmax — photon energy (hf) = work function (φ, the escape cost) + maximum electron kinetic energy.\n\nNo emission below the threshold frequency f₀ = φ/h, whatever the intensity.",
+      "knowledgeNote": "One photon ejects one electron — intensity raises the number, only frequency raises their energy."
+    },
+    {
+      "question": "State de Broglie's hypothesis and calculate the de Broglie wavelength of an electron accelerated through 100 V.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**de Broglie:** every moving particle has λ = h/p = h/(mv).\n\nElectron through V volts: λ = h/√(2meV) = 12.27/√V Å = 12.27/10 = **1.23 Å**.",
+      "knowledgeNote": "λ = 12.27/√V Å is the ready-made electron formula — memorise it for one-step numericals."
+    },
+    {
+      "question": "What are nanotechnology and its two approaches (top-down and bottom-up)? Give one application.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Nanotechnology** engineers matter at 1–100 nm, where surface effects and quantum rules dominate.\n\n**Top-down:** carving bulk material smaller (lithography for chips). **Bottom-up:** assembling from atoms/molecules (self-assembly, CVD growth).\n\n**Application:** targeted drug delivery, stain-free fabrics, or quantum-dot displays.",
+      "knowledgeNote": "At the nanoscale, gold turns red and aluminium burns — properties are size-dependent, not just compositional."
+    },
+    {
+      "question": "What is GPS and on which physical principles does it depend? Name two other modern applications of physics.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**GPS** fixes position by timing radio signals from ≥4 satellites (trilateration).\n\nIt needs **special relativity** (satellite clocks run slow by motion) and **general relativity** (they run fast in weaker gravity) — uncorrected, errors would grow ~10 km/day.\n\nOther applications: MRI (nuclear magnetic resonance), fibre-optic internet (TIR), lasers (stimulated emission).",
+      "knowledgeNote": "GPS is the everyday proof that Einstein's theories are engineering facts, not philosophy."
+    }
+  ]
+}
