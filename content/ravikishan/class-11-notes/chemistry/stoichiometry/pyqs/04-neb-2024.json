@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Chemistry — Stoichiometry — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "stoichiometry",
+  "topicSlug": "stoichiometry-pyq-2024",
+  "topicTitle": "NEB Class 11 Chemistry — Stoichiometry — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "What is the mole concept? Calculate the number of molecules in 36 g of water.",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Past",
+      "solution": "**Mole:** the amount containing as many particles as atoms in exactly 12 g of carbon-12 — one mole = 6.022 × 10²³ particles.\n\nMoles of H₂O = 36/18 = 2 mol. Molecules = 2 × 6.022 × 10²³ = **1.204 × 10²⁴**.",
+      "knowledgeNote": "M(H₂O) = 18 g/mol; at STP, 1 mol of any gas occupies 22.4 L."
+    },
+    {
+      "question": "Calculate the empirical formula of a compound containing 40% carbon, 6.67% hydrogen, and 53.33% oxygen by mass.",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "Per 100 g: C = 40/12 = 3.33 mol; H = 6.67/1 = 6.67 mol; O = 53.33/16 = 3.33 mol.\n\nDivide by 3.33: C:H:O = 1:2:1 → empirical formula **CH₂O**.",
+      "knowledgeNote": "Percent → mass (per 100 g) → moles (÷ atomic mass) → simplest ratio — the fixed four-step ritual."
+    },
+    {
+      "question": "10 g of H₂ reacts with 64 g of O₂ to form water. Which is the limiting reagent, and what is the maximum mass of water formed?",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "2H₂ + O₂ → 2H₂O. Moles: H₂ = 10/2 = 5 mol; O₂ = 64/32 = 2 mol.\n\n2 mol O₂ needs 4 mol H₂ (5 available) — **O₂ is limiting**.\n\nWater formed = 4 mol × 18 = **72 g**.",
+      "knowledgeNote": "Limiting reagent = the reactant exhausted first — always compare mole ratios, never gram amounts."
+    },
+    {
+      "question": "4 g of NaOH is dissolved in water to make 250 mL of solution. Calculate its molarity. (NaOH = 40)",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Moles = 4/40 = 0.1 mol. Volume = 0.25 L.\n\nM = 0.1/0.25 = **0.4 mol/L**.",
+      "knowledgeNote": "Molarity is moles per LITRE of solution — convert mL to L before dividing."
+    },
+    {
+      "question": "A compound has empirical formula CH₂O and molar mass 180 g/mol. Find its molecular formula.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Empirical mass = 12 + 2 + 16 = 30. n = 180/30 = 6.\n\nMolecular formula = 6 × CH₂O = **C₆H₁₂O₆** (glucose).",
+      "knowledgeNote": "Molecular = n × empirical, where n = molar mass / empirical mass — always an integer."
+    },
+    {
+      "question": "In an experiment, the theoretical yield is 50 g but only 40 g of product is obtained. Calculate the percentage yield.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "% yield = (actual/theoretical) × 100 = (40/50) × 100 = **80%**.\n\nLosses come from side reactions, incomplete reaction, and handling/spillage.",
+      "knowledgeNote": "% yield never exceeds 100 — an answer above it means the product is wet or impure."
+    }
+  ]
+}

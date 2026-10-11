@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Chemistry — Oxidation and Reduction — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "oxidation-and-reduction",
+  "topicSlug": "oxidation-and-reduction-pyq-2024",
+  "topicTitle": "NEB Class 11 Chemistry — Oxidation and Reduction — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State the rules for assigning oxidation numbers. Find the oxidation number of Mn in KMnO₄ and Cr in K₂Cr₂O₇.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Key rules: free elements 0; Group 1 +1, Group 2 +2; O usually −2 (peroxides −1); H usually +1 (hydrides −1); F always −1; the sum equals the species' charge.\n\nKMnO₄: +1 + Mn + 4(−2) = 0 → Mn = **+7**.\n\nK₂Cr₂O₇: 2(+1) + 2Cr + 7(−2) = 0 → Cr = **+6**.",
+      "knowledgeNote": "Maximum oxidation states (+7 Mn, +6 Cr, +6 S) mark the strongest oxidising agents of each family."
+    },
+    {
+      "question": "Balance the redox reaction by the ion-electron method: MnO₄⁻ + Fe²⁺ → Mn²⁺ + Fe³⁺ (acidic medium).",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Reduction: MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O.\n\nOxidation: Fe²⁺ → Fe³⁺ + e⁻ (×5).\n\nAdding: **MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O**.\n\nCheck: charge −1+10+8 = +17 each side; atoms: Mn 1, Fe 5, H 8, O 4 ✓.",
+      "knowledgeNote": "Balance atoms (O via H₂O, H via H⁺) first, charges with electrons last — the order that prevents most errors."
+    },
+    {
+      "question": "Define oxidising and reducing agents. Identify each in: Zn + CuSO₄ → ZnSO₄ + Cu.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Oxidising agent** gains electrons (is itself reduced); **reducing agent** loses electrons (is itself oxidised).\n\nZn → Zn²⁺ + 2e⁻ (oxidised) so **Zn is the reductant**; Cu²⁺ + 2e⁻ → Cu (reduced) so **CuSO₄ (Cu²⁺) is the oxidant**.",
+      "knowledgeNote": "'OIL RIG' — Oxidation Is Loss, Reduction Is Gain (of electrons)."
+    },
+    {
+      "question": "What is the electrochemical series? Explain why zinc displaces copper from copper sulphate solution.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "The **electrochemical series** orders electrodes by standard reduction potential — higher (more positive) means easier to reduce.\n\nZn²⁺/Zn (−0.76 V) sits below Cu²⁺/Cu (+0.34 V): zinc is the stronger reductant, so Zn reduces Cu²⁺ to copper metal spontaneously.",
+      "knowledgeNote": "Any metal displaces metals below it in the series — the single rule behind all displacement predictions."
+    },
+    {
+      "question": "Hydrogen peroxide can act both as an oxidising and a reducing agent. Explain with one reaction of each type.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "O in H₂O₂ is at −1, midway between O₂ (0) and H₂O (−2), so it can move either way.\n\n**Oxidant:** H₂O₂ + 2KI + H₂SO₄ → I₂ + K₂SO₄ + 2H₂O (O: −1 → −2).\n\n**Reductant:** 5H₂O₂ + 2KMnO₄ + 3H₂SO₄ → K₂SO₄ + 2MnSO₄ + 8H₂O + 5O₂ (O: −1 → 0).",
+      "knowledgeNote": "Intermediate oxidation states (−1 O, +4 S, +3 N) are the dual-role suspects — check them first."
+    },
+    {
+      "question": "Why is fluorine the strongest oxidising agent among the halogens?",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Oxidising strength follows electron gain enthalpy and small size: F₂ has the highest electronegativity (4.0), the most exothermic electron affinity for its size, and a weak F–F bond that breaks easily.\n\nSo F₂ oxidises even water (to O₂) and displaces every other halogen — strength falls F₂ > Cl₂ > Br₂ > I₂.",
+      "knowledgeNote": "Standard potentials confirm it: F₂/F⁻ (+2.87 V) tops the whole electrochemical series."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Chemistry — Chemical Bonding — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "chemical-bonding",
+  "topicSlug": "chemical-bonding-pyq-2024",
+  "topicTitle": "NEB Class 11 Chemistry — Chemical Bonding — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Write the Lewis dot structure of CO₂. What is its molecular shape?",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Model",
+      "solution": "C (4 valence e⁻) shares double bonds with each O (6 valence e⁻): O=C=O, every atom octet-complete.\n\nVSEPR: 2 bond pairs, 0 lone pairs on carbon → **linear**, 180°.",
+      "knowledgeNote": "Linear symmetry cancels the two C=O dipoles — CO₂ is non-polar despite polar bonds."
+    },
+    {
+      "question": "Draw the Lewis structures of H₂O and NH₃ and predict their shapes using VSEPR theory.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**H₂O:** O has 2 bond pairs + 2 lone pairs → **bent (V-shaped)**, 104.5°.\n\n**NH₃:** N has 3 bond pairs + 1 lone pair → **trigonal pyramidal**, 107°.\n\nLone pairs repel more strongly than bond pairs, squeezing both angles below the tetrahedral 109.5°.",
+      "knowledgeNote": "Lone-pair repulsion order lp–lp > lp–bp > bp–bp explains the whole 109.5° → 107° → 104.5° series."
+    },
+    {
+      "question": "Distinguish between ionic and covalent bonds with one example of each.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Ionic:** complete electron transfer, oppositely charged ions in a lattice — e.g. NaCl. High mp/bp, conducts when molten, brittle.\n\n**Covalent:** mutual sharing of electron pairs — e.g. H₂, CH₄. Low mp/bp, poor conductors, often gases/liquids.",
+      "knowledgeNote": "Large electronegativity difference (ΔEN > 1.7) favours ionic; small ΔEN favours covalent — a continuum, not a wall."
+    },
+    {
+      "question": "State Fajan's rules. How do they explain the covalent character of LiCl vs NaCl?",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Fajan's rules:** covalent character grows with (1) small, highly charged cations, (2) large, easily polarised anions.\n\nLi⁺ is far smaller than Na⁺, so it distorts Cl⁻'s electron cloud more — **LiCl is markedly more covalent** (more soluble in organic solvents, lower melting) than NaCl.",
+      "knowledgeNote": "Polarising power ∝ charge/(radius)² — the same rule orders BeCl₂ > MgCl₂ > CaCl₂ in covalency."
+    },
+    {
+      "question": "What is hydrogen bonding? Explain why water has an unusually high boiling point.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Hydrogen bonding** is the strong dipole attraction between H bound to N/O/F and a lone pair on a neighbouring N/O/F.\n\nEach H₂O molecule H-bonds to four neighbours, forming an extensive network. Breaking this network needs extra energy — so water boils at 100°C while similar-mass H₂S (no H-bonding) boils at −60°C.",
+      "knowledgeNote": "H-bonding also explains ice floating (open tetrahedral network) and proteins' shapes — one concept, many NEB questions."
+    },
+    {
+      "question": "Why is NH₃ pyramidal while CH₄ is tetrahedral, though both have four electron pairs?",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Both have tetrahedral electron geometry, but **shape counts only atom positions**.\n\nCH₄ has 4 bond pairs → tetrahedral molecule. NH₃ has 3 bond pairs + 1 lone pair → the lone pair occupies one tetrahedral corner unseen, leaving a **pyramid** of three H atoms.",
+      "knowledgeNote": "Electron geometry vs molecular shape: identical pairs, different visible skeletons — the VSEPR distinction NEB tests most."
+    }
+  ]
+}

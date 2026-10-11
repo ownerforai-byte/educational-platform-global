@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Chemistry — Classification of Elements — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "classification-of-elements",
+  "topicSlug": "classification-of-elements-pyq-2024",
+  "topicTitle": "NEB Class 11 Chemistry — Classification of Elements — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "What is the modern periodic law? Explain how it improved on Mendeleev's periodic law.",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Model",
+      "solution": "**Modern periodic law:** properties of elements are periodic functions of their **atomic numbers**.\n\nIt fixed Mendeleev (atomic-mass) defects: (1) anomalous pairs (Ar/K, Co/Ni) fall in correct order; (2) no unexplained gaps remain — all 118 elements placed; (3) noble gases get a natural group without disturbing the table.",
+      "knowledgeNote": "Moseley (1913) and X-ray spectra moved the table from mass to atomic number."
+    },
+    {
+      "question": "What are s-, p-, d-, and f-blocks? Give one element belonging to each.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Blocks named by the subshell receiving the last electron: **s-block** — Na; **p-block** — Cl; **d-block** (transition metals) — Fe; **f-block** (inner transition) — U.\n\ns + p = representative elements; d = transition; f = lanthanides/actinides.",
+      "knowledgeNote": "Helium (1s²) sits with the p-block noble gases by behaviour, not by configuration — the famous exception."
+    },
+    {
+      "question": "Define ionisation energy. Explain why nitrogen has a higher first ionisation energy than oxygen.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Ionisation energy** is the energy needed to remove the outermost electron from a gaseous atom.\n\nN (1s² 2s² 2p³) has a **half-filled p subshell** — extra stable. Removing its electron breaks that stability, costing more energy than removing one from O (2p⁴), where repulsion between paired electrons actually helps ejection.",
+      "knowledgeNote": "Half-filled/full subshells (N, P, Be, Mg, noble gases) always spike above the trend — the standard 'anomaly' question."
+    },
+    {
+      "question": "Define electronegativity. How does it vary across a period and down a group? Which element is the most electronegative?",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Electronegativity** is an atom's pull on shared bond electrons.\n\nIt **increases left→right** (rising nuclear charge) and **decreases top→bottom** (larger, shielded atoms). **Fluorine (4.0)** is the maximum.",
+      "knowledgeNote": "Noble gases have no EN values (no bonds to pull in) — a tidy one-mark follow-up."
+    },
+    {
+      "question": "How does atomic radius vary across a period and down a group? Explain the trend in each case.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Across a period it shrinks:** added protons pull the same shell tighter.\n\n**Down a group it grows:** each new principal shell outweighs the extra nuclear charge.",
+      "knowledgeNote": "Cations < parent atom < anions — size order within one element's ions."
+    },
+    {
+      "question": "What is diagonal relationship? Give one example with cause.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Diagonally adjacent elements (e.g. **Li and Mg**) resemble each other more than their own group members.\n\nCause: similar charge density (charge/radius) — moving right shrinks size while moving down grows it, roughly cancelling along the diagonal. Both form nitrides, sparingly soluble carbonates, and similar organometallics.",
+      "knowledgeNote": "Li–Mg, Be–Al, B–Si are the three classic diagonal pairs."
+    }
+  ]
+}

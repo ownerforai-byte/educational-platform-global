@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Chemistry — States of Matter — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "states-of-matter",
+  "topicSlug": "states-of-matter-pyq-2024",
+  "topicTitle": "NEB Class 11 Chemistry — States of Matter — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State Boyle's law and Charles's law. Derive the ideal gas equation from them.",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Boyle (T const):** P ∝ 1/V. **Charles (P const):** V ∝ T.\n\nCombined: V ∝ T/P → PV/T = constant. For n moles the constant is nR: **PV = nRT**, with R = 8.314 J/mol·K.",
+      "knowledgeNote": "Both laws demand kelvin — Celsius breaks the proportionality (no true zero)."
+    },
+    {
+      "question": "State Graham's law of diffusion. Hydrogen diffuses 4 times faster than an unknown gas under identical conditions. Find the unknown gas's molar mass.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Graham's law:** diffusion rate ∝ 1/√(density) at fixed T and P.\n\nr(H₂)/r(X) = √(Mₓ/M_H₂) → 4 = √(Mₓ/2) → Mₓ = 16 × 2 = **32 g/mol** (oxygen).",
+      "knowledgeNote": "Effusion through a pinhole obeys the same law — Graham covered both with one apparatus."
+    },
+    {
+      "question": "State Dalton's law of partial pressures. Why is aqueous tension subtracted when a gas is collected over water?",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Dalton's law:** total pressure = sum of partial pressures, P = p₁ + p₂ + ….\n\nGas collected over water mixes with water vapour, so P_measured = P_dry_gas + aqueous tension. The vapour's contribution (**aqueous tension**, tabulated per temperature) must be subtracted to get the dry gas pressure.",
+      "knowledgeNote": "Aqueous tension rises steeply with T — the correction matters most for warm-water collections."
+    },
+    {
+      "question": "Write the postulates of the kinetic molecular theory of gases.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "(1) Countless tiny molecules in ceaseless random motion. (2) Negligible molecular volume vs container. (3) No intermolecular forces except at collision. (4) Perfectly elastic collisions. (5) Average KE ∝ absolute temperature.",
+      "knowledgeNote": "Postulate (5), ⟨KE⟩ = (3/2)kT, is the bridge from mechanics to thermometry."
+    },
+    {
+      "question": "Under what conditions does a real gas deviate most from ideal behaviour? Explain using van der Waals' equation.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Deviations grow at **high pressure** (finite molecular volume matters) and **low temperature** (intermolecular attractions matter).\n\nvan der Waals corrects both: (P + a(n/V)²)(V − nb) = nRT — the a-term adds lost pressure from attractions, the b-term subtracts excluded volume.",
+      "knowledgeNote": "Easily liquefied gases (NH₃, CO₂ — large a) deviate most; H₂ and He least."
+    },
+    {
+      "question": "2 L of a gas at 3 atm pressure expands isothermally. What volume will it occupy at 1 atm?",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Boyle's law (T const): P₁V₁ = P₂V₂ → V₂ = (3 × 2)/1 = **6 L**.",
+      "knowledgeNote": "Isothermal P–V is a rectangular hyperbola — doubling volume halves pressure, always."
+    }
+  ]
+}

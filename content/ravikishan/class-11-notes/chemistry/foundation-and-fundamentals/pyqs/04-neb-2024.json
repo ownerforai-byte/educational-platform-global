@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Chemistry — Foundation and Fundamentals — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "foundation-and-fundamentals",
+  "topicSlug": "foundation-and-fundamentals-pyq-2024",
+  "topicTitle": "NEB Class 11 Chemistry — Foundation and Fundamentals — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State Dalton's atomic theory. Write two of its drawbacks.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Dalton (1808):** (1) matter consists of indivisible atoms; (2) atoms of an element are identical; (3) compounds form by simple whole-number union of atoms; (4) atoms are indestructible in reactions.\n\n**Drawbacks:** atoms ARE divisible (electrons, protons, neutrons); atoms of an element differ (isotopes); the theory cannot explain bonding or spectra.",
+      "knowledgeNote": "Dalton explained the laws of chemical combination — the next questions' topic — but isotopes and subatomic particles broke his indivisibility."
+    },
+    {
+      "question": "State the law of multiple proportions and illustrate it with carbon oxides.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "When two elements form more than one compound, the masses of one element combining with a fixed mass of the other are in a small whole-number ratio.\n\nCO: 12 g C joins 16 g O. CO₂: 12 g C joins 32 g O. Oxygen masses 16:32 = **1:2**.",
+      "knowledgeNote": "Definite proportions (one compound, fixed ratio) vs multiple proportions (several compounds, ratio of ratios) — NEB asks the pair together."
+    },
+    {
+      "question": "State Avogadro's law and write two of its applications.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Avogadro's law:** equal volumes of gases at the same T and P contain equal numbers of molecules.\n\n**Applications:** (1) proves diatomic nature of H₂, O₂, N₂ (Gay-Lussac volumes need it); (2) fixes atomic weights via vapour density (M = 2 × VD); (3) 1 mole of any gas occupies 22.4 L at STP.",
+      "knowledgeNote": "Avogadro reconciled Gay-Lussac's volume ratios with Dalton — H₂ + Cl₂ → 2HCl needs diatomic molecules."
+    },
+    {
+      "question": "Calculate the number of atoms in 5.6 g of iron. (Fe = 56)",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Moles = 5.6/56 = 0.1 mol.\n\nAtoms = 0.1 × 6.022 × 10²³ = **6.022 × 10²² atoms**.",
+      "knowledgeNote": "Grams → moles (÷ atomic mass) → particles (× Avogadro) is the universal two-step chain."
+    },
+    {
+      "question": "Calculate the percentage of nitrogen in urea, CO(NH₂)₂. (C = 12, O = 16, N = 14, H = 1)",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Molar mass = 12 + 16 + 2(14 + 2) = 60 g/mol. Nitrogen mass = 28 g.\n\n%N = (28/60) × 100 ≈ **46.7%** — the highest N-content of common fertilisers, which is why urea dominates the market.",
+      "knowledgeNote": "% composition = (total mass of element / molar mass) × 100 — the same step that starts every empirical-formula problem."
+    },
+    {
+      "question": "State Gay-Lussac's law of gaseous volumes with one example.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "When gases react at the same T and P, their volumes are in a small whole-number ratio.\n\n**Example:** 1 vol H₂ + 1 vol Cl₂ → 2 vol HCl (1:1:2).",
+      "knowledgeNote": "Volume ratios mirror molecule ratios — the law only works for gases, never for solids or liquids."
+    }
+  ]
+}

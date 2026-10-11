@@ -26453,6 +26453,67 @@
       }
     ]
   },
+  "class-11-notes/chemistry/chemical-bonding/pyqs/02-neb-2024.json": {
+    "title": "NEB Class 11 Chemistry — Chemical Bonding — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "chemistry",
+    "unitSlug": "chemical-bonding",
+    "topicSlug": "chemical-bonding-pyq-2024",
+    "topicTitle": "NEB Class 11 Chemistry — Chemical Bonding — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "Write the Lewis dot structure of CO₂. What is its molecular shape?",
+        "marks": 3,
+        "year": 2022,
+        "source": "NEB Model",
+        "solution": "C (4 valence e⁻) shares double bonds with each O (6 valence e⁻): O=C=O, every atom octet-complete.\n\nVSEPR: 2 bond pairs, 0 lone pairs on carbon → **linear**, 180°.",
+        "knowledgeNote": "Linear symmetry cancels the two C=O dipoles — CO₂ is non-polar despite polar bonds."
+      },
+      {
+        "question": "Draw the Lewis structures of H₂O and NH₃ and predict their shapes using VSEPR theory.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**H₂O:** O has 2 bond pairs + 2 lone pairs → **bent (V-shaped)**, 104.5°.\n\n**NH₃:** N has 3 bond pairs + 1 lone pair → **trigonal pyramidal**, 107°.\n\nLone pairs repel more strongly than bond pairs, squeezing both angles below the tetrahedral 109.5°.",
+        "knowledgeNote": "Lone-pair repulsion order lp–lp > lp–bp > bp–bp explains the whole 109.5° → 107° → 104.5° series."
+      },
+      {
+        "question": "Distinguish between ionic and covalent bonds with one example of each.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Ionic:** complete electron transfer, oppositely charged ions in a lattice — e.g. NaCl. High mp/bp, conducts when molten, brittle.\n\n**Covalent:** mutual sharing of electron pairs — e.g. H₂, CH₄. Low mp/bp, poor conductors, often gases/liquids.",
+        "knowledgeNote": "Large electronegativity difference (ΔEN > 1.7) favours ionic; small ΔEN favours covalent — a continuum, not a wall."
+      },
+      {
+        "question": "State Fajan's rules. How do they explain the covalent character of LiCl vs NaCl?",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Fajan's rules:** covalent character grows with (1) small, highly charged cations, (2) large, easily polarised anions.\n\nLi⁺ is far smaller than Na⁺, so it distorts Cl⁻'s electron cloud more — **LiCl is markedly more covalent** (more soluble in organic solvents, lower melting) than NaCl.",
+        "knowledgeNote": "Polarising power ∝ charge/(radius)² — the same rule orders BeCl₂ > MgCl₂ > CaCl₂ in covalency."
+      },
+      {
+        "question": "What is hydrogen bonding? Explain why water has an unusually high boiling point.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Hydrogen bonding** is the strong dipole attraction between H bound to N/O/F and a lone pair on a neighbouring N/O/F.\n\nEach H₂O molecule H-bonds to four neighbours, forming an extensive network. Breaking this network needs extra energy — so water boils at 100°C while similar-mass H₂S (no H-bonding) boils at −60°C.",
+        "knowledgeNote": "H-bonding also explains ice floating (open tetrahedral network) and proteins' shapes — one concept, many NEB questions."
+      },
+      {
+        "question": "Why is NH₃ pyramidal while CH₄ is tetrahedral, though both have four electron pairs?",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Both have tetrahedral electron geometry, but **shape counts only atom positions**.\n\nCH₄ has 4 bond pairs → tetrahedral molecule. NH₃ has 3 bond pairs + 1 lone pair → the lone pair occupies one tetrahedral corner unseen, leaving a **pyramid** of three H atoms.",
+        "knowledgeNote": "Electron geometry vs molecular shape: identical pairs, different visible skeletons — the VSEPR distinction NEB tests most."
+      }
+    ]
+  },
   "class-11-notes/chemistry/chemical-equilibrium/concepts/01-physical-and-chemical-equilibrium-dynamic-nature-of-chemical-equilibrium.json": {
     "title": "Physical and chemical equilibrium; dynamic nature of chem…",
     "unitSlug": "chemical-equilibrium",
@@ -29029,6 +29090,67 @@
       }
     ]
   },
+  "class-11-notes/chemistry/classification-of-elements/pyqs/02-neb-2024.json": {
+    "title": "NEB Class 11 Chemistry — Classification of Elements — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "chemistry",
+    "unitSlug": "classification-of-elements",
+    "topicSlug": "classification-of-elements-pyq-2024",
+    "topicTitle": "NEB Class 11 Chemistry — Classification of Elements — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "What is the modern periodic law? Explain how it improved on Mendeleev's periodic law.",
+        "marks": 3,
+        "year": 2022,
+        "source": "NEB Model",
+        "solution": "**Modern periodic law:** properties of elements are periodic functions of their **atomic numbers**.\n\nIt fixed Mendeleev (atomic-mass) defects: (1) anomalous pairs (Ar/K, Co/Ni) fall in correct order; (2) no unexplained gaps remain — all 118 elements placed; (3) noble gases get a natural group without disturbing the table.",
+        "knowledgeNote": "Moseley (1913) and X-ray spectra moved the table from mass to atomic number."
+      },
+      {
+        "question": "What are s-, p-, d-, and f-blocks? Give one element belonging to each.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Blocks named by the subshell receiving the last electron: **s-block** — Na; **p-block** — Cl; **d-block** (transition metals) — Fe; **f-block** (inner transition) — U.\n\ns + p = representative elements; d = transition; f = lanthanides/actinides.",
+        "knowledgeNote": "Helium (1s²) sits with the p-block noble gases by behaviour, not by configuration — the famous exception."
+      },
+      {
+        "question": "Define ionisation energy. Explain why nitrogen has a higher first ionisation energy than oxygen.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Ionisation energy** is the energy needed to remove the outermost electron from a gaseous atom.\n\nN (1s² 2s² 2p³) has a **half-filled p subshell** — extra stable. Removing its electron breaks that stability, costing more energy than removing one from O (2p⁴), where repulsion between paired electrons actually helps ejection.",
+        "knowledgeNote": "Half-filled/full subshells (N, P, Be, Mg, noble gases) always spike above the trend — the standard 'anomaly' question."
+      },
+      {
+        "question": "Define electronegativity. How does it vary across a period and down a group? Which element is the most electronegative?",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Electronegativity** is an atom's pull on shared bond electrons.\n\nIt **increases left→right** (rising nuclear charge) and **decreases top→bottom** (larger, shielded atoms). **Fluorine (4.0)** is the maximum.",
+        "knowledgeNote": "Noble gases have no EN values (no bonds to pull in) — a tidy one-mark follow-up."
+      },
+      {
+        "question": "How does atomic radius vary across a period and down a group? Explain the trend in each case.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Across a period it shrinks:** added protons pull the same shell tighter.\n\n**Down a group it grows:** each new principal shell outweighs the extra nuclear charge.",
+        "knowledgeNote": "Cations < parent atom < anions — size order within one element's ions."
+      },
+      {
+        "question": "What is diagonal relationship? Give one example with cause.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Diagonally adjacent elements (e.g. **Li and Mg**) resemble each other more than their own group members.\n\nCause: similar charge density (charge/radius) — moving right shrinks size while moving down grows it, roughly cancelling along the diagonal. Both form nitrides, sparingly soluble carbonates, and similar organometallics.",
+        "knowledgeNote": "Li–Mg, Be–Al, B–Si are the three classic diagonal pairs."
+      }
+    ]
+  },
   "class-11-notes/chemistry/foundation-and-fundamentals/concepts/01-general-introduction-and-importance-of-chemistry.json": {
     "title": "General Introduction and Importance of Chemistry",
     "unitSlug": "foundation-and-fundamentals",
@@ -29611,6 +29733,67 @@
         "source": "NEB Past",
         "solution": "**Mean value**\n\n$$\\bar{x} = \\frac{x_1 + x_2}{2} = \\frac{10.4 + 10.6}{2} = \\frac{21.0}{2} = 10.5 \\ \\text{cm}$$\n\n**Absolute error**\n\n$$\\Delta x = \\frac{x_{max} - x_{min}}{2} = \\frac{10.6 - 10.4}{2} = 0.1 \\ \\text{cm}$$\n\n**Relative (percentage) error**\n\n$$\\text{Percentage error} = \\frac{0.1}{10.5} \\times 100 \\approx 0.95\\%$$\n\nThe result is best written as **10.5 ± 0.1 cm**. Since the two readings differ by only 0.2 cm (less than 2%), the measurements are reasonably precise.",
         "knowledgeNote": "The mean is the most probable value, while the absolute error is half the spread between the maximum and minimum readings."
+      }
+    ]
+  },
+  "class-11-notes/chemistry/foundation-and-fundamentals/pyqs/04-neb-2024.json": {
+    "title": "NEB Class 11 Chemistry — Foundation and Fundamentals — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "chemistry",
+    "unitSlug": "foundation-and-fundamentals",
+    "topicSlug": "foundation-and-fundamentals-pyq-2024",
+    "topicTitle": "NEB Class 11 Chemistry — Foundation and Fundamentals — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "State Dalton's atomic theory. Write two of its drawbacks.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Dalton (1808):** (1) matter consists of indivisible atoms; (2) atoms of an element are identical; (3) compounds form by simple whole-number union of atoms; (4) atoms are indestructible in reactions.\n\n**Drawbacks:** atoms ARE divisible (electrons, protons, neutrons); atoms of an element differ (isotopes); the theory cannot explain bonding or spectra.",
+        "knowledgeNote": "Dalton explained the laws of chemical combination — the next questions' topic — but isotopes and subatomic particles broke his indivisibility."
+      },
+      {
+        "question": "State the law of multiple proportions and illustrate it with carbon oxides.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "When two elements form more than one compound, the masses of one element combining with a fixed mass of the other are in a small whole-number ratio.\n\nCO: 12 g C joins 16 g O. CO₂: 12 g C joins 32 g O. Oxygen masses 16:32 = **1:2**.",
+        "knowledgeNote": "Definite proportions (one compound, fixed ratio) vs multiple proportions (several compounds, ratio of ratios) — NEB asks the pair together."
+      },
+      {
+        "question": "State Avogadro's law and write two of its applications.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Avogadro's law:** equal volumes of gases at the same T and P contain equal numbers of molecules.\n\n**Applications:** (1) proves diatomic nature of H₂, O₂, N₂ (Gay-Lussac volumes need it); (2) fixes atomic weights via vapour density (M = 2 × VD); (3) 1 mole of any gas occupies 22.4 L at STP.",
+        "knowledgeNote": "Avogadro reconciled Gay-Lussac's volume ratios with Dalton — H₂ + Cl₂ → 2HCl needs diatomic molecules."
+      },
+      {
+        "question": "Calculate the number of atoms in 5.6 g of iron. (Fe = 56)",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Moles = 5.6/56 = 0.1 mol.\n\nAtoms = 0.1 × 6.022 × 10²³ = **6.022 × 10²² atoms**.",
+        "knowledgeNote": "Grams → moles (÷ atomic mass) → particles (× Avogadro) is the universal two-step chain."
+      },
+      {
+        "question": "Calculate the percentage of nitrogen in urea, CO(NH₂)₂. (C = 12, O = 16, N = 14, H = 1)",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Molar mass = 12 + 16 + 2(14 + 2) = 60 g/mol. Nitrogen mass = 28 g.\n\n%N = (28/60) × 100 ≈ **46.7%** — the highest N-content of common fertilisers, which is why urea dominates the market.",
+        "knowledgeNote": "% composition = (total mass of element / molar mass) × 100 — the same step that starts every empirical-formula problem."
+      },
+      {
+        "question": "State Gay-Lussac's law of gaseous volumes with one example.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "When gases react at the same T and P, their volumes are in a small whole-number ratio.\n\n**Example:** 1 vol H₂ + 1 vol Cl₂ → 2 vol HCl (1:1:2).",
+        "knowledgeNote": "Volume ratios mirror molecule ratios — the law only works for gases, never for solids or liquids."
       }
     ]
   },
@@ -32191,6 +32374,67 @@
       }
     ]
   },
+  "class-11-notes/chemistry/oxidation-and-reduction/pyqs/04-neb-2024.json": {
+    "title": "NEB Class 11 Chemistry — Oxidation and Reduction — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "chemistry",
+    "unitSlug": "oxidation-and-reduction",
+    "topicSlug": "oxidation-and-reduction-pyq-2024",
+    "topicTitle": "NEB Class 11 Chemistry — Oxidation and Reduction — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "State the rules for assigning oxidation numbers. Find the oxidation number of Mn in KMnO₄ and Cr in K₂Cr₂O₇.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Key rules: free elements 0; Group 1 +1, Group 2 +2; O usually −2 (peroxides −1); H usually +1 (hydrides −1); F always −1; the sum equals the species' charge.\n\nKMnO₄: +1 + Mn + 4(−2) = 0 → Mn = **+7**.\n\nK₂Cr₂O₇: 2(+1) + 2Cr + 7(−2) = 0 → Cr = **+6**.",
+        "knowledgeNote": "Maximum oxidation states (+7 Mn, +6 Cr, +6 S) mark the strongest oxidising agents of each family."
+      },
+      {
+        "question": "Balance the redox reaction by the ion-electron method: MnO₄⁻ + Fe²⁺ → Mn²⁺ + Fe³⁺ (acidic medium).",
+        "marks": 4,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Reduction: MnO₄⁻ + 8H⁺ + 5e⁻ → Mn²⁺ + 4H₂O.\n\nOxidation: Fe²⁺ → Fe³⁺ + e⁻ (×5).\n\nAdding: **MnO₄⁻ + 5Fe²⁺ + 8H⁺ → Mn²⁺ + 5Fe³⁺ + 4H₂O**.\n\nCheck: charge −1+10+8 = +17 each side; atoms: Mn 1, Fe 5, H 8, O 4 ✓.",
+        "knowledgeNote": "Balance atoms (O via H₂O, H via H⁺) first, charges with electrons last — the order that prevents most errors."
+      },
+      {
+        "question": "Define oxidising and reducing agents. Identify each in: Zn + CuSO₄ → ZnSO₄ + Cu.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Oxidising agent** gains electrons (is itself reduced); **reducing agent** loses electrons (is itself oxidised).\n\nZn → Zn²⁺ + 2e⁻ (oxidised) so **Zn is the reductant**; Cu²⁺ + 2e⁻ → Cu (reduced) so **CuSO₄ (Cu²⁺) is the oxidant**.",
+        "knowledgeNote": "'OIL RIG' — Oxidation Is Loss, Reduction Is Gain (of electrons)."
+      },
+      {
+        "question": "What is the electrochemical series? Explain why zinc displaces copper from copper sulphate solution.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "The **electrochemical series** orders electrodes by standard reduction potential — higher (more positive) means easier to reduce.\n\nZn²⁺/Zn (−0.76 V) sits below Cu²⁺/Cu (+0.34 V): zinc is the stronger reductant, so Zn reduces Cu²⁺ to copper metal spontaneously.",
+        "knowledgeNote": "Any metal displaces metals below it in the series — the single rule behind all displacement predictions."
+      },
+      {
+        "question": "Hydrogen peroxide can act both as an oxidising and a reducing agent. Explain with one reaction of each type.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "O in H₂O₂ is at −1, midway between O₂ (0) and H₂O (−2), so it can move either way.\n\n**Oxidant:** H₂O₂ + 2KI + H₂SO₄ → I₂ + K₂SO₄ + 2H₂O (O: −1 → −2).\n\n**Reductant:** 5H₂O₂ + 2KMnO₄ + 3H₂SO₄ → K₂SO₄ + 2MnSO₄ + 8H₂O + 5O₂ (O: −1 → 0).",
+        "knowledgeNote": "Intermediate oxidation states (−1 O, +4 S, +3 N) are the dual-role suspects — check them first."
+      },
+      {
+        "question": "Why is fluorine the strongest oxidising agent among the halogens?",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Oxidising strength follows electron gain enthalpy and small size: F₂ has the highest electronegativity (4.0), the most exothermic electron affinity for its size, and a weak F–F bond that breaks easily.\n\nSo F₂ oxidises even water (to O₂) and displaces every other halogen — strength falls F₂ > Cl₂ > Br₂ > I₂.",
+        "knowledgeNote": "Standard potentials confirm it: F₂/F⁻ (+2.87 V) tops the whole electrochemical series."
+      }
+    ]
+  },
   "class-11-notes/chemistry/states-of-matter/concepts/01-gas-laws.json": {
     "title": "Gas Laws: Boyle's, Charles', Avogadro's, Combined Gas Equation, Dalton's Law of Partial Pressure and Graham's Law of Diffusion",
     "unitSlug": "states-of-matter",
@@ -33445,6 +33689,67 @@
       }
     ]
   },
+  "class-11-notes/chemistry/states-of-matter/pyqs/03-neb-2024.json": {
+    "title": "NEB Class 11 Chemistry — States of Matter — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "chemistry",
+    "unitSlug": "states-of-matter",
+    "topicSlug": "states-of-matter-pyq-2024",
+    "topicTitle": "NEB Class 11 Chemistry — States of Matter — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "State Boyle's law and Charles's law. Derive the ideal gas equation from them.",
+        "marks": 3,
+        "year": 2023,
+        "source": "NEB Model",
+        "solution": "**Boyle (T const):** P ∝ 1/V. **Charles (P const):** V ∝ T.\n\nCombined: V ∝ T/P → PV/T = constant. For n moles the constant is nR: **PV = nRT**, with R = 8.314 J/mol·K.",
+        "knowledgeNote": "Both laws demand kelvin — Celsius breaks the proportionality (no true zero)."
+      },
+      {
+        "question": "State Graham's law of diffusion. Hydrogen diffuses 4 times faster than an unknown gas under identical conditions. Find the unknown gas's molar mass.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Graham's law:** diffusion rate ∝ 1/√(density) at fixed T and P.\n\nr(H₂)/r(X) = √(Mₓ/M_H₂) → 4 = √(Mₓ/2) → Mₓ = 16 × 2 = **32 g/mol** (oxygen).",
+        "knowledgeNote": "Effusion through a pinhole obeys the same law — Graham covered both with one apparatus."
+      },
+      {
+        "question": "State Dalton's law of partial pressures. Why is aqueous tension subtracted when a gas is collected over water?",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Dalton's law:** total pressure = sum of partial pressures, P = p₁ + p₂ + ….\n\nGas collected over water mixes with water vapour, so P_measured = P_dry_gas + aqueous tension. The vapour's contribution (**aqueous tension**, tabulated per temperature) must be subtracted to get the dry gas pressure.",
+        "knowledgeNote": "Aqueous tension rises steeply with T — the correction matters most for warm-water collections."
+      },
+      {
+        "question": "Write the postulates of the kinetic molecular theory of gases.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "(1) Countless tiny molecules in ceaseless random motion. (2) Negligible molecular volume vs container. (3) No intermolecular forces except at collision. (4) Perfectly elastic collisions. (5) Average KE ∝ absolute temperature.",
+        "knowledgeNote": "Postulate (5), ⟨KE⟩ = (3/2)kT, is the bridge from mechanics to thermometry."
+      },
+      {
+        "question": "Under what conditions does a real gas deviate most from ideal behaviour? Explain using van der Waals' equation.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Deviations grow at **high pressure** (finite molecular volume matters) and **low temperature** (intermolecular attractions matter).\n\nvan der Waals corrects both: (P + a(n/V)²)(V − nb) = nRT — the a-term adds lost pressure from attractions, the b-term subtracts excluded volume.",
+        "knowledgeNote": "Easily liquefied gases (NH₃, CO₂ — large a) deviate most; H₂ and He least."
+      },
+      {
+        "question": "2 L of a gas at 3 atm pressure expands isothermally. What volume will it occupy at 1 atm?",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Boyle's law (T const): P₁V₁ = P₂V₂ → V₂ = (3 × 2)/1 = **6 L**.",
+        "knowledgeNote": "Isothermal P–V is a rectangular hyperbola — doubling volume halves pressure, always."
+      }
+    ]
+  },
   "class-11-notes/chemistry/stoichiometry/concepts/01-dalton-atomic-theory.json": {
     "title": "Dalton's Atomic Theory and its Postulates",
     "unitSlug": "stoichiometry",
@@ -34357,6 +34662,67 @@
         "source": "NEB Past",
         "solution": "Assume 100 g of the compound, so that the masses are 40.0 g C, 6.7 g H and 53.3 g O.\n\n**Step 1 — Convert to moles**\n\n$$n(\\text{C}) = \\frac{40.0}{12} = 3.33 \\ \\text{mol}, \\qquad n(\\text{H}) = \\frac{6.7}{1} = 6.7 \\ \\text{mol}, \\qquad n(\\text{O}) = \\frac{53.3}{16} = 3.33 \\ \\text{mol}$$\n\n**Step 2 — Divide by the smallest value (3.33)**\n\n$$\\text{C} : \\text{H} : \\text{O} = \\frac{3.33}{3.33} : \\frac{6.7}{3.33} : \\frac{3.33}{3.33} = 1 : 2.01 : 1$$\n\n**Step 3 — Round to the nearest whole numbers**\n\n$$\\text{C} : \\text{H} : \\text{O} = 1 : 2 : 1$$\n\nSince the ratio 1 : 2 : 1 is already the simplest whole-number ratio, the empirical formula is\n\n$$\\boxed{\\text{CH}_2\\text{O}}$$\n\nNote that 6.7/3.33 = 2.01 ≈ 2, so no further multiplication is needed.",
         "knowledgeNote": "An empirical formula is obtained by dividing elemental mole ratios by the smallest of them and simplifying."
+      }
+    ]
+  },
+  "class-11-notes/chemistry/stoichiometry/pyqs/04-neb-2024.json": {
+    "title": "NEB Class 11 Chemistry — Stoichiometry — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "chemistry",
+    "unitSlug": "stoichiometry",
+    "topicSlug": "stoichiometry-pyq-2024",
+    "topicTitle": "NEB Class 11 Chemistry — Stoichiometry — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "What is the mole concept? Calculate the number of molecules in 36 g of water.",
+        "marks": 3,
+        "year": 2023,
+        "source": "NEB Past",
+        "solution": "**Mole:** the amount containing as many particles as atoms in exactly 12 g of carbon-12 — one mole = 6.022 × 10²³ particles.\n\nMoles of H₂O = 36/18 = 2 mol. Molecules = 2 × 6.022 × 10²³ = **1.204 × 10²⁴**.",
+        "knowledgeNote": "M(H₂O) = 18 g/mol; at STP, 1 mol of any gas occupies 22.4 L."
+      },
+      {
+        "question": "Calculate the empirical formula of a compound containing 40% carbon, 6.67% hydrogen, and 53.33% oxygen by mass.",
+        "marks": 3,
+        "year": 2022,
+        "source": "NEB Past",
+        "solution": "Per 100 g: C = 40/12 = 3.33 mol; H = 6.67/1 = 6.67 mol; O = 53.33/16 = 3.33 mol.\n\nDivide by 3.33: C:H:O = 1:2:1 → empirical formula **CH₂O**.",
+        "knowledgeNote": "Percent → mass (per 100 g) → moles (÷ atomic mass) → simplest ratio — the fixed four-step ritual."
+      },
+      {
+        "question": "10 g of H₂ reacts with 64 g of O₂ to form water. Which is the limiting reagent, and what is the maximum mass of water formed?",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "2H₂ + O₂ → 2H₂O. Moles: H₂ = 10/2 = 5 mol; O₂ = 64/32 = 2 mol.\n\n2 mol O₂ needs 4 mol H₂ (5 available) — **O₂ is limiting**.\n\nWater formed = 4 mol × 18 = **72 g**.",
+        "knowledgeNote": "Limiting reagent = the reactant exhausted first — always compare mole ratios, never gram amounts."
+      },
+      {
+        "question": "4 g of NaOH is dissolved in water to make 250 mL of solution. Calculate its molarity. (NaOH = 40)",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Moles = 4/40 = 0.1 mol. Volume = 0.25 L.\n\nM = 0.1/0.25 = **0.4 mol/L**.",
+        "knowledgeNote": "Molarity is moles per LITRE of solution — convert mL to L before dividing."
+      },
+      {
+        "question": "A compound has empirical formula CH₂O and molar mass 180 g/mol. Find its molecular formula.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Empirical mass = 12 + 2 + 16 = 30. n = 180/30 = 6.\n\nMolecular formula = 6 × CH₂O = **C₆H₁₂O₆** (glucose).",
+        "knowledgeNote": "Molecular = n × empirical, where n = molar mass / empirical mass — always an integer."
+      },
+      {
+        "question": "In an experiment, the theoretical yield is 50 g but only 40 g of product is obtained. Calculate the percentage yield.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "% yield = (actual/theoretical) × 100 = (40/50) × 100 = **80%**.\n\nLosses come from side reactions, incomplete reaction, and handling/spillage.",
+        "knowledgeNote": "% yield never exceeds 100 — an answer above it means the product is wet or impure."
       }
     ]
   },
