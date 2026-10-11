@@ -1,3 +1,4 @@
+import { existsSync } from "node:fs";
 import { readFile, access } from "node:fs/promises";
 import { join, resolve, dirname } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -19,12 +20,31 @@ import { fileURLToPath } from "node:url";
 const __filename = fileURLToPath(import.meta.url);
 
 /** Candidate `public/data` roots, module-relative first. */
-const DATA_ROOTS: string[] = [
+const DATA_ROOT_CANDIDATES: readonly string[] = [
   resolve(dirname(__filename), "..", "public", "data"),
   join(process.cwd(), "public", "data"),
   join(process.cwd(), "frontend", "public", "data"),
   resolve(process.cwd(), "..", "public", "data"),
 ];
+
+/**
+ * The candidates above, deduplicated and narrowed to the ones that exist here.
+ *
+ * Probing them blind meant every missing candidate threw `ENOENT`, which the
+ * empty `catch {}` then swallowed — so checking one topic printed
+ * `no such file or directory, access '…\frontend\public\data'` for each
+ * candidate that isn't on this machine's layout. Filtering once at module load
+ * keeps the happy path to a single `access` call and lets the per-file catch
+ * below mean something again. The first two candidates are the same path when
+ * Next runs with `frontend/` as cwd, hence the Set.
+ */
+const DATA_ROOTS: readonly string[] = (() => {
+  const deduped = Array.from(new Set(DATA_ROOT_CANDIDATES));
+  const existing = deduped.filter((root) => existsSync(root));
+  // Unusual cwd (some bundlers) can leave nothing behind; keep every candidate
+  // so reads still probe rather than silently reading nothing.
+  return existing.length > 0 ? existing : deduped;
+})();
 
 export interface TopicManifestItem {
   unitSlug: string;

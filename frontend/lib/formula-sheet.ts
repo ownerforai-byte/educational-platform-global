@@ -1,3 +1,4 @@
+import { existsSync } from "node:fs";
 import { readFile } from "node:fs/promises";
 import { dirname, join, resolve } from "node:path";
 import { fileURLToPath } from "node:url";
@@ -29,12 +30,34 @@ import { isGeneratorJunkLine } from "./content/generator-junk";
 const __filename = fileURLToPath(import.meta.url);
 
 /** Candidate `public/data` roots, module-relative first (see topic-content-index). */
-const DATA_ROOTS: string[] = [
+const DATA_ROOT_CANDIDATES: readonly string[] = [
   resolve(dirname(__filename), "..", "public", "data"),
   join(process.cwd(), "public", "data"),
   join(process.cwd(), "frontend", "public", "data"),
   resolve(process.cwd(), "..", "public", "data"),
 ];
+
+/**
+ * The candidates above, deduplicated and narrowed to the ones that actually
+ * exist here.
+ *
+ * They used to be probed blind: every missing candidate threw `ENOENT` and the
+ * empty `catch {}` swallowed it, so a normal lookup spent up to four failed
+ * syscalls and still printed its frames to the console —
+ *   `no such file or directory, access '…\frontend\frontend\public\data'`
+ *   `no such file or directory, open '…\rn\public\data'`
+ * Checking once at module load removes that noise and leaves the per-file catch
+ * to report the problems it exists for (an unparseable manifest, a genuinely
+ * absent note). Note the first two candidates collapse to the same path when
+ * Next runs with `frontend/` as cwd, hence the Set.
+ */
+const DATA_ROOTS: readonly string[] = (() => {
+  const deduped = Array.from(new Set(DATA_ROOT_CANDIDATES));
+  const existing = deduped.filter((root) => existsSync(root));
+  // Unusual cwd (some bundlers) can leave nothing behind; keep every candidate
+  // so reads still probe rather than silently reading nothing.
+  return existing.length > 0 ? existing : deduped;
+})();
 
 export type FormulaSubjectSlug = "physics" | "mathematics" | "chemistry";
 
