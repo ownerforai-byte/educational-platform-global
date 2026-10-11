@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Physics — Refraction at Plane Surfaces — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "refraction-at-plane-surfaces",
+  "topicSlug": "refraction-at-plane-surfaces-pyq-2024",
+  "topicTitle": "NEB Class 11 Physics — Refraction at Plane Surfaces — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State Snell's law of refraction. If the refractive index of glass is 1.5, find the speed of light in glass.",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Snell's law:** n₁ sin i = n₂ sin r — the ratio sin i/sin r is constant for a pair of media.\n\nn = c/v → v = c/n = (3 × 10⁸)/1.5 = **2 × 10⁸ m/s**.",
+      "knowledgeNote": "Light bends toward the normal entering a denser medium — the single sentence behind every refraction diagram."
+    },
+    {
+      "question": "What is total internal reflection? State two conditions for it to occur.",
+      "marks": 2,
+      "year": 2022,
+      "source": "NEB Model",
+      "solution": "**Total internal reflection** is the complete return of light into the denser medium when it meets a rarer boundary beyond the critical angle.\n\n(1) Light must travel from **denser to rarer** medium. (2) Angle of incidence must **exceed the critical angle** (sin C = 1/n).",
+      "knowledgeNote": "Fibre optics, sparkling diamonds, and mirages are all TIR applications — name one for the extra mark."
+    },
+    {
+      "question": "A fish is 1.2 m below the water surface (μ = 4/3). At what apparent depth does it appear to an observer above the surface?",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Apparent depth = real depth / μ = 1.2/(4/3) = 1.2 × 3/4 = **0.9 m**.\n\nThe fish appears raised — which is why spear-fishing aims below the seen position.",
+      "knowledgeNote": "Apparent depth = real/μ (viewed from rarer); apparent height = real × μ (viewed from denser) — keep the direction straight."
+    },
+    {
+      "question": "Find the critical angle for a glass–air boundary if the refractive index of glass is 1.5.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "sin C = 1/n = 1/1.5 = 0.6667 → C = **41.8°**.\n\nAny ray inside glass striking the boundary above 41.8° is totally reflected.",
+      "knowledgeNote": "Denser medium → smaller critical angle: diamond (n = 2.42) has C ≈ 24°, hence its fire."
+    },
+    {
+      "question": "On what factors does the lateral shift of a ray through a glass slab depend?",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Lateral shift x = t·sin(i − r)/cos r increases with: (1) **thickness** of the slab, (2) **angle of incidence**, and (3) **refractive index** of the glass.\n\nThe emergent ray stays parallel to the incident ray — only displaced sideways.",
+      "knowledgeNote": "Zero thickness or normal incidence → zero shift; the parallel-emergent-ray result is the exam diagram."
+    },
+    {
+      "question": "What are totally reflecting prisms? Write two of their uses.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Right-angled isosceles glass prisms that turn light by 90° or 180° through **total internal reflection** instead of silvered mirrors — no absorption losses.\n\n**Uses:** (1) periscopes (two such prisms); (2) binoculars (folding a long path into a short body); (3) SLR camera viewfinders.",
+      "knowledgeNote": "TIR prisms beat mirrors on efficiency — that is why quality optics uses glass, not silver."
+    }
+  ]
+}

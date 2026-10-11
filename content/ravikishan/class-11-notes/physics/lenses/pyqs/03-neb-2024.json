@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Physics — Lenses — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "lenses",
+  "topicSlug": "lenses-pyq-2024",
+  "topicTitle": "NEB Class 11 Physics — Lenses — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State the lens maker's formula and derive it for a thin convex lens.",
+      "marks": 5,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "**Lens maker's formula:** 1/f = (n − 1)(1/R₁ − 1/R₂).\n\nRefraction at the first surface forms an intermediate image; that acts as the object for the second surface. Applying n₁/v − n₂/u = (n₁ − n₂)/R at each surface with the thin-lens sign convention and adding eliminates the intermediate distance, leaving **1/f = (n − 1)(1/R₁ − 1/R₂)**.",
+      "knowledgeNote": "For equi-convex (R₂ = −R₁ = −R): 1/f = 2(n − 1)/R — the one-line special case NEB loves."
+    },
+    {
+      "question": "An object is placed 30 cm from a convex lens of focal length 20 cm. Find the image distance and magnification.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "1/v − 1/u = 1/f → 1/v = 1/20 + 1/30 = 5/60 → v = **60 cm** (real, on the far side).\n\nm = v/u = 60/30 = **−2**: inverted and twice as large. (Beyond 2F gives a diminished image; between F and 2F, magnified.)",
+      "knowledgeNote": "Lens m = v/u carries no minus unlike mirrors — sign slips here flip 'erect' and 'inverted'."
+    },
+    {
+      "question": "A convex lens has surfaces of radii 20 cm and −20 cm and n = 1.5. Calculate its focal length using the lens maker's formula.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "1/f = (1.5 − 1)(1/20 − 1/(−20)) = 0.5 × (0.05 + 0.05) = 0.05.\n\nf = **20 cm**.",
+      "knowledgeNote": "R₂ is negative for double-convex in Cartesian convention — the sign is where this numerical is won or lost."
+    },
+    {
+      "question": "Two thin lenses of powers +5 D and −2 D are placed in contact. Find the power and focal length of the combination.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Powers add in contact: P = +5 + (−2) = **+3 D** (net converging).\n\nf = 100/P = 100/3 ≈ **33.3 cm**.",
+      "knowledgeNote": "Spectacle prescriptions are just this arithmetic — plus for hypermetropia, minus for myopia."
+    },
+    {
+      "question": "What are myopia and hypermetropia? Which lenses correct them?",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Myopia (near-sight):** eyeball too long — distant images focus in front of the retina. Corrected with a **concave (diverging)** lens.\n\n**Hypermetropia (far-sight):** eyeball too short — near images focus behind the retina. Corrected with a **convex (converging)** lens.",
+      "knowledgeNote": "'Minus for myopia, plus for hypermetropia' — the alliteration is the memory hook."
+    },
+    {
+      "question": "What is a simple microscope? Write its magnifying power when the image forms at the near point.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "A simple microscope is a single short-focus convex lens used as a magnifier, with the object just inside F.\n\nWith the image at the near point D: m = **1 + D/f** (≈ D/f for relaxed-eye viewing at infinity).",
+      "knowledgeNote": "Shorter f → stronger loupe — watchmakers use ~2 cm lenses for ~13× magnification."
+    }
+  ]
+}

@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Physics — Reflection at Curved Mirror — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "reflection-at-curved-mirror",
+  "topicSlug": "reflection-at-curved-mirror-pyq-2024",
+  "topicTitle": "NEB Class 11 Physics — Reflection at Curved Mirror — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Derive the mirror formula 1/v + 1/u = 1/f for a concave mirror, stating the sign convention used.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Cartesian sign convention: distances measured in front of the mirror are negative; f of a concave mirror is negative.\n\nFrom similar triangles in the ray diagram (object AB, image A′B′, centre of curvature C, focus F): AB/A′B′ = u/(u − R) = (u − f)/(v − f)... solving the geometry gives 1/v + 1/u = **2/R = 1/f**.\n\n(With the older 'all distances positive' convention the same algebra yields 1/f = 1/v + 1/u.)",
+      "knowledgeNote": "Mirror formula and lens formula differ by a sign (1/v + 1/u = 1/f vs 1/v − 1/u = 1/f) — the commonest formula swap in NEB."
+    },
+    {
+      "question": "Derive the relation f = R/2 for a spherical mirror.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "A ray parallel to the axis at small height h strikes a mirror of radius R. The normal at that point is the radius, making angle θ ≈ h/R with the axis.\n\nBy reflection the ray turns through 2θ and crosses the axis at F where h/F-distance... paraxial geometry gives the crossing at R/2 from the pole. Hence **f = R/2**.\n\n(Valid only for paraxial rays — wide beams suffer spherical aberration.)",
+      "knowledgeNote": "f = R/2 is why a 30 cm radius mirror focuses parallel sunlight 15 cm in front of it."
+    },
+    {
+      "question": "An object is placed 10 cm in front of a concave mirror of focal length 15 cm. Find the image position and magnification. State the image nature.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Cartesian: f = −15 cm, u = −10 cm.\n\n1/v = 1/f − 1/u = −1/15 + 1/10 = 1/30 → v = **+30 cm** (behind the mirror → virtual).\n\nm = −v/u = −30/(−10) = **+3**: erect and 3× magnified.",
+      "knowledgeNote": "Object inside F always gives a virtual, erect, magnified image — the shaving-mirror case."
+    },
+    {
+      "question": "Define linear magnification for a mirror and write its relation with image and object distances.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Linear magnification** m = height of image / height of object = h′/h.\n\nFrom similar triangles, m = **−v/u** (Cartesian). |m| > 1 means enlarged; negative m means inverted (real image).",
+      "knowledgeNote": "m = −v/u for mirrors vs m = v/u for lenses — the minus is the tell-tale of reflection."
+    },
+    {
+      "question": "Write two uses each of concave and convex mirrors.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Concave:** (1) shaving/make-up mirrors (erect magnified virtual image); (2) headlight and torch reflectors (parallel beam); (3) solar concentrators.\n\n**Convex:** (1) vehicle rear-view mirrors (wide, erect, diminished field); (2) blind-corner and shop security mirrors.",
+      "knowledgeNote": "'Always virtual, erect, diminished' is the convex-mirror fingerprint — an NEB one-mark gift."
+    },
+    {
+      "question": "Why is a concave mirror used in a car headlight? Explain with a ray diagram description.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "The bulb is placed at the **focus** of the concave reflector. Rays from the focus strike the mirror and reflect **parallel to the principal axis** (reversibility of the parallel-to-focus ray).\n\nThe result is a powerful directed beam instead of light scattering in all directions.",
+      "knowledgeNote": "Searchlights and satellite dishes exploit the same focus ↔ parallel-beam reversibility."
+    }
+  ]
+}

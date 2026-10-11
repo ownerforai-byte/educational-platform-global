@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Physics — Dispersion — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "dispersion",
+  "topicSlug": "dispersion-pyq-2024",
+  "topicTitle": "NEB Class 11 Physics — Dispersion — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "What is dispersion of light? Explain its cause with reference to refractive index.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Dispersion** is the splitting of white light into its colours by a prism.\n\nCause: refractive index depends on wavelength (Cauchy: n = a + b/λ²), so violet (short λ) is slowed and deviated most while red deviates least — the beam fans out into a spectrum.",
+      "knowledgeNote": "Dispersion needs a wavelength-dependent n; a mirror reflects all colours equally, so spectra never form there."
+    },
+    {
+      "question": "Define angular dispersion and dispersive power of a prism. Write the formula for dispersive power.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Angular dispersion** (δv − δr) is the angle between the extreme violet and red rays.\n\n**Dispersive power** ω = (δv − δr)/δy = **(nv − nr)/(ny − 1)** — the spread per unit mean deviation, a pure number characterising the glass.",
+      "knowledgeNote": "Flint glass (ω ≈ 0.05) spreads far more than crown (ω ≈ 0.02) — material choice, not prism size, sets ω."
+    },
+    {
+      "question": "For a glass, nv = 1.53, nr = 1.51, and ny = 1.52. Calculate its dispersive power.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "ω = (nv − nr)/(ny − 1) = (1.53 − 1.51)/(1.52 − 1) = 0.02/0.52 ≈ **0.0385**.",
+      "knowledgeNote": "ω has no units — if your answer carries any, the formula went wrong."
+    },
+    {
+      "question": "Explain the formation of the primary rainbow.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Sunlight enters a raindrop (refraction → dispersion), reflects once inside (TIR), and refracts out again. Each colour leaves at its own ~42° cone angle.\n\nViolet bends most (inner edge), red least (outer edge) — the sky wears a 42° circular spectrum centred on the antisolar point.",
+      "knowledgeNote": "Secondary rainbow: two internal reflections, reversed colours, wider 51° cone — fainter because each reflection loses light."
+    },
+    {
+      "question": "What is an achromatic combination of prisms? Write its condition.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Two prisms of different glasses that cancel each other's dispersion while keeping a net deviation — white light stays white.\n\nCondition: equal and opposite angular dispersions, (δv − δr)₁ = (δv − δr)₂, i.e. **ω₁δy₁ = ω₂δy₂** with the prisms oppositely oriented.",
+      "knowledgeNote": "Camera lenses stack crown (converging) and flint (diverging) elements on exactly this condition — achromatic doublets."
+    },
+    {
+      "question": "Why does red light deviate least and violet most through a prism?",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Deviation grows with refractive index, and n is largest for the shortest wavelength (violet interacts most strongly with the glass's electrons).\n\nSo violet is slowed and bent most, red least — VIBGYOR order from most to least deviated.",
+      "knowledgeNote": "n_red < n_yellow < n_violet is the three-inequality chain behind every dispersion numerical."
+    }
+  ]
+}

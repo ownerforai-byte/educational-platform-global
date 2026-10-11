@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Physics — Optics — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "optics",
+  "topicSlug": "optics-pyq-2024",
+  "topicTitle": "NEB Class 11 Physics — Optics — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State Huygens' principle of wave propagation and use it to explain refraction of a plane wavefront.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Huygens' principle:** every point of a wavefront is a source of secondary wavelets; the new wavefront is their forward envelope.\n\nWhen a plane wavefront enters a denser medium obliquely, the wavelets travel slower (v = c/n), so the envelope tilts toward the normal — deriving Snell's law geometrically with no rays assumed.",
+      "knowledgeNote": "Huygens explains reflection and refraction but not polarisation — that needed the transverse-wave idea."
+    },
+    {
+      "question": "What are the conditions for sustained interference? Derive the fringe width in Young's double-slit experiment.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Conditions:** coherent sources (constant phase difference), same frequency/amplitude, narrow slits close together, small screen distance ratio.\n\nPath difference at height y: Δ = yd/D. Bright fringe when Δ = nλ, so positions y = nλD/d and spacing **β = λD/d**.",
+      "knowledgeNote": "β ∝ λD/d — wider slits crowd fringes together; red light spreads them wider than violet."
+    },
+    {
+      "question": "In a double-slit setup, λ = 600 nm, slit separation 1 mm, screen distance 2 m. Calculate the fringe width.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "β = λD/d = (600 × 10⁻⁹ × 2)/(1 × 10⁻³) = 1.2 × 10⁻³ m = **1.2 mm**.",
+      "knowledgeNote": "Millimetre-scale fringes from nanometre light — interference magnifies the wavelength into visibility."
+    },
+    {
+      "question": "Distinguish between interference and diffraction.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Interference** is the superposition of waves from two separate coherent sources — fringes are equally spaced and equally bright.\n\n**Diffraction** is the bending of a single wavefront round an obstacle/aperture — the central maximum is brightest and twice as wide, with fading secondary maxima.",
+      "knowledgeNote": "Diffraction modulates interference: the double-slit pattern is interference fringes inside a diffraction envelope."
+    },
+    {
+      "question": "What is polarisation of light? State Brewster's law.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Polarisation** confines light's vibrations to a single plane — possible only because light is transverse.\n\n**Brewster's law:** at the polarising angle ip, reflected light is fully polarised with **tan ip = n** (reflected and refracted rays perpendicular). For glass, ip ≈ 57°.",
+      "knowledgeNote": "Polaroid sunglasses kill horizontally-polarised glare by Brewster's principle — that is why wet roads stop dazzling."
+    },
+    {
+      "question": "Why does the sky appear blue and sunsets red?",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Rayleigh scattering ∝ 1/λ⁴: air molecules scatter short blue light ~16× more than red. Overhead, scattered blue reaches us from all directions — a blue sky.\n\nAt sunset light crosses more atmosphere; the blue is scattered away en route, leaving the transmitted reds and oranges.",
+      "knowledgeNote": "1/λ⁴ also explains why danger signals are red — least scattered, longest reach through fog."
+    }
+  ]
+}

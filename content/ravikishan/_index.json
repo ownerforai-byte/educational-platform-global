@@ -44457,6 +44457,67 @@
       }
     ]
   },
+  "class-11-notes/physics/dispersion/pyqs/05-neb-2024.json": {
+    "title": "NEB Class 11 Physics — Dispersion — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "physics",
+    "unitSlug": "dispersion",
+    "topicSlug": "dispersion-pyq-2024",
+    "topicTitle": "NEB Class 11 Physics — Dispersion — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "What is dispersion of light? Explain its cause with reference to refractive index.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Dispersion** is the splitting of white light into its colours by a prism.\n\nCause: refractive index depends on wavelength (Cauchy: n = a + b/λ²), so violet (short λ) is slowed and deviated most while red deviates least — the beam fans out into a spectrum.",
+        "knowledgeNote": "Dispersion needs a wavelength-dependent n; a mirror reflects all colours equally, so spectra never form there."
+      },
+      {
+        "question": "Define angular dispersion and dispersive power of a prism. Write the formula for dispersive power.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Angular dispersion** (δv − δr) is the angle between the extreme violet and red rays.\n\n**Dispersive power** ω = (δv − δr)/δy = **(nv − nr)/(ny − 1)** — the spread per unit mean deviation, a pure number characterising the glass.",
+        "knowledgeNote": "Flint glass (ω ≈ 0.05) spreads far more than crown (ω ≈ 0.02) — material choice, not prism size, sets ω."
+      },
+      {
+        "question": "For a glass, nv = 1.53, nr = 1.51, and ny = 1.52. Calculate its dispersive power.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "ω = (nv − nr)/(ny − 1) = (1.53 − 1.51)/(1.52 − 1) = 0.02/0.52 ≈ **0.0385**.",
+        "knowledgeNote": "ω has no units — if your answer carries any, the formula went wrong."
+      },
+      {
+        "question": "Explain the formation of the primary rainbow.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Sunlight enters a raindrop (refraction → dispersion), reflects once inside (TIR), and refracts out again. Each colour leaves at its own ~42° cone angle.\n\nViolet bends most (inner edge), red least (outer edge) — the sky wears a 42° circular spectrum centred on the antisolar point.",
+        "knowledgeNote": "Secondary rainbow: two internal reflections, reversed colours, wider 51° cone — fainter because each reflection loses light."
+      },
+      {
+        "question": "What is an achromatic combination of prisms? Write its condition.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Two prisms of different glasses that cancel each other's dispersion while keeping a net deviation — white light stays white.\n\nCondition: equal and opposite angular dispersions, (δv − δr)₁ = (δv − δr)₂, i.e. **ω₁δy₁ = ω₂δy₂** with the prisms oppositely oriented.",
+        "knowledgeNote": "Camera lenses stack crown (converging) and flint (diverging) elements on exactly this condition — achromatic doublets."
+      },
+      {
+        "question": "Why does red light deviate least and violet most through a prism?",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Deviation grows with refractive index, and n is largest for the shortest wavelength (violet interacts most strongly with the glass's electrons).\n\nSo violet is slowed and bent most, red least — VIBGYOR order from most to least deviated.",
+        "knowledgeNote": "n_red < n_yellow < n_violet is the three-inequality chain behind every dispersion numerical."
+      }
+    ]
+  },
   "class-11-notes/physics/dynamics/concepts/01-linear-momentum-and-impulse.json": {
     "title": "Linear Momentum and Impulse",
     "unitSlug": "dynamics",
@@ -54175,6 +54236,67 @@
       }
     ]
   },
+  "class-11-notes/physics/lenses/pyqs/03-neb-2024.json": {
+    "title": "NEB Class 11 Physics — Lenses — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "physics",
+    "unitSlug": "lenses",
+    "topicSlug": "lenses-pyq-2024",
+    "topicTitle": "NEB Class 11 Physics — Lenses — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "State the lens maker's formula and derive it for a thin convex lens.",
+        "marks": 5,
+        "year": 2022,
+        "source": "NEB Past",
+        "solution": "**Lens maker's formula:** 1/f = (n − 1)(1/R₁ − 1/R₂).\n\nRefraction at the first surface forms an intermediate image; that acts as the object for the second surface. Applying n₁/v − n₂/u = (n₁ − n₂)/R at each surface with the thin-lens sign convention and adding eliminates the intermediate distance, leaving **1/f = (n − 1)(1/R₁ − 1/R₂)**.",
+        "knowledgeNote": "For equi-convex (R₂ = −R₁ = −R): 1/f = 2(n − 1)/R — the one-line special case NEB loves."
+      },
+      {
+        "question": "An object is placed 30 cm from a convex lens of focal length 20 cm. Find the image distance and magnification.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "1/v − 1/u = 1/f → 1/v = 1/20 + 1/30 = 5/60 → v = **60 cm** (real, on the far side).\n\nm = v/u = 60/30 = **−2**: inverted and twice as large. (Beyond 2F gives a diminished image; between F and 2F, magnified.)",
+        "knowledgeNote": "Lens m = v/u carries no minus unlike mirrors — sign slips here flip 'erect' and 'inverted'."
+      },
+      {
+        "question": "A convex lens has surfaces of radii 20 cm and −20 cm and n = 1.5. Calculate its focal length using the lens maker's formula.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "1/f = (1.5 − 1)(1/20 − 1/(−20)) = 0.5 × (0.05 + 0.05) = 0.05.\n\nf = **20 cm**.",
+        "knowledgeNote": "R₂ is negative for double-convex in Cartesian convention — the sign is where this numerical is won or lost."
+      },
+      {
+        "question": "Two thin lenses of powers +5 D and −2 D are placed in contact. Find the power and focal length of the combination.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Powers add in contact: P = +5 + (−2) = **+3 D** (net converging).\n\nf = 100/P = 100/3 ≈ **33.3 cm**.",
+        "knowledgeNote": "Spectacle prescriptions are just this arithmetic — plus for hypermetropia, minus for myopia."
+      },
+      {
+        "question": "What are myopia and hypermetropia? Which lenses correct them?",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Myopia (near-sight):** eyeball too long — distant images focus in front of the retina. Corrected with a **concave (diverging)** lens.\n\n**Hypermetropia (far-sight):** eyeball too short — near images focus behind the retina. Corrected with a **convex (converging)** lens.",
+        "knowledgeNote": "'Minus for myopia, plus for hypermetropia' — the alliteration is the memory hook."
+      },
+      {
+        "question": "What is a simple microscope? Write its magnifying power when the image forms at the near point.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "A simple microscope is a single short-focus convex lens used as a magnifier, with the object just inside F.\n\nWith the image at the near point D: m = **1 + D/f** (≈ D/f for relaxed-eye viewing at infinity).",
+        "knowledgeNote": "Shorter f → stronger loupe — watchmakers use ~2 cm lenses for ~13× magnification."
+      }
+    ]
+  },
   "class-11-notes/physics/mechanics/pyqs/01-neb-2023.json": {
     "title": "NEB Class 11 Physics — Mechanics — 2023",
     "year": 2023,
@@ -55387,6 +55509,67 @@
         "source": "NEB Model",
         "solution": "**Definition:** The optical power of a lens is defined as the reciprocal of its focal length when the focal length is expressed in **metres**.\n$$\\boxed{P = \\frac{1}{f\\ (\\text{in m)}}\\qquad \\text{or} \\qquad P = \\frac{1000}{f\\ (\\text{in cm})}$$\n\n**SI unit:** $\\text{m}^{-1}$, also called the **dioptre (D)**.\n\n**Sign:** Power is positive for a convex (converging) lens and negative for a concave (diverging) lens.\n\n**Example:** A convex lens of focal length 50 cm has $P = \\dfrac{1}{0.5} = +2\\ \\text{D}$. A lens of power $-4\\ \\text{D}$ has $f = -0.25\\ \\text{m} = -25\\ \\text{cm}$, i.e. a concave lens.",
         "knowledgeNote": "Optical power is the reciprocal of focal length in metres, measured in dioptre or per metre."
+      }
+    ]
+  },
+  "class-11-notes/physics/optics/pyqs/05-neb-2024.json": {
+    "title": "NEB Class 11 Physics — Optics — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "physics",
+    "unitSlug": "optics",
+    "topicSlug": "optics-pyq-2024",
+    "topicTitle": "NEB Class 11 Physics — Optics — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "State Huygens' principle of wave propagation and use it to explain refraction of a plane wavefront.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Huygens' principle:** every point of a wavefront is a source of secondary wavelets; the new wavefront is their forward envelope.\n\nWhen a plane wavefront enters a denser medium obliquely, the wavelets travel slower (v = c/n), so the envelope tilts toward the normal — deriving Snell's law geometrically with no rays assumed.",
+        "knowledgeNote": "Huygens explains reflection and refraction but not polarisation — that needed the transverse-wave idea."
+      },
+      {
+        "question": "What are the conditions for sustained interference? Derive the fringe width in Young's double-slit experiment.",
+        "marks": 5,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Conditions:** coherent sources (constant phase difference), same frequency/amplitude, narrow slits close together, small screen distance ratio.\n\nPath difference at height y: Δ = yd/D. Bright fringe when Δ = nλ, so positions y = nλD/d and spacing **β = λD/d**.",
+        "knowledgeNote": "β ∝ λD/d — wider slits crowd fringes together; red light spreads them wider than violet."
+      },
+      {
+        "question": "In a double-slit setup, λ = 600 nm, slit separation 1 mm, screen distance 2 m. Calculate the fringe width.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "β = λD/d = (600 × 10⁻⁹ × 2)/(1 × 10⁻³) = 1.2 × 10⁻³ m = **1.2 mm**.",
+        "knowledgeNote": "Millimetre-scale fringes from nanometre light — interference magnifies the wavelength into visibility."
+      },
+      {
+        "question": "Distinguish between interference and diffraction.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Interference** is the superposition of waves from two separate coherent sources — fringes are equally spaced and equally bright.\n\n**Diffraction** is the bending of a single wavefront round an obstacle/aperture — the central maximum is brightest and twice as wide, with fading secondary maxima.",
+        "knowledgeNote": "Diffraction modulates interference: the double-slit pattern is interference fringes inside a diffraction envelope."
+      },
+      {
+        "question": "What is polarisation of light? State Brewster's law.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Polarisation** confines light's vibrations to a single plane — possible only because light is transverse.\n\n**Brewster's law:** at the polarising angle ip, reflected light is fully polarised with **tan ip = n** (reflected and refracted rays perpendicular). For glass, ip ≈ 57°.",
+        "knowledgeNote": "Polaroid sunglasses kill horizontally-polarised glare by Brewster's principle — that is why wet roads stop dazzling."
+      },
+      {
+        "question": "Why does the sky appear blue and sunsets red?",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Rayleigh scattering ∝ 1/λ⁴: air molecules scatter short blue light ~16× more than red. Overhead, scattered blue reaches us from all directions — a blue sky.\n\nAt sunset light crosses more atmosphere; the blue is scattered away en route, leaving the transmitted reds and oranges.",
+        "knowledgeNote": "1/λ⁴ also explains why danger signals are red — least scattered, longest reach through fog."
       }
     ]
   },
@@ -58891,6 +59074,67 @@
       }
     ]
   },
+  "class-11-notes/physics/reflection-at-curved-mirror/pyqs/05-neb-2024.json": {
+    "title": "NEB Class 11 Physics — Reflection at Curved Mirror — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "physics",
+    "unitSlug": "reflection-at-curved-mirror",
+    "topicSlug": "reflection-at-curved-mirror-pyq-2024",
+    "topicTitle": "NEB Class 11 Physics — Reflection at Curved Mirror — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "Derive the mirror formula 1/v + 1/u = 1/f for a concave mirror, stating the sign convention used.",
+        "marks": 5,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Cartesian sign convention: distances measured in front of the mirror are negative; f of a concave mirror is negative.\n\nFrom similar triangles in the ray diagram (object AB, image A′B′, centre of curvature C, focus F): AB/A′B′ = u/(u − R) = (u − f)/(v − f)... solving the geometry gives 1/v + 1/u = **2/R = 1/f**.\n\n(With the older 'all distances positive' convention the same algebra yields 1/f = 1/v + 1/u.)",
+        "knowledgeNote": "Mirror formula and lens formula differ by a sign (1/v + 1/u = 1/f vs 1/v − 1/u = 1/f) — the commonest formula swap in NEB."
+      },
+      {
+        "question": "Derive the relation f = R/2 for a spherical mirror.",
+        "marks": 4,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "A ray parallel to the axis at small height h strikes a mirror of radius R. The normal at that point is the radius, making angle θ ≈ h/R with the axis.\n\nBy reflection the ray turns through 2θ and crosses the axis at F where h/F-distance... paraxial geometry gives the crossing at R/2 from the pole. Hence **f = R/2**.\n\n(Valid only for paraxial rays — wide beams suffer spherical aberration.)",
+        "knowledgeNote": "f = R/2 is why a 30 cm radius mirror focuses parallel sunlight 15 cm in front of it."
+      },
+      {
+        "question": "An object is placed 10 cm in front of a concave mirror of focal length 15 cm. Find the image position and magnification. State the image nature.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Cartesian: f = −15 cm, u = −10 cm.\n\n1/v = 1/f − 1/u = −1/15 + 1/10 = 1/30 → v = **+30 cm** (behind the mirror → virtual).\n\nm = −v/u = −30/(−10) = **+3**: erect and 3× magnified.",
+        "knowledgeNote": "Object inside F always gives a virtual, erect, magnified image — the shaving-mirror case."
+      },
+      {
+        "question": "Define linear magnification for a mirror and write its relation with image and object distances.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Linear magnification** m = height of image / height of object = h′/h.\n\nFrom similar triangles, m = **−v/u** (Cartesian). |m| > 1 means enlarged; negative m means inverted (real image).",
+        "knowledgeNote": "m = −v/u for mirrors vs m = v/u for lenses — the minus is the tell-tale of reflection."
+      },
+      {
+        "question": "Write two uses each of concave and convex mirrors.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Concave:** (1) shaving/make-up mirrors (erect magnified virtual image); (2) headlight and torch reflectors (parallel beam); (3) solar concentrators.\n\n**Convex:** (1) vehicle rear-view mirrors (wide, erect, diminished field); (2) blind-corner and shop security mirrors.",
+        "knowledgeNote": "'Always virtual, erect, diminished' is the convex-mirror fingerprint — an NEB one-mark gift."
+      },
+      {
+        "question": "Why is a concave mirror used in a car headlight? Explain with a ray diagram description.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "The bulb is placed at the **focus** of the concave reflector. Rays from the focus strike the mirror and reflect **parallel to the principal axis** (reversibility of the parallel-to-focus ray).\n\nThe result is a powerful directed beam instead of light scattering in all directions.",
+        "knowledgeNote": "Searchlights and satellite dishes exploit the same focus ↔ parallel-beam reversibility."
+      }
+    ]
+  },
   "class-11-notes/physics/refraction-at-plane-surfaces/concepts/02-lateral-shift.json": {
     "title": "Lateral Shift",
     "unitSlug": "refraction-at-plane-surfaces",
@@ -59320,6 +59564,67 @@
       }
     ]
   },
+  "class-11-notes/physics/refraction-at-plane-surfaces/pyqs/03-neb-2024.json": {
+    "title": "NEB Class 11 Physics — Refraction at Plane Surfaces — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "physics",
+    "unitSlug": "refraction-at-plane-surfaces",
+    "topicSlug": "refraction-at-plane-surfaces-pyq-2024",
+    "topicTitle": "NEB Class 11 Physics — Refraction at Plane Surfaces — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "State Snell's law of refraction. If the refractive index of glass is 1.5, find the speed of light in glass.",
+        "marks": 3,
+        "year": 2023,
+        "source": "NEB Model",
+        "solution": "**Snell's law:** n₁ sin i = n₂ sin r — the ratio sin i/sin r is constant for a pair of media.\n\nn = c/v → v = c/n = (3 × 10⁸)/1.5 = **2 × 10⁸ m/s**.",
+        "knowledgeNote": "Light bends toward the normal entering a denser medium — the single sentence behind every refraction diagram."
+      },
+      {
+        "question": "What is total internal reflection? State two conditions for it to occur.",
+        "marks": 2,
+        "year": 2022,
+        "source": "NEB Model",
+        "solution": "**Total internal reflection** is the complete return of light into the denser medium when it meets a rarer boundary beyond the critical angle.\n\n(1) Light must travel from **denser to rarer** medium. (2) Angle of incidence must **exceed the critical angle** (sin C = 1/n).",
+        "knowledgeNote": "Fibre optics, sparkling diamonds, and mirages are all TIR applications — name one for the extra mark."
+      },
+      {
+        "question": "A fish is 1.2 m below the water surface (μ = 4/3). At what apparent depth does it appear to an observer above the surface?",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Apparent depth = real depth / μ = 1.2/(4/3) = 1.2 × 3/4 = **0.9 m**.\n\nThe fish appears raised — which is why spear-fishing aims below the seen position.",
+        "knowledgeNote": "Apparent depth = real/μ (viewed from rarer); apparent height = real × μ (viewed from denser) — keep the direction straight."
+      },
+      {
+        "question": "Find the critical angle for a glass–air boundary if the refractive index of glass is 1.5.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "sin C = 1/n = 1/1.5 = 0.6667 → C = **41.8°**.\n\nAny ray inside glass striking the boundary above 41.8° is totally reflected.",
+        "knowledgeNote": "Denser medium → smaller critical angle: diamond (n = 2.42) has C ≈ 24°, hence its fire."
+      },
+      {
+        "question": "On what factors does the lateral shift of a ray through a glass slab depend?",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Lateral shift x = t·sin(i − r)/cos r increases with: (1) **thickness** of the slab, (2) **angle of incidence**, and (3) **refractive index** of the glass.\n\nThe emergent ray stays parallel to the incident ray — only displaced sideways.",
+        "knowledgeNote": "Zero thickness or normal incidence → zero shift; the parallel-emergent-ray result is the exam diagram."
+      },
+      {
+        "question": "What are totally reflecting prisms? Write two of their uses.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Right-angled isosceles glass prisms that turn light by 90° or 180° through **total internal reflection** instead of silvered mirrors — no absorption losses.\n\n**Uses:** (1) periscopes (two such prisms); (2) binoculars (folding a long path into a short body); (3) SLR camera viewfinders.",
+        "knowledgeNote": "TIR prisms beat mirrors on efficiency — that is why quality optics uses glass, not silver."
+      }
+    ]
+  },
   "class-11-notes/physics/refraction-through-prisms/concepts/01-minimum-deviation.json": {
     "title": "Minimum Deviation Condition",
     "unitSlug": "refraction-through-prisms",
@@ -59624,6 +59929,67 @@
         "source": "NEB Past",
         "solution": "**Definition:** Minimum deviation is the **smallest angle of deviation** produced by a prism for a given pair of prism material and incident light, obtained when the ray passes symmetrically through the prism ($i = e$).\n\n**Derivation:**\nLet the ray travel through the two faces of the prism with internal angles $r_1$ and $r_2$ and internal deviations $\\delta_1$ and $\\delta_2$.\n$$\\delta_1 = i - r_1, \\qquad \\delta_2 = e - r_2$$\n$$\\delta = i + e - (r_1 + r_2) = i + e - A$$\n\n**Step 1 — The path inside the prism is the base of an isosceles triangle,** because the angle between the ray and the base is $90^\\circ - r_1$ and also $90^\\circ - r_2$.\n\n**Step 2 — The deviation is minimum when the ray is symmetric,** i.e. $i = e$ and hence $r_1 = r_2$.\n\n**Step 3 — Therefore:**\n$$r_1 = r_2 = \\frac{r_1 + r_2}{2} = \\frac{A}{2}$$\nand\n$$\\boxed{i = e = \\frac{A + \\delta_{min}}{2}, \\qquad \\mu = \\frac{\\sin\\left(\\frac{A + \\delta_{min}}{2}\\right)}{\\sin\\left(\\frac{A}{2}\\right)}}$$",
         "knowledgeNote": "At minimum deviation the internal ray is parallel to the base, so r1 equals r2 equals A over 2."
+      }
+    ]
+  },
+  "class-11-notes/physics/refraction-through-prisms/pyqs/05-neb-2024.json": {
+    "title": "NEB Class 11 Physics — Refraction Through Prisms — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "physics",
+    "unitSlug": "refraction-through-prisms",
+    "topicSlug": "refraction-through-prisms-pyq-2024",
+    "topicTitle": "NEB Class 11 Physics — Refraction Through Prisms — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "Derive the relation δ = i + e − A for refraction through a prism.",
+        "marks": 4,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "At the first face the ray deviates by (i − r₁); at the second by (e − r₂). Total deviation δ = (i − r₁) + (e − r₂) = (i + e) − (r₁ + r₂).\n\nFrom the quadrilateral geometry inside the prism, r₁ + r₂ = A (the prism angle). Hence **δ = i + e − A**.",
+        "knowledgeNote": "At minimum deviation the ray passes symmetrically: i = e and r₁ = r₂ = A/2."
+      },
+      {
+        "question": "Derive the expression for the refractive index of a prism in terms of the angle of minimum deviation.",
+        "marks": 5,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "At minimum deviation δm: i = e and r₁ = r₂ = r = A/2.\n\nSnell at the first face: n = sin i / sin r. From δm = 2i − A → i = (A + δm)/2.\n\nTherefore **n = sin((A + δm)/2) / sin(A/2)** — the prism formula, used in spectrometers to measure n.",
+        "knowledgeNote": "This is the standard spectrometer experiment: measure A and δm, compute n — know it as a procedure, not just algebra."
+      },
+      {
+        "question": "A prism of angle 60° has refractive index 1.5. Calculate its angle of minimum deviation.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "n = sin((A + δm)/2)/sin(A/2) → sin((60 + δm)/2) = 1.5 × sin 30° = 0.75.\n\n(60 + δm)/2 = 48.6° → 60 + δm = 97.2° → δm ≈ **37.2°**.",
+        "knowledgeNote": "δm rises with both A and n — flint glass deviates more than crown for the same prism angle."
+      },
+      {
+        "question": "Draw the i–δ curve for a prism and explain why there is only one angle of minimum deviation.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "δ falls steeply as i grows, bottoms out at δm, then rises slowly — a U-shaped curve.\n\nThere is a single minimum because δ(i) is symmetric about the symmetric-ray path (i = e); moving i either way from that point increases δ — the curve's unique turning point.",
+        "knowledgeNote": "Near δm the deviation barely changes with i — that stationary reading is why spectrometers lock onto it easily."
+      },
+      {
+        "question": "Show that for a small-angled prism, the deviation is δ = (n − 1)A.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "For small A at near-normal incidence, Snell's law linearises: i ≈ nr₁ and e ≈ nr₂.\n\nδ = (i − r₁) + (e − r₂) = (n − 1)(r₁ + r₂) = **(n − 1)A**.",
+        "knowledgeNote": "Thin-prism δ is independent of i — every ray through it deviates by the same fixed amount."
+      },
+      {
+        "question": "What is angle of minimum deviation? Write two factors affecting it.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Minimum deviation δm** is the smallest angle by which a prism can turn a ray, reached when the ray passes symmetrically.\n\nIt increases with (1) the **prism angle A** and (2) the **refractive index** of the material (and falls for longer wavelengths — red deviates least).",
+        "knowledgeNote": "δm increasing toward violet is exactly what spreads white light into a spectrum."
       }
     ]
   },

@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Physics — Refraction Through Prisms — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "refraction-through-prisms",
+  "topicSlug": "refraction-through-prisms-pyq-2024",
+  "topicTitle": "NEB Class 11 Physics — Refraction Through Prisms — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Derive the relation δ = i + e − A for refraction through a prism.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "At the first face the ray deviates by (i − r₁); at the second by (e − r₂). Total deviation δ = (i − r₁) + (e − r₂) = (i + e) − (r₁ + r₂).\n\nFrom the quadrilateral geometry inside the prism, r₁ + r₂ = A (the prism angle). Hence **δ = i + e − A**.",
+      "knowledgeNote": "At minimum deviation the ray passes symmetrically: i = e and r₁ = r₂ = A/2."
+    },
+    {
+      "question": "Derive the expression for the refractive index of a prism in terms of the angle of minimum deviation.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "At minimum deviation δm: i = e and r₁ = r₂ = r = A/2.\n\nSnell at the first face: n = sin i / sin r. From δm = 2i − A → i = (A + δm)/2.\n\nTherefore **n = sin((A + δm)/2) / sin(A/2)** — the prism formula, used in spectrometers to measure n.",
+      "knowledgeNote": "This is the standard spectrometer experiment: measure A and δm, compute n — know it as a procedure, not just algebra."
+    },
+    {
+      "question": "A prism of angle 60° has refractive index 1.5. Calculate its angle of minimum deviation.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "n = sin((A + δm)/2)/sin(A/2) → sin((60 + δm)/2) = 1.5 × sin 30° = 0.75.\n\n(60 + δm)/2 = 48.6° → 60 + δm = 97.2° → δm ≈ **37.2°**.",
+      "knowledgeNote": "δm rises with both A and n — flint glass deviates more than crown for the same prism angle."
+    },
+    {
+      "question": "Draw the i–δ curve for a prism and explain why there is only one angle of minimum deviation.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "δ falls steeply as i grows, bottoms out at δm, then rises slowly — a U-shaped curve.\n\nThere is a single minimum because δ(i) is symmetric about the symmetric-ray path (i = e); moving i either way from that point increases δ — the curve's unique turning point.",
+      "knowledgeNote": "Near δm the deviation barely changes with i — that stationary reading is why spectrometers lock onto it easily."
+    },
+    {
+      "question": "Show that for a small-angled prism, the deviation is δ = (n − 1)A.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "For small A at near-normal incidence, Snell's law linearises: i ≈ nr₁ and e ≈ nr₂.\n\nδ = (i − r₁) + (e − r₂) = (n − 1)(r₁ + r₂) = **(n − 1)A**.",
+      "knowledgeNote": "Thin-prism δ is independent of i — every ray through it deviates by the same fixed amount."
+    },
+    {
+      "question": "What is angle of minimum deviation? Write two factors affecting it.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Minimum deviation δm** is the smallest angle by which a prism can turn a ray, reached when the ray passes symmetrically.\n\nIt increases with (1) the **prism angle A** and (2) the **refractive index** of the material (and falls for longer wavelengths — red deviates least).",
+      "knowledgeNote": "δm increasing toward violet is exactly what spreads white light into a spectrum."
+    }
+  ]
+}
