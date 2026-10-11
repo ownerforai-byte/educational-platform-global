@@ -17,8 +17,14 @@
  *
  * Usage (from the repo root):
  *   node scripts/enrichment/rebuild-legacy-mindmaps.mjs           # rewrite
- *   node scripts/enrichment/rebuild-legacy-mindmaps.mjs --check   # fail if any file is still placeholder/empty
+ *   node scripts/enrichment/rebuild-legacy-mindmaps.mjs --check   # fail if any file is still placeholder/empty (NEVER writes)
  *   node scripts/enrichment/rebuild-legacy-mindmaps.mjs --dry     # report only
+ *
+ * `--check` is read-only on purpose. It used to rewrite the corpus before
+ * judging it, so a run could "pass" by silently replacing 56 authored files
+ * with narrower note-derived trees — and the visuals audit (which runs after
+ * it in CI) would then see the rewritten files. A check that edits what it
+ * checks is not a gate.
  *
  * Deterministic and idempotent: running it twice produces byte-identical files.
  */
@@ -277,7 +283,7 @@ function main() {
       continue;
     }
     if (ok) {
-      if (!DRY) fs.writeFileSync(file, after, "utf8");
+      if (!DRY && !CHECK) fs.writeFileSync(file, after, "utf8");
       rewritten += 1;
     }
   }
@@ -287,7 +293,9 @@ function main() {
   console.log(`had scaffold branches: ${scaffolded}`);
   console.log(`had NO branch points:  ${emptyBranches}`);
   console.log(`already rebuilt:  ${alreadyOk}`);
-  console.log(DRY ? `would rewrite:    ${rewritten}` : `rewritten:        ${rewritten}`);
+  console.log(
+    DRY || CHECK ? `would rewrite:    ${rewritten}` : `rewritten:        ${rewritten}`,
+  );
   console.log(`unbuildable:      ${problems.length}`);
   for (const p of problems) console.log(`   ! ${p}`);
   if (dropped.length) {

@@ -14,7 +14,7 @@ export const metadata: Metadata = {
  */
 export default function NepaliChatPage() {
   return (
-    <div className="mx-auto w-full max-w-5xl px-2 sm:px-4 py-4 sm:py-6">
+    <div className="h-full w-full">
       <TutorConsole initialConsole="nepali" />
     </div>
   );

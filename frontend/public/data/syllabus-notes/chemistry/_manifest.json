@@ -1,13 +1,13 @@
 [
   {
     "unitSlug": "applied-chemistry",
-    "topicSlug": "chemical-industry",
+    "topicSlug": "01-chemical-industry",
     "title": "01 CHEMICAL INDUSTRY",
     "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 2,
     "filename": "01-chemical-industry.json",
-    "tabGroup": "chemical-industry",
+    "tabGroup": "01-chemical-industry",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
@@ -32,7 +32,7 @@
     "duplicateType": 2,
     "filename": "02-benzene.json",
     "tabGroup": "02-benzene",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -467,6 +467,18 @@
     "universalFactsCount": 1
   },
   {
+    "unitSlug": "basic-concept-of-organic-chemistry",
+    "topicSlug": "tetra-covalency-and-catenation-properties-of-carbon-classification-of-organic-compounds",
+    "title": "Tetra-covalency, Catenation and Classification",
+    "noteCount": 4,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "03-tetra-covalency-and-catenation-properties-of-carbon-classification-of-organic-compounds.json",
+    "tabGroup": "03-tetra-covalency-and-catenation-properties-of-carbon-classification-of-organic-compounds",
+    "hasMcqs": true,
+    "universalFactsCount": 0
+  },
+  {
     "unitSlug": "basic-concept-organic",
     "topicSlug": "classification-organic",
     "title": "02 CLASSIFICATION ORGANIC",
@@ -499,7 +511,7 @@
     "duplicateType": 2,
     "filename": "01-bio-inorganic-intro.json",
     "tabGroup": "01-bio-inorganic-intro",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -556,7 +568,7 @@
     "duplicateType": 2,
     "filename": "02-metal-ions-biological-systems.json",
     "tabGroup": "02-metal-ions-biological-systems",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -583,13 +595,25 @@
   },
   {
     "unitSlug": "chemical-bonding",
-    "topicSlug": "hybridization",
+    "topicSlug": "02-vsepr-theory",
+    "title": "02 VSEPR THEORY",
+    "noteCount": 4,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "02-vsepr-theory.json",
+    "tabGroup": "02-vsepr-theory",
+    "hasMcqs": true,
+    "universalFactsCount": 0
+  },
+  {
+    "unitSlug": "chemical-bonding",
+    "topicSlug": "03-hybridization",
     "title": "03 HYBRIDIZATION",
     "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 2,
     "filename": "03-hybridization.json",
-    "tabGroup": "hybridization",
+    "tabGroup": "03-hybridization",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
@@ -618,18 +642,6 @@
     "universalFactsCount": 0
   },
   {
-    "unitSlug": "chemical-bonding",
-    "topicSlug": "vsepr-theory",
-    "title": "02 VSEPR THEORY",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "02-vsepr-theory.json",
-    "tabGroup": "vsepr-theory",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
     "unitSlug": "chemical-bonding-and-shapes-of-molecules",
     "topicSlug": "bond-characteristics-bond-length-ionic-character-dipole-moment",
     "title": "Bond Characteristics — Length, Ionic Character and Dipole Moment",
@@ -650,7 +662,7 @@
     "duplicateType": 2,
     "filename": "03-covalent-bond-and-coordinate-covalent-bond-and-properties-of-covalent-compounds.json",
     "tabGroup": "03-covalent-bond-and-coordinate-covalent-bond-and-properties-of-covalent-compounds",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -673,7 +685,7 @@
     "duplicateType": 2,
     "filename": "07-elementary-idea-of-valence-bond-theory.json",
     "tabGroup": "07-elementary-idea-of-valence-bond-theory",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -685,7 +697,7 @@
     "duplicateType": 2,
     "filename": "08-hybridization-involving-s-and-p-orbitals-only.json",
     "tabGroup": "08-hybridization-involving-s-and-p-orbitals-only",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -697,7 +709,7 @@
     "duplicateType": 2,
     "filename": "02-ionic-bond-and-its-properties.json",
     "tabGroup": "02-ionic-bond-and-its-properties",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -709,7 +721,7 @@
     "duplicateType": 2,
     "filename": "04-lewis-dot-structure-of-some-common-compounds-of-s-and-p-block-elements.json",
     "tabGroup": "04-lewis-dot-structure-of-some-common-compounds-of-s-and-p-block-elements",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -721,7 +733,7 @@
     "duplicateType": 2,
     "filename": "11-metallic-bonding-and-properties-of-metallic-solids.json",
     "tabGroup": "11-metallic-bonding-and-properties-of-metallic-solids",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -733,7 +745,7 @@
     "duplicateType": 2,
     "filename": "05-resonance.json",
     "tabGroup": "05-resonance",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -745,7 +757,7 @@
     "duplicateType": 2,
     "filename": "01-valence-shell-valence-electron-and-octet-theory.json",
     "tabGroup": "01-valence-shell-valence-electron-and-octet-theory",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -757,7 +769,7 @@
     "duplicateType": 2,
     "filename": "10-vander-waal-s-force-and-molecular-solids-hydrogen-bonding-and-its-application.json",
     "tabGroup": "10-vander-waal-s-force-and-molecular-solids-hydrogen-bonding-and-its-application",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -886,7 +898,7 @@
     "duplicateType": 2,
     "filename": "02-alkali-metals.json",
     "tabGroup": "02-alkali-metals",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -898,7 +910,7 @@
     "duplicateType": 2,
     "filename": "04-alkali-metals-general-characteristics.json",
     "tabGroup": "04-alkali-metals-general-characteristics",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -921,7 +933,7 @@
     "duplicateType": 2,
     "filename": "03-alkaline-earth-metals.json",
     "tabGroup": "03-alkaline-earth-metals",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -933,7 +945,7 @@
     "duplicateType": 2,
     "filename": "07-alkaline-earth-metals-general-characteristics.json",
     "tabGroup": "07-alkaline-earth-metals-general-characteristics",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -956,7 +968,7 @@
     "duplicateType": 2,
     "filename": "02-general-principles-of-extraction-of-metals.json",
     "tabGroup": "02-general-principles-of-extraction-of-metals",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -990,7 +1002,7 @@
     "duplicateType": 2,
     "filename": "01-metallurgical-principles.json",
     "tabGroup": "01-metallurgical-principles",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -1024,7 +1036,7 @@
     "duplicateType": 2,
     "filename": "08-alkaline-earth-compounds-detailed.json",
     "tabGroup": "08-molecular-formula-and-uses-of-quick-lime-bleaching-powder-magnesia-plaster-of-paris-and-epsom-salt-solubility-of-hydroxides-carbonates-and-sulphates-of-alkaline-earth-metals-stability-of-carbonate-and-nitrate-of-alkaline-earth-metals",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -1036,7 +1048,7 @@
     "duplicateType": 2,
     "filename": "03-refining-of-metals.json",
     "tabGroup": "03-refining-of-metals",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -1081,7 +1093,7 @@
     "duplicateType": 2,
     "filename": "05-sodium-extraction-from-down-s-process-properties-action-with-oxygen-water-acids-nonmetals-and-ammonia-and-uses.json",
     "tabGroup": "05-sodium-extraction-from-down-s-process-properties-action-with-oxygen-water-acids-nonmetals-and-ammonia-and-uses",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -1104,7 +1116,7 @@
     "duplicateType": 2,
     "filename": "06-sodium-compounds-detailed.json",
     "tabGroup": "06-sodium-hydroxide-properties-precipitation-reaction-and-action-with-carbon-monoxide-and-uses-sodium-carbonate-properties-action-with-co2-so2-water-precipitation-reactions-and-uses",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -1149,7 +1161,7 @@
     "duplicateType": 2,
     "filename": "02-allotropes-of-oxygen-oxides-applications-of-hydrogen-peroxide-medical-and-industrial-application-of-oxygen.json",
     "tabGroup": "02-allotropes-of-oxygen-oxides-applications-of-hydrogen-peroxide-medical-and-industrial-application-of-oxygen",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -1183,7 +1195,7 @@
     "duplicateType": 2,
     "filename": "06-carbon.json",
     "tabGroup": "06-carbon",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -1206,7 +1218,7 @@
     "duplicateType": 2,
     "filename": "07-carbon-allotropes-detailed.json",
     "tabGroup": "07-carbon-allotropes-of-carbon-crystalline-and-amorphous-including-fullerenes-structure-general-properties-and-uses-properties-reducing-action-reaction-with-metals-and-nonmetals-and-uses-of-carbon-monoxide",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -1251,7 +1263,7 @@
     "duplicateType": 2,
     "filename": "05-halogens.json",
     "tabGroup": "05-halogens",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -1296,7 +1308,7 @@
     "duplicateType": 2,
     "filename": "04-nitrogen.json",
     "tabGroup": "04-nitrogen",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -1319,7 +1331,7 @@
     "duplicateType": 2,
     "filename": "05-nitrogen-reason-for-inertness-of-nitrogen-and-active-nitrogen-chemical-properties-of-ammonia-and-its-applications.json",
     "tabGroup": "05-nitrogen-reason-for-inertness-of-nitrogen-and-active-nitrogen-chemical-properties-of-ammonia-and-its-applications",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -1331,7 +1343,7 @@
     "duplicateType": 2,
     "filename": "06-nitrogen-halogen-compounds-detailed.json",
     "tabGroup": "06-oxy-acids-of-nitrogen-chemical-properties-of-nitric-acid-ring-test-for-nitrate-ion-halogens-general-characteristics-comparative-study-on-preparation-chemical-properties-and-uses-of-cl2-br2-i2-test-for-cl2-br2-i2-haloacids",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -1354,7 +1366,7 @@
     "duplicateType": 2,
     "filename": "02-oxygen.json",
     "tabGroup": "02-oxygen",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -1363,9 +1375,10 @@
     "title": "Ozone",
     "noteCount": 4,
     "source": "ravikishan",
-    "duplicateType": 1,
+    "duplicateType": 2,
     "filename": "03-ozone.json",
-    "hasMcqs": false,
+    "tabGroup": "03-ozone",
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -1421,7 +1434,7 @@
     "duplicateType": 2,
     "filename": "08-phosphorus-sulphur-compounds-detailed.json",
     "tabGroup": "08-phosphorus-allotropes-phosphine-preparation-properties-and-uses-sulphur-allotropes-and-uses-hydrogen-sulphide-preparation-properties-and-uses-sulphur-dioxide-properties-and-uses-sulphuric-acid-properties-and-uses",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -1455,7 +1468,7 @@
     "duplicateType": 2,
     "filename": "07-sulphur.json",
     "tabGroup": "07-sulphur",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -1613,7 +1626,7 @@
     "duplicateType": 2,
     "filename": "01-general-introduction-and-importance-of-chemistry.json",
     "tabGroup": "01-general-introduction-and-importance-of-chemistry",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -1647,7 +1660,7 @@
     "duplicateType": 2,
     "filename": "01-introduction-importance-chemistry.json",
     "tabGroup": "01-introduction-importance-chemistry",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -1659,7 +1672,7 @@
     "duplicateType": 2,
     "filename": "03-percentage-composition.json",
     "tabGroup": "03-percentage-composition",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -1727,7 +1740,7 @@
     "duplicateType": 2,
     "filename": "06-inductive-effect-plus-i-and-minus-i-effect.json",
     "tabGroup": "06-inductive-effect-plus-i-and-minus-i-effect",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -1740,6 +1753,18 @@
     "filename": "03-isomerism-in-organic-compounds-definition-and-classification-of-isomerism.json",
     "hasMcqs": true,
     "universalFactsCount": 3
+  },
+  {
+    "unitSlug": "fundamental-principles-of-organic-chemistry",
+    "topicSlug": "isomerism-in-organic-compounds-definition-and-classification-of-isomerism-structural-isomerism-and-its-types",
+    "title": "Isomerism — Classification and Types",
+    "noteCount": 4,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "03-isomerism-in-organic-compounds-definition-and-classification-of-isomerism-structural-isomerism-and-its-types.json",
+    "tabGroup": "03-isomerism-in-organic-compounds-definition-and-classification-of-isomerism-structural-isomerism-and-its-types",
+    "hasMcqs": true,
+    "universalFactsCount": 0
   },
   {
     "unitSlug": "fundamental-principles-of-organic-chemistry",
@@ -1796,7 +1821,7 @@
     "duplicateType": 2,
     "filename": "07-resonance-effect-plus-r-and-minus-r-effect.json",
     "tabGroup": "07-resonance-effect-plus-r-and-minus-r-effect",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -1823,61 +1848,61 @@
   },
   {
     "unitSlug": "fundamental-principles-organic",
-    "topicSlug": "inductive-effect",
-    "title": "04 INDUCTIVE EFFECT",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "04-inductive-effect.json",
-    "tabGroup": "inductive-effect",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "fundamental-principles-organic",
-    "topicSlug": "isomerism",
-    "title": "02 ISOMERISM",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "02-isomerism.json",
-    "tabGroup": "isomerism",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "fundamental-principles-organic",
-    "topicSlug": "iupac-nomenclature",
+    "topicSlug": "01-iupac-nomenclature",
     "title": "01 IUPAC NOMENCLATURE",
     "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 2,
     "filename": "01-iupac-nomenclature.json",
-    "tabGroup": "iupac-nomenclature",
+    "tabGroup": "01-iupac-nomenclature",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
     "unitSlug": "fundamental-principles-organic",
-    "topicSlug": "reaction-mechanism",
+    "topicSlug": "02-isomerism",
+    "title": "02 ISOMERISM",
+    "noteCount": 4,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "02-isomerism.json",
+    "tabGroup": "02-isomerism",
+    "hasMcqs": true,
+    "universalFactsCount": 0
+  },
+  {
+    "unitSlug": "fundamental-principles-organic",
+    "topicSlug": "03-reaction-mechanism",
     "title": "03 REACTION MECHANISM",
     "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 2,
     "filename": "03-reaction-mechanism.json",
-    "tabGroup": "reaction-mechanism",
+    "tabGroup": "03-reaction-mechanism",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
     "unitSlug": "fundamental-principles-organic",
-    "topicSlug": "resonance-effect",
+    "topicSlug": "04-inductive-effect",
+    "title": "04 INDUCTIVE EFFECT",
+    "noteCount": 4,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "04-inductive-effect.json",
+    "tabGroup": "04-inductive-effect",
+    "hasMcqs": true,
+    "universalFactsCount": 0
+  },
+  {
+    "unitSlug": "fundamental-principles-organic",
+    "topicSlug": "05-resonance-effect",
     "title": "05 RESONANCE EFFECT",
     "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 2,
     "filename": "05-resonance-effect.json",
-    "tabGroup": "resonance-effect",
+    "tabGroup": "05-resonance-effect",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
@@ -2066,7 +2091,7 @@
     "duplicateType": 2,
     "filename": "04-hydrocarbons-unsaturation-detailed.json",
     "tabGroup": "04-test-of-unsaturation-and-comparative-study-of-physical-properties-of-alkane-alkene-and-alkyne-kolbe-s-electrolysis-methods-for-the-preparation-of-alkanes-alkenes-and-alkynes",
-    "hasMcqs": false,
+    "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
@@ -2166,42 +2191,42 @@
     "duplicateType": 2,
     "filename": "01-modern-chemical-manufactures.json",
     "tabGroup": "01-modern-chemical-manufactures",
-    "hasMcqs": false,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "modern-manufactures",
-    "topicSlug": "contact-process",
-    "title": "02 CONTACT PROCESS",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "02-contact-process.json",
-    "tabGroup": "contact-process",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
     "unitSlug": "modern-manufactures",
-    "topicSlug": "hber-process",
+    "topicSlug": "01-hber-process",
     "title": "01 HBER PROCESS",
     "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 2,
     "filename": "01-hber-process.json",
-    "tabGroup": "hber-process",
+    "tabGroup": "01-hber-process",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
   {
     "unitSlug": "modern-manufactures",
-    "topicSlug": "solvay-process",
+    "topicSlug": "02-contact-process",
+    "title": "02 CONTACT PROCESS",
+    "noteCount": 4,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "02-contact-process.json",
+    "tabGroup": "02-contact-process",
+    "hasMcqs": true,
+    "universalFactsCount": 0
+  },
+  {
+    "unitSlug": "modern-manufactures",
+    "topicSlug": "03-solvay-process",
     "title": "03 SOLVAY PROCESS",
     "noteCount": 4,
     "source": "ravikishan",
     "duplicateType": 2,
     "filename": "03-solvay-process.json",
-    "tabGroup": "solvay-process",
+    "tabGroup": "03-solvay-process",
     "hasMcqs": true,
     "universalFactsCount": 0
   },
@@ -2276,6 +2301,18 @@
   },
   {
     "unitSlug": "oxidation-reduction",
+    "topicSlug": "03-electrolysis",
+    "title": "03 ELECTROLYSIS",
+    "noteCount": 4,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "03-electrolysis.json",
+    "tabGroup": "03-electrolysis",
+    "hasMcqs": true,
+    "universalFactsCount": 0
+  },
+  {
+    "unitSlug": "oxidation-reduction",
     "topicSlug": "balancing-redox",
     "title": "02 BALANCING REDOX",
     "noteCount": 4,
@@ -2283,18 +2320,6 @@
     "duplicateType": 2,
     "filename": "02-balancing-redox.json",
     "tabGroup": "balancing-redox",
-    "hasMcqs": true,
-    "universalFactsCount": 0
-  },
-  {
-    "unitSlug": "oxidation-reduction",
-    "topicSlug": "electrolysis",
-    "title": "03 ELECTROLYSIS",
-    "noteCount": 4,
-    "source": "ravikishan",
-    "duplicateType": 2,
-    "filename": "03-electrolysis.json",
-    "tabGroup": "electrolysis",
     "hasMcqs": true,
     "universalFactsCount": 0
   },

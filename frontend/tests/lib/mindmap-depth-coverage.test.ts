@@ -134,8 +134,17 @@ describe("getUnitConcept depth merge", () => {
   });
 
   it("resolves through the keyword fallback and still carries depth", () => {
-    const c = getUnitConcept("some-unauthorised-unit", "coulomb-law-force", "Coulomb's Law");
+    // The keyword pass reads the TOPIC slug + title (never the unit id — an id
+    // such as "some-unauthorised-unit" must not match a hint of its own), so the
+    // fixture has to be a topic that genuinely shares a concept with an authored
+    // unit. Vectors is that case: the unit is unauthored, the topic is not.
+    const c = getUnitConcept(
+      "some-unauthorised-unit",
+      "vector-addition-and-resolution",
+      "Vector Addition and Resolution",
+    );
     expect(c).toBeDefined();
+    expect(c?.name).toMatch(/Vector/i);
     expect(c?.depth).toBeDefined();
   });
 });

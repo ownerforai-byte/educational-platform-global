@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState, Suspense } from "react";
-import { useRouter } from "next/navigation";
+import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { PanelLeftClose, PanelLeftOpen, Atom, Pin, PinOff, ChevronDown, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -20,6 +20,8 @@ interface AppShellProps {
 
 export function AppShell({ children, breadcrumbs }: AppShellProps) {
   const router = useRouter();
+  const pathname = usePathname();
+  const isChatRoom = pathname === "/chat" || pathname.startsWith("/chat/");
   const [preferencesLoaded, setPreferencesLoaded] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
   // Visible by default: an auto-hiding bar hid the whole nav (incl. the mobile
@@ -67,6 +69,27 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
   }, [navPinned, preferencesLoaded]);
 
   const navVisible = navPinned || isHovered || isClickedOpen;
+
+  if (isChatRoom) {
+    return (
+      <div className="flex h-screen w-screen flex-col overflow-hidden bg-background">
+        <main id="main-content" tabIndex={-1} className="flex-1 min-h-0 focus:outline-none">
+          <Suspense
+            fallback={
+              <div className="flex h-full w-full items-center justify-center">
+                <div className="flex flex-col items-center gap-2">
+                  <div className="h-7 w-7 animate-spin rounded-full border-2 border-primary border-t-transparent" />
+                  <span className="text-xs text-muted-foreground animate-pulse">Entering Veer Room...</span>
+                </div>
+              </div>
+            }
+          >
+            <div className="h-full w-full">{children}</div>
+          </Suspense>
+        </main>
+      </div>
+    );
+  }
 
   return (
     <div className="flex min-h-screen flex-col bg-background">

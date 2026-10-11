@@ -9,25 +9,35 @@
   "visualType": "satellite-orbit",
   "enrichedContent": {
     "notes": [
-      "**Formula:** $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR} \\approx 11.2 \\text{ km/s}$ for Earth."
+      "**Formula:** $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR} \\approx 11.2 \\text{ km/s}$ for Earth.",
+      "**Why:** connects to other topics.",
+      "**Study:** learn definitions, formulas, practice."
     ],
-    "confusion": [],
+    "confusion": [
+      "Check formula conditions: $v_e = \\sqrt{\\frac{2GM}{R}}$ assumes no air resistance."
+    ],
     "practice": [
       "Derive the key formula $v_e = \\sqrt{2gR}$ from energy conservation."
     ],
-    "universalFacts": [],
+    "universalFacts": [
+      "Foundational for advanced topics."
+    ],
     "examples": [],
     "practiceQuestions": [
       "Q2. Key formula: $v_e = \\sqrt{\\frac{2GM}{R}}$."
     ],
     "formulas": [
-      "Formula for Escape Velocity: $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR}$"
+      "Formula for Escape Velocity: $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR}$",
+      "Key relationship: $v_e = \\sqrt{2} \\cdot v_0$ (escape velocity = √2 × orbital velocity)"
     ],
     "keyPoints": [
       "Core principle: $v_e = \\sqrt{\\frac{2GM}{R}}$"
     ],
     "summary": "Escape Velocity is the minimum speed needed for an object to escape a gravitational field: $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR}$.",
-    "specialNotes": [],
+    "specialNotes": [
+      "Check conditions for Escape Velocity: $v_e = \\sqrt{2gR}$ assumes no atmosphere.",
+      "Escape Velocity connects to other topics: $v_e = \\sqrt{2} \\cdot v_0$."
+    ],
     "importantStatements": [],
     "importantNotes": [
       "Escape Velocity is based on fundamental principles: $KE + PE = 0$ at infinity."
@@ -35,12 +45,17 @@
     "examShortTricks": [
       "Recall the formula: $v_e = \\sqrt{2gR} \\approx 11.2 \\text{ km/s}$ for Earth."
     ],
-    "examNotes": [],
+    "examNotes": [
+      "Focus on Escape Velocity problems - significant marks."
+    ],
     "mcs": [
       {
-        "question": "",
+        "question": "Which describes Escape Velocity?",
         "options": [
-          "$v_e = \\sqrt{\\frac{2GM}{R}}$"
+          "Correct definition: $v_e = \\sqrt{\\frac{2GM}{R}}$",
+          "Related concept",
+          "Incorrect description",
+          "Unrelated"
         ],
         "answer": "A"
       }
@@ -52,25 +67,35 @@
   },
   "originalContent": {
     "notes": [
-      "**Formula:** $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR} \\approx 11.2 \\text{ km/s}$ for Earth."
+      "**Formula:** $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR} \\approx 11.2 \\text{ km/s}$ for Earth.",
+      "**Why:** connects to other topics.",
+      "**Study:** learn definitions, formulas, practice."
     ],
-    "confusion": [],
+    "confusion": [
+      "Check formula conditions: $v_e = \\sqrt{\\frac{2GM}{R}}$ assumes no air resistance."
+    ],
     "practice": [
       "Derive the key formula $v_e = \\sqrt{2gR}$ from energy conservation."
     ],
-    "universalFacts": [],
+    "universalFacts": [
+      "Foundational for advanced topics."
+    ],
     "examples": [],
     "practiceQuestions": [
       "Q2. Key formula: $v_e = \\sqrt{\\frac{2GM}{R}}$."
     ],
     "formulas": [
-      "Formula for Escape Velocity: $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR}$"
+      "Formula for Escape Velocity: $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR}$",
+      "Key relationship: $v_e = \\sqrt{2} \\cdot v_0$ (escape velocity = √2 × orbital velocity)"
     ],
     "keyPoints": [
       "Core principle: $v_e = \\sqrt{\\frac{2GM}{R}}$"
     ],
     "summary": "Escape Velocity is the minimum speed needed for an object to escape a gravitational field: $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR}$.",
-    "specialNotes": [],
+    "specialNotes": [
+      "Check conditions for Escape Velocity: $v_e = \\sqrt{2gR}$ assumes no atmosphere.",
+      "Escape Velocity connects to other topics: $v_e = \\sqrt{2} \\cdot v_0$."
+    ],
     "importantStatements": [],
     "importantNotes": [
       "Escape Velocity is based on fundamental principles: $KE + PE = 0$ at infinity."
@@ -78,12 +103,17 @@
     "examShortTricks": [
       "Recall the formula: $v_e = \\sqrt{2gR} \\approx 11.2 \\text{ km/s}$ for Earth."
     ],
-    "examNotes": [],
+    "examNotes": [
+      "Focus on Escape Velocity problems - significant marks."
+    ],
     "mcs": [
       {
-        "question": "",
+        "question": "Which describes Escape Velocity?",
         "options": [
-          "$v_e = \\sqrt{\\frac{2GM}{R}}$"
+          "Correct definition: $v_e = \\sqrt{\\frac{2GM}{R}}$",
+          "Related concept",
+          "Incorrect description",
+          "Unrelated"
         ],
         "answer": "A"
       }
@@ -97,35 +127,5 @@
       "**Relation to Orbital Velocity:** $v_e = \\sqrt{2} \\cdot v_0$ where $v_0 = \\sqrt{GM/R}$ is the circular orbital velocity at the surface. The factor $\\sqrt{2} \\approx 1.414$ means escape requires 41% more speed than a low circular orbit.",
       "**No Atmosphere Assumption:** The formula assumes no air resistance. In reality, atmospheric drag requires higher initial speed for Earth; for the Moon (no atmosphere), the formula is exact. Also assumes a spherically symmetric, non-rotating body."
     ]
-  },
-  "notes": [
-    "**Formula:** $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR} \\approx 11.2 \\text{ km/s}$ for Earth."
-  ],
-  "confusion": [],
-  "practice": [
-    "Derive the key formula $v_e = \\sqrt{2gR}$ from energy conservation."
-  ],
-  "universalFacts": [],
-  "examples": [],
-  "practiceQuestions": [
-    "Q2. Key formula: $v_e = \\sqrt{\\frac{2GM}{R}}$."
-  ],
-  "formulas": [
-    "Formula for Escape Velocity: $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR}$"
-  ],
-  "keyPoints": [
-    "Core principle: $v_e = \\sqrt{\\frac{2GM}{R}}$"
-  ],
-  "specialNotes": [],
-  "importantStatements": [],
-  "importantNotes": [
-    "Escape Velocity is based on fundamental principles: $KE + PE = 0$ at infinity."
-  ],
-  "examShortTricks": [
-    "Recall the formula: $v_e = \\sqrt{2gR} \\approx 11.2 \\text{ km/s}$ for Earth."
-  ],
-  "examNotes": [],
-  "importantConcepts": [],
-  "importantTasks": [],
-  "summary": "Escape Velocity is the minimum speed needed for an object to escape a gravitational field: $v_e = \\sqrt{\\frac{2GM}{R}} = \\sqrt{2gR}$."
+  }
 }

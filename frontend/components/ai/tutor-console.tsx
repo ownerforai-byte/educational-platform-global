@@ -470,8 +470,10 @@ function shuffled<T>(items: T[]): T[] {
  * starters, which undercut the mode picker).
  */
 function buildStarters(mode: TutorMode): Starter[] {
-  if (mode !== "General") return shuffled(MODE_STARTERS[mode]);
-  return shuffled(GENERAL_STARTERS).slice(0, 6);
+  const prompts = MODE_STARTERS[mode];
+  const unique = Array.from(new Map(prompts.map((prompt) => [prompt.text, prompt])).values());
+  const count = mode === "General" ? 12 : 10;
+  return shuffled(unique).slice(0, Math.min(count, unique.length));
 }
 
 // Daily pools: guests 5/day (shared with guest chat), signed-in 8/day.
@@ -1025,7 +1027,7 @@ export function TutorConsole({
   })();
 
   return (
-    <div className="flex h-[calc(100vh-8rem)] lg:h-[calc(100vh-7rem)] min-h-[520px] flex-col overflow-hidden bg-card border-t border-border/50">
+    <div className="flex h-full min-h-screen sm:min-h-[600px] flex-col overflow-hidden bg-card">
       {/* ── Header: identity + the green light (kept exactly) + actions ── */}
       <div className="shrink-0 border-b border-border/60 bg-gradient-to-r from-emerald-500/5 via-transparent to-primary/5">
         <div className="flex items-center justify-between gap-3 px-5 sm:px-8 pt-4 pb-3">
@@ -1216,14 +1218,14 @@ export function TutorConsole({
               </p>
             </div>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-              {starters.map((prompt, i) => {
+            <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 gap-2">
+              {starters.map((prompt) => {
                 const Icon = prompt.icon;
                 return (
                   <button
-                    key={i}
+                    key={prompt.text}
                     onClick={() => handleSend(prompt.text)}
-                    className="p-4 rounded-2xl border border-border/70 bg-muted/15 hover:bg-muted/40 hover:border-emerald-500/50 hover:-translate-y-0.5 hover:shadow-md hover:shadow-emerald-500/10 active:scale-[0.98] text-left transition-all duration-200 group flex flex-col justify-between space-y-2"
+                    className="p-2.5 rounded-xl border border-border/70 bg-muted/15 hover:bg-muted/40 hover:border-emerald-500/50 hover:-translate-y-0.5 hover:shadow-md hover:shadow-emerald-500/10 active:scale-[0.98] text-left transition-all duration-200 group flex flex-col justify-between space-y-1"
                   >
                     <span
                       className={`text-[10px] font-bold px-2 py-0.5 rounded-md border w-fit flex items-center gap-1 ${prompt.color}`}
@@ -1231,7 +1233,7 @@ export function TutorConsole({
                       <Icon className="h-2.5 w-2.5" />
                       <span>{prompt.category}</span>
                     </span>
-                    <p className="text-sm text-foreground/90 font-medium group-hover:text-emerald-600 transition-colors leading-relaxed">
+                    <p className="text-xs text-foreground/90 font-medium group-hover:text-emerald-600 transition-colors leading-snug">
                       {prompt.text}
                     </p>
                   </button>
@@ -1271,12 +1273,19 @@ export function TutorConsole({
 
               const isLastAssistant = index === lastAssistantIndex;
               return (
-                <div key={index} className="group flex gap-3 animate-pop-in">
-                  <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-emerald-500/20 to-primary/20 border border-emerald-500/30 text-emerald-600 flex items-center justify-center shrink-0 mt-1">
-                    <CaptainAvatar className="h-3.5 w-3.5" />
+                <div key={index} className="group flex flex-col gap-1.5 animate-pop-in">
+                  {/* AI profile above */}
+                  <div className="flex items-center gap-2">
+                    <div className="h-6 w-6 rounded-lg bg-gradient-to-br from-emerald-500/20 to-primary/20 border border-emerald-500/30 text-emerald-600 flex items-center justify-center shrink-0">
+                      <CaptainAvatar className="h-3.5 w-3.5" />
+                    </div>
+                    <span className="text-[11px] font-bold text-foreground/80">Veer</span>
+                    <span className="text-[10px] text-muted-foreground">· AI Tutor</span>
                   </div>
-                  <div className="min-w-0 flex-1">
-                    <div className="rounded-2xl rounded-tl-md border border-border/60 bg-muted/25 px-3.5 py-2.5">
+
+                  {/* Reply below: spans full width for maximum readable area and dense knowledge */}
+                  <div className="min-w-0 w-full">
+                    <div className="rounded-2xl rounded-tl-sm border border-border/60 bg-muted/25 px-4 py-3 sm:px-5 sm:py-3.5 shadow-sm">
                       {/* Dense study answers: tables, code-drawn diagrams, KaTeX
                           and multi-section write-ups all render here, so the
                           wrapper carries the base size — the hand-rolled .prose
@@ -1310,11 +1319,15 @@ export function TutorConsole({
             {/* Live server phase (research / continuation) is shown even while
                 the bubble is already writing. */}
             {sending && (!streaming || streamPhase !== null) && (
-              <div className="flex gap-3 animate-pop-in">
-                <div className="h-7 w-7 rounded-lg bg-gradient-to-br from-emerald-500/20 to-primary/20 border border-emerald-500/30 text-emerald-600 flex items-center justify-center shrink-0 mt-1">
-                  <CaptainAvatar className="h-3.5 w-3.5" />
+              <div className="flex flex-col gap-1.5 animate-pop-in">
+                <div className="flex items-center gap-2">
+                  <div className="h-6 w-6 rounded-lg bg-gradient-to-br from-emerald-500/20 to-primary/20 border border-emerald-500/30 text-emerald-600 flex items-center justify-center shrink-0">
+                    <CaptainAvatar className="h-3.5 w-3.5" />
+                  </div>
+                  <span className="text-[11px] font-bold text-foreground/80">Veer</span>
+                  <span className="text-[10px] text-muted-foreground">· Thinking</span>
                 </div>
-                <div className="rounded-2xl rounded-tl-md border border-border/60 bg-muted/25 px-4 py-3 flex items-center gap-2">
+                <div className="w-full rounded-2xl rounded-tl-sm border border-border/60 bg-muted/25 px-4 py-3 flex items-center gap-2">
                   <span className="h-1.5 w-1.5 rounded-full bg-primary animate-bounce [animation-delay:-0.2s]" />
                   <span className="h-1.5 w-1.5 rounded-full bg-violet-500 animate-bounce [animation-delay:-0.1s]" />
                   <span className="h-1.5 w-1.5 rounded-full bg-amber-500 animate-bounce" />

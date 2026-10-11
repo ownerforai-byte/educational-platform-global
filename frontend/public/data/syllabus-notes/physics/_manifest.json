@@ -16,8 +16,9 @@
     "title": "Combination of Capacitors",
     "noteCount": 6,
     "source": "ravikishan",
-    "duplicateType": 1,
+    "duplicateType": 2,
     "filename": "02-combination-capacitors.json",
+    "tabGroup": "combination-of-capacitors",
     "hasMcqs": true,
     "universalFactsCount": 2
   },
@@ -27,8 +28,9 @@
     "title": "Effect of Dielectric",
     "noteCount": 6,
     "source": "ravikishan",
-    "duplicateType": 1,
+    "duplicateType": 2,
     "filename": "04-dielectric-effect.json",
+    "tabGroup": "effect-of-a-dielectric-polarization-and-displacement",
     "hasMcqs": true,
     "universalFactsCount": 2
   },
@@ -38,8 +40,9 @@
     "title": "Energy of a Charged Capacitor",
     "noteCount": 5,
     "source": "ravikishan",
-    "duplicateType": 1,
+    "duplicateType": 2,
     "filename": "03-energy-charged-capacitor.json",
+    "tabGroup": "energy-of-a-charged-capacitor",
     "hasMcqs": true,
     "universalFactsCount": 2
   },
@@ -79,6 +82,18 @@
   {
     "unitSlug": "circular-motion",
     "topicSlug": "angular-displacement-velocity",
+    "title": "Angular Displacement, Velocity and Acceleration",
+    "noteCount": 13,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "01-angular-displacement-velocity-and-acceleration-2.json",
+    "tabGroup": "angular-displacement-velocity",
+    "hasMcqs": true,
+    "universalFactsCount": 5
+  },
+  {
+    "unitSlug": "circular-motion",
+    "topicSlug": "angular-displacement-velocity",
     "title": "Relation Between Angular and Linear Velocity and Acceleration",
     "noteCount": 23,
     "source": "ravikishan",
@@ -87,17 +102,6 @@
     "tabGroup": "angular-displacement-velocity",
     "hasMcqs": true,
     "universalFactsCount": 10
-  },
-  {
-    "unitSlug": "circular-motion",
-    "topicSlug": "applications-of-banking",
-    "title": "Applications of Banking",
-    "noteCount": 11,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "06-applications-of-banking.json",
-    "hasMcqs": true,
-    "universalFactsCount": 5
   },
   {
     "unitSlug": "circular-motion",
@@ -112,12 +116,13 @@
   },
   {
     "unitSlug": "circular-motion",
-    "topicSlug": "centripetal-acceleration-and-centripetal-force",
-    "title": "Centripetal Acceleration and Centripetal Force",
-    "noteCount": 11,
+    "topicSlug": "banking-applications",
+    "title": "Applications of Banking",
+    "noteCount": 15,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "03-centripetal-acceleration-and-centripetal-force.json",
+    "duplicateType": 2,
+    "filename": "06-applications-of-banking-2.json",
+    "tabGroup": "banking-applications",
     "hasMcqs": true,
     "universalFactsCount": 5
   },
@@ -134,6 +139,18 @@
   },
   {
     "unitSlug": "circular-motion",
+    "topicSlug": "centripetal-acceleration-force",
+    "title": "Centripetal Acceleration and Centripetal Force",
+    "noteCount": 13,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "03-centripetal-acceleration-and-centripetal-force-2.json",
+    "tabGroup": "centripetal-acceleration-force",
+    "hasMcqs": true,
+    "universalFactsCount": 5
+  },
+  {
+    "unitSlug": "circular-motion",
     "topicSlug": "conical-pendulum",
     "title": "Conical Pendulum",
     "noteCount": 35,
@@ -145,12 +162,12 @@
   },
   {
     "unitSlug": "circular-motion",
-    "topicSlug": "motion-in-a-vertical-circle",
+    "topicSlug": "vertical-circle",
     "title": "Motion in a Vertical Circle",
-    "noteCount": 11,
+    "noteCount": 15,
     "source": "ravikishan",
     "duplicateType": 1,
-    "filename": "05-motion-in-a-vertical-circle.json",
+    "filename": "04-vertical-circle.json",
     "hasMcqs": true,
     "universalFactsCount": 5
   },
@@ -160,8 +177,9 @@
     "title": "Motion in a Vertical Circle",
     "noteCount": 15,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "04-vertical-circle.json",
+    "duplicateType": 2,
+    "filename": "05-motion-in-a-vertical-circle-2.json",
+    "tabGroup": "vertical-circle",
     "hasMcqs": true,
     "universalFactsCount": 5
   },
@@ -256,6 +274,30 @@
   },
   {
     "unitSlug": "dc-circuits",
+    "topicSlug": "ohms-law-resistance",
+    "title": "Ohm's Law, Resistance, Resistivity and Conductivity",
+    "noteCount": 11,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "02-ohm-s-law-electrical-resistance-resistivity-conductivity-2.json",
+    "tabGroup": "ohms-law-resistance",
+    "hasMcqs": false,
+    "universalFactsCount": 5
+  },
+  {
+    "unitSlug": "dc-circuits",
+    "topicSlug": "ohms-law-resistance",
+    "title": "Resistors in Series and Parallel",
+    "noteCount": 11,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "03-series-parallel-resistors-2.json",
+    "tabGroup": "ohms-law-resistance",
+    "hasMcqs": false,
+    "universalFactsCount": 5
+  },
+  {
+    "unitSlug": "dc-circuits",
     "topicSlug": "potential-divider",
     "title": "Potential Divider",
     "noteCount": 14,
@@ -326,8 +368,9 @@
     "title": "Dispersive Power",
     "noteCount": 9,
     "source": "ravikishan",
-    "duplicateType": 1,
+    "duplicateType": 2,
     "filename": "01-dispersive-power-2.json",
+    "tabGroup": "pure-spectrum-and-dispersive-power",
     "hasMcqs": true,
     "universalFactsCount": 5
   },
@@ -355,26 +398,27 @@
   },
   {
     "unitSlug": "dynamics",
-    "topicSlug": "linear-momentum-impulse",
-    "title": "Linear Momentum and Impulse",
-    "noteCount": 13,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-linear-momentum-and-impulse.json",
-    "hasMcqs": true,
-    "universalFactsCount": 8
-  },
-  {
-    "unitSlug": "dynamics",
-    "topicSlug": "linear-momentum-impulse",
+    "topicSlug": "conservation-of-linear-momentum",
     "title": "Conservation of Linear Momentum",
     "noteCount": 9,
     "source": "ravikishan",
     "duplicateType": 2,
-    "filename": "02-conservation-of-linear-momentum-2.json",
+    "filename": "02-conservation-of-linear-momentum.json",
     "tabGroup": "linear-momentum-impulse",
     "hasMcqs": true,
     "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "dynamics",
+    "topicSlug": "linear-momentum-impulse",
+    "title": "Linear Momentum and Impulse",
+    "noteCount": 12,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "01-linear-momentum-and-impulse.json",
+    "tabGroup": "linear-momentum-impulse",
+    "hasMcqs": true,
+    "universalFactsCount": 8
   },
   {
     "unitSlug": "dynamics",
@@ -412,6 +456,29 @@
   },
   {
     "unitSlug": "dynamics",
+    "topicSlug": "solid-friction",
+    "title": "Solid Friction — Laws and Verification",
+    "noteCount": 8,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "05-solid-friction-laws-and-verifications-2.json",
+    "tabGroup": "solid-friction",
+    "hasMcqs": true,
+    "universalFactsCount": 5
+  },
+  {
+    "unitSlug": "dynamics",
+    "topicSlug": "solid-friction-laws-of-solid-friction-and-their-verifications",
+    "title": "Solid friction: laws of solid friction and their verifica…",
+    "noteCount": 0,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "05-solid-friction-laws-of-solid-friction-and-their-verifications.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "dynamics",
     "topicSlug": "torque-equilibrium",
     "title": "Moment, Torque and Equilibrium",
     "noteCount": 8,
@@ -432,6 +499,30 @@
     "tabGroup": "torque-equilibrium",
     "hasMcqs": true,
     "universalFactsCount": 13
+  },
+  {
+    "unitSlug": "elasticity",
+    "topicSlug": "elastic-modulus",
+    "title": "Elastic Modulus (Young, Bulk, Shear)",
+    "noteCount": 8,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "03-elastic-modulus.json",
+    "tabGroup": "elastic-modulus-young-bulk-shear",
+    "hasMcqs": true,
+    "universalFactsCount": 6
+  },
+  {
+    "unitSlug": "elasticity",
+    "topicSlug": "elastic-modulus-young-bulk-shear",
+    "title": "Elastic Moduli — Young, Bulk, Shear",
+    "noteCount": 8,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "03-elastic-modulus-young-bulk-shear.json",
+    "tabGroup": "elastic-modulus",
+    "hasMcqs": true,
+    "universalFactsCount": 5
   },
   {
     "unitSlug": "elasticity",
@@ -510,10 +601,23 @@
     "title": "Stress, Strain, Elasticity and Plasticity",
     "noteCount": 9,
     "source": "ravikishan",
-    "duplicateType": 1,
+    "duplicateType": 2,
     "filename": "02-stress-strain-elasticity.json",
+    "tabGroup": "stress-strain-elasticity-and-plasticity",
     "hasMcqs": true,
     "universalFactsCount": 6
+  },
+  {
+    "unitSlug": "elasticity",
+    "topicSlug": "stress-strain-elasticity-and-plasticity",
+    "title": "Stress, Strain, Elasticity and Plasticity",
+    "noteCount": 8,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "02-stress-strain-elasticity-and-plasticity.json",
+    "tabGroup": "stress-strain-elasticity",
+    "hasMcqs": true,
+    "universalFactsCount": 5
   },
   {
     "unitSlug": "electric-charges",
@@ -532,8 +636,20 @@
     "title": "Coulomb's Law",
     "noteCount": 6,
     "source": "ravikishan",
-    "duplicateType": 1,
+    "duplicateType": 2,
     "filename": "02-coulomb-law.json",
+    "tabGroup": "coulomb-s-law-and-force-between-multiple-charges",
+    "hasMcqs": true,
+    "universalFactsCount": 2
+  },
+  {
+    "unitSlug": "electric-charges",
+    "topicSlug": "coulomb-s-law-and-force-between-multiple-charges",
+    "title": "Coulomb's Law and Force Between Multiple Charges",
+    "noteCount": 6,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "02-coulomb-s-law-and-force-between-multiple-charges.json",
     "hasMcqs": true,
     "universalFactsCount": 2
   },
@@ -561,6 +677,29 @@
   },
   {
     "unitSlug": "electric-charges",
+    "topicSlug": "electric-charges-and-charging-by-induction",
+    "title": "Electric Charges and Charging by Induction",
+    "noteCount": 6,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "01-electric-charges-and-charging-by-induction.json",
+    "hasMcqs": true,
+    "universalFactsCount": 2
+  },
+  {
+    "unitSlug": "electric-charges",
+    "topicSlug": "electric-charges-induction",
+    "title": "Electric Charges and Induction",
+    "noteCount": 6,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "01-electric-charges-induction.json",
+    "tabGroup": "electric-charges-and-charging-by-induction",
+    "hasMcqs": true,
+    "universalFactsCount": 2
+  },
+  {
+    "unitSlug": "electric-charges",
     "topicSlug": "force-between-multiple-electric-charges",
     "title": "Force between multiple electric charges",
     "noteCount": 5,
@@ -583,6 +722,28 @@
   },
   {
     "unitSlug": "electric-field",
+    "topicSlug": "applications-of-gauss-law",
+    "title": "Applications of Gauss's Law",
+    "noteCount": 6,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "03-applications-of-gauss-law.json",
+    "hasMcqs": true,
+    "universalFactsCount": 2
+  },
+  {
+    "unitSlug": "electric-field",
+    "topicSlug": "electric-field-due-to-point-charges-and-field-lines",
+    "title": "Electric Field Due to Point Charges and Field Lines",
+    "noteCount": 6,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "01-electric-field-due-to-point-charges-and-field-lines.json",
+    "hasMcqs": true,
+    "universalFactsCount": 2
+  },
+  {
+    "unitSlug": "electric-field",
     "topicSlug": "electric-field-due-to-point-charges-field-lines",
     "title": "Electric field due to point charges; field lines",
     "noteCount": 5,
@@ -598,8 +759,32 @@
     "title": "Electric Field due to Point Charges",
     "noteCount": 6,
     "source": "ravikishan",
-    "duplicateType": 1,
+    "duplicateType": 2,
     "filename": "01-electric-field-point-charges.json",
+    "tabGroup": "electric-field-due-to-point-charges-and-field-lines",
+    "hasMcqs": true,
+    "universalFactsCount": 2
+  },
+  {
+    "unitSlug": "electric-field",
+    "topicSlug": "gauss-law",
+    "title": "Gauss Law",
+    "noteCount": 6,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "02-gauss-law.json",
+    "tabGroup": "gauss-law-and-electric-flux",
+    "hasMcqs": true,
+    "universalFactsCount": 2
+  },
+  {
+    "unitSlug": "electric-field",
+    "topicSlug": "gauss-law-and-electric-flux",
+    "title": "Gauss's Law and Electric Flux",
+    "noteCount": 6,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "02-gauss-law-and-electric-flux.json",
     "hasMcqs": true,
     "universalFactsCount": 2
   },
@@ -609,8 +794,9 @@
     "title": "Applications of Gauss Law",
     "noteCount": 6,
     "source": "ravikishan",
-    "duplicateType": 1,
+    "duplicateType": 2,
     "filename": "03-gauss-law-applications.json",
+    "tabGroup": "applications-of-gauss-law",
     "hasMcqs": true,
     "universalFactsCount": 2
   },
@@ -640,7 +826,7 @@
     "unitSlug": "gravitation",
     "topicSlug": "escape-velocity",
     "title": "Escape Velocity",
-    "noteCount": 1,
+    "noteCount": 0,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "07-escape-velocity.json",
@@ -653,8 +839,9 @@
     "title": "Geostationary Satellite",
     "noteCount": 8,
     "source": "ravikishan",
-    "duplicateType": 1,
+    "duplicateType": 2,
     "filename": "08-geostationary-satellite.json",
+    "tabGroup": "geostationary-satellite",
     "hasMcqs": true,
     "universalFactsCount": 5
   },
@@ -664,8 +851,9 @@
     "title": "GPS",
     "noteCount": 8,
     "source": "ravikishan",
-    "duplicateType": 1,
+    "duplicateType": 2,
     "filename": "09-gps.json",
+    "tabGroup": "gps",
     "hasMcqs": true,
     "universalFactsCount": 5
   },
@@ -677,6 +865,30 @@
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "03-gravitational-potential-energy.json",
+    "hasMcqs": true,
+    "universalFactsCount": 5
+  },
+  {
+    "unitSlug": "gravitation",
+    "topicSlug": "gravitational-potential-energy",
+    "title": "Gravitational Field Strength",
+    "noteCount": 8,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "02-gravitational-field-strength-2.json",
+    "tabGroup": "gravitational-potential-energy",
+    "hasMcqs": true,
+    "universalFactsCount": 5
+  },
+  {
+    "unitSlug": "gravitation",
+    "topicSlug": "gravitational-potential-energy",
+    "title": "Gravitational Potential and Potential Energy",
+    "noteCount": 8,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "03-gravitational-potential-and-potential-energy-2.json",
+    "tabGroup": "gravitational-potential-energy",
     "hasMcqs": true,
     "universalFactsCount": 5
   },
@@ -702,6 +914,18 @@
     "filename": "03-gravitational-potential-gravitational-potential-energy.json",
     "hasMcqs": true,
     "universalFactsCount": 3
+  },
+  {
+    "unitSlug": "gravitation",
+    "topicSlug": "motion-of-a-satellite-orbital-velocity-and-time-period",
+    "title": "Motion of a Satellite — Orbital Velocity and Time Period",
+    "noteCount": 8,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "06-motion-of-a-satellite-orbital-velocity-and-time-period.json",
+    "tabGroup": "satellite-motion",
+    "hasMcqs": true,
+    "universalFactsCount": 5
   },
   {
     "unitSlug": "gravitation",
@@ -760,6 +984,18 @@
     "filename": "04-variation-g-altitude-depth.json",
     "hasMcqs": true,
     "universalFactsCount": 8
+  },
+  {
+    "unitSlug": "gravitation",
+    "topicSlug": "variation-g-altitude-depth",
+    "title": "Variation of g Due to Altitude and Depth",
+    "noteCount": 8,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "04-variation-of-g-due-to-altitude-and-depth-2.json",
+    "tabGroup": "variation-g-altitude-depth",
+    "hasMcqs": true,
+    "universalFactsCount": 5
   },
   {
     "unitSlug": "gravitation",
@@ -964,12 +1200,25 @@
   },
   {
     "unitSlug": "kinematics",
+    "topicSlug": "equation-of-motion-graphical",
+    "title": "Equation of Motion (Graphical)",
+    "noteCount": 9,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "03-equation-of-motion-graphical.json",
+    "tabGroup": "equation-of-motion-graphical-treatment",
+    "hasMcqs": true,
+    "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "kinematics",
     "topicSlug": "equation-of-motion-graphical-treatment",
     "title": "Equations of Motion — Graphical Treatment",
     "noteCount": 9,
     "source": "ravikishan",
-    "duplicateType": 1,
+    "duplicateType": 2,
     "filename": "03-equation-of-motion-graphical-treatment.json",
+    "tabGroup": "equation-of-motion-graphical",
     "hasMcqs": true,
     "universalFactsCount": 4
   },
@@ -986,6 +1235,18 @@
   },
   {
     "unitSlug": "kinematics",
+    "topicSlug": "freely-falling-body",
+    "title": "Motion of a Freely Falling Body",
+    "noteCount": 9,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "04-motion-of-a-freely-falling-body-2.json",
+    "tabGroup": "freely-falling-body",
+    "hasMcqs": true,
+    "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "kinematics",
     "topicSlug": "instantaneous-velocity-acceleration",
     "title": "Instantaneous Velocity and Acceleration",
     "noteCount": 9,
@@ -997,12 +1258,36 @@
   },
   {
     "unitSlug": "kinematics",
+    "topicSlug": "instantaneous-velocity-acceleration",
+    "title": "Instantaneous Velocity and Acceleration",
+    "noteCount": 9,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "01-instantaneous-velocity-and-acceleration-2.json",
+    "tabGroup": "instantaneous-velocity-acceleration",
+    "hasMcqs": true,
+    "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "kinematics",
     "topicSlug": "projectile-motion",
     "title": "Projectile Motion",
     "noteCount": 10,
     "source": "ravikishan",
     "duplicateType": 1,
     "filename": "05-projectile-motion.json",
+    "hasMcqs": true,
+    "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "kinematics",
+    "topicSlug": "projectile-motion",
+    "title": "Projectile Motion and Its Applications",
+    "noteCount": 10,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "05-projectile-motion-and-its-applications-2.json",
+    "tabGroup": "projectile-motion",
     "hasMcqs": true,
     "universalFactsCount": 4
   },
@@ -1060,6 +1345,83 @@
     "filename": "01-spherical-lenses-angular-magnification.json",
     "hasMcqs": true,
     "universalFactsCount": 3
+  },
+  {
+    "unitSlug": "mechanics",
+    "topicSlug": "dimensions",
+    "title": "Dimensions",
+    "noteCount": 2,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "dimensions.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "mechanics",
+    "topicSlug": "errors",
+    "title": "Errors",
+    "noteCount": 2,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "errors.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "mechanics",
+    "topicSlug": "l-s-a-q-and-n",
+    "title": "L,S,A,Q and N",
+    "noteCount": 2,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "l-s-a-q-and-n.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "mechanics",
+    "topicSlug": "m-p-errors",
+    "title": "M,P Errors",
+    "noteCount": 2,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "m-p-errors.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "mechanics",
+    "topicSlug": "physical-quantity",
+    "title": "Physics and Measurement",
+    "noteCount": 2,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "physical-quantity.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "mechanics",
+    "topicSlug": "s-f-rules",
+    "title": "Error Propagation & Significant Figures Rules",
+    "noteCount": 2,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "s-f-rules.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "mechanics",
+    "topicSlug": "vector",
+    "title": "Vector",
+    "noteCount": 2,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "vector.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
   },
   {
     "unitSlug": "nuclear-physics",
@@ -1147,8 +1509,9 @@
     "title": "Nuclear Fission and Fusion",
     "noteCount": 12,
     "source": "ravikishan",
-    "duplicateType": 1,
+    "duplicateType": 2,
     "filename": "03-fission-fusion-2.json",
+    "tabGroup": "creation-and-annihilation-nuclear-fission-and-fusion",
     "hasMcqs": true,
     "universalFactsCount": 5
   },
@@ -1231,17 +1594,6 @@
   },
   {
     "unitSlug": "physical-quantities",
-    "topicSlug": "dimensions-and-uses-of-dimensional-analysis",
-    "title": "Dimensions and Uses of Dimensional Analysis",
-    "noteCount": 8,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "02-dimensions-and-uses-of-dimensional-analysis.json",
-    "hasMcqs": true,
-    "universalFactsCount": 7
-  },
-  {
-    "unitSlug": "physical-quantities",
     "topicSlug": "dimensions-dimensional-analysis",
     "title": "Dimensions and Dimensional Analysis",
     "noteCount": 9,
@@ -1253,14 +1605,15 @@
   },
   {
     "unitSlug": "physical-quantities",
-    "topicSlug": "precision-and-significant-figures",
-    "title": "Precision and Significant Figures",
+    "topicSlug": "dimensions-dimensional-analysis",
+    "title": "Dimensions and Uses of Dimensional Analysis",
     "noteCount": 9,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "01-precision-and-significant-figures.json",
+    "duplicateType": 2,
+    "filename": "02-dimensions-and-uses-of-dimensional-analysis-2.json",
+    "tabGroup": "dimensions-dimensional-analysis",
     "hasMcqs": true,
-    "universalFactsCount": 7
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "physical-quantities",
@@ -1274,13 +1627,37 @@
     "universalFactsCount": 4
   },
   {
+    "unitSlug": "physical-quantities",
+    "topicSlug": "precision-significant-figures",
+    "title": "Precision and Significant Figures",
+    "noteCount": 10,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "01-precision-and-significant-figures-2.json",
+    "tabGroup": "precision-significant-figures",
+    "hasMcqs": true,
+    "universalFactsCount": 4
+  },
+  {
+    "unitSlug": "potential-potential-difference-and-potential-energy",
+    "topicSlug": "equipotential-lines-and-surfaces",
+    "title": "Equipotential Lines and Surfaces",
+    "noteCount": 6,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "02-equipotential-lines-and-surfaces.json",
+    "hasMcqs": true,
+    "universalFactsCount": 2
+  },
+  {
     "unitSlug": "potential-potential-difference-and-potential-energy",
     "topicSlug": "equipotential-surfaces",
     "title": "Equipotential Lines and Surfaces",
     "noteCount": 6,
     "source": "ravikishan",
-    "duplicateType": 1,
+    "duplicateType": 2,
     "filename": "02-equipotential-surfaces.json",
+    "tabGroup": "equipotential-lines-and-surfaces",
     "hasMcqs": true,
     "universalFactsCount": 2
   },
@@ -1290,8 +1667,9 @@
     "title": "Potential Difference and Point Charge",
     "noteCount": 7,
     "source": "ravikishan",
-    "duplicateType": 1,
+    "duplicateType": 2,
     "filename": "01-potential-difference-point-charge.json",
+    "tabGroup": "potential-difference-potential-due-to-point-charge-potential-energy-and-electron-volt",
     "hasMcqs": true,
     "universalFactsCount": 2
   },
@@ -1305,6 +1683,17 @@
     "filename": "01-potential-difference-potential-due-to-a-point-charge-potential-energy-electron-volt.json",
     "hasMcqs": true,
     "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "potential-potential-difference-and-potential-energy",
+    "topicSlug": "potential-difference-potential-due-to-point-charge-potential-energy-and-electron-volt",
+    "title": "Potential Difference, Potential Due to a Point Charge, Potential Energy and Electron Volt",
+    "noteCount": 7,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "01-potential-difference-potential-due-to-point-charge-potential-energy-and-electron-volt.json",
+    "hasMcqs": true,
+    "universalFactsCount": 2
   },
   {
     "unitSlug": "potential-potential-difference-and-potential-energy",
@@ -1487,6 +1876,17 @@
   },
   {
     "unitSlug": "rate-of-heat-flow",
+    "topicSlug": "conduction-thermal-conductivity-and-measurement",
+    "title": "Conduction: thermal conductivity and measurement",
+    "noteCount": 0,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "01-conduction-thermal-conductivity-and-measurement.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
+  },
+  {
+    "unitSlug": "rate-of-heat-flow",
     "topicSlug": "convection",
     "title": "Convection",
     "noteCount": 16,
@@ -1575,6 +1975,29 @@
   },
   {
     "unitSlug": "recent-trends-in-physics",
+    "topicSlug": "particles-and-antiparticles-quarks-and-leptons",
+    "title": "Particles, Antiparticles, Quarks and Leptons",
+    "noteCount": 9,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "01-particles-and-antiparticles-quarks-and-leptons.json",
+    "hasMcqs": false,
+    "universalFactsCount": 7
+  },
+  {
+    "unitSlug": "recent-trends-in-physics",
+    "topicSlug": "particles-and-antiparticles-quarks-and-leptons",
+    "title": "Particle Physics",
+    "noteCount": 9,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "01-particle-physics-2.json",
+    "tabGroup": "particles-and-antiparticles-quarks-and-leptons",
+    "hasMcqs": false,
+    "universalFactsCount": 7
+  },
+  {
+    "unitSlug": "recent-trends-in-physics",
     "topicSlug": "universe-big-bang",
     "title": "Universe and Big Bang",
     "noteCount": 5,
@@ -1583,6 +2006,17 @@
     "filename": "02-universe-big-bang.json",
     "hasMcqs": true,
     "universalFactsCount": 3
+  },
+  {
+    "unitSlug": "recent-trends-in-physics",
+    "topicSlug": "universe-big-bang-and-hubble-law-expansion-of-the-universe",
+    "title": "Universe: Big Bang and Hubble law — expansion of the Univ…",
+    "noteCount": 0,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "02-universe-big-bang-and-hubble-law-expansion-of-the-universe.json",
+    "hasMcqs": true,
+    "universalFactsCount": 1
   },
   {
     "unitSlug": "reflection-at-curved-mirror",
@@ -1873,6 +2307,29 @@
   },
   {
     "unitSlug": "thermal-expansion",
+    "topicSlug": "linear-expansion-and-its-measurement",
+    "title": "Linear Expansion and Its Measurement",
+    "noteCount": 15,
+    "source": "ravikishan",
+    "duplicateType": 1,
+    "filename": "01-linear-expansion-and-its-measurement.json",
+    "hasMcqs": false,
+    "universalFactsCount": 5
+  },
+  {
+    "unitSlug": "thermal-expansion",
+    "topicSlug": "linear-expansion-and-its-measurement",
+    "title": "Liquid Expansion",
+    "noteCount": 15,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "03-liquid-expansion-2.json",
+    "tabGroup": "linear-expansion-and-its-measurement",
+    "hasMcqs": false,
+    "universalFactsCount": 5
+  },
+  {
+    "unitSlug": "thermal-expansion",
     "topicSlug": "liquid-expansion-absolute-and-apparent",
     "title": "Liquid Expansion — Absolute and Apparent",
     "noteCount": 18,
@@ -1973,17 +2430,6 @@
   },
   {
     "unitSlug": "vectors",
-    "topicSlug": "scalar-vector-products",
-    "title": "Scalar and Vector Products",
-    "noteCount": 8,
-    "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "03-scalar-vector-products.json",
-    "hasMcqs": true,
-    "universalFactsCount": 3
-  },
-  {
-    "unitSlug": "vectors",
     "topicSlug": "triangle-parallelogram-and-polygon-laws-of-vectors",
     "title": "Law of Parallelogram of Vectors",
     "noteCount": 73,
@@ -2003,6 +2449,18 @@
     "filename": "01-triangle-parallelogram-polygon-laws.json",
     "hasMcqs": true,
     "universalFactsCount": 12
+  },
+  {
+    "unitSlug": "vectors",
+    "topicSlug": "triangle-parallelogram-polygon-laws",
+    "title": "Scalar and Vector Products",
+    "noteCount": 10,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "03-scalar-vector-products-2.json",
+    "tabGroup": "triangle-parallelogram-polygon-laws",
+    "hasMcqs": true,
+    "universalFactsCount": 4
   },
   {
     "unitSlug": "work-energy-and-power",
@@ -2083,14 +2541,15 @@
   },
   {
     "unitSlug": "work-energy-power",
-    "topicSlug": "collisions",
-    "title": "Elastic and Inelastic Collisions",
-    "noteCount": 3,
+    "topicSlug": "conservation-energy",
+    "title": "Conservation of Energy",
+    "noteCount": 8,
     "source": "ravikishan",
-    "duplicateType": 1,
-    "filename": "05-collisions.json",
+    "duplicateType": 2,
+    "filename": "04-conservation-energy.json",
+    "tabGroup": "work-energy-theorem",
     "hasMcqs": true,
-    "universalFactsCount": 3
+    "universalFactsCount": 5
   },
   {
     "unitSlug": "work-energy-power",
@@ -2125,5 +2584,17 @@
     "tabGroup": "work-constant-variable-force",
     "hasMcqs": true,
     "universalFactsCount": 8
+  },
+  {
+    "unitSlug": "work-energy-power",
+    "topicSlug": "work-constant-variable-force",
+    "title": "Elastic and Inelastic Collisions",
+    "noteCount": 8,
+    "source": "ravikishan",
+    "duplicateType": 2,
+    "filename": "05-collisions-2.json",
+    "tabGroup": "work-constant-variable-force",
+    "hasMcqs": true,
+    "universalFactsCount": 5
   }
 ]

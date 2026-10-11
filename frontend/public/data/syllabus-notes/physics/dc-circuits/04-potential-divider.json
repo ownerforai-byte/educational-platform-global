@@ -65,10 +65,7 @@
     "Q4. Derive the key formula related to Potential Divider.",
     "Q5. What are the applications of Potential Divider?"
   ],
-  "formulas": [
-    "Application formula for Potential Divider",
-    "Derivation result for Potential Divider"
-  ],
+  "formulas": [],
   "summary": "Potential Divider is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Potential Divider applies",
@@ -157,5 +154,7 @@
     "**Loading Effect Formalism:** When a load $R_L$ is connected across $R_2$, the effective resistance becomes $R_2' = R_2 \\parallel R_L = \\frac{R_2 R_L}{R_2 + R_L}$. The new output voltage is $V_{out} = V_{in} \\frac{R_2'}{R_1 + R_2'}$.",
     "**Design Trade-off:** To minimize loading effects, the divider resistance ($R_1 + R_2$) should be much smaller than $R_L$. However, this increases power dissipation ($P = V_{in}^2/(R_1 + R_2)$). The designer must balance voltage stability against power efficiency."
   ],
-  "visualType": "potential-divider"
+  "visualType": "potential-divider",
+  "keyPoints": [],
+  "importantStatements": []
 }

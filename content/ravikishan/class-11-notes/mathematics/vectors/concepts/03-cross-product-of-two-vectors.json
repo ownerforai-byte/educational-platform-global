@@ -17,10 +17,12 @@
     "Q1. Define Cross Product of Two Vectors.",
     "Q3. Problem on Cross Product of Two Vectors."
   ],
-  "formulas": [],
+  "formulas": [
+    "$|\\vec{a}\\times\\vec{b}| = ab\\sin\\theta$, directed by the right-hand rule; it is the area of the parallelogram on $\\vec{a}$ and $\\vec{b}$.",
+    "$\\vec{a}\\times\\vec{b} = \\begin{vmatrix} \\hat{i} & \\hat{j} & \\hat{k} \\\\ a_1 & a_2 & a_3 \\\\ b_1 & b_2 & b_3 \\end{vmatrix}$, and $\\vec{a}\\times\\vec{b} = \\vec{0} \\iff$ they are parallel."
+  ],
   "keyPoints": [
-    "Application of Cross Product of Two Vectors",
-    "Connection of Cross Product of Two Vectors to other topics"
+    "Area of a triangle on two vectors is ½|a×b| — the parallelogram area with the half that students forget."
   ],
   "summary": "Cross Product of Two Vectors covers essential principles and applications.",
   "specialNotes": [],
@@ -38,6 +40,7 @@
     "Recall the formula for Cross Product of Two Vectors."
   ],
   "examNotes": [],
+  "mcs": [],
   "importantConcepts": [
     "Definition and significance of Cross Product of Two Vectors."
   ],

@@ -42,22 +42,15 @@
   ],
   "animation3D": "nuclear-physics",
   "motionGraphics": "nuclear-physics",
-  "examples": [
-    "Real-world application of Creation and annihilation; nuclear fission and fusion",
-    "Practical demonstration of Creation and annihilation; nuclear fission and fusion concepts",
-    "Diagram-based question on Creation and annihilation; nuclear fission and fusion",
-    "Application in daily life involving Creation and annihilation; nuclear fission and fusion"
-  ],
+  "examples": [],
   "practiceQuestions": [
     "Q2. Solve problems related to Creation and annihilation; nuclear fission and fusion.",
     "Q3. Differentiate between various aspects of Creation and annihilation; nuclear fission and fusion.",
     "Q4. Derive the key formula related to Creation and annihilation; nuclear fission and fusion.",
     "Q5. What are the applications of Creation and annihilation; nuclear fission and fusion?"
   ],
-  "formulas": [
-    "Application formula for Creation and annihilation; nuclear fission and fusion",
-    "Derivation result for Creation and annihilation; nuclear fission and fusion"
-  ],
+  "formulas": [],
+  "keyPoints": [],
   "summary": "Creation and annihilation; nuclear fission and fusion is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Creation and annihilation; nuclear fission and fusion applies",
@@ -66,6 +59,7 @@
     "Note 4: Remember the units and dimensions involved in Creation and annihilation; nuclear fission and fusion",
     "Note 5: Creation and annihilation; nuclear fission and fusion frequently appears in examination questions"
   ],
+  "importantStatements": [],
   "importantNotes": [
     "Note 2: Remember the distinction between different types in Creation and annihilation; nuclear fission and fusion",
     "Note 3: Creation and annihilation; nuclear fission and fusion has both theoretical and practical significance",
@@ -80,10 +74,10 @@
     "Trick 5: Time-saving approach for Creation and annihilation; nuclear fission and fusion problems"
   ],
   "examNotes": [
-    "Focus on numerical problems from Creation and annihilation; nuclear fission and fusion",
-    "Practice previous year questions on Creation and annihilation; nuclear fission and fusion",
-    "Learn the derivations for Creation and annihilation; nuclear fission and fusion thoroughly",
-    "Review common mistakes related to Creation and annihilation; nuclear fission and fusion"
+    "Exam Tip 1: Focus on numerical problems from Creation and annihilation; nuclear fission and fusion",
+    "Exam Tip 2: Practice previous year questions on Creation and annihilation; nuclear fission and fusion",
+    "Exam Tip 4: Learn the derivations for Creation and annihilation; nuclear fission and fusion thoroughly",
+    "Exam Tip 5: Review common mistakes related to Creation and annihilation; nuclear fission and fusion"
   ],
   "mcs": [
     {
@@ -141,12 +135,6 @@
     "Task 4: Practice previous year exam questions on Creation and annihilation; nuclear fission and fusion",
     "Task 5: Explain Creation and annihilation; nuclear fission and fusion to a peer or study group"
   ],
-  "keyPoints": [],
-  "importantStatements": [],
-  "visualType": "nuclear-reactions",
-  "specificConditions": [
-    "**Fission vs Fusion Energy Release:** Both release energy by moving toward higher $BE/A$ (iron peak). Fission splits heavy nuclei ($A > 56$) into medium fragments. Fusion combines light nuclei ($A < 56$) into heavier ones. Both increase the average $BE/A$ of the system.",
-    "**Chain Reaction Requirement:** Fission of $^{235}$U by thermal neutrons produces ~2.4 fast neutrons/fission. A sustained chain reaction requires at least 1 neutron to cause another fission ($k \\ge 1$). Critical mass is the minimum mass where neutron losses are balanced by productions. Moderators (graphite, water) slow neutrons to thermal energies to increase capture probability.",
-    "**Fusion Conditions:** Requires extreme temperature ($T \\sim 10^7-10^8$ K) for nuclei to overcome Coulomb barrier ($kT \\sim 1$ keV vs barrier $\\sim 1$ MeV). Quantum tunneling allows fusion at lower energies. Plasma confinement (magnetic/inertial) is needed to maintain density and temperature long enough for significant fusion (Lawson criterion: $n\\tau > 10^{20}$ m⁻³·s)."
-  ]
+  "duplicateType": 2,
+  "tabGroup": "creation-and-annihilation-nuclear-fission-and-fusion"
 }

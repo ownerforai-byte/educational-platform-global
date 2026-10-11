@@ -782,7 +782,7 @@ export const HIGH_YIELD_TOPIC_BANK_BIOLOGY: HighYieldTopicData[] = [
     ],
     subject: "biology",
     title: "Biota and Environment — Pollution, Greenhouse Effect & Ozone",
-    unitSlugs: ["biota-and-environment"],
+    unitSlugs: ["biota-and-environment", "environmental-issues"],
     category: "Environmental Biology",
     governingLaws: [
       {
@@ -1144,6 +1144,576 @@ export const HIGH_YIELD_TOPIC_BANK_BIOLOGY: HighYieldTopicData[] = [
           "The compendium maintained by the IUCN listing species at risk of extinction along with their conservation status and the threats they face.",
         significance:
           "It is the global reference that gives legal and scientific weight to national protection laws and to international conservation obligations.",
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // BIOLOGY — Heredity and Evolution
+  // ─────────────────────────────────────────────────────────────
+  {
+    topicKeywords: [
+      "heredity-and-evolution",
+      "heredity",
+      "mendel",
+      "monohybrid",
+      "dihybrid",
+      "dominance",
+      "incomplete-dominance",
+      "codominance",
+      "allele",
+      "test-cross",
+      "inheritance",
+    ],
+    subject: "biology",
+    title: "Heredity and Evolution — Mendel's Laws, Dominance & Inheritance Patterns",
+    unitSlugs: ["heredity-and-evolution"],
+    category: "Genetics",
+    governingLaws: [
+      {
+        name: "Law of Dominance (Mendel's first law)",
+        statement:
+          "When two homozygous parents differing in one contrasting character are crossed, the F₁ shows only the dominant character; the recessive factor stays present but unexpressed and reappears in F₂.",
+        formula: "P: TT × tt → F₁: Tt (all tall) → F₂: 3 tall : 1 dwarf",
+        conditions:
+          "Applies to characters controlled by one gene pair with a clear dominant–recessive relation. It fails for incomplete dominance, codominance and polygenic traits.",
+      },
+      {
+        name: "Law of Segregation (Mendel's second law)",
+        statement:
+          "The two alleles of a gene pair separate during gamete formation so that each gamete receives exactly one of them; a gamete therefore carries one allele per gene.",
+        formula: "Tt → ½ T gametes : ½ t gametes",
+        conditions:
+          "Universal for nuclear, single-gene traits. Its physical basis is the separation of homologous chromosomes at anaphase I of meiosis.",
+      },
+      {
+        name: "Law of Independent Assortment (Mendel's third law)",
+        statement:
+          "Alleles of two or more different genes assort independently of one another during gamete formation, so each pair behaves as if the other were absent.",
+        formula: "Dihybrid F₂: 9 : 3 : 3 : 1",
+        conditions:
+          "Holds only for genes on DIFFERENT chromosomes (or far apart on the same one). Genes on the same chromosome are linked and give parental combinations more often than not.",
+      },
+    ],
+    speedFormulas: [
+      {
+        name: "Monohybrid F₂ phenotypic ratio",
+        formula: "3 dominant : 1 recessive",
+        description:
+          "Expected from Tt × Tt in a large enough family. Its genotypic basis is 1 TT : 2 Tt : 1 tt.",
+        unit: "ratio",
+      },
+      {
+        name: "Monohybrid genotypic ratio",
+        formula: "1 : 2 : 1",
+        description: "Always genotypic; the phenotype ratio 3 : 1 hides it unless dominance is complete.",
+        unit: "ratio",
+      },
+      {
+        name: "Dihybrid F₂ phenotypic ratio",
+        formula: "9 : 3 : 3 : 1",
+        description:
+          "Two genes, both heterozygous, complete dominance and independent assortment. Any deviation points to linkage or interaction.",
+        unit: "ratio",
+      },
+      {
+        name: "Test cross outcome",
+        formula: "1 : 1 (heterozygote) or all dominant (homozygote)",
+        description:
+          "Crossing a dominant-phenotype individual with the homozygous recessive reveals its genotype in one generation.",
+        unit: "ratio",
+      },
+      {
+        name: "Number of gamete types",
+        formula: "2ⁿ for n heterozygous gene pairs",
+        description:
+          "A trihybrid (AaBbCc) produces 8 gamete types and a 64-box Punnett square; the ratio of F₂ phenotypes is 27 : 9 : 9 : 9 : 3 : 3 : 3 : 1.",
+        unit: "count",
+      },
+    ],
+    constantsAndValues: [
+      { symbol: "F₂ mono", name: "Monohybrid phenotypic ratio", value: "3 : 1", unit: "ratio" },
+      { symbol: "F₂ dihybrid", name: "Dihybrid phenotypic ratio", value: "9 : 3 : 3 : 1", unit: "ratio" },
+      { symbol: "2n", name: "Human diploid chromosome number", value: "46 (23 pairs)", unit: "chromosomes" },
+      { symbol: "n", name: "Chromosome number in a human gamete", value: "23", unit: "chromosomes" },
+    ],
+    entranceTraps: [
+      {
+        trap: "The 3 : 1 ratio is a genotypic ratio.",
+        truth:
+          "3 : 1 is PHENOTYPIC only. Genotypically the F₂ is 1 homozygous dominant : 2 heterozygous : 1 homozygous recessive.",
+        examRef: "NEB / CEE — Mendelian ratios",
+      },
+      {
+        trap: "In incomplete dominance the F₂ gives 3 : 1 like any monohybrid cross.",
+        truth:
+          "In incomplete dominance neither allele is fully expressed, so F₁ is intermediate and the F₂ phenotypic ratio becomes 1 : 2 : 1 — identical to the genotypic ratio, because phenotype now reports genotype.",
+        examRef: "CEE — incomplete dominance and codominance",
+      },
+      {
+        trap: "Linked genes still give 9 : 3 : 3 : 1 in a dihybrid cross.",
+        truth:
+          "Genes on the same chromosome travel together, so the parental combinations (the 9 and the 1 classes) are over-represented and the ratio collapses. Only recombination by crossing over at pachytene of prophase I separates them.",
+        examRef: "NEB — linkage and crossing over",
+      },
+      {
+        trap: "A dominant allele is the more common allele in the population.",
+        truth:
+          "Dominance describes expression, not frequency. A rare allele can be dominant; a common allele can be recessive. Dominance says nothing about how many people carry it.",
+        examRef: "CEE — terminology trap",
+      },
+    ],
+    workedNumericals: [
+      {
+        problem:
+          "Two heterozygous tall pea plants (Tt) are crossed. Give the F₁ genotypic and phenotypic ratios, and the fraction of the offspring expected to breed true for tallness.",
+        given: "Parents: Tt × Tt (T = tall, dominant; t = dwarf, recessive)",
+        steps: [
+          "Gametes: each parent gives ½ T and ½ t.",
+          "Punnett square gives 1 TT : 2 Tt : 1 tt, i.e. genotypic ratio 1 : 2 : 1.",
+          "Phenotypes: TT and Tt are tall (3 parts), tt is dwarf (1 part) ⟹ 3 : 1.",
+          "Breeding true for tallness requires TT: 1 part out of 4 ⟹ ¼ of all offspring, or ⅓ of the tall ones.",
+        ],
+        answer: "Genotypic 1 : 2 : 1, phenotypic 3 : 1; ¼ of the offspring (⅓ of the tall ones) breed true.",
+      },
+    ],
+    keyTermsAndDefinitions: [
+      {
+        term: "Allele",
+        definition:
+          "One of the alternative forms of a gene occupying the same locus on homologous chromosomes and controlling the same character.",
+        significance:
+          "Segregation and dominance are both statements about alleles, so every genetics problem starts by naming them.",
+      },
+      {
+        term: "Test cross",
+        definition:
+          "A cross of an individual showing the dominant phenotype with the homozygous recessive parent, to reveal whether that individual is homozygous or heterozygous.",
+        significance:
+          "It converts an unknown genotype into a visible 1 : 1 ratio in a single generation — the fastest genetic test there is.",
+      },
+      {
+        term: "Incomplete dominance",
+        definition:
+          "A pattern in which the heterozygote shows an intermediate phenotype because neither allele is completely expressed, e.g. pink flowers from red and white parents.",
+        significance:
+          "The F₂ ratio becomes 1 : 2 : 1 for BOTH genotype and phenotype, which is why the phenotype ratio alone cannot tell the pattern apart from a normal monohybrid cross without checking the heterozygote.",
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // BIOLOGY — Human Health and Diseases
+  // ─────────────────────────────────────────────────────────────
+  {
+    topicKeywords: [
+      "human-health-and-diseases",
+      "immune-system",
+      "immunity",
+      "pathogen",
+      "pathogens-and-diseases",
+      "vaccine",
+      "vaccination",
+      "antibody",
+      "antigen",
+      "infectious-disease",
+    ],
+    subject: "biology",
+    title: "Human Health and Diseases — Immunity, Vaccines & Pathogens",
+    unitSlugs: ["human-health-and-diseases"],
+    category: "Human Health",
+    governingLaws: [
+      {
+        name: "Antigen–antibody specificity",
+        statement:
+          "An antibody binds only the antigen that triggered it (or one very like it), because binding depends on a complementary shape between the antibody's variable region and the antigen's epitope.",
+        formula: "antigen (epitope) + antibody (paratope) → antigen–antibody complex",
+        conditions:
+          "The specificity is the basis of both immunity and of laboratory tests (ELISA, Widal, blood grouping); cross-reaction happens only between closely related antigens.",
+      },
+      {
+        name: "Principle of vaccination (immunological memory)",
+        statement:
+          "Exposing the body to a weakened, killed or fragmentary antigen produces memory B and T cells without the disease, so a later natural infection triggers a fast, high-titre secondary response.",
+        formula: "primary response: IgM first, days to peak · secondary response: IgG, faster and much higher titre",
+        conditions:
+          "Needs a functioning immune system, and the antigen must match the circulating strain closely (why influenza vaccines are reformulated each year).",
+      },
+      {
+        name: "Herd-immunity threshold",
+        statement:
+          "A population is protected when the proportion immune is high enough that each case infects fewer than one new person, breaking the chain of transmission.",
+        formula: "threshold fraction immune = 1 − 1/R₀",
+        conditions:
+          "Assumes uniform mixing and lifelong immunity. The more transmissible the pathogen (larger R₀), the higher the fraction that must be immune.",
+      },
+    ],
+    speedFormulas: [
+      {
+        name: "Herd-immunity threshold",
+        formula: "p = 1 − 1/R₀",
+        description:
+          "For measles (R₀ ≈ 15) about 93% of the population must be immune; for a mild seasonal virus with R₀ ≈ 2, about 50%.",
+        unit: "fraction",
+      },
+      {
+        name: "Secondary-response advantage",
+        formula: "faster (2–3 days vs 7–10) and 10–100× higher antibody titre",
+        description:
+          "Memory cells are the reason a second exposure is usually not an illness — the whole point of a vaccine booster.",
+        unit: "—",
+      },
+      {
+        name: "Normal human leucocyte count",
+        formula: "4,000 – 11,000 per mm³ of blood",
+        description:
+          "A count far above this range (leucocytosis) points to infection or leukaemia; far below (leucopenia) to marrow suppression or HIV, which destroys helper T cells.",
+        unit: "cells/mm³",
+      },
+    ],
+    constantsAndValues: [
+      { symbol: "Tb", name: "Normal human body temperature", value: "37", unit: "deg C" },
+      { symbol: "WBC", name: "Normal leucocyte count in blood", value: "4,000 – 11,000", unit: "per mm³" },
+      { symbol: "R₀", name: "Basic reproduction number (measles)", value: "12 – 18", unit: "—" },
+      { symbol: "HIV", name: "Agent of AIDS", value: "human immunodeficiency virus (retrovirus)", unit: "—" },
+      { symbol: "Plasmodium", name: "Agent of malaria", value: "protozoan, spread by female Anopheles", unit: "—" },
+    ],
+    entranceTraps: [
+      {
+        trap: "Antibiotics cure viral diseases such as the common cold, influenza and AIDS.",
+        truth:
+          "Antibiotics act on bacterial structures (cell wall, 70S ribosome, folate pathway) that viruses simply do not have. Viral infections need antivirals or, better, vaccines; antibiotics are used only against secondary bacterial infections.",
+        examRef: "NEB / CEE — infectious diseases",
+      },
+      {
+        trap: "A vaccine gives immediate protection, just like an injection of antibodies.",
+        truth:
+          "A vaccine is ACTIVE immunisation: it takes days to weeks to build your own response, and it leaves memory. Ready-made antibodies are PASSIVE immunisation — immediate but temporary, with no memory.",
+        examRef: "CEE — active vs passive immunity",
+      },
+      {
+        trap: "Malaria is caused by a virus carried by mosquitoes.",
+        truth:
+          "Malaria is caused by protozoans of the genus Plasmodium and transmitted by the bite of the female Anopheles mosquito, which is the vector — not the pathogen.",
+        examRef: "NEB — malaria",
+      },
+      {
+        trap: "Immunity means the body can resist every pathogen.",
+        truth:
+          "Immunity is specific. Acquired immunity is directed at the antigens a person has met (or been vaccinated against) and offers little or no protection against unrelated pathogens.",
+        examRef: "CEE — immunity",
+      },
+    ],
+    workedNumericals: [
+      {
+        problem:
+          "A measles outbreak has a basic reproduction number R₀ ≈ 15. What fraction of the population must be immune to stop sustained transmission, and per 1,000 people how many must be vaccinated?",
+        given: "R₀ = 15",
+        steps: [
+          "Threshold fraction: p = 1 − 1/R₀ = 1 − 1/15.",
+          "1/15 = 0.067, so p = 0.933, i.e. about 93%.",
+          "Per 1,000 people: 0.933 × 1,000 ≈ 933 people.",
+        ],
+        answer: "About 93% immunity (roughly 933 of every 1,000 people) — why measles needs very high vaccine coverage.",
+      },
+    ],
+    keyTermsAndDefinitions: [
+      {
+        term: "Innate immunity",
+        definition:
+          "The non-specific, inborn defences present from birth — skin and mucous membranes, phagocytes, fever, inflammation, natural killer cells, complement.",
+        significance:
+          "It needs no prior exposure and buys the days the specific response needs to develop; it is the reason most pathogens never cause disease.",
+      },
+      {
+        term: "Antibody",
+        definition:
+          "A protein (immunoglobulin) secreted by plasma cells that binds one specific antigen by its variable region and helps neutralise or clear it.",
+        significance:
+          "Antibody titre is the measurable readout of immunity, which is why serology can prove past infection or successful vaccination.",
+      },
+      {
+        term: "Vector (in disease)",
+        definition:
+          "An organism that transmits a pathogen from one host to another — the female Anopheles mosquito for malaria, Aedes for dengue and chikungunya.",
+        significance:
+          "Control of the vector (stagnant water, nets, larvicides) breaks transmission where no vaccine exists.",
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // BIOLOGY — Biotechnology (principles)
+  // ─────────────────────────────────────────────────────────────
+  {
+    topicKeywords: [
+      "biotechnology-principles",
+      "principles-of-biotechnology",
+      "restriction-enzyme",
+      "plasmid",
+      "vector",
+      "recombinant-dna",
+      "pcr",
+      "gel-electrophoresis",
+      "cloning",
+      "gene-transfer",
+    ],
+    subject: "biology",
+    title: "Principles of Biotechnology — Restriction Enzymes, Vectors & Recombinant DNA",
+    unitSlugs: ["biotechnology-principles"],
+    category: "Biotechnology",
+    governingLaws: [
+      {
+        name: "Restriction-endonuclease specificity",
+        statement:
+          "A restriction enzyme recognises one short palindromic sequence and cuts both strands at a fixed position inside or near it, producing either blunt or staggered ('sticky') ends.",
+        formula: "EcoRI recognises 5′-GAATTC-3′ and cuts G↓AATTC, leaving 5′-AATT overhangs",
+        conditions:
+          "The host's own DNA carries methyl groups on the same sites, so the enzyme cuts foreign DNA only — the natural function is defence against bacteriophages.",
+      },
+      {
+        name: "Sticky-end ligation (basis of recombinant DNA)",
+        statement:
+          "Fragments cut by the same enzyme carry complementary single-stranded overhangs, so they base-pair spontaneously and DNA ligase seals the backbone, joining the foreign fragment to the vector.",
+        formula: "foreign fragment (AATT) + vector (AATT) → H-bonds → ligase → recombinant DNA",
+        conditions:
+          "Requires the same enzyme (or compatible ends) on both molecules; blunt-end ligation is possible but far less efficient.",
+      },
+      {
+        name: "Exponential amplification (PCR)",
+        statement:
+          "Each thermal cycle doubles the number of target molecules, so n cycles give 2ⁿ copies of the starting template.",
+        formula: "N = N₀ × 2ⁿ",
+        conditions:
+          "Needs two primers flanking the target, a thermostable polymerase (Taq), dNTPs and Mg²⁺; efficiency falls as primers and dNTPs are used up.",
+      },
+    ],
+    speedFormulas: [
+      {
+        name: "PCR yield",
+        formula: "N = N₀ × 2ⁿ",
+        description:
+          "20 cycles give about 10⁶ copies, 30 cycles about 10⁹ — the reason a single cell's DNA can be typed.",
+        unit: "molecules",
+      },
+      {
+        name: "Restriction fragments",
+        formula: "a linear DNA with n sites gives n + 1 fragments",
+        description:
+          "A circular plasmid with n sites gives n fragments. The count is how a restriction map is read off a gel.",
+        unit: "fragments",
+      },
+      {
+        name: "Gel electrophoresis mobility",
+        formula: "migration distance ∝ 1 / log(molecular weight)",
+        description:
+          "Negatively charged DNA moves towards the anode; smaller fragments travel further, so the gel sorts by size.",
+        unit: "—",
+      },
+    ],
+    constantsAndValues: [
+      { symbol: "EcoRI site", name: "Recognition sequence", value: "5′-GAATTC-3′", unit: "—" },
+      { symbol: "Taq", name: "Thermostable polymerase source", value: "Thermus aquaticus", unit: "—" },
+      { symbol: "72 °C", name: "Optimum extension temperature in PCR", value: "72", unit: "deg C" },
+      { symbol: "94 °C", name: "Denaturation step in PCR", value: "94", unit: "deg C" },
+      { symbol: "pBR322", name: "Classic cloning vector", value: "a widely used E. coli plasmid with ampicillin and tetracycline markers", unit: "—" },
+    ],
+    entranceTraps: [
+      {
+        trap: "Restriction enzymes cut DNA at random positions, producing a smear.",
+        truth:
+          "They are sequence-specific: each enzyme cuts only its own palindromic recognition site, which is why a plasmid is cut into a reproducible set of fragments.",
+        examRef: "NEB — tools of recombinant DNA technology",
+      },
+      {
+        trap: "PCR needs a helicase to separate the two DNA strands.",
+        truth:
+          "PCR separates strands by HEAT (about 94 °C), not by enzymes. That is exactly why a thermostable polymerase such as Taq is used — the usual polymerases would denature in the first cycle.",
+        examRef: "CEE — PCR",
+      },
+      {
+        trap: "A plasmid is a linear DNA molecule, like a fragment cut from a chromosome.",
+        truth:
+          "Plasmids are CIRCULAR, extrachromosomal bacterial DNA that replicate independently of the main chromosome — their circularity is what makes them easy to re-close around an insert.",
+        examRef: "NEB — cloning vectors",
+      },
+      {
+        trap: "Ligase cuts DNA and restriction enzymes join it.",
+        truth:
+          "Reverse it: restriction enzymes cut at specific sequences, DNA ligase seals nicks by forming phosphodiester bonds. Ligase is the 'glue', not the scissors.",
+        examRef: "CEE — enzymes of rDNA technology",
+      },
+    ],
+    workedNumericals: [
+      {
+        problem:
+          "A single DNA molecule is amplified by PCR for 20 cycles. How many copies of the target are present, assuming 100% efficiency?",
+        given: "N₀ = 1, n = 20",
+        steps: [
+          "N = N₀ × 2ⁿ = 1 × 2²⁰.",
+          "2²⁰ = (2¹⁰)² = 1024² ≈ 1.05 × 10⁶.",
+        ],
+        answer: "About 1.05 × 10⁶ copies — roughly a million-fold amplification from one molecule.",
+      },
+    ],
+    keyTermsAndDefinitions: [
+      {
+        term: "Vector (in biotechnology)",
+        definition:
+          "A DNA molecule that can carry a foreign DNA fragment into a host cell and replicate there — plasmids, bacteriophages, BACs and YACs.",
+        significance:
+          "No vector, no recombinant DNA: it supplies both the cloning site and the origin of replication that lets the foreign fragment be multiplied.",
+      },
+      {
+        term: "Sticky ends",
+        definition:
+          "Short single-stranded overhangs left by a staggered cut, which base-pair with any fragment carrying the complementary overhang.",
+        significance:
+          "They make the foreign-fragment-to-vector join spontaneous, which is why the same enzyme is used on both molecules.",
+      },
+      {
+        term: "Transformation",
+        definition:
+          "The uptake of free recombinant DNA by a competent bacterial cell, usually after calcium-chloride treatment or electroporation.",
+        significance:
+          "It is the step that turns a test tube of ligated DNA into a living clone that can multiply the insert.",
+      },
+    ],
+  },
+
+  // ─────────────────────────────────────────────────────────────
+  // BIOLOGY — Biotechnology (applications)
+  // ─────────────────────────────────────────────────────────────
+  {
+    topicKeywords: [
+      "biotechnology-applications",
+      "applications-in-agriculture-and-medicine",
+      "bt-cotton",
+      "gm-crops",
+      "golden-rice",
+      "transgenic",
+      "gene-therapy",
+      "recombinant-insulin",
+      "biopatent",
+    ],
+    subject: "biology",
+    title: "Applications of Biotechnology — GM Crops, Gene Therapy & Recombinant Products",
+    unitSlugs: ["biotechnology-applications"],
+    category: "Biotechnology",
+    governingLaws: [
+      {
+        name: "Bt-toxin activation",
+        statement:
+          "The cry gene's protein is inactive in the bacterium; in the alkaline gut of a susceptible insect larva it is solubilised and cleaved into an active toxin that forms pores in the midgut epithelium, killing the larva.",
+        formula: "cry protein (crystal) → alkaline gut → active toxin → midgut pores → larval death",
+        conditions:
+          "Selective: the gut pH that activates the toxin is found in lepidopteran (and some coleopteran/dipteran) larvae, so beneficial insects are largely spared.",
+      },
+      {
+        name: "Principle of gene therapy",
+        statement:
+          "A defective gene is corrected by delivering a functional copy into the patient's cells; if the affected cells are somatic, the correction stops with the patient and is not inherited.",
+        formula: "defective cell + functional gene (viral or non-viral vector) → restored protein",
+        conditions:
+          "Needs dividing target cells that are accessible (bone marrow, lung epithelium), and the corrected cells must survive and express the gene long enough to help.",
+      },
+      {
+        name: "Recombinant product manufacturing",
+        statement:
+          "A human gene is cloned into a vector and expressed in a fast-growing host (E. coli, yeast, CHO cells), which then secretes or accumulates the human protein in bulk.",
+        formula: "human gene → expression vector → host cell → fermentation → purified therapeutic protein",
+        conditions:
+          "The host must not destroy the product (no proteases) and, for glycoproteins, must glycosylate it like human cells — the reason insulin works in E. coli but erythropoietin needs mammalian cells.",
+      },
+    ],
+    speedFormulas: [
+      {
+        name: "Insulin requirement",
+        formula: "human insulin ≈ 0.5 – 1.0 unit per kg body weight per day",
+        description:
+          "A 60 kg person therefore needs roughly 30–60 units a day, split around meals — recombinant human insulin removed the animal-source supply limit.",
+        unit: "units/day",
+      },
+      {
+        name: "Gene integration (Golden rice)",
+        formula: "two genes (psy, crtI) inserted in the β-carotene pathway",
+        description:
+          "Both genes are needed because rice already makes the earlier precursor (GGPP); the transplant completes the route to provitamin A.",
+        unit: "genes",
+      },
+      {
+        name: "Bt-crop refuge strategy",
+        formula: "at least 20% non-Bt refuge around a Bt field",
+        description:
+          "Susceptible insects from the refuge mate with resistant survivors, which staggers the evolution of resistance to the Bt toxin.",
+        unit: "% of area",
+      },
+    ],
+    constantsAndValues: [
+      { symbol: "Bt", name: "Source of the cry pest-resistant gene", value: "Bacillus thuringiensis", unit: "—" },
+      { symbol: "1982", name: "First recombinant human insulin approved", value: "recombinant 'Humulin', E. coli", unit: "—" },
+      { symbol: "1990", name: "First approved human gene therapy", value: "ADA-SCID, given to a 4-year-old girl", unit: "—" },
+      { symbol: "cry", name: "Gene family coding the Bt crystal toxin", value: "cryIAc (bollworm), cryIIAb (corn borer)", unit: "—" },
+    ],
+    entranceTraps: [
+      {
+        trap: "Gene therapy changes every cell of the patient's body, so it is inherited.",
+        truth:
+          "Therapeutic gene therapy corrects SOMATIC cells only (bone marrow, lung, liver); the change is confined to the patient and is not passed to children. Only germ-line editing would be inherited, and that is not permitted clinically.",
+        examRef: "NEB — gene therapy",
+      },
+      {
+        trap: "Bt toxin kills every insect that feeds on the crop, so Bt fields are sterile of insect life.",
+        truth:
+          "The toxin is activated by the ALKALINE gut of specific larvae (chiefly lepidopterans such as bollworm and corn borer). Insects with acidic guts, and all pollinators that do not eat the tissue, are unaffected.",
+        examRef: "CEE — Bt crops",
+      },
+      {
+        trap: "Recombinant human insulin is chemically different from the insulin a healthy pancreas makes.",
+        truth:
+          "It is the human amino-acid sequence: the human gene is expressed in bacteria or yeast, so the product is identical to the natural hormone — which is exactly why it replaced animal insulin and reduced allergic reactions.",
+        examRef: "NEB / CEE — biotechnology in medicine",
+      },
+      {
+        trap: "Biopatents and biopiracy mean the same thing.",
+        truth:
+          "A biopatent is a legal right over an invention or product; biopiracy is the EXPLOITATION of a community's biological knowledge or resources without permission or reward. One is a grant, the other a misappropriation.",
+        examRef: "NEB — ethics of biotechnology",
+      },
+    ],
+    workedNumericals: [
+      {
+        problem:
+          "A 60 kg patient with type 1 diabetes needs 0.8 units of insulin per kg per day, given in three equal pre-meal doses. What dose should each injection carry?",
+        given: "mass = 60 kg, requirement = 0.8 units/kg/day, 3 doses/day",
+        steps: [
+          "Daily requirement: 0.8 × 60 = 48 units/day.",
+          "Per dose: 48 ÷ 3 = 16 units.",
+        ],
+        answer: "48 units a day, given as 16 units before each of the three main meals.",
+      },
+    ],
+    keyTermsAndDefinitions: [
+      {
+        term: "Transgenic organism",
+        definition:
+          "An organism whose genome has been deliberately altered by the introduction of a gene from another species — Bt cotton, Golden rice, and bacteria making human insulin.",
+        significance:
+          "It is the deliverable of recombinant DNA technology: the transferred gene is expressed in the new host, conferring a new, chosen trait.",
+      },
+      {
+        term: "Gene therapy",
+        definition:
+          "The treatment of a genetic disease by introducing a functional copy of the defective gene into the patient's cells.",
+        significance:
+          "It treats the cause rather than the symptom, and the first clinical success (ADA-SCID, 1990) proved a genetic disease can be corrected in a living patient.",
+      },
+      {
+        term: "Biopiracy",
+        definition:
+          "The use of a community's biological resources or traditional knowledge for commercial gain without permission, acknowledgement or a share of the benefit.",
+        significance:
+          "It is why benefit-sharing agreements (the Nagoya Protocol) and national access rules now accompany bioprospecting.",
       },
     ],
   },

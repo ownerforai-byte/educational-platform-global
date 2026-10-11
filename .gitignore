@@ -36,6 +36,14 @@ next-env.d.ts
 *.env
 !.env.example
 .env*.local
+# env dumps that do NOT match the .env patterns above but hold the same
+# live secrets (Supabase service-role key, AI provider keys) — never commit
+/env2
+/env2.*
+/env[0-9]
+/env[0-9].*
+/env.bak
+/env.old
 .mcp.json
 
 # agent/deploy tokens kept in the working tree

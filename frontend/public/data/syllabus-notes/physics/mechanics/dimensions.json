@@ -1,0 +1,56 @@
+{
+  "title": "Dimensions",
+  "unitSlug": "mechanics",
+  "topicSlug": "dimensions",
+  "topicTitle": "Dimensions",
+  "relevance": 55,
+  "notes": [
+    "**Why:** connects to other topics.",
+    "**Study:** learn definitions, formulas, practice."
+  ],
+  "confusion": [
+    "Check formula conditions."
+  ],
+  "practice": [],
+  "universalFacts": [
+    "Foundational for advanced topics."
+  ],
+  "animation3D": "mechanics",
+  "motionGraphics": "mechanics",
+  "examples": [],
+  "practiceQuestions": [],
+  "formulas": [
+    "Dimensional formula of a quantity: $[Q] = M^a L^b T^c$ (add A, K, mol, cd when the quantity needs them).",
+    "Principle of homogeneity: every term of a valid physical equation must have identical dimensions.",
+    "Dimensions give the unit: $[\\eta] = ML^{-1}T^{-1}$ ⟹ viscosity is measured in Pa s."
+  ],
+  "keyPoints": [
+    "Homogeneity tests an equation's form but never fixes the dimensionless factors (½, 2π) — a dimensionally correct equation can still be wrong."
+  ],
+  "summary": "Dimensions covers essential principles and applications.",
+  "specialNotes": [
+    "Check conditions for Dimensions.",
+    "Dimensions connects to other topics."
+  ],
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
+  "examNotes": [
+    "Focus on Dimensions problems - significant marks."
+  ],
+  "mcs": [
+    {
+      "question": "Which describes Dimensions?",
+      "options": [
+        "Correct definition",
+        "Related concept",
+        "Incorrect description",
+        "Unrelated"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantConcepts": [],
+  "importantTasks": [],
+  "duplicateType": 1
+}

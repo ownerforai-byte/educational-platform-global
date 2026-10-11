@@ -1,0 +1,10 @@
+{
+  "title": "Angle Bisector — Verifying with the tan θ Method",
+  "notes": [
+    "As a cross-check, find the angle θ between one of the original lines and one candidate bisector using: tan θ = |(m₁ − m_b)/(1 + m₁·m_b)|, where m₁ is the original line's slope and m_b is the bisector's slope",
+    "**If tan θ < 1** (θ < 45°): since θ is half the angle between the two original lines, the total angle is less than 90°, so this bisector is the **acute** angle bisector",
+    "**If tan θ > 1** (θ > 45°): this bisector is the **obtuse** angle bisector",
+    "**Worked check:** slope of Bisector 1 (6x + 6y − 1 = 0) is m_b = −6/6 = −1; with the original line's slope m₁ = −1/2: tan θ = |(−1/2 − (−1))/(1 + (−1/2)(−1))| = |(1/2)/(3/2)| = 1/3",
+    "Since tan θ = 1/3 < 1, this confirms 6x + 6y − 1 = 0 is definitively the **acute angle bisector** — matching the a₁a₂ + b₁b₂ method"
+  ]
+}

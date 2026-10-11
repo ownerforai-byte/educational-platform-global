@@ -12,14 +12,21 @@
   "motionGraphics": "algebra",
   "examples": [],
   "practiceQuestions": [],
-  "formulas": [],
-  "keyPoints": [],
+  "formulas": [
+    "AP: $t_n = a + (n-1)d$ and $S_n = \\frac{n}{2}\\left[2a + (n-1)d\\right] = \\frac{n}{2}(a + l)$.",
+    "GP: $t_n = ar^{n-1}$, $S_n = \\frac{a(r^n - 1)}{r - 1}$ for $r \\neq 1$, and $S_\\infty = \\frac{a}{1-r}$ for $|r| < 1$.",
+    "For positive numbers $AM \\geq GM \\geq HM$, with equality only when the numbers are equal."
+  ],
+  "keyPoints": [
+    "Check the common difference/ratio first: a 'series' question is an AP or a GP question in disguise, and the two have different sum formulas."
+  ],
   "summary": "Sequence and Series covers essential principles and applications.",
   "specialNotes": [],
   "importantStatements": [],
   "importantNotes": [],
   "examShortTricks": [],
   "examNotes": [],
+  "mcs": [],
   "importantConcepts": [],
   "importantTasks": [],
   "duplicateType": 1

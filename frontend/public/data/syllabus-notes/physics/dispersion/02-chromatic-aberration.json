@@ -76,8 +76,7 @@
     "Q5. What are the applications of Chromatic and spherical aberration?"
   ],
   "formulas": [
-    "Application formula for Chromatic and spherical aberration",
-    "Derivation result for Chromatic and spherical aberration"
+    "Longitudinal chromatic aberration: $f_r - f_v = \\omega f$, where $\\omega$ is the lens's dispersive power."
   ],
   "specialNotes": [
     "Note 1: Pay attention to the conditions under which Chromatic and spherical aberration applies",
@@ -141,7 +140,9 @@
       "answer": "C"
     }
   ],
-  "keyPoints": [],
+  "keyPoints": [
+    "A single lens always disperses; only a combination of two glasses can recombine the colours at one focus."
+  ],
   "summary": "Chromatic and spherical aberration is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics.",
   "importantStatements": []
 }

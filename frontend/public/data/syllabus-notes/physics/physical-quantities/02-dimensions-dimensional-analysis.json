@@ -38,6 +38,7 @@
   ],
   "animation3D": "physical-quantities",
   "motionGraphics": "physical-quantities",
+  "examples": [],
   "practiceQuestions": [
     "Q2. State the principle of homogeneity of dimensions and use it to test the equation $v = u - at$.",
     "Q3. Assuming the period $T$ of a simple pendulum depends on its length $l$ and acceleration due to gravity $g$, derive the relation $T = k\\sqrt{l/g}$ dimensionally.",
@@ -157,6 +158,5 @@
     "**Function Argument Constraint:** The arguments of trigonometric (e.g., sin θ, cos θ), exponential (e.g., $e^x$), and logarithmic functions must be dimensionless. This is a critical check for determining the dimensions of unknown constants in an equation.",
     "**Dimensionless Constant Constraint:** Dimensional analysis inherently cannot identify or verify dimensionless constants (e.g., $2\\pi$, 0.5). These factors must be determined via independent theoretical derivation or experimental calibration."
   ],
-  "visualType": "dimensional-analysis",
-  "examples": []
+  "visualType": "dimensional-analysis"
 }

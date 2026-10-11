@@ -64,7 +64,7 @@ export function SiteWelcome() {
         <div className="rounded-[15px] bg-gradient-to-br from-rose-500/10 via-amber-500/10 to-emerald-500/10 px-4 py-3">
           <p className="text-[13px] font-bold leading-tight">
             <span className="bg-gradient-to-r from-rose-500 via-amber-500 to-emerald-500 bg-clip-text text-transparent">
-              Namaste {firstName}! 🎉
+              Namaste {firstName}.
             </span>{" "}
             <span className="text-foreground/90">Welcome to</span>{" "}
             <span className="bg-gradient-to-r from-violet-500 to-sky-500 bg-clip-text text-transparent">
@@ -73,12 +73,9 @@ export function SiteWelcome() {
             <span className="text-foreground/90">.</span>
           </p>
           <p className="mt-1 text-[12px] leading-snug text-muted-foreground">
-            Ask anything from your syllabus — I reply with{" "}
-            <span className="font-semibold text-sky-600 dark:text-sky-400">tables</span>,{" "}
-            <span className="font-semibold text-violet-600 dark:text-violet-400">diagrams</span> &amp;{" "}
-            <span className="font-semibold text-amber-600 dark:text-amber-400">worked steps</span>.
-            <span className="ml-1 font-medium text-emerald-600 dark:text-emerald-400">
-              Let's learn something brilliant ✨
+            Ask a question from your syllabus.{" "}
+            <span className="font-medium text-emerald-600 dark:text-emerald-400">
+              Let&apos;s learn something brilliant ✨
             </span>
           </p>
         </div>

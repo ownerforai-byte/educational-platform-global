@@ -13,6 +13,10 @@ const eslintConfig = [
   {
     ignores: [
       ".next/**",
+      // OpenNext/Workers build output (gitignored, regenerable). Without this
+      // the local `eslint .` run parses a 25 MB server bundle and dies with
+      // "heap out of memory", even though CI (a clean checkout) never sees it.
+      ".open-next/**",
       "out/**",
       "build/**",
       "dist/**",

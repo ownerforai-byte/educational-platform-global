@@ -7,26 +7,26 @@
     "template": "most of the payload is generator stock (\"Core point for X.\", \"X covers essential principles and applications.\")"
   },
   "totals": {
-    "entries": 673,
-    "authored": 663,
-    "template": 10,
-    "bytes": 7614758
+    "entries": 745,
+    "authored": 731,
+    "template": 14,
+    "bytes": 9004715
   },
   "subjects": {
     "biology": {
       "totals": {
-        "entries": 105,
-        "authored": 105,
+        "entries": 129,
+        "authored": 129,
         "template": 0,
-        "bytes": 2049282
+        "bytes": 2601230
       },
       "units": {
         "biomolecules-and-cell-biology": {
           "totals": {
-            "entries": 13,
-            "authored": 13,
+            "entries": 18,
+            "authored": 18,
             "template": 0,
-            "bytes": 240313
+            "bytes": 382759
           },
           "entries": [
             {
@@ -44,6 +44,13 @@
               "status": "authored"
             },
             {
+              "topicSlug": "biomolecules-introduction-and-functions-of-carbohydrates-proteins-lipids-nucleic-acids-minerals-enzymes-and-water",
+              "filename": "01-biomolecules-introduction-and-functions.json",
+              "bytes": 29439,
+              "sha256": "3e3eedfc9673b5e0fc72f8f853160121ddc1aad85cd141dc2bb0bf29eec2c53d",
+              "status": "authored"
+            },
+            {
               "topicSlug": "cell-introduction-of-cell-concepts-of-prokaryotic-and-eukaryotic-cells",
               "filename": "02-cell-introduction-prokaryotic-and-eukaryotic.json",
               "bytes": 32176,
@@ -51,10 +58,24 @@
               "status": "authored"
             },
             {
+              "topicSlug": "cell-introduction",
+              "filename": "02-cell-introduction.json",
+              "bytes": 24404,
+              "sha256": "25033f73c1545168b0948598a2e6a18b28425d329eab4aaf13a8ff65cb3eb78a",
+              "status": "authored"
+            },
+            {
               "topicSlug": "detail-structure-of-eukaryotic-cells-cell-wall-cell-membrane-mitochondria-plastids-endoplasmic-r",
               "filename": "03-detail-structure-of-eukaryotic-cells-cell-wall-cell-membrane-mitochondria-plastids-endoplasmic-r.json",
               "bytes": 35443,
               "sha256": "9f0bd5542cc6013c9f9ddc96641173f0545dbc045e415bbe64a7ee814abbc428",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "detail-structure-of-eukaryotic-cells",
+              "filename": "03-detail-structure-of-eukaryotic-cells.json",
+              "bytes": 33303,
+              "sha256": "6fdaeec78efca184baf07dd64c39f609e7128122c33794e953b09194617db512",
               "status": "authored"
             },
             {
@@ -69,6 +90,20 @@
               "filename": "04-cell-division-concept-of-cell-cycle-types-of-cell-division-amitosis-mitosis-and-meiosis-and-sign.json",
               "bytes": 39131,
               "sha256": "363c9bca6abf62cda6349edd5931c0c4700ced697c9a344de00c23f7278d7b4b",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "cell-division-concept-of-cell-cycle-types-of-cell-division-and-significances",
+              "filename": "04-cell-division-concept-of-cell-cycle-types-of-cell-division-and-significances.json",
+              "bytes": 31384,
+              "sha256": "c05c1aa29a05e827b278e10928bb913765c855284ecd3244d69a7aaf8ea47c45",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "cell-division",
+              "filename": "04-cell-division.json",
+              "bytes": 23916,
+              "sha256": "cb9e8ef90f69db8ddb81c2acbd076ded152ed2cb5975999aa24da27105386a92",
               "status": "authored"
             },
             {
@@ -124,10 +159,10 @@
         },
         "biota-and-environment": {
           "totals": {
-            "entries": 6,
-            "authored": 6,
+            "entries": 11,
+            "authored": 11,
             "template": 0,
-            "bytes": 108057
+            "bytes": 228569
           },
           "entries": [
             {
@@ -138,6 +173,20 @@
               "status": "authored"
             },
             {
+              "topicSlug": "animal-adaptation-aquatic-terrestrial-and-volant-adaptation",
+              "filename": "01-animal-adaptation-aquatic-terrestrial-and-volant-adaptation.json",
+              "bytes": 29740,
+              "sha256": "12d99c6353d0ee96f9ea5c7f2b99c91bba9ed240bf8049e8ce0619745e9ca414",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "animal-adaptation",
+              "filename": "01-animal-adaptation.json",
+              "bytes": 29515,
+              "sha256": "dcc746453994ee028e27ed9ced7d58cfff366112901fc1ad169ec227146d217c",
+              "status": "authored"
+            },
+            {
               "topicSlug": "animal-behavior-reflex-action-taxes-dominance-and-leadership-fish-and-bird-migration",
               "filename": "02-animal-behavior-reflex-action-taxes-dominance-and-leadership-fish-and-bird-migration.json",
               "bytes": 34048,
@@ -145,10 +194,31 @@
               "status": "authored"
             },
             {
+              "topicSlug": "animal-behavior-reflex-action-taxes-dominance-and-leadership",
+              "filename": "02-animal-behavior-reflex-action-taxes-dominance-and-leadership.json",
+              "bytes": 2720,
+              "sha256": "3b8c1d82dc8f7d2031d086eb4ce2317c2b729ea62c7defe113b35b7380255922",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "animal-behavior",
+              "filename": "02-animal-behavior.json",
+              "bytes": 27736,
+              "sha256": "b81132ecfb8e137d19efc51434c2edf1f8044628d55d5cda4f0e6c88add4440b",
+              "status": "authored"
+            },
+            {
               "topicSlug": "environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution-pesticides-and-their-effects",
               "filename": "03-environmental-pollution-sources-effects-and-control-measures-of-air-water-and-soil-pollution-pesticides-and-their-effects.json",
               "bytes": 35574,
               "sha256": "73a08e25af5d96f058e069d5608030d3bcecf32a5607bdc04a3c81488c116fd8",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "environmental-pollution",
+              "filename": "03-environmental-pollution.json",
+              "bytes": 30801,
+              "sha256": "fd614fc9906815323bada13ede3f83750b9a097e22e40a89929ae913c6cc7db2",
               "status": "authored"
             },
             {
@@ -210,10 +280,10 @@
         },
         "conservation-biology": {
           "totals": {
-            "entries": 7,
-            "authored": 7,
+            "entries": 8,
+            "authored": 8,
             "template": 0,
-            "bytes": 146665
+            "bytes": 149524
           },
           "entries": [
             {
@@ -228,6 +298,13 @@
               "filename": "01-conservation-biology-concept-of-biodiversity-biodiversity-conservation.json",
               "bytes": 32831,
               "sha256": "822b3274fe9f6c9e86ae8a9f7d940adee7ae0954a6ff3ffd38b1b9f1638dc671",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "national-parks-wildlife-reserves-conservation-areas-biodiversity-hotspots-wetland-and-ramsar-sit",
+              "filename": "02-national-parks-wildlife-reserves-conservation-areas-biodiversity-hotspots-wetland-and-ramsar-sit.json",
+              "bytes": 2859,
+              "sha256": "4b275df4fbe78efdbd5a4eaeabecf67a3befdf8069133c62bcfa1b0609dab106",
               "status": "authored"
             },
             {
@@ -269,10 +346,10 @@
         },
         "ecology": {
           "totals": {
-            "entries": 9,
-            "authored": 9,
+            "entries": 13,
+            "authored": 13,
             "template": 0,
-            "bytes": 246209
+            "bytes": 337024
           },
           "entries": [
             {
@@ -280,6 +357,20 @@
               "filename": "01-ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions-concept-of-ecosystem-structural-and-functional-aspects-of-pond-and-forest-ecosystem.json",
               "bytes": 39511,
               "sha256": "f3889bd9749dda361712372194fdd10155a0b9d9d0b403e9a7b42b1f04611019",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions",
+              "filename": "01-ecosystem-ecology-concept-of-ecology-biotic-and-abiotic-factors-species-interactions.json",
+              "bytes": 2750,
+              "sha256": "5f7eb6237bb7be650bb9b2de23cbe1784951131fb34b0a292e2cb6e0b21ad341",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "ecosystem-ecology",
+              "filename": "01-ecosystem-ecology.json",
+              "bytes": 28933,
+              "sha256": "52a496c4aed30193ab028e1728a157affd0b93bc59479d4dc50889c96d273077",
               "status": "authored"
             },
             {
@@ -325,10 +416,24 @@
               "status": "authored"
             },
             {
+              "topicSlug": "ecological-adaptation",
+              "filename": "04-ecological-adaptation.json",
+              "bytes": 28342,
+              "sha256": "3c7bcf03cafa4792851dc4a72123e71d5e4ab24aebd268b1b6e5d6ac35bcd4ba",
+              "status": "authored"
+            },
+            {
               "topicSlug": "ecological-imbalances-greenhouse-effects-and-climate-change-depletion-of-ozone-layer-acid-rain-and-biological-invasion",
               "filename": "05-ecological-imbalances-climate-change.json",
               "bytes": 37799,
               "sha256": "de6942dd778090b9f0524353644d9a0f85f95ea4241510053fb1a64b17ac4e87",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "ecological-imbalances",
+              "filename": "05-ecological-imbalances.json",
+              "bytes": 30790,
+              "sha256": "cd15d83b5f78c59361c8baef8531f4a129de7eef5a9e67d3f4e1c6d63c39ee30",
               "status": "authored"
             },
             {
@@ -359,10 +464,10 @@
         },
         "evolutionary-biology": {
           "totals": {
-            "entries": 9,
-            "authored": 9,
+            "entries": 10,
+            "authored": 10,
             "template": 0,
-            "bytes": 211619
+            "bytes": 239240
           },
           "entries": [
             {
@@ -415,6 +520,13 @@
               "status": "authored"
             },
             {
+              "topicSlug": "human-evolution",
+              "filename": "04-human-evolution.json",
+              "bytes": 27621,
+              "sha256": "f6acc88ed4a64aad1832f32433076253c2809db7eb5fcedb85e7dd0a9ca84e52",
+              "status": "authored"
+            },
+            {
               "topicSlug": "differences-between-new-world-monkeys-and-old-world-monkeys-apes-and-man",
               "filename": "05-differences-between-new-world-monkeys-and-old-world-monkeys-apes-and-man.json",
               "bytes": 2817,
@@ -432,10 +544,10 @@
         },
         "faunal-diversity": {
           "totals": {
-            "entries": 19,
-            "authored": 19,
+            "entries": 20,
+            "authored": 20,
             "template": 0,
-            "bytes": 323410
+            "bytes": 326248
           },
           "entries": [
             {
@@ -443,6 +555,13 @@
               "filename": "01-protista-outline-classification-protozoa-diagnostic-features-and-classification-up-to-class-with-examples.json",
               "bytes": 49913,
               "sha256": "c2d4bc0a5bc797bbec50af130dfad9843a90df4112f39c5e9860d09e94d633f3",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "protista-outline-classification-protozoa-diagnostic-features-and-classification-up-to-class-with",
+              "filename": "01-protista-outline-classification-protozoa-diagnostic-features-and-classification-up-to-class-with.json",
+              "bytes": 2838,
+              "sha256": "5469f4f8aeadbfde75755cd48078091938e41d645f3b1ea4cafb4e94027689c0",
               "status": "authored"
             },
             {
@@ -575,10 +694,10 @@
         },
         "floral-diversity": {
           "totals": {
-            "entries": 20,
-            "authored": 20,
+            "entries": 25,
+            "authored": 25,
             "template": 0,
-            "bytes": 269891
+            "bytes": 406430
           },
           "entries": [
             {
@@ -596,10 +715,17 @@
               "status": "authored"
             },
             {
+              "topicSlug": "fungi-general-introduction-characteristic-features-of-phycomycetes-ascomycetes-basidiomycetes-and-deuteromycetes",
+              "filename": "02-fungi-general-introduction-and-characteristic-features.json",
+              "bytes": 26460,
+              "sha256": "5f9d5e087a7428a2b59723b83a3f6e8d3fdcfdff7059bdf0d650bf1676d8416c",
+              "status": "authored"
+            },
+            {
               "topicSlug": "fungi",
               "filename": "02-fungi.json",
-              "bytes": 26105,
-              "sha256": "b3bd38c2e3b630b71539ee08237fd312b412bca2b3faffdb1cc01df5af1de5b6",
+              "bytes": 26153,
+              "sha256": "a09b96b18272f576c593f2d8178b00efe62c6b4185825a18e23403236d31cc2f",
               "status": "authored"
             },
             {
@@ -631,6 +757,13 @@
               "status": "authored"
             },
             {
+              "topicSlug": "bryophytes",
+              "filename": "04-bryophytes.json",
+              "bytes": 27537,
+              "sha256": "0c2183a14f0dd9fc69468bd57aa31c9ae7b0d3a749022031661d55ddf0a98824",
+              "status": "authored"
+            },
+            {
               "topicSlug": "structure-and-reproduction-of-mucor-and-yeast",
               "filename": "04-structure-and-reproduction-of-mucor-and-yeast.json",
               "bytes": 3336,
@@ -652,10 +785,24 @@
               "status": "authored"
             },
             {
+              "topicSlug": "pteridophytes",
+              "filename": "05-pteridophytes.json",
+              "bytes": 26829,
+              "sha256": "52b8a0b0d6ca15f388853c0e3cf11fc52aa9cb985dfc01b9738e491264a2184d",
+              "status": "authored"
+            },
+            {
               "topicSlug": "gymnosperm-general-introduction-characteristic-features-of-gymnosperms-morphology-and-reproduction-of-pinus-economic-importance-of-gymnosperm",
               "filename": "06-gymnosperms-detailed.json",
               "bytes": 36507,
               "sha256": "a2311f5e831557488c4fad384b4fe4e08ec6db7ae56b23a418b7da93ee157451",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "gymnosperms",
+              "filename": "06-gymnosperms.json",
+              "bytes": 26301,
+              "sha256": "fbb41988dc4dc67cffe33be25882b03e8a9fdbf0a1d416bc80e19f4e0cc68a07",
               "status": "authored"
             },
             {
@@ -673,10 +820,17 @@
               "status": "authored"
             },
             {
+              "topicSlug": "angiosperm-morphology-of-root-stem-leaves-inflorescences-flowers-and-fruit-taxonomic-study-definition-taxonomic-hierarchy-classification-systems-of-angiosperms-angiosperm-families-with-economic-importance-brassicaceae-fabaceae-solanaceae-and-liliaceae",
+              "filename": "07-angiosperm-morphology-and-taxonomic-study.json",
+              "bytes": 29310,
+              "sha256": "5e7e3ad669e658345eabcdda9f01fa2e5bb0132a8e465c2a23c8f3e922061426",
+              "status": "authored"
+            },
+            {
               "topicSlug": "angiosperms",
               "filename": "07-angiosperms.json",
-              "bytes": 28659,
-              "sha256": "0ce0c4f8d7488ba0366f875bd725746ff2dd3d004413e0b443386304b5ee9f58",
+              "bytes": 28713,
+              "sha256": "5c243cce028bf35151eed0767c03be77df66e454d24a64f5f781d4a5ef613e53",
               "status": "authored"
             },
             {
@@ -811,10 +965,10 @@
         },
         "introductory-microbiology": {
           "totals": {
-            "entries": 6,
-            "authored": 6,
+            "entries": 7,
+            "authored": 7,
             "template": 0,
-            "bytes": 188460
+            "bytes": 214167
           },
           "entries": [
             {
@@ -853,6 +1007,13 @@
               "status": "authored"
             },
             {
+              "topicSlug": "virus",
+              "filename": "02-virus.json",
+              "bytes": 25707,
+              "sha256": "d49c82b87df3f306046127902ded1d3d0c30c7208df703ae42e69560ce8dd423",
+              "status": "authored"
+            },
+            {
               "topicSlug": "biotech-microbiology",
               "filename": "03-biotech-microbiology.json",
               "bytes": 40724,
@@ -863,10 +1024,10 @@
         },
         "vegetation": {
           "totals": {
-            "entries": 5,
-            "authored": 5,
+            "entries": 6,
+            "authored": 6,
             "template": 0,
-            "bytes": 110739
+            "bytes": 113350
           },
           "entries": [
             {
@@ -874,6 +1035,13 @@
               "filename": "01-vegetation-introduction-types-of-vegetation-in-nepal-in-situ-and-ex-situ-conservation-natural-environment-vegetation-and-human-activities.json",
               "bytes": 42333,
               "sha256": "fd10bb69dbcf92add8fba4504788ac6c681f43c66ed0bf9d1867d6d82b514097",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "vegetation-introduction-types-of-vegetation-in-nepal",
+              "filename": "01-vegetation-introduction-types-of-vegetation-in-nepal.json",
+              "bytes": 2611,
+              "sha256": "ec2e50d7795b51104f9d624007721637d26ec00486fb17e27edcdb91608c9782",
               "status": "authored"
             },
             {
@@ -910,10 +1078,10 @@
     },
     "chemistry": {
       "totals": {
-        "entries": 227,
-        "authored": 227,
+        "entries": 229,
+        "authored": 229,
         "template": 0,
-        "bytes": 2024254
+        "bytes": 2157587
       },
       "units": {
         "applied-chemistry": {
@@ -921,14 +1089,14 @@
             "entries": 1,
             "authored": 1,
             "template": 0,
-            "bytes": 11746
+            "bytes": 13713
           },
           "entries": [
             {
-              "topicSlug": "chemical-industry",
+              "topicSlug": "01-chemical-industry",
               "filename": "01-chemical-industry.json",
-              "bytes": 11746,
-              "sha256": "f6139f27d1a6f9aaa492fd800e13c4fa29bf4b5699c80affff2efa79f52c1920",
+              "bytes": 13713,
+              "sha256": "6e2d2bc2dc62d76b7eeeaf2fdc0cddef7e69c8a1029cc5a4b8822ad6422cd597",
               "status": "authored"
             }
           ]
@@ -938,28 +1106,28 @@
             "entries": 12,
             "authored": 12,
             "template": 0,
-            "bytes": 78271
+            "bytes": 88427
           },
           "entries": [
             {
               "topicSlug": "aromatic-compounds",
               "filename": "01-aromatic-compounds.json",
-              "bytes": 11927,
-              "sha256": "ffa9fb55aa7c6fcebae67fa76aef43ef45d22a15125d2ed3171b718b327e70fd",
+              "bytes": 13888,
+              "sha256": "6cc7265de6b26d355ff33b8617e2ec9f66a6be5ae2ad16a77aa659e68ab5b4f0",
               "status": "authored"
             },
             {
               "topicSlug": "introduction-and-characteristics-of-aromatic-compounds",
               "filename": "01-introduction-and-characteristics-of-aromatic-compounds.json",
-              "bytes": 12255,
-              "sha256": "ec3307da0b7aca15672a795a08ed4a86c59796be86a89d2db57cbe64b2894e46",
+              "bytes": 14216,
+              "sha256": "1bb9dfe3f3666bb97b636aaa48432f8b132be803e389c04678e5d4efec811efd",
               "status": "authored"
             },
             {
               "topicSlug": "benzene",
               "filename": "02-benzene.json",
-              "bytes": 11301,
-              "sha256": "15aea0930d8f48d55c8a1e9b0297c4dc73d3affaa415161819fe3e5d0e14faff",
+              "bytes": 13613,
+              "sha256": "cb055a2ce2e733cc64cf5d458cf0bbdb15d028f69faa5b9af16b47bb5d6d195a",
               "status": "authored"
             },
             {
@@ -972,8 +1140,8 @@
             {
               "topicSlug": "kekule-structure-of-benzene-resonance-and-isomerism-in-benzene",
               "filename": "02-kekule-structure-of-benzene-resonance-and-isomerism-in-benzene.json",
-              "bytes": 12172,
-              "sha256": "3d885bd2090e5ec7ab79845e090c8f4691885cdb4a14c213eb9ad4d1618a0e68",
+              "bytes": 14133,
+              "sha256": "12d8fb71d58df74968208b95c52ac876db6026370fa807a9387e836fc35fd138",
               "status": "authored"
             },
             {
@@ -986,8 +1154,8 @@
             {
               "topicSlug": "preparation-properties-and-uses-of-benzene",
               "filename": "03-preparation-properties-and-uses-of-benzene.json",
-              "bytes": 12171,
-              "sha256": "f9c6e72824d6b96bcb2291d41f4e0582df55c65d5ce779479dcf8f8aafa6bef9",
+              "bytes": 14132,
+              "sha256": "4ccb11da378bb994837327ec7cbafcab7b7350336a22a5c90f64997137d52351",
               "status": "authored"
             },
             {
@@ -1179,10 +1347,10 @@
         },
         "basic-concept-of-organic-chemistry": {
           "totals": {
-            "entries": 8,
-            "authored": 8,
+            "entries": 9,
+            "authored": 9,
             "template": 0,
-            "bytes": 86904
+            "bytes": 101147
           },
           "entries": [
             {
@@ -1197,6 +1365,13 @@
               "filename": "02-reasons-for-the-separate-study-of-organic-compounds-from-inorganic-compounds.json",
               "bytes": 16473,
               "sha256": "e86f4893779f39bc904a38b859969127c87313d28021adfc17e72c7df1797b65",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "tetra-covalency-and-catenation-properties-of-carbon-classification-of-organic-compounds",
+              "filename": "03-tetra-covalency-and-catenation-properties-of-carbon-classification-of-organic-compounds.json",
+              "bytes": 14243,
+              "sha256": "c40afce02146c2eff13a3b58edb2e6a758bbad121919a32275511f6611033998",
               "status": "authored"
             },
             {
@@ -1272,14 +1447,14 @@
             "entries": 8,
             "authored": 8,
             "template": 0,
-            "bytes": 56401
+            "bytes": 59132
           },
           "entries": [
             {
               "topicSlug": "bio-inorganic-intro",
               "filename": "01-bio-inorganic-intro.json",
-              "bytes": 13274,
-              "sha256": "2f508d9ecafc5ffb24896e51a8d4039266e22a327195509272a7bb6a54cc2c81",
+              "bytes": 13649,
+              "sha256": "50b8ce869d3e641725697949816be0c0762dbf5f116ca112c048ec96028b7e4c",
               "status": "authored"
             },
             {
@@ -1299,8 +1474,8 @@
             {
               "topicSlug": "metal-ions-biological-systems",
               "filename": "02-metal-ions-biological-systems.json",
-              "bytes": 11437,
-              "sha256": "5b6eb4727b919d2b9b32c2b9bdf0a67aef82661b8fb648d4fc3268ceec9bc6fa",
+              "bytes": 13793,
+              "sha256": "572a4fea1c678dc96131bdfc7e32b236b779a16667d032648b5b5eb4224c5b91",
               "status": "authored"
             },
             {
@@ -1338,7 +1513,7 @@
             "entries": 4,
             "authored": 4,
             "template": 0,
-            "bytes": 50805
+            "bytes": 54739
           },
           "entries": [
             {
@@ -1349,17 +1524,17 @@
               "status": "authored"
             },
             {
-              "topicSlug": "vsepr-theory",
+              "topicSlug": "02-vsepr-theory",
               "filename": "02-vsepr-theory.json",
-              "bytes": 11928,
-              "sha256": "90f24c390de5dcb21298ea066a3b70bdbe2ce9a5ede72b8a1c7f36da5ace9b33",
+              "bytes": 13895,
+              "sha256": "5f221e11e02d2a738c78a07f89f491db5a0bc768d92942f741b1b3e2dc75322a",
               "status": "authored"
             },
             {
-              "topicSlug": "hybridization",
+              "topicSlug": "03-hybridization",
               "filename": "03-hybridization.json",
-              "bytes": 11945,
-              "sha256": "5e902a16250cb96ac8d32aadc135878e322dfb1cba6c80e8ef994e01f4ceff69",
+              "bytes": 13912,
+              "sha256": "b8368500b4188b03a9a17e6f580d312bb1664c9cf64b0e7e86dff608e114c0a5",
               "status": "authored"
             },
             {
@@ -1376,28 +1551,28 @@
             "entries": 12,
             "authored": 12,
             "template": 0,
-            "bytes": 141788
+            "bytes": 155514
           },
           "entries": [
             {
               "topicSlug": "valence-shell-valence-electron-and-octet-theory",
               "filename": "01-valence-shell-valence-electron-and-octet-theory.json",
-              "bytes": 11607,
-              "sha256": "777e1dc459626d067a372fc343f8cb8865c2c499aa54cc6f3603e4d23bbcc318",
+              "bytes": 13999,
+              "sha256": "c8fe53526d3883240ef99cae333e1395062c954de9ae8dadb090b4e391bc7bf8",
               "status": "authored"
             },
             {
               "topicSlug": "ionic-bond-and-its-properties",
               "filename": "02-ionic-bond-and-its-properties.json",
-              "bytes": 12917,
-              "sha256": "7ffe7e14c828d0148e2ecfa25592828cb87b504c63658fc2f2025b9fe296f689",
+              "bytes": 13312,
+              "sha256": "a77a004fe3cc80f945c3cb9cc979ecf42c3b866f9c4c0295d3a219eecdfa759f",
               "status": "authored"
             },
             {
               "topicSlug": "covalent-bond-and-coordinate-covalent-bond-and-properties-of-covalent-compounds",
               "filename": "03-covalent-bond-and-coordinate-covalent-bond-and-properties-of-covalent-compounds.json",
-              "bytes": 13239,
-              "sha256": "9a1699a78dfa973d8fc9e76d8378e717215e000bb66d3d14c03bbde38aac4c9b",
+              "bytes": 13734,
+              "sha256": "11f94df1c4980d523f606274d5afbafa20b1d839e8020fd9b598f201183e0f14",
               "status": "authored"
             },
             {
@@ -1410,15 +1585,15 @@
             {
               "topicSlug": "lewis-dot-structure-of-some-common-compounds-of-s-and-p-block-elements",
               "filename": "04-lewis-dot-structure-of-some-common-compounds-of-s-and-p-block-elements.json",
-              "bytes": 11720,
-              "sha256": "eaee61b3e4716df2c072e83f3d4cf68a95bda5eb98969c8712ffd00d60d91a0a",
+              "bytes": 14158,
+              "sha256": "bf6707ee2ba85b650e6061f641a9917ca3932a79d35a9e74a0d8502a519d1b1d",
               "status": "authored"
             },
             {
               "topicSlug": "resonance",
               "filename": "05-resonance.json",
-              "bytes": 11336,
-              "sha256": "b9c8d1e87c9341e812a02921abd1326db87a7e2f7aee0d1f92b578e33ca2ce33",
+              "bytes": 13652,
+              "sha256": "c31da0fbcca9e1b87e1881c8dd836fba59fa0d37fe43b65ddb3facbb4a70020e",
               "status": "authored"
             },
             {
@@ -1431,15 +1606,15 @@
             {
               "topicSlug": "elementary-idea-of-valence-bond-theory",
               "filename": "07-elementary-idea-of-valence-bond-theory.json",
-              "bytes": 11549,
-              "sha256": "34b599c7463165006a1823bbb5d78f211ad813a828e5ca7597574f8a11c3a895",
+              "bytes": 13923,
+              "sha256": "e76e1748cbcfd99ac2fc75067b9a839c91367b6aa3977e6d1607c34fb41a77fb",
               "status": "authored"
             },
             {
               "topicSlug": "hybridization-involving-s-and-p-orbitals-only",
               "filename": "08-hybridization-involving-s-and-p-orbitals-only.json",
-              "bytes": 11572,
-              "sha256": "56dda16ab3b0b23ed443e693f78040d80def429be1573ec8fe0ba322bb9dc041",
+              "bytes": 13960,
+              "sha256": "889a67ca5e6f2c1358efc8bf4c236e1716573719e08802392b7e4ac3184e86a5",
               "status": "authored"
             },
             {
@@ -1452,15 +1627,15 @@
             {
               "topicSlug": "vander-waal-s-force-and-molecular-solids-hydrogen-bonding-and-its-application",
               "filename": "10-vander-waal-s-force-and-molecular-solids-hydrogen-bonding-and-its-application.json",
-              "bytes": 13697,
-              "sha256": "f17e34fa84444cd4f4a53bc329af7627cb36451f62bc6c6c08155c1b98d405a8",
+              "bytes": 14188,
+              "sha256": "9b8d61e2b3d764ec514885f51ead13c30b8c269f9f55f2bc729a5a9f6a38dd4c",
               "status": "authored"
             },
             {
               "topicSlug": "metallic-bonding-and-properties-of-metallic-solids",
               "filename": "11-metallic-bonding-and-properties-of-metallic-solids.json",
-              "bytes": 13541,
-              "sha256": "b1333effac3a60559a675cb9e8c4cf5fcddc37672cea4f91c387f9374537daa6",
+              "bytes": 13978,
+              "sha256": "c8e47461d9cd2114090c4971a47d496939ee6b81bc6a744c733783116c0fa0d7",
               "status": "authored"
             }
           ]
@@ -1470,14 +1645,14 @@
             "entries": 9,
             "authored": 9,
             "template": 0,
-            "bytes": 103896
+            "bytes": 105254
           },
           "entries": [
             {
               "topicSlug": "dynamic-equilibrium",
               "filename": "01-dynamic-equilibrium.json",
-              "bytes": 12733,
-              "sha256": "c5934c8b7cacc1eb16730f96ec838b019472aac57764b4ac7361405e27382e6e",
+              "bytes": 12920,
+              "sha256": "f5cd07d1b983a602ae83117e0b12dce455d36fb1b560c26ca887d5827524bc71",
               "status": "authored"
             },
             {
@@ -1490,36 +1665,36 @@
             {
               "topicSlug": "law-mass-action",
               "filename": "02-law-mass-action.json",
-              "bytes": 12258,
-              "sha256": "6288aed3368e801c921df8426e2e840c9833ccbb8dd59cbd3f586b984eee9281",
+              "bytes": 12441,
+              "sha256": "21c81a24c01ba222d4ea9df1e36f3d483853dc46917482e0140212bacc9ec0bf",
               "status": "authored"
             },
             {
               "topicSlug": "law-of-mass-action",
               "filename": "02-law-of-mass-action.json",
-              "bytes": 12293,
-              "sha256": "8001cd6c8a0debaebc2cba2cd7568f9148b17700e835d1364bf9fc8909df7d7e",
+              "bytes": 12479,
+              "sha256": "552a4ac92c0e45fb7b99f0bfe42d4909cbc43fc995e763f17f016871c54dece2",
               "status": "authored"
             },
             {
               "topicSlug": "expression-for-equilibrium-constant-and-its-importance",
               "filename": "03-expression-for-equilibrium-constant-and-its-importance.json",
-              "bytes": 12335,
-              "sha256": "f171a2175162b870f3fa6024e371bafc765c09b9be6e79297904c95c2f047854",
+              "bytes": 12557,
+              "sha256": "61f2bc63626aa90c65c6035771dfefa1bcb76c4630f047c9c1072ceef6cd6825",
               "status": "authored"
             },
             {
               "topicSlug": "le-chateliers-principle",
               "filename": "03-le-chateliers-principle.json",
-              "bytes": 12307,
-              "sha256": "a816d1d316be3f2d11eaa3c8a2557f7077b4e1902fc5738b259169eabec6df58",
+              "bytes": 12498,
+              "sha256": "ce7343c597a674a66757eb2b4c225acd47acbc2b61f0a56859fd6d921aa19735",
               "status": "authored"
             },
             {
               "topicSlug": "relationship-between-kp-and-kc",
               "filename": "04-relationship-between-kp-and-kc.json",
-              "bytes": 12352,
-              "sha256": "03d4ea4f673cad80eacf6b23f6ff7237bf130f66857fd47051690c188a298896",
+              "bytes": 12550,
+              "sha256": "98a82641fe95493b782a34bf7f737f7c8e86c21206fecd4f64d989087e88cc49",
               "status": "authored"
             },
             {
@@ -1532,8 +1707,8 @@
             {
               "topicSlug": "le-chatlier-s-principle",
               "filename": "05-le-chatlier-s-principle.json",
-              "bytes": 12333,
-              "sha256": "58df097e2a9f324d431476523ba501eea3b398820e39d89309f7634e1fd0e319",
+              "bytes": 12524,
+              "sha256": "4f9694f1e20ee739d30fc9ed481314ee3820e58cc2a356e69b6b7a6de309e555",
               "status": "authored"
             }
           ]
@@ -1543,14 +1718,14 @@
             "entries": 22,
             "authored": 22,
             "template": 0,
-            "bytes": 174402
+            "bytes": 187058
           },
           "entries": [
             {
               "topicSlug": "metallurgical-principles",
               "filename": "01-metallurgical-principles.json",
-              "bytes": 11419,
-              "sha256": "b3e4e9ffdcea7f67c712b70fb8969ec7c39fdbe2ef019dc0ffbcd4444be91cbe",
+              "bytes": 13765,
+              "sha256": "4a718b4080d805d6f22ae70a3f9fedb22a3e62b205780cca2b605183666dd854",
               "status": "authored"
             },
             {
@@ -1563,15 +1738,15 @@
             {
               "topicSlug": "alkali-metals",
               "filename": "02-alkali-metals.json",
-              "bytes": 11345,
-              "sha256": "4f09da96bfd5cce6a1a6b17366140170312e68105a5d2855d822d0e1bd0311be",
+              "bytes": 13669,
+              "sha256": "fac3b212be9dc868ebe83d770b18909e82a4793ba0e011313e2af0db6cc4c235",
               "status": "authored"
             },
             {
               "topicSlug": "general-principles-of-extraction-of-metals",
               "filename": "02-general-principles-of-extraction-of-metals.json",
-              "bytes": 13082,
-              "sha256": "99b8139ad8a17164ebaadc3307c5ef0a0a43dd09a2eff317343deb5fdd9d6fd2",
+              "bytes": 13503,
+              "sha256": "224e05fc3fefedc82b282b55b5917b9715b632a20451020297920545c9fb6afd",
               "status": "authored"
             },
             {
@@ -1584,8 +1759,8 @@
             {
               "topicSlug": "alkaline-earth-metals",
               "filename": "03-alkaline-earth-metals.json",
-              "bytes": 11409,
-              "sha256": "f5b4d3e1eb54664a488012c6a992eff2ddbda69f5de7fb2e93a047c4672c25b2",
+              "bytes": 13749,
+              "sha256": "e057d993aaae1d98c096bdadd9f2cba15e703dbb75fd7534fd2658381997af99",
               "status": "authored"
             },
             {
@@ -1598,15 +1773,15 @@
             {
               "topicSlug": "refining-of-metals",
               "filename": "03-refining-of-metals.json",
-              "bytes": 12844,
-              "sha256": "9c17c666371c0831d43ee35d09046f9a7285b73192f156f0f73e2ced60fe50ed",
+              "bytes": 13217,
+              "sha256": "5f82d5d6e08bd4e73cdf8f238aa5b747774675901e83f1d044779815ee4e57f4",
               "status": "authored"
             },
             {
               "topicSlug": "alkali-metals-general-characteristics",
               "filename": "04-alkali-metals-general-characteristics.json",
-              "bytes": 12949,
-              "sha256": "7564aeedef7214ec5477ba067354a7c44512c183d71f2324a5acfe08cb82dec5",
+              "bytes": 13360,
+              "sha256": "37f711139230ed1ca1f9e0b24c0d30c7c555cb9c398788718980bc1ee84d2327",
               "status": "authored"
             },
             {
@@ -1626,15 +1801,15 @@
             {
               "topicSlug": "sodium-extraction-from-down-s-process-properties-action-with-oxygen-water-acids-nonmetals-and-ammonia-and-uses",
               "filename": "05-sodium-extraction-from-down-s-process-properties-action-with-oxygen-water-acids-nonmetals-and-ammonia-and-uses.json",
-              "bytes": 13399,
-              "sha256": "83d3b25e01df936dac14fac0754da6a31df0a8d8866a673f573948f1aefaa3df",
+              "bytes": 13956,
+              "sha256": "693e16fe5b3c517e28495aab254772c74f29976e439fc0ddbe85b092cc89df91",
               "status": "authored"
             },
             {
               "topicSlug": "sodium-hydroxide-properties-precipitation-reaction-and-action-with-carbon-monoxide-and-uses-sodium-carbonate-properties-action-with-co2-so2-water-precipitation-reactions-and-uses",
               "filename": "06-sodium-compounds-detailed.json",
-              "bytes": 12375,
-              "sha256": "f682882669e551c740ba00251362238997f66764441a433985112b269958ee9a",
+              "bytes": 15029,
+              "sha256": "86ae54a8db1675cdb35e2c5611b3f151bca15db35583735ba73498c203a5b756",
               "status": "authored"
             },
             {
@@ -1647,8 +1822,8 @@
             {
               "topicSlug": "alkaline-earth-metals-general-characteristics",
               "filename": "07-alkaline-earth-metals-general-characteristics.json",
-              "bytes": 13013,
-              "sha256": "68831e62076e5ed17fb848192d4c1b7edeba51ae78bc6c169748ff3cb5ea0931",
+              "bytes": 13440,
+              "sha256": "eb56da665a38aedbd52d38df5924c3e1022f606d28fd11e75ceebdd465847583",
               "status": "authored"
             },
             {
@@ -1661,8 +1836,8 @@
             {
               "topicSlug": "molecular-formula-and-uses-of-quick-lime-bleaching-powder-magnesia-plaster-of-paris-and-epsom-salt-solubility-of-hydroxides-carbonates-and-sulphates-of-alkaline-earth-metals-stability-of-carbonate-and-nitrate-of-alkaline-earth-metals",
               "filename": "08-alkaline-earth-compounds-detailed.json",
-              "bytes": 14156,
-              "sha256": "79509c889c6c02b11092f7ea31a4f8c5b3c1e1042404431f00fb06c85646d23b",
+              "bytes": 14959,
+              "sha256": "674a6f626545c1d75a6d72dc2830445ec54aad2ef18aa0435a5fa5bb68677769",
               "status": "authored"
             },
             {
@@ -1707,7 +1882,7 @@
             "entries": 33,
             "authored": 33,
             "template": 0,
-            "bytes": 243048
+            "bytes": 265969
           },
           "entries": [
             {
@@ -1720,8 +1895,8 @@
             {
               "topicSlug": "allotropes-of-oxygen-oxides-applications-of-hydrogen-peroxide-medical-and-industrial-application-of-oxygen",
               "filename": "02-allotropes-of-oxygen-oxides-applications-of-hydrogen-peroxide-medical-and-industrial-application-of-oxygen.json",
-              "bytes": 11967,
-              "sha256": "5e4a66a4a483ce470c6ef0b95d6d60f053a8041c916a165a7ce11c697f486405",
+              "bytes": 14477,
+              "sha256": "b1e78aed692b40c29332551dd60c47e257ad6ff98ec9a7c34d578623ed6eff12",
               "status": "authored"
             },
             {
@@ -1734,8 +1909,8 @@
             {
               "topicSlug": "oxygen",
               "filename": "02-oxygen.json",
-              "bytes": 11266,
-              "sha256": "58badd5d10a688b24ce925a41208419dcd002a5423414bd43f48d431a2c06422",
+              "bytes": 13576,
+              "sha256": "0190005ac40fe9e48199392b847de0eed4289631290d15c9e5c418aff270ea86",
               "status": "authored"
             },
             {
@@ -1748,8 +1923,8 @@
             {
               "topicSlug": "ozone",
               "filename": "03-ozone.json",
-              "bytes": 11481,
-              "sha256": "8ce49c2cb81e98d61da6554ed90399b15d360abf7e2b90ab6b288c6b2f8a54be",
+              "bytes": 13566,
+              "sha256": "b7c6f17b340ff2f77197bbd7a007759f4c8303ca32a69db701bff069bfa92a71",
               "status": "authored"
             },
             {
@@ -1762,22 +1937,22 @@
             {
               "topicSlug": "nitrogen",
               "filename": "04-nitrogen.json",
-              "bytes": 11282,
-              "sha256": "aca609f8bd135d094ea19998da3d49ed20b6e60ab34ef16914134f69443f3c2b",
+              "bytes": 13596,
+              "sha256": "eb449b7ea7fdfda99f3f6966fd3089ed45a15ed2cf8428a347748602f0a8e141",
               "status": "authored"
             },
             {
               "topicSlug": "halogens",
               "filename": "05-halogens.json",
-              "bytes": 11282,
-              "sha256": "e534c3998de0467c21647bbf98ed688cd8dda6b290c8f94eb89c09bb5931a7f4",
+              "bytes": 13596,
+              "sha256": "c0a0e86a48fae147150ef8e0f675e45ac2e01391bf4dc27d3223231e688ddce9",
               "status": "authored"
             },
             {
               "topicSlug": "nitrogen-reason-for-inertness-of-nitrogen-and-active-nitrogen-chemical-properties-of-ammonia-and-its-applications",
               "filename": "05-nitrogen-reason-for-inertness-of-nitrogen-and-active-nitrogen-chemical-properties-of-ammonia-and-its-applications.json",
-              "bytes": 11984,
-              "sha256": "c3ec53bccee5ffdc7fa69220dc39041df1101cc02e18bec1de715a84325927e9",
+              "bytes": 14508,
+              "sha256": "4cf8d58ab30fbb6ad0313d49eca2f09b29e4e95bdc480725d5b06de2accef9f4",
               "status": "authored"
             },
             {
@@ -1790,15 +1965,15 @@
             {
               "topicSlug": "carbon",
               "filename": "06-carbon.json",
-              "bytes": 11266,
-              "sha256": "e8a224180e86e5d0786fcd09b469d58fe1a5bb314a61e2eff281af4e7c2a0aa2",
+              "bytes": 13576,
+              "sha256": "fb182ccc9c4ff244678fa06634746944fbf7302401f9c3b4ff3d5b69f408e64a",
               "status": "authored"
             },
             {
               "topicSlug": "oxy-acids-of-nitrogen-chemical-properties-of-nitric-acid-test-for-nitrate-ion-halogens-preparation-properties-and-uses",
               "filename": "06-nitrogen-halogen-compounds-detailed.json",
-              "bytes": 13875,
-              "sha256": "758b5e2bc91bf4d74fecf4b33978d69b12870bd974e1ea1a8b2cf20f1d7da75f",
+              "bytes": 14654,
+              "sha256": "384ca1a0a8b80166c0b816d910f0177bddfa769faf6bdb6538337cef20fd1f52",
               "status": "authored"
             },
             {
@@ -1811,8 +1986,8 @@
             {
               "topicSlug": "carbon-allotropes-properties-and-uses-of-carbon-monoxide",
               "filename": "07-carbon-allotropes-detailed.json",
-              "bytes": 12246,
-              "sha256": "b383bd7ff4c4501d6dea5527295c70f7ae3849ac4f46491fa4b3bb3a7841b22e",
+              "bytes": 14948,
+              "sha256": "9cebf30a6f22b06aaa3244e82e6d6d9b05d8d1db53d63f5efd78a455b3d3a036",
               "status": "authored"
             },
             {
@@ -1825,8 +2000,8 @@
             {
               "topicSlug": "sulphur",
               "filename": "07-sulphur.json",
-              "bytes": 11274,
-              "sha256": "3816e16ae63c8af5a55d6d7d1c0e37052a1fad309676e9b58bb710e8910de608",
+              "bytes": 13586,
+              "sha256": "1395a0dc2afbe29d418260dd02691f1c337a1ffce3416d38eea8bd3181f63063",
               "status": "authored"
             },
             {
@@ -1839,8 +2014,8 @@
             {
               "topicSlug": "phosphorus-allotropes-phosphine-preparation-properties-and-uses-sulphur-allotropes-and-uses-hydrogen-sulphide-preparation-properties-and-uses-sulphur-dioxide-properties-and-uses-sulphuric-acid-properties-and-uses",
               "filename": "08-phosphorus-sulphur-compounds-detailed.json",
-              "bytes": 13963,
-              "sha256": "3b4809bfa8fac703859ef2d8cf553d75fe5e6fd58321d9b4cd7e7f445214fd0f",
+              "bytes": 14724,
+              "sha256": "eb4c9879c28fcd01f8433fdc85dd876faa663ed6914a1017f5765289cc74735b",
               "status": "authored"
             },
             {
@@ -2017,14 +2192,14 @@
             "entries": 8,
             "authored": 8,
             "template": 0,
-            "bytes": 84050
+            "bytes": 91150
           },
           "entries": [
             {
               "topicSlug": "general-introduction-and-importance-of-chemistry",
               "filename": "01-general-introduction-and-importance-of-chemistry.json",
-              "bytes": 11611,
-              "sha256": "c871d951fcd1a2f75f4f40dcbb53dca495b8ce70ec047ca68c3a4055d8ce3bbf",
+              "bytes": 14005,
+              "sha256": "7edb50f18096237154a8268a4a4b30cec8eba858e15463c14014116862700b7b",
               "status": "authored"
             },
             {
@@ -2037,8 +2212,8 @@
             {
               "topicSlug": "introduction-importance-chemistry",
               "filename": "01-introduction-importance-chemistry.json",
-              "bytes": 11500,
-              "sha256": "2f4e4ec5219c7b307a95a972930f0a6c680f1d00d789b2df9547158193425b49",
+              "bytes": 13864,
+              "sha256": "a8a7560269a5f9474c171f63a3937f22e93a9f746ed1bf9ddd66e91ed86532d7",
               "status": "authored"
             },
             {
@@ -2065,8 +2240,8 @@
             {
               "topicSlug": "percentage-composition",
               "filename": "03-percentage-composition.json",
-              "bytes": 11416,
-              "sha256": "ec178e25cb62b09d13842c885099d22997fa2b4081fa1af77e528e900615d114",
+              "bytes": 13758,
+              "sha256": "dbdce4067981e4a9b8d5c8a9eb58ba8b4d883d1cf3cdc1762ea885398d34e477",
               "status": "authored"
             },
             {
@@ -2080,10 +2255,10 @@
         },
         "fundamental-principles-of-organic-chemistry": {
           "totals": {
-            "entries": 13,
-            "authored": 13,
+            "entries": 14,
+            "authored": 14,
             "template": 0,
-            "bytes": 114531
+            "bytes": 135666
           },
           "entries": [
             {
@@ -2108,6 +2283,13 @@
               "status": "authored"
             },
             {
+              "topicSlug": "isomerism-in-organic-compounds-definition-and-classification-of-isomerism-structural-isomerism-and-its-types",
+              "filename": "03-isomerism-in-organic-compounds-definition-and-classification-of-isomerism-structural-isomerism-and-its-types.json",
+              "bytes": 14410,
+              "sha256": "39d678aaff7870cf79f5b3148292987cbddf9a4a3664b04d5b72113e11302276",
+              "status": "authored"
+            },
+            {
               "topicSlug": "isomerism-in-organic-compounds-definition-and-classification-of-isomerism",
               "filename": "03-isomerism-in-organic-compounds-definition-and-classification-of-isomerism.json",
               "bytes": 17005,
@@ -2117,8 +2299,8 @@
             {
               "topicSlug": "concept-of-geometrical-isomerism-and-optical-isomerism-d-and-l-form",
               "filename": "04-concept-of-geometrical-isomerism-and-optical-isomerism-d-and-l-form.json",
-              "bytes": 12239,
-              "sha256": "1cabfb38a27d8120009a0a35bb0988591db031607960e020ff63dfe7f32d2067",
+              "bytes": 14200,
+              "sha256": "76a51c7014d92b4a8ede31905d5bbd462077e332ce5feef9eb50306a5848df48",
               "status": "authored"
             },
             {
@@ -2138,8 +2320,8 @@
             {
               "topicSlug": "inductive-effect-plus-i-and-minus-i-effect",
               "filename": "06-inductive-effect-plus-i-and-minus-i-effect.json",
-              "bytes": 11551,
-              "sha256": "95231de0631ee2eacbda081e41f4ffcd7626f7fa5227b47d56793ec267ff6a5c",
+              "bytes": 13933,
+              "sha256": "6d40f99f464582d8c44b1b8365507c885f6c782bb97de4fa370ac01dc2571ba8",
               "status": "authored"
             },
             {
@@ -2159,8 +2341,8 @@
             {
               "topicSlug": "resonance-effect-plus-r-and-minus-r-effect",
               "filename": "07-resonance-effect-plus-r-and-minus-r-effect.json",
-              "bytes": 11551,
-              "sha256": "9869d21a112c4a256fd2240fc44458c8b6df355cce452c1392b2435cec96c3e6",
+              "bytes": 13933,
+              "sha256": "1351f8d2b24823157e06b730a73bb0a5d092c8558a61295679c5c929e1a25747",
               "status": "authored"
             },
             {
@@ -2184,42 +2366,42 @@
             "entries": 5,
             "authored": 5,
             "template": 0,
-            "bytes": 58809
+            "bytes": 68644
           },
           "entries": [
             {
-              "topicSlug": "iupac-nomenclature",
+              "topicSlug": "01-iupac-nomenclature",
               "filename": "01-iupac-nomenclature.json",
-              "bytes": 11792,
-              "sha256": "a162882c7c6bfca6baaf585120c1a33365fbb49da3772a7d6e38024fcfd476d8",
+              "bytes": 13759,
+              "sha256": "5dab0d1b49d23c5ad4053cc1e8852c8f8eb57eacf9a146ca45e81637bc522635",
               "status": "authored"
             },
             {
-              "topicSlug": "isomerism",
+              "topicSlug": "02-isomerism",
               "filename": "02-isomerism.json",
-              "bytes": 11678,
-              "sha256": "58ac79ed8b7f0d1e6d3c959fda460cd147d3c658ecc5021185e9502bffecb345",
+              "bytes": 13645,
+              "sha256": "b4f65f5c983e2caecab29965ab1f6221ae61b389ea248c9c24670f5f0fa270c5",
               "status": "authored"
             },
             {
-              "topicSlug": "reaction-mechanism",
+              "topicSlug": "03-reaction-mechanism",
               "filename": "03-reaction-mechanism.json",
-              "bytes": 11792,
-              "sha256": "9cf06b930dab9de0072785d56de4ef1fd70b7611f37c90acbb78cbf74cf67aa8",
+              "bytes": 13759,
+              "sha256": "674ef9fb5ee9832206623926f54e160bc1c67fcd2109207fbdc1e27080f629d9",
               "status": "authored"
             },
             {
-              "topicSlug": "inductive-effect",
+              "topicSlug": "04-inductive-effect",
               "filename": "04-inductive-effect.json",
-              "bytes": 11782,
-              "sha256": "850f5b2f6b8aca5d5fb445a20f829465331d1d05f165fbaec2dba410fc479d9f",
+              "bytes": 13749,
+              "sha256": "d837a768e3294b114c55c719cb1e9c8dceb8347b13de77cc95f2b5f37fb67715",
               "status": "authored"
             },
             {
-              "topicSlug": "resonance-effect",
+              "topicSlug": "05-resonance-effect",
               "filename": "05-resonance-effect.json",
-              "bytes": 11765,
-              "sha256": "e6929924a70f7c724daa52d3505cb701803dc9810ac771ec40ca00366fab2b74",
+              "bytes": 13732,
+              "sha256": "e989a230bbb4881119fce08608708c82be74e00b9d4e6dd53d288eebdf973a0c",
               "status": "authored"
             }
           ]
@@ -2281,7 +2463,7 @@
             "entries": 13,
             "authored": 13,
             "template": 0,
-            "bytes": 113427
+            "bytes": 116071
           },
           "entries": [
             {
@@ -2336,8 +2518,8 @@
             {
               "topicSlug": "test-of-unsaturation-and-comparative-study-of-physical-properties-of-alkane-alkene-and-alkyne",
               "filename": "04-hydrocarbons-unsaturation-detailed.json",
-              "bytes": 12211,
-              "sha256": "6669f70798866cbd6b880b5fd2ea17c7f30029cc245c19feb903ab7426a5003a",
+              "bytes": 14855,
+              "sha256": "97403b005df497426998d03e2d6d9dd51050730244ea7cd0fef5ee416c94817b",
               "status": "authored"
             },
             {
@@ -2382,7 +2564,7 @@
             "entries": 7,
             "authored": 7,
             "template": 0,
-            "bytes": 28433
+            "bytes": 28826
           },
           "entries": [
             {
@@ -2395,8 +2577,8 @@
             {
               "topicSlug": "modern-chemical-manufactures",
               "filename": "01-modern-chemical-manufactures.json",
-              "bytes": 13029,
-              "sha256": "04e5f2c3b4d24549e8dd23ae63e45c25f452f6012739d8b4276e5906e14cfdec",
+              "bytes": 13422,
+              "sha256": "6ca3b2a3370b0dbb68083029791b67230276aec50a058a8a4a11082d7701b715",
               "status": "authored"
             },
             {
@@ -2441,28 +2623,28 @@
             "entries": 3,
             "authored": 3,
             "template": 0,
-            "bytes": 35088
+            "bytes": 40989
           },
           "entries": [
             {
-              "topicSlug": "hber-process",
+              "topicSlug": "01-hber-process",
               "filename": "01-hber-process.json",
-              "bytes": 11680,
-              "sha256": "d62d29bcb75c6910bef45d442faffdc2513ab80e0e3d07a631108ffcce5a2196",
+              "bytes": 13647,
+              "sha256": "3e807830aa94abe68909b70063fd38369b4de1751badbc611604d1c8d983ef7b",
               "status": "authored"
             },
             {
-              "topicSlug": "contact-process",
+              "topicSlug": "02-contact-process",
               "filename": "02-contact-process.json",
-              "bytes": 11709,
-              "sha256": "4247b3a861dbe8842d445cb423f54f9e5319f1608d9e16e3247a298dcba086dc",
+              "bytes": 13676,
+              "sha256": "f87047ab5785daf075c98958fb2abcf63cc13ee020aaa88a2291918047913fec",
               "status": "authored"
             },
             {
-              "topicSlug": "solvay-process",
+              "topicSlug": "03-solvay-process",
               "filename": "03-solvay-process.json",
-              "bytes": 11699,
-              "sha256": "0d108d7473814230835108f148958f32ace639f6504dadc5583f843013946efb",
+              "bytes": 13666,
+              "sha256": "9005ec6a8777596b9d66f513afe371af8bf223827e8f6b73ecd3de99be234fc1",
               "status": "authored"
             }
           ]
@@ -2472,21 +2654,21 @@
             "entries": 6,
             "authored": 6,
             "template": 0,
-            "bytes": 58223
+            "bytes": 58889
           },
           "entries": [
             {
               "topicSlug": "general-and-electronic-concept-of-oxidation-and-reduction",
               "filename": "01-general-and-electronic-concept-of-oxidation-and-reduction.json",
-              "bytes": 12464,
-              "sha256": "8c7694eb710d2fd43385d751f8900fad38c7deb8a76366fa63cc98476f499123",
+              "bytes": 12689,
+              "sha256": "624889cde4f8eec162c3dd807da197789c1274f0d4a7e7b3247a2429655c3a0d",
               "status": "authored"
             },
             {
               "topicSlug": "oxidation-number-and-rules-for-assigning-oxidation-number",
               "filename": "02-oxidation-number-and-rules-for-assigning-oxidation-number.json",
-              "bytes": 12474,
-              "sha256": "b9e6fe1bc7fafa3178118125d2793cac98d48ab2fad0972b45a6b907cd740b5a",
+              "bytes": 12699,
+              "sha256": "d60b0841b2235ee53037bff8905a024da6bba990e28c0d67e2c158b8c9e3f770",
               "status": "authored"
             },
             {
@@ -2499,8 +2681,8 @@
             {
               "topicSlug": "electrolysis-qualitative-and-quantitative-aspect",
               "filename": "04-electrolysis-qualitative-and-quantitative-aspect.json",
-              "bytes": 12464,
-              "sha256": "ef96c022e8b3c38951d513c3c97740a87d7b9f94c69ae7a75f7d7798d8f8f43d",
+              "bytes": 12680,
+              "sha256": "ddea9762068a9635fa51f90e173b646172664c3f7036dd6188db25cd249bc360",
               "status": "authored"
             },
             {
@@ -2524,7 +2706,7 @@
             "entries": 3,
             "authored": 3,
             "template": 0,
-            "bytes": 39010
+            "bytes": 40977
           },
           "entries": [
             {
@@ -2542,10 +2724,10 @@
               "status": "authored"
             },
             {
-              "topicSlug": "electrolysis",
+              "topicSlug": "03-electrolysis",
               "filename": "03-electrolysis.json",
-              "bytes": 11723,
-              "sha256": "9b111beaeb932d08cee7fd75d51224a462667f743da7d7e39e281771f1cc738e",
+              "bytes": 13690,
+              "sha256": "aad7ea10a550b12ed4aebd8156516d983cdb954f3809d59533d18e9f3c729958",
               "status": "authored"
             }
           ]
@@ -3012,18 +3194,18 @@
     },
     "mathematics": {
       "totals": {
-        "entries": 88,
-        "authored": 78,
-        "template": 10,
-        "bytes": 458391
+        "entries": 95,
+        "authored": 89,
+        "template": 6,
+        "bytes": 533950
       },
       "units": {
         "algebra": {
           "totals": {
             "entries": 14,
-            "authored": 11,
-            "template": 3,
-            "bytes": 59774
+            "authored": 12,
+            "template": 2,
+            "bytes": 60291
           },
           "entries": [
             {
@@ -3064,8 +3246,8 @@
             {
               "topicSlug": "function-domain-range",
               "filename": "03-function-domain-range.json",
-              "bytes": 672,
-              "sha256": "0b921463dc86c9854be23da59c2746df0be50460684ba867e6dffca47ae5e33f",
+              "bytes": 685,
+              "sha256": "6a0fadb4dc2a2fc0d2db9b10944e7f70dca38e4c0534c0fb635977a670682a3b",
               "status": "template"
             },
             {
@@ -3078,8 +3260,8 @@
             {
               "topicSlug": "curve-sketching-odd-and-even-functions-periodicity-symmetry-about-origin-x-and-y-axis-monotonici",
               "filename": "04-curve-sketching-odd-and-even-functions-periodicity-symmetry-about-origin-x-and-y-axis-monotonici.json",
-              "bytes": 3387,
-              "sha256": "c11b4a4430e03cc4eb2bd2ad0465a63b33de7ac388b4af3beeffbfbb92646a5a",
+              "bytes": 3377,
+              "sha256": "5e98585d5d907a8cf85df84dac0dc04932b33ad6914dcf16f294232b762a4df8",
               "status": "authored"
             },
             {
@@ -3092,9 +3274,9 @@
             {
               "topicSlug": "sequence-series",
               "filename": "05-sequence-series.json",
-              "bytes": 645,
-              "sha256": "ad1f484d01908a0d6873c99c72d12fa1959c7a8ac4edbf2e2e8c1b02de101c84",
-              "status": "template"
+              "bytes": 1141,
+              "sha256": "9b0306c125d3eb3bf52d197618c3ea857e735002e0c111bcac0f72cc799e13b8",
+              "status": "authored"
             },
             {
               "topicSlug": "matrices-and-determinants-transpose-of-a-matrix-and-its-properties-minors-and-cofactors-adjoint-",
@@ -3107,21 +3289,21 @@
               "topicSlug": "quadratic-equation-nature-and-roots-of-a-quadratic-equation-relation-between-roots-and-coefficie",
               "filename": "07-quadratic-equation-nature-and-roots-of-a-quadratic-equation-relation-between-roots-and-coefficie.json",
               "bytes": 4257,
-              "sha256": "0829734583c955559797048e3c797e829d6cb59b4f63abf7c3b528c4488d37fc",
+              "sha256": "f8b071018485d1c346a272ab152de40eb1a7ef30707714d8418513d297ecacab",
               "status": "authored"
             },
             {
               "topicSlug": "complex-number-imaginary-unit-algebra-of-complex-numbers-geometric-representation-absolute-modul",
               "filename": "08-complex-number-imaginary-unit-algebra-of-complex-numbers-geometric-representation-absolute-modul.json",
-              "bytes": 4174,
-              "sha256": "fdf1bd0398cfc5dc64a1e345fa7650331c6f7615d0f96f269a78b4b6a8af9437",
+              "bytes": 4179,
+              "sha256": "bf57d16eb9c46a58f7f70c808b7cb4df4632f5cfba04589f8bc788f40217bbf5",
               "status": "authored"
             },
             {
               "topicSlug": "minors-cofactors-determinants",
               "filename": "minors-cofactors-determinants.json",
-              "bytes": 757,
-              "sha256": "01676ed3c523429e10b42da23075c4997ade09efbaa788ebab2940f02b2f0ca3",
+              "bytes": 770,
+              "sha256": "2c5d418bc26ec06c2fdb87a6389cf11d207d60d41966982bd989542e26a7f868",
               "status": "template"
             }
           ]
@@ -3131,7 +3313,7 @@
             "entries": 6,
             "authored": 6,
             "template": 0,
-            "bytes": 17318
+            "bytes": 17363
           },
           "entries": [
             {
@@ -3151,8 +3333,8 @@
             {
               "topicSlug": "pair-of-straight-lines-general-equation-of-second-degree-in-x-and-y-condition-for-representing-a",
               "filename": "02-pair-of-straight-lines-general-equation-of-second-degree-in-x-and-y-condition-for-representing-a.json",
-              "bytes": 4923,
-              "sha256": "8ef5cce08e3d8856ff8b7579c0d54f6356fb8264ec71ee7fb2d01347871fc064",
+              "bytes": 4955,
+              "sha256": "b9bdf87790bee02658e3c4f387ef6be5a6cd3800adefda5ff9e4aea0fba9e0db",
               "status": "authored"
             },
             {
@@ -3172,18 +3354,18 @@
             {
               "topicSlug": "geometry-9-1",
               "filename": "geometry-9-1.json",
-              "bytes": 682,
-              "sha256": "a63d420e2fda4c4e4a74a5cb3530797c9253d041d1d07d1abb8a0a7033bb8793",
+              "bytes": 695,
+              "sha256": "e8609ce2dc5d7087e8f85a007e010ea07e32d1d0467333562bcc21898025973a",
               "status": "authored"
             }
           ]
         },
         "calculus": {
           "totals": {
-            "entries": 30,
-            "authored": 30,
+            "entries": 37,
+            "authored": 37,
             "template": 0,
-            "bytes": 312514
+            "bytes": 387180
           },
           "entries": [
             {
@@ -3191,6 +3373,13 @@
               "filename": "01-limits-and-continuity-limits-of-a-function-indeterminate-forms-algebraic-properties-of-limits-wi.json",
               "bytes": 4161,
               "sha256": "82a267640e90614073bfbc290fa7ae2bf28a6a037d0797da42dc9e249627463d",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "limits-of-function",
+              "filename": "01-limits-of-function.json",
+              "bytes": 11876,
+              "sha256": "77ac4a101565741978eaec61fd1f22c6e010b51c22c0bde3e1218d4cc7d86303",
               "status": "authored"
             },
             {
@@ -3261,6 +3450,13 @@
               "filename": "06-types-of-discontinuity.json",
               "bytes": 10220,
               "sha256": "12ed5612914712536b8e815cf5edde15696cf8dc42087ef5de3e7a97d5a844b2",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "graphs-of-discontinuous-function",
+              "filename": "07-graphs-of-discontinuous-function.json",
+              "bytes": 10343,
+              "sha256": "72c88e02b69ac50fb17654f567cba63699871b0456e5325a86929c83ddab9f19",
               "status": "authored"
             },
             {
@@ -3383,6 +3579,13 @@
               "status": "authored"
             },
             {
+              "topicSlug": "limit5-01",
+              "filename": "limit5-01.json",
+              "bytes": 8426,
+              "sha256": "6de43d52d68848941525fbbf7d478d36c928e4ceced666190285f92de4fb8e7d",
+              "status": "authored"
+            },
+            {
               "topicSlug": "limitc",
               "filename": "limitc.json",
               "bytes": 11842,
@@ -3390,10 +3593,38 @@
               "status": "authored"
             },
             {
+              "topicSlug": "limits",
+              "filename": "limits-intro.json",
+              "bytes": 11864,
+              "sha256": "5545f4ec93ed27f50e78011d8fd3ebb5d46a919267046d6c3f1e4dcc63928c44",
+              "status": "authored"
+            },
+            {
               "topicSlug": "limits-and-continuity",
               "filename": "limits.json",
               "bytes": 26461,
               "sha256": "b9bfb06f0ebd8ec82415d90c66b989d61b893d12256dd704bc5ef23ccdd8f659",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "limits5-1",
+              "filename": "limits5-1.json",
+              "bytes": 10719,
+              "sha256": "3bbd9933794f8db8b046151e06a5579b40d6527024fb30bcb63fbb6178b095f3",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "limits5-2",
+              "filename": "limits5-2.json",
+              "bytes": 10719,
+              "sha256": "3efa74f2884407b0a4114d6f48cb4048025201db3f6a748ece36d4c9114461c6",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "limits5-3",
+              "filename": "limits5-3.json",
+              "bytes": 10719,
+              "sha256": "49af67dcce35cd5542858e601e1c92ed88f2dd6347a04819c8e4e9761dc9f7db",
               "status": "authored"
             }
           ]
@@ -3403,28 +3634,28 @@
             "entries": 5,
             "authored": 5,
             "template": 0,
-            "bytes": 17144
+            "bytes": 16991
           },
           "entries": [
             {
               "topicSlug": "numerical-computation-roots-of-algebraic-and-transcendental-equations-bisection-and-newton-raphs",
               "filename": "01-numerical-computation-roots-of-algebraic-and-transcendental-equations-bisection-and-newton-raphs.json",
-              "bytes": 4237,
-              "sha256": "56f8d1ca05db4905134c80a2374a55ac72edcce89434c3804ae4b3fb54256b5d",
+              "bytes": 4105,
+              "sha256": "e7be1dd0493788375d462425697daec047944d9325ab79a1af4aa507eeec97b9",
               "status": "authored"
             },
             {
               "topicSlug": "mechanics-statics-and-dynamics",
               "filename": "02-mechanics-statics-and-dynamics.json",
-              "bytes": 1093,
-              "sha256": "6b418d3930e283205c98a2ffc7476c54448410d266cd58af4f0c2f1340b501f1",
+              "bytes": 1106,
+              "sha256": "49f8d6922013ec57b15cb57d8d679193c5ead18b9d12e9f7ac31359e33b287f6",
               "status": "authored"
             },
             {
               "topicSlug": "numerical-integration-trapezoidal-rule-and-simpson-s-rule",
               "filename": "02-numerical-integration-trapezoidal-rule-and-simpson-s-rule.json",
-              "bytes": 4190,
-              "sha256": "5509f90c6c3b5db2f979e4ea967bdbe3bde48ca2ad4eeba4c8b87a3102ee31e3",
+              "bytes": 4156,
+              "sha256": "6290f547f955fd7aa8dfeab48dd3c8752e756f04b24ca6a026a020c15ad0e88e",
               "status": "authored"
             },
             {
@@ -3448,126 +3679,126 @@
             "entries": 17,
             "authored": 17,
             "template": 0,
-            "bytes": 13450
+            "bytes": 14017
           },
           "entries": [
             {
               "topicSlug": "introduction-to-limits-and-continuity",
               "filename": "01-introduction-to-limits-and-continuity.json",
-              "bytes": 818,
-              "sha256": "2f746145e1959cc1e794549bf1310a288285ec130a84ecd92e0631bea45976c4",
+              "bytes": 831,
+              "sha256": "93bafd0b2477da4c8d15f3e8ac3735cdc161035bd318e1b003eeba338e732547",
               "status": "authored"
             },
             {
               "topicSlug": "function-definition-and-notation",
               "filename": "02-function-definition-and-notation.json",
-              "bytes": 787,
-              "sha256": "3563f1ace795b1d1b27da8bb873242770ff51a028765918895e7903da8b4101b",
+              "bytes": 800,
+              "sha256": "e1fe5f68f3ad462448a3d4ef43413dc4d760b4e6c94a4dcdaa4177297a240fe7",
               "status": "authored"
             },
             {
               "topicSlug": "value-of-function-at-a-point",
               "filename": "03-value-of-function-at-a-point.json",
-              "bytes": 783,
-              "sha256": "c4c57ed09a58160675aecf5d34dfb8bf4aa49d5df0b872f665b4288329bc0d70",
+              "bytes": 796,
+              "sha256": "1512483aa725ef71d3aa2794a92c2dec63bb2c3aad5f02542e6a6ca2c4418a3e",
               "status": "authored"
             },
             {
               "topicSlug": "right-hand-limit",
               "filename": "04-right-hand-limit.json",
-              "bytes": 732,
-              "sha256": "fc7815f5d62e0f9c7e6c3b8f89b398d9da45c50e5b22f811a923aec715c27263",
+              "bytes": 745,
+              "sha256": "6b305801a426ac4e9851bfa3ec34ae66e8000aab1224a1d1b541a7c240c11ff9",
               "status": "authored"
             },
             {
               "topicSlug": "left-hand-limit",
               "filename": "05-left-hand-limit.json",
-              "bytes": 728,
-              "sha256": "317c8e662c3e4642a4fba14c93bdb6898a9aa000df14d18f57e051cdacb1cfbf",
+              "bytes": 741,
+              "sha256": "8fca7fa630fe71bc34c22215e0dff620549825626ace3d5daf04b995cf5ed122",
               "status": "authored"
             },
             {
               "topicSlug": "existence-of-limit",
               "filename": "06-existence-of-limit.json",
-              "bytes": 782,
-              "sha256": "26975de5919530f0751d3ee1b5e5ef6b21815c5a24985a574589c51377c31795",
+              "bytes": 795,
+              "sha256": "4dcfa2758912a7a9d0a495704943c0f4f92af094ee596049c9d731e551fc1f05",
               "status": "authored"
             },
             {
               "topicSlug": "standard-limits",
               "filename": "07-standard-limits.json",
-              "bytes": 743,
-              "sha256": "c69339b635a4fabf389c67c47bf8c72be052b3c78c5251d113076a62868c8b98",
+              "bytes": 1102,
+              "sha256": "42e41b4fd89900f262dbf93e48ef1c7021002ce2cc0cf03a83f9bbcc52a51bc4",
               "status": "authored"
             },
             {
               "topicSlug": "continuity-intuitive",
               "filename": "08-continuity-intuitive.json",
-              "bytes": 839,
-              "sha256": "7bdc44b624296496a42a81f3393406e21b6bab2ab302ce72a81a92a99005424c",
+              "bytes": 852,
+              "sha256": "1c710cf3b820c19394d3bccd13f9dd74273645314fa40c33220403806f737d25",
               "status": "authored"
             },
             {
               "topicSlug": "continuity-formal",
               "filename": "09-continuity-formal.json",
-              "bytes": 797,
-              "sha256": "2c4d544fc220a7d57741728e30d30b0bae5e1525fdb86a3a9c095d65a4f3adb5",
+              "bytes": 810,
+              "sha256": "4183d4e788c3d55c89bcf54a198f87bceb3cbfe10f1ca65372912e2be9d7dca6",
               "status": "authored"
             },
             {
               "topicSlug": "removable-discontinuity",
               "filename": "10-removable-discontinuity.json",
-              "bytes": 798,
-              "sha256": "d4dc2efe2c56f4754f147a3518df829070b56f72b2d6ac89c33b53ef3a9218cb",
+              "bytes": 811,
+              "sha256": "3f0319b8ccb52c7f62a74d323a8ce91cab7afa2ee0a94eebd81a11e6f22216fd",
               "status": "authored"
             },
             {
               "topicSlug": "jump-discontinuity",
               "filename": "11-jump-discontinuity.json",
-              "bytes": 763,
-              "sha256": "a81e20f0af52dd90473b2819668515b1b62338dc0264221691968d72e592104e",
+              "bytes": 776,
+              "sha256": "bd6817ee7619c9891f9295a89e025d48d7fd82b2bfc3e503d69be25323c44af3",
               "status": "authored"
             },
             {
               "topicSlug": "infinite-discontinuity",
               "filename": "12-infinite-discontinuity.json",
-              "bytes": 791,
-              "sha256": "93d7ba1eea99aefaba6b1aed99334c1917867842617eeef86f2cc54d0b394f72",
+              "bytes": 804,
+              "sha256": "1e198e4ad51d543e86eb2ed02186bc4612fef8e272180e58554026eaa2b4aa83",
               "status": "authored"
             },
             {
               "topicSlug": "trigonometric-limits",
               "filename": "13-trigonometric-limits.json",
-              "bytes": 790,
-              "sha256": "eaae251a546be16020a8464f6f4ea2e4daa9d528223accbe7935dd7f8d425c11",
+              "bytes": 803,
+              "sha256": "a64beb85d1562657167a9c326d259c0d1168ed4aba269ab8ba205d946acba668",
               "status": "authored"
             },
             {
               "topicSlug": "log-exp-limits",
               "filename": "14-log-exp-limits.json",
-              "bytes": 832,
-              "sha256": "7d4a399afbb94bfbdd8dfcc98c1937aa192a63876df5cc83c250277ee9e461c6",
+              "bytes": 845,
+              "sha256": "dd109fe41cd900e65d70a4c6b4f5f6d418ed5cb209188b79387b7c9473acb16b",
               "status": "authored"
             },
             {
               "topicSlug": "exercise-15-1",
               "filename": "15-exercise-15-1.json",
-              "bytes": 825,
-              "sha256": "20d2d76acf9cc8a9062539136dd8ad91aeee449399223c3ed005fa88bba4db60",
+              "bytes": 838,
+              "sha256": "8f87aa3cbc3902737a2b2434b90fc2fc112b41516205985f63a920bcd1dac42a",
               "status": "authored"
             },
             {
               "topicSlug": "exercise-15-2",
               "filename": "16-exercise-15-2.json",
-              "bytes": 822,
-              "sha256": "e317f65ed5edd97613d362d344c5746a68fb78c9260fac1a59364ca6e5365495",
+              "bytes": 835,
+              "sha256": "137e71d06179c79f1189c98ece2d78f21e91d66b68095c8a6486cf9b6386fa1c",
               "status": "authored"
             },
             {
               "topicSlug": "exercise-15-3",
               "filename": "17-exercise-15-3.json",
-              "bytes": 820,
-              "sha256": "1b39102f06aafa4ce7d9d3a3d806c19b19bb4013cfd05eff69f9b9c3348e0b19",
+              "bytes": 833,
+              "sha256": "9e013c5468ea4c4971fbd85f4283a002317167b28508924f071d8f1143bfacdc",
               "status": "authored"
             }
           ]
@@ -3577,14 +3808,14 @@
             "entries": 2,
             "authored": 2,
             "template": 0,
-            "bytes": 8540
+            "bytes": 8537
           },
           "entries": [
             {
               "topicSlug": "measure-of-dispersion-standard-deviation-variance-coefficient-of-variation-skewness-karl-pearson",
               "filename": "01-measure-of-dispersion-standard-deviation-variance-coefficient-of-variation-skewness-karl-pearson.json",
-              "bytes": 4262,
-              "sha256": "fb332eabd43d1e9cccf18b70b63d5758bf7c2cd94891c15dfb6d12822de7b229",
+              "bytes": 4259,
+              "sha256": "e4f0b1c9adc7002e0f75e9f57802e10eb789a28f4742f111f98479c2f49d2a5b",
               "status": "authored"
             },
             {
@@ -3599,23 +3830,23 @@
         "trigonometry": {
           "totals": {
             "entries": 3,
-            "authored": 2,
-            "template": 1,
-            "bytes": 14119
+            "authored": 3,
+            "template": 0,
+            "bytes": 12649
           },
           "entries": [
             {
               "topicSlug": "inverse-circular-functions",
               "filename": "01-inverse-circular-functions.json",
-              "bytes": 692,
-              "sha256": "c5921682fdafd8d7c4a226e01147c9f17ea912858d1e3f681337636ab9b0d78e",
-              "status": "template"
+              "bytes": 1288,
+              "sha256": "fb0f90cb80982d61d60efbbda25ffa9f759ea1531c01f7e197d7c9cfeae9701f",
+              "status": "authored"
             },
             {
               "topicSlug": "trigonometric-equations-and-general-values",
               "filename": "02-trigonometric-equations-and-general-values.json",
-              "bytes": 3410,
-              "sha256": "0ff7bcf6e4eb000536cf3ff3628f468b056d29539da122a52391a1a57850175e",
+              "bytes": 1344,
+              "sha256": "6597e2be6dbfb9f752a3c93753abce7fd27c0a7e3a319439160d6fa29cff6be2",
               "status": "authored"
             },
             {
@@ -3630,9 +3861,9 @@
         "vectors": {
           "totals": {
             "entries": 11,
-            "authored": 5,
-            "template": 6,
-            "bytes": 15532
+            "authored": 7,
+            "template": 4,
+            "bytes": 16922
           },
           "entries": [
             {
@@ -3645,29 +3876,29 @@
             {
               "topicSlug": "collinear-non-collinear-vectors",
               "filename": "01-collinear-non-collinear-vectors.json",
-              "bytes": 709,
-              "sha256": "5d85e664bd493be178247b02f94e202afe3b0489581b5881c1bffc4cf250c338",
+              "bytes": 722,
+              "sha256": "66b5bf76ac8e9d21a7a7c692af65844885ae03f96c431681cf85f6bd1f212746",
               "status": "template"
             },
             {
               "topicSlug": "vector-algebra",
               "filename": "01-vector-algebra-types-addition-and-scalar-multiplication.json",
-              "bytes": 813,
-              "sha256": "3a7bb5722500d6cbe543dbcc5b1bcfea4c6c87044052734ee7de7c37143ab81f",
+              "bytes": 826,
+              "sha256": "051dd48ca72f777e3029405796eec25a3d462b4ee2550cdf0ac403037d4cf567",
               "status": "template"
             },
             {
               "topicSlug": "dot-product-and-its-applications",
               "filename": "02-dot-product-and-its-applications.json",
-              "bytes": 757,
-              "sha256": "e4dd1c4677e27a247d6ea66754d5cb793167076f4549212873ee9d3970161e5c",
+              "bytes": 770,
+              "sha256": "4e68005ec6aeccc42356921d1854568f1b1c1aea8c45f49191dcb7701c532abb",
               "status": "authored"
             },
             {
               "topicSlug": "dot-product-of-two-vectors",
               "filename": "02-dot-product-of-two-vectors.json",
-              "bytes": 715,
-              "sha256": "54264790bd546958b8d9be702f97f9a1d1458a44e2397308874149b212bbf95e",
+              "bytes": 1087,
+              "sha256": "61a171c5ab99e0e954fd9469b867158ff9ba74ee67b47654d1a67289eafc4da1",
               "status": "authored"
             },
             {
@@ -3680,30 +3911,30 @@
             {
               "topicSlug": "linear-combination-vectors",
               "filename": "02-linear-combination-vectors.json",
-              "bytes": 686,
-              "sha256": "c444b233f96a7c56b2376b8c67672350c283cdb6d1fedc9a96b575f2865a8a3e",
+              "bytes": 699,
+              "sha256": "1eedff4706b0bd3fec7cf9925605f90b4c0350e736f8a5a47231bbbdc4d6c754",
               "status": "template"
             },
             {
               "topicSlug": "cross-product-and-its-applications",
               "filename": "03-cross-product-and-its-applications.json",
-              "bytes": 726,
-              "sha256": "2169851c90114c2963e86b96a31d9ef19780ed72ba17178b40ee6db2b74da80c",
+              "bytes": 739,
+              "sha256": "6107ce012619eb5f99d73ee7d10a10e1aef801a3289906bcb77c5b361d83dc16",
               "status": "template"
             },
             {
               "topicSlug": "cross-product-of-two-vectors",
               "filename": "03-cross-product-of-two-vectors.json",
-              "bytes": 684,
-              "sha256": "fde657824b08d268a882e831fd833a638d3390d1c235fa015c3beff17d5e1934",
-              "status": "template"
+              "bytes": 1176,
+              "sha256": "1f63d70c56439093319b7b5e83e82f86229a9a483573f399e53e224c443756de",
+              "status": "authored"
             },
             {
               "topicSlug": "scalar-and-vector-triple-products",
               "filename": "04-scalar-and-vector-triple-products.json",
-              "bytes": 704,
-              "sha256": "966224e3360042532b1dc4ffebb3790a9c05394852fc4479d8d8f36362ea73e5",
-              "status": "template"
+              "bytes": 1165,
+              "sha256": "b3936542f8c499f73f0edd14edb836d264fb7ce6802d98d585073efda29bf40d",
+              "status": "authored"
             },
             {
               "topicSlug": "applications-of-vectors-work-torque-angular-momentum",
@@ -3721,7 +3952,7 @@
         "entries": 33,
         "authored": 33,
         "template": 0,
-        "bytes": 100688
+        "bytes": 100753
       },
       "units": {
         "bhasha-ra-vyakarana": {
@@ -3729,7 +3960,7 @@
             "entries": 8,
             "authored": 8,
             "template": 0,
-            "bytes": 33639
+            "bytes": 33704
           },
           "entries": [
             {
@@ -3749,8 +3980,8 @@
             {
               "topicSlug": "aagantuk-shabda",
               "filename": "aagantuk-shabda.json",
-              "bytes": 761,
-              "sha256": "17513e0cd04073d69950d19de9198efc09875c88f20b739bc605cda423d110ed",
+              "bytes": 774,
+              "sha256": "3d7af4faf2ebabddbc8c5fbf1cccfb79be15f8f760ea262966a12f0c729b96c9",
               "status": "authored"
             },
             {
@@ -3763,29 +3994,29 @@
             {
               "topicSlug": "swar-varna",
               "filename": "swar-varna.json",
-              "bytes": 741,
-              "sha256": "5df66a6a1d8a3ba2eb53ac5ebeeb114afc2b87a60898f1e150c53699882b4d23",
+              "bytes": 754,
+              "sha256": "70c1c88e13944ddaf8c1705f77a4cc525b6450551886fd2850b72b81c75102b0",
               "status": "authored"
             },
             {
               "topicSlug": "tadbhav-shabda",
               "filename": "tadbhav-shabda.json",
-              "bytes": 757,
-              "sha256": "b39adbd97dc6b67b28599785518c8fefebe64843878f99b564a5ab35727229d6",
+              "bytes": 770,
+              "sha256": "c4854c754e4a544577676fd612dfee99d858d14742bbc088ca52b54d930d249e",
               "status": "authored"
             },
             {
               "topicSlug": "vyanjan-vargikaran",
               "filename": "vyanjan-vargikaran.json",
-              "bytes": 845,
-              "sha256": "6d69302b8df32acb64159f15bfd7c8a2220f6cca108e4d81d7c9867c7066ece0",
+              "bytes": 858,
+              "sha256": "a322e8ea8aa9a6a60669ce4e6a9b08b377c3e6ef77f25af2b7e6e500737c2c90",
               "status": "authored"
             },
             {
               "topicSlug": "vyanjan-varna",
               "filename": "vyanjan-varna.json",
-              "bytes": 783,
-              "sha256": "f8f08e3e6c0a1467f42168bce57c511bdc36c8b2ac0e1118f2f11ccc82104e0d",
+              "bytes": 796,
+              "sha256": "dcfa02d99f4d4daa7f30f349d218f2b4f3a81c2046a7e6f63949e461829104c6",
               "status": "authored"
             }
           ]
@@ -4029,10 +4260,10 @@
     },
     "physics": {
       "totals": {
-        "entries": 191,
-        "authored": 191,
-        "template": 0,
-        "bytes": 2848422
+        "entries": 230,
+        "authored": 222,
+        "template": 8,
+        "bytes": 3477474
       },
       "units": {
         "capacitor": {
@@ -4040,7 +4271,7 @@
             "entries": 6,
             "authored": 6,
             "template": 0,
-            "bytes": 55376
+            "bytes": 55602
           },
           "entries": [
             {
@@ -4053,8 +4284,8 @@
             {
               "topicSlug": "combination-of-capacitors",
               "filename": "02-combination-capacitors.json",
-              "bytes": 10547,
-              "sha256": "a0c08ffd951170959bff38dcd950245482b32dbcaf5717d264eeacd451ee4204",
+              "bytes": 10612,
+              "sha256": "df5d14b2915863e85027d6ab5585119131ac2083aa5f44936138e6119b56ec79",
               "status": "authored"
             },
             {
@@ -4067,15 +4298,15 @@
             {
               "topicSlug": "energy-of-a-charged-capacitor",
               "filename": "03-energy-charged-capacitor.json",
-              "bytes": 10110,
-              "sha256": "e8a01ad8237607dd93bdb3f2735fbc20be6bb8e14a8fe940800f6c9cb92e3c18",
+              "bytes": 10179,
+              "sha256": "0697c6b396ceddec9584d32c5f5020ff3fc5ade8e29450af05b2f5fef6f5e7cc",
               "status": "authored"
             },
             {
               "topicSlug": "effect-of-a-dielectric-polarization-and-displacement",
               "filename": "04-dielectric-effect.json",
-              "bytes": 10298,
-              "sha256": "938880c418616938fd488ca414054b90b9b6225d6e3f5c047262a17afdc332b4",
+              "bytes": 10390,
+              "sha256": "1d474e4e37a8252f52578ff01057ad7e793956f4d11c69186734bebd94fd7921",
               "status": "authored"
             },
             {
@@ -4089,17 +4320,24 @@
         },
         "circular-motion": {
           "totals": {
-            "entries": 9,
-            "authored": 9,
+            "entries": 10,
+            "authored": 10,
             "template": 0,
-            "bytes": 187686
+            "bytes": 234716
           },
           "entries": [
             {
               "topicSlug": "angular-displacement-velocity",
+              "filename": "01-angular-displacement-velocity-and-acceleration-2.json",
+              "bytes": 18714,
+              "sha256": "40db86a57f3a14b37375a24ab0e9e1895c42cce13ea2c37f94d35456da890802",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "angular-displacement-velocity",
               "filename": "01-angular-displacement-velocity.json",
-              "bytes": 28608,
-              "sha256": "b6efa3ed6777a91b493b2239005eb8eb9baac373789203db41e4413dc94dba20",
+              "bytes": 28452,
+              "sha256": "b9ac7afe2f9d5a26dae9f7dce4caf67bc0cee6b0fc4cc9fd560434929e1bc41b",
               "status": "authored"
             },
             {
@@ -4112,22 +4350,22 @@
             {
               "topicSlug": "angular-displacement-velocity",
               "filename": "02-relation-between-angular-and-linear-velocity-and-acceleration-2.json",
-              "bytes": 29065,
-              "sha256": "0b33f58acdfc393a5807d8ae013aaf42ae4b4fbdc50ea4e452b3a5e98cc1a121",
+              "bytes": 28881,
+              "sha256": "4ec2e65c8c9428b9245b0ba7d0789175c3dbb57b3a4327b81304e8ab548f45dc",
               "status": "authored"
             },
             {
-              "topicSlug": "centripetal-acceleration-and-centripetal-force",
-              "filename": "03-centripetal-acceleration-and-centripetal-force.json",
-              "bytes": 11176,
-              "sha256": "e815b0ae333cb411765e4e31c54d3cdc0042bcf2905d59de09a0b95f2ad5a3f2",
+              "topicSlug": "centripetal-acceleration-force",
+              "filename": "03-centripetal-acceleration-and-centripetal-force-2.json",
+              "bytes": 18055,
+              "sha256": "ac2079c9abfff49a4942540703654164babbba6917a7a1e7ee74539f17099a6a",
               "status": "authored"
             },
             {
               "topicSlug": "conical-pendulum",
               "filename": "03-conical-pendulum.json",
-              "bytes": 38901,
-              "sha256": "b66d01e2076eab04077586fefb351f71aaa62fcc5b9afbeec8c3de46e6c8aba6",
+              "bytes": 38807,
+              "sha256": "49d6c99bda6acd661b0962217badfa0c238645953d9e2c47da23b97f514e1882",
               "status": "authored"
             },
             {
@@ -4145,48 +4383,55 @@
               "status": "authored"
             },
             {
-              "topicSlug": "motion-in-a-vertical-circle",
-              "filename": "05-motion-in-a-vertical-circle.json",
-              "bytes": 10176,
-              "sha256": "f03070fe6e4a9fedc9102adb3a4558bf386933d1a80062e0de8ed3f6aeaafb8b",
+              "topicSlug": "vertical-circle",
+              "filename": "05-motion-in-a-vertical-circle-2.json",
+              "bytes": 20572,
+              "sha256": "00be3b0e464238368c2c877ecb4de0e76685b45f563c64d206089895b2fca6c0",
               "status": "authored"
             },
             {
-              "topicSlug": "applications-of-banking",
-              "filename": "06-applications-of-banking.json",
-              "bytes": 9933,
-              "sha256": "4c006d2a896df5c0c33931d0927c8513a6d789ba1f0d67a0afc5acf0ed904b93",
+              "topicSlug": "banking-applications",
+              "filename": "06-applications-of-banking-2.json",
+              "bytes": 21408,
+              "sha256": "351058d48f016afaf06240d91a55e9f0404878a308cf74f3df9c11f7ba251437",
               "status": "authored"
             }
           ]
         },
         "dc-circuits": {
           "totals": {
-            "entries": 12,
-            "authored": 12,
+            "entries": 14,
+            "authored": 14,
             "template": 0,
-            "bytes": 93309
+            "bytes": 106360
           },
           "entries": [
             {
               "topicSlug": "electric-current-drift-velocity",
               "filename": "01-electric-current-drift-velocity.json",
-              "bytes": 6872,
-              "sha256": "466b0fc7921f72a90520f79f8ae0666d5f1b3547a0b3d70b88bd219e85a18ce9",
+              "bytes": 6738,
+              "sha256": "48f3658b872f5a3b035120d828b01df1cbdd7dbb2172e6e0c5e6c2b10efab35f",
               "status": "authored"
             },
             {
               "topicSlug": "electric-currents-drift-velocity-and-its-relation-with-current",
               "filename": "01-electric-currents-drift-velocity-and-its-relation-with-current.json",
-              "bytes": 12239,
-              "sha256": "fc44b8d35d1bfcb226d1c9f1a78ec12914e2711c53e34628fad4da91a0e12390",
+              "bytes": 11687,
+              "sha256": "c3d0cfa7ff21c495dc581b7663114874507b9ef52515df9788e09910e0ba7df1",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "ohms-law-resistance",
+              "filename": "02-ohm-s-law-electrical-resistance-resistivity-conductivity-2.json",
+              "bytes": 7351,
+              "sha256": "27c63e86da9e531c3b3d97c44cbdf1675b95260f20be0d4c759815b2f7a1a4f8",
               "status": "authored"
             },
             {
               "topicSlug": "ohms-law-resistance",
               "filename": "02-ohms-law-resistance.json",
-              "bytes": 6279,
-              "sha256": "1bc061a66ade15566cd1711c3a2f483e632f1c0db2a3fdb5b7b67bf4fa25cbd7",
+              "bytes": 6167,
+              "sha256": "2d8385de5a85ef40f31036fae1edbefb2e87b3212131f604822594f76e2b59b0",
               "status": "authored"
             },
             {
@@ -4204,24 +4449,31 @@
               "status": "authored"
             },
             {
+              "topicSlug": "ohms-law-resistance",
+              "filename": "03-series-parallel-resistors-2.json",
+              "bytes": 7160,
+              "sha256": "939666e998990e313d2ecfcb4f565d02bff505111c05896bb296c663d5f78600",
+              "status": "authored"
+            },
+            {
               "topicSlug": "potential-divider",
               "filename": "04-potential-divider.json",
-              "bytes": 11986,
-              "sha256": "f3ffac4659608adf3aecf8ef417f20300311efd95953f900065f3c12a8f2b081",
+              "bytes": 11936,
+              "sha256": "b47f6ec6690d68a852215f2b0289787c7d7b2aacb7d382ab585c0da129d7c3c0",
               "status": "authored"
             },
             {
               "topicSlug": "resistances-in-series-and-parallel",
               "filename": "04-resistances-in-series-and-parallel.json",
-              "bytes": 10162,
-              "sha256": "dc3dcfa6782d6b45110e845b12a8ed39f7cbe6481d1f9b5fa99b5a9838d5c253",
+              "bytes": 9784,
+              "sha256": "f3dab2232948f478fbb559128651495a315c83dd1fb3e325aa128ab5ddf9b3dd",
               "status": "authored"
             },
             {
               "topicSlug": "emf-internal-resistance-and-cells-in-combination",
               "filename": "05-emf-internal-resistance-2.json",
-              "bytes": 12542,
-              "sha256": "203bc268e8d0c9ec5c0469ee001c51c6199e55d6f43b85fcd1f1852fcac46f5b",
+              "bytes": 12424,
+              "sha256": "63d7f84ce2acf975d4ffb3a910afd63055d9579d8e223d298b195d1bec0ee6de",
               "status": "authored"
             },
             {
@@ -4241,8 +4493,8 @@
             {
               "topicSlug": "work-power-circuits",
               "filename": "06-work-power-circuits.json",
-              "bytes": 6272,
-              "sha256": "927d02d4c0a16bc23a596109477efe99574dcc733711298229e27325223beda0",
+              "bytes": 6156,
+              "sha256": "a48a9d11705676d7db02c61e3011424bdad35c2b511d0dd144acd820e74fa5fd",
               "status": "authored"
             },
             {
@@ -4259,64 +4511,64 @@
             "entries": 4,
             "authored": 4,
             "template": 0,
-            "bytes": 37815
+            "bytes": 37366
           },
           "entries": [
             {
               "topicSlug": "dispersive-power",
               "filename": "01-dispersive-power-2.json",
-              "bytes": 12321,
-              "sha256": "5b51b5dd2cf034c8fd2a15365866eac1f1d1008abd2059ffd55274d0a4119bf7",
+              "bytes": 11599,
+              "sha256": "7ae9113b1078ff23b6e1bff9ccae687ccd3aedd91933bd0c1786741044cb26f8",
               "status": "authored"
             },
             {
               "topicSlug": "pure-spectrum-and-dispersive-power",
               "filename": "01-pure-spectrum-and-dispersive-power.json",
-              "bytes": 1508,
-              "sha256": "01a3491caf22c2dbf9f16fdb628efcb44d598700bc2eccbfa1714e97f40fdd17",
+              "bytes": 1521,
+              "sha256": "89020cb18905026afa69929ce2c09aca95e9c132dbee7660f71f90e102661f03",
               "status": "authored"
             },
             {
               "topicSlug": "chromatic-aberration",
               "filename": "02-chromatic-aberration.json",
-              "bytes": 11640,
-              "sha256": "cedd92b2ba2d0d15ac4394c093aac4b089fb69ae7f5bdcf41c324e0a7959e760",
+              "bytes": 11740,
+              "sha256": "0f528554dea77ce04c84cfafc254bc3d5bb3b9dbbbdb82adc606d63739e9d7cc",
               "status": "authored"
             },
             {
               "topicSlug": "achromatism",
               "filename": "03-achromatism.json",
-              "bytes": 12346,
-              "sha256": "a4a3a9c0a428b26e9d5e901c3ac5c61fe32500138f59c94ad36a4214930a26b0",
+              "bytes": 12506,
+              "sha256": "2935a14d273dd6a2196c07748a02b647be3c7d342ee0fa8571b51b7385af61c1",
               "status": "authored"
             }
           ]
         },
         "dynamics": {
           "totals": {
-            "entries": 8,
-            "authored": 8,
+            "entries": 10,
+            "authored": 10,
             "template": 0,
-            "bytes": 356997
+            "bytes": 397732
           },
           "entries": [
             {
               "topicSlug": "linear-momentum-impulse",
               "filename": "01-linear-momentum-and-impulse.json",
-              "bytes": 44395,
-              "sha256": "7457aff564d6b74f003f31b9cdd3eed96f94c0712fa7d2a5d3e8a300fc9a43a2",
+              "bytes": 44195,
+              "sha256": "13294db005ff53c9b611268aa0c5c63a2e0b54dc4608a3280ee112820a3a77c6",
               "status": "authored"
             },
             {
               "topicSlug": "conservation-linear-momentum",
               "filename": "02-conservation-linear-momentum.json",
-              "bytes": 29856,
-              "sha256": "43cbe9289ad6d2025c352c4acdf6f8bd4b895605e02af0ce0dc008bb3c558786",
+              "bytes": 29732,
+              "sha256": "23c5925d716adeef359d1753d2a2de0e40e695a7130ef575c77dc990c11e9337",
               "status": "authored"
             },
             {
-              "topicSlug": "linear-momentum-impulse",
-              "filename": "02-conservation-of-linear-momentum-2.json",
+              "topicSlug": "conservation-of-linear-momentum",
+              "filename": "02-conservation-of-linear-momentum.json",
               "bytes": 38100,
               "sha256": "bed17b212e497a9b71cf6a020373578212d49c8a08cc12cee0e07d67a04e0a6a",
               "status": "authored"
@@ -4324,8 +4576,8 @@
             {
               "topicSlug": "newton-laws-application",
               "filename": "03-application-of-newton-s-laws-2.json",
-              "bytes": 58360,
-              "sha256": "2e7de44d420436331233ae609a4a396525ee8bf71e5807370598aba20e0c5056",
+              "bytes": 58242,
+              "sha256": "47fa158b1e01d750d02d27b2fcead44a881e31a33348605917ae312e1edf47c4",
               "status": "authored"
             },
             {
@@ -4338,8 +4590,8 @@
             {
               "topicSlug": "torque-equilibrium",
               "filename": "04-moment-torque-and-equilibrium-2.json",
-              "bytes": 56292,
-              "sha256": "c59866dcca004e09e9ad4d8c1d35593cf512644ed7f844911715a8a65f30b4e1",
+              "bytes": 56170,
+              "sha256": "9f7e4915d41cb286c04d10acf492c17dbe5de33159f4252e2dd43ac07e013e37",
               "status": "authored"
             },
             {
@@ -4351,19 +4603,33 @@
             },
             {
               "topicSlug": "solid-friction",
+              "filename": "05-solid-friction-laws-and-verifications-2.json",
+              "bytes": 38271,
+              "sha256": "f0a36da1149dd5165bf72c44de0ecbb4d2dcdd891797286be6840b4daebe0261",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "solid-friction-laws-of-solid-friction-and-their-verifications",
+              "filename": "05-solid-friction-laws-of-solid-friction-and-their-verifications.json",
+              "bytes": 3214,
+              "sha256": "248bdbcaa727df2f2cf434837c43c2fc73e8092fea3ce504ea3e0262b3952ba0",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "solid-friction",
               "filename": "05-solid-friction.json",
-              "bytes": 52734,
-              "sha256": "e93ed8212c4861c336249e431164aedf7d25d4b0e3f48df4a055256c2e8608fa",
+              "bytes": 52548,
+              "sha256": "371577446dcc535804d44e803e91dce292291b48ea36bef9fb109ea79e648c57",
               "status": "authored"
             }
           ]
         },
         "elasticity": {
           "totals": {
-            "entries": 7,
-            "authored": 7,
+            "entries": 10,
+            "authored": 10,
             "template": 0,
-            "bytes": 228295
+            "bytes": 330921
           },
           "entries": [
             {
@@ -4381,10 +4647,24 @@
               "status": "authored"
             },
             {
+              "topicSlug": "stress-strain-elasticity-and-plasticity",
+              "filename": "02-stress-strain-elasticity-and-plasticity.json",
+              "bytes": 36470,
+              "sha256": "7fe70e733e5bbd418cfdd3b7447960380d6dfb8e7d736235d5b1cda8777b93c7",
+              "status": "authored"
+            },
+            {
               "topicSlug": "stress-strain-elasticity",
               "filename": "02-stress-strain-elasticity.json",
-              "bytes": 37632,
-              "sha256": "7d083d14ca9448601e3b1880dd48ef27a1b1635bed9f777b0509dc66b015bb65",
+              "bytes": 37711,
+              "sha256": "39cf6c613956b51d0624c2502a55f11b453d5e4c893bba48275dc0759504d623",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "elastic-modulus-young-bulk-shear",
+              "filename": "03-elastic-modulus-young-bulk-shear.json",
+              "bytes": 32639,
+              "sha256": "f8bb8d4640ec32ad5bbed51eba316d50cf8e26937d4bc327b6ba02b7d15f9ec9",
               "status": "authored"
             },
             {
@@ -4392,6 +4672,13 @@
               "filename": "03-elastic-modulus-young-modulus-bulk-modulus-shear-modulus.json",
               "bytes": 35297,
               "sha256": "a9c43317e86f5fc0b4559d81b70af158f4c52a838a09f7af7e8b7c6ae2f29165",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "elastic-modulus",
+              "filename": "03-elastic-modulus.json",
+              "bytes": 33438,
+              "sha256": "292cf46906f73257f2b6315947287117bcdadb2848bc139b0b889813df2a8fcf",
               "status": "authored"
             },
             {
@@ -4419,12 +4706,26 @@
         },
         "electric-charges": {
           "totals": {
-            "entries": 5,
-            "authored": 5,
+            "entries": 8,
+            "authored": 8,
             "template": 0,
-            "bytes": 36147
+            "bytes": 71006
           },
           "entries": [
+            {
+              "topicSlug": "electric-charges-and-charging-by-induction",
+              "filename": "01-electric-charges-and-charging-by-induction.json",
+              "bytes": 11063,
+              "sha256": "ee43dad80c2e7242e47650421aad4bbf6d8dc655d2403b77e4c38304fe7c2527",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "electric-charges-induction",
+              "filename": "01-electric-charges-induction.json",
+              "bytes": 11095,
+              "sha256": "096436b5f85457d423737c6e935125ef8e743313783b33f22e31e45deea5ae05",
+              "status": "authored"
+            },
             {
               "topicSlug": "electric-charges",
               "filename": "01-electric-charges.json",
@@ -4442,8 +4743,15 @@
             {
               "topicSlug": "coulomb-law",
               "filename": "02-coulomb-law.json",
-              "bytes": 12519,
-              "sha256": "b03b47476aa953a53f3660c4f22f799f9ae4475e6a6b4b545a95598d0c2a9f8d",
+              "bytes": 12607,
+              "sha256": "ddeda11aa8250d1de1dbceb55b938ef6626157876d1f51f581097479824673c4",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "coulomb-s-law-and-force-between-multiple-charges",
+              "filename": "02-coulomb-s-law-and-force-between-multiple-charges.json",
+              "bytes": 12613,
+              "sha256": "83bca396cc9b8a9a08bb7e31adabd19f817cedd6b80c6196effc9daaff63c5b6",
               "status": "authored"
             },
             {
@@ -4464,12 +4772,19 @@
         },
         "electric-field": {
           "totals": {
-            "entries": 5,
-            "authored": 5,
+            "entries": 9,
+            "authored": 9,
             "template": 0,
-            "bytes": 48598
+            "bytes": 99005
           },
           "entries": [
+            {
+              "topicSlug": "electric-field-due-to-point-charges-and-field-lines",
+              "filename": "01-electric-field-due-to-point-charges-and-field-lines.json",
+              "bytes": 12672,
+              "sha256": "206a2c62e3fa1f2756c2834bcbb0204a10064c33073baa79482967ff3b454b57",
+              "status": "authored"
+            },
             {
               "topicSlug": "electric-field-due-to-point-charges-field-lines",
               "filename": "01-electric-field-due-to-point-charges-field-lines.json",
@@ -4480,8 +4795,15 @@
             {
               "topicSlug": "electric-field-point-charges",
               "filename": "01-electric-field-point-charges.json",
-              "bytes": 12611,
-              "sha256": "bd9dc7e791455491c9b1a79927667aff5501208cfbc59d3255aacb44ee02b12f",
+              "bytes": 12702,
+              "sha256": "dcea91e3c11c6c445ceb189ad7cc3c398eb1c4e4dff76fe38ade11079a536a2f",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "gauss-law-and-electric-flux",
+              "filename": "02-gauss-law-and-electric-flux.json",
+              "bytes": 11996,
+              "sha256": "eedea422c8b20f06fbcb4053f0dde996d6c88ff2b9beb49b14e738e9fdc335cd",
               "status": "authored"
             },
             {
@@ -4492,6 +4814,13 @@
               "status": "authored"
             },
             {
+              "topicSlug": "gauss-law",
+              "filename": "02-gauss-law.json",
+              "bytes": 12003,
+              "sha256": "fd1fe95e58b9f0696afefef6cf07bf5c9e4d1defe956f467f35cf27540c0d876",
+              "status": "authored"
+            },
+            {
               "topicSlug": "application-of-gauss-law-field-of-a-charge-sphere-line-charge-charged-plane-conductor",
               "filename": "03-application-of-gauss-law-field-of-a-charge-sphere-line-charge-charged-plane-conductor.json",
               "bytes": 4238,
@@ -4499,20 +4828,27 @@
               "status": "authored"
             },
             {
+              "topicSlug": "applications-of-gauss-law",
+              "filename": "03-applications-of-gauss-law.json",
+              "bytes": 13580,
+              "sha256": "f6701eb6c891fa33ff75b6a0d56e91fa91dff3e4cb98425f28b346913aabc1b3",
+              "status": "authored"
+            },
+            {
               "topicSlug": "gauss-law-applications",
               "filename": "03-gauss-law-applications.json",
-              "bytes": 13553,
-              "sha256": "41d50a39a19d55cf80a382deb04894890a730143ff6aaec2fc65a8782ff62e29",
+              "bytes": 13618,
+              "sha256": "35aff0bcde11c2552814693958a4548f2264977afdc3e73f2432eaffb11d1411",
               "status": "authored"
             }
           ]
         },
         "gravitation": {
           "totals": {
-            "entries": 13,
-            "authored": 13,
+            "entries": 17,
+            "authored": 17,
             "template": 0,
-            "bytes": 369713
+            "bytes": 509539
           },
           "entries": [
             {
@@ -4527,6 +4863,20 @@
               "filename": "01-newton-s-law-of-gravitation.json",
               "bytes": 38285,
               "sha256": "7c51fd56992042a02d1a3a036009b96aefd6e781c4876544b6e3e8c2f24f5af9",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "gravitational-potential-energy",
+              "filename": "02-gravitational-field-strength-2.json",
+              "bytes": 37322,
+              "sha256": "87c1739c59e879a62441840085dae5ec94635c3430338b64ffd8559f93e6f2f1",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "gravitational-potential-energy",
+              "filename": "03-gravitational-potential-and-potential-energy-2.json",
+              "bytes": 37338,
+              "sha256": "a30186a780bb75f0d6837893dcaa0cfb02dbb61590310ed04d820e458aa8b807",
               "status": "authored"
             },
             {
@@ -4558,6 +4908,13 @@
               "status": "authored"
             },
             {
+              "topicSlug": "variation-g-altitude-depth",
+              "filename": "04-variation-of-g-due-to-altitude-and-depth-2.json",
+              "bytes": 33093,
+              "sha256": "256b76603ed64de7de2e6db663a749dd06081505e637122866654e4e636e09b3",
+              "status": "authored"
+            },
+            {
               "topicSlug": "centre-mass-gravity",
               "filename": "05-centre-mass-gravity.json",
               "bytes": 35415,
@@ -4572,6 +4929,13 @@
               "status": "authored"
             },
             {
+              "topicSlug": "motion-of-a-satellite-orbital-velocity-and-time-period",
+              "filename": "06-motion-of-a-satellite-orbital-velocity-and-time-period.json",
+              "bytes": 31545,
+              "sha256": "0058b634143af20bb4029a64ada80cb221a135b88f91fa12f860bb9b40355867",
+              "status": "authored"
+            },
+            {
               "topicSlug": "satellite-motion",
               "filename": "06-satellite-motion.json",
               "bytes": 33604,
@@ -4581,15 +4945,15 @@
             {
               "topicSlug": "escape-velocity",
               "filename": "07-escape-velocity.json",
-              "bytes": 4747,
-              "sha256": "8cb460fff8aab6e4523de288004fd2bdbc3fdbd7f8b5266ca7801acdddac005f",
+              "bytes": 5169,
+              "sha256": "8e201eb7328939ce785df9096bd181a47092674cc315d4232d7de5f14b03627e",
               "status": "authored"
             },
             {
               "topicSlug": "geostationary-satellite",
               "filename": "08-geostationary-satellite.json",
-              "bytes": 31570,
-              "sha256": "f21b420246c0b4291812354e43dc2bb13ad1831174969438add1986e2266db2f",
+              "bytes": 31633,
+              "sha256": "c115a4c61eb51e91dec93775249ba7fea3944f71a9ac3d4b9b0141cf3678393d",
               "status": "authored"
             },
             {
@@ -4602,8 +4966,8 @@
             {
               "topicSlug": "gps",
               "filename": "09-gps.json",
-              "bytes": 31904,
-              "sha256": "7fba252c71b376493acfe68986fba3163d5d524a43b1b09aa6df7f959560ecce",
+              "bytes": 31947,
+              "sha256": "5b717c7245166af5c234a55114559620d658e13bee65e8b9f8f5f987858b5c24",
               "status": "authored"
             }
           ]
@@ -4613,7 +4977,7 @@
             "entries": 7,
             "authored": 7,
             "template": 0,
-            "bytes": 41870
+            "bytes": 41734
           },
           "entries": [
             {
@@ -4626,8 +4990,8 @@
             {
               "topicSlug": "temperature-scales",
               "filename": "01-thermal-energy-heat-temperature-2.json",
-              "bytes": 12804,
-              "sha256": "c22cbb2d256702a00fc0b488b059909d295fdc1a7e3d9799e22fe01da7566972",
+              "bytes": 12668,
+              "sha256": "73543589f2f2139379ae4baa85abccaa1d9b6a5fbcd45f7407b13aa5f9243e02",
               "status": "authored"
             },
             {
@@ -4672,21 +5036,21 @@
             "entries": 10,
             "authored": 10,
             "template": 0,
-            "bytes": 80085
+            "bytes": 78828
           },
           "entries": [
             {
               "topicSlug": "ideal-gas-equation",
               "filename": "01-ideal-gas-equation.json",
-              "bytes": 1548,
-              "sha256": "e42f17d3ee1b963c3e592c310ec1b84443d30e66dcb4fcc4ef7710fbb2d3f3ca",
+              "bytes": 1562,
+              "sha256": "1625f3ab6507bab22450096583ee0fbfc8c5d02b362f06201d4bc2710c9b4b05",
               "status": "authored"
             },
             {
               "topicSlug": "kinetic-molecular-model",
               "filename": "02-kinetic-molecular-model.json",
-              "bytes": 5754,
-              "sha256": "1f064503d9a4a97b8622ad0c01f076700edd79304d1c8e8a30284dfea3bbb3f0",
+              "bytes": 5442,
+              "sha256": "0067d51ea63f9d631d6ecde9a80690a72dd33469f546d80022f3e2ebdff3e457",
               "status": "authored"
             },
             {
@@ -4699,36 +5063,36 @@
             {
               "topicSlug": "boltzmann-rms-speed",
               "filename": "03-boltzmann-rms-speed.json",
-              "bytes": 6227,
-              "sha256": "0ac55115ab3dbce0ca5f0ae1ee522269c63b6616cfaf64b780ce3bf5612c6f64",
+              "bytes": 6286,
+              "sha256": "183f73f5192db33fae4972d42a2c6234a51799adab3f0f09281fe10265c274ee",
               "status": "authored"
             },
             {
               "topicSlug": "kinetic-molecular-model-of-an-ideal-gas",
               "filename": "03-kinetic-molecular-model-of-an-ideal-gas.json",
-              "bytes": 12370,
-              "sha256": "acc3c2d4e42422bcc34d963aa3bbe00b195caf4e68a3e5f1cdd1dd6e9ebc3e2a",
+              "bytes": 11962,
+              "sha256": "2ce99cd59b0a7d7215bc01f5abfe3388f274e2834b4f11e0abf5eeca2dccbce3",
               "status": "authored"
             },
             {
               "topicSlug": "derivation-of-pressure-exerted-by-gas",
               "filename": "04-derivation-of-pressure-exerted-by-gas.json",
-              "bytes": 11802,
-              "sha256": "bf2ab44638960137a8165dcf5bd545b36df71dcaca8c3dba315e4efecadc5648",
+              "bytes": 11631,
+              "sha256": "c97285fe87e2aa0dec94f2d248373e9e2bc355b83a068dba03525c5a4ebdde4e",
               "status": "authored"
             },
             {
               "topicSlug": "heat-capacities-gases",
               "filename": "04-heat-capacities-gases.json",
-              "bytes": 5805,
-              "sha256": "7838d13624ca0815e56cd176540d355024beff3e253ac14d65fd066105878b00",
+              "bytes": 5487,
+              "sha256": "4c417b7579d50c3782123a84b00dbeaee9b6a4aea7c8253312f46caa91469103",
               "status": "authored"
             },
             {
               "topicSlug": "average-translational-kinetic-energy-of-gas-molecule",
               "filename": "05-average-translational-kinetic-energy-of-gas-molecule.json",
-              "bytes": 1624,
-              "sha256": "dfe53a68dc11884af4dd41d5c2583465a4fe52d6b7d11726beac521b91b6e930",
+              "bytes": 1637,
+              "sha256": "d7b818a05edeb58c320b00f06ae5144a4e288fcee35fcdfa0aaf184e8e1613d1",
               "status": "authored"
             },
             {
@@ -4741,18 +5105,18 @@
             {
               "topicSlug": "boltzmann-constant-root-mean-square-speed-and-heat-capacities",
               "filename": "07-heat-capacities-of-gases-and-solids-2.json",
-              "bytes": 18990,
-              "sha256": "06e2d1f2fd23795e0ea2c7ddd7336676c3ed4e26775237456fcbabe9e026be0e",
+              "bytes": 18856,
+              "sha256": "9083a5473c7766223a3cebce0abe54f7eff5dfbe1ed8276b7d494e40455f9c9a",
               "status": "authored"
             }
           ]
         },
         "kinematics": {
           "totals": {
-            "entries": 5,
-            "authored": 5,
+            "entries": 9,
+            "authored": 9,
             "template": 0,
-            "bytes": 65017
+            "bytes": 119883
           },
           "entries": [
             {
@@ -4760,6 +5124,13 @@
               "filename": "01-instantaneous-velocity-acceleration.json",
               "bytes": 13853,
               "sha256": "7b3de99776af482ed562a7108f5d9bc455c47f60a038792cdd3cc63f2cf617ce",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "instantaneous-velocity-acceleration",
+              "filename": "01-instantaneous-velocity-and-acceleration-2.json",
+              "bytes": 13792,
+              "sha256": "f52d521dceddaddb61eb9475b2e6235a662717933749a4b2b45d972e6d8b185a",
               "status": "authored"
             },
             {
@@ -4772,8 +5143,15 @@
             {
               "topicSlug": "equation-of-motion-graphical-treatment",
               "filename": "03-equation-of-motion-graphical-treatment.json",
-              "bytes": 13832,
-              "sha256": "153298e6a9a3ec10e5ba4e3aaacfdbbbfbca080b7d3f5a6806c9837cc386d195",
+              "bytes": 13900,
+              "sha256": "33b4680fee1a104ce2046a128ca0aa8736bb6a7534aa6ddfdcd5c61002ce117e",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "equation-of-motion-graphical",
+              "filename": "03-equation-of-motion-graphical.json",
+              "bytes": 12988,
+              "sha256": "adf1c60a4b9368bdc8faa936279e18854980c9b0fdd6e459e0970165cbcab30e",
               "status": "authored"
             },
             {
@@ -4781,6 +5159,20 @@
               "filename": "04-freely-falling-body.json",
               "bytes": 14003,
               "sha256": "7b95fccb97a856f1b9c0252fc84d8907a003ffef4db831d1bf4ea2fc1a4c03aa",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "freely-falling-body",
+              "filename": "04-motion-of-a-freely-falling-body-2.json",
+              "bytes": 13996,
+              "sha256": "c55352bf6aa46d0b5a731ec8bd3cae10ca4d033f249fb61c84887f4564616051",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "projectile-motion",
+              "filename": "05-projectile-motion-and-its-applications-2.json",
+              "bytes": 14022,
+              "sha256": "e00d62f593ca3a9b86a8e2a149521af94d5c217340929a53e8f22f3f7a47116b",
               "status": "authored"
             },
             {
@@ -4797,21 +5189,21 @@
             "entries": 4,
             "authored": 4,
             "template": 0,
-            "bytes": 28632
+            "bytes": 28447
           },
           "entries": [
             {
               "topicSlug": "lens-maker-formula",
               "filename": "01-lens-maker-formula.json",
-              "bytes": 11121,
-              "sha256": "dfcb3245a4c2ff8509ab39be5ea76c14065679f3abd94295d7f1cf9b9352090a",
+              "bytes": 11017,
+              "sha256": "42a26a9ba29bd3398afe65fb2c7df07d9c63da2d4c7d55af7bff98408bfa6b6c",
               "status": "authored"
             },
             {
               "topicSlug": "spherical-lens-and-angular-magnification",
               "filename": "01-spherical-lenses-and-angular-magnification.json",
-              "bytes": 1604,
-              "sha256": "d0a174bec5214597a2ef491e8fb36381bfb93e588b2b281142bedb1af0110e26",
+              "bytes": 1617,
+              "sha256": "11b2fa674662c54e2a66bfb5eeeb5c069fa04c42528eff89feb340889073fe8c",
               "status": "authored"
             },
             {
@@ -4824,9 +5216,68 @@
             {
               "topicSlug": "power-of-lens",
               "filename": "02-power-of-lens.json",
-              "bytes": 12554,
-              "sha256": "5b797999ae03215f19a1795ad16ff4324b5edfffedbd712683318cc87bf854f7",
+              "bytes": 12460,
+              "sha256": "b90dd298bb25867c3b3d069f7ed2a0ed5655b4576ec4749140cabb7e7f49db74",
               "status": "authored"
+            }
+          ]
+        },
+        "mechanics": {
+          "totals": {
+            "entries": 7,
+            "authored": 0,
+            "template": 7,
+            "bytes": 11419
+          },
+          "entries": [
+            {
+              "topicSlug": "dimensions",
+              "filename": "dimensions.json",
+              "bytes": 1645,
+              "sha256": "68b349594e916b6bc3d0e673215ea81176a79920aea4d3893a23e9a315bf1f5f",
+              "status": "template"
+            },
+            {
+              "topicSlug": "errors",
+              "filename": "errors.json",
+              "bytes": 1545,
+              "sha256": "30a6053044d3b95a21ed39911174403c647f8cbbb7e0dfa398b6f4093317771c",
+              "status": "template"
+            },
+            {
+              "topicSlug": "l-s-a-q-and-n",
+              "filename": "l-s-a-q-and-n.json",
+              "bytes": 1511,
+              "sha256": "8539a9095b2a684268471e64e0fa359c5d718bc882bcda65150233a8fc8725e0",
+              "status": "template"
+            },
+            {
+              "topicSlug": "m-p-errors",
+              "filename": "m-p-errors.json",
+              "bytes": 1597,
+              "sha256": "b606c23191ae531785f5b113c26b6ff65ccc7605f1d91344d6d16f4d50cc6ee6",
+              "status": "template"
+            },
+            {
+              "topicSlug": "physical-quantity",
+              "filename": "physical-quantity.json",
+              "bytes": 1615,
+              "sha256": "0dfa63caafaee227c78317e0bbf7812c1911ac4fcf36e12f84ec06b199122e29",
+              "status": "template"
+            },
+            {
+              "topicSlug": "s-f-rules",
+              "filename": "s-f-rules.json",
+              "bytes": 1748,
+              "sha256": "7beec59a66906743be84e1a060ff78bf80b847dbc0bed32fb75ae472e65118e2",
+              "status": "template"
+            },
+            {
+              "topicSlug": "vector",
+              "filename": "vector.json",
+              "bytes": 1758,
+              "sha256": "fa4e4c645ad16d1a13b15f7f113bfa2e8644df42fb7974aaa594670275f881a9",
+              "status": "template"
             }
           ]
         },
@@ -4835,14 +5286,14 @@
             "entries": 12,
             "authored": 12,
             "template": 0,
-            "bytes": 119549
+            "bytes": 117458
           },
           "entries": [
             {
               "topicSlug": "atomic-mass-isotopes",
               "filename": "01-nucleus-discovery-density-mass-number-and-atomic-number-2.json",
-              "bytes": 26965,
-              "sha256": "c0fdb2ef37d671985460c10a8159ec91b6cc515d4587bd27bba3e1967cc893f0",
+              "bytes": 26753,
+              "sha256": "be2d20d7bf0970f3f0cd5d340a605f2c69e3ef34916afd2023d3c6cca92b13f1",
               "status": "authored"
             },
             {
@@ -4862,8 +5313,8 @@
             {
               "topicSlug": "atomic-mass-isotopes",
               "filename": "02-mass-energy-binding-energy-2.json",
-              "bytes": 17584,
-              "sha256": "4cb445e508d7f6d428eb02f486ad6b7c821b48e7dff2250c6d95d4de81452afe",
+              "bytes": 17460,
+              "sha256": "af43f74d67561b2ad0793c87af38bd59cb643252d50a85bb723e7e09e2f6dee4",
               "status": "authored"
             },
             {
@@ -4876,22 +5327,22 @@
             {
               "topicSlug": "atomic-mass-isotopes",
               "filename": "03-einstein-s-mass-energy-relation-mass-defect-packing-fraction-and-binding-energy-2.json",
-              "bytes": 27023,
-              "sha256": "3afe3d9079ba3a8183678b7951b950972b318e5074282c42f9ff83e246579097",
+              "bytes": 26779,
+              "sha256": "05d9c336026f06998618efbb3c9e5a82a54b501dcc7b742905d9cc8a5313cd34",
               "status": "authored"
             },
             {
               "topicSlug": "fission-fusion",
               "filename": "03-fission-fusion-2.json",
-              "bytes": 15165,
-              "sha256": "f93d8658e17780ded70a18a48c9a59822088a38b3e4f56d273208ccf62ded6ae",
+              "bytes": 13641,
+              "sha256": "233aefd03d2a18a5bfd219dc6f3ea18511de552fc2aa2becaf88e78d7de52a7f",
               "status": "authored"
             },
             {
               "topicSlug": "creation-and-annihilation-nuclear-fission-and-fusion",
               "filename": "04-creation-and-annihilation-nuclear-fission-and-fusion.json",
-              "bytes": 1753,
-              "sha256": "b58217c4956f1fc03a61239c595db80116449da998723f59d78d3695c822573d",
+              "bytes": 1766,
+              "sha256": "3f1fb2f1551df224c184c6c97b430e7af69b6c57a609548b55e811e6e04af57a",
               "status": "authored"
             },
             {
@@ -4929,7 +5380,7 @@
             "entries": 3,
             "authored": 3,
             "template": 0,
-            "bytes": 4050
+            "bytes": 4063
           },
           "entries": [
             {
@@ -4949,8 +5400,8 @@
             {
               "topicSlug": "reflection-at-curve-surface",
               "filename": "reflection-at-curve-surface.json",
-              "bytes": 1562,
-              "sha256": "9c87b901ee7846227b997c9a3ac124065f1bfb66503e7c303939d092161ff191",
+              "bytes": 1575,
+              "sha256": "641f120cc23b5650225180712d84a10ce44c3374e7c2a2091d96ad22895b19d9",
               "status": "authored"
             }
           ]
@@ -4960,14 +5411,14 @@
             "entries": 4,
             "authored": 4,
             "template": 0,
-            "bytes": 55324
+            "bytes": 57634
           },
           "entries": [
             {
-              "topicSlug": "precision-and-significant-figures",
-              "filename": "01-precision-and-significant-figures.json",
-              "bytes": 13253,
-              "sha256": "256aefd7555b7d6b9cf0fc522388822d62d19ef376a650e38b9d981d6f1c2beb",
+              "topicSlug": "precision-significant-figures",
+              "filename": "01-precision-and-significant-figures-2.json",
+              "bytes": 14568,
+              "sha256": "062abee3f06c3e67501558224e4841e1a092342be155e0b42207ae4e861769de",
               "status": "authored"
             },
             {
@@ -4978,34 +5429,34 @@
               "status": "authored"
             },
             {
-              "topicSlug": "dimensions-and-uses-of-dimensional-analysis",
-              "filename": "02-dimensions-and-uses-of-dimensional-analysis.json",
-              "bytes": 13340,
-              "sha256": "cac6cf4ee5f0967318848077d641f8c4df6a6d26e3f825f764844a6dea4ae4f2",
+              "topicSlug": "dimensions-dimensional-analysis",
+              "filename": "02-dimensions-and-uses-of-dimensional-analysis-2.json",
+              "bytes": 14335,
+              "sha256": "ffdaa1e479aa35259945ae90ecdf6b7d50f7190ede06c38b9374951c48163735",
               "status": "authored"
             },
             {
               "topicSlug": "dimensions-dimensional-analysis",
               "filename": "02-dimensions-dimensional-analysis.json",
               "bytes": 14236,
-              "sha256": "3ba0fe44d13c84d1465a3dd1d1eefc4513efbc8ea571e1c2a3250dc98d5e6f58",
+              "sha256": "9ccc995a7107669585b9654e8b2f2de9f20deeedc5626e18e61e30627ce850da",
               "status": "authored"
             }
           ]
         },
         "potential-potential-difference-and-potential-energy": {
           "totals": {
-            "entries": 4,
-            "authored": 4,
+            "entries": 6,
+            "authored": 6,
             "template": 0,
-            "bytes": 41922
+            "bytes": 68429
           },
           "entries": [
             {
               "topicSlug": "potential-difference-point-charge",
               "filename": "01-potential-difference-point-charge.json",
-              "bytes": 13681,
-              "sha256": "959bf624aa36bcba718f3c67b2f38e8e338d8d5e46c1d66b9f012a685ef1f79e",
+              "bytes": 13806,
+              "sha256": "d71a72d38562d60245395bb7fd8f77a4e0df346342c088b702501a583cb434d0",
               "status": "authored"
             },
             {
@@ -5016,10 +5467,24 @@
               "status": "authored"
             },
             {
+              "topicSlug": "potential-difference-potential-due-to-point-charge-potential-energy-and-electron-volt",
+              "filename": "01-potential-difference-potential-due-to-point-charge-potential-energy-and-electron-volt.json",
+              "bytes": 13807,
+              "sha256": "5ce42a9f9d41ea5e2959ab6bda86223c2aef2f0f55ce007f03d992f3fc202a51",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "equipotential-lines-and-surfaces",
+              "filename": "02-equipotential-lines-and-surfaces.json",
+              "bytes": 12503,
+              "sha256": "fc5fb43e7dfe0adb7de3a1eb53ff7f7ce99a46936352afd9799c8e9d4b71c995",
+              "status": "authored"
+            },
+            {
               "topicSlug": "equipotential-surfaces",
               "filename": "02-equipotential-surfaces.json",
-              "bytes": 12471,
-              "sha256": "58ce0cb2e15f22c75a5003f26dcc08572f308b6399610aad97f6150726073424",
+              "bytes": 12543,
+              "sha256": "f170505a3f0e324bc04b8e3a1879f3e629ee905002e104dd752139e2461f715c",
               "status": "authored"
             },
             {
@@ -5036,7 +5501,7 @@
             "entries": 13,
             "authored": 13,
             "template": 0,
-            "bytes": 201607
+            "bytes": 201337
           },
           "entries": [
             {
@@ -5049,8 +5514,8 @@
             {
               "topicSlug": "newton-s-law-of-cooling",
               "filename": "01-newton-law-cooling-2.json",
-              "bytes": 14698,
-              "sha256": "38e7b3266b0b1ee1aac78ebcde5ff305f388ba0d475971d716104e8265fd241f",
+              "bytes": 14588,
+              "sha256": "73690a96597c0bf7d74c626d1fbf1ff6a4ba308d646f039218ad490a424034b6",
               "status": "authored"
             },
             {
@@ -5063,15 +5528,15 @@
             {
               "topicSlug": "specific-heat-capacity",
               "filename": "02-specific-heat-capacity.json",
-              "bytes": 21447,
-              "sha256": "1ab002eaf62e931b0680b9fcd05743895af9d3b38fec5456921c688a2ab54e93",
+              "bytes": 21339,
+              "sha256": "e81b5c73f1d27ea5afa7a608a6db49e6439c7e4b4ec90d7764a54691c35de65a",
               "status": "authored"
             },
             {
               "topicSlug": "quantity-of-heat",
               "filename": "03-change-of-phases-latent-heat-2.json",
-              "bytes": 15197,
-              "sha256": "0ba741a82f5c84e62bec6dbb6e083b12001e135cff8afe160bdbbba93f0e775a",
+              "bytes": 15069,
+              "sha256": "db29991799efa78ec76a07b48e0d26d50c29bd757d34ca7eb19bbb8785519354",
               "status": "authored"
             },
             {
@@ -5119,27 +5584,34 @@
             {
               "topicSlug": "specific-heat-capacity",
               "filename": "11-unknown-specific-heat-via-cooling-rates-2.json",
-              "bytes": 26928,
-              "sha256": "c38e8f227857fe7d28239af7a07057494c27a8bf5d39336136b8366e42e01bb3",
+              "bytes": 26746,
+              "sha256": "08aa4329d6aae9805c5e26680894e204ab130fc27083bb6134549874a8f44521",
               "status": "authored"
             },
             {
               "topicSlug": "newton-s-law-of-cooling",
               "filename": "13-newtons-law-limitations.json",
-              "bytes": 56326,
-              "sha256": "7d0fbd80a4376cfeee9b6ededbc4bdec522de5ffe2e8291b0b65c72fa010926c",
+              "bytes": 56584,
+              "sha256": "a3315842d48f29225ad9c0652833e934551b0ac937416c9206bfb0adee526e39",
               "status": "authored"
             }
           ]
         },
         "rate-of-heat-flow": {
           "totals": {
-            "entries": 6,
-            "authored": 6,
+            "entries": 7,
+            "authored": 7,
             "template": 0,
-            "bytes": 64008
+            "bytes": 66859
           },
           "entries": [
+            {
+              "topicSlug": "conduction-thermal-conductivity-and-measurement",
+              "filename": "01-conduction-thermal-conductivity-and-measurement.json",
+              "bytes": 3039,
+              "sha256": "e34503fd1b9f6b2b683d03832338ee64ab5dcee26e997a18d333bee623a42ecf",
+              "status": "authored"
+            },
             {
               "topicSlug": "conduction-thermal-conductivity",
               "filename": "01-conduction-thermal-conductivity.json",
@@ -5157,8 +5629,8 @@
             {
               "topicSlug": "radiation-black-body",
               "filename": "03-radiation-black-body.json",
-              "bytes": 6902,
-              "sha256": "0515613303d1e746d129a278a993b629d41ebdf217298f51a5dec023c98be3fa",
+              "bytes": 6770,
+              "sha256": "d8148ae762ee3d903a133c904af4963fef8f94ed1fcacd067ef85f17143d35bb",
               "status": "authored"
             },
             {
@@ -5178,53 +5650,74 @@
             {
               "topicSlug": "stefan-boltzmann-law",
               "filename": "04-stefan-boltzmann-law.json",
-              "bytes": 15564,
-              "sha256": "352fbfd5fb4c69a0b753a5fc1fac144336a69afde2dcda733981625c87e7c1b1",
+              "bytes": 15508,
+              "sha256": "61f9d8eb92d5b0f020518d6e692c74568e8d9e2853c013f3741fde56031950ea",
               "status": "authored"
             }
           ]
         },
         "recent-trends-in-physics": {
           "totals": {
-            "entries": 5,
-            "authored": 5,
+            "entries": 8,
+            "authored": 8,
             "template": 0,
-            "bytes": 68558
+            "bytes": 90380
           },
           "entries": [
             {
+              "topicSlug": "particles-and-antiparticles-quarks-and-leptons",
+              "filename": "01-particle-physics-2.json",
+              "bytes": 9944,
+              "sha256": "e3211f1423b9de799e3d4e6fdfb42121c0aff61d88313e6b2d07659cd844392e",
+              "status": "authored"
+            },
+            {
               "topicSlug": "particle-physics-particles-and-antiparticles-quarks-baryons-and-mesons-and-leptons-neutrinos",
               "filename": "01-particle-physics-particles-and-antiparticles-quarks-baryons-and-mesons-and-leptons-neutrinos.json",
-              "bytes": 19988,
-              "sha256": "5bbef00f62dbad09040f853039a7ca37dcf24da9700e3d326185bdeb1968aa4d",
+              "bytes": 19894,
+              "sha256": "7c3e382fa952e47aecb23577a7a149e9be02cf3c2e8fafc740942d62e9cb4b23",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "particles-and-antiparticles-quarks-and-leptons",
+              "filename": "01-particles-and-antiparticles-quarks-and-leptons.json",
+              "bytes": 9997,
+              "sha256": "87cb35dce1a2a239aba748c7012df9888a1fccf4fb10089c320bc947d0e9d588",
               "status": "authored"
             },
             {
               "topicSlug": "big-bang-and-hubble-law-expansion-of-the-universe",
               "filename": "02-big-bang-and-hubble-law-expansion-of-the-universe.json",
-              "bytes": 17092,
-              "sha256": "32c079844f9d44ba800ff9a136109f9aadba7ff823c2bbbe2d3927f4dd0b936b",
+              "bytes": 16540,
+              "sha256": "cc2c7040da281eb0c7fd1a019dfb708234f5c4e78384d632751533d3e6b0b924",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "universe-big-bang-and-hubble-law-expansion-of-the-universe",
+              "filename": "02-universe-big-bang-and-hubble-law-expansion-of-the-universe.json",
+              "bytes": 3243,
+              "sha256": "8f2995788a50813ee83c3acaec1b414467524db31c40ef60cc07450b0ea16c7a",
               "status": "authored"
             },
             {
               "topicSlug": "universe-big-bang",
               "filename": "02-universe-big-bang.json",
-              "bytes": 6224,
-              "sha256": "921ce096092530a002db20c0be1ee3c68e55fa3995383be43f6092f167b24946",
+              "bytes": 6118,
+              "sha256": "88fe33bfa929c66ca19c143801c8dd917249c05667294c65e09a1a9c96009cab",
               "status": "authored"
             },
             {
               "topicSlug": "dark-matter-black-hole-and-gravitational-wave",
               "filename": "03-dark-matter-black-hole-and-gravitational-wave.json",
-              "bytes": 17633,
-              "sha256": "8181a85b4783b10acc959d7a08b256512dee37887fa749fda2411648de97daf2",
+              "bytes": 17183,
+              "sha256": "70bad9b79dee24c7787620c41ed23fe3d93f52a633441f1692fdda69fcf3faca",
               "status": "authored"
             },
             {
               "topicSlug": "dark-matter-black-holes",
               "filename": "03-dark-matter-black-holes.json",
-              "bytes": 7621,
-              "sha256": "d0782eb1f2dab83aaca1669373d66dde07e0be6ec9353995952081fa72292693",
+              "bytes": 7461,
+              "sha256": "fa8fbc3245adf1c2e1de4df626f5a823d1643bd7d19334a520d0eef9be852387",
               "status": "authored"
             }
           ]
@@ -5234,21 +5727,21 @@
             "entries": 2,
             "authored": 2,
             "template": 0,
-            "bytes": 11183
+            "bytes": 11451
           },
           "entries": [
             {
               "topicSlug": "mirror-formula",
               "filename": "01-mirror-formula.json",
-              "bytes": 10458,
-              "sha256": "6a195bebda2be7b7c3dd8d210182fbfeac31eb4d9618cd46552fe987d6572b4a",
+              "bytes": 10713,
+              "sha256": "249a401a98e99ef9c4daefce6a4e17f08559f6ac99c7023d743479201f0c9452",
               "status": "authored"
             },
             {
               "topicSlug": "real-and-virtual-images",
               "filename": "01-real-and-virtual-images.json",
-              "bytes": 725,
-              "sha256": "624420f39ff568c95f376aa05ae37ac39c65c33490b21912063758ac95c46f95",
+              "bytes": 738,
+              "sha256": "3cf1a49fc4173ad8c3226c2b40547ad285d0adfc3c4fe2aa06735404f4db27ee",
               "status": "authored"
             }
           ]
@@ -5258,14 +5751,14 @@
             "entries": 6,
             "authored": 6,
             "template": 0,
-            "bytes": 62424
+            "bytes": 61826
           },
           "entries": [
             {
               "topicSlug": "laws-of-refraction-and-refractive-index",
               "filename": "01-laws-of-refraction-and-refractive-index.json",
-              "bytes": 15636,
-              "sha256": "5f17fdcb116a9ff6dbac7140b7d9d603c5a7964c09e38d4170b6d380e6c0d848",
+              "bytes": 15246,
+              "sha256": "4c29b8bf9ace0b72a3691c41122fd56536b8266b8509b4b37951603826df02d6",
               "status": "authored"
             },
             {
@@ -5278,15 +5771,15 @@
             {
               "topicSlug": "laws-refraction-refractive-index",
               "filename": "01-laws-refraction-refractive-index.json",
-              "bytes": 6103,
-              "sha256": "1dd5c695ed05ccaf7d5fd5b07b1274c58ae8485fa3374026197d8be5407b6967",
+              "bytes": 6003,
+              "sha256": "2aa7ce2f4979d155793b1b1d07c45060240b694211f8f451193efe70c93b2081",
               "status": "authored"
             },
             {
               "topicSlug": "lateral-shift",
               "filename": "02-lateral-shift.json",
-              "bytes": 13759,
-              "sha256": "b9d7ee33996a36990b270c15273a207f79c7720a861ecf5d6b175891f23c4947",
+              "bytes": 13717,
+              "sha256": "4d024952c0a6ad2bbb1c223f00a07445c1051fa0c583093f6fd70b4761182c81",
               "status": "authored"
             },
             {
@@ -5299,8 +5792,8 @@
             {
               "topicSlug": "total-internal-reflection",
               "filename": "03-total-internal-reflection.json",
-              "bytes": 14970,
-              "sha256": "a78734d8ddaf01d9d4d67867aee3c9fc9afaa338345a9d6d35888e1791bc7e80",
+              "bytes": 14904,
+              "sha256": "615459e846cd45c6672857b5e0269af98f56a43a0ed693712dec3d9b2994c597",
               "status": "authored"
             }
           ]
@@ -5310,28 +5803,28 @@
             "entries": 6,
             "authored": 6,
             "template": 0,
-            "bytes": 50470
+            "bytes": 49836
           },
           "entries": [
             {
               "topicSlug": "minimum-deviation",
               "filename": "01-minimum-deviation.json",
-              "bytes": 13946,
-              "sha256": "0d051b0835c79b653c88d26706a86cbeea5b355dd655e87688e1f6141644fa03",
+              "bytes": 13876,
+              "sha256": "4755989c34ee49325226b7d9a1ae097a2b6636f2cb471544a3177bf17560d572",
               "status": "authored"
             },
             {
               "topicSlug": "prism-deviation-formula",
               "filename": "02-prism-deviation-formula.json",
-              "bytes": 5758,
-              "sha256": "1704f69cb7f0ed9bff9e634f0cc2d349547ed262b4671567bf2e68a18052e7db",
+              "bytes": 5668,
+              "sha256": "28dcacc37ec6645578bfe3086000e124d5d982347d1e6dc078b09bc2ca0f408c",
               "status": "authored"
             },
             {
               "topicSlug": "prism-formula",
               "filename": "02-relation-between-prism-angle-minimum-deviation-and-refractive-index.json",
-              "bytes": 14363,
-              "sha256": "6b241198a31554f4d62c13802b95e3746aef3a36d612c01d2b325312d1160f12",
+              "bytes": 13889,
+              "sha256": "975c8bca3874d01af746b4fc9f83efd562fe2a6beb5481a207fa7feb65011475",
               "status": "authored"
             },
             {
@@ -5362,14 +5855,14 @@
             "entries": 5,
             "authored": 5,
             "template": 0,
-            "bytes": 48859
+            "bytes": 47413
           },
           "entries": [
             {
               "topicSlug": "energy-bands",
               "filename": "01-energy-bands-2.json",
-              "bytes": 14046,
-              "sha256": "401b081afcbfa6ce1c99a7284033731e227206a282e01e7e53a053faeceba4aa",
+              "bytes": 13620,
+              "sha256": "50fed6799be12bbfe56776bb7673a30363089945792ac3522e4d6d3cb18bdb92",
               "status": "authored"
             },
             {
@@ -5382,15 +5875,15 @@
             {
               "topicSlug": "difference-between-metals-insulators-and-semiconductors-using-band-theory",
               "filename": "02-difference-between-metals-insulators-and-semiconductors-using-band-theory.json",
-              "bytes": 16383,
-              "sha256": "5b0c061cbf7d8210af25343dca8bd55face54939ea666cf2affeb8dedd68f522",
+              "bytes": 15765,
+              "sha256": "582c639c0aac468f2f0c6d2986f0d9e8ae4e817e1876f5d6009f7ad729c6c787",
               "status": "authored"
             },
             {
               "topicSlug": "semiconductors",
               "filename": "02-semiconductors.json",
-              "bytes": 6531,
-              "sha256": "0de5a47263ab3a066554ade6c66cb98c1106402c5096dec5b2c11d9392c5761f",
+              "bytes": 6129,
+              "sha256": "9152d7be4f736a818e9158766bc1ee28768bd7d9c1743610b1e7e8460486d9af",
               "status": "authored"
             },
             {
@@ -5404,24 +5897,31 @@
         },
         "thermal-expansion": {
           "totals": {
-            "entries": 8,
-            "authored": 8,
+            "entries": 10,
+            "authored": 10,
             "template": 0,
-            "bytes": 84392
+            "bytes": 99299
           },
           "entries": [
             {
+              "topicSlug": "linear-expansion-and-its-measurement",
+              "filename": "01-linear-expansion-and-its-measurement.json",
+              "bytes": 8305,
+              "sha256": "464d4522725a3f380999527b359ee9b6a1ba7c70e96a6571fefcc0321057c496",
+              "status": "authored"
+            },
+            {
               "topicSlug": "linear-expansion",
               "filename": "01-linear-expansion.json",
-              "bytes": 13275,
-              "sha256": "66583b4bffd8a0399006ca95a8ae52d7e47caa4539947e2f38480333ce281a35",
+              "bytes": 13227,
+              "sha256": "b8df884b9c58d5dc859d6f10bca41aa8ea13b27b21cb4b414af29c1137fb837a",
               "status": "authored"
             },
             {
               "topicSlug": "cubical-and-superficial-expansion",
               "filename": "02-cubical-and-superficial-expansion.json",
-              "bytes": 15041,
-              "sha256": "5eb12aa3ba033da9b160eb662241c8238ebfa2849d41b7082f16886dabb4ed8e",
+              "bytes": 14381,
+              "sha256": "c02becebba91e146f0e39440704aee3f50e80f6f426ada4f7c6d6a36a5c57e20",
               "status": "authored"
             },
             {
@@ -5434,22 +5934,29 @@
             {
               "topicSlug": "cubical-superficial-expansion",
               "filename": "02-cubical-superficial-expansion.json",
-              "bytes": 6742,
-              "sha256": "0e4e52fe712b32b67163319592054e0ce1e8262816cf315bc59bbb4a0f595d8a",
+              "bytes": 6612,
+              "sha256": "cf56971528f47418bc6a70dafacb4285e68695f59218daa90b846047bd4cbdad",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "linear-expansion-and-its-measurement",
+              "filename": "03-liquid-expansion-2.json",
+              "bytes": 8320,
+              "sha256": "b077921ae815017d69b16c35cf29808cb5a46fcc65bcb4ae97f1eb400b077121",
               "status": "authored"
             },
             {
               "topicSlug": "liquid-expansion-absolute-and-apparent",
               "filename": "03-liquid-expansion-absolute-and-apparent.json",
-              "bytes": 18709,
-              "sha256": "45ac301b931ad5b11092cea872307d5d6d45113e65fb36eb97e0cace6b047280",
+              "bytes": 18473,
+              "sha256": "9e4d3a7d31595312da724733844ad9f6c00a8d1b3d64193770b829958c7604e8",
               "status": "authored"
             },
             {
               "topicSlug": "dulong-and-petit-method-for-liquid-expansivity",
               "filename": "04-dulong-and-petit-method-for-liquid-expansivity.json",
-              "bytes": 15045,
-              "sha256": "60407e0294311f5e72c95a37fa9f61c87c84bc5d918266108881fea8166d7888",
+              "bytes": 14511,
+              "sha256": "1922402ce0909a4401a2f59245650c1c16024a3984d28503249420c4f51b1318",
               "status": "authored"
             },
             {
@@ -5462,8 +5969,8 @@
             {
               "topicSlug": "dulong-petit-method",
               "filename": "04-dulong-petit-method.json",
-              "bytes": 6350,
-              "sha256": "fb4aa97860ee03def3a472fbe5d73932f32c2fdf987b9c646eba40bbfed4e436",
+              "bytes": 6240,
+              "sha256": "921992dd12feea639d1c2123a3f1f8fa315c468045a04505ac23e7fe47eac944",
               "status": "authored"
             }
           ]
@@ -5473,14 +5980,14 @@
             "entries": 11,
             "authored": 11,
             "template": 0,
-            "bytes": 235043
+            "bytes": 240960
           },
           "entries": [
             {
               "topicSlug": "collinear-and-non-collinear-vectors-coplanar-and-non-coplanar-vectors",
               "filename": "01-scalars-and-vectors.json",
-              "bytes": 22928,
-              "sha256": "4c2739032b9f2a2ef45f2c3892b8bb09da4139e41d772756fc0eeb5251f6d49e",
+              "bytes": 22334,
+              "sha256": "9027ef4b5cb30e2ce264d0b7481add8061c4d0215d0874dd3baa62584d497a30",
               "status": "authored"
             },
             {
@@ -5493,57 +6000,57 @@
             {
               "topicSlug": "resolution-of-vectors-unit-vectors",
               "filename": "02-addition-of-vectors-same-and-opposite-directions.json",
-              "bytes": 18136,
-              "sha256": "038ce87121831b245db44641f2aadba7e60ff174c865eda91a29a2698ca9d478",
+              "bytes": 17752,
+              "sha256": "eb9f88dfeadfef8f2af7b0a157f930a2dba523861561a1cefff4d93723981706",
               "status": "authored"
             },
             {
               "topicSlug": "resolution-of-vectors-unit-vectors",
               "filename": "02-resolution-unit-vectors-2.json",
-              "bytes": 16210,
-              "sha256": "b1eb9c1487b2a1c4f7d7820dd3a8d3e5bace7d8072e12e4c5881fb3821be6868",
+              "bytes": 16070,
+              "sha256": "ab1672bec3caa6882faafd205e70bac9679d522d5969feffb53b24223d1f89e7",
               "status": "authored"
             },
             {
-              "topicSlug": "scalar-vector-products",
-              "filename": "03-scalar-vector-products.json",
-              "bytes": 6386,
-              "sha256": "dea4055270c02ab7c962f2186e4016be5c35d74242dd051d15cf602b8e6ab990",
+              "topicSlug": "triangle-parallelogram-polygon-laws",
+              "filename": "03-scalar-vector-products-2.json",
+              "bytes": 14855,
+              "sha256": "ecdbfaf1778991b4d1d9ecbc23b418349f53cbbccdea24403e40db1e318187c8",
               "status": "authored"
             },
             {
               "topicSlug": "triangle-parallelogram-and-polygon-laws-of-vectors",
               "filename": "04-law-of-parallelogram-of-vectors.json",
-              "bytes": 46503,
-              "sha256": "911b8ef42b47cba5a0d621ab2f60fa25f0273db2400e1aeed0576d57d0c19cb8",
+              "bytes": 46337,
+              "sha256": "047b5ff089a3ebf092e71be9aefab7ed624c533800945b0dc2f1b458d20713fc",
               "status": "authored"
             },
             {
               "topicSlug": "resolution-of-vectors-unit-vectors",
               "filename": "06-resolution-of-a-vector.json",
-              "bytes": 18742,
-              "sha256": "5201868167cc866b44e41f243703143fe5b1e1aa074d2a13b548491443bcaa10",
+              "bytes": 18358,
+              "sha256": "ff50dab87e5eb1e9c4769ddaee78eb283bb680caad7ecb2ce06dca731a9db90f",
               "status": "authored"
             },
             {
               "topicSlug": "resolution-of-vectors-unit-vectors",
               "filename": "07-resolution-of-vectors-finding-components.json",
-              "bytes": 18546,
-              "sha256": "6ba6473ce1152302147f24390b385f9b345cca883666bb449cd5663426e3f01a",
+              "bytes": 18162,
+              "sha256": "41c0fee699d4f3b72506c4003a030837a43370d8db7d6ae8745209e4ff7c9b10",
               "status": "authored"
             },
             {
               "topicSlug": "resolution-of-vectors-unit-vectors",
               "filename": "08-types-of-vectors.json",
-              "bytes": 20961,
-              "sha256": "bd063aa410ab86c4be2dd76968103e988b2ec999078787236784ce6f9d555459",
+              "bytes": 20577,
+              "sha256": "578615dbd4cd33a2d0f6c49147ac7cacfa8d8ca7fee7a3f0cb59ba65c2f7b9f8",
               "status": "authored"
             },
             {
               "topicSlug": "scalar-and-vector-products",
               "filename": "10-multiplication-of-vectors-scalar-dot-product.json",
-              "bytes": 25562,
-              "sha256": "b2ca292ff08b7acc5c3cd16e7a75891616186d7d347ec2211d9c01abad47ef47",
+              "bytes": 25446,
+              "sha256": "39c7d32807c44f2736bf80d129106db5d214aed46d1310a9d2685aecf40b15ce",
               "status": "authored"
             },
             {
@@ -5560,7 +6067,7 @@
             "entries": 7,
             "authored": 7,
             "template": 0,
-            "bytes": 85213
+            "bytes": 84758
           },
           "entries": [
             {
@@ -5580,15 +6087,15 @@
             {
               "topicSlug": "power",
               "filename": "02-power.json",
-              "bytes": 1015,
-              "sha256": "595ce602b6834a93afa462852b2a5c21826ffc907efff927c52e1be7aad0124e",
+              "bytes": 1028,
+              "sha256": "981e801da602f822e99b5c560229def28909b85c5956cd1f502184a13c4afb98",
               "status": "authored"
             },
             {
               "topicSlug": "work-energy-theorem-kinetic-and-potential-energy",
               "filename": "03-work-energy-theorem-kinetic-and-potential-energy.json",
-              "bytes": 14373,
-              "sha256": "60408b3db7adee7d55b435273a8099087ad1043d0cf3de7470cc0ffdaa773c17",
+              "bytes": 13905,
+              "sha256": "4ed6e3d58b0a26e806e39f1dd88bc5bf1591fe6fde0576c931bb9a4da1b1b2a2",
               "status": "authored"
             },
             {
@@ -5616,10 +6123,10 @@
         },
         "work-energy-power": {
           "totals": {
-            "entries": 4,
+            "entries": 5,
             "authored": 4,
-            "template": 0,
-            "bytes": 86280
+            "template": 1,
+            "bytes": 153213
           },
           "entries": [
             {
@@ -5632,22 +6139,29 @@
             {
               "topicSlug": "power",
               "filename": "02-power.json",
-              "bytes": 1868,
-              "sha256": "e37afd97a02900c1ef5660e399b64fcd8d2884daddd55d6a7c15a68c4e528747",
-              "status": "authored"
+              "bytes": 2436,
+              "sha256": "c650f314dcced240f3a489eba1a407a13b0cc799442398430470367c50d8e9d8",
+              "status": "template"
             },
             {
               "topicSlug": "work-constant-variable-force",
               "filename": "03-work-energy-theorem-2.json",
-              "bytes": 41841,
-              "sha256": "7547486844180dfed9f366dce47d22bb9905b387e5619726c3beef6e7890c9e7",
+              "bytes": 41741,
+              "sha256": "01e1f5b27235609e9ac6f158c8ced35f6b402bf7efad65bfa99179f3ca7fc815",
               "status": "authored"
             },
             {
-              "topicSlug": "collisions",
-              "filename": "05-collisions.json",
-              "bytes": 6242,
-              "sha256": "a3ba28aaaff12ec4096e0badf0cedec692b607169a8ac645be1dbaf553724de3",
+              "topicSlug": "conservation-energy",
+              "filename": "04-conservation-energy.json",
+              "bytes": 36344,
+              "sha256": "f23698e7b6e09adeaa50b6d59d58f1ebee2d99c08c9697d88dde8408d860826e",
+              "status": "authored"
+            },
+            {
+              "topicSlug": "work-constant-variable-force",
+              "filename": "05-collisions-2.json",
+              "bytes": 36363,
+              "sha256": "682de4df472aac4e57fa8d719f7f95fa03eda605f4ef6d7d7b6d3a3970609fd1",
               "status": "authored"
             }
           ]

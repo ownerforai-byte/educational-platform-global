@@ -17,10 +17,12 @@
     "Q1. Define Dot Product of Two Vectors.",
     "Q3. Problem on Dot Product of Two Vectors."
   ],
-  "formulas": [],
+  "formulas": [
+    "$\\vec{a}\\cdot\\vec{b} = ab\\cos\\theta = a_1b_1 + a_2b_2 + a_3b_3$.",
+    "Angle between vectors: $\\cos\\theta = \\frac{\\vec{a}\\cdot\\vec{b}}{ab}$, and $\\vec{a}\\cdot\\vec{b} = 0 \\iff \\vec{a} \\perp \\vec{b}$."
+  ],
   "keyPoints": [
-    "Application of Dot Product of Two Vectors",
-    "Connection of Dot Product of Two Vectors to other topics"
+    "In component form the dot product is just the sum of products — the angle only appears if the question gives magnitudes."
   ],
   "summary": "Dot Product of Two Vectors covers essential principles and applications.",
   "specialNotes": [],
@@ -38,6 +40,7 @@
     "Recall the formula for Dot Product of Two Vectors."
   ],
   "examNotes": [],
+  "mcs": [],
   "importantConcepts": [
     "Definition and significance of Dot Product of Two Vectors."
   ],

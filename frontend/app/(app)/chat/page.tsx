@@ -21,7 +21,7 @@ export const metadata: Metadata = {
  */
 export default function ChatPage() {
   return (
-    <div className="-mx-4 -mt-6 md:-mx-6 lg:-mx-8">
+    <div className="h-full w-full">
       <TutorConsole />
     </div>
   );

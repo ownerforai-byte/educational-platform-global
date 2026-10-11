@@ -204,14 +204,11 @@
     "solve / apply for \"Newton's law of cooling\" and verify the answer is plausible."
   ],
   "formulas": [
-    "Application formula for Newton's law of cooling",
-    "Derivation result for Newton's law of cooling",
-    "F = ma",
-    "J = F·Δt = m·Δv",
-    "p = mv"
+    "Newton's law of cooling holds while $T - T_s \\ll T_s$, with the temperature difference decaying as $\\Delta T = \\Delta T_0 e^{-kt}$."
   ],
   "keyPoints": [
-    "• Newton's law of cooling"
+    "The law fails at large temperature differences: radiation then dominates and the body's temperature follows the T⁴ Stefan law, not a straight line.",
+    "It also fails when the surroundings are not at a fixed temperature, when cooling is forced (fan, wind), or when the body changes phase while cooling."
   ],
   "summary": "Newton's law of cooling is a fundamental concept in Science that covers the essential principles, formulas, and applications. Understanding this topic is crucial for solving related problems and building foundation for advanced topics. Water Equivalent (W) — Definition & Derivation covers essential principles and applications. Measuring Cooling Rate in the Lab (Time-Based 'Method of Cooling') covers essential principles and applications.",
   "specialNotes": [

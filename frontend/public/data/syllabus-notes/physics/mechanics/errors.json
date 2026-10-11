@@ -1,0 +1,56 @@
+{
+  "title": "Errors",
+  "unitSlug": "mechanics",
+  "topicSlug": "errors",
+  "topicTitle": "Errors",
+  "relevance": 40,
+  "notes": [
+    "**Why:** connects to other topics.",
+    "**Study:** learn definitions, formulas, practice."
+  ],
+  "confusion": [
+    "Check formula conditions."
+  ],
+  "practice": [],
+  "universalFacts": [
+    "Foundational for advanced topics."
+  ],
+  "animation3D": "mechanics",
+  "motionGraphics": "mechanics",
+  "examples": [],
+  "practiceQuestions": [],
+  "formulas": [
+    "Mean absolute error: $\\Delta a_{mean} = \\frac{|\\Delta a_1| + |\\Delta a_2| + \\cdots + |\\Delta a_n|}{n}$.",
+    "Relative error $= \\Delta a / a_{mean}$, and percentage error $= \\frac{\\Delta a}{a_{mean}} \\times 100\\%$."
+  ],
+  "keyPoints": [
+    "The true value is reported as $a_{mean} \\pm \\Delta a_{mean}$; quoting more decimals than that interval is meaningless."
+  ],
+  "summary": "Errors covers essential principles and applications.",
+  "specialNotes": [
+    "Check conditions for Errors.",
+    "Errors connects to other topics."
+  ],
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
+  "examNotes": [
+    "Focus on Errors problems - significant marks."
+  ],
+  "mcs": [
+    {
+      "question": "Which describes Errors?",
+      "options": [
+        "Correct definition",
+        "Related concept",
+        "Incorrect description",
+        "Unrelated"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantConcepts": [],
+  "importantTasks": [],
+  "duplicateType": 1,
+  "visualType": "error-analysis"
+}

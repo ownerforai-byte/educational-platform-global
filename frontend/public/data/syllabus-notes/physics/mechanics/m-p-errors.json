@@ -1,0 +1,56 @@
+{
+  "title": "M,P Errors",
+  "unitSlug": "mechanics",
+  "topicSlug": "m-p-errors",
+  "topicTitle": "M,P Errors",
+  "relevance": 40,
+  "notes": [
+    "**Why:** connects to other topics.",
+    "**Study:** learn definitions, formulas, practice."
+  ],
+  "confusion": [
+    "Check formula conditions."
+  ],
+  "practice": [],
+  "universalFacts": [
+    "Foundational for advanced topics."
+  ],
+  "animation3D": "mechanics",
+  "motionGraphics": "mechanics",
+  "examples": [],
+  "practiceQuestions": [],
+  "formulas": [
+    "Maximum fractional error: for $Z = AB$ or $Z = A/B$, $\\frac{\\Delta Z}{Z} = \\frac{\\Delta A}{A} + \\frac{\\Delta B}{B}$.",
+    "For $Z = A^n B^m / C^p$, $\\frac{\\Delta Z}{Z} = n\\frac{\\Delta A}{A} + m\\frac{\\Delta B}{B} + p\\frac{\\Delta C}{C}$."
+  ],
+  "keyPoints": [
+    "Errors always ADD, never cancel: a quotient of two measured quantities is no more precise than the worse of the two."
+  ],
+  "summary": "M,P Errors covers essential principles and applications.",
+  "specialNotes": [
+    "Check conditions for M,P Errors.",
+    "M,P Errors connects to other topics."
+  ],
+  "importantStatements": [],
+  "importantNotes": [],
+  "examShortTricks": [],
+  "examNotes": [
+    "Focus on M,P Errors problems - significant marks."
+  ],
+  "mcs": [
+    {
+      "question": "Which describes M,P Errors?",
+      "options": [
+        "Correct definition",
+        "Related concept",
+        "Incorrect description",
+        "Unrelated"
+      ],
+      "answer": "A"
+    }
+  ],
+  "importantConcepts": [],
+  "importantTasks": [],
+  "duplicateType": 1,
+  "visualType": "error-analysis"
+}

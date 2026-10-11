@@ -75,6 +75,15 @@ const TEMPLATE_FRAME_LINE = [
   /^\s*.{1,80}\s+is based on fundamental principles\.?\s*$/i,
   /^\s*definition and significance of\b/i,
   /^\s*recall the formula for\b/i,
+  // …and the generator's placeholder FORMULA lines, which state no formula at
+  // all: "Application formula for X", "Derivation result for X", and the
+  // unfilled "Key relationship: [variable formula]." A note whose only
+  // "formulas" are these renders a formula sheet with nothing on it, and the
+  // sheet's shortcut column cannot pair a shortcut with a placeholder, so the
+  // builder drops them exactly as it drops the frames around them.
+  /^\s*(application|definition|derivation)\s+formula\s+for\b/i,
+  /^\s*derivation result for\b/i,
+  /^\s*key relationship\s*:\s*\[[^\]]*\]\s*\.?\s*$/i,
 ];
 
 /** True when a line is a generator frame rather than knowledge. */

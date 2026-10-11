@@ -12,14 +12,21 @@
   "motionGraphics": "trigonometry",
   "examples": [],
   "practiceQuestions": [],
-  "formulas": [],
-  "keyPoints": [],
+  "formulas": [
+    "$\\sin^{-1}x + \\cos^{-1}x = \\frac{\\pi}{2}$ and $\\tan^{-1}x + \\cot^{-1}x = \\frac{\\pi}{2}$ for $x$ in the domain.",
+    "$\\tan^{-1}x + \\tan^{-1}y = \\tan^{-1}\\frac{x+y}{1-xy}$ when $xy < 1$.",
+    "Principal value ranges: $\\sin^{-1} \\in \\left[-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right]$, $\\cos^{-1} \\in [0, \\pi]$, $\\tan^{-1} \\in \\left(-\\frac{\\pi}{2}, \\frac{\\pi}{2}\\right)$."
+  ],
+  "keyPoints": [
+    "The principal-value range of each inverse decides the sign of the answer — substituting a positive ratio into cos⁻¹ gives an angle in [0, π], never a negative one."
+  ],
   "summary": "Inverse Circular Functions covers essential principles and applications.",
   "specialNotes": [],
   "importantStatements": [],
   "importantNotes": [],
   "examShortTricks": [],
   "examNotes": [],
+  "mcs": [],
   "importantConcepts": [],
   "importantTasks": [],
   "duplicateType": 1

@@ -18,10 +18,12 @@
     "Q1. Define Standard Limits.",
     "Q3. Problem on Standard Limits."
   ],
-  "formulas": [],
+  "formulas": [
+    "$\\lim_{x\\to 0}\\frac{\\sin x}{x} = 1$ and $\\lim_{x\\to 0}\\frac{\\tan x}{x} = 1$ (x in radians).",
+    "$\\lim_{x\\to 0}(1 + x)^{1/x} = e$ and $\\lim_{x\\to 0}\\frac{a^x - 1}{x} = \\ln a$."
+  ],
   "keyPoints": [
-    "Application of Standard Limits",
-    "Connection of Standard Limits to other topics"
+    "Radians are not optional in the trig limits — in degrees the same limit is π/180, which is why every board question states the unit."
   ],
   "summary": "Standard Limits covers essential principles and applications.",
   "specialNotes": [],
@@ -39,6 +41,7 @@
     "Recall the formula for Standard Limits."
   ],
   "examNotes": [],
+  "mcs": [],
   "importantConcepts": [
     "Definition and significance of Standard Limits."
   ],

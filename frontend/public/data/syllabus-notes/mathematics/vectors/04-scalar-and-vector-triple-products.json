@@ -12,14 +12,20 @@
   "motionGraphics": "vectors",
   "examples": [],
   "practiceQuestions": [],
-  "formulas": [],
-  "keyPoints": [],
+  "formulas": [
+    "Scalar triple product $[\\vec{a}\\ \\vec{b}\\ \\vec{c}] = \\vec{a}\\cdot(\\vec{b}\\times\\vec{c})$ is the volume of the parallelepiped; it is zero for coplanar vectors.",
+    "Vector triple product: $\\vec{a}\\times(\\vec{b}\\times\\vec{c}) = (\\vec{a}\\cdot\\vec{c})\\vec{b} - (\\vec{a}\\cdot\\vec{b})\\vec{c}$."
+  ],
+  "keyPoints": [
+    "Coplanarity test in one line: the volume [a b c] is 0 — use it instead of solving three planes for a common point."
+  ],
   "summary": "Scalar and Vector Triple Products covers essential principles and applications.",
   "specialNotes": [],
   "importantStatements": [],
   "importantNotes": [],
   "examShortTricks": [],
   "examNotes": [],
+  "mcs": [],
   "importantConcepts": [],
   "importantTasks": [],
   "duplicateType": 1
