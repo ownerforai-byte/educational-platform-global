@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Physics — Circular Motion — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "circular-motion",
+  "topicSlug": "circular-motion-pyq-2024",
+  "topicTitle": "NEB Class 11 Physics — Circular Motion — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Define centripetal acceleration. Derive an expression for it.",
+      "marks": 5,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Centripetal acceleration** is the acceleration of a body in circular motion, directed toward the centre of the circle.\n\nDerivation: a particle moves on radius r with uniform speed v. In time Δt it sweeps angle Δθ. The velocity vector turns through the same angle, so the change Δv ≈ v·Δθ (small angles).\n\na = Δv/Δt = v(Δθ/Δt) = vω = v(v/r) = **v²/r** (equivalently a = ω²r).",
+      "knowledgeNote": "Centripetal force F = mv²/r is not a new force — it is the name for whatever net force (tension, friction, gravity) provides the centre-seeking acceleration."
+    },
+    {
+      "question": "A car takes a turn of radius 50 m at a speed of 10 m/s. What is its angular velocity and centripetal acceleration?",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "Angular velocity ω = v/r = 10/50 = **0.2 rad/s**.\n\nCentripetal acceleration ac = v²/r = 100/50 = **2 m/s²** toward the centre of the turn.",
+      "knowledgeNote": "ω = v/r and T = 2π/ω link the linear and angular descriptions — convert rpm to rad/s before using them."
+    },
+    {
+      "question": "Derive the expression for the angle of banking of a curved road, and find the banking angle for a 100 m radius curve taken at 20 m/s. (g = 10 m/s²)",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "On a banked curve (angle θ), the normal reaction N has components N sin θ (horizontal, provides centripetal force) and N cos θ (vertical, balances weight).\n\nN sin θ = mv²/r and N cos θ = mg → dividing gives tan θ = **v²/(rg)**.\n\ntan θ = 400/(100 × 10) = 0.4 → θ = **21.8°**.",
+      "knowledgeNote": "Banking lets the road itself supply the centripetal force, so vehicles need less friction — that is why expressway curves are tilted."
+    },
+    {
+      "question": "A stone is whirled in a vertical circle of radius 1 m. What is the minimum velocity it must have at the top of the circle to complete the loop? (g = 9.8 m/s²)",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "At the top, both weight and tension point downward: mv²/r = mg + T. The loop is just completed when the string goes slack, T = 0.\n\nv² = gr → v = √(9.8 × 1) ≈ **3.13 m/s**.",
+      "knowledgeNote": "Minimum top velocity √(gr); the matching bottom velocity is √(5gr) — the 1:√5 ratio is a standard NEB result."
+    },
+    {
+      "question": "A conical pendulum has a string 1 m long making 30° with the vertical. Calculate its period of revolution. (g = 9.8 m/s²)",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "For a conical pendulum, T = 2π√(l cos θ / g).\n\nT = 2π√(1 × cos 30° / 9.8) = 2π√(0.866/9.8) = 2π × 0.297 ≈ **1.87 s**.",
+      "knowledgeNote": "The period depends on the vertical height h = l cos θ, not on the mass of the bob."
+    },
+    {
+      "question": "A wheel of diameter 0.8 m rotates at 300 revolutions per minute. Find its angular velocity and the linear speed of a point on its rim.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Frequency f = 300/60 = 5 rev/s.\n\nω = 2πf = 10π ≈ **31.4 rad/s**.\n\nRim speed v = ωr = 31.4 × 0.4 ≈ **12.6 m/s**.",
+      "knowledgeNote": "Always convert rpm → rev/s → rad/s first; most NEB errors here come from using rpm directly in v = ωr."
+    }
+  ]
+}

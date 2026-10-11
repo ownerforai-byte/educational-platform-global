@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Physics — Elasticity — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "elasticity",
+  "topicSlug": "elasticity-pyq-2024",
+  "topicTitle": "NEB Class 11 Physics — Elasticity — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Define stress, strain, and Young's modulus. What are their SI units?",
+      "marks": 3,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Stress** = deforming force per unit area (F/A). SI unit: **pascal (Pa)**.\n\n**Strain** = fractional change in dimension (ΔL/L). SI unit: **none (dimensionless)**.\n\n**Young's modulus** = stress/strain within the elastic limit. SI unit: **pascal (Pa)**.",
+      "knowledgeNote": "Three moduli: Young's (tensile), shear/rigidity (shape), bulk (volume). Steel's Y ≈ 2 × 10¹¹ Pa."
+    },
+    {
+      "question": "A steel wire of cross-sectional area 2 mm² is stretched by a 100 N force. Calculate the stress. If Young's modulus of steel is 2 × 10¹¹ Pa, what is the strain?",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "A = 2 mm² = 2 × 10⁻⁶ m².\n\nStress = F/A = 100/(2 × 10⁻⁶) = **5 × 10⁷ Pa**.\n\nStrain = stress/Y = (5 × 10⁷)/(2 × 10¹¹) = **2.5 × 10⁻⁴**.",
+      "knowledgeNote": "Convert mm² to m² (×10⁻⁶) before dividing — the commonest unit slip in this unit."
+    },
+    {
+      "question": "State Hooke's law. A 2 m wire extends by 2 mm under a 50 N load. Calculate the force constant of the wire.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Hooke's law:** within the elastic limit, stress is directly proportional to strain (extension ∝ load for a wire).\n\nForce constant k = F/x = 50/(2 × 10⁻³) = **25,000 N/m**.",
+      "knowledgeNote": "k = YA/L for a wire — thicker and shorter wires are stiffer."
+    },
+    {
+      "question": "How much energy is stored in the wire of the previous question when stretched by the 50 N load?",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Elastic potential energy U = ½Fx = ½kx².\n\nU = ½ × 50 × (2 × 10⁻³) = **0.05 J**.\n\n(Equivalently ½ × 25,000 × (2 × 10⁻³)² = 0.05 J.)",
+      "knowledgeNote": "This is the area under the force–extension graph — the same ½Fx triangle as the spring."
+    },
+    {
+      "question": "Define bulk modulus and Poisson's ratio. Why is Poisson's ratio dimensionless?",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Bulk modulus** B = −V(ΔP/ΔV): resistance to uniform compression.\n\n**Poisson's ratio** σ = lateral strain / longitudinal strain: how much a stretched body thins sideways.\n\nBoth strains are ratios of lengths, so their quotient has **no units** — it is a pure number (between 0 and 0.5 for most materials).",
+      "knowledgeNote": "Rubber ≈ 0.5 (volume conserved), cork ≈ 0 — cork is why wine stoppers slide in without bulging."
+    },
+    {
+      "question": "A steel cable of cross-sectional area 5 mm² has a breaking stress of 8 × 10⁸ Pa. What maximum mass can it lift? (g = 10 m/s²)",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Maximum force = breaking stress × area = (8 × 10⁸) × (5 × 10⁻⁶) = 4000 N.\n\nm = F/g = 4000/10 = **400 kg**.",
+      "knowledgeNote": "Real cables use a safety factor (working stress ≈ breaking stress / 5–10) — NEB sometimes asks for it as a follow-up."
+    }
+  ]
+}

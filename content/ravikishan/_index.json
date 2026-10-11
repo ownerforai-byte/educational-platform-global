@@ -43344,6 +43344,67 @@
       }
     ]
   },
+  "class-11-notes/physics/circular-motion/pyqs/03-neb-2024.json": {
+    "title": "NEB Class 11 Physics — Circular Motion — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "physics",
+    "unitSlug": "circular-motion",
+    "topicSlug": "circular-motion-pyq-2024",
+    "topicTitle": "NEB Class 11 Physics — Circular Motion — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "Define centripetal acceleration. Derive an expression for it.",
+        "marks": 5,
+        "year": 2023,
+        "source": "NEB Model",
+        "solution": "**Centripetal acceleration** is the acceleration of a body in circular motion, directed toward the centre of the circle.\n\nDerivation: a particle moves on radius r with uniform speed v. In time Δt it sweeps angle Δθ. The velocity vector turns through the same angle, so the change Δv ≈ v·Δθ (small angles).\n\na = Δv/Δt = v(Δθ/Δt) = vω = v(v/r) = **v²/r** (equivalently a = ω²r).",
+        "knowledgeNote": "Centripetal force F = mv²/r is not a new force — it is the name for whatever net force (tension, friction, gravity) provides the centre-seeking acceleration."
+      },
+      {
+        "question": "A car takes a turn of radius 50 m at a speed of 10 m/s. What is its angular velocity and centripetal acceleration?",
+        "marks": 3,
+        "year": 2022,
+        "source": "NEB Past",
+        "solution": "Angular velocity ω = v/r = 10/50 = **0.2 rad/s**.\n\nCentripetal acceleration ac = v²/r = 100/50 = **2 m/s²** toward the centre of the turn.",
+        "knowledgeNote": "ω = v/r and T = 2π/ω link the linear and angular descriptions — convert rpm to rad/s before using them."
+      },
+      {
+        "question": "Derive the expression for the angle of banking of a curved road, and find the banking angle for a 100 m radius curve taken at 20 m/s. (g = 10 m/s²)",
+        "marks": 5,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "On a banked curve (angle θ), the normal reaction N has components N sin θ (horizontal, provides centripetal force) and N cos θ (vertical, balances weight).\n\nN sin θ = mv²/r and N cos θ = mg → dividing gives tan θ = **v²/(rg)**.\n\ntan θ = 400/(100 × 10) = 0.4 → θ = **21.8°**.",
+        "knowledgeNote": "Banking lets the road itself supply the centripetal force, so vehicles need less friction — that is why expressway curves are tilted."
+      },
+      {
+        "question": "A stone is whirled in a vertical circle of radius 1 m. What is the minimum velocity it must have at the top of the circle to complete the loop? (g = 9.8 m/s²)",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "At the top, both weight and tension point downward: mv²/r = mg + T. The loop is just completed when the string goes slack, T = 0.\n\nv² = gr → v = √(9.8 × 1) ≈ **3.13 m/s**.",
+        "knowledgeNote": "Minimum top velocity √(gr); the matching bottom velocity is √(5gr) — the 1:√5 ratio is a standard NEB result."
+      },
+      {
+        "question": "A conical pendulum has a string 1 m long making 30° with the vertical. Calculate its period of revolution. (g = 9.8 m/s²)",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "For a conical pendulum, T = 2π√(l cos θ / g).\n\nT = 2π√(1 × cos 30° / 9.8) = 2π√(0.866/9.8) = 2π × 0.297 ≈ **1.87 s**.",
+        "knowledgeNote": "The period depends on the vertical height h = l cos θ, not on the mass of the bob."
+      },
+      {
+        "question": "A wheel of diameter 0.8 m rotates at 300 revolutions per minute. Find its angular velocity and the linear speed of a point on its rim.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Frequency f = 300/60 = 5 rev/s.\n\nω = 2πf = 10π ≈ **31.4 rad/s**.\n\nRim speed v = ωr = 31.4 × 0.4 ≈ **12.6 m/s**.",
+        "knowledgeNote": "Always convert rpm → rev/s → rad/s first; most NEB errors here come from using rpm directly in v = ωr."
+      }
+    ]
+  },
   "class-11-notes/physics/dc-circuits/concepts/03-current-voltage-relations-and-ohmic-and-non-ohmic-resistance.json": {
     "title": "Current-Voltage Relations and Ohmic/Non-Ohmic Resistance",
     "unitSlug": "dc-circuits",
@@ -47282,6 +47343,67 @@
         "source": "NEB Past",
         "solution": "**Step 1 — Given and converted to SI:**\n$F = 200\\ \\text{N},\\ L = 2\\ \\text{m},\\ A = 2 \\times 10^{-5}\\ \\text{m}^2,\\ \\Delta L = 2\\ \\text{mm} = 2 \\times 10^{-3}\\ \\text{m}$\n\n**Step 2 — Young's modulus:**\n$$Y = \\frac{FL}{A\\Delta L}$$\n\n**Step 3 — Substitute:**\n$$Y = \\frac{200 \\times 2}{(2 \\times 10^{-5})(2 \\times 10^{-3})} = \\frac{400}{4 \\times 10^{-8}}$$\n\n**Step 4 — Result:**\n$$\\boxed{Y = 1.0 \\times 10^{10}\\ \\text{N m}^{-2} = 1.0 \\times 10^{10}\\ \\text{Pa}}$$\n\n**Verification:** Stress $= 200/2\\times10^{-5} = 1 \\times 10^{7}\\ \\text{Pa}$; Strain $= 2\\times10^{-3}/2 = 1 \\times 10^{-3}$.\n$$Y = \\frac{10^{7}}{10^{-3}} = 10^{10}\\ \\text{Pa}$$ ✓",
         "knowledgeNote": "Young's modulus is computed as force times original length divided by area times extension."
+      }
+    ]
+  },
+  "class-11-notes/physics/elasticity/pyqs/04-neb-2024.json": {
+    "title": "NEB Class 11 Physics — Elasticity — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "physics",
+    "unitSlug": "elasticity",
+    "topicSlug": "elasticity-pyq-2024",
+    "topicTitle": "NEB Class 11 Physics — Elasticity — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "Define stress, strain, and Young's modulus. What are their SI units?",
+        "marks": 3,
+        "year": 2023,
+        "source": "NEB Model",
+        "solution": "**Stress** = deforming force per unit area (F/A). SI unit: **pascal (Pa)**.\n\n**Strain** = fractional change in dimension (ΔL/L). SI unit: **none (dimensionless)**.\n\n**Young's modulus** = stress/strain within the elastic limit. SI unit: **pascal (Pa)**.",
+        "knowledgeNote": "Three moduli: Young's (tensile), shear/rigidity (shape), bulk (volume). Steel's Y ≈ 2 × 10¹¹ Pa."
+      },
+      {
+        "question": "A steel wire of cross-sectional area 2 mm² is stretched by a 100 N force. Calculate the stress. If Young's modulus of steel is 2 × 10¹¹ Pa, what is the strain?",
+        "marks": 3,
+        "year": 2022,
+        "source": "NEB Past",
+        "solution": "A = 2 mm² = 2 × 10⁻⁶ m².\n\nStress = F/A = 100/(2 × 10⁻⁶) = **5 × 10⁷ Pa**.\n\nStrain = stress/Y = (5 × 10⁷)/(2 × 10¹¹) = **2.5 × 10⁻⁴**.",
+        "knowledgeNote": "Convert mm² to m² (×10⁻⁶) before dividing — the commonest unit slip in this unit."
+      },
+      {
+        "question": "State Hooke's law. A 2 m wire extends by 2 mm under a 50 N load. Calculate the force constant of the wire.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Hooke's law:** within the elastic limit, stress is directly proportional to strain (extension ∝ load for a wire).\n\nForce constant k = F/x = 50/(2 × 10⁻³) = **25,000 N/m**.",
+        "knowledgeNote": "k = YA/L for a wire — thicker and shorter wires are stiffer."
+      },
+      {
+        "question": "How much energy is stored in the wire of the previous question when stretched by the 50 N load?",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Elastic potential energy U = ½Fx = ½kx².\n\nU = ½ × 50 × (2 × 10⁻³) = **0.05 J**.\n\n(Equivalently ½ × 25,000 × (2 × 10⁻³)² = 0.05 J.)",
+        "knowledgeNote": "This is the area under the force–extension graph — the same ½Fx triangle as the spring."
+      },
+      {
+        "question": "Define bulk modulus and Poisson's ratio. Why is Poisson's ratio dimensionless?",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Bulk modulus** B = −V(ΔP/ΔV): resistance to uniform compression.\n\n**Poisson's ratio** σ = lateral strain / longitudinal strain: how much a stretched body thins sideways.\n\nBoth strains are ratios of lengths, so their quotient has **no units** — it is a pure number (between 0 and 0.5 for most materials).",
+        "knowledgeNote": "Rubber ≈ 0.5 (volume conserved), cork ≈ 0 — cork is why wine stoppers slide in without bulging."
+      },
+      {
+        "question": "A steel cable of cross-sectional area 5 mm² has a breaking stress of 8 × 10⁸ Pa. What maximum mass can it lift? (g = 10 m/s²)",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Maximum force = breaking stress × area = (8 × 10⁸) × (5 × 10⁻⁶) = 4000 N.\n\nm = F/g = 4000/10 = **400 kg**.",
+        "knowledgeNote": "Real cables use a safety factor (working stress ≈ breaking stress / 5–10) — NEB sometimes asks for it as a follow-up."
       }
     ]
   },
@@ -53829,6 +53951,67 @@
         "source": "NEB Model",
         "solution": "**Elastic collision:** Both momentum and kinetic energy are conserved, the bodies move separately after collision, no heat, sound or deformation is produced, and total kinetic energy is unchanged.\n\n**Inelastic collision:** Momentum is conserved but kinetic energy is **not** conserved; part of it is converted into heat, sound and deformation. If the bodies stick together after impact it is called a **perfectly inelastic** collision, and by the law of conservation of energy $\\frac{1}{2}mv^2 = \\frac{1}{2}(m_1 + m_2)V^2$ holds.\n\n**Example:** Collision of two steel balls is elastic; a bullet embedded in a wooden block is perfectly inelastic.",
         "knowledgeNote": "Elastic collisions conserve both momentum and kinetic energy; inelastic ones conserve only momentum."
+      }
+    ]
+  },
+  "class-11-notes/physics/mechanics/pyqs/05-neb-2024.json": {
+    "title": "NEB Class 11 Physics — Mechanics — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "physics",
+    "unitSlug": "mechanics",
+    "topicSlug": "mechanics-pyq-2024",
+    "topicTitle": "NEB Class 11 Physics — Mechanics — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "Two forces of 6 N and 8 N act at a point at right angles to each other. Find the magnitude and direction of their resultant.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "For perpendicular forces, R = √(P² + Q²) = √(36 + 64) = √100 = **10 N**.\n\nDirection: tan α = Q/P = 8/6 = 1.333, so α = **53.1° from the 6 N force** (equivalently 36.9° from the 8 N force).",
+        "knowledgeNote": "6-8-10 is a scaled 3-4-5 triangle — spotting Pythagorean triples saves time in NEB numericals."
+      },
+      {
+        "question": "Prove that the horizontal range of a projectile is maximum when it is projected at 45° to the horizontal.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Range R = u² sin 2θ / g, where u is the projection velocity and θ the angle.\n\nFor fixed u and g, R is maximum when sin 2θ is maximum, i.e. sin 2θ = 1 → 2θ = 90° → **θ = 45°**.\n\nThe maximum range is R_max = u²/g.",
+        "knowledgeNote": "Complementary angles (e.g. 30° and 60°) give the same range — a favourite NEB MCQ twist."
+      },
+      {
+        "question": "A block just begins to slide down a rough incline when the angle of inclination is 30°. Calculate the coefficient of static friction between the block and the plane.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "At the point of sliding, the angle equals the angle of repose, and μs = tan λ.\n\nμs = tan 30° = 1/√3 ≈ **0.577**.",
+        "knowledgeNote": "Angle of repose λ satisfies tan λ = μs — no mass term appears, so the result is independent of the block's weight."
+      },
+      {
+        "question": "A pump lifts 200 kg of water per minute to a height of 10 m. Calculate the power of the pump. (g = 10 m/s²)",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Work done per minute: W = mgh = 200 × 10 × 10 = 20,000 J.\n\nPower P = W/t = 20,000/60 ≈ **333.3 W**.",
+        "knowledgeNote": "Pump/engine problems are always P = mgh/t when lifting steadily — watch whether the mass is per second or per minute."
+      },
+      {
+        "question": "A gun of mass 5 kg fires a bullet of mass 10 g with a velocity of 400 m/s. Calculate the recoil velocity of the gun.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "By conservation of linear momentum (initial momentum zero):\n\nM·V + m·v = 0 → V = −mv/M = −(0.01 × 400)/5 = **−0.8 m/s**.\n\nThe gun recoils at 0.8 m/s opposite to the bullet's direction.",
+        "knowledgeNote": "Recoil, firing, and explosion problems all start from Σp_initial = Σp_final — convert grams to kilograms first."
+      },
+      {
+        "question": "A boat can move at 4 m/s in still water. It crosses a 200 m wide river with a current of 3 m/s flowing downstream. If the boat heads straight across, find (i) the crossing time and (ii) how far downstream it lands.",
+        "marks": 5,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "(i) Crossing is governed only by the perpendicular component: t = width/v = 200/4 = **50 s**.\n\n(ii) In that time the current carries it downstream by d = u·t = 3 × 50 = **150 m**.\n\n(The boat's resultant path makes tan⁻¹(3/4) = 36.9° with the straight-across line.)",
+        "knowledgeNote": "Perpendicular motions are independent — the current never changes the crossing time, only the landing point."
       }
     ]
   },
@@ -61694,6 +61877,67 @@
         "source": "NEB Model",
         "solution": "**Statement:** The work done by the resultant (net) force on a body is equal to the change in its kinetic energy.\n$$\\boxed{W_{net} = K_f - K_i = \\frac{1}{2}mv^2 - \\frac{1}{2}mu^2}$$\n\n**Explanation:**\nLet a net force $F$ acting on a body of mass $m$ produce an acceleration $a$, so it moves from velocity $u$ to $v$ in time $t$ and covers a distance $s$.\n**Step 1 — Work done:**\n$$W = Fs = mat = m\\left(\\frac{v - u}{t}\\right)t = m(v - u)$$\n$$\n**Step 2 — Change in kinetic energy:**\n$$\\Delta K = \\frac{1}{2}mv^2 - \\frac{1}{2}mu^2 = \\frac{1}{2}m(v - u)(v + u)$$\n\n**Step 3 — From Newton's second law** $F = ma = m\\left(\\dfrac{v - u}{t}\\right)$, we get $mt = m(v - u)$, so\n$$\\boxed{W = m(v-u) = \\frac{1}{2}m(v^2 - u^2) = \\Delta K}$$\n\nIf the net work is zero, the speed stays constant, which explains why a body moves uniformly without net force.",
         "knowledgeNote": "The work-energy theorem states net work done equals the change in kinetic energy of the body."
+      }
+    ]
+  },
+  "class-11-notes/physics/work-energy-power/pyqs/05-neb-2024.json": {
+    "title": "NEB Class 11 Physics — Work Energy Power — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "physics",
+    "unitSlug": "work-energy-power",
+    "topicSlug": "work-energy-power-pyq-2024",
+    "topicTitle": "NEB Class 11 Physics — Work Energy Power — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "State and prove the work-energy theorem for a constant force.",
+        "marks": 5,
+        "year": 2023,
+        "source": "NEB Model",
+        "solution": "**Work-energy theorem:** The work done by the net force on a body equals the change in its kinetic energy.\n\nProof: Let a constant force F act on mass m, producing acceleration a. From v² = u² + 2as:\n\nW = F·s = (ma)s = m(a·s). Since as = (v² − u²)/2,\n\nW = m(v² − u²)/2 = ½mv² − ½mu² = ΔKE.\n\nThus work done = change in kinetic energy. Proved.",
+        "knowledgeNote": "The theorem holds for ALL forces — conservative and non-conservative alike."
+      },
+      {
+        "question": "An electric motor has a power output of 2 kW. How much time will it take to lift a 500 kg mass through 20 m? (g = 10 m/s²)",
+        "marks": 3,
+        "year": 2022,
+        "source": "NEB Past",
+        "solution": "Work done W = mgh = 500 × 10 × 20 = 100,000 J = 10⁵ J.\n\nP = W/t → t = W/P = 10⁵/2000 = **50 seconds**.",
+        "knowledgeNote": "Power = Work/Time; 1 W = 1 J/s and 1 HP = 746 W."
+      },
+      {
+        "question": "Calculate the work done in stretching a spring of force constant 200 N/m by 0.1 m from its unstretched position.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Work stored as elastic potential energy: W = ½kx².\n\nW = ½ × 200 × (0.1)² = 100 × 0.01 = **1 J**.",
+        "knowledgeNote": "Spring work goes as x² — doubling the stretch quadruples the stored energy."
+      },
+      {
+        "question": "Show that the total mechanical energy of a freely falling body is conserved (neglect air resistance).",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Drop mass m from height H. At height h with velocity v, energy conservation from rest gives v² = 2g(H − h).\n\nKE + PE = ½mv² + mgh = ½m·2g(H − h) + mgh = mgH − mgh + mgh = **mgH = constant**.\n\nAt the top (h = H) it is all potential; at the ground (h = 0) it is all kinetic — the sum never changes.",
+        "knowledgeNote": "Only conservative forces (gravity, spring) conserve mechanical energy; friction converts part of it to heat."
+      },
+      {
+        "question": "A car of mass 1000 kg moves at a uniform speed of 20 m/s against a total resistive force of 500 N. What power must the engine develop?",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "At uniform speed the driving force equals the resistance: F = 500 N.\n\nP = F·v = 500 × 20 = 10,000 W = **10 kW**.",
+        "knowledgeNote": "For steady motion P = Fv — the same form as W = F·s divided by time."
+      },
+      {
+        "question": "Define the kilowatt-hour (kWh). How many joules are equal to 1 kWh?",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**1 kWh** is the energy consumed by a 1 kW appliance running for 1 hour (the commercial 'unit' of electrical energy).\n\n1 kWh = 1000 W × 3600 s = **3.6 × 10⁶ J**.",
+        "knowledgeNote": "kWh is a unit of ENERGY, not power — a classic one-mark NEB trap."
       }
     ]
   },

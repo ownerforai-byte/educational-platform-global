@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Physics — Work Energy Power — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "work-energy-power",
+  "topicSlug": "work-energy-power-pyq-2024",
+  "topicTitle": "NEB Class 11 Physics — Work Energy Power — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State and prove the work-energy theorem for a constant force.",
+      "marks": 5,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Work-energy theorem:** The work done by the net force on a body equals the change in its kinetic energy.\n\nProof: Let a constant force F act on mass m, producing acceleration a. From v² = u² + 2as:\n\nW = F·s = (ma)s = m(a·s). Since as = (v² − u²)/2,\n\nW = m(v² − u²)/2 = ½mv² − ½mu² = ΔKE.\n\nThus work done = change in kinetic energy. Proved.",
+      "knowledgeNote": "The theorem holds for ALL forces — conservative and non-conservative alike."
+    },
+    {
+      "question": "An electric motor has a power output of 2 kW. How much time will it take to lift a 500 kg mass through 20 m? (g = 10 m/s²)",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Past",
+      "solution": "Work done W = mgh = 500 × 10 × 20 = 100,000 J = 10⁵ J.\n\nP = W/t → t = W/P = 10⁵/2000 = **50 seconds**.",
+      "knowledgeNote": "Power = Work/Time; 1 W = 1 J/s and 1 HP = 746 W."
+    },
+    {
+      "question": "Calculate the work done in stretching a spring of force constant 200 N/m by 0.1 m from its unstretched position.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Work stored as elastic potential energy: W = ½kx².\n\nW = ½ × 200 × (0.1)² = 100 × 0.01 = **1 J**.",
+      "knowledgeNote": "Spring work goes as x² — doubling the stretch quadruples the stored energy."
+    },
+    {
+      "question": "Show that the total mechanical energy of a freely falling body is conserved (neglect air resistance).",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Drop mass m from height H. At height h with velocity v, energy conservation from rest gives v² = 2g(H − h).\n\nKE + PE = ½mv² + mgh = ½m·2g(H − h) + mgh = mgH − mgh + mgh = **mgH = constant**.\n\nAt the top (h = H) it is all potential; at the ground (h = 0) it is all kinetic — the sum never changes.",
+      "knowledgeNote": "Only conservative forces (gravity, spring) conserve mechanical energy; friction converts part of it to heat."
+    },
+    {
+      "question": "A car of mass 1000 kg moves at a uniform speed of 20 m/s against a total resistive force of 500 N. What power must the engine develop?",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "At uniform speed the driving force equals the resistance: F = 500 N.\n\nP = F·v = 500 × 20 = 10,000 W = **10 kW**.",
+      "knowledgeNote": "For steady motion P = Fv — the same form as W = F·s divided by time."
+    },
+    {
+      "question": "Define the kilowatt-hour (kWh). How many joules are equal to 1 kWh?",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**1 kWh** is the energy consumed by a 1 kW appliance running for 1 hour (the commercial 'unit' of electrical energy).\n\n1 kWh = 1000 W × 3600 s = **3.6 × 10⁶ J**.",
+      "knowledgeNote": "kWh is a unit of ENERGY, not power — a classic one-mark NEB trap."
+    }
+  ]
+}

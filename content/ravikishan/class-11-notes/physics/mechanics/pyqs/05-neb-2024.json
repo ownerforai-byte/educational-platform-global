@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Physics — Mechanics — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "physics",
+  "unitSlug": "mechanics",
+  "topicSlug": "mechanics-pyq-2024",
+  "topicTitle": "NEB Class 11 Physics — Mechanics — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Two forces of 6 N and 8 N act at a point at right angles to each other. Find the magnitude and direction of their resultant.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "For perpendicular forces, R = √(P² + Q²) = √(36 + 64) = √100 = **10 N**.\n\nDirection: tan α = Q/P = 8/6 = 1.333, so α = **53.1° from the 6 N force** (equivalently 36.9° from the 8 N force).",
+      "knowledgeNote": "6-8-10 is a scaled 3-4-5 triangle — spotting Pythagorean triples saves time in NEB numericals."
+    },
+    {
+      "question": "Prove that the horizontal range of a projectile is maximum when it is projected at 45° to the horizontal.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Range R = u² sin 2θ / g, where u is the projection velocity and θ the angle.\n\nFor fixed u and g, R is maximum when sin 2θ is maximum, i.e. sin 2θ = 1 → 2θ = 90° → **θ = 45°**.\n\nThe maximum range is R_max = u²/g.",
+      "knowledgeNote": "Complementary angles (e.g. 30° and 60°) give the same range — a favourite NEB MCQ twist."
+    },
+    {
+      "question": "A block just begins to slide down a rough incline when the angle of inclination is 30°. Calculate the coefficient of static friction between the block and the plane.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "At the point of sliding, the angle equals the angle of repose, and μs = tan λ.\n\nμs = tan 30° = 1/√3 ≈ **0.577**.",
+      "knowledgeNote": "Angle of repose λ satisfies tan λ = μs — no mass term appears, so the result is independent of the block's weight."
+    },
+    {
+      "question": "A pump lifts 200 kg of water per minute to a height of 10 m. Calculate the power of the pump. (g = 10 m/s²)",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Work done per minute: W = mgh = 200 × 10 × 10 = 20,000 J.\n\nPower P = W/t = 20,000/60 ≈ **333.3 W**.",
+      "knowledgeNote": "Pump/engine problems are always P = mgh/t when lifting steadily — watch whether the mass is per second or per minute."
+    },
+    {
+      "question": "A gun of mass 5 kg fires a bullet of mass 10 g with a velocity of 400 m/s. Calculate the recoil velocity of the gun.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "By conservation of linear momentum (initial momentum zero):\n\nM·V + m·v = 0 → V = −mv/M = −(0.01 × 400)/5 = **−0.8 m/s**.\n\nThe gun recoils at 0.8 m/s opposite to the bullet's direction.",
+      "knowledgeNote": "Recoil, firing, and explosion problems all start from Σp_initial = Σp_final — convert grams to kilograms first."
+    },
+    {
+      "question": "A boat can move at 4 m/s in still water. It crosses a 200 m wide river with a current of 3 m/s flowing downstream. If the boat heads straight across, find (i) the crossing time and (ii) how far downstream it lands.",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "(i) Crossing is governed only by the perpendicular component: t = width/v = 200/4 = **50 s**.\n\n(ii) In that time the current carries it downstream by d = u·t = 3 × 50 = **150 m**.\n\n(The boat's resultant path makes tan⁻¹(3/4) = 36.9° with the straight-across line.)",
+      "knowledgeNote": "Perpendicular motions are independent — the current never changes the crossing time, only the landing point."
+    }
+  ]
+}
