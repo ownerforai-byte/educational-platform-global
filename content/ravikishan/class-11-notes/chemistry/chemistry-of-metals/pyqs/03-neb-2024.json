@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Chemistry — Chemistry of Metals — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "chemistry-of-metals",
+  "topicSlug": "chemistry-of-metals-pyq-2024",
+  "topicTitle": "NEB Class 11 Chemistry — Chemistry of Metals — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Explain Down's process for the extraction of sodium.",
+      "marks": 5,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Down's process:** electrolysis of molten NaCl mixed with CaCl₂ (which cuts the melting point from 801°C to ~600°C).\n\nAnode (graphite): 2Cl⁻ → Cl₂↑ + 2e⁻. Cathode (iron): Na⁺ + e⁻ → Na(l), collected under a steel bell.\n\nAqueous NaCl cannot be used — water reduces more easily than Na⁺.",
+      "knowledgeNote": "Same molten-salt logic as Hall-Heroult for aluminium — reactive metals need fused, not aqueous, electrolysis."
+    },
+    {
+      "question": "Describe the Hall-Heroult process for the extraction of aluminium.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Alumina dissolved in molten cryolite (Na₃AlF₆) is electrolysed in a carbon-lined cell at ~950°C.\n\nCathode: Al³⁺ + 3e⁻ → Al(l), sinking to the bottom. Anode (carbon): 2O²⁻ + C → CO₂↑ + 4e⁻ (anodes burn away and are replaced).\n\nCryolite lowers the melting point and dissolves Al₂O₃.",
+      "knowledgeNote": "Carbon-anode consumption is the process's running cost — the anodes are literally burnt into CO₂."
+    },
+    {
+      "question": "Distinguish between calcination and roasting with one example of each.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Calcination:** heating an ore in limited air to expel volatiles — e.g. CaCO₃ → CaO + CO₂ (carbonates).\n\n**Roasting:** heating a sulphide ore in excess air to convert it to oxide — e.g. 2ZnS + 3O₂ → 2ZnO + 2SO₂.",
+      "knowledgeNote": "Carbonates calcinate, sulphides roast — the ore's anion picks the process."
+    },
+    {
+      "question": "What is froth flotation? For which ores is it used?",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Crushed ore is agitated with water, pine oil, and air: sulphide particles cling to oil-coated bubbles and float as froth, while gangue sinks.\n\nUsed for **sulphide ores** (galena PbS, zinc blende ZnS, copper pyrites).",
+      "knowledgeNote": "Wetting difference is the principle — collectors make sulphides hydrophobic, depressants keep gangue hydrophilic."
+    },
+    {
+      "question": "Describe the electrolytic refining of copper.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Impure copper anode, pure copper cathode, CuSO₄ + dilute H₂SO₄ electrolyte.\n\nAnode dissolves (Cu → Cu²⁺ + 2e⁻); pure copper plates the cathode (Cu²⁺ + 2e⁻ → Cu). Noble impurities (Ag, Au) fall as anode mud — itself a precious-metal source.",
+      "knowledgeNote": "Anode mud from copper refining is where the world's silver and gold by-product comes from."
+    },
+    {
+      "question": "Write the composition of brass, bronze, and stainless steel, with one use of each.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Brass** (Cu + Zn): musical instruments, taps. **Bronze** (Cu + Sn): medals, statues. **Stainless steel** (Fe + Cr + Ni): cutlery, surgical tools (chromium's oxide film resists rust).",
+      "knowledgeNote": "Alloy properties are not averages — small additions transform the base metal entirely."
+    }
+  ]
+}

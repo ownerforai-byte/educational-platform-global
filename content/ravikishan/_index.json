@@ -21952,6 +21952,67 @@
       }
     ]
   },
+  "class-11-notes/chemistry/applied-chemistry/pyqs/03-neb-2024.json": {
+    "title": "NEB Class 11 Chemistry — Applied Chemistry — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "chemistry",
+    "unitSlug": "applied-chemistry",
+    "topicSlug": "applied-chemistry-pyq-2024",
+    "topicTitle": "NEB Class 11 Chemistry — Applied Chemistry — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "Describe the Haber process for ammonia manufacture. Why is high pressure used?",
+        "marks": 5,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "N₂ + 3H₂ ⇌ 2NH₃ + heat. Conditions: 450–500°C (rate vs yield compromise), **~200 atm**, Fe catalyst with Mo promoter, unreacted gases recycled.\n\n**High pressure** because 4 gas moles → 2: Le Chatelier drives the equilibrium toward NH₃, and pressure also speeds collisions.",
+        "knowledgeNote": "Ammonia feeds fertilisers (urea, ammonium nitrate), explosives, and plastics — the highest-volume synthesis on Earth."
+      },
+      {
+        "question": "What is the Contact process? Write the key reactions and conditions.",
+        "marks": 4,
+        "year": 2022,
+        "source": "NEB Model",
+        "solution": "Manufacture of **sulphuric acid**: (1) S + O₂ → SO₂; (2) 2SO₂ + O₂ ⇌ 2SO₃ (V₂O₅, 450°C, 1–2 atm); (3) SO₃ + H₂SO₄ → H₂S₂O₇ (oleum); (4) H₂S₂O₇ + H₂O → 2H₂SO₄.\n\nSO₃ is absorbed in acid, never water directly (which makes unabsorbable mist).",
+        "knowledgeNote": "'King of chemicals' — national H₂SO₄ output tracks industrial capacity, an NEB essay staple."
+      },
+      {
+        "question": "Describe the Ostwald process for nitric acid manufacture.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "(1) Catalytic oxidation: 4NH₃ + 5O₂ → 4NO + 6H₂O (Pt–Rh gauze, ~800°C). (2) 2NO + O₂ → 2NO₂. (3) 3NO₂ + H₂O → 2HNO₃ + NO (absorption tower, NO recycled).\n\nProduct: ~68% acid, concentrated by distillation.",
+        "knowledgeNote": "Ostwald links Haber (NH₃) to fertilisers and explosives — the nitrogen-industry chain question."
+      },
+      {
+        "question": "Describe the Solvay process for sodium carbonate manufacture with reactions.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Brine + ammonia + CO₂: NaCl + NH₃ + CO₂ + H₂O → NaHCO₃↓ + NH₄Cl; then 2NaHCO₃ →(heat) Na₂CO₃ + CO₂ + H₂O.\n\nAmmonia is regenerated from NH₄Cl with lime, and CO₂ from limestone calcination — only limestone and brine are consumed.",
+        "knowledgeNote": "Fails for K₂CO₃ (KHCO₃ too soluble to precipitate) — the built-in limitation question."
+      },
+      {
+        "question": "What are NPK fertilisers? Why is urea the most widely used nitrogenous fertiliser?",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**NPK** fertilisers supply nitrogen (leaf growth), phosphorus (roots/flowers), potassium (disease resistance).\n\n**Urea** (46.7% N, highest of all) is cheap, highly soluble, non-explosive, and leaves only CO₂ — dominating Nepal's Terai paddy cultivation.",
+        "knowledgeNote": "Excess N runs off into rivers (eutrophication) — the environmental counterpoint NEB pairs with this question."
+      },
+      {
+        "question": "How is cement manufactured? What happens during the setting of cement?",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Limestone + clay are burnt at ~1500°C to clinker (calcium silicates/aluminates), then ground with ~3% gypsum.\n\n**Setting:** hydration of silicates forms interlocking C–S–H gel crystals; gypsum regulates the flash set of aluminates. Final hardening takes days as the gel densifies.",
+        "knowledgeNote": "Gypsum retards, never accelerates — its absence would flash-set cement unusably fast."
+      }
+    ]
+  },
   "class-11-notes/chemistry/aromatic-hydrocarbons/concepts/01-introduction-and-characteristics-of-aromatic-compounds.json": {
     "title": "Aromatic Hydrocarbons â€” Introduction and Characteristics",
     "unitSlug": "aromatic-hydrocarbons",
@@ -22116,6 +22177,67 @@
         "source": "NEB Past",
         "solution": "**Why substitution, not addition.** Benzene has a large resonance energy (about 150 kJ mol⁻¹) and a delocalised π cloud of electron density above and below the ring. Attack by an electrophile temporarily disturbs and destroys this aromatic sextet, whereas substitution only replaces one H atom and the ring is restored as an aromatic ion. Addition therefore costs about 150 kJ mol⁻¹ and is energetically unfavourable, so substitution dominates.\n\n**–CH₃ group (ortho/para directing).** Methyl has a $+I$ effect and hyperconjugation, so it raises the electron density of the ring. The electrophile is attracted to the electron-rich ring and attacks at ortho or para positions, where the intermediate cation is additionally stabilised by hyperconjugation from the methyl group. Example: nitration of toluene gives mainly o- and p-nitrotoluene.\n\n**–NO₂ group (meta directing).** Nitro has a strong $-I$ effect and also $-M$ effect, withdrawing electron density and deactivating the ring. Attack at ortho or para puts a positive charge adjacent to the already positive nitrogen, which is very unstable, so attack occurs mainly at the meta position. Example: nitration of nitrobenzene gives mainly m-dinitrobenzene (about 93%).",
         "knowledgeNote": "Aromatic substitution preserves the resonance-stabilised ring; –CH₃ activates and directs ortho/para, while –NO₂ deactivates and directs meta."
+      }
+    ]
+  },
+  "class-11-notes/chemistry/aromatic-hydrocarbons/pyqs/04-neb-2024.json": {
+    "title": "NEB Class 11 Chemistry — Aromatic Hydrocarbons — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "chemistry",
+    "unitSlug": "aromatic-hydrocarbons",
+    "topicSlug": "aromatic-hydrocarbons-pyq-2024",
+    "topicTitle": "NEB Class 11 Chemistry — Aromatic Hydrocarbons — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "State Huckel's rule. Explain why benzene is aromatic.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Huckel (4n+2) rule:** a planar, cyclic, conjugated system with (4n+2) π-electrons is aromatic.\n\nBenzene: cyclic, planar, fully conjugated, 6 π-electrons (n = 1) — delocalised in a ring current. All C–C bonds equal (139 pm), with ~152 kJ/mol resonance stabilisation.",
+        "knowledgeNote": "Cyclobutadiene (4π) is anti-aromatic — same checklist, opposite verdict."
+      },
+      {
+        "question": "Describe the mechanism of nitration of benzene.",
+        "marks": 4,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "(1) Electrophile generation: HNO₃ + 2H₂SO₄ → NO₂⁺ + H₃O⁺ + 2HSO₄⁻.\n\n(2) NO₂⁺ attacks the ring → resonance-stabilised σ-complex (carbocation).\n\n(3) HSO₄⁻ removes a ring proton → aromaticity restored, **nitrobenzene**.\n\nConditions: conc. HNO₃ + conc. H₂SO₄ at ~50°C.",
+        "knowledgeNote": "Electrophilic substitution (not addition) preserves the aromatic sextet — the motive of all benzene chemistry."
+      },
+      {
+        "question": "What is Friedel-Crafts alkylation? Write one of its limitations.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Benzene + alkyl halide with anhydrous AlCl₃ gives alkylbenzene: C₆H₆ + CH₃Cl → C₆H₅CH₃ + HCl (electrophilic substitution via R⁺).\n\n**Limitation:** carbocation rearrangement (n-propyl → isopropyl products) and polyalkylation — the product activates further, so mixtures form.",
+        "knowledgeNote": "Acylation avoids rearrangement (acylium ion is resonance-stabilised) — the workaround NEB often asks next."
+      },
+      {
+        "question": "What are ortho-para directors and meta directors? Give two examples of each.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**o/p-directors** (activating, lone-pair donors): –OH, –NH₂, –CH₃, halogens (deactivating but o/p).\n\n**m-directors** (deactivating, electron-withdrawing): –NO₂, –CHO, –COOH, –SO₃H.\n\nDirecting follows σ-complex stability — the electrophile enters where the positive charge avoids the substituent (meta) or is shared by it (ortho/para).",
+        "knowledgeNote": "Halogens are the odd ones: deactivating yet o/p-directing — the exception that proves the resonance rule."
+      },
+      {
+        "question": "How is benzoic acid prepared from toluene? Write the reaction.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Strong side-chain oxidation: **C₆H₅CH₃ + 3[O] (alkaline KMnO₄, heat) → C₆H₅COOH + H₂O**.\n\nAny alkyl side chain, whatever its length, is chewed back to –COOH on the ring.",
+        "knowledgeNote": "Side-chain oxidation diagnoses alkylbenzenes — the surviving –COOH marks where the chain was attached."
+      },
+      {
+        "question": "Draw the two Kekule structures of benzene. Why are all carbon–carbon bond lengths in benzene equal?",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Kekule: two cyclohexatriene forms with alternating double bonds shifted by one position.\n\nReal benzene is the **resonance hybrid** — π-electrons delocalised over all six carbons, so every bond is identical (139 pm), between single (154) and double (134).",
+        "knowledgeNote": "Equal bond lengths killed Kekule's alternating structure experimentally — X-ray evidence for delocalisation."
       }
     ]
   },
@@ -25830,6 +25952,67 @@
       }
     ]
   },
+  "class-11-notes/chemistry/bio-inorganic-chemistry/pyqs/04-neb-2024.json": {
+    "title": "NEB Class 11 Chemistry — Bio-inorganic Chemistry — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "chemistry",
+    "unitSlug": "bio-inorganic-chemistry",
+    "topicSlug": "bio-inorganic-chemistry-pyq-2024",
+    "topicTitle": "NEB Class 11 Chemistry — Bio-inorganic Chemistry — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "Discuss the biological roles of sodium, potassium, calcium, and magnesium in the human body.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Na⁺/K⁺:** the membrane pump duo — nerve impulses and fluid balance. **Ca²⁺:** bones/teeth, blood clotting, muscle contraction. **Mg²⁺:** chlorophyll's centre and cofactor for ATP enzymes.\n\nDeficiency shows fast: cramps (Ca/Mg), irregular heartbeat (K).",
+        "knowledgeNote": "Na⁺/K⁺-ATPase moves 3 Na⁺ out per 2 K⁺ in — the charge gradient behind every nerve signal."
+      },
+      {
+        "question": "Why is iron present in haemoglobin and magnesium in chlorophyll? What happens on deficiency?",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Fe²⁺** in haem reversibly binds O₂ — oxygen transport. Deficiency → **anaemia** (low haemoglobin, fatigue).\n\n**Mg²⁺** sits at chlorophyll's porphyrin centre, capturing light. Deficiency → **chlorosis** (yellowing leaves, failed photosynthesis).",
+        "knowledgeNote": "Haem and chlorophyll share the porphyrin ring — nature reuses one scaffold with different metal centres."
+      },
+      {
+        "question": "What is the role of iodine in the human body? What disorder does its deficiency cause?",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Iodine builds the thyroid hormones T₃/T₄, which set metabolic rate and drive brain development.\n\nDeficiency → **goitre** (enlarged thyroid) and, in pregnancy/childhood, cretinism (stunted growth, impaired intellect) — prevented by iodised salt.",
+        "knowledgeNote": "The Himalayan belt's historic goitre problem is why Nepal iodises all edible salt by law."
+      },
+      {
+        "question": "What are metalloenzymes? Explain with the example of carbonic anhydrase.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Metalloenzymes** need a bound metal ion for catalysis.\n\n**Carbonic anhydrase** holds Zn²⁺, which polarises water to generate OH⁻ that attacks CO₂: CO₂ + H₂O ⇌ HCO₃⁻ + H⁺ — running ~10⁶ turnovers/second, clearing CO₂ from blood to lungs.",
+        "knowledgeNote": "Removing the metal kills the enzyme — the classic test that a protein is a metalloenzyme."
+      },
+      {
+        "question": "Write the harmful effects of lead and mercury on human health.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Lead:** mimics calcium — damages developing brains (lower IQ), kidneys, and red-cell synthesis; sources include old paint and batteries.\n\n**Mercury:** attacks the nervous system (tremors, Minamata disease); methylmercury bioaccumulates up food chains into fish.",
+        "knowledgeNote": "Both are cumulative poisons with no safe threshold in children — chelation therapy is the clinical response."
+      },
+      {
+        "question": "What is the role of cobalt in the human body? Name its vitamin.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Cobalt is the metal centre of **vitamin B₁₂ (cobalamin)**, essential for red-cell formation and nerve myelination.\n\nDeficiency → pernicious anaemia — historically treated with liver, now with B₁₂ supplements.",
+        "knowledgeNote": "B₁₂ is the only vitamin with a metal atom — and the only one plants cannot make, hence vegan supplementation."
+      }
+    ]
+  },
   "class-11-notes/chemistry/chemical-bonding-and-shapes-of-molecules/concepts/01-valence-shell-valence-electron-and-octet-theory.json": {
     "title": "Valence Shell, Valence Electron and Octet Theory",
     "unitSlug": "chemical-bonding-and-shapes-of-molecules",
@@ -27438,6 +27621,67 @@
         "source": "NEB Past",
         "solution": "**Why carbon reduction fails.**\n\nThe Gibbs energy of formation of $Al_2O_3$ is very negative (about $-1580$ kJ mol⁻¹), so aluminium is far below carbon in the Ellingham diagram. Carbon is not strong enough to reduce it, and any attempt needs temperatures at which the oxide itself would melt and decompose.\n\n**The Hall–Héroult cell.**\n\nAlumina is dissolved in molten cryolite, $Na_3AlF_6$ (with $CaF_2$ as a flux). Cryolite lowers the fusion temperature from about $2072$ °C to about $950$ °C and improves conductivity, so much less heat is needed and molten aluminium (m.p. $660$ °C) is tapped off as liquid.\n\n**Cathode (carbon lining) — reduction:**\n\n$$\\text{Al}^{3+} + 3e^- \\rightarrow \\text{Al(l)}$$\n\n**Anode (graphite rods) — oxidation of oxide ions, the carbon burns away:**\n\n$$\\text{C} + 2\\text{O}^{2-} \\rightarrow \\text{CO}_2 + 4e^-$$\n\n**Overall:**\n\n$$2\\text{Al}_2\\text{O}_3 + 3\\text{C} \\rightarrow 4\\text{Al} + 3\\text{CO}_2$$",
         "knowledgeNote": "Aluminium's oxide is too stable for carbon reduction, so Hall–Héroult electrolysis in molten cryolite is used instead."
+      }
+    ]
+  },
+  "class-11-notes/chemistry/chemistry-of-metals/pyqs/03-neb-2024.json": {
+    "title": "NEB Class 11 Chemistry — Chemistry of Metals — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "chemistry",
+    "unitSlug": "chemistry-of-metals",
+    "topicSlug": "chemistry-of-metals-pyq-2024",
+    "topicTitle": "NEB Class 11 Chemistry — Chemistry of Metals — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "Explain Down's process for the extraction of sodium.",
+        "marks": 5,
+        "year": 2023,
+        "source": "NEB Model",
+        "solution": "**Down's process:** electrolysis of molten NaCl mixed with CaCl₂ (which cuts the melting point from 801°C to ~600°C).\n\nAnode (graphite): 2Cl⁻ → Cl₂↑ + 2e⁻. Cathode (iron): Na⁺ + e⁻ → Na(l), collected under a steel bell.\n\nAqueous NaCl cannot be used — water reduces more easily than Na⁺.",
+        "knowledgeNote": "Same molten-salt logic as Hall-Heroult for aluminium — reactive metals need fused, not aqueous, electrolysis."
+      },
+      {
+        "question": "Describe the Hall-Heroult process for the extraction of aluminium.",
+        "marks": 4,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Alumina dissolved in molten cryolite (Na₃AlF₆) is electrolysed in a carbon-lined cell at ~950°C.\n\nCathode: Al³⁺ + 3e⁻ → Al(l), sinking to the bottom. Anode (carbon): 2O²⁻ + C → CO₂↑ + 4e⁻ (anodes burn away and are replaced).\n\nCryolite lowers the melting point and dissolves Al₂O₃.",
+        "knowledgeNote": "Carbon-anode consumption is the process's running cost — the anodes are literally burnt into CO₂."
+      },
+      {
+        "question": "Distinguish between calcination and roasting with one example of each.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Calcination:** heating an ore in limited air to expel volatiles — e.g. CaCO₃ → CaO + CO₂ (carbonates).\n\n**Roasting:** heating a sulphide ore in excess air to convert it to oxide — e.g. 2ZnS + 3O₂ → 2ZnO + 2SO₂.",
+        "knowledgeNote": "Carbonates calcinate, sulphides roast — the ore's anion picks the process."
+      },
+      {
+        "question": "What is froth flotation? For which ores is it used?",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Crushed ore is agitated with water, pine oil, and air: sulphide particles cling to oil-coated bubbles and float as froth, while gangue sinks.\n\nUsed for **sulphide ores** (galena PbS, zinc blende ZnS, copper pyrites).",
+        "knowledgeNote": "Wetting difference is the principle — collectors make sulphides hydrophobic, depressants keep gangue hydrophilic."
+      },
+      {
+        "question": "Describe the electrolytic refining of copper.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Impure copper anode, pure copper cathode, CuSO₄ + dilute H₂SO₄ electrolyte.\n\nAnode dissolves (Cu → Cu²⁺ + 2e⁻); pure copper plates the cathode (Cu²⁺ + 2e⁻ → Cu). Noble impurities (Ag, Au) fall as anode mud — itself a precious-metal source.",
+        "knowledgeNote": "Anode mud from copper refining is where the world's silver and gold by-product comes from."
+      },
+      {
+        "question": "Write the composition of brass, bronze, and stainless steel, with one use of each.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Brass** (Cu + Zn): musical instruments, taps. **Bronze** (Cu + Sn): medals, statues. **Stainless steel** (Fe + Cr + Ni): cutlery, surgical tools (chromium's oxide film resists rust).",
+        "knowledgeNote": "Alloy properties are not averages — small additions transform the base metal entirely."
       }
     ]
   },
@@ -31851,6 +32095,67 @@
         "source": "NEB Past",
         "solution": "**Step 1 — Initiation (homolytic fission by UV light).**\n\n$$\\text{Cl}_2 \\xrightarrow{h\\nu} \\text{Cl}^\\bullet + \\text{Cl}^\\bullet$$\n\n**Step 2 — Propagation.**\n\n$$\\text{Cl}^\\bullet + \\text{CH}_4 \\rightarrow \\text{HCl} + \\text{CH}_3^\\bullet$$\n\n$$\\text{CH}_3^\\bullet + \\text{Cl}_2 \\rightarrow \\text{CH}_3\\text{Cl} + \\text{Cl}^\\bullet$$\n\nThe chlorine radical is regenerated, so the chain continues.\n\n**Step 3 — Termination.**\n\n$$\\text{Cl}^\\bullet + \\text{Cl}^\\bullet \\rightarrow \\text{Cl}_2 \\qquad \\text{CH}_3^\\bullet + \\text{Cl}^\\bullet \\rightarrow \\text{CH}_3\\text{Cl} \\qquad \\text{CH}_3^\\bullet + \\text{CH}_3^\\bullet \\rightarrow \\text{C}_2\\text{H}_6$$\n\n**Why a mixture forms.** The reaction is not selective: chlorine can attack any of the four equivalent C–H bonds of methane, and the process is highly random. A mixture of chloromethane, dichloromethane, chloroform and tetrachloromethane is obtained. Excess chlorine pushes the substitution further:\n\n$$\\text{CH}_4 + 4\\text{Cl}_2 \\xrightarrow{h\\nu} \\text{CCl}_4 + 4\\text{HCl}$$",
         "knowledgeNote": "Chlorination of methane is a chain radical reaction with initiation, propagation and termination steps, giving a statistical mixture of products."
+      }
+    ]
+  },
+  "class-11-notes/chemistry/hydrocarbons/pyqs/04-neb-2024.json": {
+    "title": "NEB Class 11 Chemistry — Hydrocarbons — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "chemistry",
+    "unitSlug": "hydrocarbons",
+    "topicSlug": "hydrocarbons-pyq-2024",
+    "topicTitle": "NEB Class 11 Chemistry — Hydrocarbons — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "How is ethane prepared from ethene? Write the reaction mechanism.",
+        "marks": 3,
+        "year": 2023,
+        "source": "NEB Model",
+        "solution": "**Catalytic hydrogenation:** CH₂=CH₂ + H₂ → CH₃–CH₃ (Ni/Pt catalyst, ~200°C).\n\n**Mechanism:** (1) H₂ adsorbs and dissociates on the metal surface; (2) ethene adsorbs via its π-bond; (3) H atoms add stepwise to the carbons; (4) ethane desorbs.",
+        "knowledgeNote": "Addition (alkenes) vs substitution (alkanes) is the reactivity divide of the whole unit."
+      },
+      {
+        "question": "State Markovnikov's rule and apply it to the addition of HBr to propene.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Markovnikov:** the H of HX adds to the doubly-bonded carbon already richer in H.\n\nCH₃–CH=CH₂ + HBr → **CH₃–CHBr–CH₃ (2-bromopropane)** — H goes to C-1, Br to the more stable secondary carbocation at C-2.",
+        "knowledgeNote": "Carbocation stability (3° > 2° > 1°) is the reason behind the rule — peroxides flip it (Kharasch effect)."
+      },
+      {
+        "question": "How is ethane prepared by the Wurtz reaction? Write the chemical equation.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Alkyl halides couple with sodium in dry ether: **2CH₃Br + 2Na → CH₃–CH₃ + 2NaBr**.\n\nBest for symmetric alkanes — mixed halides give product mixtures.",
+        "knowledgeNote": "Dry ether is essential — water would destroy the organosodium intermediates."
+      },
+      {
+        "question": "What happens when ethene undergoes ozonolysis? Write the products.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "O₃ adds across the double bond (ozonide), and reductive work-up (Zn/H₂O) cleaves it:\n\nCH₂=CH₂ → **2HCHO (formaldehyde)**.\n\nOzonolysis locates double bonds — each =CH₂ fragment reports as formaldehyde.",
+        "knowledgeNote": "Oxidative work-up instead gives acids — the work-up reagent picks the product family."
+      },
+      {
+        "question": "Acetylene is acidic in nature. Explain with a chemical test.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "The sp-hybridised C–H bond (50% s-character) holds electrons tightly, so HC≡CH loses H⁺ relatively easily.\n\n**Test:** with ammoniacal AgNO₃ it gives a **white precipitate of silver acetylide** (AgC≡CAg); with ammoniacal Cu₂Cl₂ a red copper acetylide — terminal alkynes only.",
+        "knowledgeNote": "Acidity: acetylene > ethylene > ethane — s-character order (50% > 33% > 25%)."
+      },
+      {
+        "question": "How will you distinguish ethane, ethene, and ethyne using bromine water?",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Ethane:** no change (alkane, substitution needs UV). **Ethene:** brown Br₂ water decolourised (addition). **Ethyne:** also decolourised — then apply ammoniacal AgNO₃, which precipitates only with the terminal alkyne.",
+        "knowledgeNote": "Decolourisation = unsaturation (C=C or C≡C) — the fastest functional-group screen in qualitative analysis."
       }
     ]
   },

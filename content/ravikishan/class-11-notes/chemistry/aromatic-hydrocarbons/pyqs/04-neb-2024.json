@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Chemistry — Aromatic Hydrocarbons — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "aromatic-hydrocarbons",
+  "topicSlug": "aromatic-hydrocarbons-pyq-2024",
+  "topicTitle": "NEB Class 11 Chemistry — Aromatic Hydrocarbons — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "State Huckel's rule. Explain why benzene is aromatic.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Huckel (4n+2) rule:** a planar, cyclic, conjugated system with (4n+2) π-electrons is aromatic.\n\nBenzene: cyclic, planar, fully conjugated, 6 π-electrons (n = 1) — delocalised in a ring current. All C–C bonds equal (139 pm), with ~152 kJ/mol resonance stabilisation.",
+      "knowledgeNote": "Cyclobutadiene (4π) is anti-aromatic — same checklist, opposite verdict."
+    },
+    {
+      "question": "Describe the mechanism of nitration of benzene.",
+      "marks": 4,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "(1) Electrophile generation: HNO₃ + 2H₂SO₄ → NO₂⁺ + H₃O⁺ + 2HSO₄⁻.\n\n(2) NO₂⁺ attacks the ring → resonance-stabilised σ-complex (carbocation).\n\n(3) HSO₄⁻ removes a ring proton → aromaticity restored, **nitrobenzene**.\n\nConditions: conc. HNO₃ + conc. H₂SO₄ at ~50°C.",
+      "knowledgeNote": "Electrophilic substitution (not addition) preserves the aromatic sextet — the motive of all benzene chemistry."
+    },
+    {
+      "question": "What is Friedel-Crafts alkylation? Write one of its limitations.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Benzene + alkyl halide with anhydrous AlCl₃ gives alkylbenzene: C₆H₆ + CH₃Cl → C₆H₅CH₃ + HCl (electrophilic substitution via R⁺).\n\n**Limitation:** carbocation rearrangement (n-propyl → isopropyl products) and polyalkylation — the product activates further, so mixtures form.",
+      "knowledgeNote": "Acylation avoids rearrangement (acylium ion is resonance-stabilised) — the workaround NEB often asks next."
+    },
+    {
+      "question": "What are ortho-para directors and meta directors? Give two examples of each.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**o/p-directors** (activating, lone-pair donors): –OH, –NH₂, –CH₃, halogens (deactivating but o/p).\n\n**m-directors** (deactivating, electron-withdrawing): –NO₂, –CHO, –COOH, –SO₃H.\n\nDirecting follows σ-complex stability — the electrophile enters where the positive charge avoids the substituent (meta) or is shared by it (ortho/para).",
+      "knowledgeNote": "Halogens are the odd ones: deactivating yet o/p-directing — the exception that proves the resonance rule."
+    },
+    {
+      "question": "How is benzoic acid prepared from toluene? Write the reaction.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Strong side-chain oxidation: **C₆H₅CH₃ + 3[O] (alkaline KMnO₄, heat) → C₆H₅COOH + H₂O**.\n\nAny alkyl side chain, whatever its length, is chewed back to –COOH on the ring.",
+      "knowledgeNote": "Side-chain oxidation diagnoses alkylbenzenes — the surviving –COOH marks where the chain was attached."
+    },
+    {
+      "question": "Draw the two Kekule structures of benzene. Why are all carbon–carbon bond lengths in benzene equal?",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Kekule: two cyclohexatriene forms with alternating double bonds shifted by one position.\n\nReal benzene is the **resonance hybrid** — π-electrons delocalised over all six carbons, so every bond is identical (139 pm), between single (154) and double (134).",
+      "knowledgeNote": "Equal bond lengths killed Kekule's alternating structure experimentally — X-ray evidence for delocalisation."
+    }
+  ]
+}

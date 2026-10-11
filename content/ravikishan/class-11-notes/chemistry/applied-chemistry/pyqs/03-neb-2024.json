@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Chemistry — Applied Chemistry — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "chemistry",
+  "unitSlug": "applied-chemistry",
+  "topicSlug": "applied-chemistry-pyq-2024",
+  "topicTitle": "NEB Class 11 Chemistry — Applied Chemistry — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Describe the Haber process for ammonia manufacture. Why is high pressure used?",
+      "marks": 5,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "N₂ + 3H₂ ⇌ 2NH₃ + heat. Conditions: 450–500°C (rate vs yield compromise), **~200 atm**, Fe catalyst with Mo promoter, unreacted gases recycled.\n\n**High pressure** because 4 gas moles → 2: Le Chatelier drives the equilibrium toward NH₃, and pressure also speeds collisions.",
+      "knowledgeNote": "Ammonia feeds fertilisers (urea, ammonium nitrate), explosives, and plastics — the highest-volume synthesis on Earth."
+    },
+    {
+      "question": "What is the Contact process? Write the key reactions and conditions.",
+      "marks": 4,
+      "year": 2022,
+      "source": "NEB Model",
+      "solution": "Manufacture of **sulphuric acid**: (1) S + O₂ → SO₂; (2) 2SO₂ + O₂ ⇌ 2SO₃ (V₂O₅, 450°C, 1–2 atm); (3) SO₃ + H₂SO₄ → H₂S₂O₇ (oleum); (4) H₂S₂O₇ + H₂O → 2H₂SO₄.\n\nSO₃ is absorbed in acid, never water directly (which makes unabsorbable mist).",
+      "knowledgeNote": "'King of chemicals' — national H₂SO₄ output tracks industrial capacity, an NEB essay staple."
+    },
+    {
+      "question": "Describe the Ostwald process for nitric acid manufacture.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "(1) Catalytic oxidation: 4NH₃ + 5O₂ → 4NO + 6H₂O (Pt–Rh gauze, ~800°C). (2) 2NO + O₂ → 2NO₂. (3) 3NO₂ + H₂O → 2HNO₃ + NO (absorption tower, NO recycled).\n\nProduct: ~68% acid, concentrated by distillation.",
+      "knowledgeNote": "Ostwald links Haber (NH₃) to fertilisers and explosives — the nitrogen-industry chain question."
+    },
+    {
+      "question": "Describe the Solvay process for sodium carbonate manufacture with reactions.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Brine + ammonia + CO₂: NaCl + NH₃ + CO₂ + H₂O → NaHCO₃↓ + NH₄Cl; then 2NaHCO₃ →(heat) Na₂CO₃ + CO₂ + H₂O.\n\nAmmonia is regenerated from NH₄Cl with lime, and CO₂ from limestone calcination — only limestone and brine are consumed.",
+      "knowledgeNote": "Fails for K₂CO₃ (KHCO₃ too soluble to precipitate) — the built-in limitation question."
+    },
+    {
+      "question": "What are NPK fertilisers? Why is urea the most widely used nitrogenous fertiliser?",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**NPK** fertilisers supply nitrogen (leaf growth), phosphorus (roots/flowers), potassium (disease resistance).\n\n**Urea** (46.7% N, highest of all) is cheap, highly soluble, non-explosive, and leaves only CO₂ — dominating Nepal's Terai paddy cultivation.",
+      "knowledgeNote": "Excess N runs off into rivers (eutrophication) — the environmental counterpoint NEB pairs with this question."
+    },
+    {
+      "question": "How is cement manufactured? What happens during the setting of cement?",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Limestone + clay are burnt at ~1500°C to clinker (calcium silicates/aluminates), then ground with ~3% gypsum.\n\n**Setting:** hydration of silicates forms interlocking C–S–H gel crystals; gypsum regulates the flash set of aluminates. Final hardening takes days as the gel densifies.",
+      "knowledgeNote": "Gypsum retards, never accelerates — its absence would flash-set cement unusably fast."
+    }
+  ]
+}
