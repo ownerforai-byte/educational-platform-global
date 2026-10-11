@@ -25450,6 +25450,67 @@
       }
     ]
   },
+  "class-11-notes/chemistry/chemical-bonding-and-shapes-of-molecules/pyqs/04-neb-2024.json": {
+    "title": "NEB Class 11 Chemistry — Chemical Bonding and Shapes of Molecules — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "chemistry",
+    "unitSlug": "chemical-bonding-and-shapes-of-molecules",
+    "topicSlug": "chemical-bonding-and-shapes-of-molecules-pyq-2024",
+    "topicTitle": "NEB Class 11 Chemistry — Chemical Bonding and Shapes of Molecules — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "State the main postulates of VSEPR theory. Use it to predict the shape of CH₄.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**VSEPR:** electron pairs (bond + lone) repel and arrange to maximise separation; repulsion order lp–lp > lp–bp > bp–bp.\n\nCH₄ has 4 bond pairs, 0 lone pairs → pairs point to tetrahedron corners → **tetrahedral**, 109.5°.",
+        "knowledgeNote": "Count steric number (pairs) first, then hide lone pairs to read the molecular shape."
+      },
+      {
+        "question": "Predict the shapes of BF₃ and PCl₅ using VSEPR theory. Give their hybridisation.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**BF₃:** 3 bond pairs, 0 lone pairs → **trigonal planar**, 120°, sp² hybridised B.\n\n**PCl₅:** 5 bond pairs, 0 lone pairs → **trigonal bipyramidal** (3 equatorial at 120°, 2 axial at 90°), sp³d hybridised P.",
+        "knowledgeNote": "Axial bonds (90° repulsions) are longer and weaker than equatorial — PCl₅'s axial Cl leaves first."
+      },
+      {
+        "question": "Explain why H₂O is bent while CO₂ is linear, though oxygen is the central atom in neither case the same way.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**H₂O:** O carries 2 bond pairs + 2 lone pairs — lone pairs compress the angle to **104.5° (bent)**.\n\n**CO₂:** C carries 2 bond pairs + 0 lone pairs — pairs oppose diametrically → **180° (linear)**.\n\nShape follows the lone-pair count, not the atoms present.",
+        "knowledgeNote": "2 pairs → linear; 3 → trigonal planar; 4 → tetrahedral electron geometry — then subtract lone pairs for shape."
+      },
+      {
+        "question": "What is hybridisation? Show how sp³ hybridisation explains the shape of methane.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Hybridisation** mixes atomic orbitals into equal-energy hybrids aimed at bonding directions.\n\nCarbon's 2s + three 2p blend into **four sp³ hybrids** pointing to tetrahedron corners (109.5°). Each overlaps a H 1s orbital → four equal C–H bonds, tetrahedral CH₄.",
+        "knowledgeNote": "Hybridisation follows observed shape (it rationalises, never predicts alone) — VSEPR first, hybrids second."
+      },
+      {
+        "question": "Predict the shape and hybridisation of SF₆ and IF₇.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**SF₆:** 6 bond pairs → **octahedral**, 90°, sp³d² hybridised S.\n\n**IF₇:** 7 bond pairs → **pentagonal bipyramidal**, sp³d³ hybridised I.",
+        "knowledgeNote": "Expanded octets need d-orbitals (period 3+) — period-2 elements stop at four pairs."
+      },
+      {
+        "question": "Ammonia has a higher boiling point than phosphine (PH₃). Explain on the basis of molecular shape and bonding.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "NH₃ is pyramidal with a strongly polar N–H bond and a lone pair — molecules link by **hydrogen bonding**, needing much heat to separate (bp −33°C).\n\nPH₃ is larger, less electronegative, barely H-bonded — weak van der Waals forces only (bp −88°C). Shape concentrates the dipole that H-bonding requires.",
+        "knowledgeNote": "Same-group hydride anomalies (H₂O, HF, NH₃ high boilers) are all hydrogen-bonding verdicts."
+      }
+    ]
+  },
   "class-11-notes/chemistry/chemical-bonding/pyqs/01-neb-2022.json": {
     "title": "NEB Class 11 Chemistry — Chemical Bonding — 2022",
     "year": 2022,
