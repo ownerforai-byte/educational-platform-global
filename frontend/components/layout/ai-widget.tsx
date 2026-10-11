@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { CaptainMark } from "@/components/ai/captain-logo";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { isOwnerUser } from "@/lib/owner";
@@ -20,9 +21,15 @@ import { isOwnerUser } from "@/lib/owner";
  *
  * /ai/chat forwards to /chat too, so every AI surface reaches the interface
  * as a PAGE: /chat (assistant), /ai/tutor (studio tutor), /ai-quiz, /ai/search.
+ *
+ * The launcher hides itself on the chat routes (owner request 2026-10-11:
+ * "disable ai widget in chat"). On /chat and /chat/* you are already standing
+ * in the thing it opens — a bottom-left Veer that re-links to the current page
+ * is pure noise, and on mobile it sits on top of the composer.
  */
 export function AIWidget() {
   const { user, isLoading } = useSession();
+  const pathname = usePathname();
   // The auth provider hydrates a cached session on the first client render,
   // which the server never sees. Render nothing until mounted so the first
   // client pass matches the server HTML (avoids a hydration mismatch).
@@ -31,6 +38,8 @@ export function AIWidget() {
   // Owner emails only (owner request 2026-10-05): students never see the
   // launcher. Hidden — never a redirect, this is a global floating button.
   if (!mounted || isLoading || !isOwnerUser(user)) return null;
+  // Already inside a chat room → no launcher (same route it would open).
+  if (pathname === "/chat" || pathname.startsWith("/chat/")) return null;
   return (
     <Link
       href="/chat"

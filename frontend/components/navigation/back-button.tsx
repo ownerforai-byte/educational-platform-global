@@ -77,7 +77,8 @@ export function BackButton({
         aria-label="Go back"
       >
         <ArrowLeft className="h-3.5 w-3.5" />
-        <span>{label}</span>
+        {/* No empty span: an icon-only back button must not inherit the icon→label gap. */}
+        {label ? <span>{label}</span> : null}
       </button>
     );
   }

@@ -80,6 +80,7 @@ import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
 import { drawFigureWithPuter } from "@/lib/puter-image";
 import { stripLinksForCopy } from "@/lib/ai/clean-copy";
 import { cn } from "@/lib/utils";
+import { BackButton } from "@/components/navigation/back-button";
 
 // ── Subject modes ───────────────────────────────────────────────────────────
 
@@ -1032,6 +1033,11 @@ export function TutorConsole({
       <div className="shrink-0 border-b border-border/60 bg-gradient-to-r from-emerald-500/5 via-transparent to-primary/5">
         <div className="flex items-center justify-between gap-3 px-5 sm:px-8 pt-4 pb-3">
           <div className="flex items-center gap-2.5 min-w-0">
+            {/* Back — this room is the one app route that skips the shell (and
+                so the shell's floating back button), leaving it a dead end.
+                Inline variant = sits in the header instead of over the
+                composer. Owner request 2026-10-11. */}
+            <BackButton variant="inline" label="" className="shrink-0 px-2 py-1.5" />
             <div className="h-9 w-9 rounded-xl bg-gradient-to-br from-primary to-violet-500 flex items-center justify-center text-white shadow-md shadow-primary/30 shrink-0">
               <CaptainAvatar className="h-5 w-5" />
             </div>

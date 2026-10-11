@@ -70,6 +70,11 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
 
   const navVisible = navPinned || isHovered || isClickedOpen;
 
+  // /chat and /chat/* are the only app routes that bypass this shell entirely
+  // (full-bleed chat room, no sidebar/footer). They therefore skip the floating
+  // <BackButton /> below, so the chat header renders an INLINE one itself —
+  // see TutorConsole's header. Keep these two lists in sync: a route added
+  // here must get its own back affordance, or it becomes a dead end.
   if (isChatRoom) {
     return (
       <div className="flex h-screen w-screen flex-col overflow-hidden bg-background">
