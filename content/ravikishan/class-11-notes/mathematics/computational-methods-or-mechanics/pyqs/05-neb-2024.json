@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Mathematics — Computational Methods — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "mathematics",
+  "unitSlug": "computational-methods-or-mechanics",
+  "topicSlug": "computational-methods-or-mechanics-pyq-2024",
+  "topicTitle": "NEB Class 11 Mathematics — Computational Methods — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Explain the bisection method. One root of x³ − x − 2 = 0 lies between 1 and 2 — perform one iteration and give the refined interval.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Bisection:** bracket the root in [a, b] (f(a)·f(b) < 0), halve at m = (a+b)/2, keep the half where the sign changes.\n\nf(1) = −2, f(2) = 4. Midpoint 1.5: f(1.5) = 3.375 − 1.5 − 2 = −0.125 < 0 — same sign as f(1).\n\nRefined interval: **(1.5, 2)**.",
+      "knowledgeNote": "Bisection always converges (halving the error each step) but slowly — reliability is its selling point."
+    },
+    {
+      "question": "Write the Newton-Raphson formula. Use one iteration starting from x₀ = 3.5 to approximate √12.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Formula:** xₙ₊₁ = xₙ − f(xₙ)/f′(xₙ). For √12 use f(x) = x² − 12, f′ = 2x.\n\nx₁ = 3.5 − (12.25 − 12)/7 = 3.5 − 0.0357 ≈ **3.464** (true √12 ≈ 3.4641 — one step is already accurate to 3 decimals).",
+      "knowledgeNote": "Newton-Raphson converges quadratically near simple roots but fails if f′(x) ≈ 0 or the start is poor."
+    },
+    {
+      "question": "State the trapezoidal rule. Use it with n = 2 to approximate ∫₀¹ x² dx.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Trapezoidal rule:** ∫ = h/2·[f(x₀) + 2Σinterior + f(xₙ)], h = (b−a)/n.\n\nh = 0.5: integral ≈ (0.5/2)[0 + 2(0.25) + 1] = 0.25 × 1.5 = **0.375** (exact: 1/3 ≈ 0.333).",
+      "knowledgeNote": "Trapezoidal overestimates convex-up curves — the error sign is predictable from curvature."
+    },
+    {
+      "question": "State Simpson's 1/3 rule. Use it with n = 2 to evaluate ∫₀¹ x² dx and compare with the exact value.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Simpson's 1/3:** ∫ = h/3·[f(x₀) + 4Σodd + 2Σeven + f(xₙ)] (n even).\n\nh = 0.5: integral ≈ (0.5/3)[0 + 4(0.25) + 1] = (0.5/3)(2) = **1/3** — exactly the true value, since Simpson's is exact for polynomials up to cubic.",
+      "knowledgeNote": "Simpson's beats trapezoidal for smooth curves — exact through degree 3 with the same evaluations."
+    },
+    {
+      "question": "A measurement is recorded as 2.54 cm against a true value of 2.50 cm. Find the absolute and relative errors.",
+      "marks": 2,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Absolute error = |measured − true| = |2.54 − 2.50| = **0.04 cm**.\n\nRelative error = 0.04/2.50 = **0.016 (1.6%)**.",
+      "knowledgeNote": "Absolute error carries units; relative error is unit-free — always divide by the TRUE value."
+    },
+    {
+      "question": "Distinguish between an algorithm and a flowchart. Write an algorithm to find the sum of the first n natural numbers.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Algorithm:** step-by-step procedure in words/pseudocode. **Flowchart:** the same logic drawn with symbols (ovals, diamonds, arrows).\n\nSum 1..n: (1) read n; (2) set sum = 0, i = 1; (3) repeat: sum += i, i += 1 until i > n; (4) print sum. (Closed form: n(n+1)/2.)",
+      "knowledgeNote": "Every algorithm needs input, finite steps, and output — the three checkpoints of any 'write an algorithm' answer."
+    }
+  ]
+}

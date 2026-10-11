@@ -36179,6 +36179,67 @@
       }
     ]
   },
+  "class-11-notes/mathematics/computational-methods-or-mechanics/pyqs/05-neb-2024.json": {
+    "title": "NEB Class 11 Mathematics — Computational Methods — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "mathematics",
+    "unitSlug": "computational-methods-or-mechanics",
+    "topicSlug": "computational-methods-or-mechanics-pyq-2024",
+    "topicTitle": "NEB Class 11 Mathematics — Computational Methods — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "Explain the bisection method. One root of x³ − x − 2 = 0 lies between 1 and 2 — perform one iteration and give the refined interval.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Bisection:** bracket the root in [a, b] (f(a)·f(b) < 0), halve at m = (a+b)/2, keep the half where the sign changes.\n\nf(1) = −2, f(2) = 4. Midpoint 1.5: f(1.5) = 3.375 − 1.5 − 2 = −0.125 < 0 — same sign as f(1).\n\nRefined interval: **(1.5, 2)**.",
+        "knowledgeNote": "Bisection always converges (halving the error each step) but slowly — reliability is its selling point."
+      },
+      {
+        "question": "Write the Newton-Raphson formula. Use one iteration starting from x₀ = 3.5 to approximate √12.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Formula:** xₙ₊₁ = xₙ − f(xₙ)/f′(xₙ). For √12 use f(x) = x² − 12, f′ = 2x.\n\nx₁ = 3.5 − (12.25 − 12)/7 = 3.5 − 0.0357 ≈ **3.464** (true √12 ≈ 3.4641 — one step is already accurate to 3 decimals).",
+        "knowledgeNote": "Newton-Raphson converges quadratically near simple roots but fails if f′(x) ≈ 0 or the start is poor."
+      },
+      {
+        "question": "State the trapezoidal rule. Use it with n = 2 to approximate ∫₀¹ x² dx.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Trapezoidal rule:** ∫ = h/2·[f(x₀) + 2Σinterior + f(xₙ)], h = (b−a)/n.\n\nh = 0.5: integral ≈ (0.5/2)[0 + 2(0.25) + 1] = 0.25 × 1.5 = **0.375** (exact: 1/3 ≈ 0.333).",
+        "knowledgeNote": "Trapezoidal overestimates convex-up curves — the error sign is predictable from curvature."
+      },
+      {
+        "question": "State Simpson's 1/3 rule. Use it with n = 2 to evaluate ∫₀¹ x² dx and compare with the exact value.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Simpson's 1/3:** ∫ = h/3·[f(x₀) + 4Σodd + 2Σeven + f(xₙ)] (n even).\n\nh = 0.5: integral ≈ (0.5/3)[0 + 4(0.25) + 1] = (0.5/3)(2) = **1/3** — exactly the true value, since Simpson's is exact for polynomials up to cubic.",
+        "knowledgeNote": "Simpson's beats trapezoidal for smooth curves — exact through degree 3 with the same evaluations."
+      },
+      {
+        "question": "A measurement is recorded as 2.54 cm against a true value of 2.50 cm. Find the absolute and relative errors.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "Absolute error = |measured − true| = |2.54 − 2.50| = **0.04 cm**.\n\nRelative error = 0.04/2.50 = **0.016 (1.6%)**.",
+        "knowledgeNote": "Absolute error carries units; relative error is unit-free — always divide by the TRUE value."
+      },
+      {
+        "question": "Distinguish between an algorithm and a flowchart. Write an algorithm to find the sum of the first n natural numbers.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**Algorithm:** step-by-step procedure in words/pseudocode. **Flowchart:** the same logic drawn with symbols (ovals, diamonds, arrows).\n\nSum 1..n: (1) read n; (2) set sum = 0, i = 1; (3) repeat: sum += i, i += 1 until i > n; (4) print sum. (Closed form: n(n+1)/2.)",
+        "knowledgeNote": "Every algorithm needs input, finite steps, and output — the three checkpoints of any 'write an algorithm' answer."
+      }
+    ]
+  },
   "class-11-notes/mathematics/limits-and-continuity/pyqs/01-neb-2024.json": {
     "title": "NEB Class 11 Mathematics — Limits And Continuity — 2024",
     "year": 2024,
@@ -36923,6 +36984,67 @@
       }
     ]
   },
+  "class-11-notes/mathematics/vectors/pyqs/05-neb-2024.json": {
+    "title": "NEB Class 11 Mathematics — Vectors — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "mathematics",
+    "unitSlug": "vectors",
+    "topicSlug": "vectors-pyq-2024",
+    "topicTitle": "NEB Class 11 Mathematics — Vectors — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "If a = 2i + 3j − k and b = i − j + 2k, find a·b and |a × b|.",
+        "marks": 3,
+        "year": 2023,
+        "source": "NEB Model",
+        "solution": "a·b = (2)(1) + (3)(−1) + (−1)(2) = 2 − 3 − 2 = **−3**.\n\na × b = |i j k; 2 3 −1; 1 −1 2| = i(6−1) − j(4+1) + k(−2−3) = 5i − 5j − 3k.\n\n|a × b| = √(25 + 25 + 9) = **√59**.",
+        "knowledgeNote": "a·b < 0 means the angle between them is obtuse — the sign carries geometric meaning."
+      },
+      {
+        "question": "What is the scalar triple product? Write its geometric significance.",
+        "marks": 2,
+        "year": 2022,
+        "source": "NEB Model",
+        "solution": "**Scalar triple product** [a b c] = a·(b × c), computed as a 3×3 determinant.\n\n**Geometric meaning:** its absolute value is the **volume of the parallelepiped** with a, b, c as coterminous edges. [a b c] = 0 ⟺ the vectors are coplanar.",
+        "knowledgeNote": "Cyclic symmetry [a b c] = [b c a] = [c a b]; swapping two vectors flips the sign."
+      },
+      {
+        "question": "Find the unit vector in the direction of a = 2i − 3j + 6k.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "|a| = √(4 + 9 + 36) = √49 = 7.\n\nâ = a/|a| = **(2i − 3j + 6k)/7**.",
+        "knowledgeNote": "2-3-6 is a Pythagorean triple in 3D (magnitude exactly 7) — NEB's favourite integer-friendly vector."
+      },
+      {
+        "question": "Find the scalar projection of a = 2i + j on b = i + 2j.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "a·b = 2 + 2 = 4; |b| = √(1 + 4) = √5.\n\nProjection = (a·b)/|b| = **4/√5** (vector projection: (4/5)(i + 2j)).",
+        "knowledgeNote": "Scalar projection can be negative (against b's direction); vector projection keeps the direction of b."
+      },
+      {
+        "question": "Find the area of the parallelogram with adjacent sides a = 2i + j and b = i + 3j.",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "a × b = (2i + j) × (i + 3j) = 6k − k = 5k.\n\nArea = |a × b| = **5 square units** (triangle on the same sides: half, 2.5).",
+        "knowledgeNote": "Parallelogram |a×b|, triangle ½|a×b| — the half is the whole question in disguise."
+      },
+      {
+        "question": "Find the angle between a = i + j and b = j + k.",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "a·b = 0 + 1 + 0 = 1; |a| = |b| = √2.\n\ncos θ = 1/(√2·√2) = 1/2 → θ = **60°**.",
+        "knowledgeNote": "cos θ = (a·b)/(|a||b|) — zero dot means perpendicular, equal magnitudes simplify fast."
+      }
+    ]
+  },
   "class-11-notes/nepali/bhasha-ra-vyakarana/pyqs/01-neb-2024.json": {
     "title": "NEB Class 11 Nepali — Bhasha Ra Vyakarana — 2024",
     "year": 2024,
@@ -37065,6 +37187,67 @@
       }
     ]
   },
+  "class-11-notes/nepali/katha-natak-ra-sanskriti/pyqs/04-neb-2024.json": {
+    "title": "NEB Class 11 Nepali — Katha Natak ra Sanskriti — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "nepali",
+    "unitSlug": "katha-natak-ra-sanskriti",
+    "topicSlug": "katha-natak-ra-sanskriti-pyq-2024",
+    "topicTitle": "NEB Class 11 Nepali — Katha Natak ra Sanskriti — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "कथा भनेको के हो? कथाका प्रमुख तत्त्वहरूको वर्णन गर्नुहोस्।",
+        "marks": 5,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**कथा** छोटो गद्य रचना हो जसले एउटै घटना, सीमित पात्र र एक निश्चित उद्देश्य प्रस्तुत गर्छ।\n\n**तत्त्वहरू:** (१) कथावस्तु/कथानक, (२) पात्र र चरित्र-चित्रण, (३) संवाद, (४) देशकाल-वातावरण, (५) भाषा-शैली, (६) उद्देश्य/सन्देश।",
+        "knowledgeNote": "कथा एक बसाइमा पढिसक्नुपर्छ — संक्षिप्तता नै यसको प्राण हो।"
+      },
+      {
+        "question": "एकाङ्की र पूर्णाङ्की नाटकबीच कुनै तीन भिन्नता लेख्नुहोस्।",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "(१) **एकाङ्की** एउटै अङ्कको, छोटो; **पूर्णाङ्की** धेरै अङ्कको, लामो। (२) एकाङ्कीमा एउटै घटना र सीमित पात्र; पूर्णाङ्कीमा उपकथा र धेरै पात्र। (३) एकाङ्की छोटो समयमा मञ्चन हुन्छ; पूर्णाङ्कीलाई घण्टौँ लाग्छ।",
+        "knowledgeNote": "एकाङ्की = कथाको नाट्य रूप; पूर्णाङ्की = उपन्यासको नाट्य रूप।"
+      },
+      {
+        "question": "नेपाली संस्कृतिमा दशैं पर्वको महत्त्वबारे छोटो टिप्पणी लेख्नुहोस्।",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**दशैं** नेपालीहरूको महान् चाड हो — असत्यमाथि सत्यको विजय (दुर्गाले महिषासुर वध) को प्रतीक। टीका-जमरा, आशीर्वाद, पारिवारिक मिलन र नयाँ लुगाले यसलाई सामाजिक एकताको पर्व बनाउँछ।",
+        "knowledgeNote": "घटस्थापना–टीका: १५ दिने चाड; जमरा = समृद्धि र स्वास्थ्यको प्रतीक।"
+      },
+      {
+        "question": "लोककथा भनेको के हो? एउटा उदाहरण दिनुहोस्।",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**लोककथा** मौखिक परम्परामा पुस्तौँदेखि सर्दै आएका कथा हुन् — लेखक अज्ञात, उद्देश्य मनोरञ्जन र नैतिक शिक्षा। उदाहरण: **'सिस्नुपानी'** शैलीका हास्य कथा वा पञ्चतन्त्रका कथा।",
+        "knowledgeNote": "लोककथा = लोकसाहित्यको मेरुदण्ड; यसबाटै लिखित कथाको विकास भयो।"
+      },
+      {
+        "question": "नाटकका प्रमुख तत्त्वहरू के-के हुन्? संक्षेपमा वर्णन गर्नुहोस्।",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "(१) **कथावस्तु** — मूल घटना; (२) **पात्र** — नायक, प्रतिनायक; (३) **संवाद** — पात्रका बोली; (४) **अङ्क र दृश्य** — संरचना; (५) **रङ्गमञ्चीयता** — मञ्चन योग्यता; (६) **रस/भाव** — दर्शक अनुभूति।",
+        "knowledgeNote": "संवाद नाटकको आत्मा हो — संवादविनाको नाटक कल्पना गर्न सकिँदैन।"
+      },
+      {
+        "question": "संस्कृति भनेको के हो? भाषा र संस्कृतिबीचको सम्बन्ध स्पष्ट पार्नुहोस्।",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**संस्कृति** कुनै समुदायको जीवनशैली — भाषा, धर्म, चाडपर्व, खानपान, मूल्य-मान्यताको समष्टि हो।\n\nभाषा संस्कृतिको **वाहक** हो: चाडका गीत, लोककथा र रीतिरिवाज भाषामै बाँच्छन्। भाषा हराए संस्कृति हराउँछ — त्यसैले मातृभाषा संरक्षण सांस्कृतिक संरक्षण हो।",
+        "knowledgeNote": "नेपालको बहुजातीय-बहुभाषिकता नै यसको सांस्कृतिक सम्पदा हो।"
+      }
+    ]
+  },
   "class-11-notes/nepali/lekhan-ra-rachana/pyqs/01-neb-2024.json": {
     "title": "NEB Class 11 Nepali — Lekhan Ra Rachana — 2024",
     "year": 2024,
@@ -37146,6 +37329,67 @@
         "source": "NEB Model",
         "solution": "जल विद्युत विषयक कृति: **ज्ञानेन्द्र माछा Sendham** (काव्य)\n\nकेन्द्रिय भावना: नेपालको जलस्रोतको महत्त्व, जल विद्युत उत्पादनबाट देशको विकास, र प्राकृतिक स्रोतको समुचित utilization को सन्देश।",
         "knowledgeNote": "NEB Class 11 Nepali literature syllabus covers modern poetry, prose, and drama."
+      }
+    ]
+  },
+  "class-11-notes/nepali/sahitya-adhyayan/pyqs/02-neb-2024.json": {
+    "title": "NEB Class 11 Nepali — Sahitya Adhyayan — 2024",
+    "year": 2024,
+    "examSource": "NEB",
+    "subject": "nepali",
+    "unitSlug": "sahitya-adhyayan",
+    "topicSlug": "sahitya-adhyayan-pyq-2024",
+    "topicTitle": "NEB Class 11 Nepali — Sahitya Adhyayan — 2024",
+    "relevance": 100,
+    "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+    "questions": [
+      {
+        "question": "कविता भनेको के हो? विषयका आधारमा कविताका प्रकारहरू उल्लेख गर्नुहोस्।",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**कविता** छन्द, लय र भावले सिँगारिएको पद्य रचना हो।\n\n**प्रकार:** प्रकृति कविता, राष्ट्रिय कविता, प्रेम कविता, व्यङ्ग्य कविता, प्रगतिवादी कविता, बाल कविता।",
+        "knowledgeNote": "रस, छन्द र अलङ्कार — कविताका तीन गहना।"
+      },
+      {
+        "question": "गजल र मुक्तकबीच कुनै तीन भिन्नता लेख्नुहोस्।",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "(१) **गजल**मा मतला, मकता र ५+ शेर हुन्छन्; **मुक्तक** छोटो (सामान्यतया ४ पङ्क्ति) स्वतन्त्र रचना हो। (२) गजलमा रदिफ-काफिया अनिवार्य; मुक्तकमा लचिलो। (३) गजल उर्दू-फारसी परम्पराको; मुक्तक संस्कृत परम्पराको छोटो काव्य रूप हो।",
+        "knowledgeNote": "मोतीराम भट्टले गजललाई नेपालीमा स्थापित गरे।"
+      },
+      {
+        "question": "निबन्धका प्रमुख प्रकारहरू के-के हुन्? संक्षेपमा वर्णन गर्नुहोस्।",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**वर्णनात्मक** (दृश्य/वस्तु चित्रण), **विवरणात्मक** (घटना विवरण), **विचारात्मक** (तर्क-विश्लेषण), **भावात्मक** (भाव-प्रवाह)। राममणि आचार्य दीक्षितलाई नेपाली निबन्धका प्रवर्तक मानिन्छ।",
+        "knowledgeNote": "विचारात्मक निबन्धमा तर्कको, भावात्मकमा भावको प्रधानता हुन्छ।"
+      },
+      {
+        "question": "कथा र उपन्यासबीच कुनै तीन भिन्नता लेख्नुहोस्।",
+        "marks": 3,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "(१) **कथा** छोटो, एउटै घटना; **उपन्यास** लामो, धेरै घटना-उपकथा। (२) कथामा सीमित पात्र; उपन्यासमा पात्रहरूको संसार। (३) कथा एक बसाइमा सकिन्छ; उपन्यास धारावाहिक पढिन्छ।",
+        "knowledgeNote": "गोठाले (बिपी कोइराला) प्रसिद्ध कथा; रुपमती (रुद्रराज पाण्डे) पहिलो उपन्यास मानिन्छ।"
+      },
+      {
+        "question": "जीवनी र आत्मकथा भनेको के हो? एक-एक उदाहरण दिनुहोस्।",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**जीवनी:** अर्कै व्यक्तिले लेखेको जीवन-वृत्तान्त (उदा. मदनमणि दीक्षितको 'माधवी' शैली वा जीवनीपरक कृति)। **आत्मकथा:** आफैँले लेखेको आफ्नो जीवनकथा (उदा. बिपी कोइरालाको 'आत्मवृत्तान्त', सूर्यविक्रम ज्ञवालीका संस्मरण)।",
+        "knowledgeNote": "जीवनी तेस्रो पुरुषमा, आत्मकथा प्रथम पुरुषमा लेखिन्छ।"
+      },
+      {
+        "question": "समालोचना भनेको के हो? यसको उद्देश्य के हो?",
+        "marks": 2,
+        "year": 2024,
+        "source": "NEB Model",
+        "solution": "**समालोचना** कृतिको गुण-दोषको तटस्थ मूल्याङ्कन हो। उद्देश्य: पाठकलाई कृति छनोटमा मार्गदर्शन, लेखकलाई सुधारको सुझाव र साहित्यको स्तर उठाउनु हो।",
+        "knowledgeNote": "राममणि आ. दीक्षित र ईश्वर बराल नेपाली समालोचनाका आधारस्तम्भ हुन्।"
       }
     ]
   },
