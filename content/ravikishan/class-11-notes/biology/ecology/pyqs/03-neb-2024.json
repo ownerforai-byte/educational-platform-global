@@ -1,0 +1,61 @@
+{
+  "title": "NEB Class 11 Biology — Ecology — 2024",
+  "year": 2024,
+  "examSource": "NEB",
+  "subject": "biology",
+  "unitSlug": "ecology",
+  "topicSlug": "ecology-pyq-2024",
+  "topicTitle": "NEB Class 11 Biology — Ecology — 2024",
+  "relevance": 100,
+  "source": "NEB Grade 11 Model Questions / NEB Past Papers 2020-2024",
+  "questions": [
+    {
+      "question": "Define ecosystem. Describe the structure of an ecosystem with a diagram description.",
+      "marks": 5,
+      "year": 2023,
+      "source": "NEB Model",
+      "solution": "**Ecosystem:** organisms plus their physical environment functioning as one unit.\n\n**Abiotic:** light, temperature, water, soil, minerals. **Biotic:** producers (plants) → primary consumers (herbivores) → secondary/tertiary consumers (carnivores) → decomposers (bacteria, fungi) recycling nutrients back to soil.\n\n(Draw nested boxes: environment enclosing trophic levels in feeding order, decomposers arrowing back to producers.)",
+      "knowledgeNote": "Energy flows one way (10% rule); nutrients cycle — the two traffic laws of every ecosystem diagram."
+    },
+    {
+      "question": "What is ecological succession? Explain with the example of xerosere.",
+      "marks": 3,
+      "year": 2022,
+      "source": "NEB Model",
+      "solution": "**Succession** is the ordered replacement of communities over time toward a stable climax.\n\n**Xerosere** (bare rock → forest): lichens (pioneers, weather rock) → mosses → herbs → shrubs → forest (climax). Each stage builds soil and shade for the next.",
+      "knowledgeNote": "Xerosere (dry rock) vs hydrosere (open water): opposite starts, both ending in forest climax."
+    },
+    {
+      "question": "Distinguish between a food chain and a food web. What is the ten percent law?",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Food chain:** a single feeding line (grass → deer → tiger). **Food web:** the interlinked mesh of all chains — realistic, stable, with alternate routes if one prey fails.\n\n**Ten percent law (Lindeman):** only ~10% of energy transfers per trophic level; the rest is lost as heat/respiration — which is why food chains rarely exceed 4–5 levels.",
+      "knowledgeNote": "Short chains feed more people per hectare — the energetics behind vegetarian efficiency arguments."
+    },
+    {
+      "question": "What are ecological pyramids? Explain why the pyramid of energy is always upright.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "Graphic trophic structure as pyramids of **number**, **biomass**, or **energy**.\n\nNumber/biomass pyramids can invert (one tree feeding many birds; tiny phytoplankton feeding bulky zooplankton). But **energy** pyramids are always upright — each level holds only ~10% of the one below, so higher levels can never out-energy their base.",
+      "knowledgeNote": "Upright-energy is thermodynamically forced; inverted-number/biomass are sampling artefacts of size differences."
+    },
+    {
+      "question": "Describe any three types of population interaction with one example of each.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Competition** (−/−): two species lose together — weeds vs paddy. **Predation** (+/−): tiger eats deer. **Mutualism** (+/+): lichen (fungus + alga) or legume–Rhizobium. (Also: parasitism +/−, commensalism +/0, amensalism −/0.)",
+      "knowledgeNote": "The +/− sign code compresses every interaction into two symbols — learn it once, answer any of them."
+    },
+    {
+      "question": "What is eutrophication? Explain its causes and effects on aquatic life.",
+      "marks": 3,
+      "year": 2024,
+      "source": "NEB Model",
+      "solution": "**Eutrophication** is nutrient enrichment (nitrates, phosphates from fertilisers/sewage) triggering algal blooms.\n\nBlooms block light, then die and decompose — decomposition devours dissolved oxygen (BOD spike) → fish suffocate, biodiversity collapses, lakes turn to dead marshes.",
+      "knowledgeNote": "Phewa Lake's water-hyacinth choking is Nepal's textbook eutrophication case."
+    }
+  ]
+}
