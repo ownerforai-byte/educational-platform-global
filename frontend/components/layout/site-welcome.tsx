@@ -66,16 +66,17 @@ export function SiteWelcome() {
             <span className="bg-gradient-to-r from-rose-500 via-amber-500 to-emerald-500 bg-clip-text text-transparent">
               Namaste {firstName}.
             </span>{" "}
-            <span className="text-foreground/90">Welcome to</span>{" "}
+            <span className="text-foreground/90">Step into</span>{" "}
             <span className="bg-gradient-to-r from-violet-500 to-sky-500 bg-clip-text text-transparent">
               Veer
             </span>
-            <span className="text-foreground/90">.</span>
+            <span className="text-foreground/90">— your knowledge space.</span>
           </p>
           <p className="mt-1 text-[12px] leading-snug text-muted-foreground">
-            Ask a question from your syllabus.{" "}
+            NEB Class 11 &amp; 12 syllabus notes, interactive schematics, topic
+            mindmaps and an AI tutor — all in one place.{" "}
             <span className="font-medium text-emerald-600 dark:text-emerald-400">
-              Let&apos;s learn something brilliant ✨
+              Ask anything from your syllabus and make it brilliant ✨
             </span>
           </p>
         </div>

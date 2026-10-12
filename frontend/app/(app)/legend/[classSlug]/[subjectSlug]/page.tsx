@@ -1,7 +1,7 @@
 export const dynamic = "force-dynamic";
 import Link from "next/link";
 import { getSubjectLegend } from "@/lib/legend";
-import { ChevronRight, Lightbulb, BookOpen, FileText, Zap, AlertCircle, BookMarked, Target, Calculator } from "lucide-react";
+import { ChevronRight, Lightbulb, BookOpen, FileText, Zap, AlertCircle, BookMarked, Target, Calculator, Construction } from "lucide-react";
 import { EmptyState } from "@/components/content/empty-state";
 import { MathMarkdown } from "@/components/content/math-markdown";
 
@@ -70,8 +70,9 @@ export default async function LegendSubjectPage({
           <span className="font-medium text-foreground">{subjectLabel}</span>
         </nav>
         <EmptyState
-          title="No legend content for this subject"
-          description={`Key facts, formulas, and clarifications for ${subjectLabel} are currently being indexed.`}
+          icon={<Construction className="h-6 w-6" />}
+          title="Legend content under progress — will be added in a future update"
+          description={`Key facts, formulas, and clarifications for ${subjectLabel} are under progress and will be added in a future update.`}
           action={{
             label: `View ${subjectLabel} Theory Notes`,
             href: `/${classSlug}/${subjectSlug}`,

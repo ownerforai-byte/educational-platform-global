@@ -52,8 +52,9 @@ export default async function TheoremsSubjectPage({
 
         {entries.length === 0 ? (
           <EmptyState
-            title="No theorem content yet"
-            description={`Theorem and proof notes for ${subjectSlug} are currently being indexed.`}
+            icon={<Construction className="h-6 w-6" />}
+            title="Theorem & proof notes under progress — will be added in a future update"
+            description={`Theorem and proof notes for ${subjectSlug} are under progress and will be added in a future update.`}
             action={{ label: `View ${subjectSlug} Theory Notes`, href: `/${classSlug}/${subjectSlug}` }}
           />
         ) : (
@@ -178,7 +179,7 @@ export default async function TheoremsSubjectPage({
                             </span>
                           ) : (
                             <span className="shrink-0 text-[10px] px-1.5 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
-                              coming soon
+                              under progress
                             </span>
                           )}
                         </div>

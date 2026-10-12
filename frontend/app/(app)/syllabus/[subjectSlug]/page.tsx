@@ -114,6 +114,16 @@ function UnitBlock({
         <span className={`flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-gradient-to-br ${colorClass} text-[11px] font-bold text-white shadow-sm`}>
           {unitNo}
         </span>
+        {/* The addition date belongs to the unit itself — shown in front of
+            the unit it marks, never as a stamp over the whole topic block. */}
+        {unit.introducedIn !== undefined && (
+          <span
+            className="inline-flex shrink-0 items-center rounded-full border border-sky-500/30 bg-sky-500/10 px-2 py-0.5 text-[10px] font-semibold text-sky-700 dark:text-sky-300"
+            title="Bikram Sambat year this unit first appeared in the official NEB curriculum"
+          >
+            Added {unit.introducedIn} BS
+          </span>
+        )}
         <h2 className="min-w-0 flex-1 text-[15px] font-semibold leading-snug text-foreground">
           {unit.title}
         </h2>
@@ -150,11 +160,6 @@ function UnitBlock({
           Unit notes
           <ArrowRight className="h-3 w-3" />
         </Link>
-        {unit.introducedIn !== undefined && (
-          <span className="ml-auto text-[10px] font-medium uppercase tracking-wide text-sky-700 dark:text-sky-300">
-            Added {unit.introducedIn} BS
-          </span>
-        )}
       </div>
     </section>
   );

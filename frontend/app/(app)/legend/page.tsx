@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { getLegendIndex } from "@/lib/legend";
-import { Lightbulb, BookOpen, FileText, TrendingUp } from "lucide-react";
+import { Lightbulb, BookOpen, FileText, TrendingUp, Construction } from "lucide-react";
 import { EmptyState } from "@/components/content/empty-state";
 
 export const metadata = {
@@ -57,8 +57,9 @@ export default async function LegendPage() {
 
       {subjects.length === 0 ? (
         <EmptyState
-          title="Legend content coming soon"
-          description="Key facts and confusion clarifications will appear here as concept content is built across all subjects."
+          icon={<Construction className="h-6 w-6" />}
+          title="Legend content under progress — will be added in a future update"
+          description="Key facts and confusion clarifications are under progress and will be added in a future update as concept content is built across all subjects."
         />
       ) : (
         <div className="space-y-10">

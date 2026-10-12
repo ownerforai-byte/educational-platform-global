@@ -137,8 +137,8 @@ const PROMISES = [
   },
   {
     icon: ListChecks,
-    title: "One credit, one reply",
-    text: "Daily credits refill at midnight; PRO students are never capped.",
+    title: "Free — no AI spark spent",
+    text: "Veer chat is free for every student. The AI spark counter at the top of the chat is informational only.",
   },
   {
     icon: History,

@@ -2335,3 +2335,28 @@ export function totalExperiments(subject: SubjectPracticalSyllabus): number {
   return subject.units.reduce((sum, u) => sum + u.experiments.length, 0);
 }
 
+/**
+ * Stable URL slug for one experiment (derived from its title — titles are
+ * unique across the whole dataset, verified by the route-coverage test).
+ * Every experiment has its own routed practical-file page.
+ */
+export function experimentSlug(experiment: Pick<PracticalExperiment, "title">): string {
+  return experiment.title
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+}
+
+/** Find one experiment (and its unit) by slug inside a subject. */
+export function findExperimentBySlug(
+  subject: SubjectPracticalSyllabus,
+  slug: string,
+): { unit: PracticalUnit; experiment: PracticalExperiment } | null {
+  for (const unit of subject.units) {
+    for (const experiment of unit.experiments) {
+      if (experimentSlug(experiment) === slug) return { unit, experiment };
+    }
+  }
+  return null;
+}
+

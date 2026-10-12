@@ -64,15 +64,19 @@ export function ChaptersIndexView({
                     {unitIdx + 1}
                   </span>
                   <div>
-                    <h3 className="font-semibold">{unit.title}</h3>
+                    {/* The addition date marks this one unit — shown in front
+                        of its title, not as a caption for the whole block. */}
+                    <div className="flex flex-wrap items-center gap-2">
+                      {typeof unit.introducedIn === "number" && (
+                        <span className="rounded-full border border-sky-500/30 bg-sky-500/10 px-2 py-0.5 text-[11px] font-medium text-sky-700 dark:text-sky-300">
+                          Added in {unit.introducedIn} BS
+                        </span>
+                      )}
+                      <h3 className="font-semibold">{unit.title}</h3>
+                    </div>
                     {typeof unit.hours === "number" && (
                       <p className="text-xs text-muted-foreground">
                         {unit.hours} teaching hours
-                      </p>
-                    )}
-                    {typeof unit.introducedIn === "number" && (
-                      <p className="text-xs font-medium text-sky-700 dark:text-sky-300">
-                        Added in {unit.introducedIn} BS
                       </p>
                     )}
                   </div>

@@ -786,10 +786,10 @@ export function ChapterAnimation(props: ChapterAnimationProps) {
       <div className="rounded-lg overflow-hidden border border-border bg-slate-950" style={{ minHeight: 120 }}>
         <div className="h-full min-h-[120px] flex flex-col items-center justify-center gap-2 p-6 text-center">
           <span className="text-[10px] font-bold uppercase tracking-wider px-2 py-0.5 rounded-full bg-amber-500/10 text-amber-400 border border-amber-500/20">
-            3D Coming Soon
+            3D — Under Progress
           </span>
           <p className="text-xs text-slate-400 max-w-sm">
-            A dedicated 3D visual for this topic is being built. The SVG schematic below represents it meanwhile.
+            A dedicated 3D visual for this topic is under progress and will be added in a future update. The SVG schematic below represents it meanwhile.
           </p>
         </div>
       </div>

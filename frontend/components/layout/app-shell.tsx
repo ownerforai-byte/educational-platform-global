@@ -3,7 +3,7 @@
 import { useEffect, useState, Suspense } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
-import { PanelLeftClose, PanelLeftOpen, Atom, Pin, PinOff, ChevronDown, Search } from "lucide-react";
+import { PanelLeftClose, PanelLeftOpen, Atom, Pin, PinOff, ChevronDown, Search, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "./mobile-nav";
 import { MobileQuickNav } from "./mobile-quick-nav";
@@ -142,7 +142,14 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
           navVisible ? "translate-y-0 shadow-md" : "-translate-y-full"
         }`}
       >
-        <div className="flex h-12 md:h-14 items-center gap-2 px-4 md:px-6">
+        {/* RESPONSIVE IN BOTH AXES (owner request 2026-10-12: "while adjusting
+            make it adjust in vertical increase or decrease also not only
+            horizontal"). The row is min-h (never fixed h) and wraps: when
+            horizontal room runs out the right cluster drops to its own row and
+            the bar grows taller; on roomier screens the row un-wraps and the
+            bar shrinks back — so adjusting the window adjusts the header
+            vertically as well as horizontally. */}
+        <div className="flex min-h-12 md:min-h-14 flex-wrap items-center gap-x-2 gap-y-1.5 px-4 md:px-6 py-1.5">
           {/* Left: mobile hamburger + desktop collapse toggle + logo */}
           <div className="flex items-center gap-2 min-w-0">
             <MobileNav />
@@ -205,6 +212,18 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             </Button>
 
             <ThemeToggle />
+
+            {/* Notifications — bell opens the standing notice board (/notice).
+                Kept visible on every breakpoint so mobile users can always
+                reach platform notices. */}
+            <Link
+              href="/notice"
+              className="inline-flex items-center justify-center h-8 w-8 rounded-xl border border-border/80 bg-card hover:bg-muted/60 text-muted-foreground hover:text-foreground transition-all shadow-sm shrink-0"
+              title="Notifications & platform notices"
+              aria-label="Notifications and platform notices"
+            >
+              <Bell className="h-4 w-4" />
+            </Link>
 
             <Link
               href="/periodic-table"

@@ -40,7 +40,7 @@ export const MotionGraphicsRelativity: React.FC = () => {
             </li>
           </ul>
           <p className="text-sm text-muted-foreground mt-6">
-            3D visualization coming soon...
+            3D visualization under progress — will be added in a future update.
           </p>
         </div>
       </CardContent>

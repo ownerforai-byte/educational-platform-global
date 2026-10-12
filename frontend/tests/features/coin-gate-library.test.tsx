@@ -53,7 +53,7 @@ const STUDENT_USER = {
 };
 
 /** /notes is not public, not exempt and matches no special route → theory. */
-const LOCK_COPY = /part of the coin-gated library/i;
+const LOCK_COPY = /part of the spark library/i;
 
 function setSession(user: Record<string, unknown> | null): void {
   state.credit = {
@@ -108,7 +108,7 @@ describe("RouteCreditGate — whole-library coin gate", () => {
 
     expect(await screen.findByText(LOCK_COPY)).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: /unlock — \d+ coins/i }),
+      screen.getByRole("button", { name: /unlock — \d+ sparks?/i }),
     ).toBeInTheDocument();
   });
 
@@ -120,7 +120,7 @@ describe("RouteCreditGate — whole-library coin gate", () => {
 
     expect(await screen.findByText(LOCK_COPY)).toBeInTheDocument();
     expect(
-      screen.getByRole("button", { name: /unlock — \d+ coins/i }),
+      screen.getByRole("button", { name: /unlock — \d+ sparks?/i }),
     ).toBeInTheDocument();
   });
 
@@ -143,9 +143,9 @@ describe("CoinGateDot — the only ON/OFF indicator", () => {
 
     render(<CoinGateDot />);
 
-    const dot = await screen.findByTitle(/Coin gate OFF/);
+    const dot = await screen.findByTitle(/Spark gate OFF/);
     expect(dot).toBeInTheDocument();
-    expect(dot.getAttribute("aria-label")).toMatch(/Coin gate OFF/);
+    expect(dot.getAttribute("aria-label")).toMatch(/Spark gate OFF/);
     expect(dot.className).toContain("emerald");
   });
 
@@ -154,7 +154,7 @@ describe("CoinGateDot — the only ON/OFF indicator", () => {
 
     render(<CoinGateDot />);
 
-    const dot = await screen.findByTitle(/Coin gate ON/);
+    const dot = await screen.findByTitle(/Spark gate ON/);
     expect(dot).toBeInTheDocument();
     expect(dot.className).not.toContain("emerald");
   });

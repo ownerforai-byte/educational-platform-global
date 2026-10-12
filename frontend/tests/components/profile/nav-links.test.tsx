@@ -140,7 +140,7 @@ describe("UserNav", () => {
 
     const profileLink = screen.getByRole("link", { name: /my profile/i });
     expect(profileLink).toHaveAttribute("href", "/profile");
-    expect(screen.getByRole("link", { name: /credit wallet/i })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /spark wallet/i })).toHaveAttribute(
       "href",
       "/credits"
     );

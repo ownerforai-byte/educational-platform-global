@@ -219,13 +219,14 @@ describe("ProfilePage", () => {
     expect(screen.getByRole("button", { name: /class 12 science/i })).toBeInTheDocument();
   });
 
-  it("renders Coin Gate on/off switch and button for owner user and allows toggling", async () => {
+  it("renders Spark Gate on/off switch and button for owner user and allows toggling", async () => {
     sessionState.user = ownerUser;
     render(<ProfilePage />);
 
-    // Owner sees Coin Gate Control
-    expect(await screen.findByText("Owner Coin Gate Control")).toBeInTheDocument();
-    expect(screen.getByLabelText("Toggle Coin Gate")).toBeInTheDocument();
+    // Owner sees Spark Gate Control ("spark" is the only currency word —
+    // owner decision 2026-10-12)
+    expect(await screen.findByText("Owner Spark Gate Control")).toBeInTheDocument();
+    expect(screen.getByLabelText("Toggle Spark Gate")).toBeInTheDocument();
     const toggleBtn = screen.getByRole("button", { name: /turn gate off/i });
     expect(toggleBtn).toBeInTheDocument();
 
@@ -238,13 +239,13 @@ describe("ProfilePage", () => {
     });
   });
 
-  it("does not render Coin Gate controller for non-owner student", async () => {
+  it("does not render Spark Gate controller for non-owner student", async () => {
     sessionState.user = studentUser;
     render(<ProfilePage />);
 
-    // Student should not see owner-exclusive coin gate
-    expect(screen.queryByText("Owner Coin Gate Control")).not.toBeInTheDocument();
-    expect(screen.queryByLabelText("Toggle Coin Gate")).not.toBeInTheDocument();
+    // Student should not see owner-exclusive spark gate
+    expect(screen.queryByText("Owner Spark Gate Control")).not.toBeInTheDocument();
+    expect(screen.queryByLabelText("Toggle Spark Gate")).not.toBeInTheDocument();
     // But student DOES see level details
     expect(screen.getByText("Scholar Rank")).toBeInTheDocument();
     expect(screen.getByText("Total Scholar XP")).toBeInTheDocument();

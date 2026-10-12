@@ -22,11 +22,14 @@ import {
  */
 const read = (p: string) => readFileSync(path.resolve(p), "utf8");
 
-describe("Diagram Hub coin position — 5-coin tier, owner-only unlock", () => {
-  it("resolves /mind-studio to the imagehub category at 5 coins", () => {
+describe("Diagram Hub coin position — spark-priced tier, owner-only unlock", () => {
+  it("resolves /mind-studio to the imagehub category at the free tier", () => {
     expect(categoryForPath("/mind-studio")).toBe("imagehub");
     expect(categoryForPath("/mind-studio/")).toBe("imagehub");
-    expect(TOKEN_MATRIX.imagehub.cost).toBe(5);
+    // Spark decision (owner, 2026-10-12: "charge for actual note or content
+    // -- remove for others"): the Diagram Hub is not study content, so it
+    // costs 0 content sparks (it was 5 under the old coin matrix).
+    expect(TOKEN_MATRIX.imagehub.cost).toBe(0);
   });
 
   it("is neither public nor exempt — the coin gate must render the lock", () => {
@@ -43,7 +46,7 @@ describe("Diagram Hub coin position — 5-coin tier, owner-only unlock", () => {
 
   it("the server unlock route treats imagehub as owner-only and owner-free", () => {
     const src = read("../backend/src/api/user.ts");
-    expect(src).toContain("imagehub: 5");
+    expect(src).toContain("imagehub: 0");
     expect(src).toMatch(/z\.enum\(\[[^\]]*"imagehub"[^\]]*\]\)/);
     expect(src).toContain('category === "imagehub"');
     expect(src).toContain("The Diagram Hub is reserved for owner accounts.");
@@ -59,7 +62,7 @@ describe("Diagram Hub route layout — gate now owns the lock", () => {
     const layout = read("app/(app)/mind-studio/layout.tsx");
     expect(layout).toContain('"use client"');
     expect(layout).toContain('"/login?next=/mind-studio"');
-    // The 5-coin lock (RouteCreditGate) is the boundary for non-owners now —
+    // The RouteCreditGate lock is the boundary for non-owners now —
     // the layout must not redirect them home.
     expect(layout).not.toContain('"/home"');
     expect(layout).not.toContain("isOwnerUser");

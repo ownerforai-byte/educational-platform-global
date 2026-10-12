@@ -15,8 +15,8 @@ export function BiologyLab() {
         </CardHeader>
         <CardContent>
           <p className="text-muted-foreground">
-            Interactive DNA structure visualization and genetic inheritance patterns coming soon.
-            Explore the double helix, base pairing, and Mendelian genetics.
+            Interactive DNA structure visualization and genetic inheritance patterns are under progress — will be added in a future update.
+            Meanwhile, explore the double helix, base pairing, and Mendelian genetics.
           </p>
         </CardContent>
       </Card>
@@ -30,8 +30,8 @@ export function BiologyLab() {
         </CardHeader>
         <CardContent>
           <p className="text-muted-foreground">
-            Interactive 3D cell model with organelle exploration coming soon.
-            Learn about prokaryotic and eukaryotic cells, mitosis, and meiosis.
+            Interactive 3D cell model with organelle exploration is under progress — will be added in a future update.
+            Meanwhile, learn about prokaryotic and eukaryotic cells, mitosis, and meiosis.
           </p>
         </CardContent>
       </Card>
@@ -45,8 +45,8 @@ export function BiologyLab() {
         </CardHeader>
         <CardContent>
           <p className="text-muted-foreground">
-            Plant anatomy, photosynthesis, and floral diversity visualizations coming soon.
-            Explore plant cells, tissues, and the complete life cycle.
+            Plant anatomy, photosynthesis, and floral diversity visualizations are under progress — will be added in a future update.
+            Meanwhile, explore plant cells, tissues, and the complete life cycle.
           </p>
         </CardContent>
       </Card>
@@ -60,8 +60,8 @@ export function BiologyLab() {
         </CardHeader>
         <CardContent>
           <p className="text-muted-foreground">
-            Interactive human body systems visualization coming soon.
-            Explore circulatory, respiratory, digestive, and nervous systems.
+            Interactive human body systems visualization is under progress — will be added in a future update.
+            Meanwhile, explore circulatory, respiratory, digestive, and nervous systems.
           </p>
         </CardContent>
       </Card>

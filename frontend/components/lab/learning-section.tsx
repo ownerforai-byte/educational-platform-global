@@ -37,12 +37,12 @@ export function LabLearningSection({ labId }: { labId: string }) {
     return (
       <div className="mt-5 rounded-2xl border border-dashed border-border bg-card/50 p-6 text-center">
         <Lightbulb className="mx-auto h-6 w-6 text-muted-foreground/50" />
-        <h3 className="mt-2 font-semibold text-foreground">Learning pack in progress</h3>
+        <h3 className="mt-2 font-semibold text-foreground">Under progress — will be added in a future update</h3>
         <p className="mt-1 text-sm text-muted-foreground">
-          Non-general proof, theory, confusion clarity and practice questions for this lab are being prepared.
+          The learning pack for this lab — non-general proof, theory, confusion clarity and practice questions — is under progress and will be added in a future update.
         </p>
         <div className="mt-3 flex justify-center">
-          <DateBadge label="Learning pack" date="in progress" tone="amber" />
+          <DateBadge label="Learning pack" date="under progress" tone="amber" />
         </div>
       </div>
     );

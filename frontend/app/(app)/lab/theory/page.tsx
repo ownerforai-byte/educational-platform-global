@@ -108,7 +108,7 @@ export default function LabTheoryPage() {
             <p className="text-sm">
               {query.trim()
                 ? `No topics match “${query}”.`
-                : "No theory topics for this subject yet — check back soon."}
+                : "Theory topics for this subject are under progress — will be added in a future update."}
             </p>
           </div>
         )}

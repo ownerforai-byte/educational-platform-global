@@ -12,6 +12,14 @@ registerVeerArtifact();
 type InteractiveMarkdownProps = {
   content: string;
   className?: string;
+  /**
+   * Per-block one-click copy (owner 2026-10-12: "make the reply of ai also in
+   * block, like i can copy a particular block with one click"). When on, every
+   * top-level block of the rendered reply — paragraph, list, table, code,
+   * callout — carries its own Copy button. Enabled on the AI reply surfaces
+   * only; figure renderers keep the plain read-only output.
+   */
+  blockCopy?: boolean;
 };
 
 type PartTip = { text: string; x: number; y: number } | null;
@@ -62,6 +70,75 @@ function extractCopySources(content: string): CopySource[] {
     body.push(line);
   }
   return sources;
+}
+
+/**
+ * Clipboard payload for one top-level block: the block's visible text with
+ * real line breaks, formulas restored to their `$…$` LaTeX (from KaTeX's own
+ * annotation node, so a copied formula stays a formula), and tables flattened
+ * to markdown pipe rows. Walked by tag so list items and rows never mash
+ * together the way a raw `textContent` concat would.
+ */
+function blockToCopyText(el: Element): string {
+  const clone = el.cloneNode(true) as HTMLElement;
+
+  // Math: KaTeX emits both MathML (carrying the LaTeX source in <annotation>)
+  // and the styled HTML spans — swap each formula for its source before any
+  // text is taken, or the clipboard gets the doubled, unformatted mess.
+  clone.querySelectorAll(".katex").forEach((katex) => {
+    const tex =
+      katex.querySelector("annotation")?.textContent?.trim() ||
+      katex.textContent?.trim() ||
+      "";
+    const display = katex.parentElement?.classList.contains("katex-display");
+    const span = document.createElement("span");
+    span.textContent = display ? `$$${tex}$$` : `$${tex}$`;
+    katex.replaceWith(span);
+  });
+
+  // Tables → markdown pipe rows (readable wherever they land).
+  clone.querySelectorAll("table").forEach((table) => {
+    const rows = Array.from(table.querySelectorAll("tr")).map((tr) =>
+      `| ${Array.from(tr.querySelectorAll("th, td"))
+        .map((cell) => (cell.textContent ?? "").replace(/\s+/g, " ").trim())
+        .join(" | ")} |`,
+    );
+    const span = document.createElement("span");
+    span.textContent = `\n${rows.join("\n")}\n`;
+    table.replaceWith(span);
+  });
+
+  const out: string[] = [];
+  const BLOCK_LEVEL = /^(P|DIV|LI|H[1-6]|UL|OL|TR|PRE|BLOCKQUOTE|FIGCAPTION|HR)$/;
+  const walk = (node: Node) => {
+    if (node.nodeType === Node.TEXT_NODE) {
+      const text = node.textContent ?? "";
+      // Whitespace-only text between block children (the newlines and indents
+      // in the rendered HTML) must not double the line breaks already emitted
+      // by the block boundaries themselves.
+      if (/^\s*$/.test(text) && (out.length === 0 || out[out.length - 1].endsWith("\n"))) {
+        return;
+      }
+      out.push(text);
+      return;
+    }
+    if (node.nodeType !== Node.ELEMENT_NODE) return;
+    const element = node as HTMLElement;
+    if (element.tagName === "BR") {
+      out.push("\n");
+      return;
+    }
+    // A <p> inside an <li> defers to the item's own line break — loose lists
+    // wrap each item in <p>, and counting both would blank-line every item.
+    const deferToLi =
+      element.tagName === "P" && element.parentElement?.tagName === "LI";
+    const isBlock = !deferToLi && BLOCK_LEVEL.test(element.tagName);
+    if (isBlock && out.length > 0 && !out[out.length - 1].endsWith("\n")) out.push("\n");
+    element.childNodes.forEach(walk);
+    if (isBlock) out.push("\n");
+  };
+  walk(clone);
+  return out.join("").replace(/\n{3,}/g, "\n\n").trim();
 }
 
 /**
@@ -117,7 +194,11 @@ async function copyTextToClipboard(text: string): Promise<boolean> {
  *
  * Drop-in for MathMarkdown: same props, same `.prose` typography.
  */
-export function InteractiveMarkdown({ content, className }: InteractiveMarkdownProps) {
+export function InteractiveMarkdown({
+  content,
+  className,
+  blockCopy = false,
+}: InteractiveMarkdownProps) {
   const rootRef = useRef<HTMLDivElement>(null);
   const [tip, setTip] = useState<PartTip>(null);
   const html = useMemo(() => renderNoteHtml(content), [content]);
@@ -225,8 +306,55 @@ export function InteractiveMarkdown({ content, className }: InteractiveMarkdownP
       });
     });
 
+    // PER-BLOCK COPY (owner 2026-10-12): every top-level block of an AI reply
+    // gets its own hover-revealed button, so one paragraph, formula, table or
+    // list copies in a single click without touching its neighbours. The
+    // :::copy boxes above keep their own markdown-source button and are
+    // skipped here so a chunk never carries two competing controls; figure
+    // blocks are skipped too — an SVG has no useful text to lift.
+    if (blockCopy) {
+      [...root.children].forEach((child) => {
+        const block = child as HTMLElement;
+        if (block.nodeType !== Node.ELEMENT_NODE) return;
+        if (block.classList.contains("edu-callout--copy")) return;
+        if (block.classList.contains("edu-visual")) return;
+        const source = blockToCopyText(block);
+        if (!source) return;
+
+        block.classList.add("edu-block-copyable");
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "edu-block-copy-btn";
+        button.textContent = "Copy";
+        button.setAttribute("aria-label", "Copy this block");
+        let resetTimer: ReturnType<typeof setTimeout> | undefined;
+
+        const onClick = () => {
+          void (async () => {
+            const ok = await copyTextToClipboard(source);
+            button.textContent = ok ? "Copied ✓" : "Press Ctrl+C";
+            button.classList.toggle("edu-block-copy-btn--done", ok);
+            if (resetTimer) clearTimeout(resetTimer);
+            resetTimer = setTimeout(() => {
+              button.textContent = "Copy";
+              button.classList.remove("edu-block-copy-btn--done");
+            }, 1600);
+          })();
+        };
+
+        button.addEventListener("click", onClick);
+        block.appendChild(button);
+        cleanups.push(() => {
+          if (resetTimer) clearTimeout(resetTimer);
+          button.removeEventListener("click", onClick);
+          button.remove();
+          block.classList.remove("edu-block-copyable");
+        });
+      });
+    }
+
     return () => cleanups.forEach((off) => off());
-  }, [html, copySources]);
+  }, [html, copySources, blockCopy]);
 
   return (
     <div className="relative">

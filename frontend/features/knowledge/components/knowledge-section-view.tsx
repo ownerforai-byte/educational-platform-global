@@ -17,6 +17,7 @@ import {
   Sparkles,
   RotateCcw,
 } from "lucide-react";
+import { UnderProgressNotice } from "@/components/content/under-progress";
 import type { KnowledgeSection, KnowledgePracticeQuestion } from "../data";
 
 const SECTION_EMOJI: Record<string, string> = {
@@ -154,9 +155,10 @@ export function KnowledgeSectionView({
             ))}
           </div>
         ) : (
-          <Card className="p-6 text-center text-sm text-muted-foreground">
-            Notes are being indexed for this section.
-          </Card>
+          <UnderProgressNotice
+            icon={<BookOpen className="h-4 w-4" />}
+            title="Study notes under progress — will be added in a future update"
+          />
         )}
       </div>
 
@@ -269,9 +271,10 @@ export function KnowledgeSectionView({
             })}
           </div>
         ) : (
-          <Card className="p-6 text-center text-sm text-muted-foreground">
-            Practice question sets are being added for this topic.
-          </Card>
+          <UnderProgressNotice
+            icon={<HelpCircle className="h-4 w-4" />}
+            title="Practice questions under progress — will be added in a future update"
+          />
         )}
       </div>
     </div>

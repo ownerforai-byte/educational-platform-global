@@ -110,6 +110,9 @@ function getBranchStyle(branchIndex: number) {
 type LayoutNode = {
   id: string;
   label: string;
+  /** Word-wrapped label lines — the FULL label always renders on the canvas,
+   *  never truncated, so every concept stays readable at a glance. */
+  lines: string[];
   depth: number;
   branchIndex: number;
   parentId: string | null;
@@ -121,12 +124,39 @@ type LayoutNode = {
   collapsed: boolean;
 };
 
-function estimateNodeWidth(label: string): number {
-  return Math.max(130, Math.min(240, label.length * 8.5 + 34));
+const LINE_HEIGHT = 15;
+const ROOT_LINE_HEIGHT = 19;
+
+/**
+ * Wrap a label into readable lines (max 26 chars each). Every word is kept —
+ * a word longer than the limit simply lives on its own line.
+ */
+function wrapLabel(label: string, maxChars = 26): string[] {
+  const words = label.split(/\s+/).filter(Boolean);
+  if (words.length === 0) return [label];
+  const lines: string[] = [];
+  let cur = "";
+  for (const word of words) {
+    const candidate = cur ? `${cur} ${word}` : word;
+    if (cur && candidate.length > maxChars) {
+      lines.push(cur);
+      cur = word;
+    } else {
+      cur = candidate;
+    }
+  }
+  if (cur) lines.push(cur);
+  return lines;
 }
 
-function estimateNodeHeight(depth: number): number {
-  return depth === 0 ? 52 : 38;
+function estimateNodeWidth(lines: string[]): number {
+  const longest = lines.reduce((m, l) => Math.max(m, l.length), 0);
+  return Math.max(140, Math.min(320, longest * 7.4 + 36));
+}
+
+function estimateNodeHeight(lines: string[], depth: number): number {
+  const lineH = depth === 0 ? ROOT_LINE_HEIGHT : LINE_HEIGHT;
+  return lines.length * lineH + (depth === 0 ? 26 : 18);
 }
 
 function buildLayoutTree(
@@ -135,12 +165,14 @@ function buildLayoutTree(
   parentId: string | null,
   assignedBranchIndex: number
 ): LayoutNode {
-  const w = estimateNodeWidth(node.label);
-  const h = estimateNodeHeight(depth);
+  const lines = wrapLabel(node.label);
+  const w = estimateNodeWidth(lines);
+  const h = estimateNodeHeight(lines, depth);
 
   return {
     id: node.id,
     label: node.label,
+    lines,
     depth,
     branchIndex: assignedBranchIndex,
     parentId,
@@ -255,37 +287,85 @@ export function MindmapInterface({
     [],
   );
 
+  // Live mirrors of the transform for the non-passive wheel listener.
+  const scaleRef = useRef(scale);
+  const offsetRef = useRef(offset);
+  useEffect(() => {
+    scaleRef.current = scale;
+    offsetRef.current = offset;
+  }, [scale, offset]);
+
   const handleZoomIn = useCallback(() => setScale((s) => Math.min(s * 1.25, 4)), []);
   const handleZoomOut = useCallback(() => setScale((s) => Math.max(s / 1.25, 0.2)), []);
+
+  /** True fit-to-screen: shrink/centre the whole visible tree in the canvas. */
   const handleFit = useCallback(() => {
-    setScale(1);
-    setOffset({ x: 0, y: 0 });
+    const el = containerRef.current;
+    if (!treeRoot || !el) {
+      setScale(1);
+      setOffset({ x: 0, y: 0 });
+      return;
+    }
+    const arr: LayoutNode[] = [];
+    flattenTree(treeRoot, arr);
+    if (arr.length === 0) {
+      setScale(1);
+      setOffset({ x: 0, y: 0 });
+      return;
+    }
+    const minX = Math.min(...arr.map((n) => n.x));
+    const minY = Math.min(...arr.map((n) => n.y));
+    const maxX = Math.max(...arr.map((n) => n.x + n.w));
+    const maxY = Math.max(...arr.map((n) => n.y + n.h));
+    const bw = Math.max(1, maxX - minX);
+    const bh = Math.max(1, maxY - minY);
+    const cw = el.clientWidth || 920;
+    const ch = el.clientHeight || 620;
+    const next = Math.max(0.2, Math.min(2.5, Math.min(cw / (bw + 80), ch / (bh + 80))));
+    setScale(next);
+    setOffset({
+      x: (cw - bw * next) / 2 - minX * next,
+      y: (ch - bh * next) / 2 - minY * next,
+    });
+  }, [treeRoot]);
+
+  // Pointer pan — works for mouse, touch and pen.
+  const handlePointerDown = useCallback((e: React.PointerEvent<HTMLDivElement>) => {
+    if (e.pointerType === "mouse" && e.button !== 0) return;
+    setIsPanning(true);
+    setPanStart({ x: e.clientX - offsetRef.current.x, y: e.clientY - offsetRef.current.y });
   }, []);
 
-  const handleMouseDown = useCallback(
-    (e: React.MouseEvent) => {
-      if (e.button === 0) {
-        setIsPanning(true);
-        setPanStart({ x: e.clientX - offset.x, y: e.clientY - offset.y });
-      }
-    },
-    [offset]
-  );
-
-  const handleMouseMove = useCallback(
-    (e: React.MouseEvent) => {
+  const handlePointerMove = useCallback(
+    (e: React.PointerEvent<HTMLDivElement>) => {
       if (!isPanning) return;
       setOffset({ x: e.clientX - panStart.x, y: e.clientY - panStart.y });
     },
     [isPanning, panStart]
   );
 
-  const handleMouseUp = useCallback(() => setIsPanning(false), []);
+  const handlePointerUp = useCallback(() => setIsPanning(false), []);
 
-  const handleWheel = useCallback((e: React.WheelEvent) => {
-    e.preventDefault();
-    const delta = e.deltaY > 0 ? 0.92 : 1.08;
-    setScale((s) => Math.max(0.2, Math.min(4, s * delta)));
+  // Wheel zoom around the cursor. Registered non-passively so the page does
+  // not scroll underneath the canvas (React's synthetic onWheel is passive
+  // and cannot preventDefault).
+  useEffect(() => {
+    const el = containerRef.current;
+    if (!el) return;
+    const onWheel = (e: WheelEvent) => {
+      e.preventDefault();
+      const s = scaleRef.current;
+      const o = offsetRef.current;
+      const next = Math.max(0.2, Math.min(4, s * (e.deltaY > 0 ? 0.92 : 1.08)));
+      if (next === s) return;
+      const rect = el.getBoundingClientRect();
+      const cx = e.clientX - rect.left;
+      const cy = e.clientY - rect.top;
+      setOffset({ x: cx - ((cx - o.x) * next) / s, y: cy - ((cy - o.y) * next) / s });
+      setScale(next);
+    };
+    el.addEventListener("wheel", onWheel, { passive: false });
+    return () => el.removeEventListener("wheel", onWheel);
   }, []);
 
   const toggleNode = useCallback((id: string) => {
@@ -332,7 +412,7 @@ export function MindmapInterface({
   }, [title]);
 
   const nodeCount = flatNodes.length;
-  const rootDepth = flatNodes[0]?.depth ?? 0;
+  const maxDepth = flatNodes.reduce((m, n) => Math.max(m, n.depth), 0);
   const maxH = Math.max(640, ...flatNodes.map((n) => n.y + n.h));
 
   // Count active root branches
@@ -359,8 +439,13 @@ export function MindmapInterface({
               {title}
             </h3>
             <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
-              {activeBranchCount} Isolated Branches
+              {activeBranchCount} Branches
             </span>
+            {isolatedBranch !== null && (treeRoot?.children ?? [])[isolatedBranch] && (
+              <span className="text-[10px] font-extrabold uppercase px-2 py-0.5 rounded-full bg-amber-500/20 text-amber-300 border border-amber-500/30">
+                Isolated: {(treeRoot?.children ?? [])[isolatedBranch].label}
+              </span>
+            )}
           </div>
           <p className="text-xs text-slate-400 mt-0.5">{SOURCE_LABEL[source]}</p>
         </div>
@@ -439,7 +524,7 @@ export function MindmapInterface({
             <Download className="h-3.5 w-3.5" />
           </button>
           <span className="text-[11px] font-mono text-slate-400 hidden md:inline ml-1">
-            {nodeCount} concepts · depth {rootDepth}
+            {nodeCount} concepts · depth {maxDepth}
           </span>
         </div>
       </div>
@@ -476,13 +561,12 @@ export function MindmapInterface({
       {/* ── 3. SVG BLUEPRINT CANVAS (Non-White Background) ───────────────── */}
       <div
         ref={containerRef}
-        className="relative overflow-hidden bg-[#070b16] select-none"
+        className="relative overflow-hidden bg-[#070b16] select-none touch-none"
         style={{ height: Math.max(620, maxH + 90) }}
-        onMouseDown={handleMouseDown}
-        onMouseMove={handleMouseMove}
-        onMouseUp={handleMouseUp}
-        onMouseLeave={handleMouseUp}
-        onWheel={handleWheel}
+        onPointerDown={handlePointerDown}
+        onPointerMove={handlePointerMove}
+        onPointerUp={handlePointerUp}
+        onPointerLeave={handlePointerUp}
       >
         {/* Subtle engineering grid dot pattern */}
         <div
@@ -572,8 +656,6 @@ export function MindmapInterface({
               const hasChildren = node.children.length > 0;
               const isCollapsed = node.collapsed;
               const isolated = isolatedBranch !== null && node.branchIndex !== isolatedBranch && !isRoot;
-              const truncatedLabel =
-                node.label.length > 24 ? `${node.label.slice(0, 22)}…` : node.label;
 
               return (
                 <g
@@ -581,12 +663,23 @@ export function MindmapInterface({
                   transform={`translate(${node.x}, ${node.y})`}
                   className="cursor-pointer select-none transition-transform duration-200 hover:scale-[1.02]"
                   style={{ opacity: isMatch || !searchQuery ? (isolated ? 0.18 : 1) : 0.25 }}
+                  tabIndex={0}
+                  role={hasChildren ? "button" : "img"}
+                  aria-label={node.label}
+                  aria-expanded={hasChildren ? !isCollapsed : undefined}
                   onClick={(e) => {
                     e.stopPropagation();
-                    if (node.depth === 1) {
-                      setIsolatedBranch((prev) => (prev === node.branchIndex ? null : node.branchIndex));
-                    }
+                    // One action per gesture: clicking a node folds/unfolds its
+                    // subtree. Branch isolation lives on the legend chips so a
+                    // click can never do two things at once.
                     if (hasChildren) toggleNode(node.id);
+                  }}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      e.stopPropagation();
+                      if (hasChildren) toggleNode(node.id);
+                    }
                   }}
                 >
                   {/* Drop Shadow */}
@@ -636,10 +729,10 @@ export function MindmapInterface({
                     />
                   )}
 
-                  {/* Node Label Text */}
+                  {/* Node label — the FULL label wraps across as many lines as
+                      it needs; no concept text is ever truncated away. */}
                   <text
                     x={isRoot ? node.w / 2 : node.w / 2 + 3}
-                    y={node.h / 2}
                     textAnchor="middle"
                     dominantBaseline="middle"
                     fill={isRoot ? "#ffffff" : isMatch ? "#fbbf24" : branchStyle.text}
@@ -647,7 +740,20 @@ export function MindmapInterface({
                     fontWeight={isRoot ? 800 : 700}
                     className="pointer-events-none select-none font-sans"
                   >
-                    {truncatedLabel}
+                    {node.lines.map((line, i) => {
+                      const lineH = isRoot ? ROOT_LINE_HEIGHT : LINE_HEIGHT;
+                      const startY =
+                        node.h / 2 - ((node.lines.length - 1) * lineH) / 2;
+                      return (
+                        <tspan
+                          key={i}
+                          x={isRoot ? node.w / 2 : node.w / 2 + 3}
+                          y={startY + i * lineH}
+                        >
+                          {line}
+                        </tspan>
+                      );
+                    })}
                   </text>
 
                   {/* Collapse/Expand Count Badge */}
@@ -758,7 +864,7 @@ export function MindmapInterface({
               <span>Search Match</span>
             </span>
             <span className="hidden sm:inline text-slate-500">
-              Pan: Drag · Zoom: Wheel · Expand: Click node
+              Pan: Drag · Zoom: Wheel · Expand: Click node · Keyboard: Tab + Enter
             </span>
           </div>
         </div>

@@ -2,8 +2,10 @@ import Link from "next/link";
 import { Construction, ChevronRight } from "lucide-react";
 
 /**
- * Universal "Coming Soon" placeholder shown on routed theorem/proof/
- * derivation pages whose content has not been authored yet.
+ * Universal "under progress" placeholder shown on routed theorem/proof/
+ * derivation pages whose content has not been authored yet (owner 2026-10-12:
+ * "if not note then add like under progress will be added in future update
+ * with meaningful icons").
  */
 export function ComingSoon({
   title,
@@ -51,11 +53,12 @@ export function ComingSoon({
         )}
         <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 border border-amber-500/20">
           <Construction className="h-3 w-3" />
-          {kind} Coming Soon
+          {kind} — Under Progress
         </span>
         <p className="text-sm text-muted-foreground max-w-md mx-auto">
-          This page is reserved on the official syllabus track. Step-by-step
-          content is being authored and will appear here soon.
+          Under progress — will be added in a future update. This page is
+          reserved on the official syllabus track; step-by-step content is
+          being authored.
         </p>
         {backHref && (
           <Link

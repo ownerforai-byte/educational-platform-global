@@ -1,12 +1,12 @@
 "use client";
 
 import React, { useState, useMemo } from "react";
+import Link from "next/link";
 import {
   DERIVATIONS_AND_THEOREMS,
   DerivationOrTheorem,
 } from "@/lib/derivations-data";
 import { DerivationVisual } from "./derivation-visual";
-import { DerivationDetailView } from "./derivation-detail-view";
 import { MathMarkdown } from "@/components/content/math-markdown";
 import {
   BookOpen,
@@ -26,11 +26,24 @@ import {
   Info,
 } from "lucide-react";
 
+/**
+ * Canonical routed page for one hub item. Deep derivations/proofs live on
+ * their own pages (`/derivations/[classSlug]/[subjectSlug]/[topicSlug]`) —
+ * every hub card links there instead of expanding the full proof inline on
+ * this shared listing page.
+ */
+export function derivationHref(
+  item: Pick<DerivationOrTheorem, "slug" | "subject" | "gradeTrack">,
+): string {
+  const classSlug =
+    item.gradeTrack === "grade-11" ? "class-11-notes" : "class-12-notes";
+  return `/derivations/${classSlug}/${item.subject}/${item.slug}`;
+}
+
 export function DerivationsHubView() {
   const [selectedTrack, setSelectedTrack] = useState<"grade-11" | "extra" | "all">("grade-11");
   const [selectedSubject, setSelectedSubject] = useState<string>("all");
   const [searchQuery, setSearchQuery] = useState<string>("");
-  const [activeDerivationId, setActiveDerivationId] = useState<string | null>(null);
 
   // Filtered derivations list based on curriculum track, subject, and search query
   const filteredDerivations = useMemo(() => {
@@ -57,12 +70,6 @@ export function DerivationsHubView() {
       return matchesTrack && matchesSubject && matchesSearch;
     });
   }, [selectedTrack, selectedSubject, searchQuery]);
-
-  // If a derivation is actively selected, find it
-  const activeDerivation = useMemo(() => {
-    if (!activeDerivationId) return null;
-    return DERIVATIONS_AND_THEOREMS.find((d) => d.id === activeDerivationId) || null;
-  }, [activeDerivationId]);
 
   // Counts by track
   const grade11Count = useMemo(
@@ -137,7 +144,6 @@ export function DerivationsHubView() {
             <button
               onClick={() => {
                 setSelectedTrack("grade-11");
-                setActiveDerivationId(null);
               }}
               className={`px-3.5 py-2 rounded-xl text-xs font-extrabold transition-all flex items-center gap-2 ${
                 selectedTrack === "grade-11"
@@ -155,7 +161,6 @@ export function DerivationsHubView() {
             <button
               onClick={() => {
                 setSelectedTrack("extra");
-                setActiveDerivationId(null);
               }}
               className={`px-3.5 py-2 rounded-xl text-xs font-extrabold transition-all flex items-center gap-2 ${
                 selectedTrack === "extra"
@@ -173,7 +178,6 @@ export function DerivationsHubView() {
             <button
               onClick={() => {
                 setSelectedTrack("all");
-                setActiveDerivationId(null);
               }}
               className={`px-3.5 py-2 rounded-xl text-xs font-extrabold transition-all flex items-center gap-2 ${
                 selectedTrack === "all"
@@ -202,7 +206,6 @@ export function DerivationsHubView() {
           <button
             onClick={() => {
               setSelectedSubject("all");
-              setActiveDerivationId(null);
             }}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
               selectedSubject === "all"
@@ -216,7 +219,6 @@ export function DerivationsHubView() {
           <button
             onClick={() => {
               setSelectedSubject("math");
-              setActiveDerivationId(null);
             }}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
               selectedSubject === "math"
@@ -231,7 +233,6 @@ export function DerivationsHubView() {
           <button
             onClick={() => {
               setSelectedSubject("physics");
-              setActiveDerivationId(null);
             }}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
               selectedSubject === "physics"
@@ -246,7 +247,6 @@ export function DerivationsHubView() {
           <button
             onClick={() => {
               setSelectedSubject("chemistry");
-              setActiveDerivationId(null);
             }}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
               selectedSubject === "chemistry"
@@ -261,7 +261,6 @@ export function DerivationsHubView() {
           <button
             onClick={() => {
               setSelectedSubject("biology");
-              setActiveDerivationId(null);
             }}
             className={`px-4 py-2 rounded-xl text-xs font-bold transition-all flex items-center gap-1.5 ${
               selectedSubject === "biology"
@@ -274,21 +273,6 @@ export function DerivationsHubView() {
           </button>
         </div>
       </div>
-
-      {/* ── 4. ACTIVE DETAILED DERIVATION INLINE MODAL ─────────────────────── */}
-      {activeDerivation ? (
-        <div className="rounded-3xl border-2 border-primary/50 bg-card p-6 sm:p-8 shadow-xl space-y-6 relative animate-fade-in">
-          <button
-            onClick={() => setActiveDerivationId(null)}
-            className="absolute top-6 right-6 p-2 rounded-full bg-muted text-muted-foreground hover:text-foreground hover:bg-muted/80 transition-all"
-            title="Close Detailed View"
-          >
-            <X className="h-5 w-5" />
-          </button>
-
-          <DerivationDetailView derivation={activeDerivation} />
-        </div>
-      ) : null}
 
       {/* ── 5. SECTION: "MATH" (User: all theorems of math under section named math with visual first) ── */}
       {(selectedSubject === "all" || selectedSubject === "math") && mathTheorems.length > 0 && (
@@ -314,9 +298,9 @@ export function DerivationsHubView() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {mathTheorems.map((item) => (
-              <div
+              <Link
                 key={item.id}
-                onClick={() => setActiveDerivationId(item.id)}
+                href={derivationHref(item)}
                 className="group rounded-3xl border border-border/80 bg-card hover:border-indigo-500/60 p-5 space-y-4 transition-all hover:shadow-lg cursor-pointer flex flex-col justify-between"
               >
                 <div className="space-y-3">
@@ -363,7 +347,7 @@ export function DerivationsHubView() {
                   <span>View Proof &amp; Solved Questions with Visuals</span>
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
@@ -393,9 +377,9 @@ export function DerivationsHubView() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {physicsDerivations.map((item) => (
-              <div
+              <Link
                 key={item.id}
-                onClick={() => setActiveDerivationId(item.id)}
+                href={derivationHref(item)}
                 className="group rounded-3xl border border-border/80 bg-card hover:border-sky-500/60 p-5 space-y-4 transition-all hover:shadow-lg cursor-pointer flex flex-col justify-between"
               >
                 <div className="space-y-3">
@@ -439,7 +423,7 @@ export function DerivationsHubView() {
                   <span>View Step-by-Step Derivation</span>
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
@@ -469,9 +453,9 @@ export function DerivationsHubView() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {chemistryDerivations.map((item) => (
-              <div
+              <Link
                 key={item.id}
-                onClick={() => setActiveDerivationId(item.id)}
+                href={derivationHref(item)}
                 className="group rounded-3xl border border-border/80 bg-card hover:border-amber-500/60 p-5 space-y-4 transition-all hover:shadow-lg cursor-pointer flex flex-col justify-between"
               >
                 <div className="space-y-3">
@@ -515,7 +499,7 @@ export function DerivationsHubView() {
                   <span>View Full Chemistry Derivation</span>
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>
@@ -545,9 +529,9 @@ export function DerivationsHubView() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
             {biologyPrinciples.map((item) => (
-              <div
+              <Link
                 key={item.id}
-                onClick={() => setActiveDerivationId(item.id)}
+                href={derivationHref(item)}
                 className="group rounded-3xl border border-border/80 bg-card hover:border-emerald-500/60 p-5 space-y-4 transition-all hover:shadow-lg cursor-pointer flex flex-col justify-between"
               >
                 <div className="space-y-3">
@@ -591,7 +575,7 @@ export function DerivationsHubView() {
                   <span>View Mechanism &amp; Solved Problems</span>
                   <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         </section>

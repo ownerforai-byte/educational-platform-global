@@ -69,26 +69,30 @@ export function OfficialSyllabusPanel({
               className={isHighlightedUnit ? "rounded-lg border border-primary/40 bg-background/80 p-3" : "space-y-2"}
             >
               <div className="flex flex-wrap items-center justify-between gap-2">
-                {unitHref ? (
-                  <Link href={unitHref} className="font-semibold text-primary hover:underline">
-                    Unit {unitIndex + 1}: {unit.title}
-                  </Link>
-                ) : (
-                  <h3 className="font-semibold text-primary">
-                    Unit {unitIndex + 1}: {unit.title}
-                  </h3>
-                )}
+                {/* The addition date sits in front of the unit it marks — one
+                    date, one unit — instead of floating over the topic block. */}
+                <div className="flex flex-wrap items-center gap-2">
+                  {typeof unit.introducedIn === "number" ? (
+                    <span
+                      className="rounded-full border border-sky-500/30 bg-sky-500/10 px-2 py-0.5 text-xs font-medium text-sky-700 dark:text-sky-300"
+                      title="Bikram Sambat year this unit first appeared in the official NEB curriculum"
+                    >
+                      Added in {unit.introducedIn} BS
+                    </span>
+                  ) : null}
+                  {unitHref ? (
+                    <Link href={unitHref} className="font-semibold text-primary hover:underline">
+                      Unit {unitIndex + 1}: {unit.title}
+                    </Link>
+                  ) : (
+                    <h3 className="font-semibold text-primary">
+                      Unit {unitIndex + 1}: {unit.title}
+                    </h3>
+                  )}
+                </div>
                 {typeof unit.hours === "number" ? (
                   <span className="rounded-full border border-border bg-background px-2 py-0.5 text-xs text-muted-foreground">
                     {unit.hours} hrs
-                  </span>
-                ) : null}
-                {typeof unit.introducedIn === "number" ? (
-                  <span
-                    className="rounded-full border border-sky-500/30 bg-sky-500/10 px-2 py-0.5 text-xs font-medium text-sky-700 dark:text-sky-300"
-                    title="Bikram Sambat year this unit first appeared in the official NEB curriculum"
-                  >
-                    Added in {unit.introducedIn} BS
                   </span>
                 ) : null}
               </div>

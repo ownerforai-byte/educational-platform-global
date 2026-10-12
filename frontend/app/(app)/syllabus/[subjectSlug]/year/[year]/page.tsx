@@ -119,9 +119,13 @@ export default function YearViewPage({
                   <li key={idx} className="space-y-1">
                     <div className="flex items-start gap-2 text-sm text-foreground">
                       <span className="shrink-0 mt-1.5 h-1.5 w-1.5 rounded-full bg-emerald-500" />
+                      {/* The date sits in front of the topic it marks — never
+                          a stamp repeated under the whole block of topics. */}
+                      <span className="shrink-0">
+                        <DateBadge label="Validated" date={yearData?.bsYear ?? `${year} BS`} tone="gray" />
+                      </span>
                       <span>{topic}</span>
                     </div>
-                    <DateBadge label="Validated" date={yearData?.bsYear ?? `${year} BS`} tone="gray" />
                   </li>
                 ))}
               </ul>
@@ -142,9 +146,11 @@ export default function YearViewPage({
                   <li key={idx} className="space-y-1">
                     <div className="flex items-start gap-2 text-sm text-muted-foreground">
                       <span className="shrink-0 mt-1.5 h-1.5 w-1.5 rounded-full bg-red-500" />
+                      <span className="shrink-0">
+                        <DateBadge label="Validated" date={yearData?.bsYear ?? `${year} BS`} tone="gray" />
+                      </span>
                       <span className="line-through">{topic}</span>
                     </div>
-                    <DateBadge label="Validated" date={yearData?.bsYear ?? `${year} BS`} tone="gray" />
                   </li>
                 ))}
               </ul>
@@ -165,9 +171,11 @@ export default function YearViewPage({
                   <li key={idx} className="space-y-1">
                     <div className="flex items-start gap-2 text-sm text-foreground">
                       <span className="shrink-0 mt-1.5 h-1.5 w-1.5 rounded-full bg-amber-500" />
+                      <span className="shrink-0">
+                        <DateBadge label="Validated" date={yearData?.bsYear ?? `${year} BS`} tone="gray" />
+                      </span>
                       <span>{topic}</span>
                     </div>
-                    <DateBadge label="Validated" date={yearData?.bsYear ?? `${year} BS`} tone="gray" />
                   </li>
                 ))}
               </ul>
@@ -212,15 +220,19 @@ export default function YearViewPage({
                       <div key={i} className="px-4 py-3 flex items-start gap-3">
                         <span className={`shrink-0 mt-1 h-2 w-2 rounded-full ${topic.addedInYear === year ? "bg-emerald-500" : topic.modifiedInYear === year ? "bg-amber-500" : topic.removedInYear === year ? "bg-red-500" : "bg-muted-foreground/30"}`} />
                         <div className="flex-1 min-w-0">
-                          <p className="text-sm text-foreground leading-relaxed">{topic.title}</p>
+                          {/* Change dates sit in front of the topic they mark —
+                              one date, one topic — never a stamp on the block. */}
+                          <p className="text-sm text-foreground leading-relaxed flex flex-wrap items-center gap-2">
+                            {topic.addedInYear && <span className="shrink-0 text-[11px] px-1.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 font-medium">Added {topic.addedInYear} BS</span>}
+                            {topic.modifiedInYear && <span className="shrink-0 text-[11px] px-1.5 py-0.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-300 font-medium">Modified {topic.modifiedInYear} BS</span>}
+                            <span>{topic.title}</span>
+                          </p>
                           {topic.meaning && (
                             <p className="text-xs text-muted-foreground mt-1 leading-relaxed">{topic.meaning}</p>
                           )}
                           <div className="flex items-center gap-2 mt-1">
                             <span className="text-[11px] text-muted-foreground font-mono">{topic.slug}</span>
                             {topic.hours !== undefined && <span className="text-[11px] text-muted-foreground">· {topic.hours} hrs</span>}
-                            {topic.addedInYear && <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-emerald-500/10 text-emerald-700 dark:text-emerald-300 font-medium">+{topic.addedInYear}</span>}
-                            {topic.modifiedInYear && <span className="text-[11px] px-1.5 py-0.5 rounded-full bg-amber-500/10 text-amber-700 dark:text-amber-300 font-medium">~{topic.modifiedInYear}</span>}
                           </div>
                         </div>
                       </div>

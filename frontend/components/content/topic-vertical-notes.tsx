@@ -163,6 +163,28 @@ export function TopicVerticalNotes({
     return get3DComponentForTopic(topicSlug);
   }, [topicSlug]);
 
+  // Visual mode tabs with roving focus (arrow keys move between tabs).
+  const visualTabs = useMemo(() => {
+    const tabs: Array<"schematic" | "mindmap" | "3d"> = ["schematic", "mindmap"];
+    if (TopicVisual3D) tabs.push("3d");
+    return tabs;
+  }, [TopicVisual3D]);
+
+  const onVisualTabKeyDown = (e: React.KeyboardEvent) => {
+    const idx = visualTabs.indexOf(visualTab);
+    if (idx < 0) return;
+    let nextIdx: number | null = null;
+    if (e.key === "ArrowRight") nextIdx = (idx + 1) % visualTabs.length;
+    else if (e.key === "ArrowLeft") nextIdx = (idx - 1 + visualTabs.length) % visualTabs.length;
+    else if (e.key === "Home") nextIdx = 0;
+    else if (e.key === "End") nextIdx = visualTabs.length - 1;
+    if (nextIdx === null) return;
+    e.preventDefault();
+    const next = visualTabs[nextIdx];
+    setVisualTab(next);
+    document.getElementById(`visual-tab-${next}`)?.focus();
+  };
+
   // 2. Resolve High-Yield Topic Engine Data (null when this topic has none yet)
   const highYield = useMemo(() => {
     return getHighYieldTopicData(subjectSlug, topicSlug, topicTitle, unitId);
@@ -420,10 +442,15 @@ export function TopicVerticalNotes({
               <span>{isFullscreen ? "Exit" : "Full Screen"}</span>
             </button>
 
-            <div role="group" aria-label="Visual mode" className="flex flex-wrap items-center gap-1.5 rounded-xl border border-border/60 bg-background/80 p-1 text-xs [&>button]:min-h-10">
+            <div role="tablist" aria-label="Visual mode" className="flex flex-wrap items-center gap-1.5 rounded-xl border border-border/60 bg-background/80 p-1 text-xs [&>button]:min-h-10">
               <button
                 type="button"
-                aria-pressed={visualTab === 'schematic'}
+                role="tab"
+                id="visual-tab-schematic"
+                aria-selected={visualTab === 'schematic'}
+                aria-controls="visual-panel"
+                tabIndex={visualTab === 'schematic' ? 0 : -1}
+                onKeyDown={onVisualTabKeyDown}
                 onClick={() => setVisualTab("schematic")}
                 className={`px-3 py-1 rounded-lg font-bold transition-all flex items-center gap-1.5 ${
                   visualTab === "schematic"
@@ -436,7 +463,12 @@ export function TopicVerticalNotes({
               </button>
               <button
                 type="button"
-                aria-pressed={visualTab === 'mindmap'}
+                role="tab"
+                id="visual-tab-mindmap"
+                aria-selected={visualTab === 'mindmap'}
+                aria-controls="visual-panel"
+                tabIndex={visualTab === 'mindmap' ? 0 : -1}
+                onKeyDown={onVisualTabKeyDown}
                 onClick={() => setVisualTab("mindmap")}
                 className={`px-3 py-1 rounded-lg font-bold transition-all flex items-center gap-1.5 ${
                   visualTab === "mindmap"
@@ -450,7 +482,12 @@ export function TopicVerticalNotes({
               {TopicVisual3D && (
                 <button
                   type="button"
-                  aria-pressed={visualTab === '3d'}
+                  role="tab"
+                  id="visual-tab-3d"
+                  aria-selected={visualTab === '3d'}
+                  aria-controls="visual-panel"
+                  tabIndex={visualTab === '3d' ? 0 : -1}
+                  onKeyDown={onVisualTabKeyDown}
                   onClick={() => setVisualTab("3d")}
                   className={`px-3 py-1 rounded-lg font-bold transition-all flex items-center gap-1.5 ${
                     visualTab === "3d"
@@ -467,16 +504,12 @@ export function TopicVerticalNotes({
         </div>
 
         <div
+          id="visual-panel"
+          role="tabpanel"
+          aria-labelledby={`visual-tab-${visualTab}`}
           className="relative min-w-0 space-y-6 bg-background/30 p-3 sm:p-6"
         >
           {fullscreenError && <p role="status" className="text-sm text-muted-foreground">{fullscreenError}</p>}
-          <div className="pointer-events-none absolute bottom-3 right-4 z-10 rounded-full border border-border/60 bg-background/85 px-3 py-1 text-[10px] font-semibold text-muted-foreground backdrop-blur-sm">
-            {visualTab === "3d"
-              ? "Drag to rotate · Scroll to zoom · Pinch on touch"
-              : visualTab === "mindmap"
-                ? "Tap a branch to trace its connections"
-                : "Hover or tap a labelled hotspot for exam notes"}
-          </div>
 
           {visualTab === "schematic" && (
             <SchematicDiagram
@@ -507,6 +540,25 @@ export function TopicVerticalNotes({
               <TopicVisual3D />
             </div>
           )}
+
+          {/* How to drive the active visual — a static footer strip in normal
+              flow, so the hint can never cover the drawing itself. */}
+          <div className="flex flex-wrap items-center justify-between gap-x-4 gap-y-1 rounded-xl border border-border/60 bg-background/70 px-3 py-2 text-[11px] font-medium text-muted-foreground">
+            <span>
+              {visualTab === "3d"
+                ? "Drag to rotate · Scroll to zoom · Pinch on touch"
+                : visualTab === "mindmap"
+                  ? "Tap a branch to trace its connections · press and hold a branch to fan out its full hierarchy"
+                  : "Hover or tap a labelled hotspot for exam notes · Walk through tours every part in order"}
+            </span>
+            <span className="text-muted-foreground/70">
+              {visualTab === "schematic"
+                ? "Interactive Schematic"
+                : visualTab === "mindmap"
+                  ? "Topic Mindmap"
+                  : "3D Visual"}
+            </span>
+          </div>
         </div>
       </section>
 

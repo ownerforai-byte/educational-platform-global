@@ -107,8 +107,8 @@ function renderResources(
           <ResourceCard title={sub.title} description={sub.description} Component={sub.component} />
         ) : (
           <EmptyState
-            title="Coming soon"
-            description={`Interactive resources for ${topicTitle} will be available here.`}
+            title="Under progress — will be added in a future update"
+            description={`Interactive resources for ${topicTitle} are under progress and will be added in a future update.`}
           />
         )}
       </div>
@@ -120,8 +120,8 @@ function renderResources(
   if (!spec) {
     return (
       <EmptyState
-        title="Coming soon"
-        description={`Resources for ${topicTitle} will be available here.`}
+        title="Under progress — will be added in a future update"
+        description={`Resources for ${topicTitle} are under progress and will be added in a future update.`}
       />
     );
   }

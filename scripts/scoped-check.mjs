@@ -7,8 +7,10 @@
  *
  * Areas:
  *   content   -> JSON parse validation of every file under content/      (~1-3s)
- *   frontend  -> tsc --noEmit + the 3 content/note test files           (~30-60s)
- *   backend   -> tsc --noEmit + backend vitest                          (~30-60s)
+ *   frontend  -> tsc --noEmit + only the tests your edits affect (~30-60s;
+ *                `--all` keeps the 3 content/note test files)
+ *   backend   -> tsc --noEmit + only the tests your edits affect (~30-60s;
+ *                `--all` runs the full backend vitest)
  *   mindmap   -> depth-pack coverage                                    (~1-5s)
  *   visuals   -> every branch/schematic is about its own topic           (~10-30s)
  *
@@ -78,10 +80,21 @@ const runners = {
     },
   },
   frontend: {
-    label: "frontend typecheck + content tests",
+    label: ALL
+      ? "frontend typecheck + content tests (full gate)"
+      : "frontend typecheck + affected tests",
     run() {
       const t = run("npx", ["tsc", "--noEmit"], { cwd: "frontend", stdio: "inherit" });
       if (t.status !== 0) return t.status ?? 1;
+      // Scoped edits run ONLY the tests their changes affect (import scan +
+      // name convention — see scripts/test-affected.mjs). The full gate keeps
+      // the fixed content/note list.
+      if (!ALL) {
+        const a = spawnSync(process.execPath, ["scripts/test-affected.mjs", "--workspace", "frontend"], {
+          stdio: "inherit",
+        });
+        return a.status ?? 1;
+      }
       const v = run(
         "npx",
         ["vitest", "run", "tests/lib/content-coverage.test.ts", "tests/lib/content/pipeline.test.ts", "tests/lib/note-routes.test.ts"],
@@ -91,10 +104,16 @@ const runners = {
     },
   },
   backend: {
-    label: "backend typecheck + tests",
+    label: ALL ? "backend typecheck + tests (full gate)" : "backend typecheck + affected tests",
     run() {
       const t = run("npx", ["tsc", "--noEmit"], { cwd: "backend", stdio: "inherit" });
       if (t.status !== 0) return t.status ?? 1;
+      if (!ALL) {
+        const a = spawnSync(process.execPath, ["scripts/test-affected.mjs", "--workspace", "backend"], {
+          stdio: "inherit",
+        });
+        return a.status ?? 1;
+      }
       const v = run("npm", ["run", "test:run"], { cwd: "backend", stdio: "inherit" });
       return v.status ?? 1;
     },

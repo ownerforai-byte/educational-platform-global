@@ -55,8 +55,9 @@ export default async function DerivationsSubjectPage({
 
         {entries.length === 0 ? (
           <EmptyState
-            title="No derivation content yet"
-            description={`Derivation notes for ${subjectSlug} will be added as we build out the library.`}
+            icon={<Construction className="h-6 w-6" />}
+            title="Derivation notes under progress — will be added in a future update"
+            description={`Derivation notes for ${subjectSlug} are under progress and will be added in a future update.`}
             action={{ label: `View ${subjectSlug} Notes`, href: `/${classSlug}/${subjectSlug}` }}
           />
         ) : (
@@ -182,7 +183,7 @@ export default async function DerivationsSubjectPage({
                             </span>
                           ) : (
                             <span className="shrink-0 text-[10px] px-1.5 py-0.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20">
-                              coming soon
+                              under progress
                             </span>
                           )}
                         </div>

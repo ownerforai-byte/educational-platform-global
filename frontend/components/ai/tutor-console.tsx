@@ -40,6 +40,7 @@ import {
   MessageSquare,
   Languages,
   BookOpen,
+  ArrowDown,
 } from "lucide-react";
 import {
   streamChat,
@@ -74,9 +75,11 @@ import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { useCoinGateEnabled } from "@/features/credits/use-coin-gate";
 import { CoinGateDot } from "@/features/credits/coin-gate-dot";
+import { AiSparkBadge, recordAiSparkUse } from "@/components/ai/ai-spark-badge";
 import { isOwnerEmail } from "@/lib/owner";
 import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
+import { FloatingIdeaChips } from "@/components/ai/floating-idea-chips";
 import { drawFigureWithPuter } from "@/lib/puter-image";
 import { stripLinksForCopy } from "@/lib/ai/clean-copy";
 import { cn } from "@/lib/utils";
@@ -535,8 +538,6 @@ export function TutorConsole({
   const [error, setError] = useState<string | null>(null);
   const [copiedIndex, setCopiedIndex] = useState<number | null>(null);
   const [guestCount, setGuestCount] = useState(0);
-  const [dailyCredits, setDailyCredits] = useState<number | null>(null);
-  const [poolEmpty, setPoolEmpty] = useState(false);
   const [enhancing, setEnhancing] = useState(false);
   const [restoredCount, setRestoredCount] = useState<number | null>(null);
   // True once the guest thread restore has run — gates persistence so the
@@ -559,6 +560,20 @@ export function TutorConsole({
   const [pendingImages, setPendingImages] = useState<string[]>([]);
 
   const streamRef = useRef<HTMLDivElement>(null);
+  // Reader-first streaming: the AI keeps writing WITHOUT yanking the viewport.
+  // Auto-follow runs only while the reader is pinned to the bottom; once they
+  // scroll up to read, the reply continues below and a "Jump to latest" chip
+  // restores follow mode on demand.
+  const [followStream, setFollowStream] = useState(true);
+  const [hasNewBelow, setHasNewBelow] = useState(false);
+
+  const handleStreamScroll = useCallback(() => {
+    const el = streamRef.current;
+    if (!el) return;
+    const atBottom = el.scrollHeight - el.scrollTop - el.clientHeight <= 80;
+    setFollowStream(atBottom);
+    if (atBottom) setHasNewBelow(false);
+  }, []);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const historyLoadedRef = useRef(false);
   const sessionRef = useRef(sessionName);
@@ -566,18 +581,13 @@ export function TutorConsole({
 
   const guestCredits = Math.max(0, MAX_GUEST_MESSAGES - guestCount);
   const isGuestLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
-  // BILL-EVERYONE: students/customers always pay; owners pay only when the
-  // profile toggle is ON. PRO stays unlimited.
+  // VEER CHAT IS FREE (owner policy 2026-10-12): "Veer chat and everything
+  // else are free — no AI spark is ever spent." No pool check, no lock — the
+  // only limit left is the guest anti-abuse quota.
   const isOwner = isOwnerEmail(user?.email);
   const privilegedUser =
     !!user?.premiumStatus || (isOwner && freeMode);
-  const creditsExhausted =
-    isLoggedIn &&
-    !privilegedUser &&
-    (poolEmpty ||
-      dailyCredits === 0 ||
-      (typeof user?.credits === "number" && user.credits <= 0));
-  const composerLocked = isGuestLimited || creditsExhausted;
+  const composerLocked = isGuestLimited;
 
   // Rotate the thinking words while a reply is generating.
   useEffect(() => {
@@ -631,7 +641,6 @@ export function TutorConsole({
     }
     if (historyLoadedRef.current) return;
     historyLoadedRef.current = true;
-    if (user && typeof user.credits === "number") setDailyCredits(user.credits);
     const active = readStoredSession();
     setSessionName(active);
     void loadSession(active);
@@ -715,17 +724,23 @@ export function TutorConsole({
     setStarters(buildStarters(mode));
   }, [mode, startersNonce]);
 
-  // Follow the stream while a reply is composing (and when restored).
+  // Follow the stream while a reply is composing — but only while the reader
+  // is already at the bottom. Scrolling up to read freezes the viewport; the
+  // reply keeps writing below without dragging the screen with it.
   useEffect(() => {
     if (messages.length === 0 && !sending) {
       if (streamRef.current) streamRef.current.scrollTop = 0;
       return;
     }
-    streamRef.current?.scrollTo({
-      top: streamRef.current.scrollHeight,
-      behavior: "smooth",
-    });
-  }, [messages, sending]);
+    if (followStream) {
+      streamRef.current?.scrollTo({
+        top: streamRef.current.scrollHeight,
+        behavior: "smooth",
+      });
+    } else {
+      setHasNewBelow(true);
+    }
+  }, [messages, sending, followStream]);
 
   const chooseMode = (next: TutorMode) => {
     setMode(next);
@@ -778,17 +793,12 @@ export function TutorConsole({
 
       if (isGuestLimited) {
         setError(
-          `You've used your free message for today. Sign in to keep asking Veer — members get ${DAILY_CREDIT_POOL} daily credits and saved chat histories.`,
-        );
-        return;
-      }
-      if (creditsExhausted) {
-        setError(
-          `You've used all ${DAILY_CREDIT_POOL} credits of today's daily pool. It resets at ${DAILY_CREDIT_POOL} credits at 12:00 AM.`,
+          "You've used your free message for today. Sign in to keep asking Veer — members get unlimited free chat and saved chat histories.",
         );
         return;
       }
 
+      recordAiSparkUse(); // AI spark: informational daily counter (chat is free)
       const userMsg: AIChatMessage = images.length
         ? { role: "user", content, images }
         : { role: "user", content };
@@ -804,7 +814,6 @@ export function TutorConsole({
         // LIVE streaming (owner 2026-09-30): deltas reach the student as the
         // provider generates them for both signed-in and guest users.
         let liveAcc = "";
-        let liveCredits: number | null = null;
         let liveRemaining: number | null = null;
         let sawToken = false;
         setStreamPhase(null);
@@ -864,8 +873,6 @@ export function TutorConsole({
             } else if ("imageFailed" in chunk) {
               const f = figs.get(chunk.imageFailed);
               if (f) f.status = "failed";
-            } else if (typeof chunk.credits === "number") {
-              liveCredits = chunk.credits;
             } else if (typeof chunk.remaining === "number") {
               liveRemaining = chunk.remaining;
             }
@@ -892,10 +899,6 @@ export function TutorConsole({
         }
 
         if (isLoggedIn) {
-          if (liveCredits !== null) {
-            setDailyCredits(liveCredits);
-            if (liveCredits <= 0) setPoolEmpty(true);
-          }
           saveChatHistory(sessionRef.current, [
             { role: "user", content },
             { role: "assistant", content: finalContent },
@@ -920,15 +923,11 @@ export function TutorConsole({
           err &&
           typeof err === "object" &&
           "status" in err &&
-          (err as { status?: number }).status === 402
+          (err as { status?: number }).status === 402 &&
+          !isLoggedIn
         ) {
-          if (isLoggedIn) {
-            setDailyCredits(0);
-            setPoolEmpty(true);
-          } else {
-            writeGuestCount(MAX_GUEST_MESSAGES);
-            setGuestCount(MAX_GUEST_MESSAGES);
-          }
+          writeGuestCount(MAX_GUEST_MESSAGES);
+          setGuestCount(MAX_GUEST_MESSAGES);
         } else {
           // Keep the thread honest: mark the failure in-place, no fake answer.
           setMessages((prev) => [
@@ -946,7 +945,7 @@ export function TutorConsole({
         setStreamPhase(null);
       }
     },
-    [sending, isGuestLimited, creditsExhausted, isLoggedIn, guestCount, refreshSessions],
+    [sending, isGuestLimited, isLoggedIn, guestCount, refreshSessions],
   );
 
   const handleSend = (customText?: string) => {
@@ -1085,41 +1084,23 @@ export function TutorConsole({
                 <span className="hidden sm:inline">{sessions.length}</span>
               </button>
             )}
+            {/* AI SPARK (owner 2026-10-12): "ai spark shows while chatting
+                only on top" — the ONLY spark display in the chat, and it is
+                informational: chat is free, nothing is ever spent. */}
+            <AiSparkBadge className="hidden sm:inline-flex" />
             {!isLoggedIn && (
               <span
                 className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-amber-500/10 border border-amber-500/30 text-amber-600 font-semibold"
-                title="1 free message per day · sign in for daily credits"
+                title="1 free message per day · sign in to save your chats"
               >
                 <Coins className="h-3 w-3" />
                 {guestCredits > 0 ? "1 free trial message" : "Free trial used"}
               </span>
             )}
-            {isLoggedIn && privilegedUser &&
-              (isOwner ? (
-                // Owner + gate OFF → only the small windy dot shows the state
-                // (long gate messages removed — owner request 2026-10-04).
-                <CoinGateDot className="hidden sm:inline-flex" />
-              ) : (
-                <span
-                  className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 font-semibold"
-                  title="PRO — unlimited, no coins needed"
-                >
-                  <Coins className="h-3 w-3" />
-                  Free mode — no coins needed
-                </span>
-              ))}
-            {isLoggedIn && !privilegedUser && (
-              <span
-                className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-muted border border-border/60 font-semibold"
-                title={`1 credit per message · daily pool resets to ${DAILY_CREDIT_POOL} at 12:00 AM`}
-              >
-                <Coins className="h-3 w-3 text-amber-500" />
-                {Math.min(
-                  dailyCredits ?? user?.credits ?? DAILY_CREDIT_POOL,
-                  DAILY_CREDIT_POOL,
-                )}
-                /{DAILY_CREDIT_POOL} credits today
-              </span>
+            {isLoggedIn && isOwner && (
+              // Owner + gate OFF → only the small windy dot shows the state
+              // (long gate messages removed — owner request 2026-10-04).
+              <CoinGateDot className="hidden sm:inline-flex" />
             )}
             {hasConversation && (
               <button
@@ -1206,7 +1187,7 @@ export function TutorConsole({
       )}
 
       {/* ── Stream ───────────────────────────────────────────────────── */}
-      <div ref={streamRef} className="flex-1 overflow-y-auto px-5 sm:px-8 py-6 space-y-6">
+      <div ref={streamRef} onScroll={handleStreamScroll} className="flex-1 overflow-y-auto px-5 sm:px-8 py-6 space-y-6">
         {!hasConversation && !sending ? (
           <div className="min-h-full flex flex-col justify-center max-w-3xl mx-auto space-y-7 py-8">
             <div className="text-center space-y-2">
@@ -1302,7 +1283,8 @@ export function TutorConsole({
                           the concept (owner request 2026-10-08). */}
                       <InteractiveMarkdown
                         content={msg.content}
-                        className="tutor-dense text-[12px] leading-[1.55]"
+                        blockCopy
+                        className="tutor-dense chat-prose text-[12px] leading-[1.55]"
                       />
                     </div>
 
@@ -1345,6 +1327,26 @@ export function TutorConsole({
             )}
           </>
         )}
+
+        {hasNewBelow && !followStream && (
+          <div className="sticky bottom-2 z-10 flex justify-center">
+            <button
+              type="button"
+              onClick={() => {
+                setFollowStream(true);
+                setHasNewBelow(false);
+                streamRef.current?.scrollTo({
+                  top: streamRef.current.scrollHeight,
+                  behavior: "smooth",
+                });
+              }}
+              className="inline-flex items-center gap-1.5 rounded-full border border-emerald-500/40 bg-card/95 px-3.5 py-1.5 text-xs font-semibold text-emerald-600 dark:text-emerald-400 shadow-lg shadow-emerald-500/10 backdrop-blur transition-colors hover:bg-emerald-500/10"
+            >
+              <ArrowDown className="h-3.5 w-3.5" />
+              Jump to latest
+            </button>
+          </div>
+        )}
       </div>
 
       {/* ── Thread tools ─────────────────────────────────────────────── */}
@@ -1371,15 +1373,23 @@ export function TutorConsole({
       <div className="shrink-0 border-t border-border/60 bg-muted/20 px-5 sm:px-8 py-4">
         {composerLocked && (
           <p className="mb-2 rounded-lg border border-amber-500/30 bg-amber-500/10 px-3 py-1.5 text-[11px] font-semibold text-amber-600">
-            {isGuestLimited
-              ? `Your free message for today is used — sign in to continue. Your daily credits and saved histories are waiting.`
-              : `Today's ${DAILY_CREDIT_POOL}-credit pool is empty — it resets at 12:00 AM.`}
+            Your free message for today is used — sign in to continue. Your
+            saved histories are waiting.
           </p>
         )}
         <ChatAttachPreview
           images={pendingImages}
           onRemove={(i) => setPendingImages((prev) => prev.filter((_, idx) => idx !== i))}
           className="mb-2"
+        />
+        {/* FLOATING IDEA CHIPS (owner 2026-10-12): float in the moment typing
+            starts, fade out the moment the draft empties. Picking one extends
+            the draft rather than replacing it. */}
+        <FloatingIdeaChips
+          visible={input.trim().length > 0 && !sending && !composerLocked}
+          onPick={(idea) =>
+            setInput((prev) => (prev.trim() ? `${prev.trim()} — ${idea}` : idea))
+          }
         />
         <div className="flex items-end gap-2">
           <ChatAttachButton

@@ -136,7 +136,7 @@ function ContentPanel({ topicId }: { topicId: string }) {
           <div>
             <p className="font-semibold text-foreground text-sm">{info.title} — 3D Explorer</p>
             <p className="text-xs text-muted-foreground mt-1 max-w-xs mx-auto">
-              Interactive visualization coming soon. Explore {info.subtitle.toLowerCase()}.
+              Interactive visualization under progress — will be added in a future update. Meanwhile, explore {info.subtitle.toLowerCase()}.
             </p>
           </div>
           <div className="flex flex-wrap justify-center gap-1.5 pt-1">
@@ -199,7 +199,7 @@ function ContentPanel({ topicId }: { topicId: string }) {
               "Human-chimp DNA similarity ≈ 98.7%",
             ],
           };
-          return (facts[topicId] ?? ["Interactive 3D visualization in progress"]).map((f) => (
+          return (facts[topicId] ?? ["Interactive 3D visualization under progress — will be added in a future update"]).map((f) => (
             <div key={f} className="flex items-start gap-2 text-[11px] text-muted-foreground">
               <span className="mt-0.5 h-1.5 w-1.5 shrink-0 rounded-full" style={{ backgroundColor: color }} />
               {f}

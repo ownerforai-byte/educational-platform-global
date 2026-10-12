@@ -52,10 +52,10 @@ export default function CreditsPage() {
         <div className="space-y-1">
           <h1 className="text-2xl font-bold tracking-tight flex items-center gap-2">
             <Coins className="h-6 w-6 text-amber-500" />
-            My Credits
+            My Sparks
           </h1>
           <p className="text-sm text-muted-foreground">
-            Guest Student Plan &bull; 50 free credits allocated daily for AI learning.
+            Guest Student Plan &bull; 50 free content sparks allocated daily.
           </p>
         </div>
 
@@ -67,7 +67,7 @@ export default function CreditsPage() {
                 <Coins className="h-6 w-6 text-amber-600 dark:text-amber-400" />
               </div>
               <div>
-                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Available Credits</p>
+                <p className="text-xs font-semibold uppercase tracking-wider text-muted-foreground">Content Sparks</p>
                 <p className="text-3xl font-black text-amber-600 dark:text-amber-400">50</p>
                 <p className="text-[11px] text-muted-foreground">Free Guest Balance</p>
               </div>
@@ -106,7 +106,7 @@ export default function CreditsPage() {
           <CardHeader>
             <CardTitle className="text-base flex items-center gap-2">
               <ShieldCheck className="h-5 w-5 text-indigo-500" />
-              Feature Credit Cost &amp; Access
+              Spark Cost &amp; Access
             </CardTitle>
           </CardHeader>
           <CardContent>
@@ -146,8 +146,8 @@ export default function CreditsPage() {
                   <p className="font-semibold text-foreground">Veer Instant Explanations</p>
                   <p className="text-xs text-muted-foreground">Step-by-step problem solver &amp; doubt clearing</p>
                 </div>
-                <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400">
-                  2 Credits / Query
+                <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-green-500/10 text-green-600 dark:text-green-400">
+                  FREE — no AI spark spent
                 </span>
               </div>
 
@@ -156,8 +156,8 @@ export default function CreditsPage() {
                   <p className="font-semibold text-foreground">CEE / IOE Mock Test Generation</p>
                   <p className="text-xs text-muted-foreground">Full timed test with negative marking analysis</p>
                 </div>
-                <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-amber-500/10 text-amber-600 dark:text-amber-400">
-                  5 Credits / Test
+                <span className="px-2.5 py-1 rounded-md text-xs font-bold bg-green-500/10 text-green-600 dark:text-green-400">
+                  FREE
                 </span>
               </div>
             </div>
@@ -169,13 +169,13 @@ export default function CreditsPage() {
           <CardContent className="pt-6">
             <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
               <div>
-                <h3 className="font-bold text-foreground text-base">Want to sync credits across devices?</h3>
+                <h3 className="font-bold text-foreground text-base">Want to sync sparks across devices?</h3>
                 <p className="text-sm text-muted-foreground mt-0.5">
-                  Sign in or create a free student account to save quiz progress, bookmark mindmaps, and earn credit bonuses.
+                  Sign in or create a free student account to save quiz progress, bookmark mindmaps, and earn spark bonuses.
                 </p>
                 {/* Owner request (2026-09-30): the PRO plan link sits with the
                     plan/top-up area, and the notice board is linked from here
-                    too. Both open without spending a coin. */}
+                    too. Both open without spending a spark. */}
                 <p className="mt-2 flex flex-wrap items-center gap-x-4 gap-y-1.5 text-xs font-semibold">
                   <a
                     href="/pro-plan"
@@ -224,10 +224,10 @@ export default function CreditsPage() {
       <div className="space-y-1">
         <h1 className="text-2xl font-bold tracking-tight flex items-center gap-2">
           <Coins className="h-6 w-6 text-amber-500" />
-          My Credits
+          My Sparks
         </h1>
         <p className="text-sm text-muted-foreground">
-          Track your credits and PRO plan status.
+          Track your content sparks and PRO plan status. Sparks are spent only on actual note/content unlocks — labs, visuals and Veer chat are free.
         </p>
       </div>
 
@@ -244,8 +244,9 @@ export default function CreditsPage() {
               <Coins className="h-6 w-6 text-amber-600" />
             </div>
             <div>
-              <p className="text-sm text-muted-foreground">Available Credits</p>
+              <p className="text-sm text-muted-foreground">Content Sparks</p>
               <p className="text-3xl font-bold text-amber-600">{credits.credits}</p>
+              <p className="text-[11px] text-muted-foreground">Spent only on notes &amp; content</p>
             </div>
           </CardContent>
         </Card>
@@ -256,7 +257,7 @@ export default function CreditsPage() {
               <TrendingUp className="h-6 w-6 text-blue-600" />
             </div>
             <div>
-              <p className="text-sm text-muted-foreground">Credits Limit</p>
+              <p className="text-sm text-muted-foreground">Sparks Limit</p>
               <p className="text-3xl font-bold">{isPremium ? "Unlimited" : credits.creditsLimit}</p>
               {isPremium && (
                 <p className="text-[11px] font-semibold text-violet-500">PRO — no daily cap</p>
@@ -315,7 +316,7 @@ export default function CreditsPage() {
         <CardHeader>
           <CardTitle className="flex items-center gap-2">
             <TrendingDown className="h-5 w-5" />
-            Transaction History
+            Spark History
           </CardTitle>
         </CardHeader>
         <CardContent>

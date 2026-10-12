@@ -3,6 +3,7 @@ import { z } from "zod";
 import { requireAuth, type AuthedRequest } from "../middleware/auth";
 import { supabaseAdmin } from "../db/supabase";
 import { authEmailsById } from "../utils/authEmails";
+import { isProtectedOwnerTarget } from "../utils/ownerGuard";
 
 const router = Router();
 
@@ -238,6 +239,14 @@ router.patch("/users/:id/role", requireAuth, async (req: Request, res: Response)
 
   if (!parsed.success) {
     res.status(400).json({ error: "Invalid role" });
+    return;
+  }
+
+  // OWNER INDEPENDENCE (hardcoded 2026-10-12): no owner may reposition
+  // another owner — refused here regardless of the caller's role.
+  const guard = await isProtectedOwnerTarget(id);
+  if (guard.protectedTarget) {
+    res.status(403).json({ error: guard.reason });
     return;
   }
 

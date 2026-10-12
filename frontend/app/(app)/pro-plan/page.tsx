@@ -15,7 +15,7 @@ import {
 export const metadata: Metadata = {
   title: "PRO Plan — Ravikisan's Platform",
   description:
-    "The PRO plan for NEB Class 11 & 12: Veer replies and note credits with no daily cap, and the full credit matrix for every paid action.",
+    "The PRO plan for NEB Class 11 & 12: unlimited Veer replies and note sparks with no daily cap, and the full spark matrix for every paid action.",
 };
 
 /**
@@ -43,15 +43,16 @@ const ACTIONS: Array<[label: string, note: string, coins: string, usd: string]> 
     "4 / day",
     "4 free / day",
   ],
-  ["Core syllabus notes & chapters", "20-minute unlock window", "1 coin · 20 min", "$0.32 · 20 min"],
-  ["Reference & PYQ sets", "20-minute unlock window", "1 coin · 20 min", "$0.32 · 20 min"],
-  ["HD visuals — diagrams & maps", "Graphs, mindmaps, legends", "2 coins", "$0.64"],
-  ["3D / AR simulation labs", "Interactive lab simulations", "5 coins", "$1.60"],
+  ["Core syllabus notes & chapters", "20-minute unlock window", "1 spark · 20 min", "$0.32 · 20 min"],
+  ["Reference & PYQ sets", "20-minute unlock window", "1 spark · 20 min", "$0.32 · 20 min"],
+  ["HD visuals — diagrams & maps", "Graphs, mindmaps, legends", "FREE", "$0"],
+  ["3D / AR simulation labs", "Interactive lab simulations", "FREE", "$0"],
+  ["Veer chat", "Every reply, every student", "FREE", "$0"],
 ];
 
 const PRO_INCLUDES = [
   "Veer replies on a pool based on your tier — ask again in the same minute, not tomorrow",
-  "Note credits on a pool based on your tier, so a full revision day is not cut short",
+  "Note sparks on a pool based on your tier, so a full revision day is not cut short",
   "The same NEB Class 11/12 grounding, the same saved conversations",
   "The daily pool is based on tiers and keeps working exactly as it does now for everyone else",
 ];

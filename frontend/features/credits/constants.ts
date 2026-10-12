@@ -1,11 +1,15 @@
 /**
- * Credit / coin access rules for the NEB portal.
+ * Spark access rules for the NEB portal (owner decision 2026-10-12: the only
+ * currency word is "spark" — never "coin", never "credit").
  *
- * Every content segment is locked behind a coin unlock window:
- *   - 3D / AR simulation labs  → 5 coins
- *   - HD visuals (infographics, diagrams, maps) → 2 coins
- *   - core syllabus chapters (theory notes) → 1 coin
- *   - auxiliary reference materials (questions / PYQ sets) → 1 coin
+ * SPARK BILLING — "charge for actual note or content -- remove for others":
+ *   - actual note/content unlocks (theory notes, question/PYQ sets) → 1 spark
+ *   - 3D/AR labs, HD visuals, Diagram Hub → FREE (no spark, no lock)
+ *
+ * Two separate spark pools exist:
+ *   - CONTENT SPARK — spent only on note/content unlocks (this file's matrix).
+ *   - AI SPARK — informational daily counter shown ONLY at the top of the
+ *     Veer chat; chat is free and no AI spark is ever spent.
  *
  * A successful unlock stays open for UNLOCK_WINDOW_SECONDS (20 minutes) and then
  * the module re-locks automatically (no page reload required).
@@ -16,7 +20,7 @@ import { PDF_VIEWER_PATH } from "@/lib/pdf-src";
 export type ContentCategory = "lab3d" | "visuals" | "theory" | "reference" | "imagehub";
 
 export interface CategoryRule {
-  /** Coin cost for one 20-minute unlock window. */
+  /** Content-spark cost for one 20-minute unlock window (0 = free, no lock). */
   cost: number;
   /** Display label used on unlock overlays. */
   label: string;
@@ -26,27 +30,27 @@ export interface CategoryRule {
 
 export const TOKEN_MATRIX: Record<ContentCategory, CategoryRule> = {
   lab3d: {
-    cost: 5,
+    cost: 0,
     label: "Interactive Simulation Lab (3D / AR)",
     emoji: "🔬",
   },
   visuals: {
-    cost: 2,
+    cost: 0,
     label: "High-Definition Visuals (Infographics, Diagrams, Maps)",
     emoji: "🖼️",
   },
   theory: {
     cost: 1,
-    label: "Core Syllabus Chapter (Theory Notes)",
+    label: "Core Syllabus Notes (actual note)",
     emoji: "📚",
   },
   reference: {
     cost: 1,
-    label: "Auxiliary Reference Material (Questions / Sets)",
+    label: "Question & PYQ Sets (actual content)",
     emoji: "📝",
   },
   imagehub: {
-    cost: 5,
+    cost: 0,
     label: "Diagram Hub (Drawing Studio)",
     emoji: "🎨",
   },
@@ -102,8 +106,6 @@ export const EXEMPT_PATHS = [
   "/chat",
 ] as const;
 
-const LAB_ROUTES = /^\/(lab|sim|periodic-table)(\/|$)/;
-const VISUAL_ROUTES = /^\/(graphs|mindmap|legend|visual)(\/|$)/;
 const REFERENCE_ROUTES = /^\/(pyqs|quiz|resources|ai-quiz|exam-countdown|progress)(\/|$)/;
 
 function matchesList(pathname: string, list: readonly string[]): boolean {
@@ -133,11 +135,13 @@ export function categoryForPath(pathname: string): ContentCategory | null {
 
   if (isPublicPath(path)) return null;
   if (matchesList(path, EXEMPT_PATHS)) return null;
-  // The Diagram Hub: its own 5-coin tier (never the theory fallback).
+  // The Diagram Hub: owner-exclusive access card (free — never a spark).
   if (path === "/mind-studio" || path.startsWith("/mind-studio/")) return "imagehub";
-  if (LAB_ROUTES.test(path)) return "lab3d";
-  if (VISUAL_ROUTES.test(path)) return "visuals";
+  // FREE by policy ("remove for others"): labs, sims, visuals, mindmaps,
+  // legends — no category, no lock, no spark.
+  if (/^\/(lab|sim|periodic-table|graphs|mindmap|legend|visual)(\/|$)/.test(path)) return null;
   if (REFERENCE_ROUTES.test(path)) return "reference";
+  // Everything else is an actual note/content page → the 1-content-spark rule.
   return "theory";
 }
 

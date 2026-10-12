@@ -1,212 +1,71 @@
 "use client";
 export const dynamic = "force-dynamic";
 
-import { use, useState, useMemo } from "react";
+import { use, useState } from "react";
 import Link from "next/link";
 import {
-  ChevronDown,
-  ChevronUp,
-  FlaskConical,
-  Target,
-  Beaker,
-  ListChecks,
-  ScrollText,
-  BookOpenCheck,
   ExternalLink,
-  Lightbulb,
   Search,
   BookOpen,
   Zap,
   Award,
   Activity,
-  Printer,
-  Sparkles,
   ArrowLeft,
   CheckCircle2,
-  Atom,
-  Microscope,
   FileText,
 } from "lucide-react";
-import { getPracticalBySlug } from "@/lib/practical-syllabus";
-import type { PracticalExperiment, PracticalUnit } from "@/lib/practical-syllabus";
+import { getPracticalBySlug, experimentSlug } from "@/lib/practical-syllabus";
+import type { PracticalExperiment } from "@/lib/practical-syllabus";
 import { PhysicsPracticalStudio } from "@/components/practical/physics-practical-studio";
 import { ChemistryPracticalStudio } from "@/components/practical/chemistry-practical-studio";
 import { BiologyPracticalStudio } from "@/components/practical/biology-practical-studio";
 import { VivaVoceMastery } from "@/components/practical/viva-voce-mastery";
 import { ObservationCalculationEngine } from "@/components/practical/observation-calculation-engine";
-import { PracticalNotebookModal } from "@/components/practical/practical-notebook-modal";
-
-function Section({
-  icon: Icon,
-  title,
-  children,
-  accent = false,
-}: {
-  icon: React.ComponentType<{ className?: string }>;
-  title: string;
-  children: React.ReactNode;
-  accent?: boolean;
-}) {
-  return (
-    <div
-      className={
-        accent
-          ? "rounded-xl border border-amber-500/30 bg-amber-500/10 p-4"
-          : "rounded-xl border border-border/50 bg-muted/20 p-4"
-      }
-    >
-      <div className="flex items-center gap-2 mb-2.5">
-        <Icon className={`h-4 w-4 ${accent ? "text-amber-500" : "text-primary"}`} />
-        <h4
-          className={`text-xs font-bold uppercase tracking-wider ${
-            accent ? "text-amber-600 dark:text-amber-400" : "text-muted-foreground"
-          }`}
-        >
-          {title}
-        </h4>
-      </div>
-      {children}
-    </div>
-  );
-}
 
 function ExperimentCard({
   experiment,
-  onOpenNotebook,
+  notebookHref,
 }: {
   experiment: PracticalExperiment;
-  onOpenNotebook: (exp: PracticalExperiment) => void;
+  notebookHref: string;
 }) {
-  const [open, setOpen] = useState(false);
-  const ToggleIcon = open ? ChevronUp : ChevronDown;
-
   return (
-    <div className="rounded-2xl border border-border/70 bg-card hover:border-primary/40 transition-all shadow-sm overflow-hidden">
-      <div
-        onClick={() => setOpen((v) => !v)}
-        className="w-full flex items-center justify-between gap-3 px-5 py-4 text-left cursor-pointer hover:bg-muted/40 transition-colors"
-      >
+    <div className="group relative rounded-2xl border border-border/70 bg-card hover:border-primary/40 transition-all shadow-sm overflow-hidden">
+      {/* The whole card opens the experiment's own practical-file page —
+          deep write-ups live on routed pages, not inline on this listing. */}
+      <Link
+        href={notebookHref}
+        className="absolute inset-0 z-0"
+        aria-label={`Open practical file writeup: ${experiment.title}`}
+      />
+      <div className="flex items-center justify-between gap-3 px-5 py-4">
         <div className="flex items-center gap-3 min-w-0">
           <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-primary/10 text-primary text-xs font-bold">
             •
           </span>
-          <span className="font-bold text-foreground text-sm truncate">{experiment.title}</span>
+          <div className="min-w-0">
+            <span className="font-bold text-foreground text-sm truncate block">
+              {experiment.title}
+            </span>
+            <p className="text-xs text-muted-foreground truncate">{experiment.aim}</p>
+          </div>
         </div>
 
         <div className="flex items-center gap-2 shrink-0">
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              onOpenNotebook(experiment);
-            }}
-            className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold bg-primary/10 text-primary hover:bg-primary hover:text-primary-foreground transition-all"
-          >
-            <FileText className="h-3.5 w-3.5" />
-            <span>Notebook Record</span>
-          </button>
-
           {experiment.labHref && (
             <Link
               href={experiment.labHref}
-              onClick={(e) => e.stopPropagation()}
-              className="inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold border border-primary/30 text-primary hover:bg-primary/10 transition-colors"
+              className="relative z-10 inline-flex items-center gap-1 px-2.5 py-1 rounded-lg text-xs font-semibold border border-primary/30 text-primary hover:bg-primary/10 transition-colors"
             >
               Interactive Lab <ExternalLink className="h-3 w-3" />
             </Link>
           )}
-
-          <ToggleIcon className="h-5 w-5 text-muted-foreground" />
+          <span className="relative z-10 inline-flex items-center gap-1.5 px-3 py-1 rounded-lg text-xs font-semibold bg-primary/10 text-primary group-hover:bg-primary group-hover:text-primary-foreground transition-all">
+            <FileText className="h-3.5 w-3.5" />
+            <span className="hidden sm:inline">Practical File</span>
+          </span>
         </div>
       </div>
-
-      {open && (
-        <div className="px-5 pb-5 space-y-4 border-t border-border/50 pt-4 bg-background/50">
-          <Section icon={Target} title="Objective & Aim">
-            <p className="text-sm text-foreground leading-relaxed font-medium">{experiment.aim}</p>
-          </Section>
-
-          {experiment.requirement && experiment.requirement.length > 0 && (
-            <Section icon={Beaker} title="Apparatus & Reagents Required">
-              <ul className="list-disc pl-5 space-y-1 text-xs text-foreground/90">
-                {experiment.requirement.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            </Section>
-          )}
-
-          {experiment.theory && experiment.theory.length > 0 && (
-            <Section icon={Lightbulb} title="Theoretical Principles & Derivations">
-              <div className="space-y-2 text-xs text-foreground/90 leading-relaxed">
-                {experiment.theory.map((item, i) => (
-                  <p key={i}>{item}</p>
-                ))}
-              </div>
-            </Section>
-          )}
-
-          {experiment.procedure && experiment.procedure.length > 0 && (
-            <Section icon={ListChecks} title="Step-by-Step Practical Procedure">
-              <ol className="space-y-2">
-                {experiment.procedure.map((step, i) => (
-                  <li key={i} className="flex items-start gap-2.5 text-xs text-foreground leading-relaxed">
-                    <span className="shrink-0 mt-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-primary/10 text-[10px] font-bold text-primary">
-                      {i + 1}
-                    </span>
-                    <span>{step}</span>
-                  </li>
-                ))}
-              </ol>
-            </Section>
-          )}
-
-          {experiment.observation && experiment.observation.length > 0 && (
-            <Section icon={ScrollText} title="Observations & Recorded Values">
-              <ul className="list-disc pl-5 space-y-1 text-xs text-foreground">
-                {experiment.observation.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            </Section>
-          )}
-
-          {experiment.calculation && experiment.calculation.length > 0 && (
-            <Section icon={BookOpenCheck} title="Calculations & Formulae">
-              <div className="space-y-1 font-mono text-xs text-foreground bg-muted/40 p-3 rounded-xl border border-border/40">
-                {experiment.calculation.map((item, i) => (
-                  <div key={i}>{item}</div>
-                ))}
-              </div>
-            </Section>
-          )}
-
-          {experiment.result && (
-            <Section icon={ScrollText} title="Final Result & Conclusion">
-              <p className="text-sm font-semibold text-foreground leading-relaxed">{experiment.result}</p>
-            </Section>
-          )}
-
-          {experiment.precautions && experiment.precautions.length > 0 && (
-            <Section icon={Lightbulb} title="Essential Precautions & Error Sources" accent>
-              <ul className="list-disc pl-5 space-y-1 text-xs text-foreground">
-                {experiment.precautions.map((item, i) => (
-                  <li key={i}>{item}</li>
-                ))}
-              </ul>
-            </Section>
-          )}
-
-          <div className="pt-2 flex justify-end">
-            <button
-              onClick={() => onOpenNotebook(experiment)}
-              className="inline-flex items-center gap-1.5 px-4 py-2 rounded-xl text-xs font-bold bg-primary text-primary-foreground shadow-sm hover:opacity-90 transition-opacity"
-            >
-              <FileText className="h-4 w-4" />
-              <span>Open Certified Practical File Blueprint</span>
-            </button>
-          </div>
-        </div>
-      )}
     </div>
   );
 }
@@ -222,7 +81,6 @@ export default function PracticalSubjectPage({
   const [activeTab, setActiveTab] = useState<"simulator" | "syllabus" | "viva" | "calculator">("simulator");
   const [selectedGrade, setSelectedGrade] = useState<"all" | "class-11" | "class-12">("all");
   const [searchQuery, setSearchQuery] = useState("");
-  const [modalExperiment, setModalExperiment] = useState<PracticalExperiment | null>(null);
 
   if (!subject) {
     return (
@@ -417,9 +275,9 @@ export default function PracticalSubjectPage({
                 <div className="space-y-3">
                   {unit.experiments.map((exp) => (
                     <ExperimentCard
-                      key={exp.title}
+                      key={experimentSlug(exp)}
                       experiment={exp}
-                      onOpenNotebook={(e) => setModalExperiment(e)}
+                      notebookHref={`/practical/${subjectSlug}/${experimentSlug(exp)}`}
                     />
                   ))}
                 </div>
@@ -436,13 +294,6 @@ export default function PracticalSubjectPage({
 
       {/* TAB CONTENT 4: OBSERVATION & GRAPH CALCULATOR */}
       {activeTab === "calculator" && <ObservationCalculationEngine />}
-
-      {/* Practical Record Notebook Modal */}
-      <PracticalNotebookModal
-        experiment={modalExperiment}
-        subjectName={subject.name}
-        onClose={() => setModalExperiment(null)}
-      />
     </div>
   );
 }

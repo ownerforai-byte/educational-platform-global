@@ -24,8 +24,8 @@ export function CoinGateDot({ className = "" }: { className?: string }) {
   if (enabled === null) return null;
   const off = enabled === false;
   const label = off
-    ? "Coin gate OFF — free mode for owner emails (students still pay)"
-    : "Coin gate ON — coins required (PRO stays unlimited)";
+    ? "Spark gate OFF — free mode for owner emails (students still pay)"
+    : "Spark gate ON — sparks required on note/content unlocks (PRO stays unlimited)";
 
   return (
     <span

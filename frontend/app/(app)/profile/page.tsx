@@ -202,9 +202,9 @@ export default function ProfilePage() {
       broadcastCoinGate(next);
       // The long ON/OFF announcements are gone (owner request 2026-10-04):
       // the windy dot in the card carries the state now.
-      setGateMsg("Coin gate saved.");
+      setGateMsg("Spark gate saved.");
     } catch (err) {
-      setGateErr(err instanceof Error ? err.message : "Failed to toggle coin gate");
+      setGateErr(err instanceof Error ? err.message : "Failed to toggle spark gate");
     } finally {
       setIsSavingGate(false);
     }
@@ -365,13 +365,13 @@ export default function ProfilePage() {
                 </div>
                 <div>
                   <CardTitle className="text-sm font-semibold flex items-center gap-2">
-                    Owner Coin Gate Control
+                    Owner Spark Gate Control
                     {/* The only place the ON/OFF state shows now — a small
                         windy dot (owner request 2026-10-04). */}
                     <CoinGateDot />
                   </CardTitle>
                   <CardDescription className="text-xs">
-                    Owner-only switch — the whole coin-gated library and AI chat.
+                    Owner-only switch — the whole spark library (note/content unlocks).
                   </CardDescription>
                 </div>
               </div>
@@ -384,7 +384,7 @@ export default function ProfilePage() {
                   </span>
                   <Switch
                     id="coin-gate-toggle"
-                    aria-label="Toggle Coin Gate"
+                    aria-label="Toggle Spark Gate"
                     checked={!!coinGate}
                     disabled={isSavingGate || coinGate === null}
                     onCheckedChange={toggleCoinGate}
@@ -402,7 +402,7 @@ export default function ProfilePage() {
                     ? "Updating…"
                     : coinGate
                     ? "Turn Gate OFF (Free)"
-                    : "Turn Gate ON (Require Coins)"}
+                    : "Turn Gate ON (Require Sparks)"}
                 </Button>
               </div>
             </div>
@@ -739,7 +739,7 @@ export default function ProfilePage() {
                 <div className="flex items-center justify-between gap-3 p-3 rounded-lg border bg-muted/20">
                   <div>
                     <p className="text-xs font-semibold flex items-center gap-1.5">
-                      Coin Gate — owner emails only
+                      Spark Gate — owner emails only
                       <CoinGateDot />
                     </p>
                   </div>

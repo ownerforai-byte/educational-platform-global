@@ -50,7 +50,7 @@ export type GateKind = ContentCategory | "auth";
 export interface CreditContextValue {
   user: SessionUser | null;
   isLoading: boolean;
-  /** Coins available (user.credits); owners see a large floor. */
+  /** Content sparks available (user.credits); owners see a large floor. */
   coins: number;
   /** Every active unlock window. */
   unlocks: UnlockMap;
@@ -60,11 +60,12 @@ export interface CreditContextValue {
   isUnlocked: (key: string) => boolean;
   /** HH:MM:SS remaining for `key`. */
   remainingClock: (key: string) => string;
-  /** Coin cost for a category (null if unknown). */
+  /** Content-spark cost for a category (null if unknown, 0 = free). */
   costOf: (category: ContentCategory) => number | null;
   /**
    * Open a module. Unauthenticated → notice modal (returns false).
-   * Authenticated + already open → true (free refresh).    * Authenticated + closed → deducts coins, starts the unlock window.
+   * Authenticated + already open → true (free refresh).    * Authenticated + closed → deducts content sparks (note/content only —
+   * everything else is free), starts the unlock window.
    */
   openModule: (key: string, category: ContentCategory) => Promise<boolean>;
   /** Force the notice modal open (used by direct handlers). */
@@ -75,7 +76,7 @@ export interface CreditContextValue {
   noticeOpen: boolean;
   /** Reason shown above the notice copy. */
   noticeTitle: string;
-  /** Last error from a failed unlock attempt (e.g. insufficient coins). */
+  /** Last error from a failed unlock attempt (e.g. insufficient sparks). */
   error: string | null;
 }
 
@@ -189,7 +190,7 @@ export function CreditProvider({ children }: { children: ReactNode }) {
             current.role === "ADMIN");
         if (!owner) {
           setError(
-            "The Diagram Hub is reserved for owner accounts — it cannot be unlocked with coins.",
+            "The Diagram Hub is reserved for owner accounts — it cannot be unlocked with sparks.",
           );
           return false;
         }
@@ -207,9 +208,9 @@ export function CreditProvider({ children }: { children: ReactNode }) {
         stateRef.current.user.role === "OWNER" ||
         stateRef.current.user.role === "ADMIN";
 
-      if (!isPrivileged && balance < rule.cost) {
+      if (!isPrivileged && rule.cost > 0 && balance < rule.cost) {
         setError(
-          `Not enough coins — ${rule.cost} required, ${balance} available.`,
+          `Not enough content sparks — ${rule.cost} required, ${balance} available.`,
         );
         return false;
       }

@@ -4,6 +4,7 @@ import { requireAuth, isOwnerEmail, type AuthedRequest } from "../middleware/aut
 import { supabaseAdmin } from "../db/supabase";
 import { invalidateCoinGateCache } from "../utils/credits";
 import { authEmailsById } from "../utils/authEmails";
+import { isProtectedOwnerTarget } from "../utils/ownerGuard";
 import { sendApprovalEmail } from "../utils/mailer";
 
 /**
@@ -337,6 +338,14 @@ router.patch("/users/:id/status", requireAuth, async (req: Request, res: Respons
     return;
   }
 
+  // OWNER INDEPENDENCE (hardcoded 2026-10-12): suspending/rejecting an owner
+  // is a removal of standing — refused for every caller, owner or not.
+  const guard = await isProtectedOwnerTarget(req.params.id);
+  if (guard.protectedTarget) {
+    res.status(403).json({ error: guard.reason });
+    return;
+  }
+
   try {
     const { data: target } = await supabaseAdmin
       .from("profiles")
@@ -412,6 +421,14 @@ router.patch("/users/:id/role", requireAuth, async (req: Request, res: Response)
   const parsed = roleUpdateSchema.safeParse(req.body);
   if (!parsed.success) {
     res.status(400).json({ error: "Invalid role" });
+    return;
+  }
+
+  // OWNER INDEPENDENCE (hardcoded 2026-10-12): changing another owner's role
+  // is "changing their position" — refused. Each owner stands alone.
+  const guard = await isProtectedOwnerTarget(req.params.id);
+  if (guard.protectedTarget) {
+    res.status(403).json({ error: guard.reason });
     return;
   }
 
@@ -666,6 +683,14 @@ router.delete("/users/:id", requireAuth, async (req: Request, res: Response) => 
 
   if (req.params.id === owner.user.id) {
     res.status(400).json({ error: "You cannot delete your own account" });
+    return;
+  }
+
+  // OWNER INDEPENDENCE (hardcoded 2026-10-12): "no one email can remove other
+  // email" — deleting an owner account is refused for every caller.
+  const guard = await isProtectedOwnerTarget(req.params.id);
+  if (guard.protectedTarget) {
+    res.status(403).json({ error: guard.reason });
     return;
   }
 

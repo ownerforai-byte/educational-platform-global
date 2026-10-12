@@ -70,7 +70,7 @@ export function DerivationScaffold({
         <div className="flex flex-wrap items-center gap-2">
           <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 text-amber-600 dark:text-amber-400 border border-amber-500/20 px-3 py-1 text-[10px] font-bold uppercase tracking-wider">
             <Construction className="h-3 w-3" />
-            Full {kind ?? "Derivation"} Coming Soon
+            Full {kind ?? "Derivation"} — Under Progress
           </span>
           {unitTitle && (
             <span className="rounded-full bg-muted px-2.5 py-1 text-[10px] font-semibold text-muted-foreground">

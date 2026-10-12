@@ -29,18 +29,18 @@ export function SyllabusSection({ classSlug, subjectSlug }: SyllabusSectionProps
                 <span className="inline-flex h-5 w-5 items-center justify-center rounded bg-primary/10 text-xs font-bold text-primary">
                   {unitIndex + 1}
                 </span>
-                {unit.title}
-                {unit.hours !== undefined && (
-                  <span className="rounded-full border border-border bg-background px-2 py-0.5 text-xs font-normal text-muted-foreground">
-                    {unit.hours} hrs
-                  </span>
-                )}
                 {unit.introducedIn !== undefined && (
                   <span
                     className="rounded-full border border-sky-500/30 bg-sky-500/10 px-2 py-0.5 text-xs font-medium text-sky-700 dark:text-sky-300"
                     title="Bikram Sambat year this unit first appeared in the official NEB curriculum"
                   >
                     Added in {unit.introducedIn} BS
+                  </span>
+                )}
+                {unit.title}
+                {unit.hours !== undefined && (
+                  <span className="rounded-full border border-border bg-background px-2 py-0.5 text-xs font-normal text-muted-foreground">
+                    {unit.hours} hrs
                   </span>
                 )}
               </h3>

@@ -18,7 +18,7 @@ import {
 export const metadata: Metadata = {
   title: "Notice Board — Ravikisan's Platform",
   description:
-    "Standing notices for Ravikisan's Platform: account approval, the daily credit pool, saved chat history, how Veer grounds its answers, and how to reach the owner.",
+    "Standing notices for Ravikisan's Platform: account approval, the daily spark pool, saved chat history, how Veer grounds its answers, and how to reach the owner.",
 };
 
 /**
@@ -69,9 +69,9 @@ const NOTICES: Notice[] = [
   },
   {
     icon: Coins,
-    title: "The daily pool, and what a coin buys",
+    title: "The daily spark pool, and what a spark covers",
     body:
-      "Guests get 2 free messages a day and signed-in students get 4 credits a day; one credit pays for one Veer reply. The pool refills at 12:00 AM and is fixed — refreshing the page does not top it up. Coin-gated sections unlock for 20 minutes, then re-lock themselves.",
+      "Veer chat is free — no AI spark is ever spent. Content sparks are spent only on actual note/content unlocks (1 spark per 20-minute window); labs, visuals and everything else are free. Spark-gated sections unlock for 20 minutes, then re-lock themselves.",
     href: "/credits",
     linkLabel: "See your plan and top-up options",
   },
@@ -79,7 +79,7 @@ const NOTICES: Notice[] = [
     icon: Gem,
     title: "PRO removes the daily cap",
     body:
-      "PRO is for students who use Veer daily: Veer replies and note credits with no daily ceiling, instead of a pool that refills once a day.",
+      "PRO is for students who use the platform daily: unlimited Veer replies and note sparks with no daily ceiling, instead of a pool that refills once a day.",
     href: "/pro-plan",
     linkLabel: "Read the PRO plan",
   },
@@ -138,7 +138,7 @@ export default function NoticePage() {
           <div>
             <h1 className="text-lg font-bold tracking-tight sm:text-xl">Notice Board</h1>
             <p className="text-xs text-muted-foreground">
-              Standing notices — how accounts, credits, history and answers work here.
+              Standing notices — how accounts, sparks, history and answers work here.
             </p>
           </div>
         </div>
@@ -200,7 +200,7 @@ export default function NoticePage() {
       </section>
 
       <p className="mt-4 rounded-2xl border border-border/70 bg-muted/20 p-4 text-[11px] leading-relaxed text-muted-foreground">
-        No notice on this page is coin-gated — reading is always free. Anything that needs
+        No notice on this page is spark-gated — reading is always free. Anything that needs
         your attention the moment it changes is put on the home page; this board is the
         permanent record.
       </p>

@@ -64,7 +64,11 @@ export function RouteCreditGate({ children }: { children: ReactNode }) {
   // baseline integrity).
   if (category === null || libraryFree) return <>{children}</>;
 
+  const rule = TOKEN_MATRIX[category];
   const open = isUnlocked(moduleKey);
+
+  // FREE categories (cost 0) render straight through — no lock, no ask.
+  if (rule.cost === 0 && category !== "imagehub") return <>{children}</>;
 
   // Unlocked window → render content + live countdown badge.
   if (open) {
@@ -80,7 +84,7 @@ export function RouteCreditGate({ children }: { children: ReactNode }) {
     );
   }
 
-  const rule = TOKEN_MATRIX[category];
+  const sparkLabel = (n: number) => `${n} spark${n === 1 ? "" : "s"}`;
 
   const onUnlock = async () => {
     if (working) return;
@@ -121,8 +125,8 @@ export function RouteCreditGate({ children }: { children: ReactNode }) {
                 {rule.emoji} {rule.label}
               </p>
               <p className="mt-1.5 text-sm text-muted-foreground">
-                This section is part of the coin-gated library. Unlock it for 20
-                minutes — it auto-locks again when the window ends.
+                This section is part of the spark library — actual note/content.
+                Unlock it for 20 minutes — it auto-locks again when the window ends.
               </p>
             </div>
 
@@ -140,7 +144,9 @@ export function RouteCreditGate({ children }: { children: ReactNode }) {
               {working
                 ? "Unlocking…"
                 : isAuthenticated
-                  ? `Unlock — ${rule.cost} coins`
+                  ? rule.cost > 0
+                    ? `Unlock — ${sparkLabel(rule.cost)}`
+                    : "Open — free"
                   : "Sign in to unlock"}
             </button>
 

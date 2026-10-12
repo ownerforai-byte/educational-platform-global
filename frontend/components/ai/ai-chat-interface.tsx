@@ -25,6 +25,7 @@ import {
   PanelLeftClose,
   PanelLeft,
   UserRound,
+  ArrowDown,
 } from "lucide-react";
 import {
   chat,
@@ -48,9 +49,10 @@ import {
 } from "@/lib/ai/guest-quota";
 import type { AIChatMessage } from "@/types/api";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { useCoinGateEnabled } from "@/features/credits/use-coin-gate";
 import { CoinGateDot } from "@/features/credits/coin-gate-dot";
 import { isOwnerEmail } from "@/lib/owner";
+import { AiSparkBadge, recordAiSparkUse } from "@/components/ai/ai-spark-badge";
+import { FloatingIdeaChips } from "@/components/ai/floating-idea-chips";
 import { InteractiveMarkdown } from "@/components/content/interactive-markdown";
 import { cn } from "@/lib/utils";
 import { CaptainAvatar, CaptainMark } from "@/components/ai/captain-logo";
@@ -131,11 +133,10 @@ function shuffledSuggestions(): Suggestion[] {
   return bag.slice(0, 6);
 }
 
-// Daily credit pools (owner policy 2026-09-26): guests get 5 free
-// messages/day, logged users get 8 credits/day — both reset at 12:00 AM.
-// Guest counts come from the shared day-keyed mirror (lib/ai/guest-quota);
-// the server enforces the real numbers either way.
-const DAILY_CREDIT_POOL = 4;
+// Guest trial: 1 free message/day. Signed-in Veer chat is FREE (owner policy
+// 2026-10-12) — the wallet only charges for note/content unlocks. Guest
+// counts come from the shared day-keyed mirror (lib/ai/guest-quota); the
+// server enforces the real numbers either way.
 const ACTIVE_SESSION_KEY = "neb_ai_active_session";
 
 // Rotating "work in progress" lines while the professor composes a reply —
@@ -274,10 +275,8 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
   const { user } = useSession();
   const router = useRouter();
   const isLoggedIn = !!user;
-  // Owner coin gate (live): when OFF, chat is free for everyone — the credit
-  // lock below must not fire on a zero balance (owner report 2026-10-03).
-  const coinGateEnabled = useCoinGateEnabled();
-  const freeMode = coinGateEnabled === false;
+  // Veer chat is FREE (owner policy 2026-10-12): no wallet gating at all —
+  // the content spark wallet only charges for note/content unlocks.
   /** Photos queued for the next message (camera / gallery). */
   const [pendingImages, setPendingImages] = useState<string[]>([]);
 
@@ -297,11 +296,6 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
   // or the server HTML (always 0) won't match the hydrated client (the
   // 2026-09-26 hydration error on /chat: "7" vs "6"). Seed after mount.
   const [guestCount, setGuestCount] = useState(0);
-  const [dailyCredits, setDailyCredits] = useState<number | null>(null);
-  // True only after the SERVER declared the pool empty (402 or a billing
-  // response of 0) — never guessed client-side, so owner/admin/premium
-  // balances (manually managed, never 402) can't be locked out by mistake.
-  const [poolEmpty, setPoolEmpty] = useState(false);
   const [enhancing, setEnhancing] = useState(false);
   const [historyState, setHistoryState] = useState<"idle" | "loading" | "ready">("idle");
   const historyLoadedRef = useRef(false);
@@ -319,6 +313,20 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
 
   const streamRef = useRef<HTMLDivElement>(null);
   const chatBottomRef = useRef<HTMLDivElement>(null);
+  // Reader-first streaming: the AI keeps writing WITHOUT yanking the viewport.
+  // Auto-follow runs only while the reader is pinned to the bottom; once they
+  // scroll up to read, the reply continues below and a "Jump to latest" chip
+  // restores follow mode on demand.
+  const [followStream, setFollowStream] = useState(true);
+  const [hasNewBelow, setHasNewBelow] = useState(false);
+
+  const handleStreamScroll = useCallback(() => {
+    const el = streamRef.current;
+    if (!el) return;
+    const atBottom = el.scrollHeight - el.scrollTop - el.clientHeight <= 80;
+    setFollowStream(atBottom);
+    if (atBottom) setHasNewBelow(false);
+  }, []);
   const inputRef = useRef<HTMLTextAreaElement>(null);
   const sessionRef = useRef(session);
   sessionRef.current = session;
@@ -347,19 +355,11 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
   }, [embedded, sidebarOpen]);
 
   const isGuestLimited = !isLoggedIn && guestCount >= MAX_GUEST_MESSAGES;
-  // BILL-EVERYONE: students/customers always pay; owners pay only when the
-  // profile toggle is ON (freeMode === false). PRO stays unlimited.
-  // freeMode here means "owners free" — it never frees students.
+  // Veer chat is FREE (owner policy 2026-10-12) — the content spark wallet
+  // only charges for note/content unlocks, never for chat. The only limit
+  // left is the guest 1-message trial.
   const isOwner = isOwnerEmail(user?.email);
-  const privilegedUser =
-    !!user?.premiumStatus || (isOwner && freeMode);
-  const creditsExhausted =
-    isLoggedIn &&
-    !privilegedUser &&
-    (poolEmpty ||
-      dailyCredits === 0 ||
-      (typeof user?.credits === "number" && user.credits <= 0));
-  const composerLocked = isGuestLimited || creditsExhausted;
+  const composerLocked = isGuestLimited;
 
   const refreshSessions = useCallback(async () => {
     if (!isLoggedIn) {
@@ -443,10 +443,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
     setSession(active);
     loadSessionHistory(active);
     refreshSessions();
-    // Signed-in header shows the live daily pool (4 credits/day, resets
-    // at 12:00 AM) — /api/auth/me already applied the lazy midnight reset.
-    if (user && typeof user.credits === "number") setDailyCredits(user.credits);
-  }, [isLoggedIn, loadSessionHistory, refreshSessions, user]);
+  }, [isLoggedIn, loadSessionHistory, refreshSessions]);
 
   useEffect(() => {
     // Nothing to follow yet (empty state) — scrolling to the sentinel would
@@ -457,8 +454,15 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       if (streamRef.current) streamRef.current.scrollTop = 0;
       return;
     }
-    chatBottomRef.current?.scrollIntoView({ behavior: "smooth" });
-  }, [messages, sending]);
+    // Follow the reply only while the reader is already at the bottom —
+    // otherwise leave their reading position untouched and just flag that
+    // new text arrived below.
+    if (followStream) {
+      chatBottomRef.current?.scrollIntoView({ behavior: "smooth" });
+    } else {
+      setHasNewBelow(true);
+    }
+  }, [messages, sending, followStream]);
 
   // Cycle the thinking lines while a reply is composing (client-only — the
   // indicator never renders during SSR).
@@ -515,13 +519,11 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
     if (historyState === "loading") return;
 
     if (isGuestLimited) {
-      setError(`You've used your free message for today. Sign in to keep asking Veer — members get ${DAILY_CREDIT_POOL} daily credits and saved chat histories.`);
+      setError("You've used your free message for today. Sign in to keep asking Veer — members get unlimited free chat and saved chat histories.");
       return;
     }
-    if (creditsExhausted) {
-      setError(`You've used all ${DAILY_CREDIT_POOL} credits of today's daily pool. It resets at 12:00 AM — or go PRO for no daily cap.`);
-      return;
-    }
+
+    recordAiSparkUse(); // AI spark: informational daily counter (chat is free)
 
     const userMsg: AIChatMessage = images.length
       ? { role: "user", content: textToSend, images }
@@ -540,7 +542,6 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       // for both signed-in and guest users, with real-time continuous generation,
       // figures, and markdown rendering.
       let liveAcc = "";
-      let liveCredits: number | null = null;
       let liveRemaining: number | null = null;
       let sawToken = false;
       let lastPaint = 0;
@@ -599,8 +600,6 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
           } else if ("imageFailed" in chunk) {
             const f = figs.get(chunk.imageFailed);
             if (f) f.status = "failed";
-          } else if (typeof chunk.credits === "number") {
-            liveCredits = chunk.credits;
           } else if (typeof chunk.remaining === "number") {
             liveRemaining = chunk.remaining;
           }
@@ -624,10 +623,6 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
       const finalReply = liveAcc + figureBlocks();
 
       if (isLoggedIn) {
-        if (liveCredits !== null) {
-          setDailyCredits(liveCredits);
-          if (liveCredits <= 0) setPoolEmpty(true);
-        }
         saveChatHistory(targetSession, [
           { role: "user", content: textToSend },
           { role: "assistant", content: finalReply },
@@ -684,16 +679,10 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
         err.message || "Failed to reach Veer. Please try again.";
       setError(msg);
       if (err?.status === 402) {
-        // Daily pool empty (guest or signed-in). The server's message
-        // explains the limit — show that instead of a fake "connection
-        // difficulty" bubble, and lock the composer until the pool refills.
-        if (isLoggedIn) {
-          setDailyCredits(0);
-          setPoolEmpty(true);
-        } else {
-          writeGuestCount(MAX_GUEST_MESSAGES);
-          setGuestCount(MAX_GUEST_MESSAGES);
-        }
+        // Guest trial used. The server's message explains the limit — show
+        // that instead of a fake "connection difficulty" bubble.
+        writeGuestCount(MAX_GUEST_MESSAGES);
+        setGuestCount(MAX_GUEST_MESSAGES);
       } else {
         setMessages((prev) => [
           ...prev,
@@ -953,20 +942,21 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
           </div>
           <div className="p-3 border-t border-border/50">
             <div className="flex items-center gap-2 text-[10px] text-muted-foreground">
-              {isLoggedIn && privilegedUser && isOwner ? (
+              {isLoggedIn && isOwner ? (
                 // Owner + gate OFF → only the small windy dot shows the state.
                 <CoinGateDot />
+              ) : isLoggedIn ? (
+                <>
+                  <Sparkles className="h-3.5 w-3.5 text-primary" />
+                  <span className="font-semibold">Free chat · unlimited</span>
+                </>
               ) : (
                 <>
                   <Coins className="h-3.5 w-3.5 text-amber-500" />
                   <span className="font-semibold">
-                    {isLoggedIn
-                      ? privilegedUser
-                        ? "PRO — unlimited, no credits needed"
-                        : `${Math.min(dailyCredits ?? user?.credits ?? DAILY_CREDIT_POOL, DAILY_CREDIT_POOL)}/${DAILY_CREDIT_POOL} credits today`
-                      : Math.max(0, MAX_GUEST_MESSAGES - guestCount) > 0
-                        ? `${Math.max(0, MAX_GUEST_MESSAGES - guestCount)} free message left today`
-                        : "Free trial used · sign in to continue"}
+                    {Math.max(0, MAX_GUEST_MESSAGES - guestCount) > 0
+                      ? `${Math.max(0, MAX_GUEST_MESSAGES - guestCount)} free message left today`
+                      : "Free trial used · sign in to continue"}
                   </span>
                 </>
               )}
@@ -1018,27 +1008,10 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                 {Math.max(0, MAX_GUEST_MESSAGES - guestCount) > 0 ? "1 free trial message" : "Free trial used"}
               </span>
             )}
-            {isLoggedIn && privilegedUser &&
-              (isOwner ? (
-                <CoinGateDot className="hidden sm:inline-flex" />
-              ) : (
-                <span
-                  className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 font-semibold"
-                  title="PRO — unlimited, no coins needed"
-                >
-                  <Sparkles className="h-3 w-3" />
-                  Free mode
-                </span>
-              ))}
-            {isLoggedIn && !privilegedUser && (
-              <span
-                className="hidden sm:flex items-center gap-1.5 text-[11px] px-2 py-1 rounded-lg bg-muted border border-border/60 font-semibold"
-                title={`1 credit per message · daily pool resets to ${DAILY_CREDIT_POOL} at 12:00 AM`}
-              >
-                <Coins className="h-3 w-3 text-amber-500" />
-                {Math.min(dailyCredits ?? user?.credits ?? DAILY_CREDIT_POOL, DAILY_CREDIT_POOL)}/{DAILY_CREDIT_POOL} credits today
-              </span>
+            {isLoggedIn && isOwner && (
+              <CoinGateDot className="hidden sm:inline-flex" />
             )}
+            {isLoggedIn && <AiSparkBadge className="hidden sm:inline-flex" />}
             {/* New chat — opens a fresh conversation (same as the sidebar button) */}
             <button
               onClick={startNewChat}
@@ -1062,7 +1035,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
         </div>
 
         {/* Message stream */}
-        <div ref={streamRef} className="flex-1 overflow-y-auto px-4 sm:px-6 py-5 space-y-5">
+        <div ref={streamRef} onScroll={handleStreamScroll} className="flex-1 overflow-y-auto px-4 sm:px-6 py-5 space-y-5">
           {historyState === "loading" ? (
             <div className="h-full flex flex-col items-center justify-center gap-3 text-muted-foreground">
               <div className="h-7 w-7 animate-spin rounded-full border-2 border-primary border-t-transparent" />
@@ -1130,7 +1103,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
                   </div>
                   <div className="min-w-0 flex-1 rounded-2xl rounded-tl-md border border-border/60 bg-muted/20 px-4 py-3">
                     <div className="text-xs leading-relaxed">
-                      <InteractiveMarkdown content={msg.content} />
+                      <InteractiveMarkdown content={msg.content} blockCopy className="chat-prose" />
                       {isStreaming && index === lastAssistantIndex && (
                         <span className="ml-0.5 inline-block h-3 w-1.5 animate-pulse rounded-sm bg-primary align-text-bottom" aria-hidden />
                       )}
@@ -1195,6 +1168,23 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
             </div>
           )}
 
+          {hasNewBelow && !followStream && (
+            <div className="sticky bottom-2 z-10 flex justify-center">
+              <button
+                type="button"
+                onClick={() => {
+                  setFollowStream(true);
+                  setHasNewBelow(false);
+                  chatBottomRef.current?.scrollIntoView({ behavior: "smooth" });
+                }}
+                className="inline-flex items-center gap-1.5 rounded-full border border-primary/40 bg-card/95 px-3.5 py-1.5 text-xs font-semibold text-primary shadow-lg shadow-primary/10 backdrop-blur transition-colors hover:bg-primary/10"
+              >
+                <ArrowDown className="h-3.5 w-3.5" />
+                Jump to latest
+              </button>
+            </div>
+          )}
+
           <div ref={chatBottomRef} />
         </div>         {/* Composer */}
         <div className="px-4 sm:px-6 py-4 border-t border-border/60 bg-muted/10 shrink-0">
@@ -1202,6 +1192,16 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
             images={pendingImages}
             onRemove={(i) => setPendingImages((prev) => prev.filter((_, idx) => idx !== i))}
             className="max-w-4xl mx-auto mb-2"
+          />
+          {/* FLOATING IDEA CHIPS (owner 2026-10-12): float in the moment typing
+              starts, fade out the moment the draft empties. Picking one extends
+              the draft rather than replacing it. */}
+          <FloatingIdeaChips
+            visible={input.trim().length > 0 && !sending && !composerLocked}
+            onPick={(idea) =>
+              setInput((prev) => (prev.trim() ? `${prev.trim()} — ${idea}` : idea))
+            }
+            className="max-w-4xl mx-auto"
           />
           <div className="relative flex items-end gap-2 max-w-4xl mx-auto">
             <textarea
@@ -1214,9 +1214,7 @@ export function AIChatInterface({ embedded = false }: { embedded?: boolean } = {
               placeholder={
                 isGuestLimited
                   ? "Guest limit reached — please log in to ask more questions."
-                  : creditsExhausted
-                    ? "Daily credits used up — your pool resets to 4 at 12:00 AM, or go PRO with no daily cap."
-                    : "Ask me anything… ⚡ Enter to send · Shift+Enter for a new line"
+                  : "Ask me anything… ⚡ Enter to send · Shift+Enter for a new line"
               }
               className="flex-1 max-h-32 min-h-[44px] py-2.5 px-4 rounded-2xl border border-border/80 bg-card text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-2 focus:ring-primary/40 resize-none font-medium"
             />

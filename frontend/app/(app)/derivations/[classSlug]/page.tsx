@@ -54,8 +54,9 @@ export default async function DerivationsClassPage({
 
       {pcbCards.length === 0 ? (
         <EmptyState
-          title="No derivation content yet"
-          description="Derivation notes for this class track will be added as we build out the library."
+          icon={<Construction className="h-6 w-6" />}
+          title="Derivation notes under progress — will be added in a future update"
+          description={`Derivation notes for ${classLabel} are under progress and will be added in a future update.`}
           action={{ label: "Explore the Derivations Hub", href: "/derivations" }}
         />
       ) : (
@@ -77,7 +78,7 @@ export default async function DerivationsClassPage({
                     </h3>
                     {card.available === 0 && (
                       <span className="inline-flex items-center gap-1 text-[10px] font-bold uppercase px-1.5 py-0.5 rounded-full bg-amber-500/10 text-amber-500 border border-amber-500/20">
-                        <Construction className="h-2.5 w-2.5" /> Soon
+                        <Construction className="h-2.5 w-2.5" /> Under progress
                       </span>
                     )}
                   </div>

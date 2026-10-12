@@ -104,7 +104,7 @@ export default function OwnerCreditsPage() {
 
   const runEveryone = async () => {
     if (!everyoneAmount) return;
-    if (!window.confirm(`Grant ${everyoneAmount >= 0 ? "+" : ""}${everyoneAmount} credits to ALL ${users.length} users?`)) return;
+    if (!window.confirm(`Grant ${everyoneAmount >= 0 ? "+" : ""}${everyoneAmount} content sparks to ALL ${users.length} users?`)) return;
     setBusy("everyone");
     setError(null);
     setResult(null);
@@ -128,7 +128,7 @@ export default function OwnerCreditsPage() {
             Credit Division
           </h1>
           <p className="text-sm text-muted-foreground">
-            Divide credits across individual Gmails, or grant everyone at once.
+            Divide content sparks across individual Gmails, or grant everyone at once.
           </p>
         </div>
         <Button variant="outline" size="sm" onClick={load} disabled={isLoading}>

@@ -4,6 +4,7 @@ import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { BackButton } from "@/components/navigation/back-button";
 import { TopicDetailView } from "@/features/syllabus/components/topic-detail-view";
 import { getUnitTopic, resolveUnitIdFromChapterSlug } from "@/features/syllabus/queries";
+import { Construction } from "lucide-react";
 import Link from "next/link";
 
 export const dynamic = "force-dynamic";
@@ -101,13 +102,18 @@ export default async function TopicPage({
       <div className="space-y-1">
         <h1 className="text-3xl font-bold tracking-tight">{topicTitle}</h1>
         <p className="text-muted-foreground">
-          Topic content coming soon. For now, check out the notes pages.
+          Topic content is under progress and will be added in a future update. For now, check out the notes pages.
         </p>
       </div>
 
       <div className="rounded-xl border border-dashed border-border p-8 text-center text-sm text-muted-foreground">
-        This topic will be available once we populate the database with study materials.
-        <br />
+        <Construction className="mx-auto h-6 w-6 text-muted-foreground/60" />
+        <p className="mt-2 font-semibold text-foreground">
+          Under progress — will be added in a future update
+        </p>
+        <p className="mt-1">
+          Study materials for this topic are under progress and will be added in a future update.
+        </p>
         <Link
           href={`/${classSlug}/${subjectSlug}`}
           className="text-primary hover:underline mt-2 inline-block"

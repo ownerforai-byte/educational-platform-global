@@ -128,9 +128,9 @@ export function UserNav() {
                 <span>{badge.label} Tier</span>
               </span>
               {user.credits !== undefined && (
-                <span className="text-[10px] font-mono text-muted-foreground flex items-center gap-1">
+                <span className="text-[10px] font-mono text-muted-foreground flex items-center gap-1" title="Content sparks — spent only on actual note/content unlocks">
                   <Coins className="h-3 w-3 text-amber-500" />
-                  <span>{user.credits} credits</span>
+                  <span>{user.credits} content sparks</span>
                 </span>
               )}
             </div>
@@ -152,7 +152,7 @@ export function UserNav() {
               className="flex items-center gap-2.5 px-3 py-2 rounded-xl text-foreground hover:bg-muted transition-colors font-medium"
             >
               <Coins className="h-3.5 w-3.5 text-primary" />
-              <span>Credit Wallet</span>
+              <span>Spark Wallet</span>
             </Link>
 
             <Link

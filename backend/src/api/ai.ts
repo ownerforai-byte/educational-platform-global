@@ -2,9 +2,8 @@ import { Router, Request, Response } from "express";
 import { serverError, ERROR_ID_HEADER } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
 import { requireAuth, requireOwnerEmail } from "../middleware/auth";
-import { isOwnerEmail } from "../middleware/auth";
-import { ensureDailyCredits, spendCredits, refundCredits, AI_MESSAGE_COST, DAILY_CREDIT_POOL, isCoinGateEnabled } from "../utils/credits";
-import { supabaseAdmin } from "../db/supabase";
+// (Owner-policy 2026-10-12: free chat — no auth-email or DB lookups needed
+// here any more; requireOwnerEmail already gates the route.)
 import { logServerError, newErrorId } from "../middleware/errors";
 import { appendConsoleRules, buildProfessorContext, withProfessorContext } from "../ai/prompts";
 import { completeAnswer } from "../ai/complete-answer";
@@ -31,12 +30,9 @@ router.get("/providers", (_req: Request, res: Response) => {
 });
 
 router.post("/", requireAuth, requireOwnerEmail, async (req: Request, res: Response) => {
-  // Set once the 1-credit message fee has been captured — refunded on any
-  // failure path below so the student never pays for an answer they never
-  // received (the "charged but got a 500" weak point).
-  let billedUserId: string | null = null;
-  // Shared with the SSE pipeline: true as soon as ANY character or figure
-  // placeholder reached the student, which decides refund-vs-keep on failure.
+  // Veer chat is FREE (owner policy 2026-10-12): there is no message fee, so
+  // no billed-user bookkeeping and no refund path exist any more. The
+  // streamState flag survives only to know whether the student saw anything.
   const streamState: StreamState = { streamedAny: false };
   try {
     const body = req.body;
@@ -63,48 +59,22 @@ router.post("/", requireAuth, requireOwnerEmail, async (req: Request, res: Respo
       }
     }
 
-    // ── Daily pool + 1-credit-per-message billing ──
-    // BILL-EVERYONE (corrected 2026-10-04): all signed-in users pay 1 credit
-    // per message. PRO (premium_status) is unlimited. Owner-allowlist emails
-    // follow the profile toggle: gate ON → billed like students; gate OFF →
-    // free (no deduction, no lock). Students/customers are ALWAYS billed.
+    // ── Veer chat is FREE (owner decision 2026-10-12) ──
+    // "Veer chat and everything else are free — no AI spark is ever spent."
+    // The AI spark shown at the top of the chat is an informational daily
+    // counter only; nothing here reads or writes any balance. Content sparks
+    // are spent exclusively on actual note/content unlocks (api/user.ts).
     const user = (req as unknown as { user?: { id: string; email?: string; role?: string | null } }).user;
     if (!user) {
       res.status(401).json({ error: "Unauthorized" });
       return;
     }
-    const { data: prof } = await supabaseAdmin
-      .from("profiles")
-      .select("role, premium_status")
-      .eq("id", user.id)
-      .maybeSingle();
-    const isOwner = isOwnerEmail(user?.email);
-    const proFree = (prof?.premium_status ?? false) === true;
-
-    let creditsLeft: number | null = null;
-    // Owner toggle OFF frees OWNERS ONLY — students still pay.
-    const coinGate = await isCoinGateEnabled();
-    const ownerFree = isOwner && !coinGate;
-    if (!proFree && !ownerFree) {
-      // Lazy midnight reset: first AI call of the day refills the pool.
-      const ensured = await ensureDailyCredits(user.id, user.email, prof?.role as string | null, prof?.premium_status);
-      const remaining = await spendCredits(
-        user.id,
-        AI_MESSAGE_COST,
-        "Veer tutor message",
-      );
-      if (remaining === null) {
-        res.status(402).json({
-          error: "Insufficient credits",
-          required: AI_MESSAGE_COST,
-          current: ensured.credits === Infinity ? 0 : ensured.credits,
-          message: `You've used all ${DAILY_CREDIT_POOL} credits of today's daily pool. It resets to ${DAILY_CREDIT_POOL} credits at 12:00 AM — or go PRO with no daily cap.`,
-        });
-        return;
-      }
-      billedUserId = user.id;
-      creditsLeft = remaining;
-    }
+    // FREE CHAT: no billing block at all. Veer never deducts a spark, for any
+    // account class — students, owners, PRO or guest (owner policy 2026-10-12:
+    // "Veer chat and everything else are free — no AI spark is ever spent").
+    // The `credits` field stays in the response as undefined so older clients
+    // keep parsing; the AI spark badge is informational only.
+    const creditsLeft: number | null = null;
 
     const aiService = getService();
 
@@ -154,14 +124,6 @@ router.post("/", requireAuth, requireOwnerEmail, async (req: Request, res: Respo
         doneExtras: { credits: creditsLeft ?? undefined },
         state: streamState,
       });
-      if (outcome.status === "failed" && billedUserId && !streamState.streamedAny) {
-        // Nothing reached the student → the 1-credit fee goes back.
-        await refundCredits(
-          billedUserId,
-          AI_MESSAGE_COST,
-          "Refund: AI reply failed (stream)",
-        ).catch(() => {});
-      }
       channel.end();
       return;
     }
@@ -198,12 +160,7 @@ router.post("/", requireAuth, requireOwnerEmail, async (req: Request, res: Respo
     });
   } catch (err: any) {
     console.error("AI chat error:", err);
-    // The answer never reached the student → give the 1-credit fee back before
-    // answering with an error status. A stream that already painted partial
-    // text is the service being paid for, so it keeps the fee.
-    if (billedUserId && !streamState.streamedAny) {
-      await refundCredits(billedUserId, AI_MESSAGE_COST, "Refund: AI reply failed").catch(() => {});
-    }
+    // FREE CHAT: nothing to refund — the student was never charged.
     // The SSE channel opens before the research step, so the response may
     // already be mid-stream: send an error frame (a JSON status would throw
     // ERR_HTTP_HEADERS_SENT) and close, or the student waits on a silent

@@ -57,7 +57,7 @@ export function CreditBadge({ className = "" }: { className?: string }) {
       <Link
         href="/credits"
         className={`group flex items-center gap-1.5 px-2.5 py-1 rounded-full border border-amber-500/30 bg-amber-500/10 hover:bg-amber-500/20 transition-all ${className}`}
-        title="50 Free Guest Credits • Click to view credit balance & perks"
+        title="50 Free Guest Sparks • Click to view spark balance & perks"
       >
         <Coins className="h-3.5 w-3.5 text-amber-500" />
         <span className="text-xs font-bold text-amber-600 dark:text-amber-400">50</span>

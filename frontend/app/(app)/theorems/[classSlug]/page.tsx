@@ -64,8 +64,9 @@ export default async function TheoremsClassPage({
 
       {!hasAny ? (
         <EmptyState
-          title="No theorem content yet"
-          description="Theorem and proof notes for this class track will be added as we build out the library."
+          icon={<Construction className="h-6 w-6" />}
+          title="Theorem & proof notes under progress — will be added in a future update"
+          description={`Theorem and proof notes for ${classLabel} are under progress and will be added in a future update.`}
           action={{ label: "Explore All Theorems & Proofs", href: "/theorems" }}
         />
       ) : (

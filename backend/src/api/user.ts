@@ -124,13 +124,17 @@ router.post("/credits/request", requireAuth, async (req: Request, res: Response)
   }
 });
 
-// ── Token value allocation matrix (authoritative — mirrors the client) ───────
+// ── Spark value allocation matrix (authoritative — mirrors the client) ──────
+// Spark billing (owner decision 2026-10-12: "charge for actual note or content
+// -- remove for others"): ONLY actual note/content unlocks (theory + reference
+// study material) cost content sparks. Labs, visuals and the Diagram Hub are
+// free — no charge, ever. Veer chat is free too (no AI spark is ever spent).
 const UNLOCK_COSTS: Record<"lab3d" | "visuals" | "theory" | "reference" | "imagehub", number> = {
-  lab3d: 5,
-  visuals: 2,
+  lab3d: 0,
+  visuals: 0,
   theory: 1,
   reference: 1,
-  imagehub: 5,
+  imagehub: 0,
 };
 
 const UNLOCK_WINDOW_SECONDS = 1200; // 20 minutes
@@ -142,17 +146,18 @@ const unlockSchema = z.object({
 
 /**
  * POST /api/user/credits/unlock
- * Deduct the category's coin cost and return the 20-minute window expiration.
+ * Deduct the category's CONTENT-SPARK cost and return the 20-minute window
+ * expiration. Only actual note/content categories (theory, reference) carry a
+ * spark cost; every other category costs 0 and must never touch the balance.
  *
- * BILL-EVERYONE (corrected 2026-10-04): all users pay from the daily pool.
  * PRO (premium_status) is unlimited and free. Owner-allowlist emails are free
  * only while their profile toggle is OFF; when the gate is ON they pay like
- * students. Students/customers ALWAYS pay (must purchase coins).
+ * students. Students/customers ALWAYS pay (must purchase sparks).
  *
  * 401 — unauthenticated
- * 402 — insufficient credits (pool exhausted)
+ * 402 — insufficient sparks (pool exhausted)
  * 400 — unknown category
- * 200 — { credits, expiresAt }
+ * 200 — { credits, expiresAt, cost }
  */
 router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) => {
   const user = (req as AuthedRequest).user;
@@ -164,8 +169,26 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
   }
 
   const { category, moduleKey } = parsed.data;
-  const cost = UNLOCK_COSTS[category];
+  const cost = UNLOCK_COSTS[category] ?? 0;
   const expiresAt = Math.floor(Date.now() / 1000) + UNLOCK_WINDOW_SECONDS;
+
+  // FREE categories (labs, visuals, Diagram Hub): open the window and return —
+  // the balance is never read, never written, never logged.
+  if (cost === 0) {
+    const { data: freeProfile } = await supabaseAdmin
+      .from("profiles")
+      .select("role, credits, premium_status")
+      .eq("id", user.id)
+      .maybeSingle();
+    if (category === "imagehub" && !isOwnerEmail(user.email)) {
+      res.status(403).json({
+        error: "The Diagram Hub is reserved for owner accounts.",
+      });
+      return;
+    }
+    res.json({ credits: freeProfile?.credits ?? 0, expiresAt, cost: 0 });
+    return;
+  }
 
   try {
     const { data: profile, error: profileError } = await supabaseAdmin
@@ -228,12 +251,12 @@ router.post("/credits/unlock", requireAuth, async (req: Request, res: Response) 
         error: "Insufficient credits",
         required: cost,
         current: ensured.credits,
-        message: "You need more coins to unlock this content.",
+        message: "You need more content sparks to unlock this note.",
       });
       return;
     }
 
-    const reason = `Unlocked ${category}${moduleKey ? ` (${moduleKey})` : ""} for 2h window`;
+    const reason = `Content spark: unlocked ${category}${moduleKey ? ` (${moduleKey})` : ""} for 20-min window`;
     const remaining = await spendCredits(user.id, cost, reason);
 
     if (remaining === null) {
