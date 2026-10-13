@@ -274,10 +274,12 @@ function FieldCard({
   def,
   items,
   emptyHint,
+  orderLabel,
 }: {
   def: FieldDef;
   items: string[] | McqItem[] | string | undefined;
   emptyHint?: boolean;
+  orderLabel?: string;
 }) {
   const Icon = def.icon;
   const isEmpty =
@@ -287,66 +289,72 @@ function FieldCard({
     (typeof items === "string" && items.trim().length === 0);
 
   return (
-    <Card className={`${def.tone} border overflow-hidden`}>
-      <div className="px-3 py-2 flex items-center gap-2 border-b border-black/5 dark:border-white/5">
-        <Icon className={`h-3.5 w-3.5 ${def.headerTone}`} />
-        <span className={`text-xs font-bold ${def.headerTone}`}>{def.label}</span>
+    <Card className={`${def.tone} border overflow-hidden w-full`}>
+      <div className="px-4 py-2.5 flex items-center gap-2 border-b border-black/5 dark:border-white/5">
+        {orderLabel && (
+          <span className="text-[10px] font-extrabold tabular-nums px-1.5 py-0.5 rounded bg-background/60 border border-border/40 text-muted-foreground">
+            {orderLabel}
+          </span>
+        )}
+        <Icon className={`h-4 w-4 ${def.headerTone}`} />
+        <span className={`text-sm font-bold ${def.headerTone}`}>{def.label}</span>
         {Array.isArray(items) && items.length > 0 && (
           <Badge
             variant="secondary"
-            className="ml-auto text-[10px] h-4 px-1.5 bg-background/50 text-muted-foreground"
+            className="ml-auto text-[10px] h-5 px-2 bg-background/50 text-muted-foreground"
           >
-            {items.length}
+            {items.length} in order
           </Badge>
         )}
       </div>
-      <div className="p-2.5">
+      <div className="p-3 sm:p-4">
         {isEmpty ? (
-          <div className="text-[11px] text-muted-foreground/70 italic flex items-start gap-1.5 border border-dashed border-muted-foreground/20 rounded-md p-2 bg-background/30">
-            <AlertCircle className="h-3 w-3 shrink-0 mt-0.5 text-muted-foreground/50" />
+          <div className="text-xs text-muted-foreground/70 italic flex items-start gap-1.5 border border-dashed border-muted-foreground/20 rounded-md p-2.5 bg-background/30">
+            <AlertCircle className="h-3.5 w-3.5 shrink-0 mt-0.5 text-muted-foreground/50" />
             <span>
               Empty — populate <code className="font-mono text-[10px] bg-muted px-1 rounded">{def.key}</code> when adding content
             </span>
           </div>
         ) : typeof items === "string" ? (
-          <div className="text-xs leading-relaxed">
+          <div className="text-sm leading-[1.8] break-words">
             <MathMarkdown content={items} />
           </div>
         ) : def.key === "mcs" ? (
-          <ol className="space-y-2">
+          <ol className="space-y-2.5">
             {(items as McqItem[]).map((mc, i) => (
-              <li key={i} className="text-xs space-y-1 rounded border border-border/40 p-2 bg-background/40">
-                <p className="font-medium">
-                  {i + 1}. {mc.question}
+              <li key={i} className="text-sm space-y-1.5 rounded-lg border border-border/40 p-3 bg-background/40 w-full">
+                <p className="font-medium leading-[1.7]">
+                  <span className="mr-2 font-bold text-primary">{i + 1}.</span>
+                  {mc.question}
                 </p>
-                <ol className="pl-4 space-y-0.5 text-[11px] text-muted-foreground">
+                <ol className="pl-7 space-y-1 text-[13px] text-muted-foreground leading-relaxed">
                   {mc.options.map((opt, j) => (
-                    <li key={j}>
+                    <li key={j} className="break-words">
                       {String.fromCharCode(65 + j)}. {opt}
                     </li>
                   ))}
                 </ol>
-                <p className="text-[11px] font-semibold text-green-700 dark:text-green-400">
+                <p className="pl-7 text-xs font-semibold text-green-700 dark:text-green-400">
                   Ans: {mc.answer}
                 </p>
               </li>
             ))}
           </ol>
         ) : (
-          <ul className="space-y-1">
+          <ol className="space-y-2">
             {(items as string[]).map((it, i) => (
-              <li key={i} className="flex gap-1.5 text-xs leading-relaxed">
+              <li key={i} className="flex gap-2.5 text-sm leading-[1.8] w-full min-w-0">
                 <span
-                  className={`shrink-0 font-bold mt-[2px] w-4 text-right text-[10px] ${def.headerTone}`}
+                  className={`shrink-0 font-bold mt-[3px] w-6 text-right text-xs tabular-nums ${def.headerTone}`}
                 >
                   {i + 1}.
                 </span>
-                <span>
+                <span className="flex-1 min-w-0 break-words">
                   <MathMarkdown content={it} />
                 </span>
               </li>
             ))}
-          </ul>
+          </ol>
         )}
       </div>
     </Card>
@@ -406,11 +414,15 @@ export function ConceptKnowledgeGrid({ data }: { data: ConceptData }) {
         </Badge>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-2.5">
-        {sortedFields.map((def) => (
+      {/* Full-width ordered list: one concept block per row so each idea
+          finishes on its own line instead of wrapping mid-sentence in a
+          narrow 2/3-column card. */}
+      <div className="grid grid-cols-1 gap-3">
+        {sortedFields.map((def, idx) => (
           <FieldCard
             key={def.key}
             def={def}
+            orderLabel={`${String(idx + 1).padStart(2, "0")} / ${String(sortedFields.length).padStart(2, "0")}`}
             items={
               def.key === "summary"
                 ? (data.summary as string)

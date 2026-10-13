@@ -725,20 +725,20 @@ export function TopicVerticalNotes({
             formulaSpecs={activeData?.formulaSpecs ?? supplementary?.formulaSpecs}
           />
 
-          {/* Important Concepts pills */}
+          {/* Important Concepts — full-width ordered block so each idea finishes on its own line */}
           {rawImportantConcepts.length > 0 && (
-            <div className="rounded-2xl border border-primary/20 bg-primary/5 p-4">
-              <span className="text-xs font-bold uppercase tracking-wider text-primary block mb-2">
-                Key Conceptual Pillars:
+            <div className="rounded-2xl border border-primary/20 bg-primary/5 p-4 sm:p-5 w-full">
+              <span className="text-xs font-bold uppercase tracking-wider text-primary block mb-3">
+                Key Conceptual Pillars — in order ({rawImportantConcepts.length}):
               </span>
-              <ul className="space-y-1.5 pl-2">
+              <ol className="space-y-2">
                 {rawImportantConcepts.map((ic, i) => (
-                  <li key={i} className="text-xs text-foreground flex items-start gap-2">
-                    <span className="text-primary font-bold">&bull;</span>
-                    <span>{ic}</span>
+                  <li key={i} className="text-sm text-foreground flex items-start gap-2.5 leading-[1.8] w-full min-w-0">
+                    <span className="shrink-0 font-bold text-primary text-xs tabular-nums w-6 text-right mt-[3px]">{i + 1}.</span>
+                    <span className="flex-1 min-w-0 break-words">{ic}</span>
                   </li>
                 ))}
-              </ul>
+              </ol>
             </div>
           )}
 

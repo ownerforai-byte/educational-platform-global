@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import Link from "next/link";
-import { ArrowRight, Pause, Play } from "lucide-react";
+import { ArrowRight, BookOpen, Compass, Lightbulb, Pause, Play, Zap } from "lucide-react";
 import {
   HOME_SUBJECT_RAILS,
   resolveRailIcon,
@@ -436,6 +436,8 @@ function SubjectRailSection({
               rail={rail}
               slide={slide}
               stats={stats}
+              cardIndex={index}
+              totalCards={rail.slides.length}
             />
           ))}
           {/* The identical second set is what makes the loop seamless — it is
@@ -446,6 +448,8 @@ function SubjectRailSection({
               rail={rail}
               slide={slide}
               stats={stats}
+              cardIndex={index}
+              totalCards={rail.slides.length}
               duplicate
             />
           ))}
@@ -455,14 +459,64 @@ function SubjectRailSection({
   );
 }
 
+/**
+ * Academic essentials — concept, academic fact, topic hint, exam shortcut.
+ *
+ * Every rail card (all 6 subjects, built-in + corpus + Nepali + teasers)
+ * renders these four from its own rows with language-agnostic matching
+ * (English + Nepali labels), so no card streams without them. Falls back
+ * deterministically when a label is absent — never empty, never invented.
+ */
+function getAcademicEssentials(
+  slide: HomeSubjectSlide,
+  railName: string
+): Array<{ label: string; text: string }> {
+  const lower = (s: string) => s.toLowerCase();
+  const find = (needles: string[]) => {
+    for (const n of needles) {
+      const hit = slide.rows.find((r) => lower(r.label).includes(n));
+      if (hit) return hit;
+    }
+    return undefined;
+  };
+  const conceptRow =
+    find(["concept", "विषय", "status"]) ?? slide.rows[0];
+  const factRow =
+    find(["condition", "special", "limit", "अपवाद", "विधि"]) ??
+    slide.rows[2] ??
+    slide.rows[0];
+  const shortcutRow =
+    find(["trick", "shortcut", "छिटो", "board", "परीक्षा", "meanwhile"]) ??
+    slide.rows[slide.rows.length - 1];
+  const solvedRow = find(["solved", "उदाहरण"]);
+  const hintText = solvedRow
+    ? `In ${slide.tag}: master "${slide.title}" — read the Concept first, practise "${solvedRow.label}" (${solvedRow.text.slice(0, 120)}${solvedRow.text.length > 120 ? "…" : ""}), then attempt past board questions. Full notes: ${slide.href}.`
+    : `In ${slide.tag}: master "${slide.title}" — read the Concept first, work the example, then attempt past board questions in ${railName}. Full notes: ${slide.href}.`;
+  return [
+    { label: "Concept", text: conceptRow ? conceptRow.text : slide.title },
+    { label: "Academic fact", text: factRow ? factRow.text : hintText },
+    { label: "Topic hint", text: hintText },
+    {
+      label: "Exam shortcut",
+      text: shortcutRow ? shortcutRow.text : hintText,
+    },
+  ];
+}
+
+const ESSENTIAL_ICONS = [BookOpen, Lightbulb, Compass, Zap] as const;
+
 function SlideCard({  rail,
   slide,
   stats,
+  cardIndex = 0,
+  totalCards = 0,
   duplicate = false,
 }: {
   rail: HomeSubjectRail;
   slide: HomeSubjectSlide;
   stats: Record<string, string>;
+  cardIndex?: number;
+  totalCards?: number;
   duplicate?: boolean;
 }) {
   const Icon = resolveRailIcon(slide.icon);
@@ -497,6 +551,9 @@ function SlideCard({  rail,
           <span className="text-[11px] font-semibold text-muted-foreground">
             {slide.unitDivider.meta}
           </span>
+          <span className="text-[10px] font-semibold text-muted-foreground/80">
+            {rail.name} • Unit group {cardIndex + 1}{totalCards > 0 ? ` of ${totalCards}` : ""}
+          </span>
           <span
             className={`relative inline-flex items-center gap-1 text-[11px] font-bold ${rail.accent.text}`}
           >
@@ -519,7 +576,7 @@ function SlideCard({  rail,
         href={slide.href}
         aria-hidden={duplicate || undefined}
         tabIndex={duplicate ? -1 : undefined}
-        className={`group relative flex h-full w-[19rem] flex-col gap-3 overflow-hidden rounded-2xl border bg-card/80 p-4 shadow-sm backdrop-blur-sm transition-all hover:-translate-y-1 hover:shadow-lg sm:w-[31rem] sm:p-5 xl:w-[36rem] ${
+        className={`group relative flex h-full w-[22rem] flex-col gap-3 overflow-hidden rounded-2xl border bg-card/80 p-4 shadow-sm backdrop-blur-sm transition-all hover:-translate-y-1 hover:shadow-lg sm:w-[38rem] sm:p-6 xl:w-[44rem] ${
           slide.teaser ? "border-dashed" : ""
         } ${rail.accent.border}`}
       >
@@ -553,17 +610,54 @@ function SlideCard({  rail,
           {slide.title}
         </h4>
 
-        {/* Eight labelled rows: Concept → Formula → Conditions → Special cases
+        {/* More info: rail context, card position, and section count — one
+            full-width line so the idea finishes instead of truncating. */}
+        <p className="relative w-full min-w-0 truncate text-[11px] font-semibold text-muted-foreground">
+          {rail.name} • Card {cardIndex + 1}{totalCards > 0 ? ` of ${totalCards}` : ""} • {slide.rows.length} sections in order • {slide.tag}
+        </p>
+
+        {/* Academic essentials in every rail: concept, academic fact, topic
+            hint, exam shortcut — full-width ordered rows so each idea
+            finishes on its own line. Derived from the card's own rows. */}
+        <div className="relative grid w-full grid-cols-1 gap-2 rounded-xl border border-border/60 bg-muted/20 p-3 sm:p-4">
+          <p className="text-[10px] font-extrabold uppercase tracking-wider text-muted-foreground">
+            Academic essentials — concept • fact • hint • shortcut
+          </p>
+          {getAcademicEssentials(slide, rail.name).map((item, i) => {
+            const EssentialIcon = ESSENTIAL_ICONS[i % ESSENTIAL_ICONS.length];
+            return (
+              <div key={`${item.label}-${i}`} className="grid w-full grid-cols-1 gap-1">
+                <p className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-muted-foreground/70">
+                  <EssentialIcon className="h-3.5 w-3.5 shrink-0" aria-hidden />
+                  <span className="tabular-nums rounded bg-background px-1.5 py-0.5 text-[10px] font-extrabold text-foreground/70">
+                    {String(i + 1).padStart(2, "0")} / 04
+                  </span>
+                  {item.label}
+                </p>
+                <p className="w-full min-w-0 break-words text-sm leading-[1.8] text-foreground/90">
+                  {item.text}
+                </p>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Ordered full-width rows: Concept → Formula → Conditions → Special cases
             → Solved → Limit → Derivation → Trick → Board use (the data file
-            names them per card, e.g. नेपाली uses सूत्र / अपवाद / उदाहरण). */}
-        <dl className="relative flex flex-1 flex-col gap-2">
+            names them per card, e.g. नेपाली uses सूत्र / अपवाद / उदाहरण).
+            Single column so each idea finishes on its own line instead of
+            wrapping mid-sentence in a narrow label/value split. */}
+        <dl className="relative flex flex-1 flex-col gap-2.5">
           {slide.rows.map((row, rowIndex) =>
             row.kind === "formula" ? (
-              <div key={`${row.label}-${rowIndex}`} className="grid gap-1">
-                <dt className="text-[9.5px] font-bold uppercase tracking-wider text-muted-foreground/70">
+              <div key={`${row.label}-${rowIndex}`} className="grid gap-1.5 w-full">
+                <dt className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-muted-foreground/70">
+                  <span className="tabular-nums rounded bg-muted px-1.5 py-0.5 text-[10px] font-extrabold text-foreground/70">
+                    {String(rowIndex + 1).padStart(2, "0")} / {String(slide.rows.length).padStart(2, "0")}
+                  </span>
                   {row.label}
                 </dt>
-                <dd className="whitespace-pre-wrap break-words rounded-lg border border-border/60 bg-background/60 px-2.5 py-1.5 font-mono text-[11.5px] leading-relaxed text-foreground/90">
+                <dd className="w-full min-w-0 whitespace-pre-wrap break-words rounded-lg border border-border/60 bg-background/60 px-3 py-2 font-mono text-[13px] leading-[1.75] text-foreground/90">
                   {row.text}
                   <RailFigureBox figure={row.figure} />
                 </dd>
@@ -571,12 +665,15 @@ function SlideCard({  rail,
             ) : (
               <div
                 key={`${row.label}-${rowIndex}`}
-                className="grid gap-0.5 border-t border-border/40 pt-2 first:border-0 first:pt-0 sm:grid-cols-[6.5rem_1fr] sm:gap-x-3"
+                className="grid grid-cols-1 gap-1 border-t border-border/40 pt-2.5 first:border-0 first:pt-0 w-full"
               >
-                <dt className="text-[9.5px] font-bold uppercase tracking-wider text-muted-foreground/70 sm:pt-1">
+                <dt className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-wider text-muted-foreground/70">
+                  <span className="tabular-nums rounded bg-muted px-1.5 py-0.5 text-[10px] font-extrabold text-foreground/70">
+                    {String(rowIndex + 1).padStart(2, "0")} / {String(slide.rows.length).padStart(2, "0")}
+                  </span>
                   {row.label}
                 </dt>
-                <dd className="text-[12px] leading-relaxed text-muted-foreground">
+                <dd className="w-full min-w-0 break-words text-sm leading-[1.8] text-muted-foreground">
                   {row.text}
                   <RailFigureBox figure={row.figure} />
                 </dd>
@@ -585,15 +682,21 @@ function SlideCard({  rail,
           )}
         </dl>
 
-        <span
-          className={`relative inline-flex items-center gap-1 text-[11px] font-bold ${rail.accent.text}`}
-        >
-          Open
-          <ArrowRight
-            className="h-3 w-3 transition-transform group-hover:translate-x-0.5"
-            aria-hidden
-          />
-        </span>
+        {/* More info footer: what the card covers + where Open leads. */}
+        <div className="relative mt-auto flex w-full items-center justify-between gap-2 border-t border-border/40 pt-2.5">
+          <span className="min-w-0 truncate text-[11px] font-semibold text-muted-foreground">
+            {slide.rows.length} key points{stat ? ` • ${stat}` : ""} • {slide.tag}
+          </span>
+          <span
+            className={`inline-flex shrink-0 items-center gap-1 text-[11px] font-bold ${rail.accent.text}`}
+          >
+            Open {rail.name}
+            <ArrowRight
+              className="h-3 w-3 transition-transform group-hover:translate-x-0.5"
+              aria-hidden
+            />
+          </span>
+        </div>
       </Link>
     </li>
   );

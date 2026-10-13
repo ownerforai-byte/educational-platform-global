@@ -168,7 +168,9 @@ describe("rail figure box", () => {
     const dd = box.closest("dd");
     expect(dd).not.toBeNull();
     // The row it belongs to is the one labelled on its <dt> — Concept first.
-    expect(dd?.previousElementSibling?.textContent).toBe("Concept");
+    // The <dt> carries the required order badge ("01 / 09Concept"), so match
+    // by containment rather than exact equality.
+    expect(dd?.previousElementSibling?.textContent).toContain("Concept");
     // Rectangular canvas: the guarded svg sits in the box, caption beneath.
     expect(box.querySelector(".rail-figure__canvas svg")).not.toBeNull();
     expect(
@@ -239,7 +241,9 @@ describe("corpus diagram rails", () => {
     const dd = box.closest("dd");
     expect(dd).not.toBeNull();
     // The picture is AT the concept it explains, not in a detached gallery.
-    expect(dd?.previousElementSibling?.textContent).toBe("Concept");
+    // The <dt> carries the required order badge ("01 / 09Concept"), so match
+    // by containment rather than exact equality.
+    expect(dd?.previousElementSibling?.textContent).toContain("Concept");
 
     const svg = box.querySelector(".rail-figure__canvas svg");
     expect(svg).not.toBeNull();

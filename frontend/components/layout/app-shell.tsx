@@ -3,7 +3,7 @@
 import { useEffect, useState, Suspense } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
-import { PanelLeftClose, PanelLeftOpen, Atom, Pin, PinOff, ChevronDown, Search, Bell } from "lucide-react";
+import { PanelLeftClose, PanelLeftOpen, Atom, Search, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "./mobile-nav";
 import { MobileQuickNav } from "./mobile-quick-nav";
@@ -24,24 +24,15 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
   const isChatRoom = pathname === "/chat" || pathname.startsWith("/chat/");
   const [preferencesLoaded, setPreferencesLoaded] = useState(false);
   const [sidebarCollapsed, setSidebarCollapsed] = useState(false);
-  // Visible by default: an auto-hiding bar hid the whole nav (incl. the mobile
-  // hamburger) behind a 12px hover strip on first load for every visitor.
-  const [navPinned, setNavPinned] = useState(true);
-  const [isHovered, setIsHovered] = useState(false);
-  const [isClickedOpen, setIsClickedOpen] = useState(false);
+  // Header stays permanently visible (owner request: pin toggle removed).
+  // The auto-hide sensor, reveal tab, hover state, and nav-pinned
+  // preference are gone — no auto-hide state remains.
 
   useEffect(() => {
     try {
     const savedSidebar = localStorage.getItem("sidebar-collapsed");
     if (savedSidebar !== null) {
       setSidebarCollapsed(savedSidebar === "true");
-    }
-    // v2 key: the old "nav-pinned" defaulted to false and was auto-written for
-    // every visitor on mount, so honoring it would keep the bar hidden for
-    // everyone. Only "false" counts — it means the user explicitly unpinned.
-    const savedPinned = localStorage.getItem("nav-pinned-v2");
-    if (savedPinned === "false") {
-      setNavPinned(false);
     }
     } catch { /* Storage may be unavailable in private/embedded browsers. */ }
     setPreferencesLoaded(true);
@@ -63,12 +54,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
     try { localStorage.setItem("sidebar-collapsed", String(sidebarCollapsed)); } catch { /* Optional preference. */ }
   }, [sidebarCollapsed, preferencesLoaded]);
 
-  useEffect(() => {
-    if (!preferencesLoaded) return;
-    try { localStorage.setItem("nav-pinned-v2", String(navPinned)); } catch { /* Optional preference. */ }
-  }, [navPinned, preferencesLoaded]);
 
-  const navVisible = navPinned || isHovered || isClickedOpen;
 
   // /chat and /chat/* are the only app routes that bypass this shell entirely
   // (full-bleed chat room, no sidebar/footer). They therefore skip the floating
@@ -99,35 +85,8 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-background focus:px-4 focus:py-3 focus:text-primary focus:shadow-lg">Skip to content</a>
-      {/* ── Top Sensor & Reveal Tab for Auto-Hiding Navbar ── */}
-      {!navPinned && (
-        <>
-          <div
-            className="fixed top-0 inset-x-0 h-3 z-50 cursor-pointer"
-            onMouseEnter={() => setIsHovered(true)}
-            onClick={() => setIsClickedOpen((prev) => !prev)}
-            title="Hover or click to show navigation"
-          />
-          {!navVisible && (
-            <button
-              onClick={() => setIsClickedOpen(true)}
-              className="fixed top-0 left-1/2 -translate-x-1/2 z-50 px-3 py-0.5 rounded-b-md bg-primary/90 hover:bg-primary text-primary-foreground text-[10px] font-bold flex items-center gap-1 shadow-md transition-all backdrop-blur-sm animate-pulse hover:animate-none"
-              title="Click or hover to reveal navigation bar"
-            >
-              <ChevronDown className="h-3 w-3" />
-              <span>Nav</span>
-            </button>
-          )}
-        </>
-      )}
-
-      {/* ── Header ─────────────────────────────────────────────────── */}
+      {/* ── Header (permanently visible — pin toggle removed) ───────── */}
       <header
-        onMouseEnter={() => setIsHovered(true)}
-        onMouseLeave={() => {
-          setIsHovered(false);
-          setIsClickedOpen(false);
-        }}
         /* SOLID, not translucent — owner report 2026-10-04: "while scrolling it
            leaks a little". This is the third round of the same leak: /70 let the
            footer read straight through the bar, /95 still left a 5% ghost of
@@ -138,9 +97,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
            backdrop-blur goes with it: it can only filter what this opaque
            background already covers. The price is the nebula hint, and it is
            worth paying to never show content through the nav. */
-        className={`pt-safe-top sticky top-0 z-40 border-b border-border/40 bg-background transition-transform duration-300 ease-in-out ${
-          navVisible ? "translate-y-0 shadow-md" : "-translate-y-full"
-        }`}
+        className="pt-safe-top sticky top-0 z-40 border-b border-border/40 bg-background translate-y-0 shadow-md"
       >
         {/* RESPONSIVE IN BOTH AXES (owner request 2026-10-12: "while adjusting
             make it adjust in vertical increase or decrease also not only
@@ -194,22 +151,6 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
               <span>Search</span>
               <kbd className="text-[9px] font-mono px-1 py-0.5 rounded bg-muted border border-border/60">Ctrl/⌘ K</kbd>
             </Link>
-
-            {/* Pin / Unpin button */}
-            <Button
-              variant="ghost"
-              size="icon"
-              className="h-8 w-8 rounded-xl shrink-0 text-muted-foreground hover:text-foreground"
-              onClick={() => setNavPinned(!navPinned)}
-              title={navPinned ? "Unpin navigation (auto-hides on hover to maximize screen)" : "Pin navigation bar permanently"}
-              aria-label={navPinned ? "Unpin navigation" : "Pin navigation"}
-            >
-              {navPinned ? (
-                <Pin className="h-4 w-4 text-primary fill-primary" />
-              ) : (
-                <PinOff className="h-4 w-4" />
-              )}
-            </Button>
 
             <ThemeToggle />
 
