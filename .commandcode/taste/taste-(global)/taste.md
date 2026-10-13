@@ -1,0 +1,7 @@
+# Taste (global)
+- Before large changes, the user wants a full pre-scan of the codebase (architecture, live vs. orphan code) so the agent is prepared before the actual change prompt arrives ("scan as we are going to make a huge change.... be ready"). Confidence: 0.85
+- Codebase scans and audits should explicitly include dead code detection (orphan files, unused exports/deps/CSS) — the user calls this out even when the scan is for another purpose. Confidence: 0.8
+- When dead/orphan code exists, wire it into its concerned feature area rather than deleting it ("wire all dead code to their concerned place... to which they related"). Confidence: 0.85
+- Old or orphan code that gets wired in must be upgraded to the current standard if it lags ("if they dont match the current standard then upgrade them to current level") — TS strict, current UI kit/patterns, no legacy prop styles. Confidence: 0.8
+- Access-control philosophy: privileged features are for owner emails plus emails the owner explicitly grants (pre-signup grants, revocable, fresh per-email data); public visitors keep the existing experience unchanged. New layers wrap the old rather than replacing it. Confidence: 0.75
+- Writes informally in lowercase with short, directive phrasing, and gives advance hints about upcoming tasks ("my next prompt will be regarding changes in home") — treat such hints as a cue to pre-scan and prepare, not to act yet. Confidence: 0.7

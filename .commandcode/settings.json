@@ -1,0 +1,12 @@
+{
+  "permissions": {
+    "allow": [
+      "Shell(git:*)",
+      "Shell(dir /b backend\\src\\api\\r1*.ts backend\\src\\middleware\\r1Access.ts backend\\src\\utils\\r1Grants.ts backend\\src\\db\\migrations\\009_r1_grants.sql backend\\src\\db\\migrations\\010_r1_life.sql 2>nul & dir /b frontend\\app\\r1 2>nul)",
+      "Shell(set:*)",
+      "Shell(npm:*)"
+    ],
+    "deny": [],
+    "defaultMode": "default"
+  }
+}
