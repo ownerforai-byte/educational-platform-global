@@ -129,9 +129,10 @@ test_*.py
 # Legacy/quarantined code backed up during the restructure (not part of the app)
 /scripts/_stale/
 
-# NOTE: cell-architecture-studio/ is a git submodule (.gitmodules) — it must NOT
-# be listed here. This file previously contained that path encoded as UTF-16,
-# which injected NUL bytes and silently broke the rule.
+# cell-architecture-studio/ — standalone local project (was a git submodule; its
+# remote ownerforai-byte/gitn1 was deleted, so it lives local-only now).
+# Do not track it.
+cell-architecture-studio/
 
 # local API tokens (never commit)
 cloudflare-token.txt
