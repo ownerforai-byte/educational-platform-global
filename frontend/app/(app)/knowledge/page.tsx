@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { ArrowLeft, Beaker, Zap, Dna, BookOpen, PenLine, Sparkles } from "lucide-react";
+import { ArrowLeft, Beaker, Zap, Dna, BookOpen, PenLine, Sparkles, DraftingCompass } from "lucide-react";
 
 const knowledgeSections = [
   {
@@ -43,6 +43,13 @@ const knowledgeSections = [
     subtitle: "शब्द, वाक्य, लिङ्ग, वचन, काल, कारक, सन्धि, समास",
     icon: BookOpen,
     color: "#f59e0b",
+  },
+  {
+    href: "/knowledge/analytical-geometry",
+    title: "Analytical Geometry",
+    subtitle: "Straight lines, slopes & concurrencies — exercise book with 3D visualizations",
+    icon: DraftingCompass,
+    color: "#0ea5e9",
   },
 ];
 

@@ -1,15 +1,19 @@
 "use client";
 
 import { useState } from "react";
-import { MathInline } from "../content/MathRenderer";
+import { Check, X, RotateCcw, ArrowRight } from "lucide-react";
+import { MathInline } from "@/components/content/MathRenderer";
+import { Button } from "@/components/ui/button";
 
-interface Problem {
+export type ProblemDifficulty = "Easy" | "Medium" | "Hard";
+
+export interface Problem {
   id: string;
   question: string;
   options: string[];
   correctAnswer: number;
   explanation: string;
-  difficulty: "Easy" | "Medium" | "Hard";
+  difficulty: ProblemDifficulty;
   topic: string;
 }
 
@@ -88,13 +92,18 @@ const PROBLEMS: Problem[] = [
   },
 ];
 
-export function PracticeProblems({ theme = "dark" }: { theme?: "dark" | "light" }) {
+const DIFFICULTY_CLASSES: Record<ProblemDifficulty, string> = {
+  Easy: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
+  Medium: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
+  Hard: "bg-red-500/10 text-red-600 dark:text-red-400",
+};
+
+export function PracticeProblems() {
   const [currentProblem, setCurrentProblem] = useState(0);
   const [selectedAnswer, setSelectedAnswer] = useState<number | null>(null);
   const [showExplanation, setShowExplanation] = useState(false);
   const [score, setScore] = useState(0);
   const [completed, setCompleted] = useState(false);
-  const isDark = theme === "dark";
   const problem = PROBLEMS[currentProblem];
 
   const handleAnswer = (index: number) => {
@@ -125,116 +134,86 @@ export function PracticeProblems({ theme = "dark" }: { theme?: "dark" | "light" 
 
   if (completed) {
     return (
-      <div style={{
-        background: isDark ? "#1e293b" : "#f8fafc",
-        border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)"}`,
-        borderRadius: "12px",
-        padding: "24px",
-        color: isDark ? "#f8fafc" : "#1e293b",
-        textAlign: "center",
-      }}>
-        <h2 style={{ margin: "0 0 16px", fontSize: "20px" }}>🎉 Quiz Complete!</h2>
-        <div style={{ fontSize: "48px", fontWeight: 700, color: "#818cf8", marginBottom: "16px" }}>
+      <div className="text-center">
+        <h3 className="text-xl font-semibold">🎉 Quiz Complete!</h3>
+        <div className="my-4 text-5xl font-bold text-primary">
           {score}/{PROBLEMS.length}
         </div>
-        <p style={{ opacity: 0.7, marginBottom: "20px" }}>
-          {score === PROBLEMS.length ? "Perfect score! 🌟" : score >= PROBLEMS.length * 0.7 ? "Great job! 👍" : "Keep practicing! 💪"}
+        <p className="mb-5 text-sm text-muted-foreground">
+          {score === PROBLEMS.length
+            ? "Perfect score! 🌟"
+            : score >= PROBLEMS.length * 0.7
+            ? "Great job! 👍"
+            : "Keep practicing! 💪"}
         </p>
-        <button
-          onClick={handleRestart}
-          style={{
-            padding: "12px 24px",
-            borderRadius: "8px",
-            border: "none",
-            background: "rgba(99, 102, 241, 0.9)",
-            color: "#f8fafc",
-            fontSize: "14px",
-            cursor: "pointer",
-          }}
-        >
+        <Button onClick={handleRestart}>
+          <RotateCcw className="mr-2 h-4 w-4" />
           Try Again
-        </button>
+        </Button>
       </div>
     );
   }
 
   return (
-    <div style={{
-      background: isDark ? "#1e293b" : "#f8fafc",
-      border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)"}`,
-      borderRadius: "12px",
-      padding: "20px",
-      color: isDark ? "#f8fafc" : "#1e293b",
-    }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
-        <span style={{ fontSize: "14px", opacity: 0.7 }}>Question {currentProblem + 1} of {PROBLEMS.length}</span>
-        <span style={{
-          fontSize: "12px",
-          padding: "4px 12px",
-          borderRadius: "12px",
-          background: problem.difficulty === "Easy" ? "rgba(16, 185, 129, 0.2)" : problem.difficulty === "Medium" ? "rgba(245, 158, 11, 0.2)" : "rgba(239, 68, 68, 0.2)",
-          color: problem.difficulty === "Easy" ? "#10b981" : problem.difficulty === "Medium" ? "#f59e0b" : "#ef4444",
-        }}>
+    <div className="space-y-4">
+      <div className="flex items-center justify-between">
+        <span className="text-sm text-muted-foreground">
+          Question {currentProblem + 1} of {PROBLEMS.length}
+        </span>
+        <span
+          className={`rounded-full px-2.5 py-0.5 text-xs font-medium ${DIFFICULTY_CLASSES[problem.difficulty]}`}
+        >
           {problem.difficulty}
         </span>
       </div>
 
-      <h3 style={{ margin: "0 0 16px", fontSize: "16px", lineHeight: 1.5 }}>
+      <h3 className="text-base font-medium leading-relaxed">
         <MathInline expression={problem.question} />
       </h3>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "10px", marginBottom: "16px" }}>
-        {problem.options.map((option, index) => (
-          <button
-            key={index}
-            onClick={() => !showExplanation && handleAnswer(index)}
-            disabled={showExplanation}
-            style={{
-              padding: "12px 16px",
-              borderRadius: "8px",
-              border: `2px solid ${showExplanation ? (index === problem.correctAnswer ? "#10b981" : selectedAnswer === index ? "#ef4444" : isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)") : isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)"}`,
-              background: showExplanation && index === problem.correctAnswer ? "rgba(16, 185, 129, 0.2)" : showExplanation && selectedAnswer === index ? "rgba(239, 68, 68, 0.2)" : "transparent",
-              color: isDark ? "#e2e8f0" : "#334155",
-              cursor: showExplanation ? "default" : "pointer",
-              fontSize: "14px",
-              textAlign: "left",
-              transition: "all 0.2s",
-            }}
-          >
-            <MathInline expression={option} />
-          </button>
-        ))}
+      <div className="flex flex-col gap-2">
+        {problem.options.map((option, index) => {
+          const isCorrect = index === problem.correctAnswer;
+          const isSelected = selectedAnswer === index;
+          const stateClasses = showExplanation
+            ? isCorrect
+              ? "border-emerald-500 bg-emerald-500/10"
+              : isSelected
+              ? "border-red-500 bg-red-500/10"
+              : "border-border opacity-60"
+            : "border-border hover:border-primary/50 hover:bg-muted/50";
+          return (
+            <button
+              key={index}
+              type="button"
+              onClick={() => !showExplanation && handleAnswer(index)}
+              disabled={showExplanation}
+              className={`flex items-center gap-2 rounded-lg border-2 px-4 py-3 text-left text-sm transition-colors ${stateClasses}`}
+            >
+              {showExplanation && isCorrect && (
+                <Check className="h-4 w-4 shrink-0 text-emerald-500" />
+              )}
+              {showExplanation && isSelected && !isCorrect && (
+                <X className="h-4 w-4 shrink-0 text-red-500" />
+              )}
+              <MathInline expression={option} />
+            </button>
+          );
+        })}
       </div>
 
       {showExplanation && (
-        <div style={{
-          padding: "12px",
-          borderRadius: "8px",
-          background: isDark ? "rgba(99, 102, 241, 0.2)" : "rgba(99, 102, 241, 0.1)",
-          fontSize: "13px",
-          marginBottom: "16px",
-        }}>
+        <div className="rounded-lg bg-primary/10 p-3 text-sm">
           <strong>Explanation:</strong>{" "}
           <MathInline expression={problem.explanation} />
         </div>
       )}
 
       {showExplanation && (
-        <button
-          onClick={handleNext}
-          style={{
-            width: "100%",
-            padding: "12px",
-            borderRadius: "8px",
-            border: "none",
-            background: "rgba(99, 102, 241, 0.9)",
-            color: "#f8fafc",
-            fontSize: "14px",
-            cursor: "pointer",
-          }}
-        >
-          {currentProblem < PROBLEMS.length - 1 ? "Next Question →" : "See Results"}
-        </button>
+        <Button onClick={handleNext} className="w-full">
+          {currentProblem < PROBLEMS.length - 1 ? "Next Question" : "See Results"}
+          <ArrowRight className="ml-2 h-4 w-4" />
+        </Button>
       )}
     </div>
   );

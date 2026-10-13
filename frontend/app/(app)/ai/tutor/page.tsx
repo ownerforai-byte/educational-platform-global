@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft, ArrowRight, Bot, History, Plus, Search, Sparkles } from "lucide-react";
 import { AIChatInterface } from "@/components/ai/ai-chat-interface";
+import { StudySuggestionsPanel } from "@/components/content/study-suggestions-panel";
 
 export const metadata: Metadata = {
   title: "Veer Tutor Console — Saved Conversations & Prompt Enhancer",
@@ -80,6 +81,10 @@ export default function AITutorPage() {
       </div>
 
       <AIChatInterface />
+
+      <div className="mt-4">
+        <StudySuggestionsPanel />
+      </div>
 
       {/* Owner request (2026-09-30): the console ANSWERS, the history console
           SEARCHES what you already discussed. Linking the two is the whole

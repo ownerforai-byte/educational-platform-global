@@ -1,8 +1,17 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import { Minus, Plus } from "lucide-react";
+import { Progress } from "@/components/ui/progress";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
-interface Topic {
+export interface TrackedTopic {
   id: string;
   name: string;
   subject: string;
@@ -10,7 +19,7 @@ interface Topic {
   completed: boolean;
 }
 
-const INITIAL_TOPICS: Topic[] = [
+const INITIAL_TOPICS: TrackedTopic[] = [
   { id: "1", name: "3D Geometry Basics", subject: "Math", progress: 75, completed: false },
   { id: "2", name: "Trigonometric Functions", subject: "Math", progress: 45, completed: false },
   { id: "3", name: "Calculus Introduction", subject: "Math", progress: 20, completed: false },
@@ -21,101 +30,96 @@ const INITIAL_TOPICS: Topic[] = [
   { id: "8", name: "Molecular Structure", subject: "Chemistry", progress: 10, completed: false },
 ];
 
-export function ProgressTracker({ theme = "dark" }: { theme?: "dark" | "light" }) {
-  const [topics, setTopics] = useState<Topic[]>(INITIAL_TOPICS);
+export function ProgressTracker() {
+  const [topics, setTopics] = useState<TrackedTopic[]>(INITIAL_TOPICS);
   const [filterSubject, setFilterSubject] = useState("All");
-  const isDark = theme === "dark";
-  const subjects = ["All", ...new Set(topics.map((t) => t.subject))];
+  const subjects = useMemo(
+    () => ["All", ...Array.from(new Set(topics.map((t) => t.subject)))],
+    [topics]
+  );
 
-  const filteredTopics = filterSubject === "All" ? topics : topics.filter((t) => t.subject === filterSubject);
-  const overallProgress = Math.round(topics.reduce((acc, t) => acc + t.progress, 0) / topics.length);
+  const filteredTopics =
+    filterSubject === "All" ? topics : topics.filter((t) => t.subject === filterSubject);
+  const overallProgress = Math.round(
+    topics.reduce((acc, t) => acc + t.progress, 0) / topics.length
+  );
 
-  const _updateProgress = (id: string, progress: number) => {
+  const updateProgress = (id: string, delta: number) => {
     setTopics((prev) =>
-      prev.map((t) => t.id === id ? { ...t, progress: Math.min(100, Math.max(0, progress)), completed: progress >= 100 } : t)
+      prev.map((t) => {
+        if (t.id !== id) return t;
+        const progress = Math.min(100, Math.max(0, t.progress + delta));
+        return { ...t, progress, completed: progress >= 100 };
+      })
     );
   };
 
   return (
-    <div style={{
-      background: isDark ? "#1e293b" : "#f8fafc",
-      border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)"}`,
-      borderRadius: "12px",
-      padding: "20px",
-      color: isDark ? "#f8fafc" : "#1e293b",
-    }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
-        <h2 style={{ margin: 0, fontSize: "18px", fontWeight: 600 }}>📊 Progress Tracker</h2>
-        <div style={{ textAlign: "right" }}>
-          <div style={{ fontSize: "24px", fontWeight: 700, color: "#818cf8" }}>{overallProgress}%</div>
-          <div style={{ fontSize: "12px", opacity: 0.7 }}>Overall Progress</div>
+    <div className="space-y-4">
+      <div className="flex items-center justify-between gap-3">
+        <Select value={filterSubject} onValueChange={setFilterSubject}>
+          <SelectTrigger className="w-[180px]" aria-label="Filter by subject">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            {subjects.map((subject) => (
+              <SelectItem key={subject} value={subject}>
+                {subject}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
+        <div className="text-right">
+          <div className="text-2xl font-bold text-primary">{overallProgress}%</div>
+          <div className="text-xs text-muted-foreground">Overall Progress</div>
         </div>
       </div>
 
-      <select
-        value={filterSubject}
-        onChange={(e) => setFilterSubject(e.target.value)}
-        style={{
-          padding: "8px 12px",
-          borderRadius: "8px",
-          border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)"}`,
-          background: isDark ? "rgba(15, 23, 42, 0.5)" : "white",
-          color: isDark ? "#f8fafc" : "#1e293b",
-          fontSize: "13px",
-          cursor: "pointer",
-          marginBottom: "16px",
-        }}
-      >
-        {subjects.map((subject) => (
-          <option key={subject} value={subject}>{subject}</option>
-        ))}
-      </select>
-
-      <div style={{ display: "flex", flexDirection: "column", gap: "12px" }}>
+      <div className="flex flex-col gap-3">
         {filteredTopics.map((topic) => (
           <div
             key={topic.id}
-            style={{
-              padding: "14px 16px",
-              borderRadius: "8px",
-              background: isDark ? "rgba(15, 23, 42, 0.5)" : "rgba(248, 250, 252, 0.8)",
-              border: `1px solid ${topic.completed ? "rgba(16, 185, 129, 0.3)" : isDark ? "rgba(99, 102, 241, 0.2)" : "rgba(99, 102, 241, 0.1)"}`,
-            }}
+            className={`rounded-lg border p-4 ${
+              topic.completed ? "border-emerald-500/30" : "border-border"
+            }`}
           >
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "8px" }}>
-              <div>
-                <span style={{ fontWeight: 600, fontSize: "14px" }}>{topic.name}</span>
-                <span style={{
-                  marginLeft: "8px",
-                  fontSize: "11px",
-                  padding: "2px 8px",
-                  borderRadius: "12px",
-                  background: "rgba(99, 102, 241, 0.2)",
-                  color: "#818cf8",
-                }}>
+            <div className="mb-2 flex items-center justify-between gap-2">
+              <div className="flex min-w-0 items-center gap-2">
+                <span className="truncate text-sm font-semibold">{topic.name}</span>
+                <span className="shrink-0 rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-medium text-primary">
                   {topic.subject}
                 </span>
               </div>
-              <span style={{ fontSize: "14px", fontWeight: 600, color: topic.completed ? "#10b981" : "#818cf8" }}>
-                {topic.progress}%
-              </span>
+              <div className="flex shrink-0 items-center gap-2">
+                <button
+                  type="button"
+                  aria-label={`Decrease progress for ${topic.name}`}
+                  onClick={() => updateProgress(topic.id, -10)}
+                  className="rounded-md border border-border p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                >
+                  <Minus className="h-3 w-3" />
+                </button>
+                <span
+                  className={`w-10 text-right text-sm font-semibold ${
+                    topic.completed ? "text-emerald-500" : "text-primary"
+                  }`}
+                >
+                  {topic.progress}%
+                </span>
+                <button
+                  type="button"
+                  aria-label={`Increase progress for ${topic.name}`}
+                  onClick={() => updateProgress(topic.id, 10)}
+                  className="rounded-md border border-border p-1 text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
+                >
+                  <Plus className="h-3 w-3" />
+                </button>
+              </div>
             </div>
-            <div style={{
-              height: "6px",
-              borderRadius: "3px",
-              background: isDark ? "rgba(99, 102, 241, 0.2)" : "rgba(99, 102, 241, 0.1)",
-              overflow: "hidden",
-            }}>
-              <div
-                style={{
-                  height: "100%",
-                  width: `${topic.progress}%`,
-                  background: topic.completed ? "#10b981" : "#6366f1",
-                  borderRadius: "3px",
-                  transition: "width 0.3s ease",
-                }}
-              />
-            </div>
+            <Progress
+              value={topic.progress}
+              accentColor={topic.completed ? "#10b981" : undefined}
+            />
           </div>
         ))}
       </div>

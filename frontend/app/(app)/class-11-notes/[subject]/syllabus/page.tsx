@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { SubjectSyllabusView } from "@/features/syllabus/components/subject-syllabus-view";
-import { getSubjectNav } from "@/features/syllabus/queries";
+import { getSubjectNav } from "@/lib/queries";
 
 
 

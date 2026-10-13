@@ -288,7 +288,7 @@ export function ResourceForm({
     media_url: string | null;
     metadata: Record<string, unknown>;
   };
-  onSuccess?: () => void;
+  onSuccess?: (createdId?: string) => void;
 }) {
   const router = useRouter();
   const [title, setTitle] = useState(resource?.title ?? "");
@@ -353,7 +353,7 @@ export function ResourceForm({
       // Use apiFetch so the stored bearer token is attached automatically
       // (the previous raw fetch sent no Authorization header, which made the
       // teacher-only PATCH/POST reject every save with a 401).
-      await apiFetch<Record<string, unknown>>(url, {
+      const saved = await apiFetch<{ id?: string }>(url, {
         method,
         body: JSON.stringify({
           ...(isEdit ? {} : { topic_id: selectedTopicId }),
@@ -365,7 +365,9 @@ export function ResourceForm({
         }),
       });
 
-      onSuccess?.();
+      onSuccess?.(
+        isEdit ? resource!.id : typeof saved?.id === "string" ? saved.id : undefined,
+      );
       // Refresh on both create and edit so the server-rendered route
       // reflects the new resource or updated fields.
       router.refresh();

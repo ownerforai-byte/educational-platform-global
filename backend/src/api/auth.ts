@@ -4,6 +4,7 @@ import { isProductionEnv } from "../config/env";
 import { createAuthClient, supabaseAdmin } from "../db/supabase";
 import { ensureDailyCredits } from "../utils/credits";
 import { createStatusToken, verifyStatusToken } from "../utils/statusToken";
+import { isR1GrantedEmail } from "../utils/r1Grants";
 import {
   signInWithPassword,
   signUp,
@@ -235,6 +236,20 @@ router.post("/signup", async (req: Request, res: Response) => {
       };
       res.status(202).json(body);
       return;
+    }
+
+    // ── R1 grant fast-pass (migration 009): an owner-granted email was
+    // pre-approved by an owner, so it skips the PENDING queue entirely.
+    try {
+      if (await isR1GrantedEmail(result.user.email ?? parsed.data.email)) {
+        await supabaseAdmin
+          .from("profiles")
+          .update({ access_status: "ACTIVE" })
+          .eq("id", result.user.id)
+          .neq("access_status", "ACTIVE");
+      }
+    } catch (grantErr) {
+      console.error("[auth] r1 grant fast-pass failed:", grantErr);
     }
 
     // ── Owner-approval flow: new accounts start PENDING ──

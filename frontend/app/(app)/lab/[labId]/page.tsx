@@ -23,6 +23,8 @@ import { AnimationFrame, ArrowLabel } from "@/components/lab/annotation/arrow-la
 import { LAB_ANNOTATIONS } from "@/lib/lab-annotations";
 import { LabStudio } from "@/components/lab/lab-studio";
 import { getLabStudio } from "@/lib/lab-studios";
+import { AdvancedViewer } from "@/components/lab/advanced-viewer";
+import { LabToolsPanel } from "@/components/lab/lab-tools-panel";
 
 /** Legacy route-tree slugs → canonical registry ids. */
 const LEGACY_ALIASES: Record<string, string> = {
@@ -200,6 +202,16 @@ export default function LabPage() {
               */}
             {studio && <LabStudio spec={studio} />}
           </div>
+        </div>
+
+        {/* Advanced viewer — annotation + AR modes beside the lab rig */}
+        <div className="mt-5">
+          <AdvancedViewer />
+        </div>
+
+        {/* Lab tools — formulas / practice / progress / discussion / annotations */}
+        <div className="mt-5">
+          <LabToolsPanel labId={lab.id} />
         </div>
 
         {/* Learning structure below the animation — proof / theory / confusions / practice */}

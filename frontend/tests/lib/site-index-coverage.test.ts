@@ -25,6 +25,13 @@ const NOT_INDEXED = [
   // The index itself and the signed-in account page.
   "/site-index",
   "/profile",
+  // R1 (owner + granted emails only) — a private layer, deliberately not
+  // advertised on the public index.
+  "/r1",
+  "/r1/activities",
+  "/r1/plans",
+  "/r1/journal",
+  "/r1/habits",
   // Owner-only control surfaces — deliberately not advertised.
   "/owner",
   "/owner/users",

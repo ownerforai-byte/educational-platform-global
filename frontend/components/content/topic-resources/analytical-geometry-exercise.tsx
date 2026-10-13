@@ -13,15 +13,18 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
 
 interface AnalyticalGeometryExerciseProps {
   pdfUrl: string;
+  showResourcePanel?: boolean;
 }
 
-export const AnalyticalGeometryExercise: React.FC<AnalyticalGeometryExerciseProps> = ({ pdfUrl }) => {
+export const AnalyticalGeometryExercise: React.FC<AnalyticalGeometryExerciseProps> = ({ pdfUrl, showResourcePanel = true }) => {
   return (
     <div className="space-y-6">
       {/* PDF Resource Panel */}
-      <div className="max-w-4xl mx-auto">
-        <AnalyticalGeometryResourcePanel resourceUrl={pdfUrl} />
-      </div>
+      {showResourcePanel && (
+        <div className="max-w-4xl mx-auto">
+          <AnalyticalGeometryResourcePanel resourceUrl={pdfUrl} />
+        </div>
+      )}
 
       {/* 3D Visuals Section */}
       <div className="max-w-6xl mx-auto">

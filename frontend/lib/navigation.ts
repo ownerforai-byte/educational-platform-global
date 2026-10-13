@@ -45,6 +45,10 @@ import {
   Bot,
   Languages,
   History,
+  Activity,
+  CalendarCheck,
+  NotebookPen,
+  Repeat,
 } from "lucide-react";
 
 export type NavIcon = ComponentType<{ className?: string }>;
@@ -57,6 +61,8 @@ export type NavItem = {
   badgeClass?: string;
   /** Rendered only for allowlisted owner emails (frontend/lib/owner). */
   ownerOnly?: boolean;
+  /** Rendered only for owner + R1-granted emails (the R1 daily-life layer). */
+  r1Only?: boolean;
 };
 
 export type NavSection = {
@@ -66,6 +72,8 @@ export type NavSection = {
   icon: NavIcon;
   /** Rendered only for allowlisted owner emails (frontend/lib/owner). */
   ownerOnly?: boolean;
+  /** Rendered only for owner + R1-granted emails (the R1 daily-life layer). */
+  r1Only?: boolean;
   items: NavItem[];
 };
 
@@ -138,6 +146,14 @@ const ownerItems: NavItem[] = [
   { href: "/controller", label: "Controller", icon: ShieldCheck, badge: "Admin" },
 ];
 
+const r1Items: NavItem[] = [
+  { href: "/r1", label: "R1 Today", icon: Sparkles, badge: "R1", badgeClass: "bg-primary/15 text-primary" },
+  { href: "/r1/activities", label: "Daily Activities", icon: Activity },
+  { href: "/r1/plans", label: "My Plans", icon: CalendarCheck },
+  { href: "/r1/journal", label: "Daily Journal", icon: NotebookPen },
+  { href: "/r1/habits", label: "Habit Streaks", icon: Repeat },
+];
+
 /**
  * Ordered exactly as the menus render it. The sidebar renders `primary` as its
  * own flat block and wraps the rest in collapsible sections; the mobile drawer
@@ -150,6 +166,7 @@ export const NAV_SECTIONS: NavSection[] = [
   { id: "tools", label: "Veer & Assessment", icon: Sparkles, items: toolsItems },
   { id: "extended", label: "Knowledge & Prep", icon: Globe, items: extendedItems },
   { id: "account", label: "Student Desk", icon: UserCheck, items: accountItems },
+  { id: "r1", label: "R1 · Daily Life", icon: Sparkles, r1Only: true, items: r1Items },
   { id: "owner", label: "Owner", icon: Crown, ownerOnly: true, items: ownerItems },
 ];
 

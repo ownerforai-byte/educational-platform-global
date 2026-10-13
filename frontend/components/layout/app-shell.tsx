@@ -10,6 +10,9 @@ import { MobileQuickNav } from "./mobile-quick-nav";
 import { SidebarNavigation } from "./sidebar-navigation";
 import { BackButton } from "@/components/navigation/back-button";
 import { ThemeToggle } from "@/components/theme/theme-toggle";
+import { R1Shortcut } from "./r1-shortcut";
+import { GlobalSearch } from "./global-search";
+import { CreditBadge } from "./credit-badge";
 import { UserNav } from "./user-nav";
 import { Footer } from "./footer";
 
@@ -136,8 +139,11 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             </Link>
           </div>
 
-          {/* Center spacer */}
-          <div className="flex-1" />
+          {/* Center: inline global search (Ctrl+K opens the same engine) */}
+          <div className="hidden md:flex flex-1 justify-center px-4">
+            <GlobalSearch />
+          </div>
+          <div className="flex-1 md:hidden" />
 
           {/* Right: pin toggle + theme studio + search + credit badge + auth links */}
           <div className="flex items-center gap-1.5 shrink-0">
@@ -151,6 +157,8 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
               <span>Search</span>
               <kbd className="text-[9px] font-mono px-1 py-0.5 rounded bg-muted border border-border/60">Ctrl/⌘ K</kbd>
             </Link>
+
+            <R1Shortcut />
 
             <ThemeToggle />
 
@@ -175,6 +183,8 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
               <span className="hidden sm:inline">Periodic Table</span>
               <span className="text-[9px] font-extrabold uppercase px-1 py-0.5 rounded bg-teal-500/20 text-teal-700 dark:text-teal-300">CEE</span>
             </Link>
+
+            <CreditBadge className="hidden sm:flex" />
 
             <div className="ml-1 h-4 w-px bg-border/60" />
             <Suspense fallback={<div className="h-8 w-8 animate-pulse rounded-full bg-muted/40" />}>

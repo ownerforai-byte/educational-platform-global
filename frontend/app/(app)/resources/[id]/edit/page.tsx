@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { getResourceForEdit } from "@/lib/curriculum";
 import { ResourceForm } from "@/components/content/resource-form";
+import { ResourceLinkForm } from "@/components/content/resource-link-form";
 import { BackButton } from "@/components/navigation/back-button";
 
 export const dynamic = "force-dynamic";
@@ -49,6 +50,8 @@ export default async function EditResourcePage({
           metadata: formattedMetadata,
         }}
       />
+
+      <ResourceLinkForm resourceId={resource.id} />
     </div>
   );
 }

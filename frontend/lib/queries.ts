@@ -1,12 +1,15 @@
 /**
- * Search/query types — thin re-export of the canonical API types.
+ * Search/query entry point. Two concerns, both delegating to their single
+ * source instead of duplicating it:
  *
- * This module used to declare its OWN copies of the search response types,
- * which drifted from the real wire contract in `@/types/api`. It is now a
- * compatibility surface over that single source of truth: the same names stay
- * importable, but every shape is the platform's actual API shape, so the two
- * files can never disagree again. Nothing imports this today; it is kept so
- * `@/lib/queries` remains a valid, working entry point.
+ * 1. Search wire types — a thin compatibility surface over the canonical API
+ *    shapes in `@/types/api`. This module used to declare its own copies,
+ *    which drifted from the real `/api/search` contract; the same names stay
+ *    importable here, but every shape is the platform's actual API shape.
+ *
+ * 2. Syllabus queries — re-exported from `@/features/syllabus/queries.ts`,
+ *    the live implementation, so this module remains a valid query entry
+ *    point for pages without forking any query logic.
  */
 export type {
   /** One search hit, exactly as `/api/search` returns it. */
@@ -20,3 +23,11 @@ export type {
 // Historical alias: this file used to export `SearchResult`. It is the same
 // concept as `SearchResultItem`, so it now points at the canonical type.
 export type { SearchResultItem as SearchResult } from "@/types/api";
+
+export {
+  listSubjects,
+  getSubjectNav,
+  getUnit,
+  getUnitTopic,
+  resolveUnitIdFromChapterSlug,
+} from "@/features/syllabus/queries";

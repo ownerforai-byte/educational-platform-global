@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { getEducationLevels } from "@/lib/curriculum";
+import { getLevels } from "@/lib/api";
 import { SYLLABUS } from "@/lib/syllabus";
 import {
   Compass,
@@ -28,9 +29,16 @@ export const metadata = {
 export default async function LevelsPage() {
   let dbLevels: Array<{ id: string; name: string; slug: string; description?: string | null }> = [];
   try {
-    const fetched = await getEducationLevels();
-    if (Array.isArray(fetched)) {
-      dbLevels = fetched;
+    const [staticLevels, apiLevels] = await Promise.all([
+      getEducationLevels(),
+      getLevels().catch(() => []),
+    ]);
+    const seen = new Set<string>();
+    for (const level of [...staticLevels, ...apiLevels]) {
+      if (!seen.has(level.slug)) {
+        seen.add(level.slug);
+        dbLevels.push(level);
+      }
     }
   } catch {
     dbLevels = [];

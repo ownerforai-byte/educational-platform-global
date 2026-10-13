@@ -1,6 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import { SYLLABUS } from "@/lib/syllabus";
+import { getSubjectChapters } from "@/lib/api";
 import {
   BookOpen,
   FlaskConical,
@@ -26,7 +27,19 @@ const SUBJECT_THEMES: Record<string, { icon: string; border: string; bg: string;
   nepali:      { icon: "🇳🇵", border: "border-rose-500/30 hover:border-rose-500",      bg: "from-rose-500/10 via-card to-card",   badge: "bg-rose-500/15 text-rose-600 dark:text-rose-400" },
 };
 
-export default function SubjectsPage() {
+export default async function SubjectsPage() {
+  const subjectSlugs = [...new Set(SYLLABUS.flatMap((cls) => cls.subjects.map((s) => s.slug)))];
+  const catalogueChapters: Record<string, number | null> = {};
+  await Promise.all(
+    subjectSlugs.map(async (slug) => {
+      try {
+        catalogueChapters[slug] = (await getSubjectChapters(slug)).length;
+      } catch {
+        catalogueChapters[slug] = null;
+      }
+    }),
+  );
+
   return (
     <div className="mx-auto max-w-7xl px-4 py-10 space-y-12">
       {/* Header */}
@@ -83,7 +96,12 @@ export default function SubjectsPage() {
                           <span className="text-3xl">{theme.icon}</span>
                           <div>
                             <h3 className="font-bold text-foreground text-lg">{subj.name}</h3>
-                            <p className="text-xs text-muted-foreground">{subj.units.length} units &bull; {totalTopics} topics</p>
+                            <p className="text-xs text-muted-foreground">
+                              {subj.units.length} units &bull; {totalTopics} topics
+                              {catalogueChapters[subj.slug] != null
+                                ? ` \u2022 ${catalogueChapters[subj.slug]} catalogue chapters`
+                                : ""}
+                            </p>
                           </div>
                         </div>
                         {totalHours > 0 && (

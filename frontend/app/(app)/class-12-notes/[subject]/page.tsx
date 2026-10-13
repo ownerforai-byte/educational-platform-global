@@ -1,5 +1,5 @@
 import { SubjectHubView } from "@/features/syllabus/components/subject-hub-view";
-import { listSubjects } from "@/features/syllabus/queries";
+import { listSubjects } from "@/lib/queries";
 
 export const dynamic = "force-dynamic";
 

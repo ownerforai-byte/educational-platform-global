@@ -1,28 +1,55 @@
 "use client";
 
 import { useState } from "react";
+import { Heart } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
+import { labStorageKey, useLabStorage } from "./use-lab-storage";
 
-interface BoardAnnotation {
+export interface BoardAnnotation {
   id: string;
   author: string;
   annotationId: string;
   note: string;
-  timestamp: Date;
+  timestamp: string;
   likes: number;
 }
 
 const INITIAL_ANNOTATIONS: BoardAnnotation[] = [
-  { id: "1", author: "Alice", annotationId: "1", note: "This vertex is crucial for understanding symmetry!", timestamp: new Date(), likes: 5 },
-  { id: "2", author: "Bob", annotationId: "2", note: "The golden ratio connection is fascinating", timestamp: new Date(), likes: 3 },
-  { id: "3", author: "Charlie", annotationId: "3", note: "Can someone explain the normal vector better?", timestamp: new Date(), likes: 1 },
+  { id: "1", author: "Alice", annotationId: "1", note: "This vertex is crucial for understanding symmetry!", timestamp: new Date().toISOString(), likes: 5 },
+  { id: "2", author: "Bob", annotationId: "2", note: "The golden ratio connection is fascinating", timestamp: new Date().toISOString(), likes: 3 },
+  { id: "3", author: "Charlie", annotationId: "3", note: "Can someone explain the normal vector better?", timestamp: new Date().toISOString(), likes: 1 },
 ];
 
-export function SharedAnnotationBoard({ theme = "dark" }: { theme?: "dark" | "light" }) {
-  const [annotations, setAnnotations] = useState<BoardAnnotation[]>(INITIAL_ANNOTATIONS);
+const ANNOTATION_TARGETS = [
+  { value: "1", label: "Vertex A" },
+  { value: "2", label: "Edge B" },
+  { value: "3", label: "Face C" },
+];
+
+function formatTime(iso: string): string {
+  return new Date(iso).toLocaleTimeString();
+}
+
+export interface SharedAnnotationBoardProps {
+  labId: string;
+}
+
+export function SharedAnnotationBoard({ labId }: SharedAnnotationBoardProps) {
+  const [annotations, setAnnotations] = useLabStorage<BoardAnnotation[]>(
+    labStorageKey(labId, "annotations"),
+    INITIAL_ANNOTATIONS
+  );
   const [newNote, setNewNote] = useState("");
   const [selectedAnnotation, setSelectedAnnotation] = useState("1");
   const [userName, setUserName] = useState("Student");
-  const isDark = theme === "dark";
 
   const handleSubmit = () => {
     if (!newNote.trim()) return;
@@ -31,7 +58,7 @@ export function SharedAnnotationBoard({ theme = "dark" }: { theme?: "dark" | "li
       author: userName,
       annotationId: selectedAnnotation,
       note: newNote,
-      timestamp: new Date(),
+      timestamp: new Date().toISOString(),
       likes: 0,
     };
     setAnnotations([annotation, ...annotations]);
@@ -39,119 +66,67 @@ export function SharedAnnotationBoard({ theme = "dark" }: { theme?: "dark" | "li
   };
 
   const handleLike = (id: string) => {
-    setAnnotations(annotations.map((a) => a.id === id ? { ...a, likes: a.likes + 1 } : a));
+    setAnnotations(
+      annotations.map((a) => (a.id === id ? { ...a, likes: a.likes + 1 } : a))
+    );
   };
 
   return (
-    <div style={{
-      background: isDark ? "#1e293b" : "#f8fafc",
-      border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)"}`,
-      borderRadius: "12px",
-      padding: "20px",
-      color: isDark ? "#f8fafc" : "#1e293b",
-    }}>
-      <h2 style={{ margin: "0 0 16px", fontSize: "18px", fontWeight: 600 }}>💬 Shared Annotation Board</h2>
-
-      <div style={{ display: "flex", gap: "12px", marginBottom: "16px" }}>
-        <input
+    <div className="space-y-4">
+      <div className="flex flex-wrap gap-2">
+        <Input
           type="text"
           placeholder="Your name"
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
-          style={{
-            padding: "8px 12px",
-            borderRadius: "6px",
-            border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)"}`,
-            background: isDark ? "rgba(15, 23, 42, 0.5)" : "white",
-            color: isDark ? "#f8fafc" : "#1e293b",
-            fontSize: "13px",
-            width: "120px",
-          }}
+          className="w-[140px]"
         />
-        <select
-          value={selectedAnnotation}
-          onChange={(e) => setSelectedAnnotation(e.target.value)}
-          style={{
-            padding: "8px 12px",
-            borderRadius: "6px",
-            border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)"}`,
-            background: isDark ? "rgba(15, 23, 42, 0.5)" : "white",
-            color: isDark ? "#f8fafc" : "#1e293b",
-            fontSize: "13px",
-            flex: 1,
-          }}
-        >
-          <option value="1">Vertex A</option>
-          <option value="2">Edge B</option>
-          <option value="3">Face C</option>
-        </select>
+        <Select value={selectedAnnotation} onValueChange={setSelectedAnnotation}>
+          <SelectTrigger className="flex-1" aria-label="Annotation target">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            {ANNOTATION_TARGETS.map((target) => (
+              <SelectItem key={target.value} value={target.value}>
+                {target.label}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
 
-      <div style={{ display: "flex", gap: "8px", marginBottom: "16px" }}>
-        <input
+      <div className="flex gap-2">
+        <Input
           type="text"
-          placeholder="Add a note..."
+          placeholder="Add a note…"
           value={newNote}
           onChange={(e) => setNewNote(e.target.value)}
           onKeyDown={(e) => e.key === "Enter" && handleSubmit()}
-          style={{
-            flex: 1,
-            padding: "10px 14px",
-            borderRadius: "8px",
-            border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)"}`,
-            background: isDark ? "rgba(15, 23, 42, 0.5)" : "white",
-            color: isDark ? "#f8fafc" : "#1e293b",
-            fontSize: "13px",
-          }}
+          className="flex-1"
         />
-        <button
-          onClick={handleSubmit}
-          style={{
-            padding: "10px 20px",
-            borderRadius: "8px",
-            border: "none",
-            background: "rgba(99, 102, 241, 0.9)",
-            color: "#f8fafc",
-            fontSize: "13px",
-            cursor: "pointer",
-          }}
-        >
-          Post
-        </button>
+        <Button onClick={handleSubmit}>Post</Button>
       </div>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "12px", maxHeight: "300px", overflowY: "auto" }}>
+      <div className="flex max-h-[300px] flex-col gap-3 overflow-y-auto">
         {annotations.map((annotation) => (
           <div
             key={annotation.id}
-            style={{
-              padding: "12px 16px",
-              borderRadius: "8px",
-              background: isDark ? "rgba(15, 23, 42, 0.5)" : "rgba(248, 250, 252, 0.8)",
-              border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.2)" : "rgba(99, 102, 241, 0.1)"}`,
-            }}
+            className="rounded-lg border border-border bg-muted/40 p-3"
           >
-            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
-              <span style={{ fontWeight: 600, fontSize: "13px" }}>{annotation.author}</span>
-              <span style={{ fontSize: "11px", opacity: 0.6 }}>
-                {annotation.timestamp.toLocaleTimeString()}
+            <div className="mb-2 flex items-center justify-between gap-2">
+              <span className="text-sm font-semibold">{annotation.author}</span>
+              <span className="text-[11px] text-muted-foreground">
+                {formatTime(annotation.timestamp)}
               </span>
             </div>
-            <p style={{ margin: "0 0 8px", fontSize: "13px", lineHeight: 1.5 }}>{annotation.note}</p>
+            <p className="mb-2 text-sm leading-relaxed">{annotation.note}</p>
             <button
+              type="button"
               onClick={() => handleLike(annotation.id)}
-              style={{
-                background: "none",
-                border: "none",
-                color: isDark ? "#94a3b8" : "#64748b",
-                fontSize: "12px",
-                cursor: "pointer",
-                display: "flex",
-                alignItems: "center",
-                gap: "4px",
-              }}
+              className="flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
             >
-              ❤️ {annotation.likes}
+              <Heart className="h-3.5 w-3.5" />
+              {annotation.likes}
             </button>
           </div>
         ))}

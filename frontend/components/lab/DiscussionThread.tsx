@@ -1,21 +1,26 @@
 "use client";
 
 import { useState } from "react";
+import { Heart, MessageSquare, Send } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Textarea } from "@/components/ui/textarea";
+import { labStorageKey, useLabStorage } from "./use-lab-storage";
 
-interface Reply {
+export interface Reply {
   id: string;
   author: string;
   content: string;
-  timestamp: Date;
+  timestamp: string;
   likes: number;
 }
 
-interface Thread {
+export interface Thread {
   id: string;
   title: string;
   author: string;
   content: string;
-  timestamp: Date;
+  timestamp: string;
   replies: Reply[];
   likes: number;
 }
@@ -26,10 +31,10 @@ const INITIAL_THREADS: Thread[] = [
     title: "Understanding 3D Geometry",
     author: "Alice",
     content: "Can someone explain how the golden ratio appears in icosahedrons?",
-    timestamp: new Date(),
+    timestamp: new Date().toISOString(),
     likes: 8,
     replies: [
-      { id: "r1", author: "Bob", content: "The ratio of edge to diagonal in an icosahedron is the golden ratio φ!", timestamp: new Date(), likes: 3 },
+      { id: "r1", author: "Bob", content: "The ratio of edge to diagonal in an icosahedron is the golden ratio φ!", timestamp: new Date().toISOString(), likes: 3 },
     ],
   },
   {
@@ -37,20 +42,34 @@ const INITIAL_THREADS: Thread[] = [
     title: "Calculus Help",
     author: "Charlie",
     content: "Need help with integration by parts. Any resources?",
-    timestamp: new Date(),
+    timestamp: new Date().toISOString(),
     likes: 5,
     replies: [],
   },
 ];
 
-export function DiscussionThread({ theme = "dark" }: { theme?: "dark" | "light" }) {
-  const [threads, setThreads] = useState<Thread[]>(INITIAL_THREADS);
+function formatDate(iso: string): string {
+  return new Date(iso).toLocaleDateString();
+}
+
+function formatTime(iso: string): string {
+  return new Date(iso).toLocaleTimeString();
+}
+
+export interface DiscussionThreadProps {
+  labId: string;
+}
+
+export function DiscussionThread({ labId }: DiscussionThreadProps) {
+  const [threads, setThreads] = useLabStorage<Thread[]>(
+    labStorageKey(labId, "discussion"),
+    INITIAL_THREADS
+  );
   const [newThread, setNewThread] = useState("");
   const [newTitle, setNewTitle] = useState("");
   const [replyTo, setReplyTo] = useState<string | null>(null);
   const [replyContent, setReplyContent] = useState("");
   const [userName, setUserName] = useState("Student");
-  const isDark = theme === "dark";
 
   const handlePostThread = () => {
     if (!newThread.trim() || !newTitle.trim()) return;
@@ -59,7 +78,7 @@ export function DiscussionThread({ theme = "dark" }: { theme?: "dark" | "light" 
       title: newTitle,
       author: userName,
       content: newThread,
-      timestamp: new Date(),
+      timestamp: new Date().toISOString(),
       likes: 0,
       replies: [],
     };
@@ -70,196 +89,138 @@ export function DiscussionThread({ theme = "dark" }: { theme?: "dark" | "light" 
 
   const handleReply = (threadId: string) => {
     if (!replyContent.trim()) return;
-    setThreads(threads.map((t) => {
-      if (t.id === threadId) {
-        return {
-          ...t,
-          replies: [...t.replies, {
-            id: Date.now().toString(),
-            author: userName,
-            content: replyContent,
-            timestamp: new Date(),
-            likes: 0,
-          }],
-        };
-      }
-      return t;
-    }));
+    setThreads(
+      threads.map((t) =>
+        t.id === threadId
+          ? {
+              ...t,
+              replies: [
+                ...t.replies,
+                {
+                  id: Date.now().toString(),
+                  author: userName,
+                  content: replyContent,
+                  timestamp: new Date().toISOString(),
+                  likes: 0,
+                },
+              ],
+            }
+          : t
+      )
+    );
     setReplyContent("");
     setReplyTo(null);
   };
 
   const handleLike = (threadId: string, replyId?: string) => {
-    setThreads(threads.map((t) => {
-      if (t.id === threadId) {
+    setThreads(
+      threads.map((t) => {
+        if (t.id !== threadId) return t;
         if (replyId) {
           return {
             ...t,
-            replies: t.replies.map((r) => r.id === replyId ? { ...r, likes: r.likes + 1 } : r),
+            replies: t.replies.map((r) =>
+              r.id === replyId ? { ...r, likes: r.likes + 1 } : r
+            ),
           };
         }
         return { ...t, likes: t.likes + 1 };
-      }
-      return t;
-    }));
+      })
+    );
   };
 
   return (
-    <div style={{
-      background: isDark ? "#1e293b" : "#f8fafc",
-      border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)"}`,
-      borderRadius: "12px",
-      padding: "20px",
-      color: isDark ? "#f8fafc" : "#1e293b",
-    }}>
-      <h2 style={{ margin: "0 0 16px", fontSize: "18px", fontWeight: 600 }}>💭 Discussion Threads</h2>
-
-      <div style={{ display: "flex", gap: "8px", marginBottom: "16px" }}>
-        <input
+    <div className="space-y-4">
+      <div className="flex flex-wrap gap-2">
+        <Input
           type="text"
           placeholder="Thread title"
           value={newTitle}
           onChange={(e) => setNewTitle(e.target.value)}
-          style={{
-            flex: 1,
-            padding: "10px 14px",
-            borderRadius: "8px",
-            border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)"}`,
-            background: isDark ? "rgba(15, 23, 42, 0.5)" : "white",
-            color: isDark ? "#f8fafc" : "#1e293b",
-            fontSize: "13px",
-          }}
+          className="min-w-[200px] flex-1"
         />
-        <input
+        <Input
           type="text"
           placeholder="Your name"
           value={userName}
           onChange={(e) => setUserName(e.target.value)}
-          style={{
-            width: "120px",
-            padding: "10px 14px",
-            borderRadius: "8px",
-            border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)"}`,
-            background: isDark ? "rgba(15, 23, 42, 0.5)" : "white",
-            color: isDark ? "#f8fafc" : "#1e293b",
-            fontSize: "13px",
-          }}
+          className="w-[140px]"
         />
       </div>
-      <textarea
-        placeholder="Start a discussion..."
+      <Textarea
+        placeholder="Start a discussion…"
         value={newThread}
         onChange={(e) => setNewThread(e.target.value)}
-        style={{
-          width: "100%",
-          padding: "10px 14px",
-          borderRadius: "8px",
-          border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)"}`,
-          background: isDark ? "rgba(15, 23, 42, 0.5)" : "white",
-          color: isDark ? "#f8fafc" : "#1e293b",
-          fontSize: "13px",
-          resize: "vertical",
-          minHeight: "80px",
-          marginBottom: "12px",
-          boxSizing: "border-box",
-        }}
+        className="min-h-[80px] resize-y"
       />
-      <button
-        onClick={handlePostThread}
-        style={{
-          padding: "10px 20px",
-          borderRadius: "8px",
-          border: "none",
-          background: "rgba(99, 102, 241, 0.9)",
-          color: "#f8fafc",
-          fontSize: "13px",
-          cursor: "pointer",
-          marginBottom: "20px",
-        }}
-      >
+      <Button onClick={handlePostThread}>
+        <Send className="mr-2 h-4 w-4" />
         Post Thread
-      </button>
+      </Button>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "16px" }}>
+      <div className="flex flex-col gap-4">
         {threads.map((thread) => (
-          <div
-            key={thread.id}
-            style={{
-              padding: "16px",
-              borderRadius: "8px",
-              background: isDark ? "rgba(15, 23, 42, 0.5)" : "rgba(248, 250, 252, 0.8)",
-              border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.2)" : "rgba(99, 102, 241, 0.1)"}`,
-            }}
-          >
-            <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "8px" }}>
-              <h3 style={{ margin: 0, fontSize: "15px", fontWeight: 600 }}>{thread.title}</h3>
-              <span style={{ fontSize: "11px", opacity: 0.6 }}>{thread.timestamp.toLocaleDateString()}</span>
+          <div key={thread.id} className="rounded-lg border border-border bg-muted/40 p-4">
+            <div className="mb-2 flex items-start justify-between gap-2">
+              <h3 className="text-sm font-semibold">{thread.title}</h3>
+              <span className="shrink-0 text-[11px] text-muted-foreground">
+                {formatDate(thread.timestamp)}
+              </span>
             </div>
-            <p style={{ margin: "0 0 12px", fontSize: "13px", opacity: 0.9, lineHeight: 1.5 }}>{thread.content}</p>
-            <div style={{ display: "flex", gap: "12px", marginBottom: "12px" }}>
+            <p className="mb-3 text-sm leading-relaxed text-foreground/90">{thread.content}</p>
+            <div className="mb-3 flex items-center gap-3">
               <button
+                type="button"
                 onClick={() => handleLike(thread.id)}
-                style={{ background: "none", border: "none", color: isDark ? "#94a3b8" : "#64748b", fontSize: "12px", cursor: "pointer", display: "flex", alignItems: "center", gap: "4px" }}
+                className="flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
               >
-                ❤️ {thread.likes}
+                <Heart className="h-3.5 w-3.5" />
+                {thread.likes}
               </button>
               <button
+                type="button"
                 onClick={() => setReplyTo(replyTo === thread.id ? null : thread.id)}
-                style={{ background: "none", border: "none", color: isDark ? "#94a3b8" : "#64748b", fontSize: "12px", cursor: "pointer" }}
+                className="flex items-center gap-1 text-xs text-muted-foreground transition-colors hover:text-foreground"
               >
-                💬 Reply ({thread.replies.length})
+                <MessageSquare className="h-3.5 w-3.5" />
+                Reply ({thread.replies.length})
               </button>
             </div>
 
             {replyTo === thread.id && (
-              <div style={{ display: "flex", gap: "8px", marginBottom: "12px" }}>
-                <input
+              <div className="mb-3 flex gap-2">
+                <Input
                   type="text"
-                  placeholder="Write a reply..."
+                  placeholder="Write a reply…"
                   value={replyContent}
                   onChange={(e) => setReplyContent(e.target.value)}
                   onKeyDown={(e) => e.key === "Enter" && handleReply(thread.id)}
-                  style={{
-                    flex: 1,
-                    padding: "8px 12px",
-                    borderRadius: "6px",
-                    border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)"}`,
-                    background: isDark ? "rgba(15, 23, 42, 0.5)" : "white",
-                    color: isDark ? "#f8fafc" : "#1e293b",
-                    fontSize: "12px",
-                  }}
+                  className="h-9 flex-1 text-xs"
                 />
-                <button
-                  onClick={() => handleReply(thread.id)}
-                  style={{
-                    padding: "8px 16px",
-                    borderRadius: "6px",
-                    border: "none",
-                    background: "rgba(99, 102, 241, 0.9)",
-                    color: "#f8fafc",
-                    fontSize: "12px",
-                    cursor: "pointer",
-                  }}
-                >
+                <Button size="sm" onClick={() => handleReply(thread.id)}>
                   Send
-                </button>
+                </Button>
               </div>
             )}
 
             {thread.replies.length > 0 && (
-              <div style={{ marginLeft: "16px", borderLeft: "2px solid rgba(99, 102, 241, 0.3)", paddingLeft: "12px" }}>
+              <div className="ml-4 border-l-2 border-primary/30 pl-3">
                 {thread.replies.map((reply) => (
-                  <div key={reply.id} style={{ marginBottom: "12px" }}>
-                    <div style={{ display: "flex", justifyContent: "space-between", marginBottom: "4px" }}>
-                      <span style={{ fontWeight: 600, fontSize: "12px" }}>{reply.author}</span>
-                      <span style={{ fontSize: "10px", opacity: 0.6 }}>{reply.timestamp.toLocaleTimeString()}</span>
+                  <div key={reply.id} className="mb-3 last:mb-0">
+                    <div className="mb-1 flex items-center justify-between gap-2">
+                      <span className="text-xs font-semibold">{reply.author}</span>
+                      <span className="text-[10px] text-muted-foreground">
+                        {formatTime(reply.timestamp)}
+                      </span>
                     </div>
-                    <p style={{ margin: "0 0 4px", fontSize: "12px", opacity: 0.9 }}>{reply.content}</p>
+                    <p className="mb-1 text-xs text-foreground/90">{reply.content}</p>
                     <button
+                      type="button"
                       onClick={() => handleLike(thread.id, reply.id)}
-                      style={{ background: "none", border: "none", color: isDark ? "#94a3b8" : "#64748b", fontSize: "11px", cursor: "pointer" }}
+                      className="flex items-center gap-1 text-[11px] text-muted-foreground transition-colors hover:text-foreground"
                     >
-                      ❤️ {reply.likes}
+                      <Heart className="h-3 w-3" />
+                      {reply.likes}
                     </button>
                   </div>
                 ))}

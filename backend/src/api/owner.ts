@@ -5,6 +5,7 @@ import { supabaseAdmin } from "../db/supabase";
 import { invalidateCoinGateCache } from "../utils/credits";
 import { authEmailsById } from "../utils/authEmails";
 import { isProtectedOwnerTarget } from "../utils/ownerGuard";
+import { invalidateR1GrantCache } from "../utils/r1Grants";
 import { sendApprovalEmail } from "../utils/mailer";
 
 /**
@@ -978,6 +979,145 @@ router.get("/activity", requireAuth, async (req: Request, res: Response) => {
     );
   } catch (err: any) {
     console.error("[owner] activity error:", err?.message ?? err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+// ── R1 grants (owner-granted access to the R1 layer) ────────────────────────
+
+const r1GrantCreateSchema = z.object({
+  email: z.string().email(),
+  note: z.string().trim().max(200).optional(),
+});
+
+/**
+ * GET /api/owner/r1-grants — every grant (active + revoked), newest first.
+ */
+router.get("/r1-grants", requireAuth, async (req: Request, res: Response) => {
+  const owner = ownerGate(req, res);
+  if (!owner) return;
+
+  try {
+    const { data, error } = await supabaseAdmin
+      .from("r1_grants")
+      .select("id, email, granted_by, note, created_at, revoked_at")
+      .order("created_at", { ascending: false });
+
+    if (error) {
+      console.error("[owner] r1-grants GET failed:", error.message);
+      res.status(500).json({ error: "Failed to load R1 grants" });
+      return;
+    }
+
+    res.json({
+      grants: (data ?? []).map((g: any) => ({
+        id: g.id,
+        email: g.email,
+        note: g.note ?? null,
+        grantedBy: g.granted_by ?? null,
+        createdAt: g.created_at,
+        revokedAt: g.revoked_at ?? null,
+      })),
+    });
+  } catch (err: any) {
+    console.error("[owner] r1-grants error:", err?.message ?? err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+/**
+ * POST /api/owner/r1-grants — grant (or re-grant) R1 access for an email.
+ * Works pre-signup: the email gets R1 the moment an account appears. If an
+ * account already exists and is sitting PENDING, it is activated too so the
+ * grant takes effect immediately.
+ */
+router.post("/r1-grants", requireAuth, async (req: Request, res: Response) => {
+  const owner = ownerGate(req, res);
+  if (!owner) return;
+
+  const parsed = r1GrantCreateSchema.safeParse(req.body);
+  if (!parsed.success) {
+    res.status(400).json({ error: "Invalid payload", details: parsed.error.flatten() });
+    return;
+  }
+
+  const email = parsed.data.email.trim().toLowerCase();
+
+  try {
+    const { data, error } = await supabaseAdmin
+      .from("r1_grants")
+      .upsert(
+        [{ email, granted_by: owner.user.id, note: parsed.data.note ?? null, revoked_at: null }],
+        { onConflict: "email" }
+      )
+      .select("id, email, note, granted_by, created_at, revoked_at")
+      .maybeSingle();
+
+    if (error) {
+      // The unique index is on lower(email) — plain `email` conflicts still resolve
+      // through the same upsert target in Postgres.
+      console.error("[owner] r1-grants POST failed:", error.message);
+      res.status(500).json({ error: "Failed to grant R1 access" });
+      return;
+    }
+
+    // Existing account with this email and a non-ACTIVE status → activate it so
+    // the grant is usable right now (signup also auto-activates granted emails).
+    try {
+      const idToEmail = await authEmailsById();
+      for (const [userId, userEmail] of idToEmail) {
+        if (userEmail === email) {
+          await supabaseAdmin
+            .from("profiles")
+            .update({ access_status: "ACTIVE" })
+            .eq("id", userId)
+            .neq("access_status", "ACTIVE");
+          break;
+        }
+      }
+    } catch (activateErr) {
+      console.error("[owner] r1-grants activation failed:", activateErr);
+    }
+
+    invalidateR1GrantCache();
+    res.status(201).json({ grant: data ?? { email } });
+  } catch (err: any) {
+    console.error("[owner] r1-grants error:", err?.message ?? err);
+    res.status(500).json({ error: "Internal server error" });
+  }
+});
+
+/**
+ * DELETE /api/owner/r1-grants/:id — revoke (soft). The row is kept for the
+ * audit trail and can be re-granted via POST.
+ */
+router.delete("/r1-grants/:id", requireAuth, async (req: Request, res: Response) => {
+  const owner = ownerGate(req, res);
+  if (!owner) return;
+
+  try {
+    const { data, error } = await supabaseAdmin
+      .from("r1_grants")
+      .update({ revoked_at: new Date().toISOString() })
+      .eq("id", req.params.id)
+      .is("revoked_at", null)
+      .select("id, email")
+      .maybeSingle();
+
+    if (error) {
+      console.error("[owner] r1-grants DELETE failed:", error.message);
+      res.status(500).json({ error: "Failed to revoke R1 access" });
+      return;
+    }
+    if (!data) {
+      res.status(404).json({ error: "Grant not found or already revoked" });
+      return;
+    }
+
+    invalidateR1GrantCache();
+    res.json({ revoked: true, id: data.id, email: data.email });
+  } catch (err: any) {
+    console.error("[owner] r1-grants error:", err?.message ?? err);
     res.status(500).json({ error: "Internal server error" });
   }
 });

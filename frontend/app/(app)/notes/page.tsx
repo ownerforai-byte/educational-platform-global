@@ -2,7 +2,7 @@ import Link from "next/link";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { loadData } from "@/lib/data-loader";
 import { SubjectSearch } from "@/components/layout/subject-search";
-import { getImportedNotesBySubject } from "@/lib/imported-notes";
+import { getImportedNotesBySubject, type ImportedNote } from "@/lib/imported-notes";
 import { noteRoute } from "@/lib/note-routes";
 import { FlaskConical, ArrowRight, Sparkles, Zap, BookOpen } from "lucide-react";
 
@@ -46,6 +46,25 @@ type RavikishanManifestItem = {
 };
 
 const baseName = (p: string) => p.split(/[\\/]/).pop()?.replace(/\.json$/, "") ?? p;
+
+function noteViewHref(note: {
+  title: string;
+  path: string;
+  subject: string;
+  unit?: string;
+  target: string;
+  source: "ravikishan" | "r-export";
+}): string {
+  const qs = new URLSearchParams({
+    title: note.title,
+    path: note.path,
+    subject: note.subject,
+    target: note.target,
+    source: note.source,
+  });
+  if (note.unit) qs.set("unit", note.unit);
+  return `/notes/view?${qs.toString()}`;
+}
 
 export default async function NotesPage() {
   const [rManifest, rkManifest, importedMap] = await Promise.all([
@@ -151,22 +170,36 @@ export default async function NotesPage() {
               <CardContent>
                 <div className="space-y-2">
                   {chapters.map((chapter) => (
-                    <Link
-                      key={chapter.id}
-                      // Legacy /r-notes/{subject}/{chapter} was removed; send
-                      // readers to the subject hub that renders these notes.
-                      href={noteRoute({
-                        title: chapter.title,
-                        path: `${subject}/${chapter.chapter}/${chapter.id}`,
-                        subject,
-                        target: "class-11-notes",
-                        source: "r-export",
-                      })}
-                      className="block rounded-md border border-border px-3 py-2 text-sm hover:border-primary transition-colors"
-                    >
-                      <span className="font-medium">{chapter.title}</span>
-                      <span className="ml-2 text-xs text-muted-foreground">({chapter.noteCount} notes)</span>
-                    </Link>
+                    <div key={chapter.id} className="flex items-stretch gap-2">
+                      <Link
+                        // Legacy /r-notes/{subject}/{chapter} was removed; send
+                        // readers to the subject hub that renders these notes.
+                        href={noteRoute({
+                          title: chapter.title,
+                          path: `${subject}/${chapter.chapter}/${chapter.id}`,
+                          subject,
+                          target: "class-11-notes",
+                          source: "r-export",
+                        })}
+                        className="block flex-1 rounded-md border border-border px-3 py-2 text-sm hover:border-primary transition-colors"
+                      >
+                        <span className="font-medium">{chapter.title}</span>
+                        <span className="ml-2 text-xs text-muted-foreground">({chapter.noteCount} notes)</span>
+                      </Link>
+                      <Link
+                        href={noteViewHref({
+                          title: chapter.title,
+                          path: `${subject}/${chapter.chapter}/${chapter.id}`,
+                          subject,
+                          target: "class-11-notes",
+                          source: "r-export",
+                        })}
+                        className="flex items-center rounded-md border border-border px-3 py-2 text-xs font-semibold text-primary hover:border-primary transition-colors"
+                      >
+                        <ArrowRight className="mr-1 h-3 w-3" />
+                        Read
+                      </Link>
+                    </div>
                   ))}
                 </div>
               </CardContent>
@@ -189,24 +222,33 @@ export default async function NotesPage() {
                     // Legacy /ravikishan-notes/{path} was removed; route to the
                     // matching curriculum chapter (or subject hub).
                     const [section, subject] = item.path.split("/");
-                    const href = noteRoute({
+                    const note: ImportedNote = {
                       title: item.title,
                       path: item.path,
                       subject,
                       unit: item.unit,
                       target: section === "class-12" || section === "class-12-notes" ? "class-12-notes" : "class-11-notes",
                       source: "ravikishan",
-                    });
+                    };
+                    const href = noteRoute(note);
                     const dupLabel = item.dupType > 1 ? ` (Type-${item.dupType})` : "";
                     return (
-                      <Link
-                        key={item.path}
-                        href={href}
-                        className="block rounded-md border border-border px-3 py-2 text-sm hover:border-primary transition-colors"
-                      >
-                        <span className="font-medium">{item.title}</span>
-                        {dupLabel && <span className="ml-2 text-xs text-muted-foreground">{dupLabel}</span>}
-                      </Link>
+                      <div key={item.path} className="flex items-stretch gap-2">
+                        <Link
+                          href={href}
+                          className="block flex-1 rounded-md border border-border px-3 py-2 text-sm hover:border-primary transition-colors"
+                        >
+                          <span className="font-medium">{item.title}</span>
+                          {dupLabel && <span className="ml-2 text-xs text-muted-foreground">{dupLabel}</span>}
+                        </Link>
+                        <Link
+                          href={noteViewHref(note)}
+                          className="flex items-center rounded-md border border-border px-3 py-2 text-xs font-semibold text-primary hover:border-primary transition-colors"
+                        >
+                          <ArrowRight className="mr-1 h-3 w-3" />
+                          Read
+                        </Link>
+                      </div>
                     );
                   })}
                 </div>

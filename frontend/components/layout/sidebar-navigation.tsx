@@ -8,6 +8,7 @@ import { LogIn, LogOut, ChevronsUp } from "lucide-react";
 import { logoutAction } from "@/features/auth/actions";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { isOwnerUser } from "@/lib/owner";
+import { useR1Access } from "@/features/r1/hooks";
 import { isNavItemActive } from "@/lib/nav-active";
 import { NAV_SECTIONS, type NavItem } from "@/lib/navigation";
 
@@ -156,6 +157,8 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
   useEffect(() => setMounted(true), []);
   const user = mounted ? cachedUser : null;
   const isLoggedIn = !!user;
+  const { data: r1Access } = useR1Access(isLoggedIn);
+  const hasR1 = isOwnerUser(user) || r1Access === true;
 
   const [collapsedSections, setCollapsedSections] = useState<Record<string, boolean>>({
     curriculum: false,
@@ -163,6 +166,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
     tools: false,
     extended: false,
     account: false,
+    r1: false,
     owner: false,
   });
 
@@ -173,16 +177,21 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
   const primaryItems =
     NAV_SECTIONS.find((section) => section.id === "primary")?.items ?? [];
 
-  /** account → signed-in only; ownerOnly → allowlisted owner emails only. */
+  /** account → signed-in only; ownerOnly → owner emails; r1Only → owner + R1 grants. */
   const canSee = (section: (typeof NAV_SECTIONS)[number]) => {
     if (section.id === "account") return isLoggedIn;
     if (section.ownerOnly) return isOwnerUser(user);
+    if (section.r1Only) return hasR1;
     return true;
   };
 
-  /** Per-item owner gate (AI chat entries) — hidden for non-owners. */
+  /** Per-item gates: owner-only entries and R1 entries never leak past their audience. */
   const visibleItems = (section: (typeof NAV_SECTIONS)[number]) =>
-    section.items.filter((item) => !item.ownerOnly || isOwnerUser(user));
+    section.items.filter(
+      (item) =>
+        (item.ownerOnly ? isOwnerUser(user) : true) &&
+        (item.r1Only ? hasR1 : true)
+    );
 
   const handleLogout = async () => {
     await logoutAction();

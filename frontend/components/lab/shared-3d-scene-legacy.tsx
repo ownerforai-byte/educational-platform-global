@@ -5,6 +5,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { OrbitControls, Float, Stars } from '@react-three/drei';
 import * as THREE from 'three';
 import { VizToolbar, VizControlsCapture, type VizTarget } from '@/components/viz/viz-toolbar';
+import { useCanvasSize } from './use-canvas-size';
 
 interface Shared3DSceneProps {
   particleColor: string;
@@ -130,6 +131,9 @@ export default function Shared3DScene({
   particleCount = 60,
 }: Shared3DSceneProps) {
   const vizTargetRef = useRef<VizTarget>({});
+  const canvasRef = useRef<HTMLCanvasElement | null>(null);
+  const canvasSize = useCanvasSize(canvasRef);
+  const isDenseCanvas = canvasSize.width * canvasSize.height > 900_000;
   return (
     <div className={`relative w-full h-80 sm:h-96 md:h-[clamp(320px,60vh,640px)] lg:h-[clamp(320px,60vh,640px)] rounded-xl overflow-hidden border border-primary/20 ${bgGradient}`}>
       <VizToolbar targetRef={vizTargetRef} />
@@ -137,18 +141,24 @@ export default function Shared3DScene({
         camera={{ position: [0, 0, 5], fov: 55 }}
         gl={{ antialias: true, alpha: true }}
         dpr={[1, 2]}
+        onCreated={({ gl }) => {
+          canvasRef.current = gl.domElement;
+        }}
       >
         <ambientLight intensity={0.3} />
         <pointLight position={[10, 10, 10]} intensity={1.2} color={coreColor} />
         <pointLight position={[-8, -4, 6]} intensity={0.5} color={particleColor} />
-        <Stars radius={30} depth={60} count={300} factor={4} saturation={0} fade speed={0.8} />
+        <Stars radius={30} depth={60} count={isDenseCanvas ? 300 : 150} factor={4} saturation={0} fade speed={0.8} />
         <SceneGeometry
           coreColor={coreColor}
           emissiveColor={emissiveColor}
           wireframeColor={wireframeColor}
           orbitColors={orbitColors}
         />
-        <FloatingParticles color={particleColor} count={particleCount} />
+        <FloatingParticles
+          color={particleColor}
+          count={isDenseCanvas ? particleCount : Math.round(particleCount * 0.5)}
+        />
         <OrbitControls enableDamping dampingFactor={0.08} minDistance={3} maxDistance={12} makeDefault />
         <VizControlsCapture targetRef={vizTargetRef} />
       </Canvas>

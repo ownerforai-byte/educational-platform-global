@@ -471,121 +471,7 @@ code, kbd, samp, pre {
     radial-gradient(ellipse at 50% 85%, hsl(var(--accent-violet) / 0.06) 0%, transparent 55%);
 }
 
-/* ─── GLASSMORPHISM SURFACES ─────────────────────────────────────────────── */
-.glass-panel {
-  background: var(--surface-glass);
-  backdrop-filter: blur(16px);
-  -webkit-backdrop-filter: blur(16px);
-  border: 1px solid var(--surface-glass-border);
-}
-.glass-card {
-  background: hsl(var(--card) / 0.85);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border: 1px solid hsl(var(--border) / 0.7);
-}
-
-/* ─── HOVER LIFTS & MICRO-INTERACTIONS ───────────────────────────────────── */
-.interactive-card {
-  transition: transform 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-              box-shadow 0.2s cubic-bezier(0.16, 1, 0.3, 1),
-              border-color 0.2s ease;
-}
-.interactive-card:hover {
-  transform: translateY(-2px);
-  box-shadow: var(--elev-3);
-  border-color: hsl(var(--primary) / 0.45);
-}
-
-/* ─── LAYOUT PRIMITIVES ──────────────────────────────────────────────────── */
 @layer components {
-  .container-page {
-    width: 100%;
-    max-width: 80rem;
-    margin-left: auto;
-    margin-right: auto;
-    padding-left: 1rem;
-    padding-right: 1rem;
-  }
-  @media (min-width: 640px) { .container-page { padding-left: 1.5rem; padding-right: 1.5rem; } }
-  @media (min-width: 1024px) { .container-page { padding-left: 2rem; padding-right: 2rem; } }
-  @media (min-width: 1440px) { .container-page { padding-left: 3rem; padding-right: 3rem; max-width: 1600px; } }
-
-  .content-grid {
-    display: grid;
-    grid-template-columns: repeat(1, minmax(0, 1fr));
-    gap: 1.25rem;
-  }
-  @media (min-width: 640px)  { .content-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
-  @media (min-width: 1024px) { .content-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
-  @media (min-width: 1440px) { .content-grid { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1.5rem; } }
-
-  .stack-xs > * + * { margin-top: 0.25rem; }
-  .stack-sm > * + * { margin-top: 0.5rem; }
-  .stack-md > * + * { margin-top: 0.75rem; }
-  .stack-lg > * + * { margin-top: 1rem; }
-  .stack-xl > * + * { margin-top: 1.5rem; }
-  .stack-2xl > * + * { margin-top: 2rem; }
-
-  .ornate-rule {
-    height: 1px;
-    background: linear-gradient(
-      to right,
-      transparent 0%,
-      hsl(var(--border)) 10%,
-      hsl(var(--primary) / 0.45) 35%,
-      hsl(var(--accent-violet) / 0.4) 50%,
-      hsl(var(--primary) / 0.45) 65%,
-      hsl(var(--border)) 90%,
-      transparent 100%
-    );
-  }
-  .ornate-rule[data-subject="physics"]       { background: linear-gradient(to right, transparent 0%, hsl(var(--border)) 10%, hsl(var(--subject-physics)/0.55) 50%, hsl(var(--border)) 90%, transparent 100%); }
-  .ornate-rule[data-subject="chemistry"]     { background: linear-gradient(to right, transparent 0%, hsl(var(--border)) 10%, hsl(var(--subject-chemistry)/0.55) 50%, hsl(var(--border)) 90%, transparent 100%); }
-  .ornate-rule[data-subject="biology"]       { background: linear-gradient(to right, transparent 0%, hsl(var(--border)) 10%, hsl(var(--subject-biology)/0.55) 50%, hsl(var(--border)) 90%, transparent 100%); }
-  .ornate-rule[data-subject="mathematics"]   { background: linear-gradient(to right, transparent 0%, hsl(var(--border)) 10%, hsl(var(--subject-mathematics)/0.55) 50%, hsl(var(--border)) 90%, transparent 100%); }
-  .ornate-rule[data-subject="english"]       { background: linear-gradient(to right, transparent 0%, hsl(var(--border)) 10%, hsl(var(--subject-english)/0.55) 50%, hsl(var(--border)) 90%, transparent 100%); }
-  .ornate-rule[data-subject="nepali"]        { background: linear-gradient(to right, transparent 0%, hsl(var(--border)) 10%, hsl(var(--subject-nepali)/0.55) 50%, hsl(var(--border)) 90%, transparent 100%); }
-
-  /* ─── Card Visualization Frame (ISO / Blueprint-style) ──────────────── */
-  .card-viz {
-    position: relative;
-    border-radius: 1.5rem;
-    border: 1px solid hsl(var(--border));
-    background: hsl(var(--card));
-    overflow: hidden;
-    isolation: isolate;
-    box-shadow: var(--card-viz);
-  }
-  .card-viz::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    z-index: 0;
-    background-image:
-      linear-gradient(to right, hsl(var(--border)/0.25) 1px, transparent 1px),
-      linear-gradient(to bottom, hsl(var(--border)/0.25) 1px, transparent 1px);
-    background-size: 24px 24px;
-    background-position: 0 0;
-    mask-image: radial-gradient(ellipse at 50% 0%, rgba(0,0,0,0.35) 0%, rgba(0,0,0,0) 55%);
-    opacity: 0.55;
-  }
-  @media (prefers-reduced-motion: no-preference) {
-    .card-viz::before {
-      animation: grid-pan 60s linear infinite;
-    }
-  }
-  .card-viz::after {
-    content: "";
-    position: absolute;
-    left: 0; right: 0; bottom: 0; height: 64px;
-    pointer-events: none;
-    z-index: 0;
-    background: linear-gradient(to top, hsl(var(--card)) 20%, hsl(var(--card) / 0));
-  }
-
-  /* ISO-style top title block: 64 px, with corner-cut chevrons */
   .card-viz-iso-title {
     position: relative;
     display: grid;
@@ -621,20 +507,6 @@ code, kbd, samp, pre {
     border-top: 1px solid hsl(var(--border));
     background: hsl(var(--primary, 217 91% 56%) / 0.05);
   }
-  .card-viz[data-subject="physics"]     .card-viz-iso-title { background: linear-gradient(135deg, hsl(var(--subject-physics)/0.10) 0%, hsl(var(--card)) 38%, hsl(var(--card)) 100%); }
-  .card-viz[data-subject="chemistry"]   .card-viz-iso-title { background: linear-gradient(135deg, hsl(var(--subject-chemistry)/0.10) 0%, hsl(var(--card)) 38%, hsl(var(--card)) 100%); }
-  .card-viz[data-subject="biology"]     .card-viz-iso-title { background: linear-gradient(135deg, hsl(var(--subject-biology)/0.10) 0%, hsl(var(--card)) 38%, hsl(var(--card)) 100%); }
-  .card-viz[data-subject="mathematics"] .card-viz-iso-title { background: linear-gradient(135deg, hsl(var(--subject-mathematics)/0.10) 0%, hsl(var(--card)) 38%, hsl(var(--card)) 100%); }
-  .card-viz[data-subject="english"]     .card-viz-iso-title { background: linear-gradient(135deg, hsl(var(--subject-english)/0.10) 0%, hsl(var(--card)) 38%, hsl(var(--card)) 100%); }
-  .card-viz[data-subject="nepali"]      .card-viz-iso-title { background: linear-gradient(135deg, hsl(var(--subject-nepali)/0.10) 0%, hsl(var(--card)) 38%, hsl(var(--card)) 100%); }
-
-  .card-viz-body {
-    position: relative;
-    z-index: 2;
-    padding: 1rem;
-  }
-  @media (min-width: 768px)  { .card-viz-body { padding: 1.25rem; } }
-  @media (min-width: 1024px) { .card-viz-body { padding: 1.5rem; } }
 
   .chip {
     display: inline-flex;
@@ -669,20 +541,6 @@ code, kbd, samp, pre {
     color: hsl(var(--muted-foreground) / 0.8);
     text-transform: uppercase;
     line-height: 1;
-  }
-
-  /* Subtle grain overlay */
-  .grain-overlay {
-    position: relative;
-  }
-  .grain-overlay::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    pointer-events: none;
-    opacity: 0.05;
-    mix-blend-mode: overlay;
-    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='0.55'/></svg>");
   }
 }
 

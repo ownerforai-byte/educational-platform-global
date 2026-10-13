@@ -3,7 +3,7 @@
 import { useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Crown, Users, Crown as CrownIcon, Database, Settings, Activity, Home, Stethoscope, Coins, MessageSquareText, Timer } from "lucide-react";
+import { Crown, Users, Crown as CrownIcon, Database, Settings, Activity, Home, Stethoscope, Coins, MessageSquareText, Timer, Sparkles } from "lucide-react";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { isOwnerUser } from "@/lib/owner";
 import { cn } from "@/lib/utils";
@@ -12,7 +12,10 @@ const navItems = [
   { href: "/owner", label: "Overview", icon: Activity, exact: true },
   { href: "/owner/users", label: "Users", icon: Users },
   { href: "/owner/credits", label: "Sparks", icon: Coins },
-  { href: "/owner/time-tracker", label: "Time Tracker", icon: Timer },
+  // Dead-link fix: /owner/time-tracker never existed; time tracking lives in
+  // the R1 activity log now.
+  { href: "/r1/activities", label: "Time Tracker", icon: Timer },
+  { href: "/owner/r1-access", label: "R1 Access", icon: Sparkles },
   { href: "/owner/tracking", label: "Tracking", icon: MessageSquareText },
   { href: "/owner/premium", label: "Premium", icon: CrownIcon },
   { href: "/owner/content", label: "Content", icon: Database },

@@ -1,9 +1,18 @@
 "use client";
 
-import { useState } from "react";
-import { MathDisplay } from "../content/MathRenderer";
+import { useMemo, useState } from "react";
+import { Search } from "lucide-react";
+import { MathDisplay } from "@/components/content/MathRenderer";
+import { Input } from "@/components/ui/input";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
-interface Formula {
+export interface Formula {
   id: string;
   name: string;
   formula: string;
@@ -34,96 +43,69 @@ const FORMULAS: Formula[] = [
   { id: "20", name: "Eigenvalue", formula: "A\\mathbf{v} = \\lambda\\mathbf{v}", description: "Eigenvalue equation", category: "Linear Algebra" },
 ];
 
-export function FormulaCheatSheet({ theme = "dark" }: { theme?: "dark" | "light" }) {
+export function FormulaCheatSheet() {
   const [searchTerm, setSearchTerm] = useState("");
   const [selectedCategory, setSelectedCategory] = useState("All");
-  const isDark = theme === "dark";
-  const categories = ["All", ...new Set(FORMULAS.map((f) => f.category))];
+  const categories = useMemo(
+    () => ["All", ...Array.from(new Set(FORMULAS.map((f) => f.category)))],
+    []
+  );
 
   const filteredFormulas = FORMULAS.filter((f) => {
-    const matchesSearch = f.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      f.formula.toLowerCase().includes(searchTerm.toLowerCase());
+    const query = searchTerm.toLowerCase();
+    const matchesSearch =
+      f.name.toLowerCase().includes(query) || f.formula.toLowerCase().includes(query);
     const matchesCategory = selectedCategory === "All" || f.category === selectedCategory;
     return matchesSearch && matchesCategory;
   });
 
   return (
-    <div style={{
-      background: isDark ? "#1e293b" : "#f8fafc",
-      border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)"}`,
-      borderRadius: "12px",
-      padding: "20px",
-      color: isDark ? "#f8fafc" : "#1e293b",
-    }}>
-      <h2 style={{ margin: "0 0 16px", fontSize: "18px", fontWeight: 600 }}>📐 Formula Cheat Sheet</h2>
-      
-      <div style={{ display: "flex", gap: "12px", marginBottom: "16px", flexWrap: "wrap" }}>
-        <input
-          type="text"
-          placeholder="Search formulas..."
-          value={searchTerm}
-          onChange={(e) => setSearchTerm(e.target.value)}
-          style={{
-            flex: 1,
-            minWidth: "200px",
-            padding: "10px 14px",
-            borderRadius: "8px",
-            border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)"}`,
-            background: isDark ? "rgba(15, 23, 42, 0.5)" : "white",
-            color: isDark ? "#f8fafc" : "#1e293b",
-            fontSize: "14px",
-          }}
-        />
-        <select
-          value={selectedCategory}
-          onChange={(e) => setSelectedCategory(e.target.value)}
-          style={{
-            padding: "10px 14px",
-            borderRadius: "8px",
-            border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)"}`,
-            background: isDark ? "rgba(15, 23, 42, 0.5)" : "white",
-            color: isDark ? "#f8fafc" : "#1e293b",
-            fontSize: "14px",
-            cursor: "pointer",
-          }}
-        >
-          {categories.map((cat) => (
-            <option key={cat} value={cat}>{cat}</option>
-          ))}
-        </select>
+    <div className="space-y-4">
+      <div className="flex flex-wrap gap-2">
+        <div className="relative min-w-[200px] flex-1">
+          <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+          <Input
+            type="text"
+            placeholder="Search formulas…"
+            value={searchTerm}
+            onChange={(e) => setSearchTerm(e.target.value)}
+            className="pl-9"
+          />
+        </div>
+        <Select value={selectedCategory} onValueChange={setSelectedCategory}>
+          <SelectTrigger className="w-[180px]" aria-label="Filter by category">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            {categories.map((cat) => (
+              <SelectItem key={cat} value={cat}>
+                {cat}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
 
-      <div style={{ display: "grid", gap: "16px" }}>
+      <div className="grid gap-3">
         {filteredFormulas.map((formula) => (
           <div
             key={formula.id}
-            style={{
-              padding: "16px 20px",
-              borderRadius: "8px",
-              background: isDark ? "rgba(15, 23, 42, 0.5)" : "rgba(248, 250, 252, 0.8)",
-              border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.2)" : "rgba(99, 102, 241, 0.1)"}`,
-            }}
+            className="rounded-lg border border-border bg-muted/40 p-4"
           >
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "12px" }}>
-              <span style={{ fontWeight: 600, fontSize: "14px" }}>{formula.name}</span>
-              <span style={{
-                fontSize: "11px",
-                padding: "2px 8px",
-                borderRadius: "12px",
-                background: "rgba(99, 102, 241, 0.2)",
-                color: "#818cf8",
-              }}>
+            <div className="mb-2 flex items-center justify-between gap-2">
+              <span className="text-sm font-semibold">{formula.name}</span>
+              <span className="shrink-0 rounded-full bg-primary/10 px-2 py-0.5 text-[11px] font-medium text-primary">
                 {formula.category}
               </span>
             </div>
             <MathDisplay expression={formula.formula} />
-            <div style={{ fontSize: "12px", opacity: 0.7, marginTop: "8px" }}>{formula.description}</div>
+            <div className="mt-2 text-xs text-muted-foreground">{formula.description}</div>
           </div>
         ))}
       </div>
 
       {filteredFormulas.length === 0 && (
-        <div style={{ textAlign: "center", padding: "40px", opacity: 0.6 }}>
+        <div className="py-10 text-center text-sm text-muted-foreground">
           No formulas found
         </div>
       )}

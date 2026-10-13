@@ -11,6 +11,7 @@ import { SYLLABUS } from "@/lib/syllabus";
 import { getSubjectPyqBank, type PyqYear } from "@/lib/pyq-bank";
 import { MISCONCEPTION_QUESTIONS, type MisconceptionQuestion } from "@/lib/misconception-questions";
 import type { MisconceptionQuestion as MCQ } from "@/lib/misconception-questions";
+import { MockExamsSection } from "@/components/content/mock-exams-section";
 
 // ── Types ───────────────────────────────────────────────────────────────────
 
@@ -591,7 +592,14 @@ export default function QuizPage() {
 
   return (
     <div>
-      {phase === "select" && <SelectScreen onStart={startQuiz} />}
+      {phase === "select" && (
+        <>
+          <SelectScreen onStart={startQuiz} />
+          <div className="mx-auto max-w-2xl px-4 pb-12">
+            <MockExamsSection />
+          </div>
+        </>
+      )}
       {phase === "quiz" && session && (
         <QuizScreen
           session={session}

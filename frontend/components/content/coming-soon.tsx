@@ -13,6 +13,8 @@ export function ComingSoon({
   subjectSlug,
   classSlug,
   kind = "Theorem",
+  status = "Under Progress",
+  message,
   backHref,
   backLabel,
 }: {
@@ -20,7 +22,9 @@ export function ComingSoon({
   unitTitle?: string;
   subjectSlug?: string;
   classSlug?: string;
-  kind?: "Theorem" | "Proof" | "Derivation";
+  kind?: "Theorem" | "Proof" | "Derivation" | "Notes";
+  status?: string;
+  message?: string;
   backHref?: string;
   backLabel?: string;
 }) {
@@ -53,12 +57,11 @@ export function ComingSoon({
         )}
         <span className="inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 px-3 py-1 text-xs font-bold uppercase tracking-wider text-amber-600 dark:text-amber-400 border border-amber-500/20">
           <Construction className="h-3 w-3" />
-          {kind} — Under Progress
+          {kind} — {status}
         </span>
         <p className="text-sm text-muted-foreground max-w-md mx-auto">
-          Under progress — will be added in a future update. This page is
-          reserved on the official syllabus track; step-by-step content is
-          being authored.
+          {message ??
+            "Under progress — will be added in a future update. This page is reserved on the official syllabus track; step-by-step content is being authored."}
         </p>
         {backHref && (
           <Link

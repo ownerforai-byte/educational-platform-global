@@ -12,6 +12,7 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
+import { linkResource } from "@/lib/api";
 
 const REFERENCE_TYPES = ["INCLUDE", "LINK", "EMBED", "CITE"] as const;
 
@@ -34,28 +35,18 @@ export function ResourceLinkForm({
     setError(null);
 
     try {
-      const res = await fetch(`/api/resources/${resourceId}/link`, {
-        method: "POST",
-        credentials: "include",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          resource_id: resourceId,
-          referenced_id: referencedId,
-          reference_type: referenceType,
-          attribution: attribution || null,
-        }),
+      await linkResource({
+        resource_id: resourceId,
+        referenced_id: referencedId,
+        reference_type: referenceType,
+        attribution: attribution || null,
       });
-
-      if (!res.ok) {
-        const data = await res.json();
-        throw new Error(data.error ?? "Failed to link resource");
-      }
 
       onSuccess?.();
       setReferencedId("");
       setAttribution("");
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Unknown error");
+      setError(err instanceof Error ? err.message : "Failed to link resource");
     } finally {
       setLoading(false);
     }

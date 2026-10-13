@@ -30,6 +30,8 @@ import { PremiumEquationSolver } from "@/components/lab/premium-equation-solver"
 import { PremiumAdvancedCircuitSimulator } from "@/components/lab/premium-advanced-circuit";
 import { AILabTutor } from "@/components/lab/ai-lab-tutor";
 import { MolecularBuilder3D } from "@/components/lab/molecular-builder-3d";
+import { MindMap } from "@/components/lab/MindMap";
+import { LabSectionCard } from "@/components/lab/lab-section-card";
 import { getSubjectSyllabus } from "@/lib/syllabus";
 import { useSearchParams } from "next/navigation";
 
@@ -535,6 +537,14 @@ function LabContent({
       </div>
 
       <LabDashboard _classSlug={classSlug} subjectSlug={subjectSlug} initialLabId={initialLabId} topicSlug={topicSlug} topicTitle={topicTitle} />
+
+      <LabSectionCard
+        title="Lab mind map"
+        description="How the core Math, Physics and Chemistry lab topics connect to each other."
+      >
+        <MindMap />
+      </LabSectionCard>
+
       <SyllabusViewer classSlug={classSlug} subjectSlug={subjectSlug} />
     </div>
   );

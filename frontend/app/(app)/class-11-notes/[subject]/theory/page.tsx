@@ -1,5 +1,5 @@
 import { TheorySectionView } from "@/features/syllabus/components/theory-section-view";
-import { listSubjects } from "@/features/syllabus/queries";
+import { listSubjects } from "@/lib/queries";
 
 const CLASS_SLUG = "class-11-notes";
 

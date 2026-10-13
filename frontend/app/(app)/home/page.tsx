@@ -1,8 +1,15 @@
 import { getTheoremIndex } from "@/lib/theorems";
 import { getDerivationIndex } from "@/lib/derivations";
+import { getSyllabusByClass } from "@/lib/syllabus";
 import { HomeCommandCenter } from "@/components/home/home-command-center";
 import { HomeJourneyStrip } from "@/components/home/home-journey-strip";
 import { HomeIntroduction } from "@/components/home/home-introduction";
+import { HomePortals } from "@/components/home/home-portals";
+import { CurriculumTracksHub } from "@/components/home/curriculum-tracks-hub";
+import { VirtualLabsCatalog } from "@/components/home/virtual-labs-catalog";
+import { AssessmentExamHub } from "@/components/home/assessment-exam-hub";
+import { KnowledgeLoksewaHub } from "@/components/home/knowledge-loksewa-hub";
+import { AcademicRigorHub } from "@/components/home/academic-rigor-hub";
 import { HomeSubjectRails } from "@/components/home/home-subject-rails";
 import { OwnerOnly } from "@/features/auth/owner-only";
 import { HomeOwnerNotice } from "@/components/home/home-owner-notice";
@@ -32,6 +39,18 @@ async function getDerivationsSummary() {
   }
 }
 
+/** classSlug → subjectSlug → entry count (serializable stand-in for a Map). */
+function buildByClass(
+  entries: { classSlug: string; subjectSlug: string }[]
+): Record<string, Record<string, number>> {
+  const out: Record<string, Record<string, number>> = {};
+  for (const e of entries) {
+    out[e.classSlug] ??= {};
+    out[e.classSlug][e.subjectSlug] = (out[e.classSlug][e.subjectSlug] ?? 0) + 1;
+  }
+  return out;
+}
+
 export default async function HomePage() {
   const [{ entries: theoremEntries }, { entries: derivationEntries }] =
     await Promise.all([getTheoremsSummary(), getDerivationsSummary()]);
@@ -54,6 +73,24 @@ export default async function HomePage() {
 
       {/* Welcome introduction: the platform story + 4-step learning journey */}
       <HomeIntroduction />
+
+      {/* Explore Fun — the deep-dive hubs of the learning platform: the full
+          portal grid, curriculum tracks, the 3D labs catalog, assessment &
+          exam prep, knowledge & loksewa, and the academic rigor board. */}
+      <HomePortals />
+      <CurriculumTracksHub
+        class11={getSyllabusByClass("class-11-notes")!}
+        class12={getSyllabusByClass("class-12-notes")!}
+      />
+      <VirtualLabsCatalog />
+      <AssessmentExamHub />
+      <KnowledgeLoksewaHub />
+      <AcademicRigorHub
+        theoremEntriesCount={theoremEntries.length}
+        theoremByClass={buildByClass(theoremEntries)}
+        derivationEntriesCount={derivationEntries.length}
+        derivationByClass={buildByClass(derivationEntries)}
+      />
 
       {/* Six subject rails — owner emails only (owner request 2026-10-05:
           "make this features for owner emails only"). The continuous Class 11

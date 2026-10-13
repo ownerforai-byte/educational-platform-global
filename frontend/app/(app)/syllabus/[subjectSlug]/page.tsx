@@ -7,6 +7,7 @@ import Link from "next/link";
 import { ArrowRight, BookOpen, Clock, ListOrdered } from "lucide-react";
 import { SYLLABUS, type ClassSyllabus, type SubjectSyllabus } from "@/lib/syllabus";
 import { getSyllabusHistory } from "@/lib/syllabus-history";
+import { SyllabusSection } from "@/components/content/syllabus-section";
 import { History } from "lucide-react";
 import {
   BIOLOGY_DATA_MAP,
@@ -355,6 +356,9 @@ export default function SubjectSyllabusPage({ params }: { params: Promise<{ subj
           </div>
         </div>
       )}
+
+      {/* ── Syllabus sections with unit-notes quick links ── */}
+      <SyllabusSection classSlug={activeClass} subjectSlug={subjectSlug} />
     </div>
   );
 }

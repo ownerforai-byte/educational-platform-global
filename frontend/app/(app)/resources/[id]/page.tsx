@@ -1,5 +1,6 @@
 import { notFound } from "next/navigation";
-import { getResourceById } from "@/lib/curriculum";
+import { getResource } from "@/lib/api";
+import type { Resource } from "@/types/api";
 import { EmptyState } from "@/components/content/empty-state";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { NotesViewer } from "@/components/content/notes-viewer";
@@ -14,7 +15,12 @@ export default async function ResourcePage({
   params: Promise<{ id: string }>;
 }) {
   const { id } = await params;
-  const resource = await getResourceById(id);
+  let resource: Resource | null = null;
+  try {
+    resource = await getResource(id);
+  } catch {
+    resource = null;
+  }
   if (!resource) notFound();
 
   const content =

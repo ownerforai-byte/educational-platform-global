@@ -1,8 +1,15 @@
 "use client";
 
 import { useState } from "react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
-interface MindMapNode {
+export interface MindMapNode {
   id: string;
   label: string;
   subject: string;
@@ -34,52 +41,37 @@ const SUBJECT_COLORS: Record<string, string> = {
   Chemistry: "#f59e0b",
 };
 
-export function MindMap({ theme = "dark" }: { theme?: "dark" | "light" }) {
+const SUBJECT_FILTERS = ["All", "Math", "Physics", "Chemistry"];
+
+export function MindMap() {
   const [selectedNode, setSelectedNode] = useState<string | null>(null);
   const [filterSubject, setFilterSubject] = useState("All");
-  const isDark = theme === "dark";
-  const subjects = ["All", "Math", "Physics", "Chemistry"];
 
-  const filteredNodes = filterSubject === "All" ? MIND_MAP_NODES : MIND_MAP_NODES.filter((n) => n.subject === filterSubject);
+  const filteredNodes =
+    filterSubject === "All"
+      ? MIND_MAP_NODES
+      : MIND_MAP_NODES.filter((n) => n.subject === filterSubject);
   const selectedNodeData = MIND_MAP_NODES.find((n) => n.id === selectedNode);
 
   return (
-    <div style={{
-      background: isDark ? "#1e293b" : "#f8fafc",
-      border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)"}`,
-      borderRadius: "12px",
-      padding: "20px",
-      color: isDark ? "#f8fafc" : "#1e293b",
-    }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "16px" }}>
-        <h2 style={{ margin: 0, fontSize: "18px", fontWeight: 600 }}>🧠 Cross-Subject Mind Map</h2>
-        <select
-          value={filterSubject}
-          onChange={(e) => setFilterSubject(e.target.value)}
-          style={{
-            padding: "6px 12px",
-            borderRadius: "6px",
-            border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)"}`,
-            background: isDark ? "rgba(15, 23, 42, 0.5)" : "white",
-            color: isDark ? "#f8fafc" : "#1e293b",
-            fontSize: "12px",
-            cursor: "pointer",
-          }}
-        >
-          {subjects.map((subject) => (
-            <option key={subject} value={subject}>{subject}</option>
-          ))}
-        </select>
+    <div className="space-y-4">
+      <div className="flex items-center justify-end">
+        <Select value={filterSubject} onValueChange={setFilterSubject}>
+          <SelectTrigger className="w-[180px]" aria-label="Filter by subject">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            {SUBJECT_FILTERS.map((subject) => (
+              <SelectItem key={subject} value={subject}>
+                {subject}
+              </SelectItem>
+            ))}
+          </SelectContent>
+        </Select>
       </div>
 
-      <div style={{
-        position: "relative",
-        height: "400px",
-        background: isDark ? "rgba(15, 23, 42, 0.5)" : "rgba(248, 250, 252, 0.8)",
-        borderRadius: "8px",
-        overflow: "hidden",
-      }}>
-        <svg width="100%" height="100%" style={{ position: "absolute", top: 0, left: 0 }}>
+      <div className="relative h-[400px] overflow-hidden rounded-lg border border-border bg-muted/30">
+        <svg width="100%" height="100%" className="absolute top-0 left-0">
           {filteredNodes.map((node) =>
             node.connections.map((connId) => {
               const connNode = MIND_MAP_NODES.find((n) => n.id === connId);
@@ -91,7 +83,8 @@ export function MindMap({ theme = "dark" }: { theme?: "dark" | "light" }) {
                   y1={`${node.y}%`}
                   x2={`${connNode.x}%`}
                   y2={`${connNode.y}%`}
-                  stroke={isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)"}
+                  stroke="currentColor"
+                  className="text-primary/30"
                   strokeWidth="2"
                 />
               );
@@ -99,45 +92,45 @@ export function MindMap({ theme = "dark" }: { theme?: "dark" | "light" }) {
           )}
         </svg>
 
-        {filteredNodes.map((node) => (
-          <div
-            key={node.id}
-            onClick={() => setSelectedNode(node.id)}
-            style={{
-              position: "absolute",
-              left: `${node.x}%`,
-              top: `${node.y}%`,
-              transform: "translate(-50%, -50%)",
-              padding: "8px 16px",
-              borderRadius: "20px",
-              background: selectedNode === node.id ? SUBJECT_COLORS[node.subject] : isDark ? "rgba(30, 41, 59, 0.9)" : "rgba(248, 250, 252, 0.9)",
-              border: `2px solid ${SUBJECT_COLORS[node.subject]}`,
-              color: selectedNode === node.id ? "white" : isDark ? "#f8fafc" : "#1e293b",
-              fontSize: "12px",
-              fontWeight: 600,
-              cursor: "pointer",
-              transition: "all 0.2s",
-              boxShadow: selectedNode === node.id ? `0 0 20px ${SUBJECT_COLORS[node.subject]}` : "none",
-            }}
-          >
-            {node.label}
-          </div>
-        ))}
+        {filteredNodes.map((node) => {
+          const color = SUBJECT_COLORS[node.subject] ?? "#64748b";
+          const isSelected = selectedNode === node.id;
+          return (
+            <button
+              key={node.id}
+              type="button"
+              onClick={() => setSelectedNode(node.id)}
+              className={`absolute rounded-full border-2 px-4 py-2 text-xs font-semibold transition-all ${
+                isSelected ? "text-white" : "bg-card text-foreground"
+              }`}
+              style={{
+                left: `${node.x}%`,
+                top: `${node.y}%`,
+                transform: "translate(-50%, -50%)",
+                borderColor: color,
+                backgroundColor: isSelected ? color : undefined,
+                boxShadow: isSelected ? `0 0 20px ${color}` : undefined,
+              }}
+            >
+              {node.label}
+            </button>
+          );
+        })}
       </div>
 
       {selectedNodeData && (
-        <div style={{
-          marginTop: "16px",
-          padding: "12px 16px",
-          borderRadius: "8px",
-          background: isDark ? "rgba(99, 102, 241, 0.2)" : "rgba(99, 102, 241, 0.1)",
-          fontSize: "13px",
-        }}>
-          <strong style={{ color: SUBJECT_COLORS[selectedNodeData.subject] }}>{selectedNodeData.label}</strong>
-          <span style={{ marginLeft: "8px", opacity: 0.7 }}>— {selectedNodeData.subject}</span>
+        <div className="rounded-lg bg-primary/10 p-3 text-sm">
+          <strong style={{ color: SUBJECT_COLORS[selectedNodeData.subject] }}>
+            {selectedNodeData.label}
+          </strong>
+          <span className="ml-2 text-muted-foreground">— {selectedNodeData.subject}</span>
           {selectedNodeData.connections.length > 0 && (
-            <div style={{ marginTop: "8px", opacity: 0.8 }}>
-              Connected to: {selectedNodeData.connections.map((id) => MIND_MAP_NODES.find((n) => n.id === id)?.label).filter(Boolean).join(", ")}
+            <div className="mt-2 text-muted-foreground">
+              Connected to:{" "}
+              {selectedNodeData.connections
+                .map((id) => MIND_MAP_NODES.find((n) => n.id === id)?.label)
+                .filter(Boolean)
+                .join(", ")}
             </div>
           )}
         </div>

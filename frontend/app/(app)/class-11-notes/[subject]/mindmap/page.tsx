@@ -4,7 +4,7 @@ import { buildMindmapItems } from "@/features/mindmap/queries";
 import type { MindmapItem } from "@/features/mindmap/queries";
 import { OfficialSyllabusPanel } from "@/features/syllabus/components/official-syllabus-panel";
 import { SubjectSectionNav } from "@/features/syllabus/components/subject-section-nav";
-import { getSubjectNav } from "@/features/syllabus/queries";
+import { getSubjectNav } from "@/lib/queries";
 
 export const dynamic = "force-dynamic";
 

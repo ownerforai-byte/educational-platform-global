@@ -17,9 +17,9 @@ import {
 
 interface AcademicRigorHubProps {
   theoremEntriesCount: number;
-  theoremByClass: Map<string, Map<string, number>>;
+  theoremByClass: Record<string, Record<string, number>>;
   derivationEntriesCount: number;
-  derivationByClass: Map<string, Map<string, number>>;
+  derivationByClass: Record<string, Record<string, number>>;
 }
 
 export function AcademicRigorHub({
@@ -92,9 +92,9 @@ export function AcademicRigorHub({
 
             {/* Class Breakdown */}
             <div className="mt-4 space-y-2.5">
-              {[...theoremByClass.entries()].map(([classSlug, subjectMap]) => {
+              {[...Object.entries(theoremByClass)].map(([classSlug, subjectMap]) => {
                 const classLabel = classSlug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
-                const total = [...subjectMap.values()].reduce((a, b) => a + b, 0);
+                const total = Object.values(subjectMap).reduce((a, b) => a + b, 0);
 
                 return (
                   <div key={classSlug} className="rounded-2xl border border-border/50 bg-muted/30 p-3">
@@ -103,7 +103,7 @@ export function AcademicRigorHub({
                       <span className="text-[11px] text-muted-foreground">{total} proofs</span>
                     </div>
                     <div className="mt-2 flex flex-wrap gap-1.5">
-                      {[...subjectMap.entries()].map(([subj, count]) => (
+                      {[...Object.entries(subjectMap)].map(([subj, count]) => (
                         <Link
                           key={subj}
                           href={`/theorems/${classSlug}/${subj}`}
@@ -152,9 +152,9 @@ export function AcademicRigorHub({
 
             {/* Derivations breakdown */}
             <div className="mt-4 space-y-2.5">
-              {[...derivationByClass.entries()].map(([classSlug, subjectMap]) => {
+              {[...Object.entries(derivationByClass)].map(([classSlug, subjectMap]) => {
                 const classLabel = classSlug.split("-").map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(" ");
-                const total = [...subjectMap.values()].reduce((a, b) => a + b, 0);
+                const total = Object.values(subjectMap).reduce((a, b) => a + b, 0);
 
                 return (
                   <div key={classSlug} className="rounded-2xl border border-border/50 bg-muted/30 p-3">
@@ -163,7 +163,7 @@ export function AcademicRigorHub({
                       <span className="text-[11px] text-muted-foreground">{total} derivations</span>
                     </div>
                     <div className="mt-2 flex flex-wrap gap-1.5">
-                      {[...subjectMap.entries()].map(([subj, count]) => (
+                      {[...Object.entries(subjectMap)].map(([subj, count]) => (
                         <Link
                           key={subj}
                           href={`/derivations/${classSlug}/${subj}`}

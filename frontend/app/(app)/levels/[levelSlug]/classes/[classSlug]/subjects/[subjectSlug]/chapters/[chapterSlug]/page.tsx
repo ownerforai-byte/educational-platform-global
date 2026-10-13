@@ -4,7 +4,7 @@ import { SYLLABUS, getSubjectSyllabus, type SubjectSyllabus } from "@/lib/syllab
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { BackButton } from "@/components/navigation/back-button";
 import { ChapterDetailView } from "@/features/syllabus/components/chapter-detail-view";
-import { resolveUnitIdFromChapterSlug } from "@/features/syllabus/queries";
+import { resolveUnitIdFromChapterSlug } from "@/lib/queries";
 import Link from "next/link";
 
 export default async function ChapterPage({

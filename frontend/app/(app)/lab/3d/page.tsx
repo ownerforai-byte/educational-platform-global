@@ -14,16 +14,33 @@
 
 import { useMemo, useState } from "react";
 import Link from "next/link";
-import { Search, Cuboid, BookOpen } from "lucide-react";
+import { Search, Cuboid, BookOpen, BookMarked, Layers } from "lucide-react";
 import { LAB_REGISTRY, getLabsByCategory } from "@/lib/lab-registry";
 import { LAB_UNIT_ORDER, LAB_SUBJECTS } from "@/lib/lab-unit-order";
 import { getSubjectSyllabus } from "@/lib/syllabus";
 import type { LabMeta } from "@/lib/types/lab";
+import { Analytics } from "@/components/lab/Analytics";
+import { LabSectionCard } from "@/components/lab/lab-section-card";
 
 const CLASS_OPTIONS = ["class-11-notes", "class-12-notes"] as const;
 type ClassSlug = (typeof CLASS_OPTIONS)[number];
 
 type LabCardData = LabMeta & { href: string };
+
+/** 3D gallery entries rendered by components/lab/topics + components/lab/chapters. */
+const GALLERY_TOPICS = [
+  { topicId: "kinematics", title: "Kinematics", subject: "Physics" },
+  { topicId: "thermodynamics", title: "Thermodynamics", subject: "Physics" },
+  { topicId: "chemical-bonding", title: "Chemical Bonding", subject: "Chemistry" },
+  { topicId: "cell-biology", title: "Cell Biology", subject: "Biology" },
+];
+
+const GALLERY_CHAPTERS = [
+  { chapterId: "laws-of-motion", title: "Laws of Motion", subject: "Physics" },
+  { chapterId: "electrostatics", title: "Electrostatics", subject: "Physics" },
+  { chapterId: "organic-chemistry", title: "Organic Chemistry", subject: "Chemistry" },
+  { chapterId: "calculus", title: "Calculus", subject: "Mathematics" },
+];
 
 /** Syllabus unit ids that belong to Class 11 vs Class 12, for filtering. */
 function classOfUnit(subject: string, unitId: string): ClassSlug | "both" {
@@ -191,6 +208,52 @@ export default function Lab3DPage() {
         <span className="text-xs text-muted-foreground">{totalCount} labs</span>
       </div>
 
+      {/* 3D gallery — topic + chapter scenes */}
+      <section id="gallery">
+        <div className="flex items-baseline gap-3 mb-3">
+          <h2 className="text-lg font-semibold">3D Gallery</h2>
+          <span className="text-xs text-muted-foreground">
+            Standalone topic and chapter scenes
+          </span>
+        </div>
+        <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
+          {GALLERY_TOPICS.map((entry) => (
+            <Link
+              key={entry.topicId}
+              href={`/lab/3d/topic/${entry.topicId}`}
+              className="elev-2 rounded-2xl border border-border bg-card p-4 hover:border-blue-500/50 transition-all duration-200"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-blue-500/10 text-blue-500 flex items-center justify-center shrink-0">
+                  <Layers className="h-4.5 w-4.5" />
+                </div>
+                <div className="min-w-0">
+                  <h3 className="font-semibold text-sm truncate">{entry.title}</h3>
+                  <p className="text-xs text-muted-foreground">{entry.subject} · Topic</p>
+                </div>
+              </div>
+            </Link>
+          ))}
+          {GALLERY_CHAPTERS.map((entry) => (
+            <Link
+              key={entry.chapterId}
+              href={`/lab/3d/chapter/${entry.chapterId}`}
+              className="elev-2 rounded-2xl border border-border bg-card p-4 hover:border-orange-500/50 transition-all duration-200"
+            >
+              <div className="flex items-center gap-3">
+                <div className="w-10 h-10 rounded-xl bg-orange-500/10 text-orange-500 flex items-center justify-center shrink-0">
+                  <BookMarked className="h-4.5 w-4.5" />
+                </div>
+                <div className="min-w-0">
+                  <h3 className="font-semibold text-sm truncate">{entry.title}</h3>
+                  <p className="text-xs text-muted-foreground">{entry.subject} · Chapter</p>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* Ordered sections */}
       {visibleSections.length === 0 && grouped.general.length === 0 ? (
         <div className="py-16 text-center text-muted-foreground">
@@ -242,6 +305,14 @@ export default function Lab3DPage() {
           )}
         </div>
       )}
+
+      {/* Performance stats across the 3D simulations */}
+      <LabSectionCard
+        title="Performance analytics"
+        description="Accuracy, attempts and average time across your lab practice."
+      >
+        <Analytics />
+      </LabSectionCard>
     </div>
   );
 }

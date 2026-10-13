@@ -1,63 +1,74 @@
 "use client";
 
 import { useEffect, useRef, useState, useCallback } from "react";
-import { Canvas, useFrame } from "@react-three/fiber";
+import { Canvas, useFrame, type ThreeEvent } from "@react-three/fiber";
 import { ARButton, XR, useXR } from "@react-three/xr";
 import * as THREE from "three";
 import { ViewportRelativeArrow } from "./viewport-relative-arrow";
 
-interface ARObject {
+export type ARShape = "cube" | "sphere" | "cone" | "torus" | "icosahedron";
+
+export interface ARObject {
   id: string;
   position: [number, number, number];
-  type: "cube" | "sphere" | "cone" | "torus" | "icosahedron";
+  type: ARShape;
   color: string;
   scale: number;
 }
 
-interface ARViewerProps {
+export interface ARViewerProps {
   enabled?: boolean;
   onClose?: () => void;
-  initialModel?: string;
 }
 
-function ARScene({ objects, onObjectAdded }: { objects: ARObject[]; onObjectAdded?: (obj: ARObject) => void }) {
-  const [selectedObject, setSelectedObject] = useState<string | null>(null);
-  const [isPlacing, setIsPlacing] = useState(false);
-  const _isPresenting = useXR((s) => s.isPresenting);
+const SHAPE_OPTIONS: ARShape[] = ["cube", "sphere", "cone", "torus", "icosahedron"];
 
-  useFrame((state, _delta) => {
+function ARScene({
+  objects,
+  isPlacing,
+  shape,
+  onObjectAdded,
+}: {
+  objects: ARObject[];
+  isPlacing: boolean;
+  shape: ARShape;
+  onObjectAdded?: (obj: ARObject) => void;
+}) {
+  const [selectedObject, setSelectedObject] = useState<string | null>(null);
+  const isPresenting = useXR((s) => s.isPresenting);
+
+  useFrame((state) => {
     if (selectedObject) {
       const obj = objects.find((o) => o.id === selectedObject);
       if (obj) {
-        state.camera.position.lerp(new THREE.Vector3(obj.position[0], obj.position[1] + 0.5, obj.position[2]), 0.1);
+        state.camera.position.lerp(
+          new THREE.Vector3(obj.position[0], obj.position[1] + 0.5, obj.position[2]),
+          0.1
+        );
       }
     }
   });
 
-  const _handleTap = useCallback((event: any) => {
-    if (!isPlacing) return;
-    
-    const point = event.point;
-    if (point) {
-      const newObject: ARObject = {
+  const handlePlace = useCallback(
+    (event: ThreeEvent<MouseEvent>) => {
+      if (!isPresenting || !isPlacing) return;
+      const point = event.point;
+      onObjectAdded?.({
         id: Date.now().toString(),
-        position: [point.x, point.y, point.z] as [number, number, number],
-        type: "cube",
+        position: [point.x, point.y, point.z],
+        type: shape,
         color: "#6366f1",
         scale: 0.3,
-      };
-      onObjectAdded?.(newObject);
-      setIsPlacing(false);
-    }
-  }, [isPlacing, onObjectAdded]);
+      });
+    },
+    [isPresenting, isPlacing, shape, onObjectAdded]
+  );
 
   return (
     <>
       <ambientLight intensity={0.5} />
       <directionalLight position={[10, 10, 5]} intensity={1} />
-      
-      {/* Viewport-relative arrow that dynamically points toward center of view */}
-      {/* dynamic=true (default) makes this track camera/viewport changes */}
+
       <ViewportRelativeArrow
         screenTarget={[0.5, 0.5]}
         depth={3}
@@ -76,8 +87,8 @@ function ARScene({ objects, onObjectAdded }: { objects: ARObject[]; onObjectAdde
           {obj.type === "cube" && (
             <mesh
               onClick={() => setSelectedObject(obj.id)}
-              onPointerOver={() => document.body.style.cursor = "pointer"}
-              onPointerOut={() => document.body.style.cursor = "auto"}
+              onPointerOver={() => (document.body.style.cursor = "pointer")}
+              onPointerOut={() => (document.body.style.cursor = "auto")}
             >
               <boxGeometry args={[obj.scale, obj.scale, obj.scale]} />
               <meshStandardMaterial color={obj.color} metalness={0.3} roughness={0.2} />
@@ -111,7 +122,7 @@ function ARScene({ objects, onObjectAdded }: { objects: ARObject[]; onObjectAdde
       ))}
 
       {isPlacing && (
-        <mesh position={[0, -1, -3]}>
+        <mesh position={[0, -1, -3]} onClick={handlePlace}>
           <ringGeometry args={[0.1, 0.15, 32]} />
           <meshBasicMaterial color="#6366f1" transparent opacity={0.5} />
         </mesh>
@@ -128,32 +139,32 @@ function SessionTracker({ onActiveChange }: { onActiveChange: (active: boolean) 
   return null;
 }
 
-export function ARViewer({ enabled = false, onClose, initialModel: _initialModel }: ARViewerProps) {
+export function ARViewer({ enabled = false, onClose }: ARViewerProps) {
   const [arSupported, setArSupported] = useState(false);
   const [isARActive, setIsARActive] = useState(false);
   const [objects, setObjects] = useState<ARObject[]>([]);
   const [isPlacing, setIsPlacing] = useState(false);
-  const [selectedShape, setSelectedShape] = useState<ARObject["type"]>("cube");
+  const [selectedShape, setSelectedShape] = useState<ARShape>("cube");
   const [showUI, setShowUI] = useState(true);
+  const [showInstructions, setShowInstructions] = useState(true);
   const containerRef = useRef<HTMLDivElement>(null);
-  const isDark = true;
 
   useEffect(() => {
     if (typeof navigator !== "undefined" && navigator.xr) {
-      navigator.xr.isSessionSupported("immersive-ar").then((supported) => {
-        setArSupported(supported);
-      }).catch(() => {
-        setArSupported(false);
-      });
+      navigator.xr
+        .isSessionSupported("immersive-ar")
+        .then((supported) => {
+          setArSupported(supported);
+        })
+        .catch(() => {
+          setArSupported(false);
+        });
     }
   }, []);
 
   const handleObjectAdded = useCallback((obj: ARObject) => {
     setObjects((prev) => [...prev, obj]);
-  }, []);
-
-  const _handleRemoveObject = useCallback((id: string) => {
-    setObjects((prev) => prev.filter((o) => o.id !== id));
+    setIsPlacing(false);
   }, []);
 
   const handleClearAll = useCallback(() => {
@@ -163,19 +174,7 @@ export function ARViewer({ enabled = false, onClose, initialModel: _initialModel
   if (!enabled) return null;
 
   return (
-    <div
-      ref={containerRef}
-      style={{
-        position: "fixed",
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
-        background: "#000",
-        zIndex: 1000,
-      }}
-    >
-      {/* AR Canvas */}
+    <div ref={containerRef} className="fixed inset-0 z-[1000] bg-black">
       <Canvas
         style={{ width: "100%", height: "100%" }}
         camera={{ position: [0, 0, 0], fov: 75 }}
@@ -183,19 +182,17 @@ export function ARViewer({ enabled = false, onClose, initialModel: _initialModel
       >
         <XR>
           <SessionTracker onActiveChange={setIsARActive} />
-          <ARScene objects={objects} onObjectAdded={handleObjectAdded} />
+          <ARScene
+            objects={objects}
+            isPlacing={isPlacing}
+            shape={selectedShape}
+            onObjectAdded={handleObjectAdded}
+          />
         </XR>
       </Canvas>
 
-      {/* AR Button */}
       {arSupported && !isARActive && (
-        <div style={{
-          position: "absolute",
-          bottom: "100px",
-          left: "50%",
-          transform: "translateX(-50%)",
-          zIndex: 10,
-        }}>
+        <div className="absolute bottom-[100px] left-1/2 z-10 -translate-x-1/2">
           <ARButton
             sessionInit={{
               optionalFeatures: ["local-floor", "bounded-floor", "hand-tracking", "hit-test"],
@@ -217,232 +214,106 @@ export function ARViewer({ enabled = false, onClose, initialModel: _initialModel
         </div>
       )}
 
-      {/* Controls UI */}
       {isARActive && showUI && (
         <>
-          {/* Top bar */}
-          <div style={{
-            position: "absolute",
-            top: 0,
-            left: 0,
-            right: 0,
-            padding: "16px",
-            background: "linear-gradient(to bottom, rgba(0,0,0,0.7), transparent)",
-            display: "flex",
-            justifyContent: "space-between",
-            alignItems: "center",
-            zIndex: 10,
-          }}>
-            <h2 style={{ margin: 0, color: "#f8fafc", fontSize: "18px", fontWeight: 600 }}>
-              📱 AR Mode
-            </h2>
+          <div className="absolute inset-x-0 top-0 z-10 flex items-center justify-between bg-gradient-to-b from-black/70 to-transparent p-4">
+            <h2 className="text-lg font-semibold text-white">📱 AR Mode</h2>
             <button
+              type="button"
               onClick={() => setShowUI(false)}
-              style={{
-                background: "rgba(255,255,255,0.2)",
-                border: "none",
-                borderRadius: "8px",
-                color: "#f8fafc",
-                padding: "8px 12px",
-                cursor: "pointer",
-                fontSize: "14px",
-              }}
+              className="rounded-lg bg-white/20 px-3 py-2 text-sm text-white"
             >
               Hide UI
             </button>
           </div>
 
-          {/* Shape selector */}
-          <div style={{
-            position: "absolute",
-            bottom: "120px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            display: "flex",
-            gap: "8px",
-            background: "rgba(15, 23, 42, 0.9)",
-            padding: "12px",
-            borderRadius: "12px",
-            zIndex: 10,
-            backdropFilter: "blur(8px)",
-          }}>
-            {(["cube", "sphere", "cone", "torus", "icosahedron"] as const).map((shape) => (
+          <div className="absolute bottom-[120px] left-1/2 z-10 flex -translate-x-1/2 gap-2 rounded-xl bg-slate-900/90 p-3 backdrop-blur-md">
+            {SHAPE_OPTIONS.map((shape) => (
               <button
                 key={shape}
+                type="button"
                 onClick={() => setSelectedShape(shape)}
-                style={{
-                  padding: "10px 16px",
-                  borderRadius: "8px",
-                  border: selectedShape === shape ? "2px solid #6366f1" : "2px solid rgba(99, 102, 241, 0.3)",
-                  background: selectedShape === shape ? "rgba(99, 102, 241, 0.3)" : "transparent",
-                  color: "#f8fafc",
-                  cursor: "pointer",
-                  fontSize: "12px",
-                  textTransform: "capitalize",
-                }}
+                className={`rounded-lg border-2 px-4 py-2 text-xs capitalize text-white transition-colors ${
+                  selectedShape === shape
+                    ? "border-primary bg-primary/30"
+                    : "border-primary/30 bg-transparent"
+                }`}
               >
                 {shape}
               </button>
             ))}
           </div>
 
-          {/* Action buttons */}
-          <div style={{
-            position: "absolute",
-            bottom: "60px",
-            left: "50%",
-            transform: "translateX(-50%)",
-            display: "flex",
-            gap: "12px",
-            zIndex: 10,
-          }}>
+          <div className="absolute bottom-[60px] left-1/2 z-10 flex -translate-x-1/2 gap-3">
             <button
+              type="button"
               onClick={() => setIsPlacing(!isPlacing)}
-              style={{
-                padding: "12px 24px",
-                borderRadius: "8px",
-                border: "none",
-                background: isPlacing ? "rgba(239, 68, 68, 0.9)" : "rgba(99, 102, 241, 0.9)",
-                color: "#f8fafc",
-                fontSize: "14px",
-                fontWeight: 600,
-                cursor: "pointer",
-                boxShadow: "0 4px 12px rgba(0,0,0,0.3)",
-              }}
+              className={`rounded-lg px-6 py-3 text-sm font-semibold text-white shadow-lg ${
+                isPlacing ? "bg-red-500/90" : "bg-indigo-500/90"
+              }`}
             >
               {isPlacing ? "✓ Place" : "➕ Add Object"}
             </button>
             <button
+              type="button"
               onClick={handleClearAll}
-              style={{
-                padding: "12px 24px",
-                borderRadius: "8px",
-                border: "1px solid rgba(239, 68, 68, 0.5)",
-                background: "transparent",
-                color: "#ef4444",
-                fontSize: "14px",
-                cursor: "pointer",
-              }}
+              className="rounded-lg border border-red-500/50 px-6 py-3 text-sm text-red-400"
             >
               🗑 Clear All
             </button>
             <button
+              type="button"
               onClick={() => onClose?.()}
-              style={{
-                padding: "12px 24px",
-                borderRadius: "8px",
-                border: "1px solid rgba(99, 102, 241, 0.5)",
-                background: "transparent",
-                color: "#f8fafc",
-                fontSize: "14px",
-                cursor: "pointer",
-              }}
+              className="rounded-lg border border-indigo-500/50 px-6 py-3 text-sm text-white"
             >
               ✕ Exit
             </button>
           </div>
 
-          {/* Object count */}
           {objects.length > 0 && (
-            <div style={{
-              position: "absolute",
-              top: "70px",
-              right: "16px",
-              background: "rgba(15, 23, 42, 0.9)",
-              padding: "8px 16px",
-              borderRadius: "8px",
-              color: "#f8fafc",
-              fontSize: "12px",
-              zIndex: 10,
-            }}>
+            <div className="absolute right-4 top-[70px] z-10 rounded-lg bg-slate-900/90 px-4 py-2 text-xs text-white">
               {objects.length} object{objects.length !== 1 ? "s" : ""} placed
             </div>
           )}
 
-          {/* Instructions */}
-          <div style={{
-            position: "absolute",
-            top: "50%",
-            left: "50%",
-            transform: "translate(-50%, -50%)",
-            background: "rgba(15, 23, 42, 0.95)",
-            padding: "24px",
-            borderRadius: "16px",
-            color: "#f8fafc",
-            textAlign: "center",
-            zIndex: 10,
-            maxWidth: "300px",
-            backdropFilter: "blur(8px)",
-          }}>
-            <h3 style={{ margin: "0 0 12px", fontSize: "16px" }}>🎯 How to Use AR</h3>
-            <ul style={{ margin: "0 0 16px", paddingLeft: "20px", textAlign: "left", fontSize: "13px", opacity: 0.9 }}>
-              <li>Point camera at a flat surface</li>
-              <li>Select a shape from the toolbar</li>
-              <li>Tap "Add Object" then tap to place</li>
-              <li>Tap objects to select them</li>
-              <li>Use gestures to scale/rotate</li>
-            </ul>
-            <button
-              onClick={() => document.querySelector<HTMLButtonElement>("[data-ar-button]")?.click()}
-              style={{
-                padding: "10px 20px",
-                borderRadius: "8px",
-                border: "none",
-                background: "rgba(99, 102, 241, 0.9)",
-                color: "#f8fafc",
-                fontSize: "14px",
-                cursor: "pointer",
-              }}
-            >
-              Got it!
-            </button>
-          </div>
+          {showInstructions && (
+            <div className="absolute left-1/2 top-1/2 z-10 max-w-[300px] -translate-x-1/2 -translate-y-1/2 rounded-2xl bg-slate-900/95 p-6 text-center text-white backdrop-blur-md">
+              <h3 className="mb-3 text-base">🎯 How to Use AR</h3>
+              <ul className="mb-4 list-disc pl-5 text-left text-sm opacity-90">
+                <li>Point camera at a flat surface</li>
+                <li>Select a shape from the toolbar</li>
+                <li>Tap &quot;Add Object&quot; then tap to place</li>
+                <li>Tap objects to select them</li>
+                <li>Use gestures to scale/rotate</li>
+              </ul>
+              <button
+                type="button"
+                onClick={() => setShowInstructions(false)}
+                className="rounded-lg bg-indigo-500/90 px-5 py-2.5 text-sm text-white"
+              >
+                Got it!
+              </button>
+            </div>
+          )}
         </>
       )}
 
       {!arSupported && (
-        <div style={{
-          position: "absolute",
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: "rgba(0,0,0,0.9)",
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "center",
-          zIndex: 1000,
-          padding: "20px",
-        }}>
-          <div style={{
-            background: isDark ? "#1e293b" : "#f8fafc",
-            borderRadius: "16px",
-            padding: "24px",
-            maxWidth: "400px",
-            width: "100%",
-            color: isDark ? "#f8fafc" : "#1e293b",
-            textAlign: "center",
-          }}>
-            <h2 style={{ margin: "0 0 16px", fontSize: "20px" }}>📱 AR Not Supported</h2>
-            <p style={{ opacity: 0.7, marginBottom: "16px", lineHeight: 1.6 }}>
+        <div className="absolute inset-0 z-[1000] flex items-center justify-center bg-black/90 p-5">
+          <div className="w-full max-w-[400px] rounded-2xl bg-card p-6 text-center text-foreground">
+            <h2 className="mb-4 text-xl font-semibold">📱 AR Not Supported</h2>
+            <p className="mb-4 leading-relaxed text-muted-foreground">
               WebXR AR is not supported on this device or browser. Please use:
             </p>
-            <ul style={{ textAlign: "left", opacity: 0.8, marginBottom: "20px", paddingLeft: "20px" }}>
+            <ul className="mb-5 list-disc pl-5 text-left text-muted-foreground">
               <li>Chrome on Android (with ARCore)</li>
               <li>Safari on iOS 12+ (with AR Quick Look)</li>
               <li>Firefox Reality headset</li>
             </ul>
             <button
+              type="button"
               onClick={onClose}
-              style={{
-                padding: "12px 24px",
-                borderRadius: "8px",
-                border: "none",
-                background: "rgba(99, 102, 241, 0.9)",
-                color: "#f8fafc",
-                fontSize: "14px",
-                cursor: "pointer",
-              }}
+              className="rounded-lg bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-all hover:brightness-110"
             >
               Close
             </button>

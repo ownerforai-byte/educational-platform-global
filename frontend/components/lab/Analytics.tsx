@@ -1,8 +1,15 @@
 "use client";
 
-import { useState } from "react";
+import { useMemo, useState } from "react";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 
-interface AnalyticsData {
+export interface AnalyticsData {
   topic: string;
   attempts: number;
   correct: number;
@@ -18,115 +25,95 @@ const ANALYTICS_DATA: AnalyticsData[] = [
   { topic: "Physics Laws", attempts: 18, correct: 16, avgTime: 40, difficulty: "Medium" },
 ];
 
-export function Analytics({ theme = "dark" }: { theme?: "dark" | "light" }) {
-  const [sortBy, setSortBy] = useState<"topic" | "accuracy" | "time">("accuracy");
-  const isDark = theme === "dark";
+type SortKey = "topic" | "accuracy" | "time";
 
-  const sortedData = [...ANALYTICS_DATA].sort((a, b) => {
-    if (sortBy === "topic") return a.topic.localeCompare(b.topic);
-    if (sortBy === "accuracy") return (b.correct / b.attempts) - (a.correct / a.attempts);
-    return a.avgTime - b.avgTime;
-  });
+const DIFFICULTY_CLASSES: Record<AnalyticsData["difficulty"], string> = {
+  Easy: "bg-emerald-500/10 text-emerald-600 dark:text-emerald-400",
+  Medium: "bg-amber-500/10 text-amber-600 dark:text-amber-400",
+  Hard: "bg-red-500/10 text-red-600 dark:text-red-400",
+};
 
-  const overallAccuracy = Math.round(ANALYTICS_DATA.reduce((acc, d) => acc + (d.correct / d.attempts), 0) / ANALYTICS_DATA.length * 100);
+const ACCURACY_CLASSES = [
+  "text-emerald-600 dark:text-emerald-400",
+  "text-amber-600 dark:text-amber-400",
+  "text-red-600 dark:text-red-400",
+];
+
+function accuracyClass(accuracy: number): string {
+  return accuracy >= 80 ? ACCURACY_CLASSES[0] : accuracy >= 60 ? ACCURACY_CLASSES[1] : ACCURACY_CLASSES[2];
+}
+
+export function Analytics() {
+  const [sortBy, setSortBy] = useState<SortKey>("accuracy");
+
+  const sortedData = useMemo(() => {
+    return [...ANALYTICS_DATA].sort((a, b) => {
+      if (sortBy === "topic") return a.topic.localeCompare(b.topic);
+      if (sortBy === "accuracy") return b.correct / b.attempts - a.correct / a.attempts;
+      return a.avgTime - b.avgTime;
+    });
+  }, [sortBy]);
+
+  const overallAccuracy = Math.round(
+    (ANALYTICS_DATA.reduce((acc, d) => acc + d.correct / d.attempts, 0) /
+      ANALYTICS_DATA.length) *
+      100
+  );
   const totalAttempts = ANALYTICS_DATA.reduce((acc, d) => acc + d.attempts, 0);
-  const avgTime = Math.round(ANALYTICS_DATA.reduce((acc, d) => acc + d.avgTime, 0) / ANALYTICS_DATA.length);
+  const avgTime = Math.round(
+    ANALYTICS_DATA.reduce((acc, d) => acc + d.avgTime, 0) / ANALYTICS_DATA.length
+  );
 
   return (
-    <div style={{
-      background: isDark ? "#1e293b" : "#f8fafc",
-      border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)"}`,
-      borderRadius: "12px",
-      padding: "20px",
-      color: isDark ? "#f8fafc" : "#1e293b",
-    }}>
-      <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center", marginBottom: "20px" }}>
-        <h2 style={{ margin: 0, fontSize: "18px", fontWeight: 600 }}>📈 Performance Analytics</h2>
-        <select
-          value={sortBy}
-          onChange={(e) => setSortBy(e.target.value as any)}
-          style={{
-            padding: "6px 12px",
-            borderRadius: "6px",
-            border: `1px solid ${isDark ? "rgba(99, 102, 241, 0.3)" : "rgba(99, 102, 241, 0.2)"}`,
-            background: isDark ? "rgba(15, 23, 42, 0.5)" : "white",
-            color: isDark ? "#f8fafc" : "#1e293b",
-            fontSize: "12px",
-            cursor: "pointer",
-          }}
-        >
-          <option value="accuracy">Sort by Accuracy</option>
-          <option value="time">Sort by Time</option>
-          <option value="topic">Sort by Topic</option>
-        </select>
+    <div className="space-y-5">
+      <div className="flex items-center justify-end">
+        <Select value={sortBy} onValueChange={(v) => setSortBy(v as SortKey)}>
+          <SelectTrigger className="w-[180px]" aria-label="Sort analytics">
+            <SelectValue />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectItem value="accuracy">Sort by Accuracy</SelectItem>
+            <SelectItem value="time">Sort by Time</SelectItem>
+            <SelectItem value="topic">Sort by Topic</SelectItem>
+          </SelectContent>
+        </Select>
       </div>
 
-      <div style={{ display: "grid", gridTemplateColumns: "repeat(3, 1fr)", gap: "12px", marginBottom: "20px" }}>
-        <div style={{
-          padding: "16px",
-          borderRadius: "8px",
-          background: isDark ? "rgba(99, 102, 241, 0.2)" : "rgba(99, 102, 241, 0.1)",
-          textAlign: "center",
-        }}>
-          <div style={{ fontSize: "24px", fontWeight: 700, color: "#818cf8" }}>{overallAccuracy}%</div>
-          <div style={{ fontSize: "12px", opacity: 0.7 }}>Overall Accuracy</div>
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-3">
+        <div className="rounded-lg bg-primary/10 p-4 text-center">
+          <div className="text-2xl font-bold text-primary">{overallAccuracy}%</div>
+          <div className="text-xs text-muted-foreground">Overall Accuracy</div>
         </div>
-        <div style={{
-          padding: "16px",
-          borderRadius: "8px",
-          background: isDark ? "rgba(16, 185, 129, 0.2)" : "rgba(16, 185, 129, 0.1)",
-          textAlign: "center",
-        }}>
-          <div style={{ fontSize: "24px", fontWeight: 700, color: "#10b981" }}>{totalAttempts}</div>
-          <div style={{ fontSize: "12px", opacity: 0.7 }}>Total Attempts</div>
+        <div className="rounded-lg bg-emerald-500/10 p-4 text-center">
+          <div className="text-2xl font-bold text-emerald-500">{totalAttempts}</div>
+          <div className="text-xs text-muted-foreground">Total Attempts</div>
         </div>
-        <div style={{
-          padding: "16px",
-          borderRadius: "8px",
-          background: isDark ? "rgba(245, 158, 11, 0.2)" : "rgba(245, 158, 11, 0.1)",
-          textAlign: "center",
-        }}>
-          <div style={{ fontSize: "24px", fontWeight: 700, color: "#f59e0b" }}>{avgTime}s</div>
-          <div style={{ fontSize: "12px", opacity: 0.7 }}>Avg Time/Question</div>
+        <div className="rounded-lg bg-amber-500/10 p-4 text-center">
+          <div className="text-2xl font-bold text-amber-500">{avgTime}s</div>
+          <div className="text-xs text-muted-foreground">Avg Time/Question</div>
         </div>
       </div>
 
-      <div style={{ display: "flex", flexDirection: "column", gap: "10px" }}>
-        {sortedData.map((data, index) => {
+      <div className="flex flex-col gap-2.5">
+        {sortedData.map((data) => {
           const accuracy = Math.round((data.correct / data.attempts) * 100);
           return (
             <div
-              key={index}
-              style={{
-                padding: "12px 16px",
-                borderRadius: "8px",
-                background: isDark ? "rgba(15, 23, 42, 0.5)" : "rgba(248, 250, 252, 0.8)",
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-              }}
+              key={data.topic}
+              className="flex flex-wrap items-center justify-between gap-3 rounded-lg bg-muted/40 px-4 py-3"
             >
-              <div>
-                <span style={{ fontWeight: 600, fontSize: "14px" }}>{data.topic}</span>
-                <span style={{
-                  marginLeft: "8px",
-                  fontSize: "11px",
-                  padding: "2px 8px",
-                  borderRadius: "12px",
-                  background: data.difficulty === "Easy" ? "rgba(16, 185, 129, 0.2)" : data.difficulty === "Medium" ? "rgba(245, 158, 11, 0.2)" : "rgba(239, 68, 68, 0.2)",
-                  color: data.difficulty === "Easy" ? "#10b981" : data.difficulty === "Medium" ? "#f59e0b" : "#ef4444",
-                }}>
+              <div className="flex items-center gap-2">
+                <span className="text-sm font-semibold">{data.topic}</span>
+                <span
+                  className={`rounded-full px-2 py-0.5 text-[11px] font-medium ${DIFFICULTY_CLASSES[data.difficulty]}`}
+                >
                   {data.difficulty}
                 </span>
               </div>
-              <div style={{ display: "flex", gap: "16px", alignItems: "center" }}>
-                <span style={{ fontSize: "12px", opacity: 0.7 }}>{data.attempts} attempts</span>
-                <span style={{ fontSize: "12px", opacity: 0.7 }}>{data.avgTime}s avg</span>
-                <span style={{
-                  fontSize: "14px",
-                  fontWeight: 600,
-                  color: accuracy >= 80 ? "#10b981" : accuracy >= 60 ? "#f59e0b" : "#ef4444",
-                }}>
+              <div className="flex items-center gap-4">
+                <span className="text-xs text-muted-foreground">{data.attempts} attempts</span>
+                <span className="text-xs text-muted-foreground">{data.avgTime}s avg</span>
+                <span className={`text-sm font-semibold ${accuracyClass(accuracy)}`}>
                   {accuracy}%
                 </span>
               </div>

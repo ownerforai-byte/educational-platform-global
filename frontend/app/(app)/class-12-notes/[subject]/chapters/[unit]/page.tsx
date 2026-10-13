@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { ChapterDetailView } from "@/features/syllabus/components/chapter-detail-view";
-import { getUnit } from "@/features/syllabus/queries";
+import { getUnit } from "@/lib/queries";
 
 
 

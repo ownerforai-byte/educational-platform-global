@@ -226,3 +226,29 @@ export function getOwnerUserChats(
   if (session) qs.set("session", session);
   return apiFetch(`/api/owner/users/${userId}/chats?${qs.toString()}`);
 }
+
+// ── R1 grants (owner-granted access to the R1 daily-life layer) ─────────────
+
+export interface OwnerR1Grant {
+  id: string;
+  email: string;
+  note: string | null;
+  grantedBy: string | null;
+  createdAt: string;
+  revokedAt: string | null;
+}
+
+export function getOwnerR1Grants(): Promise<{ grants: OwnerR1Grant[] }> {
+  return apiFetch("/api/owner/r1-grants");
+}
+
+export function grantR1Access(email: string, note?: string): Promise<{ grant: OwnerR1Grant }> {
+  return apiFetch("/api/owner/r1-grants", {
+    method: "POST",
+    body: JSON.stringify(note ? { email, note } : { email }),
+  });
+}
+
+export function revokeR1Access(id: string): Promise<{ revoked: boolean; id: string; email: string }> {
+  return apiFetch(`/api/owner/r1-grants/${id}`, { method: "DELETE" });
+}

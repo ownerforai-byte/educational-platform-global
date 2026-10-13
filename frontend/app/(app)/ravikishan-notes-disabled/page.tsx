@@ -2,6 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { Metadata } from "next";
 import { BackButton } from "@/components/navigation/back-button";
+import { ComingSoon } from "@/components/content/coming-soon";
 import {
   BookOpen,
   Compass,
@@ -67,6 +68,16 @@ export default function RavikishanNotesDisabledPage() {
           </div>
         </div>
       </div>
+
+      {/* Disabled/coming-soon placeholder for the retired standalone pages */}
+      <ComingSoon
+        title="Standalone Ravikishan Notes"
+        kind="Notes"
+        status="Coming Soon"
+        message="These standalone note pages are disabled for now. Every note has been integrated into its official Class 11 and Class 12 curriculum unit — pick your subject below to read it there."
+        backHref="/notes"
+        backLabel="Notes archive"
+      />
 
       {/* Class 11 Section */}
       <div className="space-y-4">

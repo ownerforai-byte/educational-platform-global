@@ -9,6 +9,7 @@ import { createPortal } from "react-dom";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { isNavItemActive } from "@/lib/nav-active";
 import { isOwnerUser } from "@/lib/owner";
+import { useR1Access } from "@/features/r1/hooks";
 import { NAV_SECTIONS } from "@/lib/navigation";
 
 /**
@@ -68,14 +69,21 @@ export function MobileNav() {
     };
   }, [open]);
 
+  const { data: r1Access } = useR1Access(!!user);
+  const hasR1 = isOwnerUser(user) || r1Access === true;
+
   const filteredSections = NAV_SECTIONS.filter(
-    (sec) => (sec.id !== 'account' || !!user) && (!sec.ownerOnly || isOwnerUser(user)),
+    (sec) =>
+      (sec.id !== 'account' || !!user) &&
+      (!sec.ownerOnly || isOwnerUser(user)) &&
+      (!sec.r1Only || hasR1),
   )
     .map((sec) => ({
       ...sec,
       items: sec.items.filter((item) =>
         // Owner-only entries (AI chat) never reach non-owners, even by search.
         (item.ownerOnly ? isOwnerUser(user) : true) &&
+        (item.r1Only ? hasR1 : true) &&
         (searchQuery.trim() === ""
           ? true
           : item.label.toLowerCase().includes(searchQuery.toLowerCase()) ||

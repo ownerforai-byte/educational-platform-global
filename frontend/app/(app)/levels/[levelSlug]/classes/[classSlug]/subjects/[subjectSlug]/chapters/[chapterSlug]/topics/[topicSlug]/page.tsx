@@ -3,7 +3,7 @@ import { SYLLABUS } from "@/lib/syllabus";
 import { Breadcrumbs } from "@/components/layout/breadcrumbs";
 import { BackButton } from "@/components/navigation/back-button";
 import { TopicDetailView } from "@/features/syllabus/components/topic-detail-view";
-import { getUnitTopic, resolveUnitIdFromChapterSlug } from "@/features/syllabus/queries";
+import { getUnitTopic, resolveUnitIdFromChapterSlug } from "@/lib/queries";
 import { Construction } from "lucide-react";
 import Link from "next/link";
 
