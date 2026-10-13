@@ -1,9 +1,17 @@
 import { Router, Request, Response } from "express";
 import { serverError, ERROR_ID_HEADER } from "../middleware/errors";
 import { createAIService, type AIChatMessage } from "../ai/service";
-import { requireAuth, requireOwnerEmail } from "../middleware/auth";
-// (Owner-policy 2026-10-12: free chat — no auth-email or DB lookups needed
-// here any more; requireOwnerEmail already gates the route.)
+import { requireAuth, type AuthedRequest } from "../middleware/auth";
+import { consumeUserSlot, rollbackUserSlot, readUserSlot } from "../utils/guestQuota";
+import {
+  AI_SPARK_LIMITS,
+  aiSparkIsMetered,
+  aiSparkLimitFor,
+  aiSparkTierFor,
+} from "../utils/aiSpark";
+// (Owner policy 2026-10-13: chat is open to every tier and metered by AI
+// sparks — guest 1 / member 7 / plus 25 / pro 50 per UTC day, owner unlimited.
+// The 2026-10-05 owner-only gate on this route is superseded by that rule.)
 import { logServerError, newErrorId } from "../middleware/errors";
 import { appendConsoleRules, buildProfessorContext, withProfessorContext } from "../ai/prompts";
 import { completeAnswer } from "../ai/complete-answer";
@@ -29,10 +37,33 @@ router.get("/providers", (_req: Request, res: Response) => {
   res.json({ providers, defaultProvider });
 });
 
-router.post("/", requireAuth, requireOwnerEmail, async (req: Request, res: Response) => {
-  // Veer chat is FREE (owner policy 2026-10-12): there is no message fee, so
-  // no billed-user bookkeeping and no refund path exist any more. The
-  // streamState flag survives only to know whether the student saw anything.
+/**
+ * GET /api/ai/spark — today's AI-spark usage for the signed-in member.
+ * Powers the chat-top badge and the profile "Plan & AI spark" card.
+ * `limit: null` means unlimited (owner); guests draw from the separate guest
+ * pool (1/day) and are not signed in, so they have no row here.
+ */
+router.get("/spark", requireAuth, async (req: Request, res: Response) => {
+  try {
+    const user = (req as AuthedRequest).user;
+    const tier = aiSparkTierFor(user);
+    const limit = aiSparkLimitFor(tier);
+    const used = aiSparkIsMetered(tier) ? await readUserSlot(user.id) : 0;
+    res.json({
+      tier,
+      limit,
+      used,
+      remaining: limit === null ? null : Math.max(limit - used, 0),
+    });
+  } catch (err) {
+    serverError(res, err);
+  }
+});
+
+router.post("/", requireAuth, async (req: Request, res: Response) => {
+  // Veer chat costs no CONTENT sparks (owner policy 2026-10-12). It is,
+  // however, metered by AI sparks per tier since 2026-10-13 — see the gate
+  // below. streamState survives to know whether the student saw anything.
   const streamState: StreamState = { streamedAny: false };
   try {
     const body = req.body;
@@ -59,21 +90,45 @@ router.post("/", requireAuth, requireOwnerEmail, async (req: Request, res: Respo
       }
     }
 
-    // ── Veer chat is FREE (owner decision 2026-10-12) ──
-    // "Veer chat and everything else are free — no AI spark is ever spent."
-    // The AI spark shown at the top of the chat is an informational daily
-    // counter only; nothing here reads or writes any balance. Content sparks
-    // are spent exclusively on actual note/content unlocks (api/user.ts).
-    const user = (req as unknown as { user?: { id: string; email?: string; role?: string | null } }).user;
-    if (!user) {
-      res.status(401).json({ error: "Unauthorized" });
-      return;
+    // ── AI-spark gate (owner policy 2026-10-13) ──
+    // "restrict the ai spark to 1 for public 7 for member and unlimited for
+    // owner … create for plus and pro member also like 25 and 50".
+    // Owners are never counted. Everyone else draws one spark per message
+    // from the day-keyed CAS pool — a refresh, reload or redeploy cannot
+    // refill it; only UTC midnight does.
+    const user = (req as AuthedRequest).user;
+    const tier = aiSparkTierFor(user);
+    let sparkRemaining: number | null = null;
+    if (aiSparkIsMetered(tier)) {
+      const limit = AI_SPARK_LIMITS[tier];
+      const slot = await consumeUserSlot(user.id, limit);
+      if (slot.status === "limited") {
+        res.status(402).json({
+          error: "Daily AI sparks used",
+          remaining: 0,
+          limit,
+          message: `You've used all ${limit} AI sparks for today — they reset at 12:00 AM UTC. Plus gets 25/day and Pro gets 50/day.`,
+        });
+        return;
+      }
+      if (slot.status === "unavailable") {
+        res.status(503).json({
+          error: "Veer is temporarily unavailable. Please try again in a moment.",
+        });
+        return;
+      }
+      sparkRemaining = slot.remaining;
+      // The student was never answered → give the spark back (best-effort).
+      // A streamed request only "delivered" if any character actually
+      // reached the browser; a plain request delivered on a <400 status.
+      res.on("finish", () => {
+        const delivered = stream ? streamState.streamedAny : res.statusCode < 400;
+        if (!delivered) rollbackUserSlot(user.id).catch(() => {});
+      });
     }
-    // FREE CHAT: no billing block at all. Veer never deducts a spark, for any
-    // account class — students, owners, PRO or guest (owner policy 2026-10-12:
-    // "Veer chat and everything else are free — no AI spark is ever spent").
-    // The `credits` field stays in the response as undefined so older clients
-    // keep parsing; the AI spark badge is informational only.
+    // `credits` stays undefined so older clients keep parsing; the AI spark
+    // travels as `aiSpark` instead. Content sparks are spent exclusively on
+    // actual note/content unlocks (api/user.ts).
     const creditsLeft: number | null = null;
 
     const aiService = getService();
@@ -149,6 +204,7 @@ router.post("/", requireAuth, requireOwnerEmail, async (req: Request, res: Respo
       generatedFigures: figures.map((f) => ({ prompt: f.prompt, url: f.url, reason: f.reason })),
       provider: provider || aiService.getLastAnsweredBy(),
       credits: creditsLeft ?? undefined,
+      aiSpark: { tier, limit: aiSparkLimitFor(tier), remaining: sparkRemaining },
       replyFloor: {
         floor: completed.floor,
         words: completed.words,
@@ -160,7 +216,8 @@ router.post("/", requireAuth, requireOwnerEmail, async (req: Request, res: Respo
     });
   } catch (err: any) {
     console.error("AI chat error:", err);
-    // FREE CHAT: nothing to refund — the student was never charged.
+    // The AI-spark refund lives in the response `finish` hook above — a
+    // failed attempt never keeps the spark it drew.
     // The SSE channel opens before the research step, so the response may
     // already be mid-stream: send an error frame (a JSON status would throw
     // ERR_HTTP_HEADERS_SENT) and close, or the student waits on a silent

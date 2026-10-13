@@ -73,6 +73,38 @@ export async function loadProfileFullName(userId: string): Promise<string | null
   }
 }
 
+/**
+ * Load the membership plan tier (migration 008) for the AI-spark allowance.
+ * Tolerant of an un-migrated `profiles` table: when the `plan` column does
+ * not exist yet, the legacy `premium_status` PRO flag maps to the pro tier.
+ */
+export async function loadProfilePlan(
+  userId: string,
+): Promise<{ plan: "member" | "plus" | "pro" | null; premiumStatus: boolean | null }> {
+  try {
+    const { data: profile, error } = await supabaseAdmin
+      .from("profiles")
+      .select("plan, premium_status")
+      .eq("id", userId)
+      .maybeSingle();
+    if (error) {
+      // `plan` column missing (migration 008 not applied) → legacy read.
+      const { data: legacy } = await supabaseAdmin
+        .from("profiles")
+        .select("premium_status")
+        .eq("id", userId)
+        .maybeSingle();
+      const premium = legacy?.premium_status === true;
+      return { plan: premium ? "pro" : null, premiumStatus: premium };
+    }
+    const raw = typeof profile?.plan === "string" ? profile.plan.toLowerCase() : "";
+    const plan = raw === "plus" || raw === "pro" ? (raw as "plus" | "pro") : "member";
+    return { plan, premiumStatus: profile?.premium_status === true };
+  } catch {
+    return { plan: null, premiumStatus: null };
+  }
+}
+
 export const OWNER_EMAILS = new Set([
   "harindarsah98172@gmail.com",
   "yashsah231@gmail.com",
@@ -91,9 +123,11 @@ export function buildSessionUser(
   email: string,
   role: UserRole | null,
   fullName: string | null = null,
+  plan: "member" | "plus" | "pro" | null = null,
+  premiumStatus: boolean | null = null,
 ): SessionUser {
   const effectiveRole: UserRole | null = isOwnerEmail(email) ? "OWNER" : role;
-  return { id, email, fullName, role: effectiveRole };
+  return { id, email, fullName, role: effectiveRole, plan, premiumStatus };
 }
 
 /**
@@ -111,15 +145,18 @@ export async function getUserFromRequest(req: Request): Promise<SessionUser | nu
       if (error) console.warn("[Auth] Token validation failed:", error.message);
       return null;
     }
-    const [role, profileName] = await Promise.all([
+    const [role, profileName, planInfo] = await Promise.all([
       loadProfileRole(data.user.id),
       loadProfileFullName(data.user.id),
+      loadProfilePlan(data.user.id),
     ]);
     return buildSessionUser(
       data.user.id,
       data.user.email ?? "",
       role,
       profileName ?? (data.user.user_metadata?.full_name as string) ?? null,
+      planInfo.plan,
+      planInfo.premiumStatus,
     );
   } catch (err) {
     console.error("[Auth] Unexpected error during getUserFromRequest:", err);

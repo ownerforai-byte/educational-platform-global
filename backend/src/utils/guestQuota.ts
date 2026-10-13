@@ -77,7 +77,7 @@ function okRemainingFor(used: number, limit: number): GuestSlotResult {
 }
 
 /** Day-scoped, non-reversible key for one identity (raw ids never stored). */
-function scopedKey(scope: "ip" | "dev", id: string): string {
+function scopedKey(scope: "ip" | "dev" | "user", id: string): string {
   const digest = createHash("sha256").update(`${scope}:${id}`).digest("hex").slice(0, 32);
   return `${todayUtc()}:${digest}`;
 }
@@ -327,4 +327,50 @@ export function startGuestQuotaCleanup(): void {
       }
     })();
   }, 60 * 60 * 1000).unref();
+}
+
+// ── Member AI-spark slots (signed-in tiers) ─────────────────────────────────
+//
+// Same CAS machinery and table as the guest pool, keyed by user id instead of
+// ip/device — one day-row per member (`<day>:sha256("user:<id>")[:32]`, so a
+// user id is never stored raw either). The LIMIT comes from the caller (the
+// tier table in utils/aiSpark.ts: member 7 / plus 25 / pro 50 per UTC day).
+
+/** Consume one AI spark for a signed-in member against their tier limit. */
+export async function consumeUserSlot(
+  userId: string,
+  limit: number,
+): Promise<GuestSlotResult> {
+  if (limit <= 0) {
+    return { status: "limited", remaining: 0 };
+  }
+  return consumeKeyWithLimit(scopedKey("user", userId), limit);
+}
+
+/** Give back a slot a failed attempt consumed (no answer → no charge). */
+export async function rollbackUserSlot(userId: string): Promise<void> {
+  await rollbackKey(scopedKey("user", userId));
+}
+
+/**
+ * How many AI sparks this member has used today (peek — never consumes).
+ * Used by the profile meter and `GET /api/ai/spark`; DB first, in-memory
+ * mirror when the table is unavailable.
+ */
+export async function readUserSlot(userId: string): Promise<number> {
+  const key = scopedKey("user", userId);
+  try {
+    const { data: row, error } = await supabaseAdmin
+      .from("guest_chat_usage")
+      .select("count")
+      .eq("client_key", key)
+      .maybeSingle();
+    if (error) {
+      return memUsage.get(key)?.date === todayUtc() ? memUsage.get(key)!.count : 0;
+    }
+    return row?.count ?? 0;
+  } catch {
+    const entry = memUsage.get(key);
+    return entry && entry.date === todayUtc() ? entry.count : 0;
+  }
 }

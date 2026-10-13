@@ -71,8 +71,10 @@ export const LOGIN_PATH = "/login";
 /**
  * Routes that stay fully public: home baseline, the credits wallet itself,
  * the quiz (free guest pool), and the profile/progress account surfaces.
- * 2026-09-27: /ai-quiz joins the public list. 2026-10-05: /ai and /chat left
- * this list — Veer chat is owner-only now (own gate + EXEMPT_PATHS below).
+ * 2026-09-27: /ai-quiz joins the public list. 2026-10-13: /ai and /chat
+ * rejoin it — Veer chat is open to every tier, metered by its own AI sparks
+ * (guest 1 / member 7 / plus 25 / pro 50 / owner unlimited per UTC day),
+ * never by content sparks, so the coin gate passes them untouched.
  */
 export const PUBLIC_PATHS = [
   "/",
@@ -80,6 +82,8 @@ export const PUBLIC_PATHS = [
   "/login",
   "/signup",
   "/ai-quiz",
+  "/ai",
+  "/chat",
   "/credits",
   "/profile",
   // Owner request (2026-09-30): the notice board and the PRO plan explanation
@@ -100,10 +104,6 @@ export const EXEMPT_PATHS = [
   "/owner",
   "/admin",
   "/controller",
-  // Owner request (2026-10-05): Veer chat (/ai + /chat) is owner-only —
-  // same treatment, own gate, never blurred.
-  "/ai",
-  "/chat",
 ] as const;
 
 const REFERENCE_ROUTES = /^\/(pyqs|quiz|resources|ai-quiz|exam-countdown|progress)(\/|$)/;

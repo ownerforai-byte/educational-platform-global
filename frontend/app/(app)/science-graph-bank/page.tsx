@@ -104,6 +104,14 @@ export default function ScienceGraphBankPage() {
     return DERIVATIONS_AND_THEOREMS.filter((d) => BEST_IDS.has(d.id));
   }, []);
 
+  // The gallery/filtered set: best-of visuals in curated presentation order
+  // (bestBank), falling back to the unfiltered best-id set if the ordered list
+  // is empty. This is the `bank` every view below filters and groups.
+  const bank = useMemo(() => {
+    const ordered = bestBank();
+    return ordered.length > 0 ? ordered : fallbackBank;
+  }, [fallbackBank]);
+
   const q = query.trim().toLowerCase();
   const filtered = useMemo(() => {
     if (!q) return bank;

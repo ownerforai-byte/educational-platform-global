@@ -51,16 +51,19 @@ describe("navigation menu", () => {
     expect(duplicated, `duplicated menu labels: ${duplicated.join(", ")}`).toEqual([]);
   });
 
-  it("keeps owner-only destinations out of the public sections", () => {
+  it("keeps control surfaces out of the public sections and opens Veer chat", () => {
     const publicHrefs = NAV_SECTIONS.filter((s) => !s.ownerOnly).flatMap((s) =>
       s.items.filter((i) => !i.ownerOnly).map((i) => i.href),
     );
     for (const ownerHref of ["/owner", "/owner/users", "/controller"]) {
       expect(publicHrefs).not.toContain(ownerHref);
     }
-    // Veer chat entries are owner-only items (owner request 2026-10-05).
+    // Veer chat entries are OPEN to every tier (owner policy 2026-10-13,
+    // superseding the 2026-10-05 owner-only gate): chat is metered by AI
+    // sparks — guest 1 / member 7 / plus 25 / pro 50 / owner unlimited per
+    // UTC day — not hidden behind an allowlist.
     for (const aiHref of ["/ai", "/chat", "/chat/nepali", "/chat/grammar", "/ai/tutor", "/ai/search"]) {
-      expect(publicHrefs).not.toContain(aiHref);
+      expect(publicHrefs).toContain(aiHref);
     }
     // The quiz stays public for students.
     expect(publicHrefs).toContain("/ai-quiz");

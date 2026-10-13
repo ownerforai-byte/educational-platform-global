@@ -4,15 +4,19 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import {
+  ArrowUpRight,
   Award,
   BookOpen,
   Bookmark,
   CheckCircle2,
   ChevronRight,
+  Clock,
   Coins,
   Compass,
   Crown,
+  Flame,
   GraduationCap,
+  History,
   Layers,
   Lock,
   LogOut,
@@ -39,6 +43,13 @@ import { isOwnerUser } from "@/lib/owner";
 import { getOwnerSettings, updateOwnerSettings } from "@/lib/api/owner";
 import { broadcastCoinGate, parseCoinGateEnabled } from "@/lib/coin-gate";
 import { CoinGateDot } from "@/features/credits/coin-gate-dot";
+import { getAiSparkUsage, type AiSparkUsage } from "@/lib/api/ai";
+import {
+  AI_SPARK_LIMITS,
+  AI_SPARK_TIER_LABELS,
+  aiSparkTierFor,
+} from "@/lib/ai/ai-spark-tiers";
+import { topicHref } from "@/lib/progress/catalog";
 import type { ProgressEntry } from "@/types/api";
 
 const roleBadgeConfig: Record<
@@ -50,6 +61,52 @@ const roleBadgeConfig: Record<
   TEACHER: { label: "Teacher", className: "bg-blue-500/15 border-blue-500/30 text-blue-500", icon: GraduationCap },
   STUDENT: { label: "Student", className: "bg-emerald-500/15 border-emerald-500/30 text-emerald-500", icon: User },
 };
+
+// ── Profile features (owner request 2026-10-13: "add more features in
+// profile") — study streak, UTC reset countdown and recent-activity feed. ──
+
+/** Consecutive UTC days (ending today or yesterday) with any study activity. */
+function computeStudyStreak(entries: ProgressEntry[]): number {
+  const days = new Set<string>();
+  for (const e of entries) {
+    for (const ts of [e.lastViewedAt, e.startedAt, e.completedAt, e.updatedAt]) {
+      if (ts) days.add(ts.slice(0, 10));
+    }
+  }
+  const iso = (d: Date) => d.toISOString().slice(0, 10);
+  const cursor = new Date();
+  // Today may still be in progress — the streak survives until a full day is
+  // missed, then it counts back from yesterday.
+  if (!days.has(iso(cursor))) cursor.setUTCDate(cursor.getUTCDate() - 1);
+  let streak = 0;
+  while (days.has(iso(cursor))) {
+    streak += 1;
+    cursor.setUTCDate(cursor.getUTCDate() - 1);
+  }
+  return streak;
+}
+
+/** "7h 12m" until the next UTC midnight — every spark pool refills then. */
+function utcResetLabel(): string {
+  const now = new Date();
+  const next = new Date(
+    Date.UTC(now.getUTCFullYear(), now.getUTCMonth(), now.getUTCDate() + 1),
+  );
+  const ms = Math.max(next.getTime() - now.getTime(), 0);
+  const h = Math.floor(ms / 3_600_000);
+  const m = Math.floor((ms % 3_600_000) / 60_000);
+  return `${h}h ${m}m`;
+}
+
+/** Live-ish countdown to the UTC spark reset (ticks twice a minute). */
+function useUtcResetCountdown(): string {
+  const [label, setLabel] = useState(utcResetLabel);
+  useEffect(() => {
+    const t = setInterval(() => setLabel(utcResetLabel()), 30_000);
+    return () => clearInterval(t);
+  }, []);
+  return label;
+}
 
 export interface ScholarLevelInfo {
   level: number;
@@ -210,6 +267,23 @@ export default function ProfilePage() {
     }
   };
 
+  // ── AI-spark usage for the Plan card (server is the source of truth) ──
+  const [sparkUsage, setSparkUsage] = useState<AiSparkUsage | null>(null);
+  useEffect(() => {
+    if (!user) return;
+    let alive = true;
+    getAiSparkUsage()
+      .then((s) => {
+        if (alive) setSparkUsage(s);
+      })
+      .catch(() => {
+        /* signed out / offline — the card shows the tier allowance only */
+      });
+    return () => {
+      alive = false;
+    };
+  }, [user]);
+
   // Callback passed to ProgressPanel so parent receives entries without duplicate getProgress calls
   const handleProgressLoaded = useCallback((entries: ProgressEntry[]) => {
     setProgressEntries(entries);
@@ -228,6 +302,32 @@ export default function ProfilePage() {
   const scholarLevel = useMemo(
     () => calculateScholarLevel(completedCount, user?.credits ?? 0),
     [completedCount, user?.credits]
+  );
+
+  // ── AI-spark tier + study stats (profile features 2026-10-13) ──
+  const tier = aiSparkTierFor(user);
+  const tierLimit = AI_SPARK_LIMITS[tier];
+  const tierMetered = Number.isFinite(tierLimit);
+  const sparkUsed = sparkUsage?.used ?? 0;
+  const resetCountdown = useUtcResetCountdown();
+  const inProgressCount = useMemo(
+    () => progressEntries.filter((p) => p.status === "in_progress").length,
+    [progressEntries]
+  );
+  const streakDays = useMemo(
+    () => computeStudyStreak(progressEntries),
+    [progressEntries]
+  );
+  const recentActivity = useMemo(
+    () =>
+      [...progressEntries]
+        .sort((a, b) =>
+          (b.lastViewedAt ?? b.updatedAt ?? "").localeCompare(
+            a.lastViewedAt ?? a.updatedAt ?? "",
+          ),
+        )
+        .slice(0, 8),
+    [progressEntries]
   );
 
   const LevelIcon = scholarLevel.icon;
@@ -354,6 +454,106 @@ export default function ProfilePage() {
         </CardContent>
       </Card>
 
+      {/* ── Plan & AI spark + content-spark wallet (profile features
+          2026-10-13) — the tier allowance and both spark pools at a glance. */}
+      <div className="grid gap-4 sm:grid-cols-2">
+        {/* Plan & AI spark — daily Veer allowance for the member's tier */}
+        <Card className="border-violet-500/30 bg-gradient-to-br from-violet-500/[0.07] via-card to-card shadow-sm">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-semibold flex items-center gap-2">
+              <Sparkles className="h-4 w-4 text-violet-500" />
+              Plan &amp; AI Spark
+            </CardTitle>
+            <CardDescription className="text-xs">
+              Your tier's daily Veer (AI chat) allowance — resets at 12:00 AM UTC.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <div className="flex items-center justify-between gap-2">
+              <span className="inline-flex items-center gap-1.5 text-xs font-bold px-2.5 py-1 rounded-full bg-violet-500/10 border border-violet-500/30 text-violet-600 dark:text-violet-400">
+                <Crown className="h-3.5 w-3.5" />
+                {AI_SPARK_TIER_LABELS[tier]} plan
+              </span>
+              <span className="text-xs text-muted-foreground">
+                <span className="font-bold text-foreground">
+                  {tierMetered ? `${sparkUsed}/${tierLimit}` : "∞"}
+                </span>{" "}
+                used today
+              </span>
+            </div>
+            <div className="h-2 rounded-full bg-muted overflow-hidden">
+              <div
+                className="h-full rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 transition-all"
+                style={{
+                  width: tierMetered
+                    ? `${Math.min(100, (sparkUsed / tierLimit) * 100)}%`
+                    : "100%",
+                }}
+              />
+            </div>
+            <div className="flex items-center justify-between gap-2 text-[11px] text-muted-foreground">
+              <span className="inline-flex items-center gap-1">
+                <Clock className="h-3 w-3" />
+                Resets in {resetCountdown}
+              </span>
+              <Link
+                href="/pro-plan"
+                className="inline-flex items-center gap-0.5 font-semibold text-primary hover:underline"
+              >
+                Plus 25 · Pro 50 <ArrowUpRight className="h-3 w-3" />
+              </Link>
+            </div>
+          </CardContent>
+        </Card>
+
+        {/* Content-spark wallet — spent only on note/content unlocks */}
+        <Card className="border-amber-500/30 bg-gradient-to-br from-amber-500/[0.07] via-card to-card shadow-sm">
+          <CardHeader className="pb-2">
+            <CardTitle className="text-sm font-semibold flex items-center gap-2">
+              <Coins className="h-4 w-4 text-amber-500" />
+              Content Spark Wallet
+            </CardTitle>
+            <CardDescription className="text-xs">
+              Spent only on actual note/content unlocks — labs, visuals and Veer chat never draw from it.
+            </CardDescription>
+          </CardHeader>
+          <CardContent className="space-y-3">
+            <div className="flex items-center justify-between gap-2">
+              <div>
+                <p className="text-2xl font-black text-foreground leading-none">
+                  {user.credits ?? 0}
+                </p>
+                <p className="text-[11px] text-muted-foreground mt-1">
+                  content sparks available
+                </p>
+              </div>
+              <div className="text-right">
+                <p className="text-xs font-semibold text-foreground">
+                  {user.premiumStatus ? "Unlimited (PRO)" : "Daily pool active"}
+                </p>
+                <p className="text-[11px] text-muted-foreground">
+                  refills in {resetCountdown}
+                </p>
+              </div>
+            </div>
+            <div className="flex items-center gap-2">
+              <Button asChild size="sm" variant="outline" className="rounded-xl text-xs flex-1">
+                <Link href="/credits">
+                  <Zap className="h-3.5 w-3.5" />
+                  Spark Wallet
+                </Link>
+              </Button>
+              <Button asChild size="sm" variant="outline" className="rounded-xl text-xs flex-1">
+                <Link href="/pro-plan">
+                  <Crown className="h-3.5 w-3.5" />
+                  Upgrade Plan
+                </Link>
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      </div>
+
       {/* ── OWNER EXCLUSIVE: Coin Gate Controller (for all owner emails) ── */}
       {owner && (
         <Card className="border-amber-500/40 bg-gradient-to-r from-amber-500/5 via-background to-amber-500/10 shadow-sm">
@@ -424,7 +624,7 @@ export default function ProfilePage() {
 
       {/* ── Profile tabs — Progress opens first ─────────────────────────── */}
       <Tabs defaultValue="progress">
-        <TabsList className="grid grid-cols-3 max-w-md">
+        <TabsList className="grid grid-cols-4 max-w-2xl">
           <TabsTrigger value="progress" className="gap-1.5">
             <UserCheck className="h-4 w-4" />
             Progress
@@ -432,6 +632,10 @@ export default function ProfilePage() {
           <TabsTrigger value="level" className="gap-1.5">
             <Sparkles className="h-4 w-4" />
             Level Details
+          </TabsTrigger>
+          <TabsTrigger value="activity" className="gap-1.5">
+            <History className="h-4 w-4" />
+            Activity
           </TabsTrigger>
           <TabsTrigger value="account" className="gap-1.5">
             <User className="h-4 w-4" />
@@ -441,6 +645,38 @@ export default function ProfilePage() {
 
         {/* ── Tab 1: Progress (Default) ─────────────────────────────────── */}
         <TabsContent value="progress" className="space-y-4 pt-2">
+          {/* Study stats & streak (profile feature 2026-10-13) */}
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-3">
+            <Card className="border-orange-500/30 bg-orange-500/[0.06]">
+              <CardContent className="pt-5 pb-4 text-center">
+                <Flame className="h-5 w-5 mx-auto text-orange-500" />
+                <p className="mt-1 text-2xl font-black text-foreground">{streakDays}</p>
+                <p className="text-[11px] font-semibold text-muted-foreground">day streak</p>
+              </CardContent>
+            </Card>
+            <Card className="border-emerald-500/30 bg-emerald-500/[0.06]">
+              <CardContent className="pt-5 pb-4 text-center">
+                <CheckCircle2 className="h-5 w-5 mx-auto text-emerald-500" />
+                <p className="mt-1 text-2xl font-black text-foreground">{completedCount}</p>
+                <p className="text-[11px] font-semibold text-muted-foreground">topics completed</p>
+              </CardContent>
+            </Card>
+            <Card className="border-sky-500/30 bg-sky-500/[0.06]">
+              <CardContent className="pt-5 pb-4 text-center">
+                <BookOpen className="h-5 w-5 mx-auto text-sky-500" />
+                <p className="mt-1 text-2xl font-black text-foreground">{inProgressCount}</p>
+                <p className="text-[11px] font-semibold text-muted-foreground">in progress</p>
+              </CardContent>
+            </Card>
+            <Card className="border-violet-500/30 bg-violet-500/[0.06]">
+              <CardContent className="pt-5 pb-4 text-center">
+                <Trophy className="h-5 w-5 mx-auto text-violet-500" />
+                <p className="mt-1 text-2xl font-black text-foreground">{scholarLevel.currentXp}</p>
+                <p className="text-[11px] font-semibold text-muted-foreground">scholar XP</p>
+              </CardContent>
+            </Card>
+          </div>
+
           {/* Scholar Progression Overview */}
           <Card className="border-primary/20 bg-gradient-to-r from-primary/5 via-card to-background">
             <CardContent className="pt-6">
@@ -787,6 +1023,85 @@ export default function ProfilePage() {
               Log out
             </Button>
           </div>
+        </TabsContent>
+
+        {/* ── Tab 3: Activity (profile feature 2026-10-13) ────────────────── */}
+        <TabsContent value="activity" className="space-y-4 pt-2">
+          <Card className="border-border/60">
+            <CardHeader className="pb-2">
+              <CardTitle className="text-sm font-semibold flex items-center gap-2">
+                <History className="h-4 w-4 text-primary" />
+                Recent Study Activity
+              </CardTitle>
+              <CardDescription className="text-xs">
+                Your latest topic sessions — pick up where you left off.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              {recentActivity.length === 0 ? (
+                <p className="text-xs text-muted-foreground">
+                  No activity yet — open any topic and it will show up here.
+                </p>
+              ) : (
+                <ul className="space-y-1.5">
+                  {recentActivity.map((entry) => {
+                    const href = topicHref(entry);
+                    const title = entry.topic?.title || entry.topicSlug || "Topic";
+                    return (
+                      <li key={entry.id}>
+                        <Link
+                          href={href}
+                          className="flex items-center justify-between gap-3 rounded-xl border border-border/50 px-3 py-2 hover:bg-muted/50 transition-colors"
+                        >
+                          <span className="flex items-center gap-2.5 min-w-0">
+                            {entry.completed ? (
+                              <CheckCircle2 className="h-4 w-4 shrink-0 text-emerald-500" />
+                            ) : (
+                              <BookOpen className="h-4 w-4 shrink-0 text-sky-500" />
+                            )}
+                            <span className="min-w-0">
+                              <span className="block truncate text-xs font-semibold text-foreground">
+                                {title}
+                              </span>
+                              <span className="block truncate text-[11px] text-muted-foreground capitalize">
+                                {entry.subjectSlug?.replace(/-/g, " ")} ·{" "}
+                                {entry.completed ? "completed" : "in progress"}
+                              </span>
+                            </span>
+                          </span>
+                          <ChevronRight className="h-4 w-4 shrink-0 text-muted-foreground" />
+                        </Link>
+                      </li>
+                    );
+                  })}
+                </ul>
+              )}
+            </CardContent>
+          </Card>
+
+          <Card className="border-fuchsia-500/30 bg-fuchsia-500/[0.06]">
+            <CardContent className="pt-5 pb-4 flex flex-wrap items-center justify-between gap-3">
+              <div>
+                <p className="text-sm font-bold text-foreground flex items-center gap-2">
+                  <Sparkles className="h-4 w-4 text-fuchsia-500" />
+                  Continue with Veer
+                </p>
+                <p className="text-xs text-muted-foreground mt-0.5">
+                  {tierMetered
+                    ? `${sparkUsed} of ${tierLimit} AI sparks used today.`
+                    : "Unlimited AI sparks on the owner plan."}
+                </p>
+              </div>
+              <div className="flex gap-2">
+                <Button asChild size="sm" className="rounded-xl text-xs">
+                  <Link href="/chat">Open Chat</Link>
+                </Button>
+                <Button asChild size="sm" variant="outline" className="rounded-xl text-xs">
+                  <Link href="/ai/history">Chat History</Link>
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
         </TabsContent>
       </Tabs>
     </div>

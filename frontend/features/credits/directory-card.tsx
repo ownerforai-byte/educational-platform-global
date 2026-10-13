@@ -187,7 +187,7 @@ const DIRECTORY: Portal[] = [
   },
   {
     title: "Veer Study Assistant",
-    badge: "24/7 VEER · OWNER",
+    badge: "24/7 VEER · 1–50/DAY",
     desc: "Curriculum-aligned intelligent tutor for instant concept explanations, numerical solutions and study plans.",
     href: "/chat",
     icon: Brain,
@@ -195,7 +195,6 @@ const DIRECTORY: Portal[] = [
     gradientClass: "from-fuchsia-500/[0.08] via-card to-card",
     chipClass: "hover:border-fuchsia-500/50 hover:shadow-fuchsia-500/10",
     category: null,
-    ownerOnly: true,
     links: [
       { label: "Open Chat", href: "/chat", category: null },
       { label: "Credits & Plan", href: "/credits", category: null },

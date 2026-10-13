@@ -11,6 +11,10 @@ export interface SessionUser {
   email: string;
   fullName: string | null;
   role: UserRole | null;
+  /** Membership plan tier (migration 008): "member" | "plus" | "pro". */
+  plan?: "member" | "plus" | "pro" | null;
+  /** Legacy PRO flag (profiles.premium_status) — maps to the pro tier. */
+  premiumStatus?: boolean | null;
 }
 
 /** Extended user returned by GET /api/auth/me (includes profile fields). */

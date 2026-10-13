@@ -1427,6 +1427,26 @@ code, kbd, samp, pre {
   will-change: transform;
 }
 
+/* Offscreen render skip (verified against the marquee's transform animation:
+   cards sliding through stay painted). Topic rails carry hundreds of cards —
+   each rendered twice for the seamless loop — so only the cards near the
+   viewport pay layout/paint cost. `contain-intrinsic-size` gives skipped cards
+   their width placeholder so the -50% seam never shifts. */
+.subject-rail-track > li {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 22rem;
+}
+@media (min-width: 640px) {
+  .subject-rail-track > li {
+    contain-intrinsic-size: auto 38rem;
+  }
+}
+@media (min-width: 1280px) {
+  .subject-rail-track > li {
+    contain-intrinsic-size: auto 44rem;
+  }
+}
+
 /* Per-rail Pause/Play switch (`.subject-rail-paused` on that rail's <section>)
    — the six rails are independent, so pausing one never stops another. Hover or
    keyboard focus inside a viewport holds just that rail for reading. */

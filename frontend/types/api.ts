@@ -8,6 +8,8 @@ export interface SessionUser {
   credits?: number;
   creditsLimit?: number;
   premiumStatus?: boolean;
+  /** Membership plan tier (profiles.plan) — drives the AI-spark allowance. */
+  plan?: "member" | "plus" | "pro" | null;
 }
 
 export interface AuthLoginRequest {

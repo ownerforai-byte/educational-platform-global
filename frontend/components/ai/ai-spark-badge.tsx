@@ -2,21 +2,29 @@
 
 import { useEffect, useState } from "react";
 import { Sparkles } from "lucide-react";
+import { useSession } from "@/features/auth/hooks/use-session";
+import {
+  AI_SPARK_LIMITS,
+  AI_SPARK_TIER_LABELS,
+  aiSparkTierFor,
+} from "@/lib/ai/ai-spark-tiers";
+import { getAiSparkUsage } from "@/lib/api/ai";
 
 /**
- * AI SPARK BADGE (owner request 2026-10-12: "separate the ai(veer) spark and
- * content spark -- ai spark shows while chatting only on top").
+ * AI SPARK BADGE (owner requests 2026-10-12 + 2026-10-13).
  *
  * The AI spark is a SEPARATE pool from the content spark:
  *   · AI spark — this badge, rendered ONLY at the top of the Veer chat. It is
- *     an informational daily counter (resets at UTC midnight with the day).
- *     Veer chat is FREE — no AI spark is ever spent (owner policy 2026-10-12:
- *     "Veer chat and everything else are free — no AI spark is ever spent").
+ *     the daily Veer message allowance per tier, ENFORCED since 2026-10-13
+ *     ("restrict the ai spark to 1 for public, 7 for member and unlimited
+ *     for owner … create for plus and pro member also like 25 and 50"):
+ *     guest 1 · member 7 · plus 25 · pro 50 · owner unlimited, per UTC day.
  *   · content spark — the wallet/header badge, spent only on actual
  *     note/content unlocks (see features/credits/constants.ts).
  *
- * The counter tracks how many Veer messages the student has sent today, so
- * the number means something while nothing is ever deducted.
+ * The server is the source of truth (GET /api/ai/spark); the localStorage
+ * mirror below only makes the number honest before the first reply of the
+ * session. Pools refill ONLY at UTC midnight — never on refresh.
  */
 
 const STORAGE_KEY = "veer.ai-spark.v1";
@@ -52,7 +60,7 @@ function writeState(state: AiSparkState) {
   }
 }
 
-/** Record one sent Veer message against today's AI spark counter. */
+/** Record one sent Veer message against today's local AI-spark mirror. */
 export function recordAiSparkUse(): void {
   const state = readState();
   writeState({ day: state.day, used: state.used + 1 });
@@ -60,10 +68,22 @@ export function recordAiSparkUse(): void {
 }
 
 export function AiSparkBadge({ className = "" }: { className?: string }) {
+  const { user } = useSession();
+  const tier = aiSparkTierFor(user ?? null);
+  const limit = AI_SPARK_LIMITS[tier];
+  const metered = Number.isFinite(limit);
   const [used, setUsed] = useState(0);
 
   useEffect(() => {
-    const sync = () => setUsed(readState().used);
+    const sync = () => {
+      setUsed(readState().used);
+      // Server is the source of truth for signed-in tiers (best-effort).
+      getAiSparkUsage()
+        .then((s) => setUsed(s.used))
+        .catch(() => {
+          /* offline / signed out — the local mirror stands */
+        });
+    };
     sync();
     window.addEventListener("veer-ai-spark", sync);
     const interval = setInterval(sync, 30_000); // pick up UTC rollover
@@ -71,16 +91,25 @@ export function AiSparkBadge({ className = "" }: { className?: string }) {
       window.removeEventListener("veer-ai-spark", sync);
       clearInterval(interval);
     };
-  }, []);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [user?.email]);
 
   return (
     <span
       className={`inline-flex items-center gap-1.5 rounded-full border border-violet-500/30 bg-violet-500/10 px-2.5 py-1 text-xs font-bold text-violet-600 dark:text-violet-400 ${className}`}
-      title={`AI Spark — ${used} Veer message${used === 1 ? "" : "s"} today. Chat is free: no AI spark is ever spent.`}
+      title={`AI Spark (${AI_SPARK_TIER_LABELS[tier]}) — ${used}${
+        metered ? `/${limit}` : ""
+      } Veer message${used === 1 ? "" : "s"} today. ${
+        metered
+          ? "Resets at 12:00 AM UTC — Plus gets 25/day, Pro gets 50/day."
+          : "Unlimited on the owner plan."
+      }`}
     >
       <Sparkles className="h-3.5 w-3.5" />
       <span>AI Spark</span>
-      <span className="rounded-full bg-violet-500/20 px-1.5 text-[10px]">{used} today</span>
+      <span className="rounded-full bg-violet-500/20 px-1.5 text-[10px]">
+        {metered ? `${used}/${limit}` : "∞"} today
+      </span>
     </span>
   );
 }

@@ -58,6 +58,13 @@ vi.mock("@/lib/api/owner", () => ({
   updateOwnerSettings: (...args: unknown[]) => updateOwnerSettings(...args),
 }));
 
+const getAiSparkUsage = vi.fn();
+
+vi.mock("@/lib/api/ai", async (importOriginal) => ({
+  ...(await importOriginal<object>()),
+  getAiSparkUsage: (...args: unknown[]) => getAiSparkUsage(...args),
+}));
+
 import ProfilePage from "@/app/(app)/profile/page";
 
 // ─── Fixtures ───────────────────────────────────────────────────────────────
@@ -121,6 +128,12 @@ beforeEach(() => {
   updateOwnerSettings.mockResolvedValue({
     settings: [{ key: "coin_gate_enabled", value: false }],
   });
+  getAiSparkUsage.mockResolvedValue({
+    tier: "owner",
+    limit: null,
+    used: 3,
+    remaining: null,
+  });
 });
 
 // ─── Tests ──────────────────────────────────────────────────────────────────
@@ -150,7 +163,14 @@ describe("ProfilePage", () => {
     expect(screen.getByText("HS")).toBeInTheDocument(); // initials
     expect(screen.getByText("Owner")).toBeInTheDocument(); // role badge
     expect(screen.getByText("PRO")).toBeInTheDocument();
-    expect(screen.getByText(/42/)).toBeInTheDocument(); // credits shown
+    // Balance shows in the wallet card (and wherever else it appears) —
+    // profile features 2026-10-13 added the Content Spark Wallet card.
+    expect(screen.getAllByText(/42/).length).toBeGreaterThanOrEqual(1);
+    // Plan & AI spark card: tier, allowance meter and reset countdown.
+    expect(screen.getByText(/Plan & AI Spark/)).toBeInTheDocument();
+    expect(screen.getByText("content sparks available")).toBeInTheDocument();
+    // Study stats strip: streak + counters.
+    expect(screen.getByText("day streak")).toBeInTheDocument();
     // Owner console shortcut present for allowlisted owners.
     expect(screen.getByRole("link", { name: /owner console/i })).toHaveAttribute(
       "href",

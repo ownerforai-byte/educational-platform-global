@@ -5,7 +5,6 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { CaptainMark } from "@/components/ai/captain-logo";
 import { useSession } from "@/features/auth/hooks/use-session";
-import { isOwnerUser } from "@/lib/owner";
 
 /**
  * Floating AI launcher (bottom-left corner) — OWNER RULE CHANGE 2026-10-02:
@@ -28,16 +27,17 @@ import { isOwnerUser } from "@/lib/owner";
  * is pure noise, and on mobile it sits on top of the composer.
  */
 export function AIWidget() {
-  const { user, isLoading } = useSession();
+  const { isLoading } = useSession();
   const pathname = usePathname();
   // The auth provider hydrates a cached session on the first client render,
   // which the server never sees. Render nothing until mounted so the first
   // client pass matches the server HTML (avoids a hydration mismatch).
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);
-  // Owner emails only (owner request 2026-10-05): students never see the
-  // launcher. Hidden — never a redirect, this is a global floating button.
-  if (!mounted || isLoading || !isOwnerUser(user)) return null;
+  // Open to every tier since 2026-10-13 — Veer chat is metered by AI sparks
+  // (guest 1 / member 7 / plus 25 / pro 50 / owner unlimited per day), not
+  // hidden behind an owner allowlist. Hidden — never a redirect.
+  if (!mounted || isLoading) return null;
   // Already inside a chat room → no launcher (same route it would open).
   if (pathname === "/chat" || pathname.startsWith("/chat/")) return null;
   return (

@@ -290,6 +290,19 @@ export async function getProviders(): Promise<{
   return apiFetch<{ providers: string[]; defaultProvider: string }>("/api/ai/providers");
 }
 
+/** Today's AI-spark usage for the signed-in member (chat badge + profile). */
+export interface AiSparkUsage {
+  tier: "guest" | "member" | "plus" | "pro" | "owner";
+  /** Daily allowance; null = unlimited (owner). */
+  limit: number | null;
+  used: number;
+  remaining: number | null;
+}
+
+export async function getAiSparkUsage(): Promise<AiSparkUsage> {
+  return apiFetch<AiSparkUsage>("/api/ai/spark");
+}
+
 /**
  * Perform an AI-powered search.
  */
