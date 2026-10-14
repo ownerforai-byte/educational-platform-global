@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Search, ChevronRight, Info } from "lucide-react";
 import { Button } from "@/components/ui/button";
@@ -23,13 +23,16 @@ export default function SearchPage() {
   const [searched, setSearched] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
+  const requestIdRef = useRef(0);
 
   const runSearch = async (q: string) => {
     const trimmed = q.trim();
+    const requestId = ++requestIdRef.current;
     if (trimmed.length < 2) {
       setResults([]);
       setSearched(false);
       setError(null);
+      setLoading(false);
       return;
     }
     setLoading(true);
@@ -37,14 +40,23 @@ export default function SearchPage() {
     setSearched(true);
     try {
       const res = await searchContent(trimmed);
-      setResults(res.results ?? []);
+      if (requestId === requestIdRef.current) setResults(res.results ?? []);
     } catch {
-      setResults([]);
-      setError("Search is unavailable right now. Please try again in a moment.");
+      if (requestId === requestIdRef.current) {
+        setResults([]);
+        setError("Search is unavailable right now. Please try again in a moment.");
+      }
     } finally {
-      setLoading(false);
+      if (requestId === requestIdRef.current) setLoading(false);
     }
   };
+
+  useEffect(() => {
+    const initialQuery = new URLSearchParams(window.location.search).get("q")?.trim();
+    if (!initialQuery) return;
+    setQuery(initialQuery);
+    void runSearch(initialQuery);
+  }, []);
 
   const onSubmit = (e: React.FormEvent) => {
     e.preventDefault();
@@ -64,7 +76,8 @@ export default function SearchPage() {
         <div className="relative">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-muted-foreground pointer-events-none" />
           <input
-            type="text"
+            type="search"
+            aria-label="Search notes, topics, labs and exams"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             placeholder="Search by topic, subject, or keyword…"
@@ -79,6 +92,8 @@ export default function SearchPage() {
                 setResults([]);
                 setError(null);
                 setSearched(false);
+                setLoading(false);
+                requestIdRef.current += 1;
               }}
               className="absolute right-3 top-1/2 -translate-y-1/2 p-1 rounded-md text-muted-foreground hover:text-foreground transition-colors"
               aria-label="Clear search"

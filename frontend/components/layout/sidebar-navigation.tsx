@@ -4,7 +4,8 @@ import { useEffect, useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
-import { LogIn, LogOut, ChevronsUp } from "lucide-react";
+import { LogIn, LogOut, ChevronsUp, Palette } from "lucide-react";
+import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { logoutAction } from "@/features/auth/actions";
 import { useSession } from "@/features/auth/hooks/use-session";
 import { isOwnerUser } from "@/lib/owner";
@@ -168,6 +169,7 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
     account: false,
     r1: false,
     owner: false,
+    theme: false,
   });
 
   const toggleSection = (key: string) =>
@@ -274,6 +276,31 @@ export function SidebarNavigation({ collapsed = false }: SidebarNavigationProps)
             railCollapsed={collapsed}
           />
         ))}
+
+        {collapsed ? (
+          <div className="mb-2 flex items-center justify-center py-2">
+            <ThemeToggle compact />
+          </div>
+        ) : (
+          <section className="mb-2">
+            <button
+              type="button"
+              onClick={() => toggleSection("theme")}
+              aria-expanded={!collapsedSections.theme}
+              aria-label={`${collapsedSections.theme ? "Expand" : "Collapse"} Theme`}
+              className="flex w-full items-center gap-2 rounded-lg px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-muted-foreground/70 transition-all hover:bg-muted/50 hover:text-foreground"
+            >
+              <Palette className="h-3.5 w-3.5 shrink-0" />
+              <span className="flex-1 text-left">Theme</span>
+              <ChevronsUp className={cn("h-3 w-3 opacity-50 transition-transform", collapsedSections.theme && "rotate-180")} />
+            </button>
+            {!collapsedSections.theme && (
+              <div className="mt-1 px-1">
+                <ThemeToggle />
+              </div>
+            )}
+          </section>
+        )}
       </div>
 
       {/* Bottom action */}

@@ -1,15 +1,14 @@
 "use client";
 
 import { useEffect, useState, Suspense } from "react";
-import { useRouter, usePathname } from "next/navigation";
+import { usePathname } from "next/navigation";
 import Link from "next/link";
-import { PanelLeftClose, PanelLeftOpen, Atom, Search, Bell } from "lucide-react";
+import { PanelLeftClose, PanelLeftOpen, Atom, Bell } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { MobileNav } from "./mobile-nav";
 import { MobileQuickNav } from "./mobile-quick-nav";
 import { SidebarNavigation } from "./sidebar-navigation";
 import { BackButton } from "@/components/navigation/back-button";
-import { ThemeToggle } from "@/components/theme/theme-toggle";
 import { R1Shortcut } from "./r1-shortcut";
 import { GlobalSearch } from "./global-search";
 import { CreditBadge } from "./credit-badge";
@@ -22,7 +21,6 @@ interface AppShellProps {
 }
 
 export function AppShell({ children, breadcrumbs }: AppShellProps) {
-  const router = useRouter();
   const pathname = usePathname();
   const isChatRoom = pathname === "/chat" || pathname.startsWith("/chat/");
   const [preferencesLoaded, setPreferencesLoaded] = useState(false);
@@ -40,17 +38,6 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
     } catch { /* Storage may be unavailable in private/embedded browsers. */ }
     setPreferencesLoaded(true);
   }, []);
-
-  useEffect(() => {
-    const onKey = (event: KeyboardEvent) => {
-      if ((event.ctrlKey || event.metaKey) && event.key.toLowerCase() === 'k') {
-        event.preventDefault();
-        router.push('/search');
-      }
-    };
-    window.addEventListener('keydown', onKey);
-    return () => window.removeEventListener('keydown', onKey);
-  }, [router]);
 
   useEffect(() => {
     if (!preferencesLoaded) return;
@@ -88,7 +75,7 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
   return (
     <div className="flex min-h-screen flex-col bg-background">
       <a href="#main-content" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-lg focus:bg-background focus:px-4 focus:py-3 focus:text-primary focus:shadow-lg">Skip to content</a>
-      {/* ── Header (permanently visible — pin toggle removed) ───────── */}
+      {/* ── Header: left navigation, centered search, right actions ── */}
       <header
         /* SOLID, not translucent — owner report 2026-10-04: "while scrolling it
            leaks a little". This is the third round of the same leak: /70 let the
@@ -102,14 +89,9 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
            worth paying to never show content through the nav. */
         className="pt-safe-top sticky top-0 z-40 border-b border-border/40 bg-background translate-y-0 shadow-md"
       >
-        {/* RESPONSIVE IN BOTH AXES (owner request 2026-10-12: "while adjusting
-            make it adjust in vertical increase or decrease also not only
-            horizontal"). The row is min-h (never fixed h) and wraps: when
-            horizontal room runs out the right cluster drops to its own row and
-            the bar grows taller; on roomier screens the row un-wraps and the
-            bar shrinks back — so adjusting the window adjusts the header
-            vertically as well as horizontally. */}
-        <div className="flex min-h-12 md:min-h-14 flex-wrap items-center gap-x-2 gap-y-1.5 px-4 md:px-6 py-1.5">
+        {/* Three anchored columns keep the global search centered while the
+            left navigation and right-side actions remain clearly separated. */}
+        <div className="grid min-h-12 md:min-h-14 grid-cols-[auto_minmax(0,1fr)] md:grid-cols-[auto_minmax(0,1fr)_auto] items-center gap-x-2 gap-y-2 px-4 md:px-6 py-1.5">
           {/* Left: mobile hamburger + desktop collapse toggle + logo */}
           <div className="flex items-center gap-2 min-w-0">
             <MobileNav />
@@ -139,28 +121,15 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
             </Link>
           </div>
 
-          {/* Center: inline global search (Ctrl+K opens the same engine) */}
-          <div className="hidden md:flex flex-1 justify-center px-4">
+          {/* Center: responsive global search (Ctrl/⌘+K uses this engine) */}
+          <div className="col-span-2 row-start-2 flex min-w-0 justify-center px-1 md:col-span-1 md:col-start-2 md:row-start-1 md:px-4">
             <GlobalSearch />
           </div>
-          <div className="flex-1 md:hidden" />
 
-          {/* Right: pin toggle + theme studio + search + credit badge + auth links */}
-          <div className="flex items-center gap-1.5 shrink-0">
-            {/* Quick Search Shortcut */}
-            <Link
-              href="/search"
-              className="hidden sm:inline-flex items-center gap-1.5 px-2.5 h-8 rounded-xl border border-border/80 bg-card hover:bg-muted/60 text-xs font-semibold text-muted-foreground hover:text-foreground transition-all shadow-sm whitespace-nowrap"
-              title="Global search across all subjects, notes, theorems, derivations, and labs"
-            >
-              <Search className="h-3.5 w-3.5 text-muted-foreground" />
-              <span>Search</span>
-              <kbd className="text-[9px] font-mono px-1 py-0.5 rounded bg-muted border border-border/60">Ctrl/⌘ K</kbd>
-            </Link>
+          {/* Right: shortcuts, notifications, tools, credits and account */}
+          <div className="col-start-2 row-start-1 flex items-center justify-end gap-1.5 shrink-0 md:col-start-3">
 
             <R1Shortcut />
-
-            <ThemeToggle />
 
             {/* Notifications — bell opens the standing notice board (/notice).
                 Kept visible on every breakpoint so mobile users can always

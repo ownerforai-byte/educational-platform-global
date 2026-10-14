@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useState, useRef, useEffect } from "react";
-import { useTheme, THEME_OPTIONS, Theme } from "@/components/theme/theme-provider";
+import { useTheme, THEME_OPTIONS } from "@/components/theme/theme-provider";
 import { Button } from "@/components/ui/button";
-import { Palette, Check, Sun, Moon, Sparkles, ChevronDown } from "lucide-react";
+import { Palette, Check, Sparkles, ChevronDown } from "lucide-react";
 
-export function ThemeToggle() {
+export function ThemeToggle({ compact = false }: { compact?: boolean }) {
   const { theme, setTheme, resolvedTheme } = useTheme();
   const [isOpen, setIsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement>(null);
@@ -29,29 +29,37 @@ export function ThemeToggle() {
     <div className="relative" ref={dropdownRef}>
       {/* Trigger Button with Active Theme Color Swatch */}
       <button
+        type="button"
         onClick={() => setIsOpen((prev) => !prev)}
-        className="flex items-center gap-1.5 h-8 px-2 rounded-xl border border-border/70 bg-card hover:bg-muted/80 text-foreground transition-all text-xs font-semibold shadow-sm"
+        className={compact
+          ? "flex h-9 w-9 items-center justify-center rounded-xl border border-border/70 bg-card text-foreground shadow-sm transition-all hover:bg-muted/80"
+          : "flex w-full items-center gap-2 rounded-xl border border-border/70 bg-card px-2.5 py-2 text-left text-xs font-semibold text-foreground shadow-sm transition-all hover:bg-muted/80"}
         title="Choose Theme Palette"
         aria-label="Choose Theme Palette"
+        aria-expanded={isOpen}
       >
         <span
           className="h-3 w-3 rounded-full border border-black/20 shadow-xs shrink-0"
           style={{ backgroundColor: activeOption.colors.primary }}
         />
         <Palette className="h-3.5 w-3.5 text-muted-foreground" />
-        <span className="hidden xl:inline text-[11px] max-w-[80px] truncate">
-          {activeOption.label}
-        </span>
-        <ChevronDown className="h-3 w-3 text-muted-foreground" />
+        {!compact && (
+          <>
+            <span className="flex-1 truncate text-[11px]">{activeOption.label}</span>
+            <ChevronDown className="h-3 w-3 text-muted-foreground" />
+          </>
+        )}
       </button>
 
       {/* Palette Dropdown Menu */}
       {isOpen && (
-        <div className="absolute right-0 top-10 z-50 w-72 rounded-2xl border border-border/80 bg-card p-2 shadow-2xl animate-fade-in space-y-1">
+        <div className={compact
+          ? "absolute left-full top-0 z-50 ml-2 w-72 rounded-2xl border border-border/80 bg-card p-2 shadow-2xl animate-fade-in space-y-1"
+          : "absolute left-0 top-full z-50 mt-2 w-full min-w-64 rounded-2xl border border-border/80 bg-card p-2 shadow-2xl animate-fade-in space-y-1"}>
           <div className="px-2.5 py-1.5 border-b border-border/50 flex items-center justify-between">
             <span className="text-xs font-bold text-foreground flex items-center gap-1.5">
               <Sparkles className="h-3.5 w-3.5 text-primary" />
-              <span>Theme Studio</span>
+              <span>Theme</span>
             </span>
             <span className="text-[10px] text-muted-foreground font-mono">
               9 Themes
@@ -63,6 +71,7 @@ export function ThemeToggle() {
               const isSelected = theme === opt.id;
               return (
                 <button
+                  type="button"
                   key={opt.id}
                   onClick={() => {
                     setTheme(opt.id);
