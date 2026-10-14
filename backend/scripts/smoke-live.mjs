@@ -152,32 +152,27 @@ if (isCI && !(email && password)) {
   console.log("SKIP  auth round-trip (set SMOKE_OWNER_EMAIL / SMOKE_OWNER_PASSWORD to enable)");
 }
 
-// ── 4. Guest free trial holds (owner 2026-10-01: 1 free message/day) ──
-// Each guest identity gets ONE free message, then 402 "Sign in required".
-// Two consecutive guest calls pin the contract whatever state the runner's
-// shared egress IP arrives in: every response must be either a real trial
-// answer (200) or the trial-spent gate (402) — never a 5xx — and the SAME
-// identity can never pass twice, so at least one 402 must appear.
-const guestTrial = await j("/api/ai/guest", {
+// ── 4. Public guest-chat access remains closed ──
+// The guest route is session- and owner-email-gated (see ai-owner-gate.test.ts).
+// Do not send an unauthenticated prompt through this endpoint or assert the
+// retired free-trial contract; both repeat calls must be rejected before AI.
+const guestUnauthed = await j("/api/ai/guest", {
   method: "POST",
   body: JSON.stringify({ messages: [{ role: "user", content: "Reply with the single word: ready" }] }),
 });
-const guestAfter = await j("/api/ai/guest", {
+const guestRepeat = await j("/api/ai/guest", {
   method: "POST",
   body: JSON.stringify({ messages: [{ role: "user", content: "Reply with the single word: ready" }] }),
 });
-const trialOk = (g) =>
-  (g.status === 200 && typeof g.body?.response === "string" && g.body.response.length > 0) ||
-  (g.status === 402 && g.body?.error === "Sign in required");
 step(
-  "guest trial: both calls are 200-trial or 402-trial-spent (never 5xx)",
-  trialOk(guestTrial) && trialOk(guestAfter),
-  `status=${guestTrial.status},${guestAfter.status}`
+  "guest chat requires an authenticated owner session",
+  guestUnauthed.status === 401 && guestUnauthed.body?.error === "Unauthorized",
+  `status=${guestUnauthed.status}`
 );
 step(
-  "guest trial: 1/day enforced (second call on one identity is gated)",
-  guestTrial.status === 402 || guestAfter.status === 402,
-  `status=${guestTrial.status},${guestAfter.status}`
+  "repeated anonymous guest chat remains rejected",
+  guestRepeat.status === 401 && guestRepeat.body?.error === "Unauthorized",
+  `status=${guestRepeat.status}`
 );
 
 console.log(failures === 0 ? "\nALL SMOKE CHECKS PASSED" : `\n${failures} SMOKE CHECK(S) FAILED`);
