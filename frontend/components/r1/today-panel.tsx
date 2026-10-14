@@ -23,6 +23,9 @@ export function TodayPanel() {
   const [savingHabit, setSavingHabit] = useState<string | null>(null);
 
   const todayHabits = (habits ?? []).filter((h) => !h.archived);
+  const timedMinutes = (activities ?? [])
+    .filter((a) => a.category === "timed")
+    .reduce((sum, a) => sum + (a.minutes ?? 0), 0);
   const upcoming = (plans ?? [])
     .filter((p) => p.status === "planned" || p.status === "in_progress")
     .slice(0, 5);
@@ -86,9 +89,16 @@ export function TodayPanel() {
           <h3 className="flex items-center gap-2 text-sm font-semibold">
             <Activity className="h-4 w-4 text-primary" /> Logged today
           </h3>
-          <Link href="/r1/activities" className="text-xs text-primary hover:underline">
-            Open log
-          </Link>
+          <div className="flex items-center gap-2">
+            {timedMinutes > 0 && (
+              <span className="rounded-md bg-primary/10 px-1.5 py-0.5 text-[10px] font-semibold text-primary">
+                {timedMinutes} min timed
+              </span>
+            )}
+            <Link href="/r1/activities" className="text-xs text-primary hover:underline">
+              Open log
+            </Link>
+          </div>
         </div>
         {(activities ?? []).length === 0 ? (
           <EmptyRow label="Nothing logged today yet." />
