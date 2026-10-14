@@ -1,0 +1,20 @@
+{
+  "$schema": "https://raw.githubusercontent.com/google/bubblewrap/main/bubblewrap.schema.json",
+  "package": "com.ravikisan.platform",
+  "name": "Ravikisan's Platform",
+  "version": 1,
+  "versionName": "1.0.0",
+  "url": "https://ravikisan.vercel.app",
+  "manifestPath": "https://ravikisan.vercel.app/manifest.json",
+  "icons": {},
+  "generateAppBundles": true,
+  "minSdk": 30,
+  "targetSdk": 36,
+  "ksp": false,
+  "shortcuts": [],
+  "domain": "ravikisan.vercel.app",
+  "urlPath": "/",
+  "display": "standalone",
+  "themeColor": "#3b82f6",
+  "backgroundColor": "#0f172a"
+}

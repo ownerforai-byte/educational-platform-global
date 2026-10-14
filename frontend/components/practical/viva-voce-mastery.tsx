@@ -207,23 +207,39 @@ const MASTER_VIVA_QUESTIONS: VivaCard[] = [
 
 interface VivaVoceMasteryProps {
   subjectFilter?: "all" | "physics" | "chemistry" | "biology";
+  initialSearchQuery?: string;
+  searchQuery?: string;
+  onSearchQueryChange?: (query: string) => void;
 }
 
-export function VivaVoceMastery({ subjectFilter = "all" }: VivaVoceMasteryProps) {
+export function VivaVoceMastery({
+  subjectFilter = "all",
+  initialSearchQuery = "",
+  searchQuery: controlledSearchQuery,
+  onSearchQueryChange,
+}: VivaVoceMasteryProps) {
   const [selectedSubject, setSelectedSubject] = useState<"all" | "physics" | "chemistry" | "biology">(subjectFilter);
-  const [searchQuery, setSearchQuery] = useState<string>("");
+  const [localSearchQuery, setLocalSearchQuery] = useState<string>(initialSearchQuery);
+  const searchQuery = controlledSearchQuery ?? localSearchQuery;
+  const updateSearchQuery = (query: string) => {
+    setLocalSearchQuery(query);
+    onSearchQueryChange?.(query);
+  };
   const [studyMode, setStudyMode] = useState<"cards" | "flashcard">("cards");
   const [flashcardIndex, setFlashcardIndex] = useState<number>(0);
   const [isFlipped, setIsFlipped] = useState<boolean>(false);
   const [scoreMastered, setScoreMastered] = useState<number>(0);
 
   const filteredQuestions = useMemo(() => {
+    const query = searchQuery.trim().toLowerCase();
     return MASTER_VIVA_QUESTIONS.filter((q) => {
       const matchSubject = selectedSubject === "all" || q.subject === selectedSubject;
       const matchQuery =
-        q.question.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        q.answer.toLowerCase().includes(searchQuery.toLowerCase()) ||
-        q.experiment.toLowerCase().includes(searchQuery.toLowerCase());
+        !query ||
+        q.question.toLowerCase().includes(query) ||
+        q.answer.toLowerCase().includes(query) ||
+        q.experiment.toLowerCase().includes(query) ||
+        q.examinerTip.toLowerCase().includes(query);
       return matchSubject && matchQuery;
     });
   }, [selectedSubject, searchQuery]);
@@ -302,10 +318,15 @@ export function VivaVoceMastery({ subjectFilter = "all" }: VivaVoceMasteryProps)
         <div className="relative min-w-[240px] flex-1 sm:flex-initial">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
           <input
-            type="text"
+            type="search"
+            aria-label="Search viva questions and concepts"
             placeholder="Search viva questions & concepts..."
             value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
+            onChange={(e) => {
+              updateSearchQuery(e.target.value);
+              setFlashcardIndex(0);
+              setIsFlipped(false);
+            }}
             className="w-full text-xs rounded-xl border border-border bg-card pl-9 pr-3 py-1.5 focus:outline-none focus:ring-1 focus:ring-primary"
           />
         </div>

@@ -245,6 +245,23 @@ export function Footer() {
               Search
             </Link>
             <span>·</span>
+            {/* Legal pages (2026-10-14): public, never-gated, required for
+                the Google Play listing. The four docs live under /legal. */}
+            <Link
+              href="/legal/privacy"
+              className="inline-flex items-center gap-1 hover:text-primary transition-colors"
+            >
+              <ShieldCheck className="h-3 w-3" />
+              <span>Privacy</span>
+            </Link>
+            <span>·</span>
+            <Link
+              href="/legal/terms"
+              className="inline-flex items-center gap-1 hover:text-primary transition-colors"
+            >
+              <span>Terms</span>
+            </Link>
+            <span>·</span>
             {/* Owner request (2026-09-30): the notice board is reachable from
                 here — it is a public, never-gated page that is not advertised
                 on the home screen. Pricing is NOT linked from the footer any

@@ -1,0 +1,17 @@
+node_modules/
+android/
+!android/
+!android/**
+android/build/
+android/app/build/
+android/.gradle/
+android/local.properties
+*.idb
+*.log
+*.txt
+answers.txt
+*.jks
+*.keystore
+*.aab
+keystore.jks
+release/

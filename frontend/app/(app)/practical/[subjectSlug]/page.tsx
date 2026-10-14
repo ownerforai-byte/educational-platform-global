@@ -101,14 +101,15 @@ export default function PracticalSubjectPage({
     0
   );
 
+  const normalizedSearchQuery = searchQuery.trim().toLowerCase();
   const filteredUnits = subject.units
     .filter((unit) => selectedGrade === "all" || unit.grade === selectedGrade)
     .map((unit) => {
-      if (!searchQuery) return unit;
-      const matchedExps = unit.experiments.filter(
-        (e) =>
-          e.title.toLowerCase().includes(searchQuery.toLowerCase()) ||
-          e.aim.toLowerCase().includes(searchQuery.toLowerCase())
+      if (!normalizedSearchQuery) return unit;
+      const matchedExps = unit.experiments.filter((experiment) =>
+        `${unit.title} ${experiment.title} ${experiment.aim} ${(experiment.theory ?? []).join(" ")}`
+          .toLowerCase()
+          .includes(normalizedSearchQuery),
       );
       return { ...unit, experiments: matchedExps };
     })
@@ -245,7 +246,8 @@ export default function PracticalSubjectPage({
             <div className="relative min-w-[240px] flex-1 sm:flex-initial">
               <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-3.5 w-3.5 text-muted-foreground" />
               <input
-                type="text"
+                type="search"
+                aria-label="Search practical experiments"
                 placeholder="Search experiments by title or aim..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
@@ -256,7 +258,11 @@ export default function PracticalSubjectPage({
 
           {/* Units and Experiments List */}
           <div className="space-y-8">
-            {filteredUnits.map((unit, ui) => (
+            {filteredUnits.length === 0 ? (
+              <p className="rounded-2xl border border-dashed border-border p-8 text-center text-sm text-muted-foreground">
+                No experiments match “{searchQuery}”.
+              </p>
+            ) : filteredUnits.map((unit, ui) => (
               <div key={unit.id} className="space-y-4">
                 <div className="flex items-center gap-3">
                   <span

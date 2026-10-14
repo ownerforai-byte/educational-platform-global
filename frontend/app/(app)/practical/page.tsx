@@ -32,6 +32,20 @@ export default function PracticalLandingPage() {
   const [activeTab, setActiveTab] = useState<"overview" | "simulators" | "viva" | "calculations">("overview");
   const [activeSimSubject, setActiveSimSubject] = useState<"physics" | "chemistry" | "biology">("physics");
   const [searchQuery, setSearchQuery] = useState("");
+  const query = searchQuery.trim().toLowerCase();
+  const matchesPracticalSubject = (subject: (typeof subjects)[number]) =>
+    `${subject.name} ${subject.description} ${subject.slug} ${subject.units
+      .flatMap((unit) => [unit.title, ...unit.experiments.map((experiment) => `${experiment.title} ${experiment.aim}`)])
+      .join(" ")}`
+      .toLowerCase()
+      .includes(query);
+  const filteredSubjects = subjects.filter(matchesPracticalSubject);
+  const matchingSimulatorSubjects = subjects
+    .filter(matchesPracticalSubject)
+    .map((subject) => subject.slug)
+    .filter((slug): slug is "physics" | "chemistry" | "biology" =>
+      slug === "physics" || slug === "chemistry" || slug === "biology",
+    );
 
   const totalExperimentsCount = subjects.reduce(
     (sum, s) => sum + s.units.reduce((uSum, u) => uSum + u.experiments.length, 0),
@@ -116,9 +130,25 @@ export default function PracticalLandingPage() {
       {/* TAB 1: SUBJECT PRACTICAL SYLLABI OVERVIEW */}
       {activeTab === "overview" && (
         <div className="space-y-8">
+          <div className="relative max-w-lg">
+            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <input
+              type="search"
+              aria-label="Search practical subjects"
+              value={searchQuery}
+              onChange={(event) => setSearchQuery(event.target.value)}
+              placeholder="Search practical subjects and experiments…"
+              className="w-full rounded-xl border border-border bg-card py-2 pl-9 pr-3 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
+            />
+          </div>
           {/* Practical Subjects Grid */}
+          {filteredSubjects.length === 0 ? (
+            <p className="rounded-2xl border border-dashed border-border p-8 text-center text-sm text-muted-foreground">
+              No practical subjects match “{searchQuery}”.
+            </p>
+          ) : (
           <div className="grid gap-6 sm:grid-cols-3">
-            {subjects.map((subject) => {
+            {filteredSubjects.map((subject) => {
               const totalExperiments = subject.units.reduce(
                 (sum, unit) => sum + unit.experiments.length,
                 0
@@ -182,6 +212,7 @@ export default function PracticalLandingPage() {
               );
             })}
           </div>
+          )}
 
           {/* NEB Practical Exam Scoring Scheme Card */}
           <div className="rounded-3xl border border-border/70 bg-gradient-to-br from-card/80 via-card to-background p-6 sm:p-8 space-y-4 shadow-lg">
@@ -233,9 +264,22 @@ export default function PracticalLandingPage() {
       {/* TAB 2: VIRTUAL APPARATUS SIMULATORS */}
       {activeTab === "simulators" && (
         <div className="space-y-6">
+          <div className="relative max-w-lg">
+            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <input
+              type="search"
+              aria-label="Search practical simulators"
+              value={searchQuery}
+              onChange={(event) => setSearchQuery(event.target.value)}
+              placeholder="Search practical simulators…"
+              className="w-full rounded-xl border border-border bg-card py-2 pl-9 pr-3 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
+            />
+          </div>
           <div className="flex flex-wrap items-center gap-2">
             <button
               onClick={() => setActiveSimSubject("physics")}
+              disabled={query.length > 0 && !matchingSimulatorSubjects.includes("physics")}
+              aria-pressed={activeSimSubject === "physics"}
               className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                 activeSimSubject === "physics"
                   ? "bg-sky-600 text-white shadow-md shadow-sky-600/20"
@@ -246,6 +290,8 @@ export default function PracticalLandingPage() {
             </button>
             <button
               onClick={() => setActiveSimSubject("chemistry")}
+              disabled={query.length > 0 && !matchingSimulatorSubjects.includes("chemistry")}
+              aria-pressed={activeSimSubject === "chemistry"}
               className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                 activeSimSubject === "chemistry"
                   ? "bg-amber-600 text-white shadow-md shadow-amber-600/20"
@@ -256,6 +302,8 @@ export default function PracticalLandingPage() {
             </button>
             <button
               onClick={() => setActiveSimSubject("biology")}
+              disabled={query.length > 0 && !matchingSimulatorSubjects.includes("biology")}
+              aria-pressed={activeSimSubject === "biology"}
               className={`flex items-center gap-2 px-4 py-2 rounded-xl text-xs font-bold transition-all ${
                 activeSimSubject === "biology"
                   ? "bg-emerald-600 text-white shadow-md shadow-emerald-600/20"
@@ -266,17 +314,60 @@ export default function PracticalLandingPage() {
             </button>
           </div>
 
-          {activeSimSubject === "physics" && <PhysicsPracticalStudio />}
-          {activeSimSubject === "chemistry" && <ChemistryPracticalStudio />}
-          {activeSimSubject === "biology" && <BiologyPracticalStudio />}
+          {matchingSimulatorSubjects.length === 0 ? (
+            <p className="rounded-2xl border border-dashed border-border p-8 text-center text-sm text-muted-foreground">
+              No practical simulators match “{searchQuery}”.
+            </p>
+          ) : (
+            <>
+              {matchingSimulatorSubjects.includes(activeSimSubject) && activeSimSubject === "physics" && <PhysicsPracticalStudio />}
+              {matchingSimulatorSubjects.includes(activeSimSubject) && activeSimSubject === "chemistry" && <ChemistryPracticalStudio />}
+              {matchingSimulatorSubjects.includes(activeSimSubject) && activeSimSubject === "biology" && <BiologyPracticalStudio />}
+            </>
+          )}
+
         </div>
       )}
 
       {/* TAB 3: VIVA VOCE EXAMINATION PREP */}
-      {activeTab === "viva" && <VivaVoceMastery />}
+      {activeTab === "viva" && (
+        <div className="space-y-4">
+          <div className="relative max-w-lg">
+            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <input
+              type="search"
+              aria-label="Search practical viva questions"
+              value={searchQuery}
+              onChange={(event) => setSearchQuery(event.target.value)}
+              placeholder="Search practical viva questions…"
+              className="w-full rounded-xl border border-border bg-card py-2 pl-9 pr-3 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
+            />
+          </div>
+          <VivaVoceMastery
+            initialSearchQuery={searchQuery}
+            searchQuery={searchQuery}
+            onSearchQueryChange={setSearchQuery}
+          />
+        </div>
+      )}
 
       {/* TAB 4: LIVE OBSERVATION & CALCULATION ENGINE */}
-      {activeTab === "calculations" && <ObservationCalculationEngine />}
+      {activeTab === "calculations" && (
+        <div className="space-y-4">
+          <div className="relative max-w-lg">
+            <Search className="pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-muted-foreground" />
+            <input
+              type="search"
+              aria-label="Search practical calculation tools"
+              value={searchQuery}
+              onChange={(event) => setSearchQuery(event.target.value)}
+              placeholder="Search practical calculation tools…"
+              className="w-full rounded-xl border border-border bg-card py-2 pl-9 pr-3 text-sm focus:border-primary focus:outline-none focus:ring-2 focus:ring-primary/30"
+            />
+          </div>
+          <ObservationCalculationEngine searchQuery={searchQuery} />
+        </div>
+      )}
     </div>
   );
 }

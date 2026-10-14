@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Cookie Policy — Ravikisan's Platform</title>
+<style>
+:root{--ink:#0f172a;--muted:#475569;--accent:#3b82f6}
+*{box-sizing:border-box}body{margin:0;font:16px/1.6 -apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;background:#f1f5f9;color:var(--ink)}
+.wrap{max-width:760px;margin:0 auto;padding:40px 24px 80px}
+h1{font-size:1.9rem;margin:0 0 .4rem}h2{font-size:1.2rem;margin-top:1.6rem}
+.meta{color:var(--muted);font-size:.95rem;margin-bottom:1.2rem}
+.tag{display:inline-block;background:#e0eaff;color:#1d4ed8;font-size:.75rem;font-weight:700;padding:3px 10px;border-radius:999px}
+table{border-collapse:collapse;width:100%;font-size:.95rem;margin:1rem 0}th,td{border:1px solid #e2e8f0;padding:9px 11px;text-align:left}th{background:#f8fafc}
+ul{padding-left:1.1rem}a{color:var(--accent)}code{background:#eef2ff;padding:1px 5px;border-radius:4px;font-size:.9em}
+hr{border:0;border-top:1px solid #e2e8f0;margin:2rem 0}
+@media(max-width:600px){.wrap{padding:24px 16px 60px}h1{font-size:1.5rem}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<span class="tag">LEGAL</span>
+<h1>Cookie &amp; Session Policy</h1>
+<div class="meta"><strong>App:</strong> Ravikisan's Platform &middot; <strong>Last updated:</strong> 14 October 2026 &middot; <strong>Contact:</strong> ravikisan1814@gmail.com</div>
+
+<h2>What we use</h2>
+<p>We use <strong>functionally essential</strong> cookies only, to keep you signed in and protect your account. We do <strong>not</strong> use advertising cookies or third-party analytics trackers.</p>
+
+<h2>Cookies set</h2>
+<table>
+<tr><th>Cookie</th><th>Purpose</th><th>Type</th><th>Lifetime</th></tr>
+<tr><td><code>sb-access-token</code></td><td>Short-lived session (keeps you logged in)</td><td>Essential · httpOnly · Secure in production · SameSite=Lax</td><td>~1 hour, auto-refreshed</td></tr>
+<tr><td><code>sb-refresh-token</code></td><td>Long-lived token to stay signed in</td><td>Essential · httpOnly · Secure · SameSite=Lax</td><td>30 days, rotated on refresh</td></tr>
+</table>
+<ul>
+<li>Both are <strong><code>httpOnly</code></strong> (not readable by page scripts).</li>
+<li>In <strong>production</strong> both are flagged <strong><code>Secure</code></strong> (HTTPS only).</li>
+<li><code>SameSite=Lax</code> limits cross-site sending (reduces CSRF risk).</li>
+</ul>
+
+<h2>Browser / PWA local storage</h2>
+<p>If you install the App as a PWA or use it in a browser, we may use <strong>local storage</strong> for non-essential, non-personal UI preferences (e.g. theme). It does not contain your password or personal data.</p>
+
+<h2>Controlling / removing</h2>
+<ul>
+<li>We do not set tracking cookies to opt out of.</li>
+<li>Blocking the two session cookies means you cannot stay signed in, and authenticated features (progress, bookmarks, AI history) become unavailable.</li>
+<li>Use <strong>Sign out</strong> to clear both session cookies.</li>
+</ul>
+
+<h2>Protection &amp; changes</h2>
+<p>Sessions are protected in transit (HTTPS) and at rest (Supabase). We never read or log full passwords. We may update this policy; changes are marked with a new date.</p>
+<hr>
+<p class="meta"><strong>Contact:</strong> ravikisan1814@gmail.com</p>
+</div>
+</body>
+</html>

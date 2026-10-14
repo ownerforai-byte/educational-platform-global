@@ -1,0 +1,17 @@
+{
+  "name": "ravikisan-twa",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Google Play Trusted Web Activity (TWA) wrapper for Ravikisan's Platform (https://ravikisan.vercel.app). Built with Bubblewrap.",
+  "scripts": {
+    "init": "npx @bubblewrap/cli init --manifest \"https://ravikisan.vercel.app/manifest.json\" .",
+    "build": "npx @bubblewrap/cli build",
+    "build:unsigned": "npx @bubblewrap/cli build --unsigned",
+    "dev": "npx @bubblewrap/cli dev",
+    "serve": "npx @bubblewrap/cli serve",
+    "deploy": "npx @bubblewrap/cli deploy"
+  },
+  "devDependencies": {
+    "@bubblewrap/cli": "^1.27.0"
+  }
+}

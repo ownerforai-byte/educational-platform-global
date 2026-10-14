@@ -143,11 +143,19 @@ const PRESETS: ExperimentPreset[] = [
   },
 ];
 
-export function ObservationCalculationEngine() {
+export function ObservationCalculationEngine({ searchQuery = "" }: { searchQuery?: string }) {
   const [selectedPresetId, setSelectedPresetId] = useState<string>("pendulum-g");
-  const preset = PRESETS.find((p) => p.id === selectedPresetId) || PRESETS[0];
-
-  const [dataPoints, setDataPoints] = useState<{ x: number; y: number }[]>(preset.defaultData);
+  const query = searchQuery.trim().toLowerCase();
+  const visiblePresets = PRESETS.filter((item) =>
+    `${item.name} ${item.subject} ${item.independentLabel} ${item.dependentLabel} ${item.formulaDescription}`
+      .toLowerCase()
+      .includes(query),
+  );
+  const [dataPoints, setDataPoints] = useState<{ x: number; y: number }[]>(PRESETS[0].defaultData);
+  const activePresetId = visiblePresets.some((item) => item.id === selectedPresetId)
+    ? selectedPresetId
+    : visiblePresets[0]?.id;
+  const preset = PRESETS.find((item) => item.id === activePresetId) ?? PRESETS[0];
 
   const handlePresetChange = (id: string) => {
     setSelectedPresetId(id);
@@ -225,20 +233,28 @@ export function ObservationCalculationEngine() {
         </div>
 
         {/* Preset Selector */}
-        <select
-          value={selectedPresetId}
-          onChange={(e) => handlePresetChange(e.target.value)}
-          className="text-xs rounded-xl border border-border bg-background px-3 py-2 font-medium"
-        >
-          {PRESETS.map((p) => (
-            <option key={p.id} value={p.id}>
-              {p.name}
-            </option>
-          ))}
-        </select>
+        {visiblePresets.length > 0 && (
+          <select
+            aria-label="Select calculation tool"
+            value={activePresetId}
+            onChange={(e) => handlePresetChange(e.target.value)}
+            className="text-xs rounded-xl border border-border bg-background px-3 py-2 font-medium"
+          >
+            {visiblePresets.map((p) => (
+              <option key={p.id} value={p.id}>
+                {p.name}
+              </option>
+            ))}
+          </select>
+        )}
       </div>
 
-      <div className="grid gap-6 lg:grid-cols-2">
+      {visiblePresets.length === 0 ? (
+        <p className="rounded-2xl border border-dashed border-border p-8 text-center text-sm text-muted-foreground">
+          No calculation tools match “{searchQuery}”.
+        </p>
+      ) : (
+      <div className="grid gap-6 lg:grid-cols-2" key={activePresetId}>
         {/* Editable Observation Table */}
         <div className="space-y-4 rounded-2xl border border-border/80 bg-card p-5 shadow-sm">
           <div className="flex items-center justify-between border-b border-border/60 pb-3">
@@ -416,6 +432,7 @@ export function ObservationCalculationEngine() {
           </div>
         </div>
       </div>
+      )}
     </div>
   );
 }

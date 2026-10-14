@@ -57,6 +57,13 @@ service-account*.json
 *.key
 *.p12
 *.pfx
+*.jks
+*.keystore
+*.aab
+*.apk
+*.class
+**/build/
+**/.gradle/
 
 # ── logs and local run output ───────────────────────────────────────────────
 *.log
@@ -67,6 +74,8 @@ logs/
 /tmp/
 .tmp-*
 *.tmp
+/sdkout.txt
+/sdkerr.txt
 
 # ── agent / editor tooling state (local only, never shared) ─────────────────
 .agnes/
