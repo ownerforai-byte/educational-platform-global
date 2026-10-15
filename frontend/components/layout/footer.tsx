@@ -7,6 +7,7 @@ import {
   BookOpen,
   FlaskConical,
   GraduationCap,
+  Bell,
   BellRing,
   Sparkles,
   ListTree,
@@ -270,11 +271,19 @@ export function Footer() {
                 /notice now, together with the mailto — one page holds the
                 contact details instead of every page carrying them. */}
             <Link
+              href="/notifications"
+              className="inline-flex items-center gap-1 font-medium hover:text-primary transition-colors"
+            >
+              <Bell className="h-3 w-3" />
+              <span>Notifications</span>
+            </Link>
+            <span>·</span>
+            <Link
               href="/notice"
               className="inline-flex items-center gap-1 font-medium hover:text-primary transition-colors"
             >
               <BellRing className="h-3 w-3" />
-              <span>Notice</span>
+              <span>Notice Board</span>
             </Link>
             <span
               className="font-mono text-[10px] rounded-full border border-border/60 bg-muted/40 px-2 py-0.5 text-muted-foreground/80"

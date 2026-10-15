@@ -131,16 +131,17 @@ export function AppShell({ children, breadcrumbs }: AppShellProps) {
 
             <R1Shortcut />
 
-            {/* Notifications — bell opens the standing notice board (/notice).
+            {/* Notifications — bell opens the live notifications center (/notifications).
                 Kept visible on every breakpoint so mobile users can always
-                reach platform notices. */}
+                reach their notifications. */}
             <Link
-              href="/notice"
-              className="inline-flex items-center justify-center h-8 w-8 rounded-xl border border-border/80 bg-card hover:bg-muted/60 text-muted-foreground hover:text-foreground transition-all shadow-sm shrink-0"
-              title="Notifications & platform notices"
-              aria-label="Notifications and platform notices"
+              href="/notifications"
+              className="relative inline-flex items-center justify-center h-8 w-8 rounded-xl border border-border/80 bg-card hover:bg-muted/60 text-muted-foreground hover:text-foreground transition-all shadow-sm shrink-0"
+              title="Notifications"
+              aria-label="Notifications"
             >
               <Bell className="h-4 w-4" />
+              <span className="absolute top-1.5 right-1.5 h-2 w-2 rounded-full bg-primary ring-2 ring-background animate-pulse" />
             </Link>
 
             <Link

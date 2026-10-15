@@ -3,6 +3,7 @@ import Link from "next/link";
 import {
   ArrowLeft,
   ArrowRight,
+  Bell,
   BellRing,
   History,
   Coins,
@@ -143,6 +144,30 @@ export default function NoticePage() {
           </div>
         </div>
       </header>
+
+      {/* Notifications Center Cross-link */}
+      <section className="mt-4 rounded-2xl border border-border/70 bg-gradient-to-r from-primary/10 via-card to-card p-4 sm:p-5 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3 shadow-sm">
+        <div className="flex items-center gap-3">
+          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-xl border border-primary/25 bg-primary/15 text-primary">
+            <Bell className="h-4 w-4" />
+          </span>
+          <div>
+            <h2 className="text-xs font-bold uppercase tracking-wider text-foreground">
+              Live Notifications Center
+            </h2>
+            <p className="text-xs text-muted-foreground">
+              Check real-time study alerts, newly published unit documents, daily spark allowance refills, and exam countdowns.
+            </p>
+          </div>
+        </div>
+        <Link
+          href="/notifications"
+          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border border-primary/30 bg-primary/10 text-xs font-bold text-primary hover:bg-primary/20 transition-all shrink-0 self-end sm:self-auto"
+        >
+          <span>Open Notifications</span>
+          <ArrowRight className="h-3.5 w-3.5" />
+        </Link>
+      </section>
 
       {/* The owner's own line, kept verbatim */}
       <figure className="mt-4 rounded-2xl border border-border/70 bg-card p-5 sm:p-6">
